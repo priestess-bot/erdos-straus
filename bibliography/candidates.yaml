@@ -1,0 +1,91 @@
+schema_version: 1
+cutoff_date: 2026-07-23
+scope: >-
+  Direct studies of 4/n = 1/x + 1/y + 1/z, origin documents, computational
+  records, and papers needed to interpret a direct result. A record here is a
+  screening decision, not an endorsement of its mathematics.
+
+disposition_values:
+  included: paper card required
+  merge_version: represented by another paper card
+  background: concept or bibliography pointer only
+  queued: metadata found; full screening unfinished
+  excluded: outside the direct corpus or no substantive research result
+
+candidates:
+  - {id: erdos1950, year: 1950, title: "Az 1/x1 + ... + 1/xn = a/b egyenlet egesz szamu megoldasairol", disposition: included, tier: B, reason: "Earliest printed source in the standard bibliography; broader than the conjecture."}
+  - {id: oblath1950, year: 1950, title: "Sur l'equation diophantienne 4/n = 1/x1 + 1/x2 + 1/x3", disposition: included, tier: A, reason: "Early direct paper and computation submitted in 1948."}
+  - {id: rosati1954, year: 1954, title: "Sull'equazione diofantea 4/n = 1/x1 + 1/x2 + 1/x3", disposition: included, tier: A, reason: "Source of classical parametrizations."}
+  - {id: schinzel1956, year: 1956, title: "Sur quelques proprietes des nombres 3/n et 4/n, ou n est impair", disposition: included, tier: A, reason: "Early structural and generalization work."}
+  - {id: bernstein1962, year: 1962, title: "Zur Losung der diophantischen Gleichung m/n = 1/x + 1/y + 1/z, insbesondere im Fall m = 4", disposition: included, tier: A, reason: "Direct general and computational study."}
+  - {id: yamamoto1965, year: 1965, title: "On the Diophantine Equation 4/n = 1/x + 1/y + 1/z", disposition: included, tier: A, reason: "Canonical early synthesis and parametrization source."}
+  - {id: vaughan1970, year: 1970, title: "On a problem of Erdos, Straus and Schinzel", disposition: included, tier: A, reason: "Foundational exceptional-set theorem."}
+  - {id: webb1970, year: 1970, title: "On 4/n = 1/x + 1/y + 1/z", disposition: included, tier: A, reason: "Direct density paper."}
+  - {id: terzi1971, year: 1971, title: "On a conjecture by Erdos-Straus", disposition: included, tier: A, reason: "Direct computation and congruence work."}
+  - {id: jollensten1976, year: 1976, title: "A note on the Egyptian problem", disposition: included, tier: A, reason: "Direct computation; surname varies as Jollenstein in secondary bibliographies."}
+  - {id: li1981, year: 1981, title: "On the Equation 4/n = 1/x + 1/y + 1/z", disposition: included, tier: A, reason: "Exceptional-set result."}
+  - {id: yang1982, year: 1982, title: "A note on 4/n = 1/x + 1/y + 1/z", disposition: included, tier: A, reason: "Direct AMS paper."}
+  - {id: sander1991, year: 1991, title: "On 4/n = 1/x + 1/y + 1/z and Rosser's sieve", disposition: included, tier: A, reason: "Direct analytic sieve paper."}
+  - {id: sander1994, year: 1994, title: "On 4/n = 1/x + 1/y + 1/z and Iwaniec' Half Dimensional Sieve", disposition: included, tier: A, reason: "Direct analytic sieve paper."}
+  - {id: sander1997, year: 1997, title: "Egyptian Fractions and the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Direct survey/result paper."}
+  - {id: kotsireas1999, year: 1999, title: "The Erdos-Straus conjecture on Egyptian fractions", disposition: included, tier: A, reason: "Conference contribution and computational record."}
+  - {id: swett1999, year: 1999, title: "The Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Primary web report for the 10^14 computation."}
+  - {id: schinzel2000, year: 2000, title: "On sums of three unit fractions with polynomial denominators", disposition: included, tier: B, reason: "Directly underlies the polynomial-solvability boundary."}
+  - {id: monks_velingker2008, year: 2008, title: "On the Erdos-Straus conjecture: Properties of solutions to its underlying diophantine equation", disposition: included, tier: A, reason: "Unpublished but substantive direct paper with public manuscript."}
+  - {id: ionascu_wilson2010, year: 2011, title: "On the Erdos-Straus conjecture", disposition: included, tier: A, reason: "Published in Revue Roumaine 56(1), 21-30; arXiv:1001.1100 is the open version."}
+  - {id: jia2011, year: 2011, title: "A Note on Terence Tao's Paper On the Number of Solutions...", disposition: included, tier: A, reason: "Direct correction/alternative mean-value argument (1107.5394)."}
+  - {id: jia2012, year: 2012, title: "The estimate for mean values on prime numbers relative to 4/p = 1/n1 + 1/n2 + 1/n3", disposition: included, tier: A, reason: "Peer-reviewed direct counting paper."}
+  - {id: bello2012, year: 2012, title: "On Egyptian Fractions", disposition: included, tier: A, reason: "Polynomial family, algorithm and reported verification to 2*10^14."}
+  - {id: elsholtz_tao2013, year: 2013, title: "Counting the number of solutions to the Erdos-Straus equation on unit fractions", disposition: included, tier: A, reason: "Central modern counting and parametrization paper."}
+  - {id: rios2013, year: 2013, title: "Asymptotic estimates on the Erdos-Straus conjecture", disposition: included, tier: C, reason: "Withdrawn by the author because of crucial sign errors in equations (3) and (5); retained as a negative research record."}
+  - {id: salez2014, year: 2014, title: "The Erdos-Straus conjecture: New modular equations and checking up to N = 10^17", disposition: included, tier: A, reason: "Seven-equation completeness and public computation report."}
+  - {id: bradford_ionascu2015, year: 2015, title: "A geometric reduction of the Erdos-Straus conjecture", disposition: included, tier: A, reason: "Direct predecessor to Bradford's one-variable and divisor reductions."}
+  - {id: subburam_togbe2016, year: 2016, title: "A note on the Erdos-Straus conjecture", disposition: included, tier: A, reason: "Peer-reviewed paper, Period. Math. Hungar. 72(1), 43-49; metadata and abstract verified, full text unavailable."}
+  - {id: negash2018, year: 2018, title: "Solutions to Diophantine equation of Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Direct preprint; explicit families leave part of n = 1 mod 8."}
+  - {id: gionfriddo_guardo2020, year: 2021, title: "A short proof of Erdos-Straus conjecture for every n = 13 mod 24", disposition: included, tier: A, reason: "Peer-reviewed direct note; handles a class already outside the core 1 mod 24 case."}
+  - {id: bright_loughran2020, year: 2020, title: "Brauer-Manin obstruction for Erdos-Straus surfaces", disposition: included, tier: A, reason: "Algebraic-geometric interpretation."}
+  - {id: elsholtz_planitzer2020, year: 2020, title: "The number of solutions of the Erdos-Straus Equation and sums of k unit fractions", disposition: included, tier: A, reason: "Generalized upper bounds and enumeration algorithm."}
+  - {id: arab2021, year: 2021, title: "A well-defined way to write the Erdos-Straus conjecture", disposition: queued, tier: C, reason: "Direct-title preprint (2108.02024); substantive novelty requires audit."}
+  - {id: bradford2021, year: 2021, title: "A Note on the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Peer-reviewed one-variable reduction used by Bradford and Chamberland."}
+  - {id: lopez2022, year: 2022, title: "On the Structure of the Solutions of the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Structural solution classes; arXiv version revised in 2024."}
+  - {id: morozov2023, year: 2023, title: "Approaches to the Erdos-Straus conjecture", disposition: excluded, tier: C, reason: "Poster, not a paper and no distinct theorem identified."}
+  - {id: bradford2024, year: 2024, title: "Elemental Patterns Within the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "arXiv work later published under a revised title."}
+  - {id: bradford2025_zenodo, year: 2025, title: "Elementary Patterns from the Erdos-Straus Conjecture", disposition: merge_version, tier: A, reason: "Published Integers A54 version represented by bradford2024; Zenodo DOI is the record copy."}
+  - {id: lopez2024, year: 2024, title: "A Complete Congruence System for the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Conjectural Type A/B covering system."}
+  - {id: mballa2025, year: 2025, title: "A new approach to the Erdos-Straus conjecture", disposition: included, tier: A, reason: "Partial result with a remaining perfect-square condition."}
+  - {id: schuh2025, year: 2025, title: "The Erdos-Straus conjecture and Pythagorean primes", disposition: included, tier: A, reason: "Algorithm plus two conjectural restrictions."}
+  - {id: ghermoul2025, year: 2025, title: "Exact Polynomial Families for the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "Exact families; collective coverage remains conjectural."}
+  - {id: mihnea_dumitru2025, year: 2025, title: "Further verification and empirical evidence for the Erdos-Straus conjecture", disposition: included, tier: A, reason: "Public code and reported verification to 10^18."}
+  - {id: dyachenko2025, year: 2025, title: "Constructive solution of the Erdos-Straus conjecture for prime numbers of the form 4k+1", disposition: included, tier: A, reason: "Strong proof claim; retained for adversarial audit, not endorsed."}
+  - {id: pomerance_weingartner2026, year: 2026, title: "Exceptions to the Erdos-Straus-Schinzel conjecture", disposition: included, tier: A, reason: "Peer-reviewed generalization of exceptional-set theory."}
+  - {id: bradford2026, year: 2026, title: "A solution to the Straus-Erdos conjecture", disposition: included, tier: A, reason: "Complete-proof claim with an identified covering-system gap."}
+  - {id: mballa2026, year: 2026, title: "A unified parametric approach...natural density one", disposition: included, tier: A, reason: "Density-one explicit family, not a complete proof."}
+  - {id: ventas2026, year: 2026, title: "A ceiling continued fraction approach...", disposition: included, tier: A, reason: "Heuristic/experimental preprint."}
+  - {id: xu2026, year: 2026, title: "Congruence classes of supporting the Erdos-Straus conjecture I: Tame solutions", disposition: included, tier: A, reason: "Tame/wild classification and finite experiments."}
+  - {id: bello2026, year: 2026, title: "A Divisor Parametrization for the Erdos-Straus Conjecture", disposition: included, tier: A, reason: "General divisor parametrization and rigidity result."}
+  - {id: chamberland2026, year: 2026, title: "The Erdos-Straus Conjecture and the Structure of Primes", disposition: included, tier: A, reason: "Peer-reviewed Type II equivalence published 2026-04-03; found by recursive forward screening."}
+  - {id: bhattacharjee2026, year: 2026, title: "Erdos-Straus Decompositions", disposition: included, tier: C, reason: "Gray preprint with an auditable finite certificate and explicit statement of the remaining universal obligation."}
+  - {id: adaptive_divisor_clouds2026, year: 2026, title: "Adaptive Divisor Clouds, Split-Capture Semigroups, and a Residual Closure Machine for the Erdos-Straus Equation", disposition: queued, tier: C, reason: "ResearchGate manuscript discovered in forward search; full theorem audit not completed."}
+  - {id: roy_hgdd2026, year: 2026, title: "On the Hybrid-Greedy Diophantine Descent for Arbitrary-Length Egyptian Fraction Partitioning", disposition: queued, tier: C, reason: "July ResearchGate preprint mainly about generalized exact-length partitions; its claimed universal theorem requires audit before direct-corpus inclusion."}
+  - {id: linear_ratio_ansatz2026, year: 2026, title: "A Linear-Ratio Ansatz for Congruence Families in the Erdos-Straus Equation", disposition: queued, tier: A, reason: "ResearchGate manuscript with a substantive no-finite-cover theorem for its ansatz; original manuscript and proof dependencies require full audit."}
+  - {id: audige_divisor_lattice2026, year: 2026, title: "An Erdos-Straus divisor-lattice refinement for 4/n", disposition: queued, tier: C, reason: "Zenodo proof claim by Emmanuel Audige; the claimed divisor-density closure step requires theorem-level audit."}
+  - {id: mcevoy_fce2026, year: 2026, title: "Geometric Analysis of the Erdos-Straus Conjecture via the Fractal Correction Engine", disposition: background, tier: C, reason: "Finite statistical analysis, explicitly not a proof; July upload is a later version of the March Zenodo concept record."}
+  - {id: ibbotson_temporal2026, year: 2026, title: "The Erdos-Straus Conjecture: Computational Pattern Detection Through Temporal Dynamics Framework", disposition: background, tier: C, reason: "Finite computational pattern study; no proof-chain theorem identified in the discovery metadata."}
+  - {id: residual_divisor_certificates2026, year: 2026, title: "Residual Divisor Certificates for the Erdos-Straus Equation: A Six-Class Sieve Modulo 840 and a Jacobi-Symbol Barrier", disposition: queued, tier: C, reason: "Zenodo/GitHub gray manuscript; exact finite certificate claims and no-finite-window barrier require source audit."}
+  - {id: liu_mod6_2026, year: 2026, title: "A Proof of the Erdos-Straus Conjecture under the Modulo-6 Framework", disposition: queued, tier: C, reason: "Zenodo complete-proof claim; May records are versions of one concept and need a proof-chain audit."}
+  - {id: erdos_straus_true2026, year: 2026, title: "THE ERDOS-STRAUS CONJECTURE IS TRUE", disposition: queued, tier: C, reason: "June Zenodo complete-proof claim; metadata discovered but substantive proof audit not completed."}
+  - {id: uygun840_529_2026, year: 2026, title: "Investigation of Numbers of the Form 840q + 529 According to Modulo 47 Residue Classes Within the Scope of the Erdos-Straus Conjecture", disposition: queued, tier: C, reason: "July Zenodo/OSF manuscript by Ender Uygun; three provider/version records represent one intellectual work."}
+  - {id: agama_avoiding2026, year: 2026, title: "On a set avoiding solutions of the Erdos-Straus equation", disposition: queued, tier: C, reason: "AfricaRxiv/RXiv gray manuscript found in the final forward search; its olloid-based claim requires screening against the direct equation."}
+  - {id: xu_code2026, year: 2026, title: "erdos-straus-clean-solutions: verification code and data", disposition: merge_version, tier: A, reason: "Zenodo research artifact associated with xu2026, not a separate paper."}
+  - {id: gray_zenodo_versions2026, year: 2026, title: "Concept and version DOI duplicates from the 2026 Zenodo search", disposition: merge_version, tier: C, reason: "Concept/version DOI pairs are clustered with their named candidate records and are not counted as separate papers."}
+  - {id: gutierrez2026, year: 2026, title: "Solvability of the Erdos-Straus Equation Under Divisibility Conditions", disposition: queued, tier: C, reason: "SSRN manuscript; seven pages and no references; requires theorem-level audit."}
+  - {id: bouamoud2026, year: 2026, title: "The Polynomial t^2(4x-n)^2-2xtn Is Always Admitting a Perfect Square", disposition: queued, tier: C, reason: "Preprints.org manuscript; title makes a universal auxiliary claim requiring proof audit."}
+  - {id: agama2023, year: 2023, title: "A generalized conditional approach to the Erdos-Straus conjecture", disposition: excluded, tier: C, reason: "viXra/generalized conditional material; no direct unconditional advance identified."}
+  - {id: complex_networks2019, year: 2019, title: "The Erdos-Straus conjecture from a complex-networks perspective", disposition: background, tier: C, reason: "Exploratory network analysis; no proof-chain dependency."}
+  - {id: gray_claims_2026, year: 2026, title: "Zenodo, OSF and ResearchGate complete-proof claims", disposition: queued, tier: C, reason: "Grouped discovery record pending deduplication; none is treated as established without a theorem-level audit."}
+
+version_policy:
+  - "One paper card represents an intellectual work; version history is stored on that card."
+  - "A journal version supersedes an arXiv version for publication status, while the open arXiv source remains linked."
+  - "Zenodo concept DOI and version DOI are not counted as two papers."
+  - "A proof claim stays in the corpus even when flawed, because its failure mode is research-relevant."

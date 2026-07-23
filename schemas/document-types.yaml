@@ -1,0 +1,73 @@
+schema_version: 1
+
+common_required:
+  - kind
+  - title
+  - visibility
+  - last_checked
+
+paper_required:
+  - citation_key
+  - authors
+  - year
+  - first_publication_date
+  - publication_status
+  - assessment_status
+  - corpus_tier
+  - reading_status
+  - language
+  - source_pointer
+  - source_acquired
+  - source_verified_against_original
+  - source_verification_method
+  - description_source
+  - description_last_audit
+  - topics
+  - references
+
+claim_required:
+  - claim_id
+  - statement
+  - claim_status
+  - topics
+  - sources
+
+concept_required:
+  - concept_id
+  - summary
+  - topics
+  - used_by
+  - sources
+
+controlled_values:
+  kind: [paper, claim, concept]
+  visibility: [public, internal]
+  publication_status:
+    - peer_reviewed
+    - preprint
+    - thesis
+    - conference
+    - book_chapter
+    - unpublished_computation
+    - web_material
+  assessment_status:
+    - verified
+    - verified_with_caveat
+    - computationally_reproduced
+    - computationally_reported
+    - heuristic
+    - claim_with_gap
+    - contradicted
+    - unverified
+  corpus_tier: [A, B, C]
+  reading_status: [queued, metadata_verified, reading, studied, verified, source_blocked]
+  source_verification_method: [codex_audit, manual_grep, vision_check, none]
+  claim_status:
+    - established
+    - conditional
+    - computationally_reproduced
+    - computationally_reported
+    - heuristic
+    - claimed_with_gap
+    - contradicted
+    - open

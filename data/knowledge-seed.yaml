@@ -1,0 +1,333 @@
+schema_version: 1
+cutoff_date: 2026-07-23
+
+claims:
+  - kind: claim
+    claim_id: conjecture-open-2026-07-23
+    title: "截至 2026-07-23 猜想仍未解决"
+    statement: "截至 2026 年 7 月 23 日，没有经核查的完整证明或反例；Erdos-Straus 猜想仍是开放问题。"
+    claim_status: open
+    topics: [status, open-problem, frontier]
+    sources: [chamberland2026, bello2026, bradford2026, dyachenko2025]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "2026 年同行评议论文 Chamberland 明称 unsolved；2026-06 的 Bello-Hernandez 等仍把它称为 conjecture。两篇声称完整证明的预印本分别存在覆盖系统缺口和仿射格窗口命中缺口。"
+    evidence: ["Chamberland 2026, Introduction and Conjecture 1.", "Bello-Hernandez et al. 2026, Introduction.", "Bradford 2026, final paragraph before References.", "Dyachenko 2025, Theorem 9.21 and Proposition 9.25."]
+    caveats: "“未发现有效证明”是带检索截止日期的研究状态，不是对未来或未公开材料的全称断言。"
+
+  - kind: claim
+    claim_id: reduction-to-primes
+    title: "只需证明素数分母"
+    statement: "若猜想对每个素数 p 成立，则对每个 n>=2 成立；最小反例若存在必为素数。"
+    claim_status: established
+    topics: [reduction, primes]
+    sources: [salez2014, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "若 p|n 且 4/p=1/x+1/y+1/z，令 n=mp，则 4/n=1/(mx)+1/(my)+1/(mz)。"
+    evidence: ["Salez 2014, Section 1.1.", "Elsholtz-Tao 2013, Introduction."]
+    caveats: "从一个素因子的分解可以缩放到其倍数；反向一般不成立。"
+
+  - kind: claim
+    claim_id: reduction-to-one-mod-24
+    title: "困难素数约化为 p=1 mod 24"
+    statement: "结合三个经典恒等式和素数约化，只需处理素数 p congruent to 1 modulo 24。"
+    claim_status: established
+    topics: [reduction, congruences, core-case]
+    sources: [salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "恒等式分别处理 n=-1 mod3、n=-1 mod4、n=-3 mod8。对大于 3 的素数取这些条件的补集并用 CRT，剩余为 1 mod24。"
+    evidence: ["Salez 2014, Section 1.1, displayed identities and concluding paragraph."]
+    caveats: "对一般整数说“只剩 1 mod24”不够精确；这个简洁约化依赖先转到素数。"
+
+  - kind: claim
+    claim_id: prime-solutions-type-I-II
+    title: "素数解穷尽为 Type I 或 Type II"
+    statement: "对奇素数 p，交换分母后每个解恰落入 Type I（p 整除一个分母）或 Type II（p 整除两个分母）。"
+    claim_status: established
+    topics: [type-I-II, parametrization]
+    sources: [elsholtz_tao2013, monks_velingker2008]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "清分母后 p 必整除至少一个分母；若三个都被 p 整除会得到不可能的缩小关系。p 的整除指数分析排除其他型态。"
+    evidence: ["Elsholtz-Tao 2013, Section 2.", "Monks-Velingker 2008, Theorem 2.1(c)-(d)."]
+    caveats: "对合数 n 未必只有两型；Pomerance-Weingartner 给出 5/6 的反例型态。"
+
+  - kind: claim
+    claim_id: vaughan-exception-bound
+    title: "Vaughan 的伸缩指数例外集界"
+    statement: "存在 c>0 使 E(N) << N exp(-c(log N)^(2/3))，因而可解整数的自然密度为 1。"
+    claim_status: established
+    topics: [exceptional-set, density, analytic-number-theory]
+    sources: [vaughan1970, pomerance_weingartner2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "后续同行评议文献把该界明确归于 Vaughan；Pomerance-Weingartner 2026 进一步给出一般 m 的显式依赖。"
+    evidence: ["Pomerance-Weingartner 2026, Introduction and Theorem 1.3.", "Vaughan 1970, DOI record and cited theorem."]
+    caveats: "密度 1 不排除无限个反例，也不为给定 p 产生分解。历史原版全文尚未在本库逐页取得。"
+
+  - kind: claim
+    claim_id: li-bound-weaker-than-vaughan
+    title: "Li 的任意对数幂界渐近弱于 Vaughan"
+    statement: "Li 证明对每个固定 k 有 E(N)=O_k(N/(log N)^k)，但这在渐近量级上弱于 Vaughan 的伸缩指数界。"
+    claim_status: established
+    topics: [exceptional-set, asymptotic-comparison]
+    sources: [li1981, vaughan1970]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "对每个固定 k，exp(c(log N)^(2/3)) 最终增长快于 (log N)^k，因此 Vaughan 的上界更小。"
+    evidence: ["Li 1981, Journal of Number Theory 13, 485-494, as cited in modern surveys.", "Direct asymptotic comparison of the two displayed functions."]
+    caveats: "“任意 k”中的 k 是先固定再让 N 趋于无穷，不能让 k 随 N 任意增长。"
+
+  - kind: claim
+    claim_id: average-solution-count
+    title: "素数平均解数为 N log^2 N 量级至 log log 损失"
+    statement: "Elsholtz-Tao 证明 N(log N)^2 << sum_{p<=N} f(p) << N(log N)^2 log log N。"
+    claim_status: established
+    topics: [solution-counting, mean-value]
+    sources: [elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "上下界分别由 Type I/II 参数化、除数和及素数算术级数估计得到。"
+    evidence: ["Elsholtz-Tao 2013, Theorem 1.1."]
+    caveats: "平均和的正下界不推出每个 p 的 f(p)>0；少数零值可被其他素数的大量解掩盖。"
+
+  - kind: claim
+    claim_id: polynomial-square-class-obstruction
+    title: "固定多项式恒等式不能覆盖平方剩余类"
+    statement: "对原始剩余类，非平方类可由多项式分母统一求解；平方类不能由同一固定多项式机制覆盖。"
+    claim_status: established
+    topics: [polynomial-solvability, quadratic-residues, obstruction]
+    sources: [schinzel2000, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "Elsholtz-Tao 把 Schinzel 型必要条件与 Type I/II 参数化结合，并对模 840 的原始类给出现代分类。"
+    evidence: ["Elsholtz-Tao 2013, polynomial solvability theorem in Section 2 and discussion of primitive classes modulo 840."]
+    caveats: "这是方法障碍，不说明平方类无整数解，也不排除非多项式或参数增长的构造。"
+
+  - kind: claim
+    claim_id: no-brauer-manin-disproof
+    title: "自然 Brauer-Manin 障碍不能否定猜想"
+    statement: "Erdos-Straus 曲面的自然 Brauer 类不产生足以排除所需整点的 Brauer-Manin 障碍，但会妨碍某种强逼近。"
+    claim_status: established
+    topics: [Brauer-Manin, log-K3, local-global]
+    sources: [bright_loughran2020]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "Bright-Loughran 在仿射三次曲面的整点框架中计算 Brauer 群与局部评价。"
+    evidence: ["Bright-Loughran 2020, main theorems and conclusion."]
+    caveats: "“无该障碍”不等于存在整点；Brauer-Manin 并非自动充分。"
+
+  - kind: claim
+    claim_id: salez-verified-1e17-reported
+    title: "Salez 报告验证到 10^17"
+    statement: "Salez 2014 报告模筛计算覆盖所有 n<=10^17，并公开 C++ 程序；本库未重跑该完整范围。"
+    claim_status: computationally_reported
+    topics: [computation, modular-sieve, reproducibility]
+    sources: [salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "报告给出七个参考方程、候选周期、候选数与运行时间，使算法可审查。"
+    evidence: ["Salez 2014, Abstract and Sections 4-5.", "Reported G7=892371480 and |R7|=147348."]
+    caveats: "公开代码不等于第三方完整复现；正确措辞是“论文报告验证”。"
+
+  - kind: claim
+    claim_id: verification-1e18-reported
+    title: "当前公开报告的最高计算上界为 10^18"
+    statement: "Mihnea-Dumitru 2025 报告验证到 10^18 并公开代码；截至截止日未确认独立团队完整重跑全部范围。"
+    claim_status: computationally_reported
+    topics: [computation, record, reproducibility]
+    sources: [mihnea_dumitru2025, pomerance_weingartner2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "论文用 S29 扩展 Salez，给出 G8、R8、批次上界和 GMP 实现；Pomerance-Weingartner 的致谢/提及只构成外部知悉，不是独立复现。"
+    evidence: ["Mihnea-Dumitru 2025, Section 2.", "Pomerance-Weingartner 2026, computational acknowledgements/references."]
+    caveats: "最高公开报告可能随新计算变化；监测命令应定期更新此卡。"
+
+  - kind: claim
+    claim_id: bradford-2026-cover-gap
+    title: "Bradford 2026 缺少覆盖系统证明"
+    statement: "Bradford 2026 的完全证明声称不成立，因为论文未证明所构造同余类族覆盖所有困难素数。"
+    claim_status: claimed_with_gap
+    topics: [proof-audit, covering-system, critical-gap]
+    sources: [bradford2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "Lemmas 1-2 只给充分同余类。正文随后承认最后还需证明 covering system，并只列 k=0 的少数类和前四个 1 mod4 素数，之后直接结束。"
+    evidence: ["Bradford 2026, pages 3-4, paragraph beginning 'The last thing that we must show'."]
+    caveats: "已列同余恒等式可能各自正确；失败点是从局部充分条件到全体素数的量词跳跃。"
+
+  - kind: claim
+    claim_id: dyachenko-2025-lattice-gap
+    title: "Dyachenko 2025 的对角格窗口命中论证有缺口"
+    statement: "Theorem 9.21 的无条件存在性依赖 Proposition 9.25，但其证明错误地用同一个对角平移参数命中两个独立选取的坐标。"
+    claim_status: claimed_with_gap
+    topics: [proof-audit, affine-lattice, critical-gap]
+    sources: [dyachenko2025]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "若 p0=(u0,v0) 且 w=(d',d')，由 u* 决定 m=(u*-u0)/d' 后，第二坐标是 v0+md'；它一般不等于独立选取的 v*。同时 Lemma 9.24 把一个秩一对角陪集写成所有固定双坐标剩余类的格点，等号无一般依据。"
+    evidence: ["Dyachenko 2025, Lemmas 9.22-9.24 and Proposition 9.25.", "Theorem 9.21 explicitly invokes this window-hitting step."]
+    caveats: "这不否定论文中的所有代数恒等式或算法样例，但阻断了对每个 P 的全称存在性。"
+
+  - kind: claim
+    claim_id: mballa-density-one-explicit
+    title: "Mballa 2026 给出 n=1 mod4 整数中的密度一显式族"
+    statement: "在 n=1 mod4 中，含 3 mod4 素因子的 n 有显式 y=z 解，而其补集自然密度为零。"
+    claim_status: established
+    topics: [density-one, explicit-solutions, symmetric-solutions]
+    sources: [mballa2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "若 b|n 且 b=3 mod4，令 x=(n+b)/4、q=n/b，则 q=3 mod4，t=q(q+1)/2 为整数并产生 y=z=tb。补集只含 1 mod4 素因子，Euler 乘积给出密度零。"
+    evidence: ["Mballa 2026, Proposition 4 and density section."]
+    caveats: "密度一不等于全部；素数 p=1 mod4 本身不含 3 mod4 素因子，因此该构造不直接解决核心素数。"
+
+  - kind: claim
+    claim_id: chamberland-type-II-equivalence
+    title: "Chamberland 的 Type II 素数形状等价"
+    statement: "素数 p 有 Type II 解，当且仅当 p=qr-4s1s2，其中 q=3 mod4 且 s1、s2 均整除 (q+1)/4。"
+    claim_status: established
+    topics: [type-II, prime-structure, equivalence]
+    sources: [chamberland2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "正向从 Bradford 的 gcd 公式提取 q,r,s1,s2；反向通过显式单位分数恒等式恢复解。"
+    evidence: ["Chamberland 2026, Theorem 1 and its proof."]
+    caveats: "所有素数都具有这种形状是论文另立的 conjecture。"
+
+  - kind: claim
+    claim_id: bello-fab-window-reported
+    title: "fab 小参数窗口覆盖 10^14 内相关素数是计算报告"
+    statement: "Bello-Hernandez 等报告所有 p=1 mod4、p<10^14 可由 fab(p,a,b) 在 1<=a,b<=11 内检测，但未证明窗口对所有素数有统一界。"
+    claim_status: computationally_reported
+    topics: [divisor-parametrization, computation, bounded-window]
+    sources: [bello2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "Theorem 5 给出参数化完整性，计算备注则限制在有限窗口；Theorem 8 还说明固定有限参数机制不能以简单有限同余覆盖完成全部工作。"
+    evidence: ["Bello-Hernandez et al. 2026, Theorems 5 and 8, Remarks 9 and 23-25."]
+    caveats: "计算窗口现象不应提升为全称短证书猜想，除非另行明确提出并证明。"
+
+  - kind: claim
+    claim_id: local-reproduction-2026-07-23
+    title: "关键恒等式与除子证书的小尺度复现"
+    statement: "精确整数实现复现了经典模约化、模 840 六残余类、n<=1000 的因子对证书及 p<=10000 的 Bradford 除子证书。"
+    claim_status: computationally_reproduced
+    topics: [reproduction, exact-arithmetic, computation]
+    sources: [salez2014, bradford2024]
+    visibility: public
+    last_checked: "2026-07-23"
+    analysis: "脚本不用浮点数：三个经典恒等式各核对 1000 组；S5/S7 与 1 mod24 的 CRT 补集恰为 1,121,169,289,361,529；因子对恒等式覆盖 2..1000；Bradford 条件覆盖 10000 内 1229 个素数。"
+    evidence: ["reproductions/esc_reproduce.py and generated results.json.", "Unit tests independently re-evaluate exact Fraction identities on smaller ranges."]
+    caveats: "这是算法接口与公式的有限交叉核对，不是 10^17 或 10^18 的全量复现，也不能证明猜想。"
+
+concepts:
+  - kind: concept
+    concept_id: equation-and-scaling
+    title: "方程、清分母与缩放"
+    summary: "猜想的三个等价工作形式是单位分数式、三次整系数式和对素因子的缩放约化。"
+    topics: [foundations, reduction]
+    used_by: [reduction-to-primes, reduction-to-one-mod-24]
+    sources: [salez2014, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "4/n=1/x+1/y+1/z 清分母得 4xyz=n(xy+xz+yz)。若已知 n 的某个因子 d 有分解，则把三个分母同乘 n/d 即得 n 的分解。"
+    pitfalls: ["清分母后的整数点必须保持 x,y,z>0。", "可解性沿倍数向上传播，不沿因子向下传播。"]
+
+  - kind: concept
+    concept_id: type-I-II
+    title: "Type I / Type II 解"
+    summary: "对素数分母，p 的整除模式把所有解分成恰好一项被 p 整除和恰好两项被 p 整除两类。"
+    topics: [parametrization, divisibility]
+    used_by: [prime-solutions-type-I-II, average-solution-count, chamberland-type-II-equivalence]
+    sources: [elsholtz_tao2013, bradford2021]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "在 Elsholtz-Tao 的无序约定中可通过置换选择被 p 整除的变量；Bradford 在 x<=y<=z 下固定 p 不整除 x、p 整除 z，再以 p 是否整除 y 命名两类。"
+    pitfalls: ["不同论文变量顺序不同，Type I 的“哪一个分母”会变。", "合数分母可能出现不属于两类的解。"]
+
+  - kind: concept
+    concept_id: modular-identities
+    title: "模恒等式与覆盖系统"
+    summary: "对某个剩余类给出正整数多项式分母恒等式，可以一次证明该类全部可解；覆盖全部核心类则需要严格的覆盖证明。"
+    topics: [congruences, covering-system, polynomial-solvability]
+    used_by: [reduction-to-one-mod-24, polynomial-square-class-obstruction, bradford-2026-cover-gap]
+    sources: [rosati1954, salez2014, bradford2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "Salez 把参考方程视为模 m 的可解剩余集 S_m，并用 CRT 合并。一个无限参数族若声称解决猜想，仍需证明每个困难素数落入至少一个充分类。"
+    pitfalls: ["列出很多同余类不等于构成 covering system。", "非平方类多项式可解性的完备性有明确方法范围。"]
+
+  - kind: concept
+    concept_id: exceptional-sets-and-sieves
+    title: "例外集与解析筛法"
+    summary: "解析方法估计到 N 为止尚未被某些可解条件覆盖的整数数量，能证明密度一但通常不能消灭最后的稀疏集合。"
+    topics: [exceptional-set, sieve, density]
+    used_by: [vaughan-exception-bound, li-bound-weaker-than-vaughan]
+    sources: [vaughan1970, li1981, sander1991, sander1994]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "Vaughan 的伸缩指数界、Li 的任意固定对数幂界和 Sander 的筛法构成经典解析主线。它们回答“例外有多稀”，而不是对给定 p 输出证书。"
+    pitfalls: ["自然密度零集合可以无限。", "不同界的强弱需比较分母增长，而不能按发表先后判断。"]
+
+  - kind: concept
+    concept_id: solution-counting
+    title: "解计数与枚举复杂度"
+    summary: "f(n) 计数有序正整数解；参数化既用于平均阶估计，也用于输出全部解的算法。"
+    topics: [solution-counting, algorithms]
+    used_by: [average-solution-count]
+    sources: [elsholtz_tao2013, elsholtz_planitzer2020]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "Type I/II 参数把解计数转成约束因子元组。现代结果给出素数平均和、逐点上界及固定 m 的 O(n^(3/5+epsilon)) 上界。"
+    pitfalls: ["有序与无序解相差置换因子，重合分母时需小心。", "上界和平均值都不保证 f(p)>0。"]
+
+  - kind: concept
+    concept_id: divisor-parametrizations
+    title: "除子参数化与短证书"
+    summary: "把剩余两项分解为二项单位分数后，解的存在可转化为某个平方或乘积的除子满足同余条件。"
+    topics: [divisors, parametrization, certificate]
+    used_by: [chamberland-type-II-equivalence, bello-fab-window-reported]
+    sources: [bradford2021, bradford2024, chamberland2026, bello2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "Bradford 以 d|x^2 和模 4x-p 的条件刻画；Chamberland 将 Type II 压缩为素数形状；Bello-Hernandez 等用 fab 函数统一恢复一类分解。"
+    pitfalls: ["等价参数化不自动降低全称存在性的难度。", "有限范围内参数很小不证明统一有界。"]
+
+  - kind: concept
+    concept_id: log-k3-brauer-manin
+    title: "log K3 曲面与 Brauer-Manin"
+    summary: "清分母后的方程定义仿射三次曲面；整点的局部—整体问题可用 Brauer 群评价研究。"
+    topics: [algebraic-geometry, local-global, Brauer-Manin]
+    used_by: [no-brauer-manin-disproof]
+    sources: [bright_loughran2020]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "这一视角统一解释若干 Legendre/Hilbert 二次剩余限制，并区分整点存在与强逼近。"
+    pitfalls: ["局部处处可解通常不是整点存在的充分条件。", "不存在所计算的障碍不等于不存在任何更深障碍。"]
+
+  - kind: concept
+    concept_id: computational-modular-sieve
+    title: "计算模筛与可复现性"
+    summary: "模筛先用已证明恒等式排除绝大多数候选，只对逃逸剩余类做精确素性与分解检查。"
+    topics: [computation, modular-sieve, reproducibility]
+    used_by: [salez-verified-1e17-reported, verification-1e18-reported]
+    sources: [salez2014, mihnea_dumitru2025]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "过滤器 S_m、缩短过滤器、CRT 周期 G_i 和残余集合 R_i 是核心对象。可复现报告还需版本、代码、整数溢出策略、批次边界与最终逃逸候选证书。"
+    pitfalls: ["代码公开不等于完整运行已独立复现。", "有限计算不能证明无穷全称命题。"]
+
+  - kind: concept
+    concept_id: evidence-two-axis
+    title: "出版状态与数学核查状态双轴"
+    summary: "同行评议、预印本或灰色材料是出版轴；verified、reported、heuristic、claim-with-gap 是内容核查轴。"
+    topics: [methodology, evidence, integrity]
+    used_by: [conjecture-open-2026-07-23, bradford-2026-cover-gap, dyachenko-2025-lattice-gap]
+    sources: [chamberland2026, bradford2026, dyachenko2025]
+    visibility: public
+    last_checked: "2026-07-23"
+    explanation: "纯数学中，同行评议提高来源可信度但不代替证明核查；反之，预印本中的局部恒等式也可能完全正确。知识库因此不把两轴压成一个“可信度分数”。"
+    pitfalls: ["期刊发表不等于所有计算已复现。", "发现主链缺口不等于论文每一条引理都错。"]

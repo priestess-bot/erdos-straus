@@ -1,0 +1,100 @@
+{
+  "run_date": "2026-07-23",
+  "arithmetic": "exact integer arithmetic and fractions.Fraction",
+  "reduction_identities": {
+    "3t-1": 1000,
+    "4t-1": 1000,
+    "8t-3": 1000
+  },
+  "mordell_survivors_mod_840": [
+    1,
+    121,
+    169,
+    289,
+    361,
+    529
+  ],
+  "factor_pair_certificate": {
+    "limit": 1000,
+    "verified_count": 999,
+    "samples": {
+      "2": [
+        1,
+        2,
+        2
+      ],
+      "5": [
+        2,
+        4,
+        20
+      ],
+      "13": [
+        4,
+        18,
+        468
+      ],
+      "100": [
+        26,
+        651,
+        423150
+      ],
+      "193": [
+        50,
+        1380,
+        1331700
+      ],
+      "997": [
+        250,
+        83084,
+        10354343500
+      ]
+    }
+  },
+  "bradford_divisor_correspondence": {
+    "limit": 10000,
+    "prime_count": 1229,
+    "first_certificate_by_type": {
+      "I": 851,
+      "II": 378
+    },
+    "samples": {
+      "5": [
+        "II",
+        2,
+        1,
+        5,
+        10
+      ],
+      "13": [
+        "I",
+        4,
+        2,
+        18,
+        468
+      ],
+      "193": [
+        "I",
+        50,
+        10,
+        1380,
+        1331700
+      ],
+      "1009": [
+        "I",
+        253,
+        11,
+        85096,
+        1974822872
+      ],
+      "9973": [
+        "I",
+        2494,
+        2,
+        8290888,
+        103108227451928
+      ]
+    }
+  },
+  "scope_note": "Finite cross-check only; this does not reproduce the reported 10^17 or 10^18 searches.",
+  "script_sha256": "943d96e1d7a6d6a2b245d64f795eb822ba2b7997fec2bfdde68cd8d88af0805b"
+}

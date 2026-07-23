@@ -1,0 +1,1344 @@
+schema_version: 1
+cutoff_date: 2026-07-23
+papers:
+  - kind: paper
+    citation_key: erdos1950
+    title: "Az 1/x1 + 1/x2 + ... + 1/xn = a/b egyenlet egesz szamu megoldasairol"
+    authors: ["Pal Erdos"]
+    year: 1950
+    first_publication_date: "1950-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: B
+    reading_status: source_blocked
+    language: hu
+    source_pointer: "https://www.renyi.hu/~p_erdos/1950-02.pdf"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [origin, egyptian-fractions]
+    references: []
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "标准现代文献把这篇关于单位分数方程一般理论的论文作为猜想的早期印刷入口。猜想通常记为 1948 年由 Erdos 与 Ernst G. Straus 提出；本卡不把 1950 年论文误写成两人共同署名的原始公告。"
+    contributions: ["为一般单位分数丢番图方程提供历史背景。", "在后续核心论文的参考文献中承担问题起源的书目角色。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 的参考文献 [18]。", "当前未取得并逐页核查匈牙利文原文；结果描述保持最低限度。"]
+    limits: "它不是只研究 4/n 方程的论文，也不是 1948 年猜想提出过程的完整档案。"
+
+  - kind: paper
+    citation_key: oblath1950
+    title: "Sur l'equation diophantienne 4/n = 1/x1 + 1/x2 + 1/x3"
+    authors: ["Richard Oblath"]
+    year: 1950
+    first_publication_date: "1950-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: fr
+    source_pointer: "Mathesis 59 (1950), 308-316"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [history, computation, congruences]
+    references: [erdos1950]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "最早的直接研究之一。Elsholtz–Tao 的历史表把其工作日期记作 1948/49，并记录验证范围 106128；出版卷年为 1950。"
+    contributions: ["给出早期同余分析与计算验证。", "把猜想提出后的第一阶段研究保存在正式期刊文献中。"]
+    evidence: ["书目信息来自 Elsholtz–Tao 2013 参考文献 [49]。", "106128 是后续历史表中的归属，尚未对原文计算范围逐页复核。"]
+    limits: "原文未取得；提交年份、出版年份和计算完成年份必须分开表述。"
+
+  - kind: paper
+    citation_key: rosati1954
+    title: "Sull'equazione diofantea 4/n = 1/x1 + 1/x2 + 1/x3"
+    authors: ["Luigi Antonio Rosati"]
+    year: 1954
+    first_publication_date: "1954-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: it
+    source_pointer: "Boll. Un. Mat. Ital. (3) 9 (1954), 59-63"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [congruences, parametrization, computation]
+    references: [oblath1950]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "经典显式参数化的重要来源。Salez 2014 明确把其 Proposition 1 所用的两种解型归于 Mordell 所引的 Rosati。"
+    contributions: ["建立后来反复使用的解参数结构。", "后续模方程和 Type I/II 分类的重要历史前身。", "历史表记录计算验证到 141648。"]
+    evidence: ["书目信息来自 Elsholtz–Tao 2013 [58]。", "数学归属由 Salez 2014 第 1.2 节转述，尚非原文核查。"]
+    limits: "必须在取得原文后区分 Rosati 实际证明与 Mordell、Yamamoto、Salez 后来的标准化表述。"
+
+  - kind: paper
+    citation_key: schinzel1956
+    title: "Sur quelques proprietes des nombres 3/n et 4/n, ou n est un nombre impair"
+    authors: ["Andrzej Schinzel"]
+    year: 1956
+    first_publication_date: "1956-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: fr
+    source_pointer: "Mathesis 65 (1956), 219-222"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [polynomial-solvability, generalization]
+    references: [erdos1950, oblath1950]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "研究奇数分母的 3/n 与 4/n，并成为后来“固定剩余类可由多项式分母统一求解时，剩余项不能是平方类”这一边界的历史来源之一。"
+    contributions: ["把同余类统一参数化与二次剩余条件联系起来。", "连接 Erdős–Straus 与更一般的 Schinzel 型问题。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 [67]。", "具体命题由后续文献转述，原文尚未取得。"]
+    limits: "后续论文给出了更精确、现代化的 Type I/II 多项式可解性定理，不能全部倒归给本论文。"
+
+  - kind: paper
+    citation_key: bernstein1962
+    title: "Zur Losung der diophantischen Gleichung m/n = 1/x + 1/y + 1/z, insbesondere im Fall m = 4"
+    authors: ["Leon Bernstein"]
+    year: 1962
+    first_publication_date: "1962-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: de
+    source_pointer: "J. Reine Angew. Math. 211 (1962), 1-10"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [generalization, computation]
+    references: [erdos1950, oblath1950, rosati1954]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "研究一般 m/n 三项单位分数方程，重点包括 m=4。历史表记录其独立验证到 8000。"
+    contributions: ["把 4/n 问题置于一般 m/n 框架。", "提供独立的有限范围计算。"]
+    evidence: ["卷页来自 Elsholtz–Tao 2013 [6]。", "8000 不是 1962 年时的最高已知验证范围；不得称为纪录推进。"]
+    limits: "原文未取得，具体定理和算法尚待核查。"
+
+  - kind: paper
+    citation_key: yamamoto1965
+    title: "On the Diophantine Equation 4/n = 1/x + 1/y + 1/z"
+    authors: ["Koichi Yamamoto"]
+    year: 1965
+    first_publication_date: "1965-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Mem. Fac. Sci. Kyushu Univ. Ser. A 19 (1965), 37-47"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [congruences, parametrization, computation]
+    references: [rosati1954, schinzel1956, bernstein1962]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "经典同余恒等式、参数化和早期计算史的枢纽文献。Salez 和 Elsholtz–Tao 均把若干标准事实追溯到本论文。"
+    contributions: ["系统整理可解同余类与显式分解。", "历史表记录验证到 10^7。", "为现代参考模方程和解参数化提供入口。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 [88]。", "具体定理仍需对原文逐项核查。"]
+    limits: "后续作者常把 Rosati、Mordell、Yamamoto 的归属混用；当前卡不作过度优先权判断。"
+
+  - kind: paper
+    citation_key: vaughan1970
+    title: "On a problem of Erdos, Straus and Schinzel"
+    authors: ["Robert C. Vaughan"]
+    year: 1970
+    first_publication_date: "1970-12-01"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://doi.org/10.1112/S0025579300002886"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [exceptional-set, analytic-number-theory, density]
+    references: [erdos1950, schinzel1956, yamamoto1965]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1112/S0025579300002886"
+    summary: "解析路线的奠基文献：对固定分子的一般问题证明极薄例外集，从而蕴含 4/n 可解整数具有自然密度 1。"
+    contributions: ["对 m=4 给出 E(N) << N exp(-c(log N)^(2/3)) 型界。", "说明几乎所有分母可解，但不排除无限稀疏反例。"]
+    evidence: ["DOI、卷页由 Cambridge/Mathematika 页面交叉核对。", "界的形式由 Elsholtz–Tao 2013 和 Pomerance–Weingartner 2026 明确引用。"]
+    limits: "尚未取得原版全文逐页核查；常数依赖和一般 m 的精确量词仍待补。"
+
+  - kind: paper
+    citation_key: webb1970
+    title: "On 4/n = 1/x + 1/y + 1/z"
+    authors: ["William A. Webb"]
+    year: 1970
+    first_publication_date: "1970-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Proc. Amer. Math. Soc. 25 (1970), 578-584"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [density, congruences]
+    references: [yamamoto1965]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "与 Vaughan 同期的直接研究，被后续文献归入“潜在反例密度为零”的早期解析链。"
+    contributions: ["研究可解分母的密度与同余覆盖。", "为后来筛法研究提供前置结果。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 [84]。", "未取得原文，不在此卡断言其界与 Vaughan 完全相同。"]
+    limits: "需补原文以厘清其主定理与 Vaughan 的独立性和强弱关系。"
+
+  - kind: paper
+    citation_key: terzi1971
+    title: "On a conjecture by Erdos-Straus"
+    authors: ["D. G. Terzi"]
+    year: 1971
+    first_publication_date: "1971-01-01"
+    publication_status: peer_reviewed
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "BIT 11 (1971), 212-216"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [computation, congruences]
+    references: [yamamoto1965]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "早期大规模计算论文。Elsholtz–Tao 历史表列出 10^8；同一表警告后来的 2*10^8 记录可能只是再次引用 Terzi，而非独立复现。"
+    contributions: ["报告验证到 10^8。", "使用可解剩余类缩减搜索。"]
+    evidence: ["卷页来自 Elsholtz–Tao 2013 [81]。", "计算未在本知识库复现，状态为 computationally_reported。"]
+    limits: "原程序、机器环境与完整候选数尚不可得。"
+
+  - kind: paper
+    citation_key: jollensten1976
+    title: "A note on the Egyptian problem"
+    authors: ["Ralph W. Jollensten"]
+    year: 1976
+    first_publication_date: "1976-01-01"
+    publication_status: conference
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Congressus Numerantium 17 (1976), 351-364"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [computation]
+    references: [terzi1971]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "会议论文中的计算研究。现代参考文献对姓氏有 Jollensten/Jollenstein 两种拼法；Cambridge 的校订版参考文献与多处书目采用 Jollensten。"
+    contributions: ["历史表记录验证到约 1.1*10^7。", "保存 1970 年代计算方法的一条独立记录。"]
+    evidence: ["卷页由 Elsholtz–Tao 2013 参考文献和 Cambridge 页面交叉核对。", "计算未复现。"]
+    limits: "需取得会议录原文确认作者标准拼写及算法细节。"
+
+  - kind: paper
+    citation_key: li1981
+    title: "On the Equation 4/n = 1/x + 1/y + 1/z"
+    authors: ["De-Lang Li"]
+    year: 1981
+    first_publication_date: "1981-12-01"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://doi.org/10.1016/0022-314X(81)90039-1"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [exceptional-set, analytic-number-theory]
+    references: [vaughan1970, webb1970]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1016/0022-314X(81)90039-1"
+    summary: "给出任意固定对数幂节省的例外集估计，是 Vaughan 路线的后续结果。"
+    contributions: ["对每个固定 k 给出 E(N)=O_k(N/(log N)^k)。", "把筛法/解析估计推进到可任意选择的对数幂。"]
+    evidence: ["DOI 与卷页已交叉核对。", "量级比较必须注意：该界渐近上弱于 Vaughan 的 exp(-c(log N)^(2/3))。"]
+    limits: "未取得全文；常数与量词细节尚待原文审计。"
+
+  - kind: paper
+    citation_key: yang1982
+    title: "A note on 4/n = 1/x + 1/y + 1/z"
+    authors: ["Xun Qian Yang"]
+    year: 1982
+    first_publication_date: "1982-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Proc. Amer. Math. Soc. 85 (1982), 496-498"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [congruences, parametrization]
+    references: [yamamoto1965, vaughan1970]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "三页直接研究短文，位于经典同余构造与 1980 年代研究链中。"
+    contributions: ["提出新的充分条件或简化已有条件。", "被 Elsholtz–Tao 作为直接文献收录。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 [89]。", "因原文未取得，贡献描述保持概括。"]
+    limits: "不得在未读原文时给出更强的定理归属。"
+
+  - kind: paper
+    citation_key: sander1991
+    title: "On 4/n = 1/x + 1/y + 1/z and Rosser's sieve"
+    authors: ["J. W. Sander"]
+    year: 1991
+    first_publication_date: "1991-01-01"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://doi.org/10.4064/aa-59-2-183-204"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [sieve, exceptional-set, analytic-number-theory]
+    references: [vaughan1970, li1981]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.4064/aa-59-2-183-204"
+    summary: "以 Rosser 筛研究方程的可解性和例外集，是 1990 年代解析筛法主链的第一篇。"
+    contributions: ["把 Rosser 筛系统用于 Erdős–Straus 方程。", "细化可解条件和例外集分析。"]
+    evidence: ["DOI、期刊卷页已核对。", "当前未取得全文，具体主定理编号待补。"]
+    limits: "不能仅凭题名推断其界必强于 Vaughan 或 Li；强弱需原文比较。"
+
+  - kind: paper
+    citation_key: sander1994
+    title: "On 4/n = 1/x + 1/y + 1/z and Iwaniec' Half Dimensional Sieve"
+    authors: ["J. W. Sander"]
+    year: 1994
+    first_publication_date: "1994-01-01"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://doi.org/10.1006/jnth.1994.1008"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [half-dimensional-sieve, exceptional-set]
+    references: [sander1991]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1006/jnth.1994.1008"
+    summary: "用 Iwaniec 半维筛继续分析 4/n 方程，构成经典解析筛法路线的第二个关键节点。"
+    contributions: ["把半维筛结构引入方程研究。", "改进对特定可解族和例外集合的控制。"]
+    evidence: ["DOI 与卷页 46 (1994), 123-136 已核对。", "具体估计尚待原文审计。"]
+    limits: "本卡暂不把未核对的数值常数或指数写入知识库。"
+
+  - kind: paper
+    citation_key: sander1997
+    title: "Egyptian Fractions and the Erdos-Straus Conjecture"
+    authors: ["J. W. Sander"]
+    year: 1997
+    first_publication_date: "1997-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Nieuw Archief voor Wiskunde (4) 15 (1997), 43-50"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [survey, sieve, egyptian-fractions]
+    references: [sander1991, sander1994]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "Sander 对单位分数与本猜想的后续论文，适合作为其两篇技术筛法论文的阅读导引。"
+    contributions: ["总结解析筛法与经典同余方法。", "连接更广泛的单位分数问题。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 [64]。", "全文未取得。"]
+    limits: "需确认它是综述、推广还是包含新定理，当前不作过度判断。"
+
+  - kind: paper
+    citation_key: kotsireas1999
+    title: "The Erdos-Straus conjecture on Egyptian fractions"
+    authors: ["Ilias Kotsireas"]
+    year: 1999
+    first_publication_date: "1999-01-01"
+    publication_status: conference
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Paul Erdos and his mathematics (Budapest, 1999), 140-144"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [computation, conference]
+    references: [terzi1971, jollensten1976]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "Budapest 会议论文，现代历史表把 10^10 的计算验证归于此项工作。"
+    contributions: ["报告把计算验证推进到 10^10。", "记录世纪末计算路线。"]
+    evidence: ["卷页来自 Elsholtz–Tao 2013 [37]。", "尚无程序和独立复现记录进入本库。"]
+    limits: "不得把同年的 Swett 10^14 记录合并为本工作的结果。"
+
+  - kind: paper
+    citation_key: swett1999
+    title: "The Erdos-Straus Conjecture"
+    authors: ["Allan Swett"]
+    year: 1999
+    first_publication_date: "1999-01-01"
+    publication_status: web_material
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "http://math.uindy.edu/swett/esc.htm"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [computation, modular-sieve]
+    references: [kotsireas1999]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "网页形式的原始计算报告，长期作为验证到 10^14 的标准来源；原网址当前可用性不稳定。"
+    contributions: ["报告验证所有 n <= 10^14。", "使用基于模恒等式的筛选方法，后来由 Salez 扩展。"]
+    evidence: ["Elsholtz–Tao 2013 与 Bello-Hernández 等 2012 均引用该网页和上界。", "本库未取得原始网页快照或程序。"]
+    limits: "属于灰色文献；应写作 reported verification，而非已独立复现。"
+
+  - kind: paper
+    citation_key: schinzel2000
+    title: "On sums of three unit fractions with polynomial denominators"
+    authors: ["Andrzej Schinzel"]
+    year: 2000
+    first_publication_date: "2000-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: B
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Funct. Approx. Comment. Math. 28 (2000), 187-194"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [polynomial-solvability, parametrization]
+    references: [schinzel1956, yamamoto1965]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "研究三项单位分数的多项式分母，是 Elsholtz–Tao 对固定剩余类多项式可解性分类的直接技术前身。"
+    contributions: ["分析多项式分母恒等式的存在条件。", "为“平方类不能被固定多项式恒等式统一覆盖”的现代定理提供来源。"]
+    evidence: ["元数据来自 Elsholtz–Tao 2013 [68]。", "原文未取得。"]
+    limits: "需要与 1956 年结果及 Elsholtz–Tao 2013 第 2 节逐一定理对照。"
+
+  - kind: paper
+    citation_key: monks_velingker2008
+    title: "On the Erdos-Straus conjecture: Properties of solutions to its underlying diophantine equation"
+    authors: ["Maria Monks", "Ashwin Velingker"]
+    year: 2008
+    first_publication_date: "2008-09-23"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://mathematicalgemstones.com/maria/papers/ErdosStraus.pdf"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [solution-structure, bounds, divisibility]
+    references: [schinzel1956, vaughan1970, swett1999]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "未正式发表的直接研究，系统证明素数分母解的整除关系与分母上下界，并提出若干等价改写。"
+    contributions: ["Theorem 2.1 证明除 p 外每个素因子的最高幂至少在两个分母中出现。", "对 x<=y<=z 给出 x、y、z 的范围，并刻画 x=y 情形。", "将解按 p 是否整除 y 自然分成两类，预示后来的 Type I/II 组织方式。"]
+    evidence: ["已取得 2008-09-23 原稿并核对摘要、Theorem 2.1 及其后讨论。", "本地副本 SHA-256: 另见 sources 清单；本卡不声称逐行验证全部证明。"]
+    limits: "作者将若干计算观察限于前 1000 个素数；这些观察不是全称定理。"
+
+  - kind: paper
+    citation_key: ionascu_wilson2010
+    title: "On the Erdos-Straus Conjecture"
+    authors: ["Eugen J. Ionascu", "Andrew Wilson"]
+    year: 2011
+    first_publication_date: "2010-01-07"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/1001.1100"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [stronger-conjecture, congruences, two-unit-fractions]
+    references: [schinzel1956, yamamoto1965, swett1999]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: null
+    arxiv: "1001.1100"
+    summary: "从两项单位分数判别定理出发，扩展 Mordell 型同余覆盖，并提出一个强于原猜想的嵌套集合猜想。"
+    contributions: ["Proposition 1.2 由最小首分母分析排除除 n=1 mod 12 外的素数。", "构造集合 C_i，以允许首分母偏离 ceil(n/4) 的层数组织问题。", "给出更强猜想：存在固定层级或结构足以覆盖全部整数。"]
+    evidence: ["已核对 arXiv:1001.1100 摘要、Theorem 1.1、Proposition 1.2 和集合 C_i 定义。", "正式版发表于 Revue Roumaine de Mathématiques Pures et Appliquées 56(1) (2011), 21-30；论文明确把更强陈述标为 conjecture，而不是定理。"]
+    limits: "扩展同余覆盖仍不处理全部 p=1 mod 24；强猜想缺少证明。"
+
+  - kind: paper
+    citation_key: jia2011
+    title: "A Note on Terence Tao's Paper On the Number of Solutions to 4/p = 1/n1 + 1/n2 + 1/n3"
+    authors: ["Chaohua Jia"]
+    year: 2011
+    first_publication_date: "2011-07-27"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/1107.5394"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [solution-counting, mean-value, analytic-number-theory]
+    references: [vaughan1970]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "1107.5394"
+    summary: "针对 Elsholtz–Tao 预印本的短注，研究素数平均解数中的一个和式估计；它属于计数技术链，而非猜想本身的逐点证明。"
+    contributions: ["给出相关平均值估计的另一种论证。", "与两天后提交的 arXiv:1107.6039 分属不同文本，均进入后续计数研究的参考链。"]
+    evidence: ["已取得并核对 arXiv 原文的定理与证明范围。", "题名中的 Tao paper 是早期版本称呼；最终主论文由 Elsholtz 与 Tao 合著。"]
+    limits: "平均估计不能推出每个素数的解数非零。"
+
+  - kind: paper
+    citation_key: jia2012
+    title: "The estimate for mean values on prime numbers relative to 4/p = 1/n1 + 1/n2 + 1/n3"
+    authors: ["Chaohua Jia"]
+    year: 2012
+    first_publication_date: "2011-07-29"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://doi.org/10.1007/s11425-011-4348-9"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [solution-counting, mean-value]
+    references: [jia2011]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1007/s11425-011-4348-9"
+    arxiv: "1107.6039"
+    summary: "同行评议的素数平均值估计；arXiv:1107.6039 是该工作的公开预印本，不能与 Jia 的另一篇短注 arXiv:1107.5394 合并。"
+    contributions: ["证明 sum_{p<x} f_1(p) << x log^5(x) (log log x)^2。", "改进 Elsholtz–Tao 早期版本对 Type I 平均和的上界。"]
+    evidence: ["已取得并核对 arXiv:1107.6039 的摘要、定理陈述及证明结构。", "DOI、卷期页 55(3), 465-474 由 Crossref 与 Springer 题录交叉核对。"]
+    limits: "这是平均值上界，不能推出每个素数都有解；其另一篇 arXiv:1107.5394 短注是不同智力工作。"
+
+  - kind: paper
+    citation_key: bello2012
+    title: "On Egyptian Fractions"
+    authors: ["Manuel Bello-Hernandez", "Manuel Benito", "Emilio Fernandez"]
+    year: 2012
+    first_publication_date: "2010-10-11"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/1010.2035"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [polynomial-family, algorithm, computation]
+    references: [yamamoto1965, swett1999]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "1010.2035"
+    summary: "构造三变量多项式可解族，证明存在任意长连续可解区间，给出贪心型算法并报告验证到 2*10^14。"
+    contributions: ["Theorem 1 证明存在任意长的连续可解整数序列。", "多项式 p(alpha,beta,gamma) 的值自动给出分解，但 Lemma 7 表明它不覆盖完全平方数。", "结合算法与多项式族报告 2<=n<=2*10^14 全部可解。"]
+    evidence: ["已核对 arXiv v2 摘要、公式 (2)-(3)、Theorem 1 和 Lemma 1。", "2*10^14 属作者计算报告，本库未完整复现。"]
+    limits: "作者关于特定素数族被多项式覆盖的陈述含计算验证与 conjecture，不能写作全称定理。"
+
+  - kind: paper
+    citation_key: elsholtz_tao2013
+    title: "Counting the number of solutions to the Erdos-Straus equation on unit fractions"
+    authors: ["Christian Elsholtz", "Terence Tao"]
+    year: 2013
+    first_publication_date: "2011-07-06"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://doi.org/10.1017/S1446788712000468"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [type-I-II, solution-counting, parametrization, algorithms]
+    references: [erdos1950, bernstein1962, jia2012, jollensten1976, li1981, rosati1954, sander1991, sander1994, schinzel1956, schinzel2000, swett1999, terzi1971, vaughan1970, webb1970, yamamoto1965, yang1982, bello2012]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1017/S1446788712000468"
+    arxiv: "1107.1010"
+    summary: "现代核心论文：对素数分母的解作 Type I/II 参数化，证明平均解数上下界，给出逐点上界和枚举复杂度，并系统整理历史计算与多项式可解性。"
+    contributions: ["证明 N(log N)^2 << sum_{p<=N} f(p) << N(log N)^2 log log N。", "把素数解分为 Type I 与 Type II，并建立完整参数化。", "给出枚举 Type I/II 解的期望时间 n^(3/5+o(1)) 与 n^(2/5+o(1))。", "证明原始剩余类模 840 的非平方类可多项式求解，而平方类不能由该固定多项式机制覆盖。"]
+    evidence: ["已取得 arXiv 全文与 Cambridge 出版 PDF，核对主定理、参数化章节、算法结论和 89 条参考文献。", "平均值丰富不蕴含每个 p 都有解；知识库单独记录这一逻辑边界。"]
+    limits: "论文不证明猜想；若把平均阶误读为逐点非零，会造成核心逻辑错误。"
+
+  - kind: paper
+    citation_key: rios2013
+    title: "Asymptotic estimates on the Erdos-Straus conjecture"
+    authors: ["Elias Rios"]
+    year: 2013
+    first_publication_date: "2013-02-01"
+    publication_status: preprint
+    assessment_status: contradicted
+    corpus_tier: C
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/1302.0872"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: arxiv_withdrawal_record
+    description_last_audit: none
+    topics: [solution-counting, asymptotics, withdrawn]
+    references: [elsholtz_tao2013, jia2011, jia2012]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "1302.0872"
+    withdrawn: true
+    summary: "关于 Type I 解平均和的渐近估计预印本；作者后来撤回，arXiv 记录明确说明公式 (3) 与 (5) 存在关键符号错误。"
+    contributions: ["作为 2013 年平均解数研究支线的历史记录保留。", "提供了一个应如何处理被撤回直接文献的反例：收录但不得沿用结论。"]
+    evidence: ["arXiv v2 元数据标记 withdrawn by the author，并给出 crucial sign error in equations (3) and (5) 的原因。", "PDF 当前不可由 arXiv 端点取得，本卡不对撤回文本作进一步数学复原。"]
+    limits: "任何渐近公式均不得作为有效研究进展引用；本卡的 contradicted 状态只针对该预印本所声称的结果。"
+
+  - kind: paper
+    citation_key: salez2014
+    title: "The Erdos-Straus conjecture: New modular equations and checking up to N = 10^17"
+    authors: ["Serge E. Salez"]
+    year: 2014
+    first_publication_date: "2014-06-24"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/1406.6307"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [modular-equations, modular-sieve, computation]
+    references: [rosati1954, yamamoto1965, swett1999]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "1406.6307"
+    summary: "证明一次素多项式范围内七条参考模方程的完备性，设计组合模筛，并报告计算验证到 10^17。"
+    contributions: ["在四条既有参考方程上增加三条，共七条，而不是九条。", "定义 S_m、缩短过滤器 S_m*、周期 G_i 与候选剩余集 R_i。", "报告 G7=892371480、|R7|=147348、平均候选间隔 6056，并提供 C++ 程序附件。"]
+    evidence: ["已核对摘要、第 1 节约化、参考方程、筛法参数与 10^17 计算计数。", "本知识库另有小尺度重实现，用精确有理数核对基础恒等式与过滤器定义；未重跑 10^17。"]
+    limits: "七式完备性只针对论文定义的线性素多项式模方程类别，不排除更广的参数化。计算上界仍是作者报告。"
+
+  - kind: paper
+    citation_key: subburam_togbe2016
+    title: "A note on the Erdos-Straus conjecture"
+    authors: ["S. Subburam", "Alain Togbe"]
+    year: 2016
+    first_publication_date: "2015-12-29"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://doi.org/10.1007/s10998-015-0109-9"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: publisher_abstract
+    description_last_audit: none
+    topics: [solution-counting, generalization, congruences]
+    references: [elsholtz_tao2013, jia2011, jia2012, vaughan1970]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1007/s10998-015-0109-9"
+    summary: "研究互素正整数 c,n 的一般方程 c/n=1/x+1/y+1/z；出版社摘要称其给出解数 f(n;c) 的公式，并处理 Erdős–Straus 猜想的一个特殊 n 情形。"
+    contributions: ["把三项单位分数解数写入一般参数 c 的框架。", "出版社摘要报告一个特殊 n 情形的可解性。"]
+    evidence: ["Crossref 与 Springer 页面确认 Periodica Mathematica Hungarica 72(1) (2016), 43-49，在线发表于 2015-12-29。", "当前只取得出版社摘要和完整题录，未取得付费正文。"]
+    limits: "未核查正文，不能在本库中具体断言解数公式或特殊 n 条件的精确形式。"
+
+  - kind: paper
+    citation_key: negash2018
+    title: "Solutions to Diophantine equation of Erdos-Straus Conjecture"
+    authors: ["Dagnachew Jenber Negash"]
+    year: 2018
+    first_publication_date: "2018-12-31"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/1812.05684"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [explicit-solutions, recurrence]
+    references: [salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "1812.05684"
+    summary: "给出多组显式公式，摘要明确保留某些 n=1 mod 8 的情形，因此是部分覆盖而非完整证明。"
+    contributions: ["按剩余类列出可直接计算的分母公式。", "试图用递推关系组织剩余困难情形。"]
+    evidence: ["已核对 arXiv v2 摘要、引言和主要构造。", "摘要的 excepting some n congruent to 1 mod 8 是最关键的范围限定。"]
+    limits: "其未覆盖集合包含真正核心困难，不能因“all except”表述而夸大进展。"
+
+  - kind: paper
+    citation_key: bright_loughran2020
+    title: "Brauer-Manin obstruction for Erdos-Straus surfaces"
+    authors: ["Martin Bright", "Daniel Loughran"]
+    year: 2020
+    first_publication_date: "2019-08-07"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://doi.org/10.1112/blms.12374"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [log-K3, Brauer-Manin, local-global]
+    references: [schinzel1956, vaughan1970, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1112/blms.12374"
+    arxiv: "1908.02526"
+    summary: "把方程视为仿射三次曲面上的整点问题，分析积分 Hasse 原理与强逼近的 Brauer–Manin 障碍。"
+    contributions: ["识别 Erdos-Straus 曲面为奇异 log K3 曲面模型。", "证明自然 Brauer 类不提供足以否定猜想的全局障碍。", "说明同一障碍会妨碍某种强逼近，并统一解释经典二次互反限制。"]
+    evidence: ["已核对 arXiv:1908.02526 的主定理、局部点构造与结论部分。", "几何结论是结构约束，不是每个 n 的显式整数点构造。"]
+    limits: "无 Brauer–Manin 障碍不等于整点必存在；不能把必要局部条件误写为充分条件。"
+
+  - kind: paper
+    citation_key: gionfriddo_guardo2020
+    title: "A short proof of Erdos-Straus conjecture for every n congruent to 13 mod 24"
+    authors: ["Mario Gionfriddo", "Elena Guardo"]
+    year: 2021
+    first_publication_date: "2020-05-07"
+    publication_status: peer_reviewed
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://doi.org/10.1080/09720502.2021.1907018"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [explicit-solutions, congruences]
+    references: [oblath1950, rosati1954, sander1991, salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1080/09720502.2021.1907018"
+    arxiv: "2005.03273"
+    summary: "给出 n=13 mod 24 的显式解公式。该剩余类并非现代素数约化后的困难核心；真正剩余核心仍是 n=1 mod 24。"
+    contributions: ["汇总 n 不等于 1 mod 24 的已知构造。", "对 13 mod 24 写出显式分母而不仅作存在性陈述。"]
+    evidence: ["已核对 arXiv v3 的 Theorems 2.1-2.4 与 Section 3。", "正式版发表于 Journal of Interdisciplinary Mathematics 24(8) (2021), 2307-2312，DOI 元数据确认在线发表于 2021-06-23；论文自己说明完整解决仍需 n=1 mod 24。"]
+    limits: "这是已知易类的显式化，不缩小 p=1 mod 24 的核心集合。"
+
+  - kind: paper
+    citation_key: elsholtz_planitzer2020
+    title: "The number of solutions of the Erdos-Straus Equation and sums of k unit fractions"
+    authors: ["Christian Elsholtz", "Stefan Planitzer"]
+    year: 2020
+    first_publication_date: "2018-05-08"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://doi.org/10.1017/prm.2018.137"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [solution-counting, algorithms, generalization]
+    references: [elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1017/prm.2018.137"
+    arxiv: "1805.02945"
+    summary: "把三项单位分数解数上界和枚举算法从 4/p 推广到一般 m/n，并改进 k 项单位分数的若干计数界。"
+    contributions: ["固定 m 时证明表示数 O_epsilon(n^(3/5+epsilon))。", "给出枚举全部三项解的期望时间 O_epsilon(n^epsilon(n^3/m^2)^(1/5))。", "给出某些剩余类中解数很大的无穷素数族。"]
+    evidence: ["已核对 arXiv:1805.02945 摘要、主定理和算法章节。", "复杂度依赖可快速因式分解等标准期望模型假设。"]
+    limits: "上界与枚举速度均不证明所有输入都有至少一个解。"
+
+  - kind: paper
+    citation_key: bradford_ionascu2015
+    title: "A geometric reduction of the Erdos-Straus conjecture"
+    authors: ["Kyle Bradford", "Eugen J. Ionascu"]
+    year: 2015
+    first_publication_date: "2015-01-01"
+    publication_status: peer_reviewed
+    assessment_status: unverified
+    corpus_tier: A
+    reading_status: source_blocked
+    language: en
+    source_pointer: "Advanced Modeling and Optimization 17(1) (2015), 41-54"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: bibliography_v1
+    description_last_audit: none
+    topics: [geometric-reduction, computation]
+    references: [ionascu_wilson2010, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "Bradford 后续一变量约化的直接前身，以几何方式压缩素数分母的解搜索。"
+    contributions: ["提出几何区域和分母约束以缩减搜索。", "为 Bradford 2021 的 gcd 公式提供计算与结构背景。"]
+    evidence: ["作者、卷期页由 CSU ePress 题录与两位作者的出版清单交叉核对。", "全文尚未稳定取得。"]
+    limits: "具体定理、计算范围和与 2021 论文的依赖关系待原文审计。"
+
+  - kind: paper
+    citation_key: arab2021
+    title: "Well-Defined Erdos-Straus Equations and L.C.M"
+    authors: ["Mohammad Arab"]
+    year: 2021
+    first_publication_date: "2021-08-04"
+    publication_status: preprint
+    assessment_status: unverified
+    corpus_tier: C
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/2108.02024"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [lcm, equivalent-formulations, exploratory]
+    references: [schinzel2000, gionfriddo_guardo2020]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2108.02024"
+    summary: "引入作者所称 well-defined equations，以最小公倍数和分拆恒等式生成等价表达；论文还声称若干既有方法不可能完整证明猜想。"
+    contributions: ["整理多种代数生成式与 LCM/GCD 函数。", "提出若干与原猜想等价或推广的陈述。"]
+    evidence: ["已核对 arXiv v2 摘要、目录式贡献列表与主要定义。", "未发现它提供对 p=1 mod24 的无条件全覆盖。"]
+    limits: "“某类方法不可能证明”的量词和方法类定义不够清晰，不能作为已建立的不可能性定理引用。"
+
+  - kind: paper
+    citation_key: bradford2021
+    title: "A Note on the Erdos-Straus Conjecture"
+    authors: ["Kyle Bradford"]
+    year: 2021
+    first_publication_date: "2021-02-23"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://doi.org/10.5281/zenodo.10807535"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [one-variable-reduction, gcd, type-I-II]
+    references: [bradford_ionascu2015, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.5281/zenodo.10807535"
+    summary: "在假设给定解存在的前提下，用 gcd 恒等式消去 z，把三变量方程降为 x、y 的必要充分关系。"
+    contributions: ["Theorem 1 给出 4xy-(x+y)p=gcd(y,p)gcd(xy,x+y)。", "推得 z=xyp/[gcd(y,p)gcd(xy,x+y)]。", "在有序分母下明确 Type I/II 的 p-整除结构。"]
+    evidence: ["已核对 Integers 21 (2021) A24 的摘要、Lemmas 1-5 与 Theorem 1。", "论文在引言明确声明 does not show that a solution exists。"]
+    limits: "这是存在解后的结构刻画，不是存在性证明。"
+
+  - kind: paper
+    citation_key: lopez2022
+    title: "Structure and form of the solutions of the Erdos-Straus conjecture"
+    authors: ["Miguel Angel Lopez"]
+    year: 2022
+    first_publication_date: "2022-06-21"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/2206.10319"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [solution-structure, gcd, explicit-solutions]
+    references: [monks_velingker2008, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2206.10319"
+    summary: "不按剩余类而按解形状分类，重点研究 (du,dv,duv)、gcd(x,y,z)=x 和两个分母相等的情形。"
+    contributions: ["刻画 (du,dv,duv) 结构解。", "为 p=1009 等不易由简单同余式覆盖的例子给出结构解释。", "分类分母相等的解。"]
+    evidence: ["已核对 arXiv v4 摘要、引言和主要分类命题。", "v1 首发 2022，当前文本为 2024-08-20 的 v4。"]
+    limits: "结构类别的并集未被证明覆盖所有素数。"
+
+  - kind: paper
+    citation_key: bradford2024
+    title: "Elementary Patterns from the Erdos-Straus Conjecture"
+    authors: ["Kyle Bradford"]
+    year: 2025
+    first_publication_date: "2024-03-24"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://math.colgate.edu/~integers/z54/z54.pdf"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [divisor-parametrization, one-variable-reduction, type-I-II]
+    references: [bradford2021, elsholtz_tao2013]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.5281/zenodo.15755958"
+    arxiv: "2403.16047"
+    summary: "把每个素数的解与最小分母 x 的两类除子同余条件建立一一对应；全素数满足某一条件仍作为 conjecture 提出。"
+    contributions: ["Type I 条件使用 d|x^2 且 d=-px mod(4x-p)。", "Type II 条件使用 d|x^2、d<=x 且 d=-x mod(4x-p)。", "从满足条件的 (x,d) 显式恢复 y,z，并证明反向对应。"]
+    evidence: ["已核对 arXiv v1 和 Integers 25 (2025) A54 出版版；标题由 Elemental 改为 Elementary。", "出版版是 10 页同行评议文章，arXiv 首发日期保留在时间线。"]
+    limits: "对应定理是完整的，但“每个 prime 都存在这种 x,d”就是原猜想的等价重述，仍未证明。"
+
+  - kind: paper
+    citation_key: lopez2024
+    title: "A Complete Congruence System for the Erdos-Straus Conjecture"
+    authors: ["Miguel Angel Lopez"]
+    year: 2024
+    first_publication_date: "2024-04-02"
+    publication_status: preprint
+    assessment_status: heuristic
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/2404.01508"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [type-A-B, congruence-system, conjectural-cover]
+    references: [monks_velingker2008, elsholtz_tao2013, lopez2022]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2404.01508"
+    summary: "定义 Type A/B 结构解及相应同余系统，并猜想其覆盖全部素数。题名中的 Complete 是拟议系统的名称，不表示已完成全覆盖证明。"
+    contributions: ["把 Type A/B 与既有 Type II 关系化。", "为每类解关联一般多项式和同余条件。", "提出每个素数至少有一个 Type A 或 B 解的猜想。"]
+    evidence: ["已核对 arXiv v3 摘要和主要定义。", "摘要多次明确使用 we conjecture，故 assessment 为 heuristic。"]
+    limits: "缺少对全部素数的覆盖证明；不能按题名写作 complete proof。"
+
+  - kind: paper
+    citation_key: mballa2025
+    title: "Partial Resolution of the Erdos-Straus, Sierpinski, and Generalized Erdos-Straus Conjectures Using New Analytical Formulas"
+    authors: ["Philemon Urbain Mballa"]
+    year: 2025
+    first_publication_date: "2025-02-28"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/2502.20935"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [perfect-square, equivalent-formulation, generalization]
+    references: [lopez2024]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2502.20935"
+    summary: "把剩余两分母视为二次方程根，以判别式为完全平方给出等价条件和条件性公式。"
+    contributions: ["Theorems 1-2 给出可构造分解的充分条件。", "将一般分子 a 的问题转化为某个二次判别式取平方。", "明确把全称平方存在性另列为 Conjectures 1-4。"]
+    evidence: ["已核对 arXiv v2 主定理、判别式推导和第 9 节 conjectures。", "arXiv 页面确认 v1 于 2025-02-28，v2 于 2026-02-16。"]
+    limits: "其强平方条件被作者证明与原猜想等价，因此不是难度降低后的无条件证明。"
+
+  - kind: paper
+    citation_key: schuh2025
+    title: "The Erdos-Straus Conjecture and Pythagorean Primes"
+    authors: ["Bernd R. Schuh"]
+    year: 2025
+    first_publication_date: "2025-02-26"
+    publication_status: preprint
+    assessment_status: heuristic
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/2503.11672"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [pythagorean-primes, type-I-II, algorithm]
+    references: [elsholtz_tao2013, bradford2021]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2503.11672"
+    summary: "把 p=1 mod4（文中称 Pythagorean primes）分成两种解型，提出两个参数表示猜想并给出搜索算法。"
+    contributions: ["Theorem 1 把存在性等价为两类辅助丢番图方程。", "提出所有此类素数满足两种参数限制的独立猜想。", "给出实际求取参数的算法框架。"]
+    evidence: ["已核对摘要、Theorem 1 和算法章节。", "arXiv 将其分类在 math.GM；两个全覆盖陈述明确是 empirical conjectures。"]
+    limits: "算法有效的经验表现不能替代两个限制对所有素数成立的证明。"
+
+  - kind: paper
+    citation_key: ghermoul2025
+    title: "Exact Polynomial Families Solving the Erdos-Straus Equation"
+    authors: ["Bilal Ghermoul"]
+    year: 2025
+    first_publication_date: "2025-08-10"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: studied
+    language: en
+    source_pointer: "https://arxiv.org/abs/2508.07383"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [polynomial-family, computation, conjectural-cover]
+    references: [bello2012, salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2508.07383"
+    summary: "构造四个多变量多项式族；前三族的每个输出有显式分解，但四族合并覆盖所有 1 mod4 整数仍是猜想。"
+    contributions: ["证明前三个族输出的分解恒等式。", "报告 q<=10^9 的联合覆盖和单个族对素数到至少 1.2*10^10 的覆盖。", "附 Mathematica 实现。"]
+    evidence: ["已核对 arXiv 摘要、公式 (4)-(7) 与多项式构造章节。", "论文引言把若干历史归属写得过于宽泛；本库不沿用其 Tao entropy 等表述。"]
+    limits: "联合覆盖是计算支持的 conjecture；计算尚未独立全量复现。"
+
+  - kind: paper
+    citation_key: mihnea_dumitru2025
+    title: "Further verification and empirical evidence for the Erdos-Straus conjecture"
+    authors: ["Spiridon Mihnea", "Bogdan C. Dumitru"]
+    year: 2025
+    first_publication_date: "2025-08-29"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2509.00128"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [computation, modular-sieve, solution-counting, reproducibility]
+    references: [salez2014, elsholtz_tao2013, bradford2024]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2509.00128"
+    summary: "扩展 Salez 的模过滤器，报告验证到 10^18，并公开 Python/C++/GMP 代码；同时采样解计数函数。"
+    contributions: ["加入 S29 得到 G8=25878772920 与 |R8|=2101514。", "把搜索拆成至 k=38641709 的批次，并报告约两周运行。", "公开代码与候选处理说明。"]
+    evidence: ["已核对 arXiv 原文 Section 2、参数、边界和实现说明。", "Pomerance–Weingartner 期刊论文提及该计算，但这不是独立重跑。"]
+    limits: "本库未完成 10^18 全量复现；最高上界必须写作公开报告。"
+
+  - kind: paper
+    citation_key: dyachenko2025
+    title: "Constructive Proofs of the Erdos-Straus Conjecture for Prime Numbers with P congruent to 1 modulo 4"
+    authors: ["E. Dyachenko"]
+    year: 2025
+    first_publication_date: "2025-11-07"
+    publication_status: preprint
+    assessment_status: claim_with_gap
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2511.07465"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [proof-claim, affine-lattice, critical-gap]
+    references: [elsholtz_tao2013, bradford2021]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2511.07465"
+    summary: "声称用 ED2 仿射格构造证明每个 P=1 mod4 都有解；关键矩形命中命题的证明存在坐标耦合错误，因此当前不能视为完整证明。"
+    contributions: ["给出 ED1/ED2 参数化和大量代数等价式。", "Theorem 9.21 声称无条件构造全体困难素数。", "设计仿射格、窗口、卷积与反卷积算法。"]
+    evidence: ["已核对 Theorem 9.21、Lemmas 9.22-9.24、Proposition 9.25 及 Appendix D。", "Proposition 9.25 独立选择 u*、v* 的同余代表，却令 p=p0+m(d',d') 用同一个 m 同时命中两坐标；由 u 坐标确定的 m 并不保证 v 坐标等于独立选定的 v*。", "Lemma 9.24 把对角循环子群误等同于所有同时固定模 d' 的格点；一般缺少该等号。"]
+    limits: "该缺口位于 Theorem 9.21 的存在性主链上；计算示例不能修补全称量词。"
+
+  - kind: paper
+    citation_key: pomerance_weingartner2026
+    title: "Exceptions to the Erdos-Straus-Schinzel conjecture"
+    authors: ["Carl Pomerance", "Andreas Weingartner"]
+    year: 2026
+    first_publication_date: "2025-11-20"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://doi.org/10.1007/s11139-025-01312-2"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [exceptional-set, generalization, analytic-number-theory]
+    references: [vaughan1970, elsholtz_tao2013, elsholtz_planitzer2020]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.1007/s11139-025-01312-2"
+    arxiv: "2511.16817"
+    summary: "研究一般固定分子 m 的 Erdős–Straus–Schinzel 猜想，证明若全称阈值 n_m 存在则必须非常大，并把 Vaughan 的例外集界显式化到 m 依赖。"
+    contributions: ["Theorem 1.1 给出存在不可表示 n>exp(m^(1/3-epsilon))。", "Theorem 1.2 对 m>=6.52*10^9 给出 p in (m^2,2m^2) 的显式例外。", "Theorem 1.3 给出带 phi(m) 依赖的例外集上界。", "推广到 j 项单位分数。"]
+    evidence: ["已核对 arXiv v2 的 Theorems 1.1-1.4 和 Type I/II 参数化。", "Ramanujan Journal 69, article 31 于 2026-01-14 在线发表。"]
+    limits: "该文说明一般 m 的阈值不能太小，不是 m=4 的反例或完整证明。"
+
+  - kind: paper
+    citation_key: bradford2026
+    title: "A solution to the Straus Erdos conjecture"
+    authors: ["Kyle Bradford"]
+    year: 2026
+    first_publication_date: "2026-02-12"
+    publication_status: preprint
+    assessment_status: claim_with_gap
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2602.11774"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [proof-claim, covering-system, critical-gap]
+    references: [bradford2021, bradford2024]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2602.11774"
+    summary: "声称用 Type I/II 同余类覆盖全部素数，但正文没有证明产生的无限同余类族确实覆盖所有 p=1 mod4。"
+    contributions: ["从既有一变量公式为 Type I 和 Type II 推导可解同余类族。", "列出 k=0 时若干具体剩余类和分解恒等式。"]
+    evidence: ["已核对全文：在第 4 页写道 The last thing that we must show is that this is a covering system。", "其后仅观察 5,13,17,29 是前四个 1 mod4 素数，随即进入参考文献，没有覆盖性引理或归纳。"]
+    limits: "缺失命题正是从若干充分同余类到全部困难素数的主链，故不能视为证明。"
+
+  - kind: paper
+    citation_key: mballa2026
+    title: "A unified parametric approach to the Erdos-Straus conjecture with explicit solutions for a set of integers of natural density one"
+    authors: ["Philemon Urbain Mballa"]
+    year: 2026
+    first_publication_date: "2026-02-20"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2602.20036"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [density-one, symmetric-solutions, divisor-condition]
+    references: [mballa2025, vaughan1970, mihnea_dumitru2025]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2602.20036"
+    summary: "用判别式函数构造 y=z 的对称解，并证明在 n=1 mod4 中含有 3 mod4 素因子的集合相对密度为 1。"
+    contributions: ["Proposition 3 为 0,2,3 mod4 给出显式对称解。", "Proposition 4 证明若 n=1 mod4 有除子 b=3 mod4，则有显式对称解。", "用 Euler 乘积与 Tauber 型结论说明不含此类素因子的集合密度为零。"]
+    evidence: ["已核对 Propositions 3-4、集合 A/B 定义和密度证明。", "条件 b|n 可直接验证产生整数 t=q(q+1)/2，其中 q=n/b=3 mod4。"]
+    limits: "自然密度 1 仍允许无限例外；尤其每个 p=1 mod4 的素数都不含 3 mod4 素因子，故核心素数全部位于该构造的零密度补集。结果与 Vaughan 更强的例外集估计是不同层面的显式构造。"
+
+  - kind: paper
+    citation_key: chamberland2026
+    title: "The Erdos-Straus Conjecture and the Structure of Primes"
+    authors: ["Marc Chamberland"]
+    year: 2026
+    first_publication_date: "2026-04-03"
+    publication_status: peer_reviewed
+    assessment_status: verified
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://doi.org/10.5281/zenodo.19403738"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [type-II, prime-structure, equivalence]
+    references: [bradford2021, bradford2024, elsholtz_tao2013, schinzel2000, webb1970, yang1982]
+    visibility: public
+    last_checked: "2026-07-23"
+    doi: "10.5281/zenodo.19403738"
+    summary: "给出素数 p 存在 Type II 解的一个简洁等价刻画，并把全素数满足该形状作为新猜想提出。"
+    contributions: ["Theorem 1: Type II 解存在当且仅当 p=qr-4s1s2，其中 q=3 mod4 且 s1,s2 均整除 (q+1)/4。", "给出双向显式分母公式。", "分析小 q 覆盖的素数形状并展示 p=193、1009 等例子。"]
+    evidence: ["已核对 Integers 26 (2026) A42 全文、Theorem 1 双向证明和 Section 3。", "文章于 2025-10-22 收稿、2026-02-25 接收、2026-04-03 发表。"]
+    limits: "“所有素数都可写成该形状”在摘要和结尾中是 conjecture，不是 Theorem 1 的组成部分。"
+
+  - kind: paper
+    citation_key: bhattacharjee2026
+    title: "Erdos-Straus Decompositions"
+    authors: ["Deep Bhattacharjee"]
+    year: 2026
+    first_publication_date: "2026-05-25"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: C
+    reading_status: metadata_verified
+    language: en
+    source_pointer: "https://www.researchgate.net/publication/405220221_Erdos--Straus_Decompositions"
+    source_acquired: false
+    source_verified_against_original: false
+    source_verification_method: none
+    description_source: discovery_record
+    description_last_audit: none
+    topics: [factor-pair, finite-certificate, gray-literature]
+    references: [bradford2021, chamberland2026, salez2014, mihnea_dumitru2025]
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "灰色预印本，组织首分母的完全因子对证书和 residual-numerator 坐标，报告独立生成并校验到 10^7 的有限证书。"
+    contributions: ["把固定 x 后的两项单位分数问题改写为因子对证书。", "报告覆盖 10^7 内全部素数，并显式隔离尚未证明的全素数除子命题。"]
+    evidence: ["元数据与摘要来自作者公开 ResearchGate 页面；当前未将全文作为本地核查来源。", "有限上界远低于已报告的 10^18，其价值主要是可审计接口。"]
+    limits: "非同行评议；计算证书和代码尚未在本库独立运行。"
+
+  - kind: paper
+    citation_key: ventas2026
+    title: "A ceiling continued fraction approach to the Erdos-Straus conjecture: Heuristic finiteness of counterexamples"
+    authors: ["Andres Ventas"]
+    year: 2026
+    first_publication_date: "2026-05-06"
+    publication_status: preprint
+    assessment_status: heuristic
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2605.04551"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [continued-fractions, heuristic, computation]
+    references: [vaughan1970, salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2605.04551"
+    summary: "以 ceiling continued fractions 和移位整数 p+i 的除子结构构造解，并在明确的独立性随机模型下论证潜在反例启发式上有限。"
+    contributions: ["证明若外部 source 含特定 3 mod4 除子则可构造分解。", "建立 FCT 搜索网格。", "在约 10^17、10^52、10^131 附近各类素数样本中报告极小深度成功。"]
+    evidence: ["已核对 Theorems 2.1-2.6、Section 3 概率模型和 Section 4 Borel–Cantelli 说明。", "正文明确说概率解释是 heuristic，并假设 source 与除子事件近似独立。"]
+    limits: "Borel–Cantelli 只能应用于所建随机模型，不能把模型概率直接升级为确定性数论证明。"
+
+  - kind: paper
+    citation_key: xu2026
+    title: "Congruence Classes of Supporting the Erdos-Straus Conjecture I: Tame Solutions"
+    authors: ["Xiaoping Xu"]
+    year: 2026
+    first_publication_date: "2026-05-22"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2605.23601"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [tame-wild, congruence-classes, computation]
+    references: [elsholtz_tao2013, salez2014]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2605.23601"
+    summary: "对 p=24m+1 定义 tame 解：后两个分母分解自 (6m+k)(24m+1)，并用同余类参数化大量 tame 解。"
+    contributions: ["建立 tame/wild 的结构分类。", "报告 m<=30000 的 7185 个相关素数中只有 9 个 wild。", "所推导同余类覆盖 m<=2000 样本的 586 个 tame primes。"]
+    evidence: ["已核对摘要、tame 定义、主要同余类定理和计算表。", "有限样本的 9 个 wild 不表示只存在 9 个全局例外。"]
+    limits: "论文第一部只处理 tame 解；wild 集合的全局密度或消失尚未证明。"
+
+  - kind: paper
+    citation_key: bello2026
+    title: "A Divisor Parametrization for the Erdos-Straus Conjecture"
+    authors: ["Manuel Bello-Hernandez", "Manuel Benito", "Emilio Fernandez"]
+    year: 2026
+    first_publication_date: "2026-06-09"
+    publication_status: preprint
+    assessment_status: computationally_reported
+    corpus_tier: A
+    reading_status: verified
+    language: en
+    source_pointer: "https://arxiv.org/abs/2606.10922"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [divisor-parametrization, modular-sieve, rigidity]
+    references: [bello2012, bradford2021, bradford2024, ventas2026]
+    visibility: public
+    last_checked: "2026-07-23"
+    arxiv: "2606.10922"
+    summary: "定义 fab(n,a,b) 除子函数并证明其参数完整恢复一类分解，连接 Type I/II、平移不变模筛和早期三次曲面。"
+    contributions: ["Theorem 5 证明 divisor identity 的完整性。", "Theorem 8 证明固定有限参数族不能形成覆盖所有 p=1 mod4 的有限同余覆盖。", "Proposition 20 给出平移不变性和模筛。", "报告所有 p=1 mod4、p<10^14 在 1<=a,b<=11 窗口被检测。"]
+    evidence: ["已核对摘要、Theorems 5/8、Proposition 20 与计算备注。", "作者是 Bello-Hernandez、Benito、Fernandez，不是 Bradford。"]
+    limits: "10^14 小窗口是计算现象；论文明确给出需要更大参数的合数，未证明对所有素数保持有界。"
