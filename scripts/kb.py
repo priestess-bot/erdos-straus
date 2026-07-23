@@ -391,6 +391,34 @@ def command_search(args: argparse.Namespace) -> int:
     parameters.append(args.limit)
     try:
         rows = connection.execute(query, parameters).fetchall()
+        if not rows:
+            # unicode61 does not segment continuous CJK text, so retain a literal fallback.
+            fallback_conditions = [
+                "(instr(documents.title, ?) > 0 OR instr(documents.authors, ?) > 0 "
+                "OR instr(documents.topics, ?) > 0 OR instr(documents.body, ?) > 0)"
+            ]
+            fallback_parameters: list[Any] = [args.query] * 4
+            if args.type:
+                fallback_conditions.append("documents.kind = ?")
+                fallback_parameters.append(args.type)
+            if args.year_from is not None:
+                fallback_conditions.append("documents.year >= ?")
+                fallback_parameters.append(args.year_from)
+            if args.year_to is not None:
+                fallback_conditions.append("documents.year <= ?")
+                fallback_parameters.append(args.year_to)
+            if args.tag:
+                fallback_conditions.append("documents.topics LIKE ?")
+                fallback_parameters.append(f"%{args.tag}%")
+            fallback_query = f"""
+                SELECT documents.*, NULL AS score, '' AS excerpt
+                FROM documents
+                WHERE {' AND '.join(fallback_conditions)}
+                ORDER BY documents.year, documents.id
+                LIMIT ?
+            """
+            fallback_parameters.append(args.limit)
+            rows = connection.execute(fallback_query, fallback_parameters).fetchall()
     except sqlite3.OperationalError as exc:
         print(f"Invalid FTS query: {exc}", file=sys.stderr)
         return 2

@@ -18,6 +18,9 @@
 ## 1965
 
 - 1965-01-01 · [On the Diophantine Equation 4/n = 1/x + 1/y + 1/z](../papers/yamamoto1965.md) — Koichi Yamamoto; 出版年 1965; `peer_reviewed` / `unverified`
+## 1969
+
+- 1969-01-01 · [Diophantine Equations](../papers/mordell1969.md) — Louis J. Mordell; 出版年 1969; `book` / `verified_with_caveat`
 ## 1970
 
 - 1970-01-01 · [On 4/n = 1/x + 1/y + 1/z](../papers/webb1970.md) — William A. Webb; 出版年 1970; `peer_reviewed` / `unverified`

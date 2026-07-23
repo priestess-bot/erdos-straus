@@ -1,4 +1,7 @@
 import importlib.util
+import argparse
+import contextlib
+import io
 import sys
 import tempfile
 import unittest
@@ -31,6 +34,21 @@ class KnowledgeBaseTests(unittest.TestCase):
     def test_overview_has_no_private_citation_markers(self):
         text = (ROOT / "研究进展综述.md").read_text(encoding="utf-8")
         self.assertNotIn("", text)
+
+    def test_chinese_substring_search_fallback(self):
+        output = io.StringIO()
+        args = argparse.Namespace(
+            query="研究路线",
+            type="concept",
+            year_from=None,
+            year_to=None,
+            tag=None,
+            limit=20,
+        )
+        with contextlib.redirect_stdout(output):
+            result = kb.command_search(args)
+        self.assertEqual(result, 0)
+        self.assertIn("research-directions-and-proof-gap", output.getvalue())
 
 
 if __name__ == "__main__":

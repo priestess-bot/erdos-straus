@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前截止日为 2026-07-23。语料包含 50 张论文卡、17 张主张卡和 9 张概念卡；
+当前截止日为 2026-07-23。语料包含 51 张论文卡、18 张主张卡和 10 张概念卡；
 其中被撤回论文和存在关键证明缺口的预印本仍会收录，但用独立状态标出。
 
 ## 快速使用
@@ -22,6 +22,9 @@ python scripts/kb.py status
 - `index/citation-graph.mmd`：论文引用图；
 - `index/catalog.json`：供其他工具消费的结构化目录；
 - `index/kb.sqlite`：带 FTS5 全文检索的 SQLite 数据库。
+
+研究方法、已确立结论和逐点证明缺口的导航见
+[`concepts/research-directions-and-proof-gap.md`](concepts/research-directions-and-proof-gap.md)。
 
 常用检索过滤器：
 

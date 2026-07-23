@@ -54,3 +54,16 @@
   已确立进展。
 - 7 月 10 日的 Fractal Correction Engine 上传是 3 月 Zenodo 概念记录的后续版本；
   作者明确声明只作有限统计研究、不声称证明，故归为背景材料。
+
+## 2026-07-23：路线综合复核
+
+- 以 Elsholtz--Tao 2013 的 Table 1 逐项复核早期计算范围，并保留该表对
+  Franceschine 二手转述和未发表 Elsholtz--Roth 计算的警告；计算史不再写成单调的
+  独立纪录链。
+- 用 Salez 2014 与 Bradford 2021/2025、Chamberland 2026、Bello-Hernandez 等
+  2026 的参考链补入 Mordell 1969 专著，定位为 Rosati 型经典公式的二手书目枢纽，
+  不作为原始优先权或未核对定理的依据。
+- 对截至截止日的 arXiv 题名检索作抽查，Xu、Ventas、Bradford 2026 和 Bello-Hernandez
+  等 2026 均已在现有语料；未发现需要新增且已完成定理审查的直接研究工作。
+- 新建“研究路线总图与逐点证明缺口”概念卡，将同余构造、解析例外集、Type I/II 与
+  除子参数、解计数、计算、几何和一般化问题的结论范围分开记录。
