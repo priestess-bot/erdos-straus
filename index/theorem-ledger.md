@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 236 |
+| 数学状态 | `computationally_reproduced` | 237 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 183 |
+| 数学状态 | `established` | 184 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 9 |
+| 证明来源 | `computational_reproduction` | 10 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 4 |
+| 证明来源 | `repository_derivation` | 5 |
 | 证明来源 | `unspecified` | 432 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 10 |
+| 审阅状态 | `internal_review` | 12 |
 | 审阅状态 | `unspecified` | 432 |
 
 ## 全部主张
@@ -220,6 +220,7 @@
 | [十万前缀的完整二幂p减一桥因子对剖面](../claims/type-I-dyadic-pminusone-profile-100k.md) (`type-I-dyadic-pminusone-profile-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [十万前缀二幂p减一残余的低B补集剖面](../claims/type-I-dyadic-residual-low-b-complement-100k.md) (`type-I-dyadic-residual-low-b-complement-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [深层 AC 条件逃逸进程的统一固定缺口 Type I 边界](../claims/type-I-escape-affine-boundary.md) (`type-I-escape-affine-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-25 |
+| [偶二次外源严格提升精确落入 Type I 正规形终端桥](../claims/type-I-even-external-source-normal-bridge.md) (`type-I-even-external-source-normal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [五亿偶桥支撑三或平移外源的终止混合闭合](../claims/type-I-even-source-support-external-hybrid-500m.md) (`type-I-even-source-support-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [十六桥模板的CRT无穷源侧逃逸](../claims/type-I-fixed-bridge-menu-crt-escape.md) (`type-I-fixed-bridge-menu-crt-escape`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -354,6 +355,7 @@
 | [H19 十亿残余的小 r 或 p-1 缩放严格递降闭合](../claims/type-II-h19-hybrid-small-r-p-minus-one-descent.md) (`type-II-h19-hybrid-small-r-p-minus-one-descent`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19 半径六失败支路的单、双素因子 mixed 选择器边界](../claims/type-II-h19-mixed-only-prime-factor-boundary.md) (`type-II-h19-mixed-only-prime-factor-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19 十亿残余的半径六 AC 或 mixed-factor 严格递降闭合](../claims/type-II-h19-mixed-short-or-descent.md) (`type-II-h19-mixed-short-or-descent`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
+| [H19 十亿残余的混合终端选择器有限闭合](../claims/type-II-h19-mixed-terminal-selector-closure.md) (`type-II-h19-mixed-terminal-selector-closure`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [H19 十亿残余的二次外部源与偶源溢出分流](../claims/type-II-h19-overflow-hybrid-split.md) (`type-II-h19-overflow-hybrid-split`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-26 |
 | [H19 高溢出偶源尾的同参数外部源分流](../claims/type-II-h19-overflow-same-tail-deflation-profile.md) (`type-II-h19-overflow-same-tail-deflation-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-26 |
 | [H19 固定 r 残余的 p-1 非倍数缩放源闭合](../claims/type-II-h19-p-minus-one-scaled-source-descent.md) (`type-II-h19-p-minus-one-scaled-source-descent`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
