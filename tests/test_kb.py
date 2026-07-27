@@ -30,6 +30,39 @@ class KnowledgeBaseTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             outputs = kb.build_all(documents, Path(directory))
             self.assertTrue(all(path.exists() for path in outputs))
+            ledger = Path(directory) / "theorem-ledger.md"
+            self.assertIn("# 主张证据账本", ledger.read_text(encoding="utf-8"))
+
+    def test_optional_claim_evidence_fields_are_controlled(self):
+        documents = list(kb.iter_documents())
+        index = next(i for i, document in enumerate(documents) if document.kind == "claim")
+        original = documents[index]
+        documents[index] = kb.Document(
+            path=original.path,
+            meta={
+                **original.meta,
+                "proof_provenance": "repository_derivation",
+                "review_status": "independent_review",
+            },
+            body=original.body,
+        )
+        self.assertEqual(kb.validate_documents(documents), [])
+        documents[index] = kb.Document(
+            path=original.path,
+            meta={**original.meta, "proof_provenance": "invented", "review_status": "peer-ish"},
+            body=original.body,
+        )
+        errors = kb.validate_documents(documents)
+        self.assertTrue(any("proof_provenance='invented' is not controlled" in error for error in errors))
+        self.assertTrue(any("review_status='peer-ish' is not controlled" in error for error in errors))
+
+    def test_legacy_claims_get_explicit_unspecified_evidence_status(self):
+        claim = next(document for document in kb.iter_documents() if document.kind == "claim")
+        entry = kb.catalog_entry(claim)
+        expected_provenance = claim.meta.get("proof_provenance") or "unspecified"
+        expected_review = claim.meta.get("review_status") or "unspecified"
+        self.assertEqual(entry["proof_provenance"], expected_provenance)
+        self.assertEqual(entry["review_status"], expected_review)
 
     def test_overview_has_no_private_citation_markers(self):
         text = (ROOT / "研究进展综述.md").read_text(encoding="utf-8")

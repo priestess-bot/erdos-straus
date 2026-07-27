@@ -1,0 +1,62 @@
+name: Research knowledge base
+
+'on':
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  focused-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install verification dependencies
+        run: python -m pip install --disable-pip-version-check PyYAML sympy ruff
+
+      - name: Validate the knowledge base
+        run: python scripts/kb.py validate
+
+      - name: Run focused exact tests
+        run: |
+          python -m unittest \
+            tests.test_kb \
+            tests.test_type_ii_pure_new_canonical_fan_sieve \
+            tests.test_type_ii_pure_new_exception_dynamic_selector \
+            tests.test_type_ii_pure_new_exception_selector_counterexample_h20 \
+            tests.test_type_ii_tail_external_ac2_closure \
+            tests.test_h19_k23_unbridged_pressure_selector_subrays \
+            tests.test_h19_k23_unbridged_pressure_full_low_defect_rays
+
+      - name: Lint the maintained verification surface
+        run: |
+          ruff check \
+            scripts/kb.py \
+            reproductions/type_ii_pure_new_canonical_fan_sieve.py \
+            reproductions/type_ii_pure_new_exception_dynamic_selector.py \
+            reproductions/type_ii_pure_new_exception_selector_counterexample_h20.py \
+            reproductions/type_ii_tail_external_ac2_closure.py \
+            reproductions/h19_k23_unbridged_pressure_selector_subrays.py \
+            reproductions/h19_k23_unbridged_pressure_full_low_defect_rays.py \
+            tests/test_kb.py \
+            tests/test_type_ii_pure_new_canonical_fan_sieve.py \
+            tests/test_type_ii_pure_new_exception_dynamic_selector.py \
+            tests/test_type_ii_pure_new_exception_selector_counterexample_h20.py \
+            tests/test_type_ii_tail_external_ac2_closure.py \
+            tests/test_h19_k23_unbridged_pressure_selector_subrays.py \
+            tests/test_h19_k23_unbridged_pressure_full_low_defect_rays.py
+
+      - name: Rebuild generated indexes
+        run: |
+          python scripts/kb.py build
+          git diff --exit-code -- \
+            index/timeline.md \
+            index/citation-graph.mmd \
+            index/theorem-ledger.md

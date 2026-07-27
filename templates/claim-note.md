@@ -4,6 +4,8 @@ claim_id: claim-short-id
 title: "可检索的主张标题"
 statement: "包含完整量词与适用范围的主张。"
 claim_status: established
+proof_provenance: unspecified
+review_status: unreviewed
 topics: []
 sources:
   - paper: authorYYYYshort

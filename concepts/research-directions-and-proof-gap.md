@@ -18,6 +18,12 @@ used_by:
 - chamberland-type-II-equivalence
 - historical-computation-ladder
 - no-brauer-manin-disproof
+- type-II-pure-new-canonical-fan-superlog-tail
+- dynamic-low-defect-tail-or-external-exit-selector
+- type-II-pure-new-exception-dynamic-selector-1m-h100
+- type-II-pure-new-exception-dynamic-selector-10m-h100
+- type-II-pure-new-exception-selector-counterexample-1m-h20
+- h19-k23-unbridged-pressure-full-low-defect-rays
 sources:
 - mordell1969
 - rosati1954
@@ -30,7 +36,7 @@ sources:
 - chamberland2026
 - pomerance_weingartner2026
 visibility: public
-last_checked: '2026-07-23'
+last_checked: '2026-07-27'
 ---
 
 # 研究路线总图与逐点证明缺口
@@ -44,8 +50,8 @@ last_checked: '2026-07-23'
 | 路线 | 已确立的主要结论 | 对猜想仍缺少的步骤 |
 |---|---|---|
 | 经典恒等式、同余类与多项式族 | 将问题约化到 \(p\equiv1\pmod{24}\)；固定多项式机制能覆盖非平方原始类。 | 证明所有核心素数落入某个可解类，或找到不受平方类障碍限制的统一构造。 |
-| 解析筛法与例外集 | Vaughan 给出密度一，后续筛法和一般化结果控制例外集。 | 从“例外极稀”推出“例外为空”。 |
-| Type I/II、gcd 与除子参数 | 对素数解的整除型态给出穷尽分类；多种除子条件可与解互相恢复。 | 对每个核心素数证明至少存在一个满足条件的除子或参数。 |
+| 解析筛法与例外集 | Vaughan 给出密度一；本库进一步证明任意固定 \(\alpha>0\) 时，\(H=(\log\log X)^\alpha\) 的纯新规范扇失败集为 \(X\exp[-\Omega_\alpha((\log\log X)\log\log\log X)]\)。 | 从“例外极稀”推出“例外为空”，或为每个真实例外构造统一出口。 |
+| Type I/II、gcd 与除子参数 | 对素数解的整除型态给出穷尽分类；T/E 二分选择器在 \(E_{\mathrm{new}}(10^7,100)\) 有 7,056 个有限命中、在两条 H19-k23 压力进程上成立，但已被 \(E_{\mathrm{new}}(10^6,20)\) 的三个完整反例否定；三点各有 \(\mathrm{AC}_2\) 终端证书。 | 定义并检验状态依赖 AC 终端分支，使它与纯新筛和 T/E 严格递降形成正确的三分接口。 |
 | 解计数与枚举算法 | 平均解数很大，并能在标准分解模型下较快枚举全部解。 | 平均丰富或快速枚举都不排除某个输入没有解。 |
 | 模筛与大规模计算 | 公开报告已把有限检查推进到 \(10^{18}\)，代码与筛结构可审查。 | 用有限上界替代无穷量词，或得到独立的全量复现。 |
 | log K3 与 Brauer-Manin | 自然 Brauer 类不制造对所需整点的该类障碍，并解释局部二次条件。 | 排除一种障碍不是构造整点，更不是局部整体原理。 |

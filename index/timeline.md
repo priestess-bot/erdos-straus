@@ -56,6 +56,9 @@
 ## 2000
 
 - 2000-01-01 · [On sums of three unit fractions with polynomial denominators](../papers/schinzel2000.md) — Andrzej Schinzel; 出版年 2000; `peer_reviewed` / `unverified`
+## 2006
+
+- 2006-11-16 · [Multiplicative Number Theory I: Classical Theory](../papers/montgomery_vaughan2007.md) — Hugh L. Montgomery, Robert C. Vaughan; 出版年 2006; `book` / `verified`
 ## 2008
 
 - 2008-09-23 · [On the Erdos-Straus conjecture: Properties of solutions to its underlying diophantine equation](../papers/monks_velingker2008.md) — Maria Monks, Ashwin Velingker; 出版年 2008; `preprint` / `verified_with_caveat`

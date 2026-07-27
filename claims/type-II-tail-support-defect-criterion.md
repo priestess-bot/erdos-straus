@@ -15,7 +15,7 @@ sources:
   locator: Proposition 2
   role: Type-II-certificate-context
 visibility: public
-last_checked: '2026-07-26'
+last_checked: '2026-07-27'
 ---
 
 # 普通 Type II 双尾选择器的支持度缺陷判据
@@ -67,12 +67,47 @@ m=4q-1,\qquad p=4q(u-1)+1,\qquad x=qu. \tag{1}
 (k) 个集合 (5) 的乘积集中，并满足大小界 (d\le x)。这给出一个有限、精确的
 乘积集覆盖问题，而不是经验性因子标签。
 
+## 动态尺度的因子选择形式
+
+在动态选择器中基底随尺度取为
+
+\[
+\mathcal P(q)=\operatorname{Supp}(q),\qquad
+q\mid\frac{p-1}{4}.
+\]
+
+令 \(u=(p-1)/(4q)+1\)，并设
+
+\[
+D_q=\prod_{\ell\mid q}\ell^{2v_\ell(qu)}.
+\]
+
+则 \(\delta_{\mathcal P(q)}(p,4q-1)\le2\) 当且仅当存在 \(t\in\{0,1,2\}\)、
+两两不同且不整除 \(q\) 的素数 \(r_1,\ldots,r_t\mid u\)、指数
+\(1\le e_i\le2v_{r_i}(u)\)，以及 \(b\mid D_q\)，使
+
+\[
+d=b\prod_{i=1}^t r_i^{e_i}\le qu,
+\qquad
+4d\equiv-u\pmod{4q-1}. \tag{6}
+\]
+
+这里最后一个同余与 (3) 完全等价：由 \(4q\equiv1\pmod{4q-1}\)，有
+\(4x=4qu\equiv u\)，故 \(d\equiv-x\) 当且仅当 \(4d\equiv-u\)。其余等价性只是
+把 \((qu)^2\) 的素因子按是否属于 \(\operatorname{Supp}(q)\) 分开；所有非基底素数
+必来自 \(u\)。
+
+因此统一 `Selector-Enew` 的 T 分支缺口不是“是否存在某个未说明的除子”，而是一个明确的
+动态因子选择引理：对每个真实筛例外，选取 \(q\mid(p-1)/4\)，使 (6) 在至多两个
+\(u\) 的非基底素因子下可解。千万范围中最小缺陷解已需要 \(q=714\)，所以任何证明若
+预先把 \(q\) 限制为固定有限菜单，就不能代表当前动态接口。
+
 ## 与当前梯的关系
 
 H19-k23 的 (m=27) 替代尾梯正是在阶段依赖的 (B) 下得到
 
 \[
-\delta_B\le2 \tag{6}
+\delta_B\le2 \tag{7}
 \]
 
 的 2,710 条有限闭合。要把这种模式升级为证明，需要一个跨阶段引理：当某个当前缺口的

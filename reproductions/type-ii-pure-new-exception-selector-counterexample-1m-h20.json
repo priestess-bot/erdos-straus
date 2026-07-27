@@ -1,0 +1,283 @@
+{
+  "arithmetic": "independent SymPy factorization and direct complete divisor enumeration; this script does not import the SPF-based selector implementation",
+  "scope": {
+    "prime_limit": 1000000,
+    "shift_bound": 20,
+    "max_support_refuted": 2
+  },
+  "selector_consequence": "Each listed prime lies in E_new(1000000,20), has no ordinary Type II tail divisor at any scale, and has no complete-square external exit at any scale. Thus it refutes the current universal Selector-Enew.",
+  "counterexamples": [
+    {
+      "prime": 214729,
+      "pure_new": {
+        "old_support": [
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31,
+          37,
+          43,
+          61,
+          79,
+          89,
+          107,
+          127,
+          223,
+          283,
+          293,
+          347,
+          397,
+          503,
+          541,
+          619,
+          733,
+          1481,
+          2309,
+          2719,
+          2789,
+          4211,
+          5507,
+          42953,
+          42961,
+          214733,
+          214741,
+          214789
+        ],
+        "shift": 20,
+        "canonical_modulus": 40,
+        "shifted_integer": 214809,
+        "shifted_factorization": [
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            53,
+            1
+          ],
+          [
+            193,
+            1
+          ]
+        ],
+        "qualifying_new_prime_factors": []
+      },
+      "dynamic_low_defect_tail": {
+        "base": 53682,
+        "base_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            389,
+            1
+          ]
+        ],
+        "scale_count": 16,
+        "eligible_divisor_count": 803,
+        "matching_divisors": []
+      },
+      "dynamic_external_source_exit": {
+        "base": 53682,
+        "scale_count": 16,
+        "eligible_square_divisor_count": 2399,
+        "matching_square_divisors": []
+      }
+    },
+    {
+      "prime": 297049,
+      "pure_new": {
+        "old_support": [
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          29,
+          31,
+          37,
+          53,
+          59,
+          83,
+          113,
+          127,
+          167,
+          239,
+          593,
+          683,
+          1193,
+          2339,
+          2377,
+          11003,
+          17477,
+          22853,
+          27011,
+          33013,
+          42443,
+          59417,
+          99023,
+          297061,
+          297097,
+          297113
+        ],
+        "shift": 20,
+        "canonical_modulus": 40,
+        "shifted_integer": 297129,
+        "shifted_factorization": [
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            14149,
+            1
+          ]
+        ],
+        "qualifying_new_prime_factors": []
+      },
+      "dynamic_low_defect_tail": {
+        "base": 74262,
+        "base_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            12377,
+            1
+          ]
+        ],
+        "scale_count": 8,
+        "eligible_divisor_count": 118,
+        "matching_divisors": []
+      },
+      "dynamic_external_source_exit": {
+        "base": 74262,
+        "scale_count": 8,
+        "eligible_square_divisor_count": 400,
+        "matching_square_divisors": []
+      }
+    },
+    {
+      "prime": 878089,
+      "pure_new": {
+        "old_support": [
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31,
+          37,
+          41,
+          47,
+          53,
+          59,
+          73,
+          97,
+          107,
+          131,
+          157,
+          263,
+          281,
+          283,
+          293,
+          523,
+          823,
+          2179,
+          6703,
+          17921,
+          46219,
+          58543,
+          175621,
+          175633,
+          292703,
+          292711,
+          878113,
+          878153
+        ],
+        "shift": 20,
+        "canonical_modulus": 40,
+        "shifted_integer": 878169,
+        "shifted_factorization": [
+          [
+            3,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            67,
+            1
+          ],
+          [
+            257,
+            1
+          ]
+        ],
+        "qualifying_new_prime_factors": []
+      },
+      "dynamic_low_defect_tail": {
+        "base": 219522,
+        "base_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            36587,
+            1
+          ]
+        ],
+        "scale_count": 8,
+        "eligible_divisor_count": 133,
+        "matching_divisors": []
+      },
+      "dynamic_external_source_exit": {
+        "base": 219522,
+        "scale_count": 8,
+        "eligible_square_divisor_count": 580,
+        "matching_square_divisors": []
+      }
+    }
+  ]
+}

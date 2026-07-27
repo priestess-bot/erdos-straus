@@ -4,8 +4,9 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前截止日为 2026-07-24。语料包含 58 张论文卡、91 张主张卡和 11 张概念卡；
-其中被撤回论文和存在关键证明缺口的预印本仍会收录，但用独立状态标出。
+当前研究快照审计至 2026-07-27。论文卡、主张卡、概念卡及各状态的实时数量以
+`python scripts/kb.py status` 和自动生成的 `index/theorem-ledger.md` 为准，不在入口文档
+手工复制。其中被撤回论文和存在关键证明缺口的预印本仍会收录，但用独立状态标出。
 
 ## 快速使用
 
@@ -20,8 +21,23 @@ python scripts/kb.py status
 
 - `index/timeline.md`：按首次公开日期排列的完整文献时间线；
 - `index/citation-graph.mmd`：论文引用图；
+- `index/theorem-ledger.md`：从主张卡自动生成的数学状态、证明来源与审阅状态账本；
 - `index/catalog.json`：供其他工具消费的结构化目录；
 - `index/kb.sqlite`：带 FTS5 全文检索的 SQLite 数据库。
+
+主张卡用三个互不替代的字段记录证据状态：`claim_status` 表示数学结论状态；
+可选的 `proof_provenance` 表示证明或证据来自原始文献、仓库推导、计算复现或混合来源；
+可选的 `review_status` 表示卡片中的论证是否经过仓库内、独立或外部复核。旧卡缺少后两个
+字段仍然有效，构建时统一显示为 `unspecified`，不会从 `claim_status` 自动推断。允许值见
+`schemas/document-types.yaml`；新卡从 `templates/claim-note.md` 创建并应主动填写。
+
+`proof_provenance` 的语义为：`external_primary_source` 指精确陈述和证明锚定到所列原始
+来源，`repository_derivation` 指证明写在本仓库，`computational_reproduction` 指证据来自
+可复现程序和产物，`mixed` 指结论实质依赖多类证据，`not_applicable` 用于未声称已有证明
+的开放问题等，`unspecified` 表示尚未完成分类。`review_status` 中，`unreviewed` 表示没有
+记录第二轮复核，`internal_review` 表示完成仓库内复核，`independent_review` 表示存在独立
+证明或独立实现的复核，`external_review` 表示存在仓库外审阅记录；后三者应在卡片正文给出
+可核查锚点，`unspecified` 只表示尚未分类。
 
 研究方法、已确立结论和逐点证明缺口的导航见
 [`concepts/research-directions-and-proof-gap.md`](concepts/research-directions-and-proof-gap.md)。

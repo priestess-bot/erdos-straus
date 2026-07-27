@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-from fractions import Fraction
 import importlib.util
 import json
 from pathlib import Path

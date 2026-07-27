@@ -188,6 +188,11 @@ def validate_repository_texts() -> list[str]:
 def catalog_entry(doc: Document) -> dict[str, Any]:
     authors = normalize_list(doc.meta.get("authors"))
     tags = normalize_list(doc.meta.get("topics"))
+    proof_provenance = None
+    review_status = None
+    if doc.kind == "claim":
+        proof_provenance = doc.meta.get("proof_provenance") or "unspecified"
+        review_status = doc.meta.get("review_status") or "unspecified"
     return {
         "id": doc.doc_id,
         "kind": doc.kind,
@@ -199,6 +204,8 @@ def catalog_entry(doc: Document) -> dict[str, Any]:
         "assessment_status": doc.meta.get("assessment_status"),
         "reading_status": doc.meta.get("reading_status"),
         "claim_status": doc.meta.get("claim_status"),
+        "proof_provenance": proof_provenance,
+        "review_status": review_status,
         "corpus_tier": doc.meta.get("corpus_tier"),
         "topics": tags,
         "path": relative(doc.path),
@@ -260,6 +267,80 @@ def write_graph(entries: list[dict[str, Any]], output_dir: Path = INDEX_DIR) -> 
                 lines.append(f"    {safe_mermaid_id(key)} --> {safe_mermaid_id(str(cited))}")
     path = output_dir / "citation-graph.mmd"
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return path
+
+
+def markdown_table_cell(value: Any) -> str:
+    return str(value).replace("|", "\\|").replace("\r", " ").replace("\n", " ")
+
+
+def claim_source_summary(entry: dict[str, Any]) -> str:
+    keys: list[str] = []
+    for source in normalize_list(entry.get("sources")):
+        if isinstance(source, str):
+            key = source
+        elif isinstance(source, dict):
+            key = str(source.get("paper") or source.get("source") or "")
+        else:
+            key = ""
+        if key and key not in keys:
+            keys.append(key)
+    return ", ".join(f"`{markdown_table_cell(key)}`" for key in keys) or "-"
+
+
+def write_theorem_ledger(entries: list[dict[str, Any]], output_dir: Path = INDEX_DIR) -> Path:
+    """Generate the claim evidence ledger without inferring unrecorded review facts."""
+    claims = sorted(
+        (entry for entry in entries if entry["kind"] == "claim"),
+        key=lambda item: item["id"],
+    )
+    dimensions = (
+        ("claim_status", "数学状态"),
+        ("proof_provenance", "证明来源"),
+        ("review_status", "审阅状态"),
+    )
+    lines = [
+        "# 主张证据账本",
+        "",
+        "> 由 `python scripts/kb.py build` 从 `claims/` 自动生成；请勿手工维护。",
+        "",
+        "这里的“主张”包括已确立、条件性、计算性和开放主张，并不表示每一项都是定理。",
+        "缺失的证明来源或审阅状态显示为 `unspecified`；生成器不会依据数学状态推断它们。",
+        "",
+        "## 分类汇总",
+        "",
+        "| 维度 | 值 | 数量 |",
+        "| --- | --- | ---: |",
+    ]
+    for field, label in dimensions:
+        counts = Counter(str(entry.get(field) or "unspecified") for entry in claims)
+        for value, count in sorted(counts.items()):
+            lines.append(f"| {label} | `{markdown_table_cell(value)}` | {count} |")
+    lines.extend(
+        [
+            "",
+            "## 全部主张",
+            "",
+            "| 主张 | 数学状态 | 证明来源 | 审阅状态 | 来源卡 | 最近核查 |",
+            "| --- | --- | --- | --- | --- | --- |",
+        ]
+    )
+    for claim in claims:
+        title = markdown_table_cell(claim["title"])
+        claim_id = markdown_table_cell(claim["id"])
+        path = markdown_table_cell(claim["path"])
+        status = markdown_table_cell(claim.get("claim_status") or "unspecified")
+        provenance = markdown_table_cell(claim.get("proof_provenance") or "unspecified")
+        review = markdown_table_cell(claim.get("review_status") or "unspecified")
+        checked = markdown_table_cell(claim.get("last_checked") or "-")
+        lines.append(
+            f"| [{title}](../{path}) (`{claim_id}`) | `{status}` | `{provenance}` | "
+            f"`{review}` | {claim_source_summary(claim)} | {checked} |"
+        )
+    lines.append("")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    path = output_dir / "theorem-ledger.md"
+    path.write_text("\n".join(lines), encoding="utf-8")
     return path
 
 
@@ -339,6 +420,7 @@ def build_all(documents: list[Document], output_dir: Path = INDEX_DIR) -> list[P
         write_json_catalog(entries, output_dir),
         write_timeline(entries, output_dir),
         write_graph(entries, output_dir),
+        write_theorem_ledger(entries, output_dir),
         write_sqlite(entries, output_dir),
     ]
 
@@ -448,15 +530,20 @@ def command_status(_: argparse.Namespace) -> int:
     documents = list(iter_documents())
     kinds = Counter(doc.kind for doc in documents)
     papers = [doc for doc in documents if doc.kind == "paper"]
+    claims = [doc for doc in documents if doc.kind == "claim"]
     by_reading = Counter(str(doc.meta.get("reading_status")) for doc in papers)
     by_tier = Counter(str(doc.meta.get("corpus_tier")) for doc in papers)
     by_publication = Counter(str(doc.meta.get("publication_status")) for doc in papers)
     by_assessment = Counter(str(doc.meta.get("assessment_status")) for doc in papers)
+    by_provenance = Counter(str(doc.meta.get("proof_provenance") or "unspecified") for doc in claims)
+    by_review = Counter(str(doc.meta.get("review_status") or "unspecified") for doc in claims)
     print(f"documents={len(documents)} papers={kinds['paper']} claims={kinds['claim']} concepts={kinds['concept']}")
     print("corpus_tier=" + json.dumps(dict(sorted(by_tier.items())), ensure_ascii=False))
     print("reading_status=" + json.dumps(dict(sorted(by_reading.items())), ensure_ascii=False))
     print("publication_status=" + json.dumps(dict(sorted(by_publication.items())), ensure_ascii=False))
     print("assessment_status=" + json.dumps(dict(sorted(by_assessment.items())), ensure_ascii=False))
+    print("proof_provenance=" + json.dumps(dict(sorted(by_provenance.items())), ensure_ascii=False))
+    print("review_status=" + json.dumps(dict(sorted(by_review.items())), ensure_ascii=False))
     blocked = [doc.doc_id for doc in papers if doc.meta.get("reading_status") == "source_blocked"]
     queued = [doc.doc_id for doc in papers if doc.meta.get("reading_status") in {"queued", "metadata_verified"}]
     print("source_blocked=" + (", ".join(blocked) if blocked else "none"))

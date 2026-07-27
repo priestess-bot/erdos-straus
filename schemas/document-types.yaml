@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 
 common_required:
   - kind
@@ -72,3 +72,16 @@ controlled_values:
     - claimed_with_gap
     - contradicted
     - open
+  proof_provenance:
+    - external_primary_source
+    - repository_derivation
+    - computational_reproduction
+    - mixed
+    - not_applicable
+    - unspecified
+  review_status:
+    - unreviewed
+    - internal_review
+    - independent_review
+    - external_review
+    - unspecified
