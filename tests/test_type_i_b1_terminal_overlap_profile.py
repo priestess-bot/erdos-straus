@@ -36,9 +36,11 @@ class TypeIBOneTerminalOverlapProfileTests(unittest.TestCase):
         self.assertEqual(profile.run_profile(tail, b1), expected)
         self.assertEqual(
             expected["counts"],
-            {"other_even_source": 313, "p_minus_one_q_not_divide_r": 1400},
+            {"other_even_source": 313, "p_minus_one_q_not_divide_Ar": 1400},
         )
-        self.assertEqual(expected["examples"]["p_minus_one_q_not_divide_r"]["prime"], 67369)
+        example = expected["examples"]["p_minus_one_q_not_divide_Ar"]
+        self.assertEqual(example["prime"], 67369)
+        self.assertNotEqual((example["A"] * example["r"]) % example["q"], 0)
 
 
 if __name__ == "__main__":

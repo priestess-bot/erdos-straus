@@ -48,14 +48,15 @@ def classify_record(record: dict[str, object], ordinary_tail_misses: set[int]) -
         raise AssertionError("p-1 B=1 bridge did not have the forced bridge factor")
     q = (gap + 1) // 4
     r = (R + 1) // 4
-    if r % q == 0:
-        # The overlap criterion would explicitly construct a Type II ordinary tail,
+    if (A * r) % q == 0:
+        # The exact same-gap criterion would explicitly construct a Type II ordinary tail,
         # contradicting that this prime belongs to the complete tail-miss input.
-        raise AssertionError("ordinary-tail miss violated the B=1 overlap criterion")
+        raise AssertionError("ordinary-tail miss violated the B=1 same-gap criterion")
     return {
         "prime": prime,
-        "kind": "p_minus_one_q_not_divide_r",
+        "kind": "p_minus_one_q_not_divide_Ar",
         "gap": gap,
+        "A": A,
         "q": q,
         "r": r,
         "source_distance": 1,
@@ -75,7 +76,7 @@ def run_profile(tail: dict[str, object], b1: dict[str, object]) -> dict[str, obj
     if len(classifications) != int(b1["captured_count"]):
         raise AssertionError("the B=1 records were not classified exactly once")
     counts = Counter(entry["kind"] for entry in classifications)
-    expected = {"p_minus_one_q_not_divide_r": 1_400, "other_even_source": 313}
+    expected = {"p_minus_one_q_not_divide_Ar": 1_400, "other_even_source": 313}
     if dict(counts) != expected:
         raise AssertionError("the selected B=1 overlap profile changed")
     examples = {
@@ -86,7 +87,7 @@ def run_profile(tail: dict[str, object], b1: dict[str, object]) -> dict[str, obj
         "arithmetic": (
             "validate every stored least-source B=1 terminal bridge on the complete 500M ordinary "
             "Type II tail residual; for p-1 sources write q=(m+1)/4 and r=(R+1)/4, then apply the "
-            "exact same-gap overlap criterion q|r => an ordinary Type II tail"
+            "exact same-gap criterion q|Ar => an ordinary Type II tail"
         ),
         "scope_note": (
             "This profiles only the selected least-source B=1 bridge in the stated finite box. It does "

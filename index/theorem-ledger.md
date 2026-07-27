@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 240 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 189 |
+| 数学状态 | `established` | 190 |
 | 数学状态 | `open` | 8 |
 | 证明来源 | `computational_reproduction` | 13 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 12 |
+| 证明来源 | `repository_derivation` | 13 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 22 |
+| 审阅状态 | `internal_review` | 23 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -209,6 +209,7 @@
 | [五千万最终残余的桥模板驱动自适应移位闭合](../claims/type-I-adaptive-bridge-menu-profile-50m.md) (`type-I-adaptive-bridge-menu-profile-50m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 自适应逃逸深度在千万级种子中可达九十七窗口](../claims/type-I-adaptive-escape-seed-profile.md) (`type-I-adaptive-escape-seed-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [B等于1的p减一终端桥与同缺口Type II的精确二分](../claims/type-I-b1-pminusone-same-gap-dichotomy.md) (`type-I-b1-pminusone-same-gap-dichotomy`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B不大于4最大尾偶源选择器的首个失败点](../claims/type-I-b4-prefix-boundary-21169.md) (`type-I-b4-prefix-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |

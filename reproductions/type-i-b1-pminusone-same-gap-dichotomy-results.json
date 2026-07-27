@@ -1,0 +1,125 @@
+{
+  "arithmetic": "for B=1 and source p-1, write m=4q-1, R=4r-1, and C=mr-q. The terminal bridge exists exactly when r divides q^2(A+1)^2; the same-gap ordinary Type II double tail exists exactly when q divides Ar.",
+  "scope_note": "The nonoverlap statement rules out only the ordinary Type II double tail at the same gap. It neither excludes Type II certificates at other gaps nor proves a global mixed selector.",
+  "overlap_example": {
+    "q": 1,
+    "r": 6,
+    "A": 5,
+    "m": 3,
+    "R": 23,
+    "C": 17,
+    "p": 337,
+    "K": 1938,
+    "E": 24,
+    "bridge_condition": true,
+    "same_gap_type_ii_condition": true,
+    "same_gap_type_ii_tail": {
+      "divisor": 5,
+      "source_denominator": 85,
+      "target_solution": [
+        85,
+        10110,
+        171870
+      ],
+      "source_solution": [
+        85,
+        30,
+        510
+      ]
+    },
+    "type_i_source_denominator": 336,
+    "prime_check": true
+  },
+  "nonoverlap_example": {
+    "q": 7,
+    "r": 2,
+    "A": 173,
+    "m": 27,
+    "R": 7,
+    "C": 47,
+    "p": 32497,
+    "K": 56870,
+    "E": 8,
+    "bridge_condition": true,
+    "same_gap_type_ii_condition": false,
+    "same_gap_type_ii_tail": null,
+    "type_i_source_denominator": 32496,
+    "prime_check": true
+  },
+  "nonoverlap_ray": {
+    "parameters": {
+      "q": 7,
+      "r": 2,
+      "m": 27,
+      "C": 47,
+      "R": 7,
+      "E": 8
+    },
+    "formula": "A=42t+5, p=7896t+913",
+    "gcd_step_initial": 1,
+    "prime_samples": [
+      {
+        "ray_index": 4,
+        "q": 7,
+        "r": 2,
+        "A": 173,
+        "m": 27,
+        "R": 7,
+        "C": 47,
+        "p": 32497,
+        "K": 56870,
+        "E": 8,
+        "bridge_condition": true,
+        "same_gap_type_ii_condition": false,
+        "same_gap_type_ii_tail": null,
+        "type_i_source_denominator": 32496,
+        "prime_check": true
+      },
+      {
+        "ray_index": 8,
+        "q": 7,
+        "r": 2,
+        "A": 341,
+        "m": 27,
+        "R": 7,
+        "C": 47,
+        "p": 64081,
+        "K": 112142,
+        "E": 8,
+        "bridge_condition": true,
+        "same_gap_type_ii_condition": false,
+        "same_gap_type_ii_tail": null,
+        "type_i_source_denominator": 64080,
+        "prime_check": true
+      },
+      {
+        "ray_index": 10,
+        "q": 7,
+        "r": 2,
+        "A": 425,
+        "m": 27,
+        "R": 7,
+        "C": 47,
+        "p": 79873,
+        "K": 139778,
+        "E": 8,
+        "bridge_condition": true,
+        "same_gap_type_ii_condition": false,
+        "same_gap_type_ii_tail": null,
+        "type_i_source_denominator": 79872,
+        "prime_check": true
+      }
+    ]
+  },
+  "stored_500m_pminusone_residual": {
+    "count": 1400,
+    "all_bridge_conditions_hold": true,
+    "all_same_gap_conditions_fail": true,
+    "first_example": {
+      "prime": 67369,
+      "q": 9,
+      "r": 12,
+      "A": 41
+    }
+  }
+}
