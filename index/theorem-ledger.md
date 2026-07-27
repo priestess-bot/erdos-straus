@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 247 |
+| 数学状态 | `computationally_reproduced` | 248 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 193 |
 | 数学状态 | `open` | 9 |
-| 证明来源 | `computational_reproduction` | 20 |
+| 证明来源 | `computational_reproduction` | 21 |
 | 证明来源 | `mixed` | 5 |
 | 证明来源 | `repository_derivation` | 15 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 34 |
+| 审阅状态 | `internal_review` | 35 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -252,6 +252,7 @@
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续区间的 Type I 回退全部可选上半区偶源](../claims/type-I-mixed-terminal-dense-small-side-profile-600m.md) (`type-I-mixed-terminal-dense-small-side-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [五亿至六亿连续区间经上半区源重选的 B 等于一闭合](../claims/type-I-mixed-terminal-dense-upper-b1-reselection-profile-600m.md) (`type-I-mixed-terminal-dense-upper-b1-reselection-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [六亿稀疏尾遗漏族的混合终端闭合](../claims/type-I-mixed-terminal-sparse-tail-600m.md) (`type-I-mixed-terminal-sparse-tail-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [Type I 自适应一私有因子逃逸可达二十三窗口但在九十五缺口闭合](../claims/type-I-moving-window-adaptive-conditional-escape.md) (`type-I-moving-window-adaptive-conditional-escape`) | `conditional` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 移动窗口失败的有限碰撞--私有因子分解](../claims/type-I-moving-window-finite-collision-reduction.md) (`type-I-moving-window-finite-collision-reduction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
