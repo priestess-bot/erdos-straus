@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 240 |
+| 数学状态 | `computationally_reproduced` | 241 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 190 |
+| 数学状态 | `established` | 191 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 13 |
+| 证明来源 | `computational_reproduction` | 14 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 13 |
+| 证明来源 | `repository_derivation` | 14 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 23 |
+| 审阅状态 | `internal_review` | 25 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -261,6 +261,7 @@
 | [百万前缀的Type I多层短源闭合](../claims/type-I-multitier-short-source-closure-1m.md) (`type-I-multitier-short-source-closure-1m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 偶源桥的比二普通除子对等价](../claims/type-I-normal-even-source-ratio-two-pair.md) (`type-I-normal-even-source-ratio-two-pair`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [Type I 正规形最大尾的偶源反向选择器](../claims/type-I-normal-even-source-selector.md) (`type-I-normal-even-source-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
+| [Type I 偶源桥的小侧普通除子对可免除大小预算](../claims/type-I-normal-even-source-small-side-simplification.md) (`type-I-normal-even-source-small-side-simplification`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 正规形的缺口源偶桥判据](../claims/type-I-normal-gap-source-even-bridge.md) (`type-I-normal-gap-source-even-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-27 |
 | [五亿普通尾遗漏的缺口源偶桥边界](../claims/type-I-normal-gap-source-even-bridge-boundary-500m.md) (`type-I-normal-gap-source-even-bridge-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-27 |
 | [Type I 正规形最大尾的反向二尾选择器](../claims/type-I-normal-reverse-two-tail-selector.md) (`type-I-normal-reverse-two-tail-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
@@ -289,6 +290,7 @@
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通双尾遗漏的最短 Type I 偶源距离边界](../claims/type-I-tail-reverse-even-source-min-distance-boundary-500m.md) (`type-I-tail-reverse-even-source-min-distance-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [五亿偶源终端桥的小侧普通除子对剖面](../claims/type-I-tail-reverse-even-source-small-side-profile-500m.md) (`type-I-tail-reverse-even-source-small-side-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿偶源反向选择器的桥因子支撑边界](../claims/type-I-tail-reverse-even-source-support-boundary-500m.md) (`type-I-tail-reverse-even-source-support-boundary-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通尾遗漏的低复杂度终止闭合](../claims/type-I-tail-reverse-simple-external-terminal-closure-500m.md) (`type-I-tail-reverse-simple-external-terminal-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通尾遗漏的反向证书平方剩余量边界](../claims/type-I-tail-reverse-single-surplus-boundary-500m.md) (`type-I-tail-reverse-single-surplus-boundary-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |

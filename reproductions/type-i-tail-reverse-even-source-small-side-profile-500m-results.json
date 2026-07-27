@@ -1,0 +1,11867 @@
+{
+  "arithmetic": "reduce every stored bridge E/L=a/b with L=2K; a<b makes the bridge size automatic. For each selected a>b state, fully enumerate all coprime divisor pairs of the same L satisfying a=2b mod R and retain its even small-side bridges.",
+  "scope_note": "This is a complete finite profile of the stored 500M terminal bridges. It neither selects a Type I normal form for an arbitrary core prime nor proves a global selector.",
+  "input_artifact": "type-i-tail-reverse-even-source-ratio-pair-audit-500m-results.json",
+  "prime_limit": 500000000,
+  "record_count": 1717,
+  "selected_small_side_count": 1421,
+  "selected_large_side_count": 296,
+  "large_side_with_small_alternative_count": 201,
+  "large_side_only_count": 95,
+  "small_side_available_count": 1622,
+  "all_selected_small_side_sizes_automatic": true,
+  "examples": {
+    "selected_small_side": {
+      "prime": 85369,
+      "R": 7,
+      "L": 298792,
+      "E": 228488,
+      "a": 13,
+      "b": 17
+    },
+    "large_side_with_small_alternative": {
+      "prime": 372409,
+      "R": 7,
+      "L": 1303432,
+      "selected_pair": {
+        "E": 2080478,
+        "a": 83,
+        "b": 52
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          151,
+          1
+        ]
+      ],
+      "small_side_pair_count": 15,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 162929,
+        "source_denominator": 372408
+      }
+    },
+    "large_side_only": {
+      "prime": 67369,
+      "R": 87,
+      "L": 2930552,
+      "selected_pair": {
+        "E": 4726276,
+        "a": 1087,
+        "b": 674
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          1087,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    }
+  },
+  "large_side_records": [
+    {
+      "prime": 67369,
+      "R": 87,
+      "L": 2930552,
+      "selected_pair": {
+        "E": 4726276,
+        "a": 1087,
+        "b": 674
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          1087,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 372409,
+      "R": 7,
+      "L": 1303432,
+      "selected_pair": {
+        "E": 2080478,
+        "a": 83,
+        "b": 52
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          151,
+          1
+        ]
+      ],
+      "small_side_pair_count": 15,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 162929,
+        "source_denominator": 372408
+      }
+    },
+    {
+      "prime": 532249,
+      "R": 47,
+      "L": 12507852,
+      "selected_pair": {
+        "E": 23802352,
+        "a": 1844,
+        "b": 969
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          461,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 48,
+        "a": 4,
+        "b": 1042321,
+        "source_denominator": 532248
+      }
+    },
+    {
+      "prime": 1046329,
+      "R": 7,
+      "L": 3662152,
+      "selected_pair": {
+        "E": 4687922,
+        "a": 1531,
+        "b": 1196
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          1531,
+          1
+        ]
+      ],
+      "small_side_pair_count": 15,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 457769,
+        "source_denominator": 1046328
+      }
+    },
+    {
+      "prime": 2392009,
+      "R": 3055,
+      "L": 3653793748,
+      "selected_pair": {
+        "E": 6803610256,
+        "a": 82484,
+        "b": 44297
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          1213,
+          1
+        ],
+        [
+          4027,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 4718569,
+      "R": 63,
+      "L": 148634924,
+      "selected_pair": {
+        "E": 163532944,
+        "a": 12788,
+        "b": 11623
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          197,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 1576,
+        "a": 2,
+        "b": 188623,
+        "source_denominator": 4718544
+      }
+    },
+    {
+      "prime": 4824649,
+      "R": 7,
+      "L": 16886272,
+      "selected_pair": {
+        "E": 29765632,
+        "a": 104,
+        "b": 59
+      },
+      "factorization": [
+        [
+          2,
+          9
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          59,
+          1
+        ]
+      ],
+      "small_side_pair_count": 41,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 2110784,
+        "source_denominator": 4824648
+      }
+    },
+    {
+      "prime": 6254329,
+      "R": 7,
+      "L": 21890152,
+      "selected_pair": {
+        "E": 41114312,
+        "a": 2267,
+        "b": 1207
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          2267,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 2736269,
+        "source_denominator": 6254328
+      }
+    },
+    {
+      "prime": 7524169,
+      "R": 11,
+      "L": 41382930,
+      "selected_pair": {
+        "E": 81180100,
+        "a": 9010,
+        "b": 4593
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          1531,
+          1
+        ]
+      ],
+      "small_side_pair_count": 23,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 6897155,
+        "source_denominator": 7524168
+      }
+    },
+    {
+      "prime": 8083849,
+      "R": 11,
+      "L": 44461170,
+      "selected_pair": {
+        "E": 72551700,
+        "a": 390,
+        "b": 239
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          239,
+          1
+        ]
+      ],
+      "small_side_pair_count": 55,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 7410195,
+        "source_denominator": 8083848
+      }
+    },
+    {
+      "prime": 9711529,
+      "R": 2551,
+      "L": 12387055240,
+      "selected_pair": {
+        "E": 14375050816,
+        "a": 119896,
+        "b": 103315
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          2141,
+          1
+        ],
+        [
+          20663,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 11731129,
+      "R": 23,
+      "L": 134907984,
+      "selected_pair": {
+        "E": 171623448,
+        "a": 201,
+        "b": 158
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          79,
+          1
+        ]
+      ],
+      "small_side_pair_count": 36,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 5621166,
+        "source_denominator": 11731128
+      }
+    },
+    {
+      "prime": 11835289,
+      "R": 215,
+      "L": 1272293568,
+      "selected_pair": {
+        "E": 2356714116,
+        "a": 2697,
+        "b": 1456
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "small_side_pair_count": 32,
+      "canonical_small_side_pair": {
+        "E": 216,
+        "a": 1,
+        "b": 5890248,
+        "source_denominator": 11835288
+      }
+    },
+    {
+      "prime": 11897449,
+      "R": 131,
+      "L": 779282910,
+      "selected_pair": {
+        "E": 791001450,
+        "a": 135,
+        "b": 133
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          21701,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 252700,
+        "a": 190,
+        "b": 585927,
+        "source_denominator": 11895520
+      }
+    },
+    {
+      "prime": 11996329,
+      "R": 11,
+      "L": 65979810,
+      "selected_pair": {
+        "E": 76130550,
+        "a": 15,
+        "b": 13
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          56393,
+          1
+        ]
+      ],
+      "small_side_pair_count": 13,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 10996635,
+        "source_denominator": 11996328
+      }
+    },
+    {
+      "prime": 12150889,
+      "R": 11,
+      "L": 66829890,
+      "selected_pair": {
+        "E": 96280350,
+        "a": 85,
+        "b": 59
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          2221,
+          1
+        ]
+      ],
+      "small_side_pair_count": 25,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 11138315,
+        "source_denominator": 12150888
+      }
+    },
+    {
+      "prime": 12784489,
+      "R": 11783,
+      "L": 75319816944,
+      "selected_pair": {
+        "E": 133423633984,
+        "a": 182636,
+        "b": 103101
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          34367,
+          1
+        ],
+        [
+          45659,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 12853129,
+      "R": 23327,
+      "L": 149912470092,
+      "selected_pair": {
+        "E": 196436876944,
+        "a": 443212,
+        "b": 338241
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          1439,
+          1
+        ],
+        [
+          3637,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 13177609,
+      "R": 2071,
+      "L": 13645414120,
+      "selected_pair": {
+        "E": 17022942784,
+        "a": 130472,
+        "b": 104585
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          347,
+          1
+        ],
+        [
+          1609,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 14706409,
+      "R": 8951,
+      "L": 65818533480,
+      "selected_pair": {
+        "E": 76995150400,
+        "a": 277480,
+        "b": 237201
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          991,
+          1
+        ],
+        [
+          4651,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 15072649,
+      "R": 61023,
+      "L": 459889129964,
+      "selected_pair": {
+        "E": 629321716804,
+        "a": 396649,
+        "b": 289859
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          289859,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 15308329,
+      "R": 23,
+      "L": 176045784,
+      "selected_pair": {
+        "E": 190639296,
+        "a": 1032,
+        "b": 953
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          953,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 7335241,
+        "source_denominator": 15308328
+      }
+    },
+    {
+      "prime": 15405289,
+      "R": 13431,
+      "L": 103454218280,
+      "selected_pair": {
+        "E": 173355649600,
+        "a": 416360,
+        "b": 248473
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          1487,
+          1
+        ],
+        [
+          248473,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 16002529,
+      "R": 15,
+      "L": 120018968,
+      "selected_pair": {
+        "E": 170668096,
+        "a": 13064,
+        "b": 9187
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          9187,
+          1
+        ]
+      ],
+      "small_side_pair_count": 10,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 2,
+        "b": 15002371,
+        "source_denominator": 16002528
+      }
+    },
+    {
+      "prime": 16308889,
+      "R": 31,
+      "L": 252787780,
+      "selected_pair": {
+        "E": 396077360,
+        "a": 3364,
+        "b": 2147
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          113,
+          1
+        ]
+      ],
+      "small_side_pair_count": 32,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 1805627,
+        "source_denominator": 16308880
+      }
+    },
+    {
+      "prime": 17644489,
+      "R": 3,
+      "L": 26466734,
+      "selected_pair": {
+        "E": 52017532,
+        "a": 2726,
+        "b": 1387
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          73,
+          1
+        ]
+      ],
+      "small_side_pair_count": 116,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 13233367,
+        "source_denominator": 17644488
+      }
+    },
+    {
+      "prime": 17722609,
+      "R": 15,
+      "L": 132919568,
+      "selected_pair": {
+        "E": 215619856,
+        "a": 3671,
+        "b": 2263
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          3671,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 1,
+        "b": 8307473,
+        "source_denominator": 17722608
+      }
+    },
+    {
+      "prime": 17723689,
+      "R": 23,
+      "L": 203822424,
+      "selected_pair": {
+        "E": 388665432,
+        "a": 471,
+        "b": 247
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          157,
+          1
+        ]
+      ],
+      "small_side_pair_count": 60,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 8492601,
+        "source_denominator": 17723688
+      }
+    },
+    {
+      "prime": 17898169,
+      "R": 3191,
+      "L": 28556528640,
+      "selected_pair": {
+        "E": 51329433600,
+        "a": 56640,
+        "b": 31511
+      },
+      "factorization": [
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          31511,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 17992489,
+      "R": 16583,
+      "L": 149184722544,
+      "selected_pair": {
+        "E": 264270021184,
+        "a": 257036,
+        "b": 145101
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          4397,
+          1
+        ],
+        [
+          4943,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 18517129,
+      "R": 11,
+      "L": 101844210,
+      "selected_pair": {
+        "E": 134747724,
+        "a": 86,
+        "b": 65
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          6073,
+          1
+        ]
+      ],
+      "small_side_pair_count": 22,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 16974035,
+        "source_denominator": 18517128
+      }
+    },
+    {
+      "prime": 20275369,
+      "R": 17927,
+      "L": 181738270032,
+      "selected_pair": {
+        "E": 270277293924,
+        "a": 259941,
+        "b": 174788
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          1181,
+          1
+        ],
+        [
+          7877,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 20384809,
+      "R": 13991,
+      "L": 142601931360,
+      "selected_pair": {
+        "E": 188113038400,
+        "a": 108430,
+        "b": 82197
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          1549,
+          1
+        ],
+        [
+          9133,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 20570449,
+      "R": 18959,
+      "L": 194997571296,
+      "selected_pair": {
+        "E": 345424201984,
+        "a": 293864,
+        "b": 165891
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          109,
+          1
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          457,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 23385289,
+      "R": 47,
+      "L": 549554292,
+      "selected_pair": {
+        "E": 877443894,
+        "a": 12093,
+        "b": 7574
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          541,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 48,
+        "a": 4,
+        "b": 45796191,
+        "source_denominator": 23385288
+      }
+    },
+    {
+      "prime": 27956329,
+      "R": 7,
+      "L": 97847152,
+      "selected_pair": {
+        "E": 192896768,
+        "a": 2896,
+        "b": 1469
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          181,
+          1
+        ]
+      ],
+      "small_side_pair_count": 53,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 12230894,
+        "source_denominator": 27956328
+      }
+    },
+    {
+      "prime": 28325929,
+      "R": 71,
+      "L": 1005570480,
+      "selected_pair": {
+        "E": 1786226450,
+        "a": 29885,
+        "b": 16824
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          701,
+          1
+        ]
+      ],
+      "small_side_pair_count": 16,
+      "canonical_small_side_pair": {
+        "E": 72,
+        "a": 3,
+        "b": 41898770,
+        "source_denominator": 28325928
+      }
+    },
+    {
+      "prime": 28929289,
+      "R": 26663,
+      "L": 385670816304,
+      "selected_pair": {
+        "E": 683188208704,
+        "a": 413276,
+        "b": 233301
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          4093,
+          1
+        ],
+        [
+          103319,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 30808969,
+      "R": 23,
+      "L": 354303144,
+      "selected_pair": {
+        "E": 404975376,
+        "a": 10062,
+        "b": 8803
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          8803,
+          1
+        ]
+      ],
+      "small_side_pair_count": 20,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 14762631,
+        "source_denominator": 30808968
+      }
+    },
+    {
+      "prime": 31319929,
+      "R": 7,
+      "L": 109619752,
+      "selected_pair": {
+        "E": 184360492,
+        "a": 37,
+        "b": 22
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          257,
+          1
+        ]
+      ],
+      "small_side_pair_count": 42,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 13702469,
+        "source_denominator": 31319928
+      }
+    },
+    {
+      "prime": 33117529,
+      "R": 23,
+      "L": 380851584,
+      "selected_pair": {
+        "E": 451629312,
+        "a": 134,
+        "b": 113
+      },
+      "factorization": [
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          131,
+          1
+        ]
+      ],
+      "small_side_pair_count": 29,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 15868816,
+        "source_denominator": 33117528
+      }
+    },
+    {
+      "prime": 33347689,
+      "R": 23,
+      "L": 383498424,
+      "selected_pair": {
+        "E": 556711712,
+        "a": 16684,
+        "b": 11493
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          1277,
+          1
+        ]
+      ],
+      "small_side_pair_count": 18,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 15979101,
+        "source_denominator": 33347688
+      }
+    },
+    {
+      "prime": 33436489,
+      "R": 311,
+      "L": 5199374040,
+      "selected_pair": {
+        "E": 7009768640,
+        "a": 14152,
+        "b": 10497
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          3499,
+          1
+        ]
+      ],
+      "small_side_pair_count": 7,
+      "canonical_small_side_pair": {
+        "E": 2800,
+        "a": 10,
+        "b": 18569193,
+        "source_denominator": 33436480
+      }
+    },
+    {
+      "prime": 33827929,
+      "R": 11,
+      "L": 186053610,
+      "selected_pair": {
+        "E": 336036020,
+        "a": 8198,
+        "b": 4539
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          4099,
+          1
+        ]
+      ],
+      "small_side_pair_count": 21,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 31008935,
+        "source_denominator": 33827928
+      }
+    },
+    {
+      "prime": 34252969,
+      "R": 95,
+      "L": 1627016028,
+      "selected_pair": {
+        "E": 1867007736,
+        "a": 2046,
+        "b": 1783
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          1783,
+          1
+        ]
+      ],
+      "small_side_pair_count": 4,
+      "canonical_small_side_pair": {
+        "E": 16056,
+        "a": 6,
+        "b": 608003,
+        "source_denominator": 34252800
+      }
+    },
+    {
+      "prime": 34554361,
+      "R": 31,
+      "L": 535592596,
+      "selected_pair": {
+        "E": 650672176,
+        "a": 5852,
+        "b": 4817
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          4817,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 5054,
+        "a": 1,
+        "b": 105974,
+        "source_denominator": 34554198
+      }
+    },
+    {
+      "prime": 35170249,
+      "R": 11,
+      "L": 193436370,
+      "selected_pair": {
+        "E": 336294850,
+        "a": 3145,
+        "b": 1809
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          67,
+          1
+        ]
+      ],
+      "small_side_pair_count": 90,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 32239395,
+        "source_denominator": 35170248
+      }
+    },
+    {
+      "prime": 36235609,
+      "R": 146703,
+      "L": 2657936273564,
+      "selected_pair": {
+        "E": 3637175351044,
+        "a": 953569,
+        "b": 696839
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          443,
+          1
+        ],
+        [
+          643,
+          1
+        ],
+        [
+          1483,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 36554809,
+      "R": 111,
+      "L": 2028791900,
+      "selected_pair": {
+        "E": 2454766000,
+        "a": 340,
+        "b": 281
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          137,
+          1
+        ],
+        [
+          281,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 1000,
+        "a": 10,
+        "b": 20287919,
+        "source_denominator": 36554800
+      }
+    },
+    {
+      "prime": 36665689,
+      "R": 47,
+      "L": 861643692,
+      "selected_pair": {
+        "E": 1351752948,
+        "a": 171,
+        "b": 109
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          109,
+          1
+        ],
+        [
+          127,
+          1
+        ]
+      ],
+      "small_side_pair_count": 51,
+      "canonical_small_side_pair": {
+        "E": 48,
+        "a": 4,
+        "b": 71803641,
+        "source_denominator": 36665688
+      }
+    },
+    {
+      "prime": 38489929,
+      "R": 87,
+      "L": 1674311912,
+      "selected_pair": {
+        "E": 2860269856,
+        "a": 9172,
+        "b": 5369
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          2293,
+          1
+        ]
+      ],
+      "small_side_pair_count": 12,
+      "canonical_small_side_pair": {
+        "E": 784,
+        "a": 14,
+        "b": 29898427,
+        "source_denominator": 38489920
+      }
+    },
+    {
+      "prime": 39635929,
+      "R": 411,
+      "L": 8145183410,
+      "selected_pair": {
+        "E": 14707855708,
+        "a": 45838,
+        "b": 25385
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          5077,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 168100,
+        "a": 410,
+        "b": 19866301,
+        "source_denominator": 39635520
+      }
+    },
+    {
+      "prime": 39964369,
+      "R": 51567,
+      "L": 1030421308112,
+      "selected_pair": {
+        "E": 1661969602276,
+        "a": 644587,
+        "b": 399644
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          2039,
+          1
+        ],
+        [
+          10567,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 42196009,
+      "R": 7,
+      "L": 147686032,
+      "selected_pair": {
+        "E": 163397312,
+        "a": 52,
+        "b": 47
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          15107,
+          1
+        ]
+      ],
+      "small_side_pair_count": 18,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 18460754,
+        "source_denominator": 42196008
+      }
+    },
+    {
+      "prime": 42622969,
+      "R": 467,
+      "L": 9952463262,
+      "selected_pair": {
+        "E": 15053835132,
+        "a": 46374,
+        "b": 30659
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          131,
+          1
+        ]
+      ],
+      "small_side_pair_count": 4,
+      "canonical_small_side_pair": {
+        "E": 639324,
+        "a": 6,
+        "b": 93403,
+        "source_denominator": 42621600
+      }
+    },
+    {
+      "prime": 42957049,
+      "R": 231,
+      "L": 4961539160,
+      "selected_pair": {
+        "E": 6768352900,
+        "a": 41135,
+        "b": 30154
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          433,
+          1
+        ],
+        [
+          15077,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 5776,
+        "a": 38,
+        "b": 32641705,
+        "source_denominator": 42957024
+      }
+    },
+    {
+      "prime": 44810329,
+      "R": 7,
+      "L": 156836152,
+      "selected_pair": {
+        "E": 287682956,
+        "a": 2557,
+        "b": 1394
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          2557,
+          1
+        ]
+      ],
+      "small_side_pair_count": 44,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 19604519,
+        "source_denominator": 44810328
+      }
+    },
+    {
+      "prime": 46297969,
+      "R": 15,
+      "L": 347234768,
+      "selected_pair": {
+        "E": 394329856,
+        "a": 1616,
+        "b": 1423
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          151,
+          1
+        ],
+        [
+          1423,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 1,
+        "b": 21702173,
+        "source_denominator": 46297968
+      }
+    },
+    {
+      "prime": 46688569,
+      "R": 43031,
+      "L": 1004527906320,
+      "selected_pair": {
+        "E": 1779449281600,
+        "a": 666980,
+        "b": 376521
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          33349,
+          1
+        ],
+        [
+          125507,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 46960489,
+      "R": 32231,
+      "L": 756791760480,
+      "selected_pair": {
+        "E": 998320705600,
+        "a": 249790,
+        "b": 189357
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          127,
+          1
+        ],
+        [
+          24979,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 47930569,
+      "R": 7,
+      "L": 167756992,
+      "selected_pair": {
+        "E": 195861632,
+        "a": 2474,
+        "b": 2119
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          1237,
+          1
+        ]
+      ],
+      "small_side_pair_count": 30,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 20969624,
+        "source_denominator": 47930568
+      }
+    },
+    {
+      "prime": 48002089,
+      "R": 23,
+      "L": 552024024,
+      "selected_pair": {
+        "E": 936988146,
+        "a": 129,
+        "b": 76
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          599,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 23001001,
+        "source_denominator": 48002088
+      }
+    },
+    {
+      "prime": 48825529,
+      "R": 54311,
+      "L": 1325881652760,
+      "selected_pair": {
+        "E": 2480681700324,
+        "a": 787509,
+        "b": 420910
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          859,
+          1
+        ],
+        [
+          29167,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 52420729,
+      "R": 935,
+      "L": 24506690808,
+      "selected_pair": {
+        "E": 37750158436,
+        "a": 97147,
+        "b": 63066
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          457,
+          1
+        ],
+        [
+          5113,
+          1
+        ]
+      ],
+      "small_side_pair_count": 1,
+      "canonical_small_side_pair": {
+        "E": 1594176,
+        "a": 152,
+        "b": 2336641,
+        "source_denominator": 52419024
+      }
+    },
+    {
+      "prime": 54205369,
+      "R": 215,
+      "L": 5827077168,
+      "selected_pair": {
+        "E": 8280075056,
+        "a": 6859,
+        "b": 4827
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          1609,
+          1
+        ]
+      ],
+      "small_side_pair_count": 3,
+      "canonical_small_side_pair": {
+        "E": 1936,
+        "a": 11,
+        "b": 33108393,
+        "source_denominator": 54205360
+      }
+    },
+    {
+      "prime": 58774489,
+      "R": 791,
+      "L": 23245310400,
+      "selected_pair": {
+        "E": 28810774140,
+        "a": 1289,
+        "b": 1040
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          1289,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 442170,
+        "a": 51,
+        "b": 2681120,
+        "source_denominator": 58773930
+      }
+    },
+    {
+      "prime": 59871289,
+      "R": 167,
+      "L": 4999252632,
+      "selected_pair": {
+        "E": 7263451408,
+        "a": 1774,
+        "b": 1221
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          577,
+          1
+        ],
+        [
+          887,
+          1
+        ]
+      ],
+      "small_side_pair_count": 3,
+      "canonical_small_side_pair": {
+        "E": 1575312,
+        "a": 2,
+        "b": 6347,
+        "source_denominator": 59861856
+      }
+    },
+    {
+      "prime": 61294489,
+      "R": 95,
+      "L": 2911488228,
+      "selected_pair": {
+        "E": 3029124116,
+        "a": 103,
+        "b": 99
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          1741,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 1236,
+        "a": 1,
+        "b": 2355573,
+        "source_denominator": 61294476
+      }
+    },
+    {
+      "prime": 62704849,
+      "R": 71,
+      "L": 2226022140,
+      "selected_pair": {
+        "E": 2293134642,
+        "a": 33861,
+        "b": 32870
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          173,
+          1
+        ],
+        [
+          11287,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 72,
+        "a": 6,
+        "b": 185501845,
+        "source_denominator": 62704848
+      }
+    },
+    {
+      "prime": 63664969,
+      "R": 11,
+      "L": 350157330,
+      "selected_pair": {
+        "E": 675139950,
+        "a": 295,
+        "b": 153
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          431,
+          1
+        ]
+      ],
+      "small_side_pair_count": 71,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 58359555,
+        "source_denominator": 63664968
+      }
+    },
+    {
+      "prime": 66032521,
+      "R": 151799,
+      "L": 5011835327640,
+      "selected_pair": {
+        "E": 5184656136256,
+        "a": 2276984,
+        "b": 2201085
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          1193,
+          1
+        ],
+        [
+          284623,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 66270649,
+      "R": 61079,
+      "L": 2023872485136,
+      "selected_pair": {
+        "E": 3585145328704,
+        "a": 946724,
+        "b": 534441
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          6143,
+          1
+        ],
+        [
+          236681,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 67068409,
+      "R": 7,
+      "L": 234739432,
+      "selected_pair": {
+        "E": 463723058,
+        "a": 15227,
+        "b": 7708
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          15227,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 29342429,
+        "source_denominator": 67068408
+      }
+    },
+    {
+      "prime": 69517849,
+      "R": 7,
+      "L": 243312472,
+      "selected_pair": {
+        "E": 453871342,
+        "a": 97,
+        "b": 52
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          271,
+          1
+        ]
+      ],
+      "small_side_pair_count": 42,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 30414059,
+        "source_denominator": 69517848
+      }
+    },
+    {
+      "prime": 70806409,
+      "R": 7,
+      "L": 247822432,
+      "selected_pair": {
+        "E": 314423824,
+        "a": 4433,
+        "b": 3494
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          1747,
+          1
+        ]
+      ],
+      "small_side_pair_count": 71,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 30977804,
+        "source_denominator": 70806408
+      }
+    },
+    {
+      "prime": 72303529,
+      "R": 7,
+      "L": 253062352,
+      "selected_pair": {
+        "E": 370793536,
+        "a": 9628,
+        "b": 6571
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          6571,
+          1
+        ]
+      ],
+      "small_side_pair_count": 16,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 31632794,
+        "source_denominator": 72303528
+      }
+    },
+    {
+      "prime": 75056809,
+      "R": 127431,
+      "L": 4782282113840,
+      "selected_pair": {
+        "E": 5862151331344,
+        "a": 605297,
+        "b": 493795
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          1123,
+          1
+        ],
+        [
+          1619,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 77441809,
+      "R": 71375,
+      "L": 2763704558688,
+      "selected_pair": {
+        "E": 4895704965376,
+        "a": 1106312,
+        "b": 624531
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          1163,
+          1
+        ],
+        [
+          138289,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 78268369,
+      "R": 7,
+      "L": 273939292,
+      "selected_pair": {
+        "E": 507083858,
+        "a": 15923,
+        "b": 8602
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          15923,
+          1
+        ]
+      ],
+      "small_side_pair_count": 29,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 2,
+        "b": 68484823,
+        "source_denominator": 78268368
+      }
+    },
+    {
+      "prime": 78865609,
+      "R": 607,
+      "L": 23935712332,
+      "selected_pair": {
+        "E": 31689159152,
+        "a": 7132,
+        "b": 5387
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          1783,
+          1
+        ],
+        [
+          5387,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 83445289,
+      "R": 17223,
+      "L": 718589106224,
+      "selected_pair": {
+        "E": 771537370384,
+        "a": 19963,
+        "b": 18593
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          18593,
+          1
+        ],
+        [
+          19963,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 84163489,
+      "R": 340743,
+      "L": 14339059866164,
+      "selected_pair": {
+        "E": 19621869996964,
+        "a": 2214829,
+        "b": 1618529
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          21929,
+          1
+        ],
+        [
+          147139,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 85457689,
+      "R": 264575,
+      "L": 11304984033588,
+      "selected_pair": {
+        "E": 20229970955076,
+        "a": 2248887,
+        "b": 1256731
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          12289,
+          1
+        ],
+        [
+          179533,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 86445769,
+      "R": 349983,
+      "L": 15127274785964,
+      "selected_pair": {
+        "E": 20700479849284,
+        "a": 2274889,
+        "b": 1662419
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          1249,
+          1
+        ],
+        [
+          7043,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 87011929,
+      "R": 23,
+      "L": 1000637184,
+      "selected_pair": {
+        "E": 1711973376,
+        "a": 5172,
+        "b": 3023
+      },
+      "factorization": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          431,
+          1
+        ],
+        [
+          3023,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 41693216,
+        "source_denominator": 87011928
+      }
+    },
+    {
+      "prime": 87623449,
+      "R": 80759,
+      "L": 3538191058896,
+      "selected_pair": {
+        "E": 6267652446784,
+        "a": 1251764,
+        "b": 706641
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          18119,
+          1
+        ],
+        [
+          312941,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 89708089,
+      "R": 311,
+      "L": 13949607840,
+      "selected_pair": {
+        "E": 17293953960,
+        "a": 20793,
+        "b": 16772
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          239,
+          1
+        ],
+        [
+          599,
+          1
+        ]
+      ],
+      "small_side_pair_count": 10,
+      "canonical_small_side_pair": {
+        "E": 2800,
+        "a": 5,
+        "b": 24910014,
+        "source_denominator": 89708080
+      }
+    },
+    {
+      "prime": 89711449,
+      "R": 131,
+      "L": 5876099910,
+      "selected_pair": {
+        "E": 7997228658,
+        "a": 279,
+        "b": 205
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          17123,
+          1
+        ]
+      ],
+      "small_side_pair_count": 4,
+      "canonical_small_side_pair": {
+        "E": 15066,
+        "a": 9,
+        "b": 3510215,
+        "source_denominator": 89711334
+      }
+    },
+    {
+      "prime": 91490809,
+      "R": 31,
+      "L": 1418107540,
+      "selected_pair": {
+        "E": 1428084100,
+        "a": 18895,
+        "b": 18763
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          3779,
+          1
+        ]
+      ],
+      "small_side_pair_count": 5,
+      "canonical_small_side_pair": {
+        "E": 6728,
+        "a": 58,
+        "b": 12225065,
+        "source_denominator": 91490592
+      }
+    },
+    {
+      "prime": 94827049,
+      "R": 7,
+      "L": 331894672,
+      "selected_pair": {
+        "E": 550459456,
+        "a": 68,
+        "b": 41
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          29761,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 41486834,
+        "source_denominator": 94827048
+      }
+    },
+    {
+      "prime": 95741809,
+      "R": 71,
+      "L": 3398834220,
+      "selected_pair": {
+        "E": 3888795600,
+        "a": 11580,
+        "b": 10121
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          349,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 72,
+        "a": 6,
+        "b": 283236185,
+        "source_denominator": 95741808
+      }
+    },
+    {
+      "prime": 96337609,
+      "R": 15,
+      "L": 722532068,
+      "selected_pair": {
+        "E": 1094683396,
+        "a": 16543,
+        "b": 10919
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          233,
+          1
+        ]
+      ],
+      "small_side_pair_count": 20,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 4,
+        "b": 180633017,
+        "source_denominator": 96337608
+      }
+    },
+    {
+      "prime": 96448489,
+      "R": 167,
+      "L": 8053448832,
+      "selected_pair": {
+        "E": 13613985792,
+        "a": 1824,
+        "b": 1079
+      },
+      "factorization": [
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          83,
+          1
+        ]
+      ],
+      "small_side_pair_count": 55,
+      "canonical_small_side_pair": {
+        "E": 836,
+        "a": 1,
+        "b": 9633312,
+        "source_denominator": 96448484
+      }
+    },
+    {
+      "prime": 96646729,
+      "R": 39,
+      "L": 1884611216,
+      "selected_pair": {
+        "E": 2358476992,
+        "a": 652,
+        "b": 521
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          521,
+          1
+        ]
+      ],
+      "small_side_pair_count": 13,
+      "canonical_small_side_pair": {
+        "E": 1444,
+        "a": 19,
+        "b": 24797516,
+        "source_denominator": 96646692
+      }
+    },
+    {
+      "prime": 98859049,
+      "R": 95,
+      "L": 4695804828,
+      "selected_pair": {
+        "E": 5248422916,
+        "a": 36223,
+        "b": 32409
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          277,
+          1
+        ]
+      ],
+      "small_side_pair_count": 35,
+      "canonical_small_side_pair": {
+        "E": 286,
+        "a": 1,
+        "b": 16418898,
+        "source_denominator": 98859046
+      }
+    },
+    {
+      "prime": 99230569,
+      "R": 23,
+      "L": 1141151544,
+      "selected_pair": {
+        "E": 1484109432,
+        "a": 727,
+        "b": 559
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          727,
+          1
+        ]
+      ],
+      "small_side_pair_count": 47,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 47547981,
+        "source_denominator": 99230568
+      }
+    },
+    {
+      "prime": 99274729,
+      "R": 39,
+      "L": 1935857216,
+      "selected_pair": {
+        "E": 2561169664,
+        "a": 12652,
+        "b": 9563
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          3163,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 4096,
+        "a": 64,
+        "b": 30247769,
+        "source_denominator": 99274624
+      }
+    },
+    {
+      "prime": 101769649,
+      "R": 412023,
+      "L": 20965718044964,
+      "selected_pair": {
+        "E": 28689928264804,
+        "a": 2678149,
+        "b": 1957109
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          3631,
+          1
+        ],
+        [
+          2678149,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 102214249,
+      "R": 413823,
+      "L": 21149303581964,
+      "selected_pair": {
+        "E": 28941150571204,
+        "a": 2689849,
+        "b": 1965659
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          2113,
+          1
+        ],
+        [
+          2689,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 103863769,
+      "R": 81847,
+      "L": 4250468950672,
+      "selected_pair": {
+        "E": 4883516577424,
+        "a": 552467,
+        "b": 480851
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          941,
+          1
+        ],
+        [
+          1583,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 103872409,
+      "R": 95735,
+      "L": 4972112537808,
+      "selected_pair": {
+        "E": 8807741870656,
+        "a": 1483892,
+        "b": 837681
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          457,
+          1
+        ],
+        [
+          3673,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 104043769,
+      "R": 7,
+      "L": 364153192,
+      "selected_pair": {
+        "E": 641897152,
+        "a": 104,
+        "b": 59
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          3491,
+          1
+        ]
+      ],
+      "small_side_pair_count": 42,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 45519149,
+        "source_denominator": 104043768
+      }
+    },
+    {
+      "prime": 108589849,
+      "R": 215,
+      "L": 11673408768,
+      "selected_pair": {
+        "E": 21903998976,
+        "a": 6528,
+        "b": 3479
+      },
+      "factorization": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          257,
+          1
+        ]
+      ],
+      "small_side_pair_count": 22,
+      "canonical_small_side_pair": {
+        "E": 5376,
+        "a": 1,
+        "b": 2171393,
+        "source_denominator": 108589824
+      }
+    },
+    {
+      "prime": 110291449,
+      "R": 99631,
+      "L": 5494223677660,
+      "selected_pair": {
+        "E": 7236293681296,
+        "a": 2690036,
+        "b": 2042435
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          4027,
+          1
+        ],
+        [
+          13177,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 111385129,
+      "R": 7,
+      "L": 389847952,
+      "selected_pair": {
+        "E": 728398112,
+        "a": 9542,
+        "b": 5107
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          367,
+          1
+        ],
+        [
+          5107,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 48730994,
+        "source_denominator": 111385128
+      }
+    },
+    {
+      "prime": 114165769,
+      "R": 3,
+      "L": 171248654,
+      "selected_pair": {
+        "E": 218489662,
+        "a": 37,
+        "b": 29
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          199,
+          1
+        ],
+        [
+          401,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 85624327,
+        "source_denominator": 114165768
+      }
+    },
+    {
+      "prime": 121230841,
+      "R": 31,
+      "L": 1879078036,
+      "selected_pair": {
+        "E": 2907183752,
+        "a": 38126,
+        "b": 24643
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          1297,
+          1
+        ],
+        [
+          1733,
+          1
+        ]
+      ],
+      "small_side_pair_count": 5,
+      "canonical_small_side_pair": {
+        "E": 698896,
+        "a": 836,
+        "b": 2247701,
+        "source_denominator": 121208296
+      }
+    },
+    {
+      "prime": 121624969,
+      "R": 23,
+      "L": 1398687144,
+      "selected_pair": {
+        "E": 1986894722,
+        "a": 733,
+        "b": 516
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          43,
+          3
+        ],
+        [
+          733,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 58278631,
+        "source_denominator": 121624968
+      }
+    },
+    {
+      "prime": 122552329,
+      "R": 23,
+      "L": 1409351784,
+      "selected_pair": {
+        "E": 2545158496,
+        "a": 428,
+        "b": 237
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          6947,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 58722991,
+        "source_denominator": 122552328
+      }
+    },
+    {
+      "prime": 122840041,
+      "R": 282391,
+      "L": 17344461009016,
+      "selected_pair": {
+        "E": 17942543826496,
+        "a": 4235864,
+        "b": 4094669
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          23021,
+          1
+        ],
+        [
+          27481,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 123985129,
+      "R": 383855,
+      "L": 23796155846148,
+      "selected_pair": {
+        "E": 42582593985156,
+        "a": 3262767,
+        "b": 1823311
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          6353,
+          1
+        ],
+        [
+          1087589,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 124373929,
+      "R": 48151,
+      "L": 2994364527640,
+      "selected_pair": {
+        "E": 3897426156100,
+        "a": 987095,
+        "b": 758378
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          197419,
+          1
+        ],
+        [
+          379189,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 131758729,
+      "R": 7,
+      "L": 461155552,
+      "selected_pair": {
+        "E": 613651984,
+        "a": 6193,
+        "b": 4654
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          563,
+          1
+        ]
+      ],
+      "small_side_pair_count": 72,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 57644444,
+        "source_denominator": 131758728
+      }
+    },
+    {
+      "prime": 132548089,
+      "R": 7,
+      "L": 463918312,
+      "selected_pair": {
+        "E": 783932864,
+        "a": 1144,
+        "b": 677
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          599,
+          1
+        ],
+        [
+          677,
+          1
+        ]
+      ],
+      "small_side_pair_count": 44,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 57989789,
+        "source_denominator": 132548088
+      }
+    },
+    {
+      "prime": 133658809,
+      "R": 7,
+      "L": 467805832,
+      "selected_pair": {
+        "E": 773186492,
+        "a": 2899,
+        "b": 1754
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          877,
+          1
+        ]
+      ],
+      "small_side_pair_count": 43,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 58475729,
+        "source_denominator": 133658808
+      }
+    },
+    {
+      "prime": 135298249,
+      "R": 11,
+      "L": 744140370,
+      "selected_pair": {
+        "E": 1059192300,
+        "a": 18790,
+        "b": 13201
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          307,
+          1
+        ],
+        [
+          1879,
+          1
+        ]
+      ],
+      "small_side_pair_count": 22,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 124023395,
+        "source_denominator": 135298248
+      }
+    },
+    {
+      "prime": 135318649,
+      "R": 167,
+      "L": 11299107192,
+      "selected_pair": {
+        "E": 15581773512,
+        "a": 44133,
+        "b": 32003
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          313,
+          1
+        ],
+        [
+          32003,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 1504,
+        "a": 4,
+        "b": 30050817,
+        "source_denominator": 135318640
+      }
+    },
+    {
+      "prime": 139729129,
+      "R": 35,
+      "L": 2445259758,
+      "selected_pair": {
+        "E": 2964303126,
+        "a": 5871,
+        "b": 4843
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          167,
+          1
+        ]
+      ],
+      "small_side_pair_count": 28,
+      "canonical_small_side_pair": {
+        "E": 36,
+        "a": 6,
+        "b": 407543293,
+        "source_denominator": 139729128
+      }
+    },
+    {
+      "prime": 141109609,
+      "R": 130055,
+      "L": 9176005099248,
+      "selected_pair": {
+        "E": 16254637143616,
+        "a": 2015852,
+        "b": 1137981
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29179,
+          1
+        ],
+        [
+          503963,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 143198449,
+      "R": 623,
+      "L": 44606316864,
+      "selected_pair": {
+        "E": 76464416484,
+        "a": 138261,
+        "b": 80656
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          71,
+          2
+        ],
+        [
+          2711,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 372953344,
+        "a": 68,
+        "b": 8133,
+        "source_denominator": 142599808
+      }
+    },
+    {
+      "prime": 144312529,
+      "R": 133007,
+      "L": 9597288272352,
+      "selected_pair": {
+        "E": 17000910182656,
+        "a": 2061608,
+        "b": 1163811
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          5483,
+          1
+        ],
+        [
+          35267,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 145536169,
+      "R": 3,
+      "L": 218304254,
+      "selected_pair": {
+        "E": 369485284,
+        "a": 19222,
+        "b": 11357
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          277,
+          1
+        ],
+        [
+          1373,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 109152127,
+        "source_denominator": 145536168
+      }
+    },
+    {
+      "prime": 147171049,
+      "R": 71,
+      "L": 5224572240,
+      "selected_pair": {
+        "E": 5409496320,
+        "a": 2896,
+        "b": 2797
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          181,
+          1
+        ],
+        [
+          2797,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 72,
+        "a": 3,
+        "b": 217690510,
+        "source_denominator": 147171048
+      }
+    },
+    {
+      "prime": 153273481,
+      "R": 35,
+      "L": 2682285918,
+      "selected_pair": {
+        "E": 2827274346,
+        "a": 39,
+        "b": 37
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          673,
+          1
+        ],
+        [
+          1381,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 36,
+        "a": 6,
+        "b": 447047653,
+        "source_denominator": 153273480
+      }
+    },
+    {
+      "prime": 155280409,
+      "R": 383,
+      "L": 29736198324,
+      "selected_pair": {
+        "E": 42286371624,
+        "a": 15078,
+        "b": 10603
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          359,
+          1
+        ],
+        [
+          461,
+          1
+        ]
+      ],
+      "small_side_pair_count": 3,
+      "canonical_small_side_pair": {
+        "E": 492156,
+        "a": 63,
+        "b": 3806477,
+        "source_denominator": 155279124
+      }
+    },
+    {
+      "prime": 156014329,
+      "R": 423,
+      "L": 32997030584,
+      "selected_pair": {
+        "E": 53835747634,
+        "a": 1873,
+        "b": 1148
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          1873,
+          1
+        ],
+        [
+          7673,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 156288169,
+      "R": 7,
+      "L": 547008592,
+      "selected_pair": {
+        "E": 1083265058,
+        "a": 23273,
+        "b": 11752
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          37,
+          2
+        ],
+        [
+          113,
+          1
+        ]
+      ],
+      "small_side_pair_count": 98,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 68376074,
+        "source_denominator": 156288168
+      }
+    },
+    {
+      "prime": 156360649,
+      "R": 83,
+      "L": 6488966934,
+      "selected_pair": {
+        "E": 6770185418,
+        "a": 2263,
+        "b": 2169
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          661,
+          1
+        ]
+      ],
+      "small_side_pair_count": 5,
+      "canonical_small_side_pair": {
+        "E": 10044,
+        "a": 18,
+        "b": 11628973,
+        "source_denominator": 156360528
+      }
+    },
+    {
+      "prime": 157186969,
+      "R": 266871,
+      "L": 20974321802000,
+      "selected_pair": {
+        "E": 25710457020304,
+        "a": 1267637,
+        "b": 1034125
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          3853,
+          1
+        ],
+        [
+          8273,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 157320409,
+      "R": 503,
+      "L": 39566082864,
+      "selected_pair": {
+        "E": 46023836544,
+        "a": 57336,
+        "b": 49291
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          2389,
+          1
+        ],
+        [
+          4481,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 504,
+        "a": 3,
+        "b": 235512398,
+        "source_denominator": 157320408
+      }
+    },
+    {
+      "prime": 160342009,
+      "R": 496415,
+      "L": 39798089198868,
+      "selected_pair": {
+        "E": 71217632414916,
+        "a": 4219527,
+        "b": 2357971
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          271,
+          1
+        ],
+        [
+          108193,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 163673689,
+      "R": 107751,
+      "L": 8818001831720,
+      "selected_pair": {
+        "E": 11157470478400,
+        "a": 3340280,
+        "b": 2639899
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          739,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 164757289,
+      "R": 47,
+      "L": 3871796292,
+      "selected_pair": {
+        "E": 6525674064,
+        "a": 17628,
+        "b": 10459
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          10459,
+          1
+        ]
+      ],
+      "small_side_pair_count": 17,
+      "canonical_small_side_pair": {
+        "E": 48,
+        "a": 4,
+        "b": 322649691,
+        "source_denominator": 164757288
+      }
+    },
+    {
+      "prime": 170111209,
+      "R": 143,
+      "L": 12162951444,
+      "selected_pair": {
+        "E": 14907299694,
+        "a": 679,
+        "b": 554
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          277,
+          1
+        ],
+        [
+          317,
+          1
+        ]
+      ],
+      "small_side_pair_count": 12,
+      "canonical_small_side_pair": {
+        "E": 144,
+        "a": 12,
+        "b": 1013579287,
+        "source_denominator": 170111208
+      }
+    },
+    {
+      "prime": 173214409,
+      "R": 3,
+      "L": 259821614,
+      "selected_pair": {
+        "E": 279954922,
+        "a": 2197,
+        "b": 2039
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          2039,
+          1
+        ]
+      ],
+      "small_side_pair_count": 31,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 129910807,
+        "source_denominator": 173214408
+      }
+    },
+    {
+      "prime": 174600409,
+      "R": 119,
+      "L": 10388724336,
+      "selected_pair": {
+        "E": 17560490256,
+        "a": 11043,
+        "b": 6533
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          409,
+          1
+        ]
+      ],
+      "small_side_pair_count": 13,
+      "canonical_small_side_pair": {
+        "E": 834,
+        "a": 1,
+        "b": 12456504,
+        "source_denominator": 174600402
+      }
+    },
+    {
+      "prime": 176344249,
+      "R": 71,
+      "L": 6260220840,
+      "selected_pair": {
+        "E": 8002390050,
+        "a": 63255,
+        "b": 49484
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          4217,
+          1
+        ]
+      ],
+      "small_side_pair_count": 12,
+      "canonical_small_side_pair": {
+        "E": 72,
+        "a": 3,
+        "b": 260842535,
+        "source_denominator": 176344248
+      }
+    },
+    {
+      "prime": 177171289,
+      "R": 39,
+      "L": 3454840136,
+      "selected_pair": {
+        "E": 6190075672,
+        "a": 8387,
+        "b": 4681
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          151,
+          1
+        ],
+        [
+          8387,
+          1
+        ]
+      ],
+      "small_side_pair_count": 8,
+      "canonical_small_side_pair": {
+        "E": 352,
+        "a": 4,
+        "b": 39259547,
+        "source_denominator": 177171280
+      }
+    },
+    {
+      "prime": 177345529,
+      "R": 226495,
+      "L": 20083937795428,
+      "selected_pair": {
+        "E": 37397676852496,
+        "a": 6115364,
+        "b": 3284177
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          251,
+          1
+        ],
+        [
+          6091,
+          1
+        ],
+        [
+          19433,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 178790089,
+      "R": 31,
+      "L": 2771246380,
+      "selected_pair": {
+        "E": 3465676900,
+        "a": 29435,
+        "b": 23537
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          23537,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 19794617,
+        "source_denominator": 178790080
+      }
+    },
+    {
+      "prime": 179147929,
+      "R": 11,
+      "L": 985313610,
+      "selected_pair": {
+        "E": 1846152540,
+        "a": 11094,
+        "b": 5921
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          2
+        ],
+        [
+          191,
+          1
+        ]
+      ],
+      "small_side_pair_count": 65,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 164218935,
+        "source_denominator": 179147928
+      }
+    },
+    {
+      "prime": 179700889,
+      "R": 165623,
+      "L": 14881300169424,
+      "selected_pair": {
+        "E": 26361159713344,
+        "a": 2567156,
+        "b": 1449201
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          37159,
+          1
+        ],
+        [
+          641789,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 179904169,
+      "R": 431,
+      "L": 38769348420,
+      "selected_pair": {
+        "E": 51196800050,
+        "a": 159995,
+        "b": 121158
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          127,
+          1
+        ],
+        [
+          2909,
+          1
+        ]
+      ],
+      "small_side_pair_count": 8,
+      "canonical_small_side_pair": {
+        "E": 432,
+        "a": 12,
+        "b": 1076926345,
+        "source_denominator": 179904168
+      }
+    },
+    {
+      "prime": 182079529,
+      "R": 23,
+      "L": 2093914584,
+      "selected_pair": {
+        "E": 2276588646,
+        "a": 6493,
+        "b": 5972
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          151,
+          1
+        ],
+        [
+          1493,
+          1
+        ]
+      ],
+      "small_side_pair_count": 28,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 87246441,
+        "source_denominator": 182079528
+      }
+    },
+    {
+      "prime": 186623089,
+      "R": 15,
+      "L": 1399673168,
+      "selected_pair": {
+        "E": 2478810496,
+        "a": 232,
+        "b": 131
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          23027,
+          1
+        ]
+      ],
+      "small_side_pair_count": 13,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 1,
+        "b": 87479573,
+        "source_denominator": 186623088
+      }
+    },
+    {
+      "prime": 187293649,
+      "R": 35,
+      "L": 3277638858,
+      "selected_pair": {
+        "E": 3454808526,
+        "a": 39,
+        "b": 37
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          1135703,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 36,
+        "a": 6,
+        "b": 546273143,
+        "source_denominator": 187293648
+      }
+    },
+    {
+      "prime": 190205689,
+      "R": 7,
+      "L": 665719912,
+      "selected_pair": {
+        "E": 695979908,
+        "a": 23,
+        "b": 22
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          25301,
+          1
+        ]
+      ],
+      "small_side_pair_count": 43,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 83214989,
+        "source_denominator": 190205688
+      }
+    },
+    {
+      "prime": 192495769,
+      "R": 7,
+      "L": 673735192,
+      "selected_pair": {
+        "E": 956243912,
+        "a": 10933,
+        "b": 7703
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          7703,
+          1
+        ]
+      ],
+      "small_side_pair_count": 24,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 84216899,
+        "source_denominator": 192495768
+      }
+    },
+    {
+      "prime": 193288489,
+      "R": 23,
+      "L": 2222817624,
+      "selected_pair": {
+        "E": 3822162012,
+        "a": 141,
+        "b": 82
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          433,
+          1
+        ]
+      ],
+      "small_side_pair_count": 60,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 92617401,
+        "source_denominator": 193288488
+      }
+    },
+    {
+      "prime": 195791929,
+      "R": 2231,
+      "L": 218405896800,
+      "selected_pair": {
+        "E": 270821824000,
+        "a": 7280,
+        "b": 5871
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          103,
+          1
+        ]
+      ],
+      "small_side_pair_count": 15,
+      "canonical_small_side_pair": {
+        "E": 2804368,
+        "a": 49,
+        "b": 3816150,
+        "source_denominator": 195790672
+      }
+    },
+    {
+      "prime": 199924729,
+      "R": 23,
+      "L": 2299134384,
+      "selected_pair": {
+        "E": 3572284032,
+        "a": 7848,
+        "b": 5051
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          109,
+          1
+        ],
+        [
+          5051,
+          1
+        ]
+      ],
+      "small_side_pair_count": 26,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 95797266,
+        "source_denominator": 199924728
+      }
+    },
+    {
+      "prime": 200144569,
+      "R": 215,
+      "L": 21515541168,
+      "selected_pair": {
+        "E": 32290652416,
+        "a": 179696,
+        "b": 119733
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          373,
+          1
+        ],
+        [
+          1021,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 1936,
+        "a": 11,
+        "b": 122247393,
+        "source_denominator": 200144560
+      }
+    },
+    {
+      "prime": 201896809,
+      "R": 15,
+      "L": 1514226068,
+      "selected_pair": {
+        "E": 2036175376,
+        "a": 45124,
+        "b": 33557
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1459,
+          1
+        ]
+      ],
+      "small_side_pair_count": 21,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 4,
+        "b": 378556517,
+        "source_denominator": 201896808
+      }
+    },
+    {
+      "prime": 203812009,
+      "R": 7,
+      "L": 713342032,
+      "selected_pair": {
+        "E": 1214860214,
+        "a": 3011,
+        "b": 1768
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          3011,
+          1
+        ]
+      ],
+      "small_side_pair_count": 60,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 89167754,
+        "source_denominator": 203812008
+      }
+    },
+    {
+      "prime": 209199769,
+      "R": 215,
+      "L": 22488975168,
+      "selected_pair": {
+        "E": 41982370816,
+        "a": 102448,
+        "b": 54879
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          1663,
+          1
+        ]
+      ],
+      "small_side_pair_count": 7,
+      "canonical_small_side_pair": {
+        "E": 1936,
+        "a": 11,
+        "b": 127778268,
+        "source_denominator": 209199760
+      }
+    },
+    {
+      "prime": 209799769,
+      "R": 649535,
+      "L": 68136146478708,
+      "selected_pair": {
+        "E": 121927839904836,
+        "a": 5521047,
+        "b": 3085291
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          929,
+          1
+        ],
+        [
+          6841,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 212728849,
+      "R": 47,
+      "L": 4999127952,
+      "selected_pair": {
+        "E": 5452050244,
+        "a": 36919,
+        "b": 33852
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          36919,
+          1
+        ]
+      ],
+      "small_side_pair_count": 22,
+      "canonical_small_side_pair": {
+        "E": 48,
+        "a": 1,
+        "b": 104148499,
+        "source_denominator": 212728848
+      }
+    },
+    {
+      "prime": 213524809,
+      "R": 69439,
+      "L": 7413474606076,
+      "selected_pair": {
+        "E": 8105397612004,
+        "a": 1423499,
+        "b": 1301981
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          14629,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 213601369,
+      "R": 864783,
+      "L": 92359416343964,
+      "selected_pair": {
+        "E": 126386566183684,
+        "a": 5621089,
+        "b": 4107719
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          2143,
+          1
+        ],
+        [
+          7621,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 213821689,
+      "R": 199,
+      "L": 21275258056,
+      "selected_pair": {
+        "E": 41519898694,
+        "a": 8017,
+        "b": 4108
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          8017,
+          1
+        ]
+      ],
+      "small_side_pair_count": 3,
+      "canonical_small_side_pair": {
+        "E": 28858384,
+        "a": 2686,
+        "b": 1980199,
+        "source_denominator": 213676672
+      }
+    },
+    {
+      "prime": 218157769,
+      "R": 7,
+      "L": 763552192,
+      "selected_pair": {
+        "E": 1218746768,
+        "a": 83,
+        "b": 52
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          11057,
+          1
+        ]
+      ],
+      "small_side_pair_count": 30,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 95444024,
+        "source_denominator": 218157768
+      }
+    },
+    {
+      "prime": 218165929,
+      "R": 883263,
+      "L": 96348946473164,
+      "selected_pair": {
+        "E": 131845923126724,
+        "a": 5741209,
+        "b": 4195499
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          5741209,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 218482009,
+      "R": 676415,
+      "L": 73892254058868,
+      "selected_pair": {
+        "E": 132228242894916,
+        "a": 5749527,
+        "b": 3212971
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          273787,
+          1
+        ],
+        [
+          3212971,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 218725609,
+      "R": 7,
+      "L": 765539632,
+      "selected_pair": {
+        "E": 1349425792,
+        "a": 104,
+        "b": 59
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          107,
+          1
+        ]
+      ],
+      "small_side_pair_count": 173,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 95692454,
+        "source_denominator": 218725608
+      }
+    },
+    {
+      "prime": 222052009,
+      "R": 98471,
+      "L": 10932841689120,
+      "selected_pair": {
+        "E": 16299872036100,
+        "a": 2018655,
+        "b": 1353976
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          277,
+          1
+        ],
+        [
+          787,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 222376009,
+      "R": 7,
+      "L": 778316032,
+      "selected_pair": {
+        "E": 1343811274,
+        "a": 221,
+        "b": 128
+      },
+      "factorization": [
+        [
+          2,
+          8
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          13757,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 97289504,
+        "source_denominator": 222376008
+      }
+    },
+    {
+      "prime": 222416329,
+      "R": 31,
+      "L": 3447453100,
+      "selected_pair": {
+        "E": 5831953400,
+        "a": 4082,
+        "b": 2413
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          127,
+          1
+        ],
+        [
+          157,
+          1
+        ]
+      ],
+      "small_side_pair_count": 85,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 24624665,
+        "source_denominator": 222416320
+      }
+    },
+    {
+      "prime": 223946809,
+      "R": 311,
+      "L": 34823728800,
+      "selected_pair": {
+        "E": 56261520000,
+        "a": 18300,
+        "b": 11327
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          241,
+          1
+        ]
+      ],
+      "small_side_pair_count": 33,
+      "canonical_small_side_pair": {
+        "E": 2800,
+        "a": 1,
+        "b": 12437046,
+        "source_denominator": 223946800
+      }
+    },
+    {
+      "prime": 227034889,
+      "R": 7,
+      "L": 794622112,
+      "selected_pair": {
+        "E": 880656512,
+        "a": 10492,
+        "b": 9467
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          9467,
+          1
+        ]
+      ],
+      "small_side_pair_count": 24,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 99327764,
+        "source_denominator": 227034888
+      }
+    },
+    {
+      "prime": 228513289,
+      "R": 551,
+      "L": 62955411120,
+      "selected_pair": {
+        "E": 124743176100,
+        "a": 58865,
+        "b": 29708
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          1061,
+          1
+        ]
+      ],
+      "small_side_pair_count": 10,
+      "canonical_small_side_pair": {
+        "E": 2837100,
+        "a": 35,
+        "b": 776652,
+        "source_denominator": 228508140
+      }
+    },
+    {
+      "prime": 231169129,
+      "R": 1823,
+      "L": 210710661084,
+      "selected_pair": {
+        "E": 352568555486,
+        "a": 158693,
+        "b": 94842
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          479,
+          1
+        ],
+        [
+          4289,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 233442169,
+      "R": 23,
+      "L": 2684584944,
+      "selected_pair": {
+        "E": 3187261824,
+        "a": 23048,
+        "b": 19413
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          719,
+          1
+        ]
+      ],
+      "small_side_pair_count": 48,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 111857706,
+        "source_denominator": 233442168
+      }
+    },
+    {
+      "prime": 233583289,
+      "R": 255,
+      "L": 29781869348,
+      "selected_pair": {
+        "E": 38147558596,
+        "a": 97657,
+        "b": 76241
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          239,
+          1
+        ],
+        [
+          1993,
+          1
+        ]
+      ],
+      "small_side_pair_count": 8,
+      "canonical_small_side_pair": {
+        "E": 1276,
+        "a": 1,
+        "b": 23340023,
+        "source_denominator": 233583284
+      }
+    },
+    {
+      "prime": 236703289,
+      "R": 1055,
+      "L": 124860984948,
+      "selected_pair": {
+        "E": 158896521936,
+        "a": 47988,
+        "b": 37709
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          5387,
+          1
+        ]
+      ],
+      "small_side_pair_count": 2,
+      "canonical_small_side_pair": {
+        "E": 469476,
+        "a": 27,
+        "b": 7180871,
+        "source_denominator": 236702844
+      }
+    },
+    {
+      "prime": 237274249,
+      "R": 3,
+      "L": 355911374,
+      "selected_pair": {
+        "E": 383289172,
+        "a": 14,
+        "b": 13
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          67433,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 177955687,
+        "source_denominator": 237274248
+      }
+    },
+    {
+      "prime": 239182969,
+      "R": 49367,
+      "L": 5903872815312,
+      "selected_pair": {
+        "E": 6338893856656,
+        "a": 629429,
+        "b": 586233
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          1229,
+          1
+        ],
+        [
+          629429,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 240248089,
+      "R": 287,
+      "L": 34475600772,
+      "selected_pair": {
+        "E": 34700843682,
+        "a": 43907,
+        "b": 43622
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          1283,
+          1
+        ]
+      ],
+      "small_side_pair_count": 7,
+      "canonical_small_side_pair": {
+        "E": 41616,
+        "a": 68,
+        "b": 56332681,
+        "source_denominator": 240247944
+      }
+    },
+    {
+      "prime": 240735049,
+      "R": 35,
+      "L": 4212863358,
+      "selected_pair": {
+        "E": 4934500516,
+        "a": 70246,
+        "b": 59973
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          19991,
+          1
+        ]
+      ],
+      "small_side_pair_count": 12,
+      "canonical_small_side_pair": {
+        "E": 36,
+        "a": 6,
+        "b": 702143893,
+        "source_denominator": 240735048
+      }
+    },
+    {
+      "prime": 241075129,
+      "R": 31,
+      "L": 3736664500,
+      "selected_pair": {
+        "E": 5651898332,
+        "a": 5483,
+        "b": 3625
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          5483,
+          1
+        ]
+      ],
+      "small_side_pair_count": 15,
+      "canonical_small_side_pair": {
+        "E": 94,
+        "a": 1,
+        "b": 39751750,
+        "source_denominator": 241075126
+      }
+    },
+    {
+      "prime": 241640809,
+      "R": 978303,
+      "L": 118198964183564,
+      "selected_pair": {
+        "E": 161745946971844,
+        "a": 6358969,
+        "b": 4646939
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          383,
+          1
+        ],
+        [
+          1103,
+          1
+        ],
+        [
+          8699,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 241645849,
+      "R": 31,
+      "L": 3745510660,
+      "selected_pair": {
+        "E": 5029307600,
+        "a": 380,
+        "b": 283
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          1201,
+          1
+        ]
+      ],
+      "small_side_pair_count": 16,
+      "canonical_small_side_pair": {
+        "E": 1520,
+        "a": 4,
+        "b": 9856607,
+        "source_denominator": 241645800
+      }
+    },
+    {
+      "prime": 244499929,
+      "R": 7,
+      "L": 855749752,
+      "selected_pair": {
+        "E": 1203987884,
+        "a": 5231,
+        "b": 3718
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          5231,
+          1
+        ]
+      ],
+      "small_side_pair_count": 45,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 106968719,
+        "source_denominator": 244499928
+      }
+    },
+    {
+      "prime": 245200729,
+      "R": 91527,
+      "L": 11221243561592,
+      "selected_pair": {
+        "E": 18505207925824,
+        "a": 4301768,
+        "b": 2608519
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          14533,
+          1
+        ],
+        [
+          2608519,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 251354569,
+      "R": 7,
+      "L": 879740992,
+      "selected_pair": {
+        "E": 1517674418,
+        "a": 27547,
+        "b": 15968
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          499,
+          1
+        ]
+      ],
+      "small_side_pair_count": 54,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 109967624,
+        "source_denominator": 251354568
+      }
+    },
+    {
+      "prime": 251897209,
+      "R": 165831,
+      "L": 20886183032840,
+      "selected_pair": {
+        "E": 26427413377600,
+        "a": 5140760,
+        "b": 4062859
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          109807,
+          1
+        ],
+        [
+          128519,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 252925369,
+      "R": 233111,
+      "L": 29479842846480,
+      "selected_pair": {
+        "E": 52221435073600,
+        "a": 3613220,
+        "b": 2039721
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          1069,
+          1
+        ],
+        [
+          679907,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 256036489,
+      "R": 167,
+      "L": 21379046832,
+      "selected_pair": {
+        "E": 35778033408,
+        "a": 1712,
+        "b": 1023
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          313,
+          1
+        ]
+      ],
+      "small_side_pair_count": 27,
+      "canonical_small_side_pair": {
+        "E": 6848,
+        "a": 4,
+        "b": 12487761,
+        "source_denominator": 256036448
+      }
+    },
+    {
+      "prime": 259246969,
+      "R": 1049583,
+      "L": 136050605731964,
+      "selected_pair": {
+        "E": 186174508798084,
+        "a": 6822289,
+        "b": 4985519
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          64747,
+          1
+        ],
+        [
+          6822289,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 259423609,
+      "R": 231,
+      "L": 29963426840,
+      "selected_pair": {
+        "E": 47537080900,
+        "a": 109015,
+        "b": 68714
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          21803,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 1156,
+        "a": 17,
+        "b": 440638630,
+        "source_denominator": 259423604
+      }
+    },
+    {
+      "prime": 259972729,
+      "R": 15,
+      "L": 1949795468,
+      "selected_pair": {
+        "E": 2627985196,
+        "a": 31,
+        "b": 23
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          9629,
+          1
+        ]
+      ],
+      "small_side_pair_count": 21,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 4,
+        "b": 487448867,
+        "source_denominator": 259972728
+      }
+    },
+    {
+      "prime": 261446089,
+      "R": 7,
+      "L": 915061312,
+      "selected_pair": {
+        "E": 1585329152,
+        "a": 272,
+        "b": 157
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          487,
+          1
+        ]
+      ],
+      "small_side_pair_count": 89,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 114382664,
+        "source_denominator": 261446088
+      }
+    },
+    {
+      "prime": 263697289,
+      "R": 255,
+      "L": 33621404348,
+      "selected_pair": {
+        "E": 61307740816,
+        "a": 247604,
+        "b": 135787
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          239,
+          1
+        ],
+        [
+          135787,
+          1
+        ]
+      ],
+      "small_side_pair_count": 1,
+      "canonical_small_side_pair": {
+        "E": 1073296,
+        "a": 1036,
+        "b": 32453093,
+        "source_denominator": 263693080
+      }
+    },
+    {
+      "prime": 264038329,
+      "R": 575247,
+      "L": 75943628321132,
+      "selected_pair": {
+        "E": 95632713523204,
+        "a": 4889599,
+        "b": 3882917
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          1103,
+          1
+        ],
+        [
+          23251,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 267573289,
+      "R": 176151,
+      "L": 23566651215320,
+      "selected_pair": {
+        "E": 29819026062400,
+        "a": 5460680,
+        "b": 4315699
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          211,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          48491,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 268848409,
+      "R": 7,
+      "L": 940969432,
+      "selected_pair": {
+        "E": 1191110432,
+        "a": 24404,
+        "b": 19279
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          1483,
+          1
+        ],
+        [
+          6101,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 117621179,
+        "source_denominator": 268848408
+      }
+    },
+    {
+      "prime": 273943609,
+      "R": 7,
+      "L": 958802632,
+      "selected_pair": {
+        "E": 1129497664,
+        "a": 33608,
+        "b": 28529
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          607,
+          1
+        ],
+        [
+          4201,
+          1
+        ]
+      ],
+      "small_side_pair_count": 14,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 119850329,
+        "source_denominator": 273943608
+      }
+    },
+    {
+      "prime": 274291609,
+      "R": 497807,
+      "L": 68272141500732,
+      "selected_pair": {
+        "E": 89460044222224,
+        "a": 9458332,
+        "b": 7218201
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          181891,
+          1
+        ],
+        [
+          2406067,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 274600489,
+      "R": 1111743,
+      "L": 152642585721164,
+      "selected_pair": {
+        "E": 208879323264964,
+        "a": 7226329,
+        "b": 5280779
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          2293,
+          1
+        ],
+        [
+          656939,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 275575129,
+      "R": 7,
+      "L": 964512952,
+      "selected_pair": {
+        "E": 1395716218,
+        "a": 1777,
+        "b": 1228
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          307,
+          1
+        ],
+        [
+          1777,
+          1
+        ]
+      ],
+      "small_side_pair_count": 40,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 120564119,
+        "source_denominator": 275575128
+      }
+    },
+    {
+      "prime": 276211609,
+      "R": 7,
+      "L": 966740632,
+      "selected_pair": {
+        "E": 1797079768,
+        "a": 4519,
+        "b": 2431
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          4519,
+          1
+        ]
+      ],
+      "small_side_pair_count": 73,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 120842579,
+        "source_denominator": 276211608
+      }
+    },
+    {
+      "prime": 276641689,
+      "R": 23,
+      "L": 3181379424,
+      "selected_pair": {
+        "E": 3717828676,
+        "a": 30487,
+        "b": 26088
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          709,
+          1
+        ],
+        [
+          1087,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 132557476,
+        "source_denominator": 276641688
+      }
+    },
+    {
+      "prime": 278505049,
+      "R": 551,
+      "L": 76728141000,
+      "selected_pair": {
+        "E": 150587599680,
+        "a": 57848,
+        "b": 29475
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          1033,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 27000,
+        "a": 1,
+        "b": 2841783,
+        "source_denominator": 278505000
+      }
+    },
+    {
+      "prime": 283249129,
+      "R": 255871,
+      "L": 36237618943180,
+      "selected_pair": {
+        "E": 47727593322256,
+        "a": 6908516,
+        "b": 5245355
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          787,
+          1
+        ],
+        [
+          1727129,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 283393609,
+      "R": 199,
+      "L": 28197664096,
+      "selected_pair": {
+        "E": 37936988866,
+        "a": 409,
+        "b": 304
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          409,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 1792,
+        "a": 8,
+        "b": 125882429,
+        "source_denominator": 283393600
+      }
+    },
+    {
+      "prime": 283833169,
+      "R": 431,
+      "L": 61166047920,
+      "selected_pair": {
+        "E": 92493310720,
+        "a": 2672,
+        "b": 1767
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          2591,
+          1
+        ]
+      ],
+      "small_side_pair_count": 7,
+      "canonical_small_side_pair": {
+        "E": 4158720,
+        "a": 912,
+        "b": 13413607,
+        "source_denominator": 283823520
+      }
+    },
+    {
+      "prime": 284144569,
+      "R": 1150383,
+      "L": 163437540859964,
+      "selected_pair": {
+        "E": 223651366980484,
+        "a": 7477489,
+        "b": 5464319
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          191,
+          1
+        ],
+        [
+          1289,
+          1
+        ],
+        [
+          5801,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 287037529,
+      "R": 23,
+      "L": 3300931584,
+      "selected_pair": {
+        "E": 6057623552,
+        "a": 512,
+        "b": 279
+      },
+      "factorization": [
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          109,
+          1
+        ]
+      ],
+      "small_side_pair_count": 73,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 137538816,
+        "source_denominator": 287037528
+      }
+    },
+    {
+      "prime": 291153769,
+      "R": 39,
+      "L": 5677498496,
+      "selected_pair": {
+        "E": 10385240464,
+        "a": 25477,
+        "b": 13928
+      },
+      "factorization": [
+        [
+          2,
+          7
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          1741,
+          1
+        ]
+      ],
+      "small_side_pair_count": 7,
+      "canonical_small_side_pair": {
+        "E": 4096,
+        "a": 32,
+        "b": 44355457,
+        "source_denominator": 291153664
+      }
+    },
+    {
+      "prime": 291881209,
+      "R": 269015,
+      "L": 39260211719568,
+      "selected_pair": {
+        "E": 69546659807296,
+        "a": 4169732,
+        "b": 2353881
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          137,
+          1
+        ],
+        [
+          1087,
+          1
+        ],
+        [
+          784627,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 292138009,
+      "R": 191,
+      "L": 27899179860,
+      "selected_pair": {
+        "E": 30509440200,
+        "a": 123510,
+        "b": 112943
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          2131,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 3921040,
+        "a": 4,
+        "b": 28461,
+        "source_denominator": 292117480
+      }
+    },
+    {
+      "prime": 297768409,
+      "R": 131,
+      "L": 19503830790,
+      "selected_pair": {
+        "E": 27345978700,
+        "a": 9830,
+        "b": 7011
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          983,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 1966,
+        "a": 1,
+        "b": 9920565,
+        "source_denominator": 297768394
+      }
+    },
+    {
+      "prime": 306312169,
+      "R": 948335,
+      "L": 145243275394308,
+      "selected_pair": {
+        "E": 259909017429636,
+        "a": 8060847,
+        "b": 4504591
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          839,
+          1
+        ],
+        [
+          2686949,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 306996649,
+      "R": 7,
+      "L": 1074488272,
+      "selected_pair": {
+        "E": 1835937608,
+        "a": 15149,
+        "b": 8866
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          15149,
+          1
+        ]
+      ],
+      "small_side_pair_count": 57,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 134311034,
+        "source_denominator": 306996648
+      }
+    },
+    {
+      "prime": 313318009,
+      "R": 3,
+      "L": 469977014,
+      "selected_pair": {
+        "E": 492902722,
+        "a": 43,
+        "b": 41
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          10253,
+          1
+        ]
+      ],
+      "small_side_pair_count": 40,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 234988507,
+        "source_denominator": 313318008
+      }
+    },
+    {
+      "prime": 315755449,
+      "R": 15,
+      "L": 2368165868,
+      "selected_pair": {
+        "E": 3392596516,
+        "a": 29123,
+        "b": 20329
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          701,
+          1
+        ],
+        [
+          29123,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 4,
+        "b": 592041467,
+        "source_denominator": 315755448
+      }
+    },
+    {
+      "prime": 315893209,
+      "R": 26615,
+      "L": 4203748878768,
+      "selected_pair": {
+        "E": 4879875393936,
+        "a": 184087,
+        "b": 158581
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          158581,
+          1
+        ],
+        [
+          184087,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 325582009,
+      "R": 39623,
+      "L": 6450267971304,
+      "selected_pair": {
+        "E": 10815600309264,
+        "a": 1644354,
+        "b": 980669
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          823,
+          1
+        ],
+        [
+          2521,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 326824969,
+      "R": 11,
+      "L": 1797537330,
+      "selected_pair": {
+        "E": 3377319892,
+        "a": 9554,
+        "b": 5085
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          281,
+          1
+        ]
+      ],
+      "small_side_pair_count": 117,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 299589555,
+        "source_denominator": 326824968
+      }
+    },
+    {
+      "prime": 329803609,
+      "R": 87,
+      "L": 14346456992,
+      "selected_pair": {
+        "E": 24224432164,
+        "a": 77821,
+        "b": 46088
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          823,
+          1
+        ],
+        [
+          1319,
+          1
+        ]
+      ],
+      "small_side_pair_count": 9,
+      "canonical_small_side_pair": {
+        "E": 784,
+        "a": 7,
+        "b": 128093366,
+        "source_denominator": 329803600
+      }
+    },
+    {
+      "prime": 330584809,
+      "R": 98535,
+      "L": 16287087077408,
+      "selected_pair": {
+        "E": 29370156491776,
+        "a": 5419424,
+        "b": 3005317
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          1039,
+          1
+        ],
+        [
+          61333,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 331117609,
+      "R": 9719,
+      "L": 1609066020936,
+      "selected_pair": {
+        "E": 1951906977504,
+        "a": 29964,
+        "b": 24701
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1087,
+          1
+        ],
+        [
+          1453,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 331223209,
+      "R": 11,
+      "L": 1821727650,
+      "selected_pair": {
+        "E": 3455536250,
+        "a": 2225,
+        "b": 1173
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          349,
+          1
+        ]
+      ],
+      "small_side_pair_count": 119,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 303621275,
+        "source_denominator": 331223208
+      }
+    },
+    {
+      "prime": 331735849,
+      "R": 218391,
+      "L": 36224061899480,
+      "selected_pair": {
+        "E": 45834524814400,
+        "a": 6770120,
+        "b": 5350579
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          24179,
+          1
+        ],
+        [
+          411583,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 335615569,
+      "R": 3,
+      "L": 503423354,
+      "selected_pair": {
+        "E": 850611874,
+        "a": 49,
+        "b": 29
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          9323,
+          1
+        ]
+      ],
+      "small_side_pair_count": 67,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 251711677,
+        "source_denominator": 335615568
+      }
+    },
+    {
+      "prime": 337515721,
+      "R": 35,
+      "L": 5906525118,
+      "selected_pair": {
+        "E": 6225796746,
+        "a": 39,
+        "b": 37
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          919,
+          1
+        ]
+      ],
+      "small_side_pair_count": 28,
+      "canonical_small_side_pair": {
+        "E": 36,
+        "a": 6,
+        "b": 984420853,
+        "source_denominator": 337515720
+      }
+    },
+    {
+      "prime": 339719209,
+      "R": 5831,
+      "L": 990451353840,
+      "selected_pair": {
+        "E": 1015415057280,
+        "a": 183976,
+        "b": 179453
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          179453,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 340465129,
+      "R": 231,
+      "L": 39323722400,
+      "selected_pair": {
+        "E": 53273758000,
+        "a": 485,
+        "b": 358
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          179,
+          1
+        ]
+      ],
+      "small_side_pair_count": 17,
+      "canonical_small_side_pair": {
+        "E": 5776,
+        "a": 19,
+        "b": 129354350,
+        "source_denominator": 340465104
+      }
+    },
+    {
+      "prime": 340558969,
+      "R": 439431,
+      "L": 74826084153320,
+      "selected_pair": {
+        "E": 120687230379076,
+        "a": 5492887,
+        "b": 3405590
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          3137,
+          1
+        ],
+        [
+          340559,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 340908649,
+      "R": 3,
+      "L": 511362974,
+      "selected_pair": {
+        "E": 559604764,
+        "a": 58,
+        "b": 53
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          166351,
+          1
+        ]
+      ],
+      "small_side_pair_count": 12,
+      "canonical_small_side_pair": {
+        "E": 4,
+        "a": 2,
+        "b": 255681487,
+        "source_denominator": 340908648
+      }
+    },
+    {
+      "prime": 342121609,
+      "R": 7,
+      "L": 1197425632,
+      "selected_pair": {
+        "E": 1665983488,
+        "a": 32,
+        "b": 23
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          125149,
+          1
+        ]
+      ],
+      "small_side_pair_count": 24,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 149678204,
+        "source_denominator": 342121608
+      }
+    },
+    {
+      "prime": 344592889,
+      "R": 23,
+      "L": 3962818224,
+      "selected_pair": {
+        "E": 6851866176,
+        "a": 13796,
+        "b": 7979
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          3449,
+          1
+        ]
+      ],
+      "small_side_pair_count": 26,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 165117426,
+        "source_denominator": 344592888
+      }
+    },
+    {
+      "prime": 346783369,
+      "R": 7,
+      "L": 1213741792,
+      "selected_pair": {
+        "E": 1358364736,
+        "a": 9214,
+        "b": 8233
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          271,
+          1
+        ],
+        [
+          8233,
+          1
+        ]
+      ],
+      "small_side_pair_count": 23,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 151717724,
+        "source_denominator": 346783368
+      }
+    },
+    {
+      "prime": 346936489,
+      "R": 7,
+      "L": 1214277712,
+      "selected_pair": {
+        "E": 2104240384,
+        "a": 45872,
+        "b": 26471
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          257,
+          1
+        ]
+      ],
+      "small_side_pair_count": 54,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 151784714,
+        "source_denominator": 346936488
+      }
+    },
+    {
+      "prime": 346995049,
+      "R": 7,
+      "L": 1214482672,
+      "selected_pair": {
+        "E": 2394123628,
+        "a": 481,
+        "b": 244
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          199,
+          1
+        ]
+      ],
+      "small_side_pair_count": 88,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 151810334,
+        "source_denominator": 346995048
+      }
+    },
+    {
+      "prime": 347038729,
+      "R": 7,
+      "L": 1214635552,
+      "selected_pair": {
+        "E": 2377845002,
+        "a": 971,
+        "b": 496
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          971,
+          1
+        ]
+      ],
+      "small_side_pair_count": 64,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 151829444,
+        "source_denominator": 347038728
+      }
+    },
+    {
+      "prime": 347420329,
+      "R": 630527,
+      "L": 109528948891692,
+      "selected_pair": {
+        "E": 143520687520144,
+        "a": 11980012,
+        "b": 9142641
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          769,
+          1
+        ],
+        [
+          1321,
+          1
+        ],
+        [
+          8783,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 348596329,
+      "R": 321287,
+      "L": 55999734377712,
+      "selected_pair": {
+        "E": 99199528330816,
+        "a": 4979948,
+        "b": 2811261
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          5749,
+          1
+        ],
+        [
+          1244987,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 351842089,
+      "R": 104871,
+      "L": 18449015857760,
+      "selected_pair": {
+        "E": 33268716553216,
+        "a": 5767904,
+        "b": 3198565
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          180247,
+          1
+        ],
+        [
+          639713,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 352384729,
+      "R": 277687,
+      "L": 48926329120912,
+      "selected_pair": {
+        "E": 56213226012304,
+        "a": 1874387,
+        "b": 1631411
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          719,
+          1
+        ],
+        [
+          2269,
+          1
+        ],
+        [
+          1874387,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 357737209,
+      "R": 7,
+      "L": 1252080232,
+      "selected_pair": {
+        "E": 1998512678,
+        "a": 83,
+        "b": 52
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          1987,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 156510029,
+        "source_denominator": 357737208
+      }
+    },
+    {
+      "prime": 359094409,
+      "R": 7,
+      "L": 1256830432,
+      "selected_pair": {
+        "E": 1617326656,
+        "a": 10054,
+        "b": 7813
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          457,
+          1
+        ],
+        [
+          601,
+          1
+        ]
+      ],
+      "small_side_pair_count": 73,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 157103804,
+        "source_denominator": 359094408
+      }
+    },
+    {
+      "prime": 360606409,
+      "R": 314391,
+      "L": 56685704765960,
+      "selected_pair": {
+        "E": 94986855054400,
+        "a": 9746120,
+        "b": 5816233
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          1459,
+          1
+        ],
+        [
+          5816233,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 361496809,
+      "R": 7,
+      "L": 1265238832,
+      "selected_pair": {
+        "E": 1322749688,
+        "a": 23,
+        "b": 22
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24043,
+          1
+        ]
+      ],
+      "small_side_pair_count": 60,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 158154854,
+        "source_denominator": 361496808
+      }
+    },
+    {
+      "prime": 363257449,
+      "R": 23,
+      "L": 4177460664,
+      "selected_pair": {
+        "E": 6509471064,
+        "a": 16469,
+        "b": 10569
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          271,
+          1
+        ],
+        [
+          383,
+          1
+        ]
+      ],
+      "small_side_pair_count": 57,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 174060861,
+        "source_denominator": 363257448
+      }
+    },
+    {
+      "prime": 363867529,
+      "R": 215,
+      "L": 39115759368,
+      "selected_pair": {
+        "E": 72111583296,
+        "a": 268536,
+        "b": 145663
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          20809,
+          1
+        ]
+      ],
+      "small_side_pair_count": 4,
+      "canonical_small_side_pair": {
+        "E": 268536,
+        "a": 1,
+        "b": 145663,
+        "source_denominator": 363866280
+      }
+    },
+    {
+      "prime": 364148689,
+      "R": 660887,
+      "L": 120330567313572,
+      "selected_pair": {
+        "E": 157674532149904,
+        "a": 12556852,
+        "b": 9582861
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          691,
+          1
+        ],
+        [
+          1619,
+          1
+        ],
+        [
+          1973,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 364784809,
+      "R": 23,
+      "L": 4195025304,
+      "selected_pair": {
+        "E": 7732207368,
+        "a": 31089,
+        "b": 16867
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          241,
+          1
+        ]
+      ],
+      "small_side_pair_count": 33,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 174792721,
+        "source_denominator": 364784808
+      }
+    },
+    {
+      "prime": 371275249,
+      "R": 63,
+      "L": 11695170344,
+      "selected_pair": {
+        "E": 22576264516,
+        "a": 75127,
+        "b": 38918
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          5779,
+          1
+        ]
+      ],
+      "small_side_pair_count": 20,
+      "canonical_small_side_pair": {
+        "E": 64,
+        "a": 8,
+        "b": 1461896293,
+        "source_denominator": 371275248
+      }
+    },
+    {
+      "prime": 371844169,
+      "R": 479799,
+      "L": 89205230221016,
+      "selected_pair": {
+        "E": 143879401260676,
+        "a": 5997487,
+        "b": 3718442
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          20431,
+          1
+        ],
+        [
+          5997487,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 373561609,
+      "R": 256391,
+      "L": 47888917246560,
+      "selected_pair": {
+        "E": 63172611534400,
+        "a": 1987030,
+        "b": 1506297
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          2971,
+          1
+        ],
+        [
+          4621,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 376704409,
+      "R": 23,
+      "L": 4332100704,
+      "selected_pair": {
+        "E": 8128511536,
+        "a": 349,
+        "b": 186
+      },
+      "factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          349,
+          1
+        ]
+      ],
+      "small_side_pair_count": 58,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 180504196,
+        "source_denominator": 376704408
+      }
+    },
+    {
+      "prime": 376919449,
+      "R": 15,
+      "L": 2826895868,
+      "selected_pair": {
+        "E": 4686343516,
+        "a": 3851,
+        "b": 2323
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          3851,
+          1
+        ]
+      ],
+      "small_side_pair_count": 21,
+      "canonical_small_side_pair": {
+        "E": 16,
+        "a": 4,
+        "b": 706723967,
+        "source_denominator": 376919448
+      }
+    },
+    {
+      "prime": 377924089,
+      "R": 383,
+      "L": 72372463044,
+      "selected_pair": {
+        "E": 78379435236,
+        "a": 1357,
+        "b": 1253
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          3547,
+          1
+        ]
+      ],
+      "small_side_pair_count": 5,
+      "canonical_small_side_pair": {
+        "E": 1921512,
+        "a": 118,
+        "b": 4444391,
+        "source_denominator": 377919072
+      }
+    },
+    {
+      "prime": 381196489,
+      "R": 7,
+      "L": 1334187712,
+      "selected_pair": {
+        "E": 1900760576,
+        "a": 104,
+        "b": 73
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          1997,
+          1
+        ]
+      ],
+      "small_side_pair_count": 87,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 166773464,
+        "source_denominator": 381196488
+      }
+    },
+    {
+      "prime": 383333449,
+      "R": 31,
+      "L": 5941668460,
+      "selected_pair": {
+        "E": 9533319362,
+        "a": 69041,
+        "b": 43030
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          331,
+          1
+        ],
+        [
+          1409,
+          1
+        ]
+      ],
+      "small_side_pair_count": 28,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 42440489,
+        "source_denominator": 383333440
+      }
+    },
+    {
+      "prime": 383592169,
+      "R": 71,
+      "L": 13617522000,
+      "selected_pair": {
+        "E": 23943200000,
+        "a": 69200,
+        "b": 39357
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          173,
+          1
+        ],
+        [
+          4373,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 72,
+        "a": 1,
+        "b": 189132250,
+        "source_denominator": 383592168
+      }
+    },
+    {
+      "prime": 389000329,
+      "R": 131,
+      "L": 25479521550,
+      "selected_pair": {
+        "E": 44931382020,
+        "a": 3906,
+        "b": 2215
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          31,
+          2
+        ],
+        [
+          443,
+          1
+        ]
+      ],
+      "small_side_pair_count": 25,
+      "canonical_small_side_pair": {
+        "E": 33668,
+        "a": 2,
+        "b": 1513575,
+        "source_denominator": 389000072
+      }
+    },
+    {
+      "prime": 389047129,
+      "R": 23,
+      "L": 4474041984,
+      "selected_pair": {
+        "E": 7558356992,
+        "a": 2752,
+        "b": 1629
+      },
+      "factorization": [
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          181,
+          1
+        ],
+        [
+          499,
+          1
+        ]
+      ],
+      "small_side_pair_count": 49,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 186418416,
+        "source_denominator": 389047128
+      }
+    },
+    {
+      "prime": 390423049,
+      "R": 95,
+      "L": 18545094828,
+      "selected_pair": {
+        "E": 35131504356,
+        "a": 93717,
+        "b": 49471
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          811,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 12636,
+        "a": 3,
+        "b": 4402919,
+        "source_denominator": 390422916
+      }
+    },
+    {
+      "prime": 393749689,
+      "R": 31,
+      "L": 6103120180,
+      "selected_pair": {
+        "E": 8109964840,
+        "a": 982,
+        "b": 739
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          491,
+          1
+        ],
+        [
+          739,
+          1
+        ]
+      ],
+      "small_side_pair_count": 6,
+      "canonical_small_side_pair": {
+        "E": 6728,
+        "a": 2,
+        "b": 1814245,
+        "source_denominator": 393749472
+      }
+    },
+    {
+      "prime": 396943369,
+      "R": 346071,
+      "L": 68685294326600,
+      "selected_pair": {
+        "E": 115094275240000,
+        "a": 10728200,
+        "b": 6402313
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          148891,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 400229449,
+      "R": 31,
+      "L": 6203556460,
+      "selected_pair": {
+        "E": 10778592400,
+        "a": 103820,
+        "b": 59753
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          59753,
+          1
+        ]
+      ],
+      "small_side_pair_count": 5,
+      "canonical_small_side_pair": {
+        "E": 6728,
+        "a": 58,
+        "b": 53478935,
+        "source_denominator": 400229232
+      }
+    },
+    {
+      "prime": 400272889,
+      "R": 311,
+      "L": 62242434240,
+      "selected_pair": {
+        "E": 97732499200,
+        "a": 29540,
+        "b": 18813
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          211,
+          1
+        ],
+        [
+          6271,
+          1
+        ]
+      ],
+      "small_side_pair_count": 7,
+      "canonical_small_side_pair": {
+        "E": 2800,
+        "a": 5,
+        "b": 111147204,
+        "source_denominator": 400272880
+      }
+    },
+    {
+      "prime": 401687449,
+      "R": 39,
+      "L": 7832905256,
+      "selected_pair": {
+        "E": 9996180832,
+        "a": 21316,
+        "b": 16703
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          73,
+          2
+        ],
+        [
+          16703,
+          1
+        ]
+      ],
+      "small_side_pair_count": 5,
+      "canonical_small_side_pair": {
+        "E": 352,
+        "a": 4,
+        "b": 89010287,
+        "source_denominator": 401687440
+      }
+    },
+    {
+      "prime": 403876489,
+      "R": 31,
+      "L": 6260085580,
+      "selected_pair": {
+        "E": 7740302860,
+        "a": 251,
+        "b": 203
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          251,
+          1
+        ],
+        [
+          6143,
+          1
+        ]
+      ],
+      "small_side_pair_count": 15,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 44714897,
+        "source_denominator": 403876480
+      }
+    },
+    {
+      "prime": 403950649,
+      "R": 7,
+      "L": 1413827272,
+      "selected_pair": {
+        "E": 2465576828,
+        "a": 143,
+        "b": 82
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          701,
+          1
+        ]
+      ],
+      "small_side_pair_count": 129,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 176728409,
+        "source_denominator": 403950648
+      }
+    },
+    {
+      "prime": 407498809,
+      "R": 368111,
+      "L": 75002397039900,
+      "selected_pair": {
+        "E": 98783641488016,
+        "a": 9938996,
+        "b": 7546275
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          1823,
+          1
+        ],
+        [
+          3049,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 418605049,
+      "R": 329351,
+      "L": 68933995746600,
+      "selected_pair": {
+        "E": 104241649614400,
+        "a": 2041976,
+        "b": 1350339
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          255247,
+          1
+        ],
+        [
+          450113,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 420623641,
+      "R": 966951,
+      "L": 203361225144296,
+      "selected_pair": {
+        "E": 210373674181696,
+        "a": 14504264,
+        "b": 14020789
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          106649,
+          1
+        ],
+        [
+          229849,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 429600649,
+      "R": 31,
+      "L": 6658810060,
+      "selected_pair": {
+        "E": 7618265780,
+        "a": 19517,
+        "b": 17059
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          673,
+          1
+        ],
+        [
+          2437,
+          1
+        ]
+      ],
+      "small_side_pair_count": 16,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 47562929,
+        "source_denominator": 429600640
+      }
+    },
+    {
+      "prime": 429921529,
+      "R": 7,
+      "L": 1504725352,
+      "selected_pair": {
+        "E": 2184869408,
+        "a": 33052,
+        "b": 22763
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          8263,
+          1
+        ]
+      ],
+      "small_side_pair_count": 39,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 188090669,
+        "source_denominator": 429921528
+      }
+    },
+    {
+      "prime": 430926169,
+      "R": 7,
+      "L": 1508241592,
+      "selected_pair": {
+        "E": 2573503136,
+        "a": 244,
+        "b": 143
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          21613,
+          1
+        ]
+      ],
+      "small_side_pair_count": 43,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 188530199,
+        "source_denominator": 430926168
+      }
+    },
+    {
+      "prime": 431263849,
+      "R": 7,
+      "L": 1509423472,
+      "selected_pair": {
+        "E": 2359239184,
+        "a": 12143,
+        "b": 7769
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          457,
+          1
+        ],
+        [
+          12143,
+          1
+        ]
+      ],
+      "small_side_pair_count": 19,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 188677934,
+        "source_denominator": 431263848
+      }
+    },
+    {
+      "prime": 432414889,
+      "R": 734151,
+      "L": 158728911587120,
+      "selected_pair": {
+        "E": 194570918481424,
+        "a": 3487217,
+        "b": 2844835
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          1367,
+          1
+        ],
+        [
+          2551,
+          1
+        ],
+        [
+          81281,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 435939529,
+      "R": 7,
+      "L": 1525788352,
+      "selected_pair": {
+        "E": 3015079936,
+        "a": 8096,
+        "b": 4097
+      },
+      "factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          241,
+          1
+        ]
+      ],
+      "small_side_pair_count": 144,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 190723544,
+        "source_denominator": 435939528
+      }
+    },
+    {
+      "prime": 440564569,
+      "R": 23,
+      "L": 5066492544,
+      "selected_pair": {
+        "E": 9533395926,
+        "a": 39861,
+        "b": 21184
+      },
+      "factorization": [
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          331,
+          1
+        ]
+      ],
+      "small_side_pair_count": 63,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 211103856,
+        "source_denominator": 440564568
+      }
+    },
+    {
+      "prime": 441016249,
+      "R": 7,
+      "L": 1543556872,
+      "selected_pair": {
+        "E": 2150459564,
+        "a": 6991,
+        "b": 5018
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          6991,
+          1
+        ]
+      ],
+      "small_side_pair_count": 45,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 192944609,
+        "source_denominator": 441016248
+      }
+    },
+    {
+      "prime": 442037929,
+      "R": 47,
+      "L": 10387891332,
+      "selected_pair": {
+        "E": 15088672872,
+        "a": 18954,
+        "b": 13049
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13049,
+          1
+        ]
+      ],
+      "small_side_pair_count": 17,
+      "canonical_small_side_pair": {
+        "E": 48,
+        "a": 4,
+        "b": 865657611,
+        "source_denominator": 442037928
+      }
+    },
+    {
+      "prime": 443648209,
+      "R": 887,
+      "L": 196757980692,
+      "selected_pair": {
+        "E": 222748516302,
+        "a": 1157,
+        "b": 1022
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          27733,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 446393929,
+      "R": 1807263,
+      "L": 403375615653164,
+      "selected_pair": {
+        "E": 551987677158724,
+        "a": 11747209,
+        "b": 8584499
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          1087,
+          1
+        ],
+        [
+          111487,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 457486969,
+      "R": 11,
+      "L": 2516178330,
+      "selected_pair": {
+        "E": 4134086100,
+        "a": 810,
+        "b": 493
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          6301,
+          1
+        ]
+      ],
+      "small_side_pair_count": 71,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 419363055,
+        "source_denominator": 457486968
+      }
+    },
+    {
+      "prime": 459147049,
+      "R": 215,
+      "L": 49358307768,
+      "selected_pair": {
+        "E": 94665725286,
+        "a": 125609,
+        "b": 65492
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          601,
+          1
+        ],
+        [
+          2339,
+          1
+        ]
+      ],
+      "small_side_pair_count": 11,
+      "canonical_small_side_pair": {
+        "E": 1936,
+        "a": 22,
+        "b": 560889861,
+        "source_denominator": 459147040
+      }
+    },
+    {
+      "prime": 461324329,
+      "R": 5831,
+      "L": 1344991081200,
+      "selected_pair": {
+        "E": 1661843332500,
+        "a": 9425,
+        "b": 7628
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          1559,
+          1
+        ],
+        [
+          1907,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 461896009,
+      "R": 23,
+      "L": 5311804104,
+      "selected_pair": {
+        "E": 5750492224,
+        "a": 75832,
+        "b": 70047
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          181,
+          1
+        ],
+        [
+          9479,
+          1
+        ]
+      ],
+      "small_side_pair_count": 23,
+      "canonical_small_side_pair": {
+        "E": 24,
+        "a": 1,
+        "b": 221325171,
+        "source_denominator": 461896008
+      }
+    },
+    {
+      "prime": 464941129,
+      "R": 11,
+      "L": 2557176210,
+      "selected_pair": {
+        "E": 2908161180,
+        "a": 58,
+        "b": 51
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          19211,
+          1
+        ]
+      ],
+      "small_side_pair_count": 54,
+      "canonical_small_side_pair": {
+        "E": 12,
+        "a": 2,
+        "b": 426196035,
+        "source_denominator": 464941128
+      }
+    },
+    {
+      "prime": 469274089,
+      "R": 7,
+      "L": 1642459312,
+      "selected_pair": {
+        "E": 3250596196,
+        "a": 28507,
+        "b": 14404
+      },
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          277,
+          1
+        ],
+        [
+          983,
+          1
+        ]
+      ],
+      "small_side_pair_count": 58,
+      "canonical_small_side_pair": {
+        "E": 8,
+        "a": 1,
+        "b": 205307414,
+        "source_denominator": 469274088
+      }
+    },
+    {
+      "prime": 471304969,
+      "R": 31,
+      "L": 7305227020,
+      "selected_pair": {
+        "E": 10897961620,
+        "a": 91,
+        "b": 61
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          2269,
+          1
+        ]
+      ],
+      "small_side_pair_count": 46,
+      "canonical_small_side_pair": {
+        "E": 280,
+        "a": 2,
+        "b": 52180193,
+        "source_denominator": 471304960
+      }
+    },
+    {
+      "prime": 472215769,
+      "R": 2471,
+      "L": 583422582600,
+      "selected_pair": {
+        "E": 728022252000,
+        "a": 155780,
+        "b": 124839
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          7789,
+          1
+        ]
+      ],
+      "small_side_pair_count": 3,
+      "canonical_small_side_pair": {
+        "E": 61776,
+        "a": 2,
+        "b": 18888325,
+        "source_denominator": 472215744
+      }
+    },
+    {
+      "prime": 473173969,
+      "R": 1464935,
+      "L": 346584554138508,
+      "selected_pair": {
+        "E": 620203936363236,
+        "a": 12451947,
+        "b": 6958441
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          20287,
+          1
+        ],
+        [
+          180463,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 477015289,
+      "R": 609215,
+      "L": 145302434644068,
+      "selected_pair": {
+        "E": 270563153030416,
+        "a": 16448804,
+        "b": 8833617
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          433,
+          1
+        ],
+        [
+          8389,
+          1
+        ],
+        [
+          9497,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 478850089,
+      "R": 15671,
+      "L": 3752029872360,
+      "selected_pair": {
+        "E": 4510246078912,
+        "a": 802696,
+        "b": 667755
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          269,
+          1
+        ],
+        [
+          373,
+          1
+        ]
+      ],
+      "small_side_pair_count": 1,
+      "canonical_small_side_pair": {
+        "E": 3185992656,
+        "a": 426,
+        "b": 501685,
+        "source_denominator": 478646784
+      }
+    },
+    {
+      "prime": 481517689,
+      "R": 171,
+      "L": 41169762410,
+      "selected_pair": {
+        "E": 81184474882,
+        "a": 12019,
+        "b": 6095
+      },
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          281,
+          1
+        ]
+      ],
+      "small_side_pair_count": 24,
+      "canonical_small_side_pair": {
+        "E": 3934,
+        "a": 1,
+        "b": 10465115,
+        "source_denominator": 481517666
+      }
+    },
+    {
+      "prime": 484570249,
+      "R": 1961823,
+      "L": 475320529801964,
+      "selected_pair": {
+        "E": 650438611675204,
+        "a": 12751849,
+        "b": 9318659
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          373,
+          1
+        ],
+        [
+          1159259,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 485955409,
+      "R": 31,
+      "L": 7532308840,
+      "selected_pair": {
+        "E": 11312449600,
+        "a": 106360,
+        "b": 70819
+      },
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          151,
+          1
+        ],
+        [
+          2659,
+          1
+        ]
+      ],
+      "small_side_pair_count": 31,
+      "canonical_small_side_pair": {
+        "E": 32,
+        "a": 4,
+        "b": 941538605,
+        "source_denominator": 485955408
+      }
+    },
+    {
+      "prime": 489786889,
+      "R": 1982943,
+      "L": 485609741517164,
+      "selected_pair": {
+        "E": 664518585514564,
+        "a": 12889129,
+        "b": 9418979
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          1319,
+          1
+        ],
+        [
+          28579,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    },
+    {
+      "prime": 490794649,
+      "R": 1987023,
+      "L": 487610127919964,
+      "selected_pair": {
+        "E": 667255956364804,
+        "a": 12915649,
+        "b": 9438359
+      },
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          4001,
+          1
+        ],
+        [
+          6353,
+          1
+        ]
+      ],
+      "small_side_pair_count": 0,
+      "canonical_small_side_pair": null
+    }
+  ]
+}
