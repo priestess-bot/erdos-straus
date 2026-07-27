@@ -40,6 +40,8 @@ E\mid4K^2,\qquad E\equiv1\pmod R,\qquad E\le4K-2R,\qquad2\mid E. \tag{1}
 
 | \(B_0\) | 偶源命中 | 遗漏 |
 |---:|---:|---|
+| 1 | 1,713 | \(39407449,63332329,172657489,193288489\) |
+| 2 | 1,716 | \(172657489\) |
 | 7 | 1,716 | \(172657489\) |
 | 8 | 1,717 | 无 |
 
@@ -51,16 +53,15 @@ E\mid4K^2,\qquad E\equiv1\pmod R,\qquad E\le4K-2R,\qquad2\mid E. \tag{1}
 
 有偶源桥，但在同一缺口盒的所有 \(B\le7\) 正规形中都没有偶源桥。
 
-在 \(B\le8\) 的第一次命中顺序中，各 \(B\) 的记录数为
+因此按每个 \(p\) 所需的最小 \(B\) 计，精确状态分布为
 
 \[
-1455,147,31,8,23,7,41,5
-\quad(B=1,2,\ldots,8). \tag{3}
+1713_{B=1}+3_{B=2}+1_{B=8}=1717. \tag{3}
 \]
 
 这说明低溢出状态在有限压力集上极其有效，但
 [B=1 边界](type-I-tail-reverse-b1-even-source-boundary-500m.md) 已表明它不能退化为单一
-除子残数条件；状态切换至少要允许到 \(B=8\)。
+除子残数条件；有限状态菜单至少要允许 \(\{1,2,8\}\)。
 
 ## 边界
 
@@ -71,6 +72,9 @@ E\mid4K^2,\qquad E\equiv1\pmod R,\qquad E\le4K-2R,\qquad2\mid E. \tag{1}
 可复现命令：
 
 ~~~bash
+python3 reproductions/type_i_tail_reverse_small_b_profile.py \
+  --gap-cap 215 --b-cap 2 --even-source-only \
+  --output reproductions/type-i-tail-reverse-even-small-b2-500m-results.json
 python3 reproductions/type_i_tail_reverse_small_b_profile.py \
   --gap-cap 215 --b-cap 7 --even-source-only \
   --output reproductions/type-i-tail-reverse-even-small-b7-500m-results.json
