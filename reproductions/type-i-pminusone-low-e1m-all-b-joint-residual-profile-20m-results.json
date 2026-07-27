@@ -1,0 +1,2745 @@
+{
+  "arithmetic": "intersect the stored one-million dyadic and fixed-menu p-1 misses; for every resulting prime, enumerate all E<=e_cap with 4|E|(p-1)^2/4, factor K=((E-1)p+1)/4, enumerate every BC|K with B<=b_cap or every B|K when requested, and verify each reconstructed p-1 Type I edge exactly",
+  "scope_note": "A complete finite low-E p-1 refinement of one stored joint residual set. A remaining miss may use a larger bridge factor, a larger B, a non-p-1 source, another Type I coordinate, or Type II.",
+  "prime_limit": 20000017,
+  "joint_residual_count": 254,
+  "e_cap": 1000000,
+  "b_cap": null,
+  "captured_count": 227,
+  "misses": [
+    297049,
+    513529,
+    710089,
+    1083289,
+    1103449,
+    1708009,
+    2469289,
+    3389929,
+    3942409,
+    4762489,
+    5180569,
+    5770249,
+    10269529,
+    11430169,
+    11635369,
+    13185769,
+    13595929,
+    13782409,
+    13992169,
+    14397289,
+    14823769,
+    16218409,
+    16253449,
+    16977769,
+    18190489,
+    19060969,
+    19158409
+  ],
+  "selected_E_histogram": {
+    "12": 5,
+    "20": 12,
+    "24": 4,
+    "28": 3,
+    "36": 75,
+    "44": 5,
+    "48": 12,
+    "52": 5,
+    "56": 1,
+    "60": 9,
+    "68": 1,
+    "72": 11,
+    "76": 3,
+    "80": 10,
+    "84": 4,
+    "88": 4,
+    "96": 7,
+    "100": 1,
+    "104": 1,
+    "108": 4,
+    "112": 3,
+    "120": 5,
+    "132": 2,
+    "136": 2,
+    "144": 10,
+    "152": 1,
+    "160": 1,
+    "168": 2,
+    "180": 1,
+    "192": 1,
+    "200": 1,
+    "216": 3,
+    "240": 1,
+    "280": 1,
+    "296": 2,
+    "408": 1,
+    "432": 1,
+    "472": 1,
+    "576": 1,
+    "584": 1,
+    "612": 2,
+    "648": 2,
+    "804": 1,
+    "972": 1,
+    "4152": 1,
+    "18600": 1,
+    "20808": 1
+  },
+  "selected_B_histogram": {
+    "1": 95,
+    "2": 10,
+    "3": 13,
+    "4": 9,
+    "5": 14,
+    "6": 1,
+    "7": 3,
+    "8": 1,
+    "9": 10,
+    "10": 1,
+    "11": 9,
+    "12": 1,
+    "13": 6,
+    "14": 1,
+    "16": 1,
+    "17": 5,
+    "18": 2,
+    "19": 1,
+    "23": 2,
+    "24": 1,
+    "25": 4,
+    "27": 1,
+    "31": 2,
+    "33": 2,
+    "34": 1,
+    "39": 1,
+    "44": 1,
+    "45": 1,
+    "51": 4,
+    "57": 2,
+    "70": 1,
+    "89": 2,
+    "103": 1,
+    "107": 1,
+    "121": 1,
+    "133": 1,
+    "137": 1,
+    "141": 1,
+    "144": 1,
+    "169": 1,
+    "176": 1,
+    "178": 2,
+    "255": 2,
+    "323": 1,
+    "332": 1,
+    "435": 1,
+    "509": 1,
+    "821": 1,
+    "2701": 1
+  },
+  "records": [
+    {
+      "prime": 20521,
+      "witness": {
+        "E": 120,
+        "B": 44,
+        "C": 185,
+        "H": 75,
+        "gap": 12039,
+        "source_denominator": 20520
+      }
+    },
+    {
+      "prime": 118801,
+      "witness": {
+        "E": 80,
+        "B": 16,
+        "C": 211,
+        "H": 695,
+        "gap": 2735,
+        "source_denominator": 118800
+      }
+    },
+    {
+      "prime": 174169,
+      "witness": {
+        "E": 472,
+        "B": 176,
+        "C": 395,
+        "H": 295,
+        "gap": 103911,
+        "source_denominator": 174168
+      }
+    },
+    {
+      "prime": 187009,
+      "witness": {
+        "E": 576,
+        "B": 39,
+        "C": 1286,
+        "H": 536,
+        "gap": 13607,
+        "source_denominator": 187008
+      }
+    },
+    {
+      "prime": 195241,
+      "witness": {
+        "E": 12,
+        "B": 9,
+        "C": 13,
+        "H": 4589,
+        "gap": 383,
+        "source_denominator": 195240
+      }
+    },
+    {
+      "prime": 211129,
+      "witness": {
+        "E": 76,
+        "B": 11,
+        "C": 611,
+        "H": 589,
+        "gap": 3943,
+        "source_denominator": 211128
+      }
+    },
+    {
+      "prime": 261529,
+      "witness": {
+        "E": 36,
+        "B": 57,
+        "C": 19,
+        "H": 2113,
+        "gap": 7055,
+        "source_denominator": 261528
+      }
+    },
+    {
+      "prime": 295201,
+      "witness": {
+        "E": 120,
+        "B": 3,
+        "C": 3527,
+        "H": 830,
+        "gap": 1067,
+        "source_denominator": 295200
+      }
+    },
+    {
+      "prime": 297049,
+      "witness": null
+    },
+    {
+      "prime": 300889,
+      "witness": {
+        "E": 112,
+        "B": 5,
+        "C": 101,
+        "H": 16534,
+        "gap": 91,
+        "source_denominator": 300888
+      }
+    },
+    {
+      "prime": 331081,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2301,
+        "H": 1259,
+        "gap": 263,
+        "source_denominator": 331080
+      }
+    },
+    {
+      "prime": 361561,
+      "witness": {
+        "E": 60,
+        "B": 25,
+        "C": 1011,
+        "H": 211,
+        "gap": 42839,
+        "source_denominator": 361560
+      }
+    },
+    {
+      "prime": 388081,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 12171,
+        "H": 279,
+        "gap": 1391,
+        "source_denominator": 388080
+      }
+    },
+    {
+      "prime": 400681,
+      "witness": {
+        "E": 24,
+        "B": 4,
+        "C": 37,
+        "H": 15567,
+        "gap": 103,
+        "source_denominator": 400680
+      }
+    },
+    {
+      "prime": 471769,
+      "witness": {
+        "E": 88,
+        "B": 1,
+        "C": 674,
+        "H": 15224,
+        "gap": 31,
+        "source_denominator": 471768
+      }
+    },
+    {
+      "prime": 513529,
+      "witness": null
+    },
+    {
+      "prime": 539401,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 4821,
+        "H": 979,
+        "gap": 551,
+        "source_denominator": 539400
+      }
+    },
+    {
+      "prime": 582409,
+      "witness": {
+        "E": 216,
+        "B": 2,
+        "C": 10414,
+        "H": 1503,
+        "gap": 775,
+        "source_denominator": 582408
+      }
+    },
+    {
+      "prime": 645481,
+      "witness": {
+        "E": 60,
+        "B": 435,
+        "C": 43,
+        "H": 509,
+        "gap": 551639,
+        "source_denominator": 645480
+      }
+    },
+    {
+      "prime": 691681,
+      "witness": {
+        "E": 44,
+        "B": 13,
+        "C": 319,
+        "H": 1793,
+        "gap": 5015,
+        "source_denominator": 691680
+      }
+    },
+    {
+      "prime": 710089,
+      "witness": null
+    },
+    {
+      "prime": 723529,
+      "witness": {
+        "E": 24,
+        "B": 4,
+        "C": 83,
+        "H": 12531,
+        "gap": 231,
+        "source_denominator": 723528
+      }
+    },
+    {
+      "prime": 725209,
+      "witness": {
+        "E": 88,
+        "B": 1,
+        "C": 413,
+        "H": 38192,
+        "gap": 19,
+        "source_denominator": 725208
+      }
+    },
+    {
+      "prime": 765241,
+      "witness": {
+        "E": 280,
+        "B": 5,
+        "C": 19304,
+        "H": 553,
+        "gap": 6919,
+        "source_denominator": 765240
+      }
+    },
+    {
+      "prime": 783721,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 61,
+        "H": 112419,
+        "gap": 7,
+        "source_denominator": 783720
+      }
+    },
+    {
+      "prime": 830041,
+      "witness": {
+        "E": 120,
+        "B": 4,
+        "C": 53682,
+        "H": 115,
+        "gap": 28871,
+        "source_denominator": 830040
+      }
+    },
+    {
+      "prime": 940921,
+      "witness": {
+        "E": 180,
+        "B": 1,
+        "C": 10695,
+        "H": 3937,
+        "gap": 239,
+        "source_denominator": 940920
+      }
+    },
+    {
+      "prime": 990889,
+      "witness": {
+        "E": 76,
+        "B": 133,
+        "C": 29,
+        "H": 4817,
+        "gap": 27359,
+        "source_denominator": 990888
+      }
+    },
+    {
+      "prime": 1048009,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 4681,
+        "H": 1959,
+        "gap": 535,
+        "source_denominator": 1048008
+      }
+    },
+    {
+      "prime": 1083289,
+      "witness": null
+    },
+    {
+      "prime": 1095481,
+      "witness": {
+        "E": 80,
+        "B": 5,
+        "C": 58475,
+        "H": 74,
+        "gap": 74019,
+        "source_denominator": 1095480
+      }
+    },
+    {
+      "prime": 1103449,
+      "witness": null
+    },
+    {
+      "prime": 1161169,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 131,
+        "H": 77559,
+        "gap": 15,
+        "source_denominator": 1161168
+      }
+    },
+    {
+      "prime": 1323169,
+      "witness": {
+        "E": 132,
+        "B": 5,
+        "C": 11097,
+        "H": 781,
+        "gap": 8471,
+        "source_denominator": 1323168
+      }
+    },
+    {
+      "prime": 1433041,
+      "witness": {
+        "E": 84,
+        "B": 1,
+        "C": 1141,
+        "H": 26061,
+        "gap": 55,
+        "source_denominator": 1433040
+      }
+    },
+    {
+      "prime": 1449289,
+      "witness": {
+        "E": 648,
+        "B": 31,
+        "C": 12276,
+        "H": 616,
+        "gap": 72935,
+        "source_denominator": 1449288
+      }
+    },
+    {
+      "prime": 1486081,
+      "witness": {
+        "E": 80,
+        "B": 25,
+        "C": 1391,
+        "H": 844,
+        "gap": 44019,
+        "source_denominator": 1486080
+      }
+    },
+    {
+      "prime": 1517209,
+      "witness": {
+        "E": 28,
+        "B": 137,
+        "C": 59,
+        "H": 1267,
+        "gap": 164055,
+        "source_denominator": 1517208
+      }
+    },
+    {
+      "prime": 1548409,
+      "witness": {
+        "E": 144,
+        "B": 1,
+        "C": 393,
+        "H": 140854,
+        "gap": 11,
+        "source_denominator": 1548408
+      }
+    },
+    {
+      "prime": 1586041,
+      "witness": {
+        "E": 60,
+        "B": 3,
+        "C": 67809,
+        "H": 115,
+        "gap": 41375,
+        "source_denominator": 1586040
+      }
+    },
+    {
+      "prime": 1708009,
+      "witness": null
+    },
+    {
+      "prime": 1730089,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2301,
+        "H": 6579,
+        "gap": 263,
+        "source_denominator": 1730088
+      }
+    },
+    {
+      "prime": 1782169,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 61,
+        "H": 255639,
+        "gap": 7,
+        "source_denominator": 1782168
+      }
+    },
+    {
+      "prime": 1795369,
+      "witness": {
+        "E": 36,
+        "B": 51,
+        "C": 3461,
+        "H": 89,
+        "gap": 1028807,
+        "source_denominator": 1795368
+      }
+    },
+    {
+      "prime": 1849201,
+      "witness": {
+        "E": 160,
+        "B": 2,
+        "C": 17798,
+        "H": 2065,
+        "gap": 1791,
+        "source_denominator": 1849200
+      }
+    },
+    {
+      "prime": 1924561,
+      "witness": {
+        "E": 20,
+        "B": 17,
+        "C": 13,
+        "H": 41365,
+        "gap": 791,
+        "source_denominator": 1924560
+      }
+    },
+    {
+      "prime": 2044681,
+      "witness": {
+        "E": 44,
+        "B": 1,
+        "C": 419,
+        "H": 52459,
+        "gap": 39,
+        "source_denominator": 2044680
+      }
+    },
+    {
+      "prime": 2160841,
+      "witness": {
+        "E": 12,
+        "B": 9,
+        "C": 13,
+        "H": 50789,
+        "gap": 383,
+        "source_denominator": 2160840
+      }
+    },
+    {
+      "prime": 2218969,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 281391,
+        "H": 69,
+        "gap": 32159,
+        "source_denominator": 2218968
+      }
+    },
+    {
+      "prime": 2222089,
+      "witness": {
+        "E": 44,
+        "B": 121,
+        "C": 1441,
+        "H": 137,
+        "gap": 1962575,
+        "source_denominator": 2222088
+      }
+    },
+    {
+      "prime": 2238289,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 283841,
+        "H": 69,
+        "gap": 32439,
+        "source_denominator": 2238288
+      }
+    },
+    {
+      "prime": 2298409,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1041,
+        "H": 19319,
+        "gap": 119,
+        "source_denominator": 2298408
+      }
+    },
+    {
+      "prime": 2352289,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 98481,
+        "H": 209,
+        "gap": 11255,
+        "source_denominator": 2352288
+      }
+    },
+    {
+      "prime": 2366809,
+      "witness": {
+        "E": 68,
+        "B": 323,
+        "C": 139,
+        "H": 883,
+        "gap": 865775,
+        "source_denominator": 2366808
+      }
+    },
+    {
+      "prime": 2451289,
+      "witness": {
+        "E": 48,
+        "B": 3,
+        "C": 453,
+        "H": 21194,
+        "gap": 347,
+        "source_denominator": 2451288
+      }
+    },
+    {
+      "prime": 2469289,
+      "witness": null
+    },
+    {
+      "prime": 2514241,
+      "witness": {
+        "E": 20,
+        "B": 11,
+        "C": 16703,
+        "H": 65,
+        "gap": 425487,
+        "source_denominator": 2514240
+      }
+    },
+    {
+      "prime": 2606041,
+      "witness": {
+        "E": 72,
+        "B": 332,
+        "C": 137,
+        "H": 1017,
+        "gap": 850743,
+        "source_denominator": 2606040
+      }
+    },
+    {
+      "prime": 2628649,
+      "witness": {
+        "E": 132,
+        "B": 141,
+        "C": 187,
+        "H": 3265,
+        "gap": 113519,
+        "source_denominator": 2628648
+      }
+    },
+    {
+      "prime": 2741929,
+      "witness": {
+        "E": 112,
+        "B": 70,
+        "C": 4133,
+        "H": 263,
+        "gap": 729791,
+        "source_denominator": 2741928
+      }
+    },
+    {
+      "prime": 2811649,
+      "witness": {
+        "E": 36,
+        "B": 11,
+        "C": 111,
+        "H": 20149,
+        "gap": 1535,
+        "source_denominator": 2811648
+      }
+    },
+    {
+      "prime": 3004681,
+      "witness": {
+        "E": 48,
+        "B": 9,
+        "C": 19,
+        "H": 206462,
+        "gap": 131,
+        "source_denominator": 3004680
+      }
+    },
+    {
+      "prime": 3012409,
+      "witness": {
+        "E": 648,
+        "B": 103,
+        "C": 3972,
+        "H": 1191,
+        "gap": 260519,
+        "source_denominator": 3012408
+      }
+    },
+    {
+      "prime": 3017281,
+      "witness": {
+        "E": 12,
+        "B": 9,
+        "C": 13,
+        "H": 70919,
+        "gap": 383,
+        "source_denominator": 3017280
+      }
+    },
+    {
+      "prime": 3083929,
+      "witness": {
+        "E": 72,
+        "B": 5,
+        "C": 22,
+        "H": 497634,
+        "gap": 31,
+        "source_denominator": 3083928
+      }
+    },
+    {
+      "prime": 3208969,
+      "witness": {
+        "E": 144,
+        "B": 2,
+        "C": 1707,
+        "H": 33603,
+        "gap": 191,
+        "source_denominator": 3208968
+      }
+    },
+    {
+      "prime": 3231001,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 551,
+        "H": 51309,
+        "gap": 63,
+        "source_denominator": 3231000
+      }
+    },
+    {
+      "prime": 3266041,
+      "witness": {
+        "E": 48,
+        "B": 18,
+        "C": 181,
+        "H": 11779,
+        "gap": 4991,
+        "source_denominator": 3266040
+      }
+    },
+    {
+      "prime": 3320881,
+      "witness": {
+        "E": 80,
+        "B": 1,
+        "C": 2824,
+        "H": 23225,
+        "gap": 143,
+        "source_denominator": 3320880
+      }
+    },
+    {
+      "prime": 3358441,
+      "witness": {
+        "E": 100,
+        "B": 17,
+        "C": 65,
+        "H": 75223,
+        "gap": 759,
+        "source_denominator": 3358440
+      }
+    },
+    {
+      "prime": 3371209,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 271,
+        "H": 108849,
+        "gap": 31,
+        "source_denominator": 3371208
+      }
+    },
+    {
+      "prime": 3389929,
+      "witness": null
+    },
+    {
+      "prime": 3505849,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 39891,
+        "H": 769,
+        "gap": 4559,
+        "source_denominator": 3505848
+      }
+    },
+    {
+      "prime": 3543289,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 831,
+        "H": 37309,
+        "gap": 95,
+        "source_denominator": 3543288
+      }
+    },
+    {
+      "prime": 3751801,
+      "witness": {
+        "E": 80,
+        "B": 34,
+        "C": 205,
+        "H": 10631,
+        "gap": 11999,
+        "source_denominator": 3751800
+      }
+    },
+    {
+      "prime": 3869329,
+      "witness": {
+        "E": 72,
+        "B": 5,
+        "C": 22,
+        "H": 624369,
+        "gap": 31,
+        "source_denominator": 3869328
+      }
+    },
+    {
+      "prime": 3909361,
+      "witness": {
+        "E": 12,
+        "B": 9,
+        "C": 101,
+        "H": 11827,
+        "gap": 2975,
+        "source_denominator": 3909360
+      }
+    },
+    {
+      "prime": 3913561,
+      "witness": {
+        "E": 20,
+        "B": 17,
+        "C": 13,
+        "H": 84115,
+        "gap": 791,
+        "source_denominator": 3913560
+      }
+    },
+    {
+      "prime": 3942409,
+      "witness": null
+    },
+    {
+      "prime": 4165849,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 411,
+        "H": 88689,
+        "gap": 47,
+        "source_denominator": 4165848
+      }
+    },
+    {
+      "prime": 4204489,
+      "witness": {
+        "E": 48,
+        "B": 9,
+        "C": 254,
+        "H": 21611,
+        "gap": 1751,
+        "source_denominator": 4204488
+      }
+    },
+    {
+      "prime": 4269049,
+      "witness": {
+        "E": 84,
+        "B": 1,
+        "C": 133609,
+        "H": 663,
+        "gap": 6439,
+        "source_denominator": 4269048
+      }
+    },
+    {
+      "prime": 4426249,
+      "witness": {
+        "E": 48,
+        "B": 18,
+        "C": 87,
+        "H": 33211,
+        "gap": 2399,
+        "source_denominator": 4426248
+      }
+    },
+    {
+      "prime": 4504921,
+      "witness": {
+        "E": 20,
+        "B": 25,
+        "C": 145,
+        "H": 5903,
+        "gap": 19079,
+        "source_denominator": 4504920
+      }
+    },
+    {
+      "prime": 4511329,
+      "witness": {
+        "E": 96,
+        "B": 9,
+        "C": 5471,
+        "H": 2176,
+        "gap": 18659,
+        "source_denominator": 4511328
+      }
+    },
+    {
+      "prime": 4535449,
+      "witness": {
+        "E": 144,
+        "B": 1,
+        "C": 283962,
+        "H": 571,
+        "gap": 7943,
+        "source_denominator": 4535448
+      }
+    },
+    {
+      "prime": 4636129,
+      "witness": {
+        "E": 168,
+        "B": 6,
+        "C": 200371,
+        "H": 161,
+        "gap": 172775,
+        "source_denominator": 4636128
+      }
+    },
+    {
+      "prime": 4715209,
+      "witness": {
+        "E": 108,
+        "B": 33,
+        "C": 21117,
+        "H": 181,
+        "gap": 859679,
+        "source_denominator": 4715208
+      }
+    },
+    {
+      "prime": 4762489,
+      "witness": null
+    },
+    {
+      "prime": 4816249,
+      "witness": {
+        "E": 584,
+        "B": 2701,
+        "C": 43,
+        "H": 6044,
+        "gap": 2152331,
+        "source_denominator": 4816248
+      }
+    },
+    {
+      "prime": 4937641,
+      "witness": {
+        "E": 12,
+        "B": 13,
+        "C": 827,
+        "H": 1263,
+        "gap": 50823,
+        "source_denominator": 4937640
+      }
+    },
+    {
+      "prime": 4964569,
+      "witness": {
+        "E": 112,
+        "B": 5,
+        "C": 434,
+        "H": 63487,
+        "gap": 391,
+        "source_denominator": 4964568
+      }
+    },
+    {
+      "prime": 4986361,
+      "witness": {
+        "E": 60,
+        "B": 1,
+        "C": 575,
+        "H": 127911,
+        "gap": 39,
+        "source_denominator": 4986360
+      }
+    },
+    {
+      "prime": 5001481,
+      "witness": {
+        "E": 80,
+        "B": 1,
+        "C": 10250,
+        "H": 9637,
+        "gap": 519,
+        "source_denominator": 5001480
+      }
+    },
+    {
+      "prime": 5046409,
+      "witness": {
+        "E": 108,
+        "B": 17,
+        "C": 7541,
+        "H": 1053,
+        "gap": 81471,
+        "source_denominator": 5046408
+      }
+    },
+    {
+      "prime": 5103289,
+      "witness": {
+        "E": 108,
+        "B": 11,
+        "C": 3231,
+        "H": 3841,
+        "gap": 14615,
+        "source_denominator": 5103288
+      }
+    },
+    {
+      "prime": 5111089,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 213981,
+        "H": 209,
+        "gap": 24455,
+        "source_denominator": 5111088
+      }
+    },
+    {
+      "prime": 5180569,
+      "witness": null
+    },
+    {
+      "prime": 5327449,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 335361,
+        "H": 139,
+        "gap": 38327,
+        "source_denominator": 5327448
+      }
+    },
+    {
+      "prime": 5333689,
+      "witness": {
+        "E": 972,
+        "B": 5,
+        "C": 301,
+        "H": 860301,
+        "gap": 31,
+        "source_denominator": 5333688
+      }
+    },
+    {
+      "prime": 5417689,
+      "witness": {
+        "E": 72,
+        "B": 5,
+        "C": 22,
+        "H": 874218,
+        "gap": 31,
+        "source_denominator": 5417688
+      }
+    },
+    {
+      "prime": 5442529,
+      "witness": {
+        "E": 96,
+        "B": 3,
+        "C": 7439,
+        "H": 5792,
+        "gap": 2819,
+        "source_denominator": 5442528
+      }
+    },
+    {
+      "prime": 5459281,
+      "witness": {
+        "E": 60,
+        "B": 1,
+        "C": 342657,
+        "H": 235,
+        "gap": 23231,
+        "source_denominator": 5459280
+      }
+    },
+    {
+      "prime": 5470249,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 693691,
+        "H": 69,
+        "gap": 79279,
+        "source_denominator": 5470248
+      }
+    },
+    {
+      "prime": 5593681,
+      "witness": {
+        "E": 72,
+        "B": 169,
+        "C": 2286,
+        "H": 257,
+        "gap": 3678335,
+        "source_denominator": 5593680
+      }
+    },
+    {
+      "prime": 5770249,
+      "witness": null
+    },
+    {
+      "prime": 5814481,
+      "witness": {
+        "E": 28,
+        "B": 17,
+        "C": 11,
+        "H": 209881,
+        "gap": 471,
+        "source_denominator": 5814480
+      }
+    },
+    {
+      "prime": 5845009,
+      "witness": {
+        "E": 36,
+        "B": 11,
+        "C": 951,
+        "H": 4889,
+        "gap": 13151,
+        "source_denominator": 5845008
+      }
+    },
+    {
+      "prime": 5856601,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 481,
+        "H": 106539,
+        "gap": 55,
+        "source_denominator": 5856600
+      }
+    },
+    {
+      "prime": 5860969,
+      "witness": {
+        "E": 152,
+        "B": 1,
+        "C": 6455,
+        "H": 34276,
+        "gap": 171,
+        "source_denominator": 5860968
+      }
+    },
+    {
+      "prime": 6018769,
+      "witness": {
+        "E": 48,
+        "B": 3,
+        "C": 547,
+        "H": 43096,
+        "gap": 419,
+        "source_denominator": 6018768
+      }
+    },
+    {
+      "prime": 6052489,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 201,
+        "H": 263479,
+        "gap": 23,
+        "source_denominator": 6052488
+      }
+    },
+    {
+      "prime": 6094729,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1251,
+        "H": 42629,
+        "gap": 143,
+        "source_denominator": 6094728
+      }
+    },
+    {
+      "prime": 6106489,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 6011,
+        "H": 8889,
+        "gap": 687,
+        "source_denominator": 6106488
+      }
+    },
+    {
+      "prime": 6122041,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1601,
+        "H": 33459,
+        "gap": 183,
+        "source_denominator": 6122040
+      }
+    },
+    {
+      "prime": 6253129,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 971,
+        "H": 56349,
+        "gap": 111,
+        "source_denominator": 6253128
+      }
+    },
+    {
+      "prime": 6264241,
+      "witness": {
+        "E": 60,
+        "B": 3,
+        "C": 267819,
+        "H": 115,
+        "gap": 163415,
+        "source_denominator": 6264240
+      }
+    },
+    {
+      "prime": 6344809,
+      "witness": {
+        "E": 144,
+        "B": 14,
+        "C": 29,
+        "H": 558687,
+        "gap": 159,
+        "source_denominator": 6344808
+      }
+    },
+    {
+      "prime": 6491689,
+      "witness": {
+        "E": 136,
+        "B": 23,
+        "C": 89,
+        "H": 107032,
+        "gap": 1395,
+        "source_denominator": 6491688
+      }
+    },
+    {
+      "prime": 6563209,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 832291,
+        "H": 69,
+        "gap": 95119,
+        "source_denominator": 6563208
+      }
+    },
+    {
+      "prime": 6869689,
+      "witness": {
+        "E": 72,
+        "B": 5,
+        "C": 22,
+        "H": 1108518,
+        "gap": 31,
+        "source_denominator": 6869688
+      }
+    },
+    {
+      "prime": 6870481,
+      "witness": {
+        "E": 20,
+        "B": 31,
+        "C": 3385,
+        "H": 311,
+        "gap": 684839,
+        "source_denominator": 6870480
+      }
+    },
+    {
+      "prime": 6879049,
+      "witness": {
+        "E": 36,
+        "B": 51,
+        "C": 13261,
+        "H": 89,
+        "gap": 3941927,
+        "source_denominator": 6879048
+      }
+    },
+    {
+      "prime": 6951961,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1881,
+        "H": 32339,
+        "gap": 215,
+        "source_denominator": 6951960
+      }
+    },
+    {
+      "prime": 7524409,
+      "witness": {
+        "E": 72,
+        "B": 5,
+        "C": 22,
+        "H": 1214166,
+        "gap": 31,
+        "source_denominator": 7524408
+      }
+    },
+    {
+      "prime": 7583689,
+      "witness": {
+        "E": 56,
+        "B": 4,
+        "C": 28001,
+        "H": 931,
+        "gap": 32583,
+        "source_denominator": 7583688
+      }
+    },
+    {
+      "prime": 7593721,
+      "witness": {
+        "E": 200,
+        "B": 7,
+        "C": 91474,
+        "H": 590,
+        "gap": 90095,
+        "source_denominator": 7593720
+      }
+    },
+    {
+      "prime": 7799089,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 411,
+        "H": 166039,
+        "gap": 47,
+        "source_denominator": 7799088
+      }
+    },
+    {
+      "prime": 7848649,
+      "witness": {
+        "E": 804,
+        "B": 57,
+        "C": 3467,
+        "H": 7973,
+        "gap": 56111,
+        "source_denominator": 7848648
+      }
+    },
+    {
+      "prime": 7976809,
+      "witness": {
+        "E": 48,
+        "B": 107,
+        "C": 201,
+        "H": 4358,
+        "gap": 195851,
+        "source_denominator": 7976808
+      }
+    },
+    {
+      "prime": 8018089,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 551,
+        "H": 127329,
+        "gap": 63,
+        "source_denominator": 8018088
+      }
+    },
+    {
+      "prime": 8106289,
+      "witness": {
+        "E": 72,
+        "B": 10,
+        "C": 41,
+        "H": 350943,
+        "gap": 231,
+        "source_denominator": 8106288
+      }
+    },
+    {
+      "prime": 8416249,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 201,
+        "H": 366379,
+        "gap": 23,
+        "source_denominator": 8416248
+      }
+    },
+    {
+      "prime": 8421529,
+      "witness": {
+        "E": 408,
+        "B": 1,
+        "C": 712,
+        "H": 1203498,
+        "gap": 7,
+        "source_denominator": 8421528
+      }
+    },
+    {
+      "prime": 8455561,
+      "witness": {
+        "E": 18600,
+        "B": 24,
+        "C": 12585,
+        "H": 130169,
+        "gap": 1559,
+        "source_denominator": 8455560
+      }
+    },
+    {
+      "prime": 8595409,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 8461,
+        "H": 8889,
+        "gap": 967,
+        "source_denominator": 8595408
+      }
+    },
+    {
+      "prime": 8611849,
+      "witness": {
+        "E": 24,
+        "B": 4,
+        "C": 83,
+        "H": 149151,
+        "gap": 231,
+        "source_denominator": 8611848
+      }
+    },
+    {
+      "prime": 8775001,
+      "witness": {
+        "E": 52,
+        "B": 1,
+        "C": 15899,
+        "H": 7037,
+        "gap": 1247,
+        "source_denominator": 8775000
+      }
+    },
+    {
+      "prime": 8868841,
+      "witness": {
+        "E": 80,
+        "B": 1,
+        "C": 54095,
+        "H": 3238,
+        "gap": 2739,
+        "source_denominator": 8868840
+      }
+    },
+    {
+      "prime": 8877409,
+      "witness": {
+        "E": 48,
+        "B": 13,
+        "C": 8238,
+        "H": 974,
+        "gap": 118487,
+        "source_denominator": 8877408
+      }
+    },
+    {
+      "prime": 8954089,
+      "witness": {
+        "E": 52,
+        "B": 5,
+        "C": 235391,
+        "H": 97,
+        "gap": 461551,
+        "source_denominator": 8954088
+      }
+    },
+    {
+      "prime": 9004921,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 161131,
+        "H": 489,
+        "gap": 18415,
+        "source_denominator": 9004920
+      }
+    },
+    {
+      "prime": 9033649,
+      "witness": {
+        "E": 192,
+        "B": 3,
+        "C": 2605,
+        "H": 55196,
+        "gap": 491,
+        "source_denominator": 9033648
+      }
+    },
+    {
+      "prime": 9131929,
+      "witness": {
+        "E": 104,
+        "B": 4,
+        "C": 63691,
+        "H": 923,
+        "gap": 39575,
+        "source_denominator": 9131928
+      }
+    },
+    {
+      "prime": 9251449,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1173191,
+        "H": 69,
+        "gap": 134079,
+        "source_denominator": 9251448
+      }
+    },
+    {
+      "prime": 9298489,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 129351,
+        "H": 629,
+        "gap": 14783,
+        "source_denominator": 9298488
+      }
+    },
+    {
+      "prime": 9377209,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1041,
+        "H": 78819,
+        "gap": 119,
+        "source_denominator": 9377208
+      }
+    },
+    {
+      "prime": 9583921,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 300571,
+        "H": 279,
+        "gap": 34351,
+        "source_denominator": 9583920
+      }
+    },
+    {
+      "prime": 9587449,
+      "witness": {
+        "E": 48,
+        "B": 3,
+        "C": 11263,
+        "H": 3334,
+        "gap": 8627,
+        "source_denominator": 9587448
+      }
+    },
+    {
+      "prime": 9624841,
+      "witness": {
+        "E": 36,
+        "B": 821,
+        "C": 31,
+        "H": 3309,
+        "gap": 2388031,
+        "source_denominator": 9624840
+      }
+    },
+    {
+      "prime": 9660841,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 201,
+        "H": 420559,
+        "gap": 23,
+        "source_denominator": 9660840
+      }
+    },
+    {
+      "prime": 9662689,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 621,
+        "H": 136149,
+        "gap": 71,
+        "source_denominator": 9662688
+      }
+    },
+    {
+      "prime": 10056601,
+      "witness": {
+        "E": 120,
+        "B": 3,
+        "C": 76,
+        "H": 1312210,
+        "gap": 23,
+        "source_denominator": 10056600
+      }
+    },
+    {
+      "prime": 10128409,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 50671,
+        "H": 1749,
+        "gap": 5791,
+        "source_denominator": 10128408
+      }
+    },
+    {
+      "prime": 10170169,
+      "witness": {
+        "E": 36,
+        "B": 509,
+        "C": 101,
+        "H": 1731,
+        "gap": 2990535,
+        "source_denominator": 10170168
+      }
+    },
+    {
+      "prime": 10171849,
+      "witness": {
+        "E": 612,
+        "B": 255,
+        "C": 23,
+        "H": 264919,
+        "gap": 9791,
+        "source_denominator": 10171848
+      }
+    },
+    {
+      "prime": 10222081,
+      "witness": {
+        "E": 60,
+        "B": 1,
+        "C": 30429,
+        "H": 4955,
+        "gap": 2063,
+        "source_denominator": 10222080
+      }
+    },
+    {
+      "prime": 10264489,
+      "witness": {
+        "E": 52,
+        "B": 5,
+        "C": 43121,
+        "H": 607,
+        "gap": 84551,
+        "source_denominator": 10264488
+      }
+    },
+    {
+      "prime": 10269529,
+      "witness": null
+    },
+    {
+      "prime": 10270129,
+      "witness": {
+        "E": 48,
+        "B": 3,
+        "C": 171,
+        "H": 235232,
+        "gap": 131,
+        "source_denominator": 10270128
+      }
+    },
+    {
+      "prime": 10290121,
+      "witness": {
+        "E": 60,
+        "B": 3,
+        "C": 549,
+        "H": 92155,
+        "gap": 335,
+        "source_denominator": 10290120
+      }
+    },
+    {
+      "prime": 10480369,
+      "witness": {
+        "E": 96,
+        "B": 2,
+        "C": 187714,
+        "H": 663,
+        "gap": 31615,
+        "source_denominator": 10480368
+      }
+    },
+    {
+      "prime": 10553449,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 441831,
+        "H": 209,
+        "gap": 50495,
+        "source_denominator": 10553448
+      }
+    },
+    {
+      "prime": 10642129,
+      "witness": {
+        "E": 96,
+        "B": 1,
+        "C": 1116,
+        "H": 226479,
+        "gap": 47,
+        "source_denominator": 10642128
+      }
+    },
+    {
+      "prime": 10761529,
+      "witness": {
+        "E": 144,
+        "B": 2,
+        "C": 3423,
+        "H": 56197,
+        "gap": 383,
+        "source_denominator": 10761528
+      }
+    },
+    {
+      "prime": 10855849,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 12451,
+        "H": 7629,
+        "gap": 1423,
+        "source_denominator": 10855848
+      }
+    },
+    {
+      "prime": 10857289,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2441,
+        "H": 38919,
+        "gap": 279,
+        "source_denominator": 10857288
+      }
+    },
+    {
+      "prime": 11356921,
+      "witness": {
+        "E": 216,
+        "B": 2,
+        "C": 12564,
+        "H": 24293,
+        "gap": 935,
+        "source_denominator": 11356920
+      }
+    },
+    {
+      "prime": 11430169,
+      "witness": null
+    },
+    {
+      "prime": 11545249,
+      "witness": {
+        "E": 52,
+        "B": 1,
+        "C": 43745,
+        "H": 3365,
+        "gap": 3431,
+        "source_denominator": 11545248
+      }
+    },
+    {
+      "prime": 11603881,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2581,
+        "H": 39339,
+        "gap": 295,
+        "source_denominator": 11603880
+      }
+    },
+    {
+      "prime": 11635369,
+      "witness": null
+    },
+    {
+      "prime": 11647609,
+      "witness": {
+        "E": 144,
+        "B": 3,
+        "C": 139,
+        "H": 998566,
+        "gap": 35,
+        "source_denominator": 11647608
+      }
+    },
+    {
+      "prime": 11720809,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 551,
+        "H": 186129,
+        "gap": 63,
+        "source_denominator": 11720808
+      }
+    },
+    {
+      "prime": 11740369,
+      "witness": {
+        "E": 96,
+        "B": 1,
+        "C": 71606,
+        "H": 3894,
+        "gap": 3015,
+        "source_denominator": 11740368
+      }
+    },
+    {
+      "prime": 11765209,
+      "witness": {
+        "E": 168,
+        "B": 1,
+        "C": 28014,
+        "H": 17534,
+        "gap": 671,
+        "source_denominator": 11765208
+      }
+    },
+    {
+      "prime": 11906281,
+      "witness": {
+        "E": 72,
+        "B": 8,
+        "C": 33,
+        "H": 800517,
+        "gap": 119,
+        "source_denominator": 11906280
+      }
+    },
+    {
+      "prime": 12291049,
+      "witness": {
+        "E": 44,
+        "B": 89,
+        "C": 467,
+        "H": 3179,
+        "gap": 344103,
+        "source_denominator": 12291048
+      }
+    },
+    {
+      "prime": 12585169,
+      "witness": {
+        "E": 96,
+        "B": 1,
+        "C": 630586,
+        "H": 474,
+        "gap": 26551,
+        "source_denominator": 12585168
+      }
+    },
+    {
+      "prime": 12668569,
+      "witness": {
+        "E": 44,
+        "B": 23,
+        "C": 19,
+        "H": 311641,
+        "gap": 935,
+        "source_denominator": 12668568
+      }
+    },
+    {
+      "prime": 12678649,
+      "witness": {
+        "E": 144,
+        "B": 2,
+        "C": 1607311,
+        "H": 141,
+        "gap": 179839,
+        "source_denominator": 12678648
+      }
+    },
+    {
+      "prime": 12682849,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2301,
+        "H": 48229,
+        "gap": 263,
+        "source_denominator": 12682848
+      }
+    },
+    {
+      "prime": 13178881,
+      "witness": {
+        "E": 144,
+        "B": 1,
+        "C": 54018,
+        "H": 8722,
+        "gap": 1511,
+        "source_denominator": 13178880
+      }
+    },
+    {
+      "prime": 13185769,
+      "witness": null
+    },
+    {
+      "prime": 13364521,
+      "witness": {
+        "E": 20,
+        "B": 25,
+        "C": 28531,
+        "H": 89,
+        "gap": 3754079,
+        "source_denominator": 13364520
+      }
+    },
+    {
+      "prime": 13451209,
+      "witness": {
+        "E": 72,
+        "B": 4,
+        "C": 132,
+        "H": 452195,
+        "gap": 119,
+        "source_denominator": 13451208
+      }
+    },
+    {
+      "prime": 13595929,
+      "witness": null
+    },
+    {
+      "prime": 13641721,
+      "witness": {
+        "E": 20,
+        "B": 13,
+        "C": 199379,
+        "H": 25,
+        "gap": 7093695,
+        "source_denominator": 13641720
+      }
+    },
+    {
+      "prime": 13782409,
+      "witness": null
+    },
+    {
+      "prime": 13791649,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 1748941,
+        "H": 69,
+        "gap": 199879,
+        "source_denominator": 13791648
+      }
+    },
+    {
+      "prime": 13938409,
+      "witness": {
+        "E": 108,
+        "B": 13,
+        "C": 129,
+        "H": 222333,
+        "gap": 815,
+        "source_denominator": 13938408
+      }
+    },
+    {
+      "prime": 13960249,
+      "witness": {
+        "E": 296,
+        "B": 1,
+        "C": 109076,
+        "H": 9439,
+        "gap": 1479,
+        "source_denominator": 13960248
+      }
+    },
+    {
+      "prime": 13992169,
+      "witness": null
+    },
+    {
+      "prime": 14138569,
+      "witness": {
+        "E": 432,
+        "B": 45,
+        "C": 4649,
+        "H": 7282,
+        "gap": 87371,
+        "source_denominator": 14138568
+      }
+    },
+    {
+      "prime": 14139241,
+      "witness": {
+        "E": 60,
+        "B": 1,
+        "C": 887463,
+        "H": 235,
+        "gap": 60167,
+        "source_denominator": 14139240
+      }
+    },
+    {
+      "prime": 14291209,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 448201,
+        "H": 279,
+        "gap": 51223,
+        "source_denominator": 14291208
+      }
+    },
+    {
+      "prime": 14350249,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 131,
+        "H": 958509,
+        "gap": 15,
+        "source_denominator": 14350248
+      }
+    },
+    {
+      "prime": 14397289,
+      "witness": null
+    },
+    {
+      "prime": 14406121,
+      "witness": {
+        "E": 20,
+        "B": 11,
+        "C": 325,
+        "H": 19141,
+        "gap": 8279,
+        "source_denominator": 14406120
+      }
+    },
+    {
+      "prime": 14483401,
+      "witness": {
+        "E": 80,
+        "B": 2,
+        "C": 608611,
+        "H": 235,
+        "gap": 123263,
+        "source_denominator": 14483400
+      }
+    },
+    {
+      "prime": 14823769,
+      "witness": null
+    },
+    {
+      "prime": 14832841,
+      "witness": {
+        "E": 24,
+        "B": 4,
+        "C": 1279,
+        "H": 16671,
+        "gap": 3559,
+        "source_denominator": 14832840
+      }
+    },
+    {
+      "prime": 14897521,
+      "witness": {
+        "E": 20,
+        "B": 13,
+        "C": 217733,
+        "H": 25,
+        "gap": 7746711,
+        "source_denominator": 14897520
+      }
+    },
+    {
+      "prime": 14936329,
+      "witness": {
+        "E": 88,
+        "B": 1,
+        "C": 61226,
+        "H": 5306,
+        "gap": 2815,
+        "source_denominator": 14936328
+      }
+    },
+    {
+      "prime": 15086569,
+      "witness": {
+        "E": 144,
+        "B": 1,
+        "C": 107,
+        "H": 5040606,
+        "gap": 3,
+        "source_denominator": 15086568
+      }
+    },
+    {
+      "prime": 15091129,
+      "witness": {
+        "E": 52,
+        "B": 1,
+        "C": 99335,
+        "H": 1937,
+        "gap": 7791,
+        "source_denominator": 15091128
+      }
+    },
+    {
+      "prime": 15375889,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 621,
+        "H": 216649,
+        "gap": 71,
+        "source_denominator": 15375888
+      }
+    },
+    {
+      "prime": 15426889,
+      "witness": {
+        "E": 612,
+        "B": 255,
+        "C": 23,
+        "H": 401783,
+        "gap": 9791,
+        "source_denominator": 15426888
+      }
+    },
+    {
+      "prime": 15430321,
+      "witness": {
+        "E": 80,
+        "B": 1,
+        "C": 25892,
+        "H": 11770,
+        "gap": 1311,
+        "source_denominator": 15430320
+      }
+    },
+    {
+      "prime": 15442249,
+      "witness": {
+        "E": 144,
+        "B": 2,
+        "C": 2279,
+        "H": 121119,
+        "gap": 255,
+        "source_denominator": 15442248
+      }
+    },
+    {
+      "prime": 15906361,
+      "witness": {
+        "E": 20,
+        "B": 89,
+        "C": 31,
+        "H": 27385,
+        "gap": 51695,
+        "source_denominator": 15906360
+      }
+    },
+    {
+      "prime": 16014769,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 71531,
+        "H": 1959,
+        "gap": 8175,
+        "source_denominator": 16014768
+      }
+    },
+    {
+      "prime": 16218409,
+      "witness": null
+    },
+    {
+      "prime": 16245961,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 411,
+        "H": 345869,
+        "gap": 47,
+        "source_denominator": 16245960
+      }
+    },
+    {
+      "prime": 16253449,
+      "witness": null
+    },
+    {
+      "prime": 16314769,
+      "witness": {
+        "E": 96,
+        "B": 2,
+        "C": 292214,
+        "H": 663,
+        "gap": 49215,
+        "source_denominator": 16314768
+      }
+    },
+    {
+      "prime": 16423801,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 228471,
+        "H": 629,
+        "gap": 26111,
+        "source_denominator": 16423800
+      }
+    },
+    {
+      "prime": 16436809,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 61,
+        "H": 2357739,
+        "gap": 7,
+        "source_denominator": 16436808
+      }
+    },
+    {
+      "prime": 16683529,
+      "witness": {
+        "E": 136,
+        "B": 4,
+        "C": 116,
+        "H": 1213511,
+        "gap": 55,
+        "source_denominator": 16683528
+      }
+    },
+    {
+      "prime": 16690129,
+      "witness": {
+        "E": 36,
+        "B": 11,
+        "C": 321,
+        "H": 41359,
+        "gap": 4439,
+        "source_denominator": 16690128
+      }
+    },
+    {
+      "prime": 16756009,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 262281,
+        "H": 559,
+        "gap": 29975,
+        "source_denominator": 16756008
+      }
+    },
+    {
+      "prime": 16811881,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2931,
+        "H": 50189,
+        "gap": 335,
+        "source_denominator": 16811880
+      }
+    },
+    {
+      "prime": 16894081,
+      "witness": {
+        "E": 120,
+        "B": 5,
+        "C": 451,
+        "H": 222882,
+        "gap": 379,
+        "source_denominator": 16894080
+      }
+    },
+    {
+      "prime": 16977769,
+      "witness": null
+    },
+    {
+      "prime": 17006929,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 131,
+        "H": 1135959,
+        "gap": 15,
+        "source_denominator": 17006928
+      }
+    },
+    {
+      "prime": 17032681,
+      "witness": {
+        "E": 80,
+        "B": 1,
+        "C": 2350,
+        "H": 143147,
+        "gap": 119,
+        "source_denominator": 17032680
+      }
+    },
+    {
+      "prime": 17495209,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 2161,
+        "H": 70839,
+        "gap": 247,
+        "source_denominator": 17495208
+      }
+    },
+    {
+      "prime": 17500081,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 341,
+        "H": 449049,
+        "gap": 39,
+        "source_denominator": 17500080
+      }
+    },
+    {
+      "prime": 17696449,
+      "witness": {
+        "E": 88,
+        "B": 178,
+        "C": 53,
+        "H": 40799,
+        "gap": 77207,
+        "source_denominator": 17696448
+      }
+    },
+    {
+      "prime": 17728489,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 7831,
+        "H": 19809,
+        "gap": 895,
+        "source_denominator": 17728488
+      }
+    },
+    {
+      "prime": 17772841,
+      "witness": {
+        "E": 36,
+        "B": 27,
+        "C": 19,
+        "H": 303143,
+        "gap": 1583,
+        "source_denominator": 17772840
+      }
+    },
+    {
+      "prime": 18044329,
+      "witness": {
+        "E": 48,
+        "B": 3,
+        "C": 32037,
+        "H": 2206,
+        "gap": 24539,
+        "source_denominator": 18044328
+      }
+    },
+    {
+      "prime": 18190489,
+      "witness": null
+    },
+    {
+      "prime": 18517249,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 901,
+        "H": 179829,
+        "gap": 103,
+        "source_denominator": 18517248
+      }
+    },
+    {
+      "prime": 18660721,
+      "witness": {
+        "E": 72,
+        "B": 33,
+        "C": 264137,
+        "H": 38,
+        "gap": 16205363,
+        "source_denominator": 18660720
+      }
+    },
+    {
+      "prime": 18746281,
+      "witness": {
+        "E": 20,
+        "B": 11,
+        "C": 743,
+        "H": 10895,
+        "gap": 18927,
+        "source_denominator": 18746280
+      }
+    },
+    {
+      "prime": 18746569,
+      "witness": {
+        "E": 296,
+        "B": 178,
+        "C": 44,
+        "H": 176527,
+        "gap": 18903,
+        "source_denominator": 18746568
+      }
+    },
+    {
+      "prime": 19053241,
+      "witness": {
+        "E": 240,
+        "B": 9,
+        "C": 911,
+        "H": 138850,
+        "gap": 1235,
+        "source_denominator": 19053240
+      }
+    },
+    {
+      "prime": 19060969,
+      "witness": null
+    },
+    {
+      "prime": 19134649,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 600101,
+        "H": 279,
+        "gap": 68583,
+        "source_denominator": 19134648
+      }
+    },
+    {
+      "prime": 19136569,
+      "witness": {
+        "E": 4152,
+        "B": 144,
+        "C": 1147,
+        "H": 120235,
+        "gap": 22919,
+        "source_denominator": 19136568
+      }
+    },
+    {
+      "prime": 19158409,
+      "witness": null
+    },
+    {
+      "prime": 19288369,
+      "witness": {
+        "E": 36,
+        "B": 51,
+        "C": 14451,
+        "H": 229,
+        "gap": 4295663,
+        "source_denominator": 19288368
+      }
+    },
+    {
+      "prime": 19330249,
+      "witness": {
+        "E": 84,
+        "B": 9,
+        "C": 301,
+        "H": 148063,
+        "gap": 1175,
+        "source_denominator": 19330248
+      }
+    },
+    {
+      "prime": 19339609,
+      "witness": {
+        "E": 20808,
+        "B": 12,
+        "C": 80591,
+        "H": 104023,
+        "gap": 2231,
+        "source_denominator": 19339608
+      }
+    },
+    {
+      "prime": 19504489,
+      "witness": {
+        "E": 76,
+        "B": 1,
+        "C": 51881,
+        "H": 7049,
+        "gap": 2767,
+        "source_denominator": 19504488
+      }
+    },
+    {
+      "prime": 19592329,
+      "witness": {
+        "E": 84,
+        "B": 1,
+        "C": 102069,
+        "H": 3983,
+        "gap": 4919,
+        "source_denominator": 19592328
+      }
+    },
+    {
+      "prime": 19732969,
+      "witness": {
+        "E": 216,
+        "B": 7,
+        "C": 24329,
+        "H": 6228,
+        "gap": 22179,
+        "source_denominator": 19732968
+      }
+    },
+    {
+      "prime": 19776121,
+      "witness": {
+        "E": 28,
+        "B": 11,
+        "C": 581,
+        "H": 20887,
+        "gap": 10415,
+        "source_denominator": 19776120
+      }
+    },
+    {
+      "prime": 19798249,
+      "witness": {
+        "E": 48,
+        "B": 9,
+        "C": 19,
+        "H": 1360406,
+        "gap": 131,
+        "source_denominator": 19798248
+      }
+    },
+    {
+      "prime": 19891369,
+      "witness": {
+        "E": 36,
+        "B": 1,
+        "C": 271,
+        "H": 642249,
+        "gap": 31,
+        "source_denominator": 19891368
+      }
+    },
+    {
+      "prime": 19938601,
+      "witness": {
+        "E": 20,
+        "B": 7,
+        "C": 10529,
+        "H": 1285,
+        "gap": 108615,
+        "source_denominator": 19938600
+      }
+    },
+    {
+      "prime": 19951369,
+      "witness": {
+        "E": 36,
+        "B": 51,
+        "C": 38461,
+        "H": 89,
+        "gap": 11432807,
+        "source_denominator": 19951368
+      }
+    },
+    {
+      "prime": 19957081,
+      "witness": {
+        "E": 36,
+        "B": 19,
+        "C": 180211,
+        "H": 51,
+        "gap": 7434991,
+        "source_denominator": 19957080
+      }
+    }
+  ]
+}

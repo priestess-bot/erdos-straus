@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前截止日为 2026-07-23。语料包含 51 张论文卡、18 张主张卡和 10 张概念卡；
+当前截止日为 2026-07-24。语料包含 58 张论文卡、91 张主张卡和 11 张概念卡；
 其中被撤回论文和存在关键证明缺口的预印本仍会收录，但用独立状态标出。
 
 ## 快速使用
@@ -48,6 +48,10 @@ python scripts/kb.py search "计算验证" --type claim --tag computation
 有限复现入口为 `python reproductions/esc_reproduce.py`。它核对经典恒等式、模
 840 残余类、因子对证书和 Bradford 的 Type I/II 除子对应，不是对已报告
 `10^17` 或 `10^18` 搜索的全量复现。
+
+`python reproductions/short_certificate.py` 另行按 \(m=4x-p\) 搜索 Type I/II
+的最小首分母缺口，用于检验“短证书或递降”研究计划中的候选短界；它同样是
+有限实验。
 
 ## 证据纪律
 

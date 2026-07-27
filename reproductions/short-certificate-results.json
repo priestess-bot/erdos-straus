@@ -1,0 +1,105 @@
+{
+  "arithmetic": "exact integer arithmetic and fractions.Fraction",
+  "scope_note": "A finite small-gap search. Absence below the chosen gap limit is not a counterexample to the conjecture.",
+  "prime_limit": 10000000,
+  "gap_limit": 4095,
+  "core_prime_count": 82887,
+  "certified_count": 82887,
+  "uncertified_within_gap_limit": [],
+  "certificate_types": {
+    "I": 56781,
+    "II": 26106
+  },
+  "largest_minimal_gap_found": 107,
+  "record_holders": [
+    {
+      "prime": 73,
+      "gap": 7,
+      "type": "II",
+      "x": 20,
+      "divisor": 1
+    },
+    {
+      "prime": 1129,
+      "gap": 11,
+      "type": "II",
+      "x": 285,
+      "divisor": 1
+    },
+    {
+      "prime": 1201,
+      "gap": 23,
+      "type": "I",
+      "x": 306,
+      "divisor": 34
+    },
+    {
+      "prime": 21169,
+      "gap": 31,
+      "type": "II",
+      "x": 5300,
+      "divisor": 1
+    },
+    {
+      "prime": 118801,
+      "gap": 59,
+      "type": "II",
+      "x": 29715,
+      "divisor": 21
+    },
+    {
+      "prime": 8803369,
+      "gap": 107,
+      "type": "II",
+      "x": 2200869,
+      "divisor": 121
+    }
+  ],
+  "sample_certificates": [
+    {
+      "prime": 73,
+      "certificate_type": "II",
+      "gap": 7,
+      "x": 20,
+      "divisor": 1,
+      "y": 219,
+      "z": 4380
+    },
+    {
+      "prime": 97,
+      "certificate_type": "I",
+      "gap": 3,
+      "x": 25,
+      "divisor": 5,
+      "y": 810,
+      "z": 392850
+    },
+    {
+      "prime": 193,
+      "certificate_type": "I",
+      "gap": 7,
+      "x": 50,
+      "divisor": 10,
+      "y": 1380,
+      "z": 1331700
+    },
+    {
+      "prime": 241,
+      "certificate_type": "II",
+      "gap": 7,
+      "x": 62,
+      "divisor": 1,
+      "y": 2169,
+      "z": 134478
+    },
+    {
+      "prime": 313,
+      "certificate_type": "II",
+      "gap": 7,
+      "x": 80,
+      "divisor": 4,
+      "y": 3756,
+      "z": 75120
+    }
+  ]
+}

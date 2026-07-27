@@ -863,24 +863,25 @@ papers:
     year: 2015
     first_publication_date: "2015-01-01"
     publication_status: peer_reviewed
-    assessment_status: unverified
+    assessment_status: verified_with_caveat
     corpus_tier: A
-    reading_status: source_blocked
+    reading_status: verified
     language: en
-    source_pointer: "Advanced Modeling and Optimization 17(1) (2015), 41-54"
-    source_acquired: false
-    source_verified_against_original: false
-    source_verification_method: none
-    description_source: bibliography_v1
-    description_last_audit: none
-    topics: [geometric-reduction, computation]
+    source_pointer: "https://camo.ici.ro/journal/vol17/v17a3.pdf"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [geometric-reduction, computation, type-I, conjectural-boundary]
     references: [ionascu_wilson2010, elsholtz_tao2013]
     visibility: public
     last_checked: "2026-07-23"
-    summary: "Bradford 后续一变量约化的直接前身，以几何方式压缩素数分母的解搜索。"
-    contributions: ["提出几何区域和分母约束以缩减搜索。", "为 Bradford 2021 的 gcd 公式提供计算与结构背景。"]
-    evidence: ["作者、卷期页由 CSU ePress 题录与两位作者的出版清单交叉核对。", "全文尚未稳定取得。"]
-    limits: "具体定理、计算范围和与 2021 论文的依赖关系待原文审计。"
+    arxiv: "1411.3403"
+    summary: "以固定目标 p 的 (x,y) 格点边界定义 Type I(a)/I(b) 解；它是搜索空间的几何重述，不是到较小分母实例的解提升。"
+    contributions: ["定义边界型 Type I(a)/I(b) 解，并证明 Proposition 2.2：Type I(a) 解也是 Type I(b) 解。", "将 Ionascu--Wilson 的模 9240 覆盖结果所产生的解识别为 Type I(b)（Theorem 2.6）。", "报告 p<10^8 的边界模式计算，并提出 Conjectures 2.8、2.10。"]
+    evidence: ["已核对期刊 PDF 的 Definitions 2.1、Proposition 2.2、Theorem 2.6、Conjectures 2.3、2.4、2.8、2.10 及第 3 节证明。", "一般 p 的边界点存在性在原文中明确标为 conjecture。"]
+    limits: "所有构造围绕固定 p 选择 x,y；不产生 n<p 或 Sol(n) 到 Sol(p) 的递降映射。"
 
   - kind: paper
     citation_key: arab2021
@@ -1287,6 +1288,32 @@ papers:
     contributions: ["把固定 x 后的两项单位分数问题改写为因子对证书。", "报告覆盖 10^7 内全部素数，并显式隔离尚未证明的全素数除子命题。"]
     evidence: ["元数据与摘要来自作者公开 ResearchGate 页面；当前未将全文作为本地核查来源。", "有限上界远低于已报告的 10^18，其价值主要是可审计接口。"]
     limits: "非同行评议；计算证书和代码尚未在本库独立运行。"
+
+  - kind: paper
+    citation_key: adaptive_divisor_clouds2026
+    title: "Adaptive Divisor Clouds, Split-Capture Semigroups, and a Residual Closure Machine for the Erdos-Straus Equation"
+    authors: ["Deep Bhattacharjee"]
+    year: 2026
+    first_publication_date: "2026-06-06"
+    publication_status: preprint
+    assessment_status: verified_with_caveat
+    corpus_tier: C
+    reading_status: verified
+    language: en
+    source_pointer: "https://www.researchgate.net/publication/406177940_Adaptive_Divisor_Clouds_Split-Capture_Semigroups_and_a_Residual_Closure_Machine_for_the_Erdos-Straus_Equation"
+    source_acquired: true
+    source_verified_against_original: true
+    source_verification_method: codex_audit
+    description_source: original
+    description_last_audit: "2026-07-23"
+    topics: [short-certificate, divisor-parametrization, moving-window, proof-program, gray-literature]
+    references: []
+    visibility: public
+    last_checked: "2026-07-23"
+    summary: "作者上传的预印本；将固定缺口 Type II 除子条件组织为移动窗口和 divisor cloud。"
+    contributions: ["Theorem 2.2 与既有 Type II 固定缺口证书等价。", "提出固定窗口饱和的有限证书框架。"]
+    evidence: ["已核对原始上传全文的 Theorems 2.2、5.1、9.3、13.2 和 Remark 13.3。", "其固定窗口饱和在 Conjecture 13.1 中明确未证。"]
+    limits: "没有给出 Conjecture 13.1 的证明或可替代递降；故不构成全称短证书界。"
 
   - kind: paper
     citation_key: ventas2026

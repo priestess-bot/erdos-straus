@@ -1,0 +1,101 @@
+{
+  "arithmetic": "for every non-B=1 witness in the stated small-B profile, scan m=3 (mod 4) in increasing order; at each m enumerate every divisor e of x=(p+m)/4 and check e=-1/4 (mod m), then reconstruct the B=1 Type I certificate exactly",
+  "scope_note": "Finite comparison of the input exceptions. It does not establish a uniform B=1 gap bound or a general overflow-gap tradeoff.",
+  "input_profile": "type-i-small-b-normal-form-100m-profile.json",
+  "input_prime_limit": 100000000,
+  "gap_cap": 999,
+  "non_b_one_count": 11,
+  "b_one_recovered_count": 11,
+  "b_one_misses": [],
+  "maximum_first_b_one_gap": 775,
+  "records": [
+    {
+      "prime": 1282009,
+      "small_b": 2,
+      "small_b_gap": 71,
+      "first_b_one_gap": 583,
+      "first_b_one_target_divisor": 40081,
+      "first_b_one_normal_a": 8
+    },
+    {
+      "prime": 3364561,
+      "small_b": 2,
+      "small_b_gap": 63,
+      "first_b_one_gap": 323,
+      "first_b_one_target_divisor": 1857,
+      "first_b_one_normal_a": 453
+    },
+    {
+      "prime": 4962049,
+      "small_b": 3,
+      "small_b_gap": 23,
+      "first_b_one_gap": 247,
+      "first_b_one_target_divisor": 6854,
+      "first_b_one_normal_a": 181
+    },
+    {
+      "prime": 16337281,
+      "small_b": 4,
+      "small_b_gap": 159,
+      "first_b_one_gap": 355,
+      "first_b_one_target_divisor": 7721,
+      "first_b_one_normal_a": 529
+    },
+    {
+      "prime": 17307721,
+      "small_b": 3,
+      "small_b_gap": 23,
+      "first_b_one_gap": 255,
+      "first_b_one_target_divisor": 6566,
+      "first_b_one_normal_a": 659
+    },
+    {
+      "prime": 20377729,
+      "small_b": 2,
+      "small_b_gap": 23,
+      "first_b_one_gap": 299,
+      "first_b_one_target_divisor": 16071,
+      "first_b_one_normal_a": 317
+    },
+    {
+      "prime": 31807441,
+      "small_b": 2,
+      "small_b_gap": 23,
+      "first_b_one_gap": 335,
+      "first_b_one_target_divisor": 6951,
+      "first_b_one_normal_a": 1144
+    },
+    {
+      "prime": 38559481,
+      "small_b": 2,
+      "small_b_gap": 47,
+      "first_b_one_gap": 263,
+      "first_b_one_target_divisor": 9639936,
+      "first_b_one_normal_a": 1
+    },
+    {
+      "prime": 42193321,
+      "small_b": 2,
+      "small_b_gap": 207,
+      "first_b_one_gap": 775,
+      "first_b_one_target_divisor": 2637131,
+      "first_b_one_normal_a": 4
+    },
+    {
+      "prime": 64210441,
+      "small_b": 2,
+      "small_b_gap": 23,
+      "first_b_one_gap": 279,
+      "first_b_one_target_divisor": 1146620,
+      "first_b_one_normal_a": 14
+    },
+    {
+      "prime": 99762601,
+      "small_b": 3,
+      "small_b_gap": 119,
+      "first_b_one_gap": 359,
+      "first_b_one_target_divisor": 1705,
+      "first_b_one_normal_a": 14628
+    }
+  ]
+}

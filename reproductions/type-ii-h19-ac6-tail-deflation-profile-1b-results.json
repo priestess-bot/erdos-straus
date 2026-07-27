@@ -1,0 +1,465 @@
+{
+  "arithmetic": "exact factorization of each divisor-controlled Type II tail, followed by exact source and target unit-fraction verification after dividing both tails by p",
+  "scope_note": "A finite direct-certificate-or-two-tail-descent profile of the stored H19 residuals. It does not prove a global AC or tail-deflation selector.",
+  "prime_limit": 1000000000,
+  "base_shift_bound": 19,
+  "h19_residual_count": 664,
+  "ac_radius_bound": 6,
+  "direct_ac_short_count": 647,
+  "direct_ac_short_miss_count": 17,
+  "tail_deflation_captured_count": 17,
+  "tail_deflation_missing_primes": [],
+  "minimal_tail_deflation_gap_histogram": {
+    "3": 3,
+    "7": 5,
+    "11": 4,
+    "15": 2,
+    "19": 2,
+    "27": 1
+  },
+  "maximum_minimal_tail_deflation_gap": 27,
+  "records": [
+    {
+      "prime": 1429201,
+      "direct_ac_radius": 8,
+      "tail_deflation_witness": {
+        "source_denominator": 89326,
+        "gap": 15,
+        "source_solution": [
+          357304,
+          23836,
+          36087704
+        ],
+        "target_solution": [
+          357304,
+          34066435036,
+          51576582644504
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 15,
+          "x": 357304,
+          "divisor": 236,
+          "y": 34066435036,
+          "z": 51576582644504
+        }
+      }
+    },
+    {
+      "prime": 2031121,
+      "direct_ac_radius": 8,
+      "tail_deflation_witness": {
+        "source_denominator": 169261,
+        "gap": 11,
+        "source_solution": [
+          507783,
+          46320,
+          13540880
+        ],
+        "target_solution": [
+          507783,
+          94081524720,
+          27503165726480
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 11,
+          "x": 507783,
+          "divisor": 1737,
+          "y": 94081524720,
+          "z": 27503165726480
+        }
+      }
+    },
+    {
+      "prime": 6868801,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 858601,
+        "gap": 7,
+        "source_solution": [
+          1717202,
+          245329,
+          4171083658
+        ],
+        "target_solution": [
+          1717202,
+          1685116080529,
+          28650343601154058
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 7,
+          "x": 1717202,
+          "divisor": 101,
+          "y": 1685116080529,
+          "z": 28650343601154058
+        }
+      }
+    },
+    {
+      "prime": 8243041,
+      "direct_ac_radius": 8,
+      "tail_deflation_witness": {
+        "source_denominator": 2060761,
+        "gap": 3,
+        "source_solution": [
+          2060761,
+          686964,
+          10806630684
+        ],
+        "target_solution": [
+          2060761,
+          5662672417524,
+          89079499800070044
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 3,
+          "x": 2060761,
+          "divisor": 131,
+          "y": 5662672417524,
+          "z": 89079499800070044
+        }
+      }
+    },
+    {
+      "prime": 99532801,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 8294401,
+        "gap": 11,
+        "source_solution": [
+          24883203,
+          2262164,
+          93660376092
+        ],
+        "target_solution": [
+          24883203,
+          225159519241364,
+          9322279575150193692
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 11,
+          "x": 24883203,
+          "divisor": 601,
+          "y": 225159519241364,
+          "z": 9322279575150193692
+        }
+      }
+    },
+    {
+      "prime": 107158921,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 13394866,
+        "gap": 7,
+        "source_solution": [
+          26789732,
+          3827248,
+          102122458384
+        ],
+        "target_solution": [
+          26789732,
+          410123766079408,
+          10943332450296843664
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 7,
+          "x": 26789732,
+          "divisor": 1004,
+          "y": 410123766079408,
+          "z": 10943332450296843664
+        }
+      }
+    },
+    {
+      "prime": 134632801,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 16829101,
+        "gap": 7,
+        "source_solution": [
+          33658202,
+          4808323,
+          2743042488394
+        ],
+        "target_solution": [
+          33658202,
+          647357993602723,
+          369303493474494211594
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 7,
+          "x": 33658202,
+          "divisor": 59,
+          "y": 647357993602723,
+          "z": 369303493474494211594
+        }
+      }
+    },
+    {
+      "prime": 165479161,
+      "direct_ac_radius": 9,
+      "tail_deflation_witness": {
+        "source_denominator": 5909971,
+        "gap": 27,
+        "source_solution": [
+          41369797,
+          1532230,
+          153481946870
+        ],
+        "target_solution": [
+          41369797,
+          253552134859030,
+          25398063796694176070
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 27,
+          "x": 41369797,
+          "divisor": 413,
+          "y": 253552134859030,
+          "z": 25398063796694176070
+        }
+      }
+    },
+    {
+      "prime": 237354121,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 19779511,
+        "gap": 11,
+        "source_solution": [
+          59338533,
+          5394576,
+          177540890736
+        ],
+        "target_solution": [
+          59338533,
+          1280424844647696,
+          42140062062200323056
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 11,
+          "x": 59338533,
+          "divisor": 1803,
+          "y": 1280424844647696,
+          "z": 42140062062200323056
+        }
+      }
+    },
+    {
+      "prime": 255844681,
+      "direct_ac_radius": 8,
+      "tail_deflation_witness": {
+        "source_denominator": 31980586,
+        "gap": 7,
+        "source_solution": [
+          63961172,
+          9137317,
+          12434755409692
+        ],
+        "target_solution": [
+          63961172,
+          2337733953060877,
+          3181366031105674048252
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 7,
+          "x": 63961172,
+          "divisor": 47,
+          "y": 2337733953060877,
+          "z": 3181366031105674048252
+        }
+      }
+    },
+    {
+      "prime": 511304641,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 127826161,
+        "gap": 3,
+        "source_solution": [
+          127826161,
+          42608750,
+          61196774578750
+        ],
+        "target_solution": [
+          127826161,
+          21786051622208750,
+          31290194856345694978750
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 3,
+          "x": 127826161,
+          "divisor": 89,
+          "y": 21786051622208750,
+          "z": 31290194856345694978750
+        }
+      }
+    },
+    {
+      "prime": 608848321,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 30442417,
+        "gap": 19,
+        "source_solution": [
+          152212085,
+          8015850,
+          13699087650
+        ],
+        "target_solution": [
+          152212085,
+          4880436813887850,
+          8340666514934335650
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 19,
+          "x": 152212085,
+          "divisor": 89065,
+          "y": 4880436813887850,
+          "z": 8340666514934335650
+        }
+      }
+    },
+    {
+      "prime": 625826881,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 31291345,
+        "gap": 19,
+        "source_solution": [
+          156456725,
+          8234568,
+          19229157329400
+        ],
+        "target_solution": [
+          156456725,
+          5153414007822408,
+          12034123555716691601400
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 19,
+          "x": 156456725,
+          "divisor": 67,
+          "y": 5153414007822408,
+          "z": 12034123555716691601400
+        }
+      }
+    },
+    {
+      "prime": 633393601,
+      "direct_ac_radius": 9,
+      "tail_deflation_witness": {
+        "source_denominator": 52782801,
+        "gap": 11,
+        "source_solution": [
+          158348403,
+          14395626,
+          654471543866
+        ],
+        "target_solution": [
+          158348403,
+          9118097390789226,
+          414538087921315201466
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 11,
+          "x": 158348403,
+          "divisor": 3483,
+          "y": 9118097390789226,
+          "z": 414538087921315201466
+        }
+      }
+    },
+    {
+      "prime": 684029329,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 85503667,
+        "gap": 7,
+        "source_solution": [
+          171007334,
+          24429630,
+          54969024959295
+        ],
+        "target_solution": [
+          171007334,
+          16710583416618270,
+          37600425258690811163055
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 7,
+          "x": 171007334,
+          "divisor": 76,
+          "y": 16710583416618270,
+          "z": 37600425258690811163055
+        }
+      }
+    },
+    {
+      "prime": 754987921,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 188746981,
+        "gap": 3,
+        "source_solution": [
+          188746981,
+          62915930,
+          14678852712370
+        ],
+        "target_solution": [
+          188746981,
+          47500767188481530,
+          11082356491977437282770
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 3,
+          "x": 188746981,
+          "divisor": 809,
+          "y": 47500767188481530,
+          "z": 11082356491977437282770
+        }
+      }
+    },
+    {
+      "prime": 942584161,
+      "direct_ac_radius": 7,
+      "tail_deflation_witness": {
+        "source_denominator": 58911511,
+        "gap": 15,
+        "source_solution": [
+          235646044,
+          15709746,
+          25355749980444
+        ],
+        "target_solution": [
+          235646044,
+          14807757752933106,
+          23899928321842574147484
+        ],
+        "certificate": {
+          "type": "II",
+          "gap": 15,
+          "x": 235646044,
+          "divisor": 146,
+          "y": 14807757752933106,
+          "z": 23899928321842574147484
+        }
+      }
+    }
+  ]
+}

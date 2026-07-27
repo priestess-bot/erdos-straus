@@ -1,0 +1,125 @@
+{
+  "arithmetic": "complete compatible-k enumeration at each stored minimal offset, complete ordered factor partition N=u*v*w enumeration, the exact u^2*v == -4 (mod t) check, and independent verified-tail reconstruction",
+  "scope_note": "This is an exact selector profile only for the minimal structural-miss set. Failure does not rule out a different factor completion or a later shifted ray.",
+  "prime_limit": 300000000,
+  "minimal_structural_miss_count": 10,
+  "source_factor_completion_hit_count": 2,
+  "source_factor_completion_miss_primes": [
+    6294649,
+    42622969,
+    50290249,
+    79312489,
+    95642089,
+    165387049,
+    212973049,
+    236410729
+  ],
+  "records": [
+    {
+      "prime": 6294649,
+      "minimal_offset": 25,
+      "source_factor_completion": null,
+      "candidate_k_count": 6,
+      "factor_partitions_examined": 171
+    },
+    {
+      "prime": 26034649,
+      "minimal_offset": 9,
+      "source_factor_completion": {
+        "shift": 9,
+        "k": 421,
+        "source_denominator": 26019189,
+        "source_distance": 15460,
+        "t": 187,
+        "N": 2891021,
+        "L": 1217119841,
+        "u": 7,
+        "v": 19,
+        "w": 21737,
+        "a": 2947,
+        "b": 21737,
+        "u_squared_v_plus_four_over_t": 5,
+        "tail_factor": 165011371,
+        "gap": 3529655,
+        "candidate_k_count": 1,
+        "factor_partitions_examined": 10
+      },
+      "candidate_k_count": 1,
+      "factor_partitions_examined": 10
+    },
+    {
+      "prime": 42622969,
+      "minimal_offset": 5,
+      "source_factor_completion": null,
+      "candidate_k_count": 2,
+      "factor_partitions_examined": 684
+    },
+    {
+      "prime": 50290249,
+      "minimal_offset": 9,
+      "source_factor_completion": null,
+      "candidate_k_count": 27,
+      "factor_partitions_examined": 1035
+    },
+    {
+      "prime": 79312489,
+      "minimal_offset": 97,
+      "source_factor_completion": null,
+      "candidate_k_count": 1,
+      "factor_partitions_examined": 54
+    },
+    {
+      "prime": 95642089,
+      "minimal_offset": 25,
+      "source_factor_completion": null,
+      "candidate_k_count": 4,
+      "factor_partitions_examined": 195
+    },
+    {
+      "prime": 165387049,
+      "minimal_offset": 9,
+      "source_factor_completion": null,
+      "candidate_k_count": 16,
+      "factor_partitions_examined": 1152
+    },
+    {
+      "prime": 185651449,
+      "minimal_offset": 9,
+      "source_factor_completion": {
+        "shift": 9,
+        "k": 1303,
+        "source_denominator": 185615829,
+        "source_distance": 35620,
+        "t": 579,
+        "N": 20623981,
+        "L": 26873047243,
+        "u": 7,
+        "v": 59,
+        "w": 49937,
+        "a": 9121,
+        "b": 49937,
+        "u_squared_v_plus_four_over_t": 5,
+        "tail_factor": 4908365819,
+        "gap": 33909263,
+        "candidate_k_count": 2,
+        "factor_partitions_examined": 64
+      },
+      "candidate_k_count": 2,
+      "factor_partitions_examined": 64
+    },
+    {
+      "prime": 212973049,
+      "minimal_offset": 73,
+      "source_factor_completion": null,
+      "candidate_k_count": 2,
+      "factor_partitions_examined": 297
+    },
+    {
+      "prime": 236410729,
+      "minimal_offset": 93,
+      "source_factor_completion": null,
+      "candidate_k_count": 2,
+      "factor_partitions_examined": 111
+    }
+  ]
+}

@@ -1,0 +1,5817 @@
+{
+  "arithmetic": "exact residue enumeration and finite-field admissibility checks for the p and forced-divisor quotient linear forms",
+  "scope_note": "This excludes only the model in which every shifted integer has its forced divisor times one prime cofactor. It is not a coverage proof.",
+  "fan_description": "original AC box A,C<=10",
+  "canonical_fan": [
+    {
+      "shift": 1,
+      "a": 1,
+      "c": 1,
+      "modulus": 4
+    },
+    {
+      "shift": 2,
+      "a": 1,
+      "c": 2,
+      "modulus": 8
+    },
+    {
+      "shift": 3,
+      "a": 1,
+      "c": 3,
+      "modulus": 12
+    },
+    {
+      "shift": 4,
+      "a": 1,
+      "c": 4,
+      "modulus": 16
+    },
+    {
+      "shift": 5,
+      "a": 1,
+      "c": 5,
+      "modulus": 20
+    },
+    {
+      "shift": 6,
+      "a": 1,
+      "c": 6,
+      "modulus": 24
+    },
+    {
+      "shift": 7,
+      "a": 1,
+      "c": 7,
+      "modulus": 28
+    },
+    {
+      "shift": 8,
+      "a": 1,
+      "c": 8,
+      "modulus": 32
+    },
+    {
+      "shift": 9,
+      "a": 1,
+      "c": 9,
+      "modulus": 36
+    },
+    {
+      "shift": 10,
+      "a": 1,
+      "c": 10,
+      "modulus": 40
+    },
+    {
+      "shift": 4,
+      "a": 2,
+      "c": 1,
+      "modulus": 8
+    },
+    {
+      "shift": 8,
+      "a": 2,
+      "c": 2,
+      "modulus": 16
+    },
+    {
+      "shift": 12,
+      "a": 2,
+      "c": 3,
+      "modulus": 24
+    },
+    {
+      "shift": 16,
+      "a": 2,
+      "c": 4,
+      "modulus": 32
+    },
+    {
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "modulus": 40
+    },
+    {
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "modulus": 48
+    },
+    {
+      "shift": 28,
+      "a": 2,
+      "c": 7,
+      "modulus": 56
+    },
+    {
+      "shift": 32,
+      "a": 2,
+      "c": 8,
+      "modulus": 64
+    },
+    {
+      "shift": 36,
+      "a": 2,
+      "c": 9,
+      "modulus": 72
+    },
+    {
+      "shift": 40,
+      "a": 2,
+      "c": 10,
+      "modulus": 80
+    },
+    {
+      "shift": 9,
+      "a": 3,
+      "c": 1,
+      "modulus": 12
+    },
+    {
+      "shift": 18,
+      "a": 3,
+      "c": 2,
+      "modulus": 24
+    },
+    {
+      "shift": 27,
+      "a": 3,
+      "c": 3,
+      "modulus": 36
+    },
+    {
+      "shift": 36,
+      "a": 3,
+      "c": 4,
+      "modulus": 48
+    },
+    {
+      "shift": 45,
+      "a": 3,
+      "c": 5,
+      "modulus": 60
+    },
+    {
+      "shift": 54,
+      "a": 3,
+      "c": 6,
+      "modulus": 72
+    },
+    {
+      "shift": 63,
+      "a": 3,
+      "c": 7,
+      "modulus": 84
+    },
+    {
+      "shift": 72,
+      "a": 3,
+      "c": 8,
+      "modulus": 96
+    },
+    {
+      "shift": 81,
+      "a": 3,
+      "c": 9,
+      "modulus": 108
+    },
+    {
+      "shift": 90,
+      "a": 3,
+      "c": 10,
+      "modulus": 120
+    },
+    {
+      "shift": 16,
+      "a": 4,
+      "c": 1,
+      "modulus": 16
+    },
+    {
+      "shift": 32,
+      "a": 4,
+      "c": 2,
+      "modulus": 32
+    },
+    {
+      "shift": 48,
+      "a": 4,
+      "c": 3,
+      "modulus": 48
+    },
+    {
+      "shift": 64,
+      "a": 4,
+      "c": 4,
+      "modulus": 64
+    },
+    {
+      "shift": 80,
+      "a": 4,
+      "c": 5,
+      "modulus": 80
+    },
+    {
+      "shift": 96,
+      "a": 4,
+      "c": 6,
+      "modulus": 96
+    },
+    {
+      "shift": 112,
+      "a": 4,
+      "c": 7,
+      "modulus": 112
+    },
+    {
+      "shift": 128,
+      "a": 4,
+      "c": 8,
+      "modulus": 128
+    },
+    {
+      "shift": 144,
+      "a": 4,
+      "c": 9,
+      "modulus": 144
+    },
+    {
+      "shift": 160,
+      "a": 4,
+      "c": 10,
+      "modulus": 160
+    },
+    {
+      "shift": 25,
+      "a": 5,
+      "c": 1,
+      "modulus": 20
+    },
+    {
+      "shift": 50,
+      "a": 5,
+      "c": 2,
+      "modulus": 40
+    },
+    {
+      "shift": 75,
+      "a": 5,
+      "c": 3,
+      "modulus": 60
+    },
+    {
+      "shift": 100,
+      "a": 5,
+      "c": 4,
+      "modulus": 80
+    },
+    {
+      "shift": 125,
+      "a": 5,
+      "c": 5,
+      "modulus": 100
+    },
+    {
+      "shift": 150,
+      "a": 5,
+      "c": 6,
+      "modulus": 120
+    },
+    {
+      "shift": 175,
+      "a": 5,
+      "c": 7,
+      "modulus": 140
+    },
+    {
+      "shift": 200,
+      "a": 5,
+      "c": 8,
+      "modulus": 160
+    },
+    {
+      "shift": 225,
+      "a": 5,
+      "c": 9,
+      "modulus": 180
+    },
+    {
+      "shift": 250,
+      "a": 5,
+      "c": 10,
+      "modulus": 200
+    },
+    {
+      "shift": 36,
+      "a": 6,
+      "c": 1,
+      "modulus": 24
+    },
+    {
+      "shift": 72,
+      "a": 6,
+      "c": 2,
+      "modulus": 48
+    },
+    {
+      "shift": 108,
+      "a": 6,
+      "c": 3,
+      "modulus": 72
+    },
+    {
+      "shift": 144,
+      "a": 6,
+      "c": 4,
+      "modulus": 96
+    },
+    {
+      "shift": 180,
+      "a": 6,
+      "c": 5,
+      "modulus": 120
+    },
+    {
+      "shift": 216,
+      "a": 6,
+      "c": 6,
+      "modulus": 144
+    },
+    {
+      "shift": 252,
+      "a": 6,
+      "c": 7,
+      "modulus": 168
+    },
+    {
+      "shift": 288,
+      "a": 6,
+      "c": 8,
+      "modulus": 192
+    },
+    {
+      "shift": 324,
+      "a": 6,
+      "c": 9,
+      "modulus": 216
+    },
+    {
+      "shift": 360,
+      "a": 6,
+      "c": 10,
+      "modulus": 240
+    },
+    {
+      "shift": 49,
+      "a": 7,
+      "c": 1,
+      "modulus": 28
+    },
+    {
+      "shift": 98,
+      "a": 7,
+      "c": 2,
+      "modulus": 56
+    },
+    {
+      "shift": 147,
+      "a": 7,
+      "c": 3,
+      "modulus": 84
+    },
+    {
+      "shift": 196,
+      "a": 7,
+      "c": 4,
+      "modulus": 112
+    },
+    {
+      "shift": 245,
+      "a": 7,
+      "c": 5,
+      "modulus": 140
+    },
+    {
+      "shift": 294,
+      "a": 7,
+      "c": 6,
+      "modulus": 168
+    },
+    {
+      "shift": 343,
+      "a": 7,
+      "c": 7,
+      "modulus": 196
+    },
+    {
+      "shift": 392,
+      "a": 7,
+      "c": 8,
+      "modulus": 224
+    },
+    {
+      "shift": 441,
+      "a": 7,
+      "c": 9,
+      "modulus": 252
+    },
+    {
+      "shift": 490,
+      "a": 7,
+      "c": 10,
+      "modulus": 280
+    },
+    {
+      "shift": 64,
+      "a": 8,
+      "c": 1,
+      "modulus": 32
+    },
+    {
+      "shift": 128,
+      "a": 8,
+      "c": 2,
+      "modulus": 64
+    },
+    {
+      "shift": 192,
+      "a": 8,
+      "c": 3,
+      "modulus": 96
+    },
+    {
+      "shift": 256,
+      "a": 8,
+      "c": 4,
+      "modulus": 128
+    },
+    {
+      "shift": 320,
+      "a": 8,
+      "c": 5,
+      "modulus": 160
+    },
+    {
+      "shift": 384,
+      "a": 8,
+      "c": 6,
+      "modulus": 192
+    },
+    {
+      "shift": 448,
+      "a": 8,
+      "c": 7,
+      "modulus": 224
+    },
+    {
+      "shift": 512,
+      "a": 8,
+      "c": 8,
+      "modulus": 256
+    },
+    {
+      "shift": 576,
+      "a": 8,
+      "c": 9,
+      "modulus": 288
+    },
+    {
+      "shift": 640,
+      "a": 8,
+      "c": 10,
+      "modulus": 320
+    },
+    {
+      "shift": 81,
+      "a": 9,
+      "c": 1,
+      "modulus": 36
+    },
+    {
+      "shift": 162,
+      "a": 9,
+      "c": 2,
+      "modulus": 72
+    },
+    {
+      "shift": 243,
+      "a": 9,
+      "c": 3,
+      "modulus": 108
+    },
+    {
+      "shift": 324,
+      "a": 9,
+      "c": 4,
+      "modulus": 144
+    },
+    {
+      "shift": 405,
+      "a": 9,
+      "c": 5,
+      "modulus": 180
+    },
+    {
+      "shift": 486,
+      "a": 9,
+      "c": 6,
+      "modulus": 216
+    },
+    {
+      "shift": 567,
+      "a": 9,
+      "c": 7,
+      "modulus": 252
+    },
+    {
+      "shift": 648,
+      "a": 9,
+      "c": 8,
+      "modulus": 288
+    },
+    {
+      "shift": 729,
+      "a": 9,
+      "c": 9,
+      "modulus": 324
+    },
+    {
+      "shift": 810,
+      "a": 9,
+      "c": 10,
+      "modulus": 360
+    },
+    {
+      "shift": 100,
+      "a": 10,
+      "c": 1,
+      "modulus": 40
+    },
+    {
+      "shift": 200,
+      "a": 10,
+      "c": 2,
+      "modulus": 80
+    },
+    {
+      "shift": 300,
+      "a": 10,
+      "c": 3,
+      "modulus": 120
+    },
+    {
+      "shift": 400,
+      "a": 10,
+      "c": 4,
+      "modulus": 160
+    },
+    {
+      "shift": 500,
+      "a": 10,
+      "c": 5,
+      "modulus": 200
+    },
+    {
+      "shift": 600,
+      "a": 10,
+      "c": 6,
+      "modulus": 240
+    },
+    {
+      "shift": 700,
+      "a": 10,
+      "c": 7,
+      "modulus": 280
+    },
+    {
+      "shift": 800,
+      "a": 10,
+      "c": 8,
+      "modulus": 320
+    },
+    {
+      "shift": 900,
+      "a": 10,
+      "c": 9,
+      "modulus": 360
+    },
+    {
+      "shift": 1000,
+      "a": 10,
+      "c": 10,
+      "modulus": 400
+    }
+  ],
+  "combined_modulus": 25401600,
+  "core_residue_count": 725760,
+  "one_prime_safe_residue_count": 181440,
+  "admissible_one_prime_safe_residue_count": 0,
+  "covering_prime_histogram": {
+    "11": 181440,
+    "13": 181440,
+    "17": 181440,
+    "19": 181440,
+    "23": 181440,
+    "29": 181440,
+    "37": 181440
+  },
+  "second_level_safe_branch_count": 0,
+  "second_level_safe_residue_count": 0,
+  "second_level_samples": [],
+  "samples": [
+    {
+      "residue_class": 1,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 1,
+          "label": "p"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 1,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 1,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 13,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 17,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 1,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 1,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 29,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 11,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 37,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 41,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 17,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 11,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 1,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 13,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 313600,
+          "constant": 1,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 97,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 113,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 43,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 29,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 23,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 37,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 73,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 109,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 29,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 181,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 31,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 253,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 289,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 13,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 361,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 13,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 43,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 193,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 257,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 107,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 11,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 449,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 19,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 577,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 641,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 101,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 67,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 43,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 401,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 167,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 601,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 701,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 89,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 901,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 143,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 29,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 289,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 433,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 577,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 103,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 173,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1009,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1441,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 197,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 131,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 589,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 157,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 109,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1177,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1373,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 523,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 353,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1961,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 257,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 19,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 769,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 41,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 61,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1537,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1793,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 683,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 461,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2561,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 13,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 649,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 139,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1621,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 389,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2269,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2593,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2917,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 463,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 401,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 89,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1201,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1601,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 667,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 49,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2801,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1067,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3601,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4001,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 121,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 121,
+          "label": "p"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 5,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 43,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 19,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 137,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 47,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 29,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 149,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 17,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 157,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 23,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 137,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 17,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 169,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 37,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 67,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 31,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 233,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 83,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 53,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 281,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 157,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 193,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 229,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 53,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 43,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 337,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 373,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 409,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 89,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 481,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 37,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 83,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 313,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 377,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 57600,
+          "constant": 1,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 101,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 569,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 211,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 697,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 761,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 221,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 107,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 421,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 521,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 23,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 103,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 821,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 307,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1021,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1121,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 53,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 409,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 79,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 697,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 841,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 197,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1129,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1273,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1417,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 223,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 317,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 19,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 709,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 181,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 367,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1493,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 563,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 377,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2081,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 377,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 211,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 127,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 229,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 467,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1657,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1913,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 241,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 97,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 383,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 89,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 769,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1093,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1417,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1741,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 59,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2389,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2713,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3037,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3361,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 521,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 307,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1321,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1721,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 101,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2521,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2921,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 313600,
+          "constant": 41,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3721,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4121,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 169,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 169,
+          "label": "p"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 173,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 59,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 181,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 37,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 134400,
+          "constant": 1,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 193,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 197,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 67,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 41,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 209,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 37,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 67,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 31,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 233,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 83,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 53,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 281,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 11,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 313,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 47,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 41,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 241,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 277,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 313,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 349,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 11,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 421,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 457,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 493,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 529,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 233,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 11,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 361,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 17,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 163,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 79,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 617,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 227,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 149,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 809,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 269,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 41,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 67,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 569,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 223,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 769,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 869,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 323,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1069,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 167,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 313,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 457,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 601,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 149,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 127,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1033,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1177,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1321,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 293,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1609,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 73,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 187,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 757,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 953,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 383,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 269,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1541,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 193,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1933,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2129,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 17,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 227,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 937,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1193,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 403200,
+          "constant": 23,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 341,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1961,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 739,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2473,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2729,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 493,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 817,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 163,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 293,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1789,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2113,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2437,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2761,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 617,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 487,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 569,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 323,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1369,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1769,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 241,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 367,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2969,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1123,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3769,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4169,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 289,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 289,
+          "label": "p"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 293,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 11,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 43,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 61,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 103,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 313,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 317,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 107,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 13,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 47,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 61,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 107,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 337,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 353,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 41,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 11,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 401,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 139,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 433,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 449,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 13,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 361,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 397,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 433,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 67,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 101,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 541,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 577,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 613,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 649,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 353,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 139,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 481,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 109,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 29,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 673,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 737,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 89,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 173,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 929,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 389,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 163,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 589,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 689,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 263,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 127,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 989,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 121,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1189,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1289,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 433,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 577,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 103,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 173,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1009,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1441,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 317,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 247,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 97,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 227,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 877,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1073,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 47,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 293,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1661,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 619,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2053,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2249,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 109,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 89,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 151,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1313,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 523,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 73,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2081,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 779,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2593,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 407,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 613,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 937,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1261,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 317,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1909,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 319,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2557,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2881,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 641,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3529,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 689,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 121,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1489,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1889,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 109,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2689,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3089,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1163,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3889,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4289,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 361,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 361,
+          "label": "p"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 73,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 41,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 373,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 377,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 127,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 11,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 389,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 131,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 397,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 401,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 377,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 131,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 409,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 17,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 57600,
+          "constant": 1,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 457,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 473,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 163,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 101,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 521,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 397,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 433,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 67,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 101,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 541,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 577,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 613,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 649,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 137,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 103,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 17,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 163,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 79,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 617,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 227,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 149,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 809,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 97,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 937,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 143,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 461,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 187,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 661,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 761,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 41,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 961,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1061,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 43,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1261,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1361,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 101,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 649,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 793,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 937,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1081,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 20736,
+          "constant": 1,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1369,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1513,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1657,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1801,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 557,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 251,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 949,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 229,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 149,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1537,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1733,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 643,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 85,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2321,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 617,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 97,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1129,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 277,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 547,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 271,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2153,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 803,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 533,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2921,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 137,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1009,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1333,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1657,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 283,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 461,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2629,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2953,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3277,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3601,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 761,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 43,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 223,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1961,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 787,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2761,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3161,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1187,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3961,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 89,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 529,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 529,
+          "label": "p"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 533,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 179,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 541,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 109,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 61,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 79,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 557,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 187,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 113,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 569,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 109,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 187,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 577,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 593,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 29,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 25,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 641,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 73,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 673,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 689,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 113,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 601,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 13,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 673,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 709,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 149,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 781,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 817,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 853,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 127,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 593,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 73,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 103,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 157,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 283,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 913,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 977,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 347,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 221,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 167,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 629,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 313600,
+          "constant": 9,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 829,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 929,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 172800,
+          "constant": 7,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1129,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1229,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 443,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1429,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1529,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 673,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 817,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 961,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 221,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1249,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 199,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1537,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1681,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 73,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1969,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 29,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 307,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1117,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1313,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 503,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 341,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1901,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 233,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2293,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2489,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 157,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 347,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1553,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 67,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 59,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2321,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 859,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2833,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3089,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 853,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1177,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1501,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 73,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 307,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2473,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2797,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3121,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 689,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3769,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 929,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 443,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 247,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2129,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 281,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2929,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3329,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1243,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4129,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 647,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 841,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 841,
+          "label": "p"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 169,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 283,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 853,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 857,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 41,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 173,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 869,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 97,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 877,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 881,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 857,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 97,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 127,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 181,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 307,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 937,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 953,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 323,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 197,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 143,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 877,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 913,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 949,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 197,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1021,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 151,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1093,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1129,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 233,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1201,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 181,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 323,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1033,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1097,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 43,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 20736,
+          "constant": 1,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1289,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 451,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1417,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1481,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 941,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 347,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 163,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1241,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 149,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1441,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1541,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 547,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1741,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 263,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 197,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1129,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1273,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1417,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 223,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 341,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1849,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1993,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2137,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2281,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1037,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 137,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1429,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 65,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 607,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2017,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2213,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 803,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 521,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2801,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1097,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 451,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1609,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 373,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 101,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2377,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2633,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 107,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 629,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3401,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 233,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1489,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 37,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2137,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2461,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 557,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3109,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3433,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3757,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 583,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1241,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 547,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2041,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2441,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 947,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 463,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3641,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 449,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4441,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4841,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 961,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 961,
+          "label": "p"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 193,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 323,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 139,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 977,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 109,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 197,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 989,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 331,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 997,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 143,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 977,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 331,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1009,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 41,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 347,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 151,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1073,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 121,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 221,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1121,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 997,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1033,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1069,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 221,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 163,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1177,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1213,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1249,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 257,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1321,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 41,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 121,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1217,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 61,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 269,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1409,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 491,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1537,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1601,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1061,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 43,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1261,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1361,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 487,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 223,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1661,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 587,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1861,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1961,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 221,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1249,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 199,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1537,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1681,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 73,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1969,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2113,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2257,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 49,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1157,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 451,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1549,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 349,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 647,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2137,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2333,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 281,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 109,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2921,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1217,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 491,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 247,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 397,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 83,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2497,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2753,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1003,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 653,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 503,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 257,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1609,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1933,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2257,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2581,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 725760,
+          "constant": 83,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3229,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3553,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3877,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4201,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1361,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 587,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2161,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2561,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 403200,
+          "constant": 47,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3361,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3761,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1387,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4561,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4961,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 1009,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 1009,
+          "label": "p"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1013,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 113,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1021,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 41,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 172800,
+          "constant": 7,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1033,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1037,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 347,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 209,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1049,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 41,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 347,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 151,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1073,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 121,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 221,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1121,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 379,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 167,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 209,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1081,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1117,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1189,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 20736,
+          "constant": 1,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1261,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1333,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1369,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1073,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 379,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1201,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 253,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 443,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 199,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1457,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 169,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 317,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1649,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1109,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 403,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 187,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1409,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 503,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1609,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1709,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 67,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1909,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 518400,
+          "constant": 41,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1297,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1441,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 317,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 247,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1873,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2017,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2161,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 461,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2449,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 241,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 467,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1597,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1793,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 221,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 437,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2381,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 859,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2773,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2969,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 253,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 169,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1777,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2033,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 109,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 509,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2801,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1019,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3313,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3569,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1333,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1657,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 283,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 461,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2629,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2953,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3277,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3601,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 157,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 607,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1409,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 67,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2209,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2609,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1003,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 487,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3809,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 1403,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4609,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 5009,
+          "label": "s=1000"
+        }
+      ]
+    },
+    {
+      "residue_class": 1129,
+      "covering_primes": [
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        37
+      ],
+      "forms": [
+        {
+          "coefficient": 25401600,
+          "constant": 1129,
+          "label": "p"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1133,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 379,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 163,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 229,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 383,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1153,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1157,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 43,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 233,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 167,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 229,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 940800,
+          "constant": 43,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1177,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1193,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 403,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 20736,
+          "constant": 1,
+          "label": "s=24"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1241,
+          "label": "s=28"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 419,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1273,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1289,
+          "label": "s=40"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 233,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1201,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1237,
+          "label": "s=27"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1273,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 187,
+          "label": "s=45"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 269,
+          "label": "s=54"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1381,
+          "label": "s=63"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1417,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1453,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1489,
+          "label": "s=90"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1193,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 419,
+          "label": "s=32"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1321,
+          "label": "s=48"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 277,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 403200,
+          "constant": 23,
+          "label": "s=80"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1513,
+          "label": "s=96"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1577,
+          "label": "s=112"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 547,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 341,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1769,
+          "label": "s=160"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1229,
+          "label": "s=25"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 443,
+          "label": "s=50"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1429,
+          "label": "s=75"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1529,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 181,
+          "label": "s=125"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 247,
+          "label": "s=150"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1829,
+          "label": "s=175"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 643,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2029,
+          "label": "s=225"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2129,
+          "label": "s=250"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1273,
+          "label": "s=36"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1417,
+          "label": "s=72"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 223,
+          "label": "s=108"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 341,
+          "label": "s=144"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1849,
+          "label": "s=180"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1993,
+          "label": "s=216"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2137,
+          "label": "s=252"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2281,
+          "label": "s=288"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 97,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 367,
+          "label": "s=360"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 53,
+          "label": "s=49"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 169,
+          "label": "s=98"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1717,
+          "label": "s=147"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1913,
+          "label": "s=196"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 703,
+          "label": "s=245"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 461,
+          "label": "s=294"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2501,
+          "label": "s=343"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 899,
+          "label": "s=392"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2893,
+          "label": "s=441"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3089,
+          "label": "s=490"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 277,
+          "label": "s=64"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 547,
+          "label": "s=128"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 271,
+          "label": "s=192"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2153,
+          "label": "s=256"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 803,
+          "label": "s=320"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 533,
+          "label": "s=384"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2921,
+          "label": "s=448"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 353,
+          "label": "s=512"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3433,
+          "label": "s=576"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 527,
+          "label": "s=640"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1453,
+          "label": "s=81"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1777,
+          "label": "s=162"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2101,
+          "label": "s=243"
+        },
+        {
+          "coefficient": 1016064,
+          "constant": 97,
+          "label": "s=324"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2749,
+          "label": "s=405"
+        },
+        {
+          "coefficient": 3628800,
+          "constant": 439,
+          "label": "s=486"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3397,
+          "label": "s=567"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3721,
+          "label": "s=648"
+        },
+        {
+          "coefficient": 5080320,
+          "constant": 809,
+          "label": "s=729"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4369,
+          "label": "s=810"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 1529,
+          "label": "s=100"
+        },
+        {
+          "coefficient": 8467200,
+          "constant": 643,
+          "label": "s=200"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2329,
+          "label": "s=300"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 2729,
+          "label": "s=400"
+        },
+        {
+          "coefficient": 1209600,
+          "constant": 149,
+          "label": "s=500"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3529,
+          "label": "s=600"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 3929,
+          "label": "s=700"
+        },
+        {
+          "coefficient": 2822400,
+          "constant": 481,
+          "label": "s=800"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 4729,
+          "label": "s=900"
+        },
+        {
+          "coefficient": 25401600,
+          "constant": 5129,
+          "label": "s=1000"
+        }
+      ]
+    }
+  ],
+  "ac_bound": 10,
+  "elapsed_seconds": 1036.296
+}

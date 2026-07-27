@@ -1,0 +1,7278 @@
+{
+  "arithmetic": "for every final first-power tail, complete factorization of x and exhaustive enumeration of all canonical-base divisors multiplied by the least nonbase prime factor",
+  "scope_note": "A finite boundary for the least-nonbase-prime selection rule on the rewritten 2097152-layer H19-k23 profile. It does not exclude selection by a different nonbase factor or a different tail.",
+  "input_final_one_support_count": 5128,
+  "least_nonbase_prime_works_count": 3685,
+  "least_nonbase_prime_fails_count": 1443,
+  "tail_histogram": {
+    "31": {
+      "works": 2101,
+      "fails": 586
+    },
+    "35": {
+      "works": 993,
+      "fails": 412
+    },
+    "39": {
+      "works": 322,
+      "fails": 203
+    },
+    "47": {
+      "works": 130,
+      "fails": 139
+    },
+    "59": {
+      "works": 89,
+      "fails": 51
+    },
+    "71": {
+      "works": 21,
+      "fails": 16
+    },
+    "79": {
+      "works": 4,
+      "fails": 10
+    },
+    "91": {
+      "fails": 6
+    },
+    "95": {
+      "works": 12,
+      "fails": 7
+    },
+    "99": {
+      "works": 3
+    },
+    "119": {
+      "works": 4,
+      "fails": 10
+    },
+    "143": {
+      "works": 6,
+      "fails": 1
+    },
+    "159": {
+      "fails": 1
+    },
+    "183": {
+      "fails": 1
+    }
+  },
+  "failures": [
+    {
+      "prime": 1876090148092801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2357435324404801,
+      "tail_gap": 71,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 4389739980386401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 148723
+    },
+    {
+      "prime": 4407676647134401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1123
+    },
+    {
+      "prime": 4995089097559201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 6520883701492801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 9405902848903201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 13218274438329601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 20415428898825601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 20642341118760001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 359
+    },
+    {
+      "prime": 20745195855544801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 23776224824512801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1033
+    },
+    {
+      "prime": 29157117764335201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 30266674615137601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 31794396741468001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 1723
+    },
+    {
+      "prime": 33978065447887201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 30881
+    },
+    {
+      "prime": 34359714882453601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 239
+    },
+    {
+      "prime": 34711112923848001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 997
+    },
+    {
+      "prime": 38471120154828001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 39721868021196001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 42435230590713601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 7602059
+    },
+    {
+      "prime": 43154946036763201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 44691342013879201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 46198289732155201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4561
+    },
+    {
+      "prime": 48148139263384801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 48561432190632001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2729
+    },
+    {
+      "prime": 51291981834854401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 53336333505816001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 593
+    },
+    {
+      "prime": 54122227220822401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 58980065541357601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 59134802755989601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 62854760354947201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 66756012143781601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 67086314523388801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 72262729462284001,
+      "tail_gap": 159,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 74985033594031201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 75518957297944801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 76698226208764801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 233
+    },
+    {
+      "prime": 77192796330410401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 78514916067748801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 83522726339212801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 84338282482214401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 87052126932331201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 90966871377943201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 91843412187888001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 95366816044660801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 167
+    },
+    {
+      "prime": 95496656095000801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 96727646856801601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 97785481856623201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1699
+    },
+    {
+      "prime": 100527168296916001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 107805867663254401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 139
+    },
+    {
+      "prime": 107953216042032001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 110026587633523201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 111941688219321601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 577
+    },
+    {
+      "prime": 113404891887648001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 19037
+    },
+    {
+      "prime": 114488748439826401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 121070809086588001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 167
+    },
+    {
+      "prime": 123936392383164001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 126489181628570401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1613
+    },
+    {
+      "prime": 127269399860964001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 127944728749598401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 577
+    },
+    {
+      "prime": 129197136426919201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 129377038517287201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 129949780380580801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 130681435757032801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 132377066501040001,
+      "tail_gap": 71,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 135355891738428001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 140169236416970401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 739
+    },
+    {
+      "prime": 147160842030763201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 153467748855381601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2861
+    },
+    {
+      "prime": 157317600046968001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 159669337997930401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 162458730617544001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 2657
+    },
+    {
+      "prime": 163585849339072801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 163664877757341601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 165708158582527201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 373
+    },
+    {
+      "prime": 169315141952116801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 174548579428584001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 176211228122690401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 176286883376764801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 239
+    },
+    {
+      "prime": 176860374832101601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 503
+    },
+    {
+      "prime": 177370472217499201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 197423
+    },
+    {
+      "prime": 181620605560154401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 184342963234190401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 185019095257156801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 186530058647092801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 187120523007979201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 189555251506581601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 809
+    },
+    {
+      "prime": 191136944260022401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 2243
+    },
+    {
+      "prime": 195483614349384001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 197684577215085601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 197977346450244001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 193
+    },
+    {
+      "prime": 199571835810708001,
+      "tail_gap": 71,
+      "least_nonbase_prime": 117773
+    },
+    {
+      "prime": 207675032882277601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 210136318356124801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 214028360871285601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 215871661247803201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 220459753517364001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 220486471119475201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 222422827993927201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 233
+    },
+    {
+      "prime": 222430645168092001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 223310077261632001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 226331682787771201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1031
+    },
+    {
+      "prime": 226809333546156001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 1361
+    },
+    {
+      "prime": 226954218979648801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 881
+    },
+    {
+      "prime": 231207564859632001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 235691838631209601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1427
+    },
+    {
+      "prime": 236382319987574401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 577
+    },
+    {
+      "prime": 236442447977896801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 349
+    },
+    {
+      "prime": 236654903779855201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 236672519192870401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1279
+    },
+    {
+      "prime": 239435140668084001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 240024480640905601,
+      "tail_gap": 79,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 242550605826489601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 244497938870145601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 246935933448364801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 250005673492135201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1733
+    },
+    {
+      "prime": 250154842308732001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 250910645257432801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 12037
+    },
+    {
+      "prime": 252089860625964001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 253917419569574401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 259644195695044801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 267506773720747201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 571
+    },
+    {
+      "prime": 269097729290150401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 151
+    },
+    {
+      "prime": 271132978772016001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 272560951614312001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 273204744094843201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 38851
+    },
+    {
+      "prime": 275177670352545601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 277
+    },
+    {
+      "prime": 276484102199265601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1223
+    },
+    {
+      "prime": 279805330373529601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 279847200443371201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 280336362793848001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 280499024267222401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 280537360546003201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 10316633
+    },
+    {
+      "prime": 284646998922847201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 285533337971642401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 499
+    },
+    {
+      "prime": 286023464083317601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 287209747033970401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 289553989064500801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 302887303990632001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 179
+    },
+    {
+      "prime": 304792177999269601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 305140417045624801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 307166617880683201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 314072823543840001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 487
+    },
+    {
+      "prime": 315168941280153601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 421
+    },
+    {
+      "prime": 318891201197529601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 319961029670042401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 321462248363416801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1597
+    },
+    {
+      "prime": 322206164924004001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 323267158918864801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 325226699604367201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 325348936649697601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 326249196693580801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 326773589870088001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 328562866077206401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 331126738576394401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 281
+    },
+    {
+      "prime": 332174721795076801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 332978712803697601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 334170885406118401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 335944955603217601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 521
+    },
+    {
+      "prime": 337027205886732001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 339919828039152001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 23081
+    },
+    {
+      "prime": 343102060431691201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 346757178318912001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 347008719991694401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 349796399258066401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 356754166145337601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 360193883404716001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 361367476832923201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 15859
+    },
+    {
+      "prime": 364945440281983201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 365103978999120001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1709
+    },
+    {
+      "prime": 366477070995396001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1187
+    },
+    {
+      "prime": 367782431996340001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 371108800230328801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 374032637537119201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1483
+    },
+    {
+      "prime": 376359906662100001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 383545067649904801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 3457
+    },
+    {
+      "prime": 384897652949570401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 385998482407298401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 387193278581870401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 388374207303643201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 394437496714221601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 547
+    },
+    {
+      "prime": 395627902421112001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 4729
+    },
+    {
+      "prime": 397158676457904001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 193
+    },
+    {
+      "prime": 398621344703342401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 399378700378418401,
+      "tail_gap": 79,
+      "least_nonbase_prime": 11131
+    },
+    {
+      "prime": 399676181334991201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1289
+    },
+    {
+      "prime": 403426283242543201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 281
+    },
+    {
+      "prime": 404234878888000801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1613
+    },
+    {
+      "prime": 406784241426924001,
+      "tail_gap": 119,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 414381785123066401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 414944461036065601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 197
+    },
+    {
+      "prime": 417518238858681601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 417526644998023201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 425392167849609601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 426393033854148001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 427900356368445601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 429749814108175201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 433231722691128001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 437526885098664001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 437703628193992801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 447655105074938401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 449044795180742401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 229
+    },
+    {
+      "prime": 449091162802843201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 453959923750293601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 449
+    },
+    {
+      "prime": 459648149427828001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 461981094035421601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 462224925618616801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 24847
+    },
+    {
+      "prime": 462816567909856801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 468189483048648001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 241
+    },
+    {
+      "prime": 475286834682820801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 38651
+    },
+    {
+      "prime": 475505394305702401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 167
+    },
+    {
+      "prime": 481983261658459201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 482636370497241601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 683
+    },
+    {
+      "prime": 483616729805169601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 483758081447601601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 421
+    },
+    {
+      "prime": 484173997947000001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 485391763763467201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 331
+    },
+    {
+      "prime": 486156829528130401,
+      "tail_gap": 119,
+      "least_nonbase_prime": 263
+    },
+    {
+      "prime": 486632766933273601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 349
+    },
+    {
+      "prime": 488061275198457601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 495573793739985601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 503382240511711201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 504109344793615201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 505048315912300801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1453
+    },
+    {
+      "prime": 507312298051920001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 507374407106928001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 508127640025766401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 887
+    },
+    {
+      "prime": 510438685837240801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 510510432504232801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 820577
+    },
+    {
+      "prime": 510778143948232801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 514999525081802401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 151
+    },
+    {
+      "prime": 517626952277796001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 518170620678271201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 307
+    },
+    {
+      "prime": 519419601649108801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 11003
+    },
+    {
+      "prime": 525536701059931201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 527603219238456001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 527793347905984801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 528946113383848801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 33181
+    },
+    {
+      "prime": 537415004287922401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 540894182214146401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 541248846335157601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 543448417101350401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 543829638197606401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 971
+    },
+    {
+      "prime": 544395954986244001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 548158318077931201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 548866254220444801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 549518559924895201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 551665230909753601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 555470106578748001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 558045115874006401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 560673292662043201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1879
+    },
+    {
+      "prime": 561453403809859201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 24517
+    },
+    {
+      "prime": 564847717208335201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 3449
+    },
+    {
+      "prime": 567879174515613601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 568415882418544801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 568994246222162401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 570983288708793601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 997
+    },
+    {
+      "prime": 570990249206337601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 571102848639684001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 573322872560198401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 577438775384832001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 24469
+    },
+    {
+      "prime": 577651231186790401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 581607792159955201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 617
+    },
+    {
+      "prime": 582646619647252801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 582942173081428801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 583156663490361601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 587246973100948801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 997
+    },
+    {
+      "prime": 588814048809547201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 597260237783169601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 601451635235011201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 603120066496308001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 606826424353910401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 606859567030677601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 839
+    },
+    {
+      "prime": 608652644740300801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 612317400239505601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 614284436845440001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 919
+    },
+    {
+      "prime": 615094478132695201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 616020545559780001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 616481544666348001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 577
+    },
+    {
+      "prime": 617973714712915201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 626718027150576001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 628242804451022401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 630212839425129601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 632598790898635201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 5233
+    },
+    {
+      "prime": 633586324873262401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 634652833723869601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 636603754100875201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 67106833
+    },
+    {
+      "prime": 636782371176312001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 16328269
+    },
+    {
+      "prime": 638692652956118401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 640062318245911201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 641840939537558401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 642312058136709601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 642804914905113601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 643079586846657601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 641
+    },
+    {
+      "prime": 643370375017130401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 683
+    },
+    {
+      "prime": 645186529453226401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 649464986666656801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 649782224727796801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 70067
+    },
+    {
+      "prime": 654446293505164801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 657431543817208801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 657557207569022401,
+      "tail_gap": 71,
+      "least_nonbase_prime": 1860643
+    },
+    {
+      "prime": 662379065471484001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 662563197402667201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 662571014576832001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 668062258173871201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 668730680107250401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 670830340962542401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1973
+    },
+    {
+      "prime": 674066543982192001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 675892657284004801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 679773134664784801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 680737752539805601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 680851101565195201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 681104303048930401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 983
+    },
+    {
+      "prime": 682208398586275201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 695741372707341601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 701
+    },
+    {
+      "prime": 699291387081648001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 699891167800785601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 18251
+    },
+    {
+      "prime": 700204283105688001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 700434086609217601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 701565006833251201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 704917771415618401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 705791795737989601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 709402259356351201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 557
+    },
+    {
+      "prime": 710121974802400801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 71933
+    },
+    {
+      "prime": 711532278689392801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 713812805396251201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 5897
+    },
+    {
+      "prime": 713892422779696801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 718051587773680801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 718807765518403201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 719489251770249601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 721053275568386401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 722216481792566401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 725574279350080801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 726976391266886401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 729530840323245601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 13297
+    },
+    {
+      "prime": 731418955595488801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 732027517249989601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 732367724953024801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 10331
+    },
+    {
+      "prime": 732429191500567201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 734178471617952001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 735231487811781601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1621
+    },
+    {
+      "prime": 735452349753081601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 738194625158551201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 193
+    },
+    {
+      "prime": 738869579251164001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 740140673187276001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 311
+    },
+    {
+      "prime": 747636218823254401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 748171266915232801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1187
+    },
+    {
+      "prime": 749938644326232001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 907
+    },
+    {
+      "prime": 751379038979529601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 752138322177002401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 757003013910504001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 757891976531450401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 759618501176095201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 479
+    },
+    {
+      "prime": 762789329061120001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 764631719218728001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 765557197680636001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 769094950870807201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 359
+    },
+    {
+      "prime": 779040002677096801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 779434877056996801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 239
+    },
+    {
+      "prime": 779563378550116801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 347
+    },
+    {
+      "prime": 784678808822068801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 792860231177575201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 792891446331945601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 795666168364428001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 795885370494775201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 2246357
+    },
+    {
+      "prime": 797776484135191201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1129
+    },
+    {
+      "prime": 799665348999477601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 536219
+    },
+    {
+      "prime": 803689640967974401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 4027
+    },
+    {
+      "prime": 805194179283254401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 805532084667871201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 805562175434176801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 179
+    },
+    {
+      "prime": 807672277035784801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 443
+    },
+    {
+      "prime": 809949430578448801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 812343734649007201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 814768343655026401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 818986512251268001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1187
+    },
+    {
+      "prime": 819289079725276801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 819696750712200001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 822837862626940801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 199
+    },
+    {
+      "prime": 823652936889343201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 825606106042478401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 831502236427423201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 832332837953577601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 4051
+    },
+    {
+      "prime": 834725428670894401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 835964664945170401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 838147209263524801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 3221
+    },
+    {
+      "prime": 840459700716796801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 846100113130432801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 848321154354434401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 983
+    },
+    {
+      "prime": 848991985690809601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 851764619574028801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 852092244839196001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 139
+    },
+    {
+      "prime": 854012003604120001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 311
+    },
+    {
+      "prime": 855409350257222401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 860157266258851201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 861199573994920801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 401237
+    },
+    {
+      "prime": 862786299723508801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 3851
+    },
+    {
+      "prime": 865747456005592801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 867343658719298401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 867638676730586401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 868312934773444801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 871080428596939201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 733
+    },
+    {
+      "prime": 878838438532615201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 878846630502801601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 879971982328800001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 881707287908808001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 15919
+    },
+    {
+      "prime": 883410575200113601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1451
+    },
+    {
+      "prime": 884693448439761601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 593
+    },
+    {
+      "prime": 886633713901296001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 890331772704134401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 890966034657259201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 891738168004044001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 2563117
+    },
+    {
+      "prime": 891739292392108801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 897156058665427201,
+      "tail_gap": 71,
+      "least_nonbase_prime": 33713
+    },
+    {
+      "prime": 897377937910214401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 898150124799288001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 36515533
+    },
+    {
+      "prime": 898953366215865601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 900196189823491201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2389
+    },
+    {
+      "prime": 900466578381931201,
+      "tail_gap": 143,
+      "least_nonbase_prime": 179
+    },
+    {
+      "prime": 901668602765491201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 379
+    },
+    {
+      "prime": 905596679241014401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 908106688197669601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 908233155083815201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 8263
+    },
+    {
+      "prime": 912529548963993601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 915104718886118401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 915207198826881601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 916828994754633601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 917052694437240001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 917878637784268801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 17589491
+    },
+    {
+      "prime": 919365400059667201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 922093754470048801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 925122909458908801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 925976052288648001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 947
+    },
+    {
+      "prime": 928293201921045601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 931546699099977601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 7727
+    },
+    {
+      "prime": 933973235628393601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 935852409338407201,
+      "tail_gap": 71,
+      "least_nonbase_prime": 263
+    },
+    {
+      "prime": 939890301048259201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 449
+    },
+    {
+      "prime": 940586725598680801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 944034420659090401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 945307227948444001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 947967369482894401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 952027802496331201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 13711
+    },
+    {
+      "prime": 952795598917723201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 956107564276024801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 956795207891083201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 9721
+    },
+    {
+      "prime": 957796716403087201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1901
+    },
+    {
+      "prime": 958125733767763201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 960309402474182401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 239
+    },
+    {
+      "prime": 969684817869928801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 974052530078788801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 975336795417945601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 976428951024888001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 6791
+    },
+    {
+      "prime": 983047902308632801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1163
+    },
+    {
+      "prime": 983608704241524001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 985239227562350401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 2389
+    },
+    {
+      "prime": 986170006710849601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 996334796070374401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 997458755796864001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 998981230778892001,
+      "tail_gap": 79,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 999114979416314401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 999522971656970401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1001857629617805601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 1001983400454196801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 1003281908042174401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1193
+    },
+    {
+      "prime": 1004326785808106401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1004797208357503201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 1006515273320517601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1010631550941172801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1011651317373657601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 8681
+    },
+    {
+      "prime": 1012617487975053601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 431
+    },
+    {
+      "prime": 1014619166441841601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1015039848204943201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1381
+    },
+    {
+      "prime": 1017390568852418401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1018322204677538401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1303
+    },
+    {
+      "prime": 1019454570543369601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2239
+    },
+    {
+      "prime": 1022818525464096001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 1029210029105018401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1831
+    },
+    {
+      "prime": 1032280358113965601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1034398919397204001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 8017
+    },
+    {
+      "prime": 1035050689678766401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1901
+    },
+    {
+      "prime": 1035323701809357601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 20681
+    },
+    {
+      "prime": 1037098949936810401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1039114763567841601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 1041150387845728801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2777
+    },
+    {
+      "prime": 1042048720367215201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 7297
+    },
+    {
+      "prime": 1044546361055157601,
+      "tail_gap": 95,
+      "least_nonbase_prime": 173177
+    },
+    {
+      "prime": 1047211107226444801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 1053359689503081601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 18481
+    },
+    {
+      "prime": 1055791151922067201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1558357
+    },
+    {
+      "prime": 1055936144440137601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1056494055089433601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1064152904706252001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1065300744293546401,
+      "tail_gap": 71,
+      "least_nonbase_prime": 139
+    },
+    {
+      "prime": 1065572846205228001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1065620070503949601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1066001077431050401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1068615708020020801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1069195945803746401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 94777
+    },
+    {
+      "prime": 1070291260405728001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 14591
+    },
+    {
+      "prime": 1072277197439608801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 1075412848040892001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1075766012977816801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 2591
+    },
+    {
+      "prime": 1077034751053221601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 1078587370343844001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 7331
+    },
+    {
+      "prime": 1079186722724671201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 159059
+    },
+    {
+      "prime": 1081371355192288801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1009
+    },
+    {
+      "prime": 1083842813701008001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1084237741623196801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 311
+    },
+    {
+      "prime": 1085255741160151201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1087329219836220001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1997
+    },
+    {
+      "prime": 1087586222822460001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1088532261523267201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1095307931086329601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1095529970957983201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1095753831267456001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 439
+    },
+    {
+      "prime": 1100862729380174401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 487
+    },
+    {
+      "prime": 1101095209998144001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 1101745534637908801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 1103299010605152001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1105486480814076001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 431
+    },
+    {
+      "prime": 1108201074856236001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1111302672561842401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 223
+    },
+    {
+      "prime": 1111579914533248801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1049
+    },
+    {
+      "prime": 1117508973425805601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 230017
+    },
+    {
+      "prime": 1127935531035273601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 701
+    },
+    {
+      "prime": 1128666972242570401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1128994329796293601,
+      "tail_gap": 79,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 1129545708286356001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 84391
+    },
+    {
+      "prime": 1130339526260104801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 1130873878302328801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1139215338559058401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1139636020322160001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 953
+    },
+    {
+      "prime": 1142486076354984001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1144011924501206401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1153
+    },
+    {
+      "prime": 1148238820490522401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1149093034166037601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 19207
+    },
+    {
+      "prime": 1150213888439776801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1151337687539400001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1152424970798061601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1155368725836285601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1158490669611636001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 1164606216296083201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 4159
+    },
+    {
+      "prime": 1166625403091308801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1169759822219949601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 1172931935119905601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 89
+    },
+    {
+      "prime": 1173208213330113601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1174104993125224801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1180005835231584001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 947
+    },
+    {
+      "prime": 1186895496327501601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1188145226890382401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 1188834637400971201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1190350098343166401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 379
+    },
+    {
+      "prime": 1192281904123070401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1193386856337036001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1019
+    },
+    {
+      "prime": 1200743245564423201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 1206446302455955201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 1207725427735387201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1210457315936829601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 5569
+    },
+    {
+      "prime": 1212779070206064001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 1214440487427528001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1221368110006204801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47237
+    },
+    {
+      "prime": 1223339804791264801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 34511
+    },
+    {
+      "prime": 1227636894721197601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 9533
+    },
+    {
+      "prime": 1229471039366330401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1229742284601391201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 1231107024000614401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1232447829996744001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 1232600532604401601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1235870199554551201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 877
+    },
+    {
+      "prime": 1240129167374858401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1244414317374388801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 347
+    },
+    {
+      "prime": 1244526756180868801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1253365945554283201,
+      "tail_gap": 95,
+      "least_nonbase_prime": 32039603
+    },
+    {
+      "prime": 1258264261845151201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 372661
+    },
+    {
+      "prime": 1261533714626145601,
+      "tail_gap": 79,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 1262726958074342401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 1264688051486220001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1266606257524768801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1270454020567092001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 1271330507834748001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 17207
+    },
+    {
+      "prime": 1274902474547462401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1275589582739632801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 6053
+    },
+    {
+      "prime": 1277174273861246401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 1281126765620462401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 347
+    },
+    {
+      "prime": 1283432939083656001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1283616803303395201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1283785729224559201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1285527406336934401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1285707897392479201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1285778305502251201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 1286104003245021601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1286696180959149601,
+      "tail_gap": 95,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 1287971772447520801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1291963082366116801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1295279009853789601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 1295629926014584801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1296698951352765601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 769
+    },
+    {
+      "prime": 1296739000984788001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 367
+    },
+    {
+      "prime": 1297365552848325601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1321
+    },
+    {
+      "prime": 1299163449363940801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1301415705742312801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1306900256553252001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1308611414561011201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 19767157
+    },
+    {
+      "prime": 1310888246849942401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1310964651696060001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1312093376686252801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1312116453412725601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 359
+    },
+    {
+      "prime": 1312284469114980001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 9151
+    },
+    {
+      "prime": 1313884526873479201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1314424554398316001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 35569
+    },
+    {
+      "prime": 1317297365903880001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1324641065608821601,
+      "tail_gap": 71,
+      "least_nonbase_prime": 509
+    },
+    {
+      "prime": 1331648948078409601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1901
+    },
+    {
+      "prime": 1331712824028948001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 1332504393226567201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 607
+    },
+    {
+      "prime": 1332575925724404001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 547
+    },
+    {
+      "prime": 1333856389561056001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 853
+    },
+    {
+      "prime": 1334200720020328801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1334892754103068801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1337591124831722401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 38923
+    },
+    {
+      "prime": 1344496099022236801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 1351539587113876801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 2801
+    },
+    {
+      "prime": 1353703498715728801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1362009835231005601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1663
+    },
+    {
+      "prime": 1363010915404699201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1368098289517320001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1370966710555202401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 1371140455282358401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1371271044924741601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1607
+    },
+    {
+      "prime": 1372069788789060001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 487
+    },
+    {
+      "prime": 1372749829399108801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 887
+    },
+    {
+      "prime": 1373221215709704001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1373901416946619201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 1374513726561336001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1378076269831221601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 1379610738285940801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1380451566389256001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1381362213637166401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1383018597883483201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1103
+    },
+    {
+      "prime": 1385315080192404001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 193
+    },
+    {
+      "prime": 1388424655699041601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1390993882427109601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1397551956128488801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1397683027651471201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1069
+    },
+    {
+      "prime": 1399902355522231201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1402257841433409601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 17957
+    },
+    {
+      "prime": 1403630130295353601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 1406083705679613601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 1407294885794558401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 239
+    },
+    {
+      "prime": 1408839955622460001,
+      "tail_gap": 71,
+      "least_nonbase_prime": 1387109
+    },
+    {
+      "prime": 1412389434573878401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 647
+    },
+    {
+      "prime": 1412415884464545601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 179
+    },
+    {
+      "prime": 1414408835538259201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 1418341409566041601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 1418957199429530401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 659
+    },
+    {
+      "prime": 1420198952191380001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1421719124854989601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1422191100130761601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 22679
+    },
+    {
+      "prime": 1424852580222432001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 457
+    },
+    {
+      "prime": 1425734314634390401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1428185480615654401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 379
+    },
+    {
+      "prime": 1431455361734959201,
+      "tail_gap": 91,
+      "least_nonbase_prime": 281
+    },
+    {
+      "prime": 1432999521343951201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1433807742193387201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1103
+    },
+    {
+      "prime": 1434885709093797601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 1436137367179075201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1436270312682165601,
+      "tail_gap": 95,
+      "least_nonbase_prime": 214667
+    },
+    {
+      "prime": 1438537079020802401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 7109
+    },
+    {
+      "prime": 1438720300733076001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 6317
+    },
+    {
+      "prime": 1438735292573940001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1693
+    },
+    {
+      "prime": 1441527094596549601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 127
+    },
+    {
+      "prime": 1441838443005921601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1442610094472107201,
+      "tail_gap": 71,
+      "least_nonbase_prime": 37
+    },
+    {
+      "prime": 1446896529486568801,
+      "tail_gap": 183,
+      "least_nonbase_prime": 20959
+    },
+    {
+      "prime": 1451033046092390401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1451578427846107201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1452201874256894401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1452421772436996001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 1454731693860405601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1454812649801071201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 1457700292520632801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1458649436674190401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1613
+    },
+    {
+      "prime": 1461303474387717601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1465798028278744801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1823
+    },
+    {
+      "prime": 1474797148468804801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 1476388318207363201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1476821528866044001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1477221275594224801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 1480193943468400801,
+      "tail_gap": 95,
+      "least_nonbase_prime": 383
+    },
+    {
+      "prime": 1486041457455115201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1487469430297411201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 1491994985173653601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 4923433
+    },
+    {
+      "prime": 1492204763861172001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 347
+    },
+    {
+      "prime": 1492505350270495201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 1493259386323665601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1495475876453119201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 1502314779459254401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1503336473414136001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1506803711409957601,
+      "tail_gap": 71,
+      "least_nonbase_prime": 7877
+    },
+    {
+      "prime": 1508552241935299201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 17683
+    },
+    {
+      "prime": 1508678601736867201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1512043306249636801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1514587528728835201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1514934322133392801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 2357
+    },
+    {
+      "prime": 1519064842002868801,
+      "tail_gap": 79,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 1542029825718943201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 155785963
+    },
+    {
+      "prime": 1543342896809474401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1545888190134448801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1547431546609108801,
+      "tail_gap": 91,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1550194864134076801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 1551803274489628801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1553255609073328801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 7933
+    },
+    {
+      "prime": 1557231391728172801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 1558476196400484001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 1559602404903103201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1559902991312426401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 1560742748569965601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1563062950112824801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 5297
+    },
+    {
+      "prime": 1563354702044496001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 5923
+    },
+    {
+      "prime": 1567600926800068801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1569496377365877601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 139
+    },
+    {
+      "prime": 1572675879101688001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1423
+    },
+    {
+      "prime": 1573284387213900001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 6311
+    },
+    {
+      "prime": 1573755934151361601,
+      "tail_gap": 119,
+      "least_nonbase_prime": 6247
+    },
+    {
+      "prime": 1575427256696253601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 503
+    },
+    {
+      "prime": 1577274305032987201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4373
+    },
+    {
+      "prime": 1578152452111596001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1589918744871417601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1590113103379761601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 1591244237772950401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 8009
+    },
+    {
+      "prime": 1596764180036786401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 1598858433120909601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1663
+    },
+    {
+      "prime": 1603019739806445601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1603575615848767201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1611697392094550401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 5009
+    },
+    {
+      "prime": 1614924707094259201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1616043473218735201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1616210792871235201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1616648768793619201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 151
+    },
+    {
+      "prime": 1618192392979723201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1993
+    },
+    {
+      "prime": 1619606873165241601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1621739837324167201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 1625393456027301601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 439
+    },
+    {
+      "prime": 1627716334684600801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 281
+    },
+    {
+      "prime": 1628954125317079201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 1632509868716287201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 1632539370517416001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 1635458174849059201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 139
+    },
+    {
+      "prime": 1640321313856185601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1643049239928256801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1644878137429087201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 653
+    },
+    {
+      "prime": 1645273600774164001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 1646673089118818401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1655191185386299201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1655833103886722401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 1657306159336188001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1657391880540556801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 84691
+    },
+    {
+      "prime": 1657488149575819201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 21277
+    },
+    {
+      "prime": 1658472899351428801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 1662668901440107201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1662912572396436001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 1663345783055116801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 773
+    },
+    {
+      "prime": 1667484280725624001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 563
+    },
+    {
+      "prime": 1668223378480219201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1213
+    },
+    {
+      "prime": 1668292019694460801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1680109498882375201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 223
+    },
+    {
+      "prime": 1682828322765350401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 911
+    },
+    {
+      "prime": 1683494656549466401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1685329229532909601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1523
+    },
+    {
+      "prime": 1686263328303314401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2521
+    },
+    {
+      "prime": 1686311998243833601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 8053
+    },
+    {
+      "prime": 1686923183470485601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1687935882320848801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1117
+    },
+    {
+      "prime": 1688902427718266401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1689392875083674401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1691327411520307201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1691405797431110401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1692709498621101601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 6833
+    },
+    {
+      "prime": 1692817011537012001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 11161
+    },
+    {
+      "prime": 1693486718485322401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 607
+    },
+    {
+      "prime": 1693716254277408001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1700327013590966401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1701482188471826401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 1702659744029404801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 1702725333333184801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1705200486259831201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1759
+    },
+    {
+      "prime": 1710520608701865601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 1711323046984111201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1714016813075928001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 1714735725387645601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 977
+    },
+    {
+      "prime": 1714746594472272001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 857
+    },
+    {
+      "prime": 1714959210901096801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 1718596445663858401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 1722318652038945601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 1724328950814230401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1724667284537157601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 467
+    },
+    {
+      "prime": 1728147747478312801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 307
+    },
+    {
+      "prime": 1730555383578782401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 1730783902067380801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 617
+    },
+    {
+      "prime": 1732352958840664801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1734168684938450401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 277
+    },
+    {
+      "prime": 1738336148987198401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1117
+    },
+    {
+      "prime": 1741991052705264001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1746682856388230401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1747051655673484801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1749025224438652801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1777
+    },
+    {
+      "prime": 1751904782272605601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1752118951427805601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 353
+    },
+    {
+      "prime": 1754936346664461601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 379
+    },
+    {
+      "prime": 1756637652891081601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1758330552978360001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1760330625176484001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 151
+    },
+    {
+      "prime": 1763102188213927201,
+      "tail_gap": 91,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1766506674647275201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 1767114486709732801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1423
+    },
+    {
+      "prime": 1771630511058568801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1773112347443397601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 1773178204458621601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1773567724609641601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 49367
+    },
+    {
+      "prime": 1779416148815265601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 8121199
+    },
+    {
+      "prime": 1785067805109549601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1787096629516759201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1788318839343196801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1792073331718430401,
+      "tail_gap": 91,
+      "least_nonbase_prime": 1979
+    },
+    {
+      "prime": 1797815474480786401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1805603789351923201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1973
+    },
+    {
+      "prime": 1808570728201197601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 223
+    },
+    {
+      "prime": 1810161041263135201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 233
+    },
+    {
+      "prime": 1811606415349291201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1813543414731208801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1815463387665288001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 499
+    },
+    {
+      "prime": 1816330612116981601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 4107877
+    },
+    {
+      "prime": 1818853792476681601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 811
+    },
+    {
+      "prime": 1819186022378685601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 1823937418629086401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 311
+    },
+    {
+      "prime": 1825236086843930401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1827034304613278401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 619
+    },
+    {
+      "prime": 1827836314557213601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1828831505079139201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1834607325941150401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 199
+    },
+    {
+      "prime": 1839410551127109601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1839841566551949601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 911
+    },
+    {
+      "prime": 1846880824802774401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 1847637323801229601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1117
+    },
+    {
+      "prime": 1848690554164214401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1849387942475834401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1849478696655350401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 487
+    },
+    {
+      "prime": 1850748344949664801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 349
+    },
+    {
+      "prime": 1852270230966516001,
+      "tail_gap": 119,
+      "least_nonbase_prime": 1747
+    },
+    {
+      "prime": 1852313278966711201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1855936646276673601,
+      "tail_gap": 79,
+      "least_nonbase_prime": 1290463
+    },
+    {
+      "prime": 1868256673387264801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1868883171708513601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1873311654415161601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 653
+    },
+    {
+      "prime": 1880414520905080801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1886516949728772001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1892091023246584801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 7589
+    },
+    {
+      "prime": 1892974310384918401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 479
+    },
+    {
+      "prime": 1894898138363791201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 7515061
+    },
+    {
+      "prime": 1896118099414099201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 839
+    },
+    {
+      "prime": 1898049691024848001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1899491317150788001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 1901233743855206401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 599
+    },
+    {
+      "prime": 1902247406466768001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1903090536888501601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 1908617653819036801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 641
+    },
+    {
+      "prime": 1913899065186268801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1914297526899518401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 743
+    },
+    {
+      "prime": 1919917539701121601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 311
+    },
+    {
+      "prime": 1922192176756212001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 1923159150491940001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1923845241380623201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 1926060981918033601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 1928074011350047201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 1928979893334254401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1930740096078554401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1942986823795778401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1944191311124623201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4447
+    },
+    {
+      "prime": 1946477673940960801,
+      "tail_gap": 71,
+      "least_nonbase_prime": 2917
+    },
+    {
+      "prime": 1947963472455160801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 787
+    },
+    {
+      "prime": 1948029704266406401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 857
+    },
+    {
+      "prime": 1948345925024059201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 1948721310010836001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 613
+    },
+    {
+      "prime": 1950896733204780001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 1952423973450511201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 701
+    },
+    {
+      "prime": 1953321984718264801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1953645165973461601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 1954516084843082401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1847
+    },
+    {
+      "prime": 1955761906818880801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 1956694559947488001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 1960659955398304801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 1962466954103016001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1543
+    },
+    {
+      "prime": 1964588031873828001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1307
+    },
+    {
+      "prime": 1965586381390792801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 367
+    },
+    {
+      "prime": 1968000870904228801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 1969426220174373601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1969882828813260001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 1970168476924008001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 2083
+    },
+    {
+      "prime": 1970255429601019201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1974109296464265601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 1976879628029066401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 1977261277463632801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 239
+    },
+    {
+      "prime": 1980127931605984801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 1981975033485007201,
+      "tail_gap": 71,
+      "least_nonbase_prime": 1423
+    },
+    {
+      "prime": 1982094807585052801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 311
+    },
+    {
+      "prime": 1983675643661872801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 1984250848470451201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 10223
+    },
+    {
+      "prime": 1988248048040815201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 1988687094808975201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1409
+    },
+    {
+      "prime": 1992142125162950401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 1996001721051098401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2000408197877049601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 421
+    },
+    {
+      "prime": 2000643676863192001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2001535370140867201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 4283
+    },
+    {
+      "prime": 2006584407974707201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2012134548089426401,
+      "tail_gap": 91,
+      "least_nonbase_prime": 887
+    },
+    {
+      "prime": 2013240356980012801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 8297
+    },
+    {
+      "prime": 2016919783066348801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2024432997657631201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2025983046918391201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 2027246966187804001,
+      "tail_gap": 119,
+      "least_nonbase_prime": 337
+    },
+    {
+      "prime": 2028413492033889601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 853
+    },
+    {
+      "prime": 2028723394801464001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 13687
+    },
+    {
+      "prime": 2028821805528278401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 887
+    },
+    {
+      "prime": 2030398358221994401,
+      "tail_gap": 79,
+      "least_nonbase_prime": 431
+    },
+    {
+      "prime": 2031750193929616801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1583
+    },
+    {
+      "prime": 2038600769154710401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2041295606092303201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2043092806558164001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 9227
+    },
+    {
+      "prime": 2043131731802121601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 709
+    },
+    {
+      "prime": 2046102846949922401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2047192646696157601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2049843364787779201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2050413322452055201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 331
+    },
+    {
+      "prime": 2051223363739310401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2058112328785473601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 509
+    },
+    {
+      "prime": 2060712235245024001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2064482897391475201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 26489
+    },
+    {
+      "prime": 2069773571574669601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1033
+    },
+    {
+      "prime": 2076539657068036801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 2076915952273723201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2080778600072332801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 751
+    },
+    {
+      "prime": 2084613780676788001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2088058852165046401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2089376206638681601,
+      "tail_gap": 119,
+      "least_nonbase_prime": 523
+    },
+    {
+      "prime": 2092350587866099201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 397
+    },
+    {
+      "prime": 2093002197520795201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2096101064569672801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 443
+    },
+    {
+      "prime": 2096136134768836801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 2100463957972540801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 599
+    },
+    {
+      "prime": 2103138930720988801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2103740157081924001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 2106449985860380801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 353
+    },
+    {
+      "prime": 2111547265296429601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 557
+    },
+    {
+      "prime": 2113936911187862401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2114425912911472801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 2118044193703999201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 2119961382439060801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2120185135663956001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2120775278771109601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 607
+    },
+    {
+      "prime": 2122371427942526401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 863
+    },
+    {
+      "prime": 2122480011704212801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 51059
+    },
+    {
+      "prime": 2124733178301494401,
+      "tail_gap": 59,
+      "least_nonbase_prime": 127
+    },
+    {
+      "prime": 2125498565319890401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2125925565073070401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 2127506936572778401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2130325938078098401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 2133466300400796001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 2134421548375276801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2136490368872220001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 251
+    },
+    {
+      "prime": 2137995924490987201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 619
+    },
+    {
+      "prime": 2141992428011596801,
+      "tail_gap": 71,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 2142128800221170401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 7193
+    },
+    {
+      "prime": 2146259534259801601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 233
+    },
+    {
+      "prime": 2153110163027184001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1361
+    },
+    {
+      "prime": 2159248090388349601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2159956776122906401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2162761267667961601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2166301109007396001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 691
+    },
+    {
+      "prime": 2167021841756932801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2174403074606323201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 797
+    },
+    {
+      "prime": 2174526168328274401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2179129359523276801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2180922223063744801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1153
+    },
+    {
+      "prime": 2183607797185375201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2185112335500655201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2186361048760048801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2187528966705643201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 2189886862019817601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2192477987544004801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2194826887753660801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2196156771122875201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2197700341766690401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2201131010379261601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 13127
+    },
+    {
+      "prime": 2203117911174340801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 89
+    },
+    {
+      "prime": 2205848139564830401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 281
+    },
+    {
+      "prime": 2209684819353372001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1213
+    },
+    {
+      "prime": 2210055653245600801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 499
+    },
+    {
+      "prime": 2212824164372582401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2791
+    },
+    {
+      "prime": 2213539542893239201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2218930608867933601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2219604277945615201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2220788633373871201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 189977
+    },
+    {
+      "prime": 2223203122887307201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 941
+    },
+    {
+      "prime": 2228546268513525601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 2230674681577903201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2234048488279768801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2234413646689384801,
+      "tail_gap": 59,
+      "least_nonbase_prime": 197
+    },
+    {
+      "prime": 2235807994974314401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 2239645531439476801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2240251844317848001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 397
+    },
+    {
+      "prime": 2241082660013157601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 2246986018607090401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2251766809574042401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 2257053146831844001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 233
+    },
+    {
+      "prime": 2262528916707420001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 2264481015014779201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2270752851640233601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2271042836676374401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 701
+    },
+    {
+      "prime": 2272922813520720001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2275031576565108001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 2275632213960866401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2275901960011840801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 863
+    },
+    {
+      "prime": 2282777914281825601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2284311258348480001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2286967223584404001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 4967
+    },
+    {
+      "prime": 2291335578300729601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2291723974063684801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2295785049584587201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2299352786456486401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2300766838303694401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2304968355248119201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 769
+    },
+    {
+      "prime": 2315219615404056001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2317658787912628801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1759
+    },
+    {
+      "prime": 2319897819345667201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 277
+    },
+    {
+      "prime": 2319953396241441601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2324585018391796801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 4483
+    },
+    {
+      "prime": 2327400967986655201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2336307513559380001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2337340665564064801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2338606780067318401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2343054752167089601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2344465056054081601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2349822336844543201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 2349934293770424001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2354342591034194401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2354486030825889601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2356200080117244001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2356568558148765601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2356757615970518401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2360734041132828001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 2361823358998464001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2366897079827440801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2369421652286649601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2370767598342504001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 853
+    },
+    {
+      "prime": 2373798413142316801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 2378271175321802401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2378745720627436801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2379052571484549601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 2381161441613515201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 5119
+    },
+    {
+      "prime": 2381431294749067201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 10723
+    },
+    {
+      "prime": 2383262066230005601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2387923404350644801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2388287010033885601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2390743423159452001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2394648851246812801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1777
+    },
+    {
+      "prime": 2394799572789784801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2397637956603650401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2398460740955640001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 853
+    },
+    {
+      "prime": 2398963824301204801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 151
+    },
+    {
+      "prime": 2399586521119948801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1931
+    },
+    {
+      "prime": 2400538824268545601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2403696159496792801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2406003082552029601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 2415593523779596801,
+      "tail_gap": 79,
+      "least_nonbase_prime": 127
+    },
+    {
+      "prime": 2417304628245067201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 2421034169913720001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1621
+    },
+    {
+      "prime": 2421594008085412801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4759
+    },
+    {
+      "prime": 2424136677838236001,
+      "tail_gap": 119,
+      "least_nonbase_prime": 31
+    },
+    {
+      "prime": 2430882203092704001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 2435289054714676801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 2435659781522328001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2437748680377571201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2441479881857176801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 2441941469928921601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 89
+    },
+    {
+      "prime": 2442829201077225601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 2446831433622736801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2447335962610099201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 2448746748377690401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2454097925347228801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 2456920085847588001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 2460336083873028001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2466460036696816801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 467
+    },
+    {
+      "prime": 2472787557302623201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 2474792930187338401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2478407248850493601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2480773336134854401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 3342529
+    },
+    {
+      "prime": 2480947080862010401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 89
+    },
+    {
+      "prime": 2481506222983948801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2482427418062752801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2485720322366241601,
+      "tail_gap": 119,
+      "least_nonbase_prime": 2059741
+    },
+    {
+      "prime": 2492198885768752801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2498200869258655201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2499575246269862401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1709
+    },
+    {
+      "prime": 2500379130193905601,
+      "tail_gap": 91,
+      "least_nonbase_prime": 743
+    },
+    {
+      "prime": 2506183435553558401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2507902999700659201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2516618185133212801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 199357
+    },
+    {
+      "prime": 2526392329953652801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 567487
+    },
+    {
+      "prime": 2527499798655192001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 2531493839230516801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2531790409968180001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2533455628692148801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1129
+    },
+    {
+      "prime": 2534184446327294401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 2535645561846357601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 373
+    },
+    {
+      "prime": 2536118072545017601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 2663
+    },
+    {
+      "prime": 2537831800582639201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2538271382773687201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 17881
+    },
+    {
+      "prime": 2542708753500276001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2542756888017907201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 3167
+    },
+    {
+      "prime": 2542963025829787201,
+      "tail_gap": 119,
+      "least_nonbase_prime": 701
+    },
+    {
+      "prime": 2543211408507530401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 277
+    },
+    {
+      "prime": 2544384466512849601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 5737
+    },
+    {
+      "prime": 2544875128047412801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2547643585632105601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2549827629134546401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 8597
+    },
+    {
+      "prime": 2549893646776636801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1693
+    },
+    {
+      "prime": 2550616039337126401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 307
+    },
+    {
+      "prime": 2550711183984324001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2552440706997141601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2554249847393404801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2558085563420748001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2562005662095240001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 223
+    },
+    {
+      "prime": 2562586221132698401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2562986235572323201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 2564632875122078401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2568412157577026401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2574401612171349601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2577418613060652001,
+      "tail_gap": 79,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2577869332047770401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 3697
+    },
+    {
+      "prime": 2579784379091280001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2579952073539801601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2580017555759004001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 2585456327913019201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2587462450389777601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2593276553988280801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2596016634159909601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 2599632505549440001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 15737
+    },
+    {
+      "prime": 2601724509857433601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2602463554069740001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2602814041892224801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2603441771686116001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 373
+    },
+    {
+      "prime": 2604652898258772001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2608706103063220801,
+      "tail_gap": 71,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2608798249342245601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 823
+    },
+    {
+      "prime": 2611325177662161601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4813
+    },
+    {
+      "prime": 2611330264179597601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 443
+    },
+    {
+      "prime": 2612297505626769601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 2612720757419733601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2612988415321444801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 127
+    },
+    {
+      "prime": 2613872880390132001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 2616659114014706401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2619348543181130401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 2622068063113860001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2626719228199627201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 2627539174810310401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 2628729794686356001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2628777554407965601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 2731
+    },
+    {
+      "prime": 2630206009130860801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1279
+    },
+    {
+      "prime": 2633225098169426401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 179
+    },
+    {
+      "prime": 2635823826698623201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 199
+    },
+    {
+      "prime": 2640201069434889601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 683
+    },
+    {
+      "prime": 2640551128919064001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 2641586583242167201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2643831879122995201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 227
+    },
+    {
+      "prime": 2647537969269153601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2649027836997302401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2649862721906560801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 2650036948514316001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2652801925850236801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2655777163754275201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1741
+    },
+    {
+      "prime": 2656005628700584801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2657002639660329601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 397
+    },
+    {
+      "prime": 2661873542299332001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2667797568216741601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2670874322300344801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 433
+    },
+    {
+      "prime": 2671255864650333601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 641
+    },
+    {
+      "prime": 2672979551553672001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2673466947008618401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 349
+    },
+    {
+      "prime": 2674431190087617601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2675147211115740001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2677576585385462401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1327
+    },
+    {
+      "prime": 2684209832460316801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2686062984617973601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 2686595409137800801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 557
+    },
+    {
+      "prime": 2687799789382068001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1619
+    },
+    {
+      "prime": 2688306674230137601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2688727141824084001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1429
+    },
+    {
+      "prime": 2691698685310195201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 2691999753600117601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 2696245068136780801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 15724727
+    },
+    {
+      "prime": 2699474578370330401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2699561316878186401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2703607935981112801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 2706986882742703201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 2709108121140381601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1483
+    },
+    {
+      "prime": 2710261903921732801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 2713632337459404001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 2715592734821527201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2718184181599447201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1117
+    },
+    {
+      "prime": 2719914454204308001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2720745002188173601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2725855827823288801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 7727
+    },
+    {
+      "prime": 2728827853189999201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2729866198796697601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2731164170961787201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2739086930520100801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 439
+    },
+    {
+      "prime": 2740424738148057601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 373
+    },
+    {
+      "prime": 2740641156079387201,
+      "tail_gap": 95,
+      "least_nonbase_prime": 19121
+    },
+    {
+      "prime": 2740904691224860801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2748738731210632801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 2749991245972531201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2752051231991822401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2752747602999955201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2757660750504820801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 317
+    },
+    {
+      "prime": 2760069510993355201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 2763921664503360001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 2764671631342581601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2765153779653225601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 2770796655012146401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 691
+    },
+    {
+      "prime": 2771117480406636001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2771591704458537601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2776057399055901601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2776424377903336801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 2781990901958428801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2782388774706501601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 2786385331769400001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 293
+    },
+    {
+      "prime": 2787805701606686401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 6659
+    },
+    {
+      "prime": 2789542988251380001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2790043769278526401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4721
+    },
+    {
+      "prime": 2794713352911640801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 2797083884205972001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 2798006364299707201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 853
+    },
+    {
+      "prime": 2798517478988592001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 26209
+    },
+    {
+      "prime": 2810256947061724801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2810910859034839201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2813923041118149601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2815964929843826401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2817587154109888801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2818365712531329601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2821373718316113601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 269
+    },
+    {
+      "prime": 2824353453772411201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 167
+    },
+    {
+      "prime": 2825135278273468801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 853
+    },
+    {
+      "prime": 2825428636473804001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2825781105360974401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 151
+    },
+    {
+      "prime": 2826117297392349601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1051
+    },
+    {
+      "prime": 2826333875950545601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2829302849406794401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 6521
+    },
+    {
+      "prime": 2831547235068712801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2831733240980004001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 2837952552620145601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2844140702648205601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2847633159062052001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 2850689941871932801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2855591095904107201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2857199077921348801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 337
+    },
+    {
+      "prime": 2860312883268801601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 137
+    },
+    {
+      "prime": 2862017080779016801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2864320041704882401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2869031709576993601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 2873232691098530401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 2875888763419032001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 347
+    },
+    {
+      "prime": 2876475051481392001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 10597
+    },
+    {
+      "prime": 2882309822403372001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2883259234268373601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 2885639403174688801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2895403214333390401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 587
+    },
+    {
+      "prime": 2895682437369482401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2898058162265827201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 11149393
+    },
+    {
+      "prime": 2898932347215064801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 479
+    },
+    {
+      "prime": 2904520288185676801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2906273423347855201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2906532353856492001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2907059317062861601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 797
+    },
+    {
+      "prime": 2909567773293141601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2909627044606843201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2910040069822646401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 2914884576113270401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2915689584425378401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 547
+    },
+    {
+      "prime": 2921188645196582401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2922935890706992801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 109
+    },
+    {
+      "prime": 2924574124117406401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 479
+    },
+    {
+      "prime": 2924820204476731201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2926796985779227201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1409
+    },
+    {
+      "prime": 2928651208782660001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 2928978030913495201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 2930028477077462401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 347
+    },
+    {
+      "prime": 2930192851904078401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 16607
+    },
+    {
+      "prime": 2930596132423320001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 2942243347132850401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 2947459811703768001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 35339
+    },
+    {
+      "prime": 2947721365784556001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 2954616166940198401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 2955174666554671201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 223
+    },
+    {
+      "prime": 2957052662334331201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2964340410347476801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 3449
+    },
+    {
+      "prime": 2969065999214676001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2969948804472410401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2389
+    },
+    {
+      "prime": 2970358349439441601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 503
+    },
+    {
+      "prime": 2973312384597115201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 2974137096471501601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 149
+    },
+    {
+      "prime": 2974447641746541601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 20549
+    },
+    {
+      "prime": 2975129288625254401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 2975554253771460001,
+      "tail_gap": 59,
+      "least_nonbase_prime": 728881
+    },
+    {
+      "prime": 2977216956007855201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 2979289149668992801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1831
+    },
+    {
+      "prime": 2979752344009401601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 2979961480189454401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1597
+    },
+    {
+      "prime": 2981136198005726401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 349
+    },
+    {
+      "prime": 2981888520705655201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 8969
+    },
+    {
+      "prime": 2982209827980744001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 2984074598815070401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1399
+    },
+    {
+      "prime": 2990439973819058401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 479
+    },
+    {
+      "prime": 2993676069754130401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 2994600530912551201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 3002490094251808801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3003140525976151201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 35449
+    },
+    {
+      "prime": 3003182985011169601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 3003943339054418401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3006522738817358401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3007626298931815201,
+      "tail_gap": 59,
+      "least_nonbase_prime": 53
+    },
+    {
+      "prime": 3008257508974478401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3009792780563529601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 3013273350589262401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 3014879886964706401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 211
+    },
+    {
+      "prime": 3022978318772572801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 3023154526445013601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 3024178308549158401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 5869
+    },
+    {
+      "prime": 3025820397004365601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 3029713831619035201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 10223
+    },
+    {
+      "prime": 3031692593986216801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 431
+    },
+    {
+      "prime": 3033549654730956001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 3038065946791236001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 12277
+    },
+    {
+      "prime": 3038304745399284001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 3040113403914948001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 1531
+    },
+    {
+      "prime": 3043641840746868001,
+      "tail_gap": 71,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3045616212646368001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 163
+    },
+    {
+      "prime": 3045712642308496801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 3271
+    },
+    {
+      "prime": 3047098584454084801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 3049858582357147201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 3056770142249184001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 3059340065027006401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3062433470762426401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 3063620931643432801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3067513188327748801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3067981790439326401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1307
+    },
+    {
+      "prime": 3068893722702168001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3070200529344909601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 35759
+    },
+    {
+      "prime": 3074339401811438401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 107
+    },
+    {
+      "prime": 3074711841972331201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 3075398735995346401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 3076056610097832001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 83
+    },
+    {
+      "prime": 3078796476100305601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 294467
+    },
+    {
+      "prime": 3081644122730133601,
+      "tail_gap": 39,
+      "least_nonbase_prime": 4909
+    },
+    {
+      "prime": 3083269345364368801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 3083778639615434401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 3088155775267123201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 101
+    },
+    {
+      "prime": 3089117287689393601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3094111069881192001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 3095321232692649601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 443
+    },
+    {
+      "prime": 3096176517213940801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3096626807862748801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 3099157484142880801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 2221
+    },
+    {
+      "prime": 3099480718940366401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 1693
+    },
+    {
+      "prime": 3102681316337964001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1697
+    },
+    {
+      "prime": 3104071595408944801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3105652377943476001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 3109208710307860801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 3112216341296623201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 941
+    },
+    {
+      "prime": 3116868041805278401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 3917
+    },
+    {
+      "prime": 3118482555981753601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 3581
+    },
+    {
+      "prime": 3120530762697508801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 127
+    },
+    {
+      "prime": 3124385057899065601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 173
+    },
+    {
+      "prime": 3125143056081607201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 3126157682454367201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1307
+    },
+    {
+      "prime": 3126815717183719201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 71
+    },
+    {
+      "prime": 3129083126029821601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3129820242719731201,
+      "tail_gap": 47,
+      "least_nonbase_prime": 177897373
+    },
+    {
+      "prime": 3134851825767422401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 3137788673850391201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 367
+    },
+    {
+      "prime": 3144334593452212801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 257
+    },
+    {
+      "prime": 3146883795364269601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3150836608377218401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3151344510528775201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3152898736088061601,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3153012085113451201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 653
+    },
+    {
+      "prime": 3155948986738708801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 3158958705876734401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 1063
+    },
+    {
+      "prime": 3159243176057128801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 359
+    },
+    {
+      "prime": 3163378782444040801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3165716813569070401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 3167732091777213601,
+      "tail_gap": 59,
+      "least_nonbase_prime": 44445169
+    },
+    {
+      "prime": 3170543436735235201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 3171492795057948001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 134047
+    },
+    {
+      "prime": 3174607296455155201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3179349590516460001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 3182086029812450401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 283
+    },
+    {
+      "prime": 3182598590143132801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 641
+    },
+    {
+      "prime": 3184916382282996001,
+      "tail_gap": 47,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 3185882071003792801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 113
+    },
+    {
+      "prime": 3186746671883335201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 131
+    },
+    {
+      "prime": 3190546246865738401,
+      "tail_gap": 47,
+      "least_nonbase_prime": 49789
+    },
+    {
+      "prime": 3190746762737294401,
+      "tail_gap": 31,
+      "least_nonbase_prime": 41
+    },
+    {
+      "prime": 3191343919884280801,
+      "tail_gap": 47,
+      "least_nonbase_prime": 43
+    },
+    {
+      "prime": 3193560142302290401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 277
+    },
+    {
+      "prime": 3194927826527397601,
+      "tail_gap": 95,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 3198418462503424801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 24799
+    },
+    {
+      "prime": 3200538630055327201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 3205533161839168801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 1741
+    },
+    {
+      "prime": 3207348245429488801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 47
+    },
+    {
+      "prime": 3207391561141128001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3208377542389380001,
+      "tail_gap": 31,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3210228017432596801,
+      "tail_gap": 39,
+      "least_nonbase_prime": 61
+    },
+    {
+      "prime": 3210827905236312001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 587
+    },
+    {
+      "prime": 3211962787589716801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3213419780352542401,
+      "tail_gap": 35,
+      "least_nonbase_prime": 647
+    },
+    {
+      "prime": 3213427169188396801,
+      "tail_gap": 31,
+      "least_nonbase_prime": 419
+    },
+    {
+      "prime": 3215863236244219201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3223064085122642401,
+      "tail_gap": 39,
+      "least_nonbase_prime": 59
+    },
+    {
+      "prime": 3223545376756665601,
+      "tail_gap": 47,
+      "least_nonbase_prime": 79
+    },
+    {
+      "prime": 3233887551718984801,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 3234724203523773601,
+      "tail_gap": 35,
+      "least_nonbase_prime": 29
+    },
+    {
+      "prime": 3234826897633692001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 157
+    },
+    {
+      "prime": 3235658141667312001,
+      "tail_gap": 39,
+      "least_nonbase_prime": 67
+    },
+    {
+      "prime": 3238981190279395201,
+      "tail_gap": 119,
+      "least_nonbase_prime": 4817
+    },
+    {
+      "prime": 3239002660737204001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 103
+    },
+    {
+      "prime": 3246206775695244001,
+      "tail_gap": 35,
+      "least_nonbase_prime": 97
+    },
+    {
+      "prime": 3249757914457615201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 4327
+    },
+    {
+      "prime": 3251553990535411201,
+      "tail_gap": 31,
+      "least_nonbase_prime": 191
+    },
+    {
+      "prime": 3254958744680203201,
+      "tail_gap": 35,
+      "least_nonbase_prime": 73
+    },
+    {
+      "prime": 3255606070951795201,
+      "tail_gap": 39,
+      "least_nonbase_prime": 79
+    }
+  ]
+}

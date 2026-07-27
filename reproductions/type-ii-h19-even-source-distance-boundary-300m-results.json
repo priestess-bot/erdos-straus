@@ -1,0 +1,53 @@
+{
+  "arithmetic": "exact trial-prime factorization in every requested complete odd-distance even-source fan",
+  "scope_note": "A finite irredundancy audit of selected distances. It does not assert a universal distance bound.",
+  "prime_limit": 300000000,
+  "quadratic_descent_miss_count": 3,
+  "distances": [
+    1,
+    3,
+    5,
+    7
+  ],
+  "distance_hit_counts": {
+    "1": 0,
+    "3": 2,
+    "5": 0,
+    "7": 1
+  },
+  "records": [
+    {
+      "prime": 35840809,
+      "hits": [
+        {
+          "distance": 7,
+          "gap": 983,
+          "k": 1278256,
+          "factor": 1256512992
+        }
+      ]
+    },
+    {
+      "prime": 132285169,
+      "hits": [
+        {
+          "distance": 3,
+          "gap": 191,
+          "k": 10906490,
+          "factor": 2082787720
+        }
+      ]
+    },
+    {
+      "prime": 141326089,
+      "hits": [
+        {
+          "distance": 3,
+          "gap": 11,
+          "k": 11651885,
+          "factor": 127794865
+        }
+      ]
+    }
+  ]
+}

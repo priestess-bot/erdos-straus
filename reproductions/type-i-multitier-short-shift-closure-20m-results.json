@@ -1,0 +1,35 @@
+{
+  "arithmetic": "apply in order the complete dyadic p-1 selector, the fixed non-dyadic B=1,2 p-1 menu, the square-allowed E<=10^6 full-factor-pair p-1 refinement, the fixed shifted B=1 menu, and the four-shift dynamic-E selector with B<=7",
+  "scope_note": "A composed finite closure of a stated prefix. Its observed bounds are not universal theorems and do not prove the Erdos-Straus conjecture.",
+  "prime_limit": 20000017,
+  "core_prime_count": 158595,
+  "captured_count": 158595,
+  "stage_histogram": {
+    "dyadic-p-minus-one": 151684,
+    "dynamic-short-shift": 18,
+    "fixed-menu-p-minus-one": 6657,
+    "fixed-shifted-source-b1": 9,
+    "square-allowed-low-E-p-minus-one": 227
+  },
+  "maximum_selected_E": {
+    "prime": 19339609,
+    "stage": "square-allowed-low-E-p-minus-one",
+    "E": 20808,
+    "B": 12,
+    "source_distance": 1
+  },
+  "maximum_selected_B": {
+    "prime": 18042721,
+    "stage": "dyadic-p-minus-one",
+    "E": 256,
+    "B": 5564,
+    "source_distance": 1
+  },
+  "maximum_source_distance": {
+    "prime": 19158409,
+    "stage": "dynamic-short-shift",
+    "E": 5776,
+    "B": 5,
+    "source_distance": 25
+  }
+}

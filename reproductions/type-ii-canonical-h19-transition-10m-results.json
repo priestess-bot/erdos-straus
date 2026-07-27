@@ -1,0 +1,877 @@
+{
+  "arithmetic": "exact SPF factorization, canonical Type II certificate reconstruction, and factor counts outside the joint base modulus",
+  "scope_note": "This finite transition profile does not establish a global shift selector or a global factor-complexity bound.",
+  "prime_limit": 10000000,
+  "base_shift_bound": 19,
+  "shift_cap": 50,
+  "core_prime_count": 82887,
+  "joint_base_modulus": 77597520,
+  "joint_base_prime_divisors": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19
+  ],
+  "base_residual_count": 45,
+  "base_residual_primes": [
+    3361,
+    56401,
+    66529,
+    135601,
+    176089,
+    225289,
+    252001,
+    345601,
+    558721,
+    685969,
+    813121,
+    870241,
+    990361,
+    1127281,
+    1385521,
+    1398769,
+    1429201,
+    1520401,
+    1683049,
+    1800121,
+    1977529,
+    2031121,
+    2365969,
+    2654401,
+    2707609,
+    3409729,
+    3569329,
+    3660721,
+    4557361,
+    4722169,
+    4965601,
+    6344209,
+    6868801,
+    6899281,
+    7329169,
+    7378849,
+    8066689,
+    8113681,
+    8243041,
+    8283361,
+    8328961,
+    8955769,
+    9296809,
+    9504961,
+    9744001
+  ],
+  "later_first_shift_histogram": {
+    "20": 8,
+    "21": 2,
+    "22": 1,
+    "23": 3,
+    "24": 6,
+    "25": 4,
+    "26": 6,
+    "27": 3,
+    "28": 1,
+    "29": 2,
+    "31": 1,
+    "32": 3,
+    "34": 1,
+    "36": 3,
+    "50": 1
+  },
+  "transition_witnesses": [
+    {
+      "prime": 3361,
+      "shift": 29,
+      "a": 1,
+      "c": 29,
+      "h": 1159,
+      "k": 10,
+      "gap": 3,
+      "divisor": 29
+    },
+    {
+      "prime": 56401,
+      "shift": 31,
+      "a": 1,
+      "c": 31,
+      "h": 2975,
+      "k": 24,
+      "gap": 19,
+      "divisor": 31
+    },
+    {
+      "prime": 66529,
+      "shift": 50,
+      "a": 5,
+      "c": 2,
+      "h": 39,
+      "k": 1,
+      "gap": 1711,
+      "divisor": 50
+    },
+    {
+      "prime": 135601,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 39,
+      "k": 1,
+      "gap": 3479,
+      "divisor": 20
+    },
+    {
+      "prime": 176089,
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "h": 1055,
+      "k": 22,
+      "gap": 167,
+      "divisor": 24
+    },
+    {
+      "prime": 225289,
+      "shift": 32,
+      "a": 4,
+      "c": 2,
+      "h": 2591,
+      "k": 81,
+      "gap": 87,
+      "divisor": 32
+    },
+    {
+      "prime": 252001,
+      "shift": 27,
+      "a": 3,
+      "c": 3,
+      "h": 143,
+      "k": 4,
+      "gap": 1763,
+      "divisor": 27
+    },
+    {
+      "prime": 345601,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 279,
+      "k": 7,
+      "gap": 1239,
+      "divisor": 20
+    },
+    {
+      "prime": 558721,
+      "shift": 28,
+      "a": 2,
+      "c": 7,
+      "h": 503,
+      "k": 9,
+      "gap": 1111,
+      "divisor": 28
+    },
+    {
+      "prime": 685969,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 39,
+      "k": 1,
+      "gap": 17591,
+      "divisor": 20
+    },
+    {
+      "prime": 813121,
+      "shift": 34,
+      "a": 1,
+      "c": 34,
+      "h": 35359,
+      "k": 260,
+      "gap": 23,
+      "divisor": 34
+    },
+    {
+      "prime": 870241,
+      "shift": 26,
+      "a": 1,
+      "c": 26,
+      "h": 6447,
+      "k": 62,
+      "gap": 135,
+      "divisor": 26
+    },
+    {
+      "prime": 990361,
+      "shift": 23,
+      "a": 1,
+      "c": 23,
+      "h": 8923,
+      "k": 97,
+      "gap": 111,
+      "divisor": 23
+    },
+    {
+      "prime": 1127281,
+      "shift": 32,
+      "a": 4,
+      "c": 2,
+      "h": 14271,
+      "k": 446,
+      "gap": 79,
+      "divisor": 32
+    },
+    {
+      "prime": 1385521,
+      "shift": 36,
+      "a": 6,
+      "c": 1,
+      "h": 431,
+      "k": 18,
+      "gap": 3215,
+      "divisor": 36
+    },
+    {
+      "prime": 1398769,
+      "shift": 32,
+      "a": 4,
+      "c": 2,
+      "h": 2367,
+      "k": 74,
+      "gap": 591,
+      "divisor": 32
+    },
+    {
+      "prime": 1429201,
+      "shift": 21,
+      "a": 1,
+      "c": 21,
+      "h": 9995,
+      "k": 119,
+      "gap": 143,
+      "divisor": 21
+    },
+    {
+      "prime": 1520401,
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "h": 47,
+      "k": 1,
+      "gap": 32351,
+      "divisor": 24
+    },
+    {
+      "prime": 1683049,
+      "shift": 25,
+      "a": 5,
+      "c": 1,
+      "h": 559,
+      "k": 28,
+      "gap": 3011,
+      "divisor": 25
+    },
+    {
+      "prime": 1800121,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 39,
+      "k": 1,
+      "gap": 46159,
+      "divisor": 20
+    },
+    {
+      "prime": 1977529,
+      "shift": 25,
+      "a": 5,
+      "c": 1,
+      "h": 7879,
+      "k": 394,
+      "gap": 251,
+      "divisor": 25
+    },
+    {
+      "prime": 2031121,
+      "shift": 29,
+      "a": 1,
+      "c": 29,
+      "h": 52083,
+      "k": 449,
+      "gap": 39,
+      "divisor": 29
+    },
+    {
+      "prime": 2365969,
+      "shift": 27,
+      "a": 3,
+      "c": 3,
+      "h": 40103,
+      "k": 1114,
+      "gap": 59,
+      "divisor": 27
+    },
+    {
+      "prime": 2654401,
+      "shift": 27,
+      "a": 3,
+      "c": 3,
+      "h": 143,
+      "k": 4,
+      "gap": 18563,
+      "divisor": 27
+    },
+    {
+      "prime": 2707609,
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "h": 143,
+      "k": 3,
+      "gap": 18935,
+      "divisor": 24
+    },
+    {
+      "prime": 3409729,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 39,
+      "k": 1,
+      "gap": 87431,
+      "divisor": 20
+    },
+    {
+      "prime": 3569329,
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "h": 335,
+      "k": 7,
+      "gap": 10655,
+      "divisor": 24
+    },
+    {
+      "prime": 3660721,
+      "shift": 23,
+      "a": 1,
+      "c": 23,
+      "h": 6071,
+      "k": 66,
+      "gap": 603,
+      "divisor": 23
+    },
+    {
+      "prime": 4557361,
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "h": 1583,
+      "k": 33,
+      "gap": 2879,
+      "divisor": 24
+    },
+    {
+      "prime": 4722169,
+      "shift": 26,
+      "a": 1,
+      "c": 26,
+      "h": 6031,
+      "k": 58,
+      "gap": 783,
+      "divisor": 26
+    },
+    {
+      "prime": 4965601,
+      "shift": 26,
+      "a": 1,
+      "c": 26,
+      "h": 3015,
+      "k": 29,
+      "gap": 1647,
+      "divisor": 26
+    },
+    {
+      "prime": 6344209,
+      "shift": 24,
+      "a": 2,
+      "c": 6,
+      "h": 671,
+      "k": 14,
+      "gap": 9455,
+      "divisor": 24
+    },
+    {
+      "prime": 6868801,
+      "shift": 23,
+      "a": 1,
+      "c": 23,
+      "h": 8187,
+      "k": 89,
+      "gap": 839,
+      "divisor": 23
+    },
+    {
+      "prime": 6899281,
+      "shift": 36,
+      "a": 6,
+      "c": 1,
+      "h": 23,
+      "k": 1,
+      "gap": 299975,
+      "divisor": 36
+    },
+    {
+      "prime": 7329169,
+      "shift": 25,
+      "a": 5,
+      "c": 1,
+      "h": 19,
+      "k": 1,
+      "gap": 385751,
+      "divisor": 25
+    },
+    {
+      "prime": 7378849,
+      "shift": 26,
+      "a": 1,
+      "c": 26,
+      "h": 8319,
+      "k": 80,
+      "gap": 887,
+      "divisor": 26
+    },
+    {
+      "prime": 8066689,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 79,
+      "k": 2,
+      "gap": 102111,
+      "divisor": 20
+    },
+    {
+      "prime": 8113681,
+      "shift": 21,
+      "a": 1,
+      "c": 21,
+      "h": 1595,
+      "k": 19,
+      "gap": 5087,
+      "divisor": 21
+    },
+    {
+      "prime": 8243041,
+      "shift": 26,
+      "a": 1,
+      "c": 26,
+      "h": 415,
+      "k": 4,
+      "gap": 19863,
+      "divisor": 26
+    },
+    {
+      "prime": 8283361,
+      "shift": 22,
+      "a": 1,
+      "c": 22,
+      "h": 703,
+      "k": 8,
+      "gap": 11783,
+      "divisor": 22
+    },
+    {
+      "prime": 8328961,
+      "shift": 26,
+      "a": 1,
+      "c": 26,
+      "h": 6239,
+      "k": 60,
+      "gap": 1335,
+      "divisor": 26
+    },
+    {
+      "prime": 8955769,
+      "shift": 25,
+      "a": 5,
+      "c": 1,
+      "h": 126139,
+      "k": 6307,
+      "gap": 71,
+      "divisor": 25
+    },
+    {
+      "prime": 9296809,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 159,
+      "k": 4,
+      "gap": 58471,
+      "divisor": 20
+    },
+    {
+      "prime": 9504961,
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "h": 39,
+      "k": 1,
+      "gap": 243719,
+      "divisor": 20
+    },
+    {
+      "prime": 9744001,
+      "shift": 36,
+      "a": 6,
+      "c": 1,
+      "h": 335,
+      "k": 14,
+      "gap": 29087,
+      "divisor": 36
+    }
+  ],
+  "missing_through_cap": [],
+  "min_unfixed_omega_histogram": {
+    "0": 1,
+    "1": 44
+  },
+  "total_unfixed_omega_histogram": {
+    "20": 1,
+    "23": 1,
+    "24": 1,
+    "25": 7,
+    "26": 4,
+    "27": 8,
+    "28": 9,
+    "29": 3,
+    "30": 4,
+    "31": 4,
+    "32": 1,
+    "33": 1,
+    "34": 1
+  },
+  "zero_unfixed_examples": [
+    {
+      "prime": 1127281,
+      "rows": [
+        {
+          "shift": 19,
+          "pair": {
+            "a": 1,
+            "c": 19
+          },
+          "shifted": 1127357,
+          "factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "failure_class_histogram": {
+    "inside:1": 5,
+    "inside:10": 3,
+    "inside:11": 1,
+    "inside:12": 3,
+    "inside:13": 4,
+    "inside:14": 2,
+    "inside:15": 2,
+    "inside:16": 5,
+    "inside:17": 2,
+    "inside:18": 2,
+    "inside:19": 1,
+    "inside:2": 20,
+    "inside:20": 17,
+    "inside:22": 3,
+    "inside:23": 1,
+    "inside:24": 12,
+    "inside:25": 2,
+    "inside:26": 1,
+    "inside:28": 8,
+    "inside:3": 3,
+    "inside:30": 3,
+    "inside:32": 2,
+    "inside:4": 2,
+    "inside:5": 5,
+    "inside:6": 7,
+    "inside:8": 9,
+    "inside:9": 3,
+    "outside:0": 721,
+    "outside:1": 6
+  },
+  "inside_ray_count_histogram": {
+    "1": 7,
+    "2": 13,
+    "3": 10,
+    "4": 12,
+    "5": 2,
+    "7": 1
+  },
+  "first_support_inside_shift_histogram": {
+    "5": 4,
+    "7": 7,
+    "8": 8,
+    "10": 1,
+    "11": 10,
+    "13": 6,
+    "14": 2,
+    "16": 1,
+    "17": 5,
+    "19": 1
+  },
+  "minimum_support_defect_histogram": {
+    "1": 5,
+    "2": 12,
+    "3": 3,
+    "4": 1,
+    "5": 3,
+    "6": 3,
+    "8": 4,
+    "9": 1,
+    "11": 1,
+    "13": 2,
+    "16": 2,
+    "17": 1,
+    "20": 3,
+    "22": 1,
+    "24": 2,
+    "28": 1
+  },
+  "minimum_support_defect_witnesses": [
+    {
+      "prime": 3361,
+      "defect": 1,
+      "shift": 8
+    },
+    {
+      "prime": 56401,
+      "defect": 2,
+      "shift": 8
+    },
+    {
+      "prime": 66529,
+      "defect": 3,
+      "shift": 7
+    },
+    {
+      "prime": 135601,
+      "defect": 2,
+      "shift": 8
+    },
+    {
+      "prime": 176089,
+      "defect": 22,
+      "shift": 17
+    },
+    {
+      "prime": 225289,
+      "defect": 24,
+      "shift": 17
+    },
+    {
+      "prime": 252001,
+      "defect": 2,
+      "shift": 5
+    },
+    {
+      "prime": 345601,
+      "defect": 3,
+      "shift": 7
+    },
+    {
+      "prime": 558721,
+      "defect": 2,
+      "shift": 8
+    },
+    {
+      "prime": 685969,
+      "defect": 16,
+      "shift": 13
+    },
+    {
+      "prime": 813121,
+      "defect": 2,
+      "shift": 10
+    },
+    {
+      "prime": 870241,
+      "defect": 8,
+      "shift": 11
+    },
+    {
+      "prime": 990361,
+      "defect": 6,
+      "shift": 11
+    },
+    {
+      "prime": 1127281,
+      "defect": 2,
+      "shift": 16
+    },
+    {
+      "prime": 1385521,
+      "defect": 2,
+      "shift": 8
+    },
+    {
+      "prime": 1398769,
+      "defect": 9,
+      "shift": 11
+    },
+    {
+      "prime": 1429201,
+      "defect": 1,
+      "shift": 8
+    },
+    {
+      "prime": 1520401,
+      "defect": 2,
+      "shift": 16
+    },
+    {
+      "prime": 1683049,
+      "defect": 5,
+      "shift": 7
+    },
+    {
+      "prime": 1800121,
+      "defect": 6,
+      "shift": 7
+    },
+    {
+      "prime": 1977529,
+      "defect": 13,
+      "shift": 11
+    },
+    {
+      "prime": 2031121,
+      "defect": 2,
+      "shift": 5
+    },
+    {
+      "prime": 2365969,
+      "defect": 4,
+      "shift": 11
+    },
+    {
+      "prime": 2654401,
+      "defect": 2,
+      "shift": 5
+    },
+    {
+      "prime": 2707609,
+      "defect": 13,
+      "shift": 11
+    },
+    {
+      "prime": 3409729,
+      "defect": 20,
+      "shift": 17
+    },
+    {
+      "prime": 3569329,
+      "defect": 2,
+      "shift": 8
+    },
+    {
+      "prime": 3660721,
+      "defect": 5,
+      "shift": 7
+    },
+    {
+      "prime": 4557361,
+      "defect": 1,
+      "shift": 5
+    },
+    {
+      "prime": 4722169,
+      "defect": 20,
+      "shift": 17
+    },
+    {
+      "prime": 4965601,
+      "defect": 24,
+      "shift": 17
+    },
+    {
+      "prime": 6344209,
+      "defect": 11,
+      "shift": 11
+    },
+    {
+      "prime": 6868801,
+      "defect": 1,
+      "shift": 16
+    },
+    {
+      "prime": 6899281,
+      "defect": 17,
+      "shift": 13
+    },
+    {
+      "prime": 7329169,
+      "defect": 3,
+      "shift": 13
+    },
+    {
+      "prime": 7378849,
+      "defect": 8,
+      "shift": 11
+    },
+    {
+      "prime": 8066689,
+      "defect": 2,
+      "shift": 8
+    },
+    {
+      "prime": 8113681,
+      "defect": 8,
+      "shift": 13
+    },
+    {
+      "prime": 8243041,
+      "defect": 28,
+      "shift": 19
+    },
+    {
+      "prime": 8283361,
+      "defect": 6,
+      "shift": 14
+    },
+    {
+      "prime": 8328961,
+      "defect": 5,
+      "shift": 14
+    },
+    {
+      "prime": 8955769,
+      "defect": 8,
+      "shift": 14
+    },
+    {
+      "prime": 9296809,
+      "defect": 16,
+      "shift": 13
+    },
+    {
+      "prime": 9504961,
+      "defect": 20,
+      "shift": 13
+    },
+    {
+      "prime": 9744001,
+      "defect": 1,
+      "shift": 8
+    }
+  ]
+}

@@ -1,0 +1,690 @@
+{
+  "arithmetic": "exact trial-prime factorization, complete divisor enumeration at every later canonical shift, and reconstructed Type II certificate checks",
+  "scope_note": "A finite one-new-factor release audit. It does not assert that every multi-new state eventually releases at a fixed depth.",
+  "prime_limit": 200000000,
+  "base_shift_bound": 19,
+  "shift_cap": 200,
+  "multi_new_first_count": 26,
+  "one_new_release_count": 26,
+  "missing_through_cap": [],
+  "profiles": [
+    {
+      "prime": 1127281,
+      "first_multi_new_shift": 32,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 41,
+      "selected_witness": {
+        "h": 20499,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 6833,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 41,
+        "k": 125,
+        "gap": 55,
+        "divisor": 41,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 4722169,
+      "first_multi_new_shift": 26,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 96,
+      "selected_witness": {
+        "h": 1151,
+        "h_factorization": [
+          {
+            "prime": 1151,
+            "exponent": 1
+          }
+        ],
+        "a": 4,
+        "c": 6,
+        "k": 12,
+        "gap": 4103,
+        "divisor": 96,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 7378849,
+      "first_multi_new_shift": 26,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 29,
+      "selected_witness": {
+        "h": 273295,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 4969,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 29,
+        "k": 2356,
+        "gap": 27,
+        "divisor": 29,
+        "collision_multiplicity": 2,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 8955769,
+      "first_multi_new_shift": 25,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 35,
+      "selected_witness": {
+        "h": 139,
+        "h_factorization": [
+          {
+            "prime": 139,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 35,
+        "k": 1,
+        "gap": 64431,
+        "divisor": 35,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 10278361,
+      "first_multi_new_shift": 22,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 24,
+      "selected_witness": {
+        "h": 144767,
+        "h_factorization": [
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 20681,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 6,
+        "k": 3016,
+        "gap": 71,
+        "divisor": 24,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 12321241,
+      "first_multi_new_shift": 23,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 24,
+      "selected_witness": {
+        "h": 6671,
+        "h_factorization": [
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 953,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 6,
+        "k": 139,
+        "gap": 1847,
+        "divisor": 24,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 13422481,
+      "first_multi_new_shift": 27,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 28,
+      "selected_witness": {
+        "h": 223,
+        "h_factorization": [
+          {
+            "prime": 223,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 7,
+        "k": 4,
+        "gap": 60191,
+        "divisor": 28,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 14847529,
+      "first_multi_new_shift": 36,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 44,
+      "selected_witness": {
+        "h": 81135,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 3
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 601,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 11,
+        "k": 922,
+        "gap": 183,
+        "divisor": 44,
+        "collision_multiplicity": 4,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 20368321,
+      "first_multi_new_shift": 22,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 32,
+      "selected_witness": {
+        "h": 447,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 149,
+            "exponent": 1
+          }
+        ],
+        "a": 4,
+        "c": 2,
+        "k": 14,
+        "gap": 45567,
+        "divisor": 32,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 29256049,
+      "first_multi_new_shift": 22,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 25,
+      "selected_witness": {
+        "h": 79,
+        "h_factorization": [
+          {
+            "prime": 79,
+            "exponent": 1
+          }
+        ],
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 370331,
+        "divisor": 25,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 35840809,
+      "first_multi_new_shift": 30,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 38,
+      "selected_witness": {
+        "h": 303,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 101,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 38,
+        "k": 2,
+        "gap": 118287,
+        "divisor": 38,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 40077241,
+      "first_multi_new_shift": 23,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 26,
+      "selected_witness": {
+        "h": 14871,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 4957,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 26,
+        "k": 143,
+        "gap": 2695,
+        "divisor": 26,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 59941729,
+      "first_multi_new_shift": 25,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 29,
+      "selected_witness": {
+        "h": 10555,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 2111,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 29,
+        "k": 91,
+        "gap": 5679,
+        "divisor": 29,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 60104641,
+      "first_multi_new_shift": 23,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 33,
+      "selected_witness": {
+        "h": 1451,
+        "h_factorization": [
+          {
+            "prime": 1451,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 33,
+        "k": 11,
+        "gap": 41423,
+        "divisor": 33,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 79180369,
+      "first_multi_new_shift": 23,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 27,
+      "selected_witness": {
+        "h": 1684691,
+        "h_factorization": [
+          {
+            "prime": 1684691,
+            "exponent": 1
+          }
+        ],
+        "a": 3,
+        "c": 3,
+        "k": 46797,
+        "gap": 47,
+        "divisor": 27,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 81472609,
+      "first_multi_new_shift": 26,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 38,
+      "selected_witness": {
+        "h": 303,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 101,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 38,
+        "k": 2,
+        "gap": 268887,
+        "divisor": 38,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 92604121,
+      "first_multi_new_shift": 22,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 27,
+      "selected_witness": {
+        "h": 431,
+        "h_factorization": [
+          {
+            "prime": 431,
+            "exponent": 1
+          }
+        ],
+        "a": 3,
+        "c": 3,
+        "k": 12,
+        "gap": 214859,
+        "divisor": 27,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 113509489,
+      "first_multi_new_shift": 20,
+      "first_multi_new_multiplicity": 3,
+      "first_one_new_shift": 38,
+      "selected_witness": {
+        "h": 16215663,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5405221,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 38,
+        "k": 106682,
+        "gap": 7,
+        "divisor": 38,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 131053729,
+      "first_multi_new_shift": 21,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 32,
+      "selected_witness": {
+        "h": 3327,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 1109,
+            "exponent": 1
+          }
+        ],
+        "a": 4,
+        "c": 2,
+        "k": 104,
+        "gap": 39391,
+        "divisor": 32,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 131358049,
+      "first_multi_new_shift": 20,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 25,
+      "selected_witness": {
+        "h": 687739,
+        "h_factorization": [
+          {
+            "prime": 13,
+            "exponent": 1
+          },
+          {
+            "prime": 52903,
+            "exponent": 1
+          }
+        ],
+        "a": 5,
+        "c": 1,
+        "k": 34387,
+        "gap": 191,
+        "divisor": 25,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 134632801,
+      "first_multi_new_shift": 46,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 81,
+      "selected_witness": {
+        "h": 19583,
+        "h_factorization": [
+          {
+            "prime": 19583,
+            "exponent": 1
+          }
+        ],
+        "a": 9,
+        "c": 1,
+        "k": 544,
+        "gap": 6875,
+        "divisor": 81,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 141326089,
+      "first_multi_new_shift": 23,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 24,
+      "selected_witness": {
+        "h": 151151,
+        "h_factorization": [
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 13,
+            "exponent": 1
+          },
+          {
+            "prime": 151,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 6,
+        "k": 3149,
+        "gap": 935,
+        "divisor": 24,
+        "collision_multiplicity": 3,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 143261281,
+      "first_multi_new_shift": 21,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 25,
+      "selected_witness": {
+        "h": 59,
+        "h_factorization": [
+          {
+            "prime": 59,
+            "exponent": 1
+          }
+        ],
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 2428159,
+        "divisor": 25,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 144489361,
+      "first_multi_new_shift": 23,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 27,
+      "selected_witness": {
+        "h": 20411,
+        "h_factorization": [
+          {
+            "prime": 20411,
+            "exponent": 1
+          }
+        ],
+        "a": 3,
+        "c": 3,
+        "k": 567,
+        "gap": 7079,
+        "divisor": 27,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 165479161,
+      "first_multi_new_shift": 26,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 44,
+      "selected_witness": {
+        "h": 263,
+        "h_factorization": [
+          {
+            "prime": 263,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 11,
+        "k": 3,
+        "gap": 629199,
+        "divisor": 44,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 165882649,
+      "first_multi_new_shift": 20,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 24,
+      "selected_witness": {
+        "h": 160895,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 4597,
+            "exponent": 1
+          }
+        ],
+        "a": 2,
+        "c": 6,
+        "k": 3352,
+        "gap": 1031,
+        "divisor": 24,
+        "collision_multiplicity": 2,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    }
+  ]
+}

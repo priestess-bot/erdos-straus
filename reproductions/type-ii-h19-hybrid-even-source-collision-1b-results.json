@@ -1,0 +1,718 @@
+{
+  "arithmetic": "exact gcd identities, trial factorization of fixed collision bounds, and pairwise-coprime checks after stripping those primes",
+  "scope_note": "A finite collision audit of the three stored pressure points. It gives no universal bound on scales, distances, or shifts.",
+  "prime_limit": 1000000000,
+  "h19_shift_bound": 19,
+  "pressure_point_count": 4,
+  "all_private_parts_pairwise_coprime": true,
+  "all_even_source_direct_ray_gcds_are_one": true,
+  "records": [
+    {
+      "prime": 35840809,
+      "distance": 7,
+      "even_source": 35840802,
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        45
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        79,
+        83
+      ],
+      "source_ray_bounds": [
+        {
+          "shift": 1,
+          "bound": 11,
+          "gcd": 1
+        },
+        {
+          "shift": 2,
+          "bound": 15,
+          "gcd": 3
+        },
+        {
+          "shift": 3,
+          "bound": 19,
+          "gcd": 19
+        },
+        {
+          "shift": 4,
+          "bound": 23,
+          "gcd": 1
+        },
+        {
+          "shift": 5,
+          "bound": 27,
+          "gcd": 3
+        },
+        {
+          "shift": 6,
+          "bound": 31,
+          "gcd": 1
+        },
+        {
+          "shift": 7,
+          "bound": 35,
+          "gcd": 1
+        },
+        {
+          "shift": 8,
+          "bound": 39,
+          "gcd": 3
+        },
+        {
+          "shift": 9,
+          "bound": 43,
+          "gcd": 1
+        },
+        {
+          "shift": 10,
+          "bound": 47,
+          "gcd": 1
+        },
+        {
+          "shift": 11,
+          "bound": 51,
+          "gcd": 3
+        },
+        {
+          "shift": 12,
+          "bound": 55,
+          "gcd": 1
+        },
+        {
+          "shift": 13,
+          "bound": 59,
+          "gcd": 1
+        },
+        {
+          "shift": 14,
+          "bound": 63,
+          "gcd": 3
+        },
+        {
+          "shift": 15,
+          "bound": 67,
+          "gcd": 1
+        },
+        {
+          "shift": 16,
+          "bound": 71,
+          "gcd": 1
+        },
+        {
+          "shift": 17,
+          "bound": 75,
+          "gcd": 3
+        },
+        {
+          "shift": 18,
+          "bound": 79,
+          "gcd": 1
+        },
+        {
+          "shift": 19,
+          "bound": 83,
+          "gcd": 1
+        },
+        {
+          "shift": 45,
+          "bound": 187,
+          "gcd": 1
+        }
+      ],
+      "actual_source_ray_gcds": [
+        {
+          "shift": 2,
+          "gcd": 3
+        },
+        {
+          "shift": 3,
+          "gcd": 19
+        },
+        {
+          "shift": 5,
+          "gcd": 3
+        },
+        {
+          "shift": 8,
+          "gcd": 3
+        },
+        {
+          "shift": 11,
+          "gcd": 3
+        },
+        {
+          "shift": 14,
+          "gcd": 3
+        },
+        {
+          "shift": 17,
+          "gcd": 3
+        }
+      ],
+      "private_parts_pairwise_coprime": true,
+      "pure_new_type_ii_shift": 45,
+      "pure_new_type_ii_factor": 31139,
+      "even_source_direct_ray_gcd": 1
+    },
+    {
+      "prime": 132285169,
+      "distance": 3,
+      "even_source": 132285166,
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        27
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        79
+      ],
+      "source_ray_bounds": [
+        {
+          "shift": 1,
+          "bound": 7,
+          "gcd": 1
+        },
+        {
+          "shift": 2,
+          "bound": 11,
+          "gcd": 1
+        },
+        {
+          "shift": 3,
+          "bound": 15,
+          "gcd": 1
+        },
+        {
+          "shift": 4,
+          "bound": 19,
+          "gcd": 1
+        },
+        {
+          "shift": 5,
+          "bound": 23,
+          "gcd": 1
+        },
+        {
+          "shift": 6,
+          "bound": 27,
+          "gcd": 1
+        },
+        {
+          "shift": 7,
+          "bound": 31,
+          "gcd": 1
+        },
+        {
+          "shift": 8,
+          "bound": 35,
+          "gcd": 1
+        },
+        {
+          "shift": 9,
+          "bound": 39,
+          "gcd": 13
+        },
+        {
+          "shift": 10,
+          "bound": 43,
+          "gcd": 1
+        },
+        {
+          "shift": 11,
+          "bound": 47,
+          "gcd": 47
+        },
+        {
+          "shift": 12,
+          "bound": 51,
+          "gcd": 1
+        },
+        {
+          "shift": 13,
+          "bound": 55,
+          "gcd": 1
+        },
+        {
+          "shift": 14,
+          "bound": 59,
+          "gcd": 1
+        },
+        {
+          "shift": 15,
+          "bound": 63,
+          "gcd": 1
+        },
+        {
+          "shift": 16,
+          "bound": 67,
+          "gcd": 1
+        },
+        {
+          "shift": 17,
+          "bound": 71,
+          "gcd": 1
+        },
+        {
+          "shift": 18,
+          "bound": 75,
+          "gcd": 1
+        },
+        {
+          "shift": 19,
+          "bound": 79,
+          "gcd": 1
+        },
+        {
+          "shift": 27,
+          "bound": 111,
+          "gcd": 1
+        }
+      ],
+      "actual_source_ray_gcds": [
+        {
+          "shift": 9,
+          "gcd": 13
+        },
+        {
+          "shift": 11,
+          "gcd": 47
+        }
+      ],
+      "private_parts_pairwise_coprime": true,
+      "pure_new_type_ii_shift": 27,
+      "pure_new_type_ii_factor": 107,
+      "even_source_direct_ray_gcd": 1
+    },
+    {
+      "prime": 141326089,
+      "distance": 3,
+      "even_source": 141326086,
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        63
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        79
+      ],
+      "source_ray_bounds": [
+        {
+          "shift": 1,
+          "bound": 7,
+          "gcd": 1
+        },
+        {
+          "shift": 2,
+          "bound": 11,
+          "gcd": 11
+        },
+        {
+          "shift": 3,
+          "bound": 15,
+          "gcd": 1
+        },
+        {
+          "shift": 4,
+          "bound": 19,
+          "gcd": 1
+        },
+        {
+          "shift": 5,
+          "bound": 23,
+          "gcd": 1
+        },
+        {
+          "shift": 6,
+          "bound": 27,
+          "gcd": 1
+        },
+        {
+          "shift": 7,
+          "bound": 31,
+          "gcd": 31
+        },
+        {
+          "shift": 8,
+          "bound": 35,
+          "gcd": 1
+        },
+        {
+          "shift": 9,
+          "bound": 39,
+          "gcd": 1
+        },
+        {
+          "shift": 10,
+          "bound": 43,
+          "gcd": 1
+        },
+        {
+          "shift": 11,
+          "bound": 47,
+          "gcd": 47
+        },
+        {
+          "shift": 12,
+          "bound": 51,
+          "gcd": 1
+        },
+        {
+          "shift": 13,
+          "bound": 55,
+          "gcd": 11
+        },
+        {
+          "shift": 14,
+          "bound": 59,
+          "gcd": 1
+        },
+        {
+          "shift": 15,
+          "bound": 63,
+          "gcd": 1
+        },
+        {
+          "shift": 16,
+          "bound": 67,
+          "gcd": 1
+        },
+        {
+          "shift": 17,
+          "bound": 71,
+          "gcd": 1
+        },
+        {
+          "shift": 18,
+          "bound": 75,
+          "gcd": 1
+        },
+        {
+          "shift": 19,
+          "bound": 79,
+          "gcd": 1
+        },
+        {
+          "shift": 63,
+          "bound": 255,
+          "gcd": 1
+        }
+      ],
+      "actual_source_ray_gcds": [
+        {
+          "shift": 2,
+          "gcd": 11
+        },
+        {
+          "shift": 7,
+          "gcd": 31
+        },
+        {
+          "shift": 11,
+          "gcd": 47
+        },
+        {
+          "shift": 13,
+          "gcd": 11
+        }
+      ],
+      "private_parts_pairwise_coprime": true,
+      "pure_new_type_ii_shift": 63,
+      "pure_new_type_ii_factor": 83,
+      "even_source_direct_ray_gcd": 1
+    },
+    {
+      "prime": 640775689,
+      "distance": 34091,
+      "even_source": 640741598,
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        45
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        61,
+        67,
+        71,
+        127,
+        223,
+        269,
+        367,
+        443,
+        509,
+        599,
+        797,
+        1627,
+        2273,
+        4877,
+        6823,
+        6827,
+        11369,
+        34123,
+        34127,
+        34147,
+        34159
+      ],
+      "source_ray_bounds": [
+        {
+          "shift": 1,
+          "bound": 34095,
+          "gcd": 1
+        },
+        {
+          "shift": 2,
+          "bound": 34099,
+          "gcd": 1
+        },
+        {
+          "shift": 3,
+          "bound": 34103,
+          "gcd": 1
+        },
+        {
+          "shift": 4,
+          "bound": 34107,
+          "gcd": 1
+        },
+        {
+          "shift": 5,
+          "bound": 34111,
+          "gcd": 7
+        },
+        {
+          "shift": 6,
+          "bound": 34115,
+          "gcd": 1
+        },
+        {
+          "shift": 7,
+          "bound": 34119,
+          "gcd": 1
+        },
+        {
+          "shift": 8,
+          "bound": 34123,
+          "gcd": 1
+        },
+        {
+          "shift": 9,
+          "bound": 34127,
+          "gcd": 1
+        },
+        {
+          "shift": 10,
+          "bound": 34131,
+          "gcd": 1
+        },
+        {
+          "shift": 11,
+          "bound": 34135,
+          "gcd": 1
+        },
+        {
+          "shift": 12,
+          "bound": 34139,
+          "gcd": 7
+        },
+        {
+          "shift": 13,
+          "bound": 34143,
+          "gcd": 19
+        },
+        {
+          "shift": 14,
+          "bound": 34147,
+          "gcd": 1
+        },
+        {
+          "shift": 15,
+          "bound": 34151,
+          "gcd": 1
+        },
+        {
+          "shift": 16,
+          "bound": 34155,
+          "gcd": 1
+        },
+        {
+          "shift": 17,
+          "bound": 34159,
+          "gcd": 1
+        },
+        {
+          "shift": 18,
+          "bound": 34163,
+          "gcd": 1
+        },
+        {
+          "shift": 19,
+          "bound": 34167,
+          "gcd": 7
+        },
+        {
+          "shift": 45,
+          "bound": 34271,
+          "gcd": 1
+        }
+      ],
+      "actual_source_ray_gcds": [
+        {
+          "shift": 5,
+          "gcd": 7
+        },
+        {
+          "shift": 12,
+          "gcd": 7
+        },
+        {
+          "shift": 13,
+          "gcd": 19
+        },
+        {
+          "shift": 19,
+          "gcd": 7
+        }
+      ],
+      "private_parts_pairwise_coprime": true,
+      "pure_new_type_ii_shift": 45,
+      "pure_new_type_ii_factor": 359,
+      "even_source_direct_ray_gcd": 1
+    }
+  ]
+}

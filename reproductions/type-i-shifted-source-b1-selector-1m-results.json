@@ -1,0 +1,67 @@
+{
+  "arithmetic": "for each final general-source residual, set s=p-n and R=(E-1)/s; check the source-square condition, C|K=(pR+1)/4, and 4C=-1 (mod R), then reconstruct the B=1 target and source unit-fraction identities and the generic maximum-tail lift",
+  "scope_note": "A finite reconstruction of the three stored short-source edges. It does not claim that fixed shifts or a fixed R work for all core primes.",
+  "prime_limit": 1000009,
+  "record_count": 3,
+  "shift_histogram": {
+    "9": 2,
+    "25": 1
+  },
+  "R_histogram": {
+    "19": 1,
+    "31": 2
+  },
+  "records": [
+    {
+      "prime": 297049,
+      "shift": 25,
+      "E": 476,
+      "R": 19,
+      "K": 1410983,
+      "normal_form": [
+        1046,
+        1,
+        71
+      ],
+      "H": 19873,
+      "gap": 15,
+      "source_denominator": 297024,
+      "source_term": 880453392,
+      "bridge_factor": 476
+    },
+    {
+      "prime": 513529,
+      "shift": 9,
+      "E": 280,
+      "R": 31,
+      "K": 3979850,
+      "normal_form": [
+        221,
+        1,
+        581
+      ],
+      "H": 6850,
+      "gap": 75,
+      "source_denominator": 513520,
+      "source_term": 7299044900,
+      "bridge_factor": 280
+    },
+    {
+      "prime": 710089,
+      "shift": 9,
+      "E": 280,
+      "R": 31,
+      "K": 5503190,
+      "normal_form": [
+        5,
+        1,
+        35735
+      ],
+      "H": 154,
+      "gap": 4611,
+      "source_denominator": 710080,
+      "source_term": 13956089840,
+      "bridge_factor": 280
+    }
+  ]
+}

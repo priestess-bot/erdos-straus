@@ -1,0 +1,396 @@
+{
+  "arithmetic": "for each p-1 residual of the stored finite profile, enumerate every natural Type I gap, every B<=4 normal form, and every maximum-tail reverse bridge; retain strict even sources and independently reconstruct the selected target and source identities",
+  "scope_note": "A complete finite general-source refinement of the stated residual set. It does not establish a universal bound on source distance, B, or bridge factors.",
+  "prime_limit": 10000009,
+  "input_residual_count": 7,
+  "b_cap": 4,
+  "b_bounded_normal_form_count": 139,
+  "b_bounded_strict_reverse_lift_count": 304,
+  "strict_even_candidate_count": 239,
+  "minimum_source_distance_histogram": {
+    "3": 1,
+    "9": 2,
+    "25": 2,
+    "49": 1,
+    "263": 1
+  },
+  "records": [
+    {
+      "prime": 1083289,
+      "b_bounded_normal_form_count": 10,
+      "b_bounded_strict_reverse_lift_count": 20,
+      "strict_even_candidate_count": 10,
+      "minimum_source_distance": {
+        "gap": 591,
+        "normal_form": [
+          14,
+          1,
+          19355
+        ],
+        "R": 131,
+        "K": 35477715,
+        "source_denominator": 1083264,
+        "source_distance": 25,
+        "source_term": 11731297760,
+        "E": 3276,
+        "E_factorization": {
+          "2": 2,
+          "3": 2,
+          "7": 1,
+          "13": 1
+        },
+        "odd_E_factorization": {
+          "3": 2,
+          "7": 1,
+          "13": 1
+        },
+        "odd_E_prime_support": 3,
+        "odd_E_exponent_count": 4
+      },
+      "minimum_odd_bridge": {
+        "gap": 71,
+        "normal_form": [
+          555,
+          2,
+          244
+        ],
+        "R": 55,
+        "K": 14895224,
+        "source_denominator": 1051762,
+        "source_distance": 31527,
+        "source_term": 9034808,
+        "E": 1733986,
+        "E_factorization": {
+          "2": 1,
+          "61": 2,
+          "233": 1
+        },
+        "odd_E_factorization": {
+          "61": 2,
+          "233": 1
+        },
+        "odd_E_prime_support": 2,
+        "odd_E_exponent_count": 3
+      }
+    },
+    {
+      "prime": 1103449,
+      "b_bounded_normal_form_count": 16,
+      "b_bounded_strict_reverse_lift_count": 30,
+      "strict_even_candidate_count": 21,
+      "minimum_source_distance": {
+        "gap": 59,
+        "normal_form": [
+          87,
+          1,
+          3171
+        ],
+        "R": 215,
+        "K": 59310384,
+        "source_denominator": 1103424,
+        "source_distance": 25,
+        "source_term": 12173456316,
+        "E": 5376,
+        "E_factorization": {
+          "2": 8,
+          "3": 1,
+          "7": 1
+        },
+        "odd_E_factorization": {
+          "3": 1,
+          "7": 1
+        },
+        "odd_E_prime_support": 2,
+        "odd_E_exponent_count": 2
+      },
+      "minimum_odd_bridge": {
+        "gap": 143,
+        "normal_form": [
+          21,
+          2,
+          6569
+        ],
+        "R": 735,
+        "K": 202758754,
+        "source_denominator": 1103368,
+        "source_distance": 81,
+        "source_term": 3757684777,
+        "E": 59536,
+        "E_factorization": {
+          "2": 4,
+          "61": 2
+        },
+        "odd_E_factorization": {
+          "61": 2
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 2
+      }
+    },
+    {
+      "prime": 2469289,
+      "b_bounded_normal_form_count": 22,
+      "b_bounded_strict_reverse_lift_count": 130,
+      "strict_even_candidate_count": 118,
+      "minimum_source_distance": {
+        "gap": 3,
+        "normal_form": [
+          21287,
+          1,
+          29
+        ],
+        "R": 39,
+        "K": 24075568,
+        "source_denominator": 2469280,
+        "source_distance": 9,
+        "source_term": 168890109520,
+        "E": 352,
+        "E_factorization": {
+          "2": 5,
+          "11": 1
+        },
+        "odd_E_factorization": {
+          "11": 1
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 1
+      },
+      "minimum_odd_bridge": {
+        "gap": 3,
+        "normal_form": [
+          21287,
+          1,
+          29
+        ],
+        "R": 39,
+        "K": 24075568,
+        "source_denominator": 2469280,
+        "source_distance": 9,
+        "source_term": 168890109520,
+        "E": 352,
+        "E_factorization": {
+          "2": 5,
+          "11": 1
+        },
+        "odd_E_factorization": {
+          "11": 1
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 1
+      }
+    },
+    {
+      "prime": 3389929,
+      "b_bounded_normal_form_count": 32,
+      "b_bounded_strict_reverse_lift_count": 24,
+      "strict_even_candidate_count": 15,
+      "minimum_source_distance": {
+        "gap": 71,
+        "normal_form": [
+          250,
+          1,
+          3390
+        ],
+        "R": 191,
+        "K": 161869110,
+        "source_denominator": 3389880,
+        "source_distance": 49,
+        "source_term": 58623596005,
+        "E": 9360,
+        "E_factorization": {
+          "2": 4,
+          "3": 2,
+          "5": 1,
+          "13": 1
+        },
+        "odd_E_factorization": {
+          "3": 2,
+          "5": 1,
+          "13": 1
+        },
+        "odd_E_prime_support": 3,
+        "odd_E_exponent_count": 4
+      },
+      "minimum_odd_bridge": {
+        "gap": 7,
+        "normal_form": [
+          12463,
+          1,
+          68
+        ],
+        "R": 39,
+        "K": 33051808,
+        "source_denominator": 3389824,
+        "source_distance": 105,
+        "source_term": 27353469727,
+        "E": 4096,
+        "E_factorization": {
+          "2": 12
+        },
+        "odd_E_factorization": {},
+        "odd_E_prime_support": 0,
+        "odd_E_exponent_count": 0
+      }
+    },
+    {
+      "prime": 3942409,
+      "b_bounded_normal_form_count": 16,
+      "b_bounded_strict_reverse_lift_count": 14,
+      "strict_even_candidate_count": 10,
+      "minimum_source_distance": {
+        "gap": 84783,
+        "normal_form": [
+          1,
+          2,
+          503399
+        ],
+        "R": 95,
+        "K": 93632214,
+        "source_denominator": 3942146,
+        "source_distance": 263,
+        "source_term": 14772747054,
+        "E": 24986,
+        "E_factorization": {
+          "2": 1,
+          "13": 1,
+          "31": 2
+        },
+        "odd_E_factorization": {
+          "13": 1,
+          "31": 2
+        },
+        "odd_E_prime_support": 2,
+        "odd_E_exponent_count": 3
+      },
+      "minimum_odd_bridge": {
+        "gap": 15,
+        "normal_form": [
+          1406,
+          1,
+          701
+        ],
+        "R": 187,
+        "K": 184307621,
+        "source_denominator": 3937744,
+        "source_distance": 4665,
+        "source_term": 831949604,
+        "E": 872356,
+        "E_factorization": {
+          "2": 2,
+          "467": 2
+        },
+        "odd_E_factorization": {
+          "467": 2
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 2
+      }
+    },
+    {
+      "prime": 4762489,
+      "b_bounded_normal_form_count": 25,
+      "b_bounded_strict_reverse_lift_count": 63,
+      "strict_even_candidate_count": 48,
+      "minimum_source_distance": {
+        "gap": 407,
+        "normal_form": [
+          268,
+          3,
+          1481
+        ],
+        "R": 131,
+        "K": 155971515,
+        "source_denominator": 4762480,
+        "source_distance": 9,
+        "source_term": 629501034540,
+        "E": 1180,
+        "E_factorization": {
+          "2": 2,
+          "5": 1,
+          "59": 1
+        },
+        "odd_E_factorization": {
+          "5": 1,
+          "59": 1
+        },
+        "odd_E_prime_support": 2,
+        "odd_E_exponent_count": 2
+      },
+      "minimum_odd_bridge": {
+        "gap": 167,
+        "normal_form": [
+          719,
+          3,
+          552
+        ],
+        "R": 119,
+        "K": 141684048,
+        "source_denominator": 4729024,
+        "source_distance": 33465,
+        "source_term": 168249807,
+        "E": 3982336,
+        "E_factorization": {
+          "2": 10,
+          "3889": 1
+        },
+        "odd_E_factorization": {
+          "3889": 1
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 1
+      }
+    },
+    {
+      "prime": 5770249,
+      "b_bounded_normal_form_count": 18,
+      "b_bounded_strict_reverse_lift_count": 23,
+      "strict_even_candidate_count": 17,
+      "minimum_source_distance": {
+        "gap": 3303,
+        "normal_form": [
+          92,
+          1,
+          15689
+        ],
+        "R": 19,
+        "K": 27408683,
+        "source_denominator": 5770246,
+        "source_distance": 3,
+        "source_term": 2726807645621,
+        "E": 58,
+        "E_factorization": {
+          "2": 1,
+          "29": 1
+        },
+        "odd_E_factorization": {
+          "29": 1
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 1
+      },
+      "minimum_odd_bridge": {
+        "gap": 3303,
+        "normal_form": [
+          92,
+          1,
+          15689
+        ],
+        "R": 19,
+        "K": 27408683,
+        "source_denominator": 5770246,
+        "source_distance": 3,
+        "source_term": 2726807645621,
+        "E": 58,
+        "E_factorization": {
+          "2": 1,
+          "29": 1
+        },
+        "odd_E_factorization": {
+          "29": 1
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 1
+      }
+    }
+  ]
+}

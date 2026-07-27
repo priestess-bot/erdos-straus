@@ -1,0 +1,132 @@
+{
+  "arithmetic": "exact rational verification of every quadratic lift and every bounded-r even-source source/target lift",
+  "scope_note": "A finite H19 closure over stored 1b residuals. It does not establish a universal r bound or descent selector.",
+  "prime_limit": 1000000000,
+  "r_cap": 103,
+  "h19_residual_count": 664,
+  "quadratic_descent_count": 660,
+  "bounded_r_even_source_count": 4,
+  "unclosed_primes": [],
+  "bounded_r_records": [
+    {
+      "prime": 35840809,
+      "r": 103,
+      "distance": 7,
+      "d": 49641,
+      "witness": {
+        "source_denominator": 35840802,
+        "k": 1278256,
+        "q": 5113023,
+        "factor": 1256512992,
+        "source_solution": [
+          45813720201312,
+          8960448,
+          326706894528
+        ],
+        "target_solution": [
+          33077512445653088,
+          8960448,
+          326706894528
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 983,
+          "x": 8960448,
+          "divisor": 3171998592,
+          "y": 326706894528,
+          "z": 33077512445653088
+        }
+      }
+    },
+    {
+      "prime": 132285169,
+      "r": 31,
+      "distance": 3,
+      "d": 1407289,
+      "witness": {
+        "source_denominator": 132285166,
+        "k": 10906490,
+        "q": 43625959,
+        "factor": 2082787720,
+        "source_solution": [
+          1442766840127340,
+          33071340,
+          22908831395730
+        ],
+        "target_solution": [
+          135620086047600140,
+          33071340,
+          22908831395730
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 191,
+          "x": 33071340,
+          "divisor": 738995627970,
+          "y": 22908831395730,
+          "z": 135620086047600140
+        }
+      }
+    },
+    {
+      "prime": 141326089,
+      "r": 31,
+      "distance": 3,
+      "d": 1503469,
+      "witness": {
+        "source_denominator": 141326086,
+        "k": 11651885,
+        "q": 46607539,
+        "factor": 127794865,
+        "source_solution": [
+          1646715301572110,
+          35331525,
+          455268393181350
+        ],
+        "target_solution": [
+          154791241633609910,
+          35331525,
+          455268393181350
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11,
+          "x": 35331525,
+          "divisor": 14686078339125,
+          "y": 455268393181350,
+          "z": 154791241633609910
+        }
+      }
+    },
+    {
+      "prime": 640775689,
+      "r": 15,
+      "distance": 34091,
+      "d": 1253,
+      "witness": {
+        "source_denominator": 640741598,
+        "k": 4699,
+        "q": 18795,
+        "factor": 1761718,
+        "source_solution": [
+          3010844769002,
+          160194016,
+          273777820910624
+        ],
+        "target_solution": [
+          1539725563710536626,
+          160194016,
+          273777820910624
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 375,
+          "x": 160194016,
+          "divisor": 18251865406976,
+          "y": 273777820910624,
+          "z": 1539725563710536626
+        }
+      }
+    }
+  ]
+}

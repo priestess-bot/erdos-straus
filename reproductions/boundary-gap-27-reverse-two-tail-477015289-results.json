@@ -1,0 +1,184 @@
+{
+  "arithmetic": "for each gap-27 Type I normal form, factor its three target terms from the normal-form products; enumerate every D|4*p^2*t^2; reconstruct n=(4pt-D)/(4t-p) and a=npt/D; verify each source and target identity exactly",
+  "scope_note": "This exhausts only one-coordinate reverse lifts preserving the other two terms of the three gap-27 Type I target triples. It does not exclude other gaps, Type II triples, or lifts changing more coordinates.",
+  "prime": 477015289,
+  "gap": 27,
+  "type_i_certificate_count": 3,
+  "total_reverse_two_tail_lift_count": 2,
+  "records": [
+    {
+      "divisor": 7986977,
+      "normal_form": [
+        29,
+        433,
+        9497
+      ],
+      "target_solution": [
+        119253829,
+        2106885174547354,
+        15005935127747717755533362
+      ],
+      "reverse_two_tail_by_replaced_target_term": [
+        {
+          "replaced_target_position": 0,
+          "target_term": 119253829,
+          "target_term_factorization": {
+            "29": 1,
+            "433": 1,
+            "9497": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        },
+        {
+          "replaced_target_position": 1,
+          "target_term": 2106885174547354,
+          "target_term_factorization": {
+            "2": 1,
+            "29": 1,
+            "257": 1,
+            "967": 1,
+            "9497": 1,
+            "15391": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        },
+        {
+          "replaced_target_position": 2,
+          "target_term": 15005935127747717755533362,
+          "target_term_factorization": {
+            "2": 1,
+            "257": 1,
+            "433": 1,
+            "967": 1,
+            "9497": 1,
+            "15391": 1,
+            "477015289": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        }
+      ]
+    },
+    {
+      "divisor": 3458361041,
+      "normal_form": [
+        29,
+        1,
+        4112201
+      ],
+      "target_solution": [
+        119253829,
+        2106885302338986,
+        34655741427071854577826
+      ],
+      "reverse_two_tail_by_replaced_target_term": [
+        {
+          "replaced_target_position": 0,
+          "target_term": 119253829,
+          "target_term_factorization": {
+            "29": 1,
+            "433": 1,
+            "9497": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        },
+        {
+          "replaced_target_position": 1,
+          "target_term": 2106885302338986,
+          "target_term_factorization": {
+            "2": 1,
+            "3": 4,
+            "13": 1,
+            "29": 1,
+            "433": 1,
+            "8389": 1,
+            "9497": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        },
+        {
+          "replaced_target_position": 2,
+          "target_term": 34655741427071854577826,
+          "target_term_factorization": {
+            "2": 1,
+            "3": 4,
+            "13": 1,
+            "433": 1,
+            "8389": 1,
+            "9497": 1,
+            "477015289": 1
+          },
+          "eligible_bridge_divisor_count": 1,
+          "reverse_two_tail_lifts": [
+            {
+              "source_denominator": 32897608,
+              "source_term": 8833617,
+              "bridge_divisor": 61564910063707146394555256094736
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "divisor": 1497470330753,
+      "normal_form": [
+        12557,
+        1,
+        9497
+      ],
+      "target_solution": [
+        119253829,
+        2106940636115642,
+        80038456354427554834
+      ],
+      "reverse_two_tail_by_replaced_target_term": [
+        {
+          "replaced_target_position": 0,
+          "target_term": 119253829,
+          "target_term_factorization": {
+            "29": 1,
+            "433": 1,
+            "9497": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        },
+        {
+          "replaced_target_position": 1,
+          "target_term": 2106940636115642,
+          "target_term_factorization": {
+            "2": 1,
+            "29": 1,
+            "433": 1,
+            "9497": 1,
+            "8833849": 1
+          },
+          "eligible_bridge_divisor_count": 0,
+          "reverse_two_tail_lifts": []
+        },
+        {
+          "replaced_target_position": 2,
+          "target_term": 80038456354427554834,
+          "target_term_factorization": {
+            "2": 1,
+            "9497": 1,
+            "8833849": 1,
+            "477015289": 1
+          },
+          "eligible_bridge_divisor_count": 1,
+          "reverse_two_tail_lifts": [
+            {
+              "source_denominator": 475989640,
+              "source_term": 55344063985,
+              "bridge_divisor": 328365451112903404437355024
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

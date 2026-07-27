@@ -1,0 +1,120 @@
+{
+  "arithmetic": "for every stated residual and each short shift s, factor n=p-s, enumerate every even E<=e_cap allowed by E|n^2/gcd(E,4) with R=(E-1)/s integral, factor K=(pR+1)/4, enumerate all BC|K with B<=b_cap, and exactly reconstruct every selected Type I edge",
+  "scope_note": "A complete finite audit of one stated short-shift and low-E box. A miss excludes only its shifts, bridge cap, and B cap; it does not exclude larger or different source states.",
+  "prime_limit": 10000009,
+  "input_residual_count": 7,
+  "shifts": [
+    3,
+    7,
+    9,
+    25
+  ],
+  "e_cap": 1000000,
+  "b_cap": 7,
+  "captured_count": 7,
+  "misses": [],
+  "selected_shift_histogram": {
+    "3": 1,
+    "9": 4,
+    "25": 2
+  },
+  "selected_B_histogram": {
+    "1": 3,
+    "3": 1,
+    "5": 2,
+    "7": 1
+  },
+  "records": [
+    {
+      "prime": 1083289,
+      "witness": {
+        "shift": 25,
+        "R": 131,
+        "E": 3276,
+        "B": 1,
+        "C": 19355,
+        "H": 1833,
+        "gap": 591,
+        "source_denominator": 1083264
+      }
+    },
+    {
+      "prime": 1103449,
+      "witness": {
+        "shift": 9,
+        "R": 75,
+        "E": 676,
+        "B": 7,
+        "C": 20669,
+        "H": 143,
+        "gap": 54015,
+        "source_denominator": 1103440
+      }
+    },
+    {
+      "prime": 2469289,
+      "witness": {
+        "shift": 9,
+        "R": 39,
+        "E": 352,
+        "B": 1,
+        "C": 29,
+        "H": 830192,
+        "gap": 3,
+        "source_denominator": 2469280
+      }
+    },
+    {
+      "prime": 3389929,
+      "witness": {
+        "shift": 25,
+        "R": 311,
+        "E": 7776,
+        "B": 5,
+        "C": 172266,
+        "H": 306,
+        "gap": 55391,
+        "source_denominator": 3389904
+      }
+    },
+    {
+      "prime": 3942409,
+      "witness": {
+        "shift": 9,
+        "R": 171,
+        "E": 1540,
+        "B": 5,
+        "C": 49643,
+        "H": 679,
+        "gap": 29031,
+        "source_denominator": 3942400
+      }
+    },
+    {
+      "prime": 4762489,
+      "witness": {
+        "shift": 9,
+        "R": 131,
+        "E": 1180,
+        "B": 3,
+        "C": 1481,
+        "H": 35105,
+        "gap": 407,
+        "source_denominator": 4762480
+      }
+    },
+    {
+      "prime": 5770249,
+      "witness": {
+        "shift": 3,
+        "R": 19,
+        "E": 58,
+        "B": 1,
+        "C": 15689,
+        "H": 1747,
+        "gap": 3303,
+        "source_denominator": 5770246
+      }
+    }
+  ]
+}

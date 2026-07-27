@@ -1,0 +1,106 @@
+{
+  "arithmetic": "exact SPF factorization, complete divisor enumeration at each later canonical shift, and reconstructed Type II certificate checks",
+  "scope_note": "A finite release audit. It does not assert a uniform shift bound or that a first-transition source classification is invariant.",
+  "factor_table": "exact compact unsigned-integer smallest-prime-factor table",
+  "prime_limit": 20000000,
+  "base_shift_bound": 19,
+  "first_shift_cap": 50,
+  "release_shift_cap": 125,
+  "base_residual_count": 65,
+  "first_transition_count": 65,
+  "missing_through_first_shift_cap": [],
+  "first_old_private_required_primes": [
+    3361,
+    813121,
+    8283361,
+    14847529
+  ],
+  "released_count": 4,
+  "missing_through_release_cap": [],
+  "profiles": [
+    {
+      "prime": 3361,
+      "first_transition": {
+        "shift": 29,
+        "witness": {
+          "h": 1159,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 125,
+        "witness": {
+          "h": 99,
+          "collision_multiplicity": 3,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 0
+        }
+      }
+    },
+    {
+      "prime": 813121,
+      "first_transition": {
+        "shift": 34,
+        "witness": {
+          "h": 35359,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 56,
+        "witness": {
+          "h": 1455,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 8283361,
+      "first_transition": {
+        "shift": 22,
+        "witness": {
+          "h": 703,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 52,
+        "witness": {
+          "h": 103,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 14847529,
+      "first_transition": {
+        "shift": 29,
+        "witness": {
+          "h": 3363,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 72,
+        "witness": {
+          "h": 47,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    }
+  ]
+}

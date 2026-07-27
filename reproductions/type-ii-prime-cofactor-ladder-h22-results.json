@@ -1,0 +1,1398 @@
+{
+  "arithmetic": "exact residue enumeration and finite-field admissibility checks for the p and forced-divisor quotient linear forms",
+  "scope_note": "This excludes only the model in which every shifted integer has its forced divisor times one prime cofactor. It is not a coverage proof.",
+  "base_shift_bound": 22,
+  "canonical_fan": [
+    {
+      "shift": 1,
+      "a": 1,
+      "c": 1,
+      "modulus": 4
+    },
+    {
+      "shift": 2,
+      "a": 1,
+      "c": 2,
+      "modulus": 8
+    },
+    {
+      "shift": 3,
+      "a": 1,
+      "c": 3,
+      "modulus": 12
+    },
+    {
+      "shift": 4,
+      "a": 2,
+      "c": 1,
+      "modulus": 8
+    },
+    {
+      "shift": 5,
+      "a": 1,
+      "c": 5,
+      "modulus": 20
+    },
+    {
+      "shift": 6,
+      "a": 1,
+      "c": 6,
+      "modulus": 24
+    },
+    {
+      "shift": 7,
+      "a": 1,
+      "c": 7,
+      "modulus": 28
+    },
+    {
+      "shift": 8,
+      "a": 2,
+      "c": 2,
+      "modulus": 16
+    },
+    {
+      "shift": 9,
+      "a": 3,
+      "c": 1,
+      "modulus": 12
+    },
+    {
+      "shift": 10,
+      "a": 1,
+      "c": 10,
+      "modulus": 40
+    },
+    {
+      "shift": 11,
+      "a": 1,
+      "c": 11,
+      "modulus": 44
+    },
+    {
+      "shift": 12,
+      "a": 2,
+      "c": 3,
+      "modulus": 24
+    },
+    {
+      "shift": 13,
+      "a": 1,
+      "c": 13,
+      "modulus": 52
+    },
+    {
+      "shift": 14,
+      "a": 1,
+      "c": 14,
+      "modulus": 56
+    },
+    {
+      "shift": 15,
+      "a": 1,
+      "c": 15,
+      "modulus": 60
+    },
+    {
+      "shift": 16,
+      "a": 4,
+      "c": 1,
+      "modulus": 16
+    },
+    {
+      "shift": 17,
+      "a": 1,
+      "c": 17,
+      "modulus": 68
+    },
+    {
+      "shift": 18,
+      "a": 3,
+      "c": 2,
+      "modulus": 24
+    },
+    {
+      "shift": 19,
+      "a": 1,
+      "c": 19,
+      "modulus": 76
+    },
+    {
+      "shift": 20,
+      "a": 2,
+      "c": 5,
+      "modulus": 40
+    },
+    {
+      "shift": 21,
+      "a": 1,
+      "c": 21,
+      "modulus": 84
+    },
+    {
+      "shift": 22,
+      "a": 1,
+      "c": 22,
+      "modulus": 88
+    }
+  ],
+  "combined_modulus": 77597520,
+  "core_residue_count": 1658880,
+  "one_prime_safe_residue_count": 78165,
+  "admissible_one_prime_safe_residue_count": 0,
+  "covering_prime_histogram": {
+    "3": 78165,
+    "5": 44480,
+    "23": 78165
+  },
+  "second_level_safe_branch_count": 0,
+  "second_level_safe_residue_count": 0,
+  "second_level_samples": [],
+  "samples": [
+    {
+      "residue_class": 1,
+      "covering_primes": [
+        3,
+        5,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 1,
+          "label": "p"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 1,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 3,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 5969040,
+          "constant": 1,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 4564560,
+          "constant": 1,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 1,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 5,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 29,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 2351440,
+          "constant": 1,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 37,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 41,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 3,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 7,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 53,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 1361360,
+          "constant": 1,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 61,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 1193808,
+          "constant": 1,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 23,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 73,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 1007760,
+          "constant": 1,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 27,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 912912,
+          "constant": 1,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 89,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 529,
+      "covering_primes": [
+        3,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 529,
+          "label": "p"
+        },
+        {
+          "coefficient": 5969040,
+          "constant": 41,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 179,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 541,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 109,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 183,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 79,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 557,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 138320,
+          "constant": 1,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 113,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 569,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 191,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 577,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 83,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 397936,
+          "constant": 3,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 4084080,
+          "constant": 31,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 593,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 199,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 601,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 1410864,
+          "constant": 11,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 29,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 613,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 617,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 841,
+      "covering_primes": [
+        3,
+        5,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 841,
+          "label": "p"
+        },
+        {
+          "coefficient": 1193808,
+          "constant": 13,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 283,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 853,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 857,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 41,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 173,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 79,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 291,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 877,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 881,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 59,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 127,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 4084080,
+          "constant": 47,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 1989680,
+          "constant": 23,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 4564560,
+          "constant": 53,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 181,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 303,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 83,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 131,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 307,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 185,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 929,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 961,
+      "covering_primes": [
+        3,
+        5,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 961,
+          "label": "p"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 193,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 1,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 139,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 977,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 327,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 197,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 989,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 331,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 997,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77520,
+          "constant": 1,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 67,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1009,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1013,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 339,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1021,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 205,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 49,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1033,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 4564560,
+          "constant": 61,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 347,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 74256,
+          "constant": 1,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1049,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 1369,
+      "covering_primes": [
+        3,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 1369,
+          "label": "p"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1373,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 1521520,
+          "constant": 27,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1381,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 277,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 463,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 199,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 127,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 467,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 281,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1409,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 471,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 5969040,
+          "constant": 109,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 203,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 272272,
+          "constant": 5,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1429,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1433,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 479,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 131,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 912912,
+          "constant": 17,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 69,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1453,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1457,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 1681,
+      "covering_primes": [
+        3,
+        5,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 1681,
+          "label": "p"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 337,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 563,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1693,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1697,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 81,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 1410864,
+          "constant": 31,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1709,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 571,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 4564560,
+          "constant": 101,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1721,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 115,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 44880,
+          "constant": 1,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1733,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 579,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1741,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 349,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 2351440,
+          "constant": 53,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1753,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 251,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 587,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 353,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1769,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 1849,
+      "covering_primes": [
+        3,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 1849,
+          "label": "p"
+        },
+        {
+          "coefficient": 4564560,
+          "constant": 109,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 619,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1861,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 373,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 89,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1873,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1877,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 123760,
+          "constant": 3,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 1193808,
+          "constant": 29,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1889,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 631,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 271,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1901,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 127,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1909,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1913,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 639,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 4564560,
+          "constant": 113,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 201552,
+          "constant": 5,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 643,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 1933,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 5969040,
+          "constant": 149,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 2209,
+      "covering_primes": [
+        3,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 2209,
+          "label": "p"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2213,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 739,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2221,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 445,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 743,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 1007760,
+          "constant": 29,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2237,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 747,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 449,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 5969040,
+          "constant": 173,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 751,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2257,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 1,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 151,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2269,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2273,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 2351440,
+          "constant": 69,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2281,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 457,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 109,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2293,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2297,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 2809,
+      "covering_primes": [
+        3,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 2809,
+          "label": "p"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2813,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 939,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 852720,
+          "constant": 31,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 565,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 943,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2833,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2837,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 947,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 569,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 1007760,
+          "constant": 37,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 951,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2857,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2861,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 191,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 4084080,
+          "constant": 151,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 351120,
+          "constant": 13,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 137,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2881,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 577,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 963,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 263,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 2897,
+          "label": "s=22"
+        }
+      ]
+    },
+    {
+      "residue_class": 3361,
+      "covering_primes": [
+        3,
+        5,
+        23
+      ],
+      "forms": [
+        {
+          "coefficient": 77597520,
+          "constant": 3361,
+          "label": "p"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 673,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 1123,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 3373,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 307,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 3695120,
+          "constant": 161,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 677,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 3389,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 1989680,
+          "constant": 87,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 3397,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 4084080,
+          "constant": 179,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 5173168,
+          "constant": 227,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 487,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 3413,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 1521520,
+          "constant": 67,
+          "label": "s=14"
+        },
+        {
+          "coefficient": 7054320,
+          "constant": 311,
+          "label": "s=15"
+        },
+        {
+          "coefficient": 15519504,
+          "constant": 685,
+          "label": "s=16"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 1143,
+          "label": "s=17"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 3433,
+          "label": "s=18"
+        },
+        {
+          "coefficient": 11085360,
+          "constant": 491,
+          "label": "s=19"
+        },
+        {
+          "coefficient": 25865840,
+          "constant": 1147,
+          "label": "s=20"
+        },
+        {
+          "coefficient": 1193808,
+          "constant": 53,
+          "label": "s=21"
+        },
+        {
+          "coefficient": 77597520,
+          "constant": 3449,
+          "label": "s=22"
+        }
+      ]
+    }
+  ]
+}

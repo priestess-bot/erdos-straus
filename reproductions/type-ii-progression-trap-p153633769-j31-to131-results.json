@@ -1,0 +1,71 @@
+{
+  "arithmetic": "exact gcd extraction, divisor enumeration of the fixed factor, and fractions.Fraction certificate verification",
+  "scope_note": "Each listed trap gives a direct Type II certificate for every core prime in its displayed arithmetic progression. A primitive listed progression contains infinitely many primes by Dirichlet's theorem.",
+  "seed_prime": 153633769,
+  "window_j": 31,
+  "extension_window_j": 131,
+  "all_divisor_mode": false,
+  "candidate_gap_count": null,
+  "primitive_progression": true,
+  "traps": [
+    {
+      "window_j": 31,
+      "future_j": 52,
+      "gap": 207,
+      "window_modulus": 2244817972764054118284725643571800,
+      "prime_step": 35917087564224865892555610297148800,
+      "seed_prime": 153633769,
+      "fixed_factor": 9682,
+      "fixed_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          103,
+          1
+        ]
+      ],
+      "cofactor0": 3967,
+      "cofactor_residue_mod_gap": 34,
+      "target_scale": 47,
+      "target_residue_mod_gap": 149
+    }
+  ],
+  "first_trap_samples": [
+    {
+      "index": 0,
+      "prime": 153633769,
+      "x": 38408494,
+      "cofactor": 3967,
+      "divisor": 186449,
+      "y": 28644862596281,
+      "z": 5900841694833886,
+      "exact_identity": true
+    },
+    {
+      "index": 1,
+      "prime": 35917087564224865892555610450782569,
+      "x": 8979271891056216473138902612695694,
+      "cofactor": 927419117027082882993069883567,
+      "divisor": 43588698500272895500674284527649,
+      "y": 1565579100844898677187141161735563534437400265136810272500567750281,
+      "z": 322509294774049127500551079317526088094104454618182916135116956557886,
+      "exact_identity": true
+    },
+    {
+      "index": 2,
+      "prime": 71834175128449731785111220747931369,
+      "x": 17958543782112432946277805186982894,
+      "cofactor": 1854838234054165765986139763167,
+      "divisor": 87177397000545791001348568868849,
+      "y": 6262316403379594708748564620155451946422132090321574346049014024281,
+      "z": 1290037179096196510002204311752023100962959210606244315286096889001886,
+      "exact_identity": true
+    }
+  ]
+}

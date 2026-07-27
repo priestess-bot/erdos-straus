@@ -1,0 +1,6500 @@
+{
+  "arithmetic": "exact source-denominator identities, integer gcd checks, and finite collision-prime stripping",
+  "scope_note": "A finite verification of a general gcd lemma on the H19 state paths. Pairwise private coprimality alone does not select a descent factor or prove the conjecture.",
+  "input_artifact": "type-ii-multisource-descent-state-h19-20m-results.json",
+  "residual_count": 65,
+  "joint_shift_bound": 19,
+  "all_private_source_parts_pairwise_coprime": true,
+  "all_joint_private_parts_pairwise_coprime": true,
+  "profiles_with_actual_source_collision": 5,
+  "collision_prime_set_histogram": {
+    "empty": 50,
+    "2": 4,
+    "2,3": 5,
+    "2,3,5": 1,
+    "2,3,5,7,11": 2,
+    "2,5": 3
+  },
+  "profiles": [
+    {
+      "prime": 3361,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 2521,
+        "2": 2941
+      },
+      "private_source_parts": {
+        "1": 2521,
+        "2": 2941
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 56401,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 42301,
+        "2": 49351
+      },
+      "private_source_parts": {
+        "1": 42301,
+        "2": 49351
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 66529,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 49897
+      },
+      "private_source_parts": {
+        "1": 49897
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 135601,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 101701,
+        "2": 118651
+      },
+      "private_source_parts": {
+        "1": 101701,
+        "2": 118651
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 176089,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 132067,
+        "2": 154078
+      },
+      "private_source_parts": {
+        "1": 132067,
+        "2": 154078
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 225289,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 168967,
+        "2": 197128
+      },
+      "private_source_parts": {
+        "1": 168967,
+        "2": 197128
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 252001,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "collision_primes": [
+        2,
+        3
+      ],
+      "source_denominators": {
+        "1": 189001,
+        "2": 220501,
+        "3": 231001,
+        "4": 236251,
+        "5": 239401
+      },
+      "private_source_parts": {
+        "1": 189001,
+        "2": 220501,
+        "3": 231001,
+        "4": 236251,
+        "5": 239401
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 1,
+          "right_k": 5,
+          "bound": 4
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 5,
+          "bound": 3
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 5,
+          "bound": 2
+        },
+        {
+          "left_k": 4,
+          "right_k": 5,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 345601,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "collision_primes": [
+        2,
+        3
+      ],
+      "source_denominators": {
+        "1": 259201,
+        "2": 302401,
+        "3": 316801,
+        "4": 324001,
+        "5": 328321
+      },
+      "private_source_parts": {
+        "1": 259201,
+        "2": 302401,
+        "3": 316801,
+        "4": 324001,
+        "5": 328321
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 1,
+          "right_k": 5,
+          "bound": 4
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 5,
+          "bound": 3
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 5,
+          "bound": 2
+        },
+        {
+          "left_k": 4,
+          "right_k": 5,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 558721,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 419041,
+        "2": 488881
+      },
+      "private_source_parts": {
+        "1": 419041,
+        "2": 488881
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 685969,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 514477,
+        "2": 600223
+      },
+      "private_source_parts": {
+        "1": 514477,
+        "2": 600223
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 813121,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 609841
+      },
+      "private_source_parts": {
+        "1": 609841
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 870241,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 652681
+      },
+      "private_source_parts": {
+        "1": 652681
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 990361,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 742771
+      },
+      "private_source_parts": {
+        "1": 742771
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1127281,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 845461
+      },
+      "private_source_parts": {
+        "1": 845461
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1385521,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1039141
+      },
+      "private_source_parts": {
+        "1": 1039141
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1398769,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1049077,
+        "2": 1223923
+      },
+      "private_source_parts": {
+        "1": 1049077,
+        "2": 1223923
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1429201,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1071901
+      },
+      "private_source_parts": {
+        "1": 1071901
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1520401,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1140301
+      },
+      "private_source_parts": {
+        "1": 1140301
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1683049,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1262287
+      },
+      "private_source_parts": {
+        "1": 1262287
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1800121,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1350091,
+        "2": 1575106
+      },
+      "private_source_parts": {
+        "1": 1350091,
+        "2": 1575106
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 1977529,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1483147
+      },
+      "private_source_parts": {
+        "1": 1483147
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 2031121,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1523341
+      },
+      "private_source_parts": {
+        "1": 1523341
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 2365969,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 1774477
+      },
+      "private_source_parts": {
+        "1": 1774477
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 2654401,
+      "scales": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "collision_primes": [
+        2,
+        3
+      ],
+      "source_denominators": {
+        "1": 1990801,
+        "2": 2322601,
+        "3": 2433201,
+        "4": 2488501
+      },
+      "private_source_parts": {
+        "1": 1990801,
+        "2": 2322601,
+        "3": 811067,
+        "4": 2488501
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 2707609,
+      "scales": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "collision_primes": [
+        2,
+        5
+      ],
+      "source_denominators": {
+        "1": 2030707,
+        "2": 2369158,
+        "3": 2481975,
+        "6": 2594792
+      },
+      "private_source_parts": {
+        "1": 2030707,
+        "2": 1184579,
+        "3": 99279,
+        "6": 324349
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 6,
+          "bound": 5
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 6,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": [
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "gcd": 2
+        }
+      ]
+    },
+    {
+      "prime": 3409729,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 2557297,
+        "2": 2983513
+      },
+      "private_source_parts": {
+        "1": 2557297,
+        "2": 2983513
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 3569329,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 2676997,
+        "2": 3123163
+      },
+      "private_source_parts": {
+        "1": 2676997,
+        "2": 3123163
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 3660721,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 2745541,
+        "2": 3203131
+      },
+      "private_source_parts": {
+        "1": 2745541,
+        "2": 3203131
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 4557361,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5
+      ],
+      "source_denominators": {
+        "1": 3418021,
+        "2": 3987691,
+        "3": 4177581,
+        "4": 4272526,
+        "5": 4329493,
+        "6": 4367471
+      },
+      "private_source_parts": {
+        "1": 3418021,
+        "2": 3987691,
+        "3": 1392527,
+        "4": 2136263,
+        "5": 4329493,
+        "6": 4367471
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 1,
+          "right_k": 5,
+          "bound": 4
+        },
+        {
+          "left_k": 1,
+          "right_k": 6,
+          "bound": 5
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 5,
+          "bound": 3
+        },
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 5,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 5,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 5,
+          "right_k": 6,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 4722169,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 3541627
+      },
+      "private_source_parts": {
+        "1": 3541627
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 4965601,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 3724201,
+        "2": 4344901
+      },
+      "private_source_parts": {
+        "1": 3724201,
+        "2": 4344901
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 6344209,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 4758157,
+        "2": 5551183
+      },
+      "private_source_parts": {
+        "1": 4758157,
+        "2": 5551183
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 6868801,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "collision_primes": [
+        2
+      ],
+      "source_denominators": {
+        "1": 5151601,
+        "2": 6010201,
+        "3": 6296401
+      },
+      "private_source_parts": {
+        "1": 5151601,
+        "2": 6010201,
+        "3": 6296401
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 6899281,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 5174461,
+        "2": 6036871
+      },
+      "private_source_parts": {
+        "1": 5174461,
+        "2": 6036871
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 7329169,
+      "scales": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "collision_primes": [
+        2,
+        3
+      ],
+      "source_denominators": {
+        "1": 5496877,
+        "2": 6413023,
+        "3": 6718405,
+        "4": 6871096
+      },
+      "private_source_parts": {
+        "1": 5496877,
+        "2": 6413023,
+        "3": 6718405,
+        "4": 858887
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 7378849,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 5534137
+      },
+      "private_source_parts": {
+        "1": 5534137
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 8066689,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 6050017,
+        "2": 7058353
+      },
+      "private_source_parts": {
+        "1": 6050017,
+        "2": 7058353
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 8113681,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 6085261
+      },
+      "private_source_parts": {
+        "1": 6085261
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 8243041,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 6182281
+      },
+      "private_source_parts": {
+        "1": 6182281
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 8283361,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 6212521,
+        "2": 7247941
+      },
+      "private_source_parts": {
+        "1": 6212521,
+        "2": 7247941
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 8328961,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "source_denominators": {
+        "1": 6246721,
+        "2": 7287841,
+        "3": 7634881,
+        "4": 7808401,
+        "5": 7912513,
+        "6": 7981921,
+        "8": 8068681,
+        "9": 8097601,
+        "10": 8120737,
+        "12": 8155441
+      },
+      "private_source_parts": {
+        "1": 6246721,
+        "2": 662531,
+        "3": 7634881,
+        "4": 7808401,
+        "5": 1130359,
+        "6": 7981921,
+        "8": 8068681,
+        "9": 8097601,
+        "10": 8120737,
+        "12": 1165063
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 1,
+          "right_k": 5,
+          "bound": 4
+        },
+        {
+          "left_k": 1,
+          "right_k": 6,
+          "bound": 5
+        },
+        {
+          "left_k": 1,
+          "right_k": 8,
+          "bound": 7
+        },
+        {
+          "left_k": 1,
+          "right_k": 9,
+          "bound": 8
+        },
+        {
+          "left_k": 1,
+          "right_k": 10,
+          "bound": 9
+        },
+        {
+          "left_k": 1,
+          "right_k": 12,
+          "bound": 11
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 5,
+          "bound": 3
+        },
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "bound": 2
+        },
+        {
+          "left_k": 2,
+          "right_k": 8,
+          "bound": 3
+        },
+        {
+          "left_k": 2,
+          "right_k": 9,
+          "bound": 7
+        },
+        {
+          "left_k": 2,
+          "right_k": 10,
+          "bound": 4
+        },
+        {
+          "left_k": 2,
+          "right_k": 12,
+          "bound": 5
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 5,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 8,
+          "bound": 5
+        },
+        {
+          "left_k": 3,
+          "right_k": 9,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 10,
+          "bound": 7
+        },
+        {
+          "left_k": 3,
+          "right_k": 12,
+          "bound": 3
+        },
+        {
+          "left_k": 4,
+          "right_k": 5,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 8,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 9,
+          "bound": 5
+        },
+        {
+          "left_k": 4,
+          "right_k": 10,
+          "bound": 3
+        },
+        {
+          "left_k": 4,
+          "right_k": 12,
+          "bound": 2
+        },
+        {
+          "left_k": 5,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 5,
+          "right_k": 8,
+          "bound": 3
+        },
+        {
+          "left_k": 5,
+          "right_k": 9,
+          "bound": 4
+        },
+        {
+          "left_k": 5,
+          "right_k": 10,
+          "bound": 1
+        },
+        {
+          "left_k": 5,
+          "right_k": 12,
+          "bound": 7
+        },
+        {
+          "left_k": 6,
+          "right_k": 8,
+          "bound": 1
+        },
+        {
+          "left_k": 6,
+          "right_k": 9,
+          "bound": 1
+        },
+        {
+          "left_k": 6,
+          "right_k": 10,
+          "bound": 2
+        },
+        {
+          "left_k": 6,
+          "right_k": 12,
+          "bound": 1
+        },
+        {
+          "left_k": 8,
+          "right_k": 9,
+          "bound": 1
+        },
+        {
+          "left_k": 8,
+          "right_k": 10,
+          "bound": 1
+        },
+        {
+          "left_k": 8,
+          "right_k": 12,
+          "bound": 1
+        },
+        {
+          "left_k": 9,
+          "right_k": 10,
+          "bound": 1
+        },
+        {
+          "left_k": 9,
+          "right_k": 12,
+          "bound": 1
+        },
+        {
+          "left_k": 10,
+          "right_k": 12,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": [
+        {
+          "left_k": 5,
+          "right_k": 12,
+          "gcd": 7
+        }
+      ]
+    },
+    {
+      "prime": 8955769,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "collision_primes": [
+        2
+      ],
+      "source_denominators": {
+        "1": 6716827,
+        "2": 7836298,
+        "3": 8209455
+      },
+      "private_source_parts": {
+        "1": 6716827,
+        "2": 3918149,
+        "3": 8209455
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 9296809,
+      "scales": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "collision_primes": [
+        2,
+        5
+      ],
+      "source_denominators": {
+        "1": 6972607,
+        "2": 8134708,
+        "3": 8522075,
+        "6": 8909442
+      },
+      "private_source_parts": {
+        "1": 6972607,
+        "2": 2033677,
+        "3": 340883,
+        "6": 4454721
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 6,
+          "bound": 5
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 6,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": [
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "gcd": 2
+        }
+      ]
+    },
+    {
+      "prime": 9504961,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 7128721,
+        "2": 8316841
+      },
+      "private_source_parts": {
+        "1": 7128721,
+        "2": 8316841
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 9744001,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "collision_primes": [
+        2
+      ],
+      "source_denominators": {
+        "1": 7308001,
+        "2": 8526001,
+        "3": 8932001
+      },
+      "private_source_parts": {
+        "1": 7308001,
+        "2": 8526001,
+        "3": 8932001
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 10269169,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 7701877,
+        "2": 8985523
+      },
+      "private_source_parts": {
+        "1": 7701877,
+        "2": 8985523
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 10278361,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 7708771,
+        "2": 8993566
+      },
+      "private_source_parts": {
+        "1": 7708771,
+        "2": 8993566
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 11054401,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 8290801
+      },
+      "private_source_parts": {
+        "1": 8290801
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 11910361,
+      "scales": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "collision_primes": [
+        2,
+        3
+      ],
+      "source_denominators": {
+        "1": 8932771,
+        "2": 10421566,
+        "3": 10917831,
+        "5": 11314843
+      },
+      "private_source_parts": {
+        "1": 8932771,
+        "2": 5210783,
+        "3": 3639277,
+        "5": 11314843
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 5,
+          "bound": 4
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 5,
+          "bound": 3
+        },
+        {
+          "left_k": 3,
+          "right_k": 5,
+          "bound": 2
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 12086761,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 9065071,
+        "2": 10575916
+      },
+      "private_source_parts": {
+        "1": 9065071,
+        "2": 10575916
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 12180169,
+      "scales": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "collision_primes": [
+        2,
+        5
+      ],
+      "source_denominators": {
+        "1": 9135127,
+        "2": 10657648,
+        "3": 11165155,
+        "6": 11672662
+      },
+      "private_source_parts": {
+        "1": 9135127,
+        "2": 666103,
+        "3": 2233031,
+        "6": 5836331
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 6,
+          "bound": 5
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 6,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": [
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "gcd": 2
+        }
+      ]
+    },
+    {
+      "prime": 12321241,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "collision_primes": [
+        2
+      ],
+      "source_denominators": {
+        "1": 9240931,
+        "2": 10781086,
+        "3": 11294471
+      },
+      "private_source_parts": {
+        "1": 9240931,
+        "2": 5390543,
+        "3": 11294471
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 12997441,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 9748081
+      },
+      "private_source_parts": {
+        "1": 9748081
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 13422481,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 10066861,
+        "2": 11744671
+      },
+      "private_source_parts": {
+        "1": 10066861,
+        "2": 11744671
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 13659409,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 10244557
+      },
+      "private_source_parts": {
+        "1": 10244557
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 13903849,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 10427887,
+        "2": 12165868
+      },
+      "private_source_parts": {
+        "1": 10427887,
+        "2": 12165868
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 14351761,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 10763821,
+        "2": 12557791
+      },
+      "private_source_parts": {
+        "1": 10763821,
+        "2": 12557791
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 14847529,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 11135647
+      },
+      "private_source_parts": {
+        "1": 11135647
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 15292369,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 11469277
+      },
+      "private_source_parts": {
+        "1": 11469277
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 17078881,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 12809161
+      },
+      "private_source_parts": {
+        "1": 12809161
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 17809201,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 13356901
+      },
+      "private_source_parts": {
+        "1": 13356901
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 17883889,
+      "scales": [
+        1,
+        2
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 13412917,
+        "2": 15648403
+      },
+      "private_source_parts": {
+        "1": 13412917,
+        "2": 15648403
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": []
+    },
+    {
+      "prime": 18337201,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        12
+      ],
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "source_denominators": {
+        "1": 13752901,
+        "2": 16045051,
+        "3": 16809101,
+        "4": 17191126,
+        "5": 17420341,
+        "6": 17573151,
+        "7": 17682301,
+        "10": 17878771,
+        "12": 17955176
+      },
+      "private_source_parts": {
+        "1": 13752901,
+        "2": 1458641,
+        "3": 16809101,
+        "4": 8595563,
+        "5": 17420341,
+        "6": 5857717,
+        "7": 2526043,
+        "10": 17878771,
+        "12": 2244397
+      },
+      "pair_bounds": [
+        {
+          "left_k": 1,
+          "right_k": 2,
+          "bound": 1
+        },
+        {
+          "left_k": 1,
+          "right_k": 3,
+          "bound": 2
+        },
+        {
+          "left_k": 1,
+          "right_k": 4,
+          "bound": 3
+        },
+        {
+          "left_k": 1,
+          "right_k": 5,
+          "bound": 4
+        },
+        {
+          "left_k": 1,
+          "right_k": 6,
+          "bound": 5
+        },
+        {
+          "left_k": 1,
+          "right_k": 7,
+          "bound": 6
+        },
+        {
+          "left_k": 1,
+          "right_k": 10,
+          "bound": 9
+        },
+        {
+          "left_k": 1,
+          "right_k": 12,
+          "bound": 11
+        },
+        {
+          "left_k": 2,
+          "right_k": 3,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 2,
+          "right_k": 5,
+          "bound": 3
+        },
+        {
+          "left_k": 2,
+          "right_k": 6,
+          "bound": 2
+        },
+        {
+          "left_k": 2,
+          "right_k": 7,
+          "bound": 5
+        },
+        {
+          "left_k": 2,
+          "right_k": 10,
+          "bound": 4
+        },
+        {
+          "left_k": 2,
+          "right_k": 12,
+          "bound": 5
+        },
+        {
+          "left_k": 3,
+          "right_k": 4,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 5,
+          "bound": 2
+        },
+        {
+          "left_k": 3,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 3,
+          "right_k": 7,
+          "bound": 4
+        },
+        {
+          "left_k": 3,
+          "right_k": 10,
+          "bound": 7
+        },
+        {
+          "left_k": 3,
+          "right_k": 12,
+          "bound": 3
+        },
+        {
+          "left_k": 4,
+          "right_k": 5,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 4,
+          "right_k": 7,
+          "bound": 3
+        },
+        {
+          "left_k": 4,
+          "right_k": 10,
+          "bound": 3
+        },
+        {
+          "left_k": 4,
+          "right_k": 12,
+          "bound": 2
+        },
+        {
+          "left_k": 5,
+          "right_k": 6,
+          "bound": 1
+        },
+        {
+          "left_k": 5,
+          "right_k": 7,
+          "bound": 2
+        },
+        {
+          "left_k": 5,
+          "right_k": 10,
+          "bound": 1
+        },
+        {
+          "left_k": 5,
+          "right_k": 12,
+          "bound": 7
+        },
+        {
+          "left_k": 6,
+          "right_k": 7,
+          "bound": 1
+        },
+        {
+          "left_k": 6,
+          "right_k": 10,
+          "bound": 2
+        },
+        {
+          "left_k": 6,
+          "right_k": 12,
+          "bound": 1
+        },
+        {
+          "left_k": 7,
+          "right_k": 10,
+          "bound": 3
+        },
+        {
+          "left_k": 7,
+          "right_k": 12,
+          "bound": 5
+        },
+        {
+          "left_k": 10,
+          "right_k": 12,
+          "bound": 1
+        }
+      ],
+      "actual_collisions": [
+        {
+          "left_k": 4,
+          "right_k": 12,
+          "gcd": 2
+        }
+      ]
+    },
+    {
+      "prime": 19033921,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 14275441
+      },
+      "private_source_parts": {
+        "1": 14275441
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    },
+    {
+      "prime": 19173361,
+      "scales": [
+        1
+      ],
+      "collision_primes": [],
+      "source_denominators": {
+        "1": 14380021
+      },
+      "private_source_parts": {
+        "1": 14380021
+      },
+      "pair_bounds": [],
+      "actual_collisions": []
+    }
+  ],
+  "joint_profiles": [
+    {
+      "prime": 3361,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 56401,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 66529,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 135601,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 176089,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 225289,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 252001,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        101,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        151,
+        167,
+        179,
+        191,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        359,
+        379,
+        419,
+        439,
+        479,
+        503,
+        571,
+        599,
+        607,
+        659,
+        683,
+        719,
+        839,
+        911,
+        1019,
+        1063,
+        1291,
+        1367
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 345601,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        101,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        151,
+        167,
+        179,
+        191,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        359,
+        379,
+        419,
+        439,
+        479,
+        503,
+        571,
+        599,
+        607,
+        659,
+        683,
+        719,
+        839,
+        911,
+        1019,
+        1063,
+        1291,
+        1367
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 558721,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 685969,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 813121,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 870241,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 990361,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1127281,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1385521,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1398769,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1429201,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1520401,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1683049,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1800121,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 1977529,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 2031121,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 2365969,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 2654401,
+      "scales": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        359,
+        419,
+        439,
+        479,
+        503,
+        571,
+        599,
+        659,
+        719,
+        839,
+        1019
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 2707609,
+      "scales": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        197,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        331,
+        337,
+        367,
+        419,
+        439,
+        503,
+        521,
+        571,
+        643,
+        659,
+        827,
+        919,
+        1103,
+        1471,
+        1747
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 3409729,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 3569329,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 3660721,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 4557361,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        101,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        151,
+        167,
+        179,
+        191,
+        197,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        331,
+        337,
+        359,
+        367,
+        379,
+        419,
+        439,
+        479,
+        503,
+        521,
+        571,
+        599,
+        607,
+        643,
+        659,
+        683,
+        719,
+        827,
+        839,
+        911,
+        919,
+        1019,
+        1063,
+        1103,
+        1291,
+        1367,
+        1471,
+        1747
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 4722169,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 4965601,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 6344209,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 6868801,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        263,
+        307,
+        419,
+        439,
+        503,
+        571,
+        659
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 6899281,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 7329169,
+      "scales": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        359,
+        419,
+        439,
+        479,
+        503,
+        571,
+        599,
+        659,
+        719,
+        839,
+        1019
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 7378849,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 8066689,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 8113681,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 8243041,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 8283361,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 8328961,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        101,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        151,
+        157,
+        167,
+        179,
+        191,
+        197,
+        199,
+        223,
+        227,
+        229,
+        233,
+        239,
+        241,
+        251,
+        263,
+        307,
+        311,
+        313,
+        331,
+        337,
+        347,
+        349,
+        359,
+        367,
+        373,
+        379,
+        401,
+        419,
+        439,
+        467,
+        479,
+        499,
+        503,
+        521,
+        563,
+        571,
+        599,
+        607,
+        619,
+        643,
+        653,
+        659,
+        661,
+        683,
+        719,
+        743,
+        751,
+        827,
+        839,
+        877,
+        911,
+        919,
+        991,
+        1019,
+        1063,
+        1091,
+        1103,
+        1259,
+        1291,
+        1367,
+        1399,
+        1471,
+        1487,
+        1559,
+        1747,
+        1871,
+        1879,
+        2027,
+        2099,
+        2239,
+        2339,
+        2659,
+        2819,
+        2963,
+        3571
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 8955769,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        263,
+        307,
+        419,
+        439,
+        503,
+        571,
+        659
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 9296809,
+      "scales": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        197,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        331,
+        337,
+        367,
+        419,
+        439,
+        503,
+        521,
+        571,
+        643,
+        659,
+        827,
+        919,
+        1103,
+        1471,
+        1747
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 9504961,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 9744001,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        263,
+        307,
+        419,
+        439,
+        503,
+        571,
+        659
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 10269169,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 10278361,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 11054401,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 11910361,
+      "scales": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        101,
+        107,
+        113,
+        131,
+        139,
+        149,
+        151,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        263,
+        307,
+        379,
+        419,
+        439,
+        503,
+        571,
+        607,
+        659,
+        683,
+        911,
+        1063,
+        1291,
+        1367
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 12086761,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 12180169,
+      "scales": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        197,
+        223,
+        227,
+        239,
+        251,
+        263,
+        307,
+        331,
+        337,
+        367,
+        419,
+        439,
+        503,
+        521,
+        571,
+        643,
+        659,
+        827,
+        919,
+        1103,
+        1471,
+        1747
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 12321241,
+      "scales": [
+        1,
+        2,
+        3
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        59,
+        67,
+        71,
+        73,
+        79,
+        83,
+        107,
+        113,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        263,
+        307,
+        419,
+        439,
+        503,
+        571,
+        659
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 12997441,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 13422481,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 13659409,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 13903849,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 14351761,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 14847529,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 15292369,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 17078881,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 17809201,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 17883889,
+      "scales": [
+        1,
+        2
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        43,
+        47,
+        59,
+        67,
+        71,
+        83,
+        107,
+        131,
+        139,
+        149,
+        167,
+        179,
+        191,
+        223,
+        227,
+        251,
+        307,
+        419,
+        503
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 18337201,
+      "scales": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10,
+        12
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        37,
+        41,
+        43,
+        47,
+        53,
+        59,
+        61,
+        67,
+        71,
+        73,
+        79,
+        83,
+        89,
+        97,
+        101,
+        107,
+        113,
+        131,
+        137,
+        139,
+        149,
+        151,
+        157,
+        167,
+        179,
+        191,
+        197,
+        199,
+        223,
+        227,
+        239,
+        241,
+        251,
+        263,
+        293,
+        307,
+        311,
+        313,
+        331,
+        337,
+        349,
+        359,
+        367,
+        379,
+        401,
+        419,
+        431,
+        439,
+        467,
+        479,
+        499,
+        503,
+        521,
+        563,
+        571,
+        599,
+        607,
+        643,
+        647,
+        659,
+        683,
+        719,
+        751,
+        827,
+        839,
+        863,
+        877,
+        911,
+        919,
+        971,
+        1019,
+        1063,
+        1091,
+        1103,
+        1187,
+        1291,
+        1367,
+        1471,
+        1511,
+        1559,
+        1619,
+        1747,
+        1871,
+        1879,
+        2027,
+        2339,
+        2819,
+        2963,
+        3571
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 19033921,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    },
+    {
+      "prime": 19173361,
+      "scales": [
+        1
+      ],
+      "shifts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "joint_collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29,
+        31,
+        43,
+        47,
+        59,
+        71,
+        83,
+        107,
+        131,
+        167,
+        179,
+        191,
+        227
+      ],
+      "joint_private_parts_pairwise_coprime": true
+    }
+  ]
+}

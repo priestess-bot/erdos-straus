@@ -31,6 +31,7 @@ FRONTMATTER_RE = re.compile(r"\A---\s*\n(.*?)\n---\s*\n?", re.DOTALL)
 PRIVATE_MARKERS = ("/home/", "sources/files/", "worklog/")
 TEXT_SCAN_SUFFIXES = {".md", ".yaml", ".yml", ".bib"}
 TEXT_SCAN_EXCLUDED = {".git", "index", "public", "sources", "__pycache__"}
+MALFORMED_LATEX_RE = re.compile(r"(?<!\\)qquad")
 
 
 @dataclass(frozen=True)
@@ -162,6 +163,8 @@ def validate_documents(documents: list[Document]) -> list[str]:
 
         if "" in doc.body or re.search(r"turn\d+(?:view|search|academia)\d+", doc.body):
             errors.append(f"{label}: contains private citation marker")
+        if MALFORMED_LATEX_RE.search(doc.body):
+            errors.append(f"{label}: malformed LaTex command qquad")
 
     return errors
 
@@ -177,6 +180,8 @@ def validate_repository_texts() -> list[str]:
         text = path.read_text(encoding="utf-8")
         if "" in text or re.search(r"turn\d+(?:view|search|academia)\d+", text):
             errors.append(f"{relative(path)}: contains private citation marker")
+        if MALFORMED_LATEX_RE.search(text):
+            errors.append(f"{relative(path)}: malformed LaTex command qquad")
     return errors
 
 
@@ -390,14 +395,20 @@ def command_search(args: argparse.Namespace) -> int:
     """
     parameters.append(args.limit)
     try:
-        rows = connection.execute(query, parameters).fetchall()
+        try:
+            rows = connection.execute(query, parameters).fetchall()
+        except sqlite3.OperationalError:
+            # A literal ID may contain FTS syntax such as hyphens. Fall through
+            # to the same substring search used for continuous CJK text.
+            rows = []
         if not rows:
             # unicode61 does not segment continuous CJK text, so retain a literal fallback.
             fallback_conditions = [
                 "(instr(documents.title, ?) > 0 OR instr(documents.authors, ?) > 0 "
-                "OR instr(documents.topics, ?) > 0 OR instr(documents.body, ?) > 0)"
+                "OR instr(documents.topics, ?) > 0 OR instr(documents.body, ?) > 0 "
+                "OR instr(documents.id, ?) > 0)"
             ]
-            fallback_parameters: list[Any] = [args.query] * 4
+            fallback_parameters: list[Any] = [args.query] * 5
             if args.type:
                 fallback_conditions.append("documents.kind = ?")
                 fallback_parameters.append(args.type)
@@ -420,7 +431,7 @@ def command_search(args: argparse.Namespace) -> int:
             fallback_parameters.append(args.limit)
             rows = connection.execute(fallback_query, fallback_parameters).fetchall()
     except sqlite3.OperationalError as exc:
-        print(f"Invalid FTS query: {exc}", file=sys.stderr)
+        print(f"Invalid fallback query: {exc}", file=sys.stderr)
         return 2
     finally:
         connection.close()
@@ -487,7 +498,12 @@ def command_publish(_: argparse.Namespace) -> int:
                 shutil.copy2(source, bibliography_target / name)
         reproduction_target = staging / "reproductions"
         reproduction_target.mkdir(parents=True, exist_ok=True)
-        for name in ("README.md", "esc_reproduce.py", "results.json"):
+        for name in (
+            "README.md",
+            "divisor_residue_structure.py",
+            "esc_reproduce.py",
+            "results.json",
+        ):
             source = ROOT / "reproductions" / name
             if source.exists():
                 shutil.copy2(source, reproduction_target / name)

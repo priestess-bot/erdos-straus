@@ -12,3 +12,16 @@ public/
 sources/files/
 sources/cache/
 sources/text/
+
+# High-scale H19-k23 raw result streams exceed GitHub's 100 MiB regular-Git
+# limit. Their generating scripts and compact derived summaries are tracked.
+reproductions/h19-k23-shared-selector-audit-65536.json
+reproductions/h19-k23-shared-selector-audit-131072.json
+reproductions/h19-k23-shared-selector-audit-262144.json
+reproductions/h19-k23-shared-selector-audit-524288.json
+reproductions/h19-k23-shared-selector-audit-1048576.json
+reproductions/h19-k23-shared-selector-audit-2097152.json
+reproductions/h19-k23-shared-selector-tail-descent-262144.json
+reproductions/h19-k23-shared-selector-tail-descent-524288.json
+reproductions/h19-k23-shared-selector-tail-descent-1048576.json
+reproductions/h19-k23-shared-selector-tail-descent-2097152.json

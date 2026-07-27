@@ -1,0 +1,5363 @@
+{
+  "arithmetic": "exact factorization of every p-1 controlled Type II tail, with exact source/target verification after tail division and direct AC verification for the two remaining points",
+  "scope_note": "A finite H19 closure. It does not establish a universal two-tail deflation selector or a global AC-radius bound.",
+  "prime_limit": 1000000000,
+  "base_shift_bound": 19,
+  "h19_residual_count": 664,
+  "tail_deflation_count": 662,
+  "tail_deflation_missing_primes": [
+    225289,
+    2707609
+  ],
+  "minimal_tail_deflation_gap_histogram": {
+    "3": 225,
+    "7": 179,
+    "11": 125,
+    "15": 33,
+    "19": 28,
+    "23": 34,
+    "27": 8,
+    "31": 2,
+    "35": 4,
+    "39": 4,
+    "43": 2,
+    "47": 2,
+    "55": 2,
+    "59": 2,
+    "63": 1,
+    "71": 3,
+    "119": 2,
+    "135": 1,
+    "151": 1,
+    "167": 1,
+    "171": 1,
+    "183": 1,
+    "263": 1
+  },
+  "maximum_minimal_tail_deflation_gap": 263,
+  "direct_ac_fallback_count": 2,
+  "direct_ac_fallback_records": [
+    {
+      "prime": 225289,
+      "direct_ac_witness": {
+        "radius": 4,
+        "a": 4,
+        "c": 2,
+        "k": 81,
+        "h": 2591,
+        "gap": 87,
+        "divisor": 32
+      }
+    },
+    {
+      "prime": 2707609,
+      "direct_ac_witness": {
+        "radius": 5,
+        "a": 4,
+        "c": 5,
+        "k": 2,
+        "h": 159,
+        "gap": 17031,
+        "divisor": 80
+      }
+    }
+  ],
+  "tail_records": [
+    {
+      "prime": 3361,
+      "tail_deflation_witness": {
+        "source_denominator": 841,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 56401,
+      "tail_deflation_witness": {
+        "source_denominator": 14101,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 66529,
+      "tail_deflation_witness": {
+        "source_denominator": 2080,
+        "gap": 31,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 135601,
+      "tail_deflation_witness": {
+        "source_denominator": 33901,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 176089,
+      "tail_deflation_witness": {
+        "source_denominator": 668,
+        "gap": 263,
+        "divisor": 96
+      }
+    },
+    {
+      "prime": 252001,
+      "tail_deflation_witness": {
+        "source_denominator": 63001,
+        "gap": 3,
+        "divisor": 251
+      }
+    },
+    {
+      "prime": 345601,
+      "tail_deflation_witness": {
+        "source_denominator": 17281,
+        "gap": 19,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 558721,
+      "tail_deflation_witness": {
+        "source_denominator": 46561,
+        "gap": 11,
+        "divisor": 303
+      }
+    },
+    {
+      "prime": 685969,
+      "tail_deflation_witness": {
+        "source_denominator": 85747,
+        "gap": 7,
+        "divisor": 76
+      }
+    },
+    {
+      "prime": 813121,
+      "tail_deflation_witness": {
+        "source_denominator": 40657,
+        "gap": 19,
+        "divisor": 9325
+      }
+    },
+    {
+      "prime": 870241,
+      "tail_deflation_witness": {
+        "source_denominator": 108781,
+        "gap": 7,
+        "divisor": 362
+      }
+    },
+    {
+      "prime": 990361,
+      "tail_deflation_witness": {
+        "source_denominator": 27511,
+        "gap": 35,
+        "divisor": 61
+      }
+    },
+    {
+      "prime": 1127281,
+      "tail_deflation_witness": {
+        "source_denominator": 46971,
+        "gap": 23,
+        "divisor": 108
+      }
+    },
+    {
+      "prime": 1385521,
+      "tail_deflation_witness": {
+        "source_denominator": 69277,
+        "gap": 19,
+        "divisor": 365
+      }
+    },
+    {
+      "prime": 1398769,
+      "tail_deflation_witness": {
+        "source_denominator": 349693,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 1429201,
+      "tail_deflation_witness": {
+        "source_denominator": 89326,
+        "gap": 15,
+        "divisor": 236
+      }
+    },
+    {
+      "prime": 1520401,
+      "tail_deflation_witness": {
+        "source_denominator": 126701,
+        "gap": 11,
+        "divisor": 4369
+      }
+    },
+    {
+      "prime": 1683049,
+      "tail_deflation_witness": {
+        "source_denominator": 9148,
+        "gap": 183,
+        "divisor": 92
+      }
+    },
+    {
+      "prime": 1800121,
+      "tail_deflation_witness": {
+        "source_denominator": 64291,
+        "gap": 27,
+        "divisor": 269
+      }
+    },
+    {
+      "prime": 1977529,
+      "tail_deflation_witness": {
+        "source_denominator": 11772,
+        "gap": 167,
+        "divisor": 63
+      }
+    },
+    {
+      "prime": 2031121,
+      "tail_deflation_witness": {
+        "source_denominator": 169261,
+        "gap": 11,
+        "divisor": 1737
+      }
+    },
+    {
+      "prime": 2365969,
+      "tail_deflation_witness": {
+        "source_denominator": 295747,
+        "gap": 7,
+        "divisor": 356
+      }
+    },
+    {
+      "prime": 2654401,
+      "tail_deflation_witness": {
+        "source_denominator": 110601,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 3409729,
+      "tail_deflation_witness": {
+        "source_denominator": 852433,
+        "gap": 3,
+        "divisor": 191
+      }
+    },
+    {
+      "prime": 3569329,
+      "tail_deflation_witness": {
+        "source_denominator": 892333,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 3660721,
+      "tail_deflation_witness": {
+        "source_denominator": 457591,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 4557361,
+      "tail_deflation_witness": {
+        "source_denominator": 1139341,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 4722169,
+      "tail_deflation_witness": {
+        "source_denominator": 393515,
+        "gap": 11,
+        "divisor": 1119
+      }
+    },
+    {
+      "prime": 4965601,
+      "tail_deflation_witness": {
+        "source_denominator": 413801,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 6344209,
+      "tail_deflation_witness": {
+        "source_denominator": 793027,
+        "gap": 7,
+        "divisor": 916
+      }
+    },
+    {
+      "prime": 6868801,
+      "tail_deflation_witness": {
+        "source_denominator": 858601,
+        "gap": 7,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 6899281,
+      "tail_deflation_witness": {
+        "source_denominator": 574941,
+        "gap": 11,
+        "divisor": 747
+      }
+    },
+    {
+      "prime": 7329169,
+      "tail_deflation_witness": {
+        "source_denominator": 916147,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 7378849,
+      "tail_deflation_witness": {
+        "source_denominator": 1844713,
+        "gap": 3,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 8066689,
+      "tail_deflation_witness": {
+        "source_denominator": 1008337,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 8113681,
+      "tail_deflation_witness": {
+        "source_denominator": 676141,
+        "gap": 11,
+        "divisor": 153
+      }
+    },
+    {
+      "prime": 8243041,
+      "tail_deflation_witness": {
+        "source_denominator": 2060761,
+        "gap": 3,
+        "divisor": 131
+      }
+    },
+    {
+      "prime": 8283361,
+      "tail_deflation_witness": {
+        "source_denominator": 2070841,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 8328961,
+      "tail_deflation_witness": {
+        "source_denominator": 2082241,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 8955769,
+      "tail_deflation_witness": {
+        "source_denominator": 1119472,
+        "gap": 7,
+        "divisor": 62
+      }
+    },
+    {
+      "prime": 9296809,
+      "tail_deflation_witness": {
+        "source_denominator": 1162102,
+        "gap": 7,
+        "divisor": 482
+      }
+    },
+    {
+      "prime": 9504961,
+      "tail_deflation_witness": {
+        "source_denominator": 792081,
+        "gap": 11,
+        "divisor": 153
+      }
+    },
+    {
+      "prime": 9744001,
+      "tail_deflation_witness": {
+        "source_denominator": 2436001,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 10269169,
+      "tail_deflation_witness": {
+        "source_denominator": 1283647,
+        "gap": 7,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 10278361,
+      "tail_deflation_witness": {
+        "source_denominator": 856531,
+        "gap": 11,
+        "divisor": 117
+      }
+    },
+    {
+      "prime": 11054401,
+      "tail_deflation_witness": {
+        "source_denominator": 921201,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 11910361,
+      "tail_deflation_witness": {
+        "source_denominator": 2977591,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 12086761,
+      "tail_deflation_witness": {
+        "source_denominator": 1510846,
+        "gap": 7,
+        "divisor": 1636
+      }
+    },
+    {
+      "prime": 12180169,
+      "tail_deflation_witness": {
+        "source_denominator": 1015015,
+        "gap": 11,
+        "divisor": 129
+      }
+    },
+    {
+      "prime": 12321241,
+      "tail_deflation_witness": {
+        "source_denominator": 616063,
+        "gap": 19,
+        "divisor": 155
+      }
+    },
+    {
+      "prime": 12997441,
+      "tail_deflation_witness": {
+        "source_denominator": 1083121,
+        "gap": 11,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 13422481,
+      "tail_deflation_witness": {
+        "source_denominator": 1118541,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 13659409,
+      "tail_deflation_witness": {
+        "source_denominator": 853714,
+        "gap": 15,
+        "divisor": 134
+      }
+    },
+    {
+      "prime": 13903849,
+      "tail_deflation_witness": {
+        "source_denominator": 193110,
+        "gap": 71,
+        "divisor": 180
+      }
+    },
+    {
+      "prime": 14351761,
+      "tail_deflation_witness": {
+        "source_denominator": 3587941,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 14847529,
+      "tail_deflation_witness": {
+        "source_denominator": 3711883,
+        "gap": 3,
+        "divisor": 449
+      }
+    },
+    {
+      "prime": 15292369,
+      "tail_deflation_witness": {
+        "source_denominator": 637183,
+        "gap": 23,
+        "divisor": 2446
+      }
+    },
+    {
+      "prime": 17078881,
+      "tail_deflation_witness": {
+        "source_denominator": 1423241,
+        "gap": 11,
+        "divisor": 279
+      }
+    },
+    {
+      "prime": 17809201,
+      "tail_deflation_witness": {
+        "source_denominator": 890461,
+        "gap": 19,
+        "divisor": 3575
+      }
+    },
+    {
+      "prime": 17883889,
+      "tail_deflation_witness": {
+        "source_denominator": 4470973,
+        "gap": 3,
+        "divisor": 239
+      }
+    },
+    {
+      "prime": 18337201,
+      "tail_deflation_witness": {
+        "source_denominator": 4584301,
+        "gap": 3,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 19033921,
+      "tail_deflation_witness": {
+        "source_denominator": 793081,
+        "gap": 23,
+        "divisor": 237
+      }
+    },
+    {
+      "prime": 19173361,
+      "tail_deflation_witness": {
+        "source_denominator": 2396671,
+        "gap": 7,
+        "divisor": 188
+      }
+    },
+    {
+      "prime": 20292241,
+      "tail_deflation_witness": {
+        "source_denominator": 2536531,
+        "gap": 7,
+        "divisor": 146
+      }
+    },
+    {
+      "prime": 20368321,
+      "tail_deflation_witness": {
+        "source_denominator": 5092081,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 20958961,
+      "tail_deflation_witness": {
+        "source_denominator": 873291,
+        "gap": 23,
+        "divisor": 873
+      }
+    },
+    {
+      "prime": 21852601,
+      "tail_deflation_witness": {
+        "source_denominator": 5463151,
+        "gap": 3,
+        "divisor": 233
+      }
+    },
+    {
+      "prime": 23841241,
+      "tail_deflation_witness": {
+        "source_denominator": 1986771,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 24053761,
+      "tail_deflation_witness": {
+        "source_denominator": 3006721,
+        "gap": 7,
+        "divisor": 62
+      }
+    },
+    {
+      "prime": 24395281,
+      "tail_deflation_witness": {
+        "source_denominator": 6098821,
+        "gap": 3,
+        "divisor": 191
+      }
+    },
+    {
+      "prime": 24622921,
+      "tail_deflation_witness": {
+        "source_denominator": 6155731,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 24887641,
+      "tail_deflation_witness": {
+        "source_denominator": 1036986,
+        "gap": 23,
+        "divisor": 3448
+      }
+    },
+    {
+      "prime": 25376401,
+      "tail_deflation_witness": {
+        "source_denominator": 6344101,
+        "gap": 3,
+        "divisor": 1259
+      }
+    },
+    {
+      "prime": 25456201,
+      "tail_deflation_witness": {
+        "source_denominator": 3182026,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 26410609,
+      "tail_deflation_witness": {
+        "source_denominator": 3301327,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 26514601,
+      "tail_deflation_witness": {
+        "source_denominator": 2209551,
+        "gap": 11,
+        "divisor": 79
+      }
+    },
+    {
+      "prime": 26722921,
+      "tail_deflation_witness": {
+        "source_denominator": 1336147,
+        "gap": 19,
+        "divisor": 1739761
+      }
+    },
+    {
+      "prime": 26953921,
+      "tail_deflation_witness": {
+        "source_denominator": 2246161,
+        "gap": 11,
+        "divisor": 1063971
+      }
+    },
+    {
+      "prime": 27984049,
+      "tail_deflation_witness": {
+        "source_denominator": 6996013,
+        "gap": 3,
+        "divisor": 1931
+      }
+    },
+    {
+      "prime": 28366801,
+      "tail_deflation_witness": {
+        "source_denominator": 2363901,
+        "gap": 11,
+        "divisor": 459
+      }
+    },
+    {
+      "prime": 28815889,
+      "tail_deflation_witness": {
+        "source_denominator": 1800994,
+        "gap": 15,
+        "divisor": 104
+      }
+    },
+    {
+      "prime": 29060641,
+      "tail_deflation_witness": {
+        "source_denominator": 2421721,
+        "gap": 11,
+        "divisor": 36879
+      }
+    },
+    {
+      "prime": 29116081,
+      "tail_deflation_witness": {
+        "source_denominator": 3639511,
+        "gap": 7,
+        "divisor": 796
+      }
+    },
+    {
+      "prime": 29256049,
+      "tail_deflation_witness": {
+        "source_denominator": 3657007,
+        "gap": 7,
+        "divisor": 2687
+      }
+    },
+    {
+      "prime": 35256601,
+      "tail_deflation_witness": {
+        "source_denominator": 2938051,
+        "gap": 11,
+        "divisor": 213
+      }
+    },
+    {
+      "prime": 35840809,
+      "tail_deflation_witness": {
+        "source_denominator": 8960203,
+        "gap": 3,
+        "divisor": 179
+      }
+    },
+    {
+      "prime": 36498289,
+      "tail_deflation_witness": {
+        "source_denominator": 9124573,
+        "gap": 3,
+        "divisor": 461
+      }
+    },
+    {
+      "prime": 36566401,
+      "tail_deflation_witness": {
+        "source_denominator": 3047201,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 36998641,
+      "tail_deflation_witness": {
+        "source_denominator": 2312416,
+        "gap": 15,
+        "divisor": 1016
+      }
+    },
+    {
+      "prime": 40077241,
+      "tail_deflation_witness": {
+        "source_denominator": 3339771,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 41828161,
+      "tail_deflation_witness": {
+        "source_denominator": 5228521,
+        "gap": 7,
+        "divisor": 118
+      }
+    },
+    {
+      "prime": 42361201,
+      "tail_deflation_witness": {
+        "source_denominator": 10590301,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 43403761,
+      "tail_deflation_witness": {
+        "source_denominator": 3616981,
+        "gap": 11,
+        "divisor": 29091
+      }
+    },
+    {
+      "prime": 45501121,
+      "tail_deflation_witness": {
+        "source_denominator": 3791761,
+        "gap": 11,
+        "divisor": 205209
+      }
+    },
+    {
+      "prime": 46450441,
+      "tail_deflation_witness": {
+        "source_denominator": 11612611,
+        "gap": 3,
+        "divisor": 2111
+      }
+    },
+    {
+      "prime": 46552969,
+      "tail_deflation_witness": {
+        "source_denominator": 5819122,
+        "gap": 7,
+        "divisor": 292
+      }
+    },
+    {
+      "prime": 46834561,
+      "tail_deflation_witness": {
+        "source_denominator": 2341729,
+        "gap": 19,
+        "divisor": 73825
+      }
+    },
+    {
+      "prime": 47729641,
+      "tail_deflation_witness": {
+        "source_denominator": 11932411,
+        "gap": 3,
+        "divisor": 2969
+      }
+    },
+    {
+      "prime": 48605881,
+      "tail_deflation_witness": {
+        "source_denominator": 4050491,
+        "gap": 11,
+        "divisor": 579
+      }
+    },
+    {
+      "prime": 49347169,
+      "tail_deflation_witness": {
+        "source_denominator": 6168397,
+        "gap": 7,
+        "divisor": 524
+      }
+    },
+    {
+      "prime": 51032809,
+      "tail_deflation_witness": {
+        "source_denominator": 12758203,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 52108081,
+      "tail_deflation_witness": {
+        "source_denominator": 2605405,
+        "gap": 19,
+        "divisor": 3175
+      }
+    },
+    {
+      "prime": 52751329,
+      "tail_deflation_witness": {
+        "source_denominator": 6593917,
+        "gap": 7,
+        "divisor": 61
+      }
+    },
+    {
+      "prime": 53148769,
+      "tail_deflation_witness": {
+        "source_denominator": 6643597,
+        "gap": 7,
+        "divisor": 38
+      }
+    },
+    {
+      "prime": 54547249,
+      "tail_deflation_witness": {
+        "source_denominator": 13636813,
+        "gap": 3,
+        "divisor": 263
+      }
+    },
+    {
+      "prime": 55722241,
+      "tail_deflation_witness": {
+        "source_denominator": 3482641,
+        "gap": 15,
+        "divisor": 941
+      }
+    },
+    {
+      "prime": 56380921,
+      "tail_deflation_witness": {
+        "source_denominator": 2819047,
+        "gap": 19,
+        "divisor": 5425
+      }
+    },
+    {
+      "prime": 58084321,
+      "tail_deflation_witness": {
+        "source_denominator": 7260541,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 58372609,
+      "tail_deflation_witness": {
+        "source_denominator": 2432193,
+        "gap": 23,
+        "divisor": 3516
+      }
+    },
+    {
+      "prime": 59364001,
+      "tail_deflation_witness": {
+        "source_denominator": 7420501,
+        "gap": 7,
+        "divisor": 62
+      }
+    },
+    {
+      "prime": 59642521,
+      "tail_deflation_witness": {
+        "source_denominator": 7455316,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 59919721,
+      "tail_deflation_witness": {
+        "source_denominator": 14979931,
+        "gap": 3,
+        "divisor": 251
+      }
+    },
+    {
+      "prime": 59941729,
+      "tail_deflation_witness": {
+        "source_denominator": 14985433,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 60104641,
+      "tail_deflation_witness": {
+        "source_denominator": 15026161,
+        "gap": 3,
+        "divisor": 191
+      }
+    },
+    {
+      "prime": 60631729,
+      "tail_deflation_witness": {
+        "source_denominator": 15157933,
+        "gap": 3,
+        "divisor": 113
+      }
+    },
+    {
+      "prime": 60697081,
+      "tail_deflation_witness": {
+        "source_denominator": 15174271,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 61116169,
+      "tail_deflation_witness": {
+        "source_denominator": 2546508,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 63622441,
+      "tail_deflation_witness": {
+        "source_denominator": 3181123,
+        "gap": 19,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 63817441,
+      "tail_deflation_witness": {
+        "source_denominator": 7977181,
+        "gap": 7,
+        "divisor": 1627
+      }
+    },
+    {
+      "prime": 65659969,
+      "tail_deflation_witness": {
+        "source_denominator": 16414993,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 66945649,
+      "tail_deflation_witness": {
+        "source_denominator": 5578805,
+        "gap": 11,
+        "divisor": 85
+      }
+    },
+    {
+      "prime": 67016161,
+      "tail_deflation_witness": {
+        "source_denominator": 4188511,
+        "gap": 15,
+        "divisor": 296
+      }
+    },
+    {
+      "prime": 67164241,
+      "tail_deflation_witness": {
+        "source_denominator": 2798511,
+        "gap": 23,
+        "divisor": 498
+      }
+    },
+    {
+      "prime": 67942561,
+      "tail_deflation_witness": {
+        "source_denominator": 8492821,
+        "gap": 7,
+        "divisor": 2084
+      }
+    },
+    {
+      "prime": 67967761,
+      "tail_deflation_witness": {
+        "source_denominator": 16991941,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 70005049,
+      "tail_deflation_witness": {
+        "source_denominator": 5833755,
+        "gap": 11,
+        "divisor": 395
+      }
+    },
+    {
+      "prime": 72473041,
+      "tail_deflation_witness": {
+        "source_denominator": 4529566,
+        "gap": 15,
+        "divisor": 356
+      }
+    },
+    {
+      "prime": 76759321,
+      "tail_deflation_witness": {
+        "source_denominator": 19189831,
+        "gap": 3,
+        "divisor": 1283
+      }
+    },
+    {
+      "prime": 77265169,
+      "tail_deflation_witness": {
+        "source_denominator": 19316293,
+        "gap": 3,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 78097321,
+      "tail_deflation_witness": {
+        "source_denominator": 19524331,
+        "gap": 3,
+        "divisor": 263
+      }
+    },
+    {
+      "prime": 78189721,
+      "tail_deflation_witness": {
+        "source_denominator": 6515811,
+        "gap": 11,
+        "divisor": 51
+      }
+    },
+    {
+      "prime": 78306001,
+      "tail_deflation_witness": {
+        "source_denominator": 9788251,
+        "gap": 7,
+        "divisor": 293
+      }
+    },
+    {
+      "prime": 78624841,
+      "tail_deflation_witness": {
+        "source_denominator": 6552071,
+        "gap": 11,
+        "divisor": 61
+      }
+    },
+    {
+      "prime": 79058281,
+      "tail_deflation_witness": {
+        "source_denominator": 9882286,
+        "gap": 7,
+        "divisor": 271
+      }
+    },
+    {
+      "prime": 79107169,
+      "tail_deflation_witness": {
+        "source_denominator": 19776793,
+        "gap": 3,
+        "divisor": 1427
+      }
+    },
+    {
+      "prime": 79119121,
+      "tail_deflation_witness": {
+        "source_denominator": 9889891,
+        "gap": 7,
+        "divisor": 692
+      }
+    },
+    {
+      "prime": 79180369,
+      "tail_deflation_witness": {
+        "source_denominator": 3299183,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 79410241,
+      "tail_deflation_witness": {
+        "source_denominator": 9926281,
+        "gap": 7,
+        "divisor": 5234
+      }
+    },
+    {
+      "prime": 79621441,
+      "tail_deflation_witness": {
+        "source_denominator": 19905361,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 80374561,
+      "tail_deflation_witness": {
+        "source_denominator": 10046821,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 81472609,
+      "tail_deflation_witness": {
+        "source_denominator": 20368153,
+        "gap": 3,
+        "divisor": 491
+      }
+    },
+    {
+      "prime": 81846241,
+      "tail_deflation_witness": {
+        "source_denominator": 20461561,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 81941161,
+      "tail_deflation_witness": {
+        "source_denominator": 20485291,
+        "gap": 3,
+        "divisor": 797
+      }
+    },
+    {
+      "prime": 82502281,
+      "tail_deflation_witness": {
+        "source_denominator": 20625571,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 83581801,
+      "tail_deflation_witness": {
+        "source_denominator": 6965151,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 83869801,
+      "tail_deflation_witness": {
+        "source_denominator": 10483726,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 84212881,
+      "tail_deflation_witness": {
+        "source_denominator": 10526611,
+        "gap": 7,
+        "divisor": 293
+      }
+    },
+    {
+      "prime": 85192969,
+      "tail_deflation_witness": {
+        "source_denominator": 21298243,
+        "gap": 3,
+        "divisor": 107
+      }
+    },
+    {
+      "prime": 86520289,
+      "tail_deflation_witness": {
+        "source_denominator": 21630073,
+        "gap": 3,
+        "divisor": 2579
+      }
+    },
+    {
+      "prime": 87503329,
+      "tail_deflation_witness": {
+        "source_denominator": 21875833,
+        "gap": 3,
+        "divisor": 461
+      }
+    },
+    {
+      "prime": 88834729,
+      "tail_deflation_witness": {
+        "source_denominator": 584440,
+        "gap": 151,
+        "divisor": 6400
+      }
+    },
+    {
+      "prime": 90527089,
+      "tail_deflation_witness": {
+        "source_denominator": 11315887,
+        "gap": 7,
+        "divisor": 38
+      }
+    },
+    {
+      "prime": 91729009,
+      "tail_deflation_witness": {
+        "source_denominator": 3822043,
+        "gap": 23,
+        "divisor": 3756
+      }
+    },
+    {
+      "prime": 92421169,
+      "tail_deflation_witness": {
+        "source_denominator": 11552647,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 92604121,
+      "tail_deflation_witness": {
+        "source_denominator": 7717011,
+        "gap": 11,
+        "divisor": 4671
+      }
+    },
+    {
+      "prime": 93740161,
+      "tail_deflation_witness": {
+        "source_denominator": 23435041,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 95462929,
+      "tail_deflation_witness": {
+        "source_denominator": 5966434,
+        "gap": 15,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 95508169,
+      "tail_deflation_witness": {
+        "source_denominator": 11938522,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 96532921,
+      "tail_deflation_witness": {
+        "source_denominator": 24133231,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 98924281,
+      "tail_deflation_witness": {
+        "source_denominator": 24731071,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 99004921,
+      "tail_deflation_witness": {
+        "source_denominator": 8250411,
+        "gap": 11,
+        "divisor": 351
+      }
+    },
+    {
+      "prime": 99532801,
+      "tail_deflation_witness": {
+        "source_denominator": 8294401,
+        "gap": 11,
+        "divisor": 601
+      }
+    },
+    {
+      "prime": 100314769,
+      "tail_deflation_witness": {
+        "source_denominator": 8359565,
+        "gap": 11,
+        "divisor": 1657
+      }
+    },
+    {
+      "prime": 100592881,
+      "tail_deflation_witness": {
+        "source_denominator": 25148221,
+        "gap": 3,
+        "divisor": 257
+      }
+    },
+    {
+      "prime": 102359401,
+      "tail_deflation_witness": {
+        "source_denominator": 4264976,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 102530401,
+      "tail_deflation_witness": {
+        "source_denominator": 8544201,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 103568089,
+      "tail_deflation_witness": {
+        "source_denominator": 4315338,
+        "gap": 23,
+        "divisor": 2384
+      }
+    },
+    {
+      "prime": 106239961,
+      "tail_deflation_witness": {
+        "source_denominator": 26559991,
+        "gap": 3,
+        "divisor": 419
+      }
+    },
+    {
+      "prime": 107158921,
+      "tail_deflation_witness": {
+        "source_denominator": 13394866,
+        "gap": 7,
+        "divisor": 1004
+      }
+    },
+    {
+      "prime": 107260609,
+      "tail_deflation_witness": {
+        "source_denominator": 13407577,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 109351201,
+      "tail_deflation_witness": {
+        "source_denominator": 13668901,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 110562841,
+      "tail_deflation_witness": {
+        "source_denominator": 4606786,
+        "gap": 23,
+        "divisor": 201
+      }
+    },
+    {
+      "prime": 111051649,
+      "tail_deflation_witness": {
+        "source_denominator": 27762913,
+        "gap": 3,
+        "divisor": 137
+      }
+    },
+    {
+      "prime": 111166441,
+      "tail_deflation_witness": {
+        "source_denominator": 3970231,
+        "gap": 27,
+        "divisor": 833
+      }
+    },
+    {
+      "prime": 111408049,
+      "tail_deflation_witness": {
+        "source_denominator": 6963004,
+        "gap": 15,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 112075681,
+      "tail_deflation_witness": {
+        "source_denominator": 3502366,
+        "gap": 31,
+        "divisor": 112
+      }
+    },
+    {
+      "prime": 113073601,
+      "tail_deflation_witness": {
+        "source_denominator": 28268401,
+        "gap": 3,
+        "divisor": 1913
+      }
+    },
+    {
+      "prime": 113509489,
+      "tail_deflation_witness": {
+        "source_denominator": 14188687,
+        "gap": 7,
+        "divisor": 38
+      }
+    },
+    {
+      "prime": 114121681,
+      "tail_deflation_witness": {
+        "source_denominator": 9510141,
+        "gap": 11,
+        "divisor": 981
+      }
+    },
+    {
+      "prime": 116739361,
+      "tail_deflation_witness": {
+        "source_denominator": 7296211,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 117710401,
+      "tail_deflation_witness": {
+        "source_denominator": 4904601,
+        "gap": 23,
+        "divisor": 871
+      }
+    },
+    {
+      "prime": 118111009,
+      "tail_deflation_witness": {
+        "source_denominator": 14763877,
+        "gap": 7,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 119502601,
+      "tail_deflation_witness": {
+        "source_denominator": 1991711,
+        "gap": 59,
+        "divisor": 23175
+      }
+    },
+    {
+      "prime": 121497601,
+      "tail_deflation_witness": {
+        "source_denominator": 30374401,
+        "gap": 3,
+        "divisor": 449
+      }
+    },
+    {
+      "prime": 121738369,
+      "tail_deflation_witness": {
+        "source_denominator": 15217297,
+        "gap": 7,
+        "divisor": 223
+      }
+    },
+    {
+      "prime": 121978921,
+      "tail_deflation_witness": {
+        "source_denominator": 5082456,
+        "gap": 23,
+        "divisor": 136
+      }
+    },
+    {
+      "prime": 126029521,
+      "tail_deflation_witness": {
+        "source_denominator": 31507381,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 128072641,
+      "tail_deflation_witness": {
+        "source_denominator": 32018161,
+        "gap": 3,
+        "divisor": 233
+      }
+    },
+    {
+      "prime": 131053729,
+      "tail_deflation_witness": {
+        "source_denominator": 32763433,
+        "gap": 3,
+        "divisor": 641
+      }
+    },
+    {
+      "prime": 131358049,
+      "tail_deflation_witness": {
+        "source_denominator": 32839513,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 132285169,
+      "tail_deflation_witness": {
+        "source_denominator": 33071293,
+        "gap": 3,
+        "divisor": 2777
+      }
+    },
+    {
+      "prime": 134632801,
+      "tail_deflation_witness": {
+        "source_denominator": 16829101,
+        "gap": 7,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 136244761,
+      "tail_deflation_witness": {
+        "source_denominator": 3406120,
+        "gap": 39,
+        "divisor": 425
+      }
+    },
+    {
+      "prime": 141326089,
+      "tail_deflation_witness": {
+        "source_denominator": 35331523,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 141662161,
+      "tail_deflation_witness": {
+        "source_denominator": 5902591,
+        "gap": 23,
+        "divisor": 3258
+      }
+    },
+    {
+      "prime": 142182121,
+      "tail_deflation_witness": {
+        "source_denominator": 17772766,
+        "gap": 7,
+        "divisor": 356
+      }
+    },
+    {
+      "prime": 142296841,
+      "tail_deflation_witness": {
+        "source_denominator": 35574211,
+        "gap": 3,
+        "divisor": 1697
+      }
+    },
+    {
+      "prime": 143261281,
+      "tail_deflation_witness": {
+        "source_denominator": 35815321,
+        "gap": 3,
+        "divisor": 167
+      }
+    },
+    {
+      "prime": 143595169,
+      "tail_deflation_witness": {
+        "source_denominator": 8974699,
+        "gap": 15,
+        "divisor": 824
+      }
+    },
+    {
+      "prime": 144186001,
+      "tail_deflation_witness": {
+        "source_denominator": 12015501,
+        "gap": 11,
+        "divisor": 123
+      }
+    },
+    {
+      "prime": 144489361,
+      "tail_deflation_witness": {
+        "source_denominator": 36122341,
+        "gap": 3,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 144694729,
+      "tail_deflation_witness": {
+        "source_denominator": 12057895,
+        "gap": 11,
+        "divisor": 123
+      }
+    },
+    {
+      "prime": 146757601,
+      "tail_deflation_witness": {
+        "source_denominator": 7337881,
+        "gap": 19,
+        "divisor": 2825
+      }
+    },
+    {
+      "prime": 148452481,
+      "tail_deflation_witness": {
+        "source_denominator": 37113121,
+        "gap": 3,
+        "divisor": 2087
+      }
+    },
+    {
+      "prime": 149101681,
+      "tail_deflation_witness": {
+        "source_denominator": 7455085,
+        "gap": 19,
+        "divisor": 979
+      }
+    },
+    {
+      "prime": 149931601,
+      "tail_deflation_witness": {
+        "source_denominator": 18741451,
+        "gap": 7,
+        "divisor": 838
+      }
+    },
+    {
+      "prime": 150390241,
+      "tail_deflation_witness": {
+        "source_denominator": 12532521,
+        "gap": 11,
+        "divisor": 1669
+      }
+    },
+    {
+      "prime": 150524641,
+      "tail_deflation_witness": {
+        "source_denominator": 37631161,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 151984561,
+      "tail_deflation_witness": {
+        "source_denominator": 18998071,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 152332321,
+      "tail_deflation_witness": {
+        "source_denominator": 9520771,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 152455801,
+      "tail_deflation_witness": {
+        "source_denominator": 12704651,
+        "gap": 11,
+        "divisor": 387
+      }
+    },
+    {
+      "prime": 155634361,
+      "tail_deflation_witness": {
+        "source_denominator": 38908591,
+        "gap": 3,
+        "divisor": 5441
+      }
+    },
+    {
+      "prime": 155796001,
+      "tail_deflation_witness": {
+        "source_denominator": 38949001,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 155870089,
+      "tail_deflation_witness": {
+        "source_denominator": 38967523,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 155937601,
+      "tail_deflation_witness": {
+        "source_denominator": 9746101,
+        "gap": 15,
+        "divisor": 7016
+      }
+    },
+    {
+      "prime": 156809041,
+      "tail_deflation_witness": {
+        "source_denominator": 13067421,
+        "gap": 11,
+        "divisor": 1539
+      }
+    },
+    {
+      "prime": 157523881,
+      "tail_deflation_witness": {
+        "source_denominator": 39380971,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 158216809,
+      "tail_deflation_witness": {
+        "source_denominator": 13184735,
+        "gap": 11,
+        "divisor": 1091
+      }
+    },
+    {
+      "prime": 158417449,
+      "tail_deflation_witness": {
+        "source_denominator": 39604363,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 159918529,
+      "tail_deflation_witness": {
+        "source_denominator": 39979633,
+        "gap": 3,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 160287649,
+      "tail_deflation_witness": {
+        "source_denominator": 13357305,
+        "gap": 11,
+        "divisor": 117
+      }
+    },
+    {
+      "prime": 161581561,
+      "tail_deflation_witness": {
+        "source_denominator": 40395391,
+        "gap": 3,
+        "divisor": 3863
+      }
+    },
+    {
+      "prime": 164774569,
+      "tail_deflation_witness": {
+        "source_denominator": 41193643,
+        "gap": 3,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 165429721,
+      "tail_deflation_witness": {
+        "source_denominator": 13785811,
+        "gap": 11,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 165479161,
+      "tail_deflation_witness": {
+        "source_denominator": 5909971,
+        "gap": 27,
+        "divisor": 413
+      }
+    },
+    {
+      "prime": 165882649,
+      "tail_deflation_witness": {
+        "source_denominator": 964435,
+        "gap": 171,
+        "divisor": 215
+      }
+    },
+    {
+      "prime": 168058081,
+      "tail_deflation_witness": {
+        "source_denominator": 21007261,
+        "gap": 7,
+        "divisor": 94
+      }
+    },
+    {
+      "prime": 168537601,
+      "tail_deflation_witness": {
+        "source_denominator": 10533601,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 169588609,
+      "tail_deflation_witness": {
+        "source_denominator": 42397153,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 172032001,
+      "tail_deflation_witness": {
+        "source_denominator": 21504001,
+        "gap": 7,
+        "divisor": 4226
+      }
+    },
+    {
+      "prime": 173952601,
+      "tail_deflation_witness": {
+        "source_denominator": 21744076,
+        "gap": 7,
+        "divisor": 818
+      }
+    },
+    {
+      "prime": 174229441,
+      "tail_deflation_witness": {
+        "source_denominator": 43557361,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 176719321,
+      "tail_deflation_witness": {
+        "source_denominator": 44179831,
+        "gap": 3,
+        "divisor": 4073
+      }
+    },
+    {
+      "prime": 176727601,
+      "tail_deflation_witness": {
+        "source_denominator": 11045476,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 178130761,
+      "tail_deflation_witness": {
+        "source_denominator": 44532691,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 178400041,
+      "tail_deflation_witness": {
+        "source_denominator": 14866671,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 178618441,
+      "tail_deflation_witness": {
+        "source_denominator": 6379231,
+        "gap": 27,
+        "divisor": 8189
+      }
+    },
+    {
+      "prime": 180254761,
+      "tail_deflation_witness": {
+        "source_denominator": 15021231,
+        "gap": 11,
+        "divisor": 293
+      }
+    },
+    {
+      "prime": 181370401,
+      "tail_deflation_witness": {
+        "source_denominator": 15114201,
+        "gap": 11,
+        "divisor": 79
+      }
+    },
+    {
+      "prime": 183331201,
+      "tail_deflation_witness": {
+        "source_denominator": 45832801,
+        "gap": 3,
+        "divisor": 347
+      }
+    },
+    {
+      "prime": 183950881,
+      "tail_deflation_witness": {
+        "source_denominator": 11496931,
+        "gap": 15,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 185504281,
+      "tail_deflation_witness": {
+        "source_denominator": 15458691,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 185875561,
+      "tail_deflation_witness": {
+        "source_denominator": 9293779,
+        "gap": 19,
+        "divisor": 773
+      }
+    },
+    {
+      "prime": 186926881,
+      "tail_deflation_witness": {
+        "source_denominator": 11682931,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 188438209,
+      "tail_deflation_witness": {
+        "source_denominator": 47109553,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 189404161,
+      "tail_deflation_witness": {
+        "source_denominator": 11837761,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 189813121,
+      "tail_deflation_witness": {
+        "source_denominator": 47453281,
+        "gap": 3,
+        "divisor": 719
+      }
+    },
+    {
+      "prime": 192369241,
+      "tail_deflation_witness": {
+        "source_denominator": 5343591,
+        "gap": 35,
+        "divisor": 7551
+      }
+    },
+    {
+      "prime": 192876721,
+      "tail_deflation_witness": {
+        "source_denominator": 24109591,
+        "gap": 7,
+        "divisor": 332
+      }
+    },
+    {
+      "prime": 194714521,
+      "tail_deflation_witness": {
+        "source_denominator": 16226211,
+        "gap": 11,
+        "divisor": 459
+      }
+    },
+    {
+      "prime": 197052241,
+      "tail_deflation_witness": {
+        "source_denominator": 24631531,
+        "gap": 7,
+        "divisor": 614
+      }
+    },
+    {
+      "prime": 198439081,
+      "tail_deflation_witness": {
+        "source_denominator": 24804886,
+        "gap": 7,
+        "divisor": 1223
+      }
+    },
+    {
+      "prime": 199211401,
+      "tail_deflation_witness": {
+        "source_denominator": 9960571,
+        "gap": 19,
+        "divisor": 4201
+      }
+    },
+    {
+      "prime": 201866569,
+      "tail_deflation_witness": {
+        "source_denominator": 1484314,
+        "gap": 135,
+        "divisor": 104
+      }
+    },
+    {
+      "prime": 203519761,
+      "tail_deflation_witness": {
+        "source_denominator": 10175989,
+        "gap": 19,
+        "divisor": 450265
+      }
+    },
+    {
+      "prime": 203711281,
+      "tail_deflation_witness": {
+        "source_denominator": 25463911,
+        "gap": 7,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 205462681,
+      "tail_deflation_witness": {
+        "source_denominator": 51365671,
+        "gap": 3,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 208095889,
+      "tail_deflation_witness": {
+        "source_denominator": 26011987,
+        "gap": 7,
+        "divisor": 1223
+      }
+    },
+    {
+      "prime": 208694641,
+      "tail_deflation_witness": {
+        "source_denominator": 17391221,
+        "gap": 11,
+        "divisor": 129
+      }
+    },
+    {
+      "prime": 208824001,
+      "tail_deflation_witness": {
+        "source_denominator": 26103001,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 210339361,
+      "tail_deflation_witness": {
+        "source_denominator": 52584841,
+        "gap": 3,
+        "divisor": 131
+      }
+    },
+    {
+      "prime": 210612361,
+      "tail_deflation_witness": {
+        "source_denominator": 26326546,
+        "gap": 7,
+        "divisor": 131
+      }
+    },
+    {
+      "prime": 211984369,
+      "tail_deflation_witness": {
+        "source_denominator": 52996093,
+        "gap": 3,
+        "divisor": 383
+      }
+    },
+    {
+      "prime": 212220121,
+      "tail_deflation_witness": {
+        "source_denominator": 53055031,
+        "gap": 3,
+        "divisor": 137
+      }
+    },
+    {
+      "prime": 212558809,
+      "tail_deflation_witness": {
+        "source_denominator": 26569852,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 215080009,
+      "tail_deflation_witness": {
+        "source_denominator": 26885002,
+        "gap": 7,
+        "divisor": 118
+      }
+    },
+    {
+      "prime": 215665129,
+      "tail_deflation_witness": {
+        "source_denominator": 26958142,
+        "gap": 7,
+        "divisor": 334
+      }
+    },
+    {
+      "prime": 215750929,
+      "tail_deflation_witness": {
+        "source_denominator": 17979245,
+        "gap": 11,
+        "divisor": 2195
+      }
+    },
+    {
+      "prime": 215803681,
+      "tail_deflation_witness": {
+        "source_denominator": 17983641,
+        "gap": 11,
+        "divisor": 117
+      }
+    },
+    {
+      "prime": 217299601,
+      "tail_deflation_witness": {
+        "source_denominator": 18108301,
+        "gap": 11,
+        "divisor": 423
+      }
+    },
+    {
+      "prime": 218302561,
+      "tail_deflation_witness": {
+        "source_denominator": 54575641,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 221148601,
+      "tail_deflation_witness": {
+        "source_denominator": 18429051,
+        "gap": 11,
+        "divisor": 717
+      }
+    },
+    {
+      "prime": 221364529,
+      "tail_deflation_witness": {
+        "source_denominator": 55341133,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 221392609,
+      "tail_deflation_witness": {
+        "source_denominator": 55348153,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 222320569,
+      "tail_deflation_witness": {
+        "source_denominator": 27790072,
+        "gap": 7,
+        "divisor": 178
+      }
+    },
+    {
+      "prime": 226338961,
+      "tail_deflation_witness": {
+        "source_denominator": 18861581,
+        "gap": 11,
+        "divisor": 27087
+      }
+    },
+    {
+      "prime": 226842001,
+      "tail_deflation_witness": {
+        "source_denominator": 28355251,
+        "gap": 7,
+        "divisor": 908
+      }
+    },
+    {
+      "prime": 227018089,
+      "tail_deflation_witness": {
+        "source_denominator": 3153030,
+        "gap": 71,
+        "divisor": 20
+      }
+    },
+    {
+      "prime": 231641281,
+      "tail_deflation_witness": {
+        "source_denominator": 28955161,
+        "gap": 7,
+        "divisor": 21524
+      }
+    },
+    {
+      "prime": 232838929,
+      "tail_deflation_witness": {
+        "source_denominator": 58209733,
+        "gap": 3,
+        "divisor": 191
+      }
+    },
+    {
+      "prime": 232859089,
+      "tail_deflation_witness": {
+        "source_denominator": 14553694,
+        "gap": 15,
+        "divisor": 344
+      }
+    },
+    {
+      "prime": 235435201,
+      "tail_deflation_witness": {
+        "source_denominator": 5350801,
+        "gap": 43,
+        "divisor": 2771
+      }
+    },
+    {
+      "prime": 237354121,
+      "tail_deflation_witness": {
+        "source_denominator": 19779511,
+        "gap": 11,
+        "divisor": 1803
+      }
+    },
+    {
+      "prime": 240766681,
+      "tail_deflation_witness": {
+        "source_denominator": 20063891,
+        "gap": 11,
+        "divisor": 107
+      }
+    },
+    {
+      "prime": 243145681,
+      "tail_deflation_witness": {
+        "source_denominator": 12157285,
+        "gap": 19,
+        "divisor": 1225
+      }
+    },
+    {
+      "prime": 243962041,
+      "tail_deflation_witness": {
+        "source_denominator": 20330171,
+        "gap": 11,
+        "divisor": 9630081
+      }
+    },
+    {
+      "prime": 244590721,
+      "tail_deflation_witness": {
+        "source_denominator": 20382561,
+        "gap": 11,
+        "divisor": 2417
+      }
+    },
+    {
+      "prime": 244952569,
+      "tail_deflation_witness": {
+        "source_denominator": 61238143,
+        "gap": 3,
+        "divisor": 4967
+      }
+    },
+    {
+      "prime": 245385529,
+      "tail_deflation_witness": {
+        "source_denominator": 61346383,
+        "gap": 3,
+        "divisor": 131
+      }
+    },
+    {
+      "prime": 246118321,
+      "tail_deflation_witness": {
+        "source_denominator": 20509861,
+        "gap": 11,
+        "divisor": 280957
+      }
+    },
+    {
+      "prime": 246275761,
+      "tail_deflation_witness": {
+        "source_denominator": 20522981,
+        "gap": 11,
+        "divisor": 2523
+      }
+    },
+    {
+      "prime": 248894881,
+      "tail_deflation_witness": {
+        "source_denominator": 20741241,
+        "gap": 11,
+        "divisor": 153
+      }
+    },
+    {
+      "prime": 248995321,
+      "tail_deflation_witness": {
+        "source_denominator": 62248831,
+        "gap": 3,
+        "divisor": 3299
+      }
+    },
+    {
+      "prime": 250982449,
+      "tail_deflation_witness": {
+        "source_denominator": 62745613,
+        "gap": 3,
+        "divisor": 2237
+      }
+    },
+    {
+      "prime": 255844681,
+      "tail_deflation_witness": {
+        "source_denominator": 31980586,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 256429441,
+      "tail_deflation_witness": {
+        "source_denominator": 32053681,
+        "gap": 7,
+        "divisor": 1942
+      }
+    },
+    {
+      "prime": 257149489,
+      "tail_deflation_witness": {
+        "source_denominator": 32143687,
+        "gap": 7,
+        "divisor": 38
+      }
+    },
+    {
+      "prime": 257616241,
+      "tail_deflation_witness": {
+        "source_denominator": 32202031,
+        "gap": 7,
+        "divisor": 6746
+      }
+    },
+    {
+      "prime": 257706289,
+      "tail_deflation_witness": {
+        "source_denominator": 16106644,
+        "gap": 15,
+        "divisor": 269
+      }
+    },
+    {
+      "prime": 258662881,
+      "tail_deflation_witness": {
+        "source_denominator": 32332861,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 260353129,
+      "tail_deflation_witness": {
+        "source_denominator": 21696095,
+        "gap": 11,
+        "divisor": 2895
+      }
+    },
+    {
+      "prime": 260681521,
+      "tail_deflation_witness": {
+        "source_denominator": 21723461,
+        "gap": 11,
+        "divisor": 107
+      }
+    },
+    {
+      "prime": 261140881,
+      "tail_deflation_witness": {
+        "source_denominator": 65285221,
+        "gap": 3,
+        "divisor": 2819
+      }
+    },
+    {
+      "prime": 261532441,
+      "tail_deflation_witness": {
+        "source_denominator": 10897186,
+        "gap": 23,
+        "divisor": 6114
+      }
+    },
+    {
+      "prime": 262649689,
+      "tail_deflation_witness": {
+        "source_denominator": 65662423,
+        "gap": 3,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 262657441,
+      "tail_deflation_witness": {
+        "source_denominator": 65664361,
+        "gap": 3,
+        "divisor": 251
+      }
+    },
+    {
+      "prime": 264050161,
+      "tail_deflation_witness": {
+        "source_denominator": 33006271,
+        "gap": 7,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 264164041,
+      "tail_deflation_witness": {
+        "source_denominator": 66041011,
+        "gap": 3,
+        "divisor": 1319
+      }
+    },
+    {
+      "prime": 264468241,
+      "tail_deflation_witness": {
+        "source_denominator": 33058531,
+        "gap": 7,
+        "divisor": 94
+      }
+    },
+    {
+      "prime": 266970001,
+      "tail_deflation_witness": {
+        "source_denominator": 6674251,
+        "gap": 39,
+        "divisor": 1700
+      }
+    },
+    {
+      "prime": 267018481,
+      "tail_deflation_witness": {
+        "source_denominator": 22251541,
+        "gap": 11,
+        "divisor": 17797
+      }
+    },
+    {
+      "prime": 269719921,
+      "tail_deflation_witness": {
+        "source_denominator": 33714991,
+        "gap": 7,
+        "divisor": 6338
+      }
+    },
+    {
+      "prime": 271064641,
+      "tail_deflation_witness": {
+        "source_denominator": 67766161,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 274051009,
+      "tail_deflation_witness": {
+        "source_denominator": 34256377,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 275146369,
+      "tail_deflation_witness": {
+        "source_denominator": 22928865,
+        "gap": 11,
+        "divisor": 2235
+      }
+    },
+    {
+      "prime": 276433441,
+      "tail_deflation_witness": {
+        "source_denominator": 34554181,
+        "gap": 7,
+        "divisor": 62
+      }
+    },
+    {
+      "prime": 276833041,
+      "tail_deflation_witness": {
+        "source_denominator": 11534711,
+        "gap": 23,
+        "divisor": 1314081
+      }
+    },
+    {
+      "prime": 281164321,
+      "tail_deflation_witness": {
+        "source_denominator": 14058217,
+        "gap": 19,
+        "divisor": 622045
+      }
+    },
+    {
+      "prime": 282303841,
+      "tail_deflation_witness": {
+        "source_denominator": 70575961,
+        "gap": 3,
+        "divisor": 137
+      }
+    },
+    {
+      "prime": 282781489,
+      "tail_deflation_witness": {
+        "source_denominator": 5891282,
+        "gap": 47,
+        "divisor": 136
+      }
+    },
+    {
+      "prime": 283163161,
+      "tail_deflation_witness": {
+        "source_denominator": 35395396,
+        "gap": 7,
+        "divisor": 3134
+      }
+    },
+    {
+      "prime": 285473161,
+      "tail_deflation_witness": {
+        "source_denominator": 71368291,
+        "gap": 3,
+        "divisor": 1913
+      }
+    },
+    {
+      "prime": 287327881,
+      "tail_deflation_witness": {
+        "source_denominator": 71831971,
+        "gap": 3,
+        "divisor": 977
+      }
+    },
+    {
+      "prime": 292044481,
+      "tail_deflation_witness": {
+        "source_denominator": 18252781,
+        "gap": 15,
+        "divisor": 776
+      }
+    },
+    {
+      "prime": 293727121,
+      "tail_deflation_witness": {
+        "source_denominator": 24477261,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 298446241,
+      "tail_deflation_witness": {
+        "source_denominator": 74611561,
+        "gap": 3,
+        "divisor": 1223
+      }
+    },
+    {
+      "prime": 304844401,
+      "tail_deflation_witness": {
+        "source_denominator": 76211101,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 306410281,
+      "tail_deflation_witness": {
+        "source_denominator": 25534191,
+        "gap": 11,
+        "divisor": 723
+      }
+    },
+    {
+      "prime": 307343689,
+      "tail_deflation_witness": {
+        "source_denominator": 38417962,
+        "gap": 7,
+        "divisor": 38
+      }
+    },
+    {
+      "prime": 309048601,
+      "tail_deflation_witness": {
+        "source_denominator": 38631076,
+        "gap": 7,
+        "divisor": 236
+      }
+    },
+    {
+      "prime": 312081001,
+      "tail_deflation_witness": {
+        "source_denominator": 39010126,
+        "gap": 7,
+        "divisor": 6172
+      }
+    },
+    {
+      "prime": 318865009,
+      "tail_deflation_witness": {
+        "source_denominator": 39858127,
+        "gap": 7,
+        "divisor": 439
+      }
+    },
+    {
+      "prime": 320472289,
+      "tail_deflation_witness": {
+        "source_denominator": 80118073,
+        "gap": 3,
+        "divisor": 179
+      }
+    },
+    {
+      "prime": 321700369,
+      "tail_deflation_witness": {
+        "source_denominator": 6702092,
+        "gap": 47,
+        "divisor": 25548
+      }
+    },
+    {
+      "prime": 321737641,
+      "tail_deflation_witness": {
+        "source_denominator": 40217206,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 322258561,
+      "tail_deflation_witness": {
+        "source_denominator": 80564641,
+        "gap": 3,
+        "divisor": 167
+      }
+    },
+    {
+      "prime": 323753329,
+      "tail_deflation_witness": {
+        "source_denominator": 80938333,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 324028609,
+      "tail_deflation_witness": {
+        "source_denominator": 40503577,
+        "gap": 7,
+        "divisor": 31
+      }
+    },
+    {
+      "prime": 325045249,
+      "tail_deflation_witness": {
+        "source_denominator": 81261313,
+        "gap": 3,
+        "divisor": 233
+      }
+    },
+    {
+      "prime": 325243921,
+      "tail_deflation_witness": {
+        "source_denominator": 27103661,
+        "gap": 11,
+        "divisor": 841
+      }
+    },
+    {
+      "prime": 325493281,
+      "tail_deflation_witness": {
+        "source_denominator": 81373321,
+        "gap": 3,
+        "divisor": 509
+      }
+    },
+    {
+      "prime": 327730321,
+      "tail_deflation_witness": {
+        "source_denominator": 13655431,
+        "gap": 23,
+        "divisor": 5121
+      }
+    },
+    {
+      "prime": 327827641,
+      "tail_deflation_witness": {
+        "source_denominator": 13659486,
+        "gap": 23,
+        "divisor": 732
+      }
+    },
+    {
+      "prime": 330605881,
+      "tail_deflation_witness": {
+        "source_denominator": 82651471,
+        "gap": 3,
+        "divisor": 449
+      }
+    },
+    {
+      "prime": 330843241,
+      "tail_deflation_witness": {
+        "source_denominator": 82710811,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 331878121,
+      "tail_deflation_witness": {
+        "source_denominator": 41484766,
+        "gap": 7,
+        "divisor": 194
+      }
+    },
+    {
+      "prime": 334152361,
+      "tail_deflation_witness": {
+        "source_denominator": 2784604,
+        "gap": 119,
+        "divisor": 61760
+      }
+    },
+    {
+      "prime": 338195881,
+      "tail_deflation_witness": {
+        "source_denominator": 84548971,
+        "gap": 3,
+        "divisor": 1181
+      }
+    },
+    {
+      "prime": 338549521,
+      "tail_deflation_witness": {
+        "source_denominator": 21159346,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 340052161,
+      "tail_deflation_witness": {
+        "source_denominator": 85013041,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 341987809,
+      "tail_deflation_witness": {
+        "source_denominator": 85496953,
+        "gap": 3,
+        "divisor": 353
+      }
+    },
+    {
+      "prime": 346479169,
+      "tail_deflation_witness": {
+        "source_denominator": 43309897,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 347518081,
+      "tail_deflation_witness": {
+        "source_denominator": 43439761,
+        "gap": 7,
+        "divisor": 1174
+      }
+    },
+    {
+      "prime": 347699641,
+      "tail_deflation_witness": {
+        "source_denominator": 86924911,
+        "gap": 3,
+        "divisor": 113
+      }
+    },
+    {
+      "prime": 349036081,
+      "tail_deflation_witness": {
+        "source_denominator": 21814756,
+        "gap": 15,
+        "divisor": 296
+      }
+    },
+    {
+      "prime": 353509921,
+      "tail_deflation_witness": {
+        "source_denominator": 88377481,
+        "gap": 3,
+        "divisor": 3833
+      }
+    },
+    {
+      "prime": 356744161,
+      "tail_deflation_witness": {
+        "source_denominator": 89186041,
+        "gap": 3,
+        "divisor": 113
+      }
+    },
+    {
+      "prime": 356911129,
+      "tail_deflation_witness": {
+        "source_denominator": 44613892,
+        "gap": 7,
+        "divisor": 2602
+      }
+    },
+    {
+      "prime": 358078249,
+      "tail_deflation_witness": {
+        "source_denominator": 44759782,
+        "gap": 7,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 358424089,
+      "tail_deflation_witness": {
+        "source_denominator": 8146003,
+        "gap": 43,
+        "divisor": 31939
+      }
+    },
+    {
+      "prime": 359438689,
+      "tail_deflation_witness": {
+        "source_denominator": 89859673,
+        "gap": 3,
+        "divisor": 317
+      }
+    },
+    {
+      "prime": 362665921,
+      "tail_deflation_witness": {
+        "source_denominator": 45333241,
+        "gap": 7,
+        "divisor": 388
+      }
+    },
+    {
+      "prime": 367015489,
+      "tail_deflation_witness": {
+        "source_denominator": 5734618,
+        "gap": 63,
+        "divisor": 1832
+      }
+    },
+    {
+      "prime": 367456321,
+      "tail_deflation_witness": {
+        "source_denominator": 45932041,
+        "gap": 7,
+        "divisor": 383
+      }
+    },
+    {
+      "prime": 371198881,
+      "tail_deflation_witness": {
+        "source_denominator": 92799721,
+        "gap": 3,
+        "divisor": 659
+      }
+    },
+    {
+      "prime": 371217841,
+      "tail_deflation_witness": {
+        "source_denominator": 92804461,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 372271201,
+      "tail_deflation_witness": {
+        "source_denominator": 46533901,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 374343841,
+      "tail_deflation_witness": {
+        "source_denominator": 46792981,
+        "gap": 7,
+        "divisor": 62
+      }
+    },
+    {
+      "prime": 375437329,
+      "tail_deflation_witness": {
+        "source_denominator": 46929667,
+        "gap": 7,
+        "divisor": 194
+      }
+    },
+    {
+      "prime": 376706929,
+      "tail_deflation_witness": {
+        "source_denominator": 94176733,
+        "gap": 3,
+        "divisor": 179
+      }
+    },
+    {
+      "prime": 377526601,
+      "tail_deflation_witness": {
+        "source_denominator": 94381651,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 378685609,
+      "tail_deflation_witness": {
+        "source_denominator": 94671403,
+        "gap": 3,
+        "divisor": 3299
+      }
+    },
+    {
+      "prime": 381676849,
+      "tail_deflation_witness": {
+        "source_denominator": 47709607,
+        "gap": 7,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 382619161,
+      "tail_deflation_witness": {
+        "source_denominator": 13664971,
+        "gap": 27,
+        "divisor": 224903
+      }
+    },
+    {
+      "prime": 385105081,
+      "tail_deflation_witness": {
+        "source_denominator": 32092091,
+        "gap": 11,
+        "divisor": 237
+      }
+    },
+    {
+      "prime": 389208961,
+      "tail_deflation_witness": {
+        "source_denominator": 48651121,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 391132561,
+      "tail_deflation_witness": {
+        "source_denominator": 97783141,
+        "gap": 3,
+        "divisor": 491
+      }
+    },
+    {
+      "prime": 397285081,
+      "tail_deflation_witness": {
+        "source_denominator": 99321271,
+        "gap": 3,
+        "divisor": 311
+      }
+    },
+    {
+      "prime": 398757241,
+      "tail_deflation_witness": {
+        "source_denominator": 6645955,
+        "gap": 59,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 399299209,
+      "tail_deflation_witness": {
+        "source_denominator": 99824803,
+        "gap": 3,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 401436121,
+      "tail_deflation_witness": {
+        "source_denominator": 33453011,
+        "gap": 11,
+        "divisor": 2333931
+      }
+    },
+    {
+      "prime": 401669041,
+      "tail_deflation_witness": {
+        "source_denominator": 100417261,
+        "gap": 3,
+        "divisor": 857
+      }
+    },
+    {
+      "prime": 403706689,
+      "tail_deflation_witness": {
+        "source_denominator": 50463337,
+        "gap": 7,
+        "divisor": 404
+      }
+    },
+    {
+      "prime": 406067281,
+      "tail_deflation_witness": {
+        "source_denominator": 33838941,
+        "gap": 11,
+        "divisor": 109
+      }
+    },
+    {
+      "prime": 407311969,
+      "tail_deflation_witness": {
+        "source_denominator": 50913997,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 408255961,
+      "tail_deflation_witness": {
+        "source_denominator": 102063991,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 411116161,
+      "tail_deflation_witness": {
+        "source_denominator": 51389521,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 413647921,
+      "tail_deflation_witness": {
+        "source_denominator": 103411981,
+        "gap": 3,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 414338929,
+      "tail_deflation_witness": {
+        "source_denominator": 103584733,
+        "gap": 3,
+        "divisor": 557
+      }
+    },
+    {
+      "prime": 415171969,
+      "tail_deflation_witness": {
+        "source_denominator": 103792993,
+        "gap": 3,
+        "divisor": 1013
+      }
+    },
+    {
+      "prime": 419917801,
+      "tail_deflation_witness": {
+        "source_denominator": 34993151,
+        "gap": 11,
+        "divisor": 147789
+      }
+    },
+    {
+      "prime": 420682081,
+      "tail_deflation_witness": {
+        "source_denominator": 105170521,
+        "gap": 3,
+        "divisor": 191
+      }
+    },
+    {
+      "prime": 421370401,
+      "tail_deflation_witness": {
+        "source_denominator": 52671301,
+        "gap": 7,
+        "divisor": 524
+      }
+    },
+    {
+      "prime": 422451121,
+      "tail_deflation_witness": {
+        "source_denominator": 105612781,
+        "gap": 3,
+        "divisor": 2027
+      }
+    },
+    {
+      "prime": 424753561,
+      "tail_deflation_witness": {
+        "source_denominator": 106188391,
+        "gap": 3,
+        "divisor": 719
+      }
+    },
+    {
+      "prime": 424861201,
+      "tail_deflation_witness": {
+        "source_denominator": 53107651,
+        "gap": 7,
+        "divisor": 2348
+      }
+    },
+    {
+      "prime": 426257329,
+      "tail_deflation_witness": {
+        "source_denominator": 53282167,
+        "gap": 7,
+        "divisor": 1069
+      }
+    },
+    {
+      "prime": 427727161,
+      "tail_deflation_witness": {
+        "source_denominator": 53465896,
+        "gap": 7,
+        "divisor": 467
+      }
+    },
+    {
+      "prime": 429221521,
+      "tail_deflation_witness": {
+        "source_denominator": 35768461,
+        "gap": 11,
+        "divisor": 1289
+      }
+    },
+    {
+      "prime": 429844321,
+      "tail_deflation_witness": {
+        "source_denominator": 53730541,
+        "gap": 7,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 430449121,
+      "tail_deflation_witness": {
+        "source_denominator": 107612281,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 432047281,
+      "tail_deflation_witness": {
+        "source_denominator": 108011821,
+        "gap": 3,
+        "divisor": 227
+      }
+    },
+    {
+      "prime": 433817521,
+      "tail_deflation_witness": {
+        "source_denominator": 36151461,
+        "gap": 11,
+        "divisor": 1327
+      }
+    },
+    {
+      "prime": 433984321,
+      "tail_deflation_witness": {
+        "source_denominator": 54248041,
+        "gap": 7,
+        "divisor": 1244
+      }
+    },
+    {
+      "prime": 435050641,
+      "tail_deflation_witness": {
+        "source_denominator": 54381331,
+        "gap": 7,
+        "divisor": 1882
+      }
+    },
+    {
+      "prime": 439768081,
+      "tail_deflation_witness": {
+        "source_denominator": 36647341,
+        "gap": 11,
+        "divisor": 57471
+      }
+    },
+    {
+      "prime": 442217329,
+      "tail_deflation_witness": {
+        "source_denominator": 55277167,
+        "gap": 7,
+        "divisor": 334
+      }
+    },
+    {
+      "prime": 442273441,
+      "tail_deflation_witness": {
+        "source_denominator": 55284181,
+        "gap": 7,
+        "divisor": 334
+      }
+    },
+    {
+      "prime": 444775489,
+      "tail_deflation_witness": {
+        "source_denominator": 37064625,
+        "gap": 11,
+        "divisor": 65
+      }
+    },
+    {
+      "prime": 444895201,
+      "tail_deflation_witness": {
+        "source_denominator": 18537301,
+        "gap": 23,
+        "divisor": 145161
+      }
+    },
+    {
+      "prime": 448049281,
+      "tail_deflation_witness": {
+        "source_denominator": 112012321,
+        "gap": 3,
+        "divisor": 491
+      }
+    },
+    {
+      "prime": 449610121,
+      "tail_deflation_witness": {
+        "source_denominator": 18733756,
+        "gap": 23,
+        "divisor": 1707
+      }
+    },
+    {
+      "prime": 452255521,
+      "tail_deflation_witness": {
+        "source_denominator": 113063881,
+        "gap": 3,
+        "divisor": 1151
+      }
+    },
+    {
+      "prime": 453770689,
+      "tail_deflation_witness": {
+        "source_denominator": 56721337,
+        "gap": 7,
+        "divisor": 173
+      }
+    },
+    {
+      "prime": 455432041,
+      "tail_deflation_witness": {
+        "source_denominator": 56929006,
+        "gap": 7,
+        "divisor": 397
+      }
+    },
+    {
+      "prime": 466822801,
+      "tail_deflation_witness": {
+        "source_denominator": 58352851,
+        "gap": 7,
+        "divisor": 202
+      }
+    },
+    {
+      "prime": 473088289,
+      "tail_deflation_witness": {
+        "source_denominator": 59136037,
+        "gap": 7,
+        "divisor": 38
+      }
+    },
+    {
+      "prime": 473598721,
+      "tail_deflation_witness": {
+        "source_denominator": 118399681,
+        "gap": 3,
+        "divisor": 7853
+      }
+    },
+    {
+      "prime": 478042681,
+      "tail_deflation_witness": {
+        "source_denominator": 59755336,
+        "gap": 7,
+        "divisor": 1574
+      }
+    },
+    {
+      "prime": 479352241,
+      "tail_deflation_witness": {
+        "source_denominator": 59919031,
+        "gap": 7,
+        "divisor": 188
+      }
+    },
+    {
+      "prime": 481943281,
+      "tail_deflation_witness": {
+        "source_denominator": 40161941,
+        "gap": 11,
+        "divisor": 6241
+      }
+    },
+    {
+      "prime": 489239521,
+      "tail_deflation_witness": {
+        "source_denominator": 122309881,
+        "gap": 3,
+        "divisor": 107
+      }
+    },
+    {
+      "prime": 499768369,
+      "tail_deflation_witness": {
+        "source_denominator": 41647365,
+        "gap": 11,
+        "divisor": 85
+      }
+    },
+    {
+      "prime": 501701281,
+      "tail_deflation_witness": {
+        "source_denominator": 62712661,
+        "gap": 7,
+        "divisor": 398
+      }
+    },
+    {
+      "prime": 502725001,
+      "tail_deflation_witness": {
+        "source_denominator": 41893751,
+        "gap": 11,
+        "divisor": 573887
+      }
+    },
+    {
+      "prime": 505391401,
+      "tail_deflation_witness": {
+        "source_denominator": 126347851,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 506703481,
+      "tail_deflation_witness": {
+        "source_denominator": 25335175,
+        "gap": 19,
+        "divisor": 16505
+      }
+    },
+    {
+      "prime": 509475121,
+      "tail_deflation_witness": {
+        "source_denominator": 127368781,
+        "gap": 3,
+        "divisor": 4967
+      }
+    },
+    {
+      "prime": 509692801,
+      "tail_deflation_witness": {
+        "source_denominator": 42474401,
+        "gap": 11,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 511152601,
+      "tail_deflation_witness": {
+        "source_denominator": 127788151,
+        "gap": 3,
+        "divisor": 233
+      }
+    },
+    {
+      "prime": 511239481,
+      "tail_deflation_witness": {
+        "source_denominator": 127809871,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 511304641,
+      "tail_deflation_witness": {
+        "source_denominator": 127826161,
+        "gap": 3,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 512938441,
+      "tail_deflation_witness": {
+        "source_denominator": 128234611,
+        "gap": 3,
+        "divisor": 5381
+      }
+    },
+    {
+      "prime": 513357601,
+      "tail_deflation_witness": {
+        "source_denominator": 64169701,
+        "gap": 7,
+        "divisor": 292
+      }
+    },
+    {
+      "prime": 514290529,
+      "tail_deflation_witness": {
+        "source_denominator": 64286317,
+        "gap": 7,
+        "divisor": 412
+      }
+    },
+    {
+      "prime": 515052841,
+      "tail_deflation_witness": {
+        "source_denominator": 64381606,
+        "gap": 7,
+        "divisor": 31
+      }
+    },
+    {
+      "prime": 518088169,
+      "tail_deflation_witness": {
+        "source_denominator": 64761022,
+        "gap": 7,
+        "divisor": 1588
+      }
+    },
+    {
+      "prime": 518236489,
+      "tail_deflation_witness": {
+        "source_denominator": 129559123,
+        "gap": 3,
+        "divisor": 7577
+      }
+    },
+    {
+      "prime": 519166201,
+      "tail_deflation_witness": {
+        "source_denominator": 25958311,
+        "gap": 19,
+        "divisor": 591575
+      }
+    },
+    {
+      "prime": 519857641,
+      "tail_deflation_witness": {
+        "source_denominator": 64982206,
+        "gap": 7,
+        "divisor": 311
+      }
+    },
+    {
+      "prime": 521525761,
+      "tail_deflation_witness": {
+        "source_denominator": 130381441,
+        "gap": 3,
+        "divisor": 233
+      }
+    },
+    {
+      "prime": 523100449,
+      "tail_deflation_witness": {
+        "source_denominator": 130775113,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 528014881,
+      "tail_deflation_witness": {
+        "source_denominator": 132003721,
+        "gap": 3,
+        "divisor": 809
+      }
+    },
+    {
+      "prime": 535404241,
+      "tail_deflation_witness": {
+        "source_denominator": 44617021,
+        "gap": 11,
+        "divisor": 14031
+      }
+    },
+    {
+      "prime": 536866201,
+      "tail_deflation_witness": {
+        "source_denominator": 67108276,
+        "gap": 7,
+        "divisor": 3646
+      }
+    },
+    {
+      "prime": 537415321,
+      "tail_deflation_witness": {
+        "source_denominator": 134353831,
+        "gap": 3,
+        "divisor": 3011
+      }
+    },
+    {
+      "prime": 538602241,
+      "tail_deflation_witness": {
+        "source_denominator": 134650561,
+        "gap": 3,
+        "divisor": 677
+      }
+    },
+    {
+      "prime": 540645121,
+      "tail_deflation_witness": {
+        "source_denominator": 135161281,
+        "gap": 3,
+        "divisor": 281
+      }
+    },
+    {
+      "prime": 542781649,
+      "tail_deflation_witness": {
+        "source_denominator": 135695413,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 543671041,
+      "tail_deflation_witness": {
+        "source_denominator": 135917761,
+        "gap": 3,
+        "divisor": 509
+      }
+    },
+    {
+      "prime": 544435201,
+      "tail_deflation_witness": {
+        "source_denominator": 136108801,
+        "gap": 3,
+        "divisor": 977
+      }
+    },
+    {
+      "prime": 547196521,
+      "tail_deflation_witness": {
+        "source_denominator": 136799131,
+        "gap": 3,
+        "divisor": 317
+      }
+    },
+    {
+      "prime": 554361481,
+      "tail_deflation_witness": {
+        "source_denominator": 46196791,
+        "gap": 11,
+        "divisor": 123
+      }
+    },
+    {
+      "prime": 555597001,
+      "tail_deflation_witness": {
+        "source_denominator": 46299751,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 558919321,
+      "tail_deflation_witness": {
+        "source_denominator": 46576611,
+        "gap": 11,
+        "divisor": 43
+      }
+    },
+    {
+      "prime": 559158601,
+      "tail_deflation_witness": {
+        "source_denominator": 9984976,
+        "gap": 55,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 560419729,
+      "tail_deflation_witness": {
+        "source_denominator": 70052467,
+        "gap": 7,
+        "divisor": 31
+      }
+    },
+    {
+      "prime": 563621521,
+      "tail_deflation_witness": {
+        "source_denominator": 28181077,
+        "gap": 19,
+        "divisor": 401
+      }
+    },
+    {
+      "prime": 564358369,
+      "tail_deflation_witness": {
+        "source_denominator": 70544797,
+        "gap": 7,
+        "divisor": 964
+      }
+    },
+    {
+      "prime": 566355409,
+      "tail_deflation_witness": {
+        "source_denominator": 70794427,
+        "gap": 7,
+        "divisor": 356
+      }
+    },
+    {
+      "prime": 568029841,
+      "tail_deflation_witness": {
+        "source_denominator": 142007461,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 569359561,
+      "tail_deflation_witness": {
+        "source_denominator": 71169946,
+        "gap": 7,
+        "divisor": 278
+      }
+    },
+    {
+      "prime": 574346809,
+      "tail_deflation_witness": {
+        "source_denominator": 47862235,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 575112841,
+      "tail_deflation_witness": {
+        "source_denominator": 143778211,
+        "gap": 3,
+        "divisor": 2957
+      }
+    },
+    {
+      "prime": 575171041,
+      "tail_deflation_witness": {
+        "source_denominator": 143792761,
+        "gap": 3,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 576916201,
+      "tail_deflation_witness": {
+        "source_denominator": 16025451,
+        "gap": 35,
+        "divisor": 26871
+      }
+    },
+    {
+      "prime": 581004649,
+      "tail_deflation_witness": {
+        "source_denominator": 48417055,
+        "gap": 11,
+        "divisor": 1415
+      }
+    },
+    {
+      "prime": 582869809,
+      "tail_deflation_witness": {
+        "source_denominator": 48572485,
+        "gap": 11,
+        "divisor": 51
+      }
+    },
+    {
+      "prime": 584603881,
+      "tail_deflation_witness": {
+        "source_denominator": 146150971,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 585382561,
+      "tail_deflation_witness": {
+        "source_denominator": 73172821,
+        "gap": 7,
+        "divisor": 3988
+      }
+    },
+    {
+      "prime": 585976441,
+      "tail_deflation_witness": {
+        "source_denominator": 146494111,
+        "gap": 3,
+        "divisor": 7451
+      }
+    },
+    {
+      "prime": 588653641,
+      "tail_deflation_witness": {
+        "source_denominator": 49054471,
+        "gap": 11,
+        "divisor": 11021
+      }
+    },
+    {
+      "prime": 594670561,
+      "tail_deflation_witness": {
+        "source_denominator": 148667641,
+        "gap": 3,
+        "divisor": 311
+      }
+    },
+    {
+      "prime": 594825841,
+      "tail_deflation_witness": {
+        "source_denominator": 148706461,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 595854001,
+      "tail_deflation_witness": {
+        "source_denominator": 49654501,
+        "gap": 11,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 605372881,
+      "tail_deflation_witness": {
+        "source_denominator": 50447741,
+        "gap": 11,
+        "divisor": 79
+      }
+    },
+    {
+      "prime": 605553001,
+      "tail_deflation_witness": {
+        "source_denominator": 151388251,
+        "gap": 3,
+        "divisor": 461
+      }
+    },
+    {
+      "prime": 608607169,
+      "tail_deflation_witness": {
+        "source_denominator": 152151793,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 608848321,
+      "tail_deflation_witness": {
+        "source_denominator": 30442417,
+        "gap": 19,
+        "divisor": 89065
+      }
+    },
+    {
+      "prime": 612915769,
+      "tail_deflation_witness": {
+        "source_denominator": 8512720,
+        "gap": 71,
+        "divisor": 45
+      }
+    },
+    {
+      "prime": 614315641,
+      "tail_deflation_witness": {
+        "source_denominator": 30715783,
+        "gap": 19,
+        "divisor": 175
+      }
+    },
+    {
+      "prime": 616391161,
+      "tail_deflation_witness": {
+        "source_denominator": 77048896,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 616696441,
+      "tail_deflation_witness": {
+        "source_denominator": 51391371,
+        "gap": 11,
+        "divisor": 171
+      }
+    },
+    {
+      "prime": 617945329,
+      "tail_deflation_witness": {
+        "source_denominator": 51495445,
+        "gap": 11,
+        "divisor": 261
+      }
+    },
+    {
+      "prime": 619193569,
+      "tail_deflation_witness": {
+        "source_denominator": 77399197,
+        "gap": 7,
+        "divisor": 1181
+      }
+    },
+    {
+      "prime": 621748009,
+      "tail_deflation_witness": {
+        "source_denominator": 51812335,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 622711489,
+      "tail_deflation_witness": {
+        "source_denominator": 77838937,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 624025921,
+      "tail_deflation_witness": {
+        "source_denominator": 78003241,
+        "gap": 7,
+        "divisor": 7012
+      }
+    },
+    {
+      "prime": 625826881,
+      "tail_deflation_witness": {
+        "source_denominator": 31291345,
+        "gap": 19,
+        "divisor": 67
+      }
+    },
+    {
+      "prime": 628182241,
+      "tail_deflation_witness": {
+        "source_denominator": 157045561,
+        "gap": 3,
+        "divisor": 281
+      }
+    },
+    {
+      "prime": 629071081,
+      "tail_deflation_witness": {
+        "source_denominator": 52422591,
+        "gap": 11,
+        "divisor": 1053
+      }
+    },
+    {
+      "prime": 630955441,
+      "tail_deflation_witness": {
+        "source_denominator": 78869431,
+        "gap": 7,
+        "divisor": 188
+      }
+    },
+    {
+      "prime": 631633921,
+      "tail_deflation_witness": {
+        "source_denominator": 78954241,
+        "gap": 7,
+        "divisor": 31
+      }
+    },
+    {
+      "prime": 632327161,
+      "tail_deflation_witness": {
+        "source_denominator": 79040896,
+        "gap": 7,
+        "divisor": 146
+      }
+    },
+    {
+      "prime": 633393601,
+      "tail_deflation_witness": {
+        "source_denominator": 52782801,
+        "gap": 11,
+        "divisor": 3483
+      }
+    },
+    {
+      "prime": 634989961,
+      "tail_deflation_witness": {
+        "source_denominator": 26457916,
+        "gap": 23,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 637154281,
+      "tail_deflation_witness": {
+        "source_denominator": 159288571,
+        "gap": 3,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 638829409,
+      "tail_deflation_witness": {
+        "source_denominator": 159707353,
+        "gap": 3,
+        "divisor": 593
+      }
+    },
+    {
+      "prime": 640193401,
+      "tail_deflation_witness": {
+        "source_denominator": 53349451,
+        "gap": 11,
+        "divisor": 107
+      }
+    },
+    {
+      "prime": 640417009,
+      "tail_deflation_witness": {
+        "source_denominator": 40026064,
+        "gap": 15,
+        "divisor": 104
+      }
+    },
+    {
+      "prime": 640775689,
+      "tail_deflation_witness": {
+        "source_denominator": 160193923,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 642533329,
+      "tail_deflation_witness": {
+        "source_denominator": 80316667,
+        "gap": 7,
+        "divisor": 76
+      }
+    },
+    {
+      "prime": 642937681,
+      "tail_deflation_witness": {
+        "source_denominator": 80367211,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 643221121,
+      "tail_deflation_witness": {
+        "source_denominator": 40201321,
+        "gap": 15,
+        "divisor": 386
+      }
+    },
+    {
+      "prime": 644277841,
+      "tail_deflation_witness": {
+        "source_denominator": 161069461,
+        "gap": 3,
+        "divisor": 251
+      }
+    },
+    {
+      "prime": 645154129,
+      "tail_deflation_witness": {
+        "source_denominator": 40322134,
+        "gap": 15,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 645693889,
+      "tail_deflation_witness": {
+        "source_denominator": 80711737,
+        "gap": 7,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 647302321,
+      "tail_deflation_witness": {
+        "source_denominator": 32365117,
+        "gap": 19,
+        "divisor": 47081
+      }
+    },
+    {
+      "prime": 648180121,
+      "tail_deflation_witness": {
+        "source_denominator": 162045031,
+        "gap": 3,
+        "divisor": 10301
+      }
+    },
+    {
+      "prime": 648195409,
+      "tail_deflation_witness": {
+        "source_denominator": 162048853,
+        "gap": 3,
+        "divisor": 563
+      }
+    },
+    {
+      "prime": 656135761,
+      "tail_deflation_witness": {
+        "source_denominator": 82016971,
+        "gap": 7,
+        "divisor": 89
+      }
+    },
+    {
+      "prime": 657327721,
+      "tail_deflation_witness": {
+        "source_denominator": 54777311,
+        "gap": 11,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 658424881,
+      "tail_deflation_witness": {
+        "source_denominator": 82303111,
+        "gap": 7,
+        "divisor": 668
+      }
+    },
+    {
+      "prime": 659769289,
+      "tail_deflation_witness": {
+        "source_denominator": 54980775,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 660142081,
+      "tail_deflation_witness": {
+        "source_denominator": 41258881,
+        "gap": 15,
+        "divisor": 71
+      }
+    },
+    {
+      "prime": 663894001,
+      "tail_deflation_witness": {
+        "source_denominator": 82986751,
+        "gap": 7,
+        "divisor": 404
+      }
+    },
+    {
+      "prime": 674878681,
+      "tail_deflation_witness": {
+        "source_denominator": 28119946,
+        "gap": 23,
+        "divisor": 27207
+      }
+    },
+    {
+      "prime": 675132481,
+      "tail_deflation_witness": {
+        "source_denominator": 168783121,
+        "gap": 3,
+        "divisor": 311
+      }
+    },
+    {
+      "prime": 675458281,
+      "tail_deflation_witness": {
+        "source_denominator": 28144096,
+        "gap": 23,
+        "divisor": 9474
+      }
+    },
+    {
+      "prime": 676542241,
+      "tail_deflation_witness": {
+        "source_denominator": 169135561,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 680223721,
+      "tail_deflation_witness": {
+        "source_denominator": 17005594,
+        "gap": 39,
+        "divisor": 50
+      }
+    },
+    {
+      "prime": 683221009,
+      "tail_deflation_witness": {
+        "source_denominator": 85402627,
+        "gap": 7,
+        "divisor": 73
+      }
+    },
+    {
+      "prime": 684029329,
+      "tail_deflation_witness": {
+        "source_denominator": 85503667,
+        "gap": 7,
+        "divisor": 76
+      }
+    },
+    {
+      "prime": 685657681,
+      "tail_deflation_witness": {
+        "source_denominator": 85707211,
+        "gap": 7,
+        "divisor": 332
+      }
+    },
+    {
+      "prime": 687877369,
+      "tail_deflation_witness": {
+        "source_denominator": 171969343,
+        "gap": 3,
+        "divisor": 239
+      }
+    },
+    {
+      "prime": 692245009,
+      "tail_deflation_witness": {
+        "source_denominator": 86530627,
+        "gap": 7,
+        "divisor": 229
+      }
+    },
+    {
+      "prime": 692690161,
+      "tail_deflation_witness": {
+        "source_denominator": 57724181,
+        "gap": 11,
+        "divisor": 1073
+      }
+    },
+    {
+      "prime": 694709401,
+      "tail_deflation_witness": {
+        "source_denominator": 57892451,
+        "gap": 11,
+        "divisor": 41
+      }
+    },
+    {
+      "prime": 697980889,
+      "tail_deflation_witness": {
+        "source_denominator": 87247612,
+        "gap": 7,
+        "divisor": 8812
+      }
+    },
+    {
+      "prime": 699747049,
+      "tail_deflation_witness": {
+        "source_denominator": 87468382,
+        "gap": 7,
+        "divisor": 229
+      }
+    },
+    {
+      "prime": 700127569,
+      "tail_deflation_witness": {
+        "source_denominator": 87515947,
+        "gap": 7,
+        "divisor": 166
+      }
+    },
+    {
+      "prime": 701509561,
+      "tail_deflation_witness": {
+        "source_denominator": 58459131,
+        "gap": 11,
+        "divisor": 711
+      }
+    },
+    {
+      "prime": 702450961,
+      "tail_deflation_witness": {
+        "source_denominator": 175612741,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 703190401,
+      "tail_deflation_witness": {
+        "source_denominator": 175797601,
+        "gap": 3,
+        "divisor": 1487
+      }
+    },
+    {
+      "prime": 707590321,
+      "tail_deflation_witness": {
+        "source_denominator": 44224396,
+        "gap": 15,
+        "divisor": 626
+      }
+    },
+    {
+      "prime": 713280241,
+      "tail_deflation_witness": {
+        "source_denominator": 89160031,
+        "gap": 7,
+        "divisor": 4217
+      }
+    },
+    {
+      "prime": 715869841,
+      "tail_deflation_witness": {
+        "source_denominator": 89483731,
+        "gap": 7,
+        "divisor": 173
+      }
+    },
+    {
+      "prime": 716384881,
+      "tail_deflation_witness": {
+        "source_denominator": 59698741,
+        "gap": 11,
+        "divisor": 57
+      }
+    },
+    {
+      "prime": 716572921,
+      "tail_deflation_witness": {
+        "source_denominator": 29857206,
+        "gap": 23,
+        "divisor": 2361
+      }
+    },
+    {
+      "prime": 719198761,
+      "tail_deflation_witness": {
+        "source_denominator": 179799691,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 721827481,
+      "tail_deflation_witness": {
+        "source_denominator": 18045688,
+        "gap": 39,
+        "divisor": 20
+      }
+    },
+    {
+      "prime": 722610001,
+      "tail_deflation_witness": {
+        "source_denominator": 90326251,
+        "gap": 7,
+        "divisor": 908
+      }
+    },
+    {
+      "prime": 722802721,
+      "tail_deflation_witness": {
+        "source_denominator": 60233561,
+        "gap": 11,
+        "divisor": 1047
+      }
+    },
+    {
+      "prime": 726075529,
+      "tail_deflation_witness": {
+        "source_denominator": 181518883,
+        "gap": 3,
+        "divisor": 233
+      }
+    },
+    {
+      "prime": 730111201,
+      "tail_deflation_witness": {
+        "source_denominator": 91263901,
+        "gap": 7,
+        "divisor": 131
+      }
+    },
+    {
+      "prime": 731024641,
+      "tail_deflation_witness": {
+        "source_denominator": 91378081,
+        "gap": 7,
+        "divisor": 692
+      }
+    },
+    {
+      "prime": 732137641,
+      "tail_deflation_witness": {
+        "source_denominator": 183034411,
+        "gap": 3,
+        "divisor": 4337
+      }
+    },
+    {
+      "prime": 732510241,
+      "tail_deflation_witness": {
+        "source_denominator": 183127561,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 734601169,
+      "tail_deflation_witness": {
+        "source_denominator": 91825147,
+        "gap": 7,
+        "divisor": 194
+      }
+    },
+    {
+      "prime": 736324681,
+      "tail_deflation_witness": {
+        "source_denominator": 61360391,
+        "gap": 11,
+        "divisor": 970551
+      }
+    },
+    {
+      "prime": 736477681,
+      "tail_deflation_witness": {
+        "source_denominator": 30686571,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 739634449,
+      "tail_deflation_witness": {
+        "source_denominator": 92454307,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 740373481,
+      "tail_deflation_witness": {
+        "source_denominator": 92546686,
+        "gap": 7,
+        "divisor": 229
+      }
+    },
+    {
+      "prime": 740439361,
+      "tail_deflation_witness": {
+        "source_denominator": 61703281,
+        "gap": 11,
+        "divisor": 68403
+      }
+    },
+    {
+      "prime": 741885601,
+      "tail_deflation_witness": {
+        "source_denominator": 185471401,
+        "gap": 3,
+        "divisor": 911
+      }
+    },
+    {
+      "prime": 742307281,
+      "tail_deflation_witness": {
+        "source_denominator": 185576821,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 742944889,
+      "tail_deflation_witness": {
+        "source_denominator": 185736223,
+        "gap": 3,
+        "divisor": 281
+      }
+    },
+    {
+      "prime": 744123241,
+      "tail_deflation_witness": {
+        "source_denominator": 62010271,
+        "gap": 11,
+        "divisor": 153
+      }
+    },
+    {
+      "prime": 749224921,
+      "tail_deflation_witness": {
+        "source_denominator": 62435411,
+        "gap": 11,
+        "divisor": 45459
+      }
+    },
+    {
+      "prime": 751064161,
+      "tail_deflation_witness": {
+        "source_denominator": 187766041,
+        "gap": 3,
+        "divisor": 4637
+      }
+    },
+    {
+      "prime": 751130521,
+      "tail_deflation_witness": {
+        "source_denominator": 37556527,
+        "gap": 19,
+        "divisor": 179
+      }
+    },
+    {
+      "prime": 752602321,
+      "tail_deflation_witness": {
+        "source_denominator": 47037646,
+        "gap": 15,
+        "divisor": 131
+      }
+    },
+    {
+      "prime": 754987921,
+      "tail_deflation_witness": {
+        "source_denominator": 188746981,
+        "gap": 3,
+        "divisor": 809
+      }
+    },
+    {
+      "prime": 758011081,
+      "tail_deflation_witness": {
+        "source_denominator": 189502771,
+        "gap": 3,
+        "divisor": 197
+      }
+    },
+    {
+      "prime": 758528761,
+      "tail_deflation_witness": {
+        "source_denominator": 94816096,
+        "gap": 7,
+        "divisor": 4486
+      }
+    },
+    {
+      "prime": 758972041,
+      "tail_deflation_witness": {
+        "source_denominator": 63247671,
+        "gap": 11,
+        "divisor": 18999
+      }
+    },
+    {
+      "prime": 763255201,
+      "tail_deflation_witness": {
+        "source_denominator": 95406901,
+        "gap": 7,
+        "divisor": 11588
+      }
+    },
+    {
+      "prime": 765303001,
+      "tail_deflation_witness": {
+        "source_denominator": 95662876,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 773012881,
+      "tail_deflation_witness": {
+        "source_denominator": 64417741,
+        "gap": 11,
+        "divisor": 387
+      }
+    },
+    {
+      "prime": 776207041,
+      "tail_deflation_witness": {
+        "source_denominator": 64683921,
+        "gap": 11,
+        "divisor": 8433
+      }
+    },
+    {
+      "prime": 777021001,
+      "tail_deflation_witness": {
+        "source_denominator": 64751751,
+        "gap": 11,
+        "divisor": 369
+      }
+    },
+    {
+      "prime": 779718241,
+      "tail_deflation_witness": {
+        "source_denominator": 194929561,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 780771601,
+      "tail_deflation_witness": {
+        "source_denominator": 65064301,
+        "gap": 11,
+        "divisor": 909
+      }
+    },
+    {
+      "prime": 783147649,
+      "tail_deflation_witness": {
+        "source_denominator": 195786913,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 784893481,
+      "tail_deflation_witness": {
+        "source_denominator": 196223371,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 790636081,
+      "tail_deflation_witness": {
+        "source_denominator": 98829511,
+        "gap": 7,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 790639249,
+      "tail_deflation_witness": {
+        "source_denominator": 98829907,
+        "gap": 7,
+        "divisor": 1783
+      }
+    },
+    {
+      "prime": 798120241,
+      "tail_deflation_witness": {
+        "source_denominator": 99765031,
+        "gap": 7,
+        "divisor": 577
+      }
+    },
+    {
+      "prime": 798246289,
+      "tail_deflation_witness": {
+        "source_denominator": 33260263,
+        "gap": 23,
+        "divisor": 199
+      }
+    },
+    {
+      "prime": 798746041,
+      "tail_deflation_witness": {
+        "source_denominator": 99843256,
+        "gap": 7,
+        "divisor": 206
+      }
+    },
+    {
+      "prime": 799804009,
+      "tail_deflation_witness": {
+        "source_denominator": 33325168,
+        "gap": 23,
+        "divisor": 136
+      }
+    },
+    {
+      "prime": 799963921,
+      "tail_deflation_witness": {
+        "source_denominator": 99995491,
+        "gap": 7,
+        "divisor": 124
+      }
+    },
+    {
+      "prime": 801137761,
+      "tail_deflation_witness": {
+        "source_denominator": 66761481,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 808389649,
+      "tail_deflation_witness": {
+        "source_denominator": 101048707,
+        "gap": 7,
+        "divisor": 76
+      }
+    },
+    {
+      "prime": 809405521,
+      "tail_deflation_witness": {
+        "source_denominator": 101175691,
+        "gap": 7,
+        "divisor": 17239
+      }
+    },
+    {
+      "prime": 810551641,
+      "tail_deflation_witness": {
+        "source_denominator": 67545971,
+        "gap": 11,
+        "divisor": 61
+      }
+    },
+    {
+      "prime": 816945361,
+      "tail_deflation_witness": {
+        "source_denominator": 102118171,
+        "gap": 7,
+        "divisor": 404
+      }
+    },
+    {
+      "prime": 817270609,
+      "tail_deflation_witness": {
+        "source_denominator": 204317653,
+        "gap": 3,
+        "divisor": 167
+      }
+    },
+    {
+      "prime": 820218169,
+      "tail_deflation_witness": {
+        "source_denominator": 205054543,
+        "gap": 3,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 820922881,
+      "tail_deflation_witness": {
+        "source_denominator": 205230721,
+        "gap": 3,
+        "divisor": 347
+      }
+    },
+    {
+      "prime": 821687161,
+      "tail_deflation_witness": {
+        "source_denominator": 68473931,
+        "gap": 11,
+        "divisor": 633
+      }
+    },
+    {
+      "prime": 822329041,
+      "tail_deflation_witness": {
+        "source_denominator": 51395566,
+        "gap": 15,
+        "divisor": 536
+      }
+    },
+    {
+      "prime": 826129441,
+      "tail_deflation_witness": {
+        "source_denominator": 206532361,
+        "gap": 3,
+        "divisor": 53
+      }
+    },
+    {
+      "prime": 827657881,
+      "tail_deflation_witness": {
+        "source_denominator": 68971491,
+        "gap": 11,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 833207761,
+      "tail_deflation_witness": {
+        "source_denominator": 69433981,
+        "gap": 11,
+        "divisor": 327
+      }
+    },
+    {
+      "prime": 834358561,
+      "tail_deflation_witness": {
+        "source_denominator": 104294821,
+        "gap": 7,
+        "divisor": 3106
+      }
+    },
+    {
+      "prime": 835578241,
+      "tail_deflation_witness": {
+        "source_denominator": 208894561,
+        "gap": 3,
+        "divisor": 359
+      }
+    },
+    {
+      "prime": 838514881,
+      "tail_deflation_witness": {
+        "source_denominator": 69876241,
+        "gap": 11,
+        "divisor": 433
+      }
+    },
+    {
+      "prime": 842090209,
+      "tail_deflation_witness": {
+        "source_denominator": 210522553,
+        "gap": 3,
+        "divisor": 317
+      }
+    },
+    {
+      "prime": 846997201,
+      "tail_deflation_witness": {
+        "source_denominator": 211749301,
+        "gap": 3,
+        "divisor": 10133
+      }
+    },
+    {
+      "prime": 854808529,
+      "tail_deflation_witness": {
+        "source_denominator": 106851067,
+        "gap": 7,
+        "divisor": 103
+      }
+    },
+    {
+      "prime": 856387009,
+      "tail_deflation_witness": {
+        "source_denominator": 107048377,
+        "gap": 7,
+        "divisor": 311
+      }
+    },
+    {
+      "prime": 858209881,
+      "tail_deflation_witness": {
+        "source_denominator": 71517491,
+        "gap": 11,
+        "divisor": 2637
+      }
+    },
+    {
+      "prime": 858290161,
+      "tail_deflation_witness": {
+        "source_denominator": 214572541,
+        "gap": 3,
+        "divisor": 12269
+      }
+    },
+    {
+      "prime": 865176841,
+      "tail_deflation_witness": {
+        "source_denominator": 216294211,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 870287881,
+      "tail_deflation_witness": {
+        "source_denominator": 31081711,
+        "gap": 27,
+        "divisor": 130049
+      }
+    },
+    {
+      "prime": 870509641,
+      "tail_deflation_witness": {
+        "source_denominator": 217627411,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 877881481,
+      "tail_deflation_witness": {
+        "source_denominator": 219470371,
+        "gap": 3,
+        "divisor": 941
+      }
+    },
+    {
+      "prime": 880619041,
+      "tail_deflation_witness": {
+        "source_denominator": 220154761,
+        "gap": 3,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 882279841,
+      "tail_deflation_witness": {
+        "source_denominator": 220569961,
+        "gap": 3,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 882985009,
+      "tail_deflation_witness": {
+        "source_denominator": 73582085,
+        "gap": 11,
+        "divisor": 205
+      }
+    },
+    {
+      "prime": 884889289,
+      "tail_deflation_witness": {
+        "source_denominator": 221222323,
+        "gap": 3,
+        "divisor": 2423
+      }
+    },
+    {
+      "prime": 885424849,
+      "tail_deflation_witness": {
+        "source_denominator": 36892703,
+        "gap": 23,
+        "divisor": 612
+      }
+    },
+    {
+      "prime": 887083129,
+      "tail_deflation_witness": {
+        "source_denominator": 221770783,
+        "gap": 3,
+        "divisor": 683
+      }
+    },
+    {
+      "prime": 889762729,
+      "tail_deflation_witness": {
+        "source_denominator": 222440683,
+        "gap": 3,
+        "divisor": 101
+      }
+    },
+    {
+      "prime": 890705281,
+      "tail_deflation_witness": {
+        "source_denominator": 55669081,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 893389561,
+      "tail_deflation_witness": {
+        "source_denominator": 223347391,
+        "gap": 3,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 896764969,
+      "tail_deflation_witness": {
+        "source_denominator": 112095622,
+        "gap": 7,
+        "divisor": 7829
+      }
+    },
+    {
+      "prime": 897421009,
+      "tail_deflation_witness": {
+        "source_denominator": 74785085,
+        "gap": 11,
+        "divisor": 305
+      }
+    },
+    {
+      "prime": 901203601,
+      "tail_deflation_witness": {
+        "source_denominator": 112650451,
+        "gap": 7,
+        "divisor": 202
+      }
+    },
+    {
+      "prime": 904817281,
+      "tail_deflation_witness": {
+        "source_denominator": 226204321,
+        "gap": 3,
+        "divisor": 29
+      }
+    },
+    {
+      "prime": 907629409,
+      "tail_deflation_witness": {
+        "source_denominator": 113453677,
+        "gap": 7,
+        "divisor": 13151
+      }
+    },
+    {
+      "prime": 907958041,
+      "tail_deflation_witness": {
+        "source_denominator": 75663171,
+        "gap": 11,
+        "divisor": 3429
+      }
+    },
+    {
+      "prime": 909075841,
+      "tail_deflation_witness": {
+        "source_denominator": 227268961,
+        "gap": 3,
+        "divisor": 179
+      }
+    },
+    {
+      "prime": 910014121,
+      "tail_deflation_witness": {
+        "source_denominator": 113751766,
+        "gap": 7,
+        "divisor": 766
+      }
+    },
+    {
+      "prime": 910751521,
+      "tail_deflation_witness": {
+        "source_denominator": 227687881,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 911043169,
+      "tail_deflation_witness": {
+        "source_denominator": 37960133,
+        "gap": 23,
+        "divisor": 83
+      }
+    },
+    {
+      "prime": 912979369,
+      "tail_deflation_witness": {
+        "source_denominator": 32606407,
+        "gap": 27,
+        "divisor": 3269
+      }
+    },
+    {
+      "prime": 923161009,
+      "tail_deflation_witness": {
+        "source_denominator": 230790253,
+        "gap": 3,
+        "divisor": 1019
+      }
+    },
+    {
+      "prime": 926962969,
+      "tail_deflation_witness": {
+        "source_denominator": 231740743,
+        "gap": 3,
+        "divisor": 149
+      }
+    },
+    {
+      "prime": 928415041,
+      "tail_deflation_witness": {
+        "source_denominator": 232103761,
+        "gap": 3,
+        "divisor": 479
+      }
+    },
+    {
+      "prime": 930628801,
+      "tail_deflation_witness": {
+        "source_denominator": 58164301,
+        "gap": 15,
+        "divisor": 26
+      }
+    },
+    {
+      "prime": 930633001,
+      "tail_deflation_witness": {
+        "source_denominator": 38776376,
+        "gap": 23,
+        "divisor": 6616
+      }
+    },
+    {
+      "prime": 933362641,
+      "tail_deflation_witness": {
+        "source_denominator": 46668133,
+        "gap": 19,
+        "divisor": 235
+      }
+    },
+    {
+      "prime": 935116009,
+      "tail_deflation_witness": {
+        "source_denominator": 116889502,
+        "gap": 7,
+        "divisor": 59
+      }
+    },
+    {
+      "prime": 935276521,
+      "tail_deflation_witness": {
+        "source_denominator": 233819131,
+        "gap": 3,
+        "divisor": 557
+      }
+    },
+    {
+      "prime": 939537481,
+      "tail_deflation_witness": {
+        "source_denominator": 117442186,
+        "gap": 7,
+        "divisor": 271
+      }
+    },
+    {
+      "prime": 942584161,
+      "tail_deflation_witness": {
+        "source_denominator": 58911511,
+        "gap": 15,
+        "divisor": 146
+      }
+    },
+    {
+      "prime": 943117561,
+      "tail_deflation_witness": {
+        "source_denominator": 117889696,
+        "gap": 7,
+        "divisor": 68
+      }
+    },
+    {
+      "prime": 948673441,
+      "tail_deflation_witness": {
+        "source_denominator": 47433673,
+        "gap": 19,
+        "divisor": 1225
+      }
+    },
+    {
+      "prime": 950354161,
+      "tail_deflation_witness": {
+        "source_denominator": 237588541,
+        "gap": 3,
+        "divisor": 1223
+      }
+    },
+    {
+      "prime": 951054241,
+      "tail_deflation_witness": {
+        "source_denominator": 79254521,
+        "gap": 11,
+        "divisor": 997
+      }
+    },
+    {
+      "prime": 952431481,
+      "tail_deflation_witness": {
+        "source_denominator": 47621575,
+        "gap": 19,
+        "divisor": 125
+      }
+    },
+    {
+      "prime": 954990961,
+      "tail_deflation_witness": {
+        "source_denominator": 79582581,
+        "gap": 11,
+        "divisor": 1053
+      }
+    },
+    {
+      "prime": 956514001,
+      "tail_deflation_witness": {
+        "source_denominator": 119564251,
+        "gap": 7,
+        "divisor": 16222
+      }
+    },
+    {
+      "prime": 962967121,
+      "tail_deflation_witness": {
+        "source_denominator": 120370891,
+        "gap": 7,
+        "divisor": 202
+      }
+    },
+    {
+      "prime": 963890449,
+      "tail_deflation_witness": {
+        "source_denominator": 240972613,
+        "gap": 3,
+        "divisor": 113
+      }
+    },
+    {
+      "prime": 965813689,
+      "tail_deflation_witness": {
+        "source_denominator": 120726712,
+        "gap": 7,
+        "divisor": 103
+      }
+    },
+    {
+      "prime": 970249921,
+      "tail_deflation_witness": {
+        "source_denominator": 121281241,
+        "gap": 7,
+        "divisor": 524
+      }
+    },
+    {
+      "prime": 971287321,
+      "tail_deflation_witness": {
+        "source_denominator": 8094062,
+        "gap": 119,
+        "divisor": 20
+      }
+    },
+    {
+      "prime": 972433081,
+      "tail_deflation_witness": {
+        "source_denominator": 27012031,
+        "gap": 35,
+        "divisor": 115821
+      }
+    },
+    {
+      "prime": 976164289,
+      "tail_deflation_witness": {
+        "source_denominator": 40673513,
+        "gap": 23,
+        "divisor": 870489
+      }
+    },
+    {
+      "prime": 977342521,
+      "tail_deflation_witness": {
+        "source_denominator": 34905091,
+        "gap": 27,
+        "divisor": 587951
+      }
+    },
+    {
+      "prime": 979146529,
+      "tail_deflation_witness": {
+        "source_denominator": 122393317,
+        "gap": 7,
+        "divisor": 118
+      }
+    },
+    {
+      "prime": 979711489,
+      "tail_deflation_witness": {
+        "source_denominator": 244927873,
+        "gap": 3,
+        "divisor": 1439
+      }
+    },
+    {
+      "prime": 980882641,
+      "tail_deflation_witness": {
+        "source_denominator": 122610331,
+        "gap": 7,
+        "divisor": 349
+      }
+    },
+    {
+      "prime": 985076569,
+      "tail_deflation_witness": {
+        "source_denominator": 246269143,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 987022369,
+      "tail_deflation_witness": {
+        "source_denominator": 246755593,
+        "gap": 3,
+        "divisor": 47
+      }
+    },
+    {
+      "prime": 987325441,
+      "tail_deflation_witness": {
+        "source_denominator": 246831361,
+        "gap": 3,
+        "divisor": 4253
+      }
+    },
+    {
+      "prime": 988848961,
+      "tail_deflation_witness": {
+        "source_denominator": 247212241,
+        "gap": 3,
+        "divisor": 1097
+      }
+    },
+    {
+      "prime": 988855729,
+      "tail_deflation_witness": {
+        "source_denominator": 17658139,
+        "gap": 55,
+        "divisor": 29204
+      }
+    },
+    {
+      "prime": 992339401,
+      "tail_deflation_witness": {
+        "source_denominator": 248084851,
+        "gap": 3,
+        "divisor": 149
+      }
+    }
+  ]
+}

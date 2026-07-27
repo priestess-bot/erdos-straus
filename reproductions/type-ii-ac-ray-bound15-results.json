@@ -1,0 +1,200 @@
+{
+  "arithmetic": "exact SPF factorization, divisibility, and fractions.Fraction certificate verification",
+  "scope_note": "A finite A,C-ray audit. It leaves K unbounded by enumerating divisors of p+4*A^2*C, but finite coverage does not prove a global A,C bound.",
+  "prime_limit": 10000000,
+  "ac_box": {
+    "a_max": 15,
+    "c_max": 15
+  },
+  "ray_generator": "h=4*A*C*K-1 divides p+4*A^2*C, K=(h+1)/(4*A*C), equivalently h divides K*p+A",
+  "core_prime_count": 82887,
+  "captured_count": 82886,
+  "missing": [
+    4722169
+  ],
+  "largest_minimal_ac_radius": 13,
+  "ac_radius_record_holders": [
+    {
+      "prime": 73,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 2,
+      "h": 7,
+      "gap": 11,
+      "divisor": 1
+    },
+    {
+      "prime": 97,
+      "radius": 2,
+      "a": 1,
+      "c": 2,
+      "k": 1,
+      "h": 7,
+      "gap": 15,
+      "divisor": 2
+    },
+    {
+      "prime": 1009,
+      "radius": 3,
+      "a": 3,
+      "c": 1,
+      "k": 1,
+      "h": 11,
+      "gap": 95,
+      "divisor": 9
+    },
+    {
+      "prime": 3361,
+      "radius": 5,
+      "a": 5,
+      "c": 5,
+      "k": 1,
+      "h": 99,
+      "gap": 39,
+      "divisor": 125
+    },
+    {
+      "prime": 88321,
+      "radius": 6,
+      "a": 3,
+      "c": 6,
+      "k": 1,
+      "h": 71,
+      "gap": 1247,
+      "divisor": 54
+    },
+    {
+      "prime": 167521,
+      "radius": 9,
+      "a": 9,
+      "c": 2,
+      "k": 14,
+      "h": 1007,
+      "gap": 167,
+      "divisor": 162
+    },
+    {
+      "prime": 733321,
+      "radius": 11,
+      "a": 1,
+      "c": 11,
+      "k": 1,
+      "h": 43,
+      "gap": 17055,
+      "divisor": 11
+    },
+    {
+      "prime": 1429201,
+      "radius": 13,
+      "a": 13,
+      "c": 5,
+      "k": 3,
+      "h": 779,
+      "gap": 1839,
+      "divisor": 845
+    }
+  ],
+  "sample_witnesses": [
+    {
+      "prime": 73,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 2,
+      "h": 7,
+      "gap": 11,
+      "divisor": 1
+    },
+    {
+      "prime": 97,
+      "radius": 2,
+      "a": 1,
+      "c": 2,
+      "k": 1,
+      "h": 7,
+      "gap": 15,
+      "divisor": 2
+    },
+    {
+      "prime": 193,
+      "radius": 2,
+      "a": 2,
+      "c": 2,
+      "k": 1,
+      "h": 15,
+      "gap": 15,
+      "divisor": 8
+    },
+    {
+      "prime": 241,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 2,
+      "h": 7,
+      "gap": 35,
+      "divisor": 1
+    },
+    {
+      "prime": 313,
+      "radius": 2,
+      "a": 2,
+      "c": 1,
+      "k": 1,
+      "h": 7,
+      "gap": 47,
+      "divisor": 4
+    },
+    {
+      "prime": 337,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 3,
+      "h": 11,
+      "gap": 31,
+      "divisor": 1
+    },
+    {
+      "prime": 409,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 2,
+      "h": 7,
+      "gap": 59,
+      "divisor": 1
+    },
+    {
+      "prime": 433,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 5,
+      "h": 19,
+      "gap": 23,
+      "divisor": 1
+    },
+    {
+      "prime": 457,
+      "radius": 2,
+      "a": 1,
+      "c": 2,
+      "k": 2,
+      "h": 15,
+      "gap": 31,
+      "divisor": 2
+    },
+    {
+      "prime": 577,
+      "radius": 1,
+      "a": 1,
+      "c": 1,
+      "k": 2,
+      "h": 7,
+      "gap": 83,
+      "divisor": 1
+    }
+  ]
+}

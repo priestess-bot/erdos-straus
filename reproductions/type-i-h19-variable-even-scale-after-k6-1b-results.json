@@ -1,0 +1,1252 @@
+{
+  "arithmetic": "for every prime on the exact k=2,6 boundary, enumerate every k|(p-1)/4 whose affine source n=((4k-1)p+1)/(4k) is even, then every g|kn with g<=n and g=-1 (mod 4k-1); reconstruct each selected terminal Type I certificate exactly",
+  "scope_note": "This is exhaustive only for the indicated terminal even-source affine mixed-factor family. A miss excludes every scale in that family for the listed finite input, not other descent mechanisms or the conjecture.",
+  "input_k2_k6_boundary_count": 71,
+  "variable_even_scale_terminal_count": 43,
+  "variable_even_scale_miss_count": 28,
+  "variable_even_scale_misses": [
+    {
+      "prime": 1683049,
+      "eligible_even_scales": [
+        2,
+        6,
+        46,
+        138,
+        6098,
+        18294,
+        140254,
+        420762
+      ]
+    },
+    {
+      "prime": 8955769,
+      "eligible_even_scales": [
+        2,
+        6,
+        746314,
+        2238942
+      ]
+    },
+    {
+      "prime": 11910361,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        14,
+        22,
+        30,
+        42,
+        66,
+        70,
+        110,
+        154,
+        210,
+        330,
+        462,
+        770,
+        2310,
+        2578,
+        7734,
+        12890,
+        18046,
+        28358,
+        38670,
+        54138,
+        85074,
+        90230,
+        141790,
+        198506,
+        270690,
+        425370,
+        595518,
+        992530,
+        2977590
+      ]
+    },
+    {
+      "prime": 12180169,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        18,
+        22,
+        26,
+        42,
+        66,
+        78,
+        126,
+        154,
+        182,
+        198,
+        234,
+        286,
+        338,
+        462,
+        546,
+        858,
+        1014,
+        1386,
+        1638,
+        2002,
+        2366,
+        2574,
+        3042,
+        3718,
+        4394,
+        6006,
+        7098,
+        11154,
+        13182,
+        18018,
+        21294,
+        26026,
+        30758,
+        33462,
+        39546,
+        48334,
+        78078,
+        92274,
+        145002,
+        234234,
+        276822,
+        338338,
+        435006,
+        1015014,
+        3045042
+      ]
+    },
+    {
+      "prime": 23841241,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        122,
+        366,
+        610,
+        1830,
+        6514,
+        19542,
+        32570,
+        97710,
+        397354,
+        1192062,
+        1986770,
+        5960310
+      ]
+    },
+    {
+      "prime": 24887641,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        314,
+        942,
+        1570,
+        2642,
+        4710,
+        7926,
+        13210,
+        39630,
+        414794,
+        1244382,
+        2073970,
+        6221910
+      ]
+    },
+    {
+      "prime": 35840809,
+      "eligible_even_scales": [
+        2,
+        6,
+        18,
+        46,
+        138,
+        414,
+        1058,
+        1882,
+        3174,
+        5646,
+        9522,
+        16938,
+        43286,
+        129858,
+        389574,
+        995578,
+        2986734,
+        8960202
+      ]
+    },
+    {
+      "prime": 79058281,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        14,
+        30,
+        42,
+        70,
+        210,
+        188234,
+        564702,
+        941170,
+        1317638,
+        2823510,
+        3952914,
+        6588190,
+        19764570
+      ]
+    },
+    {
+      "prime": 81941161,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        14,
+        30,
+        42,
+        70,
+        210,
+        195098,
+        585294,
+        975490,
+        1365686,
+        2926470,
+        4097058,
+        6828430,
+        20485290
+      ]
+    },
+    {
+      "prime": 85192969,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        42,
+        98,
+        158,
+        262,
+        294,
+        474,
+        686,
+        786,
+        1106,
+        1834,
+        2058,
+        3318,
+        5502,
+        7742,
+        12838,
+        20698,
+        23226,
+        38514,
+        54194,
+        62094,
+        89866,
+        144886,
+        162582,
+        269598,
+        434658,
+        1014202,
+        3042606,
+        7099414,
+        21298242
+      ]
+    },
+    {
+      "prime": 141326089,
+      "eligible_even_scales": [
+        2,
+        6,
+        74,
+        222,
+        334,
+        1002,
+        1906,
+        5718,
+        12358,
+        37074,
+        70522,
+        211566,
+        318302,
+        954906,
+        11777174,
+        35331522
+      ]
+    },
+    {
+      "prime": 157523881,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        2102,
+        2498,
+        6306,
+        7494,
+        10510,
+        12490,
+        31530,
+        37470,
+        2625398,
+        7876194,
+        13126990,
+        39380970
+      ]
+    },
+    {
+      "prime": 158216809,
+      "eligible_even_scales": [
+        2,
+        6,
+        58,
+        62,
+        174,
+        186,
+        1798,
+        5394,
+        14666,
+        43998,
+        425314,
+        454646,
+        1275942,
+        1363938,
+        13184734,
+        39554202
+      ]
+    },
+    {
+      "prime": 158417449,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        42,
+        94,
+        282,
+        658,
+        1974,
+        40126,
+        120378,
+        280882,
+        842646,
+        1885922,
+        5657766,
+        13201454,
+        39604362
+      ]
+    },
+    {
+      "prime": 215665129,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        18,
+        34,
+        42,
+        102,
+        126,
+        238,
+        306,
+        714,
+        2142,
+        50342,
+        151026,
+        352394,
+        453078,
+        855814,
+        1057182,
+        2567442,
+        3171546,
+        5990698,
+        7702326,
+        17972094,
+        53916282
+      ]
+    },
+    {
+      "prime": 237354121,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        18,
+        30,
+        90,
+        1318634,
+        3955902,
+        6593170,
+        11867706,
+        19779510,
+        59338530
+      ]
+    },
+    {
+      "prime": 283163161,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        14,
+        30,
+        42,
+        70,
+        98,
+        210,
+        294,
+        490,
+        1470,
+        96314,
+        288942,
+        481570,
+        674198,
+        1444710,
+        2022594,
+        3370990,
+        4719386,
+        10112970,
+        14158158,
+        23596930,
+        70790790
+      ]
+    },
+    {
+      "prime": 399299209,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        22,
+        42,
+        66,
+        154,
+        462,
+        432142,
+        1296426,
+        3024994,
+        4753562,
+        9074982,
+        14260686,
+        33274934,
+        99824802
+      ]
+    },
+    {
+      "prime": 449610121,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        18,
+        30,
+        90,
+        2497834,
+        7493502,
+        12489170,
+        22480506,
+        37467510,
+        112402530
+      ]
+    },
+    {
+      "prime": 605553001,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        26,
+        30,
+        50,
+        78,
+        130,
+        150,
+        250,
+        390,
+        650,
+        750,
+        1950,
+        3250,
+        9750,
+        31054,
+        93162,
+        155270,
+        403702,
+        465810,
+        776350,
+        1211106,
+        2018510,
+        2329050,
+        3881750,
+        6055530,
+        10092550,
+        11645250,
+        30277650,
+        50462750,
+        151388250
+      ]
+    },
+    {
+      "prime": 614315641,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        10238594,
+        30715782,
+        51192970,
+        153578910
+      ]
+    },
+    {
+      "prime": 640775689,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        42,
+        1402,
+        4206,
+        9814,
+        10882,
+        29442,
+        32646,
+        76174,
+        228522,
+        7628282,
+        22884846,
+        53397974,
+        160193922
+      ]
+    },
+    {
+      "prime": 701509561,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        146,
+        438,
+        730,
+        2190,
+        2194,
+        6582,
+        10658,
+        10970,
+        31974,
+        32910,
+        53290,
+        159870,
+        160162,
+        480486,
+        800810,
+        2402430,
+        11691826,
+        35075478,
+        58459130,
+        175377390
+      ]
+    },
+    {
+      "prime": 749224921,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        2906,
+        8594,
+        8718,
+        14530,
+        25782,
+        42970,
+        43590,
+        128910,
+        12487082,
+        37461246,
+        62435410,
+        187306230
+      ]
+    },
+    {
+      "prime": 784893481,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        14,
+        30,
+        42,
+        70,
+        210,
+        226,
+        678,
+        1130,
+        1582,
+        3390,
+        4746,
+        7910,
+        16538,
+        23730,
+        49614,
+        82690,
+        115766,
+        248070,
+        347298,
+        578830,
+        1736490,
+        1868794,
+        5606382,
+        9343970,
+        13081558,
+        28031910,
+        39244674,
+        65407790,
+        196223370
+      ]
+    },
+    {
+      "prime": 798746041,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        18,
+        30,
+        90,
+        106,
+        318,
+        530,
+        954,
+        1590,
+        4770,
+        83726,
+        251178,
+        418630,
+        753534,
+        1255890,
+        3767670,
+        4437478,
+        13312434,
+        22187390,
+        39937302,
+        66562170,
+        199686510
+      ]
+    },
+    {
+      "prime": 971287321,
+      "eligible_even_scales": [
+        2,
+        6,
+        10,
+        30,
+        16188122,
+        48564366,
+        80940610,
+        242821830
+      ]
+    },
+    {
+      "prime": 985076569,
+      "eligible_even_scales": [
+        2,
+        6,
+        14,
+        18,
+        42,
+        46,
+        126,
+        138,
+        322,
+        414,
+        966,
+        2898,
+        169958,
+        509874,
+        1189706,
+        1529622,
+        3569118,
+        3909034,
+        10707354,
+        11727102,
+        27363238,
+        35181306,
+        82089714,
+        246269142
+      ]
+    }
+  ],
+  "records": [
+    {
+      "prime": 12321241,
+      "eligible_even_scale_count": 8,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 12218564,
+        "mixed_divisor": 4164,
+        "k": 30,
+        "q": 119,
+        "gap": 4199,
+        "certificate_divisor": 76006880
+      }
+    },
+    {
+      "prime": 21852601,
+      "eligible_even_scale_count": 72,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 21670496,
+        "mixed_divisor": 1070,
+        "k": 30,
+        "q": 119,
+        "gap": 1079,
+        "certificate_divisor": 929874084
+      }
+    },
+    {
+      "prime": 59919721,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 3,
+      "certificate": {
+        "source_denominator": 58849726,
+        "mixed_divisor": 494,
+        "k": 14,
+        "q": 55,
+        "gap": 503,
+        "certificate_divisor": 32446801296
+      }
+    },
+    {
+      "prime": 60697081,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 59854066,
+        "mixed_divisor": 212,
+        "k": 18,
+        "q": 71,
+        "gap": 215,
+        "certificate_divisor": 60340699386
+      }
+    },
+    {
+      "prime": 76759321,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 4,
+      "certificate": {
+        "source_denominator": 76119660,
+        "mixed_divisor": 237,
+        "k": 30,
+        "q": 119,
+        "gap": 239,
+        "certificate_divisor": 51793513110
+      }
+    },
+    {
+      "prime": 78097321,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 7,
+      "certificate": {
+        "source_denominator": 76144888,
+        "mixed_divisor": 3821,
+        "k": 10,
+        "q": 39,
+        "gap": 3919,
+        "certificate_divisor": 9977433410
+      }
+    },
+    {
+      "prime": 78624841,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 77220826,
+        "mixed_divisor": 224014,
+        "k": 14,
+        "q": 55,
+        "gap": 228087,
+        "certificate_divisor": 123911744
+      }
+    },
+    {
+      "prime": 82502281,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 82207630,
+        "mixed_divisor": 557,
+        "k": 70,
+        "q": 279,
+        "gap": 559,
+        "certificate_divisor": 10911000590
+      }
+    },
+    {
+      "prime": 99004921,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 96529798,
+        "mixed_divisor": 1130,
+        "k": 10,
+        "q": 39,
+        "gap": 1159,
+        "certificate_divisor": 54215729408
+      }
+    },
+    {
+      "prime": 102359401,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 101506406,
+        "mixed_divisor": 1070,
+        "k": 30,
+        "q": 119,
+        "gap": 1079,
+        "certificate_divisor": 20400443664
+      }
+    },
+    {
+      "prime": 110562841,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 110442664,
+        "mixed_divisor": 109360,
+        "k": 230,
+        "q": 919,
+        "gap": 109479,
+        "certificate_divisor": 30434888
+      }
+    },
+    {
+      "prime": 165479161,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 5,
+      "certificate": {
+        "source_denominator": 162524176,
+        "mixed_divisor": 5719,
+        "k": 14,
+        "q": 55,
+        "gap": 5823,
+        "certificate_divisor": 21377113826
+      }
+    },
+    {
+      "prime": 205462681,
+      "eligible_even_scale_count": 64,
+      "candidate_count": 5,
+      "certificate": {
+        "source_denominator": 200326114,
+        "mixed_divisor": 2105,
+        "k": 10,
+        "q": 39,
+        "gap": 2159,
+        "certificate_divisor": 125343825642
+      }
+    },
+    {
+      "prime": 227018089,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 223865060,
+        "mixed_divisor": 3336,
+        "k": 18,
+        "q": 71,
+        "gap": 3383,
+        "certificate_divisor": 53643281988
+      }
+    },
+    {
+      "prime": 248995321,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 242770438,
+        "mixed_divisor": 35701535,
+        "k": 10,
+        "q": 39,
+        "gap": 36616959,
+        "certificate_divisor": 14280614
+      }
+    },
+    {
+      "prime": 255844681,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 255727536,
+        "mixed_divisor": 508638,
+        "k": 546,
+        "q": 2183,
+        "gap": 508871,
+        "certificate_divisor": 14789628
+      }
+    },
+    {
+      "prime": 260353129,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 255703966,
+        "mixed_divisor": 29204,
+        "k": 14,
+        "q": 55,
+        "gap": 29735,
+        "certificate_divisor": 10364167926
+      }
+    },
+    {
+      "prime": 330605881,
+      "eligible_even_scale_count": 24,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 327850832,
+        "mixed_divisor": 30820,
+        "k": 30,
+        "q": 119,
+        "gap": 31079,
+        "certificate_divisor": 7389736056
+      }
+    },
+    {
+      "prime": 338195881,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 10,
+      "certificate": {
+        "source_denominator": 329740984,
+        "mixed_divisor": 1052,
+        "k": 10,
+        "q": 39,
+        "gap": 1079,
+        "certificate_divisor": 679522241880
+      }
+    },
+    {
+      "prime": 347699641,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 5,
+      "certificate": {
+        "source_denominator": 344802144,
+        "mixed_divisor": 11304,
+        "k": 30,
+        "q": 119,
+        "gap": 11399,
+        "certificate_divisor": 22282482480
+      }
+    },
+    {
+      "prime": 356911129,
+      "eligible_even_scale_count": 24,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 354786658,
+        "mixed_divisor": 834,
+        "k": 42,
+        "q": 167,
+        "gap": 839,
+        "certificate_divisor": 227293438288
+      }
+    },
+    {
+      "prime": 377526601,
+      "eligible_even_scale_count": 72,
+      "candidate_count": 5,
+      "certificate": {
+        "source_denominator": 376842676,
+        "mixed_divisor": 1652,
+        "k": 138,
+        "q": 551,
+        "gap": 1655,
+        "certificate_divisor": 39074174496
+      }
+    },
+    {
+      "prime": 382619161,
+      "eligible_even_scale_count": 128,
+      "candidate_count": 3,
+      "certificate": {
+        "source_denominator": 377305006,
+        "mixed_divisor": 1206,
+        "k": 18,
+        "q": 71,
+        "gap": 1223,
+        "certificate_divisor": 421498866352
+      }
+    },
+    {
+      "prime": 398757241,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 5,
+      "certificate": {
+        "source_denominator": 393218946,
+        "mixed_divisor": 4756,
+        "k": 18,
+        "q": 71,
+        "gap": 4823,
+        "certificate_divisor": 116089605882
+      }
+    },
+    {
+      "prime": 408255961,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 7,
+      "certificate": {
+        "source_denominator": 404853828,
+        "mixed_divisor": 237,
+        "k": 30,
+        "q": 119,
+        "gap": 239,
+        "certificate_divisor": 1465129437750
+      }
+    },
+    {
+      "prime": 512938441,
+      "eligible_even_scale_count": 64,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 511513612,
+        "mixed_divisor": 988326,
+        "k": 90,
+        "q": 359,
+        "gap": 991079,
+        "certificate_divisor": 185585660
+      }
+    },
+    {
+      "prime": 519857641,
+      "eligible_even_scale_count": 24,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 519468526,
+        "mixed_divisor": 14684,
+        "k": 334,
+        "q": 1335,
+        "gap": 14695,
+        "certificate_divisor": 3444154226
+      }
+    },
+    {
+      "prime": 559158601,
+      "eligible_even_scale_count": 192,
+      "candidate_count": 6,
+      "certificate": {
+        "source_denominator": 554498946,
+        "mixed_divisor": 237,
+        "k": 30,
+        "q": 119,
+        "gap": 239,
+        "certificate_divisor": 2748405488310
+      }
+    },
+    {
+      "prime": 581004649,
+      "eligible_even_scale_count": 96,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 577182250,
+        "mixed_divisor": 610945,
+        "k": 38,
+        "q": 151,
+        "gap": 614991,
+        "certificate_divisor": 910693910
+      }
+    },
+    {
+      "prime": 616391161,
+      "eligible_even_scale_count": 64,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 600981382,
+        "mixed_divisor": 5030,
+        "k": 10,
+        "q": 39,
+        "gap": 5159,
+        "certificate_divisor": 472097941488
+      }
+    },
+    {
+      "prime": 648180121,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 8,
+      "certificate": {
+        "source_denominator": 642778620,
+        "mixed_divisor": 18920,
+        "k": 30,
+        "q": 119,
+        "gap": 19079,
+        "certificate_divisor": 46265217900
+      }
+    },
+    {
+      "prime": 675458281,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 673582008,
+        "mixed_divisor": 243760,
+        "k": 90,
+        "q": 359,
+        "gap": 244439,
+        "certificate_divisor": 1300727736
+      }
+    },
+    {
+      "prime": 694709401,
+      "eligible_even_scale_count": 72,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 692228296,
+        "mixed_divisor": 1935143,
+        "k": 70,
+        "q": 279,
+        "gap": 1942079,
+        "certificate_divisor": 223923690
+      }
+    },
+    {
+      "prime": 697980889,
+      "eligible_even_scale_count": 40,
+      "candidate_count": 5,
+      "certificate": {
+        "source_denominator": 690049288,
+        "mixed_divisor": 2696,
+        "k": 22,
+        "q": 87,
+        "gap": 2727,
+        "certificate_divisor": 513366949568
+      }
+    },
+    {
+      "prime": 699747049,
+      "eligible_even_scale_count": 144,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 691795378,
+        "mixed_divisor": 5510318,
+        "k": 22,
+        "q": 87,
+        "gap": 5573655,
+        "certificate_divisor": 256480256
+      }
+    },
+    {
+      "prime": 726075529,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 725055760,
+        "mixed_divisor": 107360,
+        "k": 178,
+        "q": 711,
+        "gap": 107511,
+        "certificate_divisor": 1724684720
+      }
+    },
+    {
+      "prime": 736324681,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 723176026,
+        "mixed_divisor": 1154,
+        "k": 14,
+        "q": 55,
+        "gap": 1175,
+        "certificate_divisor": 2097424200816
+      }
+    },
+    {
+      "prime": 758011081,
+      "eligible_even_scale_count": 16,
+      "candidate_count": 3,
+      "certificate": {
+        "source_denominator": 751694322,
+        "mixed_divisor": 237,
+        "k": 30,
+        "q": 119,
+        "gap": 239,
+        "certificate_divisor": 5050818927990
+      }
+    },
+    {
+      "prime": 820218169,
+      "eligible_even_scale_count": 48,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 805571416,
+        "mixed_divisor": 73424,
+        "k": 14,
+        "q": 55,
+        "gap": 74759,
+        "certificate_divisor": 40912109784
+      }
+    },
+    {
+      "prime": 893389561,
+      "eligible_even_scale_count": 24,
+      "candidate_count": 2,
+      "certificate": {
+        "source_denominator": 892326002,
+        "mixed_divisor": 127648815,
+        "k": 210,
+        "q": 839,
+        "gap": 127800959,
+        "certificate_divisor": 2431406
+      }
+    },
+    {
+      "prime": 935116009,
+      "eligible_even_scale_count": 32,
+      "candidate_count": 1,
+      "certificate": {
+        "source_denominator": 928240156,
+        "mixed_divisor": 133729514,
+        "k": 34,
+        "q": 135,
+        "gap": 134720103,
+        "certificate_divisor": 15732884
+      }
+    },
+    {
+      "prime": 952431481,
+      "eligible_even_scale_count": 128,
+      "candidate_count": 11,
+      "certificate": {
+        "source_denominator": 928620694,
+        "mixed_divisor": 5381,
+        "k": 10,
+        "q": 39,
+        "gap": 5519,
+        "certificate_divisor": 1053633431250
+      }
+    },
+    {
+      "prime": 992339401,
+      "eligible_even_scale_count": 96,
+      "candidate_count": 3,
+      "certificate": {
+        "source_denominator": 987377704,
+        "mixed_divisor": 596,
+        "k": 50,
+        "q": 199,
+        "gap": 599,
+        "certificate_divisor": 2065307625000
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "arithmetic": "exact direct Type II divisor enumeration, complete fixed-factor candidate-gap enumeration, and explicit strict-descent verification",
+  "scope_note": "A finite hybrid audit only. It does not assert uniform bounds for the direct window, the trap mechanism, or the descent family.",
+  "prime_limit": 10000000,
+  "window_j": 20,
+  "direct_window_core_prime_count": 82887,
+  "direct_window_captured_count": 82886,
+  "direct_window_residual_count": 1,
+  "records": [
+    {
+      "prime": 8803369,
+      "complete_fixed_factor_candidate_gap_count": 3929,
+      "fixed_factor_traps": [],
+      "fixed_factor_trap_certificates_at_seed": [],
+      "quadratic_external_source_descent": {
+        "source_denominator": 8768435,
+        "k": 63,
+        "q": 251,
+        "factor": 17014725,
+        "source_solution": [
+          552411405,
+          2268630,
+          73654854
+        ],
+        "target_solution": [
+          4863081438023445,
+          2268630,
+          73654854
+        ],
+        "certificate": {
+          "gap": 271151,
+          "x": 2268630,
+          "divisor": 302484
+        }
+      },
+      "classification": [
+        "quadratic-external-strict-descent"
+      ]
+    }
+  ],
+  "hybrid_uncovered": []
+}

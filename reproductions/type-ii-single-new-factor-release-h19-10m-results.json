@@ -1,0 +1,116 @@
+{
+  "arithmetic": "exact trial-prime factorization, complete divisor enumeration at every later canonical shift, and reconstructed Type II certificate checks",
+  "scope_note": "A finite one-new-factor release audit. It does not assert that every multi-new state eventually releases at a fixed depth.",
+  "prime_limit": 10000000,
+  "base_shift_bound": 19,
+  "shift_cap": 200,
+  "multi_new_first_count": 4,
+  "one_new_release_count": 4,
+  "missing_through_cap": [],
+  "profiles": [
+    {
+      "prime": 1127281,
+      "first_multi_new_shift": 32,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 41,
+      "selected_witness": {
+        "h": 20499,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 6833,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 41,
+        "k": 125,
+        "gap": 55,
+        "divisor": 41,
+        "collision_multiplicity": 1,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 4722169,
+      "first_multi_new_shift": 26,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 96,
+      "selected_witness": {
+        "h": 1151,
+        "h_factorization": [
+          {
+            "prime": 1151,
+            "exponent": 1
+          }
+        ],
+        "a": 4,
+        "c": 6,
+        "k": 12,
+        "gap": 4103,
+        "divisor": 96,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 7378849,
+      "first_multi_new_shift": 26,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 29,
+      "selected_witness": {
+        "h": 273295,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 4969,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 29,
+        "k": 2356,
+        "gap": 27,
+        "divisor": 29,
+        "collision_multiplicity": 2,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    },
+    {
+      "prime": 8955769,
+      "first_multi_new_shift": 25,
+      "first_multi_new_multiplicity": 2,
+      "first_one_new_shift": 35,
+      "selected_witness": {
+        "h": 139,
+        "h_factorization": [
+          {
+            "prime": 139,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 35,
+        "k": 1,
+        "gap": 64431,
+        "divisor": 35,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    }
+  ]
+}

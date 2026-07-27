@@ -1,0 +1,67 @@
+{
+  "arithmetic": "exact determinant calculation, integer divisor checks, and fractions.Fraction verification of an explicit square-only Type II affine family",
+  "square_only_example": {
+    "classification": {
+      "S": 12,
+      "T": 12,
+      "A": 9,
+      "B": 9,
+      "E": 12,
+      "determinant": 0,
+      "is_proportional": true,
+      "a": 9,
+      "a_divides_E_squared": true,
+      "a_at_most_E": true,
+      "a_divides_E": false
+    },
+    "gap": 7,
+    "gap_divides_E_plus_a": true,
+    "samples": [
+      {
+        "n": 0,
+        "p": 41,
+        "x": 12,
+        "d": 9,
+        "y": 123,
+        "z": 164,
+        "exact_identity": true
+      },
+      {
+        "n": 1,
+        "p": 89,
+        "x": 24,
+        "d": 18,
+        "y": 534,
+        "z": 712,
+        "exact_identity": true
+      },
+      {
+        "n": 2,
+        "p": 137,
+        "x": 36,
+        "d": 27,
+        "y": 1233,
+        "z": 1644,
+        "exact_identity": true
+      },
+      {
+        "n": 3,
+        "p": 185,
+        "x": 48,
+        "d": 36,
+        "y": 2220,
+        "z": 2960,
+        "exact_identity": true
+      }
+    ]
+  },
+  "nonproportional_control": {
+    "S": 12,
+    "T": 12,
+    "A": 9,
+    "B": 10,
+    "E": 12,
+    "determinant": -12,
+    "is_proportional": false
+  }
+}

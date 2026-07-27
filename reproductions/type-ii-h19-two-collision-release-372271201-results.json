@@ -1,0 +1,329 @@
+{
+  "arithmetic": "exact trial factorization and complete one-new-factor Type II enumeration at every shift through each stated cap",
+  "scope_note": "A single-state release-depth audit. It does not give a uniform release bound for the H19 residual family.",
+  "prime": 372271201,
+  "base_shift_bound": 19,
+  "collision_primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17
+  ],
+  "caps": [
+    200,
+    400,
+    401,
+    483,
+    484
+  ],
+  "records": [
+    {
+      "shift_cap": 200,
+      "single_new_candidate_count": 1,
+      "best_witness": {
+        "shift": 89,
+        "h": 22071,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 1051,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 89,
+        "k": 62,
+        "collision_multiplicity": 2,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 3,
+            "source_shifts": [
+              2,
+              5,
+              8,
+              11,
+              14,
+              17
+            ],
+            "target_shift_residue": 2
+          },
+          {
+            "prime": 7,
+            "source_shifts": [
+              5,
+              12,
+              19
+            ],
+            "target_shift_residue": 5
+          }
+        ]
+      },
+      "first_zero_or_one_collision": null,
+      "first_pure_new": null
+    },
+    {
+      "shift_cap": 400,
+      "single_new_candidate_count": 1,
+      "best_witness": {
+        "shift": 89,
+        "h": 22071,
+        "h_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 1051,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 89,
+        "k": 62,
+        "collision_multiplicity": 2,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 3,
+            "source_shifts": [
+              2,
+              5,
+              8,
+              11,
+              14,
+              17
+            ],
+            "target_shift_residue": 2
+          },
+          {
+            "prime": 7,
+            "source_shifts": [
+              5,
+              12,
+              19
+            ],
+            "target_shift_residue": 5
+          }
+        ]
+      },
+      "first_zero_or_one_collision": null,
+      "first_pure_new": null
+    },
+    {
+      "shift_cap": 401,
+      "single_new_candidate_count": 2,
+      "best_witness": {
+        "shift": 401,
+        "h": 134735,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 26947,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 401,
+        "k": 84,
+        "collision_multiplicity": 1,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 5,
+            "source_shifts": [
+              1,
+              6,
+              11,
+              16
+            ],
+            "target_shift_residue": 1
+          }
+        ]
+      },
+      "first_zero_or_one_collision": {
+        "shift": 401,
+        "h": 134735,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 26947,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 401,
+        "k": 84,
+        "collision_multiplicity": 1,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 5,
+            "source_shifts": [
+              1,
+              6,
+              11,
+              16
+            ],
+            "target_shift_residue": 1
+          }
+        ]
+      },
+      "first_pure_new": null
+    },
+    {
+      "shift_cap": 483,
+      "single_new_candidate_count": 2,
+      "best_witness": {
+        "shift": 401,
+        "h": 134735,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 26947,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 401,
+        "k": 84,
+        "collision_multiplicity": 1,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 5,
+            "source_shifts": [
+              1,
+              6,
+              11,
+              16
+            ],
+            "target_shift_residue": 1
+          }
+        ]
+      },
+      "first_zero_or_one_collision": {
+        "shift": 401,
+        "h": 134735,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 26947,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 401,
+        "k": 84,
+        "collision_multiplicity": 1,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 5,
+            "source_shifts": [
+              1,
+              6,
+              11,
+              16
+            ],
+            "target_shift_residue": 1
+          }
+        ]
+      },
+      "first_pure_new": null
+    },
+    {
+      "shift_cap": 484,
+      "single_new_candidate_count": 3,
+      "best_witness": {
+        "shift": 484,
+        "h": 3343,
+        "h_factorization": [
+          {
+            "prime": 3343,
+            "exponent": 1
+          }
+        ],
+        "a": 22,
+        "c": 1,
+        "k": 38,
+        "collision_multiplicity": 0,
+        "new_multiplicity": 1,
+        "collision_source_labels": []
+      },
+      "first_zero_or_one_collision": {
+        "shift": 401,
+        "h": 134735,
+        "h_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 26947,
+            "exponent": 1
+          }
+        ],
+        "a": 1,
+        "c": 401,
+        "k": 84,
+        "collision_multiplicity": 1,
+        "new_multiplicity": 1,
+        "collision_source_labels": [
+          {
+            "prime": 5,
+            "source_shifts": [
+              1,
+              6,
+              11,
+              16
+            ],
+            "target_shift_residue": 1
+          }
+        ]
+      },
+      "first_pure_new": {
+        "shift": 484,
+        "h": 3343,
+        "h_factorization": [
+          {
+            "prime": 3343,
+            "exponent": 1
+          }
+        ],
+        "a": 22,
+        "c": 1,
+        "k": 38,
+        "collision_multiplicity": 0,
+        "new_multiplicity": 1,
+        "collision_source_labels": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "arithmetic": "for each p-1 residual of the stored finite profile, enumerate every natural Type I gap, every B<=4 normal form, and every maximum-tail reverse bridge; retain strict even sources and independently reconstruct the selected target and source identities",
+  "scope_note": "A complete finite general-source refinement of the stated residual set. It does not establish a universal bound on source distance, B, or bridge factors.",
+  "prime_limit": 20000017,
+  "input_residual_count": 1,
+  "b_cap": 4,
+  "b_bounded_normal_form_count": 35,
+  "b_bounded_strict_reverse_lift_count": 54,
+  "strict_even_candidate_count": 44,
+  "minimum_source_distance_histogram": {
+    "7": 1
+  },
+  "records": [
+    {
+      "prime": 14823769,
+      "b_bounded_normal_form_count": 35,
+      "b_bounded_strict_reverse_lift_count": 54,
+      "strict_even_candidate_count": 44,
+      "minimum_source_distance": {
+        "gap": 183,
+        "normal_form": [
+          1573,
+          2,
+          1178
+        ],
+        "R": 103,
+        "K": 381712052,
+        "source_denominator": 14823762,
+        "source_distance": 7,
+        "source_term": 7837131040692,
+        "E": 722,
+        "E_factorization": {
+          "2": 1,
+          "19": 2
+        },
+        "odd_E_factorization": {
+          "19": 2
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 2
+      },
+      "minimum_odd_bridge": {
+        "gap": 183,
+        "normal_form": [
+          1573,
+          2,
+          1178
+        ],
+        "R": 103,
+        "K": 381712052,
+        "source_denominator": 14823762,
+        "source_distance": 7,
+        "source_term": 7837131040692,
+        "E": 722,
+        "E_factorization": {
+          "2": 1,
+          "19": 2
+        },
+        "odd_E_factorization": {
+          "19": 2
+        },
+        "odd_E_prime_support": 1,
+        "odd_E_exponent_count": 2
+      }
+    }
+  ]
+}

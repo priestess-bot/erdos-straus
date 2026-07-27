@@ -1,0 +1,190 @@
+{
+  "arithmetic": "exact affine checks that 32 divides p-1 on every residual branch; exact q=8 square-root-completion normalization for each fixed or fixed-plus-one-new-prime m=31 construction; and the stored increasing p-1 tail-gap scan for each recorded m=31 miss",
+  "scope_note": "A finite profile of the dominant alternative branch. A miss says the least scanned ordinary tail gap exceeded 31; it does not exclude another certificate model or prove a general divisor-selection obstruction.",
+  "input_parameter_limit_exclusive": 1048576,
+  "residual_branch_count": 14,
+  "common_prime_coefficient": 1552726375200,
+  "all_branches_have_32_dividing_p_minus_one": true,
+  "all_branches_have_133_dividing_u": true,
+  "fixed_m31_factor": 1132096,
+  "fixed_divisor_residue_set_mod_31": [
+    1,
+    2,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    14,
+    16,
+    18,
+    19,
+    20,
+    25,
+    28
+  ],
+  "fixed_u_residue_set_mod_31": [
+    3,
+    6,
+    11,
+    12,
+    13,
+    15,
+    17,
+    21,
+    22,
+    23,
+    24,
+    26,
+    27,
+    29,
+    30
+  ],
+  "m27_alternative_record_count": 5081,
+  "m31_selector_hit_count": 3730,
+  "fixed_m31_selector_hit_count": 2287,
+  "variable_m31_selector_hit_count": 1443,
+  "one_new_prime_m31_selector_hit_count": 1443,
+  "one_new_prime_selector_miss_count": 1351,
+  "m31_selector_miss_count": 1351,
+  "later_tail_gap_histogram": {
+    "35": 736,
+    "39": 293,
+    "47": 223,
+    "59": 76,
+    "63": 6,
+    "71": 11,
+    "79": 4,
+    "91": 1,
+    "95": 1
+  },
+  "branch_profile": [
+    {
+      "v_mod_29": 0,
+      "m27_record_count": 378,
+      "m31_selector_hit_count": 278,
+      "fixed_m31_selector_hit_count": 174,
+      "variable_m31_selector_hit_count": 104,
+      "one_new_prime_m31_selector_hit_count": 104,
+      "m31_selector_miss_count": 100
+    },
+    {
+      "v_mod_29": 1,
+      "m27_record_count": 390,
+      "m31_selector_hit_count": 281,
+      "fixed_m31_selector_hit_count": 171,
+      "variable_m31_selector_hit_count": 110,
+      "one_new_prime_m31_selector_hit_count": 110,
+      "m31_selector_miss_count": 109
+    },
+    {
+      "v_mod_29": 3,
+      "m27_record_count": 348,
+      "m31_selector_hit_count": 263,
+      "fixed_m31_selector_hit_count": 156,
+      "variable_m31_selector_hit_count": 107,
+      "one_new_prime_m31_selector_hit_count": 107,
+      "m31_selector_miss_count": 85
+    },
+    {
+      "v_mod_29": 7,
+      "m27_record_count": 343,
+      "m31_selector_hit_count": 248,
+      "fixed_m31_selector_hit_count": 159,
+      "variable_m31_selector_hit_count": 89,
+      "one_new_prime_m31_selector_hit_count": 89,
+      "m31_selector_miss_count": 95
+    },
+    {
+      "v_mod_29": 10,
+      "m27_record_count": 366,
+      "m31_selector_hit_count": 277,
+      "fixed_m31_selector_hit_count": 169,
+      "variable_m31_selector_hit_count": 108,
+      "one_new_prime_m31_selector_hit_count": 108,
+      "m31_selector_miss_count": 89
+    },
+    {
+      "v_mod_29": 14,
+      "m27_record_count": 398,
+      "m31_selector_hit_count": 287,
+      "fixed_m31_selector_hit_count": 167,
+      "variable_m31_selector_hit_count": 120,
+      "one_new_prime_m31_selector_hit_count": 120,
+      "m31_selector_miss_count": 111
+    },
+    {
+      "v_mod_29": 16,
+      "m27_record_count": 347,
+      "m31_selector_hit_count": 254,
+      "fixed_m31_selector_hit_count": 150,
+      "variable_m31_selector_hit_count": 104,
+      "one_new_prime_m31_selector_hit_count": 104,
+      "m31_selector_miss_count": 93
+    },
+    {
+      "v_mod_29": 17,
+      "m27_record_count": 359,
+      "m31_selector_hit_count": 261,
+      "fixed_m31_selector_hit_count": 163,
+      "variable_m31_selector_hit_count": 98,
+      "one_new_prime_m31_selector_hit_count": 98,
+      "m31_selector_miss_count": 98
+    },
+    {
+      "v_mod_29": 18,
+      "m27_record_count": 329,
+      "m31_selector_hit_count": 227,
+      "fixed_m31_selector_hit_count": 129,
+      "variable_m31_selector_hit_count": 98,
+      "one_new_prime_m31_selector_hit_count": 98,
+      "m31_selector_miss_count": 102
+    },
+    {
+      "v_mod_29": 19,
+      "m27_record_count": 348,
+      "m31_selector_hit_count": 265,
+      "fixed_m31_selector_hit_count": 176,
+      "variable_m31_selector_hit_count": 89,
+      "one_new_prime_m31_selector_hit_count": 89,
+      "m31_selector_miss_count": 83
+    },
+    {
+      "v_mod_29": 22,
+      "m27_record_count": 353,
+      "m31_selector_hit_count": 267,
+      "fixed_m31_selector_hit_count": 162,
+      "variable_m31_selector_hit_count": 105,
+      "one_new_prime_m31_selector_hit_count": 105,
+      "m31_selector_miss_count": 86
+    },
+    {
+      "v_mod_29": 24,
+      "m27_record_count": 385,
+      "m31_selector_hit_count": 278,
+      "fixed_m31_selector_hit_count": 172,
+      "variable_m31_selector_hit_count": 106,
+      "one_new_prime_m31_selector_hit_count": 106,
+      "m31_selector_miss_count": 107
+    },
+    {
+      "v_mod_29": 27,
+      "m27_record_count": 367,
+      "m31_selector_hit_count": 266,
+      "fixed_m31_selector_hit_count": 166,
+      "variable_m31_selector_hit_count": 100,
+      "one_new_prime_m31_selector_hit_count": 100,
+      "m31_selector_miss_count": 101
+    },
+    {
+      "v_mod_29": 28,
+      "m27_record_count": 370,
+      "m31_selector_hit_count": 278,
+      "fixed_m31_selector_hit_count": 173,
+      "variable_m31_selector_hit_count": 105,
+      "one_new_prime_m31_selector_hit_count": 105,
+      "m31_selector_miss_count": 92
+    }
+  ]
+}

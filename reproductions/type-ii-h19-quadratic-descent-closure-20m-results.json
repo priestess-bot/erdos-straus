@@ -1,0 +1,4693 @@
+{
+  "arithmetic": "exact canonical-ray divisor enumeration and constructors that verify the source identity, target identity, strict source order, and Type I certificate using exact rational arithmetic",
+  "scope_note": "A finite hybrid audit. It does not prove a uniform H-ray bound or that any strict-lift selector succeeds for every core prime.",
+  "prime_limit": 20000000,
+  "base_shift_bound": 19,
+  "canonical_shift_count": 19,
+  "core_prime_count": 158595,
+  "canonical_captured_count": 158530,
+  "canonical_residual_count": 65,
+  "adaptive_descent_count": 55,
+  "mixed_factor_descent_count": 65,
+  "quadratic_factor_descent_count": 65,
+  "adaptive_descent_misses": [
+    3361,
+    345601,
+    1398769,
+    3660721,
+    6868801,
+    6899281,
+    9744001,
+    13422481,
+    17883889,
+    18337201
+  ],
+  "mixed_factor_descent_misses": [],
+  "quadratic_factor_descent_misses": [],
+  "mixed_factor_k_histogram": {
+    "1": 25,
+    "2": 25,
+    "3": 4,
+    "4": 2,
+    "5": 3,
+    "6": 3,
+    "9": 1,
+    "12": 2
+  },
+  "quadratic_factor_k_histogram": {
+    "1": 25,
+    "2": 25,
+    "3": 4,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "12": 2
+  },
+  "records": [
+    {
+      "prime": 3361,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 2941,
+        "k": 2,
+        "q": 7,
+        "factor": 34,
+        "source_solution": [
+          5882,
+          850,
+          73525
+        ],
+        "target_solution": [
+          19769402,
+          850,
+          73525
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 850,
+          "divisor": 10625,
+          "y": 73525,
+          "z": 19769402
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 2941,
+        "k": 2,
+        "q": 7,
+        "factor": 68,
+        "source_solution": [
+          5882,
+          850,
+          73525
+        ],
+        "target_solution": [
+          19769402,
+          850,
+          73525
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 850,
+          "divisor": 10625,
+          "y": 73525,
+          "z": 19769402
+        }
+      }
+    },
+    {
+      "prime": 56401,
+      "adaptive_external_source_descent": {
+        "source_denominator": 55696,
+        "k": 20,
+        "q": 79,
+        "factor": 236,
+        "source_solution": [
+          1113920,
+          14160,
+          3341760
+        ],
+        "target_solution": [
+          62826201920,
+          14160,
+          3341760
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 239,
+          "x": 14160,
+          "divisor": 42480,
+          "y": 3341760,
+          "z": 62826201920
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 49351,
+        "k": 2,
+        "q": 7,
+        "factor": 34,
+        "source_solution": [
+          98702,
+          14110,
+          20480665
+        ],
+        "target_solution": [
+          5566891502,
+          14110,
+          20480665
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 14110,
+          "divisor": 2927825,
+          "y": 20480665,
+          "z": 5566891502
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 49351,
+        "k": 2,
+        "q": 7,
+        "factor": 68,
+        "source_solution": [
+          98702,
+          14110,
+          20480665
+        ],
+        "target_solution": [
+          5566891502,
+          14110,
+          20480665
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 14110,
+          "divisor": 2927825,
+          "y": 20480665,
+          "z": 5566891502
+        }
+      }
+    },
+    {
+      "prime": 66529,
+      "adaptive_external_source_descent": {
+        "source_denominator": 49897,
+        "k": 1,
+        "q": 3,
+        "factor": 41,
+        "source_solution": [
+          49897,
+          16646,
+          20258182
+        ],
+        "target_solution": [
+          3319597513,
+          16646,
+          20258182
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 16646,
+          "divisor": 6758276,
+          "y": 20258182,
+          "z": 3319597513
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 49897,
+        "k": 1,
+        "q": 3,
+        "factor": 41,
+        "source_solution": [
+          49897,
+          16646,
+          20258182
+        ],
+        "target_solution": [
+          3319597513,
+          16646,
+          20258182
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 16646,
+          "divisor": 6758276,
+          "y": 20258182,
+          "z": 3319597513
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 49897,
+        "k": 1,
+        "q": 3,
+        "factor": 41,
+        "source_solution": [
+          49897,
+          16646,
+          20258182
+        ],
+        "target_solution": [
+          3319597513,
+          16646,
+          20258182
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 16646,
+          "divisor": 6758276,
+          "y": 20258182,
+          "z": 3319597513
+        }
+      }
+    },
+    {
+      "prime": 135601,
+      "adaptive_external_source_descent": {
+        "source_denominator": 118651,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          237302,
+          33904,
+          309441808
+        ],
+        "target_solution": [
+          32178388502,
+          33904,
+          309441808
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 33904,
+          "divisor": 44210816,
+          "y": 309441808,
+          "z": 32178388502
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 118651,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          237302,
+          33904,
+          309441808
+        ],
+        "target_solution": [
+          32178388502,
+          33904,
+          309441808
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 33904,
+          "divisor": 44210816,
+          "y": 309441808,
+          "z": 32178388502
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 118651,
+        "k": 2,
+        "q": 7,
+        "factor": 26,
+        "source_solution": [
+          237302,
+          33904,
+          309441808
+        ],
+        "target_solution": [
+          32178388502,
+          33904,
+          309441808
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 33904,
+          "divisor": 44210816,
+          "y": 309441808,
+          "z": 32178388502
+        }
+      }
+    },
+    {
+      "prime": 176089,
+      "adaptive_external_source_descent": {
+        "source_denominator": 154078,
+        "k": 2,
+        "q": 7,
+        "factor": 41,
+        "source_solution": [
+          308156,
+          44034,
+          165479772
+        ],
+        "target_solution": [
+          54262881884,
+          44034,
+          165479772
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 44034,
+          "divisor": 23646258,
+          "y": 165479772,
+          "z": 54262881884
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 154078,
+        "k": 2,
+        "q": 7,
+        "factor": 41,
+        "source_solution": [
+          308156,
+          44034,
+          165479772
+        ],
+        "target_solution": [
+          54262881884,
+          44034,
+          165479772
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 44034,
+          "divisor": 23646258,
+          "y": 165479772,
+          "z": 54262881884
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 154078,
+        "k": 2,
+        "q": 7,
+        "factor": 82,
+        "source_solution": [
+          308156,
+          44034,
+          165479772
+        ],
+        "target_solution": [
+          54262881884,
+          44034,
+          165479772
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 44034,
+          "divisor": 23646258,
+          "y": 165479772,
+          "z": 54262881884
+        }
+      }
+    },
+    {
+      "prime": 225289,
+      "adaptive_external_source_descent": {
+        "source_denominator": 197128,
+        "k": 2,
+        "q": 7,
+        "factor": 41,
+        "source_solution": [
+          394256,
+          56334,
+          270853872
+        ],
+        "target_solution": [
+          88821539984,
+          56334,
+          270853872
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 56334,
+          "divisor": 38701458,
+          "y": 270853872,
+          "z": 88821539984
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 197128,
+        "k": 2,
+        "q": 7,
+        "factor": 41,
+        "source_solution": [
+          394256,
+          56334,
+          270853872
+        ],
+        "target_solution": [
+          88821539984,
+          56334,
+          270853872
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 56334,
+          "divisor": 38701458,
+          "y": 270853872,
+          "z": 88821539984
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 197128,
+        "k": 2,
+        "q": 7,
+        "factor": 82,
+        "source_solution": [
+          394256,
+          56334,
+          270853872
+        ],
+        "target_solution": [
+          88821539984,
+          56334,
+          270853872
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 56334,
+          "divisor": 38701458,
+          "y": 270853872,
+          "z": 88821539984
+        }
+      }
+    },
+    {
+      "prime": 252001,
+      "adaptive_external_source_descent": {
+        "source_denominator": 251001,
+        "k": 63,
+        "q": 251,
+        "factor": 501,
+        "source_solution": [
+          15813063,
+          63126,
+          31626126
+        ],
+        "target_solution": [
+          3984907689063,
+          63126,
+          31626126
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 503,
+          "x": 63126,
+          "divisor": 126252,
+          "y": 31626126,
+          "z": 3984907689063
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 239401,
+        "k": 5,
+        "q": 19,
+        "factor": 265,
+        "source_solution": [
+          1197005,
+          63070,
+          56977438
+        ],
+        "target_solution": [
+          301646457005,
+          63070,
+          56977438
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 279,
+          "x": 63070,
+          "divisor": 3002132,
+          "y": 56977438,
+          "z": 301646457005
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 239401,
+        "k": 5,
+        "q": 19,
+        "factor": 1325,
+        "source_solution": [
+          1197005,
+          63070,
+          56977438
+        ],
+        "target_solution": [
+          301646457005,
+          63070,
+          56977438
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 279,
+          "x": 63070,
+          "divisor": 3002132,
+          "y": 56977438,
+          "z": 301646457005
+        }
+      }
+    },
+    {
+      "prime": 345601,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 328321,
+        "k": 5,
+        "q": 19,
+        "factor": 3115,
+        "source_solution": [
+          1641605,
+          87220,
+          9192988
+        ],
+        "target_solution": [
+          567340329605,
+          87220,
+          9192988
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 3279,
+          "x": 87220,
+          "divisor": 488432,
+          "y": 9192988,
+          "z": 567340329605
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 328321,
+        "k": 5,
+        "q": 19,
+        "factor": 527,
+        "source_solution": [
+          1641605,
+          86428,
+          269223220
+        ],
+        "target_solution": [
+          567340329605,
+          86428,
+          269223220
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 111,
+          "x": 86428,
+          "divisor": 14174192,
+          "y": 269223220,
+          "z": 567340329605
+        }
+      }
+    },
+    {
+      "prime": 558721,
+      "adaptive_external_source_descent": {
+        "source_denominator": 488881,
+        "k": 2,
+        "q": 7,
+        "factor": 181,
+        "source_solution": [
+          977762,
+          139732,
+          377416132
+        ],
+        "target_solution": [
+          546296162402,
+          139732,
+          377416132
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 207,
+          "x": 139732,
+          "divisor": 53936552,
+          "y": 377416132,
+          "z": 546296162402
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 488881,
+        "k": 2,
+        "q": 7,
+        "factor": 146,
+        "source_solution": [
+          977762,
+          139722,
+          467859117
+        ],
+        "target_solution": [
+          546296162402,
+          139722,
+          467859117
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 167,
+          "x": 139722,
+          "divisor": 66856977,
+          "y": 467859117,
+          "z": 546296162402
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 488881,
+        "k": 2,
+        "q": 7,
+        "factor": 292,
+        "source_solution": [
+          977762,
+          139722,
+          467859117
+        ],
+        "target_solution": [
+          546296162402,
+          139722,
+          467859117
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 167,
+          "x": 139722,
+          "divisor": 66856977,
+          "y": 467859117,
+          "z": 546296162402
+        }
+      }
+    },
+    {
+      "prime": 685969,
+      "adaptive_external_source_descent": {
+        "source_denominator": 600223,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          1200446,
+          171496,
+          7918141816
+        ],
+        "target_solution": [
+          823468742174,
+          171496,
+          7918141816
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 171496,
+          "divisor": 1131187616,
+          "y": 7918141816,
+          "z": 823468742174
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 600223,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          1200446,
+          171496,
+          7918141816
+        ],
+        "target_solution": [
+          823468742174,
+          171496,
+          7918141816
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 171496,
+          "divisor": 1131187616,
+          "y": 7918141816,
+          "z": 823468742174
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 600223,
+        "k": 2,
+        "q": 7,
+        "factor": 26,
+        "source_solution": [
+          1200446,
+          171496,
+          7918141816
+        ],
+        "target_solution": [
+          823468742174,
+          171496,
+          7918141816
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 171496,
+          "divisor": 1131187616,
+          "y": 7918141816,
+          "z": 823468742174
+        }
+      }
+    },
+    {
+      "prime": 813121,
+      "adaptive_external_source_descent": {
+        "source_denominator": 609841,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          609841,
+          203286,
+          7292478678
+        ],
+        "target_solution": [
+          495874523761,
+          203286,
+          7292478678
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 203286,
+          "divisor": 2430893988,
+          "y": 7292478678,
+          "z": 495874523761
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 609841,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          609841,
+          203286,
+          7292478678
+        ],
+        "target_solution": [
+          495874523761,
+          203286,
+          7292478678
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 203286,
+          "divisor": 2430893988,
+          "y": 7292478678,
+          "z": 495874523761
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 609841,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          609841,
+          203286,
+          7292478678
+        ],
+        "target_solution": [
+          495874523761,
+          203286,
+          7292478678
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 203286,
+          "divisor": 2430893988,
+          "y": 7292478678,
+          "z": 495874523761
+        }
+      }
+    },
+    {
+      "prime": 870241,
+      "adaptive_external_source_descent": {
+        "source_denominator": 652681,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          652681,
+          217566,
+          8353011438
+        ],
+        "target_solution": [
+          567989766121,
+          217566,
+          8353011438
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 217566,
+          "divisor": 2784409668,
+          "y": 8353011438,
+          "z": 567989766121
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 652681,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          652681,
+          217566,
+          8353011438
+        ],
+        "target_solution": [
+          567989766121,
+          217566,
+          8353011438
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 217566,
+          "divisor": 2784409668,
+          "y": 8353011438,
+          "z": 567989766121
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 652681,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          652681,
+          217566,
+          8353011438
+        ],
+        "target_solution": [
+          567989766121,
+          217566,
+          8353011438
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 217566,
+          "divisor": 2784409668,
+          "y": 8353011438,
+          "z": 567989766121
+        }
+      }
+    },
+    {
+      "prime": 990361,
+      "adaptive_external_source_descent": {
+        "source_denominator": 742771,
+        "k": 1,
+        "q": 3,
+        "factor": 359,
+        "source_solution": [
+          742771,
+          247710,
+          512511990
+        ],
+        "target_solution": [
+          735611430331,
+          247710,
+          512511990
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 247710,
+          "divisor": 170919900,
+          "y": 512511990,
+          "z": 735611430331
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 742771,
+        "k": 1,
+        "q": 3,
+        "factor": 359,
+        "source_solution": [
+          742771,
+          247710,
+          512511990
+        ],
+        "target_solution": [
+          735611430331,
+          247710,
+          512511990
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 247710,
+          "divisor": 170919900,
+          "y": 512511990,
+          "z": 735611430331
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 742771,
+        "k": 1,
+        "q": 3,
+        "factor": 359,
+        "source_solution": [
+          742771,
+          247710,
+          512511990
+        ],
+        "target_solution": [
+          735611430331,
+          247710,
+          512511990
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 247710,
+          "divisor": 170919900,
+          "y": 512511990,
+          "z": 735611430331
+        }
+      }
+    },
+    {
+      "prime": 1127281,
+      "adaptive_external_source_descent": {
+        "source_denominator": 845461,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          845461,
+          281826,
+          14016052458
+        ],
+        "target_solution": [
+          953072121541,
+          281826,
+          14016052458
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 281826,
+          "divisor": 4672111428,
+          "y": 14016052458,
+          "z": 953072121541
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 845461,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          845461,
+          281826,
+          14016052458
+        ],
+        "target_solution": [
+          953072121541,
+          281826,
+          14016052458
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 281826,
+          "divisor": 4672111428,
+          "y": 14016052458,
+          "z": 953072121541
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 845461,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          845461,
+          281826,
+          14016052458
+        ],
+        "target_solution": [
+          953072121541,
+          281826,
+          14016052458
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 281826,
+          "divisor": 4672111428,
+          "y": 14016052458,
+          "z": 953072121541
+        }
+      }
+    },
+    {
+      "prime": 1385521,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1039141,
+        "k": 1,
+        "q": 3,
+        "factor": 431,
+        "source_solution": [
+          1039141,
+          346524,
+          835469364
+        ],
+        "target_solution": [
+          1439751677461,
+          346524,
+          835469364
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 575,
+          "x": 346524,
+          "divisor": 278605296,
+          "y": 835469364,
+          "z": 1439751677461
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1039141,
+        "k": 1,
+        "q": 3,
+        "factor": 431,
+        "source_solution": [
+          1039141,
+          346524,
+          835469364
+        ],
+        "target_solution": [
+          1439751677461,
+          346524,
+          835469364
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 575,
+          "x": 346524,
+          "divisor": 278605296,
+          "y": 835469364,
+          "z": 1439751677461
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1039141,
+        "k": 1,
+        "q": 3,
+        "factor": 431,
+        "source_solution": [
+          1039141,
+          346524,
+          835469364
+        ],
+        "target_solution": [
+          1439751677461,
+          346524,
+          835469364
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 575,
+          "x": 346524,
+          "divisor": 278605296,
+          "y": 835469364,
+          "z": 1439751677461
+        }
+      }
+    },
+    {
+      "prime": 1398769,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1223923,
+        "k": 2,
+        "q": 7,
+        "factor": 1406,
+        "source_solution": [
+          2447846,
+          350094,
+          304756827
+        ],
+        "target_solution": [
+          3423971101574,
+          350094,
+          304756827
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1607,
+          "x": 350094,
+          "divisor": 43586703,
+          "y": 304756827,
+          "z": 3423971101574
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1223923,
+        "k": 2,
+        "q": 7,
+        "factor": 19,
+        "source_solution": [
+          2447846,
+          349695,
+          45052605630
+        ],
+        "target_solution": [
+          3423971101574,
+          349695,
+          45052605630
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11,
+          "x": 349695,
+          "divisor": 6436136475,
+          "y": 45052605630,
+          "z": 3423971101574
+        }
+      }
+    },
+    {
+      "prime": 1429201,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1071901,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          1071901,
+          357306,
+          22529215218
+        ],
+        "target_solution": [
+          1531961981101,
+          357306,
+          22529215218
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 357306,
+          "divisor": 7509857508,
+          "y": 22529215218,
+          "z": 1531961981101
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1071901,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          1071901,
+          357306,
+          22529215218
+        ],
+        "target_solution": [
+          1531961981101,
+          357306,
+          22529215218
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 357306,
+          "divisor": 7509857508,
+          "y": 22529215218,
+          "z": 1531961981101
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1071901,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          1071901,
+          357306,
+          22529215218
+        ],
+        "target_solution": [
+          1531961981101,
+          357306,
+          22529215218
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 357306,
+          "divisor": 7509857508,
+          "y": 22529215218,
+          "z": 1531961981101
+        }
+      }
+    },
+    {
+      "prime": 1520401,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1140301,
+        "k": 1,
+        "q": 3,
+        "factor": 503,
+        "source_solution": [
+          1140301,
+          380268,
+          862067556
+        ],
+        "target_solution": [
+          1733714780701,
+          380268,
+          862067556
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 671,
+          "x": 380268,
+          "divisor": 287482608,
+          "y": 862067556,
+          "z": 1733714780701
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1140301,
+        "k": 1,
+        "q": 3,
+        "factor": 503,
+        "source_solution": [
+          1140301,
+          380268,
+          862067556
+        ],
+        "target_solution": [
+          1733714780701,
+          380268,
+          862067556
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 671,
+          "x": 380268,
+          "divisor": 287482608,
+          "y": 862067556,
+          "z": 1733714780701
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1140301,
+        "k": 1,
+        "q": 3,
+        "factor": 503,
+        "source_solution": [
+          1140301,
+          380268,
+          862067556
+        ],
+        "target_solution": [
+          1733714780701,
+          380268,
+          862067556
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 671,
+          "x": 380268,
+          "divisor": 287482608,
+          "y": 862067556,
+          "z": 1733714780701
+        }
+      }
+    },
+    {
+      "prime": 1683049,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1262287,
+        "k": 1,
+        "q": 3,
+        "factor": 89,
+        "source_solution": [
+          1262287,
+          420792,
+          5968092936
+        ],
+        "target_solution": [
+          2124490873063,
+          420792,
+          5968092936
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 420792,
+          "divisor": 1989504576,
+          "y": 5968092936,
+          "z": 2124490873063
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1262287,
+        "k": 1,
+        "q": 3,
+        "factor": 89,
+        "source_solution": [
+          1262287,
+          420792,
+          5968092936
+        ],
+        "target_solution": [
+          2124490873063,
+          420792,
+          5968092936
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 420792,
+          "divisor": 1989504576,
+          "y": 5968092936,
+          "z": 2124490873063
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1262287,
+        "k": 1,
+        "q": 3,
+        "factor": 89,
+        "source_solution": [
+          1262287,
+          420792,
+          5968092936
+        ],
+        "target_solution": [
+          2124490873063,
+          420792,
+          5968092936
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 420792,
+          "divisor": 1989504576,
+          "y": 5968092936,
+          "z": 2124490873063
+        }
+      }
+    },
+    {
+      "prime": 1800121,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1575106,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          3150212,
+          450034,
+          54527019508
+        ],
+        "target_solution": [
+          5670762775652,
+          450034,
+          54527019508
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 450034,
+          "divisor": 7789638506,
+          "y": 54527019508,
+          "z": 5670762775652
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1575106,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          3150212,
+          450034,
+          54527019508
+        ],
+        "target_solution": [
+          5670762775652,
+          450034,
+          54527019508
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 450034,
+          "divisor": 7789638506,
+          "y": 54527019508,
+          "z": 5670762775652
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1575106,
+        "k": 2,
+        "q": 7,
+        "factor": 26,
+        "source_solution": [
+          3150212,
+          450034,
+          54527019508
+        ],
+        "target_solution": [
+          5670762775652,
+          450034,
+          54527019508
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 450034,
+          "divisor": 7789638506,
+          "y": 54527019508,
+          "z": 5670762775652
+        }
+      }
+    },
+    {
+      "prime": 1977529,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1483147,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "source_solution": [
+          1483147,
+          494392,
+          25284690056
+        ],
+        "target_solution": [
+          2932966203763,
+          494392,
+          25284690056
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 494392,
+          "divisor": 8428394816,
+          "y": 25284690056,
+          "z": 2932966203763
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1483147,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "source_solution": [
+          1483147,
+          494392,
+          25284690056
+        ],
+        "target_solution": [
+          2932966203763,
+          494392,
+          25284690056
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 494392,
+          "divisor": 8428394816,
+          "y": 25284690056,
+          "z": 2932966203763
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1483147,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "source_solution": [
+          1483147,
+          494392,
+          25284690056
+        ],
+        "target_solution": [
+          2932966203763,
+          494392,
+          25284690056
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 494392,
+          "divisor": 8428394816,
+          "y": 25284690056,
+          "z": 2932966203763
+        }
+      }
+    },
+    {
+      "prime": 2031121,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1523341,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "source_solution": [
+          1523341,
+          507790,
+          26673700910
+        ],
+        "target_solution": [
+          3094089895261,
+          507790,
+          26673700910
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 507790,
+          "divisor": 8891402900,
+          "y": 26673700910,
+          "z": 3094089895261
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1523341,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "source_solution": [
+          1523341,
+          507790,
+          26673700910
+        ],
+        "target_solution": [
+          3094089895261,
+          507790,
+          26673700910
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 507790,
+          "divisor": 8891402900,
+          "y": 26673700910,
+          "z": 3094089895261
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1523341,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "source_solution": [
+          1523341,
+          507790,
+          26673700910
+        ],
+        "target_solution": [
+          3094089895261,
+          507790,
+          26673700910
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 507790,
+          "divisor": 8891402900,
+          "y": 26673700910,
+          "z": 3094089895261
+        }
+      }
+    },
+    {
+      "prime": 2365969,
+      "adaptive_external_source_descent": {
+        "source_denominator": 1774477,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          1774477,
+          591498,
+          61741152738
+        ],
+        "target_solution": [
+          4198357573213,
+          591498,
+          61741152738
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 591498,
+          "divisor": 20580581412,
+          "y": 61741152738,
+          "z": 4198357573213
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 1774477,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          1774477,
+          591498,
+          61741152738
+        ],
+        "target_solution": [
+          4198357573213,
+          591498,
+          61741152738
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 591498,
+          "divisor": 20580581412,
+          "y": 61741152738,
+          "z": 4198357573213
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 1774477,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          1774477,
+          591498,
+          61741152738
+        ],
+        "target_solution": [
+          4198357573213,
+          591498,
+          61741152738
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 591498,
+          "divisor": 20580581412,
+          "y": 61741152738,
+          "z": 4198357573213
+        }
+      }
+    },
+    {
+      "prime": 2654401,
+      "adaptive_external_source_descent": {
+        "source_denominator": 2488501,
+        "k": 4,
+        "q": 15,
+        "factor": 509,
+        "source_solution": [
+          9954004,
+          663736,
+          3245005304
+        ],
+        "target_solution": [
+          26421918171604,
+          663736,
+          3245005304
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 543,
+          "x": 663736,
+          "divisor": 216377936,
+          "y": 3245005304,
+          "z": 26421918171604
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 2488501,
+        "k": 4,
+        "q": 15,
+        "factor": 509,
+        "source_solution": [
+          9954004,
+          663736,
+          3245005304
+        ],
+        "target_solution": [
+          26421918171604,
+          663736,
+          3245005304
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 543,
+          "x": 663736,
+          "divisor": 216377936,
+          "y": 3245005304,
+          "z": 26421918171604
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 2488501,
+        "k": 4,
+        "q": 15,
+        "factor": 2036,
+        "source_solution": [
+          9954004,
+          663736,
+          3245005304
+        ],
+        "target_solution": [
+          26421918171604,
+          663736,
+          3245005304
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 543,
+          "x": 663736,
+          "divisor": 216377936,
+          "y": 3245005304,
+          "z": 26421918171604
+        }
+      }
+    },
+    {
+      "prime": 2707609,
+      "adaptive_external_source_descent": {
+        "source_denominator": 2594792,
+        "k": 6,
+        "q": 23,
+        "factor": 344,
+        "source_solution": [
+          15568752,
+          676992,
+          5106550656
+        ],
+        "target_solution": [
+          42154093033968,
+          676992,
+          5106550656
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 359,
+          "x": 676992,
+          "divisor": 222053376,
+          "y": 5106550656,
+          "z": 42154093033968
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 2594792,
+        "k": 6,
+        "q": 23,
+        "factor": 114,
+        "source_solution": [
+          15568752,
+          676932,
+          15407874896
+        ],
+        "target_solution": [
+          42154093033968,
+          676932,
+          15407874896
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 676932,
+          "divisor": 669937036,
+          "y": 15407874896,
+          "z": 42154093033968
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 2594792,
+        "k": 6,
+        "q": 23,
+        "factor": 86,
+        "source_solution": [
+          15568752,
+          676906,
+          122541646992
+        ],
+        "target_solution": [
+          42154093033968,
+          676906,
+          122541646992
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 676906,
+          "divisor": 5327927126,
+          "y": 122541646992,
+          "z": 42154093033968
+        }
+      }
+    },
+    {
+      "prime": 3409729,
+      "adaptive_external_source_descent": {
+        "source_denominator": 2983513,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          5967026,
+          852436,
+          195634914436
+        ],
+        "target_solution": [
+          20345941595954,
+          852436,
+          195634914436
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 852436,
+          "divisor": 27947966696,
+          "y": 195634914436,
+          "z": 20345941595954
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 2983513,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          5967026,
+          852436,
+          195634914436
+        ],
+        "target_solution": [
+          20345941595954,
+          852436,
+          195634914436
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 852436,
+          "divisor": 27947966696,
+          "y": 195634914436,
+          "z": 20345941595954
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 2983513,
+        "k": 2,
+        "q": 7,
+        "factor": 19,
+        "source_solution": [
+          5967026,
+          852435,
+          267710621490
+        ],
+        "target_solution": [
+          20345941595954,
+          852435,
+          267710621490
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11,
+          "x": 852435,
+          "divisor": 38244496275,
+          "y": 267710621490,
+          "z": 20345941595954
+        }
+      }
+    },
+    {
+      "prime": 3569329,
+      "adaptive_external_source_descent": {
+        "source_denominator": 3537460,
+        "k": 28,
+        "q": 111,
+        "factor": 332,
+        "source_solution": [
+          99048880,
+          892416,
+          9508692480
+        ],
+        "target_solution": [
+          353538039801520,
+          892416,
+          9508692480
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 335,
+          "x": 892416,
+          "divisor": 85671936,
+          "y": 9508692480,
+          "z": 353538039801520
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 3123163,
+        "k": 2,
+        "q": 7,
+        "factor": 328754,
+        "source_solution": [
+          6246326,
+          986262,
+          9369489
+        ],
+        "target_solution": [
+          22295192535254,
+          986262,
+          9369489
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 375719,
+          "x": 986262,
+          "divisor": 1479393,
+          "y": 9369489,
+          "z": 22295192535254
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 3123163,
+        "k": 2,
+        "q": 7,
+        "factor": 19,
+        "source_solution": [
+          6246326,
+          892335,
+          293358700590
+        ],
+        "target_solution": [
+          22295192535254,
+          892335,
+          293358700590
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11,
+          "x": 892335,
+          "divisor": 41908513275,
+          "y": 293358700590,
+          "z": 22295192535254
+        }
+      }
+    },
+    {
+      "prime": 3660721,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 3203131,
+        "k": 2,
+        "q": 7,
+        "factor": 482,
+        "source_solution": [
+          6406262,
+          915318,
+          6082745769
+        ],
+        "target_solution": [
+          23451537834902,
+          915318,
+          6082745769
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 551,
+          "x": 915318,
+          "divisor": 869094441,
+          "y": 6082745769,
+          "z": 23451537834902
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 3203131,
+        "k": 2,
+        "q": 7,
+        "factor": 964,
+        "source_solution": [
+          6406262,
+          915318,
+          6082745769
+        ],
+        "target_solution": [
+          23451537834902,
+          915318,
+          6082745769
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 551,
+          "x": 915318,
+          "divisor": 869094441,
+          "y": 6082745769,
+          "z": 23451537834902
+        }
+      }
+    },
+    {
+      "prime": 4557361,
+      "adaptive_external_source_descent": {
+        "source_denominator": 4462416,
+        "k": 12,
+        "q": 47,
+        "factor": 798,
+        "source_solution": [
+          53548992,
+          1139544,
+          6372330048
+        ],
+        "target_solution": [
+          244042087730112,
+          1139544,
+          6372330048
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 815,
+          "x": 1139544,
+          "divisor": 135605736,
+          "y": 6372330048,
+          "z": 244042087730112
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 4367471,
+        "k": 6,
+        "q": 23,
+        "factor": 20814,
+        "source_solution": [
+          26204826,
+          1144770,
+          240210905
+        ],
+        "target_solution": [
+          119424852024186,
+          1144770,
+          240210905
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 21719,
+          "x": 1144770,
+          "divisor": 10493725,
+          "y": 240210905,
+          "z": 119424852024186
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 4367471,
+        "k": 6,
+        "q": 23,
+        "factor": 1259,
+        "source_solution": [
+          26204826,
+          1139395,
+          23715367530
+        ],
+        "target_solution": [
+          119424852024186,
+          1139395,
+          23715367530
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 219,
+          "x": 1139395,
+          "divisor": 1031152475,
+          "y": 23715367530,
+          "z": 119424852024186
+        }
+      }
+    },
+    {
+      "prime": 4722169,
+      "adaptive_external_source_descent": {
+        "source_denominator": 3541627,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          3541627,
+          1180548,
+          245944745388
+        ],
+        "target_solution": [
+          16724161228963,
+          1180548,
+          245944745388
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 1180548,
+          "divisor": 81981975312,
+          "y": 245944745388,
+          "z": 16724161228963
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 3541627,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          3541627,
+          1180548,
+          245944745388
+        ],
+        "target_solution": [
+          16724161228963,
+          1180548,
+          245944745388
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 1180548,
+          "divisor": 81981975312,
+          "y": 245944745388,
+          "z": 16724161228963
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 3541627,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          3541627,
+          1180548,
+          245944745388
+        ],
+        "target_solution": [
+          16724161228963,
+          1180548,
+          245944745388
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 1180548,
+          "divisor": 81981975312,
+          "y": 245944745388,
+          "z": 16724161228963
+        }
+      }
+    },
+    {
+      "prime": 4965601,
+      "adaptive_external_source_descent": {
+        "source_denominator": 4344901,
+        "k": 2,
+        "q": 7,
+        "factor": 209,
+        "source_solution": [
+          8689802,
+          1241460,
+          25808711940
+        ],
+        "target_solution": [
+          43150089501002,
+          1241460,
+          25808711940
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 239,
+          "x": 1241460,
+          "divisor": 3687136200,
+          "y": 25808711940,
+          "z": 43150089501002
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 4344901,
+        "k": 2,
+        "q": 7,
+        "factor": 209,
+        "source_solution": [
+          8689802,
+          1241460,
+          25808711940
+        ],
+        "target_solution": [
+          43150089501002,
+          1241460,
+          25808711940
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 239,
+          "x": 1241460,
+          "divisor": 3687136200,
+          "y": 25808711940,
+          "z": 43150089501002
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 4344901,
+        "k": 2,
+        "q": 7,
+        "factor": 19,
+        "source_solution": [
+          8689802,
+          1241403,
+          567765593274
+        ],
+        "target_solution": [
+          43150089501002,
+          1241403,
+          567765593274
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11,
+          "x": 1241403,
+          "divisor": 81109547811,
+          "y": 567765593274,
+          "z": 43150089501002
+        }
+      }
+    },
+    {
+      "prime": 6344209,
+      "adaptive_external_source_descent": {
+        "source_denominator": 5551183,
+        "k": 2,
+        "q": 7,
+        "factor": 671,
+        "source_solution": [
+          11102366,
+          1586244,
+          13122996612
+        ],
+        "target_solution": [
+          70435730298494,
+          1586244,
+          13122996612
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 767,
+          "x": 1586244,
+          "divisor": 1874940408,
+          "y": 13122996612,
+          "z": 70435730298494
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 5551183,
+        "k": 2,
+        "q": 7,
+        "factor": 671,
+        "source_solution": [
+          11102366,
+          1586244,
+          13122996612
+        ],
+        "target_solution": [
+          70435730298494,
+          1586244,
+          13122996612
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 767,
+          "x": 1586244,
+          "divisor": 1874940408,
+          "y": 13122996612,
+          "z": 70435730298494
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 5551183,
+        "k": 2,
+        "q": 7,
+        "factor": 61,
+        "source_solution": [
+          11102366,
+          1586061,
+          288672618366
+        ],
+        "target_solution": [
+          70435730298494,
+          1586061,
+          288672618366
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 35,
+          "x": 1586061,
+          "divisor": 41239172061,
+          "y": 288672618366,
+          "z": 70435730298494
+        }
+      }
+    },
+    {
+      "prime": 6868801,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 6296401,
+        "k": 3,
+        "q": 11,
+        "factor": 3057,
+        "source_solution": [
+          18889203,
+          1718034,
+          3538577362
+        ],
+        "target_solution": [
+          129746176455603,
+          1718034,
+          3538577362
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 3335,
+          "x": 1718034,
+          "divisor": 321845036,
+          "y": 3538577362,
+          "z": 129746176455603
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 6296401,
+        "k": 3,
+        "q": 11,
+        "factor": 6179,
+        "source_solution": [
+          18889203,
+          1717762,
+          5251198434
+        ],
+        "target_solution": [
+          129746176455603,
+          1717762,
+          5251198434
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 2247,
+          "x": 1717762,
+          "divisor": 477537836,
+          "y": 5251198434,
+          "z": 129746176455603
+        }
+      }
+    },
+    {
+      "prime": 6899281,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 6036871,
+        "k": 2,
+        "q": 7,
+        "factor": 202,
+        "source_solution": [
+          12073742,
+          1724878,
+          51548841469
+        ],
+        "target_solution": [
+          83300138779502,
+          1724878,
+          51548841469
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 231,
+          "x": 1724878,
+          "divisor": 7364366621,
+          "y": 51548841469,
+          "z": 83300138779502
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 6036871,
+        "k": 2,
+        "q": 7,
+        "factor": 404,
+        "source_solution": [
+          12073742,
+          1724878,
+          51548841469
+        ],
+        "target_solution": [
+          83300138779502,
+          1724878,
+          51548841469
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 231,
+          "x": 1724878,
+          "divisor": 7364366621,
+          "y": 51548841469,
+          "z": 83300138779502
+        }
+      }
+    },
+    {
+      "prime": 7329169,
+      "adaptive_external_source_descent": {
+        "source_denominator": 6871096,
+        "k": 4,
+        "q": 15,
+        "factor": 284,
+        "source_solution": [
+          27484384,
+          1832368,
+          44332311392
+        ],
+        "target_solution": [
+          201437695196896,
+          1832368,
+          44332311392
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 303,
+          "x": 1832368,
+          "divisor": 2955609584,
+          "y": 44332311392,
+          "z": 201437695196896
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 6871096,
+        "k": 4,
+        "q": 15,
+        "factor": 284,
+        "source_solution": [
+          27484384,
+          1832368,
+          44332311392
+        ],
+        "target_solution": [
+          201437695196896,
+          1832368,
+          44332311392
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 303,
+          "x": 1832368,
+          "divisor": 2955609584,
+          "y": 44332311392,
+          "z": 201437695196896
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 6871096,
+        "k": 4,
+        "q": 15,
+        "factor": 71,
+        "source_solution": [
+          27484384,
+          1832297,
+          709289497888
+        ],
+        "target_solution": [
+          201437695196896,
+          1832297,
+          709289497888
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 19,
+          "x": 1832297,
+          "divisor": 47286088679,
+          "y": 709289497888,
+          "z": 201437695196896
+        }
+      }
+    },
+    {
+      "prime": 7378849,
+      "adaptive_external_source_descent": {
+        "source_denominator": 5534137,
+        "k": 1,
+        "q": 3,
+        "factor": 269,
+        "source_solution": [
+          5534137,
+          1844802,
+          37953111546
+        ],
+        "target_solution": [
+          40835561268313,
+          1844802,
+          37953111546
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 359,
+          "x": 1844802,
+          "divisor": 12651652116,
+          "y": 37953111546,
+          "z": 40835561268313
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 5534137,
+        "k": 1,
+        "q": 3,
+        "factor": 269,
+        "source_solution": [
+          5534137,
+          1844802,
+          37953111546
+        ],
+        "target_solution": [
+          40835561268313,
+          1844802,
+          37953111546
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 359,
+          "x": 1844802,
+          "divisor": 12651652116,
+          "y": 37953111546,
+          "z": 40835561268313
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 5534137,
+        "k": 1,
+        "q": 3,
+        "factor": 269,
+        "source_solution": [
+          5534137,
+          1844802,
+          37953111546
+        ],
+        "target_solution": [
+          40835561268313,
+          1844802,
+          37953111546
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 359,
+          "x": 1844802,
+          "divisor": 12651652116,
+          "y": 37953111546,
+          "z": 40835561268313
+        }
+      }
+    },
+    {
+      "prime": 8066689,
+      "adaptive_external_source_descent": {
+        "source_denominator": 7394465,
+        "k": 3,
+        "q": 11,
+        "factor": 65,
+        "source_solution": [
+          22183395,
+          2016690,
+          229420671090
+        ],
+        "target_solution": [
+          178946548429155,
+          2016690,
+          229420671090
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 2016690,
+          "divisor": 20856607980,
+          "y": 229420671090,
+          "z": 178946548429155
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 7058353,
+        "k": 2,
+        "q": 7,
+        "factor": 5242,
+        "source_solution": [
+          14116706,
+          2018170,
+          2717465905
+        ],
+        "target_solution": [
+          113875077006434,
+          2018170,
+          2717465905
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 5991,
+          "x": 2018170,
+          "divisor": 388497725,
+          "y": 2717465905,
+          "z": 113875077006434
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 7058353,
+        "k": 2,
+        "q": 7,
+        "factor": 2693,
+        "source_solution": [
+          14116706,
+          2017057,
+          10573412794
+        ],
+        "target_solution": [
+          113875077006434,
+          2017057,
+          10573412794
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1539,
+          "x": 2017057,
+          "divisor": 1510775693,
+          "y": 10573412794,
+          "z": 113875077006434
+        }
+      }
+    },
+    {
+      "prime": 8113681,
+      "adaptive_external_source_descent": {
+        "source_denominator": 6085261,
+        "k": 1,
+        "q": 3,
+        "factor": 41,
+        "source_solution": [
+          6085261,
+          2028434,
+          301062202714
+        ],
+        "target_solution": [
+          49373866555741,
+          2028434,
+          301062202714
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 2028434,
+          "divisor": 100354743716,
+          "y": 301062202714,
+          "z": 49373866555741
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 6085261,
+        "k": 1,
+        "q": 3,
+        "factor": 41,
+        "source_solution": [
+          6085261,
+          2028434,
+          301062202714
+        ],
+        "target_solution": [
+          49373866555741,
+          2028434,
+          301062202714
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 2028434,
+          "divisor": 100354743716,
+          "y": 301062202714,
+          "z": 49373866555741
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 6085261,
+        "k": 1,
+        "q": 3,
+        "factor": 41,
+        "source_solution": [
+          6085261,
+          2028434,
+          301062202714
+        ],
+        "target_solution": [
+          49373866555741,
+          2028434,
+          301062202714
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 2028434,
+          "divisor": 100354743716,
+          "y": 301062202714,
+          "z": 49373866555741
+        }
+      }
+    },
+    {
+      "prime": 8243041,
+      "adaptive_external_source_descent": {
+        "source_denominator": 6182281,
+        "k": 1,
+        "q": 3,
+        "factor": 281,
+        "source_solution": [
+          6182281,
+          2060854,
+          45340848854
+        ],
+        "target_solution": [
+          50960795756521,
+          2060854,
+          45340848854
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 375,
+          "x": 2060854,
+          "divisor": 15114303236,
+          "y": 45340848854,
+          "z": 50960795756521
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 6182281,
+        "k": 1,
+        "q": 3,
+        "factor": 281,
+        "source_solution": [
+          6182281,
+          2060854,
+          45340848854
+        ],
+        "target_solution": [
+          50960795756521,
+          2060854,
+          45340848854
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 375,
+          "x": 2060854,
+          "divisor": 15114303236,
+          "y": 45340848854,
+          "z": 50960795756521
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 6182281,
+        "k": 1,
+        "q": 3,
+        "factor": 281,
+        "source_solution": [
+          6182281,
+          2060854,
+          45340848854
+        ],
+        "target_solution": [
+          50960795756521,
+          2060854,
+          45340848854
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 375,
+          "x": 2060854,
+          "divisor": 15114303236,
+          "y": 45340848854,
+          "z": 50960795756521
+        }
+      }
+    },
+    {
+      "prime": 8283361,
+      "adaptive_external_source_descent": {
+        "source_denominator": 7247941,
+        "k": 2,
+        "q": 7,
+        "factor": 293,
+        "source_solution": [
+          14495882,
+          2070924,
+          51228446988
+        ],
+        "target_solution": [
+          120074623619402,
+          2070924,
+          51228446988
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 335,
+          "x": 2070924,
+          "divisor": 7318645416,
+          "y": 51228446988,
+          "z": 120074623619402
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 7247941,
+        "k": 2,
+        "q": 7,
+        "factor": 293,
+        "source_solution": [
+          14495882,
+          2070924,
+          51228446988
+        ],
+        "target_solution": [
+          120074623619402,
+          2070924,
+          51228446988
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 335,
+          "x": 2070924,
+          "divisor": 7318645416,
+          "y": 51228446988,
+          "z": 120074623619402
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 7247941,
+        "k": 2,
+        "q": 7,
+        "factor": 586,
+        "source_solution": [
+          14495882,
+          2070924,
+          51228446988
+        ],
+        "target_solution": [
+          120074623619402,
+          2070924,
+          51228446988
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 335,
+          "x": 2070924,
+          "divisor": 7318645416,
+          "y": 51228446988,
+          "z": 120074623619402
+        }
+      }
+    },
+    {
+      "prime": 8328961,
+      "adaptive_external_source_descent": {
+        "source_denominator": 8155441,
+        "k": 12,
+        "q": 47,
+        "factor": 469,
+        "source_solution": [
+          97865292,
+          2082360,
+          36210158040
+        ],
+        "target_solution": [
+          815116200321612,
+          2082360,
+          36210158040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 2082360,
+          "divisor": 770473200,
+          "y": 36210158040,
+          "z": 815116200321612
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8155441,
+        "k": 12,
+        "q": 47,
+        "factor": 469,
+        "source_solution": [
+          97865292,
+          2082360,
+          36210158040
+        ],
+        "target_solution": [
+          815116200321612,
+          2082360,
+          36210158040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 2082360,
+          "divisor": 770473200,
+          "y": 36210158040,
+          "z": 815116200321612
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8155441,
+        "k": 12,
+        "q": 47,
+        "factor": 5628,
+        "source_solution": [
+          97865292,
+          2082360,
+          36210158040
+        ],
+        "target_solution": [
+          815116200321612,
+          2082360,
+          36210158040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 2082360,
+          "divisor": 770473200,
+          "y": 36210158040,
+          "z": 815116200321612
+        }
+      }
+    },
+    {
+      "prime": 8955769,
+      "adaptive_external_source_descent": {
+        "source_denominator": 8209455,
+        "k": 3,
+        "q": 11,
+        "factor": 681,
+        "source_solution": [
+          24628365,
+          2239128,
+          26992688040
+        ],
+        "target_solution": [
+          220565947787685,
+          2239128,
+          26992688040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 743,
+          "x": 2239128,
+          "divisor": 2454084288,
+          "y": 26992688040,
+          "z": 220565947787685
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8209455,
+        "k": 3,
+        "q": 11,
+        "factor": 681,
+        "source_solution": [
+          24628365,
+          2239128,
+          26992688040
+        ],
+        "target_solution": [
+          220565947787685,
+          2239128,
+          26992688040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 743,
+          "x": 2239128,
+          "divisor": 2454084288,
+          "y": 26992688040,
+          "z": 220565947787685
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8209455,
+        "k": 3,
+        "q": 11,
+        "factor": 2043,
+        "source_solution": [
+          24628365,
+          2239128,
+          26992688040
+        ],
+        "target_solution": [
+          220565947787685,
+          2239128,
+          26992688040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 743,
+          "x": 2239128,
+          "divisor": 2454084288,
+          "y": 26992688040,
+          "z": 220565947787685
+        }
+      }
+    },
+    {
+      "prime": 9296809,
+      "adaptive_external_source_descent": {
+        "source_denominator": 8909442,
+        "k": 6,
+        "q": 23,
+        "factor": 114,
+        "source_solution": [
+          53456652,
+          2324232,
+          181645703496
+        ],
+        "target_solution": [
+          496976283423468,
+          2324232,
+          181645703496
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 2324232,
+          "divisor": 7897740336,
+          "y": 181645703496,
+          "z": 496976283423468
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8909442,
+        "k": 6,
+        "q": 23,
+        "factor": 114,
+        "source_solution": [
+          53456652,
+          2324232,
+          181645703496
+        ],
+        "target_solution": [
+          496976283423468,
+          2324232,
+          181645703496
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 2324232,
+          "divisor": 7897740336,
+          "y": 181645703496,
+          "z": 496976283423468
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8909442,
+        "k": 6,
+        "q": 23,
+        "factor": 109,
+        "source_solution": [
+          53456652,
+          2324207,
+          1139856190596
+        ],
+        "target_solution": [
+          496976283423468,
+          2324207,
+          1139856190596
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 19,
+          "x": 2324207,
+          "divisor": 49559065861,
+          "y": 1139856190596,
+          "z": 496976283423468
+        }
+      }
+    },
+    {
+      "prime": 9504961,
+      "adaptive_external_source_descent": {
+        "source_denominator": 8316841,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          16633682,
+          2376244,
+          1520218732708
+        ],
+        "target_solution": [
+          158102498696402,
+          2376244,
+          1520218732708
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 2376244,
+          "divisor": 217174444136,
+          "y": 1520218732708,
+          "z": 158102498696402
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8316841,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          16633682,
+          2376244,
+          1520218732708
+        ],
+        "target_solution": [
+          158102498696402,
+          2376244,
+          1520218732708
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 2376244,
+          "divisor": 217174444136,
+          "y": 1520218732708,
+          "z": 158102498696402
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8316841,
+        "k": 2,
+        "q": 7,
+        "factor": 26,
+        "source_solution": [
+          16633682,
+          2376244,
+          1520218732708
+        ],
+        "target_solution": [
+          158102498696402,
+          2376244,
+          1520218732708
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 2376244,
+          "divisor": 217174444136,
+          "y": 1520218732708,
+          "z": 158102498696402
+        }
+      }
+    },
+    {
+      "prime": 9744001,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8932001,
+        "k": 3,
+        "q": 11,
+        "factor": 417,
+        "source_solution": [
+          26796003,
+          2436114,
+          52180749842
+        ],
+        "target_solution": [
+          261100280028003,
+          2436114,
+          52180749842
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 455,
+          "x": 2436114,
+          "divisor": 4743925996,
+          "y": 52180749842,
+          "z": 261100280028003
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8932001,
+        "k": 3,
+        "q": 11,
+        "factor": 1251,
+        "source_solution": [
+          26796003,
+          2436114,
+          52180749842
+        ],
+        "target_solution": [
+          261100280028003,
+          2436114,
+          52180749842
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 455,
+          "x": 2436114,
+          "divisor": 4743925996,
+          "y": 52180749842,
+          "z": 261100280028003
+        }
+      }
+    },
+    {
+      "prime": 10269169,
+      "adaptive_external_source_descent": {
+        "source_denominator": 10055228,
+        "k": 12,
+        "q": 47,
+        "factor": 986,
+        "source_solution": [
+          120662736,
+          2567544,
+          26183813712
+        ],
+        "target_solution": [
+          1239106027986384,
+          2567544,
+          26183813712
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1007,
+          "x": 2567544,
+          "divisor": 557157048,
+          "y": 26183813712,
+          "z": 1239106027986384
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8985523,
+        "k": 2,
+        "q": 7,
+        "factor": 118,
+        "source_solution": [
+          17971046,
+          2567326,
+          195498023911
+        ],
+        "target_solution": [
+          184547708480774,
+          2567326,
+          195498023911
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 2567326,
+          "divisor": 27928655891,
+          "y": 195498023911,
+          "z": 184547708480774
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8985523,
+        "k": 2,
+        "q": 7,
+        "factor": 236,
+        "source_solution": [
+          17971046,
+          2567326,
+          195498023911
+        ],
+        "target_solution": [
+          184547708480774,
+          2567326,
+          195498023911
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 2567326,
+          "divisor": 27928655891,
+          "y": 195498023911,
+          "z": 184547708480774
+        }
+      }
+    },
+    {
+      "prime": 10278361,
+      "adaptive_external_source_descent": {
+        "source_denominator": 8993566,
+        "k": 2,
+        "q": 7,
+        "factor": 1322,
+        "source_solution": [
+          17987132,
+          2569968,
+          17483492304
+        ],
+        "target_solution": [
+          184878236050652,
+          2569968,
+          17483492304
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1511,
+          "x": 2569968,
+          "divisor": 2498008896,
+          "y": 17483492304,
+          "z": 184878236050652
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8993566,
+        "k": 2,
+        "q": 7,
+        "factor": 1322,
+        "source_solution": [
+          17987132,
+          2569968,
+          17483492304
+        ],
+        "target_solution": [
+          184878236050652,
+          2569968,
+          17483492304
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1511,
+          "x": 2569968,
+          "divisor": 2498008896,
+          "y": 17483492304,
+          "z": 184878236050652
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8993566,
+        "k": 2,
+        "q": 7,
+        "factor": 2644,
+        "source_solution": [
+          17987132,
+          2569968,
+          17483492304
+        ],
+        "target_solution": [
+          184878236050652,
+          2569968,
+          17483492304
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1511,
+          "x": 2569968,
+          "divisor": 2498008896,
+          "y": 17483492304,
+          "z": 184878236050652
+        }
+      }
+    },
+    {
+      "prime": 11054401,
+      "adaptive_external_source_descent": {
+        "source_denominator": 8290801,
+        "k": 1,
+        "q": 3,
+        "factor": 383,
+        "source_solution": [
+          8290801,
+          2763728,
+          59826420016
+        ],
+        "target_solution": [
+          91649838865201,
+          2763728,
+          59826420016
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 511,
+          "x": 2763728,
+          "divisor": 19943061248,
+          "y": 59826420016,
+          "z": 91649838865201
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 8290801,
+        "k": 1,
+        "q": 3,
+        "factor": 383,
+        "source_solution": [
+          8290801,
+          2763728,
+          59826420016
+        ],
+        "target_solution": [
+          91649838865201,
+          2763728,
+          59826420016
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 511,
+          "x": 2763728,
+          "divisor": 19943061248,
+          "y": 59826420016,
+          "z": 91649838865201
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 8290801,
+        "k": 1,
+        "q": 3,
+        "factor": 383,
+        "source_solution": [
+          8290801,
+          2763728,
+          59826420016
+        ],
+        "target_solution": [
+          91649838865201,
+          2763728,
+          59826420016
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 511,
+          "x": 2763728,
+          "divisor": 19943061248,
+          "y": 59826420016,
+          "z": 91649838865201
+        }
+      }
+    },
+    {
+      "prime": 11910361,
+      "adaptive_external_source_descent": {
+        "source_denominator": 11314843,
+        "k": 5,
+        "q": 19,
+        "factor": 493,
+        "source_solution": [
+          56574215,
+          2977720,
+          68341651720
+        ],
+        "target_solution": [
+          673819323941615,
+          2977720,
+          68341651720
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 519,
+          "x": 2977720,
+          "divisor": 3597085760,
+          "y": 68341651720,
+          "z": 673819323941615
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 11314843,
+        "k": 5,
+        "q": 19,
+        "factor": 493,
+        "source_solution": [
+          56574215,
+          2977720,
+          68341651720
+        ],
+        "target_solution": [
+          673819323941615,
+          2977720,
+          68341651720
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 519,
+          "x": 2977720,
+          "divisor": 3597085760,
+          "y": 68341651720,
+          "z": 673819323941615
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 11314843,
+        "k": 5,
+        "q": 19,
+        "factor": 2465,
+        "source_solution": [
+          56574215,
+          2977720,
+          68341651720
+        ],
+        "target_solution": [
+          673819323941615,
+          2977720,
+          68341651720
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 519,
+          "x": 2977720,
+          "divisor": 3597085760,
+          "y": 68341651720,
+          "z": 673819323941615
+        }
+      }
+    },
+    {
+      "prime": 12086761,
+      "adaptive_external_source_descent": {
+        "source_denominator": 10575916,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          21151832,
+          3021694,
+          2458244763208
+        ],
+        "target_solution": [
+          255657138096152,
+          3021694,
+          2458244763208
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 3021694,
+          "divisor": 351178254986,
+          "y": 2458244763208,
+          "z": 255657138096152
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 10575916,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          21151832,
+          3021694,
+          2458244763208
+        ],
+        "target_solution": [
+          255657138096152,
+          3021694,
+          2458244763208
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 3021694,
+          "divisor": 351178254986,
+          "y": 2458244763208,
+          "z": 255657138096152
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 10575916,
+        "k": 2,
+        "q": 7,
+        "factor": 26,
+        "source_solution": [
+          21151832,
+          3021694,
+          2458244763208
+        ],
+        "target_solution": [
+          255657138096152,
+          3021694,
+          2458244763208
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 3021694,
+          "divisor": 351178254986,
+          "y": 2458244763208,
+          "z": 255657138096152
+        }
+      }
+    },
+    {
+      "prime": 12180169,
+      "adaptive_external_source_descent": {
+        "source_denominator": 11841831,
+        "k": 9,
+        "q": 35,
+        "factor": 769,
+        "source_solution": [
+          106576479,
+          3045240,
+          46893650760
+        ],
+        "target_solution": [
+          1298119525644951,
+          3045240,
+          46893650760
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 791,
+          "x": 3045240,
+          "divisor": 1339905600,
+          "y": 46893650760,
+          "z": 1298119525644951
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 11841831,
+        "k": 9,
+        "q": 35,
+        "factor": 769,
+        "source_solution": [
+          106576479,
+          3045240,
+          46893650760
+        ],
+        "target_solution": [
+          1298119525644951,
+          3045240,
+          46893650760
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 791,
+          "x": 3045240,
+          "divisor": 1339905600,
+          "y": 46893650760,
+          "z": 1298119525644951
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 11672662,
+        "k": 6,
+        "q": 23,
+        "factor": 2984,
+        "source_solution": [
+          70035972,
+          3045172,
+          71471709426
+        ],
+        "target_solution": [
+          853049975039268,
+          3045172,
+          71471709426
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 519,
+          "x": 3045172,
+          "divisor": 3107598026,
+          "y": 71471709426,
+          "z": 853049975039268
+        }
+      }
+    },
+    {
+      "prime": 12321241,
+      "adaptive_external_source_descent": {
+        "source_denominator": 11294471,
+        "k": 3,
+        "q": 11,
+        "factor": 109,
+        "source_solution": [
+          33883413,
+          3080340,
+          319181750460
+        ],
+        "target_solution": [
+          417485697475533,
+          3080340,
+          319181750460
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 3080340,
+          "divisor": 29016802800,
+          "y": 319181750460,
+          "z": 417485697475533
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 11294471,
+        "k": 3,
+        "q": 11,
+        "factor": 109,
+        "source_solution": [
+          33883413,
+          3080340,
+          319181750460
+        ],
+        "target_solution": [
+          417485697475533,
+          3080340,
+          319181750460
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 3080340,
+          "divisor": 29016802800,
+          "y": 319181750460,
+          "z": 417485697475533
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 11294471,
+        "k": 3,
+        "q": 11,
+        "factor": 327,
+        "source_solution": [
+          33883413,
+          3080340,
+          319181750460
+        ],
+        "target_solution": [
+          417485697475533,
+          3080340,
+          319181750460
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 3080340,
+          "divisor": 29016802800,
+          "y": 319181750460,
+          "z": 417485697475533
+        }
+      }
+    },
+    {
+      "prime": 12997441,
+      "adaptive_external_source_descent": {
+        "source_denominator": 9748081,
+        "k": 1,
+        "q": 3,
+        "factor": 89,
+        "source_solution": [
+          9748081,
+          3249390,
+          355902437310
+        ],
+        "target_solution": [
+          126700107660721,
+          3249390,
+          355902437310
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 3249390,
+          "divisor": 118635228900,
+          "y": 355902437310,
+          "z": 126700107660721
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 9748081,
+        "k": 1,
+        "q": 3,
+        "factor": 89,
+        "source_solution": [
+          9748081,
+          3249390,
+          355902437310
+        ],
+        "target_solution": [
+          126700107660721,
+          3249390,
+          355902437310
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 3249390,
+          "divisor": 118635228900,
+          "y": 355902437310,
+          "z": 126700107660721
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 9748081,
+        "k": 1,
+        "q": 3,
+        "factor": 89,
+        "source_solution": [
+          9748081,
+          3249390,
+          355902437310
+        ],
+        "target_solution": [
+          126700107660721,
+          3249390,
+          355902437310
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 3249390,
+          "divisor": 118635228900,
+          "y": 355902437310,
+          "z": 126700107660721
+        }
+      }
+    },
+    {
+      "prime": 13422481,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 11744671,
+        "k": 2,
+        "q": 7,
+        "factor": 34,
+        "source_solution": [
+          23489342,
+          3355630,
+          1159140304345
+        ],
+        "target_solution": [
+          315285246697502,
+          3355630,
+          1159140304345
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 3355630,
+          "divisor": 165591951425,
+          "y": 1159140304345,
+          "z": 315285246697502
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 11744671,
+        "k": 2,
+        "q": 7,
+        "factor": 68,
+        "source_solution": [
+          23489342,
+          3355630,
+          1159140304345
+        ],
+        "target_solution": [
+          315285246697502,
+          3355630,
+          1159140304345
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 3355630,
+          "divisor": 165591951425,
+          "y": 1159140304345,
+          "z": 315285246697502
+        }
+      }
+    },
+    {
+      "prime": 13659409,
+      "adaptive_external_source_descent": {
+        "source_denominator": 10244557,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          10244557,
+          3414858,
+          2057865142818
+        ],
+        "target_solution": [
+          139934594086813,
+          3414858,
+          2057865142818
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 3414858,
+          "divisor": 685956185892,
+          "y": 2057865142818,
+          "z": 139934594086813
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 10244557,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          10244557,
+          3414858,
+          2057865142818
+        ],
+        "target_solution": [
+          139934594086813,
+          3414858,
+          2057865142818
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 3414858,
+          "divisor": 685956185892,
+          "y": 2057865142818,
+          "z": 139934594086813
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 10244557,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "source_solution": [
+          10244557,
+          3414858,
+          2057865142818
+        ],
+        "target_solution": [
+          139934594086813,
+          3414858,
+          2057865142818
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 23,
+          "x": 3414858,
+          "divisor": 685956185892,
+          "y": 2057865142818,
+          "z": 139934594086813
+        }
+      }
+    },
+    {
+      "prime": 13903849,
+      "adaptive_external_source_descent": {
+        "source_denominator": 12165868,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          24331736,
+          3475966,
+          3252934117576
+        ],
+        "target_solution": [
+          338304783251864,
+          3475966,
+          3252934117576
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 3475966,
+          "divisor": 464705370506,
+          "y": 3252934117576,
+          "z": 338304783251864
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 12165868,
+        "k": 2,
+        "q": 7,
+        "factor": 13,
+        "source_solution": [
+          24331736,
+          3475966,
+          3252934117576
+        ],
+        "target_solution": [
+          338304783251864,
+          3475966,
+          3252934117576
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 3475966,
+          "divisor": 464705370506,
+          "y": 3252934117576,
+          "z": 338304783251864
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 12165868,
+        "k": 2,
+        "q": 7,
+        "factor": 26,
+        "source_solution": [
+          24331736,
+          3475966,
+          3252934117576
+        ],
+        "target_solution": [
+          338304783251864,
+          3475966,
+          3252934117576
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 3475966,
+          "divisor": 464705370506,
+          "y": 3252934117576,
+          "z": 338304783251864
+        }
+      }
+    },
+    {
+      "prime": 14351761,
+      "adaptive_external_source_descent": {
+        "source_denominator": 13454776,
+        "k": 4,
+        "q": 15,
+        "factor": 584,
+        "source_solution": [
+          53819104,
+          3588096,
+          82666143744
+        ],
+        "target_solution": [
+          772398917842144,
+          3588096,
+          82666143744
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 623,
+          "x": 3588096,
+          "divisor": 5511315456,
+          "y": 82666143744,
+          "z": 772398917842144
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 12557791,
+        "k": 2,
+        "q": 7,
+        "factor": 97726,
+        "source_solution": [
+          25115582,
+          3615862,
+          464638267
+        ],
+        "target_solution": [
+          360452830239902,
+          3615862,
+          464638267
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 111687,
+          "x": 3615862,
+          "divisor": 66893447,
+          "y": 464638267,
+          "z": 360452830239902
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 12557791,
+        "k": 2,
+        "q": 7,
+        "factor": 131,
+        "source_solution": [
+          25115582,
+          3587959,
+          687890675398
+        ],
+        "target_solution": [
+          360452830239902,
+          3587959,
+          687890675398
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 75,
+          "x": 3587959,
+          "divisor": 98270609051,
+          "y": 687890675398,
+          "z": 360452830239902
+        }
+      }
+    },
+    {
+      "prime": 14847529,
+      "adaptive_external_source_descent": {
+        "source_denominator": 11135647,
+        "k": 1,
+        "q": 3,
+        "factor": 1097,
+        "source_solution": [
+          11135647,
+          3712248,
+          37683029448
+        ],
+        "target_solution": [
+          165336841766263,
+          3712248,
+          37683029448
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1463,
+          "x": 3712248,
+          "divisor": 12562247232,
+          "y": 37683029448,
+          "z": 165336841766263
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 11135647,
+        "k": 1,
+        "q": 3,
+        "factor": 1097,
+        "source_solution": [
+          11135647,
+          3712248,
+          37683029448
+        ],
+        "target_solution": [
+          165336841766263,
+          3712248,
+          37683029448
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1463,
+          "x": 3712248,
+          "divisor": 12562247232,
+          "y": 37683029448,
+          "z": 165336841766263
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 11135647,
+        "k": 1,
+        "q": 3,
+        "factor": 1097,
+        "source_solution": [
+          11135647,
+          3712248,
+          37683029448
+        ],
+        "target_solution": [
+          165336841766263,
+          3712248,
+          37683029448
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1463,
+          "x": 3712248,
+          "divisor": 12562247232,
+          "y": 37683029448,
+          "z": 165336841766263
+        }
+      }
+    },
+    {
+      "prime": 15292369,
+      "adaptive_external_source_descent": {
+        "source_denominator": 11469277,
+        "k": 1,
+        "q": 3,
+        "factor": 2381,
+        "source_solution": [
+          11469277,
+          3823886,
+          18419658862
+        ],
+        "target_solution": [
+          175392416047213,
+          3823886,
+          18419658862
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 3175,
+          "x": 3823886,
+          "divisor": 6141160916,
+          "y": 18419658862,
+          "z": 175392416047213
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 11469277,
+        "k": 1,
+        "q": 3,
+        "factor": 2381,
+        "source_solution": [
+          11469277,
+          3823886,
+          18419658862
+        ],
+        "target_solution": [
+          175392416047213,
+          3823886,
+          18419658862
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 3175,
+          "x": 3823886,
+          "divisor": 6141160916,
+          "y": 18419658862,
+          "z": 175392416047213
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 11469277,
+        "k": 1,
+        "q": 3,
+        "factor": 2381,
+        "source_solution": [
+          11469277,
+          3823886,
+          18419658862
+        ],
+        "target_solution": [
+          175392416047213,
+          3823886,
+          18419658862
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 3175,
+          "x": 3823886,
+          "divisor": 6141160916,
+          "y": 18419658862,
+          "z": 175392416047213
+        }
+      }
+    },
+    {
+      "prime": 17078881,
+      "adaptive_external_source_descent": {
+        "source_denominator": 12809161,
+        "k": 1,
+        "q": 3,
+        "factor": 3461,
+        "source_solution": [
+          12809161,
+          4270874,
+          15806504674
+        ],
+        "target_solution": [
+          218766136428841,
+          4270874,
+          15806504674
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 4615,
+          "x": 4270874,
+          "divisor": 5270258516,
+          "y": 15806504674,
+          "z": 218766136428841
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 12809161,
+        "k": 1,
+        "q": 3,
+        "factor": 3461,
+        "source_solution": [
+          12809161,
+          4270874,
+          15806504674
+        ],
+        "target_solution": [
+          218766136428841,
+          4270874,
+          15806504674
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 4615,
+          "x": 4270874,
+          "divisor": 5270258516,
+          "y": 15806504674,
+          "z": 218766136428841
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 12809161,
+        "k": 1,
+        "q": 3,
+        "factor": 3461,
+        "source_solution": [
+          12809161,
+          4270874,
+          15806504674
+        ],
+        "target_solution": [
+          218766136428841,
+          4270874,
+          15806504674
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 4615,
+          "x": 4270874,
+          "divisor": 5270258516,
+          "y": 15806504674,
+          "z": 218766136428841
+        }
+      }
+    },
+    {
+      "prime": 17809201,
+      "adaptive_external_source_descent": {
+        "source_denominator": 13356901,
+        "k": 1,
+        "q": 3,
+        "factor": 53,
+        "source_solution": [
+          13356901,
+          4452318,
+          1122059825406
+        ],
+        "target_solution": [
+          237875734646101,
+          4452318,
+          1122059825406
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 4452318,
+          "divisor": 374021425908,
+          "y": 1122059825406,
+          "z": 237875734646101
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 13356901,
+        "k": 1,
+        "q": 3,
+        "factor": 53,
+        "source_solution": [
+          13356901,
+          4452318,
+          1122059825406
+        ],
+        "target_solution": [
+          237875734646101,
+          4452318,
+          1122059825406
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 4452318,
+          "divisor": 374021425908,
+          "y": 1122059825406,
+          "z": 237875734646101
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 13356901,
+        "k": 1,
+        "q": 3,
+        "factor": 53,
+        "source_solution": [
+          13356901,
+          4452318,
+          1122059825406
+        ],
+        "target_solution": [
+          237875734646101,
+          4452318,
+          1122059825406
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 4452318,
+          "divisor": 374021425908,
+          "y": 1122059825406,
+          "z": 237875734646101
+        }
+      }
+    },
+    {
+      "prime": 17883889,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 15648403,
+        "k": 2,
+        "q": 7,
+        "factor": 36434,
+        "source_solution": [
+          31296806,
+          4481382,
+          1924753569
+        ],
+        "target_solution": [
+          559708604558534,
+          4481382,
+          1924753569
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 41639,
+          "x": 4481382,
+          "divisor": 275604993,
+          "y": 1924753569,
+          "z": 559708604558534
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 15648403,
+        "k": 2,
+        "q": 7,
+        "factor": 859,
+        "source_solution": [
+          31296806,
+          4471095,
+          162899875230
+        ],
+        "target_solution": [
+          559708604558534,
+          4471095,
+          162899875230
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 491,
+          "x": 4471095,
+          "divisor": 23272049475,
+          "y": 162899875230,
+          "z": 559708604558534
+        }
+      }
+    },
+    {
+      "prime": 18337201,
+      "adaptive_external_source_descent": null,
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 17955176,
+        "k": 12,
+        "q": 47,
+        "factor": 232179,
+        "source_solution": [
+          215462112,
+          4643580,
+          359103520
+        ],
+        "target_solution": [
+          3950972055628512,
+          4643580,
+          359103520
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 237119,
+          "x": 4643580,
+          "divisor": 7739300,
+          "y": 359103520,
+          "z": 3950972055628512
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 17955176,
+        "k": 12,
+        "q": 47,
+        "factor": 928,
+        "source_solution": [
+          215462112,
+          4584320,
+          1064382833280
+        ],
+        "target_solution": [
+          3950972055628512,
+          4584320,
+          1064382833280
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 79,
+          "x": 4584320,
+          "divisor": 22646540800,
+          "y": 1064382833280,
+          "z": 3950972055628512
+        }
+      }
+    },
+    {
+      "prime": 19033921,
+      "adaptive_external_source_descent": {
+        "source_denominator": 14275441,
+        "k": 1,
+        "q": 3,
+        "factor": 101,
+        "source_solution": [
+          14275441,
+          4758514,
+          672573127274
+        ],
+        "target_solution": [
+          271717616234161,
+          4758514,
+          672573127274
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 4758514,
+          "divisor": 224192628596,
+          "y": 672573127274,
+          "z": 271717616234161
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 14275441,
+        "k": 1,
+        "q": 3,
+        "factor": 101,
+        "source_solution": [
+          14275441,
+          4758514,
+          672573127274
+        ],
+        "target_solution": [
+          271717616234161,
+          4758514,
+          672573127274
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 4758514,
+          "divisor": 224192628596,
+          "y": 672573127274,
+          "z": 271717616234161
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 14275441,
+        "k": 1,
+        "q": 3,
+        "factor": 101,
+        "source_solution": [
+          14275441,
+          4758514,
+          672573127274
+        ],
+        "target_solution": [
+          271717616234161,
+          4758514,
+          672573127274
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 4758514,
+          "divisor": 224192628596,
+          "y": 672573127274,
+          "z": 271717616234161
+        }
+      }
+    },
+    {
+      "prime": 19173361,
+      "adaptive_external_source_descent": {
+        "source_denominator": 14380021,
+        "k": 1,
+        "q": 3,
+        "factor": 1913,
+        "source_solution": [
+          14380021,
+          4793978,
+          36036332626
+        ],
+        "target_solution": [
+          275713333820581,
+          4793978,
+          36036332626
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 2551,
+          "x": 4793978,
+          "divisor": 12013708868,
+          "y": 36036332626,
+          "z": 275713333820581
+        }
+      },
+      "mixed_factor_external_source_descent": {
+        "source_denominator": 14380021,
+        "k": 1,
+        "q": 3,
+        "factor": 1913,
+        "source_solution": [
+          14380021,
+          4793978,
+          36036332626
+        ],
+        "target_solution": [
+          275713333820581,
+          4793978,
+          36036332626
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 2551,
+          "x": 4793978,
+          "divisor": 12013708868,
+          "y": 36036332626,
+          "z": 275713333820581
+        }
+      },
+      "quadratic_factor_external_source_descent": {
+        "source_denominator": 14380021,
+        "k": 1,
+        "q": 3,
+        "factor": 1913,
+        "source_solution": [
+          14380021,
+          4793978,
+          36036332626
+        ],
+        "target_solution": [
+          275713333820581,
+          4793978,
+          36036332626
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 2551,
+          "x": 4793978,
+          "divisor": 12013708868,
+          "y": 36036332626,
+          "z": 275713333820581
+        }
+      }
+    }
+  ]
+}

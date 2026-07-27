@@ -1,0 +1,81 @@
+{
+  "arithmetic": "exact affine gcd(A,C-1) calculation, divisibility checks for every stored shared Type II gap, and cross-check against the independently verified ordinary two-tail closure artifact",
+  "scope_note": "The fixed factor proves direct tail compatibility only for records with m+1 dividing it. The remaining finite residual still needs its separate p-1 factor scan and is not a global selector theorem.",
+  "parameter_limit_exclusive": 262144,
+  "common_p_minus_one_factor": 165600,
+  "branch_p_minus_one_factors": {
+    "0": 165600,
+    "1": 165600,
+    "3": 165600,
+    "7": 165600,
+    "10": 4802400,
+    "14": 165600,
+    "16": 165600,
+    "17": 165600,
+    "18": 165600,
+    "19": 165600,
+    "22": 165600,
+    "24": 165600,
+    "27": 165600,
+    "28": 165600
+  },
+  "record_count": 588526,
+  "fixed_factor_direct_tail_count": 586992,
+  "fixed_factor_gaps": [
+    3,
+    7,
+    11,
+    15,
+    19,
+    23,
+    31,
+    35,
+    39,
+    47,
+    59,
+    71,
+    95,
+    99
+  ],
+  "residual_count": 1534,
+  "residual_gap_histogram": {
+    "27": 1490,
+    "43": 22,
+    "51": 8,
+    "55": 7,
+    "63": 4,
+    "83": 1,
+    "87": 2
+  },
+  "residual_accidental_direct_count": 3,
+  "residual_accidental_direct_records": [
+    {
+      "prime": 96441409780876801,
+      "gap": 63,
+      "v_mod_29": 0,
+      "parameter": 62111
+    },
+    {
+      "prime": 40392699357571201,
+      "gap": 63,
+      "v_mod_29": 1,
+      "parameter": 26014
+    },
+    {
+      "prime": 56099329777051201,
+      "gap": 63,
+      "v_mod_29": 16,
+      "parameter": 36129
+    }
+  ],
+  "residual_alternative_tail_count": 1531,
+  "m27_to_m31_q8_factor_square_count": 247,
+  "m27_to_m31_q8_divisor_histogram": {
+    "1": 53,
+    "2": 55,
+    "4": 36,
+    "8": 55,
+    "16": 48
+  },
+  "remaining_new_factor_alternative_count": 1284
+}

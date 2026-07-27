@@ -1,0 +1,172 @@
+{
+  "arithmetic": "G=gcd(A,C_i-1) exactly enumerates globally available p-1 tails; each candidate receives an exhaustive canonical support-defect search through the stated bound and exact square-root-completion verification",
+  "scope_note": "A finite replacement of six nonuniform m=63 rows in the supplied H19-k23 artifact. It does not prove that the global tail menu always has defect at most two.",
+  "input_parameter_limit_exclusive": 1048576,
+  "global_p_minus_one_factor": 165600,
+  "global_tail_gaps_after_63_through_95": [
+    71,
+    79,
+    91,
+    95
+  ],
+  "max_support_checked": 2,
+  "replacement_count": 6,
+  "replacement_tail_gap_histogram": {
+    "71": 5,
+    "79": 1
+  },
+  "replacement_support_defect_histogram": {
+    "0": 1,
+    "1": 4,
+    "2": 1
+  },
+  "globalized_record_count": 5081,
+  "globalized_support_defect_histogram_by_tail_gap": {
+    "31": {
+      "0": 2287,
+      "1": 1443
+    },
+    "35": {
+      "1": 734,
+      "2": 2
+    },
+    "39": {
+      "1": 278,
+      "2": 15
+    },
+    "47": {
+      "0": 83,
+      "1": 131,
+      "2": 9
+    },
+    "59": {
+      "0": 42,
+      "1": 33,
+      "2": 1
+    },
+    "71": {
+      "0": 6,
+      "1": 8,
+      "2": 2
+    },
+    "79": {
+      "0": 2,
+      "1": 2,
+      "2": 1
+    },
+    "91": {
+      "1": 1
+    },
+    "95": {
+      "2": 1
+    }
+  },
+  "replacements": [
+    {
+      "prime": 508413877101691201,
+      "original_m63_defect": 2,
+      "replacement_tail_gap": 71,
+      "replacement_base_primes": [
+        2,
+        3
+      ],
+      "replacement_support_defect": 0,
+      "replacement_divisor": 729,
+      "attempts": [
+        {
+          "tail_gap": 71,
+          "support_defect": 0
+        }
+      ]
+    },
+    {
+      "prime": 1048100016305102401,
+      "original_m63_defect": 1,
+      "replacement_tail_gap": 71,
+      "replacement_base_primes": [
+        2,
+        3
+      ],
+      "replacement_support_defect": 1,
+      "replacement_divisor": 1028,
+      "attempts": [
+        {
+          "tail_gap": 71,
+          "support_defect": 1
+        }
+      ]
+    },
+    {
+      "prime": 132377066501040001,
+      "original_m63_defect": 1,
+      "replacement_tail_gap": 71,
+      "replacement_base_primes": [
+        2,
+        3
+      ],
+      "replacement_support_defect": 1,
+      "replacement_divisor": 1676,
+      "attempts": [
+        {
+          "tail_gap": 71,
+          "support_defect": 1
+        }
+      ]
+    },
+    {
+      "prime": 131928382120896001,
+      "original_m63_defect": 1,
+      "replacement_tail_gap": 71,
+      "replacement_base_primes": [
+        2,
+        3
+      ],
+      "replacement_support_defect": 2,
+      "replacement_divisor": 1911564,
+      "attempts": [
+        {
+          "tail_gap": 71,
+          "support_defect": 2
+        }
+      ]
+    },
+    {
+      "prime": 1573755934151361601,
+      "original_m63_defect": 1,
+      "replacement_tail_gap": 79,
+      "replacement_base_primes": [
+        2,
+        5
+      ],
+      "replacement_support_defect": 1,
+      "replacement_divisor": 3225800,
+      "attempts": [
+        {
+          "tail_gap": 71,
+          "support_defect": null
+        },
+        {
+          "tail_gap": 79,
+          "support_defect": 1
+        }
+      ]
+    },
+    {
+      "prime": 1442610094472107201,
+      "original_m63_defect": 1,
+      "replacement_tail_gap": 71,
+      "replacement_base_primes": [
+        2,
+        3
+      ],
+      "replacement_support_defect": 1,
+      "replacement_divisor": 2196,
+      "attempts": [
+        {
+          "tail_gap": 71,
+          "support_defect": 1
+        }
+      ]
+    }
+  ]
+}

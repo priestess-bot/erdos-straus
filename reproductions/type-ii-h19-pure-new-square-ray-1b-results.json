@@ -1,0 +1,7564 @@
+{
+  "arithmetic": "exact trial-prime factorization of p+4r^2, exact H19 source-label comparison, and reconstructed Type II raw-ray certificate checks",
+  "scope_note": "A finite audit of the restrictive square-ray subfamily A=r, C=1. It neither proves a uniform radius nor covers H19 collision-only states.",
+  "prime_limit": 1000000000,
+  "base_shift_bound": 19,
+  "radius_cap": 16000,
+  "shift_cap": 256000000,
+  "maximum_sequence_radius_bound": 15750,
+  "new_factor_state_count": 541,
+  "pure_new_square_ray_count": 530,
+  "missing_through_radius_cap": [
+    176089,
+    225289,
+    870241,
+    4722169,
+    20368321,
+    26953921,
+    70005049,
+    87503329,
+    439768081,
+    629071081,
+    826129441
+  ],
+  "order_exhausted_missing": [
+    176089,
+    225289,
+    870241,
+    4722169,
+    20368321,
+    26953921,
+    70005049,
+    87503329,
+    439768081,
+    629071081,
+    826129441
+  ],
+  "cap_truncated_missing": [],
+  "first_radius_histogram": {
+    "5": 98,
+    "6": 79,
+    "7": 38,
+    "8": 20,
+    "9": 32,
+    "10": 11,
+    "11": 26,
+    "12": 17,
+    "13": 14,
+    "14": 13,
+    "15": 19,
+    "16": 5,
+    "17": 7,
+    "18": 9,
+    "19": 2,
+    "20": 3,
+    "21": 11,
+    "22": 6,
+    "23": 2,
+    "24": 5,
+    "25": 1,
+    "26": 3,
+    "27": 2,
+    "28": 1,
+    "30": 7,
+    "31": 1,
+    "32": 2,
+    "33": 3,
+    "34": 3,
+    "35": 2,
+    "36": 1,
+    "37": 2,
+    "38": 4,
+    "39": 1,
+    "41": 3,
+    "42": 4,
+    "43": 1,
+    "45": 3,
+    "46": 2,
+    "49": 1,
+    "51": 1,
+    "53": 1,
+    "54": 1,
+    "55": 2,
+    "57": 1,
+    "63": 1,
+    "65": 1,
+    "66": 1,
+    "68": 2,
+    "69": 1,
+    "70": 1,
+    "71": 2,
+    "72": 1,
+    "76": 1,
+    "77": 1,
+    "78": 2,
+    "79": 1,
+    "80": 1,
+    "81": 1,
+    "83": 1,
+    "86": 1,
+    "87": 1,
+    "90": 1,
+    "91": 1,
+    "104": 1,
+    "106": 1,
+    "108": 1,
+    "111": 1,
+    "114": 1,
+    "115": 1,
+    "119": 1,
+    "125": 1,
+    "126": 1,
+    "131": 1,
+    "140": 1,
+    "144": 1,
+    "147": 1,
+    "151": 1,
+    "159": 1,
+    "165": 1,
+    "179": 2,
+    "234": 1,
+    "245": 1,
+    "271": 1,
+    "287": 1,
+    "295": 1,
+    "321": 1,
+    "334": 1,
+    "372": 1,
+    "383": 1,
+    "385": 1,
+    "598": 1,
+    "645": 1,
+    "659": 1,
+    "699": 1,
+    "888": 1,
+    "1044": 1,
+    "1140": 1,
+    "1224": 1,
+    "1438": 1,
+    "2253": 1
+  },
+  "maximum_first_radius": 2253,
+  "profiles": [
+    {
+      "prime": 345601,
+      "first_pure_new_square_radius": 31,
+      "selected_witness": {
+        "h": 1487,
+        "radius": 31,
+        "shift": 961,
+        "a": 31,
+        "c": 1,
+        "k": 12,
+        "gap": 235,
+        "divisor": 961
+      }
+    },
+    {
+      "prime": 558721,
+      "first_pure_new_square_radius": 114,
+      "selected_witness": {
+        "h": 1823,
+        "radius": 114,
+        "shift": 12996,
+        "a": 114,
+        "c": 1,
+        "k": 4,
+        "gap": 335,
+        "divisor": 12996
+      }
+    },
+    {
+      "prime": 813121,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 311,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 13,
+        "gap": 2615,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 990361,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 167,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 3,
+        "gap": 5935,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 1127281,
+      "first_pure_new_square_radius": 19,
+      "selected_witness": {
+        "h": 151,
+        "radius": 19,
+        "shift": 361,
+        "a": 19,
+        "c": 1,
+        "k": 2,
+        "gap": 7475,
+        "divisor": 361
+      }
+    },
+    {
+      "prime": 1385521,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 431,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 18,
+        "gap": 3215,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 1398769,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 19703,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 1429201,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 59,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 1,
+        "gap": 24239,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 1520401,
+      "first_pure_new_square_radius": 78,
+      "selected_witness": {
+        "h": 311,
+        "radius": 78,
+        "shift": 6084,
+        "a": 78,
+        "c": 1,
+        "k": 1,
+        "gap": 4967,
+        "divisor": 6084
+      }
+    },
+    {
+      "prime": 1683049,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 167,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 7,
+        "gap": 10079,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 1977529,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 7879,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 394,
+        "gap": 251,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 2031121,
+      "first_pure_new_square_radius": 77,
+      "selected_witness": {
+        "h": 14783,
+        "radius": 77,
+        "shift": 5929,
+        "a": 77,
+        "c": 1,
+        "k": 48,
+        "gap": 139,
+        "divisor": 5929
+      }
+    },
+    {
+      "prime": 2365969,
+      "first_pure_new_square_radius": 38,
+      "selected_witness": {
+        "h": 1367,
+        "radius": 38,
+        "shift": 1444,
+        "a": 38,
+        "c": 1,
+        "k": 9,
+        "gap": 1735,
+        "divisor": 1444
+      }
+    },
+    {
+      "prime": 3569329,
+      "first_pure_new_square_radius": 22,
+      "selected_witness": {
+        "h": 439,
+        "radius": 22,
+        "shift": 484,
+        "a": 22,
+        "c": 1,
+        "k": 5,
+        "gap": 8135,
+        "divisor": 484
+      }
+    },
+    {
+      "prime": 3660721,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 439,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 22,
+        "gap": 8339,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 4557361,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 359,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 15,
+        "gap": 12695,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 4965601,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 167,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 7,
+        "gap": 29735,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 6344209,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 147551,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 6868801,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 83,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 3,
+        "gap": 82759,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 6899281,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 97175,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 7329169,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 3539,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 177,
+        "gap": 2071,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 7378849,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 2663,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 74,
+        "gap": 2771,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 8066689,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 359,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 9,
+        "gap": 22471,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 8113681,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 479,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 24,
+        "gap": 16939,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 8243041,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 83,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 1,
+        "gap": 99335,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 8283361,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 863,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 18,
+        "gap": 9599,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 8328961,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 177215,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 8955769,
+      "first_pure_new_square_radius": 54,
+      "selected_witness": {
+        "h": 863,
+        "radius": 54,
+        "shift": 2916,
+        "a": 54,
+        "c": 1,
+        "k": 4,
+        "gap": 10391,
+        "divisor": 2916
+      }
+    },
+    {
+      "prime": 9296809,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 130943,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 9744001,
+      "first_pure_new_square_radius": 55,
+      "selected_witness": {
+        "h": 513479,
+        "radius": 55,
+        "shift": 3025,
+        "a": 55,
+        "c": 1,
+        "k": 2334,
+        "gap": 19,
+        "divisor": 3025
+      }
+    },
+    {
+      "prime": 10269169,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 239,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 4,
+        "gap": 42971,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 10278361,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47807,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 1992,
+        "gap": 215,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 11910361,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 253415,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 12180169,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 283271,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 12321241,
+      "first_pure_new_square_radius": 45,
+      "selected_witness": {
+        "h": 179,
+        "radius": 45,
+        "shift": 2025,
+        "a": 45,
+        "c": 1,
+        "k": 1,
+        "gap": 68879,
+        "divisor": 2025
+      }
+    },
+    {
+      "prime": 12997441,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 1181647,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 22724,
+        "gap": 11,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 13422481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 167,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 7,
+        "gap": 80375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 13659409,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 359,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 6,
+        "gap": 38051,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 14351761,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1223,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 51,
+        "gap": 11735,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 14847529,
+      "first_pure_new_square_radius": 144,
+      "selected_witness": {
+        "h": 649151,
+        "radius": 144,
+        "shift": 20736,
+        "a": 144,
+        "c": 1,
+        "k": 1127,
+        "gap": 23,
+        "divisor": 20736
+      }
+    },
+    {
+      "prime": 15292369,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1399,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 70,
+        "gap": 10931,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 17809201,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 919,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 46,
+        "gap": 19379,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 17883889,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 136519,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 6826,
+        "gap": 131,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 18337201,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 10331,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 287,
+        "gap": 1775,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 19033921,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 2039,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 85,
+        "gap": 9335,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 19173361,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 12491,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 347,
+        "gap": 1535,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 20292241,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 643,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 23,
+        "gap": 31559,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 20958961,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 239,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 10,
+        "gap": 87695,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 21852601,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 2339,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 45,
+        "gap": 9343,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 23841241,
+      "first_pure_new_square_radius": 27,
+      "selected_witness": {
+        "h": 287279,
+        "radius": 27,
+        "shift": 729,
+        "a": 27,
+        "c": 1,
+        "k": 2660,
+        "gap": 83,
+        "divisor": 729
+      }
+    },
+    {
+      "prime": 24053761,
+      "first_pure_new_square_radius": 888,
+      "selected_witness": {
+        "h": 71039,
+        "radius": 888,
+        "shift": 788544,
+        "a": 888,
+        "c": 1,
+        "k": 20,
+        "gap": 383,
+        "divisor": 788544
+      }
+    },
+    {
+      "prime": 24395281,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 191,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 4,
+        "gap": 127727,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 24887641,
+      "first_pure_new_square_radius": 125,
+      "selected_witness": {
+        "h": 69499,
+        "radius": 125,
+        "shift": 15625,
+        "a": 125,
+        "c": 1,
+        "k": 139,
+        "gap": 359,
+        "divisor": 15625
+      }
+    },
+    {
+      "prime": 25456201,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 75991,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 1357,
+        "gap": 335,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 26410609,
+      "first_pure_new_square_radius": 51,
+      "selected_witness": {
+        "h": 105263,
+        "radius": 51,
+        "shift": 2601,
+        "a": 51,
+        "c": 1,
+        "k": 516,
+        "gap": 251,
+        "divisor": 2601
+      }
+    },
+    {
+      "prime": 26514601,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 13159,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 235,
+        "gap": 2015,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 26722921,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 108191,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 3381,
+        "gap": 247,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 28366801,
+      "first_pure_new_square_radius": 45,
+      "selected_witness": {
+        "h": 179,
+        "radius": 45,
+        "shift": 2025,
+        "a": 45,
+        "c": 1,
+        "k": 1,
+        "gap": 158519,
+        "divisor": 2025
+      }
+    },
+    {
+      "prime": 29060641,
+      "first_pure_new_square_radius": 659,
+      "selected_witness": {
+        "h": 7907,
+        "radius": 659,
+        "shift": 434281,
+        "a": 659,
+        "c": 1,
+        "k": 3,
+        "gap": 3895,
+        "divisor": 434281
+      }
+    },
+    {
+      "prime": 29116081,
+      "first_pure_new_square_radius": 321,
+      "selected_witness": {
+        "h": 1283,
+        "radius": 321,
+        "shift": 103041,
+        "a": 321,
+        "c": 1,
+        "k": 1,
+        "gap": 23015,
+        "divisor": 103041
+      }
+    },
+    {
+      "prime": 29256049,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 370331,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 35840809,
+      "first_pure_new_square_radius": 79,
+      "selected_witness": {
+        "h": 157999,
+        "radius": 79,
+        "shift": 6241,
+        "a": 79,
+        "c": 1,
+        "k": 500,
+        "gap": 227,
+        "divisor": 6241
+      }
+    },
+    {
+      "prime": 36498289,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 14867,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 531,
+        "gap": 2455,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 36566401,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 4871,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 174,
+        "gap": 7507,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 36998641,
+      "first_pure_new_square_radius": 42,
+      "selected_witness": {
+        "h": 167,
+        "radius": 42,
+        "shift": 1764,
+        "a": 42,
+        "c": 1,
+        "k": 1,
+        "gap": 221591,
+        "divisor": 1764
+      }
+    },
+    {
+      "prime": 40077241,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 25127,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 698,
+        "gap": 1595,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 42361201,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 536219,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 45501121,
+      "first_pure_new_square_radius": 46,
+      "selected_witness": {
+        "h": 827447,
+        "radius": 46,
+        "shift": 2116,
+        "a": 46,
+        "c": 1,
+        "k": 4497,
+        "gap": 55,
+        "divisor": 2116
+      }
+    },
+    {
+      "prime": 46552969,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 6659,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 333,
+        "gap": 6991,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 46834561,
+      "first_pure_new_square_radius": 37,
+      "selected_witness": {
+        "h": 739,
+        "radius": 37,
+        "shift": 1369,
+        "a": 37,
+        "c": 1,
+        "k": 5,
+        "gap": 63383,
+        "divisor": 1369
+      }
+    },
+    {
+      "prime": 48605881,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 431,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 18,
+        "gap": 112775,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 49347169,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 14639,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 244,
+        "gap": 3371,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 51032809,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 239,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 10,
+        "gap": 213527,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 52108081,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 139,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 7,
+        "gap": 374879,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 52751329,
+      "first_pure_new_square_radius": 68,
+      "selected_witness": {
+        "h": 10607,
+        "radius": 68,
+        "shift": 4624,
+        "a": 68,
+        "c": 1,
+        "k": 39,
+        "gap": 4975,
+        "divisor": 4624
+      }
+    },
+    {
+      "prime": 54547249,
+      "first_pure_new_square_radius": 372,
+      "selected_witness": {
+        "h": 1487,
+        "radius": 372,
+        "shift": 138384,
+        "a": 372,
+        "c": 1,
+        "k": 1,
+        "gap": 37055,
+        "divisor": 138384
+      }
+    },
+    {
+      "prime": 55722241,
+      "first_pure_new_square_radius": 22,
+      "selected_witness": {
+        "h": 263,
+        "radius": 22,
+        "shift": 484,
+        "a": 22,
+        "c": 1,
+        "k": 3,
+        "gap": 211879,
+        "divisor": 484
+      }
+    },
+    {
+      "prime": 56380921,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 167,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 3,
+        "gap": 337615,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 58084321,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 167,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 3,
+        "gap": 347815,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 58372609,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 2447,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 51,
+        "gap": 23855,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 59364001,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 75431,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 2694,
+        "gap": 787,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 59642521,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 179,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 9,
+        "gap": 333199,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 59919721,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 242591,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 7581,
+        "gap": 247,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 59941729,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 1275359,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 60104641,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 191,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 4,
+        "gap": 314687,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 60697081,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 307,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 11,
+        "gap": 197711,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 61116169,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 2539,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 127,
+        "gap": 24071,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 63622441,
+      "first_pure_new_square_radius": 1438,
+      "selected_witness": {
+        "h": 166807,
+        "radius": 1438,
+        "shift": 2067844,
+        "a": 1438,
+        "c": 1,
+        "k": 29,
+        "gap": 431,
+        "divisor": 2067844
+      }
+    },
+    {
+      "prime": 63817441,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 139,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 7,
+        "gap": 459119,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 66945649,
+      "first_pure_new_square_radius": 71,
+      "selected_witness": {
+        "h": 3691,
+        "radius": 71,
+        "shift": 5041,
+        "a": 71,
+        "c": 1,
+        "k": 13,
+        "gap": 18143,
+        "divisor": 5041
+      }
+    },
+    {
+      "prime": 67016161,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1583,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 66,
+        "gap": 42335,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 67164241,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 3299,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 165,
+        "gap": 20359,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 67967761,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 727,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 26,
+        "gap": 93491,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 72473041,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1871,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 78,
+        "gap": 38735,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 76759321,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 311,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 13,
+        "gap": 246815,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 77265169,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 743,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 31,
+        "gap": 103991,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 78097321,
+      "first_pure_new_square_radius": 43,
+      "selected_witness": {
+        "h": 8599,
+        "radius": 43,
+        "shift": 1849,
+        "a": 43,
+        "c": 1,
+        "k": 50,
+        "gap": 9083,
+        "divisor": 1849
+      }
+    },
+    {
+      "prime": 78189721,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 431,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 18,
+        "gap": 181415,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 78306001,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 103,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 2,
+        "gap": 760259,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 78624841,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 165527,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 3762,
+        "gap": 475,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 79058281,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 1000739,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 79119121,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 263,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 6,
+        "gap": 300835,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 79180369,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 3442631,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 143443,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 79410241,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 5807,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 132,
+        "gap": 13675,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 79621441,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 71,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 1,
+        "gap": 1121447,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 80374561,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 239,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 4,
+        "gap": 336299,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 81472609,
+      "first_pure_new_square_radius": 111,
+      "selected_witness": {
+        "h": 1381727,
+        "radius": 111,
+        "shift": 12321,
+        "a": 111,
+        "c": 1,
+        "k": 3112,
+        "gap": 59,
+        "divisor": 12321
+      }
+    },
+    {
+      "prime": 81846241,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 659,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 11,
+        "gap": 124199,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 81941161,
+      "first_pure_new_square_radius": 23,
+      "selected_witness": {
+        "h": 643,
+        "radius": 23,
+        "shift": 529,
+        "a": 23,
+        "c": 1,
+        "k": 7,
+        "gap": 127439,
+        "divisor": 529
+      }
+    },
+    {
+      "prime": 82502281,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 139,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 5,
+        "gap": 593543,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 83581801,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 167,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 6,
+        "gap": 500491,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 83869801,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 971,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 27,
+        "gap": 86375,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 84212881,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 543311,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 15092,
+        "gap": 155,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 85192969,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 1199903,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 90527089,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 13099,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 655,
+        "gap": 6911,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 91729009,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 251,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 9,
+        "gap": 365455,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 92421169,
+      "first_pure_new_square_radius": 42,
+      "selected_witness": {
+        "h": 3023,
+        "radius": 42,
+        "shift": 1764,
+        "a": 42,
+        "c": 1,
+        "k": 18,
+        "gap": 30575,
+        "divisor": 1764
+      }
+    },
+    {
+      "prime": 92604121,
+      "first_pure_new_square_radius": 108,
+      "selected_witness": {
+        "h": 431,
+        "radius": 108,
+        "shift": 11664,
+        "a": 108,
+        "c": 1,
+        "k": 1,
+        "gap": 214967,
+        "divisor": 11664
+      }
+    },
+    {
+      "prime": 93740161,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 115019,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 3195,
+        "gap": 815,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 95462929,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 167,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 3,
+        "gap": 571639,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 96532921,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 2053895,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 98924281,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 20359,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1018,
+        "gap": 4859,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 99004921,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1019,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 51,
+        "gap": 97159,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 99532801,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 239,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 4,
+        "gap": 416459,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 100314769,
+      "first_pure_new_square_radius": 234,
+      "selected_witness": {
+        "h": 34631,
+        "radius": 234,
+        "shift": 54756,
+        "a": 234,
+        "c": 1,
+        "k": 37,
+        "gap": 2903,
+        "divisor": 54756
+      }
+    },
+    {
+      "prime": 102359401,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 20411,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 243,
+        "gap": 5015,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 102530401,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 37379,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 1335,
+        "gap": 2743,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 103568089,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1579,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 79,
+        "gap": 65591,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 106239961,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 1800679,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 107158921,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 179,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 5,
+        "gap": 598655,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 107260609,
+      "first_pure_new_square_radius": 287,
+      "selected_witness": {
+        "h": 4591,
+        "radius": 287,
+        "shift": 82369,
+        "a": 287,
+        "c": 1,
+        "k": 4,
+        "gap": 23435,
+        "divisor": 82369
+      }
+    },
+    {
+      "prime": 110562841,
+      "first_pure_new_square_radius": 106,
+      "selected_witness": {
+        "h": 2543,
+        "radius": 106,
+        "shift": 11236,
+        "a": 106,
+        "c": 1,
+        "k": 6,
+        "gap": 43495,
+        "divisor": 11236
+      }
+    },
+    {
+      "prime": 111051649,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 191,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 8,
+        "gap": 581423,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 111166441,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 48779,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 813,
+        "gap": 2279,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 111408049,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 839,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 7,
+        "gap": 132791,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 112075681,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 882491,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 16971,
+        "gap": 127,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 113509489,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 6199,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 155,
+        "gap": 18311,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 117710401,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 1657895,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 118111009,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 191,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 8,
+        "gap": 618383,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 119502601,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 167,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 2,
+        "gap": 715595,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 121497601,
+      "first_pure_new_square_radius": 33,
+      "selected_witness": {
+        "h": 1463879,
+        "radius": 33,
+        "shift": 1089,
+        "a": 33,
+        "c": 1,
+        "k": 11090,
+        "gap": 83,
+        "divisor": 1089
+      }
+    },
+    {
+      "prime": 121738369,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 191,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 6,
+        "gap": 637375,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 121978921,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 1718015,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 126029521,
+      "first_pure_new_square_radius": 20,
+      "selected_witness": {
+        "h": 3919,
+        "radius": 20,
+        "shift": 400,
+        "a": 20,
+        "c": 1,
+        "k": 49,
+        "gap": 32159,
+        "divisor": 400
+      }
+    },
+    {
+      "prime": 128072641,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 324239,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 3860,
+        "gap": 395,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 131053729,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 1379519,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 28740,
+        "gap": 95,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 131358049,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 1850119,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 46253,
+        "gap": 71,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 132285169,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1871,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 78,
+        "gap": 70703,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 134632801,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 19583,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 544,
+        "gap": 6875,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 136244761,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 6047,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 216,
+        "gap": 22531,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 141326089,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 1990559,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 16588,
+        "gap": 71,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 142182121,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 92627,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 2573,
+        "gap": 1535,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 143261281,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 2428159,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 143595169,
+      "first_pure_new_square_radius": 383,
+      "selected_witness": {
+        "h": 1531,
+        "radius": 383,
+        "shift": 146689,
+        "a": 383,
+        "c": 1,
+        "k": 1,
+        "gap": 94175,
+        "divisor": 146689
+      }
+    },
+    {
+      "prime": 144489361,
+      "first_pure_new_square_radius": 41,
+      "selected_witness": {
+        "h": 983,
+        "radius": 41,
+        "shift": 1681,
+        "a": 41,
+        "c": 1,
+        "k": 6,
+        "gap": 146995,
+        "divisor": 1681
+      }
+    },
+    {
+      "prime": 144694729,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 179,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 9,
+        "gap": 808351,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 146757601,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 6659,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 333,
+        "gap": 22039,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 148452481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1847,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 77,
+        "gap": 80375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 149101681,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 127,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 4,
+        "gap": 1174031,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 149931601,
+      "first_pure_new_square_radius": 38,
+      "selected_witness": {
+        "h": 341543,
+        "radius": 38,
+        "shift": 1444,
+        "a": 38,
+        "c": 1,
+        "k": 2247,
+        "gap": 439,
+        "divisor": 1444
+      }
+    },
+    {
+      "prime": 150390241,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 4139,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 115,
+        "gap": 36335,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 150524641,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 3202655,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 151984561,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1599839,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 66660,
+        "gap": 95,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 152455801,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 3545495,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 155634361,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 3619415,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 155796001,
+      "first_pure_new_square_radius": 81,
+      "selected_witness": {
+        "h": 2267,
+        "radius": 81,
+        "shift": 6561,
+        "a": 81,
+        "c": 1,
+        "k": 7,
+        "gap": 68735,
+        "divisor": 6561
+      }
+    },
+    {
+      "prime": 155937601,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 239,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 12,
+        "gap": 652459,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 156809041,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 9767,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 407,
+        "gap": 16055,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 157523881,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 3351575,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 158216809,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 5279,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 264,
+        "gap": 29971,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 159918529,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 336671,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 12024,
+        "gap": 475,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 160287649,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 33179,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1659,
+        "gap": 4831,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 165429721,
+      "first_pure_new_square_radius": 57,
+      "selected_witness": {
+        "h": 15040247,
+        "radius": 57,
+        "shift": 3249,
+        "a": 57,
+        "c": 1,
+        "k": 65966,
+        "gap": 11,
+        "divisor": 3249
+      }
+    },
+    {
+      "prime": 165479161,
+      "first_pure_new_square_radius": 78,
+      "selected_witness": {
+        "h": 3119,
+        "radius": 78,
+        "shift": 6084,
+        "a": 78,
+        "c": 1,
+        "k": 10,
+        "gap": 53063,
+        "divisor": 6084
+      }
+    },
+    {
+      "prime": 165882649,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 307,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 11,
+        "gap": 540335,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 168058081,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 503,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 6,
+        "gap": 334115,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 173952601,
+      "first_pure_new_square_radius": 49,
+      "selected_witness": {
+        "h": 325163,
+        "radius": 49,
+        "shift": 2401,
+        "a": 49,
+        "c": 1,
+        "k": 1659,
+        "gap": 535,
+        "divisor": 2401
+      }
+    },
+    {
+      "prime": 174229441,
+      "first_pure_new_square_radius": 151,
+      "selected_witness": {
+        "h": 3623,
+        "radius": 151,
+        "shift": 22801,
+        "a": 151,
+        "c": 1,
+        "k": 6,
+        "gap": 48115,
+        "divisor": 22801
+      }
+    },
+    {
+      "prime": 176719321,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 3119,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 156,
+        "gap": 56659,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 178130761,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 83,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 1,
+        "gap": 2146175,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 178400041,
+      "first_pure_new_square_radius": 65,
+      "selected_witness": {
+        "h": 4159,
+        "radius": 65,
+        "shift": 4225,
+        "a": 65,
+        "c": 1,
+        "k": 16,
+        "gap": 42899,
+        "divisor": 4225
+      }
+    },
+    {
+      "prime": 178618441,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 8039,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 402,
+        "gap": 22219,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 181370401,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 167,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 3,
+        "gap": 1086055,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 183950881,
+      "first_pure_new_square_radius": 33,
+      "selected_witness": {
+        "h": 659,
+        "radius": 33,
+        "shift": 1089,
+        "a": 33,
+        "c": 1,
+        "k": 5,
+        "gap": 279143,
+        "divisor": 1089
+      }
+    },
+    {
+      "prime": 185875561,
+      "first_pure_new_square_radius": 36,
+      "selected_witness": {
+        "h": 1151,
+        "radius": 36,
+        "shift": 1296,
+        "a": 36,
+        "c": 1,
+        "k": 8,
+        "gap": 161495,
+        "divisor": 1296
+      }
+    },
+    {
+      "prime": 189813121,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 2402699,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 192369241,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 11087,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 154,
+        "gap": 17351,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 194714521,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 217559,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 3885,
+        "gap": 895,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 197052241,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 8387,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 233,
+        "gap": 23495,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 198439081,
+      "first_pure_new_square_radius": 16,
+      "selected_witness": {
+        "h": 80831,
+        "radius": 16,
+        "shift": 256,
+        "a": 16,
+        "c": 1,
+        "k": 1263,
+        "gap": 2455,
+        "divisor": 256
+      }
+    },
+    {
+      "prime": 199211401,
+      "first_pure_new_square_radius": 24,
+      "selected_witness": {
+        "h": 479,
+        "radius": 24,
+        "shift": 576,
+        "a": 24,
+        "c": 1,
+        "k": 5,
+        "gap": 415895,
+        "divisor": 576
+      }
+    },
+    {
+      "prime": 201866569,
+      "first_pure_new_square_radius": 159,
+      "selected_witness": {
+        "h": 432479,
+        "radius": 159,
+        "shift": 25281,
+        "a": 159,
+        "c": 1,
+        "k": 680,
+        "gap": 467,
+        "divisor": 25281
+      }
+    },
+    {
+      "prime": 203519761,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 739,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 37,
+        "gap": 275399,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 203711281,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 2869175,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 205462681,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 261071,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 9324,
+        "gap": 787,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 208095889,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 103,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 2,
+        "gap": 2020355,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 208694641,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 3537199,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 208824001,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 239,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 5,
+        "gap": 873743,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 211984369,
+      "first_pure_new_square_radius": 19,
+      "selected_witness": {
+        "h": 33211,
+        "radius": 19,
+        "shift": 361,
+        "a": 19,
+        "c": 1,
+        "k": 437,
+        "gap": 6383,
+        "divisor": 361
+      }
+    },
+    {
+      "prime": 212220121,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 1567,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 49,
+        "gap": 135431,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 212558809,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 988651,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 14539,
+        "gap": 215,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 215080009,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 31859,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1593,
+        "gap": 6751,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 215665129,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 9376751,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 390698,
+        "gap": 23,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 215750929,
+      "first_pure_new_square_radius": 34,
+      "selected_witness": {
+        "h": 385967,
+        "radius": 34,
+        "shift": 1156,
+        "a": 34,
+        "c": 1,
+        "k": 2838,
+        "gap": 559,
+        "divisor": 1156
+      }
+    },
+    {
+      "prime": 215803681,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 375311,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 15638,
+        "gap": 575,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 217299601,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 191,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 8,
+        "gap": 1137695,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 218302561,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 10007,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 417,
+        "gap": 21815,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 221364529,
+      "first_pure_new_square_radius": 28,
+      "selected_witness": {
+        "h": 660799,
+        "radius": 28,
+        "shift": 784,
+        "a": 28,
+        "c": 1,
+        "k": 5900,
+        "gap": 335,
+        "divisor": 784
+      }
+    },
+    {
+      "prime": 221392609,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1979,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 99,
+        "gap": 111871,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 222320569,
+      "first_pure_new_square_radius": 271,
+      "selected_witness": {
+        "h": 11923,
+        "radius": 271,
+        "shift": 73441,
+        "a": 271,
+        "c": 1,
+        "k": 11,
+        "gap": 18671,
+        "divisor": 73441
+      }
+    },
+    {
+      "prime": 226338961,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 1052743,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 18799,
+        "gap": 215,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 226842001,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 2871419,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 227018089,
+      "first_pure_new_square_radius": 66,
+      "selected_witness": {
+        "h": 1319,
+        "radius": 66,
+        "shift": 4356,
+        "a": 66,
+        "c": 1,
+        "k": 5,
+        "gap": 172127,
+        "divisor": 4356
+      }
+    },
+    {
+      "prime": 231641281,
+      "first_pure_new_square_radius": 70,
+      "selected_witness": {
+        "h": 3079,
+        "radius": 70,
+        "shift": 4900,
+        "a": 70,
+        "c": 1,
+        "k": 11,
+        "gap": 75239,
+        "divisor": 4900
+      }
+    },
+    {
+      "prime": 232859089,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 859259,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 42963,
+        "gap": 271,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 235435201,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 839,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 15,
+        "gap": 280615,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 237354121,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 192191,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 2288,
+        "gap": 1235,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 240766681,
+      "first_pure_new_square_radius": 34,
+      "selected_witness": {
+        "h": 271,
+        "radius": 34,
+        "shift": 1156,
+        "a": 34,
+        "c": 1,
+        "k": 2,
+        "gap": 888455,
+        "divisor": 1156
+      }
+    },
+    {
+      "prime": 243145681,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 5711,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 238,
+        "gap": 42575,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 244952569,
+      "first_pure_new_square_radius": 104,
+      "selected_witness": {
+        "h": 17471,
+        "radius": 104,
+        "shift": 10816,
+        "a": 104,
+        "c": 1,
+        "k": 42,
+        "gap": 14023,
+        "divisor": 10816
+      }
+    },
+    {
+      "prime": 245385529,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 79,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 2,
+        "gap": 3106151,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 246118321,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 1319,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 30,
+        "gap": 186595,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 246275761,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 983,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 41,
+        "gap": 250535,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 248894881,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 4218559,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 248995321,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 383,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 12,
+        "gap": 650119,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 250982449,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 2039,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 102,
+        "gap": 123091,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 255844681,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 4283,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 119,
+        "gap": 59735,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 257149489,
+      "first_pure_new_square_radius": 26,
+      "selected_witness": {
+        "h": 3119,
+        "radius": 26,
+        "shift": 676,
+        "a": 26,
+        "c": 1,
+        "k": 30,
+        "gap": 82447,
+        "divisor": 676
+      }
+    },
+    {
+      "prime": 257616241,
+      "first_pure_new_square_radius": 38,
+      "selected_witness": {
+        "h": 1294583,
+        "radius": 38,
+        "shift": 1444,
+        "a": 38,
+        "c": 1,
+        "k": 8517,
+        "gap": 199,
+        "divisor": 1444
+      }
+    },
+    {
+      "prime": 257706289,
+      "first_pure_new_square_radius": 35,
+      "selected_witness": {
+        "h": 1399,
+        "radius": 35,
+        "shift": 1225,
+        "a": 35,
+        "c": 1,
+        "k": 10,
+        "gap": 184211,
+        "divisor": 1225
+      }
+    },
+    {
+      "prime": 258662881,
+      "first_pure_new_square_radius": 39,
+      "selected_witness": {
+        "h": 467,
+        "radius": 39,
+        "shift": 1521,
+        "a": 39,
+        "c": 1,
+        "k": 3,
+        "gap": 553895,
+        "divisor": 1521
+      }
+    },
+    {
+      "prime": 260353129,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 683,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 19,
+        "gap": 381191,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 260681521,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 4451,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 159,
+        "gap": 58567,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 261140881,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 6073055,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 261532441,
+      "first_pure_new_square_radius": 16,
+      "selected_witness": {
+        "h": 383,
+        "radius": 16,
+        "shift": 256,
+        "a": 16,
+        "c": 1,
+        "k": 6,
+        "gap": 682855,
+        "divisor": 256
+      }
+    },
+    {
+      "prime": 262649689,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 839,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 42,
+        "gap": 313051,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 262657441,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 3324779,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 266970001,
+      "first_pure_new_square_radius": 645,
+      "selected_witness": {
+        "h": 407639,
+        "radius": 645,
+        "shift": 416025,
+        "a": 645,
+        "c": 1,
+        "k": 158,
+        "gap": 659,
+        "divisor": 416025
+      }
+    },
+    {
+      "prime": 267018481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 719,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 30,
+        "gap": 371375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 269719921,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 239,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 4,
+        "gap": 1128539,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 271064641,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 73679,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 1842,
+        "gap": 3679,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 275146369,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 139,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 7,
+        "gap": 1979471,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 276833041,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 13859,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 315,
+        "gap": 19975,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 281164321,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 83407,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 1604,
+        "gap": 3371,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 282303841,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 719,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 6,
+        "gap": 392639,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 282781489,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 715903,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 25568,
+        "gap": 395,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 283163161,
+      "first_pure_new_square_radius": 16,
+      "selected_witness": {
+        "h": 191,
+        "radius": 16,
+        "shift": 256,
+        "a": 16,
+        "c": 1,
+        "k": 3,
+        "gap": 1482535,
+        "divisor": 256
+      }
+    },
+    {
+      "prime": 285473161,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 199,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 10,
+        "gap": 1434539,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 287327881,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 6682055,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 292044481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 34871,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 1453,
+        "gap": 8375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 293727121,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 263,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 6,
+        "gap": 1116835,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 298446241,
+      "first_pure_new_square_radius": 24,
+      "selected_witness": {
+        "h": 1151,
+        "radius": 24,
+        "shift": 576,
+        "a": 24,
+        "c": 1,
+        "k": 12,
+        "gap": 259295,
+        "divisor": 576
+      }
+    },
+    {
+      "prime": 304844401,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 619,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 31,
+        "gap": 492479,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 306410281,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 2974859,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 106245,
+        "gap": 103,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 307343689,
+      "first_pure_new_square_radius": 37,
+      "selected_witness": {
+        "h": 1429531,
+        "radius": 37,
+        "shift": 1369,
+        "a": 37,
+        "c": 1,
+        "k": 9659,
+        "gap": 215,
+        "divisor": 1369
+      }
+    },
+    {
+      "prime": 309048601,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 467,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 13,
+        "gap": 661775,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 318865009,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 117619,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 5881,
+        "gap": 2711,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 320472289,
+      "first_pure_new_square_radius": 76,
+      "selected_witness": {
+        "h": 607,
+        "radius": 76,
+        "shift": 5776,
+        "a": 76,
+        "c": 1,
+        "k": 2,
+        "gap": 527999,
+        "divisor": 5776
+      }
+    },
+    {
+      "prime": 321700369,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 84859,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4243,
+        "gap": 3791,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 321737641,
+      "first_pure_new_square_radius": 598,
+      "selected_witness": {
+        "h": 11959,
+        "radius": 598,
+        "shift": 357604,
+        "a": 598,
+        "c": 1,
+        "k": 5,
+        "gap": 27023,
+        "divisor": 357604
+      }
+    },
+    {
+      "prime": 322258561,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 4538855,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 323753329,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 25919,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 432,
+        "gap": 12491,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 324028609,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 10452539,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 522627,
+        "gap": 31,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 325045249,
+      "first_pure_new_square_radius": 1224,
+      "selected_witness": {
+        "h": 1733183,
+        "radius": 1224,
+        "shift": 1498176,
+        "a": 1224,
+        "c": 1,
+        "k": 354,
+        "gap": 191,
+        "divisor": 1498176
+      }
+    },
+    {
+      "prime": 325243921,
+      "first_pure_new_square_radius": 35,
+      "selected_witness": {
+        "h": 17118359,
+        "radius": 35,
+        "shift": 1225,
+        "a": 35,
+        "c": 1,
+        "k": 122274,
+        "gap": 19,
+        "divisor": 1225
+      }
+    },
+    {
+      "prime": 325493281,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 139,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 7,
+        "gap": 2341679,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 327730321,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 967,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 22,
+        "gap": 338915,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 330605881,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 574967,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 23957,
+        "gap": 575,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 330843241,
+      "first_pure_new_square_radius": 33,
+      "selected_witness": {
+        "h": 11351,
+        "radius": 33,
+        "shift": 1089,
+        "a": 33,
+        "c": 1,
+        "k": 86,
+        "gap": 29147,
+        "divisor": 1089
+      }
+    },
+    {
+      "prime": 331878121,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 167,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 7,
+        "gap": 1987295,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 334152361,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 78311,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 1506,
+        "gap": 4267,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 338195881,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 588167,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 24507,
+        "gap": 575,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 340052161,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 4304459,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 341987809,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 147727,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 5276,
+        "gap": 2315,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 346479169,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 628819,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 31441,
+        "gap": 551,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 347518081,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 419,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 21,
+        "gap": 829399,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 347699641,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 547559,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 15210,
+        "gap": 635,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 349036081,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 67,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 1,
+        "gap": 5209511,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 356744161,
+      "first_pure_new_square_radius": 699,
+      "selected_witness": {
+        "h": 25163,
+        "radius": 699,
+        "shift": 488601,
+        "a": 699,
+        "c": 1,
+        "k": 9,
+        "gap": 14255,
+        "divisor": 488601
+      }
+    },
+    {
+      "prime": 356911129,
+      "first_pure_new_square_radius": 63,
+      "selected_witness": {
+        "h": 472751,
+        "radius": 63,
+        "shift": 3969,
+        "a": 63,
+        "c": 1,
+        "k": 1876,
+        "gap": 755,
+        "divisor": 3969
+      }
+    },
+    {
+      "prime": 358078249,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 983,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 41,
+        "gap": 364271,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 358424089,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 647,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 18,
+        "gap": 553979,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 359438689,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 652339,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 32617,
+        "gap": 551,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 362665921,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 1847,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 22,
+        "gap": 196355,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 367015489,
+      "first_pure_new_square_radius": 24,
+      "selected_witness": {
+        "h": 383,
+        "radius": 24,
+        "shift": 576,
+        "a": 24,
+        "c": 1,
+        "k": 4,
+        "gap": 958271,
+        "divisor": 576
+      }
+    },
+    {
+      "prime": 371217841,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 7898255,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 372271201,
+      "first_pure_new_square_radius": 22,
+      "selected_witness": {
+        "h": 3343,
+        "radius": 22,
+        "shift": 484,
+        "a": 22,
+        "c": 1,
+        "k": 38,
+        "gap": 111359,
+        "divisor": 484
+      }
+    },
+    {
+      "prime": 374343841,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 1020011,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 36429,
+        "gap": 367,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 375437329,
+      "first_pure_new_square_radius": 83,
+      "selected_witness": {
+        "h": 331,
+        "radius": 83,
+        "shift": 6889,
+        "a": 83,
+        "c": 1,
+        "k": 1,
+        "gap": 1134335,
+        "divisor": 6889
+      }
+    },
+    {
+      "prime": 376706929,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 10607,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 204,
+        "gap": 35515,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 377526601,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 4778819,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 378685609,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1794719,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 89736,
+        "gap": 211,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 381676849,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 171079,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 4277,
+        "gap": 2231,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 382619161,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 284899,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 10175,
+        "gap": 1343,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 385105081,
+      "first_pure_new_square_radius": 87,
+      "selected_witness": {
+        "h": 4871,
+        "radius": 87,
+        "shift": 7569,
+        "a": 87,
+        "c": 1,
+        "k": 14,
+        "gap": 79067,
+        "divisor": 7569
+      }
+    },
+    {
+      "prime": 398757241,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 6758599,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 399299209,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 653519,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 10892,
+        "gap": 611,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 401436121,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 9335735,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 401669041,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 10939,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 547,
+        "gap": 36719,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 403706689,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 239,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 6,
+        "gap": 1689151,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 406067281,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 12671,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 396,
+        "gap": 32047,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 407311969,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 25219,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1261,
+        "gap": 16151,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 408255961,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 67247,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 1401,
+        "gap": 6071,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 411116161,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 131,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 3,
+        "gap": 3138295,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 414338929,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 2179,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 109,
+        "gap": 190151,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 415171969,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 15391,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 481,
+        "gap": 26975,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 419917801,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 3779,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 63,
+        "gap": 111119,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 420682081,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 191,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 4,
+        "gap": 2202527,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 421370401,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1959863,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 81661,
+        "gap": 215,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 422451121,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 26339,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1317,
+        "gap": 16039,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 426257329,
+      "first_pure_new_square_radius": 24,
+      "selected_witness": {
+        "h": 467903,
+        "radius": 24,
+        "shift": 576,
+        "a": 24,
+        "c": 1,
+        "k": 4874,
+        "gap": 911,
+        "divisor": 576
+      }
+    },
+    {
+      "prime": 427727161,
+      "first_pure_new_square_radius": 86,
+      "selected_witness": {
+        "h": 1031,
+        "radius": 86,
+        "shift": 7396,
+        "a": 86,
+        "c": 1,
+        "k": 3,
+        "gap": 414895,
+        "divisor": 7396
+      }
+    },
+    {
+      "prime": 429221521,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 1607,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 67,
+        "gap": 267095,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 429844321,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 172283,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 2051,
+        "gap": 2495,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 432047281,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 6085175,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 433817521,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 1367,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 19,
+        "gap": 317351,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 433984321,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 383,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 12,
+        "gap": 1133119,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 435050641,
+      "first_pure_new_square_radius": 42,
+      "selected_witness": {
+        "h": 1511,
+        "radius": 42,
+        "shift": 1764,
+        "a": 42,
+        "c": 1,
+        "k": 9,
+        "gap": 287927,
+        "divisor": 1764
+      }
+    },
+    {
+      "prime": 442217329,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 47699,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 2385,
+        "gap": 9271,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 442273441,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 599,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 5,
+        "gap": 738359,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 444775489,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 57383,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2391,
+        "gap": 7751,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 444895201,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 191,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 8,
+        "gap": 2329295,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 448049281,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 167,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 6,
+        "gap": 2682931,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 449610121,
+      "first_pure_new_square_radius": 27,
+      "selected_witness": {
+        "h": 107,
+        "radius": 27,
+        "shift": 729,
+        "a": 27,
+        "c": 1,
+        "k": 1,
+        "gap": 4201991,
+        "divisor": 729
+      }
+    },
+    {
+      "prime": 452255521,
+      "first_pure_new_square_radius": 41,
+      "selected_witness": {
+        "h": 163,
+        "radius": 41,
+        "shift": 1681,
+        "a": 41,
+        "c": 1,
+        "k": 1,
+        "gap": 2774615,
+        "divisor": 1681
+      }
+    },
+    {
+      "prime": 453770689,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 2903,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 121,
+        "gap": 156311,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 455432041,
+      "first_pure_new_square_radius": 16,
+      "selected_witness": {
+        "h": 2687,
+        "radius": 16,
+        "shift": 256,
+        "a": 16,
+        "c": 1,
+        "k": 42,
+        "gap": 169495,
+        "divisor": 256
+      }
+    },
+    {
+      "prime": 466822801,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 8999,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 250,
+        "gap": 51875,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 478042681,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 239,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 12,
+        "gap": 2000179,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 479352241,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 419,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 21,
+        "gap": 1144039,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 489239521,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 107,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 3,
+        "gap": 4572335,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 499768369,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 8087,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 337,
+        "gap": 61799,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 501701281,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 4799,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 100,
+        "gap": 104543,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 502725001,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 3919,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 98,
+        "gap": 128279,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 505391401,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 5319911,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 221663,
+        "gap": 95,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 509475121,
+      "first_pure_new_square_radius": 165,
+      "selected_witness": {
+        "h": 59399,
+        "radius": 165,
+        "shift": 27225,
+        "a": 165,
+        "c": 1,
+        "k": 90,
+        "gap": 8579,
+        "divisor": 27225
+      }
+    },
+    {
+      "prime": 509692801,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 6287,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 131,
+        "gap": 81071,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 511239481,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 239,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 6,
+        "gap": 2139079,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 511304641,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 28547,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 549,
+        "gap": 17911,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 513357601,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 20327,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 363,
+        "gap": 25255,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 514290529,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 147319,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 7366,
+        "gap": 3491,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 515052841,
+      "first_pure_new_square_radius": 42,
+      "selected_witness": {
+        "h": 167,
+        "radius": 42,
+        "shift": 1764,
+        "a": 42,
+        "c": 1,
+        "k": 1,
+        "gap": 3084191,
+        "divisor": 1764
+      }
+    },
+    {
+      "prime": 518088169,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 383,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 16,
+        "gap": 1352711,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 518236489,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 8783671,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 519166201,
+      "first_pure_new_square_radius": 22,
+      "selected_witness": {
+        "h": 488399,
+        "radius": 22,
+        "shift": 484,
+        "a": 22,
+        "c": 1,
+        "k": 5550,
+        "gap": 1063,
+        "divisor": 484
+      }
+    },
+    {
+      "prime": 519857641,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 29339,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1467,
+        "gap": 17719,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 521525761,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 18059,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 903,
+        "gap": 28879,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 523100449,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 8866111,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 528014881,
+      "first_pure_new_square_radius": 385,
+      "selected_witness": {
+        "h": 1767919,
+        "radius": 385,
+        "shift": 148225,
+        "a": 385,
+        "c": 1,
+        "k": 1148,
+        "gap": 299,
+        "divisor": 148225
+      }
+    },
+    {
+      "prime": 535404241,
+      "first_pure_new_square_radius": 80,
+      "selected_witness": {
+        "h": 247999,
+        "radius": 80,
+        "shift": 6400,
+        "a": 80,
+        "c": 1,
+        "k": 775,
+        "gap": 2159,
+        "divisor": 6400
+      }
+    },
+    {
+      "prime": 536866201,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 1471,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 46,
+        "gap": 364967,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 537415321,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 5839,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 146,
+        "gap": 92039,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 538602241,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 587,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 21,
+        "gap": 917551,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 540645121,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 83,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 3,
+        "gap": 6513799,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 543671041,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 9719,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 486,
+        "gap": 55939,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 547196521,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 9274519,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 558919321,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 499,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 25,
+        "gap": 1120079,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 559158601,
+      "first_pure_new_square_radius": 10,
+      "selected_witness": {
+        "h": 3919,
+        "radius": 10,
+        "shift": 100,
+        "a": 10,
+        "c": 1,
+        "k": 98,
+        "gap": 142679,
+        "divisor": 100
+      }
+    },
+    {
+      "prime": 560419729,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 3719,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 186,
+        "gap": 150691,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 563621521,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 419,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 21,
+        "gap": 1345159,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 564358369,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 3719,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 31,
+        "gap": 151751,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 566355409,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 5961643,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 114647,
+        "gap": 95,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 568029841,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 431,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 18,
+        "gap": 1317935,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 569359561,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 1585963,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 23323,
+        "gap": 359,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 574346809,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 120383,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 2736,
+        "gap": 4771,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 575112841,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 251,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 9,
+        "gap": 2291287,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 575171041,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 1471,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 46,
+        "gap": 391007,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 576916201,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 145723,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 2143,
+        "gap": 3959,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 581004649,
+      "first_pure_new_square_radius": 72,
+      "selected_witness": {
+        "h": 2879,
+        "radius": 72,
+        "shift": 5184,
+        "a": 72,
+        "c": 1,
+        "k": 10,
+        "gap": 201815,
+        "divisor": 5184
+      }
+    },
+    {
+      "prime": 582869809,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 9879151,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 585382561,
+      "first_pure_new_square_radius": 179,
+      "selected_witness": {
+        "h": 17183,
+        "radius": 179,
+        "shift": 32041,
+        "a": 179,
+        "c": 1,
+        "k": 24,
+        "gap": 34075,
+        "divisor": 32041
+      }
+    },
+    {
+      "prime": 588653641,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 139,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 7,
+        "gap": 4234919,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 594670561,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 6911,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 216,
+        "gap": 86047,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 594825841,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 295199,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 12300,
+        "gap": 2015,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 595854001,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 647,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 9,
+        "gap": 920951,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 605372881,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 10260559,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 605553001,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 383,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 12,
+        "gap": 1581079,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 608607169,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 503,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 18,
+        "gap": 1209955,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 608848321,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 1155311,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 24069,
+        "gap": 527,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 614315641,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 166979,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 8349,
+        "gap": 3679,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 616391161,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 571,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 13,
+        "gap": 1079495,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 616696441,
+      "first_pure_new_square_radius": 41,
+      "selected_witness": {
+        "h": 163,
+        "radius": 41,
+        "shift": 1681,
+        "a": 41,
+        "c": 1,
+        "k": 1,
+        "gap": 3783455,
+        "divisor": 1681
+      }
+    },
+    {
+      "prime": 617945329,
+      "first_pure_new_square_radius": 115,
+      "selected_witness": {
+        "h": 4139,
+        "radius": 115,
+        "shift": 13225,
+        "a": 115,
+        "c": 1,
+        "k": 9,
+        "gap": 149311,
+        "divisor": 13225
+      }
+    },
+    {
+      "prime": 619193569,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 2207,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 92,
+        "gap": 280559,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 621748009,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 103,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 2,
+        "gap": 6036395,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 622711489,
+      "first_pure_new_square_radius": 20,
+      "selected_witness": {
+        "h": 20087519,
+        "radius": 20,
+        "shift": 400,
+        "a": 20,
+        "c": 1,
+        "k": 251094,
+        "gap": 31,
+        "divisor": 400
+      }
+    },
+    {
+      "prime": 624025921,
+      "first_pure_new_square_radius": 2253,
+      "selected_witness": {
+        "h": 639851,
+        "radius": 2253,
+        "shift": 5076009,
+        "a": 2253,
+        "c": 1,
+        "k": 71,
+        "gap": 1007,
+        "divisor": 5076009
+      }
+    },
+    {
+      "prime": 625826881,
+      "first_pure_new_square_radius": 245,
+      "selected_witness": {
+        "h": 4504079,
+        "radius": 245,
+        "shift": 60025,
+        "a": 245,
+        "c": 1,
+        "k": 4596,
+        "gap": 139,
+        "divisor": 60025
+      }
+    },
+    {
+      "prime": 630955441,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 7986779,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 631633921,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 66383,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 1844,
+        "gap": 9515,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 633393601,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 14730095,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 634989961,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 15619,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 355,
+        "gap": 40655,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 637154281,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 19739,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 329,
+        "gap": 32279,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 638829409,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 4230659,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 211533,
+        "gap": 151,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 640193401,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 195479,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 5430,
+        "gap": 3275,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 640775689,
+      "first_pure_new_square_radius": 34,
+      "selected_witness": {
+        "h": 271,
+        "radius": 34,
+        "shift": 1156,
+        "a": 34,
+        "c": 1,
+        "k": 2,
+        "gap": 2364503,
+        "divisor": 1156
+      }
+    },
+    {
+      "prime": 642533329,
+      "first_pure_new_square_radius": 55,
+      "selected_witness": {
+        "h": 659,
+        "radius": 55,
+        "shift": 3025,
+        "a": 55,
+        "c": 1,
+        "k": 3,
+        "gap": 975031,
+        "divisor": 3025
+      }
+    },
+    {
+      "prime": 642937681,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 1439,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 40,
+        "gap": 446795,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 643221121,
+      "first_pure_new_square_radius": 90,
+      "selected_witness": {
+        "h": 1073879,
+        "radius": 90,
+        "shift": 8100,
+        "a": 90,
+        "c": 1,
+        "k": 2983,
+        "gap": 599,
+        "divisor": 8100
+      }
+    },
+    {
+      "prime": 644277841,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 10919983,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 160588,
+        "gap": 59,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 645154129,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 2927,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 61,
+        "gap": 220415,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 645693889,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 307,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 7,
+        "gap": 2103239,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 647302321,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 251,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 7,
+        "gap": 2578895,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 648180121,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 59,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 1,
+        "gap": 10986119,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 648195409,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 3659,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 183,
+        "gap": 177151,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 656135761,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 71,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 1,
+        "gap": 9241367,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 658424881,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 59,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 1,
+        "gap": 11159759,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 659769289,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 607,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 19,
+        "gap": 1086935,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 660142081,
+      "first_pure_new_square_radius": 1140,
+      "selected_witness": {
+        "h": 36479,
+        "radius": 1140,
+        "shift": 1299600,
+        "a": 1140,
+        "c": 1,
+        "k": 8,
+        "gap": 18239,
+        "divisor": 1299600
+      }
+    },
+    {
+      "prime": 663894001,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 53927,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 749,
+        "gap": 12311,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 674878681,
+      "first_pure_new_square_radius": 119,
+      "selected_witness": {
+        "h": 1427,
+        "radius": 119,
+        "shift": 14161,
+        "a": 119,
+        "c": 1,
+        "k": 3,
+        "gap": 472975,
+        "divisor": 14161
+      }
+    },
+    {
+      "prime": 675132481,
+      "first_pure_new_square_radius": 334,
+      "selected_witness": {
+        "h": 10687,
+        "radius": 334,
+        "shift": 111556,
+        "a": 334,
+        "c": 1,
+        "k": 8,
+        "gap": 63215,
+        "divisor": 111556
+      }
+    },
+    {
+      "prime": 675458281,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 359,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 5,
+        "gap": 1881503,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 680223721,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 311,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 13,
+        "gap": 2187215,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 683221009,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 934639,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 46732,
+        "gap": 731,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 684029329,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 13799,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 230,
+        "gap": 49571,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 685657681,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 223,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 8,
+        "gap": 3074699,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 687877369,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 61511,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2563,
+        "gap": 11183,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 692245009,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 1056863,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 33027,
+        "gap": 655,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 692690161,
+      "first_pure_new_square_radius": 45,
+      "selected_witness": {
+        "h": 719,
+        "radius": 45,
+        "shift": 2025,
+        "a": 45,
+        "c": 1,
+        "k": 4,
+        "gap": 963419,
+        "divisor": 2025
+      }
+    },
+    {
+      "prime": 694709401,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 4211,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 117,
+        "gap": 164975,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 697980889,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 1627,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 37,
+        "gap": 428999,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 699747049,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 31607,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 878,
+        "gap": 22139,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 702450961,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 479,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 20,
+        "gap": 1466495,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 703190401,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1019,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 51,
+        "gap": 690079,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 707590321,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 109619,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 3045,
+        "gap": 6455,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 716384881,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 167,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 6,
+        "gap": 4289731,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 716572921,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 17471,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 728,
+        "gap": 41015,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 719198761,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 479,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 24,
+        "gap": 1501459,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 722610001,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 16804895,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 722802721,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 571,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 13,
+        "gap": 1265855,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 726075529,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 739,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 37,
+        "gap": 982511,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 730111201,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 239,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 12,
+        "gap": 3054859,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 731024641,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 1796131,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 34541,
+        "gap": 407,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 732137641,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 103,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 2,
+        "gap": 7108139,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 732510241,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 2186603,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 26031,
+        "gap": 335,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 734601169,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 41903,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 1164,
+        "gap": 17531,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 736324681,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 167,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 6,
+        "gap": 4409131,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 736477681,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 12539,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 285,
+        "gap": 58735,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 739634449,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 23859179,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1192959,
+        "gap": 31,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 740373481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 167,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 7,
+        "gap": 4433375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 740439361,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 67,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 1,
+        "gap": 11051351,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 741885601,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 71,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 3,
+        "gap": 10449095,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 742307281,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 15793775,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 744123241,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 15767,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 438,
+        "gap": 47195,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 749224921,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 727,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 26,
+        "gap": 1030571,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 751064161,
+      "first_pure_new_square_radius": 23,
+      "selected_witness": {
+        "h": 539947,
+        "radius": 23,
+        "shift": 529,
+        "a": 23,
+        "c": 1,
+        "k": 5869,
+        "gap": 1391,
+        "divisor": 529
+      }
+    },
+    {
+      "prime": 752602321,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 719,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 30,
+        "gap": 1046735,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 754987921,
+      "first_pure_new_square_radius": 91,
+      "selected_witness": {
+        "h": 326143,
+        "radius": 91,
+        "shift": 8281,
+        "a": 91,
+        "c": 1,
+        "k": 896,
+        "gap": 2315,
+        "divisor": 8281
+      }
+    },
+    {
+      "prime": 758011081,
+      "first_pure_new_square_radius": 179,
+      "selected_witness": {
+        "h": 5011,
+        "radius": 179,
+        "shift": 32041,
+        "a": 179,
+        "c": 1,
+        "k": 7,
+        "gap": 151295,
+        "divisor": 32041
+      }
+    },
+    {
+      "prime": 758528761,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 12856423,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 459158,
+        "gap": 59,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 758972041,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 239,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 4,
+        "gap": 3175619,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 763255201,
+      "first_pure_new_square_radius": 38,
+      "selected_witness": {
+        "h": 1567271,
+        "radius": 38,
+        "shift": 1444,
+        "a": 38,
+        "c": 1,
+        "k": 10311,
+        "gap": 487,
+        "divisor": 1444
+      }
+    },
+    {
+      "prime": 773012881,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 43,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 1,
+        "gap": 17977055,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 776207041,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 4139,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 115,
+        "gap": 187535,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 777021001,
+      "first_pure_new_square_radius": 147,
+      "selected_witness": {
+        "h": 3527,
+        "radius": 147,
+        "shift": 21609,
+        "a": 147,
+        "c": 1,
+        "k": 6,
+        "gap": 220331,
+        "divisor": 21609
+      }
+    },
+    {
+      "prime": 779718241,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1499,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 75,
+        "gap": 520159,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 780771601,
+      "first_pure_new_square_radius": 24,
+      "selected_witness": {
+        "h": 9311,
+        "radius": 24,
+        "shift": 576,
+        "a": 24,
+        "c": 1,
+        "k": 97,
+        "gap": 83855,
+        "divisor": 576
+      }
+    },
+    {
+      "prime": 784893481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 29759,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 1240,
+        "gap": 26375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 790636081,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 634031,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 13209,
+        "gap": 1247,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 790639249,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 223,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 4,
+        "gap": 3545471,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 798120241,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 479,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 10,
+        "gap": 1666223,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 798246289,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 379,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 19,
+        "gap": 2106191,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 798746041,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 96479,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 804,
+        "gap": 8279,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 799804009,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 45779,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 763,
+        "gap": 17471,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 799963921,
+      "first_pure_new_square_radius": 46,
+      "selected_witness": {
+        "h": 483367,
+        "radius": 46,
+        "shift": 2116,
+        "a": 46,
+        "c": 1,
+        "k": 2627,
+        "gap": 1655,
+        "divisor": 2116
+      }
+    },
+    {
+      "prime": 801137761,
+      "first_pure_new_square_radius": 25,
+      "selected_witness": {
+        "h": 4799,
+        "radius": 25,
+        "shift": 625,
+        "a": 25,
+        "c": 1,
+        "k": 48,
+        "gap": 166939,
+        "divisor": 625
+      }
+    },
+    {
+      "prime": 809405521,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 22943,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 478,
+        "gap": 35279,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 817270609,
+      "first_pure_new_square_radius": 295,
+      "selected_witness": {
+        "h": 3539,
+        "radius": 295,
+        "shift": 87025,
+        "a": 295,
+        "c": 1,
+        "k": 3,
+        "gap": 231031,
+        "divisor": 87025
+      }
+    },
+    {
+      "prime": 820218169,
+      "first_pure_new_square_radius": 16,
+      "selected_witness": {
+        "h": 11552383,
+        "radius": 16,
+        "shift": 256,
+        "a": 16,
+        "c": 1,
+        "k": 180506,
+        "gap": 71,
+        "divisor": 256
+      }
+    },
+    {
+      "prime": 820922881,
+      "first_pure_new_square_radius": 14,
+      "selected_witness": {
+        "h": 503,
+        "radius": 14,
+        "shift": 196,
+        "a": 14,
+        "c": 1,
+        "k": 9,
+        "gap": 1632055,
+        "divisor": 196
+      }
+    },
+    {
+      "prime": 821687161,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1399,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 70,
+        "gap": 587339,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 822329041,
+      "first_pure_new_square_radius": 13,
+      "selected_witness": {
+        "h": 311,
+        "radius": 13,
+        "shift": 169,
+        "a": 13,
+        "c": 1,
+        "k": 6,
+        "gap": 2644147,
+        "divisor": 169
+      }
+    },
+    {
+      "prime": 833207761,
+      "first_pure_new_square_radius": 26,
+      "selected_witness": {
+        "h": 1039,
+        "radius": 26,
+        "shift": 676,
+        "a": 26,
+        "c": 1,
+        "k": 10,
+        "gap": 801935,
+        "divisor": 676
+      }
+    },
+    {
+      "prime": 834358561,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 2490623,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 103776,
+        "gap": 335,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 835578241,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 991,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 31,
+        "gap": 843167,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 838514881,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 3191,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 133,
+        "gap": 262775,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 842090209,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 10659371,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 854808529,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 71,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 1,
+        "gap": 12039575,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 856387009,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 2687,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 96,
+        "gap": 318715,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 858209881,
+      "first_pure_new_square_radius": 71,
+      "selected_witness": {
+        "h": 283,
+        "radius": 71,
+        "shift": 5041,
+        "a": 71,
+        "c": 1,
+        "k": 1,
+        "gap": 3032615,
+        "divisor": 5041
+      }
+    },
+    {
+      "prime": 858290161,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 1853759,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 57930,
+        "gap": 463,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 865176841,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 479,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 20,
+        "gap": 1806215,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 870287881,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 547007,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 17094,
+        "gap": 1591,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 870509641,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 859,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 43,
+        "gap": 1013399,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 877881481,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 419,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 15,
+        "gap": 2095183,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 880619041,
+      "first_pure_new_square_radius": 68,
+      "selected_witness": {
+        "h": 50591,
+        "radius": 68,
+        "shift": 4624,
+        "a": 68,
+        "c": 1,
+        "k": 186,
+        "gap": 17407,
+        "divisor": 4624
+      }
+    },
+    {
+      "prime": 882279841,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 89891,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 2497,
+        "gap": 9815,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 882985009,
+      "first_pure_new_square_radius": 21,
+      "selected_witness": {
+        "h": 419,
+        "radius": 21,
+        "shift": 441,
+        "a": 21,
+        "c": 1,
+        "k": 5,
+        "gap": 2107367,
+        "divisor": 441
+      }
+    },
+    {
+      "prime": 885424849,
+      "first_pure_new_square_radius": 15,
+      "selected_witness": {
+        "h": 636539,
+        "radius": 15,
+        "shift": 225,
+        "a": 15,
+        "c": 1,
+        "k": 10609,
+        "gap": 1391,
+        "divisor": 225
+      }
+    },
+    {
+      "prime": 887083129,
+      "first_pure_new_square_radius": 126,
+      "selected_witness": {
+        "h": 503,
+        "radius": 126,
+        "shift": 15876,
+        "a": 126,
+        "c": 1,
+        "k": 1,
+        "gap": 1763711,
+        "divisor": 15876
+      }
+    },
+    {
+      "prime": 893389561,
+      "first_pure_new_square_radius": 53,
+      "selected_witness": {
+        "h": 211,
+        "radius": 53,
+        "shift": 2809,
+        "a": 53,
+        "c": 1,
+        "k": 1,
+        "gap": 4234127,
+        "divisor": 2809
+      }
+    },
+    {
+      "prime": 896764969,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 473227,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 16901,
+        "gap": 1895,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 897421009,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 179,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 5,
+        "gap": 5013527,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 901203601,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 59,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 3,
+        "gap": 15274639,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 904817281,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 4799,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 100,
+        "gap": 188543,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 907958041,
+      "first_pure_new_square_radius": 32,
+      "selected_witness": {
+        "h": 11519,
+        "radius": 32,
+        "shift": 1024,
+        "a": 32,
+        "c": 1,
+        "k": 90,
+        "gap": 78823,
+        "divisor": 1024
+      }
+    },
+    {
+      "prime": 910014121,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 8059,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 403,
+        "gap": 112919,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 910751521,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 29399,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 1470,
+        "gap": 30979,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 911043169,
+      "first_pure_new_square_radius": 26,
+      "selected_witness": {
+        "h": 699191,
+        "radius": 26,
+        "shift": 676,
+        "a": 26,
+        "c": 1,
+        "k": 6723,
+        "gap": 1303,
+        "divisor": 676
+      }
+    },
+    {
+      "prime": 912979369,
+      "first_pure_new_square_radius": 17,
+      "selected_witness": {
+        "h": 67,
+        "radius": 17,
+        "shift": 289,
+        "a": 17,
+        "c": 1,
+        "k": 1,
+        "gap": 13626575,
+        "divisor": 289
+      }
+    },
+    {
+      "prime": 923161009,
+      "first_pure_new_square_radius": 22,
+      "selected_witness": {
+        "h": 89671,
+        "radius": 22,
+        "shift": 484,
+        "a": 22,
+        "c": 1,
+        "k": 1019,
+        "gap": 10295,
+        "divisor": 484
+      }
+    },
+    {
+      "prime": 926962969,
+      "first_pure_new_square_radius": 20,
+      "selected_witness": {
+        "h": 13055839,
+        "radius": 20,
+        "shift": 400,
+        "a": 20,
+        "c": 1,
+        "k": 163198,
+        "gap": 71,
+        "divisor": 400
+      }
+    },
+    {
+      "prime": 928415041,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 10103,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 421,
+        "gap": 91895,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 930633001,
+      "first_pure_new_square_radius": 69,
+      "selected_witness": {
+        "h": 827,
+        "radius": 69,
+        "shift": 4761,
+        "a": 69,
+        "c": 1,
+        "k": 3,
+        "gap": 1125335,
+        "divisor": 4761
+      }
+    },
+    {
+      "prime": 933362641,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1439,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 72,
+        "gap": 648619,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 935116009,
+      "first_pure_new_square_radius": 140,
+      "selected_witness": {
+        "h": 239119,
+        "radius": 140,
+        "shift": 19600,
+        "a": 140,
+        "c": 1,
+        "k": 427,
+        "gap": 3911,
+        "divisor": 19600
+      }
+    },
+    {
+      "prime": 935276521,
+      "first_pure_new_square_radius": 18,
+      "selected_witness": {
+        "h": 71,
+        "radius": 18,
+        "shift": 324,
+        "a": 18,
+        "c": 1,
+        "k": 1,
+        "gap": 13172927,
+        "divisor": 324
+      }
+    },
+    {
+      "prime": 939537481,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 38219,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 1365,
+        "gap": 24583,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 942584161,
+      "first_pure_new_square_radius": 11,
+      "selected_witness": {
+        "h": 298759,
+        "radius": 11,
+        "shift": 121,
+        "a": 11,
+        "c": 1,
+        "k": 6790,
+        "gap": 3155,
+        "divisor": 121
+      }
+    },
+    {
+      "prime": 943117561,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 239,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 12,
+        "gap": 3946099,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 948673441,
+      "first_pure_new_square_radius": 9,
+      "selected_witness": {
+        "h": 719,
+        "radius": 9,
+        "shift": 81,
+        "a": 9,
+        "c": 1,
+        "k": 20,
+        "gap": 1319435,
+        "divisor": 81
+      }
+    },
+    {
+      "prime": 950354161,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 223,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 7,
+        "gap": 4261679,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 951054241,
+      "first_pure_new_square_radius": 22,
+      "selected_witness": {
+        "h": 8447,
+        "radius": 22,
+        "shift": 484,
+        "a": 22,
+        "c": 1,
+        "k": 96,
+        "gap": 112591,
+        "divisor": 484
+      }
+    },
+    {
+      "prime": 952431481,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 479,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 20,
+        "gap": 1988375,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 954990961,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 33179,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 1185,
+        "gap": 28783,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 956514001,
+      "first_pure_new_square_radius": 32,
+      "selected_witness": {
+        "h": 189823,
+        "radius": 32,
+        "shift": 1024,
+        "a": 32,
+        "c": 1,
+        "k": 1483,
+        "gap": 5039,
+        "divisor": 1024
+      }
+    },
+    {
+      "prime": 962967121,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 490559,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 17520,
+        "gap": 1963,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 963890449,
+      "first_pure_new_square_radius": 7,
+      "selected_witness": {
+        "h": 419,
+        "radius": 7,
+        "shift": 49,
+        "a": 7,
+        "c": 1,
+        "k": 15,
+        "gap": 2300455,
+        "divisor": 49
+      }
+    },
+    {
+      "prime": 965813689,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 79,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 4,
+        "gap": 12225491,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 970249921,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 1019,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 51,
+        "gap": 952159,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 972433081,
+      "first_pure_new_square_radius": 1044,
+      "selected_witness": {
+        "h": 12527,
+        "radius": 1044,
+        "shift": 1089936,
+        "a": 1044,
+        "c": 1,
+        "k": 3,
+        "gap": 77975,
+        "divisor": 1089936
+      }
+    },
+    {
+      "prime": 976164289,
+      "first_pure_new_square_radius": 8,
+      "selected_witness": {
+        "h": 127,
+        "radius": 8,
+        "shift": 64,
+        "a": 8,
+        "c": 1,
+        "k": 4,
+        "gap": 7686335,
+        "divisor": 64
+      }
+    },
+    {
+      "prime": 977342521,
+      "first_pure_new_square_radius": 131,
+      "selected_witness": {
+        "h": 523,
+        "radius": 131,
+        "shift": 17161,
+        "a": 131,
+        "c": 1,
+        "k": 1,
+        "gap": 1868855,
+        "divisor": 17161
+      }
+    },
+    {
+      "prime": 979146529,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 10559,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 528,
+        "gap": 92731,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 979711489,
+      "first_pure_new_square_radius": 5,
+      "selected_witness": {
+        "h": 379,
+        "radius": 5,
+        "shift": 25,
+        "a": 5,
+        "c": 1,
+        "k": 19,
+        "gap": 2584991,
+        "divisor": 25
+      }
+    },
+    {
+      "prime": 985076569,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 47,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 2,
+        "gap": 20959079,
+        "divisor": 36
+      }
+    },
+    {
+      "prime": 988848961,
+      "first_pure_new_square_radius": 30,
+      "selected_witness": {
+        "h": 599,
+        "radius": 30,
+        "shift": 900,
+        "a": 30,
+        "c": 1,
+        "k": 5,
+        "gap": 1650839,
+        "divisor": 900
+      }
+    },
+    {
+      "prime": 988855729,
+      "first_pure_new_square_radius": 12,
+      "selected_witness": {
+        "h": 2687,
+        "radius": 12,
+        "shift": 144,
+        "a": 12,
+        "c": 1,
+        "k": 56,
+        "gap": 368015,
+        "divisor": 144
+      }
+    },
+    {
+      "prime": 992339401,
+      "first_pure_new_square_radius": 6,
+      "selected_witness": {
+        "h": 191,
+        "radius": 6,
+        "shift": 36,
+        "a": 6,
+        "c": 1,
+        "k": 8,
+        "gap": 5195495,
+        "divisor": 36
+      }
+    }
+  ]
+}

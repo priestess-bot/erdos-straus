@@ -1,0 +1,4294 @@
+{
+  "arithmetic": "complete b=1,2,4 p-minus-one scaled-source enumeration, forced multiple square-tail enumeration, and exact rational plus Type I certificate verification on every stored Type II tail-deflation miss",
+  "scope_note": "A finite boundary profile. The p-minus-one branch is a strict source descent here, but the remaining points show that the two branches are not a universal selector in this range.",
+  "input_artifact": "type-ii-tail-deflation-20m-full-results.json",
+  "prime_limit": 20000000,
+  "core_prime_count": 158595,
+  "tail_deflation_strict_lift_count": 158449,
+  "tail_deflation_residual_count": 146,
+  "p_minus_one_strict_lift_count": 135,
+  "combined_strict_lift_count": 158584,
+  "combined_unclosed_count": 11,
+  "residual_prime_count": 146,
+  "unique_scaled_source_candidate_count": 2256,
+  "tail_divisor_test_count": 1727223,
+  "hit_candidate_count": 289,
+  "covered_prime_count": 135,
+  "uncovered_primes": [
+    214729,
+    297049,
+    878089,
+    1511449,
+    3942409,
+    5478169,
+    6294649,
+    10170169,
+    13782409,
+    16152889,
+    16267729
+  ],
+  "records": [
+    {
+      "prime": 67369,
+      "source_denominator": 67368,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 32281,
+        "b": 2,
+        "shift": 2807,
+        "source_first_denominator": 1087353204,
+        "tail_factor": 3839976,
+        "source_solution": [
+          1087353204,
+          16872,
+          9555176
+        ],
+        "target_solution": [
+          26096864268,
+          16872,
+          9555176
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 16872,
+          "divisor": 416176,
+          "y": 9555176,
+          "z": 26096864268
+        }
+      }
+    },
+    {
+      "prime": 85369,
+      "source_denominator": 85368,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 20453,
+        "b": 1,
+        "shift": 3557,
+        "source_first_denominator": 1746031704,
+        "tail_factor": 1205823,
+        "source_solution": [
+          1746031704,
+          21357,
+          30924936
+        ],
+        "target_solution": [
+          41905251768,
+          21357,
+          30924936
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 59,
+          "x": 21357,
+          "divisor": 1345491,
+          "y": 30924936,
+          "z": 41905251768
+        }
+      }
+    },
+    {
+      "prime": 163249,
+      "source_denominator": 163248,
+      "candidate_count": 24,
+      "hit_candidate_count": 5,
+      "first_witness": {
+        "a": 39962,
+        "b": 1,
+        "shift": 3401,
+        "source_first_denominator": 6523716576,
+        "tail_factor": 3156128,
+        "source_solution": [
+          6523716576,
+          40832,
+          84399744
+        ],
+        "target_solution": [
+          313140313824,
+          40832,
+          84399744
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 79,
+          "x": 40832,
+          "divisor": 1796608,
+          "y": 84399744,
+          "z": 313140313824
+        }
+      }
+    },
+    {
+      "prime": 214729,
+      "source_denominator": 214728,
+      "candidate_count": 16,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 225289,
+      "source_denominator": 225288,
+      "candidate_count": 32,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 49282,
+        "b": 1,
+        "shift": 28161,
+        "source_first_denominator": 11102643216,
+        "tail_factor": 2309202,
+        "source_solution": [
+          11102643216,
+          56334,
+          270853872
+        ],
+        "target_solution": [
+          88821539984,
+          56334,
+          270853872
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 56334,
+          "divisor": 38701458,
+          "y": 270853872,
+          "z": 88821539984
+        }
+      }
+    },
+    {
+      "prime": 297049,
+      "source_denominator": 297048,
+      "candidate_count": 8,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 372409,
+      "source_denominator": 372408,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 92905,
+        "b": 1,
+        "shift": 789,
+        "source_first_denominator": 34598565240,
+        "tail_factor": 21460800,
+        "source_solution": [
+          34598565240,
+          93160,
+          150190223
+        ],
+        "target_solution": [
+          16330566644440,
+          93160,
+          150190223
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 231,
+          "x": 93160,
+          "divisor": 319073,
+          "y": 150190223,
+          "z": 16330566644440
+        }
+      }
+    },
+    {
+      "prime": 454969,
+      "source_denominator": 454968,
+      "candidate_count": 24,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 109003,
+        "b": 1,
+        "shift": 18957,
+        "source_first_denominator": 49592876904,
+        "tail_factor": 12966588,
+        "source_solution": [
+          49592876904,
+          113772,
+          435139976
+        ],
+        "target_solution": [
+          1190231661768,
+          113772,
+          435139976
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 113772,
+          "divisor": 18924076,
+          "y": 435139976,
+          "z": 1190231661768
+        }
+      }
+    },
+    {
+      "prime": 521929,
+      "source_denominator": 521928,
+      "candidate_count": 24,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 114172,
+        "b": 1,
+        "shift": 65241,
+        "source_first_denominator": 59589563616,
+        "tail_factor": 4436388,
+        "source_solution": [
+          59589563616,
+          130492,
+          1752768544
+        ],
+        "target_solution": [
+          476717422304,
+          130492,
+          1752768544
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 130492,
+          "divisor": 250414148,
+          "y": 1752768544,
+          "z": 476717422304
+        }
+      }
+    },
+    {
+      "prime": 532249,
+      "source_denominator": 532248,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 127518,
+        "b": 1,
+        "shift": 22177,
+        "source_first_denominator": 67871200464,
+        "tail_factor": 37612192,
+        "source_solution": [
+          67871200464,
+          133136,
+          240243912
+        ],
+        "target_solution": [
+          1628911871568,
+          133136,
+          240243912
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 295,
+          "x": 133136,
+          "divisor": 10451176,
+          "y": 240243912,
+          "z": 1628911871568
+        }
+      }
+    },
+    {
+      "prime": 629689,
+      "source_denominator": 629688,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 472267,
+        "b": 4,
+        "shift": 157422,
+        "source_first_denominator": 74345215674,
+        "tail_factor": 218501736,
+        "source_solution": [
+          74345215674,
+          157538,
+          214409218
+        ],
+        "target_solution": [
+          297381334963,
+          157538,
+          214409218
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 463,
+          "x": 157538,
+          "divisor": 71522252,
+          "y": 214409218,
+          "z": 297381334963
+        }
+      }
+    },
+    {
+      "prime": 784249,
+      "source_denominator": 784248,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 343109,
+        "b": 2,
+        "shift": 98031,
+        "source_first_denominator": 134541273516,
+        "tail_factor": 5097612,
+        "source_solution": [
+          134541273516,
+          196066,
+          10349539876
+        ],
+        "target_solution": [
+          1076331560564,
+          196066,
+          10349539876
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 196066,
+          "divisor": 1478533706,
+          "y": 10349539876,
+          "z": 1076331560564
+        }
+      }
+    },
+    {
+      "prime": 852889,
+      "source_denominator": 852888,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 373139,
+        "b": 2,
+        "shift": 106611,
+        "source_first_denominator": 159122887716,
+        "tail_factor": 5543772,
+        "source_solution": [
+          159122887716,
+          213226,
+          12240451756
+        ],
+        "target_solution": [
+          1272984594284,
+          213226,
+          12240451756
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 213226,
+          "divisor": 1748666426,
+          "y": 12240451756,
+          "z": 1272984594284
+        }
+      }
+    },
+    {
+      "prime": 878089,
+      "source_denominator": 878088,
+      "candidate_count": 8,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 967129,
+      "source_denominator": 967128,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 423119,
+        "b": 2,
+        "shift": 120891,
+        "source_first_denominator": 204605116116,
+        "tail_factor": 29980968,
+        "source_solution": [
+          204605116116,
+          241800,
+          3300328200
+        ],
+        "target_solution": [
+          1636842621404,
+          241800,
+          3300328200
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 241800,
+          "divisor": 471510000,
+          "y": 3300328200,
+          "z": 1636842621404
+        }
+      }
+    },
+    {
+      "prime": 1046329,
+      "source_denominator": 1046328,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 457769,
+        "b": 2,
+        "shift": 130791,
+        "source_first_denominator": 239488261116,
+        "tail_factor": 6801132,
+        "source_solution": [
+          239488261116,
+          261586,
+          18422455636
+        ],
+        "target_solution": [
+          1915907920004,
+          261586,
+          18422455636
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 261586,
+          "divisor": 2631816746,
+          "y": 18422455636,
+          "z": 1915907920004
+        }
+      }
+    },
+    {
+      "prime": 1093129,
+      "source_denominator": 1093128,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 239122,
+        "b": 1,
+        "shift": 136641,
+        "source_first_denominator": 261390953616,
+        "tail_factor": 3552666,
+        "source_solution": [
+          261390953616,
+          273286,
+          20107290736
+        ],
+        "target_solution": [
+          2091129541904,
+          273286,
+          20107290736
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 273286,
+          "divisor": 2872509146,
+          "y": 20107290736,
+          "z": 2091129541904
+        }
+      }
+    },
+    {
+      "prime": 1178809,
+      "source_denominator": 1178808,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 515729,
+        "b": 2,
+        "shift": 147351,
+        "source_first_denominator": 303972735516,
+        "tail_factor": 20039736,
+        "source_solution": [
+          303972735516,
+          294712,
+          8940677944
+        ],
+        "target_solution": [
+          2431783947044,
+          294712,
+          8940677944
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 294712,
+          "divisor": 1277281808,
+          "y": 8940677944,
+          "z": 2431783947044
+        }
+      }
+    },
+    {
+      "prime": 1415929,
+      "source_denominator": 1415928,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 619469,
+        "b": 2,
+        "shift": 176991,
+        "source_first_denominator": 438561751116,
+        "tail_factor": 29026524,
+        "source_solution": [
+          438561751116,
+          353994,
+          10696990692
+        ],
+        "target_solution": [
+          3508496486804,
+          353994,
+          10696990692
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 353994,
+          "divisor": 1528192098,
+          "y": 10696990692,
+          "z": 3508496486804
+        }
+      }
+    },
+    {
+      "prime": 1447609,
+      "source_denominator": 1447608,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 1326975,
+        "b": 4,
+        "shift": 120634,
+        "source_first_denominator": 480234906450,
+        "tail_factor": 508110408,
+        "source_solution": [
+          480234906450,
+          361998,
+          1368553550
+        ],
+        "target_solution": [
+          5762822858325,
+          361998,
+          1368553550
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 383,
+          "x": 361998,
+          "divisor": 124446868,
+          "y": 1368553550,
+          "z": 5762822858325
+        }
+      }
+    },
+    {
+      "prime": 1497049,
+      "source_denominator": 1497048,
+      "candidate_count": 48,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 371800,
+        "b": 1,
+        "shift": 9849,
+        "source_first_denominator": 556602446400,
+        "tail_factor": 204859200,
+        "source_solution": [
+          556602446400,
+          374400,
+          1017244800
+        ],
+        "target_solution": [
+          84603628366400,
+          374400,
+          1017244800
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 551,
+          "x": 374400,
+          "divisor": 6739200,
+          "y": 1017244800,
+          "z": 84603628366400
+        }
+      }
+    },
+    {
+      "prime": 1511449,
+      "source_denominator": 1511448,
+      "candidate_count": 16,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 1854889,
+      "source_denominator": 1854888,
+      "candidate_count": 32,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 888801,
+        "b": 2,
+        "shift": 77287,
+        "source_first_denominator": 824313154644,
+        "tail_factor": 105728616,
+        "source_solution": [
+          824313154644,
+          463752,
+          7231284936
+        ],
+        "target_solution": [
+          19783526377068,
+          463752,
+          7231284936
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 463752,
+          "divisor": 314423856,
+          "y": 7231284936,
+          "z": 19783526377068
+        }
+      }
+    },
+    {
+      "prime": 1936489,
+      "source_denominator": 1936488,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 927901,
+        "b": 2,
+        "shift": 80687,
+        "source_first_denominator": 898434575844,
+        "tail_factor": 132649428,
+        "source_solution": [
+          898434575844,
+          484158,
+          6558404268
+        ],
+        "target_solution": [
+          21562440955068,
+          484158,
+          6558404268
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 143,
+          "x": 484158,
+          "divisor": 285169062,
+          "y": 6558404268,
+          "z": 21562440955068
+        }
+      }
+    },
+    {
+      "prime": 2020489,
+      "source_denominator": 2020488,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 441982,
+        "b": 1,
+        "shift": 252561,
+        "source_first_denominator": 893019327216,
+        "tail_factor": 96730863,
+        "source_solution": [
+          893019327216,
+          505177,
+          4663794064
+        ],
+        "target_solution": [
+          7144158153584,
+          505177,
+          4663794064
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 219,
+          "x": 505177,
+          "divisor": 666328463,
+          "y": 4663794064,
+          "z": 7144158153584
+        }
+      }
+    },
+    {
+      "prime": 2097769,
+      "source_denominator": 2097768,
+      "candidate_count": 8,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 458887,
+        "b": 1,
+        "shift": 262221,
+        "source_first_denominator": 962638464216,
+        "tail_factor": 6817746,
+        "source_solution": [
+          962638464216,
+          524446,
+          74049677416
+        ],
+        "target_solution": [
+          7701111384824,
+          524446,
+          74049677416
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 524446,
+          "divisor": 10578600266,
+          "y": 74049677416,
+          "z": 7701111384824
+        }
+      }
+    },
+    {
+      "prime": 2168329,
+      "source_denominator": 2168328,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 1038991,
+        "b": 2,
+        "shift": 90347,
+        "source_first_denominator": 1126436638524,
+        "tail_factor": 289833176,
+        "source_solution": [
+          1126436638524,
+          542152,
+          4214147496
+        ],
+        "target_solution": [
+          27034491792468,
+          542152,
+          4214147496
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 279,
+          "x": 542152,
+          "divisor": 183247376,
+          "y": 4214147496,
+          "z": 27034491792468
+        }
+      }
+    },
+    {
+      "prime": 2210569,
+      "source_denominator": 2210568,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 1059231,
+        "b": 2,
+        "shift": 92107,
+        "source_first_denominator": 1170751076604,
+        "tail_factor": 126002376,
+        "source_solution": [
+          1170751076604,
+          552672,
+          10270303776
+        ],
+        "target_solution": [
+          28098038549268,
+          552672,
+          10270303776
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 552672,
+          "divisor": 446558976,
+          "y": 10270303776,
+          "z": 28098038549268
+        }
+      }
+    },
+    {
+      "prime": 2254729,
+      "source_denominator": 2254728,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 560327,
+        "b": 1,
+        "shift": 13421,
+        "source_first_denominator": 1263384976056,
+        "tail_factor": 43834918624,
+        "source_solution": [
+          1263384976056,
+          583240,
+          16809810
+        ],
+        "target_solution": [
+          212248770112344,
+          583240,
+          16809810
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 78231,
+          "x": 583240,
+          "divisor": 104150,
+          "y": 16809810,
+          "z": 212248770112344
+        }
+      }
+    },
+    {
+      "prime": 2269129,
+      "source_denominator": 2269128,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 496372,
+        "b": 1,
+        "shift": 283641,
+        "source_first_denominator": 1126331603616,
+        "tail_factor": 35171484,
+        "source_solution": [
+          1126331603616,
+          567300,
+          18167215200
+        ],
+        "target_solution": [
+          9010656799904,
+          567300,
+          18167215200
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 567300,
+          "divisor": 2595397500,
+          "y": 18167215200,
+          "z": 9010656799904
+        }
+      }
+    },
+    {
+      "prime": 2392009,
+      "source_denominator": 2392008,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 523252,
+        "b": 1,
+        "shift": 299001,
+        "source_first_denominator": 1251622970016,
+        "tail_factor": 76843257,
+        "source_solution": [
+          1251622970016,
+          598039,
+          9740859232
+        ],
+        "target_solution": [
+          10012987946144,
+          598039,
+          9740859232
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 147,
+          "x": 598039,
+          "divisor": 1391636753,
+          "y": 9740859232,
+          "z": 10012987946144
+        }
+      }
+    },
+    {
+      "prime": 2516089,
+      "source_denominator": 2516088,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 602813,
+        "b": 1,
+        "shift": 104837,
+        "source_first_denominator": 1516730555544,
+        "tail_factor": 71708508,
+        "source_solution": [
+          1516730555544,
+          629052,
+          13305288536
+        ],
+        "target_solution": [
+          36401547800568,
+          629052,
+          13305288536
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 629052,
+          "divisor": 578518156,
+          "y": 13305288536,
+          "z": 36401547800568
+        }
+      }
+    },
+    {
+      "prime": 2596729,
+      "source_denominator": 2596728,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 1136069,
+        "b": 2,
+        "shift": 324591,
+        "source_first_denominator": 1475031091116,
+        "tail_factor": 53232924,
+        "source_solution": [
+          1475031091116,
+          649194,
+          35977033092
+        ],
+        "target_solution": [
+          11800253273204,
+          649194,
+          35977033092
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 649194,
+          "divisor": 5139668898,
+          "y": 35977033092,
+          "z": 11800253273204
+        }
+      }
+    },
+    {
+      "prime": 2669209,
+      "source_denominator": 2669208,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 639498,
+        "b": 1,
+        "shift": 111217,
+        "source_first_denominator": 1706953177584,
+        "tail_factor": 188624032,
+        "source_solution": [
+          1706953177584,
+          667376,
+          6039419112
+        ],
+        "target_solution": [
+          40966891609968,
+          667376,
+          6039419112
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 295,
+          "x": 667376,
+          "divisor": 262612456,
+          "y": 6039419112,
+          "z": 40966891609968
+        }
+      }
+    },
+    {
+      "prime": 2671729,
+      "source_denominator": 2671728,
+      "candidate_count": 12,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 654017,
+        "b": 1,
+        "shift": 55661,
+        "source_first_denominator": 1747355531376,
+        "tail_factor": 20260604,
+        "source_solution": [
+          1747355531376,
+          667940,
+          57605817360
+        ],
+        "target_solution": [
+          83873096898864,
+          667940,
+          57605817360
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 31,
+          "x": 667940,
+          "divisor": 1225669900,
+          "y": 57605817360,
+          "z": 83873096898864
+        }
+      }
+    },
+    {
+      "prime": 2707609,
+      "source_denominator": 2707608,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 648698,
+        "b": 1,
+        "shift": 112817,
+        "source_first_denominator": 1756419894384,
+        "tail_factor": 274370944,
+        "source_solution": [
+          1756419894384,
+          677008,
+          4333951338
+        ],
+        "target_solution": [
+          42154093033968,
+          677008,
+          4333951338
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 423,
+          "x": 677008,
+          "divisor": 188462102,
+          "y": 4333951338,
+          "z": 42154093033968
+        }
+      }
+    },
+    {
+      "prime": 2754889,
+      "source_denominator": 2754888,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 2066167,
+        "b": 4,
+        "shift": 688722,
+        "source_first_denominator": 1423014668574,
+        "tail_factor": 129479736,
+        "source_solution": [
+          1423014668574,
+          688738,
+          30277611218
+        ],
+        "target_solution": [
+          5692060740463,
+          688738,
+          30277611218
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 63,
+          "x": 688738,
+          "divisor": 10092766652,
+          "y": 30277611218,
+          "z": 5692060740463
+        }
+      }
+    },
+    {
+      "prime": 2852809,
+      "source_denominator": 2852808,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 624052,
+        "b": 1,
+        "shift": 356601,
+        "source_first_denominator": 1780300538016,
+        "tail_factor": 9271626,
+        "source_solution": [
+          1780300538016,
+          713206,
+          136946963296
+        ],
+        "target_solution": [
+          14242409296544,
+          713206,
+          136946963296
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 713206,
+          "divisor": 19563953786,
+          "y": 136946963296,
+          "z": 14242409296544
+        }
+      }
+    },
+    {
+      "prime": 2938489,
+      "source_denominator": 2938488,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 1285589,
+        "b": 2,
+        "shift": 367311,
+        "source_first_denominator": 1888843924716,
+        "tail_factor": 1901201736,
+        "source_solution": [
+          1888843924716,
+          734992,
+          1460429104
+        ],
+        "target_solution": [
+          15110756540084,
+          734992,
+          1460429104
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1479,
+          "x": 734992,
+          "divisor": 208737728,
+          "y": 1460429104,
+          "z": 15110756540084
+        }
+      }
+    },
+    {
+      "prime": 2978089,
+      "source_denominator": 2978088,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 651457,
+        "b": 1,
+        "shift": 372261,
+        "source_first_denominator": 1940096274216,
+        "tail_factor": 25313748,
+        "source_solution": [
+          1940096274216,
+          744532,
+          57062421544
+        ],
+        "target_solution": [
+          15520775405384,
+          744532,
+          57062421544
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 744532,
+          "divisor": 8151880868,
+          "y": 57062421544,
+          "z": 15520775405384
+        }
+      }
+    },
+    {
+      "prime": 2986729,
+      "source_denominator": 2986728,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 653347,
+        "b": 1,
+        "shift": 373341,
+        "source_first_denominator": 1951369778616,
+        "tail_factor": 17547027,
+        "source_solution": [
+          1951369778616,
+          746689,
+          83037790312
+        ],
+        "target_solution": [
+          15610963455704,
+          746689,
+          83037790312
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 27,
+          "x": 746689,
+          "divisor": 11862648143,
+          "y": 83037790312,
+          "z": 15610963455704
+        }
+      }
+    },
+    {
+      "prime": 3021769,
+      "source_denominator": 3021768,
+      "candidate_count": 12,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 661012,
+        "b": 1,
+        "shift": 377721,
+        "source_first_denominator": 1997424909216,
+        "tail_factor": 62701686,
+        "source_solution": [
+          1997424909216,
+          755466,
+          24066124896
+        ],
+        "target_solution": [
+          15979404561824,
+          755466,
+          24066124896
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 95,
+          "x": 755466,
+          "divisor": 3438125766,
+          "y": 24066124896,
+          "z": 15979404561824
+        }
+      }
+    },
+    {
+      "prime": 3825649,
+      "source_denominator": 3825648,
+      "candidate_count": 36,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 1793273,
+        "b": 2,
+        "shift": 239103,
+        "source_first_denominator": 3430215632952,
+        "tail_factor": 55471896,
+        "source_solution": [
+          3430215632952,
+          956420,
+          118284287080
+        ],
+        "target_solution": [
+          54883464473416,
+          956420,
+          118284287080
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 31,
+          "x": 956420,
+          "divisor": 7885682900,
+          "y": 118284287080,
+          "z": 54883464473416
+        }
+      }
+    },
+    {
+      "prime": 3942409,
+      "source_denominator": 3942408,
+      "candidate_count": 8,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 4054009,
+      "source_denominator": 4054008,
+      "candidate_count": 32,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1773629,
+        "b": 2,
+        "shift": 506751,
+        "source_first_denominator": 3595153077516,
+        "tail_factor": 26351052,
+        "source_solution": [
+          3595153077516,
+          1013506,
+          276551328196
+        ],
+        "target_solution": [
+          28761231714644,
+          1013506,
+          276551328196
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 1013506,
+          "divisor": 39507477386,
+          "y": 276551328196,
+          "z": 28761231714644
+        }
+      }
+    },
+    {
+      "prime": 4219609,
+      "source_denominator": 4219608,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 3164707,
+        "b": 4,
+        "shift": 1054902,
+        "source_first_denominator": 3338455743714,
+        "tail_factor": 350227464,
+        "source_solution": [
+          3338455743714,
+          1054930,
+          40223425970
+        ],
+        "target_solution": [
+          13353826139563,
+          1054930,
+          40223425970
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 111,
+          "x": 1054930,
+          "divisor": 13408160300,
+          "y": 40223425970,
+          "z": 13353826139563
+        }
+      }
+    },
+    {
+      "prime": 4253209,
+      "source_denominator": 4253208,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1860779,
+        "b": 2,
+        "shift": 531651,
+        "source_first_denominator": 3957140064516,
+        "tail_factor": 891047076,
+        "source_solution": [
+          3957140064516,
+          1063422,
+          9445314204
+        ],
+        "target_solution": [
+          31657127959244,
+          1063422,
+          9445314204
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 1063422,
+          "divisor": 1349482518,
+          "y": 9445314204,
+          "z": 31657127959244
+        }
+      }
+    },
+    {
+      "prime": 4413049,
+      "source_denominator": 4413048,
+      "candidate_count": 8,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 1057293,
+        "b": 1,
+        "shift": 183877,
+        "source_first_denominator": 4665884759064,
+        "tail_factor": 125771868,
+        "source_solution": [
+          4665884759064,
+          1103292,
+          40929926616
+        ],
+        "target_solution": [
+          111981259592568,
+          1103292,
+          40929926616
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 1103292,
+          "divisor": 1779609996,
+          "y": 40929926616,
+          "z": 111981259592568
+        }
+      }
+    },
+    {
+      "prime": 4570729,
+      "source_denominator": 4570728,
+      "candidate_count": 24,
+      "hit_candidate_count": 5,
+      "first_witness": {
+        "a": 999847,
+        "b": 1,
+        "shift": 571341,
+        "source_first_denominator": 4570028678616,
+        "tail_factor": 266816247,
+        "source_solution": [
+          4570028678616,
+          1142749,
+          19573004872
+        ],
+        "target_solution": [
+          36560237427704,
+          1142749,
+          19573004872
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 267,
+          "x": 1142749,
+          "divisor": 2796306803,
+          "y": 19573004872,
+          "z": 36560237427704
+        }
+      }
+    },
+    {
+      "prime": 4718569,
+      "source_denominator": 4718568,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 1032187,
+        "b": 1,
+        "shift": 589821,
+        "source_first_denominator": 4870444548216,
+        "tail_factor": 15335346,
+        "source_solution": [
+          4870444548216,
+          1179646,
+          374650851016
+        ],
+        "target_solution": [
+          38963564643224,
+          1179646,
+          374650851016
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 1179646,
+          "divisor": 53521718666,
+          "y": 374650851016,
+          "z": 38963564643224
+        }
+      }
+    },
+    {
+      "prime": 4753849,
+      "source_denominator": 4753848,
+      "candidate_count": 24,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 1138943,
+        "b": 1,
+        "shift": 198077,
+        "source_first_denominator": 5414361902664,
+        "tail_factor": 62592332,
+        "source_solution": [
+          5414361902664,
+          1188476,
+          102805550952
+        ],
+        "target_solution": [
+          129944712998568,
+          1188476,
+          102805550952
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 55,
+          "x": 1188476,
+          "divisor": 4469858236,
+          "y": 102805550952,
+          "z": 129944712998568
+        }
+      }
+    },
+    {
+      "prime": 4779889,
+      "source_denominator": 4779888,
+      "candidate_count": 12,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 1170077,
+        "b": 1,
+        "shift": 99581,
+        "source_first_denominator": 5592837011376,
+        "tail_factor": 242180992,
+        "source_solution": [
+          5592837011376,
+          1195024,
+          27597436122
+        ],
+        "target_solution": [
+          268456232709744,
+          1195024,
+          27597436122
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 207,
+          "x": 1195024,
+          "divisor": 587204918,
+          "y": 27597436122,
+          "z": 268456232709744
+        }
+      }
+    },
+    {
+      "prime": 4824649,
+      "source_denominator": 4824648,
+      "candidate_count": 24,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 1055392,
+        "b": 1,
+        "shift": 603081,
+        "source_first_denominator": 5091894902016,
+        "tail_factor": 15680106,
+        "source_solution": [
+          5091894902016,
+          1206166,
+          391685522176
+        ],
+        "target_solution": [
+          40735167659264,
+          1206166,
+          391685522176
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 1206166,
+          "divisor": 55955246906,
+          "y": 391685522176,
+          "z": 40735167659264
+        }
+      }
+    },
+    {
+      "prime": 5019529,
+      "source_denominator": 5019528,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 2405191,
+        "b": 2,
+        "shift": 209147,
+        "source_first_denominator": 6036461784924,
+        "tail_factor": 286113096,
+        "source_solution": [
+          6036461784924,
+          1254912,
+          52952685056
+        ],
+        "target_solution": [
+          144875111700468,
+          1254912,
+          52952685056
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 1254912,
+          "divisor": 2302345216,
+          "y": 52952685056,
+          "z": 144875111700468
+        }
+      }
+    },
+    {
+      "prime": 5374009,
+      "source_denominator": 5374008,
+      "candidate_count": 24,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 4030507,
+        "b": 4,
+        "shift": 1343502,
+        "source_first_denominator": 5414994215514,
+        "tail_factor": 155846232,
+        "source_solution": [
+          5414994215514,
+          1343512,
+          186725328296
+        ],
+        "target_solution": [
+          21659980892563,
+          1343512,
+          186725328296
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 1343512,
+          "divisor": 62242223936,
+          "y": 186725328296,
+          "z": 21659980892563
+        }
+      }
+    },
+    {
+      "prime": 5397529,
+      "source_denominator": 5397528,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 2361419,
+        "b": 2,
+        "shift": 674691,
+        "source_first_denominator": 6372912586116,
+        "tail_factor": 91757976,
+        "source_solution": [
+          6372912586116,
+          1349392,
+          187439994544
+        ],
+        "target_solution": [
+          50983310134604,
+          1349392,
+          187439994544
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 1349392,
+          "divisor": 26777334848,
+          "y": 187439994544,
+          "z": 50983310134604
+        }
+      }
+    },
+    {
+      "prime": 5478169,
+      "source_denominator": 5478168,
+      "candidate_count": 8,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 5596369,
+      "source_denominator": 5596368,
+      "candidate_count": 24,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 2739889,
+        "b": 2,
+        "shift": 116591,
+        "source_first_denominator": 7666713561576,
+        "tail_factor": 435583976,
+        "source_solution": [
+          7666713561576,
+          1399132,
+          49252244664
+        ],
+        "target_solution": [
+          368002316712984,
+          1399132,
+          49252244664
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 159,
+          "x": 1399132,
+          "divisor": 1047949868,
+          "y": 49252244664,
+          "z": 368002316712984
+        }
+      }
+    },
+    {
+      "prime": 5703889,
+      "source_denominator": 5703888,
+      "candidate_count": 12,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1336849,
+        "b": 1,
+        "shift": 356493,
+        "source_first_denominator": 7625236968912,
+        "tail_factor": 52047978,
+        "source_solution": [
+          7625236968912,
+          1425982,
+          208912066928
+        ],
+        "target_solution": [
+          122003812892176,
+          1425982,
+          208912066928
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 1425982,
+          "divisor": 13927566194,
+          "y": 208912066928,
+          "z": 122003812892176
+        }
+      }
+    },
+    {
+      "prime": 5886169,
+      "source_denominator": 5886168,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 1410228,
+        "b": 1,
+        "shift": 245257,
+        "source_first_denominator": 8300838926304,
+        "tail_factor": 21092102,
+        "source_solution": [
+          8300838926304,
+          1471546,
+          579129871392
+        ],
+        "target_solution": [
+          199220168076768,
+          1471546,
+          579129871392
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 1471546,
+          "divisor": 25179623606,
+          "y": 579129871392,
+          "z": 199220168076768
+        }
+      }
+    },
+    {
+      "prime": 5897329,
+      "source_denominator": 5897328,
+      "candidate_count": 12,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 5160163,
+        "b": 4,
+        "shift": 737166,
+        "source_first_denominator": 7607793436116,
+        "tail_factor": 200509152,
+        "source_solution": [
+          7607793436116,
+          1474342,
+          223760148169
+        ],
+        "target_solution": [
+          60862357809254,
+          1474342,
+          223760148169
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 1474342,
+          "divisor": 31965946073,
+          "y": 223760148169,
+          "z": 60862357809254
+        }
+      }
+    },
+    {
+      "prime": 6254329,
+      "source_denominator": 6254328,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 2736269,
+        "b": 2,
+        "shift": 781791,
+        "source_first_denominator": 8556761911116,
+        "tail_factor": 106323576,
+        "source_solution": [
+          8556761911116,
+          1563592,
+          251671077544
+        ],
+        "target_solution": [
+          68454106234004,
+          1563592,
+          251671077544
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 1563592,
+          "divisor": 35953234448,
+          "y": 251671077544,
+          "z": 68454106234004
+        }
+      }
+    },
+    {
+      "prime": 6279289,
+      "source_denominator": 6279288,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 2747189,
+        "b": 2,
+        "shift": 784911,
+        "source_first_denominator": 8625195460716,
+        "tail_factor": 194657928,
+        "source_solution": [
+          8625195460716,
+          1569840,
+          139117650960
+        ],
+        "target_solution": [
+          69001574674484,
+          1569840,
+          139117650960
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 1569840,
+          "divisor": 19874174400,
+          "y": 139117650960,
+          "z": 69001574674484
+        }
+      }
+    },
+    {
+      "prime": 6294649,
+      "source_denominator": 6294648,
+      "candidate_count": 16,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 6316249,
+      "source_denominator": 6316248,
+      "candidate_count": 32,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 1578582,
+        "b": 1,
+        "shift": 1921,
+        "source_first_denominator": 9970715400336,
+        "tail_factor": 2365080113404,
+        "source_solution": [
+          9970715400336,
+          1953620,
+          8236080
+        ],
+        "target_solution": [
+          32783717426682384,
+          1953620,
+          8236080
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1498231,
+          "x": 1953620,
+          "divisor": 3100,
+          "y": 8236080,
+          "z": 32783717426682384
+        }
+      }
+    },
+    {
+      "prime": 6569161,
+      "source_denominator": 6569160,
+      "candidate_count": 32,
+      "hit_candidate_count": 5,
+      "first_witness": {
+        "a": 1437004,
+        "b": 1,
+        "shift": 821145,
+        "source_first_denominator": 9439909196640,
+        "tail_factor": 193790220,
+        "source_solution": [
+          9439909196640,
+          1642324,
+          80000886688
+        ],
+        "target_solution": [
+          75519285069152,
+          1642324,
+          80000886688
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 1642324,
+          "divisor": 11428932716,
+          "y": 80000886688,
+          "z": 75519285069152
+        }
+      }
+    },
+    {
+      "prime": 6856249,
+      "source_denominator": 6856248,
+      "candidate_count": 32,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1642643,
+        "b": 1,
+        "shift": 285677,
+        "source_first_denominator": 11262367783464,
+        "tail_factor": 24568222,
+        "source_solution": [
+          11262367783464,
+          1714066,
+          785748423192
+        ],
+        "target_solution": [
+          270296866226568,
+          1714066,
+          785748423192
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 1714066,
+          "divisor": 34163049446,
+          "y": 785748423192,
+          "z": 270296866226568
+        }
+      }
+    },
+    {
+      "prime": 7079209,
+      "source_denominator": 7079208,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3392121,
+        "b": 2,
+        "shift": 294967,
+        "source_first_denominator": 12006765060084,
+        "tail_factor": 213556108,
+        "source_solution": [
+          12006765060084,
+          1769818,
+          199008954828
+        ],
+        "target_solution": [
+          288162402147468,
+          1769818,
+          199008954828
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 63,
+          "x": 1769818,
+          "divisor": 8652640202,
+          "y": 199008954828,
+          "z": 288162402147468
+        }
+      }
+    },
+    {
+      "prime": 7504249,
+      "source_denominator": 7504248,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 5628187,
+        "b": 4,
+        "shift": 1876062,
+        "source_first_denominator": 10558827759594,
+        "tail_factor": 442750632,
+        "source_solution": [
+          10558827759594,
+          1876082,
+          178965090226
+        ],
+        "target_solution": [
+          42235316666563,
+          1876082,
+          178965090226
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 79,
+          "x": 1876082,
+          "divisor": 59655655436,
+          "y": 178965090226,
+          "z": 42235316666563
+        }
+      }
+    },
+    {
+      "prime": 7524169,
+      "source_denominator": 7524168,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 6897155,
+        "b": 4,
+        "shift": 627014,
+        "source_first_denominator": 12973838235510,
+        "tail_factor": 213184760,
+        "source_solution": [
+          12973838235510,
+          1881050,
+          457902120450
+        ],
+        "target_solution": [
+          155686079517585,
+          1881050,
+          457902120450
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 31,
+          "x": 1881050,
+          "divisor": 41627636500,
+          "y": 457902120450,
+          "z": 155686079517585
+        }
+      }
+    },
+    {
+      "prime": 7791529,
+      "source_denominator": 7791528,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 3733441,
+        "b": 2,
+        "shift": 324647,
+        "source_first_denominator": 14544605043924,
+        "tail_factor": 130508094,
+        "source_solution": [
+          14544605043924,
+          1947891,
+          434169320772
+        ],
+        "target_solution": [
+          349070565855468,
+          1947891,
+          434169320772
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 35,
+          "x": 1947891,
+          "divisor": 18877011681,
+          "y": 434169320772,
+          "z": 349070565855468
+        }
+      }
+    },
+    {
+      "prime": 8009929,
+      "source_denominator": 8009928,
+      "candidate_count": 40,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3838091,
+        "b": 2,
+        "shift": 333747,
+        "source_first_denominator": 15371416283724,
+        "tail_factor": 1193479272,
+        "source_solution": [
+          15371416283724,
+          2002560,
+          51583943040
+        ],
+        "target_solution": [
+          368914036866468,
+          2002560,
+          51583943040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 311,
+          "x": 2002560,
+          "divisor": 2242867200,
+          "y": 51583943040,
+          "z": 368914036866468
+        }
+      }
+    },
+    {
+      "prime": 8083849,
+      "source_denominator": 8083848,
+      "candidate_count": 8,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3873511,
+        "b": 2,
+        "shift": 336827,
+        "source_first_denominator": 15656437075164,
+        "tail_factor": 460779336,
+        "source_solution": [
+          15656437075164,
+          2020992,
+          137339206016
+        ],
+        "target_solution": [
+          375754536286068,
+          2020992,
+          137339206016
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 2020992,
+          "divisor": 5971357696,
+          "y": 137339206016,
+          "z": 375754536286068
+        }
+      }
+    },
+    {
+      "prime": 8589289,
+      "source_denominator": 8589288,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1878907,
+        "b": 1,
+        "shift": 1073661,
+        "source_first_denominator": 16138473348216,
+        "tail_factor": 88040202,
+        "source_solution": [
+          16138473348216,
+          2147334,
+          393623500872
+        ],
+        "target_solution": [
+          129107801816984,
+          2147334,
+          393623500872
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 2147334,
+          "divisor": 56232235458,
+          "y": 393623500872,
+          "z": 129107801816984
+        }
+      }
+    },
+    {
+      "prime": 8797849,
+      "source_denominator": 8797848,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 8064695,
+        "b": 4,
+        "shift": 733154,
+        "source_first_denominator": 17737990194090,
+        "tail_factor": 1217035640,
+        "source_solution": [
+          17737990194090,
+          2199500,
+          128228650500
+        ],
+        "target_solution": [
+          212855906523165,
+          2199500,
+          128228650500
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 151,
+          "x": 2199500,
+          "divisor": 11657350000,
+          "y": 128228650500,
+          "z": 212855906523165
+        }
+      }
+    },
+    {
+      "prime": 8965609,
+      "source_denominator": 8965608,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1961227,
+        "b": 1,
+        "shift": 1120701,
+        "source_first_denominator": 17583592481016,
+        "tail_factor": 303709971,
+        "source_solution": [
+          17583592481016,
+          2241441,
+          129770468136
+        ],
+        "target_solution": [
+          140668755537944,
+          2241441,
+          129770468136
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 155,
+          "x": 2241441,
+          "divisor": 18538958511,
+          "y": 129770468136,
+          "z": 140668755537944
+        }
+      }
+    },
+    {
+      "prime": 9081769,
+      "source_denominator": 9081768,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 1986637,
+        "b": 1,
+        "shift": 1135221,
+        "source_first_denominator": 18042176334216,
+        "tail_factor": 77195028,
+        "source_solution": [
+          18042176334216,
+          2270452,
+          530654582344
+        ],
+        "target_solution": [
+          144337426566824,
+          2270452,
+          530654582344
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 2270452,
+          "divisor": 75808121828,
+          "y": 530654582344,
+          "z": 144337426566824
+        }
+      }
+    },
+    {
+      "prime": 9104209,
+      "source_denominator": 9104208,
+      "candidate_count": 12,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 7966183,
+        "b": 4,
+        "shift": 1138026,
+        "source_first_denominator": 18131446749516,
+        "tail_factor": 309543072,
+        "source_solution": [
+          18131446749516,
+          2276062,
+          533280188569
+        ],
+        "target_solution": [
+          145051589928494,
+          2276062,
+          533280188569
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 2276062,
+          "divisor": 76183209233,
+          "y": 533280188569,
+          "z": 145051589928494
+        }
+      }
+    },
+    {
+      "prime": 9315289,
+      "source_denominator": 9315288,
+      "candidate_count": 12,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 4592955,
+        "b": 2,
+        "shift": 129379,
+        "source_first_denominator": 21392349298020,
+        "tail_factor": 53236870920,
+        "source_solution": [
+          21392349298020,
+          2331720,
+          1873925640
+        ],
+        "target_solution": [
+          1540249314803820,
+          2331720,
+          1873925640
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11591,
+          "x": 2331720,
+          "divisor": 26426160,
+          "y": 1873925640,
+          "z": 1540249314803820
+        }
+      }
+    },
+    {
+      "prime": 9323449,
+      "source_denominator": 9323448,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 4079009,
+        "b": 2,
+        "shift": 1165431,
+        "source_first_denominator": 19015214151516,
+        "tail_factor": 142182582,
+        "source_solution": [
+          19015214151516,
+          2330871,
+          623452051596
+        ],
+        "target_solution": [
+          152121729528164,
+          2330871,
+          623452051596
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 35,
+          "x": 2330871,
+          "divisor": 89064911781,
+          "y": 623452051596,
+          "z": 152121729528164
+        }
+      }
+    },
+    {
+      "prime": 9394009,
+      "source_denominator": 9394008,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 7045507,
+        "b": 4,
+        "shift": 2348502,
+        "source_first_denominator": 16546387280514,
+        "tail_factor": 836066712,
+        "source_solution": [
+          16546387280514,
+          2348532,
+          185916838716
+        ],
+        "target_solution": [
+          66185556167563,
+          2348532,
+          185916838716
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 2348532,
+          "divisor": 61973062416,
+          "y": 185916838716,
+          "z": 66185556167563
+        }
+      }
+    },
+    {
+      "prime": 9711529,
+      "source_denominator": 9711528,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 2124397,
+        "b": 1,
+        "shift": 1213941,
+        "source_first_denominator": 20631140948616,
+        "tail_factor": 235504554,
+        "source_solution": [
+          20631140948616,
+          2427910,
+          212694627640
+        ],
+        "target_solution": [
+          165049144584104,
+          2427910,
+          212694627640
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 111,
+          "x": 2427910,
+          "divisor": 30385293650,
+          "y": 212694627640,
+          "z": 165049144584104
+        }
+      }
+    },
+    {
+      "prime": 9716569,
+      "source_denominator": 9716568,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 4250999,
+        "b": 2,
+        "shift": 1214571,
+        "source_first_denominator": 20652560425716,
+        "tail_factor": 301213608,
+        "source_solution": [
+          20652560425716,
+          2429160,
+          333108281640
+        ],
+        "target_solution": [
+          165220500409724,
+          2429160,
+          333108281640
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 2429160,
+          "divisor": 47587244400,
+          "y": 333108281640,
+          "z": 165220500409724
+        }
+      }
+    },
+    {
+      "prime": 9872809,
+      "source_denominator": 9872808,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 2159677,
+        "b": 1,
+        "shift": 1234101,
+        "source_first_denominator": 21322076363016,
+        "tail_factor": 32086626,
+        "source_solution": [
+          21322076363016,
+          2468206,
+          1640162378296
+        ],
+        "target_solution": [
+          170576628181544,
+          2468206,
+          1640162378296
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 2468206,
+          "divisor": 234309263786,
+          "y": 1640162378296,
+          "z": 170576628181544
+        }
+      }
+    },
+    {
+      "prime": 10170169,
+      "source_denominator": 10170168,
+      "candidate_count": 16,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 10225609,
+      "source_denominator": 10225608,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 2550373,
+        "b": 1,
+        "shift": 24117,
+        "source_first_denominator": 26079114551784,
+        "tail_factor": 285475967742,
+        "source_solution": [
+          26079114551784,
+          2584386,
+          236091672
+        ],
+        "target_solution": [
+          11057545651314568,
+          2584386,
+          236091672
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 111935,
+          "x": 2584386,
+          "divisor": 564246,
+          "y": 236091672,
+          "z": 11057545651314568
+        }
+      }
+    },
+    {
+      "prime": 10418809,
+      "source_denominator": 10418808,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 4558229,
+        "b": 2,
+        "shift": 1302351,
+        "source_first_denominator": 23745656385516,
+        "tail_factor": 67722252,
+        "source_solution": [
+          23745656385516,
+          2604706,
+          1826591757796
+        ],
+        "target_solution": [
+          189965269317044,
+          2604706,
+          1826591757796
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 2604706,
+          "divisor": 260942051786,
+          "y": 1826591757796,
+          "z": 189965269317044
+        }
+      }
+    },
+    {
+      "prime": 10637449,
+      "source_denominator": 10637448,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 2326942,
+        "b": 1,
+        "shift": 1329681,
+        "source_first_denominator": 24752724524016,
+        "tail_factor": 1151503746,
+        "source_solution": [
+          24752724524016,
+          2659486,
+          57168311056
+        ],
+        "target_solution": [
+          198021814807664,
+          2659486,
+          57168311056
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 495,
+          "x": 2659486,
+          "divisor": 8167281506,
+          "y": 57168311056,
+          "z": 198021814807664
+        }
+      }
+    },
+    {
+      "prime": 10665769,
+      "source_denominator": 10665768,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 5110681,
+        "b": 2,
+        "shift": 444407,
+        "source_first_denominator": 27254668934004,
+        "tail_factor": 7047406206,
+        "source_solution": [
+          27254668934004,
+          2666787,
+          20626708516
+        ],
+        "target_solution": [
+          654112115744268,
+          2666787,
+          20626708516
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 1379,
+          "x": 2666787,
+          "divisor": 896929361,
+          "y": 20626708516,
+          "z": 654112115744268
+        }
+      }
+    },
+    {
+      "prime": 10875769,
+      "source_denominator": 10875768,
+      "candidate_count": 8,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 2605653,
+        "b": 1,
+        "shift": 453157,
+        "source_first_denominator": 28338477516504,
+        "tail_factor": 80661946,
+        "source_solution": [
+          28338477516504,
+          2718950,
+          955232389800
+        ],
+        "target_solution": [
+          680123522931768,
+          2718950,
+          955232389800
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 31,
+          "x": 2718950,
+          "divisor": 41531961250,
+          "y": 955232389800,
+          "z": 680123522931768
+        }
+      }
+    },
+    {
+      "prime": 10960009,
+      "source_denominator": 10960008,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 8220007,
+        "b": 4,
+        "shift": 2740002,
+        "source_first_denominator": 22522835620014,
+        "tail_factor": 2553681864,
+        "source_solution": [
+          22522835620014,
+          2740080,
+          96667282320
+        ],
+        "target_solution": [
+          90091350700063,
+          2740080,
+          96667282320
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 311,
+          "x": 2740080,
+          "divisor": 32223340800,
+          "y": 96667282320,
+          "z": 90091350700063
+        }
+      }
+    },
+    {
+      "prime": 11052409,
+      "source_denominator": 11052408,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 2647973,
+        "b": 1,
+        "shift": 460517,
+        "source_first_denominator": 29266477968984,
+        "tail_factor": 314993628,
+        "source_solution": [
+          29266477968984,
+          2763132,
+          256726278296
+        ],
+        "target_solution": [
+          702395534806968,
+          2763132,
+          256726278296
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 2763132,
+          "divisor": 11162132236,
+          "y": 256726278296,
+          "z": 702395534806968
+        }
+      }
+    },
+    {
+      "prime": 11361529,
+      "source_denominator": 11361528,
+      "candidate_count": 12,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 8521147,
+        "b": 4,
+        "shift": 2840382,
+        "source_first_denominator": 24203312558154,
+        "tail_factor": 533991816,
+        "source_solution": [
+          24203312558154,
+          2840398,
+          514966997798
+        ],
+        "target_solution": [
+          96813258753763,
+          2840398,
+          514966997798
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 63,
+          "x": 2840398,
+          "divisor": 171656612732,
+          "y": 514966997798,
+          "z": 96813258753763
+        }
+      }
+    },
+    {
+      "prime": 11712409,
+      "source_denominator": 11712408,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 10736375,
+        "b": 4,
+        "shift": 976034,
+        "source_first_denominator": 31437201110250,
+        "tail_factor": 761306520,
+        "source_solution": [
+          31437201110250,
+          2928120,
+          483652221000
+        ],
+        "target_solution": [
+          377246445532125,
+          2928120,
+          483652221000
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 2928120,
+          "divisor": 43968649920,
+          "y": 483652221000,
+          "z": 377246445532125
+        }
+      }
+    },
+    {
+      "prime": 11731129,
+      "source_denominator": 11731128,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 2810583,
+        "b": 1,
+        "shift": 488797,
+        "source_first_denominator": 32971308927624,
+        "tail_factor": 98248197,
+        "source_solution": [
+          32971308927624,
+          2932791,
+          984221197272
+        ],
+        "target_solution": [
+          791311481716968,
+          2932791,
+          984221197272
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 35,
+          "x": 2932791,
+          "divisor": 42792353481,
+          "y": 984221197272,
+          "z": 791311481716968
+        }
+      }
+    },
+    {
+      "prime": 11835289,
+      "source_denominator": 11835288,
+      "candidate_count": 32,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 2945124,
+        "b": 1,
+        "shift": 54793,
+        "source_first_denominator": 34856390735712,
+        "tail_factor": 2188213248,
+        "source_solution": [
+          34856390735712,
+          2959008,
+          47134500777
+        ],
+        "target_solution": [
+          7528981035060576,
+          2959008,
+          47134500777
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 743,
+          "x": 2959008,
+          "divisor": 219243999,
+          "y": 47134500777,
+          "z": 7528981035060576
+        }
+      }
+    },
+    {
+      "prime": 11897449,
+      "source_denominator": 11897448,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 10905995,
+        "b": 4,
+        "shift": 991454,
+        "source_first_denominator": 32438377100190,
+        "tail_factor": 1296821832,
+        "source_solution": [
+          32438377100190,
+          2974392,
+          297602791560
+        ],
+        "target_solution": [
+          389260557920265,
+          2974392,
+          297602791560
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 2974392,
+          "divisor": 27055069632,
+          "y": 297602791560,
+          "z": 389260557920265
+        }
+      }
+    },
+    {
+      "prime": 11929129,
+      "source_denominator": 11929128,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 2609497,
+        "b": 1,
+        "shift": 1491141,
+        "source_first_denominator": 31129023728616,
+        "tail_factor": 936436548,
+        "source_solution": [
+          31129023728616,
+          2982372,
+          99140010024
+        ],
+        "target_solution": [
+          249032210704904,
+          2982372,
+          99140010024
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 359,
+          "x": 2982372,
+          "divisor": 14163284628,
+          "y": 99140010024,
+          "z": 249032210704904
+        }
+      }
+    },
+    {
+      "prime": 11996329,
+      "source_denominator": 11996328,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 2624197,
+        "b": 1,
+        "shift": 1499541,
+        "source_first_denominator": 31480727948616,
+        "tail_factor": 1256615358,
+        "source_solution": [
+          31480727948616,
+          2999202,
+          75136008504
+        ],
+        "target_solution": [
+          251845844582504,
+          2999202,
+          75136008504
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 479,
+          "x": 2999202,
+          "divisor": 10734143958,
+          "y": 75136008504,
+          "z": 251845844582504
+        }
+      }
+    },
+    {
+      "prime": 12134329,
+      "source_denominator": 12134328,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 2907183,
+        "b": 1,
+        "shift": 505597,
+        "source_first_denominator": 35276712078024,
+        "tail_factor": 1462186524,
+        "source_solution": [
+          35276712078024,
+          3033708,
+          73191239208
+        ],
+        "target_solution": [
+          846641159644968,
+          3033708,
+          73191239208
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 503,
+          "x": 3033708,
+          "divisor": 3182359692,
+          "y": 73191239208,
+          "z": 846641159644968
+        }
+      }
+    },
+    {
+      "prime": 12150889,
+      "source_denominator": 12150888,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 11138315,
+        "b": 4,
+        "shift": 1012574,
+        "source_first_denominator": 33835104518430,
+        "tail_factor": 344275160,
+        "source_solution": [
+          33835104518430,
+          3037730,
+          1194183304410
+        ],
+        "target_solution": [
+          406021287636105,
+          3037730,
+          1194183304410
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 31,
+          "x": 3037730,
+          "divisor": 108562394740,
+          "y": 1194183304410,
+          "z": 406021287636105
+        }
+      }
+    },
+    {
+      "prime": 12326521,
+      "source_denominator": 12326520,
+      "candidate_count": 32,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 2953229,
+        "b": 1,
+        "shift": 513605,
+        "source_first_denominator": 36403036333080,
+        "tail_factor": 304054160,
+        "source_solution": [
+          36403036333080,
+          3081656,
+          368952805428
+        ],
+        "target_solution": [
+          873672942871416,
+          3081656,
+          368952805428
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 103,
+          "x": 3081656,
+          "divisor": 16041560308,
+          "y": 368952805428,
+          "z": 873672942871416
+        }
+      }
+    },
+    {
+      "prime": 12466969,
+      "source_denominator": 12466968,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 9350227,
+        "b": 4,
+        "shift": 3116742,
+        "source_first_denominator": 29142245200434,
+        "tail_factor": 585947496,
+        "source_solution": [
+          29142245200434,
+          3116758,
+          620050953278
+        ],
+        "target_solution": [
+          116568990151963,
+          3116758,
+          620050953278
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 63,
+          "x": 3116758,
+          "divisor": 206684690012,
+          "y": 620050953278,
+          "z": 116568990151963
+        }
+      }
+    },
+    {
+      "prime": 12784489,
+      "source_denominator": 12784488,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 2796607,
+        "b": 1,
+        "shift": 1598061,
+        "source_first_denominator": 35753188632216,
+        "tail_factor": 310023834,
+        "source_solution": [
+          35753188632216,
+          3196150,
+          368592802600
+        ],
+        "target_solution": [
+          286025531430584,
+          3196150,
+          368592802600
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 111,
+          "x": 3196150,
+          "divisor": 52656571250,
+          "y": 368592802600,
+          "z": 286025531430584
+        }
+      }
+    },
+    {
+      "prime": 12853129,
+      "source_denominator": 12853128,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 2811622,
+        "b": 1,
+        "shift": 1606641,
+        "source_first_denominator": 36138137453616,
+        "tail_factor": 1458830028,
+        "source_solution": [
+          36138137453616,
+          3213412,
+          79602642064
+        ],
+        "target_solution": [
+          289105122121904,
+          3213412,
+          79602642064
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 519,
+          "x": 3213412,
+          "divisor": 11372265068,
+          "y": 79602642064,
+          "z": 289105122121904
+        }
+      }
+    },
+    {
+      "prime": 13177609,
+      "source_denominator": 13177608,
+      "candidate_count": 24,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 9883207,
+        "b": 4,
+        "shift": 3294402,
+        "source_first_denominator": 32559256907214,
+        "tail_factor": 619347576,
+        "source_solution": [
+          32559256907214,
+          3294418,
+          692753511458
+        ],
+        "target_solution": [
+          130237037512063,
+          3294418,
+          692753511458
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 63,
+          "x": 3294418,
+          "divisor": 230918935292,
+          "y": 692753511458,
+          "z": 130237037512063
+        }
+      }
+    },
+    {
+      "prime": 13334281,
+      "source_denominator": 13334280,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 6611581,
+        "b": 2,
+        "shift": 111119,
+        "source_first_denominator": 44080336148340,
+        "tail_factor": 6499128072,
+        "source_solution": [
+          44080336148340,
+          3333816,
+          45223214040
+        ],
+        "target_solution": [
+          5289640734495660,
+          3333816,
+          45223214040
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 983,
+          "x": 3333816,
+          "divisor": 380055024,
+          "y": 45223214040,
+          "z": 5289640734495660
+        }
+      }
+    },
+    {
+      "prime": 13782409,
+      "source_denominator": 13782408,
+      "candidate_count": 16,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 13844329,
+      "source_denominator": 13844328,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 10383247,
+        "b": 4,
+        "shift": 3461082,
+        "source_first_denominator": 35937269293254,
+        "tail_factor": 401485512,
+        "source_solution": [
+          35937269293254,
+          3461092,
+          1239219762956
+        ],
+        "target_solution": [
+          143749087556263,
+          3461092,
+          1239219762956
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 3461092,
+          "divisor": 413074408016,
+          "y": 1239219762956,
+          "z": 143749087556263
+        }
+      }
+    },
+    {
+      "prime": 14706409,
+      "source_denominator": 14706408,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 11029807,
+        "b": 4,
+        "shift": 3676602,
+        "source_first_denominator": 40552210475814,
+        "tail_factor": 1926539448,
+        "source_solution": [
+          40552210475814,
+          3676646,
+          309562563262
+        ],
+        "target_solution": [
+          162208852933063,
+          3676646,
+          309562563262
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 175,
+          "x": 3676646,
+          "divisor": 103188746636,
+          "y": 309562563262,
+          "z": 162208852933063
+        }
+      }
+    },
+    {
+      "prime": 15072649,
+      "source_denominator": 15072648,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3297142,
+        "b": 1,
+        "shift": 1884081,
+        "source_first_denominator": 49696660772016,
+        "tail_factor": 431454549,
+        "source_solution": [
+          49696660772016,
+          3768195,
+          434035772880
+        ],
+        "target_solution": [
+          397573312553264,
+          3768195,
+          434035772880
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 131,
+          "x": 3768195,
+          "divisor": 62005648725,
+          "y": 434035772880,
+          "z": 397573312553264
+        }
+      }
+    },
+    {
+      "prime": 15308329,
+      "source_denominator": 15308328,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3348697,
+        "b": 1,
+        "shift": 1913541,
+        "source_first_denominator": 51262952048616,
+        "tail_factor": 1121335026,
+        "source_solution": [
+          51262952048616,
+          3827166,
+          174962720856
+        ],
+        "target_solution": [
+          410103643178504,
+          3827166,
+          174962720856
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 335,
+          "x": 3827166,
+          "divisor": 24995221146,
+          "y": 174962720856,
+          "z": 410103643178504
+        }
+      }
+    },
+    {
+      "prime": 15364969,
+      "source_denominator": 15364968,
+      "candidate_count": 24,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 3361087,
+        "b": 1,
+        "shift": 1920621,
+        "source_first_denominator": 51642994200216,
+        "tail_factor": 130602228,
+        "source_solution": [
+          51642994200216,
+          3841252,
+          1518915548344
+        ],
+        "target_solution": [
+          413143980490424,
+          3841252,
+          1518915548344
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 3841252,
+          "divisor": 216988484228,
+          "y": 1518915548344,
+          "z": 413143980490424
+        }
+      }
+    },
+    {
+      "prime": 15405289,
+      "source_denominator": 15405288,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 7381701,
+        "b": 2,
+        "shift": 641887,
+        "source_first_denominator": 56858614917444,
+        "tail_factor": 1586744664,
+        "source_solution": [
+          56858614917444,
+          3851376,
+          276016563792
+        ],
+        "target_solution": [
+          1364606846599068,
+          3851376,
+          276016563792
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 215,
+          "x": 3851376,
+          "divisor": 12000887616,
+          "y": 276016563792,
+          "z": 1364606846599068
+        }
+      }
+    },
+    {
+      "prime": 15408649,
+      "source_denominator": 15408648,
+      "candidate_count": 12,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3370642,
+        "b": 1,
+        "shift": 1926081,
+        "source_first_denominator": 51937036112016,
+        "tail_factor": 1344404538,
+        "source_solution": [
+          51937036112016,
+          3852262,
+          148820585584
+        ],
+        "target_solution": [
+          415496315861264,
+          3852262,
+          148820585584
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 399,
+          "x": 3852262,
+          "divisor": 21260633978,
+          "y": 148820585584,
+          "z": 415496315861264
+        }
+      }
+    },
+    {
+      "prime": 15648649,
+      "source_denominator": 15648648,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 3905075,
+        "b": 1,
+        "shift": 28349,
+        "source_first_denominator": 61109144088600,
+        "tail_factor": 900318881600,
+        "source_solution": [
+          61109144088600,
+          3969800,
+          269450175
+        ],
+        "target_solution": [
+          33732249692508600,
+          3969800,
+          269450175
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 230551,
+          "x": 3969800,
+          "divisor": 496225,
+          "y": 269450175,
+          "z": 33732249692508600
+        }
+      }
+    },
+    {
+      "prime": 15870409,
+      "source_denominator": 15870408,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 11902807,
+        "b": 4,
+        "shift": 3967602,
+        "source_first_denominator": 47225600858814,
+        "tail_factor": 5602254024,
+        "source_solution": [
+          47225600858814,
+          3967720,
+          133787550680
+        ],
+        "target_solution": [
+          188902415338063,
+          3967720,
+          133787550680
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 471,
+          "x": 3967720,
+          "divisor": 44597172800,
+          "y": 133787550680,
+          "z": 188902415338063
+        }
+      }
+    },
+    {
+      "prime": 16002529,
+      "source_denominator": 16002528,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 3958959,
+        "b": 1,
+        "shift": 166693,
+        "source_first_denominator": 63353352248352,
+        "tail_factor": 629432768,
+        "source_solution": [
+          63353352248352,
+          4000672,
+          402673637808
+        ],
+        "target_solution": [
+          6081922195901856,
+          4000672,
+          402673637808
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 159,
+          "x": 4000672,
+          "divisor": 4238711984,
+          "y": 402673637808,
+          "z": 6081922195901856
+        }
+      }
+    },
+    {
+      "prime": 16152889,
+      "source_denominator": 16152888,
+      "candidate_count": 16,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 16267729,
+      "source_denominator": 16267728,
+      "candidate_count": 24,
+      "hit_candidate_count": 0,
+      "first_witness": null
+    },
+    {
+      "prime": 16287049,
+      "source_denominator": 16287048,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3562792,
+        "b": 1,
+        "shift": 2035881,
+        "source_first_denominator": 58027364318016,
+        "tail_factor": 138439908,
+        "source_solution": [
+          58027364318016,
+          4071772,
+          1706691377344
+        ],
+        "target_solution": [
+          464218943046464,
+          4071772,
+          1706691377344
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 4071772,
+          "divisor": 243813635588,
+          "y": 1706691377344,
+          "z": 464218943046464
+        }
+      }
+    },
+    {
+      "prime": 16308889,
+      "source_denominator": 16308888,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 12231667,
+        "b": 4,
+        "shift": 4077222,
+        "source_first_denominator": 49871221789074,
+        "tail_factor": 1157931048,
+        "source_solution": [
+          49871221789074,
+          4077246,
+          702415709142
+        ],
+        "target_solution": [
+          199484899387963,
+          4077246,
+          702415709142
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 95,
+          "x": 4077246,
+          "divisor": 234139928796,
+          "y": 702415709142,
+          "z": 199484899387963
+        }
+      }
+    },
+    {
+      "prime": 16732489,
+      "source_denominator": 16732488,
+      "candidate_count": 16,
+      "hit_candidate_count": 4,
+      "first_witness": {
+        "a": 3660232,
+        "b": 1,
+        "shift": 2091561,
+        "source_first_denominator": 61244788017216,
+        "tail_factor": 259353564,
+        "source_solution": [
+          61244788017216,
+          4183140,
+          987823412160
+        ],
+        "target_solution": [
+          489958333419584,
+          4183140,
+          987823412160
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 71,
+          "x": 4183140,
+          "divisor": 141118227900,
+          "y": 987823412160,
+          "z": 489958333419584
+        }
+      }
+    },
+    {
+      "prime": 17041369,
+      "source_denominator": 17041368,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 15621255,
+        "b": 4,
+        "shift": 1420114,
+        "source_first_denominator": 66551888769210,
+        "tail_factor": 5981520168,
+        "source_solution": [
+          66551888769210,
+          4260438,
+          189610793190
+        ],
+        "target_solution": [
+          798622712094285,
+          4260438,
+          189610793190
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 383,
+          "x": 4260438,
+          "divisor": 17237732148,
+          "y": 189610793190,
+          "z": 798622712094285
+        }
+      }
+    },
+    {
+      "prime": 17075689,
+      "source_denominator": 17075688,
+      "candidate_count": 16,
+      "hit_candidate_count": 5,
+      "first_witness": {
+        "a": 3735307,
+        "b": 1,
+        "shift": 2134461,
+        "source_first_denominator": 63782936916216,
+        "tail_factor": 1265735373,
+        "source_solution": [
+          63782936916216,
+          4269007,
+          215123800744
+        ],
+        "target_solution": [
+          510263525212184,
+          4269007,
+          215123800744
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 339,
+          "x": 4269007,
+          "divisor": 30732581393,
+          "y": 215123800744,
+          "z": 510263525212184
+        }
+      }
+    },
+    {
+      "prime": 17137129,
+      "source_denominator": 17137128,
+      "candidate_count": 32,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 15709035,
+        "b": 4,
+        "shift": 1428094,
+        "source_first_denominator": 67301935887870,
+        "tail_factor": 46732948056,
+        "source_solution": [
+          67301935887870,
+          4285026,
+          24684130330
+        ],
+        "target_solution": [
+          807623277781545,
+          4285026,
+          24684130330
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 2975,
+          "x": 4285026,
+          "divisor": 2244401396,
+          "y": 24684130330,
+          "z": 807623277781545
+        }
+      }
+    },
+    {
+      "prime": 17145529,
+      "source_denominator": 17145528,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 7501169,
+        "b": 2,
+        "shift": 2143191,
+        "source_first_denominator": 64305751561116,
+        "tail_factor": 111445932,
+        "source_solution": [
+          64305751561116,
+          4286386,
+          4946600890036
+        ],
+        "target_solution": [
+          514446042493604,
+          4286386,
+          4946600890036
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 4286386,
+          "divisor": 706657882346,
+          "y": 4946600890036,
+          "z": 514446042493604
+        }
+      }
+    },
+    {
+      "prime": 17311849,
+      "source_denominator": 17311848,
+      "candidate_count": 32,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 4296139,
+        "b": 1,
+        "shift": 127293,
+        "source_first_denominator": 74374105354872,
+        "tail_factor": 492951816768,
+        "source_solution": [
+          74374105354872,
+          4356648,
+          657309267
+        ],
+        "target_solution": [
+          10114878912537496,
+          4356648,
+          657309267
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 114743,
+          "x": 4356648,
+          "divisor": 4901229,
+          "y": 657309267,
+          "z": 10114878912537496
+        }
+      }
+    },
+    {
+      "prime": 17422969,
+      "source_denominator": 17422968,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 4174253,
+        "b": 1,
+        "shift": 725957,
+        "source_first_denominator": 72727876442904,
+        "tail_factor": 596736654,
+        "source_solution": [
+          72727876442904,
+          4355778,
+          530864799528
+        ],
+        "target_solution": [
+          1745469134811768,
+          4355778,
+          530864799528
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 143,
+          "x": 4355778,
+          "divisor": 23081267622,
+          "y": 530864799528,
+          "z": 1745469134811768
+        }
+      }
+    },
+    {
+      "prime": 17473129,
+      "source_denominator": 17473128,
+      "candidate_count": 8,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 3822247,
+        "b": 1,
+        "shift": 2184141,
+        "source_first_denominator": 66786611078616,
+        "tail_factor": 56787666,
+        "source_solution": [
+          66786611078616,
+          4368286,
+          5137436325736
+        ],
+        "target_solution": [
+          534292919206904,
+          4368286,
+          5137436325736
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 4368286,
+          "divisor": 733920099146,
+          "y": 5137436325736,
+          "z": 534292919206904
+        }
+      }
+    },
+    {
+      "prime": 17582569,
+      "source_denominator": 17582568,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 13186927,
+        "b": 4,
+        "shift": 4395642,
+        "source_first_denominator": 57965010172134,
+        "tail_factor": 4518719976,
+        "source_solution": [
+          57965010172134,
+          4395728,
+          225549199408
+        ],
+        "target_solution": [
+          231860053875463,
+          4395728,
+          225549199408
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 343,
+          "x": 4395728,
+          "divisor": 75184531712,
+          "y": 225549199408,
+          "z": 231860053875463
+        }
+      }
+    },
+    {
+      "prime": 17608369,
+      "source_denominator": 17608368,
+      "candidate_count": 12,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 8253923,
+        "b": 2,
+        "shift": 1100523,
+        "source_first_denominator": 72669056813832,
+        "tail_factor": 651509616,
+        "source_solution": [
+          72669056813832,
+          4402112,
+          982018742848
+        ],
+        "target_solution": [
+          1162704975052696,
+          4402112,
+          982018742848
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 79,
+          "x": 4402112,
+          "divisor": 65468209664,
+          "y": 982018742848,
+          "z": 1162704975052696
+        }
+      }
+    },
+    {
+      "prime": 17644489,
+      "source_denominator": 17644488,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 13233367,
+        "b": 4,
+        "shift": 4411122,
+        "source_first_denominator": 58373996307774,
+        "tail_factor": 511690152,
+        "source_solution": [
+          58373996307774,
+          4411132,
+          2012900987636
+        ],
+        "target_solution": [
+          233495998464463,
+          4411132,
+          2012900987636
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 4411132,
+          "divisor": 670968466256,
+          "y": 2012900987636,
+          "z": 233495998464463
+        }
+      }
+    },
+    {
+      "prime": 17722609,
+      "source_denominator": 17722608,
+      "candidate_count": 24,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 4338347,
+        "b": 1,
+        "shift": 369221,
+        "source_first_denominator": 76886823248976,
+        "tail_factor": 15771656051072,
+        "source_solution": [
+          76886823248976,
+          5339504,
+          26030082
+        ],
+        "target_solution": [
+          3690567724191504,
+          5339504,
+          26030082
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 3635407,
+          "x": 5339504,
+          "divisor": 667438,
+          "y": 26030082,
+          "z": 3690567724191504
+        }
+      }
+    },
+    {
+      "prime": 17723689,
+      "source_denominator": 17723688,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 8492601,
+        "b": 2,
+        "shift": 738487,
+        "source_first_denominator": 75260105216244,
+        "tail_factor": 1010250216,
+        "source_solution": [
+          75260105216244,
+          4430952,
+          660180831336
+        ],
+        "target_solution": [
+          1806242627101068,
+          4430952,
+          660180831336
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 4430952,
+          "divisor": 28703707056,
+          "y": 660180831336,
+          "z": 1806242627101068
+        }
+      }
+    },
+    {
+      "prime": 17846761,
+      "source_denominator": 17846760,
+      "candidate_count": 16,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 3903979,
+        "b": 1,
+        "shift": 2230845,
+        "source_first_denominator": 69673376258040,
+        "tail_factor": 182929290,
+        "source_solution": [
+          69673376258040,
+          4461702,
+          1699355210952
+        ],
+        "target_solution": [
+          557387041296152,
+          4461702,
+          1699355210952
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 47,
+          "x": 4461702,
+          "divisor": 242765667522,
+          "y": 1699355210952,
+          "z": 557387041296152
+        }
+      }
+    },
+    {
+      "prime": 17898169,
+      "source_denominator": 17898168,
+      "candidate_count": 8,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 13423627,
+        "b": 4,
+        "shift": 4474542,
+        "source_first_denominator": 60064582803834,
+        "tail_factor": 2988994056,
+        "source_solution": [
+          60064582803834,
+          4474598,
+          359672661838
+        ],
+        "target_solution": [
+          240258344638963,
+          4474598,
+          359672661838
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 223,
+          "x": 4474598,
+          "divisor": 119892378812,
+          "y": 359672661838,
+          "z": 240258344638963
+        }
+      }
+    },
+    {
+      "prime": 17909929,
+      "source_denominator": 17909928,
+      "candidate_count": 12,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 3917797,
+        "b": 1,
+        "shift": 2238741,
+        "source_first_denominator": 70167462188616,
+        "tail_factor": 58207266,
+        "source_solution": [
+          70167462188616,
+          4477486,
+          5397501913336
+        ],
+        "target_solution": [
+          561339728851304,
+          4477486,
+          5397501913336
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 4477486,
+          "divisor": 771072341546,
+          "y": 5397501913336,
+          "z": 561339728851304
+        }
+      }
+    },
+    {
+      "prime": 17992489,
+      "source_denominator": 17992488,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 3935857,
+        "b": 1,
+        "shift": 2249061,
+        "source_first_denominator": 70815859842216,
+        "tail_factor": 152936148,
+        "source_solution": [
+          70815859842216,
+          4498132,
+          2082824037544
+        ],
+        "target_solution": [
+          566526910224584,
+          4498132,
+          2082824037544
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 39,
+          "x": 4498132,
+          "divisor": 297546933668,
+          "y": 2082824037544,
+          "z": 566526910224584
+        }
+      }
+    },
+    {
+      "prime": 17995609,
+      "source_denominator": 17995608,
+      "candidate_count": 24,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 7873079,
+        "b": 2,
+        "shift": 2249451,
+        "source_first_denominator": 70840421718516,
+        "tail_factor": 2825310456,
+        "source_solution": [
+          70840421718516,
+          4498992,
+          225610951824
+        ],
+        "target_solution": [
+          566723405240444,
+          4498992,
+          225610951824
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 359,
+          "x": 4498992,
+          "divisor": 32230778688,
+          "y": 225610951824,
+          "z": 566723405240444
+        }
+      }
+    },
+    {
+      "prime": 18007609,
+      "source_denominator": 18007608,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 7878329,
+        "b": 2,
+        "shift": 2250951,
+        "source_first_denominator": 70934930163516,
+        "tail_factor": 1062448872,
+        "source_solution": [
+          70934930163516,
+          4501936,
+          601148016016
+        ],
+        "target_solution": [
+          567479472821444,
+          4501936,
+          601148016016
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 135,
+          "x": 4501936,
+          "divisor": 85878931136,
+          "y": 601148016016,
+          "z": 567479472821444
+        }
+      }
+    },
+    {
+      "prime": 18118489,
+      "source_denominator": 18118488,
+      "candidate_count": 8,
+      "hit_candidate_count": 3,
+      "first_witness": {
+        "a": 4340888,
+        "b": 1,
+        "shift": 754937,
+        "source_first_denominator": 78650327137344,
+        "tail_factor": 1697098376,
+        "source_solution": [
+          78650327137344,
+          4529720,
+          209925343680
+        ],
+        "target_solution": [
+          1887607955477568,
+          4529720,
+          209925343680
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 391,
+          "x": 4529720,
+          "divisor": 9127385800,
+          "y": 209925343680,
+          "z": 1887607955477568
+        }
+      }
+    },
+    {
+      "prime": 18517129,
+      "source_denominator": 18517128,
+      "candidate_count": 16,
+      "hit_candidate_count": 5,
+      "first_witness": {
+        "a": 4050622,
+        "b": 1,
+        "shift": 2314641,
+        "source_first_denominator": 75005886053616,
+        "tail_factor": 400432893,
+        "source_solution": [
+          75005886053616,
+          4629307,
+          867124752784
+        ],
+        "target_solution": [
+          600047120833904,
+          4629307,
+          867124752784
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 99,
+          "x": 4629307,
+          "divisor": 123875626013,
+          "y": 867124752784,
+          "z": 600047120833904
+        }
+      }
+    },
+    {
+      "prime": 18760009,
+      "source_denominator": 18760008,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 8989171,
+        "b": 2,
+        "shift": 781667,
+        "source_first_denominator": 84318459936684,
+        "tail_factor": 745710318,
+        "source_solution": [
+          84318459936684,
+          4690023,
+          1060614307948
+        ],
+        "target_solution": [
+          2023643146350468,
+          4690023,
+          1060614307948
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 83,
+          "x": 4690023,
+          "divisor": 46113869477,
+          "y": 1060614307948,
+          "z": 2023643146350468
+        }
+      }
+    },
+    {
+      "prime": 18787129,
+      "source_denominator": 18787128,
+      "candidate_count": 16,
+      "hit_candidate_count": 2,
+      "first_witness": {
+        "a": 8219369,
+        "b": 2,
+        "shift": 2348391,
+        "source_first_denominator": 77209168741116,
+        "tail_factor": 21032189796,
+        "source_solution": [
+          77209168741116,
+          4697422,
+          34488472324
+        ],
+        "target_solution": [
+          617673382806404,
+          4697422,
+          34488472324
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 2559,
+          "x": 4697422,
+          "divisor": 4927595678,
+          "y": 34488472324,
+          "z": 617673382806404
+        }
+      }
+    },
+    {
+      "prime": 19504489,
+      "source_denominator": 19504488,
+      "candidate_count": 16,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 19247851,
+        "b": 4,
+        "shift": 256638,
+        "source_first_denominator": 93854869713822,
+        "tail_factor": 526601671512,
+        "source_solution": [
+          93854869713822,
+          4882962,
+          3481111338
+        ],
+        "target_solution": [
+          7132970463959641,
+          4882962,
+          3481111338
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 27359,
+          "x": 4882962,
+          "divisor": 46479924,
+          "y": 3481111338,
+          "z": 7132970463959641
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "arithmetic": "complete scan of every odd 0<c<p in the exact even_source_distance_descent_witness constructor, including source/target rational identities and Type I certificates",
+  "scope_note": "A finite boundary for this standard even-source family. It does not exclude other sources or Erdős-Straus solutions.",
+  "prime_limit": 100000,
+  "joint_small_r_p_minus_one_residual_count": 7,
+  "odd_distance_test_count": 91538,
+  "even_source_strict_lift_count": 2,
+  "fully_even_source_unclosed_primes": [
+    5209,
+    21169,
+    27481,
+    48409,
+    80809
+  ],
+  "records": [
+    {
+      "prime": 5209,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 2604,
+      "first_even_source_witness": null
+    },
+    {
+      "prime": 12601,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 1,
+      "first_even_source_witness": {
+        "source_denominator": 12600,
+        "k": 3124,
+        "q": 12495,
+        "factor": 221760,
+        "gap": 71,
+        "x": 3168
+      }
+    },
+    {
+      "prime": 21169,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 10584,
+      "first_even_source_witness": null
+    },
+    {
+      "prime": 27481,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 13740,
+      "first_even_source_witness": null
+    },
+    {
+      "prime": 48409,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 24204,
+      "first_even_source_witness": null
+    },
+    {
+      "prime": 80809,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 40404,
+      "first_even_source_witness": null
+    },
+    {
+      "prime": 97561,
+      "odd_distance_test_count_through_first_hit_or_exhaustion": 1,
+      "first_even_source_witness": {
+        "source_denominator": 97560,
+        "k": 24187,
+        "q": 96747,
+        "factor": 556092,
+        "gap": 23,
+        "x": 24396
+      }
+    }
+  ]
+}

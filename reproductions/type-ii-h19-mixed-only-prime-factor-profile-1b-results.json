@@ -1,0 +1,590 @@
+{
+  "arithmetic": "exact factorization of k*n for every k dividing (p-1)/4, with the mixed congruence g=-1 mod (4k-1) checked for each prime factor",
+  "scope_note": "A finite audit of the 17 H19 states that require mixed-factor descent after the radius-six AC filter. It does not prove a global selector.",
+  "prime_limit": 1000000000,
+  "mixed_factor_only_count": 17,
+  "one_prime_mixed_captured_count": 13,
+  "one_prime_mixed_missing_primes": [
+    6868801,
+    107158921,
+    165479161,
+    942584161
+  ],
+  "minimum_distinct_prime_support_histogram": {
+    "1": 13,
+    "2": 3,
+    "3": 1
+  },
+  "two_prime_mixed_missing_primes": [
+    942584161
+  ],
+  "composite_factor_required_records": [
+    {
+      "prime": 6868801,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 2,
+        "k": 3,
+        "q": 11,
+        "source_denominator": 6296401,
+        "factor": 3057,
+        "factorization": {
+          "3": 1,
+          "1019": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 6296401,
+        "k": 3,
+        "q": 11,
+        "factor": 3057,
+        "gap": 3335
+      },
+      "stored_factor_factorization": {
+        "3": 1,
+        "1019": 1
+      }
+    },
+    {
+      "prime": 107158921,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 2,
+        "k": 2,
+        "q": 7,
+        "source_denominator": 93764056,
+        "factor": 5732,
+        "factorization": {
+          "2": 2,
+          "1433": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 93764056,
+        "k": 2,
+        "q": 7,
+        "factor": 5732,
+        "gap": 6551
+      },
+      "stored_factor_factorization": {
+        "2": 2,
+        "1433": 1
+      }
+    },
+    {
+      "prime": 165479161,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 2,
+        "k": 30,
+        "q": 119,
+        "source_denominator": 164100168,
+        "factor": 14517,
+        "factorization": {
+          "3": 2,
+          "1613": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 162524176,
+        "k": 14,
+        "q": 55,
+        "factor": 5719,
+        "gap": 5823
+      },
+      "stored_factor_factorization": {
+        "7": 1,
+        "19": 1,
+        "43": 1
+      }
+    },
+    {
+      "prime": 942584161,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 3,
+        "k": 10,
+        "q": 39,
+        "source_denominator": 919019557,
+        "factor": 123005,
+        "factorization": {
+          "5": 1,
+          "73": 1,
+          "337": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 919019557,
+        "k": 10,
+        "q": 39,
+        "factor": 123005,
+        "gap": 126159
+      },
+      "stored_factor_factorization": {
+        "5": 1,
+        "73": 1,
+        "337": 1
+      }
+    }
+  ],
+  "records": [
+    {
+      "prime": 1429201,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 1071901,
+        "factor": 17
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 1071901,
+        "factor": 17,
+        "factorization": {
+          "17": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 1071901,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "gap": 23
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 2031121,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 1523341,
+        "factor": 29
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 1523341,
+        "factor": 29,
+        "factorization": {
+          "29": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 1523341,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "gap": 39
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 6868801,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 2,
+        "k": 3,
+        "q": 11,
+        "source_denominator": 6296401,
+        "factor": 3057,
+        "factorization": {
+          "3": 1,
+          "1019": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 6296401,
+        "k": 3,
+        "q": 11,
+        "factor": 3057,
+        "gap": 3335
+      },
+      "stored_factor_factorization": {
+        "3": 1,
+        "1019": 1
+      }
+    },
+    {
+      "prime": 8243041,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 6182281,
+        "factor": 281
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 6182281,
+        "factor": 281,
+        "factorization": {
+          "281": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 6182281,
+        "k": 1,
+        "q": 3,
+        "factor": 281,
+        "gap": 375
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 99532801,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 74649601,
+        "factor": 17
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 74649601,
+        "factor": 17,
+        "factorization": {
+          "17": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 74649601,
+        "k": 1,
+        "q": 3,
+        "factor": 17,
+        "gap": 23
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 107158921,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 2,
+        "k": 2,
+        "q": 7,
+        "source_denominator": 93764056,
+        "factor": 5732,
+        "factorization": {
+          "2": 2,
+          "1433": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 93764056,
+        "k": 2,
+        "q": 7,
+        "factor": 5732,
+        "gap": 6551
+      },
+      "stored_factor_factorization": {
+        "2": 2,
+        "1433": 1
+      }
+    },
+    {
+      "prime": 134632801,
+      "one_prime_mixed_witness": {
+        "k": 2,
+        "q": 7,
+        "source_denominator": 117803701,
+        "factor": 41
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 2,
+        "q": 7,
+        "source_denominator": 117803701,
+        "factor": 41,
+        "factorization": {
+          "41": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 117803701,
+        "k": 2,
+        "q": 7,
+        "factor": 41,
+        "gap": 47
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 165479161,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 2,
+        "k": 30,
+        "q": 119,
+        "source_denominator": 164100168,
+        "factor": 14517,
+        "factorization": {
+          "3": 2,
+          "1613": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 162524176,
+        "k": 14,
+        "q": 55,
+        "factor": 5719,
+        "gap": 5823
+      },
+      "stored_factor_factorization": {
+        "7": 1,
+        "19": 1,
+        "43": 1
+      }
+    },
+    {
+      "prime": 237354121,
+      "one_prime_mixed_witness": {
+        "k": 5,
+        "q": 19,
+        "source_denominator": 225486415,
+        "factor": 113
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 5,
+        "q": 19,
+        "source_denominator": 225486415,
+        "factor": 113,
+        "factorization": {
+          "113": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 225486415,
+        "k": 5,
+        "q": 19,
+        "factor": 113,
+        "gap": 119
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 255844681,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 191883511,
+        "factor": 1571
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 191883511,
+        "factor": 1571,
+        "factorization": {
+          "1571": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 191883511,
+        "k": 1,
+        "q": 3,
+        "factor": 1571,
+        "gap": 2095
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 511304641,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 383478481,
+        "factor": 137
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 383478481,
+        "factor": 137,
+        "factorization": {
+          "137": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 383478481,
+        "k": 1,
+        "q": 3,
+        "factor": 137,
+        "gap": 183
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 608848321,
+      "one_prime_mixed_witness": {
+        "k": 2,
+        "q": 7,
+        "source_denominator": 532742281,
+        "factor": 15889
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 2,
+        "q": 7,
+        "source_denominator": 532742281,
+        "factor": 15889,
+        "factorization": {
+          "15889": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 532742281,
+        "k": 2,
+        "q": 7,
+        "factor": 15889,
+        "gap": 18159
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 625826881,
+      "one_prime_mixed_witness": {
+        "k": 3,
+        "q": 11,
+        "source_denominator": 573674641,
+        "factor": 11087
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 3,
+        "q": 11,
+        "source_denominator": 573674641,
+        "factor": 11087,
+        "factorization": {
+          "11087": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 573674641,
+        "k": 3,
+        "q": 11,
+        "factor": 11087,
+        "gap": 12095
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 633393601,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 475045201,
+        "factor": 29
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 475045201,
+        "factor": 29,
+        "factorization": {
+          "29": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 475045201,
+        "k": 1,
+        "q": 3,
+        "factor": 29,
+        "gap": 39
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 684029329,
+      "one_prime_mixed_witness": {
+        "k": 4,
+        "q": 15,
+        "source_denominator": 641277496,
+        "factor": 153269
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 4,
+        "q": 15,
+        "source_denominator": 641277496,
+        "factor": 153269,
+        "factorization": {
+          "153269": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 627026885,
+        "k": 3,
+        "q": 11,
+        "factor": 285,
+        "gap": 311
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 754987921,
+      "one_prime_mixed_witness": {
+        "k": 1,
+        "q": 3,
+        "source_denominator": 566240941,
+        "factor": 9929
+      },
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 1,
+        "k": 1,
+        "q": 3,
+        "source_denominator": 566240941,
+        "factor": 8147,
+        "factorization": {
+          "8147": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 566240941,
+        "k": 1,
+        "q": 3,
+        "factor": 8147,
+        "gap": 10863
+      },
+      "stored_factor_factorization": null
+    },
+    {
+      "prime": 942584161,
+      "one_prime_mixed_witness": null,
+      "minimum_support_mixed_witness": {
+        "distinct_prime_support": 3,
+        "k": 10,
+        "q": 39,
+        "source_denominator": 919019557,
+        "factor": 123005,
+        "factorization": {
+          "5": 1,
+          "73": 1,
+          "337": 1
+        }
+      },
+      "stored_mixed_factor_descent": {
+        "source_denominator": 919019557,
+        "k": 10,
+        "q": 39,
+        "factor": 123005,
+        "gap": 126159
+      },
+      "stored_factor_factorization": {
+        "5": 1,
+        "73": 1,
+        "337": 1
+      }
+    }
+  ]
+}

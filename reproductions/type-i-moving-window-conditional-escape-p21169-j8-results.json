@@ -1,0 +1,515 @@
+{
+  "arithmetic": "exact forced-factor extraction, complete Type I square-divisor residue sets, and exact local admissibility checks",
+  "scope_note": "Conditional statement only. Dickson's prime-tuples conjecture or Schinzel's Hypothesis H for the displayed affine forms is required to obtain infinitely many actual primes.",
+  "seed_prime": 21169,
+  "window_j": 8,
+  "max_split_depth": 8,
+  "conditional_escape": {
+    "window_gap_modulus": 1126568520,
+    "seed_residue": 21169,
+    "parameterization": "p=(Q*multiplier)k+(Q*offset+seed_residue), x_j=fixed_factor_j*L_j(k)",
+    "multiplier": 4,
+    "offset": 1,
+    "branch_path": [
+      {
+        "prime": 2,
+        "residue": 1
+      },
+      {
+        "prime": 2,
+        "residue": 0
+      }
+    ],
+    "covering_primes": [],
+    "forms": [
+      {
+        "coefficient": 4506274080,
+        "constant": 1126589689,
+        "label": "p"
+      },
+      {
+        "coefficient": 1126568520,
+        "constant": 281647423,
+        "label": "L_1"
+      },
+      {
+        "coefficient": 140821065,
+        "constant": 35205928,
+        "label": "L_2"
+      },
+      {
+        "coefficient": 75104568,
+        "constant": 18776495,
+        "label": "L_3"
+      },
+      {
+        "coefficient": 563284260,
+        "constant": 140823713,
+        "label": "L_4"
+      },
+      {
+        "coefficient": 1126568520,
+        "constant": 281647427,
+        "label": "L_5"
+      },
+      {
+        "coefficient": 93880710,
+        "constant": 23470619,
+        "label": "L_6"
+      },
+      {
+        "coefficient": 160938360,
+        "constant": 40235347,
+        "label": "L_7"
+      },
+      {
+        "coefficient": 112656852,
+        "constant": 28164743,
+        "label": "L_8"
+      }
+    ],
+    "rows": [
+      {
+        "j": 1,
+        "gap": 3,
+        "fixed_factor": 1,
+        "fixed_factorization": [],
+        "cofactor_residue": 1,
+        "target": 2,
+        "model_divisor_residue_count": 1,
+        "cofactor_form": {
+          "coefficient": 1126568520,
+          "constant": 281647423,
+          "label": "L_1"
+        }
+      },
+      {
+        "j": 2,
+        "gap": 7,
+        "fixed_factor": 8,
+        "fixed_factorization": [
+          [
+            2,
+            3
+          ]
+        ],
+        "cofactor_residue": 2,
+        "target": 5,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 140821065,
+          "constant": 35205928,
+          "label": "L_2"
+        }
+      },
+      {
+        "j": 3,
+        "gap": 11,
+        "fixed_factor": 15,
+        "fixed_factorization": [
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "cofactor_residue": 1,
+        "target": 8,
+        "model_divisor_residue_count": 5,
+        "cofactor_form": {
+          "coefficient": 75104568,
+          "constant": 18776495,
+          "label": "L_3"
+        }
+      },
+      {
+        "j": 4,
+        "gap": 15,
+        "fixed_factor": 2,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ]
+        ],
+        "cofactor_residue": 8,
+        "target": 11,
+        "model_divisor_residue_count": 4,
+        "cofactor_form": {
+          "coefficient": 563284260,
+          "constant": 140823713,
+          "label": "L_4"
+        }
+      },
+      {
+        "j": 5,
+        "gap": 19,
+        "fixed_factor": 1,
+        "fixed_factorization": [],
+        "cofactor_residue": 15,
+        "target": 14,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 1126568520,
+          "constant": 281647427,
+          "label": "L_5"
+        }
+      },
+      {
+        "j": 6,
+        "gap": 23,
+        "fixed_factor": 12,
+        "fixed_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "cofactor_residue": 16,
+        "target": 17,
+        "model_divisor_residue_count": 11,
+        "cofactor_form": {
+          "coefficient": 93880710,
+          "constant": 23470619,
+          "label": "L_6"
+        }
+      },
+      {
+        "j": 7,
+        "gap": 27,
+        "fixed_factor": 7,
+        "fixed_factorization": [
+          [
+            7,
+            1
+          ]
+        ],
+        "cofactor_residue": 1,
+        "target": 20,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 160938360,
+          "constant": 40235347,
+          "label": "L_7"
+        }
+      },
+      {
+        "j": 8,
+        "gap": 31,
+        "fixed_factor": 10,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "cofactor_residue": 3,
+        "target": 23,
+        "model_divisor_residue_count": 24,
+        "cofactor_form": {
+          "coefficient": 112656852,
+          "constant": 28164743,
+          "label": "L_8"
+        }
+      }
+    ]
+  },
+  "one_private_prime_closure": {
+    "next_window_j": 9,
+    "gap": 35,
+    "all_residue_classes_closed": true,
+    "rows": [
+      {
+        "gap_residue": 0,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 1,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 2,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 3,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 4,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 5,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 6,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 7,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 8,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 9,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 10,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 11,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 12,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 13,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 14,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 15,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 16,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 17,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 18,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 19,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 20,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 21,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 22,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 23,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 24,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 25,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 26,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 27,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 28,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 29,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 30,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 31,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 32,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 33,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      },
+      {
+        "gap_residue": 34,
+        "closed": true,
+        "reason": "type-i-target",
+        "fixed_factor": 5301,
+        "target": 26,
+        "fixed_factor_witness": 2511
+      }
+    ]
+  }
+}

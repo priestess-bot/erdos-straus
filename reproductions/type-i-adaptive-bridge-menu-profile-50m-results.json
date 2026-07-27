@@ -1,0 +1,521 @@
+{
+  "arithmetic": "for every stated residual and every bridge E in the finite menu, enumerate every odd s|E-1 with R=(E-1)/s>=3; enforce p=s mod Lambda(E), factor K=(pR+1)/4, enumerate BC|K with B<=b_cap, and reconstruct every selected Type I edge exactly",
+  "scope_note": "A complete finite audit of one bridge menu. The adaptive shift is derived from E-1, but a fixed finite E menu is not a universal selector.",
+  "prime_limit": 50000017,
+  "input_residual_count": 35,
+  "E_menu": [
+    58,
+    352,
+    414,
+    676,
+    722,
+    928,
+    1442,
+    1540,
+    2080,
+    2576,
+    2704,
+    2800,
+    3276,
+    5540,
+    5776,
+    7776
+  ],
+  "b_cap": 7,
+  "captured_count": 35,
+  "misses": [],
+  "selected_E_histogram": {
+    "58": 2,
+    "352": 6,
+    "414": 1,
+    "676": 6,
+    "722": 1,
+    "928": 1,
+    "1442": 1,
+    "1540": 1,
+    "2080": 1,
+    "2576": 2,
+    "2704": 2,
+    "2800": 3,
+    "3276": 1,
+    "5540": 1,
+    "5776": 4,
+    "7776": 2
+  },
+  "selected_shift_histogram": {
+    "3": 2,
+    "5": 2,
+    "7": 2,
+    "9": 16,
+    "11": 1,
+    "17": 2,
+    "25": 7,
+    "29": 1,
+    "105": 2
+  },
+  "selected_B_histogram": {
+    "1": 18,
+    "2": 5,
+    "3": 4,
+    "4": 1,
+    "5": 4,
+    "7": 3
+  },
+  "records": [
+    {
+      "prime": 1083289,
+      "witness": {
+        "E": 3276,
+        "shift": 25,
+        "R": 131,
+        "B": 1,
+        "C": 19355,
+        "H": 1833,
+        "gap": 591,
+        "source_denominator": 1083264
+      }
+    },
+    {
+      "prime": 1103449,
+      "witness": {
+        "E": 676,
+        "shift": 9,
+        "R": 75,
+        "B": 7,
+        "C": 20669,
+        "H": 143,
+        "gap": 54015,
+        "source_denominator": 1103440
+      }
+    },
+    {
+      "prime": 2469289,
+      "witness": {
+        "E": 352,
+        "shift": 9,
+        "R": 39,
+        "B": 1,
+        "C": 29,
+        "H": 830192,
+        "gap": 3,
+        "source_denominator": 2469280
+      }
+    },
+    {
+      "prime": 3389929,
+      "witness": {
+        "E": 7776,
+        "shift": 25,
+        "R": 311,
+        "B": 5,
+        "C": 172266,
+        "H": 306,
+        "gap": 55391,
+        "source_denominator": 3389904
+      }
+    },
+    {
+      "prime": 3942409,
+      "witness": {
+        "E": 1540,
+        "shift": 9,
+        "R": 171,
+        "B": 5,
+        "C": 49643,
+        "H": 679,
+        "gap": 29031,
+        "source_denominator": 3942400
+      }
+    },
+    {
+      "prime": 4762489,
+      "witness": {
+        "E": 5776,
+        "shift": 25,
+        "R": 231,
+        "B": 1,
+        "C": 635,
+        "H": 433124,
+        "gap": 11,
+        "source_denominator": 4762464
+      }
+    },
+    {
+      "prime": 5770249,
+      "witness": {
+        "E": 58,
+        "shift": 3,
+        "R": 19,
+        "B": 1,
+        "C": 15689,
+        "H": 1747,
+        "gap": 3303,
+        "source_denominator": 5770246
+      }
+    },
+    {
+      "prime": 10269529,
+      "witness": {
+        "E": 5776,
+        "shift": 105,
+        "R": 55,
+        "B": 1,
+        "C": 57076,
+        "H": 2474,
+        "gap": 4151,
+        "source_denominator": 10269424
+      }
+    },
+    {
+      "prime": 11635369,
+      "witness": {
+        "E": 352,
+        "shift": 9,
+        "R": 39,
+        "B": 1,
+        "C": 34232,
+        "H": 3314,
+        "gap": 3511,
+        "source_denominator": 11635360
+      }
+    },
+    {
+      "prime": 13185769,
+      "witness": {
+        "E": 414,
+        "shift": 7,
+        "R": 59,
+        "B": 7,
+        "C": 250309,
+        "H": 111,
+        "gap": 831535,
+        "source_denominator": 13185762
+      }
+    },
+    {
+      "prime": 13595929,
+      "witness": {
+        "E": 676,
+        "shift": 9,
+        "R": 75,
+        "B": 1,
+        "C": 1631,
+        "H": 156299,
+        "gap": 87,
+        "source_denominator": 13595920
+      }
+    },
+    {
+      "prime": 13782409,
+      "witness": {
+        "E": 2704,
+        "shift": 17,
+        "R": 159,
+        "B": 1,
+        "C": 19358,
+        "H": 28301,
+        "gap": 487,
+        "source_denominator": 13782392
+      }
+    },
+    {
+      "prime": 14397289,
+      "witness": {
+        "E": 2576,
+        "shift": 25,
+        "R": 103,
+        "B": 2,
+        "C": 16216,
+        "H": 11431,
+        "gap": 2519,
+        "source_denominator": 14397264
+      }
+    },
+    {
+      "prime": 14823769,
+      "witness": {
+        "E": 722,
+        "shift": 7,
+        "R": 103,
+        "B": 2,
+        "C": 1178,
+        "H": 162017,
+        "gap": 183,
+        "source_denominator": 14823762
+      }
+    },
+    {
+      "prime": 16218409,
+      "witness": {
+        "E": 352,
+        "shift": 9,
+        "R": 39,
+        "B": 1,
+        "C": 2486,
+        "H": 63608,
+        "gap": 255,
+        "source_denominator": 16218400
+      }
+    },
+    {
+      "prime": 16253449,
+      "witness": {
+        "E": 2800,
+        "shift": 9,
+        "R": 311,
+        "B": 3,
+        "C": 31506,
+        "H": 13370,
+        "gap": 3647,
+        "source_denominator": 16253440
+      }
+    },
+    {
+      "prime": 16977769,
+      "witness": {
+        "E": 928,
+        "shift": 9,
+        "R": 103,
+        "B": 7,
+        "C": 958,
+        "H": 65192,
+        "gap": 1823,
+        "source_denominator": 16977760
+      }
+    },
+    {
+      "prime": 19158409,
+      "witness": {
+        "E": 5776,
+        "shift": 25,
+        "R": 231,
+        "B": 5,
+        "C": 164,
+        "H": 1349266,
+        "gap": 71,
+        "source_denominator": 19158384
+      }
+    },
+    {
+      "prime": 20337529,
+      "witness": {
+        "E": 58,
+        "shift": 3,
+        "R": 19,
+        "B": 1,
+        "C": 2610899,
+        "H": 37,
+        "gap": 549663,
+        "source_denominator": 20337526
+      }
+    },
+    {
+      "prime": 20878729,
+      "witness": {
+        "E": 1442,
+        "shift": 11,
+        "R": 131,
+        "B": 3,
+        "C": 2529,
+        "H": 90125,
+        "gap": 695,
+        "source_denominator": 20878718
+      }
+    },
+    {
+      "prime": 22182169,
+      "witness": {
+        "E": 352,
+        "shift": 9,
+        "R": 39,
+        "B": 1,
+        "C": 4748,
+        "H": 45551,
+        "gap": 487,
+        "source_denominator": 22182160
+      }
+    },
+    {
+      "prime": 25935529,
+      "witness": {
+        "E": 2080,
+        "shift": 9,
+        "R": 231,
+        "B": 5,
+        "C": 395,
+        "H": 758368,
+        "gap": 171,
+        "source_denominator": 25935520
+      }
+    },
+    {
+      "prime": 26459689,
+      "witness": {
+        "E": 676,
+        "shift": 9,
+        "R": 75,
+        "B": 1,
+        "C": 3431,
+        "H": 144599,
+        "gap": 183,
+        "source_denominator": 26459680
+      }
+    },
+    {
+      "prime": 28418329,
+      "witness": {
+        "E": 2800,
+        "shift": 9,
+        "R": 311,
+        "B": 3,
+        "C": 406,
+        "H": 1814060,
+        "gap": 47,
+        "source_denominator": 28418320
+      }
+    },
+    {
+      "prime": 29582809,
+      "witness": {
+        "E": 2576,
+        "shift": 25,
+        "R": 103,
+        "B": 4,
+        "C": 37,
+        "H": 5147009,
+        "gap": 23,
+        "source_denominator": 29582784
+      }
+    },
+    {
+      "prime": 32499289,
+      "witness": {
+        "E": 2704,
+        "shift": 17,
+        "R": 159,
+        "B": 1,
+        "C": 1391,
+        "H": 928718,
+        "gap": 35,
+        "source_denominator": 32499272
+      }
+    },
+    {
+      "prime": 33035209,
+      "witness": {
+        "E": 352,
+        "shift": 9,
+        "R": 39,
+        "B": 1,
+        "C": 68,
+        "H": 4736666,
+        "gap": 7,
+        "source_denominator": 33035200
+      }
+    },
+    {
+      "prime": 35459449,
+      "witness": {
+        "E": 7776,
+        "shift": 25,
+        "R": 311,
+        "B": 2,
+        "C": 4461120,
+        "H": 309,
+        "gap": 229511,
+        "source_denominator": 35459424
+      }
+    },
+    {
+      "prime": 36583369,
+      "witness": {
+        "E": 352,
+        "shift": 9,
+        "R": 39,
+        "B": 2,
+        "C": 524,
+        "H": 340351,
+        "gap": 215,
+        "source_denominator": 36583360
+      }
+    },
+    {
+      "prime": 37467049,
+      "witness": {
+        "E": 5540,
+        "shift": 29,
+        "R": 191,
+        "B": 1,
+        "C": 37770,
+        "H": 47367,
+        "gap": 791,
+        "source_denominator": 37467020
+      }
+    },
+    {
+      "prime": 40595209,
+      "witness": {
+        "E": 676,
+        "shift": 5,
+        "R": 135,
+        "B": 1,
+        "C": 1586,
+        "H": 863864,
+        "gap": 47,
+        "source_denominator": 40595204
+      }
+    },
+    {
+      "prime": 40944649,
+      "witness": {
+        "E": 5776,
+        "shift": 105,
+        "R": 55,
+        "B": 1,
+        "C": 5165036,
+        "H": 109,
+        "gap": 375639,
+        "source_denominator": 40944544
+      }
+    },
+    {
+      "prime": 42555769,
+      "witness": {
+        "E": 676,
+        "shift": 9,
+        "R": 75,
+        "B": 1,
+        "C": 2668631,
+        "H": 299,
+        "gap": 142327,
+        "source_denominator": 42555760
+      }
+    },
+    {
+      "prime": 43827529,
+      "witness": {
+        "E": 676,
+        "shift": 5,
+        "R": 135,
+        "B": 2,
+        "C": 464,
+        "H": 1593943,
+        "gap": 55,
+        "source_denominator": 43827524
+      }
+    },
+    {
+      "prime": 44502649,
+      "witness": {
+        "E": 2800,
+        "shift": 9,
+        "R": 311,
+        "B": 3,
+        "C": 43635,
+        "H": 26432,
+        "gap": 5051,
+        "source_denominator": 44502640
+      }
+    }
+  ]
+}

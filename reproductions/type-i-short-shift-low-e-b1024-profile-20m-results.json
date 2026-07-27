@@ -1,0 +1,259 @@
+{
+  "arithmetic": "for every stated residual and each short shift s, factor n=p-s, enumerate every even E<=e_cap allowed by E|n^2/gcd(E,4) with R=(E-1)/s integral, factor K=(pR+1)/4, enumerate all BC|K with B<=b_cap, and exactly reconstruct every selected Type I edge",
+  "scope_note": "A complete finite audit of one stated short-shift and low-E box. A miss excludes only its shifts, bridge cap, and B cap; it does not exclude larger or different source states.",
+  "prime_limit": 20000017,
+  "input_residual_count": 18,
+  "shifts": [
+    3,
+    9,
+    25,
+    49,
+    263
+  ],
+  "e_cap": 1000000,
+  "b_cap": 1024,
+  "captured_count": 17,
+  "misses": [
+    14823769
+  ],
+  "selected_shift_histogram": {
+    "3": 1,
+    "9": 12,
+    "25": 4
+  },
+  "selected_B_histogram": {
+    "1": 7,
+    "3": 1,
+    "5": 4,
+    "7": 3,
+    "85": 1,
+    "232": 1
+  },
+  "records": [
+    {
+      "prime": 1083289,
+      "witness": {
+        "shift": 25,
+        "R": 131,
+        "E": 3276,
+        "B": 1,
+        "C": 19355,
+        "H": 1833,
+        "gap": 591,
+        "source_denominator": 1083264
+      }
+    },
+    {
+      "prime": 1103449,
+      "witness": {
+        "shift": 9,
+        "R": 75,
+        "E": 676,
+        "B": 7,
+        "C": 20669,
+        "H": 143,
+        "gap": 54015,
+        "source_denominator": 1103440
+      }
+    },
+    {
+      "prime": 2469289,
+      "witness": {
+        "shift": 9,
+        "R": 39,
+        "E": 352,
+        "B": 1,
+        "C": 29,
+        "H": 830192,
+        "gap": 3,
+        "source_denominator": 2469280
+      }
+    },
+    {
+      "prime": 3389929,
+      "witness": {
+        "shift": 25,
+        "R": 311,
+        "E": 7776,
+        "B": 5,
+        "C": 172266,
+        "H": 306,
+        "gap": 55391,
+        "source_denominator": 3389904
+      }
+    },
+    {
+      "prime": 3942409,
+      "witness": {
+        "shift": 9,
+        "R": 171,
+        "E": 1540,
+        "B": 5,
+        "C": 49643,
+        "H": 679,
+        "gap": 29031,
+        "source_denominator": 3942400
+      }
+    },
+    {
+      "prime": 4762489,
+      "witness": {
+        "shift": 9,
+        "R": 131,
+        "E": 1180,
+        "B": 3,
+        "C": 1481,
+        "H": 35105,
+        "gap": 407,
+        "source_denominator": 4762480
+      }
+    },
+    {
+      "prime": 5770249,
+      "witness": {
+        "shift": 3,
+        "R": 19,
+        "E": 58,
+        "B": 1,
+        "C": 15689,
+        "H": 1747,
+        "gap": 3303,
+        "source_denominator": 5770246
+      }
+    },
+    {
+      "prime": 10269529,
+      "witness": {
+        "shift": 25,
+        "R": 215,
+        "E": 5376,
+        "B": 7,
+        "C": 249,
+        "H": 316688,
+        "gap": 227,
+        "source_denominator": 10269504
+      }
+    },
+    {
+      "prime": 11635369,
+      "witness": {
+        "shift": 9,
+        "R": 39,
+        "E": 352,
+        "B": 1,
+        "C": 34232,
+        "H": 3314,
+        "gap": 3511,
+        "source_denominator": 11635360
+      }
+    },
+    {
+      "prime": 13185769,
+      "witness": {
+        "shift": 9,
+        "R": 711,
+        "E": 6400,
+        "B": 5,
+        "C": 647,
+        "H": 724504,
+        "gap": 91,
+        "source_denominator": 13185760
+      }
+    },
+    {
+      "prime": 13595929,
+      "witness": {
+        "shift": 9,
+        "R": 75,
+        "E": 676,
+        "B": 1,
+        "C": 1631,
+        "H": 156299,
+        "gap": 87,
+        "source_denominator": 13595920
+      }
+    },
+    {
+      "prime": 13782409,
+      "witness": {
+        "shift": 9,
+        "R": 131,
+        "E": 1180,
+        "B": 1,
+        "C": 61537,
+        "H": 7335,
+        "gap": 1879,
+        "source_denominator": 13782400
+      }
+    },
+    {
+      "prime": 14397289,
+      "witness": {
+        "shift": 9,
+        "R": 711,
+        "E": 6400,
+        "B": 85,
+        "C": 17,
+        "H": 1771016,
+        "gap": 691,
+        "source_denominator": 14397280
+      }
+    },
+    {
+      "prime": 14823769,
+      "witness": null
+    },
+    {
+      "prime": 16218409,
+      "witness": {
+        "shift": 9,
+        "R": 39,
+        "E": 352,
+        "B": 1,
+        "C": 2486,
+        "H": 63608,
+        "gap": 255,
+        "source_denominator": 16218400
+      }
+    },
+    {
+      "prime": 16253449,
+      "witness": {
+        "shift": 9,
+        "R": 199,
+        "E": 1792,
+        "B": 232,
+        "C": 4568,
+        "H": 763,
+        "gap": 4942071,
+        "source_denominator": 16253440
+      }
+    },
+    {
+      "prime": 16977769,
+      "witness": {
+        "shift": 9,
+        "R": 103,
+        "E": 928,
+        "B": 7,
+        "C": 958,
+        "H": 65192,
+        "gap": 1823,
+        "source_denominator": 16977760
+      }
+    },
+    {
+      "prime": 19158409,
+      "witness": {
+        "shift": 25,
+        "R": 231,
+        "E": 5776,
+        "B": 5,
+        "C": 164,
+        "H": 1349266,
+        "gap": 71,
+        "source_denominator": 19158384
+      }
+    }
+  ]
+}

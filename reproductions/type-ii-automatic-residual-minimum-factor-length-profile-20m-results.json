@@ -1,0 +1,2168 @@
+{
+  "arithmetic": "exact SPF factorization, complete k=1 p-1 divisor scan, and unbounded-first-scale shared-divisor scan through the gap cap",
+  "scope_note": "This is a finite residual funnel. k>1 witnesses remain marked Type II representations rather than unmarked descent steps.",
+  "prime_limit": 20000000,
+  "gap_cap": 239,
+  "core_prime_count": 158595,
+  "counts": {
+    "four_auto_gap_residual": 1704,
+    "k1_hit": 1558,
+    "non_k1": 146,
+    "non_k1_shared_hit": 146
+  },
+  "non_k1_scale_histogram": {
+    "2": 5,
+    "3": 10,
+    "4": 4,
+    "5": 2,
+    "7": 2,
+    "9": 30,
+    "11": 1,
+    "15": 2,
+    "16": 1,
+    "24": 1,
+    "25": 3,
+    "37": 1,
+    "44": 1,
+    "45": 1,
+    "49": 2,
+    "51": 3,
+    "56": 1,
+    "67": 2,
+    "68": 1,
+    "69": 1,
+    "71": 1,
+    "73": 1,
+    "75": 1,
+    "81": 1,
+    "84": 1,
+    "99": 1,
+    "121": 1,
+    "169": 1,
+    "205": 1,
+    "219": 1,
+    "247": 1,
+    "329": 1,
+    "361": 1,
+    "409": 1,
+    "475": 1,
+    "585": 1,
+    "737": 1,
+    "823": 1,
+    "879": 1,
+    "1129": 1,
+    "1224": 1,
+    "1264": 1,
+    "1423": 1,
+    "1537": 1,
+    "1583": 1,
+    "2379": 1,
+    "3395": 1,
+    "4813": 1,
+    "4951": 1,
+    "6207": 1,
+    "7165": 1,
+    "7465": 1,
+    "8193": 1,
+    "9459": 1,
+    "10475": 1,
+    "13071": 1,
+    "14529": 1,
+    "14959": 1,
+    "15219": 1,
+    "17439": 1,
+    "24127": 1,
+    "25713": 1,
+    "27049": 1,
+    "29961": 1,
+    "37819": 1,
+    "47547": 1,
+    "60679": 1,
+    "70887": 1,
+    "79231": 1,
+    "83659": 1,
+    "129859": 1,
+    "151363": 1,
+    "180529": 1,
+    "195207": 1,
+    "199939": 1,
+    "202239": 1,
+    "219627": 1,
+    "229707": 1,
+    "245107": 1,
+    "255139": 1,
+    "260811": 1,
+    "271815": 1,
+    "285619": 1,
+    "285849": 1,
+    "293043": 1,
+    "296665": 1,
+    "298303": 1,
+    "312667": 1,
+    "313119": 1,
+    "325075": 1,
+    "473487": 1,
+    "821769": 1
+  },
+  "non_k1_records": [
+    {
+      "prime": 67369,
+      "gap": 35,
+      "first_scale": 7,
+      "shared_divisor": 246,
+      "certificate_divisor": 369
+    },
+    {
+      "prime": 85369,
+      "gap": 15,
+      "first_scale": 1423,
+      "shared_divisor": 21346,
+      "certificate_divisor": 3284
+    },
+    {
+      "prime": 163249,
+      "gap": 31,
+      "first_scale": 81,
+      "shared_divisor": 2512,
+      "certificate_divisor": 100
+    },
+    {
+      "prime": 214729,
+      "gap": 27,
+      "first_scale": 75,
+      "shared_divisor": 2026,
+      "certificate_divisor": 1013
+    },
+    {
+      "prime": 225289,
+      "gap": 31,
+      "first_scale": 169,
+      "shared_divisor": 5240,
+      "certificate_divisor": 524
+    },
+    {
+      "prime": 297049,
+      "gap": 15,
+      "first_scale": 4951,
+      "shared_divisor": 74266,
+      "certificate_divisor": 284
+    },
+    {
+      "prime": 372409,
+      "gap": 15,
+      "first_scale": 6207,
+      "shared_divisor": 93106,
+      "certificate_divisor": 14324
+    },
+    {
+      "prime": 454969,
+      "gap": 31,
+      "first_scale": 4,
+      "shared_divisor": 125,
+      "certificate_divisor": 20
+    },
+    {
+      "prime": 521929,
+      "gap": 39,
+      "first_scale": 44,
+      "shared_divisor": 1717,
+      "certificate_divisor": 2
+    },
+    {
+      "prime": 532249,
+      "gap": 83,
+      "first_scale": 121,
+      "shared_divisor": 10044,
+      "certificate_divisor": 25281
+    },
+    {
+      "prime": 629689,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 50
+    },
+    {
+      "prime": 784249,
+      "gap": 15,
+      "first_scale": 13071,
+      "shared_divisor": 196066,
+      "certificate_divisor": 30164
+    },
+    {
+      "prime": 852889,
+      "gap": 15,
+      "first_scale": 37,
+      "shared_divisor": 556,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 878089,
+      "gap": 51,
+      "first_scale": 9,
+      "shared_divisor": 460,
+      "certificate_divisor": 34445
+    },
+    {
+      "prime": 967129,
+      "gap": 47,
+      "first_scale": 361,
+      "shared_divisor": 16968,
+      "certificate_divisor": 21
+    },
+    {
+      "prime": 1046329,
+      "gap": 15,
+      "first_scale": 17439,
+      "shared_divisor": 261586,
+      "certificate_divisor": 40244
+    },
+    {
+      "prime": 1093129,
+      "gap": 15,
+      "first_scale": 3,
+      "shared_divisor": 46,
+      "certificate_divisor": 299
+    },
+    {
+      "prime": 1178809,
+      "gap": 31,
+      "first_scale": 585,
+      "shared_divisor": 18136,
+      "certificate_divisor": 100
+    },
+    {
+      "prime": 1415929,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 650
+    },
+    {
+      "prime": 1447609,
+      "gap": 15,
+      "first_scale": 24127,
+      "shared_divisor": 361906,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 1497049,
+      "gap": 39,
+      "first_scale": 1129,
+      "shared_divisor": 44032,
+      "certificate_divisor": 128
+    },
+    {
+      "prime": 1511449,
+      "gap": 19,
+      "first_scale": 247,
+      "shared_divisor": 4694,
+      "certificate_divisor": 25921
+    },
+    {
+      "prime": 1854889,
+      "gap": 31,
+      "first_scale": 14959,
+      "shared_divisor": 463730,
+      "certificate_divisor": 1580
+    },
+    {
+      "prime": 1936489,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 2020489,
+      "gap": 47,
+      "first_scale": 7165,
+      "shared_divisor": 336756,
+      "certificate_divisor": 633
+    },
+    {
+      "prime": 2097769,
+      "gap": 15,
+      "first_scale": 3,
+      "shared_divisor": 46,
+      "certificate_divisor": 299
+    },
+    {
+      "prime": 2168329,
+      "gap": 19,
+      "first_scale": 67,
+      "shared_divisor": 1274,
+      "certificate_divisor": 6253
+    },
+    {
+      "prime": 2210569,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 49
+    },
+    {
+      "prime": 2254729,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 2269129,
+      "gap": 15,
+      "first_scale": 37819,
+      "shared_divisor": 567286,
+      "certificate_divisor": 89
+    },
+    {
+      "prime": 2392009,
+      "gap": 27,
+      "first_scale": 73,
+      "shared_divisor": 1972,
+      "certificate_divisor": 14297
+    },
+    {
+      "prime": 2516089,
+      "gap": 19,
+      "first_scale": 9459,
+      "shared_divisor": 179722,
+      "certificate_divisor": 1127
+    },
+    {
+      "prime": 2596729,
+      "gap": 39,
+      "first_scale": 219,
+      "shared_divisor": 8542,
+      "certificate_divisor": 2
+    },
+    {
+      "prime": 2669209,
+      "gap": 51,
+      "first_scale": 2379,
+      "shared_divisor": 121330,
+      "certificate_divisor": 275
+    },
+    {
+      "prime": 2671729,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 637
+    },
+    {
+      "prime": 2707609,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 2924
+    },
+    {
+      "prime": 2754889,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 28
+    },
+    {
+      "prime": 2852809,
+      "gap": 15,
+      "first_scale": 47547,
+      "shared_divisor": 713206,
+      "certificate_divisor": 109724
+    },
+    {
+      "prime": 2938489,
+      "gap": 39,
+      "first_scale": 329,
+      "shared_divisor": 12832,
+      "certificate_divisor": 401
+    },
+    {
+      "prime": 2978089,
+      "gap": 19,
+      "first_scale": 1264,
+      "shared_divisor": 24017,
+      "certificate_divisor": 7
+    },
+    {
+      "prime": 2986729,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 7
+    },
+    {
+      "prime": 3021769,
+      "gap": 31,
+      "first_scale": 84,
+      "shared_divisor": 2605,
+      "certificate_divisor": 20
+    },
+    {
+      "prime": 3825649,
+      "gap": 31,
+      "first_scale": 25,
+      "shared_divisor": 776,
+      "certificate_divisor": 85
+    },
+    {
+      "prime": 3942409,
+      "gap": 15,
+      "first_scale": 5,
+      "shared_divisor": 76,
+      "certificate_divisor": 74
+    },
+    {
+      "prime": 4054009,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 884
+    },
+    {
+      "prime": 4219609,
+      "gap": 39,
+      "first_scale": 27049,
+      "shared_divisor": 1054912,
+      "certificate_divisor": 311
+    },
+    {
+      "prime": 4253209,
+      "gap": 15,
+      "first_scale": 70887,
+      "shared_divisor": 1063306,
+      "certificate_divisor": 74
+    },
+    {
+      "prime": 4413049,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 74
+    },
+    {
+      "prime": 4570729,
+      "gap": 19,
+      "first_scale": 3,
+      "shared_divisor": 58,
+      "certificate_divisor": 49
+    },
+    {
+      "prime": 4718569,
+      "gap": 15,
+      "first_scale": 205,
+      "shared_divisor": 3076,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 4753849,
+      "gap": 15,
+      "first_scale": 79231,
+      "shared_divisor": 1188466,
+      "certificate_divisor": 254
+    },
+    {
+      "prime": 4779889,
+      "gap": 31,
+      "first_scale": 24,
+      "shared_divisor": 745,
+      "certificate_divisor": 8
+    },
+    {
+      "prime": 4824649,
+      "gap": 15,
+      "first_scale": 3,
+      "shared_divisor": 46,
+      "certificate_divisor": 299
+    },
+    {
+      "prime": 5019529,
+      "gap": 15,
+      "first_scale": 83659,
+      "shared_divisor": 1254886,
+      "certificate_divisor": 13004
+    },
+    {
+      "prime": 5374009,
+      "gap": 19,
+      "first_scale": 25713,
+      "shared_divisor": 488548,
+      "certificate_divisor": 36311
+    },
+    {
+      "prime": 5397529,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 350
+    },
+    {
+      "prime": 5478169,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 650
+    },
+    {
+      "prime": 5596369,
+      "gap": 31,
+      "first_scale": 180529,
+      "shared_divisor": 5596400,
+      "certificate_divisor": 85
+    },
+    {
+      "prime": 5703889,
+      "gap": 19,
+      "first_scale": 25,
+      "shared_divisor": 476,
+      "certificate_divisor": 49
+    },
+    {
+      "prime": 5886169,
+      "gap": 15,
+      "first_scale": 16,
+      "shared_divisor": 241,
+      "certificate_divisor": 284
+    },
+    {
+      "prime": 5897329,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 20
+    },
+    {
+      "prime": 6254329,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 50
+    },
+    {
+      "prime": 6279289,
+      "gap": 71,
+      "first_scale": 737,
+      "shared_divisor": 52328,
+      "certificate_divisor": 3165
+    },
+    {
+      "prime": 6294649,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 14
+    },
+    {
+      "prime": 6316249,
+      "gap": 35,
+      "first_scale": 1583,
+      "shared_divisor": 55406,
+      "certificate_divisor": 28899
+    },
+    {
+      "prime": 6569161,
+      "gap": 55,
+      "first_scale": 7465,
+      "shared_divisor": 410576,
+      "certificate_divisor": 766
+    },
+    {
+      "prime": 6856249,
+      "gap": 15,
+      "first_scale": 5,
+      "shared_divisor": 76,
+      "certificate_divisor": 1049
+    },
+    {
+      "prime": 7079209,
+      "gap": 15,
+      "first_scale": 15,
+      "shared_divisor": 226,
+      "certificate_divisor": 164
+    },
+    {
+      "prime": 7504249,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 50
+    },
+    {
+      "prime": 7524169,
+      "gap": 31,
+      "first_scale": 60679,
+      "shared_divisor": 1881050,
+      "certificate_divisor": 340
+    },
+    {
+      "prime": 7791529,
+      "gap": 15,
+      "first_scale": 129859,
+      "shared_divisor": 1947886,
+      "certificate_divisor": 404
+    },
+    {
+      "prime": 8009929,
+      "gap": 27,
+      "first_scale": 296665,
+      "shared_divisor": 8009956,
+      "certificate_divisor": 317
+    },
+    {
+      "prime": 8083849,
+      "gap": 59,
+      "first_scale": 2,
+      "shared_divisor": 119,
+      "certificate_divisor": 9
+    },
+    {
+      "prime": 8589289,
+      "gap": 19,
+      "first_scale": 67,
+      "shared_divisor": 1274,
+      "certificate_divisor": 91
+    },
+    {
+      "prime": 8797849,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 910
+    },
+    {
+      "prime": 8965609,
+      "gap": 19,
+      "first_scale": 1537,
+      "shared_divisor": 29204,
+      "certificate_divisor": 1087849
+    },
+    {
+      "prime": 9081769,
+      "gap": 15,
+      "first_scale": 151363,
+      "shared_divisor": 2270446,
+      "certificate_divisor": 62204
+    },
+    {
+      "prime": 9104209,
+      "gap": 19,
+      "first_scale": 7,
+      "shared_divisor": 134,
+      "certificate_divisor": 67
+    },
+    {
+      "prime": 9315289,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 14
+    },
+    {
+      "prime": 9323449,
+      "gap": 35,
+      "first_scale": 4,
+      "shared_divisor": 141,
+      "certificate_divisor": 549
+    },
+    {
+      "prime": 9394009,
+      "gap": 19,
+      "first_scale": 3,
+      "shared_divisor": 58,
+      "certificate_divisor": 7
+    },
+    {
+      "prime": 9711529,
+      "gap": 47,
+      "first_scale": 4,
+      "shared_divisor": 189,
+      "certificate_divisor": 126
+    },
+    {
+      "prime": 9716569,
+      "gap": 27,
+      "first_scale": 3395,
+      "shared_divisor": 91666,
+      "certificate_divisor": 45833
+    },
+    {
+      "prime": 9872809,
+      "gap": 15,
+      "first_scale": 409,
+      "shared_divisor": 6136,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 10170169,
+      "gap": 15,
+      "first_scale": 99,
+      "shared_divisor": 1486,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 10225609,
+      "gap": 35,
+      "first_scale": 49,
+      "shared_divisor": 1716,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 10418809,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 284
+    },
+    {
+      "prime": 10637449,
+      "gap": 15,
+      "first_scale": 2,
+      "shared_divisor": 31,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 10665769,
+      "gap": 15,
+      "first_scale": 51,
+      "shared_divisor": 766,
+      "certificate_divisor": 59
+    },
+    {
+      "prime": 10875769,
+      "gap": 31,
+      "first_scale": 3,
+      "shared_divisor": 94,
+      "certificate_divisor": 1300
+    },
+    {
+      "prime": 10960009,
+      "gap": 15,
+      "first_scale": 25,
+      "shared_divisor": 376,
+      "certificate_divisor": 19364
+    },
+    {
+      "prime": 11052409,
+      "gap": 19,
+      "first_scale": 8193,
+      "shared_divisor": 155668,
+      "certificate_divisor": 5041
+    },
+    {
+      "prime": 11361529,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 140
+    },
+    {
+      "prime": 11712409,
+      "gap": 15,
+      "first_scale": 195207,
+      "shared_divisor": 2928106,
+      "certificate_divisor": 74
+    },
+    {
+      "prime": 11731129,
+      "gap": 19,
+      "first_scale": 15,
+      "shared_divisor": 286,
+      "certificate_divisor": 1573
+    },
+    {
+      "prime": 11835289,
+      "gap": 15,
+      "first_scale": 2,
+      "shared_divisor": 31,
+      "certificate_divisor": 14684
+    },
+    {
+      "prime": 11897449,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 49
+    },
+    {
+      "prime": 11929129,
+      "gap": 43,
+      "first_scale": 49,
+      "shared_divisor": 2108,
+      "certificate_divisor": 961
+    },
+    {
+      "prime": 11996329,
+      "gap": 15,
+      "first_scale": 199939,
+      "shared_divisor": 2999086,
+      "certificate_divisor": 359
+    },
+    {
+      "prime": 12134329,
+      "gap": 15,
+      "first_scale": 202239,
+      "shared_divisor": 3033586,
+      "certificate_divisor": 1004
+    },
+    {
+      "prime": 12150889,
+      "gap": 31,
+      "first_scale": 69,
+      "shared_divisor": 2140,
+      "certificate_divisor": 425
+    },
+    {
+      "prime": 12326521,
+      "gap": 15,
+      "first_scale": 821769,
+      "shared_divisor": 12326536,
+      "certificate_divisor": 2876
+    },
+    {
+      "prime": 12466969,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 12784489,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 1
+    },
+    {
+      "prime": 12853129,
+      "gap": 143,
+      "first_scale": 29961,
+      "shared_divisor": 4284424,
+      "certificate_divisor": 22629
+    },
+    {
+      "prime": 13177609,
+      "gap": 15,
+      "first_scale": 219627,
+      "shared_divisor": 3294406,
+      "certificate_divisor": 74
+    },
+    {
+      "prime": 13334281,
+      "gap": 27,
+      "first_scale": 11,
+      "shared_divisor": 298,
+      "certificate_divisor": 290849
+    },
+    {
+      "prime": 13782409,
+      "gap": 15,
+      "first_scale": 229707,
+      "shared_divisor": 3445606,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 13844329,
+      "gap": 15,
+      "first_scale": 3,
+      "shared_divisor": 46,
+      "certificate_divisor": 134
+    },
+    {
+      "prime": 14706409,
+      "gap": 15,
+      "first_scale": 245107,
+      "shared_divisor": 3676606,
+      "certificate_divisor": 734
+    },
+    {
+      "prime": 15072649,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 4
+    },
+    {
+      "prime": 15308329,
+      "gap": 15,
+      "first_scale": 255139,
+      "shared_divisor": 3827086,
+      "certificate_divisor": 178004
+    },
+    {
+      "prime": 15364969,
+      "gap": 27,
+      "first_scale": 3,
+      "shared_divisor": 82,
+      "certificate_divisor": 41
+    },
+    {
+      "prime": 15405289,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 2590
+    },
+    {
+      "prime": 15408649,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 14
+    },
+    {
+      "prime": 15648649,
+      "gap": 15,
+      "first_scale": 260811,
+      "shared_divisor": 3912166,
+      "certificate_divisor": 12764
+    },
+    {
+      "prime": 15870409,
+      "gap": 15,
+      "first_scale": 68,
+      "shared_divisor": 1021,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 16002529,
+      "gap": 19,
+      "first_scale": 3,
+      "shared_divisor": 58,
+      "certificate_divisor": 146189
+    },
+    {
+      "prime": 16152889,
+      "gap": 27,
+      "first_scale": 51,
+      "shared_divisor": 1378,
+      "certificate_divisor": 53
+    },
+    {
+      "prime": 16267729,
+      "gap": 19,
+      "first_scale": 879,
+      "shared_divisor": 16702,
+      "certificate_divisor": 58457
+    },
+    {
+      "prime": 16287049,
+      "gap": 19,
+      "first_scale": 14529,
+      "shared_divisor": 276052,
+      "certificate_divisor": 24367
+    },
+    {
+      "prime": 16308889,
+      "gap": 15,
+      "first_scale": 271815,
+      "shared_divisor": 4077226,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 16732489,
+      "gap": 15,
+      "first_scale": 51,
+      "shared_divisor": 766,
+      "certificate_divisor": 254
+    },
+    {
+      "prime": 17041369,
+      "gap": 39,
+      "first_scale": 4,
+      "shared_divisor": 157,
+      "certificate_divisor": 8
+    },
+    {
+      "prime": 17075689,
+      "gap": 51,
+      "first_scale": 15219,
+      "shared_divisor": 776170,
+      "certificate_divisor": 275
+    },
+    {
+      "prime": 17137129,
+      "gap": 15,
+      "first_scale": 285619,
+      "shared_divisor": 4284286,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 17145529,
+      "gap": 15,
+      "first_scale": 71,
+      "shared_divisor": 1066,
+      "certificate_divisor": 164
+    },
+    {
+      "prime": 17311849,
+      "gap": 19,
+      "first_scale": 475,
+      "shared_divisor": 9026,
+      "certificate_divisor": 919681
+    },
+    {
+      "prime": 17422969,
+      "gap": 59,
+      "first_scale": 2,
+      "shared_divisor": 119,
+      "certificate_divisor": 567
+    },
+    {
+      "prime": 17473129,
+      "gap": 15,
+      "first_scale": 9,
+      "shared_divisor": 136,
+      "certificate_divisor": 884
+    },
+    {
+      "prime": 17582569,
+      "gap": 15,
+      "first_scale": 293043,
+      "shared_divisor": 4395646,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 17608369,
+      "gap": 19,
+      "first_scale": 823,
+      "shared_divisor": 15638,
+      "certificate_divisor": 54733
+    },
+    {
+      "prime": 17644489,
+      "gap": 47,
+      "first_scale": 4813,
+      "shared_divisor": 226212,
+      "certificate_divisor": 4
+    },
+    {
+      "prime": 17722609,
+      "gap": 31,
+      "first_scale": 285849,
+      "shared_divisor": 8861320,
+      "certificate_divisor": 325
+    },
+    {
+      "prime": 17723689,
+      "gap": 47,
+      "first_scale": 10475,
+      "shared_divisor": 492326,
+      "certificate_divisor": 2388
+    },
+    {
+      "prime": 17846761,
+      "gap": 35,
+      "first_scale": 3,
+      "shared_divisor": 106,
+      "certificate_divisor": 2551
+    },
+    {
+      "prime": 17898169,
+      "gap": 15,
+      "first_scale": 298303,
+      "shared_divisor": 4474546,
+      "certificate_divisor": 269
+    },
+    {
+      "prime": 17909929,
+      "gap": 15,
+      "first_scale": 45,
+      "shared_divisor": 676,
+      "certificate_divisor": 1019
+    },
+    {
+      "prime": 17992489,
+      "gap": 19,
+      "first_scale": 473487,
+      "shared_divisor": 8996254,
+      "certificate_divisor": 121571
+    },
+    {
+      "prime": 17995609,
+      "gap": 15,
+      "first_scale": 2,
+      "shared_divisor": 31,
+      "certificate_divisor": 149
+    },
+    {
+      "prime": 18007609,
+      "gap": 31,
+      "first_scale": 9,
+      "shared_divisor": 280,
+      "certificate_divisor": 1460
+    },
+    {
+      "prime": 18118489,
+      "gap": 15,
+      "first_scale": 56,
+      "shared_divisor": 841,
+      "certificate_divisor": 29
+    },
+    {
+      "prime": 18517129,
+      "gap": 31,
+      "first_scale": 1224,
+      "shared_divisor": 37945,
+      "certificate_divisor": 2
+    },
+    {
+      "prime": 18760009,
+      "gap": 15,
+      "first_scale": 312667,
+      "shared_divisor": 4690006,
+      "certificate_divisor": 5444
+    },
+    {
+      "prime": 18787129,
+      "gap": 15,
+      "first_scale": 313119,
+      "shared_divisor": 4696786,
+      "certificate_divisor": 389
+    },
+    {
+      "prime": 19504489,
+      "gap": 15,
+      "first_scale": 325075,
+      "shared_divisor": 4876126,
+      "certificate_divisor": 134
+    }
+  ],
+  "minimum_factor_length_profile": {
+    "arithmetic": "complete legal-gap Type II certificate scan, exhaustive divisor enumeration of p+m, factor multiplicity counts, and scaled-first certificate reconstruction",
+    "scope_note": "The minimum is over shared certificates through the stated gap cap; it is not a uniform all-prime zero-product bound.",
+    "minimum_factor_multiplicity_histogram": {
+      "1": 16,
+      "2": 58,
+      "3": 51,
+      "4": 12,
+      "5": 6,
+      "6": 3
+    },
+    "minimum_factor_multiplicity_witnesses": [
+      {
+        "prime": 67369,
+        "minimum_factor_multiplicity": 3,
+        "gap": 35,
+        "shared_divisor": 246,
+        "first_scale": 7
+      },
+      {
+        "prime": 85369,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 21346,
+        "first_scale": 1423
+      },
+      {
+        "prime": 163249,
+        "minimum_factor_multiplicity": 2,
+        "gap": 63,
+        "shared_divisor": 10207,
+        "first_scale": 162
+      },
+      {
+        "prime": 214729,
+        "minimum_factor_multiplicity": 2,
+        "gap": 27,
+        "shared_divisor": 2026,
+        "first_scale": 75
+      },
+      {
+        "prime": 225289,
+        "minimum_factor_multiplicity": 5,
+        "gap": 31,
+        "shared_divisor": 5240,
+        "first_scale": 169
+      },
+      {
+        "prime": 297049,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 74266,
+        "first_scale": 4951
+      },
+      {
+        "prime": 372409,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 93106,
+        "first_scale": 6207
+      },
+      {
+        "prime": 454969,
+        "minimum_factor_multiplicity": 3,
+        "gap": 31,
+        "shared_divisor": 125,
+        "first_scale": 4
+      },
+      {
+        "prime": 521929,
+        "minimum_factor_multiplicity": 2,
+        "gap": 39,
+        "shared_divisor": 1717,
+        "first_scale": 44
+      },
+      {
+        "prime": 532249,
+        "minimum_factor_multiplicity": 4,
+        "gap": 191,
+        "shared_divisor": 765,
+        "first_scale": 4
+      },
+      {
+        "prime": 629689,
+        "minimum_factor_multiplicity": 5,
+        "gap": 31,
+        "shared_divisor": 280,
+        "first_scale": 9
+      },
+      {
+        "prime": 784249,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 196066,
+        "first_scale": 13071
+      },
+      {
+        "prime": 852889,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 556,
+        "first_scale": 37
+      },
+      {
+        "prime": 878089,
+        "minimum_factor_multiplicity": 4,
+        "gap": 51,
+        "shared_divisor": 460,
+        "first_scale": 9
+      },
+      {
+        "prime": 967129,
+        "minimum_factor_multiplicity": 6,
+        "gap": 47,
+        "shared_divisor": 16968,
+        "first_scale": 361
+      },
+      {
+        "prime": 1046329,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 261586,
+        "first_scale": 17439
+      },
+      {
+        "prime": 1093129,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 46,
+        "first_scale": 3
+      },
+      {
+        "prime": 1178809,
+        "minimum_factor_multiplicity": 4,
+        "gap": 31,
+        "shared_divisor": 18136,
+        "first_scale": 585
+      },
+      {
+        "prime": 1415929,
+        "minimum_factor_multiplicity": 5,
+        "gap": 31,
+        "shared_divisor": 280,
+        "first_scale": 9
+      },
+      {
+        "prime": 1447609,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 533,
+        "first_scale": 28
+      },
+      {
+        "prime": 1497049,
+        "minimum_factor_multiplicity": 4,
+        "gap": 47,
+        "shared_divisor": 2868,
+        "first_scale": 61
+      },
+      {
+        "prime": 1511449,
+        "minimum_factor_multiplicity": 1,
+        "gap": 31,
+        "shared_divisor": 1303,
+        "first_scale": 42
+      },
+      {
+        "prime": 1854889,
+        "minimum_factor_multiplicity": 4,
+        "gap": 31,
+        "shared_divisor": 463730,
+        "first_scale": 14959
+      },
+      {
+        "prime": 1936489,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 1426,
+        "first_scale": 75
+      },
+      {
+        "prime": 2020489,
+        "minimum_factor_multiplicity": 3,
+        "gap": 83,
+        "shared_divisor": 1412,
+        "first_scale": 17
+      },
+      {
+        "prime": 2097769,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 46,
+        "first_scale": 3
+      },
+      {
+        "prime": 2168329,
+        "minimum_factor_multiplicity": 2,
+        "gap": 39,
+        "shared_divisor": 118,
+        "first_scale": 3
+      },
+      {
+        "prime": 2210569,
+        "minimum_factor_multiplicity": 3,
+        "gap": 43,
+        "shared_divisor": 646,
+        "first_scale": 15
+      },
+      {
+        "prime": 2254729,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 172,
+        "first_scale": 9
+      },
+      {
+        "prime": 2269129,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 94,
+        "first_scale": 3
+      },
+      {
+        "prime": 2392009,
+        "minimum_factor_multiplicity": 3,
+        "gap": 95,
+        "shared_divisor": 286,
+        "first_scale": 3
+      },
+      {
+        "prime": 2516089,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 179722,
+        "first_scale": 9459
+      },
+      {
+        "prime": 2596729,
+        "minimum_factor_multiplicity": 2,
+        "gap": 39,
+        "shared_divisor": 8542,
+        "first_scale": 219
+      },
+      {
+        "prime": 2669209,
+        "minimum_factor_multiplicity": 3,
+        "gap": 71,
+        "shared_divisor": 498,
+        "first_scale": 7
+      },
+      {
+        "prime": 2671729,
+        "minimum_factor_multiplicity": 1,
+        "gap": 39,
+        "shared_divisor": 313,
+        "first_scale": 8
+      },
+      {
+        "prime": 2707609,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 77,
+        "first_scale": 4
+      },
+      {
+        "prime": 2754889,
+        "minimum_factor_multiplicity": 1,
+        "gap": 95,
+        "shared_divisor": 191,
+        "first_scale": 2
+      },
+      {
+        "prime": 2852809,
+        "minimum_factor_multiplicity": 1,
+        "gap": 39,
+        "shared_divisor": 79,
+        "first_scale": 2
+      },
+      {
+        "prime": 2938489,
+        "minimum_factor_multiplicity": 5,
+        "gap": 51,
+        "shared_divisor": 133570,
+        "first_scale": 2619
+      },
+      {
+        "prime": 2978089,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 24017,
+        "first_scale": 1264
+      },
+      {
+        "prime": 2986729,
+        "minimum_factor_multiplicity": 1,
+        "gap": 39,
+        "shared_divisor": 157,
+        "first_scale": 4
+      },
+      {
+        "prime": 3021769,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 2605,
+        "first_scale": 84
+      },
+      {
+        "prime": 3825649,
+        "minimum_factor_multiplicity": 4,
+        "gap": 31,
+        "shared_divisor": 776,
+        "first_scale": 25
+      },
+      {
+        "prime": 3942409,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 76,
+        "first_scale": 5
+      },
+      {
+        "prime": 4054009,
+        "minimum_factor_multiplicity": 1,
+        "gap": 31,
+        "shared_divisor": 2357,
+        "first_scale": 76
+      },
+      {
+        "prime": 4219609,
+        "minimum_factor_multiplicity": 2,
+        "gap": 59,
+        "shared_divisor": 178,
+        "first_scale": 3
+      },
+      {
+        "prime": 4253209,
+        "minimum_factor_multiplicity": 2,
+        "gap": 27,
+        "shared_divisor": 622,
+        "first_scale": 23
+      },
+      {
+        "prime": 4413049,
+        "minimum_factor_multiplicity": 3,
+        "gap": 63,
+        "shared_divisor": 50149,
+        "first_scale": 796
+      },
+      {
+        "prime": 4570729,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 58,
+        "first_scale": 3
+      },
+      {
+        "prime": 4718569,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 3076,
+        "first_scale": 205
+      },
+      {
+        "prime": 4753849,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 13982,
+        "first_scale": 451
+      },
+      {
+        "prime": 4779889,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 745,
+        "first_scale": 24
+      },
+      {
+        "prime": 4824649,
+        "minimum_factor_multiplicity": 1,
+        "gap": 39,
+        "shared_divisor": 79,
+        "first_scale": 2
+      },
+      {
+        "prime": 5019529,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 1254886,
+        "first_scale": 83659
+      },
+      {
+        "prime": 5374009,
+        "minimum_factor_multiplicity": 2,
+        "gap": 135,
+        "shared_divisor": 83971,
+        "first_scale": 622
+      },
+      {
+        "prime": 5397529,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 2605,
+        "first_scale": 84
+      },
+      {
+        "prime": 5478169,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 559,
+        "first_scale": 18
+      },
+      {
+        "prime": 5596369,
+        "minimum_factor_multiplicity": 6,
+        "gap": 71,
+        "shared_divisor": 37560,
+        "first_scale": 529
+      },
+      {
+        "prime": 5703889,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 94,
+        "first_scale": 3
+      },
+      {
+        "prime": 5886169,
+        "minimum_factor_multiplicity": 1,
+        "gap": 15,
+        "shared_divisor": 241,
+        "first_scale": 16
+      },
+      {
+        "prime": 5897329,
+        "minimum_factor_multiplicity": 3,
+        "gap": 35,
+        "shared_divisor": 946,
+        "first_scale": 27
+      },
+      {
+        "prime": 6254329,
+        "minimum_factor_multiplicity": 3,
+        "gap": 39,
+        "shared_divisor": 390898,
+        "first_scale": 10023
+      },
+      {
+        "prime": 6279289,
+        "minimum_factor_multiplicity": 5,
+        "gap": 71,
+        "shared_divisor": 52328,
+        "first_scale": 737
+      },
+      {
+        "prime": 6294649,
+        "minimum_factor_multiplicity": 3,
+        "gap": 35,
+        "shared_divisor": 946,
+        "first_scale": 27
+      },
+      {
+        "prime": 6316249,
+        "minimum_factor_multiplicity": 3,
+        "gap": 35,
+        "shared_divisor": 55406,
+        "first_scale": 1583
+      },
+      {
+        "prime": 6569161,
+        "minimum_factor_multiplicity": 6,
+        "gap": 55,
+        "shared_divisor": 410576,
+        "first_scale": 7465
+      },
+      {
+        "prime": 6856249,
+        "minimum_factor_multiplicity": 2,
+        "gap": 59,
+        "shared_divisor": 190453,
+        "first_scale": 3228
+      },
+      {
+        "prime": 7079209,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 226,
+        "first_scale": 15
+      },
+      {
+        "prime": 7504249,
+        "minimum_factor_multiplicity": 3,
+        "gap": 59,
+        "shared_divisor": 1358,
+        "first_scale": 23
+      },
+      {
+        "prime": 7524169,
+        "minimum_factor_multiplicity": 3,
+        "gap": 59,
+        "shared_divisor": 3246,
+        "first_scale": 55
+      },
+      {
+        "prime": 7791529,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 1947886,
+        "first_scale": 129859
+      },
+      {
+        "prime": 8009929,
+        "minimum_factor_multiplicity": 1,
+        "gap": 39,
+        "shared_divisor": 79,
+        "first_scale": 2
+      },
+      {
+        "prime": 8083849,
+        "minimum_factor_multiplicity": 2,
+        "gap": 59,
+        "shared_divisor": 119,
+        "first_scale": 2
+      },
+      {
+        "prime": 8589289,
+        "minimum_factor_multiplicity": 2,
+        "gap": 39,
+        "shared_divisor": 14509,
+        "first_scale": 372
+      },
+      {
+        "prime": 8797849,
+        "minimum_factor_multiplicity": 2,
+        "gap": 59,
+        "shared_divisor": 119,
+        "first_scale": 2
+      },
+      {
+        "prime": 8965609,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 91486,
+        "first_scale": 4815
+      },
+      {
+        "prime": 9081769,
+        "minimum_factor_multiplicity": 2,
+        "gap": 215,
+        "shared_divisor": 23651,
+        "first_scale": 110
+      },
+      {
+        "prime": 9104209,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 134,
+        "first_scale": 7
+      },
+      {
+        "prime": 9315289,
+        "minimum_factor_multiplicity": 2,
+        "gap": 87,
+        "shared_divisor": 83173,
+        "first_scale": 956
+      },
+      {
+        "prime": 9323449,
+        "minimum_factor_multiplicity": 2,
+        "gap": 35,
+        "shared_divisor": 141,
+        "first_scale": 4
+      },
+      {
+        "prime": 9394009,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 58,
+        "first_scale": 3
+      },
+      {
+        "prime": 9711529,
+        "minimum_factor_multiplicity": 4,
+        "gap": 47,
+        "shared_divisor": 189,
+        "first_scale": 4
+      },
+      {
+        "prime": 9716569,
+        "minimum_factor_multiplicity": 2,
+        "gap": 27,
+        "shared_divisor": 91666,
+        "first_scale": 3395
+      },
+      {
+        "prime": 9872809,
+        "minimum_factor_multiplicity": 2,
+        "gap": 119,
+        "shared_divisor": 3809,
+        "first_scale": 32
+      },
+      {
+        "prime": 10170169,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 1486,
+        "first_scale": 99
+      },
+      {
+        "prime": 10225609,
+        "minimum_factor_multiplicity": 2,
+        "gap": 155,
+        "shared_divisor": 1706,
+        "first_scale": 11
+      },
+      {
+        "prime": 10418809,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 166,
+        "first_scale": 11
+      },
+      {
+        "prime": 10637449,
+        "minimum_factor_multiplicity": 1,
+        "gap": 15,
+        "shared_divisor": 31,
+        "first_scale": 2
+      },
+      {
+        "prime": 10665769,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 766,
+        "first_scale": 51
+      },
+      {
+        "prime": 10875769,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 94,
+        "first_scale": 3
+      },
+      {
+        "prime": 10960009,
+        "minimum_factor_multiplicity": 4,
+        "gap": 15,
+        "shared_divisor": 376,
+        "first_scale": 25
+      },
+      {
+        "prime": 11052409,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 155668,
+        "first_scale": 8193
+      },
+      {
+        "prime": 11361529,
+        "minimum_factor_multiplicity": 3,
+        "gap": 107,
+        "shared_divisor": 429,
+        "first_scale": 4
+      },
+      {
+        "prime": 11712409,
+        "minimum_factor_multiplicity": 1,
+        "gap": 35,
+        "shared_divisor": 71,
+        "first_scale": 2
+      },
+      {
+        "prime": 11731129,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 286,
+        "first_scale": 15
+      },
+      {
+        "prime": 11835289,
+        "minimum_factor_multiplicity": 1,
+        "gap": 15,
+        "shared_divisor": 31,
+        "first_scale": 2
+      },
+      {
+        "prime": 11897449,
+        "minimum_factor_multiplicity": 4,
+        "gap": 47,
+        "shared_divisor": 988,
+        "first_scale": 21
+      },
+      {
+        "prime": 11929129,
+        "minimum_factor_multiplicity": 2,
+        "gap": 87,
+        "shared_divisor": 871,
+        "first_scale": 10
+      },
+      {
+        "prime": 11996329,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 2999086,
+        "first_scale": 199939
+      },
+      {
+        "prime": 12134329,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 3033586,
+        "first_scale": 202239
+      },
+      {
+        "prime": 12150889,
+        "minimum_factor_multiplicity": 3,
+        "gap": 51,
+        "shared_divisor": 1990,
+        "first_scale": 39
+      },
+      {
+        "prime": 12326521,
+        "minimum_factor_multiplicity": 4,
+        "gap": 31,
+        "shared_divisor": 40952,
+        "first_scale": 1321
+      },
+      {
+        "prime": 12466969,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 841,
+        "first_scale": 56
+      },
+      {
+        "prime": 12784489,
+        "minimum_factor_multiplicity": 2,
+        "gap": 39,
+        "shared_divisor": 799033,
+        "first_scale": 20488
+      },
+      {
+        "prime": 12853129,
+        "minimum_factor_multiplicity": 3,
+        "gap": 231,
+        "shared_divisor": 24718,
+        "first_scale": 107
+      },
+      {
+        "prime": 13177609,
+        "minimum_factor_multiplicity": 2,
+        "gap": 63,
+        "shared_divisor": 694,
+        "first_scale": 11
+      },
+      {
+        "prime": 13334281,
+        "minimum_factor_multiplicity": 2,
+        "gap": 27,
+        "shared_divisor": 298,
+        "first_scale": 11
+      },
+      {
+        "prime": 13782409,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 3445606,
+        "first_scale": 229707
+      },
+      {
+        "prime": 13844329,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 46,
+        "first_scale": 3
+      },
+      {
+        "prime": 14706409,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 3676606,
+        "first_scale": 245107
+      },
+      {
+        "prime": 15072649,
+        "minimum_factor_multiplicity": 2,
+        "gap": 151,
+        "shared_divisor": 454,
+        "first_scale": 3
+      },
+      {
+        "prime": 15308329,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 3827086,
+        "first_scale": 255139
+      },
+      {
+        "prime": 15364969,
+        "minimum_factor_multiplicity": 2,
+        "gap": 27,
+        "shared_divisor": 82,
+        "first_scale": 3
+      },
+      {
+        "prime": 15405289,
+        "minimum_factor_multiplicity": 3,
+        "gap": 31,
+        "shared_divisor": 275095,
+        "first_scale": 8874
+      },
+      {
+        "prime": 15408649,
+        "minimum_factor_multiplicity": 3,
+        "gap": 31,
+        "shared_divisor": 1582,
+        "first_scale": 51
+      },
+      {
+        "prime": 15648649,
+        "minimum_factor_multiplicity": 2,
+        "gap": 87,
+        "shared_divisor": 262,
+        "first_scale": 3
+      },
+      {
+        "prime": 15870409,
+        "minimum_factor_multiplicity": 1,
+        "gap": 15,
+        "shared_divisor": 1021,
+        "first_scale": 68
+      },
+      {
+        "prime": 16002529,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 58,
+        "first_scale": 3
+      },
+      {
+        "prime": 16152889,
+        "minimum_factor_multiplicity": 3,
+        "gap": 27,
+        "shared_divisor": 1378,
+        "first_scale": 51
+      },
+      {
+        "prime": 16267729,
+        "minimum_factor_multiplicity": 3,
+        "gap": 19,
+        "shared_divisor": 16702,
+        "first_scale": 879
+      },
+      {
+        "prime": 16287049,
+        "minimum_factor_multiplicity": 4,
+        "gap": 19,
+        "shared_divisor": 276052,
+        "first_scale": 14529
+      },
+      {
+        "prime": 16308889,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 4077226,
+        "first_scale": 271815
+      },
+      {
+        "prime": 16732489,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 766,
+        "first_scale": 51
+      },
+      {
+        "prime": 17041369,
+        "minimum_factor_multiplicity": 1,
+        "gap": 39,
+        "shared_divisor": 157,
+        "first_scale": 4
+      },
+      {
+        "prime": 17075689,
+        "minimum_factor_multiplicity": 3,
+        "gap": 51,
+        "shared_divisor": 776170,
+        "first_scale": 15219
+      },
+      {
+        "prime": 17137129,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 4284286,
+        "first_scale": 285619
+      },
+      {
+        "prime": 17145529,
+        "minimum_factor_multiplicity": 1,
+        "gap": 15,
+        "shared_divisor": 4021,
+        "first_scale": 268
+      },
+      {
+        "prime": 17311849,
+        "minimum_factor_multiplicity": 2,
+        "gap": 19,
+        "shared_divisor": 9026,
+        "first_scale": 475
+      },
+      {
+        "prime": 17422969,
+        "minimum_factor_multiplicity": 2,
+        "gap": 59,
+        "shared_divisor": 119,
+        "first_scale": 2
+      },
+      {
+        "prime": 17473129,
+        "minimum_factor_multiplicity": 2,
+        "gap": 63,
+        "shared_divisor": 253,
+        "first_scale": 4
+      },
+      {
+        "prime": 17582569,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 4395646,
+        "first_scale": 293043
+      },
+      {
+        "prime": 17608369,
+        "minimum_factor_multiplicity": 2,
+        "gap": 43,
+        "shared_divisor": 302,
+        "first_scale": 7
+      },
+      {
+        "prime": 17644489,
+        "minimum_factor_multiplicity": 5,
+        "gap": 47,
+        "shared_divisor": 226212,
+        "first_scale": 4813
+      },
+      {
+        "prime": 17722609,
+        "minimum_factor_multiplicity": 3,
+        "gap": 63,
+        "shared_divisor": 1107667,
+        "first_scale": 17582
+      },
+      {
+        "prime": 17723689,
+        "minimum_factor_multiplicity": 3,
+        "gap": 47,
+        "shared_divisor": 492326,
+        "first_scale": 10475
+      },
+      {
+        "prime": 17846761,
+        "minimum_factor_multiplicity": 2,
+        "gap": 35,
+        "shared_divisor": 106,
+        "first_scale": 3
+      },
+      {
+        "prime": 17898169,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 4474546,
+        "first_scale": 298303
+      },
+      {
+        "prime": 17909929,
+        "minimum_factor_multiplicity": 4,
+        "gap": 15,
+        "shared_divisor": 676,
+        "first_scale": 45
+      },
+      {
+        "prime": 17992489,
+        "minimum_factor_multiplicity": 2,
+        "gap": 47,
+        "shared_divisor": 142,
+        "first_scale": 3
+      },
+      {
+        "prime": 17995609,
+        "minimum_factor_multiplicity": 1,
+        "gap": 15,
+        "shared_divisor": 31,
+        "first_scale": 2
+      },
+      {
+        "prime": 18007609,
+        "minimum_factor_multiplicity": 3,
+        "gap": 43,
+        "shared_divisor": 692602,
+        "first_scale": 16107
+      },
+      {
+        "prime": 18118489,
+        "minimum_factor_multiplicity": 2,
+        "gap": 15,
+        "shared_divisor": 841,
+        "first_scale": 56
+      },
+      {
+        "prime": 18517129,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 37945,
+        "first_scale": 1224
+      },
+      {
+        "prime": 18760009,
+        "minimum_factor_multiplicity": 2,
+        "gap": 31,
+        "shared_divisor": 559,
+        "first_scale": 18
+      },
+      {
+        "prime": 18787129,
+        "minimum_factor_multiplicity": 2,
+        "gap": 59,
+        "shared_divisor": 178,
+        "first_scale": 3
+      },
+      {
+        "prime": 19504489,
+        "minimum_factor_multiplicity": 3,
+        "gap": 15,
+        "shared_divisor": 4876126,
+        "first_scale": 325075
+      }
+    ],
+    "minimum_factor_multiplicity_misses": []
+  }
+}

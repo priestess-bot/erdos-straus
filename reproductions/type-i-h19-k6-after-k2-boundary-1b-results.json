@@ -1,0 +1,609 @@
+{
+  "arithmetic": "for every exact k=2 subgroup-boundary prime, enumerate all g|6n with g<=n and g=-1 (mod 23), then verify the terminal even-source Type I certificate exactly",
+  "scope_note": "A finite second-scale audit after the exact k=2 boundary; misses rule out k=6 only, not other scales or the conjecture.",
+  "input_k2_subgroup_boundary_count": 119,
+  "k6_terminal_count": 48,
+  "k6_misses": [
+    1683049,
+    8955769,
+    11910361,
+    12180169,
+    12321241,
+    21852601,
+    23841241,
+    24887641,
+    35840809,
+    59919721,
+    60697081,
+    76759321,
+    78097321,
+    78624841,
+    79058281,
+    81941161,
+    82502281,
+    85192969,
+    99004921,
+    102359401,
+    110562841,
+    141326089,
+    157523881,
+    158216809,
+    158417449,
+    165479161,
+    205462681,
+    215665129,
+    227018089,
+    237354121,
+    248995321,
+    255844681,
+    260353129,
+    283163161,
+    330605881,
+    338195881,
+    347699641,
+    356911129,
+    377526601,
+    382619161,
+    398757241,
+    399299209,
+    408255961,
+    449610121,
+    512938441,
+    519857641,
+    559158601,
+    581004649,
+    605553001,
+    614315641,
+    616391161,
+    640775689,
+    648180121,
+    675458281,
+    694709401,
+    697980889,
+    699747049,
+    701509561,
+    726075529,
+    736324681,
+    749224921,
+    758011081,
+    784893481,
+    798746041,
+    820218169,
+    893389561,
+    935116009,
+    952431481,
+    971287321,
+    985076569,
+    992339401
+  ],
+  "records": [
+    {
+      "prime": 2707609,
+      "certificate": {
+        "source_denominator": 2594792,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 669937036
+      }
+    },
+    {
+      "prime": 9296809,
+      "certificate": {
+        "source_denominator": 8909442,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 7897740336
+      }
+    },
+    {
+      "prime": 25456201,
+      "certificate": {
+        "source_denominator": 24395526,
+        "mixed_divisor": 1494,
+        "k": 6,
+        "q": 23,
+        "gap": 1559,
+        "certificate_divisor": 4518752400
+      }
+    },
+    {
+      "prime": 56380921,
+      "certificate": {
+        "source_denominator": 54031716,
+        "mixed_divisor": 873,
+        "k": 6,
+        "q": 23,
+        "gap": 911,
+        "certificate_divisor": 37930877478
+      }
+    },
+    {
+      "prime": 70005049,
+      "certificate": {
+        "source_denominator": 67088172,
+        "mixed_divisor": 804,
+        "k": 6,
+        "q": 23,
+        "gap": 839,
+        "certificate_divisor": 63495340416
+      }
+    },
+    {
+      "prime": 78189721,
+      "certificate": {
+        "source_denominator": 74931816,
+        "mixed_divisor": 1264,
+        "k": 6,
+        "q": 23,
+        "gap": 1319,
+        "certificate_divisor": 50384351400
+      }
+    },
+    {
+      "prime": 95508169,
+      "certificate": {
+        "source_denominator": 91528662,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 833500829376
+      }
+    },
+    {
+      "prime": 96532921,
+      "certificate": {
+        "source_denominator": 92510716,
+        "mixed_divisor": 344,
+        "k": 6,
+        "q": 23,
+        "gap": 359,
+        "certificate_divisor": 282178844100
+      }
+    },
+    {
+      "prime": 98924281,
+      "certificate": {
+        "source_denominator": 94802436,
+        "mixed_divisor": 206,
+        "k": 6,
+        "q": 23,
+        "gap": 215,
+        "certificate_divisor": 494845060116
+      }
+    },
+    {
+      "prime": 121978921,
+      "certificate": {
+        "source_denominator": 116896466,
+        "mixed_divisor": 1356,
+        "k": 6,
+        "q": 23,
+        "gap": 1415,
+        "certificate_divisor": 114300657346
+      }
+    },
+    {
+      "prime": 142182121,
+      "certificate": {
+        "source_denominator": 136257866,
+        "mixed_divisor": 321,
+        "k": 6,
+        "q": 23,
+        "gap": 335,
+        "certificate_divisor": 656018003446
+      }
+    },
+    {
+      "prime": 155634361,
+      "certificate": {
+        "source_denominator": 149149596,
+        "mixed_divisor": 298,
+        "k": 6,
+        "q": 23,
+        "gap": 311,
+        "certificate_divisor": 846691524348
+      }
+    },
+    {
+      "prime": 165882649,
+      "certificate": {
+        "source_denominator": 158970872,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 2514354232396
+      }
+    },
+    {
+      "prime": 173952601,
+      "certificate": {
+        "source_denominator": 166704576,
+        "mixed_divisor": 804,
+        "k": 6,
+        "q": 23,
+        "gap": 839,
+        "certificate_divisor": 392047565400
+      }
+    },
+    {
+      "prime": 176719321,
+      "certificate": {
+        "source_denominator": 169356016,
+        "mixed_divisor": 344,
+        "k": 6,
+        "q": 23,
+        "gap": 359,
+        "certificate_divisor": 945671187600
+      }
+    },
+    {
+      "prime": 178130761,
+      "certificate": {
+        "source_denominator": 170708646,
+        "mixed_divisor": 16398,
+        "k": 6,
+        "q": 23,
+        "gap": 17111,
+        "certificate_divisor": 20160400848
+      }
+    },
+    {
+      "prime": 185504281,
+      "certificate": {
+        "source_denominator": 177774936,
+        "mixed_divisor": 321,
+        "k": 6,
+        "q": 23,
+        "gap": 335,
+        "certificate_divisor": 1116691412166
+      }
+    },
+    {
+      "prime": 198439081,
+      "certificate": {
+        "source_denominator": 190170786,
+        "mixed_divisor": 298,
+        "k": 6,
+        "q": 23,
+        "gap": 311,
+        "certificate_divisor": 1376474842608
+      }
+    },
+    {
+      "prime": 212558809,
+      "certificate": {
+        "source_denominator": 203702192,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 4128408065836
+      }
+    },
+    {
+      "prime": 244952569,
+      "certificate": {
+        "source_denominator": 234746212,
+        "mixed_divisor": 137,
+        "k": 6,
+        "q": 23,
+        "gap": 143,
+        "certificate_divisor": 4562183022822
+      }
+    },
+    {
+      "prime": 261532441,
+      "certificate": {
+        "source_denominator": 250635256,
+        "mixed_divisor": 206,
+        "k": 6,
+        "q": 23,
+        "gap": 215,
+        "certificate_divisor": 3458703992436
+      }
+    },
+    {
+      "prime": 285473161,
+      "certificate": {
+        "source_denominator": 273578446,
+        "mixed_divisor": 436,
+        "k": 6,
+        "q": 23,
+        "gap": 455,
+        "certificate_divisor": 1947037113726
+      }
+    },
+    {
+      "prime": 321737641,
+      "certificate": {
+        "source_denominator": 308331906,
+        "mixed_divisor": 12396,
+        "k": 6,
+        "q": 23,
+        "gap": 12935,
+        "certificate_divisor": 86993311986
+      }
+    },
+    {
+      "prime": 331878121,
+      "certificate": {
+        "source_denominator": 318049866,
+        "mixed_divisor": 4806,
+        "k": 6,
+        "q": 23,
+        "gap": 5015,
+        "certificate_divisor": 238734602496
+      }
+    },
+    {
+      "prime": 358424089,
+      "certificate": {
+        "source_denominator": 343489752,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 11738661630156
+      }
+    },
+    {
+      "prime": 401436121,
+      "certificate": {
+        "source_denominator": 384709616,
+        "mixed_divisor": 1361001,
+        "k": 6,
+        "q": 23,
+        "gap": 1420175,
+        "certificate_divisor": 1242140246
+      }
+    },
+    {
+      "prime": 427727161,
+      "certificate": {
+        "source_denominator": 409905196,
+        "mixed_divisor": 804,
+        "k": 6,
+        "q": 23,
+        "gap": 839,
+        "certificate_divisor": 2370326000000
+      }
+    },
+    {
+      "prime": 511239481,
+      "certificate": {
+        "source_denominator": 489937836,
+        "mixed_divisor": 149706,
+        "k": 6,
+        "q": 23,
+        "gap": 156215,
+        "certificate_divisor": 18197163516
+      }
+    },
+    {
+      "prime": 515052841,
+      "certificate": {
+        "source_denominator": 493592306,
+        "mixed_divisor": 4139,
+        "k": 6,
+        "q": 23,
+        "gap": 4319,
+        "certificate_divisor": 667642843650
+      }
+    },
+    {
+      "prime": 518088169,
+      "certificate": {
+        "source_denominator": 496501162,
+        "mixed_divisor": 25782,
+        "k": 6,
+        "q": 23,
+        "gap": 26903,
+        "certificate_divisor": 108458755072
+      }
+    },
+    {
+      "prime": 518236489,
+      "certificate": {
+        "source_denominator": 496643302,
+        "mixed_divisor": 4668,
+        "k": 6,
+        "q": 23,
+        "gap": 4871,
+        "certificate_divisor": 599324539450
+      }
+    },
+    {
+      "prime": 547196521,
+      "certificate": {
+        "source_denominator": 524396666,
+        "mixed_divisor": 47356,
+        "k": 6,
+        "q": 23,
+        "gap": 49415,
+        "certificate_divisor": 65874729546
+      }
+    },
+    {
+      "prime": 588653641,
+      "certificate": {
+        "source_denominator": 564126406,
+        "mixed_divisor": 1977,
+        "k": 6,
+        "q": 23,
+        "gap": 2063,
+        "certificate_divisor": 1825764720598
+      }
+    },
+    {
+      "prime": 640193401,
+      "certificate": {
+        "source_denominator": 613518676,
+        "mixed_divisor": 206,
+        "k": 6,
+        "q": 23,
+        "gap": 215,
+        "certificate_divisor": 20724507785556
+      }
+    },
+    {
+      "prime": 687877369,
+      "certificate": {
+        "source_denominator": 659215812,
+        "mixed_divisor": 3759786,
+        "k": 6,
+        "q": 23,
+        "gap": 3923255,
+        "certificate_divisor": 1325951196
+      }
+    },
+    {
+      "prime": 716572921,
+      "certificate": {
+        "source_denominator": 686715716,
+        "mixed_divisor": 13038906,
+        "k": 6,
+        "q": 23,
+        "gap": 13605815,
+        "certificate_divisor": 425937596
+      }
+    },
+    {
+      "prime": 719198761,
+      "certificate": {
+        "source_denominator": 689232146,
+        "mixed_divisor": 17364,
+        "k": 6,
+        "q": 23,
+        "gap": 18119,
+        "certificate_divisor": 310312116350
+      }
+    },
+    {
+      "prime": 732137641,
+      "certificate": {
+        "source_denominator": 701631906,
+        "mixed_divisor": 804,
+        "k": 6,
+        "q": 23,
+        "gap": 839,
+        "certificate_divisor": 6944791069350
+      }
+    },
+    {
+      "prime": 744123241,
+      "certificate": {
+        "source_denominator": 713118106,
+        "mixed_divisor": 49752426,
+        "k": 6,
+        "q": 23,
+        "gap": 51915575,
+        "certificate_divisor": 132673136
+      }
+    },
+    {
+      "prime": 758972041,
+      "certificate": {
+        "source_denominator": 727348206,
+        "mixed_divisor": 4461,
+        "k": 6,
+        "q": 23,
+        "gap": 4655,
+        "certificate_divisor": 1345096449486
+      }
+    },
+    {
+      "prime": 865176841,
+      "certificate": {
+        "source_denominator": 829127806,
+        "mixed_divisor": 321,
+        "k": 6,
+        "q": 23,
+        "gap": 335,
+        "certificate_divisor": 24290353902886
+      }
+    },
+    {
+      "prime": 870509641,
+      "certificate": {
+        "source_denominator": 834238406,
+        "mixed_divisor": 206,
+        "k": 6,
+        "q": 23,
+        "gap": 215,
+        "certificate_divisor": 38318538096336
+      }
+    },
+    {
+      "prime": 887083129,
+      "certificate": {
+        "source_denominator": 850121332,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 71903937215116
+      }
+    },
+    {
+      "prime": 896764969,
+      "certificate": {
+        "source_denominator": 859399762,
+        "mixed_divisor": 3081,
+        "k": 6,
+        "q": 23,
+        "gap": 3215,
+        "certificate_divisor": 2718926403206
+      }
+    },
+    {
+      "prime": 907958041,
+      "certificate": {
+        "source_denominator": 870126456,
+        "mixed_divisor": 137,
+        "k": 6,
+        "q": 23,
+        "gap": 143,
+        "certificate_divisor": 62681574201078
+      }
+    },
+    {
+      "prime": 910014121,
+      "certificate": {
+        "source_denominator": 872096866,
+        "mixed_divisor": 321,
+        "k": 6,
+        "q": 23,
+        "gap": 335,
+        "certificate_divisor": 26873257727446
+      }
+    },
+    {
+      "prime": 912979369,
+      "certificate": {
+        "source_denominator": 874938562,
+        "mixed_divisor": 114,
+        "k": 6,
+        "q": 23,
+        "gap": 119,
+        "certificate_divisor": 76163335664176
+      }
+    },
+    {
+      "prime": 939537481,
+      "certificate": {
+        "source_denominator": 900390086,
+        "mixed_divisor": 804,
+        "k": 6,
+        "q": 23,
+        "gap": 839,
+        "certificate_divisor": 11436725937350
+      }
+    }
+  ]
+}

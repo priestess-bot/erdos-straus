@@ -1,0 +1,600 @@
+{
+  "arithmetic": "exact prime sieve, congruence roots, H19 newness guards, and rational reciprocal-totient sums",
+  "scope_note": "This checks the local root geometry used by the pure-new square-ray upper-bound sieve. It is not a finite coverage claim.",
+  "geometries": [
+    {
+      "radius_bound": 10,
+      "h19_bound": 19,
+      "strict_prime_guard": 400,
+      "prime_bound": 100000,
+      "checked_prime_count": 9514,
+      "all_roots_distinct": true,
+      "all_large_primes_h19_new": true,
+      "reciprocal_phi_sum": {
+        "numerator": 13,
+        "denominator": 24,
+        "float": 0.5416666666666666
+      },
+      "root_count_histogram": {
+        "1": 6563,
+        "2": 1552,
+        "3": 856,
+        "4": 351,
+        "5": 150,
+        "6": 41,
+        "7": 1
+      },
+      "harmonic_forbidden_root_weight": 1.0002851398758221,
+      "samples": [
+        {
+          "prime": 419,
+          "eligible_radii": [
+            5,
+            7
+          ],
+          "roots_mod_prime": [
+            0,
+            319,
+            223
+          ]
+        },
+        {
+          "prime": 431,
+          "eligible_radii": [
+            6,
+            9
+          ],
+          "roots_mod_prime": [
+            0,
+            287,
+            107
+          ]
+        },
+        {
+          "prime": 439,
+          "eligible_radii": [
+            5,
+            10
+          ],
+          "roots_mod_prime": [
+            0,
+            339,
+            39
+          ]
+        },
+        {
+          "prime": 467,
+          "eligible_radii": [
+            9
+          ],
+          "roots_mod_prime": [
+            0,
+            143
+          ]
+        },
+        {
+          "prime": 479,
+          "eligible_radii": [
+            5,
+            6,
+            8,
+            10
+          ],
+          "roots_mod_prime": [
+            0,
+            379,
+            335,
+            223,
+            79
+          ]
+        },
+        {
+          "prime": 499,
+          "eligible_radii": [
+            5
+          ],
+          "roots_mod_prime": [
+            0,
+            399
+          ]
+        },
+        {
+          "prime": 503,
+          "eligible_radii": [
+            6,
+            7,
+            9
+          ],
+          "roots_mod_prime": [
+            0,
+            359,
+            307,
+            179
+          ]
+        },
+        {
+          "prime": 587,
+          "eligible_radii": [
+            7
+          ],
+          "roots_mod_prime": [
+            0,
+            391
+          ]
+        },
+        {
+          "prime": 599,
+          "eligible_radii": [
+            5,
+            6,
+            10
+          ],
+          "roots_mod_prime": [
+            0,
+            499,
+            455,
+            199
+          ]
+        },
+        {
+          "prime": 607,
+          "eligible_radii": [
+            8
+          ],
+          "roots_mod_prime": [
+            0,
+            351
+          ]
+        },
+        {
+          "prime": 619,
+          "eligible_radii": [
+            5
+          ],
+          "roots_mod_prime": [
+            0,
+            519
+          ]
+        },
+        {
+          "prime": 643,
+          "eligible_radii": [
+            7
+          ],
+          "roots_mod_prime": [
+            0,
+            447
+          ]
+        }
+      ]
+    },
+    {
+      "radius_bound": 20,
+      "h19_bound": 19,
+      "strict_prime_guard": 1600,
+      "prime_bound": 100000,
+      "checked_prime_count": 9341,
+      "all_roots_distinct": true,
+      "all_large_primes_h19_new": true,
+      "reciprocal_phi_sum": {
+        "numerator": 1387,
+        "denominator": 1440,
+        "float": 0.9631944444444445
+      },
+      "root_count_histogram": {
+        "1": 5959,
+        "2": 1177,
+        "3": 842,
+        "4": 528,
+        "5": 353,
+        "6": 162,
+        "7": 148,
+        "8": 61,
+        "9": 52,
+        "10": 35,
+        "11": 19,
+        "12": 5
+      },
+      "harmonic_forbidden_root_weight": 0.8631425915155295,
+      "samples": [
+        {
+          "prime": 1607,
+          "eligible_radii": [
+            6
+          ],
+          "roots_mod_prime": [
+            0,
+            1463
+          ]
+        },
+        {
+          "prime": 1619,
+          "eligible_radii": [
+            5,
+            9,
+            15
+          ],
+          "roots_mod_prime": [
+            0,
+            1519,
+            1295,
+            719
+          ]
+        },
+        {
+          "prime": 1627,
+          "eligible_radii": [
+            11
+          ],
+          "roots_mod_prime": [
+            0,
+            1143
+          ]
+        },
+        {
+          "prime": 1663,
+          "eligible_radii": [
+            8,
+            13,
+            16
+          ],
+          "roots_mod_prime": [
+            0,
+            1407,
+            987,
+            639
+          ]
+        },
+        {
+          "prime": 1699,
+          "eligible_radii": [
+            5,
+            17
+          ],
+          "roots_mod_prime": [
+            0,
+            1599,
+            543
+          ]
+        },
+        {
+          "prime": 1747,
+          "eligible_radii": [
+            19
+          ],
+          "roots_mod_prime": [
+            0,
+            303
+          ]
+        },
+        {
+          "prime": 1759,
+          "eligible_radii": [
+            5,
+            8,
+            10,
+            11,
+            20
+          ],
+          "roots_mod_prime": [
+            0,
+            1659,
+            1503,
+            1359,
+            1275,
+            159
+          ]
+        },
+        {
+          "prime": 1823,
+          "eligible_radii": [
+            6,
+            8,
+            12,
+            19
+          ],
+          "roots_mod_prime": [
+            0,
+            1679,
+            1567,
+            1247,
+            379
+          ]
+        },
+        {
+          "prime": 1847,
+          "eligible_radii": [
+            6,
+            7,
+            11,
+            14
+          ],
+          "roots_mod_prime": [
+            0,
+            1703,
+            1651,
+            1363,
+            1063
+          ]
+        },
+        {
+          "prime": 1871,
+          "eligible_radii": [
+            6,
+            9,
+            12,
+            13,
+            18
+          ],
+          "roots_mod_prime": [
+            0,
+            1727,
+            1547,
+            1295,
+            1195,
+            575
+          ]
+        },
+        {
+          "prime": 1879,
+          "eligible_radii": [
+            5,
+            10
+          ],
+          "roots_mod_prime": [
+            0,
+            1779,
+            1479
+          ]
+        },
+        {
+          "prime": 1907,
+          "eligible_radii": [
+            9
+          ],
+          "roots_mod_prime": [
+            0,
+            1583
+          ]
+        }
+      ]
+    },
+    {
+      "radius_bound": 50,
+      "h19_bound": 19,
+      "strict_prime_guard": 10000,
+      "prime_bound": 100000,
+      "checked_prime_count": 8363,
+      "all_roots_distinct": true,
+      "all_large_primes_h19_new": true,
+      "reciprocal_phi_sum": {
+        "numerator": 187873,
+        "denominator": 121440,
+        "float": 1.5470438076416337
+      },
+      "root_count_histogram": {
+        "1": 5061,
+        "2": 798,
+        "3": 792,
+        "4": 366,
+        "5": 351,
+        "6": 268,
+        "7": 140,
+        "8": 161,
+        "9": 90,
+        "10": 83,
+        "11": 61,
+        "12": 42,
+        "13": 25,
+        "14": 34,
+        "15": 28,
+        "16": 21,
+        "17": 15,
+        "18": 7,
+        "19": 9,
+        "20": 4,
+        "21": 5,
+        "22": 2
+      },
+      "harmonic_forbidden_root_weight": 0.568676684445813,
+      "samples": [
+        {
+          "prime": 10007,
+          "eligible_radii": [
+            6,
+            9,
+            18
+          ],
+          "roots_mod_prime": [
+            0,
+            9863,
+            9683,
+            8711
+          ]
+        },
+        {
+          "prime": 10039,
+          "eligible_radii": [
+            5,
+            10
+          ],
+          "roots_mod_prime": [
+            0,
+            9939,
+            9639
+          ]
+        },
+        {
+          "prime": 10079,
+          "eligible_radii": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            14,
+            15,
+            18,
+            20,
+            21,
+            24,
+            28,
+            30,
+            35,
+            36,
+            40,
+            42,
+            45
+          ],
+          "roots_mod_prime": [
+            0,
+            9979,
+            9935,
+            9883,
+            9823,
+            9755,
+            9679,
+            9503,
+            9295,
+            9179,
+            8783,
+            8479,
+            8315,
+            7775,
+            6943,
+            6479,
+            5179,
+            4895,
+            3679,
+            3023,
+            1979
+          ]
+        },
+        {
+          "prime": 10091,
+          "eligible_radii": [
+            29
+          ],
+          "roots_mod_prime": [
+            0,
+            6727
+          ]
+        },
+        {
+          "prime": 10099,
+          "eligible_radii": [
+            5,
+            25
+          ],
+          "roots_mod_prime": [
+            0,
+            9999,
+            7599
+          ]
+        },
+        {
+          "prime": 10103,
+          "eligible_radii": [
+            6
+          ],
+          "roots_mod_prime": [
+            0,
+            9959
+          ]
+        },
+        {
+          "prime": 10111,
+          "eligible_radii": [
+            8,
+            16,
+            32
+          ],
+          "roots_mod_prime": [
+            0,
+            9855,
+            9087,
+            6015
+          ]
+        },
+        {
+          "prime": 10139,
+          "eligible_radii": [
+            5,
+            13,
+            15,
+            39
+          ],
+          "roots_mod_prime": [
+            0,
+            10039,
+            9463,
+            9239,
+            4055
+          ]
+        },
+        {
+          "prime": 10151,
+          "eligible_radii": [
+            6,
+            9,
+            18,
+            27,
+            47
+          ],
+          "roots_mod_prime": [
+            0,
+            10007,
+            9827,
+            8855,
+            7235,
+            1315
+          ]
+        },
+        {
+          "prime": 10159,
+          "eligible_radii": [
+            5,
+            10,
+            20
+          ],
+          "roots_mod_prime": [
+            0,
+            10059,
+            9759,
+            8559
+          ]
+        },
+        {
+          "prime": 10163,
+          "eligible_radii": [
+            7,
+            11,
+            21,
+            33
+          ],
+          "roots_mod_prime": [
+            0,
+            9967,
+            9679,
+            8399,
+            5807
+          ]
+        },
+        {
+          "prime": 10211,
+          "eligible_radii": [
+            23,
+            37
+          ],
+          "roots_mod_prime": [
+            0,
+            8095,
+            4735
+          ]
+        }
+      ]
+    }
+  ]
+}

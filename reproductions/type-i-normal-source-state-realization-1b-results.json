@@ -1,0 +1,469 @@
+{
+  "arithmetic": "for every stored source state (p,n,E), set R=(E-1)/(p-n), K=(pR+1)/4, then enumerate all BC|K with R|(4B^2C+1), derive K/(BC)=-B (mod R), then recover A,m and verify both identities",
+  "scope_note": "An exact finite reconstruction of normal-form realizability from source-state divisor pairs. It identifies the remaining selector problem but does not bound the required factors uniformly.",
+  "input_source_state_count": 28,
+  "all_stored_normal_forms_recovered": true,
+  "all_source_states_have_B_eq_1_realization": true,
+  "compatible_normal_form_count_histogram": {
+    "2": 5,
+    "4": 7,
+    "6": 2,
+    "8": 3,
+    "12": 5,
+    "24": 1,
+    "26": 1,
+    "28": 1,
+    "30": 2,
+    "36": 1
+  },
+  "records": [
+    {
+      "prime": 1683049,
+      "source_denominator": 1683048,
+      "bridge_factor": 4,
+      "compatible_normal_form_count": 12,
+      "B_eq_1_form_count": 4,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 4728,
+        "B": 1,
+        "C": 89,
+        "H": 14183,
+        "m": 119
+      }
+    },
+    {
+      "prime": 8955769,
+      "source_denominator": 8955768,
+      "bridge_factor": 36,
+      "compatible_normal_form_count": 2,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 36704,
+        "B": 1,
+        "C": 61,
+        "H": 1284639,
+        "m": 7
+      }
+    },
+    {
+      "prime": 11910361,
+      "source_denominator": 11910356,
+      "bridge_factor": 316,
+      "compatible_normal_form_count": 6,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 63353,
+        "B": 1,
+        "C": 47,
+        "H": 3991238,
+        "m": 3
+      }
+    },
+    {
+      "prime": 12180169,
+      "source_denominator": 12180168,
+      "bridge_factor": 16,
+      "compatible_normal_form_count": 26,
+      "B_eq_1_form_count": 4,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 30149,
+        "B": 1,
+        "C": 101,
+        "H": 452234,
+        "m": 27
+      }
+    },
+    {
+      "prime": 23841241,
+      "source_denominator": 23841240,
+      "bridge_factor": 16,
+      "compatible_normal_form_count": 8,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 69306,
+        "B": 1,
+        "C": 86,
+        "H": 1039589,
+        "m": 23
+      }
+    },
+    {
+      "prime": 24887641,
+      "source_denominator": 24853918,
+      "bridge_factor": 370954,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 151754,
+        "B": 1,
+        "C": 41,
+        "H": 1669293,
+        "m": 15
+      }
+    },
+    {
+      "prime": 35840809,
+      "source_denominator": 35840808,
+      "bridge_factor": 48,
+      "compatible_normal_form_count": 2,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 21801,
+        "B": 1,
+        "C": 411,
+        "H": 1024646,
+        "m": 35
+      }
+    },
+    {
+      "prime": 79058281,
+      "source_denominator": 79058280,
+      "bridge_factor": 28,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 30834,
+        "B": 1,
+        "C": 641,
+        "H": 832517,
+        "m": 95
+      }
+    },
+    {
+      "prime": 81941161,
+      "source_denominator": 81941160,
+      "bridge_factor": 4,
+      "compatible_normal_form_count": 12,
+      "B_eq_1_form_count": 4,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 149528,
+        "B": 1,
+        "C": 137,
+        "H": 448583,
+        "m": 183
+      }
+    },
+    {
+      "prime": 85192969,
+      "source_denominator": 85192968,
+      "bridge_factor": 144,
+      "compatible_normal_form_count": 2,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 199049,
+        "B": 1,
+        "C": 107,
+        "H": 28464006,
+        "m": 3
+      }
+    },
+    {
+      "prime": 141326089,
+      "source_denominator": 141326086,
+      "bridge_factor": 94,
+      "compatible_normal_form_count": 24,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 415665,
+        "B": 1,
+        "C": 85,
+        "H": 12885614,
+        "m": 11
+      }
+    },
+    {
+      "prime": 157523881,
+      "source_denominator": 157523880,
+      "bridge_factor": 4,
+      "compatible_normal_form_count": 30,
+      "B_eq_1_form_count": 8,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 2316528,
+        "B": 1,
+        "C": 17,
+        "H": 6949583,
+        "m": 23
+      }
+    },
+    {
+      "prime": 158216809,
+      "source_denominator": 158216798,
+      "bridge_factor": 122,
+      "compatible_normal_form_count": 28,
+      "B_eq_1_form_count": 5,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 129686,
+        "B": 1,
+        "C": 305,
+        "H": 1426545,
+        "m": 111
+      }
+    },
+    {
+      "prime": 158417449,
+      "source_denominator": 158417448,
+      "bridge_factor": 4,
+      "compatible_normal_form_count": 12,
+      "B_eq_1_form_count": 4,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 1365668,
+        "B": 1,
+        "C": 29,
+        "H": 4097003,
+        "m": 39
+      }
+    },
+    {
+      "prime": 215665129,
+      "source_denominator": 215665128,
+      "bridge_factor": 28,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 6,
+        "B": 1,
+        "C": 9041861,
+        "H": 161,
+        "m": 1339535
+      }
+    },
+    {
+      "prime": 237354121,
+      "source_denominator": 237354120,
+      "bridge_factor": 16,
+      "compatible_normal_form_count": 2,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 310673,
+        "B": 1,
+        "C": 191,
+        "H": 4660094,
+        "m": 51
+      }
+    },
+    {
+      "prime": 283163161,
+      "source_denominator": 283163160,
+      "bridge_factor": 16,
+      "compatible_normal_form_count": 30,
+      "B_eq_1_form_count": 4,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 128477,
+        "B": 1,
+        "C": 551,
+        "H": 1927154,
+        "m": 147
+      }
+    },
+    {
+      "prime": 399299209,
+      "source_denominator": 399299208,
+      "bridge_factor": 28,
+      "compatible_normal_form_count": 12,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 2123932,
+        "B": 1,
+        "C": 47,
+        "H": 57346163,
+        "m": 7
+      }
+    },
+    {
+      "prime": 449610121,
+      "source_denominator": 449610120,
+      "bridge_factor": 100,
+      "compatible_normal_form_count": 2,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 197544,
+        "B": 1,
+        "C": 569,
+        "H": 19556855,
+        "m": 23
+      }
+    },
+    {
+      "prime": 605553001,
+      "source_denominator": 605553000,
+      "bridge_factor": 72,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 1220873,
+        "B": 1,
+        "C": 124,
+        "H": 86681982,
+        "m": 7
+      }
+    },
+    {
+      "prime": 614315641,
+      "source_denominator": 614315640,
+      "bridge_factor": 16,
+      "compatible_normal_form_count": 12,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 1074,
+        "B": 1,
+        "C": 143006,
+        "H": 16109,
+        "m": 38135
+      }
+    },
+    {
+      "prime": 640775689,
+      "source_denominator": 640773904,
+      "bridge_factor": 355216,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 1075127,
+        "B": 1,
+        "C": 149,
+        "H": 213950272,
+        "m": 3
+      }
+    },
+    {
+      "prime": 701509561,
+      "source_denominator": 701509560,
+      "bridge_factor": 48,
+      "compatible_normal_form_count": 8,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 553241,
+        "B": 1,
+        "C": 317,
+        "H": 26002326,
+        "m": 27
+      }
+    },
+    {
+      "prime": 749224921,
+      "source_denominator": 749224918,
+      "bridge_factor": 34,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 14,
+        "B": 1,
+        "C": 13466461,
+        "H": 153,
+        "m": 4896895
+      }
+    },
+    {
+      "prime": 784893481,
+      "source_denominator": 784893480,
+      "bridge_factor": 28,
+      "compatible_normal_form_count": 4,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 528904,
+        "B": 1,
+        "C": 371,
+        "H": 14280407,
+        "m": 55
+      }
+    },
+    {
+      "prime": 798746041,
+      "source_denominator": 798746040,
+      "bridge_factor": 16,
+      "compatible_normal_form_count": 8,
+      "B_eq_1_form_count": 2,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 3849,
+        "B": 1,
+        "C": 51881,
+        "H": 57734,
+        "m": 13835
+      }
+    },
+    {
+      "prime": 971287321,
+      "source_denominator": 971287320,
+      "bridge_factor": 4,
+      "compatible_normal_form_count": 36,
+      "B_eq_1_form_count": 8,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 5922484,
+        "B": 1,
+        "C": 41,
+        "H": 17767451,
+        "m": 55
+      }
+    },
+    {
+      "prime": 985076569,
+      "source_denominator": 985076542,
+      "bridge_factor": 838,
+      "compatible_normal_form_count": 6,
+      "B_eq_1_form_count": 1,
+      "B_eq_1_realization_exists": true,
+      "stored_normal_form_recovered": true,
+      "least_divisor_pair_form": {
+        "A": 2906,
+        "B": 1,
+        "C": 84746,
+        "H": 90085,
+        "m": 10935
+      }
+    }
+  ]
+}

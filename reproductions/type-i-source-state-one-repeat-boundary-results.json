@@ -1,0 +1,131 @@
+{
+  "arithmetic": "partition every stored B=1 miss by its verified least square-divisor exponent excess; an excess of one canonically has prime B and is a one-repeat normal realization",
+  "scope_note": "A finite partition of two stored source-state profiles. It does not prove that one repeat always suffices or supply a global rule selecting the marked prime.",
+  "profiles": [
+    {
+      "label": "H19-1B",
+      "input_count": 664,
+      "B_eq_1_realization_count": 647,
+      "one_repeat_realization_count": 15,
+      "B_eq_1_or_one_repeat_count": 662,
+      "two_repeat_boundary_count": 2,
+      "two_repeat_boundary": [
+        {
+          "prime": 178618441,
+          "R": 87,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 848,
+            "B": 4,
+            "C": 53,
+            "H": 18325241,
+            "A": 210635,
+            "m": 39
+          }
+        },
+        {
+          "prime": 675458281,
+          "R": 23,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 592,
+            "B": 4,
+            "C": 37,
+            "H": 26242467,
+            "A": 1140977,
+            "m": 103
+          }
+        }
+      ]
+    },
+    {
+      "label": "tail-500M",
+      "input_count": 1717,
+      "B_eq_1_realization_count": 1645,
+      "one_repeat_realization_count": 66,
+      "B_eq_1_or_one_repeat_count": 1711,
+      "two_repeat_boundary_count": 6,
+      "two_repeat_boundary": [
+        {
+          "prime": 39964369,
+          "R": 655,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 2356189540970351,
+            "B": 5760709,
+            "C": 71,
+            "H": 16,
+            "A": 8795,
+            "m": 14388943761651
+          }
+        },
+        {
+          "prime": 81209209,
+          "R": 231,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 8720,
+            "B": 4,
+            "C": 545,
+            "H": 2151299,
+            "A": 9313,
+            "m": 151
+          }
+        },
+        {
+          "prime": 141109609,
+          "R": 23,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 592,
+            "B": 4,
+            "C": 37,
+            "H": 5482299,
+            "A": 238361,
+            "m": 103
+          }
+        },
+        {
+          "prime": 247324009,
+          "R": 47,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 1539,
+            "B": 9,
+            "C": 19,
+            "H": 16994486,
+            "A": 361585,
+            "m": 131
+          }
+        },
+        {
+          "prime": 348596329,
+          "R": 159,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 5684,
+            "B": 14,
+            "C": 29,
+            "H": 34129813,
+            "A": 214653,
+            "m": 143
+          }
+        },
+        {
+          "prime": 481462249,
+          "R": 23,
+          "extra_exponent_count": 2,
+          "witness": {
+            "F": 592,
+            "B": 4,
+            "C": 37,
+            "H": 18705459,
+            "A": 813281,
+            "m": 103
+          }
+        }
+      ]
+    }
+  ],
+  "total_two_repeat_boundary_count": 8
+}

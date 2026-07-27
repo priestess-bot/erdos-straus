@@ -1,0 +1,126 @@
+{
+  "arithmetic": "for every listed p-1 residual and every fixed (s,R) state, test E=sR+1 against the normalized source-square condition, factor K=(pR+1)/4, enumerate all C|K with 4C=-1 (mod R), and reconstruct the natural B=1 shifted-source Type I edge exactly",
+  "scope_note": "A complete finite audit of the stated shifted-source menu. A miss excludes only these two fixed (s,R) states with B=1, not other shifts, bridge factors, B values, or Type II coordinates.",
+  "prime_limit": 10000009,
+  "input_residual_count": 12,
+  "source_menu": [
+    {
+      "shift": 9,
+      "R": 31,
+      "E": 280
+    },
+    {
+      "shift": 25,
+      "R": 19,
+      "E": 476
+    }
+  ],
+  "captured_count": 5,
+  "misses": [
+    1083289,
+    1103449,
+    2469289,
+    3389929,
+    3942409,
+    4762489,
+    5770249
+  ],
+  "selected_shift_histogram": {
+    "9": 4,
+    "25": 1
+  },
+  "selected_R_histogram": {
+    "19": 1,
+    "31": 4
+  },
+  "records": [
+    {
+      "prime": 297049,
+      "witness": {
+        "shift": 25,
+        "R": 19,
+        "E": 476,
+        "C": 71,
+        "H": 19873,
+        "gap": 15,
+        "source_denominator": 297024
+      }
+    },
+    {
+      "prime": 513529,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 581,
+        "H": 6850,
+        "gap": 75,
+        "source_denominator": 513520
+      }
+    },
+    {
+      "prime": 710089,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 35735,
+        "H": 154,
+        "gap": 4611,
+        "source_denominator": 710080
+      }
+    },
+    {
+      "prime": 1083289,
+      "witness": null
+    },
+    {
+      "prime": 1103449,
+      "witness": null
+    },
+    {
+      "prime": 1708009,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 85955,
+        "H": 154,
+        "gap": 11091,
+        "source_denominator": 1708000
+      }
+    },
+    {
+      "prime": 2469289,
+      "witness": null
+    },
+    {
+      "prime": 3389929,
+      "witness": null
+    },
+    {
+      "prime": 3942409,
+      "witness": null
+    },
+    {
+      "prime": 4762489,
+      "witness": null
+    },
+    {
+      "prime": 5180569,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 85,
+        "H": 472346,
+        "gap": 11,
+        "source_denominator": 5180560
+      }
+    },
+    {
+      "prime": 5770249,
+      "witness": null
+    }
+  ]
+}

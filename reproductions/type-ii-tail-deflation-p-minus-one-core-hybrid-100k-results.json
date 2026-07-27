@@ -1,0 +1,96 @@
+{
+  "arithmetic": "complete divisor-indexed Type II tail-deflation scan over p-1, then complete b=2,4 p-minus-one scaled-source tail enumeration on exactly the deflation misses",
+  "scope_note": "A finite core-range profile and hybrid closure. It does not prove a universal tail-deflation or p-minus-one selector.",
+  "prime_limit": 100000,
+  "core_prime_count": 1181,
+  "tail_deflation_strict_lift_count": 1179,
+  "tail_deflation_gap_histogram": {
+    "3": 575,
+    "7": 475,
+    "11": 80,
+    "15": 6,
+    "19": 11,
+    "23": 23,
+    "27": 1,
+    "31": 2,
+    "35": 1,
+    "39": 1,
+    "55": 1,
+    "119": 2,
+    "215": 1
+  },
+  "tail_deflation_misses": [
+    67369,
+    85369
+  ],
+  "p_minus_one_residual_count": 2,
+  "p_minus_one_scaled_source_candidate_count": 18,
+  "p_minus_one_tail_divisor_test_count": 5772,
+  "p_minus_one_hit_candidate_count": 2,
+  "p_minus_one_strict_lift_count": 2,
+  "unclosed_primes": [],
+  "tail_deflation_miss_records": [
+    {
+      "prime": 67369,
+      "source_denominator": 67368,
+      "candidate_count": 12,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 32281,
+        "b": 2,
+        "shift": 2807,
+        "source_first_denominator": 1087353204,
+        "tail_factor": 3839976,
+        "source_solution": [
+          1087353204,
+          16872,
+          9555176
+        ],
+        "target_solution": [
+          26096864268,
+          16872,
+          9555176
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 119,
+          "x": 16872,
+          "divisor": 416176,
+          "y": 9555176,
+          "z": 26096864268
+        }
+      }
+    },
+    {
+      "prime": 85369,
+      "source_denominator": 85368,
+      "candidate_count": 6,
+      "hit_candidate_count": 1,
+      "first_witness": {
+        "a": 37349,
+        "b": 2,
+        "shift": 10671,
+        "source_first_denominator": 1594204716,
+        "tail_factor": 554892,
+        "source_solution": [
+          1594204716,
+          21346,
+          122654116
+        ],
+        "target_solution": [
+          12753787124,
+          21346,
+          122654116
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 15,
+          "x": 21346,
+          "divisor": 17525066,
+          "y": 122654116,
+          "z": 12753787124
+        }
+      }
+    }
+  ]
+}

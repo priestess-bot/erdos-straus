@@ -2,6 +2,9 @@
 
 > 由 `python scripts/kb.py build` 生成。
 
+## 1944
+
+- 1944-01-01 · [On the Least Prime in an Arithmetic Progression. I. The Basic Theorem](../papers/linnik1944.md) — U. V. Linnik; 出版年 1944; `peer_reviewed` / `verified_with_caveat`
 ## 1950
 
 - 1950-01-01 · [Az 1/x1 + 1/x2 + ... + 1/xn = a/b egyenlet egesz szamu megoldasairol](../papers/erdos1950.md) — Pal Erdos; 出版年 1950; `peer_reviewed` / `unverified`
@@ -56,6 +59,9 @@
 ## 2008
 
 - 2008-09-23 · [On the Erdos-Straus conjecture: Properties of solutions to its underlying diophantine equation](../papers/monks_velingker2008.md) — Maria Monks, Ashwin Velingker; 出版年 2008; `preprint` / `verified_with_caveat`
+## 2009
+
+- 2009-01-01 · [Representation of finite abelian group elements by subsequence sums](../papers/grynkiewicz_marchan_ordaz2009.md) — David J. Grynkiewicz, Luz E. Marchan, Oscar Ordaz; 出版年 2009; `peer_reviewed` / `verified`
 ## 2010
 
 - 2010-01-07 · [On the Erdos-Straus Conjecture](../papers/ionascu_wilson2010.md) — Eugen J. Ionascu, Andrew Wilson; 出版年 2011; `peer_reviewed` / `verified_with_caveat`
@@ -73,7 +79,7 @@
 - 2014-06-24 · [The Erdos-Straus conjecture: New modular equations and checking up to N = 10^17](../papers/salez2014.md) — Serge E. Salez; 出版年 2014; `preprint` / `computationally_reported`
 ## 2015
 
-- 2015-01-01 · [A geometric reduction of the Erdos-Straus conjecture](../papers/bradford_ionascu2015.md) — Kyle Bradford, Eugen J. Ionascu; 出版年 2015; `peer_reviewed` / `unverified`
+- 2015-01-01 · [A geometric reduction of the Erdos-Straus conjecture](../papers/bradford_ionascu2015.md) — Kyle Bradford, Eugen J. Ionascu; 出版年 2015; `peer_reviewed` / `verified_with_caveat`
 - 2015-12-29 · [A note on the Erdos-Straus conjecture](../papers/subburam_togbe2016.md) — S. Subburam, Alain Togbe; 出版年 2016; `peer_reviewed` / `unverified`
 ## 2018
 
@@ -92,9 +98,10 @@
 ## 2022
 
 - 2022-06-21 · [Structure and form of the solutions of the Erdos-Straus conjecture](../papers/lopez2022.md) — Miguel Angel Lopez; 出版年 2022; `preprint` / `verified_with_caveat`
+- 2022-09-01 · [Existence and density problems in Diophantine geometry: From norm forms to Campana points](../papers/shute2022.md) — Alec Shute; 出版年 2022; `thesis` / `verified`
 ## 2024
 
-- 2024-03-24 · [Elementary Patterns from the Erdos-Straus Conjecture](../papers/bradford2024.md) — Kyle Bradford; 出版年 2025; `peer_reviewed` / `verified`
+- 2024-03-24 · [Elementary Patterns from the Erdos-Straus Conjecture](../papers/bradford2024.md) — Kyle Bradford; 出版年 2025; `peer_reviewed` / `verified_with_caveat`
 - 2024-04-02 · [A Complete Congruence System for the Erdos-Straus Conjecture](../papers/lopez2024.md) — Miguel Angel Lopez; 出版年 2024; `preprint` / `heuristic`
 ## 2025
 
@@ -106,10 +113,15 @@
 - 2025-11-20 · [Exceptions to the Erdos-Straus-Schinzel conjecture](../papers/pomerance_weingartner2026.md) — Carl Pomerance, Andreas Weingartner; 出版年 2026; `peer_reviewed` / `verified`
 ## 2026
 
+- 2026-01-25 · [An Erdos-Straus divisor-lattice construction for 4/n](../papers/audige_divisor_lattice2026.md) — Salomon Emmanuel Audige Youmbi; 出版年 2026; `preprint` / `claim_with_gap`
 - 2026-02-12 · [A solution to the Straus Erdos conjecture](../papers/bradford2026.md) — Kyle Bradford; 出版年 2026; `preprint` / `claim_with_gap`
 - 2026-02-20 · [A unified parametric approach to the Erdos-Straus conjecture with explicit solutions for a set of integers of natural density one](../papers/mballa2026.md) — Philemon Urbain Mballa; 出版年 2026; `preprint` / `verified_with_caveat`
 - 2026-04-03 · [The Erdos-Straus Conjecture and the Structure of Primes](../papers/chamberland2026.md) — Marc Chamberland; 出版年 2026; `peer_reviewed` / `verified`
 - 2026-05-06 · [A ceiling continued fraction approach to the Erdos-Straus conjecture: Heuristic finiteness of counterexamples](../papers/ventas2026.md) — Andres Ventas; 出版年 2026; `preprint` / `heuristic`
+- 2026-05-22 · [A Linear-Ratio Ansatz for Congruence Families in the Erdos-Straus Equation](../papers/linear_ratio_ansatz2026.md) — Idriss Olivier Bado; 出版年 2026; `preprint` / `verified_with_caveat`
 - 2026-05-22 · [Congruence Classes of Supporting the Erdos-Straus Conjecture I: Tame Solutions](../papers/xu2026.md) — Xiaoping Xu; 出版年 2026; `preprint` / `computationally_reported`
 - 2026-05-25 · [Erdos-Straus Decompositions](../papers/bhattacharjee2026.md) — Deep Bhattacharjee; 出版年 2026; `preprint` / `computationally_reported`
+- 2026-06-06 · [Adaptive Divisor Clouds, Split-Capture Semigroups, and a Residual Closure Machine for the Erdos-Straus Equation](../papers/adaptive_divisor_clouds2026.md) — Deep Bhattacharjee; 出版年 2026; `preprint` / `verified_with_caveat`
 - 2026-06-09 · [A Divisor Parametrization for the Erdos-Straus Conjecture](../papers/bello2026.md) — Manuel Bello-Hernandez, Manuel Benito, Emilio Fernandez; 出版年 2026; `preprint` / `computationally_reported`
+- 2026-07-06 · [On the Hybrid-Greedy Diophantine Descent for Arbitrary-Length Egyptian Fraction Partitioning](../papers/roy_hgdd2026.md) — Sayantan Roy; 出版年 2026; `preprint` / `contradicted`
+- 2026-07-19 · [Observations of the Erdos-Straus conjecture](../papers/subramanian2026.md) — Pradhyumnaa Ganapathi Subramanian; 出版年 2026; `preprint` / `verified_with_caveat`

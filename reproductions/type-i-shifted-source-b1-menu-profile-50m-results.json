@@ -1,0 +1,350 @@
+{
+  "arithmetic": "for every listed p-1 residual and every fixed (s,R) state, test E=sR+1 against the normalized source-square condition, factor K=(pR+1)/4, enumerate all C|K with 4C=-1 (mod R), and reconstruct the natural B=1 shifted-source Type I edge exactly",
+  "scope_note": "A complete finite audit of the stated shifted-source menu. A miss excludes only these two fixed (s,R) states with B=1, not other shifts, bridge factors, B values, or Type II coordinates.",
+  "prime_limit": 50000017,
+  "input_residual_count": 47,
+  "source_menu": [
+    {
+      "shift": 9,
+      "R": 31,
+      "E": 280
+    },
+    {
+      "shift": 25,
+      "R": 19,
+      "E": 476
+    }
+  ],
+  "captured_count": 12,
+  "misses": [
+    1083289,
+    1103449,
+    2469289,
+    3389929,
+    3942409,
+    4762489,
+    5770249,
+    10269529,
+    11635369,
+    13185769,
+    13595929,
+    13782409,
+    14397289,
+    14823769,
+    16218409,
+    16253449,
+    16977769,
+    19158409,
+    20337529,
+    20878729,
+    22182169,
+    25935529,
+    26459689,
+    28418329,
+    29582809,
+    32499289,
+    33035209,
+    35459449,
+    36583369,
+    37467049,
+    40595209,
+    40944649,
+    42555769,
+    43827529,
+    44502649
+  ],
+  "selected_shift_histogram": {
+    "9": 10,
+    "25": 2
+  },
+  "selected_R_histogram": {
+    "19": 2,
+    "31": 10
+  },
+  "records": [
+    {
+      "prime": 297049,
+      "witness": {
+        "shift": 25,
+        "R": 19,
+        "E": 476,
+        "C": 71,
+        "H": 19873,
+        "gap": 15,
+        "source_denominator": 297024
+      }
+    },
+    {
+      "prime": 513529,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 581,
+        "H": 6850,
+        "gap": 75,
+        "source_denominator": 513520
+      }
+    },
+    {
+      "prime": 710089,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 35735,
+        "H": 154,
+        "gap": 4611,
+        "source_denominator": 710080
+      }
+    },
+    {
+      "prime": 1083289,
+      "witness": null
+    },
+    {
+      "prime": 1103449,
+      "witness": null
+    },
+    {
+      "prime": 1708009,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 85955,
+        "H": 154,
+        "gap": 11091,
+        "source_denominator": 1708000
+      }
+    },
+    {
+      "prime": 2469289,
+      "witness": null
+    },
+    {
+      "prime": 3389929,
+      "witness": null
+    },
+    {
+      "prime": 3942409,
+      "witness": null
+    },
+    {
+      "prime": 4762489,
+      "witness": null
+    },
+    {
+      "prime": 5180569,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 85,
+        "H": 472346,
+        "gap": 11,
+        "source_denominator": 5180560
+      }
+    },
+    {
+      "prime": 5770249,
+      "witness": null
+    },
+    {
+      "prime": 10269529,
+      "witness": null
+    },
+    {
+      "prime": 11430169,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 23,
+        "H": 3851470,
+        "gap": 3,
+        "source_denominator": 11430160
+      }
+    },
+    {
+      "prime": 11635369,
+      "witness": null
+    },
+    {
+      "prime": 13185769,
+      "witness": null
+    },
+    {
+      "prime": 13595929,
+      "witness": null
+    },
+    {
+      "prime": 13782409,
+      "witness": null
+    },
+    {
+      "prime": 13992169,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 106105,
+        "H": 1022,
+        "gap": 13691,
+        "source_denominator": 13992160
+      }
+    },
+    {
+      "prime": 14397289,
+      "witness": null
+    },
+    {
+      "prime": 14823769,
+      "witness": null
+    },
+    {
+      "prime": 16218409,
+      "witness": null
+    },
+    {
+      "prime": 16253449,
+      "witness": null
+    },
+    {
+      "prime": 16977769,
+      "witness": null
+    },
+    {
+      "prime": 18190489,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 395,
+        "H": 356902,
+        "gap": 51,
+        "source_denominator": 18190480
+      }
+    },
+    {
+      "prime": 19060969,
+      "witness": {
+        "shift": 25,
+        "R": 19,
+        "E": 476,
+        "C": 451,
+        "H": 200753,
+        "gap": 95,
+        "source_denominator": 19060944
+      }
+    },
+    {
+      "prime": 19158409,
+      "witness": null
+    },
+    {
+      "prime": 20337529,
+      "witness": null
+    },
+    {
+      "prime": 20878729,
+      "witness": null
+    },
+    {
+      "prime": 22182169,
+      "witness": null
+    },
+    {
+      "prime": 24384649,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 302,
+        "H": 625765,
+        "gap": 39,
+        "source_denominator": 24384640
+      }
+    },
+    {
+      "prime": 25301929,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 23,
+        "H": 8525650,
+        "gap": 3,
+        "source_denominator": 25301920
+      }
+    },
+    {
+      "prime": 25935529,
+      "witness": null
+    },
+    {
+      "prime": 26459689,
+      "witness": null
+    },
+    {
+      "prime": 28418329,
+      "witness": null
+    },
+    {
+      "prime": 29522089,
+      "witness": {
+        "shift": 9,
+        "R": 31,
+        "E": 280,
+        "C": 20390,
+        "H": 11221,
+        "gap": 2631,
+        "source_denominator": 29522080
+      }
+    },
+    {
+      "prime": 29582809,
+      "witness": null
+    },
+    {
+      "prime": 32499289,
+      "witness": null
+    },
+    {
+      "prime": 33035209,
+      "witness": null
+    },
+    {
+      "prime": 35459449,
+      "witness": null
+    },
+    {
+      "prime": 36583369,
+      "witness": null
+    },
+    {
+      "prime": 37467049,
+      "witness": null
+    },
+    {
+      "prime": 40595209,
+      "witness": null
+    },
+    {
+      "prime": 40944649,
+      "witness": null
+    },
+    {
+      "prime": 42555769,
+      "witness": null
+    },
+    {
+      "prime": 43827529,
+      "witness": null
+    },
+    {
+      "prime": 44502649,
+      "witness": null
+    }
+  ]
+}

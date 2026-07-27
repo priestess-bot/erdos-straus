@@ -1,0 +1,130 @@
+{
+  "arithmetic": "factor every x=(p+m)/4 by trial division; enumerate every d|x^2; test the exact Type I congruence m|(p*x+d), the exact Type II congruence m|(x+d) with d<=x, and the established normal-tail strict-deflation condition for each Type I normal form",
+  "scope_note": "This is a complete finite scan only for the listed prime and gaps m<=gap_cap. A null normal-tail deflation excludes only the preserve-first-two-terms p-tail shape.",
+  "prime": 477015289,
+  "gap_cap": 27,
+  "first_certificate_gap": 27,
+  "gaps": [
+    {
+      "gap": 3,
+      "first_denominator": 119253823,
+      "factorization": {
+        "13": 1,
+        "19": 2,
+        "25411": 1
+      },
+      "square_divisor_count": 45,
+      "type_i": [],
+      "type_ii_divisors": []
+    },
+    {
+      "gap": 7,
+      "first_denominator": 119253824,
+      "factorization": {
+        "2": 6,
+        "211": 1,
+        "8831": 1
+      },
+      "square_divisor_count": 117,
+      "type_i": [],
+      "type_ii_divisors": []
+    },
+    {
+      "gap": 11,
+      "first_denominator": 119253825,
+      "factorization": {
+        "3": 2,
+        "5": 2,
+        "530017": 1
+      },
+      "square_divisor_count": 75,
+      "type_i": [],
+      "type_ii_divisors": []
+    },
+    {
+      "gap": 15,
+      "first_denominator": 119253826,
+      "factorization": {
+        "2": 1,
+        "7253": 1,
+        "8221": 1
+      },
+      "square_divisor_count": 27,
+      "type_i": [],
+      "type_ii_divisors": []
+    },
+    {
+      "gap": 19,
+      "first_denominator": 119253827,
+      "factorization": {
+        "7": 1,
+        "11": 1,
+        "17": 2,
+        "23": 1,
+        "233": 1
+      },
+      "square_divisor_count": 405,
+      "type_i": [],
+      "type_ii_divisors": []
+    },
+    {
+      "gap": 23,
+      "first_denominator": 119253828,
+      "factorization": {
+        "2": 2,
+        "3": 1,
+        "443": 1,
+        "22433": 1
+      },
+      "square_divisor_count": 135,
+      "type_i": [],
+      "type_ii_divisors": []
+    },
+    {
+      "gap": 27,
+      "first_denominator": 119253829,
+      "factorization": {
+        "29": 1,
+        "433": 1,
+        "9497": 1
+      },
+      "square_divisor_count": 27,
+      "type_i": [
+        {
+          "divisor": 7986977,
+          "normal_form": [
+            29,
+            433,
+            9497
+          ],
+          "tail_quotient": 263790079,
+          "tail_condition_remainder": 213225208,
+          "normal_tail_deflation": null
+        },
+        {
+          "divisor": 3458361041,
+          "normal_form": [
+            29,
+            1,
+            4112201
+          ],
+          "tail_quotient": 609215,
+          "tail_condition_remainder": 608376,
+          "normal_tail_deflation": null
+        },
+        {
+          "divisor": 1497470330753,
+          "normal_form": [
+            12557,
+            1,
+            9497
+          ],
+          "tail_quotient": 1407,
+          "tail_condition_remainder": 376,
+          "normal_tail_deflation": null
+        }
+      ],
+      "type_ii_divisors": []
+    }
+  ]
+}

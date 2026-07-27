@@ -1,0 +1,164 @@
+{
+  "arithmetic": "complete exact factorization of p+m, all divisors D>1 with D=1 mod m, stored Type II certificate reconstruction, and exact scaled-first source verification",
+  "scope_note": "A fixed-certificate finite audit. A miss only rules out marked tail deflation at that selected collision-labelled certificate, not other certificates or descents.",
+  "input_artifact": "type-ii-minimal-collision-support-h19-1b-results.json",
+  "prime_limit": 1000000000,
+  "collision_labelled_state_count": 11,
+  "marked_tail_descent_count": 2,
+  "marked_tail_descent_misses": [
+    9744001,
+    55722241,
+    178400041,
+    192369241,
+    283163161,
+    362665921,
+    372271201,
+    625826881,
+    751064161
+  ],
+  "records": [
+    {
+      "prime": 345601,
+      "collision_multiplicity": 1,
+      "shift": 26,
+      "gap": 95,
+      "certificate_factor": 3639,
+      "gap_plus_one_remainder": 0,
+      "marked_tail_witness": {
+        "shared_divisor": 96,
+        "shared_divisor_factorization": [
+          {
+            "prime": 2,
+            "exponent": 5
+          },
+          {
+            "prime": 3,
+            "exponent": 1
+          }
+        ],
+        "first_scale": 1,
+        "source_denominator": 3601,
+        "source_solution": [
+          86424,
+          910,
+          3024840
+        ],
+        "eligible_shared_divisor_count": 1
+      }
+    },
+    {
+      "prime": 9744001,
+      "collision_multiplicity": 1,
+      "shift": 36,
+      "gap": 29087,
+      "certificate_factor": 335,
+      "gap_plus_one_remainder": 28608,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 55722241,
+      "collision_multiplicity": 1,
+      "shift": 48,
+      "gap": 5183,
+      "certificate_factor": 10751,
+      "gap_plus_one_remainder": 4608,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 92421169,
+      "collision_multiplicity": 1,
+      "shift": 41,
+      "gap": 867,
+      "certificate_factor": 106599,
+      "gap_plus_one_remainder": 0,
+      "marked_tail_witness": {
+        "shared_divisor": 868,
+        "shared_divisor_factorization": [
+          {
+            "prime": 2,
+            "exponent": 2
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 31,
+            "exponent": 1
+          }
+        ],
+        "first_scale": 1,
+        "source_denominator": 106477,
+        "source_solution": [
+          23105509,
+          26650,
+          15018580850
+        ],
+        "eligible_shared_divisor_count": 1
+      }
+    },
+    {
+      "prime": 178400041,
+      "collision_multiplicity": 1,
+      "shift": 72,
+      "gap": 82631,
+      "certificate_factor": 2159,
+      "gap_plus_one_remainder": 80184,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 192369241,
+      "collision_multiplicity": 1,
+      "shift": 26,
+      "gap": 8295,
+      "certificate_factor": 23191,
+      "gap_plus_one_remainder": 1592,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 283163161,
+      "collision_multiplicity": 1,
+      "shift": 53,
+      "gap": 78591,
+      "certificate_factor": 3603,
+      "gap_plus_one_remainder": 74776,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 362665921,
+      "collision_multiplicity": 1,
+      "shift": 50,
+      "gap": 2280919,
+      "certificate_factor": 159,
+      "gap_plus_one_remainder": 2280560,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 372271201,
+      "collision_multiplicity": 2,
+      "shift": 89,
+      "gap": 16867,
+      "certificate_factor": 22071,
+      "gap_plus_one_remainder": 11308,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 625826881,
+      "collision_multiplicity": 1,
+      "shift": 51,
+      "gap": 191795,
+      "certificate_factor": 3263,
+      "gap_plus_one_remainder": 188328,
+      "marked_tail_witness": null
+    },
+    {
+      "prime": 751064161,
+      "collision_multiplicity": 1,
+      "shift": 36,
+      "gap": 2241983,
+      "certificate_factor": 335,
+      "gap_plus_one_remainder": 2241504,
+      "marked_tail_witness": null
+    }
+  ]
+}

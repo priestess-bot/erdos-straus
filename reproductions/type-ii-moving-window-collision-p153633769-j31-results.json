@@ -1,0 +1,806 @@
+{
+  "arithmetic": "exact SPF factorization and complete divisor-residue product sets for x_j^2 at every window position",
+  "scope_note": "This is a finite collision-state decomposition. It does not prove that private residues from different gaps are incompatible.",
+  "prime": 153633769,
+  "window_j": 31,
+  "collision_primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29
+  ],
+  "private_cofactors_pairwise_coprime": true,
+  "rows": [
+    {
+      "j": 1,
+      "gap": 3,
+      "x": 38408443,
+      "target": 2,
+      "collision_factorization": [
+        [
+          19,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          2021497,
+          1
+        ]
+      ],
+      "collision_residue_count": 1,
+      "private_residue_count": 1,
+      "full_residue_count": 1,
+      "forbidden_private_target_count": 1
+    },
+    {
+      "j": 2,
+      "gap": 7,
+      "x": 38408444,
+      "target": 3,
+      "collision_factorization": [
+        [
+          2,
+          2
+        ]
+      ],
+      "private_factorization": [
+        [
+          71,
+          1
+        ],
+        [
+          135241,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 1,
+      "full_residue_count": 3,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 3,
+      "gap": 11,
+      "x": 38408445,
+      "target": 2,
+      "collision_factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          284507,
+          1
+        ]
+      ],
+      "collision_residue_count": 5,
+      "private_residue_count": 3,
+      "full_residue_count": 5,
+      "forbidden_private_target_count": 5
+    },
+    {
+      "j": 4,
+      "gap": 15,
+      "x": 38408446,
+      "target": 14,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          19204223,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 3,
+      "full_residue_count": 4,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 5,
+      "gap": 19,
+      "x": 38408447,
+      "target": 15,
+      "collision_factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          47,
+          1
+        ],
+        [
+          10613,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 9,
+      "full_residue_count": 9,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 6,
+      "gap": 23,
+      "x": 38408448,
+      "target": 11,
+      "collision_factorization": [
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          3847,
+          1
+        ]
+      ],
+      "collision_residue_count": 11,
+      "private_residue_count": 3,
+      "full_residue_count": 11,
+      "forbidden_private_target_count": 11
+    },
+    {
+      "j": 7,
+      "gap": 27,
+      "x": 38408449,
+      "target": 23,
+      "collision_factorization": [],
+      "private_factorization": [
+        [
+          2663,
+          1
+        ],
+        [
+          14423,
+          1
+        ]
+      ],
+      "collision_residue_count": 1,
+      "private_residue_count": 9,
+      "full_residue_count": 9,
+      "forbidden_private_target_count": 1
+    },
+    {
+      "j": 8,
+      "gap": 31,
+      "x": 38408450,
+      "target": 23,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "private_factorization": [
+        [
+          768169,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 3,
+      "full_residue_count": 15,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 9,
+      "gap": 35,
+      "x": 38408451,
+      "target": 24,
+      "collision_factorization": [
+        [
+          3,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          12802817,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 3,
+      "full_residue_count": 9,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 10,
+      "gap": 39,
+      "x": 38408452,
+      "target": 35,
+      "collision_factorization": [
+        [
+          2,
+          2
+        ]
+      ],
+      "private_factorization": [
+        [
+          9602113,
+          1
+        ]
+      ],
+      "collision_residue_count": 5,
+      "private_residue_count": 1,
+      "full_residue_count": 5,
+      "forbidden_private_target_count": 5
+    },
+    {
+      "j": 11,
+      "gap": 43,
+      "x": 38408453,
+      "target": 7,
+      "collision_factorization": [],
+      "private_factorization": [
+        [
+          38408453,
+          1
+        ]
+      ],
+      "collision_residue_count": 1,
+      "private_residue_count": 3,
+      "full_residue_count": 3,
+      "forbidden_private_target_count": 1
+    },
+    {
+      "j": 12,
+      "gap": 47,
+      "x": 38408454,
+      "target": 40,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "private_factorization": [
+        [
+          6221,
+          1
+        ]
+      ],
+      "collision_residue_count": 23,
+      "private_residue_count": 3,
+      "full_residue_count": 23,
+      "forbidden_private_target_count": 23
+    },
+    {
+      "j": 13,
+      "gap": 51,
+      "x": 38408455,
+      "target": 2,
+      "collision_factorization": [
+        [
+          5,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          7681691,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 3,
+      "full_residue_count": 9,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 14,
+      "gap": 55,
+      "x": 38408456,
+      "target": 24,
+      "collision_factorization": [
+        [
+          2,
+          3
+        ]
+      ],
+      "private_factorization": [
+        [
+          4801057,
+          1
+        ]
+      ],
+      "collision_residue_count": 7,
+      "private_residue_count": 3,
+      "full_residue_count": 20,
+      "forbidden_private_target_count": 7
+    },
+    {
+      "j": 15,
+      "gap": 59,
+      "x": 38408457,
+      "target": 12,
+      "collision_factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          79,
+          1
+        ],
+        [
+          9533,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 9,
+      "full_residue_count": 33,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 16,
+      "gap": 63,
+      "x": 38408458,
+      "target": 59,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          1745839,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 3,
+      "full_residue_count": 15,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 17,
+      "gap": 67,
+      "x": 38408459,
+      "target": 28,
+      "collision_factorization": [
+        [
+          23,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          1669933,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 3,
+      "full_residue_count": 9,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 18,
+      "gap": 71,
+      "x": 38408460,
+      "target": 55,
+      "collision_factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          43,
+          1
+        ],
+        [
+          14887,
+          1
+        ]
+      ],
+      "collision_residue_count": 31,
+      "private_residue_count": 9,
+      "full_residue_count": 35,
+      "forbidden_private_target_count": 31
+    },
+    {
+      "j": 19,
+      "gap": 75,
+      "x": 38408461,
+      "target": 14,
+      "collision_factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          2
+        ]
+      ],
+      "private_factorization": [
+        [
+          32467,
+          1
+        ]
+      ],
+      "collision_residue_count": 15,
+      "private_residue_count": 3,
+      "full_residue_count": 20,
+      "forbidden_private_target_count": 15
+    },
+    {
+      "j": 20,
+      "gap": 79,
+      "x": 38408462,
+      "target": 74,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          1010749,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 3,
+      "full_residue_count": 27,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 21,
+      "gap": 83,
+      "x": 38408463,
+      "target": 36,
+      "collision_factorization": [
+        [
+          3,
+          2
+        ]
+      ],
+      "private_factorization": [
+        [
+          307,
+          1
+        ],
+        [
+          13901,
+          1
+        ]
+      ],
+      "collision_residue_count": 5,
+      "private_residue_count": 9,
+      "full_residue_count": 33,
+      "forbidden_private_target_count": 5
+    },
+    {
+      "j": 22,
+      "gap": 87,
+      "x": 38408464,
+      "target": 35,
+      "collision_factorization": [
+        [
+          2,
+          4
+        ]
+      ],
+      "private_factorization": [
+        [
+          53,
+          1
+        ],
+        [
+          45293,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 5,
+      "full_residue_count": 40,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 23,
+      "gap": 91,
+      "x": 38408465,
+      "target": 87,
+      "collision_factorization": [
+        [
+          5,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          7681693,
+          1
+        ]
+      ],
+      "collision_residue_count": 3,
+      "private_residue_count": 3,
+      "full_residue_count": 9,
+      "forbidden_private_target_count": 3
+    },
+    {
+      "j": 24,
+      "gap": 95,
+      "x": 38408466,
+      "target": 34,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          6401411,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 3,
+      "full_residue_count": 24,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 25,
+      "gap": 99,
+      "x": 38408467,
+      "target": 68,
+      "collision_factorization": [],
+      "private_factorization": [
+        [
+          61,
+          1
+        ],
+        [
+          733,
+          1
+        ],
+        [
+          859,
+          1
+        ]
+      ],
+      "collision_residue_count": 1,
+      "private_residue_count": 27,
+      "full_residue_count": 27,
+      "forbidden_private_target_count": 1
+    },
+    {
+      "j": 26,
+      "gap": 103,
+      "x": 38408468,
+      "target": 26,
+      "collision_factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          1371731,
+          1
+        ]
+      ],
+      "collision_residue_count": 15,
+      "private_residue_count": 3,
+      "full_residue_count": 37,
+      "forbidden_private_target_count": 15
+    },
+    {
+      "j": 27,
+      "gap": 107,
+      "x": 38408469,
+      "target": 37,
+      "collision_factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "private_factorization": [
+        [
+          59,
+          1
+        ],
+        [
+          19727,
+          1
+        ]
+      ],
+      "collision_residue_count": 9,
+      "private_residue_count": 9,
+      "full_residue_count": 45,
+      "forbidden_private_target_count": 9
+    },
+    {
+      "j": 28,
+      "gap": 111,
+      "x": 38408470,
+      "target": 83,
+      "collision_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          2
+        ]
+      ],
+      "private_factorization": [
+        [
+          4567,
+          1
+        ]
+      ],
+      "collision_residue_count": 30,
+      "private_residue_count": 3,
+      "full_residue_count": 36,
+      "forbidden_private_target_count": 30
+    },
+    {
+      "j": 29,
+      "gap": 115,
+      "x": 38408471,
+      "target": 34,
+      "collision_factorization": [],
+      "private_factorization": [
+        [
+          38408471,
+          1
+        ]
+      ],
+      "collision_residue_count": 1,
+      "private_residue_count": 3,
+      "full_residue_count": 3,
+      "forbidden_private_target_count": 1
+    },
+    {
+      "j": 30,
+      "gap": 119,
+      "x": 38408472,
+      "target": 87,
+      "collision_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "private_factorization": [
+        [
+          41,
+          1
+        ],
+        [
+          4337,
+          1
+        ]
+      ],
+      "collision_residue_count": 45,
+      "private_residue_count": 9,
+      "full_residue_count": 48,
+      "forbidden_private_target_count": 45
+    },
+    {
+      "j": 31,
+      "gap": 123,
+      "x": 38408473,
+      "target": 122,
+      "collision_factorization": [],
+      "private_factorization": [
+        [
+          31,
+          1
+        ],
+        [
+          419,
+          1
+        ],
+        [
+          2957,
+          1
+        ]
+      ],
+      "collision_residue_count": 1,
+      "private_residue_count": 18,
+      "full_residue_count": 18,
+      "forbidden_private_target_count": 1
+    }
+  ]
+}

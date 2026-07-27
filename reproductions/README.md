@@ -16,3 +16,440 @@ python3 -m unittest discover -s tests -v
 
 生成的 `results.json` 记录运行范围和脚本 SHA-256。它是有限范围的交叉核对，
 不是 Salez `10^17` 或 Mihnea–Dumitru `10^18` 搜索的全量复现。
+
+`short_certificate.py` 按递增首分母缺口搜索精确 Bradford Type I/II 证书。
+它还实现 \(n=(3p+1)/4\) 的显式标记递降：若 \(n\) 有 \(2\pmod3\) 素因子，
+则可把 \(4/n\) 的一个显式解提升至 \(4/p\)，并同时恢复平方根级 Type I 证书。
+其中 `even_source_distance_descent_witness` 精确枚举以 \(p-c\)（正奇数 \(c\)）
+为源的完整平移平方尾：它把每个允许平移降为一个 \(M_1^2\) 因子的单同余测试，并
+返回严格提升及其 Type I 证书。源 \(p-c\) 是严格更小的偶数；旧的
+`p_minus_one_source_descent_witness` 保留为 \(c=1\) 的兼容入口。
+`external_source.py` 先用 `m=3`、`(p+1)/2`、`p+4`、`4p+1` 四条已证分支过滤，
+再以 `m | p+i` 与 `4i | p+m` 搜索外部源 Type I 证书；`--source-limit` 仅是有限
+实验窗口，不能解释为全体素数的统一界。
+
+`fct_type_i_equivalence.py` 把三项 ceiling-FCT 的递推系数
+`(c0,c1,c2)` 与同一外部源证书逐项双向恢复：其缺口为 `c2`，除子为 `c0*x`。
+默认盒在 76 个核心素数和 source 至多 32 的条件下完整复核 386 个外部 source 见证。
+它只核对 FCT 的确定性构造等价，不把文献中的独立性随机模型或有限 source 结果当作
+逐点覆盖定理；见 `fct-three-term-type-I-equivalence`。
+
+同一外部源见证还可唯一写成 \(rp+1=4qt\)、\(r\equiv3\pmod4\)、
+\(q\equiv-1\pmod r\)，并恢复 \(i=(q+1)/r\)。`external_source.py` 提供双向
+正规形检查；见 `type-I-rp-plus-one-external-factor-ray`。这给出缺口至多
+\((p-1)/4\) 的变量因子 Type I 射线，不把有限 source 窗口误作统一界。
+
+`adaptive_external_escape.py` 专门审计自适应外部源递降的未命中实例：它为每个
+逃逸素数列出全部允许 \(k\)、源分母的素因子残数、有限 source 窗口中的直接外部源
+正规形，以及有界 Type II \(AC\) 射线证书。这个报告区分“没有该递降边”和
+“没有直接证书”，不把后者从有限窗口外推为全称结论。
+
+`targeted_descent_bridge.py` 固定一张直接证书的目标三元组，反向枚举所有保留其中
+两项的严格源提升。它用于区分“有直接证书”与“该证书可直接桥接为二分母保留递降”；
+空输出只排除后一种特定桥接，不排除其它递降。
+
+`cyclic_reciprocal_lift.py` 审计最小的三坐标耦合候选：循环地将每对源倒数平均后按
+\(n/p\) 缩放。该式在实数层面恒等地保持 \(4/n\mapsto4/p\)，但
+`cyclic-reciprocal-transport-obstruction` 证明其三个整数分母条件对任何核心素数
+不相容。它还实现任意既约循环权重；同一张卡片证明这种权重即使放宽，也无法从无条件
+偶数标准源获得核心目标。脚本只作有限交叉核对，避免把证明中的整性链条实现错位。
+
+`weighted_cyclic_repeated_tail_audit.py` 则越过标准源，固定最小显式非标准族
+\(n=4k-2,\ (k,nk,nk)\)，把任意加权循环的整性压缩为两条一次整除。默认结果在
+\(p\le5000\)、权重分母至多 50 的 36,181,038 个候选中均无核心命中；见
+`weighted-cyclic-repeated-tail-boundary`。这是下一类带因子标记源的有限负例基准，
+不是权重或源解的全称障碍。
+
+`weighted_cyclic_complete_repeated_tail_audit.py` 则把该源形状完整化：任一
+`(a,b,b)` 源在目标中间分母为整数时必有 \(b=nk\)，最小可行 \(n\) 由 \(k\) 的奇偶
+精确决定。该完整审计在同一盒内给出 \(p=2161\) 的唯一无向命中；它恰重建
+Type II \((m,d)=(47,12)\)，所以应读作标记证书重参数化而不是新递降。见
+`weighted-cyclic-complete-repeated-tail-audit`。
+
+`weighted_cyclic_reverse_bridge.py` 固定一个目标和既约循环权重后，以精确逆矩阵
+恢复所有可能反向源倒数的有理轮廓；分子最小公倍数直接判定是否存在 \(2\le n<p\) 的
+整数源。默认审计首个共同递降逃逸点 \(p=2451289\) 的全部 21 张 \(A,C\le14\) Type II
+目标，以及全部 \(s\le20\) 权重，结果为空。它允许三个目标分母同时变化，故比二尾保留
+桥接更宽；但仍只排除固定有限目标盒内的零偏移循环传输，见
+`weighted-cyclic-reverse-bridge-boundary`。
+
+`doubly_stochastic_reverse_bridge.py` 再把循环权重扩至约化、可逆且真正混合的
+\(3\times3\) 双随机矩阵。固定矩阵的伴随逆和分子最小公倍数仍完整决定全部严格源。
+默认审计 \(p=2451289\) 的同一 21 张目标，穷尽分母 \(2\) 至 \(10\) 的 5,082 个矩阵及
+106,722 个目标/矩阵逆像，结果为空；这排除低复杂度非循环线性混合，不涉及高分母、
+偏移或非线性状态，见 `doubly-stochastic-reverse-bridge-boundary`。
+
+`type_ii_tail_deflation_audit.py` 审计另一种严格标记桥：对 Type II 证书，若
+`m+1\mid p-1`，则同时从两条含 `p` 尾分母中去掉 `p`，得到源
+`n=(p+m)/(m+1)<p`。候选缺口只来自 `p-1` 的因子。当前三百万范围审计显示，
+此前自适应递降审计留下的全部 215 个机制逃逸点都被该桥覆盖；这是有限交叉核对，
+不是全体素数的因子选择定理。这个桥要求源端有指定首分母的解，见
+`type-II-scaled-tail-marked-lift-equivalence`；所以结果应读作带标记 Type II
+证书选择，不能当作从任意较小实例开始的递归证明。
+
+`type_ii_tail_deflation_full_audit.py` 则不预先筛选逃逸点，而是逐个扫描有限范围内
+所有核心素数的 `p-1` 因子标记缺口。它保存每个最小命中的 gap、记录保持者和全部
+遗漏的因子分解及普通证书，专门用于研究这个选择器的真实失败模式；当前百万范围结果
+见 `type-II-tail-deflation-selector-audit`。
+
+`type_ii_scaled_first_tail_deflation_audit.py` 放宽双尾桥的“首分母不变”限制：
+源三元组 `(kx,Y,Z)` 提升为 `(x,pY,pZ)`。整性判据是
+`km+1\mid kp-1`，且仍严格降低源分母。它当前在
+`k<=2000,m<=20000` 的盒内覆盖三百万范围一阶选择器留下的全部 41 点；见
+`type-II-scaled-first-tail-deflation` 与
+`type-II-scaled-first-tail-deflation-audit`。该提升是带标记双射，不声称能提升
+任意源解；这项审计也不声称固定参数盒全局充分。
+
+`type_ii_scaled_first_ac_boundary.py` 在同一 41 点上反向检验一个常见误推：
+它穷举 `A,C<=14`、可变 `K` 的全部原始 Type II 射线，并对每张证书枚举
+`p+m` 的共享因子。30 点命中、11 点保留，故“小 AC 直接证书”不足以自动给出
+共享因子递降；见 `type-II-scaled-first-bounded-ac-boundary`。
+
+`type_ii_shared_divisor_full_audit.py` 则直接对全部核心素数运行有界缺口、无界首尺度
+的共享因子扇：对每个 `m` 它枚举 `p+m` 的全部因子，因此不会人为截断 `k`。
+当前 `m<=239` 的扇在一千万内覆盖全部核心素数，但所需 `k` 可达 664185；见
+`type-II-shared-divisor-fan-audit`。这是一项强有限带标记证书审计，不是固定扇的
+全称证明或无标记递降。
+
+共享因子扇的全称目标现明确为 `type-II-shared-residue-selector-conjecture`：
+在同一缺口 \(m\) 上，要求 \(4x=p+m\) 有非平凡 \(1\pmod m\) 因子，且 \(x^2\)
+有 \(-x\pmod m\) 除子。后者直接给出 Type II 证书；前者只提供额外的带标记表示，
+不被当作无标记递降。
+
+`type_ii_automatic_residual_k1_funnel.py` 给出该目标的有限压力集：四个自动缺口后的
+残余先由 \(k=1\) 选择器过滤，再以全部 \(m\le239\) 的无界首尺度扫描记录剩余共享
+证书。加入 `--single-prime-profile` 可完整检查仅依赖 \(q\equiv1\pmod m\) 的单素因子
+选择；加入 `--prime-power-profile` 则进一步检查所有 \(q^e\mid p+m\)。后一审计在
+千万范围留下 74 个没有单素数幂证书的主残余，故其共享因子必有至少两个不同素因子；
+见 `type-II-shared-prime-power-selection-boundary`。加入 `--support-profile` 会在
+全部共享证书中最小化不同素因子数；其千万范围直方图为 \(1:10,2:54,3:18,4:2\)，
+从而明确排除固定两素或三素选择，见
+`type-II-shared-bounded-support-selection-boundary`。
+`--totient-threshold-profile` 则执行一个可证明的单位群前缀积充分条件：若与缺口
+\(m\) 互素的素因子重数至少为 \(\varphi(m)\)，便构造一个 \(1\pmod m\) 的共享
+除子。这个条件在千万范围的 84 个压力点中无一命中，见
+`type-II-shared-totient-threshold-lemma`；它因此是可用的正向引理，而非当前主残余的
+覆盖机制。
+`--subgroup-threshold-profile` 把该阈值收缩为实际单位因子残数生成子群的阶，仍由
+前缀积构造共享除子。这个更强阈值在同一千万范围压力集也无一命中，见
+`type-II-shared-subgroup-threshold-lemma`，所以接下来的研究必须分析短零积或跨缺口
+结构。
+`--factor-length-profile` 则在全部共享证书中最小化 \(\Omega(D)\)，即达到
+\(1\pmod m\) 所需的最短零积长度。100M 审计出现长度 7 的必要例子，故六因子
+选择器已被排除，见 `type-II-shared-six-factor-profile-boundary`。
+`type_ii_shared_gap_escape.py` 对单个核心素数作完整可变缺口扫描；其
+\(p=33011449,\ m\le500000\) 空结果见
+`type-II-shared-half-million-gap-escape-boundary`。
+
+`type_ii_moving_window_collision.py` 则处理不带共享标记的直接 Type II 窗口：
+连续 \(x_j\) 的公共因子只能来自窗口差值的有限素数集，剥离后私有余因子两两互素，
+并逐项核验碰撞/私有除子残数积集分解。记录失败点
+\(p=153633769,\ j\le31\) 的输出见
+`type-II-moving-window-finite-collision-reduction`。
+
+`type_ii_moving_window_conditional_escape.py` 在同一记录点上测试更窄的一私有素因子
+模型：把每个 \(x_j\) 写成窗口模数强制因子乘一个仿射余因子，并递归剥离局部覆盖素数。
+它给出 \(j\le37\) 的可采纳分支；在 Dickson/Schinzel 型素数元组假设下，该分支产生
+无穷多个逃过这 37 个直接 Type II 位置的核心素数。它只排除固定窗口的这类证明模型，
+不构成原猜想的条件性反例，见
+`type-II-moving-window-one-private-prime-conditional-escape`。
+
+`column_stochastic_reverse_bridge.py` 枚举低分母、可逆、真正混合的三坐标列随机
+线性传输。列和为一已足以保持倒数和，因而该盒严格大于双随机传输盒；固定 Type II
+目标后，伴随矩阵逆像和分子最小公倍数精确决定所有严格整数源。对
+(p=2451289)、(A,C\le14) 的 21 张目标，分母至多 6 的 13,026 个矩阵均无严格源，
+见 `column-stochastic-reverse-bridge-boundary`。这排除的是低复杂度零偏移线性桥，
+不排除带标记、偏移或非线性递降。
+
+`type_ii_moving_window_adaptive_escape.py` 从该 \(j\le37\) 状态逐个加入新缺口，
+在每一步重算全部固定因子、Type II 除子残数和线性式局部可采纳性。确定性首选分支延展
+到 \(j\le51\)，随后由 \(m=207\) 的显式证书闭合。这个证书对整个起始算术进程
+无条件成立，并非仅是模型或深度搜索边界。
+见 `type-II-moving-window-adaptive-one-private-prime-conditional-escape`。
+
+`type_ii_gap_207_progression_certificate.py` 单独核对上述进程闭合：
+\(x=(p+207)/4\) 恒被 \(9682\) 整除，且 \(d=47x/9682\) 是缺口 207 的直接
+Type II 除子。见 `type-II-gap-207-progression-certificate`。
+
+`type_ii_progression_trap.py` 将这一步推广为固定因子进程陷阱的完整有限搜索：
+若未来缺口冻结 \(x/E\) 的残数，且 \(E\) 的某个因子命中 Type II 目标，即输出整条
+进程的直接证书。它既复现 \(p_0=153633769,J=31\) 的缺口 207，也记录了第二种子
+的缺口 143 例子。`--all-divisors` 模式穷尽全部可能的缺口因子；对
+\(p_0=8803369,J=20\) 的 3,929 个候选全部失败，见
+`type-II-fixed-factor-progression-trap`。
+
+`type_ii_hybrid_window_descent_audit.py` 将固定窗口、完整进程陷阱和严格平方因子
+外部源递降并列审计。千万范围的 \(J=20\) 唯一窗口残余 \(p=8803369\) 虽无陷阱，
+却有显式严格递降；见 `type-II-window-descent-hybrid-10m`。
+
+`shared_residue_fixed_gap_boundary.py` 固定核心素数 \(p=73\) 与合法缺口 \(m=47\)，
+精确枚举 \(x^2\) 和 \(4x\) 的全部除子残数，验证两个共享选择器目标同时失败。这不是
+选择器猜想的反例，因为可选择其它缺口；它是单缺口群论增长路线的边界，要求后续证明
+使用跨缺口选择或不同移位 \(p+m\) 的关联。
+
+`type_ii_small_shared_gap_fan.py` 将前三个缺口 \(m=3,7,11\) 的共享因子分别固定为
+\(4,8,12\)，并对其显式 Type II 子扇作精确审计。它同时输出这个子扇未命中的
+因子与同余残余；这些点仍可能由同一缺口的非平凡除子或更大缺口捕获，因此不应视作
+选择器失败。
+
+`type_ii_factor.py` 在同一直接族残余中搜索 Type II 因子生成器
+`4ACK-1 | Kp+A`，并按最小 `max(A,C,K)` 报告参数盒记录。固定有限参数盒会被
+无穷核心素数避开，因此完整窗口只是一项有限审计。
+
+`type_ii_ac_ray.py` 则固定 \(A,C\) 的半径、但不限制 \(K\)。它因子分解
+\(p+4A^2C\)，从每个 \(h\equiv-1\pmod{4AC}\) 的因子恢复
+\(K=(h+1)/(4AC)\)，再验证完整 Type II 证书。这避开了“固定三参数模板”的直接
+障碍，却仍只是对有限 \(A,C\) 盒和有限素数范围的审计。
+最新的半径 \(14\) 输出覆盖全部 \(p\le5\cdot10^8\) 的 \(3{,}292{,}848\) 个核心素数；
+详见 `type-ii-ac-ray-500m-bound14-results.json`，不能外推为全称界。
+
+`type_ii_canonical_ray.py` 把每个共同移位 \(s=A^2C\) 唯一改写为
+\(s=a_0^2c_0\)（\(c_0\) 平方自由）。规范模数 \(4a_0c_0\) 整除同一移位下所有
+原始模数，故在 \(p\ge4s\) 时规范射线吸收任意原始成功见证。它将半径 14 的
+196 条原始射线压缩为 169 条不同移位的规范射线，并输出一维小移位骨架及其有限贪心
+补集；详见 `type-II-canonical-squarefree-ray-dominance`。这是参数冗余消除和有限
+诊断，不是新的全称覆盖结论。
+
+`type_ii_multishift_collision.py` 针对有限规范移位扇，把每个 \(p+4s\) 的因子
+分为有限差值所允许的碰撞素数与两两互素的私有余因子。它逐项验证完整除子残数集是
+这两部分的集合乘积，并把失败改写为私有残数避开有限目标集；当前输出审计
+\(s=1,\ldots,14\) 的共同残余。见
+`type-II-multishift-finite-collision-reduction`。该工具隔离跨移位耦合的位置，尚不构成
+覆盖证明。
+
+`type_ii_private_product_state.py` 在此分解上继续记录碰撞部分诱导的全部私有目标。
+它区分目标落在私有支撑外、支撑内或混合的状态，并核验私有积集恰缺一个诱导目标时的
+补因子同余陷阱。前十四移位的千万范围共同残余中 1,641/1,792 条属于全支撑外主型，
+其中 1,141 条私有积集已经饱和为整个支撑；所以这个一孔陷阱是精确的消去分支而不是
+主要覆盖机制。该形状在前十九移位的千万范围仍为 747/855 条全支撑外、510 条支撑
+饱和；见 `type-II-private-product-state`。
+
+`type_ii_collision_factor_relay.py` 把碰撞素因子幂连同其来源移位保留，并以其
+最小公倍数为闭包，精确枚举能够在自然范围 \(u\le p/4\) 形成后续规范 Type II
+证书的所有因子。因 \(h\equiv-1\pmod {4ac}\) 强制
+\(ac\mid(h+1)/4\)，枚举对这个因子闭包是完备的，并非设置了任意未来移位上界。
+前十四条扇的一百万范围共同失败点中有 12/24 被纯碰撞闭包 relay；前十九条扇的
+千万范围在允许零、一、两种来源私有素因子后分别覆盖 25/45、39/45、40/45；
+对最后五点再允许三种来源私有素因子仍全部无 relay。\(p=225289\) 即使用至多三种
+来源私有素因子仍无 relay，首个真实递降逃逸点
+\(p=2451289\) 也没有纯碰撞 relay；所以它是直接证书的有效补充分支而非完整递降
+替代，见 `type-II-collision-factor-relay-boundary`。
+
+`type_ii_adaptive_factor_transition.py` 从前十九条规范射线的共同失败点出发，在每个
+首个后续成功移位完整枚举所有证书因子，并优先选择旧私有因子重数最小者。千万范围的
+45 个点均在移位 20--50 命中；其中 42 个可完全不使用旧私有因子，35 个使用新增
+移位首次引入的新因子。故自适应扩扇应重点追踪新因子和旧碰撞因子的共同状态，而不是
+继续堆叠旧私有支撑，见 `type-II-adaptive-factor-transition`。
+
+`type_ii_one_collision_source_profile.py` 把最小碰撞重数恰为一的单新因子证书编译为
+来源标签状态。若碰撞素数 \(\ell\) 同时来自基础移位 \(t\) 和目标移位 \(s\)，则
+\(s\equiv t\pmod\ell\)；证书 \(h=\ell q\equiv-1\pmod{4ac}\) 又强制
+\(q\equiv-\ell^{-1}\pmod{4ac}\)。十亿 H19 输出对全部10个一次碰撞状态逐项验证这两条
+条件，碰撞素数频数为 \(3:4,5:2,7:1,13:2,17:1\)。这将后续选择器的输入缩减为有限来源
+同余类和反元残数，而不宣称任一类必有新素因子；两碰撞延迟释放仍是必要边界，见
+`type-II-collision-label-crt-state`。
+
+`type_ii_collision_label_tail_deflation.py` 直接测试这些碰撞标签证书能否成为缩放首
+分母的严格双尾递降：对固定证书缺口 \(m\)，完整枚举 \(p+m\) 的因子
+\(D>1,\ D\equiv1\pmod m\)，并重建源解。十亿剖面的11个最小正碰撞重数状态中只有
+\(p=345601,92421169\) 命中，且均取 \(D=m+1\)、首尺度 \(k=1\)；其余九点包括
+两碰撞压力点均无此 \(D\)。因此 CRT 标签短证书不能自动变成同缺口递降，见
+`type-II-collision-label-tail-deflation-boundary`。
+
+`type_ii_collision_alternative_tail_descent.py` 随后对上述九个固定证书递降遗漏完整
+枚举 \(p-1\) 的所有四倍数因子缺口，并在每个缺口穷尽 \(x^2\) 的 Type II 除子。九点
+均有替代双尾严格递降，故十亿 H19 的11个最小正碰撞重数状态有 \(11=2+9\) 的纯递降
+闭合；两碰撞点 \(372271201\) 在替代缺口7递降至 \(46533901\)。这只是有限状态集的
+证书选择事实，不是 \(p-1\) 缺口选择器的全称证明，见
+`type-II-collision-alternative-tail-descent-closure`。
+
+`type_ii_prime_cofactor_boundary.py` 进一步检查前十四移位的极简逃逸模型：每个
+`p+4s` 除去同余强制因子后只保留一个素因子。全部可能避靶的核心残数类都被模 3 的
+线性型覆盖，因此不能形成无穷的同时素数族。它只迫使至少一个移位拥有更丰富的私有
+因子分解，不是 Type II 覆盖定理；见
+`type-II-one-prime-private-cofactor-boundary`。
+
+该工具的 `--ac-bound B` 模式改为保留原始 \((A,C)\) 射线，而非按相同的
+\(A^2C\) 合并规范移位。半径 5 与 7 的原始参数盒分别有 25 与 49 条射线；在
+“每条余商只含一个新素因子”的模型下，所有安全核心类都被线性型局部覆盖，故没有
+可采纳的条件性逃逸支。该结果不能推广成参数盒覆盖，因为多私有因子余商仍可能存在；见
+`type-II-ac-box-one-prime-local-closure`。
+
+对半径五盒，`--recursive-covering-prime q` 会逐个展开 \(n\bmod q\) 分支，剥离
+每条余商中强制的最大 \(q\)-幂，并再次检查射线安全与线性型可采纳性。统一覆盖素数
+\(q=7\) 覆盖全部 240 个首层安全类；其 1,680 个分支中有 960 个仍避靶，但没有
+一个可采纳。这排除一层额外强制因子的模型，仍不排除更深因子树；见
+`type-II-ac-box-recursive-covering-boundary`。
+
+该递归在固定半径五盒并不单调终止。将状态保存为目标素数线性式、各射线固定因子和
+剩余余商线性式后，连续四次局部覆盖转移重新出现可采纳状态；显式路径
+\((7,0),(11,0),(13,0),(17,0)\) 的目标式为 \(245044800t+1\)。四个 60 根切片的
+完整结果保存在 `type-ii-ac-box-recursive-depth4-batch-0-results.json` 至
+`type-ii-ac-box-recursive-depth4-batch-3-results.json`；这是固定盒策略的条件性边界，
+而非猜想反例，见 `type-II-ac-box-depth-four-recursive-escape`。
+
+对该显式进程，任何统一一次 AC 射线因子都可写为一个固定余因子乘线性因子，因而
+\(4AC\) 必整除进程系数 245044800。完整枚举由此得到的全部 896,000 个 AC 分解
+与 58,230 个余因子情形没有 Type II 命中；见
+`type-II-ac-escape-affine-ray-boundary`。因此补救必须使用非线性因子或
+带标记递降，不能只增加一张统一仿射 AC 射线。
+
+`type_i_escape_affine_boundary.py` 补齐同一进程的 Type I 面。固定缺口
+`m` 后，`x=(p+m)/4` 的每个常数或非恒定仿射 Type I 除子都由
+`S=61261200` 的一个因子和 `gcd(S,(m+1)/4)^2` 的一个除子决定；72 个合法
+缺口的 434 个非恒定候选及 434 个常数候选均为空。该结果只排除统一固定缺口，
+不排除非线性因子、可变缺口或递降；见 `type-I-escape-affine-boundary`。
+
+同一强制因子阶梯已精确延至第 22 条移位。第 20、21、22 条的规范模数
+\(40,84,88\) 都已整除 \(Q_{19}\)，所以没有模数更新；但二层可采纳分支从 265,001
+依次降到 151,723、66,638、0。故固定模数下的新射线可以形成有限闭合块，却不能由
+此推出下一次会扩模的移位也不重启逃逸；见 `type-II-prime-cofactor-forcing-ladder`。
+
+同一脚本还执行模 3 的第二层剥离。尽管第一层一私有素因子模型不可采纳，剥离其
+强制三次幂后会出现可采纳的 15 元线性型分支。因此在素数元组猜想下，固定十四移位
+扇有无穷共同遗漏；这是一条限制证明策略的条件性边界，而非猜想反例，见
+`type-II-mod-three-recursive-escape-boundary`。
+
+`type_ii_minimal_canonical_shift.py` 逐素数测量首次成功的平方自由规范移位，而不是预先
+固定一个参数盒。它在一亿内给出最大首次移位 52 及完整保持者表，其中
+\(p=81846241\) 首次把此前的 50 推高；这提示研究随目标增长的移位选择器，但不把
+有限谱解释为固定常数覆盖，见
+`type-II-minimal-canonical-shift-spectrum`。
+
+加上 `--base-shift-bound 19 --shift-cap 50` 时，同一工具改为审计前十九条规范射线的
+实际共同残余、每个残余的首次后续射线，以及联合模数外的因子重数。它保存 45 个
+一千万范围残余的过渡谱，并给出 \(p=1127281\)、\(p+76=7\cdot11^5\) 这一
+“未固定素因子数为零但射线仍失败”的反例。见
+`type-II-nineteen-shift-transition-complexity-boundary`；该模式用于排除候选势函数，
+不是全称覆盖或递降定理。
+
+`type_ii_canonical_fan_geometry.py` 记录前 H 条规范移位扇的总模数和失败横截面选择
+成本。每个模数都整除 4s，因此这些成本有显式 H 界，可作为把固定扇筛法统一到缓慢
+增长 H 的接口；它本身不产生逐点覆盖，见
+`type-II-canonical-fan-uniform-sieve-interface`。
+
+`divisor_residue_structure.py` 精确核验有限阿贝尔群层面的边界。它构造偶阶循环群中
+达到 Kneser 上界的双向生成元序列，并把线性异常反例嵌入
+\((\mathbb Z/4q\mathbb Z)^\times\)。`--prime 7` 还恢复真实整数
+\(3^2 19^2\) 的全部除子残数，核对其恰好避开 \(-1\pmod {28}\)。这是否定普适
+“真子群加次线性异常”压缩的精确有限见证，不是否定受移位约束的 Type II 饱和猜想。
+同一脚本的 `--audit-limit 10000 --ac-bound 5` 模式还逐项检查 Type II
+\(AC\) 射线的“支撑临界”层：当除子残数恰为生成子群去掉 \(-1\) 时，它核验目标素数
+满足 \(p\equiv1\pmod {4AC}\)。这是 `type-II-support-critical-congruence-trap` 的
+有限实现核对；同余结论本身来自补因子配对的证明，不从审计数据归纳。
+审计输出还区分 \(-1\) 是否已属于生成子群，并核验支撑内缺失集在补因子对合下的轨道。
+在总积不为一时，两孔只能缺 \(\{-1,-p\}\)；奇孔必须含有 \(p\) 的缺失平方根。
+这对应 `type-II-support-defect-orbit-constraint`，并刻意把支撑外失败单列，避免把
+“射线失败”误当作同一种 Kneser 临界现象。
+对支撑外失败，脚本还计算 \(K U(M)^2\)：目标 \(-1\) 不在该平方饱和子群时，
+`type-II-target-outside-support-quadratic-separation` 保证存在一个消去 \(K\) 的
+二次特征，因而 \(\chi(p)=1\)。目标已进入平方饱和子群的实例单列为二次不可分核；
+脚本还检查核心残数子群 \(H_M\) 是否包含于 \(K U(M)^2\)：只有不包含时，某个
+分离特征才会在 \(p\equiv1\pmod{24}\) 的允许残数中非平凡。这避免把“存在某个特征”
+当成已获得独立的筛法节省。
+它还显式枚举 \(U(M)/U(M)^2\) 的二次特征坐标，并报告核心活跃失败可用字符的交集。
+例如 \(M=80\) 的两个失败 \(p=601,3169\) 需要互异字符，见
+`type-II-fixed-quadratic-character-boundary`；固定字符并不能统一覆盖它们。
+脚本还计算支撑外目标的二幂饱和深度 \(\nu\)。深度 \(d\) 表示存在一个阶
+\(2^{d+1}\) 的字符核包含全部因子残数，详见 `type-II-two-power-character-depth-sieve`。
+它是高阶字符分层的精确审计，不将有限深度频率外推为全体覆盖。
+字符核的总积条件不能单独形成多射线矛盾：任意有限组核都由
+\(p\equiv1\) 模全部射线模数同时满足，见
+`type-II-character-product-congruence-compatibility-boundary`。所以审计重点仍是
+移位数的逐素因子残数，而不是只记录其总积角色值。
+
+moving_window.py 逐个检验固定首分母缺口 \(4j-1\) 的纯 Type II 条件，复现
+moving-split/divisor-cloud 的有限窗口实验。它报告首个成功 \(j\) 与窗口遗漏；即使
+有限范围完全覆盖，也不构成固定 \(J\) 对全体核心素数有效的证明。
+
+`type_ii_h19_pressure_half_factor_pairs.py` 把受控 \(r\) 偶源射线从
+\((cr+1)(dr+1)=rp+1\) 正规化为 \(M=(rp+1)/4=AB\)。两端均必须是
+\((r+1)/2\pmod r\)，且对应源因子的端 \(B\) 必为偶数。它逐项复核十亿 H19 四个
+压力状态的全部已选兼容射线；这是一条精确代数等价和有限数据交叉核对，不是受控
+\(r\) 选择器的全称证明，见 `odd-distance-even-source-half-factor-pair`。
+
+`type_ii_h19_pressure_tail_gap_normalization.py` 进一步将兼容平方尾
+\(e\) 归一化为 Type I 缺口 \(g=(4e+1)/r\)，并以
+\(e=(rg-1)/4\) 反向恢复尾因子。它在四条 H19 压力见证上逐项核验该转换及
+\(x=(p+g)/4\)，将未来选择器收紧为 \((r,g)\) 的联合因子选择问题。
+
+`type_ii_h19_p_minus_one_scaled_source_descent.py` 固定源 \(n=p-1\)，完整枚举
+所有 \(an/2\)、\(an/4\) 的移位因子候选和强制平方尾。它在既有 \(r\le9999\) 的
+15 个 H19 尾部残余上给出 15/15 严格提升及 Type I 证书；它不要求旧偶源标准形的
+\(d\equiv1\pmod4\)，因而是更宽的带标记分支。相邻的
+`type_ii_h19_p_minus_one_scaled_source_quadratic_boundary.py` 对 H19 四个完整
+二次递降漏点进行同一审计，118 个候选全数失败；因此前者不能被误读为替代受控
+\(r\) 偶源递降的统一机制。`type_ii_h19_p_minus_one_scaled_source_normalization.py`
+进一步核验其首项恒为 \((p-1)(p-t)/4\)，故该分支精确参数化首项被 \(p\) 整除的
+一类 Type I 证书，而非独立的存在性定理。
+
+`type_ii_h19_hybrid_bounded_r_p_minus_one_descent.py` 组合
+`r<=9999` 的兼容偶源审计与上述非倍数 `p-1` 审计，并检查两者的残余
+集合严格相同。它给出存储十亿 H19 剖面的另一条纯递降闭合
+\(664=649+15\)，但不将这个有限析取外推为全称选择器。
+
+`type_ii_h19_hybrid_small_r_p_minus_one_descent.py` 将同一析取收紧到
+`r<=103`：小 \(r\) 分支覆盖 564 个 H19 残余，流式枚举其余 100 个的
+`p-1` 非倍数候选后全部闭合，得到 \(664=564+100\)。默认十点一批清理
+因子分解缓存，完整复现检查 10,046 个候选和 97,636,776 个尾因子组合。
+
+`type_ii_small_r_p_minus_one_core_boundary.py` 脱离 H19 输入，对全部
+`p<=100000`、`p=1 mod 24` 的核心素数复核同一析取。它留下七个联合
+未命中 \(5209,12601,21169,27481,48409,80809,97561\)，因而明确限制小 \(r\)
+或 `p-1` 分支的外推；这些点不是猜想反例。
+
+`type_ii_small_r_p_minus_one_even_source_boundary.py` 对这七点进一步完整扫描
+所有奇距离标准偶源。仅 `12601`、`97561` 在距离一命中；其余
+`5209,21169,27481,48409,80809` 对全部 \(0<c<p\) 均失败，因而组成当前
+非标准源/新尾部模型的共同压力集。
+
+`type_ii_small_r_p_minus_one_tail_deflation_closure.py` 对上述五点运行
+Type II 双尾抽缩，全部给出严格源；加上另外两条距离一偶源，得到全部小范围核心素数
+的四分支闭合 \(1181=978+196+2+5\)。因此五点是偶源/缩放分支边界，不是加入
+Type II 抽缩后的总残余。
+
+`type_ii_tail_deflation_p_minus_one_core_hybrid.py` 则直接对全部
+`p<=100000` 的核心素数枚举 `p-1` 的所有合格因子并验证 Type II 双尾抽缩。该主分支
+覆盖 1,179/1,181 个素数，仅 `67369`、`85369` 未命中；脚本随后对这两个残余完整枚举
+`p-1` 的 `b=2,4` 缩放源，均由 `b=2` 严格提升闭合，得到更紧的两分支审计
+\(1181=1179+2\)。这是有限选择器剖面，不能外推为全称结论。
+
+type_ii_tail_deflation_p_minus_one_10m_boundary.py 把这个析取推广为一千万范围的
+反证式边界：先由普通 Type II 双尾抽缩覆盖 82,803/82,887 个核心素数，再对 84 个
+残余完整枚举 p-1 的 b=1,2,4 严格缩放源，额外覆盖 77 个。余下七个明确压力点给出
+\(82887=82803+77+7\)，因此这两个严格递降分支不能被误作该范围内的全覆盖选择器。
+
+type_ii_tail_deflation_p_minus_one_canonical_10m_closure.py 随后只对那七点检查规范
+Type II 位移 \(s\le2\)。七点均有直接短证书，于是得到有限“短证书或递降”闭合
+\(82887=82803+77+7\)；最后一项是直接证书，不能记作递降。
+其中位移 1 的四张属于 \(p+4\) 的 \(3\bmod4\) 因子分支，位移 2 的三张属于
+\(p+8\) 的 \(7\bmod8\) 因子分支。
+
+同一链条已独立复现至 \(p\le20\,000\,000\)：普通双尾抽缩覆盖 158,449/158,595 个，
+完整 \(p-1\) 的 \(b=1,2,4\) 严格缩放再覆盖 135 个，最后 11 个仍均由规范位移
+\(s\le2\) 短证书闭合，即 \(158595=158449+135+11\)。这扩大了有限证据，
+不是统一选择定理。
+
+在 \(p\le50\,000\,000\) 的 374,902 个核心素数中，前两种严格递降覆盖 374,882 个。
+其 20 个残余若只用规范位移 \(s\le2\) 有四个明确遗漏；首次位移为 \(3,3,4,5\)。
+扩至 \(s\le5\) 后全部短证书闭合，得到 \(374902=374600+282+20\)。因此固定
+位移二扇已被精确反例否定，而位移五闭合仍只是有限事实。
+
+type_ii_tail_deflation_p_minus_one_external_source_pressure.py 对上述四个 \(s\le2\)
+遗漏逐项完整扫描 ordinary、mixed-factor 和 quadratic-factor 三层外部源严格递降；
+三层均为零命中。它们因此是低位移扇和现有完整外部源递降族的共同压力集，不是
+Erdős--Straus 猜想反例。
+
+type_ii_tail_deflation_p_minus_one_pure_new_release.py 进一步核验四点在首次后续位移
+\(3,3,4,5\) 的证书因子都是相对于 \(p+4,p+8\) 的单个新素数
+\(47,3347,31,239\)。这个纯新单素因子释放是有限来源剖面，不是有界深度定理。
+
+`type_ii_tail_deflation_p_minus_one_pure_new_100m_closure.py` 将同一析取精确重建至
+\(p\le10^8\)。719,781 个核心素数中，普通双尾抽缩给出 719,281 条严格递降，
+\(p-1\) 的 \(b=1,2,4\) 缩放源再给出459条；41 个剩余点中27个由 \(s\le2\) 的
+直接规范 Type II 证书闭合，另14个在 \(3\le s\le48\) 得到相对于 \(p+4,p+8\) 的
+纯新单素因子证书，即 \(719781=719281+459+27+14\)。纯新首次释放深度为
+\(s=3,4,5,9,24,48\)，频数为 \(6,3,2,1,1,1\)。五个点在首个成功位移中按最小
+\(h\) 选取的证书含多个新因子，但其中三个在同一位移已有另一张纯新证书，只有两个
+必须等待后续位移。这排除“首个最小因子必纯新”的强版本，却不构成统一释放深度的定理；
+详见 `type-II-tail-deflation-p-minus-one-pure-new-100m-closure`。

@@ -1,0 +1,385 @@
+{
+  "arithmetic": "exact SPF factorization, divisor residue tests, and Type II certificate verification",
+  "scope_note": "The greedy list is a finite diagnostic, not a proof that this or any fixed canonical-shift set covers all core primes.",
+  "prime_limit": 11000,
+  "source_ac_box": {
+    "a_max": 14,
+    "c_max": 14
+  },
+  "canonical_pair_count": 169,
+  "largest_shift_index": 2744,
+  "base_shift_bound": 14,
+  "base_pair_count": 14,
+  "core_prime_count": 153,
+  "base_captured_count": 152,
+  "base_missing": [
+    3361
+  ],
+  "joint_base_failure_profiles": [
+    {
+      "prime": 3361,
+      "signature": [
+        "outside:0",
+        "outside:0",
+        "outside:0",
+        "outside:0",
+        "outside:0",
+        "outside:0",
+        "outside:0",
+        "inside:12",
+        "outside:0",
+        "outside:0",
+        "outside:0",
+        "inside:1",
+        "outside:0",
+        "outside:0"
+      ],
+      "rays": [
+        {
+          "pair": {
+            "a": 1,
+            "c": 1
+          },
+          "shift_index": 1,
+          "modulus": 4,
+          "shifted": 3365,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              673,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 2
+          },
+          "shift_index": 2,
+          "modulus": 8,
+          "shifted": 3369,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              1123,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 3
+          },
+          "shift_index": 3,
+          "modulus": 12,
+          "shifted": 3373,
+          "factorization": [
+            [
+              3373,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 5
+          },
+          "shift_index": 5,
+          "modulus": 20,
+          "shifted": 3381,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 6
+          },
+          "shift_index": 6,
+          "modulus": 24,
+          "shifted": 3385,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              677,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 7
+          },
+          "shift_index": 7,
+          "modulus": 28,
+          "shifted": 3389,
+          "factorization": [
+            [
+              3389,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 10
+          },
+          "shift_index": 10,
+          "modulus": 40,
+          "shifted": 3401,
+          "factorization": [
+            [
+              19,
+              1
+            ],
+            [
+              179,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 11
+          },
+          "shift_index": 11,
+          "modulus": 44,
+          "shifted": 3405,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              227,
+              1
+            ]
+          ],
+          "class": "inside:12",
+          "target_in_support": true,
+          "defect_size": 12,
+          "two_power_depth": null
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 13
+          },
+          "shift_index": 13,
+          "modulus": 52,
+          "shifted": 3413,
+          "factorization": [
+            [
+              3413,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 1,
+            "c": 14
+          },
+          "shift_index": 14,
+          "modulus": 56,
+          "shifted": 3417,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              17,
+              1
+            ],
+            [
+              67,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 2,
+            "c": 1
+          },
+          "shift_index": 4,
+          "modulus": 8,
+          "shifted": 3377,
+          "factorization": [
+            [
+              11,
+              1
+            ],
+            [
+              307,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 2,
+            "c": 2
+          },
+          "shift_index": 8,
+          "modulus": 16,
+          "shifted": 3393,
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              29,
+              1
+            ]
+          ],
+          "class": "inside:1",
+          "target_in_support": true,
+          "defect_size": 1,
+          "two_power_depth": null
+        },
+        {
+          "pair": {
+            "a": 2,
+            "c": 3
+          },
+          "shift_index": 12,
+          "modulus": 24,
+          "shifted": 3409,
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              487,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        },
+        {
+          "pair": {
+            "a": 3,
+            "c": 1
+          },
+          "shift_index": 9,
+          "modulus": 12,
+          "shifted": 3397,
+          "factorization": [
+            [
+              43,
+              1
+            ],
+            [
+              79,
+              1
+            ]
+          ],
+          "class": "outside:0",
+          "target_in_support": false,
+          "defect_size": null,
+          "two_power_depth": 0
+        }
+      ]
+    }
+  ],
+  "joint_base_failure_signature_histogram": {
+    "outside:0,outside:0,outside:0,outside:0,outside:0,outside:0,outside:0,inside:12,outside:0,outside:0,outside:0,inside:1,outside:0,outside:0": 1
+  },
+  "greedy_complement": [
+    {
+      "pair": {
+        "a": 5,
+        "c": 5
+      },
+      "shift_index": 125,
+      "covered_count": 1,
+      "covered_primes": [
+        3361
+      ]
+    }
+  ],
+  "remaining_after_greedy": [],
+  "canonical_box_captured_count": 153
+}

@@ -1,0 +1,7503 @@
+{
+  "arithmetic": "exact SPF factorization; all collision-closure divisors h <= 2p; optional one-private-source factors; and all canonical pairs 4ac | h+1 in the natural range a^2c <= p/4",
+  "scope_note": "A finite relay audit. It searches collision-prime closure factors and, when selected, at most one source-labelled base-private prime. It does not exclude other certificates or descents.",
+  "prime_limit": 10000000,
+  "base_shift_bound": 19,
+  "private_source_prime_budget": 2,
+  "core_prime_count": 82887,
+  "common_failure_count": 45,
+  "common_failures": [
+    3361,
+    56401,
+    66529,
+    135601,
+    176089,
+    225289,
+    252001,
+    345601,
+    558721,
+    685969,
+    813121,
+    870241,
+    990361,
+    1127281,
+    1385521,
+    1398769,
+    1429201,
+    1520401,
+    1683049,
+    1800121,
+    1977529,
+    2031121,
+    2365969,
+    2654401,
+    2707609,
+    3409729,
+    3569329,
+    3660721,
+    4557361,
+    4722169,
+    4965601,
+    6344209,
+    6868801,
+    6899281,
+    7329169,
+    7378849,
+    8066689,
+    8113681,
+    8243041,
+    8283361,
+    8328961,
+    8955769,
+    9296809,
+    9504961,
+    9744001
+  ],
+  "relayed_count": 40,
+  "unrelayed_count": 5,
+  "unrelayed_primes": [
+    225289,
+    2031121,
+    3569329,
+    3660721,
+    7378849
+  ],
+  "first_relay_shift_histogram": {
+    "20": 5,
+    "24": 1,
+    "25": 3,
+    "27": 2,
+    "31": 1,
+    "36": 4,
+    "48": 1,
+    "50": 7,
+    "54": 1,
+    "56": 1,
+    "64": 1,
+    "75": 1,
+    "81": 1,
+    "125": 1,
+    "180": 1,
+    "189": 1,
+    "200": 1,
+    "216": 1,
+    "242": 1,
+    "338": 1,
+    "729": 1,
+    "2809": 1,
+    "15341": 1,
+    "28175": 1
+  },
+  "all_relay_shift_histogram": {
+    "20": 5,
+    "24": 1,
+    "25": 4,
+    "27": 2,
+    "31": 1,
+    "32": 1,
+    "36": 8,
+    "48": 3,
+    "50": 9,
+    "54": 2,
+    "56": 1,
+    "61": 1,
+    "64": 3,
+    "66": 1,
+    "72": 1,
+    "75": 1,
+    "80": 1,
+    "81": 1,
+    "98": 1,
+    "107": 1,
+    "124": 1,
+    "125": 3,
+    "128": 1,
+    "138": 1,
+    "144": 1,
+    "150": 1,
+    "153": 1,
+    "180": 3,
+    "189": 1,
+    "200": 1,
+    "216": 1,
+    "242": 4,
+    "279": 1,
+    "338": 2,
+    "350": 2,
+    "376": 1,
+    "486": 1,
+    "500": 1,
+    "539": 1,
+    "605": 1,
+    "644": 1,
+    "648": 1,
+    "684": 1,
+    "729": 2,
+    "800": 2,
+    "841": 4,
+    "864": 1,
+    "882": 1,
+    "931": 1,
+    "980": 1,
+    "1025": 2,
+    "1112": 1,
+    "1521": 1,
+    "1525": 1,
+    "1922": 1,
+    "2166": 2,
+    "2809": 1,
+    "3844": 1,
+    "8405": 1,
+    "8464": 1,
+    "9604": 1,
+    "10296": 1,
+    "13778": 1,
+    "15341": 1,
+    "15875": 1,
+    "20736": 2,
+    "28175": 1,
+    "35525": 1,
+    "38025": 1,
+    "40931": 1,
+    "56066": 1,
+    "65610": 1,
+    "68450": 1,
+    "96800": 1,
+    "192200": 1,
+    "239121": 1,
+    "448844": 1,
+    "480200": 1,
+    "698389": 1
+  },
+  "profiles": [
+    {
+      "prime": 3361,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 643242600,
+      "closure_divisor_count_at_most_2p": 407,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 1256,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 99,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "shift": 125,
+          "a": 5,
+          "c": 5,
+          "k": 1,
+          "gap": 39,
+          "divisor": 125,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                15
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 56401,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 275675400,
+      "closure_divisor_count_at_most_2p": 685,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 6254,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 2975,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 31,
+          "a": 1,
+          "c": 31,
+          "k": 24,
+          "gap": 19,
+          "divisor": 31,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "h": 119,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 150,
+          "a": 5,
+          "c": 6,
+          "k": 1,
+          "gap": 479,
+          "divisor": 150,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "h": 207,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 338,
+          "a": 13,
+          "c": 2,
+          "k": 2,
+          "gap": 279,
+          "divisor": 338,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "h": 455,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 2166,
+          "a": 19,
+          "c": 6,
+          "k": 1,
+          "gap": 143,
+          "divisor": 2166,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 66529,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 6126120,
+      "closure_divisor_count_at_most_2p": 351,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 3155,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 1711,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 95,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 64,
+          "a": 8,
+          "c": 1,
+          "k": 3,
+          "gap": 703,
+          "divisor": 64,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 323,
+          "h_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 729,
+          "a": 27,
+          "c": 1,
+          "k": 3,
+          "gap": 215,
+          "divisor": 729,
+          "source_labels": [
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 135601,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 25270245000,
+      "closure_divisor_count_at_most_2p": 1059,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 9539,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 3479,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 247,
+          "h_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 124,
+          "a": 2,
+          "c": 31,
+          "k": 1,
+          "gap": 551,
+          "divisor": 124,
+          "source_labels": [
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "h": 203,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 153,
+          "a": 3,
+          "c": 17,
+          "k": 1,
+          "gap": 671,
+          "divisor": 153,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "h": 2223,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 1112,
+          "a": 2,
+          "c": 278,
+          "k": 1,
+          "gap": 63,
+          "divisor": 1112,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 176089,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 459459000,
+      "closure_divisor_count_at_most_2p": 810,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 9423,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 635,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 127,
+              "exponent": 1
+            }
+          ],
+          "shift": 2809,
+          "a": 53,
+          "c": 1,
+          "k": 3,
+          "gap": 295,
+          "divisor": 2809,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 127,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 225289,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 30630600,
+      "closure_divisor_count_at_most_2p": 533,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 7885,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 252001,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 91891800,
+      "closure_divisor_count_at_most_2p": 685,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 7785,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 27,
+          "a": 3,
+          "c": 3,
+          "k": 4,
+          "gap": 1763,
+          "divisor": 27,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                16
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 345601,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 9954945000,
+      "closure_divisor_count_at_most_2p": 981,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 10973,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 323,
+          "h_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 729,
+          "a": 27,
+          "c": 1,
+          "k": 3,
+          "gap": 1079,
+          "divisor": 729,
+          "source_labels": [
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 558721,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 91891800,
+      "closure_divisor_count_at_most_2p": 717,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 9941,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 3519,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 200,
+          "a": 10,
+          "c": 2,
+          "k": 44,
+          "gap": 159,
+          "divisor": 200,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                2,
+                11
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "h": 7955,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            }
+          ],
+          "shift": 1521,
+          "a": 39,
+          "c": 1,
+          "k": 51,
+          "gap": 71,
+          "divisor": 1521,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 37,
+              "exponent": 1,
+              "source_shifts": [
+                4
+              ]
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "h": 455,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 2166,
+          "a": 19,
+          "c": 6,
+          "k": 1,
+          "gap": 1247,
+          "divisor": 2166,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 685969,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 6
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 2481078600,
+      "closure_divisor_count_at_most_2p": 1091,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 11485,
+      "relay_count": 5,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 17591,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 23,
+          "h_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 1,
+          "gap": 29831,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 72,
+          "a": 6,
+          "c": 2,
+          "k": 3,
+          "gap": 4799,
+          "divisor": 72,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1287,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 644,
+          "a": 2,
+          "c": 161,
+          "k": 1,
+          "gap": 535,
+          "divisor": 644,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 575,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 864,
+          "a": 12,
+          "c": 6,
+          "k": 2,
+          "gap": 1199,
+          "divisor": 864,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                14
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 813121,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 765765000,
+      "closure_divisor_count_at_most_2p": 832,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 21223,
+      "relay_count": 5,
+      "relays": [
+        {
+          "h": 559,
+          "h_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            }
+          ],
+          "shift": 56,
+          "a": 2,
+          "c": 14,
+          "k": 5,
+          "gap": 1455,
+          "divisor": 56,
+          "source_labels": [
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                17
+              ]
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 119,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 180,
+          "a": 6,
+          "c": 5,
+          "k": 1,
+          "gap": 6839,
+          "divisor": 180,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "h": 215,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            }
+          ],
+          "shift": 486,
+          "a": 9,
+          "c": 6,
+          "k": 1,
+          "gap": 3791,
+          "divisor": 486,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 319,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 800,
+          "a": 20,
+          "c": 2,
+          "k": 2,
+          "gap": 2559,
+          "divisor": 800,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                8,
+                19
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "h": 4959,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 192200,
+          "a": 310,
+          "c": 2,
+          "k": 2,
+          "gap": 319,
+          "divisor": 192200,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                17
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 870241,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 42882840,
+      "closure_divisor_count_at_most_2p": 555,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 15907,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 22319,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1463,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 61,
+          "a": 1,
+          "c": 61,
+          "k": 6,
+          "gap": 595,
+          "divisor": 61,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                17
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "h": 3311,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            }
+          ],
+          "shift": 138,
+          "a": 1,
+          "c": 138,
+          "k": 6,
+          "gap": 263,
+          "divisor": 138,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                17
+              ]
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "source_shifts": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "h": 119,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 180,
+          "a": 6,
+          "c": 5,
+          "k": 1,
+          "gap": 7319,
+          "divisor": 180,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 990361,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 2358556200,
+      "closure_divisor_count_at_most_2p": 1088,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 13099,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 25399,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 4059,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            }
+          ],
+          "shift": 35525,
+          "a": 35,
+          "c": 29,
+          "k": 1,
+          "gap": 279,
+          "divisor": 35525,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                2,
+                11
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                17
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1127281,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 5
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 448462614600,
+      "closure_divisor_count_at_most_2p": 1009,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 10825,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 119,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 180,
+          "a": 6,
+          "c": 5,
+          "k": 1,
+          "gap": 9479,
+          "divisor": 180,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1385521,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 214414200,
+      "closure_divisor_count_at_most_2p": 815,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 18245,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 216,
+          "a": 6,
+          "c": 6,
+          "k": 1,
+          "gap": 9695,
+          "divisor": 216,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                7,
+                18
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "h": 879,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 293,
+              "exponent": 1
+            }
+          ],
+          "shift": 605,
+          "a": 11,
+          "c": 5,
+          "k": 4,
+          "gap": 1579,
+          "divisor": 605,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 293,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1595,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 931,
+          "a": 7,
+          "c": 19,
+          "k": 3,
+          "gap": 871,
+          "divisor": 931,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                7,
+                18
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                3
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1398769,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3583780200,
+      "closure_divisor_count_at_most_2p": 1219,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 24700,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 35871,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1429201,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3583780200,
+      "closure_divisor_count_at_most_2p": 1221,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 15275,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 3219,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            }
+          ],
+          "shift": 28175,
+          "a": 35,
+          "c": 23,
+          "k": 1,
+          "gap": 479,
+          "divisor": 28175,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            },
+            {
+              "prime": 37,
+              "exponent": 1,
+              "source_shifts": [
+                18
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1520401,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 3645041400,
+      "closure_divisor_count_at_most_2p": 1093,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 27600,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 119,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 75,
+          "a": 5,
+          "c": 3,
+          "k": 2,
+          "gap": 12779,
+          "divisor": 75,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 2139,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            }
+          ],
+          "shift": 107,
+          "a": 1,
+          "c": 107,
+          "k": 5,
+          "gap": 711,
+          "divisor": 107,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "h": 87,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 242,
+          "a": 11,
+          "c": 2,
+          "k": 1,
+          "gap": 17487,
+          "divisor": 242,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1683049,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 4
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 262657395000,
+      "closure_divisor_count_at_most_2p": 1582,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 24536,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 95,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 64,
+          "a": 8,
+          "c": 1,
+          "k": 3,
+          "gap": 17719,
+          "divisor": 64,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 6815,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            }
+          ],
+          "shift": 64,
+          "a": 8,
+          "c": 1,
+          "k": 213,
+          "gap": 247,
+          "divisor": 64,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 47,
+              "exponent": 1,
+              "source_shifts": [
+                17
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1800121,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 2603601000,
+      "closure_divisor_count_at_most_2p": 997,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 16812,
+      "relay_count": 5,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 46159,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 5015,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            }
+          ],
+          "shift": 66,
+          "a": 1,
+          "c": 66,
+          "k": 19,
+          "gap": 359,
+          "divisor": 66,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            },
+            {
+              "prime": 59,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1287,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 98,
+          "a": 7,
+          "c": 2,
+          "k": 23,
+          "gap": 1399,
+          "divisor": 98,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1343,
+          "h_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            }
+          ],
+          "shift": 882,
+          "a": 21,
+          "c": 2,
+          "k": 8,
+          "gap": 1343,
+          "divisor": 882,
+          "source_labels": [
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            },
+            {
+              "prime": 79,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 819,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 8405,
+          "a": 41,
+          "c": 5,
+          "k": 1,
+          "gap": 2239,
+          "divisor": 8405,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 1977529,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 18378360,
+      "closure_divisor_count_at_most_2p": 508,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 8304,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 50711,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 4199,
+          "h_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 105,
+          "gap": 471,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "h": 615,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            }
+          ],
+          "shift": 539,
+          "a": 7,
+          "c": 11,
+          "k": 2,
+          "gap": 3219,
+          "divisor": 539,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 648,
+          "a": 18,
+          "c": 2,
+          "k": 1,
+          "gap": 13847,
+          "divisor": 648,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 2031121,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3216213000,
+      "closure_divisor_count_at_most_2p": 1348,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 32028,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 2365969,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 91891800,
+      "closure_divisor_count_at_most_2p": 751,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 12478,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 60671,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 399,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 125,
+          "a": 5,
+          "c": 5,
+          "k": 4,
+          "gap": 5931,
+          "divisor": 125,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 95,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 144,
+          "a": 12,
+          "c": 1,
+          "k": 2,
+          "gap": 24911,
+          "divisor": 144,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 2654401,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 3
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 25515289800,
+      "closure_divisor_count_at_most_2p": 1381,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 58721,
+      "relay_count": 9,
+      "relays": [
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 27,
+          "a": 3,
+          "c": 3,
+          "k": 4,
+          "gap": 18563,
+          "divisor": 27,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                16
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "h": 23,
+          "h_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 1,
+          "gap": 115415,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 279,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            }
+          ],
+          "shift": 350,
+          "a": 5,
+          "c": 14,
+          "k": 1,
+          "gap": 9519,
+          "divisor": 350,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "source_shifts": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "h": 9519,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 167,
+              "exponent": 1
+            }
+          ],
+          "shift": 350,
+          "a": 5,
+          "c": 14,
+          "k": 34,
+          "gap": 279,
+          "divisor": 350,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            },
+            {
+              "prime": 167,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "h": 639,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 71,
+              "exponent": 1
+            }
+          ],
+          "shift": 800,
+          "a": 20,
+          "c": 2,
+          "k": 4,
+          "gap": 4159,
+          "divisor": 800,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 71,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "h": 115,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 841,
+          "a": 29,
+          "c": 1,
+          "k": 1,
+          "gap": 23111,
+          "divisor": 841,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 391,
+          "h_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 9604,
+          "a": 98,
+          "c": 1,
+          "k": 1,
+          "gap": 6887,
+          "divisor": 9604,
+          "source_labels": [
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 37575,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 167,
+              "exponent": 1
+            }
+          ],
+          "shift": 40931,
+          "a": 61,
+          "c": 11,
+          "k": 14,
+          "gap": 75,
+          "divisor": 40931,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 167,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1955,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 239121,
+          "a": 489,
+          "c": 1,
+          "k": 1,
+          "gap": 1847,
+          "divisor": 239121,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 2707609,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 85918833000,
+      "closure_divisor_count_at_most_2p": 1732,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 22013,
+      "relay_count": 7,
+      "relays": [
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 24,
+          "a": 2,
+          "c": 6,
+          "k": 3,
+          "gap": 18935,
+          "divisor": 24,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                13
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 19,
+          "h_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 25,
+          "a": 5,
+          "c": 1,
+          "k": 1,
+          "gap": 142511,
+          "divisor": 25,
+          "source_labels": [
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 69431,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 399,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 500,
+          "a": 10,
+          "c": 5,
+          "k": 2,
+          "gap": 6791,
+          "divisor": 500,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 819,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 1025,
+          "a": 5,
+          "c": 41,
+          "k": 1,
+          "gap": 3311,
+          "divisor": 1025,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 663,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 13778,
+          "a": 83,
+          "c": 2,
+          "k": 1,
+          "gap": 4167,
+          "divisor": 13778,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "h": 779,
+          "h_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            }
+          ],
+          "shift": 38025,
+          "a": 195,
+          "c": 1,
+          "k": 1,
+          "gap": 3671,
+          "divisor": 38025,
+          "source_labels": [
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                18
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 3409729,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 18378360,
+      "closure_divisor_count_at_most_2p": 510,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 13010,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 87431,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 935,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ],
+          "shift": 54,
+          "a": 3,
+          "c": 6,
+          "k": 13,
+          "gap": 3647,
+          "divisor": 54,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1679,
+          "h_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 73,
+              "exponent": 1
+            }
+          ],
+          "shift": 80,
+          "a": 4,
+          "c": 5,
+          "k": 21,
+          "gap": 2031,
+          "divisor": 80,
+          "source_labels": [
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 73,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 3569329,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 128648520,
+      "closure_divisor_count_at_most_2p": 751,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 22467,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 3660721,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 643242600,
+      "closure_divisor_count_at_most_2p": 1098,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 45425,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 4557361,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 30630600,
+      "closure_divisor_count_at_most_2p": 573,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 21688,
+      "relay_count": 5,
+      "relays": [
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 48,
+          "a": 4,
+          "c": 3,
+          "k": 3,
+          "gap": 31871,
+          "divisor": 48,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                15
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "h": 2639,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 48,
+          "a": 4,
+          "c": 3,
+          "k": 55,
+          "gap": 1727,
+          "divisor": 48,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                9
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "h": 99,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "shift": 125,
+          "a": 5,
+          "c": 5,
+          "k": 1,
+          "gap": 46039,
+          "divisor": 125,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "h": 371,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 53,
+              "exponent": 1
+            }
+          ],
+          "shift": 279,
+          "a": 3,
+          "c": 31,
+          "k": 1,
+          "gap": 12287,
+          "divisor": 279,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 53,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "h": 13727,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 53,
+              "exponent": 1
+            }
+          ],
+          "shift": 10296,
+          "a": 6,
+          "c": 286,
+          "k": 2,
+          "gap": 335,
+          "divisor": 10296,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 37,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 53,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 4722169,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 30630600,
+      "closure_divisor_count_at_most_2p": 573,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 21037,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 5795,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 61,
+              "exponent": 1
+            }
+          ],
+          "shift": 189,
+          "a": 3,
+          "c": 21,
+          "k": 23,
+          "gap": 815,
+          "divisor": 189,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                18
+              ]
+            },
+            {
+              "prime": 61,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 2575,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 103,
+              "exponent": 1
+            }
+          ],
+          "shift": 8464,
+          "a": 92,
+          "c": 1,
+          "k": 7,
+          "gap": 1847,
+          "divisor": 8464,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                14
+              ]
+            },
+            {
+              "prime": 103,
+              "exponent": 1,
+              "source_shifts": [
+                18
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 4965601,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 5
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3828825000,
+      "closure_divisor_count_at_most_2p": 1036,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 27344,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 95,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 4,
+          "gap": 52271,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "h": 87,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 242,
+          "a": 11,
+          "c": 2,
+          "k": 1,
+          "gap": 57087,
+          "divisor": 242,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "h": 4879,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            }
+          ],
+          "shift": 1525,
+          "a": 5,
+          "c": 61,
+          "k": 4,
+          "gap": 1019,
+          "divisor": 1525,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                12
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "h": 50799,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            }
+          ],
+          "shift": 15875,
+          "a": 5,
+          "c": 635,
+          "k": 4,
+          "gap": 99,
+          "divisor": 15875,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            },
+            {
+              "prime": 59,
+              "exponent": 1,
+              "source_shifts": [
+                4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 6344209,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 91891800,
+      "closure_divisor_count_at_most_2p": 761,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 20762,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 19,
+          "h_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 25,
+          "a": 5,
+          "c": 1,
+          "k": 1,
+          "gap": 333911,
+          "divisor": 25,
+          "source_labels": [
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 261079,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 151,
+              "exponent": 1
+            }
+          ],
+          "shift": 698389,
+          "a": 107,
+          "c": 61,
+          "k": 10,
+          "gap": 35,
+          "divisor": 698389,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                16
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 151,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 6868801,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 214414200,
+      "closure_divisor_count_at_most_2p": 849,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 38913,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 5335,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 97,
+              "exponent": 1
+            }
+          ],
+          "shift": 15341,
+          "a": 23,
+          "c": 29,
+          "k": 2,
+          "gap": 1299,
+          "divisor": 15341,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                7,
+                18
+              ]
+            },
+            {
+              "prime": 97,
+              "exponent": 1,
+              "source_shifts": [
+                15
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 6899281,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 4686481800,
+      "closure_divisor_count_at_most_2p": 1322,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 26983,
+      "relay_count": 5,
+      "relays": [
+        {
+          "h": 23,
+          "h_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 1,
+          "gap": 299975,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 575,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 24,
+          "gap": 11999,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 115,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 841,
+          "a": 29,
+          "c": 1,
+          "k": 1,
+          "gap": 60023,
+          "divisor": 841,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 575,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 20736,
+          "a": 144,
+          "c": 1,
+          "k": 1,
+          "gap": 12143,
+          "divisor": 20736,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 52767,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            }
+          ],
+          "shift": 56066,
+          "a": 17,
+          "c": 194,
+          "k": 4,
+          "gap": 135,
+          "divisor": 56066,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 7329169,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 91891800,
+      "closure_divisor_count_at_most_2p": 762,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 20728,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 19,
+          "h_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 25,
+          "a": 5,
+          "c": 1,
+          "k": 1,
+          "gap": 385751,
+          "divisor": 25,
+          "source_labels": [
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 247,
+          "h_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 3844,
+          "a": 62,
+          "c": 1,
+          "k": 1,
+          "gap": 29735,
+          "divisor": 3844,
+          "source_labels": [
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                9
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 7378849,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 1929727800,
+      "closure_divisor_count_at_most_2p": 1369,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 43591,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 8066689,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 275675400,
+      "closure_divisor_count_at_most_2p": 944,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 40214,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 8855,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 54,
+          "a": 3,
+          "c": 6,
+          "k": 123,
+          "gap": 911,
+          "divisor": 54,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "h": 455,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 684,
+          "a": 6,
+          "c": 19,
+          "k": 1,
+          "gap": 17735,
+          "divisor": 684,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12,
+                19
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 8113681,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 275675400,
+      "closure_divisor_count_at_most_2p": 945,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 19765,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 23,
+          "h_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 1,
+          "gap": 352775,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 575,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 24,
+          "gap": 14111,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 115,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 841,
+          "a": 29,
+          "c": 1,
+          "k": 1,
+          "gap": 70583,
+          "divisor": 841,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 575,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 20736,
+          "a": 144,
+          "c": 1,
+          "k": 1,
+          "gap": 14255,
+          "divisor": 20736,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 2,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 8243041,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 18378360,
+      "closure_divisor_count_at_most_2p": 511,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 29071,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 2015,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            }
+          ],
+          "shift": 81,
+          "a": 9,
+          "c": 1,
+          "k": 56,
+          "gap": 4091,
+          "divisor": 81,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                16
+              ]
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "h": 279,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            }
+          ],
+          "shift": 980,
+          "a": 14,
+          "c": 5,
+          "k": 1,
+          "gap": 29559,
+          "divisor": 980,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "source_shifts": [
+                19
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 8283361,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 214414200,
+      "closure_divisor_count_at_most_2p": 852,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 21490,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 212399,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 819,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 1025,
+          "a": 5,
+          "c": 41,
+          "k": 1,
+          "gap": 10119,
+          "divisor": 1025,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8,
+                17
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 247,
+          "h_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 1922,
+          "a": 31,
+          "c": 2,
+          "k": 1,
+          "gap": 33567,
+          "divisor": 1922,
+          "source_labels": [
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "h": 6479,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            }
+          ],
+          "shift": 65610,
+          "a": 81,
+          "c": 10,
+          "k": 2,
+          "gap": 1319,
+          "divisor": 65610,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                17
+              ]
+            },
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                3
+              ]
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "source_shifts": [
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 8328961,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 30630600,
+      "closure_divisor_count_at_most_2p": 575,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 20389,
+      "relay_count": 4,
+      "relays": [
+        {
+          "h": 23,
+          "h_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 36,
+          "a": 6,
+          "c": 1,
+          "k": 1,
+          "gap": 362135,
+          "divisor": 36,
+          "source_labels": [
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 3519,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 128,
+          "a": 8,
+          "c": 2,
+          "k": 55,
+          "gap": 2367,
+          "divisor": 128,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                2,
+                11
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                9
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "h": 43615,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 61,
+              "exponent": 1
+            }
+          ],
+          "shift": 376,
+          "a": 2,
+          "c": 94,
+          "k": 58,
+          "gap": 191,
+          "divisor": 376,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                13
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                12
+              ]
+            },
+            {
+              "prime": 61,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "h": 115,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 841,
+          "a": 29,
+          "c": 1,
+          "k": 1,
+          "gap": 72455,
+          "divisor": 841,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11,
+                16
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 8955769,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 6769362600,
+      "closure_divisor_count_at_most_2p": 1181,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 45076,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 87,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 242,
+          "a": 11,
+          "c": 2,
+          "k": 1,
+          "gap": 102951,
+          "divisor": 242,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 9296809,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 1562160600,
+      "closure_divisor_count_at_most_2p": 1100,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 44346,
+      "relay_count": 6,
+      "relays": [
+        {
+          "h": 19,
+          "h_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "shift": 25,
+          "a": 5,
+          "c": 1,
+          "k": 1,
+          "gap": 489311,
+          "divisor": 25,
+          "source_labels": [
+            {
+              "prime": 19,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 351,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 3
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 32,
+          "a": 4,
+          "c": 2,
+          "k": 11,
+          "gap": 26487,
+          "divisor": 32,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 3,
+              "source_shifts": [
+                5
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                19
+              ]
+            }
+          ]
+        },
+        {
+          "h": 87,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 242,
+          "a": 11,
+          "c": 2,
+          "k": 1,
+          "gap": 106871,
+          "divisor": 242,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1479,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            }
+          ],
+          "shift": 68450,
+          "a": 185,
+          "c": 2,
+          "k": 1,
+          "gap": 6471,
+          "divisor": 68450,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            },
+            {
+              "prime": 29,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "h": 284415,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 67,
+              "exponent": 1
+            },
+            {
+              "prime": 283,
+              "exponent": 1
+            }
+          ],
+          "shift": 448844,
+          "a": 202,
+          "c": 11,
+          "k": 32,
+          "gap": 39,
+          "divisor": 448844,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14,
+                19
+              ]
+            },
+            {
+              "prime": 67,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            },
+            {
+              "prime": 283,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "h": 7839,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 67,
+              "exponent": 1
+            }
+          ],
+          "shift": 480200,
+          "a": 490,
+          "c": 2,
+          "k": 2,
+          "gap": 1431,
+          "divisor": 480200,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                19
+              ]
+            },
+            {
+              "prime": 67,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 9504961,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 30630600,
+      "closure_divisor_count_at_most_2p": 575,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 13661,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 243719,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14,
+                17
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 287,
+          "h_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            }
+          ],
+          "shift": 48,
+          "a": 4,
+          "c": 3,
+          "k": 6,
+          "gap": 33119,
+          "divisor": 48,
+          "source_labels": [
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                6,
+                13
+              ]
+            },
+            {
+              "prime": 41,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 9744001,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 5
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 118264746600,
+      "closure_divisor_count_at_most_2p": 2151,
+      "private_source_prime_budget": 2,
+      "candidate_factor_count_at_most_2p": 35717,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 207,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 338,
+          "a": 13,
+          "c": 2,
+          "k": 2,
+          "gap": 47079,
+          "divisor": 338,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "h": 3519,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            }
+          ],
+          "shift": 96800,
+          "a": 220,
+          "c": 2,
+          "k": 2,
+          "gap": 2879,
+          "divisor": 96800,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 17,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                19
+              ]
+            },
+            {
+              "prime": 23,
+              "exponent": 1,
+              "source_shifts": [
+                16
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

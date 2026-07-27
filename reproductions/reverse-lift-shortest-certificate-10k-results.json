@@ -1,0 +1,54 @@
+{
+  "arithmetic": "complete least-gap Bradford certificate search, exhaustive n=2,...,p-1 reverse two-tail enumeration for every target coordinate, and exact rational source/target identity checks",
+  "scope_note": "A finite audit of lifts preserving two terms of a least-gap certificate. It does not exclude other target certificates, one-denominator lifts, or any broader marked descent.",
+  "prime_limit": 10000,
+  "core_prime_count": 143,
+  "targets_with_reverse_two_tail_lift": 2,
+  "total_reverse_two_tail_lifts": 3,
+  "records": [
+    {
+      "prime": 193,
+      "certificate_type": "I",
+      "gap": 7,
+      "divisor": 10,
+      "target_solution": [
+        50,
+        1380,
+        1331700
+      ],
+      "reverse_two_tail_lifts": [
+        {
+          "replaced_target_position": 2,
+          "replaced_target_term": 1331700,
+          "source_denominator": 192,
+          "source_term": 9200
+        }
+      ]
+    },
+    {
+      "prime": 1201,
+      "certificate_type": "I",
+      "gap": 23,
+      "divisor": 34,
+      "target_solution": [
+        306,
+        15980,
+        172727820
+      ],
+      "reverse_two_tail_lifts": [
+        {
+          "replaced_target_position": 2,
+          "replaced_target_term": 172727820,
+          "source_denominator": 1020,
+          "source_term": 1692
+        },
+        {
+          "replaced_target_position": 2,
+          "replaced_target_term": 172727820,
+          "source_denominator": 1200,
+          "source_term": 359550
+        }
+      ]
+    }
+  ]
+}

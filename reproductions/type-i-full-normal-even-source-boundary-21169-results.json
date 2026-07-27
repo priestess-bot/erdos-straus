@@ -1,0 +1,491 @@
+{
+  "arithmetic": "for every natural Type I gap m=3 (mod 4), 3<=m<=p-2, enumerate every d|x^2 for x=(p+m)/4 satisfying the exact Type I congruence, normalize to every (A,B,C), then enumerate every bridge E|4K^2 for the p-divisible maximum tail and verify every strict source",
+  "scope_note": "This is a complete one-point audit. It rules out only maximum-tail, two-term-preserving, strict even-source Type I lifts with the stated B cap; it does not exclude other coordinates or Type II.",
+  "prime": 21169,
+  "gap_range": [
+    3,
+    21167
+  ],
+  "normal_form_count": 19,
+  "strict_reverse_lift_count": 20,
+  "strict_even_lift_count": 19,
+  "normal_form_b_histogram": {
+    "1": 1,
+    "5": 2,
+    "6": 3,
+    "7": 1,
+    "9": 1,
+    "14": 1,
+    "17": 1,
+    "19": 2,
+    "20": 1,
+    "26": 1,
+    "45": 1,
+    "59": 1,
+    "71": 1,
+    "82": 1,
+    "136": 1
+  },
+  "strict_even_lift_b_histogram": {
+    "5": 2,
+    "6": 4,
+    "7": 3,
+    "9": 1,
+    "14": 1,
+    "17": 1,
+    "19": 3,
+    "20": 2,
+    "82": 2
+  },
+  "minimum_even_lift_b": 5,
+  "minimum_even_b_lifts": [
+    {
+      "gap": 4071,
+      "normal_form": [
+        1,
+        5,
+        1262
+      ],
+      "lift": {
+        "source_denominator": 21060,
+        "source_term": 1022220,
+        "bridge_divisor": 1514667776180
+      }
+    },
+    {
+      "gap": 4071,
+      "normal_form": [
+        1,
+        5,
+        1262
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 108525690,
+        "bridge_divisor": 14340049952
+      }
+    }
+  ],
+  "forms": [
+    {
+      "gap": 31,
+      "normal_form": [
+        4,
+        1,
+        1325
+      ],
+      "strict_reverse_lift_count": 1
+    },
+    {
+      "gap": 35,
+      "normal_form": [
+        9,
+        19,
+        31
+      ],
+      "strict_reverse_lift_count": 1
+    },
+    {
+      "gap": 35,
+      "normal_form": [
+        19,
+        9,
+        31
+      ],
+      "strict_reverse_lift_count": 1
+    },
+    {
+      "gap": 47,
+      "normal_form": [
+        1,
+        136,
+        39
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 47,
+      "normal_form": [
+        6,
+        17,
+        52
+      ],
+      "strict_reverse_lift_count": 1
+    },
+    {
+      "gap": 71,
+      "normal_form": [
+        2,
+        45,
+        59
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 71,
+      "normal_form": [
+        5,
+        6,
+        177
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 95,
+      "normal_form": [
+        1,
+        6,
+        886
+      ],
+      "strict_reverse_lift_count": 1
+    },
+    {
+      "gap": 111,
+      "normal_form": [
+        2,
+        7,
+        380
+      ],
+      "strict_reverse_lift_count": 3
+    },
+    {
+      "gap": 131,
+      "normal_form": [
+        3,
+        5,
+        355
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 151,
+      "normal_form": [
+        1,
+        26,
+        205
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 191,
+      "normal_form": [
+        1,
+        6,
+        890
+      ],
+      "strict_reverse_lift_count": 3
+    },
+    {
+      "gap": 223,
+      "normal_form": [
+        1,
+        14,
+        382
+      ],
+      "strict_reverse_lift_count": 1
+    },
+    {
+      "gap": 671,
+      "normal_form": [
+        21,
+        20,
+        13
+      ],
+      "strict_reverse_lift_count": 2
+    },
+    {
+      "gap": 3759,
+      "normal_form": [
+        2,
+        19,
+        164
+      ],
+      "strict_reverse_lift_count": 2
+    },
+    {
+      "gap": 4071,
+      "normal_form": [
+        1,
+        5,
+        1262
+      ],
+      "strict_reverse_lift_count": 2
+    },
+    {
+      "gap": 6679,
+      "normal_form": [
+        2,
+        59,
+        59
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 7515,
+      "normal_form": [
+        1,
+        71,
+        101
+      ],
+      "strict_reverse_lift_count": 0
+    },
+    {
+      "gap": 16223,
+      "normal_form": [
+        3,
+        82,
+        38
+      ],
+      "strict_reverse_lift_count": 2
+    }
+  ],
+  "strict_even_lifts": [
+    {
+      "gap": 35,
+      "normal_form": [
+        9,
+        19,
+        31
+      ],
+      "lift": {
+        "source_denominator": 20956,
+        "source_term": 520676,
+        "bridge_divisor": 122082222760108
+      }
+    },
+    {
+      "gap": 35,
+      "normal_form": [
+        19,
+        9,
+        31
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 111637386,
+        "bridge_divisor": 129060449568
+      }
+    },
+    {
+      "gap": 47,
+      "normal_form": [
+        6,
+        17,
+        52
+      ],
+      "lift": {
+        "source_denominator": 20956,
+        "source_term": 520676,
+        "bridge_divisor": 122082222760108
+      }
+    },
+    {
+      "gap": 95,
+      "normal_form": [
+        1,
+        6,
+        886
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 111942999,
+        "bridge_divisor": 602282097984
+      }
+    },
+    {
+      "gap": 111,
+      "normal_form": [
+        2,
+        7,
+        380
+      ],
+      "lift": {
+        "source_denominator": 18690,
+        "source_term": 39900,
+        "bridge_divisor": 745418202833010
+      }
+    },
+    {
+      "gap": 111,
+      "normal_form": [
+        2,
+        7,
+        380
+      ],
+      "lift": {
+        "source_denominator": 20900,
+        "source_term": 411180,
+        "bridge_divisor": 80886844260500
+      }
+    },
+    {
+      "gap": 111,
+      "normal_form": [
+        2,
+        7,
+        380
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 111859650,
+        "bridge_divisor": 301141048992
+      }
+    },
+    {
+      "gap": 191,
+      "normal_form": [
+        1,
+        6,
+        890
+      ],
+      "lift": {
+        "source_denominator": 18690,
+        "source_term": 39900,
+        "bridge_divisor": 745418202833010
+      }
+    },
+    {
+      "gap": 191,
+      "normal_form": [
+        1,
+        6,
+        890
+      ],
+      "lift": {
+        "source_denominator": 20900,
+        "source_term": 411180,
+        "bridge_divisor": 80886844260500
+      }
+    },
+    {
+      "gap": 191,
+      "normal_form": [
+        1,
+        6,
+        890
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 111859650,
+        "bridge_divisor": 301141048992
+      }
+    },
+    {
+      "gap": 223,
+      "normal_form": [
+        1,
+        14,
+        382
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 111942999,
+        "bridge_divisor": 602282097984
+      }
+    },
+    {
+      "gap": 671,
+      "normal_form": [
+        21,
+        20,
+        13
+      ],
+      "lift": {
+        "source_denominator": 21060,
+        "source_term": 1022220,
+        "bridge_divisor": 1514667776180
+      }
+    },
+    {
+      "gap": 671,
+      "normal_form": [
+        21,
+        20,
+        13
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 108525690,
+        "bridge_divisor": 14340049952
+      }
+    },
+    {
+      "gap": 3759,
+      "normal_form": [
+        2,
+        19,
+        164
+      ],
+      "lift": {
+        "source_denominator": 16264,
+        "source_term": 17548,
+        "bridge_divisor": 138478277373976
+      }
+    },
+    {
+      "gap": 3759,
+      "normal_form": [
+        2,
+        19,
+        164
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 110276019,
+        "bridge_divisor": 28680099904
+      }
+    },
+    {
+      "gap": 4071,
+      "normal_form": [
+        1,
+        5,
+        1262
+      ],
+      "lift": {
+        "source_denominator": 21060,
+        "source_term": 1022220,
+        "bridge_divisor": 1514667776180
+      }
+    },
+    {
+      "gap": 4071,
+      "normal_form": [
+        1,
+        5,
+        1262
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 108525690,
+        "bridge_divisor": 14340049952
+      }
+    },
+    {
+      "gap": 16223,
+      "normal_form": [
+        3,
+        82,
+        38
+      ],
+      "lift": {
+        "source_denominator": 16264,
+        "source_term": 17548,
+        "bridge_divisor": 138478277373976
+      }
+    },
+    {
+      "gap": 16223,
+      "normal_form": [
+        3,
+        82,
+        38
+      ],
+      "lift": {
+        "source_denominator": 21168,
+        "source_term": 110276019,
+        "bridge_divisor": 28680099904
+      }
+    }
+  ]
+}

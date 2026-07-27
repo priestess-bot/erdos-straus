@@ -1,0 +1,264 @@
+{
+  "arithmetic": "exact SPF factorization; all stated collision/private-source relay factors h <= 2p; and all canonical pairs 4ac | h+1 in the natural range a^2c <= p/4",
+  "scope_note": "A fixed-list finite relay audit. It does not claim that the specified private-source budget covers all core primes.",
+  "base_shift_bound": 19,
+  "private_source_prime_budget": 3,
+  "input_primes": [
+    225289,
+    2031121,
+    3569329,
+    3660721,
+    7378849
+  ],
+  "relayed_count": 0,
+  "unrelayed_count": 5,
+  "unrelayed_primes": [
+    225289,
+    2031121,
+    3569329,
+    3660721,
+    7378849
+  ],
+  "profiles": [
+    {
+      "prime": 225289,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 30630600,
+      "closure_divisor_count_at_most_2p": 533,
+      "private_source_prime_budget": 3,
+      "candidate_factor_count_at_most_2p": 8185,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 2031121,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3216213000,
+      "closure_divisor_count_at_most_2p": 1348,
+      "private_source_prime_budget": 3,
+      "candidate_factor_count_at_most_2p": 36726,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 3569329,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 128648520,
+      "closure_divisor_count_at_most_2p": 751,
+      "private_source_prime_budget": 3,
+      "candidate_factor_count_at_most_2p": 26638,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 3660721,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 643242600,
+      "closure_divisor_count_at_most_2p": 1098,
+      "private_source_prime_budget": 3,
+      "candidate_factor_count_at_most_2p": 53731,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 7378849,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 1929727800,
+      "closure_divisor_count_at_most_2p": 1369,
+      "private_source_prime_budget": 3,
+      "candidate_factor_count_at_most_2p": 53400,
+      "relay_count": 0,
+      "relays": []
+    }
+  ]
+}

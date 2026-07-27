@@ -1,0 +1,186 @@
+{
+  "arithmetic": "exact integer recurrences, exact external-source reconstruction, and fractions.Fraction verification",
+  "scope_note": "The audit verifies only the deterministic FCT/Type I equivalence inside a finite source window. It does not test a uniform source bound or validate the FCT heuristic probability model.",
+  "prime_limit": 5000,
+  "source_limit": 32,
+  "core_prime_count": 76,
+  "external_source_witness_count": 386,
+  "sample_witnesses": [
+    {
+      "source_witness": {
+        "prime": 73,
+        "source": 2,
+        "gap": 15
+      },
+      "fct": {
+        "c0": 2,
+        "c1": 3,
+        "c2": 15,
+        "p0": 2,
+        "p1": 5,
+        "prime": 73,
+        "k": 11,
+        "denominators": [
+          22,
+          110,
+          4015
+        ]
+      },
+      "certificate_divisor": 44
+    },
+    {
+      "source_witness": {
+        "prime": 73,
+        "source": 4,
+        "gap": 7
+      },
+      "fct": {
+        "c0": 4,
+        "c1": 3,
+        "c2": 7,
+        "p0": 4,
+        "p1": 11,
+        "prime": 73,
+        "k": 5,
+        "denominators": [
+          20,
+          220,
+          4015
+        ]
+      },
+      "certificate_divisor": 80
+    },
+    {
+      "source_witness": {
+        "prime": 97,
+        "source": 1,
+        "gap": 7
+      },
+      "fct": {
+        "c0": 1,
+        "c1": 15,
+        "c2": 7,
+        "p0": 1,
+        "p1": 14,
+        "prime": 97,
+        "k": 26,
+        "denominators": [
+          26,
+          364,
+          35308
+        ]
+      },
+      "certificate_divisor": 26
+    },
+    {
+      "source_witness": {
+        "prime": 97,
+        "source": 5,
+        "gap": 3
+      },
+      "fct": {
+        "c0": 5,
+        "c1": 7,
+        "c2": 3,
+        "p0": 5,
+        "p1": 34,
+        "prime": 97,
+        "k": 5,
+        "denominators": [
+          25,
+          850,
+          16490
+        ]
+      },
+      "certificate_divisor": 125
+    },
+    {
+      "source_witness": {
+        "prime": 193,
+        "source": 2,
+        "gap": 15
+      },
+      "fct": {
+        "c0": 2,
+        "c1": 7,
+        "c2": 15,
+        "p0": 2,
+        "p1": 13,
+        "prime": 193,
+        "k": 26,
+        "denominators": [
+          52,
+          676,
+          65234
+        ]
+      },
+      "certificate_divisor": 104
+    },
+    {
+      "source_witness": {
+        "prime": 193,
+        "source": 2,
+        "gap": 39
+      },
+      "fct": {
+        "c0": 2,
+        "c1": 3,
+        "c2": 39,
+        "p0": 2,
+        "p1": 5,
+        "prime": 193,
+        "k": 29,
+        "denominators": [
+          58,
+          290,
+          27985
+        ]
+      },
+      "certificate_divisor": 116
+    },
+    {
+      "source_witness": {
+        "prime": 193,
+        "source": 10,
+        "gap": 7
+      },
+      "fct": {
+        "c0": 10,
+        "c1": 3,
+        "c2": 7,
+        "p0": 10,
+        "p1": 29,
+        "prime": 193,
+        "k": 5,
+        "denominators": [
+          50,
+          1450,
+          27985
+        ]
+      },
+      "certificate_divisor": 500
+    },
+    {
+      "source_witness": {
+        "prime": 241,
+        "source": 1,
+        "gap": 11
+      },
+      "fct": {
+        "c0": 1,
+        "c1": 23,
+        "c2": 11,
+        "p0": 1,
+        "p1": 22,
+        "prime": 241,
+        "k": 63,
+        "denominators": [
+          63,
+          1386,
+          334026
+        ]
+      },
+      "certificate_divisor": 63
+    }
+  ]
+}

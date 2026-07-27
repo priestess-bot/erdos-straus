@@ -1,0 +1,886 @@
+{
+  "arithmetic": "for each residual from the one-prime square-surplus profile, enumerate every Type I normal certificate with m=3 (mod 4) through the inherited gap cap and every strict maximum-tail reverse lift; select the lexicographically least surplus by (prime support, exponent count, value, B, gap, source)",
+  "scope_note": "An exhaustive target-side boundary within the inherited finite box. It classifies the obstruction to a one-prime surplus rule but is not a global selector theorem.",
+  "input_single_surplus_profile": "type-i-tail-reverse-single-surplus-500m-results.json",
+  "prime_limit": 500000000,
+  "gap_cap": 127,
+  "boundary_residual_count": 34,
+  "normal_forms_exhaustively_checked": 674,
+  "strict_reverse_lifts_exhaustively_checked": 118,
+  "least_surplus_support_histogram": {
+    "2": 28,
+    "3": 6
+  },
+  "least_surplus_exponent_histogram": {
+    "2": 25,
+    "3": 7,
+    "4": 1,
+    "5": 1
+  },
+  "unresolved_core_source_count": 0,
+  "terminal_prime_residue_counts_mod_24": {
+    "2": 28,
+    "3": 4,
+    "5": 1,
+    "11": 1
+  },
+  "maximum_selected_terminal_prime": 107,
+  "records": [
+    {
+      "prime": 17898169,
+      "least_square_surplus": {
+        "gap": 71,
+        "normal_form": [
+          8,
+          1,
+          559320
+        ],
+        "K": 140997300840,
+        "E": 63547855569,
+        "square_surplus": 84029,
+        "square_surplus_factorization": {
+          "11": 1,
+          "7639": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 15881481,
+          "source_term": 35237160,
+          "bridge_divisor": 20357203066688375378062209
+        }
+      }
+    },
+    {
+      "prime": 18007609,
+      "least_square_surplus": {
+        "gap": 71,
+        "normal_form": [
+          1328,
+          1,
+          3390
+        ],
+        "K": 859863330,
+        "E": 8274312,
+        "square_surplus": 339,
+        "square_surplus_factorization": {
+          "3": 1,
+          "113": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 17964288,
+          "source_term": 1866841920,
+          "bridge_divisor": 2683144099697145220872
+        }
+      }
+    },
+    {
+      "prime": 21703609,
+      "least_square_surplus": {
+        "gap": 63,
+        "normal_form": [
+          8837,
+          1,
+          614
+        ],
+        "K": 211610188,
+        "E": 6031936,
+        "square_surplus": 1228,
+        "square_surplus_factorization": {
+          "2": 2,
+          "307": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 21548944,
+          "source_term": 755972227,
+          "bridge_divisor": 2841323207360090199616
+        }
+      }
+    },
+    {
+      "prime": 22605361,
+      "least_square_surplus": {
+        "gap": 103,
+        "normal_form": [
+          49,
+          1,
+          115334
+        ],
+        "K": 25312352980,
+        "E": 48167080900,
+        "square_surplus": 109735,
+        "square_surplus_factorization": {
+          "5": 1,
+          "17": 1,
+          "1291": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 3,
+        "reverse_two_tail_lift": {
+          "source_denominator": 11851380,
+          "source_term": 6228036,
+          "bridge_divisor": 24613491336997228178968900
+        }
+      }
+    },
+    {
+      "prime": 39494569,
+      "least_square_surplus": {
+        "gap": 55,
+        "normal_form": [
+          436,
+          1,
+          22646
+        ],
+        "K": 16261888786,
+        "E": 4553956,
+        "square_surplus": 1067,
+        "square_surplus_factorization": {
+          "11": 1,
+          "97": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 39491804,
+          "source_term": 141022733774,
+          "bridge_divisor": 7103356113054553780516
+        }
+      }
+    },
+    {
+      "prime": 49996489,
+      "least_square_surplus": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          12499130
+        ],
+        "K": 20158471872700,
+        "E": 2601091584100,
+        "square_surplus": 161279,
+        "square_surplus_factorization": {
+          "17": 1,
+          "53": 1,
+          "179": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 3,
+        "reverse_two_tail_lift": {
+          "source_denominator": 48383700,
+          "source_term": 374973900,
+          "bridge_divisor": 6501815749058793179282376100
+        }
+      }
+    },
+    {
+      "prime": 52387729,
+      "least_square_surplus": {
+        "gap": 31,
+        "normal_form": [
+          15229,
+          1,
+          860
+        ],
+        "K": 1453759480,
+        "E": 11833600,
+        "square_surplus": 1720,
+        "square_surplus_factorization": {
+          "2": 3,
+          "5": 1,
+          "43": 1
+        },
+        "extra_exponent_count": 5,
+        "extra_prime_support_count": 3,
+        "reverse_two_tail_lift": {
+          "source_denominator": 52281120,
+          "source_term": 6422743191,
+          "bridge_divisor": 32477009298806325817600
+        }
+      }
+    },
+    {
+      "prime": 55036249,
+      "least_square_surplus": {
+        "gap": 91,
+        "normal_form": [
+          5,
+          1,
+          2751817
+        ],
+        "K": 1664282410698,
+        "E": 365775782436,
+        "square_surplus": 302397,
+        "square_surplus_factorization": {
+          "3": 1,
+          "100799": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 52012284,
+          "source_term": 236656262,
+          "bridge_divisor": 1107930713191748210895422436
+        }
+      }
+    },
+    {
+      "prime": 57399241,
+      "least_square_surplus": {
+        "gap": 83,
+        "normal_form": [
+          22317,
+          1,
+          643
+        ],
+        "K": 444844118,
+        "E": 6615184,
+        "square_surplus": 1286,
+        "square_surplus_factorization": {
+          "2": 1,
+          "643": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 57185848,
+          "source_term": 3845514821,
+          "bridge_divisor": 21794867237500373013904
+        }
+      }
+    },
+    {
+      "prime": 81209209,
+      "least_square_surplus": {
+        "gap": 103,
+        "normal_form": [
+          8,
+          1,
+          2537791
+        ],
+        "K": 2000893398249,
+        "E": 621636056721,
+        "square_surplus": 788439,
+        "square_surplus_factorization": {
+          "3": 1,
+          "269": 1,
+          "977": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 3,
+        "reverse_two_tail_lift": {
+          "source_denominator": 74901705,
+          "source_term": 241090145,
+          "bridge_divisor": 4099649777127665579472632001
+        }
+      }
+    },
+    {
+      "prime": 129799609,
+      "least_square_surplus": {
+        "gap": 103,
+        "normal_form": [
+          12329,
+          14,
+          188
+        ],
+        "K": 46435810120,
+        "E": 6854686048,
+        "square_surplus": 329,
+        "square_surplus_factorization": {
+          "7": 1,
+          "47": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 125009472,
+          "source_term": 846853680,
+          "bridge_divisor": 115487328949883129484904288
+        }
+      }
+    },
+    {
+      "prime": 161964889,
+      "least_square_surplus": {
+        "gap": 31,
+        "normal_form": [
+          5,
+          1,
+          8098246
+        ],
+        "K": 42310695321804,
+        "E": 27297218406276,
+        "square_surplus": 200949,
+        "square_surplus_factorization": {
+          "3": 1,
+          "7": 2,
+          "1367": 1
+        },
+        "extra_exponent_count": 4,
+        "extra_prime_support_count": 3,
+        "reverse_two_tail_lift": {
+          "source_denominator": 135841524,
+          "source_term": 210554396,
+          "bridge_divisor": 716077701331945674582784246596
+        }
+      }
+    },
+    {
+      "prime": 179954329,
+      "least_square_surplus": {
+        "gap": 71,
+        "normal_form": [
+          2910,
+          1,
+          15460
+        ],
+        "K": 39185055140,
+        "E": 7840,
+        "square_surplus": 14,
+        "square_surplus_factorization": {
+          "2": 1,
+          "7": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 179954320,
+          "source_term": 899428565290970,
+          "bridge_divisor": 253887114522587489440
+        }
+      }
+    },
+    {
+      "prime": 184707769,
+      "least_square_surplus": {
+        "gap": 87,
+        "normal_form": [
+          17,
+          1,
+          2716292
+        ],
+        "K": 5766899786776,
+        "E": 4507460194084,
+        "square_surplus": 1061539,
+        "square_surplus_factorization": {
+          "293": 1,
+          "3623": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 148615460,
+          "source_term": 190140440,
+          "bridge_divisor": 153780838822934197264820452324
+        }
+      }
+    },
+    {
+      "prime": 228366889,
+      "least_square_surplus": {
+        "gap": 123,
+        "normal_form": [
+          569,
+          1,
+          100337
+        ],
+        "K": 186290289702,
+        "E": 4220550192,
+        "square_surplus": 18754,
+        "square_surplus_factorization": {
+          "2": 1,
+          "9377": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 227073432,
+          "source_term": 10022763267,
+          "bridge_divisor": 220107753187162771071907632
+        }
+      }
+    },
+    {
+      "prime": 232527409,
+      "least_square_surplus": {
+        "gap": 71,
+        "normal_form": [
+          5,
+          1,
+          11626374
+        ],
+        "K": 38076770146716,
+        "E": 10725847701156,
+        "square_surplus": 545839,
+        "square_surplus_factorization": {
+          "7": 1,
+          "77977": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 216152244,
+          "source_term": 767340684,
+          "bridge_divisor": 579935815766675359933612492836
+        }
+      }
+    },
+    {
+      "prime": 255352729,
+      "least_square_surplus": {
+        "gap": 27,
+        "normal_form": [
+          41,
+          1,
+          1557029
+        ],
+        "K": 14725617337790,
+        "E": 38789428909456,
+        "square_surplus": 3114058,
+        "square_surplus_factorization": {
+          "2": 1,
+          "1557029": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 87193624,
+          "source_term": 33101285,
+          "bridge_divisor": 2529265340730345625086904702096
+        }
+      }
+    },
+    {
+      "prime": 261826009,
+      "least_square_surplus": {
+        "gap": 47,
+        "normal_form": [
+          5163,
+          1,
+          12678
+        ],
+        "K": 70627565928,
+        "E": 3859584,
+        "square_surplus": 92,
+        "square_surplus_factorization": {
+          "2": 2,
+          "23": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 261822432,
+          "source_term": 4791159119094,
+          "bridge_divisor": 264585517707691423538304
+        }
+      }
+    },
+    {
+      "prime": 301190569,
+      "least_square_surplus": {
+        "gap": 87,
+        "normal_form": [
+          4736,
+          1,
+          15899
+        ],
+        "K": 55042576485,
+        "E": 2925,
+        "square_surplus": 15,
+        "square_surplus_factorization": {
+          "3": 1,
+          "5": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 301190565,
+          "source_term": 5667796482247133,
+          "bridge_divisor": 265343594649540500925
+        }
+      }
+    },
+    {
+      "prime": 301304089,
+      "least_square_surplus": {
+        "gap": 39,
+        "normal_form": [
+          151867,
+          8,
+          62
+        ],
+        "K": 30657691056,
+        "E": 34596,
+        "square_surplus": 93,
+        "square_surplus_factorization": {
+          "3": 1,
+          "31": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 301304004,
+          "source_term": 267004424458544,
+          "bridge_divisor": 3140768593448756786916
+        }
+      }
+    },
+    {
+      "prime": 319207849,
+      "least_square_surplus": {
+        "gap": 119,
+        "normal_form": [
+          12,
+          1,
+          6650166
+        ],
+        "K": 17838531631554,
+        "E": 7195371691561,
+        "square_surplus": 2682419,
+        "square_surplus_factorization": {
+          "1613": 1,
+          "1663": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 287018833,
+          "source_term": 711567762,
+          "bridge_divisor": 733162690970918267528329506361
+        }
+      }
+    },
+    {
+      "prime": 322872169,
+      "least_square_surplus": {
+        "gap": 59,
+        "normal_form": [
+          21,
+          1,
+          3843717
+        ],
+        "K": 21034395347970,
+        "E": 29947271208100,
+        "square_surplus": 2736205,
+        "square_surplus_factorization": {
+          "5": 1,
+          "547241": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 207951580,
+          "source_term": 146061246,
+          "bridge_divisor": 3121896336732904456285536144100
+        }
+      }
+    },
+    {
+      "prime": 328186681,
+      "least_square_surplus": {
+        "gap": 111,
+        "normal_form": [
+          6379,
+          2,
+          6431
+        ],
+        "K": 76057263322,
+        "E": 190666288,
+        "square_surplus": 218,
+        "square_surplus_factorization": {
+          "2": 1,
+          "109": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 327981000,
+          "source_term": 130832448375,
+          "bridge_divisor": 20535998088164639276005168
+        }
+      }
+    },
+    {
+      "prime": 333575449,
+      "least_square_surplus": {
+        "gap": 71,
+        "normal_form": [
+          21405,
+          2,
+          1948
+        ],
+        "K": 36609905528,
+        "E": 20129007368,
+        "square_surplus": 50161,
+        "square_surplus_factorization": {
+          "103": 1,
+          "487": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 287723496,
+          "source_term": 523301016,
+          "bridge_divisor": 2239806586210048909993196168
+        }
+      }
+    },
+    {
+      "prime": 347420329,
+      "least_square_surplus": {
+        "gap": 31,
+        "normal_form": [
+          21595,
+          1,
+          4022
+        ],
+        "K": 45077787688,
+        "E": 258823744,
+        "square_surplus": 4022,
+        "square_surplus_factorization": {
+          "2": 1,
+          "2011": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 346921632,
+          "source_term": 60421271364,
+          "bridge_divisor": 31240254960452279376714304
+        }
+      }
+    },
+    {
+      "prime": 349526809,
+      "least_square_surplus": {
+        "gap": 51,
+        "normal_form": [
+          2921,
+          193,
+          155
+        ],
+        "K": 39569143611570,
+        "E": 748982475,
+        "square_surplus": 15,
+        "square_surplus_factorization": {
+          "3": 1,
+          "5": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 349525155,
+          "source_term": 18465600352066,
+          "bridge_divisor": 91502432655528712882520475
+        }
+      }
+    },
+    {
+      "prime": 357834409,
+      "least_square_surplus": {
+        "gap": 95,
+        "normal_form": [
+          1,
+          1,
+          89458626
+        ],
+        "K": 336961838464428,
+        "E": 14187863155684,
+        "square_surplus": 1883339,
+        "square_surplus_factorization": {
+          "59": 1,
+          "137": 1,
+          "233": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 3,
+        "reverse_two_tail_lift": {
+          "source_denominator": 354067732,
+          "source_term": 8409110844,
+          "bridge_divisor": 1816691524689039077402126983204
+        }
+      }
+    },
+    {
+      "prime": 364052329,
+      "least_square_surplus": {
+        "gap": 35,
+        "normal_form": [
+          6051,
+          1,
+          15041
+        ],
+        "K": 156451488388,
+        "E": 3619706896,
+        "square_surplus": 15041,
+        "square_surplus_factorization": {
+          "13": 2,
+          "89": 1
+        },
+        "extra_exponent_count": 3,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 361946624,
+          "source_term": 15644108672,
+          "bridge_divisor": 479734589391840189383665936
+        }
+      }
+    },
+    {
+      "prime": 408626089,
+      "least_square_surplus": {
+        "gap": 83,
+        "normal_form": [
+          9,
+          1,
+          11350727
+        ],
+        "K": 55881967270762,
+        "E": 24237957318436,
+        "square_surplus": 2461603,
+        "square_surplus_factorization": {
+          "157": 1,
+          "15679": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 364317244,
+          "source_term": 839953798,
+          "bridge_divisor": 4047139724693858018236605939556
+        }
+      }
+    },
+    {
+      "prime": 417825769,
+      "least_square_surplus": {
+        "gap": 95,
+        "normal_form": [
+          1,
+          1,
+          104456466
+        ],
+        "K": 459416877241356,
+        "E": 19343864163556,
+        "square_surplus": 46789,
+        "square_surplus_factorization": {
+          "71": 1,
+          "659": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 413427604,
+          "source_term": 9818907804,
+          "bridge_divisor": 3377020337857677400872531239716
+        }
+      }
+    },
+    {
+      "prime": 419030089,
+      "least_square_surplus": {
+        "gap": 103,
+        "normal_form": [
+          79603,
+          28,
+          47
+        ],
+        "K": 149908014340,
+        "E": 14315908600,
+        "square_surplus": 35,
+        "square_surplus_factorization": {
+          "5": 1,
+          "7": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 409025960,
+          "source_term": 4283086124,
+          "bridge_divisor": 2513676212336777293436020600
+        }
+      }
+    },
+    {
+      "prime": 432570121,
+      "least_square_surplus": {
+        "gap": 71,
+        "normal_form": [
+          6,
+          1,
+          18023758
+        ],
+        "K": 109810412494046,
+        "E": 37119007096369,
+        "square_surplus": 6092537,
+        "square_surplus_factorization": {
+          "11": 1,
+          "553867": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 396014905,
+          "source_term": 1171544270,
+          "bridge_divisor": 6945593894623210852464873798529
+        }
+      }
+    },
+    {
+      "prime": 432966361,
+      "least_square_surplus": {
+        "gap": 47,
+        "normal_form": [
+          1211,
+          1,
+          89382
+        ],
+        "K": 823393777032,
+        "E": 127826270784,
+        "square_surplus": 29794,
+        "square_surplus_factorization": {
+          "2": 1,
+          "14897": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 416162592,
+          "source_term": 2680714116,
+          "bridge_divisor": 23962296072766090201317209664
+        }
+      }
+    },
+    {
+      "prime": 472918009,
+      "least_square_surplus": {
+        "gap": 47,
+        "normal_form": [
+          79777,
+          39,
+          38
+        ],
+        "K": 581570921568,
+        "E": 349686792,
+        "square_surplus": 159,
+        "square_surplus_factorization": {
+          "3": 1,
+          "53": 1
+        },
+        "extra_exponent_count": 2,
+        "extra_prime_support_count": 2,
+        "reverse_two_tail_lift": {
+          "source_denominator": 472846920,
+          "source_term": 786400931680,
+          "bridge_divisor": 78207955711550203115638152
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "arithmetic": "exact two-tail source/target verification for the stored tail branch, plus exact rational verification of the two adaptive external lifts",
+  "scope_note": "A finite H19 strict-descent closure. It does not establish a universal tail-deflation or external-source selector.",
+  "prime_limit": 1000000000,
+  "base_shift_bound": 19,
+  "h19_residual_count": 664,
+  "two_tail_descent_count": 662,
+  "adaptive_external_fallback_count": 2,
+  "unclosed_primes": [],
+  "adaptive_external_fallback_records": [
+    {
+      "prime": 225289,
+      "adaptive_external_descent": {
+        "source_denominator": 197128,
+        "k": 2,
+        "q": 7,
+        "factor": 41,
+        "gap": 47
+      }
+    },
+    {
+      "prime": 2707609,
+      "adaptive_external_descent": {
+        "source_denominator": 2594792,
+        "k": 6,
+        "q": 23,
+        "factor": 344,
+        "gap": 359
+      }
+    }
+  ]
+}

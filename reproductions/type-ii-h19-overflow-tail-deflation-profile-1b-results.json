@@ -1,0 +1,4829 @@
+{
+  "arithmetic": "exact first-r tail enumeration, the specialized normal-tail divisibility test r+1 | 4*B*C*(A+B), and exact external-source witness joins",
+  "scope_note": "A finite same-tail deflation profile. It does not prove that either this tail condition or a quadratic external source exists generally.",
+  "prime_limit": 1000000000,
+  "high_overflow_state_count": 91,
+  "same_tail_deflation_state_count": 70,
+  "r_plus_one_divides_p_minus_one_count": 70,
+  "same_tail_deflation_is_exactly_r_divisor_condition": true,
+  "same_tail_deflation_miss_count": 21,
+  "all_same_tail_deflation_misses_have_quadratic_external_source": true,
+  "all_same_tail_deflation_misses_use_different_external_q": true,
+  "same_tail_deflation_miss_quadratic_k_histogram": {
+    "1": 7,
+    "2": 4,
+    "3": 6,
+    "4": 1,
+    "6": 1,
+    "7": 1,
+    "11": 1
+  },
+  "maximum_same_tail_deflation_miss_quadratic_k": 11,
+  "composite_only_overflow_state_count": 31,
+  "composite_only_same_tail_deflation_count": 25,
+  "composite_only_same_tail_deflation_miss_count": 6,
+  "composite_only_miss_quadratic_k_histogram": {
+    "1": 2,
+    "2": 1,
+    "3": 3
+  },
+  "maximum_composite_only_miss_quadratic_k": 3,
+  "composite_only_misses": [
+    {
+      "prime": 11054401,
+      "r": 383,
+      "tail_overflows": [
+        9,
+        176
+      ],
+      "quadratic_external_source": {
+        "source_denominator": 8290801,
+        "k": 1,
+        "q": 3,
+        "factor": 383
+      }
+    },
+    {
+      "prime": 20958961,
+      "r": 143,
+      "tail_overflows": [
+        4,
+        8
+      ],
+      "quadratic_external_source": {
+        "source_denominator": 15719221,
+        "k": 1,
+        "q": 3,
+        "factor": 197
+      }
+    },
+    {
+      "prime": 90527089,
+      "r": 2415,
+      "tail_overflows": [
+        64
+      ],
+      "quadratic_external_source": {
+        "source_denominator": 82983165,
+        "k": 3,
+        "q": 11,
+        "factor": 19
+      }
+    },
+    {
+      "prime": 113509489,
+      "r": 143,
+      "tail_overflows": [
+        8,
+        14,
+        28
+      ],
+      "quadratic_external_source": {
+        "source_denominator": 104050365,
+        "k": 3,
+        "q": 11,
+        "factor": 19
+      }
+    },
+    {
+      "prime": 540645121,
+      "r": 759,
+      "tail_overflows": [
+        70
+      ],
+      "quadratic_external_source": {
+        "source_denominator": 495591361,
+        "k": 3,
+        "q": 11,
+        "factor": 44217
+      }
+    },
+    {
+      "prime": 660142081,
+      "r": 279,
+      "tail_overflows": [
+        10
+      ],
+      "quadratic_external_source": {
+        "source_denominator": 577624321,
+        "k": 2,
+        "q": 7,
+        "factor": 1699
+      }
+    }
+  ],
+  "records": [
+    {
+      "prime": 66529,
+      "r": 351,
+      "minimum_overflow": 10,
+      "all_tail_overflows": [
+        10
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 171200,
+          "gap": 1951,
+          "overflow": 10,
+          "normal_form": [
+            1,
+            10,
+            1712
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 66340
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 49897,
+        "k": 1,
+        "q": 3,
+        "factor": 41
+      }
+    },
+    {
+      "prime": 1127281,
+      "r": 167,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        21
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 29684,
+          "gap": 711,
+          "overflow": 2,
+          "normal_form": [
+            19,
+            2,
+            7421
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1120571
+        },
+        {
+          "tail_factor": 66591,
+          "gap": 1595,
+          "overflow": 21,
+          "normal_form": [
+            89,
+            21,
+            151
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1120571
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 845461,
+        "k": 1,
+        "q": 3,
+        "factor": 17
+      }
+    },
+    {
+      "prime": 2031121,
+      "r": 47,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        19,
+        199,
+        263
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 3184,
+          "gap": 271,
+          "overflow": 2,
+          "normal_form": [
+            319,
+            2,
+            796
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1988806
+        },
+        {
+          "tail_factor": 89946,
+          "gap": 7655,
+          "overflow": 3,
+          "normal_form": [
+            17,
+            3,
+            9994
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1988806
+        },
+        {
+          "tail_factor": 1724136,
+          "gap": 146735,
+          "overflow": 19,
+          "normal_form": [
+            6,
+            19,
+            4776
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1988806
+        },
+        {
+          "tail_factor": 2257257,
+          "gap": 192107,
+          "overflow": 199,
+          "normal_form": [
+            49,
+            199,
+            57
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1988806
+        },
+        {
+          "tail_factor": 5256844,
+          "gap": 447391,
+          "overflow": 263,
+          "normal_form": [
+            31,
+            263,
+            76
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 1988806
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 1523341,
+        "k": 1,
+        "q": 3,
+        "factor": 29
+      }
+    },
+    {
+      "prime": 2654401,
+      "r": 335,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        7,
+        13,
+        18,
+        62,
+        63,
+        93,
+        156,
+        199,
+        1287
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 888336,
+          "gap": 10607,
+          "overflow": 4,
+          "normal_form": [
+            3,
+            4,
+            55521
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 21021,
+          "gap": 251,
+          "overflow": 7,
+          "normal_form": [
+            221,
+            7,
+            429
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 47151,
+          "gap": 563,
+          "overflow": 13,
+          "normal_form": [
+            183,
+            13,
+            279
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 140616,
+          "gap": 1679,
+          "overflow": 18,
+          "normal_form": [
+            85,
+            18,
+            434
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 50487096,
+          "gap": 602831,
+          "overflow": 62,
+          "normal_form": [
+            1,
+            62,
+            13134
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 8688141,
+          "gap": 103739,
+          "overflow": 63,
+          "normal_form": [
+            5,
+            63,
+            2189
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 7991676,
+          "gap": 95423,
+          "overflow": 93,
+          "normal_form": [
+            8,
+            93,
+            924
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 15842736,
+          "gap": 189167,
+          "overflow": 156,
+          "normal_form": [
+            7,
+            156,
+            651
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 54886986,
+          "gap": 655367,
+          "overflow": 199,
+          "normal_form": [
+            3,
+            199,
+            1386
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        },
+        {
+          "tail_factor": 205389756,
+          "gap": 2452415,
+          "overflow": 1287,
+          "normal_form": [
+            8,
+            1287,
+            124
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 2646501
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 2488501,
+        "k": 4,
+        "q": 15,
+        "factor": 2036
+      }
+    },
+    {
+      "prime": 6868801,
+      "r": 959,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        5,
+        44
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 736272,
+          "gap": 3071,
+          "overflow": 3,
+          "normal_form": [
+            7,
+            3,
+            81808
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 6861646
+        },
+        {
+          "tail_factor": 536800,
+          "gap": 2239,
+          "overflow": 5,
+          "normal_form": [
+            16,
+            5,
+            21472
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 6861646
+        },
+        {
+          "tail_factor": 79190144,
+          "gap": 330303,
+          "overflow": 44,
+          "normal_form": [
+            1,
+            44,
+            40904
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 6861646
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 6296401,
+        "k": 3,
+        "q": 11,
+        "factor": 6179
+      }
+    },
+    {
+      "prime": 7378849,
+      "r": 95,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        8
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 13941,
+          "gap": 587,
+          "overflow": 3,
+          "normal_form": [
+            397,
+            3,
+            1549
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 7301986
+        },
+        {
+          "tail_factor": 301696,
+          "gap": 12703,
+          "overflow": 8,
+          "normal_form": [
+            49,
+            8,
+            4714
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 7301986
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 5534137,
+        "k": 1,
+        "q": 3,
+        "factor": 269
+      }
+    },
+    {
+      "prime": 11054401,
+      "r": 383,
+      "minimum_overflow": 9,
+      "all_tail_overflows": [
+        9,
+        176
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 8290801,
+        "k": 1,
+        "q": 3,
+        "factor": 383
+      }
+    },
+    {
+      "prime": 12997441,
+      "r": 2879,
+      "minimum_overflow": 145,
+      "all_tail_overflows": [
+        145
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 1093300,
+          "gap": 1519,
+          "overflow": 145,
+          "normal_form": [
+            431,
+            145,
+            52
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 12992928
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 9748081,
+        "k": 1,
+        "q": 3,
+        "factor": 89
+      }
+    },
+    {
+      "prime": 13659409,
+      "r": 71,
+      "minimum_overflow": 5,
+      "all_tail_overflows": [
+        5,
+        10,
+        10,
+        34,
+        535
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 7650,
+          "gap": 431,
+          "overflow": 5,
+          "normal_form": [
+            2232,
+            5,
+            306
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 13469695
+        },
+        {
+          "tail_factor": 444300,
+          "gap": 25031,
+          "overflow": 10,
+          "normal_form": [
+            77,
+            10,
+            4443
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 13469695
+        },
+        {
+          "tail_factor": 1637100,
+          "gap": 92231,
+          "overflow": 10,
+          "normal_form": [
+            21,
+            10,
+            16371
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 13469695
+        },
+        {
+          "tail_factor": 25680540,
+          "gap": 1446791,
+          "overflow": 34,
+          "normal_form": [
+            5,
+            34,
+            22215
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 13469695
+        },
+        {
+          "tail_factor": 4865825,
+          "gap": 274131,
+          "overflow": 535,
+          "normal_form": [
+            383,
+            535,
+            17
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 13469695
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 10244557,
+        "k": 1,
+        "q": 3,
+        "factor": 17
+      }
+    },
+    {
+      "prime": 19173361,
+      "r": 79,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        5,
+        13
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 928,
+          "gap": 47,
+          "overflow": 4,
+          "normal_form": [
+            20661,
+            4,
+            58
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 18933694
+        },
+        {
+          "tail_factor": 8161075,
+          "gap": 413219,
+          "overflow": 5,
+          "normal_form": [
+            3,
+            5,
+            326443
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 18933694
+        },
+        {
+          "tail_factor": 33950072,
+          "gap": 1718991,
+          "overflow": 13,
+          "normal_form": [
+            2,
+            13,
+            200888
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 18933694
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 14380021,
+        "k": 1,
+        "q": 3,
+        "factor": 1913
+      }
+    },
+    {
+      "prime": 20958961,
+      "r": 143,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        8
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 15719221,
+        "k": 1,
+        "q": 3,
+        "factor": 197
+      }
+    },
+    {
+      "prime": 21852601,
+      "r": 87,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        11
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 6416,
+          "gap": 295,
+          "overflow": 2,
+          "normal_form": [
+            1703,
+            2,
+            1604
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 21604276
+        },
+        {
+          "tail_factor": 1629749,
+          "gap": 74931,
+          "overflow": 11,
+          "normal_form": [
+            37,
+            11,
+            13469
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 21604276
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 20031551,
+        "k": 3,
+        "q": 11,
+        "factor": 591
+      }
+    },
+    {
+      "prime": 26410609,
+      "r": 2351,
+      "minimum_overflow": 735,
+      "all_tail_overflows": [
+        735
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 7060200525,
+          "gap": 12012251,
+          "overflow": 735,
+          "normal_form": [
+            1,
+            735,
+            13069
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 26399380
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 19807957,
+        "k": 1,
+        "q": 3,
+        "factor": 29
+      }
+    },
+    {
+      "prime": 29060641,
+      "r": 71,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        9,
+        1602
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 8644,
+          "gap": 487,
+          "overflow": 2,
+          "normal_form": [
+            1681,
+            2,
+            2161
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 28657021
+        },
+        {
+          "tail_factor": 1074141,
+          "gap": 60515,
+          "overflow": 9,
+          "normal_form": [
+            61,
+            9,
+            13261
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 28657021
+        },
+        {
+          "tail_factor": 382394196,
+          "gap": 21543335,
+          "overflow": 1602,
+          "normal_form": [
+            53,
+            1602,
+            149
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 28657021
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 25428061,
+        "k": 2,
+        "q": 7,
+        "factor": 19
+      }
+    },
+    {
+      "prime": 36998641,
+      "r": 143,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        4,
+        19
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 523773,
+          "gap": 14651,
+          "overflow": 3,
+          "normal_form": [
+            53,
+            3,
+            58197
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 36741706
+        },
+        {
+          "tail_factor": 90912,
+          "gap": 2543,
+          "overflow": 4,
+          "normal_form": [
+            407,
+            4,
+            5682
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 36741706
+        },
+        {
+          "tail_factor": 8845944,
+          "gap": 247439,
+          "overflow": 19,
+          "normal_form": [
+            20,
+            19,
+            24504
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 36741706
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 27748981,
+        "k": 1,
+        "q": 3,
+        "factor": 17
+      }
+    },
+    {
+      "prime": 46834561,
+      "r": 1151,
+      "minimum_overflow": 404,
+      "all_tail_overflows": [
+        404
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 7288573696,
+          "gap": 25329535,
+          "overflow": 404,
+          "normal_form": [
+            1,
+            404,
+            44656
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 46793906
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 42931681,
+        "k": 3,
+        "q": 11,
+        "factor": 13351
+      }
+    },
+    {
+      "prime": 52108081,
+      "r": 79,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        5,
+        13,
+        29,
+        65,
+        650
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 928,
+          "gap": 47,
+          "overflow": 4,
+          "normal_form": [
+            56151,
+            4,
+            58
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 51456730
+        },
+        {
+          "tail_factor": 22179625,
+          "gap": 1123019,
+          "overflow": 5,
+          "normal_form": [
+            3,
+            5,
+            887185
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 51456730
+        },
+        {
+          "tail_factor": 92267240,
+          "gap": 4671759,
+          "overflow": 13,
+          "normal_form": [
+            2,
+            13,
+            545960
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 51456730
+        },
+        {
+          "tail_factor": 596898068,
+          "gap": 30222687,
+          "overflow": 29,
+          "normal_form": [
+            1,
+            29,
+            709748
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 51456730
+        },
+        {
+          "tail_factor": 612625,
+          "gap": 31019,
+          "overflow": 65,
+          "normal_form": [
+            1383,
+            65,
+            145
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 51456730
+        },
+        {
+          "tail_factor": 49010000,
+          "gap": 2481519,
+          "overflow": 650,
+          "normal_form": [
+            181,
+            650,
+            116
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 51456730
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 39081061,
+        "k": 1,
+        "q": 3,
+        "factor": 149
+      }
+    },
+    {
+      "prime": 58084321,
+      "r": 95,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        8
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 261,
+          "gap": 11,
+          "overflow": 3,
+          "normal_form": [
+            166909,
+            3,
+            29
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 57479276
+        },
+        {
+          "tail_factor": 126850816,
+          "gap": 5341087,
+          "overflow": 8,
+          "normal_form": [
+            1,
+            8,
+            1982044
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 57479276
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 53243961,
+        "k": 3,
+        "q": 11,
+        "factor": 10029
+      }
+    },
+    {
+      "prime": 78097321,
+      "r": 23,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 12184,
+          "gap": 2119,
+          "overflow": 2,
+          "normal_form": [
+            3205,
+            2,
+            3046
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 74843266
+        },
+        {
+          "tail_factor": 221139,
+          "gap": 38459,
+          "overflow": 3,
+          "normal_form": [
+            265,
+            3,
+            24571
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 74843266
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 74192455,
+        "k": 5,
+        "q": 19,
+        "factor": 9875
+      }
+    },
+    {
+      "prime": 79058281,
+      "r": 55,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 117136,
+          "gap": 8519,
+          "overflow": 4,
+          "normal_form": [
+            675,
+            4,
+            7321
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 77646526
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 76234771,
+        "k": 7,
+        "q": 27,
+        "factor": 641
+      }
+    },
+    {
+      "prime": 79119121,
+      "r": 39,
+      "minimum_overflow": 295,
+      "all_tail_overflows": [
+        295
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 248978525,
+          "gap": 25536259,
+          "overflow": 295,
+          "normal_form": [
+            31,
+            295,
+            2861
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 77141143
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 59339341,
+        "k": 1,
+        "q": 3,
+        "factor": 41
+      }
+    },
+    {
+      "prime": 81941161,
+      "r": 263,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        12,
+        67,
+        129
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 61455871,
+        "k": 1,
+        "q": 3,
+        "factor": 137
+      }
+    },
+    {
+      "prime": 82502281,
+      "r": 71,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        16,
+        32,
+        384,
+        1601
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 406528,
+          "gap": 22903,
+          "overflow": 4,
+          "normal_form": [
+            203,
+            4,
+            25408
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 81356416
+        },
+        {
+          "tail_factor": 19673088,
+          "gap": 1108343,
+          "overflow": 16,
+          "normal_form": [
+            17,
+            16,
+            76848
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 81356416
+        },
+        {
+          "tail_factor": 29270016,
+          "gap": 1649015,
+          "overflow": 32,
+          "normal_form": [
+            23,
+            32,
+            28584
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 81356416
+        },
+        {
+          "tail_factor": 1416462336,
+          "gap": 79800695,
+          "overflow": 384,
+          "normal_form": [
+            11,
+            384,
+            9606
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 81356416
+        },
+        {
+          "tail_factor": 1017590797,
+          "gap": 57329059,
+          "overflow": 1601,
+          "normal_form": [
+            55,
+            1601,
+            397
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 81356416
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 81127243,
+        "k": 15,
+        "q": 59,
+        "factor": 15915
+      }
+    },
+    {
+      "prime": 90527089,
+      "r": 2415,
+      "minimum_overflow": 64,
+      "all_tail_overflows": [
+        64
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 82983165,
+        "k": 3,
+        "q": 11,
+        "factor": 19
+      }
+    },
+    {
+      "prime": 107260609,
+      "r": 39,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 103429873,
+        "k": 7,
+        "q": 27,
+        "factor": 1127
+      }
+    },
+    {
+      "prime": 113509489,
+      "r": 143,
+      "minimum_overflow": 8,
+      "all_tail_overflows": [
+        8,
+        14,
+        28
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 104050365,
+        "k": 3,
+        "q": 11,
+        "factor": 19
+      }
+    },
+    {
+      "prime": 126029521,
+      "r": 79,
+      "minimum_overflow": 16,
+      "all_tail_overflows": [
+        16,
+        122,
+        181,
+        181,
+        724
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 721408,
+          "gap": 36527,
+          "overflow": 16,
+          "normal_form": [
+            699,
+            16,
+            2818
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 124454152
+        },
+        {
+          "tail_factor": 335544896,
+          "gap": 16989615,
+          "overflow": 122,
+          "normal_form": [
+            13,
+            122,
+            22544
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 124454152
+        },
+        {
+          "tail_factor": 15987368,
+          "gap": 809487,
+          "overflow": 181,
+          "normal_form": [
+            359,
+            181,
+            488
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 124454152
+        },
+        {
+          "tail_factor": 230801245,
+          "gap": 11686139,
+          "overflow": 181,
+          "normal_form": [
+            27,
+            181,
+            7045
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 124454152
+        },
+        {
+          "tail_factor": 1278989440,
+          "gap": 64758959,
+          "overflow": 724,
+          "normal_form": [
+            27,
+            724,
+            2440
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 124454152
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 115527061,
+        "k": 3,
+        "q": 11,
+        "factor": 481
+      }
+    },
+    {
+      "prime": 141662161,
+      "r": 719,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        9,
+        54,
+        320,
+        335
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 2401280,
+          "gap": 13359,
+          "overflow": 4,
+          "normal_form": [
+            59,
+            4,
+            150080
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 141465408
+        },
+        {
+          "tail_factor": 1908765,
+          "gap": 10619,
+          "overflow": 9,
+          "normal_form": [
+            167,
+            9,
+            23565
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 141465408
+        },
+        {
+          "tail_factor": 175053312,
+          "gap": 973871,
+          "overflow": 54,
+          "normal_form": [
+            11,
+            54,
+            60032
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 141465408
+        },
+        {
+          "tail_factor": 1728921600,
+          "gap": 9618479,
+          "overflow": 320,
+          "normal_form": [
+            7,
+            320,
+            16884
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 141465408
+        },
+        {
+          "tail_factor": 22214489850,
+          "gap": 123585479,
+          "overflow": 335,
+          "normal_form": [
+            1,
+            335,
+            197946
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 141465408
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 106246621,
+        "k": 1,
+        "q": 3,
+        "factor": 41
+      }
+    },
+    {
+      "prime": 148452481,
+      "r": 23,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        111,
+        211
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 31228,
+          "gap": 5431,
+          "overflow": 2,
+          "normal_form": [
+            2377,
+            2,
+            7807
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 142266961
+        },
+        {
+          "tail_factor": 164007,
+          "gap": 28523,
+          "overflow": 3,
+          "normal_form": [
+            679,
+            3,
+            18223
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 142266961
+        },
+        {
+          "tail_factor": 449051166,
+          "gap": 78095855,
+          "overflow": 111,
+          "normal_form": [
+            14,
+            111,
+            36446
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 142266961
+        },
+        {
+          "tail_factor": 1647277,
+          "gap": 286483,
+          "overflow": 211,
+          "normal_form": [
+            4763,
+            211,
+            37
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 142266961
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 129895921,
+        "k": 2,
+        "q": 7,
+        "factor": 47
+      }
+    },
+    {
+      "prime": 149931601,
+      "r": 31,
+      "minimum_overflow": 11,
+      "all_tail_overflows": [
+        11,
+        22,
+        43,
+        73,
+        146,
+        172,
+        358,
+        716,
+        1606,
+        2068,
+        3212,
+        7697
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 137437301,
+        "k": 3,
+        "q": 11,
+        "factor": 877
+      }
+    },
+    {
+      "prime": 158216809,
+      "r": 743,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        31,
+        48
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 111264,
+          "gap": 599,
+          "overflow": 2,
+          "normal_form": [
+            711,
+            2,
+            27816
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 158004152
+        },
+        {
+          "tail_factor": 49129203,
+          "gap": 264491,
+          "overflow": 31,
+          "normal_form": [
+            25,
+            31,
+            51123
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 158004152
+        },
+        {
+          "tail_factor": 82780416,
+          "gap": 445655,
+          "overflow": 48,
+          "normal_form": [
+            23,
+            48,
+            35929
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 158004152
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 118662607,
+        "k": 1,
+        "q": 3,
+        "factor": 2027
+      }
+    },
+    {
+      "prime": 159918529,
+      "r": 231,
+      "minimum_overflow": 25,
+      "all_tail_overflows": [
+        25
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 616250,
+          "gap": 10671,
+          "overflow": 25,
+          "normal_form": [
+            1622,
+            25,
+            986
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 159229225
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 139928713,
+        "k": 2,
+        "q": 7,
+        "factor": 866
+      }
+    },
+    {
+      "prime": 181370401,
+      "r": 63,
+      "minimum_overflow": 37,
+      "all_tail_overflows": [
+        37,
+        41,
+        82
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 170034751,
+        "k": 4,
+        "q": 15,
+        "factor": 47186
+      }
+    },
+    {
+      "prime": 183331201,
+      "r": 639,
+      "minimum_overflow": 95,
+      "all_tail_overflows": [
+        95
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 5114485550,
+          "gap": 32015559,
+          "overflow": 95,
+          "normal_form": [
+            1,
+            95,
+            566702
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 183044746
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 160414801,
+        "k": 2,
+        "q": 7,
+        "factor": 124
+      }
+    },
+    {
+      "prime": 189404161,
+      "r": 183,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 165728641,
+        "k": 2,
+        "q": 7,
+        "factor": 26
+      }
+    },
+    {
+      "prime": 208824001,
+      "r": 447,
+      "minimum_overflow": 43,
+      "all_tail_overflows": [
+        43,
+        103,
+        103,
+        619
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 173968712,
+          "gap": 1556767,
+          "overflow": 43,
+          "normal_form": [
+            13,
+            43,
+            94088
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 208357876
+        },
+        {
+          "tail_factor": 1941531872,
+          "gap": 17373887,
+          "overflow": 103,
+          "normal_form": [
+            3,
+            103,
+            183008
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 208357876
+        },
+        {
+          "tail_factor": 6987257144,
+          "gap": 62525791,
+          "overflow": 103,
+          "normal_form": [
+            1,
+            103,
+            658616
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 208357876
+        },
+        {
+          "tail_factor": 626085074,
+          "gap": 5602551,
+          "overflow": 619,
+          "normal_form": [
+            53,
+            619,
+            1634
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 208357876
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 198382801,
+        "k": 5,
+        "q": 19,
+        "factor": 337
+      }
+    },
+    {
+      "prime": 215665129,
+      "r": 2855,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        17,
+        903
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 119196,
+          "gap": 167,
+          "overflow": 3,
+          "normal_form": [
+            1357,
+            3,
+            13244
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 215589616
+        },
+        {
+          "tail_factor": 922067216,
+          "gap": 1291863,
+          "overflow": 17,
+          "normal_form": [
+            1,
+            17,
+            3190544
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 215589616
+        },
+        {
+          "tail_factor": 71208852561,
+          "gap": 99767219,
+          "overflow": 903,
+          "normal_form": [
+            1,
+            903,
+            87329
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 215589616
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 207962803,
+        "k": 7,
+        "q": 27,
+        "factor": 1127
+      }
+    },
+    {
+      "prime": 217299601,
+      "r": 47,
+      "minimum_overflow": 152,
+      "all_tail_overflows": [
+        152
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 2192638912,
+          "gap": 186607567,
+          "overflow": 152,
+          "normal_form": [
+            7,
+            152,
+            94903
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 212772526
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 206434621,
+        "k": 5,
+        "q": 19,
+        "factor": 12725
+      }
+    },
+    {
+      "prime": 221364529,
+      "r": 47,
+      "minimum_overflow": 16,
+      "all_tail_overflows": [
+        16,
+        16,
+        73,
+        256
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 598016,
+          "gap": 50895,
+          "overflow": 16,
+          "normal_form": [
+            1481,
+            16,
+            2336
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 216752768
+        },
+        {
+          "tail_factor": 190029824,
+          "gap": 16172751,
+          "overflow": 16,
+          "normal_form": [
+            5,
+            16,
+            742304
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 216752768
+        },
+        {
+          "tail_factor": 741700878,
+          "gap": 63123479,
+          "overflow": 73,
+          "normal_form": [
+            7,
+            73,
+            139182
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 216752768
+        },
+        {
+          "tail_factor": 28704768,
+          "gap": 2442959,
+          "overflow": 256,
+          "normal_form": [
+            499,
+            256,
+            438
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 216752768
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 193693963,
+        "k": 2,
+        "q": 7,
+        "factor": 82
+      }
+    },
+    {
+      "prime": 232859089,
+      "r": 47,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        8,
+        13,
+        104,
+        393
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 27248,
+          "gap": 2319,
+          "overflow": 2,
+          "normal_form": [
+            4273,
+            2,
+            6812
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 228007858
+        },
+        {
+          "tail_factor": 1204974,
+          "gap": 102551,
+          "overflow": 3,
+          "normal_form": [
+            145,
+            3,
+            133886
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 228007858
+        },
+        {
+          "tail_factor": 561250112,
+          "gap": 47765967,
+          "overflow": 8,
+          "normal_form": [
+            1,
+            8,
+            8769533
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 228007858
+        },
+        {
+          "tail_factor": 45253468,
+          "gap": 3851359,
+          "overflow": 13,
+          "normal_form": [
+            17,
+            13,
+            267772
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 228007858
+        },
+        {
+          "tail_factor": 2172166464,
+          "gap": 184865231,
+          "overflow": 104,
+          "normal_form": [
+            5,
+            104,
+            200829
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 228007858
+        },
+        {
+          "tail_factor": 8031348,
+          "gap": 683519,
+          "overflow": 393,
+          "normal_form": [
+            2857,
+            393,
+            52
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 228007858
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 213454165,
+        "k": 3,
+        "q": 11,
+        "factor": 283
+      }
+    },
+    {
+      "prime": 243145681,
+      "r": 239,
+      "minimum_overflow": 9,
+      "all_tail_overflows": [
+        9,
+        9
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 480330,
+          "gap": 8039,
+          "overflow": 9,
+          "normal_form": [
+            1139,
+            9,
+            5930
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 242132574
+        },
+        {
+          "tail_factor": 110245860,
+          "gap": 1845119,
+          "overflow": 9,
+          "normal_form": [
+            5,
+            9,
+            1361060
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 242132574
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 222883541,
+        "k": 3,
+        "q": 11,
+        "factor": 24571
+      }
+    },
+    {
+      "prime": 250982449,
+      "r": 431,
+      "minimum_overflow": 15,
+      "all_tail_overflows": [
+        15,
+        80,
+        457
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 240524847,
+        "k": 6,
+        "q": 23,
+        "factor": 34908
+      }
+    },
+    {
+      "prime": 255844681,
+      "r": 167,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        7,
+        12,
+        36
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 816588,
+          "gap": 19559,
+          "overflow": 3,
+          "normal_form": [
+            235,
+            3,
+            90732
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 254321796
+        },
+        {
+          "tail_factor": 549388,
+          "gap": 13159,
+          "overflow": 7,
+          "normal_form": [
+            815,
+            7,
+            11212
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 254321796
+        },
+        {
+          "tail_factor": 2421792,
+          "gap": 58007,
+          "overflow": 12,
+          "normal_form": [
+            317,
+            12,
+            16818
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 254321796
+        },
+        {
+          "tail_factor": 137186784,
+          "gap": 3285911,
+          "overflow": 36,
+          "normal_form": [
+            17,
+            36,
+            105854
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 254321796
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 191883511,
+        "k": 1,
+        "q": 3,
+        "factor": 1571
+      }
+    },
+    {
+      "prime": 256429441,
+      "r": 495,
+      "minimum_overflow": 83,
+      "all_tail_overflows": [
+        83,
+        166,
+        1093
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 224375761,
+        "k": 2,
+        "q": 7,
+        "factor": 236
+      }
+    },
+    {
+      "prime": 275146369,
+      "r": 2111,
+      "minimum_overflow": 15,
+      "all_tail_overflows": [
+        15,
+        41
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 252217505,
+        "k": 3,
+        "q": 11,
+        "factor": 22305
+      }
+    },
+    {
+      "prime": 282303841,
+      "r": 31,
+      "minimum_overflow": 11,
+      "all_tail_overflows": [
+        11,
+        83,
+        176
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 80344,
+          "gap": 10367,
+          "overflow": 11,
+          "normal_form": [
+            9663,
+            11,
+            664
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 273481846
+        },
+        {
+          "tail_factor": 1212464,
+          "gap": 156447,
+          "overflow": 83,
+          "normal_form": [
+            4834,
+            83,
+            176
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 273481846
+        },
+        {
+          "tail_factor": 2571008,
+          "gap": 331743,
+          "overflow": 176,
+          "normal_form": [
+            4837,
+            176,
+            83
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 273481846
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 273481846,
+        "k": 8,
+        "q": 31,
+        "factor": 80344
+      }
+    },
+    {
+      "prime": 338195881,
+      "r": 23,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        4,
+        4,
+        4,
+        111,
+        188
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 592,
+          "gap": 103,
+          "overflow": 4,
+          "normal_form": [
+            571277,
+            4,
+            37
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 324104386
+        },
+        {
+          "tail_factor": 27824,
+          "gap": 4839,
+          "overflow": 4,
+          "normal_form": [
+            12155,
+            4,
+            1739
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 324104386
+        },
+        {
+          "tail_factor": 1490992,
+          "gap": 259303,
+          "overflow": 4,
+          "normal_form": [
+            227,
+            4,
+            93187
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 324104386
+        },
+        {
+          "tail_factor": 70076624,
+          "gap": 12187239,
+          "overflow": 4,
+          "normal_form": [
+            5,
+            4,
+            4379789
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 324104386
+        },
+        {
+          "tail_factor": 1148157027,
+          "gap": 199679483,
+          "overflow": 111,
+          "normal_form": [
+            13,
+            111,
+            93187
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 324104386
+        },
+        {
+          "tail_factor": 1307728,
+          "gap": 227431,
+          "overflow": 188,
+          "normal_form": [
+            12163,
+            188,
+            37
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 324104386
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 324104386,
+        "k": 6,
+        "q": 23,
+        "factor": 592
+      }
+    },
+    {
+      "prime": 347518081,
+      "r": 135,
+      "minimum_overflow": 142,
+      "all_tail_overflows": [
+        142,
+        478,
+        493,
+        986,
+        1207
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 4819196,
+          "gap": 142791,
+          "overflow": 142,
+          "normal_form": [
+            2561,
+            142,
+            239
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 344962801
+        },
+        {
+          "tail_factor": 6626036,
+          "gap": 196327,
+          "overflow": 478,
+          "normal_form": [
+            6271,
+            478,
+            29
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 344962801
+        },
+        {
+          "tail_factor": 58088711,
+          "gap": 1721147,
+          "overflow": 493,
+          "normal_form": [
+            741,
+            493,
+            239
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 344962801
+        },
+        {
+          "tail_factor": 681509396,
+          "gap": 20192871,
+          "overflow": 986,
+          "normal_form": [
+            133,
+            986,
+            701
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 344962801
+        },
+        {
+          "tail_factor": 42248621,
+          "gap": 1251811,
+          "overflow": 1207,
+          "normal_form": [
+            2491,
+            1207,
+            29
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 344962801
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 343174105,
+        "k": 20,
+        "q": 79,
+        "factor": 22021
+      }
+    },
+    {
+      "prime": 356911129,
+      "r": 95,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        6,
+        17,
+        33,
+        33
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 267683347,
+        "k": 1,
+        "q": 3,
+        "factor": 3137
+      }
+    },
+    {
+      "prime": 367015489,
+      "r": 63,
+      "minimum_overflow": 17,
+      "all_tail_overflows": [
+        17,
+        17,
+        23,
+        23,
+        23,
+        736
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 33379211,
+          "gap": 2119315,
+          "overflow": 17,
+          "normal_form": [
+            47,
+            17,
+            115499
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 361280872
+        },
+        {
+          "tail_factor": 2136269504,
+          "gap": 135636159,
+          "overflow": 17,
+          "normal_form": [
+            1,
+            17,
+            7391936
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 361280872
+        },
+        {
+          "tail_factor": 8993,
+          "gap": 571,
+          "overflow": 23,
+          "normal_form": [
+            234665,
+            23,
+            17
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 361280872
+        },
+        {
+          "tail_factor": 575552,
+          "gap": 36543,
+          "overflow": 23,
+          "normal_form": [
+            3667,
+            23,
+            1088
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 361280872
+        },
+        {
+          "tail_factor": 244395884,
+          "gap": 15517199,
+          "overflow": 23,
+          "normal_form": [
+            9,
+            23,
+            461996
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 361280872
+        },
+        {
+          "tail_factor": 36835328,
+          "gap": 2338751,
+          "overflow": 736,
+          "normal_form": [
+            1845,
+            736,
+            68
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 361280872
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 275261617,
+        "k": 1,
+        "q": 3,
+        "factor": 863
+      }
+    },
+    {
+      "prime": 371198881,
+      "r": 95,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        4,
+        37,
+        888
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 5255946,
+          "gap": 221303,
+          "overflow": 3,
+          "normal_form": [
+            53,
+            3,
+            583994
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 367332226
+        },
+        {
+          "tail_factor": 40256,
+          "gap": 1695,
+          "overflow": 4,
+          "normal_form": [
+            9221,
+            4,
+            2516
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 367332226
+        },
+        {
+          "tail_factor": 279276,
+          "gap": 11759,
+          "overflow": 37,
+          "normal_form": [
+            12295,
+            37,
+            204
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 367332226
+        },
+        {
+          "tail_factor": 26810496,
+          "gap": 1128863,
+          "overflow": 888,
+          "normal_form": [
+            3083,
+            888,
+            34
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 367332226
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 324799021,
+        "k": 2,
+        "q": 7,
+        "factor": 6361
+      }
+    },
+    {
+      "prime": 371217841,
+      "r": 47,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        4,
+        8,
+        304,
+        321
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 21522087,
+          "gap": 1831667,
+          "overflow": 3,
+          "normal_form": [
+            13,
+            3,
+            2391343
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 363484136
+        },
+        {
+          "tail_factor": 2432,
+          "gap": 207,
+          "overflow": 4,
+          "normal_form": [
+            152639,
+            4,
+            152
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 363484136
+        },
+        {
+          "tail_factor": 108705536,
+          "gap": 9251535,
+          "overflow": 8,
+          "normal_form": [
+            7,
+            8,
+            1698524
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 363484136
+        },
+        {
+          "tail_factor": 19777024,
+          "gap": 1683151,
+          "overflow": 304,
+          "normal_form": [
+            1433,
+            304,
+            214
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 363484136
+        },
+        {
+          "tail_factor": 3915558,
+          "gap": 333239,
+          "overflow": 321,
+          "normal_form": [
+            7615,
+            321,
+            38
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 363484136
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 278413381,
+        "k": 1,
+        "q": 3,
+        "factor": 1091
+      }
+    },
+    {
+      "prime": 372271201,
+      "r": 239,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        5,
+        17,
+        17,
+        34,
+        81,
+        86,
+        215,
+        1020,
+        2087
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 2842128,
+          "gap": 47567,
+          "overflow": 4,
+          "normal_form": [
+            131,
+            4,
+            177633
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 469575,
+          "gap": 7859,
+          "overflow": 5,
+          "normal_form": [
+            991,
+            5,
+            18783
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 745620,
+          "gap": 12479,
+          "overflow": 17,
+          "normal_form": [
+            2122,
+            17,
+            2580
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 45296415,
+          "gap": 758099,
+          "overflow": 17,
+          "normal_form": [
+            35,
+            17,
+            156735
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 651394440,
+          "gap": 10901999,
+          "overflow": 34,
+          "normal_form": [
+            5,
+            34,
+            563490
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 172659276,
+          "gap": 2889695,
+          "overflow": 81,
+          "normal_form": [
+            44,
+            81,
+            26316
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 12502716120,
+          "gap": 209250479,
+          "overflow": 86,
+          "normal_form": [
+            1,
+            86,
+            1690470
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 3280033550,
+          "gap": 54895959,
+          "overflow": 215,
+          "normal_form": [
+            7,
+            215,
+            70958
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 10871139600,
+          "gap": 181943759,
+          "overflow": 1020,
+          "normal_form": [
+            13,
+            1020,
+            10449
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        },
+        {
+          "tail_factor": 749157868,
+          "gap": 12538207,
+          "overflow": 2087,
+          "normal_form": [
+            268,
+            2087,
+            172
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 370720071
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 353657641,
+        "k": 5,
+        "q": 19,
+        "factor": 75919
+      }
+    },
+    {
+      "prime": 401669041,
+      "r": 87,
+      "minimum_overflow": 31,
+      "all_tail_overflows": [
+        31,
+        1867
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 301251781,
+        "k": 1,
+        "q": 3,
+        "factor": 17
+      }
+    },
+    {
+      "prime": 429844321,
+      "r": 31,
+      "minimum_overflow": 79,
+      "all_tail_overflows": [
+        79,
+        107
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 2459553136,
+          "gap": 317361695,
+          "overflow": 79,
+          "normal_form": [
+            6,
+            79,
+            394096
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 416411686
+        },
+        {
+          "tail_factor": 14471536,
+          "gap": 1867295,
+          "overflow": 107,
+          "normal_form": [
+            798,
+            107,
+            1264
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 416411686
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 376113781,
+        "k": 2,
+        "q": 7,
+        "factor": 796
+      }
+    },
+    {
+      "prime": 433984321,
+      "r": 959,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        5
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 162999072,
+          "gap": 679871,
+          "overflow": 3,
+          "normal_form": [
+            2,
+            3,
+            18111008
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 433532254
+        },
+        {
+          "tail_factor": 153200,
+          "gap": 639,
+          "overflow": 5,
+          "normal_form": [
+            3541,
+            5,
+            6128
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 433532254
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 421929201,
+        "k": 9,
+        "q": 35,
+        "factor": 2384390601
+      }
+    },
+    {
+      "prime": 442273441,
+      "r": 55,
+      "minimum_overflow": 562,
+      "all_tail_overflows": [
+        562
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 6001036,
+          "gap": 436439,
+          "overflow": 562,
+          "normal_form": [
+            10365,
+            562,
+            19
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 434375701
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 420159769,
+        "k": 5,
+        "q": 19,
+        "factor": 30851
+      }
+    },
+    {
+      "prime": 452255521,
+      "r": 39,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        5,
+        43,
+        86
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 17463332,
+          "gap": 1791111,
+          "overflow": 2,
+          "normal_form": [
+            13,
+            2,
+            4365833
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 440949133
+        },
+        {
+          "tail_factor": 2525,
+          "gap": 259,
+          "overflow": 5,
+          "normal_form": [
+            223889,
+            5,
+            101
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 440949133
+        },
+        {
+          "tail_factor": 187730819,
+          "gap": 19254443,
+          "overflow": 43,
+          "normal_form": [
+            27,
+            43,
+            101531
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 440949133
+        },
+        {
+          "tail_factor": 746996,
+          "gap": 76615,
+          "overflow": 86,
+          "normal_form": [
+            13019,
+            86,
+            101
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 440949133
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 423989551,
+        "k": 4,
+        "q": 15,
+        "factor": 15146
+      }
+    },
+    {
+      "prime": 481943281,
+      "r": 111,
+      "minimum_overflow": 32,
+      "all_tail_overflows": [
+        32,
+        43,
+        89,
+        89,
+        2492
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 1421812736,
+          "gap": 51236495,
+          "overflow": 32,
+          "normal_form": [
+            3,
+            32,
+            1388489
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 477640216
+        },
+        {
+          "tail_factor": 923079968,
+          "gap": 33264143,
+          "overflow": 43,
+          "normal_form": [
+            6,
+            43,
+            499232
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 477640216
+        },
+        {
+          "tail_factor": 19073768,
+          "gap": 687343,
+          "overflow": 89,
+          "normal_form": [
+            563,
+            89,
+            2408
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 477640216
+        },
+        {
+          "tail_factor": 1730057294,
+          "gap": 62344407,
+          "overflow": 89,
+          "normal_form": [
+            7,
+            89,
+            218414
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 477640216
+        },
+        {
+          "tail_factor": 2136262016,
+          "gap": 76982415,
+          "overflow": 2492,
+          "normal_form": [
+            163,
+            2492,
+            344
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 477640216
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 361457461,
+        "k": 1,
+        "q": 3,
+        "factor": 149
+      }
+    },
+    {
+      "prime": 509692801,
+      "r": 383,
+      "minimum_overflow": 29,
+      "all_tail_overflows": [
+        29,
+        59
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 3997992896,
+          "gap": 41754495,
+          "overflow": 29,
+          "normal_form": [
+            1,
+            29,
+            4753856
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 508365476
+        },
+        {
+          "tail_factor": 1551391194,
+          "gap": 16202519,
+          "overflow": 59,
+          "normal_form": [
+            5,
+            59,
+            445674
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 508365476
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 467218401,
+        "k": 3,
+        "q": 11,
+        "factor": 1053
+      }
+    },
+    {
+      "prime": 512938441,
+      "r": 23,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        4,
+        4,
+        332,
+        519
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 136936,
+          "gap": 23815,
+          "overflow": 2,
+          "normal_form": [
+            1873,
+            2,
+            34234
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 491566006
+        },
+        {
+          "tail_factor": 129231,
+          "gap": 22475,
+          "overflow": 3,
+          "normal_form": [
+            2977,
+            3,
+            14359
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 491566006
+        },
+        {
+          "tail_factor": 1328,
+          "gap": 231,
+          "overflow": 4,
+          "normal_form": [
+            386249,
+            4,
+            83
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 491566006
+        },
+        {
+          "tail_factor": 47379856,
+          "gap": 8239975,
+          "overflow": 4,
+          "normal_form": [
+            11,
+            4,
+            2961241
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 491566006
+        },
+        {
+          "tail_factor": 1886704208,
+          "gap": 328122471,
+          "overflow": 332,
+          "normal_form": [
+            37,
+            332,
+            17117
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 491566006
+        },
+        {
+          "tail_factor": 44713926,
+          "gap": 7776335,
+          "overflow": 519,
+          "normal_form": [
+            1511,
+            519,
+            166
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 491566006
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 487291519,
+        "k": 5,
+        "q": 19,
+        "factor": 451
+      }
+    },
+    {
+      "prime": 514290529,
+      "r": 287,
+      "minimum_overflow": 26,
+      "all_tail_overflows": [
+        26,
+        104,
+        549
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 319072,
+          "gap": 4447,
+          "overflow": 26,
+          "normal_form": [
+            10477,
+            26,
+            472
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 512504798
+        },
+        {
+          "tail_factor": 20970688128,
+          "gap": 292274399,
+          "overflow": 104,
+          "normal_form": [
+            1,
+            104,
+            1938858
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 512504798
+        },
+        {
+          "tail_factor": 284522544,
+          "gap": 3965471,
+          "overflow": 549,
+          "normal_form": [
+            250,
+            549,
+            944
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 512504798
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 503576143,
+        "k": 12,
+        "q": 47,
+        "factor": 1398
+      }
+    },
+    {
+      "prime": 540645121,
+      "r": 759,
+      "minimum_overflow": 70,
+      "all_tail_overflows": [
+        70
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 495591361,
+        "k": 3,
+        "q": 11,
+        "factor": 44217
+      }
+    },
+    {
+      "prime": 559158601,
+      "r": 55,
+      "minimum_overflow": 223,
+      "all_tail_overflows": [
+        223
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 91700276,
+          "gap": 6669111,
+          "overflow": 223,
+          "normal_form": [
+            344,
+            223,
+            1844
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 549173626
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 419368951,
+        "k": 1,
+        "q": 3,
+        "factor": 41
+      }
+    },
+    {
+      "prime": 564358369,
+      "r": 31,
+      "minimum_overflow": 5,
+      "all_tail_overflows": [
+        5,
+        5,
+        80
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 352400,
+          "gap": 45471,
+          "overflow": 5,
+          "normal_form": [
+            2002,
+            5,
+            14096
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 546722170
+        },
+        {
+          "tail_factor": 12411400,
+          "gap": 1601471,
+          "overflow": 5,
+          "normal_form": [
+            57,
+            5,
+            496456
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 546722170
+        },
+        {
+          "tail_factor": 397164800,
+          "gap": 51247071,
+          "overflow": 80,
+          "normal_form": [
+            31,
+            80,
+            62057
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 546722170
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 529085971,
+        "k": 4,
+        "q": 15,
+        "factor": 206
+      }
+    },
+    {
+      "prime": 585382561,
+      "r": 639,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        4,
+        5,
+        5,
+        10,
+        37,
+        136,
+        2551
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 439036921,
+        "k": 1,
+        "q": 3,
+        "factor": 1049
+      }
+    },
+    {
+      "prime": 605553001,
+      "r": 311,
+      "minimum_overflow": 4563,
+      "all_tail_overflows": [
+        4563
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 1228437171,
+          "gap": 15799835,
+          "overflow": 4563,
+          "normal_form": [
+            577,
+            4563,
+            59
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 603612126
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 555090251,
+        "k": 3,
+        "q": 11,
+        "factor": 1009
+      }
+    },
+    {
+      "prime": 614315641,
+      "r": 215,
+      "minimum_overflow": 37,
+      "all_tail_overflows": [
+        37,
+        38,
+        111,
+        152,
+        292,
+        584,
+        629,
+        629,
+        1444,
+        2888,
+        3071,
+        3774,
+        4161
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 563122671,
+        "k": 3,
+        "q": 11,
+        "factor": 459
+      }
+    },
+    {
+      "prime": 660142081,
+      "r": 279,
+      "minimum_overflow": 10,
+      "all_tail_overflows": [
+        10
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 577624321,
+        "k": 2,
+        "q": 7,
+        "factor": 1699
+      }
+    },
+    {
+      "prime": 675132481,
+      "r": 575,
+      "minimum_overflow": 79,
+      "all_tail_overflows": [
+        79,
+        128,
+        149,
+        153,
+        1343,
+        2533
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 252236256,
+          "gap": 1754687,
+          "overflow": 79,
+          "normal_form": [
+            53,
+            79,
+            40416
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 673960376
+        },
+        {
+          "tail_factor": 27790688256,
+          "gap": 193326527,
+          "overflow": 128,
+          "normal_form": [
+            1,
+            128,
+            1696209
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 673960376
+        },
+        {
+          "tail_factor": 336478356,
+          "gap": 2340719,
+          "overflow": 149,
+          "normal_form": [
+            75,
+            149,
+            15156
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 673960376
+        },
+        {
+          "tail_factor": 55807056,
+          "gap": 388223,
+          "overflow": 153,
+          "normal_form": [
+            463,
+            153,
+            2384
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 673960376
+        },
+        {
+          "tail_factor": 48597518656,
+          "gap": 338069695,
+          "overflow": 1343,
+          "normal_form": [
+            7,
+            1343,
+            26944
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 673960376
+        },
+        {
+          "tail_factor": 64828163256,
+          "gap": 450978527,
+          "overflow": 2533,
+          "normal_form": [
+            11,
+            2533,
+            10104
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 673960376
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 654034591,
+        "k": 8,
+        "q": 31,
+        "factor": 1666
+      }
+    },
+    {
+      "prime": 675458281,
+      "r": 23,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        4
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 592,
+          "gap": 103,
+          "overflow": 4,
+          "normal_form": [
+            1140977,
+            4,
+            37
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 647314186
+        },
+        {
+          "tail_factor": 139959824,
+          "gap": 24340839,
+          "overflow": 4,
+          "normal_form": [
+            5,
+            4,
+            8747489
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 647314186
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 619170091,
+        "k": 3,
+        "q": 11,
+        "factor": 10359
+      }
+    },
+    {
+      "prime": 683221009,
+      "r": 23,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        211,
+        211
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 49415356,
+          "gap": 8593975,
+          "overflow": 2,
+          "normal_form": [
+            7,
+            2,
+            12353839
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 654753467
+        },
+        {
+          "tail_factor": 477,
+          "gap": 83,
+          "overflow": 3,
+          "normal_form": [
+            1074247,
+            3,
+            53
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 654753467
+        },
+        {
+          "tail_factor": 4719226,
+          "gap": 820735,
+          "overflow": 211,
+          "normal_form": [
+            7646,
+            211,
+            106
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 654753467
+        },
+        {
+          "tail_factor": 2606660029,
+          "gap": 453332179,
+          "overflow": 211,
+          "normal_form": [
+            23,
+            211,
+            58549
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 654753467
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 512415757,
+        "k": 1,
+        "q": 3,
+        "factor": 137
+      }
+    },
+    {
+      "prime": 692245009,
+      "r": 47,
+      "minimum_overflow": 8,
+      "all_tail_overflows": [
+        8
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 11456,
+          "gap": 975,
+          "overflow": 8,
+          "normal_form": [
+            120853,
+            8,
+            179
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 677823238
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 519183757,
+        "k": 1,
+        "q": 3,
+        "factor": 17
+      }
+    },
+    {
+      "prime": 692690161,
+      "r": 271,
+      "minimum_overflow": 83,
+      "all_tail_overflows": [
+        83,
+        1411
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 716456,
+          "gap": 10575,
+          "overflow": 83,
+          "normal_form": [
+            20062,
+            83,
+            104
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 690143506
+        },
+        {
+          "tail_factor": 24950221972,
+          "gap": 368268959,
+          "overflow": 1411,
+          "normal_form": [
+            15,
+            1411,
+            12532
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 690143506
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 634965981,
+        "k": 3,
+        "q": 11,
+        "factor": 1053
+      }
+    },
+    {
+      "prime": 697980889,
+      "r": 47,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        3,
+        3,
+        13,
+        21,
+        91,
+        1658,
+        5803
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 682117687,
+        "k": 11,
+        "q": 43,
+        "factor": 25726459
+      }
+    },
+    {
+      "prime": 699747049,
+      "r": 55,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 115376,
+          "gap": 8391,
+          "overflow": 4,
+          "normal_form": [
+            6065,
+            4,
+            7211
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 687251566
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 674756083,
+        "k": 7,
+        "q": 27,
+        "factor": 1127
+      }
+    },
+    {
+      "prime": 701509561,
+      "r": 119,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3,
+        10,
+        15,
+        16,
+        96
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 27016064,
+          "gap": 908103,
+          "overflow": 2,
+          "normal_form": [
+            13,
+            2,
+            6754016
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 695663648
+        },
+        {
+          "tail_factor": 1899567,
+          "gap": 63851,
+          "overflow": 3,
+          "normal_form": [
+            277,
+            3,
+            211063
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 695663648
+        },
+        {
+          "tail_factor": 329600,
+          "gap": 11079,
+          "overflow": 10,
+          "normal_form": [
+            5321,
+            10,
+            3296
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 695663648
+        },
+        {
+          "tail_factor": 23175,
+          "gap": 779,
+          "overflow": 15,
+          "normal_form": [
+            113513,
+            15,
+            103
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 695663648
+        },
+        {
+          "tail_factor": 3241927680,
+          "gap": 108972359,
+          "overflow": 16,
+          "normal_form": [
+            1,
+            16,
+            12663780
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 695663648
+        },
+        {
+          "tail_factor": 1898496,
+          "gap": 63815,
+          "overflow": 96,
+          "normal_form": [
+            8869,
+            96,
+            206
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 695663648
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 689817735,
+        "k": 15,
+        "q": 59,
+        "factor": 164831
+      }
+    },
+    {
+      "prime": 730111201,
+      "r": 31,
+      "minimum_overflow": 11,
+      "all_tail_overflows": [
+        11,
+        176,
+        227
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 137096872,
+          "gap": 17689919,
+          "overflow": 11,
+          "normal_form": [
+            15,
+            11,
+            1133032
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 707295226
+        },
+        {
+          "tail_factor": 4387099904,
+          "gap": 566077407,
+          "overflow": 176,
+          "normal_form": [
+            13,
+            176,
+            141629
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 707295226
+        },
+        {
+          "tail_factor": 9069104,
+          "gap": 1170207,
+          "overflow": 227,
+          "normal_form": [
+            4576,
+            227,
+            176
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 707295226
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 638847301,
+        "k": 2,
+        "q": 7,
+        "factor": 68
+      }
+    },
+    {
+      "prime": 763255201,
+      "r": 39,
+      "minimum_overflow": 82,
+      "all_tail_overflows": [
+        82
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 155075612,
+          "gap": 15905191,
+          "overflow": 82,
+          "normal_form": [
+            103,
+            82,
+            23063
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 744173821
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 667848301,
+        "k": 2,
+        "q": 7,
+        "factor": 908
+      }
+    },
+    {
+      "prime": 784893481,
+      "r": 55,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 4244336,
+          "gap": 308679,
+          "overflow": 4,
+          "normal_form": [
+            185,
+            4,
+            265271
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 770877526
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 588670111,
+        "k": 1,
+        "q": 3,
+        "factor": 1637
+      }
+    },
+    {
+      "prime": 798246289,
+      "r": 5711,
+      "minimum_overflow": 40,
+      "all_tail_overflows": [
+        40,
+        55,
+        147,
+        2805
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 726140800,
+          "gap": 508591,
+          "overflow": 40,
+          "normal_form": [
+            11,
+            40,
+            453838
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 798106540
+        },
+        {
+          "tail_factor": 64949775,
+          "gap": 45491,
+          "overflow": 55,
+          "normal_form": [
+            169,
+            55,
+            21471
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 798106540
+        },
+        {
+          "tail_factor": 2261057715,
+          "gap": 1583651,
+          "overflow": 147,
+          "normal_form": [
+            13,
+            147,
+            104635
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 798106540
+        },
+        {
+          "tail_factor": 370993114800,
+          "gap": 259844591,
+          "overflow": 2805,
+          "normal_form": [
+            2,
+            2805,
+            47152
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 798106540
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 698465503,
+        "k": 2,
+        "q": 7,
+        "factor": 89
+      }
+    },
+    {
+      "prime": 799963921,
+      "r": 143,
+      "minimum_overflow": 8,
+      "all_tail_overflows": [
+        8,
+        81
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 315136,
+          "gap": 8815,
+          "overflow": 8,
+          "normal_form": [
+            5077,
+            8,
+            4924
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 794408616
+        },
+        {
+          "tail_factor": 470449944,
+          "gap": 13159439,
+          "overflow": 81,
+          "normal_form": [
+            35,
+            81,
+            71704
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 794408616
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 599972941,
+        "k": 1,
+        "q": 3,
+        "factor": 89
+      }
+    },
+    {
+      "prime": 816945361,
+      "r": 111,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4,
+        7,
+        13
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 416,
+          "gap": 15,
+          "overflow": 4,
+          "normal_form": [
+            1963811,
+            4,
+            26
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 809651206
+        },
+        {
+          "tail_factor": 1525881119,
+          "gap": 54986707,
+          "overflow": 7,
+          "normal_form": [
+            1,
+            7,
+            31140431
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 809651206
+        },
+        {
+          "tail_factor": 3007275908,
+          "gap": 108370303,
+          "overflow": 13,
+          "normal_form": [
+            1,
+            13,
+            17794532
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 809651206
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 714827191,
+        "k": 2,
+        "q": 7,
+        "factor": 26
+      }
+    },
+    {
+      "prime": 817270609,
+      "r": 71,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        15,
+        839
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 715111783,
+        "k": 2,
+        "q": 7,
+        "factor": 68
+      }
+    },
+    {
+      "prime": 822329041,
+      "r": 207,
+      "minimum_overflow": 8,
+      "all_tail_overflows": [
+        8,
+        8,
+        64,
+        64,
+        143,
+        1027
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 399872,
+          "gap": 7727,
+          "overflow": 8,
+          "normal_form": [
+            4113,
+            8,
+            6248
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 818375536
+        },
+        {
+          "tail_factor": 331493888,
+          "gap": 6405679,
+          "overflow": 8,
+          "normal_form": [
+            5,
+            8,
+            5179592
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 818375536
+        },
+        {
+          "tail_factor": 22974464,
+          "gap": 443951,
+          "overflow": 64,
+          "normal_form": [
+            573,
+            64,
+            5609
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 818375536
+        },
+        {
+          "tail_factor": 19045830656,
+          "gap": 368035375,
+          "overflow": 64,
+          "normal_form": [
+            1,
+            64,
+            4649861
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 818375536
+        },
+        {
+          "tail_factor": 114698441,
+          "gap": 2216395,
+          "overflow": 143,
+          "normal_form": [
+            257,
+            143,
+            5609
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 818375536
+        },
+        {
+          "tail_factor": 6589946792,
+          "gap": 127341967,
+          "overflow": 1027,
+          "normal_form": [
+            37,
+            1027,
+            6248
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 818375536
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 808623557,
+        "k": 15,
+        "q": 59,
+        "factor": 1184727537
+      }
+    },
+    {
+      "prime": 882279841,
+      "r": 31,
+      "minimum_overflow": 7,
+      "all_tail_overflows": [
+        7,
+        7,
+        7,
+        28,
+        224
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 57869,
+          "gap": 7467,
+          "overflow": 7,
+          "normal_form": [
+            26681,
+            7,
+            1181
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 854708596
+        },
+        {
+          "tail_factor": 1851808,
+          "gap": 238943,
+          "overflow": 7,
+          "normal_form": [
+            834,
+            7,
+            37792
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 854708596
+        },
+        {
+          "tail_factor": 5066012,
+          "gap": 653679,
+          "overflow": 7,
+          "normal_form": [
+            305,
+            7,
+            103388
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 854708596
+        },
+        {
+          "tail_factor": 162112384,
+          "gap": 20917727,
+          "overflow": 28,
+          "normal_form": [
+            39,
+            28,
+            206776
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 854708596
+        },
+        {
+          "tail_factor": 59257856,
+          "gap": 7646175,
+          "overflow": 224,
+          "normal_form": [
+            841,
+            224,
+            1181
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 854708596
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 808756521,
+        "k": 3,
+        "q": 11,
+        "factor": 459
+      }
+    },
+    {
+      "prime": 893389561,
+      "r": 279,
+      "minimum_overflow": 4,
+      "all_tail_overflows": [
+        4
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 42571424,
+          "gap": 610343,
+          "overflow": 4,
+          "normal_form": [
+            21,
+            4,
+            2660714
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 890198884
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 818940431,
+        "k": 3,
+        "q": 11,
+        "factor": 239
+      }
+    },
+    {
+      "prime": 942584161,
+      "r": 223,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        7,
+        7,
+        8
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 58816,
+          "gap": 1055,
+          "overflow": 2,
+          "normal_form": [
+            8013,
+            2,
+            14704
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 938376196
+        },
+        {
+          "tail_factor": 28954933,
+          "gap": 519371,
+          "overflow": 7,
+          "normal_form": [
+            57,
+            7,
+            590917
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 938376196
+        },
+        {
+          "tail_factor": 50033116,
+          "gap": 897455,
+          "overflow": 7,
+          "normal_form": [
+            33,
+            7,
+            1021084
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 938376196
+        },
+        {
+          "tail_factor": 101632,
+          "gap": 1823,
+          "overflow": 8,
+          "normal_form": [
+            18549,
+            8,
+            1588
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 938376196
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 908920441,
+        "k": 7,
+        "q": 27,
+        "factor": 91091
+      }
+    },
+    {
+      "prime": 971287321,
+      "r": 503,
+      "minimum_overflow": 3,
+      "all_tail_overflows": [
+        3,
+        12,
+        129,
+        187,
+        408
+      ],
+      "same_tail_deflation_witnesses": [],
+      "r_plus_one_divides_p_minus_one": false,
+      "quadratic_external_source": {
+        "source_denominator": 728465491,
+        "k": 1,
+        "q": 3,
+        "factor": 41
+      }
+    },
+    {
+      "prime": 988855729,
+      "r": 5711,
+      "minimum_overflow": 227,
+      "all_tail_overflows": [
+        227,
+        1190,
+        3541
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 11313449595,
+          "gap": 7923971,
+          "overflow": 227,
+          "normal_form": [
+            5,
+            227,
+            219555
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 988682610
+        },
+        {
+          "tail_factor": 1285818800,
+          "gap": 900591,
+          "overflow": 1190,
+          "normal_form": [
+            229,
+            1190,
+            908
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 988682610
+        },
+        {
+          "tail_factor": 30845155260,
+          "gap": 21604031,
+          "overflow": 3541,
+          "normal_form": [
+            29,
+            3541,
+            2460
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 988682610
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 906451085,
+        "k": 3,
+        "q": 11,
+        "factor": 327
+      }
+    },
+    {
+      "prime": 992339401,
+      "r": 23,
+      "minimum_overflow": 2,
+      "all_tail_overflows": [
+        2,
+        3
+      ],
+      "same_tail_deflation_witnesses": [
+        {
+          "tail_factor": 4317784,
+          "gap": 750919,
+          "overflow": 2,
+          "normal_form": [
+            115,
+            2,
+            1079446
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 950991926
+        },
+        {
+          "tail_factor": 7929,
+          "gap": 1379,
+          "overflow": 3,
+          "normal_form": [
+            93865,
+            3,
+            881
+          ],
+          "tail_deflation_condition_holds": true,
+          "r_plus_one_divides_p_minus_one": true,
+          "source_denominator": 950991926
+        }
+      ],
+      "r_plus_one_divides_p_minus_one": true,
+      "quadratic_external_source": {
+        "source_denominator": 909644451,
+        "k": 3,
+        "q": 11,
+        "factor": 334287
+      }
+    }
+  ]
+}

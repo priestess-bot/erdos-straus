@@ -7,7 +7,7 @@ authors:
 year: 2025
 first_publication_date: '2024-03-24'
 publication_status: peer_reviewed
-assessment_status: verified
+assessment_status: verified_with_caveat
 corpus_tier: A
 reading_status: verified
 language: en
@@ -16,7 +16,7 @@ source_acquired: true
 source_verified_against_original: true
 source_verification_method: codex_audit
 description_source: original
-description_last_audit: '2026-07-23'
+description_last_audit: '2026-07-24'
 topics:
 - divisor-parametrization
 - one-variable-reduction
@@ -25,7 +25,7 @@ references:
 - bradford2021
 - elsholtz_tao2013
 visibility: public
-last_checked: '2026-07-23'
+last_checked: '2026-07-24'
 doi: 10.5281/zenodo.15755958
 arxiv: '2403.16047'
 ---
@@ -45,6 +45,11 @@ arxiv: '2403.16047'
 ## 证据与核查
 
 - 已核对 arXiv v1 和 Integers 25 (2025) A54 出版版；标题由 Elemental 改为 Elementary。
+- 出版版第 2 页明确说最后一节只给出 Propositions 1 和 3 的证明，其他命题
+  “left to the reader”。因此它完整陈述了四条对应命题，但不能被引作其自身
+  已详细给出 Propositions 2 和 4 证明的来源。
+- Propositions 1 和 3 的正文证明可直接核对。知识库对 Type II 重建公式及完整
+  对应另给出代数推导，并以 Elsholtz--Tao 的参数化作独立结构参照。
 - 出版版是 10 页同行评议文章，arXiv 首发日期保留在时间线。
 
 ## 局限与后续

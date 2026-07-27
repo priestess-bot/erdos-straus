@@ -1,0 +1,65 @@
+{
+  "arithmetic": "p-3=22*ell and 12 divides p-d leave exactly d=1 and d=ell when ell is prime. Their tail products are 303600*h*ell and 242*q respectively; every eventual square divisor pattern is enumerated from these factorizations",
+  "scope_note": "Assuming Dickson's prime-tuples conjecture, sufficiently large simultaneous prime values of p,h,ell,q escape the complete distance-three even-source fan. This does not exclude other odd distances or other descent families.",
+  "seed_prime": 748375048866405601,
+  "p_minus_one_base_factor": 165600,
+  "distance": 3,
+  "compatible_shift_labels": [
+    "d=1",
+    "d=ell"
+  ],
+  "unique_affine_prime_form_count": 4,
+  "tuple_is_primitive_and_admissible": true,
+  "local_admissibility": [
+    {
+      "prime": 2,
+      "root_count": 0
+    },
+    {
+      "prime": 3,
+      "root_count": 0
+    }
+  ],
+  "form_labels": [
+    {
+      "coefficient": 45162267963207459462254640546819956553175436886320625840383903095668586715781375038435217151139878314003947683170800065584898085903873991712140981305409322649393494272000000,
+      "constant": 748375048866405601,
+      "label": "p"
+    },
+    {
+      "coefficient": 272719009439658571631972467070168819765552155110631798553042893089786151665346467623401069753260134746400650260693237111019915977680398500677179838800780933873149120000,
+      "constant": 4519173000401,
+      "label": "h"
+    },
+    {
+      "coefficient": 2052830361963975430102483661219088934235247131196392083653813777075844850717335229019782597779085377909270349235036366617495367541085181441460953695700423756790613376000000,
+      "constant": 34017047675745709,
+      "label": "ell"
+    },
+    {
+      "coefficient": 326586648494268818425395127921218694082880225417607831490379464534793498977757877344056322373945401031020282832846694689146990290627187956596060815225067415853052128000000,
+      "constant": 5411803039323181,
+      "label": "q"
+    }
+  ],
+  "state_rows": [
+    {
+      "label": "d=1",
+      "shift_degree": 0,
+      "r_degree": 1,
+      "m1_degree": 2,
+      "eventual_polynomial_candidate_count": 5468,
+      "constant_r_moving_coefficients_divisible": true,
+      "maximum_nonzero_linear_remainder": 20888752851126054054275737651632253450422526001519249910964234253455138750833435531337811347997958578847279440093142620308998965111527857433561434090619128177339654752747491485348516199994201501950570573927050002535984202093538335021411295795331949934972621321294485005770007640851672360811751593607843376357171774909985478256591637275817426944000000000000
+    },
+    {
+      "label": "d=ell",
+      "shift_degree": 1,
+      "r_degree": 0,
+      "m1_degree": 1,
+      "eventual_polynomial_candidate_count": 23,
+      "constant_r_moving_coefficients_divisible": true,
+      "maximum_nonzero_linear_remainder": 0
+    }
+  ]
+}

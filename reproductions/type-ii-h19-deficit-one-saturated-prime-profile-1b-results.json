@@ -1,0 +1,706 @@
+{
+  "arithmetic": "exact factorization of M1=(r*p+1)/4 and divisor enumeration for a=q^nu*b with q^nu exactly the q-part of M1 and q*a=-1 modulo r",
+  "scope_note": "A finite normal-form audit for deficit-one high-overflow first-r states. It does not construct a source conversion or a later-r release.",
+  "prime_limit": 1000000000,
+  "deficit_one_high_overflow_count": 75,
+  "later_zero_overflow_release_count": 38,
+  "unreleased_through_r_cap_count": 37,
+  "canonical_saturated_prime_histogram": {
+    "3": 28,
+    "5": 10,
+    "7": 9,
+    "11": 4,
+    "13": 2,
+    "17": 4,
+    "31": 3,
+    "37": 1,
+    "43": 2,
+    "59": 1,
+    "61": 1,
+    "79": 1,
+    "83": 2,
+    "89": 2,
+    "173": 1,
+    "227": 1,
+    "397": 1,
+    "907": 1,
+    "1453": 1
+  },
+  "records": [
+    {
+      "prime": 66529,
+      "r": 351,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 31,
+      "saturated_exponent": 1,
+      "cofactor": 2354,
+      "ordinary_divisor": 72974
+    },
+    {
+      "prime": 1127281,
+      "r": 167,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 382634,
+      "ordinary_divisor": 1147902
+    },
+    {
+      "prime": 2031121,
+      "r": 47,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 39976,
+      "ordinary_divisor": 119928
+    },
+    {
+      "prime": 2654401,
+      "r": 335,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 2,
+      "cofactor": 62,
+      "ordinary_divisor": 558
+    },
+    {
+      "prime": 7378849,
+      "r": 95,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 6196,
+      "ordinary_divisor": 18588
+    },
+    {
+      "prime": 13659409,
+      "r": 71,
+      "later_zero_overflow_release_r": 143,
+      "saturated_prime": 3,
+      "saturated_exponent": 2,
+      "cofactor": 7405,
+      "ordinary_divisor": 66645
+    },
+    {
+      "prime": 19173361,
+      "r": 79,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 1305772,
+      "ordinary_divisor": 6528860
+    },
+    {
+      "prime": 20958961,
+      "r": 143,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 241082,
+      "ordinary_divisor": 723246
+    },
+    {
+      "prime": 21852601,
+      "r": 87,
+      "later_zero_overflow_release_r": 119,
+      "saturated_prime": 11,
+      "saturated_exponent": 1,
+      "cofactor": 53876,
+      "ordinary_divisor": 592636
+    },
+    {
+      "prime": 29060641,
+      "r": 71,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 89,
+      "saturated_exponent": 1,
+      "cofactor": 2682,
+      "ordinary_divisor": 238698
+    },
+    {
+      "prime": 36998641,
+      "r": 143,
+      "later_zero_overflow_release_r": 239,
+      "saturated_prime": 3,
+      "saturated_exponent": 2,
+      "cofactor": 77596,
+      "ordinary_divisor": 698364
+    },
+    {
+      "prime": 52108081,
+      "r": 79,
+      "later_zero_overflow_release_r": 95,
+      "saturated_prime": 5,
+      "saturated_exponent": 2,
+      "cofactor": 709748,
+      "ordinary_divisor": 17743700
+    },
+    {
+      "prime": 58084321,
+      "r": 95,
+      "later_zero_overflow_release_r": 479,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 116,
+      "ordinary_divisor": 348
+    },
+    {
+      "prime": 78097321,
+      "r": 23,
+      "later_zero_overflow_release_r": 39,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 1523,
+      "ordinary_divisor": 4569
+    },
+    {
+      "prime": 79058281,
+      "r": 55,
+      "later_zero_overflow_release_r": 95,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 10606,
+      "ordinary_divisor": 74242
+    },
+    {
+      "prime": 79119121,
+      "r": 39,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 2861,
+      "ordinary_divisor": 14305
+    },
+    {
+      "prime": 81941161,
+      "r": 263,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 2,
+      "cofactor": 6536,
+      "ordinary_divisor": 58824
+    },
+    {
+      "prime": 82502281,
+      "r": 71,
+      "later_zero_overflow_release_r": 95,
+      "saturated_prime": 397,
+      "saturated_exponent": 1,
+      "cofactor": 38424,
+      "ordinary_divisor": 15254328
+    },
+    {
+      "prime": 90527089,
+      "r": 2415,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 43,
+      "saturated_exponent": 2,
+      "cofactor": 9827,
+      "ordinary_divisor": 18170123
+    },
+    {
+      "prime": 107260609,
+      "r": 39,
+      "later_zero_overflow_release_r": 191,
+      "saturated_prime": 1453,
+      "saturated_exponent": 1,
+      "cofactor": 42338,
+      "ordinary_divisor": 61517114
+    },
+    {
+      "prime": 113509489,
+      "r": 143,
+      "later_zero_overflow_release_r": 591,
+      "saturated_prime": 31,
+      "saturated_exponent": 1,
+      "cofactor": 4675074,
+      "ordinary_divisor": 144927294
+    },
+    {
+      "prime": 126029521,
+      "r": 79,
+      "later_zero_overflow_release_r": 143,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 11041,
+      "ordinary_divisor": 55205
+    },
+    {
+      "prime": 148452481,
+      "r": 23,
+      "later_zero_overflow_release_r": 255,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 74,
+      "ordinary_divisor": 222
+    },
+    {
+      "prime": 149931601,
+      "r": 31,
+      "later_zero_overflow_release_r": 79,
+      "saturated_prime": 11,
+      "saturated_exponent": 1,
+      "cofactor": 3431,
+      "ordinary_divisor": 37741
+    },
+    {
+      "prime": 158216809,
+      "r": 743,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 31,
+      "saturated_exponent": 1,
+      "cofactor": 204492,
+      "ordinary_divisor": 6339252
+    },
+    {
+      "prime": 181370401,
+      "r": 63,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 37,
+      "saturated_exponent": 1,
+      "cofactor": 470762,
+      "ordinary_divisor": 17418194
+    },
+    {
+      "prime": 189404161,
+      "r": 183,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 907,
+      "saturated_exponent": 1,
+      "cofactor": 4776869,
+      "ordinary_divisor": 4332620183
+    },
+    {
+      "prime": 208824001,
+      "r": 447,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 43,
+      "saturated_exponent": 1,
+      "cofactor": 376352,
+      "ordinary_divisor": 16183136
+    },
+    {
+      "prime": 215665129,
+      "r": 2855,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 52976,
+      "ordinary_divisor": 158928
+    },
+    {
+      "prime": 217299601,
+      "r": 47,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 5599277,
+      "ordinary_divisor": 16797831
+    },
+    {
+      "prime": 221364529,
+      "r": 47,
+      "later_zero_overflow_release_r": 111,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 73,
+      "ordinary_divisor": 219
+    },
+    {
+      "prime": 232859089,
+      "r": 47,
+      "later_zero_overflow_release_r": 55,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 26,
+      "ordinary_divisor": 78
+    },
+    {
+      "prime": 243145681,
+      "r": 239,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 2,
+      "cofactor": 68053,
+      "ordinary_divisor": 612477
+    },
+    {
+      "prime": 255844681,
+      "r": 167,
+      "later_zero_overflow_release_r": 2183,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 15122,
+      "ordinary_divisor": 105854
+    },
+    {
+      "prime": 256429441,
+      "r": 495,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 83,
+      "saturated_exponent": 1,
+      "cofactor": 349796,
+      "ordinary_divisor": 29033068
+    },
+    {
+      "prime": 282303841,
+      "r": 31,
+      "later_zero_overflow_release_r": 111,
+      "saturated_prime": 11,
+      "saturated_exponent": 1,
+      "cofactor": 83,
+      "ordinary_divisor": 913
+    },
+    {
+      "prime": 338195881,
+      "r": 23,
+      "later_zero_overflow_release_r": 39,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 74,
+      "ordinary_divisor": 222
+    },
+    {
+      "prime": 347518081,
+      "r": 135,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 17,
+      "saturated_exponent": 1,
+      "cofactor": 71,
+      "ordinary_divisor": 1207
+    },
+    {
+      "prime": 356911129,
+      "r": 95,
+      "later_zero_overflow_release_r": 167,
+      "saturated_prime": 13,
+      "saturated_exponent": 1,
+      "cofactor": 561,
+      "ordinary_divisor": 7293
+    },
+    {
+      "prime": 367015489,
+      "r": 63,
+      "later_zero_overflow_release_r": 111,
+      "saturated_prime": 17,
+      "saturated_exponent": 1,
+      "cofactor": 461996,
+      "ordinary_divisor": 7853932
+    },
+    {
+      "prime": 371198881,
+      "r": 95,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 2335976,
+      "ordinary_divisor": 7007928
+    },
+    {
+      "prime": 371217841,
+      "r": 47,
+      "later_zero_overflow_release_r": 63,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 214,
+      "ordinary_divisor": 642
+    },
+    {
+      "prime": 372271201,
+      "r": 239,
+      "later_zero_overflow_release_r": 5599,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 86,
+      "ordinary_divisor": 430
+    },
+    {
+      "prime": 429844321,
+      "r": 31,
+      "later_zero_overflow_release_r": 95,
+      "saturated_prime": 79,
+      "saturated_exponent": 1,
+      "cofactor": 49262,
+      "ordinary_divisor": 3891698
+    },
+    {
+      "prime": 442273441,
+      "r": 55,
+      "later_zero_overflow_release_r": 79,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 1545821,
+      "ordinary_divisor": 10820747
+    },
+    {
+      "prime": 452255521,
+      "r": 39,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 4343,
+      "ordinary_divisor": 21715
+    },
+    {
+      "prime": 481943281,
+      "r": 111,
+      "later_zero_overflow_release_r": 1679,
+      "saturated_prime": 89,
+      "saturated_exponent": 1,
+      "cofactor": 86,
+      "ordinary_divisor": 7654
+    },
+    {
+      "prime": 509692801,
+      "r": 383,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 59,
+      "saturated_exponent": 1,
+      "cofactor": 1782696,
+      "ordinary_divisor": 105179064
+    },
+    {
+      "prime": 512938441,
+      "r": 23,
+      "later_zero_overflow_release_r": 359,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 166,
+      "ordinary_divisor": 498
+    },
+    {
+      "prime": 514290529,
+      "r": 287,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 61,
+      "saturated_exponent": 1,
+      "cofactor": 1062,
+      "ordinary_divisor": 64782
+    },
+    {
+      "prime": 559158601,
+      "r": 55,
+      "later_zero_overflow_release_r": 119,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 1231331,
+      "ordinary_divisor": 8619317
+    },
+    {
+      "prime": 564358369,
+      "r": 31,
+      "later_zero_overflow_release_r": 47,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 1762,
+      "ordinary_divisor": 8810
+    },
+    {
+      "prime": 585382561,
+      "r": 639,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 9176,
+      "ordinary_divisor": 45880
+    },
+    {
+      "prime": 614315641,
+      "r": 215,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 17,
+      "saturated_exponent": 1,
+      "cofactor": 3071,
+      "ordinary_divisor": 52207
+    },
+    {
+      "prime": 660142081,
+      "r": 279,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 173,
+      "saturated_exponent": 1,
+      "cofactor": 57485,
+      "ordinary_divisor": 9944905
+    },
+    {
+      "prime": 675132481,
+      "r": 575,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 17,
+      "saturated_exponent": 1,
+      "cofactor": 1341,
+      "ordinary_divisor": 22797
+    },
+    {
+      "prime": 675458281,
+      "r": 23,
+      "later_zero_overflow_release_r": 359,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 74,
+      "ordinary_divisor": 222
+    },
+    {
+      "prime": 683221009,
+      "r": 23,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 11183,
+      "ordinary_divisor": 33549
+    },
+    {
+      "prime": 692245009,
+      "r": 47,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 3786722,
+      "ordinary_divisor": 11360166
+    },
+    {
+      "prime": 692690161,
+      "r": 271,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 83,
+      "saturated_exponent": 1,
+      "cofactor": 53261,
+      "ordinary_divisor": 4420663
+    },
+    {
+      "prime": 697980889,
+      "r": 47,
+      "later_zero_overflow_release_r": 87,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 26,
+      "ordinary_divisor": 78
+    },
+    {
+      "prime": 699747049,
+      "r": 55,
+      "later_zero_overflow_release_r": 87,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 95306,
+      "ordinary_divisor": 667142
+    },
+    {
+      "prime": 701509561,
+      "r": 119,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 844252,
+      "ordinary_divisor": 2532756
+    },
+    {
+      "prime": 730111201,
+      "r": 31,
+      "later_zero_overflow_release_r": 55,
+      "saturated_prime": 11,
+      "saturated_exponent": 1,
+      "cofactor": 141629,
+      "ordinary_divisor": 1557919
+    },
+    {
+      "prime": 763255201,
+      "r": 39,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 1574,
+      "ordinary_divisor": 7870
+    },
+    {
+      "prime": 784893481,
+      "r": 55,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 2906,
+      "ordinary_divisor": 20342
+    },
+    {
+      "prime": 816945361,
+      "r": 111,
+      "later_zero_overflow_release_r": 143,
+      "saturated_prime": 7,
+      "saturated_exponent": 3,
+      "cofactor": 2542076,
+      "ordinary_divisor": 871932068
+    },
+    {
+      "prime": 817270609,
+      "r": 71,
+      "later_zero_overflow_release_r": 111,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 371677,
+      "ordinary_divisor": 1115031
+    },
+    {
+      "prime": 822329041,
+      "r": 207,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 13,
+      "saturated_exponent": 1,
+      "cofactor": 158,
+      "ordinary_divisor": 2054
+    },
+    {
+      "prime": 882279841,
+      "r": 31,
+      "later_zero_overflow_release_r": 95,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 4724,
+      "ordinary_divisor": 33068
+    },
+    {
+      "prime": 893389561,
+      "r": 279,
+      "later_zero_overflow_release_r": 839,
+      "saturated_prime": 5,
+      "saturated_exponent": 1,
+      "cofactor": 16394,
+      "ordinary_divisor": 81970
+    },
+    {
+      "prime": 942584161,
+      "r": 223,
+      "later_zero_overflow_release_r": 335,
+      "saturated_prime": 7,
+      "saturated_exponent": 1,
+      "cofactor": 2363668,
+      "ordinary_divisor": 16545676
+    },
+    {
+      "prime": 971287321,
+      "r": 503,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 64328,
+      "ordinary_divisor": 192984
+    },
+    {
+      "prime": 988855729,
+      "r": 5711,
+      "later_zero_overflow_release_r": null,
+      "saturated_prime": 227,
+      "saturated_exponent": 1,
+      "cofactor": 878220,
+      "ordinary_divisor": 199355940
+    },
+    {
+      "prime": 992339401,
+      "r": 23,
+      "later_zero_overflow_release_r": 199,
+      "saturated_prime": 3,
+      "saturated_exponent": 1,
+      "cofactor": 3524,
+      "ordinary_divisor": 10572
+    }
+  ]
+}

@@ -1,0 +1,1671 @@
+{
+  "arithmetic": "exact SPF factorization; all collision-closure divisors h <= 2p; and all canonical pairs 4ac | h+1 in the natural range a^2c <= p/4",
+  "scope_note": "A finite relay audit. It only searches certificate factors composed of collision-prime powers from the base fan (plus the base modulus), and does not exclude other certificates or descents.",
+  "prime_limit": 1000000,
+  "base_shift_bound": 14,
+  "core_prime_count": 9732,
+  "common_failure_count": 24,
+  "common_failures": [
+    3361,
+    42961,
+    56401,
+    66529,
+    92569,
+    135601,
+    176089,
+    176401,
+    197521,
+    225289,
+    252001,
+    319321,
+    345601,
+    400849,
+    465721,
+    558721,
+    600961,
+    685969,
+    693961,
+    806521,
+    813121,
+    868849,
+    870241,
+    990361
+  ],
+  "relayed_count": 12,
+  "unrelayed_count": 12,
+  "unrelayed_primes": [
+    92569,
+    176089,
+    176401,
+    197521,
+    225289,
+    319321,
+    345601,
+    465721,
+    600961,
+    806521,
+    813121,
+    868849
+  ],
+  "first_relay_shift_histogram": {
+    "20": 2,
+    "27": 1,
+    "50": 4,
+    "125": 2,
+    "684": 1,
+    "2166": 2
+  },
+  "all_relay_shift_histogram": {
+    "20": 2,
+    "27": 1,
+    "50": 4,
+    "72": 1,
+    "125": 2,
+    "644": 1,
+    "648": 1,
+    "684": 1,
+    "2166": 2
+  },
+  "profiles": [
+    {
+      "prime": 3361,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 2522520,
+      "closure_divisor_count_at_most_2p": 201,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 99,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "shift": 125,
+          "a": 5,
+          "c": 5,
+          "k": 1,
+          "gap": 39,
+          "divisor": 125,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 42961,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 2522520,
+      "closure_divisor_count_at_most_2p": 266,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 99,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "shift": 125,
+          "a": 5,
+          "c": 5,
+          "k": 1,
+          "gap": 439,
+          "divisor": 125,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                8
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                4
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 56401,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 16216200,
+      "closure_divisor_count_at_most_2p": 414,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 455,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 2166,
+          "a": 19,
+          "c": 6,
+          "k": 1,
+          "gap": 143,
+          "divisor": 2166,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 66529,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 360360,
+      "closure_divisor_count_at_most_2p": 190,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 1711,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 92569,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 9009000,
+      "closure_divisor_count_at_most_2p": 352,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 135601,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 1486485000,
+      "closure_divisor_count_at_most_2p": 665,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 3479,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 176089,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 27027000,
+      "closure_divisor_count_at_most_2p": 467,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 176401,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 37837800,
+      "closure_divisor_count_at_most_2p": 519,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 197521,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 23423400,
+      "closure_divisor_count_at_most_2p": 396,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 225289,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 1801800,
+      "closure_divisor_count_at_most_2p": 285,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 252001,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 5405400,
+      "closure_divisor_count_at_most_2p": 374,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 27,
+          "a": 3,
+          "c": 3,
+          "k": 4,
+          "gap": 1763,
+          "divisor": 27,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                5
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                14
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 319321,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 5
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 12978365400,
+      "closure_divisor_count_at_most_2p": 740,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 345601,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 2
+        }
+      ],
+      "closure_value": 585585000,
+      "closure_divisor_count_at_most_2p": 583,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 400849,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 249729480,
+      "closure_divisor_count_at_most_2p": 626,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 455,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 684,
+          "a": 6,
+          "c": 19,
+          "k": 1,
+          "gap": 887,
+          "divisor": 684,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                4,
+                9,
+                14
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                5,
+                12
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 465721,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 416215800,
+      "closure_divisor_count_at_most_2p": 744,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 558721,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 5405400,
+      "closure_divisor_count_at_most_2p": 380,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 455,
+          "h_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 2166,
+          "a": 19,
+          "c": 6,
+          "k": 1,
+          "gap": 1247,
+          "divisor": 2166,
+          "source_labels": [
+            {
+              "prime": 5,
+              "exponent": 1,
+              "source_shifts": [
+                1,
+                6,
+                11
+              ]
+            },
+            {
+              "prime": 7,
+              "exponent": 1,
+              "source_shifts": [
+                3,
+                10
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                8
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 600961,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 7567560,
+      "closure_divisor_count_at_most_2p": 378,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 685969,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 6
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 145945800,
+      "closure_divisor_count_at_most_2p": 616,
+      "relay_count": 3,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 20,
+          "a": 2,
+          "c": 5,
+          "k": 1,
+          "gap": 17591,
+          "divisor": 20,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 72,
+          "a": 6,
+          "c": 2,
+          "k": 3,
+          "gap": 4799,
+          "divisor": 72,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "h": 1287,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 644,
+          "a": 2,
+          "c": 161,
+          "k": 1,
+          "gap": 535,
+          "divisor": 644,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 2,
+              "source_shifts": [
+                5,
+                14
+              ]
+            },
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                6
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                7
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 693961,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 1081080,
+      "closure_divisor_count_at_most_2p": 256,
+      "relay_count": 2,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 17799,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "h": 143,
+          "h_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 648,
+          "a": 18,
+          "c": 2,
+          "k": 1,
+          "gap": 4871,
+          "divisor": 648,
+          "source_labels": [
+            {
+              "prime": 11,
+              "exponent": 1,
+              "source_shifts": [
+                10
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 806521,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 1801800,
+      "closure_divisor_count_at_most_2p": 287,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 813121,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 4
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 45045000,
+      "closure_divisor_count_at_most_2p": 458,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 868849,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3963960,
+      "closure_divisor_count_at_most_2p": 286,
+      "relay_count": 0,
+      "relays": []
+    },
+    {
+      "prime": 870241,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 2522520,
+      "closure_divisor_count_at_most_2p": 287,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 22319,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 990361,
+      "collision_primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13
+      ],
+      "closure_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        }
+      ],
+      "closure_value": 3963960,
+      "closure_divisor_count_at_most_2p": 286,
+      "relay_count": 1,
+      "relays": [
+        {
+          "h": 39,
+          "h_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "shift": 50,
+          "a": 5,
+          "c": 2,
+          "k": 1,
+          "gap": 25399,
+          "divisor": 50,
+          "source_labels": [
+            {
+              "prime": 3,
+              "exponent": 1,
+              "source_shifts": [
+                2,
+                5,
+                8,
+                11,
+                14
+              ]
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "source_shifts": [
+                11
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

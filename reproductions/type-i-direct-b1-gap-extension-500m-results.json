@@ -1,0 +1,75 @@
+{
+  "arithmetic": "recompute the complete direct target B=1 maximum-tail even-source stage through m<=215; for precisely its residual targets, enumerate every Type I normal form with B=1 through m<=999 and every maximum-tail reverse lift, retaining exact strict even sources",
+  "scope_note": "This is a complete finite audit of the stored 1,717-target 500M tail profile. It supplies neither a uniform gap bound nor a global selector for arbitrary core primes.",
+  "input_count": 1717,
+  "direct_gap_cap": 215,
+  "gap_cap": 999,
+  "direct_b_one_count": 1713,
+  "extended_b_one_count": 4,
+  "residuals": [
+    39407449,
+    63332329,
+    172657489,
+    193288489
+  ],
+  "extensions": [
+    {
+      "prime": 39407449,
+      "witness": {
+        "gap": 535,
+        "normal_form": [
+          116,
+          1,
+          84931
+        ],
+        "source_denominator": 34030458,
+        "source_term": 62351487,
+        "bridge_factor": 3414389286
+      }
+    },
+    {
+      "prime": 63332329,
+      "witness": {
+        "gap": 351,
+        "normal_form": [
+          5,
+          1,
+          3166634
+        ],
+        "source_denominator": 62430164,
+        "source_term": 1095655364,
+        "bridge_factor": 32556428356
+      }
+    },
+    {
+      "prime": 172657489,
+      "witness": {
+        "gap": 707,
+        "normal_form": [
+          1809,
+          1,
+          23861
+        ],
+        "source_denominator": 105179288,
+        "source_term": 67280957,
+        "bridge_factor": 9109557136
+      }
+    },
+    {
+      "prime": 193288489,
+      "witness": {
+        "gap": 271,
+        "normal_form": [
+          64862,
+          1,
+          745
+        ],
+        "source_denominator": 48853822,
+        "source_term": 16344555,
+        "bridge_factor": 1588781338
+      }
+    }
+  ],
+  "misses": [],
+  "maximum_selected_gap": 707
+}

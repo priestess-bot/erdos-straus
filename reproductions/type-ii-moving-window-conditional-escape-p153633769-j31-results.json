@@ -1,0 +1,866 @@
+{
+  "arithmetic": "exact forced-factor extraction, complete square-divisor residue sets, and exact local admissibility checks for affine forms",
+  "scope_note": "Conditional statement only. Dickson's prime-tuples conjecture or Schinzel's Hypothesis H for the displayed affine forms is required to obtain infinitely many actual primes.",
+  "seed_prime": 153633769,
+  "window_j": 31,
+  "max_split_depth": 8,
+  "conditional_escape": {
+    "window_gap_modulus": 2244817972764054118284725643571800,
+    "seed_residue": 153633769,
+    "parameterization": "p=(Q*multiplier)k+(Q*offset+seed_residue), x_j=fixed_factor_j*L_j(k)",
+    "multiplier": 16,
+    "offset": 0,
+    "branch_path": [
+      {
+        "prime": 2,
+        "residue": 0
+      },
+      {
+        "prime": 2,
+        "residue": 0
+      },
+      {
+        "prime": 2,
+        "residue": 0
+      },
+      {
+        "prime": 2,
+        "residue": 0
+      }
+    ],
+    "covering_primes": [],
+    "forms": [
+      {
+        "coefficient": 35917087564224865892555610297148800,
+        "constant": 153633769,
+        "label": "p"
+      },
+      {
+        "coefficient": 472593257424011393323100135488800,
+        "constant": 2021497,
+        "label": "L_1"
+      },
+      {
+        "coefficient": 31617154545972593215277825965800,
+        "constant": 135241,
+        "label": "L_2"
+      },
+      {
+        "coefficient": 66513125118934936838065944994720,
+        "constant": 284507,
+        "label": "L_3"
+      },
+      {
+        "coefficient": 4489635945528108236569451287143600,
+        "constant": 19204223,
+        "label": "L_4"
+      },
+      {
+        "coefficient": 2481147248150377583072368768800,
+        "constant": 10613,
+        "label": "L_5"
+      },
+      {
+        "coefficient": 7194929399884788840656171934525,
+        "constant": 30776,
+        "label": "L_6"
+      },
+      {
+        "coefficient": 8979271891056216473138902574287200,
+        "constant": 38408449,
+        "label": "L_7"
+      },
+      {
+        "coefficient": 179585437821124329462778051485744,
+        "constant": 768169,
+        "label": "L_8"
+      },
+      {
+        "coefficient": 2993090630352072157712967524762400,
+        "constant": 12802817,
+        "label": "L_9"
+      },
+      {
+        "coefficient": 2244817972764054118284725643571800,
+        "constant": 9602113,
+        "label": "L_10"
+      },
+      {
+        "coefficient": 8979271891056216473138902574287200,
+        "constant": 38408453,
+        "label": "L_11"
+      },
+      {
+        "coefficient": 71264062627430289469356369637200,
+        "constant": 304829,
+        "label": "L_12"
+      },
+      {
+        "coefficient": 1795854378211243294627780514857440,
+        "constant": 7681691,
+        "label": "L_13"
+      },
+      {
+        "coefficient": 1122408986382027059142362821785900,
+        "constant": 4801057,
+        "label": "L_14"
+      },
+      {
+        "coefficient": 2228660186412563036271755416800,
+        "constant": 9533,
+        "label": "L_15"
+      },
+      {
+        "coefficient": 408148722320737112415404662467600,
+        "constant": 1745839,
+        "label": "L_16"
+      },
+      {
+        "coefficient": 390403125698096368397343590186400,
+        "constant": 1669933,
+        "label": "L_17"
+      },
+      {
+        "coefficient": 3480337942269851346177869214840,
+        "constant": 14887,
+        "label": "L_18"
+      },
+      {
+        "coefficient": 98673317484134246957570357959200,
+        "constant": 422071,
+        "label": "L_19"
+      },
+      {
+        "coefficient": 236296628712005696661550067744400,
+        "constant": 1010749,
+        "label": "L_20"
+      },
+      {
+        "coefficient": 997696876784024052570989174920800,
+        "constant": 4267607,
+        "label": "L_21"
+      },
+      {
+        "coefficient": 561204493191013529571181410892950,
+        "constant": 2400529,
+        "label": "L_22"
+      },
+      {
+        "coefficient": 1795854378211243294627780514857440,
+        "constant": 7681693,
+        "label": "L_23"
+      },
+      {
+        "coefficient": 1496545315176036078856483762381200,
+        "constant": 6401411,
+        "label": "L_24"
+      },
+      {
+        "coefficient": 8979271891056216473138902574287200,
+        "constant": 38408467,
+        "label": "L_25"
+      },
+      {
+        "coefficient": 320688281823436302612103663367400,
+        "constant": 1371731,
+        "label": "L_26"
+      },
+      {
+        "coefficient": 4611849969725843078140165677600,
+        "constant": 19727,
+        "label": "L_27"
+      },
+      {
+        "coefficient": 30963006520883505079789319221680,
+        "constant": 132443,
+        "label": "L_28"
+      },
+      {
+        "coefficient": 8979271891056216473138902574287200,
+        "constant": 38408471,
+        "label": "L_29"
+      },
+      {
+        "coefficient": 1013919590227666720092468673700,
+        "constant": 4337,
+        "label": "L_30"
+      },
+      {
+        "coefficient": 289653931969555370101254921751200,
+        "constant": 1238983,
+        "label": "L_31"
+      }
+    ],
+    "rows": [
+      {
+        "j": 1,
+        "gap": 3,
+        "fixed_factor": 19,
+        "fixed_factorization": [
+          [
+            19,
+            1
+          ]
+        ],
+        "cofactor_residue": 1,
+        "target": 2,
+        "model_divisor_residue_count": 1,
+        "cofactor_form": {
+          "coefficient": 472593257424011393323100135488800,
+          "constant": 2021497,
+          "label": "L_1"
+        }
+      },
+      {
+        "j": 2,
+        "gap": 7,
+        "fixed_factor": 284,
+        "fixed_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            71,
+            1
+          ]
+        ],
+        "cofactor_residue": 1,
+        "target": 3,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 31617154545972593215277825965800,
+          "constant": 135241,
+          "label": "L_2"
+        }
+      },
+      {
+        "j": 3,
+        "gap": 11,
+        "fixed_factor": 135,
+        "fixed_factorization": [
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "cofactor_residue": 3,
+        "target": 2,
+        "model_divisor_residue_count": 5,
+        "cofactor_form": {
+          "coefficient": 66513125118934936838065944994720,
+          "constant": 284507,
+          "label": "L_3"
+        }
+      },
+      {
+        "j": 4,
+        "gap": 15,
+        "fixed_factor": 2,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ]
+        ],
+        "cofactor_residue": 8,
+        "target": 14,
+        "model_divisor_residue_count": 4,
+        "cofactor_form": {
+          "coefficient": 4489635945528108236569451287143600,
+          "constant": 19204223,
+          "label": "L_4"
+        }
+      },
+      {
+        "j": 5,
+        "gap": 19,
+        "fixed_factor": 3619,
+        "fixed_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            47,
+            1
+          ]
+        ],
+        "cofactor_residue": 11,
+        "target": 15,
+        "model_divisor_residue_count": 9,
+        "cofactor_form": {
+          "coefficient": 2481147248150377583072368768800,
+          "constant": 10613,
+          "label": "L_5"
+        }
+      },
+      {
+        "j": 6,
+        "gap": 23,
+        "fixed_factor": 1248,
+        "fixed_factorization": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            13,
+            1
+          ]
+        ],
+        "cofactor_residue": 2,
+        "target": 11,
+        "model_divisor_residue_count": 11,
+        "cofactor_form": {
+          "coefficient": 7194929399884788840656171934525,
+          "constant": 30776,
+          "label": "L_6"
+        }
+      },
+      {
+        "j": 7,
+        "gap": 27,
+        "fixed_factor": 1,
+        "fixed_factorization": [],
+        "cofactor_residue": 4,
+        "target": 23,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 8979271891056216473138902574287200,
+          "constant": 38408449,
+          "label": "L_7"
+        }
+      },
+      {
+        "j": 8,
+        "gap": 31,
+        "fixed_factor": 50,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "cofactor_residue": 20,
+        "target": 23,
+        "model_divisor_residue_count": 15,
+        "cofactor_form": {
+          "coefficient": 179585437821124329462778051485744,
+          "constant": 768169,
+          "label": "L_8"
+        }
+      },
+      {
+        "j": 9,
+        "gap": 35,
+        "fixed_factor": 3,
+        "fixed_factorization": [
+          [
+            3,
+            1
+          ]
+        ],
+        "cofactor_residue": 27,
+        "target": 24,
+        "model_divisor_residue_count": 9,
+        "cofactor_form": {
+          "coefficient": 2993090630352072157712967524762400,
+          "constant": 12802817,
+          "label": "L_9"
+        }
+      },
+      {
+        "j": 10,
+        "gap": 39,
+        "fixed_factor": 4,
+        "fixed_factorization": [
+          [
+            2,
+            2
+          ]
+        ],
+        "cofactor_residue": 1,
+        "target": 35,
+        "model_divisor_residue_count": 5,
+        "cofactor_form": {
+          "coefficient": 2244817972764054118284725643571800,
+          "constant": 9602113,
+          "label": "L_10"
+        }
+      },
+      {
+        "j": 11,
+        "gap": 43,
+        "fixed_factor": 1,
+        "fixed_factorization": [],
+        "cofactor_residue": 36,
+        "target": 7,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 8979271891056216473138902574287200,
+          "constant": 38408453,
+          "label": "L_11"
+        }
+      },
+      {
+        "j": 12,
+        "gap": 47,
+        "fixed_factor": 126,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "cofactor_residue": 34,
+        "target": 40,
+        "model_divisor_residue_count": 23,
+        "cofactor_form": {
+          "coefficient": 71264062627430289469356369637200,
+          "constant": 304829,
+          "label": "L_12"
+        }
+      },
+      {
+        "j": 13,
+        "gap": 51,
+        "fixed_factor": 5,
+        "fixed_factorization": [
+          [
+            5,
+            1
+          ]
+        ],
+        "cofactor_residue": 20,
+        "target": 2,
+        "model_divisor_residue_count": 9,
+        "cofactor_form": {
+          "coefficient": 1795854378211243294627780514857440,
+          "constant": 7681691,
+          "label": "L_13"
+        }
+      },
+      {
+        "j": 14,
+        "gap": 55,
+        "fixed_factor": 8,
+        "fixed_factorization": [
+          [
+            2,
+            3
+          ]
+        ],
+        "cofactor_residue": 52,
+        "target": 24,
+        "model_divisor_residue_count": 20,
+        "cofactor_form": {
+          "coefficient": 1122408986382027059142362821785900,
+          "constant": 4801057,
+          "label": "L_14"
+        }
+      },
+      {
+        "j": 15,
+        "gap": 59,
+        "fixed_factor": 4029,
+        "fixed_factorization": [
+          [
+            3,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            79,
+            1
+          ]
+        ],
+        "cofactor_residue": 34,
+        "target": 12,
+        "model_divisor_residue_count": 33,
+        "cofactor_form": {
+          "coefficient": 2228660186412563036271755416800,
+          "constant": 9533,
+          "label": "L_15"
+        }
+      },
+      {
+        "j": 16,
+        "gap": 63,
+        "fixed_factor": 22,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "cofactor_residue": 46,
+        "target": 59,
+        "model_divisor_residue_count": 15,
+        "cofactor_form": {
+          "coefficient": 408148722320737112415404662467600,
+          "constant": 1745839,
+          "label": "L_16"
+        }
+      },
+      {
+        "j": 17,
+        "gap": 67,
+        "fixed_factor": 23,
+        "fixed_factorization": [
+          [
+            23,
+            1
+          ]
+        ],
+        "cofactor_residue": 25,
+        "target": 28,
+        "model_divisor_residue_count": 9,
+        "cofactor_form": {
+          "coefficient": 390403125698096368397343590186400,
+          "constant": 1669933,
+          "label": "L_17"
+        }
+      },
+      {
+        "j": 18,
+        "gap": 71,
+        "fixed_factor": 2580,
+        "fixed_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            43,
+            1
+          ]
+        ],
+        "cofactor_residue": 48,
+        "target": 55,
+        "model_divisor_residue_count": 35,
+        "cofactor_form": {
+          "coefficient": 3480337942269851346177869214840,
+          "constant": 14887,
+          "label": "L_18"
+        }
+      },
+      {
+        "j": 19,
+        "gap": 75,
+        "fixed_factor": 91,
+        "fixed_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            13,
+            1
+          ]
+        ],
+        "cofactor_residue": 46,
+        "target": 14,
+        "model_divisor_residue_count": 19,
+        "cofactor_form": {
+          "coefficient": 98673317484134246957570357959200,
+          "constant": 422071,
+          "label": "L_19"
+        }
+      },
+      {
+        "j": 20,
+        "gap": 79,
+        "fixed_factor": 38,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            19,
+            1
+          ]
+        ],
+        "cofactor_residue": 23,
+        "target": 74,
+        "model_divisor_residue_count": 27,
+        "cofactor_form": {
+          "coefficient": 236296628712005696661550067744400,
+          "constant": 1010749,
+          "label": "L_20"
+        }
+      },
+      {
+        "j": 21,
+        "gap": 83,
+        "fixed_factor": 9,
+        "fixed_factorization": [
+          [
+            3,
+            2
+          ]
+        ],
+        "cofactor_residue": 79,
+        "target": 36,
+        "model_divisor_residue_count": 15,
+        "cofactor_form": {
+          "coefficient": 997696876784024052570989174920800,
+          "constant": 4267607,
+          "label": "L_21"
+        }
+      },
+      {
+        "j": 22,
+        "gap": 87,
+        "fixed_factor": 16,
+        "fixed_factorization": [
+          [
+            2,
+            4
+          ]
+        ],
+        "cofactor_residue": 25,
+        "target": 35,
+        "model_divisor_residue_count": 22,
+        "cofactor_form": {
+          "coefficient": 561204493191013529571181410892950,
+          "constant": 2400529,
+          "label": "L_22"
+        }
+      },
+      {
+        "j": 23,
+        "gap": 91,
+        "fixed_factor": 5,
+        "fixed_factorization": [
+          [
+            5,
+            1
+          ]
+        ],
+        "cofactor_residue": 19,
+        "target": 87,
+        "model_divisor_residue_count": 9,
+        "cofactor_form": {
+          "coefficient": 1795854378211243294627780514857440,
+          "constant": 7681693,
+          "label": "L_23"
+        }
+      },
+      {
+        "j": 24,
+        "gap": 95,
+        "fixed_factor": 6,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "cofactor_residue": 26,
+        "target": 34,
+        "model_divisor_residue_count": 24,
+        "cofactor_form": {
+          "coefficient": 1496545315176036078856483762381200,
+          "constant": 6401411,
+          "label": "L_24"
+        }
+      },
+      {
+        "j": 25,
+        "gap": 99,
+        "fixed_factor": 1,
+        "fixed_factorization": [],
+        "cofactor_residue": 31,
+        "target": 68,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 8979271891056216473138902574287200,
+          "constant": 38408467,
+          "label": "L_25"
+        }
+      },
+      {
+        "j": 26,
+        "gap": 103,
+        "fixed_factor": 28,
+        "fixed_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "cofactor_residue": 80,
+        "target": 26,
+        "model_divisor_residue_count": 37,
+        "cofactor_form": {
+          "coefficient": 320688281823436302612103663367400,
+          "constant": 1371731,
+          "label": "L_26"
+        }
+      },
+      {
+        "j": 27,
+        "gap": 107,
+        "fixed_factor": 1947,
+        "fixed_factorization": [
+          [
+            3,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            59,
+            1
+          ]
+        ],
+        "cofactor_residue": 39,
+        "target": 37,
+        "model_divisor_residue_count": 45,
+        "cofactor_form": {
+          "coefficient": 4611849969725843078140165677600,
+          "constant": 19727,
+          "label": "L_27"
+        }
+      },
+      {
+        "j": 28,
+        "gap": 111,
+        "fixed_factor": 290,
+        "fixed_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            29,
+            1
+          ]
+        ],
+        "cofactor_residue": 20,
+        "target": 83,
+        "model_divisor_residue_count": 34,
+        "cofactor_form": {
+          "coefficient": 30963006520883505079789319221680,
+          "constant": 132443,
+          "label": "L_28"
+        }
+      },
+      {
+        "j": 29,
+        "gap": 115,
+        "fixed_factor": 1,
+        "fixed_factorization": [],
+        "cofactor_residue": 81,
+        "target": 34,
+        "model_divisor_residue_count": 3,
+        "cofactor_form": {
+          "coefficient": 8979271891056216473138902574287200,
+          "constant": 38408471,
+          "label": "L_29"
+        }
+      },
+      {
+        "j": 30,
+        "gap": 119,
+        "fixed_factor": 8856,
+        "fixed_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            41,
+            1
+          ]
+        ],
+        "cofactor_residue": 53,
+        "target": 87,
+        "model_divisor_residue_count": 48,
+        "cofactor_form": {
+          "coefficient": 1013919590227666720092468673700,
+          "constant": 4337,
+          "label": "L_30"
+        }
+      },
+      {
+        "j": 31,
+        "gap": 123,
+        "fixed_factor": 31,
+        "fixed_factorization": [
+          [
+            31,
+            1
+          ]
+        ],
+        "cofactor_residue": 4,
+        "target": 122,
+        "model_divisor_residue_count": 5,
+        "cofactor_form": {
+          "coefficient": 289653931969555370101254921751200,
+          "constant": 1238983,
+          "label": "L_31"
+        }
+      }
+    ]
+  }
+}

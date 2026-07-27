@@ -1,0 +1,299 @@
+{
+  "arithmetic": "exact SPF factorization, complete divisor enumeration at each later canonical shift, and reconstructed Type II certificate checks",
+  "scope_note": "A finite release audit. It does not assert a uniform shift bound or that a first-transition source classification is invariant.",
+  "factor_table": "exact compact unsigned-integer smallest-prime-factor table",
+  "prime_limit": 100000000,
+  "base_shift_bound": 19,
+  "first_shift_cap": 50,
+  "release_shift_cap": 125,
+  "base_residual_count": 164,
+  "first_transition_count": 163,
+  "missing_through_first_shift_cap": [
+    81846241
+  ],
+  "first_old_private_required_primes": [
+    3361,
+    813121,
+    8283361,
+    14847529,
+    26722921,
+    35256601,
+    36498289,
+    36998641,
+    48605881,
+    52751329,
+    76759321,
+    83581801
+  ],
+  "first_window_old_private_free_count": 151,
+  "late_first_transition_profiles": [
+    {
+      "prime": 81846241,
+      "first_later_shift": 52,
+      "selected_witness": {
+        "h": 60943,
+        "collision_multiplicity": 0,
+        "old_private_multiplicity": 0,
+        "new_multiplicity": 1
+      }
+    }
+  ],
+  "missing_through_release_cap": [],
+  "released_count": 12,
+  "old_private_release_missing_through_cap": [],
+  "old_private_free_count_through_release_cap": 164,
+  "profiles": [
+    {
+      "prime": 3361,
+      "first_transition": {
+        "shift": 29,
+        "witness": {
+          "h": 1159,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 125,
+        "witness": {
+          "h": 99,
+          "collision_multiplicity": 3,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 0
+        }
+      }
+    },
+    {
+      "prime": 813121,
+      "first_transition": {
+        "shift": 34,
+        "witness": {
+          "h": 35359,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 56,
+        "witness": {
+          "h": 1455,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 8283361,
+      "first_transition": {
+        "shift": 22,
+        "witness": {
+          "h": 703,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 52,
+        "witness": {
+          "h": 103,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 14847529,
+      "first_transition": {
+        "shift": 29,
+        "witness": {
+          "h": 3363,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 72,
+        "witness": {
+          "h": 47,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 26722921,
+      "first_transition": {
+        "shift": 26,
+        "witness": {
+          "h": 66975,
+          "collision_multiplicity": 3,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 63,
+        "witness": {
+          "h": 167,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 35256601,
+      "first_transition": {
+        "shift": 21,
+        "witness": {
+          "h": 269135,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 81,
+        "witness": {
+          "h": 1475,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 36498289,
+      "first_transition": {
+        "shift": 40,
+        "witness": {
+          "h": 26239,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 80,
+        "witness": {
+          "h": 159,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 36998641,
+      "first_transition": {
+        "shift": 29,
+        "witness": {
+          "h": 1159,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 61,
+        "witness": {
+          "h": 672707,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 48605881,
+      "first_transition": {
+        "shift": 32,
+        "witness": {
+          "h": 99807,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 51,
+        "witness": {
+          "h": 2651,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 52751329,
+      "first_transition": {
+        "shift": 25,
+        "witness": {
+          "h": 19,
+          "collision_multiplicity": 0,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 0
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 54,
+        "witness": {
+          "h": 6335,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 76759321,
+      "first_transition": {
+        "shift": 32,
+        "witness": {
+          "h": 1081119,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 52,
+        "witness": {
+          "h": 131663,
+          "collision_multiplicity": 2,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    },
+    {
+      "prime": 83581801,
+      "first_transition": {
+        "shift": 23,
+        "witness": {
+          "h": 287223,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 1,
+          "new_multiplicity": 1
+        }
+      },
+      "first_old_private_free_transition": {
+        "shift": 80,
+        "witness": {
+          "h": 31199,
+          "collision_multiplicity": 1,
+          "old_private_multiplicity": 0,
+          "new_multiplicity": 1
+        }
+      }
+    }
+  ]
+}

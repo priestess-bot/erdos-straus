@@ -1,0 +1,2604 @@
+{
+  "arithmetic": "exact residue enumeration and finite-field admissibility checks for the p and forced-divisor quotient linear forms",
+  "scope_note": "This excludes only the model in which every shifted integer has its forced divisor times one prime cofactor. It is not a coverage proof.",
+  "base_shift_bound": 14,
+  "canonical_fan": [
+    {
+      "shift": 1,
+      "a": 1,
+      "c": 1,
+      "modulus": 4
+    },
+    {
+      "shift": 2,
+      "a": 1,
+      "c": 2,
+      "modulus": 8
+    },
+    {
+      "shift": 3,
+      "a": 1,
+      "c": 3,
+      "modulus": 12
+    },
+    {
+      "shift": 4,
+      "a": 2,
+      "c": 1,
+      "modulus": 8
+    },
+    {
+      "shift": 5,
+      "a": 1,
+      "c": 5,
+      "modulus": 20
+    },
+    {
+      "shift": 6,
+      "a": 1,
+      "c": 6,
+      "modulus": 24
+    },
+    {
+      "shift": 7,
+      "a": 1,
+      "c": 7,
+      "modulus": 28
+    },
+    {
+      "shift": 8,
+      "a": 2,
+      "c": 2,
+      "modulus": 16
+    },
+    {
+      "shift": 9,
+      "a": 3,
+      "c": 1,
+      "modulus": 12
+    },
+    {
+      "shift": 10,
+      "a": 1,
+      "c": 10,
+      "modulus": 40
+    },
+    {
+      "shift": 11,
+      "a": 1,
+      "c": 11,
+      "modulus": 44
+    },
+    {
+      "shift": 12,
+      "a": 2,
+      "c": 3,
+      "modulus": 24
+    },
+    {
+      "shift": 13,
+      "a": 1,
+      "c": 13,
+      "modulus": 52
+    },
+    {
+      "shift": 14,
+      "a": 1,
+      "c": 14,
+      "modulus": 56
+    }
+  ],
+  "combined_modulus": 240240,
+  "core_residue_count": 5760,
+  "one_prime_safe_residue_count": 616,
+  "admissible_one_prime_safe_residue_count": 0,
+  "covering_prime_histogram": {
+    "3": 616
+  },
+  "second_level_safe_branch_count": 1793,
+  "second_level_safe_residue_count": 616,
+  "second_level_samples": [
+    {
+      "residue_class": 1,
+      "n_mod_3": 0,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 21,
+          "extra_three_power": 0,
+          "fixed_factor": 21
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 33,
+          "extra_three_power": 0,
+          "fixed_factor": 33
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 15,
+          "extra_three_power": 1,
+          "fixed_factor": 45
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 1,
+          "label": "p"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 1,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 1,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 1,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 17,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 1,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 5,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 29,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 1,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 37,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 41,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 1,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 7,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 53,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 19,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 1,
+      "n_mod_3": 1,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 21,
+          "extra_three_power": 0,
+          "fixed_factor": 21
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 33,
+          "extra_three_power": 1,
+          "fixed_factor": 99
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 15,
+          "extra_three_power": 0,
+          "fixed_factor": 15
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 240241,
+          "label": "p"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 48049,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80083,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 18481,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240257,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 11441,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 48053,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240269,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 7280,
+          "constant": 2427,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240277,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240281,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 16019,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 34327,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240293,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80099,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 1,
+      "n_mod_3": 2,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 21,
+          "extra_three_power": 1,
+          "fixed_factor": 63
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 33,
+          "extra_three_power": 0,
+          "fixed_factor": 33
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 15,
+          "extra_three_power": 0,
+          "fixed_factor": 15
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 480481,
+          "label": "p"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 96097,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 160163,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 36961,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480497,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 11440,
+          "constant": 7627,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 96101,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480509,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 14561,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480517,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480521,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 32035,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 68647,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480533,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 53393,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 289,
+      "n_mod_3": 0,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 33,
+          "extra_three_power": 1,
+          "fixed_factor": 99
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 65,
+          "extra_three_power": 0,
+          "fixed_factor": 65
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 11,
+          "extra_three_power": 0,
+          "fixed_factor": 11
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 15,
+          "extra_three_power": 0,
+          "fixed_factor": 15
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 289,
+          "label": "p"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 293,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 7280,
+          "constant": 3,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 43,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 61,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 103,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 313,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 317,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 107,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 11088,
+          "constant": 5,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 47,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 37,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 337,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 65520,
+          "constant": 31,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 23,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 289,
+      "n_mod_3": 1,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 33,
+          "extra_three_power": 0,
+          "fixed_factor": 33
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 65,
+          "extra_three_power": 0,
+          "fixed_factor": 65
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 11,
+          "extra_three_power": 0,
+          "fixed_factor": 11
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 15,
+          "extra_three_power": 0,
+          "fixed_factor": 15
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 240529,
+          "label": "p"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240533,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 7289,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 34363,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 48109,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80183,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240553,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240557,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 26729,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 11088,
+          "constant": 3701,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 34367,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80191,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240577,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 65520,
+          "constant": 21871,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 16039,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 289,
+      "n_mod_3": 2,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 33,
+          "extra_three_power": 0,
+          "fixed_factor": 33
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 65,
+          "extra_three_power": 0,
+          "fixed_factor": 65
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 11,
+          "extra_three_power": 0,
+          "fixed_factor": 11
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 15,
+          "extra_three_power": 1,
+          "fixed_factor": 45
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 480769,
+          "label": "p"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480773,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 14569,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 68683,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 96157,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 53421,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480793,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480797,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 160267,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 11088,
+          "constant": 7397,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 68687,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 160271,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480817,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 65520,
+          "constant": 43711,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 10685,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 361,
+      "n_mod_3": 0,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 385,
+          "extra_three_power": 0,
+          "fixed_factor": 385
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 15,
+          "extra_three_power": 1,
+          "fixed_factor": 45
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 361,
+          "label": "p"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 73,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 41,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 373,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 29,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 127,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 1872,
+          "constant": 1,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 389,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 131,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 397,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 401,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 9,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 409,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 59,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 139,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 361,
+      "n_mod_3": 1,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 385,
+          "extra_three_power": 0,
+          "fixed_factor": 385
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 15,
+          "extra_three_power": 0,
+          "fixed_factor": 15
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 240601,
+          "label": "p"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 48121,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80203,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240613,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 18509,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80207,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 1872,
+          "constant": 625,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240629,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 26737,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240637,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240641,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 16043,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 240649,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 34379,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 80219,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 361,
+      "n_mod_3": 2,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 385,
+          "extra_three_power": 0,
+          "fixed_factor": 385
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 15,
+          "extra_three_power": 0,
+          "fixed_factor": 15
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 480841,
+          "label": "p"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 96169,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 160283,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480853,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 36989,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 53429,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 1872,
+          "constant": 1249,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480869,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 160291,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480877,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480881,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 32059,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 480889,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 68699,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 53433,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 529,
+      "n_mod_3": 0,
+      "fixed_factors": [
+        {
+          "shift": 1,
+          "forced_divisor": 13,
+          "extra_three_power": 0,
+          "fixed_factor": 13
+        },
+        {
+          "shift": 2,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 3,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 4,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 5,
+          "forced_divisor": 3,
+          "extra_three_power": 1,
+          "fixed_factor": 9
+        },
+        {
+          "shift": 6,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 7,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 8,
+          "forced_divisor": 33,
+          "extra_three_power": 0,
+          "fixed_factor": 33
+        },
+        {
+          "shift": 9,
+          "forced_divisor": 5,
+          "extra_three_power": 0,
+          "fixed_factor": 5
+        },
+        {
+          "shift": 10,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 11,
+          "forced_divisor": 3,
+          "extra_three_power": 0,
+          "fixed_factor": 3
+        },
+        {
+          "shift": 12,
+          "forced_divisor": 1,
+          "extra_three_power": 0,
+          "fixed_factor": 1
+        },
+        {
+          "shift": 13,
+          "forced_divisor": 7,
+          "extra_three_power": 0,
+          "fixed_factor": 7
+        },
+        {
+          "shift": 14,
+          "forced_divisor": 195,
+          "extra_three_power": 1,
+          "fixed_factor": 585
+        }
+      ],
+      "forms": [
+        {
+          "coefficient": 720720,
+          "constant": 529,
+          "label": "p"
+        },
+        {
+          "coefficient": 55440,
+          "constant": 41,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 179,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 541,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 109,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 61,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 79,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 557,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 17,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 144144,
+          "constant": 113,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 569,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 191,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 720720,
+          "constant": 577,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 102960,
+          "constant": 83,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 1232,
+          "constant": 1,
+          "label": "s=14"
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "residue_class": 1,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 1,
+          "label": "p"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 1,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 3,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 18480,
+          "constant": 1,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 17,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 11440,
+          "constant": 1,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 5,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 29,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 7280,
+          "constant": 1,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 37,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 41,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 3,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 7,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 53,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 19,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 289,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 289,
+          "label": "p"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 293,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 7280,
+          "constant": 9,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 43,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 61,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 103,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 313,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 317,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 107,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 3696,
+          "constant": 5,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 47,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 111,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 337,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 31,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 23,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 361,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 361,
+          "label": "p"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 73,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 123,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 373,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 18480,
+          "constant": 29,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 127,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 624,
+          "constant": 1,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 389,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 131,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 397,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 401,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 27,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 409,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 59,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 139,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 529,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 529,
+          "label": "p"
+        },
+        {
+          "coefficient": 18480,
+          "constant": 41,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 179,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 541,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 109,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 183,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 79,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 557,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 7280,
+          "constant": 17,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 113,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 569,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 191,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 577,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 83,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 1232,
+          "constant": 3,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 841,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 841,
+          "label": "p"
+        },
+        {
+          "coefficient": 3696,
+          "constant": 13,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 283,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 853,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 857,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 11440,
+          "constant": 41,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 173,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 79,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 291,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 877,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 881,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 59,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 127,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 893,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 6160,
+          "constant": 23,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 961,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 961,
+          "label": "p"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 193,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 323,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 139,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 977,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 327,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 197,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 989,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 331,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 997,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240,
+          "constant": 1,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 67,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1009,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1013,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 339,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 1369,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 1369,
+          "label": "p"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1373,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 459,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1381,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 277,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 463,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 199,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 21840,
+          "constant": 127,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 467,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 281,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1409,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 471,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 18480,
+          "constant": 109,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 203,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 95,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 1681,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 1681,
+          "label": "p"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 337,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 563,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1693,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1697,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 11440,
+          "constant": 81,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 4368,
+          "constant": 31,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1709,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 571,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1717,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1721,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 115,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 2640,
+          "constant": 19,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1733,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 579,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 1849,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 1849,
+          "label": "p"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1853,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 619,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1861,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 373,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 11440,
+          "constant": 89,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1873,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1877,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 7280,
+          "constant": 57,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 3696,
+          "constant": 29,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1889,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 631,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 271,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 1901,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 127,
+          "label": "s=14"
+        }
+      ]
+    },
+    {
+      "residue_class": 2209,
+      "covering_primes": [
+        3
+      ],
+      "forms": [
+        {
+          "coefficient": 240240,
+          "constant": 2209,
+          "label": "p"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 2213,
+          "label": "s=1"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 739,
+          "label": "s=2"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 2221,
+          "label": "s=3"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 445,
+          "label": "s=4"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 743,
+          "label": "s=5"
+        },
+        {
+          "coefficient": 3120,
+          "constant": 29,
+          "label": "s=6"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 2237,
+          "label": "s=7"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 747,
+          "label": "s=8"
+        },
+        {
+          "coefficient": 48048,
+          "constant": 449,
+          "label": "s=9"
+        },
+        {
+          "coefficient": 18480,
+          "constant": 173,
+          "label": "s=10"
+        },
+        {
+          "coefficient": 80080,
+          "constant": 751,
+          "label": "s=11"
+        },
+        {
+          "coefficient": 240240,
+          "constant": 2257,
+          "label": "s=12"
+        },
+        {
+          "coefficient": 34320,
+          "constant": 323,
+          "label": "s=13"
+        },
+        {
+          "coefficient": 16016,
+          "constant": 151,
+          "label": "s=14"
+        }
+      ]
+    }
+  ]
+}

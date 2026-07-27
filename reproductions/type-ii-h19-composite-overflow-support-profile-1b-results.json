@@ -1,0 +1,609 @@
+{
+  "arithmetic": "exact factorization of M1, full saturation of every prescribed overflow support, and equality with exhaustive M1-squared tail enumeration",
+  "scope_note": "A finite classification of composite-only first-r tails. It does not prove a bounded overflow-support selector generally.",
+  "prime_limit": 1000000000,
+  "composite_only_overflow_state_count": 31,
+  "minimum_distinct_prime_support_histogram": {
+    "1": 16,
+    "2": 13,
+    "3": 2
+  },
+  "minimum_omega_histogram": {
+    "2": 23,
+    "3": 4,
+    "4": 2,
+    "5": 1,
+    "6": 1
+  },
+  "single_prime_support_state_count": 16,
+  "two_prime_support_state_count": 13,
+  "at_least_three_prime_support_state_count": 2,
+  "at_least_three_prime_support_records": [
+    {
+      "prime": 26410609,
+      "r": 2351,
+      "minimum_overflow": 735,
+      "tail_overflows": [
+        735
+      ],
+      "minimum_distinct_prime_support": 3,
+      "minimum_omega": 4,
+      "canonical_support_witness": {
+        "overflow": 735,
+        "saturated_support_part": 5145,
+        "a": 1616,
+        "g": 9605715,
+        "tail_factor": 7060200525
+      }
+    },
+    {
+      "prime": 540645121,
+      "r": 759,
+      "minimum_overflow": 70,
+      "tail_overflows": [
+        70
+      ],
+      "minimum_distinct_prime_support": 3,
+      "minimum_omega": 3,
+      "canonical_support_witness": {
+        "overflow": 70,
+        "saturated_support_part": 70,
+        "a": 86207909,
+        "g": 1190,
+        "tail_factor": 83300
+      }
+    }
+  ],
+  "records": [
+    {
+      "prime": 66529,
+      "r": 351,
+      "minimum_overflow": 10,
+      "tail_overflows": [
+        10
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 10,
+        "saturated_support_part": 160,
+        "a": 341,
+        "g": 17120,
+        "tail_factor": 171200
+      }
+    },
+    {
+      "prime": 11054401,
+      "r": 383,
+      "minimum_overflow": 9,
+      "tail_overflows": [
+        9,
+        176
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 9,
+        "saturated_support_part": 9,
+        "a": 374,
+        "g": 2830104,
+        "tail_factor": 25470936
+      }
+    },
+    {
+      "prime": 12997441,
+      "r": 2879,
+      "minimum_overflow": 145,
+      "tail_overflows": [
+        145
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 145,
+        "saturated_support_part": 145,
+        "a": 1240704,
+        "g": 7540,
+        "tail_factor": 1093300
+      }
+    },
+    {
+      "prime": 20958961,
+      "r": 143,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4,
+        8
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 8,
+        "a": 2427,
+        "g": 308728,
+        "tail_factor": 1234912
+      }
+    },
+    {
+      "prime": 26410609,
+      "r": 2351,
+      "minimum_overflow": 735,
+      "tail_overflows": [
+        735
+      ],
+      "minimum_distinct_prime_support": 3,
+      "minimum_omega": 4,
+      "canonical_support_witness": {
+        "overflow": 735,
+        "saturated_support_part": 5145,
+        "a": 1616,
+        "g": 9605715,
+        "tail_factor": 7060200525
+      }
+    },
+    {
+      "prime": 46834561,
+      "r": 1151,
+      "minimum_overflow": 404,
+      "tail_overflows": [
+        404
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 3,
+      "canonical_support_witness": {
+        "overflow": 404,
+        "saturated_support_part": 6464,
+        "a": 747,
+        "g": 18041024,
+        "tail_factor": 7288573696
+      }
+    },
+    {
+      "prime": 79058281,
+      "r": 55,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 4,
+        "a": 37121,
+        "g": 29284,
+        "tail_factor": 117136
+      }
+    },
+    {
+      "prime": 79119121,
+      "r": 39,
+      "minimum_overflow": 295,
+      "tail_overflows": [
+        295
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 295,
+        "saturated_support_part": 295,
+        "a": 914,
+        "g": 843995,
+        "tail_factor": 248978525
+      }
+    },
+    {
+      "prime": 90527089,
+      "r": 2415,
+      "minimum_overflow": 64,
+      "tail_overflows": [
+        64
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 6,
+      "canonical_support_witness": {
+        "overflow": 64,
+        "saturated_support_part": 64,
+        "a": 422561,
+        "g": 129344,
+        "tail_factor": 8278016
+      }
+    },
+    {
+      "prime": 113509489,
+      "r": 143,
+      "minimum_overflow": 8,
+      "tail_overflows": [
+        8,
+        14,
+        28
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 8,
+        "saturated_support_part": 8,
+        "a": 477183,
+        "g": 8504,
+        "tail_factor": 68032
+      }
+    },
+    {
+      "prime": 141662161,
+      "r": 719,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4,
+        9,
+        54,
+        320,
+        335
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 256,
+        "a": 42417,
+        "g": 600320,
+        "tail_factor": 2401280
+      }
+    },
+    {
+      "prime": 159918529,
+      "r": 231,
+      "minimum_overflow": 25,
+      "tail_overflows": [
+        25
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 25,
+        "saturated_support_part": 25,
+        "a": 374657,
+        "g": 24650,
+        "tail_factor": 616250
+      }
+    },
+    {
+      "prime": 183331201,
+      "r": 639,
+      "minimum_overflow": 95,
+      "tail_overflows": [
+        95
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 95,
+        "saturated_support_part": 95,
+        "a": 544,
+        "g": 53836690,
+        "tail_factor": 5114485550
+      }
+    },
+    {
+      "prime": 217299601,
+      "r": 47,
+      "minimum_overflow": 152,
+      "tail_overflows": [
+        152
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 4,
+      "canonical_support_witness": {
+        "overflow": 152,
+        "saturated_support_part": 152,
+        "a": 177,
+        "g": 14425256,
+        "tail_factor": 2192638912
+      }
+    },
+    {
+      "prime": 243145681,
+      "r": 239,
+      "minimum_overflow": 9,
+      "tail_overflows": [
+        9
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 9,
+        "saturated_support_part": 9,
+        "a": 1186,
+        "g": 12249540,
+        "tail_factor": 110245860
+      }
+    },
+    {
+      "prime": 338195881,
+      "r": 23,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4,
+        111,
+        188
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 4,
+        "a": 111,
+        "g": 17519156,
+        "tail_factor": 70076624
+      }
+    },
+    {
+      "prime": 347518081,
+      "r": 135,
+      "minimum_overflow": 142,
+      "tail_overflows": [
+        142,
+        478,
+        493,
+        986,
+        1207
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 142,
+        "saturated_support_part": 142,
+        "a": 345593,
+        "g": 33938,
+        "tail_factor": 4819196
+      }
+    },
+    {
+      "prime": 442273441,
+      "r": 55,
+      "minimum_overflow": 562,
+      "tail_overflows": [
+        562
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 562,
+        "saturated_support_part": 562,
+        "a": 569513,
+        "g": 10678,
+        "tail_factor": 6001036
+      }
+    },
+    {
+      "prime": 514290529,
+      "r": 287,
+      "minimum_overflow": 26,
+      "tail_overflows": [
+        26,
+        104,
+        549
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 26,
+        "saturated_support_part": 208,
+        "a": 3006873,
+        "g": 12272,
+        "tail_factor": 319072
+      }
+    },
+    {
+      "prime": 540645121,
+      "r": 759,
+      "minimum_overflow": 70,
+      "tail_overflows": [
+        70
+      ],
+      "minimum_distinct_prime_support": 3,
+      "minimum_omega": 3,
+      "canonical_support_witness": {
+        "overflow": 70,
+        "saturated_support_part": 70,
+        "a": 86207909,
+        "g": 1190,
+        "tail_factor": 83300
+      }
+    },
+    {
+      "prime": 605553001,
+      "r": 311,
+      "minimum_overflow": 4563,
+      "tail_overflows": [
+        4563
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 5,
+      "canonical_support_witness": {
+        "overflow": 4563,
+        "saturated_support_part": 4563,
+        "a": 174884,
+        "g": 269217,
+        "tail_factor": 1228437171
+      }
+    },
+    {
+      "prime": 660142081,
+      "r": 279,
+      "minimum_overflow": 10,
+      "tail_overflows": [
+        10
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 10,
+        "saturated_support_part": 50,
+        "a": 1988981,
+        "g": 23150,
+        "tail_factor": 231500
+      }
+    },
+    {
+      "prime": 675458281,
+      "r": 23,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 4,
+        "a": 111,
+        "g": 34989956,
+        "tail_factor": 139959824
+      }
+    },
+    {
+      "prime": 692245009,
+      "r": 47,
+      "minimum_overflow": 8,
+      "tail_overflows": [
+        8
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 3,
+      "canonical_support_witness": {
+        "overflow": 8,
+        "saturated_support_part": 8,
+        "a": 5680083,
+        "g": 1432,
+        "tail_factor": 11456
+      }
+    },
+    {
+      "prime": 699747049,
+      "r": 55,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 4,
+        "a": 333571,
+        "g": 28844,
+        "tail_factor": 115376
+      }
+    },
+    {
+      "prime": 763255201,
+      "r": 39,
+      "minimum_overflow": 82,
+      "tail_overflows": [
+        82
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 82,
+        "saturated_support_part": 82,
+        "a": 3935,
+        "g": 1891166,
+        "tail_factor": 155075612
+      }
+    },
+    {
+      "prime": 784893481,
+      "r": 55,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 4,
+        "a": 10171,
+        "g": 1061084,
+        "tail_factor": 4244336
+      }
+    },
+    {
+      "prime": 798246289,
+      "r": 5711,
+      "minimum_overflow": 40,
+      "tail_overflows": [
+        40,
+        55,
+        147,
+        2805
+      ],
+      "minimum_distinct_prime_support": 2,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 40,
+        "saturated_support_part": 80,
+        "a": 62781,
+        "g": 18153520,
+        "tail_factor": 726140800
+      }
+    },
+    {
+      "prime": 799963921,
+      "r": 143,
+      "minimum_overflow": 8,
+      "tail_overflows": [
+        8,
+        81
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 3,
+      "canonical_support_witness": {
+        "overflow": 8,
+        "saturated_support_part": 32,
+        "a": 726003,
+        "g": 39392,
+        "tail_factor": 315136
+      }
+    },
+    {
+      "prime": 822329041,
+      "r": 207,
+      "minimum_overflow": 8,
+      "tail_overflows": [
+        8,
+        64,
+        143,
+        1027
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 8,
+        "saturated_support_part": 64,
+        "a": 1027,
+        "g": 41436736,
+        "tail_factor": 331493888
+      }
+    },
+    {
+      "prime": 893389561,
+      "r": 279,
+      "minimum_overflow": 4,
+      "tail_overflows": [
+        4
+      ],
+      "minimum_distinct_prime_support": 1,
+      "minimum_omega": 2,
+      "canonical_support_witness": {
+        "overflow": 4,
+        "saturated_support_part": 8,
+        "a": 5855,
+        "g": 10642856,
+        "tail_factor": 42571424
+      }
+    }
+  ]
+}

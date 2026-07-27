@@ -1,0 +1,117 @@
+{
+  "arithmetic": "for each core prime, scan B in increasing order and every m=3 (mod 4) through the cap; for each B,m enumerate every A | ((p+m)/4)/B with gcd(A,B)=1 and test m | Bp+A; every reported certificate is reconstructed and checked exactly",
+  "scope_note": "Finite minimum-B profile only. It does not prove a fixed B or gap cap suffices beyond the audited range.",
+  "prime_limit": 20000000,
+  "gap_cap": 239,
+  "b_cap": 4,
+  "core_prime_count": 158595,
+  "captured_count": 158595,
+  "misses": [],
+  "minimum_b_counts": {
+    "1": 158590,
+    "2": 2,
+    "3": 2,
+    "4": 1
+  },
+  "minimum_b_tail_deflation_counts": {
+    "1": 3818,
+    "2": 0,
+    "3": 0,
+    "4": 0
+  },
+  "minimum_b_tail_deflation_count": 3818,
+  "first_examples": {
+    "1": {
+      "prime": 73,
+      "b": 1,
+      "gap": 7,
+      "a": 4,
+      "c": 5,
+      "divisor": 80,
+      "first_denominator": 20,
+      "normal_tail_deflation_source": 55
+    },
+    "2": {
+      "prime": 1282009,
+      "b": 2,
+      "gap": 71,
+      "a": 5,
+      "c": 32052,
+      "divisor": 801300,
+      "first_denominator": 320520,
+      "normal_tail_deflation_source": null
+    },
+    "3": {
+      "prime": 4962049,
+      "b": 3,
+      "gap": 23,
+      "a": 166,
+      "c": 2491,
+      "divisor": 68641996,
+      "first_denominator": 1240518,
+      "normal_tail_deflation_source": null
+    },
+    "4": {
+      "prime": 16337281,
+      "b": 4,
+      "gap": 159,
+      "a": 35,
+      "c": 29174,
+      "divisor": 35738150,
+      "first_denominator": 4084360,
+      "normal_tail_deflation_source": null
+    }
+  },
+  "non_b_one_witnesses": [
+    {
+      "prime": 1282009,
+      "b": 2,
+      "gap": 71,
+      "a": 5,
+      "c": 32052,
+      "divisor": 801300,
+      "first_denominator": 320520,
+      "normal_tail_deflation_source": null
+    },
+    {
+      "prime": 3364561,
+      "b": 2,
+      "gap": 63,
+      "a": 223,
+      "c": 1886,
+      "divisor": 93788894,
+      "first_denominator": 841156,
+      "normal_tail_deflation_source": null
+    },
+    {
+      "prime": 4962049,
+      "b": 3,
+      "gap": 23,
+      "a": 166,
+      "c": 2491,
+      "divisor": 68641996,
+      "first_denominator": 1240518,
+      "normal_tail_deflation_source": null
+    },
+    {
+      "prime": 16337281,
+      "b": 4,
+      "gap": 159,
+      "a": 35,
+      "c": 29174,
+      "divisor": 35738150,
+      "first_denominator": 4084360,
+      "normal_tail_deflation_source": null
+    },
+    {
+      "prime": 17307721,
+      "b": 3,
+      "gap": 23,
+      "a": 4,
+      "c": 360578,
+      "divisor": 5769248,
+      "first_denominator": 4326936,
+      "normal_tail_deflation_source": null
+    }
+  ]
+}

@@ -1,0 +1,5744 @@
+{
+  "arithmetic": "exact SPF factorizations, complete square-divisor residue sets, and cross-checks against explicit rational strict-lift constructors",
+  "scope_note": "A finite state-path audit on the H19 residuals supplied by the input closure artifact. It does not prove a uniform k selector.",
+  "input_artifact": "type-ii-h19-quadratic-descent-closure-20m-results.json",
+  "prime_limit": 20000000,
+  "residual_count": 65,
+  "first_success_k_histogram": {
+    "1": 25,
+    "2": 25,
+    "3": 4,
+    "4": 2,
+    "5": 3,
+    "6": 4,
+    "12": 2
+  },
+  "prior_failure_k_histogram": {
+    "1": 40,
+    "2": 15,
+    "3": 11,
+    "4": 5,
+    "5": 3,
+    "6": 2,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 2
+  },
+  "total_prior_failure_states": 81,
+  "maximum_prior_failure_count": 9,
+  "profiles": [
+    {
+      "prime": 3361,
+      "base": 840,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 2521,
+          "preserved_denominator": 2521,
+          "source_factorization": [
+            {
+              "prime": 2521,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2521,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 2941,
+          "preserved_denominator": 5882,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 173,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 173,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 68,
+          "certificate_gap": 39
+        }
+      ]
+    },
+    {
+      "prime": 56401,
+      "base": 14100,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 42301,
+          "preserved_denominator": 42301,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 6043,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 6043,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 49351,
+          "preserved_denominator": 98702,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 2903,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 2903,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 68,
+          "certificate_gap": 39
+        }
+      ]
+    },
+    {
+      "prime": 66529,
+      "base": 16632,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 49897,
+          "preserved_denominator": 49897,
+          "source_factorization": [
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 1217,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 1217,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 41,
+          "certificate_gap": 55
+        }
+      ]
+    },
+    {
+      "prime": 135601,
+      "base": 33900,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 101701,
+          "preserved_denominator": 101701,
+          "source_factorization": [
+            {
+              "prime": 101701,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 101701,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 118651,
+          "preserved_denominator": 237302,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 9127,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 9127,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 26,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 176089,
+      "base": 44022,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 132067,
+          "preserved_denominator": 132067,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 10159,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 10159,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 154078,
+          "preserved_denominator": 308156,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 1879,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 1879,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 82,
+          "certificate_gap": 47
+        }
+      ]
+    },
+    {
+      "prime": 225289,
+      "base": 56322,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 168967,
+          "preserved_denominator": 168967,
+          "source_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 8893,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 8893,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 197128,
+          "preserved_denominator": 394256,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 601,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 4
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 601,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 82,
+          "certificate_gap": 47
+        }
+      ]
+    },
+    {
+      "prime": 252001,
+      "base": 63000,
+      "first_success_k": 5,
+      "prior_failure_count": 4,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 189001,
+          "preserved_denominator": 189001,
+          "source_factorization": [
+            {
+              "prime": 331,
+              "exponent": 1
+            },
+            {
+              "prime": 571,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 331,
+              "exponent": 1
+            },
+            {
+              "prime": 571,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 220501,
+          "preserved_denominator": 441002,
+          "source_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 9587,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 9587,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 231001,
+          "preserved_denominator": 693003,
+          "source_factorization": [
+            {
+              "prime": 231001,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 231001,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 3,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 236251,
+          "preserved_denominator": 945004,
+          "source_factorization": [
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 7621,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 7621,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 4,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 5,
+          "q": 19,
+          "source_denominator": 239401,
+          "preserved_denominator": 1197005,
+          "source_factorization": [
+            {
+              "prime": 53,
+              "exponent": 1
+            },
+            {
+              "prime": 4517,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 53,
+              "exponent": 1
+            },
+            {
+              "prime": 4517,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 14,
+          "divisor_residue_count": 12,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": true,
+          "witness_factor": 1325,
+          "certificate_gap": 279
+        }
+      ]
+    },
+    {
+      "prime": 345601,
+      "base": 86400,
+      "first_success_k": 5,
+      "prior_failure_count": 4,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 259201,
+          "preserved_denominator": 259201,
+          "source_factorization": [
+            {
+              "prime": 259201,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 259201,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 302401,
+          "preserved_denominator": 604802,
+          "source_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 743,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 743,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 316801,
+          "preserved_denominator": 950403,
+          "source_factorization": [
+            {
+              "prime": 316801,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 316801,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 3,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 324001,
+          "preserved_denominator": 1296004,
+          "source_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 14087,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 14087,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 4,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 5,
+          "q": 19,
+          "source_denominator": 328321,
+          "preserved_denominator": 1641605,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 89,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 89,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 14,
+          "divisor_residue_count": 18,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": true,
+          "witness_factor": 527,
+          "certificate_gap": 111
+        }
+      ]
+    },
+    {
+      "prime": 558721,
+      "base": 139680,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 419041,
+          "preserved_denominator": 419041,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 59863,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 59863,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 488881,
+          "preserved_denominator": 977762,
+          "source_factorization": [
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 73,
+              "exponent": 1
+            },
+            {
+              "prime": 181,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 73,
+              "exponent": 1
+            },
+            {
+              "prime": 181,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 292,
+          "certificate_gap": 167
+        }
+      ]
+    },
+    {
+      "prime": 685969,
+      "base": 171492,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 514477,
+          "preserved_denominator": 514477,
+          "source_factorization": [
+            {
+              "prime": 127,
+              "exponent": 1
+            },
+            {
+              "prime": 4051,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 127,
+              "exponent": 1
+            },
+            {
+              "prime": 4051,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 600223,
+          "preserved_denominator": 1200446,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 46171,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 46171,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 26,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 813121,
+      "base": 203280,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 609841,
+          "preserved_denominator": 609841,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 1237,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 1237,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 870241,
+      "base": 217560,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 652681,
+          "preserved_denominator": 652681,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 38393,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 38393,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 990361,
+      "base": 247590,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 742771,
+          "preserved_denominator": 742771,
+          "source_factorization": [
+            {
+              "prime": 359,
+              "exponent": 1
+            },
+            {
+              "prime": 2069,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 359,
+              "exponent": 1
+            },
+            {
+              "prime": 2069,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 359,
+          "certificate_gap": 479
+        }
+      ]
+    },
+    {
+      "prime": 1127281,
+      "base": 281820,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 845461,
+          "preserved_denominator": 845461,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 1213,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 1213,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 1385521,
+      "base": 346380,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1039141,
+          "preserved_denominator": 1039141,
+          "source_factorization": [
+            {
+              "prime": 431,
+              "exponent": 1
+            },
+            {
+              "prime": 2411,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 431,
+              "exponent": 1
+            },
+            {
+              "prime": 2411,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 431,
+          "certificate_gap": 575
+        }
+      ]
+    },
+    {
+      "prime": 1398769,
+      "base": 349692,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1049077,
+          "preserved_denominator": 1049077,
+          "source_factorization": [
+            {
+              "prime": 1049077,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 1049077,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 1223923,
+          "preserved_denominator": 2447846,
+          "source_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 1741,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 1741,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 19,
+          "certificate_gap": 11
+        }
+      ]
+    },
+    {
+      "prime": 1429201,
+      "base": 357300,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1071901,
+          "preserved_denominator": 1071901,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 2
+            },
+            {
+              "prime": 3709,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 2
+            },
+            {
+              "prime": 3709,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 1520401,
+      "base": 380100,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1140301,
+          "preserved_denominator": 1140301,
+          "source_factorization": [
+            {
+              "prime": 503,
+              "exponent": 1
+            },
+            {
+              "prime": 2267,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 503,
+              "exponent": 1
+            },
+            {
+              "prime": 2267,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 503,
+          "certificate_gap": 671
+        }
+      ]
+    },
+    {
+      "prime": 1683049,
+      "base": 420762,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1262287,
+          "preserved_denominator": 1262287,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 89,
+              "exponent": 1
+            },
+            {
+              "prime": 1091,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 89,
+              "exponent": 1
+            },
+            {
+              "prime": 1091,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 89,
+          "certificate_gap": 119
+        }
+      ]
+    },
+    {
+      "prime": 1800121,
+      "base": 450030,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1350091,
+          "preserved_denominator": 1350091,
+          "source_factorization": [
+            {
+              "prime": 151,
+              "exponent": 1
+            },
+            {
+              "prime": 8941,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 151,
+              "exponent": 1
+            },
+            {
+              "prime": 8941,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 1575106,
+          "preserved_denominator": 3150212,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 2089,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 2089,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 26,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 1977529,
+      "base": 494382,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1483147,
+          "preserved_denominator": 1483147,
+          "source_factorization": [
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 199,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 199,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 29,
+          "certificate_gap": 39
+        }
+      ]
+    },
+    {
+      "prime": 2031121,
+      "base": 507780,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1523341,
+          "preserved_denominator": 1523341,
+          "source_factorization": [
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 52529,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 52529,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 29,
+          "certificate_gap": 39
+        }
+      ]
+    },
+    {
+      "prime": 2365969,
+      "base": 591492,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1774477,
+          "preserved_denominator": 1774477,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 104381,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 104381,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 2654401,
+      "base": 663600,
+      "first_success_k": 4,
+      "prior_failure_count": 3,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 1990801,
+          "preserved_denominator": 1990801,
+          "source_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 104779,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 104779,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 2322601,
+          "preserved_denominator": 4645202,
+          "source_factorization": [
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 62773,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 62773,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 2433201,
+          "preserved_denominator": 7299603,
+          "source_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 811067,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 811067,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 2488501,
+          "preserved_denominator": 9954004,
+          "source_factorization": [
+            {
+              "prime": 509,
+              "exponent": 1
+            },
+            {
+              "prime": 4889,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 509,
+              "exponent": 1
+            },
+            {
+              "prime": 4889,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 8,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2036,
+          "certificate_gap": 543
+        }
+      ]
+    },
+    {
+      "prime": 2707609,
+      "base": 676902,
+      "first_success_k": 6,
+      "prior_failure_count": 3,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 2030707,
+          "preserved_denominator": 2030707,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 41443,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 41443,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 2369158,
+          "preserved_denominator": 4738316,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 113,
+              "exponent": 1
+            },
+            {
+              "prime": 953,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 113,
+              "exponent": 1
+            },
+            {
+              "prime": 953,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 2481975,
+          "preserved_denominator": 7445925,
+          "source_factorization": [
+            {
+              "prime": 3,
+              "exponent": 3
+            },
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 3677,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 4
+            },
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 3677,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 6,
+          "q": 23,
+          "source_denominator": 2594792,
+          "preserved_denominator": 15568752,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 397,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 4
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 397,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 17,
+          "divisor_residue_count": 22,
+          "unit_group_size": 22,
+          "target_in_divisor_residues": true,
+          "witness_factor": 86,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 3409729,
+      "base": 852432,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 2557297,
+          "preserved_denominator": 2557297,
+          "source_factorization": [
+            {
+              "prime": 2557297,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2557297,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 2983513,
+          "preserved_denominator": 5967026,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 19,
+          "certificate_gap": 11
+        }
+      ]
+    },
+    {
+      "prime": 3569329,
+      "base": 892332,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 2676997,
+          "preserved_denominator": 2676997,
+          "source_factorization": [
+            {
+              "prime": 2676997,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2676997,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 3123163,
+          "preserved_denominator": 6246326,
+          "source_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 164377,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 164377,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 19,
+          "certificate_gap": 11
+        }
+      ]
+    },
+    {
+      "prime": 3660721,
+      "base": 915180,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 2745541,
+          "preserved_denominator": 2745541,
+          "source_factorization": [
+            {
+              "prime": 2745541,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2745541,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 3203131,
+          "preserved_denominator": 6406262,
+          "source_factorization": [
+            {
+              "prime": 241,
+              "exponent": 1
+            },
+            {
+              "prime": 13291,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 241,
+              "exponent": 1
+            },
+            {
+              "prime": 13291,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 964,
+          "certificate_gap": 551
+        }
+      ]
+    },
+    {
+      "prime": 4557361,
+      "base": 1139340,
+      "first_success_k": 6,
+      "prior_failure_count": 5,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 3418021,
+          "preserved_denominator": 3418021,
+          "source_factorization": [
+            {
+              "prime": 3418021,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3418021,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 3987691,
+          "preserved_denominator": 7975382,
+          "source_factorization": [
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 92737,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 92737,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 4177581,
+          "preserved_denominator": 12532743,
+          "source_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 1392527,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 1392527,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 4272526,
+          "preserved_denominator": 17090104,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 293,
+              "exponent": 1
+            },
+            {
+              "prime": 317,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 293,
+              "exponent": 1
+            },
+            {
+              "prime": 317,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 4,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 5,
+          "q": 19,
+          "source_denominator": 4329493,
+          "preserved_denominator": 21647465,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 149,
+              "exponent": 1
+            },
+            {
+              "prime": 593,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 149,
+              "exponent": 1
+            },
+            {
+              "prime": 593,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 14,
+          "divisor_residue_count": 9,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 6,
+          "q": 23,
+          "source_denominator": 4367471,
+          "preserved_denominator": 26204826,
+          "source_factorization": [
+            {
+              "prime": 1259,
+              "exponent": 1
+            },
+            {
+              "prime": 3469,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 1259,
+              "exponent": 1
+            },
+            {
+              "prime": 3469,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 17,
+          "divisor_residue_count": 22,
+          "unit_group_size": 22,
+          "target_in_divisor_residues": true,
+          "witness_factor": 1259,
+          "certificate_gap": 219
+        }
+      ]
+    },
+    {
+      "prime": 4722169,
+      "base": 1180542,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 3541627,
+          "preserved_denominator": 3541627,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 181,
+              "exponent": 1
+            },
+            {
+              "prime": 1151,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 181,
+              "exponent": 1
+            },
+            {
+              "prime": 1151,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 4965601,
+      "base": 1241400,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 3724201,
+          "preserved_denominator": 3724201,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 286477,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 286477,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 4344901,
+          "preserved_denominator": 8689802,
+          "source_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 20789,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 20789,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 19,
+          "certificate_gap": 11
+        }
+      ]
+    },
+    {
+      "prime": 6344209,
+      "base": 1586052,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 4758157,
+          "preserved_denominator": 4758157,
+          "source_factorization": [
+            {
+              "prime": 4758157,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 4758157,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 5551183,
+          "preserved_denominator": 11102366,
+          "source_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 61,
+              "exponent": 1
+            },
+            {
+              "prime": 8273,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 61,
+              "exponent": 1
+            },
+            {
+              "prime": 8273,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 61,
+          "certificate_gap": 35
+        }
+      ]
+    },
+    {
+      "prime": 6868801,
+      "base": 1717200,
+      "first_success_k": 3,
+      "prior_failure_count": 2,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 5151601,
+          "preserved_denominator": 5151601,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 56611,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 56611,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 6010201,
+          "preserved_denominator": 12020402,
+          "source_factorization": [
+            {
+              "prime": 6010201,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 6010201,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 6296401,
+          "preserved_denominator": 18889203,
+          "source_factorization": [
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 167,
+              "exponent": 1
+            },
+            {
+              "prime": 1019,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 167,
+              "exponent": 1
+            },
+            {
+              "prime": 1019,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 10,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": true,
+          "witness_factor": 6179,
+          "certificate_gap": 2247
+        }
+      ]
+    },
+    {
+      "prime": 6899281,
+      "base": 1724820,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 5174461,
+          "preserved_denominator": 5174461,
+          "source_factorization": [
+            {
+              "prime": 5174461,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5174461,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 6036871,
+          "preserved_denominator": 12073742,
+          "source_factorization": [
+            {
+              "prime": 101,
+              "exponent": 1
+            },
+            {
+              "prime": 59771,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 101,
+              "exponent": 1
+            },
+            {
+              "prime": 59771,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 404,
+          "certificate_gap": 231
+        }
+      ]
+    },
+    {
+      "prime": 7329169,
+      "base": 1832292,
+      "first_success_k": 4,
+      "prior_failure_count": 3,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 5496877,
+          "preserved_denominator": 5496877,
+          "source_factorization": [
+            {
+              "prime": 709,
+              "exponent": 1
+            },
+            {
+              "prime": 7753,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 709,
+              "exponent": 1
+            },
+            {
+              "prime": 7753,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 6413023,
+          "preserved_denominator": 12826046,
+          "source_factorization": [
+            {
+              "prime": 6413023,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 6413023,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 6718405,
+          "preserved_denominator": 20155215,
+          "source_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 1343681,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 1343681,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 6871096,
+          "preserved_denominator": 27484384,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 71,
+              "exponent": 1
+            },
+            {
+              "prime": 12097,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 5
+            },
+            {
+              "prime": 71,
+              "exponent": 1
+            },
+            {
+              "prime": 12097,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 8,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": true,
+          "witness_factor": 71,
+          "certificate_gap": 19
+        }
+      ]
+    },
+    {
+      "prime": 7378849,
+      "base": 1844712,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 5534137,
+          "preserved_denominator": 5534137,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 269,
+              "exponent": 1
+            },
+            {
+              "prime": 2939,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 269,
+              "exponent": 1
+            },
+            {
+              "prime": 2939,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 269,
+          "certificate_gap": 359
+        }
+      ]
+    },
+    {
+      "prime": 8066689,
+      "base": 2016672,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6050017,
+          "preserved_denominator": 6050017,
+          "source_factorization": [
+            {
+              "prime": 6050017,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 6050017,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 7058353,
+          "preserved_denominator": 14116706,
+          "source_factorization": [
+            {
+              "prime": 2621,
+              "exponent": 1
+            },
+            {
+              "prime": 2693,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 2621,
+              "exponent": 1
+            },
+            {
+              "prime": 2693,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2693,
+          "certificate_gap": 1539
+        }
+      ]
+    },
+    {
+      "prime": 8113681,
+      "base": 2028420,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6085261,
+          "preserved_denominator": 6085261,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 233,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 233,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 41,
+          "certificate_gap": 55
+        }
+      ]
+    },
+    {
+      "prime": 8243041,
+      "base": 2060760,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6182281,
+          "preserved_denominator": 6182281,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 281,
+              "exponent": 1
+            },
+            {
+              "prime": 449,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 281,
+              "exponent": 1
+            },
+            {
+              "prime": 449,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 281,
+          "certificate_gap": 375
+        }
+      ]
+    },
+    {
+      "prime": 8283361,
+      "base": 2070840,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6212521,
+          "preserved_denominator": 6212521,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 887503,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 887503,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 7247941,
+          "preserved_denominator": 14495882,
+          "source_factorization": [
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 293,
+              "exponent": 1
+            },
+            {
+              "prime": 853,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 293,
+              "exponent": 1
+            },
+            {
+              "prime": 853,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 586,
+          "certificate_gap": 335
+        }
+      ]
+    },
+    {
+      "prime": 8328961,
+      "base": 2082240,
+      "first_success_k": 12,
+      "prior_failure_count": 9,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6246721,
+          "preserved_denominator": 6246721,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 480517,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 480517,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 7287841,
+          "preserved_denominator": 14575682,
+          "source_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 662531,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 662531,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 7634881,
+          "preserved_denominator": 22904643,
+          "source_factorization": [
+            {
+              "prime": 2237,
+              "exponent": 1
+            },
+            {
+              "prime": 3413,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 2237,
+              "exponent": 1
+            },
+            {
+              "prime": 3413,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 7808401,
+          "preserved_denominator": 31233604,
+          "source_factorization": [
+            {
+              "prime": 7808401,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 7808401,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 4,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 5,
+          "q": 19,
+          "source_denominator": 7912513,
+          "preserved_denominator": 39562565,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 1130359,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 1130359,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 14,
+          "divisor_residue_count": 9,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 6,
+          "q": 23,
+          "source_denominator": 7981921,
+          "preserved_denominator": 47891526,
+          "source_factorization": [
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 194681,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 194681,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 17,
+          "divisor_residue_count": 11,
+          "unit_group_size": 22,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 8,
+          "q": 31,
+          "source_denominator": 8068681,
+          "preserved_denominator": 64549448,
+          "source_factorization": [
+            {
+              "prime": 8068681,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 8068681,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 23,
+          "divisor_residue_count": 5,
+          "unit_group_size": 30,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 9,
+          "q": 35,
+          "source_denominator": 8097601,
+          "preserved_denominator": 72878409,
+          "source_factorization": [
+            {
+              "prime": 8097601,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 8097601,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 26,
+          "divisor_residue_count": 5,
+          "unit_group_size": 24,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 10,
+          "q": 39,
+          "source_denominator": 8120737,
+          "preserved_denominator": 81207370,
+          "source_factorization": [
+            {
+              "prime": 8120737,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 8120737,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 29,
+          "divisor_residue_count": 9,
+          "unit_group_size": 24,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 12,
+          "q": 47,
+          "source_denominator": 8155441,
+          "preserved_denominator": 97865292,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 67,
+              "exponent": 1
+            },
+            {
+              "prime": 17389,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 67,
+              "exponent": 1
+            },
+            {
+              "prime": 17389,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 35,
+          "divisor_residue_count": 46,
+          "unit_group_size": 46,
+          "target_in_divisor_residues": true,
+          "witness_factor": 5628,
+          "certificate_gap": 479
+        }
+      ]
+    },
+    {
+      "prime": 8955769,
+      "base": 2238942,
+      "first_success_k": 3,
+      "prior_failure_count": 2,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6716827,
+          "preserved_denominator": 6716827,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 516679,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 516679,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 7836298,
+          "preserved_denominator": 15672596,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3918149,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3918149,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 8209455,
+          "preserved_denominator": 24628365,
+          "source_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 227,
+              "exponent": 1
+            },
+            {
+              "prime": 2411,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 227,
+              "exponent": 1
+            },
+            {
+              "prime": 2411,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 10,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2043,
+          "certificate_gap": 743
+        }
+      ]
+    },
+    {
+      "prime": 9296809,
+      "base": 2324202,
+      "first_success_k": 6,
+      "prior_failure_count": 3,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 6972607,
+          "preserved_denominator": 6972607,
+          "source_factorization": [
+            {
+              "prime": 6972607,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 6972607,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 8134708,
+          "preserved_denominator": 16269416,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 2033677,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 2033677,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 8522075,
+          "preserved_denominator": 25566225,
+          "source_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 14821,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 14821,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 6,
+          "q": 23,
+          "source_denominator": 8909442,
+          "preserved_denominator": 53456652,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 109,
+              "exponent": 1
+            },
+            {
+              "prime": 239,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 3
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 109,
+              "exponent": 1
+            },
+            {
+              "prime": 239,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 17,
+          "divisor_residue_count": 22,
+          "unit_group_size": 22,
+          "target_in_divisor_residues": true,
+          "witness_factor": 109,
+          "certificate_gap": 19
+        }
+      ]
+    },
+    {
+      "prime": 9504961,
+      "base": 2376240,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 7128721,
+          "preserved_denominator": 7128721,
+          "source_factorization": [
+            {
+              "prime": 1231,
+              "exponent": 1
+            },
+            {
+              "prime": 5791,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 1231,
+              "exponent": 1
+            },
+            {
+              "prime": 5791,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 8316841,
+          "preserved_denominator": 16633682,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 639757,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 639757,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 26,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 9744001,
+      "base": 2436000,
+      "first_success_k": 3,
+      "prior_failure_count": 2,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 7308001,
+          "preserved_denominator": 7308001,
+          "source_factorization": [
+            {
+              "prime": 7308001,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7308001,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 8526001,
+          "preserved_denominator": 17052002,
+          "source_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 775091,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 775091,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 8932001,
+          "preserved_denominator": 26796003,
+          "source_factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 139,
+              "exponent": 1
+            },
+            {
+              "prime": 4943,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 139,
+              "exponent": 1
+            },
+            {
+              "prime": 4943,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 10,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": true,
+          "witness_factor": 1251,
+          "certificate_gap": 455
+        }
+      ]
+    },
+    {
+      "prime": 10269169,
+      "base": 2567292,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 7701877,
+          "preserved_denominator": 7701877,
+          "source_factorization": [
+            {
+              "prime": 7701877,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7701877,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 8985523,
+          "preserved_denominator": 17971046,
+          "source_factorization": [
+            {
+              "prime": 59,
+              "exponent": 1
+            },
+            {
+              "prime": 152297,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            },
+            {
+              "prime": 152297,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 236,
+          "certificate_gap": 135
+        }
+      ]
+    },
+    {
+      "prime": 10278361,
+      "base": 2569590,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 7708771,
+          "preserved_denominator": 7708771,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 1101253,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 1101253,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 8993566,
+          "preserved_denominator": 17987132,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 661,
+              "exponent": 1
+            },
+            {
+              "prime": 6803,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 661,
+              "exponent": 1
+            },
+            {
+              "prime": 6803,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2644,
+          "certificate_gap": 1511
+        }
+      ]
+    },
+    {
+      "prime": 11054401,
+      "base": 2763600,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 8290801,
+          "preserved_denominator": 8290801,
+          "source_factorization": [
+            {
+              "prime": 383,
+              "exponent": 1
+            },
+            {
+              "prime": 21647,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 383,
+              "exponent": 1
+            },
+            {
+              "prime": 21647,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 383,
+          "certificate_gap": 511
+        }
+      ]
+    },
+    {
+      "prime": 11910361,
+      "base": 2977590,
+      "first_success_k": 5,
+      "prior_failure_count": 3,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 8932771,
+          "preserved_denominator": 8932771,
+          "source_factorization": [
+            {
+              "prime": 8932771,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 8932771,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 10421566,
+          "preserved_denominator": 20843132,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 121181,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 121181,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 10917831,
+          "preserved_denominator": 32753493,
+          "source_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 3639277,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 3639277,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 5,
+          "q": 19,
+          "source_denominator": 11314843,
+          "preserved_denominator": 56574215,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            },
+            {
+              "prime": 389,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            },
+            {
+              "prime": 389,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 14,
+          "divisor_residue_count": 18,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2465,
+          "certificate_gap": 519
+        }
+      ]
+    },
+    {
+      "prime": 12086761,
+      "base": 3021690,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 9065071,
+          "preserved_denominator": 9065071,
+          "source_factorization": [
+            {
+              "prime": 19,
+              "exponent": 2
+            },
+            {
+              "prime": 25111,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 19,
+              "exponent": 2
+            },
+            {
+              "prime": 25111,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 10575916,
+          "preserved_denominator": 21151832,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 203383,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 203383,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 26,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 12180169,
+      "base": 3045042,
+      "first_success_k": 6,
+      "prior_failure_count": 3,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 9135127,
+          "preserved_denominator": 9135127,
+          "source_factorization": [
+            {
+              "prime": 9135127,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 9135127,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 10657648,
+          "preserved_denominator": 21315296,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 4
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 28961,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 5
+            },
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 28961,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 11165155,
+          "preserved_denominator": 33495465,
+          "source_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 2233031,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 2233031,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 5,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 6,
+          "q": 23,
+          "source_denominator": 11672662,
+          "preserved_denominator": 70035972,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 373,
+              "exponent": 1
+            },
+            {
+              "prime": 15647,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 373,
+              "exponent": 1
+            },
+            {
+              "prime": 15647,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 17,
+          "divisor_residue_count": 22,
+          "unit_group_size": 22,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2984,
+          "certificate_gap": 519
+        }
+      ]
+    },
+    {
+      "prime": 12321241,
+      "base": 3080310,
+      "first_success_k": 3,
+      "prior_failure_count": 2,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 9240931,
+          "preserved_denominator": 9240931,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 733,
+              "exponent": 1
+            },
+            {
+              "prime": 1801,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 733,
+              "exponent": 1
+            },
+            {
+              "prime": 1801,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 10781086,
+          "preserved_denominator": 21562172,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 5390543,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 5390543,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 11294471,
+          "preserved_denominator": 33883413,
+          "source_factorization": [
+            {
+              "prime": 109,
+              "exponent": 1
+            },
+            {
+              "prime": 103619,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 109,
+              "exponent": 1
+            },
+            {
+              "prime": 103619,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 6,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": true,
+          "witness_factor": 327,
+          "certificate_gap": 119
+        }
+      ]
+    },
+    {
+      "prime": 12997441,
+      "base": 3249360,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 9748081,
+          "preserved_denominator": 9748081,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 89,
+              "exponent": 1
+            },
+            {
+              "prime": 15647,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 89,
+              "exponent": 1
+            },
+            {
+              "prime": 15647,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 89,
+          "certificate_gap": 119
+        }
+      ]
+    },
+    {
+      "prime": 13422481,
+      "base": 3355620,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 10066861,
+          "preserved_denominator": 10066861,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 1438123,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 1438123,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 11744671,
+          "preserved_denominator": 23489342,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 2
+            },
+            {
+              "prime": 40639,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 2
+            },
+            {
+              "prime": 40639,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 68,
+          "certificate_gap": 39
+        }
+      ]
+    },
+    {
+      "prime": 13659409,
+      "base": 3414852,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 10244557,
+          "preserved_denominator": 10244557,
+          "source_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 602621,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 602621,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 17,
+          "certificate_gap": 23
+        }
+      ]
+    },
+    {
+      "prime": 13903849,
+      "base": 3475962,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 10427887,
+          "preserved_denominator": 10427887,
+          "source_factorization": [
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 242509,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 242509,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 12165868,
+          "preserved_denominator": 24331736,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 21269,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 21269,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 26,
+          "certificate_gap": 15
+        }
+      ]
+    },
+    {
+      "prime": 14351761,
+      "base": 3587940,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 10763821,
+          "preserved_denominator": 10763821,
+          "source_factorization": [
+            {
+              "prime": 10763821,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 10763821,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 12557791,
+          "preserved_denominator": 25115582,
+          "source_factorization": [
+            {
+              "prime": 131,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            },
+            {
+              "prime": 373,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 131,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            },
+            {
+              "prime": 373,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 131,
+          "certificate_gap": 75
+        }
+      ]
+    },
+    {
+      "prime": 14847529,
+      "base": 3711882,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 11135647,
+          "preserved_denominator": 11135647,
+          "source_factorization": [
+            {
+              "prime": 1097,
+              "exponent": 1
+            },
+            {
+              "prime": 10151,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 1097,
+              "exponent": 1
+            },
+            {
+              "prime": 10151,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 1097,
+          "certificate_gap": 1463
+        }
+      ]
+    },
+    {
+      "prime": 15292369,
+      "base": 3823092,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 11469277,
+          "preserved_denominator": 11469277,
+          "source_factorization": [
+            {
+              "prime": 2381,
+              "exponent": 1
+            },
+            {
+              "prime": 4817,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2381,
+              "exponent": 1
+            },
+            {
+              "prime": 4817,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 2381,
+          "certificate_gap": 3175
+        }
+      ]
+    },
+    {
+      "prime": 17078881,
+      "base": 4269720,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 12809161,
+          "preserved_denominator": 12809161,
+          "source_factorization": [
+            {
+              "prime": 3461,
+              "exponent": 1
+            },
+            {
+              "prime": 3701,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3461,
+              "exponent": 1
+            },
+            {
+              "prime": 3701,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 3461,
+          "certificate_gap": 4615
+        }
+      ]
+    },
+    {
+      "prime": 17809201,
+      "base": 4452300,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 13356901,
+          "preserved_denominator": 13356901,
+          "source_factorization": [
+            {
+              "prime": 53,
+              "exponent": 1
+            },
+            {
+              "prime": 252017,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 53,
+              "exponent": 1
+            },
+            {
+              "prime": 252017,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 53,
+          "certificate_gap": 71
+        }
+      ]
+    },
+    {
+      "prime": 17883889,
+      "base": 4470972,
+      "first_success_k": 2,
+      "prior_failure_count": 1,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 13412917,
+          "preserved_denominator": 13412917,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 14407,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 14407,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 15648403,
+          "preserved_denominator": 31296806,
+          "source_factorization": [
+            {
+              "prime": 859,
+              "exponent": 1
+            },
+            {
+              "prime": 18217,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 859,
+              "exponent": 1
+            },
+            {
+              "prime": 18217,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 6,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": true,
+          "witness_factor": 859,
+          "certificate_gap": 491
+        }
+      ]
+    },
+    {
+      "prime": 18337201,
+      "base": 4584300,
+      "first_success_k": 12,
+      "prior_failure_count": 8,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 13752901,
+          "preserved_denominator": 13752901,
+          "source_factorization": [
+            {
+              "prime": 13752901,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 13752901,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 1,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 2,
+          "q": 7,
+          "source_denominator": 16045051,
+          "preserved_denominator": 32090102,
+          "source_factorization": [
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 1458641,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 1458641,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 5,
+          "divisor_residue_count": 3,
+          "unit_group_size": 6,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 3,
+          "q": 11,
+          "source_denominator": 16809101,
+          "preserved_denominator": 50427303,
+          "source_factorization": [
+            {
+              "prime": 16809101,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 16809101,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 8,
+          "divisor_residue_count": 3,
+          "unit_group_size": 10,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 4,
+          "q": 15,
+          "source_denominator": 17191126,
+          "preserved_denominator": 68764504,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 83,
+              "exponent": 1
+            },
+            {
+              "prime": 103561,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 83,
+              "exponent": 1
+            },
+            {
+              "prime": 103561,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 11,
+          "divisor_residue_count": 4,
+          "unit_group_size": 8,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 5,
+          "q": 19,
+          "source_denominator": 17420341,
+          "preserved_denominator": 87101705,
+          "source_factorization": [
+            {
+              "prime": 17420341,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17420341,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 14,
+          "divisor_residue_count": 3,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 6,
+          "q": 23,
+          "source_denominator": 17573151,
+          "preserved_denominator": 105438906,
+          "source_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5857717,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5857717,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 17,
+          "divisor_residue_count": 11,
+          "unit_group_size": 22,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 7,
+          "q": 27,
+          "source_denominator": 17682301,
+          "preserved_denominator": 123776107,
+          "source_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 2
+            },
+            {
+              "prime": 14947,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 13,
+              "exponent": 2
+            },
+            {
+              "prime": 14947,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 20,
+          "divisor_residue_count": 9,
+          "unit_group_size": 18,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 10,
+          "q": 39,
+          "source_denominator": 17878771,
+          "preserved_denominator": 178787710,
+          "source_factorization": [
+            {
+              "prime": 863,
+              "exponent": 1
+            },
+            {
+              "prime": 20717,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 863,
+              "exponent": 1
+            },
+            {
+              "prime": 20717,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 29,
+          "divisor_residue_count": 12,
+          "unit_group_size": 24,
+          "target_in_divisor_residues": false,
+          "witness_factor": null,
+          "certificate_gap": null
+        },
+        {
+          "k": 12,
+          "q": 47,
+          "source_denominator": 17955176,
+          "preserved_denominator": 215462112,
+          "source_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 193,
+              "exponent": 1
+            },
+            {
+              "prime": 401,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 2,
+              "exponent": 5
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 193,
+              "exponent": 1
+            },
+            {
+              "prime": 401,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 35,
+          "divisor_residue_count": 46,
+          "unit_group_size": 46,
+          "target_in_divisor_residues": true,
+          "witness_factor": 928,
+          "certificate_gap": 79
+        }
+      ]
+    },
+    {
+      "prime": 19033921,
+      "base": 4758480,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 14275441,
+          "preserved_denominator": 14275441,
+          "source_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 101,
+              "exponent": 1
+            },
+            {
+              "prime": 173,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 101,
+              "exponent": 1
+            },
+            {
+              "prime": 173,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 101,
+          "certificate_gap": 135
+        }
+      ]
+    },
+    {
+      "prime": 19173361,
+      "base": 4793340,
+      "first_success_k": 1,
+      "prior_failure_count": 0,
+      "states_through_first_success": [
+        {
+          "k": 1,
+          "q": 3,
+          "source_denominator": 14380021,
+          "preserved_denominator": 14380021,
+          "source_factorization": [
+            {
+              "prime": 1913,
+              "exponent": 1
+            },
+            {
+              "prime": 7517,
+              "exponent": 1
+            }
+          ],
+          "preserved_factorization": [
+            {
+              "prime": 1913,
+              "exponent": 1
+            },
+            {
+              "prime": 7517,
+              "exponent": 1
+            }
+          ],
+          "target_residue": 2,
+          "divisor_residue_count": 2,
+          "unit_group_size": 2,
+          "target_in_divisor_residues": true,
+          "witness_factor": 1913,
+          "certificate_gap": 2551
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "arithmetic": "exact trial-prime factorization in each complete odd-distance even-source fan, with exact rational source/target lift checks",
+  "scope_note": "A finite two-layer descent audit. Neither the quadratic family nor the odd-distance cap is asserted to be universal.",
+  "prime_limit": 300000000,
+  "base_shift_bound": 19,
+  "h19_residual_count": 328,
+  "quadratic_factor_descent_count": 325,
+  "odd_distance_cap": 7,
+  "odd_distance_fallback_count": 3,
+  "missing_through_cap": [],
+  "fallbacks": [
+    {
+      "prime": 35840809,
+      "distance": 7,
+      "witness": {
+        "source_denominator": 35840802,
+        "k": 1278256,
+        "q": 5113023,
+        "factor": 1256512992,
+        "source_solution": [
+          45813720201312,
+          8960448,
+          326706894528
+        ],
+        "target_solution": [
+          33077512445653088,
+          8960448,
+          326706894528
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 983,
+          "x": 8960448,
+          "divisor": 3171998592,
+          "y": 326706894528,
+          "z": 33077512445653088
+        }
+      }
+    },
+    {
+      "prime": 132285169,
+      "distance": 3,
+      "witness": {
+        "source_denominator": 132285166,
+        "k": 10906490,
+        "q": 43625959,
+        "factor": 2082787720,
+        "source_solution": [
+          1442766840127340,
+          33071340,
+          22908831395730
+        ],
+        "target_solution": [
+          135620086047600140,
+          33071340,
+          22908831395730
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 191,
+          "x": 33071340,
+          "divisor": 738995627970,
+          "y": 22908831395730,
+          "z": 135620086047600140
+        }
+      }
+    },
+    {
+      "prime": 141326089,
+      "distance": 3,
+      "witness": {
+        "source_denominator": 141326086,
+        "k": 11651885,
+        "q": 46607539,
+        "factor": 127794865,
+        "source_solution": [
+          1646715301572110,
+          35331525,
+          455268393181350
+        ],
+        "target_solution": [
+          154791241633609910,
+          35331525,
+          455268393181350
+        ],
+        "certificate": {
+          "type": "I",
+          "gap": 11,
+          "x": 35331525,
+          "divisor": 14686078339125,
+          "y": 455268393181350,
+          "z": 154791241633609910
+        }
+      }
+    }
+  ]
+}

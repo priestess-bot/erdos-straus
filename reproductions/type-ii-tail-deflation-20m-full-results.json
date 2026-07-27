@@ -1,0 +1,7008 @@
+{
+  "arithmetic": "exact SPF factorization, divisor residues, reconstructed Type II certificates, and fractions.Fraction checks in short_certificate.py",
+  "scope_note": "This is a finite coverage profile for the divisor-marked selector. It neither proves a uniform selector nor makes a high coverage rate a density theorem.",
+  "prime_limit": 20000000,
+  "core_prime_count": 158595,
+  "tail_deflation_hit_count": 158449,
+  "tail_deflation_miss_count": 146,
+  "largest_minimum_gap": 2375,
+  "record_holders": [
+    {
+      "prime": 73,
+      "gap": 7,
+      "source_denominator": 10,
+      "divisor": 1
+    },
+    {
+      "prime": 1129,
+      "gap": 11,
+      "source_denominator": 95,
+      "divisor": 1
+    },
+    {
+      "prime": 1201,
+      "gap": 23,
+      "source_denominator": 51,
+      "divisor": 108
+    },
+    {
+      "prime": 16921,
+      "gap": 39,
+      "source_denominator": 424,
+      "divisor": 50
+    },
+    {
+      "prime": 61681,
+      "gap": 119,
+      "source_denominator": 515,
+      "divisor": 20
+    },
+    {
+      "prime": 87481,
+      "gap": 215,
+      "source_denominator": 406,
+      "divisor": 6
+    },
+    {
+      "prime": 176089,
+      "gap": 263,
+      "source_denominator": 668,
+      "divisor": 96
+    },
+    {
+      "prime": 565849,
+      "gap": 695,
+      "source_denominator": 814,
+      "divisor": 144
+    },
+    {
+      "prime": 3131209,
+      "gap": 1255,
+      "source_denominator": 2494,
+      "divisor": 4
+    },
+    {
+      "prime": 8561569,
+      "gap": 1615,
+      "source_denominator": 5299,
+      "divisor": 142814
+    },
+    {
+      "prime": 11055529,
+      "gap": 2375,
+      "source_denominator": 4654,
+      "divisor": 24
+    }
+  ],
+  "minimum_gap_histogram": {
+    "3": 91532,
+    "7": 53909,
+    "11": 8274,
+    "15": 836,
+    "19": 1190,
+    "23": 1858,
+    "27": 80,
+    "31": 111,
+    "35": 75,
+    "39": 144,
+    "43": 18,
+    "47": 119,
+    "51": 14,
+    "55": 22,
+    "59": 48,
+    "63": 1,
+    "67": 4,
+    "71": 60,
+    "75": 1,
+    "79": 1,
+    "83": 25,
+    "87": 23,
+    "91": 6,
+    "95": 2,
+    "99": 1,
+    "103": 5,
+    "107": 5,
+    "111": 4,
+    "119": 7,
+    "131": 14,
+    "135": 1,
+    "151": 2,
+    "155": 5,
+    "159": 1,
+    "163": 1,
+    "167": 16,
+    "183": 3,
+    "191": 1,
+    "199": 1,
+    "203": 1,
+    "215": 2,
+    "239": 1,
+    "263": 4,
+    "275": 1,
+    "291": 1,
+    "311": 4,
+    "335": 1,
+    "359": 1,
+    "367": 1,
+    "371": 1,
+    "455": 1,
+    "535": 1,
+    "631": 1,
+    "695": 1,
+    "743": 1,
+    "887": 1,
+    "983": 1,
+    "1255": 1,
+    "1615": 1,
+    "1895": 1,
+    "2375": 1
+  },
+  "misses": [
+    {
+      "prime": 67369,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 401,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        1603,
+        3207,
+        4811,
+        9623,
+        11227,
+        22455,
+        33683,
+        67367
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 67369,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 16850,
+        "divisor": 3370,
+        "y": 36618420,
+        "z": 12334731684900
+      }
+    },
+    {
+      "prime": 85369,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 3557,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        14227,
+        28455,
+        42683,
+        85367
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 85369,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 21346,
+        "divisor": 26,
+        "y": 121485780,
+        "z": 8514689152865220
+      }
+    },
+    {
+      "prime": 163249,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 179,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        75,
+        151,
+        227,
+        303,
+        455,
+        715,
+        911,
+        1431,
+        2147,
+        2863,
+        4295,
+        8591,
+        13603,
+        27207,
+        40811,
+        54415,
+        81623,
+        163247
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 163249,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 40820,
+        "divisor": 52,
+        "y": 214962072,
+        "z": 27547489484163480
+      }
+    },
+    {
+      "prime": 214729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 23,
+          "exponent": 1
+        },
+        {
+          "prime": 389,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        91,
+        183,
+        275,
+        551,
+        1555,
+        3111,
+        4667,
+        9335,
+        35787,
+        71575,
+        107363,
+        214727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 214729,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 53687,
+        "divisor": 1451,
+        "y": 623143558,
+        "z": 23056311646
+      }
+    },
+    {
+      "prime": 225289,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 149,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        35,
+        55,
+        71,
+        83,
+        107,
+        167,
+        215,
+        251,
+        503,
+        595,
+        755,
+        1191,
+        1511,
+        1787,
+        3575,
+        4171,
+        5363,
+        8343,
+        10727,
+        12515,
+        16091,
+        25031,
+        32183,
+        37547,
+        75095,
+        112643,
+        225287
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 225289,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 56327,
+        "divisor": 713,
+        "y": 667887064,
+        "z": 11886941092158184
+      }
+    },
+    {
+      "prime": 297049,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 12377,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        49507,
+        99015,
+        148523,
+        297047
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 297049,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 74266,
+        "divisor": 71,
+        "y": 1470709407,
+        "z": 456968905537380378
+      }
+    },
+    {
+      "prime": 372409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 59,
+          "exponent": 1
+        },
+        {
+          "prime": 263,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        235,
+        471,
+        707,
+        1051,
+        1415,
+        2103,
+        3155,
+        6311,
+        62067,
+        124135,
+        186203,
+        372407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 372409,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 93106,
+        "divisor": 26,
+        "y": 2311567492,
+        "z": 3082698615037184468
+      }
+    },
+    {
+      "prime": 454969,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 71,
+          "exponent": 1
+        },
+        {
+          "prime": 89,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        283,
+        355,
+        567,
+        711,
+        851,
+        1067,
+        1703,
+        2135,
+        2555,
+        3203,
+        5111,
+        6407,
+        25275,
+        50551,
+        75827,
+        151655,
+        227483,
+        454967
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 454969,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 113750,
+        "divisor": 20,
+        "y": 1669736230,
+        "z": 9496624808125
+      }
+    },
+    {
+      "prime": 521929,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 659,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        43,
+        71,
+        87,
+        131,
+        263,
+        395,
+        791,
+        2635,
+        5271,
+        7907,
+        15815,
+        23723,
+        28995,
+        47447,
+        57991,
+        86987,
+        173975,
+        260963,
+        521927
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 521929,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 130487,
+        "divisor": 130487,
+        "y": 3584477890,
+        "z": 1870842960649810
+      }
+    },
+    {
+      "prime": 532249,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 67,
+          "exponent": 1
+        },
+        {
+          "prime": 331,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        267,
+        535,
+        803,
+        1323,
+        1607,
+        2647,
+        3971,
+        7943,
+        88707,
+        177415,
+        266123,
+        532247
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 532249,
+        "certificate_type": "II",
+        "gap": 55,
+        "x": 133076,
+        "divisor": 59534,
+        "y": 1863935998,
+        "z": 4166445172
+      }
+    },
+    {
+      "prime": 629689,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 26237,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        104947,
+        209895,
+        314843,
+        629687
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 629689,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 157430,
+        "divisor": 13,
+        "y": 3197804493,
+        "z": 24384966215185318470
+      }
+    },
+    {
+      "prime": 784249,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 41,
+          "exponent": 1
+        },
+        {
+          "prime": 797,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        163,
+        327,
+        491,
+        983,
+        3187,
+        6375,
+        9563,
+        19127,
+        130707,
+        261415,
+        392123,
+        784247
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 784249,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 196066,
+        "divisor": 26,
+        "y": 10250970964,
+        "z": 60624464819424657476
+      }
+    },
+    {
+      "prime": 852889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 35537,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        142147,
+        284295,
+        426443,
+        852887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 852889,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 213226,
+        "divisor": 26,
+        "y": 12123873996,
+        "z": 84800954221079015244
+      }
+    },
+    {
+      "prime": 878089,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 36587,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        146347,
+        292695,
+        439043,
+        878087
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 878089,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 219530,
+        "divisor": 725,
+        "y": 6238822345,
+        "z": 1889115406066
+      }
+    },
+    {
+      "prime": 967129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 59,
+          "exponent": 1
+        },
+        {
+          "prime": 683,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        235,
+        471,
+        707,
+        1415,
+        2731,
+        5463,
+        8195,
+        16391,
+        161187,
+        322375,
+        483563,
+        967127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 967129,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 241787,
+        "divisor": 7,
+        "y": 12307683654,
+        "z": 425119701092814
+      }
+    },
+    {
+      "prime": 1046329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 43597,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        174387,
+        348775,
+        523163,
+        1046327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1046329,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 261586,
+        "divisor": 26,
+        "y": 18247001188,
+        "z": 192088299417256889972
+      }
+    },
+    {
+      "prime": 1093129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 37,
+          "exponent": 1
+        },
+        {
+          "prime": 1231,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        147,
+        295,
+        443,
+        887,
+        4923,
+        9847,
+        14771,
+        29543,
+        182187,
+        364375,
+        546563,
+        1093127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1093129,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 273286,
+        "divisor": 26,
+        "y": 19915790128,
+        "z": 228830017146935511632
+      }
+    },
+    {
+      "prime": 1178809,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 49117,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        196467,
+        392935,
+        589403,
+        1178807
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1178809,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 294710,
+        "divisor": 52,
+        "y": 11206670982,
+        "z": 74870648247693832365
+      }
+    },
+    {
+      "prime": 1415929,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 58997,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        235987,
+        471975,
+        707963,
+        1415927
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1415929,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 353990,
+        "divisor": 182,
+        "y": 16168538932,
+        "z": 44527863649016025460
+      }
+    },
+    {
+      "prime": 1447609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 60317,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        241267,
+        482535,
+        723803,
+        1447607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1447609,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 361906,
+        "divisor": 59,
+        "y": 34932252779,
+        "z": 214274438546386
+      }
+    },
+    {
+      "prime": 1497049,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 2
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 67,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 48,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        75,
+        83,
+        151,
+        167,
+        195,
+        227,
+        267,
+        391,
+        455,
+        531,
+        535,
+        587,
+        803,
+        1063,
+        1175,
+        1595,
+        1607,
+        1875,
+        3191,
+        3723,
+        3751,
+        5091,
+        5627,
+        7447,
+        10183,
+        11171,
+        11255,
+        13131,
+        15275,
+        22343,
+        26263,
+        30551,
+        35643,
+        39395,
+        71287,
+        78791,
+        106931,
+        213863,
+        249507,
+        499015,
+        748523,
+        1497047
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1497049,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 374270,
+        "divisor": 52,
+        "y": 18074210622,
+        "z": 194749803402328605405
+      }
+    },
+    {
+      "prime": 1511449,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 71,
+          "exponent": 1
+        },
+        {
+          "prime": 887,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        283,
+        567,
+        851,
+        1703,
+        3547,
+        7095,
+        10643,
+        21287,
+        251907,
+        503815,
+        755723,
+        1511447
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1511449,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 377867,
+        "divisor": 25921,
+        "y": 32121314148,
+        "z": 468252945996
+      }
+    },
+    {
+      "prime": 1854889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 61,
+          "exponent": 1
+        },
+        {
+          "prime": 181,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        243,
+        487,
+        723,
+        731,
+        1447,
+        1463,
+        1707,
+        2171,
+        3415,
+        4343,
+        5067,
+        5123,
+        10135,
+        10247,
+        15203,
+        30407,
+        44163,
+        88327,
+        132491,
+        264983,
+        309147,
+        618295,
+        927443,
+        1854887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1854889,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 463730,
+        "divisor": 1174,
+        "y": 27747344424,
+        "z": 20329956360759129720
+      }
+    },
+    {
+      "prime": 1936489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 80687,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        322747,
+        645495,
+        968243,
+        1936487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 1936489,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 484126,
+        "divisor": 29,
+        "y": 62504055453,
+        "z": 1043442701732382
+      }
+    },
+    {
+      "prime": 2020489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 2903,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        115,
+        231,
+        347,
+        695,
+        11611,
+        23223,
+        34835,
+        69671,
+        336747,
+        673495,
+        1010243,
+        2020487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2020489,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 505127,
+        "divisor": 7,
+        "y": 53716720554,
+        "z": 3876252271897194
+      }
+    },
+    {
+      "prime": 2097769,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 87407,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        349627,
+        699255,
+        1048883,
+        2097767
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2097769,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 524446,
+        "divisor": 26,
+        "y": 73344437400,
+        "z": 3103503748497339462600
+      }
+    },
+    {
+      "prime": 2168329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 167,
+          "exponent": 1
+        },
+        {
+          "prime": 541,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        667,
+        1335,
+        2003,
+        2163,
+        4007,
+        4327,
+        6491,
+        12983,
+        361387,
+        722775,
+        1084163,
+        2168327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2168329,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 542087,
+        "divisor": 2093,
+        "y": 61864366564,
+        "z": 34742855722624053004
+      }
+    },
+    {
+      "prime": 2210569,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 92107,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        368427,
+        736855,
+        1105283,
+        2210567
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2210569,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 552650,
+        "divisor": 49,
+        "y": 39412234701,
+        "z": 444513704234850
+      }
+    },
+    {
+      "prime": 2254729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 13421,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        53683,
+        107367,
+        161051,
+        322103,
+        375787,
+        751575,
+        1127363,
+        2254727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2254729,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 563686,
+        "divisor": 59,
+        "y": 84739480007,
+        "z": 809600991986878
+      }
+    },
+    {
+      "prime": 2269129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 94547,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        378187,
+        756375,
+        1134563,
+        2269127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2269129,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 567286,
+        "divisor": 89,
+        "y": 85829804425,
+        "z": 547079173404950
+      }
+    },
+    {
+      "prime": 2392009,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 99667,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        398667,
+        797335,
+        1196003,
+        2392007
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2392009,
+        "certificate_type": "II",
+        "gap": 27,
+        "x": 598009,
+        "divisor": 14297,
+        "y": 54245980102,
+        "z": 2268978409094
+      }
+    },
+    {
+      "prime": 2516089,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 41,
+          "exponent": 1
+        },
+        {
+          "prime": 2557,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        163,
+        327,
+        491,
+        983,
+        10227,
+        20455,
+        30683,
+        61367,
+        419347,
+        838695,
+        1258043,
+        2516087
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2516089,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 629027,
+        "divisor": 1127,
+        "y": 83448607774,
+        "z": 46576244367574
+      }
+    },
+    {
+      "prime": 2596729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 257,
+          "exponent": 1
+        },
+        {
+          "prime": 421,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1027,
+        1683,
+        2055,
+        3083,
+        3367,
+        5051,
+        6167,
+        10103,
+        432787,
+        865575,
+        1298363,
+        2596727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2596729,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 649187,
+        "divisor": 8431,
+        "y": 88724353566,
+        "z": 17740268847153592278
+      }
+    },
+    {
+      "prime": 2669209,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 111217,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        444867,
+        889735,
+        1334603,
+        2669207
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2669209,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 667307,
+        "divisor": 67398007,
+        "y": 93749960430,
+        "z": 2477606318112870
+      }
+    },
+    {
+      "prime": 2671729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 55661,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        222643,
+        445287,
+        667931,
+        890575,
+        1335863,
+        2671727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2671729,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 667940,
+        "divisor": 208,
+        "y": 57566279628,
+        "z": 493895062713980462535
+      }
+    },
+    {
+      "prime": 2707609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 101,
+          "exponent": 1
+        },
+        {
+          "prime": 1117,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        403,
+        807,
+        1211,
+        2423,
+        4467,
+        8935,
+        13403,
+        26807,
+        451267,
+        902535,
+        1353803,
+        2707607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2707609,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 676906,
+        "divisor": 86,
+        "y": 122186451856,
+        "z": 2603987619149663404784
+      }
+    },
+    {
+      "prime": 2754889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 79,
+          "exponent": 1
+        },
+        {
+          "prime": 1453,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        315,
+        631,
+        947,
+        1895,
+        5811,
+        11623,
+        17435,
+        34871,
+        459147,
+        918295,
+        1377443,
+        2754887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2754889,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 688727,
+        "divisor": 31,
+        "y": 99861391386,
+        "z": 6112053299945610383418
+      }
+    },
+    {
+      "prime": 2852809,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 16981,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        67923,
+        135847,
+        203771,
+        407543,
+        475467,
+        950935,
+        1426403,
+        2852807
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2852809,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 713206,
+        "divisor": 26,
+        "y": 135642699712,
+        "z": 10614774222071937040448
+      }
+    },
+    {
+      "prime": 2938489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 17491,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        69963,
+        139927,
+        209891,
+        419783,
+        489747,
+        979495,
+        1469243,
+        2938487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2938489,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 734630,
+        "divisor": 845,
+        "y": 69715651525,
+        "z": 60609714887350
+      }
+    },
+    {
+      "prime": 2978089,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 124087,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        496347,
+        992695,
+        1489043,
+        2978087
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2978089,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 744527,
+        "divisor": 7,
+        "y": 116699395554,
+        "z": 12412264410518994
+      }
+    },
+    {
+      "prime": 2986729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 124447,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        497787,
+        995575,
+        1493363,
+        2986727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 2986729,
+        "certificate_type": "I",
+        "gap": 27,
+        "x": 746689,
+        "divisor": 11862648143,
+        "y": 83037790312,
+        "z": 15610963455704
+      }
+    },
+    {
+      "prime": 3021769,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 41969,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        167875,
+        335751,
+        503627,
+        1007255,
+        1510883,
+        3021767
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 3021769,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 755450,
+        "divisor": 20,
+        "y": 73640510530,
+        "z": 2781586183994425
+      }
+    },
+    {
+      "prime": 3825649,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 31,
+          "exponent": 1
+        },
+        {
+          "prime": 857,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 36,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        35,
+        47,
+        71,
+        123,
+        143,
+        247,
+        371,
+        495,
+        743,
+        1115,
+        1487,
+        2231,
+        3427,
+        4463,
+        6855,
+        10283,
+        13711,
+        20567,
+        30851,
+        41135,
+        61703,
+        106267,
+        123407,
+        212535,
+        318803,
+        425071,
+        637607,
+        956411,
+        1275215,
+        1912823,
+        3825647
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 3825649,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 956417,
+        "divisor": 12421,
+        "y": 192574513266,
+        "z": 56727632045820091818
+      }
+    },
+    {
+      "prime": 3942409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 164267,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        657067,
+        1314135,
+        1971203,
+        3942407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 3942409,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 985606,
+        "divisor": 74,
+        "y": 259063580208,
+        "z": 3450467824790352
+      }
+    },
+    {
+      "prime": 4054009,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 59,
+          "exponent": 1
+        },
+        {
+          "prime": 409,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        235,
+        471,
+        707,
+        1415,
+        1635,
+        1651,
+        3271,
+        3303,
+        4907,
+        4955,
+        9815,
+        9911,
+        11451,
+        22903,
+        34355,
+        68711,
+        96523,
+        193047,
+        289571,
+        579143,
+        675667,
+        1351335,
+        2027003,
+        4054007
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4054009,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1013506,
+        "divisor": 26,
+        "y": 273917496372,
+        "z": 43286997010517217020388
+      }
+    },
+    {
+      "prime": 4219609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 109,
+          "exponent": 1
+        },
+        {
+          "prime": 1613,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        435,
+        871,
+        1307,
+        2615,
+        6451,
+        12903,
+        19355,
+        38711,
+        703267,
+        1406535,
+        2109803,
+        4219607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4219609,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 1054907,
+        "divisor": 49,
+        "y": 234289570116,
+        "z": 5043953215150188
+      }
+    },
+    {
+      "prime": 4253209,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 177217,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        708867,
+        1417735,
+        2126603,
+        4253207
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4253209,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 1063306,
+        "divisor": 74,
+        "y": 301518492428,
+        "z": 4332519217697932
+      }
+    },
+    {
+      "prime": 4413049,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 183877,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        735507,
+        1471015,
+        2206523,
+        4413047
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4413049,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 1103266,
+        "divisor": 74,
+        "y": 324606232244,
+        "z": 4839554316525796
+      }
+    },
+    {
+      "prime": 4570729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 43,
+          "exponent": 2
+        },
+        {
+          "prime": 103,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        171,
+        343,
+        411,
+        515,
+        823,
+        1031,
+        1235,
+        2471,
+        7395,
+        14791,
+        17715,
+        22187,
+        35431,
+        44375,
+        53147,
+        106295,
+        761787,
+        1523575,
+        2285363,
+        4570727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4570729,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 1142687,
+        "divisor": 29,
+        "y": 274890137308,
+        "z": 49507833247828929733396
+      }
+    },
+    {
+      "prime": 4718569,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 421,
+          "exponent": 1
+        },
+        {
+          "prime": 467,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1683,
+        1867,
+        3367,
+        3735,
+        5051,
+        5603,
+        10103,
+        11207,
+        786427,
+        1572855,
+        2359283,
+        4718567
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4718569,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1179646,
+        "divisor": 26,
+        "y": 371082736440,
+        "z": 79443690740281900267560
+      }
+    },
+    {
+      "prime": 4753849,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 2
+        },
+        {
+          "prime": 1637,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        43,
+        87,
+        131,
+        263,
+        483,
+        967,
+        1451,
+        2903,
+        6547,
+        13095,
+        19643,
+        39287,
+        72027,
+        144055,
+        216083,
+        432167,
+        792307,
+        1584615,
+        2376923,
+        4753847
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4753849,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 1188466,
+        "divisor": 254,
+        "y": 376733025552,
+        "z": 1762733826557808
+      }
+    },
+    {
+      "prime": 4779889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 99581,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        398323,
+        796647,
+        1194971,
+        1593295,
+        2389943,
+        4779887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4779889,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 1194980,
+        "divisor": 8,
+        "y": 184255161172,
+        "z": 27522654062164570
+      }
+    },
+    {
+      "prime": 4824649,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 113,
+          "exponent": 1
+        },
+        {
+          "prime": 593,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        451,
+        903,
+        1355,
+        2371,
+        2711,
+        4067,
+        4743,
+        7115,
+        8135,
+        14231,
+        21347,
+        42695,
+        268035,
+        536071,
+        804107,
+        1608215,
+        2412323,
+        4824647
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 4824649,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1206166,
+        "divisor": 26,
+        "y": 387955172384,
+        "z": 86832239872400019583456
+      }
+    },
+    {
+      "prime": 5019529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 209147,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        836587,
+        1673175,
+        2509763,
+        5019527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5019529,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1254886,
+        "divisor": 386,
+        "y": 419929111272,
+        "z": 6852608490267574416888
+      }
+    },
+    {
+      "prime": 5374009,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 101,
+          "exponent": 1
+        },
+        {
+          "prime": 739,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        403,
+        807,
+        1211,
+        2423,
+        2955,
+        3635,
+        5911,
+        7271,
+        8867,
+        17735,
+        26603,
+        53207,
+        298555,
+        597111,
+        895667,
+        1791335,
+        2687003,
+        5374007
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5374009,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 1343507,
+        "divisor": 36311,
+        "y": 390271281598,
+        "z": 14440037419126
+      }
+    },
+    {
+      "prime": 5397529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 224897,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        899587,
+        1799175,
+        2698763,
+        5397527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5397529,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 1349387,
+        "divisor": 13,
+        "y": 383334498144,
+        "z": 214766262451842392382624
+      }
+    },
+    {
+      "prime": 5478169,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 228257,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        913027,
+        1826055,
+        2739083,
+        5478167
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5478169,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 1369547,
+        "divisor": 67,
+        "y": 394874206290,
+        "z": 44217718463336350207410
+      }
+    },
+    {
+      "prime": 5596369,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 31,
+          "exponent": 1
+        },
+        {
+          "prime": 3761,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        123,
+        247,
+        371,
+        495,
+        743,
+        1487,
+        15043,
+        30087,
+        45131,
+        60175,
+        90263,
+        180527,
+        466363,
+        932727,
+        1399091,
+        1865455,
+        2798183,
+        5596367
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5596369,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 1399100,
+        "divisor": 85,
+        "y": 252576769935,
+        "z": 23266420776626664606900
+      }
+    },
+    {
+      "prime": 5703889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 118831,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        475323,
+        950647,
+        1425971,
+        1901295,
+        2851943,
+        5703887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5703889,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 1425977,
+        "divisor": 49,
+        "y": 428099685006,
+        "z": 12458373561751038
+      }
+    },
+    {
+      "prime": 5886169,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 245257,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        981027,
+        1962055,
+        2943083,
+        5886167
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5886169,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1471546,
+        "divisor": 71,
+        "y": 577451229823,
+        "z": 70447166793245470871162
+      }
+    },
+    {
+      "prime": 5897329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 122861,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        491443,
+        982887,
+        1474331,
+        1965775,
+        2948663,
+        5897327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 5897329,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 1474340,
+        "divisor": 20,
+        "y": 280476967240,
+        "z": 20675920594031080
+      }
+    },
+    {
+      "prime": 6254329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 347,
+          "exponent": 1
+        },
+        {
+          "prime": 751,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1387,
+        2775,
+        3003,
+        4163,
+        6007,
+        8327,
+        9011,
+        18023,
+        1042387,
+        2084775,
+        3127163,
+        6254327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 6254329,
+        "certificate_type": "II",
+        "gap": 27,
+        "x": 1563589,
+        "divisor": 197,
+        "y": 362238227022,
+        "z": 2875084807873614
+      }
+    },
+    {
+      "prime": 6279289,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 261637,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1046547,
+        2093095,
+        3139643,
+        6279287
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 6279289,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 1569830,
+        "divisor": 10,
+        "y": 317983194960,
+        "z": 49917955894405680
+      }
+    },
+    {
+      "prime": 6294649,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 41,
+          "exponent": 1
+        },
+        {
+          "prime": 6397,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        163,
+        327,
+        491,
+        983,
+        25587,
+        51175,
+        76763,
+        153527,
+        1049107,
+        2098215,
+        3147323,
+        6294647
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 6294649,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 1573670,
+        "divisor": 14,
+        "y": 319541561836,
+        "z": 35918069258175580
+      }
+    },
+    {
+      "prime": 6316249,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 113,
+          "exponent": 1
+        },
+        {
+          "prime": 137,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        67,
+        135,
+        203,
+        407,
+        451,
+        547,
+        903,
+        1095,
+        1355,
+        1643,
+        2711,
+        3287,
+        7683,
+        9315,
+        15367,
+        18631,
+        23051,
+        27947,
+        46103,
+        55895,
+        61923,
+        123847,
+        185771,
+        371543,
+        1052707,
+        2105415,
+        3158123,
+        6316247
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 6316249,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 1579070,
+        "divisor": 1579070,
+        "y": 321735512500,
+        "z": 2032161609092612500
+      }
+    },
+    {
+      "prime": 6569161,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 4211,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        19,
+        23,
+        39,
+        51,
+        59,
+        103,
+        119,
+        155,
+        259,
+        311,
+        519,
+        779,
+        1559,
+        16843,
+        33687,
+        50531,
+        84219,
+        101063,
+        168439,
+        218971,
+        252659,
+        437943,
+        505319,
+        656915,
+        1094859,
+        1313831,
+        2189719,
+        3284579,
+        6569159
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 6569161,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 1642298,
+        "divisor": 469228,
+        "y": 348016788426,
+        "z": 8001624098556657051
+      }
+    },
+    {
+      "prime": 6856249,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 37,
+          "exponent": 1
+        },
+        {
+          "prime": 1103,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        147,
+        167,
+        295,
+        443,
+        887,
+        1035,
+        2071,
+        3107,
+        4411,
+        6215,
+        8823,
+        13235,
+        26471,
+        30883,
+        61767,
+        92651,
+        163243,
+        185303,
+        326487,
+        489731,
+        979463,
+        1142707,
+        2285415,
+        3428123,
+        6856247
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 6856249,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1714066,
+        "divisor": 86,
+        "y": 783470886568,
+        "z": 107062784318922562163192
+      }
+    },
+    {
+      "prime": 7079209,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 17351,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        67,
+        135,
+        203,
+        407,
+        69403,
+        138807,
+        208211,
+        416423,
+        1179867,
+        2359735,
+        3539603,
+        7079207
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 7079209,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1769806,
+        "divisor": 41,
+        "y": 835255104233,
+        "z": 255238203345730486792702
+      }
+    },
+    {
+      "prime": 7504249,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 312677,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1250707,
+        2501415,
+        3752123,
+        7504247
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 7504249,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 1876067,
+        "divisor": 125696489,
+        "y": 740978926588,
+        "z": 82992393565210036
+      }
+    },
+    {
+      "prime": 7524169,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 313507,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1254027,
+        2508055,
+        3762083,
+        7524167
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 7524169,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 1881050,
+        "divisor": 340,
+        "y": 456641816610,
+        "z": 2526370850394825
+      }
+    },
+    {
+      "prime": 7791529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 324647,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1298587,
+        2597175,
+        3895763,
+        7791527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 7791529,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 1947886,
+        "divisor": 101,
+        "y": 1011800683853,
+        "z": 152040686708700841136782
+      }
+    },
+    {
+      "prime": 8009929,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 4
+        },
+        {
+          "prime": 47,
+          "exponent": 1
+        },
+        {
+          "prime": 263,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 40,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        107,
+        187,
+        215,
+        323,
+        375,
+        563,
+        647,
+        1051,
+        1127,
+        1691,
+        2103,
+        3155,
+        3383,
+        5075,
+        6311,
+        9467,
+        10151,
+        15227,
+        18935,
+        28403,
+        30455,
+        49443,
+        56807,
+        85211,
+        98887,
+        148331,
+        170423,
+        296663,
+        444995,
+        889991,
+        1334987,
+        2669975,
+        4004963,
+        8009927
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 8009929,
+        "certificate_type": "I",
+        "gap": 27,
+        "x": 2002489,
+        "divisor": 317,
+        "y": 594066470874,
+        "z": 30059003908082922294882
+      }
+    },
+    {
+      "prime": 8083849,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 336827,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1347307,
+        2694615,
+        4041923,
+        8083847
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 8083849,
+        "certificate_type": "II",
+        "gap": 39,
+        "x": 2020972,
+        "divisor": 8,
+        "y": 418905055180,
+        "z": 105824423397154370
+      }
+    },
+    {
+      "prime": 8589289,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 61,
+          "exponent": 1
+        },
+        {
+          "prime": 5867,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        243,
+        487,
+        731,
+        1463,
+        23467,
+        46935,
+        70403,
+        140807,
+        1431547,
+        2863095,
+        4294643,
+        8589287
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 8589289,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2147327,
+        "divisor": 91,
+        "y": 970778621358,
+        "z": 22907463128184726
+      }
+    },
+    {
+      "prime": 8797849,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 103,
+          "exponent": 1
+        },
+        {
+          "prime": 3559,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        411,
+        823,
+        1235,
+        2471,
+        14235,
+        28471,
+        42707,
+        85415,
+        1466307,
+        2932615,
+        4398923,
+        8797847
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 8797849,
+        "certificate_type": "I",
+        "gap": 27,
+        "x": 2199469,
+        "divisor": 578460347,
+        "y": 716710170464,
+        "z": 23975315043751072
+      }
+    },
+    {
+      "prime": 8965609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 373567,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1494267,
+        2988535,
+        4482803,
+        8965607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 8965609,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2241407,
+        "divisor": 1087849,
+        "y": 1570989871416,
+        "z": 3236871748488
+      }
+    },
+    {
+      "prime": 9081769,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 378407,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1513627,
+        3027255,
+        4540883,
+        9081767
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9081769,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 2270446,
+        "divisor": 146,
+        "y": 1374644406608,
+        "z": 194141840199172660463152
+      }
+    },
+    {
+      "prime": 9104209,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 189671,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        758683,
+        1517367,
+        2276051,
+        3034735,
+        4552103,
+        9104207
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9104209,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2276057,
+        "divisor": 67,
+        "y": 1090647821364,
+        "z": 37050397139556444
+      }
+    },
+    {
+      "prime": 9315289,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 129379,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        517515,
+        1035031,
+        1552547,
+        3105095,
+        4657643,
+        9315287
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9315289,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 2328830,
+        "divisor": 14,
+        "y": 699801770836,
+        "z": 116408525569714420
+      }
+    },
+    {
+      "prime": 9323449,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 388477,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1553907,
+        3107815,
+        4661723,
+        9323447
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9323449,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 2330870,
+        "divisor": 20,
+        "y": 701030130310,
+        "z": 81700504991783485
+      }
+    },
+    {
+      "prime": 9394009,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 30109,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        51,
+        103,
+        155,
+        311,
+        120435,
+        240871,
+        361307,
+        722615,
+        1565667,
+        3131335,
+        4697003,
+        9394007
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9394009,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2348507,
+        "divisor": 7,
+        "y": 1161155876454,
+        "z": 389568957706193454
+      }
+    },
+    {
+      "prime": 9711529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 173,
+          "exponent": 1
+        },
+        {
+          "prime": 2339,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        691,
+        1383,
+        2075,
+        4151,
+        9355,
+        18711,
+        28067,
+        56135,
+        1618587,
+        3237175,
+        4855763,
+        9711527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9711529,
+        "certificate_type": "II",
+        "gap": 47,
+        "x": 2427894,
+        "divisor": 126,
+        "y": 501697588140,
+        "z": 9667210825869660
+      }
+    },
+    {
+      "prime": 9716569,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 61,
+          "exponent": 1
+        },
+        {
+          "prime": 6637,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        243,
+        487,
+        731,
+        1463,
+        26547,
+        53095,
+        79643,
+        159287,
+        1619427,
+        3238855,
+        4858283,
+        9716567
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9716569,
+        "certificate_type": "I",
+        "gap": 27,
+        "x": 2429149,
+        "divisor": 53,
+        "y": 874184958142,
+        "z": 389309098265667661956734
+      }
+    },
+    {
+      "prime": 9872809,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 37397,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        43,
+        87,
+        131,
+        263,
+        149587,
+        299175,
+        448763,
+        897527,
+        1645467,
+        3290935,
+        4936403,
+        9872807
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 9872809,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 2468206,
+        "divisor": 26,
+        "y": 1624541760712,
+        "z": 1522578422477555304439448
+      }
+    },
+    {
+      "prime": 10170169,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 22303,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        75,
+        151,
+        227,
+        455,
+        89211,
+        178423,
+        267635,
+        535271,
+        1695027,
+        3390055,
+        5085083,
+        10170167
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10170169,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 2542546,
+        "divisor": 29,
+        "y": 1723894496345,
+        "z": 151140726072551530
+      }
+    },
+    {
+      "prime": 10225609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 53,
+          "exponent": 1
+        },
+        {
+          "prime": 8039,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        211,
+        423,
+        635,
+        1271,
+        32155,
+        64311,
+        96467,
+        192935,
+        1704267,
+        3408535,
+        5112803,
+        10225607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10225609,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 2556407,
+        "divisor": 2556407,
+        "y": 1375832683330,
+        "z": 14068727069153397970
+      }
+    },
+    {
+      "prime": 10418809,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 434117,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1736467,
+        3472935,
+        5209403,
+        10418807
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10418809,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 2604706,
+        "divisor": 26,
+        "y": 1809195621012,
+        "z": 1888378151011073305862148
+      }
+    },
+    {
+      "prime": 10637449,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 443227,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1772907,
+        3545815,
+        5318723,
+        10637447
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10637449,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 2659366,
+        "divisor": 59,
+        "y": 1885966520455,
+        "z": 85008054942988670
+      }
+    },
+    {
+      "prime": 10665769,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 37,
+          "exponent": 1
+        },
+        {
+          "prime": 12011,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        147,
+        295,
+        443,
+        887,
+        48043,
+        96087,
+        144131,
+        288263,
+        1777627,
+        3555255,
+        5332883,
+        10665767
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10665769,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 2666446,
+        "divisor": 59,
+        "y": 1896021757823,
+        "z": 85688807323052662
+      }
+    },
+    {
+      "prime": 10875769,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 453157,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1812627,
+        3625255,
+        5437883,
+        10875767
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10875769,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 2718950,
+        "divisor": 325,
+        "y": 953892649125,
+        "z": 86791528515033865077750
+      }
+    },
+    {
+      "prime": 10960009,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 313,
+          "exponent": 1
+        },
+        {
+          "prime": 1459,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1251,
+        2503,
+        3755,
+        5835,
+        7511,
+        11671,
+        17507,
+        35015,
+        1826667,
+        3653335,
+        5480003,
+        10960007
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 10960009,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 2740006,
+        "divisor": 206,
+        "y": 2002032694684,
+        "z": 291854483778362896566956
+      }
+    },
+    {
+      "prime": 11052409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 53,
+          "exponent": 1
+        },
+        {
+          "prime": 8689,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        211,
+        423,
+        635,
+        1271,
+        34755,
+        69511,
+        104267,
+        208535,
+        1842067,
+        3684135,
+        5526203,
+        11052407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11052409,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2763107,
+        "divisor": 5041,
+        "y": 1610247572028,
+        "z": 882619785360756
+      }
+    },
+    {
+      "prime": 11361529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 157799,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        631195,
+        1262391,
+        1893587,
+        3787175,
+        5680763,
+        11361527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11361529,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 2840390,
+        "divisor": 140,
+        "y": 1041056902270,
+        "z": 21121482961704895
+      }
+    },
+    {
+      "prime": 11712409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 401,
+          "exponent": 1
+        },
+        {
+          "prime": 1217,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1603,
+        3207,
+        4811,
+        4867,
+        9623,
+        9735,
+        14603,
+        29207,
+        1952067,
+        3904135,
+        5856203,
+        11712407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11712409,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 2928106,
+        "divisor": 74,
+        "y": 2286402785708,
+        "z": 90470671827679852
+      }
+    },
+    {
+      "prime": 11731129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 488797,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1955187,
+        3910375,
+        5865563,
+        11731127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11731129,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2932787,
+        "divisor": 1573,
+        "y": 1811755562760,
+        "z": 3377935894240440
+      }
+    },
+    {
+      "prime": 11835289,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 157,
+          "exponent": 1
+        },
+        {
+          "prime": 349,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        107,
+        215,
+        627,
+        1255,
+        1395,
+        1883,
+        2791,
+        3767,
+        4187,
+        5651,
+        8375,
+        11303,
+        12563,
+        16955,
+        25127,
+        33911,
+        37691,
+        75383,
+        219171,
+        438343,
+        657515,
+        1315031,
+        1972547,
+        3945095,
+        5917643,
+        11835287
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11835289,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 2958826,
+        "divisor": 26,
+        "y": 2334570720716,
+        "z": 3144357951934832932098124
+      }
+    },
+    {
+      "prime": 11897449,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 337,
+          "exponent": 1
+        },
+        {
+          "prime": 1471,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1347,
+        2695,
+        4043,
+        5883,
+        8087,
+        11767,
+        17651,
+        35303,
+        1982907,
+        3965815,
+        5948723,
+        11897447
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11897449,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 2974367,
+        "divisor": 121,
+        "y": 1862569435848,
+        "z": 45784835249544696
+      }
+    },
+    {
+      "prime": 11929129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 497047,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1988187,
+        3976375,
+        5964563,
+        11929127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11929129,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 2982290,
+        "divisor": 305,
+        "y": 1147616842765,
+        "z": 133861498201262575675930
+      }
+    },
+    {
+      "prime": 11996329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 191,
+          "exponent": 1
+        },
+        {
+          "prime": 2617,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        763,
+        1527,
+        2291,
+        4583,
+        10467,
+        20935,
+        31403,
+        62807,
+        1999387,
+        3998775,
+        5998163,
+        11996327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 11996329,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 2999086,
+        "divisor": 359,
+        "y": 2398821935827,
+        "z": 20039758451898758
+      }
+    },
+    {
+      "prime": 12134329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 29741,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        67,
+        135,
+        203,
+        407,
+        118963,
+        237927,
+        356891,
+        713783,
+        2022387,
+        4044775,
+        6067163,
+        12134327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 12134329,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 3033586,
+        "divisor": 251,
+        "y": 2454035371603,
+        "z": 359897785161610165751282
+      }
+    },
+    {
+      "prime": 12150889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 283,
+          "exponent": 1
+        },
+        {
+          "prime": 1789,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1131,
+        2263,
+        3395,
+        6791,
+        7155,
+        14311,
+        21467,
+        42935,
+        2025147,
+        4050295,
+        6075443,
+        12150887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 12150889,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 3037730,
+        "divisor": 17,
+        "y": 1190681291677,
+        "z": 2585257652283390708922570
+      }
+    },
+    {
+      "prime": 12326521,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 139,
+          "exponent": 1
+        },
+        {
+          "prime": 739,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        19,
+        23,
+        39,
+        59,
+        119,
+        555,
+        1111,
+        1667,
+        2779,
+        2955,
+        3335,
+        5559,
+        5911,
+        8339,
+        8867,
+        14779,
+        16679,
+        17735,
+        29559,
+        44339,
+        88679,
+        410883,
+        821767,
+        1232651,
+        2054419,
+        2465303,
+        4108839,
+        6163259,
+        12326519
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 12326521,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 3081634,
+        "divisor": 2876,
+        "y": 2532388414546,
+        "z": 33447450008560119640319
+      }
+    },
+    {
+      "prime": 12466969,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 519457,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2077827,
+        4155655,
+        6233483,
+        12466967
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 12466969,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 3116746,
+        "divisor": 29,
+        "y": 2590449153665,
+        "z": 278405932340992210
+      }
+    },
+    {
+      "prime": 12784489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 532687,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2130747,
+        4261495,
+        6392243,
+        12784487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 12784489,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 3196130,
+        "divisor": 1,
+        "y": 1318093600389,
+        "z": 4212798499011294570
+      }
+    },
+    {
+      "prime": 12853129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 535547,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2142187,
+        4284375,
+        6426563,
+        12853127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 12853129,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 3213287,
+        "divisor": 203,
+        "y": 2173725911854,
+        "z": 442249273187208401066614
+      }
+    },
+    {
+      "prime": 13177609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 43,
+          "exponent": 1
+        },
+        {
+          "prime": 113,
+          "exponent": 2
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        171,
+        343,
+        451,
+        515,
+        903,
+        1031,
+        1355,
+        2711,
+        19435,
+        38871,
+        51075,
+        58307,
+        102151,
+        116615,
+        153227,
+        306455,
+        2196267,
+        4392535,
+        6588803,
+        13177607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 13177609,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 3294406,
+        "divisor": 74,
+        "y": 2894224619888,
+        "z": 128847985852793872
+      }
+    },
+    {
+      "prime": 13334281,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 111119,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        19,
+        23,
+        39,
+        59,
+        119,
+        444475,
+        888951,
+        1333427,
+        2222379,
+        2666855,
+        4444759,
+        6667139,
+        13334279
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 13334281,
+        "certificate_type": "II",
+        "gap": 27,
+        "x": 3333577,
+        "divisor": 290849,
+        "y": 1789967212878,
+        "z": 20515778055294
+      }
+    },
+    {
+      "prime": 13782409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 557,
+          "exponent": 1
+        },
+        {
+          "prime": 1031,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2227,
+        4123,
+        4455,
+        6683,
+        8247,
+        12371,
+        13367,
+        24743,
+        2297067,
+        4594135,
+        6891203,
+        13782407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 13782409,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 3445606,
+        "divisor": 29,
+        "y": 3165943388981,
+        "z": 376158397818388534
+      }
+    },
+    {
+      "prime": 13844329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 181,
+          "exponent": 1
+        },
+        {
+          "prime": 3187,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        723,
+        1447,
+        2171,
+        4343,
+        12747,
+        25495,
+        38243,
+        76487,
+        2307387,
+        4614775,
+        6922163,
+        13844327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 13844329,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 3461086,
+        "divisor": 134,
+        "y": 3194551228092,
+        "z": 82512063670388268
+      }
+    },
+    {
+      "prime": 14706409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 101,
+          "exponent": 1
+        },
+        {
+          "prime": 6067,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        403,
+        807,
+        1211,
+        2423,
+        24267,
+        48535,
+        72803,
+        145607,
+        2451067,
+        4902135,
+        7353203,
+        14706407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 14706409,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 3676606,
+        "divisor": 734,
+        "y": 3605364404804,
+        "z": 18059270303663236
+      }
+    },
+    {
+      "prime": 15072649,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 659,
+          "exponent": 1
+        },
+        {
+          "prime": 953,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2635,
+        3811,
+        5271,
+        7623,
+        7907,
+        11435,
+        15815,
+        22871,
+        2512107,
+        5024215,
+        7536323,
+        15072647
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15072649,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 3768167,
+        "divisor": 48986171,
+        "y": 2989279344766,
+        "z": 3465873717431377318
+      }
+    },
+    {
+      "prime": 15308329,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 91121,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        364483,
+        728967,
+        1093451,
+        2186903,
+        2551387,
+        5102775,
+        7654163,
+        15308327
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15308329,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 3827086,
+        "divisor": 86,
+        "y": 3905752773292,
+        "z": 2660739196405073749875068
+      }
+    },
+    {
+      "prime": 15364969,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 71,
+          "exponent": 2
+        },
+        {
+          "prime": 127,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        283,
+        507,
+        567,
+        851,
+        1015,
+        1523,
+        1703,
+        3047,
+        20163,
+        36067,
+        40327,
+        60491,
+        72135,
+        108203,
+        120983,
+        216407,
+        2560827,
+        5121655,
+        7682483,
+        15364967
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15364969,
+        "certificate_type": "II",
+        "gap": 27,
+        "x": 3841249,
+        "divisor": 41,
+        "y": 2185974139630,
+        "z": 204801731167795070
+      }
+    },
+    {
+      "prime": 15405289,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 229,
+          "exponent": 1
+        },
+        {
+          "prime": 2803,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        915,
+        1831,
+        2747,
+        5495,
+        11211,
+        22423,
+        33635,
+        67271,
+        2567547,
+        5135095,
+        7702643,
+        15405287
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15405289,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 3851330,
+        "divisor": 518,
+        "y": 1913898441448,
+        "z": 219214719244204997339320
+      }
+    },
+    {
+      "prime": 15408649,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 214009,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        856035,
+        1712071,
+        2568107,
+        5136215,
+        7704323,
+        15408647
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15408649,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 3852167,
+        "divisor": 121,
+        "y": 3124134402048,
+        "z": 99460226835818496
+      }
+    },
+    {
+      "prime": 15648649,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 23,
+          "exponent": 1
+        },
+        {
+          "prime": 28349,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        91,
+        183,
+        275,
+        551,
+        113395,
+        226791,
+        340187,
+        680375,
+        2608107,
+        5216215,
+        7824323,
+        15648647
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15648649,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 3912166,
+        "divisor": 1226,
+        "y": 4081340837664,
+        "z": 203801097465542001751776
+      }
+    },
+    {
+      "prime": 15870409,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 661267,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2645067,
+        5290135,
+        7935203,
+        15870407
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 15870409,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 3967606,
+        "divisor": 29,
+        "y": 4197866014181,
+        "z": 574326840864159334
+      }
+    },
+    {
+      "prime": 16002529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 5
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 166693,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        31,
+        47,
+        95,
+        666771,
+        1333543,
+        2000315,
+        2667087,
+        4000631,
+        5334175,
+        8001263,
+        16002527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 16002529,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 4000637,
+        "divisor": 146189,
+        "y": 3492615964366,
+        "z": 95579617165678
+      }
+    },
+    {
+      "prime": 16152889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 35423,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        75,
+        151,
+        227,
+        455,
+        141691,
+        283383,
+        425075,
+        850151,
+        2692147,
+        5384295,
+        8076443,
+        16152887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 16152889,
+        "certificate_type": "II",
+        "gap": 27,
+        "x": 4038229,
+        "divisor": 53,
+        "y": 2415922996174,
+        "z": 184076420847485582
+      }
+    },
+    {
+      "prime": 16267729,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 227,
+          "exponent": 1
+        },
+        {
+          "prime": 1493,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        907,
+        1815,
+        2723,
+        3631,
+        5447,
+        5971,
+        10895,
+        11943,
+        17915,
+        23887,
+        35831,
+        71663,
+        1355643,
+        2711287,
+        4066931,
+        5422575,
+        8133863,
+        16267727
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 16267729,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 4066937,
+        "divisor": 3409,
+        "y": 3482096262078,
+        "z": 67578437423673671868366
+      }
+    },
+    {
+      "prime": 16287049,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 3
+        },
+        {
+          "prime": 75403,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        107,
+        215,
+        301611,
+        603223,
+        904835,
+        1809671,
+        2714507,
+        5429015,
+        8143523,
+        16287047
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 16287049,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 4071767,
+        "divisor": 24367,
+        "y": 3511259745714,
+        "z": 586737454796514
+      }
+    },
+    {
+      "prime": 16308889,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 679537,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2718147,
+        5436295,
+        8154443,
+        16308887
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 16308889,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4077226,
+        "divisor": 29,
+        "y": 4433033281313,
+        "z": 623257881152919922
+      }
+    },
+    {
+      "prime": 16732489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 41011,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        67,
+        135,
+        203,
+        407,
+        164043,
+        328087,
+        492131,
+        984263,
+        2788747,
+        5577495,
+        8366243,
+        16732487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 16732489,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 4183126,
+        "divisor": 86,
+        "y": 4666273985380,
+        "z": 3797810390687336363295620
+      }
+    },
+    {
+      "prime": 17041369,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 127,
+          "exponent": 1
+        },
+        {
+          "prime": 5591,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        507,
+        1015,
+        1523,
+        3047,
+        22363,
+        44727,
+        67091,
+        134183,
+        2840227,
+        5680455,
+        8520683,
+        17041367
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17041369,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 4260350,
+        "divisor": 13900,
+        "y": 2342006336550,
+        "z": 12232719716625684875175
+      }
+    },
+    {
+      "prime": 17075689,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 101641,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        406563,
+        813127,
+        1219691,
+        2439383,
+        2845947,
+        5691895,
+        8537843,
+        17075687
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17075689,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 4268927,
+        "divisor": 13,
+        "y": 3836572095564,
+        "z": 21512801803438202244910884
+      }
+    },
+    {
+      "prime": 17137129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 71,
+          "exponent": 1
+        },
+        {
+          "prime": 89,
+          "exponent": 1
+        },
+        {
+          "prime": 113,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        283,
+        355,
+        451,
+        567,
+        711,
+        851,
+        903,
+        1067,
+        1355,
+        1703,
+        2135,
+        2711,
+        25275,
+        32091,
+        40227,
+        50551,
+        64183,
+        75827,
+        80455,
+        96275,
+        120683,
+        151655,
+        192551,
+        241367,
+        2856187,
+        5712375,
+        8568563,
+        17137127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17137129,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4284286,
+        "divisor": 29,
+        "y": 4894723922109,
+        "z": 723117143908851006
+      }
+    },
+    {
+      "prime": 17145529,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 79,
+          "exponent": 1
+        },
+        {
+          "prime": 9043,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        315,
+        631,
+        947,
+        1895,
+        36171,
+        72343,
+        108515,
+        217031,
+        2857587,
+        5715175,
+        8572763,
+        17145527
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17145529,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 4286386,
+        "divisor": 26,
+        "y": 4899490364548,
+        "z": 13849041826321270087661012
+      }
+    },
+    {
+      "prime": 17311849,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 151,
+          "exponent": 1
+        },
+        {
+          "prime": 281,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 32,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        67,
+        135,
+        203,
+        407,
+        603,
+        1123,
+        1207,
+        1811,
+        2247,
+        3371,
+        3623,
+        6743,
+        10267,
+        19107,
+        20535,
+        30803,
+        38215,
+        57323,
+        61607,
+        114647,
+        169723,
+        339447,
+        509171,
+        1018343,
+        2885307,
+        5770615,
+        8655923,
+        17311847
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17311849,
+        "certificate_type": "II",
+        "gap": 19,
+        "x": 4327967,
+        "divisor": 919681,
+        "y": 4781394199008,
+        "z": 22500971866656
+      }
+    },
+    {
+      "prime": 17422969,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 25033,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        115,
+        231,
+        347,
+        695,
+        100131,
+        200263,
+        300395,
+        600791,
+        2903827,
+        5807655,
+        8711483,
+        17422967
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17422969,
+        "certificate_type": "II",
+        "gap": 39,
+        "x": 4355752,
+        "divisor": 2,
+        "y": 1945901715734,
+        "z": 4237932645055900984
+      }
+    },
+    {
+      "prime": 17473129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 728047,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2912187,
+        5824375,
+        8736563,
+        17473127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17473129,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 4368286,
+        "divisor": 26,
+        "y": 5088508319128,
+        "z": 14938221296438102197842632
+      }
+    },
+    {
+      "prime": 17582569,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 379,
+          "exponent": 1
+        },
+        {
+          "prime": 1933,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        1515,
+        3031,
+        4547,
+        7731,
+        9095,
+        15463,
+        23195,
+        46391,
+        2930427,
+        5860855,
+        8791283,
+        17582567
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17582569,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4395646,
+        "divisor": 29,
+        "y": 5152483932605,
+        "z": 780982599600670270
+      }
+    },
+    {
+      "prime": 17608369,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 366841,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        1467363,
+        2934727,
+        4402091,
+        5869455,
+        8804183,
+        17608367
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17608369,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 4402097,
+        "divisor": 3941,
+        "y": 4079670965986,
+        "z": 80241204924485085443578
+      }
+    },
+    {
+      "prime": 17644489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 735187,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2940747,
+        5881495,
+        8822243,
+        17644487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17644489,
+        "certificate_type": "II",
+        "gap": 39,
+        "x": 4411132,
+        "divisor": 2,
+        "y": 1995697572834,
+        "z": 4401642712925194044
+      }
+    },
+    {
+      "prime": 17722609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 251,
+          "exponent": 1
+        },
+        {
+          "prime": 1471,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        47,
+        1003,
+        2007,
+        3011,
+        4015,
+        5883,
+        6023,
+        11767,
+        12047,
+        17651,
+        23535,
+        35303,
+        70607,
+        1476883,
+        2953767,
+        4430651,
+        5907535,
+        8861303,
+        17722607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17722609,
+        "certificate_type": "I",
+        "gap": 27,
+        "x": 4430659,
+        "divisor": 4913,
+        "y": 2908253224972,
+        "z": 46481639352907142256164
+      }
+    },
+    {
+      "prime": 17723689,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 738487,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2953947,
+        5907895,
+        8861843,
+        17723687
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17723689,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 4430927,
+        "divisor": 192649,
+        "y": 4133282753808,
+        "z": 1684911415783800827376
+      }
+    },
+    {
+      "prime": 17846761,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 148723,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        19,
+        23,
+        39,
+        59,
+        119,
+        594891,
+        1189783,
+        1784675,
+        2974459,
+        3569351,
+        5948919,
+        8923379,
+        17846759
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17846761,
+        "certificate_type": "I",
+        "gap": 31,
+        "x": 4461698,
+        "divisor": 4461698,
+        "y": 2568608461996,
+        "z": 45841341323820194956
+      }
+    },
+    {
+      "prime": 17898169,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 745757,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2983027,
+        5966055,
+        8949083,
+        17898167
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17898169,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4474546,
+        "divisor": 269,
+        "y": 5339399674249,
+        "z": 88815574181457866
+      }
+    },
+    {
+      "prime": 17909929,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 248749,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 12,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        994995,
+        1989991,
+        2984987,
+        5969975,
+        8954963,
+        17909927
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17909929,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 4477486,
+        "divisor": 26,
+        "y": 5346097090568,
+        "z": 16488896597175212207464792
+      }
+    },
+    {
+      "prime": 17992489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 743,
+          "exponent": 1
+        },
+        {
+          "prime": 1009,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        2971,
+        4035,
+        5943,
+        8071,
+        8915,
+        12107,
+        17831,
+        24215,
+        2998747,
+        5997495,
+        8996243,
+        17992487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17992489,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 4498127,
+        "divisor": 37,
+        "y": 4259605293060,
+        "z": 9317311021634405291980140
+      }
+    },
+    {
+      "prime": 17995609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 5
+        },
+        {
+          "prime": 9257,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 24,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        71,
+        107,
+        215,
+        323,
+        647,
+        971,
+        1943,
+        37027,
+        74055,
+        111083,
+        222167,
+        333251,
+        666503,
+        999755,
+        1999511,
+        2999267,
+        5998535,
+        8997803,
+        17995607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 17995609,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4498906,
+        "divisor": 149,
+        "y": 5397548976633,
+        "z": 162973593800456802
+      }
+    },
+    {
+      "prime": 18007609,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 25873,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        115,
+        231,
+        347,
+        695,
+        103491,
+        206983,
+        310475,
+        620951,
+        3001267,
+        6002535,
+        9003803,
+        18007607
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 18007609,
+        "certificate_type": "II",
+        "gap": 31,
+        "x": 4501910,
+        "divisor": 1460,
+        "y": 2615965359430,
+        "z": 8066329185802405
+      }
+    },
+    {
+      "prime": 18118489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 754937,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 8,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        3019747,
+        6039495,
+        9059243,
+        18118487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 18118489,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4529626,
+        "divisor": 29,
+        "y": 5471366952753,
+        "z": 854594689818302082
+      }
+    },
+    {
+      "prime": 18517129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 110221,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        55,
+        83,
+        167,
+        440883,
+        881767,
+        1322651,
+        2645303,
+        3086187,
+        6172375,
+        9258563,
+        18517127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 18517129,
+        "certificate_type": "I",
+        "gap": 19,
+        "x": 4629287,
+        "divisor": 5704098517,
+        "y": 4511937297660,
+        "z": 67805324135751540
+      }
+    },
+    {
+      "prime": 18760009,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 103,
+          "exponent": 1
+        },
+        {
+          "prime": 7589,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        411,
+        823,
+        1235,
+        2471,
+        30355,
+        60711,
+        91067,
+        182135,
+        3126667,
+        6253335,
+        9380003,
+        18760007
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 18760009,
+        "certificate_type": "I",
+        "gap": 15,
+        "x": 4690006,
+        "divisor": 1361,
+        "y": 5865636984761,
+        "z": 379195781445230421937654
+      }
+    },
+    {
+      "prime": 18787129,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 26993,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        115,
+        231,
+        347,
+        695,
+        107971,
+        215943,
+        323915,
+        647831,
+        3131187,
+        6262375,
+        9393563,
+        18787127
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 18787129,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4696786,
+        "divisor": 389,
+        "y": 5883095510705,
+        "z": 71032495196252170
+      }
+    },
+    {
+      "prime": 19504489,
+      "p_minus_one_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 42773,
+          "exponent": 1
+        }
+      ],
+      "eligible_gap_count": 16,
+      "eligible_gaps": [
+        3,
+        7,
+        11,
+        23,
+        75,
+        151,
+        227,
+        455,
+        171091,
+        342183,
+        513275,
+        1026551,
+        3250747,
+        6501495,
+        9752243,
+        19504487
+      ],
+      "shortest_bradford_certificate": {
+        "prime": 19504489,
+        "certificate_type": "II",
+        "gap": 15,
+        "x": 4876126,
+        "divisor": 134,
+        "y": 6340597302076,
+        "z": 230727995225243564
+      }
+    }
+  ]
+}
