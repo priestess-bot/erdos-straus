@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-normal-even-source-small-side-simplification
 title: Type I 偶源桥的小侧普通除子对可免除大小预算
-statement: 对核心素数的 Type I 正规形偶源桥，令 L=2K 并既约化 E/L=a/b。则 a=b 不可能。若 a<b，则 E<L<2L-2R，故桥的大小条件自动成立；此时 E 为偶数当且仅当 2 整除 a 或 b 整除 L/2。反之，任意满足 E<L 的偶源桥都给出这样的 a<b 普通除子对。因此小侧终端选择只需强制互素除子 a,b 整除 L、a=2b 模 R 与这个显式偶性条件。
+statement: 对核心素数的 Type I 正规形偶源桥，令 L=2K 并既约化 E/L=a/b。则 a=b 不可能。若 a<b，则 E<L<2L-2R，故桥的大小条件自动成立；此时 E 为偶数当且仅当 2 整除 a 或 b 整除 L/2。并且 a<b 当且仅当源 n=(2L-E)/R 满足 n≥(p+1)/2；因 p=1 mod24 且 n 为偶数，等价于 n≥(p+3)/2。反之，任意满足 E<L 的偶源桥都给出这样的 a<b 普通除子对。因此小侧终端选择只需强制互素除子 a,b 整除 L、a=2b 模 R 与这个显式偶性条件。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -66,18 +66,50 @@ a,b\mid L,\quad (a,b)=1,\quad a<b,\quad a\equiv2b\pmod R,
 
 反过来，任何已有偶源桥若满足 \(E<L\)，其既约对必满足 \(a<b\)，因而落入 (4)。
 
+令桥的源为
+
+\[
+n=\frac{2L-E}{R}.
+\]
+
+则小侧条件还有精确的源深度表达：
+
+\[
+a<b
+\quad\Longleftrightarrow\quad
+E<L
+\quad\Longleftrightarrow\quad
+n\ge\frac{p+1}{2}. \tag{5}
+\]
+
+因为 \(p\equiv1\pmod {24}\) 使 \((p+1)/2\) 为奇数，而偶桥强制 \(n\) 为偶数，(5)
+在本问题中也等价于 \(n\ge(p+3)/2\)。
+
 ## 证明
 
 由正规形关系 \(4K=pR+1\) 可知 \((L,R)=1\)。又
 
 \[
-L-2R=\frac{(p-4)R+1}{2}>0. \tag{5}
+L-2R=\frac{(p-4)R+1}{2}>0. \tag{6}
 \]
 
 若 \(a=b\)，互素性迫使 \(a=b=1\)。而 \(a\equiv2b\pmod R\) 则给出
 \(1\equiv2\pmod R\)，这与正规形中 \(R\equiv3\pmod4\)、\(R\ge3\) 矛盾，故 (1) 成立。
 
-若 \(a<b\)，则 \(E=La/b<L\)。式 (5) 给出 \(L<2L-2R\)，于是 (2) 成立。
+若 \(a<b\)，则 \(E=La/b<L\)。式 (6) 给出 \(L<2L-2R\)，于是 (2) 成立。
+
+由 \(a\ne b\) 及 \(E/L=a/b\)，有 \(a<b\) 当且仅当 \(E<L\)。另一方面
+
+\[
+E<L
+\quad\Longleftrightarrow\quad
+nR>L=\frac{pR+1}{2}
+\quad\Longleftrightarrow\quad
+n>\frac p2+\frac1{2R}.
+\]
+
+其中 \(p\) 为奇数而 \(R\ge3\)，故对整数 \(n\) 此条件恰为
+\(n\ge(p+1)/2\)，证明 (5)。
 
 最后，\((a,b)=1\) 意味着若 \(a\) 为偶数则 \(b\) 为奇数，因而 \(E=La/b\) 为偶数。
 若 \(a\) 为奇数，则 \(E\) 为偶数当且仅当 \(L/b\) 为偶数，等价于
@@ -94,3 +126,5 @@ L-2R=\frac{(p-4)R+1}{2}>0. \tag{5}
 在同一 \((L,R)\) 状态下拥有小侧桥；剩余 95 条只是同一状态内的大侧残余。
 它们在同一有限 Type I 盒的其它正规形中均有小侧替代，见
 [替代正规形剖面](type-I-tail-reverse-even-source-small-side-alternative-profile-500m.md)。
+五亿至六亿连续区间的 247 条普通双尾遗漏也全部可重选为小侧桥，见
+[连续区间小侧剖面](type-I-mixed-terminal-dense-small-side-profile-600m.md)。

@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 242 |
+| 数学状态 | `computationally_reproduced` | 243 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 191 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 15 |
+| 证明来源 | `computational_reproduction` | 16 |
 | 证明来源 | `mixed` | 3 |
 | 证明来源 | `repository_derivation` | 14 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 26 |
+| 审阅状态 | `internal_review` | 27 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -251,6 +251,7 @@
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [五亿至六亿连续区间的 Type I 回退全部可选上半区偶源](../claims/type-I-mixed-terminal-dense-small-side-profile-600m.md) (`type-I-mixed-terminal-dense-small-side-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [六亿稀疏尾遗漏族的混合终端闭合](../claims/type-I-mixed-terminal-sparse-tail-600m.md) (`type-I-mixed-terminal-sparse-tail-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [Type I 自适应一私有因子逃逸可达二十三窗口但在九十五缺口闭合](../claims/type-I-moving-window-adaptive-conditional-escape.md) (`type-I-moving-window-adaptive-conditional-escape`) | `conditional` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 移动窗口失败的有限碰撞--私有因子分解](../claims/type-I-moving-window-finite-collision-reduction.md) (`type-I-moving-window-finite-collision-reduction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
