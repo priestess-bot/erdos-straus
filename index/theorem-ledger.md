@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 245 |
+| 数学状态 | `computationally_reproduced` | 246 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 193 |
 | 数学状态 | `open` | 9 |
-| 证明来源 | `computational_reproduction` | 18 |
+| 证明来源 | `computational_reproduction` | 19 |
 | 证明来源 | `mixed` | 5 |
 | 证明来源 | `repository_derivation` | 15 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 32 |
+| 审阅状态 | `internal_review` | 33 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -275,6 +275,7 @@
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I的p减一B一二除子剩余类选择器](../claims/type-I-pminusone-b12-divisor-residue-selector.md) (`type-I-pminusone-b12-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [五亿p减一遗漏最短源状态的三级指数溢出边界](../claims/type-I-pminusone-miss-source-overflow-profile-500m.md) (`type-I-pminusone-miss-source-overflow-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p减一遗漏的127个上半区源状态菜单存在CRT逃逸](../claims/type-I-pminusone-miss-state-menu-crt-escape-500m.md) (`type-I-pminusone-miss-state-menu-crt-escape-500m`) | `established` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿 p减一桥遗漏的最短上半区源剖面](../claims/type-I-pminusone-miss-upper-half-profile-500m.md) (`type-I-pminusone-miss-upper-half-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
