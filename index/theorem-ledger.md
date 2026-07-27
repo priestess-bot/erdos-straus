@@ -18,11 +18,11 @@
 | 数学状态 | `open` | 8 |
 | 证明来源 | `computational_reproduction` | 10 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 5 |
-| 证明来源 | `unspecified` | 432 |
+| 证明来源 | `repository_derivation` | 6 |
+| 证明来源 | `unspecified` | 431 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 12 |
-| 审阅状态 | `unspecified` | 432 |
+| 审阅状态 | `internal_review` | 13 |
+| 审阅状态 | `unspecified` | 431 |
 
 ## 全部主张
 
@@ -261,7 +261,7 @@
 | [Type I正规形桥因子的归一化源平方等价](../claims/type-I-normal-source-square-bridge-equivalence.md) (`type-I-normal-source-square-bridge-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I源状态的B等于1单除子剩余判据](../claims/type-I-normal-source-state-b1-realization.md) (`type-I-normal-source-state-b1-realization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I源状态的正规形单残数因子对实现判据](../claims/type-I-normal-source-state-realization.md) (`type-I-normal-source-state-realization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
-| [Type I 正规形的规范尾部递降选择器与平方因子外部源等价](../claims/type-I-normal-tail-deflation-selector.md) (`type-I-normal-tail-deflation-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [Type I 正规形的规范尾部递降选择器与平方因子外部源等价](../claims/type-I-normal-tail-deflation-selector.md) (`type-I-normal-tail-deflation-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 一私有因子的三余类饱和判据](../claims/type-I-one-private-three-coset-saturation.md) (`type-I-one-private-three-coset-saturation`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

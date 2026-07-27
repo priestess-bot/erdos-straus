@@ -43,6 +43,20 @@ class TypeIEvenExternalSourceNormalBridgeTests(unittest.TestCase):
             self.assertEqual(bridge["normal_form"], normal_form)
             self.assertEqual(bridge["E"], source)
             self.assertTrue(all(bridge["conditions"].values()))
+            a, b, _ = normal_form
+            normal_tail = audit.short_certificate.type_i_normal_tail_deflation_witness(
+                prime, bridge["gap"], a, b
+            )
+            self.assertIsNotNone(normal_tail)
+            assert normal_tail is not None
+            self.assertEqual(normal_tail.source_denominator, source)
+            self.assertEqual(
+                normal_tail.source_solution[2], bridge["source_first_denominator"]
+            )
+            self.assertEqual(
+                normal_tail.target_solution[2],
+                prime * bridge["source_first_denominator"],
+            )
 
     def test_odd_external_witness_has_the_same_bridge_without_terminal_parity(self):
         bridge = audit.bridge_from_quadratic_external_witness(3361, self.witnesses[3361])
@@ -51,6 +65,13 @@ class TypeIEvenExternalSourceNormalBridgeTests(unittest.TestCase):
         self.assertEqual(bridge["K"], 5882)
         self.assertEqual(bridge["normal_form"], [25, 2, 17])
         self.assertFalse(bridge["conditions"]["source_is_even"])
+        a, b, _ = bridge["normal_form"]
+        normal_tail = audit.short_certificate.type_i_normal_tail_deflation_witness(
+            3361, bridge["gap"], a, b
+        )
+        self.assertIsNotNone(normal_tail)
+        assert normal_tail is not None
+        self.assertEqual(normal_tail.source_denominator, 2941)
         self.assertTrue(
             all(
                 bridge["conditions"][name]

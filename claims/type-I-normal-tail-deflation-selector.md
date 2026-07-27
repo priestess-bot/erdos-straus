@@ -4,6 +4,8 @@ claim_id: type-I-normal-tail-deflation-selector
 title: Type I 正规形的规范尾部递降选择器与平方因子外部源等价
 statement: 设 Type I 正规形为 x=ABC、m|4B^2C+1，令 R=(4B^2C+1)/m。该证书的 p-倍尾唯一写成 p*u，其中 u=BC(AR-B)。保持前两项并将 p*u 去缩放为 u 给出严格源分母 n=4u/(R+1)，当且仅当 R+1|4BC(A+B)；此时 2<=n<p，且所得边恰为完整平方因子外部 source 递降在保留分母 u 上的一个参数化，而非新递降族。对一亿小 B 剖面中全部11个 B>1 的最小证书，该条件均失败。
 claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
 topics:
 - type-I
 - normal-form
@@ -19,7 +21,7 @@ sources:
   locator: Section 2, Proposition 2.3
   role: Type-I-parametrization
 visibility: public
-last_checked: '2026-07-25'
+last_checked: '2026-07-28'
 ---
 
 # Type I 正规形的规范尾部递降选择器与平方因子外部源等价
@@ -101,27 +103,57 @@ p(R+1)-4BC(AR-B)=p-1. \tag{6}
 k=\frac{R+1}{4},\qquad q=4k-1=R. \tag{7}
 \]
 
-条件 (3) 正说明 \(n=u/k\) 是整数。由 (6) 得
+由于 \(u=K=BCH\)，并且模 \(R+1\) 有
 
 \[
-4kn=4u=qp+1,\qquad n=\frac{qp+1}{q+1}. \tag{8}
+4u=4BC(AR-B)\equiv-4BC(A+B)\pmod{R+1},
+\]
+
+条件 (3) 等价于
+
+\[
+k\mid K. \tag{8}
+\]
+
+这给出完整外部源在 Type I 正规形中的精确、无搜索判据。自然缺口范围还自动给出
+\(H>B\)：由 \(pR=4BCH-1\) 及 \(mR=4B^2C+1\)，
+
+\[
+R(p-m)=4BC(H-B)-2,
+\]
+
+而 \(p-m\ge2\)。故标准外源因子不必交换尾项，恰为
+
+\[
+e=qx-u=B^2C<K,\qquad \frac{K^2}{e}=CH^2. \tag{9}
+\]
+
+由 (6) 得
+
+\[
+4kn=4u=qp+1,\qquad n=\frac{qp+1}{q+1}. \tag{10}
 \]
 
 又从源等式 (2) 有
 
 \[
-\frac qu=\frac1x+\frac1y. \tag{9}
+\frac qu=\frac1x+\frac1y. \tag{11}
 \]
 
-取 \(e=qx-u\)（必要时交换 \(x,y\) 以使 \(e\le u\)），则
+取 (9) 的 \(e=qx-u=B^2C\)，则
 
 \[
-(qx-u)(qy-u)=u^2. \tag{10}
+(qx-u)(qy-u)=u^2. \tag{12}
 \]
 
 因此 \(e\mid u^2\)、\(e\equiv-u\pmod q\)，这正是
 [平方因子外部源递降](quadratic-factor-external-source-descent.md) 的完整二项尾因子条件，
 其保留分母为 \(u=kn\)。反向地，该族的每个保留分母二项尾都给出 (2)，从而恢复 (3)。
+其最大尾正规形桥因子正是
+
+\[
+E=4K-nR=n. \tag{13}
+\]
 
 故本选择器的价值是从一张给定 Type I 证书直接判定它是否落在该已知递降族，而不是构造
 一个独立的递降机制。
