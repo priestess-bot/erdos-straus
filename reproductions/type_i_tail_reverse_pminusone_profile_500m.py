@@ -58,6 +58,8 @@ def first_pminusone_edge(prime: int, gap_cap: int) -> tuple[dict[str, object] | 
             certificate = bridge.short_certificate.type_i_normal_form_certificate(prime, gap, A, B)
             if certificate is None:
                 raise AssertionError("stored Type I normal form did not reconstruct")
+            if gap * R != 4 * B * B * C + 1 or 4 * K != prime * R + 1 or R % 4 != 3:
+                raise AssertionError("stored normal form did not reconstruct its terminal state")
             states_checked += 1
             E = R + 1
             r = E // 4
@@ -72,8 +74,7 @@ def first_pminusone_edge(prime: int, gap_cap: int) -> tuple[dict[str, object] | 
             divisor_gcd = math.gcd(E, L)
             a, b = E // divisor_gcd, L // divisor_gcd
             if (
-                R % 4 != 3
-                or E != R + 1
+                E != R + 1
                 or (4 * K * K) % E
                 or math.gcd(a, b) != 1
                 or L % a
