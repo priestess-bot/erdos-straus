@@ -104,7 +104,7 @@ def run_witness() -> dict[str, object]:
     if changed != {
         "shift": CHANGED_SHIFT,
         "forced_divisor": 69,
-        "extra_three_power": 0,
+        "extra_prime_power": 0,
         "fixed_factor": 69,
     }:
         raise AssertionError("unexpected new forced factor at shift five")

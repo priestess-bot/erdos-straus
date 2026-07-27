@@ -1,0 +1,42 @@
+{
+  "arithmetic": "exact gcd forced-factor calculations on nested fan moduli, plus the complete collision-prime comparison for the H=22 and H=23 shifts",
+  "scope_note": "This proves the modular state-update rule inside the one-private-cofactor model. It does not force an actual Type II certificate, a Type I bridge, or a terminating descent.",
+  "h22_to_h23": {
+    "old_modulus": 77597520,
+    "new_modulus": 1784742960,
+    "modulus_growth": 23,
+    "old_residue": 529,
+    "lifted_residue": 1474353409,
+    "old_shift_count": 22,
+    "new_shift": 23,
+    "old_collision_primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19
+    ],
+    "new_collision_primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19
+    ],
+    "added_collision_primes": [],
+    "forced_factor_updates": [
+      {
+        "shift": 5,
+        "old_forced_factor": 3,
+        "new_forced_factor": 69,
+        "transferred_factor": 23
+      }
+    ]
+  }
+}

@@ -33,7 +33,7 @@ class TypeIIPrimeCofactorRenewalWitnessTests(unittest.TestCase):
             {
                 "shift": 5,
                 "forced_divisor": 69,
-                "extra_three_power": 0,
+                "extra_prime_power": 0,
                 "fixed_factor": 69,
             },
         )
