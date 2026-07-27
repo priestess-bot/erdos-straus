@@ -1,0 +1,5923 @@
+{
+  "arithmetic": "test the stored shortest upper-half source state with the exact B=1 divisor-residue criterion; for each B=1 miss, exhaust every Type I normal form and strict maximum-tail lift through the same gap cap, retain every even upper-half source, then either reconstruct a B=1 source-state normal form or enumerate its compatible normal forms to minimize B",
+  "scope_note": "A complete finite source-reselection profile for the 185 p-minus-one misses in the shared p<=500M, m<=215 Type I box. It neither bounds B nor selects source states for arbitrary core primes.",
+  "input_artifact": "type-i-pminusone-miss-upper-half-profile-500m-results.json",
+  "p_minus_one_residual_count": 185,
+  "stored_upper_B_eq_1_count": 119,
+  "reselected_upper_B_eq_1_count": 65,
+  "upper_B_eq_1_miss_count": 1,
+  "upper_B_le_3_closure_count": 185,
+  "reselection_normal_forms_exhaustively_checked": 2461,
+  "reselection_strict_reverse_lifts_exhaustively_checked": 1213,
+  "direct_B_eq_1_records": [
+    {
+      "prime": 297049,
+      "stored_state": {
+        "prime": 297049,
+        "source_distance": 25,
+        "gap": 15,
+        "normal_form": [
+          1046,
+          1,
+          71
+        ],
+        "R": 19,
+        "K": 1410983,
+        "E": 476,
+        "a": 2,
+        "b": 11857,
+        "source_denominator": 297024
+      },
+      "B_one_realization": {
+        "A": 1046,
+        "B": 1,
+        "C": 71,
+        "H": 19873,
+        "m": 15,
+        "R": 19,
+        "K": 1410983
+      }
+    },
+    {
+      "prime": 6294649,
+      "stored_state": {
+        "prime": 6294649,
+        "source_distance": 25,
+        "gap": 135,
+        "normal_form": [
+          536,
+          1,
+          2936
+        ],
+        "R": 87,
+        "K": 136908616,
+        "E": 2176,
+        "a": 8,
+        "b": 1006681,
+        "source_denominator": 6294624
+      },
+      "B_one_realization": {
+        "A": 536,
+        "B": 1,
+        "C": 2936,
+        "H": 46631,
+        "m": 135,
+        "R": 87,
+        "K": 136908616
+      }
+    },
+    {
+      "prime": 10170169,
+      "stored_state": {
+        "prime": 10170169,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          43837,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 78818810,
+        "E": 280,
+        "a": 2,
+        "b": 1125983,
+        "source_denominator": 10170160
+      },
+      "B_one_realization": {
+        "A": 2505,
+        "B": 1,
+        "C": 1015,
+        "H": 77654,
+        "m": 131,
+        "R": 31,
+        "K": 78818810
+      }
+    },
+    {
+      "prime": 11929129,
+      "stored_state": {
+        "prime": 11929129,
+        "source_distance": 47,
+        "gap": 111,
+        "normal_form": [
+          5627,
+          10,
+          53
+        ],
+        "R": 191,
+        "K": 569615910,
+        "E": 8978,
+        "a": 67,
+        "b": 8501730,
+        "source_denominator": 11929082
+      },
+      "B_one_realization": {
+        "A": 28,
+        "B": 1,
+        "C": 106530,
+        "H": 5347,
+        "m": 2231,
+        "R": 191,
+        "K": 569615910
+      }
+    },
+    {
+      "prime": 13334281,
+      "stored_state": {
+        "prime": 13334281,
+        "source_distance": 3,
+        "gap": 27,
+        "normal_form": [
+          1721,
+          1,
+          1937
+        ],
+        "R": 287,
+        "K": 956734662,
+        "E": 862,
+        "a": 1,
+        "b": 2219802,
+        "source_denominator": 13334278
+      },
+      "B_one_realization": {
+        "A": 1721,
+        "B": 1,
+        "C": 1937,
+        "H": 493926,
+        "m": 27,
+        "R": 287,
+        "K": 956734662
+      }
+    },
+    {
+      "prime": 17137129,
+      "stored_state": {
+        "prime": 17137129,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          73867,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 132812750,
+        "E": 280,
+        "a": 2,
+        "b": 1897325,
+        "source_denominator": 17137120
+      },
+      "B_one_realization": {
+        "A": 4221,
+        "B": 1,
+        "C": 1015,
+        "H": 130850,
+        "m": 131,
+        "R": 31,
+        "K": 132812750
+      }
+    },
+    {
+      "prime": 19504489,
+      "stored_state": {
+        "prime": 19504489,
+        "source_distance": 95,
+        "gap": 91,
+        "normal_form": [
+          815,
+          1,
+          5983
+        ],
+        "R": 263,
+        "K": 1282420152,
+        "E": 24986,
+        "a": 31,
+        "b": 3182184,
+        "source_denominator": 19504394
+      },
+      "B_one_realization": {
+        "A": 815,
+        "B": 1,
+        "C": 5983,
+        "H": 214344,
+        "m": 91,
+        "R": 263,
+        "K": 1282420152
+      }
+    },
+    {
+      "prime": 24738289,
+      "stored_state": {
+        "prime": 24738289,
+        "source_distance": 3943,
+        "gap": 35,
+        "normal_form": [
+          1041,
+          1,
+          5941
+        ],
+        "R": 679,
+        "K": 4199324558,
+        "E": 2677298,
+        "a": 1157,
+        "b": 3629494,
+        "source_denominator": 24734346
+      },
+      "B_one_realization": {
+        "A": 1041,
+        "B": 1,
+        "C": 5941,
+        "H": 706838,
+        "m": 35,
+        "R": 679,
+        "K": 4199324558
+      }
+    },
+    {
+      "prime": 25073689,
+      "stored_state": {
+        "prime": 25073689,
+        "source_distance": 9,
+        "gap": 111,
+        "normal_form": [
+          4430,
+          1,
+          1415
+        ],
+        "R": 51,
+        "K": 319689535,
+        "E": 460,
+        "a": 2,
+        "b": 2779909,
+        "source_denominator": 25073680
+      },
+      "B_one_realization": {
+        "A": 4430,
+        "B": 1,
+        "C": 1415,
+        "H": 225929,
+        "m": 111,
+        "R": 51,
+        "K": 319689535
+      }
+    },
+    {
+      "prime": 25738729,
+      "stored_state": {
+        "prime": 25738729,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          1761,
+          1,
+          3654
+        ],
+        "R": 311,
+        "K": 2001186180,
+        "E": 2800,
+        "a": 10,
+        "b": 14294187,
+        "source_denominator": 25738720
+      },
+      "B_one_realization": {
+        "A": 1761,
+        "B": 1,
+        "C": 3654,
+        "H": 547670,
+        "m": 47,
+        "R": 311,
+        "K": 2001186180
+      }
+    },
+    {
+      "prime": 31842409,
+      "stored_state": {
+        "prime": 31842409,
+        "source_distance": 33,
+        "gap": 83,
+        "normal_form": [
+          4857,
+          1,
+          1639
+        ],
+        "R": 79,
+        "K": 628887578,
+        "E": 2608,
+        "a": 4,
+        "b": 1929103,
+        "source_denominator": 31842376
+      },
+      "B_one_realization": {
+        "A": 4857,
+        "B": 1,
+        "C": 1639,
+        "H": 383702,
+        "m": 83,
+        "R": 79,
+        "K": 628887578
+      }
+    },
+    {
+      "prime": 32050489,
+      "stored_state": {
+        "prime": 32050489,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          54881,
+          1,
+          146
+        ],
+        "R": 39,
+        "K": 312492268,
+        "E": 352,
+        "a": 4,
+        "b": 7102097,
+        "source_denominator": 32050480
+      },
+      "B_one_realization": {
+        "A": 54881,
+        "B": 1,
+        "C": 146,
+        "H": 2140358,
+        "m": 15,
+        "R": 39,
+        "K": 312492268
+      }
+    },
+    {
+      "prime": 38333689,
+      "stored_state": {
+        "prime": 38333689,
+        "source_distance": 9,
+        "gap": 151,
+        "normal_form": [
+          530,
+          1,
+          18082
+        ],
+        "R": 479,
+        "K": 4590459258,
+        "E": 4312,
+        "a": 2,
+        "b": 4258311,
+        "source_denominator": 38333680
+      },
+      "B_one_realization": {
+        "A": 530,
+        "B": 1,
+        "C": 18082,
+        "H": 253869,
+        "m": 151,
+        "R": 479,
+        "K": 4590459258
+      }
+    },
+    {
+      "prime": 39964369,
+      "stored_state": {
+        "prime": 39964369,
+        "source_distance": 6097,
+        "gap": 107,
+        "normal_form": [
+          1201,
+          1,
+          8319
+        ],
+        "R": 311,
+        "K": 3107229690,
+        "E": 1896168,
+        "a": 82,
+        "b": 268745,
+        "source_denominator": 39958272
+      },
+      "B_one_realization": {
+        "A": 1201,
+        "B": 1,
+        "C": 8319,
+        "H": 373510,
+        "m": 107,
+        "R": 311,
+        "K": 3107229690
+      }
+    },
+    {
+      "prime": 40862089,
+      "stored_state": {
+        "prime": 40862089,
+        "source_distance": 5,
+        "gap": 31,
+        "normal_form": [
+          5707,
+          1,
+          1790
+        ],
+        "R": 231,
+        "K": 2359785640,
+        "E": 1156,
+        "a": 17,
+        "b": 69405460,
+        "source_denominator": 40862084
+      },
+      "B_one_realization": {
+        "A": 5707,
+        "B": 1,
+        "C": 1790,
+        "H": 1318316,
+        "m": 31,
+        "R": 231,
+        "K": 2359785640
+      }
+    },
+    {
+      "prime": 42622969,
+      "stored_state": {
+        "prime": 42622969,
+        "source_distance": 1369,
+        "gap": 47,
+        "normal_form": [
+          1942,
+          1,
+          5487
+        ],
+        "R": 467,
+        "K": 4976231631,
+        "E": 639324,
+        "a": 6,
+        "b": 93403,
+        "source_denominator": 42621600
+      },
+      "B_one_realization": {
+        "A": 1942,
+        "B": 1,
+        "C": 5487,
+        "H": 906913,
+        "m": 47,
+        "R": 467,
+        "K": 4976231631
+      }
+    },
+    {
+      "prime": 42957049,
+      "stored_state": {
+        "prime": 42957049,
+        "source_distance": 9,
+        "gap": 19,
+        "normal_form": [
+          7271,
+          1,
+          1477
+        ],
+        "R": 311,
+        "K": 3339910560,
+        "E": 2800,
+        "a": 5,
+        "b": 11928252,
+        "source_denominator": 42957040
+      },
+      "B_one_realization": {
+        "A": 7271,
+        "B": 1,
+        "C": 1477,
+        "H": 2261280,
+        "m": 19,
+        "R": 311,
+        "K": 3339910560
+      }
+    },
+    {
+      "prime": 51029449,
+      "stored_state": {
+        "prime": 51029449,
+        "source_distance": 9,
+        "gap": 207,
+        "normal_form": [
+          15907,
+          2,
+          401
+        ],
+        "R": 31,
+        "K": 395478230,
+        "E": 280,
+        "a": 2,
+        "b": 5649689,
+        "source_denominator": 51029440
+      },
+      "B_one_realization": {
+        "A": 909,
+        "B": 1,
+        "C": 14035,
+        "H": 28178,
+        "m": 1811,
+        "R": 31,
+        "K": 395478230
+      }
+    },
+    {
+      "prime": 57399241,
+      "stored_state": {
+        "prime": 57399241,
+        "source_distance": 213393,
+        "gap": 83,
+        "normal_form": [
+          22317,
+          1,
+          643
+        ],
+        "R": 31,
+        "K": 444844118,
+        "E": 6615184,
+        "a": 2572,
+        "b": 345913,
+        "source_denominator": 57185848
+      },
+      "B_one_realization": {
+        "A": 22317,
+        "B": 1,
+        "C": 643,
+        "H": 691826,
+        "m": 83,
+        "R": 31,
+        "K": 444844118
+      }
+    },
+    {
+      "prime": 59871289,
+      "stored_state": {
+        "prime": 59871289,
+        "source_distance": 9,
+        "gap": 215,
+        "normal_form": [
+          3201,
+          1,
+          4676
+        ],
+        "R": 87,
+        "K": 1302200536,
+        "E": 784,
+        "a": 7,
+        "b": 23253581,
+        "source_denominator": 59871280
+      },
+      "B_one_realization": {
+        "A": 3201,
+        "B": 1,
+        "C": 4676,
+        "H": 278486,
+        "m": 215,
+        "R": 87,
+        "K": 1302200536
+      }
+    },
+    {
+      "prime": 60173689,
+      "stored_state": {
+        "prime": 60173689,
+        "source_distance": 17,
+        "gap": 123,
+        "normal_form": [
+          3077,
+          1,
+          4889
+        ],
+        "R": 159,
+        "K": 2391904138,
+        "E": 2704,
+        "a": 52,
+        "b": 91996313,
+        "source_denominator": 60173672
+      },
+      "B_one_realization": {
+        "A": 3077,
+        "B": 1,
+        "C": 4889,
+        "H": 489242,
+        "m": 123,
+        "R": 159,
+        "K": 2391904138
+      }
+    },
+    {
+      "prime": 62588089,
+      "stored_state": {
+        "prime": 62588089,
+        "source_distance": 5,
+        "gap": 63,
+        "normal_form": [
+          4301,
+          1,
+          3638
+        ],
+        "R": 231,
+        "K": 3614462140,
+        "E": 1156,
+        "a": 17,
+        "b": 106307710,
+        "source_denominator": 62588084
+      },
+      "B_one_realization": {
+        "A": 4301,
+        "B": 1,
+        "C": 3638,
+        "H": 993530,
+        "m": 63,
+        "R": 231,
+        "K": 3614462140
+      }
+    },
+    {
+      "prime": 68822329,
+      "stored_state": {
+        "prime": 68822329,
+        "source_distance": 5545,
+        "gap": 79,
+        "normal_form": [
+          17086,
+          1,
+          1007
+        ],
+        "R": 51,
+        "K": 877484695,
+        "E": 282796,
+        "a": 122,
+        "b": 757105,
+        "source_denominator": 68816784
+      },
+      "B_one_realization": {
+        "A": 17086,
+        "B": 1,
+        "C": 1007,
+        "H": 871385,
+        "m": 79,
+        "R": 51,
+        "K": 877484695
+      }
+    },
+    {
+      "prime": 69869809,
+      "stored_state": {
+        "prime": 69869809,
+        "source_distance": 9,
+        "gap": 31,
+        "normal_form": [
+          20311,
+          1,
+          860
+        ],
+        "R": 111,
+        "K": 1938887200,
+        "E": 1000,
+        "a": 5,
+        "b": 19388872,
+        "source_denominator": 69869800
+      },
+      "B_one_realization": {
+        "A": 20311,
+        "B": 1,
+        "C": 860,
+        "H": 2254520,
+        "m": 31,
+        "R": 111,
+        "K": 1938887200
+      }
+    },
+    {
+      "prime": 72148729,
+      "stored_state": {
+        "prime": 72148729,
+        "source_distance": 9,
+        "gap": 111,
+        "normal_form": [
+          41947,
+          2,
+          215
+        ],
+        "R": 31,
+        "K": 559152650,
+        "E": 280,
+        "a": 2,
+        "b": 7987895,
+        "source_denominator": 72148720
+      },
+      "B_one_realization": {
+        "A": 13613,
+        "B": 1,
+        "C": 1325,
+        "H": 422002,
+        "m": 171,
+        "R": 31,
+        "K": 559152650
+      }
+    },
+    {
+      "prime": 76244809,
+      "stored_state": {
+        "prime": 76244809,
+        "source_distance": 9,
+        "gap": 91,
+        "normal_form": [
+          7549,
+          1,
+          2525
+        ],
+        "R": 111,
+        "K": 2115793450,
+        "E": 1000,
+        "a": 10,
+        "b": 42315869,
+        "source_denominator": 76244800
+      },
+      "B_one_realization": {
+        "A": 7549,
+        "B": 1,
+        "C": 2525,
+        "H": 837938,
+        "m": 91,
+        "R": 111,
+        "K": 2115793450
+      }
+    },
+    {
+      "prime": 82282489,
+      "stored_state": {
+        "prime": 82282489,
+        "source_distance": 3763545,
+        "gap": 51,
+        "normal_form": [
+          1115,
+          1,
+          18449
+        ],
+        "R": 1447,
+        "K": 29765690396,
+        "E": 5445849616,
+        "a": 1942,
+        "b": 21229,
+        "source_denominator": 78518944
+      },
+      "B_one_realization": {
+        "A": 1115,
+        "B": 1,
+        "C": 18449,
+        "H": 1613404,
+        "m": 51,
+        "R": 1447,
+        "K": 29765690396
+      }
+    },
+    {
+      "prime": 87623449,
+      "stored_state": {
+        "prime": 87623449,
+        "source_distance": 169,
+        "gap": 39,
+        "normal_form": [
+          72536,
+          1,
+          302
+        ],
+        "R": 31,
+        "K": 679081730,
+        "E": 5240,
+        "a": 2,
+        "b": 518383,
+        "source_denominator": 87623280
+      },
+      "B_one_realization": {
+        "A": 72536,
+        "B": 1,
+        "C": 302,
+        "H": 2248615,
+        "m": 39,
+        "R": 31,
+        "K": 679081730
+      }
+    },
+    {
+      "prime": 89708089,
+      "stored_state": {
+        "prime": 89708089,
+        "source_distance": 7,
+        "gap": 75,
+        "normal_form": [
+          6011,
+          1,
+          3731
+        ],
+        "R": 199,
+        "K": 4462977428,
+        "E": 1394,
+        "a": 1,
+        "b": 6403124,
+        "source_denominator": 89708082
+      },
+      "B_one_realization": {
+        "A": 6011,
+        "B": 1,
+        "C": 3731,
+        "H": 1196188,
+        "m": 75,
+        "R": 199,
+        "K": 4462977428
+      }
+    },
+    {
+      "prime": 96530569,
+      "stored_state": {
+        "prime": 96530569,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          132597,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 748111910,
+        "E": 280,
+        "a": 2,
+        "b": 10687313,
+        "source_denominator": 96530560
+      },
+      "B_one_realization": {
+        "A": 7577,
+        "B": 1,
+        "C": 3185,
+        "H": 234886,
+        "m": 411,
+        "R": 31,
+        "K": 748111910
+      }
+    },
+    {
+      "prime": 97071529,
+      "stored_state": {
+        "prime": 97071529,
+        "source_distance": 9,
+        "gap": 71,
+        "normal_form": [
+          5919,
+          1,
+          4100
+        ],
+        "R": 231,
+        "K": 5605880800,
+        "E": 2080,
+        "a": 1,
+        "b": 5390270,
+        "source_denominator": 97071520
+      },
+      "B_one_realization": {
+        "A": 5919,
+        "B": 1,
+        "C": 4100,
+        "H": 1367288,
+        "m": 71,
+        "R": 231,
+        "K": 5605880800
+      }
+    },
+    {
+      "prime": 109856569,
+      "stored_state": {
+        "prime": 109856569,
+        "source_distance": 9,
+        "gap": 215,
+        "normal_form": [
+          9291,
+          1,
+          2956
+        ],
+        "R": 55,
+        "K": 1510527824,
+        "E": 496,
+        "a": 1,
+        "b": 6090838,
+        "source_denominator": 109856560
+      },
+      "B_one_realization": {
+        "A": 9291,
+        "B": 1,
+        "C": 2956,
+        "H": 511004,
+        "m": 215,
+        "R": 55,
+        "K": 1510527824
+      }
+    },
+    {
+      "prime": 115141849,
+      "stored_state": {
+        "prime": 115141849,
+        "source_distance": 439,
+        "gap": 191,
+        "normal_form": [
+          4602,
+          1,
+          6255
+        ],
+        "R": 131,
+        "K": 3770895555,
+        "E": 57510,
+        "a": 9,
+        "b": 1180249,
+        "source_denominator": 115141410
+      },
+      "B_one_realization": {
+        "A": 4602,
+        "B": 1,
+        "C": 6255,
+        "H": 602861,
+        "m": 191,
+        "R": 131,
+        "K": 3770895555
+      }
+    },
+    {
+      "prime": 118804009,
+      "stored_state": {
+        "prime": 118804009,
+        "source_distance": 50633,
+        "gap": 47,
+        "normal_form": [
+          3907,
+          1,
+          7602
+        ],
+        "R": 647,
+        "K": 19216548456,
+        "E": 32759552,
+        "a": 16,
+        "b": 18771,
+        "source_denominator": 118753376
+      },
+      "B_one_realization": {
+        "A": 3907,
+        "B": 1,
+        "C": 7602,
+        "H": 2527828,
+        "m": 47,
+        "R": 647,
+        "K": 19216548456
+      }
+    },
+    {
+      "prime": 119091289,
+      "stored_state": {
+        "prime": 119091289,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          163587,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 922957490,
+        "E": 280,
+        "a": 2,
+        "b": 13185107,
+        "source_denominator": 119091280
+      },
+      "B_one_realization": {
+        "A": 1722,
+        "B": 1,
+        "C": 17290,
+        "H": 53381,
+        "m": 2231,
+        "R": 31,
+        "K": 922957490
+      }
+    },
+    {
+      "prime": 122014489,
+      "stored_state": {
+        "prime": 122014489,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          29847,
+          1,
+          1022
+        ],
+        "R": 87,
+        "K": 2653815136,
+        "E": 784,
+        "a": 7,
+        "b": 47389556,
+        "source_denominator": 122014480
+      },
+      "B_one_realization": {
+        "A": 29847,
+        "B": 1,
+        "C": 1022,
+        "H": 2596688,
+        "m": 47,
+        "R": 87,
+        "K": 2653815136
+      }
+    },
+    {
+      "prime": 129799609,
+      "stored_state": {
+        "prime": 129799609,
+        "source_distance": 121,
+        "gap": 195,
+        "normal_form": [
+          2531,
+          1,
+          12821
+        ],
+        "R": 263,
+        "K": 8534324292,
+        "E": 31824,
+        "a": 6,
+        "b": 3218071,
+        "source_denominator": 129799488
+      },
+      "B_one_realization": {
+        "A": 2531,
+        "B": 1,
+        "C": 12821,
+        "H": 665652,
+        "m": 195,
+        "R": 263,
+        "K": 8534324292
+      }
+    },
+    {
+      "prime": 133564729,
+      "stored_state": {
+        "prime": 133564729,
+        "source_distance": 25,
+        "gap": 47,
+        "normal_form": [
+          13219,
+          1,
+          2526
+        ],
+        "R": 215,
+        "K": 7179104184,
+        "E": 5376,
+        "a": 16,
+        "b": 42732763,
+        "source_denominator": 133564704
+      },
+      "B_one_realization": {
+        "A": 13219,
+        "B": 1,
+        "C": 2526,
+        "H": 2842084,
+        "m": 47,
+        "R": 215,
+        "K": 7179104184
+      }
+    },
+    {
+      "prime": 137431849,
+      "stored_state": {
+        "prime": 137431849,
+        "source_distance": 9,
+        "gap": 27,
+        "normal_form": [
+          25583,
+          1,
+          1343
+        ],
+        "R": 199,
+        "K": 6837234488,
+        "E": 1792,
+        "a": 16,
+        "b": 122093473,
+        "source_denominator": 137431840
+      },
+      "B_one_realization": {
+        "A": 25583,
+        "B": 1,
+        "C": 1343,
+        "H": 5091016,
+        "m": 27,
+        "R": 199,
+        "K": 6837234488
+      }
+    },
+    {
+      "prime": 137948281,
+      "stored_state": {
+        "prime": 137948281,
+        "source_distance": 319,
+        "gap": 15,
+        "normal_form": [
+          66194,
+          1,
+          521
+        ],
+        "R": 139,
+        "K": 4793702765,
+        "E": 44342,
+        "a": 1,
+        "b": 216215,
+        "source_denominator": 137947962
+      },
+      "B_one_realization": {
+        "A": 66194,
+        "B": 1,
+        "C": 521,
+        "H": 9200965,
+        "m": 15,
+        "R": 139,
+        "K": 4793702765
+      }
+    },
+    {
+      "prime": 138255049,
+      "stored_state": {
+        "prime": 138255049,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          595927,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 1071476630,
+        "E": 280,
+        "a": 2,
+        "b": 15306809,
+        "source_denominator": 138255040
+      },
+      "B_one_realization": {
+        "A": 34053,
+        "B": 1,
+        "C": 1015,
+        "H": 1055642,
+        "m": 131,
+        "R": 31,
+        "K": 1071476630
+      }
+    },
+    {
+      "prime": 139224409,
+      "stored_state": {
+        "prime": 139224409,
+        "source_distance": 17,
+        "gap": 15,
+        "normal_form": [
+          294967,
+          2,
+          59
+        ],
+        "R": 63,
+        "K": 2192784442,
+        "E": 1072,
+        "a": 4,
+        "b": 16364063,
+        "source_denominator": 139224392
+      },
+      "B_one_realization": {
+        "A": 8805,
+        "B": 1,
+        "C": 3953,
+        "H": 554714,
+        "m": 251,
+        "R": 63,
+        "K": 2192784442
+      }
+    },
+    {
+      "prime": 139365769,
+      "stored_state": {
+        "prime": 139365769,
+        "source_distance": 33,
+        "gap": 91,
+        "normal_form": [
+          68993,
+          5,
+          101
+        ],
+        "R": 111,
+        "K": 3867400090,
+        "E": 3664,
+        "a": 4,
+        "b": 8444105,
+        "source_denominator": 139365736
+      },
+      "B_one_realization": {
+        "A": 9585,
+        "B": 1,
+        "C": 3635,
+        "H": 1063934,
+        "m": 131,
+        "R": 111,
+        "K": 3867400090
+      }
+    },
+    {
+      "prime": 141064009,
+      "stored_state": {
+        "prime": 141064009,
+        "source_distance": 7750765,
+        "gap": 91,
+        "normal_form": [
+          5,
+          1,
+          7053205
+        ],
+        "R": 310031,
+        "K": 10933553943570,
+        "E": 2402977423716,
+        "a": 775077,
+        "b": 7053205,
+        "source_denominator": 133313244
+      },
+      "B_one_realization": {
+        "A": 5,
+        "B": 1,
+        "C": 7053205,
+        "H": 1550154,
+        "m": 91,
+        "R": 310031,
+        "K": 10933553943570
+      }
+    },
+    {
+      "prime": 144224089,
+      "stored_state": {
+        "prime": 144224089,
+        "source_distance": 589,
+        "gap": 71,
+        "normal_form": [
+          10636,
+          1,
+          3390
+        ],
+        "R": 191,
+        "K": 6886700250,
+        "E": 112500,
+        "a": 75,
+        "b": 9182267,
+        "source_denominator": 144223500
+      },
+      "B_one_realization": {
+        "A": 10636,
+        "B": 1,
+        "C": 3390,
+        "H": 2031475,
+        "m": 71,
+        "R": 191,
+        "K": 6886700250
+      }
+    },
+    {
+      "prime": 159108889,
+      "stored_state": {
+        "prime": 159108889,
+        "source_distance": 2065,
+        "gap": 63,
+        "normal_form": [
+          30434,
+          1,
+          1307
+        ],
+        "R": 83,
+        "K": 3301509447,
+        "E": 171396,
+        "a": 414,
+        "b": 15949321,
+        "source_denominator": 159106824
+      },
+      "B_one_realization": {
+        "A": 30434,
+        "B": 1,
+        "C": 1307,
+        "H": 2526021,
+        "m": 63,
+        "R": 83,
+        "K": 3301509447
+      }
+    },
+    {
+      "prime": 160342009,
+      "stored_state": {
+        "prime": 160342009,
+        "source_distance": 9,
+        "gap": 19,
+        "normal_form": [
+          2981,
+          1,
+          13447
+        ],
+        "R": 2831,
+        "K": 113482056870,
+        "E": 25480,
+        "a": 14,
+        "b": 124705557,
+        "source_denominator": 160342000
+      },
+      "B_one_realization": {
+        "A": 2981,
+        "B": 1,
+        "C": 13447,
+        "H": 8439210,
+        "m": 19,
+        "R": 2831,
+        "K": 113482056870
+      }
+    },
+    {
+      "prime": 161964889,
+      "stored_state": {
+        "prime": 161964889,
+        "source_distance": 9,
+        "gap": 151,
+        "normal_form": [
+          3449,
+          1,
+          11740
+        ],
+        "R": 311,
+        "K": 12592770120,
+        "E": 2800,
+        "a": 5,
+        "b": 44974179,
+        "source_denominator": 161964880
+      },
+      "B_one_realization": {
+        "A": 3449,
+        "B": 1,
+        "C": 11740,
+        "H": 1072638,
+        "m": 151,
+        "R": 311,
+        "K": 12592770120
+      }
+    },
+    {
+      "prime": 176110489,
+      "stored_state": {
+        "prime": 176110489,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          759097,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 1364856290,
+        "E": 280,
+        "a": 2,
+        "b": 19497947,
+        "source_denominator": 176110480
+      },
+      "B_one_realization": {
+        "A": 43377,
+        "B": 1,
+        "C": 1015,
+        "H": 1344686,
+        "m": 131,
+        "R": 31,
+        "K": 1364856290
+      }
+    },
+    {
+      "prime": 179954329,
+      "stored_state": {
+        "prime": 179954329,
+        "source_distance": 9,
+        "gap": 71,
+        "normal_form": [
+          2910,
+          1,
+          15460
+        ],
+        "R": 871,
+        "K": 39185055140,
+        "E": 7840,
+        "a": 28,
+        "b": 279893251,
+        "source_denominator": 179954320
+      },
+      "B_one_realization": {
+        "A": 2910,
+        "B": 1,
+        "C": 15460,
+        "H": 2534609,
+        "m": 71,
+        "R": 871,
+        "K": 39185055140
+      }
+    },
+    {
+      "prime": 181494889,
+      "stored_state": {
+        "prime": 181494889,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          44397,
+          1,
+          1022
+        ],
+        "R": 87,
+        "K": 3947513836,
+        "E": 784,
+        "a": 14,
+        "b": 140982637,
+        "source_denominator": 181494880
+      },
+      "B_one_realization": {
+        "A": 44397,
+        "B": 1,
+        "C": 1022,
+        "H": 3862538,
+        "m": 47,
+        "R": 87,
+        "K": 3947513836
+      }
+    },
+    {
+      "prime": 184707769,
+      "stored_state": {
+        "prime": 184707769,
+        "source_distance": 1093,
+        "gap": 183,
+        "normal_form": [
+          902,
+          1,
+          51194
+        ],
+        "R": 1119,
+        "K": 51671998378,
+        "E": 1223068,
+        "a": 209,
+        "b": 17659603,
+        "source_denominator": 184706676
+      },
+      "B_one_realization": {
+        "A": 902,
+        "B": 1,
+        "C": 51194,
+        "H": 1009337,
+        "m": 183,
+        "R": 1119,
+        "K": 51671998378
+      }
+    },
+    {
+      "prime": 185772409,
+      "stored_state": {
+        "prime": 185772409,
+        "source_distance": 889,
+        "gap": 31,
+        "normal_form": [
+          19271,
+          1,
+          2410
+        ],
+        "R": 311,
+        "K": 14443804800,
+        "E": 276480,
+        "a": 24,
+        "b": 2507605,
+        "source_denominator": 185771520
+      },
+      "B_one_realization": {
+        "A": 19271,
+        "B": 1,
+        "C": 2410,
+        "H": 5993280,
+        "m": 31,
+        "R": 311,
+        "K": 14443804800
+      }
+    },
+    {
+      "prime": 187395289,
+      "stored_state": {
+        "prime": 187395289,
+        "source_distance": 17,
+        "gap": 63,
+        "normal_form": [
+          14654,
+          1,
+          3197
+        ],
+        "R": 203,
+        "K": 9510310917,
+        "E": 3452,
+        "a": 2,
+        "b": 11020059,
+        "source_denominator": 187395272
+      },
+      "B_one_realization": {
+        "A": 14654,
+        "B": 1,
+        "C": 3197,
+        "H": 2974761,
+        "m": 63,
+        "R": 203,
+        "K": 9510310917
+      }
+    },
+    {
+      "prime": 193394569,
+      "stored_state": {
+        "prime": 193394569,
+        "source_distance": 5,
+        "gap": 167,
+        "normal_form": [
+          783,
+          1,
+          61748
+        ],
+        "R": 1479,
+        "K": 71507641888,
+        "E": 7396,
+        "a": 43,
+        "b": 831484208,
+        "source_denominator": 193394564
+      },
+      "B_one_realization": {
+        "A": 783,
+        "B": 1,
+        "C": 61748,
+        "H": 1158056,
+        "m": 167,
+        "R": 1479,
+        "K": 71507641888
+      }
+    },
+    {
+      "prime": 213316009,
+      "stored_state": {
+        "prime": 213316009,
+        "source_distance": 49,
+        "gap": 199,
+        "normal_form": [
+          6419,
+          1,
+          8308
+        ],
+        "R": 167,
+        "K": 8905943376,
+        "E": 8184,
+        "a": 1,
+        "b": 2176428,
+        "source_denominator": 213315960
+      },
+      "B_one_realization": {
+        "A": 6419,
+        "B": 1,
+        "C": 8308,
+        "H": 1071972,
+        "m": 199,
+        "R": 167,
+        "K": 8905943376
+      }
+    },
+    {
+      "prime": 219718249,
+      "stored_state": {
+        "prime": 219718249,
+        "source_distance": 9,
+        "gap": 39,
+        "normal_form": [
+          181886,
+          1,
+          302
+        ],
+        "R": 31,
+        "K": 1702816430,
+        "E": 280,
+        "a": 2,
+        "b": 24325949,
+        "source_denominator": 219718240
+      },
+      "B_one_realization": {
+        "A": 181886,
+        "B": 1,
+        "C": 302,
+        "H": 5638465,
+        "m": 39,
+        "R": 31,
+        "K": 1702816430
+      }
+    },
+    {
+      "prime": 222416329,
+      "stored_state": {
+        "prime": 222416329,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          305517,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 1723726550,
+        "E": 280,
+        "a": 2,
+        "b": 24624665,
+        "source_denominator": 222416320
+      },
+      "B_one_realization": {
+        "A": 3216,
+        "B": 1,
+        "C": 17290,
+        "H": 99695,
+        "m": 2231,
+        "R": 31,
+        "K": 1723726550
+      }
+    },
+    {
+      "prime": 223789129,
+      "stored_state": {
+        "prime": 223789129,
+        "source_distance": 49,
+        "gap": 151,
+        "normal_form": [
+          572,
+          1,
+          97810
+        ],
+        "R": 2591,
+        "K": 144959408310,
+        "E": 126960,
+        "a": 92,
+        "b": 210086099,
+        "source_denominator": 223789080
+      },
+      "B_one_realization": {
+        "A": 572,
+        "B": 1,
+        "C": 97810,
+        "H": 1482051,
+        "m": 151,
+        "R": 2591,
+        "K": 144959408310
+      }
+    },
+    {
+      "prime": 225356569,
+      "stored_state": {
+        "prime": 225356569,
+        "source_distance": 9,
+        "gap": 59,
+        "normal_form": [
+          17767,
+          1,
+          3171
+        ],
+        "R": 215,
+        "K": 12112915584,
+        "E": 1936,
+        "a": 11,
+        "b": 137646768,
+        "source_denominator": 225356560
+      },
+      "B_one_realization": {
+        "A": 17767,
+        "B": 1,
+        "C": 3171,
+        "H": 3819904,
+        "m": 59,
+        "R": 215,
+        "K": 12112915584
+      }
+    },
+    {
+      "prime": 228366889,
+      "stored_state": {
+        "prime": 228366889,
+        "source_distance": 825,
+        "gap": 159,
+        "normal_form": [
+          26117,
+          1,
+          2186
+        ],
+        "R": 55,
+        "K": 3140044724,
+        "E": 45376,
+        "a": 8,
+        "b": 1107209,
+        "source_denominator": 228366064
+      },
+      "B_one_realization": {
+        "A": 26117,
+        "B": 1,
+        "C": 2186,
+        "H": 1436434,
+        "m": 159,
+        "R": 55,
+        "K": 3140044724
+      }
+    },
+    {
+      "prime": 233551609,
+      "stored_state": {
+        "prime": 233551609,
+        "source_distance": 5,
+        "gap": 39,
+        "normal_form": [
+          2972,
+          1,
+          19646
+        ],
+        "R": 2015,
+        "K": 117651623034,
+        "E": 10076,
+        "a": 1,
+        "b": 23352843,
+        "source_denominator": 233551604
+      },
+      "B_one_realization": {
+        "A": 2972,
+        "B": 1,
+        "C": 19646,
+        "H": 5988579,
+        "m": 39,
+        "R": 2015,
+        "K": 117651623034
+      }
+    },
+    {
+      "prime": 233780089,
+      "stored_state": {
+        "prime": 233780089,
+        "source_distance": 23,
+        "gap": 119,
+        "normal_form": [
+          10286,
+          1,
+          5682
+        ],
+        "R": 191,
+        "K": 11162999250,
+        "E": 4394,
+        "a": 13,
+        "b": 66053250,
+        "source_denominator": 233780066
+      },
+      "B_one_realization": {
+        "A": 10286,
+        "B": 1,
+        "C": 5682,
+        "H": 1964625,
+        "m": 119,
+        "R": 191,
+        "K": 11162999250
+      }
+    },
+    {
+      "prime": 236164009,
+      "stored_state": {
+        "prime": 236164009,
+        "source_distance": 37,
+        "gap": 39,
+        "normal_form": [
+          96158,
+          1,
+          614
+        ],
+        "R": 63,
+        "K": 3719583142,
+        "E": 2332,
+        "a": 1,
+        "b": 3190037,
+        "source_denominator": 236163972
+      },
+      "B_one_realization": {
+        "A": 96158,
+        "B": 1,
+        "C": 614,
+        "H": 6057953,
+        "m": 39,
+        "R": 63,
+        "K": 3719583142
+      }
+    },
+    {
+      "prime": 236410729,
+      "stored_state": {
+        "prime": 236410729,
+        "source_distance": 9,
+        "gap": 159,
+        "normal_form": [
+          4781,
+          1,
+          12362
+        ],
+        "R": 311,
+        "K": 18380934180,
+        "E": 2800,
+        "a": 10,
+        "b": 131292387,
+        "source_denominator": 236410720
+      },
+      "B_one_realization": {
+        "A": 4781,
+        "B": 1,
+        "C": 12362,
+        "H": 1486890,
+        "m": 159,
+        "R": 311,
+        "K": 18380934180
+      }
+    },
+    {
+      "prime": 248533609,
+      "stored_state": {
+        "prime": 248533609,
+        "source_distance": 9,
+        "gap": 99,
+        "normal_form": [
+          28859,
+          1,
+          2153
+        ],
+        "R": 87,
+        "K": 5405605996,
+        "E": 784,
+        "a": 14,
+        "b": 193057357,
+        "source_denominator": 248533600
+      },
+      "B_one_realization": {
+        "A": 28859,
+        "B": 1,
+        "C": 2153,
+        "H": 2510732,
+        "m": 99,
+        "R": 87,
+        "K": 5405605996
+      }
+    },
+    {
+      "prime": 249857689,
+      "stored_state": {
+        "prime": 249857689,
+        "source_distance": 13,
+        "gap": 103,
+        "normal_form": [
+          21856,
+          1,
+          2858
+        ],
+        "R": 111,
+        "K": 6933550870,
+        "E": 1444,
+        "a": 19,
+        "b": 182461865,
+        "source_denominator": 249857676
+      },
+      "B_one_realization": {
+        "A": 21856,
+        "B": 1,
+        "C": 2858,
+        "H": 2426015,
+        "m": 103,
+        "R": 111,
+        "K": 6933550870
+      }
+    },
+    {
+      "prime": 257099929,
+      "stored_state": {
+        "prime": 257099929,
+        "source_distance": 591,
+        "gap": 15,
+        "normal_form": [
+          636386,
+          1,
+          101
+        ],
+        "R": 27,
+        "K": 1735424521,
+        "E": 15958,
+        "a": 1,
+        "b": 217499,
+        "source_denominator": 257099338
+      },
+      "B_one_realization": {
+        "A": 636386,
+        "B": 1,
+        "C": 101,
+        "H": 17182421,
+        "m": 15,
+        "R": 27,
+        "K": 1735424521
+      }
+    },
+    {
+      "prime": 259423609,
+      "stored_state": {
+        "prime": 259423609,
+        "source_distance": 5,
+        "gap": 35,
+        "normal_form": [
+          32091,
+          1,
+          2021
+        ],
+        "R": 231,
+        "K": 14981713420,
+        "E": 1156,
+        "a": 17,
+        "b": 440638630,
+        "source_denominator": 259423604
+      },
+      "B_one_realization": {
+        "A": 32091,
+        "B": 1,
+        "C": 2021,
+        "H": 7413020,
+        "m": 35,
+        "R": 231,
+        "K": 14981713420
+      }
+    },
+    {
+      "prime": 264038329,
+      "stored_state": {
+        "prime": 264038329,
+        "source_distance": 9,
+        "gap": 39,
+        "normal_form": [
+          155683,
+          2,
+          212
+        ],
+        "R": 87,
+        "K": 5742833656,
+        "E": 784,
+        "a": 7,
+        "b": 102550601,
+        "source_denominator": 264038320
+      },
+      "B_one_realization": {
+        "A": 2315,
+        "B": 1,
+        "C": 28514,
+        "H": 201404,
+        "m": 1311,
+        "R": 87,
+        "K": 5742833656
+      }
+    },
+    {
+      "prime": 268692649,
+      "stored_state": {
+        "prime": 268692649,
+        "source_distance": 41,
+        "gap": 39,
+        "normal_form": [
+          15986,
+          1,
+          4202
+        ],
+        "R": 431,
+        "K": 28951632930,
+        "E": 17672,
+        "a": 94,
+        "b": 307996095,
+        "source_denominator": 268692608
+      },
+      "B_one_realization": {
+        "A": 15986,
+        "B": 1,
+        "C": 4202,
+        "H": 6889965,
+        "m": 39,
+        "R": 431,
+        "K": 28951632930
+      }
+    },
+    {
+      "prime": 268727209,
+      "stored_state": {
+        "prime": 268727209,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          1158307,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 2082635870,
+        "E": 280,
+        "a": 2,
+        "b": 29751941,
+        "source_denominator": 268727200
+      },
+      "B_one_realization": {
+        "A": 66189,
+        "B": 1,
+        "C": 1015,
+        "H": 2051858,
+        "m": 131,
+        "R": 31,
+        "K": 2082635870
+      }
+    },
+    {
+      "prime": 283309849,
+      "stored_state": {
+        "prime": 283309849,
+        "source_distance": 9,
+        "gap": 123,
+        "normal_form": [
+          5891,
+          1,
+          12023
+        ],
+        "R": 391,
+        "K": 27693537740,
+        "E": 3520,
+        "a": 8,
+        "b": 125879717,
+        "source_denominator": 283309840
+      },
+      "B_one_realization": {
+        "A": 5891,
+        "B": 1,
+        "C": 12023,
+        "H": 2303380,
+        "m": 123,
+        "R": 391,
+        "K": 27693537740
+      }
+    },
+    {
+      "prime": 283319689,
+      "stored_state": {
+        "prime": 283319689,
+        "source_distance": 429,
+        "gap": 87,
+        "normal_form": [
+          7556,
+          1,
+          9374
+        ],
+        "R": 431,
+        "K": 30527696490,
+        "E": 184900,
+        "a": 215,
+        "b": 70994643,
+        "source_denominator": 283319260
+      },
+      "B_one_realization": {
+        "A": 7556,
+        "B": 1,
+        "C": 9374,
+        "H": 3256635,
+        "m": 87,
+        "R": 431,
+        "K": 30527696490
+      }
+    },
+    {
+      "prime": 287349241,
+      "stored_state": {
+        "prime": 287349241,
+        "source_distance": 3,
+        "gap": 159,
+        "normal_form": [
+          66950,
+          1,
+          1073
+        ],
+        "R": 27,
+        "K": 1939607377,
+        "E": 82,
+        "a": 1,
+        "b": 47307497,
+        "source_denominator": 287349238
+      },
+      "B_one_realization": {
+        "A": 66950,
+        "B": 1,
+        "C": 1073,
+        "H": 1807649,
+        "m": 159,
+        "R": 27,
+        "K": 1939607377
+      }
+    },
+    {
+      "prime": 291771769,
+      "stored_state": {
+        "prime": 291771769,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          1257637,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 2261231210,
+        "E": 280,
+        "a": 2,
+        "b": 32303303,
+        "source_denominator": 291771760
+      },
+      "B_one_realization": {
+        "A": 71865,
+        "B": 1,
+        "C": 1015,
+        "H": 2227814,
+        "m": 131,
+        "R": 31,
+        "K": 2261231210
+      }
+    },
+    {
+      "prime": 291881209,
+      "stored_state": {
+        "prime": 291881209,
+        "source_distance": 9,
+        "gap": 119,
+        "normal_form": [
+          21237,
+          2,
+          1718
+        ],
+        "R": 231,
+        "K": 16856139820,
+        "E": 2080,
+        "a": 4,
+        "b": 64831307,
+        "source_denominator": 291881200
+      },
+      "B_one_realization": {
+        "A": 4,
+        "B": 1,
+        "C": 18262340,
+        "H": 923,
+        "m": 316231,
+        "R": 231,
+        "K": 16856139820
+      }
+    },
+    {
+      "prime": 292485769,
+      "stored_state": {
+        "prime": 292485769,
+        "source_distance": 9,
+        "gap": 119,
+        "normal_form": [
+          5402,
+          1,
+          13536
+        ],
+        "R": 455,
+        "K": 33270256224,
+        "E": 4096,
+        "a": 64,
+        "b": 1039695507,
+        "source_denominator": 292485760
+      },
+      "B_one_realization": {
+        "A": 5402,
+        "B": 1,
+        "C": 13536,
+        "H": 2457909,
+        "m": 119,
+        "R": 455,
+        "K": 33270256224
+      }
+    },
+    {
+      "prime": 296890729,
+      "stored_state": {
+        "prime": 296890729,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          407817,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 2300903150,
+        "E": 280,
+        "a": 2,
+        "b": 32870045,
+        "source_denominator": 296890720
+      },
+      "B_one_realization": {
+        "A": 21,
+        "B": 1,
+        "C": 3539851,
+        "H": 650,
+        "m": 456755,
+        "R": 31,
+        "K": 2300903150
+      }
+    },
+    {
+      "prime": 297265609,
+      "stored_state": {
+        "prime": 297265609,
+        "source_distance": 4833,
+        "gap": 15,
+        "normal_form": [
+          735806,
+          1,
+          101
+        ],
+        "R": 27,
+        "K": 2006542861,
+        "E": 130492,
+        "a": 2,
+        "b": 61507,
+        "source_denominator": 297260776
+      },
+      "B_one_realization": {
+        "A": 735806,
+        "B": 1,
+        "C": 101,
+        "H": 19866761,
+        "m": 15,
+        "R": 27,
+        "K": 2006542861
+      }
+    },
+    {
+      "prime": 299958649,
+      "stored_state": {
+        "prime": 299958649,
+        "source_distance": 25,
+        "gap": 51,
+        "normal_form": [
+          3359,
+          1,
+          22325
+        ],
+        "R": 1751,
+        "K": 131306898600,
+        "E": 43776,
+        "a": 16,
+        "b": 95984575,
+        "source_denominator": 299958624
+      },
+      "B_one_realization": {
+        "A": 3359,
+        "B": 1,
+        "C": 22325,
+        "H": 5881608,
+        "m": 51,
+        "R": 1751,
+        "K": 131306898600
+      }
+    },
+    {
+      "prime": 301190569,
+      "stored_state": {
+        "prime": 301190569,
+        "source_distance": 209,
+        "gap": 191,
+        "normal_form": [
+          12038,
+          1,
+          6255
+        ],
+        "R": 131,
+        "K": 9863991135,
+        "E": 27380,
+        "a": 74,
+        "b": 53318871,
+        "source_denominator": 301190360
+      },
+      "B_one_realization": {
+        "A": 12038,
+        "B": 1,
+        "C": 6255,
+        "H": 1576977,
+        "m": 191,
+        "R": 131,
+        "K": 9863991135
+      }
+    },
+    {
+      "prime": 305273929,
+      "stored_state": {
+        "prime": 305273929,
+        "source_distance": 17,
+        "gap": 67,
+        "normal_form": [
+          17869,
+          1,
+          4271
+        ],
+        "R": 255,
+        "K": 19461212974,
+        "E": 4336,
+        "a": 4,
+        "b": 35906297,
+        "source_denominator": 305273912
+      },
+      "B_one_realization": {
+        "A": 17869,
+        "B": 1,
+        "C": 4271,
+        "H": 4556594,
+        "m": 67,
+        "R": 255,
+        "K": 19461212974
+      }
+    },
+    {
+      "prime": 310127449,
+      "stored_state": {
+        "prime": 310127449,
+        "source_distance": 19,
+        "gap": 15,
+        "normal_form": [
+          405926,
+          1,
+          191
+        ],
+        "R": 51,
+        "K": 3954124975,
+        "E": 970,
+        "a": 1,
+        "b": 8152835,
+        "source_denominator": 310127430
+      },
+      "B_one_realization": {
+        "A": 405926,
+        "B": 1,
+        "C": 191,
+        "H": 20702225,
+        "m": 15,
+        "R": 51,
+        "K": 3954124975
+      }
+    },
+    {
+      "prime": 315893209,
+      "stored_state": {
+        "prime": 315893209,
+        "source_distance": 17356765,
+        "gap": 91,
+        "normal_form": [
+          5,
+          1,
+          15794665
+        ],
+        "R": 694271,
+        "K": 54828873526410,
+        "E": 12050298593316,
+        "a": 1735677,
+        "b": 15794665,
+        "source_denominator": 298536444
+      },
+      "B_one_realization": {
+        "A": 5,
+        "B": 1,
+        "C": 15794665,
+        "H": 3471354,
+        "m": 91,
+        "R": 694271,
+        "K": 54828873526410
+      }
+    },
+    {
+      "prime": 317608729,
+      "stored_state": {
+        "prime": 317608729,
+        "source_distance": 9,
+        "gap": 35,
+        "normal_form": [
+          232851,
+          1,
+          341
+        ],
+        "R": 39,
+        "K": 3096685108,
+        "E": 352,
+        "a": 4,
+        "b": 70379207,
+        "source_denominator": 317608720
+      },
+      "B_one_realization": {
+        "A": 232851,
+        "B": 1,
+        "C": 341,
+        "H": 9081188,
+        "m": 35,
+        "R": 39,
+        "K": 3096685108
+      }
+    },
+    {
+      "prime": 319207849,
+      "stored_state": {
+        "prime": 319207849,
+        "source_distance": 73,
+        "gap": 203,
+        "normal_form": [
+          16553,
+          1,
+          4821
+        ],
+        "R": 95,
+        "K": 7581186414,
+        "E": 6936,
+        "a": 34,
+        "b": 74325357,
+        "source_denominator": 319207776
+      },
+      "B_one_realization": {
+        "A": 16553,
+        "B": 1,
+        "C": 4821,
+        "H": 1572534,
+        "m": 203,
+        "R": 95,
+        "K": 7581186414
+      }
+    },
+    {
+      "prime": 329803609,
+      "stored_state": {
+        "prime": 329803609,
+        "source_distance": 3,
+        "gap": 47,
+        "normal_form": [
+          453027,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 2555977970,
+        "E": 94,
+        "a": 1,
+        "b": 54382510,
+        "source_denominator": 329803606
+      },
+      "B_one_realization": {
+        "A": 138,
+        "B": 1,
+        "C": 597610,
+        "H": 4277,
+        "m": 77111,
+        "R": 31,
+        "K": 2555977970
+      }
+    },
+    {
+      "prime": 333239449,
+      "stored_state": {
+        "prime": 333239449,
+        "source_distance": 49,
+        "gap": 59,
+        "normal_form": [
+          10251,
+          1,
+          8127
+        ],
+        "R": 551,
+        "K": 45903734100,
+        "E": 27000,
+        "a": 5,
+        "b": 17001383,
+        "source_denominator": 333239400
+      },
+      "B_one_realization": {
+        "A": 10251,
+        "B": 1,
+        "C": 8127,
+        "H": 5648300,
+        "m": 59,
+        "R": 551,
+        "K": 45903734100
+      }
+    },
+    {
+      "prime": 338356489,
+      "stored_state": {
+        "prime": 338356489,
+        "source_distance": 221,
+        "gap": 15,
+        "normal_form": [
+          716857,
+          2,
+          59
+        ],
+        "R": 63,
+        "K": 5329114702,
+        "E": 13924,
+        "a": 59,
+        "b": 45161989,
+        "source_denominator": 338356268
+      },
+      "B_one_realization": {
+        "A": 9,
+        "B": 1,
+        "C": 9415397,
+        "H": 566,
+        "m": 597803,
+        "R": 63,
+        "K": 5329114702
+      }
+    },
+    {
+      "prime": 339576169,
+      "stored_state": {
+        "prime": 339576169,
+        "source_distance": 9,
+        "gap": 119,
+        "normal_form": [
+          92076,
+          1,
+          922
+        ],
+        "R": 31,
+        "K": 2631715310,
+        "E": 280,
+        "a": 2,
+        "b": 37595933,
+        "source_denominator": 339576160
+      },
+      "B_one_realization": {
+        "A": 92076,
+        "B": 1,
+        "C": 922,
+        "H": 2854355,
+        "m": 119,
+        "R": 31,
+        "K": 2631715310
+      }
+    },
+    {
+      "prime": 340352329,
+      "stored_state": {
+        "prime": 340352329,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          467517,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 2637730550,
+        "E": 280,
+        "a": 2,
+        "b": 37681865,
+        "source_denominator": 340352320
+      },
+      "B_one_realization": {
+        "A": 21,
+        "B": 1,
+        "C": 4058047,
+        "H": 650,
+        "m": 523619,
+        "R": 31,
+        "K": 2637730550
+      }
+    },
+    {
+      "prime": 340465129,
+      "stored_state": {
+        "prime": 340465129,
+        "source_distance": 9,
+        "gap": 35,
+        "normal_form": [
+          36991,
+          1,
+          2301
+        ],
+        "R": 263,
+        "K": 22385582232,
+        "E": 2368,
+        "a": 4,
+        "b": 75626967,
+        "source_denominator": 340465120
+      },
+      "B_one_realization": {
+        "A": 36991,
+        "B": 1,
+        "C": 2301,
+        "H": 9728632,
+        "m": 35,
+        "R": 263,
+        "K": 22385582232
+      }
+    },
+    {
+      "prime": 357834409,
+      "stored_state": {
+        "prime": 357834409,
+        "source_distance": 3766677,
+        "gap": 95,
+        "normal_form": [
+          1,
+          1,
+          89458626
+        ],
+        "R": 3766679,
+        "K": 336961838464428,
+        "E": 14187863155684,
+        "a": 1883339,
+        "b": 89458626,
+        "source_denominator": 354067732
+      },
+      "B_one_realization": {
+        "A": 1,
+        "B": 1,
+        "C": 89458626,
+        "H": 3766678,
+        "m": 95,
+        "R": 3766679,
+        "K": 336961838464428
+      }
+    },
+    {
+      "prime": 364052329,
+      "stored_state": {
+        "prime": 364052329,
+        "source_distance": 2105705,
+        "gap": 35,
+        "normal_form": [
+          6051,
+          1,
+          15041
+        ],
+        "R": 1719,
+        "K": 156451488388,
+        "E": 3619706896,
+        "a": 30082,
+        "b": 2600417,
+        "source_denominator": 361946624
+      },
+      "B_one_realization": {
+        "A": 6051,
+        "B": 1,
+        "C": 15041,
+        "H": 10401668,
+        "m": 35,
+        "R": 1719,
+        "K": 156451488388
+      }
+    },
+    {
+      "prime": 367702729,
+      "stored_state": {
+        "prime": 367702729,
+        "source_distance": 9,
+        "gap": 35,
+        "normal_form": [
+          26871,
+          1,
+          3421
+        ],
+        "R": 391,
+        "K": 35942941760,
+        "E": 3520,
+        "a": 1,
+        "b": 20422126,
+        "source_denominator": 367702720
+      },
+      "B_one_realization": {
+        "A": 26871,
+        "B": 1,
+        "C": 3421,
+        "H": 10506560,
+        "m": 35,
+        "R": 391,
+        "K": 35942941760
+      }
+    },
+    {
+      "prime": 370265449,
+      "stored_state": {
+        "prime": 370265449,
+        "source_distance": 29,
+        "gap": 135,
+        "normal_form": [
+          53138,
+          13,
+          134
+        ],
+        "R": 671,
+        "K": 62112029070,
+        "E": 19460,
+        "a": 1,
+        "b": 6383559,
+        "source_denominator": 370265420
+      },
+      "B_one_realization": {
+        "A": 1,
+        "B": 1,
+        "C": 92704521,
+        "H": 670,
+        "m": 552635,
+        "R": 671,
+        "K": 62112029070
+      }
+    },
+    {
+      "prime": 370600729,
+      "stored_state": {
+        "prime": 370600729,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          1597417,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 2872155650,
+        "E": 280,
+        "a": 2,
+        "b": 41030795,
+        "source_denominator": 370600720
+      },
+      "B_one_realization": {
+        "A": 91281,
+        "B": 1,
+        "C": 1015,
+        "H": 2829710,
+        "m": 131,
+        "R": 31,
+        "K": 2872155650
+      }
+    },
+    {
+      "prime": 373252489,
+      "stored_state": {
+        "prime": 373252489,
+        "source_distance": 9,
+        "gap": 191,
+        "normal_form": [
+          4295,
+          1,
+          21726
+        ],
+        "R": 455,
+        "K": 42457470624,
+        "E": 4096,
+        "a": 64,
+        "b": 1326795957,
+        "source_denominator": 373252480
+      },
+      "B_one_realization": {
+        "A": 4295,
+        "B": 1,
+        "C": 21726,
+        "H": 1954224,
+        "m": 191,
+        "R": 455,
+        "K": 42457470624
+      }
+    },
+    {
+      "prime": 373949689,
+      "stored_state": {
+        "prime": 373949689,
+        "source_distance": 9,
+        "gap": 43,
+        "normal_form": [
+          37651,
+          1,
+          2483
+        ],
+        "R": 231,
+        "K": 21595594540,
+        "E": 2080,
+        "a": 4,
+        "b": 83059979,
+        "source_denominator": 373949680
+      },
+      "B_one_realization": {
+        "A": 37651,
+        "B": 1,
+        "C": 2483,
+        "H": 8697380,
+        "m": 43,
+        "R": 231,
+        "K": 21595594540
+      }
+    },
+    {
+      "prime": 383064889,
+      "stored_state": {
+        "prime": 383064889,
+        "source_distance": 3,
+        "gap": 79,
+        "normal_form": [
+          179674,
+          1,
+          533
+        ],
+        "R": 27,
+        "K": 2585688001,
+        "E": 82,
+        "a": 1,
+        "b": 63065561,
+        "source_denominator": 383064886
+      },
+      "B_one_realization": {
+        "A": 179674,
+        "B": 1,
+        "C": 533,
+        "H": 4851197,
+        "m": 79,
+        "R": 27,
+        "K": 2585688001
+      }
+    },
+    {
+      "prime": 391209289,
+      "stored_state": {
+        "prime": 391209289,
+        "source_distance": 5,
+        "gap": 47,
+        "normal_form": [
+          95697,
+          1,
+          1022
+        ],
+        "R": 87,
+        "K": 8508802036,
+        "E": 436,
+        "a": 1,
+        "b": 39031202,
+        "source_denominator": 391209284
+      },
+      "B_one_realization": {
+        "A": 95697,
+        "B": 1,
+        "C": 1022,
+        "H": 8325638,
+        "m": 47,
+        "R": 87,
+        "K": 8508802036
+      }
+    },
+    {
+      "prime": 394796329,
+      "stored_state": {
+        "prime": 394796329,
+        "source_distance": 25,
+        "gap": 47,
+        "normal_form": [
+          7149,
+          1,
+          13806
+        ],
+        "R": 1175,
+        "K": 115971421644,
+        "E": 29376,
+        "a": 24,
+        "b": 189495787,
+        "source_denominator": 394796304
+      },
+      "B_one_realization": {
+        "A": 7149,
+        "B": 1,
+        "C": 13806,
+        "H": 8400074,
+        "m": 47,
+        "R": 1175,
+        "K": 115971421644
+      }
+    },
+    {
+      "prime": 398900329,
+      "stored_state": {
+        "prime": 398900329,
+        "source_distance": 17,
+        "gap": 55,
+        "normal_form": [
+          115156,
+          1,
+          866
+        ],
+        "R": 63,
+        "K": 6282680182,
+        "E": 1072,
+        "a": 4,
+        "b": 46885673,
+        "source_denominator": 398900312
+      },
+      "B_one_realization": {
+        "A": 115156,
+        "B": 1,
+        "C": 866,
+        "H": 7254827,
+        "m": 55,
+        "R": 63,
+        "K": 6282680182
+      }
+    },
+    {
+      "prime": 401991529,
+      "stored_state": {
+        "prime": 401991529,
+        "source_distance": 9,
+        "gap": 143,
+        "normal_form": [
+          29437,
+          2,
+          1707
+        ],
+        "R": 191,
+        "K": 19195095510,
+        "E": 1720,
+        "a": 2,
+        "b": 44639757,
+        "source_denominator": 401991520
+      },
+      "B_one_realization": {
+        "A": 1281,
+        "B": 1,
+        "C": 78453,
+        "H": 244670,
+        "m": 1643,
+        "R": 191,
+        "K": 19195095510
+      }
+    },
+    {
+      "prime": 412802329,
+      "stored_state": {
+        "prime": 412802329,
+        "source_distance": 12532031,
+        "gap": 63,
+        "normal_form": [
+          42278,
+          1,
+          2441
+        ],
+        "R": 155,
+        "K": 15996090249,
+        "E": 1942464806,
+        "a": 2441,
+        "b": 40203,
+        "source_denominator": 400270298
+      },
+      "B_one_realization": {
+        "A": 42278,
+        "B": 1,
+        "C": 2441,
+        "H": 6553089,
+        "m": 63,
+        "R": 155,
+        "K": 15996090249
+      }
+    },
+    {
+      "prime": 417422569,
+      "stored_state": {
+        "prime": 417422569,
+        "source_distance": 5,
+        "gap": 75,
+        "normal_form": [
+          41231,
+          1,
+          2531
+        ],
+        "R": 135,
+        "K": 14088011704,
+        "E": 676,
+        "a": 1,
+        "b": 41680508,
+        "source_denominator": 417422564
+      },
+      "B_one_realization": {
+        "A": 41231,
+        "B": 1,
+        "C": 2531,
+        "H": 5566184,
+        "m": 75,
+        "R": 135,
+        "K": 14088011704
+      }
+    },
+    {
+      "prime": 425566969,
+      "stored_state": {
+        "prime": 425566969,
+        "source_distance": 9,
+        "gap": 75,
+        "normal_form": [
+          65231,
+          1,
+          1631
+        ],
+        "R": 87,
+        "K": 9256081576,
+        "E": 784,
+        "a": 1,
+        "b": 23612453,
+        "source_denominator": 425566960
+      },
+      "B_one_realization": {
+        "A": 65231,
+        "B": 1,
+        "C": 1631,
+        "H": 5675096,
+        "m": 75,
+        "R": 87,
+        "K": 9256081576
+      }
+    },
+    {
+      "prime": 426972121,
+      "stored_state": {
+        "prime": 426972121,
+        "source_distance": 1593,
+        "gap": 35,
+        "normal_form": [
+          221919,
+          1,
+          481
+        ],
+        "R": 55,
+        "K": 5870866664,
+        "E": 87616,
+        "a": 148,
+        "b": 19834009,
+        "source_denominator": 426970528
+      },
+      "B_one_realization": {
+        "A": 221919,
+        "B": 1,
+        "C": 481,
+        "H": 12205544,
+        "m": 35,
+        "R": 55,
+        "K": 5870866664
+      }
+    },
+    {
+      "prime": 429237769,
+      "stored_state": {
+        "prime": 429237769,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          88103,
+          3,
+          406
+        ],
+        "R": 311,
+        "K": 33373236540,
+        "E": 2800,
+        "a": 10,
+        "b": 238380261,
+        "source_denominator": 429237760
+      },
+      "B_one_realization": {
+        "A": 5093,
+        "B": 1,
+        "C": 21070,
+        "H": 1583922,
+        "m": 271,
+        "R": 311,
+        "K": 33373236540
+      }
+    },
+    {
+      "prime": 440658409,
+      "stored_state": {
+        "prime": 440658409,
+        "source_distance": 9,
+        "gap": 19,
+        "normal_form": [
+          209041,
+          1,
+          527
+        ],
+        "R": 111,
+        "K": 12228270850,
+        "E": 1000,
+        "a": 10,
+        "b": 244565417,
+        "source_denominator": 440658400
+      },
+      "B_one_realization": {
+        "A": 209041,
+        "B": 1,
+        "C": 527,
+        "H": 23203550,
+        "m": 19,
+        "R": 111,
+        "K": 12228270850
+      }
+    },
+    {
+      "prime": 444114169,
+      "stored_state": {
+        "prime": 444114169,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          610047,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 3441884810,
+        "E": 280,
+        "a": 2,
+        "b": 49169783,
+        "source_denominator": 444114160
+      },
+      "B_one_realization": {
+        "A": 86,
+        "B": 1,
+        "C": 1291514,
+        "H": 2665,
+        "m": 166647,
+        "R": 31,
+        "K": 3441884810
+      }
+    },
+    {
+      "prime": 454105369,
+      "stored_state": {
+        "prime": 454105369,
+        "source_distance": 1099,
+        "gap": 127,
+        "normal_form": [
+          14246,
+          1,
+          7969
+        ],
+        "R": 251,
+        "K": 28495111905,
+        "E": 275850,
+        "a": 5,
+        "b": 1032993,
+        "source_denominator": 454104270
+      },
+      "B_one_realization": {
+        "A": 14246,
+        "B": 1,
+        "C": 7969,
+        "H": 3575745,
+        "m": 127,
+        "R": 251,
+        "K": 28495111905
+      }
+    },
+    {
+      "prime": 457986169,
+      "stored_state": {
+        "prime": 457986169,
+        "source_distance": 25,
+        "gap": 95,
+        "normal_form": [
+          3891,
+          1,
+          29426
+        ],
+        "R": 1239,
+        "K": 141861215848,
+        "E": 30976,
+        "a": 176,
+        "b": 1612059271,
+        "source_denominator": 457986144
+      },
+      "B_one_realization": {
+        "A": 3891,
+        "B": 1,
+        "C": 29426,
+        "H": 4820948,
+        "m": 95,
+        "R": 1239,
+        "K": 141861215848
+      }
+    },
+    {
+      "prime": 459147049,
+      "stored_state": {
+        "prime": 459147049,
+        "source_distance": 9,
+        "gap": 35,
+        "normal_form": [
+          183073,
+          3,
+          209
+        ],
+        "R": 215,
+        "K": 24679153884,
+        "E": 1936,
+        "a": 22,
+        "b": 560889861,
+        "source_denominator": 459147040
+      },
+      "B_one_realization": {
+        "A": 17363,
+        "B": 1,
+        "C": 6611,
+        "H": 3733044,
+        "m": 123,
+        "R": 215,
+        "K": 24679153884
+      }
+    },
+    {
+      "prime": 466936969,
+      "stored_state": {
+        "prime": 466936969,
+        "source_distance": 9,
+        "gap": 47,
+        "normal_form": [
+          641397,
+          2,
+          91
+        ],
+        "R": 31,
+        "K": 3618761510,
+        "E": 280,
+        "a": 2,
+        "b": 51696593,
+        "source_denominator": 466936960
+      },
+      "B_one_realization": {
+        "A": 125,
+        "B": 1,
+        "C": 934115,
+        "H": 3874,
+        "m": 120531,
+        "R": 31,
+        "K": 3618761510
+      }
+    },
+    {
+      "prime": 477015289,
+      "stored_state": {
+        "prime": 477015289,
+        "source_distance": 147421,
+        "gap": 55,
+        "normal_form": [
+          22646,
+          1,
+          5266
+        ],
+        "R": 383,
+        "K": 45674213922,
+        "E": 56462244,
+        "a": 83,
+        "b": 134283,
+        "source_denominator": 476867868
+      },
+      "B_one_realization": {
+        "A": 22646,
+        "B": 1,
+        "C": 5266,
+        "H": 8673417,
+        "m": 55,
+        "R": 383,
+        "K": 45674213922
+      }
+    },
+    {
+      "prime": 477667129,
+      "stored_state": {
+        "prime": 477667129,
+        "source_distance": 9,
+        "gap": 51,
+        "normal_form": [
+          302321,
+          1,
+          395
+        ],
+        "R": 31,
+        "K": 3701920250,
+        "E": 280,
+        "a": 2,
+        "b": 52884575,
+        "source_denominator": 477667120
+      },
+      "B_one_realization": {
+        "A": 302321,
+        "B": 1,
+        "C": 395,
+        "H": 9371950,
+        "m": 51,
+        "R": 31,
+        "K": 3701920250
+      }
+    },
+    {
+      "prime": 493936249,
+      "stored_state": {
+        "prime": 493936249,
+        "source_distance": 48244917,
+        "gap": 215,
+        "normal_form": [
+          21,
+          1,
+          5880196
+        ],
+        "R": 109399,
+        "K": 13509032926088,
+        "E": 5277945674884,
+        "a": 1148689,
+        "b": 5880196,
+        "source_denominator": 445691332
+      },
+      "B_one_realization": {
+        "A": 21,
+        "B": 1,
+        "C": 5880196,
+        "H": 2297378,
+        "m": 215,
+        "R": 109399,
+        "K": 13509032926088
+      }
+    }
+  ],
+  "reselected_B_eq_1_records": [
+    {
+      "prime": 3942409,
+      "stored_state": {
+        "prime": 3942409,
+        "source_distance": 263,
+        "gap": 47,
+        "normal_form": [
+          5299,
+          6,
+          31
+        ],
+        "R": 95,
+        "K": 93632214,
+        "E": 24986,
+        "a": 31,
+        "b": 232338,
+        "source_denominator": 3942146
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 4665,
+        "source_denominator": 3937744,
+        "E": 872356,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          1406,
+          1,
+          701
+        ],
+        "B_one_realization": {
+          "A": 1406,
+          "B": 1,
+          "C": 701,
+          "H": 262921,
+          "m": 15,
+          "R": 187,
+          "K": 184307621
+        }
+      }
+    },
+    {
+      "prime": 13782409,
+      "stored_state": {
+        "prime": 13782409,
+        "source_distance": 217,
+        "gap": 15,
+        "normal_form": [
+          59407,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 106813670,
+        "E": 6728,
+        "a": 58,
+        "b": 1841615,
+        "source_denominator": 13782192
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 145077,
+        "source_denominator": 13637332,
+        "E": 21047626084,
+        "origin_gap": 95,
+        "origin_normal_form": [
+          1,
+          1,
+          3445626
+        ],
+        "B_one_realization": {
+          "A": 1,
+          "B": 1,
+          "C": 3445626,
+          "H": 145078,
+          "m": 95,
+          "R": 145079,
+          "K": 499884528828
+        }
+      }
+    },
+    {
+      "prime": 26034649,
+      "stored_state": {
+        "prime": 26034649,
+        "source_distance": 13,
+        "gap": 63,
+        "normal_form": [
+          7447,
+          2,
+          437
+        ],
+        "R": 111,
+        "K": 722461510,
+        "E": 1444,
+        "a": 19,
+        "b": 19012145,
+        "source_denominator": 26034636
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 93953,
+        "source_denominator": 25940696,
+        "E": 78826568,
+        "origin_gap": 143,
+        "origin_normal_form": [
+          217,
+          1,
+          29994
+        ],
+        "B_one_realization": {
+          "A": 217,
+          "B": 1,
+          "C": 29994,
+          "H": 182062,
+          "m": 143,
+          "R": 839,
+          "K": 5460767628
+        }
+      }
+    },
+    {
+      "prime": 27635689,
+      "stored_state": {
+        "prime": 27635689,
+        "source_distance": 489,
+        "gap": 31,
+        "normal_form": [
+          3017,
+          2,
+          1145
+        ],
+        "R": 591,
+        "K": 4083173050,
+        "E": 289000,
+        "a": 170,
+        "b": 4803733,
+        "source_denominator": 27635200
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 39997,
+        "source_denominator": 27595692,
+        "E": 48916332,
+        "origin_gap": 59,
+        "origin_normal_form": [
+          383,
+          1,
+          18039
+        ],
+        "B_one_realization": {
+          "A": 383,
+          "B": 1,
+          "C": 18039,
+          "H": 468408,
+          "m": 59,
+          "R": 1223,
+          "K": 8449611912
+        }
+      }
+    },
+    {
+      "prime": 36583369,
+      "stored_state": {
+        "prime": 36583369,
+        "source_distance": 9,
+        "gap": 215,
+        "normal_form": [
+          8727,
+          2,
+          524
+        ],
+        "R": 39,
+        "K": 356687848,
+        "E": 352,
+        "a": 2,
+        "b": 4053271,
+        "source_denominator": 36583360
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 69,
+        "source_denominator": 36583300,
+        "E": 2140,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          157687,
+          2,
+          29
+        ],
+        "B_one_realization": {
+          "A": 1001,
+          "B": 1,
+          "C": 9137,
+          "H": 31030,
+          "m": 1179,
+          "R": 31,
+          "K": 283521110
+        }
+      }
+    },
+    {
+      "prime": 36851929,
+      "stored_state": {
+        "prime": 36851929,
+        "source_distance": 9,
+        "gap": 19,
+        "normal_form": [
+          32101,
+          7,
+          41
+        ],
+        "R": 423,
+        "K": 3897091492,
+        "E": 3808,
+        "a": 4,
+        "b": 8187167,
+        "source_denominator": 36851920
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 3254169,
+        "source_denominator": 33597760,
+        "E": 556462900,
+        "origin_gap": 31,
+        "origin_normal_form": [
+          34766,
+          5,
+          53
+        ],
+        "B_one_realization": {
+          "A": 614,
+          "B": 1,
+          "C": 15005,
+          "H": 104993,
+          "m": 351,
+          "R": 171,
+          "K": 1575419965
+        }
+      }
+    },
+    {
+      "prime": 39407449,
+      "stored_state": {
+        "prime": 39407449,
+        "source_distance": 7,
+        "gap": 87,
+        "normal_form": [
+          2317,
+          2,
+          2126
+        ],
+        "R": 391,
+        "K": 3852078140,
+        "E": 2738,
+        "a": 37,
+        "b": 104110220,
+        "source_denominator": 39407442
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 7249,
+        "source_denominator": 39400200,
+        "E": 224720,
+        "origin_gap": 171,
+        "origin_normal_form": [
+          37177,
+          5,
+          53
+        ],
+        "B_one_realization": {
+          "A": 881,
+          "B": 1,
+          "C": 11183,
+          "H": 27310,
+          "m": 1443,
+          "R": 31,
+          "K": 305407730
+        }
+      }
+    },
+    {
+      "prime": 40944649,
+      "stored_state": {
+        "prime": 40944649,
+        "source_distance": 13,
+        "gap": 123,
+        "normal_form": [
+          2881,
+          11,
+          323
+        ],
+        "R": 1271,
+        "K": 13010162220,
+        "E": 16524,
+        "a": 9,
+        "b": 14172290,
+        "source_denominator": 40944636
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 60981,
+        "source_denominator": 40883668,
+        "E": 12623068,
+        "origin_gap": 199,
+        "origin_normal_form": [
+          994,
+          1,
+          10298
+        ],
+        "B_one_realization": {
+          "A": 994,
+          "B": 1,
+          "C": 10298,
+          "H": 205757,
+          "m": 199,
+          "R": 207,
+          "K": 2118885586
+        }
+      }
+    },
+    {
+      "prime": 42486889,
+      "stored_state": {
+        "prime": 42486889,
+        "source_distance": 19,
+        "gap": 71,
+        "normal_form": [
+          16780,
+          3,
+          211
+        ],
+        "R": 107,
+        "K": 1136524281,
+        "E": 2034,
+        "a": 3,
+        "b": 3352579,
+        "source_denominator": 42486870
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 3220249,
+        "source_denominator": 39266640,
+        "E": 10791054400,
+        "origin_gap": 31,
+        "origin_normal_form": [
+          409,
+          1,
+          25970
+        ],
+        "B_one_realization": {
+          "A": 409,
+          "B": 1,
+          "C": 25970,
+          "H": 1370558,
+          "m": 31,
+          "R": 3351,
+          "K": 35593391260
+        }
+      }
+    },
+    {
+      "prime": 64214329,
+      "stored_state": {
+        "prime": 64214329,
+        "source_distance": 41497,
+        "gap": 207,
+        "normal_form": [
+          20017,
+          2,
+          401
+        ],
+        "R": 31,
+        "K": 497661050,
+        "E": 1286408,
+        "a": 802,
+        "b": 620525,
+        "source_denominator": 64172832
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 414285,
+        "source_denominator": 63800044,
+        "E": 171632889796,
+        "origin_gap": 155,
+        "origin_normal_form": [
+          1,
+          1,
+          16053621
+        ],
+        "B_one_realization": {
+          "A": 1,
+          "B": 1,
+          "C": 16053621,
+          "H": 414286,
+          "m": 155,
+          "R": 414287,
+          "K": 6650790429606
+        }
+      }
+    },
+    {
+      "prime": 66270649,
+      "stored_state": {
+        "prime": 66270649,
+        "source_distance": 34569,
+        "gap": 111,
+        "normal_form": [
+          23770,
+          17,
+          41
+        ],
+        "R": 427,
+        "K": 7074391781,
+        "E": 14760964,
+        "a": 3842,
+        "b": 3682661,
+        "source_denominator": 66236080
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 13557401,
+        "source_denominator": 52713248,
+        "E": 8988556864,
+        "origin_gap": 143,
+        "origin_normal_form": [
+          699,
+          1,
+          23702
+        ],
+        "B_one_realization": {
+          "A": 699,
+          "B": 1,
+          "C": 23702,
+          "H": 463436,
+          "m": 143,
+          "R": 663,
+          "K": 10984360072
+        }
+      }
+    },
+    {
+      "prime": 72567049,
+      "stored_state": {
+        "prime": 72567049,
+        "source_distance": 4993,
+        "gap": 71,
+        "normal_form": [
+          28660,
+          3,
+          211
+        ],
+        "R": 107,
+        "K": 1941168561,
+        "E": 534252,
+        "a": 422,
+        "b": 3066617,
+        "source_denominator": 72562056
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 8065,
+        "source_denominator": 72558984,
+        "E": 2604996,
+        "origin_gap": 119,
+        "origin_normal_form": [
+          1888,
+          1,
+          9609
+        ],
+        "B_one_realization": {
+          "A": 1888,
+          "B": 1,
+          "C": 9609,
+          "H": 609823,
+          "m": 119,
+          "R": 323,
+          "K": 5859789207
+        }
+      }
+    },
+    {
+      "prime": 79312489,
+      "stored_state": {
+        "prime": 79312489,
+        "source_distance": 193,
+        "gap": 47,
+        "normal_form": [
+          115954,
+          9,
+          19
+        ],
+        "R": 131,
+        "K": 2597484015,
+        "E": 25284,
+        "a": 14,
+        "b": 2876505,
+        "source_denominator": 79312296
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 5353,
+        "source_denominator": 79307136,
+        "E": 25560576,
+        "origin_gap": 151,
+        "origin_normal_form": [
+          110,
+          1,
+          180256
+        ],
+        "B_one_realization": {
+          "A": 110,
+          "B": 1,
+          "C": 180256,
+          "H": 525249,
+          "m": 151,
+          "R": 4775,
+          "K": 94679283744
+        }
+      }
+    },
+    {
+      "prime": 80266729,
+      "stored_state": {
+        "prime": 80266729,
+        "source_distance": 9,
+        "gap": 91,
+        "normal_form": [
+          6203,
+          5,
+          647
+        ],
+        "R": 711,
+        "K": 14267411080,
+        "E": 6400,
+        "a": 80,
+        "b": 356685277,
+        "source_denominator": 80266720
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 65,
+        "source_denominator": 80266664,
+        "E": 13456,
+        "origin_gap": 167,
+        "origin_normal_form": [
+          2322,
+          1,
+          8642
+        ],
+        "B_one_realization": {
+          "A": 2322,
+          "B": 1,
+          "C": 8642,
+          "H": 480653,
+          "m": 167,
+          "R": 207,
+          "K": 4153803226
+        }
+      }
+    },
+    {
+      "prime": 88409689,
+      "stored_state": {
+        "prime": 88409689,
+        "source_distance": 73,
+        "gap": 47,
+        "normal_form": [
+          129254,
+          9,
+          19
+        ],
+        "R": 131,
+        "K": 2895417315,
+        "E": 9564,
+        "a": 2,
+        "b": 1210965,
+        "source_denominator": 88409616
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 93,
+        "source_denominator": 88409596,
+        "E": 5116,
+        "origin_gap": 35,
+        "origin_normal_form": [
+          45951,
+          1,
+          481
+        ],
+        "B_one_realization": {
+          "A": 45951,
+          "B": 1,
+          "C": 481,
+          "H": 2527304,
+          "m": 35,
+          "R": 55,
+          "K": 1215633224
+        }
+      }
+    },
+    {
+      "prime": 93963769,
+      "stored_state": {
+        "prime": 93963769,
+        "source_distance": 9,
+        "gap": 143,
+        "normal_form": [
+          9169,
+          3,
+          854
+        ],
+        "R": 215,
+        "K": 5050552584,
+        "E": 1936,
+        "a": 1,
+        "b": 5217513,
+        "source_denominator": 93963760
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 25,
+        "source_denominator": 93963744,
+        "E": 15876,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          9866,
+          1,
+          2381
+        ],
+        "B_one_realization": {
+          "A": 9866,
+          "B": 1,
+          "C": 2381,
+          "H": 6264909,
+          "m": 15,
+          "R": 635,
+          "K": 14916748329
+        }
+      }
+    },
+    {
+      "prime": 97921849,
+      "stored_state": {
+        "prime": 97921849,
+        "source_distance": 217,
+        "gap": 15,
+        "normal_form": [
+          422077,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 758894330,
+        "E": 6728,
+        "a": 58,
+        "b": 13084385,
+        "source_denominator": 97921632
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 39585417,
+        "source_denominator": 58336432,
+        "E": 4340738901136,
+        "origin_gap": 19,
+        "origin_normal_form": [
+          47,
+          1,
+          520861
+        ],
+        "B_one_realization": {
+          "A": 47,
+          "B": 1,
+          "C": 520861,
+          "H": 5153784,
+          "m": 19,
+          "R": 109655,
+          "K": 2684405088024
+        }
+      }
+    },
+    {
+      "prime": 99756409,
+      "stored_state": {
+        "prime": 99756409,
+        "source_distance": 9,
+        "gap": 191,
+        "normal_form": [
+          9411,
+          2,
+          1325
+        ],
+        "R": 111,
+        "K": 2768240350,
+        "E": 1000,
+        "a": 10,
+        "b": 55364807,
+        "source_denominator": 99756400
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 25,
+        "source_denominator": 99756384,
+        "E": 1976,
+        "origin_gap": 171,
+        "origin_normal_form": [
+          7385,
+          1,
+          3377
+        ],
+        "B_one_realization": {
+          "A": 7385,
+          "B": 1,
+          "C": 3377,
+          "H": 583414,
+          "m": 171,
+          "R": 79,
+          "K": 1970189078
+        }
+      }
+    },
+    {
+      "prime": 118212649,
+      "stored_state": {
+        "prime": 118212649,
+        "source_distance": 7,
+        "gap": 47,
+        "normal_form": [
+          7497,
+          2,
+          1971
+        ],
+        "R": 671,
+        "K": 19830171870,
+        "E": 4698,
+        "a": 3,
+        "b": 25325890,
+        "source_denominator": 118212642
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 9,
+        "source_denominator": 118212640,
+        "E": 784,
+        "origin_gap": 47,
+        "origin_normal_form": [
+          28917,
+          1,
+          1022
+        ],
+        "B_one_realization": {
+          "A": 28917,
+          "B": 1,
+          "C": 1022,
+          "H": 2515778,
+          "m": 47,
+          "R": 87,
+          "K": 2571125116
+        }
+      }
+    },
+    {
+      "prime": 122840041,
+      "stored_state": {
+        "prime": 122840041,
+        "source_distance": 177,
+        "gap": 15,
+        "normal_form": [
+          529483,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 952010318,
+        "E": 5488,
+        "a": 28,
+        "b": 9714391,
+        "source_denominator": 122839864
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 3962581,
+        "source_denominator": 118877460,
+        "E": 15702056106724,
+        "origin_gap": 31,
+        "origin_normal_form": [
+          1,
+          1,
+          30710018
+        ],
+        "B_one_realization": {
+          "A": 1,
+          "B": 1,
+          "C": 30710018,
+          "H": 3962582,
+          "m": 31,
+          "R": 3962583,
+          "K": 121690964546476
+        }
+      }
+    },
+    {
+      "prime": 125858329,
+      "stored_state": {
+        "prime": 125858329,
+        "source_distance": 3,
+        "gap": 215,
+        "normal_form": [
+          18052,
+          7,
+          249
+        ],
+        "R": 227,
+        "K": 7142460171,
+        "E": 682,
+        "a": 1,
+        "b": 20945631,
+        "source_denominator": 125858326
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 9,
+        "source_denominator": 125858320,
+        "E": 2800,
+        "origin_gap": 47,
+        "origin_normal_form": [
+          8611,
+          1,
+          3654
+        ],
+        "B_one_realization": {
+          "A": 8611,
+          "B": 1,
+          "C": 3654,
+          "H": 2678020,
+          "m": 47,
+          "R": 311,
+          "K": 9785485080
+        }
+      }
+    },
+    {
+      "prime": 145877209,
+      "stored_state": {
+        "prime": 145877209,
+        "source_distance": 1817,
+        "gap": 199,
+        "normal_form": [
+          11659,
+          8,
+          391
+        ],
+        "R": 503,
+        "K": 18344059032,
+        "E": 913952,
+        "a": 338,
+        "b": 13568091,
+        "source_denominator": 145875392
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 21559,
+        "source_denominator": 145855650,
+        "E": 8860750,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          23666,
+          1,
+          1541
+        ],
+        "B_one_realization": {
+          "A": 23666,
+          "B": 1,
+          "C": 1541,
+          "H": 9726725,
+          "m": 15,
+          "R": 411,
+          "K": 14988883225
+        }
+      }
+    },
+    {
+      "prime": 159016489,
+      "stored_state": {
+        "prime": 159016489,
+        "source_distance": 9,
+        "gap": 15,
+        "normal_form": [
+          41497,
+          2,
+          479
+        ],
+        "R": 511,
+        "K": 20314356470,
+        "E": 4600,
+        "a": 10,
+        "b": 88323289,
+        "source_denominator": 159016480
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 313,
+        "source_denominator": 159016176,
+        "E": 52272,
+        "origin_gap": 39,
+        "origin_normal_form": [
+          24419,
+          1,
+          1628
+        ],
+        "B_one_realization": {
+          "A": 24419,
+          "B": 1,
+          "C": 1628,
+          "H": 4077972,
+          "m": 39,
+          "R": 167,
+          "K": 6638938416
+        }
+      }
+    },
+    {
+      "prime": 171292489,
+      "stored_state": {
+        "prime": 171292489,
+        "source_distance": 199,
+        "gap": 35,
+        "normal_form": [
+          173373,
+          13,
+          19
+        ],
+        "R": 367,
+        "K": 15716085866,
+        "E": 73034,
+        "a": 53,
+        "b": 22809994,
+        "source_denominator": 171292290
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 80529,
+        "source_denominator": 171211960,
+        "E": 2496400,
+        "origin_gap": 51,
+        "origin_normal_form": [
+          108413,
+          1,
+          395
+        ],
+        "B_one_realization": {
+          "A": 108413,
+          "B": 1,
+          "C": 395,
+          "H": 3360802,
+          "m": 51,
+          "R": 31,
+          "K": 1327516790
+        }
+      }
+    },
+    {
+      "prime": 174600409,
+      "stored_state": {
+        "prime": 174600409,
+        "source_distance": 5,
+        "gap": 151,
+        "normal_form": [
+          20023,
+          4,
+          545
+        ],
+        "R": 231,
+        "K": 10083173620,
+        "E": 1156,
+        "a": 17,
+        "b": 296563930,
+        "source_denominator": 174600404
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 7,
+        "source_denominator": 174600402,
+        "E": 834,
+        "origin_gap": 55,
+        "origin_normal_form": [
+          26681,
+          1,
+          1636
+        ],
+        "B_one_realization": {
+          "A": 26681,
+          "B": 1,
+          "C": 1636,
+          "H": 3175038,
+          "m": 55,
+          "R": 119,
+          "K": 5194362168
+        }
+      }
+    },
+    {
+      "prime": 175492249,
+      "stored_state": {
+        "prime": 175492249,
+        "source_distance": 9,
+        "gap": 35,
+        "normal_form": [
+          69973,
+          3,
+          209
+        ],
+        "R": 215,
+        "K": 9432708384,
+        "E": 1936,
+        "a": 11,
+        "b": 107189868,
+        "source_denominator": 175492240
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 9,
+        "source_denominator": 175492240,
+        "E": 4312,
+        "origin_gap": 47,
+        "origin_normal_form": [
+          15591,
+          2,
+          1407
+        ],
+        "B_one_realization": {
+          "A": 13,
+          "B": 1,
+          "C": 3375393,
+          "H": 6226,
+          "m": 28187,
+          "R": 479,
+          "K": 21015196818
+        }
+      }
+    },
+    {
+      "prime": 179700889,
+      "stored_state": {
+        "prime": 179700889,
+        "source_distance": 49,
+        "gap": 215,
+        "normal_form": [
+          19356,
+          11,
+          211
+        ],
+        "R": 475,
+        "K": 21339480569,
+        "E": 23276,
+        "a": 46,
+        "b": 84345773,
+        "source_denominator": 179700840
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 15116761,
+        "source_denominator": 164584128,
+        "E": 10022412544,
+        "origin_gap": 151,
+        "origin_normal_form": [
+          1795,
+          1,
+          25028
+        ],
+        "B_one_realization": {
+          "A": 1795,
+          "B": 1,
+          "C": 25028,
+          "H": 1190084,
+          "m": 151,
+          "R": 663,
+          "K": 29785422352
+        }
+      }
+    },
+    {
+      "prime": 188748169,
+      "stored_state": {
+        "prime": 188748169,
+        "source_distance": 3,
+        "gap": 111,
+        "normal_form": [
+          29218,
+          5,
+          323
+        ],
+        "R": 291,
+        "K": 13731429295,
+        "E": 874,
+        "a": 1,
+        "b": 31422035,
+        "source_denominator": 188748166
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 8502165,
+        "source_denominator": 180246004,
+        "E": 2891475788356,
+        "origin_gap": 111,
+        "origin_normal_form": [
+          5,
+          1,
+          9437414
+        ],
+        "B_one_realization": {
+          "A": 5,
+          "B": 1,
+          "C": 9437414,
+          "H": 1700434,
+          "m": 111,
+          "R": 340087,
+          "K": 16047699637676
+        }
+      }
+    },
+    {
+      "prime": 209762809,
+      "stored_state": {
+        "prime": 209762809,
+        "source_distance": 217,
+        "gap": 71,
+        "normal_form": [
+          4649,
+          2,
+          5640
+        ],
+        "R": 1271,
+        "K": 66652132560,
+        "E": 275808,
+        "a": 13,
+        "b": 6283195,
+        "source_denominator": 209762592
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 10449,
+        "source_denominator": 209752360,
+        "E": 532900,
+        "origin_gap": 63,
+        "origin_normal_form": [
+          65306,
+          1,
+          803
+        ],
+        "B_one_realization": {
+          "A": 65306,
+          "B": 1,
+          "C": 803,
+          "H": 3330605,
+          "m": 63,
+          "R": 51,
+          "K": 2674475815
+        }
+      }
+    },
+    {
+      "prime": 212973049,
+      "stored_state": {
+        "prime": 212973049,
+        "source_distance": 9,
+        "gap": 167,
+        "normal_form": [
+          29319,
+          2,
+          908
+        ],
+        "R": 87,
+        "K": 4632163816,
+        "E": 784,
+        "a": 7,
+        "b": 82717211,
+        "source_denominator": 212973040
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 243805,
+        "source_denominator": 212729244,
+        "E": 48517196,
+        "origin_gap": 47,
+        "origin_normal_form": [
+          22773,
+          1,
+          2338
+        ],
+        "B_one_realization": {
+          "A": 22773,
+          "B": 1,
+          "C": 2338,
+          "H": 4531826,
+          "m": 47,
+          "R": 199,
+          "K": 10595409188
+        }
+      }
+    },
+    {
+      "prime": 217315849,
+      "stored_state": {
+        "prime": 217315849,
+        "source_distance": 9,
+        "gap": 119,
+        "normal_form": [
+          12041,
+          3,
+          1504
+        ],
+        "R": 455,
+        "K": 24719677824,
+        "E": 4096,
+        "a": 16,
+        "b": 193122483,
+        "source_denominator": 217315840
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 57,
+        "source_denominator": 217315792,
+        "E": 3364,
+        "origin_gap": 103,
+        "origin_normal_form": [
+          250364,
+          7,
+          31
+        ],
+        "B_one_realization": {
+          "A": 320,
+          "B": 1,
+          "C": 169787,
+          "H": 18879,
+          "m": 11511,
+          "R": 59,
+          "K": 3205408773
+        }
+      }
+    },
+    {
+      "prime": 229335649,
+      "stored_state": {
+        "prime": 229335649,
+        "source_distance": 39,
+        "gap": 63,
+        "normal_form": [
+          29074,
+          29,
+          68
+        ],
+        "R": 3631,
+        "K": 208179435380,
+        "E": 141610,
+        "a": 119,
+        "b": 349881404,
+        "source_denominator": 229335610
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 545,
+        "source_denominator": 229335104,
+        "E": 86656,
+        "origin_gap": 111,
+        "origin_normal_form": [
+          12995,
+          1,
+          4412
+        ],
+        "B_one_realization": {
+          "A": 12995,
+          "B": 1,
+          "C": 4412,
+          "H": 2066204,
+          "m": 111,
+          "R": 159,
+          "K": 9116092048
+        }
+      }
+    },
+    {
+      "prime": 229474249,
+      "stored_state": {
+        "prime": 229474249,
+        "source_distance": 693,
+        "gap": 215,
+        "normal_form": [
+          35677,
+          12,
+          134
+        ],
+        "R": 359,
+        "K": 20595313848,
+        "E": 248788,
+        "a": 41,
+        "b": 6788172,
+        "source_denominator": 229473556
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 1282873,
+        "source_denominator": 228191376,
+        "E": 1712635456,
+        "origin_gap": 31,
+        "origin_normal_form": [
+          5545,
+          1,
+          10346
+        ],
+        "B_one_realization": {
+          "A": 5545,
+          "B": 1,
+          "C": 10346,
+          "H": 7402574,
+          "m": 31,
+          "R": 1335,
+          "K": 76587030604
+        }
+      }
+    },
+    {
+      "prime": 239182969,
+      "stored_state": {
+        "prime": 239182969,
+        "source_distance": 81,
+        "gap": 59,
+        "normal_form": [
+          22073,
+          3,
+          903
+        ],
+        "R": 551,
+        "K": 32947453980,
+        "E": 44632,
+        "a": 1,
+        "b": 1476405,
+        "source_denominator": 239182888
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 43209337,
+        "source_denominator": 195973632,
+        "E": 115757813824,
+        "origin_gap": 127,
+        "origin_normal_form": [
+          703,
+          1,
+          85058
+        ],
+        "B_one_realization": {
+          "A": 703,
+          "B": 1,
+          "C": 85058,
+          "H": 1883336,
+          "m": 127,
+          "R": 2679,
+          "K": 160192793488
+        }
+      }
+    },
+    {
+      "prime": 257031889,
+      "stored_state": {
+        "prime": 257031889,
+        "source_distance": 9,
+        "gap": 187,
+        "normal_form": [
+          110599,
+          7,
+          83
+        ],
+        "R": 87,
+        "K": 5590443586,
+        "E": 784,
+        "a": 28,
+        "b": 399317399,
+        "source_denominator": 257031880
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 26737,
+        "source_denominator": 257005152,
+        "E": 6390144,
+        "origin_gap": 95,
+        "origin_normal_form": [
+          11321,
+          1,
+          5676
+        ],
+        "B_one_realization": {
+          "A": 11321,
+          "B": 1,
+          "C": 5676,
+          "H": 2705718,
+          "m": 95,
+          "R": 239,
+          "K": 15357655368
+        }
+      }
+    },
+    {
+      "prime": 257483209,
+      "stored_state": {
+        "prime": 257483209,
+        "source_distance": 9,
+        "gap": 71,
+        "normal_form": [
+          78501,
+          5,
+          164
+        ],
+        "R": 231,
+        "K": 14869655320,
+        "E": 2080,
+        "a": 2,
+        "b": 28595491,
+        "source_denominator": 257483200
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 156345,
+        "source_denominator": 257326864,
+        "E": 108659776,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          24701,
+          1,
+          2606
+        ],
+        "B_one_realization": {
+          "A": 24701,
+          "B": 1,
+          "C": 2606,
+          "H": 17167194,
+          "m": 15,
+          "R": 695,
+          "K": 44737707564
+        }
+      }
+    },
+    {
+      "prime": 259005289,
+      "stored_state": {
+        "prime": 259005289,
+        "source_distance": 9,
+        "gap": 55,
+        "normal_form": [
+          13247,
+          2,
+          2444
+        ],
+        "R": 711,
+        "K": 46038190120,
+        "E": 6400,
+        "a": 80,
+        "b": 1150954753,
+        "source_denominator": 259005280
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 813901,
+        "source_denominator": 258191388,
+        "E": 507060324,
+        "origin_gap": 83,
+        "origin_normal_form": [
+          5009,
+          1,
+          12927
+        ],
+        "B_one_realization": {
+          "A": 5009,
+          "B": 1,
+          "C": 12927,
+          "H": 3120606,
+          "m": 83,
+          "R": 623,
+          "K": 40340073762
+        }
+      }
+    },
+    {
+      "prime": 261826009,
+      "stored_state": {
+        "prime": 261826009,
+        "source_distance": 25,
+        "gap": 143,
+        "normal_form": [
+          25549,
+          3,
+          854
+        ],
+        "R": 215,
+        "K": 14073147984,
+        "E": 5376,
+        "a": 8,
+        "b": 41884369,
+        "source_denominator": 261825984
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 25,
+        "source_denominator": 261825984,
+        "E": 15876,
+        "origin_gap": 199,
+        "origin_normal_form": [
+          2072,
+          1,
+          31591
+        ],
+        "B_one_realization": {
+          "A": 2072,
+          "B": 1,
+          "C": 31591,
+          "H": 1315719,
+          "m": 199,
+          "R": 635,
+          "K": 41564878929
+        }
+      }
+    },
+    {
+      "prime": 290414569,
+      "stored_state": {
+        "prime": 290414569,
+        "source_distance": 9,
+        "gap": 55,
+        "normal_form": [
+          32297,
+          2,
+          1124
+        ],
+        "R": 327,
+        "K": 23741391016,
+        "E": 2944,
+        "a": 8,
+        "b": 129029299,
+        "source_denominator": 290414560
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 105,
+        "source_denominator": 290414464,
+        "E": 4096,
+        "origin_gap": 63,
+        "origin_normal_form": [
+          118247,
+          1,
+          614
+        ],
+        "B_one_realization": {
+          "A": 118247,
+          "B": 1,
+          "C": 614,
+          "H": 4611632,
+          "m": 63,
+          "R": 39,
+          "K": 2831542048
+        }
+      }
+    },
+    {
+      "prime": 291357049,
+      "stored_state": {
+        "prime": 291357049,
+        "source_distance": 9,
+        "gap": 107,
+        "normal_form": [
+          14207,
+          3,
+          1709
+        ],
+        "R": 575,
+        "K": 41882575794,
+        "E": 5176,
+        "a": 2,
+        "b": 32366751,
+        "source_denominator": 291357040
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 129,
+        "source_denominator": 291356920,
+        "E": 163960,
+        "origin_gap": 199,
+        "origin_normal_form": [
+          18431,
+          16,
+          247
+        ],
+        "B_one_realization": {
+          "A": 1,
+          "B": 1,
+          "C": 72896616,
+          "H": 1270,
+          "m": 229415,
+          "R": 1271,
+          "K": 92578702320
+        }
+      }
+    },
+    {
+      "prime": 297640249,
+      "stored_state": {
+        "prime": 297640249,
+        "source_distance": 11,
+        "gap": 71,
+        "normal_form": [
+          90744,
+          5,
+          164
+        ],
+        "R": 231,
+        "K": 17188724380,
+        "E": 2542,
+        "a": 1,
+        "b": 13523780,
+        "source_denominator": 297640238
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 1205409,
+        "source_denominator": 296434840,
+        "E": 210946576,
+        "origin_gap": 83,
+        "origin_normal_form": [
+          20493,
+          1,
+          3631
+        ],
+        "B_one_realization": {
+          "A": 20493,
+          "B": 1,
+          "C": 3631,
+          "H": 3586274,
+          "m": 83,
+          "R": 175,
+          "K": 13021760894
+        }
+      }
+    },
+    {
+      "prime": 302994169,
+      "stored_state": {
+        "prime": 302994169,
+        "source_distance": 7,
+        "gap": 47,
+        "normal_form": [
+          147658,
+          3,
+          171
+        ],
+        "R": 131,
+        "K": 9923059035,
+        "E": 918,
+        "a": 1,
+        "b": 21618865,
+        "source_denominator": 302994162
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 31253385,
+        "source_denominator": 271740784,
+        "E": 108230472256,
+        "origin_gap": 95,
+        "origin_normal_form": [
+          921,
+          1,
+          82246
+        ],
+        "B_one_realization": {
+          "A": 921,
+          "B": 1,
+          "C": 82246,
+          "H": 3189422,
+          "m": 95,
+          "R": 3463,
+          "K": 262317201812
+        }
+      }
+    },
+    {
+      "prime": 312918169,
+      "stored_state": {
+        "prime": 312918169,
+        "source_distance": 19,
+        "gap": 63,
+        "normal_form": [
+          173458,
+          11,
+          41
+        ],
+        "R": 315,
+        "K": 24642305809,
+        "E": 5986,
+        "a": 1,
+        "b": 8233313,
+        "source_denominator": 312918150
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 1002321,
+        "source_denominator": 311915848,
+        "E": 1378191376,
+        "origin_gap": 27,
+        "origin_normal_form": [
+          8429,
+          1,
+          9281
+        ],
+        "B_one_realization": {
+          "A": 8429,
+          "B": 1,
+          "C": 9281,
+          "H": 11589874,
+          "m": 27,
+          "R": 1375,
+          "K": 107565620594
+        }
+      }
+    },
+    {
+      "prime": 314485609,
+      "stored_state": {
+        "prime": 314485609,
+        "source_distance": 9,
+        "gap": 35,
+        "normal_form": [
+          125393,
+          3,
+          209
+        ],
+        "R": 215,
+        "K": 16903601484,
+        "E": 1936,
+        "a": 22,
+        "b": 384172761,
+        "source_denominator": 314485600
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 70249,
+        "source_denominator": 314415360,
+        "E": 38707200,
+        "origin_gap": 71,
+        "origin_normal_form": [
+          8039,
+          1,
+          9780
+        ],
+        "B_one_realization": {
+          "A": 8039,
+          "B": 1,
+          "C": 9780,
+          "H": 4429488,
+          "m": 71,
+          "R": 551,
+          "K": 43320392640
+        }
+      }
+    },
+    {
+      "prime": 316324969,
+      "stored_state": {
+        "prime": 316324969,
+        "source_distance": 3168615,
+        "gap": 19,
+        "normal_form": [
+          37,
+          7,
+          305333
+        ],
+        "R": 3149751,
+        "K": 249086221858180,
+        "E": 9980348264866,
+        "a": 541793,
+        "b": 27043780,
+        "source_denominator": 313156354
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 3315025,
+        "source_denominator": 313009944,
+        "E": 30441874576,
+        "origin_gap": 19,
+        "origin_normal_form": [
+          1813,
+          1,
+          43619
+        ],
+        "B_one_realization": {
+          "A": 1813,
+          "B": 1,
+          "C": 43619,
+          "H": 16648778,
+          "m": 19,
+          "R": 9183,
+          "K": 726203047582
+        }
+      }
+    },
+    {
+      "prime": 328186681,
+      "stored_state": {
+        "prime": 328186681,
+        "source_distance": 37041,
+        "gap": 139,
+        "normal_form": [
+          6343,
+          13,
+          995
+        ],
+        "R": 4839,
+        "K": 397023837340,
+        "E": 179241400,
+        "a": 65,
+        "b": 287953,
+        "source_denominator": 328149640
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 205681,
+        "source_denominator": 327981000,
+        "E": 190666288,
+        "origin_gap": 111,
+        "origin_normal_form": [
+          6379,
+          2,
+          6431
+        ],
+        "B_one_realization": {
+          "A": 2,
+          "B": 1,
+          "C": 41045474,
+          "H": 1853,
+          "m": 177111,
+          "R": 927,
+          "K": 76057263322
+        }
+      }
+    },
+    {
+      "prime": 331117609,
+      "stored_state": {
+        "prime": 331117609,
+        "source_distance": 9,
+        "gap": 87,
+        "normal_form": [
+          6812,
+          7,
+          1736
+        ],
+        "R": 3911,
+        "K": 323750242200,
+        "E": 35200,
+        "a": 8,
+        "b": 147159201,
+        "source_denominator": 331117600
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 3819,
+        "source_denominator": 331113790,
+        "E": 4991434,
+        "origin_gap": 87,
+        "origin_normal_form": [
+          2912,
+          1,
+          28427
+        ],
+        "B_one_realization": {
+          "A": 2912,
+          "B": 1,
+          "C": 28427,
+          "H": 3805983,
+          "m": 87,
+          "R": 1307,
+          "K": 108192678741
+        }
+      }
+    },
+    {
+      "prime": 332290249,
+      "stored_state": {
+        "prime": 332290249,
+        "source_distance": 9,
+        "gap": 151,
+        "normal_form": [
+          31951,
+          8,
+          325
+        ],
+        "R": 551,
+        "K": 45772981800,
+        "E": 4960,
+        "a": 2,
+        "b": 36913695,
+        "source_denominator": 332290240
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 25,
+        "source_denominator": 332290224,
+        "E": 3976,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          278767,
+          2,
+          149
+        ],
+        "B_one_realization": {
+          "A": 6720,
+          "B": 1,
+          "C": 12362,
+          "H": 1068479,
+          "m": 311,
+          "R": 159,
+          "K": 13208537398
+        }
+      }
+    },
+    {
+      "prime": 335420089,
+      "stored_state": {
+        "prime": 335420089,
+        "source_distance": 589,
+        "gap": 35,
+        "normal_form": [
+          50003,
+          3,
+          559
+        ],
+        "R": 575,
+        "K": 48216637794,
+        "E": 338676,
+        "a": 13,
+        "b": 3701569,
+        "source_denominator": 335419500
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 589,
+        "source_denominator": 335419500,
+        "E": 112500,
+        "origin_gap": 71,
+        "origin_normal_form": [
+          24736,
+          1,
+          3390
+        ],
+        "B_one_realization": {
+          "A": 24736,
+          "B": 1,
+          "C": 3390,
+          "H": 4724575,
+          "m": 71,
+          "R": 191,
+          "K": 16016309250
+        }
+      }
+    },
+    {
+      "prime": 348596329,
+      "stored_state": {
+        "prime": 348596329,
+        "source_distance": 109,
+        "gap": 95,
+        "normal_form": [
+          25891,
+          11,
+          306
+        ],
+        "R": 1559,
+        "K": 135865419228,
+        "E": 169932,
+        "a": 119,
+        "b": 190287702,
+        "source_denominator": 348596220
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 3684529,
+        "source_denominator": 344911800,
+        "E": 8220184200,
+        "origin_gap": 87,
+        "origin_normal_form": [
+          1796,
+          1,
+          48524
+        ],
+        "B_one_realization": {
+          "A": 1796,
+          "B": 1,
+          "C": 48524,
+          "H": 4006875,
+          "m": 87,
+          "R": 2231,
+          "K": 194429602500
+        }
+      }
+    },
+    {
+      "prime": 349526809,
+      "stored_state": {
+        "prime": 349526809,
+        "source_distance": 9,
+        "gap": 215,
+        "normal_form": [
+          107613,
+          28,
+          29
+        ],
+        "R": 423,
+        "K": 36962460052,
+        "E": 3808,
+        "a": 4,
+        "b": 77652227,
+        "source_denominator": 349526800
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 713,
+        "source_denominator": 349526096,
+        "E": 119072,
+        "origin_gap": 191,
+        "origin_normal_form": [
+          32875,
+          3,
+          886
+        ],
+        "B_one_realization": {
+          "A": 49,
+          "B": 1,
+          "C": 1783518,
+          "H": 8182,
+          "m": 42719,
+          "R": 167,
+          "K": 14592744276
+        }
+      }
+    },
+    {
+      "prime": 360657049,
+      "stored_state": {
+        "prime": 360657049,
+        "source_distance": 5,
+        "gap": 39,
+        "normal_form": [
+          8968,
+          11,
+          914
+        ],
+        "R": 11343,
+        "K": 1022733226702,
+        "E": 56716,
+        "a": 1,
+        "b": 36065069,
+        "source_denominator": 360657044
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 521625,
+        "source_denominator": 360135424,
+        "E": 178917376,
+        "origin_gap": 39,
+        "origin_normal_form": [
+          26963,
+          1,
+          3344
+        ],
+        "B_one_realization": {
+          "A": 26963,
+          "B": 1,
+          "C": 3344,
+          "H": 9248308,
+          "m": 39,
+          "R": 343,
+          "K": 30926341952
+        }
+      }
+    },
+    {
+      "prime": 363867529,
+      "stored_state": {
+        "prime": 363867529,
+        "source_distance": 283,
+        "gap": 151,
+        "normal_form": [
+          10468,
+          5,
+          1738
+        ],
+        "R": 1151,
+        "K": 104702881470,
+        "E": 325734,
+        "a": 233,
+        "b": 149789530,
+        "source_denominator": 363867246
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 1249,
+        "source_denominator": 363866280,
+        "E": 268536,
+        "origin_gap": 87,
+        "origin_normal_form": [
+          19454,
+          1,
+          4676
+        ],
+        "B_one_realization": {
+          "A": 19454,
+          "B": 1,
+          "C": 4676,
+          "H": 4182609,
+          "m": 87,
+          "R": 215,
+          "K": 19557879684
+        }
+      }
+    },
+    {
+      "prime": 370021129,
+      "stored_state": {
+        "prime": 370021129,
+        "source_distance": 231,
+        "gap": 103,
+        "normal_form": [
+          1897,
+          4,
+          12191
+        ],
+        "R": 7575,
+        "K": 700727513044,
+        "E": 1749826,
+        "a": 13,
+        "b": 10411844,
+        "source_denominator": 370020898
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 569,
+        "source_denominator": 370020560,
+        "E": 463736,
+        "origin_gap": 19,
+        "origin_normal_form": [
+          23897,
+          1,
+          3871
+        ],
+        "B_one_realization": {
+          "A": 23897,
+          "B": 1,
+          "C": 3871,
+          "H": 19476054,
+          "m": 19,
+          "R": 815,
+          "K": 75391805034
+        }
+      }
+    },
+    {
+      "prime": 380653849,
+      "stored_state": {
+        "prime": 380653849,
+        "source_distance": 721,
+        "gap": 15,
+        "normal_form": [
+          9277,
+          2,
+          5129
+        ],
+        "R": 5471,
+        "K": 520639301970,
+        "E": 3944592,
+        "a": 4,
+        "b": 1055905,
+        "source_denominator": 380653128
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 26745,
+        "source_denominator": 380627104,
+        "E": 3182656,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          213371,
+          1,
+          446
+        ],
+        "B_one_realization": {
+          "A": 213371,
+          "B": 1,
+          "C": 446,
+          "H": 25391148,
+          "m": 15,
+          "R": 119,
+          "K": 11324452008
+        }
+      }
+    },
+    {
+      "prime": 384934489,
+      "stored_state": {
+        "prime": 384934489,
+        "source_distance": 49,
+        "gap": 183,
+        "normal_form": [
+          4282,
+          17,
+          1322
+        ],
+        "R": 8351,
+        "K": 803646979410,
+        "E": 409200,
+        "a": 20,
+        "b": 78557867,
+        "source_denominator": 384934440
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 89,
+        "source_denominator": 384934400,
+        "E": 17000,
+        "origin_gap": 51,
+        "origin_normal_form": [
+          39521,
+          1,
+          2435
+        ],
+        "B_one_realization": {
+          "A": 39521,
+          "B": 1,
+          "C": 2435,
+          "H": 7548510,
+          "m": 51,
+          "R": 191,
+          "K": 18380621850
+        }
+      }
+    },
+    {
+      "prime": 397242409,
+      "stored_state": {
+        "prime": 397242409,
+        "source_distance": 5,
+        "gap": 55,
+        "normal_form": [
+          428063,
+          8,
+          29
+        ],
+        "R": 135,
+        "K": 13406931304,
+        "E": 676,
+        "a": 13,
+        "b": 515651204,
+        "source_denominator": 397242404
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 2689,
+        "source_denominator": 397239720,
+        "E": 16324920,
+        "origin_gap": 51,
+        "origin_normal_form": [
+          1283,
+          1,
+          77405
+        ],
+        "B_one_realization": {
+          "A": 1283,
+          "B": 1,
+          "C": 77405,
+          "H": 7789092,
+          "m": 51,
+          "R": 6071,
+          "K": 602914666260
+        }
+      }
+    },
+    {
+      "prime": 401426041,
+      "stored_state": {
+        "prime": 401426041,
+        "source_distance": 19801,
+        "gap": 143,
+        "normal_form": [
+          181149,
+          2,
+          277
+        ],
+        "R": 31,
+        "K": 3111051818,
+        "E": 613832,
+        "a": 554,
+        "b": 5615617,
+        "source_denominator": 401406240
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 4972585,
+        "source_denominator": 396453456,
+        "E": 2739894336,
+        "origin_gap": 95,
+        "origin_normal_form": [
+          7669,
+          1,
+          13086
+        ],
+        "B_one_realization": {
+          "A": 7669,
+          "B": 1,
+          "C": 13086,
+          "H": 4225618,
+          "m": 95,
+          "R": 551,
+          "K": 55296437148
+        }
+      }
+    },
+    {
+      "prime": 405660649,
+      "stored_state": {
+        "prime": 405660649,
+        "source_distance": 8929,
+        "gap": 87,
+        "normal_form": [
+          103909,
+          8,
+          122
+        ],
+        "R": 359,
+        "K": 36408043248,
+        "E": 3205512,
+        "a": 633,
+        "b": 14379164,
+        "source_denominator": 405651720
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 4337377,
+        "source_denominator": 401323272,
+        "E": 52113584656,
+        "origin_gap": 19,
+        "origin_normal_form": [
+          1777,
+          1,
+          57071
+        ],
+        "B_one_realization": {
+          "A": 1777,
+          "B": 1,
+          "C": 57071,
+          "H": 21350654,
+          "m": 19,
+          "R": 12015,
+          "K": 1218503174434
+        }
+      }
+    },
+    {
+      "prime": 410744569,
+      "stored_state": {
+        "prime": 410744569,
+        "source_distance": 55,
+        "gap": 31,
+        "normal_form": [
+          238805,
+          2,
+          215
+        ],
+        "R": 111,
+        "K": 11398161790,
+        "E": 6106,
+        "a": 1,
+        "b": 3733430,
+        "source_denominator": 410744514
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 81,
+        "source_denominator": 410744488,
+        "E": 78652,
+        "origin_gap": 31,
+        "origin_normal_form": [
+          13646,
+          1,
+          7525
+        ],
+        "B_one_realization": {
+          "A": 13646,
+          "B": 1,
+          "C": 7525,
+          "H": 13250265,
+          "m": 31,
+          "R": 971,
+          "K": 99708244125
+        }
+      }
+    },
+    {
+      "prime": 417825769,
+      "stored_state": {
+        "prime": 417825769,
+        "source_distance": 119,
+        "gap": 167,
+        "normal_form": [
+          3937,
+          2,
+          13266
+        ],
+        "R": 1271,
+        "K": 132764138100,
+        "E": 151250,
+        "a": 275,
+        "b": 482778684,
+        "source_denominator": 417825650
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 4398165,
+        "source_denominator": 413427604,
+        "E": 19343864163556,
+        "origin_gap": 95,
+        "origin_normal_form": [
+          1,
+          1,
+          104456466
+        ],
+        "B_one_realization": {
+          "A": 1,
+          "B": 1,
+          "C": 104456466,
+          "H": 4398166,
+          "m": 95,
+          "R": 4398167,
+          "K": 459416877241356
+        }
+      }
+    },
+    {
+      "prime": 418620409,
+      "stored_state": {
+        "prime": 418620409,
+        "source_distance": 9,
+        "gap": 143,
+        "normal_form": [
+          40849,
+          3,
+          854
+        ],
+        "R": 215,
+        "K": 22500846984,
+        "E": 1936,
+        "a": 11,
+        "b": 255691443,
+        "source_denominator": 418620400
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 473145,
+        "source_denominator": 418147264,
+        "E": 995023936,
+        "origin_gap": 15,
+        "origin_normal_form": [
+          13271,
+          1,
+          7886
+        ],
+        "B_one_realization": {
+          "A": 13271,
+          "B": 1,
+          "C": 7886,
+          "H": 27908912,
+          "m": 15,
+          "R": 2103,
+          "K": 220089680032
+        }
+      }
+    },
+    {
+      "prime": 419030089,
+      "stored_state": {
+        "prime": 419030089,
+        "source_distance": 289,
+        "gap": 131,
+        "normal_form": [
+          68335,
+          21,
+          73
+        ],
+        "R": 983,
+        "K": 102976644372,
+        "E": 284088,
+        "a": 1,
+        "b": 724963,
+        "source_denominator": 419029800
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 2804401,
+        "source_denominator": 416225688,
+        "E": 176677264,
+        "origin_gap": 211,
+        "origin_normal_form": [
+          31525,
+          1,
+          3323
+        ],
+        "B_one_realization": {
+          "A": 31525,
+          "B": 1,
+          "C": 3323,
+          "H": 1986074,
+          "m": 211,
+          "R": 63,
+          "K": 6599723902
+        }
+      }
+    },
+    {
+      "prime": 437817769,
+      "stored_state": {
+        "prime": 437817769,
+        "source_distance": 109,
+        "gap": 95,
+        "normal_form": [
+          97553,
+          33,
+          34
+        ],
+        "R": 1559,
+        "K": 170639475468,
+        "E": 169932,
+        "a": 7,
+        "b": 14058286,
+        "source_denominator": 437817660
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 70615765,
+        "source_denominator": 367202004,
+        "E": 199463478907716,
+        "origin_gap": 31,
+        "origin_normal_form": [
+          5,
+          1,
+          21890890
+        ],
+        "B_one_realization": {
+          "A": 5,
+          "B": 1,
+          "C": 21890890,
+          "H": 14123154,
+          "m": 31,
+          "R": 2824631,
+          "K": 309168410667060
+        }
+      }
+    },
+    {
+      "prime": 474092089,
+      "stored_state": {
+        "prime": 474092089,
+        "source_distance": 9,
+        "gap": 111,
+        "normal_form": [
+          275635,
+          2,
+          215
+        ],
+        "R": 31,
+        "K": 3674213690,
+        "E": 280,
+        "a": 2,
+        "b": 52488767,
+        "source_denominator": 474092080
+      },
+      "selected_upper_B_one_state": {
+        "source_distance": 2525,
+        "source_denominator": 474089564,
+        "E": 7431076,
+        "origin_gap": 103,
+        "origin_normal_form": [
+          1564,
+          1,
+          75782
+        ],
+        "B_one_realization": {
+          "A": 1564,
+          "B": 1,
+          "C": 75782,
+          "H": 4602851,
+          "m": 103,
+          "R": 2943,
+          "K": 348813254482
+        }
+      }
+    }
+  ],
+  "upper_B_eq_1_misses": [
+    {
+      "prime": 218482009,
+      "stored_state": {
+        "prime": 218482009,
+        "source_distance": 85,
+        "gap": 39,
+        "normal_form": [
+          55061,
+          4,
+          248
+        ],
+        "R": 407,
+        "K": 22230544416,
+        "E": 34596,
+        "a": 93,
+        "b": 119519056,
+        "source_denominator": 218481924
+      },
+      "upper_source_state_count": 3,
+      "least_upper_realization": {
+        "source_distance": 683769,
+        "source_denominator": 217798240,
+        "E": 869070400,
+        "origin_gap": 167,
+        "origin_normal_form": [
+          3088,
+          3,
+          5896
+        ],
+        "realization": {
+          "A": 3088,
+          "B": 3,
+          "C": 5896,
+          "H": 3924845,
+          "m": 167
+        }
+      }
+    }
+  ]
+}
