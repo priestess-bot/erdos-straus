@@ -18,11 +18,11 @@
 | 数学状态 | `open` | 8 |
 | 证明来源 | `computational_reproduction` | 10 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 6 |
-| 证明来源 | `unspecified` | 431 |
+| 证明来源 | `repository_derivation` | 7 |
+| 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 13 |
-| 审阅状态 | `unspecified` | 431 |
+| 审阅状态 | `internal_review` | 14 |
+| 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
 
@@ -39,7 +39,7 @@
 | [五亿边界点十万短缺口盒中的规范尾递降边界](../claims/boundary-short-gap-tail-deflation-100k.md) (`boundary-short-gap-tail-deflation-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [有界 A,C 的 Type II 射线在无穷核心素数上强制近对数 K](../claims/bounded-ac-ray-k-growth-obstruction.md) (`bounded-ac-ray-k-growth-obstruction`) | `established` | `unspecified` | `unspecified` | `linnik1944`, `chamberland2026` | 2026-07-24 |
 | [Bradford 2026 缺少覆盖系统证明](../claims/bradford-2026-cover-gap.md) (`bradford-2026-cover-gap`) | `claimed_with_gap` | `unspecified` | `unspecified` | `bradford2026` | 2026-07-23 |
-| [Chamberland Type II 素数形状与 AC 因子射线的精确翻译](../claims/chamberland-ac-ray-translation.md) (`chamberland-ac-ray-translation`) | `established` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
+| [Chamberland Type II 素数形状与 AC 因子射线的精确翻译](../claims/chamberland-ac-ray-translation.md) (`chamberland-ac-ray-translation`) | `established` | `repository_derivation` | `internal_review` | `chamberland2026`, `bradford2024` | 2026-07-28 |
 | [Chamberland 的 Type II 素数形状等价](../claims/chamberland-type-II-equivalence.md) (`chamberland-type-II-equivalence`) | `established` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-23 |
 | [首个共同递降逃逸点的低分母列随机三坐标反向桥接边界](../claims/column-stochastic-reverse-bridge-boundary.md) (`column-stochastic-reverse-bridge-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [截至 2026-07-23 猜想仍未解决](../claims/conjecture-open-2026-07-23.md) (`conjecture-open-2026-07-23`) | `open` | `unspecified` | `unspecified` | `chamberland2026`, `bello2026`, `bradford2026`, `dyachenko2025` | 2026-07-23 |

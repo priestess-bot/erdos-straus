@@ -64,6 +64,46 @@ def from_chamberland(q: int, r: int, s1: int, s2: int) -> dict[str, int]:
     }
 
 
+def canonical_ac_from_chamberland(
+    q: int, r: int, s1: int, s2: int
+) -> dict[str, int]:
+    """Canonicalize any Chamberland form to an ordered AC Type II ray.
+
+    ``from_chamberland`` preserves the supplied factor q. Its derived B can
+    be smaller than A, so the raw coordinates need not yet form a Type II
+    divisor certificate. For a core prime target, sorting (A, B) fixes the
+    order while preserving C, K, p, and the gap r; the ray factor is then
+    recomputed.
+    """
+    raw = from_chamberland(q, r, s1, s2)
+    alpha, beta = sorted((raw["a"], raw["b"]))
+    c = raw["c"]
+    k = raw["k"]
+    p = raw["p"]
+    if p < 2 or p % 4 != 1:
+        raise ValueError("canonicalization requires a positive 1 modulo 4 target")
+    ray_factor = 4 * alpha * c * k - 1
+    if p != 4 * alpha * beta * c - r:
+        raise AssertionError("canonical reordering did not preserve the target")
+    if k * p + alpha != beta * ray_factor:
+        raise AssertionError("canonical reordering did not produce an AC ray")
+    if p + 4 * alpha * alpha * c != r * ray_factor:
+        raise AssertionError("canonical AC factor did not retain the gap")
+    certificate = ray.short_certificate.type_ii_raw_ray_certificate(p, alpha, c, k)
+    if certificate is None:
+        raise AssertionError("canonical reordering did not rebuild a Type II certificate")
+    if certificate.gap != r:
+        raise AssertionError("canonical reordering changed the Type II gap")
+    return {
+        **raw,
+        "original_q": q,
+        "a": alpha,
+        "b": beta,
+        "q": ray_factor,
+        "reordered": int(raw["a"] != alpha),
+    }
+
+
 def to_chamberland(p: int, a: int, c: int, k: int, q: int) -> dict[str, int]:
     """Translate a successful AC factor ray to a nested Chamberland divisor pair."""
     if min(p, a, c, k, q) < 1 or q != 4 * a * c * k - 1:
@@ -99,6 +139,16 @@ def run_audit(limit: int = 10_000, ac_bound: int = 14) -> dict[str, object]:
             raise AssertionError("the selected finite box unexpectedly missed a core prime")
         a, c, k, q, certificate = witness
         translated = to_chamberland(prime, a, c, k, q)
+        canonical = canonical_ac_from_chamberland(
+            q, translated["r"], translated["s1"], translated["s2"]
+        )
+        if (canonical["a"], canonical["c"], canonical["k"], canonical["q"]) != (
+            a,
+            c,
+            k,
+            q,
+        ):
+            raise AssertionError("ordered AC witness changed under canonicalization")
         if translated["b"] < a:
             raise AssertionError("finite audit witness did not satisfy the AC order condition")
         if Fraction(4, prime) != sum(
