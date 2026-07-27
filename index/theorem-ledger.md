@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 231 |
+| 数学状态 | `computationally_reproduced` | 232 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 180 |
+| 数学状态 | `established` | 181 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 4 |
+| 证明来源 | `computational_reproduction` | 5 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 1 |
+| 证明来源 | `repository_derivation` | 2 |
 | 证明来源 | `unspecified` | 432 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 2 |
+| 审阅状态 | `internal_review` | 4 |
 | 审阅状态 | `unspecified` | 432 |
 
 ## 全部主张
@@ -243,6 +243,7 @@
 | [H19双固定尺度边界的全变量偶尺度外源审计](../claims/type-I-h19-variable-even-scale-after-k6-1b.md) (`type-I-h19-variable-even-scale-after-k6-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
+| [六亿稀疏尾遗漏族的混合终端闭合](../claims/type-I-mixed-terminal-sparse-tail-600m.md) (`type-I-mixed-terminal-sparse-tail-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [Type I 自适应一私有因子逃逸可达二十三窗口但在九十五缺口闭合](../claims/type-I-moving-window-adaptive-conditional-escape.md) (`type-I-moving-window-adaptive-conditional-escape`) | `conditional` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 移动窗口失败的有限碰撞--私有因子分解](../claims/type-I-moving-window-finite-collision-reduction.md) (`type-I-moving-window-finite-collision-reduction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 前八个移动缺口的一私有素因子条件逃逸](../claims/type-I-moving-window-one-private-prime-conditional-escape.md) (`type-I-moving-window-one-private-prime-conditional-escape`) | `conditional` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
@@ -252,6 +253,7 @@
 | [百万前缀的Type I多层短源闭合](../claims/type-I-multitier-short-source-closure-1m.md) (`type-I-multitier-short-source-closure-1m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 偶源桥的比二普通除子对等价](../claims/type-I-normal-even-source-ratio-two-pair.md) (`type-I-normal-even-source-ratio-two-pair`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [Type I 正规形最大尾的偶源反向选择器](../claims/type-I-normal-even-source-selector.md) (`type-I-normal-even-source-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
+| [Type I 正规形的缺口源偶桥判据](../claims/type-I-normal-gap-source-even-bridge.md) (`type-I-normal-gap-source-even-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-27 |
 | [Type I 正规形最大尾的反向二尾选择器](../claims/type-I-normal-reverse-two-tail-selector.md) (`type-I-normal-reverse-two-tail-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [Type I正规形桥因子的归一化源平方等价](../claims/type-I-normal-source-square-bridge-equivalence.md) (`type-I-normal-source-square-bridge-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I源状态的B等于1单除子剩余判据](../claims/type-I-normal-source-state-b1-realization.md) (`type-I-normal-source-state-b1-realization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
