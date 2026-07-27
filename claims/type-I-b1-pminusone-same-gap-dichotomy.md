@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-b1-pminusone-same-gap-dichotomy
 title: B等于1的p减一终端桥与同缺口Type II的精确二分
-statement: 设一张B=1的Type I正规形以源p-1具有最大尾偶终端桥。写m=4q-1、R=4r-1、C=mr-q、p=4AC-m。则该桥存在当且仅当r整除q^2(A+1)^2；同一缺口存在普通Type II双尾证书当且仅当q整除Ar。后一条件失败时，已存在的Type I桥不能由同一缺口的普通Type II双尾替代。特别地，原始进程p=7896t+913中的每个素数项都有该Type I桥而没有同缺口Type II双尾。
+statement: 对任意B=1的Type I正规形，写m=4q-1、R=4r-1、C=mr-q、p=4AC-m，则同一缺口存在普通Type II双尾证书当且仅当q整除Ar。若该正规形另有源p-1的最大尾偶终端桥，则桥存在当且仅当r整除q^2(A+1)^2。后一同缺口条件失败时，已存在的Type I桥不能由同一缺口的普通Type II双尾替代。特别地，原始进程p=7896t+913中的每个素数项都有该Type I桥而没有同缺口Type II双尾。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -57,6 +57,10 @@ q\mid Ar. \tag{3}
 
 条件 (2) 与 (3) 可以同时成立，也可以仅有 (2)。后者是这一图表中真正由 Type I 分支提供、
 而不能被**同缺口**普通 Type II 双尾替代的精确状态。
+
+其中 (3) 的同缺口判据实际上不使用源为 (p-1) 的假设：对任意具有相同 (B=1)
+正规形的偶终端桥，普通 Type II 双尾仍当且仅当 (q\mid Ar)。源为 (p-1) 只在
+把桥条件压缩为 (2) 时才使用。
 
 ## p 减一桥的因子条件
 
@@ -170,8 +174,9 @@ Ar=2(42t+5)\equiv3\pmod7,
 
 ## 五亿残余核验
 
-在完整五亿普通 Type II 尾遗漏集所选的 1,400 条 (p-1,B=1) 桥中，逐条重建均满足 (2)，
-并且全部违反 (3)。因此此前观察到的 (q\nmid r) 实际上可强化为精确的
+在完整五亿普通 Type II 尾遗漏集所选的全部 1,713 条 (B=1) 桥中，逐条重建都违反
+同缺口条件 (3)。其中 1,400 条 (p-1) 桥还逐条满足 (2)。因此此前观察到的
+(q\nmid r) 实际上可强化为精确的
 
 \[
 q\nmid Ar.

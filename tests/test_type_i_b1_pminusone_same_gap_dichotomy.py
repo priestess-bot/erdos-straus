@@ -24,7 +24,9 @@ class TypeIBOnePMinusOneSameGapDichotomyTests(unittest.TestCase):
             ).read_text(encoding="utf-8")
         )
         self.assertEqual(dichotomy.run_audit(), expected)
-        self.assertEqual(expected["stored_500m_pminusone_residual"]["count"], 1_400)
+        residual = expected["stored_500m_b1_residual"]
+        self.assertEqual(residual["all_b1_count"], 1_713)
+        self.assertEqual(residual["pminusone_count"], 1_400)
         self.assertEqual(
             [item["p"] for item in expected["nonoverlap_ray"]["prime_samples"]],
             [32497, 64081, 79873],

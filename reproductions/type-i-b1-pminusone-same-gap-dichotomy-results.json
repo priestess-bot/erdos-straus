@@ -1,5 +1,5 @@
 {
-  "arithmetic": "for B=1 and source p-1, write m=4q-1, R=4r-1, and C=mr-q. The terminal bridge exists exactly when r divides q^2(A+1)^2; the same-gap ordinary Type II double tail exists exactly when q divides Ar.",
+  "arithmetic": "for every B=1 normal form write m=4q-1, R=4r-1, and C=mr-q; the same-gap ordinary Type II double tail exists exactly when q divides Ar. For a p-1 source, its terminal bridge exists exactly when r divides q^2(A+1)^2.",
   "scope_note": "The nonoverlap statement rules out only the ordinary Type II double tail at the same gap. It neither excludes Type II certificates at other gaps nor proves a global mixed selector.",
   "overlap_example": {
     "q": 1,
@@ -111,8 +111,9 @@
       }
     ]
   },
-  "stored_500m_pminusone_residual": {
-    "count": 1400,
+  "stored_500m_b1_residual": {
+    "all_b1_count": 1713,
+    "pminusone_count": 1400,
     "all_bridge_conditions_hold": true,
     "all_same_gap_conditions_fail": true,
     "first_example": {

@@ -136,17 +136,16 @@ def b1_pminusone_witness(q: int, r: int, A: int) -> dict[str, object]:
 
 
 def profile_stored_residual() -> dict[str, object]:
-    """Check the exact residual law on every stored p-1 B=1 tail-miss bridge."""
+    """Check the same-gap law on every stored B=1 tail-miss bridge."""
     tail = json.loads(TAIL.read_text(encoding="utf-8"))
     b1 = json.loads(B1.read_text(encoding="utf-8"))
     ordinary_misses = {int(entry["prime"]) for entry in tail["misses"]}
     records: list[dict[str, int]] = []
+    all_b1_count = 0
     for record in b1["records"]:
         prime = int(record["prime"])
         witness = record["minimum_b1_source_witness"]
         lift = witness["reverse_two_tail_lift"]
-        if int(lift["source_denominator"]) != prime - 1:
-            continue
         A, B, C = (int(value) for value in witness["normal_form"])
         m, R, E = int(witness["gap"]), int(witness["R"]), int(witness["E"])
         q, r = (m + 1) // 4, (R + 1) // 4
@@ -154,19 +153,23 @@ def profile_stored_residual() -> dict[str, object]:
         if (
             prime not in ordinary_misses
             or B != 1
-            or E != R + 1
             or state["C"] != C
             or state["p"] != prime
-            or not has_pminusone_terminal_bridge(q, r, A)
         ):
-            raise AssertionError("stored p-1 B=1 bridge failed the chart reconstruction")
+            raise AssertionError("stored B=1 bridge failed the chart reconstruction")
         if same_gap_type_ii_tail(q, r, A) is not None:
             raise AssertionError("an ordinary-tail miss had a same-gap Type II double tail")
+        all_b1_count += 1
+        if int(lift["source_denominator"]) != prime - 1:
+            continue
+        if E != R + 1 or not has_pminusone_terminal_bridge(q, r, A):
+            raise AssertionError("stored p-1 B=1 bridge failed the terminal chart")
         records.append({"prime": prime, "q": q, "r": r, "A": A})
-    if len(records) != 1_400:
-        raise AssertionError("the stored p-1 B=1 residual changed")
+    if all_b1_count != 1_713 or len(records) != 1_400:
+        raise AssertionError("the stored B=1 residual changed")
     return {
-        "count": len(records),
+        "all_b1_count": all_b1_count,
+        "pminusone_count": len(records),
         "all_bridge_conditions_hold": True,
         "all_same_gap_conditions_fail": True,
         "first_example": records[0],
@@ -202,9 +205,9 @@ def run_audit() -> dict[str, object]:
         raise AssertionError("the nonoverlap ray is not primitive")
     return {
         "arithmetic": (
-            "for B=1 and source p-1, write m=4q-1, R=4r-1, and C=mr-q. "
-            "The terminal bridge exists exactly when r divides q^2(A+1)^2; the same-gap "
-            "ordinary Type II double tail exists exactly when q divides Ar."
+            "for every B=1 normal form write m=4q-1, R=4r-1, and C=mr-q; the "
+            "same-gap ordinary Type II double tail exists exactly when q divides Ar. "
+            "For a p-1 source, its terminal bridge exists exactly when r divides q^2(A+1)^2."
         ),
         "scope_note": (
             "The nonoverlap statement rules out only the ordinary Type II double tail at the "
@@ -219,7 +222,7 @@ def run_audit() -> dict[str, object]:
             "gcd_step_initial": math.gcd(step, initial),
             "prime_samples": nonoverlap_ray_samples(),
         },
-        "stored_500m_pminusone_residual": profile_stored_residual(),
+        "stored_500m_b1_residual": profile_stored_residual(),
     }
 
 

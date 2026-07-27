@@ -37,21 +37,22 @@ def classify_record(record: dict[str, object], ordinary_tail_misses: set[int]) -
         or (4 * K * K) % E
     ):
         raise AssertionError("stored B=1 terminal record failed reconstruction")
+    q = (gap + 1) // 4
+    r = (R + 1) // 4
+    if (A * r) % q == 0:
+        raise AssertionError("ordinary-tail miss violated the B=1 same-gap criterion")
     if source != prime - 1:
         return {
             "prime": prime,
             "kind": "other_even_source",
             "gap": gap,
+            "A": A,
+            "q": q,
+            "r": r,
             "source_distance": prime - source,
         }
     if R % 4 != 3 or E != R + 1:
         raise AssertionError("p-1 B=1 bridge did not have the forced bridge factor")
-    q = (gap + 1) // 4
-    r = (R + 1) // 4
-    if (A * r) % q == 0:
-        # The exact same-gap criterion would explicitly construct a Type II ordinary tail,
-        # contradicting that this prime belongs to the complete tail-miss input.
-        raise AssertionError("ordinary-tail miss violated the B=1 same-gap criterion")
     return {
         "prime": prime,
         "kind": "p_minus_one_q_not_divide_Ar",

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-b1-terminal-overlap-profile-500m
 title: 五亿普通尾遗漏中的B等于1终端桥重叠剖面
-statement: 在p<=500000000的1717个完整普通Type II双尾遗漏中，m<=215的B=1最短偶源桥捕获1713个。其1400个选中桥的源恰为p-1；对每个这类桥，若q=(m+1)/4、r=(R+1)/4、A为其B=1正规形首因子，则q不整除Ar。其余313个选中桥使用p-1以外的偶源。前一结论是精确B=1同缺口二分的必要余项：若q|Ar，则该缺口已有普通Type II双尾，不能属于输入遗漏集。
+statement: 在p<=500000000的1717个完整普通Type II双尾遗漏中，m<=215的B=1最短偶源桥捕获1713个。对每个选中桥，若q=(m+1)/4、r=(R+1)/4、A为其B=1正规形首因子，则q不整除Ar。其1400个选中桥的源恰为p-1，余313个使用其它偶源。q不整除Ar是精确B=1同缺口二分的必要余项：若q|Ar，则该缺口已有普通Type II双尾，不能属于输入遗漏集。
 claim_status: computationally_reproduced
 proof_provenance: computational_reproduction
 review_status: internal_review
@@ -28,15 +28,15 @@ last_checked: '2026-07-28'
 正规形最大尾偶源边中按源距离选择的首边。后者有 1,713 条记录，另有四个点在该 \(B=1\) 盒内
 没有偶源边。
 
-对每条选中的 \(p-1\) 源边，写
+对每条选中的 \(B=1\) 边，写
 
 \[
 q=\frac{m+1}{4},\qquad r=\frac{R+1}{4}.
 \]
 
-因为源为 \(p-1\)，桥因子必为 \(E=R+1=4r\)。[精确同缺口二分]
-(type-I-b1-pminusone-same-gap-dichotomy.md) 表明：若 \(q\mid Ar\)，则同一缺口直接有普通
-Type II 双尾；这与输入是完整普通尾遗漏相矛盾。
+[精确同缺口二分](type-I-b1-pminusone-same-gap-dichotomy.md) 表明：若 \(q\mid Ar\)，则同一
+缺口直接有普通 Type II 双尾；这与输入是完整普通尾遗漏相矛盾。对源为 \(p-1\) 的子类，
+桥因子还必为 \(E=R+1=4r\)。
 
 精确重建得到：
 
