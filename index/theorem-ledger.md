@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 237 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 184 |
+| 数学状态 | `established` | 185 |
 | 数学状态 | `open` | 8 |
 | 证明来源 | `computational_reproduction` | 10 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 7 |
+| 证明来源 | `repository_derivation` | 8 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 14 |
+| 审阅状态 | `internal_review` | 15 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -315,6 +315,7 @@
 | [Type II 因子生成器在 10^8 内的有限参数盒审计](../claims/type-II-factor-box-audit.md) (`type-II-factor-box-audit`) | `computationally_reported` | `unspecified` | `unspecified` | `bello2026` | 2026-07-23 |
 | [q 平方因子给出的 Type II 双尾递降同余族](../claims/type-II-factor-square-tail-descent-family.md) (`type-II-factor-square-tail-descent-family`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-26 |
 | [Type II 扇扩张的模数强制因子精确更新律](../claims/type-II-fan-extension-forced-factor-update.md) (`type-II-fan-extension-forced-factor-update`) | `established` | `repository_derivation` | `internal_review` | `chamberland2026` | 2026-07-28 |
+| [Type II 扇扩张的同余状态分支不可判定性](../claims/type-II-fan-lift-nondeterminism.md) (`type-II-fan-lift-nondeterminism`) | `established` | `repository_derivation` | `internal_review` | `linnik1944`, `chamberland2026` | 2026-07-28 |
 | [有限 Type II 因子模板不能覆盖全部核心素数](../claims/type-II-finite-template-obstruction.md) (`type-II-finite-template-obstruction`) | `established` | `unspecified` | `unspecified` | `bello2026` | 2026-07-23 |
 | [固定因子冻结余因子的 Type II 进程陷阱引理](../claims/type-II-fixed-factor-progression-trap.md) (`type-II-fixed-factor-progression-trap`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type II 核心活跃二次特征的固定化边界](../claims/type-II-fixed-quadratic-character-boundary.md) (`type-II-fixed-quadratic-character-boundary`) | `established` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `elsholtz_tao2013`, `chamberland2026` | 2026-07-24 |

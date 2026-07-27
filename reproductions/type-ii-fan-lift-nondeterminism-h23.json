@@ -1,0 +1,27 @@
+{
+  "arithmetic": "CRT lifts of a reduced core-prime progression, exact gcd forced-factor comparison, and deterministic primality checks for the first displayed prime in each H22-to-H23 lift",
+  "scope_note": "The general infinite assertion uses Dirichlet's theorem. It proves an old congruence state cannot determine a fan-extension update; it neither constructs a Type II certificate nor supplies a terminating descent.",
+  "general_branching_conditions": {
+    "old_modulus_multiple_of": 24,
+    "old_residue_mod_24": 1,
+    "new_prime_minimum": 5,
+    "new_prime_coprime_to_old_modulus": true,
+    "new_prime_does_not_divide_old_shift": true
+  },
+  "h22_to_h23": {
+    "old_modulus": 77597520,
+    "old_residue": 529,
+    "new_prime": 23,
+    "expanded_modulus": 1784742960,
+    "old_shift": 5,
+    "old_forced_factor": 3,
+    "hit_lift_residue": 1474353409,
+    "hit_forced_factor": 69,
+    "hit_first_prime_multiplier": 8,
+    "hit_first_core_prime": 15752297089,
+    "miss_lift_residue": 1086365809,
+    "miss_forced_factor": 3,
+    "miss_first_prime_multiplier": 2,
+    "miss_first_core_prime": 4655851729
+  }
+}
