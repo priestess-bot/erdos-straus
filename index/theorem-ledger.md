@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 239 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 186 |
+| 数学状态 | `established` | 187 |
 | 数学状态 | `open` | 8 |
 | 证明来源 | `computational_reproduction` | 12 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 9 |
+| 证明来源 | `repository_derivation` | 10 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 18 |
+| 审阅状态 | `internal_review` | 19 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -294,6 +294,7 @@
 | [五亿偶源状态的最小B跨样本边界](../claims/type-I-tail-source-state-small-b-profile-500m.md) (`type-I-tail-source-state-small-b-profile-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 目标除子与偶终端桥的双因子选择器](../claims/type-I-target-divisor-even-terminal-selector.md) (`type-I-target-divisor-even-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 目标除子的溢出因子与正规形精确对应](../claims/type-I-target-divisor-overflow.md) (`type-I-target-divisor-overflow`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [原始 AC 半径五盒的四层局部覆盖递归重新出现可采纳逃逸](../claims/type-II-ac-box-depth-four-recursive-escape.md) (`type-II-ac-box-depth-four-recursive-escape`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
 | [原始 AC 射线盒的一私有余因子局部覆盖边界](../claims/type-II-ac-box-one-prime-local-closure.md) (`type-II-ac-box-one-prime-local-closure`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
 | [原始 AC 半径五盒的覆盖素数一层递归仍闭合](../claims/type-II-ac-box-recursive-covering-boundary.md) (`type-II-ac-box-recursive-covering-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
