@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 243 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 191 |
+| 数学状态 | `established` | 192 |
 | 数学状态 | `open` | 9 |
 | 证明来源 | `computational_reproduction` | 16 |
 | 证明来源 | `mixed` | 4 |
-| 证明来源 | `repository_derivation` | 14 |
+| 证明来源 | `repository_derivation` | 15 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 28 |
+| 审阅状态 | `internal_review` | 29 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -265,6 +265,7 @@
 | [Type I 偶源桥的小侧普通除子对可免除大小预算](../claims/type-I-normal-even-source-small-side-simplification.md) (`type-I-normal-even-source-small-side-simplification`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 正规形的缺口源偶桥判据](../claims/type-I-normal-gap-source-even-bridge.md) (`type-I-normal-gap-source-even-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-27 |
 | [五亿普通尾遗漏的缺口源偶桥边界](../claims/type-I-normal-gap-source-even-bridge-boundary-500m.md) (`type-I-normal-gap-source-even-bridge-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-27 |
+| [Type I 正规形的 p减一桥判据与上半区性质](../claims/type-I-normal-pminusone-upper-half-bridge.md) (`type-I-normal-pminusone-upper-half-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I 正规形最大尾的反向二尾选择器](../claims/type-I-normal-reverse-two-tail-selector.md) (`type-I-normal-reverse-two-tail-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [Type I正规形桥因子的归一化源平方等价](../claims/type-I-normal-source-square-bridge-equivalence.md) (`type-I-normal-source-square-bridge-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I源状态的B等于1单除子剩余判据](../claims/type-I-normal-source-state-b1-realization.md) (`type-I-normal-source-state-b1-realization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
