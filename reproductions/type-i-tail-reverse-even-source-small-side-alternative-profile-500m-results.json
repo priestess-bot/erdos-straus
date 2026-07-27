@@ -1,0 +1,2485 @@
+{
+  "arithmetic": "for every same-(L,R) large-side residual, enumerate all Type I normal forms and strict even-source reverse lifts through m<=gap_cap, retain a<b ordinary divisor pairs, and verify both target and source Egyptian-fraction identities exactly",
+  "scope_note": "A finite re-selection result on the stored 500M ordinary-tail residual. It does not select a normal form beyond the stated gap box or prove a global mixed selector.",
+  "input_artifact": "type-i-tail-reverse-even-source-small-side-profile-500m-results.json",
+  "prime_limit": 500000000,
+  "gap_cap": 215,
+  "same_state_large_side_residual_count": 95,
+  "alternative_small_side_captured_count": 95,
+  "misses": [],
+  "normal_forms_exhaustively_checked": 3993,
+  "strict_reverse_lifts_exhaustively_checked": 7493,
+  "combined_small_side_closure_count": 1717,
+  "records": [
+    {
+      "prime": 67369,
+      "same_state_large_side": {
+        "R": 87,
+        "L": 2930552,
+        "selected_pair": {
+          "E": 4726276,
+          "a": 1087,
+          "b": 674
+        }
+      },
+      "alternative_small_side": {
+        "gap": 119,
+        "normal_form": [
+          74,
+          3,
+          76
+        ],
+        "R": 23,
+        "K": 387372,
+        "E": 24,
+        "a": 1,
+        "b": 32281,
+        "source_denominator": 67368
+      }
+    },
+    {
+      "prime": 2392009,
+      "same_state_large_side": {
+        "R": 3055,
+        "L": 3653793748,
+        "selected_pair": {
+          "E": 6803610256,
+          "a": 82484,
+          "b": 44297
+        }
+      },
+      "alternative_small_side": {
+        "gap": 147,
+        "normal_form": [
+          2327,
+          1,
+          257
+        ],
+        "R": 7,
+        "K": 4186016,
+        "E": 8,
+        "a": 1,
+        "b": 1046504,
+        "source_denominator": 2392008
+      }
+    },
+    {
+      "prime": 9711529,
+      "same_state_large_side": {
+        "R": 2551,
+        "L": 12387055240,
+        "selected_pair": {
+          "E": 14375050816,
+          "a": 119896,
+          "b": 103315
+        }
+      },
+      "alternative_small_side": {
+        "gap": 111,
+        "normal_form": [
+          12515,
+          1,
+          194
+        ],
+        "R": 7,
+        "K": 16995176,
+        "E": 8,
+        "a": 1,
+        "b": 4248794,
+        "source_denominator": 9711528
+      }
+    },
+    {
+      "prime": 12784489,
+      "same_state_large_side": {
+        "R": 11783,
+        "L": 75319816944,
+        "selected_pair": {
+          "E": 133423633984,
+          "a": 182636,
+          "b": 103101
+        }
+      },
+      "alternative_small_side": {
+        "gap": 111,
+        "normal_form": [
+          16475,
+          1,
+          194
+        ],
+        "R": 7,
+        "K": 22372856,
+        "E": 8,
+        "a": 1,
+        "b": 5593214,
+        "source_denominator": 12784488
+      }
+    },
+    {
+      "prime": 12853129,
+      "same_state_large_side": {
+        "R": 23327,
+        "L": 149912470092,
+        "selected_pair": {
+          "E": 196436876944,
+          "a": 443212,
+          "b": 338241
+        }
+      },
+      "alternative_small_side": {
+        "gap": 151,
+        "normal_form": [
+          1199,
+          1,
+          2680
+        ],
+        "R": 71,
+        "K": 228143040,
+        "E": 72,
+        "a": 3,
+        "b": 19011920,
+        "source_denominator": 12853128
+      }
+    },
+    {
+      "prime": 13177609,
+      "same_state_large_side": {
+        "R": 2071,
+        "L": 13645414120,
+        "selected_pair": {
+          "E": 17022942784,
+          "a": 130472,
+          "b": 104585
+        }
+      },
+      "alternative_small_side": {
+        "gap": 63,
+        "normal_form": [
+          70094,
+          1,
+          47
+        ],
+        "R": 3,
+        "K": 9883207,
+        "E": 4,
+        "a": 2,
+        "b": 9883207,
+        "source_denominator": 13177608
+      }
+    },
+    {
+      "prime": 14706409,
+      "same_state_large_side": {
+        "R": 8951,
+        "L": 65818533480,
+        "selected_pair": {
+          "E": 76995150400,
+          "a": 277480,
+          "b": 237201
+        }
+      },
+      "alternative_small_side": {
+        "gap": 175,
+        "normal_form": [
+          28066,
+          1,
+          131
+        ],
+        "R": 3,
+        "K": 11029807,
+        "E": 4,
+        "a": 2,
+        "b": 11029807,
+        "source_denominator": 14706408
+      }
+    },
+    {
+      "prime": 15072649,
+      "same_state_large_side": {
+        "R": 61023,
+        "L": 459889129964,
+        "selected_pair": {
+          "E": 629321716804,
+          "a": 396649,
+          "b": 289859
+        }
+      },
+      "alternative_small_side": {
+        "gap": 63,
+        "normal_form": [
+          80174,
+          1,
+          47
+        ],
+        "R": 3,
+        "K": 11304487,
+        "E": 4,
+        "a": 2,
+        "b": 11304487,
+        "source_denominator": 15072648
+      }
+    },
+    {
+      "prime": 15405289,
+      "same_state_large_side": {
+        "R": 13431,
+        "L": 103454218280,
+        "selected_pair": {
+          "E": 173355649600,
+          "a": 416360,
+          "b": 248473
+        }
+      },
+      "alternative_small_side": {
+        "gap": 143,
+        "normal_form": [
+          35994,
+          1,
+          107
+        ],
+        "R": 3,
+        "K": 11553967,
+        "E": 4,
+        "a": 2,
+        "b": 11553967,
+        "source_denominator": 15405288
+      }
+    },
+    {
+      "prime": 17898169,
+      "same_state_large_side": {
+        "R": 3191,
+        "L": 28556528640,
+        "selected_pair": {
+          "E": 51329433600,
+          "a": 56640,
+          "b": 31511
+        }
+      },
+      "alternative_small_side": {
+        "gap": 211,
+        "normal_form": [
+          1805,
+          1,
+          2479
+        ],
+        "R": 47,
+        "K": 210303486,
+        "E": 48,
+        "a": 4,
+        "b": 35050581,
+        "source_denominator": 17898168
+      }
+    },
+    {
+      "prime": 17992489,
+      "same_state_large_side": {
+        "R": 16583,
+        "L": 149184722544,
+        "selected_pair": {
+          "E": 264270021184,
+          "a": 257036,
+          "b": 145101
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          155108,
+          1,
+          29
+        ],
+        "R": 3,
+        "K": 13494367,
+        "E": 4,
+        "a": 2,
+        "b": 13494367,
+        "source_denominator": 17992488
+      }
+    },
+    {
+      "prime": 20275369,
+      "same_state_large_side": {
+        "R": 17927,
+        "L": 181738270032,
+        "selected_pair": {
+          "E": 270277293924,
+          "a": 259941,
+          "b": 174788
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          174788,
+          1,
+          29
+        ],
+        "R": 3,
+        "K": 15206527,
+        "E": 4,
+        "a": 2,
+        "b": 15206527,
+        "source_denominator": 20275368
+      }
+    },
+    {
+      "prime": 20384809,
+      "same_state_large_side": {
+        "R": 13991,
+        "L": 142601931360,
+        "selected_pair": {
+          "E": 188113038400,
+          "a": 108430,
+          "b": 82197
+        }
+      },
+      "alternative_small_side": {
+        "gap": 215,
+        "normal_form": [
+          8128,
+          3,
+          209
+        ],
+        "R": 35,
+        "K": 178367079,
+        "E": 36,
+        "a": 6,
+        "b": 59455693,
+        "source_denominator": 20384808
+      }
+    },
+    {
+      "prime": 20570449,
+      "same_state_large_side": {
+        "R": 18959,
+        "L": 194997571296,
+        "selected_pair": {
+          "E": 345424201984,
+          "a": 293864,
+          "b": 165891
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          1517,
+          1,
+          3390
+        ],
+        "R": 191,
+        "K": 982238940,
+        "E": 192,
+        "a": 8,
+        "b": 81853245,
+        "source_denominator": 20570448
+      }
+    },
+    {
+      "prime": 28929289,
+      "same_state_large_side": {
+        "R": 26663,
+        "L": 385670816304,
+        "selected_pair": {
+          "E": 683188208704,
+          "a": 413276,
+          "b": 233301
+        }
+      },
+      "alternative_small_side": {
+        "gap": 103,
+        "normal_form": [
+          25556,
+          1,
+          283
+        ],
+        "R": 11,
+        "K": 79555545,
+        "E": 12,
+        "a": 2,
+        "b": 26518515,
+        "source_denominator": 28929288
+      }
+    },
+    {
+      "prime": 36235609,
+      "same_state_large_side": {
+        "R": 146703,
+        "L": 2657936273564,
+        "selected_pair": {
+          "E": 3637175351044,
+          "a": 953569,
+          "b": 696839
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          46456,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 99647925,
+        "E": 12,
+        "a": 2,
+        "b": 33215975,
+        "source_denominator": 36235608
+      }
+    },
+    {
+      "prime": 39964369,
+      "same_state_large_side": {
+        "R": 51567,
+        "L": 1030421308112,
+        "selected_pair": {
+          "E": 1661969602276,
+          "a": 644587,
+          "b": 399644
+        }
+      },
+      "alternative_small_side": {
+        "gap": 107,
+        "normal_form": [
+          1201,
+          1,
+          8319
+        ],
+        "R": 311,
+        "K": 3107229690,
+        "E": 1896168,
+        "a": 82,
+        "b": 268745,
+        "source_denominator": 39958272
+      }
+    },
+    {
+      "prime": 46688569,
+      "same_state_large_side": {
+        "R": 43031,
+        "L": 1004527906320,
+        "selected_pair": {
+          "E": 1779449281600,
+          "a": 666980,
+          "b": 376521
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          402488,
+          1,
+          29
+        ],
+        "R": 3,
+        "K": 35016427,
+        "E": 4,
+        "a": 2,
+        "b": 35016427,
+        "source_denominator": 46688568
+      }
+    },
+    {
+      "prime": 46960489,
+      "same_state_large_side": {
+        "R": 32231,
+        "L": 756791760480,
+        "selected_pair": {
+          "E": 998320705600,
+          "a": 249790,
+          "b": 189357
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          172649,
+          1,
+          68
+        ],
+        "R": 7,
+        "K": 82180856,
+        "E": 8,
+        "a": 1,
+        "b": 20545214,
+        "source_denominator": 46960488
+      }
+    },
+    {
+      "prime": 48825529,
+      "same_state_large_side": {
+        "R": 54311,
+        "L": 1325881652760,
+        "selected_pair": {
+          "E": 2480681700324,
+          "a": 787509,
+          "b": 420910
+        }
+      },
+      "alternative_small_side": {
+        "gap": 31,
+        "normal_form": [
+          210455,
+          2,
+          29
+        ],
+        "R": 15,
+        "K": 183095734,
+        "E": 16,
+        "a": 4,
+        "b": 91547867,
+        "source_denominator": 48825528
+      }
+    },
+    {
+      "prime": 66032521,
+      "same_state_large_side": {
+        "R": 151799,
+        "L": 5011835327640,
+        "selected_pair": {
+          "E": 5184656136256,
+          "a": 2276984,
+          "b": 2201085
+        }
+      },
+      "alternative_small_side": {
+        "gap": 159,
+        "normal_form": [
+          2087,
+          1,
+          7910
+        ],
+        "R": 199,
+        "K": 3285117920,
+        "E": 200,
+        "a": 5,
+        "b": 164255896,
+        "source_denominator": 66032520
+      }
+    },
+    {
+      "prime": 66270649,
+      "same_state_large_side": {
+        "R": 61079,
+        "L": 2023872485136,
+        "selected_pair": {
+          "E": 3585145328704,
+          "a": 946724,
+          "b": 534441
+        }
+      },
+      "alternative_small_side": {
+        "gap": 111,
+        "normal_form": [
+          23770,
+          17,
+          41
+        ],
+        "R": 427,
+        "K": 7074391781,
+        "E": 14760964,
+        "a": 3842,
+        "b": 3682661,
+        "source_denominator": 66236080
+      }
+    },
+    {
+      "prime": 75056809,
+      "same_state_large_side": {
+        "R": 127431,
+        "L": 4782282113840,
+        "selected_pair": {
+          "E": 5862151331344,
+          "a": 605297,
+          "b": 493795
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          128522,
+          1,
+          146
+        ],
+        "R": 15,
+        "K": 281463034,
+        "E": 16,
+        "a": 4,
+        "b": 140731517,
+        "source_denominator": 75056808
+      }
+    },
+    {
+      "prime": 77441809,
+      "same_state_large_side": {
+        "R": 71375,
+        "L": 2763704558688,
+        "selected_pair": {
+          "E": 4895704965376,
+          "a": 1106312,
+          "b": 624531
+        }
+      },
+      "alternative_small_side": {
+        "gap": 79,
+        "normal_form": [
+          65407,
+          1,
+          296
+        ],
+        "R": 15,
+        "K": 290406784,
+        "E": 16,
+        "a": 1,
+        "b": 36300848,
+        "source_denominator": 77441808
+      }
+    },
+    {
+      "prime": 78865609,
+      "same_state_large_side": {
+        "R": 607,
+        "L": 23935712332,
+        "selected_pair": {
+          "E": 31689159152,
+          "a": 7132,
+          "b": 5387
+        }
+      },
+      "alternative_small_side": {
+        "gap": 87,
+        "normal_form": [
+          19292,
+          1,
+          1022
+        ],
+        "R": 47,
+        "K": 926670906,
+        "E": 48,
+        "a": 4,
+        "b": 154445151,
+        "source_denominator": 78865608
+      }
+    },
+    {
+      "prime": 83445289,
+      "same_state_large_side": {
+        "R": 17223,
+        "L": 718589106224,
+        "selected_pair": {
+          "E": 771537370384,
+          "a": 19963,
+          "b": 18593
+        }
+      },
+      "alternative_small_side": {
+        "gap": 63,
+        "normal_form": [
+          176791,
+          2,
+          59
+        ],
+        "R": 15,
+        "K": 312919834,
+        "E": 16,
+        "a": 4,
+        "b": 156459917,
+        "source_denominator": 83445288
+      }
+    },
+    {
+      "prime": 84163489,
+      "same_state_large_side": {
+        "R": 340743,
+        "L": 14339059866164,
+        "selected_pair": {
+          "E": 19621869996964,
+          "a": 2214829,
+          "b": 1618529
+        }
+      },
+      "alternative_small_side": {
+        "gap": 143,
+        "normal_form": [
+          196644,
+          1,
+          107
+        ],
+        "R": 3,
+        "K": 63122617,
+        "E": 4,
+        "a": 2,
+        "b": 63122617,
+        "source_denominator": 84163488
+      }
+    },
+    {
+      "prime": 85457689,
+      "same_state_large_side": {
+        "R": 264575,
+        "L": 11304984033588,
+        "selected_pair": {
+          "E": 20229970955076,
+          "a": 2248887,
+          "b": 1256731
+        }
+      },
+      "alternative_small_side": {
+        "gap": 27,
+        "normal_form": [
+          211529,
+          1,
+          101
+        ],
+        "R": 15,
+        "K": 320466334,
+        "E": 16,
+        "a": 4,
+        "b": 160233167,
+        "source_denominator": 85457688
+      }
+    },
+    {
+      "prime": 86445769,
+      "same_state_large_side": {
+        "R": 349983,
+        "L": 15127274785964,
+        "selected_pair": {
+          "E": 20700479849284,
+          "a": 2274889,
+          "b": 1662419
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          110828,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 237725865,
+        "E": 12,
+        "a": 2,
+        "b": 79241955,
+        "source_denominator": 86445768
+      }
+    },
+    {
+      "prime": 87623449,
+      "same_state_large_side": {
+        "R": 80759,
+        "L": 3538191058896,
+        "selected_pair": {
+          "E": 6267652446784,
+          "a": 1251764,
+          "b": 706641
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          72536,
+          1,
+          302
+        ],
+        "R": 31,
+        "K": 679081730,
+        "E": 5240,
+        "a": 2,
+        "b": 518383,
+        "source_denominator": 87623280
+      }
+    },
+    {
+      "prime": 101769649,
+      "same_state_large_side": {
+        "R": 412023,
+        "L": 20965718044964,
+        "selected_pair": {
+          "E": 28689928264804,
+          "a": 2678149,
+          "b": 1957109
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          130474,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 279866535,
+        "E": 12,
+        "a": 2,
+        "b": 93288845,
+        "source_denominator": 101769648
+      }
+    },
+    {
+      "prime": 102214249,
+      "same_state_large_side": {
+        "R": 413823,
+        "L": 21149303581964,
+        "selected_pair": {
+          "E": 28941150571204,
+          "a": 2689849,
+          "b": 1965659
+        }
+      },
+      "alternative_small_side": {
+        "gap": 35,
+        "normal_form": [
+          418911,
+          1,
+          61
+        ],
+        "R": 7,
+        "K": 178874936,
+        "E": 8,
+        "a": 1,
+        "b": 44718734,
+        "source_denominator": 102214248
+      }
+    },
+    {
+      "prime": 103863769,
+      "same_state_large_side": {
+        "R": 81847,
+        "L": 4250468950672,
+        "selected_pair": {
+          "E": 4883516577424,
+          "a": 552467,
+          "b": 480851
+        }
+      },
+      "alternative_small_side": {
+        "gap": 55,
+        "normal_form": [
+          633316,
+          1,
+          41
+        ],
+        "R": 3,
+        "K": 77897827,
+        "E": 4,
+        "a": 2,
+        "b": 77897827,
+        "source_denominator": 103863768
+      }
+    },
+    {
+      "prime": 103872409,
+      "same_state_large_side": {
+        "R": 95735,
+        "L": 4972112537808,
+        "selected_pair": {
+          "E": 8807741870656,
+          "a": 1483892,
+          "b": 837681
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          381884,
+          1,
+          68
+        ],
+        "R": 7,
+        "K": 181776716,
+        "E": 8,
+        "a": 1,
+        "b": 45444179,
+        "source_denominator": 103872408
+      }
+    },
+    {
+      "prime": 110291449,
+      "same_state_large_side": {
+        "R": 99631,
+        "L": 5494223677660,
+        "selected_pair": {
+          "E": 7236293681296,
+          "a": 2690036,
+          "b": 2042435
+        }
+      },
+      "alternative_small_side": {
+        "gap": 131,
+        "normal_form": [
+          161245,
+          9,
+          19
+        ],
+        "R": 47,
+        "K": 1295924526,
+        "E": 48,
+        "a": 4,
+        "b": 215987421,
+        "source_denominator": 110291448
+      }
+    },
+    {
+      "prime": 122840041,
+      "same_state_large_side": {
+        "R": 282391,
+        "L": 17344461009016,
+        "selected_pair": {
+          "E": 17942543826496,
+          "a": 4235864,
+          "b": 4094669
+        }
+      },
+      "alternative_small_side": {
+        "gap": 15,
+        "normal_form": [
+          529483,
+          2,
+          29
+        ],
+        "R": 31,
+        "K": 952010318,
+        "E": 5488,
+        "a": 28,
+        "b": 9714391,
+        "source_denominator": 122839864
+      }
+    },
+    {
+      "prime": 123985129,
+      "same_state_large_side": {
+        "R": 383855,
+        "L": 23796155846148,
+        "selected_pair": {
+          "E": 42582593985156,
+          "a": 3262767,
+          "b": 1823311
+        }
+      },
+      "alternative_small_side": {
+        "gap": 131,
+        "normal_form": [
+          181265,
+          9,
+          19
+        ],
+        "R": 47,
+        "K": 1456825266,
+        "E": 48,
+        "a": 4,
+        "b": 242804211,
+        "source_denominator": 123985128
+      }
+    },
+    {
+      "prime": 124373929,
+      "same_state_large_side": {
+        "R": 48151,
+        "L": 2994364527640,
+        "selected_pair": {
+          "E": 3897426156100,
+          "a": 987095,
+          "b": 758378
+        }
+      },
+      "alternative_small_side": {
+        "gap": 191,
+        "normal_form": [
+          84955,
+          3,
+          122
+        ],
+        "R": 23,
+        "K": 715150092,
+        "E": 24,
+        "a": 1,
+        "b": 59595841,
+        "source_denominator": 124373928
+      }
+    },
+    {
+      "prime": 141109609,
+      "same_state_large_side": {
+        "R": 130055,
+        "L": 9176005099248,
+        "selected_pair": {
+          "E": 16254637143616,
+          "a": 2015852,
+          "b": 1137981
+        }
+      },
+      "alternative_small_side": {
+        "gap": 103,
+        "normal_form": [
+          238361,
+          4,
+          37
+        ],
+        "R": 23,
+        "K": 811380252,
+        "E": 24,
+        "a": 1,
+        "b": 67615021,
+        "source_denominator": 141109608
+      }
+    },
+    {
+      "prime": 144312529,
+      "same_state_large_side": {
+        "R": 133007,
+        "L": 9597288272352,
+        "selected_pair": {
+          "E": 17000910182656,
+          "a": 2061608,
+          "b": 1163811
+        }
+      },
+      "alternative_small_side": {
+        "gap": 183,
+        "normal_form": [
+          71726,
+          1,
+          503
+        ],
+        "R": 11,
+        "K": 396859455,
+        "E": 12,
+        "a": 2,
+        "b": 132286485,
+        "source_denominator": 144312528
+      }
+    },
+    {
+      "prime": 156014329,
+      "same_state_large_side": {
+        "R": 423,
+        "L": 32997030584,
+        "selected_pair": {
+          "E": 53835747634,
+          "a": 1873,
+          "b": 1148
+        }
+      },
+      "alternative_small_side": {
+        "gap": 79,
+        "normal_form": [
+          661078,
+          1,
+          59
+        ],
+        "R": 3,
+        "K": 117010747,
+        "E": 4,
+        "a": 2,
+        "b": 117010747,
+        "source_denominator": 156014328
+      }
+    },
+    {
+      "prime": 157186969,
+      "same_state_large_side": {
+        "R": 266871,
+        "L": 20974321802000,
+        "selected_pair": {
+          "E": 25710457020304,
+          "a": 1267637,
+          "b": 1034125
+        }
+      },
+      "alternative_small_side": {
+        "gap": 47,
+        "normal_form": [
+          304626,
+          1,
+          129
+        ],
+        "R": 11,
+        "K": 432264165,
+        "E": 12,
+        "a": 2,
+        "b": 144088055,
+        "source_denominator": 157186968
+      }
+    },
+    {
+      "prime": 160342009,
+      "same_state_large_side": {
+        "R": 496415,
+        "L": 39798089198868,
+        "selected_pair": {
+          "E": 71217632414916,
+          "a": 4219527,
+          "b": 2357971
+        }
+      },
+      "alternative_small_side": {
+        "gap": 119,
+        "normal_form": [
+          15489,
+          1,
+          2588
+        ],
+        "R": 87,
+        "K": 3487438696,
+        "E": 784,
+        "a": 7,
+        "b": 62275691,
+        "source_denominator": 160342000
+      }
+    },
+    {
+      "prime": 163673689,
+      "same_state_large_side": {
+        "R": 107751,
+        "L": 8818001831720,
+        "selected_pair": {
+          "E": 11157470478400,
+          "a": 3340280,
+          "b": 2639899
+        }
+      },
+      "alternative_small_side": {
+        "gap": 215,
+        "normal_form": [
+          69236,
+          1,
+          591
+        ],
+        "R": 11,
+        "K": 450102645,
+        "E": 12,
+        "a": 2,
+        "b": 150034215,
+        "source_denominator": 163673688
+      }
+    },
+    {
+      "prime": 177345529,
+      "same_state_large_side": {
+        "R": 226495,
+        "L": 20083937795428,
+        "selected_pair": {
+          "E": 37397676852496,
+          "a": 6115364,
+          "b": 3284177
+        }
+      },
+      "alternative_small_side": {
+        "gap": 175,
+        "normal_form": [
+          338446,
+          1,
+          131
+        ],
+        "R": 3,
+        "K": 133009147,
+        "E": 4,
+        "a": 2,
+        "b": 133009147,
+        "source_denominator": 177345528
+      }
+    },
+    {
+      "prime": 179700889,
+      "same_state_large_side": {
+        "R": 165623,
+        "L": 14881300169424,
+        "selected_pair": {
+          "E": 26361159713344,
+          "a": 2567156,
+          "b": 1449201
+        }
+      },
+      "alternative_small_side": {
+        "gap": 215,
+        "normal_form": [
+          19356,
+          11,
+          211
+        ],
+        "R": 475,
+        "K": 21339480569,
+        "E": 23276,
+        "a": 46,
+        "b": 84345773,
+        "source_denominator": 179700840
+      }
+    },
+    {
+      "prime": 209799769,
+      "same_state_large_side": {
+        "R": 649535,
+        "L": 68136146478708,
+        "selected_pair": {
+          "E": 121927839904836,
+          "a": 5521047,
+          "b": 3085291
+        }
+      },
+      "alternative_small_side": {
+        "gap": 99,
+        "normal_form": [
+          303179,
+          1,
+          173
+        ],
+        "R": 7,
+        "K": 367149596,
+        "E": 8,
+        "a": 1,
+        "b": 91787399,
+        "source_denominator": 209799768
+      }
+    },
+    {
+      "prime": 213524809,
+      "same_state_large_side": {
+        "R": 69439,
+        "L": 7413474606076,
+        "selected_pair": {
+          "E": 8105397612004,
+          "a": 1423499,
+          "b": 1301981
+        }
+      },
+      "alternative_small_side": {
+        "gap": 111,
+        "normal_form": [
+          71270,
+          1,
+          749
+        ],
+        "R": 27,
+        "K": 1441292461,
+        "E": 28,
+        "a": 2,
+        "b": 205898923,
+        "source_denominator": 213524808
+      }
+    },
+    {
+      "prime": 213601369,
+      "same_state_large_side": {
+        "R": 864783,
+        "L": 92359416343964,
+        "selected_pair": {
+          "E": 126386566183684,
+          "a": 5621089,
+          "b": 4107719
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          273848,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 587403765,
+        "E": 12,
+        "a": 2,
+        "b": 195801255,
+        "source_denominator": 213601368
+      }
+    },
+    {
+      "prime": 218165929,
+      "same_state_large_side": {
+        "R": 883263,
+        "L": 96348946473164,
+        "selected_pair": {
+          "E": 131845923126724,
+          "a": 5741209,
+          "b": 4195499
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          279700,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 599956305,
+        "E": 12,
+        "a": 2,
+        "b": 199985435,
+        "source_denominator": 218165928
+      }
+    },
+    {
+      "prime": 218482009,
+      "same_state_large_side": {
+        "R": 676415,
+        "L": 73892254058868,
+        "selected_pair": {
+          "E": 132228242894916,
+          "a": 5749527,
+          "b": 3212971
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          55061,
+          4,
+          248
+        ],
+        "R": 407,
+        "K": 22230544416,
+        "E": 34596,
+        "a": 93,
+        "b": 119519056,
+        "source_denominator": 218481924
+      }
+    },
+    {
+      "prime": 222052009,
+      "same_state_large_side": {
+        "R": 98471,
+        "L": 10932841689120,
+        "selected_pair": {
+          "E": 16299872036100,
+          "a": 2018655,
+          "b": 1353976
+        }
+      },
+      "alternative_small_side": {
+        "gap": 55,
+        "normal_form": [
+          1353976,
+          1,
+          41
+        ],
+        "R": 3,
+        "K": 166539007,
+        "E": 4,
+        "a": 2,
+        "b": 166539007,
+        "source_denominator": 222052008
+      }
+    },
+    {
+      "prime": 231169129,
+      "same_state_large_side": {
+        "R": 1823,
+        "L": 210710661084,
+        "selected_pair": {
+          "E": 352568555486,
+          "a": 158693,
+          "b": 94842
+        }
+      },
+      "alternative_small_side": {
+        "gap": 199,
+        "normal_form": [
+          387868,
+          1,
+          149
+        ],
+        "R": 3,
+        "K": 173376847,
+        "E": 4,
+        "a": 2,
+        "b": 173376847,
+        "source_denominator": 231169128
+      }
+    },
+    {
+      "prime": 239182969,
+      "same_state_large_side": {
+        "R": 49367,
+        "L": 5903872815312,
+        "selected_pair": {
+          "E": 6338893856656,
+          "a": 629429,
+          "b": 586233
+        }
+      },
+      "alternative_small_side": {
+        "gap": 59,
+        "normal_form": [
+          22073,
+          3,
+          903
+        ],
+        "R": 551,
+        "K": 32947453980,
+        "E": 44632,
+        "a": 1,
+        "b": 1476405,
+        "source_denominator": 239182888
+      }
+    },
+    {
+      "prime": 241640809,
+      "same_state_large_side": {
+        "R": 978303,
+        "L": 118198964183564,
+        "selected_pair": {
+          "E": 161745946971844,
+          "a": 6358969,
+          "b": 4646939
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          309796,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 664512225,
+        "E": 12,
+        "a": 2,
+        "b": 221504075,
+        "source_denominator": 241640808
+      }
+    },
+    {
+      "prime": 245200729,
+      "same_state_large_side": {
+        "R": 91527,
+        "L": 11221243561592,
+        "selected_pair": {
+          "E": 18505207925824,
+          "a": 4301768,
+          "b": 2608519
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          314360,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 674302005,
+        "E": 12,
+        "a": 2,
+        "b": 224767335,
+        "source_denominator": 245200728
+      }
+    },
+    {
+      "prime": 251897209,
+      "same_state_large_side": {
+        "R": 165831,
+        "L": 20886183032840,
+        "selected_pair": {
+          "E": 26427413377600,
+          "a": 5140760,
+          "b": 4062859
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          2171528,
+          1,
+          29
+        ],
+        "R": 3,
+        "K": 188922907,
+        "E": 4,
+        "a": 2,
+        "b": 188922907,
+        "source_denominator": 251897208
+      }
+    },
+    {
+      "prime": 252925369,
+      "same_state_large_side": {
+        "R": 233111,
+        "L": 29479842846480,
+        "selected_pair": {
+          "E": 52221435073600,
+          "a": 3613220,
+          "b": 2039721
+        }
+      },
+      "alternative_small_side": {
+        "gap": 79,
+        "normal_form": [
+          1071718,
+          1,
+          59
+        ],
+        "R": 3,
+        "K": 189694027,
+        "E": 4,
+        "a": 2,
+        "b": 189694027,
+        "source_denominator": 252925368
+      }
+    },
+    {
+      "prime": 259246969,
+      "same_state_large_side": {
+        "R": 1049583,
+        "L": 136050605731964,
+        "selected_pair": {
+          "E": 186174508798084,
+          "a": 6822289,
+          "b": 4985519
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          2234888,
+          1,
+          29
+        ],
+        "R": 3,
+        "K": 194435227,
+        "E": 4,
+        "a": 2,
+        "b": 194435227,
+        "source_denominator": 259246968
+      }
+    },
+    {
+      "prime": 264038329,
+      "same_state_large_side": {
+        "R": 575247,
+        "L": 75943628321132,
+        "selected_pair": {
+          "E": 95632713523204,
+          "a": 4889599,
+          "b": 3882917
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          155683,
+          2,
+          212
+        ],
+        "R": 87,
+        "K": 5742833656,
+        "E": 784,
+        "a": 7,
+        "b": 102550601,
+        "source_denominator": 264038320
+      }
+    },
+    {
+      "prime": 267573289,
+      "same_state_large_side": {
+        "R": 176151,
+        "L": 23566651215320,
+        "selected_pair": {
+          "E": 29819026062400,
+          "a": 5460680,
+          "b": 4315699
+        }
+      },
+      "alternative_small_side": {
+        "gap": 99,
+        "normal_form": [
+          117563,
+          1,
+          569
+        ],
+        "R": 23,
+        "K": 1538546412,
+        "E": 24,
+        "a": 1,
+        "b": 128212201,
+        "source_denominator": 267573288
+      }
+    },
+    {
+      "prime": 274291609,
+      "same_state_large_side": {
+        "R": 497807,
+        "L": 68272141500732,
+        "selected_pair": {
+          "E": 89460044222224,
+          "a": 9458332,
+          "b": 7218201
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          351656,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 754301925,
+        "E": 12,
+        "a": 2,
+        "b": 251433975,
+        "source_denominator": 274291608
+      }
+    },
+    {
+      "prime": 274600489,
+      "same_state_large_side": {
+        "R": 1111743,
+        "L": 152642585721164,
+        "selected_pair": {
+          "E": 208879323264964,
+          "a": 7226329,
+          "b": 5280779
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          352052,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 755151345,
+        "E": 12,
+        "a": 2,
+        "b": 251717115,
+        "source_denominator": 274600488
+      }
+    },
+    {
+      "prime": 283249129,
+      "same_state_large_side": {
+        "R": 255871,
+        "L": 36237618943180,
+        "selected_pair": {
+          "E": 47727593322256,
+          "a": 6908516,
+          "b": 5245355
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          363140,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 778935105,
+        "E": 12,
+        "a": 2,
+        "b": 259645035,
+        "source_denominator": 283249128
+      }
+    },
+    {
+      "prime": 284144569,
+      "same_state_large_side": {
+        "R": 1150383,
+        "L": 163437540859964,
+        "selected_pair": {
+          "E": 223651366980484,
+          "a": 7477489,
+          "b": 5464319
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          364288,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 781397565,
+        "E": 12,
+        "a": 2,
+        "b": 260465855,
+        "source_denominator": 284144568
+      }
+    },
+    {
+      "prime": 291881209,
+      "same_state_large_side": {
+        "R": 269015,
+        "L": 39260211719568,
+        "selected_pair": {
+          "E": 69546659807296,
+          "a": 4169732,
+          "b": 2353881
+        }
+      },
+      "alternative_small_side": {
+        "gap": 119,
+        "normal_form": [
+          21237,
+          2,
+          1718
+        ],
+        "R": 231,
+        "K": 16856139820,
+        "E": 2080,
+        "a": 4,
+        "b": 64831307,
+        "source_denominator": 291881200
+      }
+    },
+    {
+      "prime": 306312169,
+      "same_state_large_side": {
+        "R": 948335,
+        "L": 145243275394308,
+        "selected_pair": {
+          "E": 259909017429636,
+          "a": 8060847,
+          "b": 4504591
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          617565,
+          1,
+          124
+        ],
+        "R": 7,
+        "K": 536046296,
+        "E": 8,
+        "a": 1,
+        "b": 134011574,
+        "source_denominator": 306312168
+      }
+    },
+    {
+      "prime": 315893209,
+      "same_state_large_side": {
+        "R": 26615,
+        "L": 4203748878768,
+        "selected_pair": {
+          "E": 4879875393936,
+          "a": 184087,
+          "b": 158581
+        }
+      },
+      "alternative_small_side": {
+        "gap": 91,
+        "normal_form": [
+          5,
+          1,
+          15794665
+        ],
+        "R": 694271,
+        "K": 54828873526410,
+        "E": 12050298593316,
+        "a": 1735677,
+        "b": 15794665,
+        "source_denominator": 298536444
+      }
+    },
+    {
+      "prime": 325582009,
+      "same_state_large_side": {
+        "R": 39623,
+        "L": 6450267971304,
+        "selected_pair": {
+          "E": 10815600309264,
+          "a": 1644354,
+          "b": 980669
+        }
+      },
+      "alternative_small_side": {
+        "gap": 119,
+        "normal_form": [
+          248916,
+          1,
+          327
+        ],
+        "R": 11,
+        "K": 895350525,
+        "E": 12,
+        "a": 2,
+        "b": 298450175,
+        "source_denominator": 325582008
+      }
+    },
+    {
+      "prime": 330584809,
+      "same_state_large_side": {
+        "R": 98535,
+        "L": 16287087077408,
+        "selected_pair": {
+          "E": 29370156491776,
+          "a": 5419424,
+          "b": 3005317
+        }
+      },
+      "alternative_small_side": {
+        "gap": 55,
+        "normal_form": [
+          169357,
+          2,
+          244
+        ],
+        "R": 71,
+        "K": 5867880360,
+        "E": 72,
+        "a": 3,
+        "b": 488990030,
+        "source_denominator": 330584808
+      }
+    },
+    {
+      "prime": 331117609,
+      "same_state_large_side": {
+        "R": 9719,
+        "L": 1609066020936,
+        "selected_pair": {
+          "E": 1951906977504,
+          "a": 29964,
+          "b": 24701
+        }
+      },
+      "alternative_small_side": {
+        "gap": 87,
+        "normal_form": [
+          6812,
+          7,
+          1736
+        ],
+        "R": 3911,
+        "K": 323750242200,
+        "E": 35200,
+        "a": 8,
+        "b": 147159201,
+        "source_denominator": 331117600
+      }
+    },
+    {
+      "prime": 331735849,
+      "same_state_large_side": {
+        "R": 218391,
+        "L": 36224061899480,
+        "selected_pair": {
+          "E": 45834524814400,
+          "a": 6770120,
+          "b": 5350579
+        }
+      },
+      "alternative_small_side": {
+        "gap": 59,
+        "normal_form": [
+          244643,
+          1,
+          339
+        ],
+        "R": 23,
+        "K": 1907481132,
+        "E": 24,
+        "a": 1,
+        "b": 158956761,
+        "source_denominator": 331735848
+      }
+    },
+    {
+      "prime": 339719209,
+      "same_state_large_side": {
+        "R": 5831,
+        "L": 990451353840,
+        "selected_pair": {
+          "E": 1015415057280,
+          "a": 183976,
+          "b": 179453
+        }
+      },
+      "alternative_small_side": {
+        "gap": 15,
+        "normal_form": [
+          3266531,
+          1,
+          26
+        ],
+        "R": 7,
+        "K": 594508616,
+        "E": 8,
+        "a": 1,
+        "b": 148627154,
+        "source_denominator": 339719208
+      }
+    },
+    {
+      "prime": 340558969,
+      "same_state_large_side": {
+        "R": 439431,
+        "L": 74826084153320,
+        "selected_pair": {
+          "E": 120687230379076,
+          "a": 5492887,
+          "b": 3405590
+        }
+      },
+      "alternative_small_side": {
+        "gap": 199,
+        "normal_form": [
+          571408,
+          1,
+          149
+        ],
+        "R": 3,
+        "K": 255419227,
+        "E": 4,
+        "a": 2,
+        "b": 255419227,
+        "source_denominator": 340558968
+      }
+    },
+    {
+      "prime": 347420329,
+      "same_state_large_side": {
+        "R": 630527,
+        "L": 109528948891692,
+        "selected_pair": {
+          "E": 143520687520144,
+          "a": 11980012,
+          "b": 9142641
+        }
+      },
+      "alternative_small_side": {
+        "gap": 167,
+        "normal_form": [
+          132806,
+          3,
+          218
+        ],
+        "R": 47,
+        "K": 4082188866,
+        "E": 48,
+        "a": 4,
+        "b": 680364811,
+        "source_denominator": 347420328
+      }
+    },
+    {
+      "prime": 348596329,
+      "same_state_large_side": {
+        "R": 321287,
+        "L": 55999734377712,
+        "selected_pair": {
+          "E": 99199528330816,
+          "a": 4979948,
+          "b": 2811261
+        }
+      },
+      "alternative_small_side": {
+        "gap": 143,
+        "normal_form": [
+          214653,
+          14,
+          29
+        ],
+        "R": 159,
+        "K": 13856704078,
+        "E": 166792,
+        "a": 2,
+        "b": 332311,
+        "source_denominator": 348595280
+      }
+    },
+    {
+      "prime": 351842089,
+      "same_state_large_side": {
+        "R": 104871,
+        "L": 18449015857760,
+        "selected_pair": {
+          "E": 33268716553216,
+          "a": 5767904,
+          "b": 3198565
+        }
+      },
+      "alternative_small_side": {
+        "gap": 191,
+        "normal_form": [
+          263355,
+          1,
+          334
+        ],
+        "R": 7,
+        "K": 615723656,
+        "E": 8,
+        "a": 1,
+        "b": 153930914,
+        "source_denominator": 351842088
+      }
+    },
+    {
+      "prime": 352384729,
+      "same_state_large_side": {
+        "R": 277687,
+        "L": 48926329120912,
+        "selected_pair": {
+          "E": 56213226012304,
+          "a": 1874387,
+          "b": 1631411
+        }
+      },
+      "alternative_small_side": {
+        "gap": 27,
+        "normal_form": [
+          1874387,
+          1,
+          47
+        ],
+        "R": 7,
+        "K": 616673276,
+        "E": 8,
+        "a": 1,
+        "b": 154168319,
+        "source_denominator": 352384728
+      }
+    },
+    {
+      "prime": 360606409,
+      "same_state_large_side": {
+        "R": 314391,
+        "L": 56685704765960,
+        "selected_pair": {
+          "E": 94986855054400,
+          "a": 9746120,
+          "b": 5816233
+        }
+      },
+      "alternative_small_side": {
+        "gap": 39,
+        "normal_form": [
+          1325759,
+          1,
+          68
+        ],
+        "R": 7,
+        "K": 631061216,
+        "E": 8,
+        "a": 1,
+        "b": 157765304,
+        "source_denominator": 360606408
+      }
+    },
+    {
+      "prime": 364148689,
+      "same_state_large_side": {
+        "R": 660887,
+        "L": 120330567313572,
+        "selected_pair": {
+          "E": 157674532149904,
+          "a": 12556852,
+          "b": 9582861
+        }
+      },
+      "alternative_small_side": {
+        "gap": 159,
+        "normal_form": [
+          152747,
+          1,
+          596
+        ],
+        "R": 15,
+        "K": 1365557584,
+        "E": 16,
+        "a": 1,
+        "b": 170694698,
+        "source_denominator": 364148688
+      }
+    },
+    {
+      "prime": 371844169,
+      "same_state_large_side": {
+        "R": 479799,
+        "L": 89205230221016,
+        "selected_pair": {
+          "E": 143879401260676,
+          "a": 5997487,
+          "b": 3718442
+        }
+      },
+      "alternative_small_side": {
+        "gap": 95,
+        "normal_form": [
+          1068518,
+          3,
+          29
+        ],
+        "R": 11,
+        "K": 1022571465,
+        "E": 12,
+        "a": 2,
+        "b": 340857155,
+        "source_denominator": 371844168
+      }
+    },
+    {
+      "prime": 373561609,
+      "same_state_large_side": {
+        "R": 256391,
+        "L": 47888917246560,
+        "selected_pair": {
+          "E": 63172611534400,
+          "a": 1987030,
+          "b": 1506297
+        }
+      },
+      "alternative_small_side": {
+        "gap": 135,
+        "normal_form": [
+          240697,
+          2,
+          194
+        ],
+        "R": 23,
+        "K": 2147979252,
+        "E": 24,
+        "a": 1,
+        "b": 178998271,
+        "source_denominator": 373561608
+      }
+    },
+    {
+      "prime": 396943369,
+      "same_state_large_side": {
+        "R": 346071,
+        "L": 68685294326600,
+        "selected_pair": {
+          "E": 115094275240000,
+          "a": 10728200,
+          "b": 6402313
+        }
+      },
+      "alternative_small_side": {
+        "gap": 135,
+        "normal_form": [
+          420491,
+          1,
+          236
+        ],
+        "R": 7,
+        "K": 694650896,
+        "E": 8,
+        "a": 1,
+        "b": 173662724,
+        "source_denominator": 396943368
+      }
+    },
+    {
+      "prime": 407498809,
+      "same_state_large_side": {
+        "R": 368111,
+        "L": 75002397039900,
+        "selected_pair": {
+          "E": 98783641488016,
+          "a": 9938996,
+          "b": 7546275
+        }
+      },
+      "alternative_small_side": {
+        "gap": 27,
+        "normal_form": [
+          2167547,
+          1,
+          47
+        ],
+        "R": 7,
+        "K": 713122916,
+        "E": 8,
+        "a": 1,
+        "b": 178280729,
+        "source_denominator": 407498808
+      }
+    },
+    {
+      "prime": 418605049,
+      "same_state_large_side": {
+        "R": 329351,
+        "L": 68933995746600,
+        "selected_pair": {
+          "E": 104241649614400,
+          "a": 2041976,
+          "b": 1350339
+        }
+      },
+      "alternative_small_side": {
+        "gap": 215,
+        "normal_form": [
+          55636,
+          1,
+          1881
+        ],
+        "R": 35,
+        "K": 3662794179,
+        "E": 36,
+        "a": 2,
+        "b": 406977131,
+        "source_denominator": 418605048
+      }
+    },
+    {
+      "prime": 420623641,
+      "same_state_large_side": {
+        "R": 966951,
+        "L": 203361225144296,
+        "selected_pair": {
+          "E": 210373674181696,
+          "a": 14504264,
+          "b": 14020789
+        }
+      },
+      "alternative_small_side": {
+        "gap": 207,
+        "normal_form": [
+          52109,
+          1,
+          2018
+        ],
+        "R": 39,
+        "K": 4101080500,
+        "E": 40,
+        "a": 1,
+        "b": 205054025,
+        "source_denominator": 420623640
+      }
+    },
+    {
+      "prime": 432414889,
+      "same_state_large_side": {
+        "R": 734151,
+        "L": 158728911587120,
+        "selected_pair": {
+          "E": 194570918481424,
+          "a": 3487217,
+          "b": 2844835
+        }
+      },
+      "alternative_small_side": {
+        "gap": 111,
+        "normal_form": [
+          54875,
+          1,
+          1970
+        ],
+        "R": 71,
+        "K": 7675364280,
+        "E": 72,
+        "a": 3,
+        "b": 639613690,
+        "source_denominator": 432414888
+      }
+    },
+    {
+      "prime": 443648209,
+      "same_state_large_side": {
+        "R": 887,
+        "L": 196757980692,
+        "selected_pair": {
+          "E": 222748516302,
+          "a": 1157,
+          "b": 1022
+        }
+      },
+      "alternative_small_side": {
+        "gap": 119,
+        "normal_form": [
+          972913,
+          6,
+          19
+        ],
+        "R": 23,
+        "K": 2550977202,
+        "E": 24,
+        "a": 2,
+        "b": 425162867,
+        "source_denominator": 443648208
+      }
+    },
+    {
+      "prime": 446393929,
+      "same_state_large_side": {
+        "R": 1807263,
+        "L": 403375615653164,
+        "selected_pair": {
+          "E": 551987677158724,
+          "a": 11747209,
+          "b": 8584499
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          572300,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 1227583305,
+        "E": 12,
+        "a": 2,
+        "b": 409194435,
+        "source_denominator": 446393928
+      }
+    },
+    {
+      "prime": 461324329,
+      "same_state_large_side": {
+        "R": 5831,
+        "L": 1344991081200,
+        "selected_pair": {
+          "E": 1661843332500,
+          "a": 9425,
+          "b": 7628
+        }
+      },
+      "alternative_small_side": {
+        "gap": 15,
+        "normal_form": [
+          4435811,
+          1,
+          26
+        ],
+        "R": 7,
+        "K": 807317576,
+        "E": 8,
+        "a": 1,
+        "b": 201829394,
+        "source_denominator": 461324328
+      }
+    },
+    {
+      "prime": 473173969,
+      "same_state_large_side": {
+        "R": 1464935,
+        "L": 346584554138508,
+        "selected_pair": {
+          "E": 620203936363236,
+          "a": 12451947,
+          "b": 6958441
+        }
+      },
+      "alternative_small_side": {
+        "gap": 119,
+        "normal_form": [
+          128301,
+          1,
+          922
+        ],
+        "R": 31,
+        "K": 3667098260,
+        "E": 32,
+        "a": 4,
+        "b": 916774565,
+        "source_denominator": 473173968
+      }
+    },
+    {
+      "prime": 477015289,
+      "same_state_large_side": {
+        "R": 609215,
+        "L": 145302434644068,
+        "selected_pair": {
+          "E": 270563153030416,
+          "a": 16448804,
+          "b": 8833617
+        }
+      },
+      "alternative_small_side": {
+        "gap": 55,
+        "normal_form": [
+          22646,
+          1,
+          5266
+        ],
+        "R": 383,
+        "K": 45674213922,
+        "E": 56462244,
+        "a": 83,
+        "b": 134283,
+        "source_denominator": 476867868
+      }
+    },
+    {
+      "prime": 484570249,
+      "same_state_large_side": {
+        "R": 1961823,
+        "L": 475320529801964,
+        "selected_pair": {
+          "E": 650438611675204,
+          "a": 12751849,
+          "b": 9318659
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          621244,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 1332568185,
+        "E": 12,
+        "a": 2,
+        "b": 444189395,
+        "source_denominator": 484570248
+      }
+    },
+    {
+      "prime": 489786889,
+      "same_state_large_side": {
+        "R": 1982943,
+        "L": 485609741517164,
+        "selected_pair": {
+          "E": 664518585514564,
+          "a": 12889129,
+          "b": 9418979
+        }
+      },
+      "alternative_small_side": {
+        "gap": 95,
+        "normal_form": [
+          737631,
+          1,
+          166
+        ],
+        "R": 7,
+        "K": 857127056,
+        "E": 8,
+        "a": 1,
+        "b": 214281764,
+        "source_denominator": 489786888
+      }
+    },
+    {
+      "prime": 490794649,
+      "same_state_large_side": {
+        "R": 1987023,
+        "L": 487610127919964,
+        "selected_pair": {
+          "E": 667255956364804,
+          "a": 12915649,
+          "b": 9438359
+        }
+      },
+      "alternative_small_side": {
+        "gap": 71,
+        "normal_form": [
+          629224,
+          1,
+          195
+        ],
+        "R": 11,
+        "K": 1349685285,
+        "E": 12,
+        "a": 2,
+        "b": 449895095,
+        "source_denominator": 490794648
+      }
+    }
+  ]
+}

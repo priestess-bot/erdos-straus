@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 241 |
+| 数学状态 | `computationally_reproduced` | 242 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 191 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 14 |
+| 证明来源 | `computational_reproduction` | 15 |
 | 证明来源 | `mixed` | 3 |
 | 证明来源 | `repository_derivation` | 14 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 25 |
+| 审阅状态 | `internal_review` | 26 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -290,6 +290,7 @@
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通双尾遗漏的最短 Type I 偶源距离边界](../claims/type-I-tail-reverse-even-source-min-distance-boundary-500m.md) (`type-I-tail-reverse-even-source-min-distance-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [五亿同状态大侧残余由替代 Type I 正规形全部释放](../claims/type-I-tail-reverse-even-source-small-side-alternative-profile-500m.md) (`type-I-tail-reverse-even-source-small-side-alternative-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿偶源终端桥的小侧普通除子对剖面](../claims/type-I-tail-reverse-even-source-small-side-profile-500m.md) (`type-I-tail-reverse-even-source-small-side-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿偶源反向选择器的桥因子支撑边界](../claims/type-I-tail-reverse-even-source-support-boundary-500m.md) (`type-I-tail-reverse-even-source-support-boundary-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通尾遗漏的低复杂度终止闭合](../claims/type-I-tail-reverse-simple-external-terminal-closure-500m.md) (`type-I-tail-reverse-simple-external-terminal-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |

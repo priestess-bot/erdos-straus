@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-tail-reverse-even-source-small-side-profile-500m
 title: 五亿偶源终端桥的小侧普通除子对剖面
-statement: 对五亿普通 Type II 双尾遗漏的1717条完整 Type I 偶源终端记录，按 E/(2K)=a/b 的既约普通除子对分类，1421条已选桥为小侧 a<b，296条为大侧 a>b。完整枚举每条大侧记录同一L=2K的全部互素普通除子对后，其中201条另有小侧桥，95条没有；故1622条在相同正规形状态中有小侧桥，95条是大侧指数残余。
+statement: 对五亿普通 Type II 双尾遗漏的1717条完整 Type I 偶源终端记录，按 E/(2K)=a/b 的既约普通除子对分类，1421条已选桥为小侧 a<b，296条为大侧 a>b。完整枚举每条大侧记录同一L=2K的全部互素普通除子对后，其中201条另有小侧桥，95条没有；故1622条在相同正规形状态中有小侧桥，95条仅是同一L,R状态内的大侧指数残余。
 claim_status: computationally_reproduced
 proof_provenance: computational_reproduction
 review_status: internal_review
@@ -69,8 +69,10 @@ a'\equiv2b'\pmod R, \tag{2}
 ## 边界
 
 结果的输入是已经选定的 1,717 条五亿终端记录。它不证明每个核心素数存在 Type I 正规形，
-也不说明 95 条大侧残余在其它缺口、其它正规形或 Type II 分支中失败。其用途是将后续的
-因子指数研究准确集中到这些不能在原状态内降为小侧的点。
+也不说明 95 条大侧残余在其它缺口、其它正规形或 Type II 分支中失败。事实上，后续的
+[替代正规形剖面](type-I-tail-reverse-even-source-small-side-alternative-profile-500m.md)已经在同一
+\(m\le215\) 盒中释放了这 95 条。其用途是准确分离“单一正规形内的指数残余”与真正跨正规形的
+选择问题。
 
 重建命令：
 

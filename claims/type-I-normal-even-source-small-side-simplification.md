@@ -91,4 +91,6 @@ L-2R=\frac{(p-4)R+1}{2}>0. \tag{5}
 
 五亿完整普通双尾遗漏的终端记录中，
 [小侧剖面](type-I-tail-reverse-even-source-small-side-profile-500m.md)显示 1,717 条里有 1,622 条
-在同一 \((L,R)\) 状态下拥有小侧桥；剩余 95 条是该有限输入中的大侧残余。
+在同一 \((L,R)\) 状态下拥有小侧桥；剩余 95 条只是同一状态内的大侧残余。
+它们在同一有限 Type I 盒的其它正规形中均有小侧替代，见
+[替代正规形剖面](type-I-tail-reverse-even-source-small-side-alternative-profile-500m.md)。
