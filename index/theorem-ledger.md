@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 233 |
+| 数学状态 | `computationally_reproduced` | 234 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 181 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 6 |
+| 证明来源 | `computational_reproduction` | 7 |
 | 证明来源 | `mixed` | 3 |
 | 证明来源 | `repository_derivation` | 2 |
 | 证明来源 | `unspecified` | 432 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 5 |
+| 审阅状态 | `internal_review` | 6 |
 | 审阅状态 | `unspecified` | 432 |
 
 ## 全部主张
@@ -278,6 +278,7 @@
 | [Type I 失败的子群--字符分流](../claims/type-I-subgroup-character-obstruction.md) (`type-I-subgroup-character-obstruction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 子群型失败的半维跨缺口筛界](../claims/type-I-subgroup-character-sieve.md) (`type-I-subgroup-character-sieve`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-25 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
+| [五亿普通双尾遗漏的最短 Type I 偶源距离边界](../claims/type-I-tail-reverse-even-source-min-distance-boundary-500m.md) (`type-I-tail-reverse-even-source-min-distance-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿偶源反向选择器的桥因子支撑边界](../claims/type-I-tail-reverse-even-source-support-boundary-500m.md) (`type-I-tail-reverse-even-source-support-boundary-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通尾遗漏的低复杂度终止闭合](../claims/type-I-tail-reverse-simple-external-terminal-closure-500m.md) (`type-I-tail-reverse-simple-external-terminal-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿普通尾遗漏的反向证书平方剩余量边界](../claims/type-I-tail-reverse-single-surplus-boundary-500m.md) (`type-I-tail-reverse-single-surplus-boundary-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
