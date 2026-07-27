@@ -156,7 +156,7 @@ Chamberland 定理中一类可由小除子对参数化的表示。
 
 ## 有界参数的精确含义
 
-由 (2)，半径 (A,C\le B_0) 的射线盒对应于 Chamberland 因子对满足
+每条半径 \(A,C\le B_0\) 的 AC 射线都由 (13) 给出一对 Chamberland 因子，满足
 
 \[
 \gcd(s_1,s_2)\le B_0,\qquad
@@ -164,7 +164,18 @@ Chamberland 定理中一类可由小除子对参数化的表示。
 \]
 
 而 (K) 和 (q) 不受限制。故“有界 AC 射线饱和”不是固定有限 (q) 模板，而是：
-每个核心素数是否都可在 Chamberland 表示中选择一个结构复杂度受控的除子对。
+每个核心素数是否都可在 Chamberland 表示中选择一个结构复杂度受控的除子对。反向地，
+从任一满足 (15) 的 Chamberland 表示出发，(10) 的规范化有
+\(\alpha=\min(A,B)\le A\)，且保持 \(C,K,r\)。所以即使发生因子重选，也仍落在同一
+\(B_0\) 射线盒中。换言之，半径 \(A,C\le B_0\) 的 AC 证书存在性精确等价于
+Chamberland 表示中
+
+\[
+\gcd(s_1,s_2)\le B_0,\qquad
+\frac{\operatorname{lcm}(s_1,s_2)}{\gcd(s_1,s_2)}\le B_0
+\]
+
+的存在性；不应把这个存在性等价误读为“原始 \(q\) 保持不变”的状态等价。
 
 例如 Chamberland 给出的
 

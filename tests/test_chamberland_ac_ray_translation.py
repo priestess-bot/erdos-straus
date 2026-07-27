@@ -68,8 +68,14 @@ class ChamberlandAcRayTranslationTests(unittest.TestCase):
                         prime = q * r - 4 * s1 * s2
                         if prime not in primes or prime % 24 != 1:
                             continue
+                        raw = translation.from_chamberland(q, r, s1, s2)
                         canonical = translation.canonical_ac_from_chamberland(q, r, s1, s2)
                         self.assertEqual(canonical["p"], prime)
+                        self.assertLessEqual(canonical["a"], raw["a"])
+                        self.assertEqual(
+                            (canonical["c"], canonical["k"], canonical["r"]),
+                            (raw["c"], raw["k"], raw["r"]),
+                        )
                         self.assertEqual(
                             canonical["q"],
                             4 * canonical["a"] * canonical["c"] * canonical["k"] - 1,
