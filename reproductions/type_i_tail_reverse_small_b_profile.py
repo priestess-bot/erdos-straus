@@ -34,7 +34,9 @@ landscape = load_module("tail_reverse_small_b_landscape", LANDSCAPE)
 bridge = load_module("tail_reverse_small_b_bridge", BRIDGE)
 
 
-def first_small_b_edge(prime: int, gap_cap: int, b_cap: int) -> tuple[dict[str, object] | None, int]:
+def first_small_b_edge(
+    prime: int, gap_cap: int, b_cap: int, even_source_only: bool = False
+) -> tuple[dict[str, object] | None, int]:
     """Return the first verified Type I maximum-tail edge with B<=b_cap."""
     checked = 0
     for gap in range(3, gap_cap + 1, 4):
@@ -49,32 +51,53 @@ def first_small_b_edge(prime: int, gap_cap: int, b_cap: int) -> tuple[dict[str, 
             if certificate is None:
                 raise AssertionError("stored normal form did not rebuild")
             _, lifts = bridge.type_i_normal_reverse_two_tail_lifts(prime, gap, A, B, C)
-            if not lifts:
-                continue
-            lift = lifts[0]
-            target = (certificate.x, certificate.y, certificate.z)
-            source = (lift["source_term"], certificate.x, certificate.y)
-            if Fraction(4, prime) != sum((Fraction(1, term) for term in target), Fraction()):
-                raise AssertionError("target identity did not verify")
-            if Fraction(4, lift["source_denominator"]) != sum(
-                (Fraction(1, term) for term in source), Fraction()
-            ):
-                raise AssertionError("source identity did not verify")
-            return (
-                {
-                    "gap": gap,
-                    "divisor": entry["divisor"],
-                    "normal_form": [A, B, C],
-                    "target_solution": list(target),
-                    "reverse_two_tail_lift": lift,
-                    "source_solution": list(source),
-                },
-                checked,
-            )
+            for lift in lifts:
+                if even_source_only and int(lift["source_denominator"]) % 2:
+                    continue
+                if even_source_only:
+                    bridge_divisor = int(lift["bridge_divisor"])
+                    if bridge_divisor % (prime * prime):
+                        raise AssertionError("bridge divisor did not reconstruct E")
+                    E = bridge_divisor // (prime * prime)
+                    R = (4 * B * B * C + 1) // gap
+                    K = (prime * R + 1) // 4
+                    if (
+                        E % 2
+                        or E % R != 1
+                        or E > 4 * K - 2 * R
+                        or (4 * K * K) % E
+                    ):
+                        raise AssertionError(
+                            "even-source lift did not satisfy the bridge criterion"
+                        )
+                target = (certificate.x, certificate.y, certificate.z)
+                source = (lift["source_term"], certificate.x, certificate.y)
+                if Fraction(4, prime) != sum((Fraction(1, term) for term in target), Fraction()):
+                    raise AssertionError("target identity did not verify")
+                if Fraction(4, lift["source_denominator"]) != sum(
+                    (Fraction(1, term) for term in source), Fraction()
+                ):
+                    raise AssertionError("source identity did not verify")
+                return (
+                    {
+                        "gap": gap,
+                        "divisor": entry["divisor"],
+                        "normal_form": [A, B, C],
+                        "target_solution": list(target),
+                        "reverse_two_tail_lift": lift,
+                        "source_solution": list(source),
+                    },
+                    checked,
+                )
     return None, checked
 
 
-def run_profile(tail: dict[str, object], gap_cap: int = DEFAULT_GAP_CAP, b_cap: int = DEFAULT_B_CAP) -> dict[str, object]:
+def run_profile(
+    tail: dict[str, object],
+    gap_cap: int = DEFAULT_GAP_CAP,
+    b_cap: int = DEFAULT_B_CAP,
+    even_source_only: bool = False,
+) -> dict[str, object]:
     if gap_cap < 3 or gap_cap % 4 != 3:
         raise ValueError("gap_cap must be at least 3 and congruent to 3 modulo 4")
     if b_cap < 1:
@@ -84,7 +107,9 @@ def run_profile(tail: dict[str, object], gap_cap: int = DEFAULT_GAP_CAP, b_cap: 
     checked = 0
     for entry in tail["misses"]:
         prime = int(entry["prime"])
-        edge, local_checked = first_small_b_edge(prime, gap_cap, b_cap)
+        edge, local_checked = first_small_b_edge(
+            prime, gap_cap, b_cap, even_source_only
+        )
         checked += local_checked
         if edge is None:
             misses.append(prime)
@@ -94,7 +119,7 @@ def run_profile(tail: dict[str, object], gap_cap: int = DEFAULT_GAP_CAP, b_cap: 
     for record in records:
         B = int(record["normal_form"][1])
         b_counts[str(B)] = b_counts.get(str(B), 0) + 1
-    return {
+    result = {
         "arithmetic": (
             "for each stored ordinary-tail miss, enumerate every Type I normal "
             "certificate with m=3 (mod 4) through gap_cap and B<=b_cap; apply "
@@ -115,6 +140,9 @@ def run_profile(tail: dict[str, object], gap_cap: int = DEFAULT_GAP_CAP, b_cap: 
         "first_hit_b_counts": dict(sorted(b_counts.items(), key=lambda item: int(item[0]))),
         "records": records,
     }
+    if even_source_only:
+        result["source_parity_filter"] = "even"
+    return result
 
 
 def main() -> int:
@@ -122,10 +150,14 @@ def main() -> int:
     parser.add_argument("--tail", type=Path, default=TAIL)
     parser.add_argument("--gap-cap", type=int, default=DEFAULT_GAP_CAP)
     parser.add_argument("--b-cap", type=int, default=DEFAULT_B_CAP)
+    parser.add_argument("--even-source-only", action="store_true")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
     result = run_profile(
-        json.loads(args.tail.read_text(encoding="utf-8")), args.gap_cap, args.b_cap
+        json.loads(args.tail.read_text(encoding="utf-8")),
+        args.gap_cap,
+        args.b_cap,
+        args.even_source_only,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

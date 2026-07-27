@@ -38,6 +38,7 @@ jobs:
             tests.test_type_i_normal_gap_source_even_bridge_audit \
             tests.test_type_i_mixed_terminal_sparse_tail_600m \
             tests.test_type_i_tail_reverse_b1_even_source_audit \
+            tests.test_type_i_tail_reverse_small_b_profile \
             tests.test_type_i_tail_reverse_even_source_min_source_distance
 
       - name: Lint the maintained verification surface
@@ -54,6 +55,7 @@ jobs:
             reproductions/type_i_normal_gap_source_even_bridge_audit.py \
             reproductions/type_i_mixed_terminal_sparse_tail_600m.py \
             reproductions/type_i_tail_reverse_b1_even_source_audit.py \
+            reproductions/type_i_tail_reverse_small_b_profile.py \
             reproductions/type_i_tail_reverse_even_source_min_source_distance.py \
             tests/test_kb.py \
             tests/test_type_ii_pure_new_canonical_fan_sieve.py \
@@ -66,6 +68,7 @@ jobs:
             tests/test_type_i_normal_gap_source_even_bridge_audit.py \
             tests/test_type_i_mixed_terminal_sparse_tail_600m.py \
             tests/test_type_i_tail_reverse_b1_even_source_audit.py \
+            tests/test_type_i_tail_reverse_small_b_profile.py \
             tests/test_type_i_tail_reverse_even_source_min_source_distance.py
 
       - name: Rebuild generated indexes

@@ -60,6 +60,33 @@ class TypeITailReverseSmallBProfileTests(unittest.TestCase):
             [1_707, 1_715, 1_715],
         )
 
+    def test_even_source_bounded_b_eight_is_exact_finite_threshold(self):
+        tail = self.tail_payload()
+        expected_b7 = json.loads(
+            (
+                ROOT
+                / "reproductions"
+                / "type-i-tail-reverse-even-small-b7-500m-results.json"
+            ).read_text(encoding="utf-8")
+        )
+        expected_b8 = json.loads(
+            (
+                ROOT
+                / "reproductions"
+                / "type-i-tail-reverse-even-small-b8-500m-results.json"
+            ).read_text(encoding="utf-8")
+        )
+        b7 = profile.run_profile(tail, 215, 7, True)
+        b8 = profile.run_profile(tail, 215, 8, True)
+        self.assertEqual(b7, expected_b7)
+        self.assertEqual(b8, expected_b8)
+        self.assertEqual(b7["misses"], [172_657_489])
+        self.assertEqual((b8["captured_count"], b8["misses"]), (1_717, []))
+        self.assertEqual(
+            b8["first_hit_b_counts"],
+            {"1": 1455, "2": 147, "3": 31, "4": 8, "5": 23, "6": 7, "7": 41, "8": 5},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
