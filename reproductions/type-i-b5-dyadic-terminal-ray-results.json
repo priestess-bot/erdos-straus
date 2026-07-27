@@ -1,0 +1,125 @@
+{
+  "arithmetic": "for t>=0 set A=30t+1, p=757200t+21169, H=31A-5, and K=5*1262*H; then 4K=31p+1, E=32 is an even target divisor congruent to 1 modulo 31, and it gives the p-1 source bridge in normal form (A,5,1262) with gap 4071",
+  "scope_note": "Dirichlet's theorem makes the primitive progression contain infinitely many primes, and every such prime has this fixed Type I terminal bridge. This is one infinite covered family, not a selector for all core primes and not a lower bound excluding B<=4 on the same progression.",
+  "progression": {
+    "initial": 21169,
+    "step": 757200,
+    "gcd": 1
+  },
+  "algebra_samples": [
+    {
+      "index": 0,
+      "prime": 21169,
+      "A": 1,
+      "B": 5,
+      "C": 1262,
+      "H": 26,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 164060,
+      "source_denominator": 21168,
+      "prime_check": true
+    },
+    {
+      "index": 1,
+      "prime": 778369,
+      "A": 31,
+      "B": 5,
+      "C": 1262,
+      "H": 956,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 6032360,
+      "source_denominator": 778368,
+      "prime_check": false
+    },
+    {
+      "index": 6,
+      "prime": 4564369,
+      "A": 181,
+      "B": 5,
+      "C": 1262,
+      "H": 5606,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 35373860,
+      "source_denominator": 4564368,
+      "prime_check": true
+    },
+    {
+      "index": 15,
+      "prime": 11379169,
+      "A": 451,
+      "B": 5,
+      "C": 1262,
+      "H": 13976,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 88188560,
+      "source_denominator": 11379168,
+      "prime_check": true
+    }
+  ],
+  "prime_samples": [
+    {
+      "index": 0,
+      "prime": 21169,
+      "A": 1,
+      "B": 5,
+      "C": 1262,
+      "H": 26,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 164060,
+      "source_denominator": 21168,
+      "prime_check": true
+    },
+    {
+      "index": 6,
+      "prime": 4564369,
+      "A": 181,
+      "B": 5,
+      "C": 1262,
+      "H": 5606,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 35373860,
+      "source_denominator": 4564368,
+      "prime_check": true
+    },
+    {
+      "index": 15,
+      "prime": 11379169,
+      "A": 451,
+      "B": 5,
+      "C": 1262,
+      "H": 13976,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 88188560,
+      "source_denominator": 11379168,
+      "prime_check": true
+    },
+    {
+      "index": 21,
+      "prime": 15922369,
+      "A": 631,
+      "B": 5,
+      "C": 1262,
+      "H": 19556,
+      "gap": 4071,
+      "E": 32,
+      "R": 31,
+      "K": 123398360,
+      "source_denominator": 15922368,
+      "prime_check": true
+    }
+  ]
+}

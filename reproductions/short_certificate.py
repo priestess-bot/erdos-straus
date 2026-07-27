@@ -10,6 +10,7 @@ increasing order; it is a finite experiment, not a proof of a uniform bound.
 from __future__ import annotations
 
 import argparse
+from array import array
 import json
 import math
 from dataclasses import asdict, dataclass
@@ -172,8 +173,9 @@ class TypeINormalTailDeflationWitness:
     certificate: GapCertificate
 
 
-def smallest_prime_factors(limit: int) -> list[int]:
-    spf = list(range(limit + 1))
+def smallest_prime_factors(limit: int) -> array:
+    """Return an indexable SPF table without boxing every entry as a Python int."""
+    spf = array("I", range(limit + 1))
     if limit >= 1:
         spf[1] = 1
     for prime in range(2, math.isqrt(limit) + 1):
