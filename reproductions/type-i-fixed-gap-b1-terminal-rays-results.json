@@ -1,0 +1,267 @@
+{
+  "arithmetic": "for q,s,v>=1 set m=4q-1, C=q(6ms-1), A=6sv-1, R=24qs-1, E=24qs, and p=4AC-m=24sCv+1-24qms; then p is 1 modulo 24, the progression in v is primitive, and the B=1 normal form has a p-1 terminal bridge with factor E=R+1",
+  "scope_note": "For every fixed q,s, Dirichlet's theorem gives infinitely many prime terms in the displayed progression, all with both the stated Type I bridge and an explicit ordinary Type II tail. These are infinite overlap subfamilies, not a selector for every core prime.",
+  "examples": [
+    {
+      "gap_index": 1,
+      "scale": 1,
+      "index": 1,
+      "gap": 3,
+      "A": 5,
+      "B": 1,
+      "C": 17,
+      "R": 23,
+      "E": 24,
+      "bridge_scale": 6,
+      "overlap_condition": true,
+      "K": 1938,
+      "prime": 337,
+      "source_denominator": 336,
+      "ordinary_type_ii_tail": {
+        "gap": 3,
+        "divisor": 5,
+        "source_denominator": 85,
+        "target_solution": [
+          85,
+          10110,
+          171870
+        ],
+        "source_solution": [
+          85,
+          30,
+          510
+        ]
+      },
+      "progression": {
+        "initial": -71,
+        "step": 408,
+        "gcd": 1
+      },
+      "prime_check": true
+    },
+    {
+      "gap_index": 2,
+      "scale": 1,
+      "index": 3,
+      "gap": 7,
+      "A": 17,
+      "B": 1,
+      "C": 82,
+      "R": 47,
+      "E": 48,
+      "bridge_scale": 12,
+      "overlap_condition": true,
+      "K": 65436,
+      "prime": 5569,
+      "source_denominator": 5568,
+      "ordinary_type_ii_tail": {
+        "gap": 7,
+        "divisor": 34,
+        "source_denominator": 697,
+        "target_solution": [
+          1394,
+          1136076,
+          46579116
+        ],
+        "source_solution": [
+          1394,
+          204,
+          8364
+        ]
+      },
+      "progression": {
+        "initial": -335,
+        "step": 1968,
+        "gcd": 1
+      },
+      "prime_check": true
+    },
+    {
+      "gap_index": 3,
+      "scale": 1,
+      "index": 1,
+      "gap": 11,
+      "A": 5,
+      "B": 1,
+      "C": 195,
+      "R": 71,
+      "E": 72,
+      "bridge_scale": 18,
+      "overlap_condition": true,
+      "K": 69030,
+      "prime": 3889,
+      "source_denominator": 3888,
+      "ordinary_type_ii_tail": {
+        "gap": 11,
+        "divisor": 15,
+        "source_denominator": 325,
+        "target_solution": [
+          975,
+          350010,
+          22750650
+        ],
+        "source_solution": [
+          975,
+          90,
+          5850
+        ]
+      },
+      "progression": {
+        "initial": -791,
+        "step": 4680,
+        "gcd": 1
+      },
+      "prime_check": true
+    },
+    {
+      "gap_index": 5,
+      "scale": 3,
+      "index": 2,
+      "gap": 19,
+      "A": 35,
+      "B": 1,
+      "C": 1705,
+      "R": 359,
+      "E": 360,
+      "bridge_scale": 90,
+      "overlap_condition": true,
+      "K": 21421620,
+      "prime": 238681,
+      "source_denominator": 238680,
+      "ordinary_type_ii_tail": {
+        "gap": 19,
+        "divisor": 175,
+        "source_denominator": 11935,
+        "target_solution": [
+          59675,
+          751845150,
+          256379196150
+        ],
+        "source_solution": [
+          59675,
+          3150,
+          1074150
+        ]
+      },
+      "progression": {
+        "initial": -6839,
+        "step": 122760,
+        "gcd": 1
+      },
+      "prime_check": true
+    }
+  ],
+  "gap_three_prime_samples": [
+    {
+      "gap_index": 1,
+      "scale": 1,
+      "index": 1,
+      "gap": 3,
+      "A": 5,
+      "B": 1,
+      "C": 17,
+      "R": 23,
+      "E": 24,
+      "bridge_scale": 6,
+      "overlap_condition": true,
+      "K": 1938,
+      "prime": 337,
+      "source_denominator": 336,
+      "ordinary_type_ii_tail": {
+        "gap": 3,
+        "divisor": 5,
+        "source_denominator": 85,
+        "target_solution": [
+          85,
+          10110,
+          171870
+        ],
+        "source_solution": [
+          85,
+          30,
+          510
+        ]
+      },
+      "progression": {
+        "initial": -71,
+        "step": 408,
+        "gcd": 1
+      },
+      "prime_check": true
+    },
+    {
+      "gap_index": 1,
+      "scale": 1,
+      "index": 3,
+      "gap": 3,
+      "A": 17,
+      "B": 1,
+      "C": 17,
+      "R": 23,
+      "E": 24,
+      "bridge_scale": 6,
+      "overlap_condition": true,
+      "K": 6630,
+      "prime": 1153,
+      "source_denominator": 1152,
+      "ordinary_type_ii_tail": {
+        "gap": 3,
+        "divisor": 17,
+        "source_denominator": 289,
+        "target_solution": [
+          289,
+          117606,
+          1999302
+        ],
+        "source_solution": [
+          289,
+          102,
+          1734
+        ]
+      },
+      "progression": {
+        "initial": -71,
+        "step": 408,
+        "gcd": 1
+      },
+      "prime_check": true
+    },
+    {
+      "gap_index": 1,
+      "scale": 1,
+      "index": 6,
+      "gap": 3,
+      "A": 35,
+      "B": 1,
+      "C": 17,
+      "R": 23,
+      "E": 24,
+      "bridge_scale": 6,
+      "overlap_condition": true,
+      "K": 13668,
+      "prime": 2377,
+      "source_denominator": 2376,
+      "ordinary_type_ii_tail": {
+        "gap": 3,
+        "divisor": 35,
+        "source_denominator": 595,
+        "target_solution": [
+          595,
+          499170,
+          8485890
+        ],
+        "source_solution": [
+          595,
+          210,
+          3570
+        ]
+      },
+      "progression": {
+        "initial": -71,
+        "step": 408,
+        "gcd": 1
+      },
+      "prime_check": true
+    }
+  ]
+}

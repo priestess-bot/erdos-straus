@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 239 |
+| 数学状态 | `computationally_reproduced` | 240 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 188 |
+| 数学状态 | `established` | 189 |
 | 数学状态 | `open` | 8 |
-| 证明来源 | `computational_reproduction` | 12 |
+| 证明来源 | `computational_reproduction` | 13 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 11 |
+| 证明来源 | `repository_derivation` | 12 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 20 |
+| 审阅状态 | `internal_review` | 22 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -209,6 +209,7 @@
 | [五千万最终残余的桥模板驱动自适应移位闭合](../claims/type-I-adaptive-bridge-menu-profile-50m.md) (`type-I-adaptive-bridge-menu-profile-50m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 自适应逃逸深度在千万级种子中可达九十七窗口](../claims/type-I-adaptive-escape-seed-profile.md) (`type-I-adaptive-escape-seed-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B不大于4最大尾偶源选择器的首个失败点](../claims/type-I-b4-prefix-boundary-21169.md) (`type-I-b4-prefix-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-10m.md) (`type-I-b5-maximum-tail-even-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -224,6 +225,7 @@
 | [偶二次外源严格提升精确落入 Type I 正规形终端桥](../claims/type-I-even-external-source-normal-bridge.md) (`type-I-even-external-source-normal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [五亿偶桥支撑三或平移外源的终止混合闭合](../claims/type-I-even-source-support-external-hybrid-500m.md) (`type-I-even-source-support-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [十六桥模板的CRT无穷源侧逃逸](../claims/type-I-fixed-bridge-menu-crt-escape.md) (`type-I-fixed-bridge-menu-crt-escape`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [每个自然缺口都有无穷Type I/II双终端重叠射线](../claims/type-I-fixed-gap-b1-pminusone-terminal-rays.md) (`type-I-fixed-gap-b1-pminusone-terminal-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [H19-k23 残存进程的完整统一仿射 Type I 审计](../claims/type-I-h19-affine-uniform-square-audit.md) (`type-I-h19-affine-uniform-square-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19偶桥的B等于1源状态实现边界](../claims/type-I-h19-b1-source-state-boundary-1b.md) (`type-I-h19-b1-source-state-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
