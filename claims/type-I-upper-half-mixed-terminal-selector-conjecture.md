@@ -1,0 +1,97 @@
+---
+kind: claim
+claim_id: type-I-upper-half-mixed-terminal-selector-conjecture
+title: 上半区偶源混合终端选择猜想
+statement: 对每个核心素数p，或者p具有普通Type II p-1双尾证书，或者存在一个Type I正规形4K=pR+1，令L=2K后存在互素除子a,b|L，满足a<b、a=2b mod R且2|a或b|L/2。等价地，第二分支有偶桥因子E|4K^2、E=1 modR，其源n=(4K-E)/R满足n≥(p+1)/2。该猜想严格强于只要求2≤n<p的原混合终端选择引理。
+claim_status: open
+proof_provenance: mixed
+review_status: internal_review
+topics:
+- type-I
+- type-II
+- mixed-selector
+- upper-half-source
+- even-source
+- divisor-pairs
+- proof-program
+sources:
+- paper: bradford2024
+  locator: Propositions 1--4
+  role: Type-I-and-Type-II-certificate-context
+visibility: public
+last_checked: '2026-07-28'
+---
+
+# 上半区偶源混合终端选择猜想
+
+对核心素数 \(p\equiv1\pmod {24}\)，提出以下加强析取：
+
+\[
+\boxed{
+\begin{aligned}
+&\text{存在普通 Type II \(p-1\) 双尾证书，}\\
+&\quad\text{或}\\
+&\exists\ \text{Type I 正规形 }4K=pR+1,\ L=2K,\ a,b\mid L:\\
+&(a,b)=1,\quad a<b,\quad a\equiv2b\pmod R,\quad
+\left(2\mid a\ \text{或}\ b\mid L/2\right).
+\end{aligned}}
+\tag{1}
+\]
+
+第二行的因子对由
+
+\[
+E=\frac{La}{b},\qquad n=\frac{2L-E}{R}
+\tag{2}
+\]
+
+重构。根据[小侧普通除子对引理](type-I-normal-even-source-small-side-simplification.md)，
+它精确给出偶桥
+
+\[
+E\mid4K^2,\qquad E\equiv1\pmod R,
+\qquad n\ge\frac{p+1}{2}.
+\tag{3}
+\]
+
+反之，任何满足 (3) 的 Type I 偶桥都恢复 (1) 的因子对。因此本猜想不是另一种记号，
+而是把 Type I 选择压缩为 \(L=2K\) 的**小侧互素除子残数问题**。
+
+## 与原目标的关系
+
+原混合终端选择引理只要求
+
+\[
+2\le n<p
+\quad\Longleftrightarrow\quad
+E\le4K-2R.
+\tag{4}
+\]
+
+这里额外要求 \(n\ge(p+1)/2\)，或等价的 \(E<2K\)。故 (1) 严格更强：
+证明它会证明原目标；发现一个仅缺少上半区桥的点，却**不会**反驳原目标。
+
+## 当前证据
+
+在 \(p\le5\cdot10^8\) 的完整普通 Type II 双尾遗漏集上，1,717 个回退点均可在
+\(m\le215\) 的 Type I 正规形盒中重选为小侧桥，见
+[五亿替代正规形剖面](type-I-tail-reverse-even-source-small-side-alternative-profile-500m.md)。
+
+在连续区间
+
+\[
+5\cdot10^8<p\le6\cdot10^8
+\]
+
+中，621,704 个核心素数有普通双尾；余下 247 个回退点也全部有小侧桥，其中 205 个首次
+记录已是小侧，42 个经替代正规形释放，见
+[六亿连续小侧剖面](type-I-mixed-terminal-dense-small-side-profile-600m.md)。
+
+这些是精确整数与分数恒等式重建的有限证据，不给出 \(m\)、\(B\)、\(R\) 或 \(E\) 的全称界。
+
+## 研究任务
+
+证明 (1) 的本质不是增加扫描范围，而是构造一个跨正规形选择原理：当某张正规形的
+\(L\) 没有小侧因子对时，必须由其实际因子状态强制普通双尾，或强制另一张正规形出现
+小侧对。只跟踪字符核、总积同余或固定有限候选盒均不足以完成这一步；这些信息不会控制
+因子指数和跨正规形的重选。
