@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 236 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 181 |
+| 数学状态 | `established` | 182 |
 | 数学状态 | `open` | 8 |
 | 证明来源 | `computational_reproduction` | 9 |
 | 证明来源 | `mixed` | 3 |
-| 证明来源 | `repository_derivation` | 2 |
+| 证明来源 | `repository_derivation` | 3 |
 | 证明来源 | `unspecified` | 432 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 8 |
+| 审阅状态 | `internal_review` | 9 |
 | 审阅状态 | `unspecified` | 432 |
 
 ## 全部主张
@@ -215,6 +215,7 @@
 | [Type I 除子证书的互素因子正规形](../claims/type-I-coprime-factor-normal-form.md) (`type-I-coprime-factor-normal-form`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-23 |
 | [五亿尾遗漏的目标级B等于1缺口扩展闭合](../claims/type-I-direct-b1-gap-extension-500m.md) (`type-I-direct-b1-gap-extension-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [H19与五亿尾遗漏的目标级小B偶源闭合](../claims/type-I-direct-small-b-even-source-audit.md) (`type-I-direct-small-b-even-source-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [Type I 二进 B 源状态的奇部除子选择判据](../claims/type-I-dyadic-b-source-divisor-selector.md) (`type-I-dyadic-b-source-divisor-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I二幂桥p减一源的因子对判据](../claims/type-I-dyadic-p-minus-one-factor-pair-selector.md) (`type-I-dyadic-p-minus-one-factor-pair-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [十万前缀的完整二幂p减一桥因子对剖面](../claims/type-I-dyadic-pminusone-profile-100k.md) (`type-I-dyadic-pminusone-profile-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [十万前缀二幂p减一残余的低B补集剖面](../claims/type-I-dyadic-residual-low-b-complement-100k.md) (`type-I-dyadic-residual-low-b-complement-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

@@ -1,0 +1,45 @@
+{
+  "arithmetic": "for a source state E=1+sR and K=(pR+1)/4, factor K=2^v*K_odd; for B=2^t enumerate d|K_odd with 2^(v+t+2)d=-1 (mod R), require K_odd/d>B, reconstruct C=2^(v-t)d, and verify both bridge identities",
+  "scope_note": "An exact fixed-source-state selector for dyadic B. It does not supply a source state or a dyadic B exponent for every core prime.",
+  "B2_witness": {
+    "exponent": 1,
+    "two_adic_order_K": 1,
+    "K_odd_divisor": 91,
+    "prime": 63332329,
+    "shift": 1,
+    "E": 48,
+    "R": 47,
+    "K": 744154866,
+    "normal_form": [
+      86995,
+      2,
+      91
+    ],
+    "H": 4088763,
+    "gap": 31,
+    "source_denominator": 63332328,
+    "source_term": 981855417839751,
+    "bridge_factor": 48
+  },
+  "B8_witness": {
+    "exponent": 3,
+    "two_adic_order_K": 4,
+    "K_odd_divisor": 31,
+    "prime": 172657489,
+    "shift": 1,
+    "E": 144,
+    "R": 143,
+    "K": 6172505232,
+    "normal_form": [
+      87025,
+      8,
+      62
+    ],
+    "H": 12444567,
+    "gap": 111,
+    "source_denominator": 172657488,
+    "source_term": 7400897555722064,
+    "bridge_factor": 144
+  },
+  "B4_rejected_on_B8_state": null
+}
