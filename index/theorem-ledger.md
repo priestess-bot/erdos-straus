@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 279 |
+| 数学状态 | `computationally_reproduced` | 281 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 226 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 51 |
+| 证明来源 | `computational_reproduction` | 53 |
 | 证明来源 | `mixed` | 7 |
 | 证明来源 | `repository_derivation` | 53 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 98 |
+| 审阅状态 | `internal_review` | 100 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -277,6 +277,7 @@
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [两百个首达 B 大于一线性证书的完整谱重选剖面](../claims/type-I-linear-b-gt-one-full-spectrum-profile-600m.md) (`type-I-linear-b-gt-one-full-spectrum-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [两百个完整线性谱中的高阶 G 型分离角色普查](../claims/type-I-linear-b-gt-one-high-order-separator-census-600m.md) (`type-I-linear-b-gt-one-high-order-separator-census-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [线性源双因子块的坐标标签碰撞分解](../claims/type-I-linear-block-label-collision.md) (`type-I-linear-block-label-collision`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源模数之间的公因子刚性与共享指数层](../claims/type-I-linear-cross-modulus-gcd-rigidity.md) (`type-I-linear-cross-modulus-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -290,6 +291,7 @@
 | [七个补偿平方残余的全线性目标谱闭合](../claims/type-I-linear-general-b-spectrum-resolution-profile-600m.md) (`type-I-linear-general-b-spectrum-resolution-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的源块与仿射块混合剖面](../claims/type-I-linear-general-b-two-block-hit-profile-500m.md) (`type-I-linear-general-b-two-block-hit-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性半块的二残数注入与子群障碍逃逸](../claims/type-I-linear-half-block-two-residue-escape.md) (`type-I-linear-half-block-two-residue-escape`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [159,108,889 的双四阶 G 型碰撞仍保持完整相位相容](../claims/type-I-linear-high-order-pair-phase-compatibility-159108889.md) (`type-I-linear-high-order-pair-phase-compatibility-159108889`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [完整线性源谱中目标命中的坐标标签层支撑边界](../claims/type-I-linear-label-layer-support-profile.md) (`type-I-linear-label-layer-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [三千一百万以内普通尾遗漏的三标签层线性源重选剖面](../claims/type-I-linear-label-reselection-profile-31m.md) (`type-I-linear-label-reselection-profile-31m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源带模数标签块的完整碰撞刚性](../claims/type-I-linear-labeled-block-gcd-rigidity.md) (`type-I-linear-labeled-block-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |

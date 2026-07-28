@@ -1,0 +1,203 @@
+{
+  "arithmetic": "at the two fourth-order G states for p=159108889 sharing q=70841, recover the separating fourth-order characters and verify every split local component satisfies the source-label quartic phase pullback",
+  "scope_note": "Both high-order phase balances are simultaneously trivial at q=70841. This is a boundary against automatic high-order collision incompatibility, not a terminal-certificate construction.",
+  "input": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "prime": 159108889,
+  "shared_split_K_prime": 70841,
+  "shared_primary_gaussian_factor_rho": [
+    245,
+    104
+  ],
+  "states": [
+    {
+      "R": 47227,
+      "K": 1878558875201,
+      "R_factorization": [
+        {
+          "prime": 83,
+          "exponent": 1
+        },
+        {
+          "prime": 569,
+          "exponent": 1
+        }
+      ],
+      "K_factorization": [
+        {
+          "prime": 70841,
+          "exponent": 1
+        },
+        {
+          "prime": 26517961,
+          "exponent": 1
+        }
+      ],
+      "source_states": [
+        [
+          3,
+          1123
+        ],
+        [
+          1123,
+          3
+        ]
+      ],
+      "shared_prime_source_label_t": 3,
+      "order_four_separators": [
+        {
+          "coefficients": [
+            2,
+            1
+          ],
+          "minus_one_quarter_exponent": 2
+        },
+        {
+          "coefficients": [
+            2,
+            3
+          ],
+          "minus_one_quarter_exponent": 2
+        }
+      ],
+      "quadratic_local_primes": [
+        83
+      ],
+      "quadratic_character_exponents_at_shared_prime": [
+        2
+      ],
+      "quartic_phase_rows": [
+        {
+          "quartic_local_prime": 569,
+          "cofactor": 83,
+          "primary_gaussian_factor_pi": [
+            13,
+            20
+          ],
+          "quartic_character_exponent": 2,
+          "quartic_character_value": "-1",
+          "pi_over_rho_exponent": 0,
+          "pi_over_rho_value": "1",
+          "source_symbol_exponent": 2,
+          "source_symbol_value": "-1",
+          "pullback_rhs_exponent": 2
+        }
+      ],
+      "total_separator_exponent_at_shared_prime": 0
+    },
+    {
+      "R": 53036295,
+      "K": 2109636493531564,
+      "R_factorization": [
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 271981,
+          "exponent": 1
+        }
+      ],
+      "K_factorization": [
+        {
+          "prime": 2,
+          "exponent": 2
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 1123,
+          "exponent": 1
+        },
+        {
+          "prime": 70841,
+          "exponent": 1
+        },
+        {
+          "prime": 348923,
+          "exponent": 1
+        }
+      ],
+      "source_states": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "shared_prime_source_label_t": 3,
+      "order_four_separators": [
+        {
+          "coefficients": [
+            2,
+            0,
+            1,
+            1
+          ],
+          "minus_one_quarter_exponent": 2
+        },
+        {
+          "coefficients": [
+            2,
+            0,
+            3,
+            3
+          ],
+          "minus_one_quarter_exponent": 2
+        }
+      ],
+      "quadratic_local_primes": [
+        3
+      ],
+      "quadratic_character_exponents_at_shared_prime": [
+        2
+      ],
+      "quartic_phase_rows": [
+        {
+          "quartic_local_prime": 13,
+          "cofactor": 4079715,
+          "primary_gaussian_factor_pi": [
+            3,
+            2
+          ],
+          "quartic_character_exponent": 2,
+          "quartic_character_value": "-1",
+          "pi_over_rho_exponent": 1,
+          "pi_over_rho_value": "i",
+          "source_symbol_exponent": 0,
+          "source_symbol_value": "1",
+          "pullback_rhs_exponent": 2
+        },
+        {
+          "quartic_local_prime": 271981,
+          "cofactor": 195,
+          "primary_gaussian_factor_pi": [
+            -109,
+            510
+          ],
+          "quartic_character_exponent": 0,
+          "quartic_character_value": "1",
+          "pi_over_rho_exponent": 0,
+          "pi_over_rho_value": "1",
+          "source_symbol_exponent": 0,
+          "source_symbol_value": "1",
+          "pullback_rhs_exponent": 0
+        }
+      ],
+      "total_separator_exponent_at_shared_prime": 0
+    }
+  ]
+}
