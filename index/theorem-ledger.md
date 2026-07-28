@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 272 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 217 |
+| 数学状态 | `established` | 218 |
 | 数学状态 | `open` | 11 |
 | 证明来源 | `computational_reproduction` | 44 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 44 |
+| 证明来源 | `repository_derivation` | 45 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 81 |
+| 审阅状态 | `internal_review` | 82 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -275,6 +275,7 @@
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性源双因子块的坐标标签碰撞分解](../claims/type-I-linear-block-label-collision.md) (`type-I-linear-block-label-collision`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源模数之间的公因子刚性与共享指数层](../claims/type-I-linear-cross-modulus-gcd-rigidity.md) (`type-I-linear-cross-modulus-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点全线性目标谱的角色与有限指数混合剖面](../claims/type-I-linear-general-b-obstruction-mixture-profile-600m.md) (`type-I-linear-general-b-obstruction-mixture-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
