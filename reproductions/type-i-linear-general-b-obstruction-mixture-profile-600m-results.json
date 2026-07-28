@@ -1,0 +1,2928 @@
+{
+  "arithmetic": "for every linear-source-induced R at each stated prime, enumerate all d|K^2 with 4d=-1 (mod R); when there is no hit, decide whether -1 belongs to the exact generated subgroup of the prime residues of K",
+  "scope_note": "This is a complete finite classification of all target-spectrum states on seven frozen primes. It does not compare the varying unit groups across R and does not prove a universal selector.",
+  "input": "type-i-linear-general-b-spectrum-resolution-profile-600m-results.json",
+  "input_prime_count": 7,
+  "linear_R_count": 278,
+  "directed_linear_source_state_count": 490,
+  "classification_totals": {
+    "hit": 20,
+    "finite_exponent": 68,
+    "subgroup_character": 190
+  },
+  "profiles": [
+    {
+      "prime": 214729,
+      "linear_source_coordinate_bound": 267,
+      "linear_R_count": 30,
+      "directed_linear_source_state_count": 43,
+      "classification_counts": {
+        "hit": 3,
+        "finite_exponent": 8,
+        "subgroup_character": 19
+      },
+      "hit_R": [
+        39,
+        131,
+        203
+      ],
+      "finite_exponent_R": [
+        43,
+        67,
+        159,
+        391,
+        511,
+        1555,
+        9335,
+        71575
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        23,
+        27,
+        91,
+        183,
+        271,
+        275,
+        371,
+        551,
+        1491,
+        2147,
+        3111,
+        4667,
+        6315,
+        35787,
+        107363,
+        214727
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 4,
+          "K_square_divisor_count": 33,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 23,
+          "source_state_count": 2,
+          "K_square_divisor_count": 75,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 27,
+          "source_state_count": 1,
+          "K_square_divisor_count": 9,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 39,
+          "source_state_count": 1,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 43,
+          "source_state_count": 2,
+          "K_square_divisor_count": 9,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 67,
+          "source_state_count": 2,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 91,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 131,
+          "source_state_count": 1,
+          "K_square_divisor_count": 945,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 159,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 183,
+          "source_state_count": 2,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 203,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 2,
+          "target_normal_form_count": 1,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 271,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 275,
+          "source_state_count": 1,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 371,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 391,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1053,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 511,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 551,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1701,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1491,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1555,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 2147,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3111,
+          "source_state_count": 2,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4667,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 6315,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 9335,
+          "source_state_count": 2,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 35787,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 71575,
+          "source_state_count": 2,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 107363,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 214727,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1125,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    },
+    {
+      "prime": 878089,
+      "linear_source_coordinate_bound": 541,
+      "linear_R_count": 24,
+      "directed_linear_source_state_count": 54,
+      "classification_counts": {
+        "hit": 1,
+        "finite_exponent": 2,
+        "subgroup_character": 21
+      },
+      "hit_R": [
+        59
+      ],
+      "finite_exponent_R": [
+        279,
+        503
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        23,
+        31,
+        71,
+        87,
+        111,
+        159,
+        199,
+        287,
+        375,
+        871,
+        1991,
+        2439,
+        3851,
+        24391,
+        146347,
+        292695,
+        439043,
+        878087
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 7,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 7,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 6,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 23,
+          "source_state_count": 5,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 31,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 59,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 71,
+          "source_state_count": 2,
+          "K_square_divisor_count": 891,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 87,
+          "source_state_count": 1,
+          "K_square_divisor_count": 75,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 111,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 159,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 199,
+          "source_state_count": 1,
+          "K_square_divisor_count": 117,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 279,
+          "source_state_count": 2,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 287,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 375,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 503,
+          "source_state_count": 2,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 871,
+          "source_state_count": 1,
+          "K_square_divisor_count": 315,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1991,
+          "source_state_count": 2,
+          "K_square_divisor_count": 4725,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2439,
+          "source_state_count": 1,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3851,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 24391,
+          "source_state_count": 1,
+          "K_square_divisor_count": 10395,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 146347,
+          "source_state_count": 1,
+          "K_square_divisor_count": 9,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 292695,
+          "source_state_count": 2,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 439043,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 878087,
+          "source_state_count": 1,
+          "K_square_divisor_count": 225,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    },
+    {
+      "prime": 2210569,
+      "linear_source_coordinate_bound": 858,
+      "linear_R_count": 28,
+      "directed_linear_source_state_count": 38,
+      "classification_counts": {
+        "hit": 3,
+        "finite_exponent": 4,
+        "subgroup_character": 21
+      },
+      "hit_R": [
+        23,
+        39,
+        391
+      ],
+      "finite_exponent_R": [
+        1535,
+        2967,
+        2987,
+        5263
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        19,
+        35,
+        71,
+        87,
+        95,
+        119,
+        279,
+        347,
+        711,
+        743,
+        971,
+        2111,
+        2791,
+        15351,
+        368427,
+        736855,
+        1105283,
+        2210567
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 3,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 19,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 23,
+          "source_state_count": 2,
+          "K_square_divisor_count": 225,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 35,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 39,
+          "source_state_count": 1,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 8,
+          "target_normal_form_count": 4,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 71,
+          "source_state_count": 1,
+          "K_square_divisor_count": 495,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 87,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 95,
+          "source_state_count": 2,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 119,
+          "source_state_count": 2,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 279,
+          "source_state_count": 1,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 347,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 391,
+          "source_state_count": 1,
+          "K_square_divisor_count": 2187,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 711,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 743,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1323,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 971,
+          "source_state_count": 1,
+          "K_square_divisor_count": 2673,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1535,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 2111,
+          "source_state_count": 2,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2791,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1701,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2967,
+          "source_state_count": 2,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 2987,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 5263,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 15351,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3645,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 368427,
+          "source_state_count": 1,
+          "K_square_divisor_count": 9,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 736855,
+          "source_state_count": 2,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1105283,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2210567,
+          "source_state_count": 1,
+          "K_square_divisor_count": 225,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "linear_source_coordinate_bound": 2143,
+      "linear_R_count": 41,
+      "directed_linear_source_state_count": 78,
+      "classification_counts": {
+        "hit": 1,
+        "finite_exponent": 9,
+        "subgroup_character": 31
+      },
+      "hit_R": [
+        131
+      ],
+      "finite_exponent_R": [
+        335,
+        1019,
+        1375,
+        2167,
+        6535,
+        8247,
+        24743,
+        33051,
+        4594135
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        23,
+        71,
+        79,
+        171,
+        271,
+        519,
+        523,
+        811,
+        839,
+        1139,
+        1311,
+        2227,
+        4123,
+        4455,
+        5191,
+        5535,
+        6563,
+        6683,
+        9571,
+        9987,
+        12371,
+        13367,
+        32815,
+        61255,
+        95711,
+        2297067,
+        6891203,
+        13782407
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 3,
+          "K_square_divisor_count": 9,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 15,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 6,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 23,
+          "source_state_count": 2,
+          "K_square_divisor_count": 75,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 71,
+          "source_state_count": 2,
+          "K_square_divisor_count": 351,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 79,
+          "source_state_count": 2,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 131,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 16,
+          "target_normal_form_count": 8,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 171,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 271,
+          "source_state_count": 1,
+          "K_square_divisor_count": 675,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 335,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 519,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 523,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 811,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 839,
+          "source_state_count": 2,
+          "K_square_divisor_count": 459,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1019,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1139,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1311,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1375,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 2167,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 2227,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4123,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4455,
+          "source_state_count": 2,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 5191,
+          "source_state_count": 2,
+          "K_square_divisor_count": 351,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 5535,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 6535,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 6563,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 6683,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 8247,
+          "source_state_count": 2,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 9571,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 9987,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 12371,
+          "source_state_count": 1,
+          "K_square_divisor_count": 945,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 13367,
+          "source_state_count": 2,
+          "K_square_divisor_count": 3645,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 24743,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1701,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 32815,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 33051,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 61255,
+          "source_state_count": 2,
+          "K_square_divisor_count": 7695,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 95711,
+          "source_state_count": 1,
+          "K_square_divisor_count": 6075,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2297067,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4594135,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 6891203,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 13782407,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1125,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    },
+    {
+      "prime": 64214329,
+      "linear_source_coordinate_bound": 4626,
+      "linear_R_count": 47,
+      "directed_linear_source_state_count": 80,
+      "classification_counts": {
+        "hit": 4,
+        "finite_exponent": 18,
+        "subgroup_character": 25
+      },
+      "hit_R": [
+        19,
+        43,
+        119,
+        131
+      ],
+      "finite_exponent_R": [
+        39,
+        55,
+        59,
+        359,
+        975,
+        1251,
+        3127,
+        5071,
+        6963,
+        7047,
+        8579,
+        10571,
+        12147,
+        16679,
+        21143,
+        36443,
+        152891,
+        10702387
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        23,
+        35,
+        47,
+        71,
+        183,
+        243,
+        327,
+        371,
+        419,
+        791,
+        1639,
+        3523,
+        6927,
+        12591,
+        24295,
+        69271,
+        72887,
+        642143,
+        1783731,
+        21404775,
+        32107163,
+        64214327
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 10,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 2,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 19,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 23,
+          "source_state_count": 6,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 35,
+          "source_state_count": 3,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 39,
+          "source_state_count": 2,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 43,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 47,
+          "source_state_count": 1,
+          "K_square_divisor_count": 315,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 55,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 59,
+          "source_state_count": 2,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 71,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 119,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1485,
+          "target_divisor_hit_count": 12,
+          "target_normal_form_count": 6,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 131,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 183,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 243,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 327,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 359,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 371,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 419,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 791,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1701,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 975,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1251,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1639,
+          "source_state_count": 2,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3127,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2187,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 3523,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 5071,
+          "source_state_count": 2,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 6927,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 6963,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 7047,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 8579,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2025,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 10571,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 12147,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 12591,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3645,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 16679,
+          "source_state_count": 1,
+          "K_square_divisor_count": 18225,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 21143,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2457,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 24295,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 36443,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 69271,
+          "source_state_count": 2,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 72887,
+          "source_state_count": 2,
+          "K_square_divisor_count": 6561,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 152891,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 642143,
+          "source_state_count": 1,
+          "K_square_divisor_count": 11907,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1783731,
+          "source_state_count": 1,
+          "K_square_divisor_count": 567,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 10702387,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 21404775,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 32107163,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 64214327,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1125,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    },
+    {
+      "prime": 105295129,
+      "linear_source_coordinate_bound": 5924,
+      "linear_R_count": 55,
+      "directed_linear_source_state_count": 95,
+      "classification_counts": {
+        "hit": 4,
+        "finite_exponent": 10,
+        "subgroup_character": 41
+      },
+      "hit_R": [
+        15,
+        35,
+        119,
+        143
+      ],
+      "finite_exponent_R": [
+        67,
+        135,
+        839,
+        907,
+        995,
+        42423,
+        167135,
+        242615,
+        721199,
+        35098375
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        23,
+        31,
+        59,
+        87,
+        195,
+        255,
+        263,
+        319,
+        331,
+        663,
+        1011,
+        1131,
+        1511,
+        1751,
+        1991,
+        2495,
+        3323,
+        3815,
+        4343,
+        4479,
+        14271,
+        16199,
+        19235,
+        59691,
+        73839,
+        182171,
+        211435,
+        325991,
+        327003,
+        422871,
+        634307,
+        1052951,
+        1268615,
+        1671351,
+        3096915,
+        17549187,
+        52647563,
+        105295127
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 7,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 4,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 7,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 15,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 12,
+          "target_normal_form_count": 6,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 23,
+          "source_state_count": 3,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 31,
+          "source_state_count": 5,
+          "K_square_divisor_count": 567,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 35,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 2,
+          "target_normal_form_count": 1,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 59,
+          "source_state_count": 2,
+          "K_square_divisor_count": 351,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 67,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 87,
+          "source_state_count": 2,
+          "K_square_divisor_count": 165,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 119,
+          "source_state_count": 1,
+          "K_square_divisor_count": 567,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 135,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 143,
+          "source_state_count": 2,
+          "K_square_divisor_count": 3645,
+          "target_divisor_hit_count": 24,
+          "target_normal_form_count": 12,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 195,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 255,
+          "source_state_count": 5,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 263,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 319,
+          "source_state_count": 2,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 331,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 663,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 839,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 907,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 995,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1011,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1131,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1511,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2835,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1751,
+          "source_state_count": 1,
+          "K_square_divisor_count": 10125,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1991,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2495,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3323,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3815,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4343,
+          "source_state_count": 1,
+          "K_square_divisor_count": 8505,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4479,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 14271,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 16199,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 19235,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 42423,
+          "source_state_count": 1,
+          "K_square_divisor_count": 8505,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 59691,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 73839,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 167135,
+          "source_state_count": 1,
+          "K_square_divisor_count": 5103,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 182171,
+          "source_state_count": 1,
+          "K_square_divisor_count": 10935,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 211435,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 242615,
+          "source_state_count": 1,
+          "K_square_divisor_count": 8505,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 325991,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2025,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 327003,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 422871,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1053,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 634307,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 721199,
+          "source_state_count": 1,
+          "K_square_divisor_count": 32805,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1052951,
+          "source_state_count": 1,
+          "K_square_divisor_count": 15309,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1268615,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1671351,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1701,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3096915,
+          "source_state_count": 1,
+          "K_square_divisor_count": 10935,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 17549187,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 35098375,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 52647563,
+          "source_state_count": 1,
+          "K_square_divisor_count": 10935,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 105295127,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1125,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    },
+    {
+      "prime": 536944489,
+      "linear_source_coordinate_bound": 13378,
+      "linear_R_count": 53,
+      "directed_linear_source_state_count": 102,
+      "classification_counts": {
+        "hit": 4,
+        "finite_exponent": 17,
+        "subgroup_character": 32
+      },
+      "hit_R": [
+        19,
+        23,
+        47,
+        51
+      ],
+      "finite_exponent_R": [
+        75,
+        99,
+        179,
+        251,
+        335,
+        395,
+        3779,
+        4403,
+        7367,
+        9171,
+        11239,
+        12339,
+        291659,
+        731531,
+        1463063,
+        5652047,
+        13767807
+      ],
+      "subgroup_character_R": [
+        3,
+        7,
+        11,
+        15,
+        39,
+        119,
+        239,
+        487,
+        511,
+        1383,
+        1467,
+        2935,
+        3275,
+        4391,
+        4891,
+        8807,
+        8859,
+        9383,
+        10879,
+        19171,
+        38211,
+        57767,
+        113639,
+        243843,
+        487687,
+        1278439,
+        1534127,
+        6548103,
+        89490747,
+        178981495,
+        268472243,
+        536944487
+      ],
+      "records": [
+        {
+          "R": 3,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7,
+          "source_state_count": 23,
+          "K_square_divisor_count": 567,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 15,
+          "source_state_count": 2,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 19,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 23,
+          "source_state_count": 2,
+          "K_square_divisor_count": 225,
+          "target_divisor_hit_count": 10,
+          "target_normal_form_count": 5,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 39,
+          "source_state_count": 2,
+          "K_square_divisor_count": 117,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 47,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 18,
+          "target_normal_form_count": 9,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 51,
+          "source_state_count": 5,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3,
+          "target_in_generated_subgroup": true,
+          "classification": "hit"
+        },
+        {
+          "R": 75,
+          "source_state_count": 2,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 99,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 119,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 179,
+          "source_state_count": 2,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 239,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 251,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 335,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 395,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 487,
+          "source_state_count": 2,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 511,
+          "source_state_count": 2,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1383,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2187,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1467,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 2935,
+          "source_state_count": 2,
+          "K_square_divisor_count": 45,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3275,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 3779,
+          "source_state_count": 1,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 4391,
+          "source_state_count": 1,
+          "K_square_divisor_count": 2025,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 4403,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 4891,
+          "source_state_count": 1,
+          "K_square_divisor_count": 135,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 7367,
+          "source_state_count": 2,
+          "K_square_divisor_count": 8505,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 8807,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 8859,
+          "source_state_count": 1,
+          "K_square_divisor_count": 81,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 9171,
+          "source_state_count": 1,
+          "K_square_divisor_count": 405,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 9383,
+          "source_state_count": 2,
+          "K_square_divisor_count": 891,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 10879,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 11239,
+          "source_state_count": 2,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 12339,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 19171,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 38211,
+          "source_state_count": 1,
+          "K_square_divisor_count": 3645,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 57767,
+          "source_state_count": 2,
+          "K_square_divisor_count": 2079,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 113639,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 243843,
+          "source_state_count": 1,
+          "K_square_divisor_count": 27,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 291659,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 487687,
+          "source_state_count": 2,
+          "K_square_divisor_count": 63,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 731531,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1278439,
+          "source_state_count": 1,
+          "K_square_divisor_count": 2187,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 1463063,
+          "source_state_count": 2,
+          "K_square_divisor_count": 8505,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 1534127,
+          "source_state_count": 1,
+          "K_square_divisor_count": 2673,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 5652047,
+          "source_state_count": 2,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 6548103,
+          "source_state_count": 1,
+          "K_square_divisor_count": 189,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 13767807,
+          "source_state_count": 2,
+          "K_square_divisor_count": 729,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": true,
+          "classification": "finite_exponent"
+        },
+        {
+          "R": 89490747,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 178981495,
+          "source_state_count": 2,
+          "K_square_divisor_count": 1215,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 268472243,
+          "source_state_count": 1,
+          "K_square_divisor_count": 243,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        },
+        {
+          "R": 536944487,
+          "source_state_count": 1,
+          "K_square_divisor_count": 1125,
+          "target_divisor_hit_count": 0,
+          "target_normal_form_count": 0,
+          "target_in_generated_subgroup": false,
+          "classification": "subgroup_character"
+        }
+      ]
+    }
+  ]
+}
