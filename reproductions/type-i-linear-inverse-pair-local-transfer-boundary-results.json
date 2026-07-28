@@ -1,0 +1,466 @@
+{
+  "arithmetic": "test every divisor of L=aR+1 against the established fixed-s and shift-s transfer conditions, then exhaust the complete forward source-state closure",
+  "scope_note": "This is an exact finite boundary for the two inverse-pair F directions in the frozen seven-spectrum profile. It does not refute the mixed selector and does not enumerate new source constructions outside the audited transfer operations.",
+  "input_artifacts": {
+    "pullback": "type-i-linear-f-cross-source-pullback-profile-600m-results.json",
+    "pullback_sha256": "60a95000d81cdfee41f6b07b54b0f9e088bc56f71772ef296dec49b7c3020d05",
+    "target_profile": "type-i-linear-general-b-obstruction-mixture-profile-600m-results.json",
+    "target_profile_sha256": "dce587d6e6703e5cdcb81b6cd05c16989394a7321d2d14515ea2eda6c2aec44d"
+  },
+  "inverse_pair_candidate_count": 2,
+  "profiles": [
+    {
+      "prime": 64214329,
+      "R": 359,
+      "root_state": [
+        7154,
+        25,
+        359
+      ],
+      "hit_R": [
+        19,
+        43,
+        119,
+        131
+      ],
+      "complete_source_state_count": 80,
+      "complete_local_edge_count": 146,
+      "root_outgoing_edges": [],
+      "root_incoming_edge_count": 1,
+      "affine_block_L": 2568287,
+      "affine_block_factorization": [
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 135173,
+          "exponent": 1
+        }
+      ],
+      "shift_block_E": 8976,
+      "shift_block_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        }
+      ],
+      "gcd_a_L": 1,
+      "gcd_s_L": 1,
+      "affine_divisor_tests": [
+        {
+          "factor": 19,
+          "divides_a": false,
+          "divides_s": false,
+          "fixed_s_congruence": false,
+          "shift_s_congruence": false,
+          "fixed_s_admissible": false,
+          "shift_s_admissible": false
+        },
+        {
+          "factor": 135173,
+          "divides_a": false,
+          "divides_s": false,
+          "fixed_s_congruence": false,
+          "shift_s_congruence": false,
+          "fixed_s_admissible": false,
+          "shift_s_admissible": false
+        },
+        {
+          "factor": 2568287,
+          "divides_a": false,
+          "divides_s": false,
+          "fixed_s_congruence": false,
+          "shift_s_congruence": true,
+          "fixed_s_admissible": false,
+          "shift_s_admissible": false
+        }
+      ],
+      "affine_divisor_counts": {
+        "nontrivial_divisor_count": 3,
+        "fixed_s_admissible_count": 0,
+        "shift_s_admissible_count": 0
+      },
+      "forward_local_closure_state_count": 1,
+      "forward_local_closure_states": [
+        [
+          7154,
+          25,
+          359
+        ]
+      ],
+      "forward_local_closure_edge_count": 0,
+      "forward_local_closure_edges": [],
+      "forward_local_closure_hit_R": [],
+      "forward_local_closure_hit_state_count": 0
+    },
+    {
+      "prime": 105295129,
+      "R": 839,
+      "root_state": [
+        2,
+        62713,
+        839
+      ],
+      "hit_R": [
+        15,
+        35,
+        119,
+        143
+      ],
+      "complete_source_state_count": 95,
+      "complete_local_edge_count": 251,
+      "root_outgoing_edges": [
+        {
+          "kind": "shift_s",
+          "factor": 17,
+          "to": [
+            2,
+            3689,
+            14271
+          ]
+        },
+        {
+          "kind": "shift_s",
+          "factor": 217,
+          "to": [
+            2,
+            289,
+            182171
+          ]
+        },
+        {
+          "kind": "shift_s",
+          "factor": 289,
+          "to": [
+            2,
+            217,
+            242615
+          ]
+        },
+        {
+          "kind": "shift_s",
+          "factor": 3689,
+          "to": [
+            2,
+            17,
+            3096915
+          ]
+        },
+        {
+          "kind": "shift_s",
+          "factor": 62713,
+          "to": [
+            2,
+            1,
+            52647563
+          ]
+        }
+      ],
+      "root_incoming_edge_count": 1,
+      "affine_block_L": 1679,
+      "affine_block_factorization": [
+        {
+          "prime": 23,
+          "exponent": 1
+        },
+        {
+          "prime": 73,
+          "exponent": 1
+        }
+      ],
+      "shift_block_E": 52616208,
+      "shift_block_factorization": [
+        {
+          "prime": 2,
+          "exponent": 4
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 37799,
+          "exponent": 1
+        }
+      ],
+      "gcd_a_L": 1,
+      "gcd_s_L": 1,
+      "affine_divisor_tests": [
+        {
+          "factor": 23,
+          "divides_a": false,
+          "divides_s": false,
+          "fixed_s_congruence": false,
+          "shift_s_congruence": true,
+          "fixed_s_admissible": false,
+          "shift_s_admissible": false
+        },
+        {
+          "factor": 73,
+          "divides_a": false,
+          "divides_s": false,
+          "fixed_s_congruence": false,
+          "shift_s_congruence": true,
+          "fixed_s_admissible": false,
+          "shift_s_admissible": false
+        },
+        {
+          "factor": 1679,
+          "divides_a": false,
+          "divides_s": false,
+          "fixed_s_congruence": false,
+          "shift_s_congruence": true,
+          "fixed_s_admissible": false,
+          "shift_s_admissible": false
+        }
+      ],
+      "affine_divisor_counts": {
+        "nontrivial_divisor_count": 3,
+        "fixed_s_admissible_count": 0,
+        "shift_s_admissible_count": 0
+      },
+      "forward_local_closure_state_count": 7,
+      "forward_local_closure_states": [
+        [
+          1,
+          1,
+          105295127
+        ],
+        [
+          2,
+          1,
+          52647563
+        ],
+        [
+          2,
+          17,
+          3096915
+        ],
+        [
+          2,
+          217,
+          242615
+        ],
+        [
+          2,
+          289,
+          182171
+        ],
+        [
+          2,
+          3689,
+          14271
+        ],
+        [
+          2,
+          62713,
+          839
+        ]
+      ],
+      "forward_local_closure_edge_count": 13,
+      "forward_local_closure_edges": [
+        {
+          "from": [
+            2,
+            1,
+            52647563
+          ],
+          "kind": "fixed_s",
+          "factor": 2,
+          "to": [
+            1,
+            1,
+            105295127
+          ]
+        },
+        {
+          "from": [
+            2,
+            17,
+            3096915
+          ],
+          "kind": "shift_s",
+          "factor": 17,
+          "to": [
+            2,
+            1,
+            52647563
+          ]
+        },
+        {
+          "from": [
+            2,
+            217,
+            242615
+          ],
+          "kind": "shift_s",
+          "factor": 217,
+          "to": [
+            2,
+            1,
+            52647563
+          ]
+        },
+        {
+          "from": [
+            2,
+            289,
+            182171
+          ],
+          "kind": "shift_s",
+          "factor": 17,
+          "to": [
+            2,
+            17,
+            3096915
+          ]
+        },
+        {
+          "from": [
+            2,
+            289,
+            182171
+          ],
+          "kind": "shift_s",
+          "factor": 289,
+          "to": [
+            2,
+            1,
+            52647563
+          ]
+        },
+        {
+          "from": [
+            2,
+            3689,
+            14271
+          ],
+          "kind": "shift_s",
+          "factor": 17,
+          "to": [
+            2,
+            217,
+            242615
+          ]
+        },
+        {
+          "from": [
+            2,
+            3689,
+            14271
+          ],
+          "kind": "shift_s",
+          "factor": 217,
+          "to": [
+            2,
+            17,
+            3096915
+          ]
+        },
+        {
+          "from": [
+            2,
+            3689,
+            14271
+          ],
+          "kind": "shift_s",
+          "factor": 3689,
+          "to": [
+            2,
+            1,
+            52647563
+          ]
+        },
+        {
+          "from": [
+            2,
+            62713,
+            839
+          ],
+          "kind": "shift_s",
+          "factor": 17,
+          "to": [
+            2,
+            3689,
+            14271
+          ]
+        },
+        {
+          "from": [
+            2,
+            62713,
+            839
+          ],
+          "kind": "shift_s",
+          "factor": 217,
+          "to": [
+            2,
+            289,
+            182171
+          ]
+        },
+        {
+          "from": [
+            2,
+            62713,
+            839
+          ],
+          "kind": "shift_s",
+          "factor": 289,
+          "to": [
+            2,
+            217,
+            242615
+          ]
+        },
+        {
+          "from": [
+            2,
+            62713,
+            839
+          ],
+          "kind": "shift_s",
+          "factor": 3689,
+          "to": [
+            2,
+            17,
+            3096915
+          ]
+        },
+        {
+          "from": [
+            2,
+            62713,
+            839
+          ],
+          "kind": "shift_s",
+          "factor": 62713,
+          "to": [
+            2,
+            1,
+            52647563
+          ]
+        }
+      ],
+      "forward_local_closure_hit_R": [],
+      "forward_local_closure_hit_state_count": 0
+    }
+  ]
+}
