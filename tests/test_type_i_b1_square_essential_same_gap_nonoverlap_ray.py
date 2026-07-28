@@ -16,29 +16,70 @@ sys.modules[SPEC.name] = dichotomy
 SPEC.loader.exec_module(dichotomy)
 
 
+def valuation(value, prime):
+    exponent = 0
+    while value % prime == 0:
+        value //= prime
+        exponent += 1
+    return exponent
+
+
+def ray_parameters(exponent):
+    r = 1 << (2 * exponent)
+    C = 19 * r - 5
+    modulus = 15 * (1 << (exponent + 1))
+    A0 = next(
+        A
+        for A in range(1, modulus + 1)
+        if (A + 1) % (1 << (exponent + 1)) == 1 << exponent
+        and A % 3 == 1
+        and A % 5 == 2
+    )
+    step = 4 * C * modulus
+    initial = 4 * C * A0 - 19
+    return r, C, modulus, A0, step, initial
+
+
 class TypeIBOneSquareEssentialSameGapNonoverlapRayTests(unittest.TestCase):
-    def test_ray_is_primitive_and_core(self):
-        self.assertEqual(math.gcd(17_040, 3_673), 1)
-        for index in range(20):
-            self.assertEqual((17_040 * index + 3_673) % 24, 1)
+    def assert_ray_state(self, exponent, index):
+        r, C, modulus, A0, step, initial = ray_parameters(exponent)
+        A = A0 + modulus * index
+        prime = step * index + initial
+        witness = dichotomy.b1_pminusone_witness(5, r, A)
+        t = (prime - 1) // 4
 
-    def test_prime_samples_have_square_essential_nonoverlap(self):
-        for index, prime in ((0, 3_673), (5, 88_873), (6, 105_913), (7, 122_953)):
-            A = 60 * index + 13
-            witness = dichotomy.b1_pminusone_witness(5, 4, A)
+        self.assertEqual(prime, witness["p"])
+        self.assertEqual(prime % 24, 1)
+        self.assertTrue(witness["bridge_condition"])
+        self.assertFalse(witness["same_gap_type_ii_condition"])
+        self.assertIsNone(witness["same_gap_type_ii_tail"])
+        self.assertEqual(valuation(t, 2), exponent)
+        self.assertEqual(valuation(r, 2), 2 * exponent)
+        self.assertEqual(t * t % r, 0)
+        self.assertNotEqual(t % r, 0)
+        self.assertNotEqual(witness["K"] % r, 0)
+        self.assertEqual(valuation(4 * r, 2) - valuation(prime - 1, 2), exponent)
 
-            self.assertEqual(witness["p"], prime)
-            self.assertTrue(witness["prime_check"])
-            self.assertTrue(witness["bridge_condition"])
-            self.assertFalse(witness["same_gap_type_ii_condition"])
-            self.assertIsNone(witness["same_gap_type_ii_tail"])
+    def test_each_ray_is_primitive_and_core(self):
+        for exponent in range(1, 8):
+            _, _, _, _, step, initial = ray_parameters(exponent)
+            self.assertEqual(math.gcd(step, initial), 1)
+            for index in range(20):
+                self.assertEqual((step * index + initial) % 24, 1)
+                self.assert_ray_state(exponent, index)
 
-            t = (prime - 1) // 4
-            self.assertEqual(t % 2, 0)
-            self.assertNotEqual(t % 4, 0)
-            self.assertEqual(t * t % 4, 0)
-            self.assertNotEqual(witness["K"] % 4, 0)
-            self.assertNotEqual((prime - 1) % 16, 0)
+    def test_prime_samples_have_unbounded_square_defect(self):
+        for exponent, index, prime in (
+            (1, 1, 27_529),
+            (2, 1, 223_633),
+            (3, 0, 33_889),
+            (4, 5, 53_779_393),
+            (5, 6, 495_378_049),
+        ):
+            _, _, _, _, step, initial = ray_parameters(exponent)
+            self.assertEqual(step * index + initial, prime)
+            self.assertTrue(dichotomy.is_prime(prime))
+            self.assert_ray_state(exponent, index)
 
 
 if __name__ == "__main__":
