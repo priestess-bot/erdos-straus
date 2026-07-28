@@ -1,6 +1,6 @@
 {
   "arithmetic": "verify every stored B=1 terminal bridge; for each stored lower-half source, exhaust every Type I normal form and strict maximum-tail lift through the same gap cap, retain every even upper-half source state, and test it with the exact B=1 source-state divisor-residue criterion",
-  "scope_note": "A complete finite source-reselection profile for the 247 ordinary-tail misses in the shared 500M--600M, m<=215 Type I box. It supplies neither a global B=1 bound nor a universal source-selection rule.",
+  "scope_note": "A complete finite source-state re-selection profile for the 247 ordinary-tail misses generated from the shared 500M--600M, m<=215 Type I box. Some B=1 normal realizations of re-selected states have gaps outside that source-state generation window; it supplies neither a global B=1 bound nor a universal source-selection rule.",
   "input_artifact": "type-i-mixed-terminal-dense-b1-600m-results.json",
   "prime_interval": [
     500000001,
@@ -13,6 +13,8 @@
   "reselected_upper_B_eq_1_count": 40,
   "upper_B_eq_1_miss_count": 0,
   "upper_B_eq_1_closure_count": 247,
+  "reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count": 3,
+  "maximum_reselected_upper_B_eq_1_realization_gap": 18500439,
   "reselection_normal_forms_exhaustively_checked": 2331,
   "reselection_strict_reverse_lifts_exhaustively_checked": 6643,
   "direct_upper_B_eq_1_primes": [

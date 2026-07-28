@@ -33,13 +33,14 @@ class TypeIPMinusOneMissUpperB1GapExtensionTests(unittest.TestCase):
         self.assertEqual(
             (
                 actual["p_minus_one_residual_count"],
-                actual["initial_upper_B_eq_1_closure_count"],
+                actual["initial_upper_B_eq_1_source_state_closure_count"],
                 actual["extension_released_count"],
-                actual["upper_B_eq_1_closure_count"],
+                actual["upper_B_eq_1_source_state_closure_count"],
                 actual["upper_B_eq_1_unresolved_count"],
             ),
             (185, 184, 1, 185, 0),
         )
+        self.assertEqual(actual["maximum_prior_upper_B_eq_1_realization_gap"], 597_803)
         record = actual["extension_records"]
         self.assertEqual(len(record), 1)
         self.assertEqual(record[0]["prime"], 218_482_009)

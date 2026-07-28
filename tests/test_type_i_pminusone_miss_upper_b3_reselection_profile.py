@@ -40,6 +40,8 @@ class TypeIPMinusOneMissUpperB3ReselectionProfileTests(unittest.TestCase):
             ),
             (185, 119, 65, 1, 185),
         )
+        self.assertEqual(actual["upper_B_eq_1_realization_gap_exceeding_source_box_count"], 26)
+        self.assertEqual(actual["maximum_upper_B_eq_1_realization_gap"], 597_803)
         miss = actual["upper_B_eq_1_misses"]
         self.assertEqual(len(miss), 1)
         self.assertEqual(miss[0]["prime"], 218_482_009)

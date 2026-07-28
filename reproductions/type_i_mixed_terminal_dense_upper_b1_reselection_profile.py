@@ -135,6 +135,10 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
         raise AssertionError("stored source-half classification did not partition the input")
     if len(reselected) + len(misses) != len(lower):
         raise AssertionError("upper source re-selection did not partition the lower records")
+    reselected_B_one_realization_gaps = [
+        int(row["selected_upper_B_one_state"]["B_one_realization"]["m"])
+        for row in reselected
+    ]
     return {
         "arithmetic": (
             "verify every stored B=1 terminal bridge; for each stored lower-half source, exhaust every "
@@ -142,9 +146,10 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
             "upper-half source state, and test it with the exact B=1 source-state divisor-residue criterion"
         ),
         "scope_note": (
-            "A complete finite source-reselection profile for the 247 ordinary-tail misses in the shared "
-            "500M--600M, m<=215 Type I box. It supplies neither a global B=1 bound nor a universal "
-            "source-selection rule."
+            "A complete finite source-state re-selection profile for the 247 ordinary-tail misses generated "
+            "from the shared 500M--600M, m<=215 Type I box. Some B=1 normal realizations of re-selected "
+            "states have gaps outside that source-state generation window; it supplies neither a global B=1 "
+            "bound nor a universal source-selection rule."
         ),
         "input_artifact": INPUT.name,
         "prime_interval": profile["prime_interval"],
@@ -155,6 +160,12 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
         "reselected_upper_B_eq_1_count": len(reselected),
         "upper_B_eq_1_miss_count": len(misses),
         "upper_B_eq_1_closure_count": len(direct) + len(reselected),
+        "reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count": sum(
+            gap > gap_cap for gap in reselected_B_one_realization_gaps
+        ),
+        "maximum_reselected_upper_B_eq_1_realization_gap": max(
+            reselected_B_one_realization_gaps, default=None
+        ),
         "reselection_normal_forms_exhaustively_checked": forms_checked,
         "reselection_strict_reverse_lifts_exhaustively_checked": lifts_checked,
         "direct_upper_B_eq_1_primes": direct,

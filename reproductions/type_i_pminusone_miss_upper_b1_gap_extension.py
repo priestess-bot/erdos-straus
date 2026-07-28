@@ -93,6 +93,13 @@ def run_profile(previous: dict[str, object], gap_cap: int = DEFAULT_GAP_CAP) -> 
         raise AssertionError("input is not the expected completed m<=215 source-reselection profile")
     if not isinstance(misses, list) or len(misses) != 1:
         raise AssertionError("input must contain exactly one short-box B=1 miss")
+    prior_realization_gaps = [
+        int(row["B_one_realization"]["m"])
+        for row in previous["direct_B_eq_1_records"]
+    ] + [
+        int(row["selected_upper_B_one_state"]["B_one_realization"]["m"])
+        for row in previous["reselected_B_eq_1_records"]
+    ]
 
     extensions: list[dict[str, object]] = []
     unresolved: list[int] = []
@@ -143,18 +150,20 @@ def run_profile(previous: dict[str, object], gap_cap: int = DEFAULT_GAP_CAP) -> 
             "source-state divisor-residue certificate"
         ),
         "scope_note": (
-            "A four-gap finite extension of one short-box residual. It shows that the m<=215 B=3 fallback "
-            "does not establish a global B=1 obstruction, but it supplies no uniform gap bound or global selector."
+            "A four-gap direct-normal-form extension of one source-state residual. It shows that the m<=215 "
+            "B=3 fallback does not establish a global B=1 obstruction, but it supplies no uniform gap bound "
+            "or global selector: prior B=1 source-state realizations can already have much larger gaps."
         ),
         "input_artifact": INPUT.name,
         "p_minus_one_residual_count": residual_count,
-        "initial_gap_cap": INITIAL_GAP_CAP,
-        "initial_upper_B_eq_1_closure_count": previous_closure,
+        "initial_source_state_generation_gap_cap": INITIAL_GAP_CAP,
+        "initial_upper_B_eq_1_source_state_closure_count": previous_closure,
+        "maximum_prior_upper_B_eq_1_realization_gap": max(prior_realization_gaps),
         "extension_gap_cap": gap_cap,
         "extension_normal_forms_exhaustively_checked": forms_checked,
         "extension_strict_reverse_lifts_exhaustively_checked": lifts_checked,
         "extension_released_count": len(extensions),
-        "upper_B_eq_1_closure_count": previous_closure + len(extensions),
+        "upper_B_eq_1_source_state_closure_count": previous_closure + len(extensions),
         "upper_B_eq_1_unresolved_count": len(unresolved),
         "extension_records": extensions,
         "unresolved_primes": unresolved,

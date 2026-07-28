@@ -1,12 +1,14 @@
 {
   "arithmetic": "test the stored shortest upper-half source state with the exact B=1 divisor-residue criterion; for each B=1 miss, exhaust every Type I normal form and strict maximum-tail lift through the same gap cap, retain every even upper-half source, then either reconstruct a B=1 source-state normal form or enumerate its compatible normal forms to minimize B",
-  "scope_note": "A complete finite source-reselection profile for the 185 p-minus-one misses in the shared p<=500M, m<=215 Type I box. It neither bounds B nor selects source states for arbitrary core primes.",
+  "scope_note": "A complete finite source-state re-selection profile for the 185 p-minus-one misses generated from the shared p<=500M, m<=215 Type I box. The reconstructed B=1 normal forms can have gaps outside that source-state generation window; it neither bounds B nor selects source states for arbitrary core primes.",
   "input_artifact": "type-i-pminusone-miss-upper-half-profile-500m-results.json",
   "p_minus_one_residual_count": 185,
   "stored_upper_B_eq_1_count": 119,
   "reselected_upper_B_eq_1_count": 65,
   "upper_B_eq_1_miss_count": 1,
   "upper_B_le_3_closure_count": 185,
+  "upper_B_eq_1_realization_gap_exceeding_source_box_count": 26,
+  "maximum_upper_B_eq_1_realization_gap": 597803,
   "reselection_normal_forms_exhaustively_checked": 2461,
   "reselection_strict_reverse_lifts_exhaustively_checked": 1213,
   "direct_B_eq_1_records": [
