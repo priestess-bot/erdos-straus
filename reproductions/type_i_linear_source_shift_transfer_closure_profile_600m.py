@@ -45,6 +45,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 8,
         "states_in_target_hit_components": 6,
         "states_in_target_free_components": 37,
+        "orientation_swap_edge_count": 12,
+        "orientation_aware_component_count": 9,
+        "orientation_aware_target_hit_component_count": 3,
+        "orientation_aware_target_free_component_count": 6,
+        "orientation_aware_states_in_target_hit_components": 8,
+        "orientation_aware_states_in_target_free_components": 35,
     },
     878_089: {
         "source_state_count": 54,
@@ -60,6 +66,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 23,
         "states_in_target_hit_components": 14,
         "states_in_target_free_components": 40,
+        "orientation_swap_edge_count": 12,
+        "orientation_aware_component_count": 18,
+        "orientation_aware_target_hit_component_count": 1,
+        "orientation_aware_target_free_component_count": 17,
+        "orientation_aware_states_in_target_hit_components": 15,
+        "orientation_aware_states_in_target_free_components": 39,
     },
     2_210_569: {
         "source_state_count": 38,
@@ -75,6 +87,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 18,
         "states_in_target_hit_components": 17,
         "states_in_target_free_components": 21,
+        "orientation_swap_edge_count": 8,
+        "orientation_aware_component_count": 16,
+        "orientation_aware_target_hit_component_count": 2,
+        "orientation_aware_target_free_component_count": 14,
+        "orientation_aware_states_in_target_hit_components": 17,
+        "orientation_aware_states_in_target_free_components": 21,
     },
     13_782_409: {
         "source_state_count": 78,
@@ -90,6 +108,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 30,
         "states_in_target_hit_components": 6,
         "states_in_target_free_components": 72,
+        "orientation_swap_edge_count": 22,
+        "orientation_aware_component_count": 22,
+        "orientation_aware_target_hit_component_count": 1,
+        "orientation_aware_target_free_component_count": 21,
+        "orientation_aware_states_in_target_hit_components": 6,
+        "orientation_aware_states_in_target_free_components": 72,
     },
     64_214_329: {
         "source_state_count": 80,
@@ -105,6 +129,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 38,
         "states_in_target_hit_components": 11,
         "states_in_target_free_components": 69,
+        "orientation_swap_edge_count": 23,
+        "orientation_aware_component_count": 30,
+        "orientation_aware_target_hit_component_count": 4,
+        "orientation_aware_target_free_component_count": 26,
+        "orientation_aware_states_in_target_hit_components": 11,
+        "orientation_aware_states_in_target_free_components": 69,
     },
     105_295_129: {
         "source_state_count": 95,
@@ -120,6 +150,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 21,
         "states_in_target_hit_components": 62,
         "states_in_target_free_components": 33,
+        "orientation_swap_edge_count": 20,
+        "orientation_aware_component_count": 18,
+        "orientation_aware_target_hit_component_count": 4,
+        "orientation_aware_target_free_component_count": 14,
+        "orientation_aware_states_in_target_hit_components": 64,
+        "orientation_aware_states_in_target_free_components": 31,
     },
     536_944_489: {
         "source_state_count": 102,
@@ -135,6 +171,12 @@ EXPECTED_PER_PRIME = {
         "target_free_component_count": 57,
         "states_in_target_hit_components": 45,
         "states_in_target_free_components": 57,
+        "orientation_swap_edge_count": 33,
+        "orientation_aware_component_count": 43,
+        "orientation_aware_target_hit_component_count": 6,
+        "orientation_aware_target_free_component_count": 37,
+        "orientation_aware_states_in_target_hit_components": 45,
+        "orientation_aware_states_in_target_free_components": 57,
     },
 }
 EXPECTED_TOTALS = {
@@ -152,6 +194,12 @@ EXPECTED_TOTALS = {
     "target_free_component_count": 195,
     "states_in_target_hit_components": 161,
     "states_in_target_free_components": 329,
+    "orientation_swap_edge_count": 130,
+    "orientation_aware_component_count": 156,
+    "orientation_aware_target_hit_component_count": 21,
+    "orientation_aware_target_free_component_count": 135,
+    "orientation_aware_states_in_target_hit_components": 166,
+    "orientation_aware_states_in_target_free_components": 324,
 }
 
 
@@ -298,6 +346,22 @@ def reversible_components(
     return components
 
 
+def orientation_swaps(
+    states: set[tuple[int, int, int]],
+) -> list[tuple[tuple[int, int, int], tuple[int, int, int]]]:
+    """Return each admissible a/s orientation swap once in canonical order."""
+    swaps = []
+    for a, s, R in sorted(states):
+        if a % 2 != 1:
+            continue
+        swapped = (s, a, R)
+        if swapped not in states:
+            raise AssertionError("directed linear source enumeration lost an odd swap")
+        if swapped != (a, s, R) and (a, s, R) < swapped:
+            swaps.append(((a, s, R), swapped))
+    return swaps
+
+
 def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object], Counter[str]]:
     """Compute the exact combined fixed-s and shift-transfer closure at one prime."""
     prime = int(source_profile["prime"])
@@ -319,6 +383,18 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
     ]
     target_free_components = [
         component for component in components if not component & hit_states
+    ]
+    swaps = orientation_swaps(states)
+    orientation_components = reversible_components(
+        states, [*all_transitions, *swaps]
+    )
+    orientation_hit_components = [
+        component for component in orientation_components if component & hit_states
+    ]
+    orientation_target_free_components = [
+        component
+        for component in orientation_components
+        if not component & hit_states
     ]
     failed_states = states - hit_states
     hit_s = {state[1] for state in hit_states}
@@ -345,6 +421,20 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
         "states_in_target_free_components": sum(
             len(component) for component in target_free_components
         ),
+        "orientation_swap_edge_count": len(swaps),
+        "orientation_aware_component_count": len(orientation_components),
+        "orientation_aware_target_hit_component_count": len(
+            orientation_hit_components
+        ),
+        "orientation_aware_target_free_component_count": len(
+            orientation_target_free_components
+        ),
+        "orientation_aware_states_in_target_hit_components": sum(
+            len(component) for component in orientation_hit_components
+        ),
+        "orientation_aware_states_in_target_free_components": sum(
+            len(component) for component in orientation_target_free_components
+        ),
     }
     if counts != EXPECTED_PER_PRIME[prime]:
         raise AssertionError("frozen combined transfer closure changed")
@@ -356,6 +446,15 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
         + counts["states_in_target_free_components"]
     ):
         raise AssertionError("reversible components did not partition by target reach")
+    if (
+        counts["orientation_aware_component_count"]
+        != counts["orientation_aware_target_hit_component_count"]
+        + counts["orientation_aware_target_free_component_count"]
+        or counts["source_state_count"]
+        != counts["orientation_aware_states_in_target_hit_components"]
+        + counts["orientation_aware_states_in_target_free_components"]
+    ):
+        raise AssertionError("orientation-aware components did not partition by target reach")
     direct_to_hit = [
         (source, target)
         for source, target in shift_transitions
@@ -392,6 +491,20 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
                 ),
                 "states_in_target_free_components": sum(
                     len(component) for component in target_free_components
+                ),
+                "orientation_swap_edge_count": len(swaps),
+                "orientation_aware_component_count": len(orientation_components),
+                "orientation_aware_target_hit_component_count": len(
+                    orientation_hit_components
+                ),
+                "orientation_aware_target_free_component_count": len(
+                    orientation_target_free_components
+                ),
+                "orientation_aware_states_in_target_hit_components": sum(
+                    len(component) for component in orientation_hit_components
+                ),
+                "orientation_aware_states_in_target_free_components": sum(
+                    len(component) for component in orientation_target_free_components
                 ),
             }
         ),

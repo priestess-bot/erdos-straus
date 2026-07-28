@@ -74,6 +74,17 @@ class LinearSourceShiftTransferClosureProfileTests(unittest.TestCase):
                 0,
             )
 
+    def test_orientation_swaps_still_leave_every_pressure_point_with_a_target_free_part(self):
+        for source_profile in profile.run_audit()["profiles"]:
+            self.assertGreater(
+                int(source_profile["orientation_swap_edge_count"]),
+                0,
+            )
+            self.assertGreater(
+                int(source_profile["orientation_aware_target_free_component_count"]),
+                0,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
