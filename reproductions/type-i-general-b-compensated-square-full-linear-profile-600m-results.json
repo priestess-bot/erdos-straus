@@ -1,0 +1,160 @@
+{
+  "arithmetic": "for every directed linear source state p=a+s+asR through the exact min(a,s) bound, deduplicate the induced R; at each R enumerate all d|K^2 with 4d=-1 (mod R), normalize every Type I form, and enumerate every H^2 divisor T for E=4B^2C^2T",
+  "scope_note": "This is complete for the compensated-square mechanism over all R induced by the enumerated linear E|n source states of the stated 13 primes. It does not exclude non-linear sources, other Type I factor mechanisms, or Type II certificates.",
+  "input": "type-i-general-b-compensated-square-residual-profile-600m-results.json",
+  "input_residual_count": 13,
+  "full_linear_R_compensated_square_covered_count": 6,
+  "full_linear_R_compensated_square_miss_count": 7,
+  "linear_source_coordinate_bound_max": 13378,
+  "linear_R_exhaustively_checked": 502,
+  "directed_linear_source_state_count": 884,
+  "K_square_divisors_exhaustively_checked": 571698,
+  "target_divisor_hits": 392,
+  "target_normal_forms_exhaustively_checked": 196,
+  "H_square_divisors_exhaustively_checked": 4196,
+  "compensated_square_candidate_count": 9,
+  "upper_half_covered_count": 6,
+  "misses": [
+    214729,
+    878089,
+    2210569,
+    13782409,
+    64214329,
+    105295129,
+    536944489
+  ],
+  "records": [
+    {
+      "prime": 1178809,
+      "linear_source_coordinate_bound": 626,
+      "linear_R_count": 25,
+      "target_normal_form_count": 15,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 757,
+        "B": 23,
+        "C": 17,
+        "H": 5276,
+        "m": 5139,
+        "R": 7,
+        "K": 2062916,
+        "T": 2,
+        "E": 1223048,
+        "q": 642,
+        "source_denominator": 1004088,
+        "source_term": 1693596,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 42622969,
+      "linear_source_coordinate_bound": 3769,
+      "linear_R_count": 43,
+      "target_normal_form_count": 14,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 15466,
+        "B": 13,
+        "C": 53,
+        "H": 417569,
+        "m": 1327,
+        "R": 27,
+        "K": 287705041,
+        "T": 1,
+        "E": 1898884,
+        "q": 15440,
+        "source_denominator": 42552640,
+        "source_term": 6447265360,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 47837689,
+      "linear_source_coordinate_bound": 3993,
+      "linear_R_count": 34,
+      "target_normal_form_count": 20,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 12142,
+        "B": 5,
+        "C": 197,
+        "H": 133557,
+        "m": 1791,
+        "R": 11,
+        "K": 131553645,
+        "T": 1,
+        "E": 3880900,
+        "q": 12052,
+        "source_denominator": 47484880,
+        "source_term": 1609628964,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 51531769,
+      "linear_source_coordinate_bound": 4144,
+      "linear_R_count": 37,
+      "target_normal_form_count": 10,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 52799,
+        "B": 4,
+        "C": 61,
+        "H": 3748725,
+        "m": 55,
+        "R": 71,
+        "K": 914688900,
+        "T": 135,
+        "E": 32149440,
+        "q": 52335,
+        "source_denominator": 51078960,
+        "source_term": 1453255725,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 474092089,
+      "linear_source_coordinate_bound": 12571,
+      "linear_R_count": 30,
+      "target_normal_form_count": 23,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 7919,
+        "B": 1,
+        "C": 14967,
+        "H": 182136,
+        "m": 2603,
+        "R": 23,
+        "K": 2726029512,
+        "T": 4,
+        "E": 3584177424,
+        "q": 5316,
+        "source_denominator": 318258288,
+        "source_term": 242058744,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 481517689,
+      "linear_source_coordinate_bound": 12669,
+      "linear_R_count": 55,
+      "target_normal_form_count": 35,
+      "compensated_square_candidate_count": 4,
+      "selected_witness": {
+        "A": 454262,
+        "B": 5,
+        "C": 53,
+        "H": 77678797,
+        "m": 31,
+        "R": 171,
+        "K": 20584881205,
+        "T": 71407,
+        "E": 20058226300,
+        "q": 343602,
+        "source_denominator": 364218120,
+        "source_term": 373781142,
+        "upper_half": true
+      }
+    }
+  ]
+}

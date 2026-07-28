@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 266 |
+| 数学状态 | `computationally_reproduced` | 267 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 210 |
 | 数学状态 | `open` | 11 |
-| 证明来源 | `computational_reproduction` | 39 |
+| 证明来源 | `computational_reproduction` | 40 |
 | 证明来源 | `mixed` | 6 |
 | 证明来源 | `repository_derivation` | 35 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 67 |
+| 审阅状态 | `internal_review` | 68 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -245,6 +245,7 @@
 | [核心素数的九条固定 p 减一 B 等于一因子射线](../claims/type-I-fixed-universal-pminusone-b1-rays.md) (`type-I-fixed-universal-pminusone-b1-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [一般 B 目标平方除子的中心化谱与精确障碍二分](../claims/type-I-general-b-centered-square-spectrum.md) (`type-I-general-b-centered-square-spectrum`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [十三点残余上的全线性 R 补偿平方边界](../claims/type-I-general-b-compensated-square-full-linear-profile-600m.md) (`type-I-general-b-compensated-square-full-linear-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [十三点前的一般 B 补偿平方重放剖面](../claims/type-I-general-b-compensated-square-residual-profile-600m.md) (`type-I-general-b-compensated-square-residual-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一般 B 正规形的补偿平方终端桥](../claims/type-I-general-b-compensated-square-terminal-bridge.md) (`type-I-general-b-compensated-square-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一般 B 正规形的自然自平方补因子刚性](../claims/type-I-general-b-self-square-rigidity.md) (`type-I-general-b-self-square-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |

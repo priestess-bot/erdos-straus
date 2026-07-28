@@ -54,6 +54,9 @@ T\equiv4B^2pmod R,
 另一个线性源、另一个正规形、一般 Type I 机制或 Type II 证书。不能将该清单解释为猜想反例，
 也不能由此推出全称选择引理。
 
+对这 13 点的全部线性源诱导 \(R\) 菜单继续穷尽后，见
+[全线性 \(R\) 补偿平方边界](type-I-general-b-compensated-square-full-linear-profile-600m.md)。
+
 复现：
 
 ~~~bash
