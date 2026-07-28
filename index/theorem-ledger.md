@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 297 |
+| 数学状态 | `computationally_reproduced` | 298 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 228 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 67 |
+| 证明来源 | `computational_reproduction` | 68 |
 | 证明来源 | `mixed` | 7 |
 | 证明来源 | `repository_derivation` | 57 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 118 |
+| 审阅状态 | `internal_review` | 119 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -320,6 +320,7 @@
 | [线性源的变 s 因子转移及双转移闭包边界](../claims/type-I-linear-source-shift-transfer-closure-boundary.md) (`type-I-linear-source-shift-transfer-closure-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点线性 G 型状态的二残数与角色阶剖面](../claims/type-I-linear-subgroup-two-character-profile-600m.md) (`type-I-linear-subgroup-two-character-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 的三标签层重选终端选择猜想](../claims/type-I-linear-three-label-reselection-conjecture.md) (`type-I-linear-three-label-reselection-conjecture`) | `open` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [九亿至十亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1b.md) (`type-I-mixed-terminal-dense-1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿至七亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-700m.md) (`type-I-mixed-terminal-dense-700m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [七亿至八亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-800m.md) (`type-I-mixed-terminal-dense-800m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
