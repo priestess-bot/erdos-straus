@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 281 |
+| 数学状态 | `computationally_reproduced` | 282 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 226 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 53 |
+| 证明来源 | `computational_reproduction` | 54 |
 | 证明来源 | `mixed` | 7 |
 | 证明来源 | `repository_derivation` | 53 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 100 |
+| 审阅状态 | `internal_review` | 101 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -276,6 +276,7 @@
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [四个真实对抗核心的 F 型除子差集近饱和仍不命中](../claims/type-I-linear-adversarial-core-f-difference-profile-600m.md) (`type-I-linear-adversarial-core-f-difference-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [两百个首达 B 大于一线性证书的完整谱重选剖面](../claims/type-I-linear-b-gt-one-full-spectrum-profile-600m.md) (`type-I-linear-b-gt-one-full-spectrum-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [两百个完整线性谱中的高阶 G 型分离角色普查](../claims/type-I-linear-b-gt-one-high-order-separator-census-600m.md) (`type-I-linear-b-gt-one-high-order-separator-census-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [线性源双因子块的坐标标签碰撞分解](../claims/type-I-linear-block-label-collision.md) (`type-I-linear-block-label-collision`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
