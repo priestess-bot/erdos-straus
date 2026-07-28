@@ -101,6 +101,24 @@ def centered_square_spectrum(
     return residues
 
 
+def minimum_support_by_residue(
+    factors: list[tuple[int, int]], modulus: int
+) -> dict[int, tuple[int, tuple[int, ...]]]:
+    """Find the sparsest centered coordinate vector for every residue."""
+    result: dict[int, tuple[int, tuple[int, ...]]] = {}
+    for vector in itertools.product(
+        *(range(-exponent, exponent + 1) for _, exponent in factors)
+    ):
+        residue = 1
+        for (prime, _), coordinate in zip(factors, vector):
+            residue = residue * pow(prime, coordinate, modulus) % modulus
+        support = sum(coordinate != 0 for coordinate in vector)
+        candidate = (support, vector)
+        if residue not in result or candidate < result[residue]:
+            result[residue] = candidate
+    return result
+
+
 def product_spectrum(
     left: set[int], right: set[int], modulus: int
 ) -> set[int]:
@@ -197,6 +215,30 @@ def classify_hit(
         raise AssertionError("stored target hit disappeared")
     shared_hit = target in shared_spectrum
     excess_hit = target in excess_spectrum
+    shared_costs = minimum_support_by_residue(shared_factors, R)
+    excess_costs = minimum_support_by_residue(excess_factors, R)
+    target_pairs = []
+    for shared_residue, (shared_support, shared_vector) in shared_costs.items():
+        required_excess = target * pow(shared_residue, -1, R) % R
+        if required_excess in excess_costs:
+            excess_support, excess_vector = excess_costs[required_excess]
+            target_pairs.append(
+                (
+                    shared_support + excess_support,
+                    excess_support,
+                    shared_support,
+                    shared_vector,
+                    excess_vector,
+                    shared_residue,
+                    required_excess,
+                )
+            )
+    if not target_pairs:
+        raise AssertionError("centered spectrum target witness was lost")
+    minimum_total = min(target_pairs)
+    minimum_excess_support = min(pair[1] for pair in target_pairs)
+    minimum_shared_support = min(pair[2] for pair in target_pairs)
+    minimum_total_support = minimum_total[0]
     if shared_hit and excess_hit:
         classification = "both_layers_hit"
     elif shared_hit:
@@ -219,6 +261,15 @@ def classify_hit(
         "minus_one_in_shared_layer_spectrum": shared_hit,
         "minus_one_in_excess_layer_spectrum": excess_hit,
         "target_hit_cross_modulus_layer_classification": classification,
+        "minimum_excess_layer_support": minimum_excess_support,
+        "minimum_shared_layer_support": minimum_shared_support,
+        "minimum_total_layer_support": minimum_total_support,
+        "minimum_total_layer_witness": {
+            "shared_coordinates": list(minimum_total[3]),
+            "excess_coordinates": list(minimum_total[4]),
+            "shared_residue": minimum_total[5],
+            "excess_residue": minimum_total[6],
+        },
     }
 
 
@@ -229,6 +280,7 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     profiles = []
     aggregate = Counter()
+    mixed_excess_support = Counter()
     for source_profile in payload["general_B_failure_profiles"]:
         records = checked_records(source_profile)
         pairwise_gcd_identity(records)
@@ -242,6 +294,14 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
             for record in hit_records
         )
         aggregate.update(local_counts)
+        for record in hit_records:
+            if (
+                record["target_hit_cross_modulus_layer_classification"]
+                == "mixed_layers_required"
+            ):
+                mixed_excess_support[
+                    str(record["minimum_excess_layer_support"])
+                ] += 1
         profiles.append(
             {
                 "prime": int(source_profile["prime"]),
@@ -270,6 +330,9 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
         "input_sha256": file_sha256(path),
         "aggregate_cross_modulus_layer_classification_counts": dict(
             sorted(aggregate.items())
+        ),
+        "mixed_layer_minimum_excess_support_counts": dict(
+            sorted(mixed_excess_support.items())
         ),
         "profiles": profiles,
     }

@@ -40,6 +40,20 @@ def direct_centered_spectrum(factors, modulus):
     return residues
 
 
+def direct_minimum_support_by_residue(factors, modulus):
+    result = {}
+    for vector in itertools.product(
+        *(range(-exponent, exponent + 1) for _, exponent in factors)
+    ):
+        residue = 1
+        for (prime, _), coordinate in zip(factors, vector):
+            residue = residue * pow(prime, coordinate, modulus) % modulus
+        candidate = (sum(coordinate != 0 for coordinate in vector), vector)
+        if residue not in result or candidate < result[residue]:
+            result[residue] = candidate
+    return result
+
+
 class LinearCrossModulusLayerProfile500MTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -52,6 +66,9 @@ class LinearCrossModulusLayerProfile500MTests(unittest.TestCase):
         self.assertEqual(
             self.actual["aggregate_cross_modulus_layer_classification_counts"],
             {"mixed_layers_required": 9, "shared_layer_hit": 3},
+        )
+        self.assertEqual(
+            self.actual["mixed_layer_minimum_excess_support_counts"], {"1": 8, "2": 1}
         )
 
     def test_pairwise_identity_is_independently_recomputed(self):
@@ -101,6 +118,32 @@ class LinearCrossModulusLayerProfile500MTests(unittest.TestCase):
                 classification = record[
                     "target_hit_cross_modulus_layer_classification"
                 ]
+                shared_costs = direct_minimum_support_by_residue(
+                    shared_factors, modulus
+                )
+                excess_costs = direct_minimum_support_by_residue(
+                    excess_factors, modulus
+                )
+                pairs = []
+                for shared_residue, (shared_cost, _) in shared_costs.items():
+                    required_excess = (
+                        (modulus - 1) * pow(shared_residue, -1, modulus) % modulus
+                    )
+                    if required_excess in excess_costs:
+                        excess_cost, _ = excess_costs[required_excess]
+                        pairs.append((excess_cost, shared_cost))
+                self.assertEqual(
+                    record["minimum_excess_layer_support"],
+                    min(excess_cost for excess_cost, _ in pairs),
+                )
+                self.assertEqual(
+                    record["minimum_shared_layer_support"],
+                    min(shared_cost for _, shared_cost in pairs),
+                )
+                self.assertEqual(
+                    record["minimum_total_layer_support"],
+                    min(excess_cost + shared_cost for excess_cost, shared_cost in pairs),
+                )
                 if classification == "mixed_layers_required":
                     self.assertNotIn(modulus - 1, shared)
                     self.assertNotIn(modulus - 1, excess)
