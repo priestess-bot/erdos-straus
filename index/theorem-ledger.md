@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 262 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 203 |
+| 数学状态 | `established` | 205 |
 | 数学状态 | `open` | 11 |
 | 证明来源 | `computational_reproduction` | 35 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 28 |
+| 证明来源 | `repository_derivation` | 30 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 56 |
+| 审阅状态 | `internal_review` | 58 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -215,6 +215,7 @@
 | [B等于一移位源避开同正规形p减一桥与同缺口Type II的无穷射线](../claims/type-I-b1-shifted-source-pminusone-nonoverlap-ray.md) (`type-I-b1-shifted-source-pminusone-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B等于一p减一桥的无界平方缺额同缺口非重叠射线](../claims/type-I-b1-square-essential-same-gap-nonoverlap-ray.md) (`type-I-b1-square-essential-same-gap-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [三条移位因子 B 等于一桥的六分之十三维筛残余](../claims/type-I-b1-three-factor-sieve-bridge.md) (`type-I-b1-three-factor-sieve-bridge`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [两条移位因子分支的B等于一上半区桥有二维筛残余](../claims/type-I-b1-two-shift-density-bridge.md) (`type-I-b1-two-shift-density-bridge`) | `established` | `repository_derivation` | `independent_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [B不大于4最大尾偶源选择器的首个失败点](../claims/type-I-b4-prefix-boundary-21169.md) (`type-I-b4-prefix-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -305,6 +306,7 @@
 | [五亿 p减一桥遗漏的最短上半区源剖面](../claims/type-I-pminusone-miss-upper-half-profile-500m.md) (`type-I-pminusone-miss-upper-half-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
+| [来自七 p 加一五模七因子的 R 等于七 B 等于一上半区桥](../claims/type-I-seven-p-plus-one-r7-b1-upper-bridge.md) (`type-I-seven-p-plus-one-r7-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I移位偶源的B一除子剩余类选择器](../claims/type-I-shifted-source-b1-divisor-residue-selector.md) (`type-I-shifted-source-b1-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [两千万小盒残余的完整B等于1偶源扩展与全范围边界](../claims/type-I-small-b-full-b1-even-source-extension-20m.md) (`type-I-small-b-full-b1-even-source-extension-20m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 互素正规形的小 B 一亿剖面](../claims/type-I-small-b-normal-form-profile.md) (`type-I-small-b-normal-form-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
