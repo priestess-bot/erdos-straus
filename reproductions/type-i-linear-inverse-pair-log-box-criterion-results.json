@@ -1,0 +1,458 @@
+{
+  "arithmetic": "if L=q*r with r=q^-1 (mod R), the centered exponent box reduces to q^(z_q-z_r); discrete logs give the exact least uniform overflow",
+  "scope_note": "This verifies an inverse-pair lemma and two F-state instances. It does not claim that every F-state has an inverse-pair affine block or prove the mixed terminal selector.",
+  "input_artifact": "type-i-linear-f-cross-source-pullback-profile-600m-results.json",
+  "input_sha256": "60a95000d81cdfee41f6b07b54b0f9e088bc56f71772ef296dec49b7c3020d05",
+  "case_count": 2,
+  "profiles": [
+    {
+      "prime": 64214329,
+      "R": 359,
+      "q": 19,
+      "inverse_factor": 135173,
+      "q_order": 358,
+      "q_inverse_relation": 1,
+      "finite_box_residues": [
+        1,
+        2,
+        19,
+        180,
+        189
+      ],
+      "target_count": 60,
+      "finite_target_intersection_count": 0,
+      "overflow_distribution": {
+        "12": 2,
+        "13": 2,
+        "14": 2,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 2,
+        "19": 2,
+        "20": 2,
+        "21": 2,
+        "34": 2,
+        "35": 2,
+        "36": 2,
+        "37": 2,
+        "38": 2,
+        "39": 2,
+        "50": 2,
+        "51": 2,
+        "52": 2,
+        "53": 2,
+        "54": 2,
+        "68": 2,
+        "69": 2,
+        "70": 2,
+        "71": 2,
+        "72": 2,
+        "74": 2,
+        "75": 2,
+        "76": 2,
+        "77": 2
+      },
+      "minimum_overflow": "12",
+      "maximum_overflow": "77",
+      "target_rows": [
+        {
+          "residue": 29,
+          "q_log": 149,
+          "least_absolute_log": 149,
+          "minimum_extra_exponent": 74
+        },
+        {
+          "residue": 43,
+          "q_log": 29,
+          "least_absolute_log": 29,
+          "minimum_extra_exponent": 14
+        },
+        {
+          "residue": 57,
+          "q_log": 139,
+          "least_absolute_log": 139,
+          "minimum_extra_exponent": 69
+        },
+        {
+          "residue": 58,
+          "q_log": 151,
+          "least_absolute_log": 151,
+          "minimum_extra_exponent": 75
+        },
+        {
+          "residue": 63,
+          "q_log": 219,
+          "least_absolute_log": 139,
+          "minimum_extra_exponent": 69
+        },
+        {
+          "residue": 65,
+          "q_log": 205,
+          "least_absolute_log": 153,
+          "minimum_extra_exponent": 76
+        },
+        {
+          "residue": 71,
+          "q_log": 107,
+          "least_absolute_log": 107,
+          "minimum_extra_exponent": 53
+        },
+        {
+          "residue": 86,
+          "q_log": 31,
+          "least_absolute_log": 31,
+          "minimum_extra_exponent": 15
+        },
+        {
+          "residue": 87,
+          "q_log": 287,
+          "least_absolute_log": 71,
+          "minimum_extra_exponent": 35
+        },
+        {
+          "residue": 95,
+          "q_log": 77,
+          "least_absolute_log": 77,
+          "minimum_extra_exponent": 38
+        },
+        {
+          "residue": 97,
+          "q_log": 145,
+          "least_absolute_log": 145,
+          "minimum_extra_exponent": 72
+        },
+        {
+          "residue": 114,
+          "q_log": 141,
+          "least_absolute_log": 141,
+          "minimum_extra_exponent": 70
+        },
+        {
+          "residue": 116,
+          "q_log": 153,
+          "least_absolute_log": 153,
+          "minimum_extra_exponent": 76
+        },
+        {
+          "residue": 119,
+          "q_log": 43,
+          "least_absolute_log": 43,
+          "minimum_extra_exponent": 21
+        },
+        {
+          "residue": 126,
+          "q_log": 221,
+          "least_absolute_log": 137,
+          "minimum_extra_exponent": 68
+        },
+        {
+          "residue": 130,
+          "q_log": 207,
+          "least_absolute_log": 151,
+          "minimum_extra_exponent": 75
+        },
+        {
+          "residue": 134,
+          "q_log": 249,
+          "least_absolute_log": 109,
+          "minimum_extra_exponent": 54
+        },
+        {
+          "residue": 142,
+          "q_log": 109,
+          "least_absolute_log": 109,
+          "minimum_extra_exponent": 54
+        },
+        {
+          "residue": 163,
+          "q_log": 69,
+          "least_absolute_log": 69,
+          "minimum_extra_exponent": 34
+        },
+        {
+          "residue": 167,
+          "q_log": 329,
+          "least_absolute_log": 29,
+          "minimum_extra_exponent": 14
+        },
+        {
+          "residue": 172,
+          "q_log": 33,
+          "least_absolute_log": 33,
+          "minimum_extra_exponent": 16
+        },
+        {
+          "residue": 174,
+          "q_log": 289,
+          "least_absolute_log": 69,
+          "minimum_extra_exponent": 34
+        },
+        {
+          "residue": 177,
+          "q_log": 253,
+          "least_absolute_log": 105,
+          "minimum_extra_exponent": 52
+        },
+        {
+          "residue": 178,
+          "q_log": 315,
+          "least_absolute_log": 43,
+          "minimum_extra_exponent": 21
+        },
+        {
+          "residue": 190,
+          "q_log": 79,
+          "least_absolute_log": 79,
+          "minimum_extra_exponent": 39
+        },
+        {
+          "residue": 201,
+          "q_log": 27,
+          "least_absolute_log": 27,
+          "minimum_extra_exponent": 13
+        },
+        {
+          "residue": 208,
+          "q_log": 137,
+          "least_absolute_log": 137,
+          "minimum_extra_exponent": 68
+        },
+        {
+          "residue": 211,
+          "q_log": 217,
+          "least_absolute_log": 141,
+          "minimum_extra_exponent": 70
+        },
+        {
+          "residue": 212,
+          "q_log": 203,
+          "least_absolute_log": 155,
+          "minimum_extra_exponent": 77
+        },
+        {
+          "residue": 215,
+          "q_log": 105,
+          "least_absolute_log": 105,
+          "minimum_extra_exponent": 52
+        },
+        {
+          "residue": 223,
+          "q_log": 285,
+          "least_absolute_log": 73,
+          "minimum_extra_exponent": 36
+        },
+        {
+          "residue": 227,
+          "q_log": 75,
+          "least_absolute_log": 75,
+          "minimum_extra_exponent": 37
+        },
+        {
+          "residue": 228,
+          "q_log": 143,
+          "least_absolute_log": 143,
+          "minimum_extra_exponent": 71
+        },
+        {
+          "residue": 232,
+          "q_log": 155,
+          "least_absolute_log": 155,
+          "minimum_extra_exponent": 77
+        },
+        {
+          "residue": 239,
+          "q_log": 41,
+          "least_absolute_log": 41,
+          "minimum_extra_exponent": 20
+        },
+        {
+          "residue": 260,
+          "q_log": 209,
+          "least_absolute_log": 149,
+          "minimum_extra_exponent": 74
+        },
+        {
+          "residue": 263,
+          "q_log": 327,
+          "least_absolute_log": 31,
+          "minimum_extra_exponent": 15
+        },
+        {
+          "residue": 268,
+          "q_log": 251,
+          "least_absolute_log": 107,
+          "minimum_extra_exponent": 53
+        },
+        {
+          "residue": 280,
+          "q_log": 25,
+          "least_absolute_log": 25,
+          "minimum_extra_exponent": 12
+        },
+        {
+          "residue": 285,
+          "q_log": 215,
+          "least_absolute_log": 143,
+          "minimum_extra_exponent": 71
+        },
+        {
+          "residue": 287,
+          "q_log": 103,
+          "least_absolute_log": 103,
+          "minimum_extra_exponent": 51
+        },
+        {
+          "residue": 291,
+          "q_log": 283,
+          "least_absolute_log": 75,
+          "minimum_extra_exponent": 37
+        },
+        {
+          "residue": 293,
+          "q_log": 73,
+          "least_absolute_log": 73,
+          "minimum_extra_exponent": 36
+        },
+        {
+          "residue": 299,
+          "q_log": 39,
+          "least_absolute_log": 39,
+          "minimum_extra_exponent": 19
+        },
+        {
+          "residue": 309,
+          "q_log": 333,
+          "least_absolute_log": 25,
+          "minimum_extra_exponent": 12
+        },
+        {
+          "residue": 311,
+          "q_log": 325,
+          "least_absolute_log": 33,
+          "minimum_extra_exponent": 16
+        },
+        {
+          "residue": 322,
+          "q_log": 213,
+          "least_absolute_log": 145,
+          "minimum_extra_exponent": 72
+        },
+        {
+          "residue": 323,
+          "q_log": 101,
+          "least_absolute_log": 101,
+          "minimum_extra_exponent": 50
+        },
+        {
+          "residue": 325,
+          "q_log": 281,
+          "least_absolute_log": 77,
+          "minimum_extra_exponent": 38
+        },
+        {
+          "residue": 326,
+          "q_log": 71,
+          "least_absolute_log": 71,
+          "minimum_extra_exponent": 35
+        },
+        {
+          "residue": 329,
+          "q_log": 37,
+          "least_absolute_log": 37,
+          "minimum_extra_exponent": 18
+        },
+        {
+          "residue": 334,
+          "q_log": 331,
+          "least_absolute_log": 27,
+          "minimum_extra_exponent": 13
+        },
+        {
+          "residue": 335,
+          "q_log": 323,
+          "least_absolute_log": 35,
+          "minimum_extra_exponent": 17
+        },
+        {
+          "residue": 342,
+          "q_log": 279,
+          "least_absolute_log": 79,
+          "minimum_extra_exponent": 39
+        },
+        {
+          "residue": 344,
+          "q_log": 35,
+          "least_absolute_log": 35,
+          "minimum_extra_exponent": 17
+        },
+        {
+          "residue": 347,
+          "q_log": 321,
+          "least_absolute_log": 37,
+          "minimum_extra_exponent": 18
+        },
+        {
+          "residue": 349,
+          "q_log": 257,
+          "least_absolute_log": 101,
+          "minimum_extra_exponent": 50
+        },
+        {
+          "residue": 353,
+          "q_log": 319,
+          "least_absolute_log": 39,
+          "minimum_extra_exponent": 19
+        },
+        {
+          "residue": 354,
+          "q_log": 255,
+          "least_absolute_log": 103,
+          "minimum_extra_exponent": 51
+        },
+        {
+          "residue": 356,
+          "q_log": 317,
+          "least_absolute_log": 41,
+          "minimum_extra_exponent": 20
+        }
+      ]
+    },
+    {
+      "prime": 105295129,
+      "R": 839,
+      "q": 23,
+      "inverse_factor": 73,
+      "q_order": 419,
+      "q_inverse_relation": 1,
+      "finite_box_residues": [
+        1,
+        23,
+        73,
+        295,
+        529
+      ],
+      "target_count": 2,
+      "finite_target_intersection_count": 0,
+      "overflow_distribution": {
+        "99": 2
+      },
+      "minimum_overflow": "99",
+      "maximum_overflow": "99",
+      "target_rows": [
+        {
+          "residue": 76,
+          "q_log": 199,
+          "least_absolute_log": 199,
+          "minimum_extra_exponent": 99
+        },
+        {
+          "residue": 276,
+          "q_log": 220,
+          "least_absolute_log": 199,
+          "minimum_extra_exponent": 99
+        }
+      ]
+    }
+  ]
+}

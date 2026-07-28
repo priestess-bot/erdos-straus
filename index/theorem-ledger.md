@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 287 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 226 |
+| 数学状态 | `established` | 227 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 57 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 55 |
+| 证明来源 | `repository_derivation` | 56 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 106 |
+| 审阅状态 | `internal_review` | 107 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -298,6 +298,7 @@
 | [线性一般 B 命中的源块与仿射块混合剖面](../claims/type-I-linear-general-b-two-block-hit-profile-500m.md) (`type-I-linear-general-b-two-block-hit-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性半块的二残数注入与子群障碍逃逸](../claims/type-I-linear-half-block-two-residue-escape.md) (`type-I-linear-half-block-two-residue-escape`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [159,108,889 的双四阶 G 型碰撞仍保持完整相位相容](../claims/type-I-linear-high-order-pair-phase-compatibility-159108889.md) (`type-I-linear-high-order-pair-phase-compatibility-159108889`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
+| [仿射逆元对的循环对数有限盒判据](../claims/type-I-linear-inverse-pair-log-box-criterion.md) (`type-I-linear-inverse-pair-log-box-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [完整线性源谱中目标命中的坐标标签层支撑边界](../claims/type-I-linear-label-layer-support-profile.md) (`type-I-linear-label-layer-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [三千一百万以内普通尾遗漏的三标签层线性源重选剖面](../claims/type-I-linear-label-reselection-profile-31m.md) (`type-I-linear-label-reselection-profile-31m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源带模数标签块的完整碰撞刚性](../claims/type-I-linear-labeled-block-gcd-rigidity.md) (`type-I-linear-labeled-block-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
