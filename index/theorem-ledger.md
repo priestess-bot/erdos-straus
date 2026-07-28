@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 250 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 194 |
+| 数学状态 | `established` | 195 |
 | 数学状态 | `open` | 10 |
 | 证明来源 | `computational_reproduction` | 23 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 16 |
+| 证明来源 | `repository_derivation` | 17 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 39 |
+| 审阅状态 | `internal_review` | 40 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -212,6 +212,7 @@
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [B等于一正规形回缩到完整平方因子外部源的判据](../claims/type-I-b1-external-source-retraction-criterion.md) (`type-I-b1-external-source-retraction-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [B等于1的p减一终端桥与同缺口Type II的精确二分](../claims/type-I-b1-pminusone-same-gap-dichotomy.md) (`type-I-b1-pminusone-same-gap-dichotomy`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [B等于一平方本质p减一桥避开同缺口Type II的无穷射线](../claims/type-I-b1-square-essential-same-gap-nonoverlap-ray.md) (`type-I-b1-square-essential-same-gap-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B不大于4最大尾偶源选择器的首个失败点](../claims/type-I-b4-prefix-boundary-21169.md) (`type-I-b4-prefix-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
