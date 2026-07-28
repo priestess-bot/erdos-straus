@@ -1,0 +1,723 @@
+{
+  "arithmetic": "for each m<=999 B=1 normal form on the frozen self-square residual, factor H and enumerate T|H^2; retain T=4 (mod R), q=(H-CT)/R>0 and T|qH, then set E=4C^2T",
+  "scope_note": "This is a complete finite compensated-square audit only on the stated residual and target box. It does not select a B=1 normal form outside that box or prove a universal terminal selector.",
+  "input": "type-i-b1-self-square-reselection-profile-600m-m999-results.json",
+  "gap_cap": 999,
+  "input_residual_count": 57,
+  "compensated_square_covered_count": 36,
+  "compensated_square_miss_count": 21,
+  "B_one_normal_forms_exhaustively_checked": 447,
+  "H_square_divisors_exhaustively_checked": 19465,
+  "compensated_square_candidate_count": 151,
+  "upper_half_covered_count": 20,
+  "maximum_selected_gap": 991,
+  "misses": [
+    214729,
+    878089,
+    1178809,
+    2210569,
+    13782409,
+    23385289,
+    30997849,
+    37793809,
+    38333689,
+    42622969,
+    47837689,
+    51531769,
+    64214329,
+    105295129,
+    158937529,
+    177034489,
+    283319689,
+    410744569,
+    474092089,
+    481517689,
+    536944489
+  ],
+  "records": [
+    {
+      "prime": 67369,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 41,
+        "B": 1,
+        "C": 411,
+        "H": 1926,
+        "m": 35,
+        "R": 47,
+        "K": 791586,
+        "T": 4,
+        "E": 2702736,
+        "q": 6,
+        "source_denominator": 9864,
+        "source_term": 2889,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 454969,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 476,
+        "B": 1,
+        "C": 239,
+        "H": 5235,
+        "m": 87,
+        "R": 11,
+        "K": 1251165,
+        "T": 15,
+        "E": 3427260,
+        "q": 150,
+        "source_denominator": 143400,
+        "source_term": 52350,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 629689,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 454,
+        "B": 1,
+        "C": 347,
+        "H": 1361,
+        "m": 463,
+        "R": 3,
+        "K": 472267,
+        "T": 1,
+        "E": 481636,
+        "q": 338,
+        "source_denominator": 469144,
+        "source_term": 460018,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 967129,
+      "compensated_square_candidate_count": 6,
+      "selected_witness": {
+        "A": 143,
+        "B": 1,
+        "C": 1691,
+        "H": 7864,
+        "m": 123,
+        "R": 55,
+        "K": 13298024,
+        "T": 4,
+        "E": 45751696,
+        "q": 20,
+        "source_denominator": 135280,
+        "source_term": 39320,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 6294649,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 101,
+        "B": 1,
+        "C": 15581,
+        "H": 83930,
+        "m": 75,
+        "R": 831,
+        "K": 1307713330,
+        "T": 4,
+        "E": 3884280976,
+        "q": 26,
+        "source_denominator": 1620424,
+        "source_term": 545545,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 7524169,
+      "compensated_square_candidate_count": 2,
+      "selected_witness": {
+        "A": 22130,
+        "B": 1,
+        "C": 85,
+        "H": 243429,
+        "m": 31,
+        "R": 11,
+        "K": 20691465,
+        "T": 2809,
+        "E": 81180100,
+        "q": 424,
+        "source_denominator": 144160,
+        "source_term": 36744,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 8083849,
+      "compensated_square_candidate_count": 8,
+      "selected_witness": {
+        "A": 10364,
+        "B": 1,
+        "C": 195,
+        "H": 114003,
+        "m": 71,
+        "R": 11,
+        "K": 22230585,
+        "T": 477,
+        "E": 72551700,
+        "q": 1908,
+        "source_denominator": 1488240,
+        "source_term": 456012,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 10665769,
+      "compensated_square_candidate_count": 2,
+      "selected_witness": {
+        "A": 31370,
+        "B": 1,
+        "C": 85,
+        "H": 345069,
+        "m": 31,
+        "R": 11,
+        "K": 29330865,
+        "T": 1863,
+        "E": 53840700,
+        "q": 16974,
+        "source_denominator": 5771160,
+        "source_term": 3143962,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 20275369,
+      "compensated_square_candidate_count": 10,
+      "selected_witness": {
+        "A": 174788,
+        "B": 1,
+        "C": 29,
+        "H": 524363,
+        "m": 39,
+        "R": 3,
+        "K": 15206527,
+        "T": 3031,
+        "E": 10196284,
+        "q": 145488,
+        "source_denominator": 16876608,
+        "source_term": 25169424,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 23170009,
+      "compensated_square_candidate_count": 3,
+      "selected_witness": {
+        "A": 11516,
+        "B": 1,
+        "C": 503,
+        "H": 126675,
+        "m": 183,
+        "R": 11,
+        "K": 63717525,
+        "T": 125,
+        "E": 126504500,
+        "q": 5800,
+        "source_denominator": 11669600,
+        "source_term": 5877720,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 28929289,
+      "compensated_square_candidate_count": 5,
+      "selected_witness": {
+        "A": 35,
+        "B": 1,
+        "C": 206638,
+        "H": 933204,
+        "m": 31,
+        "R": 26663,
+        "K": 192835408152,
+        "T": 4,
+        "E": 683188208704,
+        "q": 4,
+        "source_denominator": 3306208,
+        "source_term": 933204,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 30553609,
+      "compensated_square_candidate_count": 2,
+      "selected_witness": {
+        "A": 29266,
+        "B": 1,
+        "C": 261,
+        "H": 321925,
+        "m": 95,
+        "R": 11,
+        "K": 84022425,
+        "T": 125,
+        "E": 34060500,
+        "q": 26300,
+        "source_denominator": 27457200,
+        "source_term": 67733020,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 36873769,
+      "compensated_square_candidate_count": 4,
+      "selected_witness": {
+        "A": 86154,
+        "B": 1,
+        "C": 107,
+        "H": 258461,
+        "m": 143,
+        "R": 3,
+        "K": 27655327,
+        "T": 49,
+        "E": 2244004,
+        "q": 84406,
+        "source_denominator": 36125768,
+        "source_term": 445217534,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 37769209,
+      "compensated_square_candidate_count": 2,
+      "selected_witness": {
+        "A": 111086,
+        "B": 1,
+        "C": 85,
+        "H": 1221945,
+        "m": 31,
+        "R": 11,
+        "K": 103865325,
+        "T": 15,
+        "E": 433500,
+        "q": 110970,
+        "source_denominator": 37729800,
+        "source_term": 9039949110,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 55367449,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 61,
+        "B": 1,
+        "C": 226916,
+        "H": 1006682,
+        "m": 55,
+        "R": 16503,
+        "K": 228432252712,
+        "T": 4,
+        "E": 823853936896,
+        "q": 6,
+        "source_denominator": 5445984,
+        "source_term": 1510023,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 58757449,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 275,
+        "B": 1,
+        "C": 53416,
+        "H": 389124,
+        "m": 151,
+        "R": 1415,
+        "K": 20785447584,
+        "T": 4,
+        "E": 45652304896,
+        "q": 124,
+        "source_denominator": 26494336,
+        "source_term": 12062844,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 63332329,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 21310,
+        "B": 1,
+        "C": 743,
+        "H": 63929,
+        "m": 991,
+        "R": 3,
+        "K": 47499247,
+        "T": 1,
+        "E": 2208196,
+        "q": 21062,
+        "source_denominator": 62596264,
+        "source_term": 1346472598,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 67824409,
+      "compensated_square_candidate_count": 2,
+      "selected_witness": {
+        "A": 64966,
+        "B": 1,
+        "C": 261,
+        "H": 714625,
+        "m": 95,
+        "R": 11,
+        "K": 186517125,
+        "T": 125,
+        "E": 34060500,
+        "q": 62000,
+        "source_denominator": 64728000,
+        "source_term": 354454000,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 83445289,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 95,
+        "B": 1,
+        "C": 219593,
+        "H": 1636184,
+        "m": 51,
+        "R": 17223,
+        "K": 359294553112,
+        "T": 4,
+        "E": 771537370384,
+        "q": 44,
+        "source_denominator": 38648368,
+        "source_term": 17998024,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 84943609,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 69626,
+        "B": 1,
+        "C": 305,
+        "H": 765885,
+        "m": 111,
+        "R": 11,
+        "K": 233594925,
+        "T": 15,
+        "E": 5581500,
+        "q": 69210,
+        "source_denominator": 84436200,
+        "source_term": 3533793390,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 85772569,
+      "compensated_square_candidate_count": 6,
+      "selected_witness": {
+        "A": 166226,
+        "B": 1,
+        "C": 129,
+        "H": 1828485,
+        "m": 47,
+        "R": 11,
+        "K": 235874565,
+        "T": 4833,
+        "E": 321703812,
+        "q": 109548,
+        "source_denominator": 56526768,
+        "source_term": 41445660,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 126171049,
+      "compensated_square_candidate_count": 4,
+      "selected_witness": {
+        "A": 769336,
+        "B": 1,
+        "C": 41,
+        "H": 2308007,
+        "m": 55,
+        "R": 3,
+        "K": 94628287,
+        "T": 169,
+        "E": 1136356,
+        "q": 767026,
+        "source_denominator": 125792264,
+        "source_term": 10475156078,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 136246009,
+      "compensated_square_candidate_count": 5,
+      "selected_witness": {
+        "A": 151,
+        "B": 1,
+        "C": 225573,
+        "H": 1641520,
+        "m": 83,
+        "R": 10871,
+        "K": 370282590960,
+        "T": 4,
+        "E": 814130853264,
+        "q": 68,
+        "source_denominator": 61355856,
+        "source_term": 27905840,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 152862649,
+      "compensated_square_candidate_count": 31,
+      "selected_witness": {
+        "A": 460430,
+        "B": 1,
+        "C": 83,
+        "H": 1381289,
+        "m": 111,
+        "R": 3,
+        "K": 114646987,
+        "T": 12943,
+        "E": 356657308,
+        "q": 102340,
+        "source_denominator": 33976880,
+        "source_term": 10921820,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 170763961,
+      "compensated_square_candidate_count": 4,
+      "selected_witness": {
+        "A": 1041244,
+        "B": 1,
+        "C": 41,
+        "H": 3123731,
+        "m": 55,
+        "R": 3,
+        "K": 128072971,
+        "T": 169,
+        "E": 1136356,
+        "q": 1038934,
+        "source_denominator": 170385176,
+        "source_term": 19203256466,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 184707769,
+      "compensated_square_candidate_count": 3,
+      "selected_witness": {
+        "A": 58526,
+        "B": 1,
+        "C": 789,
+        "H": 643785,
+        "m": 287,
+        "R": 11,
+        "K": 507946365,
+        "T": 257,
+        "E": 639951588,
+        "q": 40092,
+        "source_denominator": 126530352,
+        "source_term": 100430460,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 187293649,
+      "compensated_square_candidate_count": 3,
+      "selected_witness": {
+        "A": 81,
+        "B": 1,
+        "C": 578067,
+        "H": 3174470,
+        "m": 59,
+        "R": 39191,
+        "K": 1835056349490,
+        "T": 4,
+        "E": 5346583303824,
+        "q": 22,
+        "source_denominator": 50869896,
+        "source_term": 17459585,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 193288489,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 64862,
+        "B": 1,
+        "C": 745,
+        "H": 713481,
+        "m": 271,
+        "R": 11,
+        "K": 531543345,
+        "T": 103,
+        "E": 228670300,
+        "q": 57886,
+        "source_denominator": 172500280,
+        "source_term": 400976322,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 193858009,
+      "compensated_square_candidate_count": 10,
+      "selected_witness": {
+        "A": 583910,
+        "B": 1,
+        "C": 83,
+        "H": 1751729,
+        "m": 111,
+        "R": 3,
+        "K": 145393507,
+        "T": 6979,
+        "E": 192313324,
+        "q": 390824,
+        "source_denominator": 129753568,
+        "source_term": 98096824,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 218482009,
+      "compensated_square_candidate_count": 2,
+      "selected_witness": {
+        "A": 245,
+        "B": 1,
+        "C": 222941,
+        "H": 1277674,
+        "m": 171,
+        "R": 5215,
+        "K": 284845919234,
+        "T": 4,
+        "E": 795243031696,
+        "q": 74,
+        "source_denominator": 65990536,
+        "source_term": 23636969,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 231169129,
+      "compensated_square_candidate_count": 6,
+      "selected_witness": {
+        "A": 387868,
+        "B": 1,
+        "C": 149,
+        "H": 1163603,
+        "m": 199,
+        "R": 3,
+        "K": 173376847,
+        "T": 2401,
+        "E": 213218404,
+        "q": 268618,
+        "source_denominator": 160096328,
+        "source_term": 130181054,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 236693209,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 90066,
+        "B": 1,
+        "C": 657,
+        "H": 990725,
+        "m": 239,
+        "R": 11,
+        "K": 650906325,
+        "T": 125,
+        "E": 215824500,
+        "q": 82600,
+        "source_denominator": 217072800,
+        "source_term": 654671080,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 252925369,
+      "compensated_square_candidate_count": 4,
+      "selected_witness": {
+        "A": 35,
+        "B": 1,
+        "C": 1806610,
+        "H": 8158884,
+        "m": 31,
+        "R": 233111,
+        "K": 14739921423240,
+        "T": 4,
+        "E": 52221435073600,
+        "q": 4,
+        "source_denominator": 28905760,
+        "source_term": 8158884,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 371844169,
+      "compensated_square_candidate_count": 1,
+      "selected_witness": {
+        "A": 161,
+        "B": 1,
+        "C": 577398,
+        "H": 2600310,
+        "m": 143,
+        "R": 16151,
+        "K": 1501413793380,
+        "T": 4,
+        "E": 5334215206464,
+        "q": 18,
+        "source_denominator": 41572656,
+        "source_term": 11701395,
+        "upper_half": false
+      }
+    },
+    {
+      "prime": 425677849,
+      "compensated_square_candidate_count": 12,
+      "selected_witness": {
+        "A": 1498866,
+        "B": 1,
+        "C": 71,
+        "H": 4496597,
+        "m": 95,
+        "R": 3,
+        "K": 319258387,
+        "T": 17689,
+        "E": 356680996,
+        "q": 1080226,
+        "source_denominator": 306784184,
+        "source_term": 274596698,
+        "upper_half": true
+      }
+    },
+    {
+      "prime": 597034729,
+      "compensated_square_candidate_count": 3,
+      "selected_witness": {
+        "A": 118742,
+        "B": 1,
+        "C": 1257,
+        "H": 12705393,
+        "m": 47,
+        "R": 107,
+        "K": 15970679001,
+        "T": 111,
+        "E": 701541756,
+        "q": 117438,
+        "source_denominator": 590478264,
+        "source_term": 13442305794,
+        "upper_half": true
+      }
+    }
+  ]
+}
