@@ -1,0 +1,508 @@
+{
+  "arithmetic": "for every directed linear source p=a+s+asR through the exact min(a,s) bound, deduplicate induced R; at each R enumerate every d|K^2 with 4d=-1 (mod R), normalize each target form, and replay its direct beta=1 terminal bridge with every source state at that R",
+  "scope_note": "This is a complete finite target-spectrum audit for the seven residuals of the stated compensated-square mechanism. It proves that all seven have ordinary linear-source general-B terminal bridges, but it does not prove the universal cross-source selector conjecture.",
+  "input": "type-i-general-b-compensated-square-full-linear-profile-600m-results.json",
+  "input_residual_count": 7,
+  "spectrum_resolved_count": 7,
+  "spectrum_unresolved_count": 0,
+  "linear_source_coordinate_bound_max": 13378,
+  "linear_R_exhaustively_checked": 278,
+  "directed_linear_source_state_count": 490,
+  "K_square_divisors_exhaustively_checked": 340842,
+  "target_divisor_hits": 158,
+  "target_normal_forms_exhaustively_checked": 79,
+  "direct_terminal_candidate_count": 119,
+  "records": [
+    {
+      "prime": 214729,
+      "linear_source_coordinate_bound": 267,
+      "linear_R_count": 30,
+      "directed_linear_source_state_count": 43,
+      "K_square_divisors_checked": 8580,
+      "target_divisor_hits": 10,
+      "target_normal_form_count": 5,
+      "target_hit_Rs": [
+        {
+          "R": 39,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2
+        },
+        {
+          "R": 131,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2
+        },
+        {
+          "R": 203,
+          "source_state_count": 2,
+          "target_divisor_hit_count": 2,
+          "target_normal_form_count": 1
+        }
+      ],
+      "direct_terminal_candidate_count": 6,
+      "selected_witness": {
+        "a": 4,
+        "s": 409,
+        "R": 131,
+        "K": 7032375,
+        "E": 53580,
+        "source_denominator": 214320,
+        "matched_square_divisor": 1539,
+        "A": 314,
+        "B": 9,
+        "C": 19,
+        "H": 41125,
+        "gap": 47,
+        "target_solution": [
+          53694,
+          245351750,
+          1510054851375
+        ],
+        "source_solution": [
+          28129500,
+          53694,
+          245351750
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    },
+    {
+      "prime": 878089,
+      "linear_source_coordinate_bound": 541,
+      "linear_R_count": 24,
+      "directed_linear_source_state_count": 54,
+      "K_square_divisors_checked": 19668,
+      "target_divisor_hits": 4,
+      "target_normal_form_count": 2,
+      "target_hit_Rs": [
+        {
+          "R": 59,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2
+        }
+      ],
+      "direct_terminal_candidate_count": 2,
+      "selected_witness": {
+        "a": 4,
+        "s": 3705,
+        "R": 59,
+        "K": 12951813,
+        "E": 218596,
+        "source_denominator": 874384,
+        "matched_square_divisor": 816781,
+        "A": 2,
+        "B": 7,
+        "C": 16669,
+        "H": 111,
+        "gap": 55375,
+        "target_solution": [
+          233366,
+          3700518,
+          11372844525357
+        ],
+        "source_solution": [
+          51807252,
+          233366,
+          3700518
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    },
+    {
+      "prime": 2210569,
+      "linear_source_coordinate_bound": 858,
+      "linear_R_count": 28,
+      "directed_linear_source_state_count": 38,
+      "K_square_divisors_checked": 18174,
+      "target_divisor_hits": 20,
+      "target_normal_form_count": 10,
+      "target_hit_Rs": [
+        {
+          "R": 23,
+          "source_state_count": 2,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3
+        },
+        {
+          "R": 39,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 8,
+          "target_normal_form_count": 4
+        },
+        {
+          "R": 391,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3
+        }
+      ],
+      "direct_terminal_candidate_count": 13,
+      "selected_witness": {
+        "a": 92107,
+        "s": 1,
+        "R": 23,
+        "K": 12710772,
+        "E": 24,
+        "source_denominator": 2210568,
+        "matched_square_divisor": 684,
+        "A": 808,
+        "B": 1,
+        "C": 684,
+        "H": 18583,
+        "gap": 119,
+        "target_solution": [
+          552672,
+          10270303776,
+          28098038549268
+        ],
+        "source_solution": [
+          1170751076604,
+          552672,
+          10270303776
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    },
+    {
+      "prime": 13782409,
+      "linear_source_coordinate_bound": 2143,
+      "linear_R_count": 41,
+      "directed_linear_source_state_count": 78,
+      "K_square_divisors_checked": 30639,
+      "target_divisor_hits": 16,
+      "target_normal_form_count": 8,
+      "target_hit_Rs": [
+        {
+          "R": 131,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 16,
+          "target_normal_form_count": 8
+        }
+      ],
+      "direct_terminal_candidate_count": 8,
+      "selected_witness": {
+        "a": 11680,
+        "s": 9,
+        "R": 131,
+        "K": 451373895,
+        "E": 1180,
+        "source_denominator": 13782400,
+        "matched_square_divisor": 28525,
+        "A": 604,
+        "B": 5,
+        "C": 1141,
+        "H": 79119,
+        "gap": 871,
+        "target_solution": [
+          3445820,
+          54525966516,
+          6221019632813055
+        ],
+        "source_solution": [
+          5272047093600,
+          3445820,
+          54525966516
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    },
+    {
+      "prime": 64214329,
+      "linear_source_coordinate_bound": 4626,
+      "linear_R_count": 47,
+      "directed_linear_source_state_count": 80,
+      "K_square_divisors_checked": 63849,
+      "target_divisor_hits": 26,
+      "target_normal_form_count": 13,
+      "target_hit_Rs": [
+        {
+          "R": 19,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2
+        },
+        {
+          "R": 43,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2
+        },
+        {
+          "R": 119,
+          "source_state_count": 2,
+          "target_divisor_hit_count": 12,
+          "target_normal_form_count": 6
+        },
+        {
+          "R": 131,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3
+        }
+      ],
+      "direct_terminal_candidate_count": 19,
+      "selected_witness": {
+        "a": 4057,
+        "s": 133,
+        "R": 119,
+        "K": 1910376288,
+        "E": 15828,
+        "source_denominator": 64214196,
+        "matched_square_divisor": 13536,
+        "A": 1186,
+        "B": 1,
+        "C": 13536,
+        "H": 141133,
+        "gap": 455,
+        "target_solution": [
+          16053696,
+          2265706277568,
+          122673531471430752
+        ],
+        "source_solution": [
+          7750396600416,
+          16053696,
+          2265706277568
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    },
+    {
+      "prime": 105295129,
+      "linear_source_coordinate_bound": 5924,
+      "linear_R_count": 55,
+      "directed_linear_source_state_count": 95,
+      "K_square_divisors_checked": 149511,
+      "target_divisor_hits": 42,
+      "target_normal_form_count": 21,
+      "target_hit_Rs": [
+        {
+          "R": 15,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 12,
+          "target_normal_form_count": 6
+        },
+        {
+          "R": 35,
+          "source_state_count": 2,
+          "target_divisor_hit_count": 2,
+          "target_normal_form_count": 1
+        },
+        {
+          "R": 119,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 4,
+          "target_normal_form_count": 2
+        },
+        {
+          "R": 143,
+          "source_state_count": 2,
+          "target_divisor_hit_count": 24,
+          "target_normal_form_count": 12
+        }
+      ],
+      "direct_terminal_candidate_count": 34,
+      "selected_witness": {
+        "a": 1831,
+        "s": 1643,
+        "R": 35,
+        "K": 921332379,
+        "E": 57506,
+        "source_denominator": 105293486,
+        "matched_square_divisor": 971,
+        "A": 27110,
+        "B": 1,
+        "C": 971,
+        "H": 948849,
+        "gap": 111,
+        "target_solution": [
+          26323810,
+          24977320794690,
+          97011811698681891
+        ],
+        "source_solution": [
+          1686959585949,
+          26323810,
+          24977320794690
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    },
+    {
+      "prime": 536944489,
+      "linear_source_coordinate_bound": 13378,
+      "linear_R_count": 53,
+      "directed_linear_source_state_count": 102,
+      "K_square_divisors_checked": 50421,
+      "target_divisor_hits": 40,
+      "target_normal_form_count": 20,
+      "target_hit_Rs": [
+        {
+          "R": 19,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3
+        },
+        {
+          "R": 23,
+          "source_state_count": 2,
+          "target_divisor_hit_count": 10,
+          "target_normal_form_count": 5
+        },
+        {
+          "R": 47,
+          "source_state_count": 1,
+          "target_divisor_hit_count": 18,
+          "target_normal_form_count": 9
+        },
+        {
+          "R": 51,
+          "source_state_count": 5,
+          "target_divisor_hit_count": 6,
+          "target_normal_form_count": 3
+        }
+      ],
+      "direct_terminal_candidate_count": 37,
+      "selected_witness": {
+        "a": 22372687,
+        "s": 1,
+        "R": 23,
+        "K": 3087430812,
+        "E": 24,
+        "source_denominator": 536944488,
+        "matched_square_divisor": 592,
+        "A": 907001,
+        "B": 4,
+        "C": 37,
+        "H": 20861019,
+        "gap": 103,
+        "target_solution": [
+          134236148,
+          700075708478703,
+          1657778959672195068
+        ],
+        "source_solution": [
+          69074123191031844,
+          134236148,
+          700075708478703
+        ],
+        "conditions": {
+          "linear_source": true,
+          "source_factorization": true,
+          "even_source": true,
+          "K_relation": true,
+          "linear_K_factorization": true,
+          "terminal_congruence": true,
+          "terminal_divides_source": true,
+          "terminal_divides_four_K_squared": true,
+          "terminal_reconstruction": true,
+          "terminal_upper_bound": true,
+          "target_square_divisor": true,
+          "target_residue": true,
+          "natural_type_I_form": true,
+          "target_identity": true,
+          "source_identity": true
+        }
+      }
+    }
+  ]
+}
