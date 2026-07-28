@@ -35,9 +35,7 @@ class DivisorResidueStructureTests(unittest.TestCase):
             self.assertEqual(len(sequence), prime - 3)
             self.assertEqual(len(generated), prime - 1)
             self.assertEqual(pow(example["unit"], (prime - 1) // 2, 4 * prime), target)
-            self.assertEqual(
-                example["subset_product_residues"], generated - {target}
-            )
+            self.assertEqual(example["subset_product_residues"], generated - {target})
             self.assertNotIn(target, example["subset_product_residues"])
             self.assertEqual(example["stabilizer"], (1,))
 
@@ -62,6 +60,45 @@ class DivisorResidueStructureTests(unittest.TestCase):
             example["divisor_residues"], example["subset_product_residues"]
         )
         self.assertNotIn(27, example["divisor_residues"])
+
+    def test_centered_square_spectrum_is_the_translated_square_divisor_set(self):
+        factorization = ((2, 2), (3, 1))
+        modulus = 5
+        K = structure.factorization_product(factorization)
+        square_divisor_residues = structure.divisor_residues_from_factorization(
+            ((2, 4), (3, 2)), modulus
+        )
+        direct = frozenset(
+            residue * pow(K, -1, modulus) % modulus
+            for residue in square_divisor_residues
+        )
+        classified = structure.centered_square_spectrum_classification(
+            factorization, modulus
+        )
+        self.assertEqual(
+            structure.centered_square_divisor_residues(factorization, modulus),
+            direct,
+        )
+        self.assertEqual(classified["centered_residues"], direct)
+        self.assertTrue(classified["target_in_centered_spectrum"])
+        self.assertEqual(classified["classification"], "hit")
+        self.assertTrue(
+            classified["centered_residues"].issubset(classified["generated_subgroup"])
+        )
+
+    def test_generated_subgroup_matches_the_cyclic_product_construction(self):
+        for modulus, generators in (
+            (15, frozenset({2, 7})),
+            (35, frozenset({2, 3, 11})),
+            (80, frozenset({3, 7, 11})),
+        ):
+            direct = frozenset({1})
+            for generator in generators:
+                cyclic = structure.cyclic_subgroup(generator, modulus)
+                direct = frozenset(
+                    left * right % modulus for left in direct for right in cyclic
+                )
+            self.assertEqual(structure.generated_subgroup(generators, modulus), direct)
 
     def test_support_critical_ray_forces_target_congruence(self):
         factors = structure.smallest_prime_factors(10_000 + 4 * 5**3)
@@ -105,9 +142,7 @@ class DivisorResidueStructureTests(unittest.TestCase):
         self.assertTrue(inseparable["failed"])
         self.assertFalse(inseparable["target_in_support"])
         self.assertFalse(inseparable["target_quadratically_separable"])
-        self.assertIn(
-            inseparable["target"], inseparable["support_square_saturation"]
-        )
+        self.assertIn(inseparable["target"], inseparable["support_square_saturation"])
 
         core_active = structure.support_critical_ray_analysis(241, 1, 5, factors)
         self.assertTrue(core_active["target_quadratically_separable"])
