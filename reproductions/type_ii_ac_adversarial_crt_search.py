@@ -1,0 +1,376 @@
+#!/usr/bin/env python3
+"""Search core-prime CRT progressions that suppress small AC-ray exits.
+
+For a finite canonical Type II fan, each ray failure forces the prime factors
+of its shifted integer into some half-size transversal of the involution
+r maps to minus r inverse modulo the ray modulus. This script fixes a
+deterministic transversal for every fan modulus. It then uses CRT to ensure
+that no screened small prime lying outside that transversal divides any
+shifted integer.
+
+The resulting primes are adversarial candidates, not counterexamples:
+unrestricted prime factors can still give a ray certificate, and the script
+factors every actual shifted integer to report those exits exactly.
+"""
+
+from __future__ import annotations
+
+import argparse
+from fractions import Fraction
+import importlib.util
+import json
+import math
+from pathlib import Path
+import sys
+from typing import Iterable
+
+import sympy
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SHORT_CERTIFICATE = ROOT / "reproductions" / "short_certificate.py"
+DEFAULT_OUTPUT = ROOT / "reproductions" / "type-ii-ac-adversarial-crt-results.json"
+
+
+def load_short_certificate():
+    spec = importlib.util.spec_from_file_location(
+        "type_ii_ac_adversarial_short_certificate", SHORT_CERTIFICATE
+    )
+    if spec is None or spec.loader is None:
+        raise RuntimeError("cannot load short_certificate.py")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+short_certificate = load_short_certificate()
+
+
+def canonical_pair(shift: int) -> tuple[int, int]:
+    """Write shift as a squared factor times a squarefree factor."""
+    if shift < 1:
+        raise ValueError("shift must be positive")
+    a = 1
+    c = 1
+    for prime, exponent in sympy.factorint(shift).items():
+        prime = int(prime)
+        exponent = int(exponent)
+        a *= prime ** (exponent // 2)
+        if exponent % 2:
+            c *= prime
+    if a * a * c != shift:
+        raise AssertionError("canonical pair did not reconstruct shift")
+    return a, c
+
+
+def factorization(value: int) -> list[tuple[int, int]]:
+    """Return a checked ascending prime factorization."""
+    if value < 1:
+        raise ValueError("factorization requires a positive input")
+    result = sorted(
+        (int(prime), int(exponent))
+        for prime, exponent in sympy.factorint(value).items()
+    )
+    if math.prod(prime**exponent for prime, exponent in result) != value:
+        raise AssertionError("factorization did not reconstruct")
+    return result
+
+
+def divisors_from_factorization(factors: Iterable[tuple[int, int]]) -> list[int]:
+    """Enumerate every positive divisor from a prime factorization."""
+    result = [1]
+    for prime, exponent in factors:
+        result = [
+            divisor * prime**power
+            for divisor in result
+            for power in range(exponent + 1)
+        ]
+    return sorted(result)
+
+
+def transversal(modulus: int) -> tuple[int, ...]:
+    """Choose the smaller representative from every ray-residue involution."""
+    if modulus < 4 or modulus % 4:
+        raise ValueError("a Type II ray modulus must be a multiple of four")
+    units = {
+        residue
+        for residue in range(1, modulus)
+        if math.gcd(residue, modulus) == 1
+    }
+    representatives: set[int] = set()
+    while units:
+        residue = min(units)
+        partner = (-pow(residue, -1, modulus)) % modulus
+        if partner == residue or partner not in units:
+            raise AssertionError("the transversal involution is malformed")
+        representatives.add(min(residue, partner))
+        units.remove(residue)
+        units.remove(partner)
+    if len(representatives) * 2 != sympy.totient(modulus):
+        raise AssertionError("transversal is not half of the unit group")
+    return tuple(sorted(representatives))
+
+
+def merge_coprime_congruence(
+    residue: int, modulus: int, other_residue: int, other_modulus: int
+) -> tuple[int, int]:
+    """Merge two coprime congruences into their least nonnegative solution."""
+    if math.gcd(modulus, other_modulus) != 1:
+        raise ValueError("CRT moduli must be coprime")
+    step = (
+        (other_residue - residue) * pow(modulus, -1, other_modulus)
+    ) % other_modulus
+    combined_modulus = modulus * other_modulus
+    return (residue + modulus * step) % combined_modulus, combined_modulus
+
+
+def screening_progression(
+    shifts: tuple[int, ...], prime_bound: int
+) -> dict[str, object]:
+    """Build a primitive core-prime CRT class avoiding bad screened factors."""
+    if len(shifts) < 2 or min(shifts) < 1 or tuple(sorted(set(shifts))) != shifts:
+        raise ValueError("shifts must be an ascending tuple of distinct positive integers")
+    if prime_bound < 5:
+        raise ValueError("prime bound must be at least five")
+
+    pairs = {shift: canonical_pair(shift) for shift in shifts}
+    moduli = {shift: 4 * a * c for shift, (a, c) in pairs.items()}
+    transversals = {
+        modulus: set(transversal(modulus)) for modulus in sorted(set(moduli.values()))
+    }
+    fan_modulus = math.lcm(*moduli.values())
+    screening_primes = [
+        int(prime)
+        for prime in sympy.primerange(5, prime_bound + 1)
+        if fan_modulus % int(prime)
+    ]
+
+    residue = 1
+    modulus = 24
+    rows: list[dict[str, object]] = []
+    for prime in screening_primes:
+        forbidden = {
+            (-4 * shift) % prime
+            for shift in shifts
+            if prime % moduli[shift] not in transversals[moduli[shift]]
+        }
+        if not forbidden:
+            continue
+        allowed = next(
+            (
+                candidate
+                for candidate in range(1, prime)
+                if candidate not in forbidden
+            ),
+            None,
+        )
+        if allowed is None:
+            raise ValueError(
+                f"screened prime {prime} leaves no nonzero CRT residue for this fan"
+            )
+        residue, modulus = merge_coprime_congruence(
+            residue, modulus, allowed, prime
+        )
+        rows.append(
+            {
+                "prime": prime,
+                "forbidden_roots": sorted(forbidden),
+                "chosen_core_residue": allowed,
+            }
+        )
+
+    if residue % 24 != 1 or math.gcd(residue, modulus) != 1:
+        raise AssertionError("CRT progression is not a primitive core-prime class")
+    return {
+        "canonical_pairs": {
+            str(shift): {"a": a, "c": c, "modulus": moduli[shift]}
+            for shift, (a, c) in pairs.items()
+        },
+        "transversals": {
+            str(modulus): sorted(values) for modulus, values in transversals.items()
+        },
+        "screening_prime_rows": rows,
+        "residue": residue,
+        "modulus": modulus,
+    }
+
+
+def ray_profile(
+    prime: int,
+    shift: int,
+    pair: tuple[int, int],
+    transversal_residues: set[int],
+    screening_primes: Iterable[int],
+) -> dict[str, object]:
+    """Factor one ray exactly and classify its actual certificate exits."""
+    a, c = pair
+    modulus = 4 * a * c
+    shifted = prime + 4 * shift
+    factors = factorization(shifted)
+    witnesses = []
+    for divisor in divisors_from_factorization(factors):
+        if divisor <= 1 or divisor % modulus != modulus - 1:
+            continue
+        k = (divisor + 1) // modulus
+        certificate = short_certificate.type_ii_raw_ray_certificate(prime, a, c, k)
+        if certificate is None:
+            raise AssertionError("eligible divisor did not rebuild a ray certificate")
+        if Fraction(4, prime) != sum(
+            (
+                Fraction(1, value)
+                for value in (certificate.x, certificate.y, certificate.z)
+            ),
+            Fraction(),
+        ):
+            raise AssertionError("ray certificate did not replay")
+        witnesses.append(
+            {
+                "h": divisor,
+                "K": k,
+                "gap": certificate.gap,
+                "divisor": certificate.divisor,
+            }
+        )
+    screened_factor_rows = []
+    for screened_prime in screening_primes:
+        if shifted % screened_prime:
+            continue
+        residue = screened_prime % modulus
+        screened_factor_rows.append(
+            {
+                "prime": screened_prime,
+                "residue": residue,
+                "in_transversal": residue in transversal_residues,
+            }
+        )
+        if residue not in transversal_residues:
+            raise AssertionError("CRT screen allowed a bad small factor")
+    return {
+        "shift": shift,
+        "a": a,
+        "c": c,
+        "modulus": modulus,
+        "shifted": shifted,
+        "factorization": [
+            {"prime": factor, "exponent": exponent} for factor, exponent in factors
+        ],
+        "screened_factor_rows": screened_factor_rows,
+        "ray_witness_count": len(witnesses),
+        "least_ray_witness": witnesses[0] if witnesses else None,
+    }
+
+
+def run_search(
+    fan_bound: int = 4,
+    prime_bound: int = 29,
+    candidate_count: int = 5,
+    scan_limit: int = 100_000,
+) -> dict[str, object]:
+    """Find prime representatives of one adversarial CRT progression."""
+    if fan_bound < 2 or candidate_count < 1 or scan_limit < candidate_count:
+        raise ValueError("invalid fan, candidate, or scan bound")
+    shifts = tuple(range(1, fan_bound + 1))
+    progression = screening_progression(shifts, prime_bound)
+    pairs = {
+        shift: (
+            int(progression["canonical_pairs"][str(shift)]["a"]),
+            int(progression["canonical_pairs"][str(shift)]["c"]),
+        )
+        for shift in shifts
+    }
+    transversals = {
+        int(modulus): set(int(value) for value in values)
+        for modulus, values in progression["transversals"].items()
+    }
+    screening_primes = [
+        int(row["prime"]) for row in progression["screening_prime_rows"]
+    ]
+    base_residue = int(progression["residue"])
+    base_modulus = int(progression["modulus"])
+
+    candidates = []
+    for multiplier in range(scan_limit):
+        prime = base_residue + multiplier * base_modulus
+        if prime < 73 or not sympy.isprime(prime):
+            continue
+        rays = [
+            ray_profile(
+                prime,
+                shift,
+                pairs[shift],
+                transversals[4 * pairs[shift][0] * pairs[shift][1]],
+                screening_primes,
+            )
+            for shift in shifts
+        ]
+        candidates.append(
+            {
+                "multiplier": multiplier,
+                "prime": prime,
+                "failed_ray_count": sum(
+                    int(ray["ray_witness_count"]) == 0 for ray in rays
+                ),
+                "rays": rays,
+            }
+        )
+        if len(candidates) == candidate_count:
+            break
+    if len(candidates) != candidate_count:
+        raise RuntimeError("scan limit did not contain the requested number of primes")
+    return {
+        "arithmetic": (
+            "choose a deterministic half-size transversal for each canonical ray; "
+            "CRT avoids every screened prime factor outside it; factor all actual "
+            "shifted integers and enumerate every eligible ray divisor"
+        ),
+        "scope_note": (
+            "The CRT screen is only a necessary-condition adversary for ray failure. "
+            "Unscreened factors can still yield a certificate, so this is neither an "
+            "Erdos--Straus counterexample nor a proof that any ray fails."
+        ),
+        "fan_bound": fan_bound,
+        "shifts": list(shifts),
+        "screened_prime_bound": prime_bound,
+        "candidate_scan_limit": scan_limit,
+        "progression": progression,
+        "candidates": candidates,
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--fan-bound", type=int, default=4)
+    parser.add_argument("--prime-bound", type=int, default=29)
+    parser.add_argument("--candidate-count", type=int, default=5)
+    parser.add_argument("--scan-limit", type=int, default=100_000)
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    args = parser.parse_args()
+    result = run_search(
+        args.fan_bound, args.prime_bound, args.candidate_count, args.scan_limit
+    )
+    print(
+        json.dumps(
+            {
+                "fan_bound": result["fan_bound"],
+                "screened_prime_bound": result["screened_prime_bound"],
+                "progression_modulus": result["progression"]["modulus"],
+                "candidate_primes": [
+                    candidate["prime"] for candidate in result["candidates"]
+                ],
+                "failed_ray_counts": [
+                    candidate["failed_ray_count"] for candidate in result["candidates"]
+                ],
+            },
+            ensure_ascii=False,
+        )
+    )
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
