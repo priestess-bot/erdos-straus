@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 262 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 205 |
+| 数学状态 | `established` | 206 |
 | 数学状态 | `open` | 11 |
 | 证明来源 | `computational_reproduction` | 35 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 30 |
+| 证明来源 | `repository_derivation` | 31 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 58 |
+| 审阅状态 | `internal_review` | 59 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -338,6 +338,7 @@
 | [Type I 目标除子的溢出因子与正规形精确对应](../claims/type-I-target-divisor-overflow.md) (`type-I-target-divisor-overflow`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [九条固定 p 减一单素因子桥菜单的 536219/212520 维筛残余](../claims/type-I-universal-pminusone-prime-factor-menu-sieve.md) (`type-I-universal-pminusone-prime-factor-menu-sieve`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [上半区偶源混合终端选择猜想](../claims/type-I-upper-half-mixed-terminal-selector-conjecture.md) (`type-I-upper-half-mixed-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [原始 AC 半径五盒的四层局部覆盖递归重新出现可采纳逃逸](../claims/type-II-ac-box-depth-four-recursive-escape.md) (`type-II-ac-box-depth-four-recursive-escape`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
 | [原始 AC 射线盒的一私有余因子局部覆盖边界](../claims/type-II-ac-box-one-prime-local-closure.md) (`type-II-ac-box-one-prime-local-closure`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
