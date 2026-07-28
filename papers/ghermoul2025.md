@@ -16,7 +16,7 @@ source_acquired: true
 source_verified_against_original: true
 source_verification_method: codex_audit
 description_source: original
-description_last_audit: '2026-07-23'
+description_last_audit: '2026-07-28'
 topics:
 - polynomial-family
 - computation
@@ -40,12 +40,15 @@ arxiv: '2508.07383'
 - 证明前三个族输出的分解恒等式。
 - 报告 q<=10^9 的联合覆盖和单个族对素数到至少 1.2*10^10 的覆盖。
 - 附 Mathematica 实现。
+- 其显式已证覆盖正好处理 \(q\not\equiv0\pmod6\)；未证的 \(q=6c\) 对应
+  本库的核心 \(p=24c+1\) 分支。
 
 ## 证据与核查
 
-- 已核对 arXiv 摘要、公式 (4)-(7) 与多项式构造章节。
+- 已核对 arXiv 摘要、公式 (4)-(7)、(14)-(17) 与多项式构造章节。
 - 论文引言把若干历史归属写得过于宽泛；本库不沿用其 Tao entropy 等表述。
 
 ## 局限与后续
 
-联合覆盖是计算支持的 conjecture；计算尚未独立全量复现。
+联合覆盖是计算支持的 conjecture；其中 \(q\equiv0\pmod6\) 的覆盖没有全称证明，且
+计算尚未独立全量复现。详见[其核心残余归约](../claims/ghermoul-2025-core-residual-reduction.md)。
