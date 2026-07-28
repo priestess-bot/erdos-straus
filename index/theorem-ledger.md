@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 279 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 223 |
+| 数学状态 | `established` | 224 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 51 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 51 |
+| 证明来源 | `repository_derivation` | 52 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 95 |
+| 审阅状态 | `internal_review` | 96 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -292,6 +292,7 @@
 | [完整线性源谱中目标命中的坐标标签层支撑边界](../claims/type-I-linear-label-layer-support-profile.md) (`type-I-linear-label-layer-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [三千一百万以内普通尾遗漏的三标签层线性源重选剖面](../claims/type-I-linear-label-reselection-profile-31m.md) (`type-I-linear-label-reselection-profile-31m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源带模数标签块的完整碰撞刚性](../claims/type-I-linear-labeled-block-gcd-rigidity.md) (`type-I-linear-labeled-block-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [57,399,241 的真正四阶线性 G 型分离角色](../claims/type-I-linear-order-four-separator-boundary-57399241.md) (`type-I-linear-order-four-separator-boundary-57399241`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 二次障碍的互反拉回](../claims/type-I-linear-quadratic-obstruction-reciprocity-pullback.md) (`type-I-linear-quadratic-obstruction-reciprocity-pullback`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
