@@ -1,0 +1,329 @@
+{
+  "arithmetic": "from each subgroup-visible shared-layer F boundary, enumerate the established fixed-s factor transfers, admissible changing-s transfers, and both directions of coordinate swaps; test directed reachability to the exact full-spectrum hit states and record undirected components",
+  "scope_note": "This is a finite audit of three already verified local source operations on the five boundary states carrying 16 subgroup-visible pullback classes. Failure of directed reachability only rules out these local transfers; it does not refute a different source construction or prove the mixed selector.",
+  "pullback_input": "type-i-linear-single-hit-f-cross-source-pullback-7-results.json",
+  "pullback_input_sha256": "f4b91e222ccfda1e428d7f646b1066c978101ba0398cd45b002e08e48f36d1d5",
+  "spectrum_input": "type-i-linear-full-spectrum-bgt1-200-results.json",
+  "spectrum_input_sha256": "5f60c11b255aac289b45d2a4721b233534b7bc29476b76bb5f41efc0917a0196",
+  "prime_count": 7,
+  "source_state_count": 473,
+  "known_directed_edge_count": 1199,
+  "boundary_row_count": 16,
+  "boundary_state_count": 5,
+  "boundary_rows_reaching_hit_count": 0,
+  "boundary_states_reaching_hit_count": 0,
+  "boundary_direct_hit_edge_count": 0,
+  "boundary_states_in_hit_undirected_component_count": 1,
+  "profiles": [
+    {
+      "prime": 67369,
+      "source_state_count": 35,
+      "fixed_factor_transfer_count": 68,
+      "shift_factor_transfer_count": 22,
+      "orientation_swap_edge_count": 10,
+      "known_directed_edge_count": 110,
+      "hit_R": [
+        23
+      ],
+      "hit_state_count": 2,
+      "reverse_reachable_state_count": 6,
+      "boundary_rows": []
+    },
+    {
+      "prime": 878089,
+      "source_state_count": 54,
+      "fixed_factor_transfer_count": 45,
+      "shift_factor_transfer_count": 13,
+      "orientation_swap_edge_count": 12,
+      "known_directed_edge_count": 82,
+      "hit_R": [
+        59
+      ],
+      "hit_state_count": 1,
+      "reverse_reachable_state_count": 1,
+      "boundary_rows": []
+    },
+    {
+      "prime": 13782409,
+      "source_state_count": 78,
+      "fixed_factor_transfer_count": 90,
+      "shift_factor_transfer_count": 31,
+      "orientation_swap_edge_count": 22,
+      "known_directed_edge_count": 165,
+      "hit_R": [
+        131
+      ],
+      "hit_state_count": 1,
+      "reverse_reachable_state_count": 1,
+      "boundary_rows": [
+        {
+          "prime": 13782409,
+          "R": 335,
+          "a": 2165,
+          "s": 19,
+          "residue": 93,
+          "overflow": 2,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 13782409,
+          "R": 335,
+          "a": 2165,
+          "s": 19,
+          "residue": 317,
+          "overflow": 2,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "source_state_count": 41,
+      "fixed_factor_transfer_count": 23,
+      "shift_factor_transfer_count": 8,
+      "orientation_swap_edge_count": 9,
+      "known_directed_edge_count": 49,
+      "hit_R": [
+        187
+      ],
+      "hit_state_count": 1,
+      "reverse_reachable_state_count": 1,
+      "boundary_rows": [
+        {
+          "prime": 26034649,
+          "R": 375,
+          "a": 73,
+          "s": 951,
+          "residue": 86,
+          "overflow": 1,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 26034649,
+          "R": 375,
+          "a": 73,
+          "s": 951,
+          "residue": 266,
+          "overflow": 1,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "source_state_count": 88,
+      "fixed_factor_transfer_count": 218,
+      "shift_factor_transfer_count": 76,
+      "orientation_swap_edge_count": 28,
+      "known_directed_edge_count": 350,
+      "hit_R": [
+        19
+      ],
+      "hit_state_count": 1,
+      "reverse_reachable_state_count": 2,
+      "boundary_rows": [
+        {
+          "prime": 57399241,
+          "R": 155,
+          "a": 1755,
+          "s": 211,
+          "residue": 128,
+          "overflow": 6,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 57399241,
+          "R": 155,
+          "a": 1755,
+          "s": 211,
+          "residue": 132,
+          "overflow": 6,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 57399241,
+          "R": 567,
+          "a": 101055,
+          "s": 1,
+          "residue": 248,
+          "overflow": 1,
+          "outgoing_edge_count": 8,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 57,
+          "undirected_component_contains_hit": true
+        },
+        {
+          "prime": 57399241,
+          "R": 567,
+          "a": 101055,
+          "s": 1,
+          "residue": 496,
+          "overflow": 1,
+          "outgoing_edge_count": 8,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 57,
+          "undirected_component_contains_hit": true
+        },
+        {
+          "prime": 57399241,
+          "R": 567,
+          "a": 101055,
+          "s": 1,
+          "residue": 551,
+          "overflow": 1,
+          "outgoing_edge_count": 8,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 57,
+          "undirected_component_contains_hit": true
+        },
+        {
+          "prime": 57399241,
+          "R": 567,
+          "a": 101055,
+          "s": 1,
+          "residue": 559,
+          "overflow": 1,
+          "outgoing_edge_count": 8,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 57,
+          "undirected_component_contains_hit": true
+        }
+      ]
+    },
+    {
+      "prime": 152498329,
+      "source_state_count": 75,
+      "fixed_factor_transfer_count": 27,
+      "shift_factor_transfer_count": 10,
+      "orientation_swap_edge_count": 24,
+      "known_directed_edge_count": 85,
+      "hit_R": [
+        47
+      ],
+      "hit_state_count": 1,
+      "reverse_reachable_state_count": 1,
+      "boundary_rows": []
+    },
+    {
+      "prime": 283319689,
+      "source_state_count": 102,
+      "fixed_factor_transfer_count": 222,
+      "shift_factor_transfer_count": 76,
+      "orientation_swap_edge_count": 30,
+      "known_directed_edge_count": 358,
+      "hit_R": [
+        63
+      ],
+      "hit_state_count": 2,
+      "reverse_reachable_state_count": 2,
+      "boundary_rows": [
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "a": 93,
+          "s": 2443,
+          "residue": 237,
+          "overflow": 2,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "a": 93,
+          "s": 2443,
+          "residue": 275,
+          "overflow": 7,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "a": 93,
+          "s": 2443,
+          "residue": 762,
+          "overflow": 8,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "a": 93,
+          "s": 2443,
+          "residue": 905,
+          "overflow": 2,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "a": 93,
+          "s": 2443,
+          "residue": 984,
+          "overflow": 7,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        },
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "a": 93,
+          "s": 2443,
+          "residue": 1229,
+          "overflow": 8,
+          "outgoing_edge_count": 1,
+          "directed_reaches_hit": false,
+          "direct_hit_edge_count": 0,
+          "undirected_component_size": 2,
+          "undirected_component_contains_hit": false
+        }
+      ]
+    }
+  ]
+}
