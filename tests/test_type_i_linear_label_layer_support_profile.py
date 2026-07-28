@@ -162,6 +162,31 @@ class TypeILinearLabelLayerSupportProfileTests(unittest.TestCase):
                 )
                 self.assertFalse(direct_centered_target_hit(value, R))
 
+    def test_13782409_has_a_unique_three_layer_hit_in_its_complete_linear_spectrum(self):
+        output_profile = next(
+            item for item in self.actual["profiles"] if int(item["prime"]) == 13_782_409
+        )
+        self.assertEqual(output_profile["complete_linear_R_count"], 41)
+        self.assertEqual(output_profile["complete_directed_linear_source_count"], 78)
+        self.assertEqual(output_profile["target_hit_R_count"], 1)
+        self.assertEqual(output_profile["directed_target_hit_source_count"], 1)
+        self.assertEqual(output_profile["minimum_target_layer_support_counts"], {"3": 1})
+        orientation = output_profile["orientations"][0]
+        self.assertEqual(
+            (orientation["R"], orientation["a"], orientation["s"]),
+            (131, 11_680, 9),
+        )
+        self.assertEqual(orientation["K"], 451_373_895)
+        self.assertEqual(
+            [int(layer["value"]) for layer in orientation["layers"]],
+            [5, 59, 63, 24_287],
+        )
+        self.assertEqual(orientation["minimum_target_layer_support"], 3)
+        self.assertEqual(
+            orientation["minimum_target_layer_masks"],
+            [["source_collision", "affine_collision", "affine_private"]],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
