@@ -6,14 +6,13 @@ import sympy
 from reproductions import short_certificate
 
 
-def seven_p_plus_one_r7_bridge(p: int, q: int) -> dict[str, int] | None:
-    """Construct the R=7, E=8 p-1 B=1 bridge from q=5 mod 7."""
+def seven_p_plus_one_r7_bridge(p: int, C: int) -> dict[str, int] | None:
+    """Construct the R=7, E=8 p-1 B=1 bridge from C=5 mod 7."""
     if p % 24 != 1:
         return None
     K = (7 * p + 1) // 4
-    if q % 7 != 5 or K % q:
+    if C % 7 != 5 or K % C:
         return None
-    C = q
     H = K // C
     if (H + 1) % 7 or (4 * C + 1) % 7:
         return None
@@ -65,6 +64,23 @@ class TypeISevenPPlusOneR7BOneUpperBridgeTests(unittest.TestCase):
                 "E": 8,
                 "source": 336,
                 "source_term": 24780,
+            },
+        )
+
+    def test_composite_five_mod_seven_factor_is_valid(self):
+        self.assertEqual(
+            seven_p_plus_one_r7_bridge(193, 26),
+            {
+                "A": 2,
+                "B": 1,
+                "C": 26,
+                "H": 13,
+                "m": 15,
+                "R": 7,
+                "K": 338,
+                "E": 8,
+                "source": 192,
+                "source_term": 8112,
             },
         )
 
