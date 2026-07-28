@@ -100,11 +100,15 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         )
 
         checked = 0
+        source_equals_bridge_factor_count = 0
         for row in base["records"]:
             prime = int(row["prime"])
             certificate = profile.stored_witness(prime, row["minimum_b1_source_witness"])
             if 2 * int(certificate["source_denominator"]) >= prime + 1:
                 self.assert_source_first_coordinates(prime, certificate)
+                source_equals_bridge_factor_count += int(
+                    certificate["E"] == certificate["source_denominator"]
+                )
                 checked += 1
 
         extra_certificates = [
@@ -115,9 +119,13 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         for certificate in extra_certificates:
             prime = int(certificate["source_denominator"]) + int(certificate["source_distance"])
             self.assert_source_first_coordinates(prime, certificate)
+            source_equals_bridge_factor_count += int(
+                certificate["E"] == certificate["source_denominator"]
+            )
             checked += 1
 
         self.assertEqual(checked, completed["upper_B_eq_1_closure_count"])
+        self.assertEqual(source_equals_bridge_factor_count, 0)
 
 
 if __name__ == "__main__":
