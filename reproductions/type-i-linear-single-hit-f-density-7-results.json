@@ -1,0 +1,794 @@
+{
+  "arithmetic": "select the seven complete linear spectra with exactly one target hit; for every F state construct A_R(K) from all divisors of K, recover |H_R(K)| from the exact unit-group lattice certificate, and measure |H_R(K)|-2|A_R(K)|",
+  "scope_note": "This quantifies the fixed-state F obstruction on seven single-hit pressure points. It does not provide a cross-source escape theorem or cover the other 193 selected points.",
+  "input": "type-i-linear-full-spectrum-bgt1-200-results.json",
+  "input_sha256": "5f60c11b255aac289b45d2a4721b233534b7bc29476b76bb5f41efc0917a0196",
+  "primes": [
+    67369,
+    878089,
+    13782409,
+    26034649,
+    57399241,
+    152498329,
+    283319689
+  ],
+  "finite_exponent_R_count": 71,
+  "half_density_equality_count": 0,
+  "minimum_half_density_deficit": 6,
+  "maximum_half_density_deficit": 130762696,
+  "profiles": [
+    {
+      "prime": 67369,
+      "finite_exponent_R_count": 5,
+      "minimum_half_density_deficit": 6,
+      "maximum_half_density_deficit": 30968,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 27,
+          "K": 454741,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 6,
+          "generated_subgroup_order": 18,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 12,
+          "half_density_deficit": 6
+        },
+        {
+          "R": 3207,
+          "K": 54013096,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 23,
+          "generated_subgroup_order": 712,
+          "generated_subgroup_index": 3,
+          "twice_divisor_residue_count": 46,
+          "half_density_deficit": 666
+        },
+        {
+          "R": 4811,
+          "K": 81028065,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 28,
+          "generated_subgroup_order": 4512,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 56,
+          "half_density_deficit": 4456
+        },
+        {
+          "R": 11227,
+          "K": 189087941,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 28,
+          "generated_subgroup_order": 11016,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 56,
+          "half_density_deficit": 10960
+        },
+        {
+          "R": 33683,
+          "K": 567297507,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 56,
+          "generated_subgroup_order": 31080,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 112,
+          "half_density_deficit": 30968
+        }
+      ]
+    },
+    {
+      "prime": 878089,
+      "finite_exponent_R_count": 2,
+      "minimum_half_density_deficit": 146,
+      "maximum_half_density_deficit": 424,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 279,
+          "K": 61246708,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 17,
+          "generated_subgroup_order": 180,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 34,
+          "half_density_deficit": 146
+        },
+        {
+          "R": 503,
+          "K": 110419692,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 39,
+          "generated_subgroup_order": 502,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 78,
+          "half_density_deficit": 424
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "finite_exponent_R_count": 9,
+      "minimum_half_density_deficit": 210,
+      "maximum_half_density_deficit": 462354,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 335,
+          "K": 1154276754,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 27,
+          "generated_subgroup_order": 264,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 54,
+          "half_density_deficit": 210
+        },
+        {
+          "R": 1019,
+          "K": 3511068693,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 15,
+          "generated_subgroup_order": 1018,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 30,
+          "half_density_deficit": 988
+        },
+        {
+          "R": 1375,
+          "K": 4737703094,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 11,
+          "generated_subgroup_order": 1000,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 22,
+          "half_density_deficit": 978
+        },
+        {
+          "R": 2167,
+          "K": 7466620076,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 12,
+          "generated_subgroup_order": 1960,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 24,
+          "half_density_deficit": 1936
+        },
+        {
+          "R": 6535,
+          "K": 22517010704,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 25,
+          "generated_subgroup_order": 5224,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 50,
+          "half_density_deficit": 5174
+        },
+        {
+          "R": 8247,
+          "K": 28415881756,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 43,
+          "generated_subgroup_order": 5496,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 86,
+          "half_density_deficit": 5410
+        },
+        {
+          "R": 24743,
+          "K": 85254536472,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 111,
+          "generated_subgroup_order": 24408,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 222,
+          "half_density_deficit": 24186
+        },
+        {
+          "R": 33051,
+          "K": 113880599965,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 31,
+          "generated_subgroup_order": 21032,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 62,
+          "half_density_deficit": 20970
+        },
+        {
+          "R": 4594135,
+          "K": 15829561892804,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 87,
+          "generated_subgroup_order": 462528,
+          "generated_subgroup_index": 6,
+          "twice_divisor_residue_count": 174,
+          "half_density_deficit": 462354
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "finite_exponent_R_count": 6,
+      "minimum_half_density_deficit": 60,
+      "maximum_half_density_deficit": 11833864,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 375,
+          "K": 2440748344,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 70,
+          "generated_subgroup_order": 200,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 140,
+          "half_density_deficit": 60
+        },
+        {
+          "R": 6871,
+          "K": 44721018320,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 139,
+          "generated_subgroup_order": 6870,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 278,
+          "half_density_deficit": 6592
+        },
+        {
+          "R": 61987,
+          "K": 403452446891,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 12,
+          "generated_subgroup_order": 61986,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 24,
+          "half_density_deficit": 61962
+        },
+        {
+          "R": 178319,
+          "K": 1160618143758,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 96,
+          "generated_subgroup_order": 170544,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 192,
+          "half_density_deficit": 170352
+        },
+        {
+          "R": 4339107,
+          "K": 28241781929611,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 14,
+          "generated_subgroup_order": 2892732,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 28,
+          "half_density_deficit": 2892704
+        },
+        {
+          "R": 13017323,
+          "K": 84725358806157,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 28,
+          "generated_subgroup_order": 11833920,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 56,
+          "half_density_deficit": 11833864
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "finite_exponent_R_count": 24,
+      "minimum_half_density_deficit": 34,
+      "maximum_half_density_deficit": 25875264,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 59,
+          "K": 846638805,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 12,
+          "generated_subgroup_order": 58,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 24,
+          "half_density_deficit": 34
+        },
+        {
+          "R": 83,
+          "K": 1191034251,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 21,
+          "generated_subgroup_order": 82,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 42,
+          "half_density_deficit": 40
+        },
+        {
+          "R": 155,
+          "K": 2224220589,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 19,
+          "generated_subgroup_order": 120,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 38,
+          "half_density_deficit": 82
+        },
+        {
+          "R": 283,
+          "K": 4060996301,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 6,
+          "generated_subgroup_order": 282,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 12,
+          "half_density_deficit": 270
+        },
+        {
+          "R": 455,
+          "K": 6529163664,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 60,
+          "generated_subgroup_order": 288,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 120,
+          "half_density_deficit": 168
+        },
+        {
+          "R": 567,
+          "K": 8136342412,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 35,
+          "generated_subgroup_order": 324,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 70,
+          "half_density_deficit": 254
+        },
+        {
+          "R": 599,
+          "K": 8595536340,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 73,
+          "generated_subgroup_order": 598,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 146,
+          "half_density_deficit": 452
+        },
+        {
+          "R": 1419,
+          "K": 20362380745,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 28,
+          "generated_subgroup_order": 840,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 56,
+          "half_density_deficit": 784
+        },
+        {
+          "R": 1631,
+          "K": 23404540518,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 49,
+          "generated_subgroup_order": 1392,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 98,
+          "half_density_deficit": 1294
+        },
+        {
+          "R": 2839,
+          "K": 40739111300,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 61,
+          "generated_subgroup_order": 2656,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 122,
+          "half_density_deficit": 2534
+        },
+        {
+          "R": 6419,
+          "K": 92111431995,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 94,
+          "generated_subgroup_order": 5460,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 188,
+          "half_density_deficit": 5272
+        },
+        {
+          "R": 7939,
+          "K": 113923143575,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 18,
+          "generated_subgroup_order": 7456,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 36,
+          "half_density_deficit": 7420
+        },
+        {
+          "R": 9903,
+          "K": 142106170906,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 24,
+          "generated_subgroup_order": 6600,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 48,
+          "half_density_deficit": 6552
+        },
+        {
+          "R": 26947,
+          "K": 386684336807,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 10,
+          "generated_subgroup_order": 26946,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 20,
+          "half_density_deficit": 26926
+        },
+        {
+          "R": 34227,
+          "K": 491150955427,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 31,
+          "generated_subgroup_order": 22812,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 62,
+          "half_density_deficit": 22750
+        },
+        {
+          "R": 69999,
+          "K": 1004472367690,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 48,
+          "generated_subgroup_order": 46664,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 96,
+          "half_density_deficit": 46568
+        },
+        {
+          "R": 161687,
+          "K": 2320177769892,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 181,
+          "generated_subgroup_order": 152160,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 362,
+          "half_density_deficit": 151798
+        },
+        {
+          "R": 404219,
+          "K": 5800465949445,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 88,
+          "generated_subgroup_order": 394320,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 176,
+          "half_density_deficit": 394144
+        },
+        {
+          "R": 808439,
+          "K": 11600946248700,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 269,
+          "generated_subgroup_order": 808438,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 538,
+          "half_density_deficit": 807900
+        },
+        {
+          "R": 1471775,
+          "K": 21119691980694,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 111,
+          "generated_subgroup_order": 1107840,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 222,
+          "half_density_deficit": 1107618
+        },
+        {
+          "R": 5739923,
+          "K": 82366805899611,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 88,
+          "generated_subgroup_order": 4919928,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 176,
+          "half_density_deficit": 4919752
+        },
+        {
+          "R": 11479847,
+          "K": 164733626149032,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 231,
+          "generated_subgroup_order": 11308440,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 462,
+          "half_density_deficit": 11307978
+        },
+        {
+          "R": 19133079,
+          "K": 274556053148260,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 175,
+          "generated_subgroup_order": 10455984,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 350,
+          "half_density_deficit": 10455634
+        },
+        {
+          "R": 28699619,
+          "K": 411834086897295,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 48,
+          "generated_subgroup_order": 25875360,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 96,
+          "half_density_deficit": 25875264
+        }
+      ]
+    },
+    {
+      "prime": 152498329,
+      "finite_exponent_R_count": 12,
+      "minimum_half_density_deficit": 30,
+      "maximum_half_density_deficit": 180476,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 147,
+          "K": 5604313591,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 6,
+          "generated_subgroup_order": 42,
+          "generated_subgroup_index": 2,
+          "twice_divisor_residue_count": 12,
+          "half_density_deficit": 30
+        },
+        {
+          "R": 731,
+          "K": 27869069625,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 61,
+          "generated_subgroup_order": 672,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 122,
+          "half_density_deficit": 550
+        },
+        {
+          "R": 971,
+          "K": 37018969365,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 54,
+          "generated_subgroup_order": 970,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 108,
+          "half_density_deficit": 862
+        },
+        {
+          "R": 1471,
+          "K": 56081260490,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 24,
+          "generated_subgroup_order": 1470,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 48,
+          "half_density_deficit": 1422
+        },
+        {
+          "R": 2543,
+          "K": 96950812662,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 83,
+          "generated_subgroup_order": 2542,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 166,
+          "half_density_deficit": 2376
+        },
+        {
+          "R": 3467,
+          "K": 132177926661,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 31,
+          "generated_subgroup_order": 3466,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 62,
+          "half_density_deficit": 3404
+        },
+        {
+          "R": 5119,
+          "K": 195159736538,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 24,
+          "generated_subgroup_order": 5118,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 48,
+          "half_density_deficit": 5070
+        },
+        {
+          "R": 28131,
+          "K": 1072482623275,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 33,
+          "generated_subgroup_order": 18752,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 66,
+          "half_density_deficit": 18686
+        },
+        {
+          "R": 51191,
+          "K": 1951635489960,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 231,
+          "generated_subgroup_order": 42840,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 462,
+          "half_density_deficit": 42378
+        },
+        {
+          "R": 62295,
+          "K": 2374970851264,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 308,
+          "generated_subgroup_order": 33216,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 616,
+          "half_density_deficit": 32600
+        },
+        {
+          "R": 169631,
+          "K": 6467111011650,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 185,
+          "generated_subgroup_order": 132120,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 370,
+          "half_density_deficit": 131750
+        },
+        {
+          "R": 363091,
+          "K": 13842692693735,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 12,
+          "generated_subgroup_order": 180500,
+          "generated_subgroup_index": 2,
+          "twice_divisor_residue_count": 24,
+          "half_density_deficit": 180476
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "finite_exponent_R_count": 13,
+      "minimum_half_density_deficit": 100,
+      "maximum_half_density_deficit": 130762696,
+      "half_density_equality_count": 0,
+      "records": [
+        {
+          "R": 131,
+          "K": 9278719815,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 15,
+          "generated_subgroup_order": 130,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 30,
+          "half_density_deficit": 100
+        },
+        {
+          "R": 1247,
+          "K": 88324913046,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 59,
+          "generated_subgroup_order": 1176,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 118,
+          "half_density_deficit": 1058
+        },
+        {
+          "R": 1603,
+          "K": 113540365367,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 56,
+          "generated_subgroup_order": 1368,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 112,
+          "half_density_deficit": 1256
+        },
+        {
+          "R": 3591,
+          "K": 254350250800,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 188,
+          "generated_subgroup_order": 1944,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 376,
+          "half_density_deficit": 1568
+        },
+        {
+          "R": 11271,
+          "K": 798324053680,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 63,
+          "generated_subgroup_order": 6528,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 126,
+          "half_density_deficit": 6402
+        },
+        {
+          "R": 28107,
+          "K": 1990816624681,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 14,
+          "generated_subgroup_order": 18684,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 28,
+          "half_density_deficit": 18656
+        },
+        {
+          "R": 601527,
+          "K": 42606110641276,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 183,
+          "generated_subgroup_order": 391608,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 366,
+          "half_density_deficit": 391242
+        },
+        {
+          "R": 751511,
+          "K": 53229465700020,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 267,
+          "generated_subgroup_order": 733992,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 534,
+          "half_density_deficit": 733458
+        },
+        {
+          "R": 2777643,
+          "K": 196740237728257,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 12,
+          "generated_subgroup_order": 420840,
+          "generated_subgroup_index": 4,
+          "twice_divisor_residue_count": 24,
+          "half_density_deficit": 420816
+        },
+        {
+          "R": 7264607,
+          "K": 514551548986806,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 47,
+          "generated_subgroup_order": 6226800,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 94,
+          "half_density_deficit": 6226706
+        },
+        {
+          "R": 16665863,
+          "K": 1180441780519152,
+          "source_state_count": 2,
+          "K_divisor_residue_count": 135,
+          "generated_subgroup_order": 16665862,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 270,
+          "half_density_deficit": 16665592
+        },
+        {
+          "R": 47219947,
+          "K": 3344585174659121,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 24,
+          "generated_subgroup_order": 23511068,
+          "generated_subgroup_index": 2,
+          "twice_divisor_residue_count": 48,
+          "half_density_deficit": 23511020
+        },
+        {
+          "R": 141659843,
+          "K": 10033755665637207,
+          "source_state_count": 1,
+          "K_divisor_residue_count": 112,
+          "generated_subgroup_order": 130762920,
+          "generated_subgroup_index": 1,
+          "twice_divisor_residue_count": 224,
+          "half_density_deficit": 130762696
+        }
+      ]
+    }
+  ]
+}
