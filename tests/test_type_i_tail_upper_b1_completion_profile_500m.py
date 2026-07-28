@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import math
 import sys
 import unittest
 from pathlib import Path
@@ -17,6 +18,32 @@ SPEC.loader.exec_module(profile)
 
 
 class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
+    def assert_source_first_coordinates(self, prime, certificate):
+        gap = int(certificate["gap"])
+        A, B, C = (int(value) for value in certificate["normal_form"])
+        R = int(certificate["R"])
+        K = int(certificate["K"])
+        E = int(certificate["E"])
+        source = int(certificate["source_denominator"])
+        shift = prime - source
+
+        self.assertEqual(B, 1)
+        self.assertEqual(shift % 2, 1)
+        self.assertGreaterEqual(source, (prime + 1) // 2)
+        self.assertEqual(R % 4, 3)
+        self.assertEqual(E, shift * R + 1)
+        self.assertEqual((source * source // math.gcd(E, 4)) % E, 0)
+        self.assertEqual(K % C, 0)
+        self.assertEqual((4 * C + 1) % R, 0)
+
+        H = K // C
+        self.assertEqual((H + 1) % R, 0)
+        self.assertEqual((4 * C + 1) // R, gap)
+        self.assertEqual(A, (H + 1) // R)
+        self.assertEqual(prime, 4 * A * C - gap)
+        self.assertEqual(4 * K, prime * R + 1)
+        self.assertLess(E, 2 * K)
+
     def test_composed_upper_b1_closure_rebuilds_all_tail_misses(self):
         base = json.loads(
             (
@@ -59,6 +86,38 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         self.assertEqual(
             actual["lower_source_state_direct_gap_extension_record"]["prime"], 218_482_009
         )
+
+    def test_completed_closure_has_source_first_B1_coordinates(self):
+        base = json.loads(
+            (
+                ROOT / "reproductions" / "type-i-tail-reverse-b1-even-source-500m-results.json"
+            ).read_text(encoding="utf-8")
+        )
+        completed = json.loads(
+            (
+                ROOT / "reproductions" / "type-i-tail-upper-b1-completion-profile-500m-results.json"
+            ).read_text(encoding="utf-8")
+        )
+
+        checked = 0
+        for row in base["records"]:
+            prime = int(row["prime"])
+            certificate = profile.stored_witness(prime, row["minimum_b1_source_witness"])
+            if 2 * int(certificate["source_denominator"]) >= prime + 1:
+                self.assert_source_first_coordinates(prime, certificate)
+                checked += 1
+
+        extra_certificates = [
+            *(row["certificate"] for row in completed["lower_source_state_reselected_records"]),
+            completed["lower_source_state_direct_gap_extension_record"]["certificate"],
+            *(row["certificate"] for row in completed["direct_B_eq_1_gap_extension_records"]),
+        ]
+        for certificate in extra_certificates:
+            prime = int(certificate["source_denominator"]) + int(certificate["source_distance"])
+            self.assert_source_first_coordinates(prime, certificate)
+            checked += 1
+
+        self.assertEqual(checked, completed["upper_B_eq_1_closure_count"])
 
 
 if __name__ == "__main__":

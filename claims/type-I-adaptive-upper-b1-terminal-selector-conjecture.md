@@ -62,6 +62,64 @@ A=\frac{x}{C},\qquad H=AR-1.
 所以 (1) 确实给出一张 \(B=1\) Type I 正规形及严格偶源终端桥。上半区条件
 \(E<2K\) 强于原终端选择器仅要求的 \(E\le4K-2R\)。
 
+## 源优先的精确等价形式
+
+第二分支不必先选择缺口 \(m\)。对固定核心素数 \(p\)，它等价于存在正整数
+
+\[
+\begin{aligned}
+&s\equiv1\pmod2,\qquad 1\le s\le\frac{p-1}{2},\qquad
+n=p-s,\\
+&R\equiv3\pmod4,\qquad R\ge3,\qquad
+K=\frac{pR+1}{4},\qquad E=sR+1,\\
+&E\mid\frac{n^2}{\gcd(E,4)},\qquad
+C\mid K,\qquad 4C\equiv-1\pmod R.
+\end{aligned}
+\tag{3}
+\]
+
+这是一种源优先的两层因子选择：\(E\) 是近目标偶源 \(n\) 的归一化平方因子，
+而 \(C\) 是 \(K\) 中落入指定剩余类的普通除子。它不再显式搜索 \(m\) 或目标
+平方除子。
+
+确实，若 (1) 的第二分支成立，令 \(s=p-n\)。由 \(4K=pR+1\) 得
+
+\[
+E=4K-nR=sR+1. \tag{4}
+\]
+
+\(E\) 为偶数且 \(R\) 为奇数，故 \(s\) 为奇数；上半区条件给出
+\(s\le(p-1)/2\)。又 \(mR=4C+1\) 给出 \(R\equiv3\pmod4\)、
+\(4C\equiv-1\pmod R\)，且 \(B=1\) 时 \(C\mid K\)。
+[归一化源平方等价](type-I-normal-source-square-bridge-equivalence.md) 把
+\(E\mid4K^2\) 精确改写为 (3) 中的平方整除条件。
+
+反过来，假设 (3)，写 \(H=K/C\)。由 \(4K\equiv1\pmod R\) 及
+\(4C\equiv-1\pmod R\) 得 \(H\equiv-1\pmod R\)。故
+
+\[
+A=\frac{H+1}{R},\qquad m=\frac{4C+1}{R} \tag{5}
+\]
+
+均为正整数，且 \(m\equiv3\pmod4\)。并有
+
+\[
+p=4AC-m,\qquad
+K=CH=ACR-C,\qquad
+x=AC=\frac{p+m}{4}. \tag{6}
+\]
+
+这里 \(m<(4C+1)/3<2C\le2AC\)，所以 \(m<p=4AC-m\)。平方整除条件与
+(4) 通过同一源平方等价给出 \(E\mid4K^2\)。最后
+
+\[
+n=p-s\ge\frac{p+1}{2}
+\quad\Longleftrightarrow\quad
+E=4K-nR<2K, \tag{7}
+\]
+
+从而完全恢复 (1) 的第二分支。
+
 ## 与原目标的关系
 
 [目标除子与偶终端桥的双因子选择器](type-I-target-divisor-even-terminal-selector.md)
@@ -69,7 +127,7 @@ A=\frac{x}{C},\qquad H=AR-1.
 
 \[
 e=C\mid x,\qquad B=1,
-\tag{3}
+\tag{8}
 \]
 
 并把源限制在上半区。因此
@@ -80,7 +138,7 @@ e=C\mid x,\qquad B=1,
 \text{上半区混合终端选择器}
 \Longrightarrow
 \text{原混合终端选择引理}.
-\tag{4}
+\tag{9}
 \]
 
 反向蕴含目前没有证明，也不应从有限样本推断。
@@ -111,11 +169,11 @@ CRT 逃逸，固定 \(p-1\) 子选择器也有有限盒遗漏；它们只排除*
 \boxed{
 \begin{aligned}
 \text{对每个没有普通双尾的核心素数 \(p\)，}\\
-\text{自适应地构造 \(m,C,E\) 满足 (1) 的全部整除与同余。}
+\text{自适应地构造 \(s,R,C\) 满足源优先条件 (3)。}
 \end{aligned}}
-\tag{5}
+\tag{10}
 \]
 
-其第一层是普通除子 \(C\mid(p+m)/4\) 的残数命中，第二层是 \(E\mid4K^2\) 的偶桥。
-因而证明必须同时选择缺口、目标因子和桥因子；单独控制任一个量、固定有限菜单或把某个
-选定源状态的缺口当作下界，都不足以推出 (5)。
+其第一层是 \(E=sR+1\) 对近目标源平方的整除，第二层是 \(K\) 中普通除子 \(C\) 的
+指定残数命中。因而证明必须同时选择源距离、源平方因子和目标因子；单独控制任一个量、
+固定有限菜单或把某个选定源状态的缺口当作下界，都不足以推出 (3)。
