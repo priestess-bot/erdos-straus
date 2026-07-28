@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-linear-a1-source-boundary-profile-600m
 title: 线性一般 B 选择器的 a 等于一子族边界
-statement: 在线性源p=a+s+asR中限制a=1，等价于穷尽p-1的全部奇因子s并取R=(p-1)/s-1。对冻结的1964个普通Type II压力点，这个子族有15012个源状态并闭合1463点，剩余501点；其中包含214729、297049与878089。因此a=1的p-1因子参数化不是该冻结集上的完备一般B线性选择器，后续跨源理论必须允许a与s两侧均自适应变化。
+statement: 在线性源p=a+s+asR中限制a=1，等价于穷尽p-1的全部奇因子s并取R=(p-1)/s-1。对冻结的1964个普通Type II压力点，这个子族有15012个源状态并闭合1463点，剩余501点；其中包含214729、297049与878089。因此a=1的p-1因子参数化不是该冻结集上的完备一般B线性选择器。由于该子族的目标模数包含于更大的s=1子族，本结果本身不推出必须允许a>1。
 claim_status: computationally_reproduced
 proof_provenance: computational_reproduction
 review_status: internal_review
@@ -96,7 +96,8 @@ R=7\ (911\text{ 点});\;R=23\ (368\text{ 点}),
 替代允许 \(a>1\) 或更一般源平方状态的自适应选择。
 
 本页严格限于冻结压力集。它不证明 \(a=1\) 在全部核心素数上必失败，也不否定完整线性
-一般 \(B\) 选择猜想；它只排除了一个过窄的、完全可枚举的证明收缩。
+一般 \(B\) 选择猜想；它只排除了一个过窄的、完全可枚举的证明收缩。更强的
+\(s=1\) 因子切片边界见[线性 \(s=1\) 子族边界](type-I-linear-s1-source-boundary-profile-600m.md)。
 
 复现：
 

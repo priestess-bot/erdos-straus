@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 270 |
+| 数学状态 | `computationally_reproduced` | 271 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 210 |
 | 数学状态 | `open` | 11 |
-| 证明来源 | `computational_reproduction` | 43 |
+| 证明来源 | `computational_reproduction` | 44 |
 | 证明来源 | `mixed` | 6 |
 | 证明来源 | `repository_derivation` | 35 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 71 |
+| 审阅状态 | `internal_review` | 72 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -278,6 +278,7 @@
 | [七个补偿平方残余的全线性目标谱闭合](../claims/type-I-linear-general-b-spectrum-resolution-profile-600m.md) (`type-I-linear-general-b-spectrum-resolution-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的源块与仿射块混合剖面](../claims/type-I-linear-general-b-two-block-hit-profile-500m.md) (`type-I-linear-general-b-two-block-hit-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的全局线性移位源 B 等于一反例](../claims/type-I-linear-shifted-source-counterexample-878089.md) (`type-I-linear-shifted-source-counterexample-878089`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [六亿压力集的线性源一般 B Type I 有限闭合剖面](../claims/type-I-linear-source-general-b-completion-profile-600m.md) (`type-I-linear-source-general-b-completion-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性上半区一般 B 混合终端选择猜想](../claims/type-I-linear-source-general-b-terminal-selector-conjecture.md) (`type-I-linear-source-general-b-terminal-selector-conjecture`) | `open` | `repository_derivation` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
