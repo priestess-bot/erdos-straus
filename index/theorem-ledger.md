@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 269 |
+| 数学状态 | `computationally_reproduced` | 270 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 210 |
 | 数学状态 | `open` | 11 |
-| 证明来源 | `computational_reproduction` | 42 |
+| 证明来源 | `computational_reproduction` | 43 |
 | 证明来源 | `mixed` | 6 |
 | 证明来源 | `repository_derivation` | 35 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 70 |
+| 审阅状态 | `internal_review` | 71 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -271,6 +271,7 @@
 | [H19双固定尺度边界的全变量偶尺度外源审计](../claims/type-I-h19-variable-even-scale-after-k6-1b.md) (`type-I-h19-variable-even-scale-after-k6-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
+| [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点全线性目标谱的角色与有限指数混合剖面](../claims/type-I-linear-general-b-obstruction-mixture-profile-600m.md) (`type-I-linear-general-b-obstruction-mixture-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
