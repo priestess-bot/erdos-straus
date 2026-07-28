@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 250 |
+| 数学状态 | `computationally_reproduced` | 262 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 199 |
-| 数学状态 | `open` | 10 |
-| 证明来源 | `computational_reproduction` | 23 |
+| 数学状态 | `established` | 203 |
+| 数学状态 | `open` | 11 |
+| 证明来源 | `computational_reproduction` | 35 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 23 |
+| 证明来源 | `repository_derivation` | 28 |
 | 证明来源 | `unspecified` | 428 |
-| 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 46 |
+| 审阅状态 | `independent_review` | 13 |
+| 审阅状态 | `internal_review` | 56 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -215,7 +215,7 @@
 | [B等于一移位源避开同正规形p减一桥与同缺口Type II的无穷射线](../claims/type-I-b1-shifted-source-pminusone-nonoverlap-ray.md) (`type-I-b1-shifted-source-pminusone-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B等于一p减一桥的无界平方缺额同缺口非重叠射线](../claims/type-I-b1-square-essential-same-gap-nonoverlap-ray.md) (`type-I-b1-square-essential-same-gap-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
-| [两条移位因子分支的B等于一上半区桥有二维筛残余](../claims/type-I-b1-two-shift-density-bridge.md) (`type-I-b1-two-shift-density-bridge`) | `established` | `repository_derivation` | `internal_review` | `elsholtz_tao2013`, `bradford2024` | 2026-07-28 |
+| [两条移位因子分支的B等于一上半区桥有二维筛残余](../claims/type-I-b1-two-shift-density-bridge.md) (`type-I-b1-two-shift-density-bridge`) | `established` | `repository_derivation` | `independent_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [B不大于4最大尾偶源选择器的首个失败点](../claims/type-I-b4-prefix-boundary-21169.md) (`type-I-b4-prefix-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-10m.md) (`type-I-b5-maximum-tail-even-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -230,9 +230,16 @@
 | [深层 AC 条件逃逸进程的统一固定缺口 Type I 边界](../claims/type-I-escape-affine-boundary.md) (`type-I-escape-affine-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-25 |
 | [偶二次外源严格提升精确落入 Type I 正规形终端桥](../claims/type-I-even-external-source-normal-bridge.md) (`type-I-even-external-source-normal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [五亿偶桥支撑三或平移外源的终止混合闭合](../claims/type-I-even-source-support-external-hybrid-500m.md) (`type-I-even-source-support-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
+| [Type I 有限指数障碍的五十层中心化盒边界](../claims/type-I-finite-exponent-dilation-boundary-297640249.md) (`type-I-finite-exponent-dilation-boundary-297640249`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [十六桥模板的CRT无穷源侧逃逸](../claims/type-I-fixed-bridge-menu-crt-escape.md) (`type-I-fixed-bridge-menu-crt-escape`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [每个自然缺口都有无穷Type I/II双终端重叠射线](../claims/type-I-fixed-gap-b1-pminusone-terminal-rays.md) (`type-I-fixed-gap-b1-pminusone-terminal-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [固定 p 减一射线将六亿普通尾压力集压缩至二十五点](../claims/type-I-fixed-pminusone-ray-pressure-profile-600m.md) (`type-I-fixed-pminusone-ray-pressure-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [固定 p 减一射线残余的三层自适应解析](../claims/type-I-fixed-ray-residual-resolution-600m.md) (`type-I-fixed-ray-residual-resolution-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [固定源窗口不能判定线性 B 等于一逃逸的平方本质](../claims/type-I-fixed-source-window-linear-escape-boundary-600m.md) (`type-I-fixed-source-window-linear-escape-boundary-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [核心素数的九条固定 p 减一 B 等于一因子射线](../claims/type-I-fixed-universal-pminusone-b1-rays.md) (`type-I-fixed-universal-pminusone-b1-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [一般 B 目标平方除子的中心化谱与精确障碍二分](../claims/type-I-general-b-centered-square-spectrum.md) (`type-I-general-b-centered-square-spectrum`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [五亿全局 p 减一遗漏的线性 B 等于一失败与一般 B 障碍剖面](../claims/type-I-global-linear-b1-failure-general-b-profile-500m.md) (`type-I-global-linear-b1-failure-general-b-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [H19-k23 残存进程的完整统一仿射 Type I 审计](../claims/type-I-h19-affine-uniform-square-audit.md) (`type-I-h19-affine-uniform-square-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19偶桥的B等于1源状态实现边界](../claims/type-I-h19-b1-source-state-boundary-1b.md) (`type-I-h19-b1-source-state-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [H19 十亿源自由残余的偶源反向二尾闭合](../claims/type-I-h19-even-source-closure-1b.md) (`type-I-h19-even-source-closure-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
@@ -254,6 +261,13 @@
 | [H19双固定尺度边界的全变量偶尺度外源审计](../claims/type-I-h19-variable-even-scale-after-k6-1b.md) (`type-I-h19-variable-even-scale-after-k6-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
+| [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性一般 B 命中的源块与仿射块混合剖面](../claims/type-I-linear-general-b-two-block-hit-profile-500m.md) (`type-I-linear-general-b-two-block-hit-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [878089 的全局线性移位源 B 等于一反例](../claims/type-I-linear-shifted-source-counterexample-878089.md) (`type-I-linear-shifted-source-counterexample-878089`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [六亿压力集的线性源一般 B Type I 有限闭合剖面](../claims/type-I-linear-source-general-b-completion-profile-600m.md) (`type-I-linear-source-general-b-completion-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [线性上半区一般 B 混合终端选择猜想](../claims/type-I-linear-source-general-b-terminal-selector-conjecture.md) (`type-I-linear-source-general-b-terminal-selector-conjecture`) | `open` | `repository_derivation` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续区间的 Type I 回退全部可选上半区偶源](../claims/type-I-mixed-terminal-dense-small-side-profile-600m.md) (`type-I-mixed-terminal-dense-small-side-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -282,6 +296,8 @@
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I的p减一B一二除子剩余类选择器](../claims/type-I-pminusone-b12-divisor-residue-selector.md) (`type-I-pminusone-b12-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [五亿有限盒 p 减一遗漏的全正规形全局审计](../claims/type-I-pminusone-box-miss-global-audit-500m.md) (`type-I-pminusone-box-miss-global-audit-500m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |
+| [297049 的全正规形 p 减一 Type I 最大尾终端桥排除](../claims/type-I-pminusone-global-exclusion-297049.md) (`type-I-pminusone-global-exclusion-297049`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |
 | [五亿p减一遗漏最短源状态的三级指数溢出边界](../claims/type-I-pminusone-miss-source-overflow-profile-500m.md) (`type-I-pminusone-miss-source-overflow-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p减一遗漏的127个上半区源状态菜单存在CRT逃逸](../claims/type-I-pminusone-miss-state-menu-crt-escape-500m.md) (`type-I-pminusone-miss-state-menu-crt-escape-500m`) | `established` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿 p减一遗漏经四缺口扩展的上半区 B 等于一状态闭合](../claims/type-I-pminusone-miss-upper-b1-gap-extension-500m.md) (`type-I-pminusone-miss-upper-b1-gap-extension-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -295,6 +311,7 @@
 | [小 B 小缺口 Type I 严格递降的两千万剖面](../claims/type-I-small-b-tail-deflation-profile.md) (`type-I-small-b-tail-deflation-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [变量除子 Type I 小缺口扇在一千万内全覆盖](../claims/type-I-small-gap-variable-divisor-profile.md) (`type-I-small-gap-variable-divisor-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I源平方桥条件的精确同余模数](../claims/type-I-source-square-congruence-modulus.md) (`type-I-source-square-congruence-modulus`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [Type I 源平方状态的唯一正规分解与双因子块](../claims/type-I-source-square-normal-factorization.md) (`type-I-source-square-normal-factorization`) | `established` | `repository_derivation` | `independent_review` | `bradford2024` | 2026-07-28 |
 | [Type I源状态B等于1失败的平方除子溢出剖面](../claims/type-I-source-state-b1-overflow-profile.md) (`type-I-source-state-b1-overflow-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I源状态B等于1失败的有限积集边界](../claims/type-I-source-state-b1-product-boundary.md) (`type-I-source-state-b1-product-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I源状态的一重复因子选择器与两重复边界](../claims/type-I-source-state-one-repeat-boundary.md) (`type-I-source-state-one-repeat-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

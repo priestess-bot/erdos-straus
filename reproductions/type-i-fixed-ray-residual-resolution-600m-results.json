@@ -1,0 +1,451 @@
+{
+  "arithmetic": "partition the frozen 25-point fixed-ray residual by the stored short-box p-1 witnesses, the unbounded p-1 extension audit, and finally the beta=1 linear-source B=1 or general-B audits; reconstruct both target and source identities for every selected witness",
+  "scope_note": "This joins existing finite audits. It does not turn the p-1 or linear-source finite profiles into universal selectors.",
+  "fixed_ray_input": "type-i-fixed-pminusone-ray-pressure-profile-600m-results.json",
+  "short_box_input": "type-i-tail-reverse-pminusone-profile-500m-results.json",
+  "global_pminusone_input": "type-i-pminusone-box-miss-global-audit-500m-results.json",
+  "linear_input": "type-i-global-linear-b1-failure-general-b-profile-500m-results.json",
+  "fixed_ray_residual_count": 25,
+  "global_pminusone_failure_count_within_residual": 11,
+  "resolution_counts": {
+    "pminusone_short_box": 2,
+    "pminusone_global_extension": 12,
+    "linear_B1_after_global_pminusone_failure": 10,
+    "linear_general_B_after_B1_failure": 1
+  },
+  "records": [
+    {
+      "prime": 297049,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 1046,
+        "B": 1,
+        "C": 71,
+        "H": 19873,
+        "m": 15,
+        "R": 19,
+        "K": 1410983,
+        "E": 2414,
+        "source_denominator": 296922,
+        "source_term": 173550909,
+        "a": 123,
+        "s": 127,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 3942409,
+      "classification": "linear_general_B_after_B1_failure",
+      "witness": {
+        "A": 132,
+        "B": 7,
+        "C": 1067,
+        "H": 22565,
+        "m": 1223,
+        "R": 171,
+        "K": 168537985,
+        "E": 1540,
+        "source_denominator": 3942400,
+        "source_term": 431457241600,
+        "a": 2560,
+        "s": 9,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 19504489,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 94,
+        "B": 1,
+        "C": 51881,
+        "H": 7049,
+        "m": 2767,
+        "R": 75,
+        "K": 365709169,
+        "E": 76,
+        "source_denominator": 19504488,
+        "source_term": 93854869713822
+      }
+    },
+    {
+      "prime": 36583369,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 1001,
+        "B": 1,
+        "C": 9137,
+        "H": 31030,
+        "m": 1179,
+        "R": 31,
+        "K": 283521110,
+        "E": 529946,
+        "source_denominator": 36566274,
+        "source_term": 19562956590,
+        "a": 69,
+        "s": 17095,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 40944649,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 194,
+        "B": 1,
+        "C": 52767,
+        "H": 16101,
+        "m": 2543,
+        "R": 83,
+        "K": 849601467,
+        "E": 1320282,
+        "source_denominator": 40928742,
+        "source_term": 26337645477,
+        "a": 31,
+        "s": 15907,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 42486889,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 9,
+        "B": 10,
+        "C": 118894,
+        "H": 1349,
+        "m": 314951,
+        "R": 151,
+        "K": 1603880060,
+        "E": 152,
+        "source_denominator": 42486888,
+        "source_term": 448314950491140
+      }
+    },
+    {
+      "prime": 53712409,
+      "classification": "pminusone_short_box",
+      "witness": {
+        "A": 10021,
+        "B": 2,
+        "C": 670,
+        "H": 711489,
+        "m": 151,
+        "R": 71,
+        "K": 953395260,
+        "E": 72,
+        "source_denominator": 53712408,
+        "source_term": 711238266533140
+      }
+    },
+    {
+      "prime": 57399241,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 13226,
+        "B": 7,
+        "C": 155,
+        "H": 251287,
+        "m": 1599,
+        "R": 19,
+        "K": 272646395,
+        "E": 20,
+        "source_denominator": 57399240,
+        "source_term": 782484793086990
+      }
+    },
+    {
+      "prime": 72148729,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 13613,
+        "B": 1,
+        "C": 1325,
+        "H": 422002,
+        "m": 171,
+        "R": 31,
+        "K": 559152650,
+        "E": 490700,
+        "source_denominator": 72132900,
+        "source_term": 82195439550,
+        "a": 147,
+        "s": 15829,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 82282489,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 173,
+        "B": 2617,
+        "C": 67,
+        "H": 5514,
+        "m": 39052099,
+        "R": 47,
+        "K": 966819246,
+        "E": 48,
+        "source_denominator": 82282488,
+        "source_term": 1657339437649251
+      }
+    },
+    {
+      "prime": 119091289,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 55,
+        "B": 3,
+        "C": 180651,
+        "H": 2582,
+        "m": 138371,
+        "R": 47,
+        "K": 1399322646,
+        "E": 48,
+        "source_denominator": 119091288,
+        "source_term": 3471815338327251
+      }
+    },
+    {
+      "prime": 171292489,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 6,
+        "B": 1,
+        "C": 7146279,
+        "H": 785,
+        "m": 218207,
+        "R": 131,
+        "K": 5609829015,
+        "E": 1134330,
+        "source_denominator": 171283830,
+        "source_term": 847084181265,
+        "a": 151,
+        "s": 8659,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 172657489,
+      "classification": "pminusone_short_box",
+      "witness": {
+        "A": 87025,
+        "B": 8,
+        "C": 62,
+        "H": 12444567,
+        "m": 111,
+        "R": 143,
+        "K": 6172505232,
+        "E": 144,
+        "source_denominator": 172657488,
+        "source_term": 7400897555722064
+      }
+    },
+    {
+      "prime": 174600409,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 442,
+        "B": 33,
+        "C": 2999,
+        "H": 15437,
+        "m": 373247,
+        "R": 35,
+        "K": 1527753579,
+        "E": 36,
+        "source_denominator": 174600408,
+        "source_term": 7409622172690562
+      }
+    },
+    {
+      "prime": 176110489,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 7538,
+        "B": 11,
+        "C": 531,
+        "H": 263819,
+        "m": 7343,
+        "R": 35,
+        "K": 1540966779,
+        "E": 36,
+        "source_denominator": 176110488,
+        "source_term": 7538344762263282
+      }
+    },
+    {
+      "prime": 212973049,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 10391,
+        "B": 28,
+        "C": 183,
+        "H": 6722949,
+        "m": 887,
+        "R": 647,
+        "K": 34448390676,
+        "E": 648,
+        "source_denominator": 212973048,
+        "source_term": 11321880803954476
+      }
+    },
+    {
+      "prime": 239182969,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 409,
+        "B": 4,
+        "C": 36555,
+        "H": 29035,
+        "m": 32951,
+        "R": 71,
+        "K": 4245497700,
+        "E": 72,
+        "source_denominator": 239182968,
+        "source_term": 14103482507266300
+      }
+    },
+    {
+      "prime": 259423609,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 71664,
+        "B": 1,
+        "C": 905,
+        "H": 3654863,
+        "m": 71,
+        "R": 51,
+        "K": 3307651015,
+        "E": 64539532,
+        "source_denominator": 258158128,
+        "source_term": 13230604060,
+        "a": 4,
+        "s": 1265481,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 319207849,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 16553,
+        "B": 1,
+        "C": 4821,
+        "H": 1572534,
+        "m": 203,
+        "R": 95,
+        "K": 7581186414,
+        "E": 53108136,
+        "source_denominator": 318648816,
+        "source_term": 45487118484,
+        "a": 6,
+        "s": 559033,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 328186681,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 11548,
+        "B": 5,
+        "C": 1421,
+        "H": 219407,
+        "m": 7479,
+        "R": 19,
+        "K": 1558886735,
+        "E": 20,
+        "source_denominator": 328186680,
+        "source_term": 25580293102784490
+      }
+    },
+    {
+      "prime": 340352329,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 17921,
+        "B": 4,
+        "C": 1187,
+        "H": 412179,
+        "m": 3303,
+        "R": 23,
+        "K": 1957025892,
+        "E": 24,
+        "source_denominator": 340352328,
+        "source_term": 27753263262436524
+      }
+    },
+    {
+      "prime": 401991529,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 461,
+        "B": 1,
+        "C": 218015,
+        "H": 14290,
+        "m": 28131,
+        "R": 31,
+        "K": 3115434350,
+        "E": 280,
+        "source_denominator": 401991520,
+        "source_term": 4472779249345400,
+        "a": 1435684,
+        "s": 9,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 405660649,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 506,
+        "B": 1,
+        "C": 200438,
+        "H": 15685,
+        "m": 25863,
+        "R": 31,
+        "K": 3143870030,
+        "E": 4360430,
+        "source_denominator": 405519990,
+        "source_term": 292379912790,
+        "a": 93,
+        "s": 140659,
+        "beta": 1
+      }
+    },
+    {
+      "prime": 437817769,
+      "classification": "pminusone_global_extension",
+      "witness": {
+        "A": 123,
+        "B": 37342,
+        "C": 34,
+        "H": 87503,
+        "m": 186839207,
+        "R": 1015,
+        "K": 111096258884,
+        "E": 1016,
+        "source_denominator": 437817768,
+        "source_term": 47873933167069932
+      }
+    },
+    {
+      "prime": 459147049,
+      "classification": "linear_B1_after_global_pminusone_failure",
+      "witness": {
+        "A": 236,
+        "B": 1,
+        "C": 486425,
+        "H": 12035,
+        "m": 38151,
+        "R": 51,
+        "K": 5854124875,
+        "E": 601750,
+        "source_denominator": 459135250,
+        "source_term": 4466697279625,
+        "a": 763,
+        "s": 11799,
+        "beta": 1
+      }
+    }
+  ]
+}
