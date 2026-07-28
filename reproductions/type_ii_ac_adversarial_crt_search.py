@@ -302,9 +302,9 @@ def ray_profile(
 
 
 def run_search(
-    fan_bound: int = 6,
+    fan_bound: int = 10,
     prime_bound: int = 29,
-    candidate_count: int = 5,
+    candidate_count: int = 34,
     scan_limit: int = 100_000,
 ) -> dict[str, object]:
     """Find prime representatives of one adversarial CRT progression."""
@@ -380,9 +380,9 @@ def run_search(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--fan-bound", type=int, default=6)
+    parser.add_argument("--fan-bound", type=int, default=10)
     parser.add_argument("--prime-bound", type=int, default=29)
-    parser.add_argument("--candidate-count", type=int, default=5)
+    parser.add_argument("--candidate-count", type=int, default=34)
     parser.add_argument("--scan-limit", type=int, default=100_000)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
