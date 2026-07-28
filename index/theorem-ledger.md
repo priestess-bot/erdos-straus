@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 296 |
+| 数学状态 | `computationally_reproduced` | 297 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 228 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 66 |
+| 证明来源 | `computational_reproduction` | 67 |
 | 证明来源 | `mixed` | 7 |
 | 证明来源 | `repository_derivation` | 57 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 117 |
+| 审阅状态 | `internal_review` | 118 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -323,6 +323,7 @@
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿至七亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-700m.md) (`type-I-mixed-terminal-dense-700m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [七亿至八亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-800m.md) (`type-I-mixed-terminal-dense-800m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
+| [八亿至九亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-900m.md) (`type-I-mixed-terminal-dense-900m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续区间的 Type I 回退全部可选上半区偶源](../claims/type-I-mixed-terminal-dense-small-side-profile-600m.md) (`type-I-mixed-terminal-dense-small-side-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续区间经上半区源重选的 B 等于一闭合](../claims/type-I-mixed-terminal-dense-upper-b1-reselection-profile-600m.md) (`type-I-mixed-terminal-dense-upper-b1-reselection-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
