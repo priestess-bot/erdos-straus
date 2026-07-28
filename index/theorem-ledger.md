@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 271 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 210 |
+| 数学状态 | `established` | 217 |
 | 数学状态 | `open` | 11 |
 | 证明来源 | `computational_reproduction` | 44 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 35 |
-| 证明来源 | `unspecified` | 428 |
+| 证明来源 | `repository_derivation` | 43 |
+| 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 72 |
-| 审阅状态 | `unspecified` | 428 |
+| 审阅状态 | `internal_review` | 80 |
+| 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
 
@@ -72,6 +72,9 @@
 | [缺口 m=3 的 fab 平移半覆盖障碍](../claims/gap-three-fab-translation-obstruction.md) (`gap-three-fab-translation-obstruction`) | `established` | `unspecified` | `unspecified` | `bello2026` | 2026-07-23 |
 | [缺口 m=3 递降的二分母保留障碍](../claims/gap-three-two-denominator-lift-obstruction.md) (`gap-three-two-denominator-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `bright_loughran2020` | 2026-07-23 |
 | [几何 lcm 边界解等价于 A=1 的 Type I 证书](../claims/geometric-lcm-boundary-type-I-equivalence.md) (`geometric-lcm-boundary-type-I-equivalence`) | `established` | `unspecified` | `unspecified` | `bradford_ionascu2015`, `bradford2024` | 2026-07-23 |
+| [Ghermoul 2025 多项式覆盖的核心残余恰为 p 等于 1 模 24](../claims/ghermoul-2025-core-residual-reduction.md) (`ghermoul-2025-core-residual-reduction`) | `established` | `repository_derivation` | `internal_review` | `ghermoul2025` | 2026-07-28 |
+| [Ghermoul 第二多项式族与 B 等于一 Type I 正规形完全等价](../claims/ghermoul-2025-p2-b1-normal-form-equivalence.md) (`ghermoul-2025-p2-b1-normal-form-equivalence`) | `established` | `repository_derivation` | `internal_review` | `ghermoul2025`, `bradford2024` | 2026-07-28 |
+| [Ghermoul 第二族固定正规形的线性终端桥因子对等价](../claims/ghermoul-2025-p2-linear-terminal-factor-pair-equivalence.md) (`ghermoul-2025-p2-linear-terminal-factor-pair-equivalence`) | `established` | `repository_derivation` | `internal_review` | `ghermoul2025`, `bradford2024` | 2026-07-28 |
 | [Erdős--Straus 的单步贪心终端并不总能二项分裂](../claims/greedy-one-step-terminal-obstruction.md) (`greedy-one-step-terminal-obstruction`) | `established` | `unspecified` | `unspecified` | `roy_hgdd2026` | 2026-07-24 |
 | [H19-k23 十四条残存进程的有限自适应尺度递降审计](../claims/h19-k23-adaptive-multiscale-audit.md) (`h19-k23-adaptive-multiscale-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19-k23 十四条残存进程的条件性静态尺度共同逃逸](../claims/h19-k23-conditional-static-scale-escape.md) (`h19-k23-conditional-static-scale-escape`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
@@ -273,6 +276,7 @@
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性源模数之间的公因子刚性与共享指数层](../claims/type-I-linear-cross-modulus-gcd-rigidity.md) (`type-I-linear-cross-modulus-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点全线性目标谱的角色与有限指数混合剖面](../claims/type-I-linear-general-b-obstruction-mixture-profile-600m.md) (`type-I-linear-general-b-obstruction-mixture-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七个补偿平方残余的全线性目标谱闭合](../claims/type-I-linear-general-b-spectrum-resolution-profile-600m.md) (`type-I-linear-general-b-spectrum-resolution-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -280,8 +284,10 @@
 | [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的全局线性移位源 B 等于一反例](../claims/type-I-linear-shifted-source-counterexample-878089.md) (`type-I-linear-shifted-source-counterexample-878089`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [线性源的固定 s 因子转移、K' 因子实现与完整谱边界](../claims/type-I-linear-source-factor-transfer-rigidity.md) (`type-I-linear-source-factor-transfer-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [六亿压力集的线性源一般 B Type I 有限闭合剖面](../claims/type-I-linear-source-general-b-completion-profile-600m.md) (`type-I-linear-source-general-b-completion-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性上半区一般 B 混合终端选择猜想](../claims/type-I-linear-source-general-b-terminal-selector-conjecture.md) (`type-I-linear-source-general-b-terminal-selector-conjecture`) | `open` | `repository_derivation` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [线性源的变 s 因子转移及双转移闭包边界](../claims/type-I-linear-source-shift-transfer-closure-boundary.md) (`type-I-linear-source-shift-transfer-closure-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续区间的 Type I 回退全部可选上半区偶源](../claims/type-I-mixed-terminal-dense-small-side-profile-600m.md) (`type-I-mixed-terminal-dense-small-side-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -359,11 +365,12 @@
 | [深层 AC 条件逃逸进程不存在统一仿射 Type II 射线](../claims/type-II-ac-escape-affine-ray-boundary.md) (`type-II-ac-escape-affine-ray-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
 | [有界 A,C、可变 K 的 Type II 因子射线在 5*10^8 内全覆盖](../claims/type-II-ac-ray-audit.md) (`type-II-ac-ray-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [有界 A,C 的 Type II 因子射线饱和猜想](../claims/type-II-ac-ray-saturation-conjecture.md) (`type-II-ac-ray-saturation-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-27 |
-| [Type II 的 AC 因子射线共同残余可达到任意对数幂稀薄](../claims/type-II-ac-rays-superlog-residual.md) (`type-II-ac-rays-superlog-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024`, `chamberland2026` | 2026-07-24 |
+| [Type II 的 AC 因子射线共同残余可达到任意对数幂稀薄](../claims/type-II-ac-rays-superlog-residual.md) (`type-II-ac-rays-superlog-residual`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `elsholtz_tao2013`, `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [十九移位残余的自适应新因子过渡谱](../claims/type-II-adaptive-factor-transition.md) (`type-II-adaptive-factor-transition`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [统一仿射 Type II 除子的平方因子刚性正规形](../claims/type-II-affine-uniform-divisor-rigidity.md) (`type-II-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [四自动缺口残余到 k=1 与 k>1 共享证书的精确漏斗](../claims/type-II-automatic-residual-k-one-funnel.md) (`type-II-automatic-residual-k-one-funnel`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [核心同余类上自动共享因子缺口的完全分类](../claims/type-II-automatic-shared-gap-classification.md) (`type-II-automatic-shared-gap-classification`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
+| [规范 Type II 扇不能长期全为一孔临界失败](../claims/type-II-canonical-critical-fan-escape-trichotomy.md) (`type-II-canonical-critical-fan-escape-trichotomy`) | `established` | `repository_derivation` | `internal_review` | `montgomery_vaughan2007`, `chamberland2026` | 2026-07-28 |
 | [规范移位扇具有显式模数与横截面熵界](../claims/type-II-canonical-fan-uniform-sieve-interface.md) (`type-II-canonical-fan-uniform-sieve-interface`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `chamberland2026` | 2026-07-24 |
 | [规范首次移位的固定阈值尾部可达任意对数幂](../claims/type-II-canonical-shift-tail-sieve.md) (`type-II-canonical-shift-tail-sieve`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `chamberland2026` | 2026-07-24 |
 | [小规范移位共同失败以支撑外二次深度零为主](../claims/type-II-canonical-small-shift-joint-profile.md) (`type-II-canonical-small-shift-joint-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `chamberland2026` | 2026-07-24 |
