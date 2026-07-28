@@ -87,8 +87,8 @@ def direct_generated_subgroup(modulus, generators):
     return reached
 
 
-def independent_component_membership(factors, modulus):
-    """Reconstruct the finite unit-group membership test from raw arithmetic."""
+def independent_component_coordinates(factors, modulus):
+    """Recover unit-group coordinates without using the production helper."""
     R_factors = sorted((int(p), int(e)) for p, e in sympy.factorint(modulus).items())
     components = [p**e for p, e in R_factors]
     orders = [int(sympy.totient(component)) for component in components]
@@ -100,8 +100,23 @@ def independent_component_membership(factors, modulus):
         ]
         for prime in factors
     ]
-    dimension = len(components)
+    return orders, generator_vectors, [order // 2 for order in orders]
+
+
+def independent_component_membership(
+    orders, generator_vectors, target, two_power_saturation_depth=None
+):
+    """Solve target membership after adding an optional 2-power saturation."""
+    dimension = len(orders)
     columns = [*generator_vectors]
+    if two_power_saturation_depth is not None:
+        power = 1 << two_power_saturation_depth
+        columns.extend(
+            [
+                [power if row == column else 0 for row in range(dimension)]
+                for column in range(dimension)
+            ]
+        )
     columns.extend(
         [
             [orders[row] if row == column else 0 for row in range(dimension)]
@@ -114,8 +129,7 @@ def independent_component_membership(factors, modulus):
         lambda row, column: columns[column][row],
     )
     hnf = hermite_normal_form(lattice)
-    target = Matrix([order // 2 for order in orders])
-    coordinates = hnf.inv() * target
+    coordinates = hnf.inv() * Matrix(target)
     return (
         all(value.q == 1 for value in coordinates),
         [
@@ -166,6 +180,10 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
         self.assertEqual(
             self.actual["aggregate_general_B_classification_counts"],
             {"hit": 12, "finite_exponent": 53, "subgroup_character": 126},
+        )
+        self.assertEqual(
+            self.actual["aggregate_subgroup_character_two_power_depth_counts"],
+            {"0": 124, "1": 2},
         )
 
     def test_B1_boundary_samples_use_independent_two_channel_enumeration(self):
@@ -297,10 +315,11 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
                     )
 
                     subgroup = record["unit_group_subgroup_certificate"]
+                    component_data = independent_component_coordinates(
+                        sorted(int(q) for q in factors), R
+                    )
                     target_in_group, hnf, coordinates = (
-                        independent_component_membership(
-                            sorted(int(q) for q in factors), R
-                        )
+                        independent_component_membership(*component_data)
                     )
                     self.assertEqual(
                         subgroup["column_lattice_hermite_normal_form"], hnf
@@ -319,6 +338,38 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
                         else "subgroup_character"
                     )
                     self.assertEqual(record["classification"], expected_class)
+                    if expected_class == "subgroup_character":
+                        max_two_adic_order = max(
+                            (order & -order).bit_length() - 1
+                            for order in component_data[0]
+                        )
+                        last_member_depth = None
+                        for saturation_depth in range(max_two_adic_order + 2):
+                            target_in_saturation, _, _ = (
+                                independent_component_membership(
+                                    *component_data,
+                                    two_power_saturation_depth=saturation_depth,
+                                )
+                            )
+                            if target_in_saturation:
+                                last_member_depth = saturation_depth
+                            else:
+                                break
+                        self.assertIsNotNone(last_member_depth)
+                        expected_depth = int(last_member_depth)
+                        self.assertEqual(
+                            record["subgroup_character_two_power_depth"],
+                            expected_depth,
+                        )
+                        self.assertEqual(
+                            record["minimal_separating_two_power_character_order"],
+                            1 << (expected_depth + 1),
+                        )
+                    else:
+                        self.assertIsNone(record["subgroup_character_two_power_depth"])
+                        self.assertIsNone(
+                            record["minimal_separating_two_power_character_order"]
+                        )
                     self.assertEqual(
                         record["source_states"],
                         [[a, s] for a, s in oracle_states[R]],
@@ -328,6 +379,24 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
                     if R <= 10_000:
                         generated = direct_generated_subgroup(R, factors)
                         self.assertEqual((R - 1) in generated, target_in_group)
+
+            expected_depth_counts = {
+                str(depth): sum(
+                    record["classification"] == "subgroup_character"
+                    and int(record["subgroup_character_two_power_depth"]) == depth
+                    for record in records
+                )
+                for depth in (0, 1)
+                if any(
+                    record["classification"] == "subgroup_character"
+                    and int(record["subgroup_character_two_power_depth"]) == depth
+                    for record in records
+                )
+            }
+            self.assertEqual(
+                prime_profile["subgroup_character_two_power_depth_counts"],
+                expected_depth_counts,
+            )
 
     def test_selected_general_B_witnesses_are_non_B1_and_replay(self):
         for prime, record in self.general_profiles.items():

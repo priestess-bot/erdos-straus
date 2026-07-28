@@ -66,6 +66,7 @@ EXPECTED_GENERAL_B_PROFILES = {
             "finite_exponent": 6,
             "subgroup_character": 28,
         },
+        "subgroup_character_two_power_depth_counts": {"0": 27, "1": 1},
         "hit_R": [171, 199, 391, 10_951],
     },
     62_588_089: {
@@ -75,6 +76,7 @@ EXPECTED_GENERAL_B_PROFILES = {
             "finite_exponent": 20,
             "subgroup_character": 30,
         },
+        "subgroup_character_two_power_depth_counts": {"0": 30},
         "hit_R": [103, 495],
     },
     297_640_249: {
@@ -84,6 +86,7 @@ EXPECTED_GENERAL_B_PROFILES = {
             "finite_exponent": 17,
             "subgroup_character": 34,
         },
+        "subgroup_character_two_power_depth_counts": {"0": 34},
         "hit_R": [55, 231, 1_751, 6_431],
     },
     477_015_289: {
@@ -93,6 +96,7 @@ EXPECTED_GENERAL_B_PROFILES = {
             "finite_exponent": 10,
             "subgroup_character": 34,
         },
+        "subgroup_character_two_power_depth_counts": {"0": 33, "1": 1},
         "hit_R": [43, 51],
     },
 }
@@ -289,6 +293,84 @@ def solve_upper_hnf_membership(
     }
 
 
+def component_lattice_hnf(
+    generator_log_vectors: list[list[int]],
+    component_orders: list[int],
+    two_power_saturation_depth: int | None = None,
+) -> Matrix:
+    """Return the coordinate lattice for a support subgroup and optional powers."""
+    if not component_orders:
+        raise ValueError("a unit group needs at least one cyclic component")
+    if two_power_saturation_depth is not None and two_power_saturation_depth < 0:
+        raise ValueError("two-power saturation depth must be nonnegative")
+    dimension = len(component_orders)
+    if any(len(vector) != dimension for vector in generator_log_vectors):
+        raise AssertionError("generator coordinate vectors have the wrong dimension")
+    columns = [*generator_log_vectors]
+    if two_power_saturation_depth is not None:
+        power = 1 << two_power_saturation_depth
+        columns.extend(
+            [
+                [power if row == column else 0 for row in range(dimension)]
+                for column in range(dimension)
+            ]
+        )
+    columns.extend(
+        [
+            [component_orders[row] if row == column else 0 for row in range(dimension)]
+            for column in range(dimension)
+        ]
+    )
+    lattice = Matrix(
+        dimension,
+        len(columns),
+        lambda row, column: columns[column][row],
+    )
+    return hermite_normal_form(lattice)
+
+
+def two_power_character_depth(
+    certificate: dict[str, object],
+) -> dict[str, int]:
+    """Find the last 2-power saturation containing -1 outside the support."""
+    component_orders = [
+        int(component["order"])
+        for component in certificate["components"]
+        if isinstance(component, dict)
+    ]
+    generator_log_vectors = [
+        [int(value) for value in vector]
+        for vector in certificate["generator_log_vectors"]
+    ]
+    target_vector = [
+        int(value) for value in certificate["target_log_vector_for_minus_one"]
+    ]
+    if len(component_orders) != len(target_vector):
+        raise AssertionError("component orders and target vector disagree")
+    max_two_adic_order = max(
+        (order & -order).bit_length() - 1 for order in component_orders
+    )
+    last_member_depth: int | None = None
+    for depth in range(max_two_adic_order + 2):
+        hnf = component_lattice_hnf(
+            generator_log_vectors,
+            component_orders,
+            two_power_saturation_depth=depth,
+        )
+        target_in_saturation, _ = solve_upper_hnf_membership(hnf, target_vector)
+        if target_in_saturation:
+            last_member_depth = depth
+            continue
+        if last_member_depth is None:
+            raise AssertionError("the depth-zero saturation must be the whole group")
+        return {
+            "two_power_saturation_depth": last_member_depth,
+            "minimal_separating_two_power_character_order": 1
+            << (last_member_depth + 1),
+        }
+    raise AssertionError("two-power saturation did not exclude -1")
+
+
 def unit_group_subgroup_certificate(
     factors: list[tuple[int, int]], R: int
 ) -> dict[str, object]:
@@ -325,19 +407,7 @@ def unit_group_subgroup_certificate(
         generator_log_vectors.append(logs)
 
     dimension = len(component_moduli)
-    columns = [*generator_log_vectors]
-    columns.extend(
-        [
-            [component_orders[row] if row == column else 0 for row in range(dimension)]
-            for column in range(dimension)
-        ]
-    )
-    lattice = Matrix(
-        dimension,
-        len(columns),
-        lambda row, column: columns[column][row],
-    )
-    hnf = hermite_normal_form(lattice)
+    hnf = component_lattice_hnf(generator_log_vectors, component_orders)
     target_in_subgroup, membership = solve_upper_hnf_membership(hnf, target_vector)
     return {
         "R_factorization": factorization_payload(R_factors),
@@ -529,6 +599,11 @@ def classify_general_B_modulus(
         if target_in_subgroup
         else "subgroup_character"
     )
+    two_power_depth = (
+        two_power_character_depth(subgroup_certificate)
+        if classification == "subgroup_character"
+        else None
+    )
     least_match = min(matches) if matches else None
     if least_match is not None:
         complement = K * K // least_match
@@ -550,6 +625,16 @@ def classify_general_B_modulus(
         "target_divisor_residue": target_divisor_residue,
         "minus_one_in_centered_spectrum": target_in_centered,
         "classification": classification,
+        "subgroup_character_two_power_depth": (
+            two_power_depth["two_power_saturation_depth"]
+            if two_power_depth is not None
+            else None
+        ),
+        "minimal_separating_two_power_character_order": (
+            two_power_depth["minimal_separating_two_power_character_order"]
+            if two_power_depth is not None
+            else None
+        ),
         "least_matching_square_divisor": least_match,
         "unit_group_subgroup_certificate": subgroup_certificate,
     }
@@ -568,6 +653,20 @@ def audit_general_B_failure_prime(
         for name in ("hit", "finite_exponent", "subgroup_character")
     }
     hit_records = [record for record in records if record["classification"] == "hit"]
+    two_power_depth_counts = {
+        str(depth): sum(
+            record["classification"] == "subgroup_character"
+            and int(record["subgroup_character_two_power_depth"]) == depth
+            for record in records
+        )
+        for depth in sorted(
+            {
+                int(record["subgroup_character_two_power_depth"])
+                for record in records
+                if record["classification"] == "subgroup_character"
+            }
+        )
+    }
     if not hit_records:
         raise AssertionError("general B failed at every linear state")
     selected = hit_records[0]
@@ -586,6 +685,8 @@ def audit_general_B_failure_prime(
     if (
         len(records) != expected["distinct_R_count"]
         or classification_counts != expected["classification_counts"]
+        or two_power_depth_counts
+        != expected["subgroup_character_two_power_depth_counts"]
         or hit_R != expected["hit_R"]
     ):
         raise AssertionError("general-B obstruction profile changed")
@@ -593,6 +694,7 @@ def audit_general_B_failure_prime(
         "prime": prime,
         "distinct_R_count": len(records),
         "general_B_classification_counts": classification_counts,
+        "subgroup_character_two_power_depth_counts": two_power_depth_counts,
         "general_B_hit_R": hit_R,
         "selected_general_B_witness": witness,
         "records": records,
@@ -650,6 +752,15 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
         "subgroup_character": 126,
     }:
         raise AssertionError("aggregate general-B obstruction totals changed")
+    aggregate_two_power_depth_counts = {
+        str(depth): sum(
+            int(profile["subgroup_character_two_power_depth_counts"].get(str(depth), 0))
+            for profile in general_B_profiles
+        )
+        for depth in (0, 1)
+    }
+    if aggregate_two_power_depth_counts != {"0": 124, "1": 2}:
+        raise AssertionError("aggregate two-power character depths changed")
     return {
         "arithmetic": (
             "hash-freeze the 21 global p-1 maximum-tail misses; exhaust every "
@@ -673,6 +784,9 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
         "B_eq_1_records": B1_records,
         "general_B_failure_profiles": general_B_profiles,
         "aggregate_general_B_classification_counts": aggregate_classification_counts,
+        "aggregate_subgroup_character_two_power_depth_counts": (
+            aggregate_two_power_depth_counts
+        ),
     }
 
 
@@ -696,6 +810,7 @@ def main() -> int:
                     "B_eq_1_totals",
                     "global_linear_B_eq_1_failure_primes",
                     "aggregate_general_B_classification_counts",
+                    "aggregate_subgroup_character_two_power_depth_counts",
                 }
             },
             ensure_ascii=False,
