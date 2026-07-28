@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 262 |
+| 数学状态 | `computationally_reproduced` | 263 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 206 |
+| 数学状态 | `established` | 207 |
 | 数学状态 | `open` | 11 |
-| 证明来源 | `computational_reproduction` | 35 |
+| 证明来源 | `computational_reproduction` | 36 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 31 |
+| 证明来源 | `repository_derivation` | 32 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 59 |
+| 审阅状态 | `internal_review` | 61 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -212,6 +212,8 @@
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [B等于一正规形回缩到完整平方因子外部源的判据](../claims/type-I-b1-external-source-retraction-criterion.md) (`type-I-b1-external-source-retraction-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [B等于1的p减一终端桥与同缺口Type II的精确二分](../claims/type-I-b1-pminusone-same-gap-dichotomy.md) (`type-I-b1-pminusone-same-gap-dichotomy`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [B 等于一正规形的自平方终端桥](../claims/type-I-b1-self-square-terminal-bridge.md) (`type-I-b1-self-square-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [六亿冻结压力集上 B 等于一自平方终端桥剖面](../claims/type-I-b1-self-square-terminal-bridge-profile-600m.md) (`type-I-b1-self-square-terminal-bridge-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B等于一移位源避开同正规形p减一桥与同缺口Type II的无穷射线](../claims/type-I-b1-shifted-source-pminusone-nonoverlap-ray.md) (`type-I-b1-shifted-source-pminusone-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B等于一p减一桥的无界平方缺额同缺口非重叠射线](../claims/type-I-b1-square-essential-same-gap-nonoverlap-ray.md) (`type-I-b1-square-essential-same-gap-nonoverlap-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
