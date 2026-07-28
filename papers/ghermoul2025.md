@@ -51,4 +51,5 @@ arxiv: '2508.07383'
 ## 局限与后续
 
 联合覆盖是计算支持的 conjecture；其中 \(q\equiv0\pmod6\) 的覆盖没有全称证明，且
-计算尚未独立全量复现。详见[其核心残余归约](../claims/ghermoul-2025-core-residual-reduction.md)。
+计算尚未独立全量复现。详见[其核心残余归约](../claims/ghermoul-2025-core-residual-reduction.md)
+和[第二族的 \(B=1\) 正规形等价](../claims/ghermoul-2025-p2-b1-normal-form-equivalence.md)。
