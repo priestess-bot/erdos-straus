@@ -1,4 +1,5 @@
 import importlib.util
+import itertools
 import json
 from pathlib import Path
 import sys
@@ -25,6 +26,33 @@ def independent_block_target_hit(block, modulus):
         int(divisor) * inverse % modulus for divisor in sympy.divisors(block * block)
     }
     return (modulus - 1) in residues, len(residues)
+
+
+def independent_minimal_centered_support(factors, modulus):
+    """Directly minimize nonzero coordinates over the full centered box."""
+    best_support = None
+    count = 0
+    first = None
+    for vector in itertools.product(
+        *(range(-exponent, exponent + 1) for _, exponent in factors)
+    ):
+        residue = 1
+        for (prime, _), coordinate in zip(factors, vector):
+            residue = residue * pow(prime, coordinate, modulus) % modulus
+        if residue != modulus - 1:
+            continue
+        support = sum(coordinate != 0 for coordinate in vector)
+        if best_support is None or support < best_support:
+            best_support = support
+            count = 1
+            first = vector
+        elif support == best_support:
+            count += 1
+            if vector < first:
+                first = vector
+    if best_support is None or first is None:
+        raise AssertionError("direct target witness disappeared")
+    return best_support, count, list(first)
 
 
 class TypeILinearGeneralBTwoBlockHitProfile500MTests(unittest.TestCase):
@@ -70,6 +98,34 @@ class TypeILinearGeneralBTwoBlockHitProfile500MTests(unittest.TestCase):
             for output_record in output_profile["records"]:
                 modulus = int(output_record["R"])
                 K = int(output_record["K"])
+                K_factors = [
+                    (int(item["prime"]), int(item["exponent"]))
+                    for item in source_records[modulus]["K_factorization"]
+                ]
+                (
+                    minimum_support,
+                    minimum_support_count,
+                    minimum_support_witness,
+                ) = independent_minimal_centered_support(K_factors, modulus)
+                self.assertEqual(
+                    output_record["K_factorization"],
+                    [
+                        {"prime": prime, "exponent": exponent}
+                        for prime, exponent in K_factors
+                    ],
+                )
+                self.assertEqual(
+                    output_record["minimal_centered_support"],
+                    minimum_support,
+                )
+                self.assertEqual(
+                    output_record["minimal_centered_support_witness_count"],
+                    minimum_support_count,
+                )
+                self.assertEqual(
+                    output_record["lexicographically_first_minimal_centered_witness"],
+                    minimum_support_witness,
+                )
                 raw_states = source_records[modulus]["source_states"]
                 self.assertEqual(
                     len(output_record["source_orientations"]), len(raw_states)
@@ -138,6 +194,10 @@ class TypeILinearGeneralBTwoBlockHitProfile500MTests(unittest.TestCase):
                 "mixed_blocks": 16,
                 "source_block_only": 2,
             },
+        )
+        self.assertEqual(
+            self.actual["aggregate_minimal_centered_support_counts"],
+            {"2": 2, "3": 4, "4": 4, "5": 2},
         )
 
 

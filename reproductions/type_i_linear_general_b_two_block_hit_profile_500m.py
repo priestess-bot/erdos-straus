@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import hashlib
+import itertools
 import json
 import math
 from pathlib import Path
@@ -46,6 +47,18 @@ EXPECTED_AGGREGATE_COUNTS = {
     "affine_block_only": 2,
     "mixed_blocks": 16,
     "source_block_only": 2,
+}
+EXPECTED_PER_PRIME_MINIMAL_SUPPORT_COUNTS = {
+    3_942_409: {"3": 2, "4": 1, "5": 1},
+    62_588_089: {"3": 1, "4": 1},
+    297_640_249: {"3": 1, "4": 2, "5": 1},
+    477_015_289: {"2": 2},
+}
+EXPECTED_AGGREGATE_MINIMAL_SUPPORT_COUNTS = {
+    "2": 2,
+    "3": 4,
+    "4": 4,
+    "5": 2,
 }
 
 
@@ -90,6 +103,35 @@ def centered_square_spectrum(factors: list[tuple[int, int]], modulus: int) -> se
             residue * power % modulus for residue in residues for power in powers
         }
     return residues
+
+
+def minimum_centered_support_witness(
+    factors: list[tuple[int, int]], modulus: int
+) -> tuple[int, int, list[int]]:
+    """Find the sparsest centered exponent vectors reaching -1."""
+    minimum_support: int | None = None
+    witness_count = 0
+    lexicographically_first: tuple[int, ...] | None = None
+    for vector in itertools.product(
+        *(range(-exponent, exponent + 1) for _, exponent in factors)
+    ):
+        residue = 1
+        for (prime, _), coordinate in zip(factors, vector):
+            residue = residue * pow(prime, coordinate, modulus) % modulus
+        if residue != modulus - 1:
+            continue
+        support = sum(coordinate != 0 for coordinate in vector)
+        if minimum_support is None or support < minimum_support:
+            minimum_support = support
+            witness_count = 1
+            lexicographically_first = vector
+        elif support == minimum_support:
+            witness_count += 1
+            if vector < lexicographically_first:
+                lexicographically_first = vector
+    if minimum_support is None or lexicographically_first is None:
+        raise AssertionError("stored target hit has no centered witness")
+    return minimum_support, witness_count, list(lexicographically_first)
 
 
 def classify_source_orientation(
@@ -155,6 +197,12 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
             if record["classification"] != "hit":
                 continue
             modulus, K = int(record["R"]), int(record["K"])
+            K_factors = exact_factorization(K)
+            (
+                minimum_support,
+                minimum_support_witness_count,
+                minimum_support_witness,
+            ) = minimum_centered_support_witness(K_factors, modulus)
             orientations = [
                 classify_source_orientation(
                     prime,
@@ -171,6 +219,14 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
                 {
                     "R": modulus,
                     "K": K,
+                    "K_factorization": factorization_payload(K_factors),
+                    "minimal_centered_support": minimum_support,
+                    "minimal_centered_support_witness_count": (
+                        minimum_support_witness_count
+                    ),
+                    "lexicographically_first_minimal_centered_witness": (
+                        minimum_support_witness
+                    ),
                     "source_orientations": orientations,
                 }
             )
@@ -182,6 +238,12 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
         local_counts = dict(sorted(local_counts.items()))
         if local_counts != EXPECTED_PER_PRIME_COUNTS[prime]:
             raise AssertionError("per-prime two-block profile changed")
+        local_support_counts = Counter(
+            str(record["minimal_centered_support"]) for record in records
+        )
+        local_support_counts = dict(sorted(local_support_counts.items()))
+        if local_support_counts != EXPECTED_PER_PRIME_MINIMAL_SUPPORT_COUNTS[prime]:
+            raise AssertionError("per-prime minimal centered support changed")
         profiles.append(
             {
                 "prime": prime,
@@ -190,12 +252,21 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
                     len(record["source_orientations"]) for record in records
                 ),
                 "block_classification_counts": local_counts,
+                "minimal_centered_support_counts": local_support_counts,
                 "records": records,
             }
         )
     aggregate_counts = dict(sorted(aggregate.items()))
     if aggregate_counts != EXPECTED_AGGREGATE_COUNTS:
         raise AssertionError("aggregate two-block profile changed")
+    aggregate_support_counts = Counter(
+        str(record["minimal_centered_support"])
+        for profile in profiles
+        for record in profile["records"]
+    )
+    aggregate_support_counts = dict(sorted(aggregate_support_counts.items()))
+    if aggregate_support_counts != EXPECTED_AGGREGATE_MINIMAL_SUPPORT_COUNTS:
+        raise AssertionError("aggregate minimal centered support changed")
     return {
         "arithmetic": (
             "for every directed linear source behind each of the 12 stored "
@@ -217,6 +288,7 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
             int(profile["directed_target_hit_source_count"]) for profile in profiles
         ),
         "aggregate_block_classification_counts": aggregate_counts,
+        "aggregate_minimal_centered_support_counts": aggregate_support_counts,
         "profiles": profiles,
     }
 
