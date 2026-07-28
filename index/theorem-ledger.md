@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 249 |
+| 数学状态 | `computationally_reproduced` | 250 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 193 |
 | 数学状态 | `open` | 9 |
-| 证明来源 | `computational_reproduction` | 22 |
+| 证明来源 | `computational_reproduction` | 23 |
 | 证明来源 | `mixed` | 5 |
 | 证明来源 | `repository_derivation` | 15 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 36 |
+| 审阅状态 | `internal_review` | 37 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -308,6 +308,7 @@
 | [五亿低溢出反向二尾源的非核心终止因子](../claims/type-I-tail-reverse-small-b-source-terminal-500m.md) (`type-I-tail-reverse-small-b-source-terminal-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `salez2014` | 2026-07-27 |
 | [五亿多素因子反向边界的平方外源混合闭合](../claims/type-I-tail-reverse-surplus-external-hybrid-500m.md) (`type-I-tail-reverse-surplus-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [五亿偶源状态的最小B跨样本边界](../claims/type-I-tail-source-state-small-b-profile-500m.md) (`type-I-tail-source-state-small-b-profile-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [五亿普通双尾遗漏的上半区 B 等于一终端闭合](../claims/type-I-tail-upper-b1-completion-profile-500m.md) (`type-I-tail-upper-b1-completion-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I 目标除子与偶终端桥的双因子选择器](../claims/type-I-target-divisor-even-terminal-selector.md) (`type-I-target-divisor-even-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 目标除子的溢出因子与正规形精确对应](../claims/type-I-target-divisor-overflow.md) (`type-I-target-divisor-overflow`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
