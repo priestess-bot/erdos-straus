@@ -146,6 +146,10 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         even_external_retraction_count = 0
         linear_nonretraction_count = 0
         square_essential_nonretraction_count = 0
+        pminusone_external_count = 0
+        pminusone_square_essential_count = 0
+        shifted_linear_nonretraction_count = 0
+        shifted_square_essential_count = 0
 
         def record(prime, certificate):
             nonlocal checked
@@ -154,6 +158,10 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
             nonlocal even_external_retraction_count
             nonlocal linear_nonretraction_count
             nonlocal square_essential_nonretraction_count
+            nonlocal pminusone_external_count
+            nonlocal pminusone_square_essential_count
+            nonlocal shifted_linear_nonretraction_count
+            nonlocal shifted_square_essential_count
 
             self.assert_source_first_coordinates(prime, certificate)
             source_equals_bridge_factor_count += int(
@@ -171,6 +179,21 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
                 square_essential_nonretraction_count += int(
                     int(certificate["source_denominator"]) % int(certificate["E"]) != 0
                 )
+            source = int(certificate["source_denominator"])
+            E = int(certificate["E"])
+            R = int(certificate["R"])
+            if source == prime - 1:
+                r = (R + 1) // 4
+                t = (prime - 1) // 4
+                self.assertEqual(E, R + 1)
+                self.assertEqual(t * t % r, 0)
+                self.assertEqual(external_source is not None, t % r == 0)
+                self.assertEqual(source % E == 0, t % r == 0)
+                pminusone_external_count += int(external_source is not None)
+                pminusone_square_essential_count += int(external_source is None)
+            elif external_source is None:
+                shifted_linear_nonretraction_count += int(source % E == 0)
+                shifted_square_essential_count += int(source % E != 0)
             checked += 1
 
         for row in base["records"]:
@@ -202,6 +225,15 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         self.assertEqual(
             (linear_nonretraction_count, square_essential_nonretraction_count),
             (62, 523),
+        )
+        self.assertEqual(
+            (
+                pminusone_external_count,
+                pminusone_square_essential_count,
+                shifted_linear_nonretraction_count,
+                shifted_square_essential_count,
+            ),
+            (1132, 272, 62, 251),
         )
 
 
