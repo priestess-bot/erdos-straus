@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 275 |
+| 数学状态 | `computationally_reproduced` | 277 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 222 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 47 |
+| 证明来源 | `computational_reproduction` | 49 |
 | 证明来源 | `mixed` | 6 |
 | 证明来源 | `repository_derivation` | 50 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 90 |
+| 审阅状态 | `internal_review` | 92 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -279,6 +279,7 @@
 | [线性源双因子块的坐标标签碰撞分解](../claims/type-I-linear-block-label-collision.md) (`type-I-linear-block-label-collision`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源模数之间的公因子刚性与共享指数层](../claims/type-I-linear-cross-modulus-gcd-rigidity.md) (`type-I-linear-cross-modulus-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [七点线性 F 型状态的反足点半密度边界](../claims/type-I-linear-finite-exponent-antipodal-density-profile-600m.md) (`type-I-linear-finite-exponent-antipodal-density-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [372409 的完整线性源谱含必须四标签层的 Type I 目标命中](../claims/type-I-linear-four-label-layer-boundary-372409.md) (`type-I-linear-four-label-layer-boundary-372409`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点全线性目标谱的角色与有限指数混合剖面](../claims/type-I-linear-general-b-obstruction-mixture-profile-600m.md) (`type-I-linear-general-b-obstruction-mixture-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -296,6 +297,7 @@
 | [六亿压力集的线性源一般 B Type I 有限闭合剖面](../claims/type-I-linear-source-general-b-completion-profile-600m.md) (`type-I-linear-source-general-b-completion-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性上半区一般 B 混合终端选择猜想](../claims/type-I-linear-source-general-b-terminal-selector-conjecture.md) (`type-I-linear-source-general-b-terminal-selector-conjecture`) | `open` | `repository_derivation` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性源的变 s 因子转移及双转移闭包边界](../claims/type-I-linear-source-shift-transfer-closure-boundary.md) (`type-I-linear-source-shift-transfer-closure-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [七点线性 G 型状态的二残数与角色阶剖面](../claims/type-I-linear-subgroup-two-character-profile-600m.md) (`type-I-linear-subgroup-two-character-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 的三标签层重选终端选择猜想](../claims/type-I-linear-three-label-reselection-conjecture.md) (`type-I-linear-three-label-reselection-conjecture`) | `open` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
