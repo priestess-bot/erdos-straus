@@ -106,6 +106,49 @@ def generated_subgroup(residues: Iterable[int], modulus: int) -> list[int]:
     return sorted(subgroup)
 
 
+def ordinary_type_ii_tail_witness(prime: int) -> dict[str, object] | None:
+    """Rebuild the least ordinary p-minus-one Type II two-tail witness."""
+    for denominator in divisors_from_factorization(factorization(prime - 1)):
+        if denominator % 4:
+            continue
+        gap = denominator - 1
+        x = (prime + gap) // 4
+        if 4 * x != prime + gap:
+            raise AssertionError("ordinary tail has a nonintegral first denominator")
+        square_factors = [
+            (factor, 2 * exponent) for factor, exponent in factorization(x)
+        ]
+        target_residue = (-x) % gap
+        for candidate in divisors_from_factorization(square_factors):
+            if candidate % gap != target_residue:
+                continue
+            divisor = min(candidate, x * x // candidate)
+            y, y_remainder = divmod(prime * (x + divisor), gap)
+            z, z_remainder = divmod(prime * (x + x * x // divisor), gap)
+            if y_remainder or z_remainder or y % prime or z % prime:
+                raise AssertionError("ordinary tail divisor did not reconstruct")
+            source = (prime + gap) // denominator
+            if denominator * source != prime + gap or not 2 <= source < prime:
+                raise AssertionError("ordinary tail source is not strict")
+            target_solution = [x, y, z]
+            source_solution = [x, y // prime, z // prime]
+            if Fraction(4, prime) != sum(
+                (Fraction(1, value) for value in target_solution), Fraction()
+            ) or Fraction(4, source) != sum(
+                (Fraction(1, value) for value in source_solution), Fraction()
+            ):
+                raise AssertionError("ordinary tail identities did not replay")
+            return {
+                "gap": gap,
+                "x": x,
+                "divisor": divisor,
+                "source_denominator": source,
+                "target_solution": target_solution,
+                "source_solution": source_solution,
+            }
+    return None
+
+
 def transversal(modulus: int) -> tuple[int, ...]:
     """Choose the smaller representative from every ray-residue involution."""
     if modulus < 4 or modulus % 4:
@@ -348,6 +391,7 @@ def run_search(
             {
                 "multiplier": multiplier,
                 "prime": prime,
+                "ordinary_type_ii_tail_witness": ordinary_type_ii_tail_witness(prime),
                 "failed_ray_count": sum(
                     int(ray["ray_witness_count"]) == 0 for ray in rays
                 ),

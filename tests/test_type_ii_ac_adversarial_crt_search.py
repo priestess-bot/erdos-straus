@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 import sys
 import unittest
+from fractions import Fraction
 
 import sympy
 
@@ -132,6 +133,30 @@ class TypeIIACAdversarialCRTSearchTests(unittest.TestCase):
             self.assertEqual(diagnosis["target_residue"], modulus - 1)
             self.assertNotIn(modulus - 1, diagnosis["generated_subgroup"])
             self.assertEqual(diagnosis["failure_class"], "support_outside")
+
+    def test_every_frozen_progression_candidate_has_an_ordinary_tail_exit(self):
+        for candidate in self.actual["candidates"]:
+            witness = candidate["ordinary_type_ii_tail_witness"]
+            self.assertIsNotNone(witness)
+            prime = int(candidate["prime"])
+            gap = int(witness["gap"])
+            self.assertEqual((prime - 1) % (gap + 1), 0)
+            self.assertEqual(int(witness["x"]), (prime + gap) // 4)
+            self.assertEqual(
+                Fraction(4, prime),
+                sum((Fraction(1, int(value)) for value in witness["target_solution"]), Fraction()),
+            )
+            self.assertEqual(
+                Fraction(4, int(witness["source_denominator"])),
+                sum((Fraction(1, int(value)) for value in witness["source_solution"]), Fraction()),
+            )
+
+        complete = next(
+            candidate
+            for candidate in self.actual["candidates"]
+            if candidate["failed_ray_count"] == self.actual["fan_bound"]
+        )
+        self.assertEqual(complete["ordinary_type_ii_tail_witness"]["gap"], 23)
 
 
 if __name__ == "__main__":
