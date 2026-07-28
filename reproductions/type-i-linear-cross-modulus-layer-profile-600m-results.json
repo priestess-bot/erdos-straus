@@ -1,0 +1,1482 @@
+{
+  "arithmetic": "use the seven-point complete linear R spectra to verify every pairwise gcd(K_R,K_R') identity, then factor each target-hit K and enumerate its shared and excess centered exponent-layer spectra",
+  "scope_note": "This is a finite profile of the 20 target hits in seven frozen complete spectra. It does not give a universal source selector.",
+  "input_artifact": "type-i-linear-general-b-obstruction-mixture-profile-600m-results.json",
+  "input_sha256": "dce587d6e6703e5cdcb81b6cd05c16989394a7321d2d14515ea2eda6c2aec44d",
+  "aggregate_cross_modulus_layer_classification_counts": {
+    "both_layers_hit": 3,
+    "excess_layer_hit": 1,
+    "mixed_layers_required": 11,
+    "shared_layer_hit": 5
+  },
+  "mixed_layer_minimum_excess_support_counts": {
+    "1": 10,
+    "2": 1
+  },
+  "profiles": [
+    {
+      "prime": 214729,
+      "complete_linear_R_count": 30,
+      "general_B_hit_R_count": 3,
+      "cross_modulus_layer_classification_counts": {
+        "mixed_layers_required": 3
+      },
+      "records": [
+        {
+          "R": 39,
+          "K": 2093608,
+          "shared_layer": 88,
+          "excess_layer": 23791,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 643,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 643,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              0
+            ],
+            "excess_coordinates": [
+              0,
+              -1
+            ],
+            "shared_residue": 20,
+            "excess_residue": 37
+          }
+        },
+        {
+          "R": 131,
+          "K": 7032375,
+          "shared_layer": 5985,
+          "excess_layer": 1175,
+          "K_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 3
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 3,
+          "minimum_total_layer_support": 5,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              1,
+              -1,
+              -1
+            ],
+            "excess_coordinates": [
+              2,
+              0
+            ],
+            "shared_residue": 110,
+            "excess_residue": 25
+          }
+        },
+        {
+          "R": 203,
+          "K": 10897497,
+          "shared_layer": 1053,
+          "excess_layer": 10349,
+          "K_factorization": [
+            {
+              "prime": 3,
+              "exponent": 4
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            },
+            {
+              "prime": 131,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 3,
+              "exponent": 4
+            },
+            {
+              "prime": 13,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 79,
+              "exponent": 1
+            },
+            {
+              "prime": 131,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 3,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              1
+            ],
+            "excess_coordinates": [
+              0,
+              -1
+            ],
+            "shared_residue": 72,
+            "excess_residue": 31
+          }
+        }
+      ]
+    },
+    {
+      "prime": 878089,
+      "complete_linear_R_count": 24,
+      "general_B_hit_R_count": 1,
+      "cross_modulus_layer_classification_counts": {
+        "shared_layer_hit": 1
+      },
+      "records": [
+        {
+          "R": 59,
+          "K": 12951813,
+          "shared_layer": 61383,
+          "excess_layer": 211,
+          "K_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            },
+            {
+              "prime": 211,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 211,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "shared_layer_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 3,
+          "minimum_total_layer_support": 3,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              1,
+              -1,
+              0
+            ],
+            "excess_coordinates": [
+              0
+            ],
+            "shared_residue": 58,
+            "excess_residue": 1
+          }
+        }
+      ]
+    },
+    {
+      "prime": 2210569,
+      "complete_linear_R_count": 28,
+      "general_B_hit_R_count": 3,
+      "cross_modulus_layer_classification_counts": {
+        "both_layers_hit": 1,
+        "mixed_layers_required": 2
+      },
+      "records": [
+        {
+          "R": 23,
+          "K": 12710772,
+          "shared_layer": 684,
+          "excess_layer": 18583,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 18583,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 18583,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": true,
+          "target_hit_cross_modulus_layer_classification": "both_layers_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 0,
+          "minimum_total_layer_support": 1,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              0,
+              0
+            ],
+            "excess_coordinates": [
+              -1
+            ],
+            "shared_residue": 1,
+            "excess_residue": 22
+          }
+        },
+        {
+          "R": 39,
+          "K": 21553048,
+          "shared_layer": 88,
+          "excess_layer": 244921,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 257,
+              "exponent": 1
+            },
+            {
+              "prime": 953,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 257,
+              "exponent": 1
+            },
+            {
+              "prime": 953,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 3,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -3,
+              1
+            ],
+            "excess_coordinates": [
+              -1,
+              0
+            ],
+            "shared_residue": 16,
+            "excess_residue": 17
+          }
+        },
+        {
+          "R": 391,
+          "K": 216083120,
+          "shared_layer": 880,
+          "excess_layer": 245549,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 4
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 53,
+              "exponent": 1
+            },
+            {
+              "prime": 113,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 4
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 41,
+              "exponent": 1
+            },
+            {
+              "prime": 53,
+              "exponent": 1
+            },
+            {
+              "prime": 113,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 2,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 4,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -4,
+              0,
+              -1
+            ],
+            "excess_coordinates": [
+              0,
+              1,
+              -1
+            ],
+            "shared_residue": 20,
+            "excess_residue": 215
+          }
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "complete_linear_R_count": 41,
+      "general_B_hit_R_count": 1,
+      "cross_modulus_layer_classification_counts": {
+        "mixed_layers_required": 1
+      },
+      "records": [
+        {
+          "R": 131,
+          "K": 451373895,
+          "shared_layer": 18585,
+          "excess_layer": 24287,
+          "K_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            },
+            {
+              "prime": 149,
+              "exponent": 1
+            },
+            {
+              "prime": 163,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 59,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 149,
+              "exponent": 1
+            },
+            {
+              "prime": 163,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 3,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -2,
+              -1,
+              0,
+              0
+            ],
+            "excess_coordinates": [
+              0,
+              -1
+            ],
+            "shared_residue": 99,
+            "excess_residue": 86
+          }
+        }
+      ]
+    },
+    {
+      "prime": 64214329,
+      "complete_linear_R_count": 47,
+      "general_B_hit_R_count": 4,
+      "cross_modulus_layer_classification_counts": {
+        "both_layers_hit": 1,
+        "excess_layer_hit": 1,
+        "shared_layer_hit": 2
+      },
+      "records": [
+        {
+          "R": 19,
+          "K": 305018063,
+          "shared_layer": 45101,
+          "excess_layer": 6763,
+          "K_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 379,
+              "exponent": 1
+            },
+            {
+              "prime": 6763,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 379,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 6763,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": true,
+          "target_hit_cross_modulus_layer_classification": "both_layers_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 0,
+          "minimum_total_layer_support": 1,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              0,
+              -1
+            ],
+            "excess_coordinates": [
+              0
+            ],
+            "shared_residue": 18,
+            "excess_residue": 1
+          }
+        },
+        {
+          "R": 43,
+          "K": 690304037,
+          "shared_layer": 1,
+          "excess_layer": 690304037,
+          "K_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 149,
+              "exponent": 1
+            },
+            {
+              "prime": 157,
+              "exponent": 1
+            },
+            {
+              "prime": 1283,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [],
+          "excess_layer_factorization": [
+            {
+              "prime": 23,
+              "exponent": 1
+            },
+            {
+              "prime": 149,
+              "exponent": 1
+            },
+            {
+              "prime": 157,
+              "exponent": 1
+            },
+            {
+              "prime": 1283,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": true,
+          "target_hit_cross_modulus_layer_classification": "excess_layer_hit",
+          "minimum_excess_layer_support": 2,
+          "minimum_shared_layer_support": 0,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [],
+            "excess_coordinates": [
+              -1,
+              0,
+              -1,
+              0
+            ],
+            "shared_residue": 1,
+            "excess_residue": 42
+          }
+        },
+        {
+          "R": 119,
+          "K": 1910376288,
+          "shared_layer": 724176,
+          "excess_layer": 2638,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 5
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            },
+            {
+              "prime": 107,
+              "exponent": 1
+            },
+            {
+              "prime": 1319,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 4
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 47,
+              "exponent": 1
+            },
+            {
+              "prime": 107,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 1319,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "shared_layer_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              0,
+              0,
+              -1
+            ],
+            "excess_coordinates": [
+              0,
+              -1
+            ],
+            "shared_residue": 109,
+            "excess_residue": 12
+          }
+        },
+        {
+          "R": 131,
+          "K": 2103019275,
+          "shared_layer": 428925,
+          "excess_layer": 4903,
+          "K_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            },
+            {
+              "prime": 4903,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 4903,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "shared_layer_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              0,
+              -1,
+              0,
+              0
+            ],
+            "excess_coordinates": [
+              -1
+            ],
+            "shared_residue": 75,
+            "excess_residue": 124
+          }
+        }
+      ]
+    },
+    {
+      "prime": 105295129,
+      "complete_linear_R_count": 55,
+      "general_B_hit_R_count": 4,
+      "cross_modulus_layer_classification_counts": {
+        "both_layers_hit": 1,
+        "mixed_layers_required": 2,
+        "shared_layer_hit": 1
+      },
+      "records": [
+        {
+          "R": 15,
+          "K": 394856734,
+          "shared_layer": 13826,
+          "excess_layer": 28559,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 223,
+              "exponent": 1
+            },
+            {
+              "prime": 28559,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 223,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 28559,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": true,
+          "target_hit_cross_modulus_layer_classification": "both_layers_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 0,
+          "minimum_total_layer_support": 1,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              0,
+              0
+            ],
+            "excess_coordinates": [
+              -1
+            ],
+            "shared_residue": 1,
+            "excess_residue": 14
+          }
+        },
+        {
+          "R": 35,
+          "K": 921332379,
+          "shared_layer": 33,
+          "excess_layer": 27919163,
+          "K_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 971,
+              "exponent": 1
+            },
+            {
+              "prime": 28753,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 971,
+              "exponent": 1
+            },
+            {
+              "prime": 28753,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 3,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              -1
+            ],
+            "excess_coordinates": [
+              0,
+              -1
+            ],
+            "shared_residue": 17,
+            "excess_residue": 2
+          }
+        },
+        {
+          "R": 119,
+          "K": 3132530088,
+          "shared_layer": 24,
+          "excess_layer": 130522087,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 163,
+              "exponent": 1
+            },
+            {
+              "prime": 397,
+              "exponent": 1
+            },
+            {
+              "prime": 2017,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 163,
+              "exponent": 1
+            },
+            {
+              "prime": 397,
+              "exponent": 1
+            },
+            {
+              "prime": 2017,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 3,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              -1
+            ],
+            "excess_coordinates": [
+              0,
+              0,
+              1
+            ],
+            "shared_residue": 20,
+            "excess_residue": 113
+          }
+        },
+        {
+          "R": 143,
+          "K": 3764300862,
+          "shared_layer": 1643082,
+          "excess_layer": 2291,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 2
+            },
+            {
+              "prime": 71,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 19,
+              "exponent": 1
+            },
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 71,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 29,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "shared_layer_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              0,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "excess_coordinates": [
+              0,
+              0
+            ],
+            "shared_residue": 142,
+            "excess_residue": 1
+          }
+        }
+      ]
+    },
+    {
+      "prime": 536944489,
+      "complete_linear_R_count": 53,
+      "general_B_hit_R_count": 4,
+      "cross_modulus_layer_classification_counts": {
+        "mixed_layers_required": 3,
+        "shared_layer_hit": 1
+      },
+      "records": [
+        {
+          "R": 19,
+          "K": 2550486323,
+          "shared_layer": 6083,
+          "excess_layer": 419281,
+          "K_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            },
+            {
+              "prime": 419281,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 11,
+              "exponent": 1
+            },
+            {
+              "prime": 79,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 419281,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              0,
+              0
+            ],
+            "excess_coordinates": [
+              -1
+            ],
+            "shared_residue": 11,
+            "excess_residue": 12
+          }
+        },
+        {
+          "R": 23,
+          "K": 3087430812,
+          "shared_layer": 36,
+          "excess_layer": 85761967,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 2317891,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 3,
+              "exponent": 2
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 37,
+              "exponent": 1
+            },
+            {
+              "prime": 2317891,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              -2
+            ],
+            "excess_coordinates": [
+              1,
+              0
+            ],
+            "shared_residue": 18,
+            "excess_residue": 14
+          }
+        },
+        {
+          "R": 47,
+          "K": 6309097746,
+          "shared_layer": 42,
+          "excess_layer": 150216613,
+          "K_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 67,
+              "exponent": 1
+            },
+            {
+              "prime": 971,
+              "exponent": 1
+            },
+            {
+              "prime": 2309,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 67,
+              "exponent": 1
+            },
+            {
+              "prime": 971,
+              "exponent": 1
+            },
+            {
+              "prime": 2309,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": false,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "mixed_layers_required",
+          "minimum_excess_layer_support": 1,
+          "minimum_shared_layer_support": 1,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              0,
+              -1,
+              0
+            ],
+            "excess_coordinates": [
+              0,
+              -1,
+              0
+            ],
+            "shared_residue": 16,
+            "excess_residue": 44
+          }
+        },
+        {
+          "R": 51,
+          "K": 6846042235,
+          "shared_layer": 485,
+          "excess_layer": 14115551,
+          "K_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 97,
+              "exponent": 1
+            },
+            {
+              "prime": 613,
+              "exponent": 1
+            },
+            {
+              "prime": 23027,
+              "exponent": 1
+            }
+          ],
+          "shared_layer_factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 97,
+              "exponent": 1
+            }
+          ],
+          "excess_layer_factorization": [
+            {
+              "prime": 613,
+              "exponent": 1
+            },
+            {
+              "prime": 23027,
+              "exponent": 1
+            }
+          ],
+          "minus_one_in_shared_layer_spectrum": true,
+          "minus_one_in_excess_layer_spectrum": false,
+          "target_hit_cross_modulus_layer_classification": "shared_layer_hit",
+          "minimum_excess_layer_support": 0,
+          "minimum_shared_layer_support": 2,
+          "minimum_total_layer_support": 2,
+          "minimum_total_layer_witness": {
+            "shared_coordinates": [
+              -1,
+              1
+            ],
+            "excess_coordinates": [
+              0,
+              0
+            ],
+            "shared_residue": 50,
+            "excess_residue": 1
+          }
+        }
+      ]
+    }
+  ]
+}

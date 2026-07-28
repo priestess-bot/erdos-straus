@@ -189,6 +189,19 @@ P_R=43\cdot61\cdot167
 划分。两种分割都显示单一新因子层不是通用逃逸开关；但 (2) 提供了真正的跨源算术约束，
 可作为后续研究共同因子、混合积集或跨源递降的输入。
 
+同一审计随后扩展到七个独立的六亿内全线性谱（278 个源模数、20 个目标命中）。其分割为
+
+| 类型 | 命中数 |
+| --- | ---: |
+| 共享层单独命中 | 8 |
+| 独有层单独命中 | 1 |
+| 必须混合两层 | 11 |
+
+11 个混合命中中，10 个的最小独有层支撑为一个坐标，另一个
+\((p,R)=(2210569,391)\) 至少需要两个。另有独有层单独命中
+\((p,R)=(64214329,43)\) 也至少需要两个独有层坐标。故即使把对象限制到既有的全线性
+目标命中，“单一独有层坐标”仍不是可普适化的选择规则。
+
 该有限剖面不证明目标 \(-1\) 必命中，也不排除所有状态的角色或有限指数障碍。它的作用是
 把跨源“共享”从经验标签改写为完全由源模数差控制的可验证量。
 
@@ -197,4 +210,6 @@ P_R=43\cdot61\cdot167
 ~~~bash
 python3 reproductions/type_i_linear_cross_modulus_layer_profile_500m.py
 python3 -m unittest tests.test_type_i_linear_cross_modulus_layer_profile_500m -v
+python3 reproductions/type_i_linear_cross_modulus_layer_profile_600m.py
+python3 -m unittest tests.test_type_i_linear_cross_modulus_layer_profile_600m -v
 ~~~
