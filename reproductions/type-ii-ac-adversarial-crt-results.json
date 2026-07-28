@@ -1,12 +1,14 @@
 {
   "arithmetic": "choose a deterministic half-size transversal for each canonical ray; CRT avoids every screened prime factor outside it; factor all actual shifted integers and enumerate every eligible ray divisor",
   "scope_note": "The CRT screen is only a necessary-condition adversary for ray failure. Unscreened factors can still yield a certificate, so this is neither an Erdos--Straus counterexample nor a proof that any ray fails.",
-  "fan_bound": 4,
+  "fan_bound": 6,
   "shifts": [
     1,
     2,
     3,
-    4
+    4,
+    5,
+    6
   ],
   "screened_prime_bound": 29,
   "candidate_scan_limit": 100000,
@@ -31,6 +33,16 @@
         "a": 2,
         "c": 1,
         "modulus": 8
+      },
+      "5": {
+        "a": 1,
+        "c": 5,
+        "modulus": 20
+      },
+      "6": {
+        "a": 1,
+        "c": 6,
+        "modulus": 24
       }
     },
     "transversals": {
@@ -44,17 +56,21 @@
       "12": [
         1,
         5
+      ],
+      "20": [
+        1,
+        3,
+        7,
+        9
+      ],
+      "24": [
+        1,
+        5,
+        7,
+        11
       ]
     },
     "screening_prime_rows": [
-      {
-        "prime": 5,
-        "forbidden_roots": [
-          2,
-          4
-        ],
-        "chosen_core_residue": 1
-      },
       {
         "prime": 7,
         "forbidden_roots": [
@@ -68,6 +84,7 @@
       {
         "prime": 11,
         "forbidden_roots": [
+          2,
           7,
           10
         ],
@@ -76,8 +93,18 @@
       {
         "prime": 13,
         "forbidden_roots": [
+          2,
           5,
+          6,
           10
+        ],
+        "chosen_core_residue": 1
+      },
+      {
+        "prime": 17,
+        "forbidden_roots": [
+          10,
+          14
         ],
         "chosen_core_residue": 1
       },
@@ -85,7 +112,9 @@
         "prime": 19,
         "forbidden_roots": [
           7,
-          15
+          14,
+          15,
+          18
         ],
         "chosen_core_residue": 1
       },
@@ -95,7 +124,8 @@
           7,
           11,
           15,
-          19
+          19,
+          22
         ],
         "chosen_core_residue": 1
       },
@@ -109,12 +139,12 @@
       }
     ],
     "residue": 1,
-    "modulus": 1522280760
+    "modulus": 5175754584
   },
   "candidates": [
     {
-      "multiplier": 3,
-      "prime": 4566842281,
+      "multiplier": 4,
+      "prime": 20703018337,
       "failed_ray_count": 4,
       "rays": [
         {
@@ -122,32 +152,14 @@
           "a": 1,
           "c": 1,
           "modulus": 4,
-          "shifted": 4566842285,
+          "shifted": 20703018341,
           "factorization": [
             {
-              "prime": 5,
-              "exponent": 1
-            },
-            {
-              "prime": 373,
-              "exponent": 1
-            },
-            {
-              "prime": 677,
-              "exponent": 1
-            },
-            {
-              "prime": 3617,
+              "prime": 20703018341,
               "exponent": 1
             }
           ],
-          "screened_factor_rows": [
-            {
-              "prime": 5,
-              "residue": 1,
-              "in_transversal": true
-            }
-          ],
+          "screened_factor_rows": [],
           "ray_witness_count": 0,
           "least_ray_witness": null
         },
@@ -156,151 +168,40 @@
           "a": 1,
           "c": 2,
           "modulus": 8,
-          "shifted": 4566842289,
+          "shifted": 20703018345,
           "factorization": [
             {
               "prime": 3,
-              "exponent": 4
-            },
-            {
-              "prime": 56380769,
-              "exponent": 1
-            }
-          ],
-          "screened_factor_rows": [],
-          "ray_witness_count": 0,
-          "least_ray_witness": null
-        },
-        {
-          "shift": 3,
-          "a": 1,
-          "c": 3,
-          "modulus": 12,
-          "shifted": 4566842293,
-          "factorization": [
-            {
-              "prime": 13,
               "exponent": 1
             },
-            {
-              "prime": 2143,
-              "exponent": 1
-            },
-            {
-              "prime": 163927,
-              "exponent": 1
-            }
-          ],
-          "screened_factor_rows": [
-            {
-              "prime": 13,
-              "residue": 1,
-              "in_transversal": true
-            }
-          ],
-          "ray_witness_count": 0,
-          "least_ray_witness": null
-        },
-        {
-          "shift": 4,
-          "a": 2,
-          "c": 1,
-          "modulus": 8,
-          "shifted": 4566842297,
-          "factorization": [
-            {
-              "prime": 4153,
-              "exponent": 1
-            },
-            {
-              "prime": 1099649,
-              "exponent": 1
-            }
-          ],
-          "screened_factor_rows": [],
-          "ray_witness_count": 0,
-          "least_ray_witness": null
-        }
-      ]
-    },
-    {
-      "multiplier": 5,
-      "prime": 7611403801,
-      "failed_ray_count": 3,
-      "rays": [
-        {
-          "shift": 1,
-          "a": 1,
-          "c": 1,
-          "modulus": 4,
-          "shifted": 7611403805,
-          "factorization": [
             {
               "prime": 5,
               "exponent": 1
             },
             {
-              "prime": 31,
+              "prime": 14461,
               "exponent": 1
             },
             {
-              "prime": 107,
-              "exponent": 1
-            },
-            {
-              "prime": 547,
-              "exponent": 1
-            },
-            {
-              "prime": 839,
+              "prime": 95443,
               "exponent": 1
             }
           ],
-          "screened_factor_rows": [
-            {
-              "prime": 5,
-              "residue": 1,
-              "in_transversal": true
-            }
-          ],
-          "ray_witness_count": 16,
+          "screened_factor_rows": [],
+          "ray_witness_count": 4,
           "least_ray_witness": {
-            "h": 31,
-            "K": 8,
-            "gap": 245529155,
-            "divisor": 1
+            "h": 15,
+            "K": 2,
+            "gap": 1380201223,
+            "divisor": 2
           }
         },
         {
-          "shift": 2,
-          "a": 1,
-          "c": 2,
-          "modulus": 8,
-          "shifted": 7611403809,
-          "factorization": [
-            {
-              "prime": 3,
-              "exponent": 1
-            },
-            {
-              "prime": 3257,
-              "exponent": 1
-            },
-            {
-              "prime": 778979,
-              "exponent": 1
-            }
-          ],
-          "screened_factor_rows": [],
-          "ray_witness_count": 0,
-          "least_ray_witness": null
-        },
-        {
           "shift": 3,
           "a": 1,
           "c": 3,
           "modulus": 12,
-          "shifted": 7611403813,
+          "shifted": 20703018349,
           "factorization": [
             {
               "prime": 13,
@@ -311,7 +212,7 @@
               "exponent": 1
             },
             {
-              "prime": 13616107,
+              "prime": 37035811,
               "exponent": 1
             }
           ],
@@ -330,10 +231,79 @@
           "a": 2,
           "c": 1,
           "modulus": 8,
-          "shifted": 7611403817,
+          "shifted": 20703018353,
           "factorization": [
             {
-              "prime": 7611403817,
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 1217824609,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 17,
+              "residue": 1,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 5,
+          "a": 1,
+          "c": 5,
+          "modulus": 20,
+          "shifted": 20703018357,
+          "factorization": [
+            {
+              "prime": 3,
+              "exponent": 2
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 2971,
+              "exponent": 1
+            },
+            {
+              "prime": 110609,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 7,
+              "residue": 7,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 3,
+          "least_ray_witness": {
+            "h": 26739,
+            "K": 1337,
+            "gap": 774263,
+            "divisor": 5
+          }
+        },
+        {
+          "shift": 6,
+          "a": 1,
+          "c": 6,
+          "modulus": 24,
+          "shifted": 20703018361,
+          "factorization": [
+            {
+              "prime": 3851,
+              "exponent": 1
+            },
+            {
+              "prime": 5376011,
               "exponent": 1
             }
           ],
@@ -344,46 +314,32 @@
       ]
     },
     {
-      "multiplier": 10,
-      "prime": 15222807601,
-      "failed_ray_count": 3,
+      "multiplier": 8,
+      "prime": 41406036673,
+      "failed_ray_count": 4,
       "rays": [
         {
           "shift": 1,
           "a": 1,
           "c": 1,
           "modulus": 4,
-          "shifted": 15222807605,
+          "shifted": 41406036677,
           "factorization": [
             {
-              "prime": 5,
+              "prime": 1447,
               "exponent": 1
             },
             {
-              "prime": 53,
-              "exponent": 1
-            },
-            {
-              "prime": 4079,
-              "exponent": 1
-            },
-            {
-              "prime": 14083,
+              "prime": 28615091,
               "exponent": 1
             }
           ],
-          "screened_factor_rows": [
-            {
-              "prime": 5,
-              "residue": 1,
-              "in_transversal": true
-            }
-          ],
-          "ray_witness_count": 8,
+          "screened_factor_rows": [],
+          "ray_witness_count": 2,
           "least_ray_witness": {
-            "h": 4079,
-            "K": 1020,
-            "gap": 3731995,
+            "h": 1447,
+            "K": 362,
+            "gap": 28615091,
             "divisor": 1
           }
         },
@@ -392,14 +348,14 @@
           "a": 1,
           "c": 2,
           "modulus": 8,
-          "shifted": 15222807609,
+          "shifted": 41406036681,
           "factorization": [
             {
               "prime": 3,
               "exponent": 1
             },
             {
-              "prime": 5074269203,
+              "prime": 13802012227,
               "exponent": 1
             }
           ],
@@ -412,18 +368,22 @@
           "a": 1,
           "c": 3,
           "modulus": 12,
-          "shifted": 15222807613,
+          "shifted": 41406036685,
           "factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
             {
               "prime": 13,
               "exponent": 1
             },
             {
-              "prime": 3037,
+              "prime": 6829,
               "exponent": 1
             },
             {
-              "prime": 385573,
+              "prime": 93281,
               "exponent": 1
             }
           ],
@@ -442,18 +402,91 @@
           "a": 2,
           "c": 1,
           "modulus": 8,
-          "shifted": 15222807617,
+          "shifted": 41406036689,
           "factorization": [
             {
-              "prime": 97,
+              "prime": 17,
               "exponent": 1
             },
             {
-              "prime": 7549,
+              "prime": 2297,
               "exponent": 1
             },
             {
-              "prime": 20789,
+              "prime": 1060361,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 17,
+              "residue": 1,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 5,
+          "a": 1,
+          "c": 5,
+          "modulus": 20,
+          "shifted": 41406036693,
+          "factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 31,
+              "exponent": 1
+            },
+            {
+              "prime": 827,
+              "exponent": 1
+            },
+            {
+              "prime": 10987,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 7,
+              "residue": 7,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 7,
+          "least_ray_witness": {
+            "h": 1519,
+            "K": 76,
+            "gap": 27258747,
+            "divisor": 5
+          }
+        },
+        {
+          "shift": 6,
+          "a": 1,
+          "c": 6,
+          "modulus": 24,
+          "shifted": 41406036697,
+          "factorization": [
+            {
+              "prime": 1277,
+              "exponent": 1
+            },
+            {
+              "prime": 3701,
+              "exponent": 1
+            },
+            {
+              "prime": 8761,
               "exponent": 1
             }
           ],
@@ -464,19 +497,172 @@
       ]
     },
     {
-      "multiplier": 11,
-      "prime": 16745088361,
-      "failed_ray_count": 1,
+      "multiplier": 12,
+      "prime": 62109055009,
+      "failed_ray_count": 2,
       "rays": [
         {
           "shift": 1,
           "a": 1,
           "c": 1,
           "modulus": 4,
-          "shifted": 16745088365,
+          "shifted": 62109055013,
+          "factorization": [
+            {
+              "prime": 174071,
+              "exponent": 1
+            },
+            {
+              "prime": 356803,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [],
+          "ray_witness_count": 2,
+          "least_ray_witness": {
+            "h": 174071,
+            "K": 43518,
+            "gap": 356803,
+            "divisor": 1
+          }
+        },
+        {
+          "shift": 2,
+          "a": 1,
+          "c": 2,
+          "modulus": 8,
+          "shifted": 62109055017,
+          "factorization": [
+            {
+              "prime": 3,
+              "exponent": 5
+            },
+            {
+              "prime": 255592819,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 3,
+          "a": 1,
+          "c": 3,
+          "modulus": 12,
+          "shifted": 62109055021,
+          "factorization": [
+            {
+              "prime": 13,
+              "exponent": 1
+            },
+            {
+              "prime": 211,
+              "exponent": 1
+            },
+            {
+              "prime": 293,
+              "exponent": 1
+            },
+            {
+              "prime": 77279,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 13,
+              "residue": 1,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 4,
+          "least_ray_witness": {
+            "h": 61823,
+            "K": 5152,
+            "gap": 1004627,
+            "divisor": 3
+          }
+        },
+        {
+          "shift": 4,
+          "a": 2,
+          "c": 1,
+          "modulus": 8,
+          "shifted": 62109055025,
           "factorization": [
             {
               "prime": 5,
+              "exponent": 2
+            },
+            {
+              "prime": 17,
+              "exponent": 2
+            },
+            {
+              "prime": 8596409,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 17,
+              "residue": 1,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 5,
+          "a": 1,
+          "c": 5,
+          "modulus": 20,
+          "shifted": 62109055029,
+          "factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 73,
+              "exponent": 1
+            },
+            {
+              "prime": 40514713,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 7,
+              "residue": 7,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 2,
+          "least_ray_witness": {
+            "h": 219,
+            "K": 11,
+            "gap": 283602991,
+            "divisor": 5
+          }
+        },
+        {
+          "shift": 6,
+          "a": 1,
+          "c": 6,
+          "modulus": 24,
+          "shifted": 62109055033,
+          "factorization": [
+            {
+              "prime": 37,
               "exponent": 1
             },
             {
@@ -484,26 +670,52 @@
               "exponent": 1
             },
             {
-              "prime": 2593,
+              "prime": 23642579,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [],
+          "ray_witness_count": 2,
+          "least_ray_witness": {
+            "h": 71,
+            "K": 3,
+            "gap": 874775423,
+            "divisor": 6
+          }
+        }
+      ]
+    },
+    {
+      "multiplier": 15,
+      "prime": 77636318761,
+      "failed_ray_count": 5,
+      "rays": [
+        {
+          "shift": 1,
+          "a": 1,
+          "c": 1,
+          "modulus": 4,
+          "shifted": 77636318765,
+          "factorization": [
+            {
+              "prime": 5,
               "exponent": 1
             },
             {
-              "prime": 18191,
+              "prime": 2927,
+              "exponent": 1
+            },
+            {
+              "prime": 5304839,
               "exponent": 1
             }
           ],
-          "screened_factor_rows": [
-            {
-              "prime": 5,
-              "residue": 1,
-              "in_transversal": true
-            }
-          ],
-          "ray_witness_count": 8,
+          "screened_factor_rows": [],
+          "ray_witness_count": 4,
           "least_ray_witness": {
-            "h": 71,
-            "K": 18,
-            "gap": 235846315,
+            "h": 2927,
+            "K": 732,
+            "gap": 26524195,
             "divisor": 1
           }
         },
@@ -512,51 +724,34 @@
           "a": 1,
           "c": 2,
           "modulus": 8,
-          "shifted": 16745088369,
+          "shifted": 77636318769,
           "factorization": [
             {
               "prime": 3,
-              "exponent": 1
+              "exponent": 2
             },
             {
-              "prime": 97,
-              "exponent": 1
-            },
-            {
-              "prime": 2063,
-              "exponent": 1
-            },
-            {
-              "prime": 27893,
+              "prime": 8626257641,
               "exponent": 1
             }
           ],
           "screened_factor_rows": [],
-          "ray_witness_count": 4,
-          "least_ray_witness": {
-            "h": 2063,
-            "K": 258,
-            "gap": 8116863,
-            "divisor": 2
-          }
+          "ray_witness_count": 0,
+          "least_ray_witness": null
         },
         {
           "shift": 3,
           "a": 1,
           "c": 3,
           "modulus": 12,
-          "shifted": 16745088373,
+          "shifted": 77636318773,
           "factorization": [
             {
               "prime": 13,
               "exponent": 1
             },
             {
-              "prime": 10859,
-              "exponent": 1
-            },
-            {
-              "prime": 118619,
+              "prime": 5972024521,
               "exponent": 1
             }
           ],
@@ -567,23 +762,82 @@
               "in_transversal": true
             }
           ],
-          "ray_witness_count": 4,
-          "least_ray_witness": {
-            "h": 10859,
-            "K": 905,
-            "gap": 1542047,
-            "divisor": 3
-          }
+          "ray_witness_count": 0,
+          "least_ray_witness": null
         },
         {
           "shift": 4,
           "a": 2,
           "c": 1,
           "modulus": 8,
-          "shifted": 16745088377,
+          "shifted": 77636318777,
           "factorization": [
             {
-              "prime": 16745088377,
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 4566842281,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 17,
+              "residue": 1,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 5,
+          "a": 1,
+          "c": 5,
+          "modulus": 20,
+          "shifted": 77636318781,
+          "factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 2
+            },
+            {
+              "prime": 6229,
+              "exponent": 1
+            },
+            {
+              "prime": 84787,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 7,
+              "residue": 7,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 6,
+          "a": 1,
+          "c": 6,
+          "modulus": 24,
+          "shifted": 77636318785,
+          "factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 15527263757,
               "exponent": 1
             }
           ],
@@ -594,103 +848,63 @@
       ]
     },
     {
-      "multiplier": 13,
-      "prime": 19789649881,
-      "failed_ray_count": 1,
+      "multiplier": 17,
+      "prime": 87987827929,
+      "failed_ray_count": 6,
       "rays": [
         {
           "shift": 1,
           "a": 1,
           "c": 1,
           "modulus": 4,
-          "shifted": 19789649885,
+          "shifted": 87987827933,
           "factorization": [
             {
-              "prime": 5,
-              "exponent": 1
-            },
-            {
-              "prime": 113,
-              "exponent": 1
-            },
-            {
-              "prime": 163,
-              "exponent": 1
-            },
-            {
-              "prime": 214883,
+              "prime": 87987827933,
               "exponent": 1
             }
           ],
-          "screened_factor_rows": [
-            {
-              "prime": 5,
-              "residue": 1,
-              "in_transversal": true
-            }
-          ],
-          "ray_witness_count": 8,
-          "least_ray_witness": {
-            "h": 163,
-            "K": 41,
-            "gap": 121408895,
-            "divisor": 1
-          }
+          "screened_factor_rows": [],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
         },
         {
           "shift": 2,
           "a": 1,
           "c": 2,
           "modulus": 8,
-          "shifted": 19789649889,
+          "shifted": 87987827937,
           "factorization": [
             {
               "prime": 3,
               "exponent": 1
             },
             {
-              "prime": 109,
-              "exponent": 1
-            },
-            {
-              "prime": 60518807,
+              "prime": 29329275979,
               "exponent": 1
             }
           ],
           "screened_factor_rows": [],
-          "ray_witness_count": 2,
-          "least_ray_witness": {
-            "h": 327,
-            "K": 41,
-            "gap": 60518807,
-            "divisor": 2
-          }
+          "ray_witness_count": 0,
+          "least_ray_witness": null
         },
         {
           "shift": 3,
           "a": 1,
           "c": 3,
           "modulus": 12,
-          "shifted": 19789649893,
+          "shifted": 87987827941,
           "factorization": [
             {
               "prime": 13,
               "exponent": 1
             },
             {
-              "prime": 31,
+              "prime": 53,
               "exponent": 1
             },
             {
-              "prime": 107,
-              "exponent": 1
-            },
-            {
-              "prime": 547,
-              "exponent": 1
-            },
-            {
-              "prime": 839,
+              "prime": 127703669,
               "exponent": 1
             }
           ],
@@ -701,23 +915,86 @@
               "in_transversal": true
             }
           ],
-          "ray_witness_count": 8,
-          "least_ray_witness": {
-            "h": 107,
-            "K": 9,
-            "gap": 184949999,
-            "divisor": 3
-          }
+          "ray_witness_count": 0,
+          "least_ray_witness": null
         },
         {
           "shift": 4,
           "a": 2,
           "c": 1,
           "modulus": 8,
-          "shifted": 19789649897,
+          "shifted": 87987827945,
           "factorization": [
             {
-              "prime": 19789649897,
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            },
+            {
+              "prime": 1035150917,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 17,
+              "residue": 1,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 5,
+          "a": 1,
+          "c": 5,
+          "modulus": 20,
+          "shifted": 87987827949,
+          "factorization": [
+            {
+              "prime": 3,
+              "exponent": 1
+            },
+            {
+              "prime": 7,
+              "exponent": 1
+            },
+            {
+              "prime": 61,
+              "exponent": 1
+            },
+            {
+              "prime": 68686829,
+              "exponent": 1
+            }
+          ],
+          "screened_factor_rows": [
+            {
+              "prime": 7,
+              "residue": 7,
+              "in_transversal": true
+            }
+          ],
+          "ray_witness_count": 0,
+          "least_ray_witness": null
+        },
+        {
+          "shift": 6,
+          "a": 1,
+          "c": 6,
+          "modulus": 24,
+          "shifted": 87987827953,
+          "factorization": [
+            {
+              "prime": 1747,
+              "exponent": 1
+            },
+            {
+              "prime": 50365099,
               "exponent": 1
             }
           ],

@@ -48,7 +48,7 @@ class TypeIIACAdversarialCRTSearchTests(unittest.TestCase):
         self.assertEqual(self.actual, self.expected)
         self.assertEqual(
             self.actual["progression"]["modulus"],
-            1_522_280_760,
+            5_175_754_584,
         )
         self.assertEqual(self.actual["progression"]["residue"], 1)
 
@@ -89,15 +89,19 @@ class TypeIIACAdversarialCRTSearchTests(unittest.TestCase):
                         continue
                     self.assertIn(screened_prime % modulus, transversals[modulus])
 
-    def test_first_candidate_is_an_exact_four_ray_failure(self):
-        candidate = self.actual["candidates"][0]
+    def test_first_complete_fan_failure_is_an_exact_six_ray_failure(self):
+        candidate = next(
+            candidate
+            for candidate in self.actual["candidates"]
+            if candidate["failed_ray_count"] == self.actual["fan_bound"]
+        )
         self.assertEqual(
             (candidate["multiplier"], candidate["prime"], candidate["failed_ray_count"]),
-            (3, 4_566_842_281, 4),
+            (17, 87_987_827_929, 6),
         )
         self.assertTrue(sympy.isprime(candidate["prime"]))
         self.assertEqual(candidate["prime"] % 24, 1)
-        self.assertEqual(len(candidate["rays"]), 4)
+        self.assertEqual(len(candidate["rays"]), 6)
         for ray in candidate["rays"]:
             factors = [
                 (int(row["prime"]), int(row["exponent"]))
