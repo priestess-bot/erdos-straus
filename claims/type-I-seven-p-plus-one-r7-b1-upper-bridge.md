@@ -19,7 +19,7 @@ sources:
   locator: Propositions 1--4
   role: Type-I-normal-form-and-terminal-bridge-context
 visibility: public
-last_checked: '2026-07-28'
+last_checked: '2026-07-29'
 ---
 
 # 来自 \((7p+1)/4\) 五模七因子的 \(R=7\) \(B=1\) 上半区桥
