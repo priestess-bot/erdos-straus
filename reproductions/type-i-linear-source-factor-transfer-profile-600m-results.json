@@ -1,0 +1,212 @@
+{
+  "arithmetic": "for p=a+s+asR and every q>1 with q|a and q=1 (mod s), verify the exact transfer (a,s,R) -> (a/q,s,qR+(q-1)/s) and the induced divisibility q|K' at the destination",
+  "scope_note": "The transfer preserves s, so this finite audit can bound only fixed-s reselection. It neither disproves the existence of a good source state nor proves a universal selector.",
+  "input_artifact": "type-i-linear-general-b-obstruction-mixture-profile-600m-results.json",
+  "input_sha256": "dce587d6e6703e5cdcb81b6cd05c16989394a7321d2d14515ea2eda6c2aec44d",
+  "totals": {
+    "source_state_count": 490,
+    "target_hit_state_count": 30,
+    "failed_state_count": 460,
+    "failed_state_same_s_as_target_hit_count": 54,
+    "failed_state_s_isolated_from_target_hit_count": 406,
+    "forward_factor_transfer_count": 463
+  },
+  "profiles": [
+    {
+      "prime": 214729,
+      "source_state_count": 43,
+      "target_hit_state_count": 4,
+      "source_s_count": 20,
+      "target_hit_s_count": 4,
+      "failed_state_same_s_as_target_hit_count": 6,
+      "failed_state_s_isolated_from_target_hit_count": 33,
+      "forward_factor_transfer_count": 70,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          107363
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          214727
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        53682,
+        1,
+        3
+      ]
+    },
+    {
+      "prime": 878089,
+      "source_state_count": 54,
+      "target_hit_state_count": 1,
+      "source_s_count": 32,
+      "target_hit_s_count": 1,
+      "failed_state_same_s_as_target_hit_count": 0,
+      "failed_state_s_isolated_from_target_hit_count": 53,
+      "forward_factor_transfer_count": 45,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          439043
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          878087
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        219522,
+        1,
+        3
+      ]
+    },
+    {
+      "prime": 2210569,
+      "source_state_count": 38,
+      "target_hit_state_count": 4,
+      "source_s_count": 21,
+      "target_hit_s_count": 3,
+      "failed_state_same_s_as_target_hit_count": 13,
+      "failed_state_s_isolated_from_target_hit_count": 21,
+      "forward_factor_transfer_count": 26,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          1105283
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          2210567
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        349,
+        3,
+        2111
+      ]
+    },
+    {
+      "prime": 13782409,
+      "source_state_count": 78,
+      "target_hit_state_count": 1,
+      "source_s_count": 44,
+      "target_hit_s_count": 1,
+      "failed_state_same_s_as_target_hit_count": 11,
+      "failed_state_s_isolated_from_target_hit_count": 66,
+      "forward_factor_transfer_count": 90,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          6891203
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          13782407
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        3445602,
+        1,
+        3
+      ]
+    },
+    {
+      "prime": 64214329,
+      "source_state_count": 80,
+      "target_hit_state_count": 5,
+      "source_s_count": 50,
+      "target_hit_s_count": 5,
+      "failed_state_same_s_as_target_hit_count": 8,
+      "failed_state_s_isolated_from_target_hit_count": 67,
+      "forward_factor_transfer_count": 77,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          32107163
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          64214327
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        16053582,
+        1,
+        3
+      ]
+    },
+    {
+      "prime": 105295129,
+      "source_state_count": 95,
+      "target_hit_state_count": 6,
+      "source_s_count": 64,
+      "target_hit_s_count": 6,
+      "failed_state_same_s_as_target_hit_count": 0,
+      "failed_state_s_isolated_from_target_hit_count": 89,
+      "forward_factor_transfer_count": 83,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          52647563
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          105295127
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        26323782,
+        1,
+        3
+      ]
+    },
+    {
+      "prime": 536944489,
+      "source_state_count": 102,
+      "target_hit_state_count": 9,
+      "source_s_count": 74,
+      "target_hit_s_count": 9,
+      "failed_state_same_s_as_target_hit_count": 16,
+      "failed_state_s_isolated_from_target_hit_count": 77,
+      "forward_factor_transfer_count": 72,
+      "factor_transfer_example": {
+        "from": [
+          2,
+          1,
+          268472243
+        ],
+        "factor": 2,
+        "to": [
+          1,
+          1,
+          536944487
+        ]
+      },
+      "s_isolated_failed_state_example": [
+        4550377,
+        3,
+        39
+      ]
+    }
+  ]
+}
