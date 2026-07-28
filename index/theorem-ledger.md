@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 274 |
+| 数学状态 | `computationally_reproduced` | 275 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 218 |
-| 数学状态 | `open` | 11 |
-| 证明来源 | `computational_reproduction` | 46 |
+| 数学状态 | `established` | 222 |
+| 数学状态 | `open` | 12 |
+| 证明来源 | `computational_reproduction` | 47 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 45 |
+| 证明来源 | `repository_derivation` | 50 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 84 |
+| 审阅状态 | `internal_review` | 90 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -247,6 +247,7 @@
 | [固定源窗口不能判定线性 B 等于一逃逸的平方本质](../claims/type-I-fixed-source-window-linear-escape-boundary-600m.md) (`type-I-fixed-source-window-linear-escape-boundary-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [核心素数的九条固定 p 减一 B 等于一因子射线](../claims/type-I-fixed-universal-pminusone-b1-rays.md) (`type-I-fixed-universal-pminusone-b1-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [一般 B 中心化谱的反足点除子刻画](../claims/type-I-general-b-antipodal-divisor-spectrum.md) (`type-I-general-b-antipodal-divisor-spectrum`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一般 B 目标平方除子的中心化谱与精确障碍二分](../claims/type-I-general-b-centered-square-spectrum.md) (`type-I-general-b-centered-square-spectrum`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [十三点残余上的全线性 R 补偿平方边界](../claims/type-I-general-b-compensated-square-full-linear-profile-600m.md) (`type-I-general-b-compensated-square-full-linear-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [十三点前的一般 B 补偿平方重放剖面](../claims/type-I-general-b-compensated-square-residual-profile-600m.md) (`type-I-general-b-compensated-square-residual-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -283,14 +284,19 @@
 | [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七个补偿平方残余的全线性目标谱闭合](../claims/type-I-linear-general-b-spectrum-resolution-profile-600m.md) (`type-I-linear-general-b-spectrum-resolution-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的源块与仿射块混合剖面](../claims/type-I-linear-general-b-two-block-hit-profile-500m.md) (`type-I-linear-general-b-two-block-hit-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性半块的二残数注入与子群障碍逃逸](../claims/type-I-linear-half-block-two-residue-escape.md) (`type-I-linear-half-block-two-residue-escape`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [完整线性源谱中目标命中的坐标标签层支撑边界](../claims/type-I-linear-label-layer-support-profile.md) (`type-I-linear-label-layer-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [三千一百万以内普通尾遗漏的三标签层线性源重选剖面](../claims/type-I-linear-label-reselection-profile-31m.md) (`type-I-linear-label-reselection-profile-31m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性源带模数标签块的完整碰撞刚性](../claims/type-I-linear-labeled-block-gcd-rigidity.md) (`type-I-linear-labeled-block-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性一般 B 二次障碍的互反拉回](../claims/type-I-linear-quadratic-obstruction-reciprocity-pullback.md) (`type-I-linear-quadratic-obstruction-reciprocity-pullback`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的全局线性移位源 B 等于一反例](../claims/type-I-linear-shifted-source-counterexample-878089.md) (`type-I-linear-shifted-source-counterexample-878089`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性源的固定 s 因子转移、K' 因子实现与完整谱边界](../claims/type-I-linear-source-factor-transfer-rigidity.md) (`type-I-linear-source-factor-transfer-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [六亿压力集的线性源一般 B Type I 有限闭合剖面](../claims/type-I-linear-source-general-b-completion-profile-600m.md) (`type-I-linear-source-general-b-completion-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性上半区一般 B 混合终端选择猜想](../claims/type-I-linear-source-general-b-terminal-selector-conjecture.md) (`type-I-linear-source-general-b-terminal-selector-conjecture`) | `open` | `repository_derivation` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性源的变 s 因子转移及双转移闭包边界](../claims/type-I-linear-source-shift-transfer-closure-boundary.md) (`type-I-linear-source-shift-transfer-closure-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性一般 B 的三标签层重选终端选择猜想](../claims/type-I-linear-three-label-reselection-conjecture.md) (`type-I-linear-three-label-reselection-conjecture`) | `open` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-600m.md) (`type-I-mixed-terminal-dense-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-28 |
 | [六亿连续新区间尾遗漏的 B=1 偶终端闭合](../claims/type-I-mixed-terminal-dense-b1-600m.md) (`type-I-mixed-terminal-dense-b1-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿至六亿连续区间的 Type I 回退全部可选上半区偶源](../claims/type-I-mixed-terminal-dense-small-side-profile-600m.md) (`type-I-mixed-terminal-dense-small-side-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |

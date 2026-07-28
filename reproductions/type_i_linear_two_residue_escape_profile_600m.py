@@ -1,0 +1,167 @@
+#!/usr/bin/env python3
+"""Audit the exact half-block injection of 2 and 1/2 into linear spectra."""
+
+from __future__ import annotations
+
+import argparse
+import importlib.util
+import json
+from pathlib import Path
+import sys
+
+import sympy
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE_SCRIPT = ROOT / "reproductions" / "type_i_global_linear_b1_failure_general_b_profile_500m.py"
+DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-linear-two-residue-escape-profile-600m-results.json"
+PRESSURE_PRIMES = (
+    214_729,
+    878_089,
+    2_210_569,
+    13_782_409,
+    64_214_329,
+    105_295_129,
+    536_944_489,
+)
+
+
+def load_module(name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"cannot load {path.name}")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+sources = load_module("two_residue_escape_sources", SOURCE_SCRIPT)
+
+
+def endpoint_record(prime: int, R: int, a: int, s: int, endpoint: str) -> dict[str, int | str | bool]:
+    """Certify 2 and 1/2 using an endpoint t that is 3 modulo 4."""
+    t, u = (a, s) if endpoint == "a" else (s, a)
+    if (
+        endpoint not in {"a", "s"}
+        or prime != a + s + a * s * R
+        or prime % 4 != 1
+        or R % 4 != 3
+        or t % 4 != 3
+        or u % 2 != 1
+    ):
+        raise AssertionError("endpoint does not satisfy the half-block hypotheses")
+    K = (prime * R + 1) // 4
+    half_block, remainder = divmod(t * R + 1, 2)
+    other_half_block, other_remainder = divmod(u * R + 1, 2)
+    if remainder or other_remainder or half_block * other_half_block != K:
+        raise AssertionError("half-block factorization did not reconstruct K")
+
+    inverse_K = pow(K, -1, R)
+    inverse_two = pow(2, -1, R)
+    witness_for_inverse_two = K * half_block
+    witness_for_two = K // half_block
+    if (
+        K * K % witness_for_inverse_two
+        or K * K % witness_for_two
+        or witness_for_inverse_two * inverse_K % R != inverse_two
+        or witness_for_two * inverse_K % R != 2 % R
+        or half_block % R != inverse_two
+        or pow(half_block, -1, R) != 2 % R
+    ):
+        raise AssertionError("half-block failed to inject 2 and its inverse")
+
+    prime_three_mod_eight = bool(sympy.isprime(R) and R % 8 == 3)
+    if prime_three_mod_eight:
+        if (
+            pow(2, (R - 1) // 2, R) != R - 1
+            or pow(half_block, (R - 1) // 2, R) != R - 1
+        ):
+            raise AssertionError("prime 3 mod 8 did not force -1 into the half-block subgroup")
+    return {
+        "R": R,
+        "a": a,
+        "s": s,
+        "endpoint": endpoint,
+        "endpoint_label": t,
+        "other_label": u,
+        "K": K,
+        "half_block": half_block,
+        "other_half_block": other_half_block,
+        "witness_for_inverse_two": witness_for_inverse_two,
+        "witness_for_two": witness_for_two,
+        "prime_R_is_3_mod_8": prime_three_mod_eight,
+    }
+
+
+def audit_prime(prime: int) -> dict[str, object]:
+    """Exhaust every eligible endpoint in one complete linear source spectrum."""
+    bound, states_by_R = sources.enumerate_linear_source_states(prime)
+    records: list[dict[str, int | str | bool]] = []
+    for R, states in states_by_R.items():
+        for a, s in states:
+            if a % 4 == 3:
+                records.append(endpoint_record(prime, R, a, s, "a"))
+            if s % 4 == 3:
+                records.append(endpoint_record(prime, R, a, s, "s"))
+    if not records:
+        raise AssertionError("pressure spectrum had no eligible half-block endpoint")
+    return {
+        "prime": prime,
+        "linear_source_coordinate_bound": bound,
+        "complete_linear_R_count": len(states_by_R),
+        "complete_directed_linear_source_count": sum(
+            len(states) for states in states_by_R.values()
+        ),
+        "eligible_endpoint_count": len(records),
+        "eligible_state_count": len({(row["R"], row["a"], row["s"]) for row in records}),
+        "prime_R_3_mod_8_eligible_endpoint_count": sum(
+            bool(row["prime_R_is_3_mod_8"]) for row in records
+        ),
+        "records": records,
+    }
+
+
+def run_audit(primes: tuple[int, ...] = PRESSURE_PRIMES) -> dict[str, object]:
+    """Audit the two-residue mechanism on seven complete pressure spectra."""
+    if tuple(sorted(set(primes))) != primes:
+        raise ValueError("primes must be a strictly ascending tuple")
+    profiles = [audit_prime(prime) for prime in primes]
+    return {
+        "arithmetic": (
+            "for an endpoint t=3 (mod 4) of p=a+s+asR, the two half-blocks multiply to K; "
+            "the t half-block is 1/2 modulo R and supplies both 2 and 1/2 to the centered spectrum"
+        ),
+        "scope_note": (
+            "The injected residues rule out a subgroup obstruction only when -1 lies in the subgroup "
+            "generated by 2. They do not by themselves make a finite exponent box hit -1."
+        ),
+        "primes": list(primes),
+        "profile_count": len(profiles),
+        "complete_directed_linear_source_count": sum(
+            int(profile["complete_directed_linear_source_count"]) for profile in profiles
+        ),
+        "eligible_endpoint_count": sum(
+            int(profile["eligible_endpoint_count"]) for profile in profiles
+        ),
+        "eligible_state_count": sum(int(profile["eligible_state_count"]) for profile in profiles),
+        "prime_R_3_mod_8_eligible_endpoint_count": sum(
+            int(profile["prime_R_3_mod_8_eligible_endpoint_count"]) for profile in profiles
+        ),
+        "profiles": profiles,
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    args = parser.parse_args()
+    payload = run_audit()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({key: value for key, value in payload.items() if key != "profiles"}, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
