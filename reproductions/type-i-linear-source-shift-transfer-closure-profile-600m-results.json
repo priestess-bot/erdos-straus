@@ -1,0 +1,136 @@
+{
+  "arithmetic": "combine every fixed-s transfer q|a, q=1 (mod s), with every admissible shift transfer q|s, q=1 (mod a), R'=qR+(q-1)/a=3 (mod 4), then compute reverse reachability from exact target-spectrum hits",
+  "scope_note": "This is a finite profile of two explicit forward local source-state transfers. It neither disproves a different source selector nor proves a universal certificate or strict descent.",
+  "input_artifact": "type-i-linear-general-b-obstruction-mixture-profile-600m-results.json",
+  "input_sha256": "dce587d6e6703e5cdcb81b6cd05c16989394a7321d2d14515ea2eda6c2aec44d",
+  "totals": {
+    "source_state_count": 490,
+    "target_hit_state_count": 30,
+    "raw_shift_factor_candidate_count": 496,
+    "admissible_shift_factor_transfer_count": 256,
+    "fixed_factor_transfer_count": 463,
+    "combined_reachable_target_state_count": 39,
+    "failed_state_reaching_target_count": 9,
+    "s_isolated_failed_state_reaching_target_count": 2,
+    "failed_state_not_reaching_target_count": 451
+  },
+  "profiles": [
+    {
+      "prime": 214729,
+      "source_state_count": 43,
+      "target_hit_state_count": 4,
+      "raw_shift_factor_candidate_count": 30,
+      "admissible_shift_factor_transfer_count": 24,
+      "fixed_factor_transfer_count": 70,
+      "combined_reachable_target_state_count": 4,
+      "failed_state_reaching_target_count": 0,
+      "s_isolated_failed_state_reaching_target_count": 0,
+      "failed_state_not_reaching_target_count": 39,
+      "shift_transfer_to_target_examples": []
+    },
+    {
+      "prime": 878089,
+      "source_state_count": 54,
+      "target_hit_state_count": 1,
+      "raw_shift_factor_candidate_count": 42,
+      "admissible_shift_factor_transfer_count": 13,
+      "fixed_factor_transfer_count": 45,
+      "combined_reachable_target_state_count": 1,
+      "failed_state_reaching_target_count": 0,
+      "s_isolated_failed_state_reaching_target_count": 0,
+      "failed_state_not_reaching_target_count": 53,
+      "shift_transfer_to_target_examples": []
+    },
+    {
+      "prime": 2210569,
+      "source_state_count": 38,
+      "target_hit_state_count": 4,
+      "raw_shift_factor_candidate_count": 16,
+      "admissible_shift_factor_transfer_count": 6,
+      "fixed_factor_transfer_count": 26,
+      "combined_reachable_target_state_count": 9,
+      "failed_state_reaching_target_count": 5,
+      "s_isolated_failed_state_reaching_target_count": 1,
+      "failed_state_not_reaching_target_count": 29,
+      "shift_transfer_to_target_examples": [
+        {
+          "from": [
+            1,
+            276321,
+            7
+          ],
+          "to": [
+            1,
+            92107,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "source_state_count": 78,
+      "target_hit_state_count": 1,
+      "raw_shift_factor_candidate_count": 54,
+      "admissible_shift_factor_transfer_count": 31,
+      "fixed_factor_transfer_count": 90,
+      "combined_reachable_target_state_count": 1,
+      "failed_state_reaching_target_count": 0,
+      "s_isolated_failed_state_reaching_target_count": 0,
+      "failed_state_not_reaching_target_count": 77,
+      "shift_transfer_to_target_examples": []
+    },
+    {
+      "prime": 64214329,
+      "source_state_count": 80,
+      "target_hit_state_count": 5,
+      "raw_shift_factor_candidate_count": 35,
+      "admissible_shift_factor_transfer_count": 23,
+      "fixed_factor_transfer_count": 77,
+      "combined_reachable_target_state_count": 5,
+      "failed_state_reaching_target_count": 0,
+      "s_isolated_failed_state_reaching_target_count": 0,
+      "failed_state_not_reaching_target_count": 75,
+      "shift_transfer_to_target_examples": []
+    },
+    {
+      "prime": 105295129,
+      "source_state_count": 95,
+      "target_hit_state_count": 6,
+      "raw_shift_factor_candidate_count": 255,
+      "admissible_shift_factor_transfer_count": 128,
+      "fixed_factor_transfer_count": 83,
+      "combined_reachable_target_state_count": 6,
+      "failed_state_reaching_target_count": 0,
+      "s_isolated_failed_state_reaching_target_count": 0,
+      "failed_state_not_reaching_target_count": 89,
+      "shift_transfer_to_target_examples": []
+    },
+    {
+      "prime": 536944489,
+      "source_state_count": 102,
+      "target_hit_state_count": 9,
+      "raw_shift_factor_candidate_count": 64,
+      "admissible_shift_factor_transfer_count": 31,
+      "fixed_factor_transfer_count": 72,
+      "combined_reachable_target_state_count": 13,
+      "failed_state_reaching_target_count": 4,
+      "s_isolated_failed_state_reaching_target_count": 1,
+      "failed_state_not_reaching_target_count": 89,
+      "shift_transfer_to_target_examples": [
+        {
+          "from": [
+            1,
+            67118061,
+            7
+          ],
+          "to": [
+            1,
+            22372687,
+            23
+          ]
+        }
+      ]
+    }
+  ]
+}
