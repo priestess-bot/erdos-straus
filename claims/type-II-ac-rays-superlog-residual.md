@@ -4,6 +4,8 @@ claim_id: type-II-ac-rays-superlog-residual
 title: Type II 的 AC 因子射线共同残余可达到任意对数幂稀薄
 statement: 取任意有限个正整数对 (A_j,C_j)，且 A_j^2 C_j 两两不同。未被相应 Type II AC 射线 p+4A_j^2C_j 的负一因子残数条件覆盖的核心素数数量为 O_S(X/(log X)^(1+|S|/2))。因而逃过全部正整数 AC 射线的核心素数集合对每个固定 B>0 都是 O_B(X/(log X)^B)。这不蕴含该集合为空。
 claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
 topics:
 - sieve
 - density
@@ -14,6 +16,12 @@ topics:
 - residual-set
 - proof-program
 sources:
+- paper: shute2022
+  locator: Section 5.5, Lemma 5.5.1 (printed p. 57)
+  role: explicit-fixed-dimension-upper-bound-sieve
+- paper: montgomery_vaughan2007
+  locator: Chapter 11, Corollaries 11.19/11.21
+  role: fixed-modulus-PNT-in-arithmetic-progressions
 - paper: elsholtz_tao2013
   locator: "Appendix A, shifted-prime additive functions and sieve estimates"
   role: methodological-foundation
@@ -24,7 +32,7 @@ sources:
   locator: "Theorem 1"
   role: Type-II-factorization-context
 visibility: public
-last_checked: '2026-07-24'
+last_checked: '2026-07-28'
 ---
 
 # Type II 的 \(AC\) 因子射线共同残余可达到任意对数幂稀薄
@@ -169,21 +177,127 @@ Q=\operatorname{lcm}\bigl(24,\{4A_jC_j:1\le j\le L\}\bigr). \tag{11}
 1+\frac L2. \tag{15}
 \]
 
-算术级数中的 Mertens 定理给出相应筛积
+以下把这一平均值提升为上界筛所需的完整输入，而不是只引用筛积的启发式。
+
+### 局部根、CRT 误差与筛维
+
+记 \(\mathcal E\) 为所有整除
 
 \[
-V(z)\asymp_{\mathcal S}(\log z)^{-(1+L/2)}. \tag{16}
+Q\prod_{i<j}4\lvert A_i^2C_i-A_j^2C_j\rvert
 \]
 
-标准 Selberg 上界筛应用于 \(t\le X/24\)，再对有限多个横截面系统求和，便得到
-(3)。这是与 `variable-factor-rays-superlog-residual` 相同的线性筛机制；此处新增的
-线性式正是 Type II \(AC\) 射线的移位数。
+的素数的有限集合。取一个固定的阈值 \(y_{\mathcal S}>L+1\)，使其大于
+\(\mathcal E\) 中所有素数。对 \(\ell>y_{\mathcal S}\)，令
+\(\Omega_\ell\) 是 (13) 与所有适用 (14) 的根集，且令
+
+\[
+\nu(\ell)=\lvert\Omega_\ell\rvert
+=1+\sum_{j=1}^{L}
+ \mathbf 1_{\ell\bmod 4A_jC_j\notin T_{A_j,C_j}}. \tag{16}
+\]
+
+此处 \(\ell\nmid Q\)，所以每个出现的线性式都有唯一根；又由对
+\(4(A_i^2C_i-A_j^2C_j)\) 的排除，这些根两两不同。特别地
+\(0\le\nu(\ell)\le L+1<\ell\)。
+
+设 \(Y=\lfloor(X-1)/24\rfloor\)，
+\(\mathcal A_X=\{1,\ldots,Y\}\)。对只含大于 \(y_{\mathcal S}\) 的素因子的
+平方自由数 \(d\)，把各 \(\Omega_\ell\) 由中国剩余定理合并为
+\(\nu(d)=\prod_{\ell\mid d}\nu(\ell)\) 个模 \(d\) 的根。于是精确地有
+
+\[
+\lvert\mathcal A_{X,d}\rvert
+=Y\frac{\nu(d)}d+r_d,
+\qquad\lvert r_d\rvert\le\nu(d). \tag{17}
+\]
+
+这是上界筛的余项公式；它不使用 \(24t+1\) 的素数分布。
+
+令 \(M_j=4A_jC_j\)。固定模数 \(Q\) 的算术级数素数定理及分部求和给出：对
+每个 \((a,Q)=1\)，
+
+\[
+\sum_{\substack{\ell\le v\\ \ell\equiv a\pmod Q}}\frac1\ell
+=\frac1{\varphi(Q)}\log\log v+O_Q(1). \tag{18}
+\]
+
+模 \(Q\) 的单位类投到模 \(M_j\) 的单位类时纤维大小相同，而横截面补集占
+\(U(M_j)\) 的一半。因此由 (16)、(18)，
+
+\[
+\sum_{y_{\mathcal S}<\ell\le v}\frac{\nu(\ell)}\ell
+=\left(1+\frac L2\right)\log\log v+O_{\mathcal S}(1). \tag{19}
+\]
+
+记 \(\kappa=1+L/2\)，并定义
+
+\[
+V(v)=\prod_{y_{\mathcal S}<\ell<v}
+ \left(1-\frac{\nu(\ell)}\ell\right).
+\]
+
+因为 \(\sum_\ell\nu(\ell)^2/\ell^2<\infty\)（这里 \(\mathcal S\) 固定），
+对数展开和 (19) 给出
+
+\[
+V(v)\asymp_{\mathcal S}(\log v)^{-\kappa}. \tag{20}
+\]
+
+增大一个只依赖 \(\mathcal S\) 的常数 \(K\ge1\) 后，所有
+\(2\le w\le v\) 都满足
+
+\[
+\frac{V(w)}{V(v)}
+\le K\left(\frac{\log v}{\log w}\right)^\kappa. \tag{21}
+\]
+
+故 (17)、(21) 正是固定筛维 \(\kappa\) 的基本上界筛假设。
+
+### 显式上界筛收口
+
+取
+
+\[
+D=X^{1/3},\qquad
+b=\left\lceil9\kappa+10\log K+2\right\rceil,\qquad
+z=D^{1/b}. \tag{22}
+\]
+
+则 \(b\ge9\kappa+1\)，且 Shute 的 Lemma 5.5.1 中筛积主项的相对误差至多
+\(e^{9\kappa-b}K^{10}\le e^{-2}\)。该引理的组合系数绝对值不超过 \(1\)。由
+(17) 及
+
+\[
+\nu(d)\le(L+1)^{\omega(d)}\le\tau_{L+1}(d),
+\qquad
+\sum_{d\le D}\tau_{L+1}(d)
+\ll_{\mathcal S}D(1+\log D)^L, \tag{23}
+\]
+
+其截断余项为 \(O_{\mathcal S}(X^{1/3}(\log X)^L)\)。因此，令
+\(S_{\mathcal S}(X,z)\) 为避开所有 \(y_{\mathcal S}<\ell<z\) 禁根的
+\(t\in\mathcal A_X\) 数目，则
+
+\[
+\begin{aligned}
+S_{\mathcal S}(X,z)
+&\ll_{\mathcal S}YV(z)+X^{1/3}(\log X)^L\\
+&\ll_{\mathcal S}\frac{X}{(\log X)^{1+L/2}}.
+\end{aligned}\tag{24}
+\]
+
+忽略 \(p\le\max_j4A_j^2C_j\) 的有限项后，若 \(p=24t+1>z\) 且所有指定射线
+均失败，前节的横截面必要条件使 \(t\) 避开上述每一个禁根。被首个禁根删去的只有
+\(p\le z\) 的素数，数目 \(O(z)\)，已被 (24) 吸收。故对固定的一组横截面选择，
+失败核心素数数目具有 (24) 的上界。横截面系统的数目是有限常数
+\(\prod_j2^{\varphi(4A_jC_j)/2}\)；对它们求和即得 (3)。
 
 最后，对任意 \(B>0\)，取
 
 \[
 \mathcal S_L=\{(1,C):1\le C\le L\},
-\qquad L\ge2(B-1). \tag{17}
+\qquad L\ge2(B-1). \tag{25}
 \]
 
 它满足 (1)。逃过所有 \(AC\) 射线的集合包含于逃过 \(\mathcal S_L\) 的集合，故
@@ -192,7 +306,7 @@ V(z)\asymp_{\mathcal S}(\log z)^{-(1+L/2)}. \tag{16}
 ## 边界
 
 这一定理把 `type-II-ac-ray-saturation-conjecture` 的失败集压得极薄，但没有证明它为空。
-在 (17) 中，\(L\) 依赖于所要求的固定对数幂，且隐含常数随 \(\mathcal S_L\) 变化；
+在 (25) 中，\(L\) 依赖于所要求的固定对数幂，且隐含常数随 \(\mathcal S_L\) 变化；
 一个无限集合仍可满足 (4)。因此它不能替代逐点因子选择器或真正的递降机制。
 
 此外，`divisor-residue-subgroup-exception-boundary` 证明：不能指望把每条失败射线的
