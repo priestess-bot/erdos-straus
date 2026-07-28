@@ -29,6 +29,7 @@ class InversePairLogBoxCriterionTests(unittest.TestCase):
     def test_artifact_rebuilds_exactly(self):
         self.assertEqual(self.actual, self.expected)
         self.assertEqual(self.actual["case_count"], 2)
+        self.assertEqual(self.actual["inverse_pair_candidate_count"], 2)
 
     def test_both_rows_have_empty_finite_box_intersection(self):
         for profile in self.actual["profiles"]:

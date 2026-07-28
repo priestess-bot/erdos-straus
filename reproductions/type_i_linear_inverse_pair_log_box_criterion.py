@@ -65,6 +65,40 @@ def load_profile_rows() -> dict[tuple[int, int], dict[str, object]]:
     return rows
 
 
+def inverse_pair_candidates() -> list[dict[str, int]]:
+    """Exhaust all nonempty seven-spectrum orientations for inverse-pair blocks."""
+    if file_sha256(INPUT) != EXPECTED_INPUT_SHA256:
+        raise AssertionError("seven-spectrum profile changed")
+    payload = json.loads(INPUT.read_text(encoding="utf-8"))
+    candidates = []
+    for profile in payload["profiles"]:
+        prime = int(profile["prime"])
+        for record in profile["records"]:
+            R = int(record["R"])
+            if not sympy.isprime(R):
+                continue
+            for orientation in record["orientations"]:
+                if not orientation.get("subgroup_shared_pullback_residues"):
+                    continue
+                factors = orientation["affine_factorization"]
+                if len(factors) != 2 or any(int(item["exponent"]) != 1 for item in factors):
+                    continue
+                left, right = sorted(int(item["prime"]) for item in factors)
+                if left * right % R != 1:
+                    continue
+                candidates.append(
+                    {
+                        "prime": prime,
+                        "R": R,
+                        "a": int(orientation["a"]),
+                        "s": int(orientation["s"]),
+                        "q": left,
+                        "inverse_factor": right,
+                    }
+                )
+    return sorted(candidates, key=lambda item: tuple(item.values()))
+
+
 def inverse_pair_profile(case: dict[str, int], row: dict[str, object]) -> dict[str, object]:
     """Apply the exact one-dimensional exponent-difference formula."""
     R = int(case["R"])
@@ -136,6 +170,11 @@ def run_audit(input_path: Path = INPUT) -> dict[str, object]:
     if input_path != INPUT:
         raise ValueError("this profile is tied to the frozen seven-spectrum artifact")
     rows = load_profile_rows()
+    candidates = inverse_pair_candidates()
+    expected_keys = {(int(case["prime"]), int(case["R"])) for case in CASES}
+    candidate_keys = {(row["prime"], row["R"]) for row in candidates}
+    if candidate_keys != expected_keys or len(candidates) != len(CASES):
+        raise AssertionError("inverse-pair candidate census changed")
     profiles = []
     for case in CASES:
         key = (int(case["prime"]), int(case["R"]))
@@ -154,6 +193,8 @@ def run_audit(input_path: Path = INPUT) -> dict[str, object]:
         ),
         "input_artifact": INPUT.name,
         "input_sha256": file_sha256(INPUT),
+        "inverse_pair_candidate_count": len(candidates),
+        "inverse_pair_candidates": candidates,
         "case_count": len(profiles),
         "profiles": profiles,
     }
