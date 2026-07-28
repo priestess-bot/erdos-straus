@@ -1,0 +1,1003 @@
+{
+  "arithmetic": "enumerate every linear source p=a+s+asR through its exact min(a,s) bound; directly enumerate every d|K^2 with d=-K mod R; then test every nonempty coordinate-label layer subproduct",
+  "scope_note": "This is a complete one-prime counterexample to reducing every fixed successful orientation to at most three full label layers. The same prime still has other target hits of smaller support.",
+  "ordinary_tail_miss_input": "type-i-tail-reverse-even-source-closure-500m-results.json",
+  "ordinary_tail_miss_input_sha256": "426ef578d796c7307505e87d16794d28569a91d8297693ec742bcf21873d4f77",
+  "prime": 372409,
+  "linear_source_coordinate_bound": 352,
+  "complete_linear_R_count": 31,
+  "complete_directed_linear_source_count": 53,
+  "coordinate_label_count": 44,
+  "target_hit_Rs": [
+    7,
+    59,
+    83,
+    131,
+    471
+  ],
+  "directed_target_hit_source_count": 11,
+  "minimum_target_layer_support_counts": {
+    "1": 8,
+    "2": 1,
+    "4": 2
+  },
+  "four_layer_orientations": [
+    {
+      "R": 471,
+      "a": 1,
+      "s": 789,
+      "K": 43851160,
+      "layers": [
+        {
+          "name": "source_collision",
+          "label": 789,
+          "value": 85,
+          "factorization": [
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ]
+        },
+        {
+          "name": "source_private",
+          "label": 789,
+          "value": 1093,
+          "factorization": [
+            {
+              "prime": 1093,
+              "exponent": 1
+            }
+          ]
+        },
+        {
+          "name": "affine_collision",
+          "label": 1,
+          "value": 8,
+          "factorization": [
+            {
+              "prime": 2,
+              "exponent": 3
+            }
+          ]
+        },
+        {
+          "name": "affine_private",
+          "label": 1,
+          "value": 59,
+          "factorization": [
+            {
+              "prime": 59,
+              "exponent": 1
+            }
+          ]
+        }
+      ],
+      "minimum_target_layer_support": 4,
+      "minimum_target_layer_masks": [
+        [
+          "source_collision",
+          "source_private",
+          "affine_collision",
+          "affine_private"
+        ]
+      ]
+    },
+    {
+      "R": 471,
+      "a": 789,
+      "s": 1,
+      "K": 43851160,
+      "layers": [
+        {
+          "name": "source_collision",
+          "label": 1,
+          "value": 2,
+          "factorization": [
+            {
+              "prime": 2,
+              "exponent": 1
+            }
+          ]
+        },
+        {
+          "name": "source_private",
+          "label": 1,
+          "value": 59,
+          "factorization": [
+            {
+              "prime": 59,
+              "exponent": 1
+            }
+          ]
+        },
+        {
+          "name": "affine_collision",
+          "label": 789,
+          "value": 340,
+          "factorization": [
+            {
+              "prime": 2,
+              "exponent": 2
+            },
+            {
+              "prime": 5,
+              "exponent": 1
+            },
+            {
+              "prime": 17,
+              "exponent": 1
+            }
+          ]
+        },
+        {
+          "name": "affine_private",
+          "label": 789,
+          "value": 1093,
+          "factorization": [
+            {
+              "prime": 1093,
+              "exponent": 1
+            }
+          ]
+        }
+      ],
+      "minimum_target_layer_support": 4,
+      "minimum_target_layer_masks": [
+        [
+          "source_collision",
+          "source_private",
+          "affine_collision",
+          "affine_private"
+        ]
+      ]
+    }
+  ],
+  "target_hit_records": [
+    {
+      "R": 7,
+      "K": 651716,
+      "K_factorization": [
+        {
+          "prime": 2,
+          "exponent": 2
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 83,
+          "exponent": 1
+        },
+        {
+          "prime": 151,
+          "exponent": 1
+        }
+      ],
+      "matching_square_divisors": [
+        26,
+        166,
+        208,
+        1328,
+        7852,
+        28054,
+        50132,
+        179114,
+        224432,
+        296413,
+        1432912,
+        1892483,
+        2371304,
+        8472308,
+        15139864,
+        54092428,
+        319829627,
+        2041989157,
+        2558637016,
+        16335913256
+      ],
+      "orientations": [
+        {
+          "R": 7,
+          "a": 1,
+          "s": 46551,
+          "K": 651716,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 46551,
+              "value": 162929,
+              "factorization": [
+                {
+                  "prime": 13,
+                  "exponent": 1
+                },
+                {
+                  "prime": 83,
+                  "exponent": 1
+                },
+                {
+                  "prime": 151,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 46551,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 1,
+              "value": 4,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 2
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 1,
+              "value": 1,
+              "factorization": []
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "source_collision"
+            ]
+          ]
+        },
+        {
+          "R": 7,
+          "a": 43,
+          "s": 1233,
+          "K": 651716,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 1233,
+              "value": 2158,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 1
+                },
+                {
+                  "prime": 13,
+                  "exponent": 1
+                },
+                {
+                  "prime": 83,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 1233,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 43,
+              "value": 302,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 1
+                },
+                {
+                  "prime": 151,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 43,
+              "value": 1,
+              "factorization": []
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "source_collision"
+            ]
+          ]
+        },
+        {
+          "R": 7,
+          "a": 154,
+          "s": 345,
+          "K": 651716,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 345,
+              "value": 604,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 2
+                },
+                {
+                  "prime": 151,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 345,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 154,
+              "value": 1079,
+              "factorization": [
+                {
+                  "prime": 13,
+                  "exponent": 1
+                },
+                {
+                  "prime": 83,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 154,
+              "value": 1,
+              "factorization": []
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "affine_collision"
+            ]
+          ]
+        },
+        {
+          "R": 7,
+          "a": 1233,
+          "s": 43,
+          "K": 651716,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 43,
+              "value": 151,
+              "factorization": [
+                {
+                  "prime": 151,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 43,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 1233,
+              "value": 4316,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 2
+                },
+                {
+                  "prime": 13,
+                  "exponent": 1
+                },
+                {
+                  "prime": 83,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 1233,
+              "value": 1,
+              "factorization": []
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "affine_collision"
+            ]
+          ]
+        },
+        {
+          "R": 7,
+          "a": 46551,
+          "s": 1,
+          "K": 651716,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 1,
+              "value": 2,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 1,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 46551,
+              "value": 325858,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 1
+                },
+                {
+                  "prime": 13,
+                  "exponent": 1
+                },
+                {
+                  "prime": 83,
+                  "exponent": 1
+                },
+                {
+                  "prime": 151,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 46551,
+              "value": 1,
+              "factorization": []
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "affine_collision"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "R": 59,
+      "K": 5493033,
+      "K_factorization": [
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 13,
+          "exponent": 1
+        },
+        {
+          "prime": 19,
+          "exponent": 1
+        },
+        {
+          "prime": 353,
+          "exponent": 1
+        }
+      ],
+      "matching_square_divisors": [
+        15561,
+        46949,
+        642684861,
+        1939040649
+      ],
+      "orientations": [
+        {
+          "R": 59,
+          "a": 700,
+          "s": 9,
+          "K": 5493033,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 9,
+              "value": 7,
+              "factorization": [
+                {
+                  "prime": 7,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 9,
+              "value": 19,
+              "factorization": [
+                {
+                  "prime": 19,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_collision",
+              "label": 700,
+              "value": 117,
+              "factorization": [
+                {
+                  "prime": 3,
+                  "exponent": 2
+                },
+                {
+                  "prime": 13,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 700,
+              "value": 353,
+              "factorization": [
+                {
+                  "prime": 353,
+                  "exponent": 1
+                }
+              ]
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "affine_collision"
+            ],
+            [
+              "affine_private"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "R": 83,
+      "K": 7727487,
+      "K_factorization": [
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 37,
+          "exponent": 1
+        },
+        {
+          "prime": 43,
+          "exponent": 1
+        },
+        {
+          "prime": 1619,
+          "exponent": 1
+        }
+      ],
+      "matching_square_divisors": [
+        2216411,
+        26941779
+      ],
+      "orientations": [
+        {
+          "R": 83,
+          "a": 39,
+          "s": 115,
+          "K": 7727487,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 115,
+              "value": 4773,
+              "factorization": [
+                {
+                  "prime": 3,
+                  "exponent": 1
+                },
+                {
+                  "prime": 37,
+                  "exponent": 1
+                },
+                {
+                  "prime": 43,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 115,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 39,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_private",
+              "label": 39,
+              "value": 1619,
+              "factorization": [
+                {
+                  "prime": 1619,
+                  "exponent": 1
+                }
+              ]
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "source_collision"
+            ]
+          ]
+        },
+        {
+          "R": 83,
+          "a": 115,
+          "s": 39,
+          "K": 7727487,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 39,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "source_private",
+              "label": 39,
+              "value": 1619,
+              "factorization": [
+                {
+                  "prime": 1619,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_collision",
+              "label": 115,
+              "value": 4773,
+              "factorization": [
+                {
+                  "prime": 3,
+                  "exponent": 1
+                },
+                {
+                  "prime": 37,
+                  "exponent": 1
+                },
+                {
+                  "prime": 43,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 115,
+              "value": 1,
+              "factorization": []
+            }
+          ],
+          "minimum_target_layer_support": 1,
+          "minimum_target_layer_masks": [
+            [
+              "affine_collision"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "R": 131,
+      "K": 12196395,
+      "K_factorization": [
+        {
+          "prime": 3,
+          "exponent": 2
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 107,
+          "exponent": 1
+        },
+        {
+          "prime": 149,
+          "exponent": 1
+        }
+      ],
+      "matching_square_divisors": [
+        100575,
+        194633,
+        1076525,
+        138177981,
+        764269425,
+        1479016167
+      ],
+      "orientations": [
+        {
+          "R": 131,
+          "a": 58,
+          "s": 49,
+          "K": 12196395,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 49,
+              "value": 1605,
+              "factorization": [
+                {
+                  "prime": 3,
+                  "exponent": 1
+                },
+                {
+                  "prime": 5,
+                  "exponent": 1
+                },
+                {
+                  "prime": 107,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 49,
+              "value": 1,
+              "factorization": []
+            },
+            {
+              "name": "affine_collision",
+              "label": 58,
+              "value": 51,
+              "factorization": [
+                {
+                  "prime": 3,
+                  "exponent": 1
+                },
+                {
+                  "prime": 17,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 58,
+              "value": 149,
+              "factorization": [
+                {
+                  "prime": 149,
+                  "exponent": 1
+                }
+              ]
+            }
+          ],
+          "minimum_target_layer_support": 2,
+          "minimum_target_layer_masks": [
+            [
+              "source_collision",
+              "affine_collision"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "R": 471,
+      "K": 43851160,
+      "K_factorization": [
+        {
+          "prime": 2,
+          "exponent": 3
+        },
+        {
+          "prime": 5,
+          "exponent": 1
+        },
+        {
+          "prime": 17,
+          "exponent": 1
+        },
+        {
+          "prime": 59,
+          "exponent": 1
+        },
+        {
+          "prime": 1093,
+          "exponent": 1
+        }
+      ],
+      "matching_square_divisors": [
+        27200,
+        70695743873
+      ],
+      "orientations": [
+        {
+          "R": 471,
+          "a": 1,
+          "s": 789,
+          "K": 43851160,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 789,
+              "value": 85,
+              "factorization": [
+                {
+                  "prime": 5,
+                  "exponent": 1
+                },
+                {
+                  "prime": 17,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 789,
+              "value": 1093,
+              "factorization": [
+                {
+                  "prime": 1093,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_collision",
+              "label": 1,
+              "value": 8,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 3
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 1,
+              "value": 59,
+              "factorization": [
+                {
+                  "prime": 59,
+                  "exponent": 1
+                }
+              ]
+            }
+          ],
+          "minimum_target_layer_support": 4,
+          "minimum_target_layer_masks": [
+            [
+              "source_collision",
+              "source_private",
+              "affine_collision",
+              "affine_private"
+            ]
+          ]
+        },
+        {
+          "R": 471,
+          "a": 789,
+          "s": 1,
+          "K": 43851160,
+          "layers": [
+            {
+              "name": "source_collision",
+              "label": 1,
+              "value": 2,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "source_private",
+              "label": 1,
+              "value": 59,
+              "factorization": [
+                {
+                  "prime": 59,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_collision",
+              "label": 789,
+              "value": 340,
+              "factorization": [
+                {
+                  "prime": 2,
+                  "exponent": 2
+                },
+                {
+                  "prime": 5,
+                  "exponent": 1
+                },
+                {
+                  "prime": 17,
+                  "exponent": 1
+                }
+              ]
+            },
+            {
+              "name": "affine_private",
+              "label": 789,
+              "value": 1093,
+              "factorization": [
+                {
+                  "prime": 1093,
+                  "exponent": 1
+                }
+              ]
+            }
+          ],
+          "minimum_target_layer_support": 4,
+          "minimum_target_layer_masks": [
+            [
+              "source_collision",
+              "source_private",
+              "affine_collision",
+              "affine_private"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
