@@ -69,10 +69,10 @@ def choose_upper_b_one(
     return min(
         candidates,
         key=lambda candidate: (
+            int(candidate["B_one_realization"]["m"]),
             int(candidate["source_distance"]),
             int(candidate["E"]),
             int(candidate["origin_gap"]),
-            int(candidate["B_one_realization"]["m"]),
         ),
     )
 
@@ -87,6 +87,7 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
         raise AssertionError("input must be a complete B=1 dense profile")
 
     direct: list[int] = []
+    direct_gaps: list[int] = []
     lower: list[int] = []
     reselected: list[dict[str, object]] = []
     misses: list[dict[str, object]] = []
@@ -106,6 +107,7 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
             if witness is None:
                 raise AssertionError("stored upper-half B=1 witness did not reconstruct")
             direct.append(prime)
+            direct_gaps.append(int(record["gap"]))
             continue
 
         lower.append(prime)
@@ -147,9 +149,9 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
         ),
         "scope_note": (
             "A complete finite source-state re-selection profile for the 247 ordinary-tail misses generated "
-            "from the shared 500M--600M, m<=215 Type I box. Some B=1 normal realizations of re-selected "
-            "states have gaps outside that source-state generation window; it supplies neither a global B=1 "
-            "bound nor a universal source-selection rule."
+            "from the shared 500M--600M, m<=215 Type I box. The selected B=1 realization is minimized first "
+            "by its normal-form gap, yielding the stated finite m<=131 closure; it supplies neither a global "
+            "B=1 bound nor a universal source-selection rule."
         ),
         "input_artifact": INPUT.name,
         "prime_interval": profile["prime_interval"],
@@ -160,11 +162,15 @@ def run_profile(profile: dict[str, object]) -> dict[str, object]:
         "reselected_upper_B_eq_1_count": len(reselected),
         "upper_B_eq_1_miss_count": len(misses),
         "upper_B_eq_1_closure_count": len(direct) + len(reselected),
+        "maximum_direct_upper_B_eq_1_gap": max(direct_gaps, default=None),
         "reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count": sum(
             gap > gap_cap for gap in reselected_B_one_realization_gaps
         ),
         "maximum_reselected_upper_B_eq_1_realization_gap": max(
             reselected_B_one_realization_gaps, default=None
+        ),
+        "maximum_selected_upper_B_eq_1_normal_gap": max(
+            [*direct_gaps, *reselected_B_one_realization_gaps], default=None
         ),
         "reselection_normal_forms_exhaustively_checked": forms_checked,
         "reselection_strict_reverse_lifts_exhaustively_checked": lifts_checked,

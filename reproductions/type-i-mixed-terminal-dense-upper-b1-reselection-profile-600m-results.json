@@ -1,6 +1,6 @@
 {
   "arithmetic": "verify every stored B=1 terminal bridge; for each stored lower-half source, exhaust every Type I normal form and strict maximum-tail lift through the same gap cap, retain every even upper-half source state, and test it with the exact B=1 source-state divisor-residue criterion",
-  "scope_note": "A complete finite source-state re-selection profile for the 247 ordinary-tail misses generated from the shared 500M--600M, m<=215 Type I box. Some B=1 normal realizations of re-selected states have gaps outside that source-state generation window; it supplies neither a global B=1 bound nor a universal source-selection rule.",
+  "scope_note": "A complete finite source-state re-selection profile for the 247 ordinary-tail misses generated from the shared 500M--600M, m<=215 Type I box. The selected B=1 realization is minimized first by its normal-form gap, yielding the stated finite m<=131 closure; it supplies neither a global B=1 bound nor a universal source-selection rule.",
   "input_artifact": "type-i-mixed-terminal-dense-b1-600m-results.json",
   "prime_interval": [
     500000001,
@@ -13,8 +13,10 @@
   "reselected_upper_B_eq_1_count": 40,
   "upper_B_eq_1_miss_count": 0,
   "upper_B_eq_1_closure_count": 247,
-  "reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count": 3,
-  "maximum_reselected_upper_B_eq_1_realization_gap": 18500439,
+  "maximum_direct_upper_B_eq_1_gap": 131,
+  "reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count": 0,
+  "maximum_reselected_upper_B_eq_1_realization_gap": 87,
+  "maximum_selected_upper_B_eq_1_normal_gap": 131,
   "reselection_normal_forms_exhaustively_checked": 2331,
   "reselection_strict_reverse_lifts_exhaustively_checked": 6643,
   "direct_upper_B_eq_1_primes": [
@@ -273,23 +275,23 @@
       "prime": 500019529,
       "upper_source_state_count": 110,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 500019528,
-        "E": 12,
-        "origin_gap": 95,
+        "source_distance": 9,
+        "source_denominator": 500019520,
+        "E": 2080,
+        "origin_gap": 71,
         "origin_normal_form": [
-          478946,
+          30489,
           1,
-          261
+          4100
         ],
         "B_one_realization": {
-          "A": 478946,
+          "A": 30489,
           "B": 1,
-          "C": 261,
-          "H": 5268405,
-          "m": 95,
-          "R": 11,
-          "K": 1375053705
+          "C": 4100,
+          "H": 7042958,
+          "m": 71,
+          "R": 231,
+          "K": 28876127800
         }
       }
     },
@@ -299,21 +301,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 501770328,
-        "E": 8,
-        "origin_gap": 39,
+        "E": 16,
+        "origin_gap": 19,
         "origin_normal_form": [
-          1844744,
+          1766797,
           1,
-          68
+          71
         ],
         "B_one_realization": {
-          "A": 1844744,
+          "A": 1766797,
           "B": 1,
-          "C": 68,
-          "H": 12913207,
-          "m": 39,
-          "R": 7,
-          "K": 878098076
+          "C": 71,
+          "H": 26501954,
+          "m": 19,
+          "R": 15,
+          "K": 1881638734
         }
       }
     },
@@ -395,21 +397,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 511971288,
-        "E": 4,
-        "origin_gap": 135,
+        "E": 8,
+        "origin_gap": 15,
         "origin_normal_form": [
-          1267256,
+          4922801,
           1,
-          101
+          26
         ],
         "B_one_realization": {
-          "A": 1267256,
+          "A": 4922801,
           "B": 1,
-          "C": 101,
-          "H": 3801767,
-          "m": 135,
-          "R": 3,
-          "K": 383978467
+          "C": 26,
+          "H": 34459606,
+          "m": 15,
+          "R": 7,
+          "K": 895949756
         }
       }
     },
@@ -417,23 +419,23 @@
       "prime": 512335849,
       "upper_source_state_count": 3,
       "selected_upper_B_one_state": {
-        "source_distance": 2102545,
-        "source_denominator": 510233304,
-        "E": 334304656,
-        "origin_gap": 115,
+        "source_distance": 100111589,
+        "source_denominator": 412224260,
+        "E": 34679355210724,
+        "origin_gap": 87,
         "origin_normal_form": [
-          28021,
+          17,
           1,
-          4571
+          7534352
         ],
         "B_one_realization": {
-          "A": 28021,
+          "A": 17,
           "B": 1,
-          "C": 4571,
-          "H": 4455338,
-          "m": 115,
-          "R": 159,
-          "K": 20365349998
+          "C": 7534352,
+          "H": 5888918,
+          "m": 87,
+          "R": 346407,
+          "K": 44369181111136
         }
       }
     },
@@ -441,23 +443,23 @@
       "prime": 521033209,
       "upper_source_state_count": 42,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 521033208,
-        "E": 72,
-        "origin_gap": 59,
+        "source_distance": 2711865,
+        "source_denominator": 518321344,
+        "E": 4835255296,
+        "origin_gap": 39,
         "origin_normal_form": [
-          124411,
+          7493,
           1,
-          1047
+          17384
         ],
         "B_one_realization": {
-          "A": 124411,
+          "A": 7493,
           "B": 1,
-          "C": 1047,
-          "H": 8833180,
-          "m": 59,
-          "R": 71,
-          "K": 9248339460
+          "C": 17384,
+          "H": 13360018,
+          "m": 39,
+          "R": 1783,
+          "K": 232250552912
         }
       }
     },
@@ -537,23 +539,23 @@
       "prime": 536295769,
       "upper_source_state_count": 19,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 536295768,
-        "E": 36,
-        "origin_gap": 47,
+        "source_distance": 5253075,
+        "source_denominator": 531042694,
+        "E": 436005226,
+        "origin_gap": 39,
         "origin_normal_form": [
-          326214,
+          165728,
           1,
-          411
+          809
         ],
         "B_one_realization": {
-          "A": 326214,
+          "A": 165728,
           "B": 1,
-          "C": 411,
-          "H": 11417489,
-          "m": 47,
-          "R": 35,
-          "K": 4692587979
+          "C": 809,
+          "H": 13755423,
+          "m": 39,
+          "R": 83,
+          "K": 11128137207
         }
       }
     },
@@ -561,23 +563,23 @@
       "prime": 536512729,
       "upper_source_state_count": 64,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 536512728,
-        "E": 16,
+        "source_distance": 25,
+        "source_denominator": 536512704,
+        "E": 3276,
         "origin_gap": 31,
         "origin_normal_form": [
-          2312555,
-          2,
-          29
+          132146,
+          1,
+          1015
         ],
         "B_one_realization": {
-          "A": 2,
+          "A": 132146,
           "B": 1,
-          "C": 69376646,
-          "H": 29,
-          "m": 18500439,
-          "R": 15,
-          "K": 2011922734
+          "C": 1015,
+          "H": 17311125,
+          "m": 31,
+          "R": 131,
+          "K": 17570791875
         }
       }
     },
@@ -683,21 +685,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 544361448,
-        "E": 4,
-        "origin_gap": 95,
+        "E": 8,
+        "origin_gap": 39,
         "origin_normal_form": [
-          1916766,
+          2001329,
           1,
-          71
+          68
         ],
         "B_one_realization": {
-          "A": 1916766,
+          "A": 2001329,
           "B": 1,
-          "C": 71,
-          "H": 5750297,
-          "m": 95,
-          "R": 3,
-          "K": 408271087
+          "C": 68,
+          "H": 14009302,
+          "m": 39,
+          "R": 7,
+          "K": 952632536
         }
       }
     },
@@ -705,23 +707,23 @@
       "prime": 547525609,
       "upper_source_state_count": 75,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 547525608,
-        "E": 12,
-        "origin_gap": 71,
+        "source_distance": 75,
+        "source_denominator": 547525534,
+        "E": 1426,
+        "origin_gap": 47,
         "origin_normal_form": [
-          701956,
+          613818,
           1,
-          195
+          223
         ],
         "B_one_realization": {
-          "A": 701956,
+          "A": 613818,
           "B": 1,
-          "C": 195,
-          "H": 7721515,
-          "m": 71,
-          "R": 11,
-          "K": 1505695425
+          "C": 223,
+          "H": 11662541,
+          "m": 47,
+          "R": 19,
+          "K": 2600746643
         }
       }
     },
@@ -777,23 +779,23 @@
       "prime": 553062409,
       "upper_source_state_count": 51,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 553062408,
-        "E": 24,
-        "origin_gap": 175,
+        "source_distance": 9,
+        "source_denominator": 553062400,
+        "E": 352,
+        "origin_gap": 35,
         "origin_normal_form": [
-          137441,
+          405471,
           1,
-          1006
+          341
         ],
         "B_one_realization": {
-          "A": 137441,
+          "A": 405471,
           "B": 1,
-          "C": 1006,
-          "H": 3161142,
-          "m": 175,
-          "R": 23,
-          "K": 3180108852
+          "C": 341,
+          "H": 15813368,
+          "m": 35,
+          "R": 39,
+          "K": 5392358488
         }
       }
     },
@@ -873,23 +875,23 @@
       "prime": 566026729,
       "upper_source_state_count": 14,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 566026728,
-        "E": 24,
-        "origin_gap": 55,
+        "source_distance": 1373385,
+        "source_denominator": 564653344,
+        "E": 1240166656,
+        "origin_gap": 39,
         "origin_normal_form": [
-          447806,
+          16073,
           1,
-          316
+          8804
         ],
         "B_one_realization": {
-          "A": 447806,
+          "A": 16073,
           "B": 1,
-          "C": 316,
-          "H": 10299537,
-          "m": 55,
-          "R": 23,
-          "K": 3254653692
+          "C": 8804,
+          "H": 14513918,
+          "m": 39,
+          "R": 903,
+          "K": 127780534072
         }
       }
     },
@@ -899,21 +901,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 566967768,
-        "E": 12,
-        "origin_gap": 95,
+        "E": 16,
+        "origin_gap": 67,
         "origin_normal_form": [
-          1629218,
-          3,
-          29
+          564709,
+          1,
+          251
         ],
         "B_one_realization": {
-          "A": 7306,
+          "A": 564709,
           "B": 1,
-          "C": 19401,
-          "H": 80365,
-          "m": 7055,
-          "R": 11,
-          "K": 1559161365
+          "C": 251,
+          "H": 8470634,
+          "m": 67,
+          "R": 15,
+          "K": 2126129134
         }
       }
     },
@@ -947,21 +949,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 570193368,
-        "E": 8,
-        "origin_gap": 99,
+        "E": 24,
+        "origin_gap": 19,
         "origin_normal_form": [
-          823979,
+          1307783,
           1,
-          173
+          109
         ],
         "B_one_realization": {
-          "A": 823979,
+          "A": 1307783,
           "B": 1,
-          "C": 173,
-          "H": 5767852,
-          "m": 99,
-          "R": 7,
-          "K": 997838396
+          "C": 109,
+          "H": 30079008,
+          "m": 19,
+          "R": 23,
+          "K": 3278611872
         }
       }
     },
@@ -969,23 +971,23 @@
       "prime": 572076409,
       "upper_source_state_count": 223,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 572076408,
-        "E": 8,
-        "origin_gap": 71,
+        "source_distance": 89,
+        "source_denominator": 572076320,
+        "E": 4540,
+        "origin_gap": 63,
         "origin_normal_form": [
-          1153380,
+          178106,
           1,
-          124
+          803
         ],
         "B_one_realization": {
-          "A": 1153380,
+          "A": 178106,
           "B": 1,
-          "C": 124,
-          "H": 8073659,
-          "m": 71,
-          "R": 7,
-          "K": 1001133716
+          "C": 803,
+          "H": 9083405,
+          "m": 63,
+          "R": 51,
+          "K": 7293974215
         }
       }
     },
@@ -995,21 +997,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 572812248,
-        "E": 4,
-        "origin_gap": 63,
+        "E": 12,
+        "origin_gap": 31,
         "origin_normal_form": [
-          3046874,
+          1684742,
           1,
-          47
+          85
         ],
         "B_one_realization": {
-          "A": 3046874,
+          "A": 1684742,
           "B": 1,
-          "C": 47,
-          "H": 9140621,
-          "m": 63,
-          "R": 3,
-          "K": 429609187
+          "C": 85,
+          "H": 18532161,
+          "m": 31,
+          "R": 11,
+          "K": 1575233685
         }
       }
     },
@@ -1065,23 +1067,23 @@
       "prime": 576691369,
       "upper_source_state_count": 72,
       "selected_upper_B_one_state": {
-        "source_distance": 1,
-        "source_denominator": 576691368,
-        "E": 8,
-        "origin_gap": 39,
+        "source_distance": 8325,
+        "source_denominator": 576683044,
+        "E": 56668276,
+        "origin_gap": 19,
         "origin_normal_form": [
-          2120189,
+          4459,
           1,
-          68
+          32333
         ],
         "B_one_realization": {
-          "A": 2120189,
+          "A": 4459,
           "B": 1,
-          "C": 68,
-          "H": 14841322,
-          "m": 39,
-          "R": 7,
-          "K": 1009209896
+          "C": 32333,
+          "H": 30352412,
+          "m": 19,
+          "R": 6807,
+          "K": 981384537196
         }
       }
     },
@@ -1139,21 +1141,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 581721528,
-        "E": 16,
-        "origin_gap": 63,
+        "E": 24,
+        "origin_gap": 15,
         "origin_normal_form": [
-          1232461,
-          2,
-          59
+          1691051,
+          1,
+          86
         ],
         "B_one_realization": {
-          "A": 889,
+          "A": 1691051,
           "B": 1,
-          "C": 163601,
-          "H": 13334,
-          "m": 43627,
-          "R": 15,
-          "K": 2181455734
+          "C": 86,
+          "H": 38894172,
+          "m": 15,
+          "R": 23,
+          "K": 3344898792
         }
       }
     },
@@ -1187,21 +1189,21 @@
       "selected_upper_B_one_state": {
         "source_distance": 1,
         "source_denominator": 596662608,
-        "E": 12,
-        "origin_gap": 95,
+        "E": 192,
+        "origin_gap": 51,
         "origin_normal_form": [
-          571516,
+          61259,
           1,
-          261
+          2435
         ],
         "B_one_realization": {
-          "A": 571516,
+          "A": 61259,
           "B": 1,
-          "C": 261,
-          "H": 6286675,
-          "m": 95,
-          "R": 11,
-          "K": 1640822175
+          "C": 2435,
+          "H": 11700468,
+          "m": 51,
+          "R": 191,
+          "K": 28490639580
         }
       }
     },

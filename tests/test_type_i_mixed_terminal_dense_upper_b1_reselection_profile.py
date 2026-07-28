@@ -44,9 +44,11 @@ class TypeIMixedTerminalDenseUpperB1ReselectionProfileTests(unittest.TestCase):
         self.assertEqual(actual["reselection_normal_forms_exhaustively_checked"], 2_331)
         self.assertEqual(actual["reselection_strict_reverse_lifts_exhaustively_checked"], 6_643)
         self.assertEqual(
-            actual["reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count"], 3
+            actual["reselected_upper_B_eq_1_realization_gap_exceeding_source_box_count"], 0
         )
-        self.assertEqual(actual["maximum_reselected_upper_B_eq_1_realization_gap"], 18_500_439)
+        self.assertEqual(actual["maximum_reselected_upper_B_eq_1_realization_gap"], 87)
+        self.assertEqual(actual["maximum_direct_upper_B_eq_1_gap"], 131)
+        self.assertEqual(actual["maximum_selected_upper_B_eq_1_normal_gap"], 131)
 
 
 if __name__ == "__main__":
