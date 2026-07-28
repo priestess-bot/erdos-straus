@@ -1,0 +1,102 @@
+{
+  "arithmetic": "for r=12713=N(pi), q=N(rho), and q dividing t*35*r+1, verify the Gaussian quartic pullback (q/pi)_4=(pi/rho)_4^2*(-35t/rho)_4",
+  "scope_note": "This preserves the quartic phase that the quadratic shadow loses, but it is a fixed-state identity and does not itself compare the varying source moduli of another G or F state.",
+  "input": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "prime": 57399241,
+  "R": 444955,
+  "R_factorization": [
+    {
+      "prime": 5,
+      "exponent": 1
+    },
+    {
+      "prime": 7,
+      "exponent": 1
+    },
+    {
+      "prime": 12713,
+      "exponent": 1
+    }
+  ],
+  "gaussian_factor_pi": [
+    13,
+    112
+  ],
+  "K": 6385019819789,
+  "K_factorization": [
+    {
+      "prime": 13,
+      "exponent": 1
+    },
+    {
+      "prime": 51341,
+      "exponent": 1
+    },
+    {
+      "prime": 9566533,
+      "exponent": 1
+    }
+  ],
+  "source_states": [
+    [
+      3,
+      43
+    ],
+    [
+      43,
+      3
+    ]
+  ],
+  "pullback_relation_count": 3,
+  "relations": [
+    {
+      "K_prime": 13,
+      "source_endpoint_t": 3,
+      "primary_gaussian_factor_rho": [
+        3,
+        2
+      ],
+      "quartic_character_exponent_at_12713": 2,
+      "quartic_character_value_at_12713": "-1",
+      "pi_over_rho_exponent": 0,
+      "pi_over_rho_value": "1",
+      "source_symbol_exponent": 2,
+      "source_symbol_value": "-1",
+      "pullback_rhs_exponent": 2,
+      "legendre_q_over_7": -1
+    },
+    {
+      "K_prime": 51341,
+      "source_endpoint_t": 3,
+      "primary_gaussian_factor_rho": [
+        -221,
+        50
+      ],
+      "quartic_character_exponent_at_12713": 2,
+      "quartic_character_value_at_12713": "-1",
+      "pi_over_rho_exponent": 3,
+      "pi_over_rho_value": "-i",
+      "source_symbol_exponent": 0,
+      "source_symbol_value": "1",
+      "pullback_rhs_exponent": 2,
+      "legendre_q_over_7": -1
+    },
+    {
+      "K_prime": 9566533,
+      "source_endpoint_t": 43,
+      "primary_gaussian_factor_rho": [
+        1647,
+        2618
+      ],
+      "quartic_character_exponent_at_12713": 0,
+      "quartic_character_value_at_12713": "1",
+      "pi_over_rho_exponent": 2,
+      "pi_over_rho_value": "-1",
+      "source_symbol_exponent": 0,
+      "source_symbol_value": "1",
+      "pullback_rhs_exponent": 0,
+      "legendre_q_over_7": 1
+    }
+  ]
+}

@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 279 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 225 |
+| 数学状态 | `established` | 226 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 51 |
-| 证明来源 | `mixed` | 6 |
+| 证明来源 | `mixed` | 7 |
 | 证明来源 | `repository_derivation` | 53 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 97 |
+| 审阅状态 | `internal_review` | 98 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -284,6 +284,7 @@
 | [七点线性 F 型状态的反足点半密度边界](../claims/type-I-linear-finite-exponent-antipodal-density-profile-600m.md) (`type-I-linear-finite-exponent-antipodal-density-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [372409 的完整线性源谱含必须四标签层的 Type I 目标命中](../claims/type-I-linear-four-label-layer-boundary-372409.md) (`type-I-linear-four-label-layer-boundary-372409`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [六亿压力集中全谱 B 等于一失败点的三标签重选剖面](../claims/type-I-linear-full-b1-failure-label-reselection-profile-600m.md) (`type-I-linear-full-b1-failure-label-reselection-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [57,399,241 高阶线性状态的高斯四次源标签拉回](../claims/type-I-linear-gaussian-quartic-source-pullback-57399241.md) (`type-I-linear-gaussian-quartic-source-pullback-57399241`) | `established` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点全线性目标谱的角色与有限指数混合剖面](../claims/type-I-linear-general-b-obstruction-mixture-profile-600m.md) (`type-I-linear-general-b-obstruction-mixture-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七个补偿平方残余的全线性目标谱闭合](../claims/type-I-linear-general-b-spectrum-resolution-profile-600m.md) (`type-I-linear-general-b-spectrum-resolution-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
