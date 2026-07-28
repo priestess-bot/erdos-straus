@@ -142,6 +142,55 @@ def independent_component_membership(
     )
 
 
+def independent_quadratic_character_local_support(factors, modulus):
+    """Enumerate CRT products of local Legendre characters from raw factors."""
+    local_primes = sorted(int(prime) for prime in sympy.factorint(modulus))
+    generator_primes = sorted(int(prime) for prime in factors)
+    sign_rows = [
+        [
+            int(sympy.legendre_symbol(prime, local_prime) == -1)
+            for local_prime in local_primes
+        ]
+        for prime in generator_primes
+    ]
+    minus_one_signs = [int(local_prime % 4 == 3) for local_prime in local_primes]
+    separators = []
+    for mask in range(1, 1 << len(local_primes)):
+        coefficients = [(mask >> index) & 1 for index in range(len(local_primes))]
+        if any(
+            sum(sign * coefficient for sign, coefficient in zip(row, coefficients)) % 2
+            for row in sign_rows
+        ):
+            continue
+        if (
+            sum(
+                sign * coefficient
+                for sign, coefficient in zip(minus_one_signs, coefficients)
+            )
+            % 2
+            != 1
+        ):
+            continue
+        separators.append(
+            tuple(
+                local_prime
+                for local_prime, coefficient in zip(local_primes, coefficients)
+                if coefficient
+            )
+        )
+    if not separators:
+        raise AssertionError("independent quadratic separator enumeration failed")
+    minimum = min(separators, key=lambda support: (len(support), support))
+    return {
+        "local_primes": local_primes,
+        "minimal_local_primes": list(minimum),
+        "minimal_local_support_size": len(minimum),
+        "minimal_quadratic_conductor": math.prod(minimum),
+        "separating_quadratic_character_count": len(separators),
+        "has_prime_local_separator": any(len(support) == 1 for support in separators),
+    }
+
+
 class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -184,6 +233,14 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
         self.assertEqual(
             self.actual["aggregate_subgroup_character_two_power_depth_counts"],
             {"0": 124, "1": 2},
+        )
+        self.assertEqual(
+            self.actual["aggregate_quadratic_character_minimal_local_support_counts"],
+            {"1": 67, "2": 51, "3": 6},
+        )
+        self.assertEqual(
+            self.actual["aggregate_quadratic_character_prime_local_separator_count"],
+            67,
         )
 
     def test_B1_boundary_samples_use_independent_two_channel_enumeration(self):
@@ -365,11 +422,23 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
                             record["minimal_separating_two_power_character_order"],
                             1 << (expected_depth + 1),
                         )
+                        if expected_depth == 0:
+                            self.assertEqual(
+                                record["quadratic_character_local_support"],
+                                independent_quadratic_character_local_support(
+                                    factors, R
+                                ),
+                            )
+                        else:
+                            self.assertIsNone(
+                                record["quadratic_character_local_support"]
+                            )
                     else:
                         self.assertIsNone(record["subgroup_character_two_power_depth"])
                         self.assertIsNone(
                             record["minimal_separating_two_power_character_order"]
                         )
+                        self.assertIsNone(record["quadratic_character_local_support"])
                     self.assertEqual(
                         record["source_states"],
                         [[a, s] for a, s in oracle_states[R]],
@@ -396,6 +465,47 @@ class TypeIGlobalLinearB1FailureGeneralBProfile500MTests(unittest.TestCase):
             self.assertEqual(
                 prime_profile["subgroup_character_two_power_depth_counts"],
                 expected_depth_counts,
+            )
+            quadratic_records = [
+                record
+                for record in records
+                if record["quadratic_character_local_support"] is not None
+            ]
+            expected_local_support_counts = {
+                str(size): sum(
+                    int(
+                        record["quadratic_character_local_support"][
+                            "minimal_local_support_size"
+                        ]
+                    )
+                    == size
+                    for record in quadratic_records
+                )
+                for size in sorted(
+                    {
+                        int(
+                            record["quadratic_character_local_support"][
+                                "minimal_local_support_size"
+                            ]
+                        )
+                        for record in quadratic_records
+                    }
+                )
+            }
+            self.assertEqual(
+                prime_profile["quadratic_character_minimal_local_support_counts"],
+                expected_local_support_counts,
+            )
+            self.assertEqual(
+                prime_profile["quadratic_character_prime_local_separator_count"],
+                sum(
+                    bool(
+                        record["quadratic_character_local_support"][
+                            "has_prime_local_separator"
+                        ]
+                    )
+                    for record in quadratic_records
+                ),
             )
 
     def test_selected_general_B_witnesses_are_non_B1_and_replay(self):

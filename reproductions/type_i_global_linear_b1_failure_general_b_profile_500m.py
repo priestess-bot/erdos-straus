@@ -67,6 +67,12 @@ EXPECTED_GENERAL_B_PROFILES = {
             "subgroup_character": 28,
         },
         "subgroup_character_two_power_depth_counts": {"0": 27, "1": 1},
+        "quadratic_character_minimal_local_support_counts": {
+            "1": 16,
+            "2": 9,
+            "3": 2,
+        },
+        "quadratic_character_prime_local_separator_count": 16,
         "hit_R": [171, 199, 391, 10_951],
     },
     62_588_089: {
@@ -77,6 +83,12 @@ EXPECTED_GENERAL_B_PROFILES = {
             "subgroup_character": 30,
         },
         "subgroup_character_two_power_depth_counts": {"0": 30},
+        "quadratic_character_minimal_local_support_counts": {
+            "1": 15,
+            "2": 14,
+            "3": 1,
+        },
+        "quadratic_character_prime_local_separator_count": 15,
         "hit_R": [103, 495],
     },
     297_640_249: {
@@ -87,6 +99,12 @@ EXPECTED_GENERAL_B_PROFILES = {
             "subgroup_character": 34,
         },
         "subgroup_character_two_power_depth_counts": {"0": 34},
+        "quadratic_character_minimal_local_support_counts": {
+            "1": 20,
+            "2": 12,
+            "3": 2,
+        },
+        "quadratic_character_prime_local_separator_count": 20,
         "hit_R": [55, 231, 1_751, 6_431],
     },
     477_015_289: {
@@ -97,6 +115,12 @@ EXPECTED_GENERAL_B_PROFILES = {
             "subgroup_character": 34,
         },
         "subgroup_character_two_power_depth_counts": {"0": 33, "1": 1},
+        "quadratic_character_minimal_local_support_counts": {
+            "1": 16,
+            "2": 16,
+            "3": 1,
+        },
+        "quadratic_character_prime_local_separator_count": 16,
         "hit_R": [43, 51],
     },
 }
@@ -371,6 +395,65 @@ def two_power_character_depth(
     raise AssertionError("two-power saturation did not exclude -1")
 
 
+def quadratic_character_local_support(
+    certificate: dict[str, object],
+) -> dict[str, object]:
+    """Find the least CRT-local support of a separating quadratic character."""
+    local_primes = [
+        int(factor["prime"])
+        for factor in certificate["R_factorization"]
+        if isinstance(factor, dict)
+    ]
+    generator_primes = [int(prime) for prime in certificate["generator_primes"]]
+    if not local_primes or len(set(local_primes)) != len(local_primes):
+        raise AssertionError("R must provide distinct local prime components")
+    if any(math.gcd(prime, math.prod(local_primes)) != 1 for prime in generator_primes):
+        raise AssertionError("support generator is not a unit at a local component")
+    local_sign_vectors = [
+        [
+            int(sympy.legendre_symbol(prime, local_prime) == -1)
+            for local_prime in local_primes
+        ]
+        for prime in generator_primes
+    ]
+    minus_one_sign_vector = [int(local_prime % 4 == 3) for local_prime in local_primes]
+    separators = []
+    for mask in range(1, 1 << len(local_primes)):
+        coefficients = [(mask >> index) & 1 for index in range(len(local_primes))]
+        if any(
+            sum(sign * coefficient for sign, coefficient in zip(row, coefficients)) % 2
+            for row in local_sign_vectors
+        ):
+            continue
+        if (
+            sum(
+                sign * coefficient
+                for sign, coefficient in zip(minus_one_sign_vector, coefficients)
+            )
+            % 2
+            != 1
+        ):
+            continue
+        separators.append(
+            tuple(
+                local_prime
+                for local_prime, coefficient in zip(local_primes, coefficients)
+                if coefficient
+            )
+        )
+    if not separators:
+        raise AssertionError("depth-zero subgroup obstacle lacks a quadratic separator")
+    minimum = min(separators, key=lambda support: (len(support), support))
+    return {
+        "local_primes": local_primes,
+        "minimal_local_primes": list(minimum),
+        "minimal_local_support_size": len(minimum),
+        "minimal_quadratic_conductor": math.prod(minimum),
+        "separating_quadratic_character_count": len(separators),
+        "has_prime_local_separator": any(len(support) == 1 for support in separators),
+    }
+
+
 def unit_group_subgroup_certificate(
     factors: list[tuple[int, int]], R: int
 ) -> dict[str, object]:
@@ -604,6 +687,12 @@ def classify_general_B_modulus(
         if classification == "subgroup_character"
         else None
     )
+    quadratic_local_support = (
+        quadratic_character_local_support(subgroup_certificate)
+        if two_power_depth is not None
+        and two_power_depth["two_power_saturation_depth"] == 0
+        else None
+    )
     least_match = min(matches) if matches else None
     if least_match is not None:
         complement = K * K // least_match
@@ -635,6 +724,7 @@ def classify_general_B_modulus(
             if two_power_depth is not None
             else None
         ),
+        "quadratic_character_local_support": quadratic_local_support,
         "least_matching_square_divisor": least_match,
         "unit_group_subgroup_certificate": subgroup_certificate,
     }
@@ -667,6 +757,38 @@ def audit_general_B_failure_prime(
             }
         )
     }
+    quadratic_records = [
+        record
+        for record in records
+        if record["quadratic_character_local_support"] is not None
+    ]
+    if len(quadratic_records) != int(two_power_depth_counts.get("0", 0)):
+        raise AssertionError("every depth-zero obstacle must have a quadratic profile")
+    quadratic_local_support_counts = {
+        str(size): sum(
+            int(
+                record["quadratic_character_local_support"][
+                    "minimal_local_support_size"
+                ]
+            )
+            == size
+            for record in quadratic_records
+        )
+        for size in sorted(
+            {
+                int(
+                    record["quadratic_character_local_support"][
+                        "minimal_local_support_size"
+                    ]
+                )
+                for record in quadratic_records
+            }
+        )
+    }
+    quadratic_prime_local_separator_count = sum(
+        bool(record["quadratic_character_local_support"]["has_prime_local_separator"])
+        for record in quadratic_records
+    )
     if not hit_records:
         raise AssertionError("general B failed at every linear state")
     selected = hit_records[0]
@@ -687,6 +809,10 @@ def audit_general_B_failure_prime(
         or classification_counts != expected["classification_counts"]
         or two_power_depth_counts
         != expected["subgroup_character_two_power_depth_counts"]
+        or quadratic_local_support_counts
+        != expected["quadratic_character_minimal_local_support_counts"]
+        or quadratic_prime_local_separator_count
+        != expected["quadratic_character_prime_local_separator_count"]
         or hit_R != expected["hit_R"]
     ):
         raise AssertionError("general-B obstruction profile changed")
@@ -695,6 +821,12 @@ def audit_general_B_failure_prime(
         "distinct_R_count": len(records),
         "general_B_classification_counts": classification_counts,
         "subgroup_character_two_power_depth_counts": two_power_depth_counts,
+        "quadratic_character_minimal_local_support_counts": (
+            quadratic_local_support_counts
+        ),
+        "quadratic_character_prime_local_separator_count": (
+            quadratic_prime_local_separator_count
+        ),
         "general_B_hit_R": hit_R,
         "selected_general_B_witness": witness,
         "records": records,
@@ -761,6 +893,25 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
     }
     if aggregate_two_power_depth_counts != {"0": 124, "1": 2}:
         raise AssertionError("aggregate two-power character depths changed")
+    aggregate_quadratic_local_support_counts = {
+        str(size): sum(
+            int(
+                profile["quadratic_character_minimal_local_support_counts"].get(
+                    str(size), 0
+                )
+            )
+            for profile in general_B_profiles
+        )
+        for size in (1, 2, 3)
+    }
+    aggregate_quadratic_prime_local_separator_count = sum(
+        int(profile["quadratic_character_prime_local_separator_count"])
+        for profile in general_B_profiles
+    )
+    if aggregate_quadratic_local_support_counts != {"1": 67, "2": 51, "3": 6}:
+        raise AssertionError("aggregate quadratic local-support profile changed")
+    if aggregate_quadratic_prime_local_separator_count != 67:
+        raise AssertionError("aggregate prime-local quadratic count changed")
     return {
         "arithmetic": (
             "hash-freeze the 21 global p-1 maximum-tail misses; exhaust every "
@@ -787,6 +938,12 @@ def run_audit(path: Path = INPUT) -> dict[str, object]:
         "aggregate_subgroup_character_two_power_depth_counts": (
             aggregate_two_power_depth_counts
         ),
+        "aggregate_quadratic_character_minimal_local_support_counts": (
+            aggregate_quadratic_local_support_counts
+        ),
+        "aggregate_quadratic_character_prime_local_separator_count": (
+            aggregate_quadratic_prime_local_separator_count
+        ),
     }
 
 
@@ -811,6 +968,8 @@ def main() -> int:
                     "global_linear_B_eq_1_failure_primes",
                     "aggregate_general_B_classification_counts",
                     "aggregate_subgroup_character_two_power_depth_counts",
+                    "aggregate_quadratic_character_minimal_local_support_counts",
+                    "aggregate_quadratic_character_prime_local_separator_count",
                 }
             },
             ensure_ascii=False,
