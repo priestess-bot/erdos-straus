@@ -70,6 +70,35 @@ class GhermoulP2LinearTerminalFactorPairEquivalenceTests(unittest.TestCase):
         self.assertIn((18, 1, 4, 55), factor_pair_sources(4, 1, 2))
         self.assertIn((624, 25, 476, 11_857), factor_pair_sources(4, 5, 1046))
 
+    def test_pminusone_subfamily_is_exactly_y_divides_x_times_z_plus_one(self):
+        for x in range(1, 6):
+            for y in range(1, 5):
+                for z in range(1, 8):
+                    p, R, _, _, _ = p2_data(x, y, z)
+                    expected = (x * (z + 1)) % y == 0
+                    pminusone_sources = {
+                        source
+                        for source in factor_pair_sources(x, y, z)
+                        if source[1] == 1
+                    }
+                    self.assertEqual(bool(pminusone_sources), expected)
+                    if expected:
+                        a = (p - 1) // (R + 1)
+                        self.assertEqual((p - 1) % (R + 1), 0)
+                        self.assertEqual(
+                            pminusone_sources,
+                            {(a, 1, R + 1, a * R + 1)},
+                        )
+
+        self.assertEqual(
+            {
+                source
+                for source in factor_pair_sources(4, 5, 1_046)
+                if source[1] == 1
+            },
+            set(),
+        )
+
     def test_known_non_linear_878089_form_has_no_linear_factor_pair(self):
         p, R, C, H, K = p2_data(36, 21, 74)
         self.assertEqual((p, R, C, H, K), (878_089, 83, 2_967, 6_141, 18_220_347))
