@@ -75,6 +75,20 @@ def difference_set(residues: set[int], modulus: int) -> set[int]:
     }
 
 
+def generated_subgroup(residues: set[int], modulus: int) -> set[int]:
+    generators = {residue % modulus for residue in residues}
+    subgroup = {1}
+    frontier = [1]
+    while frontier:
+        current = frontier.pop()
+        for generator in generators:
+            product = current * generator % modulus
+            if product not in subgroup:
+                subgroup.add(product)
+                frontier.append(product)
+    return subgroup
+
+
 def orientation_record(
     prime: int,
     modulus: int,
@@ -103,6 +117,8 @@ def orientation_record(
     K_residues = divisor_residues(K, modulus)
     gamma_difference = difference_set(gamma_residues, modulus)
     affine_difference = difference_set(affine_residues, modulus)
+    gamma_subgroup = generated_subgroup(gamma_difference, modulus)
+    affine_subgroup = generated_subgroup(affine_difference, modulus)
     product_difference = {
         (left * right) % modulus
         for left in gamma_difference
@@ -117,7 +133,13 @@ def orientation_record(
         (-pow(residue, -1, modulus)) % modulus
         for residue in gamma_difference
     }
+    target_pullback_in_affine_subgroup = target_pullback & affine_subgroup
     alignment = sorted(target_pullback & affine_difference)
+    alignment_pigeonhole_margin = (
+        len(affine_subgroup)
+        - len(affine_difference)
+        - len(target_pullback_in_affine_subgroup)
+    )
     if product_divisors != K_residues:
         raise AssertionError("A(K) did not factor through the two blocks")
     if product_difference != full_difference:
@@ -126,6 +148,8 @@ def orientation_record(
         raise AssertionError("an F-state block already contains the target")
     if alignment:
         raise AssertionError("F-state target unexpectedly aligned across blocks")
+    if alignment_pigeonhole_margin < 0:
+        raise AssertionError("F-state violates the block pigeonhole bound")
 
     return {
         "a": a,
@@ -141,11 +165,20 @@ def orientation_record(
         "A_affine_residue_count": len(affine_residues),
         "D_gamma_residue_count": len(gamma_difference),
         "D_affine_residue_count": len(affine_difference),
+        "H_gamma_residue_count": len(gamma_subgroup),
+        "H_affine_residue_count": len(affine_subgroup),
         "D_product_residue_count": len(product_difference),
         "D_full_residue_count": len(full_difference),
         "gamma_target_in_difference": False,
         "affine_target_in_difference": False,
         "target_pullback_residues": sorted(target_pullback),
+        "target_pullback_in_affine_subgroup_residues": sorted(
+            target_pullback_in_affine_subgroup
+        ),
+        "target_pullback_in_affine_subgroup_count": len(
+            target_pullback_in_affine_subgroup
+        ),
+        "alignment_pigeonhole_margin": alignment_pigeonhole_margin,
         "target_alignment_residues": alignment,
         "target_alignment_count": len(alignment),
         "D_gamma_residues": sorted(gamma_difference),
@@ -249,7 +282,8 @@ def run_audit() -> dict[str, object]:
         "arithmetic": (
             "for K=gamma*L, A(K)=A(gamma)A(L) and D(K)=D(gamma)D(L); "
             "the target -1 is present exactly when D(L) intersects "
-            "{-x^(-1): x in D(gamma)}"
+            "{-x^(-1): x in D(gamma)}. In particular, if the required "
+            "pullbacks inside H_L plus D(L) exceed |H_L|, the target is forced."
         ),
         "scope_note": (
             "This is a complete block-level audit of the six F states whose full "
@@ -266,6 +300,16 @@ def run_audit() -> dict[str, object]:
         ),
         "target_alignment_hit_count": sum(
             int(record["target_alignment_count"]) for record in records
+        ),
+        "minimum_alignment_pigeonhole_margin": min(
+            int(orientation["alignment_pigeonhole_margin"])
+            for record in records
+            for orientation in record["orientations"]
+        ),
+        "zero_alignment_pigeonhole_margin_count": sum(
+            int(orientation["alignment_pigeonhole_margin"] == 0)
+            for record in records
+            for orientation in record["orientations"]
         ),
         "block_identity_verified_count": len(records),
         "record_sha256": stable_sha256(digest_rows),

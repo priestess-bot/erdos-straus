@@ -39,6 +39,8 @@ class TypeILinearFNearSaturationBlockAlignment600MTests(unittest.TestCase):
         self.assertEqual(self.actual["near_saturation_state_count"], 6)
         self.assertEqual(self.actual["directed_orientation_count"], 10)
         self.assertEqual(self.actual["target_alignment_hit_count"], 0)
+        self.assertEqual(self.actual["minimum_alignment_pigeonhole_margin"], 0)
+        self.assertEqual(self.actual["zero_alignment_pigeonhole_margin_count"], 1)
         self.assertEqual(self.actual["block_identity_verified_count"], 6)
 
     def test_max_density_state_has_two_empty_block_alignments(self):
@@ -75,6 +77,21 @@ class TypeILinearFNearSaturationBlockAlignment600MTests(unittest.TestCase):
                 (951, 73, 41, 33, 0),
             ],
         )
+
+    def test_one_state_reaches_the_sharp_block_pigeonhole_boundary(self):
+        record = next(
+            row
+            for row in self.actual["records"]
+            if row["prime"] == 57_399_241 and row["R"] == 455
+        )
+        orientation = record["orientations"][0]
+        self.assertEqual((orientation["a"], orientation["s"]), (150, 841))
+        self.assertEqual(orientation["H_affine_residue_count"], 6)
+        self.assertEqual(orientation["D_affine_residue_count"], 5)
+        self.assertEqual(orientation["target_pullback_in_affine_subgroup_count"], 1)
+        self.assertEqual(orientation["target_pullback_in_affine_subgroup_residues"], [391])
+        self.assertEqual(orientation["alignment_pigeonhole_margin"], 0)
+        self.assertEqual(orientation["target_alignment_residues"], [])
 
     def test_every_orientation_preserves_the_block_product_identity(self):
         for record in self.actual["records"]:
