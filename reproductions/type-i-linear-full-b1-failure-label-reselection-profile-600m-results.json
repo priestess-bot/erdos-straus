@@ -1,0 +1,1467 @@
+{
+  "arithmetic": "for every full-spectrum B=1 failure among the 200 selected B>1 pressure points, completely enumerate linear sources, decide every K-square target spectrum, split each hit into the four complete-spectrum coordinate-label layers, and select least support",
+  "scope_note": "This is a finite 600-million pressure profile on 18 full B=1 failures. It supports but does not prove universal three-layer reselection or the mixed terminal selector.",
+  "input": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "prime_count": 18,
+  "selected_layer_support_counts": {
+    "1": 3,
+    "2": 14,
+    "3": 1
+  },
+  "selected_three_layer_primes": [
+    26034649
+  ],
+  "profiles": [
+    {
+      "prime": 878089,
+      "linear_source_coordinate_bound": 541,
+      "complete_linear_R_count": 24,
+      "complete_directed_linear_source_count": 54,
+      "coordinate_label_count": 54,
+      "target_hit_R": [
+        59
+      ],
+      "directed_target_hit_source_count": 1,
+      "all_target_orientation_support_counts": {
+        "2": 1
+      },
+      "selected_orientation": {
+        "R": 59,
+        "a": 4,
+        "s": 3705,
+        "K": 12951813,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 3705,
+            "value": 259,
+            "factorization": [
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 37,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 3705,
+            "value": 211,
+            "factorization": [
+              {
+                "prime": 211,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 4,
+            "value": 3,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 4,
+            "value": 79,
+            "factorization": [
+              {
+                "prime": 79,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 3942409,
+      "linear_source_coordinate_bound": 1146,
+      "complete_linear_R_count": 38,
+      "complete_directed_linear_source_count": 68,
+      "coordinate_label_count": 75,
+      "target_hit_R": [
+        171,
+        199,
+        391,
+        10951
+      ],
+      "directed_target_hit_source_count": 4,
+      "all_target_orientation_support_counts": {
+        "2": 4
+      },
+      "selected_orientation": {
+        "R": 171,
+        "a": 2560,
+        "s": 9,
+        "K": 168537985,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 9,
+            "value": 385,
+            "factorization": [
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 11,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 9,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 2560,
+            "value": 97,
+            "factorization": [
+              {
+                "prime": 97,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 2560,
+            "value": 4513,
+            "factorization": [
+              {
+                "prime": 4513,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 26034649,
+      "linear_source_coordinate_bound": 2945,
+      "complete_linear_R_count": 27,
+      "complete_directed_linear_source_count": 41,
+      "coordinate_label_count": 43,
+      "target_hit_R": [
+        187
+      ],
+      "directed_target_hit_source_count": 1,
+      "all_target_orientation_support_counts": {
+        "3": 1
+      },
+      "selected_orientation": {
+        "R": 187,
+        "a": 15460,
+        "s": 9,
+        "K": 1217119841,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 9,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "source_private",
+            "label": 9,
+            "value": 421,
+            "factorization": [
+              {
+                "prime": 421,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 15460,
+            "value": 7,
+            "factorization": [
+              {
+                "prime": 7,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 15460,
+            "value": 413003,
+            "factorization": [
+              {
+                "prime": 19,
+                "exponent": 1
+              },
+              {
+                "prime": 21737,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 3,
+        "minimum_target_layer_masks": [
+          [
+            "source_private",
+            "affine_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 34252969,
+      "linear_source_coordinate_bound": 3379,
+      "complete_linear_R_count": 44,
+      "complete_directed_linear_source_count": 74,
+      "coordinate_label_count": 62,
+      "target_hit_R": [
+        23,
+        871
+      ],
+      "directed_target_hit_source_count": 4,
+      "all_target_orientation_support_counts": {
+        "2": 4
+      },
+      "selected_orientation": {
+        "R": 23,
+        "a": 1,
+        "s": 1427207,
+        "K": 196954572,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 1427207,
+            "value": 53,
+            "factorization": [
+              {
+                "prime": 53,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 1427207,
+            "value": 309677,
+            "factorization": [
+              {
+                "prime": 309677,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 1,
+            "value": 12,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 2
+              },
+              {
+                "prime": 3,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 1,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_private",
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 42486889,
+      "linear_source_coordinate_bound": 3763,
+      "complete_linear_R_count": 51,
+      "complete_directed_linear_source_count": 87,
+      "coordinate_label_count": 75,
+      "target_hit_R": [
+        131,
+        151
+      ],
+      "directed_target_hit_source_count": 5,
+      "all_target_orientation_support_counts": {
+        "2": 5
+      },
+      "selected_orientation": {
+        "R": 131,
+        "a": 19,
+        "s": 17063,
+        "K": 1391445615,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 17063,
+            "value": 1117627,
+            "factorization": [
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 67,
+                "exponent": 1
+              },
+              {
+                "prime": 2383,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 17063,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 19,
+            "value": 1245,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 83,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 19,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 53712409,
+      "linear_source_coordinate_bound": 4231,
+      "complete_linear_R_count": 61,
+      "complete_directed_linear_source_count": 104,
+      "coordinate_label_count": 88,
+      "target_hit_R": [
+        227,
+        5495
+      ],
+      "directed_target_hit_source_count": 4,
+      "all_target_orientation_support_counts": {
+        "2": 2,
+        "3": 2
+      },
+      "selected_orientation": {
+        "R": 5495,
+        "a": 1,
+        "s": 9773,
+        "K": 73787421864,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 9773,
+            "value": 13,
+            "factorization": [
+              {
+                "prime": 13,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 9773,
+            "value": 1032743,
+            "factorization": [
+              {
+                "prime": 193,
+                "exponent": 1
+              },
+              {
+                "prime": 5351,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 1,
+            "value": 5496,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 3
+              },
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 229,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 1,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_private",
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 57399241,
+      "linear_source_coordinate_bound": 4374,
+      "complete_linear_R_count": 55,
+      "complete_directed_linear_source_count": 88,
+      "coordinate_label_count": 73,
+      "target_hit_R": [
+        19
+      ],
+      "directed_target_hit_source_count": 1,
+      "all_target_orientation_support_counts": {
+        "1": 1
+      },
+      "selected_orientation": {
+        "R": 19,
+        "a": 2869962,
+        "s": 1,
+        "K": 272646395,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 1,
+            "value": 5,
+            "factorization": [
+              {
+                "prime": 5,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 1,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 2869962,
+            "value": 217,
+            "factorization": [
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 31,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 2869962,
+            "value": 251287,
+            "factorization": [
+              {
+                "prime": 251287,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 1,
+        "minimum_target_layer_masks": [
+          [
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 62588089,
+      "linear_source_coordinate_bound": 4567,
+      "complete_linear_R_count": 52,
+      "complete_directed_linear_source_count": 92,
+      "coordinate_label_count": 83,
+      "target_hit_R": [
+        103,
+        495
+      ],
+      "directed_target_hit_source_count": 5,
+      "all_target_orientation_support_counts": {
+        "2": 3,
+        "3": 2
+      },
+      "selected_orientation": {
+        "R": 103,
+        "a": 4,
+        "s": 151545,
+        "K": 1611643292,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 151545,
+            "value": 3902284,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 2
+              },
+              {
+                "prime": 53,
+                "exponent": 1
+              },
+              {
+                "prime": 79,
+                "exponent": 1
+              },
+              {
+                "prime": 233,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 151545,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 4,
+            "value": 413,
+            "factorization": [
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 59,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 4,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 85457689,
+      "linear_source_coordinate_bound": 5337,
+      "complete_linear_R_count": 36,
+      "complete_directed_linear_source_count": 57,
+      "coordinate_label_count": 59,
+      "target_hit_R": [
+        31,
+        83
+      ],
+      "directed_target_hit_source_count": 2,
+      "all_target_orientation_support_counts": {
+        "2": 1,
+        "3": 1
+      },
+      "selected_orientation": {
+        "R": 31,
+        "a": 305206,
+        "s": 9,
+        "K": 662297090,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 9,
+            "value": 70,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 1
+              },
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 7,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 9,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 305206,
+            "value": 13,
+            "factorization": [
+              {
+                "prime": 13,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 305206,
+            "value": 727799,
+            "factorization": [
+              {
+                "prime": 727799,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 137431849,
+      "linear_source_coordinate_bound": 6768,
+      "complete_linear_R_count": 52,
+      "complete_directed_linear_source_count": 90,
+      "coordinate_label_count": 100,
+      "target_hit_R": [
+        59,
+        63,
+        251,
+        1223
+      ],
+      "directed_target_hit_source_count": 5,
+      "all_target_orientation_support_counts": {
+        "2": 2,
+        "3": 3
+      },
+      "selected_orientation": {
+        "R": 59,
+        "a": 78,
+        "s": 29857,
+        "K": 2027119773,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 29857,
+            "value": 6573,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 313,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 29857,
+            "value": 67,
+            "factorization": [
+              {
+                "prime": 67,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 78,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_private",
+            "label": 78,
+            "value": 4603,
+            "factorization": [
+              {
+                "prime": 4603,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "source_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 168434809,
+      "linear_source_coordinate_bound": 7492,
+      "complete_linear_R_count": 63,
+      "complete_directed_linear_source_count": 107,
+      "coordinate_label_count": 100,
+      "target_hit_R": [
+        75,
+        383,
+        723
+      ],
+      "directed_target_hit_source_count": 4,
+      "all_target_orientation_support_counts": {
+        "2": 3,
+        "3": 1
+      },
+      "selected_orientation": {
+        "R": 75,
+        "a": 89784,
+        "s": 25,
+        "K": 3158152669,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 25,
+            "value": 469,
+            "factorization": [
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 67,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 25,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 89784,
+            "value": 179,
+            "factorization": [
+              {
+                "prime": 179,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 89784,
+            "value": 37619,
+            "factorization": [
+              {
+                "prime": 37619,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 185772409,
+      "linear_source_coordinate_bound": 7869,
+      "complete_linear_R_count": 40,
+      "complete_directed_linear_source_count": 71,
+      "coordinate_label_count": 75,
+      "target_hit_R": [
+        71,
+        359
+      ],
+      "directed_target_hit_source_count": 3,
+      "all_target_orientation_support_counts": {
+        "2": 1,
+        "3": 2
+      },
+      "selected_orientation": {
+        "R": 71,
+        "a": 4,
+        "s": 651833,
+        "K": 3297460260,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 651833,
+            "value": 164,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 2
+              },
+              {
+                "prime": 41,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 651833,
+            "value": 70549,
+            "factorization": [
+              {
+                "prime": 70549,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 4,
+            "value": 285,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 19,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 4,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_private",
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 212973049,
+      "linear_source_coordinate_bound": 8425,
+      "complete_linear_R_count": 55,
+      "complete_directed_linear_source_count": 95,
+      "coordinate_label_count": 88,
+      "target_hit_R": [
+        451,
+        5687
+      ],
+      "directed_target_hit_source_count": 4,
+      "all_target_orientation_support_counts": {
+        "2": 2,
+        "3": 2
+      },
+      "selected_orientation": {
+        "R": 451,
+        "a": 639,
+        "s": 739,
+        "K": 24012711275,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 739,
+            "value": 5,
+            "factorization": [
+              {
+                "prime": 5,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 739,
+            "value": 33329,
+            "factorization": [
+              {
+                "prime": 33329,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 639,
+            "value": 805,
+            "factorization": [
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 7,
+                "exponent": 1
+              },
+              {
+                "prime": 23,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 639,
+            "value": 179,
+            "factorization": [
+              {
+                "prime": 179,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "affine_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 283319689,
+      "linear_source_coordinate_bound": 9718,
+      "complete_linear_R_count": 60,
+      "complete_directed_linear_source_count": 102,
+      "coordinate_label_count": 92,
+      "target_hit_R": [
+        63
+      ],
+      "directed_target_hit_source_count": 2,
+      "all_target_orientation_support_counts": {
+        "1": 1,
+        "2": 1
+      },
+      "selected_orientation": {
+        "R": 63,
+        "a": 587,
+        "s": 7661,
+        "K": 4462285102,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 7661,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "source_private",
+            "label": 7661,
+            "value": 120661,
+            "factorization": [
+              {
+                "prime": 120661,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 587,
+            "value": 902,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 1
+              },
+              {
+                "prime": 11,
+                "exponent": 1
+              },
+              {
+                "prime": 41,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 587,
+            "value": 41,
+            "factorization": [
+              {
+                "prime": 41,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 1,
+        "minimum_target_layer_masks": [
+          [
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 297640249,
+      "linear_source_coordinate_bound": 9960,
+      "complete_linear_R_count": 55,
+      "complete_directed_linear_source_count": 91,
+      "coordinate_label_count": 82,
+      "target_hit_R": [
+        55,
+        231,
+        1751,
+        6431
+      ],
+      "directed_target_hit_source_count": 7,
+      "all_target_orientation_support_counts": {
+        "2": 3,
+        "3": 4
+      },
+      "selected_orientation": {
+        "R": 1751,
+        "a": 49,
+        "s": 3469,
+        "K": 130292019000,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 3469,
+            "value": 1005,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 67,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 3469,
+            "value": 1511,
+            "factorization": [
+              {
+                "prime": 1511,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 49,
+            "value": 85800,
+            "factorization": [
+              {
+                "prime": 2,
+                "exponent": 3
+              },
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 5,
+                "exponent": 2
+              },
+              {
+                "prime": 11,
+                "exponent": 1
+              },
+              {
+                "prime": 13,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 49,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_collision"
+          ],
+          [
+            "source_private",
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 477015289,
+      "linear_source_coordinate_bound": 12609,
+      "complete_linear_R_count": 46,
+      "complete_directed_linear_source_count": 70,
+      "coordinate_label_count": 71,
+      "target_hit_R": [
+        43,
+        51
+      ],
+      "directed_target_hit_source_count": 4,
+      "all_target_orientation_support_counts": {
+        "1": 2,
+        "2": 2
+      },
+      "selected_orientation": {
+        "R": 51,
+        "a": 179,
+        "s": 52247,
+        "K": 6081944935,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 52247,
+            "value": 19,
+            "factorization": [
+              {
+                "prime": 19,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 52247,
+            "value": 70121,
+            "factorization": [
+              {
+                "prime": 70121,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 179,
+            "value": 4565,
+            "factorization": [
+              {
+                "prime": 5,
+                "exponent": 1
+              },
+              {
+                "prime": 11,
+                "exponent": 1
+              },
+              {
+                "prime": 83,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 179,
+            "value": 1,
+            "factorization": []
+          }
+        ],
+        "minimum_target_layer_support": 1,
+        "minimum_target_layer_masks": [
+          [
+            "affine_collision"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 507599689,
+      "linear_source_coordinate_bound": 13007,
+      "complete_linear_R_count": 42,
+      "complete_directed_linear_source_count": 79,
+      "coordinate_label_count": 82,
+      "target_hit_R": [
+        379,
+        2551
+      ],
+      "directed_target_hit_source_count": 2,
+      "all_target_orientation_support_counts": {
+        "2": 2
+      },
+      "selected_orientation": {
+        "R": 379,
+        "a": 40582,
+        "s": 33,
+        "K": 48095070533,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 33,
+            "value": 3127,
+            "factorization": [
+              {
+                "prime": 53,
+                "exponent": 1
+              },
+              {
+                "prime": 59,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 33,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_collision",
+            "label": 40582,
+            "value": 1,
+            "factorization": []
+          },
+          {
+            "name": "affine_private",
+            "label": 40582,
+            "value": 15380579,
+            "factorization": [
+              {
+                "prime": 131,
+                "exponent": 1
+              },
+              {
+                "prime": 137,
+                "exponent": 1
+              },
+              {
+                "prime": 857,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "affine_private"
+          ]
+        ]
+      }
+    },
+    {
+      "prime": 534672889,
+      "linear_source_coordinate_bound": 13350,
+      "complete_linear_R_count": 59,
+      "complete_directed_linear_source_count": 107,
+      "coordinate_label_count": 97,
+      "target_hit_R": [
+        35,
+        59,
+        403,
+        1151,
+        1319
+      ],
+      "directed_target_hit_source_count": 7,
+      "all_target_orientation_support_counts": {
+        "2": 3,
+        "3": 3,
+        "4": 1
+      },
+      "selected_orientation": {
+        "R": 59,
+        "a": 43,
+        "s": 210667,
+        "K": 7886425113,
+        "layers": [
+          {
+            "name": "source_collision",
+            "label": 210667,
+            "value": 21,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 1
+              },
+              {
+                "prime": 7,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "source_private",
+            "label": 210667,
+            "value": 295937,
+            "factorization": [
+              {
+                "prime": 295937,
+                "exponent": 1
+              }
+            ]
+          },
+          {
+            "name": "affine_collision",
+            "label": 43,
+            "value": 27,
+            "factorization": [
+              {
+                "prime": 3,
+                "exponent": 3
+              }
+            ]
+          },
+          {
+            "name": "affine_private",
+            "label": 43,
+            "value": 47,
+            "factorization": [
+              {
+                "prime": 47,
+                "exponent": 1
+              }
+            ]
+          }
+        ],
+        "minimum_target_layer_support": 2,
+        "minimum_target_layer_masks": [
+          [
+            "source_collision",
+            "source_private"
+          ]
+        ]
+      }
+    }
+  ]
+}
