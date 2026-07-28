@@ -1,0 +1,721 @@
+{
+  "arithmetic": "exact centered prime-exponent boxes modulo R, a primitive-root discrete-log map, and exhaustive two-coordinate exponent boxes through the full group order",
+  "scope_note": "This is an exact boundary certificate for one F-state. It refutes the implication 'shared pullback lies in the affine generated subgroup' => 'finite affine box aligns'; it neither refutes nor proves the universal mixed terminal selector.",
+  "prime": 64214329,
+  "R": 359,
+  "source_state": {
+    "a": 7154,
+    "s": 25
+  },
+  "K": 5763236028,
+  "gamma": 2244,
+  "affine_block": 2568287,
+  "shared_layer": 42636,
+  "gamma_factorization": [
+    {
+      "prime": 2,
+      "exponent": 2
+    },
+    {
+      "prime": 3,
+      "exponent": 1
+    },
+    {
+      "prime": 11,
+      "exponent": 1
+    },
+    {
+      "prime": 17,
+      "exponent": 1
+    }
+  ],
+  "affine_factorization": [
+    {
+      "prime": 19,
+      "exponent": 1
+    },
+    {
+      "prime": 135173,
+      "exponent": 1
+    }
+  ],
+  "shared_layer_factorization": [
+    {
+      "prime": 2,
+      "exponent": 2
+    },
+    {
+      "prime": 3,
+      "exponent": 1
+    },
+    {
+      "prime": 11,
+      "exponent": 1
+    },
+    {
+      "prime": 17,
+      "exponent": 1
+    },
+    {
+      "prime": 19,
+      "exponent": 1
+    }
+  ],
+  "gamma_difference_count": 105,
+  "target_pullback_count": 105,
+  "shared_difference_count": 221,
+  "raw_shared_pullback_count": 60,
+  "subgroup_shared_pullback_count": 60,
+  "finite_shared_alignment_count": 0,
+  "primitive_root": 7,
+  "unit_group_order": 358,
+  "affine_discrete_logs": {
+    "19": 157,
+    "135173": 201
+  },
+  "affine_finite_difference_residues": [
+    1,
+    2,
+    19,
+    180,
+    189
+  ],
+  "raw_shared_pullback_residues": [
+    29,
+    43,
+    57,
+    58,
+    63,
+    65,
+    71,
+    86,
+    87,
+    95,
+    97,
+    114,
+    116,
+    119,
+    126,
+    130,
+    134,
+    142,
+    163,
+    167,
+    172,
+    174,
+    177,
+    178,
+    190,
+    201,
+    208,
+    211,
+    212,
+    215,
+    223,
+    227,
+    228,
+    232,
+    239,
+    260,
+    263,
+    268,
+    280,
+    285,
+    287,
+    291,
+    293,
+    299,
+    309,
+    311,
+    322,
+    323,
+    325,
+    326,
+    329,
+    334,
+    335,
+    342,
+    344,
+    347,
+    349,
+    353,
+    354,
+    356
+  ],
+  "overflow_distribution": {
+    "12": 2,
+    "13": 2,
+    "14": 2,
+    "15": 2,
+    "16": 2,
+    "17": 2,
+    "18": 2,
+    "19": 2,
+    "20": 2,
+    "21": 2,
+    "34": 2,
+    "35": 2,
+    "36": 2,
+    "37": 2,
+    "38": 2,
+    "39": 2,
+    "50": 2,
+    "51": 2,
+    "52": 2,
+    "53": 2,
+    "54": 2,
+    "68": 2,
+    "69": 2,
+    "70": 2,
+    "71": 2,
+    "72": 2,
+    "74": 2,
+    "75": 2,
+    "76": 2,
+    "77": 2
+  },
+  "minimum_overflow": "12",
+  "maximum_overflow": "77",
+  "overflow_rows": [
+    {
+      "residue": 29,
+      "discrete_log": 123,
+      "minimum_extra_exponent": 74,
+      "witness_vector": [
+        74,
+        -75
+      ]
+    },
+    {
+      "residue": 43,
+      "discrete_log": 257,
+      "minimum_extra_exponent": 14,
+      "witness_vector": [
+        14,
+        -15
+      ]
+    },
+    {
+      "residue": 57,
+      "discrete_log": 343,
+      "minimum_extra_exponent": 69,
+      "witness_vector": [
+        69,
+        -70
+      ]
+    },
+    {
+      "residue": 58,
+      "discrete_log": 79,
+      "minimum_extra_exponent": 75,
+      "witness_vector": [
+        75,
+        -76
+      ]
+    },
+    {
+      "residue": 63,
+      "discrete_log": 15,
+      "minimum_extra_exponent": 69,
+      "witness_vector": [
+        -70,
+        69
+      ]
+    },
+    {
+      "residue": 65,
+      "discrete_log": 323,
+      "minimum_extra_exponent": 76,
+      "witness_vector": [
+        -77,
+        76
+      ]
+    },
+    {
+      "residue": 71,
+      "discrete_log": 331,
+      "minimum_extra_exponent": 53,
+      "witness_vector": [
+        53,
+        -54
+      ]
+    },
+    {
+      "residue": 86,
+      "discrete_log": 213,
+      "minimum_extra_exponent": 15,
+      "witness_vector": [
+        15,
+        -16
+      ]
+    },
+    {
+      "residue": 87,
+      "discrete_log": 309,
+      "minimum_extra_exponent": 35,
+      "witness_vector": [
+        -36,
+        35
+      ]
+    },
+    {
+      "residue": 95,
+      "discrete_log": 275,
+      "minimum_extra_exponent": 38,
+      "witness_vector": [
+        38,
+        -39
+      ]
+    },
+    {
+      "residue": 97,
+      "discrete_log": 211,
+      "minimum_extra_exponent": 72,
+      "witness_vector": [
+        72,
+        -73
+      ]
+    },
+    {
+      "residue": 114,
+      "discrete_log": 299,
+      "minimum_extra_exponent": 70,
+      "witness_vector": [
+        70,
+        -71
+      ]
+    },
+    {
+      "residue": 116,
+      "discrete_log": 35,
+      "minimum_extra_exponent": 76,
+      "witness_vector": [
+        76,
+        -77
+      ]
+    },
+    {
+      "residue": 119,
+      "discrete_log": 307,
+      "minimum_extra_exponent": 21,
+      "witness_vector": [
+        21,
+        -22
+      ]
+    },
+    {
+      "residue": 126,
+      "discrete_log": 329,
+      "minimum_extra_exponent": 68,
+      "witness_vector": [
+        -69,
+        68
+      ]
+    },
+    {
+      "residue": 130,
+      "discrete_log": 279,
+      "minimum_extra_exponent": 75,
+      "witness_vector": [
+        -76,
+        75
+      ]
+    },
+    {
+      "residue": 134,
+      "discrete_log": 71,
+      "minimum_extra_exponent": 54,
+      "witness_vector": [
+        -55,
+        54
+      ]
+    },
+    {
+      "residue": 142,
+      "discrete_log": 287,
+      "minimum_extra_exponent": 54,
+      "witness_vector": [
+        54,
+        -55
+      ]
+    },
+    {
+      "residue": 163,
+      "discrete_log": 93,
+      "minimum_extra_exponent": 34,
+      "witness_vector": [
+        34,
+        -35
+      ]
+    },
+    {
+      "residue": 167,
+      "discrete_log": 101,
+      "minimum_extra_exponent": 14,
+      "witness_vector": [
+        -15,
+        14
+      ]
+    },
+    {
+      "residue": 172,
+      "discrete_log": 169,
+      "minimum_extra_exponent": 16,
+      "witness_vector": [
+        16,
+        -17
+      ]
+    },
+    {
+      "residue": 174,
+      "discrete_log": 265,
+      "minimum_extra_exponent": 34,
+      "witness_vector": [
+        -35,
+        34
+      ]
+    },
+    {
+      "residue": 177,
+      "discrete_log": 341,
+      "minimum_extra_exponent": 52,
+      "witness_vector": [
+        -53,
+        52
+      ]
+    },
+    {
+      "residue": 178,
+      "discrete_log": 51,
+      "minimum_extra_exponent": 21,
+      "witness_vector": [
+        -22,
+        21
+      ]
+    },
+    {
+      "residue": 190,
+      "discrete_log": 231,
+      "minimum_extra_exponent": 39,
+      "witness_vector": [
+        39,
+        -40
+      ]
+    },
+    {
+      "residue": 201,
+      "discrete_log": 301,
+      "minimum_extra_exponent": 13,
+      "witness_vector": [
+        13,
+        -14
+      ]
+    },
+    {
+      "residue": 208,
+      "discrete_log": 29,
+      "minimum_extra_exponent": 68,
+      "witness_vector": [
+        68,
+        -69
+      ]
+    },
+    {
+      "residue": 211,
+      "discrete_log": 59,
+      "minimum_extra_exponent": 70,
+      "witness_vector": [
+        -71,
+        70
+      ]
+    },
+    {
+      "residue": 212,
+      "discrete_log": 9,
+      "minimum_extra_exponent": 77,
+      "witness_vector": [
+        -78,
+        77
+      ]
+    },
+    {
+      "residue": 215,
+      "discrete_log": 17,
+      "minimum_extra_exponent": 52,
+      "witness_vector": [
+        52,
+        -53
+      ]
+    },
+    {
+      "residue": 223,
+      "discrete_log": 353,
+      "minimum_extra_exponent": 36,
+      "witness_vector": [
+        -37,
+        36
+      ]
+    },
+    {
+      "residue": 227,
+      "discrete_log": 319,
+      "minimum_extra_exponent": 37,
+      "witness_vector": [
+        37,
+        -38
+      ]
+    },
+    {
+      "residue": 228,
+      "discrete_log": 255,
+      "minimum_extra_exponent": 71,
+      "witness_vector": [
+        71,
+        -72
+      ]
+    },
+    {
+      "residue": 232,
+      "discrete_log": 349,
+      "minimum_extra_exponent": 77,
+      "witness_vector": [
+        77,
+        -78
+      ]
+    },
+    {
+      "residue": 239,
+      "discrete_log": 351,
+      "minimum_extra_exponent": 20,
+      "witness_vector": [
+        20,
+        -21
+      ]
+    },
+    {
+      "residue": 260,
+      "discrete_log": 235,
+      "minimum_extra_exponent": 74,
+      "witness_vector": [
+        -75,
+        74
+      ]
+    },
+    {
+      "residue": 263,
+      "discrete_log": 145,
+      "minimum_extra_exponent": 15,
+      "witness_vector": [
+        -16,
+        15
+      ]
+    },
+    {
+      "residue": 268,
+      "discrete_log": 27,
+      "minimum_extra_exponent": 53,
+      "witness_vector": [
+        -54,
+        53
+      ]
+    },
+    {
+      "residue": 280,
+      "discrete_log": 345,
+      "minimum_extra_exponent": 12,
+      "witness_vector": [
+        12,
+        -13
+      ]
+    },
+    {
+      "residue": 285,
+      "discrete_log": 103,
+      "minimum_extra_exponent": 71,
+      "witness_vector": [
+        -72,
+        71
+      ]
+    },
+    {
+      "residue": 287,
+      "discrete_log": 61,
+      "minimum_extra_exponent": 51,
+      "witness_vector": [
+        51,
+        -52
+      ]
+    },
+    {
+      "residue": 291,
+      "discrete_log": 39,
+      "minimum_extra_exponent": 37,
+      "witness_vector": [
+        -38,
+        37
+      ]
+    },
+    {
+      "residue": 293,
+      "discrete_log": 5,
+      "minimum_extra_exponent": 36,
+      "witness_vector": [
+        36,
+        -37
+      ]
+    },
+    {
+      "residue": 299,
+      "discrete_log": 37,
+      "minimum_extra_exponent": 19,
+      "witness_vector": [
+        19,
+        -20
+      ]
+    },
+    {
+      "residue": 309,
+      "discrete_log": 13,
+      "minimum_extra_exponent": 12,
+      "witness_vector": [
+        -13,
+        12
+      ]
+    },
+    {
+      "residue": 311,
+      "discrete_log": 189,
+      "minimum_extra_exponent": 16,
+      "witness_vector": [
+        -17,
+        16
+      ]
+    },
+    {
+      "residue": 322,
+      "discrete_log": 147,
+      "minimum_extra_exponent": 72,
+      "witness_vector": [
+        -73,
+        72
+      ]
+    },
+    {
+      "residue": 323,
+      "discrete_log": 105,
+      "minimum_extra_exponent": 50,
+      "witness_vector": [
+        50,
+        -51
+      ]
+    },
+    {
+      "residue": 325,
+      "discrete_log": 83,
+      "minimum_extra_exponent": 38,
+      "witness_vector": [
+        -39,
+        38
+      ]
+    },
+    {
+      "residue": 326,
+      "discrete_log": 49,
+      "minimum_extra_exponent": 35,
+      "witness_vector": [
+        35,
+        -36
+      ]
+    },
+    {
+      "residue": 329,
+      "discrete_log": 81,
+      "minimum_extra_exponent": 18,
+      "witness_vector": [
+        18,
+        -19
+      ]
+    },
+    {
+      "residue": 334,
+      "discrete_log": 57,
+      "minimum_extra_exponent": 13,
+      "witness_vector": [
+        -14,
+        13
+      ]
+    },
+    {
+      "residue": 335,
+      "discrete_log": 233,
+      "minimum_extra_exponent": 17,
+      "witness_vector": [
+        -18,
+        17
+      ]
+    },
+    {
+      "residue": 342,
+      "discrete_log": 127,
+      "minimum_extra_exponent": 39,
+      "witness_vector": [
+        -40,
+        39
+      ]
+    },
+    {
+      "residue": 344,
+      "discrete_log": 125,
+      "minimum_extra_exponent": 17,
+      "witness_vector": [
+        17,
+        -18
+      ]
+    },
+    {
+      "residue": 347,
+      "discrete_log": 277,
+      "minimum_extra_exponent": 18,
+      "witness_vector": [
+        -19,
+        18
+      ]
+    },
+    {
+      "residue": 349,
+      "discrete_log": 253,
+      "minimum_extra_exponent": 50,
+      "witness_vector": [
+        -51,
+        50
+      ]
+    },
+    {
+      "residue": 353,
+      "discrete_log": 321,
+      "minimum_extra_exponent": 19,
+      "witness_vector": [
+        -20,
+        19
+      ]
+    },
+    {
+      "residue": 354,
+      "discrete_log": 297,
+      "minimum_extra_exponent": 51,
+      "witness_vector": [
+        -52,
+        51
+      ]
+    },
+    {
+      "residue": 356,
+      "discrete_log": 7,
+      "minimum_extra_exponent": 20,
+      "witness_vector": [
+        -21,
+        20
+      ]
+    }
+  ]
+}
