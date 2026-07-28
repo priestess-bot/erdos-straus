@@ -3,6 +3,7 @@ import json
 import math
 import sys
 import unittest
+from fractions import Fraction
 from pathlib import Path
 
 
@@ -43,6 +44,43 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         self.assertEqual(prime, 4 * A * C - gap)
         self.assertEqual(4 * K, prime * R + 1)
         self.assertLess(E, 2 * K)
+
+    def external_retraction_source(self, prime, certificate):
+        """Return the canonical external source when this B=1 form retracts."""
+        gap = int(certificate["gap"])
+        A, B, C = (int(value) for value in certificate["normal_form"])
+        R = int(certificate["R"])
+        K = int(certificate["K"])
+        k = (R + 1) // 4
+
+        self.assertEqual(B, 1)
+        if K % k:
+            return None
+
+        self.assertEqual(((prime - 1) // 4) % k, 0)
+        source = K // k
+        self.assertEqual((R * prime + 1) % (R + 1), 0)
+        self.assertEqual(source, (R * prime + 1) // (R + 1))
+        self.assertEqual(4 * K, (R + 1) * source)
+        self.assertEqual(K % C, 0)
+        self.assertEqual((C + K) % R, 0)
+        self.assertEqual(gap, (4 * C + 1) // R)
+
+        u = (K + C) // R
+        v = K * u // C
+        self.assertEqual((K + C) % R, 0)
+        self.assertEqual(K * u % C, 0)
+        self.assertEqual(u, A * C)
+        self.assertEqual(v, A * C * (A * R - 1))
+        self.assertEqual(
+            Fraction(4, source),
+            Fraction(1, K) + Fraction(1, u) + Fraction(1, v),
+        )
+        self.assertEqual(
+            Fraction(4, prime),
+            Fraction(1, prime * K) + Fraction(1, u) + Fraction(1, v),
+        )
+        return source
 
     def test_composed_upper_b1_closure_rebuilds_all_tail_misses(self):
         base = json.loads(
@@ -101,15 +139,31 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
 
         checked = 0
         source_equals_bridge_factor_count = 0
+        external_retraction_count = 0
+        even_external_retraction_count = 0
+
+        def record(prime, certificate):
+            nonlocal checked
+            nonlocal source_equals_bridge_factor_count
+            nonlocal external_retraction_count
+            nonlocal even_external_retraction_count
+
+            self.assert_source_first_coordinates(prime, certificate)
+            source_equals_bridge_factor_count += int(
+                certificate["E"] == certificate["source_denominator"]
+            )
+            external_source = self.external_retraction_source(prime, certificate)
+            external_retraction_count += int(external_source is not None)
+            even_external_retraction_count += int(
+                external_source is not None and external_source % 2 == 0
+            )
+            checked += 1
+
         for row in base["records"]:
             prime = int(row["prime"])
             certificate = profile.stored_witness(prime, row["minimum_b1_source_witness"])
             if 2 * int(certificate["source_denominator"]) >= prime + 1:
-                self.assert_source_first_coordinates(prime, certificate)
-                source_equals_bridge_factor_count += int(
-                    certificate["E"] == certificate["source_denominator"]
-                )
-                checked += 1
+                record(prime, certificate)
 
         extra_certificates = [
             *(row["certificate"] for row in completed["lower_source_state_reselected_records"]),
@@ -118,14 +172,19 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         ]
         for certificate in extra_certificates:
             prime = int(certificate["source_denominator"]) + int(certificate["source_distance"])
-            self.assert_source_first_coordinates(prime, certificate)
-            source_equals_bridge_factor_count += int(
-                certificate["E"] == certificate["source_denominator"]
-            )
-            checked += 1
+            record(prime, certificate)
 
         self.assertEqual(checked, completed["upper_B_eq_1_closure_count"])
         self.assertEqual(source_equals_bridge_factor_count, 0)
+        self.assertEqual(
+            (
+                external_retraction_count,
+                even_external_retraction_count,
+                external_retraction_count - even_external_retraction_count,
+                checked - external_retraction_count,
+            ),
+            (1132, 636, 496, 585),
+        )
 
 
 if __name__ == "__main__":

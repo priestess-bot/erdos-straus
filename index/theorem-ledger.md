@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 250 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 193 |
+| 数学状态 | `established` | 194 |
 | 数学状态 | `open` | 10 |
 | 证明来源 | `computational_reproduction` | 23 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 15 |
+| 证明来源 | `repository_derivation` | 16 |
 | 证明来源 | `unspecified` | 430 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 38 |
+| 审阅状态 | `internal_review` | 39 |
 | 审阅状态 | `unspecified` | 430 |
 
 ## 全部主张
@@ -210,6 +210,7 @@
 | [Type I 自适应逃逸深度在千万级种子中可达九十七窗口](../claims/type-I-adaptive-escape-seed-profile.md) (`type-I-adaptive-escape-seed-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [自适应上半区 B 等于一混合终端选择猜想](../claims/type-I-adaptive-upper-b1-terminal-selector-conjecture.md) (`type-I-adaptive-upper-b1-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [B等于一正规形回缩到完整平方因子外部源的判据](../claims/type-I-b1-external-source-retraction-criterion.md) (`type-I-b1-external-source-retraction-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [B等于1的p减一终端桥与同缺口Type II的精确二分](../claims/type-I-b1-pminusone-same-gap-dichotomy.md) (`type-I-b1-pminusone-same-gap-dichotomy`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏中的B等于1终端桥重叠剖面](../claims/type-I-b1-terminal-overlap-profile-500m.md) (`type-I-b1-terminal-overlap-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B不大于4最大尾偶源选择器的首个失败点](../claims/type-I-b4-prefix-boundary-21169.md) (`type-I-b4-prefix-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
