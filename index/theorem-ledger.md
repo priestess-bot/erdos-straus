@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 264 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 207 |
+| 数学状态 | `established` | 208 |
 | 数学状态 | `open` | 11 |
 | 证明来源 | `computational_reproduction` | 37 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 32 |
+| 证明来源 | `repository_derivation` | 33 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 62 |
+| 审阅状态 | `internal_review` | 63 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -243,6 +243,7 @@
 | [核心素数的九条固定 p 减一 B 等于一因子射线](../claims/type-I-fixed-universal-pminusone-b1-rays.md) (`type-I-fixed-universal-pminusone-b1-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [一般 B 目标平方除子的中心化谱与精确障碍二分](../claims/type-I-general-b-centered-square-spectrum.md) (`type-I-general-b-centered-square-spectrum`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [一般 B 正规形的自然自平方补因子刚性](../claims/type-I-general-b-self-square-rigidity.md) (`type-I-general-b-self-square-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿全局 p 减一遗漏的线性 B 等于一失败与一般 B 障碍剖面](../claims/type-I-global-linear-b1-failure-general-b-profile-500m.md) (`type-I-global-linear-b1-failure-general-b-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [H19-k23 残存进程的完整统一仿射 Type I 审计](../claims/type-I-h19-affine-uniform-square-audit.md) (`type-I-h19-affine-uniform-square-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19偶桥的B等于1源状态实现边界](../claims/type-I-h19-b1-source-state-boundary-1b.md) (`type-I-h19-b1-source-state-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
