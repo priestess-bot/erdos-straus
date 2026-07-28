@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 282 |
+| 数学状态 | `computationally_reproduced` | 283 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 226 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 54 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 53 |
+| 证明来源 | `repository_derivation` | 54 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 101 |
+| 审阅状态 | `internal_review` | 102 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -283,6 +283,7 @@
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源模数之间的公因子刚性与共享指数层](../claims/type-I-linear-cross-modulus-gcd-rigidity.md) (`type-I-linear-cross-modulus-gcd-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性二次 G 型分离子的跨模数共享素因子相容律](../claims/type-I-linear-cross-state-quadratic-separator-compatibility.md) (`type-I-linear-cross-state-quadratic-separator-compatibility`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [近饱和 F 型状态的两块反足点对齐边界](../claims/type-I-linear-f-near-saturation-block-alignment-600m.md) (`type-I-linear-f-near-saturation-block-alignment-600m`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [七点线性 F 型状态的反足点半密度边界](../claims/type-I-linear-finite-exponent-antipodal-density-profile-600m.md) (`type-I-linear-finite-exponent-antipodal-density-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [372409 的完整线性源谱含必须四标签层的 Type I 目标命中](../claims/type-I-linear-four-label-layer-boundary-372409.md) (`type-I-linear-four-label-layer-boundary-372409`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [六亿压力集中全谱 B 等于一失败点的三标签重选剖面](../claims/type-I-linear-full-b1-failure-label-reselection-profile-600m.md) (`type-I-linear-full-b1-failure-label-reselection-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
