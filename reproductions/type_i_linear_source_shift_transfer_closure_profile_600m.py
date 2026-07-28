@@ -40,6 +40,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 4,
         "failed_state_reaching_target_count": 0,
         "s_isolated_failed_state_reaching_target_count": 0,
+        "reversible_component_count": 12,
+        "target_hit_component_count": 4,
+        "target_free_component_count": 8,
+        "states_in_target_hit_components": 6,
+        "states_in_target_free_components": 37,
     },
     878_089: {
         "source_state_count": 54,
@@ -50,6 +55,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 1,
         "failed_state_reaching_target_count": 0,
         "s_isolated_failed_state_reaching_target_count": 0,
+        "reversible_component_count": 24,
+        "target_hit_component_count": 1,
+        "target_free_component_count": 23,
+        "states_in_target_hit_components": 14,
+        "states_in_target_free_components": 40,
     },
     2_210_569: {
         "source_state_count": 38,
@@ -60,6 +70,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 9,
         "failed_state_reaching_target_count": 5,
         "s_isolated_failed_state_reaching_target_count": 1,
+        "reversible_component_count": 20,
+        "target_hit_component_count": 2,
+        "target_free_component_count": 18,
+        "states_in_target_hit_components": 17,
+        "states_in_target_free_components": 21,
     },
     13_782_409: {
         "source_state_count": 78,
@@ -70,6 +85,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 1,
         "failed_state_reaching_target_count": 0,
         "s_isolated_failed_state_reaching_target_count": 0,
+        "reversible_component_count": 31,
+        "target_hit_component_count": 1,
+        "target_free_component_count": 30,
+        "states_in_target_hit_components": 6,
+        "states_in_target_free_components": 72,
     },
     64_214_329: {
         "source_state_count": 80,
@@ -80,6 +100,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 5,
         "failed_state_reaching_target_count": 0,
         "s_isolated_failed_state_reaching_target_count": 0,
+        "reversible_component_count": 43,
+        "target_hit_component_count": 5,
+        "target_free_component_count": 38,
+        "states_in_target_hit_components": 11,
+        "states_in_target_free_components": 69,
     },
     105_295_129: {
         "source_state_count": 95,
@@ -90,6 +115,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 6,
         "failed_state_reaching_target_count": 0,
         "s_isolated_failed_state_reaching_target_count": 0,
+        "reversible_component_count": 27,
+        "target_hit_component_count": 6,
+        "target_free_component_count": 21,
+        "states_in_target_hit_components": 62,
+        "states_in_target_free_components": 33,
     },
     536_944_489: {
         "source_state_count": 102,
@@ -100,6 +130,11 @@ EXPECTED_PER_PRIME = {
         "combined_reachable_target_state_count": 13,
         "failed_state_reaching_target_count": 4,
         "s_isolated_failed_state_reaching_target_count": 1,
+        "reversible_component_count": 65,
+        "target_hit_component_count": 8,
+        "target_free_component_count": 57,
+        "states_in_target_hit_components": 45,
+        "states_in_target_free_components": 57,
     },
 }
 EXPECTED_TOTALS = {
@@ -112,6 +147,11 @@ EXPECTED_TOTALS = {
     "failed_state_reaching_target_count": 9,
     "s_isolated_failed_state_reaching_target_count": 2,
     "failed_state_not_reaching_target_count": 451,
+    "reversible_component_count": 222,
+    "target_hit_component_count": 27,
+    "target_free_component_count": 195,
+    "states_in_target_hit_components": 161,
+    "states_in_target_free_components": 329,
 }
 
 
@@ -227,6 +267,37 @@ def reverse_reachable(
     return reachable
 
 
+def reversible_components(
+    states: set[tuple[int, int, int]],
+    transitions: list[tuple[tuple[int, int, int], tuple[int, int, int]]],
+) -> list[set[tuple[int, int, int]]]:
+    """Partition states after allowing either direction of each checked transfer."""
+    neighbors: dict[tuple[int, int, int], set[tuple[int, int, int]]] = defaultdict(set)
+    for source, target in transitions:
+        if source not in states or target not in states:
+            raise AssertionError("transition left the complete source state set")
+        neighbors[source].add(target)
+        neighbors[target].add(source)
+    unseen = set(states)
+    components = []
+    while unseen:
+        seed = min(unseen)
+        component = {seed}
+        unseen.remove(seed)
+        pending = deque([seed])
+        while pending:
+            state = pending.popleft()
+            for neighbor in neighbors[state]:
+                if neighbor in unseen:
+                    unseen.remove(neighbor)
+                    component.add(neighbor)
+                    pending.append(neighbor)
+        components.append(component)
+    if sum(len(component) for component in components) != len(states):
+        raise AssertionError("components did not partition source states")
+    return components
+
+
 def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object], Counter[str]]:
     """Compute the exact combined fixed-s and shift-transfer closure at one prime."""
     prime = int(source_profile["prime"])
@@ -238,9 +309,17 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
         for row in fixed.factor_transfers(prime, states)
     ]
     raw_shift_count, shift_transitions = shift_transfers(prime, states)
+    all_transitions = [*fixed_transitions, *shift_transitions]
     reachable = reverse_reachable(
-        states, hit_states, [*fixed_transitions, *shift_transitions]
+        states, hit_states, all_transitions
     )
+    components = reversible_components(states, all_transitions)
+    hit_components = [
+        component for component in components if component & hit_states
+    ]
+    target_free_components = [
+        component for component in components if not component & hit_states
+    ]
     failed_states = states - hit_states
     hit_s = {state[1] for state in hit_states}
     isolated_failures = {
@@ -257,9 +336,26 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
         "s_isolated_failed_state_reaching_target_count": len(
             reachable & isolated_failures
         ),
+        "reversible_component_count": len(components),
+        "target_hit_component_count": len(hit_components),
+        "target_free_component_count": len(target_free_components),
+        "states_in_target_hit_components": sum(
+            len(component) for component in hit_components
+        ),
+        "states_in_target_free_components": sum(
+            len(component) for component in target_free_components
+        ),
     }
     if counts != EXPECTED_PER_PRIME[prime]:
         raise AssertionError("frozen combined transfer closure changed")
+    if (
+        counts["reversible_component_count"]
+        != counts["target_hit_component_count"] + counts["target_free_component_count"]
+        or counts["source_state_count"]
+        != counts["states_in_target_hit_components"]
+        + counts["states_in_target_free_components"]
+    ):
+        raise AssertionError("reversible components did not partition by target reach")
     direct_to_hit = [
         (source, target)
         for source, target in shift_transitions
@@ -288,6 +384,15 @@ def profile_prime(source_profile: dict[str, object]) -> tuple[dict[str, object],
                     reachable & isolated_failures
                 ),
                 "failed_state_not_reaching_target_count": len(failed_states - reachable),
+                "reversible_component_count": len(components),
+                "target_hit_component_count": len(hit_components),
+                "target_free_component_count": len(target_free_components),
+                "states_in_target_hit_components": sum(
+                    len(component) for component in hit_components
+                ),
+                "states_in_target_free_components": sum(
+                    len(component) for component in target_free_components
+                ),
             }
         ),
     )

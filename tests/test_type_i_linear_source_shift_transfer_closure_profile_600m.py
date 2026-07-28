@@ -63,6 +63,17 @@ class LinearSourceShiftTransferClosureProfileTests(unittest.TestCase):
             ],
         )
 
+    def test_reversible_checked_edge_components_leave_every_pressure_point_with_a_target_free_part(self):
+        for source_profile in profile.run_audit()["profiles"]:
+            self.assertGreater(
+                int(source_profile["target_free_component_count"]),
+                0,
+            )
+            self.assertGreater(
+                int(source_profile["states_in_target_free_components"]),
+                0,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
