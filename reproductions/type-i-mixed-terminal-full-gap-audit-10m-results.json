@@ -1,0 +1,2250 @@
+{
+  "arithmetic": "for every core prime p<=limit, exhaust all ordinary Type II p-1 two-tail divisors; for each miss, exhaust every m=3 (mod 4) with 3<=m<=p-2, every target divisor e|x^2 with 4e= -1 (mod m), and every E|4K^2 until an exact even terminal bridge is reconstructed",
+  "scope_note": "This is a finite no-gap-cap audit. It proves the stated dichotomy only for the selected limit; it does not give a uniform gap bound or a global mixed terminal selector.",
+  "prime_limit": 10000000,
+  "core_prime_count": 82887,
+  "ordinary_type_ii_tail_certificate_count": 82803,
+  "ordinary_type_ii_tail_miss_count": 84,
+  "type_i_even_terminal_bridge_count": 84,
+  "unclosed_primes": [],
+  "maximum_selected_type_i_gap": 71,
+  "target_divisor_candidates_checked": 135,
+  "bridge_divisor_candidates_checked": 300109,
+  "ordinary_tail_gap_histogram": {
+    "3": 47137,
+    "7": 28606,
+    "11": 4419,
+    "15": 451,
+    "19": 654,
+    "23": 1050,
+    "27": 44,
+    "31": 60,
+    "35": 39,
+    "39": 83,
+    "43": 8,
+    "47": 72,
+    "51": 7,
+    "55": 12,
+    "59": 24,
+    "67": 3,
+    "71": 41,
+    "75": 1,
+    "79": 1,
+    "83": 17,
+    "87": 13,
+    "91": 4,
+    "95": 2,
+    "103": 4,
+    "107": 3,
+    "111": 3,
+    "119": 5,
+    "131": 7,
+    "135": 1,
+    "151": 1,
+    "155": 2,
+    "163": 1,
+    "167": 11,
+    "183": 1,
+    "191": 1,
+    "199": 1,
+    "203": 1,
+    "215": 2,
+    "239": 1,
+    "263": 3,
+    "311": 1,
+    "335": 1,
+    "455": 1,
+    "695": 1,
+    "743": 1,
+    "1255": 1,
+    "1615": 1
+  },
+  "ordinary_tail_miss_primes": [
+    67369,
+    85369,
+    163249,
+    214729,
+    225289,
+    297049,
+    372409,
+    454969,
+    521929,
+    532249,
+    629689,
+    784249,
+    852889,
+    878089,
+    967129,
+    1046329,
+    1093129,
+    1178809,
+    1415929,
+    1447609,
+    1497049,
+    1511449,
+    1854889,
+    1936489,
+    2020489,
+    2097769,
+    2168329,
+    2210569,
+    2254729,
+    2269129,
+    2392009,
+    2516089,
+    2596729,
+    2669209,
+    2671729,
+    2707609,
+    2754889,
+    2852809,
+    2938489,
+    2978089,
+    2986729,
+    3021769,
+    3825649,
+    3942409,
+    4054009,
+    4219609,
+    4253209,
+    4413049,
+    4570729,
+    4718569,
+    4753849,
+    4779889,
+    4824649,
+    5019529,
+    5374009,
+    5397529,
+    5478169,
+    5596369,
+    5703889,
+    5886169,
+    5897329,
+    6254329,
+    6279289,
+    6294649,
+    6316249,
+    6569161,
+    6856249,
+    7079209,
+    7504249,
+    7524169,
+    7791529,
+    8009929,
+    8083849,
+    8589289,
+    8797849,
+    8965609,
+    9081769,
+    9104209,
+    9315289,
+    9323449,
+    9394009,
+    9711529,
+    9716569,
+    9872809
+  ],
+  "type_i_even_terminal_records": [
+    {
+      "prime": 67369,
+      "type_i_even_terminal": {
+        "prime": 67369,
+        "gap": 31,
+        "x": 16850,
+        "target_divisor": 674,
+        "R": 87,
+        "K": 1465276,
+        "bridge_factor": 4726276,
+        "source_denominator": 13044,
+        "target_solution": [
+          16850,
+          36631900,
+          98714178844
+        ],
+        "source_solution": [
+          4044,
+          16850,
+          36631900
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 34
+    },
+    {
+      "prime": 85369,
+      "type_i_even_terminal": {
+        "prime": 85369,
+        "gap": 15,
+        "x": 21346,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 149396,
+        "bridge_factor": 8,
+        "source_denominator": 85368,
+        "target_solution": [
+          21346,
+          122654116,
+          12753787124
+        ],
+        "source_solution": [
+          1594204716,
+          21346,
+          122654116
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 163249,
+      "type_i_even_terminal": {
+        "prime": 163249,
+        "gap": 31,
+        "x": 40820,
+        "target_divisor": 5200,
+        "R": 671,
+        "K": 27385020,
+        "bridge_factor": 548208,
+        "source_denominator": 162432,
+        "target_solution": [
+          40820,
+          214972407,
+          4470577129980
+        ],
+        "source_solution": [
+          8114080,
+          40820,
+          214972407
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 912
+    },
+    {
+      "prime": 214729,
+      "type_i_even_terminal": {
+        "prime": 214729,
+        "gap": 31,
+        "x": 53690,
+        "target_divisor": 364,
+        "R": 47,
+        "K": 2523066,
+        "bridge_factor": 48,
+        "source_denominator": 214728,
+        "target_solution": [
+          53690,
+          372152235,
+          541775439114
+        ],
+        "source_solution": [
+          11286935751,
+          53690,
+          372152235
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 2856
+    },
+    {
+      "prime": 225289,
+      "type_i_even_terminal": {
+        "prime": 225289,
+        "gap": 31,
+        "x": 56330,
+        "target_divisor": 860,
+        "R": 111,
+        "K": 6251770,
+        "bridge_factor": 112,
+        "source_denominator": 225288,
+        "target_solution": [
+          56330,
+          409490935,
+          1408455011530
+        ],
+        "source_solution": [
+          12575435355,
+          56330,
+          409490935
+        ]
+      },
+      "target_divisor_candidates_checked": 3,
+      "bridge_divisor_candidates_checked": 3429
+    },
+    {
+      "prime": 297049,
+      "type_i_even_terminal": {
+        "prime": 297049,
+        "gap": 15,
+        "x": 74266,
+        "target_divisor": 71,
+        "R": 19,
+        "K": 1410983,
+        "bridge_factor": 476,
+        "source_denominator": 297024,
+        "target_solution": [
+          74266,
+          1475888218,
+          419131089167
+        ],
+        "source_solution": [
+          880453392,
+          74266,
+          1475888218
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 21
+    },
+    {
+      "prime": 372409,
+      "type_i_even_terminal": {
+        "prime": 372409,
+        "gap": 15,
+        "x": 93106,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 651716,
+        "bridge_factor": 8,
+        "source_denominator": 372408,
+        "target_solution": [
+          93106,
+          2333794996,
+          242704903844
+        ],
+        "source_solution": [
+          30338031516,
+          93106,
+          2333794996
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 454969,
+      "type_i_even_terminal": {
+        "prime": 454969,
+        "gap": 31,
+        "x": 113750,
+        "target_divisor": 364,
+        "R": 47,
+        "K": 5345886,
+        "bridge_factor": 48,
+        "source_denominator": 454968,
+        "target_solution": [
+          113750,
+          1670589375,
+          2432212407534
+        ],
+        "source_solution": [
+          50670980451,
+          113750,
+          1670589375
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 21
+    },
+    {
+      "prime": 521929,
+      "type_i_even_terminal": {
+        "prime": 521929,
+        "gap": 19,
+        "x": 130487,
+        "target_divisor": 130487,
+        "R": 27471,
+        "K": 3584477890,
+        "bridge_factor": 754600900,
+        "source_denominator": 494460,
+        "target_solution": [
+          130487,
+          3584477890,
+          1870842960649810
+        ],
+        "source_solution": [
+          2348766,
+          130487,
+          3584477890
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 827
+    },
+    {
+      "prime": 532249,
+      "type_i_even_terminal": {
+        "prime": 532249,
+        "gap": 55,
+        "x": 133076,
+        "target_divisor": 206,
+        "R": 15,
+        "K": 1995934,
+        "bridge_factor": 16,
+        "source_denominator": 532248,
+        "target_solution": [
+          133076,
+          1289373364,
+          1062333875566
+        ],
+        "source_solution": [
+          66395742477,
+          133076,
+          1289373364
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 5
+    },
+    {
+      "prime": 629689,
+      "type_i_even_terminal": {
+        "prime": 629689,
+        "gap": 31,
+        "x": 157430,
+        "target_divisor": 364,
+        "R": 47,
+        "K": 7398846,
+        "bridge_factor": 48,
+        "source_denominator": 629688,
+        "target_solution": [
+          157430,
+          3200000895,
+          4658971938894
+        ],
+        "source_solution": [
+          97061761251,
+          157430,
+          3200000895
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 22
+    },
+    {
+      "prime": 784249,
+      "type_i_even_terminal": {
+        "prime": 784249,
+        "gap": 15,
+        "x": 196066,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 1372436,
+        "bridge_factor": 8,
+        "source_denominator": 784248,
+        "target_solution": [
+          196066,
+          10349539876,
+          1076331560564
+        ],
+        "source_solution": [
+          134541273516,
+          196066,
+          10349539876
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 852889,
+      "type_i_even_terminal": {
+        "prime": 852889,
+        "gap": 15,
+        "x": 213226,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 1492556,
+        "bridge_factor": 8,
+        "source_denominator": 852888,
+        "target_solution": [
+          213226,
+          12240451756,
+          1272984594284
+        ],
+        "source_solution": [
+          159122887716,
+          213226,
+          12240451756
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 878089,
+      "type_i_even_terminal": {
+        "prime": 878089,
+        "gap": 31,
+        "x": 219530,
+        "target_divisor": 116,
+        "R": 15,
+        "K": 3292834,
+        "bridge_factor": 16,
+        "source_denominator": 878088,
+        "target_solution": [
+          219530,
+          6231688345,
+          2891401314226
+        ],
+        "source_solution": [
+          180712376337,
+          219530,
+          6231688345
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 5
+    },
+    {
+      "prime": 967129,
+      "type_i_even_terminal": {
+        "prime": 967129,
+        "gap": 47,
+        "x": 241794,
+        "target_divisor": 1539,
+        "R": 131,
+        "K": 31673475,
+        "bridge_factor": 128250,
+        "source_denominator": 966150,
+        "target_solution": [
+          241794,
+          4976254850,
+          30632336203275
+        ],
+        "source_solution": [
+          238606845,
+          241794,
+          4976254850
+        ]
+      },
+      "target_divisor_candidates_checked": 4,
+      "bridge_divisor_candidates_checked": 13945
+    },
+    {
+      "prime": 1046329,
+      "type_i_even_terminal": {
+        "prime": 1046329,
+        "gap": 15,
+        "x": 261586,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 1831076,
+        "bridge_factor": 8,
+        "source_denominator": 1046328,
+        "target_solution": [
+          261586,
+          18422455636,
+          1915907920004
+        ],
+        "source_solution": [
+          239488261116,
+          261586,
+          18422455636
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 1093129,
+      "type_i_even_terminal": {
+        "prime": 1093129,
+        "gap": 15,
+        "x": 273286,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 1912976,
+        "bridge_factor": 8,
+        "source_denominator": 1093128,
+        "target_solution": [
+          273286,
+          20107290736,
+          2091129541904
+        ],
+        "source_solution": [
+          261390953616,
+          273286,
+          20107290736
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 1178809,
+      "type_i_even_terminal": {
+        "prime": 1178809,
+        "gap": 39,
+        "x": 294712,
+        "target_divisor": 68,
+        "R": 7,
+        "K": 2062916,
+        "bridge_factor": 8,
+        "source_denominator": 1178808,
+        "target_solution": [
+          294712,
+          8940677944,
+          2431783947044
+        ],
+        "source_solution": [
+          303972735516,
+          294712,
+          8940677944
+        ]
+      },
+      "target_divisor_candidates_checked": 3,
+      "bridge_divisor_candidates_checked": 3406
+    },
+    {
+      "prime": 1415929,
+      "type_i_even_terminal": {
+        "prime": 1415929,
+        "gap": 31,
+        "x": 353990,
+        "target_divisor": 364,
+        "R": 47,
+        "K": 16637166,
+        "bridge_factor": 48,
+        "source_denominator": 1415928,
+        "target_solution": [
+          353990,
+          16179643935,
+          23557045817214
+        ],
+        "source_solution": [
+          490771441251,
+          353990,
+          16179643935
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 22
+    },
+    {
+      "prime": 1447609,
+      "type_i_even_terminal": {
+        "prime": 1447609,
+        "gap": 15,
+        "x": 361906,
+        "target_divisor": 236,
+        "R": 63,
+        "K": 22799842,
+        "bridge_factor": 13924,
+        "source_denominator": 1447388,
+        "target_solution": [
+          361906,
+          34963557707,
+          33005256477778
+        ],
+        "source_solution": [
+          2370024254,
+          361906,
+          34963557707
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 50
+    },
+    {
+      "prime": 1497049,
+      "type_i_even_terminal": {
+        "prime": 1497049,
+        "gap": 31,
+        "x": 374270,
+        "target_divisor": 5758,
+        "R": 743,
+        "K": 278076852,
+        "bridge_factor": 530473024,
+        "source_denominator": 783088,
+        "target_solution": [
+          374270,
+          18074995380,
+          416294673209748
+        ],
+        "source_solution": [
+          410499,
+          374270,
+          18074995380
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 157
+    },
+    {
+      "prime": 1511449,
+      "type_i_even_terminal": {
+        "prime": 1511449,
+        "gap": 19,
+        "x": 377867,
+        "target_divisor": 377867,
+        "R": 79551,
+        "K": 30059319850,
+        "bridge_factor": 6328202500,
+        "source_denominator": 1431900,
+        "target_solution": [
+          377867,
+          30059319850,
+          45433128927962650
+        ],
+        "source_solution": [
+          6801606,
+          377867,
+          30059319850
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 2466
+    },
+    {
+      "prime": 1854889,
+      "type_i_even_terminal": {
+        "prime": 1854889,
+        "gap": 31,
+        "x": 463730,
+        "target_divisor": 395,
+        "R": 51,
+        "K": 23649835,
+        "bridge_factor": 2993650,
+        "source_denominator": 1796190,
+        "target_solution": [
+          463730,
+          27764906290,
+          43867818793315
+        ],
+        "source_solution": [
+          14189901,
+          463730,
+          27764906290
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 96
+    },
+    {
+      "prime": 1936489,
+      "type_i_even_terminal": {
+        "prime": 1936489,
+        "gap": 15,
+        "x": 484126,
+        "target_divisor": 116,
+        "R": 31,
+        "K": 15007790,
+        "bridge_factor": 280,
+        "source_denominator": 1936480,
+        "target_solution": [
+          484126,
+          62635011565,
+          29062420249310
+        ],
+        "source_solution": [
+          103793875640,
+          484126,
+          62635011565
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 34
+    },
+    {
+      "prime": 2020489,
+      "type_i_even_terminal": {
+        "prime": 2020489,
+        "gap": 47,
+        "x": 505134,
+        "target_divisor": 1539,
+        "R": 131,
+        "K": 66171015,
+        "bridge_factor": 22574052,
+        "source_denominator": 1848168,
+        "target_solution": [
+          505134,
+          21718797590,
+          133697807926335
+        ],
+        "source_solution": [
+          5417510,
+          505134,
+          21718797590
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 498
+    },
+    {
+      "prime": 2097769,
+      "type_i_even_terminal": {
+        "prime": 2097769,
+        "gap": 15,
+        "x": 524446,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 3671096,
+        "bridge_factor": 8,
+        "source_denominator": 2097768,
+        "target_solution": [
+          524446,
+          74049677416,
+          7701111384824
+        ],
+        "source_solution": [
+          962638464216,
+          524446,
+          74049677416
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 2168329,
+      "type_i_even_terminal": {
+        "prime": 2168329,
+        "gap": 19,
+        "x": 542087,
+        "target_divisor": 299,
+        "R": 63,
+        "K": 34151182,
+        "bridge_factor": 97336,
+        "source_denominator": 2166784,
+        "target_solution": [
+          542087,
+          61916092966,
+          74050998314878
+        ],
+        "source_solution": [
+          760235008,
+          542087,
+          61916092966
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 72
+    },
+    {
+      "prime": 2210569,
+      "type_i_even_terminal": {
+        "prime": 2210569,
+        "gap": 31,
+        "x": 552650,
+        "target_divisor": 6316,
+        "R": 815,
+        "K": 450403434,
+        "bridge_factor": 3218436,
+        "source_denominator": 2206620,
+        "target_solution": [
+          552650,
+          39410300475,
+          995647868693946
+        ],
+        "source_solution": [
+          308805030,
+          552650,
+          39410300475
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 518
+    },
+    {
+      "prime": 2254729,
+      "type_i_even_terminal": {
+        "prime": 2254729,
+        "gap": 15,
+        "x": 563686,
+        "target_divisor": 236,
+        "R": 63,
+        "K": 35511982,
+        "bridge_factor": 13924,
+        "source_denominator": 2254508,
+        "target_solution": [
+          563686,
+          84820369007,
+          80069895662878
+        ],
+        "source_solution": [
+          5749931594,
+          563686,
+          84820369007
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 50
+    },
+    {
+      "prime": 2269129,
+      "type_i_even_terminal": {
+        "prime": 2269129,
+        "gap": 15,
+        "x": 567286,
+        "target_divisor": 356,
+        "R": 95,
+        "K": 53891814,
+        "bridge_factor": 22033636,
+        "source_denominator": 2037196,
+        "target_solution": [
+          567286,
+          85876605609,
+          122287478010006
+        ],
+        "source_solution": [
+          4982754,
+          567286,
+          85876605609
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 173
+    },
+    {
+      "prime": 2392009,
+      "type_i_even_terminal": {
+        "prime": 2392009,
+        "gap": 27,
+        "x": 598009,
+        "target_divisor": 20621,
+        "R": 3055,
+        "K": 1826896874,
+        "bridge_factor": 6803610256,
+        "source_denominator": 164968,
+        "target_solution": [
+          598009,
+          52980009346,
+          4369953764679866
+        ],
+        "source_solution": [
+          44297,
+          598009,
+          52980009346
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 214
+    },
+    {
+      "prime": 2516089,
+      "type_i_even_terminal": {
+        "prime": 2516089,
+        "gap": 67,
+        "x": 629039,
+        "target_divisor": 21691,
+        "R": 1295,
+        "K": 814583814,
+        "bridge_factor": 1410302916,
+        "source_denominator": 1427052,
+        "target_solution": [
+          629039,
+          23622930606,
+          2049565373983446
+        ],
+        "source_solution": [
+          824258,
+          629039,
+          23622930606
+        ]
+      },
+      "target_divisor_candidates_checked": 7,
+      "bridge_divisor_candidates_checked": 18689
+    },
+    {
+      "prime": 2596729,
+      "type_i_even_terminal": {
+        "prime": 2596729,
+        "gap": 19,
+        "x": 649187,
+        "target_divisor": 8431,
+        "R": 1775,
+        "K": 1152298494,
+        "bridge_factor": 1137308176,
+        "source_denominator": 1955992,
+        "target_solution": [
+          649187,
+          88726984038,
+          2992206916026126
+        ],
+        "source_solution": [
+          1981773,
+          649187,
+          88726984038
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 148
+    },
+    {
+      "prime": 2669209,
+      "type_i_even_terminal": {
+        "prime": 2669209,
+        "gap": 19,
+        "x": 667307,
+        "target_divisor": 6607,
+        "R": 1391,
+        "K": 928217430,
+        "bridge_factor": 698439184,
+        "source_denominator": 2167096,
+        "target_solution": [
+          667307,
+          93749960430,
+          2477606318112870
+        ],
+        "source_solution": [
+          2880045,
+          667307,
+          93749960430
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 940
+    },
+    {
+      "prime": 2671729,
+      "type_i_even_terminal": {
+        "prime": 2671729,
+        "gap": 31,
+        "x": 667940,
+        "target_divisor": 364,
+        "R": 47,
+        "K": 31392816,
+        "bridge_factor": 48,
+        "source_denominator": 2671728,
+        "target_solution": [
+          667940,
+          57605817360,
+          83873096898864
+        ],
+        "source_solution": [
+          1747355531376,
+          667940,
+          57605817360
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 22
+    },
+    {
+      "prime": 2707609,
+      "type_i_even_terminal": {
+        "prime": 2707609,
+        "gap": 15,
+        "x": 676906,
+        "target_divisor": 86,
+        "R": 23,
+        "K": 15568752,
+        "bridge_factor": 24,
+        "source_denominator": 2707608,
+        "target_solution": [
+          676906,
+          122541646992,
+          42154093033968
+        ],
+        "source_solution": [
+          1756419894384,
+          676906,
+          122541646992
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 12
+    },
+    {
+      "prime": 2754889,
+      "type_i_even_terminal": {
+        "prime": 2754889,
+        "gap": 19,
+        "x": 688727,
+        "target_divisor": 5239,
+        "R": 1103,
+        "K": 759660642,
+        "bridge_factor": 35396374,
+        "source_denominator": 2722798,
+        "target_solution": [
+          688727,
+          99866156706,
+          2092780746378738
+        ],
+        "source_solution": [
+          58435434,
+          688727,
+          99866156706
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 263
+    },
+    {
+      "prime": 2852809,
+      "type_i_even_terminal": {
+        "prime": 2852809,
+        "gap": 15,
+        "x": 713206,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 4992416,
+        "bridge_factor": 8,
+        "source_denominator": 2852808,
+        "target_solution": [
+          713206,
+          136946963296,
+          14242409296544
+        ],
+        "source_solution": [
+          1780300538016,
+          713206,
+          136946963296
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 2938489,
+      "type_i_even_terminal": {
+        "prime": 2938489,
+        "gap": 31,
+        "x": 734630,
+        "target_divisor": 734630,
+        "R": 94791,
+        "K": 69635577700,
+        "bridge_factor": 8985144100,
+        "source_denominator": 2843700,
+        "target_solution": [
+          734630,
+          69635577700,
+          204623379080095300
+        ],
+        "source_solution": [
+          22038900,
+          734630,
+          69635577700
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 378
+    },
+    {
+      "prime": 2978089,
+      "type_i_even_terminal": {
+        "prime": 2978089,
+        "gap": 19,
+        "x": 744527,
+        "target_divisor": 15841,
+        "R": 3335,
+        "K": 2482981704,
+        "bridge_factor": 4014996496,
+        "source_denominator": 1774192,
+        "target_solution": [
+          744527,
+          116700140088,
+          7394540499883656
+        ],
+        "source_solution": [
+          1097208,
+          744527,
+          116700140088
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 2973
+    },
+    {
+      "prime": 2986729,
+      "type_i_even_terminal": {
+        "prime": 2986729,
+        "gap": 27,
+        "x": 746689,
+        "target_divisor": 47,
+        "R": 7,
+        "K": 5226776,
+        "bridge_factor": 8,
+        "source_denominator": 2986728,
+        "target_solution": [
+          746689,
+          83037790312,
+          15610963455704
+        ],
+        "source_solution": [
+          1951369778616,
+          746689,
+          83037790312
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 3021769,
+      "type_i_even_terminal": {
+        "prime": 3021769,
+        "gap": 31,
+        "x": 755450,
+        "target_divisor": 116,
+        "R": 15,
+        "K": 11331634,
+        "bridge_factor": 16,
+        "source_denominator": 3021768,
+        "target_solution": [
+          755450,
+          73797266425,
+          34241580340546
+        ],
+        "source_solution": [
+          2140098063057,
+          755450,
+          73797266425
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 5
+    },
+    {
+      "prime": 3825649,
+      "type_i_even_terminal": {
+        "prime": 3825649,
+        "gap": 19,
+        "x": 956417,
+        "target_divisor": 12421,
+        "R": 2615,
+        "K": 2501018034,
+        "bridge_factor": 2468499856,
+        "source_denominator": 2881672,
+        "target_solution": [
+          956417,
+          192578388618,
+          9568017140754066
+        ],
+        "source_solution": [
+          2919633,
+          956417,
+          192578388618
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 194
+    },
+    {
+      "prime": 3942409,
+      "type_i_even_terminal": {
+        "prime": 3942409,
+        "gap": 15,
+        "x": 985606,
+        "target_divisor": 701,
+        "R": 187,
+        "K": 184307621,
+        "bridge_factor": 872356,
+        "source_denominator": 3937744,
+        "target_solution": [
+          985606,
+          259136515126,
+          726616023798989
+        ],
+        "source_solution": [
+          831949604,
+          985606,
+          259136515126
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 24
+    },
+    {
+      "prime": 4054009,
+      "type_i_even_terminal": {
+        "prime": 4054009,
+        "gap": 15,
+        "x": 1013506,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 7094516,
+        "bridge_factor": 8,
+        "source_denominator": 4054008,
+        "target_solution": [
+          1013506,
+          276551328196,
+          28761231714644
+        ],
+        "source_solution": [
+          3595153077516,
+          1013506,
+          276551328196
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 4219609,
+      "type_i_even_terminal": {
+        "prime": 4219609,
+        "gap": 39,
+        "x": 1054912,
+        "target_divisor": 848,
+        "R": 87,
+        "K": 91776496,
+        "bridge_factor": 784,
+        "source_denominator": 4219600,
+        "target_solution": [
+          1054912,
+          114169961024,
+          387260928510064
+        ],
+        "source_solution": [
+          493954212400,
+          1054912,
+          114169961024
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 433
+    },
+    {
+      "prime": 4253209,
+      "type_i_even_terminal": {
+        "prime": 4253209,
+        "gap": 27,
+        "x": 1063309,
+        "target_divisor": 263,
+        "R": 39,
+        "K": 41468788,
+        "bridge_factor": 1106704,
+        "source_denominator": 4224832,
+        "target_solution": [
+          1063309,
+          167658309884,
+          176375422340692
+        ],
+        "source_solution": [
+          158306704,
+          1063309,
+          167658309884
+        ]
+      },
+      "target_divisor_candidates_checked": 3,
+      "bridge_divisor_candidates_checked": 798
+    },
+    {
+      "prime": 4413049,
+      "type_i_even_terminal": {
+        "prime": 4413049,
+        "gap": 15,
+        "x": 1103266,
+        "target_divisor": 2516,
+        "R": 671,
+        "K": 740288970,
+        "bridge_factor": 4461480,
+        "source_denominator": 4406400,
+        "target_solution": [
+          1103266,
+          324616713345,
+          3266931498769530
+        ],
+        "source_solution": [
+          731149600,
+          1103266,
+          324616713345
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 902
+    },
+    {
+      "prime": 4570729,
+      "type_i_even_terminal": {
+        "prime": 4570729,
+        "gap": 35,
+        "x": 1142691,
+        "target_divisor": 341,
+        "R": 39,
+        "K": 44564608,
+        "bridge_factor": 352,
+        "source_denominator": 4570720,
+        "target_solution": [
+          1142691,
+          149336001408,
+          203692746159232
+        ],
+        "source_solution": [
+          578671434880,
+          1142691,
+          149336001408
+        ]
+      },
+      "target_divisor_candidates_checked": 4,
+      "bridge_divisor_candidates_checked": 38173
+    },
+    {
+      "prime": 4718569,
+      "type_i_even_terminal": {
+        "prime": 4718569,
+        "gap": 15,
+        "x": 1179646,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 8257496,
+        "bridge_factor": 8,
+        "source_denominator": 4718568,
+        "target_solution": [
+          1179646,
+          374650851016,
+          38963564643224
+        ],
+        "source_solution": [
+          4870444548216,
+          1179646,
+          374650851016
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 4753849,
+      "type_i_even_terminal": {
+        "prime": 4753849,
+        "gap": 31,
+        "x": 1188470,
+        "target_divisor": 85,
+        "R": 11,
+        "K": 13073085,
+        "bridge_factor": 12,
+        "source_denominator": 4753848,
+        "target_solution": [
+          1188470,
+          182787874470,
+          62147472054165
+        ],
+        "source_solution": [
+          5178954915090,
+          1188470,
+          182787874470
+        ]
+      },
+      "target_divisor_candidates_checked": 5,
+      "bridge_divisor_candidates_checked": 7461
+    },
+    {
+      "prime": 4779889,
+      "type_i_even_terminal": {
+        "prime": 4779889,
+        "gap": 31,
+        "x": 1194980,
+        "target_divisor": 1604,
+        "R": 207,
+        "K": 247359256,
+        "bridge_factor": 41165056,
+        "source_denominator": 4581024,
+        "target_solution": [
+          1194980,
+          184282645720,
+          1182349786802584
+        ],
+        "source_solution": [
+          27527199,
+          1194980,
+          184282645720
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 95
+    },
+    {
+      "prime": 4824649,
+      "type_i_even_terminal": {
+        "prime": 4824649,
+        "gap": 15,
+        "x": 1206166,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 8443136,
+        "bridge_factor": 8,
+        "source_denominator": 4824648,
+        "target_solution": [
+          1206166,
+          391685522176,
+          40735167659264
+        ],
+        "source_solution": [
+          5091894902016,
+          1206166,
+          391685522176
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    },
+    {
+      "prime": 5019529,
+      "type_i_even_terminal": {
+        "prime": 5019529,
+        "gap": 15,
+        "x": 1254886,
+        "target_divisor": 386,
+        "R": 103,
+        "K": 129252872,
+        "bridge_factor": 2383936,
+        "source_denominator": 4996384,
+        "target_solution": [
+          1254886,
+          420201086872,
+          648788539337288
+        ],
+        "source_solution": [
+          270895268,
+          1254886,
+          420201086872
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 82
+    },
+    {
+      "prime": 5374009,
+      "type_i_even_terminal": {
+        "prime": 5374009,
+        "gap": 19,
+        "x": 1343507,
+        "target_divisor": 3301,
+        "R": 695,
+        "K": 933734064,
+        "bridge_factor": 174345616,
+        "source_denominator": 5123152,
+        "target_solution": [
+          1343507,
+          380029764048,
+          5017895263542576
+        ],
+        "source_solution": [
+          27437808,
+          1343507,
+          380029764048
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 357
+    },
+    {
+      "prime": 5397529,
+      "type_i_even_terminal": {
+        "prime": 5397529,
+        "gap": 19,
+        "x": 1349387,
+        "target_divisor": 299,
+        "R": 63,
+        "K": 85011082,
+        "bridge_factor": 1430416,
+        "source_denominator": 5374824,
+        "target_solution": [
+          1349387,
+          383655013066,
+          458849780416378
+        ],
+        "source_solution": [
+          319431273,
+          1349387,
+          383655013066
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 49
+    },
+    {
+      "prime": 5478169,
+      "type_i_even_terminal": {
+        "prime": 5478169,
+        "gap": 31,
+        "x": 1369550,
+        "target_divisor": 364,
+        "R": 47,
+        "K": 64368486,
+        "bridge_factor": 48,
+        "source_denominator": 5478168,
+        "target_solution": [
+          1369550,
+          242186428575,
+          352621444582134
+        ],
+        "source_solution": [
+          7346278754451,
+          1369550,
+          242186428575
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 2047
+    },
+    {
+      "prime": 5596369,
+      "type_i_even_terminal": {
+        "prime": 5596369,
+        "gap": 31,
+        "x": 1399100,
+        "target_divisor": 85,
+        "R": 11,
+        "K": 15390015,
+        "bridge_factor": 12,
+        "source_denominator": 5596368,
+        "target_solution": [
+          1399100,
+          253319646900,
+          86128202855535
+        ],
+        "source_solution": [
+          7177348955460,
+          1399100,
+          253319646900
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 9
+    },
+    {
+      "prime": 5703889,
+      "type_i_even_terminal": {
+        "prime": 5703889,
+        "gap": 31,
+        "x": 1425980,
+        "target_divisor": 1480,
+        "R": 191,
+        "K": 272360700,
+        "bridge_factor": 192,
+        "source_denominator": 5703888,
+        "target_solution": [
+          1425980,
+          262419534450,
+          1553515200762300
+        ],
+        "source_solution": [
+          8091223585425,
+          1425980,
+          262419534450
+        ]
+      },
+      "target_divisor_candidates_checked": 4,
+      "bridge_divisor_candidates_checked": 24592
+    },
+    {
+      "prime": 5886169,
+      "type_i_even_terminal": {
+        "prime": 5886169,
+        "gap": 15,
+        "x": 1471546,
+        "target_divisor": 86,
+        "R": 23,
+        "K": 33845472,
+        "bridge_factor": 24,
+        "source_denominator": 5886168,
+        "target_solution": [
+          1471546,
+          579129871392,
+          199220168076768
+        ],
+        "source_solution": [
+          8300838926304,
+          1471546,
+          579129871392
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 92
+    },
+    {
+      "prime": 5897329,
+      "type_i_even_terminal": {
+        "prime": 5897329,
+        "gap": 39,
+        "x": 1474342,
+        "target_divisor": 68,
+        "R": 7,
+        "K": 10320326,
+        "bridge_factor": 8,
+        "source_denominator": 5897328,
+        "target_solution": [
+          1474342,
+          223760148169,
+          60862357809254
+        ],
+        "source_solution": [
+          7607793436116,
+          1474342,
+          223760148169
+        ]
+      },
+      "target_divisor_candidates_checked": 6,
+      "bridge_divisor_candidates_checked": 12721
+    },
+    {
+      "prime": 6254329,
+      "type_i_even_terminal": {
+        "prime": 6254329,
+        "gap": 39,
+        "x": 1563592,
+        "target_divisor": 68,
+        "R": 7,
+        "K": 10945076,
+        "bridge_factor": 8,
+        "source_denominator": 6254328,
+        "target_solution": [
+          1563592,
+          251671077544,
+          68454106234004
+        ],
+        "source_solution": [
+          8556761911116,
+          1563592,
+          251671077544
+        ]
+      },
+      "target_divisor_candidates_checked": 4,
+      "bridge_divisor_candidates_checked": 14719
+    },
+    {
+      "prime": 6279289,
+      "type_i_even_terminal": {
+        "prime": 6279289,
+        "gap": 31,
+        "x": 1569830,
+        "target_divisor": 1790,
+        "R": 231,
+        "K": 362628940,
+        "bridge_factor": 51265600,
+        "source_denominator": 6057360,
+        "target_solution": [
+          1569830,
+          318025580380,
+          2277051914023660
+        ],
+        "source_solution": [
+          42846939,
+          1569830,
+          318025580380
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 84
+    },
+    {
+      "prime": 6294649,
+      "type_i_even_terminal": {
+        "prime": 6294649,
+        "gap": 67,
+        "x": 1573679,
+        "target_divisor": 1573679,
+        "R": 93951,
+        "K": 147847142050,
+        "bridge_factor": 8826602500,
+        "source_denominator": 6200700,
+        "target_solution": [
+          1573679,
+          147847142050,
+          930645864857890450
+        ],
+        "source_solution": [
+          103862814,
+          1573679,
+          147847142050
+        ]
+      },
+      "target_divisor_candidates_checked": 7,
+      "bridge_divisor_candidates_checked": 35901
+    },
+    {
+      "prime": 6316249,
+      "type_i_even_terminal": {
+        "prime": 6316249,
+        "gap": 31,
+        "x": 1579070,
+        "target_divisor": 1579070,
+        "R": 203751,
+        "K": 321735512500,
+        "bridge_factor": 41514062500,
+        "source_denominator": 6112500,
+        "target_solution": [
+          1579070,
+          321735512500,
+          2032161609092612500
+        ],
+        "source_solution": [
+          47372100,
+          1579070,
+          321735512500
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 291
+    },
+    {
+      "prime": 6569161,
+      "type_i_even_terminal": {
+        "prime": 6569161,
+        "gap": 35,
+        "x": 1642299,
+        "target_divisor": 12731,
+        "R": 1455,
+        "K": 2389532314,
+        "bridge_factor": 2593253776,
+        "source_denominator": 4786856,
+        "target_solution": [
+          1642299,
+          308249668506,
+          15697222485368554
+        ],
+        "source_solution": [
+          4410809,
+          1642299,
+          308249668506
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 923
+    },
+    {
+      "prime": 6856249,
+      "type_i_even_terminal": {
+        "prime": 6856249,
+        "gap": 15,
+        "x": 1714066,
+        "target_divisor": 86,
+        "R": 23,
+        "K": 39423432,
+        "bridge_factor": 24,
+        "source_denominator": 6856248,
+        "target_solution": [
+          1714066,
+          785748423192,
+          270296866226568
+        ],
+        "source_solution": [
+          11262367783464,
+          1714066,
+          785748423192
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 11
+    },
+    {
+      "prime": 7079209,
+      "type_i_even_terminal": {
+        "prime": 7079209,
+        "gap": 15,
+        "x": 1769806,
+        "target_divisor": 41,
+        "R": 11,
+        "K": 19467825,
+        "bridge_factor": 12,
+        "source_denominator": 7079208,
+        "target_solution": [
+          1769806,
+          840348133950,
+          137816801950425
+        ],
+        "source_solution": [
+          11484731873550,
+          1769806,
+          840348133950
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 9
+    },
+    {
+      "prime": 7504249,
+      "type_i_even_terminal": {
+        "prime": 7504249,
+        "gap": 19,
+        "x": 1876067,
+        "target_divisor": 28001,
+        "R": 5895,
+        "K": 11059386964,
+        "bridge_factor": 12544896016,
+        "source_denominator": 5376192,
+        "target_solution": [
+          1876067,
+          740978926588,
+          82992393565210036
+        ],
+        "source_solution": [
+          4739568,
+          1876067,
+          740978926588
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 91
+    },
+    {
+      "prime": 7524169,
+      "type_i_even_terminal": {
+        "prime": 7524169,
+        "gap": 31,
+        "x": 1881050,
+        "target_divisor": 85,
+        "R": 11,
+        "K": 20691465,
+        "bridge_factor": 12,
+        "source_denominator": 7524168,
+        "target_solution": [
+          1881050,
+          457902120450,
+          155686079517585
+        ],
+        "source_solution": [
+          12973838235510,
+          1881050,
+          457902120450
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 9
+    },
+    {
+      "prime": 7791529,
+      "type_i_even_terminal": {
+        "prime": 7791529,
+        "gap": 15,
+        "x": 1947886,
+        "target_divisor": 19286,
+        "R": 5143,
+        "K": 10017958412,
+        "bridge_factor": 5951196736,
+        "source_denominator": 6634384,
+        "target_solution": [
+          1947886,
+          1011813799612,
+          78055213487891948
+        ],
+        "source_solution": [
+          11168003,
+          1947886,
+          1011813799612
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 283
+    },
+    {
+      "prime": 8009929,
+      "type_i_even_terminal": {
+        "prime": 8009929,
+        "gap": 27,
+        "x": 2002489,
+        "target_divisor": 317,
+        "R": 47,
+        "K": 94116666,
+        "bridge_factor": 48,
+        "source_denominator": 8009928,
+        "target_solution": [
+          2002489,
+          594534979122,
+          753867812376714
+        ],
+        "source_solution": [
+          15705577463751,
+          2002489,
+          594534979122
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 18
+    },
+    {
+      "prime": 8083849,
+      "type_i_even_terminal": {
+        "prime": 8083849,
+        "gap": 71,
+        "x": 2020980,
+        "target_divisor": 195,
+        "R": 11,
+        "K": 22230585,
+        "bridge_factor": 12,
+        "source_denominator": 8083848,
+        "target_solution": [
+          2020980,
+          230397782940,
+          179708692321665
+        ],
+        "source_solution": [
+          14975722507590,
+          2020980,
+          230397782940
+        ]
+      },
+      "target_divisor_candidates_checked": 3,
+      "bridge_divisor_candidates_checked": 64269
+    },
+    {
+      "prime": 8589289,
+      "type_i_even_terminal": {
+        "prime": 8589289,
+        "gap": 31,
+        "x": 2147330,
+        "target_divisor": 429466,
+        "R": 55415,
+        "K": 118993862484,
+        "bridge_factor": 76770001476,
+        "source_denominator": 7203924,
+        "target_solution": [
+          2147330,
+          594969312420,
+          1022072674101333876
+        ],
+        "source_solution": [
+          11166116,
+          2147330,
+          594969312420
+        ]
+      },
+      "target_divisor_candidates_checked": 2,
+      "bridge_divisor_candidates_checked": 2653
+    },
+    {
+      "prime": 8797849,
+      "type_i_even_terminal": {
+        "prime": 8797849,
+        "gap": 27,
+        "x": 2199469,
+        "target_divisor": 263,
+        "R": 39,
+        "K": 85779028,
+        "bridge_factor": 1106704,
+        "source_denominator": 8769472,
+        "target_solution": [
+          2199469,
+          717370011164,
+          754670935710772
+        ],
+        "source_solution": [
+          679709104,
+          2199469,
+          717370011164
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 52
+    },
+    {
+      "prime": 8965609,
+      "type_i_even_terminal": {
+        "prime": 8965609,
+        "gap": 19,
+        "x": 2241407,
+        "target_divisor": 15043,
+        "R": 3167,
+        "K": 7098520926,
+        "bridge_factor": 11113004,
+        "source_denominator": 8962100,
+        "target_solution": [
+          2241407,
+          1057679617974,
+          63642563100833934
+        ],
+        "source_solution": [
+          5724613650,
+          2241407,
+          1057679617974
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 1126
+    },
+    {
+      "prime": 9081769,
+      "type_i_even_terminal": {
+        "prime": 9081769,
+        "gap": 15,
+        "x": 2270446,
+        "target_divisor": 146,
+        "R": 39,
+        "K": 88547248,
+        "bridge_factor": 24064,
+        "source_denominator": 9081152,
+        "target_solution": [
+          2270446,
+          1376998253648,
+          804165651921712
+        ],
+        "source_solution": [
+          33415517714,
+          2270446,
+          1376998253648
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 44
+    },
+    {
+      "prime": 9104209,
+      "type_i_even_terminal": {
+        "prime": 9104209,
+        "gap": 19,
+        "x": 2276057,
+        "target_divisor": 1477,
+        "R": 311,
+        "K": 707852250,
+        "bridge_factor": 2800,
+        "source_denominator": 9104200,
+        "target_solution": [
+          2276057,
+          1090800317250,
+          6444434825120250
+        ],
+        "source_solution": [
+          2301581590875,
+          2276057,
+          1090800317250
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 198
+    },
+    {
+      "prime": 9315289,
+      "type_i_even_terminal": {
+        "prime": 9315289,
+        "gap": 31,
+        "x": 2328830,
+        "target_divisor": 85,
+        "R": 11,
+        "K": 25617045,
+        "bridge_factor": 12,
+        "source_denominator": 9315288,
+        "target_solution": [
+          2328830,
+          701855798910,
+          238630177501005
+        ],
+        "source_solution": [
+          19885845990330,
+          2328830,
+          701855798910
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 9
+    },
+    {
+      "prime": 9323449,
+      "type_i_even_terminal": {
+        "prime": 9323449,
+        "gap": 31,
+        "x": 2330870,
+        "target_divisor": 85,
+        "R": 11,
+        "K": 25639485,
+        "bridge_factor": 12,
+        "source_denominator": 9323448,
+        "target_solution": [
+          2330870,
+          703085957670,
+          239048430783765
+        ],
+        "source_solution": [
+          19920700428690,
+          2330870,
+          703085957670
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 9
+    },
+    {
+      "prime": 9394009,
+      "type_i_even_terminal": {
+        "prime": 9394009,
+        "gap": 19,
+        "x": 2348507,
+        "target_divisor": 4669,
+        "R": 983,
+        "K": 2308577712,
+        "bridge_factor": 44566272,
+        "source_denominator": 9348672,
+        "target_solution": [
+          2348507,
+          1161214589136,
+          21686799803727408
+        ],
+        "source_solution": [
+          484270612,
+          2348507,
+          1161214589136
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 890
+    },
+    {
+      "prime": 9711529,
+      "type_i_even_terminal": {
+        "prime": 9711529,
+        "gap": 47,
+        "x": 2427894,
+        "target_divisor": 29974,
+        "R": 2551,
+        "K": 6193527620,
+        "bridge_factor": 14375050816,
+        "source_denominator": 4076464,
+        "target_solution": [
+          2427894,
+          501675737220,
+          60148623093930980
+        ],
+        "source_solution": [
+          1756355,
+          2427894,
+          501675737220
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 288
+    },
+    {
+      "prime": 9716569,
+      "type_i_even_terminal": {
+        "prime": 9716569,
+        "gap": 39,
+        "x": 2429152,
+        "target_divisor": 536,
+        "R": 55,
+        "K": 133602824,
+        "bridge_factor": 9406,
+        "source_denominator": 9716398,
+        "target_solution": [
+          2429152,
+          605487998368,
+          1298161057990856
+        ],
+        "source_solution": [
+          138011717192,
+          2429152,
+          605487998368
+        ]
+      },
+      "target_divisor_candidates_checked": 4,
+      "bridge_divisor_candidates_checked": 36888
+    },
+    {
+      "prime": 9872809,
+      "type_i_even_terminal": {
+        "prime": 9872809,
+        "gap": 15,
+        "x": 2468206,
+        "target_divisor": 26,
+        "R": 7,
+        "K": 17277416,
+        "bridge_factor": 8,
+        "source_denominator": 9872808,
+        "target_solution": [
+          2468206,
+          1640162378296,
+          170576628181544
+        ],
+        "source_solution": [
+          21322076363016,
+          2468206,
+          1640162378296
+        ]
+      },
+      "target_divisor_candidates_checked": 1,
+      "bridge_divisor_candidates_checked": 4
+    }
+  ]
+}
