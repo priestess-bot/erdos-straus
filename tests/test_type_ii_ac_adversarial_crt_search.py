@@ -119,6 +119,19 @@ class TypeIIACAdversarialCRTSearchTests(unittest.TestCase):
             self.assertNotIn(int(ray["modulus"]) - 1, residues)
             self.assertEqual(ray["ray_witness_count"], 0)
             self.assertIsNone(ray["least_ray_witness"])
+            diagnosis = ray["support_diagnosis"]
+            modulus = int(ray["modulus"])
+            prime_residues = {
+                int(row["prime"]) % modulus for row in ray["factorization"]
+            }
+            self.assertEqual(
+                diagnosis["generated_subgroup"],
+                search.generated_subgroup(prime_residues, modulus),
+            )
+            self.assertEqual(diagnosis["divisor_residues"], sorted(residues | {1}))
+            self.assertEqual(diagnosis["target_residue"], modulus - 1)
+            self.assertNotIn(modulus - 1, diagnosis["generated_subgroup"])
+            self.assertEqual(diagnosis["failure_class"], "support_outside")
 
 
 if __name__ == "__main__":
