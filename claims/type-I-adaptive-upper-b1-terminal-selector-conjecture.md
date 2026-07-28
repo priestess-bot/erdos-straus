@@ -53,8 +53,7 @@ A=\frac{x}{C},\qquad H=AR-1.
 则 \(K=CH\)、\(p=4AC-m\)，并且
 
 \[
-\frac4p=\frac1{AC}+\frac1{ACH}+\frac1{pK},
-\qquad
+\frac4p=\frac1{AC}+\frac1{ACH}+\frac1{pK},\qquad
 \frac4n=\frac1{nK/E}+\frac1{AC}+\frac1{ACH}.
 \tag{2}
 \]
@@ -120,13 +119,113 @@ E=4K-nR<2K, \tag{7}
 
 从而完全恢复 (1) 的第二分支。
 
+## 源谱与目标谱相交的精确等价表述
+
+固定同一个核心素数 \(p\)。定义正模数的源可达谱
+
+\[
+\mathcal R_{\rm src}(p)=
+\left\{
+\begin{array}{ll}
+R\in\mathbb Z_{>0}:& R\ge3,\quad R\equiv3\pmod4,\\
+&\exists\ s\equiv1\pmod2,\quad
+1\le s\le\dfrac{p-1}{2},\\
+&sR+1\mid\dfrac{(p-s)^2}{\gcd(sR+1,4)}
+\end{array}
+\right\}, \tag{S1}
+\]
+
+以及 \(B=1\) 的目标命中谱
+
+\[
+\mathcal R_{\rm tgt}(p)=
+\left\{
+\begin{array}{ll}
+R\in\mathbb Z_{>0}:& R\ge3,\quad R\equiv3\pmod4,\\
+&K=\dfrac{pR+1}{4},\quad
+\exists\ H\in\mathbb Z_{>0},\quad H\mid K,\quad
+H\equiv-1\pmod R
+\end{array}
+\right\}. \tag{S2}
+\]
+
+这里的正性条件不可省略：\(H\) 是 \(K\) 的正除子，两个谱中的 \(R\) 也都限制为
+正整数。由于 \(p\equiv1\pmod4\) 且 \(R\equiv3\pmod4\)，(S2) 中的 \(K\) 自动为
+正整数。
+
+对固定的 \(p,R\) 和 \(K=(pR+1)/4\)，映射
+
+\[
+C\longmapsto H=\frac KC \tag{S3}
+\]
+
+在下列两个正除子集合之间给出双射：
+
+\[
+\left\{C\in\mathbb Z_{>0}:C\mid K,\ 4C\equiv-1\pmod R\right\}
+\longleftrightarrow
+\left\{H\in\mathbb Z_{>0}:H\mid K,\ H\equiv-1\pmod R\right\}. \tag{S4}
+\]
+
+确实，恒等式 \(4K=pR+1\) 给出 \(4K\equiv1\pmod R\)。若左侧的 \(C\) 已知，
+则 \(4CH=4K\) 与 \(4C\equiv-1\pmod R\) 推出 \(H\equiv-1\pmod R\)。反过来，
+若右侧的 \(H\) 已知，取正整数 \(C=K/H\)，则同一恒等式与
+\(H\equiv-1\pmod R\) 推出 \(4C\equiv-1\pmod R\)。两次变换互为逆映射，因而
+这不是单向的充分条件。
+
+于是 (3) 的第二分支精确等价于
+
+\[
+\boxed{\mathcal R_{\rm src}(p)\cap\mathcal R_{\rm tgt}(p)\ne\varnothing}. \tag{S5}
+\]
+
+因此整个开放猜想也可等价地写成
+
+\[
+\boxed{
+p\text{ 有普通 Type II }(p-1)\text{ 双尾证书}
+\quad\lor\quad
+\mathcal R_{\rm src}(p)\cap\mathcal R_{\rm tgt}(p)\ne\varnothing.} \tag{S6}
+\]
+
+这只是本页现有猜想的另一种精确表述，不是新增的开放猜想。源谱本身总是非空：取
+\(s=1,R=3\) 时 \(sR+1=4\)，而 \(p\equiv1\pmod{24}\) 保证
+\(4\mid(p-1)^2/4\)。真正的选择问题是让同一个源可达模数同时落入目标命中谱。
+
+[Type I 源平方状态的唯一正规分解与双因子块](type-I-source-square-normal-factorization.md)
+进一步令
+
+\[
+\lambda=\gcd(p-s,4)=\gcd(sR+1,4),\qquad
+u=\frac{p-s}{\lambda},\qquad D=\frac{sR+1}{\lambda},
+\]
+
+并把 (S1) 中每个源状态唯一写成
+
+\[
+u=\alpha\beta\gamma,\qquad D=\beta^2\gamma,\qquad
+K=(\beta\gamma)L,\qquad
+L=\frac{\alpha R+\beta}{4/\lambda}, \tag{S7}
+\]
+
+其中 \(D\mid u^2\)。因此目标谱条件可等价读成
+
+\[
+-1\in\{d\bmod R:d\mid(\beta\gamma)L,\ d>0\}. \tag{S8}
+\]
+
+谱相交表述仍然严格强于[允许一般 \(B\) 的原混合终端目标](type-I-target-divisor-even-terminal-selector.md)：
+它把目标因子限制为
+\(e=C\mid x\)，即强制 \(B=1\)，并把偶源限制在上半区；原选择器则允许
+\(e=B^2C\mid x^2\) 的任意溢出因子 \(B\)，且只要求 \(n\ge2\)。这里的“严格强于”
+指证书条件确有这两层额外限制；它不表示已经证明两个全称命题在逻辑上不等价。
+
 ## \(E=n\) 走廊与外部源的边界
 
 源优先式 (3) 的特例 \(E=n\) 不是新的终端机制。此时
 
 \[
-n=sR+1=p-s,
-\qquad
+n=sR+1=p-s,\qquad
 p=s(R+1)+1.
 \tag{8}
 \]
