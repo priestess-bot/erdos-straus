@@ -4,6 +4,8 @@ claim_id: four-external-source-descents-density
 title: 四条外部源递降覆盖的共同残余有 3 维筛界
 statement: 令 R(X) 计数 p<=X、p=1 mod24 且对 k=1,2,3,6 的 adaptive-external-source-descent 分支均失败的素数，则 R(X)=O(X/(log X)^3)。每条成功分支同时给出 m<=4sqrt(p)/3+1/3 的 Type I 证书和到更小标记源实例的严格提升。
 claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
 topics:
 - descent
 - certificate

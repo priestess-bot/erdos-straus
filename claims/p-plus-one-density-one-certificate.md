@@ -4,6 +4,8 @@ claim_id: p-plus-one-density-one-certificate
 title: (p+1)/2 平方根证书覆盖相对密度一的核心素数
 statement: 满足 p<=X、p=1 mod 24 且 (p+1)/2 没有 3 mod 4 素因子的素数数量为 O(X/(log X)^(3/2))；因此 p-plus-one-sqrt-certificate 的 Type I 构造覆盖相对密度一的核心素数。
 claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
 topics:
 - sieve
 - density
@@ -61,6 +63,11 @@ S(X,z)\ll XV(z)+z^2(\log z)^{O(1)}.
 
 取 \(z=X^{1/4}\)。被 \(R(X)\) 计数的每个充分大的素数都属于该筛余集，故
 \(R(X)\ll X/(\log X)^{3/2}\)。
+
+这里筛去 \(24t+1\equiv0\pmod\ell\) 并不是把“\(24t+1\) 为素数”替换成
+一个未经证明的条件。若被计数的 \(p>z\) 是素数，它本来就不含任何
+\(\ell\le z\) 的素因子；至多 \(p\le z\) 的有限前缀需要另计，贡献 \(O(z)\)，
+并被上述上界吸收。这一条正是筛维中恒有的 \(1\) 的来源。
 
 这里的估计是本库基于标准上界筛的推导：对平方自由模数 \(d\)，上述禁类的交集计数为主项 \(X\omega(d)/(24d)\) 加上 \(O(\omega(d))\)，恰满足上界筛的余项假设。所引论文提供本问题中移位素数与筛法的背景，不应误读为其原文逐字陈述了这个特定的证书族。
 

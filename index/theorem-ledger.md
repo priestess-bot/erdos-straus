@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 250 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 196 |
+| 数学状态 | `established` | 197 |
 | 数学状态 | `open` | 10 |
 | 证明来源 | `computational_reproduction` | 23 |
 | 证明来源 | `mixed` | 6 |
-| 证明来源 | `repository_derivation` | 18 |
-| 证明来源 | `unspecified` | 430 |
+| 证明来源 | `repository_derivation` | 21 |
+| 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 6 |
-| 审阅状态 | `internal_review` | 41 |
-| 审阅状态 | `unspecified` | 430 |
+| 审阅状态 | `internal_review` | 44 |
+| 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
 
@@ -63,7 +63,7 @@
 | [固定外源直接证书的尾部递降有限性判据](../claims/fixed-external-source-tail-deflation-obstruction.md) (`fixed-external-source-tail-deflation-obstruction`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [固定缺口的 A=1 Type II 变量因子射线](../claims/fixed-gap-type-II-factor-ray.md) (`fixed-gap-type-II-factor-ray`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-23 |
 | [4 的倍数非标准平方尾源解不能作单项提升](../claims/four-divisible-nonstandard-source-lift-obstruction.md) (`four-divisible-nonstandard-source-lift-obstruction`) | `established` | `unspecified` | `unspecified` | `subramanian2026`, `elsholtz_tao2013` | 2026-07-24 |
-| [四条外部源递降覆盖的共同残余有 3 维筛界](../claims/four-external-source-descents-density.md) (`four-external-source-descents-density`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-24 |
+| [四条外部源递降覆盖的共同残余有 3 维筛界](../claims/four-external-source-descents-density.md) (`four-external-source-descents-density`) | `established` | `repository_derivation` | `internal_review` | `elsholtz_tao2013`, `bradford2024` | 2026-07-24 |
 | [来自 4p+1 的显式 Type II 证书](../claims/four-p-plus-one-type-ii-certificate.md) (`four-p-plus-one-type-ii-certificate`) | `established` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-23 |
 | [gap-27 的外源同余直接证书族](../claims/gap-27-external-source-progression.md) (`gap-27-external-source-progression`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [固定首分母缺口的精确除子残数判据](../claims/gap-residue-reachability.md) (`gap-residue-reachability`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
@@ -165,7 +165,7 @@
 | [p 减一源的完整平移平方因子递降扇](../claims/p-minus-one-source-descent.md) (`p-minus-one-source-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-24 |
 | [来自 p+8 的 7 模 8 因子 Type II 证书](../claims/p-plus-eight-type-II-certificate.md) (`p-plus-eight-type-II-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [来自 p+4 的平方根级 Type II 证书](../claims/p-plus-four-sqrt-certificate.md) (`p-plus-four-sqrt-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
-| [(p+1)/2 平方根证书覆盖相对密度一的核心素数](../claims/p-plus-one-density-one-certificate.md) (`p-plus-one-density-one-certificate`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
+| [(p+1)/2 平方根证书覆盖相对密度一的核心素数](../claims/p-plus-one-density-one-certificate.md) (`p-plus-one-density-one-certificate`) | `established` | `repository_derivation` | `internal_review` | `elsholtz_tao2013` | 2026-07-23 |
 | [来自 (p+1)/2 的平方根级 Type I 证书](../claims/p-plus-one-sqrt-certificate.md) (`p-plus-one-sqrt-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [来自 p+6 的 source-6 Type I 证书及精确残余分类](../claims/p-plus-six-external-source-certificate.md) (`p-plus-six-external-source-certificate`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-23 |
 | [来自 p+2 的 source-2 Type I 证书](../claims/p-plus-two-external-source-certificate.md) (`p-plus-two-external-source-certificate`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-23 |
@@ -278,6 +278,7 @@
 | [Type I 正规形的规范尾部递降选择器与平方因子外部源等价](../claims/type-I-normal-tail-deflation-selector.md) (`type-I-normal-tail-deflation-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 一私有因子的三余类饱和判据](../claims/type-I-one-private-three-coset-saturation.md) (`type-I-one-private-three-coset-saturation`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I的p减一B一二除子剩余类选择器](../claims/type-I-pminusone-b12-divisor-residue-selector.md) (`type-I-pminusone-b12-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [五亿p减一遗漏最短源状态的三级指数溢出边界](../claims/type-I-pminusone-miss-source-overflow-profile-500m.md) (`type-I-pminusone-miss-source-overflow-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
