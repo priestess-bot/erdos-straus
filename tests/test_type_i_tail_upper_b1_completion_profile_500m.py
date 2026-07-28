@@ -51,9 +51,12 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         A, B, C = (int(value) for value in certificate["normal_form"])
         R = int(certificate["R"])
         K = int(certificate["K"])
+        E = int(certificate["E"])
+        selected_source = int(certificate["source_denominator"])
         k = (R + 1) // 4
 
         self.assertEqual(B, 1)
+        self.assertEqual(K % k == 0, (E - selected_source) % (R + 1) == 0)
         if K % k:
             return None
 
@@ -141,12 +144,16 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
         source_equals_bridge_factor_count = 0
         external_retraction_count = 0
         even_external_retraction_count = 0
+        linear_nonretraction_count = 0
+        square_essential_nonretraction_count = 0
 
         def record(prime, certificate):
             nonlocal checked
             nonlocal source_equals_bridge_factor_count
             nonlocal external_retraction_count
             nonlocal even_external_retraction_count
+            nonlocal linear_nonretraction_count
+            nonlocal square_essential_nonretraction_count
 
             self.assert_source_first_coordinates(prime, certificate)
             source_equals_bridge_factor_count += int(
@@ -157,6 +164,13 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
             even_external_retraction_count += int(
                 external_source is not None and external_source % 2 == 0
             )
+            if external_source is None:
+                linear_nonretraction_count += int(
+                    int(certificate["source_denominator"]) % int(certificate["E"]) == 0
+                )
+                square_essential_nonretraction_count += int(
+                    int(certificate["source_denominator"]) % int(certificate["E"]) != 0
+                )
             checked += 1
 
         for row in base["records"]:
@@ -184,6 +198,10 @@ class TypeITailUpperB1CompletionProfile500MTests(unittest.TestCase):
                 checked - external_retraction_count,
             ),
             (1132, 636, 496, 585),
+        )
+        self.assertEqual(
+            (linear_nonretraction_count, square_essential_nonretraction_count),
+            (62, 523),
         )
 
 
