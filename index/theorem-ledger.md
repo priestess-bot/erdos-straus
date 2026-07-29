@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 301 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 229 |
+| 数学状态 | `established` | 230 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 71 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 58 |
+| 证明来源 | `repository_derivation` | 59 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 123 |
+| 审阅状态 | `internal_review` | 124 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -297,6 +297,7 @@
 | [878089 的线性一般 B 中心化谱障碍剖面](../claims/type-I-linear-general-b-obstruction-profile-878089.md) (`type-I-linear-general-b-obstruction-profile-878089`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七个补偿平方残余的全线性目标谱闭合](../claims/type-I-linear-general-b-spectrum-resolution-profile-600m.md) (`type-I-linear-general-b-spectrum-resolution-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 命中的源块与仿射块混合剖面](../claims/type-I-linear-general-b-two-block-hit-profile-500m.md) (`type-I-linear-general-b-two-block-hit-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性源半块平方给出的偶终端桥](../claims/type-I-linear-half-block-square-terminal-bridge.md) (`type-I-linear-half-block-square-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [线性半块的二残数注入与子群障碍逃逸](../claims/type-I-linear-half-block-two-residue-escape.md) (`type-I-linear-half-block-two-residue-escape`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [159,108,889 的双四阶 G 型碰撞仍保持完整相位相容](../claims/type-I-linear-high-order-pair-phase-compatibility-159108889.md) (`type-I-linear-high-order-pair-phase-compatibility-159108889`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [逆元对 F 状态的已知源内因子转移边界](../claims/type-I-linear-inverse-pair-local-transfer-boundary.md) (`type-I-linear-inverse-pair-local-transfer-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
