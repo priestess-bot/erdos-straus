@@ -148,6 +148,54 @@ $$
 \(2^u,2^v\) 与奇素因子方向平衡掉；式 (12) 则把剩余 F 障碍压缩成一个二维
 指数矩形，而不是此前的单方向区间。
 
+## 最近剩余形式
+
+对整数 \(x\) 定义环 \(\mathbb Z/(2m)\mathbb Z\) 中的对称距离
+
+$$
+\|x\|_{2m}=\min_{\ell\in\mathbb Z}|x-2m\ell|. \tag{13}
+$$
+
+则 (12) 等价于下面的精确判据：
+
+$$
+\boxed{
+-1\in\mathcal C_R(K)
+\Longleftrightarrow
+\exists j\in\mathbb Z,\ |j|\le\kappa:
+\|m-\alpha j\|_{2m}\le e.
+} \tag{14}
+$$
+
+所以在该一奇素因子商模型中，F 型未命中等价于
+
+$$
+\min_{|j|\le\kappa}\|m-\alpha j\|_{2m}>e. \tag{15}
+$$
+
+这是一个有限的“二进步长对目标的最近剩余”缺口，而不是抽象的积集失败。
+令 \(d_0=\gcd(\alpha,2m)\)。若 \(d_0\mid m\) 且
+
+$$
+\kappa\ge \frac m{d_0}, \tag{16}
+$$
+
+则存在 \(|j|\le\kappa\) 使 \(\alpha j\equiv m\pmod{2m}\)，从而 (14) 立即命中。
+因此任何 F 型剩余必须满足 \(d_0\nmid m\)，或满足
+\(\kappa<m/d_0\)；即二进方向的阶和可用指数预算都受到严格限制。
+
+证明 (14)：两个除子残数的商在商群中的指数差正好属于
+
+$$
+\{d+\alpha j:|d|\le e,\ |j|\le\kappa\}. \tag{17}
+$$
+
+目标 \(-T=g^mT\) 属于该差集，当且仅当存在 \(j\) 使
+\(m-\alpha j\) 与某个 \(|d|\le e\) 同余于 \(2m\)，这正是
+\(\|m-\alpha j\|_{2m}\le e\)。若 \(d_0\mid m\)，将
+\(\alpha/d_0\) 在模 \(2m/d_0\) 中求逆，可取
+\(|j|\le m/d_0\) 解 \(\alpha j\equiv m\pmod{2m}\)，得到 (16)。
+
 ## 证明
 
 把两个块写成
@@ -161,10 +209,10 @@ $$
 
 $$
 \overline{U_{\mathrm o}}=g^r,\qquad
-\overline{V_{\mathrm o}}=g^{e-r}. \tag{13}
+\overline{V_{\mathrm o}}=g^{e-r}. \tag{18}
 $$
 
-另一方面 \(U\equiv V\equiv1\pmod R\)，且 \(2T=g^\alpha\)。把 (13) 分别乘上
+另一方面 \(U\equiv V\equiv1\pmod R\)，且 \(2T=g^\alpha\)。把 (18) 分别乘上
 \(2^u\)、\(2^v\) 的商群残数即得 (6)。二进赋值相加给出 (7)。
 
 由于 \(g\) 阶为 \(2m\)，若 \(e\ge m\)，则
