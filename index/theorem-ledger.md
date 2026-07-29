@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 301 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 233 |
+| 数学状态 | `established` | 234 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 71 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 62 |
+| 证明来源 | `repository_derivation` | 63 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 127 |
+| 审阅状态 | `internal_review` | 128 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -321,6 +321,7 @@
 | [线性源的变 s 因子转移及双转移闭包边界](../claims/type-I-linear-source-shift-transfer-closure-boundary.md) (`type-I-linear-source-shift-transfer-closure-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点线性 G 型状态的二残数与角色阶剖面](../claims/type-I-linear-subgroup-two-character-profile-600m.md) (`type-I-linear-subgroup-two-character-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 的三标签层重选终端选择猜想](../claims/type-I-linear-three-label-reselection-conjecture.md) (`type-I-linear-three-label-reselection-conjecture`) | `open` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性二残数逃逸与两块 Kneser 密度的组合终端选择器](../claims/type-I-linear-two-adic-kneser-terminal-selector.md) (`type-I-linear-two-adic-kneser-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-29 |
 | [线性两块除子积集的 Kneser F 型必要条件](../claims/type-I-linear-two-block-kneser-f-obstruction.md) (`type-I-linear-two-block-kneser-f-obstruction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-29 |
 | [九亿至十亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1b.md) (`type-I-mixed-terminal-dense-1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [十亿至十一亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1p1b.md) (`type-I-mixed-terminal-dense-1p1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
