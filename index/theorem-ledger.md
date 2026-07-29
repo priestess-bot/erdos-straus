@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 301 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 238 |
+| 数学状态 | `established` | 239 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 71 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 67 |
+| 证明来源 | `repository_derivation` | 68 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 132 |
+| 审阅状态 | `internal_review` | 133 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -315,6 +315,7 @@
 | [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [878089 的全局线性移位源 B 等于一反例](../claims/type-I-linear-shifted-source-counterexample-878089.md) (`type-I-linear-shifted-source-counterexample-878089`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性 F 型单一活跃素因子的跨模数兼容性](../claims/type-I-linear-single-active-prime-cross-state-compatibility.md) (`type-I-linear-single-active-prime-cross-state-compatibility`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
+| [3 模 8 线性 F 型单一活跃素因子的幂级碰撞约束](../claims/type-I-linear-single-active-prime-power-collision-3mod8.md) (`type-I-linear-single-active-prime-power-collision-3mod8`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [七个单命中压力点的 F 型预算边界与局部源转移闭包](../claims/type-I-linear-single-hit-f-budget-transfer-boundary-7.md) (`type-I-linear-single-hit-f-budget-transfer-boundary-7`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [七个单命中压力点的 F 型跨源拉回与指数预算边界](../claims/type-I-linear-single-hit-f-cross-source-pullback-7.md) (`type-I-linear-single-hit-f-cross-source-pullback-7`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [七个单命中压力点的 F 型反足点密度缺口](../claims/type-I-linear-single-hit-f-density-7.md) (`type-I-linear-single-hit-f-density-7`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
