@@ -1,0 +1,6741 @@
+{
+  "arithmetic": "exact SPF factorization and complete ordinary Type II p-1-tail divisor residue tests on every core prime in the interval; for every ordinary-tail miss, exhaustive Type I normal forms through the stated gap cap and exact maximum-tail reverse-lift identity checks until the first even source",
+  "scope_note": "A dense finite target-side audit. The Type I fallback is explicitly bounded by gap_cap, so a closure is evidence for this box rather than a proof of the global mixed terminal lemma; a miss refutes only this bounded fallback box.",
+  "prime_interval": [
+    1100000001,
+    1200000000
+  ],
+  "core_prime_count": 599267,
+  "ordinary_type_ii_tail_hit_count": 599047,
+  "ordinary_type_ii_tail_miss_count": 220,
+  "ordinary_minimum_gap_histogram": {
+    "3": 379871,
+    "7": 181977,
+    "11": 25348,
+    "15": 2667,
+    "19": 3022,
+    "23": 4438,
+    "27": 240,
+    "31": 187,
+    "35": 169,
+    "39": 307,
+    "43": 58,
+    "47": 196,
+    "51": 31,
+    "55": 56,
+    "59": 65,
+    "63": 4,
+    "67": 5,
+    "71": 93,
+    "75": 4,
+    "79": 2,
+    "83": 44,
+    "87": 34,
+    "91": 5,
+    "95": 9,
+    "99": 1,
+    "103": 10,
+    "107": 3,
+    "111": 2,
+    "115": 3,
+    "119": 11,
+    "127": 1,
+    "131": 16,
+    "135": 7,
+    "143": 2,
+    "151": 13,
+    "155": 5,
+    "163": 1,
+    "167": 25,
+    "171": 3,
+    "183": 8,
+    "187": 1,
+    "203": 2,
+    "211": 1,
+    "215": 3,
+    "227": 6,
+    "231": 2,
+    "235": 2,
+    "247": 3,
+    "263": 5,
+    "271": 1,
+    "275": 2,
+    "291": 1,
+    "295": 1,
+    "311": 3,
+    "315": 1,
+    "347": 3,
+    "375": 1,
+    "391": 1,
+    "407": 6,
+    "411": 1,
+    "455": 3,
+    "471": 2,
+    "487": 1,
+    "491": 2,
+    "515": 1,
+    "519": 1,
+    "527": 1,
+    "535": 1,
+    "547": 1,
+    "551": 3,
+    "563": 1,
+    "587": 1,
+    "591": 2,
+    "631": 2,
+    "635": 2,
+    "647": 1,
+    "691": 1,
+    "695": 3,
+    "711": 2,
+    "731": 1,
+    "751": 1,
+    "759": 1,
+    "771": 1,
+    "851": 1,
+    "855": 1,
+    "887": 2,
+    "903": 1,
+    "1031": 1,
+    "1095": 1,
+    "1111": 1,
+    "1135": 1,
+    "1207": 1,
+    "1223": 1,
+    "1271": 2,
+    "1415": 1,
+    "1431": 1,
+    "1711": 1,
+    "1719": 1,
+    "1751": 2,
+    "1815": 1,
+    "2039": 1,
+    "3623": 1,
+    "5843": 1
+  },
+  "type_i_gap_cap": 215,
+  "type_i_even_terminal_bridge_count": 220,
+  "type_i_first_even_source_gap_histogram": {
+    "15": 79,
+    "19": 39,
+    "27": 10,
+    "31": 43,
+    "35": 11,
+    "39": 10,
+    "43": 6,
+    "47": 9,
+    "51": 1,
+    "55": 3,
+    "59": 1,
+    "63": 3,
+    "67": 1,
+    "71": 1,
+    "75": 1,
+    "79": 1,
+    "95": 1
+  },
+  "maximum_selected_type_i_gap": 95,
+  "even_source_misses": [],
+  "type_i_even_terminal_bridge_records": [
+    {
+      "prime": 1100004889,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          131,
+          1,
+          2099246
+        ],
+        "target_solution": [
+          275001226,
+          20166848607076968,
+          169340702774866448849592
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 974050144,
+          "source_term": 2126676372,
+          "bridge_divisor": 85317060144517455355544146010176
+        },
+        "source_solution": [
+          2126676372,
+          275001226,
+          20166848607076968
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 487025072
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1100144329,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10578311,
+          1,
+          26
+        ],
+        "target_solution": [
+          275036086,
+          20365920502479136,
+          2118055703379041504
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 672640384,
+          "source_term": 432745424,
+          "bridge_divisor": 3621908676437161797028915456
+        },
+        "source_solution": [
+          432745424,
+          275036086,
+          20365920502479136
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 336320192
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1100168689,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          30301,
+          1,
+          9077
+        ],
+        "target_solution": [
+          275042177,
+          15926375018042170,
+          578254814168568876130
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1099478856,
+          "source_term": 438371392305,
+          "bridge_divisor": 1595597014098997705698284944
+        },
+        "source_solution": [
+          438371392305,
+          275042177,
+          15926375018042170
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 549739428
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1100307289,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          275076827
+        ],
+        "target_solution": [
+          275076827,
+          15929949371482570,
+          17527839406843240507452730
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1042396380,
+          "source_term": 4951382886,
+          "bridge_divisor": 4060212451425252660125170416540100
+        },
+        "source_solution": [
+          4951382886,
+          275076827,
+          15929949371482570
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 521198190
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1100957449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          2332537,
+          2,
+          59
+        ],
+        "target_solution": [
+          275239366,
+          20223188883884207,
+          19090690046285494078
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 47021820,
+          "source_term": 12279930,
+          "bridge_divisor": 80481433687955534281685357428
+        },
+        "source_solution": [
+          12279930,
+          275239366,
+          20223188883884207
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 23510910
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1101639289,
+      "type_i_even_witness": {
+        "gap": 67,
+        "normal_form": [
+          841,
+          1,
+          327479
+        ],
+        "target_solution": [
+          275409839,
+          4528395982675210,
+          5931817991277972250090
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1013874984,
+          "source_term": 3181602465,
+          "bridge_divisor": 2082407533565146109870248796176
+        },
+        "source_solution": [
+          3181602465,
+          275409839,
+          4528395982675210
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 506937492
+      },
+      "normal_forms_checked_until_first_even_source": 18,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1101804169,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          97747,
+          2,
+          1409
+        ],
+        "target_solution": [
+          275451046,
+          20233771539660497,
+          456150139380062496838
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1101803960,
+          "source_term": 1452115229630765,
+          "bridge_divisor": 381342730493928796065808
+        },
+        "source_solution": [
+          1452115229630765,
+          275451046,
+          20233771539660497
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 550901980
+      },
+      "normal_forms_checked_until_first_even_source": 23,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1102502041,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          275625518
+        ],
+        "target_solution": [
+          275625518,
+          9802506336203476,
+          10807283242579764481294516
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1066937460,
+          "source_term": 8268765540,
+          "bridge_divisor": 1537426001082683907724414465907044
+        },
+        "source_solution": [
+          8268765540,
+          275625518,
+          9802506336203476
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 533468730
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1103557009,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          3245756,
+          1,
+          85
+        ],
+        "target_solution": [
+          275889260,
+          9850161154896900,
+          3349054698586710975
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 25827930,
+          "source_term": 6611725,
+          "bridge_divisor": 14437494543342417076083229470
+        },
+        "source_solution": [
+          6611725,
+          275889260,
+          9850161154896900
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 12913965
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1104102841,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          291,
+          1,
+          948542
+        ],
+        "target_solution": [
+          276025722,
+          6484273705803432,
+          24602422750512602951032
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 925776992,
+          "source_term": 1432984916,
+          "bridge_divisor": 17548991697769322578777746938944
+        },
+        "source_solution": [
+          1432984916,
+          276025722,
+          6484273705803432
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 462888496
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1104121561,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          846719,
+          1,
+          326
+        ],
+        "target_solution": [
+          276030394,
+          20333655312393488,
+          26515086167141449072
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 306606912,
+          "source_term": 106120716,
+          "bridge_divisor": 84584678551508803662320652544
+        },
+        "source_solution": [
+          106120716,
+          276030394,
+          20333655312393488
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 153303456
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1104952489,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          47,
+          1,
+          5877407
+        ],
+        "target_solution": [
+          276238129,
+          11304815599201672,
+          265772002851572635943864
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 470192560,
+          "source_term": 204620840,
+          "bridge_divisor": 674805670641008695260719323784464
+        },
+        "source_solution": [
+          204620840,
+          276238129,
+          11304815599201672
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 235096280
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1105259929,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          574,
+          5,
+          96277
+        ],
+        "target_solution": [
+          276314990,
+          9851610256451502,
+          94848345405760094882085
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1105256262,
+          "source_term": 83283028128735,
+          "bridge_divisor": 1391235531633284529395348178
+        },
+        "source_solution": [
+          83283028128735,
+          276314990,
+          9851610256451502
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 552628131
+      },
+      "normal_forms_checked_until_first_even_source": 15,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1105321849,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          642629,
+          2,
+          215
+        ],
+        "target_solution": [
+          276330470,
+          9855577258781995,
+          33903184819356942190
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 878453880,
+          "source_term": 1069977255,
+          "bridge_divisor": 30766186731367539709685672560
+        },
+        "source_solution": [
+          1069977255,
+          276330470,
+          9855577258781995
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 439226940
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1105735129,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          119,
+          1,
+          2322973
+        ],
+        "target_solution": [
+          276433787,
+          16087504317053904,
+          149483350095005507894064
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 929189200,
+          "source_term": 1454914800,
+          "bridge_divisor": 105562707650220970042237377268624
+        },
+        "source_solution": [
+          1454914800,
+          276433787,
+          16087504317053904
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 464594600
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1106288089,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          3701,
+          1,
+          74729
+        ],
+        "target_solution": [
+          276572029,
+          11332198704679330,
+          3387375425335847431370
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1098217384,
+          "source_term": 37634407745,
+          "bridge_divisor": 109354031129755546985432002576
+        },
+        "source_solution": [
+          37634407745,
+          276572029,
+          11332198704679330
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 549108692
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1106481049,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10639241,
+          1,
+          26
+        ],
+        "target_solution": [
+          276620266,
+          20601207451586476,
+          2142525545919865964
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 248704456,
+          "source_term": 80203508,
+          "bridge_divisor": 7351233053053617477832176952
+        },
+        "source_solution": [
+          80203508,
+          276620266,
+          20601207451586476
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 124352228
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 3
+    },
+    {
+      "prime": 1107309289,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          6751886
+        ],
+        "target_solution": [
+          276827326,
+          20435565391916772,
+          551914424010643101231588
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 702196144,
+          "source_term": 479834043,
+          "bridge_divisor": 894351152327261338398240903278656
+        },
+        "source_solution": [
+          479834043,
+          276827326,
+          20435565391916772
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 351098072
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1107532969,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          276883250
+        ],
+        "target_solution": [
+          276883250,
+          9892171877927500,
+          10955906489819349641747500
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1071806100,
+          "source_term": 8306497500,
+          "bridge_divisor": 1565680943752104140324231579620900
+        },
+        "source_solution": [
+          8306497500,
+          276883250,
+          9892171877927500
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 535903050
+      },
+      "normal_forms_checked_until_first_even_source": 19,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1107832009,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          12701,
+          1,
+          21806
+        ],
+        "target_solution": [
+          276958006,
+          20455097455949884,
+          1784175396340110935756
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1106523664,
+          "source_term": 234235299851,
+          "bridge_divisor": 9337267836924252102661896256
+        },
+        "source_solution": [
+          234235299851,
+          276958006,
+          20455097455949884
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 553261832
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1108019929,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          29291,
+          1,
+          9457
+        ],
+        "target_solution": [
+          277004987,
+          16154482093761060,
+          611091738163971904140
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1100000412,
+          "source_term": 37995504540,
+          "bridge_divisor": 19602642332280908269496612268
+        },
+        "source_solution": [
+          37995504540,
+          277004987,
+          16154482093761060
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 550000206
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1108562569,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          251,
+          1,
+          1104146
+        ],
+        "target_solution": [
+          277140646,
+          20481854404425448,
+          90459829228899759377912
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1042313824,
+          "source_term": 4360347092,
+          "bridge_divisor": 23971400637316862628445040535616
+        },
+        "source_solution": [
+          4360347092,
+          277140646,
+          20481854404425448
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 521156912
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1109036569,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          25,
+          1,
+          11090366
+        ],
+        "target_solution": [
+          277259150,
+          9919049786172100,
+          440023557703859577100996
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 214652244,
+          "source_term": 66542196,
+          "bridge_divisor": 1574200690564260229098227271061636
+        },
+        "source_solution": [
+          66542196,
+          277259150,
+          9919049786172100
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 107326122
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1110321529,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          1677,
+          1,
+          165522
+        ],
+        "target_solution": [
+          277580394,
+          6557530914655812,
+          4341662344439719551924
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 718016208,
+          "source_term": 508041066,
+          "bridge_divisor": 6813028958836944204723997292448
+        },
+        "source_solution": [
+          508041066,
+          277580394,
+          6557530914655812
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 359008104
+      },
+      "normal_forms_checked_until_first_even_source": 39,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1110471289,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          1901492,
+          1,
+          146
+        ],
+        "target_solution": [
+          277617832,
+          7918321021462328,
+          4624299314127573526
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 979827608,
+          "source_term": 2082133667,
+          "bridge_divisor": 2416541938861676462992703536
+        },
+        "source_solution": [
+          2082133667,
+          277617832,
+          7918321021462328
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 489913804
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1111507609,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          431,
+          1,
+          644726
+        ],
+        "target_solution": [
+          277876906,
+          20590827676621616,
+          53101767141932059391824
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1072824064,
+          "source_term": 7706455744,
+          "bridge_divisor": 8216658395258993277815439647296
+        },
+        "source_solution": [
+          7706455744,
+          277876906,
+          20590827676621616
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 536412032
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1112356249,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          2356687,
+          2,
+          59
+        ],
+        "target_solution": [
+          278089066,
+          20644119652467707,
+          19488048689135351578
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1002594472,
+          "source_term": 2540142517,
+          "bridge_divisor": 8556171418643309357026191952
+        },
+        "source_solution": [
+          2540142517,
+          278089066,
+          20644119652467707
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 501297236
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 3
+    },
+    {
+      "prime": 1112465209,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10696781,
+          1,
+          26
+        ],
+        "target_solution": [
+          278116306,
+          20824644246560596,
+          2165762972440090244
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 973407058,
+          "source_term": 1946814116,
+          "bridge_divisor": 1204667978890013116635160498
+        },
+        "source_solution": [
+          1946814116,
+          278116306,
+          20824644246560596
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 486703529
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1113144169,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          2553083,
+          1,
+          109
+        ],
+        "target_solution": [
+          278286047,
+          16341209363570676,
+          7124767160905814268
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 331679284,
+          "source_term": 118113708,
+          "bridge_divisor": 22271021400565361432058611716
+        },
+        "source_solution": [
+          118113708,
+          278286047,
+          16341209363570676
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 165839642
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1113952849,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          434459,
+          1,
+          641
+        ],
+        "target_solution": [
+          278488219,
+          11494212469671276,
+          29471160057914887236
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1113883648,
+          "source_term": 4482643583232,
+          "bridge_divisor": 8157736229484935590586896
+        },
+        "source_solution": [
+          4482643583232,
+          278488219,
+          11494212469671276
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 556941824
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1114465489,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          6599,
+          1,
+          42221
+        ],
+        "target_solution": [
+          278616379,
+          11500376950189976,
+          1942229613801757879336
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1109905648,
+          "source_term": 67817690392,
+          "bridge_divisor": 35425032898946637341819564176
+        },
+        "source_solution": [
+          67817690392,
+          278616379,
+          11500376950189976
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 554952824
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1114835929,
+      "type_i_even_witness": {
+        "gap": 51,
+        "normal_form": [
+          101,
+          1,
+          2759495
+        ],
+        "target_solution": [
+          278708995,
+          6092447637472350,
+          67248312097082599248150
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 551899000,
+          "source_term": 273244125,
+          "bridge_divisor": 151426233169461528397199458896400
+        },
+        "source_solution": [
+          273244125,
+          278708995,
+          6092447637472350
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 275949500
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1114931449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          2621,
+          1,
+          106346
+        ],
+        "target_solution": [
+          278732866,
+          20717917915476308,
+          8813070675988195194052
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1108550704,
+          "source_term": 48425303107,
+          "bridge_divisor": 224935826603069144216586005056
+        },
+        "source_solution": [
+          48425303107,
+          278732866,
+          20717917915476308
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 554275352
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1115538169,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          129533,
+          1,
+          2153
+        ],
+        "target_solution": [
+          278884549,
+          11523795700227274,
+          99242926168324721282
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1115305672,
+          "source_term": 1337830198289,
+          "bridge_divisor": 92294731665594018113799184
+        },
+        "source_solution": [
+          1337830198289,
+          278884549,
+          11523795700227274
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 557652836
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1116349369,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          491,
+          1,
+          568406
+        ],
+        "target_solution": [
+          279087346,
+          20770607975658104,
+          47224552153507722525736
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1082245024,
+          "source_term": 8856375556,
+          "bridge_divisor": 6442249676456089480277533481536
+        },
+        "source_solution": [
+          8856375556,
+          279087346,
+          20770607975658104
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 541122512
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1117066129,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          73,
+          1,
+          3825569
+        ],
+        "target_solution": [
+          279266537,
+          16418905780646446,
+          251246623600033541792158
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 826322904,
+          "source_term": 793704933,
+          "bridge_divisor": 292193014463340371252624861836816
+        },
+        "source_solution": [
+          793704933,
+          279266537,
+          16418905780646446
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 413161452
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1117271929,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          279317990
+        ],
+        "target_solution": [
+          279317990,
+          10066908057129700,
+          11247473784054942122191300
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1081230900,
+          "source_term": 8379539700,
+          "bridge_divisor": 1621482115311456834505806084796900
+        },
+        "source_solution": [
+          8379539700,
+          279317990,
+          10066908057129700
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 540615450
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1118110249,
+      "type_i_even_witness": {
+        "gap": 55,
+        "normal_form": [
+          151,
+          1,
+          1851176
+        ],
+        "target_solution": [
+          279527576,
+          5682594360225280,
+          42077927119718433886720
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 710851584,
+          "source_term": 487902720,
+          "bridge_divisor": 68546401698976093052826981999616
+        },
+        "source_solution": [
+          487902720,
+          279527576,
+          5682594360225280
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 355425792
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1118365609,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          279591410
+        ],
+        "target_solution": [
+          279591410,
+          10086626380497100,
+          11280536054780104964233900
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1082289300,
+          "source_term": 8387742300,
+          "bridge_divisor": 1627840417591553185363676607384100
+        },
+        "source_solution": [
+          8387742300,
+          279591410,
+          10086626380497100
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 541144650
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1118486329,
+      "type_i_even_witness": {
+        "gap": 43,
+        "normal_form": [
+          1,
+          1,
+          279621593
+        ],
+        "target_solution": [
+          279621593,
+          7273323938216830,
+          8135113391283964992717070
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1092475020,
+          "source_term": 11744106906,
+          "bridge_divisor": 846419792682901702601360473380100
+        },
+        "source_solution": [
+          11744106906,
+          279621593,
+          7273323938216830
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 546237510
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1119363529,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10763111,
+          1,
+          26
+        ],
+        "target_solution": [
+          279840886,
+          21083709348653536,
+          2192705742876675104
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 979443088,
+          "source_term": 1958886176,
+          "bridge_divisor": 1227217419202500828099941008
+        },
+        "source_solution": [
+          1958886176,
+          279840886,
+          21083709348653536
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 489721544
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1119428809,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          1537677,
+          2,
+          91
+        ],
+        "target_solution": [
+          279857214,
+          6670114739546895,
+          9711686653028335430
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1119426672,
+          "source_term": 146595642333780,
+          "bridge_divisor": 83016750628552411049288
+        },
+        "source_solution": [
+          146595642333780,
+          279857214,
+          6670114739546895
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 559713336
+      },
+      "normal_forms_checked_until_first_even_source": 12,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1119508009,
+      "type_i_even_witness": {
+        "gap": 43,
+        "normal_form": [
+          1,
+          1,
+          279877013
+        ],
+        "target_solution": [
+          279877013,
+          7286617624845910,
+          8157426789535553635893190
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1093472940,
+          "source_term": 11754834546,
+          "bridge_divisor": 849516677312027691606434267896900
+        },
+        "source_solution": [
+          11754834546,
+          279877013,
+          7286617624845910
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 546736470
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1119585289,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          47,
+          1,
+          5955241
+        ],
+        "target_solution": [
+          279896327,
+          16493043332076888,
+          392880184796443098334056
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 666986992,
+          "source_term": 412478808,
+          "bridge_divisor": 711267610255662498602413328371216
+        },
+        "source_solution": [
+          412478808,
+          279896327,
+          16493043332076888
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 333493496
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1120771129,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          101,
+          1,
+          2774186
+        ],
+        "target_solution": [
+          280192786,
+          20935467560156452,
+          232315520926132892323508
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 954319984,
+          "source_term": 1606438763,
+          "bridge_divisor": 154676737837706190971924363008576
+        },
+        "source_solution": [
+          1606438763,
+          280192786,
+          20935467560156452
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 477159992
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1121377009,
+      "type_i_even_witness": {
+        "gap": 43,
+        "normal_form": [
+          234991,
+          1,
+          1193
+        ],
+        "target_solution": [
+          280344263,
+          7312499756092000,
+          34895247497987908000
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 916224000,
+          "source_term": 1252032000,
+          "bridge_divisor": 28635460097075195615954704000
+        },
+        "source_solution": [
+          1252032000,
+          280344263,
+          7312499756092000
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 458112000
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1121608849,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          3949327,
+          1,
+          71
+        ],
+        "target_solution": [
+          280402217,
+          16611000416467168,
+          4717524038362045216
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 731484032,
+          "source_term": 525754148,
+          "bridge_divisor": 7361692809456814441744301056
+        },
+        "source_solution": [
+          525754148,
+          280402217,
+          16611000416467168
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 365742016
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1121924281,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          123,
+          1,
+          2280334
+        ],
+        "target_solution": [
+          280481082,
+          6695288739492024,
+          61069975651560856353128
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 693221536,
+          "source_term": 453543908,
+          "bridge_divisor": 104723464795629988354620002261056
+        },
+        "source_solution": [
+          453543908,
+          280481082,
+          6695288739492024
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 346610768
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1122464809,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10792931,
+          1,
+          26
+        ],
+        "target_solution": [
+          280616206,
+          21200699161262296,
+          2204872683306577544
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 172547104,
+          "source_term": 50972324,
+          "bridge_divisor": 8377790396768781860138929216
+        },
+        "source_solution": [
+          50972324,
+          280616206,
+          21200699161262296
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 86273552
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1122567889,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          437819,
+          1,
+          641
+        ],
+        "target_solution": [
+          280641979,
+          11672686826719116,
+          29928768303861154596
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1120855164,
+          "source_term": 183659958196,
+          "bridge_divisor": 205039000031158399347965196
+        },
+        "source_solution": [
+          183659958196,
+          280641979,
+          11672686826719116
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 560427582
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1122637849,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          407,
+          1,
+          689581
+        ],
+        "target_solution": [
+          280659467,
+          16583108134882608,
+          45741584388891923618256
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1070229712,
+          "source_term": 5731363728,
+          "bridge_divisor": 9588924885001638325098200165776
+        },
+        "source_solution": [
+          5731363728,
+          280659467,
+          16583108134882608
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 535114856
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1122649609,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          4031,
+          1,
+          69626
+        ],
+        "target_solution": [
+          280662406,
+          21005778113803856,
+          5850193149640946772784
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1118472064,
+          "source_term": 75142950304,
+          "bridge_divisor": 97757780566522808168966764096
+        },
+        "source_solution": [
+          75142950304,
+          280662406,
+          21005778113803856
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 559236032
+      },
+      "normal_forms_checked_until_first_even_source": 26,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1123111609,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          101768,
+          1,
+          2759
+        ],
+        "target_solution": [
+          280777912,
+          8086500172423816,
+          89242612803923526233
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1098391008,
+          "source_term": 12475583544,
+          "bridge_divisor": 8824524094526754598382116004
+        },
+        "source_solution": [
+          12475583544,
+          280777912,
+          8086500172423816
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 549195504
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1123405369,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          341,
+          1,
+          823611
+        ],
+        "target_solution": [
+          280851351,
+          9014571753560406,
+          29698000900837257965454
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1008099864,
+          "source_term": 2455443909,
+          "bridge_divisor": 13697371965447112314887489866896
+        },
+        "source_solution": [
+          2455443909,
+          280851351,
+          9014571753560406
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 504049932
+      },
+      "normal_forms_checked_until_first_even_source": 18,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1124403289,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          5,
+          1,
+          56220166
+        ],
+        "target_solution": [
+          281100830,
+          10195829006391420,
+          2292844733773622933876076
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 943047924,
+          "source_term": 1461724316,
+          "bridge_divisor": 1663278774327373918548053941212996
+        },
+        "source_solution": [
+          1461724316,
+          281100830,
+          10195829006391420
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 471523962
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1125077209,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          281269307
+        ],
+        "target_solution": [
+          281269307,
+          16655246693589130,
+          18738438465229736573138170
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1065862620,
+          "source_term": 5062847526,
+          "bridge_divisor": 4438355728881479766204322394076100
+        },
+        "source_solution": [
+          5062847526,
+          281269307,
+          16655246693589130
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 532931310
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1125220849,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          281305217
+        ],
+        "target_solution": [
+          281305217,
+          16659499756956550,
+          18745616460437942847110950
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1065998700,
+          "source_term": 5063493906,
+          "bridge_divisor": 4440622764467635025664317848622500
+        },
+        "source_solution": [
+          5063493906,
+          281305217,
+          16659499756956550
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 532999350
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1126229449,
+      "type_i_even_witness": {
+        "gap": 63,
+        "normal_form": [
+          257,
+          1,
+          1095554
+        ],
+        "target_solution": [
+          281557378,
+          5033306080112236,
+          22057033203319663067852
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 850149904,
+          "source_term": 867018107,
+          "bridge_divisor": 24357982763290497741161486472256
+        },
+        "source_solution": [
+          867018107,
+          281557378,
+          5033306080112236
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 425074952
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1126792489,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          6870686
+        ],
+        "target_solution": [
+          281698126,
+          21161022939453252,
+          581562968481283563907908
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 714551344,
+          "source_term": 488276763,
+          "bridge_divisor": 958976736065293794971394097953856
+        },
+        "source_solution": [
+          488276763,
+          281698126,
+          21161022939453252
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 357275672
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1126881529,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          355259,
+          1,
+          793
+        ],
+        "target_solution": [
+          281720387,
+          16713978113473524,
+          53016737682039245244
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 177984756,
+          "source_term": 52842348,
+          "bridge_divisor": 201229645206098727219528762372
+        },
+        "source_solution": [
+          52842348,
+          281720387,
+          16713978113473524
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 88992378
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1127228281,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          485038,
+          1,
+          581
+        ],
+        "target_solution": [
+          281807078,
+          10251535330615222,
+          23824567453148337589
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 912624872,
+          "source_term": 1198415918,
+          "bridge_divisor": 20451333574613060682791368636
+        },
+        "source_solution": [
+          1198415918,
+          281807078,
+          10251535330615222
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 456312436
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1127354089,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          96487,
+          1,
+          2921
+        ],
+        "target_solution": [
+          281838527,
+          16724158400270608,
+          195405063455478651376
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 515778496,
+          "source_term": 237691384,
+          "bridge_divisor": 478019870232529406252953734016
+        },
+        "source_solution": [
+          237691384,
+          281838527,
+          16724158400270608
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 257889248
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1127775049,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10843991,
+          1,
+          26
+        ],
+        "target_solution": [
+          281943766,
+          21401769345126976,
+          2225783982289110464
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 700688640,
+          "source_term": 462563985,
+          "bridge_divisor": 3802408353612522316806078464
+        },
+        "source_solution": [
+          462563985,
+          281943766,
+          21401769345126976
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 350344320
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1127837209,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          26615,
+          1,
+          10594
+        ],
+        "target_solution": [
+          281959310,
+          10258442115774240,
+          434711731149459842784
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1126523584,
+          "source_term": 241799450784,
+          "bridge_divisor": 2284192792595371958759765056
+        },
+        "source_solution": [
+          241799450784,
+          281959310,
+          10258442115774240
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 563261792
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1128445609,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          6880766
+        ],
+        "target_solution": [
+          282111406,
+          21223159261072260,
+          584126362860114059236740
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 715599664,
+          "source_term": 488993115,
+          "bridge_divisor": 964616801097587573888810258752576
+        },
+        "source_solution": [
+          488993115,
+          282111406,
+          21223159261072260
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 357799832
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1130177689,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          136693,
+          13,
+          159
+        ],
+        "target_solution": [
+          282544431,
+          9123668085103530,
+          980648310089980592970
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1114684480,
+          "source_term": 20328124560,
+          "bridge_divisor": 60773556896143304060883129640
+        },
+        "source_solution": [
+          20328124560,
+          282544431,
+          9123668085103530
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 557342240
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132062649,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          16241,
+          1,
+          17426
+        ],
+        "target_solution": [
+          283015666,
+          21359737401192716,
+          1488859116085130338924
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1131017104,
+          "source_term": 306151867819,
+          "bridge_divisor": 6226676819389292619659722816
+        },
+        "source_solution": [
+          306151867819,
+          283015666,
+          21359737401192716
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 565508552
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132468969,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          3292061,
+          1,
+          86
+        ],
+        "target_solution": [
+          283117246,
+          21436902328514892,
+          7374294303333674268
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 704235424,
+          "source_term": 465589848,
+          "bridge_divisor": 12631680766357063363194238096
+        },
+        "source_solution": [
+          465589848,
+          283117246,
+          21436902328514892
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 352117712
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132539769,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          4881637,
+          2,
+          29
+        ],
+        "target_solution": [
+          283134946,
+          21423511156857385,
+          9940509045124078490
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1132539552,
+          "source_term": 1477483225397640,
+          "bridge_divisor": 8629644497250305572808
+        },
+        "source_solution": [
+          1477483225397640,
+          283134946,
+          21423511156857385
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 566269776
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132573369,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          270433,
+          3,
+          349
+        ],
+        "target_solution": [
+          283143351,
+          9163032649160948,
+          115124338646362055292
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 574285084,
+          "source_term": 291256332,
+          "bridge_divisor": 257090278339197193344535744876
+        },
+        "source_solution": [
+          291256332,
+          283143351,
+          9163032649160948
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 287142542
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132603609,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          299,
+          1,
+          946993
+        ],
+        "target_solution": [
+          283150907,
+          16878832832733924,
+          63936545090508814913484
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1060632160,
+          "source_term": 4172751240,
+          "bridge_divisor": 18406423176872223502197249938704
+        },
+        "source_solution": [
+          4172751240,
+          283150907,
+          16878832832733924
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 530316080
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132623529,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          7631,
+          1,
+          37106
+        ],
+        "target_solution": [
+          283155886,
+          21380745308067184,
+          3173415699577151895056
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1130397184,
+          "source_term": 143768648576,
+          "bridge_divisor": 28260472703980691390907543616
+        },
+        "source_solution": [
+          143768648576,
+          283155886,
+          21380745308067184
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 565198592
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1132861129,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          79421,
+          1,
+          3566
+        ],
+        "target_solution": [
+          283215286,
+          21391072125949820,
+          305122248764482231180
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 997214840,
+          "source_term": 2082080420,
+          "bridge_divisor": 165554802946077104593526318440
+        },
+        "source_solution": [
+          2082080420,
+          283215286,
+          21391072125949820
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 498607420
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1133836729,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          436763,
+          11,
+          59
+        ],
+        "target_solution": [
+          283459187,
+          16916194334013226,
+          483058837307337814138
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1102967712,
+          "source_term": 10128159432,
+          "bridge_divisor": 59646205844612366140241743432
+        },
+        "source_solution": [
+          10128159432,
+          283459187,
+          16916194334013226
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 551483856
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1134490009,
+      "type_i_even_witness": {
+        "gap": 95,
+        "normal_form": [
+          561,
+          1,
+          505566
+        ],
+        "target_solution": [
+          283622526,
+          3387021907227156,
+          6849451896636957888564
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 942375024,
+          "source_term": 1391243699,
+          "bridge_divisor": 5263529393523591975877877261376
+        },
+        "source_solution": [
+          1391243699,
+          283622526,
+          3387021907227156
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 471187512
+      },
+      "normal_forms_checked_until_first_even_source": 17,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1134724369,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          20573,
+          1,
+          13789
+        ],
+        "target_solution": [
+          283681097,
+          16942404734829546,
+          934475259907260433938
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1133676424,
+          "source_term": 306888783393,
+          "bridge_divisor": 3917114706260466406646206096
+        },
+        "source_solution": [
+          306888783393,
+          283681097,
+          16942404734829546
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 566838212
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1134894049,
+      "type_i_even_witness": {
+        "gap": 55,
+        "normal_form": [
+          41,
+          1,
+          6920086
+        ],
+        "target_solution": [
+          283723526,
+          5854475506388388,
+          162053888102840073753732
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 288882132,
+          "source_term": 96881204,
+          "bridge_divisor": 548398082124749223613877250129444
+        },
+        "source_solution": [
+          96881204,
+          283723526,
+          5854475506388388
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 144441066
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1135625929,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          1721,
+          1,
+          164966
+        ],
+        "target_solution": [
+          283906486,
+          21494137034395860,
+          14183207052724638853140
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1125727984,
+          "source_term": 32289679515,
+          "bridge_divisor": 561538413327200707940602486336
+        },
+        "source_solution": [
+          32289679515,
+          283906486,
+          21494137034395860
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 562863992
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1136460649,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          281,
+          1,
+          1011086
+        ],
+        "target_solution": [
+          284115166,
+          21525719051964292,
+          87057411544437736694468
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1075795504,
+          "source_term": 5038310123,
+          "bridge_divisor": 21125401978673179559423554793536
+        },
+        "source_solution": [
+          5038310123,
+          284115166,
+          21525719051964292
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 537897752
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1136947849,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          2621,
+          1,
+          108446
+        ],
+        "target_solution": [
+          284236966,
+          21544223472338268,
+          9345539311427052576492
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 999872120,
+          "source_term": 2073310980,
+          "bridge_divisor": 5124186456049221851431985720552
+        },
+        "source_solution": [
+          2073310980,
+          284236966,
+          21544223472338268
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 499936060
+      },
+      "normal_forms_checked_until_first_even_source": 24,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1137205969,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          14005,
+          14,
+          1450
+        ],
+        "target_solution": [
+          284301500,
+          10429343458022250,
+          11856077319885473108700
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1093723400,
+          "source_term": 7151076900,
+          "bridge_divisor": 2062130800526264414965683975800
+        },
+        "source_solution": [
+          7151076900,
+          284301500,
+          10429343458022250
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 546861700
+      },
+      "normal_forms_checked_until_first_even_source": 23,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1138207849,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          595297,
+          2,
+          239
+        ],
+        "target_solution": [
+          284551966,
+          21597598507695539,
+          82589215605016485526
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1128069356,
+          "source_term": 31660952834,
+          "bridge_divisor": 3349320738431779008775384516
+        },
+        "source_solution": [
+          31660952834,
+          284551966,
+          21597598507695539
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 564034678
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1138576849,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          13,
+          1,
+          21895709
+        ],
+        "target_solution": [
+          284644217,
+          17057332598858266,
+          1493929538673309653837218
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 359550588,
+          "source_term": 131374254,
+          "bridge_divisor": 4655241370840493689872024505864804
+        },
+        "source_solution": [
+          131374254,
+          284644217,
+          17057332598858266
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 179775294
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1138721929,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          17,
+          1,
+          16745911
+        ],
+        "target_solution": [
+          284680487,
+          17061679902361458,
+          1142853473552798300530146
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 119865468,
+          "source_term": 33491822,
+          "bridge_divisor": 4657614582022244828993272850940996
+        },
+        "source_solution": [
+          33491822,
+          284680487,
+          17061679902361458
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 59932734
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1139644489,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          79,
+          1,
+          3606470
+        ],
+        "target_solution": [
+          284911130,
+          10474110376362640,
+          151098255286068335968240
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 692442240,
+          "source_term": 441152736,
+          "bridge_divisor": 270285918335624381988720849102400
+        },
+        "source_solution": [
+          441152736,
+          284911130,
+          10474110376362640
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 346221120
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1139755369,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1295,
+          1,
+          220030
+        ],
+        "target_solution": [
+          284938850,
+          10476159778064400,
+          9220277493089380948080
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1112471680,
+          "source_term": 11618164704,
+          "bridge_divisor": 1006252734461869221529899918400
+        },
+        "source_solution": [
+          11618164704,
+          284938850,
+          10476159778064400
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 556235840
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1140544969,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          25,
+          1,
+          11405450
+        ],
+        "target_solution": [
+          285136250,
+          10490668469207500,
+          478603165760061821682700
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 220750644,
+          "source_term": 68432700,
+          "bridge_divisor": 1760865903172556952707674060420036
+        },
+        "source_solution": [
+          68432700,
+          285136250,
+          10490668469207500
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 110375322
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1140605449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          503801,
+          1,
+          566
+        ],
+        "target_solution": [
+          285151366,
+          21692590759515700,
+          49112024833675709300
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1140571504,
+          "source_term": 9581247743675,
+          "bridge_divisor": 6668432032858560245279296
+        },
+        "source_solution": [
+          9581247743675,
+          285151366,
+          21692590759515700
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 570285752
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1140655849,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          285163970
+        ],
+        "target_solution": [
+          285163970,
+          10492708083539500,
+          11968568847338911297535500
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1103860500,
+          "source_term": 8554919100,
+          "bridge_divisor": 1761550671073453109016382054622500
+        },
+        "source_solution": [
+          8554919100,
+          285163970,
+          10492708083539500
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 551930250
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1141166569,
+      "type_i_even_witness": {
+        "gap": 43,
+        "normal_form": [
+          680887,
+          1,
+          419
+        ],
+        "target_solution": [
+          285291653,
+          7575803446420576,
+          12697046097766801312
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1141094544,
+          "source_term": 4519883658912,
+          "bridge_divisor": 3658020282945561139086736
+        },
+        "source_solution": [
+          4519883658912,
+          285291653,
+          7575803446420576
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 570547272
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1141198249,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          6958526
+        ],
+        "target_solution": [
+          285299566,
+          21705558457129476,
+          604154763532763404328964
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 723686704,
+          "source_term": 494519259,
+          "bridge_divisor": 1008966354966695654113381220938816
+        },
+        "source_solution": [
+          494519259,
+          285299566,
+          21705558457129476
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 361843352
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1141262329,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          53171,
+          1,
+          5366
+        ],
+        "target_solution": [
+          285315586,
+          21709006712892200,
+          465962113961219207800
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 787898800,
+          "source_term": 636171496,
+          "bridge_divisor": 658616067879445552862673610000
+        },
+        "source_solution": [
+          636171496,
+          285315586,
+          21709006712892200
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 393949400
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1141764649,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          1361,
+          1,
+          209729
+        ],
+        "target_solution": [
+          285441169,
+          12070630541439470,
+          10126244851840790903230
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1119113944,
+          "source_term": 14102924605,
+          "bridge_divisor": 917466339588535611602447274256
+        },
+        "source_solution": [
+          14102924605,
+          285441169,
+          12070630541439470
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 559556972
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1141967929,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          10980461,
+          1,
+          26
+        ],
+        "target_solution": [
+          285491986,
+          21943835041106836,
+          2282158814298452804
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 726706864,
+          "source_term": 499610969,
+          "bridge_divisor": 3790766799728726889437269696
+        },
+        "source_solution": [
+          499610969,
+          285491986,
+          21943835041106836
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 363353432
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1142935369,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          25765,
+          1,
+          11090
+        ],
+        "target_solution": [
+          285733850,
+          10534925329618900,
+          467329274946455427940
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 811133708,
+          "source_term": 698514740,
+          "bridge_divisor": 620242518645565461615692551612
+        },
+        "source_solution": [
+          698514740,
+          285733850,
+          10534925329618900
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 405566854
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1143794089,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          398257,
+          2,
+          359
+        ],
+        "target_solution": [
+          285948526,
+          21808211619874827,
+          125266365901786745958
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1016882860,
+          "source_term": 2291177490,
+          "bridge_divisor": 63590833797000901506235664068
+        },
+        "source_solution": [
+          2291177490,
+          285948526,
+          21808211619874827
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 508441430
+      },
+      "normal_forms_checked_until_first_even_source": 23,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1145069209,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          11010281,
+          1,
+          26
+        ],
+        "target_solution": [
+          286267306,
+          22063184074943596,
+          2294571113736067244
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1001935558,
+          "source_term": 2003871116,
+          "bridge_divisor": 1313721365100003776928944998
+        },
+        "source_solution": [
+          2003871116,
+          286267306,
+          22063184074943596
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 500967779
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1145230249,
+      "type_i_even_witness": {
+        "gap": 71,
+        "normal_form": [
+          96595,
+          1,
+          2964
+        ],
+        "target_solution": [
+          286307580,
+          4618531788939120,
+          54757309494913441104
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1015537536,
+          "source_term": 2241884448,
+          "bridge_divisor": 28406496101066959812996027072
+        },
+        "source_solution": [
+          2241884448,
+          286307580,
+          4618531788939120
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 507768768
+      },
+      "normal_forms_checked_until_first_even_source": 24,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1146051769,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          106550,
+          1,
+          2689
+        ],
+        "target_solution": [
+          286512950,
+          10593200036894550,
+          113940456514818060009
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1146051240,
+          "source_term": 620712143566510,
+          "bridge_divisor": 241099319419405981622604
+        },
+        "source_solution": [
+          620712143566510,
+          286512950,
+          10593200036894550
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 573025620
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1146186409,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          24531,
+          1,
+          11681
+        ],
+        "target_solution": [
+          286546611,
+          9384081724232124,
+          438461821094131771636
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1144551104,
+          "source_term": 200554165616,
+          "bridge_divisor": 2868075234689225547071581456
+        },
+        "source_solution": [
+          200554165616,
+          286546611,
+          9384081724232124
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 572275552
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1146228169,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          11471,
+          1,
+          24981
+        ],
+        "target_solution": [
+          286557051,
+          9384658599362904,
+          937752597248526372456
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1029267162,
+          "source_term": 2521727208,
+          "bridge_divisor": 438721952365392070168554379146
+        },
+        "source_solution": [
+          2521727208,
+          286557051,
+          9384658599362904
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 514633581
+      },
+      "normal_forms_checked_until_first_even_source": 12,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1146236569,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          2628983,
+          1,
+          109
+        ],
+        "target_solution": [
+          286559147,
+          17327259610463376,
+          7554685064935686768
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 823857534,
+          "source_term": 732317808,
+          "bridge_divisor": 9741888324795851782437396366
+        },
+        "source_solution": [
+          732317808,
+          286559147,
+          17327259610463376
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 411928767
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1146335689,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          1351811,
+          4,
+          53
+        ],
+        "target_solution": [
+          286583932,
+          8426108742909599,
+          28581359883570111604
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1101596520,
+          "source_term": 7056453180,
+          "bridge_divisor": 5114825161586253591355070584
+        },
+        "source_solution": [
+          7056453180,
+          286583932,
+          8426108742909599
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 550798260
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1146379369,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          69059,
+          2,
+          2075
+        ],
+        "target_solution": [
+          286594850,
+          10598590944468475,
+          351873209841118012450
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1136655176,
+          "source_term": 33499901825,
+          "bridge_divisor": 13686732017401161598794275344
+        },
+        "source_solution": [
+          33499901825,
+          286594850,
+          10598590944468475
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 568327588
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1146920329,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          115757,
+          1,
+          2477
+        ],
+        "target_solution": [
+          286730089,
+          12181102186110802,
+          120690357618777441194
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1146652840,
+          "source_term": 1229134131785,
+          "bridge_divisor": 129133373591476088371751824
+        },
+        "source_solution": [
+          1229134131785,
+          286730089,
+          12181102186110802
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 573326420
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1147905049,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          113,
+          1,
+          2539613
+        ],
+        "target_solution": [
+          286976269,
+          12200797798392614,
+          123941215881442174291222
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 873626872,
+          "source_term": 914072629,
+          "bridge_divisor": 135977482988502633622747859925904
+        },
+        "source_solution": [
+          914072629,
+          286976269,
+          12200797798392614
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 436813436
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1148059609,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          287014907
+        ],
+        "target_solution": [
+          287014907,
+          17342643273400330,
+          19910388255486462960270970
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1087635420,
+          "source_term": 5166268326,
+          "bridge_divisor": 4812276252051578548081945349724100
+        },
+        "source_solution": [
+          5166268326,
+          287014907,
+          17342643273400330
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 543817710
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1150243609,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1580005,
+          2,
+          91
+        ],
+        "target_solution": [
+          287560910,
+          10677170089146015,
+          15545959230820363254
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 104494104,
+          "source_term": 28733859,
+          "bridge_divisor": 65028716681642496142466938416
+        },
+        "source_solution": [
+          28733859,
+          287560910,
+          10677170089146015
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 52247052
+      },
+      "normal_forms_checked_until_first_even_source": 12,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1150530649,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          65,
+          1,
+          4425118
+        ],
+        "target_solution": [
+          287632670,
+          10675168425316980,
+          188955514716373123540308
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 601816048,
+          "source_term": 315468099,
+          "bridge_divisor": 414730599457377919009983530603584
+        },
+        "source_solution": [
+          315468099,
+          287632670,
+          10675168425316980
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 300908024
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1150927369,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          39313,
+          13,
+          563
+        ],
+        "target_solution": [
+          287731847,
+          17429438303603110,
+          6633434955584126318590
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 983943896,
+          "source_term": 1695449165,
+          "bridge_divisor": 4430696027213285073354917541904
+        },
+        "source_solution": [
+          1695449165,
+          287731847,
+          17429438303603110
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 491971948
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1151281849,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          443483,
+          11,
+          59
+        ],
+        "target_solution": [
+          287820467,
+          17440741230574186,
+          498037798360987514938
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1142665608,
+          "source_term": 38170072479,
+          "bridge_divisor": 17164854792466223880754581424
+        },
+        "source_solution": [
+          38170072479,
+          287820467,
+          17440741230574186
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 571332804
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1151731849,
+      "type_i_even_witness": {
+        "gap": 55,
+        "normal_form": [
+          13031,
+          1,
+          22096
+        ],
+        "target_solution": [
+          287932976,
+          6029551470748416,
+          532915851741673131264
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 841725024,
+          "source_term": 781790464,
+          "bridge_divisor": 660830204763396671962084596576
+        },
+        "source_solution": [
+          781790464,
+          287932976,
+          6029551470748416
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 420862512
+      },
+      "normal_forms_checked_until_first_even_source": 15,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1152360169,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          206073,
+          1,
+          1398
+        ],
+        "target_solution": [
+          288090054,
+          7064741933965044,
+          39506035283444919732
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1107642432,
+          "source_term": 7135887824,
+          "bridge_divisor": 7066481984147644518377836944
+        },
+        "source_solution": [
+          7135887824,
+          288090054,
+          7064741933965044
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 553821216
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1152603769,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          22931,
+          1,
+          12566
+        ],
+        "target_solution": [
+          288150946,
+          22142031599323880,
+          1112947061824508392120
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1151849824,
+          "source_term": 440226557620,
+          "bridge_divisor": 3356403491436742367252040256
+        },
+        "source_solution": [
+          440226557620,
+          288150946,
+          22142031599323880
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 575924912
+      },
+      "normal_forms_checked_until_first_even_source": 22,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1153012249,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          7393,
+          1,
+          38990
+        ],
+        "target_solution": [
+          288253070,
+          10721337147638740,
+          1672099696589502048820
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1148177520,
+          "source_term": 68455891971,
+          "bridge_divisor": 32336595577293729348544321600
+        },
+        "source_solution": [
+          68455891971,
+          288253070,
+          10721337147638740
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 574088760
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1153356649,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          3352781,
+          1,
+          86
+        ],
+        "target_solution": [
+          288339166,
+          22234975490035692,
+          7648831469095267068
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 459744624,
+          "source_term": 191118918,
+          "bridge_divisor": 21221285937181821954737575776
+        },
+        "source_solution": [
+          191118918,
+          288339166,
+          22234975490035692
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 229872312
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1153878889,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          41,
+          1,
+          7035847
+        ],
+        "target_solution": [
+          288469727,
+          17518902101481690,
+          493041251057498968562010
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 619154536,
+          "source_term": 334017585,
+          "bridge_divisor": 1054564655896127521479300669508624
+        },
+        "source_solution": [
+          334017585,
+          288469727,
+          17518902101481690
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 309577268
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1153902649,
+      "type_i_even_witness": {
+        "gap": 43,
+        "normal_form": [
+          29,
+          1,
+          9947437
+        ],
+        "target_solution": [
+          288475673,
+          7741229107268658,
+          308021543910110676581898
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 375689244,
+          "source_term": 139264118,
+          "bridge_divisor": 958825977998577407707424268178116
+        },
+        "source_solution": [
+          139264118,
+          288475673,
+          7741229107268658
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 187844622
+      },
+      "normal_forms_checked_until_first_even_source": 14,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1154102569,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          14941,
+          1,
+          19311
+        ],
+        "target_solution": [
+          288525651,
+          9514071597235686,
+          734904924169710093774
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1151399064,
+          "source_term": 122880540029,
+          "bridge_divisor": 7947276549398560965980506896
+        },
+        "source_solution": [
+          122880540029,
+          288525651,
+          9514071597235686
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 575699532
+      },
+      "normal_forms_checked_until_first_even_source": 12,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1154361289,
+      "type_i_even_witness": {
+        "gap": 75,
+        "normal_form": [
+          244361,
+          1,
+          1181
+        ],
+        "target_solution": [
+          288590341,
+          4442773843387022,
+          20987662272571019278
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1154007064,
+          "source_term": 940179986053,
+          "bridge_divisor": 29737420006146959129143696
+        },
+        "source_solution": [
+          940179986053,
+          288590341,
+          4442773843387022
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 577003532
+      },
+      "normal_forms_checked_until_first_even_source": 13,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1154935609,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          13931,
+          1,
+          20726
+        ],
+        "target_solution": [
+          288733906,
+          22231539461140216,
+          1843083523548884301224
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1153692064,
+          "source_term": 267871296644,
+          "bridge_divisor": 9167829202498829359996703296
+        },
+        "source_solution": [
+          267871296644,
+          288733906,
+          22231539461140216
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 576846032
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1154950729,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          3821,
+          1,
+          75566
+        ],
+        "target_solution": [
+          288737686,
+          22231926946811420,
+          6719911079375711529580
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1150416784,
+          "source_term": 73262616955,
+          "bridge_divisor": 121870828956449116347261007936
+        },
+        "source_solution": [
+          73262616955,
+          288737686,
+          22231926946811420
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 575208392
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1155117049,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          460573,
+          3,
+          209
+        ],
+        "target_solution": [
+          288779271,
+          9531948399284344,
+          71718377583151455816
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 984921528,
+          "source_term": 1671165672,
+          "bridge_divisor": 48824586553294431026970331416
+        },
+        "source_solution": [
+          1671165672,
+          288779271,
+          9531948399284344
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 492460764
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1155266809,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          21397,
+          2,
+          6749
+        ],
+        "target_solution": [
+          288816706,
+          22244229615469353,
+          2402020859608971021882
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1155253326,
+          "source_term": 24746454975986,
+          "bridge_divisor": 129545790335056848666796758
+        },
+        "source_solution": [
+          24746454975986,
+          288816706,
+          22244229615469353
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 577626663
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1156264729,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          427,
+          1,
+          676970
+        ],
+        "target_solution": [
+          289066190,
+          10781843976602440,
+          29195938884605392569880
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1072320480,
+          "source_term": 3692588724,
+          "bridge_divisor": 9803324654073629248864234830400
+        },
+        "source_solution": [
+          3692588724,
+          289066190,
+          10781843976602440
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 536160240
+      },
+      "normal_forms_checked_until_first_even_source": 30,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1157143849,
+      "type_i_even_witness": {
+        "gap": 59,
+        "normal_form": [
+          3327,
+          1,
+          86951
+        ],
+        "target_solution": [
+          289285977,
+          5673668666812728,
+          1973324556377029948936
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1136623472,
+          "source_term": 16023546488,
+          "bridge_divisor": 161973455362172871629083699216
+        },
+        "source_solution": [
+          16023546488,
+          289285977,
+          5673668666812728
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 568311736
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1157601769,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          1547596,
+          11,
+          17
+        ],
+        "target_solution": [
+          289400452,
+          8591056181847340,
+          70687207882763674235
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1142263320,
+          "source_term": 21551821170,
+          "bridge_divisor": 4336928533570960425120459140
+        },
+        "source_solution": [
+          21551821170,
+          289400452,
+          8591056181847340
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 571131660
+      },
+      "normal_forms_checked_until_first_even_source": 21,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1158051409,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          91,
+          1,
+          3181460
+        ],
+        "target_solution": [
+          289512860,
+          10815187154590000,
+          137632337615073080410000
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 763550400,
+          "source_term": 560347500,
+          "bridge_divisor": 217184384240700819552549097273600
+        },
+        "source_solution": [
+          560347500,
+          289512860,
+          10815187154590000
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 381775200
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1158106009,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          131,
+          1,
+          2210126
+        ],
+        "target_solution": [
+          289526506,
+          22353494952756456,
+          197616158984262769520184
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1025498464,
+          "source_term": 2239005204,
+          "bridge_divisor": 104821574780932305639823091423296
+        },
+        "source_solution": [
+          2239005204,
+          289526506,
+          22353494952756456
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 512749232
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1158470329,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          2833,
+          1,
+          102230
+        ],
+        "target_solution": [
+          289617590,
+          10823038879294180,
+          4425756940090264734340
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1145793840,
+          "source_term": 26177756451,
+          "bridge_divisor": 224412236672238967814586702400
+        },
+        "source_solution": [
+          26177756451,
+          289617590,
+          10823038879294180
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 572896920
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1160207689,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          4791,
+          1,
+          60541
+        ],
+        "target_solution": [
+          290051931,
+          9614910576979968,
+          2328385134723353219072
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1151731984,
+          "source_term": 39414075392,
+          "bridge_divisor": 78938822114537842286122608016
+        },
+        "source_solution": [
+          39414075392,
+          290051931,
+          9614910576979968
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 575865992
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1161034009,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          5004457,
+          2,
+          29
+        ],
+        "target_solution": [
+          290258506,
+          22515085998240745,
+          10446999768213502130
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 8487024,
+          "source_term": 2137380,
+          "bridge_divisor": 48162632340610536588389511416
+        },
+        "source_solution": [
+          2137380,
+          290258506,
+          22515085998240745
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 4243512
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1161252409,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          890531,
+          1,
+          326
+        ],
+        "target_solution": [
+          290313106,
+          22492355101824776,
+          29330030673920909464
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 486061436,
+          "source_term": 208992728,
+          "bridge_divisor": 79213487795942458357649273212
+        },
+        "source_solution": [
+          208992728,
+          290313106,
+          22492355101824776
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 243030718
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1162067449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          131,
+          1,
+          2217686
+        ],
+        "target_solution": [
+          290516866,
+          22506682094786952,
+          199651012575137782512408
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1029006304,
+          "source_term": 2246663988,
+          "bridge_divisor": 106263169334630123270178634947136
+        },
+        "source_solution": [
+          2246663988,
+          290516866,
+          22506682094786952
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 514503152
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1162237129,
+      "type_i_even_witness": {
+        "gap": 27,
+        "normal_form": [
+          821,
+          1,
+          353909
+        ],
+        "target_solution": [
+          290559289,
+          12507371570400650,
+          17705885049109223916850
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1124014984,
+          "source_term": 8544601225,
+          "bridge_divisor": 2707027622802845881497191713936
+        },
+        "source_solution": [
+          8544601225,
+          290559289,
+          12507371570400650
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 562007492
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1162369609,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          11176631,
+          1,
+          26
+        ],
+        "target_solution": [
+          290592406,
+          22734908362256896,
+          2364430439162514944
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1017073408,
+          "source_term": 2034146816,
+          "bridge_divisor": 1374171042538515391456968448
+        },
+        "source_solution": [
+          2034146816,
+          290592406,
+          22734908362256896
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 508536704
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1162697209,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          1901,
+          1,
+          152906
+        ],
+        "target_solution": [
+          290674306,
+          22531117125737844,
+          13780571803128612984996
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1153522864,
+          "source_term": 36547508691,
+          "bridge_divisor": 505710880078037097397822997056
+        },
+        "source_solution": [
+          36547508691,
+          290674306,
+          22531117125737844
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 576761432
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1163192809,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          301,
+          1,
+          966107
+        ],
+        "target_solution": [
+          290798207,
+          17802866883302830,
+          68797896140339182808470
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1089768696,
+          "source_term": 4316058645,
+          "bridge_divisor": 20205698001483379678537695055504
+        },
+        "source_solution": [
+          4316058645,
+          290798207,
+          17802866883302830
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 544884348
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1163364409,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          431515,
+          1,
+          674
+        ],
+        "target_solution": [
+          290841110,
+          10918699946762440,
+          29436814272073085464
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1163280864,
+          "source_term": 4049671939284,
+          "bridge_divisor": 9837195946760938548728896
+        },
+        "source_solution": [
+          4049671939284,
+          290841110,
+          10918699946762440
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 581640432
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1163651449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          21041,
+          1,
+          13826
+        ],
+        "target_solution": [
+          290912866,
+          22568486610083756,
+          1248127567395136195084
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1162821904,
+          "source_term": 407789629579,
+          "bridge_divisor": 4141511932932312413322366016
+        },
+        "source_solution": [
+          407789629579,
+          290912866,
+          22568486610083756
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 581410952
+      },
+      "normal_forms_checked_until_first_even_source": 23,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1163792809,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          12581,
+          1,
+          23126
+        ],
+        "target_solution": [
+          290948206,
+          22573806023575356,
+          2088167325490651282284
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1162405264,
+          "source_term": 243739642179,
+          "bridge_divisor": 11589704527944501821293957696
+        },
+        "source_solution": [
+          243739642179,
+          290948206,
+          22573806023575356
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 581202632
+      },
+      "normal_forms_checked_until_first_even_source": 22,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1164279769,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          144883,
+          1,
+          2009
+        ],
+        "target_solution": [
+          291069947,
+          17838369565428076,
+          143349135488450892868
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1164127104,
+          "source_term": 2219515957728,
+          "bridge_divisor": 87537584432747057970531856
+        },
+        "source_solution": [
+          2219515957728,
+          291069947,
+          17838369565428076
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 582063552
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1164341929,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          7099646
+        ],
+        "target_solution": [
+          291085486,
+          22594869880509828,
+          641662302004312503340932
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 738363184,
+          "source_term": 504548187,
+          "bridge_divisor": 1093338008486432958751128043103296
+        },
+        "source_solution": [
+          504548187,
+          291085486,
+          22594869880509828
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 369181592
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1164822409,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          1057,
+          1,
+          275502
+        ],
+        "target_solution": [
+          291205614,
+          7217087928045492,
+          7953288312498362018004
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1113028080,
+          "source_term": 6257828195,
+          "bridge_divisor": 1647740925958876377335842641984
+        },
+        "source_solution": [
+          6257828195,
+          291205614,
+          7217087928045492
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 556514040
+      },
+      "normal_forms_checked_until_first_even_source": 40,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1165228969,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          941,
+          1,
+          309572
+        ],
+        "target_solution": [
+          291307252,
+          8703587770007880,
+          10777547931824964010920
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1116935776,
+          "source_term": 6737419095,
+          "bridge_divisor": 2081928809354796802712362365184
+        },
+        "source_solution": [
+          6737419095,
+          291307252,
+          8703587770007880
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 558467888
+      },
+      "normal_forms_checked_until_first_even_source": 14,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1165881049,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          86081,
+          1,
+          3386
+        ],
+        "target_solution": [
+          291470266,
+          22656316635223772,
+          306857148559506065788
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1165677904,
+          "source_term": 1672502116843,
+          "bridge_divisor": 249345983135525216449654336
+        },
+        "source_solution": [
+          1672502116843,
+          291470266,
+          22656316635223772
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 582838952
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1166774569,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          269,
+          1,
+          1084363
+        ],
+        "target_solution": [
+          291693647,
+          17912674090739694,
+          77695362795019603561494
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1084363000,
+          "source_term": 3838075125,
+          "bridge_divisor": 25611987007848428868214798643344
+        },
+        "source_solution": [
+          3838075125,
+          291693647,
+          17912674090739694
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 542181500
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1167643129,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          285627,
+          1,
+          1022
+        ],
+        "target_solution": [
+          291910794,
+          7253851287221112,
+          29653742868536717224
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1167451040,
+          "source_term": 1774133479460,
+          "bridge_divisor": 22784632618663583199267904
+        },
+        "source_solution": [
+          1774133479460,
+          291910794,
+          7253851287221112
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 583725520
+      },
+      "normal_forms_checked_until_first_even_source": 13,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1167692089,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          1640017,
+          2,
+          89
+        ],
+        "target_solution": [
+          291923026,
+          22741039161320469,
+          32383239349730041146
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1167686586,
+          "source_term": 61943293693314,
+          "bridge_divisor": 712821228064646569323906
+        },
+        "source_solution": [
+          61943293693314,
+          291923026,
+          22741039161320469
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 583843293
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1167825289,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          7120886
+        ],
+        "target_solution": [
+          291956326,
+          22730266183769172,
+          647438528661150253663188
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 740572144,
+          "source_term": 506057643,
+          "bridge_divisor": 1106480590258597205639457467054656
+        },
+        "source_solution": [
+          506057643,
+          291956326,
+          22730266183769172
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 370286072
+      },
+      "normal_forms_checked_until_first_even_source": 24,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1169718169,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          71,
+          1,
+          4118726
+        ],
+        "target_solution": [
+          292429546,
+          22804011591407936,
+          375693896965584042675904
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 922594624,
+          "source_term": 1091737024,
+          "bridge_divisor": 371371230612000565661697044762176
+        },
+        "source_solution": [
+          1091737024,
+          292429546,
+          22804011591407936
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 461297312
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1170082489,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          481,
+          1,
+          608151
+        ],
+        "target_solution": [
+          292520631,
+          9779240248764402,
+          23789018234518151074338
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1084941384,
+          "source_term": 3727550033,
+          "bridge_divisor": 8101693197409367571019307678736
+        },
+        "source_solution": [
+          3727550033,
+          292520631,
+          9779240248764402
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 542470692
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1171807849,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          423341,
+          1,
+          692
+        ],
+        "target_solution": [
+          292951972,
+          8805318942318120,
+          24373122021152572680
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1039979466,
+          "source_term": 2311065480,
+          "bridge_divisor": 12852277060059597911835134394
+        },
+        "source_solution": [
+          2311065480,
+          292951972,
+          8805318942318120
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 519989733
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1172256649,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          141851,
+          1,
+          2066
+        ],
+        "target_solution": [
+          293064166,
+          22905865908143400,
+          189294073442721756600
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 208426400,
+          "source_term": 63374550,
+          "bridge_divisor": 729789415762335520839208707200
+        },
+        "source_solution": [
+          63374550,
+          293064166,
+          22905865908143400
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 104213200
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1173129169,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          690076,
+          25,
+          17
+        ],
+        "target_solution": [
+          293282300,
+          11098906979498932,
+          471703534163913907075
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1173129166,
+          "source_term": 114658126630443325,
+          "bridge_divisor": 5661818642010606127954
+        },
+        "source_solution": [
+          114658126630443325,
+          293282300,
+          11098906979498932
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 586564583
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1173306649,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          13,
+          1,
+          22563590
+        ],
+        "target_solution": [
+          293326670,
+          11102004388815340,
+          1002004274355709204245820
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 681274836,
+          "source_term": 406144620,
+          "bridge_divisor": 1972071918979956826007727324271204
+        },
+        "source_solution": [
+          406144620,
+          293326670,
+          11102004388815340
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 340637418
+      },
+      "normal_forms_checked_until_first_even_source": 42,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1173546889,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          701,
+          1,
+          418526
+        ],
+        "target_solution": [
+          293386726,
+          22953552349019356,
+          38426633310542521304684
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1148435344,
+          "source_term": 13417560779,
+          "bridge_divisor": 3859808526306097735349292751936
+        },
+        "source_solution": [
+          13417560779,
+          293386726,
+          22953552349019356
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 574217672
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1174116409,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          221,
+          1,
+          1328186
+        ],
+        "target_solution": [
+          293529106,
+          22975826982908852,
+          122064685389041835676708
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1094425264,
+          "source_term": 4031133763,
+          "bridge_divisor": 38909898170871342334575727959616
+        },
+        "source_solution": [
+          4031133763,
+          293529106,
+          22975826982908852
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 547212632
+      },
+      "normal_forms_checked_until_first_even_source": 18,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1174154809,
+      "type_i_even_witness": {
+        "gap": 63,
+        "normal_form": [
+          257,
+          1,
+          1142174
+        ],
+        "target_solution": [
+          293538718,
+          5470793219156276,
+          24994389756097013182612
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 886327024,
+          "source_term": 903913027,
+          "bridge_divisor": 28776319363697414883005626156096
+        },
+        "source_solution": [
+          903913027,
+          293538718,
+          5470793219156276
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 443163512
+      },
+      "normal_forms_checked_until_first_even_source": 17,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1174837129,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          820417,
+          2,
+          179
+        ],
+        "target_solution": [
+          293709286,
+          23012070424701735,
+          65906568854868675390
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1149130730,
+          "source_term": 13129429830,
+          "bridge_divisor": 6776882224166950496386156610
+        },
+        "source_solution": [
+          13129429830,
+          293709286,
+          23012070424701735
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 574565365
+      },
+      "normal_forms_checked_until_first_even_source": 23,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1174850329,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          497,
+          1,
+          590971
+        ],
+        "target_solution": [
+          293712587,
+          18161498707555098,
+          42931675516507407788586
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1129936552,
+          "source_term": 7389193353,
+          "bridge_divisor": 7712894801540421635388325322896
+        },
+        "source_solution": [
+          7389193353,
+          293712587,
+          18161498707555098
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 564968276
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1175238409,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          101,
+          1,
+          2909006
+        ],
+        "target_solution": [
+          293809606,
+          23019757571941804,
+          267858448162520680926236
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1000698064,
+          "source_term": 1684508531,
+          "bridge_divisor": 187008423813805078932801228705856
+        },
+        "source_solution": [
+          1684508531,
+          293809606,
+          23019757571941804
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 500349032
+      },
+      "normal_forms_checked_until_first_even_source": 22,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1175431849,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1108898,
+          5,
+          53
+        ],
+        "target_solution": [
+          293857970,
+          11144360926565482,
+          59065111353055996705
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 530040280,
+          "source_term": 241336522,
+          "bridge_divisor": 152480499557857116859559998300
+        },
+        "source_solution": [
+          241336522,
+          293857970,
+          11144360926565482
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 265020140
+      },
+      "normal_forms_checked_until_first_even_source": 16,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1175989369,
+      "type_i_even_witness": {
+        "gap": 43,
+        "normal_form": [
+          1,
+          1,
+          293997353
+        ],
+        "target_solution": [
+          293997353,
+          8040413068282270,
+          9455440290668620611187630
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1148640780,
+          "source_term": 12347888826,
+          "bridge_divisor": 1034371801294147911958543258884100
+        },
+        "source_solution": [
+          12347888826,
+          293997353,
+          8040413068282270
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 574320390
+      },
+      "normal_forms_checked_until_first_even_source": 14,
+      "strict_reverse_lifts_checked_until_first_even_source": 3
+    },
+    {
+      "prime": 1176038329,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          101,
+          1,
+          2910986
+        ],
+        "target_solution": [
+          294009586,
+          23051104794959332,
+          268405769947206538893428
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1001379184,
+          "source_term": 1685655083,
+          "bridge_divisor": 187518089168184334546443769139776
+        },
+        "source_solution": [
+          1685655083,
+          294009586,
+          23051104794959332
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 500689592
+      },
+      "normal_forms_checked_until_first_even_source": 19,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1176359209,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          92249,
+          1,
+          3188
+        ],
+        "target_solution": [
+          294089812,
+          8871343284880664,
+          113127365818270979224
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1172772748,
+          "source_term": 96167365336,
+          "bridge_divisor": 1622907543539449839848781388
+        },
+        "source_solution": [
+          96167365336,
+          294089812,
+          8871343284880664
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 586386374
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1176844729,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          92374,
+          1,
+          3185
+        ],
+        "target_solution": [
+          294211190,
+          11169937600928470,
+          142305001287284034745
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1138971390,
+          "source_term": 8847863115,
+          "bridge_divisor": 21558262221935371025543957530
+        },
+        "source_solution": [
+          8847863115,
+          294211190,
+          11169937600928470
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 569485695
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1177704889,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1237085,
+          7,
+          34
+        ],
+        "target_solution": [
+          294426230,
+          11187072368288520,
+          74550648299923925976
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 369360996,
+          "source_term": 134533784,
+          "bridge_divisor": 241050245090172349959929767716
+        },
+        "source_solution": [
+          134533784,
+          294426230,
+          11187072368288520
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 184680498
+      },
+      "normal_forms_checked_until_first_even_source": 19,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1177788649,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          11324891,
+          1,
+          26
+        ],
+        "target_solution": [
+          294447166,
+          23342074127015176,
+          2427575678292626264
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 107942688,
+          "source_term": 29708406,
+          "bridge_divisor": 10388528137899940011160627328
+        },
+        "source_solution": [
+          29708406,
+          294447166,
+          23342074127015176
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 53971344
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1177886329,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          3591117,
+          1,
+          82
+        ],
+        "target_solution": [
+          294471594,
+          7402373336141892,
+          2427978357373390004
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 524091216,
+          "source_term": 236052498,
+          "bridge_divisor": 6349601538699279481908387872
+        },
+        "source_solution": [
+          236052498,
+          294471594,
+          7402373336141892
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 262045608
+      },
+      "normal_forms_checked_until_first_even_source": 12,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1177923289,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          2016992,
+          1,
+          146
+        ],
+        "target_solution": [
+          294480832,
+          8909481939979328,
+          5203137280676646526
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1150466860,
+          "source_term": 12339202090,
+          "bridge_divisor": 571438278651767376813565156
+        },
+        "source_solution": [
+          12339202090,
+          294480832,
+          8909481939979328
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 575233430
+      },
+      "normal_forms_checked_until_first_even_source": 13,
+      "strict_reverse_lifts_checked_until_first_even_source": 3
+    },
+    {
+      "prime": 1177967569,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          5,
+          1,
+          58898380
+        ],
+        "target_solution": [
+          294491900,
+          11190384161472600,
+          2636381925373196416421880
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 987972804,
+          "source_term": 1531357880,
+          "bridge_divisor": 2003595057446113125547591091826276
+        },
+        "source_solution": [
+          1531357880,
+          294491900,
+          11190384161472600
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 493986402
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1178383369,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          13,
+          1,
+          22661219
+        ],
+        "target_solution": [
+          294595847,
+          18270886869000766,
+          1656162247946998792512358
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 372121068,
+          "source_term": 135967314,
+          "bridge_divisor": 5341204739436319528482219113781124
+        },
+        "source_solution": [
+          135967314,
+          294595847,
+          18270886869000766
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 186060534
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1178407129,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          397,
+          1,
+          742070
+        ],
+        "target_solution": [
+          294601790,
+          11198740855131340,
+          33240997631008381076380
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1086390480,
+          "source_term": 3478202859,
+          "bridge_divisor": 12234900845690599080540512334400
+        },
+        "source_solution": [
+          3478202859,
+          294601790,
+          11198740855131340
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 543195240
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1178737849,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          7187426
+        ],
+        "target_solution": [
+          294684466,
+          23157049711241116,
+          665758316239376199858524
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 747492304,
+          "source_term": 510786419,
+          "bridge_divisor": 1148421231699729440169542982116416
+        },
+        "source_solution": [
+          510786419,
+          294684466,
+          23157049711241116
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 373746152
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1178854009,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          113789,
+          5,
+          518
+        ],
+        "target_solution": [
+          294713510,
+          11207448703260628,
+          580545827562446400340
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 220809384,
+          "source_term": 67925340,
+          "bridge_divisor": 2224755238649774804812893910456
+        },
+        "source_solution": [
+          67925340,
+          294713510,
+          11207448703260628
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 110404692
+      },
+      "normal_forms_checked_until_first_even_source": 21,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1179026809,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          15907,
+          1,
+          18530
+        ],
+        "target_solution": [
+          294756710,
+          11210669416697560,
+          830934795317961619720
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1176729120,
+          "source_term": 150955501284,
+          "bridge_divisor": 7636918957064722843622286400
+        },
+        "source_solution": [
+          150955501284,
+          294756710,
+          11210669416697560
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 588364560
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1179856969,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          71,
+          1,
+          4154426
+        ],
+        "target_solution": [
+          294964246,
+          23201042812759456,
+          385548057052135299749984
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 930591424,
+          "source_term": 1101199904,
+          "bridge_divisor": 384415386259167493588449400038976
+        },
+        "source_solution": [
+          1101199904,
+          294964246,
+          23201042812759456
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 465295712
+      },
+      "normal_forms_checked_until_first_even_source": 66,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1180453849,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          295113467
+        ],
+        "target_solution": [
+          295113467,
+          18335148858263050,
+          21643797041724572826979450
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1118324700,
+          "source_term": 5312042406,
+          "bridge_divisor": 5378842765324262128645726422722500
+        },
+        "source_solution": [
+          5312042406,
+          295113467,
+          18335148858263050
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 559162350
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1180471609,
+      "type_i_even_witness": {
+        "gap": 47,
+        "normal_form": [
+          1621527,
+          2,
+          91
+        ],
+        "target_solution": [
+          295117914,
+          7417395523769595,
+          10799727452621746730
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 379685280,
+          "source_term": 139927368,
+          "bridge_divisor": 34593096404390167651333032200
+        },
+        "source_solution": [
+          139927368,
+          295117914,
+          7417395523769595
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 189842640
+      },
+      "normal_forms_checked_until_first_even_source": 6,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1180619449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          5088877,
+          2,
+          29
+        ],
+        "target_solution": [
+          295154866,
+          23281105244740105,
+          10802432696312397770
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1085142184,
+          "source_term": 3354568145,
+          "bridge_divisor": 4125546918043073266047532816
+        },
+        "source_solution": [
+          3354568145,
+          295154866,
+          23281105244740105
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 542571092
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1181244409,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          385021,
+          59,
+          13
+        ],
+        "target_solution": [
+          295311107,
+          18359816904977184,
+          3323347124148581478624
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1178581248,
+          "source_term": 130689855936,
+          "bridge_divisor": 35402433803370834106527324288
+        },
+        "source_solution": [
+          130689855936,
+          295311107,
+          18359816904977184
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 589290624
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1182221329,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          132655,
+          2,
+          1114
+        ],
+        "target_solution": [
+          295555340,
+          11271981622408410,
+          200911795169533702476
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1165535868,
+          "source_term": 20645539292,
+          "bridge_divisor": 13409223692342893286259734316
+        },
+        "source_solution": [
+          20645539292,
+          295555340,
+          11271981622408410
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 582767934
+      },
+      "normal_forms_checked_until_first_even_source": 11,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1182413929,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1624195,
+          2,
+          91
+        ],
+        "target_solution": [
+          295603490,
+          11282765899749435,
+          16427706719340903714
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1134152136,
+          "source_term": 6946681833,
+          "bridge_divisor": 3171322325955196449123499152
+        },
+        "source_solution": [
+          6946681833,
+          295603490,
+          11282765899749435
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 567076068
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1182665929,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          5,
+          1,
+          59133298
+        ],
+        "target_solution": [
+          295666490,
+          11279828566075860,
+          2668053786011768970274788
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 991913364,
+          "source_term": 1537465748,
+          "bridge_divisor": 2035752412958825378171438385900036
+        },
+        "source_solution": [
+          1537465748,
+          295666490,
+          11279828566075860
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 495956682
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1182821929,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          71,
+          1,
+          4164866
+        ],
+        "target_solution": [
+          295705486,
+          23317796957432800,
+          388461994045366132167200
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 932929984,
+          "source_term": 1103967200,
+          "bridge_divisor": 388294093002300947507597989635136
+        },
+        "source_solution": [
+          1103967200,
+          295705486,
+          23317796957432800
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 466464992
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1183595449,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          4351454,
+          1,
+          68
+        ],
+        "target_solution": [
+          295898872,
+          9013132015220344,
+          2451571827359544164
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 753197104,
+          "source_term": 517823009,
+          "bridge_divisor": 4220609829468174777054414016
+        },
+        "source_solution": [
+          517823009,
+          295898872,
+          9013132015220344
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 376598552
+      },
+      "normal_forms_checked_until_first_even_source": 12,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1183761049,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          131,
+          1,
+          2259086
+        ],
+        "target_solution": [
+          295940266,
+          23354839899311592,
+          211042364720886599418168
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1048215904,
+          "source_term": 2288604948,
+          "bridge_divisor": 114423071708943075423928086300736
+        },
+        "source_solution": [
+          2288604948,
+          295940266,
+          23354839899311592
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 524107952
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1184404489,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          14623,
+          1,
+          20249
+        ],
+        "target_solution": [
+          296101127,
+          18458307047554696,
+          1495049013640437558328
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1182865584,
+          "source_term": 227595483048,
+          "bridge_divisor": 9202953610746341550368209936
+        },
+        "source_solution": [
+          227595483048,
+          296101127,
+          18458307047554696
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 591432792
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1184727289,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          41,
+          1,
+          7223947
+        ],
+        "target_solution": [
+          296181827,
+          18468142373485890,
+          533651518219657657059810
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 635707336,
+          "source_term": 342947385,
+          "bridge_divisor": 1171941325805341115360096794247824
+        },
+        "source_solution": [
+          342947385,
+          296181827,
+          18468142373485890
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 317853668
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1185869689,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          719,
+          1,
+          412333
+        ],
+        "target_solution": [
+          296467427,
+          18503786769221064,
+          30518887150679412987384
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1154532400,
+          "source_term": 10922490600,
+          "bridge_divisor": 3825516746398278369522151471504
+        },
+        "source_solution": [
+          10922490600,
+          296467427,
+          18503786769221064
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 577266200
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1186190329,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          296547587
+        ],
+        "target_solution": [
+          296547587,
+          18513783162328090,
+          21960870540356617483041610
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1123759260,
+          "source_term": 5337856566,
+          "bridge_divisor": 5484162496020286415753874671320900
+        },
+        "source_solution": [
+          5337856566,
+          296547587,
+          18513783162328090
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 561879630
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1186717009,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          296679257
+        ],
+        "target_solution": [
+          296679257,
+          18530227410319030,
+          21990136048463615017381270
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1124258220,
+          "source_term": 5340226626,
+          "bridge_divisor": 5493909070129132152367744483992100
+        },
+        "source_solution": [
+          5340226626,
+          296679257,
+          18530227410319030
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 562129110
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1186867609,
+      "type_i_even_witness": {
+        "gap": 39,
+        "normal_form": [
+          4363484,
+          1,
+          68
+        ],
+        "target_solution": [
+          296716912,
+          9063036189572944,
+          2465145762560126444
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1038509158,
+          "source_term": 2077018316,
+          "bridge_divisor": 1462900828523109495663976198
+        },
+        "source_solution": [
+          2077018316,
+          296716912,
+          9063036189572944
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 519254579
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1187558089,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          17,
+          1,
+          17464090
+        ],
+        "target_solution": [
+          296889530,
+          11373340901226780,
+          794500175659200741907260
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 536316564,
+          "source_term": 244497260,
+          "bridge_divisor": 2069646024036263722670335486772196
+        },
+        "source_solution": [
+          244497260,
+          296889530,
+          11373340901226780
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 268158282
+      },
+      "normal_forms_checked_until_first_even_source": 25,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1187811529,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          26981,
+          1,
+          11006
+        ],
+        "target_solution": [
+          296952886,
+          23515471576429324,
+          1035245107607373918716
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1187151184,
+          "source_term": 533854221011,
+          "bridge_divisor": 2734475723742077184439268416
+        },
+        "source_solution": [
+          533854221011,
+          296952886,
+          23515471576429324
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 593575592
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1188532249,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          297133070
+        ],
+        "target_solution": [
+          297133070,
+          11392007620532500,
+          13539768437856630802592500
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1150192500,
+          "source_term": 8913992100,
+          "bridge_divisor": 2076445293702182658869138805062500
+        },
+        "source_solution": [
+          8913992100,
+          297133070,
+          11392007620532500
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 575096250
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1189822489,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          11440601,
+          1,
+          26
+        ],
+        "target_solution": [
+          297455626,
+          23821497628442956,
+          2477435722125227084
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 9787024,
+          "source_term": 2467049,
+          "bridge_divisor": 11693848057474257342449718976
+        },
+        "source_solution": [
+          2467049,
+          297455626,
+          23821497628442956
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 4893512
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1190881129,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          1011,
+          1,
+          294481
+        ],
+        "target_solution": [
+          297720291,
+          10129993636214364,
+          11932362273252005030996
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1149653824,
+          "source_term": 8302149776,
+          "bridge_divisor": 1967756555240784114141510470416
+        },
+        "source_solution": [
+          8302149776,
+          297720291,
+          10129993636214364
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 574826912
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1190992009,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          297748007
+        ],
+        "target_solution": [
+          297748007,
+          18663973543706530,
+          22228643346741889471118770
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1128308220,
+          "source_term": 5359464126,
+          "bridge_divisor": 5573502357213691092081795999492100
+        },
+        "source_solution": [
+          5359464126,
+          297748007,
+          18663973543706530
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 564154110
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1192203049,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          221,
+          1,
+          1348646
+        ],
+        "target_solution": [
+          298050766,
+          23689139856746988,
+          127793053237109422240572
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1111284304,
+          "source_term": 4093231227,
+          "bridge_divisor": 41363413950661652378064231931456
+        },
+        "source_solution": [
+          4093231227,
+          298050766,
+          23689139856746988
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 555642152
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1192581289,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          92077,
+          2,
+          1619
+        ],
+        "target_solution": [
+          298145326,
+          23705084223599751,
+          614056494004673377014
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 615537324,
+          "source_term": 318033954,
+          "bridge_divisor": 1417350376138555894303677212676
+        },
+        "source_solution": [
+          318033954,
+          298145326,
+          23705084223599751
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 307768662
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1192781209,
+      "type_i_even_witness": {
+        "gap": 79,
+        "normal_form": [
+          5054158,
+          1,
+          59
+        ],
+        "target_solution": [
+          298195322,
+          4521378518551306,
+          1067045259705821563
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1182672894,
+          "source_term": 34888850373,
+          "bridge_divisor": 43144119828123011127234226
+        },
+        "source_solution": [
+          34888850373,
+          298195322,
+          4521378518551306
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 591336447
+      },
+      "normal_forms_checked_until_first_even_source": 23,
+      "strict_reverse_lifts_checked_until_first_even_source": 2
+    },
+    {
+      "prime": 1192940809,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          2527417,
+          2,
+          59
+        ],
+        "target_solution": [
+          298235206,
+          23743588685516207,
+          22413947437295033278
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1192940588,
+          "source_term": 1609734507682154,
+          "bridge_divisor": 19815352642078947073444
+        },
+        "source_solution": [
+          1609734507682154,
+          298235206,
+          23743588685516207
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 596470294
+      },
+      "normal_forms_checked_until_first_even_source": 8,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1193205049,
+      "type_i_even_witness": {
+        "gap": 63,
+        "normal_form": [
+          9911,
+          1,
+          30098
+        ],
+        "target_solution": [
+          298301278,
+          5649802341217760,
+          680190967550504695840
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1185620416,
+          "source_term": 46630083040,
+          "bridge_divisor": 20635995436556636597460787264
+        },
+        "source_solution": [
+          46630083040,
+          298301278,
+          5649802341217760
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 592810208
+      },
+      "normal_forms_checked_until_first_even_source": 18,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1193257321,
+      "type_i_even_witness": {
+        "gap": 35,
+        "normal_form": [
+          4890399,
+          1,
+          61
+        ],
+        "target_solution": [
+          298314339,
+          10212132717604488,
+          2491760310008484152
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 250019968,
+          "source_term": 79072928,
+          "bridge_divisor": 9401285596789786153511904352
+        },
+        "source_solution": [
+          79072928,
+          298314339,
+          10212132717604488
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 125009984
+      },
+      "normal_forms_checked_until_first_even_source": 1,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1193945449,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          15101,
+          1,
+          19766
+        ],
+        "target_solution": [
+          298486366,
+          23758729714457420,
+          1878460182544037223580
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1192759504,
+          "source_term": 300201480955,
+          "bridge_divisor": 8911001846172842682026629696
+        },
+        "source_solution": [
+          300201480955,
+          298486366,
+          23758729714457420
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 596379752
+      },
+      "normal_forms_checked_until_first_even_source": 3,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1194833929,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1,
+          1,
+          298708490
+        ],
+        "target_solution": [
+          298708490,
+          11513130291324700,
+          13756278701072405915746300
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1156290900,
+          "source_term": 8961254700,
+          "bridge_divisor": 2120834595630065670817123904116900
+        },
+        "source_solution": [
+          8961254700,
+          298708490,
+          11513130291324700
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 578145450
+      },
+      "normal_forms_checked_until_first_even_source": 2,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1194983689,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          7286486
+        ],
+        "target_solution": [
+          298745926,
+          23799768064918932,
+          693666698525883337739028
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 757794544,
+          "source_term": 517826283,
+          "bridge_divisor": 1213054203374015692735607230997056
+        },
+        "source_solution": [
+          517826283,
+          298745926,
+          23799768064918932
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 378897272
+      },
+      "normal_forms_checked_until_first_even_source": 19,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1194992089,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          71711,
+          1,
+          4166
+        ],
+        "target_solution": [
+          298748026,
+          23801530079603920,
+          396628692267883932080
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1194742144,
+          "source_term": 1428021570080,
+          "bridge_divisor": 396541435383292408089841216
+        },
+        "source_solution": [
+          1428021570080,
+          298748026,
+          23801530079603920
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 597371072
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1195005289,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          102805,
+          1,
+          2906
+        ],
+        "target_solution": [
+          298751330,
+          11517423631492420,
+          133878528819483768916
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1194644976,
+          "source_term": 990532574619,
+          "bridge_divisor": 192952698845745685715000896
+        },
+        "source_solution": [
+          990532574619,
+          298751330,
+          11517423631492420
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 597322488
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1195860649,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          19661,
+          1,
+          15206
+        ],
+        "target_solution": [
+          298965166,
+          23835103693018764,
+          1449746328839617307676
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1194948304,
+          "source_term": 391571076171,
+          "bridge_divisor": 5290675258969714264629530176
+        },
+        "source_solution": [
+          391571076171,
+          298965166,
+          23835103693018764
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 597474152
+      },
+      "normal_forms_checked_until_first_even_source": 4,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1195957849,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          41,
+          1,
+          7292426
+        ],
+        "target_solution": [
+          298989466,
+          23838587392639116,
+          695364529299980380600524
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 758412304,
+          "source_term": 518248419,
+          "bridge_divisor": 1217014607784914443505802550436416
+        },
+        "source_solution": [
+          518248419,
+          298989466,
+          23838587392639116
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 379206152
+      },
+      "normal_forms_checked_until_first_even_source": 19,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1196515609,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          94751,
+          11,
+          287
+        ],
+        "target_solution": [
+          299128907,
+          18837630681233350,
+          2616697561117065499150
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1196515320,
+          "source_term": 1238450328032775,
+          "bridge_divisor": 3024903812300584504647280
+        },
+        "source_solution": [
+          1238450328032775,
+          299128907,
+          18837630681233350
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 598257660
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1196976169,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          1452641,
+          1,
+          206
+        ],
+        "target_solution": [
+          299244046,
+          23908179063157684,
+          19700339301165596756
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1182068788,
+          "source_term": 23728315652,
+          "bridge_divisor": 1174721856581905349090937316
+        },
+        "source_solution": [
+          23728315652,
+          299244046,
+          23908179063157684
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 591034394
+      },
+      "normal_forms_checked_until_first_even_source": 10,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1197458089,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          1,
+          1,
+          299364527
+        ],
+        "target_solution": [
+          299364527,
+          18867182879745970,
+          22592660755994126041651330
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1134433980,
+          "source_term": 5388561486,
+          "bridge_divisor": 5695529256343186170472233635124100
+        },
+        "source_solution": [
+          5388561486,
+          299364527,
+          18867182879745970
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 567216990
+      },
+      "normal_forms_checked_until_first_even_source": 5,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1198153609,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          311,
+          1,
+          963146
+        ],
+        "target_solution": [
+          299538406,
+          23926207689296768,
+          92177723770464544216192
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1140364864,
+          "source_term": 5910892672,
+          "bridge_divisor": 21307339894608622641280355830336
+        },
+        "source_solution": [
+          5910892672,
+          299538406,
+          23926207689296768
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 570182432
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1198289689,
+      "type_i_even_witness": {
+        "gap": 31,
+        "normal_form": [
+          1130462,
+          5,
+          53
+        ],
+        "target_solution": [
+          299572430,
+          11582009194430542,
+          61384647142448462245
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 759985520,
+          "source_term": 519435404,
+          "bridge_divisor": 107620587021427074290895700900
+        },
+        "source_solution": [
+          519435404,
+          299572430,
+          11582009194430542
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 379992760
+      },
+      "normal_forms_checked_until_first_even_source": 18,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1198793929,
+      "type_i_even_witness": {
+        "gap": 19,
+        "normal_form": [
+          28589,
+          1,
+          10483
+        ],
+        "target_solution": [
+          299698487,
+          18909752359270014,
+          792923723361653770854
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1197997240,
+          "source_term": 450662622885,
+          "bridge_divisor": 2526854434401242142462365584
+        },
+        "source_solution": [
+          450662622885,
+          299698487,
+          18909752359270014
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 598998620
+      },
+      "normal_forms_checked_until_first_even_source": 7,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    },
+    {
+      "prime": 1199603689,
+      "type_i_even_witness": {
+        "gap": 15,
+        "normal_form": [
+          357877,
+          2,
+          419
+        ],
+        "target_solution": [
+          299900926,
+          23987728065730871,
+          160813726941824075494
+        ],
+        "reverse_two_tail_lift": {
+          "source_denominator": 1199603640,
+          "source_term": 7341751295338485,
+          "bridge_divisor": 31520929529549400624784
+        },
+        "source_solution": [
+          7341751295338485,
+          299900926,
+          23987728065730871
+        ],
+        "terminal_prime": 2,
+        "scaling_multiplier": 599801820
+      },
+      "normal_forms_checked_until_first_even_source": 9,
+      "strict_reverse_lifts_checked_until_first_even_source": 1
+    }
+  ]
+}
