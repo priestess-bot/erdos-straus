@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-private-quotient-box-saturation
 title: Type I 多私有因子商群指数盒的饱和判据
-statement: 设 x=E 乘积 r_i^{b_i}，其中 r_i 为互异私有素数且 gcd(E,乘积 r_i)=1。若固定因子的平方除子残数 J=Pi_m(E^2) 已是子群，令 H=<J,r_1,...,r_k>、Q=H/J，并令 S_i={r_i^j J:0<=j<=2b_i}。则 x^2 的除子残数在 Q 中恰为 S_1...S_k；若该乘积集等于 Q 且目标 t=-1/4 属于 H，则必有 Type I 目标证书。更一般地，令 T 为乘积集稳定子群，Kneser 不等式 sum_i |S_iT|-(k-1)|T| >= |Q| 是饱和的充分条件。该判据严格推广一私有因子的三余类饱和，不证明全称混合终端选择器。
+statement: 设 x=E 乘积 r_i^{b_i}，其中 r_i 为互异私有素数且 gcd(E,乘积 r_i)=1。若固定因子的平方除子残数 J=Pi_m(E^2) 已是子群，令 H=<J,r_1,...,r_k>、Q=H/J，并令 S_i={r_i^j J:0<=j<=2b_i}。则 x^2 的除子残数在 Q 中恰为 S_1...S_k；若该乘积集等于 Q 且目标 t=-1/4 属于 H，则必有 Type I 目标证书。更一般地，令 T 为乘积集稳定子群，Kneser 不等式 sum_i |S_iT|-(k-1)|T| >= |Q| 是饱和的充分条件；在中心化盒中，命中条件可精确降到 Q/T，且 T 非平凡时严格降低有限群阶。该判据严格推广一私有因子的三余类饱和，不证明全称混合终端选择器。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -230,6 +230,56 @@ $$
 后者处理 \(e\mid x^2\) 的 Type I 目标除子。两者共同保留了“固定层缺陷”和“私有盒缺陷”
 这两个可递降的状态量。
 
+## 稳定子群商的精确递降
+
+对中心化私有盒 \(B^{\pm}\) 令
+
+$$
+T^{\pm}=\operatorname{Stab}_Q(B^{\pm}),
+\qquad
+\pi:Q\longrightarrow Q/T^{\pm}. \tag{26}
+$$
+
+由于 \(1\in B^{\pm}\)，有
+
+$$
+T^{\pm}\subseteq B^{\pm},
+\qquad
+B^{\pm}T^{\pm}=B^{\pm}. \tag{27}
+$$
+
+从而对任意 \(y\in Q\) 有精确等价
+
+$$
+\boxed{
+y\in B^{\pm}
+\quad\Longleftrightarrow\quad
+\pi(y)\in\pi(B^{\pm}).
+} \tag{28}
+$$
+
+并且
+
+$$
+\pi(B^{\pm})=\pi(S_1^{\pm})\cdots\pi(S_k^{\pm}),
+\qquad
+\operatorname{Stab}_{Q/T^{\pm}}\bigl(\pi(B^{\pm})\bigr)=\{1\}. \tag{29}
+$$
+
+因此 \(-1\) 是否命中在商群中完全保真：
+
+$$
+-1\in B^{\pm}
+\quad\Longleftrightarrow\quad
+-T^{\pm}\in\pi(B^{\pm}). \tag{30}
+$$
+
+若 \(T^{\pm}\ne\{1\}\)，(26)--(30) 给出严格更小的有限群子问题；若
+\(T^{\pm}=\{1\}\)，则原盒已经是无周期的，Kneser 的无周期增长界可直接施加。
+这是一种商群层面的严格递降，不等同于把素数 \(p\) 或模数 \(R\) 变小；要完成全称
+混合终端引理，还需证明该商群递降能够被提升为另一条可用的线性源状态，或排除所有
+无周期缺陷盒。
+
 ## 证明
 
 任意 \(d\mid x^2\) 可唯一写成
@@ -249,6 +299,12 @@ $$
 即可得到 \(t\in\Pi_m(x^2)\)，证明 (8)。Kneser 的多因子形式直接应用于
 \(S_1,\ldots,S_k\) 得到 (10)；若右端达到 \(|Q|\)，而 \(B\subseteq Q\)，则
 必有 \(B=Q\)。式 (12)--(13) 是相应的无周期化简和循环子群指数段大小公式。证毕。
+
+**商群递降证明。** 对 (26)--(30)，盒 B^± 包含单位元且 T^± 稳定盒，所以得到 (27)。若某个元素的
+商类属于 π(B^±)，可写成 y=bt，其中 b∈B^±、t∈T^±；由 (27) 即有
+y∈B^±，故 (28) 成立。积集投影给出 (29) 的第一式。若商群中某个商类稳定
+π(B^±)，则 B^±uT^±=B^±；两边基数相同且 B^±u⊆B^±，故 B^±u=B^±，
+即 u∈T^±，得到 (29) 的平凡稳定子群。最后令 y=-1 即得 (30)。
 
 ## 对混合终端目标的作用
 
