@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 301 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 230 |
+| 数学状态 | `established` | 231 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 71 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 59 |
+| 证明来源 | `repository_derivation` | 60 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 124 |
+| 审阅状态 | `internal_review` | 125 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -342,6 +342,7 @@
 | [五千万前缀的Type I八移位闭合](../claims/type-I-multitier-short-shift-closure-50m.md) (`type-I-multitier-short-shift-closure-50m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [千万前缀的Type I多层短源闭合](../claims/type-I-multitier-short-source-closure-10m.md) (`type-I-multitier-short-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [百万前缀的Type I多层短源闭合](../claims/type-I-multitier-short-source-closure-1m.md) (`type-I-multitier-short-source-closure-1m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [Type I 偶源桥的二进截断半密度判据](../claims/type-I-normal-even-source-parity-truncated-density-criterion.md) (`type-I-normal-even-source-parity-truncated-density-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [Type I 偶源桥比二除子残数的半密度入口引理](../claims/type-I-normal-even-source-ratio-two-density-criterion.md) (`type-I-normal-even-source-ratio-two-density-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [Type I 偶源桥的比二普通除子对等价](../claims/type-I-normal-even-source-ratio-two-pair.md) (`type-I-normal-even-source-ratio-two-pair`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [Type I 正规形最大尾的偶源反向选择器](../claims/type-I-normal-even-source-selector.md) (`type-I-normal-even-source-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
