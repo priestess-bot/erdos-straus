@@ -67,7 +67,7 @@ a=u/g,\qquad b=v/g.
 因为 \((g,R)=1\)，约去 \(g\) 保持同余，且
 
 \[
-(a,b)=1,\qquad a,b\mid L,\qquad a\equiv2\pmod R. \tag{4}
+(a,b)=1,\qquad a,b\mid L,\qquad a\equiv2b\pmod R. \tag{4}
 \]
 
 于是定义
