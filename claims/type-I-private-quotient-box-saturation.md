@@ -280,6 +280,49 @@ $$
 混合终端引理，还需证明该商群递降能够被提升为另一条可用的线性源状态，或排除所有
 无周期缺陷盒。
 
+## 素数阶无周期商的显式预算
+
+若稳定子群商 Q/T^± 为奇素数阶循环群 C_ell，令
+
+$$
+\overline S_i=\pi(S_i^{\pm}),
+\qquad
+\overline B=\pi(B^{\pm}),
+\qquad
+\ell=|Q/T^{\pm}|. \tag{31}
+$$
+
+则素数阶循环群中的 Kneser（等价于 Cauchy--Davenport）给出
+
+$$
+|\overline B|
+\ge
+\min\left\{\ell,\sum_i|\overline S_i|-(k-1)\right\},
+\qquad
+|\overline S_i|=\min\{2b_i+1,\operatorname{ord}(\pi(q_iJ))\}. \tag{32}
+$$
+
+所以
+
+$$
+\sum_i|\overline S_i|\ge\ell+k-1
+\quad\Longrightarrow\quad
+\overline B=Q/T^{\pm}. \tag{33}
+$$
+
+特别地，在所有非平凡方向都未绕满 C_ell 时，若记
+\(I=\{i:\pi(q_iJ)\ne1\}\)，则
+
+$$
+2\sum_{i\in I}b_i\ge\ell-1
+\quad\Longrightarrow\quad
+\overline B=Q/T^{\pm};
+\qquad
+\text{F 型未命中}\Longrightarrow 2\sum_{i\in I}b_i\le\ell-2. \tag{34}
+$$
+
+这给出了无周期商中的显式总指数预算；它仍是单状态条件，不自动产生跨模数的源下降。
+
 ## 证明
 
 任意 \(d\mid x^2\) 可唯一写成
@@ -299,6 +342,11 @@ $$
 即可得到 \(t\in\Pi_m(x^2)\)，证明 (8)。Kneser 的多因子形式直接应用于
 \(S_1,\ldots,S_k\) 得到 (10)；若右端达到 \(|Q|\)，而 \(B\subseteq Q\)，则
 必有 \(B=Q\)。式 (12)--(13) 是相应的无周期化简和循环子群指数段大小公式。证毕。
+
+素数阶商中的多项积集不等式给出 (32)；每个方向的阶在 C_ell 中只能是 1 或 ell，
+所以 (32) 的大小公式成立。若某个方向已经绕满，盒立即等于整个商群；否则对
+I 中的每个方向有 |overline S_i|=2b_i+1，而其余方向贡献 1。代入 (33) 得到 (34)；
+F 型未命中取其逆否命题即可。
 
 **商群递降证明。** 对 (26)--(30)，盒 B^± 包含单位元且 T^± 稳定盒，所以得到 (27)。若某个元素的
 商类属于 π(B^±)，可写成 y=bt，其中 b∈B^±、t∈T^±；由 (27) 即有
