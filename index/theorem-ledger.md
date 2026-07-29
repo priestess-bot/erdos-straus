@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 300 |
+| 数学状态 | `computationally_reproduced` | 301 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 228 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 70 |
+| 证明来源 | `computational_reproduction` | 71 |
 | 证明来源 | `mixed` | 7 |
 | 证明来源 | `repository_derivation` | 57 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 121 |
+| 审阅状态 | `internal_review` | 122 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -333,6 +333,7 @@
 | [一亿以内无缺口上界的混合终端全审计](../claims/type-I-mixed-terminal-full-gap-audit-100m.md) (`type-I-mixed-terminal-full-gap-audit-100m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-29 |
 | [一千万以内无缺口上界的混合终端全审计](../claims/type-I-mixed-terminal-full-gap-audit-10m.md) (`type-I-mixed-terminal-full-gap-audit-10m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-29 |
 | [六亿稀疏尾遗漏族的混合终端闭合](../claims/type-I-mixed-terminal-sparse-tail-600m.md) (`type-I-mixed-terminal-sparse-tail-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-27 |
+| [五亿至十二亿首选偶桥的平方剩余层边界](../claims/type-I-mixed-terminal-surplus-layer-profile-1p2b.md) (`type-I-mixed-terminal-surplus-layer-profile-1p2b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [Type I 自适应一私有因子逃逸可达二十三窗口但在九十五缺口闭合](../claims/type-I-moving-window-adaptive-conditional-escape.md) (`type-I-moving-window-adaptive-conditional-escape`) | `conditional` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 移动窗口失败的有限碰撞--私有因子分解](../claims/type-I-moving-window-finite-collision-reduction.md) (`type-I-moving-window-finite-collision-reduction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 前八个移动缺口的一私有素因子条件逃逸](../claims/type-I-moving-window-one-private-prime-conditional-escape.md) (`type-I-moving-window-one-private-prime-conditional-escape`) | `conditional` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
