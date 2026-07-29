@@ -33,6 +33,17 @@ class TypeIMixedTerminalSurplusLayerProfileTests(unittest.TestCase):
             self.actual["category_counts"],
             {"S=1": 63, "multi-prime-support": 1_227, "single-prime-power": 359},
         )
+        self.assertEqual(self.actual["side_counts"], {"small-side": 1_383, "large-side": 266})
+        self.assertEqual(
+            self.actual["side_category_counts"],
+            {
+                "large-side:multi-prime-support": 213,
+                "large-side:single-prime-power": 53,
+                "small-side:S=1": 63,
+                "small-side:multi-prime-support": 1_014,
+                "small-side:single-prime-power": 306,
+            },
+        )
         self.assertEqual(
             self.actual["support_histogram"],
             {"0": 63, "1": 359, "2": 614, "3": 444, "4": 149, "5": 19, "6": 1},

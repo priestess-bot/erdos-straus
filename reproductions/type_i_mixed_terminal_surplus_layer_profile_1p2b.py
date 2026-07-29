@@ -49,6 +49,7 @@ def audit_interval(path: Path) -> dict[str, object]:
     payload = json.loads(path.read_text(encoding="utf-8"))
     rows: list[tuple[int, ...]] = []
     categories: Counter[str] = Counter()
+    side_categories: Counter[tuple[str, str]] = Counter()
     support_histogram: Counter[int] = Counter()
     exponent_histogram: Counter[int] = Counter()
     surplus_values: set[int] = set()
@@ -69,7 +70,9 @@ def audit_interval(path: Path) -> dict[str, object]:
         surplus = E // math.gcd(E, 4 * K)
         factors = sympy.factorint(surplus)
         category = classify_surplus(surplus)
+        side = "small-side" if E < 2 * K else "large-side"
         categories[category] += 1
+        side_categories[(side, category)] += 1
         support_histogram[len(factors)] += 1
         if len(factors) == 1:
             exponent_histogram[next(iter(factors.values()))] += 1
@@ -79,6 +82,14 @@ def audit_interval(path: Path) -> dict[str, object]:
         "prime_interval": payload["prime_interval"],
         "record_count": len(rows),
         "category_counts": dict(sorted(categories.items())),
+        "side_counts": {
+            side: sum(count for (record_side, _), count in side_categories.items() if record_side == side)
+            for side in ("small-side", "large-side")
+        },
+        "side_category_counts": {
+            f"{side}:{category}": count
+            for (side, category), count in sorted(side_categories.items())
+        },
         "support_histogram": {
             str(key): value for key, value in sorted(support_histogram.items())
         },
@@ -108,6 +119,21 @@ def run_audit(paths: tuple[Path, ...] = INTERVALS) -> dict[str, object]:
         "category_counts": {
             category: sum(int(profile["category_counts"].get(category, 0)) for profile in profiles)
             for category in ("S=1", "single-prime-power", "multi-prime-support")
+        },
+        "side_counts": {
+            side: sum(int(profile["side_counts"].get(side, 0)) for profile in profiles)
+            for side in ("small-side", "large-side")
+        },
+        "side_category_counts": {
+            f"{side}:{category}": sum(
+                int(profile["side_category_counts"].get(f"{side}:{category}", 0))
+                for profile in profiles
+            )
+            for side in ("small-side", "large-side")
+            for category in ("S=1", "multi-prime-support", "single-prime-power")
+            if any(
+                f"{side}:{category}" in profile["side_category_counts"] for profile in profiles
+            )
         },
         "support_histogram": {
             str(support): sum(
