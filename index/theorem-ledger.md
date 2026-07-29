@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 301 |
 | 数学状态 | `conditional` | 12 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 239 |
+| 数学状态 | `established` | 240 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 71 |
 | 证明来源 | `mixed` | 7 |
-| 证明来源 | `repository_derivation` | 68 |
+| 证明来源 | `repository_derivation` | 69 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 133 |
+| 审阅状态 | `internal_review` | 134 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -375,6 +375,7 @@
 | [五亿 p减一遗漏经四缺口扩展的上半区 B 等于一状态闭合](../claims/type-I-pminusone-miss-upper-b1-gap-extension-500m.md) (`type-I-pminusone-miss-upper-b1-gap-extension-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿p减一遗漏经上半区源重选的B不大于三闭合](../claims/type-I-pminusone-miss-upper-b3-reselection-profile-500m.md) (`type-I-pminusone-miss-upper-b3-reselection-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿 p减一桥遗漏的最短上半区源剖面](../claims/type-I-pminusone-miss-upper-half-profile-500m.md) (`type-I-pminusone-miss-upper-half-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [Type I 多私有因子商群指数盒的饱和判据](../claims/type-I-private-quotient-box-saturation.md) (`type-I-private-quotient-box-saturation`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-29 |
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [来自七 p 加一五模七因子的 R 等于七 B 等于一上半区桥](../claims/type-I-seven-p-plus-one-r7-b1-upper-bridge.md) (`type-I-seven-p-plus-one-r7-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
