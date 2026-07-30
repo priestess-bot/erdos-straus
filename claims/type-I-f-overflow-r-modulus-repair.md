@@ -189,6 +189,11 @@ M_m=\gcd(m,4D_m+1).
 \(D_m\mid((p+m')/4)^2\)，才得到直接证书。若所有候选均失败，\((g_R,M_m)\)
 是带模数标签的失败对象，可接入跨状态容量或良基下降。
 
+在冻结审计中，对每个一级候选实际枚举了 \(M_m\) 的全部合法因子。只有 13 个一级
+候选产生非平凡 \(M_m\)，共得到 2 个二级候选缺口，且 0 个通过新的平方整除检查。
+因此二级修复不会把当前样本直接闭合，但它把失败链限制为可枚举的
+\((g_R,M_m,\delta_{q,m})\) 三元标签。
+
 ## 冻结审计
 
 对有理缺口分母桥中的 253 个半径六见证同时审计正向和反向见证：
@@ -213,6 +218,9 @@ reverse_candidate_gap_count: 122
 reverse_direct_square_hit_count: 0
 reverse_square_deficit_layers: 1468
 reverse_deficient_q_coordinate_count: 460
+second_repair_modulus_nontrivial_count: 13
+second_repair_gap_candidate_count: 2
+second_repair_square_hit_count: 0
 ~~~
 
 结果文件：
@@ -224,7 +232,7 @@ reproductions/type-i-f-overflow-r-modulus-repair-results.json
 结果文件 SHA-256：
 
 ~~~text
-eb261d60a8a3395b4a28b69818ec3e5650a5b272428cf5df4d23b95becff348f
+c28a8a9198ce2c211b9d46b6c5c019e9da1b0247ac92e50ccf351aeff1a041fc
 ~~~
 
 这条分支在冻结样本中没有直接平方命中，但产生了 149 个经过严格同余和状态重构

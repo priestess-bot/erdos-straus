@@ -51,6 +51,14 @@ def valuation(value: int, prime: int) -> int:
     return count
 
 
+def admissible_gaps(modulus: int, prime: int) -> list[int]:
+    return [
+        value
+        for value in divisors(modulus)
+        if value % 4 == 3 and 3 <= value <= prime - 2
+    ]
+
+
 def audit_orientation(
     row: dict[str, object], source_row: dict[str, object], orientation: str
 ) -> dict[str, object]:
@@ -102,6 +110,14 @@ def audit_orientation(
                 square_deficits[str(q)] = deficit
         if square_hit != (not square_deficits):
             raise AssertionError("square-divisibility and q-adic deficit disagree")
+        repair_divisor = math.gcd(target_divisor, first_denominator * first_denominator)
+        second_repair_modulus = math.gcd(gap, 4 * repair_divisor + 1)
+        second_repair_gaps = admissible_gaps(second_repair_modulus, prime)
+        second_repair_square_hits: list[int] = []
+        for second_gap in second_repair_gaps:
+            second_x = (prime + second_gap) // 4
+            if second_x * second_x % repair_divisor == 0:
+                second_repair_square_hits.append(second_gap)
         candidates.append(
             {
                 "gap": gap,
@@ -111,6 +127,10 @@ def audit_orientation(
                 "square_deficits": square_deficits,
                 "square_deficit_layers": sum(square_deficits.values()),
                 "deficient_q_coordinate_count": len(square_deficits),
+                "repair_divisor": repair_divisor,
+                "second_repair_modulus": second_repair_modulus,
+                "second_repair_gaps": second_repair_gaps,
+                "second_repair_square_hits": second_repair_square_hits,
                 "repaired_R": repaired_R,
                 "repaired_K": repaired_K,
             }
@@ -132,6 +152,15 @@ def audit_orientation(
         ),
         "deficient_q_coordinate_count": sum(
             int(candidate["deficient_q_coordinate_count"]) for candidate in candidates
+        ),
+        "second_repair_modulus_nontrivial_count": sum(
+            int(candidate["second_repair_modulus"] > 1) for candidate in candidates
+        ),
+        "second_repair_gap_candidate_count": sum(
+            len(candidate["second_repair_gaps"]) for candidate in candidates
+        ),
+        "second_repair_square_hit_count": sum(
+            len(candidate["second_repair_square_hits"]) for candidate in candidates
         ),
         "candidates": candidates,
     }
@@ -212,6 +241,21 @@ def run() -> dict[str, object]:
             ),
             default=0,
         ),
+        "second_repair_modulus_nontrivial_count": sum(
+            int(candidate["second_repair_modulus"] > 1)
+            for row in records
+            for candidate in row["candidates"]
+        ),
+        "second_repair_gap_candidate_count": sum(
+            len(candidate["second_repair_gaps"])
+            for row in records
+            for candidate in row["candidates"]
+        ),
+        "second_repair_square_hit_count": sum(
+            len(candidate["second_repair_square_hits"])
+            for row in records
+            for candidate in row["candidates"]
+        ),
         "by_orientation": {
             orientation: {
                 "record_count": len(rows),
@@ -226,6 +270,21 @@ def run() -> dict[str, object]:
                 "square_deficit_layers": sum(int(row["square_deficit_layers"]) for row in rows),
                 "deficient_q_coordinate_count": sum(
                     int(row["deficient_q_coordinate_count"]) for row in rows
+                ),
+                "second_repair_modulus_nontrivial_count": sum(
+                    int(candidate["second_repair_modulus"] > 1)
+                    for row in rows
+                    for candidate in row["candidates"]
+                ),
+                "second_repair_gap_candidate_count": sum(
+                    len(candidate["second_repair_gaps"])
+                    for row in rows
+                    for candidate in row["candidates"]
+                ),
+                "second_repair_square_hit_count": sum(
+                    len(candidate["second_repair_square_hits"])
+                    for row in rows
+                    for candidate in row["candidates"]
                 ),
             }
             for orientation, rows in by_orientation.items()
@@ -257,6 +316,9 @@ def main() -> int:
                     "square_deficit_layers",
                     "deficient_q_coordinate_count",
                     "maximum_square_deficit",
+                    "second_repair_modulus_nontrivial_count",
+                    "second_repair_gap_candidate_count",
+                    "second_repair_square_hit_count",
                     "by_orientation",
                 )
             },

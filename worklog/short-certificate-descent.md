@@ -1899,11 +1899,18 @@ candidate_gap_count: 149
 direct_square_hit_count: 0
 square_deficit_layers: 1736
 deficient_q_coordinate_count: 581
+second_repair_modulus_nontrivial_count: 13
+second_repair_gap_candidate_count: 2
+second_repair_square_hit_count: 0
 forward: nontrivial 33, candidates 27, square hits 0
 reverse: nontrivial 105, candidates 122, square hits 0
 ~~~
 
 结果文件 reproductions/type-i-f-overflow-r-modulus-repair-results.json 的 SHA-256 为
-eb261d60a8a3395b4a28b69818ec3e5650a5b272428cf5df4d23b95becff348f。
+c28a8a9198ce2c211b9d46b6c5c019e9da1b0247ac92e50ccf351aeff1a041fc。
 这条分支新增了“新合法状态或带 \(R\)-因子失败标签”的状态出口，但 \(R_m\) 未必更小，
 所以仍需证明其良基下降或跨状态容量约束。
+
+在 149 个一级候选上继续应用 \(M_m=\gcd(m,4D_m+1)\) 的二级修复，只得到 2 个候选
+缺口，且 0 个通过平方整除；这条失败链目前已经被压缩为
+\((g_R,M_m,\delta_{q,m})\) 的有限标签。
