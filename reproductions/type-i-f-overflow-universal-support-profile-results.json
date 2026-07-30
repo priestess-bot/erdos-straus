@@ -1,0 +1,7115 @@
+{
+  "arithmetic": "For every universal height-gap state, reuse the first capped target-affine witness and classify the number, signs, and active/inactive support of its overflow coordinates.",
+  "scope_note": "Finite profile only. The witness search is capped by the upstream radius-six audit; the profile does not prove that a larger-radius witness cannot have a different support. It does prove that every saved universal-gap witness in this frozen input is at least two-coordinate and therefore cannot be closed by a single-q bridge on this evidence.",
+  "assignment_input": "type-i-f-overflow-all-assignment-height-upper-bound-results.json",
+  "assignment_input_sha256": "62fb9fc0f59bb011ad39276c3cd450ee1fe93fbafba7e7fc5f3800517f0bd3c5",
+  "support_input": "type-i-f-overflow-support-boundary-results.json",
+  "support_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "universal_gap_state_count": 165,
+  "single_coordinate_count": 0,
+  "support_size_histogram": {
+    "2": 22,
+    "3": 55,
+    "4": 56,
+    "5": 25,
+    "6": 7
+  },
+  "sign_class_counts": {
+    "all_negative": 49,
+    "all_positive": 2,
+    "mixed": 114
+  },
+  "active_support_class_counts": {
+    "all_active": 13,
+    "has_inactive": 152
+  },
+  "total_excess": 1512,
+  "universal_unsupported_excess": 1348,
+  "minimum_total_excess": 3,
+  "maximum_total_excess": 23,
+  "total_excess_histogram": {
+    "3": 2,
+    "4": 11,
+    "5": 32,
+    "6": 16,
+    "7": 19,
+    "8": 9,
+    "9": 17,
+    "10": 12,
+    "11": 9,
+    "12": 6,
+    "13": 2,
+    "14": 5,
+    "15": 5,
+    "16": 2,
+    "17": 3,
+    "18": 3,
+    "19": 4,
+    "20": 2,
+    "21": 1,
+    "22": 3,
+    "23": 2
+  },
+  "records": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 5,
+      "universal_unsupported_excess": 5,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        151,
+        15287
+      ],
+      "witness_exponents": [
+        -3,
+        -4
+      ],
+      "factorization": [
+        [
+          151,
+          1
+        ],
+        [
+          15287,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 5,
+      "universal_unsupported_excess": 5,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        151,
+        398417
+      ],
+      "witness_exponents": [
+        -3,
+        -4
+      ],
+      "factorization": [
+        [
+          151,
+          1
+        ],
+        [
+          398417,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        107,
+        13829
+      ],
+      "witness_exponents": [
+        -4,
+        1,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          13829,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "witness_radius": 4,
+      "overflow_support_size": 3,
+      "total_excess": 10,
+      "universal_unsupported_excess": 10,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        139,
+        765439
+      ],
+      "witness_exponents": [
+        -4,
+        0,
+        -4,
+        5
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          765439,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 33051,
+      "witness_radius": 6,
+      "overflow_support_size": 4,
+      "total_excess": 20,
+      "universal_unsupported_excess": 20,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        389,
+        1181,
+        4507
+      ],
+      "witness_exponents": [
+        -1,
+        5,
+        -7,
+        6,
+        -6
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1181,
+          1
+        ],
+        [
+          4507,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 5075,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        23,
+        113,
+        331
+      ],
+      "witness_exponents": [
+        -3,
+        3,
+        -2,
+        -3,
+        0
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          331,
+          1
+        ],
+        [
+          7867,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "witness_radius": 4,
+      "overflow_support_size": 5,
+      "total_excess": 12,
+      "universal_unsupported_excess": 11,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        163,
+        359,
+        180751
+      ],
+      "witness_exponents": [
+        2,
+        3,
+        -5,
+        3,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          359,
+          1
+        ],
+        [
+          180751,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 24738289,
+      "R": 123,
+      "witness_radius": 4,
+      "overflow_support_size": 3,
+      "total_excess": 11,
+      "universal_unsupported_excess": 11,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        83,
+        349,
+        26261
+      ],
+      "witness_exponents": [
+        -4,
+        -5,
+        -5
+      ],
+      "factorization": [
+        [
+          83,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          26261,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 25073689,
+      "R": 139,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        487,
+        162649
+      ],
+      "witness_exponents": [
+        -4,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          487,
+          1
+        ],
+        [
+          162649,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 30997849,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        1301,
+        69493
+      ],
+      "witness_exponents": [
+        -3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          1301,
+          1
+        ],
+        [
+          69493,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 30997849,
+      "R": 14867,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        17,
+        163,
+        937,
+        2113
+      ],
+      "witness_exponents": [
+        0,
+        1,
+        -2,
+        -3,
+        2,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          937,
+          1
+        ],
+        [
+          2113,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 36583369,
+      "R": 859,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        17,
+        43,
+        379,
+        4051
+      ],
+      "witness_exponents": [
+        -1,
+        3,
+        -3,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          379,
+          1
+        ],
+        [
+          4051,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 36583369,
+      "R": 1315,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 10,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        107,
+        1973,
+        5179
+      ],
+      "witness_exponents": [
+        3,
+        -4,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          1973,
+          1
+        ],
+        [
+          5179,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 37793809,
+      "R": 15307,
+      "witness_radius": 5,
+      "overflow_support_size": 4,
+      "total_excess": 17,
+      "universal_unsupported_excess": 17,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        11,
+        179,
+        22961
+      ],
+      "witness_exponents": [
+        -5,
+        5,
+        -6,
+        0,
+        -5
+      ],
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          179,
+          1
+        ],
+        [
+          457,
+          1
+        ],
+        [
+          22961,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 38333689,
+      "R": 2723,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 10,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        29,
+        353,
+        2861
+      ],
+      "witness_exponents": [
+        -1,
+        4,
+        -4,
+        3,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          353,
+          1
+        ],
+        [
+          2861,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 42486889,
+      "R": 8051,
+      "witness_radius": 4,
+      "overflow_support_size": 3,
+      "total_excess": 9,
+      "universal_unsupported_excess": 9,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        472057
+      ],
+      "witness_exponents": [
+        -3,
+        0,
+        -5,
+        -1,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          929,
+          1
+        ],
+        [
+          472057,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 48825529,
+      "R": 419,
+      "witness_radius": 5,
+      "overflow_support_size": 3,
+      "total_excess": 14,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        613,
+        309013
+      ],
+      "witness_exponents": [
+        8,
+        -5,
+        6
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          613,
+          1
+        ],
+        [
+          309013,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 48991849,
+      "R": 139,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        401,
+        326581
+      ],
+      "witness_exponents": [
+        -2,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          401,
+          1
+        ],
+        [
+          326581,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 48991849,
+      "R": 7931,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        11897,
+        28649
+      ],
+      "witness_exponents": [
+        0,
+        -3,
+        -1,
+        2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          11897,
+          1
+        ],
+        [
+          28649,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 48991849,
+      "R": 8291,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        59,
+        89,
+        12517
+      ],
+      "witness_exponents": [
+        0,
+        3,
+        2,
+        -3,
+        1,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          12517,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 50290249,
+      "R": 9155,
+      "witness_radius": 5,
+      "overflow_support_size": 2,
+      "total_excess": 10,
+      "universal_unsupported_excess": 10,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        443
+      ],
+      "witness_exponents": [
+        -7,
+        0,
+        -6,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          443,
+          1
+        ],
+        [
+          931267,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 50290249,
+      "R": 540755,
+      "witness_radius": 3,
+      "overflow_support_size": 5,
+      "total_excess": 14,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        443,
+        499,
+        509,
+        1831
+      ],
+      "witness_exponents": [
+        0,
+        4,
+        4,
+        -4,
+        -3,
+        4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          443,
+          1
+        ],
+        [
+          499,
+          1
+        ],
+        [
+          509,
+          1
+        ],
+        [
+          1831,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 51029449,
+      "R": 1259,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        1889
+      ],
+      "witness_exponents": [
+        -4,
+        0,
+        -4,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          1031,
+          1
+        ],
+        [
+          1889,
+          1
+        ],
+        [
+          2749,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 51029449,
+      "R": 16371,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        71,
+        1889
+      ],
+      "witness_exponents": [
+        0,
+        0,
+        -4,
+        -4,
+        -1
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          1889,
+          1
+        ],
+        [
+          23957,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 53712409,
+      "R": 17035,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        59,
+        71,
+        2137
+      ],
+      "witness_exponents": [
+        1,
+        -1,
+        2,
+        -3,
+        0,
+        -3
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          2137,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 34227,
+      "witness_radius": 6,
+      "overflow_support_size": 5,
+      "total_excess": 22,
+      "universal_unsupported_excess": 21,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        53,
+        61,
+        269,
+        51341
+      ],
+      "witness_exponents": [
+        -7,
+        5,
+        -6,
+        2,
+        -7
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          269,
+          1
+        ],
+        [
+          51341,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 58757449,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 7,
+      "universal_unsupported_excess": 7,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        2417,
+        164093
+      ],
+      "witness_exponents": [
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          2417,
+          1
+        ],
+        [
+          164093,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 62588089,
+      "R": 150091,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        97,
+        103,
+        4051
+      ],
+      "witness_exponents": [
+        -1,
+        3,
+        2,
+        -2,
+        1,
+        2
+      ],
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          211,
+          1
+        ],
+        [
+          4051,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 62704849,
+      "R": 1947,
+      "witness_radius": 6,
+      "overflow_support_size": 3,
+      "total_excess": 15,
+      "universal_unsupported_excess": 15,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        53,
+        349,
+        1650083
+      ],
+      "witness_exponents": [
+        7,
+        -7,
+        -4
+      ],
+      "factorization": [
+        [
+          53,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          1650083,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 62704849,
+      "R": 150371,
+      "witness_radius": 5,
+      "overflow_support_size": 5,
+      "total_excess": 18,
+      "universal_unsupported_excess": 17,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        59,
+        3823,
+        696719
+      ],
+      "witness_exponents": [
+        2,
+        -6,
+        -6,
+        4,
+        -5
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          3823,
+          1
+        ],
+        [
+          696719,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 75056809,
+      "R": 63339,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 11,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        37,
+        347,
+        51059
+      ],
+      "witness_exponents": [
+        6,
+        4,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          37,
+          2
+        ],
+        [
+          347,
+          1
+        ],
+        [
+          51059,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        53,
+        4364681
+      ],
+      "witness_exponents": [
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          4364681,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 1571,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        79,
+        97,
+        10037
+      ],
+      "witness_exponents": [
+        1,
+        3,
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          10037,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 6611,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        17,
+        929,
+        184447
+      ],
+      "witness_exponents": [
+        4,
+        -3,
+        -3,
+        3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          929,
+          1
+        ],
+        [
+          184447,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 45347,
+      "witness_radius": 6,
+      "overflow_support_size": 4,
+      "total_excess": 19,
+      "universal_unsupported_excess": 19,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        251,
+        271,
+        1468739
+      ],
+      "witness_exponents": [
+        5,
+        -6,
+        -7,
+        -6
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          251,
+          1
+        ],
+        [
+          271,
+          1
+        ],
+        [
+          1468739,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 97555,
+      "witness_radius": 6,
+      "overflow_support_size": 4,
+      "total_excess": 19,
+      "universal_unsupported_excess": 19,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        47,
+        53,
+        281249
+      ],
+      "witness_exponents": [
+        -7,
+        5,
+        -5,
+        1,
+        -6
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          251,
+          1
+        ],
+        [
+          281249,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 83445289,
+      "R": 25715,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 11,
+      "universal_unsupported_excess": 11,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        11,
+        107,
+        2203
+      ],
+      "witness_exponents": [
+        -4,
+        -4,
+        -4,
+        3,
+        -1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          2203,
+          1
+        ],
+        [
+          68963,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 84624409,
+      "R": 539,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        37,
+        2014333
+      ],
+      "witness_exponents": [
+        4,
+        -1,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          2014333,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 85457689,
+      "R": 811,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        61,
+        967
+      ],
+      "witness_exponents": [
+        1,
+        -2,
+        -3,
+        -3,
+        -1
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          967,
+          1
+        ],
+        [
+          4519,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 99151369,
+      "R": 3395,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 8,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        71,
+        163,
+        1031,
+        2351
+      ],
+      "witness_exponents": [
+        -3,
+        2,
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          1031,
+          1
+        ],
+        [
+          2351,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 99151369,
+      "R": 82011,
+      "witness_radius": 5,
+      "overflow_support_size": 5,
+      "total_excess": 15,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        11,
+        227,
+        1409,
+        115561
+      ],
+      "witness_exponents": [
+        -3,
+        2,
+        -6,
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1409,
+          1
+        ],
+        [
+          115561,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 99756409,
+      "R": 17747,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        17,
+        1327
+      ],
+      "witness_exponents": [
+        -1,
+        5,
+        0,
+        -5,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          1327,
+          1
+        ],
+        [
+          97609,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        4451,
+        69493
+      ],
+      "witness_exponents": [
+        -3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          4451,
+          1
+        ],
+        [
+          69493,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 22163,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 5,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        113,
+        1471
+      ],
+      "witness_exponents": [
+        -2,
+        4,
+        -2,
+        3,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          1471,
+          1
+        ],
+        [
+          90641,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 122014489,
+      "R": 403,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        83,
+        197,
+        1667
+      ],
+      "witness_exponents": [
+        0,
+        0,
+        -3,
+        -3,
+        -3
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          1667,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 137431849,
+      "R": 99,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        61,
+        7079,
+        7877
+      ],
+      "witness_exponents": [
+        -2,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          61,
+          1
+        ],
+        [
+          7079,
+          1
+        ],
+        [
+          7877,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 137431849,
+      "R": 7907,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        61,
+        12379,
+        119923
+      ],
+      "witness_exponents": [
+        0,
+        4,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          12379,
+          1
+        ],
+        [
+          119923,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 148659289,
+      "R": 155,
+      "witness_radius": 4,
+      "overflow_support_size": 3,
+      "total_excess": 11,
+      "universal_unsupported_excess": 11,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        181,
+        10608743
+      ],
+      "witness_exponents": [
+        5,
+        -4,
+        5
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          181,
+          1
+        ],
+        [
+          10608743,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 151911769,
+      "R": 14075,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        11,
+        19
+      ],
+      "witness_exponents": [
+        4,
+        -2,
+        -4,
+        -1,
+        0
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          5309,
+          1
+        ],
+        [
+          160583,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 152498329,
+      "R": 3467,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        3347,
+        10979
+      ],
+      "witness_exponents": [
+        3,
+        1,
+        -1,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          109,
+          1
+        ],
+        [
+          3347,
+          1
+        ],
+        [
+          10979,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 152498329,
+      "R": 28131,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        2239,
+        391021
+      ],
+      "witness_exponents": [
+        -5,
+        1,
+        -4,
+        3
+      ],
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          2239,
+          1
+        ],
+        [
+          391021,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 155533849,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 7,
+      "universal_unsupported_excess": 7,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        257,
+        4085033
+      ],
+      "witness_exponents": [
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          257,
+          1
+        ],
+        [
+          4085033,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 155533849,
+      "R": 1187,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        41,
+        4421,
+        6529
+      ],
+      "witness_exponents": [
+        3,
+        -3,
+        -3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          4421,
+          1
+        ],
+        [
+          6529,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 158937529,
+      "R": 23411,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        23,
+        1753,
+        73243
+      ],
+      "witness_exponents": [
+        -2,
+        2,
+        1,
+        -3,
+        2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          1753,
+          1
+        ],
+        [
+          73243,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 168434809,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 7,
+      "universal_unsupported_excess": 7,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        41,
+        27730121
+      ],
+      "witness_exponents": [
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          41,
+          1
+        ],
+        [
+          27730121,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 168434809,
+      "R": 9731,
+      "witness_radius": 5,
+      "overflow_support_size": 4,
+      "total_excess": 14,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        6163,
+        4432471
+      ],
+      "witness_exponents": [
+        6,
+        3,
+        -6,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6163,
+          1
+        ],
+        [
+          4432471,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 171292489,
+      "R": 4387,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        587,
+        643949
+      ],
+      "witness_exponents": [
+        -3,
+        0,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          587,
+          1
+        ],
+        [
+          643949,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 171292489,
+      "R": 3005131,
+      "witness_radius": 3,
+      "overflow_support_size": 5,
+      "total_excess": 12,
+      "universal_unsupported_excess": 12,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        137,
+        149,
+        587,
+        30253
+      ],
+      "witness_exponents": [
+        4,
+        -1,
+        3,
+        -3,
+        -4,
+        3
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          137,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          587,
+          1
+        ],
+        [
+          30253,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 172657489,
+      "R": 971,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        7,
+        293,
+        27803
+      ],
+      "witness_exponents": [
+        -3,
+        -3,
+        -5,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          293,
+          1
+        ],
+        [
+          27803,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 172657489,
+      "R": 211331,
+      "witness_radius": 3,
+      "overflow_support_size": 5,
+      "total_excess": 10,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        113,
+        1031,
+        133843
+      ],
+      "witness_exponents": [
+        5,
+        -1,
+        -4,
+        -2,
+        -2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          1031,
+          1
+        ],
+        [
+          133843,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 174600409,
+      "R": 1699,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        727,
+        3079
+      ],
+      "witness_exponents": [
+        -2,
+        -3,
+        -2,
+        -1
+      ],
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          727,
+          1
+        ],
+        [
+          3079,
+          1
+        ],
+        [
+          4733,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 179700889,
+      "R": 635,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        499,
+        2722351
+      ],
+      "witness_exponents": [
+        -3,
+        1,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          499,
+          1
+        ],
+        [
+          2722351,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 188748169,
+      "R": 64091,
+      "witness_radius": 4,
+      "overflow_support_size": 6,
+      "total_excess": 20,
+      "universal_unsupported_excess": 19,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        7,
+        13,
+        40591,
+        54583
+      ],
+      "witness_exponents": [
+        -5,
+        -2,
+        -5,
+        -5,
+        -5,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          40591,
+          1
+        ],
+        [
+          54583,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 202112089,
+      "R": 2315,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        7,
+        23,
+        683
+      ],
+      "witness_exponents": [
+        -3,
+        2,
+        -3,
+        2,
+        -1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          683,
+          1
+        ],
+        [
+          354581,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 214360969,
+      "R": 267,
+      "witness_radius": 5,
+      "overflow_support_size": 2,
+      "total_excess": 9,
+      "universal_unsupported_excess": 9,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        83,
+        401
+      ],
+      "witness_exponents": [
+        -5,
+        -6,
+        -1
+      ],
+      "factorization": [
+        [
+          83,
+          1
+        ],
+        [
+          401,
+          1
+        ],
+        [
+          429907,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 214360969,
+      "R": 11171,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 3,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        11,
+        46099
+      ],
+      "witness_exponents": [
+        5,
+        0,
+        -5,
+        -1,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          46099,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 217315849,
+      "R": 23435,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        67,
+        83,
+        167,
+        35153
+      ],
+      "witness_exponents": [
+        -3,
+        0,
+        -3,
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          35153,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 223474729,
+      "R": 699,
+      "witness_radius": 4,
+      "overflow_support_size": 3,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        283,
+        2447,
+        56393
+      ],
+      "witness_exponents": [
+        5,
+        -2,
+        -5
+      ],
+      "factorization": [
+        [
+          283,
+          1
+        ],
+        [
+          2447,
+          1
+        ],
+        [
+          56393,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 228366889,
+      "R": 523,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 9,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        23,
+        233,
+        307,
+        18149
+      ],
+      "witness_exponents": [
+        3,
+        3,
+        -4,
+        3
+      ],
+      "factorization": [
+        [
+          23,
+          1
+        ],
+        [
+          233,
+          1
+        ],
+        [
+          307,
+          1
+        ],
+        [
+          18149,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 236164009,
+      "R": 49355,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        7,
+        41,
+        1879
+      ],
+      "witness_exponents": [
+        3,
+        3,
+        -3,
+        -1,
+        1,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          41,
+          2
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          1879,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 242042089,
+      "R": 82411,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 7,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        37,
+        257,
+        2081,
+        3877
+      ],
+      "witness_exponents": [
+        3,
+        1,
+        -2,
+        -3,
+        2,
+        -2
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          257,
+          1
+        ],
+        [
+          2081,
+          1
+        ],
+        [
+          3877,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 253788649,
+      "R": 5027,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 11,
+      "universal_unsupported_excess": 10,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        9431,
+        32117
+      ],
+      "witness_exponents": [
+        8,
+        -3,
+        -5,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          9431,
+          1
+        ],
+        [
+          32117,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 283309849,
+      "R": 8051,
+      "witness_radius": 5,
+      "overflow_support_size": 4,
+      "total_excess": 17,
+      "universal_unsupported_excess": 17,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        103,
+        1667,
+        44281
+      ],
+      "witness_exponents": [
+        -4,
+        2,
+        -6,
+        -6,
+        -5
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          1667,
+          1
+        ],
+        [
+          44281,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 203,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 10,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        37,
+        79,
+        63799
+      ],
+      "witness_exponents": [
+        -7,
+        -3,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          63799,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 3299,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 10,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        17,
+        29,
+        4721,
+        11719
+      ],
+      "witness_exponents": [
+        -2,
+        4,
+        -3,
+        3,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          4721,
+          1
+        ],
+        [
+          11719,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 21467,
+      "witness_radius": 2,
+      "overflow_support_size": 2,
+      "total_excess": 3,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        503
+      ],
+      "witness_exponents": [
+        -2,
+        -1,
+        -3,
+        0,
+        -1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          503,
+          1
+        ],
+        [
+          1259,
+          1
+        ],
+        [
+          17159,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 300873169,
+      "R": 475,
+      "witness_radius": 6,
+      "overflow_support_size": 2,
+      "total_excess": 11,
+      "universal_unsupported_excess": 11,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        31,
+        50110363
+      ],
+      "witness_exponents": [
+        0,
+        -7,
+        -6
+      ],
+      "factorization": [
+        [
+          23,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          50110363,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 300873169,
+      "R": 211139,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 9,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        43,
+        73,
+        103,
+        76871
+      ],
+      "witness_exponents": [
+        -1,
+        -3,
+        1,
+        -3,
+        4,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          76871,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 301304089,
+      "R": 4691,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 6,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        619,
+        25801
+      ],
+      "witness_exponents": [
+        -1,
+        -6,
+        -1,
+        2,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          619,
+          1
+        ],
+        [
+          25801,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 304959769,
+      "R": 203171,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        73,
+        349
+      ],
+      "witness_exponents": [
+        6,
+        -5,
+        1,
+        -4,
+        -3,
+        0
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          5147,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 19,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 7,
+      "universal_unsupported_excess": 7,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        29,
+        50776237
+      ],
+      "witness_exponents": [
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          29,
+          1
+        ],
+        [
+          50776237,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 19891,
+      "witness_radius": 5,
+      "overflow_support_size": 3,
+      "total_excess": 14,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        6359,
+        149183
+      ],
+      "witness_exponents": [
+        1,
+        6,
+        -6,
+        5
+      ],
+      "factorization": [
+        [
+          5,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          6359,
+          1
+        ],
+        [
+          149183,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 137595,
+      "witness_radius": 6,
+      "overflow_support_size": 4,
+      "total_excess": 22,
+      "universal_unsupported_excess": 22,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        29,
+        647,
+        95857
+      ],
+      "witness_exponents": [
+        0,
+        -8,
+        -7,
+        6,
+        6
+      ],
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          95857,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 323931,
+      "witness_radius": 6,
+      "overflow_support_size": 6,
+      "total_excess": 23,
+      "universal_unsupported_excess": 22,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        17,
+        139,
+        647,
+        751,
+        4373
+      ],
+      "witness_exponents": [
+        -2,
+        4,
+        -5,
+        -7,
+        -5,
+        -6
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          751,
+          1
+        ],
+        [
+          4373,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 311333929,
+      "R": 1859,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 5,
+      "universal_unsupported_excess": 5,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        241,
+        110629
+      ],
+      "witness_exponents": [
+        -4,
+        0,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          110629,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 311333929,
+      "R": 6835,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        47,
+        509,
+        22237673
+      ],
+      "witness_exponents": [
+        2,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          47,
+          1
+        ],
+        [
+          509,
+          1
+        ],
+        [
+          22237673,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 312918169,
+      "R": 49947,
+      "witness_radius": 5,
+      "overflow_support_size": 3,
+      "total_excess": 13,
+      "universal_unsupported_excess": 13,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        23,
+        83
+      ],
+      "witness_exponents": [
+        6,
+        -6,
+        -4,
+        0,
+        1
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          10531,
+          1
+        ],
+        [
+          17669,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 325900969,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        193,
+        4925101
+      ],
+      "witness_exponents": [
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          4925101,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 331117609,
+      "R": 107891,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        821,
+        1301,
+        1433
+      ],
+      "witness_exponents": [
+        3,
+        3,
+        0,
+        -3,
+        -2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          821,
+          1
+        ],
+        [
+          1301,
+          1
+        ],
+        [
+          1433,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 333575449,
+      "R": 6787,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        17,
+        433,
+        17551
+      ],
+      "witness_exponents": [
+        -2,
+        -3,
+        -1,
+        2,
+        3
+      ],
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          433,
+          1
+        ],
+        [
+          17551,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 333575449,
+      "R": 978227,
+      "witness_radius": 6,
+      "overflow_support_size": 3,
+      "total_excess": 15,
+      "universal_unsupported_excess": 15,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        7,
+        5054173
+      ],
+      "witness_exponents": [
+        7,
+        8,
+        0,
+        -1,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          5779,
+          1
+        ],
+        [
+          5054173,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 335420089,
+      "R": 939,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        67,
+        1553,
+        58211
+      ],
+      "witness_exponents": [
+        2,
+        3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          1553,
+          1
+        ],
+        [
+          58211,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 335495689,
+      "R": 16163,
+      "witness_radius": 5,
+      "overflow_support_size": 4,
+      "total_excess": 16,
+      "universal_unsupported_excess": 16,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        19,
+        31,
+        26513
+      ],
+      "witness_exponents": [
+        -5,
+        -4,
+        -6,
+        1,
+        6
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          1523,
+          1
+        ],
+        [
+          26513,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 339576169,
+      "R": 1667,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        29,
+        379,
+        4817
+      ],
+      "witness_exponents": [
+        -1,
+        0,
+        -3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          5
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          379,
+          1
+        ],
+        [
+          4817,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 356491249,
+      "R": 131595,
+      "witness_radius": 6,
+      "overflow_support_size": 4,
+      "total_excess": 18,
+      "universal_unsupported_excess": 18,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        59,
+        2029,
+        33199
+      ],
+      "witness_exponents": [
+        3,
+        -6,
+        -1,
+        -7,
+        -6
+      ],
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          2029,
+          1
+        ],
+        [
+          33199,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 362050441,
+      "R": 3371,
+      "witness_radius": 5,
+      "overflow_support_size": 5,
+      "total_excess": 19,
+      "universal_unsupported_excess": 18,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        19,
+        107,
+        443,
+        37643
+      ],
+      "witness_exponents": [
+        -7,
+        -5,
+        -6,
+        2,
+        -5
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          443,
+          1
+        ],
+        [
+          37643,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 1379,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 9,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        577,
+        1609,
+        45317
+      ],
+      "witness_exponents": [
+        3,
+        -3,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          577,
+          1
+        ],
+        [
+          1609,
+          1
+        ],
+        [
+          45317,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 1907,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        151,
+        823,
+        36013
+      ],
+      "witness_exponents": [
+        1,
+        -1,
+        -2,
+        -3,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          151,
+          1
+        ],
+        [
+          823,
+          1
+        ],
+        [
+          36013,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 19083,
+      "witness_radius": 4,
+      "overflow_support_size": 3,
+      "total_excess": 11,
+      "universal_unsupported_excess": 11,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        239,
+        8419,
+        51061
+      ],
+      "witness_exponents": [
+        1,
+        4,
+        -5,
+        -5
+      ],
+      "factorization": [
+        [
+          17,
+          1
+        ],
+        [
+          239,
+          1
+        ],
+        [
+          8419,
+          1
+        ],
+        [
+          51061,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 33171,
+      "witness_radius": 5,
+      "overflow_support_size": 3,
+      "total_excess": 12,
+      "universal_unsupported_excess": 12,
+      "sign_class": "all_positive",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        7,
+        4693697
+      ],
+      "witness_exponents": [
+        3,
+        6,
+        -1,
+        6
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          18481,
+          1
+        ],
+        [
+          4693697,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 369577849,
+      "R": 475,
+      "witness_radius": 6,
+      "overflow_support_size": 2,
+      "total_excess": 11,
+      "universal_unsupported_excess": 11,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        31,
+        61553113
+      ],
+      "witness_exponents": [
+        0,
+        -7,
+        -6
+      ],
+      "factorization": [
+        [
+          23,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          61553113,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 371275249,
+      "R": 39611,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        37,
+        71,
+        1249
+      ],
+      "witness_exponents": [
+        -1,
+        -1,
+        -4,
+        -3,
+        -1,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          37,
+          2
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          673,
+          1
+        ],
+        [
+          1249,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 373561609,
+      "R": 1459,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        61,
+        199,
+        32917
+      ],
+      "witness_exponents": [
+        0,
+        1,
+        -3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          199,
+          1
+        ],
+        [
+          32917,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 373561609,
+      "R": 625731,
+      "witness_radius": 6,
+      "overflow_support_size": 4,
+      "total_excess": 17,
+      "universal_unsupported_excess": 16,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        11,
+        1097,
+        11351
+      ],
+      "witness_exponents": [
+        6,
+        -3,
+        -7,
+        1,
+        6
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          1097,
+          1
+        ],
+        [
+          7757,
+          1
+        ],
+        [
+          11351,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 374272369,
+      "R": 7307,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 5,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        31,
+        97,
+        4909,
+        15439
+      ],
+      "witness_exponents": [
+        1,
+        -2,
+        -4,
+        3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          4909,
+          1
+        ],
+        [
+          15439,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 383592169,
+      "R": 72691,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        67,
+        137,
+        199
+      ],
+      "witness_exponents": [
+        0,
+        -3,
+        3,
+        -3,
+        -3,
+        0
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          137,
+          1
+        ],
+        [
+          199,
+          1
+        ],
+        [
+          109037,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 385883689,
+      "R": 811,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        19,
+        16139
+      ],
+      "witness_exponents": [
+        -2,
+        1,
+        -3,
+        0,
+        -3
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          4639,
+          1
+        ],
+        [
+          16139,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 386108809,
+      "R": 25643,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 12,
+      "universal_unsupported_excess": 12,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        23,
+        29917,
+        1199089
+      ],
+      "witness_exponents": [
+        3,
+        -4,
+        -5,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          29917,
+          1
+        ],
+        [
+          1199089,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 391209289,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        461,
+        2475113
+      ],
+      "witness_exponents": [
+        -3,
+        -2,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          461,
+          1
+        ],
+        [
+          2475113,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 391209289,
+      "R": 14915,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        163,
+        17401
+      ],
+      "witness_exponents": [
+        0,
+        -3,
+        -3,
+        0,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          13187,
+          1
+        ],
+        [
+          17401,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 403509649,
+      "R": 899,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 5,
+      "universal_unsupported_excess": 5,
+      "sign_class": "all_positive",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        549739
+      ],
+      "witness_exponents": [
+        3,
+        0,
+        -1,
+        4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          4999,
+          1
+        ],
+        [
+          549739,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 405660649,
+      "R": 1019,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        29,
+        41,
+        9657233
+      ],
+      "witness_exponents": [
+        4,
+        3,
+        -2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          9657233,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 405660649,
+      "R": 6595,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        19,
+        41,
+        563,
+        138637
+      ],
+      "witness_exponents": [
+        1,
+        3,
+        -3,
+        2,
+        2
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          563,
+          1
+        ],
+        [
+          138637,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 429600649,
+      "R": 8699,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        17,
+        43,
+        35393
+      ],
+      "witness_exponents": [
+        3,
+        -4,
+        -5,
+        1,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          12037,
+          1
+        ],
+        [
+          35393,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 437817769,
+      "R": 635,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 7,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        7,
+        11,
+        409,
+        11677
+      ],
+      "witness_exponents": [
+        4,
+        3,
+        -3,
+        2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          409,
+          1
+        ],
+        [
+          11677,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 437817769,
+      "R": 508499,
+      "witness_radius": 5,
+      "overflow_support_size": 5,
+      "total_excess": 23,
+      "universal_unsupported_excess": 23,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        17,
+        19,
+        73,
+        34897
+      ],
+      "witness_exponents": [
+        1,
+        -6,
+        -6,
+        -6,
+        -6,
+        1,
+        4
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          3221,
+          1
+        ],
+        [
+          34897,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 450622489,
+      "R": 73379,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 12,
+      "universal_unsupported_excess": 11,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        107,
+        467,
+        110069
+      ],
+      "witness_exponents": [
+        -5,
+        5,
+        0,
+        -2,
+        5
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          107,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          467,
+          1
+        ],
+        [
+          110069,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 83,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        97,
+        33059357
+      ],
+      "witness_exponents": [
+        2,
+        -2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          33059357,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 227603,
+      "witness_radius": 5,
+      "overflow_support_size": 5,
+      "total_excess": 21,
+      "universal_unsupported_excess": 21,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        7,
+        11,
+        131,
+        430081
+      ],
+      "witness_exponents": [
+        5,
+        6,
+        6,
+        -4,
+        0,
+        -5
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          2027,
+          1
+        ],
+        [
+          430081,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 473173969,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 7,
+      "universal_unsupported_excess": 7,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        16349,
+        195359
+      ],
+      "witness_exponents": [
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          16349,
+          1
+        ],
+        [
+          195359,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 473173969,
+      "R": 1531307,
+      "witness_radius": 6,
+      "overflow_support_size": 6,
+      "total_excess": 22,
+      "universal_unsupported_excess": 21,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        11,
+        41,
+        67,
+        19429,
+        34283
+      ],
+      "witness_exponents": [
+        7,
+        -7,
+        2,
+        -4,
+        5,
+        -4
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          19429,
+          1
+        ],
+        [
+          34283,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 475619929,
+      "R": 5915,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        11,
+        73,
+        83,
+        3593
+      ],
+      "witness_exponents": [
+        3,
+        3,
+        -3,
+        -3,
+        0,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          3593,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 477015289,
+      "R": 1075,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        23,
+        4931,
+        86951
+      ],
+      "witness_exponents": [
+        -4,
+        -2,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          4931,
+          1
+        ],
+        [
+          86951,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 171,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 13,
+      "universal_unsupported_excess": 13,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        37,
+        4019,
+        19973
+      ],
+      "witness_exponents": [
+        -4,
+        -4,
+        -5,
+        -4
+      ],
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          4019,
+          1
+        ],
+        [
+          19973,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 1787,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 11,
+      "universal_unsupported_excess": 10,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        613,
+        5659,
+        6959
+      ],
+      "witness_exponents": [
+        -5,
+        -4,
+        -5,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          613,
+          1
+        ],
+        [
+          5659,
+          1
+        ],
+        [
+          6959,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 4523,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        257,
+        503
+      ],
+      "witness_exponents": [
+        -3,
+        3,
+        -4,
+        -4,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          257,
+          1
+        ],
+        [
+          503,
+          1
+        ],
+        [
+          14323,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 4611,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        103,
+        1249
+      ],
+      "witness_exponents": [
+        4,
+        1,
+        -3,
+        -3,
+        0
+      ],
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          1249,
+          1
+        ],
+        [
+          15887,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 5147,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        71,
+        36887
+      ],
+      "witness_exponents": [
+        4,
+        -1,
+        -3,
+        0,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          619,
+          1
+        ],
+        [
+          36887,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 9323,
+      "witness_radius": 3,
+      "overflow_support_size": 5,
+      "total_excess": 10,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        73,
+        127,
+        149,
+        30469
+      ],
+      "witness_exponents": [
+        4,
+        3,
+        -4,
+        -3,
+        -3
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          127,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          30469,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 318051,
+      "witness_radius": 4,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        149,
+        241,
+        6965317
+      ],
+      "witness_exponents": [
+        5,
+        0,
+        -2,
+        -3,
+        -4
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          6965317,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 493936249,
+      "R": 419,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        59,
+        7333,
+        39863
+      ],
+      "witness_exponents": [
+        -2,
+        -2,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          7333,
+          1
+        ],
+        [
+          39863,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 493936249,
+      "R": 131611,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        13,
+        97,
+        1409
+      ],
+      "witness_exponents": [
+        3,
+        3,
+        -2,
+        -1,
+        -3,
+        0
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          97,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1409,
+          1
+        ],
+        [
+          8059,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 507115249,
+      "R": 17267,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        19,
+        167
+      ],
+      "witness_exponents": [
+        3,
+        -1,
+        2,
+        -3,
+        -2,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          842383,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 507115249,
+      "R": 70619,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 7,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        19,
+        61,
+        683,
+        96667
+      ],
+      "witness_exponents": [
+        4,
+        1,
+        -2,
+        -2,
+        3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          683,
+          1
+        ],
+        [
+          96667,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 507599689,
+      "R": 5691,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        23,
+        193,
+        547
+      ],
+      "witness_exponents": [
+        -5,
+        3,
+        -4,
+        -2,
+        -1
+      ],
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          547,
+          1
+        ],
+        [
+          11897,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 508542169,
+      "R": 5468195,
+      "witness_radius": 4,
+      "overflow_support_size": 6,
+      "total_excess": 14,
+      "universal_unsupported_excess": 12,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        11,
+        13,
+        43,
+        17341,
+        80491
+      ],
+      "witness_exponents": [
+        5,
+        -4,
+        3,
+        -2,
+        5,
+        4
+      ],
+      "factorization": [
+        [
+          3,
+          4
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          17341,
+          1
+        ],
+        [
+          80491,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 508908409,
+      "R": 10859,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        307,
+        337
+      ],
+      "witness_exponents": [
+        -4,
+        0,
+        0,
+        -3,
+        -2,
+        0
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          307,
+          1
+        ],
+        [
+          337,
+          1
+        ],
+        [
+          619,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 509434249,
+      "R": 3571,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 5,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        431,
+        7277341
+      ],
+      "witness_exponents": [
+        -3,
+        1,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          431,
+          1
+        ],
+        [
+          7277341,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 139,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        2711,
+        38737
+      ],
+      "witness_exponents": [
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          13,
+          2
+        ],
+        [
+          2711,
+          1
+        ],
+        [
+          38737,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 555,
+      "witness_radius": 2,
+      "overflow_support_size": 2,
+      "total_excess": 4,
+      "universal_unsupported_excess": 4,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        67
+      ],
+      "witness_exponents": [
+        -3,
+        1,
+        -3,
+        0
+      ],
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          2805461,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 49331,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 7,
+      "universal_unsupported_excess": 5,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        13,
+        67
+      ],
+      "witness_exponents": [
+        -1,
+        -4,
+        3,
+        -4,
+        0,
+        1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          859,
+          1
+        ],
+        [
+          112247,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 1430603,
+      "witness_radius": 5,
+      "overflow_support_size": 4,
+      "total_excess": 15,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        53,
+        859,
+        688309
+      ],
+      "witness_exponents": [
+        5,
+        0,
+        -6,
+        -1,
+        -6,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          859,
+          1
+        ],
+        [
+          688309,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 522155209,
+      "R": 7355,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        349,
+        1933,
+        52711
+      ],
+      "witness_exponents": [
+        -4,
+        2,
+        -2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          3
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          1933,
+          1
+        ],
+        [
+          52711,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 534672889,
+      "R": 17891,
+      "witness_radius": 3,
+      "overflow_support_size": 5,
+      "total_excess": 12,
+      "universal_unsupported_excess": 9,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        23,
+        59,
+        281
+      ],
+      "witness_exponents": [
+        -2,
+        4,
+        4,
+        -4,
+        -4,
+        -1
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          281,
+          1
+        ],
+        [
+          83621,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 534844249,
+      "R": 11011,
+      "witness_radius": 2,
+      "overflow_support_size": 2,
+      "total_excess": 4,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        144161
+      ],
+      "witness_exponents": [
+        -3,
+        0,
+        0,
+        -1,
+        3
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          2267,
+          1
+        ],
+        [
+          144161,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 534844249,
+      "R": 1498163,
+      "witness_radius": 4,
+      "overflow_support_size": 6,
+      "total_excess": 19,
+      "universal_unsupported_excess": 18,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        83,
+        257,
+        433,
+        1063,
+        2267
+      ],
+      "witness_exponents": [
+        -6,
+        -5,
+        5,
+        -4,
+        2,
+        4
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          257,
+          1
+        ],
+        [
+          433,
+          1
+        ],
+        [
+          1063,
+          1
+        ],
+        [
+          2267,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 536944489,
+      "R": 75,
+      "witness_radius": 2,
+      "overflow_support_size": 2,
+      "total_excess": 3,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        263,
+        5468609
+      ],
+      "witness_exponents": [
+        -1,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          263,
+          1
+        ],
+        [
+          5468609,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 536944489,
+      "R": 291659,
+      "witness_radius": 5,
+      "overflow_support_size": 4,
+      "total_excess": 18,
+      "universal_unsupported_excess": 18,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        13,
+        101,
+        523,
+        1123
+      ],
+      "witness_exponents": [
+        -1,
+        -6,
+        -6,
+        -5,
+        5,
+        -1
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          523,
+          1
+        ],
+        [
+          1123,
+          1
+        ],
+        [
+          5641,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 542688169,
+      "R": 16851,
+      "witness_radius": 2,
+      "overflow_support_size": 6,
+      "total_excess": 10,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        11,
+        37,
+        101,
+        317,
+        35089
+      ],
+      "witness_exponents": [
+        -3,
+        -3,
+        -3,
+        -2,
+        -3,
+        2
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          317,
+          1
+        ],
+        [
+          35089,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 547053049,
+      "R": 523,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        7,
+        23,
+        5641,
+        11251
+      ],
+      "witness_exponents": [
+        -3,
+        -2,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          5641,
+          1
+        ],
+        [
+          11251,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 549401449,
+      "R": 6787,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        19,
+        37,
+        39829
+      ],
+      "witness_exponents": [
+        2,
+        -2,
+        -2,
+        -1,
+        3
+      ],
+      "factorization": [
+        [
+          13,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          39829,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 556685089,
+      "R": 147,
+      "witness_radius": 3,
+      "overflow_support_size": 2,
+      "total_excess": 5,
+      "universal_unsupported_excess": 5,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        677,
+        1590467
+      ],
+      "witness_exponents": [
+        1,
+        -4,
+        -3
+      ],
+      "factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          677,
+          1
+        ],
+        [
+          1590467,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 556685089,
+      "R": 3811,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 9,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        7,
+        31,
+        5857,
+        11923
+      ],
+      "witness_exponents": [
+        -3,
+        4,
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          5857,
+          1
+        ],
+        [
+          11923,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 559650361,
+      "R": 29939,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 4,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        17,
+        530977
+      ],
+      "witness_exponents": [
+        2,
+        0,
+        -3,
+        1,
+        2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          30937,
+          1
+        ],
+        [
+          530977,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 559650361,
+      "R": 307331,
+      "witness_radius": 4,
+      "overflow_support_size": 6,
+      "total_excess": 16,
+      "universal_unsupported_excess": 12,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        19,
+        23,
+        41,
+        1277,
+        32971
+      ],
+      "witness_exponents": [
+        -2,
+        -4,
+        5,
+        -5,
+        -2,
+        5
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          1277,
+          1
+        ],
+        [
+          32971,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 339,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 8,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        19,
+        1187,
+        7577
+      ],
+      "witness_exponents": [
+        4,
+        -1,
+        -3,
+        -4
+      ],
+      "factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          1187,
+          1
+        ],
+        [
+          7577,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 3371,
+      "witness_radius": 2,
+      "overflow_support_size": 5,
+      "total_excess": 8,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        13,
+        263,
+        389,
+        1607
+      ],
+      "witness_exponents": [
+        4,
+        -2,
+        2,
+        -3,
+        -3,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          263,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1607,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 21259,
+      "witness_radius": 4,
+      "overflow_support_size": 5,
+      "total_excess": 15,
+      "universal_unsupported_excess": 14,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        11,
+        13,
+        73,
+        223,
+        100213
+      ],
+      "witness_exponents": [
+        -4,
+        -6,
+        -2,
+        5,
+        4
+      ],
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          100213,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 65611,
+      "witness_radius": 3,
+      "overflow_support_size": 3,
+      "total_excess": 9,
+      "universal_unsupported_excess": 9,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        389,
+        1033
+      ],
+      "witness_exponents": [
+        -4,
+        1,
+        1,
+        -4,
+        -4,
+        1
+      ],
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1033,
+          1
+        ],
+        [
+          18413,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 852947,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 7,
+      "universal_unsupported_excess": 6,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        23,
+        389,
+        1373,
+        2099
+      ],
+      "witness_exponents": [
+        1,
+        2,
+        1,
+        -3,
+        3,
+        -2,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1373,
+          1
+        ],
+        [
+          2099,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 584607769,
+      "R": 3011,
+      "witness_radius": 3,
+      "overflow_support_size": 4,
+      "total_excess": 10,
+      "universal_unsupported_excess": 8,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        5,
+        26731,
+        365837
+      ],
+      "witness_exponents": [
+        4,
+        -4,
+        -4,
+        3
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          26731,
+          1
+        ],
+        [
+          365837,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 590499529,
+      "R": 40211,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 5,
+      "universal_unsupported_excess": 2,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        5,
+        23,
+        59,
+        301583
+      ],
+      "witness_exponents": [
+        1,
+        2,
+        -3,
+        -2,
+        -1,
+        -2
+      ],
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          967,
+          1
+        ],
+        [
+          301583,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 592257649,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_support_size": 2,
+      "total_excess": 7,
+      "universal_unsupported_excess": 7,
+      "sign_class": "all_negative",
+      "active_support_class": "all_active",
+      "overflow_support": [
+        1229,
+        3252839
+      ],
+      "witness_exponents": [
+        -4,
+        -5
+      ],
+      "factorization": [
+        [
+          1229,
+          1
+        ],
+        [
+          3252839,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 592257649,
+      "R": 327395,
+      "witness_radius": 2,
+      "overflow_support_size": 4,
+      "total_excess": 6,
+      "universal_unsupported_excess": 4,
+      "sign_class": "mixed",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        3,
+        7,
+        47,
+        83
+      ],
+      "witness_exponents": [
+        -3,
+        2,
+        -1,
+        -3,
+        -3,
+        -1,
+        0
+      ],
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          47,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          174091,
+          1
+        ]
+      ]
+    },
+    {
+      "prime": 597694729,
+      "R": 3603,
+      "witness_radius": 2,
+      "overflow_support_size": 3,
+      "total_excess": 6,
+      "universal_unsupported_excess": 6,
+      "sign_class": "all_negative",
+      "active_support_class": "has_inactive",
+      "overflow_support": [
+        61,
+        151,
+        131939
+      ],
+      "witness_exponents": [
+        -3,
+        -3,
+        0,
+        -3
+      ],
+      "factorization": [
+        [
+          61,
+          1
+        ],
+        [
+          151,
+          1
+        ],
+        [
+          443,
+          1
+        ],
+        [
+          131939,
+          1
+        ]
+      ]
+    }
+  ]
+}

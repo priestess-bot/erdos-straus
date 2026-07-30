@@ -1,0 +1,188 @@
+{
+  "arithmetic": "Enumerate every relation-lattice dual coefficient in {-1,0,1}^d for the frozen F states, project to the first two active directions, and group exact phase/color/carrier demand keys across states.",
+  "scope_note": "Finite negative boundary only. The census does not choose a global certificate, prove that a Fourier maximizer is selected, or establish a cross-state contradiction.",
+  "input": "type-i-f-relation-lattice-certificate-results.json",
+  "input_sha256": "5c4f19375e654c4b1ac1d01745125b248f5371048d643633be096a8e332a336c",
+  "state_count": 45,
+  "dual_coordinate_box": [
+    -1,
+    1
+  ],
+  "total_candidates": 15876,
+  "demand_key_count": 195,
+  "multi_state_demand_key_count": 2,
+  "maximum_multi_state_count": 2,
+  "candidate_support_counts": {
+    "2": 2994,
+    "3": 498,
+    "4": 1476,
+    "5": 1602,
+    "6": 3474,
+    "7": 5832
+  },
+  "candidate_color_counts": {
+    "aa": 4542,
+    "as": 486,
+    "sa": 4404,
+    "ss": 6444
+  },
+  "repeated_demand_groups": [
+    {
+      "prime": 26034649,
+      "pair_primes": [
+        379,
+        941
+      ],
+      "colors": [
+        "a",
+        "a"
+      ],
+      "target_pair_demand": "1/2",
+      "candidate_count": 72,
+      "state_rows": [
+        {
+          "row_index": 5,
+          "R": 178319,
+          "dual_coordinates": [
+            0,
+            0,
+            0,
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "active_support": [
+            5,
+            6
+          ],
+          "selected_heights": [
+            1,
+            1
+          ],
+          "target_pair_demand_mod_one": [
+            1,
+            2
+          ]
+        },
+        {
+          "row_index": 7,
+          "R": 13017323,
+          "dual_coordinates": [
+            0,
+            0,
+            -1,
+            -1,
+            -1
+          ],
+          "active_support": [
+            2,
+            3
+          ],
+          "selected_heights": [
+            1,
+            1
+          ],
+          "target_pair_demand_mod_one": [
+            1,
+            2
+          ]
+        }
+      ],
+      "distinct_state_count": 2,
+      "carrier_capacity_R_values": [
+        [
+          178319,
+          13017323
+        ]
+      ],
+      "carrier_capacity_count": 2
+    },
+    {
+      "prime": 57399241,
+      "pair_primes": [
+        5,
+        71
+      ],
+      "colors": [
+        "s",
+        "s"
+      ],
+      "target_pair_demand": "1/2",
+      "candidate_count": 72,
+      "state_rows": [
+        {
+          "row_index": 17,
+          "R": 2839,
+          "dual_coordinates": [
+            0,
+            -1,
+            -1,
+            0,
+            -1
+          ],
+          "active_support": [
+            1,
+            2,
+            4
+          ],
+          "selected_heights": [
+            1,
+            1
+          ],
+          "target_pair_demand_mod_one": [
+            1,
+            2
+          ]
+        },
+        {
+          "row_index": 31,
+          "R": 28699619,
+          "dual_coordinates": [
+            0,
+            -1,
+            -1,
+            0,
+            -1,
+            -1
+          ],
+          "active_support": [
+            1,
+            2,
+            4
+          ],
+          "selected_heights": [
+            1,
+            1
+          ],
+          "target_pair_demand_mod_one": [
+            1,
+            2
+          ]
+        }
+      ],
+      "distinct_state_count": 2,
+      "carrier_capacity_R_values": [
+        [
+          354,
+          709,
+          1064,
+          1419,
+          2129,
+          2839,
+          4259,
+          8519,
+          2391634,
+          4783269,
+          7174904,
+          9566539,
+          14349809,
+          19133079,
+          28699619,
+          57399239
+        ]
+      ],
+      "carrier_capacity_count": 16
+    }
+  ]
+}

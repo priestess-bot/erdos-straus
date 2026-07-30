@@ -1,0 +1,984 @@
+{
+  "arithmetic": "for the 45 finite-exponent states in the four adversarial cores, compute A_R(K) from every divisor of K, test each support prime q by q*A_R(K)=A_R(K), and count the prime directions surviving the exact stabilizer",
+  "scope_note": "This is a finite profile of four adversarial cores. It rules out the single-active model on this input, but says nothing about all core primes or multi-active closure.",
+  "input": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "prime_count": 4,
+  "finite_exponent_R_count": 45,
+  "active_direction_distribution": {
+    "3": 3,
+    "4": 9,
+    "5": 13,
+    "6": 12,
+    "7": 8
+  },
+  "active_direction_occurrence_total": 238,
+  "active_prime_count": 99,
+  "shared_active_pair_count": 599,
+  "total_pair_count": 990,
+  "top_active_primes": [
+    [
+      2,
+      24
+    ],
+    [
+      3,
+      23
+    ],
+    [
+      5,
+      16
+    ],
+    [
+      71,
+      8
+    ],
+    [
+      6737,
+      8
+    ],
+    [
+      11,
+      7
+    ],
+    [
+      19,
+      7
+    ],
+    [
+      157,
+      6
+    ],
+    [
+      17,
+      5
+    ],
+    [
+      29,
+      5
+    ],
+    [
+      4423,
+      5
+    ],
+    [
+      13,
+      4
+    ],
+    [
+      31,
+      4
+    ],
+    [
+      79,
+      4
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      73,
+      3
+    ],
+    [
+      37,
+      3
+    ],
+    [
+      59,
+      3
+    ],
+    [
+      379,
+      3
+    ],
+    [
+      23,
+      3
+    ]
+  ],
+  "profiles": [
+    {
+      "prime": 878089,
+      "finite_exponent_R_count": 2,
+      "active_direction_counts": {
+        "4": 1,
+        "5": 1
+      },
+      "active_prime_occurrences": {
+        "2": 2,
+        "3": 1,
+        "17": 1,
+        "37": 1,
+        "73": 1,
+        "349": 1,
+        "601": 1,
+        "14629": 1
+      },
+      "shared_active_pair_count": 1,
+      "total_pair_count": 1,
+      "records": [
+        {
+          "prime": 878089,
+          "R": 279,
+          "K": 61246708,
+          "divisor_residue_count": 17,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            2,
+            73,
+            349,
+            601
+          ]
+        },
+        {
+          "prime": 878089,
+          "R": 503,
+          "K": 110419692,
+          "divisor_residue_count": 39,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            3,
+            17,
+            37,
+            14629
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "finite_exponent_R_count": 6,
+      "active_direction_counts": {
+        "4": 2,
+        "5": 2,
+        "6": 1,
+        "7": 1
+      },
+      "active_prime_occurrences": {
+        "2": 3,
+        "3": 2,
+        "5": 1,
+        "11": 1,
+        "13": 1,
+        "17": 1,
+        "23": 1,
+        "29": 3,
+        "31": 1,
+        "37": 1,
+        "59": 2,
+        "73": 1,
+        "317": 1,
+        "379": 2,
+        "617": 1,
+        "773": 1,
+        "941": 2,
+        "2267": 1,
+        "19073": 1,
+        "30593": 1,
+        "52489": 1,
+        "1084777": 2
+      },
+      "shared_active_pair_count": 5,
+      "total_pair_count": 15,
+      "records": [
+        {
+          "prime": 26034649,
+          "R": 375,
+          "K": 2440748344,
+          "divisor_residue_count": 70,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            17,
+            29,
+            59,
+            617
+          ]
+        },
+        {
+          "prime": 26034649,
+          "R": 6871,
+          "K": 44721018320,
+          "divisor_residue_count": 139,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            5,
+            11,
+            29,
+            773,
+            2267
+          ]
+        },
+        {
+          "prime": 26034649,
+          "R": 61987,
+          "K": 403452446891,
+          "divisor_residue_count": 12,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            13,
+            31,
+            19073,
+            52489
+          ]
+        },
+        {
+          "prime": 26034649,
+          "R": 178319,
+          "K": 1160618143758,
+          "divisor_residue_count": 96,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            3,
+            29,
+            59,
+            317,
+            379,
+            941
+          ]
+        },
+        {
+          "prime": 26034649,
+          "R": 4339107,
+          "K": 28241781929611,
+          "divisor_residue_count": 14,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            23,
+            37,
+            30593,
+            1084777
+          ]
+        },
+        {
+          "prime": 26034649,
+          "R": 13017323,
+          "K": 84725358806157,
+          "divisor_residue_count": 28,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            3,
+            73,
+            379,
+            941,
+            1084777
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "finite_exponent_R_count": 24,
+      "active_direction_counts": {
+        "3": 3,
+        "4": 3,
+        "5": 7,
+        "6": 7,
+        "7": 4
+      },
+      "active_prime_occurrences": {
+        "2": 12,
+        "3": 14,
+        "5": 11,
+        "7": 2,
+        "11": 5,
+        "13": 1,
+        "19": 6,
+        "23": 2,
+        "29": 1,
+        "31": 2,
+        "37": 1,
+        "43": 2,
+        "53": 2,
+        "61": 3,
+        "71": 8,
+        "73": 1,
+        "79": 2,
+        "83": 1,
+        "89": 1,
+        "109": 1,
+        "131": 1,
+        "157": 2,
+        "167": 1,
+        "191": 1,
+        "269": 1,
+        "331": 1,
+        "359": 1,
+        "431": 1,
+        "457": 1,
+        "521": 1,
+        "761": 1,
+        "859": 1,
+        "1069": 1,
+        "1213": 1,
+        "1289": 1,
+        "1327": 1,
+        "1993": 1,
+        "2693": 1,
+        "2707": 1,
+        "2963": 1,
+        "3779": 1,
+        "4831": 1,
+        "5659": 1,
+        "6737": 8,
+        "9391": 1,
+        "13313": 1,
+        "15809": 1,
+        "20959": 1,
+        "22483": 1,
+        "27281": 1,
+        "51341": 3,
+        "66821": 1,
+        "103723": 1,
+        "127271": 1,
+        "136013": 1,
+        "137077": 1,
+        "172801": 1,
+        "735853": 1
+      },
+      "shared_active_pair_count": 206,
+      "total_pair_count": 276,
+      "records": [
+        {
+          "prime": 57399241,
+          "R": 59,
+          "K": 846638805,
+          "divisor_residue_count": 12,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            3,
+            5,
+            2693,
+            20959
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 83,
+          "K": 1191034251,
+          "divisor_residue_count": 21,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            3,
+            11,
+            761,
+            15809
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 155,
+          "K": 2224220589,
+          "divisor_residue_count": 19,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            3,
+            23,
+            79,
+            136013
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 283,
+          "K": 4060996301,
+          "divisor_residue_count": 6,
+          "prime_support_count": 3,
+          "active_direction_count": 3,
+          "active_primes": [
+            71,
+            331,
+            172801
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 455,
+          "K": 6529163664,
+          "divisor_residue_count": 60,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            3,
+            131,
+            521,
+            1993
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 567,
+          "K": 8136342412,
+          "divisor_residue_count": 35,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            11,
+            19,
+            71,
+            137077
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 599,
+          "K": 8595536340,
+          "divisor_residue_count": 73,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            3,
+            5,
+            89,
+            1213,
+            1327
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 1419,
+          "K": 20362380745,
+          "divisor_residue_count": 28,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            5,
+            7,
+            71,
+            79,
+            103723
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 1631,
+          "K": 23404540518,
+          "divisor_residue_count": 49,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            3,
+            19,
+            31,
+            735853
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 2839,
+          "K": 40739111300,
+          "divisor_residue_count": 61,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            5,
+            71,
+            431,
+            13313
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 6419,
+          "K": 92111431995,
+          "divisor_residue_count": 94,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            3,
+            5,
+            11,
+            19,
+            359,
+            27281
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 7939,
+          "K": 113923143575,
+          "divisor_residue_count": 18,
+          "prime_support_count": 4,
+          "active_direction_count": 3,
+          "active_primes": [
+            5,
+            19,
+            53
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 9903,
+          "K": 142106170906,
+          "divisor_residue_count": 24,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            7,
+            191,
+            5659,
+            9391
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 26947,
+          "K": 386684336807,
+          "divisor_residue_count": 10,
+          "prime_support_count": 3,
+          "active_direction_count": 3,
+          "active_primes": [
+            109,
+            4831,
+            6737
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 34227,
+          "K": 491150955427,
+          "divisor_residue_count": 31,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            11,
+            53,
+            61,
+            269,
+            51341
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 69999,
+          "K": 1004472367690,
+          "divisor_residue_count": 48,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            5,
+            11,
+            157,
+            457,
+            127271
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 161687,
+          "K": 2320177769892,
+          "divisor_residue_count": 181,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            3,
+            19,
+            157,
+            1069,
+            6737
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 404219,
+          "K": 5800465949445,
+          "divisor_residue_count": 88,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            3,
+            5,
+            23,
+            37,
+            6737,
+            22483
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 808439,
+          "K": 11600946248700,
+          "divisor_residue_count": 269,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            3,
+            5,
+            61,
+            73,
+            1289,
+            6737
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 1471775,
+          "K": 21119691980694,
+          "divisor_residue_count": 111,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            3,
+            19,
+            31,
+            43,
+            2707,
+            51341
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 5739923,
+          "K": 82366805899611,
+          "divisor_residue_count": 88,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            3,
+            61,
+            71,
+            83,
+            3779,
+            6737
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 11479847,
+          "K": 164733626149032,
+          "divisor_residue_count": 231,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            3,
+            29,
+            71,
+            167,
+            2963,
+            6737
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 19133079,
+          "K": 274556053148260,
+          "divisor_residue_count": 175,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            5,
+            13,
+            43,
+            71,
+            6737,
+            51341
+          ]
+        },
+        {
+          "prime": 57399241,
+          "R": 28699619,
+          "K": 411834086897295,
+          "divisor_residue_count": 48,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            3,
+            5,
+            71,
+            859,
+            6737,
+            66821
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "finite_exponent_R_count": 13,
+      "active_direction_counts": {
+        "4": 3,
+        "5": 3,
+        "6": 4,
+        "7": 3
+      },
+      "active_prime_occurrences": {
+        "2": 7,
+        "3": 6,
+        "5": 4,
+        "7": 2,
+        "11": 1,
+        "13": 2,
+        "17": 3,
+        "19": 1,
+        "29": 1,
+        "31": 1,
+        "41": 3,
+        "59": 1,
+        "67": 1,
+        "79": 2,
+        "83": 2,
+        "89": 1,
+        "137": 1,
+        "157": 4,
+        "197": 1,
+        "199": 1,
+        "211": 1,
+        "227": 1,
+        "271": 1,
+        "367": 1,
+        "379": 1,
+        "947": 1,
+        "1907": 1,
+        "4021": 1,
+        "4423": 5,
+        "5189": 1,
+        "6619": 2,
+        "9719": 1,
+        "13807": 1,
+        "17491": 1,
+        "26723": 1,
+        "37397": 1,
+        "63241": 1,
+        "205453": 1,
+        "1423717": 1,
+        "3413489": 1,
+        "7452787": 1,
+        "10896911": 1
+      },
+      "shared_active_pair_count": 45,
+      "total_pair_count": 78,
+      "records": [
+        {
+          "prime": 283319689,
+          "R": 131,
+          "K": 9278719815,
+          "divisor_residue_count": 15,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            3,
+            5,
+            83,
+            7452787
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 1247,
+          "K": 88324913046,
+          "divisor_residue_count": 59,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            3,
+            19,
+            79,
+            367,
+            26723
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 1603,
+          "K": 113540365367,
+          "divisor_residue_count": 56,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            11,
+            13,
+            137,
+            211,
+            227
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 3591,
+          "K": 254350250800,
+          "divisor_residue_count": 188,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            5,
+            31,
+            59,
+            67,
+            5189
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 11271,
+          "K": 798324053680,
+          "divisor_residue_count": 63,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            2,
+            5,
+            379,
+            1907,
+            13807
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 28107,
+          "K": 1990816624681,
+          "divisor_residue_count": 14,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            41,
+            79,
+            9719,
+            63241
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 601527,
+          "K": 42606110641276,
+          "divisor_residue_count": 183,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            7,
+            13,
+            17,
+            89,
+            4423,
+            17491
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 751511,
+          "K": 53229465700020,
+          "divisor_residue_count": 267,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            2,
+            3,
+            5,
+            41,
+            271,
+            4021,
+            6619
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 2777643,
+          "K": 196740237728257,
+          "divisor_residue_count": 12,
+          "prime_support_count": 4,
+          "active_direction_count": 4,
+          "active_primes": [
+            83,
+            157,
+            4423,
+            3413489
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 7264607,
+          "K": 514551548986806,
+          "divisor_residue_count": 47,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            3,
+            29,
+            41,
+            6619,
+            10896911
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 16665863,
+          "K": 1180441780519152,
+          "divisor_residue_count": 135,
+          "prime_support_count": 6,
+          "active_direction_count": 6,
+          "active_primes": [
+            2,
+            3,
+            157,
+            947,
+            4423,
+            37397
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 47219947,
+          "K": 3344585174659121,
+          "divisor_residue_count": 24,
+          "prime_support_count": 5,
+          "active_direction_count": 5,
+          "active_primes": [
+            17,
+            157,
+            199,
+            4423,
+            1423717
+          ]
+        },
+        {
+          "prime": 283319689,
+          "R": 141659843,
+          "K": 10033755665637207,
+          "divisor_residue_count": 112,
+          "prime_support_count": 7,
+          "active_direction_count": 7,
+          "active_primes": [
+            3,
+            7,
+            17,
+            157,
+            197,
+            4423,
+            205453
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3683 @@
+{
+  "arithmetic": "For every full-spectrum F state that cannot carry two active Fourier directions in one color, enumerate the exact two-coordinate target phase projection inside the exponent box.",
+  "scope_note": "Finite state-internal Fourier boundary only. An empty projection is a certificate for the selected character, while a nonempty projection does not prove target membership; no cross-state selector theorem is claimed.",
+  "fourier_input": "type-i-f-bounded-fourier-full-spectrum-results.json",
+  "fourier_input_sha256": "b636ca5714ff784d0a1dd0ec89e42a377de56255a3fefe940e025a3cbe56154d",
+  "cross_color_input": "type-i-f-full-cross-color-pair-capacity-results.json",
+  "cross_color_input_sha256": "c99ee379e61aef20b1dbbcdffb1a2b2f532fa8b8697308cdf32ac45b31608cb5",
+  "record_count": 291,
+  "active_support_size_counts": {
+    "2": 291
+  },
+  "projection_solution_count_distribution": {
+    "0": 40,
+    "2": 2,
+    "4": 249
+  },
+  "empty_projection_count": 40,
+  "nonempty_projection_count": 251,
+  "projection_order_distribution": {
+    "0:6": 10,
+    "0:10": 3,
+    "0:12": 6,
+    "0:14": 4,
+    "0:18": 7,
+    "0:20": 1,
+    "0:30": 1,
+    "0:66": 1,
+    "0:138": 1,
+    "0:162": 1,
+    "0:214": 1,
+    "0:5226": 1,
+    "0:62110": 1,
+    "0:92778": 1,
+    "0:104230": 1,
+    "2:4": 2,
+    "4:2": 249
+  },
+  "empty_records": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "active_primes": [
+        151,
+        15287
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "active_primes": [
+        151,
+        398417
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "active_primes": [
+        107,
+        13829
+      ],
+      "character_order": 10,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 16002529,
+      "R": 27,
+      "active_primes": [
+        599,
+        9491
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 24738289,
+      "R": 123,
+      "active_primes": [
+        349,
+        26261
+      ],
+      "character_order": 20,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 25073689,
+      "R": 91,
+      "active_primes": [
+        71,
+        321367
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 30997849,
+      "R": 35,
+      "active_primes": [
+        3,
+        69493
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 37793809,
+      "R": 19,
+      "active_primes": [
+        53,
+        483883
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 58757449,
+      "R": 27,
+      "active_primes": [
+        2417,
+        164093
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 68822329,
+      "R": 139,
+      "active_primes": [
+        13553,
+        176461
+      ],
+      "character_order": 138,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 75056809,
+      "R": 63339,
+      "active_primes": [
+        347,
+        51059
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 35,
+      "active_primes": [
+        3,
+        53
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 106050289,
+      "R": 35,
+      "active_primes": [
+        3,
+        69493
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 155533849,
+      "R": 27,
+      "active_primes": [
+        257,
+        4085033
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 168434809,
+      "R": 27,
+      "active_primes": [
+        41,
+        27730121
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 176110489,
+      "R": 91,
+      "active_primes": [
+        137,
+        7547
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 185651449,
+      "R": 92779,
+      "active_primes": [
+        139169,
+        30941797
+      ],
+      "character_order": 92778,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 228366889,
+      "R": 163,
+      "active_primes": [
+        571,
+        16297637
+      ],
+      "character_order": 162,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 253788649,
+      "R": 603,
+      "active_primes": [
+        2111,
+        18123467
+      ],
+      "character_order": 66,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 266080369,
+      "R": 745323,
+      "active_primes": [
+        2608631,
+        19005737
+      ],
+      "character_order": 62110,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 310002289,
+      "R": 19,
+      "active_primes": [
+        29,
+        50776237
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 325900969,
+      "R": 35,
+      "active_primes": [
+        3,
+        193
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 340352329,
+      "R": 643,
+      "active_primes": [
+        183577,
+        298031
+      ],
+      "character_order": 214,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 373561609,
+      "R": 99,
+      "active_primes": [
+        48857,
+        189239
+      ],
+      "character_order": 30,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 373561609,
+      "R": 2211,
+      "active_primes": [
+        7,
+        12161
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 386108809,
+      "R": 1920939,
+      "active_primes": [
+        2881409,
+        64351457
+      ],
+      "character_order": 104230,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 391209289,
+      "R": 35,
+      "active_primes": [
+        3,
+        2475113
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 391209289,
+      "R": 14915,
+      "active_primes": [
+        163,
+        17401
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 463627609,
+      "R": 19,
+      "active_primes": [
+        53,
+        5935933
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 472918009,
+      "R": 19,
+      "active_primes": [
+        1193,
+        268993
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 473173969,
+      "R": 27,
+      "active_primes": [
+        16349,
+        195359
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 486323161,
+      "R": 171,
+      "active_primes": [
+        4019,
+        19973
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 507599689,
+      "R": 5691,
+      "active_primes": [
+        193,
+        11897
+      ],
+      "character_order": 10,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 534672889,
+      "R": 99,
+      "active_primes": [
+        3911,
+        63841
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 534844249,
+      "R": 11011,
+      "active_primes": [
+        17,
+        144161
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 536944489,
+      "R": 75,
+      "active_primes": [
+        263,
+        5468609
+      ],
+      "character_order": 10,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 556685089,
+      "R": 147,
+      "active_primes": [
+        677,
+        1590467
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 65611,
+      "active_primes": [
+        389,
+        18413
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 584044729,
+      "R": 5227,
+      "active_primes": [
+        7841,
+        97334581
+      ],
+      "character_order": 5226,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 592257649,
+      "R": 27,
+      "active_primes": [
+        1229,
+        3252839
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    }
+  ],
+  "records": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "active_primes": [
+        151,
+        15287
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 5478169,
+      "R": 4835,
+      "active_primes": [
+        29,
+        73
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "active_primes": [
+        151,
+        398417
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 5596369,
+      "R": 1251,
+      "active_primes": [
+        151,
+        79939
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "active_primes": [
+        107,
+        13829
+      ],
+      "character_order": 10,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 9104209,
+      "R": 419,
+      "active_primes": [
+        163,
+        24077
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "active_primes": [
+        139,
+        765439
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 13782409,
+      "R": 33051,
+      "active_primes": [
+        389,
+        4507
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 16002529,
+      "R": 27,
+      "active_primes": [
+        599,
+        9491
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 16002529,
+      "R": 5075,
+      "active_primes": [
+        113,
+        331
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "active_primes": [
+        163,
+        180751
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 24738289,
+      "R": 123,
+      "active_primes": [
+        349,
+        26261
+      ],
+      "character_order": 20,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 25073689,
+      "R": 91,
+      "active_primes": [
+        71,
+        321367
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 25073689,
+      "R": 139,
+      "active_primes": [
+        487,
+        162649
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 30997849,
+      "R": 35,
+      "active_primes": [
+        3,
+        69493
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 30997849,
+      "R": 14867,
+      "active_primes": [
+        163,
+        937
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 36583369,
+      "R": 859,
+      "active_primes": [
+        379,
+        4051
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 36583369,
+      "R": 1315,
+      "active_primes": [
+        1973,
+        5179
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 37793809,
+      "R": 19,
+      "active_primes": [
+        53,
+        483883
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 37793809,
+      "R": 15307,
+      "active_primes": [
+        457,
+        22961
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 38333689,
+      "R": 115,
+      "active_primes": [
+        173,
+        910069
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 38333689,
+      "R": 2723,
+      "active_primes": [
+        29,
+        353
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 41708209,
+      "R": 371,
+      "active_primes": [
+        421,
+        977
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 41708209,
+      "R": 448475,
+      "active_primes": [
+        29,
+        2317121
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 42486889,
+      "R": 619,
+      "active_primes": [
+        929,
+        21001
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 42486889,
+      "R": 8051,
+      "active_primes": [
+        5,
+        13
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 42622969,
+      "R": 747771,
+      "active_primes": [
+        6197,
+        284153
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 48825529,
+      "R": 419,
+      "active_primes": [
+        613,
+        309013
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 48991849,
+      "R": 139,
+      "active_primes": [
+        401,
+        326581
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 48991849,
+      "R": 7931,
+      "active_primes": [
+        11897,
+        28649
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 48991849,
+      "R": 8291,
+      "active_primes": [
+        89,
+        12517
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 50290249,
+      "R": 3251,
+      "active_primes": [
+        103,
+        509
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 50290249,
+      "R": 9155,
+      "active_primes": [
+        31,
+        931267
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 50290249,
+      "R": 540755,
+      "active_primes": [
+        509,
+        1831
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 51029449,
+      "R": 1259,
+      "active_primes": [
+        1889,
+        2749
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 51029449,
+      "R": 16371,
+      "active_primes": [
+        1889,
+        23957
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 53712409,
+      "R": 17035,
+      "active_primes": [
+        101,
+        2137
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 57399241,
+      "R": 83,
+      "active_primes": [
+        761,
+        15809
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 57399241,
+      "R": 155,
+      "active_primes": [
+        79,
+        136013
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 57399241,
+      "R": 34227,
+      "active_primes": [
+        61,
+        51341
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 58757449,
+      "R": 27,
+      "active_primes": [
+        2417,
+        164093
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 58757449,
+      "R": 291,
+      "active_primes": [
+        521,
+        1231
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 62588089,
+      "R": 98875,
+      "active_primes": [
+        139,
+        10431313
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 62588089,
+      "R": 150091,
+      "active_primes": [
+        211,
+        4051
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 62704849,
+      "R": 1947,
+      "active_primes": [
+        349,
+        1650083
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 62704849,
+      "R": 150371,
+      "active_primes": [
+        3823,
+        696719
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 68822329,
+      "R": 139,
+      "active_primes": [
+        13553,
+        176461
+      ],
+      "character_order": 138,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 72148729,
+      "R": 859,
+      "active_primes": [
+        379,
+        2404771
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 75056809,
+      "R": 63339,
+      "active_primes": [
+        347,
+        51059
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 78268369,
+      "R": 1643,
+      "active_primes": [
+        461,
+        2621
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 35,
+      "active_primes": [
+        3,
+        53
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 1571,
+      "active_primes": [
+        97,
+        10037
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 1987,
+      "active_primes": [
+        271,
+        13177
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 6611,
+      "active_primes": [
+        17,
+        184447
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 45347,
+      "active_primes": [
+        271,
+        1468739
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 79312489,
+      "R": 97555,
+      "active_primes": [
+        53,
+        281249
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 83445289,
+      "R": 13859,
+      "active_primes": [
+        149,
+        223
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 83445289,
+      "R": 25715,
+      "active_primes": [
+        107,
+        68963
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 83445289,
+      "R": 25971,
+      "active_primes": [
+        17,
+        1192069
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 84624409,
+      "R": 451,
+      "active_primes": [
+        53,
+        277
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 84624409,
+      "R": 539,
+      "active_primes": [
+        17,
+        2014333
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 85457689,
+      "R": 811,
+      "active_primes": [
+        13,
+        61
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 96440089,
+      "R": 83,
+      "active_primes": [
+        13,
+        1554881
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 96440089,
+      "R": 1691931,
+      "active_primes": [
+        103699,
+        2537897
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 96530569,
+      "R": 387,
+      "active_primes": [
+        2083,
+        11467
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 99151369,
+      "R": 3395,
+      "active_primes": [
+        163,
+        2351
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 99151369,
+      "R": 82011,
+      "active_primes": [
+        227,
+        115561
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 99756409,
+      "R": 17747,
+      "active_primes": [
+        67,
+        97609
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 106050289,
+      "R": 35,
+      "active_primes": [
+        3,
+        69493
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 106050289,
+      "R": 291,
+      "active_primes": [
+        19,
+        706193
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 106050289,
+      "R": 899,
+      "active_primes": [
+        19,
+        76487
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 106050289,
+      "R": 22163,
+      "active_primes": [
+        13,
+        1471
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 106050289,
+      "R": 1860531,
+      "active_primes": [
+        1709,
+        3535009
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 111810169,
+      "R": 11483,
+      "active_primes": [
+        37,
+        157
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 122014489,
+      "R": 211,
+      "active_primes": [
+        1583,
+        18911
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 122014489,
+      "R": 403,
+      "active_primes": [
+        41,
+        1667
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 122014489,
+      "R": 34931,
+      "active_primes": [
+        491,
+        661
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 137431849,
+      "R": 99,
+      "active_primes": [
+        7079,
+        7877
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 137431849,
+      "R": 7907,
+      "active_primes": [
+        61,
+        119923
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 137431849,
+      "R": 384963,
+      "active_primes": [
+        15139,
+        9816557
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 148659289,
+      "R": 155,
+      "active_primes": [
+        181,
+        10608743
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 148659289,
+      "R": 47939,
+      "active_primes": [
+        181,
+        89231
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 151911769,
+      "R": 14075,
+      "active_primes": [
+        5309,
+        160583
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 152498329,
+      "R": 731,
+      "active_primes": [
+        151,
+        463
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 152498329,
+      "R": 3467,
+      "active_primes": [
+        3347,
+        10979
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 152498329,
+      "R": 28131,
+      "active_primes": [
+        2239,
+        391021
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 155533849,
+      "R": 27,
+      "active_primes": [
+        257,
+        4085033
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 155533849,
+      "R": 267,
+      "active_primes": [
+        971,
+        15887
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 155533849,
+      "R": 1187,
+      "active_primes": [
+        4421,
+        6529
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 158937529,
+      "R": 251,
+      "active_primes": [
+        661,
+        1005883
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 158937529,
+      "R": 23411,
+      "active_primes": [
+        1753,
+        73243
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 165387049,
+      "R": 227,
+      "active_primes": [
+        31,
+        431
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 165387049,
+      "R": 267,
+      "active_primes": [
+        59,
+        4351433
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 165387049,
+      "R": 1778355,
+      "active_primes": [
+        863,
+        27564503
+      ],
+      "character_order": 4,
+      "projection_solution_count": 2,
+      "box_size": 9
+    },
+    {
+      "prime": 168434809,
+      "R": 27,
+      "active_primes": [
+        41,
+        27730121
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 168434809,
+      "R": 1067,
+      "active_primes": [
+        1601,
+        11257
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 168434809,
+      "R": 9731,
+      "active_primes": [
+        6163,
+        4432471
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 171292489,
+      "R": 99,
+      "active_primes": [
+        149,
+        917837
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 171292489,
+      "R": 4387,
+      "active_primes": [
+        587,
+        643949
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 171292489,
+      "R": 8043,
+      "active_primes": [
+        19,
+        59
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 171292489,
+      "R": 3005131,
+      "active_primes": [
+        149,
+        587
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 172657489,
+      "R": 971,
+      "active_primes": [
+        293,
+        27803
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 172657489,
+      "R": 36083,
+      "active_primes": [
+        37,
+        15919
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 172657489,
+      "R": 211331,
+      "active_primes": [
+        113,
+        133843
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 174600409,
+      "R": 1699,
+      "active_primes": [
+        3079,
+        4733
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 176110489,
+      "R": 91,
+      "active_primes": [
+        137,
+        7547
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 176110489,
+      "R": 1187,
+      "active_primes": [
+        19,
+        137
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 179700889,
+      "R": 635,
+      "active_primes": [
+        499,
+        2722351
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 185651449,
+      "R": 92779,
+      "active_primes": [
+        139169,
+        30941797
+      ],
+      "character_order": 92778,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 188748169,
+      "R": 251,
+      "active_primes": [
+        269,
+        419329
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 188748169,
+      "R": 64091,
+      "active_primes": [
+        40591,
+        54583
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 188748169,
+      "R": 212315,
+      "active_primes": [
+        82567,
+        264353
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 192235129,
+      "R": 563,
+      "active_primes": [
+        31,
+        3121
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 202112089,
+      "R": 2315,
+      "active_primes": [
+        683,
+        354581
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 202112089,
+      "R": 11891,
+      "active_primes": [
+        7,
+        13
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 204971209,
+      "R": 68667,
+      "active_primes": [
+        449,
+        6832367
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 214360969,
+      "R": 155,
+      "active_primes": [
+        3023,
+        33923
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 214360969,
+      "R": 267,
+      "active_primes": [
+        401,
+        429907
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 214360969,
+      "R": 11171,
+      "active_primes": [
+        53,
+        46099
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 217315849,
+      "R": 23435,
+      "active_primes": [
+        83,
+        35153
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 223474729,
+      "R": 699,
+      "active_primes": [
+        2447,
+        56393
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 226819609,
+      "R": 43,
+      "active_primes": [
+        641,
+        9439
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 226819609,
+      "R": 3979291,
+      "active_primes": [
+        8069,
+        19963
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 228366889,
+      "R": 163,
+      "active_primes": [
+        571,
+        16297637
+      ],
+      "character_order": 162,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 228366889,
+      "R": 523,
+      "active_primes": [
+        233,
+        307
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 236164009,
+      "R": 8379,
+      "active_primes": [
+        29,
+        27239
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 236164009,
+      "R": 49355,
+      "active_primes": [
+        223,
+        1879
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 242042089,
+      "R": 771,
+      "active_primes": [
+        89,
+        109
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 242042089,
+      "R": 82411,
+      "active_primes": [
+        257,
+        2081
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 253788649,
+      "R": 603,
+      "active_primes": [
+        2111,
+        18123467
+      ],
+      "character_order": 66,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 253788649,
+      "R": 5027,
+      "active_primes": [
+        13,
+        32117
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 257483209,
+      "R": 83,
+      "active_primes": [
+        97,
+        269
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 257483209,
+      "R": 1019,
+      "active_primes": [
+        37,
+        59
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 257483209,
+      "R": 126403,
+      "active_primes": [
+        8941,
+        9413
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 266080369,
+      "R": 745323,
+      "active_primes": [
+        2608631,
+        19005737
+      ],
+      "character_order": 62110,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 278505049,
+      "R": 34931,
+      "active_primes": [
+        31,
+        130021
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 283309849,
+      "R": 83,
+      "active_primes": [
+        457,
+        35437
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 283309849,
+      "R": 107,
+      "active_primes": [
+        4013,
+        16141
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 283309849,
+      "R": 1571,
+      "active_primes": [
+        127,
+        397
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 283309849,
+      "R": 8051,
+      "active_primes": [
+        103,
+        44281
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 297640249,
+      "R": 203,
+      "active_primes": [
+        37,
+        79
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 297640249,
+      "R": 3299,
+      "active_primes": [
+        4721,
+        11719
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 297640249,
+      "R": 21467,
+      "active_primes": [
+        1259,
+        17159
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 297640249,
+      "R": 37331,
+      "active_primes": [
+        227,
+        941
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 300873169,
+      "R": 227,
+      "active_primes": [
+        31,
+        2384381
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 300873169,
+      "R": 475,
+      "active_primes": [
+        31,
+        50110363
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 300873169,
+      "R": 211139,
+      "active_primes": [
+        43,
+        103
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 300873169,
+      "R": 3235195,
+      "active_primes": [
+        23,
+        2153
+      ],
+      "character_order": 4,
+      "projection_solution_count": 2,
+      "box_size": 9
+    },
+    {
+      "prime": 301304089,
+      "R": 4691,
+      "active_primes": [
+        619,
+        25801
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 304959769,
+      "R": 203171,
+      "active_primes": [
+        349,
+        5147
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 306963409,
+      "R": 875,
+      "active_primes": [
+        89,
+        113
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 310002289,
+      "R": 19,
+      "active_primes": [
+        29,
+        50776237
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 310002289,
+      "R": 5507,
+      "active_primes": [
+        751,
+        17221307
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 310002289,
+      "R": 19891,
+      "active_primes": [
+        6359,
+        149183
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 310002289,
+      "R": 137595,
+      "active_primes": [
+        29,
+        95857
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 310002289,
+      "R": 323931,
+      "active_primes": [
+        751,
+        4373
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 311333929,
+      "R": 1859,
+      "active_primes": [
+        241,
+        110629
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 311333929,
+      "R": 6835,
+      "active_primes": [
+        509,
+        22237673
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 312918169,
+      "R": 49947,
+      "active_primes": [
+        83,
+        17669
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 325900969,
+      "R": 35,
+      "active_primes": [
+        3,
+        193
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 325900969,
+      "R": 803,
+      "active_primes": [
+        433,
+        102161
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 325900969,
+      "R": 5011,
+      "active_primes": [
+        137,
+        8693
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 328186681,
+      "R": 164011,
+      "active_primes": [
+        251,
+        246017
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 331117609,
+      "R": 107891,
+      "active_primes": [
+        389,
+        821
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 333575449,
+      "R": 83,
+      "active_primes": [
+        73,
+        12547
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 333575449,
+      "R": 6787,
+      "active_primes": [
+        433,
+        17551
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 333575449,
+      "R": 978227,
+      "active_primes": [
+        5779,
+        5054173
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 333575449,
+      "R": 1407491,
+      "active_primes": [
+        67,
+        3706393
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 335420089,
+      "R": 939,
+      "active_primes": [
+        1553,
+        58211
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 335420089,
+      "R": 4339,
+      "active_primes": [
+        15187,
+        1041643
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 335495689,
+      "R": 16163,
+      "active_primes": [
+        1523,
+        26513
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 339576169,
+      "R": 1667,
+      "active_primes": [
+        29,
+        379
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 339576169,
+      "R": 238299,
+      "active_primes": [
+        19,
+        2263841
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 340352329,
+      "R": 643,
+      "active_primes": [
+        183577,
+        298031
+      ],
+      "character_order": 214,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 356491249,
+      "R": 131595,
+      "active_primes": [
+        227,
+        33199
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 362050441,
+      "R": 3371,
+      "active_primes": [
+        443,
+        37643
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 366108649,
+      "R": 155,
+      "active_primes": [
+        4801,
+        13873
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 366108649,
+      "R": 1379,
+      "active_primes": [
+        1609,
+        45317
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 366108649,
+      "R": 1907,
+      "active_primes": [
+        151,
+        36013
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 366108649,
+      "R": 19083,
+      "active_primes": [
+        239,
+        8419
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 366108649,
+      "R": 33171,
+      "active_primes": [
+        18481,
+        4693697
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 369577849,
+      "R": 227,
+      "active_primes": [
+        31,
+        6833999
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 369577849,
+      "R": 475,
+      "active_primes": [
+        31,
+        61553113
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 369577849,
+      "R": 13011,
+      "active_primes": [
+        88289,
+        389029
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 369577849,
+      "R": 15707,
+      "active_primes": [
+        23561,
+        526453
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 371160409,
+      "R": 771,
+      "active_primes": [
+        19661,
+        727747
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 371275249,
+      "R": 39611,
+      "active_primes": [
+        673,
+        1249
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 373561609,
+      "R": 99,
+      "active_primes": [
+        48857,
+        189239
+      ],
+      "character_order": 30,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 373561609,
+      "R": 1459,
+      "active_primes": [
+        31,
+        199
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 373561609,
+      "R": 2211,
+      "active_primes": [
+        7,
+        12161
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 373561609,
+      "R": 625731,
+      "active_primes": [
+        7757,
+        11351
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 374272369,
+      "R": 7307,
+      "active_primes": [
+        4909,
+        15439
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 383592169,
+      "R": 72691,
+      "active_primes": [
+        199,
+        109037
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 385883689,
+      "R": 811,
+      "active_primes": [
+        4639,
+        16139
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 386108809,
+      "R": 395,
+      "active_primes": [
+        149,
+        3323
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 386108809,
+      "R": 25643,
+      "active_primes": [
+        29917,
+        1199089
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 386108809,
+      "R": 1920939,
+      "active_primes": [
+        2881409,
+        64351457
+      ],
+      "character_order": 104230,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 391209289,
+      "R": 35,
+      "active_primes": [
+        3,
+        2475113
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 391209289,
+      "R": 14915,
+      "active_primes": [
+        163,
+        17401
+      ],
+      "character_order": 12,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 392018449,
+      "R": 59,
+      "active_primes": [
+        67,
+        4789
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 392018449,
+      "R": 107,
+      "active_primes": [
+        5261,
+        51109
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 392018449,
+      "R": 27667,
+      "active_primes": [
+        883,
+        5025817
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 401991529,
+      "R": 67,
+      "active_primes": [
+        97,
+        5153
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 401991529,
+      "R": 2891,
+      "active_primes": [
+        601,
+        33889
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 403509649,
+      "R": 899,
+      "active_primes": [
+        4999,
+        549739
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 405660649,
+      "R": 1019,
+      "active_primes": [
+        41,
+        9657233
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 405660649,
+      "R": 6595,
+      "active_primes": [
+        41,
+        138637
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 408626089,
+      "R": 531,
+      "active_primes": [
+        31,
+        10567
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 429600649,
+      "R": 563,
+      "active_primes": [
+        79,
+        144061
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 429600649,
+      "R": 8699,
+      "active_primes": [
+        17,
+        43
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 437817769,
+      "R": 635,
+      "active_primes": [
+        409,
+        11677
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 437817769,
+      "R": 508499,
+      "active_primes": [
+        17,
+        3221
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 450622489,
+      "R": 83,
+      "active_primes": [
+        13,
+        7265281
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 450622489,
+      "R": 73379,
+      "active_primes": [
+        167,
+        110069
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 457986169,
+      "R": 3435,
+      "active_primes": [
+        1601,
+        19421
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 463627609,
+      "R": 19,
+      "active_primes": [
+        53,
+        5935933
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 463627609,
+      "R": 83,
+      "active_primes": [
+        97,
+        33059357
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 463627609,
+      "R": 579,
+      "active_primes": [
+        89,
+        2027
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 463627609,
+      "R": 32675,
+      "active_primes": [
+        97,
+        1187
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 463627609,
+      "R": 227603,
+      "active_primes": [
+        2027,
+        430081
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 472918009,
+      "R": 19,
+      "active_primes": [
+        1193,
+        268993
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 473173969,
+      "R": 27,
+      "active_primes": [
+        16349,
+        195359
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 473173969,
+      "R": 115,
+      "active_primes": [
+        547,
+        25933
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 473173969,
+      "R": 1531307,
+      "active_primes": [
+        67,
+        19429
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 475619929,
+      "R": 1427,
+      "active_primes": [
+        139,
+        251639
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 475619929,
+      "R": 5915,
+      "active_primes": [
+        89,
+        3593
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 477015289,
+      "R": 1075,
+      "active_primes": [
+        4931,
+        86951
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 486323161,
+      "R": 171,
+      "active_primes": [
+        4019,
+        19973
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 486323161,
+      "R": 235,
+      "active_primes": [
+        353,
+        647
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 486323161,
+      "R": 755,
+      "active_primes": [
+        109,
+        938843
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 486323161,
+      "R": 1787,
+      "active_primes": [
+        613,
+        5659
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 486323161,
+      "R": 4523,
+      "active_primes": [
+        257,
+        14323
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 487572409,
+      "R": 4611,
+      "active_primes": [
+        103,
+        15887
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 487572409,
+      "R": 5147,
+      "active_primes": [
+        619,
+        36887
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 487572409,
+      "R": 9323,
+      "active_primes": [
+        73,
+        127
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 487572409,
+      "R": 30779,
+      "active_primes": [
+        241,
+        6389
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 487572409,
+      "R": 318051,
+      "active_primes": [
+        241,
+        6965317
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 488961169,
+      "R": 107,
+      "active_primes": [
+        73,
+        1399
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 488961169,
+      "R": 9963,
+      "active_primes": [
+        34871,
+        3175027
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 493936249,
+      "R": 419,
+      "active_primes": [
+        7333,
+        39863
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 493936249,
+      "R": 131611,
+      "active_primes": [
+        1409,
+        8059
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 507115249,
+      "R": 17267,
+      "active_primes": [
+        167,
+        842383
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 507115249,
+      "R": 70619,
+      "active_primes": [
+        683,
+        96667
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 507599689,
+      "R": 5691,
+      "active_primes": [
+        193,
+        11897
+      ],
+      "character_order": 10,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 508542169,
+      "R": 5468195,
+      "active_primes": [
+        13,
+        43
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 508908409,
+      "R": 10859,
+      "active_primes": [
+        47,
+        307
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 509434249,
+      "R": 123,
+      "active_primes": [
+        59,
+        431
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 509434249,
+      "R": 3571,
+      "active_primes": [
+        431,
+        7277341
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 510725329,
+      "R": 139,
+      "active_primes": [
+        2711,
+        38737
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 510725329,
+      "R": 555,
+      "active_primes": [
+        67,
+        2805461
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 510725329,
+      "R": 49331,
+      "active_primes": [
+        67,
+        112247
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 510725329,
+      "R": 1430603,
+      "active_primes": [
+        53,
+        67
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 522155209,
+      "R": 7355,
+      "active_primes": [
+        1933,
+        52711
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 534672889,
+      "R": 99,
+      "active_primes": [
+        3911,
+        63841
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 534672889,
+      "R": 2003,
+      "active_primes": [
+        41,
+        3533
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 534672889,
+      "R": 17891,
+      "active_primes": [
+        281,
+        83621
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 534672889,
+      "R": 1497683,
+      "active_primes": [
+        41,
+        38190917
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 534844249,
+      "R": 11011,
+      "active_primes": [
+        17,
+        144161
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 534844249,
+      "R": 1498163,
+      "active_primes": [
+        257,
+        1063
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 536944489,
+      "R": 75,
+      "active_primes": [
+        263,
+        5468609
+      ],
+      "character_order": 10,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 536944489,
+      "R": 179,
+      "active_primes": [
+        281,
+        662867
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 536944489,
+      "R": 395,
+      "active_primes": [
+        149,
+        3041
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 536944489,
+      "R": 291659,
+      "active_primes": [
+        101,
+        5641
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 542688169,
+      "R": 16851,
+      "active_primes": [
+        317,
+        35089
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 547053049,
+      "R": 371,
+      "active_primes": [
+        199,
+        1545277
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 547053049,
+      "R": 523,
+      "active_primes": [
+        5641,
+        11251
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 549401449,
+      "R": 6787,
+      "active_primes": [
+        19,
+        197
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 556685089,
+      "R": 147,
+      "active_primes": [
+        677,
+        1590467
+      ],
+      "character_order": 14,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 556685089,
+      "R": 1731,
+      "active_primes": [
+        12983,
+        3711091
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 556685089,
+      "R": 3811,
+      "active_primes": [
+        5857,
+        11923
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 559650361,
+      "R": 12059,
+      "active_primes": [
+        379,
+        2411
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 559650361,
+      "R": 29939,
+      "active_primes": [
+        30937,
+        530977
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 559650361,
+      "R": 307331,
+      "active_primes": [
+        23,
+        1277
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 559650361,
+      "R": 9818427,
+      "active_primes": [
+        607,
+        93275057
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 339,
+      "active_primes": [
+        1187,
+        7577
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 971,
+      "active_primes": [
+        59,
+        109
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 3371,
+      "active_primes": [
+        389,
+        1607
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 21259,
+      "active_primes": [
+        223,
+        100213
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 65611,
+      "active_primes": [
+        389,
+        18413
+      ],
+      "character_order": 6,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 570621769,
+      "R": 852947,
+      "active_primes": [
+        389,
+        1373
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 584044729,
+      "R": 515,
+      "active_primes": [
+        13,
+        23981
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 584044729,
+      "R": 5227,
+      "active_primes": [
+        7841,
+        97334581
+      ],
+      "character_order": 5226,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 584607769,
+      "R": 3011,
+      "active_primes": [
+        26731,
+        365837
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 590499529,
+      "R": 35699,
+      "active_primes": [
+        13883,
+        258763
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 590499529,
+      "R": 40211,
+      "active_primes": [
+        967,
+        301583
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 592257649,
+      "R": 27,
+      "active_primes": [
+        1229,
+        3252839
+      ],
+      "character_order": 18,
+      "projection_solution_count": 0,
+      "box_size": 9
+    },
+    {
+      "prime": 592257649,
+      "R": 187,
+      "active_primes": [
+        37,
+        769091
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 592257649,
+      "R": 327395,
+      "active_primes": [
+        103,
+        174091
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 597694729,
+      "R": 43,
+      "active_primes": [
+        29,
+        241
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 597694729,
+      "R": 99,
+      "active_primes": [
+        149,
+        46853
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    },
+    {
+      "prime": 597694729,
+      "R": 3603,
+      "active_primes": [
+        443,
+        131939
+      ],
+      "character_order": 2,
+      "projection_solution_count": 4,
+      "box_size": 9
+    }
+  ]
+}

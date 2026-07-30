@@ -1,0 +1,4750 @@
+{
+  "arithmetic": "For every full-spectrum F state with at least two active primes but no deterministic same-color eligible pair, enumerate all admissible cross-color (a-block,s-block) direction pairs. Group by (p,q_a,q_s) and compare demand with the exact shared-R capacity sum v_{q_a}(aR+1)v_{q_s}(sR+1).",
+  "scope_note": "Finite negative boundary only. The same-color exclusion and cross-color assignment are diagnostic choices; no overload does not prove the general two-color Fourier bridge or arithmetic descent.",
+  "input_fourier": "type-i-f-bounded-fourier-full-spectrum-results.json",
+  "input_fourier_sha256": "b636ca5714ff784d0a1dd0ec89e42a377de56255a3fefe940e025a3cbe56154d",
+  "input_spectrum": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_spectrum_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "certificate_state_count": 2748,
+  "active_record_count": 2687,
+  "same_color_unresolved_record_count": 291,
+  "cross_color_assignment_count": 582,
+  "source_prime_count": 200,
+  "cross_color_group_count": 582,
+  "cross_color_overload_count": 0,
+  "maximum_cross_color_ratio": 1.0,
+  "cross_color_saturation_count": 582,
+  "top_groups": [
+    {
+      "prime": 214729,
+      "q_a": 151,
+      "q_s": 15287,
+      "record_count": 1,
+      "R_min": 43,
+      "R_max": 43,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 214729,
+      "q_a": 15287,
+      "q_s": 151,
+      "record_count": 1,
+      "R_min": 43,
+      "R_max": 43,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 5478169,
+      "q_a": 29,
+      "q_s": 73,
+      "record_count": 1,
+      "R_min": 4835,
+      "R_max": 4835,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 5478169,
+      "q_a": 73,
+      "q_s": 29,
+      "record_count": 1,
+      "R_min": 4835,
+      "R_max": 4835,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 5596369,
+      "q_a": 151,
+      "q_s": 79939,
+      "record_count": 1,
+      "R_min": 1251,
+      "R_max": 1251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 5596369,
+      "q_a": 151,
+      "q_s": 398417,
+      "record_count": 1,
+      "R_min": 43,
+      "R_max": 43,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 5596369,
+      "q_a": 79939,
+      "q_s": 151,
+      "record_count": 1,
+      "R_min": 1251,
+      "R_max": 1251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 5596369,
+      "q_a": 398417,
+      "q_s": 151,
+      "record_count": 1,
+      "R_min": 43,
+      "R_max": 43,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 9104209,
+      "q_a": 107,
+      "q_s": 13829,
+      "record_count": 1,
+      "R_min": 275,
+      "R_max": 275,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 9104209,
+      "q_a": 163,
+      "q_s": 24077,
+      "record_count": 1,
+      "R_min": 419,
+      "R_max": 419,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 9104209,
+      "q_a": 13829,
+      "q_s": 107,
+      "record_count": 1,
+      "R_min": 275,
+      "R_max": 275,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 9104209,
+      "q_a": 24077,
+      "q_s": 163,
+      "record_count": 1,
+      "R_min": 419,
+      "R_max": 419,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 13782409,
+      "q_a": 139,
+      "q_s": 765439,
+      "record_count": 1,
+      "R_min": 1019,
+      "R_max": 1019,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 13782409,
+      "q_a": 389,
+      "q_s": 4507,
+      "record_count": 1,
+      "R_min": 33051,
+      "R_max": 33051,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 13782409,
+      "q_a": 4507,
+      "q_s": 389,
+      "record_count": 1,
+      "R_min": 33051,
+      "R_max": 33051,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 13782409,
+      "q_a": 765439,
+      "q_s": 139,
+      "record_count": 1,
+      "R_min": 1019,
+      "R_max": 1019,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 16002529,
+      "q_a": 113,
+      "q_s": 331,
+      "record_count": 1,
+      "R_min": 5075,
+      "R_max": 5075,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 16002529,
+      "q_a": 331,
+      "q_s": 113,
+      "record_count": 1,
+      "R_min": 5075,
+      "R_max": 5075,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 16002529,
+      "q_a": 599,
+      "q_s": 9491,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 16002529,
+      "q_a": 9491,
+      "q_s": 599,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 16267729,
+      "q_a": 163,
+      "q_s": 180751,
+      "record_count": 1,
+      "R_min": 39011,
+      "R_max": 39011,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 16267729,
+      "q_a": 180751,
+      "q_s": 163,
+      "record_count": 1,
+      "R_min": 39011,
+      "R_max": 39011,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 24738289,
+      "q_a": 349,
+      "q_s": 26261,
+      "record_count": 1,
+      "R_min": 123,
+      "R_max": 123,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 24738289,
+      "q_a": 26261,
+      "q_s": 349,
+      "record_count": 1,
+      "R_min": 123,
+      "R_max": 123,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 25073689,
+      "q_a": 71,
+      "q_s": 321367,
+      "record_count": 1,
+      "R_min": 91,
+      "R_max": 91,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 25073689,
+      "q_a": 487,
+      "q_s": 162649,
+      "record_count": 1,
+      "R_min": 139,
+      "R_max": 139,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 25073689,
+      "q_a": 162649,
+      "q_s": 487,
+      "record_count": 1,
+      "R_min": 139,
+      "R_max": 139,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 25073689,
+      "q_a": 321367,
+      "q_s": 71,
+      "record_count": 1,
+      "R_min": 91,
+      "R_max": 91,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 30997849,
+      "q_a": 3,
+      "q_s": 69493,
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 30997849,
+      "q_a": 163,
+      "q_s": 937,
+      "record_count": 1,
+      "R_min": 14867,
+      "R_max": 14867,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 30997849,
+      "q_a": 937,
+      "q_s": 163,
+      "record_count": 1,
+      "R_min": 14867,
+      "R_max": 14867,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 30997849,
+      "q_a": 69493,
+      "q_s": 3,
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 36583369,
+      "q_a": 379,
+      "q_s": 4051,
+      "record_count": 1,
+      "R_min": 859,
+      "R_max": 859,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 36583369,
+      "q_a": 1973,
+      "q_s": 5179,
+      "record_count": 1,
+      "R_min": 1315,
+      "R_max": 1315,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 36583369,
+      "q_a": 4051,
+      "q_s": 379,
+      "record_count": 1,
+      "R_min": 859,
+      "R_max": 859,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 36583369,
+      "q_a": 5179,
+      "q_s": 1973,
+      "record_count": 1,
+      "R_min": 1315,
+      "R_max": 1315,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 37793809,
+      "q_a": 53,
+      "q_s": 483883,
+      "record_count": 1,
+      "R_min": 19,
+      "R_max": 19,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 37793809,
+      "q_a": 457,
+      "q_s": 22961,
+      "record_count": 1,
+      "R_min": 15307,
+      "R_max": 15307,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 37793809,
+      "q_a": 22961,
+      "q_s": 457,
+      "record_count": 1,
+      "R_min": 15307,
+      "R_max": 15307,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 37793809,
+      "q_a": 483883,
+      "q_s": 53,
+      "record_count": 1,
+      "R_min": 19,
+      "R_max": 19,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 38333689,
+      "q_a": 29,
+      "q_s": 353,
+      "record_count": 1,
+      "R_min": 2723,
+      "R_max": 2723,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 38333689,
+      "q_a": 173,
+      "q_s": 910069,
+      "record_count": 1,
+      "R_min": 115,
+      "R_max": 115,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 38333689,
+      "q_a": 353,
+      "q_s": 29,
+      "record_count": 1,
+      "R_min": 2723,
+      "R_max": 2723,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 38333689,
+      "q_a": 910069,
+      "q_s": 173,
+      "record_count": 1,
+      "R_min": 115,
+      "R_max": 115,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 41708209,
+      "q_a": 29,
+      "q_s": 2317121,
+      "record_count": 1,
+      "R_min": 448475,
+      "R_max": 448475,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 41708209,
+      "q_a": 421,
+      "q_s": 977,
+      "record_count": 1,
+      "R_min": 371,
+      "R_max": 371,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 41708209,
+      "q_a": 977,
+      "q_s": 421,
+      "record_count": 1,
+      "R_min": 371,
+      "R_max": 371,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 41708209,
+      "q_a": 2317121,
+      "q_s": 29,
+      "record_count": 1,
+      "R_min": 448475,
+      "R_max": 448475,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 42486889,
+      "q_a": 5,
+      "q_s": 13,
+      "record_count": 1,
+      "R_min": 8051,
+      "R_max": 8051,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 42486889,
+      "q_a": 13,
+      "q_s": 5,
+      "record_count": 1,
+      "R_min": 8051,
+      "R_max": 8051,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 42486889,
+      "q_a": 929,
+      "q_s": 21001,
+      "record_count": 1,
+      "R_min": 619,
+      "R_max": 619,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 42486889,
+      "q_a": 21001,
+      "q_s": 929,
+      "record_count": 1,
+      "R_min": 619,
+      "R_max": 619,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 42622969,
+      "q_a": 6197,
+      "q_s": 284153,
+      "record_count": 1,
+      "R_min": 747771,
+      "R_max": 747771,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 42622969,
+      "q_a": 284153,
+      "q_s": 6197,
+      "record_count": 1,
+      "R_min": 747771,
+      "R_max": 747771,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48825529,
+      "q_a": 613,
+      "q_s": 309013,
+      "record_count": 1,
+      "R_min": 419,
+      "R_max": 419,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48825529,
+      "q_a": 309013,
+      "q_s": 613,
+      "record_count": 1,
+      "R_min": 419,
+      "R_max": 419,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48991849,
+      "q_a": 89,
+      "q_s": 12517,
+      "record_count": 1,
+      "R_min": 8291,
+      "R_max": 8291,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48991849,
+      "q_a": 401,
+      "q_s": 326581,
+      "record_count": 1,
+      "R_min": 139,
+      "R_max": 139,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48991849,
+      "q_a": 11897,
+      "q_s": 28649,
+      "record_count": 1,
+      "R_min": 7931,
+      "R_max": 7931,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48991849,
+      "q_a": 12517,
+      "q_s": 89,
+      "record_count": 1,
+      "R_min": 8291,
+      "R_max": 8291,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48991849,
+      "q_a": 28649,
+      "q_s": 11897,
+      "record_count": 1,
+      "R_min": 7931,
+      "R_max": 7931,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 48991849,
+      "q_a": 326581,
+      "q_s": 401,
+      "record_count": 1,
+      "R_min": 139,
+      "R_max": 139,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 50290249,
+      "q_a": 31,
+      "q_s": 931267,
+      "record_count": 1,
+      "R_min": 9155,
+      "R_max": 9155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 50290249,
+      "q_a": 103,
+      "q_s": 509,
+      "record_count": 1,
+      "R_min": 3251,
+      "R_max": 3251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 50290249,
+      "q_a": 509,
+      "q_s": 103,
+      "record_count": 1,
+      "R_min": 3251,
+      "R_max": 3251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 50290249,
+      "q_a": 509,
+      "q_s": 1831,
+      "record_count": 1,
+      "R_min": 540755,
+      "R_max": 540755,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 50290249,
+      "q_a": 1831,
+      "q_s": 509,
+      "record_count": 1,
+      "R_min": 540755,
+      "R_max": 540755,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 50290249,
+      "q_a": 931267,
+      "q_s": 31,
+      "record_count": 1,
+      "R_min": 9155,
+      "R_max": 9155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 51029449,
+      "q_a": 1889,
+      "q_s": 2749,
+      "record_count": 1,
+      "R_min": 1259,
+      "R_max": 1259,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 51029449,
+      "q_a": 1889,
+      "q_s": 23957,
+      "record_count": 1,
+      "R_min": 16371,
+      "R_max": 16371,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 51029449,
+      "q_a": 2749,
+      "q_s": 1889,
+      "record_count": 1,
+      "R_min": 1259,
+      "R_max": 1259,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 51029449,
+      "q_a": 23957,
+      "q_s": 1889,
+      "record_count": 1,
+      "R_min": 16371,
+      "R_max": 16371,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 53712409,
+      "q_a": 101,
+      "q_s": 2137,
+      "record_count": 1,
+      "R_min": 17035,
+      "R_max": 17035,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 53712409,
+      "q_a": 2137,
+      "q_s": 101,
+      "record_count": 1,
+      "R_min": 17035,
+      "R_max": 17035,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 57399241,
+      "q_a": 61,
+      "q_s": 51341,
+      "record_count": 1,
+      "R_min": 34227,
+      "R_max": 34227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 57399241,
+      "q_a": 79,
+      "q_s": 136013,
+      "record_count": 1,
+      "R_min": 155,
+      "R_max": 155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 57399241,
+      "q_a": 761,
+      "q_s": 15809,
+      "record_count": 1,
+      "R_min": 83,
+      "R_max": 83,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 57399241,
+      "q_a": 15809,
+      "q_s": 761,
+      "record_count": 1,
+      "R_min": 83,
+      "R_max": 83,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 57399241,
+      "q_a": 51341,
+      "q_s": 61,
+      "record_count": 1,
+      "R_min": 34227,
+      "R_max": 34227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 57399241,
+      "q_a": 136013,
+      "q_s": 79,
+      "record_count": 1,
+      "R_min": 155,
+      "R_max": 155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 58757449,
+      "q_a": 521,
+      "q_s": 1231,
+      "record_count": 1,
+      "R_min": 291,
+      "R_max": 291,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 58757449,
+      "q_a": 1231,
+      "q_s": 521,
+      "record_count": 1,
+      "R_min": 291,
+      "R_max": 291,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 58757449,
+      "q_a": 2417,
+      "q_s": 164093,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 58757449,
+      "q_a": 164093,
+      "q_s": 2417,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62588089,
+      "q_a": 139,
+      "q_s": 10431313,
+      "record_count": 1,
+      "R_min": 98875,
+      "R_max": 98875,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62588089,
+      "q_a": 211,
+      "q_s": 4051,
+      "record_count": 1,
+      "R_min": 150091,
+      "R_max": 150091,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62588089,
+      "q_a": 4051,
+      "q_s": 211,
+      "record_count": 1,
+      "R_min": 150091,
+      "R_max": 150091,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62588089,
+      "q_a": 10431313,
+      "q_s": 139,
+      "record_count": 1,
+      "R_min": 98875,
+      "R_max": 98875,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62704849,
+      "q_a": 349,
+      "q_s": 1650083,
+      "record_count": 1,
+      "R_min": 1947,
+      "R_max": 1947,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62704849,
+      "q_a": 3823,
+      "q_s": 696719,
+      "record_count": 1,
+      "R_min": 150371,
+      "R_max": 150371,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62704849,
+      "q_a": 696719,
+      "q_s": 3823,
+      "record_count": 1,
+      "R_min": 150371,
+      "R_max": 150371,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 62704849,
+      "q_a": 1650083,
+      "q_s": 349,
+      "record_count": 1,
+      "R_min": 1947,
+      "R_max": 1947,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 68822329,
+      "q_a": 13553,
+      "q_s": 176461,
+      "record_count": 1,
+      "R_min": 139,
+      "R_max": 139,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 68822329,
+      "q_a": 176461,
+      "q_s": 13553,
+      "record_count": 1,
+      "R_min": 139,
+      "R_max": 139,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 72148729,
+      "q_a": 379,
+      "q_s": 2404771,
+      "record_count": 1,
+      "R_min": 859,
+      "R_max": 859,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 72148729,
+      "q_a": 2404771,
+      "q_s": 379,
+      "record_count": 1,
+      "R_min": 859,
+      "R_max": 859,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 75056809,
+      "q_a": 347,
+      "q_s": 51059,
+      "record_count": 1,
+      "R_min": 63339,
+      "R_max": 63339,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 75056809,
+      "q_a": 51059,
+      "q_s": 347,
+      "record_count": 1,
+      "R_min": 63339,
+      "R_max": 63339,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 78268369,
+      "q_a": 461,
+      "q_s": 2621,
+      "record_count": 1,
+      "R_min": 1643,
+      "R_max": 1643,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 78268369,
+      "q_a": 2621,
+      "q_s": 461,
+      "record_count": 1,
+      "R_min": 1643,
+      "R_max": 1643,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 3,
+      "q_s": 53,
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 17,
+      "q_s": 184447,
+      "record_count": 1,
+      "R_min": 6611,
+      "R_max": 6611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 53,
+      "q_s": 3,
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 53,
+      "q_s": 281249,
+      "record_count": 1,
+      "R_min": 97555,
+      "R_max": 97555,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 97,
+      "q_s": 10037,
+      "record_count": 1,
+      "R_min": 1571,
+      "R_max": 1571,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 271,
+      "q_s": 13177,
+      "record_count": 1,
+      "R_min": 1987,
+      "R_max": 1987,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 271,
+      "q_s": 1468739,
+      "record_count": 1,
+      "R_min": 45347,
+      "R_max": 45347,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 10037,
+      "q_s": 97,
+      "record_count": 1,
+      "R_min": 1571,
+      "R_max": 1571,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 13177,
+      "q_s": 271,
+      "record_count": 1,
+      "R_min": 1987,
+      "R_max": 1987,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 184447,
+      "q_s": 17,
+      "record_count": 1,
+      "R_min": 6611,
+      "R_max": 6611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 281249,
+      "q_s": 53,
+      "record_count": 1,
+      "R_min": 97555,
+      "R_max": 97555,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 79312489,
+      "q_a": 1468739,
+      "q_s": 271,
+      "record_count": 1,
+      "R_min": 45347,
+      "R_max": 45347,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 83445289,
+      "q_a": 17,
+      "q_s": 1192069,
+      "record_count": 1,
+      "R_min": 25971,
+      "R_max": 25971,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 83445289,
+      "q_a": 107,
+      "q_s": 68963,
+      "record_count": 1,
+      "R_min": 25715,
+      "R_max": 25715,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 83445289,
+      "q_a": 149,
+      "q_s": 223,
+      "record_count": 1,
+      "R_min": 13859,
+      "R_max": 13859,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 83445289,
+      "q_a": 223,
+      "q_s": 149,
+      "record_count": 1,
+      "R_min": 13859,
+      "R_max": 13859,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 83445289,
+      "q_a": 68963,
+      "q_s": 107,
+      "record_count": 1,
+      "R_min": 25715,
+      "R_max": 25715,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 83445289,
+      "q_a": 1192069,
+      "q_s": 17,
+      "record_count": 1,
+      "R_min": 25971,
+      "R_max": 25971,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 84624409,
+      "q_a": 17,
+      "q_s": 2014333,
+      "record_count": 1,
+      "R_min": 539,
+      "R_max": 539,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 84624409,
+      "q_a": 53,
+      "q_s": 277,
+      "record_count": 1,
+      "R_min": 451,
+      "R_max": 451,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 84624409,
+      "q_a": 277,
+      "q_s": 53,
+      "record_count": 1,
+      "R_min": 451,
+      "R_max": 451,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 84624409,
+      "q_a": 2014333,
+      "q_s": 17,
+      "record_count": 1,
+      "R_min": 539,
+      "R_max": 539,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 85457689,
+      "q_a": 13,
+      "q_s": 61,
+      "record_count": 1,
+      "R_min": 811,
+      "R_max": 811,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 85457689,
+      "q_a": 61,
+      "q_s": 13,
+      "record_count": 1,
+      "R_min": 811,
+      "R_max": 811,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 96440089,
+      "q_a": 13,
+      "q_s": 1554881,
+      "record_count": 1,
+      "R_min": 83,
+      "R_max": 83,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 96440089,
+      "q_a": 103699,
+      "q_s": 2537897,
+      "record_count": 1,
+      "R_min": 1691931,
+      "R_max": 1691931,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 96440089,
+      "q_a": 1554881,
+      "q_s": 13,
+      "record_count": 1,
+      "R_min": 83,
+      "R_max": 83,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 96440089,
+      "q_a": 2537897,
+      "q_s": 103699,
+      "record_count": 1,
+      "R_min": 1691931,
+      "R_max": 1691931,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 96530569,
+      "q_a": 2083,
+      "q_s": 11467,
+      "record_count": 1,
+      "R_min": 387,
+      "R_max": 387,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 96530569,
+      "q_a": 11467,
+      "q_s": 2083,
+      "record_count": 1,
+      "R_min": 387,
+      "R_max": 387,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 99151369,
+      "q_a": 163,
+      "q_s": 2351,
+      "record_count": 1,
+      "R_min": 3395,
+      "R_max": 3395,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 99151369,
+      "q_a": 227,
+      "q_s": 115561,
+      "record_count": 1,
+      "R_min": 82011,
+      "R_max": 82011,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 99151369,
+      "q_a": 2351,
+      "q_s": 163,
+      "record_count": 1,
+      "R_min": 3395,
+      "R_max": 3395,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 99151369,
+      "q_a": 115561,
+      "q_s": 227,
+      "record_count": 1,
+      "R_min": 82011,
+      "R_max": 82011,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 99756409,
+      "q_a": 67,
+      "q_s": 97609,
+      "record_count": 1,
+      "R_min": 17747,
+      "R_max": 17747,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 99756409,
+      "q_a": 97609,
+      "q_s": 67,
+      "record_count": 1,
+      "R_min": 17747,
+      "R_max": 17747,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 3,
+      "q_s": 69493,
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 13,
+      "q_s": 1471,
+      "record_count": 1,
+      "R_min": 22163,
+      "R_max": 22163,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 19,
+      "q_s": 76487,
+      "record_count": 1,
+      "R_min": 899,
+      "R_max": 899,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 19,
+      "q_s": 706193,
+      "record_count": 1,
+      "R_min": 291,
+      "R_max": 291,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 1471,
+      "q_s": 13,
+      "record_count": 1,
+      "R_min": 22163,
+      "R_max": 22163,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 1709,
+      "q_s": 3535009,
+      "record_count": 1,
+      "R_min": 1860531,
+      "R_max": 1860531,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 69493,
+      "q_s": 3,
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 76487,
+      "q_s": 19,
+      "record_count": 1,
+      "R_min": 899,
+      "R_max": 899,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 706193,
+      "q_s": 19,
+      "record_count": 1,
+      "R_min": 291,
+      "R_max": 291,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 106050289,
+      "q_a": 3535009,
+      "q_s": 1709,
+      "record_count": 1,
+      "R_min": 1860531,
+      "R_max": 1860531,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 111810169,
+      "q_a": 37,
+      "q_s": 157,
+      "record_count": 1,
+      "R_min": 11483,
+      "R_max": 11483,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 111810169,
+      "q_a": 157,
+      "q_s": 37,
+      "record_count": 1,
+      "R_min": 11483,
+      "R_max": 11483,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 122014489,
+      "q_a": 41,
+      "q_s": 1667,
+      "record_count": 1,
+      "R_min": 403,
+      "R_max": 403,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 122014489,
+      "q_a": 491,
+      "q_s": 661,
+      "record_count": 1,
+      "R_min": 34931,
+      "R_max": 34931,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 122014489,
+      "q_a": 661,
+      "q_s": 491,
+      "record_count": 1,
+      "R_min": 34931,
+      "R_max": 34931,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 122014489,
+      "q_a": 1583,
+      "q_s": 18911,
+      "record_count": 1,
+      "R_min": 211,
+      "R_max": 211,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 122014489,
+      "q_a": 1667,
+      "q_s": 41,
+      "record_count": 1,
+      "R_min": 403,
+      "R_max": 403,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 122014489,
+      "q_a": 18911,
+      "q_s": 1583,
+      "record_count": 1,
+      "R_min": 211,
+      "R_max": 211,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 137431849,
+      "q_a": 61,
+      "q_s": 119923,
+      "record_count": 1,
+      "R_min": 7907,
+      "R_max": 7907,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 137431849,
+      "q_a": 7079,
+      "q_s": 7877,
+      "record_count": 1,
+      "R_min": 99,
+      "R_max": 99,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 137431849,
+      "q_a": 7877,
+      "q_s": 7079,
+      "record_count": 1,
+      "R_min": 99,
+      "R_max": 99,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 137431849,
+      "q_a": 15139,
+      "q_s": 9816557,
+      "record_count": 1,
+      "R_min": 384963,
+      "R_max": 384963,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 137431849,
+      "q_a": 119923,
+      "q_s": 61,
+      "record_count": 1,
+      "R_min": 7907,
+      "R_max": 7907,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 137431849,
+      "q_a": 9816557,
+      "q_s": 15139,
+      "record_count": 1,
+      "R_min": 384963,
+      "R_max": 384963,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 148659289,
+      "q_a": 181,
+      "q_s": 89231,
+      "record_count": 1,
+      "R_min": 47939,
+      "R_max": 47939,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 148659289,
+      "q_a": 181,
+      "q_s": 10608743,
+      "record_count": 1,
+      "R_min": 155,
+      "R_max": 155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 148659289,
+      "q_a": 89231,
+      "q_s": 181,
+      "record_count": 1,
+      "R_min": 47939,
+      "R_max": 47939,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 148659289,
+      "q_a": 10608743,
+      "q_s": 181,
+      "record_count": 1,
+      "R_min": 155,
+      "R_max": 155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 151911769,
+      "q_a": 5309,
+      "q_s": 160583,
+      "record_count": 1,
+      "R_min": 14075,
+      "R_max": 14075,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 151911769,
+      "q_a": 160583,
+      "q_s": 5309,
+      "record_count": 1,
+      "R_min": 14075,
+      "R_max": 14075,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 152498329,
+      "q_a": 151,
+      "q_s": 463,
+      "record_count": 1,
+      "R_min": 731,
+      "R_max": 731,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 152498329,
+      "q_a": 463,
+      "q_s": 151,
+      "record_count": 1,
+      "R_min": 731,
+      "R_max": 731,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 152498329,
+      "q_a": 2239,
+      "q_s": 391021,
+      "record_count": 1,
+      "R_min": 28131,
+      "R_max": 28131,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 152498329,
+      "q_a": 3347,
+      "q_s": 10979,
+      "record_count": 1,
+      "R_min": 3467,
+      "R_max": 3467,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 152498329,
+      "q_a": 10979,
+      "q_s": 3347,
+      "record_count": 1,
+      "R_min": 3467,
+      "R_max": 3467,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 152498329,
+      "q_a": 391021,
+      "q_s": 2239,
+      "record_count": 1,
+      "R_min": 28131,
+      "R_max": 28131,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 155533849,
+      "q_a": 257,
+      "q_s": 4085033,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 155533849,
+      "q_a": 971,
+      "q_s": 15887,
+      "record_count": 1,
+      "R_min": 267,
+      "R_max": 267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 155533849,
+      "q_a": 4421,
+      "q_s": 6529,
+      "record_count": 1,
+      "R_min": 1187,
+      "R_max": 1187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 155533849,
+      "q_a": 6529,
+      "q_s": 4421,
+      "record_count": 1,
+      "R_min": 1187,
+      "R_max": 1187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 155533849,
+      "q_a": 15887,
+      "q_s": 971,
+      "record_count": 1,
+      "R_min": 267,
+      "R_max": 267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 155533849,
+      "q_a": 4085033,
+      "q_s": 257,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 158937529,
+      "q_a": 661,
+      "q_s": 1005883,
+      "record_count": 1,
+      "R_min": 251,
+      "R_max": 251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 158937529,
+      "q_a": 1753,
+      "q_s": 73243,
+      "record_count": 1,
+      "R_min": 23411,
+      "R_max": 23411,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 158937529,
+      "q_a": 73243,
+      "q_s": 1753,
+      "record_count": 1,
+      "R_min": 23411,
+      "R_max": 23411,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 158937529,
+      "q_a": 1005883,
+      "q_s": 661,
+      "record_count": 1,
+      "R_min": 251,
+      "R_max": 251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 165387049,
+      "q_a": 31,
+      "q_s": 431,
+      "record_count": 1,
+      "R_min": 227,
+      "R_max": 227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 165387049,
+      "q_a": 59,
+      "q_s": 4351433,
+      "record_count": 1,
+      "R_min": 267,
+      "R_max": 267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 165387049,
+      "q_a": 431,
+      "q_s": 31,
+      "record_count": 1,
+      "R_min": 227,
+      "R_max": 227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 165387049,
+      "q_a": 863,
+      "q_s": 27564503,
+      "record_count": 1,
+      "R_min": 1778355,
+      "R_max": 1778355,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 165387049,
+      "q_a": 4351433,
+      "q_s": 59,
+      "record_count": 1,
+      "R_min": 267,
+      "R_max": 267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 165387049,
+      "q_a": 27564503,
+      "q_s": 863,
+      "record_count": 1,
+      "R_min": 1778355,
+      "R_max": 1778355,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 168434809,
+      "q_a": 41,
+      "q_s": 27730121,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 168434809,
+      "q_a": 1601,
+      "q_s": 11257,
+      "record_count": 1,
+      "R_min": 1067,
+      "R_max": 1067,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 168434809,
+      "q_a": 6163,
+      "q_s": 4432471,
+      "record_count": 1,
+      "R_min": 9731,
+      "R_max": 9731,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 168434809,
+      "q_a": 11257,
+      "q_s": 1601,
+      "record_count": 1,
+      "R_min": 1067,
+      "R_max": 1067,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 168434809,
+      "q_a": 4432471,
+      "q_s": 6163,
+      "record_count": 1,
+      "R_min": 9731,
+      "R_max": 9731,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 168434809,
+      "q_a": 27730121,
+      "q_s": 41,
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 171292489,
+      "q_a": 19,
+      "q_s": 59,
+      "record_count": 1,
+      "R_min": 8043,
+      "R_max": 8043,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 171292489,
+      "q_a": 59,
+      "q_s": 19,
+      "record_count": 1,
+      "R_min": 8043,
+      "R_max": 8043,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 171292489,
+      "q_a": 149,
+      "q_s": 587,
+      "record_count": 1,
+      "R_min": 3005131,
+      "R_max": 3005131,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 171292489,
+      "q_a": 149,
+      "q_s": 917837,
+      "record_count": 1,
+      "R_min": 99,
+      "R_max": 99,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 171292489,
+      "q_a": 587,
+      "q_s": 149,
+      "record_count": 1,
+      "R_min": 3005131,
+      "R_max": 3005131,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    },
+    {
+      "prime": 171292489,
+      "q_a": 587,
+      "q_s": 643949,
+      "record_count": 1,
+      "R_min": 4387,
+      "R_max": 4387,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_count": 2
+    }
+  ],
+  "overloads": [],
+  "unresolved_records": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "active_primes": [
+        151,
+        15287
+      ]
+    },
+    {
+      "prime": 5478169,
+      "R": 4835,
+      "active_primes": [
+        29,
+        73
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "active_primes": [
+        151,
+        398417
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 1251,
+      "active_primes": [
+        151,
+        79939
+      ]
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "active_primes": [
+        107,
+        13829
+      ]
+    },
+    {
+      "prime": 9104209,
+      "R": 419,
+      "active_primes": [
+        163,
+        24077
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "active_primes": [
+        139,
+        765439
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 33051,
+      "active_primes": [
+        389,
+        4507
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 27,
+      "active_primes": [
+        599,
+        9491
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 5075,
+      "active_primes": [
+        113,
+        331
+      ]
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "active_primes": [
+        163,
+        180751
+      ]
+    },
+    {
+      "prime": 24738289,
+      "R": 123,
+      "active_primes": [
+        349,
+        26261
+      ]
+    },
+    {
+      "prime": 25073689,
+      "R": 91,
+      "active_primes": [
+        71,
+        321367
+      ]
+    },
+    {
+      "prime": 25073689,
+      "R": 139,
+      "active_primes": [
+        487,
+        162649
+      ]
+    },
+    {
+      "prime": 30997849,
+      "R": 35,
+      "active_primes": [
+        3,
+        69493
+      ]
+    },
+    {
+      "prime": 30997849,
+      "R": 14867,
+      "active_primes": [
+        163,
+        937
+      ]
+    },
+    {
+      "prime": 36583369,
+      "R": 859,
+      "active_primes": [
+        379,
+        4051
+      ]
+    },
+    {
+      "prime": 36583369,
+      "R": 1315,
+      "active_primes": [
+        1973,
+        5179
+      ]
+    },
+    {
+      "prime": 37793809,
+      "R": 19,
+      "active_primes": [
+        53,
+        483883
+      ]
+    },
+    {
+      "prime": 37793809,
+      "R": 15307,
+      "active_primes": [
+        457,
+        22961
+      ]
+    },
+    {
+      "prime": 38333689,
+      "R": 115,
+      "active_primes": [
+        173,
+        910069
+      ]
+    },
+    {
+      "prime": 38333689,
+      "R": 2723,
+      "active_primes": [
+        29,
+        353
+      ]
+    },
+    {
+      "prime": 41708209,
+      "R": 371,
+      "active_primes": [
+        421,
+        977
+      ]
+    },
+    {
+      "prime": 41708209,
+      "R": 448475,
+      "active_primes": [
+        29,
+        2317121
+      ]
+    },
+    {
+      "prime": 42486889,
+      "R": 619,
+      "active_primes": [
+        929,
+        21001
+      ]
+    },
+    {
+      "prime": 42486889,
+      "R": 8051,
+      "active_primes": [
+        5,
+        13
+      ]
+    },
+    {
+      "prime": 42622969,
+      "R": 747771,
+      "active_primes": [
+        6197,
+        284153
+      ]
+    },
+    {
+      "prime": 48825529,
+      "R": 419,
+      "active_primes": [
+        613,
+        309013
+      ]
+    },
+    {
+      "prime": 48991849,
+      "R": 139,
+      "active_primes": [
+        401,
+        326581
+      ]
+    },
+    {
+      "prime": 48991849,
+      "R": 7931,
+      "active_primes": [
+        11897,
+        28649
+      ]
+    },
+    {
+      "prime": 48991849,
+      "R": 8291,
+      "active_primes": [
+        89,
+        12517
+      ]
+    },
+    {
+      "prime": 50290249,
+      "R": 3251,
+      "active_primes": [
+        103,
+        509
+      ]
+    },
+    {
+      "prime": 50290249,
+      "R": 9155,
+      "active_primes": [
+        31,
+        931267
+      ]
+    },
+    {
+      "prime": 50290249,
+      "R": 540755,
+      "active_primes": [
+        509,
+        1831
+      ]
+    },
+    {
+      "prime": 51029449,
+      "R": 1259,
+      "active_primes": [
+        1889,
+        2749
+      ]
+    },
+    {
+      "prime": 51029449,
+      "R": 16371,
+      "active_primes": [
+        1889,
+        23957
+      ]
+    },
+    {
+      "prime": 53712409,
+      "R": 17035,
+      "active_primes": [
+        101,
+        2137
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 83,
+      "active_primes": [
+        761,
+        15809
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 155,
+      "active_primes": [
+        79,
+        136013
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 34227,
+      "active_primes": [
+        61,
+        51341
+      ]
+    },
+    {
+      "prime": 58757449,
+      "R": 27,
+      "active_primes": [
+        2417,
+        164093
+      ]
+    },
+    {
+      "prime": 58757449,
+      "R": 291,
+      "active_primes": [
+        521,
+        1231
+      ]
+    },
+    {
+      "prime": 62588089,
+      "R": 98875,
+      "active_primes": [
+        139,
+        10431313
+      ]
+    },
+    {
+      "prime": 62588089,
+      "R": 150091,
+      "active_primes": [
+        211,
+        4051
+      ]
+    },
+    {
+      "prime": 62704849,
+      "R": 1947,
+      "active_primes": [
+        349,
+        1650083
+      ]
+    },
+    {
+      "prime": 62704849,
+      "R": 150371,
+      "active_primes": [
+        3823,
+        696719
+      ]
+    },
+    {
+      "prime": 68822329,
+      "R": 139,
+      "active_primes": [
+        13553,
+        176461
+      ]
+    },
+    {
+      "prime": 72148729,
+      "R": 859,
+      "active_primes": [
+        379,
+        2404771
+      ]
+    },
+    {
+      "prime": 75056809,
+      "R": 63339,
+      "active_primes": [
+        347,
+        51059
+      ]
+    },
+    {
+      "prime": 78268369,
+      "R": 1643,
+      "active_primes": [
+        461,
+        2621
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 35,
+      "active_primes": [
+        3,
+        53
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 1571,
+      "active_primes": [
+        97,
+        10037
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 1987,
+      "active_primes": [
+        271,
+        13177
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 6611,
+      "active_primes": [
+        17,
+        184447
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 45347,
+      "active_primes": [
+        271,
+        1468739
+      ]
+    },
+    {
+      "prime": 79312489,
+      "R": 97555,
+      "active_primes": [
+        53,
+        281249
+      ]
+    },
+    {
+      "prime": 83445289,
+      "R": 13859,
+      "active_primes": [
+        149,
+        223
+      ]
+    },
+    {
+      "prime": 83445289,
+      "R": 25715,
+      "active_primes": [
+        107,
+        68963
+      ]
+    },
+    {
+      "prime": 83445289,
+      "R": 25971,
+      "active_primes": [
+        17,
+        1192069
+      ]
+    },
+    {
+      "prime": 84624409,
+      "R": 451,
+      "active_primes": [
+        53,
+        277
+      ]
+    },
+    {
+      "prime": 84624409,
+      "R": 539,
+      "active_primes": [
+        17,
+        2014333
+      ]
+    },
+    {
+      "prime": 85457689,
+      "R": 811,
+      "active_primes": [
+        13,
+        61
+      ]
+    },
+    {
+      "prime": 96440089,
+      "R": 83,
+      "active_primes": [
+        13,
+        1554881
+      ]
+    },
+    {
+      "prime": 96440089,
+      "R": 1691931,
+      "active_primes": [
+        103699,
+        2537897
+      ]
+    },
+    {
+      "prime": 96530569,
+      "R": 387,
+      "active_primes": [
+        2083,
+        11467
+      ]
+    },
+    {
+      "prime": 99151369,
+      "R": 3395,
+      "active_primes": [
+        163,
+        2351
+      ]
+    },
+    {
+      "prime": 99151369,
+      "R": 82011,
+      "active_primes": [
+        227,
+        115561
+      ]
+    },
+    {
+      "prime": 99756409,
+      "R": 17747,
+      "active_primes": [
+        67,
+        97609
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 35,
+      "active_primes": [
+        3,
+        69493
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 291,
+      "active_primes": [
+        19,
+        706193
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 899,
+      "active_primes": [
+        19,
+        76487
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 22163,
+      "active_primes": [
+        13,
+        1471
+      ]
+    },
+    {
+      "prime": 106050289,
+      "R": 1860531,
+      "active_primes": [
+        1709,
+        3535009
+      ]
+    },
+    {
+      "prime": 111810169,
+      "R": 11483,
+      "active_primes": [
+        37,
+        157
+      ]
+    },
+    {
+      "prime": 122014489,
+      "R": 211,
+      "active_primes": [
+        1583,
+        18911
+      ]
+    },
+    {
+      "prime": 122014489,
+      "R": 403,
+      "active_primes": [
+        41,
+        1667
+      ]
+    },
+    {
+      "prime": 122014489,
+      "R": 34931,
+      "active_primes": [
+        491,
+        661
+      ]
+    },
+    {
+      "prime": 137431849,
+      "R": 99,
+      "active_primes": [
+        7079,
+        7877
+      ]
+    },
+    {
+      "prime": 137431849,
+      "R": 7907,
+      "active_primes": [
+        61,
+        119923
+      ]
+    },
+    {
+      "prime": 137431849,
+      "R": 384963,
+      "active_primes": [
+        15139,
+        9816557
+      ]
+    },
+    {
+      "prime": 148659289,
+      "R": 155,
+      "active_primes": [
+        181,
+        10608743
+      ]
+    },
+    {
+      "prime": 148659289,
+      "R": 47939,
+      "active_primes": [
+        181,
+        89231
+      ]
+    },
+    {
+      "prime": 151911769,
+      "R": 14075,
+      "active_primes": [
+        5309,
+        160583
+      ]
+    },
+    {
+      "prime": 152498329,
+      "R": 731,
+      "active_primes": [
+        151,
+        463
+      ]
+    },
+    {
+      "prime": 152498329,
+      "R": 3467,
+      "active_primes": [
+        3347,
+        10979
+      ]
+    },
+    {
+      "prime": 152498329,
+      "R": 28131,
+      "active_primes": [
+        2239,
+        391021
+      ]
+    },
+    {
+      "prime": 155533849,
+      "R": 27,
+      "active_primes": [
+        257,
+        4085033
+      ]
+    },
+    {
+      "prime": 155533849,
+      "R": 267,
+      "active_primes": [
+        971,
+        15887
+      ]
+    },
+    {
+      "prime": 155533849,
+      "R": 1187,
+      "active_primes": [
+        4421,
+        6529
+      ]
+    },
+    {
+      "prime": 158937529,
+      "R": 251,
+      "active_primes": [
+        661,
+        1005883
+      ]
+    },
+    {
+      "prime": 158937529,
+      "R": 23411,
+      "active_primes": [
+        1753,
+        73243
+      ]
+    },
+    {
+      "prime": 165387049,
+      "R": 227,
+      "active_primes": [
+        31,
+        431
+      ]
+    },
+    {
+      "prime": 165387049,
+      "R": 267,
+      "active_primes": [
+        59,
+        4351433
+      ]
+    },
+    {
+      "prime": 165387049,
+      "R": 1778355,
+      "active_primes": [
+        863,
+        27564503
+      ]
+    },
+    {
+      "prime": 168434809,
+      "R": 27,
+      "active_primes": [
+        41,
+        27730121
+      ]
+    },
+    {
+      "prime": 168434809,
+      "R": 1067,
+      "active_primes": [
+        1601,
+        11257
+      ]
+    },
+    {
+      "prime": 168434809,
+      "R": 9731,
+      "active_primes": [
+        6163,
+        4432471
+      ]
+    },
+    {
+      "prime": 171292489,
+      "R": 99,
+      "active_primes": [
+        149,
+        917837
+      ]
+    },
+    {
+      "prime": 171292489,
+      "R": 4387,
+      "active_primes": [
+        587,
+        643949
+      ]
+    },
+    {
+      "prime": 171292489,
+      "R": 8043,
+      "active_primes": [
+        19,
+        59
+      ]
+    },
+    {
+      "prime": 171292489,
+      "R": 3005131,
+      "active_primes": [
+        149,
+        587
+      ]
+    },
+    {
+      "prime": 172657489,
+      "R": 971,
+      "active_primes": [
+        293,
+        27803
+      ]
+    },
+    {
+      "prime": 172657489,
+      "R": 36083,
+      "active_primes": [
+        37,
+        15919
+      ]
+    },
+    {
+      "prime": 172657489,
+      "R": 211331,
+      "active_primes": [
+        113,
+        133843
+      ]
+    },
+    {
+      "prime": 174600409,
+      "R": 1699,
+      "active_primes": [
+        3079,
+        4733
+      ]
+    },
+    {
+      "prime": 176110489,
+      "R": 91,
+      "active_primes": [
+        137,
+        7547
+      ]
+    },
+    {
+      "prime": 176110489,
+      "R": 1187,
+      "active_primes": [
+        19,
+        137
+      ]
+    },
+    {
+      "prime": 179700889,
+      "R": 635,
+      "active_primes": [
+        499,
+        2722351
+      ]
+    },
+    {
+      "prime": 185651449,
+      "R": 92779,
+      "active_primes": [
+        139169,
+        30941797
+      ]
+    },
+    {
+      "prime": 188748169,
+      "R": 251,
+      "active_primes": [
+        269,
+        419329
+      ]
+    },
+    {
+      "prime": 188748169,
+      "R": 64091,
+      "active_primes": [
+        40591,
+        54583
+      ]
+    },
+    {
+      "prime": 188748169,
+      "R": 212315,
+      "active_primes": [
+        82567,
+        264353
+      ]
+    },
+    {
+      "prime": 192235129,
+      "R": 563,
+      "active_primes": [
+        31,
+        3121
+      ]
+    },
+    {
+      "prime": 202112089,
+      "R": 2315,
+      "active_primes": [
+        683,
+        354581
+      ]
+    },
+    {
+      "prime": 202112089,
+      "R": 11891,
+      "active_primes": [
+        7,
+        13
+      ]
+    },
+    {
+      "prime": 204971209,
+      "R": 68667,
+      "active_primes": [
+        449,
+        6832367
+      ]
+    },
+    {
+      "prime": 214360969,
+      "R": 155,
+      "active_primes": [
+        3023,
+        33923
+      ]
+    },
+    {
+      "prime": 214360969,
+      "R": 267,
+      "active_primes": [
+        401,
+        429907
+      ]
+    },
+    {
+      "prime": 214360969,
+      "R": 11171,
+      "active_primes": [
+        53,
+        46099
+      ]
+    },
+    {
+      "prime": 217315849,
+      "R": 23435,
+      "active_primes": [
+        83,
+        35153
+      ]
+    },
+    {
+      "prime": 223474729,
+      "R": 699,
+      "active_primes": [
+        2447,
+        56393
+      ]
+    },
+    {
+      "prime": 226819609,
+      "R": 43,
+      "active_primes": [
+        641,
+        9439
+      ]
+    },
+    {
+      "prime": 226819609,
+      "R": 3979291,
+      "active_primes": [
+        8069,
+        19963
+      ]
+    },
+    {
+      "prime": 228366889,
+      "R": 163,
+      "active_primes": [
+        571,
+        16297637
+      ]
+    },
+    {
+      "prime": 228366889,
+      "R": 523,
+      "active_primes": [
+        233,
+        307
+      ]
+    },
+    {
+      "prime": 236164009,
+      "R": 8379,
+      "active_primes": [
+        29,
+        27239
+      ]
+    },
+    {
+      "prime": 236164009,
+      "R": 49355,
+      "active_primes": [
+        223,
+        1879
+      ]
+    },
+    {
+      "prime": 242042089,
+      "R": 771,
+      "active_primes": [
+        89,
+        109
+      ]
+    },
+    {
+      "prime": 242042089,
+      "R": 82411,
+      "active_primes": [
+        257,
+        2081
+      ]
+    },
+    {
+      "prime": 253788649,
+      "R": 603,
+      "active_primes": [
+        2111,
+        18123467
+      ]
+    },
+    {
+      "prime": 253788649,
+      "R": 5027,
+      "active_primes": [
+        13,
+        32117
+      ]
+    },
+    {
+      "prime": 257483209,
+      "R": 83,
+      "active_primes": [
+        97,
+        269
+      ]
+    },
+    {
+      "prime": 257483209,
+      "R": 1019,
+      "active_primes": [
+        37,
+        59
+      ]
+    },
+    {
+      "prime": 257483209,
+      "R": 126403,
+      "active_primes": [
+        8941,
+        9413
+      ]
+    },
+    {
+      "prime": 266080369,
+      "R": 745323,
+      "active_primes": [
+        2608631,
+        19005737
+      ]
+    },
+    {
+      "prime": 278505049,
+      "R": 34931,
+      "active_primes": [
+        31,
+        130021
+      ]
+    },
+    {
+      "prime": 283309849,
+      "R": 83,
+      "active_primes": [
+        457,
+        35437
+      ]
+    },
+    {
+      "prime": 283309849,
+      "R": 107,
+      "active_primes": [
+        4013,
+        16141
+      ]
+    },
+    {
+      "prime": 283309849,
+      "R": 1571,
+      "active_primes": [
+        127,
+        397
+      ]
+    },
+    {
+      "prime": 283309849,
+      "R": 8051,
+      "active_primes": [
+        103,
+        44281
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 203,
+      "active_primes": [
+        37,
+        79
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 3299,
+      "active_primes": [
+        4721,
+        11719
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 21467,
+      "active_primes": [
+        1259,
+        17159
+      ]
+    },
+    {
+      "prime": 297640249,
+      "R": 37331,
+      "active_primes": [
+        227,
+        941
+      ]
+    },
+    {
+      "prime": 300873169,
+      "R": 227,
+      "active_primes": [
+        31,
+        2384381
+      ]
+    },
+    {
+      "prime": 300873169,
+      "R": 475,
+      "active_primes": [
+        31,
+        50110363
+      ]
+    },
+    {
+      "prime": 300873169,
+      "R": 211139,
+      "active_primes": [
+        43,
+        103
+      ]
+    },
+    {
+      "prime": 300873169,
+      "R": 3235195,
+      "active_primes": [
+        23,
+        2153
+      ]
+    },
+    {
+      "prime": 301304089,
+      "R": 4691,
+      "active_primes": [
+        619,
+        25801
+      ]
+    },
+    {
+      "prime": 304959769,
+      "R": 203171,
+      "active_primes": [
+        349,
+        5147
+      ]
+    },
+    {
+      "prime": 306963409,
+      "R": 875,
+      "active_primes": [
+        89,
+        113
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 19,
+      "active_primes": [
+        29,
+        50776237
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 5507,
+      "active_primes": [
+        751,
+        17221307
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 19891,
+      "active_primes": [
+        6359,
+        149183
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 137595,
+      "active_primes": [
+        29,
+        95857
+      ]
+    },
+    {
+      "prime": 310002289,
+      "R": 323931,
+      "active_primes": [
+        751,
+        4373
+      ]
+    },
+    {
+      "prime": 311333929,
+      "R": 1859,
+      "active_primes": [
+        241,
+        110629
+      ]
+    },
+    {
+      "prime": 311333929,
+      "R": 6835,
+      "active_primes": [
+        509,
+        22237673
+      ]
+    },
+    {
+      "prime": 312918169,
+      "R": 49947,
+      "active_primes": [
+        83,
+        17669
+      ]
+    },
+    {
+      "prime": 325900969,
+      "R": 35,
+      "active_primes": [
+        3,
+        193
+      ]
+    },
+    {
+      "prime": 325900969,
+      "R": 803,
+      "active_primes": [
+        433,
+        102161
+      ]
+    },
+    {
+      "prime": 325900969,
+      "R": 5011,
+      "active_primes": [
+        137,
+        8693
+      ]
+    },
+    {
+      "prime": 328186681,
+      "R": 164011,
+      "active_primes": [
+        251,
+        246017
+      ]
+    },
+    {
+      "prime": 331117609,
+      "R": 107891,
+      "active_primes": [
+        389,
+        821
+      ]
+    },
+    {
+      "prime": 333575449,
+      "R": 83,
+      "active_primes": [
+        73,
+        12547
+      ]
+    },
+    {
+      "prime": 333575449,
+      "R": 6787,
+      "active_primes": [
+        433,
+        17551
+      ]
+    },
+    {
+      "prime": 333575449,
+      "R": 978227,
+      "active_primes": [
+        5779,
+        5054173
+      ]
+    },
+    {
+      "prime": 333575449,
+      "R": 1407491,
+      "active_primes": [
+        67,
+        3706393
+      ]
+    },
+    {
+      "prime": 335420089,
+      "R": 939,
+      "active_primes": [
+        1553,
+        58211
+      ]
+    },
+    {
+      "prime": 335420089,
+      "R": 4339,
+      "active_primes": [
+        15187,
+        1041643
+      ]
+    },
+    {
+      "prime": 335495689,
+      "R": 16163,
+      "active_primes": [
+        1523,
+        26513
+      ]
+    },
+    {
+      "prime": 339576169,
+      "R": 1667,
+      "active_primes": [
+        29,
+        379
+      ]
+    },
+    {
+      "prime": 339576169,
+      "R": 238299,
+      "active_primes": [
+        19,
+        2263841
+      ]
+    },
+    {
+      "prime": 340352329,
+      "R": 643,
+      "active_primes": [
+        183577,
+        298031
+      ]
+    },
+    {
+      "prime": 356491249,
+      "R": 131595,
+      "active_primes": [
+        227,
+        33199
+      ]
+    },
+    {
+      "prime": 362050441,
+      "R": 3371,
+      "active_primes": [
+        443,
+        37643
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 155,
+      "active_primes": [
+        4801,
+        13873
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 1379,
+      "active_primes": [
+        1609,
+        45317
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 1907,
+      "active_primes": [
+        151,
+        36013
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 19083,
+      "active_primes": [
+        239,
+        8419
+      ]
+    },
+    {
+      "prime": 366108649,
+      "R": 33171,
+      "active_primes": [
+        18481,
+        4693697
+      ]
+    },
+    {
+      "prime": 369577849,
+      "R": 227,
+      "active_primes": [
+        31,
+        6833999
+      ]
+    },
+    {
+      "prime": 369577849,
+      "R": 475,
+      "active_primes": [
+        31,
+        61553113
+      ]
+    },
+    {
+      "prime": 369577849,
+      "R": 13011,
+      "active_primes": [
+        88289,
+        389029
+      ]
+    },
+    {
+      "prime": 369577849,
+      "R": 15707,
+      "active_primes": [
+        23561,
+        526453
+      ]
+    },
+    {
+      "prime": 371160409,
+      "R": 771,
+      "active_primes": [
+        19661,
+        727747
+      ]
+    },
+    {
+      "prime": 371275249,
+      "R": 39611,
+      "active_primes": [
+        673,
+        1249
+      ]
+    },
+    {
+      "prime": 373561609,
+      "R": 99,
+      "active_primes": [
+        48857,
+        189239
+      ]
+    },
+    {
+      "prime": 373561609,
+      "R": 1459,
+      "active_primes": [
+        31,
+        199
+      ]
+    },
+    {
+      "prime": 373561609,
+      "R": 2211,
+      "active_primes": [
+        7,
+        12161
+      ]
+    },
+    {
+      "prime": 373561609,
+      "R": 625731,
+      "active_primes": [
+        7757,
+        11351
+      ]
+    },
+    {
+      "prime": 374272369,
+      "R": 7307,
+      "active_primes": [
+        4909,
+        15439
+      ]
+    },
+    {
+      "prime": 383592169,
+      "R": 72691,
+      "active_primes": [
+        199,
+        109037
+      ]
+    },
+    {
+      "prime": 385883689,
+      "R": 811,
+      "active_primes": [
+        4639,
+        16139
+      ]
+    },
+    {
+      "prime": 386108809,
+      "R": 395,
+      "active_primes": [
+        149,
+        3323
+      ]
+    },
+    {
+      "prime": 386108809,
+      "R": 25643,
+      "active_primes": [
+        29917,
+        1199089
+      ]
+    },
+    {
+      "prime": 386108809,
+      "R": 1920939,
+      "active_primes": [
+        2881409,
+        64351457
+      ]
+    },
+    {
+      "prime": 391209289,
+      "R": 35,
+      "active_primes": [
+        3,
+        2475113
+      ]
+    },
+    {
+      "prime": 391209289,
+      "R": 14915,
+      "active_primes": [
+        163,
+        17401
+      ]
+    },
+    {
+      "prime": 392018449,
+      "R": 59,
+      "active_primes": [
+        67,
+        4789
+      ]
+    },
+    {
+      "prime": 392018449,
+      "R": 107,
+      "active_primes": [
+        5261,
+        51109
+      ]
+    },
+    {
+      "prime": 392018449,
+      "R": 27667,
+      "active_primes": [
+        883,
+        5025817
+      ]
+    },
+    {
+      "prime": 401991529,
+      "R": 67,
+      "active_primes": [
+        97,
+        5153
+      ]
+    },
+    {
+      "prime": 401991529,
+      "R": 2891,
+      "active_primes": [
+        601,
+        33889
+      ]
+    },
+    {
+      "prime": 403509649,
+      "R": 899,
+      "active_primes": [
+        4999,
+        549739
+      ]
+    },
+    {
+      "prime": 405660649,
+      "R": 1019,
+      "active_primes": [
+        41,
+        9657233
+      ]
+    },
+    {
+      "prime": 405660649,
+      "R": 6595,
+      "active_primes": [
+        41,
+        138637
+      ]
+    },
+    {
+      "prime": 408626089,
+      "R": 531,
+      "active_primes": [
+        31,
+        10567
+      ]
+    },
+    {
+      "prime": 429600649,
+      "R": 563,
+      "active_primes": [
+        79,
+        144061
+      ]
+    },
+    {
+      "prime": 429600649,
+      "R": 8699,
+      "active_primes": [
+        17,
+        43
+      ]
+    },
+    {
+      "prime": 437817769,
+      "R": 635,
+      "active_primes": [
+        409,
+        11677
+      ]
+    },
+    {
+      "prime": 437817769,
+      "R": 508499,
+      "active_primes": [
+        17,
+        3221
+      ]
+    },
+    {
+      "prime": 450622489,
+      "R": 83,
+      "active_primes": [
+        13,
+        7265281
+      ]
+    },
+    {
+      "prime": 450622489,
+      "R": 73379,
+      "active_primes": [
+        167,
+        110069
+      ]
+    },
+    {
+      "prime": 457986169,
+      "R": 3435,
+      "active_primes": [
+        1601,
+        19421
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 19,
+      "active_primes": [
+        53,
+        5935933
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 83,
+      "active_primes": [
+        97,
+        33059357
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 579,
+      "active_primes": [
+        89,
+        2027
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 32675,
+      "active_primes": [
+        97,
+        1187
+      ]
+    },
+    {
+      "prime": 463627609,
+      "R": 227603,
+      "active_primes": [
+        2027,
+        430081
+      ]
+    },
+    {
+      "prime": 472918009,
+      "R": 19,
+      "active_primes": [
+        1193,
+        268993
+      ]
+    },
+    {
+      "prime": 473173969,
+      "R": 27,
+      "active_primes": [
+        16349,
+        195359
+      ]
+    },
+    {
+      "prime": 473173969,
+      "R": 115,
+      "active_primes": [
+        547,
+        25933
+      ]
+    },
+    {
+      "prime": 473173969,
+      "R": 1531307,
+      "active_primes": [
+        67,
+        19429
+      ]
+    },
+    {
+      "prime": 475619929,
+      "R": 1427,
+      "active_primes": [
+        139,
+        251639
+      ]
+    },
+    {
+      "prime": 475619929,
+      "R": 5915,
+      "active_primes": [
+        89,
+        3593
+      ]
+    },
+    {
+      "prime": 477015289,
+      "R": 1075,
+      "active_primes": [
+        4931,
+        86951
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 171,
+      "active_primes": [
+        4019,
+        19973
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 235,
+      "active_primes": [
+        353,
+        647
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 755,
+      "active_primes": [
+        109,
+        938843
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 1787,
+      "active_primes": [
+        613,
+        5659
+      ]
+    },
+    {
+      "prime": 486323161,
+      "R": 4523,
+      "active_primes": [
+        257,
+        14323
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 4611,
+      "active_primes": [
+        103,
+        15887
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 5147,
+      "active_primes": [
+        619,
+        36887
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 9323,
+      "active_primes": [
+        73,
+        127
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 30779,
+      "active_primes": [
+        241,
+        6389
+      ]
+    },
+    {
+      "prime": 487572409,
+      "R": 318051,
+      "active_primes": [
+        241,
+        6965317
+      ]
+    },
+    {
+      "prime": 488961169,
+      "R": 107,
+      "active_primes": [
+        73,
+        1399
+      ]
+    },
+    {
+      "prime": 488961169,
+      "R": 9963,
+      "active_primes": [
+        34871,
+        3175027
+      ]
+    },
+    {
+      "prime": 493936249,
+      "R": 419,
+      "active_primes": [
+        7333,
+        39863
+      ]
+    },
+    {
+      "prime": 493936249,
+      "R": 131611,
+      "active_primes": [
+        1409,
+        8059
+      ]
+    },
+    {
+      "prime": 507115249,
+      "R": 17267,
+      "active_primes": [
+        167,
+        842383
+      ]
+    },
+    {
+      "prime": 507115249,
+      "R": 70619,
+      "active_primes": [
+        683,
+        96667
+      ]
+    },
+    {
+      "prime": 507599689,
+      "R": 5691,
+      "active_primes": [
+        193,
+        11897
+      ]
+    },
+    {
+      "prime": 508542169,
+      "R": 5468195,
+      "active_primes": [
+        13,
+        43
+      ]
+    },
+    {
+      "prime": 508908409,
+      "R": 10859,
+      "active_primes": [
+        47,
+        307
+      ]
+    },
+    {
+      "prime": 509434249,
+      "R": 123,
+      "active_primes": [
+        59,
+        431
+      ]
+    },
+    {
+      "prime": 509434249,
+      "R": 3571,
+      "active_primes": [
+        431,
+        7277341
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 139,
+      "active_primes": [
+        2711,
+        38737
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 555,
+      "active_primes": [
+        67,
+        2805461
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 49331,
+      "active_primes": [
+        67,
+        112247
+      ]
+    },
+    {
+      "prime": 510725329,
+      "R": 1430603,
+      "active_primes": [
+        53,
+        67
+      ]
+    },
+    {
+      "prime": 522155209,
+      "R": 7355,
+      "active_primes": [
+        1933,
+        52711
+      ]
+    },
+    {
+      "prime": 534672889,
+      "R": 99,
+      "active_primes": [
+        3911,
+        63841
+      ]
+    },
+    {
+      "prime": 534672889,
+      "R": 2003,
+      "active_primes": [
+        41,
+        3533
+      ]
+    },
+    {
+      "prime": 534672889,
+      "R": 17891,
+      "active_primes": [
+        281,
+        83621
+      ]
+    },
+    {
+      "prime": 534672889,
+      "R": 1497683,
+      "active_primes": [
+        41,
+        38190917
+      ]
+    },
+    {
+      "prime": 534844249,
+      "R": 11011,
+      "active_primes": [
+        17,
+        144161
+      ]
+    },
+    {
+      "prime": 534844249,
+      "R": 1498163,
+      "active_primes": [
+        257,
+        1063
+      ]
+    },
+    {
+      "prime": 536944489,
+      "R": 75,
+      "active_primes": [
+        263,
+        5468609
+      ]
+    },
+    {
+      "prime": 536944489,
+      "R": 179,
+      "active_primes": [
+        281,
+        662867
+      ]
+    },
+    {
+      "prime": 536944489,
+      "R": 395,
+      "active_primes": [
+        149,
+        3041
+      ]
+    },
+    {
+      "prime": 536944489,
+      "R": 291659,
+      "active_primes": [
+        101,
+        5641
+      ]
+    },
+    {
+      "prime": 542688169,
+      "R": 16851,
+      "active_primes": [
+        317,
+        35089
+      ]
+    },
+    {
+      "prime": 547053049,
+      "R": 371,
+      "active_primes": [
+        199,
+        1545277
+      ]
+    },
+    {
+      "prime": 547053049,
+      "R": 523,
+      "active_primes": [
+        5641,
+        11251
+      ]
+    },
+    {
+      "prime": 549401449,
+      "R": 6787,
+      "active_primes": [
+        19,
+        197
+      ]
+    },
+    {
+      "prime": 556685089,
+      "R": 147,
+      "active_primes": [
+        677,
+        1590467
+      ]
+    },
+    {
+      "prime": 556685089,
+      "R": 1731,
+      "active_primes": [
+        12983,
+        3711091
+      ]
+    },
+    {
+      "prime": 556685089,
+      "R": 3811,
+      "active_primes": [
+        5857,
+        11923
+      ]
+    },
+    {
+      "prime": 559650361,
+      "R": 12059,
+      "active_primes": [
+        379,
+        2411
+      ]
+    },
+    {
+      "prime": 559650361,
+      "R": 29939,
+      "active_primes": [
+        30937,
+        530977
+      ]
+    },
+    {
+      "prime": 559650361,
+      "R": 307331,
+      "active_primes": [
+        23,
+        1277
+      ]
+    },
+    {
+      "prime": 559650361,
+      "R": 9818427,
+      "active_primes": [
+        607,
+        93275057
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 339,
+      "active_primes": [
+        1187,
+        7577
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 971,
+      "active_primes": [
+        59,
+        109
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 3371,
+      "active_primes": [
+        389,
+        1607
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 21259,
+      "active_primes": [
+        223,
+        100213
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 65611,
+      "active_primes": [
+        389,
+        18413
+      ]
+    },
+    {
+      "prime": 570621769,
+      "R": 852947,
+      "active_primes": [
+        389,
+        1373
+      ]
+    },
+    {
+      "prime": 584044729,
+      "R": 515,
+      "active_primes": [
+        13,
+        23981
+      ]
+    },
+    {
+      "prime": 584044729,
+      "R": 5227,
+      "active_primes": [
+        7841,
+        97334581
+      ]
+    },
+    {
+      "prime": 584607769,
+      "R": 3011,
+      "active_primes": [
+        26731,
+        365837
+      ]
+    },
+    {
+      "prime": 590499529,
+      "R": 35699,
+      "active_primes": [
+        13883,
+        258763
+      ]
+    },
+    {
+      "prime": 590499529,
+      "R": 40211,
+      "active_primes": [
+        967,
+        301583
+      ]
+    },
+    {
+      "prime": 592257649,
+      "R": 27,
+      "active_primes": [
+        1229,
+        3252839
+      ]
+    },
+    {
+      "prime": 592257649,
+      "R": 187,
+      "active_primes": [
+        37,
+        769091
+      ]
+    },
+    {
+      "prime": 592257649,
+      "R": 327395,
+      "active_primes": [
+        103,
+        174091
+      ]
+    },
+    {
+      "prime": 597694729,
+      "R": 43,
+      "active_primes": [
+        29,
+        241
+      ]
+    },
+    {
+      "prime": 597694729,
+      "R": 99,
+      "active_primes": [
+        149,
+        46853
+      ]
+    },
+    {
+      "prime": 597694729,
+      "R": 3603,
+      "active_primes": [
+        443,
+        131939
+      ]
+    }
+  ]
+}

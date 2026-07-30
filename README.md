@@ -4,7 +4,7 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前研究快照审计至 2026-07-27。论文卡、主张卡、概念卡及各状态的实时数量以
+当前研究快照审计至 2026-07-29。论文卡、主张卡、概念卡及各状态的实时数量以
 `python scripts/kb.py status` 和自动生成的 `index/theorem-ledger.md` 为准，不在入口文档
 手工复制。其中被撤回论文和存在关键证明缺口的预印本仍会收录，但用独立状态标出。
 
@@ -39,8 +39,10 @@ python scripts/kb.py status
 证明或独立实现的复核，`external_review` 表示存在仓库外审阅记录；后三者应在卡片正文给出
 可核查锚点，`unspecified` 只表示尚未分类。
 
-研究方法、已确立结论和逐点证明缺口的导航见
-[`concepts/research-directions-and-proof-gap.md`](concepts/research-directions-and-proof-gap.md)。
+研究方法、已确立结论和逐点证明缺口的历史导航见
+[`concepts/research-directions-and-proof-gap.md`](concepts/research-directions-and-proof-gap.md)；
+当前证明前沿、下一阶段目标及其依赖顺序见
+[`concepts/current-frontier-2026-07-29.md`](concepts/current-frontier-2026-07-29.md)。
 
 常用检索过滤器：
 

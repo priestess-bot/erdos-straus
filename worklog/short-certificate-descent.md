@@ -1,6 +1,453 @@
 # 短证书或递降：证明审计与实验日志
 
-状态：研究中；截至 2026-07-27 未得到全称存在性或递降构造。
+状态：研究中；截至 2026-07-29 未得到全称存在性或算术递降构造。
+
+## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
+
+将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。
+对普通 Type II 双尾遗漏的核心素数 \(p\)，寻求某个
+\(R\equiv3\pmod4\)，令
+
+\[
+K=\frac{pR+1}{4}
+=\prod_{i=1}^{r}q_i^{\nu_i},
+\]
+
+并研究目标指数纤维
+
+\[
+\mathcal Z^-_{R,K}
+=
+\left\{
+z\in\mathbb Z^r:
+-\nu_i\le z_i\le\nu_i,\quad
+\prod_iq_i^{z_i}\equiv-1\pmod R
+\right\}.
+\]
+
+主目标要求至少闭合以下一个分支：
+
+1. **近邻表示分支。** 找到不同的
+   \(z,w\in\mathcal Z^-_{R,K}\)，满足
+   \(|z_i-w_i|\le\nu_i\) 对所有 \(i\) 成立。交换二者使
+   \(\rho=\prod_iq_i^{z_i-w_i}<1\)，则
+   \[
+   E=4K\rho
+   \]
+   是偶数，且满足
+   \(E\mid4K^2\)、\(E\equiv1\pmod R\) 和
+   \(E\le4K-4R\)，从而直接给出一般混合 Type I 偶终端。
+2. **稀疏结构递降分支。** 若目标纤维不存在这样的近邻对，则证明其稀疏、低秩、
+   周期或短关系结构能够构造另一个可提升的状态，并使一个明确的良基势函数严格下降。
+   只得到较小商群或局部转移图，不视为已经完成这一分支。
+
+下一阶段的验收顺序是：
+
+1. 将近邻表示终端引理及
+   \(|\mathcal Z^-_{R,K}|>2^{\omega(K)}\) 的装箱推论写成独立可核查主张；
+2. 对冻结的 200 点完整线性谱中的 1,018 个目标命中状态做定向纤维审计，记录表示数、
+   最近表示对、生成的 \(E\) 及其是否来自原线性源；
+3. 若近邻分支出现反例，冻结最小稀疏纤维边界，再建立关系格/Smith 正规形证明对象；
+4. 只有在给出跨状态可提升映射和严格下降势函数后，才把第二分支称为递降定理。
+
+这一方向服务于旗舰的一般混合偶终端选择器；线性源一般 \(B\) 与三层重选仍作为
+结构实验室和可证伪强化，不与旗舰目标混同。当前尚未证明所有普通 Type II 遗漏都满足
+上述析取。
+
+## 2026-07-29 局部引理固化
+
+固定状态内的第一出口已经闭合为两个可引用的主张：
+
+1. 目标纤维对取反封闭且无固定点；任意满足逐坐标预算的近邻对都产生
+   $E=4U$，其中 $E\mid4K^2$、$E\equiv1\pmod R$，并给出 $0<n<p$ 的偶终端。
+2. 固定层不必假设为子群；商掉其稳定子后，投影固定层无周期，目标成员关系在
+   $H/P$ 中精确保留。该步骤称为商群压缩，不称为算术下降。
+3. 广义 \(2^j\) 传输的整数性、偶性、整除性和方向条件已经合并为一个精确判据；
+   \(j>1\) 只提供终端接口，不自动提供新的有限群命中。
+
+主张卡分别为[目标指数纤维反足与近邻终端引理](../claims/type-I-target-fiber-neighbor-terminal.md)
+和[固定层稳定子缺陷约化](../claims/type-I-fixed-layer-stabilizer-defect-reduction.md)。
+下一步的数学缺口因此收缩为：无近邻的稀疏纤维如何产生规范对偶证书，以及这些证书如何
+在同一核心素数的多个状态之间形成容量矛盾或严格可提升下降。
+
+其余下一阶段目标、依赖顺序、验收条件与暂停项统一维护在
+[当前证明前沿与下一阶段发展目标](../concepts/current-frontier-2026-07-29.md)；本日志只记录
+实验和证明检查点，避免形成两套相互漂移的路线计划。
+
+## 2026-07-29 多活跃方向压力边界
+
+对冻结的四个一般 \(B\) 唯一命中且完整谱无 \(B=1\) 核心
+\[
+p\in\{878089,26034649,57399241,283319689\}
+\]
+逐状态重建 \(\mathcal A_R(K)\)，并对每个 \(q\mid K\) 精确测试
+\(q\mathcal A_R(K)=\mathcal A_R(K)\)。45 个有限指数 F 状态的活跃方向数分布为
+\[
+\begin{array}{c|ccccc}
+\text{方向数}&3&4&5&6&7\\ \hline
+\text{状态数}&3&9&13&12&8
+\end{array}
+\]
+因此这组真实对抗状态没有单一活跃素因子实例；单方向容量只能作为排除性分支。
+相应复现脚本和哈希冻结结果见
+[F 型活跃方向下界](../claims/type-I-linear-adversarial-core-f-active-direction-profile-600m.md)。
+
+在同一标签坐标上，单方向容量已严格推广为多活跃向量容量：若
+\(q^{\min(h_{s,q},h_{t,q})}\mid(\ell_s-\ell_t)\) 对所有方向同时成立，则联合高度质量
+\(\sum_s\prod_qh_{s,q}\) 受
+\[
+M\prod_q(q-1)^{-1}+\prod_qH_q
+\]
+控制。该接口仍缺少从规范 F/G 证书到共同标签差的映射，不能称为跨状态定理。
+
+在线性载体块层，进一步得到一个不预设颜色的混合容量界：固定 \(q\)，对块
+\(B(t,R)=tR+1\) 取 \(h=v_q(B)\)。不同标签的高层由标签差装箱，同标签纤维的高层由
+模数差装箱，因而
+\[
+N_k\le\left(\left\lfloor M_t/q^k\right\rfloor+1\right)
+\left(\left\lfloor M_R/q^k\right\rfloor+1\right),
+\]
+以及
+\[
+\sum h\le\frac{M_tM_R}{q^2-1}+\frac{M_t+M_R}{q-1}+H.
+\]
+严格主张见[线性载体块的标签—模数混合 q 进容量](../claims/type-I-linear-hybrid-label-modulus-q-adic-capacity.md)。
+这解决了标签坐标和模数坐标二选一的接口问题；对已选内部活跃素数，线性块分解现在
+可以直接给出逐状态的高度优先载体。剩余问题是跨状态可重复的素数—颜色分组和联合
+需求，而不是单状态能否进入载体。
+对冻结核心 \(p=878089\) 的 80 个去重坐标块，分别取 \(q=2,3,5\) 做了定向复核；
+假设 (1) 和总高度上界均通过。这只是公式级 spot-check，不是新的大规模审计。
+
+## 2026-07-29 目标纤维近邻审计
+
+对冻结的 200 点完整线性谱中全部 1,018 个 hit 状态，枚举每个
+\(d\mid K^2,\ d\equiv-K\pmod R\)，恢复目标指数纤维并计算所有表示对的最小坐标预算
+超额。792 个状态存在近邻对并通过 \(E=4K\rho\) 生成合法偶终端，226 个状态没有近邻；
+超额分布为
+\[
+\{-1:6,\ 0:786,\ 1:150,\ 2:51,\ 3:14,\ 4:7,\ 5:3,\ 8:1\}.
+\]
+因此近邻分支覆盖当前 hit 压力集的 77.7996%，但不是状态内全称机制；非近邻边界的最大
+超额为 8。相应复现与终端整数校验见
+[冻结线性完整谱的目标纤维近邻边界](../claims/type-I-linear-target-fiber-neighbor-profile-600m.md)。
+下一步应优先分析这 226 个小超额纤维的关系格、广义 \(2^j\) 传输和可提升映射。
+
+对这 226 个非近邻状态进一步穷举 \(a,b\mid2K\) 的互素比值传输后，全部状态均有
+\(a\equiv2b\pmod R\)、\(a<2b\) 的合法候选，并通过
+\(E=2K\,a/b\) 的整数性、偶性、整除性和端点检查；最小 \(j\) 全部为 1。
+因此目标纤维近邻不是终端存在性的必要条件，但它仍是把目标命中与终端绑定的唯一
+已证明固定状态机制。该有限边界见
+[非近邻目标纤维的比值二终端边界](../claims/type-I-linear-target-fiber-dyadic-non-near-profile-600m.md)。
+
+同一近邻机制不必局限于目标纤维。若两个指数表示落在任意同余纤维
+\(\mathcal Z_t\) 中且逐坐标距离不超过预算，则它们的比值同样给出
+\(E=4K\rho\) 的合法偶终端。进一步，若
+\[
+\prod_i(2\nu_i+1)>2^r|\mathcal H_R(K)|,
+\]
+则某个任意剩余类必含这样的近邻对。这个结论已固化为[任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md)。
+它只说明“某个纤维可终端”，不说明目标纤维 \(t=-1\) 命中；因此在四个真实 F 型对抗核心上，
+全盒条件全部未达到，不能把它当作 F 型选择器的充分条件。
+对 45 个有限指数 F 状态逐一计算
+\[
+\frac{\prod_i(2\nu_i+1)}{2^r|\mathcal H_R(K)|},
+\]
+该比值均小于 1；最大值出现在
+\((p,R)=(26034649,375)\)，为
+\[
+\frac{945}{2^5\cdot200}=\frac{189}{1280}\approx0.14765625.
+\]
+因此全盒装箱分支在当前真实压力集上没有触发，后续必须依靠目标纤维、对偶结构或跨状态
+容量，而不能只扩大该全局密度条件。
+
+## 2026-07-29 Fourier 近角色预算
+
+对任意非空固定层 \(J\subseteq H\)，若规范非平凡角色满足
+\[
+\prod_i\frac{|D_{\nu_i}(\chi(q_i))|}{2\nu_i+1}
+\ge\frac1{|H|-1},
+\]
+则由 Dirichlet 核的统一衰减得到
+\[
+\sum_i\min\{1,\nu_i^2\|\theta_i\|^2\}
+\le60\log(|H|-1),
+\qquad \chi(q_i)=e^{2\pi i\theta_i}.
+\]
+归一化固定层因子
+\[
+g_J(\chi)=|J|^{-1}\left|\sum_{j\in J}\chi(j)\right|\le1
+\]
+只会加强由目标缺失得到的乘积下界：
+\(g_J(\chi)\prod_i f_{\nu_i}(\theta_i)\ge1/(|H|-1)\)
+推出 \(\prod_i f_{\nu_i}(\theta_i)\ge1/(|H|-1)\)。因此该结论把 F 型目标缺失转成了
+适用于任意固定层的可枚举近角色相位证书。固定层因子仍参与规范角色的选择，但不再是
+相位预算推广的限制；对已选的内部活跃素数，线性块分解可以直接给出逐状态的高度优先
+载体。下一步是把它组织成跨状态可重复的素数—颜色分组，并形成足够的联合容量需求。
+
+对每个坐标记录 \(d_i=\operatorname{ord}(\chi(q_i))\) 后，非平凡坐标满足
+\(\|\theta_i\|\ge1/d_i\)，因而有严格的阶预算
+\[
+\sum_{\chi(q_i)\ne1}\min\{1,(\nu_i/d_i)^2\}
+\le60\log(|H|-1).
+\]
+这给出“少量低阶活跃方向”或“多数高阶相位”的规范二分；前者可送入有限阶商和
+\(q\)-进容量，后者需要关系格短向量或加法结构，尚未形成下降映射。
+
+把相位逐坐标取到 \([-1/2,1/2]\) 后，它属于关系格
+\(\Lambda^*=\{y:\langle y,\lambda\rangle\in\mathbb Z\}\)，且非零并满足
+\[
+\sum_i\min\{1,\nu_i^2y_i^2\}\le60\log(|H|-1).
+\]
+这确认 Fourier 和关系格证书是同一对象的两种编码；对内部活跃方向，\(y\) 的支撑和
+分母已经可以转成逐状态载体素数的高度向量。当前真正未闭合的是跨状态可比较的
+素数—颜色规范分组，以及由相位质量强制的联合需求。
+若进一步满足
+\[
+\sum_i\nu_i|y_i|
+<\operatorname{dist}(\langle y,z_0\rangle,\mathbb Z),
+\]
+则目标仿射格与指数盒严格不交，得到一个可直接验证的 F 型格证书；否则必须转入
+有限阶商、加法结构或跨状态容量。
+
+## 2026-07-29 单活跃对偶—载体桥
+
+在 \(R\equiv3\pmod8\)、\(Q=H/T\cong C_{2m}\)、唯一非平凡素因子方向
+\(qT\) 且 \(\overline{-1}=(qT)^m\) 的分支中，补上了 Fourier/关系格到线性载体的
+严格接口。该分支的商群除子谱为
+\[
+\bar A=\{(qT)^j:0\le j\le e\},\qquad e=v_q(K),
+\]
+所以 F 型恰等价于 \(e<m\)；primitive quotient character 的活跃相位为
+\(1/(2m)\)，给出对偶分母 \(2m\)。利用 \(UV=4K\) 的 \(3\pmod8\) 块分配，
+\(e\) 或 \(e/2\) 直接成为 \(q\)-进载体高度，并由块 gcd 刚性转成标签差/模数差整除链。
+该链可直接输入线性混合 \(q\)-进容量界。
+
+主张卡见[线性单活跃循环商的 Fourier—载体素数桥接](../claims/type-I-linear-single-active-fourier-carrier-bridge.md)。
+这不是全称桥：四个真实对抗核心的 45 个 F 状态都至少有三个活跃方向，故下一步仍须
+处理多活跃对偶证书，或从其稀疏结构构造严格可提升的算术下降。
+
+## 2026-07-29 多活跃角色的载体向量
+
+对任意携带非空内部角色的线性状态（F 型或 \(H\) 内部非平凡商角色），定义活跃支撑
+\(\mathcal I(\theta)=\{q:\theta_q\ne0\}\)。将
+\(U=sR+1\)、\(V=aR+1\) 的完整素指数写成
+\(\boldsymbol\beta(t,R)=(v_q(tR+1))_{q\mid K}\)，则每个活跃 \(q\) 至少在一个块上有正
+高度，且高度优先载体满足
+\(\max(v_q(U),v_q(V))\ge\lceil(v_q(K)+2\mathbf1_{q=2})/2\rceil\)；
+对同一核心素数的不同去重坐标块，最低共同幂严格整除标签差或同标签模数差。
+奇部 \(\widetilde B=B/2^{v_2(B)}\) 的角色值还可由载体向量精确重建，不需要假设
+\(2\in H\)。
+
+这把先前“对偶证书到载体”的开放接口收缩为一个有限、可验证的数据结构：
+\[
+\mathsf{dual}\longmapsto\mathsf{MC}(\theta)
+\longmapsto
+\{\text{活跃素数、块颜色、正高度}\}.
+\]
+主张卡见[线性多活跃 G/F 角色的载体向量提取](../claims/type-I-linear-multi-active-fourier-carrier-vector.md)。
+仍未解决的是跨状态规范分组和联合需求：不同状态可能选择不同 \(q\) 或不同颜色，
+而外部 G 型角色没有内部活跃支撑，不能直接并入这一载体容量。因此容量定理仍是条件性全局桥，
+不是已经完成的选择器。
+
+对冻结的 45 个真实 F 状态做了定向的粗粒度试算：按最小活跃素数和第一个载体块分组，
+共得到 11 个 \(q\) 组；将每组的完整标签/模数外框代入 (9)，右端约为
+\(1.862\times10^{10}\)，而状态数为 45，右端约为左端的 \(4.14\times10^8\) 倍。
+因此全谱外框容量在当前数据上完全不触发矛盾。该结果排除的是“直接对整个压力谱套用
+粗容量界”的做法；后续必须缩小到局部相容窗口、共享模数差层，或把 Fourier 相位质量
+转成更高的载荷需求，不能把 (9) 当作现成的全称证明。
+
+进一步把同标签载体限制到具体 \(p-t\) 的除子集合，并加入
+\(q^kd\equiv1\pmod t\) 与 \(R\) 窗口条件后，45 个状态分成 34 个
+\((p,q,t)\) 组；逐层精确局部容量右端降为 173，约为状态数的 \(3.84\) 倍。
+仍没有容量超载，但这确认了下一步应优先使用精确除子—剩余容量，而不是
+\(\tau\) 或全区间粗界。对应引理见[线性同标签载体块的除子型 q 进容量](../claims/type-I-linear-block-divisor-q-adic-capacity.md)。
+
+## 2026-07-30 多活跃配对载体容量
+
+若所选 Fourier/格证书有至少三个活跃素数方向，而线性状态只有 \(U=sR+1\)、
+\(V=aR+1\) 两个载体块，则鸽巢原理保证某个块同时承载一对活跃素数
+\(q_1<q_2\)。固定 \(p,t,q_1,q_2\) 后，配对块满足
+\[
+q_1q_2\mid tR+1\mid p-t,
+\]
+所以其模数窗口内的状态数受精确集合
+\[
+\mathcal D_{q_1,q_2}(p,t;I)
+\]
+控制；联合高度层同样受
+\(\mathcal D_{q_1^k,q_2^\ell}(p,t;I)\) 控制。完整证明和适用范围见
+[线性多活跃状态的配对载体与除子型 q 进容量](../claims/type-I-linear-multi-active-pair-divisor-capacity.md)。
+
+对冻结的四个对抗核心，45 个 F 状态均至少有三个稳定子商非平凡方向可供载体提取。
+按“第一个可配对块、最小素数对”的规范规则复现：40 个配对组，需求 45，精确局部容量
+70；四个核心分别为需求/容量 \(2/2,6/6,24/49,13/13\)。按同一规范配对记录实际联合
+高度 \(h_1h_2\)，需求为 99、逐层精确容量为 136。这里的三方向统计是可用方向上界，
+不等于所选 Fourier 角色必有三个活跃坐标。因此配对容量仍未形成矛盾，但它把
+多活跃桥从单素数载体推进到联合除子需求；剩余缺口是证明对偶证书在跨状态中重复
+使用同一配对或承担统一联合高度。
+
+因此后续证书处理固定采用支撑三分：\(|Q_{\mathrm{cert}}|=1\) 走单素数标量容量，
+\(|Q_{\mathrm{cert}}|=2\) 先检查同块/分色，\(|Q_{\mathrm{cert}}|\ge3\) 走配对载体容量。
+稳定子商的三方向统计只作为可用方向上界，不替代这一证书级判定。
+双方向分色的严格接口见[线性双颜色载体的共享模数交集容量](../claims/type-I-linear-two-color-carrier-intersection-capacity.md)，
+其中两个 \(p-t_i\) 除子条件通过共同模数 \(R\) 做精确交集。
+
+## 2026-07-30 高度优先配对载体
+
+对一个已选内部角色的每个活跃素数 \(q\)，先在
+\(U=sR+1,V=aR+1\) 中选择 \(q\)-进高度较大的块；若角色支撑至少三方向，则两块鸽巢
+原理保证两个高度优先方向落在同一块。由
+
+\[
+v_q(U)+v_q(V)=v_q(4K)
+\]
+
+得到该对联合高度至少为两个总指数的一半向上取整之积。这个条件性引理见
+[高度优先配对载体容量](../claims/type-I-linear-high-carrier-pair-capacity.md)。
+
+对冻结四个对抗核心的 45 个状态，以稳定子活跃方向作诊断输入，逐状态使用高度优先
+配对：40 个配对组，普通配对容量为 68；下界联合高度需求为 77，实际联合高度需求为
+100，精确联合容量为 134。容量仍未超载，因此该结果只强化了“多活跃证书若能固定支撑，
+就产生更高联合需求”的接口，没有证明稳定子支撑就是规范 Fourier 支撑，也没有产生
+跨状态选择器矛盾。
+
+## 2026-07-30 F 型关系格证书重建
+
+对冻结四个对抗核心的 45 个有限指数 F 状态，利用单位群离散对数矩阵构造
+\([A\mid-D]\)，通过 Smith 分解和 Hermite 正规形重建关系格基，并用同一整数变换
+求出 \(-1\) 的仿射指数原像 \(z_0\)。逐点枚举指数盒验证
+\((z_0+\Lambda)\cap B_\nu=\varnothing\)，总计检查 57,159 个盒点；同时独立核对
+\(|\det\Lambda|=|\mathcal H_R(K)|\)。
+
+该重建已固化为[冻结 F 状态的关系格规范证书重建](../claims/type-I-f-relation-lattice-certificate-reconstruction.md)，
+它把 F 型分类升级为可独立验证的关系格证书。当前还没有证明这些格证书都存在满足
+盒分离充分条件的短对偶向量，也没有完成相位向量到跨状态共同载体的映射。
+
+## 2026-07-30 F 型有界规范 Fourier 证书
+
+在上述 45 个 F 状态的关系格对偶中，枚举
+\(c\in\{-1,0,1\}^r\)，保留目标相位非整数的候选，并按归一化 Dirichlet 乘积、
+角色阶、活跃支撑和系数字典序选择。45 个状态的所选角色均满足 F 型目标缺失强制的
+\(\mathsf M\ge1/(|H|-1)\) 下界；最小余量为 \(6.3333\) 倍，中位余量为
+\(4057.0490\) 倍。活跃支撑分布为 \(1:2,2:24,3:2,4:7,5:5,6:3,7:2\)。
+
+这给出两个直接修正：
+
+1. 规范 Fourier 支撑不必等于稳定子商的可用方向数；此前“45 个状态至少三方向”
+   只适用于稳定子方向诊断，不能作为 Fourier 角色支撑的必要条件；
+2. 两个冻结状态的有界规范角色是单活跃的，可送入单活跃 Fourier—载体桥；其余状态
+   才需要多活跃载体分流。进一步检查表明这两个角色并不满足单活跃循环商桥的完整
+   假设：固定层稳定子均为平凡群，\(qT\) 阶分别为 \(1864\)（商群阶 \(7456\)）和
+   \(11755534\)（商群阶 \(47022136\)），所以 \(qT\) 都不生成整个商群。这里的
+   “单活跃”仅指所选 Fourier 角色的支撑，不是稳定子商的方向数。
+
+脚本和逐状态载荷见[冻结 F 状态的有界规范 Fourier 证书](../claims/type-I-f-bounded-fourier-certificate.md)。
+这是有界候选盒内的规范构造，不声称全角色最大值，也没有自动产生跨状态容量矛盾；
+角色的相位预算和载体高度是下一步容量映射的输入。
+
+## 2026-07-30 F 型完整谱的 Fourier 盒半径边界
+
+把有界证书重建扩展到 200 个冻结压力素数的完整线性谱，共审计 2752 个 F 状态。
+半径 \(1\) 的对偶盒中有 2748 个角色达到
+\(\mathsf M\ge1/(|H|-1)\)，4 个状态未达到：
+\[
+(p,R)\in\{(139224409,163),(247324009,19),
+(355341529,499),(405660649,19)\}.
+\]
+这四个状态的最小半径均为 \(3\)；半径 \(2\) 没有改善，半径 \(3\) 的下界比值分别约为
+\(126.74,7.56,482.45,7.56\)。因此当前可复现的结论是“半径 1 高覆盖、半径 3
+修复这四个冻结边界”，不是统一小半径定理。
+
+该结果把短证书复杂度显式化为
+\(\rho_{\mathrm{Fourier}}=\min\{r:\text{半径 }r\text{ 有达标角色}\}\)；
+以后跨状态分组必须同时记录 \(\rho_{\mathrm{Fourier}}\)，不能把半径 1 和半径 3
+的角色混在同一容量键中。
+
+## 2026-07-30 完整 F 谱的宽松 q 进模数容量边界
+
+对完整谱中 2748 个达到 Fourier 下界的 F 状态，把每个活跃 \(q\) 的需求取为
+\(\lceil(v_q(K)+2\mathbf1_{q=2})/2\rceil\)，并按 \((p,q)\) 聚合。结果有 8526 个
+活跃记录、6429 个分组；以同一核心素数全部完整模数的
+\(\sum_Rv_q((pR+1)/4)\) 作为宽松容量时，零组超载，最大比值为 1，其中 4209 组
+达到饱和。用模数差粗容量时也零组超载，最大比值约为 0.42857。
+
+这一步排除了“单个活跃素数加半指数需求即可产生全局矛盾”的最简单方案。容量必须
+进一步保留颜色、联合方向、Fourier 相位质量或提升成本；否则即使完整冻结谱也只得到
+饱和而不是超载。结果见[完整 F 谱的宽松 q 进模数容量排除边界](../claims/type-I-f-full-spectrum-qadic-modulus-capacity-boundary.md)。
+
+单活跃、双活跃和至少三活跃的证书级分流已统一固化为
+[线性内部证书的支撑—载体三分接口](../claims/type-I-linear-internal-certificate-carrier-trichotomy.md)；
+外部 G 型分离角色不进入载体容量分支。
+
+同块容量还推广到任意活跃方向集合：对每个多指标
+\(\mathbf k\) 枚举 \((p-t)/\prod q^{k_q}\) 的精确除子—剩余集合，并对
+\(\prod_q h_q\) 做层析。冻结诊断得到 79 个状态—载体块记录，下界联合需求 114、
+实际联合需求 139、精确联合容量 139；见[线性同块多活跃方向的联合除子容量](../claims/type-I-linear-multi-active-joint-divisor-capacity.md)。
+这是精确饱和边界，不是跨状态选择器矛盾。
+
+## 2026-07-30 G 型规范分离证书
+
+对七个冻结线性目标谱中的 190 个 G 型状态，重新计算
+\(G=(\mathbb Z/R\mathbb Z)^\times\) 的 CRT 离散对数坐标和支撑子群 HNF。令
+\(M\) 为生成元对数与分量阶生成的列格基，在
+\(c\in\{-1,0,1\}^d\) 中按 \((\|c\|_1,|\operatorname{supp}c|,c)\) 选取第一个满足
+\(y=M^{-T}c\) 的候选，并精确验证
+
+\[
+n_jy_j\in\mathbb Z,
+\qquad
+\langle y,g_q\rangle\in\mathbb Z\ (q\mid K),
+\qquad
+\langle y,b_{-1}\rangle\notin\mathbb Z.
+\]
+
+190 个状态全部在小对偶系数盒内得到分离角色；规范角色阶分布为
+\(2:185,4:2,6:3\)，非平凡 CRT 分量数分布为
+\(1:89,2:75,3:24,4:1,5:1\)。角色阶是 HNF 对偶候选的实际阶，不是此前最小二幂
+分离角色阶普查的指标。复现脚本与逐状态相位载荷见
+[冻结 G 状态的规范分离证书重建](../claims/type-I-g-separator-certificate-reconstruction.md)。
+
+该结果把 G 型与 F 型都变成可独立验证的有限对偶证书：F 型使用目标仿射关系格，G 型
+使用支撑外分离角色。它仍只解决状态内证书规范化，尚未证明角色在跨状态中共享可比较的
+素因子、颜色或相位需求，因此没有产生容量超载或算术下降。
+
+## 2026-07-30 F 型双方向相位需求映射
+
+为处理双方向/分色桥，对 45 个关系格 F 状态从
+\(c\in\{-1,0,1\}^r\) 选择目标相位非整数且至少两个活跃坐标的对偶向量。对前两个
+活跃坐标 \(I\)，让其余坐标遍历完整指数盒，计算精确的二维必要相位投影
+\(\mathcal P_I\)。结果为支撑大小 \(2,3,4\) 的状态数 \(40,2,3\)，投影大小
+\(0,4,9\) 的状态数 \(6,37,2\)。空投影是状态内的严格相位 F 证书；非空投影不等于
+目标命中，只能进入容量分支。
+
+把同一对偶向量映射到线性载体块 \(U=sR+1,V=aR+1\)，并按高度优先规则记录两个活跃
+素数的颜色和联合高度：颜色对为 (aa:29,ss:11,sa:4,as:1)，
+\((p,q_1,q_2,\text{颜色},\tau_I)\) 形成 44 个需求组，仅一组重复两次；联合高度乘积
+总和为 49。完整相位、补集相位和二维投影载荷见
+[F 型双方向相位需求映射](../claims/type-I-f-two-direction-phase-demand-map.md)。
+
+这一步修正了“固定其余坐标”的潜在误读：只有在其余坐标也遍历完整盒后得到空投影，
+才可称为相位排除；非空结果仍需要共享方向/颜色的跨状态容量或下降势函数。
+
+## 2026-07-30 小对偶候选跨状态容量普查
+
+将上述规范选择放宽到全部 \(\{-1,0,1\}^r\) 对偶候选，保留目标相位非整数且支撑至少
+两个方向，并按核心素数、方向对、载体颜色和目标相位需求分组。45 个状态共产生 15,876
+个候选、195 个需求键；跨不同状态重复的只有两组：
+
+\[
+\begin{array}{c|c|c|c|c}
+p&(q_1,q_2)&\text{颜色}&\text{重复状态数}&\text{精确载体容量}\\
+\hline
+26034649&(379,941)&(a,a)&2&2\\
+57399241&(5,71)&(s,s)&2&16
+\end{array}
+\]
+
+两组的联合高度需求均为 2，均未超过容量。复现结果见
+[F 型小对偶双方向需求容量普查](../claims/type-I-f-two-direction-small-dual-candidate-census.md)。
+因此当前数据排除了“任取小对偶二维键即可自动触发容量矛盾”；下一步要把相位幅度、
+投影空缺、源距离或多方向联合相位转成额外需求。
 
 ## 2026-07-27 检查点
 
@@ -394,3 +841,994 @@ python3 reproductions/short_certificate.py --limit 100000 --gap-limit 4095
 \]
 
 最后一个记录与 Bello-Hernández--Benito--Fernández 对其贪心筛报告的 `8803369`、`k=107` 相符，可作为两个独立实现的有限范围交叉检查；它不是统一上界的证据。
+
+## 2026-07-30 规范 Fourier 同色联合容量边界
+
+前一轮把每个 Fourier 角色的所有活跃素数需求直接相乘，得到 141 个表面超载组；
+这种乘法没有区分 (aR+1) 与 (sR+1) 两种载体颜色。为检验超载是否真实，新增
+`reproductions/type_i_f_same_color_subset_capacity.py`：
+
+1. 对 2748 个达到宽松 Fourier 下界的完整 F 状态，筛出 141 个表面超载组，涉及 95 个核心素数；
+2. 对每个候选组只枚举一次该素数的全部线性源状态并缓存；
+3. 为每个 Fourier 状态确定性地选择一个源状态和一个颜色，使该颜色能承载的活跃方向数最大；
+4. 在相同颜色、相同活跃子集和同一 (R)-窗口内，按
+   (sumprod_{qin Q_0}v_q(tR+1)) 计算全部源块的精确容量。
+
+冻结输出 `reproductions/type-i-f-same-color-subset-capacity-results.json` 给出：
+
+```text
+表面超载组：141
+涉及核心素数：95
+同色分配记录：141
+无法找到同色二方向子集：0
+同色容量组：141
+同色超载：0
+最大需求/容量比：1.0
+达到饱和的组：79
+```
+
+因此全方向乘积超载被证实主要是跨颜色相乘造成的；同色联合 (q)-进容量本身只能
+达到饱和，不能给出跨状态矛盾。该边界已写入
+[F 型规范 Fourier 需求的同色联合容量边界](../claims/type-I-f-same-color-subset-capacity-boundary.md)。
+将每个已选同色子集展开为二方向子集后得到 551 个配对组；配对超载数为 0，最大
+需求/容量比为 1，417 组达到饱和。故把完整方向需求降为重复同色方向对，仍不能
+关闭容量账本。
+下一步必须引入相位质量、投影空缺、盒半径或可提升代价，或者证明同色需求之间存在
+跨状态的共同嵌套链；当前证据仍不足以称为算术下降。
+
+## 2026-07-30 完整谱双颜色共享容量边界
+
+全谱同色配对审计中，2687 个至少双活跃状态有 291 个无法在任一颜色块中同时承载
+两个活跃方向。对这 291 个状态，新增
+`reproductions/type_i_f_full_cross_color_pair_capacity.py`，枚举所有可行的
+((q_a,aR+1))、((q_s,sR+1)) 定向分色对，并按 ((p,q_a,q_s)) 用共享 (R) 的
+精确容量
+
+\[
+\sum_R v_{q_a}(aR+1)v_{q_s}(sR+1)
+\]
+
+进行比较。冻结输出为：
+
+```text
+达标 Fourier 状态：2748
+至少双活跃状态：2687
+无法同色承载：291
+定向分色需求：582
+分色容量组：582
+分色超载：0
+最大需求/容量比：1.0
+达到饱和：582
+```
+
+这说明简单双颜色共享模数容量和同色容量一样只能达到饱和，不能关闭 F 分支。新边界
+已写入[完整 F 谱的双颜色共享模数容量边界](../claims/type-I-f-full-cross-color-pair-capacity-boundary.md)。
+下一步不再增加颜色组合，而是审计相位投影是否排除这些饱和槽位，并尝试把排除代价
+严格映射为跨状态的下降势。
+
+## 2026-07-30 分色分支的二维相位投影
+
+对 291 个无法同色承载两个方向的 F 状态，规范 Fourier 活跃支撑全部为二维。新增
+`reproductions/type_i_f_split_color_phase_projection.py`，直接枚举两个活跃坐标的
+指数盒并检查目标相位方程。结果为：40 个投影为空，249 个有 4 个相位兼容点，2 个
+有 2 个。40 个空投影状态已经是选择角色下的状态内 F 证书；其余 251 个只是必要
+相位点，不能当作目标命中。
+
+该边界写入[分色 F 状态的二维 Fourier 目标投影边界](../claims/type-I-f-split-color-phase-projection-boundary.md)。
+下一步应对 251 个非空投影状态计算第二个独立角色的交集，或者把投影点的数量/位置
+转化为额外的载体需求；单独使用双颜色容量不会产生矛盾。
+
+随后对这 291 个状态重建完整关系格，新增
+`reproductions/type_i_f_split_color_relation_certificate.py`。在每个有限指数盒中，
+从关系格对偶基逐步选择能最大幅度削减剩余点集的独立约束，直到盒交集为空；最大
+盒大小为 5103，291 个状态全部得到多角色 F 证书。该结果写入
+[分色 F 状态的关系格多角色盒空缺证书](../claims/type-I-f-split-color-relation-certificate.md)。
+这把非空二维相位点与完整 F 证书区分开来，但仍没有提供跨状态容量或算术下降。
+
+## 2026-07-30 分色 F 状态的盒溢出半径
+
+对上述 291 个状态，用关系格生成元对目标仿射原像做 meet-in-the-middle，寻找目标
+第一次进入扩张盒 B_(nu+delta) 的最小 delta，并截断到 4。输出为：
+
+```text
+delta=1: 87
+delta=2: 73
+delta=3: 36
+delta=4: 27
+delta>4: 68
+```
+
+所有状态原盒均为空，204 个状态至少缺两层。该量提供了把几何 F 缺陷转成载体需求
+的候选势函数；但“每层溢出必消耗一个可比较的 q 进载体高度”尚未证明，因此当前只
+记录为条件性容量接口，见[分色 F 状态的有限指数盒溢出半径边界](../claims/type-I-f-split-color-overflow-radius-boundary.md)。
+
+## 2026-07-30 短关系导致偶终端
+
+对同一批 291 个分色未解析 F 状态，新增
+`reproductions/type_i_short_relation_even_terminal.py`。设
+
+\[
+\Lambda=\{\lambda\in\mathbb Z^r:
+\prod_iq_i^{\lambda_i}\equiv1\pmod R\},
+\qquad
+K=\prod_iq_i^{\nu_i}.
+\]
+
+若原始指数盒中存在非零 \(\lambda\in\Lambda\)，则取 \(\lambda\) 或 \(-\lambda\) 使
+\(\rho=\prod_iq_i^{\lambda_i}<1\)。坐标界保证
+
+\[
+U=K\rho\in\mathbb Z,
+\qquad U\mid K^2,
+\qquad E=4U\mid4K^2.
+\]
+
+关系同余给出 \(U\equiv K\pmod R\)，所以 \(E\equiv1\pmod R\)。此外
+\(U<K\) 且 \(K-U\ge R\)，故
+
+\[
+n=\frac{4K-E}{R}=\frac{4(K-U)}R
+\]
+
+是正的 4 的倍数，并且 \(n<p\)。因此一个短核关系本身就是合法偶终端，
+不需要先找到两个目标表示。
+
+冻结 verifier 的精确结果为：
+
+```text
+record_count: 291
+terminal_count: 291
+relation ||lambda||_infinity: 1 -> 220, 2 -> 60, 3 -> 8, 4 -> 3
+maximum ||lambda||_1: 9
+```
+
+该结论已写入[短关系导致偶终端引理](../claims/type-I-short-relation-even-terminal.md)。
+它是状态内终端定理，不提供目标平方除子，不证明所有核心素数都有短关系，也不构成
+跨状态容量矛盾或算术递降；后续仍需把这种短关系的载体高度与统一选择器的跨状态
+需求连接起来。
+
+## 2026-07-30 短关系终端接入奇数距离偶源扇
+
+短关系 verifier 给出的每个 \(n\) 都是 \(4\) 的倍数。对同一批 291 个状态，令
+\(c=p-n\)，并按[奇数距离偶源的完整平移平方因子递降扇](../claims/odd-distance-even-source-descent.md)
+枚举所有
+
+\[
+n=d(1+cr),
+\qquad dr\equiv-1\pmod4,
+\qquad M_1=((dr+1)/4)(n/d),
+\]
+
+以及所有 \(e_1\mid M_1^2\)、\(e_1\le M_1\)、\(e_1\equiv-M_1\pmod r\)。新增
+`reproductions/type_i_short_relation_odd_distance_even_source.py` 对每个候选同时检查
+源、目标有理数恒等式，Type I 缺口范围、\(e_1\mid u^2\) 和目标同余。
+
+精确结果：
+
+```text
+record_count: 291
+parameter_state_count: 3
+parameter_count: 11
+tail_candidate_count: 6
+hit_state_count: 1
+hit_prime_count: 1
+hit_prime: 437817769
+```
+
+唯一命中状态的参数为
+
+\[
+(p,n,c,d,s,r,k,M_1)
+=(437817769,437817744,25,23569,18576,743,4377942,81324650592).
+\]
+
+六个 (e_1) 为
+
+\[
+282897, 396576, 952331148, 1335014784, 7366795776, 20837706752.
+\]
+
+例如 (e_1=282897) 给出
+
+\[
+u=109454823,\qquad v=31465074695328,\qquad m=1523,\qquad
+D=u^2/e_1=42348834657,
+\]
+
+并有
+
+\[
+\frac4{437817744}
+=\frac1{1916740689802848}+\frac1{109454823}+\frac1{31465074695328},
+\]
+
+\[
+\frac4{437817769}
+=\frac1{35605377086893969248}+\frac1{109454823}+\frac1{31465074695328}.
+\]
+
+该结果证明短关系偶终端确实可以在特定因子结构下接回一个严格可提升的目标边；
+但它只覆盖 1 个状态，不能被解释为全称递降。下一步的数学问题变为：能否由短关系
+向量的支撑/高度或跨状态容量，强制 \(n/d=1+cr\) 的参数存在，或把失败状态导向另一
+个距离的标记源。
+
+## 2026-07-30 全部短关系的奇数距离偶源审计
+
+上一节只取每个状态的规范最短关系。为排除“选错关系”这一人为边界，新增
+reproductions/type_i_short_relation_all_odd_distance_even_source.py，逐状态重建
+原始指数盒内的全部非零核关系，定向为较小终端并按 \((p,R,n)\) 去重，再调用同一
+奇数距离偶源平方尾 verifier。
+
+精确统计为：
+
+~~~text
+record_count: 291
+raw_relation_vector_count: 658
+oriented_terminal_count: 329
+parameter_count: 34
+parameter_terminal_count: 9
+tail_candidate_count: 15
+hit_terminal_count: 2
+hit_prime_count: 2
+hit_primes: 30997849, 437817769
+~~~
+
+原始关系数分布为
+
+\[
+2:259,\qquad4:27,\qquad6:4,\qquad8:1.
+\]
+
+第一个新增命中来自
+
+\[
+p=30997849,\quad R=35,\quad K=271231179,\quad
+n=30997848,\quad U=9,\quad c=1.
+\]
+
+一组完整参数为
+
+\[
+d=1291577,\quad s=24,\quad r=23,\quad
+M_1=178237632,\quad e_1=684,
+\]
+
+并给出
+
+\[
+u=7749492,\quad v=2019372958016,\quad
+m=119,\quad D=u^2/e_1=87799161196.
+\]
+
+该参数通过有理数恒等式和 Type I 同余产生严格源—目标提升；另一个命中终端是
+上一节的 \(p=437817769\)，提供 6 条提升。结果已固化为
+全部短关系终端的奇数距离偶源提升审计主张。
+
+这一步把局部正向边从 1 条扩大到 15 条，但 329 个终端仍只有 2 个命中。因而下一步
+不能继续简单增加关系枚举，而应证明：多个关系的相对向量、对应距离 \(c\) 的因子结构
+或共同载体高度，必然使至少一个终端满足平方尾同余，或者产生严格下降势。
+
+## 2026-07-30 线性块不平衡三分与规范终端提升
+
+为检查“块差本身是否已经包含一个统一终端选择器”，对完整线性状态
+
+\[
+p=a+s+asR,\qquad U=sR+1,\quad V=aR+1,\quad 4K=UV
+\]
+
+逐状态分解两个块的素因子指数差
+\(\lambda_q=v_q(U)-v_q(V)\)。由于
+
+\[
+2^{\lambda_2}\prod_{q\text{ odd}}q^{\lambda_q}\equiv1\pmod R,
+\]
+
+可以严格分成三类：
+
+1. \(\lambda_2=0\) 且奇素数差非零：差向量在原始指数盒内，是非零核关系，调用短关系偶终端；
+2. 所有差为零：\(U=V\)，素数性强制 \(a=s=1\)，留下对称边界；
+3. \(\lambda_2\ne0\)：去掉二进部分后得到互素奇除子 \(A,B\)，并按 \(J\equiv|\lambda_2|\pmod{o_R(2)}\)、\(A<2^JB\) 检查广义 \(2^J\) 终端。
+
+脚本 \`reproductions/type_i_linear_block_imbalance_trichotomy.py\` 对冻结输入
+\`type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json\` 做完整重建，结果为：
+
+\`\`\`text
+prime_count: 200
+linear_R_count: 10292
+directed_state_count: 18074
+kernel_relation: 2518
+dyadic_terminal: 2776
+dyadic_unresolved: 12580
+symmetric: 200
+terminal_state_count: 5294
+terminal_prime_count: 200
+\`\`\`
+
+这把状态内的偶终端候选从“关系格局部现象”推广成了完整线性谱的规范三分：每个冻结样本素数至少出现一个核关系或可行广义二进终端。它仍然只证明状态内终端存在，不证明目标平方除子或可提升递降。
+
+随后脚本 \`reproductions/type_i_linear_block_imbalance_lift.py\` 对 5294 个规范终端调用奇数距离偶源 Type I 提升核，得到：
+
+\`\`\`text
+parameter_count: 185
+hit_count: 58
+hit_state_count: 5
+hit_prime_count: 5
+hit_primes: 5019529, 70026889, 292485769, 362050441, 508542169
+\`\`\`
+
+所以当前最准确的边界是：块不平衡已经提供每个冻结样本素数的局部偶终端候选，但只有 5 个样本素数、58 条边接回现有提升核。剩余 12580 个二进未决状态、200 个对称状态，以及提升核未命中的终端，仍需目标命中、普通 Type II 或跨状态容量/良基下降。主张卡见[线性块不平衡关系与广义二进终端三分](../claims/type-I-linear-block-imbalance-dyadic-trichotomy.md)。
+
+## 2026-07-30 双向二进终端与提升覆盖
+
+原三分脚本对 \(\lambda_2\ne0\) 的归一化关系只检查
+\(A\equiv2^{j_0}B\pmod R\)。但同一关系可反向写成
+
+\[
+B\equiv2^{j_1}A\pmod R,\qquad
+j_1\equiv-j_0\pmod{o_R(2)},
+\]
+
+并使用同样的 \(1\le J\le v_2(2K)\) 预算和方向不等式。新增
+\`reproductions/type_i_linear_block_imbalance_bidirectional.py\` 同时验证正向和反向的
+整数性、偶性、整除性、同余和源范围。
+
+双向结果：
+
+\`\`\`text
+source_dyadic_state_count: 15356
+bidirectional_terminal: 3683
+bidirectional_unresolved: 11673
+rescued_from_forward: 907
+terminal_candidate_count: 4301
+forward candidates: 3017
+reverse candidates: 1284
+terminal_prime_count: 200
+\`\`\`
+
+反向方向救回了 907 个原本单向未决的状态。随后按
+\((p,R,\mathrm{source},E)\) 去重，得到 1923 个不同终端；新增
+\`reproductions/type_i_linear_block_imbalance_bidirectional_lift.py\` 将其全部接入奇数距离
+偶源 Type I 提升核：
+
+\`\`\`text
+candidate_row_count: 4301
+unique_terminal_count: 1923
+parameter_count: 906
+hit_count: 495
+hit_state_count: 49
+hit_prime_count: 47
+\`\`\`
+
+在指定双向块不平衡候选族中，提升覆盖 47 个素数，且每条命中都通过精确有理数恒等式、
+平方除子、缺口范围和目标同余验证。这里不能把 47 个素数解释为相对于全部线性终端的
+净新增：线性源本身已有平凡终端 \(E=U=sR+1\)，本轮真正增加的是 4102 个不等于 \(U\)
+的候选行；这些候选与平凡终端提升基线的差分仍未完成。11673 个双向未决状态和 200 个
+对称状态没有被解决，下一步要把未决状态的方向缺口、共同载体和提升距离因子转化为
+跨状态容量需求或严格下降势。
+
+## 2026-07-30 双向未决状态的较小块平方边界
+
+对双向二进审计中 11673 个仍未找到可行 \(J\) 的状态，令
+
+\[
+X=\min(U,V),\qquad E=X^2.
+\]
+
+由于 \(U=sR+1\) 总为偶数，且
+
+\[
+4K^2=\frac{U^2V^2}{4},
+\]
+
+可以精确判断 \(E\mid4K^2\)：若 \(V<U\) 总成立；若 \(U<V\)，则当且仅当 \(V\)
+为偶数。因而唯一平方障碍是 \(U<V\) 且 \(V\) 奇数。新增
+\`reproductions/type_i_linear_block_square_boundary.py\` 同时验证 \(E\equiv1\pmod R\)、
+源范围、\(E\mid nK\) 和奇偶分流。
+
+结果：
+
+\`\`\`text
+record_count: 11673
+even_terminal: 4186
+odd_marked_descent: 2963
+mixed_parity_square_obstruction: 4524
+\`\`\`
+
+偶类给出严格更小偶终端；奇类给出保留线性标记的严格更小奇源，不能误写成无标记归纳；
+其余 4524 个状态正好构成下一阶段的混合奇偶障碍集合。该结果已写入
+[双向未决线性状态的较小块平方终端边界](../claims/type-I-linear-block-square-terminal-boundary.md)。
+
+## 2026-07-30 双向未决状态的阶—预算缺口
+
+对 11673 个双向未决状态，计算
+
+\[
+o_R(2)=\operatorname{ord}_R(2),\qquad
+J_{\max}=v_2(2K).
+\]
+
+全部状态满足 \(o_R(2)>J_{\max}\)。进一步按预算区间中是否存在
+\(J\equiv\pm|\lambda_2|\pmod{o_R(2)}\) 分组：
+
+\`\`\`text
+none: 7433
+forward_only: 4186
+reverse_only: 54
+\`\`\`
+
+后两类虽有一个预算内同余类，但方向不等式失败；第一类连同余窗口都没有。最小阶为
+2、最大阶为 295249762，而二进预算 \(J_{\max}\) 只在 1 到 13 之间。该结果把未决
+二进分支规范化成“循环阶大于有限预算”的对偶缺口，已固化为
+[双向未决二进状态的阶—预算缺口](../claims/type-I-linear-block-imbalance-order-budget-gap.md)。
+
+这还不是容量矛盾：下一步必须把 \(o_R(2)\) 的阶信息映射到跨状态可重复的角色/载体
+需求，或证明该缺口迫使另一种 Type I/II 证书。
+
+## 2026-07-30 混合奇偶平方障碍的 Fourier 载体普查
+
+在把 4524 个混合奇偶平方障碍映射到跨状态容量前，先发现旧 Fourier 全谱结果文件中
+有 40 条状态键的 \(K\) 与对应 \((p,R)\) 偏差为 \(\pm1,\pm2,\pm3\)。生成脚本本身对
+单状态重建正确，问题是旧结果文件；已在
+`reproductions/type_i_f_bounded_fourier_full_spectrum.py` 加入输入恒等式、因子重构和
+输出键保持校验，并重建全谱。
+
+校正后的结果保留全部 2752 个有限指数状态键，所有记录满足 \(4K=pR+1\)。随后新增
+`reproductions/type_i_f_square_obstruction_carrier_census.py`，对混合障碍逐行回查 G/F/hit
+分类，并在 F 行上按 \(U=sR+1,V=aR+1\) 的高度优先规则选择 Fourier 活跃素数载体。
+
+```text
+obstruction_record_count: 4524
+obstruction_unique_state_count: 3856
+state_classification_counts: G=3279, F=877, hit=368
+f_obstruction_unique_state_count: 874
+carrier_row_count: 2718
+carrier_tie_count: 27
+local_height_deficit_count: 0
+```
+
+按 \((p,q,\mathrm{color})\)、加角色阶、加活跃集合与目标相位的三种键分组，原始和去重
+容量均无超载，最高需求/容量比为 1。该结果是对保守标量容量账本的排除性边界，不是
+选择器定理；下一步必须把相位余量、盒溢出层数或目标纤维稀疏度转成额外需求。主张卡见
+[混合奇偶平方障碍的 F 型 Fourier 载体普查](../claims/type-I-f-square-obstruction-carrier-census.md)。
+
+## 2026-07-30 盒溢出到载体高度的条件性容量接口
+
+对 291 个分色 F 状态重建 582 个双颜色方向组，并把二维目标仿射格的截断溢出半径作为
+额外需求做压力试算。基准需求是 (h_a h_s)，单位层模型为
+(h_a h_s+delta)，最小乘积模型为
+(h_a h_s+deltamin(h_a,h_s))。
+
+结果：
+
+```text
+base groups: 582, overloads: 0, maximum ratio: 1
+unit-overflow groups: 582, overloads: 582, maximum ratio: 6
+minimum-product groups: 582, overloads: 582, maximum ratio: 6
+```
+
+这不是证明，因为尚未证明关系格溢出半径 (delta) 必然转化为同一 (q_a/q_s) 载体
+方向上的高度增量。它把跨状态桥收缩成一个明确的条件性引理：若能证明
+(max(x,y)gedelta)，则所有现有双颜色容量组立即超载。审计脚本和主张卡见
+[分色 F 状态的盒溢出到载体高度的条件性容量接口](../claims/type-I-f-overflow-to-carrier-conditional-capacity.md)。
+
+## 2026-07-30 溢出支持的活跃/非活跃分流
+
+为检查“溢出层必落在规范双活跃方向”的隐含假设，新增
+`reproductions/type_i_f_overflow_support_boundary.py`，对 291 个分色 F 状态在半径六以内
+寻找一个目标仿射格见证，并记录溢出坐标是否属于规范 Fourier 活跃集合。
+
+```text
+witness_found_count: 253
+witness_missing_count: 38
+support_class_counts: active_only=32, mixed=199, inactive_only=22
+overflow_coordinate_counts: active=342, inactive=446
+```
+
+因此条件性容量接口不能只把溢出费用记在 ((q_a,q_s)) 上；下一步需要多支持联合容量，
+或证明非活跃溢出会导出另一个可提升状态。边界主张见
+[分色 F 状态的盒溢出不局限于规范 Fourier 活跃支持](../claims/type-I-f-overflow-active-support-boundary.md)。
+
+## 2026-07-30 多支持溢出容量的条件性压力边界
+
+为把非活跃溢出坐标纳入容量账本，新增
+`reproductions/type_i_f_overflow_multi_support_capacity.py`。脚本锁定校正后的 Fourier
+全谱、双颜色共享模数容量和溢出支持边界，并对半径六以内找到见证的状态按高度优先规则
+把非活跃溢出素数分配到 \(a/s\) 载体。结果文件为
+`reproductions/type-i-f-overflow-multi-support-capacity-results.json`，SHA-256 为
+`789ac393d328225044c07ad6a5eb99188eaaafe4184edee0b4f0660c7199b580`。
+
+```text
+unresolved_record_count: 291
+support_record_count: 253
+assignment_count: 506
+group_count: 506
+base_capacity: overloads 0, maximum ratio 1, saturation 410
+overflow_capacity: overloads 504, maximum ratio 8400, saturation 2
+```
+
+基准需求只使用已知活跃方向和非活跃支持的单位基线；条件性溢出需求把每个溢出坐标的
+超额层数加入对应载体因子。该模型显示，多支持需求在形式上足以把几乎全部已构造组推入
+超载，但它没有证明超额层数必然转化为同一载体的 \(q\)-进高度，也没有证明确定性颜色
+分配覆盖所有合法提升路径。故本结果是条件性容量边界，不是跨状态选择器；主张卡见
+[分色 F 状态的多支持盒溢出条件性容量边界](../claims/type-I-f-overflow-multi-support-conditional-capacity.md)。
+
+## 2026-07-30 多支持溢出收费的实际高度边界
+
+为检查条件性收费是否已经由被选载体的真实 \(q\)-进高度支持，新增
+`reproductions/type_i_f_overflow_multi_support_height_audit.py`。它锁定与目标十四相同的
+三个输入文件，固定高度优先颜色规则，并逐个比较溢出超额 \(e_q\) 与选定载体高度。
+
+```text
+unresolved_record_count: 291
+support_record_count: 253
+assignment_count: 506
+overflow_layer_count: 3402
+layer_height_at_least_excess: 706
+layer_height_at_least_baseline_plus_excess: 60
+assignment_all_excess_supported: 176
+assignment_all_baseline_plus_excess_supported: 0
+square_classification_counts: even_smaller_block_square_terminal 506, odd_marked_descent 0, mixed_parity_square_obstruction 0
+```
+
+宽松的 \(h_q\ge e_q\) 只覆盖 \(706/3402\approx20.75\%\) 的溢出层；要求先覆盖活跃
+基线再支付超额层时只覆盖 \(60/3402\approx1.76\%\)。因此目标十四的条件性超载不能
+被解释成真实载体账本已经自动承担了溢出费用。该结果不排除其他载体分配或把溢出转成
+算术下降，只排除当前确定性收费规则的直接充分性。主张卡见
+[多支持盒溢出收费与实际载体高度的局部边界](../claims/type-I-f-overflow-multi-support-height-boundary.md)。
+结果文件 SHA-256：45720bcc28c0b4d1b065e27bcd6507e1111fe3bfb89bb4c3aa513f82963d136c。
+同一脚本逐项复核较小块平方 \(E=\min(U,V)^2\) 的整除、同余、源范围、源乘积整除
+和奇偶性；506 个确定性分配全部为偶终端，0 个是奇标记下降，0 个是混合奇偶平方
+障碍。该有限边界见[多支持溢出分支的较小块平方终端边界](../claims/type-I-f-overflow-multi-support-square-descent-boundary.md)。
+
+## 2026-07-30 多支持较小块平方终端的提升边界
+
+将上述 506 个确定性终端按 \((p,R,\operatorname{source},E)\) 去重得到 253 个终端，
+新增脚本 reproductions/type_i_f_overflow_square_terminal_lift.py，完整接入已有奇数距离
+偶源 Type I 参数化及平方尾枚举。
+
+```text
+unique_terminal_count: 253
+parameter_count: 0
+tail_candidate_count: 0
+hit_prime_count: 0
+```
+
+结果文件 SHA-256：ca3d74768cf90586834dfa7f8a127c760871cf5b5d27cc98be8ec96ec58dc9a1。
+该负面边界只说明当前奇数距离模板不能直接承接这些平方终端；它们仍可能通过其它
+距离、平移尾、一般 Type I/II 或新的良基下降被利用。下一步应从
+\(E=\min(U,V)^2\) 的块因子结构构造距离，而不是重复同一模板。
+
+## 2026-07-30 多支持平方终端的移位外部源族审计
+
+为检查平方终端是否能通过比奇数距离模板更宽的移位外部源族回接目标，新增
+`reproductions/type_i_f_overflow_shifted_external_lift.py`。对 253 个去重终端，令
+源为 \(n\)、距离为 \(c=p-n\)，完整枚举
+\(q=4k-1\)、\(d=p-4kc>0\) 的全部 \(k\)，并对每个 \(n\) 的全部因子 \(f\) 检查
+\(n/f\equiv-1\pmod q\)。每个保留参数再独立验证源/目标三项恒等式、范围条件和
+\(D=dkfr^2\mid x^2\)。
+
+```text
+candidate_count: 253
+k_loop_count: 1410064
+parameter_count: 0
+hit_prime_count: 0
+```
+
+结果文件 SHA-256：873acd3a8604521dd1ffc2eb79f2f36cdbf32a41e031c872fd684baa174ef625。
+因此在已知奇数距离和移位外部源两个参数族上，状态内平方终端都没有自动回接为目标
+Type I 证书。该有限负边界不排除其它距离、非平方尾、一般 Type I/II 或新的良基下降；
+主张卡见[多支持平方终端的移位外部源提升边界](../claims/type-I-f-overflow-shifted-external-lift-boundary.md)。
+
+## 2026-07-30 多支持平方终端的 \(b=1,2,4\) 缩放提升审计
+
+依据[缩放一坐标提升的四分母刚性与非倍数 Type I 递降](../claims/scaled-source-descent-rigidity.md)，
+新增 `reproductions/type_i_f_overflow_scaled_source_lift.py`，对 253 个去重平方终端完整
+枚举 \(b\in\{1,2,4\}\) 和所有正互素 \(a\)，再对每个可行源参数枚举
+\(e\mid(an)^2\) 并检查两条平方尾同余、自然缺口、源/目标恒等式和 Type I 除子整除。
+
+```text
+candidate_count: 253
+a_loop_count: 9871013
+admissible_ab_count: 1
+admissible_b_histogram: {"4": 1}
+e_divisor_count: 17731
+e_candidate_count: 0
+parameter_count: 0
+hit_prime_count: 0
+```
+
+唯一通过源参数条件的点为
+\((p,n,b,a,d)=(168434809,168434560,4,676445,4)\)；其 17,731 个 \(e\) 因子均未通过
+两条平方尾同余。因此该批状态在已知奇数距离、移位外部源和 \(b=1,2,4\) 同尾缩放
+三条接口上都没有自动回接为目标 Type I 证书。结果文件 SHA-256：
+00f492e6290284a8bbf0bd3d15c8245d09c2108477006027344f8be6441dd1a5。主张卡见[b=1,2,4 同尾缩放提升边界](../claims/type-I-f-overflow-scaled-source-lift-boundary.md)。
+
+## 2026-07-30 多支持平方终端的偶标准源一项保留提升审计
+
+为检查非同尾但只保留一个源分母的已知递降族，新增
+`reproductions/type_i_f_overflow_even_standard_one_denominator_lift.py`。253 个终端中
+241 个满足 \(p/2<n<p\)，从标准偶源
+\(4/n=1/(n/2)+1/n+1/n\) 出发，令 \(R=4n-p\)、\(S=np\)，完整枚举
+\(e\mid S^2\)、\(e\le S\)、\(R\mid S+e\)，并独立复核两条目标尾、单位分数恒等式和自然范围。
+
+```text
+candidate_count: 253
+upper_half_count: 241
+lower_half_count: 12
+divisors_checked: 581931
+congruence_candidate_count: 0
+target_candidate_count: 0
+natural_candidate_count: 0
+target_hit_prime_count: 0
+natural_hit_prime_count: 0
+```
+
+上半区 241 个源没有一个通过一项保留判据；下半区 12 个源的
+\(R=4n-p\le0\)，不属于该定理的正距离域。因此当前平方终端到目标证书之间仍需
+非标准偶数源、下半区的其它参数化，或真正的多坐标耦合。结果文件 SHA-256：
+5f45f4ec0e7b117517c271af7ea8f6ddee6545347878caa2499cd8385d3df478。主张卡见
+[多支持较小块平方终端的偶标准源一项保留提升边界](../claims/type-I-f-overflow-even-standard-one-denominator-boundary.md)。
+
+## 2026-07-30 多支持平方终端的标准偶源 \(n/2\) 一项保留审计
+
+前一轮只保留了标准偶源中的 \(n\) 坐标；本轮补审 \(n/2\) 坐标。新增
+`reproductions/type_i_f_overflow_even_standard_half_one_denominator_lift.py`，对 253 个
+终端中的 241 个上半区源令 \(c=n/2\)、\(R=2n-p\)、\(S=pc\)，完整枚举
+\(e\mid S^2\)、\(e\le S\)、\(R\mid S+e\)，并复核互补同余、目标恒等式和自然范围。
+
+```text
+candidate_count: 253
+upper_half_count: 241
+lower_half_count: 12
+divisors_checked: 221723
+congruence_candidate_count: 0
+target_candidate_count: 0
+natural_candidate_count: 0
+```
+
+241 个上半区源没有一个通过 \(n/2\) 一项保留判据。结合前一轮的 \(n\) 坐标审计，标准
+偶源的两个不同坐标都已排除。结果文件 SHA-256：
+fc22b53d7c6508e8177107dcb7897bd1d14a61cd174cadc47efa44ee1e2d64b3。主张卡见
+[多支持较小块平方终端的标准偶源 \(n/2\) 一项保留边界](../claims/type-I-f-overflow-even-standard-half-one-denominator-boundary.md)。
+
+
+## 2026-07-30 多支持平方终端的四倍源非标准平方尾一项提升审计
+
+为处理上一轮保留标准偶源之外的非标准源，新增
+`reproductions/type_i_f_overflow_four_divisible_nonstandard_one_denominator_lift.py`。
+253 个平方终端源均满足 \(4\mid n\)。对
+\(4/n=1/(n/4+1)+1/(n/4+1)^2+1/((n/4)(n/4+1)^2)\) 的全部三个坐标，
+完整枚举每个正距离坐标的 \(e\mid(pc)^2\)、\(e\le pc\)，并复核两条同余、目标恒等式
+和自然范围。
+
+```text
+candidate_count: 253
+coordinate_count: 759
+positive_coordinate_count: 506
+divisors_checked: 19961548
+congruence_candidate_count: 0
+target_candidate_count: 0
+natural_candidate_count: 0
+target_hit_prime_count: 0
+natural_hit_prime_count: 0
+coordinate_domain_histogram: {"positive": 506, "nonpositive": 253}
+```
+
+506 个正距离坐标没有一个通过一项保留判据；253 个首坐标因 \(4c-p\le0\) 自动排除。
+因此当前非标准平方尾也没有把状态内终端接回目标，剩余方向是下半区其它参数化、
+其它非标准源或多坐标耦合。结果文件 SHA-256：
+0e6153dc7f01ca68f8e15089bdbee3365c9d9bdf1e723da4511bb25dc9adfb60。主张卡见
+[多支持较小块平方终端的四倍源非标准平方尾一项提升边界](../claims/type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary.md)。
+
+## 2026-07-30 普适盒溢出的跨状态 q 进容量压力
+
+为检验 165 个“全部合法载体分配仍无法承载全部溢出”的状态是否已经形成跨状态
+容量矛盾，新增
+`reproductions/type_i_f_overflow_cross_state_qadic_capacity.py`。脚本锁定全部合法
+载体高度上界结果的 SHA-256：
+
+```text
+62fb9fc0f59bb011ad39276c3cd450ee1fe93fbafba7e7fc5f3800517f0bd3c5
+```
+
+对每个 `universally_unsupported_excess` 坐标按 ((p,q)) 聚合，得到：
+
+```text
+universal_gap_state_count: 165
+universal_gap_coordinate_count: 448
+group_count: 433
+group_prime_count: 108
+total excess demand: 1348
+ordered layer capacity: 1039
+ordered excess overload groups: 218 / 433
+maximum ordered excess ratio: 3
+total positive deficit demand: 886
+ordered deficit overload groups: 121 / 433
+maximum ordered deficit ratio: 2.5
+unit demand overload groups: 0 / 433
+```
+
+容量按每个完整线性源状态两块中较高的 q 进高度计算，并允许有序状态重复计数，故是
+对真实容量的乐观上界。按不同模数去重时层容量降为 539，溢出层超载组为 429/433，
+但主结论采用更宽松的有序账本。
+
+该结果把当前缺口精确化为一个二择一桥梁：
+
+1. 证明关系格盒外溢出 (e_q) 层必须逐层消耗同一核心素数的 q 进载体高度，随后
+   跨状态超载成立；或
+2. 证明无法收费的溢出层会生成严格可提升的更小状态。
+
+只按“每个失败状态一个单位需求”时没有超载，说明粗粒度状态计数不足。该主张记录为
+条件性容量边界，不宣称选择器或递降定理。结果文件 SHA-256：
+
+```text
+822c7aa344271b272d51503f79fd52b9199cf34cf2c7b9b2ba84434cc6a38ccd
+```
+
+
+## 2026-07-30 平方终端半块的 Kneser 缺陷与二进逃逸剖面
+
+为判断半块平方终端是否落在两块 Kneser 的临界边界，新增
+`reproductions/type_i_f_square_half_block_kneser_profile.py`。脚本锁定
+`type-i-f-overflow-square-terminal-lift-results.json` 的 SHA-256
+`ca3d74768cf90586834dfa7f8a127c760871cf5b5d27cc98be8ec96ec58dc9a1`，对 253 个去重终端
+逐行恢复
+
+\[
+G=(aR+1)/2,
+\quad H=(sR+1)/2,
+\quad K=GH,
+\quad X=\mathcal A_R(G),
+\quad Y=\mathcal A_R(H),
+\quad T=\operatorname{Stab}_{\mathcal H_R(K)}(XY).
+\]
+
+结果文件 `reproductions/type-i-f-square-half-block-kneser-profile-results.json` 的
+SHA-256 为
+`680d290b79ab9ca4cc6a4d8940c3aa5ad4ef7884a115153c82bb85bba36042c3`，摘要为：
+
+```text
+candidate_count: 253
+unique_R_count: 195
+all_target_in_generated_subgroup: true
+all_kneser_inequalities_valid: true
+stabilizer_size_histogram: {"1": 245, "2": 8}
+kneser_equality_count: 0
+minimum_kneser_slack: 4
+minus_one_in_<2 mod R>: 119
+two_adic_escape: 134
+full_support_rank_with_two_histogram: {"0": 87, "1": 138, "2": 26, "3": 2}
+two_adic_escape_full_support_rank: {"1": 108, "2": 24, "3": 2}
+```
+
+因此这批样本没有 Kneser 临界等号；119 个状态的二进子群已包含反足点，134 个状态
+全部是复合模数的二进逃逸。对逃逸分支，108 个只需一个、24 个需两个、2 个需三个
+额外 (K) 素因子即可与 2 生成整个支持子群。该有限结构边界见
+[平方终端半块的 Kneser 缺陷与二进逃逸剖面](../claims/type-I-linear-half-block-kneser-square-terminal-profile.md)。
+它暂时没有给出目标命中或下降；下一步应解释最小缺陷 4 的半块来源，并把这组低秩
+支撑需求接入跨状态容量。
+
+随后对 (R<400)、(a,s<200) 的同奇偶线性状态做小范围反例审查，发现
+(p=241,R=11,(a,s)=(3,7)) 的同类 F 状态达到 Kneser 等号。因此“缺陷至少为 4”
+只能作为当前 253 行冻结样本的边界，不能升级为一般引理；后续应使用低秩支撑生成元
+和有限指数预算，而不是依赖统一密度余量。
+
+## 2026-07-30 平方终端 F 状态的完整关系格证书
+
+为把半块低秩支撑统计升级为可独立复查的 F 证书，新增
+`reproductions/type_i_f_square_terminal_relation_certificate.py`。脚本锁定平方终端
+结果和半块 Kneser 剖面的输入哈希，对每个状态用 Smith/Hermite 变换重建关系格和目标
+\(-1\) 的仿射原像，再逐点枚举有限指数盒。
+
+结果文件 `reproductions/type-i-f-square-terminal-relation-certificate-results.json` 的
+SHA-256 为 `53119e9aaeadac7080811782f3a3eb07f3cd6674dfb9a18776a3c5e68d108297`，摘要为：
+
+```text
+state_count: 253
+total_box_points_checked: 133029
+maximum_box_size: 5103
+all_target_in_generated_subgroup: true
+all_target_outside_box: true
+full_support_rank_with_two_histogram: {"0": 87, "1": 138, "2": 26, "3": 2}
+```
+
+因此 253 个状态均有完整的有限盒空缺证书。该结果没有把盒外最近点自动解释为终端；
+下一步应从目标原像和关系格基提取可比较的溢出坐标、\(q\)-进高度，或接入广义 \(2^j\)
+提升。主张卡见[平方终端 F 状态的完整关系格短证书重建](../claims/type-I-f-square-terminal-relation-certificate.md)。
+
+## 2026-07-30 平方终端低秩支撑与盒外溢出错位
+
+为检验低秩支撑是否可以直接承担几何溢出收费，新增
+`reproductions/type_i_f_square_terminal_overflow_support_alignment.py`，将 253 个平方
+终端的规范支撑与已有半径六以内的目标仿射格首个见证逐行对齐。
+
+结果文件 `reproductions/type-i-f-square-terminal-overflow-support-alignment-results.json` 的
+SHA-256 为 `21e11db9ad527fc566c58c62b4458c25865cc14319baad6790ba53c9e2eb667a`，摘要为：
+
+```text
+record_count: 253
+category_counts: {"mixed": 109, "outside_only": 144}
+radius_histogram: {"1": 87, "2": 73, "3": 36, "4": 27, "5": 17, "6": 13}
+overflow_layer_counts: {"canonical": 121, "outside": 667}
+```
+
+没有状态的首个溢出完全落在规范低秩支撑内；144 个状态完全支撑外，109 个混合，说明
+支撑子群的低秩性不能直接转成几何溢出的载体高度。该边界见
+[平方终端 F 证书的低秩支撑与盒溢出错位](../claims/type-I-f-square-terminal-overflow-support-alignment.md)。
+下一步需要多支持收费或从溢出向量构造严格势函数。
+
+## 2026-07-30 全部合法载体分配下的普适高度缺口
+
+为排除“确定性载体选错”这一解释，新增
+`reproductions/type_i_f_overflow_all_assignment_height_upper_bound.py`。脚本对 253 个
+平方终端状态枚举全部满足活跃方向最低高度的线性源/方向分配，并允许每个溢出素因子
+独立选择两个源块中高度较高者；这是比真实载体规则更宽松的乐观上界。
+
+结果文件 `reproductions/type-i-f-overflow-all-assignment-height-upper-bound-results.json` 的
+SHA-256 为 `62fb9fc0f59bb011ad39276c3cd450ee1fe93fbafba7e7fc5f3800517f0bd3c5`，摘要为：
+
+```text
+state_count: 253
+total_admissible_assignment_count: 506
+overflow_layer_count: 1701
+universally_unsupported_excess_layer_count: 1348
+no_assignment_can_carry_all_excess: 165
+some_assignment_can_carry_all_excess: 88
+assignment_can_carry_all_excess_count: 176
+assignment_can_carry_baseline_plus_excess_count: 0
+```
+
+因此 165 个状态的高度缺口与确定性颜色选择无关；这批状态应优先进入跨状态容量或
+严格下降分析。该结果仍是有限必要性边界，不证明高度缺口必然导致下降。主张卡见
+[全部合法载体分配下的 F 溢出高度上界](../claims/type-I-f-overflow-all-assignment-height-upper-bound.md)。
+
+[多支持较小块平方终端的 \(b=1,2,4\) 缩放提升边界](../claims/type-I-f-overflow-scaled-source-lift-boundary.md)。
+
+## 2026-07-30 普适缺口的多坐标和混合符号边界
+
+为确认严格高度缺口是否可能退化为单素因子问题，新增
+`reproductions/type_i_f_overflow_universal_support_profile.py`，锁定全部合法载体高度
+上界和半径六目标仿射见证的输入哈希。
+
+```text
+support size: 2 -> 22, 3 -> 55, 4 -> 56, 5 -> 25, 6 -> 7
+single-coordinate witnesses: 0
+sign classes: all_negative 49, mixed 114, all_positive 2
+active-support classes: all_active 13, has_inactive 152
+total witness excess: 1512
+universal unsupported excess: 1348
+minimum total excess: 3
+maximum total excess: 23
+```
+
+因此当前 165 个严格缺口的第一层结构已经是多坐标的；大多数还涉及规范 Fourier 支持
+之外的素因子，且符号通常混合。下一条引理不能只处理单 q 或单方向，而要给出多坐标
+联合收费、符号耦合，或直接把联合溢出向量变成严格可提升下降。结果文件 SHA-256：
+
+```text
+c965936db508f5ccd553b79c94eb1b422b74ae4a78e51972306c7ebc7ad257a0
+```
+
+## 2026-07-30 普适缺口的联合层容量压力
+
+在上述普适高度缺口上新增
+`reproductions/type_i_f_overflow_universal_joint_capacity.py`。脚本锁定
+`type-i-f-overflow-all-assignment-height-upper-bound-results.json`，并把每个状态的
+普适溢出向量 (e) 作为联合层需求 \(\prod_q e_q\)。对同一核心素数与支持集合的状态，
+在其 (R) 区间内枚举完整线性源状态；容量允许每个坐标独立选择两个源块中较高的
+q 进高度，因此是比真实同块载体更乐观的上界。
+
+```text
+universal gap states: 165
+single-coordinate universal-gap states: 22
+multi-coordinate universal-gap states: 143
+support groups: 164 (multi-coordinate: 142)
+joint demand: 15659
+independent-color capacity: 358
+same-block capacity: 102
+independent-color overloads: 142/164
+maximum ratio: 937.5
+multi-coordinate demand/capacity: 15614/312
+multi-coordinate overloads: 142/142
+```
+
+这比逐坐标收费更强，但仍是条件性结果：尚未证明关系格的多坐标盒外向量必须消耗
+联合载体层乘积，也未证明不同状态之间共享同一容量账本。故当前结论是，下一条严格
+桥梁必须证明联合溢出—高度映射，或从联合关系向量构造可提升的算术下降；它还不是
+跨状态选择器定理。结果文件 SHA-256：
+
+```text
+23d44907d7e01884e00ccb7ffbd2dd93b0376a4c755ca1315e26f41cc0df2aa2
+```
+
+## 2026-07-30 F 溢出的三通道联合容量压力
+
+在联合层容量之外，新增
+`reproductions/type_i_f_overflow_three_channel_capacity.py`，允许每个普适 q 进缺口
+独立使用三类乐观通道：当前块高度、完整源谱模数差高度、完整源谱标签差高度。模数差
+和标签差均取整个核心素数的完整线性源谱，因此会跨需求窗口并重复计数。
+
+```text
+scalar demand/capacity: 1348 / 4396
+scalar overloads: 85/433
+joint demand/capacity: 15659 / 12338
+joint overloads: 56/164
+joint maximum ratio: 37.5
+coordinatewise max-channel joint capacity: 1204
+coordinatewise max-channel overloads: 109/164
+```
+
+即使在这种明显放宽的三通道模型中，仍有联合压力组无法容纳需求。结果的严格边界是：
+还没有证明关系格盒外向量必须收费到这些资源；下一步必须建立联合溢出—通道映射，或
+把无匹配向量转为严格可提升递降。结果文件 SHA-256：
+
+```text
+71cd0a5ad435ee4339e98181b3c9123813b1ba3fbfe2b2662a08c0998dd90204
+```
+
+同日补上容量模型的严格算术接口：新增
+`claims/type-I-linear-cross-label-independent-joint-capacity.md`。对两个线性块
+(t_1R+1,t_2R+1)，逐坐标取较高 q 进高度时使用
+\(\max(x,y)\le x+y\) 展开全部颜色分配；每个颜色分配的联合层通过
+(R\mapsto(d_1,d_2)) 注入混合多除子对集合，得到有限账本上界。该引理说明当前
+独立颜色容量不是未经约束的数值启发，而有严格的除子对容量接口；未闭合的仍是
+“联合关系格溢出必须支付联合层乘积”的映射。
+
+## 2026-07-30 盒外见证的有理缺口分母桥
+
+前面的容量模型仍把溢出层直接当作已有块高度的额外需求。为避免混淆几何坐标与实际
+整除性，新增 `reproductions/type_i_f_overflow_rational_gap_denominator.py` 和主张卡
+`claims/type-I-f-overflow-rational-gap-denominator.md`。
+
+对任意目标见证 \(z\) 写
+
+\[
+A=\prod q_i^{\max(z_i,0)},\\qquad
+B=\prod q_i^{\max(-z_i,0)},\\qquad (A,B)=1.
+\]
+
+由 \(A/B\equiv-1\pmod R\) 与 \(4K\equiv1\pmod R\)，
+
+\[
+N=\frac{4KA+B}{R}\in\mathbb Z_{>0},\\qquad
+m_z=\frac{N}{B}.
+\]
+
+因 \((B,R)=1\)，有精确恒等式
+
+\[
+\gcd(N,B)=\gcd(4K,B),\\qquad
+\operatorname{den}(m_z)=\frac{B}{\gcd(B,4K)}.
+\]
+
+逐素数即得
+
+\[
+v_q(\operatorname{den}(m_z))
+=\max\{-z_q-v_q(4K),0\}.
+\]
+
+对奇素数坐标，这正是负向盒外溢出；若把 \(z\) 取反，则得到正向溢出。还可令
+\[
+m_0=\frac{A+B}{R},\qquad
+x_z=\frac{p+m_z}{4}=\frac{K m_0}{B},
+\qquad
+X_z=\frac{B}{\gcd(B,K)}.
+\]
+因 \((m_0,B)=1\)，\(X_z\) 的 \(q\)-进指数同样是
+\(\max\{-z_q-\nu_q,0\}\)，即奇素数方向的盒外溢出。于是半径六见证的 253 个状态在两种
+方向至少有一个非平凡奇素数分母；正向层数 1182、反向层数 519。正向首分母在 245 个
+状态中非整数，反向首分母在 157 个状态中非整数，但任一方向非整数的状态数为 253。
+8 个正向整数首分母方向都给出规范同余候选 \(e_z=(K/B)A\)，但均未整除对应的
+\(x_z^2\)。令 \(D_z=\gcd(e_z,x_z^2)\)、\(M_z=\gcd(m_z,4D_z+1)\)，则任何自然范围内
+\(3\bmod4\) 因子 \(m'\mid M_z\) 都是候选缺口，但还要用新首分母
+\((p+m')/4\) 检查 \(D_z\) 的平方整除；本批 8 个方向的 \(M_z\) 只有一个非平凡值（5），
+故没有进入候选缺口分支。
+取反方向后，96 个整数首分母方向中有 18 个非平凡修复模数，产生 6 个候选缺口；
+这些候选全部未通过新首分母平方整除。
+结果文件 SHA-256 为
+`8463e8885202506b680d31f9c62b98f5b63f63e421fe4722cd72ad46ab13fee0`。
+
+该桥的价值是把剩余问题精确改写为：如何处理形式 Type I 缺口的约分分母
+\(B_z>1\) 或首分母 \(X_z>1\)。它不能直接视为合法整数缺口，也不能自动转换成已有载体高度；后续必须
+证明分母幂的跨状态碰撞容量，或由分母对象构造带标记的严格递降。

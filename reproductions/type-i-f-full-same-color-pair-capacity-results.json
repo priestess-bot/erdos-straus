@@ -1,0 +1,3020 @@
+{
+  "arithmetic": "For every threshold-met bounded Fourier F state with at least two active primes, choose one deterministic same-color carrier subset and expand it to all same-color active pairs. Group repeated pairs by (p,label,pair), and compare the pair demand with exact linear-source block capacity over the induced R window.",
+  "scope_note": "Finite full-spectrum negative boundary only. The source/color assignment is a canonical diagnostic; it is not a universal certificate-selection rule. No pair overload does not prove a selector or arithmetic descent.",
+  "input_fourier": "type-i-f-bounded-fourier-full-spectrum-results.json",
+  "input_fourier_sha256": "b636ca5714ff784d0a1dd0ec89e42a377de56255a3fefe940e025a3cbe56154d",
+  "input_spectrum": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_spectrum_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "certificate_state_count": 2748,
+  "active_pair_record_count": 2687,
+  "same_color_pair_record_count": 2396,
+  "unresolved_same_color_record_count": 291,
+  "source_prime_count": 200,
+  "pair_group_count": 4706,
+  "pair_overload_count": 0,
+  "maximum_pair_ratio": 1.0,
+  "pair_saturation_count": 3887,
+  "top_pair_groups": [
+    {
+      "prime": 67369,
+      "label": "a",
+      "active_primes": [
+        19,
+        709
+      ],
+      "record_count": 1,
+      "R_min": 4811,
+      "R_max": 4811,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "a",
+      "active_primes": [
+        31,
+        41
+      ],
+      "record_count": 1,
+      "R_min": 11227,
+      "R_max": 11227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "a",
+      "active_primes": [
+        31,
+        53
+      ],
+      "record_count": 1,
+      "R_min": 11227,
+      "R_max": 11227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "a",
+      "active_primes": [
+        41,
+        53
+      ],
+      "record_count": 1,
+      "R_min": 11227,
+      "R_max": 11227,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "a",
+      "active_primes": [
+        113,
+        149
+      ],
+      "record_count": 1,
+      "R_min": 3207,
+      "R_max": 3207,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 67369,
+      "label": "a",
+      "active_primes": [
+        167,
+        389
+      ],
+      "record_count": 1,
+      "R_min": 27,
+      "R_max": 27,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "s",
+      "active_primes": [
+        3,
+        7
+      ],
+      "record_count": 1,
+      "R_min": 33683,
+      "R_max": 33683,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "s",
+      "active_primes": [
+        3,
+        401
+      ],
+      "record_count": 1,
+      "R_min": 33683,
+      "R_max": 33683,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 67369,
+      "label": "s",
+      "active_primes": [
+        7,
+        401
+      ],
+      "record_count": 1,
+      "R_min": 33683,
+      "R_max": 33683,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        5,
+        11
+      ],
+      "record_count": 1,
+      "R_min": 391,
+      "R_max": 391,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        13,
+        17
+      ],
+      "record_count": 1,
+      "R_min": 1555,
+      "R_max": 1555,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        13,
+        971
+      ],
+      "record_count": 1,
+      "R_min": 1555,
+      "R_max": 1555,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        17,
+        971
+      ],
+      "record_count": 1,
+      "R_min": 1555,
+      "R_max": 1555,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        31,
+        277
+      ],
+      "record_count": 1,
+      "R_min": 159,
+      "R_max": 159,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        31,
+        3463
+      ],
+      "record_count": 1,
+      "R_min": 9335,
+      "R_max": 9335,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        101,
+        1063
+      ],
+      "record_count": 1,
+      "R_min": 71575,
+      "R_max": 71575,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 214729,
+      "label": "a",
+      "active_primes": [
+        149,
+        239
+      ],
+      "record_count": 1,
+      "R_min": 67,
+      "R_max": 67,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 214729,
+      "label": "s",
+      "active_primes": [
+        19,
+        353
+      ],
+      "record_count": 1,
+      "R_min": 511,
+      "R_max": 511,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 297049,
+      "label": "a",
+      "active_primes": [
+        5,
+        9901
+      ],
+      "record_count": 1,
+      "R_min": 5211,
+      "R_max": 5211,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 297049,
+      "label": "a",
+      "active_primes": [
+        29,
+        10243
+      ],
+      "record_count": 1,
+      "R_min": 148523,
+      "R_max": 148523,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 297049,
+      "label": "s",
+      "active_primes": [
+        67,
+        277
+      ],
+      "record_count": 1,
+      "R_min": 707,
+      "R_max": 707,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 878089,
+      "label": "a",
+      "active_primes": [
+        2,
+        73
+      ],
+      "record_count": 1,
+      "R_min": 279,
+      "R_max": 279,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 878089,
+      "label": "a",
+      "active_primes": [
+        2,
+        601
+      ],
+      "record_count": 1,
+      "R_min": 279,
+      "R_max": 279,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 878089,
+      "label": "a",
+      "active_primes": [
+        17,
+        37
+      ],
+      "record_count": 1,
+      "R_min": 503,
+      "R_max": 503,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 878089,
+      "label": "a",
+      "active_primes": [
+        73,
+        601
+      ],
+      "record_count": 1,
+      "R_min": 279,
+      "R_max": 279,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 3942409,
+      "label": "a",
+      "active_primes": [
+        13,
+        1123
+      ],
+      "record_count": 1,
+      "R_min": 43,
+      "R_max": 43,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 3942409,
+      "label": "a",
+      "active_primes": [
+        37,
+        11839
+      ],
+      "record_count": 1,
+      "R_min": 19911,
+      "R_max": 19911,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 3942409,
+      "label": "a",
+      "active_primes": [
+        41,
+        2671
+      ],
+      "record_count": 1,
+      "R_min": 101087,
+      "R_max": 101087,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 3942409,
+      "label": "a",
+      "active_primes": [
+        179,
+        449
+      ],
+      "record_count": 1,
+      "R_min": 19,
+      "R_max": 19,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 3942409,
+      "label": "s",
+      "active_primes": [
+        3,
+        157
+      ],
+      "record_count": 1,
+      "R_min": 1823,
+      "R_max": 1823,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 3942409,
+      "label": "s",
+      "active_primes": [
+        3,
+        523
+      ],
+      "record_count": 1,
+      "R_min": 1823,
+      "R_max": 1823,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 3942409,
+      "label": "s",
+      "active_primes": [
+        97,
+        127
+      ],
+      "record_count": 1,
+      "R_min": 5991,
+      "R_max": 5991,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 3942409,
+      "label": "s",
+      "active_primes": [
+        157,
+        523
+      ],
+      "record_count": 1,
+      "R_min": 1823,
+      "R_max": 1823,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5019529,
+      "label": "a",
+      "active_primes": [
+        3,
+        5261
+      ],
+      "record_count": 1,
+      "R_min": 59,
+      "R_max": 59,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5019529,
+      "label": "a",
+      "active_primes": [
+        5,
+        293
+      ],
+      "record_count": 1,
+      "R_min": 3811,
+      "R_max": 3811,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5019529,
+      "label": "a",
+      "active_primes": [
+        5,
+        571
+      ],
+      "record_count": 1,
+      "R_min": 3811,
+      "R_max": 3811,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5019529,
+      "label": "a",
+      "active_primes": [
+        71,
+        1571
+      ],
+      "record_count": 1,
+      "R_min": 3031,
+      "R_max": 3031,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5019529,
+      "label": "a",
+      "active_primes": [
+        131,
+        38317
+      ],
+      "record_count": 1,
+      "R_min": 2509763,
+      "R_max": 2509763,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5019529,
+      "label": "a",
+      "active_primes": [
+        293,
+        571
+      ],
+      "record_count": 1,
+      "R_min": 3811,
+      "R_max": 3811,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5019529,
+      "label": "s",
+      "active_primes": [
+        5,
+        25097
+      ],
+      "record_count": 1,
+      "R_min": 3891,
+      "R_max": 3891,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5019529,
+      "label": "s",
+      "active_primes": [
+        227,
+        691
+      ],
+      "record_count": 1,
+      "R_min": 11951,
+      "R_max": 11951,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5478169,
+      "label": "a",
+      "active_primes": [
+        29,
+        103
+      ],
+      "record_count": 1,
+      "R_min": 543,
+      "R_max": 543,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5478169,
+      "label": "a",
+      "active_primes": [
+        37,
+        73
+      ],
+      "record_count": 1,
+      "R_min": 3375,
+      "R_max": 3375,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5478169,
+      "label": "a",
+      "active_primes": [
+        73,
+        3001
+      ],
+      "record_count": 1,
+      "R_min": 163,
+      "R_max": 163,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5478169,
+      "label": "a",
+      "active_primes": [
+        307,
+        1487
+      ],
+      "record_count": 1,
+      "R_min": 29935,
+      "R_max": 29935,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5478169,
+      "label": "s",
+      "active_primes": [
+        67,
+        5107
+      ],
+      "record_count": 1,
+      "R_min": 395,
+      "R_max": 395,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5478169,
+      "label": "s",
+      "active_primes": [
+        103,
+        277
+      ],
+      "record_count": 1,
+      "R_min": 6311,
+      "R_max": 6311,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        2,
+        19
+      ],
+      "record_count": 1,
+      "R_min": 3063,
+      "R_max": 3063,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        2,
+        67
+      ],
+      "record_count": 1,
+      "R_min": 3063,
+      "R_max": 3063,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        2,
+        157
+      ],
+      "record_count": 1,
+      "R_min": 3063,
+      "R_max": 3063,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        3,
+        107
+      ],
+      "record_count": 1,
+      "R_min": 35,
+      "R_max": 35,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 3
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        5,
+        23
+      ],
+      "record_count": 1,
+      "R_min": 88831,
+      "R_max": 88831,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        5,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 88831,
+      "R_max": 88831,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        11,
+        23
+      ],
+      "record_count": 1,
+      "R_min": 88831,
+      "R_max": 88831,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        11,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 88831,
+      "R_max": 88831,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        19,
+        67
+      ],
+      "record_count": 1,
+      "R_min": 3063,
+      "R_max": 3063,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        19,
+        157
+      ],
+      "record_count": 1,
+      "R_min": 3063,
+      "R_max": 3063,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        23,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 88831,
+      "R_max": 88831,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        31,
+        3761
+      ],
+      "record_count": 1,
+      "R_min": 1865455,
+      "R_max": 1865455,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        43,
+        109
+      ],
+      "record_count": 1,
+      "R_min": 103,
+      "R_max": 103,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        67,
+        157
+      ],
+      "record_count": 1,
+      "R_min": 3063,
+      "R_max": 3063,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        103,
+        6037
+      ],
+      "record_count": 1,
+      "R_min": 8883,
+      "R_max": 8883,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        181,
+        631
+      ],
+      "record_count": 1,
+      "R_min": 3807,
+      "R_max": 3807,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5596369,
+      "label": "a",
+      "active_primes": [
+        547,
+        787
+      ],
+      "record_count": 1,
+      "R_min": 466363,
+      "R_max": 466363,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        2,
+        5
+      ],
+      "record_count": 1,
+      "R_min": 40671,
+      "R_max": 40671,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        2,
+        17
+      ],
+      "record_count": 1,
+      "R_min": 40671,
+      "R_max": 40671,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        2,
+        3469
+      ],
+      "record_count": 1,
+      "R_min": 40671,
+      "R_max": 40671,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        5,
+        17
+      ],
+      "record_count": 1,
+      "R_min": 40671,
+      "R_max": 40671,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        5,
+        3469
+      ],
+      "record_count": 1,
+      "R_min": 40671,
+      "R_max": 40671,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        17,
+        3469
+      ],
+      "record_count": 1,
+      "R_min": 40671,
+      "R_max": 40671,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "a",
+      "active_primes": [
+        31,
+        83
+      ],
+      "record_count": 1,
+      "R_min": 2375,
+      "R_max": 2375,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 5897329,
+      "label": "s",
+      "active_primes": [
+        13,
+        23
+      ],
+      "record_count": 1,
+      "R_min": 179,
+      "R_max": 179,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5897329,
+      "label": "s",
+      "active_primes": [
+        13,
+        1231
+      ],
+      "record_count": 1,
+      "R_min": 179,
+      "R_max": 179,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 5897329,
+      "label": "s",
+      "active_primes": [
+        23,
+        1231
+      ],
+      "record_count": 1,
+      "R_min": 179,
+      "R_max": 179,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        2,
+        541
+      ],
+      "record_count": 1,
+      "R_min": 4983,
+      "R_max": 4983,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        2,
+        601
+      ],
+      "record_count": 1,
+      "R_min": 4983,
+      "R_max": 4983,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        7,
+        1009
+      ],
+      "record_count": 1,
+      "R_min": 3531,
+      "R_max": 3531,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        29,
+        163
+      ],
+      "record_count": 1,
+      "R_min": 12155,
+      "R_max": 12155,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        67,
+        5647
+      ],
+      "record_count": 1,
+      "R_min": 127,
+      "R_max": 127,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        107,
+        163
+      ],
+      "record_count": 1,
+      "R_min": 144511,
+      "R_max": 144511,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        541,
+        601
+      ],
+      "record_count": 1,
+      "R_min": 4983,
+      "R_max": 4983,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 9104209,
+      "label": "a",
+      "active_primes": [
+        577,
+        631
+      ],
+      "record_count": 1,
+      "R_min": 179,
+      "R_max": 179,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        5,
+        337
+      ],
+      "record_count": 1,
+      "R_min": 151,
+      "R_max": 151,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        5,
+        1499
+      ],
+      "record_count": 1,
+      "R_min": 151,
+      "R_max": 151,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        13,
+        227
+      ],
+      "record_count": 1,
+      "R_min": 75,
+      "R_max": 75,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 3
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        67,
+        8929
+      ],
+      "record_count": 1,
+      "R_min": 267635,
+      "R_max": 267635,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        137,
+        1031
+      ],
+      "record_count": 1,
+      "R_min": 2935,
+      "R_max": 2935,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        179,
+        227
+      ],
+      "record_count": 1,
+      "R_min": 75,
+      "R_max": 75,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 3
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        337,
+        1499
+      ],
+      "record_count": 1,
+      "R_min": 151,
+      "R_max": 151,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 10170169,
+      "label": "a",
+      "active_primes": [
+        727,
+        1553
+      ],
+      "record_count": 1,
+      "R_min": 127,
+      "R_max": 127,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "s",
+      "active_primes": [
+        13,
+        19
+      ],
+      "record_count": 1,
+      "R_min": 3039,
+      "R_max": 3039,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "s",
+      "active_primes": [
+        13,
+        31
+      ],
+      "record_count": 1,
+      "R_min": 3039,
+      "R_max": 3039,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "s",
+      "active_primes": [
+        13,
+        83
+      ],
+      "record_count": 1,
+      "R_min": 3039,
+      "R_max": 3039,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "s",
+      "active_primes": [
+        19,
+        31
+      ],
+      "record_count": 1,
+      "R_min": 3039,
+      "R_max": 3039,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "s",
+      "active_primes": [
+        19,
+        83
+      ],
+      "record_count": 1,
+      "R_min": 3039,
+      "R_max": 3039,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 10170169,
+      "label": "s",
+      "active_primes": [
+        31,
+        83
+      ],
+      "record_count": 1,
+      "R_min": 3039,
+      "R_max": 3039,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        2,
+        41
+      ],
+      "record_count": 1,
+      "R_min": 1375,
+      "R_max": 1375,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        2,
+        109
+      ],
+      "record_count": 1,
+      "R_min": 1375,
+      "R_max": 1375,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        19,
+        139
+      ],
+      "record_count": 1,
+      "R_min": 8247,
+      "R_max": 8247,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        31,
+        751
+      ],
+      "record_count": 1,
+      "R_min": 6535,
+      "R_max": 6535,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        31,
+        5849
+      ],
+      "record_count": 1,
+      "R_min": 335,
+      "R_max": 335,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        41,
+        109
+      ],
+      "record_count": 1,
+      "R_min": 1375,
+      "R_max": 1375,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        61,
+        8069
+      ],
+      "record_count": 1,
+      "R_min": 24743,
+      "R_max": 24743,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "a",
+      "active_primes": [
+        557,
+        1031
+      ],
+      "record_count": 1,
+      "R_min": 4594135,
+      "R_max": 4594135,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 13782409,
+      "label": "s",
+      "active_primes": [
+        19,
+        1889
+      ],
+      "record_count": 1,
+      "R_min": 2167,
+      "R_max": 2167,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        3,
+        4799
+      ],
+      "record_count": 1,
+      "R_min": 275,
+      "R_max": 275,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        17,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 401247,
+      "R_max": 401247,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        19,
+        41
+      ],
+      "record_count": 1,
+      "R_min": 5975,
+      "R_max": 5975,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        29,
+        43
+      ],
+      "record_count": 1,
+      "R_min": 340187,
+      "R_max": 340187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        29,
+        47
+      ],
+      "record_count": 1,
+      "R_min": 340187,
+      "R_max": 340187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        29,
+        89
+      ],
+      "record_count": 1,
+      "R_min": 340187,
+      "R_max": 340187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        29,
+        6661
+      ],
+      "record_count": 1,
+      "R_min": 887,
+      "R_max": 887,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        41,
+        59
+      ],
+      "record_count": 1,
+      "R_min": 113395,
+      "R_max": 113395,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        41,
+        6469
+      ],
+      "record_count": 1,
+      "R_min": 113395,
+      "R_max": 113395,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        43,
+        47
+      ],
+      "record_count": 1,
+      "R_min": 340187,
+      "R_max": 340187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        43,
+        89
+      ],
+      "record_count": 1,
+      "R_min": 340187,
+      "R_max": 340187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        43,
+        13997
+      ],
+      "record_count": 1,
+      "R_min": 5216215,
+      "R_max": 5216215,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        47,
+        89
+      ],
+      "record_count": 1,
+      "R_min": 340187,
+      "R_max": 340187,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        59,
+        6469
+      ],
+      "record_count": 1,
+      "R_min": 113395,
+      "R_max": 113395,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        113,
+        223
+      ],
+      "record_count": 1,
+      "R_min": 24839,
+      "R_max": 24839,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "a",
+      "active_primes": [
+        251,
+        577
+      ],
+      "record_count": 1,
+      "R_min": 79,
+      "R_max": 79,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 15648649,
+      "label": "s",
+      "active_primes": [
+        3,
+        23
+      ],
+      "record_count": 1,
+      "R_min": 7824323,
+      "R_max": 7824323,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 15648649,
+      "label": "s",
+      "active_primes": [
+        3,
+        28349
+      ],
+      "record_count": 1,
+      "R_min": 7824323,
+      "R_max": 7824323,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16002529,
+      "label": "a",
+      "active_primes": [
+        7,
+        37
+      ],
+      "record_count": 1,
+      "R_min": 495,
+      "R_max": 495,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16002529,
+      "label": "a",
+      "active_primes": [
+        7,
+        1103
+      ],
+      "record_count": 1,
+      "R_min": 495,
+      "R_max": 495,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16002529,
+      "label": "a",
+      "active_primes": [
+        37,
+        1103
+      ],
+      "record_count": 1,
+      "R_min": 495,
+      "R_max": 495,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16002529,
+      "label": "a",
+      "active_primes": [
+        41,
+        251
+      ],
+      "record_count": 1,
+      "R_min": 666771,
+      "R_max": 666771,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16002529,
+      "label": "a",
+      "active_primes": [
+        3463,
+        4621
+      ],
+      "record_count": 1,
+      "R_min": 2667087,
+      "R_max": 2667087,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16002529,
+      "label": "s",
+      "active_primes": [
+        29,
+        34487
+      ],
+      "record_count": 1,
+      "R_min": 7131,
+      "R_max": 7131,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16002529,
+      "label": "s",
+      "active_primes": [
+        37,
+        53
+      ],
+      "record_count": 1,
+      "R_min": 51,
+      "R_max": 51,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16002529,
+      "label": "s",
+      "active_primes": [
+        617,
+        1621
+      ],
+      "record_count": 1,
+      "R_min": 235331,
+      "R_max": 235331,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        2,
+        11
+      ],
+      "record_count": 1,
+      "R_min": 111399,
+      "R_max": 111399,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        2,
+        12659
+      ],
+      "record_count": 1,
+      "R_min": 111399,
+      "R_max": 111399,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        3,
+        5
+      ],
+      "record_count": 1,
+      "R_min": 4451,
+      "R_max": 4451,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        3,
+        2819
+      ],
+      "record_count": 1,
+      "R_min": 4451,
+      "R_max": 4451,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        5,
+        2819
+      ],
+      "record_count": 1,
+      "R_min": 4451,
+      "R_max": 4451,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        11,
+        12659
+      ],
+      "record_count": 1,
+      "R_min": 111399,
+      "R_max": 111399,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "a",
+      "active_primes": [
+        191,
+        2819
+      ],
+      "record_count": 1,
+      "R_min": 850151,
+      "R_max": 850151,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16152889,
+      "label": "s",
+      "active_primes": [
+        5,
+        521
+      ],
+      "record_count": 1,
+      "R_min": 171,
+      "R_max": 171,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16152889,
+      "label": "s",
+      "active_primes": [
+        59,
+        71
+      ],
+      "record_count": 1,
+      "R_min": 38459,
+      "R_max": 38459,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16152889,
+      "label": "s",
+      "active_primes": [
+        59,
+        241
+      ],
+      "record_count": 1,
+      "R_min": 38459,
+      "R_max": 38459,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16152889,
+      "label": "s",
+      "active_primes": [
+        71,
+        241
+      ],
+      "record_count": 1,
+      "R_min": 38459,
+      "R_max": 38459,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        2,
+        3
+      ],
+      "record_count": 1,
+      "R_min": 2015,
+      "R_max": 2015,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        2,
+        37
+      ],
+      "record_count": 1,
+      "R_min": 2015,
+      "R_max": 2015,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        2,
+        59
+      ],
+      "record_count": 1,
+      "R_min": 2015,
+      "R_max": 2015,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        3,
+        37
+      ],
+      "record_count": 1,
+      "R_min": 2015,
+      "R_max": 2015,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        3,
+        59
+      ],
+      "record_count": 1,
+      "R_min": 2015,
+      "R_max": 2015,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        5,
+        113
+      ],
+      "record_count": 1,
+      "R_min": 1071,
+      "R_max": 1071,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        7,
+        409
+      ],
+      "record_count": 1,
+      "R_min": 33267,
+      "R_max": 33267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        7,
+        947
+      ],
+      "record_count": 1,
+      "R_min": 33267,
+      "R_max": 33267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        37,
+        59
+      ],
+      "record_count": 2,
+      "R_min": 2015,
+      "R_max": 54407,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 33
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        37,
+        2243
+      ],
+      "record_count": 1,
+      "R_min": 10895,
+      "R_max": 10895,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        37,
+        3049
+      ],
+      "record_count": 1,
+      "R_min": 239,
+      "R_max": 239,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        59,
+        275623
+      ],
+      "record_count": 1,
+      "R_min": 2723,
+      "R_max": 2723,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        71,
+        179
+      ],
+      "record_count": 1,
+      "R_min": 15567,
+      "R_max": 15567,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        139,
+        163
+      ],
+      "record_count": 1,
+      "R_min": 5422575,
+      "R_max": 5422575,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        409,
+        947
+      ],
+      "record_count": 1,
+      "R_min": 33267,
+      "R_max": 33267,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "a",
+      "active_primes": [
+        569,
+        953
+      ],
+      "record_count": 1,
+      "R_min": 171239,
+      "R_max": 171239,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        5,
+        11
+      ],
+      "record_count": 1,
+      "R_min": 4611,
+      "R_max": 4611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        5,
+        13
+      ],
+      "record_count": 1,
+      "R_min": 4611,
+      "R_max": 4611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        5,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 4611,
+      "R_max": 4611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        11,
+        13
+      ],
+      "record_count": 1,
+      "R_min": 4611,
+      "R_max": 4611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        11,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 4611,
+      "R_max": 4611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        13,
+        79
+      ],
+      "record_count": 1,
+      "R_min": 4611,
+      "R_max": 4611,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        43,
+        7873
+      ],
+      "record_count": 1,
+      "R_min": 455,
+      "R_max": 455,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 16267729,
+      "label": "s",
+      "active_primes": [
+        419,
+        1213
+      ],
+      "record_count": 1,
+      "R_min": 1063,
+      "R_max": 1063,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "a",
+      "active_primes": [
+        5,
+        227
+      ],
+      "record_count": 1,
+      "R_min": 851,
+      "R_max": 851,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "a",
+      "active_primes": [
+        11,
+        659
+      ],
+      "record_count": 1,
+      "R_min": 12887,
+      "R_max": 12887,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20297209,
+      "label": "a",
+      "active_primes": [
+        11,
+        4457
+      ],
+      "record_count": 1,
+      "R_min": 3163,
+      "R_max": 3163,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20297209,
+      "label": "a",
+      "active_primes": [
+        19,
+        4093
+      ],
+      "record_count": 1,
+      "R_min": 102511,
+      "R_max": 102511,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "a",
+      "active_primes": [
+        43,
+        179
+      ],
+      "record_count": 1,
+      "R_min": 10251,
+      "R_max": 10251,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "a",
+      "active_primes": [
+        43,
+        593
+      ],
+      "record_count": 1,
+      "R_min": 20399,
+      "R_max": 20399,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20297209,
+      "label": "s",
+      "active_primes": [
+        5,
+        11
+      ],
+      "record_count": 1,
+      "R_min": 171,
+      "R_max": 171,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "s",
+      "active_primes": [
+        19,
+        1151
+      ],
+      "record_count": 1,
+      "R_min": 63,
+      "R_max": 63,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "s",
+      "active_primes": [
+        23,
+        31
+      ],
+      "record_count": 1,
+      "R_min": 1423,
+      "R_max": 1423,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "s",
+      "active_primes": [
+        23,
+        593
+      ],
+      "record_count": 1,
+      "R_min": 1423,
+      "R_max": 1423,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "s",
+      "active_primes": [
+        31,
+        83
+      ],
+      "record_count": 1,
+      "R_min": 431,
+      "R_max": 431,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20297209,
+      "label": "s",
+      "active_primes": [
+        31,
+        593
+      ],
+      "record_count": 1,
+      "R_min": 1423,
+      "R_max": 1423,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        3,
+        7
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        3,
+        31
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        3,
+        173
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        3,
+        181
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        3,
+        36929
+      ],
+      "record_count": 1,
+      "R_min": 886295,
+      "R_max": 886295,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        5,
+        13
+      ],
+      "record_count": 1,
+      "R_min": 2331,
+      "R_max": 2331,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        5,
+        2851
+      ],
+      "record_count": 1,
+      "R_min": 2331,
+      "R_max": 2331,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        7,
+        31
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        7,
+        173
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        7,
+        181
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        13,
+        2851
+      ],
+      "record_count": 1,
+      "R_min": 2331,
+      "R_max": 2331,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        19,
+        29
+      ],
+      "record_count": 1,
+      "R_min": 522687,
+      "R_max": 522687,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        19,
+        3083
+      ],
+      "record_count": 2,
+      "R_min": 54071,
+      "R_max": 522687,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 10
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        19,
+        3301
+      ],
+      "record_count": 1,
+      "R_min": 719,
+      "R_max": 719,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        19,
+        22349
+      ],
+      "record_count": 1,
+      "R_min": 2695,
+      "R_max": 2695,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        29,
+        3083
+      ],
+      "record_count": 1,
+      "R_min": 522687,
+      "R_max": 522687,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        31,
+        173
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        31,
+        181
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        173,
+        181
+      ],
+      "record_count": 1,
+      "R_min": 443147,
+      "R_max": 443147,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "a",
+      "active_primes": [
+        263,
+        271
+      ],
+      "record_count": 1,
+      "R_min": 195,
+      "R_max": 195,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 2
+    },
+    {
+      "prime": 20384809,
+      "label": "s",
+      "active_primes": [
+        5,
+        307
+      ],
+      "record_count": 1,
+      "R_min": 3411,
+      "R_max": 3411,
+      "demand": 2,
+      "capacity": 2,
+      "ratio": 1.0,
+      "state_block_count": 1
+    },
+    {
+      "prime": 20384809,
+      "label": "s",
+      "active_primes": [
+        23,
+        36929
+      ],
+      "record_count": 1,
+      "R_min": 10192403,
+      "R_max": 10192403,
+      "demand": 1,
+      "capacity": 1,
+      "ratio": 1.0,
+      "state_block_count": 1
+    }
+  ],
+  "overloads": []
+}

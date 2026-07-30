@@ -1,0 +1,961 @@
+{
+  "arithmetic": "For every frozen F state with at least three available stabilizer directions, choose the first block carrying two such primes; count exact divisor-residue windows for the resulting prime pair.",
+  "scope_note": "Finite audit only. The paired carrier lemma is general for a selected direction set, but the stabilizer-direction profile does not prove that a chosen Fourier character has the same support; the 45-state capacity total is not universal.",
+  "input": "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json",
+  "input_sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f",
+  "totals": {
+    "state_count": 45,
+    "pair_group_count": 40,
+    "demand": 45,
+    "capacity": 70
+  },
+  "joint_height_totals": {
+    "demand": 99,
+    "capacity": 136,
+    "by_prime": {
+      "878089": {
+        "demand": 4,
+        "capacity": 4
+      },
+      "26034649": {
+        "demand": 14,
+        "capacity": 14
+      },
+      "57399241": {
+        "demand": 56,
+        "capacity": 93
+      },
+      "283319689": {
+        "demand": 25,
+        "capacity": 25
+      }
+    }
+  },
+  "by_prime": {
+    "878089": {
+      "demand": 2,
+      "capacity": 2
+    },
+    "26034649": {
+      "demand": 6,
+      "capacity": 6
+    },
+    "57399241": {
+      "demand": 24,
+      "capacity": 49
+    },
+    "283319689": {
+      "demand": 13,
+      "capacity": 13
+    }
+  },
+  "groups": {
+    "878089:5:2:349": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 2,
+      "joint_height_capacity": 2,
+      "R_min": 279,
+      "R_max": 279
+    },
+    "878089:5:2:17": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 2,
+      "joint_height_capacity": 2,
+      "R_min": 503,
+      "R_max": 503
+    },
+    "26034649:73:2:29": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 4,
+      "joint_height_capacity": 4,
+      "R_min": 375,
+      "R_max": 375
+    },
+    "26034649:9:2:5": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 4,
+      "joint_height_capacity": 4,
+      "R_min": 6871,
+      "R_max": 6871
+    },
+    "26034649:105:31:52489": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 61987,
+      "R_max": 61987
+    },
+    "26034649:73:2:3": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 178319,
+      "R_max": 178319
+    },
+    "26034649:6:23:37": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 4339107,
+      "R_max": 4339107
+    },
+    "26034649:1:3:1084777": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 13017323,
+      "R_max": 13017323
+    },
+    "57399241:1:3:5": {
+      "demand": 3,
+      "capacity": 13,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 13,
+      "R_min": 59,
+      "R_max": 28699619
+    },
+    "57399241:55:3:761": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 83,
+      "R_max": 83
+    },
+    "57399241:211:3:23": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 2,
+      "joint_height_capacity": 2,
+      "R_min": 155,
+      "R_max": 155
+    },
+    "57399241:202110:331:172801": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 283,
+      "R_max": 283
+    },
+    "57399241:841:2:3": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 6,
+      "joint_height_capacity": 6,
+      "R_min": 455,
+      "R_max": 455
+    },
+    "57399241:1:2:71": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 567,
+      "R_max": 567
+    },
+    "57399241:81:2:5": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 599,
+      "R_max": 599
+    },
+    "57399241:1:5:71": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 1419,
+      "R_max": 1419
+    },
+    "57399241:13:2:3": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 4,
+      "joint_height_capacity": 4,
+      "R_min": 1631,
+      "R_max": 1631
+    },
+    "57399241:1:2:5": {
+      "demand": 2,
+      "capacity": 13,
+      "joint_height_demand": 6,
+      "joint_height_capacity": 27,
+      "R_min": 2839,
+      "R_max": 19133079
+    },
+    "57399241:526:3:5": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 2,
+      "joint_height_capacity": 2,
+      "R_min": 6419,
+      "R_max": 6419
+    },
+    "57399241:241:5:19": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 4,
+      "joint_height_capacity": 4,
+      "R_min": 7939,
+      "R_max": 7939
+    },
+    "57399241:1449:2:191": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 9903,
+      "R_max": 9903
+    },
+    "57399241:2130:109:4831": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 2,
+      "joint_height_capacity": 2,
+      "R_min": 26947,
+      "R_max": 26947
+    },
+    "57399241:559:11:53": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 34227,
+      "R_max": 34227
+    },
+    "57399241:41:2:5": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 69999,
+      "R_max": 69999
+    },
+    "57399241:1:2:3": {
+      "demand": 3,
+      "capacity": 7,
+      "joint_height_demand": 9,
+      "joint_height_capacity": 15,
+      "R_min": 161687,
+      "R_max": 11479847
+    },
+    "57399241:3:2:43": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 1471775,
+      "R_max": 1471775
+    },
+    "57399241:1:3:71": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 5739923,
+      "R_max": 5739923
+    },
+    "283319689:19:3:5": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 131,
+      "R_max": 131
+    },
+    "283319689:93:2:79": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 2,
+      "joint_height_capacity": 2,
+      "R_min": 1247,
+      "R_max": 1247
+    },
+    "283319689:81:11:13": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 1603,
+      "R_max": 1603
+    },
+    "283319689:273:2:31": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 3591,
+      "R_max": 3591
+    },
+    "283319689:49:2:5": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 11271,
+      "R_max": 11271
+    },
+    "283319689:1120:41:79": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 28107,
+      "R_max": 28107
+    },
+    "283319689:1:2:17": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 601527,
+      "R_max": 601527
+    },
+    "283319689:13:2:3": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 4,
+      "joint_height_capacity": 4,
+      "R_min": 751511,
+      "R_max": 751511
+    },
+    "283319689:1:157:4423": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 2777643,
+      "R_max": 2777643
+    },
+    "283319689:3:2:10896911": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 7264607,
+      "R_max": 7264607
+    },
+    "283319689:1:2:3": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 3,
+      "joint_height_capacity": 3,
+      "R_min": 16665863,
+      "R_max": 16665863
+    },
+    "283319689:1:17:157": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 47219947,
+      "R_max": 47219947
+    },
+    "283319689:1:3:17": {
+      "demand": 1,
+      "capacity": 1,
+      "joint_height_demand": 1,
+      "joint_height_capacity": 1,
+      "R_min": 141659843,
+      "R_max": 141659843
+    }
+  },
+  "selected": [
+    {
+      "prime": 878089,
+      "R": 279,
+      "t": 5,
+      "pair": [
+        2,
+        349
+      ],
+      "heights": [
+        2,
+        1
+      ]
+    },
+    {
+      "prime": 878089,
+      "R": 503,
+      "t": 5,
+      "pair": [
+        2,
+        17
+      ],
+      "heights": [
+        2,
+        1
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 375,
+      "t": 73,
+      "pair": [
+        2,
+        29
+      ],
+      "heights": [
+        4,
+        1
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 6871,
+      "t": 9,
+      "pair": [
+        2,
+        5
+      ],
+      "heights": [
+        4,
+        1
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 61987,
+      "t": 105,
+      "pair": [
+        31,
+        52489
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 178319,
+      "t": 73,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 4339107,
+      "t": 6,
+      "pair": [
+        23,
+        37
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 13017323,
+      "t": 1,
+      "pair": [
+        3,
+        1084777
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 59,
+      "t": 1,
+      "pair": [
+        3,
+        5
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 83,
+      "t": 55,
+      "pair": [
+        3,
+        761
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 155,
+      "t": 211,
+      "pair": [
+        3,
+        23
+      ],
+      "heights": [
+        2,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 283,
+      "t": 202110,
+      "pair": [
+        331,
+        172801
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 455,
+      "t": 841,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        6,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 567,
+      "t": 1,
+      "pair": [
+        2,
+        71
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 599,
+      "t": 81,
+      "pair": [
+        2,
+        5
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 1419,
+      "t": 1,
+      "pair": [
+        5,
+        71
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 1631,
+      "t": 13,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        2,
+        2
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 2839,
+      "t": 1,
+      "pair": [
+        2,
+        5
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 6419,
+      "t": 526,
+      "pair": [
+        3,
+        5
+      ],
+      "heights": [
+        2,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 7939,
+      "t": 241,
+      "pair": [
+        5,
+        19
+      ],
+      "heights": [
+        2,
+        2
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 9903,
+      "t": 1449,
+      "pair": [
+        2,
+        191
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 26947,
+      "t": 2130,
+      "pair": [
+        109,
+        4831
+      ],
+      "heights": [
+        2,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 34227,
+      "t": 559,
+      "pair": [
+        11,
+        53
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 69999,
+      "t": 41,
+      "pair": [
+        2,
+        5
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 161687,
+      "t": 1,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 404219,
+      "t": 1,
+      "pair": [
+        3,
+        5
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 808439,
+      "t": 1,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 1471775,
+      "t": 3,
+      "pair": [
+        2,
+        43
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 5739923,
+      "t": 1,
+      "pair": [
+        3,
+        71
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 11479847,
+      "t": 1,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 19133079,
+      "t": 1,
+      "pair": [
+        2,
+        5
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 28699619,
+      "t": 1,
+      "pair": [
+        3,
+        5
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 131,
+      "t": 19,
+      "pair": [
+        3,
+        5
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 1247,
+      "t": 93,
+      "pair": [
+        2,
+        79
+      ],
+      "heights": [
+        2,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 1603,
+      "t": 81,
+      "pair": [
+        11,
+        13
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 3591,
+      "t": 273,
+      "pair": [
+        2,
+        31
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 11271,
+      "t": 49,
+      "pair": [
+        2,
+        5
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 28107,
+      "t": 1120,
+      "pair": [
+        41,
+        79
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 601527,
+      "t": 1,
+      "pair": [
+        2,
+        17
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 751511,
+      "t": 13,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        2,
+        2
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 2777643,
+      "t": 1,
+      "pair": [
+        157,
+        4423
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 7264607,
+      "t": 3,
+      "pair": [
+        2,
+        10896911
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 16665863,
+      "t": 1,
+      "pair": [
+        2,
+        3
+      ],
+      "heights": [
+        3,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 47219947,
+      "t": 1,
+      "pair": [
+        17,
+        157
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 141659843,
+      "t": 1,
+      "pair": [
+        3,
+        17
+      ],
+      "heights": [
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,732 @@
+{
+  "arithmetic": "For each deterministic multi-support assignment, compare every overflow excess layer with the selected carrier's actual q-adic height. The audit tests whether the conditional overflow charge is already supported by the chosen source block.",
+  "scope_note": "This is a local consistency boundary, not a search for alternative assignments. Failure means the tested deterministic charge is not supplied by the selected carrier; it does not rule out another carrier or a descent interpretation.",
+  "fourier_input": "type-i-f-bounded-fourier-full-spectrum-results.json",
+  "fourier_input_sha256": "b636ca5714ff784d0a1dd0ec89e42a377de56255a3fefe940e025a3cbe56154d",
+  "cross_input": "type-i-f-full-cross-color-pair-capacity-results.json",
+  "cross_input_sha256": "c99ee379e61aef20b1dbbcdffb1a2b2f532fa8b8697308cdf32ac45b31608cb5",
+  "support_input": "type-i-f-overflow-support-boundary-results.json",
+  "support_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "unresolved_record_count": 291,
+  "support_record_count": 253,
+  "assignment_count": 506,
+  "overflow_layer_count": 3402,
+  "layer_height_at_least_excess": 706,
+  "layer_height_at_least_baseline_plus_excess": 60,
+  "assignment_all_excess_supported": 176,
+  "assignment_all_baseline_plus_excess_supported": 0,
+  "assignment_partial_excess_supported": {
+    "none": 134,
+    "all": 176,
+    "some": 196
+  },
+  "square_classification_counts": {
+    "even_smaller_block_square_terminal": 506
+  },
+  "failed_examples": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "a": 7,
+      "s": 711,
+      "q_a": 151,
+      "q_s": 15287,
+      "layers": [
+        {
+          "q": 151,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 15287,
+          "excess": 3,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 214729,
+      "R": 43,
+      "a": 711,
+      "s": 7,
+      "q_a": 15287,
+      "q_s": 151,
+      "layers": [
+        {
+          "q": 151,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 15287,
+          "excess": 3,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 5478169,
+      "R": 4835,
+      "a": 11,
+      "s": 103,
+      "q_a": 29,
+      "q_s": 73,
+      "layers": [
+        {
+          "q": 73,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 131,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 5478169,
+      "R": 4835,
+      "a": 103,
+      "s": 11,
+      "q_a": 73,
+      "q_s": 29,
+      "layers": [
+        {
+          "q": 73,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 131,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "a": 7,
+      "s": 18531,
+      "q_a": 151,
+      "q_s": 398417,
+      "layers": [
+        {
+          "q": 151,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 398417,
+          "excess": 3,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "a": 18531,
+      "s": 7,
+      "q_a": 398417,
+      "q_s": 151,
+      "layers": [
+        {
+          "q": 151,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 398417,
+          "excess": 3,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 1251,
+      "a": 7,
+      "s": 639,
+      "q_a": 151,
+      "q_s": 79939,
+      "layers": [
+        {
+          "q": 5,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 79939,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 5596369,
+      "R": 1251,
+      "a": 639,
+      "s": 7,
+      "q_a": 79939,
+      "q_s": 151,
+      "layers": [
+        {
+          "q": 5,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 79939,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "a": 7,
+      "s": 4727,
+      "q_a": 107,
+      "q_s": 13829,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 2,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 107,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 13829,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "a": 4727,
+      "s": 7,
+      "q_a": 13829,
+      "q_s": 107,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 2,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 107,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 13829,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "a": 3,
+      "s": 4507,
+      "q_a": 139,
+      "q_s": 765439,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 3,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 139,
+          "excess": 3,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 765439,
+          "excess": 4,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "a": 4507,
+      "s": 3,
+      "q_a": 765439,
+      "q_s": 139,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 3,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 139,
+          "excess": 3,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 765439,
+          "excess": 4,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 33051,
+      "a": 3,
+      "s": 139,
+      "q_a": 4507,
+      "q_s": 389,
+      "layers": [
+        {
+          "q": 11,
+          "excess": 4,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 389,
+          "excess": 6,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 1181,
+          "excess": 5,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 4507,
+          "excess": 5,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 13782409,
+      "R": 33051,
+      "a": 139,
+      "s": 3,
+      "q_a": 389,
+      "q_s": 4507,
+      "layers": [
+        {
+          "q": 11,
+          "excess": 4,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 389,
+          "excess": 6,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 1181,
+          "excess": 5,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 4507,
+          "excess": 5,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 27,
+      "a": 703,
+      "s": 843,
+      "q_a": 9491,
+      "q_s": 599,
+      "layers": [
+        {
+          "q": 599,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 27,
+      "a": 843,
+      "s": 703,
+      "q_a": 599,
+      "q_s": 9491,
+      "layers": [
+        {
+          "q": 599,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 5075,
+      "a": 3,
+      "s": 1051,
+      "q_a": 331,
+      "q_s": 113,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 23,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 113,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 331,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 16002529,
+      "R": 5075,
+      "a": 1051,
+      "s": 3,
+      "q_a": 113,
+      "q_s": 331,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 23,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 113,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 331,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "a": 3,
+      "s": 139,
+      "q_a": 163,
+      "q_s": 180751,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 1,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 5,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 163,
+          "excess": 4,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 359,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 180751,
+          "excess": 3,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "a": 139,
+      "s": 3,
+      "q_a": 180751,
+      "q_s": 163,
+      "layers": [
+        {
+          "q": 3,
+          "excess": 1,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": true,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 5,
+          "excess": 2,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 163,
+          "excess": 4,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 359,
+          "excess": 2,
+          "color": "s",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        },
+        {
+          "q": 180751,
+          "excess": 3,
+          "color": "a",
+          "selected_height": 1,
+          "baseline": 1,
+          "height_ge_excess": false,
+          "height_ge_baseline_plus_excess": false
+        }
+      ]
+    }
+  ]
+}

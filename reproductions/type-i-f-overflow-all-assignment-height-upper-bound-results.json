@@ -1,0 +1,5764 @@
+{
+  "arithmetic": "For every frozen square-terminal F state, enumerate every admissible linear source and active-direction assignment. For each overflow coordinate, allow the best of the two source blocks as carrier, giving an optimistic height upper bound.",
+  "scope_note": "Finite optimistic upper bound only. It ignores conflicts between multiple overflow coordinates and therefore can only certify universal height insufficiency, not prove that a feasible assignment exists. It does not search new source families.",
+  "fourier_input": "type-i-f-bounded-fourier-full-spectrum-results.json",
+  "fourier_input_sha256": "b636ca5714ff784d0a1dd0ec89e42a377de56255a3fefe940e025a3cbe56154d",
+  "cross_input": "type-i-f-full-cross-color-pair-capacity-results.json",
+  "cross_input_sha256": "c99ee379e61aef20b1dbbcdffb1a2b2f532fa8b8697308cdf32ac45b31608cb5",
+  "support_input": "type-i-f-overflow-support-boundary-results.json",
+  "support_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "square_input": "type-i-f-overflow-square-terminal-lift-results.json",
+  "square_input_sha256": "ca3d74768cf90586834dfa7f8a127c760871cf5b5d27cc98be8ec96ec58dc9a1",
+  "state_count": 253,
+  "total_admissible_assignment_count": 506,
+  "overflow_layer_count": 1701,
+  "universally_unsupported_excess_layer_count": 1348,
+  "state_category_counts": {
+    "no_assignment_can_carry_all_excess": 165,
+    "some_assignment_can_carry_all_excess": 88
+  },
+  "assignment_counts": {
+    "with_any_admissible_assignment": 253
+  },
+  "radius_histogram": {
+    "1": 87,
+    "2": 73,
+    "3": 36,
+    "4": 27,
+    "5": 17,
+    "6": 13
+  },
+  "records": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "151": 2,
+        "15287": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "151": 1,
+        "15287": 1
+      },
+      "universally_unsupported_excess": {
+        "151": 2,
+        "15287": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 5478169,
+      "R": 4835,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "73": 1,
+        "131": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "73": 1,
+        "131": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "151": 2,
+        "398417": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "151": 1,
+        "398417": 1
+      },
+      "universally_unsupported_excess": {
+        "151": 2,
+        "398417": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 5596369,
+      "R": 1251,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "79939": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "79939": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 9104209,
+      "R": 275,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "107": 2,
+        "13829": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "107": 1,
+        "13829": 1
+      },
+      "universally_unsupported_excess": {
+        "107": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 3,
+        "139": 3,
+        "765439": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "139": 1,
+        "765439": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "139": 3,
+        "765439": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 13782409,
+      "R": 33051,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "11": 4,
+        "389": 6,
+        "1181": 5,
+        "4507": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "389": 1,
+        "1181": 1,
+        "4507": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 4,
+        "389": 6,
+        "1181": 5,
+        "4507": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 16002529,
+      "R": 27,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "599": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "599": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 16002529,
+      "R": 5075,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "23": 2,
+        "113": 1,
+        "331": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "23": 1,
+        "113": 1,
+        "331": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "23": 2,
+        "331": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 1,
+        "5": 2,
+        "163": 4,
+        "359": 2,
+        "180751": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "163": 1,
+        "359": 1,
+        "180751": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "163": 4,
+        "359": 2,
+        "180751": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 24738289,
+      "R": 123,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "83": 3,
+        "349": 4,
+        "26261": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "83": 1,
+        "349": 1,
+        "26261": 1
+      },
+      "universally_unsupported_excess": {
+        "83": 3,
+        "349": 4,
+        "26261": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 25073689,
+      "R": 91,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "71": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "71": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 25073689,
+      "R": 139,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "11": 3,
+        "487": 3,
+        "162649": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "487": 1,
+        "162649": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 3,
+        "487": 3,
+        "162649": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 30997849,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "1301": 1,
+        "69493": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "1301": 1,
+        "69493": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "69493": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 30997849,
+      "R": 14867,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "17": 1,
+        "163": 2,
+        "937": 1,
+        "2113": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "17": 1,
+        "163": 1,
+        "937": 1,
+        "2113": 1
+      },
+      "universally_unsupported_excess": {
+        "163": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 36583369,
+      "R": 859,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "17": 2,
+        "43": 2,
+        "379": 2,
+        "4051": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "17": 1,
+        "43": 1,
+        "379": 1,
+        "4051": 1
+      },
+      "universally_unsupported_excess": {
+        "17": 2,
+        "43": 2,
+        "379": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 36583369,
+      "R": 1315,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "11": 2,
+        "107": 3,
+        "1973": 3,
+        "5179": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "107": 1,
+        "1973": 1,
+        "5179": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 2,
+        "107": 3,
+        "1973": 3,
+        "5179": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 37793809,
+      "R": 19,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "53": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "53": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 37793809,
+      "R": 15307,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "7": 4,
+        "11": 4,
+        "179": 5,
+        "22961": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "11": 1,
+        "179": 1,
+        "22961": 1
+      },
+      "universally_unsupported_excess": {
+        "7": 4,
+        "11": 4,
+        "179": 5,
+        "22961": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 38333689,
+      "R": 115,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "173": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "173": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 38333689,
+      "R": 2723,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "11": 3,
+        "29": 3,
+        "353": 2,
+        "2861": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "29": 1,
+        "353": 1,
+        "2861": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 3,
+        "29": 3,
+        "353": 2,
+        "2861": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 41708209,
+      "R": 371,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "11": 1,
+        "19": 1,
+        "421": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "19": 1,
+        "421": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 42486889,
+      "R": 8051,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 2,
+        "13": 4,
+        "472057": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "13": 1,
+        "472057": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "13": 4,
+        "472057": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 48825529,
+      "R": 419,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 5,
+        "613": 4,
+        "309013": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 3,
+        "613": 1,
+        "309013": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 5,
+        "613": 4,
+        "309013": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 48991849,
+      "R": 139,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 1,
+        "401": 2,
+        "326581": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "401": 1,
+        "326581": 1
+      },
+      "universally_unsupported_excess": {
+        "401": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 48991849,
+      "R": 7931,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "11897": 1,
+        "28649": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "11897": 1,
+        "28649": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "28649": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 48991849,
+      "R": 8291,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "59": 1,
+        "89": 2,
+        "12517": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "59": 1,
+        "89": 1,
+        "12517": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "89": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 50290249,
+      "R": 3251,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "11": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 3,
+        "11": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 50290249,
+      "R": 9155,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 5,
+        "443": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "443": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 5,
+        "443": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 50290249,
+      "R": 540755,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "11": 3,
+        "443": 3,
+        "499": 3,
+        "509": 2,
+        "1831": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "443": 1,
+        "499": 1,
+        "509": 1,
+        "1831": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 3,
+        "443": 3,
+        "499": 3,
+        "509": 2,
+        "1831": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 51029449,
+      "R": 1259,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 3,
+        "1889": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "1889": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "1889": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 51029449,
+      "R": 16371,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "71": 3,
+        "1889": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "71": 1,
+        "1889": 1
+      },
+      "universally_unsupported_excess": {
+        "71": 3,
+        "1889": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 53712409,
+      "R": 17035,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "59": 1,
+        "71": 2,
+        "2137": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "59": 1,
+        "71": 1,
+        "2137": 1
+      },
+      "universally_unsupported_excess": {
+        "71": 2,
+        "2137": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 57399241,
+      "R": 83,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "761": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "761": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 57399241,
+      "R": 155,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "23": 1,
+        "79": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "23": 1,
+        "79": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 57399241,
+      "R": 34227,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "11": 6,
+        "53": 4,
+        "61": 5,
+        "269": 1,
+        "51341": 6
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "53": 1,
+        "61": 1,
+        "269": 1,
+        "51341": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 6,
+        "53": 4,
+        "61": 5,
+        "51341": 6
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 58757449,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "2417": 3,
+        "164093": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "2417": 1,
+        "164093": 1
+      },
+      "universally_unsupported_excess": {
+        "2417": 3,
+        "164093": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 58757449,
+      "R": 291,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "43": 1,
+        "521": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "43": 1,
+        "521": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 62588089,
+      "R": 150091,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "11": 2,
+        "97": 1,
+        "103": 1,
+        "4051": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "97": 1,
+        "103": 1,
+        "4051": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 62704849,
+      "R": 1947,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "53": 6,
+        "349": 6,
+        "1650083": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "53": 1,
+        "349": 1,
+        "1650083": 1
+      },
+      "universally_unsupported_excess": {
+        "53": 6,
+        "349": 6,
+        "1650083": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 62704849,
+      "R": 150371,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 1,
+        "5": 5,
+        "59": 5,
+        "3823": 3,
+        "696719": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "59": 1,
+        "3823": 1,
+        "696719": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 5,
+        "59": 5,
+        "3823": 3,
+        "696719": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 75056809,
+      "R": 63339,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "7": 4,
+        "37": 2,
+        "347": 3,
+        "51059": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 2,
+        "37": 2,
+        "347": 1,
+        "51059": 1
+      },
+      "universally_unsupported_excess": {
+        "7": 4,
+        "347": 3,
+        "51059": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 78268369,
+      "R": 1643,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "181": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "181": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 79312489,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "53": 2,
+        "4364681": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "53": 1,
+        "4364681": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "53": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 79312489,
+      "R": 1571,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "79": 2,
+        "97": 2,
+        "10037": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "79": 1,
+        "97": 1,
+        "10037": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "79": 2,
+        "97": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 79312489,
+      "R": 1987,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "11": 1,
+        "17": 1,
+        "59": 1,
+        "271": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "17": 1,
+        "59": 1,
+        "271": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 79312489,
+      "R": 6611,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "5": 2,
+        "17": 2,
+        "929": 2,
+        "184447": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "5": 1,
+        "17": 1,
+        "929": 1,
+        "184447": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "17": 2,
+        "929": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 79312489,
+      "R": 45347,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "3": 3,
+        "251": 5,
+        "271": 6,
+        "1468739": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "251": 1,
+        "271": 1,
+        "1468739": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "251": 5,
+        "271": 6,
+        "1468739": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 79312489,
+      "R": 97555,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "11": 6,
+        "47": 4,
+        "53": 4,
+        "281249": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "47": 1,
+        "53": 1,
+        "281249": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 6,
+        "47": 4,
+        "53": 4,
+        "281249": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 83445289,
+      "R": 13859,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "839": 1,
+        "3457": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "839": 1,
+        "3457": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 83445289,
+      "R": 25715,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 3,
+        "11": 3,
+        "107": 3,
+        "2203": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "11": 1,
+        "107": 1,
+        "2203": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "11": 3,
+        "107": 3,
+        "2203": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 84624409,
+      "R": 451,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "7": 1,
+        "31": 1,
+        "53": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "7": 1,
+        "31": 1,
+        "53": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 84624409,
+      "R": 539,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "37": 2,
+        "2014333": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "37": 1,
+        "2014333": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "37": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 85457689,
+      "R": 811,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 1,
+        "61": 2,
+        "967": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "61": 1,
+        "967": 1
+      },
+      "universally_unsupported_excess": {
+        "61": 2,
+        "967": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 96440089,
+      "R": 83,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "13": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "13": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 96530569,
+      "R": 387,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "17": 1,
+        "2083": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "17": 1,
+        "2083": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 99151369,
+      "R": 3395,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "71": 1,
+        "163": 2,
+        "1031": 2,
+        "2351": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "71": 1,
+        "163": 1,
+        "1031": 1,
+        "2351": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "163": 2,
+        "1031": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 99151369,
+      "R": 82011,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "5": 2,
+        "11": 1,
+        "227": 5,
+        "1409": 3,
+        "115561": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "11": 1,
+        "227": 1,
+        "1409": 1,
+        "115561": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "227": 5,
+        "1409": 3,
+        "115561": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 99756409,
+      "R": 17747,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "17": 4,
+        "1327": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "17": 1,
+        "1327": 1
+      },
+      "universally_unsupported_excess": {
+        "17": 4,
+        "1327": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 106050289,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "4451": 1,
+        "69493": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "4451": 1,
+        "69493": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "69493": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 106050289,
+      "R": 291,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "23": 1,
+        "706193": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "23": 1,
+        "706193": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 106050289,
+      "R": 899,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "19": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 106050289,
+      "R": 22163,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 1,
+        "13": 3,
+        "113": 1,
+        "1471": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "13": 1,
+        "113": 1,
+        "1471": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 3,
+        "1471": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 111810169,
+      "R": 11483,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "37": 1,
+        "43": 1,
+        "523": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "37": 1,
+        "43": 1,
+        "523": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 122014489,
+      "R": 211,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "43": 1,
+        "1583": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "43": 1,
+        "1583": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 122014489,
+      "R": 403,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "83": 2,
+        "197": 2,
+        "1667": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "83": 1,
+        "197": 1,
+        "1667": 1
+      },
+      "universally_unsupported_excess": {
+        "83": 2,
+        "197": 2,
+        "1667": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 122014489,
+      "R": 34931,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "83": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "83": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 137431849,
+      "R": 99,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "61": 1,
+        "7079": 2,
+        "7877": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "61": 1,
+        "7079": 1,
+        "7877": 1
+      },
+      "universally_unsupported_excess": {
+        "7079": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 137431849,
+      "R": 7907,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "61": 3,
+        "12379": 3,
+        "119923": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "61": 1,
+        "12379": 1,
+        "119923": 1
+      },
+      "universally_unsupported_excess": {
+        "61": 3,
+        "12379": 3,
+        "119923": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 148659289,
+      "R": 155,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 4,
+        "181": 3,
+        "10608743": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "181": 1,
+        "10608743": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "181": 3,
+        "10608743": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 148659289,
+      "R": 47939,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "103": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "103": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 151911769,
+      "R": 14075,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 3,
+        "11": 1,
+        "19": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "11": 1,
+        "19": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "19": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 152498329,
+      "R": 731,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "151": 1,
+        "1063": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "151": 1,
+        "1063": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 152498329,
+      "R": 3467,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "3347": 2,
+        "10979": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "3347": 1,
+        "10979": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "3347": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 152498329,
+      "R": 28131,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "5": 3,
+        "2239": 3,
+        "391021": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "2239": 1,
+        "391021": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 3,
+        "2239": 3,
+        "391021": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 155533849,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "257": 3,
+        "4085033": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "257": 1,
+        "4085033": 1
+      },
+      "universally_unsupported_excess": {
+        "257": 3,
+        "4085033": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 155533849,
+      "R": 267,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "971": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "971": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 155533849,
+      "R": 1187,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "13": 2,
+        "41": 2,
+        "4421": 1,
+        "6529": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "13": 1,
+        "41": 1,
+        "4421": 1,
+        "6529": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "13": 2,
+        "41": 2,
+        "6529": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 158937529,
+      "R": 251,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "661": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "661": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 158937529,
+      "R": 23411,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 1,
+        "23": 2,
+        "1753": 1,
+        "73243": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "23": 1,
+        "1753": 1,
+        "73243": 1
+      },
+      "universally_unsupported_excess": {
+        "23": 2,
+        "73243": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 165387049,
+      "R": 227,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "11": 1,
+        "31": 1,
+        "3041": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "11": 1,
+        "31": 1,
+        "3041": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 165387049,
+      "R": 267,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "43": 1,
+        "59": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "43": 1,
+        "59": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 168434809,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "41": 3,
+        "27730121": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "41": 1,
+        "27730121": 1
+      },
+      "universally_unsupported_excess": {
+        "41": 3,
+        "27730121": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 168434809,
+      "R": 1067,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "277": 1,
+        "11257": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "277": 1,
+        "11257": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 168434809,
+      "R": 9731,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 5,
+        "5": 2,
+        "6163": 5,
+        "4432471": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "6163": 1,
+        "4432471": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 5,
+        "5": 2,
+        "6163": 5,
+        "4432471": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 171292489,
+      "R": 99,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "31": 1,
+        "917837": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "31": 1,
+        "917837": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 171292489,
+      "R": 4387,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "7": 2,
+        "587": 2,
+        "643949": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "587": 1,
+        "643949": 1
+      },
+      "universally_unsupported_excess": {
+        "7": 2,
+        "587": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 171292489,
+      "R": 8043,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "59": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "59": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 171292489,
+      "R": 3005131,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "5": 3,
+        "137": 2,
+        "149": 2,
+        "587": 3,
+        "30253": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "137": 1,
+        "149": 1,
+        "587": 1,
+        "30253": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 3,
+        "137": 2,
+        "149": 2,
+        "587": 3,
+        "30253": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 172657489,
+      "R": 971,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "5": 2,
+        "7": 2,
+        "293": 2,
+        "27803": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "7": 3,
+        "293": 1,
+        "27803": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "5": 2,
+        "293": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 172657489,
+      "R": 36083,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "17": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "17": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 172657489,
+      "R": 211331,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 3,
+        "13": 3,
+        "113": 1,
+        "1031": 1,
+        "133843": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "13": 1,
+        "113": 1,
+        "1031": 1,
+        "133843": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "13": 3,
+        "133843": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 174600409,
+      "R": 1699,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "7": 1,
+        "727": 2,
+        "3079": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "727": 1,
+        "3079": 1
+      },
+      "universally_unsupported_excess": {
+        "727": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 176110489,
+      "R": 91,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "31": 1,
+        "137": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "31": 1,
+        "137": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 176110489,
+      "R": 1187,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "19": 1,
+        "23": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "23": 2
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 179700889,
+      "R": 635,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "499": 2,
+        "2722351": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "499": 1,
+        "2722351": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "499": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 188748169,
+      "R": 251,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "7": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "7": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 188748169,
+      "R": 64091,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 4,
+        "5": 1,
+        "7": 4,
+        "13": 4,
+        "40591": 4,
+        "54583": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "7": 1,
+        "13": 1,
+        "40591": 1,
+        "54583": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "7": 4,
+        "13": 4,
+        "40591": 4,
+        "54583": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 192235129,
+      "R": 563,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "31": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "31": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 202112089,
+      "R": 2315,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "7": 1,
+        "23": 2,
+        "683": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "7": 1,
+        "23": 1,
+        "683": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "23": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 202112089,
+      "R": 11891,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "13": 1,
+        "67": 1,
+        "8369": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "67": 1,
+        "8369": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 214360969,
+      "R": 155,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "3023": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 4,
+        "3023": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 214360969,
+      "R": 267,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "83": 4,
+        "401": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "83": 1,
+        "401": 1
+      },
+      "universally_unsupported_excess": {
+        "83": 4,
+        "401": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 214360969,
+      "R": 11171,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 1,
+        "11": 3,
+        "46099": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 3,
+        "11": 2,
+        "46099": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 217315849,
+      "R": 23435,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "67": 2,
+        "83": 2,
+        "167": 2,
+        "35153": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "67": 1,
+        "83": 1,
+        "167": 1,
+        "35153": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "67": 2,
+        "83": 2,
+        "167": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 223474729,
+      "R": 699,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "283": 4,
+        "2447": 1,
+        "56393": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "283": 1,
+        "2447": 1,
+        "56393": 1
+      },
+      "universally_unsupported_excess": {
+        "283": 4,
+        "56393": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 226819609,
+      "R": 43,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "641": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "641": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 228366889,
+      "R": 523,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "23": 2,
+        "233": 2,
+        "307": 3,
+        "18149": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "23": 1,
+        "233": 1,
+        "307": 1,
+        "18149": 1
+      },
+      "universally_unsupported_excess": {
+        "23": 2,
+        "233": 2,
+        "307": 3,
+        "18149": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 236164009,
+      "R": 8379,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "29": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "29": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 236164009,
+      "R": 49355,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "7": 2,
+        "41": 1,
+        "1879": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "7": 1,
+        "41": 2,
+        "1879": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "7": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 242042089,
+      "R": 771,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "13": 1,
+        "109": 1,
+        "241": 1,
+        "307": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "109": 1,
+        "241": 1,
+        "307": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 242042089,
+      "R": 82411,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "37": 1,
+        "257": 2,
+        "2081": 1,
+        "3877": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "37": 1,
+        "257": 1,
+        "2081": 1,
+        "3877": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "257": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 253788649,
+      "R": 5027,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 4,
+        "13": 2,
+        "9431": 4,
+        "32117": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "13": 1,
+        "9431": 1,
+        "32117": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "13": 2,
+        "9431": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 257483209,
+      "R": 83,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "22751": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "22751": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 257483209,
+      "R": 1019,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "59": 1,
+        "14087": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "59": 1,
+        "14087": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 278505049,
+      "R": 34931,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "11": 1,
+        "23": 1,
+        "53": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "11": 1,
+        "23": 1,
+        "53": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 283309849,
+      "R": 83,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "11": 1,
+        "457": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 2,
+        "457": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 283309849,
+      "R": 107,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "4013": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "4013": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 283309849,
+      "R": 1571,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "5": 1,
+        "167": 1,
+        "397": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "167": 1,
+        "397": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 283309849,
+      "R": 8051,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 3,
+        "103": 5,
+        "1667": 5,
+        "44281": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "103": 1,
+        "1667": 1,
+        "44281": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "103": 5,
+        "1667": 5,
+        "44281": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 297640249,
+      "R": 203,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 3,
+        "37": 2,
+        "79": 3,
+        "63799": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "37": 1,
+        "79": 1,
+        "63799": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "37": 2,
+        "79": 3,
+        "63799": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 297640249,
+      "R": 3299,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "17": 3,
+        "29": 2,
+        "4721": 2,
+        "11719": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "17": 1,
+        "29": 1,
+        "4721": 1,
+        "11719": 1
+      },
+      "universally_unsupported_excess": {
+        "17": 3,
+        "29": 2,
+        "4721": 2,
+        "11719": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 297640249,
+      "R": 21467,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "503": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "503": 1
+      },
+      "universally_unsupported_excess": {
+        "503": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 297640249,
+      "R": 37331,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "5": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 300873169,
+      "R": 227,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "11": 1,
+        "2384381": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "11": 1,
+        "2384381": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 300873169,
+      "R": 475,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "31": 6,
+        "50110363": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "31": 1,
+        "50110363": 1
+      },
+      "universally_unsupported_excess": {
+        "31": 6,
+        "50110363": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 300873169,
+      "R": 211139,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "43": 2,
+        "73": 2,
+        "103": 3,
+        "76871": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "43": 1,
+        "73": 1,
+        "103": 1,
+        "76871": 1
+      },
+      "universally_unsupported_excess": {
+        "43": 2,
+        "73": 2,
+        "103": 3,
+        "76871": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 301304089,
+      "R": 4691,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "5": 3,
+        "619": 1,
+        "25801": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 3,
+        "619": 1,
+        "25801": 1
+      },
+      "universally_unsupported_excess": {
+        "25801": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 304959769,
+      "R": 203171,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 3,
+        "5": 1,
+        "73": 3,
+        "349": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "5": 3,
+        "73": 1,
+        "349": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "73": 3,
+        "349": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 306963409,
+      "R": 875,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "89": 1,
+        "151": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "89": 1,
+        "151": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 310002289,
+      "R": 19,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "29": 3,
+        "50776237": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "29": 1,
+        "50776237": 1
+      },
+      "universally_unsupported_excess": {
+        "29": 3,
+        "50776237": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 310002289,
+      "R": 19891,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "13": 5,
+        "6359": 5,
+        "149183": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "6359": 1,
+        "149183": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 5,
+        "6359": 5,
+        "149183": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 310002289,
+      "R": 137595,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "11": 6,
+        "29": 6,
+        "647": 5,
+        "95857": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "29": 1,
+        "647": 1,
+        "95857": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 6,
+        "29": 6,
+        "647": 5,
+        "95857": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 310002289,
+      "R": 323931,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "5": 1,
+        "17": 3,
+        "139": 4,
+        "647": 6,
+        "751": 4,
+        "4373": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "17": 1,
+        "139": 1,
+        "647": 1,
+        "751": 1,
+        "4373": 1
+      },
+      "universally_unsupported_excess": {
+        "17": 3,
+        "139": 4,
+        "647": 6,
+        "751": 4,
+        "4373": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 311333929,
+      "R": 1859,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "241": 3,
+        "110629": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "241": 1,
+        "110629": 1
+      },
+      "universally_unsupported_excess": {
+        "241": 3,
+        "110629": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 311333929,
+      "R": 6835,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "47": 1,
+        "509": 2,
+        "22237673": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "47": 1,
+        "509": 1,
+        "22237673": 1
+      },
+      "universally_unsupported_excess": {
+        "509": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 312918169,
+      "R": 49947,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "11": 5,
+        "23": 5,
+        "83": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "23": 1,
+        "83": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 5,
+        "23": 5,
+        "83": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 325900969,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "193": 2,
+        "4925101": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "193": 1,
+        "4925101": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "193": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 325900969,
+      "R": 803,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "17": 1,
+        "102161": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "17": 1,
+        "102161": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 325900969,
+      "R": 5011,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "11": 1,
+        "23": 1,
+        "8693": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "11": 1,
+        "23": 1,
+        "8693": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 331117609,
+      "R": 107891,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "5": 2,
+        "821": 2,
+        "1301": 1,
+        "1433": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 1,
+        "821": 1,
+        "1301": 1,
+        "1433": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "5": 2,
+        "821": 2,
+        "1433": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 333575449,
+      "R": 83,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "73": 1,
+        "229": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "73": 1,
+        "229": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 333575449,
+      "R": 6787,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 1,
+        "17": 2,
+        "433": 1,
+        "17551": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "17": 1,
+        "433": 1,
+        "17551": 1
+      },
+      "universally_unsupported_excess": {
+        "17": 2,
+        "17551": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 333575449,
+      "R": 978227,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "3": 6,
+        "7": 6,
+        "5054173": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "7": 2,
+        "5054173": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 6,
+        "7": 6,
+        "5054173": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 335420089,
+      "R": 939,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 1,
+        "67": 2,
+        "1553": 1,
+        "58211": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "67": 1,
+        "1553": 1,
+        "58211": 1
+      },
+      "universally_unsupported_excess": {
+        "67": 2,
+        "58211": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 335495689,
+      "R": 16163,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 4,
+        "19": 2,
+        "31": 5,
+        "26513": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "19": 1,
+        "31": 1,
+        "26513": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "19": 2,
+        "31": 5,
+        "26513": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 339576169,
+      "R": 1667,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "29": 2,
+        "379": 1,
+        "4817": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "29": 1,
+        "379": 1,
+        "4817": 1
+      },
+      "universally_unsupported_excess": {
+        "29": 2,
+        "4817": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 339576169,
+      "R": 238299,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "11": 2,
+        "13": 1,
+        "23": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 2,
+        "13": 2,
+        "23": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 356491249,
+      "R": 131595,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "13": 2,
+        "59": 5,
+        "2029": 6,
+        "33199": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "59": 1,
+        "2029": 1,
+        "33199": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 2,
+        "59": 5,
+        "2029": 6,
+        "33199": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 362050441,
+      "R": 3371,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 5,
+        "19": 4,
+        "107": 5,
+        "443": 1,
+        "37643": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "19": 1,
+        "107": 1,
+        "443": 1,
+        "37643": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 5,
+        "19": 4,
+        "107": 5,
+        "37643": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 366108649,
+      "R": 155,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "4801": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "4801": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 366108649,
+      "R": 1379,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 2,
+        "577": 2,
+        "1609": 3,
+        "45317": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "577": 1,
+        "1609": 1,
+        "45317": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "577": 2,
+        "1609": 3,
+        "45317": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 366108649,
+      "R": 1907,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "151": 1,
+        "823": 2,
+        "36013": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "151": 1,
+        "823": 1,
+        "36013": 1
+      },
+      "universally_unsupported_excess": {
+        "823": 2,
+        "36013": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 366108649,
+      "R": 19083,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "239": 3,
+        "8419": 4,
+        "51061": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "239": 1,
+        "8419": 1,
+        "51061": 1
+      },
+      "universally_unsupported_excess": {
+        "239": 3,
+        "8419": 4,
+        "51061": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 366108649,
+      "R": 33171,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "5": 2,
+        "7": 5,
+        "4693697": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "7": 1,
+        "4693697": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "7": 5,
+        "4693697": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 369577849,
+      "R": 227,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "11": 1,
+        "31": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "31": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 369577849,
+      "R": 475,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "31": 6,
+        "61553113": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "31": 1,
+        "61553113": 1
+      },
+      "universally_unsupported_excess": {
+        "31": 6,
+        "61553113": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 371275249,
+      "R": 39611,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "37": 2,
+        "71": 2,
+        "1249": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "37": 1,
+        "71": 1,
+        "1249": 1
+      },
+      "universally_unsupported_excess": {
+        "37": 2,
+        "71": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 373561609,
+      "R": 1459,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "61": 2,
+        "199": 1,
+        "32917": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "61": 1,
+        "199": 1,
+        "32917": 1
+      },
+      "universally_unsupported_excess": {
+        "61": 2,
+        "32917": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 373561609,
+      "R": 2211,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "12161": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "12161": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 373561609,
+      "R": 625731,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "5": 5,
+        "11": 1,
+        "1097": 6,
+        "11351": 5
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "11": 2,
+        "1097": 1,
+        "11351": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 5,
+        "1097": 6,
+        "11351": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 374272369,
+      "R": 7307,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "31": 1,
+        "97": 3,
+        "4909": 2,
+        "15439": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "31": 1,
+        "97": 1,
+        "4909": 1,
+        "15439": 1
+      },
+      "universally_unsupported_excess": {
+        "97": 3,
+        "4909": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 383592169,
+      "R": 72691,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "7": 2,
+        "67": 2,
+        "137": 2,
+        "199": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "67": 1,
+        "137": 1,
+        "199": 1
+      },
+      "universally_unsupported_excess": {
+        "7": 2,
+        "67": 2,
+        "137": 2,
+        "199": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 385883689,
+      "R": 811,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 1,
+        "19": 2,
+        "16139": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "19": 1,
+        "16139": 1
+      },
+      "universally_unsupported_excess": {
+        "19": 2,
+        "16139": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 386108809,
+      "R": 395,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "19": 1,
+        "149": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "149": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 386108809,
+      "R": 25643,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 2,
+        "23": 3,
+        "29917": 4,
+        "1199089": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "23": 1,
+        "29917": 1,
+        "1199089": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "23": 3,
+        "29917": 4,
+        "1199089": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 391209289,
+      "R": 35,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "461": 1,
+        "2475113": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "461": 1,
+        "2475113": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "2475113": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 391209289,
+      "R": 14915,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 2,
+        "163": 2,
+        "17401": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "163": 1,
+        "17401": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 2,
+        "163": 2,
+        "17401": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 392018449,
+      "R": 59,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "4789": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "4789": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 392018449,
+      "R": 107,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "51109": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "51109": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 401991529,
+      "R": 67,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "19": 1,
+        "709": 1,
+        "5153": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "709": 1,
+        "5153": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 401991529,
+      "R": 2891,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "317": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "317": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 403509649,
+      "R": 899,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 2,
+        "549739": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "549739": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "549739": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 405660649,
+      "R": 1019,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "29": 2,
+        "41": 1,
+        "9657233": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "29": 1,
+        "41": 1,
+        "9657233": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "29": 2,
+        "9657233": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 405660649,
+      "R": 6595,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "19": 2,
+        "41": 2,
+        "563": 1,
+        "138637": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "41": 1,
+        "563": 1,
+        "138637": 1
+      },
+      "universally_unsupported_excess": {
+        "19": 2,
+        "41": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 408626089,
+      "R": 531,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "10567": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "10567": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 429600649,
+      "R": 563,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "7": 1,
+        "23": 1,
+        "79": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "7": 1,
+        "23": 1,
+        "79": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 429600649,
+      "R": 8699,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 2,
+        "17": 3,
+        "43": 4,
+        "35393": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "17": 1,
+        "43": 1,
+        "35393": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "17": 3,
+        "43": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 437817769,
+      "R": 635,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "7": 1,
+        "11": 2,
+        "409": 1,
+        "11677": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "7": 2,
+        "11": 1,
+        "409": 1,
+        "11677": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 2,
+        "11677": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 437817769,
+      "R": 508499,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "7": 5,
+        "17": 5,
+        "19": 5,
+        "73": 5,
+        "34897": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "17": 1,
+        "19": 1,
+        "73": 1,
+        "34897": 1
+      },
+      "universally_unsupported_excess": {
+        "7": 5,
+        "17": 5,
+        "19": 5,
+        "73": 5,
+        "34897": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 450622489,
+      "R": 83,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "13": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "13": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 450622489,
+      "R": 73379,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 3,
+        "107": 4,
+        "467": 1,
+        "110069": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "107": 1,
+        "467": 1,
+        "110069": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "107": 4,
+        "110069": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 457986169,
+      "R": 3435,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "13": 1,
+        "19421": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "13": 1,
+        "19421": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 463627609,
+      "R": 19,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "53": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "53": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 463627609,
+      "R": 83,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "97": 1,
+        "33059357": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "97": 1,
+        "33059357": 1
+      },
+      "universally_unsupported_excess": {
+        "33059357": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 463627609,
+      "R": 579,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "19": 1,
+        "89": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "89": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 463627609,
+      "R": 32675,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "131": 1,
+        "1213": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "131": 1,
+        "1213": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 463627609,
+      "R": 227603,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 4,
+        "7": 5,
+        "11": 5,
+        "131": 3,
+        "430081": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "7": 1,
+        "11": 1,
+        "131": 1,
+        "430081": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "7": 5,
+        "11": 5,
+        "131": 3,
+        "430081": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 472918009,
+      "R": 19,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "1193": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "1193": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 473173969,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "16349": 3,
+        "195359": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "16349": 1,
+        "195359": 1
+      },
+      "universally_unsupported_excess": {
+        "16349": 3,
+        "195359": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 473173969,
+      "R": 115,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "547": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "547": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 473173969,
+      "R": 1531307,
+      "witness_radius": 6,
+      "overflow_excess": {
+        "3": 5,
+        "11": 6,
+        "41": 1,
+        "67": 3,
+        "19429": 4,
+        "34283": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "11": 1,
+        "41": 1,
+        "67": 1,
+        "19429": 1,
+        "34283": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 5,
+        "11": 6,
+        "67": 3,
+        "19429": 4,
+        "34283": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 475619929,
+      "R": 1427,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "251639": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "251639": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 475619929,
+      "R": 5915,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "11": 1,
+        "73": 2,
+        "83": 2,
+        "3593": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "11": 2,
+        "73": 1,
+        "83": 1,
+        "3593": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "73": 2,
+        "83": 2,
+        "3593": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 477015289,
+      "R": 1075,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "13": 3,
+        "23": 1,
+        "4931": 3,
+        "86951": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "23": 1,
+        "4931": 1,
+        "86951": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 3,
+        "4931": 3,
+        "86951": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 486323161,
+      "R": 171,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "7": 3,
+        "37": 3,
+        "4019": 4,
+        "19973": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "37": 1,
+        "4019": 1,
+        "19973": 1
+      },
+      "universally_unsupported_excess": {
+        "7": 3,
+        "37": 3,
+        "4019": 4,
+        "19973": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 486323161,
+      "R": 235,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "13": 1,
+        "647": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "647": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 486323161,
+      "R": 755,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "23": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "23": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 486323161,
+      "R": 1787,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 3,
+        "613": 3,
+        "5659": 4,
+        "6959": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "613": 1,
+        "5659": 1,
+        "6959": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 3,
+        "613": 3,
+        "5659": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 486323161,
+      "R": 4523,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "11": 2,
+        "257": 3,
+        "503": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "257": 1,
+        "503": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 2,
+        "257": 3,
+        "503": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 487572409,
+      "R": 4611,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "103": 2,
+        "1249": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "103": 1,
+        "1249": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "103": 2,
+        "1249": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 487572409,
+      "R": 5147,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "71": 2,
+        "36887": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "71": 1,
+        "36887": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 2,
+        "71": 2,
+        "36887": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 487572409,
+      "R": 9323,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 1,
+        "73": 2,
+        "127": 3,
+        "149": 2,
+        "30469": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "73": 1,
+        "127": 1,
+        "149": 1,
+        "30469": 1
+      },
+      "universally_unsupported_excess": {
+        "73": 2,
+        "127": 3,
+        "149": 2,
+        "30469": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 487572409,
+      "R": 30779,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "23": 1,
+        "149": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "23": 1,
+        "149": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 487572409,
+      "R": 318051,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "5": 4,
+        "149": 1,
+        "241": 2,
+        "6965317": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "149": 1,
+        "241": 1,
+        "6965317": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 4,
+        "241": 2,
+        "6965317": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 488961169,
+      "R": 107,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "11": 1,
+        "73": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "11": 1,
+        "73": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 493936249,
+      "R": 419,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "59": 1,
+        "7333": 2,
+        "39863": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "59": 1,
+        "7333": 1,
+        "39863": 1
+      },
+      "universally_unsupported_excess": {
+        "7333": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 493936249,
+      "R": 131611,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "13": 2,
+        "97": 1,
+        "1409": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "13": 1,
+        "97": 1,
+        "1409": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "13": 2,
+        "1409": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 507115249,
+      "R": 17267,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "13": 1,
+        "19": 2,
+        "167": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "13": 1,
+        "19": 1,
+        "167": 1
+      },
+      "universally_unsupported_excess": {
+        "19": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 507115249,
+      "R": 70619,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "19": 1,
+        "61": 1,
+        "683": 2,
+        "96667": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "19": 1,
+        "61": 1,
+        "683": 1,
+        "96667": 1
+      },
+      "universally_unsupported_excess": {
+        "683": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 507599689,
+      "R": 5691,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "5": 3,
+        "23": 2,
+        "193": 3,
+        "547": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 2,
+        "23": 1,
+        "193": 1,
+        "547": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 3,
+        "23": 2,
+        "193": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 508542169,
+      "R": 5468195,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 1,
+        "11": 3,
+        "13": 2,
+        "43": 1,
+        "17341": 4,
+        "80491": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 4,
+        "11": 1,
+        "13": 1,
+        "43": 1,
+        "17341": 1,
+        "80491": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 3,
+        "13": 2,
+        "17341": 4,
+        "80491": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 508908409,
+      "R": 10859,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "307": 2,
+        "337": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 3,
+        "307": 1,
+        "337": 1
+      },
+      "universally_unsupported_excess": {
+        "307": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 509434249,
+      "R": 123,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "431": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "431": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 509434249,
+      "R": 3571,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "431": 2,
+        "7277341": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "431": 1,
+        "7277341": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "431": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 510725329,
+      "R": 139,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 1,
+        "2711": 2,
+        "38737": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 2,
+        "2711": 1,
+        "38737": 1
+      },
+      "universally_unsupported_excess": {
+        "2711": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 510725329,
+      "R": 555,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "13": 2,
+        "67": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "67": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 2,
+        "67": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 510725329,
+      "R": 49331,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "5": 2,
+        "13": 2,
+        "67": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 2,
+        "13": 1,
+        "67": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 2,
+        "67": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 510725329,
+      "R": 1430603,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "3": 4,
+        "53": 5,
+        "859": 5,
+        "688309": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "53": 1,
+        "859": 1,
+        "688309": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "53": 5,
+        "859": 5
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 522155209,
+      "R": 7355,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "349": 1,
+        "1933": 1,
+        "52711": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "349": 1,
+        "1933": 1,
+        "52711": 1
+      },
+      "universally_unsupported_excess": {
+        "52711": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 534672889,
+      "R": 99,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3911": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3911": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 534672889,
+      "R": 2003,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3533": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3533": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 534672889,
+      "R": 17891,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 1,
+        "5": 2,
+        "23": 3,
+        "59": 3,
+        "281": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "5": 2,
+        "23": 1,
+        "59": 1,
+        "281": 1
+      },
+      "universally_unsupported_excess": {
+        "23": 3,
+        "59": 3,
+        "281": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 534844249,
+      "R": 11011,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "144161": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "144161": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "144161": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 534844249,
+      "R": 1498163,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 4,
+        "83": 4,
+        "257": 4,
+        "433": 3,
+        "1063": 1,
+        "2267": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "83": 1,
+        "257": 1,
+        "433": 1,
+        "1063": 1,
+        "2267": 1
+      },
+      "universally_unsupported_excess": {
+        "3": 4,
+        "83": 4,
+        "257": 4,
+        "433": 3,
+        "2267": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 536944489,
+      "R": 75,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "263": 2,
+        "5468609": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "263": 1,
+        "5468609": 1
+      },
+      "universally_unsupported_excess": {
+        "263": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 536944489,
+      "R": 179,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "3": 1,
+        "43": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "43": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 536944489,
+      "R": 395,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "149": 1,
+        "2053": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "149": 1,
+        "2053": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 536944489,
+      "R": 291659,
+      "witness_radius": 5,
+      "overflow_excess": {
+        "13": 5,
+        "101": 5,
+        "523": 4,
+        "1123": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "101": 1,
+        "523": 1,
+        "1123": 1
+      },
+      "universally_unsupported_excess": {
+        "13": 5,
+        "101": 5,
+        "523": 4,
+        "1123": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 542688169,
+      "R": 16851,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "11": 2,
+        "37": 2,
+        "101": 1,
+        "317": 2,
+        "35089": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "11": 1,
+        "37": 1,
+        "101": 1,
+        "317": 1,
+        "35089": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "11": 2,
+        "37": 2,
+        "317": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 547053049,
+      "R": 371,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "11": 1,
+        "1545277": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "1545277": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 547053049,
+      "R": 523,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "7": 1,
+        "23": 1,
+        "5641": 2,
+        "11251": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "23": 1,
+        "5641": 1,
+        "11251": 1
+      },
+      "universally_unsupported_excess": {
+        "5641": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 549401449,
+      "R": 6787,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "19": 1,
+        "37": 1,
+        "39829": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "37": 1,
+        "39829": 1
+      },
+      "universally_unsupported_excess": {
+        "39829": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 556685089,
+      "R": 147,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "677": 3,
+        "1590467": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "677": 1,
+        "1590467": 1
+      },
+      "universally_unsupported_excess": {
+        "677": 3,
+        "1590467": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 556685089,
+      "R": 3811,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 2,
+        "7": 2,
+        "31": 2,
+        "5857": 2,
+        "11923": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "7": 1,
+        "31": 1,
+        "5857": 1,
+        "11923": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 2,
+        "7": 2,
+        "31": 2,
+        "5857": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 559650361,
+      "R": 12059,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "2411": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 2,
+        "2411": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 559650361,
+      "R": 29939,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "17": 2,
+        "530977": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "17": 1,
+        "530977": 1
+      },
+      "universally_unsupported_excess": {
+        "17": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 559650361,
+      "R": 307331,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "3": 1,
+        "19": 2,
+        "23": 4,
+        "41": 4,
+        "1277": 1,
+        "32971": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 1,
+        "19": 2,
+        "23": 1,
+        "41": 1,
+        "1277": 1,
+        "32971": 1
+      },
+      "universally_unsupported_excess": {
+        "23": 4,
+        "41": 4,
+        "32971": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 570621769,
+      "R": 339,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "19": 3,
+        "1187": 2,
+        "7577": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "19": 1,
+        "1187": 1,
+        "7577": 1
+      },
+      "universally_unsupported_excess": {
+        "19": 3,
+        "1187": 2,
+        "7577": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 570621769,
+      "R": 971,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "5": 1,
+        "59": 1,
+        "5861": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 2,
+        "59": 1,
+        "5861": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 570621769,
+      "R": 3371,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 2,
+        "13": 1,
+        "263": 2,
+        "389": 2,
+        "1607": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "13": 1,
+        "263": 1,
+        "389": 1,
+        "1607": 1
+      },
+      "universally_unsupported_excess": {
+        "263": 2,
+        "389": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 570621769,
+      "R": 21259,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "11": 3,
+        "13": 4,
+        "73": 1,
+        "223": 4,
+        "100213": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "11": 1,
+        "13": 1,
+        "73": 1,
+        "223": 1,
+        "100213": 1
+      },
+      "universally_unsupported_excess": {
+        "11": 3,
+        "13": 4,
+        "223": 4,
+        "100213": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 570621769,
+      "R": 65611,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "5": 3,
+        "389": 3,
+        "1033": 3
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "389": 1,
+        "1033": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 3,
+        "389": 3,
+        "1033": 3
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 570621769,
+      "R": 852947,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "23": 2,
+        "389": 2,
+        "1373": 1,
+        "2099": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "23": 1,
+        "389": 1,
+        "1373": 1,
+        "2099": 1
+      },
+      "universally_unsupported_excess": {
+        "23": 2,
+        "389": 2,
+        "2099": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 584044729,
+      "R": 515,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "41": 1,
+        "53": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "41": 1,
+        "53": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 584607769,
+      "R": 3011,
+      "witness_radius": 3,
+      "overflow_excess": {
+        "3": 2,
+        "5": 3,
+        "26731": 3,
+        "365837": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "5": 1,
+        "26731": 1,
+        "365837": 1
+      },
+      "universally_unsupported_excess": {
+        "5": 3,
+        "26731": 3,
+        "365837": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 590499529,
+      "R": 40211,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "5": 1,
+        "23": 2,
+        "59": 1,
+        "301583": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "5": 1,
+        "23": 1,
+        "59": 1,
+        "301583": 1
+      },
+      "universally_unsupported_excess": {
+        "23": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 592257649,
+      "R": 27,
+      "witness_radius": 4,
+      "overflow_excess": {
+        "1229": 3,
+        "3252839": 4
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "1229": 1,
+        "3252839": 1
+      },
+      "universally_unsupported_excess": {
+        "1229": 3,
+        "3252839": 4
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 592257649,
+      "R": 187,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "7": 1,
+        "769091": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "7": 1,
+        "769091": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 592257649,
+      "R": 327395,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "3": 1,
+        "7": 1,
+        "47": 2,
+        "83": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "3": 2,
+        "7": 1,
+        "47": 1,
+        "83": 1
+      },
+      "universally_unsupported_excess": {
+        "47": 2,
+        "83": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 597694729,
+      "R": 43,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "23": 1,
+        "241": 1,
+        "39971": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "23": 1,
+        "241": 1,
+        "39971": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 597694729,
+      "R": 99,
+      "witness_radius": 1,
+      "overflow_excess": {
+        "13": 1,
+        "163": 1,
+        "46853": 1
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 2,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "13": 1,
+        "163": 1,
+        "46853": 1
+      },
+      "universally_unsupported_excess": {},
+      "category": "some_assignment_can_carry_all_excess"
+    },
+    {
+      "prime": 597694729,
+      "R": 3603,
+      "witness_radius": 2,
+      "overflow_excess": {
+        "61": 2,
+        "151": 2,
+        "131939": 2
+      },
+      "admissible_assignment_count": 2,
+      "assignment_can_carry_all_excess_count": 0,
+      "assignment_can_carry_baseline_plus_excess_count": 0,
+      "max_height_by_q": {
+        "61": 1,
+        "151": 1,
+        "131939": 1
+      },
+      "universally_unsupported_excess": {
+        "61": 2,
+        "151": 2,
+        "131939": 2
+      },
+      "category": "no_assignment_can_carry_all_excess"
+    }
+  ]
+}

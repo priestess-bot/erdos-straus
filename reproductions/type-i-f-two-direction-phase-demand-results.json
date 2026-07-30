@@ -1,0 +1,8233 @@
+{
+  "arithmetic": "For each frozen F state, select a small relation-lattice dual phase with nonintegral target value, project the target affine congruence to two active coordinates, and record exact source-block carrier phases and q-adic heights.",
+  "scope_note": "This is a finite necessary-phase mapping, not a Fourier amplitude theorem, a capacity contradiction, or an arithmetic descent. The selected dual vector need not be the maximum Fourier coefficient. The pair projection is computed with all complementary coordinates ranging over the full exponent box; an empty projection is a valid state-internal phase obstruction, while a nonempty projection is only a capacity input.",
+  "input": "type-i-f-relation-lattice-certificate-results.json",
+  "input_sha256": "5c4f19375e654c4b1ac1d01745125b248f5371048d643633be096a8e332a336c",
+  "state_count": 45,
+  "dual_coordinate_box": [
+    -1,
+    1
+  ],
+  "selected_support_counts": {
+    "2": 40,
+    "3": 2,
+    "4": 3
+  },
+  "selected_color_counts": {
+    "aa": 29,
+    "as": 1,
+    "sa": 4,
+    "ss": 11
+  },
+  "target_pair_demand_counts": {
+    "1/2": 43,
+    "151/346": 1,
+    "667/1864": 1
+  },
+  "phase_projection_pair_counts": {
+    "0": 6,
+    "4": 37,
+    "9": 2
+  },
+  "empty_phase_projection_count": 6,
+  "carrier_phase_profile_counts": {
+    "((0, 1), (0, 1), (0, 1), (0, 1))": 37,
+    "((0, 1), (1, 2), (0, 1), (1, 2))": 1,
+    "((1, 2), (1, 2), (1, 2), (1, 2))": 4,
+    "((287, 932), (609, 1864), (0, 1), (0, 1))": 1,
+    "((8363, 13473), (0, 1), (0, 1), (0, 1))": 1,
+    "((971, 4671), (0, 1), (0, 1), (129, 346))": 1
+  },
+  "demand_group_count": 44,
+  "repeated_demand_group_count": 1,
+  "maximum_demand_group_size": 2,
+  "joint_height_product_total": 49,
+  "records": [
+    {
+      "prime": 878089,
+      "R": 279,
+      "K": 61246708,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          601,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 629,
+        "s": 5
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          6
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          6
+        ]
+      ],
+      "target_preimage": [
+        687,
+        -627,
+        -171,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        3
+      ],
+      "pair_indices": [
+        1,
+        3
+      ],
+      "pair_primes": [
+        73,
+        601
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 0,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [],
+      "selected_carriers": [
+        {
+          "prime": 73,
+          "phase": [
+            -1,
+            6
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 601,
+          "phase": [
+            1,
+            6
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 5,
+          "block": 1396,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 629,
+          "block": 175492,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 878089,
+      "R": 503,
+      "K": 110419692,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          14629,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 349,
+        "s": 5
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -486438,
+        629508,
+        251,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        17,
+        37
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 17,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 37,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 5,
+          "block": 2516,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 349,
+          "block": 175548,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 375,
+      "K": 2440748344,
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          617,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 951,
+        "s": 73
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -97,
+        -539,
+        637,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        29,
+        59
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 29,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 59,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 73,
+          "block": 27376,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 951,
+          "block": 356626,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 6871,
+      "K": 44721018320,
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          773,
+          1
+        ],
+        [
+          2267,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 421,
+        "s": 9
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -79090462800,
+        11723586300,
+        -5832630,
+        3435,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        5
+      ],
+      "pair_indices": [
+        3,
+        5
+      ],
+      "pair_primes": [
+        29,
+        2267
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 29,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 2267,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 9,
+          "block": 61840,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 421,
+          "block": 2892692,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 61987,
+      "K": 403452446891,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          19073,
+          1
+        ],
+        [
+          52489,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 4,
+        "s": 105
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        75994836,
+        -222436761,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        3
+      ],
+      "pair_indices": [
+        1,
+        3
+      ],
+      "pair_primes": [
+        31,
+        52489
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 31,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 52489,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 105,
+          "block": 6508636,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 4,
+          "block": 247949,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 178319,
+      "K": 1160618143758,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          317,
+          1
+        ],
+        [
+          379,
+          1
+        ],
+        [
+          941,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2,
+        "s": 73
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -1183091270,
+        -1129863210,
+        1135777434,
+        0,
+        0,
+        11,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        5,
+        6
+      ],
+      "pair_indices": [
+        5,
+        6
+      ],
+      "pair_primes": [
+        379,
+        941
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 379,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 941,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 73,
+          "block": 13017288,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2,
+          "block": 356639,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 4339107,
+      "K": 28241781929611,
+      "factorization": [
+        [
+          23,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          30593,
+          1
+        ],
+        [
+          1084777,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 6,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        62087751523,
+        -38105678343,
+        -310438757612,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        2
+      ],
+      "pair_indices": [
+        1,
+        2
+      ],
+      "pair_primes": [
+        37,
+        30593
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 37,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 30593,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 4339108,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 6,
+          "block": 26034643,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 26034649,
+      "R": 13017323,
+      "K": 84725358806157,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          379,
+          1
+        ],
+        [
+          941,
+          1
+        ],
+        [
+          1084777,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -557485598284468968660312386921324,
+        -264094536449882311852834474980115,
+        1577136635356231986321398012286109,
+        -1448139069879226,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        379,
+        941
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 379,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 941,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 13017324,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2,
+          "block": 26034647,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 59,
+      "K": 846638805,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          2693,
+          1
+        ],
+        [
+          20959,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 956654,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -551,
+        4408,
+        29,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        2693,
+        20959
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 2693,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 20959,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 60,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 956654,
+          "block": 56442587,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 83,
+      "K": 1191034251,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          761,
+          1
+        ],
+        [
+          15809,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 12571,
+        "s": 55
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        0,
+        902,
+        -2706,
+        41
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        761,
+        15809
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 761,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 15809,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 55,
+          "block": 4566,
+          "pair_heights": [
+            1,
+            0
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 12571,
+          "block": 1043394,
+          "pair_heights": [
+            0,
+            1
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 155,
+      "K": 2224220589,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          136013,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 1755,
+        "s": 211
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -673,
+        -387,
+        1591,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        79,
+        136013
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 79,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 136013,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 211,
+          "block": 32706,
+          "pair_heights": [
+            1,
+            0
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 1755,
+          "block": 272026,
+          "pair_heights": [
+            0,
+            1
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 283,
+      "K": 4060996301,
+      "factorization": [
+        [
+          71,
+          1
+        ],
+        [
+          331,
+          1
+        ],
+        [
+          172801,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 202110,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          6
+        ],
+        [
+          1,
+          6
+        ]
+      ],
+      "target_preimage": [
+        -3807,
+        12831,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        2
+      ],
+      "pair_indices": [
+        1,
+        2
+      ],
+      "pair_primes": [
+        331,
+        172801
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 0,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [],
+      "selected_carriers": [
+        {
+          "prime": 331,
+          "phase": [
+            -1,
+            6
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 172801,
+          "phase": [
+            1,
+            6
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 284,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 202110,
+          "block": 57197131,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 455,
+      "K": 6529163664,
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          131,
+          1
+        ],
+        [
+          521,
+          1
+        ],
+        [
+          1993,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 150,
+        "s": 841
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -10,
+        4,
+        0,
+        19,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        131,
+        521
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 131,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 521,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 841,
+          "block": 382656,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 150,
+          "block": 68251,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 567,
+      "K": 8136342412,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          137077,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 101055,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -2064,
+        1479,
+        -357,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        4
+      ],
+      "pair_indices": [
+        2,
+        4
+      ],
+      "pair_primes": [
+        19,
+        137077
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 19,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 137077,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 568,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 101055,
+          "block": 57298186,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 599,
+      "K": 8595536340,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          1213,
+          1
+        ],
+        [
+          1327,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 1183,
+        "s": 81
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -7823634,
+        5098548,
+        0,
+        299,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        5
+      ],
+      "pair_indices": [
+        3,
+        5
+      ],
+      "pair_primes": [
+        89,
+        1327
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 89,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 1327,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 81,
+          "block": 48520,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 1183,
+          "block": 708618,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 1419,
+      "K": 20362380745,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          103723,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 40422,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        397,
+        126,
+        -396,
+        -881,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        79,
+        103723
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 79,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 103723,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 1420,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 40422,
+          "block": 57358819,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 1631,
+      "K": 23404540518,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          735853,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2707,
+        "s": 13
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -6554,
+        -4404,
+        3503,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        19,
+        31
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 19,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 31,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 13,
+          "block": 21204,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2707,
+          "block": 4415118,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 2839,
+      "K": 40739111300,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          431,
+          1
+        ],
+        [
+          13313,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 20211,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -463460,
+        1220564,
+        384743,
+        59,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        431,
+        13313
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 431,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 13313,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 2840,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 20211,
+          "block": 57379030,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 6419,
+      "K": 92111431995,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          359,
+          1
+        ],
+        [
+          27281,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 526,
+        "s": 17
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        8935246,
+        -116816310,
+        84467178,
+        1447,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        19,
+        359
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 19,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 359,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 17,
+          "block": 109124,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 526,
+          "block": 3376395,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 7939,
+      "K": 113923143575,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          238171,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 30,
+        "s": 241
+      },
+      "dual_coordinates": [
+        -1,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          -1,
+          3728
+        ],
+        [
+          -627,
+          1864
+        ],
+        [
+          1829,
+          1864
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        1204612,
+        -56079,
+        -374139,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        0,
+        1,
+        2
+      ],
+      "pair_indices": [
+        0,
+        1
+      ],
+      "pair_primes": [
+        5,
+        19
+      ],
+      "target_pair_demand_mod_one": [
+        667,
+        1864
+      ],
+      "phase_projection_pair_count": 0,
+      "complement_phase_residue_count": 3,
+      "phase_projection_pairs": [],
+      "selected_carriers": [
+        {
+          "prime": 5,
+          "phase": [
+            -1,
+            3728
+          ],
+          "label": "s",
+          "height": 2,
+          "heights_by_label": {
+            "s": 2,
+            "a": 0
+          }
+        },
+        {
+          "prime": 19,
+          "phase": [
+            -627,
+            1864
+          ],
+          "label": "s",
+          "height": 2,
+          "heights_by_label": {
+            "s": 2,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 4,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 241,
+          "block": 1913300,
+          "pair_heights": [
+            2,
+            2
+          ],
+          "full_phase_mod_one": [
+            287,
+            932
+          ],
+          "pair_phase_mod_one": [
+            609,
+            1864
+          ],
+          "other_phase_residual_mod_one": [
+            1829,
+            1864
+          ]
+        },
+        {
+          "label": "a",
+          "t": 30,
+          "block": 238171,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 9903,
+      "K": 142106170906,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          191,
+          1
+        ],
+        [
+          5659,
+          1
+        ],
+        [
+          9391,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 4,
+        "s": 1449
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -743394,
+        71435,
+        743395,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        4
+      ],
+      "pair_indices": [
+        2,
+        4
+      ],
+      "pair_primes": [
+        191,
+        9391
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 191,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 9391,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1449,
+          "block": 14349448,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 4,
+          "block": 39613,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 26947,
+      "K": 386684336807,
+      "factorization": [
+        [
+          109,
+          2
+        ],
+        [
+          4831,
+          1
+        ],
+        [
+          6737,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2130,
+        "s": 1
+      },
+      "dual_coordinates": [
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          -1,
+          26946
+        ],
+        [
+          1,
+          13473
+        ],
+        [
+          8363,
+          13473
+        ]
+      ],
+      "target_preimage": [
+        95321475,
+        -8676612,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        0,
+        1,
+        2
+      ],
+      "pair_indices": [
+        0,
+        1
+      ],
+      "pair_primes": [
+        109,
+        4831
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 0,
+      "complement_phase_residue_count": 3,
+      "phase_projection_pairs": [],
+      "selected_carriers": [
+        {
+          "prime": 109,
+          "phase": [
+            -1,
+            26946
+          ],
+          "label": "a",
+          "height": 2,
+          "heights_by_label": {
+            "s": 0,
+            "a": 2
+          }
+        },
+        {
+          "prime": 4831,
+          "phase": [
+            1,
+            13473
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 2,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 26948,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            8363,
+            13473
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            8363,
+            13473
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2130,
+          "block": 57397111,
+          "pair_heights": [
+            2,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 34227,
+      "K": 491150955427,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          269,
+          1
+        ],
+        [
+          51341,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 559,
+        "s": 3
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -179770,
+        -277,
+        45151,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        4
+      ],
+      "pair_indices": [
+        2,
+        4
+      ],
+      "pair_primes": [
+        61,
+        51341
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 61,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 51341,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 3,
+          "block": 102682,
+          "pair_heights": [
+            0,
+            1
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 559,
+          "block": 19132894,
+          "pair_heights": [
+            1,
+            0
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 69999,
+      "K": 1004472367690,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          457,
+          1
+        ],
+        [
+          127271,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 20,
+        "s": 41
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -723451634,
+        -10771391010,
+        11494842645,
+        11665,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        157,
+        457
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 157,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 457,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 41,
+          "block": 2869960,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 20,
+          "block": 1399981,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 161687,
+      "K": 2320177769892,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          1069,
+          1
+        ],
+        [
+          6737,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 355,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        7979707,
+        -107130288,
+        -327543,
+        0,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        19,
+        157
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 19,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 157,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 161688,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 355,
+          "block": 57398886,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 404219,
+      "K": 5800465949445,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          6737,
+          1
+        ],
+        [
+          22483,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 142,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -550733388391382460536,
+        -8354374053463335829766,
+        5334923055612319915136,
+        644006813,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        5
+      ],
+      "pair_indices": [
+        3,
+        5
+      ],
+      "pair_primes": [
+        37,
+        22483
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 37,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 22483,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 404220,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 142,
+          "block": 57399099,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 808439,
+      "K": 11600946248700,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          1289,
+          1
+        ],
+        [
+          6737,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 71,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        2447123444795809780,
+        -551797226136343110,
+        1117665535,
+        404219,
+        0,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        5
+      ],
+      "pair_indices": [
+        3,
+        5
+      ],
+      "pair_primes": [
+        61,
+        1289
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 61,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 1289,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 808440,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 71,
+          "block": 57399170,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 1471775,
+      "K": 21119691980694,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          2707,
+          1
+        ],
+        [
+          51341,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 13,
+        "s": 3
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -2449915052,
+        -6562082496,
+        2171465739,
+        1162263654,
+        0,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        19,
+        31
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 9,
+      "complement_phase_residue_count": 2,
+      "phase_projection_pairs": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 19,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 31,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 3,
+          "block": 4415326,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 13,
+          "block": 19133076,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 5739923,
+      "K": 82366805899611,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          61,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          3779,
+          1
+        ],
+        [
+          6737,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 10,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        2166255266808,
+        -433251053361,
+        -2498213231290,
+        0,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        4
+      ],
+      "pair_indices": [
+        1,
+        4
+      ],
+      "pair_primes": [
+        61,
+        3779
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 61,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 3779,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 5739924,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 10,
+          "block": 57399231,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 11479847,
+      "K": 164733626149032,
+      "factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          167,
+          1
+        ],
+        [
+          2963,
+          1
+        ],
+        [
+          6737,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 5,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        1503446094790843,
+        -46393265672606,
+        6952074175010,
+        0,
+        85637,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        4,
+        5
+      ],
+      "pair_indices": [
+        4,
+        5
+      ],
+      "pair_primes": [
+        167,
+        2963
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 167,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 2963,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 11479848,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 5,
+          "block": 57399236,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 19133079,
+      "K": 274556053148260,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          6737,
+          1
+        ],
+        [
+          51341,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 3,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        16836486012665,
+        -35922228518564,
+        11669434863565,
+        -39858863321693,
+        19085742505900,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        6
+      ],
+      "pair_indices": [
+        2,
+        6
+      ],
+      "pair_primes": [
+        13,
+        51341
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 13,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 51341,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 19133080,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 3,
+          "block": 57399238,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 57399241,
+      "R": 28699619,
+      "K": 411834086897295,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          859,
+          1
+        ],
+        [
+          6737,
+          1
+        ],
+        [
+          66821,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -30154884980,
+        25312163649,
+        -21437986583,
+        -23593298729,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        5
+      ],
+      "pair_indices": [
+        3,
+        5
+      ],
+      "pair_primes": [
+        859,
+        66821
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 859,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 66821,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 28699620,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2,
+          "block": 57399239,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 131,
+      "K": 9278719815,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          7452787,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 113783,
+        "s": 19
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        2275,
+        -3575,
+        65,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        83,
+        7452787
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 83,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 7452787,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 19,
+          "block": 2490,
+          "pair_heights": [
+            1,
+            0
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 113783,
+          "block": 14905574,
+          "pair_heights": [
+            0,
+            1
+          ],
+          "full_phase_mod_one": [
+            1,
+            2
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 1247,
+      "K": 88324913046,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          367,
+          1
+        ],
+        [
+          26723,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2443,
+        "s": 93
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        152453,
+        396270,
+        -237762,
+        357,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        79,
+        367
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 79,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 367,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 93,
+          "block": 115972,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2443,
+          "block": 3046422,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 1603,
+      "K": 113540365367,
+      "factorization": [
+        [
+          11,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          137,
+          1
+        ],
+        [
+          211,
+          1
+        ],
+        [
+          227,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2182,
+        "s": 81
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        3867,
+        -5415,
+        195,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        4
+      ],
+      "pair_indices": [
+        1,
+        4
+      ],
+      "pair_primes": [
+        13,
+        227
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 13,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 227,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 81,
+          "block": 129844,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2182,
+          "block": 3497747,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 3591,
+      "K": 254350250800,
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          5189,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 289,
+        "s": 273
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        8904,
+        -4650,
+        4290,
+        1155,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        59,
+        67
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 59,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 67,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 273,
+          "block": 980344,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 289,
+          "block": 1037800,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 11271,
+      "K": 798324053680,
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          379,
+          1
+        ],
+        [
+          1907,
+          1
+        ],
+        [
+          13807,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 513,
+        "s": 49
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        1803,
+        120463,
+        -107844,
+        -122265,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        3
+      ],
+      "pair_indices": [
+        2,
+        3
+      ],
+      "pair_primes": [
+        379,
+        1907
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 379,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 1907,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 49,
+          "block": 552280,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 513,
+          "block": 5782024,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 28107,
+      "K": 1990816624681,
+      "factorization": [
+        [
+          41,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          9719,
+          1
+        ],
+        [
+          63241,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 1120,
+        "s": 9
+      },
+      "dual_coordinates": [
+        -1,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          -1,
+          9342
+        ],
+        [
+          1742,
+          4671
+        ],
+        [
+          -129,
+          346
+        ],
+        [
+          971,
+          4671
+        ]
+      ],
+      "target_preimage": [
+        349703,
+        -86320,
+        -596936,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pair_indices": [
+        0,
+        1
+      ],
+      "pair_primes": [
+        41,
+        79
+      ],
+      "target_pair_demand_mod_one": [
+        151,
+        346
+      ],
+      "phase_projection_pair_count": 0,
+      "complement_phase_residue_count": 9,
+      "phase_projection_pairs": [],
+      "selected_carriers": [
+        {
+          "prime": 41,
+          "phase": [
+            -1,
+            9342
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 79,
+          "phase": [
+            1742,
+            4671
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 9,
+          "block": 252964,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            971,
+            4671
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            971,
+            4671
+          ]
+        },
+        {
+          "label": "a",
+          "t": 1120,
+          "block": 31479841,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            129,
+            346
+          ],
+          "other_phase_residual_mod_one": [
+            217,
+            346
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 601527,
+      "K": 42606110641276,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          4423,
+          1
+        ],
+        [
+          17491,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 471,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -12659734250,
+        -16533139278,
+        13731334200,
+        12659737050,
+        -2799,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        4,
+        6
+      ],
+      "pair_indices": [
+        4,
+        6
+      ],
+      "pair_primes": [
+        89,
+        17491
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 89,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 17491,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 601528,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 471,
+          "block": 283319218,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 751511,
+      "K": 53229465700020,
+      "factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          271,
+          1
+        ],
+        [
+          4021,
+          1
+        ],
+        [
+          6619,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 29,
+        "s": 13
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        35952212879603,
+        108647074408560,
+        -43174272942930,
+        235905,
+        0,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        41,
+        271
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 9,
+      "complement_phase_residue_count": 2,
+      "phase_projection_pairs": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 41,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 271,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 13,
+          "block": 9769644,
+          "pair_heights": [
+            1,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            1,
+            2
+          ]
+        },
+        {
+          "label": "a",
+          "t": 29,
+          "block": 21793820,
+          "pair_heights": [
+            0,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            1,
+            2
+          ],
+          "other_phase_residual_mod_one": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 2777643,
+      "K": 196740237728257,
+      "factorization": [
+        [
+          83,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          4423,
+          1
+        ],
+        [
+          3413489,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 102,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          6
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        -10947043192603,
+        11349983391899,
+        -25185265188160,
+        7723521598240
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        1,
+        2
+      ],
+      "pair_indices": [
+        1,
+        2
+      ],
+      "pair_primes": [
+        157,
+        4423
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 0,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [],
+      "selected_carriers": [
+        {
+          "prime": 157,
+          "phase": [
+            -1,
+            6
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        },
+        {
+          "prime": 4423,
+          "phase": [
+            1,
+            6
+          ],
+          "label": "s",
+          "height": 1,
+          "heights_by_label": {
+            "s": 1,
+            "a": 0
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 2777644,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 102,
+          "block": 283319587,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 7264607,
+      "K": 514551548986806,
+      "factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          6619,
+          1
+        ],
+        [
+          10896911,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 13,
+        "s": 3
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "target_preimage": [
+        5679666707110830,
+        -11359333415778348,
+        -3253704679713240,
+        518897,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        4
+      ],
+      "pair_indices": [
+        3,
+        4
+      ],
+      "pair_primes": [
+        41,
+        6619
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 41,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 6619,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 3,
+          "block": 21793822,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 13,
+          "block": 94439892,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 16665863,
+      "K": 1180441780519152,
+      "factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          947,
+          1
+        ],
+        [
+          4423,
+          1
+        ],
+        [
+          37397,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 17,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        2563377897223039670,
+        -28765751636355988908,
+        0,
+        8332931,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        3,
+        5
+      ],
+      "pair_indices": [
+        3,
+        5
+      ],
+      "pair_primes": [
+        947,
+        37397
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 947,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 37397,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 16665864,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 17,
+          "block": 283319672,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 47219947,
+      "K": 3344585174659121,
+      "factorization": [
+        [
+          17,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          199,
+          1
+        ],
+        [
+          4423,
+          1
+        ],
+        [
+          1423717,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 6,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        27144113224169176,
+        -719092856060095457,
+        145929850189435917,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        2,
+        4
+      ],
+      "pair_indices": [
+        2,
+        4
+      ],
+      "pair_primes": [
+        199,
+        1423717
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 199,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 1423717,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 47219948,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 6,
+          "block": 283319683,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 283319689,
+      "R": 141659843,
+      "K": 10033755665637207,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          157,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          4423,
+          1
+        ],
+        [
+          205453,
+          1
+        ]
+      ],
+      "linear_state": {
+        "a": 2,
+        "s": 1
+      },
+      "dual_coordinates": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "phase_vector": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "target_preimage": [
+        -385927099773091559,
+        -977188246305523035,
+        6146389554228001173,
+        0,
+        -2882719,
+        0,
+        0
+      ],
+      "target_phase_mod_one": [
+        1,
+        2
+      ],
+      "active_support": [
+        4,
+        6
+      ],
+      "pair_indices": [
+        4,
+        6
+      ],
+      "pair_primes": [
+        197,
+        205453
+      ],
+      "target_pair_demand_mod_one": [
+        1,
+        2
+      ],
+      "phase_projection_pair_count": 4,
+      "complement_phase_residue_count": 1,
+      "phase_projection_pairs": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_carriers": [
+        {
+          "prime": 197,
+          "phase": [
+            -1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        },
+        {
+          "prime": 205453,
+          "phase": [
+            1,
+            2
+          ],
+          "label": "a",
+          "height": 1,
+          "heights_by_label": {
+            "s": 0,
+            "a": 1
+          }
+        }
+      ],
+      "joint_height_product": 1,
+      "carrier_records": [
+        {
+          "label": "s",
+          "t": 1,
+          "block": 141659844,
+          "pair_heights": [
+            0,
+            0
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        },
+        {
+          "label": "a",
+          "t": 2,
+          "block": 283319687,
+          "pair_heights": [
+            1,
+            1
+          ],
+          "full_phase_mod_one": [
+            0,
+            1
+          ],
+          "pair_phase_mod_one": [
+            0,
+            1
+          ],
+          "other_phase_residual_mod_one": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

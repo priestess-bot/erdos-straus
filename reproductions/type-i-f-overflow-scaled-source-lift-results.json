@@ -1,0 +1,31 @@
+{
+  "arithmetic": "For every saved square-terminal source, enumerate b in {1,2,4}, every positive coprime a with d=p-4a(p-n)/b>0, enforce b|n and d|(an/b), then enumerate every e|(an)^2 with the complete scaled-source square-tail and Type I checks.",
+  "scope_note": "Finite targeted audit of the b in {1,2,4} scaled-source family. It is complete for the 253 saved square-terminal sources; a miss does not rule out other source families, non-shared tails, or a global selector.",
+  "input": "type-i-f-overflow-square-terminal-lift-results.json",
+  "input_sha256": "ca3d74768cf90586834dfa7f8a127c760871cf5b5d27cc98be8ec96ec58dc9a1",
+  "candidate_count": 253,
+  "a_loop_count": 9871013,
+  "admissible_ab_count": 1,
+  "admissible_b_histogram": {
+    "4": 1
+  },
+  "e_divisor_count": 17731,
+  "e_candidate_count": 0,
+  "parameter_count": 0,
+  "hit_prime_count": 0,
+  "hit_primes": [],
+  "admissible_ab": [
+    {
+      "prime": 168434809,
+      "source": 168434560,
+      "b": 4,
+      "a": 676445,
+      "d": 4,
+      "L": 113936715939200,
+      "q": 2705776,
+      "e_divisor_count": 17731,
+      "e_candidate_count": 0
+    }
+  ],
+  "parameters": []
+}
