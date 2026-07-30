@@ -1,0 +1,3803 @@
+{
+  "arithmetic": "For all 36 lower-modulus F-box misses with exact Omega_1<=9, enumerate the complete minimum shell; verify that the product of the two oriented rational first-denominator defects is prod(q_i^overflow_i); and compare every minimum overflow pattern with optimistic complete-source block, label-difference, modulus-difference, and reduced-endpoint q-adic heights.",
+  "scope_note": "A state with no feasible minimum pattern is a finite counterexample to a coordinatewise injective local charge into the listed height levels. It does not rule out a nonlocal cross-state matching, reuse controlled by a separate theorem, a non-minimum target vector, factor splitting, or an arithmetic descent. The six states with Omega_1>=10 are outside this exact-shell audit.",
+  "omega_input": "type-i-f-overflow-lower-modulus-weighted-cost-results.json",
+  "omega_input_sha256": "e4bffc9727821fcfd83a5ae0bb02b8d5326ac58a024563e0a9acdfa355fded82",
+  "repair_input": "type-i-f-overflow-r-modulus-repair-results.json",
+  "repair_input_sha256": "c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f",
+  "source_script": "type_i_global_linear_b1_failure_general_b_profile_500m.py",
+  "source_script_sha256": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d",
+  "exact_state_count": 36,
+  "unresolved_state_count": 6,
+  "all_factors_odd": true,
+  "all_scaled_numerators_equal_p_times_gap": true,
+  "all_q_heights_of_R_gap_t_zero": true,
+  "all_odd_block_total_heights_equal_nu": true,
+  "all_minimum_vectors_satisfy_two_orientation_denominator_identity": true,
+  "minimum_target_vector_count": 204,
+  "minimum_overflow_pattern_count": 93,
+  "block_infeasible_state_count": 17,
+  "three_channel_infeasible_state_count": 8,
+  "three_channel_plus_endpoint_infeasible_state_count": 8,
+  "minimum_block_deficit_histogram": {
+    "0": 19,
+    "1": 5,
+    "2": 3,
+    "3": 2,
+    "4": 4,
+    "5": 1,
+    "6": 1,
+    "7": 1
+  },
+  "minimum_three_channel_deficit_histogram": {
+    "0": 28,
+    "1": 2,
+    "2": 3,
+    "3": 1,
+    "5": 1,
+    "6": 1
+  },
+  "minimum_three_channel_plus_endpoint_deficit_histogram": {
+    "0": 28,
+    "1": 2,
+    "2": 3,
+    "3": 1,
+    "5": 1,
+    "6": 1
+  },
+  "minimum_pattern_coordinate_occurrence_count": 177,
+  "records": [
+    {
+      "prime": 13782409,
+      "orientation": "forward",
+      "original_R": 33051,
+      "gap": 3,
+      "lower_modulus": 11017,
+      "scaled_numerator": 41347227,
+      "omega": 4,
+      "canonical_vector": [
+        -1,
+        4,
+        2,
+        -1,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        3,
+        1,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 41,
+      "complete_source_label_count": 72,
+      "reduced_endpoints": [
+        36415104906055814619011,
+        4707185529742759610930406519982997691342
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 389,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 1181,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 4507,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 2,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 16002529,
+      "orientation": "reverse",
+      "original_R": 5075,
+      "gap": 7,
+      "lower_modulus": 725,
+      "scaled_numerator": 112017703,
+      "omega": 2,
+      "canonical_vector": [
+        -2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 41,
+      "complete_source_label_count": 54,
+      "reduced_endpoints": [
+        893051690231,
+        869
+      ],
+      "coordinate_heights": [
+        {
+          "q": 3,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 4,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 8,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 8
+        },
+        {
+          "q": 23,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 113,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 331,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 7867,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 48991849,
+      "orientation": "reverse",
+      "original_R": 7931,
+      "gap": 11,
+      "lower_modulus": 721,
+      "scaled_numerator": 538910339,
+      "omega": 2,
+      "canonical_vector": [
+        -1,
+        0,
+        1,
+        3,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          2,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 37,
+      "complete_source_label_count": 75,
+      "reduced_endpoints": [
+        27,
+        37819924129790350255
+      ],
+      "coordinate_heights": [
+        {
+          "q": 3,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 5,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 9,
+          "reduced_endpoint_max": 3,
+          "three_channel_plus_endpoint_sum": 12
+        },
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 11897,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 28649,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 1,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "gap": 3,
+      "lower_modulus": 27337,
+      "scaled_numerator": 297454107,
+      "omega": 9,
+      "canonical_vector": [
+        0,
+        -1,
+        -3,
+        -1,
+        -8
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        2,
+        0,
+        7
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          0,
+          7
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 45,
+      "complete_source_label_count": 90,
+      "reduced_endpoints": [
+        231533765490581027221987289755917877666187199887386021,
+        20
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 8
+        },
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 227,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 1409,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 115561,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 7,
+      "minimum_three_channel_deficit": 6,
+      "minimum_three_channel_plus_endpoint_deficit": 6
+    },
+    {
+      "prime": 106050289,
+      "orientation": "forward",
+      "original_R": 291,
+      "gap": 3,
+      "lower_modulus": 97,
+      "scaled_numerator": 318150867,
+      "omega": 1,
+      "canonical_vector": [
+        -3,
+        -1,
+        0,
+        -1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 6,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 78,
+      "complete_source_label_count": 135,
+      "reduced_endpoints": [
+        987027344972,
+        11
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 4,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 9,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 9
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 23,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 706193,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 2,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 152498329,
+      "orientation": "reverse",
+      "original_R": 28131,
+      "gap": 3,
+      "lower_modulus": 9377,
+      "scaled_numerator": 457494987,
+      "omega": 7,
+      "canonical_vector": [
+        -5,
+        3,
+        -3,
+        2
+      ],
+      "canonical_overflow_pattern": [
+        3,
+        1,
+        2,
+        1
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          3,
+          1,
+          2,
+          1
+        ],
+        [
+          3,
+          3,
+          1,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 36,
+      "complete_source_label_count": 76,
+      "reduced_endpoints": [
+        13089261542000521,
+        69750453523685971
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 2,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 7,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 2,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 2239,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 391021,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 3,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 155533849,
+      "orientation": "forward",
+      "original_R": 267,
+      "gap": 3,
+      "lower_modulus": 89,
+      "scaled_numerator": 466601547,
+      "omega": 1,
+      "canonical_vector": [
+        -2,
+        1,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 45,
+      "complete_source_label_count": 84,
+      "reduced_endpoints": [
+        445498,
+        39285
+      ],
+      "coordinate_heights": [
+        {
+          "q": 673,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 971,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 15887,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 2,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 165387049,
+      "orientation": "forward",
+      "original_R": 267,
+      "gap": 3,
+      "lower_modulus": 89,
+      "scaled_numerator": 496161147,
+      "omega": 2,
+      "canonical_vector": [
+        -3,
+        1,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        2,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 56,
+      "complete_source_label_count": 82,
+      "reduced_endpoints": [
+        1340966603,
+        580
+      ],
+      "coordinate_heights": [
+        {
+          "q": 43,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 59,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 4351433,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 171292489,
+      "orientation": "forward",
+      "original_R": 8043,
+      "gap": 7,
+      "lower_modulus": 1149,
+      "scaled_numerator": 1199047423,
+      "omega": 1,
+      "canonical_vector": [
+        -1,
+        1,
+        -2,
+        1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 57,
+      "complete_source_label_count": 99,
+      "reduced_endpoints": [
+        37907371,
+        2735
+      ],
+      "coordinate_heights": [
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 59,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 2113,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 13219,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 2,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 171292489,
+      "orientation": "reverse",
+      "original_R": 8043,
+      "gap": 3,
+      "lower_modulus": 2681,
+      "scaled_numerator": 513877467,
+      "omega": 1,
+      "canonical_vector": [
+        -1,
+        1,
+        -2,
+        1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 57,
+      "complete_source_label_count": 99,
+      "reduced_endpoints": [
+        3191,
+        44225266
+      ],
+      "coordinate_heights": [
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 59,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 2113,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 13219,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 223474729,
+      "orientation": "reverse",
+      "original_R": 699,
+      "gap": 3,
+      "lower_modulus": 233,
+      "scaled_numerator": 670424187,
+      "omega": 8,
+      "canonical_vector": [
+        -4,
+        1,
+        6
+      ],
+      "canonical_overflow_pattern": [
+        3,
+        0,
+        5
+      ],
+      "minimum_target_vector_count": 12,
+      "minimum_overflow_pattern_count": 6,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          2,
+          6
+        ],
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          0,
+          4,
+          4
+        ],
+        [
+          1,
+          0,
+          7
+        ],
+        [
+          2,
+          0,
+          6
+        ],
+        [
+          3,
+          0,
+          5
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 54,
+      "complete_source_label_count": 101,
+      "reduced_endpoints": [
+        569170893076404087818670172023,
+        302538693607
+      ],
+      "coordinate_heights": [
+        {
+          "q": 283,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 2447,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 56393,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 6,
+      "minimum_three_channel_deficit": 5,
+      "minimum_three_channel_plus_endpoint_deficit": 5
+    },
+    {
+      "prime": 236164009,
+      "orientation": "reverse",
+      "original_R": 8379,
+      "gap": 3,
+      "lower_modulus": 2793,
+      "scaled_numerator": 708492027,
+      "omega": 1,
+      "canonical_vector": [
+        -1,
+        -1,
+        2,
+        0,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 63,
+      "complete_source_label_count": 100,
+      "reduced_endpoints": [
+        3818000,
+        31
+      ],
+      "coordinate_heights": [
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 17,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 1,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 29,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 197,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 27239,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 306963409,
+      "orientation": "forward",
+      "original_R": 875,
+      "gap": 7,
+      "lower_modulus": 125,
+      "scaled_numerator": 2148743863,
+      "omega": 1,
+      "canonical_vector": [
+        -3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 16,
+      "minimum_overflow_pattern_count": 5,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 47,
+      "complete_source_label_count": 105,
+      "reduced_endpoints": [
+        1,
+        728877124
+      ],
+      "coordinate_heights": [
+        {
+          "q": 3,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 5,
+          "modulus_difference_max": 5,
+          "three_channel_sum": 12,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 12
+        },
+        {
+          "q": 17,
+          "nu": 3,
+          "block_max": 3,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 89,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 113,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 151,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 5,
+      "three_channel_feasible_minimum_pattern_count": 5,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 5,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 137595,
+      "gap": 15,
+      "lower_modulus": 9173,
+      "scaled_numerator": 4650034335,
+      "omega": 7,
+      "canonical_vector": [
+        -2,
+        2,
+        3,
+        -4,
+        3
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        2,
+        3,
+        2
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          3,
+          2
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 65,
+      "complete_source_label_count": 118,
+      "reduced_endpoints": [
+        41085157588729447,
+        632304353632686343773605661573805424085307768
+      ],
+      "coordinate_heights": [
+        {
+          "q": 7,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 8
+        },
+        {
+          "q": 11,
+          "nu": 2,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 29,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 647,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 95857,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 4,
+      "minimum_three_channel_deficit": 2,
+      "minimum_three_channel_plus_endpoint_deficit": 2
+    },
+    {
+      "prime": 331117609,
+      "orientation": "forward",
+      "original_R": 107891,
+      "gap": 7,
+      "lower_modulus": 15413,
+      "scaled_numerator": 2317823263,
+      "omega": 4,
+      "canonical_vector": [
+        -1,
+        -2,
+        -2,
+        -3,
+        1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        1,
+        1,
+        2,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          1,
+          1,
+          2,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 49,
+      "complete_source_label_count": 82,
+      "reduced_endpoints": [
+        354694387942,
+        33452303871295
+      ],
+      "coordinate_heights": [
+        {
+          "q": 3,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 5,
+          "modulus_difference_max": 4,
+          "three_channel_sum": 10,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 10
+        },
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 389,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 821,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 1301,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 1433,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 1,
+      "minimum_three_channel_deficit": 1,
+      "minimum_three_channel_plus_endpoint_deficit": 1
+    },
+    {
+      "prime": 335420089,
+      "orientation": "reverse",
+      "original_R": 939,
+      "gap": 3,
+      "lower_modulus": 313,
+      "scaled_numerator": 1006260267,
+      "omega": 2,
+      "canonical_vector": [
+        -3,
+        1,
+        1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 6,
+      "minimum_overflow_pattern_count": 3,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 59,
+      "complete_source_label_count": 89,
+      "reduced_endpoints": [
+        11326840922393152790,
+        1210213
+      ],
+      "coordinate_heights": [
+        {
+          "q": 13,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 67,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 1553,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 58211,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 339576169,
+      "orientation": "reverse",
+      "original_R": 238299,
+      "gap": 3,
+      "lower_modulus": 79433,
+      "scaled_numerator": 1018728507,
+      "omega": 4,
+      "canonical_vector": [
+        -4,
+        3,
+        0,
+        2,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        2,
+        1,
+        0,
+        1,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          2,
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 63,
+      "complete_source_label_count": 97,
+      "reduced_endpoints": [
+        438510906689,
+        2440
+      ],
+      "coordinate_heights": [
+        {
+          "q": 11,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 13,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 23,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 2263841,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 356491249,
+      "orientation": "reverse",
+      "original_R": 131595,
+      "gap": 3,
+      "lower_modulus": 43865,
+      "scaled_numerator": 1069473747,
+      "omega": 5,
+      "canonical_vector": [
+        -1,
+        -1,
+        -3,
+        3,
+        2
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        2,
+        2,
+        1
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          2,
+          1
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 39,
+      "complete_source_label_count": 60,
+      "reduced_endpoints": [
+        50414999776486162157012317874430221299447956394011560747319474,
+        61
+      ],
+      "coordinate_heights": [
+        {
+          "q": 13,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 59,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 227,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 2029,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 33199,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 2,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 19083,
+      "gap": 3,
+      "lower_modulus": 6361,
+      "scaled_numerator": 1098325947,
+      "omega": 5,
+      "canonical_vector": [
+        -5,
+        1,
+        1,
+        -2
+      ],
+      "canonical_overflow_pattern": [
+        4,
+        0,
+        0,
+        1
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          4,
+          0,
+          0,
+          1
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 59,
+      "complete_source_label_count": 91,
+      "reduced_endpoints": [
+        9244624483,
+        2446796648751278890971191242457823308806133
+      ],
+      "coordinate_heights": [
+        {
+          "q": 17,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 239,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 8419,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 51061,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 3,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 373561609,
+      "orientation": "reverse",
+      "original_R": 2211,
+      "gap": 3,
+      "lower_modulus": 737,
+      "scaled_numerator": 1120684827,
+      "omega": 1,
+      "canonical_vector": [
+        -4,
+        -1,
+        1,
+        -2
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 54,
+      "complete_source_label_count": 97,
+      "reduced_endpoints": [
+        647,
+        107836400729
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 4,
+          "block_max": 4,
+          "label_difference_max": 4,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 11,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 11
+        },
+        {
+          "q": 7,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 4,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 3881,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 12161,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 408626089,
+      "orientation": "forward",
+      "original_R": 531,
+      "gap": 3,
+      "lower_modulus": 177,
+      "scaled_numerator": 1225878267,
+      "omega": 1,
+      "canonical_vector": [
+        -2,
+        1,
+        0,
+        -1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 6,
+      "minimum_overflow_pattern_count": 3,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 57,
+      "complete_source_label_count": 86,
+      "reduced_endpoints": [
+        1,
+        576917693
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 31,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 10567,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 33119,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 3,
+      "three_channel_feasible_minimum_pattern_count": 3,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 3,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 457986169,
+      "orientation": "forward",
+      "original_R": 3435,
+      "gap": 3,
+      "lower_modulus": 1145,
+      "scaled_numerator": 1373958507,
+      "omega": 3,
+      "canonical_vector": [
+        -3,
+        -1,
+        0,
+        -2,
+        -1
+      ],
+      "canonical_overflow_pattern": [
+        2,
+        0,
+        0,
+        1,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 62,
+      "complete_source_label_count": 145,
+      "reduced_endpoints": [
+        833424076887387,
+        23
+      ],
+      "coordinate_heights": [
+        {
+          "q": 7,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 13,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 139,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 1601,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 19421,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 463627609,
+      "orientation": "forward",
+      "original_R": 579,
+      "gap": 3,
+      "lower_modulus": 193,
+      "scaled_numerator": 1390882827,
+      "omega": 1,
+      "canonical_vector": [
+        -2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 6,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 53,
+      "complete_source_label_count": 93,
+      "reduced_endpoints": [
+        121958,
+        25847543
+      ],
+      "coordinate_heights": [
+        {
+          "q": 7,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 89,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 2027,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 2797,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 2,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 473173969,
+      "orientation": "reverse",
+      "original_R": 1531307,
+      "gap": 47,
+      "lower_modulus": 32581,
+      "scaled_numerator": 22239176543,
+      "omega": 2,
+      "canonical_vector": [
+        -1,
+        -1,
+        -3,
+        -1,
+        1,
+        -1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 36,
+      "complete_source_label_count": 68,
+      "reduced_endpoints": [
+        5770792093113864446610513214398,
+        108278164282757491873436933
+      ],
+      "coordinate_heights": [
+        {
+          "q": 3,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 8
+        },
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 41,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 67,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 19429,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 34283,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 1,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 4611,
+      "gap": 3,
+      "lower_modulus": 1537,
+      "scaled_numerator": 1462717227,
+      "omega": 2,
+      "canonical_vector": [
+        -1,
+        -3,
+        0,
+        -1,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 73,
+      "complete_source_label_count": 112,
+      "reduced_endpoints": [
+        382,
+        118284131149779
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 2,
+          "block_max": 1,
+          "label_difference_max": 6,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 9,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 9
+        },
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 103,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 1249,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 15887,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "gap": 3,
+      "lower_modulus": 106017,
+      "scaled_numerator": 1462717227,
+      "omega": 8,
+      "canonical_vector": [
+        -4,
+        -1,
+        1,
+        2,
+        5
+      ],
+      "canonical_overflow_pattern": [
+        3,
+        0,
+        0,
+        1,
+        4
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          2,
+          1,
+          0,
+          0,
+          5
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 73,
+      "complete_source_label_count": 112,
+      "reduced_endpoints": [
+        521,
+        121909053681719096196347517000833251540
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 8
+        },
+        {
+          "q": 31,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 149,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 241,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 6965317,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 5,
+      "minimum_three_channel_deficit": 3,
+      "minimum_three_channel_plus_endpoint_deficit": 3
+    },
+    {
+      "prime": 507599689,
+      "orientation": "forward",
+      "original_R": 5691,
+      "gap": 3,
+      "lower_modulus": 1897,
+      "scaled_numerator": 1522799067,
+      "omega": 6,
+      "canonical_vector": [
+        -3,
+        6,
+        -1,
+        -1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        5,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          1,
+          5,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 42,
+      "complete_source_label_count": 82,
+      "reduced_endpoints": [
+        1014,
+        1286204799758727466927
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 2,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 23,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 193,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 547,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 11897,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 4,
+      "minimum_three_channel_deficit": 2,
+      "minimum_three_channel_plus_endpoint_deficit": 2
+    },
+    {
+      "prime": 507599689,
+      "orientation": "reverse",
+      "original_R": 5691,
+      "gap": 7,
+      "lower_modulus": 813,
+      "scaled_numerator": 3553197823,
+      "omega": 6,
+      "canonical_vector": [
+        -2,
+        6,
+        -1,
+        -2,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        5,
+        0,
+        1,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          5,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 42,
+      "complete_source_label_count": 82,
+      "reduced_endpoints": [
+        1102461256936052114509,
+        869
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 2,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 23,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 193,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 547,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 11897,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 4,
+      "minimum_three_channel_deficit": 2,
+      "minimum_three_channel_plus_endpoint_deficit": 2
+    },
+    {
+      "prime": 509434249,
+      "orientation": "reverse",
+      "original_R": 123,
+      "gap": 3,
+      "lower_modulus": 41,
+      "scaled_numerator": 1528302747,
+      "omega": 1,
+      "canonical_vector": [
+        -2,
+        0,
+        -1,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 10,
+      "minimum_overflow_pattern_count": 4,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 60,
+      "complete_source_label_count": 91,
+      "reduced_endpoints": [
+        47,
+        76
+      ],
+      "coordinate_heights": [
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 59,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 431,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 56003,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 4,
+      "three_channel_feasible_minimum_pattern_count": 4,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 4,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 534844249,
+      "orientation": "forward",
+      "original_R": 11011,
+      "gap": 91,
+      "lower_modulus": 121,
+      "scaled_numerator": 48670826659,
+      "omega": 1,
+      "canonical_vector": [
+        -2,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 12,
+      "minimum_overflow_pattern_count": 4,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 57,
+      "complete_source_label_count": 119,
+      "reduced_endpoints": [
+        1829066355339,
+        173
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 4,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 8,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 8
+        },
+        {
+          "q": 17,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 53,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 2267,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 144161,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 4,
+      "three_channel_feasible_minimum_pattern_count": 4,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 4,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 542688169,
+      "orientation": "reverse",
+      "original_R": 16851,
+      "gap": 3,
+      "lower_modulus": 5617,
+      "scaled_numerator": 1628064507,
+      "omega": 4,
+      "canonical_vector": [
+        -2,
+        -4,
+        -1,
+        1,
+        0,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        3,
+        0,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 2,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          1,
+          3,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 50,
+      "complete_source_label_count": 99,
+      "reduced_endpoints": [
+        28526109297080827681,
+        12825395
+      ],
+      "coordinate_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 1,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 2,
+          "three_channel_plus_endpoint_sum": 7
+        },
+        {
+          "q": 37,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 101,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 317,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 35089,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 2,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 549401449,
+      "orientation": "reverse",
+      "original_R": 6787,
+      "gap": 11,
+      "lower_modulus": 617,
+      "scaled_numerator": 6043415939,
+      "omega": 2,
+      "canonical_vector": [
+        -2,
+        -3,
+        1,
+        0,
+        -1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 8,
+      "minimum_overflow_pattern_count": 4,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 38,
+      "complete_source_label_count": 79,
+      "reduced_endpoints": [
+        1475139,
+        161786014582490
+      ],
+      "coordinate_heights": [
+        {
+          "q": 13,
+          "nu": 2,
+          "block_max": 2,
+          "label_difference_max": 4,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 9,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 9
+        },
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 37,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 197,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 39829,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 3,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 3,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 556685089,
+      "orientation": "reverse",
+      "original_R": 147,
+      "gap": 3,
+      "lower_modulus": 49,
+      "scaled_numerator": 1670055267,
+      "omega": 1,
+      "canonical_vector": [
+        -2,
+        1,
+        -1
+      ],
+      "canonical_overflow_pattern": [
+        1,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 2,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 56,
+      "complete_source_label_count": 86,
+      "reduced_endpoints": [
+        140856668356088031381170288114,
+        3
+      ],
+      "coordinate_heights": [
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 677,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 1590467,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 1,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 0,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 559650361,
+      "orientation": "reverse",
+      "original_R": 29939,
+      "gap": 91,
+      "lower_modulus": 329,
+      "scaled_numerator": 50928182851,
+      "omega": 2,
+      "canonical_vector": [
+        -1,
+        -1,
+        -3,
+        0,
+        0
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "minimum_target_vector_count": 4,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 69,
+      "complete_source_label_count": 97,
+      "reduced_endpoints": [
+        27,
+        431321133273808
+      ],
+      "coordinate_heights": [
+        {
+          "q": 3,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 5,
+          "modulus_difference_max": 4,
+          "three_channel_sum": 10,
+          "reduced_endpoint_max": 3,
+          "three_channel_plus_endpoint_sum": 13
+        },
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 6,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 6
+        },
+        {
+          "q": 17,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 30937,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 530977,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 1,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 1,
+      "minimum_block_deficit": 1,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    },
+    {
+      "prime": 570621769,
+      "orientation": "reverse",
+      "original_R": 339,
+      "gap": 3,
+      "lower_modulus": 113,
+      "scaled_numerator": 1711865307,
+      "omega": 8,
+      "canonical_vector": [
+        -7,
+        1,
+        3,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        6,
+        0,
+        2,
+        0
+      ],
+      "minimum_target_vector_count": 42,
+      "minimum_overflow_pattern_count": 21,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          6
+        ],
+        [
+          0,
+          1,
+          1,
+          6
+        ],
+        [
+          0,
+          2,
+          0,
+          6
+        ],
+        [
+          1,
+          0,
+          2,
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          5
+        ],
+        [
+          1,
+          2,
+          0,
+          5
+        ],
+        [
+          2,
+          0,
+          2,
+          4
+        ],
+        [
+          2,
+          1,
+          1,
+          4
+        ],
+        [
+          2,
+          2,
+          0,
+          4
+        ],
+        [
+          3,
+          0,
+          2,
+          3
+        ],
+        [
+          3,
+          1,
+          1,
+          3
+        ],
+        [
+          3,
+          2,
+          0,
+          3
+        ],
+        [
+          4,
+          0,
+          2,
+          2
+        ],
+        [
+          4,
+          1,
+          1,
+          2
+        ],
+        [
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          5,
+          0,
+          2,
+          1
+        ],
+        [
+          5,
+          1,
+          1,
+          1
+        ],
+        [
+          5,
+          2,
+          0,
+          1
+        ],
+        [
+          6,
+          0,
+          2,
+          0
+        ],
+        [
+          6,
+          1,
+          1,
+          0
+        ],
+        [
+          6,
+          2,
+          0,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 50,
+      "complete_source_label_count": 92,
+      "reduced_endpoints": [
+        52000376330408686644633347,
+        4344
+      ],
+      "coordinate_heights": [
+        {
+          "q": 19,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 4
+        },
+        {
+          "q": 283,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 1187,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        },
+        {
+          "q": 7577,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 0,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 0,
+      "minimum_block_deficit": 4,
+      "minimum_three_channel_deficit": 1,
+      "minimum_three_channel_plus_endpoint_deficit": 1
+    },
+    {
+      "prime": 570621769,
+      "orientation": "forward",
+      "original_R": 21259,
+      "gap": 7,
+      "lower_modulus": 3037,
+      "scaled_numerator": 3994352383,
+      "omega": 3,
+      "canonical_vector": [
+        -1,
+        -2,
+        3,
+        2,
+        1
+      ],
+      "canonical_overflow_pattern": [
+        0,
+        0,
+        2,
+        1,
+        0
+      ],
+      "minimum_target_vector_count": 6,
+      "minimum_overflow_pattern_count": 3,
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          0
+        ]
+      ],
+      "current_directed_source_state_count": 2,
+      "complete_source_modulus_count": 50,
+      "complete_source_label_count": 92,
+      "reduced_endpoints": [
+        993190466356063344333873723754,
+        6724942071825
+      ],
+      "coordinate_heights": [
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 3
+        },
+        {
+          "q": 13,
+          "nu": 2,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 2,
+          "three_channel_sum": 5,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 5
+        },
+        {
+          "q": 73,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 223,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 2,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 2
+        },
+        {
+          "q": 100213,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1,
+          "reduced_endpoint_max": 0,
+          "three_channel_plus_endpoint_sum": 1
+        }
+      ],
+      "block_feasible_minimum_pattern_count": 0,
+      "three_channel_feasible_minimum_pattern_count": 2,
+      "three_channel_plus_endpoint_feasible_minimum_pattern_count": 2,
+      "minimum_block_deficit": 1,
+      "minimum_three_channel_deficit": 0,
+      "minimum_three_channel_plus_endpoint_deficit": 0
+    }
+  ]
+}

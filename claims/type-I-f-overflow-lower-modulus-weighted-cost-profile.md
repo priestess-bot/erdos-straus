@@ -2,13 +2,14 @@
 kind: claim
 claim_id: type-I-f-overflow-lower-modulus-weighted-cost-profile
 title: 低模数 F-box miss 的单位权溢出价格有限剖面
-statement: 对冻结的 42 个低模数 F-box miss，令 Omega_1 为目标关系纤维中逐坐标盒外量之和的最小值。完整枚举溢出层 L<=6 得到精确值分布 Omega_1=1:12, 2:8, 3:2, 4:4, 5:2, 6:2；其余 12 个仅有 Omega_1>=7。将这 12 个再探测到 L<=9 后，6 个得到精确值 7:2, 8:3, 9:1，另 6 个仅有 Omega_1>=10。
+statement: 对冻结的 42 个低模数 F-box miss，令 Omega_1 为目标关系纤维中逐坐标盒外量之和的最小值。完整枚举溢出层 L<=6 得到精确值分布 Omega_1=1:12, 2:8, 3:2, 4:4, 5:2, 6:2；其余 12 个仅有 Omega_1>=7。将这 12 个再探测到 L<=9 后，6 个得到精确值 7:2, 8:3, 9:1，另 6 个在本有限壳层计算中仅有 Omega_1>=10；后续有限 Cayley 图算法已将这 6 个精确补齐为 12,11,18,10,12,15。
 claim_status: computationally_reproduced
 proof_provenance: computational_reproduction
 review_status: internal_review
 depends_on:
   - type-I-f-overflow-lower-modulus-weighted-cost-interface
   - type-I-f-overflow-lower-modulus-relation-lattice
+  - type-I-f-overflow-repair-transition-potential-boundary
 topics:
 - type-I
 - F-state
@@ -22,6 +23,8 @@ sources:
   role: omega-definition
 - claim: type-I-f-overflow-lower-modulus-relation-lattice
   role: frozen-42-state-input
+- claim: type-I-f-overflow-repair-transition-potential-boundary
+  role: exact-Cayley-graph-completion
 visibility: public
 last_checked: '2026-07-30'
 ---
@@ -121,8 +124,21 @@ secondary_unresolved_count: 6
 (373561609, 208577, forward)
 ~~~
 
-它们目前仅能推出 Omega_1>=10。这不是“没有解”的结论；继续扩大层数仍是
-开放的计算问题。
+在本壳层脚本中，它们只能推出 \(\Omega_1\ge10\)。后续
+[R 因子修复转移图的良基势函数边界](type-I-f-overflow-repair-transition-potential-boundary.md)
+使用有限 Cayley 图多源 BFS 精确补齐为：
+
+~~~text
+(62704849, 649, forward): 12
+(75056809, 21113, reverse): 11
+(310002289, 107977, reverse): 18
+(312918169, 16649, forward): 10
+(366108649, 11057, forward): 12
+(373561609, 208577, forward): 15
+~~~
+
+因此“继续扩大单位权层数”已不再是开放计算问题；仍未闭合的是这些状态的完整
+Pareto 前沿、算术容量映射和解可提升递降。
 
 ## 解释边界
 

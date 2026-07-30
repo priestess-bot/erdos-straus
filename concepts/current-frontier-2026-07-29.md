@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 当前主线是把一般混合 Type I 选择器的单状态有限群缺陷转化为同状态偶终端，或转化为不能在同一核心素数的全部可达状态中同时存在的低复杂度算术证书。
+summary: 当前已用目标纤维 Fourier 生成函数统一 F/G、关系格和 Pareto 溢出证书；主缺口收缩为证明分母缺陷只能在局部 R 窗口收费或支付迁移成本，若局部收费失败则构造合法且解可提升的良基下降。
 topics:
 - research-map
 - proof-program
@@ -913,21 +913,132 @@ Type II 形式。详见[平衡端点 Type II 边界](../claims/type-I-f-overflow
 逐层完整枚举。到溢出 6 时得到
 \(\Omega_1=1:12,2:8,3:2,4:4,5:2,6:2\)，其余 12 个只有
 \(\Omega_1\ge7\) 的有限下界；继续到溢出 9 后得到
-\(\Omega_1=7:2,8:3,9:1\)，仍有 6 个状态满足 \(\Omega_1\ge10\)。
+\(\Omega_1=7:2,8:3,9:1\)，该有限壳层中仍有 6 个状态满足 \(\Omega_1\ge10\)。
 该数值对象比任意 Smith 原像或 BFS 向量选择不变，但仍未建立溢出层到共同
 \(q\)-进载体高度的映射。详见[单位权选择不变溢出剖面](../claims/type-I-f-overflow-lower-modulus-weighted-cost-profile.md)。
+
+后续有限 Cayley 图多源 BFS 已精确补齐原来六个仅知下界的状态，新增值为
+\(10,11,12,12,15,18\)，所以 42 个状态的单位权价格现已全部确定。开放部分不再是
+扩大单位权搜索层数，而是完整 Pareto 前沿、算术收费和解提升。
+
+## 目标三十九：目标纤维的 Fourier 生成函数与 Pareto 前沿
+
+对任意有限阿贝尔群目标纤维，已经建立显式特征平均
+\(\mathcal F_y(\mathbf T)\)，其系数精确计数每个盒外向量：
+\[
+[\mathbf T^{\mathbf e}]\mathcal F_y
+=\#\{z:\phi(z)=y,\ \operatorname{ov}_\nu(z)=\mathbf e\}.
+\]
+因此零函数、常数项和最小支撑分别精确对应 G 型不可达、有限盒命中和 F-box miss；
+正整数权特化的消失阶就是 \(\Omega_w\)。这把 Fourier、关系格、F/G 分类和 Pareto
+需求统一为一个不依赖 Smith 原像选择的规范对象。完整定理见
+[目标纤维溢出的精确 Fourier 生成函数](../claims/type-I-target-fiber-fourier-overflow-generating-function.md)。
+
+对冻结的 42 个低模数 F-box miss，成本不超过 9 的完整前沿共有 415 个已证明全局
+Pareto 极小点，支撑大小分布为
+\[
+1:69,\quad2:142,\quad3:136,\quad4:54,\quad5:14.
+\]
+其中 346/415 是多坐标点；8 个状态的整个前沿已由下一壳层覆盖证明闭合，28 个状态
+仍只有精确截断，另六个高成本状态只补齐了单位权最小面。详见
+[低模数 F-box miss 的 Pareto 溢出前沿](../claims/type-I-f-overflow-lower-modulus-pareto-overflow.md)。
+
+## 目标四十：最小溢出面的 Type II 释放与单支持边界
+
+对 36 个成本不超过 9 的精确状态，完整枚举单位权最小面得到 204 个并列目标向量。
+只用字典序规范向量时，共享缺口 Type II 覆盖 14/36；使用全部并列最优向量后覆盖
+18/36，新增四个状态。这证明统一选择器必须保留最小面或 Pareto 集，不能先任意
+tie-break。完整审计见
+[低模数最小溢出纤维的共享缺口 Type II 覆盖边界](../claims/type-I-f-overflow-lower-modulus-min-overflow-shared-gap.md)。
+
+若某个表示只有 \(q\) 坐标越界 \(\delta\) 层，则存在 \(d_0\mid K^2\)，并严格得到
+\[
+t\mid4q^\delta d_0+1
+\quad\text{或}\quad
+t\mid4d_0+q^\delta.
+\]
+但合法缺口、大小和平方除子条件并不自动成立；正溢出规范端点在当前奇数输入中甚至
+恒为 \(1\bmod4\)。所以单支持不是自动终端，而是一个可送入 Type II 或递降的
+\(q\)-幂缺陷接口。详见
+[单坐标溢出的 q 幂缺口与 Type II 充分条件](../claims/type-I-f-overflow-lower-modulus-single-support-defect.md)。
+
+## 目标四十一：双向分母缺陷与局部载体边界
+
+对低模数关系向量 \(z\)，两个相反方向的形式首分母缺陷满足
+\[
+X_-(z)X_+(z)=\prod_iq_i^{(|z_i|-\nu_i)_+},
+\qquad
+\Omega_w=\min_zV_w(X_-X_+).
+\]
+因此溢出价格已经有精确算术含义：它是缩放实例 \((pm,R/m)\) 无法由 \(K\) 吸收的
+双向分母层，而不是当前两个线性块中已有的高度。
+
+在 36 个精确最小层状态中，17 个无法把任何最优模式装入当前块高度；即使乐观加入
+最佳标签差、模数差和平衡端点高度，仍有 8 个不可装箱。与最小面 Type II 结果相交后，
+其中四个已经旁路闭合；同时逃过这两个接口的四个冻结硬核是
+\[
+(p,t)\in\{
+(99151369,27337),\ (310002289,9173),\
+(487572409,106017),\ (507599689,1897)\}.
+\]
+详见[低模数 Omega 的双向分母表示与直接载体收费边界](../claims/type-I-f-overflow-lower-modulus-omega-carrier-boundary.md)。
+
+## 目标四十二：Pareto 容量的共同价格与局部性
+
+对映入同一资源空间的有限需求集 \(D_s\)，凸容量不可行当且仅当存在一个对所有状态
+统一的非负价格 \(w\)，使
+\[
+\sum_s\min_{d\in D_s}w\cdot d>w\cdot C.
+\]
+因此逐状态分别挑选最有利权重不能构成容量证明；正确对象是一个公共价格或等价的
+有限 LP。严格分离定理见
+[Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md)。
+
+冻结数据已经把该接口推进到一个尖锐边界。在因子支撑的局部 \(R\)-窗口内，
+\((p,t)=(62704849,649)\) 的整个目标纤维有共同价格证书
+\[
+\min_{z\in F_t}w\cdot e(z)\ge65>64=w\cdot C.
+\]
+但若取消窗口，把完整线性源谱的三通道容量全局池化，则 42 个状态存在显式整数可行流：
+总需求 210，使用 75 个 \((p,q)\) 资源，仅 3 个饱和。详见
+[低模数 Pareto 溢出的局部超载与全局可行流边界](../claims/type-I-f-overflow-lower-modulus-pareto-capacity-flow-boundary.md)。
+
+因此下一条关键定理不能只是“总容量有限”，而必须证明以下析取：
+\[
+\boxed{
+\text{盒外层只能在支撑局部窗口收费，或跨窗口迁移支付严格成本}
+\quad\lor\quad
+\text{该表示产生合法且解可提升的下降。}}
+\]
+
+## 目标四十三：商表示势函数与合法状态提升
+
+若 \(t\) 是 \(R\) 的真因子，则同一 \(K\)-支撑上
+\[
+(\Omega_1(t),t)<_{\rm lex}(\Omega_1(R),R).
+\]
+冻结 48 条商边中 22 条 \(\Omega_1\) 严降、26 条相等，但二元势函数全部严格下降。
+问题是这些商模数全满足 \(t\equiv1\pmod4\)，不是合法 Type I 缺口状态，也没有一般
+解提升。相反，149 条一级合法修复边全部满足 \(R'>R,K'>K\)；当前 319 节点、
+203 边的已知图虽无环，最大路径只有 2，原因是新状态没有递归边，而不是已经证明终止。
+完整边界见
+[R 因子修复转移图的良基势函数边界](../claims/type-I-f-overflow-repair-transition-potential-boundary.md)。
+
+所以势函数方向的唯一有效下一步是构造从 \(t\equiv1\pmod4\) 商表示到合法奇缺口、
+标记较小源或可重复 F/G 状态的显式提升；继续在未闭合的有限图上寻找人工拓扑秩不再
+计为推进。
 
 ## 依赖顺序
 
 \[
 \begin{array}{c}
-\text{固定层约化、近邻引理、二进传输}\\
+\text{固定层约化、近邻引理、目标纤维 Fourier 生成函数}\\
 \downarrow\\
-\text{困难状态完整谱}\\
+\text{Pareto 最小面、Type II 释放与双向分母缺陷}\\
 \downarrow\\
-\text{稀疏纤维对偶结构}\\
+\text{局部收费/迁移成本，或合法状态提升}\\
 \downarrow\\
-\text{跨状态容量矛盾或算术下降}\\
+\text{共同价格容量矛盾，或解可提升良基下降}\\
 \downarrow\\
 \text{旗舰全称选择器}
 \end{array}
