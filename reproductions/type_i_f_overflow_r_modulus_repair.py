@@ -59,6 +59,15 @@ def admissible_gaps(modulus: int, prime: int) -> list[int]:
     ]
 
 
+def strip_support(value: int, primes: list[int]) -> int:
+    if value == 0:
+        return 0
+    for prime in primes:
+        while value % prime == 0:
+            value //= prime
+    return value
+
+
 def audit_orientation(
     row: dict[str, object], source_row: dict[str, object], orientation: str
 ) -> dict[str, object]:
@@ -118,6 +127,23 @@ def audit_orientation(
             second_x = (prime + second_gap) // 4
             if second_x * second_x % repair_divisor == 0:
                 second_repair_square_hits.append(second_gap)
+        balanced_t = original_R // gap
+        if (A + 1) % gap or (B - 1) % gap:
+            raise AssertionError("R-factor candidate did not balance both endpoints")
+        balanced_u = (A + 1) // gap
+        balanced_v = (B - 1) // gap
+        balanced_v_coprime_to_t = math.gcd(balanced_v, balanced_t) == 1
+        strict_balanced_reduction = balanced_t > 1 and balanced_v_coprime_to_t
+        balanced_pair_gcd = math.gcd(balanced_u, balanced_v)
+        balanced_u_support_residual = strip_support(balanced_u, [q for q, _nu in factorization])
+        balanced_v_support_residual = strip_support(balanced_v, [q for q, _nu in factorization])
+        if strict_balanced_reduction:
+            reduced_u = balanced_u // balanced_pair_gcd
+            reduced_v = balanced_v // balanced_pair_gcd
+            if (reduced_u + reduced_v) % balanced_t:
+                raise AssertionError("balanced reduction lost the smaller-modulus relation")
+            if (reduced_u * pow(reduced_v, -1, balanced_t) + 1) % balanced_t:
+                raise AssertionError("balanced reduction lost the target residue")
         candidates.append(
             {
                 "gap": gap,
@@ -131,6 +157,17 @@ def audit_orientation(
                 "second_repair_modulus": second_repair_modulus,
                 "second_repair_gaps": second_repair_gaps,
                 "second_repair_square_hits": second_repair_square_hits,
+                "balanced_t": balanced_t,
+                "balanced_pair_gcd": balanced_pair_gcd,
+                "balanced_v_coprime_to_t": balanced_v_coprime_to_t,
+                "strict_balanced_reduction": strict_balanced_reduction,
+                "balanced_u_support_residual": balanced_u_support_residual,
+                "balanced_v_support_residual": balanced_v_support_residual,
+                "balanced_support_preserved": (
+                    strict_balanced_reduction
+                    and balanced_u_support_residual == 1
+                    and balanced_v_support_residual == 1
+                ),
                 "repaired_R": repaired_R,
                 "repaired_K": repaired_K,
             }
@@ -161,6 +198,20 @@ def audit_orientation(
         ),
         "second_repair_square_hit_count": sum(
             len(candidate["second_repair_square_hits"]) for candidate in candidates
+        ),
+        "strict_balanced_reduction_count": sum(
+            int(candidate["strict_balanced_reduction"]) for candidate in candidates
+        ),
+        "balanced_support_preserved_count": sum(
+            int(candidate["balanced_support_preserved"]) for candidate in candidates
+        ),
+        "balanced_external_support_count": sum(
+            int(
+                candidate["strict_balanced_reduction"]
+                and candidate["balanced_u_support_residual"] > 1
+                and candidate["balanced_v_support_residual"] > 1
+            )
+            for candidate in candidates
         ),
         "candidates": candidates,
     }
@@ -256,6 +307,25 @@ def run() -> dict[str, object]:
             for row in records
             for candidate in row["candidates"]
         ),
+        "strict_balanced_reduction_count": sum(
+            int(candidate["strict_balanced_reduction"])
+            for row in records
+            for candidate in row["candidates"]
+        ),
+        "balanced_support_preserved_count": sum(
+            int(candidate["balanced_support_preserved"])
+            for row in records
+            for candidate in row["candidates"]
+        ),
+        "balanced_external_support_count": sum(
+            int(
+                candidate["strict_balanced_reduction"]
+                and candidate["balanced_u_support_residual"] > 1
+                and candidate["balanced_v_support_residual"] > 1
+            )
+            for row in records
+            for candidate in row["candidates"]
+        ),
         "by_orientation": {
             orientation: {
                 "record_count": len(rows),
@@ -283,6 +353,25 @@ def run() -> dict[str, object]:
                 ),
                 "second_repair_square_hit_count": sum(
                     len(candidate["second_repair_square_hits"])
+                    for row in rows
+                    for candidate in row["candidates"]
+                ),
+                "strict_balanced_reduction_count": sum(
+                    int(candidate["strict_balanced_reduction"])
+                    for row in rows
+                    for candidate in row["candidates"]
+                ),
+                "balanced_support_preserved_count": sum(
+                    int(candidate["balanced_support_preserved"])
+                    for row in rows
+                    for candidate in row["candidates"]
+                ),
+                "balanced_external_support_count": sum(
+                    int(
+                        candidate["strict_balanced_reduction"]
+                        and candidate["balanced_u_support_residual"] > 1
+                        and candidate["balanced_v_support_residual"] > 1
+                    )
                     for row in rows
                     for candidate in row["candidates"]
                 ),
@@ -319,6 +408,9 @@ def main() -> int:
                     "second_repair_modulus_nontrivial_count",
                     "second_repair_gap_candidate_count",
                     "second_repair_square_hit_count",
+                    "strict_balanced_reduction_count",
+                    "balanced_support_preserved_count",
+                    "balanced_external_support_count",
                     "by_orientation",
                 )
             },
