@@ -1,0 +1,5057 @@
+{
+  "arithmetic": "For exactly the two residual frozen carrier states, separate the old zero-heavy-capacity boundary from the block-height-compatible unique-block capacity-one surrogate; exhaust both minimum faces, check shell counts by generating functions and the h=0/h=1 target fibers by independent MITM, exhaust shared-gap and three direct subfactor Type II menus, then factor every overloaded-q-divisible label/modulus difference and verify two same-gap Type I/II exits.",
+  "scope_note": "Completeness is limited to the two stated faces, complete linear-source spectra for these primes, and explicitly defined finite menus. q-divisibility of a label/modulus difference is only a congruence candidate and does not construct a carrier migration edge or prove a general overflow-to-carrier injection. The two independently verified dual normal-form exits solve these instances but do not imply a general theorem.",
+  "inputs": [
+    {
+      "file": "type-i-f-overflow-four-hard-core-collision-selector-results.json",
+      "sha256": "b632b02ebc13d7d6b73fee29269eec15f3c9a1c1736d171edd0935e3aa229260"
+    },
+    {
+      "file": "type-i-f-overflow-lower-modulus-omega-carrier-boundary-results.json",
+      "sha256": "695b20832c683222b3021d444f5bdcb04f706ab10aeeec9801a3ad85fe85c0fb"
+    },
+    {
+      "file": "type_i_f_overflow_lower_modulus_min_overflow_shared_gap.py",
+      "sha256": "5557ec9d3cc989a92e22d0e624f306c92d66184a854feb6ff45b4495ace10352"
+    },
+    {
+      "file": "type_i_f_overflow_lower_modulus_shared_gap_type_ii.py",
+      "sha256": "eb9905b8fb7428d0d8ce04fdf78f31e9ef937abb26b4fdc43bf93a39f7dc8802"
+    },
+    {
+      "file": "type_i_global_linear_b1_failure_general_b_profile_500m.py",
+      "sha256": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d"
+    }
+  ],
+  "residual_state_count": 2,
+  "zero_capacity_omega_by_prime": {
+    "99151369": 12,
+    "487572409": 15
+  },
+  "capacity_aware_omega_by_prime": {
+    "99151369": 12,
+    "487572409": 12
+  },
+  "complete_source_heavy_q_block_count": 2,
+  "minimum_face_vector_count": 8,
+  "minimum_inverse_pair_count": 4,
+  "shared_gap_inverse_pair_check_count": 4,
+  "distinct_state_scoped_shared_gap_check_count": 40,
+  "shared_gap_type_ii_hit_gap_count": 0,
+  "direct_subfactor_pair_counts": {
+    "oriented_subfactors": 1827,
+    "all_coordinate_repartitions": 11782,
+    "pure_two_coordinate_pairs": 275
+  },
+  "direct_subfactor_type_ii_candidate_count": 0,
+  "capacity_aware_pattern_count": 4,
+  "pattern_count_resolved_by_overloaded_q_difference_menu": 4,
+  "overloaded_q_difference_menu_count": 5,
+  "overloaded_q_difference_candidate_edge_count": 49,
+  "distinct_state_scoped_difference_candidate_gap_check_count": 97,
+  "distinct_state_scoped_difference_type_ii_hit_gap_count": 11,
+  "same_gap_dual_normal_form_exit_count": 2,
+  "recursive_prime_certificate_count": 90,
+  "records": [
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "gap": 3,
+      "lower_modulus": 27337,
+      "K": 2032875730765,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1409,
+          1
+        ],
+        [
+          115561,
+          1
+        ]
+      ],
+      "capacity_aware_constraint": {
+        "heavy_q": 115561,
+        "heavy_coordinate_index": 4,
+        "heavy_coordinate_overflow_capacity": 1,
+        "condition": "overflow_4(z) <= 1, equivalently abs(z_4) <= 2",
+        "unit_cost": "sum_i max(abs(z_i)-nu_i,0), subject to at most one overflow layer on the heavy coordinate",
+        "frozen_local_isolation_evidence": {
+          "q": 115561,
+          "block_height_sum": 1,
+          "label_difference_height_sum": 0,
+          "modulus_difference_height_sum": 0,
+          "reduced_endpoint_height": 0
+        },
+        "complete_source_q_block_count": 1,
+        "complete_source_q_blocks": [
+          {
+            "label": 31,
+            "R": 82011,
+            "block": 2542342,
+            "q": 115561,
+            "q_valuation": 1,
+            "block_divided_by_q": 22
+          }
+        ]
+      },
+      "unconstrained_omega": 9,
+      "capacity_aware_omega": 12,
+      "capacity_aware_price_increase_over_unconstrained_omega": 3,
+      "heavy_coordinate_capacity_curve_to_first_unconstrained_omega": [
+        {
+          "heavy_coordinate_overflow_capacity": 0,
+          "omega": 12,
+          "minimum_face_vector_count": 4,
+          "minimum_face_vectors_sha256": "73e8ab03457acc4fae333eb0635a600643735d510729248f67fa058b3f1cc34b",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 0,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 137907,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 648,
+                "generating_function_coefficient": 648,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1296,
+                "generating_function_coefficient": 1296,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 2232,
+                "generating_function_coefficient": 2232,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 3504,
+                "generating_function_coefficient": 3504,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 5160,
+                "generating_function_coefficient": 5160,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 7248,
+                "generating_function_coefficient": 7248,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 9816,
+                "generating_function_coefficient": 9816,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 12912,
+                "generating_function_coefficient": 12912,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 16584,
+                "generating_function_coefficient": 16584,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 20880,
+                "generating_function_coefficient": 20880,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 25848,
+                "generating_function_coefficient": 25848,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 31536,
+                "generating_function_coefficient": 31536,
+                "target_vector_count": 4
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 1,
+          "omega": 12,
+          "minimum_face_vector_count": 6,
+          "minimum_face_vectors_sha256": "02633233ef66fd51630846bf31b2945168a187f367e63abfb375422efc7ce950",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 1,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 208821,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1728,
+                "generating_function_coefficient": 1728,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3096,
+                "generating_function_coefficient": 3096,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 4992,
+                "generating_function_coefficient": 4992,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 7496,
+                "generating_function_coefficient": 7496,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 10688,
+                "generating_function_coefficient": 10688,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 14648,
+                "generating_function_coefficient": 14648,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 19456,
+                "generating_function_coefficient": 19456,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 25192,
+                "generating_function_coefficient": 25192,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 31936,
+                "generating_function_coefficient": 31936,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 39768,
+                "generating_function_coefficient": 39768,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 48768,
+                "generating_function_coefficient": 48768,
+                "target_vector_count": 6
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 2,
+          "omega": 12,
+          "minimum_face_vector_count": 6,
+          "minimum_face_vectors_sha256": "02633233ef66fd51630846bf31b2945168a187f367e63abfb375422efc7ce950",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 2,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 262503,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3528,
+                "generating_function_coefficient": 3528,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 5856,
+                "generating_function_coefficient": 5856,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 8984,
+                "generating_function_coefficient": 8984,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 13024,
+                "generating_function_coefficient": 13024,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 18088,
+                "generating_function_coefficient": 18088,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 24288,
+                "generating_function_coefficient": 24288,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 31736,
+                "generating_function_coefficient": 31736,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 40544,
+                "generating_function_coefficient": 40544,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 50824,
+                "generating_function_coefficient": 50824,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 62688,
+                "generating_function_coefficient": 62688,
+                "target_vector_count": 6
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 3,
+          "omega": 12,
+          "minimum_face_vector_count": 6,
+          "minimum_face_vectors_sha256": "02633233ef66fd51630846bf31b2945168a187f367e63abfb375422efc7ce950",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 3,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 302265,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6288,
+                "generating_function_coefficient": 6288,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 9848,
+                "generating_function_coefficient": 9848,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 14512,
+                "generating_function_coefficient": 14512,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 20424,
+                "generating_function_coefficient": 20424,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 27728,
+                "generating_function_coefficient": 27728,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 36568,
+                "generating_function_coefficient": 36568,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 47088,
+                "generating_function_coefficient": 47088,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 59432,
+                "generating_function_coefficient": 59432,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 73744,
+                "generating_function_coefficient": 73744,
+                "target_vector_count": 6
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 4,
+          "omega": 12,
+          "minimum_face_vector_count": 6,
+          "minimum_face_vectors_sha256": "02633233ef66fd51630846bf31b2945168a187f367e63abfb375422efc7ce950",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 4,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 330971,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6450,
+                "generating_function_coefficient": 6450,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 10280,
+                "generating_function_coefficient": 10280,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 15376,
+                "generating_function_coefficient": 15376,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 21912,
+                "generating_function_coefficient": 21912,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 30064,
+                "generating_function_coefficient": 30064,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 40008,
+                "generating_function_coefficient": 40008,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 51920,
+                "generating_function_coefficient": 51920,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 65976,
+                "generating_function_coefficient": 65976,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 82352,
+                "generating_function_coefficient": 82352,
+                "target_vector_count": 6
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 5,
+          "omega": 12,
+          "minimum_face_vector_count": 8,
+          "minimum_face_vectors_sha256": "e82d4ab24fa0d3cfca90c2df072d6e1034fae8ddd1131acac22e8d35b1b1f56d",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 5,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 351069,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6450,
+                "generating_function_coefficient": 6450,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 10442,
+                "generating_function_coefficient": 10442,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 15808,
+                "generating_function_coefficient": 15808,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 22776,
+                "generating_function_coefficient": 22776,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 31552,
+                "generating_function_coefficient": 31552,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 42344,
+                "generating_function_coefficient": 42344,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 55360,
+                "generating_function_coefficient": 55360,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 70808,
+                "generating_function_coefficient": 70808,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 88896,
+                "generating_function_coefficient": 88896,
+                "target_vector_count": 8
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 6,
+          "omega": 10,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "4660a9977e5debd1959c4c80d543ca3880b0825bfee37a29dd469dd6665d8272",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 6,
+            "valid_upper_bound": 10,
+            "enumerated_through_cost": 10,
+            "enumerated_vector_count": 196647,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6450,
+                "generating_function_coefficient": 6450,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 10442,
+                "generating_function_coefficient": 10442,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 15970,
+                "generating_function_coefficient": 15970,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 23208,
+                "generating_function_coefficient": 23208,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 32416,
+                "generating_function_coefficient": 32416,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 43832,
+                "generating_function_coefficient": 43832,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 57696,
+                "generating_function_coefficient": 57696,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 7,
+          "omega": 9,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "1a77073f247d6bc0c1710940fc7f77082c6cd260095e57d042774c5a261a7be5",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 7,
+            "valid_upper_bound": 9,
+            "enumerated_through_cost": 9,
+            "enumerated_vector_count": 140409,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6450,
+                "generating_function_coefficient": 6450,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 10442,
+                "generating_function_coefficient": 10442,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 15970,
+                "generating_function_coefficient": 15970,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 23370,
+                "generating_function_coefficient": 23370,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 32848,
+                "generating_function_coefficient": 32848,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 44696,
+                "generating_function_coefficient": 44696,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        }
+      ],
+      "zero_capacity_boundary": {
+        "heavy_coordinate_overflow_capacity": 0,
+        "condition": "overflow_4(z) = 0, equivalently abs(z_4) <= 1",
+        "omega": 12,
+        "minimum_face_vector_count": 4,
+        "minimum_inverse_pair_count": 2,
+        "minimum_overflow_pattern_count": 2,
+        "minimum_face_vectors": [
+          [
+            -1,
+            -6,
+            -1,
+            -8,
+            -1
+          ],
+          [
+            0,
+            -1,
+            -12,
+            -2,
+            -1
+          ],
+          [
+            0,
+            1,
+            12,
+            2,
+            1
+          ],
+          [
+            1,
+            6,
+            1,
+            8,
+            1
+          ]
+        ],
+        "minimum_face_vectors_sha256": "73e8ab03457acc4fae333eb0635a600643735d510729248f67fa058b3f1cc34b",
+        "minimum_overflow_patterns": [
+          {
+            "overflow_vector": [
+              0,
+              0,
+              11,
+              1,
+              0
+            ],
+            "exponent_vector_count": 2
+          },
+          {
+            "overflow_vector": [
+              0,
+              5,
+              0,
+              7,
+              0
+            ],
+            "exponent_vector_count": 2
+          }
+        ],
+        "direct_shell_and_generating_function_audit": {
+          "method": "ascending_exact_shell_DFS",
+          "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+          "constrained_coordinate_index": 4,
+          "constrained_overflow_capacity": 0,
+          "valid_upper_bound": 12,
+          "enumerated_through_cost": 12,
+          "enumerated_vector_count": 137907,
+          "shell_audit": [
+            {
+              "cost": 0,
+              "enumerated_vector_count": 243,
+              "generating_function_coefficient": 243,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 1,
+              "enumerated_vector_count": 648,
+              "generating_function_coefficient": 648,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 2,
+              "enumerated_vector_count": 1296,
+              "generating_function_coefficient": 1296,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 3,
+              "enumerated_vector_count": 2232,
+              "generating_function_coefficient": 2232,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 4,
+              "enumerated_vector_count": 3504,
+              "generating_function_coefficient": 3504,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 5,
+              "enumerated_vector_count": 5160,
+              "generating_function_coefficient": 5160,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 6,
+              "enumerated_vector_count": 7248,
+              "generating_function_coefficient": 7248,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 7,
+              "enumerated_vector_count": 9816,
+              "generating_function_coefficient": 9816,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 8,
+              "enumerated_vector_count": 12912,
+              "generating_function_coefficient": 12912,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 9,
+              "enumerated_vector_count": 16584,
+              "generating_function_coefficient": 16584,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 10,
+              "enumerated_vector_count": 20880,
+              "generating_function_coefficient": 20880,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 11,
+              "enumerated_vector_count": 25848,
+              "generating_function_coefficient": 25848,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 12,
+              "enumerated_vector_count": 31536,
+              "generating_function_coefficient": 31536,
+              "target_vector_count": 4
+            }
+          ]
+        },
+        "independent_mitm_audit": {
+          "method": "finite_box_meet_in_the_middle",
+          "independence_note": "Each half is enumerated by Cartesian exponent ranges and filtered by cost; it does not call the exact-shell DFS.",
+          "split_index": 2,
+          "left_side_vector_count": 417,
+          "right_side_vector_count": 1251,
+          "target_count_by_cost": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "minimum_target_vector_count": 4,
+          "reconstructed_minimum_vectors_sha256": "73e8ab03457acc4fae333eb0635a600643735d510729248f67fa058b3f1cc34b"
+        },
+        "finite_shared_gap_and_direct_menu_audit": {
+          "minimum_inverse_pair_count": 2,
+          "shared_gap_inverse_pair_profiles": [
+            {
+              "canonical_vector": [
+                -1,
+                -6,
+                -1,
+                -8,
+                -1
+              ],
+              "inverse_vector": [
+                1,
+                6,
+                1,
+                8,
+                1
+              ],
+              "a": 1,
+              "b": 3609534595730274380792953081964110917535,
+              "sum": 3609534595730274380792953081964110917536,
+              "sum_factorization": [
+                [
+                  2,
+                  5
+                ],
+                [
+                  7,
+                  2
+                ],
+                [
+                  53,
+                  1
+                ],
+                [
+                  27337,
+                  1
+                ],
+                [
+                  1588833645477252714300036356657,
+                  1
+                ]
+              ],
+              "candidate_gap_count": 4,
+              "candidate_gaps": [
+                7,
+                371,
+                191359,
+                10142027
+              ],
+              "type_ii_hit_gap_count": 0,
+              "type_ii_hit_profiles": []
+            },
+            {
+              "canonical_vector": [
+                0,
+                -1,
+                -12,
+                -2,
+                -1
+              ],
+              "inverse_vector": [
+                0,
+                1,
+                12,
+                2,
+                1
+              ],
+              "a": 1,
+              "b": 47242867381727287887783143509766234844371,
+              "sum": 47242867381727287887783143509766234844372,
+              "sum_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  27337,
+                  1
+                ],
+                [
+                  144013813335184572459130919967340463,
+                  1
+                ]
+              ],
+              "candidate_gap_count": 2,
+              "candidate_gaps": [
+                3,
+                82011
+              ],
+              "type_ii_hit_gap_count": 0,
+              "type_ii_hit_profiles": []
+            }
+          ],
+          "shared_gap_candidate_count": 6,
+          "shared_gap_candidate_gaps": [
+            3,
+            7,
+            371,
+            82011,
+            191359,
+            10142027
+          ],
+          "shared_gap_type_ii_hit_gaps": [],
+          "subfactor_menu_profiles": [
+            {
+              "menu": "oriented_subfactors",
+              "finite_definition": "choose arbitrary prime-power subfactors from the positive and negative sides of a minimum vector",
+              "coprime_pair_count": 636,
+              "pair_set_sha256": "93be301ec721f613f8a4543c9ecf6d871cab0fb73fd91339988e4cc4f62cbe0d",
+              "direct_type_ii_normal_form_candidate_count": 0,
+              "direct_type_ii_normal_form_candidates": []
+            },
+            {
+              "menu": "all_coordinate_repartitions",
+              "finite_definition": "for each active coordinate choose one side and any power no larger than its absolute minimum-vector exponent, or omit it",
+              "coprime_pair_count": 3479,
+              "pair_set_sha256": "683b09abdd77395641a294b5de6e935c400141d58f5ee52ec2aa29994b8a7c7f",
+              "direct_type_ii_normal_form_candidate_count": 0,
+              "direct_type_ii_normal_form_candidates": []
+            },
+            {
+              "menu": "pure_two_coordinate_pairs",
+              "finite_definition": "choose two active coordinates and one positive power from each within its minimum-vector exponent budget",
+              "coprime_pair_count": 137,
+              "pair_set_sha256": "bc6fb16db154ebfec220dc3870d83d3736bed4485413a36b16c3a59311f32541",
+              "direct_type_ii_normal_form_candidate_count": 0,
+              "direct_type_ii_normal_form_candidates": []
+            }
+          ],
+          "direct_subfactor_type_ii_candidate_count": 0
+        },
+        "scope_note": "Exact boundary for the older no-heavy-overflow model; it is not the block-height-compatible one-layer surrogate."
+      },
+      "minimum_face_vector_count": 6,
+      "minimum_inverse_pair_count": 3,
+      "minimum_overflow_pattern_count": 3,
+      "minimum_face_vectors": [
+        [
+          -1,
+          -6,
+          -1,
+          -8,
+          -1
+        ],
+        [
+          -1,
+          2,
+          11,
+          1,
+          2
+        ],
+        [
+          0,
+          -1,
+          -12,
+          -2,
+          -1
+        ],
+        [
+          0,
+          1,
+          12,
+          2,
+          1
+        ],
+        [
+          1,
+          -2,
+          -11,
+          -1,
+          -2
+        ],
+        [
+          1,
+          6,
+          1,
+          8,
+          1
+        ]
+      ],
+      "minimum_face_vectors_sha256": "02633233ef66fd51630846bf31b2945168a187f367e63abfb375422efc7ce950",
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            0,
+            0,
+            11,
+            1,
+            0
+          ],
+          "support_indices": [
+            2,
+            3
+          ],
+          "support_primes": [
+            227,
+            1409
+          ],
+          "exponent_vector_count": 2,
+          "overloaded_coordinates": [
+            {
+              "coordinate_index": 2,
+              "q": 227,
+              "demand": 11,
+              "three_channel_sum": 2,
+              "overload": 9
+            }
+          ],
+          "difference_menu_candidate_gap_count": 2,
+          "difference_menu_candidate_gaps": [
+            71,
+            227
+          ],
+          "difference_menu_type_ii_hit_gap_count": 1,
+          "difference_menu_type_ii_hit_gaps": [
+            71
+          ],
+          "resolved_by_overloaded_q_difference_menu": true
+        },
+        {
+          "overflow_vector": [
+            0,
+            1,
+            10,
+            0,
+            1
+          ],
+          "support_indices": [
+            1,
+            2,
+            4
+          ],
+          "support_primes": [
+            11,
+            227,
+            115561
+          ],
+          "exponent_vector_count": 2,
+          "overloaded_coordinates": [
+            {
+              "coordinate_index": 2,
+              "q": 227,
+              "demand": 10,
+              "three_channel_sum": 2,
+              "overload": 8
+            }
+          ],
+          "difference_menu_candidate_gap_count": 2,
+          "difference_menu_candidate_gaps": [
+            71,
+            227
+          ],
+          "difference_menu_type_ii_hit_gap_count": 1,
+          "difference_menu_type_ii_hit_gaps": [
+            71
+          ],
+          "resolved_by_overloaded_q_difference_menu": true
+        },
+        {
+          "overflow_vector": [
+            0,
+            5,
+            0,
+            7,
+            0
+          ],
+          "support_indices": [
+            1,
+            3
+          ],
+          "support_primes": [
+            11,
+            1409
+          ],
+          "exponent_vector_count": 2,
+          "overloaded_coordinates": [
+            {
+              "coordinate_index": 1,
+              "q": 11,
+              "demand": 5,
+              "three_channel_sum": 4,
+              "overload": 1
+            },
+            {
+              "coordinate_index": 3,
+              "q": 1409,
+              "demand": 7,
+              "three_channel_sum": 1,
+              "overload": 6
+            }
+          ],
+          "difference_menu_candidate_gap_count": 70,
+          "difference_menu_candidate_gaps": [
+            3,
+            7,
+            11,
+            15,
+            19,
+            23,
+            27,
+            31,
+            35,
+            55,
+            59,
+            87,
+            95,
+            99,
+            143,
+            155,
+            187,
+            207,
+            231,
+            251,
+            299,
+            311,
+            319,
+            323,
+            371,
+            435,
+            495,
+            539,
+            571,
+            583,
+            759,
+            803,
+            891,
+            911,
+            919,
+            931,
+            935,
+            1023,
+            1155,
+            1243,
+            1463,
+            1555,
+            1595,
+            1615,
+            1839,
+            1855,
+            1863,
+            2871,
+            2915,
+            4595,
+            5115,
+            5951,
+            6531,
+            6743,
+            6831,
+            7139,
+            10263,
+            14355,
+            18843,
+            23947,
+            29755,
+            30327,
+            32655,
+            51315,
+            74591,
+            101167,
+            119735,
+            151635,
+            372955,
+            505835
+          ],
+          "difference_menu_type_ii_hit_gap_count": 7,
+          "difference_menu_type_ii_hit_gaps": [
+            19,
+            55,
+            87,
+            95,
+            311,
+            435,
+            803
+          ],
+          "resolved_by_overloaded_q_difference_menu": true
+        }
+      ],
+      "direct_shell_and_generating_function_audit": {
+        "method": "ascending_exact_shell_DFS",
+        "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+        "constrained_coordinate_index": 4,
+        "constrained_overflow_capacity": 1,
+        "valid_upper_bound": 12,
+        "enumerated_through_cost": 12,
+        "enumerated_vector_count": 208821,
+        "shell_audit": [
+          {
+            "cost": 0,
+            "enumerated_vector_count": 243,
+            "generating_function_coefficient": 243,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 1,
+            "enumerated_vector_count": 810,
+            "generating_function_coefficient": 810,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 2,
+            "enumerated_vector_count": 1728,
+            "generating_function_coefficient": 1728,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 3,
+            "enumerated_vector_count": 3096,
+            "generating_function_coefficient": 3096,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 4,
+            "enumerated_vector_count": 4992,
+            "generating_function_coefficient": 4992,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 5,
+            "enumerated_vector_count": 7496,
+            "generating_function_coefficient": 7496,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 6,
+            "enumerated_vector_count": 10688,
+            "generating_function_coefficient": 10688,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 7,
+            "enumerated_vector_count": 14648,
+            "generating_function_coefficient": 14648,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 8,
+            "enumerated_vector_count": 19456,
+            "generating_function_coefficient": 19456,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 9,
+            "enumerated_vector_count": 25192,
+            "generating_function_coefficient": 25192,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 10,
+            "enumerated_vector_count": 31936,
+            "generating_function_coefficient": 31936,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 11,
+            "enumerated_vector_count": 39768,
+            "generating_function_coefficient": 39768,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 12,
+            "enumerated_vector_count": 48768,
+            "generating_function_coefficient": 48768,
+            "target_vector_count": 6
+          }
+        ]
+      },
+      "independent_mitm_audit": {
+        "method": "finite_box_meet_in_the_middle",
+        "independence_note": "Each half is enumerated by Cartesian exponent ranges and filtered by cost; it does not call the exact-shell DFS.",
+        "split_index": 2,
+        "left_side_vector_count": 417,
+        "right_side_vector_count": 1973,
+        "target_count_by_cost": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ],
+        "minimum_target_vector_count": 6,
+        "reconstructed_minimum_vectors_sha256": "02633233ef66fd51630846bf31b2945168a187f367e63abfb375422efc7ce950"
+      },
+      "shared_gap_inverse_pair_profiles": [
+        {
+          "canonical_vector": [
+            -1,
+            -6,
+            -1,
+            -8,
+            -1
+          ],
+          "inverse_vector": [
+            1,
+            6,
+            1,
+            8,
+            1
+          ],
+          "a": 1,
+          "b": 3609534595730274380792953081964110917535,
+          "sum": 3609534595730274380792953081964110917536,
+          "sum_factorization": [
+            [
+              2,
+              5
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              53,
+              1
+            ],
+            [
+              27337,
+              1
+            ],
+            [
+              1588833645477252714300036356657,
+              1
+            ]
+          ],
+          "candidate_gap_count": 4,
+          "candidate_gaps": [
+            7,
+            371,
+            191359,
+            10142027
+          ],
+          "type_ii_hit_gap_count": 0,
+          "type_ii_hit_profiles": []
+        },
+        {
+          "canonical_vector": [
+            -1,
+            2,
+            11,
+            1,
+            2
+          ],
+          "inverse_vector": [
+            1,
+            -2,
+            -11,
+            -1,
+            -2
+          ],
+          "a": 187760129102396045158409551931582227884787,
+          "b": 5,
+          "sum": 187760129102396045158409551931582227884792,
+          "sum_factorization": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              15401,
+              1
+            ],
+            [
+              27337,
+              1
+            ],
+            [
+              30113,
+              1
+            ],
+            [
+              25965521,
+              1
+            ],
+            [
+              323149817,
+              1
+            ],
+            [
+              73542329149,
+              1
+            ]
+          ],
+          "candidate_gap_count": 5,
+          "candidate_gaps": [
+            3,
+            46203,
+            82011,
+            90339,
+            77896563
+          ],
+          "type_ii_hit_gap_count": 0,
+          "type_ii_hit_profiles": []
+        },
+        {
+          "canonical_vector": [
+            0,
+            -1,
+            -12,
+            -2,
+            -1
+          ],
+          "inverse_vector": [
+            0,
+            1,
+            12,
+            2,
+            1
+          ],
+          "a": 1,
+          "b": 47242867381727287887783143509766234844371,
+          "sum": 47242867381727287887783143509766234844372,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              27337,
+              1
+            ],
+            [
+              144013813335184572459130919967340463,
+              1
+            ]
+          ],
+          "candidate_gap_count": 2,
+          "candidate_gaps": [
+            3,
+            82011
+          ],
+          "type_ii_hit_gap_count": 0,
+          "type_ii_hit_profiles": []
+        }
+      ],
+      "shared_gap_candidate_count": 9,
+      "shared_gap_candidate_gaps": [
+        3,
+        7,
+        371,
+        46203,
+        82011,
+        90339,
+        191359,
+        10142027,
+        77896563
+      ],
+      "shared_gap_type_ii_hit_gap_count": 0,
+      "subfactor_menu_profiles": [
+        {
+          "menu": "oriented_subfactors",
+          "finite_definition": "choose arbitrary prime-power subfactors from the positive and negative sides of a minimum vector",
+          "coprime_pair_count": 963,
+          "pair_set_sha256": "b3bfa6cf41684fb19916372e94afb25a7a6df8fa9e404add5da6afcce4b5b226",
+          "direct_type_ii_normal_form_candidate_count": 0,
+          "direct_type_ii_normal_form_candidates": []
+        },
+        {
+          "menu": "all_coordinate_repartitions",
+          "finite_definition": "for each active coordinate choose one side and any power no larger than its absolute minimum-vector exponent, or omit it",
+          "coprime_pair_count": 5594,
+          "pair_set_sha256": "1f8c49ecc8bda10372195bddbf80bbb5c8b0b36128394fdcbd0b9aee7e8744c2",
+          "direct_type_ii_normal_form_candidate_count": 0,
+          "direct_type_ii_normal_form_candidates": []
+        },
+        {
+          "menu": "pure_two_coordinate_pairs",
+          "finite_definition": "choose two active coordinates and one positive power from each within its minimum-vector exponent budget",
+          "coprime_pair_count": 172,
+          "pair_set_sha256": "5b2d2a35b2b032669c955a3b2e0ab58cc106565481fe10e7fe038e57572e6fcf",
+          "direct_type_ii_normal_form_candidate_count": 0,
+          "direct_type_ii_normal_form_candidates": []
+        }
+      ],
+      "complete_linear_source_spectrum": {
+        "least_coordinate_bound": 5748,
+        "source_modulus_count": 45,
+        "directed_source_state_count": 85,
+        "source_label_count": 90
+      },
+      "reconstructed_three_channel_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7
+        },
+        {
+          "q": 11,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 2,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 4
+        },
+        {
+          "q": 227,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 2
+        },
+        {
+          "q": 1409,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1
+        },
+        {
+          "q": 115561,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1
+        }
+      ],
+      "overloaded_q_difference_menus": [
+        {
+          "q": 11,
+          "candidate_semantics": "q divides the label or modulus difference. This is a necessary congruence candidate, not a constructed carrier migration edge.",
+          "candidate_edge_count": 29,
+          "label_difference_edge_count": 16,
+          "modulus_difference_edge_count": 13,
+          "candidate_edges": [
+            {
+              "edge_id": "label:q=11:31:1637",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 1637,
+              "difference": 1606,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  73,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                803
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:174",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 174,
+              "difference": 143,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  11,
+                  1
+                ],
+                [
+                  13,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                143
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:295",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 295,
+              "difference": 264,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:3177",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 3177,
+              "difference": 3146,
+              "q_valuation": 2,
+              "difference_factorization": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  11,
+                  2
+                ],
+                [
+                  13,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                143
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:64",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 64,
+              "difference": 33,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:7170",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 7170,
+              "difference": 7139,
+              "q_valuation": 2,
+              "difference_factorization": [
+                [
+                  11,
+                  2
+                ],
+                [
+                  59,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                59,
+                7139
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:9",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 9,
+              "difference": 22,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11
+              ]
+            },
+            {
+              "edge_id": "label:q=11:31:97",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 31,
+              "other_label": 97,
+              "difference": 66,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:10060",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 10060,
+              "difference": 10021,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  11,
+                  1
+                ],
+                [
+                  911,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                911
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:1084",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 1084,
+              "difference": 1045,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  19,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                19,
+                55,
+                95
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:160",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 160,
+              "difference": 121,
+              "q_valuation": 2,
+              "difference_factorization": [
+                [
+                  11,
+                  2
+                ]
+              ],
+              "candidate_gaps": [
+                11
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:204",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 204,
+              "difference": 165,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                15,
+                55
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:359244",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 359244,
+              "difference": 359205,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  311,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                7,
+                11,
+                15,
+                35,
+                55,
+                231,
+                311,
+                1155,
+                1555,
+                6531,
+                10263,
+                23947,
+                32655,
+                51315,
+                119735
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:505874",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 505874,
+              "difference": 505835,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  17,
+                  1
+                ],
+                [
+                  541,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                55,
+                187,
+                935,
+                5951,
+                29755,
+                101167,
+                505835
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:6",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 6,
+              "difference": 33,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11
+              ]
+            },
+            {
+              "edge_id": "label:q=11:39:83",
+              "kind": "label_difference",
+              "q": 11,
+              "current_label": 39,
+              "other_label": 83,
+              "difference": 44,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:1095",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 1095,
+              "difference": 80916,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  613,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                1839,
+                6743
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:10951",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 10951,
+              "difference": 71060,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  17,
+                  1
+                ],
+                [
+                  19,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                19,
+                55,
+                95,
+                187,
+                323,
+                935,
+                1615
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:157383",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 157383,
+              "difference": 75372,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  571,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                571,
+                18843
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:1573831",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 1573831,
+              "difference": 1491820,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  6781,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                55,
+                74591,
+                372955
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:170363",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 170363,
+              "difference": 88352,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  5
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  251,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                251
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:171",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 171,
+              "difference": 81840,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                15,
+                31,
+                55,
+                155,
+                1023,
+                5115
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:2459",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 2459,
+              "difference": 79552,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  6
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  113,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                1243
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:24591",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 24591,
+              "difference": 57420,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  2
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  29,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                15,
+                55,
+                87,
+                99,
+                319,
+                435,
+                495,
+                1595,
+                2871,
+                14355
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:39",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 39,
+              "difference": 81972,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  4
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  23,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                23,
+                27,
+                99,
+                207,
+                759,
+                891,
+                1863,
+                6831
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:391",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 391,
+              "difference": 81620,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  53,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                7,
+                11,
+                35,
+                55,
+                371,
+                583,
+                1855,
+                2915
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:68855",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 68855,
+              "difference": 13156,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  13,
+                  1
+                ],
+                [
+                  23,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                23,
+                143,
+                299
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:688551",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 688551,
+              "difference": 606540,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  919,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                11,
+                15,
+                55,
+                919,
+                4595,
+                30327,
+                151635
+              ]
+            },
+            {
+              "edge_id": "modulus:q=11:82011:83",
+              "kind": "modulus_difference",
+              "q": 11,
+              "current_R": 82011,
+              "other_R": 83,
+              "difference": 81928,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  7,
+                  2
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  19,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                7,
+                11,
+                19,
+                539,
+                931,
+                1463
+              ]
+            }
+          ],
+          "candidate_gap_count": 70,
+          "candidate_gaps": [
+            3,
+            7,
+            11,
+            15,
+            19,
+            23,
+            27,
+            31,
+            35,
+            55,
+            59,
+            87,
+            95,
+            99,
+            143,
+            155,
+            187,
+            207,
+            231,
+            251,
+            299,
+            311,
+            319,
+            323,
+            371,
+            435,
+            495,
+            539,
+            571,
+            583,
+            759,
+            803,
+            891,
+            911,
+            919,
+            931,
+            935,
+            1023,
+            1155,
+            1243,
+            1463,
+            1555,
+            1595,
+            1615,
+            1839,
+            1855,
+            1863,
+            2871,
+            2915,
+            4595,
+            5115,
+            5951,
+            6531,
+            6743,
+            6831,
+            7139,
+            10263,
+            14355,
+            18843,
+            23947,
+            29755,
+            30327,
+            32655,
+            51315,
+            74591,
+            101167,
+            119735,
+            151635,
+            372955,
+            505835
+          ],
+          "type_ii_hit_gap_count": 7,
+          "type_ii_hit_gaps": [
+            19,
+            55,
+            87,
+            95,
+            311,
+            435,
+            803
+          ],
+          "type_ii_hit_profiles": [
+            {
+              "gap": 19,
+              "generating_edge_ids": [
+                "label:q=11:39:1084",
+                "modulus:q=11:82011:10951",
+                "modulus:q=11:82011:83"
+              ],
+              "type_ii_certificate_count": 3,
+              "type_ii_certificates": [
+                {
+                  "gap": 19,
+                  "x": 24787847,
+                  "divisor": 47,
+                  "A": 1,
+                  "B": 527401,
+                  "C": 47,
+                  "y": 129355453932994,
+                  "z": 68222195759714968594
+                },
+                {
+                  "gap": 19,
+                  "x": 24787847,
+                  "divisor": 8939,
+                  "A": 1,
+                  "B": 2773,
+                  "C": 8939,
+                  "y": 129401856773686,
+                  "z": 358831348833431278
+                },
+                {
+                  "gap": 19,
+                  "x": 24787847,
+                  "divisor": 24367,
+                  "A": 59,
+                  "B": 60019,
+                  "C": 7,
+                  "y": 129482367685314,
+                  "z": 131718681798387474
+                }
+              ]
+            },
+            {
+              "gap": 55,
+              "generating_edge_ids": [
+                "label:q=11:39:1084",
+                "label:q=11:39:204",
+                "label:q=11:39:359244",
+                "label:q=11:39:505874",
+                "modulus:q=11:82011:10951",
+                "modulus:q=11:82011:1573831",
+                "modulus:q=11:82011:171",
+                "modulus:q=11:82011:24591",
+                "modulus:q=11:82011:391",
+                "modulus:q=11:82011:688551"
+              ],
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 55,
+                  "x": 24787856,
+                  "divisor": 5458624,
+                  "A": 268,
+                  "B": 1217,
+                  "C": 76,
+                  "y": 54526907262384,
+                  "z": 247609127381796
+                }
+              ]
+            },
+            {
+              "gap": 87,
+              "generating_edge_ids": [
+                "modulus:q=11:82011:24591"
+              ],
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 87,
+                  "x": 24787864,
+                  "divisor": 2,
+                  "A": 1,
+                  "B": 12393932,
+                  "C": 2,
+                  "y": 28250009752742,
+                  "z": 350128699874821161544
+                }
+              ]
+            },
+            {
+              "gap": 95,
+              "generating_edge_ids": [
+                "label:q=11:39:1084",
+                "modulus:q=11:82011:10951"
+              ],
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 95,
+                  "x": 24787866,
+                  "divisor": 9,
+                  "A": 3,
+                  "B": 8262622,
+                  "C": 1,
+                  "y": 25871070956325,
+                  "z": 71254293349097328050
+                },
+                {
+                  "gap": 95,
+                  "x": 24787866,
+                  "divisor": 9330054,
+                  "A": 1247,
+                  "B": 3313,
+                  "C": 6,
+                  "y": 35608826057184,
+                  "z": 94604683823136
+                }
+              ]
+            },
+            {
+              "gap": 311,
+              "generating_edge_ids": [
+                "label:q=11:39:359244"
+              ],
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 311,
+                  "x": 24787920,
+                  "divisor": 24,
+                  "A": 1,
+                  "B": 1032830,
+                  "C": 24,
+                  "y": 7902760714776,
+                  "z": 8162208349042096080
+                },
+                {
+                  "gap": 311,
+                  "x": 24787920,
+                  "divisor": 96123,
+                  "A": 179,
+                  "B": 46160,
+                  "C": 3,
+                  "y": 7933398487797,
+                  "z": 2045841755288880
+                }
+              ]
+            },
+            {
+              "gap": 435,
+              "generating_edge_ids": [
+                "modulus:q=11:82011:24591"
+              ],
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 435,
+                  "x": 24787951,
+                  "divisor": 24561059,
+                  "A": 433,
+                  "B": 437,
+                  "C": 131,
+                  "y": 11248326207574,
+                  "z": 11352236842286
+                }
+              ]
+            },
+            {
+              "gap": 803,
+              "generating_edge_ids": [
+                "label:q=11:31:1637"
+              ],
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 803,
+                  "x": 24788043,
+                  "divisor": 567,
+                  "A": 9,
+                  "B": 393461,
+                  "C": 7,
+                  "y": 3060802761030,
+                  "z": 133811835017513870
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "q": 227,
+          "candidate_semantics": "q divides the label or modulus difference. This is a necessary congruence candidate, not a constructed carrier migration edge.",
+          "candidate_edge_count": 1,
+          "label_difference_edge_count": 1,
+          "modulus_difference_edge_count": 0,
+          "candidate_edges": [
+            {
+              "edge_id": "label:q=227:31:32265",
+              "kind": "label_difference",
+              "q": 227,
+              "current_label": 31,
+              "other_label": 32265,
+              "difference": 32234,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  71,
+                  1
+                ],
+                [
+                  227,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                71,
+                227
+              ]
+            }
+          ],
+          "candidate_gap_count": 2,
+          "candidate_gaps": [
+            71,
+            227
+          ],
+          "type_ii_hit_gap_count": 1,
+          "type_ii_hit_gaps": [
+            71
+          ],
+          "type_ii_hit_profiles": [
+            {
+              "gap": 71,
+              "generating_edge_ids": [
+                "label:q=227:31:32265"
+              ],
+              "type_ii_certificate_count": 4,
+              "type_ii_certificates": [
+                {
+                  "gap": 71,
+                  "x": 24787860,
+                  "divisor": 15,
+                  "A": 1,
+                  "B": 1652524,
+                  "C": 15,
+                  "y": 34616221702125,
+                  "z": 57204137152082413500
+                },
+                {
+                  "gap": 71,
+                  "x": 24787860,
+                  "divisor": 156144,
+                  "A": 4,
+                  "B": 635,
+                  "C": 9759,
+                  "y": 34834255562556,
+                  "z": 5529938070555765
+                },
+                {
+                  "gap": 71,
+                  "x": 24787860,
+                  "divisor": 1451610,
+                  "A": 381,
+                  "B": 6506,
+                  "C": 10,
+                  "y": 36643371441330,
+                  "z": 625726442512580
+                },
+                {
+                  "gap": 71,
+                  "x": 24787860,
+                  "divisor": 2927700,
+                  "A": 15,
+                  "B": 127,
+                  "C": 13012,
+                  "y": 38704728402840,
+                  "z": 327700033810712
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "q": 1409,
+          "candidate_semantics": "q divides the label or modulus difference. This is a necessary congruence candidate, not a constructed carrier migration edge.",
+          "candidate_edge_count": 0,
+          "label_difference_edge_count": 0,
+          "modulus_difference_edge_count": 0,
+          "candidate_edges": [],
+          "candidate_gap_count": 0,
+          "candidate_gaps": [],
+          "type_ii_hit_gap_count": 0,
+          "type_ii_hit_gaps": [],
+          "type_ii_hit_profiles": []
+        }
+      ],
+      "pattern_count_resolved_by_overloaded_q_difference_menu": 3,
+      "same_gap_dual_normal_form_exit": {
+        "prime": 99151369,
+        "gap": 19,
+        "shared_first_denominator": 24787847,
+        "scope_note": "One verified finite same-gap coincidence; it does not assert that dual normal forms exist in general.",
+        "type_I": {
+          "A": 60019,
+          "B": 1,
+          "C": 413,
+          "divisor_A2C": 1487741789093,
+          "conditions": {
+            "gcd_A_B": 1,
+            "B_p_plus_A_divided_by_gap": 5221652,
+            "p_plus_gap_equals_4ABC": true
+          },
+          "solution": [
+            24787847,
+            129433510863244,
+            213824118971775844
+          ]
+        },
+        "type_II": {
+          "A": 59,
+          "B": 60019,
+          "C": 7,
+          "divisor_A2C": 24367,
+          "conditions": {
+            "gcd_A_B": 1,
+            "A_le_B": true,
+            "A_plus_B_divided_by_gap": 3162,
+            "p_plus_gap_equals_4ABC": true
+          },
+          "solution": [
+            24787847,
+            129482367685314,
+            131718681798387474
+          ]
+        }
+      },
+      "resolved_by_independent_short_certificate": true
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "gap": 3,
+      "lower_modulus": 106017,
+      "K": 38768223063715,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          6965317,
+          1
+        ]
+      ],
+      "capacity_aware_constraint": {
+        "heavy_q": 6965317,
+        "heavy_coordinate_index": 4,
+        "heavy_coordinate_overflow_capacity": 1,
+        "condition": "overflow_4(z) <= 1, equivalently abs(z_4) <= 2",
+        "unit_cost": "sum_i max(abs(z_i)-nu_i,0), subject to at most one overflow layer on the heavy coordinate",
+        "frozen_local_isolation_evidence": {
+          "q": 6965317,
+          "block_height_sum": 1,
+          "label_difference_height_sum": 0,
+          "modulus_difference_height_sum": 0,
+          "reduced_endpoint_height": 0
+        },
+        "complete_source_q_block_count": 1,
+        "complete_source_q_blocks": [
+          {
+            "label": 219,
+            "R": 318051,
+            "block": 69653170,
+            "q": 6965317,
+            "q_valuation": 1,
+            "block_divided_by_q": 10
+          }
+        ]
+      },
+      "unconstrained_omega": 8,
+      "capacity_aware_omega": 12,
+      "capacity_aware_price_increase_over_unconstrained_omega": 4,
+      "heavy_coordinate_capacity_curve_to_first_unconstrained_omega": [
+        {
+          "heavy_coordinate_overflow_capacity": 0,
+          "omega": 15,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "07ecced41328a31591ce1ec70f61f56b5e504a7486bd169e7f011fa24e25d902",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 0,
+            "valid_upper_bound": 15,
+            "enumerated_through_cost": 15,
+            "enumerated_vector_count": 274563,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 648,
+                "generating_function_coefficient": 648,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1296,
+                "generating_function_coefficient": 1296,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 2232,
+                "generating_function_coefficient": 2232,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 3504,
+                "generating_function_coefficient": 3504,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 5160,
+                "generating_function_coefficient": 5160,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 7248,
+                "generating_function_coefficient": 7248,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 9816,
+                "generating_function_coefficient": 9816,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 12912,
+                "generating_function_coefficient": 12912,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 16584,
+                "generating_function_coefficient": 16584,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 20880,
+                "generating_function_coefficient": 20880,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 25848,
+                "generating_function_coefficient": 25848,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 31536,
+                "generating_function_coefficient": 31536,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 13,
+                "enumerated_vector_count": 37992,
+                "generating_function_coefficient": 37992,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 14,
+                "enumerated_vector_count": 45264,
+                "generating_function_coefficient": 45264,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 15,
+                "enumerated_vector_count": 53400,
+                "generating_function_coefficient": 53400,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 1,
+          "omega": 12,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "3cf21d877cb498b7a0c0b1cc1c8ee83aaf0c13158a6ccbd90fe89f2c7f8354e0",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 1,
+            "valid_upper_bound": 12,
+            "enumerated_through_cost": 12,
+            "enumerated_vector_count": 208821,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1728,
+                "generating_function_coefficient": 1728,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3096,
+                "generating_function_coefficient": 3096,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 4992,
+                "generating_function_coefficient": 4992,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 7496,
+                "generating_function_coefficient": 7496,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 10688,
+                "generating_function_coefficient": 10688,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 14648,
+                "generating_function_coefficient": 14648,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 19456,
+                "generating_function_coefficient": 19456,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 25192,
+                "generating_function_coefficient": 25192,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 31936,
+                "generating_function_coefficient": 31936,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 11,
+                "enumerated_vector_count": 39768,
+                "generating_function_coefficient": 39768,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 12,
+                "enumerated_vector_count": 48768,
+                "generating_function_coefficient": 48768,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 2,
+          "omega": 10,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "3bb68729e5bb9d83f294f40df697fcfac3e7d3cff92c7813e313ccc3bbf10bb0",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 2,
+            "valid_upper_bound": 10,
+            "enumerated_through_cost": 10,
+            "enumerated_vector_count": 148991,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3528,
+                "generating_function_coefficient": 3528,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 5856,
+                "generating_function_coefficient": 5856,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 8984,
+                "generating_function_coefficient": 8984,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 13024,
+                "generating_function_coefficient": 13024,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 18088,
+                "generating_function_coefficient": 18088,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 24288,
+                "generating_function_coefficient": 24288,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 31736,
+                "generating_function_coefficient": 31736,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 10,
+                "enumerated_vector_count": 40544,
+                "generating_function_coefficient": 40544,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 3,
+          "omega": 9,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "e5c4a2e0c4f28d3ec432032b19473ce511c05b62876201bfbef910ca62e8ee4b",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 3,
+            "valid_upper_bound": 9,
+            "enumerated_through_cost": 9,
+            "enumerated_vector_count": 122001,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6288,
+                "generating_function_coefficient": 6288,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 9848,
+                "generating_function_coefficient": 9848,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 14512,
+                "generating_function_coefficient": 14512,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 20424,
+                "generating_function_coefficient": 20424,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 27728,
+                "generating_function_coefficient": 27728,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 9,
+                "enumerated_vector_count": 36568,
+                "generating_function_coefficient": 36568,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        },
+        {
+          "heavy_coordinate_overflow_capacity": 4,
+          "omega": 8,
+          "minimum_face_vector_count": 2,
+          "minimum_face_vectors_sha256": "013b66a56530b9b83d3234657c1f61615b07e425d61f35157ca677a1d134de95",
+          "direct_shell_and_generating_function_audit": {
+            "method": "ascending_exact_shell_DFS",
+            "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+            "constrained_coordinate_index": 4,
+            "constrained_overflow_capacity": 4,
+            "valid_upper_bound": 8,
+            "enumerated_through_cost": 8,
+            "enumerated_vector_count": 90715,
+            "shell_audit": [
+              {
+                "cost": 0,
+                "enumerated_vector_count": 243,
+                "generating_function_coefficient": 243,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 1,
+                "enumerated_vector_count": 810,
+                "generating_function_coefficient": 810,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 2,
+                "enumerated_vector_count": 1890,
+                "generating_function_coefficient": 1890,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 3,
+                "enumerated_vector_count": 3690,
+                "generating_function_coefficient": 3690,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 4,
+                "enumerated_vector_count": 6450,
+                "generating_function_coefficient": 6450,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 5,
+                "enumerated_vector_count": 10280,
+                "generating_function_coefficient": 10280,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 6,
+                "enumerated_vector_count": 15376,
+                "generating_function_coefficient": 15376,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 7,
+                "enumerated_vector_count": 21912,
+                "generating_function_coefficient": 21912,
+                "target_vector_count": 0
+              },
+              {
+                "cost": 8,
+                "enumerated_vector_count": 30064,
+                "generating_function_coefficient": 30064,
+                "target_vector_count": 2
+              }
+            ]
+          }
+        }
+      ],
+      "zero_capacity_boundary": {
+        "heavy_coordinate_overflow_capacity": 0,
+        "condition": "overflow_4(z) = 0, equivalently abs(z_4) <= 1",
+        "omega": 15,
+        "minimum_face_vector_count": 2,
+        "minimum_inverse_pair_count": 1,
+        "minimum_overflow_pattern_count": 1,
+        "minimum_face_vectors": [
+          [
+            -2,
+            8,
+            3,
+            6,
+            1
+          ],
+          [
+            2,
+            -8,
+            -3,
+            -6,
+            -1
+          ]
+        ],
+        "minimum_face_vectors_sha256": "07ecced41328a31591ce1ec70f61f56b5e504a7486bd169e7f011fa24e25d902",
+        "minimum_overflow_patterns": [
+          {
+            "overflow_vector": [
+              1,
+              7,
+              2,
+              5,
+              0
+            ],
+            "exponent_vector_count": 2
+          }
+        ],
+        "direct_shell_and_generating_function_audit": {
+          "method": "ascending_exact_shell_DFS",
+          "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+          "constrained_coordinate_index": 4,
+          "constrained_overflow_capacity": 0,
+          "valid_upper_bound": 15,
+          "enumerated_through_cost": 15,
+          "enumerated_vector_count": 274563,
+          "shell_audit": [
+            {
+              "cost": 0,
+              "enumerated_vector_count": 243,
+              "generating_function_coefficient": 243,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 1,
+              "enumerated_vector_count": 648,
+              "generating_function_coefficient": 648,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 2,
+              "enumerated_vector_count": 1296,
+              "generating_function_coefficient": 1296,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 3,
+              "enumerated_vector_count": 2232,
+              "generating_function_coefficient": 2232,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 4,
+              "enumerated_vector_count": 3504,
+              "generating_function_coefficient": 3504,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 5,
+              "enumerated_vector_count": 5160,
+              "generating_function_coefficient": 5160,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 6,
+              "enumerated_vector_count": 7248,
+              "generating_function_coefficient": 7248,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 7,
+              "enumerated_vector_count": 9816,
+              "generating_function_coefficient": 9816,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 8,
+              "enumerated_vector_count": 12912,
+              "generating_function_coefficient": 12912,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 9,
+              "enumerated_vector_count": 16584,
+              "generating_function_coefficient": 16584,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 10,
+              "enumerated_vector_count": 20880,
+              "generating_function_coefficient": 20880,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 11,
+              "enumerated_vector_count": 25848,
+              "generating_function_coefficient": 25848,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 12,
+              "enumerated_vector_count": 31536,
+              "generating_function_coefficient": 31536,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 13,
+              "enumerated_vector_count": 37992,
+              "generating_function_coefficient": 37992,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 14,
+              "enumerated_vector_count": 45264,
+              "generating_function_coefficient": 45264,
+              "target_vector_count": 0
+            },
+            {
+              "cost": 15,
+              "enumerated_vector_count": 53400,
+              "generating_function_coefficient": 53400,
+              "target_vector_count": 2
+            }
+          ]
+        },
+        "independent_mitm_audit": {
+          "method": "finite_box_meet_in_the_middle",
+          "independence_note": "Each half is enumerated by Cartesian exponent ranges and filtered by cost; it does not call the exact-shell DFS.",
+          "split_index": 2,
+          "left_side_vector_count": 609,
+          "right_side_vector_count": 1827,
+          "target_count_by_cost": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "minimum_target_vector_count": 2,
+          "reconstructed_minimum_vectors_sha256": "07ecced41328a31591ce1ec70f61f56b5e504a7486bd169e7f011fa24e25d902"
+        },
+        "finite_shared_gap_and_direct_menu_audit": {
+          "minimum_inverse_pair_count": 1,
+          "shared_gap_inverse_pair_profiles": [
+            {
+              "canonical_vector": [
+                -2,
+                8,
+                3,
+                6,
+                1
+              ],
+              "inverse_vector": [
+                2,
+                -8,
+                -3,
+                -6,
+                -1
+              ],
+              "a": 3850308231922795453839823809721841572673,
+              "b": 25,
+              "sum": 3850308231922795453839823809721841572698,
+              "sum_factorization": [
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  2
+                ],
+                [
+                  13,
+                  1
+                ],
+                [
+                  35339,
+                  1
+                ],
+                [
+                  178439,
+                  1
+                ],
+                [
+                  470812515937,
+                  1
+                ],
+                [
+                  5542269042829661,
+                  1
+                ]
+              ],
+              "candidate_gap_count": 10,
+              "candidate_gaps": [
+                3,
+                39,
+                35339,
+                178439,
+                318051,
+                459407,
+                1605951,
+                2319707,
+                4134663,
+                20877363
+              ],
+              "type_ii_hit_gap_count": 0,
+              "type_ii_hit_profiles": []
+            }
+          ],
+          "shared_gap_candidate_count": 10,
+          "shared_gap_candidate_gaps": [
+            3,
+            39,
+            35339,
+            178439,
+            318051,
+            459407,
+            1605951,
+            2319707,
+            4134663,
+            20877363
+          ],
+          "shared_gap_type_ii_hit_gaps": [],
+          "subfactor_menu_profiles": [
+            {
+              "menu": "oriented_subfactors",
+              "finite_definition": "choose arbitrary prime-power subfactors from the positive and negative sides of a minimum vector",
+              "coprime_pair_count": 1512,
+              "pair_set_sha256": "34a6ecbe5cc087a9359edca6e433d2e70eb16cd7c28061ad830ea49c440a8327",
+              "direct_type_ii_normal_form_candidate_count": 0,
+              "direct_type_ii_normal_form_candidates": []
+            },
+            {
+              "menu": "all_coordinate_repartitions",
+              "finite_definition": "for each active coordinate choose one side and any power no larger than its absolute minimum-vector exponent, or omit it",
+              "coprime_pair_count": 11603,
+              "pair_set_sha256": "71a7aa9dade68419626e888b488a020a26db44cf617ae2fa0d9a66f7883e778a",
+              "direct_type_ii_normal_form_candidate_count": 0,
+              "direct_type_ii_normal_form_candidates": []
+            },
+            {
+              "menu": "pure_two_coordinate_pairs",
+              "finite_definition": "choose two active coordinates and one positive power from each within its minimum-vector exponent budget",
+              "coprime_pair_count": 143,
+              "pair_set_sha256": "5f4bdcc34058a53ba9c3f3710de544fb1ca369d92d8cec2ef019391b1abb0b52",
+              "direct_type_ii_normal_form_candidate_count": 0,
+              "direct_type_ii_normal_form_candidates": []
+            }
+          ],
+          "direct_subfactor_type_ii_candidate_count": 0
+        },
+        "scope_note": "Exact boundary for the older no-heavy-overflow model; it is not the block-height-compatible one-layer surrogate."
+      },
+      "minimum_face_vector_count": 2,
+      "minimum_inverse_pair_count": 1,
+      "minimum_overflow_pattern_count": 1,
+      "minimum_face_vectors": [
+        [
+          -1,
+          7,
+          2,
+          5,
+          2
+        ],
+        [
+          1,
+          -7,
+          -2,
+          -5,
+          -2
+        ]
+      ],
+      "minimum_face_vectors_sha256": "3cf21d877cb498b7a0c0b1cc1c8ee83aaf0c13158a6ccbd90fe89f2c7f8354e0",
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            0,
+            6,
+            1,
+            4,
+            1
+          ],
+          "support_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "support_primes": [
+            31,
+            149,
+            241,
+            6965317
+          ],
+          "exponent_vector_count": 2,
+          "overloaded_coordinates": [
+            {
+              "coordinate_index": 1,
+              "q": 31,
+              "demand": 6,
+              "three_channel_sum": 3,
+              "overload": 3
+            },
+            {
+              "coordinate_index": 3,
+              "q": 241,
+              "demand": 4,
+              "three_channel_sum": 3,
+              "overload": 1
+            }
+          ],
+          "difference_menu_candidate_gap_count": 25,
+          "difference_menu_candidate_gaps": [
+            3,
+            7,
+            11,
+            31,
+            43,
+            83,
+            155,
+            183,
+            199,
+            447,
+            451,
+            527,
+            723,
+            1271,
+            1891,
+            4619,
+            7471,
+            7719,
+            7967,
+            14663,
+            19871,
+            37355,
+            47959,
+            78523,
+            107727
+          ],
+          "difference_menu_type_ii_hit_gap_count": 3,
+          "difference_menu_type_ii_hit_gaps": [
+            31,
+            43,
+            7967
+          ],
+          "resolved_by_overloaded_q_difference_menu": true
+        }
+      ],
+      "direct_shell_and_generating_function_audit": {
+        "method": "ascending_exact_shell_DFS",
+        "generating_function": "product_i((2*nu_i+1)+2*x/(1-x)), with the constrained coordinate tail truncated at its stated overflow capacity",
+        "constrained_coordinate_index": 4,
+        "constrained_overflow_capacity": 1,
+        "valid_upper_bound": 12,
+        "enumerated_through_cost": 12,
+        "enumerated_vector_count": 208821,
+        "shell_audit": [
+          {
+            "cost": 0,
+            "enumerated_vector_count": 243,
+            "generating_function_coefficient": 243,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 1,
+            "enumerated_vector_count": 810,
+            "generating_function_coefficient": 810,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 2,
+            "enumerated_vector_count": 1728,
+            "generating_function_coefficient": 1728,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 3,
+            "enumerated_vector_count": 3096,
+            "generating_function_coefficient": 3096,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 4,
+            "enumerated_vector_count": 4992,
+            "generating_function_coefficient": 4992,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 5,
+            "enumerated_vector_count": 7496,
+            "generating_function_coefficient": 7496,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 6,
+            "enumerated_vector_count": 10688,
+            "generating_function_coefficient": 10688,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 7,
+            "enumerated_vector_count": 14648,
+            "generating_function_coefficient": 14648,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 8,
+            "enumerated_vector_count": 19456,
+            "generating_function_coefficient": 19456,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 9,
+            "enumerated_vector_count": 25192,
+            "generating_function_coefficient": 25192,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 10,
+            "enumerated_vector_count": 31936,
+            "generating_function_coefficient": 31936,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 11,
+            "enumerated_vector_count": 39768,
+            "generating_function_coefficient": 39768,
+            "target_vector_count": 0
+          },
+          {
+            "cost": 12,
+            "enumerated_vector_count": 48768,
+            "generating_function_coefficient": 48768,
+            "target_vector_count": 2
+          }
+        ]
+      },
+      "independent_mitm_audit": {
+        "method": "finite_box_meet_in_the_middle",
+        "independence_note": "Each half is enumerated by Cartesian exponent ranges and filtered by cost; it does not call the exact-shell DFS.",
+        "split_index": 2,
+        "left_side_vector_count": 417,
+        "right_side_vector_count": 1973,
+        "target_count_by_cost": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_target_vector_count": 2,
+        "reconstructed_minimum_vectors_sha256": "3cf21d877cb498b7a0c0b1cc1c8ee83aaf0c13158a6ccbd90fe89f2c7f8354e0"
+      },
+      "shared_gap_inverse_pair_profiles": [
+        {
+          "canonical_vector": [
+            -1,
+            7,
+            2,
+            5,
+            2
+          ],
+          "inverse_vector": [
+            1,
+            -7,
+            -2,
+            -5,
+            -2
+          ],
+          "a": 24091918175829574454919864692794517662879,
+          "b": 5,
+          "sum": 24091918175829574454919864692794517662884,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              5861,
+              1
+            ],
+            [
+              35339,
+              1
+            ],
+            [
+              4662401467333739969544118027,
+              1
+            ]
+          ],
+          "candidate_gap_count": 31,
+          "candidate_gaps": [
+            3,
+            7,
+            11,
+            27,
+            63,
+            99,
+            231,
+            567,
+            891,
+            2079,
+            17583,
+            35339,
+            41027,
+            64471,
+            158247,
+            318051,
+            369243,
+            580239,
+            742119,
+            1166187,
+            1353891,
+            2721103,
+            2862459,
+            3323187,
+            5222151,
+            6679071,
+            10495683,
+            12185019,
+            24489927,
+            207121879,
+            220409343
+          ],
+          "type_ii_hit_gap_count": 0,
+          "type_ii_hit_profiles": []
+        }
+      ],
+      "shared_gap_candidate_count": 31,
+      "shared_gap_candidate_gaps": [
+        3,
+        7,
+        11,
+        27,
+        63,
+        99,
+        231,
+        567,
+        891,
+        2079,
+        17583,
+        35339,
+        41027,
+        64471,
+        158247,
+        318051,
+        369243,
+        580239,
+        742119,
+        1166187,
+        1353891,
+        2721103,
+        2862459,
+        3323187,
+        5222151,
+        6679071,
+        10495683,
+        12185019,
+        24489927,
+        207121879,
+        220409343
+      ],
+      "shared_gap_type_ii_hit_gap_count": 0,
+      "subfactor_menu_profiles": [
+        {
+          "menu": "oriented_subfactors",
+          "finite_definition": "choose arbitrary prime-power subfactors from the positive and negative sides of a minimum vector",
+          "coprime_pair_count": 864,
+          "pair_set_sha256": "095e71ee5601c57530ee544c346b6bee6a7f898ad3d947a4571c666060790e5b",
+          "direct_type_ii_normal_form_candidate_count": 0,
+          "direct_type_ii_normal_form_candidates": []
+        },
+        {
+          "menu": "all_coordinate_repartitions",
+          "finite_definition": "for each active coordinate choose one side and any power no larger than its absolute minimum-vector exponent, or omit it",
+          "coprime_pair_count": 6188,
+          "pair_set_sha256": "71b84cf3c88c14666775575971e189a2717698edf237c585a352a2915b5d463e",
+          "direct_type_ii_normal_form_candidate_count": 0,
+          "direct_type_ii_normal_form_candidates": []
+        },
+        {
+          "menu": "pure_two_coordinate_pairs",
+          "finite_definition": "choose two active coordinates and one positive power from each within its minimum-vector exponent budget",
+          "coprime_pair_count": 103,
+          "pair_set_sha256": "06751a485b99eb83b483efcdaa80ab0d1e6a303d9da569abfd8b8eb8d9215db0",
+          "direct_type_ii_normal_form_candidate_count": 0,
+          "direct_type_ii_normal_form_candidates": []
+        }
+      ],
+      "complete_linear_source_spectrum": {
+        "least_coordinate_bound": 12748,
+        "source_modulus_count": 73,
+        "directed_source_state_count": 126,
+        "source_label_count": 112
+      },
+      "reconstructed_three_channel_heights": [
+        {
+          "q": 5,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 3,
+          "modulus_difference_max": 3,
+          "three_channel_sum": 7
+        },
+        {
+          "q": 31,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3
+        },
+        {
+          "q": 149,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3
+        },
+        {
+          "q": 241,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 1,
+          "modulus_difference_max": 1,
+          "three_channel_sum": 3
+        },
+        {
+          "q": 6965317,
+          "nu": 1,
+          "block_max": 1,
+          "label_difference_max": 0,
+          "modulus_difference_max": 0,
+          "three_channel_sum": 1
+        }
+      ],
+      "overloaded_q_difference_menus": [
+        {
+          "q": 31,
+          "candidate_semantics": "q divides the label or modulus difference. This is a necessary congruence candidate, not a constructed carrier migration edge.",
+          "candidate_edge_count": 13,
+          "label_difference_edge_count": 7,
+          "modulus_difference_edge_count": 6,
+          "candidate_edges": [
+            {
+              "edge_id": "label:q=31:219:2",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 219,
+              "other_label": 2,
+              "difference": 217,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  7,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                7,
+                31
+              ]
+            },
+            {
+              "edge_id": "label:q=31:219:2203",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 219,
+              "other_label": 2203,
+              "difference": 1984,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  6
+                ],
+                [
+                  31,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                31
+              ]
+            },
+            {
+              "edge_id": "label:q=31:7:100",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 7,
+              "other_label": 100,
+              "difference": 93,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                31
+              ]
+            },
+            {
+              "edge_id": "label:q=31:7:14670",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 7,
+              "other_label": 14670,
+              "difference": 14663,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  11,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  43,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                31,
+                43,
+                14663
+              ]
+            },
+            {
+              "edge_id": "label:q=31:7:379",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 7,
+              "other_label": 379,
+              "difference": 372,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                31
+              ]
+            },
+            {
+              "edge_id": "label:q=31:7:5680",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 7,
+              "other_label": 5680,
+              "difference": 5673,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  61,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                31,
+                183,
+                1891
+              ]
+            },
+            {
+              "edge_id": "label:q=31:7:7726",
+              "kind": "label_difference",
+              "q": 31,
+              "current_label": 7,
+              "other_label": 7726,
+              "difference": 7719,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  3,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  83,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                31,
+                83,
+                7719
+              ]
+            },
+            {
+              "edge_id": "modulus:q=31:318051:115",
+              "kind": "modulus_difference",
+              "q": 31,
+              "current_R": 318051,
+              "other_R": 115,
+              "difference": 317936,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  4
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  641,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                31,
+                19871
+              ]
+            },
+            {
+              "edge_id": "modulus:q=31:318051:3959",
+              "kind": "modulus_difference",
+              "q": 31,
+              "current_R": 318051,
+              "other_R": 3959,
+              "difference": 314092,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  17,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  149,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                31,
+                527,
+                4619,
+                78523
+              ]
+            },
+            {
+              "edge_id": "modulus:q=31:318051:467471",
+              "kind": "modulus_difference",
+              "q": 31,
+              "current_R": 318051,
+              "other_R": 467471,
+              "difference": 149420,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                31,
+                155,
+                7471,
+                37355
+              ]
+            },
+            {
+              "edge_id": "modulus:q=31:318051:541747",
+              "kind": "modulus_difference",
+              "q": 31,
+              "current_R": 318051,
+              "other_R": 541747,
+              "difference": 223696,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  4
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  41,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                11,
+                31,
+                451,
+                1271
+              ]
+            },
+            {
+              "edge_id": "modulus:q=31:318051:63107",
+              "kind": "modulus_difference",
+              "q": 31,
+              "current_R": 318051,
+              "other_R": 63107,
+              "difference": 254944,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  5
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  257,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                31,
+                7967
+              ]
+            },
+            {
+              "edge_id": "modulus:q=31:318051:96339",
+              "kind": "modulus_difference",
+              "q": 31,
+              "current_R": 318051,
+              "other_R": 96339,
+              "difference": 221712,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  4
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  149,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                31,
+                447,
+                4619
+              ]
+            }
+          ],
+          "candidate_gap_count": 21,
+          "candidate_gaps": [
+            3,
+            7,
+            11,
+            31,
+            43,
+            83,
+            155,
+            183,
+            447,
+            451,
+            527,
+            1271,
+            1891,
+            4619,
+            7471,
+            7719,
+            7967,
+            14663,
+            19871,
+            37355,
+            78523
+          ],
+          "type_ii_hit_gap_count": 3,
+          "type_ii_hit_gaps": [
+            31,
+            43,
+            7967
+          ],
+          "type_ii_hit_profiles": [
+            {
+              "gap": 31,
+              "generating_edge_ids": [
+                "label:q=31:219:2",
+                "label:q=31:219:2203",
+                "label:q=31:7:100",
+                "label:q=31:7:14670",
+                "label:q=31:7:379",
+                "label:q=31:7:5680",
+                "label:q=31:7:7726",
+                "modulus:q=31:318051:115",
+                "modulus:q=31:318051:3959",
+                "modulus:q=31:318051:467471",
+                "modulus:q=31:318051:541747",
+                "modulus:q=31:318051:63107",
+                "modulus:q=31:318051:96339"
+              ],
+              "type_ii_certificate_count": 4,
+              "type_ii_certificates": [
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 1060,
+                  "A": 2,
+                  "B": 229987,
+                  "C": 265,
+                  "y": 1917168842256630,
+                  "z": 220461955262037781905
+                },
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 25705,
+                  "A": 1,
+                  "B": 4742,
+                  "C": 25705,
+                  "y": 1917556462321785,
+                  "z": 9093052744329904470
+                },
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 118550,
+                  "A": 5,
+                  "B": 5141,
+                  "C": 4742,
+                  "y": 1919016741686740,
+                  "z": 1973133013802306068
+                },
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 6660139,
+                  "A": 53,
+                  "B": 970,
+                  "C": 2371,
+                  "y": 2021903783861511,
+                  "z": 37004654157465390
+                }
+              ]
+            },
+            {
+              "gap": 43,
+              "generating_edge_ids": [
+                "label:q=31:7:14670"
+              ],
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 43,
+                  "x": 121893113,
+                  "divisor": 19,
+                  "A": 1,
+                  "B": 6415427,
+                  "C": 19,
+                  "y": 1382133209530116,
+                  "z": 8866974710016163499532
+                }
+              ]
+            },
+            {
+              "gap": 7967,
+              "generating_edge_ids": [
+                "modulus:q=31:318051:63107"
+              ],
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 7967,
+                  "x": 121895094,
+                  "divisor": 6,
+                  "A": 1,
+                  "B": 20315849,
+                  "C": 6,
+                  "y": 7459857857700,
+                  "z": 151553345798496687300
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "q": 241,
+          "candidate_semantics": "q divides the label or modulus difference. This is a necessary congruence candidate, not a constructed carrier migration edge.",
+          "candidate_edge_count": 6,
+          "label_difference_edge_count": 2,
+          "modulus_difference_edge_count": 4,
+          "candidate_edges": [
+            {
+              "edge_id": "label:q=241:219:460",
+              "kind": "label_difference",
+              "q": 241,
+              "current_label": 219,
+              "other_label": 460,
+              "difference": 241,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": []
+            },
+            {
+              "edge_id": "label:q=241:7:3863",
+              "kind": "label_difference",
+              "q": 241,
+              "current_label": 7,
+              "other_label": 3863,
+              "difference": 3856,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  4
+                ],
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": []
+            },
+            {
+              "edge_id": "modulus:q=241:318051:126215",
+              "kind": "modulus_difference",
+              "q": 241,
+              "current_R": 318051,
+              "other_R": 126215,
+              "difference": 191836,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  199,
+                  1
+                ],
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                199,
+                47959
+              ]
+            },
+            {
+              "edge_id": "modulus:q=241:318051:30779",
+              "kind": "modulus_difference",
+              "q": 241,
+              "current_R": 318051,
+              "other_R": 30779,
+              "difference": 287272,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  3
+                ],
+                [
+                  149,
+                  1
+                ],
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": []
+            },
+            {
+              "edge_id": "modulus:q=241:318051:467471",
+              "kind": "modulus_difference",
+              "q": 241,
+              "current_R": 318051,
+              "other_R": 467471,
+              "difference": 149420,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  31,
+                  1
+                ],
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                31,
+                155,
+                7471,
+                37355
+              ]
+            },
+            {
+              "edge_id": "modulus:q=241:318051:748959",
+              "kind": "modulus_difference",
+              "q": 241,
+              "current_R": 318051,
+              "other_R": 748959,
+              "difference": 430908,
+              "q_valuation": 1,
+              "difference_factorization": [
+                [
+                  2,
+                  2
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  149,
+                  1
+                ],
+                [
+                  241,
+                  1
+                ]
+              ],
+              "candidate_gaps": [
+                3,
+                447,
+                723,
+                107727
+              ]
+            }
+          ],
+          "candidate_gap_count": 10,
+          "candidate_gaps": [
+            3,
+            31,
+            155,
+            199,
+            447,
+            723,
+            7471,
+            37355,
+            47959,
+            107727
+          ],
+          "type_ii_hit_gap_count": 1,
+          "type_ii_hit_gaps": [
+            31
+          ],
+          "type_ii_hit_profiles": [
+            {
+              "gap": 31,
+              "generating_edge_ids": [
+                "modulus:q=241:318051:467471"
+              ],
+              "type_ii_certificate_count": 4,
+              "type_ii_certificates": [
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 1060,
+                  "A": 2,
+                  "B": 229987,
+                  "C": 265,
+                  "y": 1917168842256630,
+                  "z": 220461955262037781905
+                },
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 25705,
+                  "A": 1,
+                  "B": 4742,
+                  "C": 25705,
+                  "y": 1917556462321785,
+                  "z": 9093052744329904470
+                },
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 118550,
+                  "A": 5,
+                  "B": 5141,
+                  "C": 4742,
+                  "y": 1919016741686740,
+                  "z": 1973133013802306068
+                },
+                {
+                  "gap": 31,
+                  "x": 121893110,
+                  "divisor": 6660139,
+                  "A": 53,
+                  "B": 970,
+                  "C": 2371,
+                  "y": 2021903783861511,
+                  "z": 37004654157465390
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pattern_count_resolved_by_overloaded_q_difference_menu": 1,
+      "same_gap_dual_normal_form_exit": {
+        "prime": 487572409,
+        "gap": 31,
+        "shared_first_denominator": 121893110,
+        "scope_note": "One verified finite same-gap coincidence; it does not assert that dual normal forms exist in general.",
+        "type_I": {
+          "A": 2,
+          "B": 11855,
+          "C": 5141,
+          "divisor_A2C": 20564,
+          "conditions": {
+            "gcd_A_B": 1,
+            "B_p_plus_A_divided_by_gap": 186457126087,
+            "p_plus_gap_equals_4ABC": true
+          },
+          "solution": [
+            121893110,
+            1917152170426534,
+            5540733601520465268259656565
+          ]
+        },
+        "type_II": {
+          "A": 53,
+          "B": 970,
+          "C": 2371,
+          "divisor_A2C": 6660139,
+          "conditions": {
+            "gcd_A_B": 1,
+            "A_le_B": true,
+            "A_plus_B_divided_by_gap": 33,
+            "p_plus_gap_equals_4ABC": true
+          },
+          "solution": [
+            121893110,
+            2021903783861511,
+            37004654157465390
+          ]
+        }
+      },
+      "resolved_by_independent_short_certificate": true
+    }
+  ]
+}

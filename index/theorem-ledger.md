@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 349 |
+| 数学状态 | `computationally_reproduced` | 350 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 270 |
+| 数学状态 | `established` | 271 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 119 |
+| 证明来源 | `computational_reproduction` | 120 |
 | 证明来源 | `mixed` | 9 |
-| 证明来源 | `repository_derivation` | 102 |
+| 证明来源 | `repository_derivation` | 103 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 16 |
-| 审阅状态 | `internal_review` | 214 |
+| 审阅状态 | `internal_review` | 216 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -279,6 +279,7 @@
 | [多支持较小块平方终端的奇数距离提升边界](../claims/type-I-f-overflow-square-terminal-lift-boundary.md) (`type-I-f-overflow-square-terminal-lift-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 溢出的块—模数差—标签差三通道容量边界](../claims/type-I-f-overflow-three-channel-capacity.md) (`type-I-f-overflow-three-channel-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [分色 F 状态的盒溢出到载体高度的条件性容量接口](../claims/type-I-f-overflow-to-carrier-conditional-capacity.md) (`type-I-f-overflow-to-carrier-conditional-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [两个局部余核的容量一代理最小面与短证书选择器](../claims/type-I-f-overflow-two-residual-capacity-one-selector.md) (`type-I-f-overflow-two-residual-capacity-one-selector`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [普适多坐标溢出的联合层容量压力边界](../claims/type-I-f-overflow-universal-joint-capacity.md) (`type-I-f-overflow-universal-joint-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [普适高度缺口的多坐标和混合符号边界](../claims/type-I-f-overflow-universal-support-profile.md) (`type-I-f-overflow-universal-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [冻结 F 状态的关系格规范证书重建](../claims/type-I-f-relation-lattice-certificate-reconstruction.md) (`type-I-f-relation-lattice-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
@@ -380,6 +381,7 @@
 | [线性多层除子积集的 Kneser 终端选择判据](../claims/type-I-linear-multiblock-kneser-terminal-selector.md) (`type-I-linear-multiblock-kneser-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-29 |
 | [57,399,241 的真正四阶线性 G 型分离角色](../claims/type-I-linear-order-four-separator-boundary-57399241.md) (`type-I-linear-order-four-separator-boundary-57399241`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [四阶分离角色的二次影子跨源相容律](../claims/type-I-linear-order-four-shadow-compatibility-57399241.md) (`type-I-linear-order-four-shadow-compatibility-57399241`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性源私有 q 载体的唯一性判据与迁移边界](../claims/type-I-linear-private-carrier-isolation-criterion.md) (`type-I-linear-private-carrier-isolation-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 二次障碍的互反拉回](../claims/type-I-linear-quadratic-obstruction-reciprocity-pullback.md) (`type-I-linear-quadratic-obstruction-reciprocity-pullback`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
