@@ -1,0 +1,568 @@
+{
+  "arithmetic": "A lower F-box representation a/b=-1 (mod t) supplies a+b divisible by t. Every legal m' dividing a+b is only a shared-gap candidate; a Type II certificate still requires an independent x'=(p+m')/4 divisor d=A^2*C with A<=B and m'|A+B.",
+  "scope_note": "Finite six-hit audit. A shared gap candidate does not automatically lift: the lower pair need not divide x', and the Type II divisor test is independent. The four hits below are valid certificates for three primes, not a universal lifting theorem.",
+  "repair_input": "type-i-f-overflow-r-modulus-repair-results.json",
+  "repair_input_sha256": "c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f",
+  "source_input": "type-i-f-overflow-support-boundary-results.json",
+  "source_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "lower_hit_count": 6,
+  "representation_count": 50,
+  "unique_sum_count": 25,
+  "shared_gap_candidate_count": 101,
+  "type_ii_certificate_count": 4,
+  "prime_hit_count": 3,
+  "certificate_gap_histogram": {
+    "31": 1,
+    "295": 1,
+    "311": 1,
+    "1703": 1
+  },
+  "records": [
+    {
+      "prime": 57399241,
+      "orientation": "reverse",
+      "original_R": 155,
+      "repair_gap": 31,
+      "lower_modulus": 5,
+      "reported_box_count": 34,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          136013,
+          1
+        ]
+      ],
+      "witness_exponents": [
+        -1,
+        2,
+        -2,
+        1
+      ],
+      "representation_count": 34,
+      "unique_sum_count": 17,
+      "unique_sums": [
+        10,
+        70,
+        80,
+        260,
+        1820,
+        136220,
+        136250,
+        137830,
+        408040,
+        1224140,
+        3128300,
+        3129010,
+        10745030,
+        10745050,
+        28154770,
+        247135630,
+        2224220590
+      ],
+      "shared_gap_candidate_count": 63,
+      "shared_gap_candidates": [
+        7,
+        11,
+        19,
+        35,
+        55,
+        91,
+        95,
+        119,
+        139,
+        175,
+        179,
+        287,
+        311,
+        455,
+        595,
+        631,
+        643,
+        679,
+        691,
+        695,
+        763,
+        895,
+        1435,
+        1555,
+        3155,
+        3215,
+        3395,
+        3455,
+        3815,
+        6211,
+        6811,
+        7175,
+        7775,
+        11543,
+        13783,
+        14987,
+        17275,
+        19075,
+        23791,
+        31055,
+        31283,
+        34055,
+        57715,
+        61207,
+        68915,
+        74935,
+        118955,
+        148183,
+        156415,
+        254779,
+        306035,
+        402211,
+        740915,
+        782075,
+        1074503,
+        1273895,
+        1453739,
+        2011055,
+        5372515,
+        6011407,
+        7268695,
+        24713563,
+        30057035
+      ],
+      "type_ii_certificate_count": 1,
+      "type_ii_certificates": [
+        {
+          "gap": 311,
+          "x": 14349888,
+          "divisor": 896,
+          "A": 2,
+          "B": 32031,
+          "C": 224,
+          "y": 2648630576704,
+          "z": 42419143001202912,
+          "matching_lower_representations": [
+            {
+              "exponents": [
+                0,
+                -1,
+                1,
+                1
+              ],
+              "a": 10745027,
+              "b": 23,
+              "sum": 10745050
+            },
+            {
+              "exponents": [
+                0,
+                1,
+                -1,
+                -1
+              ],
+              "a": 23,
+              "b": 10745027,
+              "sum": 10745050
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 3395,
+      "repair_gap": 35,
+      "lower_modulus": 97,
+      "reported_box_count": 2,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          1031,
+          1
+        ],
+        [
+          2351,
+          1
+        ]
+      ],
+      "witness_exponents": [
+        -3,
+        2,
+        -3,
+        -3,
+        -2
+      ],
+      "representation_count": 2,
+      "unique_sum_count": 1,
+      "unique_sums": [
+        27211216
+      ],
+      "shared_gap_candidate_count": 0,
+      "shared_gap_candidates": [],
+      "type_ii_certificate_count": 0,
+      "type_ii_certificates": []
+    },
+    {
+      "prime": 242042089,
+      "orientation": "forward",
+      "original_R": 771,
+      "repair_gap": 3,
+      "lower_modulus": 257,
+      "reported_box_count": 6,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          109,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          307,
+          1
+        ]
+      ],
+      "witness_exponents": [
+        0,
+        2,
+        1,
+        -2,
+        -2,
+        2
+      ],
+      "representation_count": 6,
+      "unique_sum_count": 3,
+      "unique_sums": [
+        9766,
+        136724,
+        446152
+      ],
+      "shared_gap_candidate_count": 6,
+      "shared_gap_candidates": [
+        7,
+        19,
+        31,
+        1799,
+        4883,
+        7967
+      ],
+      "type_ii_certificate_count": 1,
+      "type_ii_certificates": [
+        {
+          "gap": 31,
+          "x": 60510530,
+          "divisor": 4173140,
+          "A": 2,
+          "B": 29,
+          "C": 1043285,
+          "y": 505037761644730,
+          "z": 7323047543848585,
+          "matching_lower_representations": [
+            {
+              "exponents": [
+                -1,
+                1,
+                1,
+                -1,
+                1,
+                -1
+              ],
+              "a": 278837,
+              "b": 167315,
+              "sum": 446152
+            },
+            {
+              "exponents": [
+                1,
+                -1,
+                -1,
+                1,
+                -1,
+                1
+              ],
+              "a": 167315,
+              "b": 278837,
+              "sum": 446152
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 1379,
+      "repair_gap": 7,
+      "lower_modulus": 197,
+      "reported_box_count": 2,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          577,
+          1
+        ],
+        [
+          1609,
+          1
+        ],
+        [
+          45317,
+          1
+        ]
+      ],
+      "witness_exponents": [
+        3,
+        -3,
+        -4,
+        -3
+      ],
+      "representation_count": 2,
+      "unique_sum_count": 1,
+      "unique_sums": [
+        2830496
+      ],
+      "shared_gap_candidate_count": 0,
+      "shared_gap_candidates": [],
+      "type_ii_certificate_count": 0,
+      "type_ii_certificates": []
+    },
+    {
+      "prime": 475619929,
+      "orientation": "forward",
+      "original_R": 5915,
+      "repair_gap": 7,
+      "lower_modulus": 845,
+      "reported_box_count": 4,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          3593,
+          1
+        ]
+      ],
+      "witness_exponents": [
+        3,
+        3,
+        -3,
+        -3,
+        0,
+        -3
+      ],
+      "representation_count": 4,
+      "unique_sum_count": 2,
+      "unique_sums": [
+        23343970,
+        65310050
+      ],
+      "shared_gap_candidate_count": 30,
+      "shared_gap_candidates": [
+        19,
+        59,
+        95,
+        131,
+        247,
+        295,
+        655,
+        727,
+        767,
+        1235,
+        1475,
+        1703,
+        3211,
+        3275,
+        3635,
+        3835,
+        8515,
+        9451,
+        9971,
+        16055,
+        19175,
+        22139,
+        42575,
+        47255,
+        49855,
+        110695,
+        122863,
+        249275,
+        553475,
+        614315
+      ],
+      "type_ii_certificate_count": 2,
+      "type_ii_certificates": [
+        {
+          "gap": 295,
+          "x": 118905056,
+          "divisor": 4,
+          "A": 1,
+          "B": 29726264,
+          "C": 4,
+          "y": 191707173542172,
+          "z": 5698738051408420005408,
+          "matching_lower_representations": [
+            {
+              "exponents": [
+                -1,
+                0,
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              "a": 89,
+              "b": 65309961,
+              "sum": 65310050
+            },
+            {
+              "exponents": [
+                1,
+                0,
+                1,
+                1,
+                -1,
+                1
+              ],
+              "a": 65309961,
+              "b": 89,
+              "sum": 65310050
+            }
+          ]
+        },
+        {
+          "gap": 1703,
+          "x": 118905408,
+          "divisor": 1458,
+          "A": 9,
+          "B": 733984,
+          "C": 18,
+          "y": 33208734682638,
+          "z": 2708297768589041088,
+          "matching_lower_representations": [
+            {
+              "exponents": [
+                -1,
+                0,
+                -1,
+                -1,
+                1,
+                -1
+              ],
+              "a": 89,
+              "b": 65309961,
+              "sum": 65310050
+            },
+            {
+              "exponents": [
+                1,
+                0,
+                1,
+                1,
+                -1,
+                1
+              ],
+              "a": 65309961,
+              "b": 89,
+              "sum": 65310050
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 510725329,
+      "orientation": "forward",
+      "original_R": 555,
+      "repair_gap": 15,
+      "lower_modulus": 37,
+      "reported_box_count": 2,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          2805461,
+          1
+        ]
+      ],
+      "witness_exponents": [
+        -3,
+        1,
+        -3,
+        0
+      ],
+      "representation_count": 2,
+      "unique_sum_count": 1,
+      "unique_sums": [
+        444
+      ],
+      "shared_gap_candidate_count": 2,
+      "shared_gap_candidates": [
+        3,
+        111
+      ],
+      "type_ii_certificate_count": 0,
+      "type_ii_certificates": []
+    }
+  ]
+}

@@ -1,0 +1,3424 @@
+{
+  "arithmetic": "For every strict balanced endpoint descent classified as a lower-modulus F-box miss, Smith/Hermite transforms reconstruct the support relation lattice and an exhaustive affine-box miss at t=R/m.",
+  "scope_note": "This is a finite relation-lattice certificate on the frozen 48 strict descents. The reduced modulus is t=1 mod 4, so the certificate is a quotient F interface, not itself a legal Type-I gap or a global descent theorem.",
+  "input": "type-i-f-overflow-r-modulus-repair-results.json",
+  "input_sha256": "c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f",
+  "factorization_input": "type-i-f-overflow-support-boundary-results.json",
+  "factorization_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "state_count": 42,
+  "total_box_points_checked": 13140,
+  "maximum_box_size": 1215,
+  "minimum_relation_index": 22,
+  "maximum_relation_index": 208576,
+  "order_two_target_count": 27,
+  "profiles_by_orientation": {
+    "forward": {
+      "state_count": 20,
+      "total_box_points_checked": 5454,
+      "order_two_target_count": 14
+    },
+    "reverse": {
+      "state_count": 22,
+      "total_box_points_checked": 7686,
+      "order_two_target_count": 13
+    }
+  },
+  "profiles": [
+    {
+      "prime": 13782409,
+      "orientation": "forward",
+      "original_R": 33051,
+      "gap": 3,
+      "lower_modulus": 11017,
+      "balanced_pair_gcd": 4,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1181,
+          1
+        ],
+        [
+          4507,
+          1
+        ]
+      ],
+      "component_orders": [
+        22,
+        478
+      ],
+      "relation_basis_columns": [
+        [
+          5258,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4413,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4638,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          949,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1793,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 10516,
+      "image_order": 10516,
+      "target_preimage": [
+        974426,
+        -402610,
+        203775,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 16002529,
+      "orientation": "reverse",
+      "original_R": 5075,
+      "gap": 7,
+      "lower_modulus": 725,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          331,
+          1
+        ],
+        [
+          7867,
+          1
+        ]
+      ],
+      "component_orders": [
+        20,
+        28
+      ],
+      "relation_basis_columns": [
+        [
+          140,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          68,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          117,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          37,
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          61,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 560,
+      "image_order": 560,
+      "target_preimage": [
+        3670,
+        816,
+        -1824,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 70,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 69
+    },
+    {
+      "prime": 48991849,
+      "orientation": "reverse",
+      "original_R": 7931,
+      "gap": 11,
+      "lower_modulus": 721,
+      "balanced_pair_gcd": 8,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          11897,
+          1
+        ],
+        [
+          28649,
+          1
+        ]
+      ],
+      "component_orders": [
+        6,
+        102
+      ],
+      "relation_basis_columns": [
+        [
+          102,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          81,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          22,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          22,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          44,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 612,
+      "image_order": 612,
+      "target_preimage": [
+        -3627,
+        -1056,
+        1782,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 62704849,
+      "orientation": "forward",
+      "original_R": 1947,
+      "gap": 3,
+      "lower_modulus": 649,
+      "balanced_pair_gcd": 18,
+      "factorization": [
+        [
+          53,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          1650083,
+          1
+        ]
+      ],
+      "component_orders": [
+        10,
+        58
+      ],
+      "relation_basis_columns": [
+        [
+          145,
+          0,
+          0
+        ],
+        [
+          39,
+          2,
+          0
+        ],
+        [
+          38,
+          1,
+          1
+        ]
+      ],
+      "relation_index": 290,
+      "image_order": 290,
+      "target_preimage": [
+        12727,
+        -7999,
+        0
+      ],
+      "box_size": 27,
+      "box_points_checked": 27,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 145,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 144
+    },
+    {
+      "prime": 75056809,
+      "orientation": "reverse",
+      "original_R": 63339,
+      "gap": 3,
+      "lower_modulus": 21113,
+      "balanced_pair_gcd": 44,
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          37,
+          2
+        ],
+        [
+          347,
+          1
+        ],
+        [
+          51059,
+          1
+        ]
+      ],
+      "component_orders": [
+        42,
+        490
+      ],
+      "relation_basis_columns": [
+        [
+          1470,
+          0,
+          0,
+          0
+        ],
+        [
+          380,
+          2,
+          0,
+          0
+        ],
+        [
+          343,
+          0,
+          7,
+          0
+        ],
+        [
+          725,
+          0,
+          6,
+          1
+        ]
+      ],
+      "relation_index": 20580,
+      "image_order": 20580,
+      "target_preimage": [
+        2216599,
+        -12208560,
+        7878976,
+        0
+      ],
+      "box_size": 225,
+      "box_points_checked": 225,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 245,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 244
+    },
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "gap": 3,
+      "lower_modulus": 27337,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1409,
+          1
+        ],
+        [
+          115561,
+          1
+        ]
+      ],
+      "component_orders": [
+        27336
+      ],
+      "relation_basis_columns": [
+        [
+          27336,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          18429,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          274,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          12481,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          21661,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 27336,
+      "image_order": 27336,
+      "target_preimage": [
+        13668,
+        0,
+        0,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 6834,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 6833
+    },
+    {
+      "prime": 106050289,
+      "orientation": "forward",
+      "original_R": 291,
+      "gap": 3,
+      "lower_modulus": 97,
+      "balanced_pair_gcd": 16,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          706193,
+          1
+        ]
+      ],
+      "component_orders": [
+        96
+      ],
+      "relation_basis_columns": [
+        [
+          96,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          1,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          1,
+          0
+        ],
+        [
+          36,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 96,
+      "image_order": 96,
+      "target_preimage": [
+        48,
+        0,
+        0,
+        0
+      ],
+      "box_size": 135,
+      "box_points_checked": 135,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 24,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 23
+    },
+    {
+      "prime": 152498329,
+      "orientation": "reverse",
+      "original_R": 28131,
+      "gap": 3,
+      "lower_modulus": 9377,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          2239,
+          1
+        ],
+        [
+          391021,
+          1
+        ]
+      ],
+      "component_orders": [
+        9376
+      ],
+      "relation_basis_columns": [
+        [
+          9376,
+          0,
+          0,
+          0
+        ],
+        [
+          5688,
+          1,
+          0,
+          0
+        ],
+        [
+          7005,
+          0,
+          1,
+          0
+        ],
+        [
+          9005,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 9376,
+      "image_order": 9376,
+      "target_preimage": [
+        -3942608,
+        12151296,
+        0,
+        0
+      ],
+      "box_size": 225,
+      "box_points_checked": 225,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 1172,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 1171
+    },
+    {
+      "prime": 155533849,
+      "orientation": "forward",
+      "original_R": 267,
+      "gap": 3,
+      "lower_modulus": 89,
+      "balanced_pair_gcd": 8,
+      "factorization": [
+        [
+          673,
+          1
+        ],
+        [
+          971,
+          1
+        ],
+        [
+          15887,
+          1
+        ]
+      ],
+      "component_orders": [
+        88
+      ],
+      "relation_basis_columns": [
+        [
+          22,
+          0,
+          0
+        ],
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          8,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 22,
+      "image_order": 22,
+      "target_preimage": [
+        0,
+        11,
+        0
+      ],
+      "box_size": 27,
+      "box_points_checked": 27,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 165387049,
+      "orientation": "forward",
+      "original_R": 267,
+      "gap": 3,
+      "lower_modulus": 89,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          43,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          4351433,
+          1
+        ]
+      ],
+      "component_orders": [
+        88
+      ],
+      "relation_basis_columns": [
+        [
+          88,
+          0,
+          0
+        ],
+        [
+          41,
+          1,
+          0
+        ],
+        [
+          40,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 88,
+      "image_order": 88,
+      "target_preimage": [
+        132,
+        -88,
+        0
+      ],
+      "box_size": 27,
+      "box_points_checked": 27,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 171292489,
+      "orientation": "forward",
+      "original_R": 8043,
+      "gap": 7,
+      "lower_modulus": 1149,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          2113,
+          1
+        ],
+        [
+          13219,
+          1
+        ]
+      ],
+      "component_orders": [
+        2,
+        382
+      ],
+      "relation_basis_columns": [
+        [
+          382,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          61,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          250,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          310,
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "relation_index": 764,
+      "image_order": 764,
+      "target_preimage": [
+        199207,
+        -263466,
+        -199206,
+        -126,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 171292489,
+      "orientation": "reverse",
+      "original_R": 8043,
+      "gap": 3,
+      "lower_modulus": 2681,
+      "balanced_pair_gcd": 4,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          2113,
+          1
+        ],
+        [
+          13219,
+          1
+        ]
+      ],
+      "component_orders": [
+        6,
+        382
+      ],
+      "relation_basis_columns": [
+        [
+          1146,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          386,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          63,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          127,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          951,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 2292,
+      "image_order": 2292,
+      "target_preimage": [
+        -34267,
+        15147,
+        61336,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 223474729,
+      "orientation": "reverse",
+      "original_R": 699,
+      "gap": 3,
+      "lower_modulus": 233,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          283,
+          1
+        ],
+        [
+          2447,
+          1
+        ],
+        [
+          56393,
+          1
+        ]
+      ],
+      "component_orders": [
+        232
+      ],
+      "relation_basis_columns": [
+        [
+          116,
+          0,
+          0
+        ],
+        [
+          40,
+          1,
+          0
+        ],
+        [
+          41,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 116,
+      "image_order": 116,
+      "target_preimage": [
+        -1276,
+        1276,
+        58
+      ],
+      "box_size": 27,
+      "box_points_checked": 27,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 236164009,
+      "orientation": "reverse",
+      "original_R": 8379,
+      "gap": 3,
+      "lower_modulus": 2793,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          27239,
+          1
+        ]
+      ],
+      "component_orders": [
+        2,
+        42,
+        18
+      ],
+      "relation_basis_columns": [
+        [
+          42,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          36,
+          18,
+          0,
+          0,
+          0
+        ],
+        [
+          34,
+          8,
+          2,
+          0,
+          0
+        ],
+        [
+          3,
+          12,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          1,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 1512,
+      "image_order": 1512,
+      "target_preimage": [
+        143,
+        -233,
+        7,
+        84,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 306963409,
+      "orientation": "forward",
+      "original_R": 875,
+      "gap": 7,
+      "lower_modulus": 125,
+      "balanced_pair_gcd": 4,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          17,
+          3
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          151,
+          1
+        ]
+      ],
+      "component_orders": [
+        100
+      ],
+      "relation_basis_columns": [
+        [
+          100,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          61,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          62,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          63,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          80,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 100,
+      "image_order": 100,
+      "target_preimage": [
+        1050,
+        -100,
+        0,
+        0,
+        0
+      ],
+      "box_size": 945,
+      "box_points_checked": 945,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 50,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 49
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 137595,
+      "gap": 15,
+      "lower_modulus": 9173,
+      "balanced_pair_gcd": 6,
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          95857,
+          1
+        ]
+      ],
+      "component_orders": [
+        9172
+      ],
+      "relation_basis_columns": [
+        [
+          9172,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2997,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          3134,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1876,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          5012,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 9172,
+      "image_order": 9172,
+      "target_preimage": [
+        -2370962,
+        2274656,
+        0,
+        0,
+        0
+      ],
+      "box_size": 675,
+      "box_points_checked": 675,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 4586,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 4585
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 323931,
+      "gap": 3,
+      "lower_modulus": 107977,
+      "balanced_pair_gcd": 12,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          751,
+          1
+        ],
+        [
+          4373,
+          1
+        ]
+      ],
+      "component_orders": [
+        18,
+        5682
+      ],
+      "relation_basis_columns": [
+        [
+          17046,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2337,
+          3,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          484,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4743,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          4248,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          6171,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "relation_index": 102276,
+      "image_order": 102276,
+      "target_preimage": [
+        378953152179,
+        -135985724070,
+        -335956670448,
+        0,
+        11301,
+        0
+      ],
+      "box_size": 729,
+      "box_points_checked": 729,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 8523,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 8522
+    },
+    {
+      "prime": 312918169,
+      "orientation": "forward",
+      "original_R": 49947,
+      "gap": 3,
+      "lower_modulus": 16649,
+      "balanced_pair_gcd": 38,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          10531,
+          1
+        ],
+        [
+          17669,
+          1
+        ]
+      ],
+      "component_orders": [
+        16648
+      ],
+      "relation_basis_columns": [
+        [
+          16648,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          9341,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          5426,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          6754,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          2840,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 16648,
+      "image_order": 16648,
+      "target_preimage": [
+        -3897579816,
+        1816987692,
+        -8324,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 2081,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 2080
+    },
+    {
+      "prime": 331117609,
+      "orientation": "forward",
+      "original_R": 107891,
+      "gap": 7,
+      "lower_modulus": 15413,
+      "balanced_pair_gcd": 4,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          821,
+          1
+        ],
+        [
+          1301,
+          1
+        ],
+        [
+          1433,
+          1
+        ]
+      ],
+      "component_orders": [
+        15412
+      ],
+      "relation_basis_columns": [
+        [
+          15412,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8181,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          14013,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          10227,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          659,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          5055,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 15412,
+      "image_order": 15412,
+      "target_preimage": [
+        -1125076,
+        15065230,
+        0,
+        0,
+        0,
+        0
+      ],
+      "box_size": 729,
+      "box_points_checked": 729,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 7706,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 7705
+    },
+    {
+      "prime": 335420089,
+      "orientation": "reverse",
+      "original_R": 939,
+      "gap": 3,
+      "lower_modulus": 313,
+      "balanced_pair_gcd": 14,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          1553,
+          1
+        ],
+        [
+          58211,
+          1
+        ]
+      ],
+      "component_orders": [
+        312
+      ],
+      "relation_basis_columns": [
+        [
+          156,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          2,
+          0,
+          0
+        ],
+        [
+          116,
+          0,
+          1,
+          0
+        ],
+        [
+          115,
+          1,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 312,
+      "image_order": 312,
+      "target_preimage": [
+        156,
+        -468,
+        0,
+        0
+      ],
+      "box_size": 81,
+      "box_points_checked": 81,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 78,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 77
+    },
+    {
+      "prime": 339576169,
+      "orientation": "reverse",
+      "original_R": 238299,
+      "gap": 3,
+      "lower_modulus": 79433,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          2263841,
+          1
+        ]
+      ],
+      "component_orders": [
+        79432
+      ],
+      "relation_basis_columns": [
+        [
+          79432,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          70064,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          50671,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          11961,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          43894,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 79432,
+      "image_order": 79432,
+      "target_preimage": [
+        21883516,
+        -94285784,
+        0,
+        0,
+        0
+      ],
+      "box_size": 675,
+      "box_points_checked": 675,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 19858,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 19857
+    },
+    {
+      "prime": 356491249,
+      "orientation": "reverse",
+      "original_R": 131595,
+      "gap": 3,
+      "lower_modulus": 43865,
+      "balanced_pair_gcd": 12,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          2029,
+          1
+        ],
+        [
+          33199,
+          1
+        ]
+      ],
+      "component_orders": [
+        4,
+        30,
+        282
+      ],
+      "relation_basis_columns": [
+        [
+          2820,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          402,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          2602,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          116,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          2719,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "relation_index": 33840,
+      "image_order": 33840,
+      "target_preimage": [
+        6134977,
+        -37346670,
+        -29703511,
+        42995961,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 19083,
+      "gap": 3,
+      "lower_modulus": 6361,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          17,
+          1
+        ],
+        [
+          239,
+          1
+        ],
+        [
+          8419,
+          1
+        ],
+        [
+          51061,
+          1
+        ]
+      ],
+      "component_orders": [
+        6360
+      ],
+      "relation_basis_columns": [
+        [
+          1272,
+          0,
+          0,
+          0
+        ],
+        [
+          330,
+          1,
+          0,
+          0
+        ],
+        [
+          361,
+          0,
+          1,
+          0
+        ],
+        [
+          30,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 1272,
+      "image_order": 1272,
+      "target_preimage": [
+        18444,
+        -157092,
+        0,
+        0
+      ],
+      "box_size": 81,
+      "box_points_checked": 81,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 33171,
+      "gap": 3,
+      "lower_modulus": 11057,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          18481,
+          1
+        ],
+        [
+          4693697,
+          1
+        ]
+      ],
+      "component_orders": [
+        11056
+      ],
+      "relation_basis_columns": [
+        [
+          11056,
+          0,
+          0,
+          0
+        ],
+        [
+          3048,
+          1,
+          0,
+          0
+        ],
+        [
+          2637,
+          0,
+          1,
+          0
+        ],
+        [
+          5684,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 11056,
+      "image_order": 11056,
+      "target_preimage": [
+        -4837000,
+        4704328,
+        0,
+        0
+      ],
+      "box_size": 81,
+      "box_points_checked": 81,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 1382,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 1381
+    },
+    {
+      "prime": 373561609,
+      "orientation": "reverse",
+      "original_R": 2211,
+      "gap": 3,
+      "lower_modulus": 737,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          4
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          3881,
+          1
+        ],
+        [
+          12161,
+          1
+        ]
+      ],
+      "component_orders": [
+        10,
+        66
+      ],
+      "relation_basis_columns": [
+        [
+          110,
+          0,
+          0,
+          0
+        ],
+        [
+          92,
+          6,
+          0,
+          0
+        ],
+        [
+          76,
+          0,
+          1,
+          0
+        ],
+        [
+          54,
+          5,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 660,
+      "image_order": 660,
+      "target_preimage": [
+        -5200,
+        2679,
+        342,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 165,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 164
+    },
+    {
+      "prime": 373561609,
+      "orientation": "forward",
+      "original_R": 625731,
+      "gap": 3,
+      "lower_modulus": 208577,
+      "balanced_pair_gcd": 6,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          1097,
+          1
+        ],
+        [
+          7757,
+          1
+        ],
+        [
+          11351,
+          1
+        ]
+      ],
+      "component_orders": [
+        208576
+      ],
+      "relation_basis_columns": [
+        [
+          208576,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          195497,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          21149,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          130584,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          83278,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 208576,
+      "image_order": 208576,
+      "target_preimage": [
+        7630022944,
+        -5137435456,
+        0,
+        0,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 52144,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 52143
+    },
+    {
+      "prime": 408626089,
+      "orientation": "forward",
+      "original_R": 531,
+      "gap": 3,
+      "lower_modulus": 177,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          10567,
+          1
+        ],
+        [
+          33119,
+          1
+        ]
+      ],
+      "component_orders": [
+        2,
+        58
+      ],
+      "relation_basis_columns": [
+        [
+          58,
+          0,
+          0,
+          0
+        ],
+        [
+          32,
+          2,
+          0,
+          0
+        ],
+        [
+          22,
+          1,
+          1,
+          0
+        ],
+        [
+          47,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 116,
+      "image_order": 116,
+      "target_preimage": [
+        1,
+        575,
+        -552,
+        0
+      ],
+      "box_size": 81,
+      "box_points_checked": 81,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 29,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 28
+    },
+    {
+      "prime": 457986169,
+      "orientation": "forward",
+      "original_R": 3435,
+      "gap": 3,
+      "lower_modulus": 1145,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          1601,
+          1
+        ],
+        [
+          19421,
+          1
+        ]
+      ],
+      "component_orders": [
+        4,
+        228
+      ],
+      "relation_basis_columns": [
+        [
+          228,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          33,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          208,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          102,
+          0,
+          3,
+          1,
+          0
+        ],
+        [
+          68,
+          0,
+          2,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 912,
+      "image_order": 912,
+      "target_preimage": [
+        701102,
+        42900,
+        -414700,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 38,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 37
+    },
+    {
+      "prime": 463627609,
+      "orientation": "forward",
+      "original_R": 579,
+      "gap": 3,
+      "lower_modulus": 193,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          2027,
+          1
+        ],
+        [
+          2797,
+          1
+        ]
+      ],
+      "component_orders": [
+        192
+      ],
+      "relation_basis_columns": [
+        [
+          24,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          16,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          5,
+          6,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 192,
+      "image_order": 192,
+      "target_preimage": [
+        -4416,
+        3168,
+        0,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 48,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 47
+    },
+    {
+      "prime": 473173969,
+      "orientation": "reverse",
+      "original_R": 1531307,
+      "gap": 47,
+      "lower_modulus": 32581,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          19429,
+          1
+        ],
+        [
+          34283,
+          1
+        ]
+      ],
+      "component_orders": [
+        30,
+        1050
+      ],
+      "relation_basis_columns": [
+        [
+          210,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          30,
+          150,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          207,
+          113,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          184,
+          102,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          68,
+          65,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          89,
+          75,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 31500,
+      "image_order": 31500,
+      "target_preimage": [
+        3025665,
+        -3432750,
+        5423400,
+        0,
+        0,
+        0
+      ],
+      "box_size": 1215,
+      "box_points_checked": 1215,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 4611,
+      "gap": 3,
+      "lower_modulus": 1537,
+      "balanced_pair_gcd": 6,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          1249,
+          1
+        ],
+        [
+          15887,
+          1
+        ]
+      ],
+      "component_orders": [
+        28,
+        52
+      ],
+      "relation_basis_columns": [
+        [
+          364,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          348,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          219,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          191,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          62,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 1456,
+      "image_order": 1456,
+      "target_preimage": [
+        14906,
+        -10750,
+        -14792,
+        0,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 182,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 181
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "gap": 3,
+      "lower_modulus": 106017,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          6965317,
+          1
+        ]
+      ],
+      "component_orders": [
+        2,
+        35338
+      ],
+      "relation_basis_columns": [
+        [
+          35338,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          12320,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          30797,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          29040,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          1482,
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "relation_index": 70676,
+      "image_order": 70676,
+      "target_preimage": [
+        2386274276,
+        981423450,
+        -2386274275,
+        -1225,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 17669,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 17668
+    },
+    {
+      "prime": 507599689,
+      "orientation": "forward",
+      "original_R": 5691,
+      "gap": 3,
+      "lower_modulus": 1897,
+      "balanced_pair_gcd": 4,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          547,
+          1
+        ],
+        [
+          11897,
+          1
+        ]
+      ],
+      "component_orders": [
+        6,
+        270
+      ],
+      "relation_basis_columns": [
+        [
+          54,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          36,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          5,
+          0,
+          0
+        ],
+        [
+          32,
+          4,
+          0,
+          1,
+          0
+        ],
+        [
+          4,
+          4,
+          4,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 1620,
+      "image_order": 1620,
+      "target_preimage": [
+        3,
+        564,
+        -285,
+        0,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 507599689,
+      "orientation": "reverse",
+      "original_R": 5691,
+      "gap": 7,
+      "lower_modulus": 813,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          547,
+          1
+        ],
+        [
+          11897,
+          1
+        ]
+      ],
+      "component_orders": [
+        2,
+        270
+      ],
+      "relation_basis_columns": [
+        [
+          54,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          30,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          53,
+          1,
+          5,
+          0,
+          0
+        ],
+        [
+          26,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          25,
+          0,
+          4,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 540,
+      "image_order": 540,
+      "target_preimage": [
+        1,
+        0,
+        -385,
+        70,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 509434249,
+      "orientation": "reverse",
+      "original_R": 123,
+      "gap": 3,
+      "lower_modulus": 41,
+      "balanced_pair_gcd": 14492,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          431,
+          1
+        ],
+        [
+          56003,
+          1
+        ]
+      ],
+      "component_orders": [
+        40
+      ],
+      "relation_basis_columns": [
+        [
+          40,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          0,
+          0
+        ],
+        [
+          22,
+          0,
+          1,
+          0
+        ],
+        [
+          15,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 40,
+      "image_order": 40,
+      "target_preimage": [
+        -100,
+        20,
+        0,
+        0
+      ],
+      "box_size": 81,
+      "box_points_checked": 81,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 10,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 9
+    },
+    {
+      "prime": 534844249,
+      "orientation": "forward",
+      "original_R": 11011,
+      "gap": 91,
+      "lower_modulus": 121,
+      "balanced_pair_gcd": 18,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          2267,
+          1
+        ],
+        [
+          144161,
+          1
+        ]
+      ],
+      "component_orders": [
+        110
+      ],
+      "relation_basis_columns": [
+        [
+          55,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          33,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 110,
+      "image_order": 110,
+      "target_preimage": [
+        110,
+        -165,
+        0,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 55,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 54
+    },
+    {
+      "prime": 542688169,
+      "orientation": "reverse",
+      "original_R": 16851,
+      "gap": 3,
+      "lower_modulus": 5617,
+      "balanced_pair_gcd": 32,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          317,
+          1
+        ],
+        [
+          35089,
+          1
+        ]
+      ],
+      "component_orders": [
+        40,
+        136
+      ],
+      "relation_basis_columns": [
+        [
+          680,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          288,
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          518,
+          4,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          308,
+          5,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          511,
+          5,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          300,
+          7,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 5440,
+      "image_order": 5440,
+      "target_preimage": [
+        5444,
+        -236,
+        -3720,
+        0,
+        0,
+        0
+      ],
+      "box_size": 729,
+      "box_points_checked": 729,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 170,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 169
+    },
+    {
+      "prime": 549401449,
+      "orientation": "reverse",
+      "original_R": 6787,
+      "gap": 11,
+      "lower_modulus": 617,
+      "balanced_pair_gcd": 6,
+      "factorization": [
+        [
+          13,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          39829,
+          1
+        ]
+      ],
+      "component_orders": [
+        616
+      ],
+      "relation_basis_columns": [
+        [
+          616,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          398,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          194,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          132,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          542,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 616,
+      "image_order": 616,
+      "target_preimage": [
+        -1540,
+        23716,
+        0,
+        0,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 77,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 76
+    },
+    {
+      "prime": 556685089,
+      "orientation": "reverse",
+      "original_R": 147,
+      "gap": 3,
+      "lower_modulus": 49,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          677,
+          1
+        ],
+        [
+          1590467,
+          1
+        ]
+      ],
+      "component_orders": [
+        42
+      ],
+      "relation_basis_columns": [
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          5,
+          7,
+          0
+        ],
+        [
+          4,
+          6,
+          1
+        ]
+      ],
+      "relation_index": 42,
+      "image_order": 42,
+      "target_preimage": [
+        42,
+        -63,
+        0
+      ],
+      "box_size": 27,
+      "box_points_checked": 27,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 559650361,
+      "orientation": "reverse",
+      "original_R": 29939,
+      "gap": 91,
+      "lower_modulus": 329,
+      "balanced_pair_gcd": 2,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          30937,
+          1
+        ],
+        [
+          530977,
+          1
+        ]
+      ],
+      "component_orders": [
+        6,
+        46
+      ],
+      "relation_basis_columns": [
+        [
+          138,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          62,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          59,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          87,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          27,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 276,
+      "image_order": 276,
+      "target_preimage": [
+        -737,
+        -37,
+        925,
+        0,
+        0
+      ],
+      "box_size": 243,
+      "box_points_checked": 243,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": null,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": null
+    },
+    {
+      "prime": 570621769,
+      "orientation": "reverse",
+      "original_R": 339,
+      "gap": 3,
+      "lower_modulus": 113,
+      "balanced_pair_gcd": 10,
+      "factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          1187,
+          1
+        ],
+        [
+          7577,
+          1
+        ]
+      ],
+      "component_orders": [
+        112
+      ],
+      "relation_basis_columns": [
+        [
+          112,
+          0,
+          0,
+          0
+        ],
+        [
+          68,
+          1,
+          0,
+          0
+        ],
+        [
+          68,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 112,
+      "image_order": 112,
+      "target_preimage": [
+        -56,
+        56,
+        0,
+        0
+      ],
+      "box_size": 81,
+      "box_points_checked": 81,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 14,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 13
+    },
+    {
+      "prime": 570621769,
+      "orientation": "forward",
+      "original_R": 21259,
+      "gap": 7,
+      "lower_modulus": 3037,
+      "balanced_pair_gcd": 8,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          100213,
+          1
+        ]
+      ],
+      "component_orders": [
+        3036
+      ],
+      "relation_basis_columns": [
+        [
+          759,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          107,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          493,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          582,
+          3,
+          0,
+          0,
+          1
+        ]
+      ],
+      "relation_index": 3036,
+      "image_order": 3036,
+      "target_preimage": [
+        -292974,
+        608718,
+        0,
+        0,
+        0
+      ],
+      "box_size": 405,
+      "box_points_checked": 405,
+      "target_in_generated_subgroup": true,
+      "target_in_box": false,
+      "order_two_to_minus_one": 1518,
+      "dyadic_budget": 1,
+      "dyadic_budget_gap": 1517
+    }
+  ]
+}

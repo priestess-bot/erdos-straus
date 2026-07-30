@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-f-overflow-balanced-endpoint-descent
 title: 盒外见证的端点平衡小模数表示下降
-statement: 对 R 因子修复候选 m|gcd(R,B-1)，写 R=mt、A=mu-1、B=mv+1。则 u+v=t m_0。若 t>1 且 gcd(v,t)=1，令 g=gcd(u,v)，则约分后的 u/g、v/g 互素且 (u/g)/(v/g)=-1 (mod t)。这给出严格更小模数 t 上的目标有理表示；若约分端点均为 K 的素因子光滑，则得到同一关系格的支撑接口，但仍需检查有限指数盒，否则产生支撑逃逸标签。冻结审计的 149 个一级候选中有 48 个严格小模数表示下降，48 个均发生双端点支撑逃逸，0 个保持 K 支撑。
+statement: 对 R 因子修复候选 m|gcd(R,B-1)，写 R=mt、A=mu-1、B=mv+1。则 u+v=t m_0。若 t>1 且 gcd(v,t)=1，令 g=gcd(u,v)，则约分后的 u/g、v/g 互素且 (u/g)/(v/g)=-1 (mod t)。这给出严格更小模数 t 上的目标有理表示；若约分端点均为 K 的素因子光滑，则得到同一关系格的支撑接口，但仍需检查有限指数盒，否则产生支撑逃逸标签。冻结审计的 149 个一级候选中有 48 个严格小模数表示下降，其中 41 个发生双端点支撑逃逸、7 个仅一端支撑逃逸、0 个两端都保持 K 支撑。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -109,7 +109,7 @@ F 型目标纤维命中。若第 1 项成立但第 2 项失败，则得到小模
 candidate_gap_count: 149
 strict_balanced_reduction_count: 48
 balanced_support_preserved_count: 0
-balanced_external_support_count: 48
+balanced_external_support_count: 41
 forward_strict_balanced_reduction_count: 24
 reverse_strict_balanced_reduction_count: 24
 ~~~
@@ -123,7 +123,7 @@ reproductions/type-i-f-overflow-r-modulus-repair-results.json
 结果文件 SHA-256：
 
 ~~~text
-f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809
+c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f
 ~~~
 
 该边界把一级修复失败分成两个可证明的方向：

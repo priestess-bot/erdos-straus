@@ -1926,8 +1926,8 @@ R=mt,\qquad A=mu-1,\qquad B=mv+1,\qquad u+v=t\,m_0.
 给出严格更小模数的端点表示下降。新增主张卡：
 claims/type-I-f-overflow-balanced-endpoint-descent.md。
 并在同一脚本中检查 \(K\)-支撑残差。149 个一级候选中 48 个进入严格小模数分支，
-但 48 个都在两个端点同时发生支撑逃逸，支撑保持数为 0。最新结果哈希：
-f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
+其中 41 个在两个约分端点同时发生支撑逃逸，7 个仅一端支撑逃逸，支撑保持数为 0。最新结果哈希：
+c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f。
 
 这给出当前最清晰的下一道门：证明支撑逃逸端点必产生 G/Type II 短证书，或把外部
 素因子残差接入跨状态容量；不能把端点下降直接当作原有限目标纤维下降。
@@ -1953,11 +1953,75 @@ forward: 4 / 20 / 0
 reverse: 2 / 22 / 0
 ~~~
 
-这一步把“端点双支撑逃逸”细分为更小模数的 G 分离、盒内命中和盒外 F 障碍；但
-\(t\equiv1\pmod4\)，因此它仍是关系格/对偶接口，不能直接称为合法 Type I gap。
+由于原 F 见证在模 \(R\) 下给出 \(-1\)，而 \(t\mid R\)，同一 \(K\)-支撑关系约化后
+仍给出 \(-1\in H_t\)，所以低模数 G 分支对所有这类严格下降结构性为空。这一步把
+“端点双支撑逃逸”细分为盒内命中和盒外 F 障碍；但 \(t\equiv1\pmod4\)，因此它仍
+是关系格/对偶接口，不能直接称为合法 Type I gap。
 6 个盒内命中需要额外的奇偶终端提升，42 个盒外样本是下一轮 Fourier/容量输入。
 33 个严格下降模数满足某个 \(2^j\equiv-1\pmod t\)，但所有 48 个样本的 \(K\) 都是
 奇数，预算 \(v_2(2K)=1\)，最小 \(j\) 至少为 2，二进预算可行数为 0；另外 15 个
 模数没有二进幂反足点。结果文件 reproductions/type-i-f-overflow-r-modulus-repair-results.json 的
-SHA-256 为 f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809；
+SHA-256 为 c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f；
 主张卡见[端点下降的更小模数 F/G 盒分流](../claims/type-I-f-overflow-balanced-lower-modulus-fiber-profile.md)。
+
+## 2026-07-30 端点下降 F-box miss 的关系格证书
+
+对 42 个更小模数 F-box miss，调用既有 Smith/Hermite 关系格重建器，使用
+\(t=R/m\) 的单位群离散对数矩阵恢复目标 \(-1\) 的仿射原像和满秩关系格，
+并逐点检查原 \(K\)-指数盒。全部 42 个状态都通过目标在支撑子群内、盒内无目标的
+双重断言，共检查 13140 个盒点，最大盒 1215 点；关系格指数范围为 22 到 208576。
+27 个状态有二进幂反足点，但不满足预算。
+
+这一步给出了可复核的 F 型对偶证书，但 \(t\equiv1\pmod4\)，仍需关系格到合法
+Type I/II 或跨状态容量的算术桥。结果文件为
+reproductions/type-i-f-overflow-lower-modulus-relation-lattice-results.json，
+主张卡见[端点下降 F-box miss 的更小模数关系格证书](../claims/type-I-f-overflow-lower-modulus-relation-lattice.md)。
+
+## 2026-07-30 低模数 F 关系的选择不变溢出价格
+
+为避免把任意 Smith 原像的坐标误当成容量需求，定义低模数目标纤维
+\(F_t=\{z:\prod q_i^{z_i}=-1\pmod t\}\) 上的盒外量
+\(\operatorname{ov}_\nu(z)_i=(|z_i|-\nu_i)_+\)，以及正权最小价格
+\[
+\Omega_w(t)=\min_{z\in F_t}\sum_iw_i\operatorname{ov}_\nu(z)_i.
+\]
+F-box hit 等价于 \(\Omega_w=0\)，F-box miss 时 \(\Omega_w\ge\min_iw_i\)；多支持
+情形用 Pareto 极小向量保留全部不可支配分配。这个接口是选择不变的，但尚未证明
+溢出价格必须支付同一 \(q\)-进载体高度或产生严格下降。主张卡见
+[更小模数 F 关系的选择不变溢出价格接口](../claims/type-I-f-overflow-lower-modulus-weighted-cost-interface.md)。
+
+## 2026-07-30 平衡端点对的 Type II 边界
+
+将 42 个 lower-modulus F-box miss 的确定性平衡端点约分为互素对 \((U,V)\)，并使用
+Type II 互素正规形的充要判据：固定前两项时，必须存在
+\(h\mid U+V\)、\(h\equiv3\pmod4\)、\(UV\mid(p+h)/4\)。41 个状态因
+\(UV>p/2\) 被大小界直接排除；唯一未排除状态是
+\(p=509434249,t=41,(U,V)=(47,76)\)，合法 \(h=3,123\) 均失败。固定 \(h=3t\)
+探针为 0/42。该边界只排除固定端点对，不能覆盖因子重分配或其它 Type II 形态。
+详见[平衡端点 Type II 边界](../claims/type-I-f-overflow-balanced-endpoint-type-ii-boundary.md)。
+
+## 2026-07-30 lower-hit 的共享缺口旁路
+
+对 6 个更小模数 F-box hit，完整枚举 50 个盒内表示、25 个不同的 \(a+b\)，得到
+101 个合法共享缺口候选；再独立枚举 \(x'=(p+m')/4\) 的 Type II 除子并逐项重放三个
+分母恒等式，得到 4 张证书，覆盖 3 个素数：
+\(p=57399241,m'=311\)、\(p=242042089,m'=31\)，以及
+\(p=475619929,m'=295,1703\)。这说明“共享缺口候选”是有效旁路接口，但不构成
+lower hit 自动提升。详见[盒内命中的共享缺口 Type II 旁路提升](../claims/type-I-f-overflow-lower-modulus-shared-gap-type-II-lift.md)。
+
+## 2026-07-30 F-box miss 的最短关系边界
+
+固定生成元及 BFS 邻居顺序后，42 个 F-box miss 的最短 \(\ell^1\) 长度为 3--22，
+盒外层数为 1--19。33 个最短端点积大于 \(p/2\)，其余 9 个完整枚举端点和的合法
+因子仍无 Type II 命中，固定 \(h=3t\) 探针为 0/42。由于并列最短向量受 tie-break
+影响，这只是诊断结果，不能替代 \(\Omega_w\) 的选择不变定义。详见
+[最短关系与端点大小边界](../claims/type-I-f-overflow-lower-modulus-shortest-relation-profile.md)。
+
+## 2026-07-30 选择不变单位权溢出剖面
+
+为避免把任意 Smith 原像坐标当作容量费用，按目标纤维逐层穷举单位权价格
+\(\Omega_1=\min\sum_i(|z_i|-\nu_i)_+\)。42 个 F-box miss 中，完整检查至溢出 6
+得到 30 个精确最小值：\(1:12,2:8,3:2,4:4,5:2,6:2\)；其余 12 个继续检查到
+9 后又得到 \(7:2,8:3,9:1\)，剩余 6 个只有 \(\Omega_1\ge10\) 的下界。
+这把“盒外”转成选择不变的有限价格，但仍未证明每一层必须支付同一 \(q\)-进载体
+或严格下降。详见[单位权选择不变溢出剖面](../claims/type-I-f-overflow-lower-modulus-weighted-cost-profile.md)。

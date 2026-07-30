@@ -1,0 +1,2764 @@
+{
+  "arithmetic": "For each frozen lower-modulus F-box miss, enumerate the integer exponent fiber prod(q_i^z_i)=-1 by exact overflow-cost shells.",
+  "scope_note": "Unit weights w_i=1 and finite caps only. A value found by a complete shell search through L is an exact Omega_1 minimum; an unresolved state is only known to have Omega_1 greater than the cap. This profile is not a q-height theorem, a capacity contradiction, or a descent proof.",
+  "input": "type-i-f-overflow-r-modulus-repair-results.json",
+  "input_sha256": "c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f",
+  "factorization_input": "type-i-f-overflow-support-boundary-results.json",
+  "factorization_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "state_count": 42,
+  "primary_max_overflow": 6,
+  "primary_exact_count": 30,
+  "primary_unresolved_count": 12,
+  "primary_histogram": {
+    "1": 12,
+    "2": 8,
+    "3": 2,
+    "4": 4,
+    "5": 2,
+    "6": 2
+  },
+  "secondary_max_overflow": 9,
+  "secondary_exact_count": 36,
+  "secondary_unresolved_count": 6,
+  "secondary_histogram": {
+    "1": 12,
+    "2": 8,
+    "3": 2,
+    "4": 4,
+    "5": 2,
+    "6": 2,
+    "7": 2,
+    "8": 3,
+    "9": 1
+  },
+  "primary_max_box_size": 1215,
+  "secondary_unresolved_states": [
+    {
+      "prime": 62704849,
+      "lower_modulus": 649,
+      "orientation": "forward",
+      "omega_secondary_lower_bound": 10
+    },
+    {
+      "prime": 75056809,
+      "lower_modulus": 21113,
+      "orientation": "reverse",
+      "omega_secondary_lower_bound": 10
+    },
+    {
+      "prime": 310002289,
+      "lower_modulus": 107977,
+      "orientation": "reverse",
+      "omega_secondary_lower_bound": 10
+    },
+    {
+      "prime": 312918169,
+      "lower_modulus": 16649,
+      "orientation": "forward",
+      "omega_secondary_lower_bound": 10
+    },
+    {
+      "prime": 366108649,
+      "lower_modulus": 11057,
+      "orientation": "forward",
+      "omega_secondary_lower_bound": 10
+    },
+    {
+      "prime": 373561609,
+      "lower_modulus": 208577,
+      "orientation": "forward",
+      "omega_secondary_lower_bound": 10
+    }
+  ],
+  "profiles_by_orientation": {
+    "forward": {
+      "state_count": 20,
+      "primary_exact_count": 15,
+      "primary_histogram": {
+        "1": 7,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 1,
+        "6": 1
+      },
+      "secondary_exact_count": 16,
+      "secondary_histogram": {
+        "1": 7,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 1,
+        "6": 1,
+        "8": 1
+      }
+    },
+    "reverse": {
+      "state_count": 22,
+      "primary_exact_count": 15,
+      "primary_histogram": {
+        "1": 5,
+        "2": 6,
+        "4": 2,
+        "5": 1,
+        "6": 1
+      },
+      "secondary_exact_count": 20,
+      "secondary_histogram": {
+        "1": 5,
+        "2": 6,
+        "4": 2,
+        "5": 1,
+        "6": 1,
+        "7": 2,
+        "8": 2,
+        "9": 1
+      }
+    }
+  },
+  "profiles": [
+    {
+      "prime": 13782409,
+      "orientation": "forward",
+      "original_R": 33051,
+      "gap": 3,
+      "lower_modulus": 11017,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          1181,
+          1
+        ],
+        [
+          4507,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 4,
+      "omega_primary_vector": [
+        -1,
+        4,
+        2,
+        -1,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 13083,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 4,
+      "omega_secondary_vector": [
+        -1,
+        4,
+        2,
+        -1,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 13083,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450
+      }
+    },
+    {
+      "prime": 16002529,
+      "orientation": "reverse",
+      "original_R": 5075,
+      "gap": 7,
+      "lower_modulus": 725,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          331,
+          1
+        ],
+        [
+          7867,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 2943,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -2,
+        1,
+        1,
+        1,
+        2
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 2943,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890
+      }
+    },
+    {
+      "prime": 48991849,
+      "orientation": "reverse",
+      "original_R": 7931,
+      "gap": 11,
+      "lower_modulus": 721,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          11897,
+          1
+        ],
+        [
+          28649,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -1,
+        0,
+        1,
+        3,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 2943,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -1,
+        0,
+        1,
+        3,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 2943,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890
+      }
+    },
+    {
+      "prime": 62704849,
+      "orientation": "forward",
+      "original_R": 1947,
+      "gap": 3,
+      "lower_modulus": 649,
+      "factorization": [
+        [
+          53,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          1650083,
+          1
+        ]
+      ],
+      "box_size": 27,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 1051,
+      "primary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54,
+        "2": 90,
+        "3": 134,
+        "4": 186,
+        "5": 246,
+        "6": 314
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": null,
+      "omega_secondary_vector": null,
+      "secondary_exact_within_cap": false,
+      "secondary_lower_bound": 10,
+      "secondary_vectors_checked": 2481,
+      "secondary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54,
+        "2": 90,
+        "3": 134,
+        "4": 186,
+        "5": 246,
+        "6": 314,
+        "7": 390,
+        "8": 474,
+        "9": 566
+      }
+    },
+    {
+      "prime": 75056809,
+      "orientation": "reverse",
+      "original_R": 63339,
+      "gap": 3,
+      "lower_modulus": 21113,
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          37,
+          2
+        ],
+        [
+          347,
+          1
+        ],
+        [
+          51059,
+          1
+        ]
+      ],
+      "box_size": 225,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 11545,
+      "primary_shell_vectors_checked": {
+        "0": 225,
+        "1": 480,
+        "2": 856,
+        "3": 1360,
+        "4": 2008,
+        "5": 2816,
+        "6": 3800
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": null,
+      "omega_secondary_vector": null,
+      "secondary_exact_within_cap": false,
+      "secondary_lower_bound": 10,
+      "secondary_vectors_checked": 30849,
+      "secondary_shell_vectors_checked": {
+        "0": 225,
+        "1": 480,
+        "2": 856,
+        "3": 1360,
+        "4": 2008,
+        "5": 2816,
+        "6": 3800,
+        "7": 4976,
+        "8": 6360,
+        "9": 7968
+      }
+    },
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "gap": 3,
+      "lower_modulus": 27337,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1409,
+          1
+        ],
+        [
+          115561,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 39495,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442,
+        "6": 15970
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 9,
+      "omega_secondary_vector": [
+        0,
+        -1,
+        -3,
+        -1,
+        -8
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 141165,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442,
+        "6": 15970,
+        "7": 23370,
+        "8": 33010,
+        "9": 45290
+      }
+    },
+    {
+      "prime": 106050289,
+      "orientation": "forward",
+      "original_R": 291,
+      "gap": 3,
+      "lower_modulus": 97,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          706193,
+          1
+        ]
+      ],
+      "box_size": 135,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -3,
+        -1,
+        0,
+        -1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 459,
+      "primary_shell_vectors_checked": {
+        "0": 135,
+        "1": 324
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -3,
+        -1,
+        0,
+        -1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 459,
+      "secondary_shell_vectors_checked": {
+        "0": 135,
+        "1": 324
+      }
+    },
+    {
+      "prime": 152498329,
+      "orientation": "reverse",
+      "original_R": 28131,
+      "gap": 3,
+      "lower_modulus": 9377,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          2239,
+          1
+        ],
+        [
+          391021,
+          1
+        ]
+      ],
+      "box_size": 225,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 11545,
+      "primary_shell_vectors_checked": {
+        "0": 225,
+        "1": 480,
+        "2": 856,
+        "3": 1360,
+        "4": 2008,
+        "5": 2816,
+        "6": 3800
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 7,
+      "omega_secondary_vector": [
+        -5,
+        3,
+        -3,
+        2
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 16521,
+      "secondary_shell_vectors_checked": {
+        "0": 225,
+        "1": 480,
+        "2": 856,
+        "3": 1360,
+        "4": 2008,
+        "5": 2816,
+        "6": 3800,
+        "7": 4976
+      }
+    },
+    {
+      "prime": 155533849,
+      "orientation": "forward",
+      "original_R": 267,
+      "gap": 3,
+      "lower_modulus": 89,
+      "factorization": [
+        [
+          673,
+          1
+        ],
+        [
+          971,
+          1
+        ],
+        [
+          15887,
+          1
+        ]
+      ],
+      "box_size": 27,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -2,
+        1,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 81,
+      "primary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -2,
+        1,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 81,
+      "secondary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54
+      }
+    },
+    {
+      "prime": 165387049,
+      "orientation": "forward",
+      "original_R": 267,
+      "gap": 3,
+      "lower_modulus": 89,
+      "factorization": [
+        [
+          43,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          4351433,
+          1
+        ]
+      ],
+      "box_size": 27,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -3,
+        1,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 171,
+      "primary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54,
+        "2": 90
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -3,
+        1,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 171,
+      "secondary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54,
+        "2": 90
+      }
+    },
+    {
+      "prime": 171292489,
+      "orientation": "forward",
+      "original_R": 8043,
+      "gap": 7,
+      "lower_modulus": 1149,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          2113,
+          1
+        ],
+        [
+          13219,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -1,
+        1,
+        -2,
+        1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 1053,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -1,
+        1,
+        -2,
+        1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 1053,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      }
+    },
+    {
+      "prime": 171292489,
+      "orientation": "reverse",
+      "original_R": 8043,
+      "gap": 3,
+      "lower_modulus": 2681,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          2113,
+          1
+        ],
+        [
+          13219,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -1,
+        1,
+        -2,
+        1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 1053,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -1,
+        1,
+        -2,
+        1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 1053,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      }
+    },
+    {
+      "prime": 223474729,
+      "orientation": "reverse",
+      "original_R": 699,
+      "gap": 3,
+      "lower_modulus": 233,
+      "factorization": [
+        [
+          283,
+          1
+        ],
+        [
+          2447,
+          1
+        ],
+        [
+          56393,
+          1
+        ]
+      ],
+      "box_size": 27,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 1051,
+      "primary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54,
+        "2": 90,
+        "3": 134,
+        "4": 186,
+        "5": 246,
+        "6": 314
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 8,
+      "omega_secondary_vector": [
+        -4,
+        1,
+        6
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 1915,
+      "secondary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54,
+        "2": 90,
+        "3": 134,
+        "4": 186,
+        "5": 246,
+        "6": 314,
+        "7": 390,
+        "8": 474
+      }
+    },
+    {
+      "prime": 236164009,
+      "orientation": "reverse",
+      "original_R": 8379,
+      "gap": 3,
+      "lower_modulus": 2793,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          27239,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -1,
+        -1,
+        2,
+        0,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 1647,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -1,
+        -1,
+        2,
+        0,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 1647,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242
+      }
+    },
+    {
+      "prime": 306963409,
+      "orientation": "forward",
+      "original_R": 875,
+      "gap": 7,
+      "lower_modulus": 125,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          17,
+          3
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          151,
+          1
+        ]
+      ],
+      "box_size": 945,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 3483,
+      "primary_shell_vectors_checked": {
+        "0": 945,
+        "1": 2538
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -3,
+        2,
+        1,
+        1,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 3483,
+      "secondary_shell_vectors_checked": {
+        "0": 945,
+        "1": 2538
+      }
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 137595,
+      "gap": 15,
+      "lower_modulus": 9173,
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          95857,
+          1
+        ]
+      ],
+      "box_size": 675,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 70807,
+      "primary_shell_vectors_checked": {
+        "0": 675,
+        "1": 1890,
+        "2": 3978,
+        "3": 7202,
+        "4": 11866,
+        "5": 18306,
+        "6": 26890
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 7,
+      "omega_secondary_vector": [
+        -2,
+        2,
+        3,
+        -4,
+        3
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 108825,
+      "secondary_shell_vectors_checked": {
+        "0": 675,
+        "1": 1890,
+        "2": 3978,
+        "3": 7202,
+        "4": 11866,
+        "5": 18306,
+        "6": 26890,
+        "7": 38018
+      }
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 323931,
+      "gap": 3,
+      "lower_modulus": 107977,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          751,
+          1
+        ],
+        [
+          4373,
+          1
+        ]
+      ],
+      "box_size": 729,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 213445,
+      "primary_shell_vectors_checked": {
+        "0": 729,
+        "1": 2916,
+        "2": 7776,
+        "3": 16956,
+        "4": 32616,
+        "5": 57492,
+        "6": 94960
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": null,
+      "omega_secondary_vector": null,
+      "secondary_exact_within_cap": false,
+      "secondary_lower_bound": 10,
+      "secondary_vectors_checked": 914925,
+      "secondary_shell_vectors_checked": {
+        "0": 729,
+        "1": 2916,
+        "2": 7776,
+        "3": 16956,
+        "4": 32616,
+        "5": 57492,
+        "6": 94960,
+        "7": 149100,
+        "8": 224760,
+        "9": 327620
+      }
+    },
+    {
+      "prime": 312918169,
+      "orientation": "forward",
+      "original_R": 49947,
+      "gap": 3,
+      "lower_modulus": 16649,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          10531,
+          1
+        ],
+        [
+          17669,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 39495,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442,
+        "6": 15970
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": null,
+      "omega_secondary_vector": null,
+      "secondary_exact_within_cap": false,
+      "secondary_lower_bound": 10,
+      "secondary_vectors_checked": 141165,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442,
+        "6": 15970,
+        "7": 23370,
+        "8": 33010,
+        "9": 45290
+      }
+    },
+    {
+      "prime": 331117609,
+      "orientation": "forward",
+      "original_R": 107891,
+      "gap": 7,
+      "lower_modulus": 15413,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          389,
+          1
+        ],
+        [
+          821,
+          1
+        ],
+        [
+          1301,
+          1
+        ],
+        [
+          1433,
+          1
+        ]
+      ],
+      "box_size": 729,
+      "primary_max_overflow": 6,
+      "omega_primary": 4,
+      "omega_primary_vector": [
+        -1,
+        -2,
+        -2,
+        -3,
+        1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 60993,
+      "primary_shell_vectors_checked": {
+        "0": 729,
+        "1": 2916,
+        "2": 7776,
+        "3": 16956,
+        "4": 32616
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 4,
+      "omega_secondary_vector": [
+        -1,
+        -2,
+        -2,
+        -3,
+        1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 60993,
+      "secondary_shell_vectors_checked": {
+        "0": 729,
+        "1": 2916,
+        "2": 7776,
+        "3": 16956,
+        "4": 32616
+      }
+    },
+    {
+      "prime": 335420089,
+      "orientation": "reverse",
+      "original_R": 939,
+      "gap": 3,
+      "lower_modulus": 313,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          1553,
+          1
+        ],
+        [
+          58211,
+          1
+        ]
+      ],
+      "box_size": 81,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -3,
+        1,
+        1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 729,
+      "primary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -3,
+        1,
+        1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 729,
+      "secondary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432
+      }
+    },
+    {
+      "prime": 339576169,
+      "orientation": "reverse",
+      "original_R": 238299,
+      "gap": 3,
+      "lower_modulus": 79433,
+      "factorization": [
+        [
+          11,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          2263841,
+          1
+        ]
+      ],
+      "box_size": 675,
+      "primary_max_overflow": 6,
+      "omega_primary": 4,
+      "omega_primary_vector": [
+        -4,
+        3,
+        0,
+        2,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 25611,
+      "primary_shell_vectors_checked": {
+        "0": 675,
+        "1": 1890,
+        "2": 3978,
+        "3": 7202,
+        "4": 11866
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 4,
+      "omega_secondary_vector": [
+        -4,
+        3,
+        0,
+        2,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 25611,
+      "secondary_shell_vectors_checked": {
+        "0": 675,
+        "1": 1890,
+        "2": 3978,
+        "3": 7202,
+        "4": 11866
+      }
+    },
+    {
+      "prime": 356491249,
+      "orientation": "reverse",
+      "original_R": 131595,
+      "gap": 3,
+      "lower_modulus": 43865,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          2029,
+          1
+        ],
+        [
+          33199,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 5,
+      "omega_primary_vector": [
+        -1,
+        -1,
+        -3,
+        3,
+        2
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 23525,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 5,
+      "omega_secondary_vector": [
+        -1,
+        -1,
+        -3,
+        3,
+        2
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 23525,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442
+      }
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 19083,
+      "gap": 3,
+      "lower_modulus": 6361,
+      "factorization": [
+        [
+          17,
+          1
+        ],
+        [
+          239,
+          1
+        ],
+        [
+          8419,
+          1
+        ],
+        [
+          51061,
+          1
+        ]
+      ],
+      "box_size": 81,
+      "primary_max_overflow": 6,
+      "omega_primary": 5,
+      "omega_primary_vector": [
+        -5,
+        1,
+        1,
+        -2
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 4361,
+      "primary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432,
+        "3": 744,
+        "4": 1168,
+        "5": 1720
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 5,
+      "omega_secondary_vector": [
+        -5,
+        1,
+        1,
+        -2
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 4361,
+      "secondary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432,
+        "3": 744,
+        "4": 1168,
+        "5": 1720
+      }
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 33171,
+      "gap": 3,
+      "lower_modulus": 11057,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          18481,
+          1
+        ],
+        [
+          4693697,
+          1
+        ]
+      ],
+      "box_size": 81,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 6777,
+      "primary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432,
+        "3": 744,
+        "4": 1168,
+        "5": 1720,
+        "6": 2416
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": null,
+      "omega_secondary_vector": null,
+      "secondary_exact_within_cap": false,
+      "secondary_lower_bound": 10,
+      "secondary_vectors_checked": 19881,
+      "secondary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432,
+        "3": 744,
+        "4": 1168,
+        "5": 1720,
+        "6": 2416,
+        "7": 3272,
+        "8": 4304,
+        "9": 5528
+      }
+    },
+    {
+      "prime": 373561609,
+      "orientation": "reverse",
+      "original_R": 2211,
+      "gap": 3,
+      "lower_modulus": 737,
+      "factorization": [
+        [
+          5,
+          4
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          3881,
+          1
+        ],
+        [
+          12161,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -4,
+        -1,
+        1,
+        -2
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 783,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 540
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -4,
+        -1,
+        1,
+        -2
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 783,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 540
+      }
+    },
+    {
+      "prime": 373561609,
+      "orientation": "forward",
+      "original_R": 625731,
+      "gap": 3,
+      "lower_modulus": 208577,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          1097,
+          1
+        ],
+        [
+          7757,
+          1
+        ],
+        [
+          11351,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 53049,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178,
+        "4": 8786,
+        "5": 13882,
+        "6": 20802
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": null,
+      "omega_secondary_vector": null,
+      "secondary_exact_within_cap": false,
+      "secondary_lower_bound": 10,
+      "secondary_vectors_checked": 180927,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178,
+        "4": 8786,
+        "5": 13882,
+        "6": 20802,
+        "7": 29914,
+        "8": 41618,
+        "9": 56346
+      }
+    },
+    {
+      "prime": 408626089,
+      "orientation": "forward",
+      "original_R": 531,
+      "gap": 3,
+      "lower_modulus": 177,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          10567,
+          1
+        ],
+        [
+          33119,
+          1
+        ]
+      ],
+      "box_size": 81,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -2,
+        1,
+        0,
+        -1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 297,
+      "primary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -2,
+        1,
+        0,
+        -1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 297,
+      "secondary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216
+      }
+    },
+    {
+      "prime": 457986169,
+      "orientation": "forward",
+      "original_R": 3435,
+      "gap": 3,
+      "lower_modulus": 1145,
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          1601,
+          1
+        ],
+        [
+          19421,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 3,
+      "omega_primary_vector": [
+        -3,
+        -1,
+        0,
+        -2,
+        -1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 6633,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 3,
+      "omega_secondary_vector": [
+        -3,
+        -1,
+        0,
+        -2,
+        -1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 6633,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690
+      }
+    },
+    {
+      "prime": 463627609,
+      "orientation": "forward",
+      "original_R": 579,
+      "gap": 3,
+      "lower_modulus": 193,
+      "factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          2027,
+          1
+        ],
+        [
+          2797,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 1053,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -2,
+        0,
+        0,
+        1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 1053,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      }
+    },
+    {
+      "prime": 473173969,
+      "orientation": "reverse",
+      "original_R": 1531307,
+      "gap": 47,
+      "lower_modulus": 32581,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          19429,
+          1
+        ],
+        [
+          34283,
+          1
+        ]
+      ],
+      "box_size": 1215,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -1,
+        -1,
+        -3,
+        -1,
+        1,
+        -1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 17307,
+      "primary_shell_vectors_checked": {
+        "0": 1215,
+        "1": 4536,
+        "2": 11556
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -1,
+        -1,
+        -3,
+        -1,
+        1,
+        -1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 17307,
+      "secondary_shell_vectors_checked": {
+        "0": 1215,
+        "1": 4536,
+        "2": 11556
+      }
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 4611,
+      "gap": 3,
+      "lower_modulus": 1537,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          103,
+          1
+        ],
+        [
+          1249,
+          1
+        ],
+        [
+          15887,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -1,
+        -3,
+        0,
+        -1,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 4401,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -1,
+        -3,
+        0,
+        -1,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 4401,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754
+      }
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "gap": 3,
+      "lower_modulus": 106017,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          6965317,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 39495,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442,
+        "6": 15970
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 8,
+      "omega_secondary_vector": [
+        -4,
+        -1,
+        1,
+        2,
+        5
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 95875,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890,
+        "3": 3690,
+        "4": 6450,
+        "5": 10442,
+        "6": 15970,
+        "7": 23370,
+        "8": 33010
+      }
+    },
+    {
+      "prime": 507599689,
+      "orientation": "forward",
+      "original_R": 5691,
+      "gap": 3,
+      "lower_modulus": 1897,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          547,
+          1
+        ],
+        [
+          11897,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": 6,
+      "omega_primary_vector": [
+        -3,
+        6,
+        -1,
+        -1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 53049,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178,
+        "4": 8786,
+        "5": 13882,
+        "6": 20802
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 6,
+      "omega_secondary_vector": [
+        -3,
+        6,
+        -1,
+        -1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 53049,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178,
+        "4": 8786,
+        "5": 13882,
+        "6": 20802
+      }
+    },
+    {
+      "prime": 507599689,
+      "orientation": "reverse",
+      "original_R": 5691,
+      "gap": 7,
+      "lower_modulus": 813,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          547,
+          1
+        ],
+        [
+          11897,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": 6,
+      "omega_primary_vector": [
+        -2,
+        6,
+        -1,
+        -2,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 53049,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178,
+        "4": 8786,
+        "5": 13882,
+        "6": 20802
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 6,
+      "omega_secondary_vector": [
+        -2,
+        6,
+        -1,
+        -2,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 53049,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178,
+        "4": 8786,
+        "5": 13882,
+        "6": 20802
+      }
+    },
+    {
+      "prime": 509434249,
+      "orientation": "reverse",
+      "original_R": 123,
+      "gap": 3,
+      "lower_modulus": 41,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          59,
+          1
+        ],
+        [
+          431,
+          1
+        ],
+        [
+          56003,
+          1
+        ]
+      ],
+      "box_size": 81,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -2,
+        0,
+        -1,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 297,
+      "primary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -2,
+        0,
+        -1,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 297,
+      "secondary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216
+      }
+    },
+    {
+      "prime": 534844249,
+      "orientation": "forward",
+      "original_R": 11011,
+      "gap": 91,
+      "lower_modulus": 121,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          2267,
+          1
+        ],
+        [
+          144161,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -2,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 1053,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -2,
+        0,
+        -1,
+        -1,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 1053,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810
+      }
+    },
+    {
+      "prime": 542688169,
+      "orientation": "reverse",
+      "original_R": 16851,
+      "gap": 3,
+      "lower_modulus": 5617,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          101,
+          1
+        ],
+        [
+          317,
+          1
+        ],
+        [
+          35089,
+          1
+        ]
+      ],
+      "box_size": 729,
+      "primary_max_overflow": 6,
+      "omega_primary": 4,
+      "omega_primary_vector": [
+        -2,
+        -4,
+        -1,
+        1,
+        0,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 60993,
+      "primary_shell_vectors_checked": {
+        "0": 729,
+        "1": 2916,
+        "2": 7776,
+        "3": 16956,
+        "4": 32616
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 4,
+      "omega_secondary_vector": [
+        -2,
+        -4,
+        -1,
+        1,
+        0,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 60993,
+      "secondary_shell_vectors_checked": {
+        "0": 729,
+        "1": 2916,
+        "2": 7776,
+        "3": 16956,
+        "4": 32616
+      }
+    },
+    {
+      "prime": 549401449,
+      "orientation": "reverse",
+      "original_R": 6787,
+      "gap": 11,
+      "lower_modulus": 617,
+      "factorization": [
+        [
+          13,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          37,
+          1
+        ],
+        [
+          197,
+          1
+        ],
+        [
+          39829,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -2,
+        -3,
+        1,
+        0,
+        -1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 4401,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -2,
+        -3,
+        1,
+        0,
+        -1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 4401,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754
+      }
+    },
+    {
+      "prime": 556685089,
+      "orientation": "reverse",
+      "original_R": 147,
+      "gap": 3,
+      "lower_modulus": 49,
+      "factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          677,
+          1
+        ],
+        [
+          1590467,
+          1
+        ]
+      ],
+      "box_size": 27,
+      "primary_max_overflow": 6,
+      "omega_primary": 1,
+      "omega_primary_vector": [
+        -2,
+        1,
+        -1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 81,
+      "primary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 1,
+      "omega_secondary_vector": [
+        -2,
+        1,
+        -1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 81,
+      "secondary_shell_vectors_checked": {
+        "0": 27,
+        "1": 54
+      }
+    },
+    {
+      "prime": 559650361,
+      "orientation": "reverse",
+      "original_R": 29939,
+      "gap": 91,
+      "lower_modulus": 329,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          30937,
+          1
+        ],
+        [
+          530977,
+          1
+        ]
+      ],
+      "box_size": 243,
+      "primary_max_overflow": 6,
+      "omega_primary": 2,
+      "omega_primary_vector": [
+        -1,
+        -1,
+        -3,
+        0,
+        0
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 2943,
+      "primary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 2,
+      "omega_secondary_vector": [
+        -1,
+        -1,
+        -3,
+        0,
+        0
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 2943,
+      "secondary_shell_vectors_checked": {
+        "0": 243,
+        "1": 810,
+        "2": 1890
+      }
+    },
+    {
+      "prime": 570621769,
+      "orientation": "reverse",
+      "original_R": 339,
+      "gap": 3,
+      "lower_modulus": 113,
+      "factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          1187,
+          1
+        ],
+        [
+          7577,
+          1
+        ]
+      ],
+      "box_size": 81,
+      "primary_max_overflow": 6,
+      "omega_primary": null,
+      "omega_primary_vector": null,
+      "primary_exact_within_cap": false,
+      "primary_lower_bound": 7,
+      "primary_vectors_checked": 6777,
+      "primary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432,
+        "3": 744,
+        "4": 1168,
+        "5": 1720,
+        "6": 2416
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 8,
+      "omega_secondary_vector": [
+        -7,
+        1,
+        3,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 14353,
+      "secondary_shell_vectors_checked": {
+        "0": 81,
+        "1": 216,
+        "2": 432,
+        "3": 744,
+        "4": 1168,
+        "5": 1720,
+        "6": 2416,
+        "7": 3272,
+        "8": 4304
+      }
+    },
+    {
+      "prime": 570621769,
+      "orientation": "forward",
+      "original_R": 21259,
+      "gap": 7,
+      "lower_modulus": 3037,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          100213,
+          1
+        ]
+      ],
+      "box_size": 405,
+      "primary_max_overflow": 6,
+      "omega_primary": 3,
+      "omega_primary_vector": [
+        -1,
+        -2,
+        3,
+        2,
+        1
+      ],
+      "primary_exact_within_cap": true,
+      "primary_lower_bound": null,
+      "primary_vectors_checked": 9579,
+      "primary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178
+      },
+      "secondary_max_overflow": 9,
+      "omega_secondary": 3,
+      "omega_secondary_vector": [
+        -1,
+        -2,
+        3,
+        2,
+        1
+      ],
+      "secondary_exact_within_cap": true,
+      "secondary_lower_bound": null,
+      "secondary_vectors_checked": 9579,
+      "secondary_shell_vectors_checked": {
+        "0": 405,
+        "1": 1242,
+        "2": 2754,
+        "3": 5178
+      }
+    }
+  ]
+}

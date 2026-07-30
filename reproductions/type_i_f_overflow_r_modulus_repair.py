@@ -259,16 +259,31 @@ def audit_orientation(
         balanced_v_coprime_to_t = math.gcd(balanced_v, balanced_t) == 1
         strict_balanced_reduction = balanced_t > 1 and balanced_v_coprime_to_t
         balanced_pair_gcd = math.gcd(balanced_u, balanced_v)
-        balanced_u_support_residual = strip_support(balanced_u, [q for q, _nu in factorization])
-        balanced_v_support_residual = strip_support(balanced_v, [q for q, _nu in factorization])
+        reduced_u = balanced_u // balanced_pair_gcd
+        reduced_v = balanced_v // balanced_pair_gcd
+        balanced_u_support_residual = strip_support(reduced_u, [q for q, _nu in factorization])
+        balanced_v_support_residual = strip_support(reduced_v, [q for q, _nu in factorization])
         if strict_balanced_reduction:
-            reduced_u = balanced_u // balanced_pair_gcd
-            reduced_v = balanced_v // balanced_pair_gcd
             if (reduced_u + reduced_v) % balanced_t:
                 raise AssertionError("balanced reduction lost the smaller-modulus relation")
             if (reduced_u * pow(reduced_v, -1, balanced_t) + 1) % balanced_t:
                 raise AssertionError("balanced reduction lost the target residue")
             lower_modulus_profile = lower_modulus_fiber_profile(balanced_t, factorization)
+            witness_residue = 1 % balanced_t
+            for (q, _nu), exponent in zip(factorization, witness):
+                if exponent >= 0:
+                    witness_residue = witness_residue * pow(q, exponent, balanced_t)
+                else:
+                    witness_residue = witness_residue * pow(
+                        pow(q, -1, balanced_t), -exponent, balanced_t
+                    )
+                witness_residue %= balanced_t
+            if witness_residue != balanced_t - 1:
+                raise AssertionError("the original F witness did not descend to -1")
+            if not lower_modulus_profile["lower_modulus_target_in_subgroup"]:
+                raise AssertionError("the lower-modulus target left the K support subgroup")
+            if lower_modulus_profile["lower_modulus_classification"] == "G":
+                raise AssertionError("an F witness cannot create a lower-modulus G state")
         else:
             lower_modulus_profile = {
                 "lower_modulus_subgroup_order": None,

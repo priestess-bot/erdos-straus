@@ -816,12 +816,13 @@ R=mt,\qquad A=mu-1,\qquad B=mv+1.
 从而得到严格更小模数上的目标有理表示。要把它接回原目标纤维，还需检查端点是否
 保持 \(K\)-素因子支撑和有限指数盒；否则它是支撑逃逸而非 F 型命中。
 
-149 个一级候选中有 48 个满足严格小模数条件；48 个均在两个端点上发生 \(K\)-支撑
-逃逸，支撑保持数为 0。这把当前失败链具体化为“小模数表示下降但外部支撑逃逸”分支，
+149 个一级候选中有 48 个满足严格小模数条件；其中 41 个在两个约分端点上发生
+\(K\)-支撑逃逸，7 个仅一端逃逸，0 个两端都保持支撑。这把当前失败链具体化为
+“小模数表示下降但外部支撑逃逸”分支，
 下一步应将逃逸端点接到 G/Type II 证书或跨状态容量。完整主张见
 [端点平衡小模数表示下降](../claims/type-I-f-overflow-balanced-endpoint-descent.md)。
 结果文件最新哈希为
-f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
+c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f。
 
 ## 目标三十二：端点下降后的更小模数 F/G 盒分流
 
@@ -833,16 +834,88 @@ f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
 -1\in\mathcal C_t\quad(\text{盒内命中}),\qquad
 -1\in H_t\setminus\mathcal C_t\quad(\text{盒外 F 障碍}).
 \]
-冻结的 48 个严格下降中得到 0、6、42 个；正向为 0、4、20，反向为 0、2、22。
-这里 \(R,m\equiv3\pmod4\)，所以 \(t\equiv1\pmod4\)，该分流仍不是合法 Type I
-缺口证书：6 个命中要继续做奇偶/终端提升，42 个盒外障碍要接 Fourier/关系格容量
-或 Type II，0 个 G 分离说明当前样本的支撑逃逸没有在 \(t\) 上自动释放为 G 型。
+由于原输入已经有 \(K\)-支撑见证 \(\prod q^{z_q}\equiv-1\pmod R\)，而 \(t\mid R\)，
+同一见证约化后仍给出 \(-1\in H_t\)，所以低模数 G 分支对所有这类严格下降结构性
+为空。冻结的 48 个严格下降中得到 6、42 个 F-hit/F-miss；正向为 4、20，反向为
+2、22。这里 \(R,m\equiv3\pmod4\)，所以 \(t\equiv1\pmod4\)，该分流仍不是合法
+Type I 缺口证书：6 个命中要继续做奇偶/终端提升，42 个盒外障碍要接 Fourier/关系格
+容量或 Type II。
 33 个更小模数还满足 \(2^j\equiv-1\pmod t\)，但这 48 个样本的 \(K\) 全部为奇数，
 二进预算 \(v_2(2K)=1\)，最小 \(j\) 均至少为 2，故没有一个直接满足广义二进终端
 的预算；其余 15 个模数没有二进幂反足点。完整主张见
 [端点下降的更小模数 F/G 盒分流](../claims/type-I-f-overflow-balanced-lower-modulus-fiber-profile.md)，
 结果文件哈希为
-f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
+c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f。
+
+## 目标三十三：F-box miss 的更小模数关系格证书
+
+对 42 个 \(-1\in H_t\setminus\mathcal C_t\) 的端点下降样本，使用 Smith/Hermite
+整数变换重建 \(t\) 上的满秩关系格和目标仿射原像，并穷尽原 \(K\)-指数盒。42 个
+状态全部通过“目标在支撑子群内、盒内无目标”的双重验证，共检查 13140 个盒点，
+最大单状态盒为 1215 点；正向 20 个、反向 22 个。27 个状态另有
+\(2^j\equiv-1\pmod t\)，但二进预算仍不足。
+
+这把 F-box miss 从残数标签提升为规范格证书；由于 \(t\equiv1\pmod4\)，还不能直接
+视为合法 Type I 缺口。下一桥是把格距离接到选择不变的 \(q\)-进容量、Type II 正规形
+或严格可提升递降。完整主张见[端点下降 F-box miss 的更小模数关系格证书](../claims/type-I-f-overflow-lower-modulus-relation-lattice.md)，
+复现脚本为 reproductions/type_i_f_overflow_lower_modulus_relation_lattice.py。
+
+## 目标三十四：低模数 F 关系的选择不变溢出价格
+
+对低模数目标纤维 \(F_t=\{z:\prod q_i^{z_i}=-1\pmod t\}\)，定义
+\(\operatorname{ov}_\nu(z)_i=(|z_i|-\nu_i)_+\) 和正权最小价格
+\[
+\Omega_w(t)=\min_{z\in F_t}\sum_iw_i\operatorname{ov}_\nu(z)_i.
+\]
+它与任意 Smith 原像无关，F-box hit 当且仅当 \(\Omega_w=0\)，F-box miss 至少产生
+\(\min_iw_i\) 的正需求；多支持情形保留 Pareto 极小溢出向量。这个定义修复了直接
+把任意格原像坐标当作容量费用会过计数的问题。
+
+当前仍缺最后的算术桥：证明每个正溢出层必须在同一 \(q\)-进载体/标签/模数差高度
+逐层支付，或导出严格可提升递降。完整接口见[更小模数 F 关系的选择不变溢出价格接口](../claims/type-I-f-overflow-lower-modulus-weighted-cost-interface.md)。
+
+## 目标三十五：平衡端点对的 Type II 边界
+
+对 42 个更小模数 F-box miss，直接重建约分后的互素平衡端点 \((U,V)\)。固定这
+一对端点作为 Type II 正规形前两项时，存在证书当且仅当存在
+\[
+h\mid U+V,\qquad h\equiv3\pmod4,\qquad UV\mid\frac{p+h}{4}.
+\]
+若 \(UV>p/2\)，所有合法 \(h\le p-2\) 的 \((p+h)/4\) 都太小，因而整条端点对分支
+被大小界排除。冻结结果为 41/42 个状态大小排除，唯一未排除状态
+\(p=509434249,t=41,(U,V)=(47,76)\) 只需检查 \(h=3,123\)，仍无命中；固定探针
+\(h=3t\) 为 0/42。该结果只针对确定端点对，不排除因子重分配、非最短关系或其它
+Type II 形式。详见[平衡端点 Type II 边界](../claims/type-I-f-overflow-balanced-endpoint-type-ii-boundary.md)。
+
+## 目标三十六：盒内命中的共享缺口 Type II 旁路
+
+对 6 个 lower-modulus F-box hit，完整枚举原 \(K\)-指数盒的 50 个有理表示及其 25
+个不同和，再枚举 \(a+b\) 的合法因子作为共享缺口候选，并独立重建 Type II 正规形。
+101 个候选中得到 4 张有效证书，覆盖
+\(p=57399241,242042089,475619929\) 三个素数；其余三个 hit 未命中。这里共享缺口只
+是候选筛，低模数端点不必整除新的 \(x'=(p+m')/4\)，所以不能升级为自动提升定理。
+详见[盒内命中的共享缺口 Type II 旁路提升](../claims/type-I-f-overflow-lower-modulus-shared-gap-type-II-lift.md)。
+
+## 目标三十七：F-box miss 的最短关系诊断
+
+在固定生成元和邻居顺序下，用 Cayley 图 BFS 为 42 个 F-box miss 选取可复现的最短
+\(\ell^1\) 关系。最短长度范围 3--22，盒外层数范围 1--19；33 个端点积大于
+\(p/2\)，其余 9 个完整检查端点和的合法因子仍无 Type II 命中，固定 \(h=3t\) 为
+0/42。最短向量本身受 tie-break 影响，因此这只是关系格到 Type II 的有限诊断；
+选择不变的容量对象仍是 \(\Omega_w\) 或 Pareto 溢出集合。详见[最短关系与端点大小边界](../claims/type-I-f-overflow-lower-modulus-shortest-relation-profile.md)。
+
+## 目标三十八：单位权选择不变溢出剖面
+
+在 42 个 F-box miss 的目标纤维上按
+\[
+\Omega_1(t)=\min_z\sum_i(|z_i|-\nu_i)_+
+\]
+逐层完整枚举。到溢出 6 时得到
+\(\Omega_1=1:12,2:8,3:2,4:4,5:2,6:2\)，其余 12 个只有
+\(\Omega_1\ge7\) 的有限下界；继续到溢出 9 后得到
+\(\Omega_1=7:2,8:3,9:1\)，仍有 6 个状态满足 \(\Omega_1\ge10\)。
+该数值对象比任意 Smith 原像或 BFS 向量选择不变，但仍未建立溢出层到共同
+\(q\)-进载体高度的映射。详见[单位权选择不变溢出剖面](../claims/type-I-f-overflow-lower-modulus-weighted-cost-profile.md)。
 
 ## 依赖顺序
 

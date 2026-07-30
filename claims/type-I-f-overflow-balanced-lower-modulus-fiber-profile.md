@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-f-overflow-balanced-lower-modulus-fiber-profile
 title: 端点下降的更小模数 F/G 盒分流
-statement: 对 R 因子修复候选的严格端点下降，令 t=R/m、H_t=<q mod t:q|K>，并令 C_t 为原 K 指数盒在模 t 的像。则 -1 相对于 H_t 与 C_t 有精确三分：-1 不在 H_t 时是更小模数的 G 型支撑分离；-1 在 C_t 时是有限盒命中；-1 在 H_t\C_t 时是有限盒外的 F 型关系障碍。冻结的 48 个严格端点下降中分别得到 0、6、42 个；33 个模数虽有 2^j=-1 (mod t)，但二进预算可行数为 0。这只是 t\equiv1 (mod 4) 的对偶接口，不能直接视为原素数 p 的合法 Type I gap 证书。
+statement: 对来自原 F 型见证的 R 因子修复候选严格端点下降，令 t=R/m、H_t=<q mod t:q|K>，并令 C_t 为原 K 指数盒在模 t 的像。原见证关系沿 (Z/RZ)^×→(Z/tZ)^× 约化，所以 -1 必恒在 H_t；低模数 G 分支结构性不可能。因而实际只有两分：-1 在 C_t 时是有限盒命中；-1 在 H_t\C_t 时是有限盒外的 F 型关系障碍。冻结的 48 个严格端点下降中得到 6、42 个；33 个模数虽有 2^j=-1 (mod t)，但二进预算可行数为 0。这只是 t\equiv1 (mod 4) 的对偶接口，不能直接视为原素数 p 的合法 Type I gap 证书。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -63,9 +63,21 @@ H_t=\langle q_1,\ldots,q_r\rangle\le(\mathbb Z/t\mathbb Z)^\times,
 
 这里 \(\mathcal C_t\) 是带重数的指数向量像；同一个残数可以由多个盒内向量表示。
 
-## 精确三分
+## 支撑约化与精确二分
 
-对于目标残数 \(-1\)，有互斥且完备的三种情形：
+若原端点来自 F 型见证 \(z=(z_i)\)，则
+\[
+\prod_iq_i^{z_i}\equiv-1\pmod R.
+\]
+因为 \(t\mid R\)，约化同态立即给出
+\[
+\prod_iq_i^{z_i}\equiv-1\pmod t,
+\]
+从而 \(-1\in H_t\)。这条约化与端点是否保持 \(K\)-支撑无关，只依赖于原 F
+见证仍由 \(K\) 的素因子组成；因此任何这种严格端点下降都不能产生低模数 G 分离。
+
+一般地，若暂时不假设输入来自 F 见证，目标残数 \(-1\) 相对于 \(H_t\) 与
+\(\mathcal C_t\) 有三种互斥情形：
 
 \[
 \boxed{
@@ -83,9 +95,9 @@ H_t=\langle q_1,\ldots,q_r\rangle\le(\mathbb Z/t\mathbb Z)^\times,
 情形说明目标仍在 \(K\)-支撑生成子群内，但所有原预算内表示都失败，因而是关系格/Fourier
 意义上的有限盒外障碍。
 
-端点式 (1) 只说明 \(-1\) 在加入 \(\bar u,\bar v\) 的扩展支撑中出现；它不强制 \(-1\)
-属于 \(H_t\)。因此 (3) 正好把“双端点支撑逃逸”继续细分为 G 分离或 F 盒外，而不把
-外部素因子误记为原 F 型命中。
+端点式 (1) 只说明 \(-1\) 在加入 \(\bar u,\bar v\) 的扩展支撑中出现；对于本卡的
+原 F 输入，上一段的约化论证进一步强制 \(-1\in H_t\)。因此实际审计只需区分
+F-box hit 与 F-box miss，而不把外部素因子误记为低模数 G 型命中。
 
 ## 与算术提升的边界
 
@@ -106,7 +118,7 @@ reproductions/type-i-f-overflow-r-modulus-repair-results.json
 最新结果 SHA-256：
 
 ~~~text
-f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809
+c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f
 ~~~
 
 严格端点下降的 48 个候选给出：
@@ -115,7 +127,7 @@ f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809
 strict_balanced_reduction_count: 48
 lower_modulus_f_box_hit_count: 6
 lower_modulus_f_box_miss_count: 42
-lower_modulus_g_count: 0
+lower_modulus_g_count: 0 (structurally excluded)
 lower_modulus_order_two_target_count: 33
 lower_modulus_dyadic_budget_admissible_count: 0
 forward: 4 / 20 / 0
@@ -140,7 +152,8 @@ reverse: 2 / 22 / 0
 ~~~
 
 每个命中都还需检查 \(t\) 上的奇偶终端或把该关系提升回合法 \(3\bmod4\) 缺口；42 个
-盒外样本则是下一轮 Fourier/关系格容量输入，而非“没有目标”的证明。
+盒外样本已经进一步重建为规范关系格证书，见[端点下降 F-box miss 的更小模数关系格证书](type-I-f-overflow-lower-modulus-relation-lattice.md)；
+这仍不是“没有目标”的证明。
 
 ## 复现
 

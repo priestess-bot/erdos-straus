@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 337 |
+| 数学状态 | `computationally_reproduced` | 342 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 263 |
+| 数学状态 | `established` | 264 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 111 |
+| 证明来源 | `computational_reproduction` | 115 |
 | 证明来源 | `mixed` | 9 |
-| 证明来源 | `repository_derivation` | 91 |
+| 证明来源 | `repository_derivation` | 93 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 198 |
+| 审阅状态 | `internal_review` | 204 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -249,11 +249,17 @@
 | [分色 F 状态的盒溢出不局限于规范 Fourier 活跃支持](../claims/type-I-f-overflow-active-support-boundary.md) (`type-I-f-overflow-active-support-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [全部合法载体分配下的 F 溢出高度上界](../claims/type-I-f-overflow-all-assignment-height-upper-bound.md) (`type-I-f-overflow-all-assignment-height-upper-bound`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [盒外见证的端点平衡小模数表示下降](../claims/type-I-f-overflow-balanced-endpoint-descent.md) (`type-I-f-overflow-balanced-endpoint-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [端点下降 F-box miss 的平衡端点 Type II 边界](../claims/type-I-f-overflow-balanced-endpoint-type-ii-boundary.md) (`type-I-f-overflow-balanced-endpoint-type-ii-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [端点下降的更小模数 F/G 盒分流](../claims/type-I-f-overflow-balanced-lower-modulus-fiber-profile.md) (`type-I-f-overflow-balanced-lower-modulus-fiber-profile`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [普适盒溢出坐标的跨状态 q 进容量压力边界](../claims/type-I-f-overflow-cross-state-qadic-capacity.md) (`type-I-f-overflow-cross-state-qadic-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的标准偶源 n 除以 2 一项保留边界](../claims/type-I-f-overflow-even-standard-half-one-denominator-boundary.md) (`type-I-f-overflow-even-standard-half-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的偶标准源一项保留提升边界](../claims/type-I-f-overflow-even-standard-one-denominator-boundary.md) (`type-I-f-overflow-even-standard-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的四倍源非标准平方尾一项提升边界](../claims/type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary.md) (`type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `subramanian2026`, `bradford2024` | 2026-07-30 |
+| [端点下降 F-box miss 的更小模数关系格证书](../claims/type-I-f-overflow-lower-modulus-relation-lattice.md) (`type-I-f-overflow-lower-modulus-relation-lattice`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [盒内命中的共享缺口 Type II 旁路提升](../claims/type-I-f-overflow-lower-modulus-shared-gap-type-II-lift.md) (`type-I-f-overflow-lower-modulus-shared-gap-type-ii-lift`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [端点下降 F-box miss 的最短关系与端点大小边界](../claims/type-I-f-overflow-lower-modulus-shortest-relation-profile.md) (`type-I-f-overflow-lower-modulus-shortest-relation-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [更小模数 F 关系的选择不变溢出价格接口](../claims/type-I-f-overflow-lower-modulus-weighted-cost-interface.md) (`type-I-f-overflow-lower-modulus-weighted-cost-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [低模数 F-box miss 的单位权溢出价格有限剖面](../claims/type-I-f-overflow-lower-modulus-weighted-cost-profile.md) (`type-I-f-overflow-lower-modulus-weighted-cost-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [分色 F 状态的多支持盒溢出条件性容量边界](../claims/type-I-f-overflow-multi-support-conditional-capacity.md) (`type-I-f-overflow-multi-support-conditional-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持盒溢出收费与实际载体高度的局部边界](../claims/type-I-f-overflow-multi-support-height-boundary.md) (`type-I-f-overflow-multi-support-height-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持溢出分支的较小块平方终端边界](../claims/type-I-f-overflow-multi-support-square-descent-boundary.md) (`type-I-f-overflow-multi-support-square-descent-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
