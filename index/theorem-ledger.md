@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 337 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 260 |
+| 数学状态 | `established` | 261 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 111 |
 | 证明来源 | `mixed` | 9 |
-| 证明来源 | `repository_derivation` | 88 |
+| 证明来源 | `repository_derivation` | 89 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 13 |
-| 审阅状态 | `internal_review` | 195 |
+| 审阅状态 | `internal_review` | 196 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -255,6 +255,7 @@
 | [分色 F 状态的多支持盒溢出条件性容量边界](../claims/type-I-f-overflow-multi-support-conditional-capacity.md) (`type-I-f-overflow-multi-support-conditional-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持盒溢出收费与实际载体高度的局部边界](../claims/type-I-f-overflow-multi-support-height-boundary.md) (`type-I-f-overflow-multi-support-height-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持溢出分支的较小块平方终端边界](../claims/type-I-f-overflow-multi-support-square-descent-boundary.md) (`type-I-f-overflow-multi-support-square-descent-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [盒外见证的 R 因子修复分支](../claims/type-I-f-overflow-r-modulus-repair.md) (`type-I-f-overflow-r-modulus-repair`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [盒外目标见证的精确有理缺口分母](../claims/type-I-f-overflow-rational-gap-denominator.md) (`type-I-f-overflow-rational-gap-denominator`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [多支持较小块平方终端的 b 等于 1、2、4 缩放提升边界](../claims/type-I-f-overflow-scaled-source-lift-boundary.md) (`type-I-f-overflow-scaled-source-lift-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的移位外部源提升边界](../claims/type-I-f-overflow-shifted-external-lift-boundary.md) (`type-I-f-overflow-shifted-external-lift-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |

@@ -1849,3 +1849,47 @@ pA\not\equiv-m_0\pmod {q^{\kappa_q+1}}.
 该桥的价值是把剩余问题精确改写为：如何处理带相位标签的形式 Type I 缺口约分分母
 \(B_z>1\) 或首分母 \(X_z>1\)。它不能直接视为合法整数缺口，也不能自动转换成已有载体高度；后续必须
 证明分母幂的跨状态碰撞容量，或由分母对象构造带标记的严格递降。
+
+## 2026-07-30 盒外见证的 \(R\) 因子修复分支
+
+在有理缺口桥的恒等式
+\[
+4KA+B=RN
+\]
+上再观察 \(B-1\) 与 \(R\) 的公共因子。令
+\[
+g_R=\gcd(R,B-1),\qquad e=KA.
+\]
+若 \(m\mid g_R\)、\(m\equiv3\pmod4\)，则
+\[
+4e+1=4KA+1=RN-(B-1)\equiv0\pmod m.
+\]
+因此
+\[
+R_m=\frac{4e+1}{m},\qquad
+x_m=\frac{p+m}{4},\qquad
+K_m=x_mR_m-e
+\]
+给出新的合法状态 \(4K_m=pR_m+1\)。若 \(e\mid x_m^2\)，就是直接 Type I 目标
+除子；否则可用
+\[
+D_m=\gcd(e,x_m^2),\qquad M_m=\gcd(m,4D_m+1)
+\]
+继续产生候选修复缺口。新增主张卡和复现脚本：
+claims/type-I-f-overflow-r-modulus-repair.md、
+reproductions/type_i_f_overflow_r_modulus_repair.py。
+
+冻结 253 个见证的正反方向审计结果：
+
+~~~text
+nontrivial_repair_modulus_count: 138
+candidate_gap_count: 149
+direct_square_hit_count: 0
+forward: nontrivial 33, candidates 27, square hits 0
+reverse: nontrivial 105, candidates 122, square hits 0
+~~~
+
+结果文件 reproductions/type-i-f-overflow-r-modulus-repair-results.json 的 SHA-256 为
+df1173b719c104b8a3f7e0ef37adcf463706a0069900eb1f554fe331eed87702。
+这条分支新增了“新合法状态或带 \(R\)-因子失败标签”的状态出口，但 \(R_m\) 未必更小，
+所以仍需证明其良基下降或跨状态容量约束。
