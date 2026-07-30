@@ -1,0 +1,3943 @@
+{
+  "arithmetic": "select analytically private coordinates from the frozen deterministic overflow witness, compare their excess with the full current block height, look up the complete frozen linear target spectrum, independently rebuild one selected Type I hit and its even marked source, and scan exact Type II divisor certificates through gap 51",
+  "scope_note": "Finite proxy-overflow profile only. The selected excess comes from one deterministic radius-six witness and is not a target-fiber minimum or a proved overflow-to-carrier charge. The 35+2 split is not a universal escape theorem.",
+  "inputs": {
+    "type-i-f-overflow-all-assignment-height-upper-bound-results.json": {
+      "sha256": "62fb9fc0f59bb011ad39276c3cd450ee1fe93fbafba7e7fc5f3800517f0bd3c5"
+    },
+    "type-i-f-square-terminal-relation-certificate-results.json": {
+      "sha256": "53119e9aaeadac7080811782f3a3eb07f3cd6674dfb9a18776a3c5e68d108297"
+    },
+    "type-i-linear-b-gt-one-full-spectrum-profile-600m-results.json": {
+      "sha256": "71b24dc30fce218f02d7c81cd8c716b6d60e874e7701161e0887575f2d5f3d2f"
+    }
+  },
+  "private_row_count": 37,
+  "private_state_count": 37,
+  "private_prime_count": 31,
+  "private_row_tsv_sha256": "94595e1e49e0faf5046dd03ab94fd15cfe3703adec4718f0f47a978f4bfc05d0",
+  "smaller_R_type_I_even_terminal_count": 35,
+  "no_smaller_R_hit_count": 2,
+  "no_smaller_R_hit_primes": [
+    168434809,
+    310002289
+  ],
+  "direct_type_II_prime_count": 31,
+  "direct_type_II_row_count": 37,
+  "direct_type_II_gap_cap": 51,
+  "direct_type_II_max_gap": 51,
+  "direct_type_II_gap_histogram": {
+    "15": 3,
+    "19": 12,
+    "27": 4,
+    "31": 9,
+    "39": 1,
+    "47": 1,
+    "51": 1
+  },
+  "selector_branch_counts": {
+    "smaller_R_type_I_even_terminal": 35,
+    "direct_type_II_after_no_smaller_R": 2
+  },
+  "type_II_by_prime": [
+    {
+      "prime": 214729,
+      "gap": 19,
+      "x": 53687,
+      "divisor": 1451,
+      "A": 1,
+      "B": 37,
+      "C": 1451,
+      "y": 623143558,
+      "z": 23056311646,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 5596369,
+      "gap": 31,
+      "x": 1399100,
+      "divisor": 85,
+      "A": 1,
+      "B": 16460,
+      "C": 85,
+      "y": 252592114815,
+      "z": 4157666209854900,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 13782409,
+      "gap": 15,
+      "x": 3445606,
+      "divisor": 29,
+      "A": 1,
+      "B": 118814,
+      "C": 29,
+      "y": 3165943388981,
+      "z": 376158397818388534,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 16267729,
+      "gap": 19,
+      "x": 4066937,
+      "divisor": 58457,
+      "A": 7,
+      "B": 487,
+      "C": 1193,
+      "y": 3532146926854,
+      "z": 245736507625414,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 25073689,
+      "gap": 31,
+      "x": 6268430,
+      "divisor": 49,
+      "A": 7,
+      "B": 895490,
+      "C": 1,
+      "y": 5070125579001,
+      "z": 648606679248515070,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 42486889,
+      "gap": 31,
+      "x": 10621730,
+      "divisor": 265,
+      "A": 1,
+      "B": 40082,
+      "C": 265,
+      "y": 14557920081405,
+      "z": 583510552702875210,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 48825529,
+      "gap": 19,
+      "x": 12206387,
+      "divisor": 353,
+      "A": 1,
+      "B": 34579,
+      "C": 353,
+      "y": 31368449361340,
+      "z": 1084689610465775860,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 48991849,
+      "gap": 27,
+      "x": 12247969,
+      "divisor": 114467,
+      "A": 1,
+      "B": 107,
+      "C": 114467,
+      "y": 22431799917932,
+      "z": 2400202591218724,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 62704849,
+      "gap": 51,
+      "x": 15676225,
+      "divisor": 72473,
+      "A": 23,
+      "B": 4975,
+      "C": 137,
+      "y": 19363131961502,
+      "z": 4188329630803150,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 79312489,
+      "gap": 19,
+      "x": 19828127,
+      "divisor": 121,
+      "A": 11,
+      "B": 1802557,
+      "C": 1,
+      "y": 82769879020488,
+      "z": 13563402256139435256,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 99151369,
+      "gap": 19,
+      "x": 24787847,
+      "divisor": 47,
+      "A": 1,
+      "B": 527401,
+      "C": 47,
+      "y": 129355453932994,
+      "z": 68222195759714968594,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 137431849,
+      "gap": 27,
+      "x": 34357969,
+      "divisor": 17,
+      "A": 1,
+      "B": 2021057,
+      "C": 17,
+      "y": 174884501625782,
+      "z": 353451546202298091574,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 148659289,
+      "gap": 19,
+      "x": 37164827,
+      "divisor": 47,
+      "A": 1,
+      "B": 790741,
+      "C": 47,
+      "y": 290784407611294,
+      "z": 229935153258962228854,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 152498329,
+      "gap": 15,
+      "x": 38124586,
+      "divisor": 284,
+      "A": 2,
+      "B": 268483,
+      "C": 71,
+      "y": 387598597889482,
+      "z": 52031817178580897903,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 158937529,
+      "gap": 47,
+      "x": 39734394,
+      "divisor": 252,
+      "A": 6,
+      "B": 946057,
+      "C": 7,
+      "y": 134368647892122,
+      "z": 21186733319812877159,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 168434809,
+      "gap": 31,
+      "x": 42108710,
+      "divisor": 47,
+      "A": 1,
+      "B": 895930,
+      "C": 47,
+      "y": 228792917500723,
+      "z": 204982438576422757390,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 283309849,
+      "gap": 19,
+      "x": 70827467,
+      "divisor": 961,
+      "A": 31,
+      "B": 2284757,
+      "C": 1,
+      "y": 1056125854820388,
+      "z": 77838417409092426636,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 300873169,
+      "gap": 27,
+      "x": 75218299,
+      "divisor": 353,
+      "A": 1,
+      "B": 213083,
+      "C": 353,
+      "y": 838195340561044,
+      "z": 178605177752768938652,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 310002289,
+      "gap": 19,
+      "x": 77500577,
+      "divisor": 43,
+      "A": 1,
+      "B": 1802339,
+      "C": 43,
+      "y": 1264493136785220,
+      "z": 2279045295660336629580,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 333575449,
+      "gap": 31,
+      "x": 83393870,
+      "divisor": 5,
+      "A": 1,
+      "B": 16678774,
+      "C": 5,
+      "y": 897359654741125,
+      "z": 14966858878145252380750,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 335495689,
+      "gap": 19,
+      "x": 83873927,
+      "divisor": 11149,
+      "A": 1,
+      "B": 7523,
+      "C": 11149,
+      "y": 1481214808917756,
+      "z": 11143179007488278388,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 366108649,
+      "gap": 31,
+      "x": 91527170,
+      "divisor": 20,
+      "A": 2,
+      "B": 9152717,
+      "C": 5,
+      "y": 1080932125086010,
+      "z": 4946732918560425094585,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 369577849,
+      "gap": 15,
+      "x": 92394466,
+      "divisor": 2459,
+      "A": 1,
+      "B": 37574,
+      "C": 2459,
+      "y": 2276523786380955,
+      "z": 85538104749478003170,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 386108809,
+      "gap": 31,
+      "x": 96527210,
+      "divisor": 1,
+      "A": 1,
+      "B": 96527210,
+      "C": 1,
+      "y": 1202258273396829,
+      "z": 116050636830413126217090,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 403509649,
+      "gap": 39,
+      "x": 100877422,
+      "divisor": 17,
+      "A": 1,
+      "B": 5933966,
+      "C": 17,
+      "y": 1043718461613049,
+      "z": 6193389864784137922334,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 405660649,
+      "gap": 19,
+      "x": 101415167,
+      "divisor": 31,
+      "A": 1,
+      "B": 3271457,
+      "C": 31,
+      "y": 2165271317849658,
+      "z": 7083592009678488611706,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 463627609,
+      "gap": 19,
+      "x": 115906907,
+      "divisor": 146689,
+      "A": 383,
+      "B": 302629,
+      "C": 1,
+      "y": 2831876380491156,
+      "z": 2237618582641404828,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 487572409,
+      "gap": 31,
+      "x": 121893110,
+      "divisor": 1060,
+      "A": 2,
+      "B": 229987,
+      "C": 265,
+      "y": 1917168842256630,
+      "z": 220461955262037781905,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 534844249,
+      "gap": 31,
+      "x": 133711070,
+      "divisor": 2284,
+      "A": 2,
+      "B": 117085,
+      "C": 571,
+      "y": 2306961883916166,
+      "z": 135055316089162148055,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 570621769,
+      "gap": 19,
+      "x": 142655447,
+      "divisor": 11,
+      "A": 1,
+      "B": 12968677,
+      "C": 11,
+      "y": 4284332094813958,
+      "z": 55562119098375596393566,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    },
+    {
+      "prime": 584607769,
+      "gap": 27,
+      "x": 146151949,
+      "divisor": 46679,
+      "A": 1,
+      "B": 3131,
+      "C": 46679,
+      "y": 3165513101701516,
+      "z": 9911221521427446596,
+      "checks": {
+        "normal_coordinates": true,
+        "A_B_coprime": true,
+        "orientation": true,
+        "gap_condition": true,
+        "target_identity": true
+      }
+    }
+  ],
+  "records": [
+    {
+      "prime": 214729,
+      "R": 43,
+      "q": 15287,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 711,
+      "other_coordinate": 7,
+      "block": 30574,
+      "d0": 2,
+      "n0": 14,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        39
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 39,
+        "K": 2093608,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 3
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 37,
+            "exponent": 1
+          },
+          {
+            "prime": 643,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 1628,
+          "A": 33,
+          "B": 1,
+          "C": 1628,
+          "H": 1286,
+          "gap": 167,
+          "target_solution": [
+            53724,
+            69089064,
+            449558352232
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 610,
+          "s": 9,
+          "E": 352,
+          "source_denominator": 214720,
+          "source_solution": [
+            1277100880,
+            53724,
+            69089064
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 5596369,
+      "R": 43,
+      "q": 398417,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 18531,
+      "other_coordinate": 7,
+      "block": 796834,
+      "d0": 2,
+      "n0": 14,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        7,
+        11,
+        23
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 7,
+        "K": 9793646,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 59,
+            "exponent": 1
+          },
+          {
+            "prime": 82997,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 236,
+          "A": 11857,
+          "B": 2,
+          "C": 59,
+          "H": 82997,
+          "gap": 135,
+          "target_solution": [
+            1399126,
+            58061630311,
+            54808856871374
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 699546,
+          "s": 1,
+          "E": 8,
+          "source_denominator": 5596368,
+          "source_solution": [
+            6851105884716,
+            1399126,
+            58061630311
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 13782409,
+      "R": 1019,
+      "q": 765439,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 4507,
+      "other_coordinate": 3,
+      "block": 4592634,
+      "d0": 6,
+      "n0": 18,
+      "eligible_divisors": [
+        6
+      ],
+      "smaller_hit_Rs": [
+        131
+      ],
+      "type_ii_gap": 15,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 131,
+        "K": 451373895,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 2
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 59,
+            "exponent": 1
+          },
+          {
+            "prime": 149,
+            "exponent": 1
+          },
+          {
+            "prime": 163,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 28525,
+          "A": 604,
+          "B": 5,
+          "C": 1141,
+          "H": 79119,
+          "gap": 871,
+          "target_solution": [
+            3445820,
+            54525966516,
+            6221019632813055
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 11680,
+          "s": 9,
+          "E": 1180,
+          "source_denominator": 13782400,
+          "source_solution": [
+            5272047093600,
+            3445820,
+            54525966516
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 16267729,
+      "R": 39011,
+      "q": 180751,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 139,
+      "other_coordinate": 3,
+      "block": 5422530,
+      "d0": 30,
+      "n0": 90,
+      "eligible_divisors": [
+        30
+      ],
+      "smaller_hit_Rs": [
+        31,
+        167
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 31,
+        "K": 126074900,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 2
+          },
+          {
+            "prime": 5,
+            "exponent": 2
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 389,
+            "exponent": 1
+          },
+          {
+            "prime": 463,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 2,
+        "target": {
+          "divisor": 1852,
+          "A": 2196,
+          "B": 1,
+          "C": 1852,
+          "H": 68075,
+          "gap": 239,
+          "target_solution": [
+            4066992,
+            276860480400,
+            2050952306902100
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 9,
+          "s": 58099,
+          "E": 1801070,
+          "source_denominator": 16209630,
+          "source_solution": [
+            1134674100,
+            4066992,
+            276860480400
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 25073689,
+      "R": 139,
+      "q": 162649,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 25743,
+      "other_coordinate": 7,
+      "block": 3578278,
+      "d0": 22,
+      "n0": 154,
+      "eligible_divisors": [
+        22
+      ],
+      "smaller_hit_Rs": [
+        39,
+        47,
+        51,
+        59
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 39,
+        "K": 244468468,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 2
+          },
+          {
+            "prime": 157,
+            "exponent": 1
+          },
+          {
+            "prime": 193,
+            "exponent": 1
+          },
+          {
+            "prime": 2017,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 16136,
+          "A": 777,
+          "B": 2,
+          "C": 4034,
+          "H": 30301,
+          "gap": 1655,
+          "target_solution": [
+            6268836,
+            94975999818,
+            6129726336938452
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 4,
+          "s": 159705,
+          "E": 6228496,
+          "source_denominator": 24913984,
+          "source_solution": [
+            977873872,
+            6268836,
+            94975999818
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 42486889,
+      "R": 8051,
+      "q": 472057,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 1759,
+      "other_coordinate": 3,
+      "block": 14161710,
+      "d0": 30,
+      "n0": 90,
+      "eligible_divisors": [
+        30
+      ],
+      "smaller_hit_Rs": [
+        131,
+        151
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 131,
+        "K": 1391445615,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 67,
+            "exponent": 1
+          },
+          {
+            "prime": 83,
+            "exponent": 1
+          },
+          {
+            "prime": 2383,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 147735,
+          "A": 1510,
+          "B": 21,
+          "C": 335,
+          "H": 197789,
+          "gap": 4511,
+          "target_solution": [
+            10622850,
+            100051565650,
+            59118195394041735
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 19,
+          "s": 17063,
+          "E": 2235254,
+          "source_denominator": 42469826,
+          "source_solution": [
+            26437466685,
+            10622850,
+            100051565650
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 48825529,
+      "R": 419,
+      "q": 309013,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 1475,
+      "other_coordinate": 79,
+      "block": 618026,
+      "d0": 2,
+      "n0": 158,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        15,
+        31,
+        35,
+        131
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 183095734,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 31,
+            "exponent": 1
+          },
+          {
+            "prime": 101833,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 116,
+          "A": 210455,
+          "B": 2,
+          "C": 29,
+          "H": 3156823,
+          "gap": 31,
+          "target_solution": [
+            12206390,
+            19266706349485,
+            8939746070193286
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 2,
+          "s": 1575017,
+          "E": 23625256,
+          "source_denominator": 47250512,
+          "source_solution": [
+            366191468,
+            12206390,
+            19266706349485
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 48991849,
+      "R": 7931,
+      "q": 28649,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 2059,
+      "other_coordinate": 3,
+      "block": 16329930,
+      "d0": 570,
+      "n0": 1710,
+      "eligible_divisors": [
+        570
+      ],
+      "smaller_hit_Rs": [
+        15,
+        19,
+        23,
+        51,
+        111,
+        131,
+        443
+      ],
+      "type_ii_gap": 27,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 183719434,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 61,
+            "exponent": 1
+          },
+          {
+            "prime": 491,
+            "exponent": 1
+          },
+          {
+            "prime": 3067,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 491,
+          "A": 24945,
+          "B": 1,
+          "C": 491,
+          "H": 374174,
+          "gap": 131,
+          "target_solution": [
+            12247995,
+            4582881281130,
+            9000754768893466
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 4,
+          "s": 803145,
+          "E": 12047176,
+          "source_denominator": 48188704,
+          "source_solution": [
+            734877736,
+            12247995,
+            4582881281130
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 62704849,
+      "R": 1947,
+      "q": 1650083,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 1695,
+      "other_coordinate": 19,
+      "block": 3300166,
+      "d0": 2,
+      "n0": 38,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        23,
+        39,
+        71,
+        131
+      ],
+      "type_ii_gap": 51,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 23,
+        "K": 360552882,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 149,
+            "exponent": 1
+          },
+          {
+            "prime": 13907,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 1788,
+          "A": 17535,
+          "B": 2,
+          "C": 447,
+          "H": 403303,
+          "gap": 311,
+          "target_solution": [
+            15676290,
+            3161147392935,
+            22608414022324818
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 5,
+          "s": 540559,
+          "E": 12432858,
+          "source_denominator": 62164290,
+          "source_solution": [
+            1802764410,
+            15676290,
+            3161147392935
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 62704849,
+      "R": 150371,
+      "q": 696719,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 139,
+      "other_coordinate": 3,
+      "block": 20901570,
+      "d0": 30,
+      "n0": 90,
+      "eligible_divisors": [
+        30
+      ],
+      "smaller_hit_Rs": [
+        23,
+        39,
+        71,
+        131,
+        7631
+      ],
+      "type_ii_gap": 51,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 23,
+        "K": 360552882,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 149,
+            "exponent": 1
+          },
+          {
+            "prime": 13907,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 1788,
+          "A": 17535,
+          "B": 2,
+          "C": 447,
+          "H": 403303,
+          "gap": 311,
+          "target_solution": [
+            15676290,
+            3161147392935,
+            22608414022324818
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 5,
+          "s": 540559,
+          "E": 12432858,
+          "source_denominator": 62164290,
+          "source_solution": [
+            1802764410,
+            15676290,
+            3161147392935
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 79312489,
+      "R": 45347,
+      "q": 1468739,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 583,
+      "other_coordinate": 3,
+      "block": 26437302,
+      "d0": 18,
+      "n0": 54,
+      "eligible_divisors": [
+        18
+      ],
+      "smaller_hit_Rs": [
+        51,
+        359,
+        455
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 51,
+        "K": 1011234235,
+        "K_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 37,
+            "exponent": 1
+          },
+          {
+            "prime": 83,
+            "exponent": 1
+          },
+          {
+            "prime": 5987,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 2,
+        "target": {
+          "divisor": 2484605,
+          "A": 8,
+          "B": 1,
+          "C": 2484605,
+          "H": 407,
+          "gap": 194871,
+          "target_solution": [
+            19876840,
+            8089873880,
+            80203504139860915
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 179,
+          "s": 8687,
+          "E": 443038,
+          "source_denominator": 79303802,
+          "source_solution": [
+            181010928065,
+            19876840,
+            8089873880
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 79312489,
+      "R": 97555,
+      "q": 281249,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 271,
+      "other_coordinate": 3,
+      "block": 26437406,
+      "d0": 94,
+      "n0": 282,
+      "eligible_divisors": [
+        94
+      ],
+      "smaller_hit_Rs": [
+        51,
+        359,
+        455
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 51,
+        "K": 1011234235,
+        "K_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 37,
+            "exponent": 1
+          },
+          {
+            "prime": 83,
+            "exponent": 1
+          },
+          {
+            "prime": 5987,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 2,
+        "target": {
+          "divisor": 2484605,
+          "A": 8,
+          "B": 1,
+          "C": 2484605,
+          "H": 407,
+          "gap": 194871,
+          "target_solution": [
+            19876840,
+            8089873880,
+            80203504139860915
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 179,
+          "s": 8687,
+          "E": 443038,
+          "source_denominator": 79303802,
+          "source_solution": [
+            181010928065,
+            19876840,
+            8089873880
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 99151369,
+      "R": 82011,
+      "q": 115561,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 31,
+      "other_coordinate": 39,
+      "block": 2542342,
+      "d0": 22,
+      "n0": 858,
+      "eligible_divisors": [
+        22
+      ],
+      "smaller_hit_Rs": [
+        11,
+        31,
+        39,
+        83,
+        87,
+        199,
+        5127
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 11,
+        "K": 272666265,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 23,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 27253,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 7,
+        "target": {
+          "divisor": 261,
+          "A": 284918,
+          "B": 3,
+          "C": 29,
+          "H": 3134095,
+          "gap": 95,
+          "target_solution": [
+            24787866,
+            25895842297090,
+            27035233454866785
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 2,
+          "s": 4310929,
+          "E": 47420220,
+          "source_denominator": 94840440,
+          "source_solution": [
+            545332530,
+            24787866,
+            25895842297090
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 137431849,
+      "R": 7907,
+      "q": 119923,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 91,
+      "other_coordinate": 191,
+      "block": 719538,
+      "d0": 6,
+      "n0": 1146,
+      "eligible_divisors": [
+        6
+      ],
+      "smaller_hit_Rs": [
+        59,
+        63,
+        251,
+        1223
+      ],
+      "type_ii_gap": 27,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 59,
+        "K": 2027119773,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 67,
+            "exponent": 1
+          },
+          {
+            "prime": 313,
+            "exponent": 1
+          },
+          {
+            "prime": 4603,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 2817,
+          "A": 36590,
+          "B": 3,
+          "C": 313,
+          "H": 2158807,
+          "gap": 191,
+          "target_solution": [
+            34358010,
+            24724104164690,
+            278590818547850277
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 78,
+          "s": 29857,
+          "E": 1761564,
+          "source_denominator": 137401992,
+          "source_solution": [
+            158115342294,
+            34358010,
+            24724104164690
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 148659289,
+      "R": 155,
+      "q": 10608743,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 136887,
+      "other_coordinate": 7,
+      "block": 21217486,
+      "d0": 2,
+      "n0": 14,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        11
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 11,
+        "K": 408813045,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 89,
+            "exponent": 1
+          },
+          {
+            "prime": 359,
+            "exponent": 1
+          },
+          {
+            "prime": 853,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 7,
+        "target": {
+          "divisor": 3231,
+          "A": 34508,
+          "B": 3,
+          "C": 359,
+          "H": 379585,
+          "gap": 1175,
+          "target_solution": [
+            37165116,
+            4702440185620,
+            60773856603625005
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 8,
+          "s": 1670329,
+          "E": 18373620,
+          "source_denominator": 146988960,
+          "source_solution": [
+            3270504360,
+            37165116,
+            4702440185620
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 152498329,
+      "R": 28131,
+      "q": 391021,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 139,
+      "other_coordinate": 39,
+      "block": 3910210,
+      "d0": 10,
+      "n0": 390,
+      "eligible_divisors": [
+        10
+      ],
+      "smaller_hit_Rs": [
+        47
+      ],
+      "type_ii_gap": 15,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 47,
+        "K": 1791855366,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 31,
+            "exponent": 1
+          },
+          {
+            "prime": 251,
+            "exponent": 1
+          },
+          {
+            "prime": 5483,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 1116,
+          "A": 204971,
+          "B": 6,
+          "C": 31,
+          "H": 9633631,
+          "gap": 95,
+          "target_solution": [
+            38124606,
+            61213064370731,
+            273254949124683414
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 16,
+          "s": 202521,
+          "E": 9518488,
+          "source_denominator": 152295808,
+          "source_solution": [
+            28669685856,
+            38124606,
+            61213064370731
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 158937529,
+      "R": 23411,
+      "q": 73243,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 219,
+      "other_coordinate": 31,
+      "block": 5127010,
+      "d0": 70,
+      "n0": 2170,
+      "eligible_divisors": [
+        70
+      ],
+      "smaller_hit_Rs": [
+        15,
+        51,
+        139
+      ],
+      "type_ii_gap": 47,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 596015734,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 31,
+            "exponent": 1
+          },
+          {
+            "prime": 89,
+            "exponent": 1
+          },
+          {
+            "prime": 108013,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 356,
+          "A": 223227,
+          "B": 2,
+          "C": 89,
+          "H": 3348403,
+          "gap": 95,
+          "target_solution": [
+            39734406,
+            66523402126809,
+            94729268007081286
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 2,
+          "s": 5127017,
+          "E": 76905256,
+          "source_denominator": 153810512,
+          "source_solution": [
+            1192031468,
+            39734406,
+            66523402126809
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 168434809,
+      "R": 27,
+      "q": 27730121,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 2054083,
+      "other_coordinate": 3,
+      "block": 55460242,
+      "d0": 2,
+      "n0": 6,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [],
+      "type_ii_gap": 31,
+      "selected_exit": "direct_type_II",
+      "first_larger_R_hit": {
+        "R": 75,
+        "K": 3158152669,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 803531,
+          "A": 3512,
+          "B": 67,
+          "C": 179,
+          "H": 263333,
+          "gap": 42855,
+          "target_solution": [
+            42119416,
+            165543763784,
+            531942841595855221
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 168434809,
+      "R": 9731,
+      "q": 4432471,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 911,
+      "other_coordinate": 19,
+      "block": 8864942,
+      "d0": 2,
+      "n0": 38,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        75,
+        383,
+        723
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 75,
+        "K": 3158152669,
+        "K_factorization": [
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 67,
+            "exponent": 1
+          },
+          {
+            "prime": 179,
+            "exponent": 1
+          },
+          {
+            "prime": 37619,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 803531,
+          "A": 3512,
+          "B": 67,
+          "C": 179,
+          "H": 263333,
+          "gap": 42855,
+          "target_solution": [
+            42119416,
+            165543763784,
+            531942841595855221
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 89784,
+          "s": 25,
+          "E": 1876,
+          "source_denominator": 168434784,
+          "source_solution": [
+            283551579233496,
+            42119416,
+            165543763784
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 283309849,
+      "R": 8051,
+      "q": 44281,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 11,
+      "other_coordinate": 3199,
+      "block": 88562,
+      "d0": 2,
+      "n0": 6398,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        35,
+        39,
+        71,
+        471,
+        1211
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 35,
+        "K": 2478961179,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 4
+          },
+          {
+            "prime": 19,
+            "exponent": 1
+          },
+          {
+            "prime": 1610761,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 13851,
+          "A": 46022,
+          "B": 9,
+          "C": 171,
+          "H": 1610761,
+          "gap": 1583,
+          "target_solution": [
+            70827858,
+            12676305708882,
+            702314117299351971
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 7869718,
+          "s": 1,
+          "E": 36,
+          "source_denominator": 283309848,
+          "source_solution": [
+            19508725411677522,
+            70827858,
+            12676305708882
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 300873169,
+      "R": 475,
+      "q": 50110363,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 210991,
+      "other_coordinate": 3,
+      "block": 100220726,
+      "d0": 2,
+      "n0": 6,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        7,
+        15,
+        47,
+        143
+      ],
+      "type_ii_gap": 27,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 7,
+        "K": 526528046,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 17,
+            "exponent": 1
+          },
+          {
+            "prime": 1407829,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 68,
+          "A": 2212303,
+          "B": 2,
+          "C": 17,
+          "H": 15486119,
+          "gap": 39,
+          "target_solution": [
+            75218302,
+            582419787874969,
+            158418161767397774
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 3,
+          "s": 13676053,
+          "E": 95732372,
+          "source_denominator": 287197116,
+          "source_solution": [
+            1579584138,
+            75218302,
+            582419787874969
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 310002289,
+      "R": 19,
+      "q": 50776237,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 5344867,
+      "other_coordinate": 3,
+      "block": 101552474,
+      "d0": 2,
+      "n0": 6,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [],
+      "type_ii_gap": 19,
+      "selected_exit": "direct_type_II",
+      "first_larger_R_hit": {
+        "R": 23,
+        "K": 1782513162,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 2524,
+          "A": 61411,
+          "B": 2,
+          "C": 631,
+          "H": 1412451,
+          "gap": 439,
+          "target_solution": [
+            77500682,
+            54732957895791,
+            552583160392627818
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 310002289,
+      "R": 19891,
+      "q": 149183,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 15,
+      "other_coordinate": 1039,
+      "block": 298366,
+      "d0": 2,
+      "n0": 2078,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        23,
+        35,
+        39,
+        51,
+        79,
+        115,
+        335,
+        1151
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 23,
+        "K": 1782513162,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 3,
+            "exponent": 3
+          },
+          {
+            "prime": 631,
+            "exponent": 1
+          },
+          {
+            "prime": 52313,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 2524,
+          "A": 61411,
+          "B": 2,
+          "C": 631,
+          "H": 1412451,
+          "gap": 439,
+          "target_solution": [
+            77500682,
+            54732957895791,
+            552583160392627818
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 12916762,
+          "s": 1,
+          "E": 24,
+          "source_denominator": 310002288,
+          "source_solution": [
+            23024298275421444,
+            77500682,
+            54732957895791
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 333575449,
+      "R": 978227,
+      "q": 5054173,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 31,
+      "other_coordinate": 11,
+      "block": 30325038,
+      "d0": 6,
+      "n0": 66,
+      "eligible_divisors": [
+        6
+      ],
+      "smaller_hit_Rs": [
+        15,
+        495,
+        851,
+        1431
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 1250907934,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 347,
+            "exponent": 1
+          },
+          {
+            "prime": 491,
+            "exponent": 1
+          },
+          {
+            "prime": 3671,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 491,
+          "A": 169845,
+          "B": 1,
+          "C": 491,
+          "H": 2547674,
+          "gap": 131,
+          "target_solution": [
+            83393895,
+            212460458050230,
+            417272175741712366
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 120164,
+          "s": 185,
+          "E": 2776,
+          "source_denominator": 333575264,
+          "source_solution": [
+            150314100981176,
+            83393895,
+            212460458050230
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 335495689,
+      "R": 16163,
+      "q": 26513,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 187,
+      "other_coordinate": 111,
+      "block": 3022482,
+      "d0": 114,
+      "n0": 12654,
+      "eligible_divisors": [
+        114
+      ],
+      "smaller_hit_Rs": [
+        71,
+        87,
+        103,
+        231,
+        3143
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 71,
+        "K": 5955048480,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 5
+          },
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 1979,
+            "exponent": 1
+          },
+          {
+            "prime": 6269,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 3958,
+          "A": 21191,
+          "B": 1,
+          "C": 3958,
+          "H": 1504560,
+          "gap": 223,
+          "target_solution": [
+            83873978,
+            126193432339680,
+            1997893092826002720
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 524212,
+          "s": 9,
+          "E": 640,
+          "source_denominator": 335495680,
+          "source_solution": [
+            3121707873797760,
+            83873978,
+            126193432339680
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 366108649,
+      "R": 19083,
+      "q": 51061,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 1279,
+      "other_coordinate": 15,
+      "block": 24407158,
+      "d0": 478,
+      "n0": 7170,
+      "eligible_divisors": [
+        478
+      ],
+      "smaller_hit_Rs": [
+        35,
+        39,
+        231
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 35,
+        "K": 3203450679,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 2
+          },
+          {
+            "prime": 13,
+            "exponent": 1
+          },
+          {
+            "prime": 43,
+            "exponent": 1
+          },
+          {
+            "prime": 15787,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 5031,
+          "A": 54578,
+          "B": 3,
+          "C": 559,
+          "H": 1910227,
+          "gap": 575,
+          "target_solution": [
+            91527306,
+            58279310386154,
+            1172811000226822671
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 27,
+          "s": 387007,
+          "E": 13545246,
+          "source_denominator": 365721642,
+          "source_solution": [
+            86493168333,
+            91527306,
+            58279310386154
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 366108649,
+      "R": 33171,
+      "q": 4693697,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 283,
+      "other_coordinate": 39,
+      "block": 9387394,
+      "d0": 2,
+      "n0": 78,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        35,
+        39,
+        231
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 35,
+        "K": 3203450679,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 11,
+            "exponent": 2
+          },
+          {
+            "prime": 13,
+            "exponent": 1
+          },
+          {
+            "prime": 43,
+            "exponent": 1
+          },
+          {
+            "prime": 15787,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 5031,
+          "A": 54578,
+          "B": 3,
+          "C": 559,
+          "H": 1910227,
+          "gap": 575,
+          "target_solution": [
+            91527306,
+            58279310386154,
+            1172811000226822671
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 27,
+          "s": 387007,
+          "E": 13545246,
+          "source_denominator": 365721642,
+          "source_solution": [
+            86493168333,
+            91527306,
+            58279310386154
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 369577849,
+      "R": 475,
+      "q": 61553113,
+      "overflow_excess": 5,
+      "block_height": 1,
+      "label": 259171,
+      "other_coordinate": 3,
+      "block": 123106226,
+      "d0": 2,
+      "n0": 6,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        19,
+        23
+      ],
+      "type_ii_gap": 15,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 19,
+        "K": 1755494783,
+        "K_factorization": [
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 17,
+            "exponent": 1
+          },
+          {
+            "prime": 61,
+            "exponent": 1
+          },
+          {
+            "prime": 257,
+            "exponent": 1
+          },
+          {
+            "prime": 941,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 6,
+        "target": {
+          "divisor": 109739,
+          "A": 842,
+          "B": 1,
+          "C": 109739,
+          "H": 15997,
+          "gap": 23103,
+          "target_solution": [
+            92400238,
+            1478126607286,
+            648791985831861767
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 27,
+          "s": 719023,
+          "E": 13661438,
+          "source_denominator": 368858826,
+          "source_solution": [
+            47398359141,
+            92400238,
+            1478126607286
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 386108809,
+      "R": 25643,
+      "q": 1199089,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 2151,
+      "other_coordinate": 7,
+      "block": 55158094,
+      "d0": 46,
+      "n0": 322,
+      "eligible_divisors": [
+        46
+      ],
+      "smaller_hit_Rs": [
+        23,
+        39,
+        71,
+        167,
+        491,
+        983,
+        1095,
+        1711
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 23,
+        "K": 2220125652,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 2
+          },
+          {
+            "prime": 3,
+            "exponent": 3
+          },
+          {
+            "prime": 37,
+            "exponent": 1
+          },
+          {
+            "prime": 47,
+            "exponent": 1
+          },
+          {
+            "prime": 11821,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 5,
+        "target": {
+          "divisor": 592,
+          "A": 652211,
+          "B": 4,
+          "C": 37,
+          "H": 15000849,
+          "gap": 103,
+          "target_solution": [
+            96527228,
+            361997592904143,
+            857210071324068468
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 1,
+          "s": 16087867,
+          "E": 370020942,
+          "source_denominator": 370020942,
+          "source_solution": [
+            2220125652,
+            96527228,
+            361997592904143
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 403509649,
+      "R": 899,
+      "q": 549739,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 1223,
+      "other_coordinate": 367,
+      "block": 1099478,
+      "d0": 2,
+      "n0": 734,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        7,
+        47,
+        151,
+        191
+      ],
+      "type_ii_gap": 39,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 7,
+        "K": 706141886,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 17,
+            "exponent": 1
+          },
+          {
+            "prime": 499,
+            "exponent": 1
+          },
+          {
+            "prime": 41621,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 68,
+          "A": 2966983,
+          "B": 2,
+          "C": 17,
+          "H": 20768879,
+          "gap": 39,
+          "target_solution": [
+            100877422,
+            1047555485674969,
+            284935064564058014
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 285,
+          "s": 202159,
+          "E": 1415114,
+          "source_denominator": 403307490,
+          "source_solution": [
+            201250437510,
+            100877422,
+            1047555485674969
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 405660649,
+      "R": 1019,
+      "q": 9657233,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 56863,
+      "other_coordinate": 7,
+      "block": 57943398,
+      "d0": 6,
+      "n0": 42,
+      "eligible_divisors": [
+        6
+      ],
+      "smaller_hit_Rs": [
+        31,
+        39,
+        127,
+        227,
+        263,
+        591
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 31,
+        "K": 3143870030,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 7,
+            "exponent": 1
+          },
+          {
+            "prime": 103,
+            "exponent": 1
+          },
+          {
+            "prime": 139,
+            "exponent": 1
+          },
+          {
+            "prime": 3137,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 19460,
+          "A": 10423,
+          "B": 2,
+          "C": 4865,
+          "H": 323111,
+          "gap": 2511,
+          "target_solution": [
+            101415790,
+            16384278661345,
+            1275344356741449470
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 93,
+          "s": 140659,
+          "E": 4360430,
+          "source_denominator": 405519990,
+          "source_solution": [
+            292379912790,
+            101415790,
+            16384278661345
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 463627609,
+      "R": 83,
+      "q": 33059357,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 796611,
+      "other_coordinate": 7,
+      "block": 66118714,
+      "d0": 2,
+      "n0": 14,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        15,
+        31
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 1738603534,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 23,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 1019,
+            "exponent": 1
+          },
+          {
+            "prime": 1279,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 5,
+        "target": {
+          "divisor": 116,
+          "A": 1998395,
+          "B": 2,
+          "C": 29,
+          "H": 29975923,
+          "gap": 31,
+          "target_solution": [
+            115906910,
+            1737208304663965,
+            806064599467370206
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 3,
+          "s": 10078861,
+          "E": 151182916,
+          "source_denominator": 453548748,
+          "source_solution": [
+            5215810602,
+            115906910,
+            1737208304663965
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 463627609,
+      "R": 227603,
+      "q": 430081,
+      "overflow_excess": 4,
+      "block_height": 1,
+      "label": 291,
+      "other_coordinate": 7,
+      "block": 66232474,
+      "d0": 154,
+      "n0": 1078,
+      "eligible_divisors": [
+        154
+      ],
+      "smaller_hit_Rs": [
+        15,
+        31,
+        95,
+        131,
+        215,
+        251,
+        2411,
+        48039
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 1738603534,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 23,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 1019,
+            "exponent": 1
+          },
+          {
+            "prime": 1279,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 5,
+        "target": {
+          "divisor": 116,
+          "A": 1998395,
+          "B": 2,
+          "C": 29,
+          "H": 29975923,
+          "gap": 31,
+          "target_solution": [
+            115906910,
+            1737208304663965,
+            806064599467370206
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 3,
+          "s": 10078861,
+          "E": 151182916,
+          "source_denominator": 453548748,
+          "source_solution": [
+            5215810602,
+            115906910,
+            1737208304663965
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 487572409,
+      "R": 318051,
+      "q": 6965317,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 219,
+      "other_coordinate": 7,
+      "block": 69653170,
+      "d0": 10,
+      "n0": 70,
+      "eligible_divisors": [
+        10
+      ],
+      "smaller_hit_Rs": [
+        23,
+        79,
+        143,
+        1847
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 23,
+        "K": 2803541352,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 3
+          },
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 19,
+            "exponent": 1
+          },
+          {
+            "prime": 47,
+            "exponent": 1
+          },
+          {
+            "prime": 130811,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 5,
+        "target": {
+          "divisor": 684,
+          "A": 534619,
+          "B": 3,
+          "C": 76,
+          "H": 12296234,
+          "gap": 119,
+          "target_solution": [
+            121893132,
+            499608824688296,
+            1366929410725756968
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 1,
+          "s": 20315517,
+          "E": 467256892,
+          "source_denominator": 467256892,
+          "source_solution": [
+            2803541352,
+            121893132,
+            499608824688296
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 534844249,
+      "R": 11011,
+      "q": 144161,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 6939,
+      "other_coordinate": 7,
+      "block": 76405330,
+      "d0": 530,
+      "n0": 3710,
+      "eligible_divisors": [
+        530
+      ],
+      "smaller_hit_Rs": [
+        11,
+        31,
+        35,
+        55,
+        59,
+        135,
+        471
+      ],
+      "type_ii_gap": 31,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 11,
+        "K": 1470821685,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 1129,
+            "exponent": 1
+          },
+          {
+            "prime": 86851,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 3,
+        "target": {
+          "divisor": 10161,
+          "A": 39478,
+          "B": 3,
+          "C": 1129,
+          "H": 434255,
+          "gap": 3695,
+          "target_solution": [
+            133711986,
+            19355032826810,
+            786660519526739565
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 3079,
+          "s": 15791,
+          "E": 173702,
+          "source_denominator": 534828458,
+          "source_solution": [
+            4528659968115,
+            133711986,
+            19355032826810
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 570621769,
+      "R": 21259,
+      "q": 100213,
+      "overflow_excess": 3,
+      "block_height": 1,
+      "label": 8947,
+      "other_coordinate": 3,
+      "block": 190204274,
+      "d0": 1898,
+      "n0": 5694,
+      "eligible_divisors": [
+        1898
+      ],
+      "smaller_hit_Rs": [
+        11,
+        131,
+        199,
+        10631
+      ],
+      "type_ii_gap": 19,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 11,
+        "K": 1569209865,
+        "K_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 29,
+            "exponent": 1
+          },
+          {
+            "prime": 769,
+            "exponent": 1
+          },
+          {
+            "prime": 4691,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 6,
+        "target": {
+          "divisor": 261,
+          "A": 1639718,
+          "B": 3,
+          "C": 29,
+          "H": 18036895,
+          "gap": 95,
+          "target_solution": [
+            142655466,
+            857687220472690,
+            895425309098551185
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 79,
+          "s": 655887,
+          "E": 7214758,
+          "source_denominator": 569965882,
+          "source_solution": [
+            123967579335,
+            142655466,
+            857687220472690
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    },
+    {
+      "prime": 584607769,
+      "R": 3011,
+      "q": 365837,
+      "overflow_excess": 2,
+      "block_height": 1,
+      "label": 243,
+      "other_coordinate": 799,
+      "block": 731674,
+      "d0": 2,
+      "n0": 1598,
+      "eligible_divisors": [
+        2
+      ],
+      "smaller_hit_Rs": [
+        15,
+        31,
+        39,
+        63,
+        75,
+        191,
+        471,
+        815
+      ],
+      "type_ii_gap": 27,
+      "selected_exit": "smaller_R_type_I_even_terminal",
+      "smaller_R_witness": {
+        "R": 15,
+        "K": 2192279134,
+        "K_factorization": [
+          {
+            "prime": 2,
+            "exponent": 1
+          },
+          {
+            "prime": 101,
+            "exponent": 1
+          },
+          {
+            "prime": 971,
+            "exponent": 1
+          },
+          {
+            "prime": 11177,
+            "exponent": 1
+          }
+        ],
+        "q_absent_from_K": true,
+        "source_state_count": 1,
+        "target": {
+          "divisor": 101,
+          "A": 1447049,
+          "B": 1,
+          "C": 101,
+          "H": 21705734,
+          "gap": 27,
+          "target_solution": [
+            146151949,
+            3172335328575566,
+            1281623413552992046
+          ],
+          "checks": {
+            "square_divisor": true,
+            "target_residue": true,
+            "normal_coordinates": true,
+            "A_integral": true,
+            "A_B_coprime": true,
+            "gap_integral": true,
+            "natural_gap": true,
+            "prime_reconstruction": true,
+            "target_identity": true
+          }
+        },
+        "lift": {
+          "a": 6538,
+          "s": 5961,
+          "E": 89416,
+          "source_denominator": 584601808,
+          "source_solution": [
+            14333120978092,
+            146151949,
+            3172335328575566
+          ],
+          "checks": {
+            "linear_source": true,
+            "source_factorization": true,
+            "strict_even_source": true,
+            "K_factorization": true,
+            "shared_tail_identity": true,
+            "marked_first_term": true
+          }
+        }
+      }
+    }
+  ]
+}
