@@ -1,0 +1,1260 @@
+{
+  "arithmetic": "A lower F-box hit for R=m*t is a Type I normal form for the scaled numerator P=p*m. Its denominators ABC, ACH, and PK can all be divided by m exactly when m divides A (equivalently m divides AC). More generally c=gcd(m,A) is the largest removable factor: the same target divisor then lifts from modulus t to c*t and gives a Type I normal form for p*(m/c).",
+  "scope_note": "This is a complete audit of the six frozen lower-modulus F-box hits and all vectors in their original K-exponent boxes. A partial reduction to p*m/gcd(m,AC) does not by itself solve p or define a closed descent.",
+  "repair_input": "type-i-f-overflow-r-modulus-repair-results.json",
+  "repair_input_sha256": "c656c91ebb02a33e8d1f5c78db70ce14ac5fbc2decc0db99e05bcbcc1fbee22f",
+  "source_input": "type-i-f-overflow-support-boundary-results.json",
+  "source_input_sha256": "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1",
+  "lower_hit_count": 6,
+  "target_vector_count": 50,
+  "normal_form_count": 25,
+  "full_lift_count": 0,
+  "strict_partial_reduction_count": 1,
+  "no_reduction_count": 24,
+  "removable_factor_histogram": {
+    "1": 24,
+    "3": 1
+  },
+  "records": [
+    {
+      "prime": 57399241,
+      "orientation": "reverse",
+      "R": 155,
+      "scaling_factor_m": 31,
+      "lower_modulus_t": 5,
+      "K": 2224220589,
+      "factorization": [
+        [
+          3,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          79,
+          1
+        ],
+        [
+          136013,
+          1
+        ]
+      ],
+      "target_vector_count": 34,
+      "normal_form_count": 17,
+      "full_lift_count": 0,
+      "strict_partial_reduction_count": 0,
+      "no_reduction_count": 17,
+      "normal_forms": [
+        {
+          "target_divisor": 1,
+          "A": 444844118,
+          "B": 1,
+          "C": 1,
+          "H": 2224220589,
+          "scaled_gap": 1,
+          "scaled_denominators": [
+            444844118,
+            989431446151145502,
+            3957725782380361419
+          ],
+          "AC": 444844118,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 444844118,
+          "reduced_gap": 1,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444844118,
+            989431446151145502,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              -1,
+              -1,
+              -1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 81,
+          "A": 49427126,
+          "B": 9,
+          "C": 1,
+          "H": 247135621,
+          "scaled_gap": 65,
+          "scaled_denominators": [
+            444844134,
+            12215203478255246,
+            3957725782380361419
+          ],
+          "AC": 49427126,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 49427126,
+          "reduced_gap": 65,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444844134,
+            12215203478255246,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              -1,
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 621,
+          "A": 2149006,
+          "B": 3,
+          "C": 69,
+          "H": 10745027,
+          "scaled_gap": 497,
+          "scaled_denominators": [
+            444844242,
+            1593287797028178,
+            3957725782380361419
+          ],
+          "AC": 148281414,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 2149006,
+          "reduced_gap": 497,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444844242,
+            1593287797028178,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 711,
+          "A": 625660,
+          "B": 1,
+          "C": 711,
+          "H": 3128299,
+          "scaled_gap": 569,
+          "scaled_denominators": [
+            444844260,
+            1391605853713740,
+            3957725782380361419
+          ],
+          "AC": 444844260,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 625660,
+          "reduced_gap": 569,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444844260,
+            1391605853713740,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              0,
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 4761,
+          "A": 2149010,
+          "B": 23,
+          "C": 9,
+          "H": 10745027,
+          "scaled_gap": 3809,
+          "scaled_denominators": [
+            444845070,
+            207820534259430,
+            3957725782380361419
+          ],
+          "AC": 19341090,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 2149010,
+          "reduced_gap": 3809,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444845070,
+            207820534259430,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              0,
+              -1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              -1,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 5451,
+          "A": 81608,
+          "B": 1,
+          "C": 5451,
+          "H": 408039,
+          "scaled_gap": 4361,
+          "scaled_denominators": [
+            444845208,
+            181514193827112,
+            3957725782380361419
+          ],
+          "AC": 444845208,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 81608,
+          "reduced_gap": 4361,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444845208,
+            181514193827112,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 6241,
+          "A": 5630954,
+          "B": 79,
+          "C": 1,
+          "H": 28154691,
+          "scaled_gap": 4993,
+          "scaled_denominators": [
+            444845366,
+            158537769905214,
+            3957725782380361419
+          ],
+          "AC": 5630954,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 5630954,
+          "reduced_gap": 4993,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444845366,
+            158537769905214,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              -1,
+              1,
+              -1
+            ],
+            [
+              2,
+              1,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 41791,
+          "A": 244828,
+          "B": 23,
+          "C": 79,
+          "H": 1224117,
+          "scaled_gap": 33433,
+          "scaled_denominators": [
+            444852476,
+            23676151233204,
+            3957725782380361419
+          ],
+          "AC": 19341412,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 244828,
+          "reduced_gap": 33433,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444852476,
+            23676151233204,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              1,
+              0,
+              -1
+            ],
+            [
+              2,
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 505521,
+          "A": 625802,
+          "B": 711,
+          "C": 1,
+          "H": 3128299,
+          "scaled_gap": 404417,
+          "scaled_denominators": [
+            444945222,
+            1957695770798,
+            3957725782380361419
+          ],
+          "AC": 625802,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 625802,
+          "reduced_gap": 404417,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            444945222,
+            1957695770798,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              1,
+              -1,
+              1
+            ],
+            [
+              2,
+              -1,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 3385071,
+          "A": 27244,
+          "B": 207,
+          "C": 79,
+          "H": 136013,
+          "scaled_gap": 2708057,
+          "scaled_denominators": [
+            445521132,
+            292737515588,
+            3957725782380361419
+          ],
+          "AC": 2152276,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 27244,
+          "reduced_gap": 2708057,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            445521132,
+            292737515588,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              -1,
+              0,
+              1
+            ],
+            [
+              2,
+              1,
+              0,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 3672351,
+          "A": 364,
+          "B": 3,
+          "C": 408039,
+          "H": 1817,
+          "scaled_gap": 2937881,
+          "scaled_denominators": [
+            445578588,
+            269872098132,
+            3957725782380361419
+          ],
+          "AC": 148526196,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 364,
+          "reduced_gap": 2937881,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            445578588,
+            269872098132,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              -1,
+              -1,
+              0
+            ]
+          ]
+        },
+        {
+          "target_divisor": 3875661,
+          "A": 27250,
+          "B": 237,
+          "C": 69,
+          "H": 136013,
+          "scaled_gap": 3100529,
+          "scaled_denominators": [
+            445619250,
+            255738443250,
+            3957725782380361419
+          ],
+          "AC": 1880250,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 27250,
+          "reduced_gap": 3100529,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            445619250,
+            255738443250,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              0,
+              -1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 28154691,
+          "A": 16,
+          "B": 1,
+          "C": 28154691,
+          "H": 79,
+          "scaled_gap": 22523753,
+          "scaled_denominators": [
+            450475056,
+            35587529424,
+            3957725782380361419
+          ],
+          "AC": 450475056,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 16,
+          "reduced_gap": 22523753,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            450475056,
+            35587529424,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              0,
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "target_divisor": 29713401,
+          "A": 27566,
+          "B": 1817,
+          "C": 9,
+          "H": 136013,
+          "scaled_gap": 23770721,
+          "scaled_denominators": [
+            450786798,
+            33744009222,
+            3957725782380361419
+          ],
+          "AC": 248094,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 27566,
+          "reduced_gap": 23770721,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            450786798,
+            33744009222,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              0,
+              -1,
+              -1,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              -1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 32235081,
+          "A": 14,
+          "B": 1,
+          "C": 32235081,
+          "H": 69,
+          "scaled_gap": 25788065,
+          "scaled_denominators": [
+            451291134,
+            31139088246,
+            3957725782380361419
+          ],
+          "AC": 451291134,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 14,
+          "reduced_gap": 25788065,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            451291134,
+            31139088246,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              -1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "target_divisor": 215852631,
+          "A": 52,
+          "B": 23,
+          "C": 408039,
+          "H": 237,
+          "scaled_gap": 172682105,
+          "scaled_denominators": [
+            488014644,
+            5028672636,
+            3957725782380361419
+          ],
+          "AC": 21218028,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 52,
+          "reduced_gap": 172682105,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            488014644,
+            5028672636,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              1,
+              -1,
+              0
+            ],
+            [
+              1,
+              -1,
+              1,
+              0
+            ]
+          ]
+        },
+        {
+          "target_divisor": 247135621,
+          "A": 2,
+          "B": 1,
+          "C": 247135621,
+          "H": 9,
+          "scaled_gap": 197708497,
+          "scaled_denominators": [
+            494271242,
+            4448441178,
+            3957725782380361419
+          ],
+          "AC": 494271242,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 31,
+          "enlarged_modulus": 5,
+          "reduced_A": 2,
+          "reduced_gap": 197708497,
+          "reduced_numerator": 1779376471,
+          "reduced_denominators": [
+            494271242,
+            4448441178,
+            3957725782380361419
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -2,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "R": 3395,
+      "scaling_factor_m": 35,
+      "lower_modulus_t": 97,
+      "K": 84154724439,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          163,
+          1
+        ],
+        [
+          1031,
+          1
+        ],
+        [
+          2351,
+          1
+        ]
+      ],
+      "target_vector_count": 2,
+      "normal_form_count": 1,
+      "full_lift_count": 0,
+      "strict_partial_reduction_count": 0,
+      "no_reduction_count": 1,
+      "normal_forms": [
+        {
+          "target_divisor": 9566649,
+          "A": 280528,
+          "B": 3093,
+          "C": 1,
+          "H": 27208123,
+          "scaled_gap": 394501,
+          "scaled_denominators": [
+            867673104,
+            7632640328944,
+            292041964758061244685
+          ],
+          "AC": 280528,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 35,
+          "enlarged_modulus": 97,
+          "reduced_A": 280528,
+          "reduced_gap": 394501,
+          "reduced_numerator": 3470297915,
+          "reduced_denominators": [
+            867673104,
+            7632640328944,
+            292041964758061244685
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              1,
+              1,
+              -1,
+              1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              -1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 242042089,
+      "orientation": "forward",
+      "R": 771,
+      "scaling_factor_m": 3,
+      "lower_modulus_t": 257,
+      "K": 46653612655,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          109,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          307,
+          1
+        ]
+      ],
+      "target_vector_count": 6,
+      "normal_form_count": 3,
+      "full_lift_count": 0,
+      "strict_partial_reduction_count": 0,
+      "no_reduction_count": 3,
+      "normal_forms": [
+        {
+          "target_divisor": 37223173,
+          "A": 532,
+          "B": 109,
+          "C": 3133,
+          "H": 136615,
+          "scaled_gap": 579349,
+          "scaled_denominators": [
+            181676404,
+            227703870940,
+            33876413599239108885
+          ],
+          "AC": 1666756,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 3,
+          "enlarged_modulus": 257,
+          "reduced_A": 532,
+          "reduced_gap": 579349,
+          "reduced_numerator": 726126267,
+          "reduced_denominators": [
+            181676404,
+            227703870940,
+            33876413599239108885
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              0,
+              -1,
+              1,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              1,
+              -1,
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 312595075,
+          "A": 38,
+          "B": 65,
+          "C": 73987,
+          "H": 9701,
+          "scaled_gap": 4865293,
+          "scaled_denominators": [
+            182747890,
+            27274419706,
+            33876413599239108885
+          ],
+          "AC": 2811506,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 3,
+          "enlarged_modulus": 257,
+          "reduced_A": 38,
+          "reduced_gap": 4865293,
+          "reduced_numerator": 726126267,
+          "reduced_denominators": [
+            182747890,
+            27274419706,
+            33876413599239108885
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              -1,
+              1,
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              -1,
+              -1,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "target_divisor": 27994309225,
+          "A": 1736,
+          "B": 167315,
+          "C": 1,
+          "H": 278837,
+          "scaled_gap": 435709093,
+          "scaled_denominators": [
+            290458840,
+            484061032,
+            33876413599239108885
+          ],
+          "AC": 1736,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 3,
+          "enlarged_modulus": 257,
+          "reduced_A": 1736,
+          "reduced_gap": 435709093,
+          "reduced_numerator": 726126267,
+          "reduced_denominators": [
+            290458840,
+            484061032,
+            33876413599239108885
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              1,
+              1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              -1,
+              -1,
+              1,
+              -1,
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "R": 1379,
+      "scaling_factor_m": 7,
+      "lower_modulus_t": 197,
+      "K": 126215956743,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          577,
+          1
+        ],
+        [
+          1609,
+          1
+        ],
+        [
+          45317,
+          1
+        ]
+      ],
+      "target_vector_count": 2,
+      "normal_form_count": 1,
+      "full_lift_count": 0,
+      "strict_partial_reduction_count": 0,
+      "no_reduction_count": 1,
+      "normal_forms": [
+        {
+          "target_divisor": 2053630489,
+          "A": 14368,
+          "B": 45317,
+          "C": 1,
+          "H": 2785179,
+          "scaled_gap": 41698081,
+          "scaled_denominators": [
+            651114656,
+            40017451872,
+            323461273837955191449
+          ],
+          "AC": 14368,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 7,
+          "enlarged_modulus": 197,
+          "reduced_A": 14368,
+          "reduced_gap": 41698081,
+          "reduced_numerator": 2562760543,
+          "reduced_denominators": [
+            651114656,
+            40017451872,
+            323461273837955191449
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              -1,
+              -1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              -1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 475619929,
+      "orientation": "forward",
+      "R": 5915,
+      "scaling_factor_m": 7,
+      "lower_modulus_t": 845,
+      "K": 703322970009,
+      "factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          73,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          89,
+          1
+        ],
+        [
+          3593,
+          1
+        ]
+      ],
+      "target_vector_count": 4,
+      "normal_form_count": 2,
+      "full_lift_count": 0,
+      "strict_partial_reduction_count": 0,
+      "no_reduction_count": 2,
+      "normal_forms": [
+        {
+          "target_divisor": 958441,
+          "A": 77290,
+          "B": 89,
+          "C": 121,
+          "H": 65309961,
+          "scaled_gap": 4537,
+          "scaled_denominators": [
+            832336010,
+            610784633168490,
+            2341600947418247965527
+          ],
+          "AC": 9352090,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 7,
+          "enlarged_modulus": 845,
+          "reduced_A": 77290,
+          "reduced_gap": 4537,
+          "reduced_numerator": 3329339503,
+          "reduced_denominators": [
+            832336010,
+            610784633168490,
+            2341600947418247965527
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              0,
+              -1,
+              -1,
+              1,
+              -1
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              -1,
+              1
+            ]
+          ]
+        },
+        {
+          "target_divisor": 7502121,
+          "A": 27626,
+          "B": 249,
+          "C": 121,
+          "H": 23343721,
+          "scaled_gap": 35513,
+          "scaled_denominators": [
+            832343754,
+            78032129997866,
+            2341600947418247965527
+          ],
+          "AC": 3342746,
+          "removable_factor": 1,
+          "reduced_scaling_factor": 7,
+          "enlarged_modulus": 845,
+          "reduced_A": 27626,
+          "reduced_gap": 35513,
+          "reduced_numerator": 3329339503,
+          "reduced_denominators": [
+            832343754,
+            78032129997866,
+            2341600947418247965527
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              0,
+              1,
+              -1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1,
+              1,
+              -1,
+              -1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 510725329,
+      "orientation": "forward",
+      "R": 555,
+      "scaling_factor_m": 15,
+      "lower_modulus_t": 37,
+      "K": 70863139399,
+      "factorization": [
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          67,
+          1
+        ],
+        [
+          2805461,
+          1
+        ]
+      ],
+      "target_vector_count": 2,
+      "normal_form_count": 1,
+      "full_lift_count": 0,
+      "strict_partial_reduction_count": 1,
+      "no_reduction_count": 0,
+      "normal_forms": [
+        {
+          "target_divisor": 12593714429,
+          "A": 12,
+          "B": 67,
+          "C": 2805461,
+          "H": 377,
+          "scaled_gap": 1361482641,
+          "scaled_denominators": [
+            2255590644,
+            12691905564,
+            542874002752907059065
+          ],
+          "AC": 33665532,
+          "removable_factor": 3,
+          "reduced_scaling_factor": 5,
+          "enlarged_modulus": 111,
+          "reduced_A": 4,
+          "reduced_gap": 453827547,
+          "reduced_numerator": 2553626645,
+          "reduced_denominators": [
+            751863548,
+            4230635188,
+            180958000917635686355
+          ],
+          "lifts_to_prime": false,
+          "target_vectors": [
+            [
+              -1,
+              -1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              -1,
+              0
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

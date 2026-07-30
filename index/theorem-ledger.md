@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 347 |
+| 数学状态 | `computationally_reproduced` | 349 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 267 |
+| 数学状态 | `established` | 270 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 118 |
+| 证明来源 | `computational_reproduction` | 119 |
 | 证明来源 | `mixed` | 9 |
-| 证明来源 | `repository_derivation` | 98 |
+| 证明来源 | `repository_derivation` | 102 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 16 |
-| 审阅状态 | `internal_review` | 209 |
+| 审阅状态 | `internal_review` | 214 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -255,11 +255,14 @@
 | [多支持较小块平方终端的标准偶源 n 除以 2 一项保留边界](../claims/type-I-f-overflow-even-standard-half-one-denominator-boundary.md) (`type-I-f-overflow-even-standard-half-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的偶标准源一项保留提升边界](../claims/type-I-f-overflow-even-standard-one-denominator-boundary.md) (`type-I-f-overflow-even-standard-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的四倍源非标准平方尾一项提升边界](../claims/type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary.md) (`type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `subramanian2026`, `bradford2024` | 2026-07-30 |
+| [四个低模数 Omega 硬核的 q 可除差候选 Type II 分流](../claims/type-I-f-overflow-four-hard-core-collision-selector.md) (`type-I-f-overflow-four-hard-core-collision-selector`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [六个高成本低模数状态的完整单位最小面与共享缺口边界](../claims/type-I-f-overflow-lower-modulus-high-cost-minimum-face.md) (`type-I-f-overflow-lower-modulus-high-cost-minimum-face`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [低模数最小溢出纤维的共享缺口 Type II 覆盖边界](../claims/type-I-f-overflow-lower-modulus-min-overflow-shared-gap.md) (`type-I-f-overflow-lower-modulus-min-overflow-shared-gap`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [低模数 Omega 的双向分母表示与直接载体收费边界](../claims/type-I-f-overflow-lower-modulus-omega-carrier-boundary.md) (`type-I-f-overflow-lower-modulus-omega-carrier-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [低模数 Pareto 溢出的局部超载与全局可行流边界](../claims/type-I-f-overflow-lower-modulus-pareto-capacity-flow-boundary.md) (`type-I-f-overflow-lower-modulus-pareto-capacity-flow-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [低模数 F-box miss 的选择不变 Pareto 溢出前沿](../claims/type-I-f-overflow-lower-modulus-pareto-overflow.md) (`type-I-f-overflow-lower-modulus-pareto-overflow`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | - | 2026-07-30 |
 | [端点下降 F-box miss 的更小模数关系格证书](../claims/type-I-f-overflow-lower-modulus-relation-lattice.md) (`type-I-f-overflow-lower-modulus-relation-lattice`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [低模数盒内命中的缩放—模数交换提升判据](../claims/type-I-f-overflow-lower-modulus-scaled-type-I-lift.md) (`type-I-f-overflow-lower-modulus-scaled-type-I-lift`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [盒内命中的共享缺口 Type II 旁路提升](../claims/type-I-f-overflow-lower-modulus-shared-gap-type-II-lift.md) (`type-I-f-overflow-lower-modulus-shared-gap-type-ii-lift`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [端点下降 F-box miss 的最短关系与端点大小边界](../claims/type-I-f-overflow-lower-modulus-shortest-relation-profile.md) (`type-I-f-overflow-lower-modulus-shortest-relation-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [单坐标溢出的 q 幂缺口与 Type II 充分条件](../claims/type-I-f-overflow-lower-modulus-single-support-defect.md) (`type-I-f-overflow-lower-modulus-single-support-defect`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
@@ -393,6 +396,7 @@
 | [线性上半区一般 B 混合终端选择猜想](../claims/type-I-linear-source-general-b-terminal-selector-conjecture.md) (`type-I-linear-source-general-b-terminal-selector-conjecture`) | `open` | `repository_derivation` | `independent_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [线性源的变 s 因子转移及双转移闭包边界](../claims/type-I-linear-source-shift-transfer-closure-boundary.md) (`type-I-linear-source-shift-transfer-closure-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [七点线性 G 型状态的二残数与角色阶剖面](../claims/type-I-linear-subgroup-two-character-profile-600m.md) (`type-I-linear-subgroup-two-character-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [线性源因子支撑窗口的 q 进局部性边界](../claims/type-I-linear-support-window-qadic-locality-boundary.md) (`type-I-linear-support-window-qadic-locality-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [非近邻目标纤维的比值二终端边界](../claims/type-I-linear-target-fiber-dyadic-non-near-profile-600m.md) (`type-I-linear-target-fiber-dyadic-non-near-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [冻结线性完整谱的目标纤维近邻边界](../claims/type-I-linear-target-fiber-neighbor-profile-600m.md) (`type-I-linear-target-fiber-neighbor-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [线性一般 B 的三标签层重选终端选择猜想](../claims/type-I-linear-three-label-reselection-conjecture.md) (`type-I-linear-three-label-reselection-conjecture`) | `open` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -435,6 +439,7 @@
 | [Type I源状态的正规形单残数因子对实现判据](../claims/type-I-normal-source-state-realization.md) (`type-I-normal-source-state-realization`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 正规形的规范尾部递降选择器与平方因子外部源等价](../claims/type-I-normal-tail-deflation-selector.md) (`type-I-normal-tail-deflation-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 一私有因子的三余类饱和判据](../claims/type-I-one-private-three-coset-saturation.md) (`type-I-one-private-three-coset-saturation`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [有序 R 位置的迁移最小费用对偶与局部容量升级准则](../claims/type-I-ordered-r-migration-min-cost-duality.md) (`type-I-ordered-r-migration-min-cost-duality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

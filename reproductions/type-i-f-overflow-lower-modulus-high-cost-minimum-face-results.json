@@ -1,0 +1,7251 @@
+{
+  "arithmetic": "For each of the six former Omega_1>=10 states, use a frozen valid target relation as a finite upper bound. Split the exponent coordinates, retain every least-cost half-vector for every residue, and match complementary residues to recover the complete unit-minimum exponent face. Then factor every inversion-invariant a+b and exhaust all legal shared-gap Type II checks.",
+  "scope_note": "This closes only the complete unit-weight minimum exponent face of six frozen lower-modulus F-box misses. It is not the full Pareto frontier and does not exclude higher-cost relations, other positive weights, factor redistribution, or non-shared-gap descents.",
+  "pareto_input": "type-i-f-overflow-lower-modulus-pareto-overflow-results.json",
+  "upper_bound_input": "type-i-f-overflow-lower-modulus-shortest-relation-results.json",
+  "capacity_crosscheck_input": "type-i-f-overflow-lower-modulus-pareto-capacity-flow-results.json",
+  "baseline_input": "type_i_f_overflow_lower_modulus_min_overflow_shared_gap_results.json",
+  "minimum_shared_gap_helper": "type_i_f_overflow_lower_modulus_min_overflow_shared_gap.py",
+  "shared_gap_helper": "type_i_f_overflow_lower_modulus_shared_gap_type_ii.py",
+  "pareto_input_sha256": "8fd82842893674641cf15928cf436d872e450b5fd175d47f8a825fad5603c6fe",
+  "upper_bound_input_sha256": "077f565596f9f06e30aca5c7c6c6de487b455581f9e28801b84950531032ad42",
+  "capacity_crosscheck_input_sha256": "993b3280dd8551e7c26bfbf9164f68172c87ac1412b6827c3bda8b44647b6cb4",
+  "baseline_input_sha256": "085a65615fcd2cc1e30330e4039483f36491871c41cad11d54123514a3f2852f",
+  "minimum_shared_gap_helper_sha256": "5557ec9d3cc989a92e22d0e624f306c92d66184a854feb6ff45b4495ace10352",
+  "shared_gap_helper_sha256": "eb9905b8fb7428d0d8ce04fdf78f31e9ef937abb26b4fdc43bf93a39f7dc8802",
+  "high_cost_state_count": 6,
+  "minimum_vector_count": 36,
+  "minimum_inverse_pair_count": 18,
+  "minimum_overflow_pattern_count": 18,
+  "unique_sum_count": 18,
+  "omega_histogram": {
+    "10": 1,
+    "11": 1,
+    "12": 2,
+    "15": 1,
+    "18": 1
+  },
+  "support_size_histogram": {
+    "2": 12,
+    "3": 12,
+    "4": 12
+  },
+  "type_ii_hit_support_size_histogram": {
+    "2": 2,
+    "3": 8,
+    "4": 10
+  },
+  "type_ii_miss_support_size_histogram": {
+    "2": 10,
+    "3": 4,
+    "4": 2
+  },
+  "single_support_vector_count": 0,
+  "double_support_vector_count": 12,
+  "three_support_vector_count": 12,
+  "four_support_vector_count": 12,
+  "minimum_face_type_ii_hit_state_count": 3,
+  "minimum_face_type_ii_miss_state_count": 3,
+  "canonical_type_ii_hit_state_count": 3,
+  "tied_minimum_only_hit_state_count": 0,
+  "entire_minimum_face_hit_state_count": 2,
+  "minimum_face_hit_vector_count": 20,
+  "all_minimum_state_gap_hit_count": 10,
+  "state_scoped_type_ii_certificate_count": 33,
+  "minimum_sum_scoped_type_ii_certificate_incidence_count": 60,
+  "distinct_type_ii_certificate_count": 33,
+  "factorization_proof": {
+    "method": "Exact factorint reconstruction; trial-division primality leaves through 1000000; recursive Lucas n-1 certificates above the leaf bound.",
+    "prime_certificate_count": 219,
+    "trial_division_leaf_count": 137,
+    "recursive_Lucas_certificate_count": 82,
+    "recursive_Lucas_certificates": [
+      {
+        "prime": 1087487,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            47,
+            1
+          ],
+          [
+            503,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            47,
+            2
+          ],
+          [
+            503,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1190069,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            37,
+            1
+          ],
+          [
+            43,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            37,
+            2
+          ],
+          [
+            43,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1466461,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            8147,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            8147,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 2698967,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            347,
+            1
+          ],
+          [
+            3889,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            347,
+            2
+          ],
+          [
+            3889,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 2748283,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            458047,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            458047,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 3120977,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            4
+          ],
+          [
+            107,
+            1
+          ],
+          [
+            1823,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            107,
+            2
+          ],
+          [
+            1823,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 3252941,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            41,
+            1
+          ],
+          [
+            3967,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            41,
+            2
+          ],
+          [
+            3967,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 4852387,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            389,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            389,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 5802101,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            3413,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            3413,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 6109073,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            4
+          ],
+          [
+            381817,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            381817,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 6350167,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            587,
+            1
+          ],
+          [
+            601,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            587,
+            2
+          ],
+          [
+            601,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 6623171,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            281,
+            1
+          ],
+          [
+            2357,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            281,
+            2
+          ],
+          [
+            2357,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 7872863,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            149,
+            1
+          ],
+          [
+            911,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            149,
+            2
+          ],
+          [
+            911,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 8701811,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            271,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            271,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 8956121,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            223903,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            223903,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 10993133,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            2748283,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            2748283,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 11677789,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            227,
+            1
+          ],
+          [
+            1429,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            227,
+            2
+          ],
+          [
+            1429,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 14280829,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1190069,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1190069,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 17997559,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1039,
+            1
+          ],
+          [
+            2887,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1039,
+            2
+          ],
+          [
+            2887,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 38645521,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            7001,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            7001,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 52196099,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            107,
+            1
+          ],
+          [
+            191,
+            1
+          ],
+          [
+            1277,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            107,
+            2
+          ],
+          [
+            191,
+            2
+          ],
+          [
+            1277,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 65958799,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            10993133,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            10993133,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 68600141,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            490001,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            490001,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 69206153,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            751,
+            1
+          ],
+          [
+            11519,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            751,
+            2
+          ],
+          [
+            11519,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 73515887,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            2851,
+            1
+          ],
+          [
+            12893,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            2851,
+            2
+          ],
+          [
+            12893,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 79478053,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            6623171,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            6623171,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 149402933,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            347,
+            1
+          ],
+          [
+            15377,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            347,
+            2
+          ],
+          [
+            15377,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 159624937,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            83,
+            1
+          ],
+          [
+            26711,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            83,
+            2
+          ],
+          [
+            26711,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 168758561,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            283,
+            1
+          ],
+          [
+            3727,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            283,
+            2
+          ],
+          [
+            3727,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 317912213,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            79478053,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            79478053,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 383114257,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            227,
+            1
+          ],
+          [
+            5023,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            227,
+            2
+          ],
+          [
+            5023,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 441095323,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            73515887,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            73515887,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 533923139,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            263,
+            1
+          ],
+          [
+            145009,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            263,
+            2
+          ],
+          [
+            145009,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 719045347,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            37,
+            2
+          ],
+          [
+            87539,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            37,
+            2
+          ],
+          [
+            87539,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 927475333,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            109,
+            1
+          ],
+          [
+            499,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            109,
+            2
+          ],
+          [
+            499,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1200849919,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            8701811,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            8701811,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1259318897,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            4
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            211,
+            1
+          ],
+          [
+            33911,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            211,
+            2
+          ],
+          [
+            33911,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1545820841,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            38645521,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            38645521,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 2025102733,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            168758561,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            168758561,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 2115977477,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            5449,
+            1
+          ],
+          [
+            97081,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5449,
+            2
+          ],
+          [
+            97081,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 3567698633,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            73,
+            1
+          ],
+          [
+            6109073,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            73,
+            2
+          ],
+          [
+            6109073,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 4412408797,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2837,
+            1
+          ],
+          [
+            14401,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            2837,
+            2
+          ],
+          [
+            14401,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 5655537673,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            193,
+            1
+          ],
+          [
+            479,
+            1
+          ],
+          [
+            2549,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            193,
+            2
+          ],
+          [
+            479,
+            2
+          ],
+          [
+            2549,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 5698160917,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            3083,
+            1
+          ],
+          [
+            22003,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            3083,
+            2
+          ],
+          [
+            22003,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 13262314883,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            59,
+            1
+          ],
+          [
+            383,
+            1
+          ],
+          [
+            293453,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            59,
+            2
+          ],
+          [
+            383,
+            2
+          ],
+          [
+            293453,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 16980805417,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            79,
+            1
+          ],
+          [
+            8956121,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            79,
+            2
+          ],
+          [
+            8956121,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 44011394659,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            71,
+            1
+          ],
+          [
+            3467,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            43,
+            2
+          ],
+          [
+            71,
+            2
+          ],
+          [
+            3467,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 125687439389,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            3061,
+            1
+          ],
+          [
+            1466461,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            3061,
+            2
+          ],
+          [
+            1466461,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 197348726609,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            4
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            65958799,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            65958799,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 258703901111,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            99317,
+            1
+          ],
+          [
+            260483,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            13
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            99317,
+            2
+          ],
+          [
+            260483,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 703626722297,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            159624937,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            159624937,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1095610281229,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            533923139,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            533923139,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1812065767513,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            5802101,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            5802101,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 2407965408847,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7433,
+            1
+          ],
+          [
+            17997559,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            7433,
+            2
+          ],
+          [
+            17997559,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 25400247576889,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            1873,
+            1
+          ],
+          [
+            9479,
+            1
+          ],
+          [
+            59611,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            1873,
+            2
+          ],
+          [
+            9479,
+            2
+          ],
+          [
+            59611,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 52529724454061,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            367,
+            1
+          ],
+          [
+            6350167,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            367,
+            2
+          ],
+          [
+            6350167,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 242255247597901,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            101,
+            1
+          ],
+          [
+            1601,
+            1
+          ],
+          [
+            20551,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            101,
+            2
+          ],
+          [
+            1601,
+            2
+          ],
+          [
+            20551,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 254002475768891,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            25400247576889,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            25400247576889,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 334346726822083,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            173,
+            1
+          ],
+          [
+            467,
+            1
+          ],
+          [
+            3120977,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            173,
+            2
+          ],
+          [
+            467,
+            2
+          ],
+          [
+            3120977,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1984029825972773,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            14243,
+            1
+          ],
+          [
+            1200849919,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            14243,
+            2
+          ],
+          [
+            1200849919,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 2157870746624233,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            31,
+            1
+          ],
+          [
+            509,
+            1
+          ],
+          [
+            5698160917,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            31,
+            2
+          ],
+          [
+            509,
+            2
+          ],
+          [
+            5698160917,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 74265224902881737,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            131,
+            1
+          ],
+          [
+            4523,
+            1
+          ],
+          [
+            14407,
+            1
+          ],
+          [
+            1087487,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            131,
+            2
+          ],
+          [
+            4523,
+            2
+          ],
+          [
+            14407,
+            2
+          ],
+          [
+            1087487,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 110334419851287391,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            334346726822083,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            334346726822083,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 253149040266278201,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            91373,
+            1
+          ],
+          [
+            1259318897,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            91373,
+            2
+          ],
+          [
+            1259318897,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 589864724720305739,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            379,
+            1
+          ],
+          [
+            16033,
+            1
+          ],
+          [
+            4412408797,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            379,
+            2
+          ],
+          [
+            16033,
+            2
+          ],
+          [
+            4412408797,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 617151033534530639,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            2157870746624233,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            7
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            2157870746624233,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 767406706014678439,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            648097,
+            1
+          ],
+          [
+            197348726609,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            648097,
+            2
+          ],
+          [
+            197348726609,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 7674067060146784391,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            767406706014678439,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            17
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            767406706014678439,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 9259023821347402393,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            97,
+            1
+          ],
+          [
+            3343,
+            1
+          ],
+          [
+            17191,
+            1
+          ],
+          [
+            69206153,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            97,
+            2
+          ],
+          [
+            3343,
+            2
+          ],
+          [
+            17191,
+            2
+          ],
+          [
+            69206153,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 188171279061174405949,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            1321,
+            1
+          ],
+          [
+            242255247597901,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            1321,
+            2
+          ],
+          [
+            242255247597901,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 897367640796370939171,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            593,
+            1
+          ],
+          [
+            70111,
+            1
+          ],
+          [
+            221173,
+            1
+          ],
+          [
+            3252941,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            593,
+            2
+          ],
+          [
+            70111,
+            2
+          ],
+          [
+            221173,
+            2
+          ],
+          [
+            3252941,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 4543843520457916196609,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            8
+          ],
+          [
+            239,
+            1
+          ],
+          [
+            74265224902881737,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            239,
+            2
+          ],
+          [
+            74265224902881737,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 921197972906080720844647,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            349,
+            1
+          ],
+          [
+            14280829,
+            1
+          ],
+          [
+            1812065767513,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            349,
+            2
+          ],
+          [
+            14280829,
+            2
+          ],
+          [
+            1812065767513,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 6368101705936757677886453,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            2698967,
+            1
+          ],
+          [
+            589864724720305739,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            2698967,
+            2
+          ],
+          [
+            589864724720305739,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 42535622711760930478984813,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            126311,
+            1
+          ],
+          [
+            2115977477,
+            1
+          ],
+          [
+            13262314883,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            126311,
+            2
+          ],
+          [
+            2115977477,
+            2
+          ],
+          [
+            13262314883,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 136337299990099946685007757,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            37,
+            1
+          ],
+          [
+            921197972906080720844647,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            37,
+            2
+          ],
+          [
+            921197972906080720844647,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 1893271345860826054137764051,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            23,
+            1
+          ],
+          [
+            75403,
+            1
+          ],
+          [
+            81647,
+            1
+          ],
+          [
+            4852387,
+            1
+          ],
+          [
+            7872863,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            23,
+            2
+          ],
+          [
+            75403,
+            2
+          ],
+          [
+            81647,
+            2
+          ],
+          [
+            4852387,
+            2
+          ],
+          [
+            7872863,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 5969394366467386117283273423,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            19,
+            1
+          ],
+          [
+            29,
+            1
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            101,
+            1
+          ],
+          [
+            379,
+            1
+          ],
+          [
+            253149040266278201,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            5
+          ],
+          [
+            13,
+            2
+          ],
+          [
+            19,
+            2
+          ],
+          [
+            29,
+            2
+          ],
+          [
+            43,
+            2
+          ],
+          [
+            101,
+            2
+          ],
+          [
+            379,
+            2
+          ],
+          [
+            253149040266278201,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 369201408373190655623001005957,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            677,
+            1
+          ],
+          [
+            136337299990099946685007757,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            677,
+            2
+          ],
+          [
+            136337299990099946685007757,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 29782847524057038868358460275219,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            350093,
+            1
+          ],
+          [
+            42535622711760930478984813,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            350093,
+            2
+          ],
+          [
+            42535622711760930478984813,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 25328827865431355948782448556331846559,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            57853,
+            1
+          ],
+          [
+            1984029825972773,
+            1
+          ],
+          [
+            110334419851287391,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            13
+          ],
+          [
+            57853,
+            2
+          ],
+          [
+            1984029825972773,
+            2
+          ],
+          [
+            110334419851287391,
+            2
+          ]
+        ]
+      },
+      {
+        "prime": 54174156648634820203863747105431087581,
+        "method": "recursive_Lucas_n_minus_one",
+        "n_minus_one_factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            43,
+            1
+          ],
+          [
+            19081,
+            1
+          ],
+          [
+            172807,
+            1
+          ],
+          [
+            6368101705936757677886453,
+            1
+          ]
+        ],
+        "witnesses": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            43,
+            2
+          ],
+          [
+            19081,
+            2
+          ],
+          [
+            172807,
+            2
+          ],
+          [
+            6368101705936757677886453,
+            2
+          ]
+        ]
+      }
+    ]
+  },
+  "combined_42_state_summary": {
+    "resolved_minimum_state_count": 42,
+    "unresolved_minimum_state_count": 0,
+    "minimum_vector_count": 240,
+    "minimum_inverse_pair_count": 120,
+    "per_state_unique_sum_count": 120,
+    "globally_unique_sum_count": 119,
+    "canonical_state_hit_count": 17,
+    "all_minimum_state_hit_count": 21,
+    "tied_minimum_only_state_hit_count": 4,
+    "minimum_layer_miss_count": 21,
+    "all_minimum_candidate_gap_count": 960,
+    "minimum_representation_gap_incidence_count": 2214,
+    "distinct_prime_gap_check_count": 914,
+    "all_minimum_state_gap_hit_count": 35,
+    "all_minimum_distinct_prime_gap_hit_count": 34,
+    "all_minimum_state_scoped_certificate_count": 90,
+    "all_minimum_distinct_certificate_count": 89,
+    "minimum_face_support_size_histogram": {
+      "1": 100,
+      "2": 64,
+      "3": 52,
+      "4": 24
+    },
+    "type_ii_hit_support_size_histogram": {
+      "1": 30,
+      "2": 14,
+      "3": 14,
+      "4": 14
+    },
+    "type_ii_miss_support_size_histogram": {
+      "1": 70,
+      "2": 50,
+      "3": 38,
+      "4": 10
+    },
+    "states_with_single_support_minimum_count": 22,
+    "states_with_double_support_minimum_count": 19,
+    "omega_histogram": {
+      "1": 12,
+      "2": 8,
+      "3": 2,
+      "4": 4,
+      "5": 2,
+      "6": 2,
+      "7": 2,
+      "8": 3,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 2,
+      "15": 1,
+      "18": 1
+    }
+  },
+  "records": [
+    {
+      "prime": 62704849,
+      "orientation": "forward",
+      "original_R": 1947,
+      "gap": 3,
+      "lower_modulus": 649,
+      "factorization": [
+        [
+          53,
+          1
+        ],
+        [
+          349,
+          1
+        ],
+        [
+          1650083,
+          1
+        ]
+      ],
+      "omega": 12,
+      "valid_upper_bound": 12,
+      "upper_bound_vector": [
+        3,
+        -11,
+        0
+      ],
+      "mitm_audit": {
+        "method": "all_side_minimizers_meet_in_the_middle",
+        "valid_upper_bound": 12,
+        "split_index": 1,
+        "matching_residue_pair_count_at_minimum": 6,
+        "left": {
+          "rank": 1,
+          "residue_count": 27,
+          "minimum_face_vector_count": 27,
+          "shell_counts": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "generated_vector_count": 27
+        },
+        "right": {
+          "rank": 2,
+          "residue_count": 261,
+          "minimum_face_vector_count": 277,
+          "shell_counts": [
+            9,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56
+          ],
+          "generated_vector_count": 417
+        }
+      },
+      "minimum_face_vector_count": 6,
+      "minimum_inverse_pair_count": 3,
+      "minimum_overflow_pattern_count": 3,
+      "unique_sum_count": 3,
+      "minimum_face_vectors": [
+        [
+          -4,
+          10,
+          1
+        ],
+        [
+          -3,
+          11,
+          0
+        ],
+        [
+          -2,
+          12,
+          -1
+        ],
+        [
+          2,
+          -12,
+          1
+        ],
+        [
+          3,
+          -11,
+          0
+        ],
+        [
+          4,
+          -10,
+          -1
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            1,
+            11,
+            0
+          ],
+          "support_indices": [
+            0,
+            1
+          ],
+          "support_primes": [
+            53,
+            349
+          ],
+          "support_size": 2,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -2,
+              12,
+              -1
+            ],
+            [
+              2,
+              -12,
+              1
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            2,
+            10,
+            0
+          ],
+          "support_indices": [
+            0,
+            1
+          ],
+          "support_primes": [
+            53,
+            349
+          ],
+          "support_size": 2,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -3,
+              11,
+              0
+            ],
+            [
+              3,
+              -11,
+              0
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            3,
+            9,
+            0
+          ],
+          "support_indices": [
+            0,
+            1
+          ],
+          "support_primes": [
+            53,
+            349
+          ],
+          "support_size": 2,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -4,
+              10,
+              1
+            ],
+            [
+              4,
+              -10,
+              -1
+            ]
+          ]
+        }
+      ],
+      "support_size_histogram": {
+        "2": 6
+      },
+      "single_support_vector_count": 0,
+      "double_support_vector_count": 6,
+      "three_or_more_support_vector_count": 0,
+      "canonical_vector": [
+        -4,
+        10,
+        1
+      ],
+      "canonical_type_ii_hit": false,
+      "canonical_type_ii_hit_gaps": [],
+      "all_minimum_candidate_gap_count": 21,
+      "minimum_representation_gap_incidence_count": 58,
+      "all_minimum_type_ii_hit": false,
+      "all_minimum_type_ii_hit_gaps": [],
+      "all_minimum_type_ii_certificate_count": 0,
+      "minimum_sum_scoped_type_ii_certificate_incidence_count": 0,
+      "minimum_face_hit_vector_count": 0,
+      "type_ii_hit_support_size_histogram": {},
+      "type_ii_miss_support_size_histogram": {
+        "2": 6
+      },
+      "entire_minimum_face_hits_type_ii": false,
+      "sum_profiles": [
+        {
+          "sum": 9355773444073799096880290226,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              59,
+              1
+            ],
+            [
+              3851,
+              1
+            ],
+            [
+              2025102733,
+              1
+            ],
+            [
+              44011394659,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -3,
+              11,
+              0
+            ],
+            [
+              3,
+              -11,
+              0
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              2,
+              10,
+              0
+            ]
+          ],
+          "candidate_gap_count": 16,
+          "candidate_gaps": [
+            3,
+            7,
+            11,
+            59,
+            231,
+            1239,
+            1947,
+            3851,
+            4543,
+            80871,
+            127083,
+            296527,
+            681627,
+            1590463,
+            2499299,
+            52485279
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        },
+        {
+          "sum": 3265164931981755884815804413948,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              59,
+              1
+            ],
+            [
+              92269,
+              1
+            ],
+            [
+              4543843520457916196609,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -2,
+              12,
+              -1
+            ],
+            [
+              2,
+              -12,
+              1
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              1,
+              11,
+              0
+            ]
+          ],
+          "candidate_gap_count": 7,
+          "candidate_gaps": [
+            3,
+            11,
+            59,
+            1947,
+            276807,
+            1014959,
+            5443871
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        },
+        {
+          "sum": 44234391724692339928874719287564,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              59,
+              1
+            ],
+            [
+              1893271345860826054137764051,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -4,
+              10,
+              1
+            ],
+            [
+              4,
+              -10,
+              -1
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              3,
+              9,
+              0
+            ]
+          ],
+          "candidate_gap_count": 6,
+          "candidate_gaps": [
+            3,
+            11,
+            59,
+            99,
+            531,
+            1947
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        }
+      ]
+    },
+    {
+      "prime": 75056809,
+      "orientation": "reverse",
+      "original_R": 63339,
+      "gap": 3,
+      "lower_modulus": 21113,
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          37,
+          2
+        ],
+        [
+          347,
+          1
+        ],
+        [
+          51059,
+          1
+        ]
+      ],
+      "omega": 11,
+      "valid_upper_bound": 13,
+      "upper_bound_vector": [
+        10,
+        0,
+        -6,
+        -1
+      ],
+      "mitm_audit": {
+        "method": "all_side_minimizers_meet_in_the_middle",
+        "valid_upper_bound": 13,
+        "split_index": 2,
+        "matching_residue_pair_count_at_minimum": 8,
+        "left": {
+          "rank": 2,
+          "residue_count": 597,
+          "minimum_face_vector_count": 597,
+          "shell_counts": [
+            25,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68
+          ],
+          "generated_vector_count": 597
+        },
+        "right": {
+          "rank": 2,
+          "residue_count": 477,
+          "minimum_face_vector_count": 477,
+          "shell_counts": [
+            9,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60
+          ],
+          "generated_vector_count": 477
+        }
+      },
+      "minimum_face_vector_count": 8,
+      "minimum_inverse_pair_count": 4,
+      "minimum_overflow_pattern_count": 4,
+      "unique_sum_count": 4,
+      "minimum_face_vectors": [
+        [
+          -8,
+          -2,
+          5,
+          2
+        ],
+        [
+          -6,
+          -4,
+          4,
+          3
+        ],
+        [
+          -4,
+          -6,
+          3,
+          4
+        ],
+        [
+          -2,
+          -8,
+          2,
+          5
+        ],
+        [
+          2,
+          8,
+          -2,
+          -5
+        ],
+        [
+          4,
+          6,
+          -3,
+          -4
+        ],
+        [
+          6,
+          4,
+          -4,
+          -3
+        ],
+        [
+          8,
+          2,
+          -5,
+          -2
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            0,
+            6,
+            1,
+            4
+          ],
+          "support_indices": [
+            1,
+            2,
+            3
+          ],
+          "support_primes": [
+            37,
+            347,
+            51059
+          ],
+          "support_size": 3,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -2,
+              -8,
+              2,
+              5
+            ],
+            [
+              2,
+              8,
+              -2,
+              -5
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            2,
+            4,
+            2,
+            3
+          ],
+          "support_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "support_primes": [
+            7,
+            37,
+            347,
+            51059
+          ],
+          "support_size": 4,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -4,
+              -6,
+              3,
+              4
+            ],
+            [
+              4,
+              6,
+              -3,
+              -4
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            4,
+            2,
+            3,
+            2
+          ],
+          "support_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "support_primes": [
+            7,
+            37,
+            347,
+            51059
+          ],
+          "support_size": 4,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -6,
+              -4,
+              4,
+              3
+            ],
+            [
+              6,
+              4,
+              -4,
+              -3
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            6,
+            0,
+            4,
+            1
+          ],
+          "support_indices": [
+            0,
+            2,
+            3
+          ],
+          "support_primes": [
+            7,
+            347,
+            51059
+          ],
+          "support_size": 3,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -8,
+              -2,
+              5,
+              2
+            ],
+            [
+              8,
+              2,
+              -5,
+              -2
+            ]
+          ]
+        }
+      ],
+      "support_size_histogram": {
+        "3": 4,
+        "4": 4
+      },
+      "single_support_vector_count": 0,
+      "double_support_vector_count": 0,
+      "three_or_more_support_vector_count": 8,
+      "canonical_vector": [
+        -8,
+        -2,
+        5,
+        2
+      ],
+      "canonical_type_ii_hit": true,
+      "canonical_type_ii_hit_gaps": [
+        59,
+        1247
+      ],
+      "all_minimum_candidate_gap_count": 71,
+      "minimum_representation_gap_incidence_count": 166,
+      "all_minimum_type_ii_hit": true,
+      "all_minimum_type_ii_hit_gaps": [
+        27,
+        59,
+        107,
+        215,
+        311,
+        1247
+      ],
+      "all_minimum_type_ii_certificate_count": 11,
+      "minimum_sum_scoped_type_ii_certificate_incidence_count": 11,
+      "minimum_face_hit_vector_count": 8,
+      "type_ii_hit_support_size_histogram": {
+        "3": 4,
+        "4": 4
+      },
+      "type_ii_miss_support_size_histogram": {},
+      "entire_minimum_face_hits_type_ii": true,
+      "sum_profiles": [
+        {
+          "sum": 13115715379074849149436,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              43,
+              2
+            ],
+            [
+              59,
+              1
+            ],
+            [
+              491,
+              1
+            ],
+            [
+              703626722297,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -8,
+              -2,
+              5,
+              2
+            ],
+            [
+              8,
+              2,
+              -5,
+              -2
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              6,
+              0,
+              4,
+              1
+            ]
+          ],
+          "candidate_gap_count": 22,
+          "candidate_gaps": [
+            3,
+            43,
+            59,
+            87,
+            491,
+            1247,
+            1711,
+            5547,
+            7611,
+            14239,
+            63339,
+            86907,
+            109091,
+            160863,
+            220719,
+            907859,
+            1245667,
+            1836831,
+            2520303,
+            3163639,
+            26327911,
+            36124343
+          ],
+          "type_ii_hit_gaps": [
+            59,
+            1247
+          ],
+          "hit_profiles": [
+            {
+              "gap": 59,
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 59,
+                  "x": 18764217,
+                  "divisor": 332667,
+                  "A": 37,
+                  "B": 2087,
+                  "C": 243,
+                  "y": 24294087709884,
+                  "z": 1370317866230484
+                },
+                {
+                  "gap": 59,
+                  "x": 18764217,
+                  "divisor": 8571309,
+                  "A": 37,
+                  "B": 81,
+                  "C": 6261,
+                  "y": 34774870405026,
+                  "z": 76128770346138
+                }
+              ]
+            },
+            {
+              "gap": 1247,
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 1247,
+                  "x": 18764514,
+                  "divisor": 342,
+                  "A": 1,
+                  "B": 54867,
+                  "C": 342,
+                  "y": 1129454861832,
+                  "z": 61969799904136344
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 1929900033256069958444988,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              43,
+              1
+            ],
+            [
+              311,
+              1
+            ],
+            [
+              491,
+              1
+            ],
+            [
+              2437,
+              1
+            ],
+            [
+              78241,
+              1
+            ],
+            [
+              11677789,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -6,
+              -4,
+              4,
+              3
+            ],
+            [
+              6,
+              4,
+              -4,
+              -3
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              4,
+              2,
+              3,
+              2
+            ]
+          ],
+          "candidate_gap_count": 29,
+          "candidate_gaps": [
+            3,
+            11,
+            43,
+            311,
+            491,
+            1419,
+            7311,
+            10263,
+            16203,
+            26807,
+            40119,
+            63339,
+            104791,
+            147103,
+            232243,
+            234723,
+            458103,
+            757907,
+            860651,
+            1196567,
+            1679711,
+            3364363,
+            3458103,
+            6566143,
+            24332951,
+            25010931,
+            35033367,
+            38416331,
+            39486711
+          ],
+          "type_ii_hit_gaps": [
+            311
+          ],
+          "hit_profiles": [
+            {
+              "gap": 311,
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 311,
+                  "x": 18764280,
+                  "divisor": 216,
+                  "A": 3,
+                  "B": 260615,
+                  "C": 24,
+                  "y": 4528627627824,
+                  "z": 393409429741783920
+                },
+                {
+                  "gap": 311,
+                  "x": 18764280,
+                  "divisor": 530160,
+                  "A": 94,
+                  "B": 3327,
+                  "C": 60,
+                  "y": 4656524430360,
+                  "z": 164811242338380
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 283973388466894972550041212,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              43,
+              1
+            ],
+            [
+              107,
+              1
+            ],
+            [
+              491,
+              1
+            ],
+            [
+              68600141,
+              1
+            ],
+            [
+              5655537673,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -4,
+              -6,
+              3,
+              4
+            ],
+            [
+              4,
+              6,
+              -3,
+              -4
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              2,
+              4,
+              2,
+              3
+            ]
+          ],
+          "candidate_gap_count": 19,
+          "candidate_gaps": [
+            3,
+            27,
+            43,
+            107,
+            387,
+            491,
+            963,
+            3483,
+            4419,
+            8667,
+            13803,
+            39771,
+            63339,
+            124227,
+            157611,
+            570051,
+            1418499,
+            2259091,
+            20331819
+          ],
+          "type_ii_hit_gaps": [
+            27,
+            107
+          ],
+          "hit_profiles": [
+            {
+              "gap": 27,
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 27,
+                  "x": 18764209,
+                  "divisor": 21743,
+                  "A": 1,
+                  "B": 863,
+                  "C": 21743,
+                  "y": 52222726338784,
+                  "z": 45068212830370592
+                },
+                {
+                  "gap": 27,
+                  "x": 18764209,
+                  "divisor": 249407,
+                  "A": 17,
+                  "B": 1279,
+                  "C": 863,
+                  "y": 52855605352272,
+                  "z": 3976607014444464
+                }
+              ]
+            },
+            {
+              "gap": 107,
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 107,
+                  "x": 18764229,
+                  "divisor": 361,
+                  "A": 19,
+                  "B": 987591,
+                  "C": 1,
+                  "y": 13162712594330,
+                  "z": 684177710197208370
+                },
+                {
+                  "gap": 107,
+                  "x": 18764229,
+                  "divisor": 20691,
+                  "A": 33,
+                  "B": 29927,
+                  "C": 19,
+                  "y": 13176973388040,
+                  "z": 11949917654056760
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 41785006460319699097688655420,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              43,
+              1
+            ],
+            [
+              491,
+              1
+            ],
+            [
+              55697,
+              1
+            ],
+            [
+              383114257,
+              1
+            ],
+            [
+              1545820841,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -2,
+              -8,
+              2,
+              5
+            ],
+            [
+              2,
+              8,
+              -2,
+              -5
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              6,
+              1,
+              4
+            ]
+          ],
+          "candidate_gap_count": 13,
+          "candidate_gaps": [
+            3,
+            15,
+            43,
+            215,
+            491,
+            2455,
+            63339,
+            167091,
+            316695,
+            835455,
+            2394971,
+            11974855,
+            27347227
+          ],
+          "type_ii_hit_gaps": [
+            215
+          ],
+          "hit_profiles": [
+            {
+              "gap": 215,
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 215,
+                  "x": 18764256,
+                  "divisor": 84,
+                  "A": 1,
+                  "B": 223384,
+                  "C": 84,
+                  "y": 6550658062284,
+                  "z": 1463312200585249056
+                },
+                {
+                  "gap": 215,
+                  "x": 18764256,
+                  "divisor": 451584,
+                  "A": 96,
+                  "B": 3989,
+                  "C": 49,
+                  "y": 6708277361184,
+                  "z": 278742899935031
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 323931,
+      "gap": 3,
+      "lower_modulus": 107977,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          139,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          751,
+          1
+        ],
+        [
+          4373,
+          1
+        ]
+      ],
+      "omega": 18,
+      "valid_upper_bound": 19,
+      "upper_bound_vector": [
+        0,
+        0,
+        0,
+        5,
+        1,
+        16
+      ],
+      "mitm_audit": {
+        "method": "all_side_minimizers_meet_in_the_middle",
+        "valid_upper_bound": 19,
+        "split_index": 3,
+        "matching_residue_pair_count_at_minimum": 8,
+        "left": {
+          "rank": 3,
+          "residue_count": 14961,
+          "minimum_face_vector_count": 14961,
+          "shell_counts": [
+            27,
+            54,
+            90,
+            134,
+            186,
+            246,
+            314,
+            390,
+            474,
+            566,
+            666,
+            774,
+            890,
+            1014,
+            1146,
+            1286,
+            1434,
+            1590,
+            1754,
+            1926
+          ],
+          "generated_vector_count": 14961
+        },
+        "right": {
+          "rank": 3,
+          "residue_count": 9240,
+          "minimum_face_vector_count": 9361,
+          "shell_counts": [
+            27,
+            54,
+            90,
+            134,
+            186,
+            246,
+            314,
+            390,
+            474,
+            566,
+            666,
+            774,
+            890,
+            1014,
+            1146,
+            1286,
+            1434,
+            1590,
+            1754,
+            1926
+          ],
+          "generated_vector_count": 14961
+        }
+      },
+      "minimum_face_vector_count": 8,
+      "minimum_inverse_pair_count": 4,
+      "minimum_overflow_pattern_count": 4,
+      "unique_sum_count": 4,
+      "minimum_face_vectors": [
+        [
+          -2,
+          -1,
+          1,
+          0,
+          -1,
+          18
+        ],
+        [
+          -1,
+          -8,
+          2,
+          2,
+          -1,
+          10
+        ],
+        [
+          -1,
+          -2,
+          14,
+          1,
+          0,
+          5
+        ],
+        [
+          -1,
+          4,
+          -7,
+          -1,
+          -2,
+          -9
+        ],
+        [
+          1,
+          -4,
+          7,
+          1,
+          2,
+          9
+        ],
+        [
+          1,
+          2,
+          -14,
+          -1,
+          0,
+          -5
+        ],
+        [
+          1,
+          8,
+          -2,
+          -2,
+          1,
+          -10
+        ],
+        [
+          2,
+          1,
+          -1,
+          0,
+          1,
+          -18
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            0,
+            1,
+            13,
+            0,
+            0,
+            4
+          ],
+          "support_indices": [
+            1,
+            2,
+            5
+          ],
+          "support_primes": [
+            17,
+            139,
+            4373
+          ],
+          "support_size": 3,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -1,
+              -2,
+              14,
+              1,
+              0,
+              5
+            ],
+            [
+              1,
+              2,
+              -14,
+              -1,
+              0,
+              -5
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            0,
+            3,
+            6,
+            0,
+            1,
+            8
+          ],
+          "support_indices": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "support_primes": [
+            17,
+            139,
+            751,
+            4373
+          ],
+          "support_size": 4,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -1,
+              4,
+              -7,
+              -1,
+              -2,
+              -9
+            ],
+            [
+              1,
+              -4,
+              7,
+              1,
+              2,
+              9
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            0,
+            7,
+            1,
+            1,
+            0,
+            9
+          ],
+          "support_indices": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "support_primes": [
+            17,
+            139,
+            647,
+            4373
+          ],
+          "support_size": 4,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -1,
+              -8,
+              2,
+              2,
+              -1,
+              10
+            ],
+            [
+              1,
+              8,
+              -2,
+              -2,
+              1,
+              -10
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            17
+          ],
+          "support_indices": [
+            0,
+            5
+          ],
+          "support_primes": [
+            5,
+            4373
+          ],
+          "support_size": 2,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -2,
+              -1,
+              1,
+              0,
+              -1,
+              18
+            ],
+            [
+              2,
+              1,
+              -1,
+              0,
+              1,
+              -18
+            ]
+          ]
+        }
+      ],
+      "support_size_histogram": {
+        "2": 2,
+        "3": 2,
+        "4": 4
+      },
+      "single_support_vector_count": 0,
+      "double_support_vector_count": 2,
+      "three_or_more_support_vector_count": 6,
+      "canonical_vector": [
+        -2,
+        -1,
+        1,
+        0,
+        -1,
+        18
+      ],
+      "canonical_type_ii_hit": true,
+      "canonical_type_ii_hit_gaps": [
+        19
+      ],
+      "all_minimum_candidate_gap_count": 68,
+      "minimum_representation_gap_incidence_count": 160,
+      "all_minimum_type_ii_hit": true,
+      "all_minimum_type_ii_hit_gaps": [
+        19,
+        171
+      ],
+      "all_minimum_type_ii_certificate_count": 10,
+      "minimum_sum_scoped_type_ii_certificate_incidence_count": 37,
+      "minimum_face_hit_vector_count": 8,
+      "type_ii_hit_support_size_histogram": {
+        "2": 2,
+        "3": 2,
+        "4": 4
+      },
+      "type_ii_miss_support_size_histogram": {},
+      "entire_minimum_face_hits_type_ii": true,
+      "sum_profiles": [
+        {
+          "sum": 20683924092472911388938946743390759574683638316,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              199,
+              1
+            ],
+            [
+              5683,
+              1
+            ],
+            [
+              6047,
+              1
+            ],
+            [
+              11311,
+              1
+            ],
+            [
+              16980805417,
+              1
+            ],
+            [
+              7674067060146784391,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -1,
+              -8,
+              2,
+              2,
+              -1,
+              10
+            ],
+            [
+              1,
+              8,
+              -2,
+              -2,
+              1,
+              -10
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              7,
+              1,
+              1,
+              0,
+              9
+            ]
+          ],
+          "candidate_gap_count": 34,
+          "candidate_gaps": [
+            3,
+            19,
+            27,
+            171,
+            199,
+            1791,
+            5683,
+            6047,
+            11311,
+            11343,
+            51147,
+            54423,
+            101799,
+            102087,
+            323931,
+            344679,
+            644727,
+            2915379,
+            3102111,
+            3392751,
+            3610059,
+            5802543,
+            6752667,
+            21487423,
+            22863707,
+            30534759,
+            32490531,
+            42766891,
+            60774003,
+            103095303,
+            192841239,
+            193386807,
+            205192851,
+            205773363
+          ],
+          "type_ii_hit_gaps": [
+            19,
+            171
+          ],
+          "hit_profiles": [
+            {
+              "gap": 19,
+              "type_ii_certificate_count": 9,
+              "type_ii_certificates": [
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 43,
+                  "A": 1,
+                  "B": 1802339,
+                  "C": 43,
+                  "y": 1264493136785220,
+                  "z": 2279045295660336629580
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 2893,
+                  "A": 1,
+                  "B": 26789,
+                  "C": 2893,
+                  "y": 1264539637128570,
+                  "z": 33875752339037261730
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 3311,
+                  "A": 1,
+                  "B": 23407,
+                  "C": 3311,
+                  "y": 1264546457178928,
+                  "z": 29599238923187167696
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 12887,
+                  "A": 7,
+                  "B": 42097,
+                  "C": 263,
+                  "y": 1264702698332584,
+                  "z": 7605741355958112664
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 55447,
+                  "A": 89,
+                  "B": 124399,
+                  "C": 7,
+                  "y": 1265397103459944,
+                  "z": 1768698137902399704
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 222761,
+                  "A": 11,
+                  "B": 3827,
+                  "C": 1841,
+                  "y": 1268126983616878,
+                  "z": 441192906027435646
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 254947,
+                  "A": 77,
+                  "B": 23407,
+                  "C": 43,
+                  "y": 1268652127494444,
+                  "z": 385653770756655204
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 958441,
+                  "A": 979,
+                  "B": 79163,
+                  "C": 1,
+                  "y": 1280130272246958,
+                  "z": 103512719858923326
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 4269419,
+                  "A": 623,
+                  "B": 11309,
+                  "C": 11,
+                  "y": 1334151891132676,
+                  "z": 24218176142567308
+                }
+              ]
+            },
+            {
+              "gap": 171,
+              "type_ii_certificate_count": 1,
+              "type_ii_certificates": [
+                {
+                  "gap": 171,
+                  "x": 77500615,
+                  "divisor": 5,
+                  "A": 1,
+                  "B": 15500123,
+                  "C": 5,
+                  "y": 140499237420580,
+                  "z": 2177755461425192731340
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 1039941407577977386227518393208933943859263639177056,
+          "sum_factorization": [
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              5683,
+              1
+            ],
+            [
+              6073,
+              1
+            ],
+            [
+              22861,
+              1
+            ],
+            [
+              32411,
+              1
+            ],
+            [
+              2407965408847,
+              1
+            ],
+            [
+              9259023821347402393,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -1,
+              -2,
+              14,
+              1,
+              0,
+              5
+            ],
+            [
+              1,
+              2,
+              -14,
+              -1,
+              0,
+              -5
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              1,
+              13,
+              0,
+              0,
+              4
+            ]
+          ],
+          "candidate_gap_count": 13,
+          "candidate_gaps": [
+            3,
+            19,
+            5683,
+            18219,
+            32411,
+            68583,
+            115387,
+            323931,
+            434359,
+            1847427,
+            34512859,
+            129919063,
+            196832003
+          ],
+          "type_ii_hit_gaps": [
+            19
+          ],
+          "hit_profiles": [
+            {
+              "gap": 19,
+              "type_ii_certificate_count": 9,
+              "type_ii_certificates": [
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 43,
+                  "A": 1,
+                  "B": 1802339,
+                  "C": 43,
+                  "y": 1264493136785220,
+                  "z": 2279045295660336629580
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 2893,
+                  "A": 1,
+                  "B": 26789,
+                  "C": 2893,
+                  "y": 1264539637128570,
+                  "z": 33875752339037261730
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 3311,
+                  "A": 1,
+                  "B": 23407,
+                  "C": 3311,
+                  "y": 1264546457178928,
+                  "z": 29599238923187167696
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 12887,
+                  "A": 7,
+                  "B": 42097,
+                  "C": 263,
+                  "y": 1264702698332584,
+                  "z": 7605741355958112664
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 55447,
+                  "A": 89,
+                  "B": 124399,
+                  "C": 7,
+                  "y": 1265397103459944,
+                  "z": 1768698137902399704
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 222761,
+                  "A": 11,
+                  "B": 3827,
+                  "C": 1841,
+                  "y": 1268126983616878,
+                  "z": 441192906027435646
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 254947,
+                  "A": 77,
+                  "B": 23407,
+                  "C": 43,
+                  "y": 1268652127494444,
+                  "z": 385653770756655204
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 958441,
+                  "A": 979,
+                  "B": 79163,
+                  "C": 1,
+                  "y": 1280130272246958,
+                  "z": 103512719858923326
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 4269419,
+                  "A": 623,
+                  "B": 11309,
+                  "C": 11,
+                  "y": 1334151891132676,
+                  "z": 24218176142567308
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 1069727244647330972737260630225092951987059005905327166366,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              5683,
+              1
+            ],
+            [
+              441095323,
+              1
+            ],
+            [
+              125687439389,
+              1
+            ],
+            [
+              29782847524057038868358460275219,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -1,
+              4,
+              -7,
+              -1,
+              -2,
+              -9
+            ],
+            [
+              1,
+              -4,
+              7,
+              1,
+              2,
+              9
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              3,
+              6,
+              0,
+              1,
+              8
+            ]
+          ],
+          "candidate_gap_count": 4,
+          "candidate_gaps": [
+            3,
+            19,
+            5683,
+            323931
+          ],
+          "type_ii_hit_gaps": [
+            19
+          ],
+          "hit_profiles": [
+            {
+              "gap": 19,
+              "type_ii_certificate_count": 9,
+              "type_ii_certificates": [
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 43,
+                  "A": 1,
+                  "B": 1802339,
+                  "C": 43,
+                  "y": 1264493136785220,
+                  "z": 2279045295660336629580
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 2893,
+                  "A": 1,
+                  "B": 26789,
+                  "C": 2893,
+                  "y": 1264539637128570,
+                  "z": 33875752339037261730
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 3311,
+                  "A": 1,
+                  "B": 23407,
+                  "C": 3311,
+                  "y": 1264546457178928,
+                  "z": 29599238923187167696
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 12887,
+                  "A": 7,
+                  "B": 42097,
+                  "C": 263,
+                  "y": 1264702698332584,
+                  "z": 7605741355958112664
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 55447,
+                  "A": 89,
+                  "B": 124399,
+                  "C": 7,
+                  "y": 1265397103459944,
+                  "z": 1768698137902399704
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 222761,
+                  "A": 11,
+                  "B": 3827,
+                  "C": 1841,
+                  "y": 1268126983616878,
+                  "z": 441192906027435646
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 254947,
+                  "A": 77,
+                  "B": 23407,
+                  "C": 43,
+                  "y": 1268652127494444,
+                  "z": 385653770756655204
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 958441,
+                  "A": 979,
+                  "B": 79163,
+                  "C": 1,
+                  "y": 1280130272246958,
+                  "z": 103512719858923326
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 4269419,
+                  "A": 623,
+                  "B": 11309,
+                  "C": 11,
+                  "y": 1334151891132676,
+                  "z": 24218176142567308
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 47538491057958216709164625431785151769005353221116534206187697299066,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              19,
+              2
+            ],
+            [
+              71,
+              1
+            ],
+            [
+              263,
+              1
+            ],
+            [
+              5683,
+              1
+            ],
+            [
+              14831,
+              1
+            ],
+            [
+              719045347,
+              1
+            ],
+            [
+              52529724454061,
+              1
+            ],
+            [
+              369201408373190655623001005957,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -2,
+              -1,
+              1,
+              0,
+              -1,
+              18
+            ],
+            [
+              2,
+              1,
+              -1,
+              0,
+              1,
+              -18
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0,
+              17
+            ]
+          ],
+          "candidate_gap_count": 29,
+          "candidate_gaps": [
+            3,
+            19,
+            71,
+            263,
+            1083,
+            4047,
+            5683,
+            14831,
+            14991,
+            25631,
+            56019,
+            94943,
+            323931,
+            354787,
+            845367,
+            1210479,
+            2051563,
+            3159003,
+            4483887,
+            5353991,
+            7666367,
+            11701659,
+            20007019,
+            20222859,
+            28397951,
+            74110507,
+            106118659,
+            252853719,
+            276939263
+          ],
+          "type_ii_hit_gaps": [
+            19
+          ],
+          "hit_profiles": [
+            {
+              "gap": 19,
+              "type_ii_certificate_count": 9,
+              "type_ii_certificates": [
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 43,
+                  "A": 1,
+                  "B": 1802339,
+                  "C": 43,
+                  "y": 1264493136785220,
+                  "z": 2279045295660336629580
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 2893,
+                  "A": 1,
+                  "B": 26789,
+                  "C": 2893,
+                  "y": 1264539637128570,
+                  "z": 33875752339037261730
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 3311,
+                  "A": 1,
+                  "B": 23407,
+                  "C": 3311,
+                  "y": 1264546457178928,
+                  "z": 29599238923187167696
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 12887,
+                  "A": 7,
+                  "B": 42097,
+                  "C": 263,
+                  "y": 1264702698332584,
+                  "z": 7605741355958112664
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 55447,
+                  "A": 89,
+                  "B": 124399,
+                  "C": 7,
+                  "y": 1265397103459944,
+                  "z": 1768698137902399704
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 222761,
+                  "A": 11,
+                  "B": 3827,
+                  "C": 1841,
+                  "y": 1268126983616878,
+                  "z": 441192906027435646
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 254947,
+                  "A": 77,
+                  "B": 23407,
+                  "C": 43,
+                  "y": 1268652127494444,
+                  "z": 385653770756655204
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 958441,
+                  "A": 979,
+                  "B": 79163,
+                  "C": 1,
+                  "y": 1280130272246958,
+                  "z": 103512719858923326
+                },
+                {
+                  "gap": 19,
+                  "x": 77500577,
+                  "divisor": 4269419,
+                  "A": 623,
+                  "B": 11309,
+                  "C": 11,
+                  "y": 1334151891132676,
+                  "z": 24218176142567308
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 312918169,
+      "orientation": "forward",
+      "original_R": 49947,
+      "gap": 3,
+      "lower_modulus": 16649,
+      "factorization": [
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          10531,
+          1
+        ],
+        [
+          17669,
+          1
+        ]
+      ],
+      "omega": 10,
+      "valid_upper_bound": 10,
+      "upper_bound_vector": [
+        1,
+        1,
+        4,
+        0,
+        -8
+      ],
+      "mitm_audit": {
+        "method": "all_side_minimizers_meet_in_the_middle",
+        "valid_upper_bound": 10,
+        "split_index": 2,
+        "matching_residue_pair_count_at_minimum": 4,
+        "left": {
+          "rank": 2,
+          "residue_count": 309,
+          "minimum_face_vector_count": 309,
+          "shell_counts": [
+            9,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48
+          ],
+          "generated_vector_count": 309
+        },
+        "right": {
+          "rank": 3,
+          "residue_count": 2537,
+          "minimum_face_vector_count": 2607,
+          "shell_counts": [
+            27,
+            54,
+            90,
+            134,
+            186,
+            246,
+            314,
+            390,
+            474,
+            566,
+            666
+          ],
+          "generated_vector_count": 3147
+        }
+      },
+      "minimum_face_vector_count": 6,
+      "minimum_inverse_pair_count": 3,
+      "minimum_overflow_pattern_count": 3,
+      "unique_sum_count": 3,
+      "minimum_face_vectors": [
+        [
+          -2,
+          -2,
+          -3,
+          1,
+          7
+        ],
+        [
+          -1,
+          -1,
+          -4,
+          0,
+          8
+        ],
+        [
+          -1,
+          -1,
+          -2,
+          -6,
+          -5
+        ],
+        [
+          1,
+          1,
+          2,
+          6,
+          5
+        ],
+        [
+          1,
+          1,
+          4,
+          0,
+          -8
+        ],
+        [
+          2,
+          2,
+          3,
+          -1,
+          -7
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            0,
+            0,
+            1,
+            5,
+            4
+          ],
+          "support_indices": [
+            2,
+            3,
+            4
+          ],
+          "support_primes": [
+            83,
+            10531,
+            17669
+          ],
+          "support_size": 3,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -1,
+              -1,
+              -2,
+              -6,
+              -5
+            ],
+            [
+              1,
+              1,
+              2,
+              6,
+              5
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            0,
+            0,
+            3,
+            0,
+            7
+          ],
+          "support_indices": [
+            2,
+            4
+          ],
+          "support_primes": [
+            83,
+            17669
+          ],
+          "support_size": 2,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -1,
+              -1,
+              -4,
+              0,
+              8
+            ],
+            [
+              1,
+              1,
+              4,
+              0,
+              -8
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            1,
+            1,
+            2,
+            0,
+            6
+          ],
+          "support_indices": [
+            0,
+            1,
+            2,
+            4
+          ],
+          "support_primes": [
+            11,
+            23,
+            83,
+            17669
+          ],
+          "support_size": 4,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -2,
+              -2,
+              -3,
+              1,
+              7
+            ],
+            [
+              2,
+              2,
+              3,
+              -1,
+              -7
+            ]
+          ]
+        }
+      ],
+      "support_size_histogram": {
+        "2": 2,
+        "3": 2,
+        "4": 2
+      },
+      "single_support_vector_count": 0,
+      "double_support_vector_count": 2,
+      "three_or_more_support_vector_count": 4,
+      "canonical_vector": [
+        -2,
+        -2,
+        -3,
+        1,
+        7
+      ],
+      "canonical_type_ii_hit": true,
+      "canonical_type_ii_hit_gaps": [
+        47
+      ],
+      "all_minimum_candidate_gap_count": 9,
+      "minimum_representation_gap_incidence_count": 18,
+      "all_minimum_type_ii_hit": true,
+      "all_minimum_type_ii_hit_gaps": [
+        31,
+        47
+      ],
+      "all_minimum_type_ii_certificate_count": 12,
+      "minimum_sum_scoped_type_ii_certificate_incidence_count": 12,
+      "minimum_face_hit_vector_count": 4,
+      "type_ii_hit_support_size_histogram": {
+        "3": 2,
+        "4": 2
+      },
+      "type_ii_miss_support_size_histogram": {
+        "2": 2
+      },
+      "entire_minimum_face_hits_type_ii": false,
+      "sum_profiles": [
+        {
+          "sum": 5661785449391759351358418525324042,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              47,
+              1
+            ],
+            [
+              16649,
+              1
+            ],
+            [
+              1095610281229,
+              1
+            ],
+            [
+              254002475768891,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -2,
+              -2,
+              -3,
+              1,
+              7
+            ],
+            [
+              2,
+              2,
+              3,
+              -1,
+              -7
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              1,
+              1,
+              2,
+              0,
+              6
+            ]
+          ],
+          "candidate_gap_count": 4,
+          "candidate_gaps": [
+            47,
+            611,
+            782503,
+            10172539
+          ],
+          "type_ii_hit_gaps": [
+            47
+          ],
+          "hit_profiles": [
+            {
+              "gap": 47,
+              "type_ii_certificate_count": 2,
+              "type_ii_certificates": [
+                {
+                  "gap": 47,
+                  "x": 78229554,
+                  "divisor": 15717,
+                  "A": 13,
+                  "B": 64706,
+                  "C": 93,
+                  "y": 520943977324017,
+                  "z": 2592938538209834154
+                },
+                {
+                  "gap": 47,
+                  "x": 78229554,
+                  "divisor": 841178,
+                  "A": 1,
+                  "B": 93,
+                  "C": 841178,
+                  "y": 526439759126164,
+                  "z": 48958897598733252
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sum": 9499391045988319815701393665595054,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              16649,
+              1
+            ],
+            [
+              317912213,
+              1
+            ],
+            [
+              897367640796370939171,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -1,
+              -1,
+              -4,
+              0,
+              8
+            ],
+            [
+              1,
+              1,
+              4,
+              0,
+              -8
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              0,
+              3,
+              0,
+              7
+            ]
+          ],
+          "candidate_gap_count": 0,
+          "candidate_gaps": [],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        },
+        {
+          "sum": 4094060312237438578575348171656364431720222174301474,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              16649,
+              1
+            ],
+            [
+              52196099,
+              1
+            ],
+            [
+              25328827865431355948782448556331846559,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -1,
+              -1,
+              -2,
+              -6,
+              -5
+            ],
+            [
+              1,
+              1,
+              2,
+              6,
+              5
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              0,
+              1,
+              5,
+              4
+            ]
+          ],
+          "candidate_gap_count": 5,
+          "candidate_gaps": [
+            3,
+            31,
+            49947,
+            516119,
+            52196099
+          ],
+          "type_ii_hit_gaps": [
+            31
+          ],
+          "hit_profiles": [
+            {
+              "gap": 31,
+              "type_ii_certificate_count": 10,
+              "type_ii_certificates": [
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 4,
+                  "A": 2,
+                  "B": 39114775,
+                  "C": 1,
+                  "y": 789659638689246,
+                  "z": 15443679546955576104825
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 35,
+                  "A": 1,
+                  "B": 2235130,
+                  "C": 35,
+                  "y": 789659951607415,
+                  "z": 1764992647636281488950
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 500,
+                  "A": 10,
+                  "B": 1564591,
+                  "C": 5,
+                  "y": 789664645379950,
+                  "z": 123550219717966135045
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 4375,
+                  "A": 25,
+                  "B": 447026,
+                  "C": 7,
+                  "y": 789703760151075,
+                  "z": 14120724523411778118
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 14140,
+                  "A": 2,
+                  "B": 11065,
+                  "C": 3535,
+                  "y": 789802329374310,
+                  "z": 4369581387263370075
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 20402,
+                  "A": 101,
+                  "B": 387275,
+                  "C": 2,
+                  "y": 789865538844448,
+                  "z": 3028665114415679200
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 123725,
+                  "A": 7,
+                  "B": 4426,
+                  "C": 2525,
+                  "y": 790908495101725,
+                  "z": 500080142760033550
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 1767500,
+                  "A": 50,
+                  "B": 2213,
+                  "C": 707,
+                  "y": 807500981012950,
+                  "z": 35739993419633167
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 2550250,
+                  "A": 505,
+                  "B": 15491,
+                  "C": 10,
+                  "y": 815402164780200,
+                  "z": 25012663236851640
+                },
+                {
+                  "gap": 31,
+                  "x": 78229550,
+                  "divisor": 49984900,
+                  "A": 1414,
+                  "B": 2213,
+                  "C": 25,
+                  "y": 1294213901075550,
+                  "z": 2025527130891225
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "prime": 366108649,
+      "orientation": "forward",
+      "original_R": 33171,
+      "gap": 3,
+      "lower_modulus": 11057,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          18481,
+          1
+        ],
+        [
+          4693697,
+          1
+        ]
+      ],
+      "omega": 12,
+      "valid_upper_bound": 13,
+      "upper_bound_vector": [
+        4,
+        7,
+        0,
+        5
+      ],
+      "mitm_audit": {
+        "method": "all_side_minimizers_meet_in_the_middle",
+        "valid_upper_bound": 13,
+        "split_index": 2,
+        "matching_residue_pair_count_at_minimum": 6,
+        "left": {
+          "rank": 2,
+          "residue_count": 477,
+          "minimum_face_vector_count": 477,
+          "shell_counts": [
+            9,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60
+          ],
+          "generated_vector_count": 477
+        },
+        "right": {
+          "rank": 2,
+          "residue_count": 477,
+          "minimum_face_vector_count": 477,
+          "shell_counts": [
+            9,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60
+          ],
+          "generated_vector_count": 477
+        }
+      },
+      "minimum_face_vector_count": 6,
+      "minimum_inverse_pair_count": 3,
+      "minimum_overflow_pattern_count": 3,
+      "unique_sum_count": 3,
+      "minimum_face_vectors": [
+        [
+          -3,
+          -6,
+          1,
+          -6
+        ],
+        [
+          -2,
+          -5,
+          2,
+          -7
+        ],
+        [
+          -1,
+          -4,
+          3,
+          -8
+        ],
+        [
+          1,
+          4,
+          -3,
+          8
+        ],
+        [
+          2,
+          5,
+          -2,
+          7
+        ],
+        [
+          3,
+          6,
+          -1,
+          6
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            0,
+            3,
+            2,
+            7
+          ],
+          "support_indices": [
+            1,
+            2,
+            3
+          ],
+          "support_primes": [
+            7,
+            18481,
+            4693697
+          ],
+          "support_size": 3,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -1,
+              -4,
+              3,
+              -8
+            ],
+            [
+              1,
+              4,
+              -3,
+              8
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            1,
+            4,
+            1,
+            6
+          ],
+          "support_indices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "support_primes": [
+            5,
+            7,
+            18481,
+            4693697
+          ],
+          "support_size": 4,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -2,
+              -5,
+              2,
+              -7
+            ],
+            [
+              2,
+              5,
+              -2,
+              7
+            ]
+          ]
+        },
+        {
+          "overflow_vector": [
+            2,
+            5,
+            0,
+            5
+          ],
+          "support_indices": [
+            0,
+            1,
+            3
+          ],
+          "support_primes": [
+            5,
+            7,
+            4693697
+          ],
+          "support_size": 3,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -3,
+              -6,
+              1,
+              -6
+            ],
+            [
+              3,
+              6,
+              -1,
+              6
+            ]
+          ]
+        }
+      ],
+      "support_size_histogram": {
+        "3": 4,
+        "4": 2
+      },
+      "single_support_vector_count": 0,
+      "double_support_vector_count": 0,
+      "three_or_more_support_vector_count": 6,
+      "canonical_vector": [
+        -3,
+        -6,
+        1,
+        -6
+      ],
+      "canonical_type_ii_hit": false,
+      "canonical_type_ii_hit_gaps": [],
+      "all_minimum_candidate_gap_count": 11,
+      "minimum_representation_gap_incidence_count": 30,
+      "all_minimum_type_ii_hit": false,
+      "all_minimum_type_ii_hit_gaps": [],
+      "all_minimum_type_ii_certificate_count": 0,
+      "minimum_sum_scoped_type_ii_certificate_incidence_count": 0,
+      "minimum_face_hit_vector_count": 0,
+      "type_ii_hit_support_size_histogram": {},
+      "type_ii_miss_support_size_histogram": {
+        "3": 4,
+        "4": 2
+      },
+      "entire_minimum_face_hits_type_ii": false,
+      "sum_profiles": [
+        {
+          "sum": 157249240207489393029682775269128683565705108606,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              11057,
+              1
+            ],
+            [
+              43753,
+              1
+            ],
+            [
+              54174156648634820203863747105431087581,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -3,
+              -6,
+              1,
+              -6
+            ],
+            [
+              3,
+              6,
+              -1,
+              6
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              2,
+              5,
+              0,
+              5
+            ]
+          ],
+          "candidate_gap_count": 3,
+          "candidate_gaps": [
+            3,
+            33171,
+            131259
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        },
+        {
+          "sum": 21088008200404924045578370092353814133322837038817136,
+          "sum_factorization": [
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1283,
+              1
+            ],
+            [
+              11057,
+              1
+            ],
+            [
+              266677,
+              1
+            ],
+            [
+              617151033534530639,
+              1
+            ],
+            [
+              188171279061174405949,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -2,
+              -5,
+              2,
+              -7
+            ],
+            [
+              2,
+              5,
+              -2,
+              7
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              1,
+              4,
+              1,
+              6
+            ]
+          ],
+          "candidate_gap_count": 6,
+          "candidate_gaps": [
+            3,
+            1283,
+            33171,
+            800031,
+            14186131,
+            342146591
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        },
+        {
+          "sum": 2828020595034742593655973113353452009603857110239709667446,
+          "sum_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2579,
+              1
+            ],
+            [
+              11057,
+              1
+            ],
+            [
+              3567698633,
+              1
+            ],
+            [
+              258703901111,
+              1
+            ],
+            [
+              5969394366467386117283273423,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -1,
+              -4,
+              3,
+              -8
+            ],
+            [
+              1,
+              4,
+              -3,
+              8
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              0,
+              3,
+              2,
+              7
+            ]
+          ],
+          "candidate_gap_count": 6,
+          "candidate_gaps": [
+            3,
+            2579,
+            23211,
+            33171,
+            28516003,
+            256644027
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        }
+      ]
+    },
+    {
+      "prime": 373561609,
+      "orientation": "forward",
+      "original_R": 625731,
+      "gap": 3,
+      "lower_modulus": 208577,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          1097,
+          1
+        ],
+        [
+          7757,
+          1
+        ],
+        [
+          11351,
+          1
+        ]
+      ],
+      "omega": 15,
+      "valid_upper_bound": 15,
+      "upper_bound_vector": [
+        9,
+        1,
+        -8,
+        -1,
+        0
+      ],
+      "mitm_audit": {
+        "method": "all_side_minimizers_meet_in_the_middle",
+        "valid_upper_bound": 15,
+        "split_index": 2,
+        "matching_residue_pair_count_at_minimum": 2,
+        "left": {
+          "rank": 2,
+          "residue_count": 675,
+          "minimum_face_vector_count": 675,
+          "shell_counts": [
+            15,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72
+          ],
+          "generated_vector_count": 675
+        },
+        "right": {
+          "rank": 3,
+          "residue_count": 8257,
+          "minimum_face_vector_count": 8257,
+          "shell_counts": [
+            27,
+            54,
+            90,
+            134,
+            186,
+            246,
+            314,
+            390,
+            474,
+            566,
+            666,
+            774,
+            890,
+            1014,
+            1146,
+            1286
+          ],
+          "generated_vector_count": 8257
+        }
+      },
+      "minimum_face_vector_count": 2,
+      "minimum_inverse_pair_count": 1,
+      "minimum_overflow_pattern_count": 1,
+      "unique_sum_count": 1,
+      "minimum_face_vectors": [
+        [
+          -9,
+          -1,
+          8,
+          1,
+          0
+        ],
+        [
+          9,
+          1,
+          -8,
+          -1,
+          0
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        {
+          "overflow_vector": [
+            8,
+            0,
+            7,
+            0,
+            0
+          ],
+          "support_indices": [
+            0,
+            2
+          ],
+          "support_primes": [
+            5,
+            1097
+          ],
+          "support_size": 2,
+          "exponent_vector_count": 2,
+          "exponent_vectors": [
+            [
+              -9,
+              -1,
+              8,
+              1,
+              0
+            ],
+            [
+              9,
+              1,
+              -8,
+              -1,
+              0
+            ]
+          ]
+        }
+      ],
+      "support_size_histogram": {
+        "2": 2
+      },
+      "single_support_vector_count": 0,
+      "double_support_vector_count": 2,
+      "three_or_more_support_vector_count": 0,
+      "canonical_vector": [
+        -9,
+        -1,
+        8,
+        1,
+        0
+      ],
+      "canonical_type_ii_hit": false,
+      "canonical_type_ii_hit_gaps": [],
+      "all_minimum_candidate_gap_count": 6,
+      "minimum_representation_gap_incidence_count": 12,
+      "all_minimum_type_ii_hit": false,
+      "all_minimum_type_ii_hit_gaps": [],
+      "all_minimum_type_ii_certificate_count": 0,
+      "minimum_sum_scoped_type_ii_certificate_incidence_count": 0,
+      "minimum_face_hit_vector_count": 0,
+      "type_ii_hit_support_size_histogram": {},
+      "type_ii_miss_support_size_histogram": {
+        "2": 2
+      },
+      "entire_minimum_face_hits_type_ii": false,
+      "sum_profiles": [
+        {
+          "sum": 16268473793016005268467898852,
+          "sum_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              6701,
+              1
+            ],
+            [
+              208577,
+              1
+            ],
+            [
+              149402933,
+              1
+            ],
+            [
+              927475333,
+              1
+            ]
+          ],
+          "minimum_vectors": [
+            [
+              -9,
+              -1,
+              8,
+              1,
+              0
+            ],
+            [
+              9,
+              1,
+              -8,
+              -1,
+              0
+            ]
+          ],
+          "overflow_patterns": [
+            [
+              8,
+              0,
+              7,
+              0,
+              0
+            ]
+          ],
+          "candidate_gap_count": 6,
+          "candidate_gaps": [
+            3,
+            7,
+            20103,
+            46907,
+            625731,
+            1460039
+          ],
+          "type_ii_hit_gaps": [],
+          "hit_profiles": []
+        }
+      ]
+    }
+  ]
+}

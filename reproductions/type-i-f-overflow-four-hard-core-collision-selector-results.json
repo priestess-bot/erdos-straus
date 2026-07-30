@@ -1,0 +1,1585 @@
+{
+  "arithmetic": "On exactly four frozen Omega minimum-face carrier hard cores: exhaust three prime-power subfactor pair menus; factor only mandatory-q-divisible label and modulus differences in the complete linear-source spectrum; independently check every legal divisor gap by the complete Type II normal form; and compute the exact no-heavy-coordinate-overflow price only for the two residual states.",
+  "scope_note": "A collision difference is only a finite candidate-gap generator. Divisibility by q does not force one of its cofactor divisors to be a Type II gap. The two hits are state-scoped certificates, while the two misses and avoidance prices are finite boundary data, not a universal selector theorem.",
+  "inputs": [
+    {
+      "file": "type-i-f-overflow-lower-modulus-weighted-cost-results.json",
+      "sha256": "e4bffc9727821fcfd83a5ae0bb02b8d5326ac58a024563e0a9acdfa355fded82"
+    },
+    {
+      "file": "type-i-f-overflow-lower-modulus-omega-carrier-boundary-results.json",
+      "sha256": "695b20832c683222b3021d444f5bdcb04f706ab10aeeec9801a3ad85fe85c0fb"
+    },
+    {
+      "file": "type_i_f_overflow_lower_modulus_min_overflow_shared_gap_results.json",
+      "sha256": "085a65615fcd2cc1e30330e4039483f36491871c41cad11d54123514a3f2852f"
+    },
+    {
+      "file": "type_i_f_overflow_lower_modulus_min_overflow_shared_gap.py",
+      "sha256": "5557ec9d3cc989a92e22d0e624f306c92d66184a854feb6ff45b4495ace10352"
+    },
+    {
+      "file": "type_i_global_linear_b1_failure_general_b_profile_500m.py",
+      "sha256": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d"
+    },
+    {
+      "file": "type_i_f_overflow_lower_modulus_shared_gap_type_ii.py",
+      "sha256": "eb9905b8fb7428d0d8ce04fdf78f31e9ef937abb26b4fdc43bf93a39f7dc8802"
+    }
+  ],
+  "hard_core_state_count": 4,
+  "minimum_vector_count": 10,
+  "direct_subfactor_pair_counts": {
+    "oriented_subfactors": 1520,
+    "all_coordinate_repartitions": 9842,
+    "pure_two_coordinate_pairs": 248
+  },
+  "direct_subfactor_normal_form_candidate_count": 0,
+  "collision_edge_count": 15,
+  "distinct_state_scoped_collision_gap_check_count": 51,
+  "collision_resolved_state_count": 2,
+  "collision_resolved_primes": [
+    310002289,
+    507599689
+  ],
+  "collision_type_ii_hit_gaps": {
+    "310002289": [
+      55
+    ],
+    "507599689": [
+      455,
+      951
+    ]
+  },
+  "remaining_state_count": 2,
+  "remaining_states": [
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "lower_modulus": 27337
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "lower_modulus": 106017
+    }
+  ],
+  "exact_constrained_avoidance_profiles": [
+    {
+      "forbidden_overflow_q": 115561,
+      "finite_graph_method": "multi_source_BFS_from_all_exponent_box_residues_using_only_the_other_signed_prime_generators",
+      "box_vector_count": 243,
+      "distinct_start_residue_count": 211,
+      "reachable_component_size": 27336,
+      "distance_layer_histogram": {
+        "0": 211,
+        "1": 424,
+        "2": 772,
+        "3": 1240,
+        "4": 1844,
+        "5": 2572,
+        "6": 3216,
+        "7": 3682,
+        "8": 3768,
+        "9": 3272,
+        "10": 2834,
+        "11": 2208,
+        "12": 1045,
+        "13": 216,
+        "14": 32
+      },
+      "exact_constrained_overflow_price": 12,
+      "start_vector": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "shortest_path_step_counts": [
+        {
+          "coordinate_index": 1,
+          "q": 11,
+          "sign": -1,
+          "count": 5
+        },
+        {
+          "coordinate_index": 3,
+          "q": 1409,
+          "sign": -1,
+          "count": 7
+        }
+      ],
+      "witness_vector": [
+        -1,
+        -6,
+        -1,
+        -8,
+        -1
+      ],
+      "witness_overflow_pattern": [
+        0,
+        5,
+        0,
+        7,
+        0
+      ],
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "lower_modulus": 27337,
+      "unconstrained_omega": 9,
+      "price_increase_over_unconstrained_omega": 3
+    },
+    {
+      "forbidden_overflow_q": 6965317,
+      "finite_graph_method": "multi_source_BFS_from_all_exponent_box_residues_using_only_the_other_signed_prime_generators",
+      "box_vector_count": 243,
+      "distinct_start_residue_count": 211,
+      "reachable_component_size": 70676,
+      "distance_layer_histogram": {
+        "0": 211,
+        "1": 424,
+        "2": 772,
+        "3": 1240,
+        "4": 1702,
+        "5": 2168,
+        "6": 2700,
+        "7": 3290,
+        "8": 3932,
+        "9": 4626,
+        "10": 5372,
+        "11": 6170,
+        "12": 6846,
+        "13": 7021,
+        "14": 6937,
+        "15": 5925,
+        "16": 4278,
+        "17": 2990,
+        "18": 2080,
+        "19": 1330,
+        "20": 590,
+        "21": 70,
+        "22": 2
+      },
+      "exact_constrained_overflow_price": 15,
+      "start_vector": [
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "shortest_path_step_counts": [
+        {
+          "coordinate_index": 0,
+          "q": 5,
+          "sign": -1,
+          "count": 1
+        },
+        {
+          "coordinate_index": 1,
+          "q": 31,
+          "sign": 1,
+          "count": 7
+        },
+        {
+          "coordinate_index": 2,
+          "q": 149,
+          "sign": 1,
+          "count": 2
+        },
+        {
+          "coordinate_index": 3,
+          "q": 241,
+          "sign": 1,
+          "count": 5
+        }
+      ],
+      "witness_vector": [
+        -2,
+        8,
+        3,
+        6,
+        1
+      ],
+      "witness_overflow_pattern": [
+        1,
+        7,
+        2,
+        5,
+        0
+      ],
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "lower_modulus": 106017,
+      "unconstrained_omega": 8,
+      "price_increase_over_unconstrained_omega": 7
+    }
+  ],
+  "certified_collision_difference_factorization_count": 15,
+  "recursive_prime_certificate_count": 15,
+  "records": [
+    {
+      "prime": 99151369,
+      "orientation": "reverse",
+      "original_R": 82011,
+      "gap": 3,
+      "lower_modulus": 27337,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          227,
+          1
+        ],
+        [
+          1409,
+          1
+        ],
+        [
+          115561,
+          1
+        ]
+      ],
+      "omega": 9,
+      "minimum_vectors": [
+        [
+          0,
+          -1,
+          -3,
+          -1,
+          -8
+        ],
+        [
+          0,
+          1,
+          3,
+          1,
+          8
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          0,
+          7
+        ]
+      ],
+      "mandatory_separators": [
+        115561
+      ],
+      "local_pool_profiles": [
+        {
+          "q": 115561,
+          "minimum_face_demand": 7,
+          "minimum_face_demand_values": [
+            7
+          ],
+          "optimistic_three_channel_capacity": 1,
+          "reduced_endpoint_height": 0,
+          "block": {
+            "positive_edge_count": 1,
+            "height_sum": 1,
+            "height_max": 1,
+            "positive_blocks": [
+              {
+                "value": 2542342,
+                "q_valuation": 1
+              }
+            ]
+          },
+          "label_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "modulus_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "all_distinct_local_edge_height_sum": 1
+        }
+      ],
+      "subfactor_menus": [
+        {
+          "menu": "oriented_subfactors",
+          "coprime_pair_count": 144,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "all_coordinate_repartitions",
+          "coprime_pair_count": 536,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "pure_two_coordinate_pairs",
+          "coprime_pair_count": 47,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        }
+      ],
+      "minimum_face_shared_candidate_gaps": [
+        3,
+        1047,
+        82011,
+        122263,
+        1100367,
+        28621839,
+        42669787
+      ],
+      "collision_edge_count": 0,
+      "collision_edges": [],
+      "collision_candidate_gap_count": 0,
+      "collision_candidate_gaps": [],
+      "collision_type_ii_hit_gaps": [],
+      "collision_type_ii_hit_profiles": [],
+      "resolved_by_collision_selector": false
+    },
+    {
+      "prime": 310002289,
+      "orientation": "reverse",
+      "original_R": 137595,
+      "gap": 15,
+      "lower_modulus": 9173,
+      "factorization": [
+        [
+          7,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          647,
+          1
+        ],
+        [
+          95857,
+          1
+        ]
+      ],
+      "omega": 7,
+      "minimum_vectors": [
+        [
+          -2,
+          2,
+          3,
+          -4,
+          3
+        ],
+        [
+          2,
+          -2,
+          -3,
+          4,
+          -3
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        [
+          0,
+          0,
+          2,
+          3,
+          2
+        ]
+      ],
+      "mandatory_separators": [
+        647,
+        95857
+      ],
+      "local_pool_profiles": [
+        {
+          "q": 647,
+          "minimum_face_demand": 3,
+          "minimum_face_demand_values": [
+            3
+          ],
+          "optimistic_three_channel_capacity": 2,
+          "reduced_endpoint_height": 0,
+          "block": {
+            "positive_edge_count": 1,
+            "height_sum": 1,
+            "height_max": 1,
+            "positive_blocks": [
+              {
+                "value": 412786,
+                "q_valuation": 1
+              }
+            ]
+          },
+          "label_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "modulus_difference": {
+            "positive_edge_count": 3,
+            "height_sum": 3,
+            "height_max": 1
+          },
+          "all_distinct_local_edge_height_sum": 4
+        },
+        {
+          "q": 95857,
+          "minimum_face_demand": 2,
+          "minimum_face_demand_values": [
+            2
+          ],
+          "optimistic_three_channel_capacity": 1,
+          "reduced_endpoint_height": 0,
+          "block": {
+            "positive_edge_count": 1,
+            "height_sum": 1,
+            "height_max": 1,
+            "positive_blocks": [
+              {
+                "value": 103333846,
+                "q_valuation": 1
+              }
+            ]
+          },
+          "label_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "modulus_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "all_distinct_local_edge_height_sum": 1
+        }
+      ],
+      "subfactor_menus": [
+        {
+          "menu": "oriented_subfactors",
+          "coprime_pair_count": 720,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "all_coordinate_repartitions",
+          "coprime_pair_count": 5513,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "pure_two_coordinate_pairs",
+          "coprime_pair_count": 77,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        }
+      ],
+      "minimum_face_shared_candidate_gaps": [
+        3,
+        27,
+        27519,
+        247671
+      ],
+      "collision_edge_count": 3,
+      "collision_edges": [
+        {
+          "edge_id": "modulus:q=647:137595:103334095",
+          "kind": "modulus",
+          "q": 647,
+          "current_R": 137595,
+          "other_R": 103334095,
+          "other_states": [
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "difference": 103196500,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              647,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            11,
+            55,
+            275,
+            319,
+            647,
+            1375,
+            1595,
+            3235,
+            7975,
+            16175,
+            18763,
+            39875,
+            80875,
+            93815,
+            469075,
+            2345375
+          ]
+        },
+        {
+          "edge_id": "modulus:q=647:137595:323931",
+          "kind": "modulus",
+          "q": 647,
+          "current_R": 137595,
+          "other_R": 323931,
+          "other_states": [
+            [
+              3,
+              319
+            ],
+            [
+              319,
+              3
+            ]
+          ],
+          "difference": 186336,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              647,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            647,
+            5823
+          ]
+        },
+        {
+          "edge_id": "modulus:q=647:137595:431",
+          "kind": "modulus",
+          "q": 647,
+          "current_R": 137595,
+          "other_R": 431,
+          "other_states": [
+            [
+              3,
+              239569
+            ],
+            [
+              239569,
+              3
+            ]
+          ],
+          "difference": 137164,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              53,
+              1
+            ],
+            [
+              647,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            647,
+            34291
+          ]
+        }
+      ],
+      "collision_candidate_gap_count": 19,
+      "collision_candidate_gaps": [
+        3,
+        11,
+        55,
+        275,
+        319,
+        647,
+        1375,
+        1595,
+        3235,
+        5823,
+        7975,
+        16175,
+        18763,
+        34291,
+        39875,
+        80875,
+        93815,
+        469075,
+        2345375
+      ],
+      "collision_type_ii_hit_gaps": [
+        55
+      ],
+      "collision_type_ii_hit_profiles": [
+        {
+          "gap": 55,
+          "non_shared_with_minimum_face": true,
+          "generating_edge_ids": [
+            "modulus:q=647:137595:103334095"
+          ],
+          "type_ii_certificate_count": 2,
+          "type_ii_certificates": [
+            {
+              "gap": 55,
+              "x": 77500586,
+              "divisor": 1894,
+              "A": 1,
+              "B": 40919,
+              "C": 1894,
+              "y": 436835385512304,
+              "z": 17874867139777967376
+            },
+            {
+              "gap": 55,
+              "x": 77500586,
+              "divisor": 314404,
+              "A": 2,
+              "B": 493,
+              "C": 78601,
+              "y": 438596818518402,
+              "z": 108114115764786093
+            }
+          ]
+        }
+      ],
+      "resolved_by_collision_selector": true
+    },
+    {
+      "prime": 487572409,
+      "orientation": "forward",
+      "original_R": 318051,
+      "gap": 3,
+      "lower_modulus": 106017,
+      "factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          149,
+          1
+        ],
+        [
+          241,
+          1
+        ],
+        [
+          6965317,
+          1
+        ]
+      ],
+      "omega": 8,
+      "minimum_vectors": [
+        [
+          -4,
+          -1,
+          1,
+          2,
+          5
+        ],
+        [
+          -3,
+          -2,
+          0,
+          1,
+          6
+        ],
+        [
+          3,
+          2,
+          0,
+          -1,
+          -6
+        ],
+        [
+          4,
+          1,
+          -1,
+          -2,
+          -5
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        [
+          2,
+          1,
+          0,
+          0,
+          5
+        ],
+        [
+          3,
+          0,
+          0,
+          1,
+          4
+        ]
+      ],
+      "mandatory_separators": [
+        6965317
+      ],
+      "local_pool_profiles": [
+        {
+          "q": 6965317,
+          "minimum_face_demand": 4,
+          "minimum_face_demand_values": [
+            4,
+            5
+          ],
+          "optimistic_three_channel_capacity": 1,
+          "reduced_endpoint_height": 0,
+          "block": {
+            "positive_edge_count": 1,
+            "height_sum": 1,
+            "height_max": 1,
+            "positive_blocks": [
+              {
+                "value": 69653170,
+                "q_valuation": 1
+              }
+            ]
+          },
+          "label_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "modulus_difference": {
+            "positive_edge_count": 0,
+            "height_sum": 0,
+            "height_max": 0
+          },
+          "all_distinct_local_edge_height_sum": 1
+        }
+      ],
+      "subfactor_menus": [
+        {
+          "menu": "oriented_subfactors",
+          "coprime_pair_count": 432,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "all_coordinate_repartitions",
+          "coprime_pair_count": 2564,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "pure_two_coordinate_pairs",
+          "coprime_pair_count": 76,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        }
+      ],
+      "minimum_face_shared_candidate_gaps": [
+        3,
+        27,
+        123,
+        1107,
+        1803,
+        16227,
+        35339,
+        73923,
+        92931,
+        318051,
+        665307,
+        1448899,
+        3363443,
+        13040091,
+        21238739,
+        30270987,
+        137901163,
+        191148651
+      ],
+      "collision_edge_count": 0,
+      "collision_edges": [],
+      "collision_candidate_gap_count": 0,
+      "collision_candidate_gaps": [],
+      "collision_type_ii_hit_gaps": [],
+      "collision_type_ii_hit_profiles": [],
+      "resolved_by_collision_selector": false
+    },
+    {
+      "prime": 507599689,
+      "orientation": "forward",
+      "original_R": 5691,
+      "gap": 3,
+      "lower_modulus": 1897,
+      "factorization": [
+        [
+          5,
+          2
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          193,
+          1
+        ],
+        [
+          547,
+          1
+        ],
+        [
+          11897,
+          1
+        ]
+      ],
+      "omega": 6,
+      "minimum_vectors": [
+        [
+          -3,
+          6,
+          -1,
+          -1,
+          1
+        ],
+        [
+          3,
+          -6,
+          1,
+          1,
+          -1
+        ]
+      ],
+      "minimum_overflow_patterns": [
+        [
+          1,
+          5,
+          0,
+          0,
+          0
+        ]
+      ],
+      "mandatory_separators": [
+        23
+      ],
+      "local_pool_profiles": [
+        {
+          "q": 23,
+          "minimum_face_demand": 5,
+          "minimum_face_demand_values": [
+            5
+          ],
+          "optimistic_three_channel_capacity": 3,
+          "reduced_endpoint_height": 0,
+          "block": {
+            "positive_edge_count": 1,
+            "height_sum": 1,
+            "height_max": 1,
+            "positive_blocks": [
+              {
+                "value": 221950,
+                "q_valuation": 1
+              }
+            ]
+          },
+          "label_difference": {
+            "positive_edge_count": 10,
+            "height_sum": 10,
+            "height_max": 1
+          },
+          "modulus_difference": {
+            "positive_edge_count": 2,
+            "height_sum": 2,
+            "height_max": 1
+          },
+          "all_distinct_local_edge_height_sum": 13
+        }
+      ],
+      "subfactor_menus": [
+        {
+          "menu": "oriented_subfactors",
+          "coprime_pair_count": 224,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "all_coordinate_repartitions",
+          "coprime_pair_count": 1229,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        },
+        {
+          "menu": "pure_two_coordinate_pairs",
+          "coprime_pair_count": 48,
+          "direct_normal_form_candidate_count": 0,
+          "direct_normal_form_candidates": []
+        }
+      ],
+      "minimum_face_shared_candidate_gaps": [
+        7,
+        11,
+        271,
+        1267,
+        1991,
+        3643,
+        20867,
+        49051,
+        280511,
+        659383,
+        3776927,
+        6910771,
+        10859783,
+        50772491
+      ],
+      "collision_edge_count": 12,
+      "collision_edges": [
+        {
+          "edge_id": "label:q=23:2287:23072713",
+          "kind": "label",
+          "q": 23,
+          "current_label": 2287,
+          "other_label": 23072713,
+          "other_label_occurrences": [
+            {
+              "R": 7,
+              "a": 3,
+              "s": 23072713
+            },
+            {
+              "R": 7,
+              "a": 23072713,
+              "s": 3
+            }
+          ],
+          "difference": 23070426,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              167177,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            23,
+            501531,
+            3845071
+          ]
+        },
+        {
+          "edge_id": "label:q=23:2287:33",
+          "kind": "label",
+          "q": 23,
+          "current_label": 2287,
+          "other_label": 33,
+          "other_label_occurrences": [
+            {
+              "R": 379,
+              "a": 40582,
+              "s": 33
+            },
+            {
+              "R": 4919,
+              "a": 33,
+              "s": 3127
+            },
+            {
+              "R": 4919,
+              "a": 3127,
+              "s": 33
+            }
+          ],
+          "difference": 2254,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            7,
+            23,
+            1127
+          ]
+        },
+        {
+          "edge_id": "label:q=23:2287:355",
+          "kind": "label",
+          "q": 23,
+          "current_label": 2287,
+          "other_label": 355,
+          "other_label_occurrences": [
+            {
+              "R": 14443,
+              "a": 99,
+              "s": 355
+            },
+            {
+              "R": 14443,
+              "a": 355,
+              "s": 99
+            }
+          ],
+          "difference": 1932,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            7,
+            23,
+            483
+          ]
+        },
+        {
+          "edge_id": "label:q=23:2287:40582",
+          "kind": "label",
+          "q": 23,
+          "current_label": 2287,
+          "other_label": 40582,
+          "other_label_occurrences": [
+            {
+              "R": 379,
+              "a": 40582,
+              "s": 33
+            }
+          ],
+          "difference": 38295,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              37,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            15,
+            23,
+            111,
+            115,
+            207,
+            555,
+            851,
+            1035,
+            4255,
+            7659,
+            38295
+          ]
+        },
+        {
+          "edge_id": "label:q=23:39:10504",
+          "kind": "label",
+          "q": 23,
+          "current_label": 39,
+          "other_label": 10504,
+          "other_label_occurrences": [
+            {
+              "R": 11,
+              "a": 10504,
+              "s": 4393
+            }
+          ],
+          "difference": 10465,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            7,
+            23,
+            35,
+            91,
+            115,
+            299,
+            455,
+            1495
+          ]
+        },
+        {
+          "edge_id": "label:q=23:39:16",
+          "kind": "label",
+          "q": 23,
+          "current_label": 39,
+          "other_label": 16,
+          "other_label_occurrences": [
+            {
+              "R": 3,
+              "a": 16,
+              "s": 10359177
+            },
+            {
+              "R": 11763,
+              "a": 16,
+              "s": 2697
+            },
+            {
+              "R": 44495,
+              "a": 16,
+              "s": 713
+            }
+          ],
+          "difference": 23,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            23
+          ]
+        },
+        {
+          "edge_id": "label:q=23:39:200553",
+          "kind": "label",
+          "q": 23,
+          "current_label": 39,
+          "other_label": 200553,
+          "other_label_occurrences": [
+            {
+              "R": 55,
+              "a": 46,
+              "s": 200553
+            }
+          ],
+          "difference": 200514,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              1453,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            23,
+            4359,
+            33419
+          ]
+        },
+        {
+          "edge_id": "label:q=23:39:43785",
+          "kind": "label",
+          "q": 23,
+          "current_label": 39,
+          "other_label": 43785,
+          "other_label_occurrences": [
+            {
+              "R": 63,
+              "a": 184,
+              "s": 43785
+            }
+          ],
+          "difference": 43746,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              317,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            23,
+            951,
+            7291
+          ]
+        },
+        {
+          "edge_id": "label:q=23:39:6801",
+          "kind": "label",
+          "q": 23,
+          "current_label": 39,
+          "other_label": 6801,
+          "other_label_occurrences": [
+            {
+              "R": 295,
+              "a": 253,
+              "s": 6801
+            },
+            {
+              "R": 295,
+              "a": 6801,
+              "s": 253
+            }
+          ],
+          "difference": 6762,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            7,
+            23,
+            147,
+            483,
+            1127
+          ]
+        },
+        {
+          "edge_id": "label:q=23:39:85",
+          "kind": "label",
+          "q": 23,
+          "current_label": 39,
+          "other_label": 85,
+          "other_label_occurrences": [
+            {
+              "R": 23,
+              "a": 85,
+              "s": 259509
+            },
+            {
+              "R": 23,
+              "a": 259509,
+              "s": 85
+            }
+          ],
+          "difference": 46,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            23
+          ]
+        },
+        {
+          "edge_id": "modulus:q=23:5691:11763",
+          "kind": "modulus",
+          "q": 23,
+          "current_R": 5691,
+          "other_R": 11763,
+          "other_states": [
+            [
+              16,
+              2697
+            ]
+          ],
+          "difference": 6072,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            3,
+            11,
+            23,
+            759
+          ]
+        },
+        {
+          "edge_id": "modulus:q=23:5691:520615",
+          "kind": "modulus",
+          "q": 23,
+          "current_R": 5691,
+          "other_R": 520615,
+          "other_states": [
+            [
+              25,
+              39
+            ],
+            [
+              39,
+              25
+            ]
+          ],
+          "difference": 514924,
+          "q_valuation": 1,
+          "difference_factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              193,
+              1
+            ]
+          ],
+          "candidate_gaps": [
+            23,
+            667,
+            4439,
+            128731
+          ]
+        }
+      ],
+      "collision_candidate_gap_count": 32,
+      "collision_candidate_gaps": [
+        3,
+        7,
+        11,
+        15,
+        23,
+        35,
+        91,
+        111,
+        115,
+        147,
+        207,
+        299,
+        455,
+        483,
+        555,
+        667,
+        759,
+        851,
+        951,
+        1035,
+        1127,
+        1495,
+        4255,
+        4359,
+        4439,
+        7291,
+        7659,
+        33419,
+        38295,
+        128731,
+        501531,
+        3845071
+      ],
+      "collision_type_ii_hit_gaps": [
+        455,
+        951
+      ],
+      "collision_type_ii_hit_profiles": [
+        {
+          "gap": 455,
+          "non_shared_with_minimum_face": true,
+          "generating_edge_ids": [
+            "label:q=23:39:10504"
+          ],
+          "type_ii_certificate_count": 2,
+          "type_ii_certificates": [
+            {
+              "gap": 455,
+              "x": 126900036,
+              "divisor": 139604,
+              "A": 1,
+              "B": 909,
+              "C": 139604,
+              "y": 141725893966312,
+              "z": 128828837615377608
+            },
+            {
+              "gap": 455,
+              "x": 126900036,
+              "divisor": 16019559,
+              "A": 51,
+              "B": 404,
+              "C": 6159,
+              "y": 159441630712101,
+              "z": 1263027819758604
+            }
+          ]
+        },
+        {
+          "gap": 951,
+          "non_shared_with_minimum_face": true,
+          "generating_edge_ids": [
+            "label:q=23:39:43785"
+          ],
+          "type_ii_certificate_count": 1,
+          "type_ii_certificates": [
+            {
+              "gap": 951,
+              "x": 126900160,
+              "divisor": 1280,
+              "A": 4,
+              "B": 396563,
+              "C": 80,
+              "y": 67734102500160,
+              "z": 6715209722442737520
+            }
+          ]
+        }
+      ],
+      "resolved_by_collision_selector": true
+    }
+  ]
+}
