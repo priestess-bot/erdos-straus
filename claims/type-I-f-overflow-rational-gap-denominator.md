@@ -141,6 +141,31 @@ v_{q_i}(B_z)=v_{q_i}(X_z)=\max\{-z_i-\nu_i,0\},
 
 正是 \(z_i\) 的负向盒外溢出层数。
 
+再记
+
+\[
+\kappa_q=v_q(4K),\qquad \beta_q=v_q(B)=\max(-z_q,0).
+\]
+
+若 \(\beta_q>\kappa_q\)，则清分子 \(N=pA+m_0\) 还满足精确的局部不变量
+
+\[
+v_q(N)=\kappa_q,
+\qquad q\nmid m_0,
+\tag{8}
+\]
+
+并且 \(q\nmid pA\)，因而
+
+\[
+pA\equiv-m_0\pmod {q^{\kappa_q}},
+\qquad
+pA\not\equiv-m_0\pmod {q^{\kappa_q+1}}.
+\tag{9}
+\]
+
+这给每一个溢出层一个精确的 \(q\)-进相位/清除约束，而不只是一个分母计数。
+
 ## 证明
 
 由 \(A/B\equiv-1\pmod R\) 和 \(4K\equiv1\pmod R\)，有
@@ -199,6 +224,18 @@ e_z=HA,\qquad
 \(3\bmod4\) 因子 \(m'\mid M_z\) 都保留这个同余；还必须用新首分母
 \(x'=(p+m')/4\) 检查 \(D_z\mid {x'}^2\)。
 
+若 \(\beta_q>\kappa_q\)，由 (1) 得
+
+\[
+\min\{v_q(N),\beta_q\}=v_q(\gcd(N,B))=\kappa_q.
+\]
+
+因为 \(\beta_q>\kappa_q\)，故 \(v_q(N)=\kappa_q\)。又 \(q\mid B\)、
+\((A,B)=1\) 和 \((R,B)=1\) 给出 \(q\nmid A\)、\(q\nmid R\)，从
+\(m_0R=A+B\) 得 \(q\nmid m_0\)。最后 \(q\nmid p\)，否则
+\(4K=pR+1\) 在模 \(q\) 下与 \(q\nmid R\) 矛盾；故 \(q\nmid pA\)。结合
+\(N=pA+m_0\) 即得 (8)--(9)。
+
 \[
 v_{q_i}(4K)=\nu_i+2\mathbf1_{q_i=2},
 \qquad
@@ -241,6 +278,10 @@ v_{q_i}(B)=\max(-z_i,0),
 record_count: 253
 orientation_with_nontrivial_denominator_count: 253
 odd_overflow_denominator_record_count: 253
+forward_exact_numerator_overflow_layers: 1182
+forward_q_unit_phase_layers: 1182
+reverse_exact_numerator_overflow_layers: 519
+reverse_q_unit_phase_layers: 519
 formal_first_denominator_integral_record_count: 8
 formal_reverse_first_denominator_integral_record_count: 96
 formal_first_denominator_nontrivial_in_either_orientation_count: 253
@@ -283,9 +324,11 @@ reproductions/type-i-f-overflow-rational-gap-denominator-results.json
 结果文件 SHA-256：
 
 ~~~text
-8463e8885202506b680d31f9c62b98f5b63f63e421fe4722cd72ad46ab13fee0
+60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768
 ~~~
 
-该有限验证仍不构成跨状态容量矛盾，也不说明每个盒外见证都能产生递降；它把下一步
-需要证明的算术映射精确化为 \(B_z\) 或 \(X_z\) 的分母幂如何进入状态选择或可提升
-标记集。
+冻结审计中，正向溢出层总数为 1182，且清分子恰有 1182 层停在相应的
+\(v_q(4K)\)；反向对应为 519 层。两侧的 \(q\)-单位相位层数分别也是 1182 和 519，
+即每一层都同时携带 (8)--(9) 的局部约束。该有限验证仍不构成跨状态容量矛盾，也不说明
+每个盒外见证都能产生递降；它把下一步需要证明的算术映射精确化为带相位标签的
+\(B_z\) 或 \(X_z\) 分母幂如何进入状态选择或可提升标记集。

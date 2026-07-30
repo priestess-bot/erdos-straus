@@ -711,6 +711,23 @@ X_z=\frac{B}{\gcd(B,K)},
 v_q(X_z)=\max\{-z_q-v_q(K),0\}.
 \]
 
+还有一个可直接计数的清分子不变量。记
+\(\kappa_q=v_q(4K)\)、\(\beta_q=v_q(B)\)。当
+\(\beta_q>\kappa_q\) 时，恒有
+\[
+N=\frac{4KA+B}{R}=pA+m_0,
+\qquad v_q(N)=\kappa_q,
+\qquad q\nmid m_0.
+\]
+由于此时 \(q\nmid pA\)，这等价于精确相位关系
+\[
+pA\equiv-m_0\pmod {q^{\kappa_q}},
+\qquad
+pA\not\equiv-m_0\pmod {q^{\kappa_q+1}}.
+\]
+因此每一个分母溢出层都带有一个“清分子停层 + \(q\)-单位相位”标签；这仍是局部算术
+约束，不是跨状态容量定理。
+
 若 \(X_z=1\)，令 \(H=K/B\)、\(e_z=HA\)，则 \(4e_z+1=m_zR\)，给出同一缺口的
 规范同余候选；若 \(e_z\nmid x_z^2\)，再令
 \[
@@ -732,6 +749,12 @@ D_z=\gcd(e_z,x_z^2),\qquad M_z=\gcd(m_z,4D_z+1).
 整除。该结果仍未给出跨状态容量或提升映射；下一步要么
 证明 \(B_z\) 或 \(X_z\) 的素因子幂进入标签/模数/块差容量，要么由其大于 1 构造严格可提升的
 较小标记状态。完整主张见[盒外目标见证的精确有理缺口分母](../claims/type-I-f-overflow-rational-gap-denominator.md)。
+
+新增的清分子审计与分母层逐层相等：正向
+forward_exact_numerator_overflow_layers=1182、
+forward_q_unit_phase_layers=1182，反向分别为 519、519。结果文件哈希为
+60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768。这把“未支付分母”
+从大小字段提升为带精确相位的局部证书，但尚未完成其跨状态复用或严格递降映射。
 
 ## 依赖顺序
 

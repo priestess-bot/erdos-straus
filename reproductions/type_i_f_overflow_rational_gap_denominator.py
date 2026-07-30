@@ -108,6 +108,8 @@ def audit_row(row: dict[str, object]) -> dict[str, object]:
     m0 = m0_numerator // modulus
     if math.gcd(m0, B) != 1:
         raise AssertionError("m0 and witness denominator are not coprime")
+    if gap_numerator != prime * A + m0:
+        raise AssertionError("cleared gap numerator did not equal pA+m0")
     first_denominator = B // math.gcd(B, K)
     for (q, nu), exponent in zip(factorization, witness):
         expected = max(-exponent - nu, 0)
@@ -176,6 +178,8 @@ def audit_row(row: dict[str, object]) -> dict[str, object]:
     if reverse_numerator % modulus:
         raise AssertionError("the reversed target witness lost its congruence")
     reverse_gap_numerator = reverse_numerator // modulus
+    if reverse_gap_numerator != prime * reverse_A + reverse_m0:
+        raise AssertionError("reversed cleared gap numerator did not equal pA+m0")
     reverse_denominator = reverse_B // math.gcd(reverse_gap_numerator, reverse_B)
     reverse_canonical_target_divisor = None
     reverse_canonical_target_divisor_divides_x_square = None
@@ -217,6 +221,30 @@ def audit_row(row: dict[str, object]) -> dict[str, object]:
                 reverse_canonical_repair_square_hits.append(repair_gap)
     reverse_excess = sum(valuation(reverse_denominator, q) for q, _nu in factorization)
     forward_excess = sum(actual_denominator_excess.values())
+    forward_exact_numerator_overflow_layers = 0
+    forward_q_unit_phase_layers = 0
+    for (q, nu), exponent in zip(factorization, witness):
+        carrier_height = nu + (2 if q == 2 else 0)
+        overflow = max(-exponent - carrier_height, 0)
+        if overflow:
+            if valuation(gap_numerator, q) != carrier_height:
+                raise AssertionError("overflow numerator valuation did not stop at carrier height")
+            if m0 % q == 0:
+                raise AssertionError("overflow coordinate did not have a q-unit phase")
+            forward_exact_numerator_overflow_layers += overflow
+            forward_q_unit_phase_layers += overflow
+    reverse_exact_numerator_overflow_layers = 0
+    reverse_q_unit_phase_layers = 0
+    for (q, nu), exponent in zip(factorization, tuple(-value for value in witness)):
+        carrier_height = nu + (2 if q == 2 else 0)
+        overflow = max(-exponent - carrier_height, 0)
+        if overflow:
+            if valuation(reverse_gap_numerator, q) != carrier_height:
+                raise AssertionError("reversed overflow numerator valuation did not stop at carrier height")
+            if reverse_m0 % q == 0:
+                raise AssertionError("reversed overflow coordinate did not have a q-unit phase")
+            reverse_exact_numerator_overflow_layers += overflow
+            reverse_q_unit_phase_layers += overflow
     reverse_odd_excess = sum(
         valuation(reverse_denominator, q)
         for q, _nu in factorization
@@ -253,6 +281,10 @@ def audit_row(row: dict[str, object]) -> dict[str, object]:
         "denominator_excess": actual_denominator_excess,
         "forward_denominator_excess_layers": forward_excess,
         "reverse_denominator_excess_layers": reverse_excess,
+        "forward_exact_numerator_overflow_layers": forward_exact_numerator_overflow_layers,
+        "forward_q_unit_phase_layers": forward_q_unit_phase_layers,
+        "reverse_exact_numerator_overflow_layers": reverse_exact_numerator_overflow_layers,
+        "reverse_q_unit_phase_layers": reverse_q_unit_phase_layers,
         "has_odd_overflow_denominator": any(
             q != 2 and amount
             for q, amount in ((int(q), amount) for q, amount in actual_denominator_excess.items())
@@ -294,18 +326,33 @@ def run() -> dict[str, object]:
         "arithmetic": (
             "For a target affine witness z with product q_i^z=-1 mod R, write q^z=A/B. "
             "The formal gap (4K A/B+1)/R has reduced denominator exactly B/gcd(B,4K), "
-            "whose q-adic exponents are the one-sided overflow beyond v_q(4K)."
+            "whose q-adic exponents are the one-sided overflow beyond v_q(4K). "
+            "For every overflow coordinate, the cleared numerator N=pA+m0 has "
+            "v_q(N)=v_q(4K) and m0 is a q-unit, giving an exact q-adic phase constraint."
         ),
         "scope_note": (
             "This is an exact arithmetic translation of a frozen affine-lattice witness. "
             "It does not make the rational gap a valid Type-I integer gap when the denominator "
-            "is nontrivial, and it does not yet supply a cross-state capacity or lift map."
+            "is nontrivial, and it does not yet supply a cross-state capacity or lift map. "
+            "The numerator valuation and phase fields are local invariants, not a global selector theorem."
         ),
         "input": INPUT.name,
         "input_sha256": sha256(INPUT),
         "record_count": len(details),
         "forward_denominator_excess_layers": forward_layers,
         "reverse_denominator_excess_layers": reverse_layers,
+        "forward_exact_numerator_overflow_layers": sum(
+            int(row["forward_exact_numerator_overflow_layers"]) for row in details
+        ),
+        "forward_q_unit_phase_layers": sum(
+            int(row["forward_q_unit_phase_layers"]) for row in details
+        ),
+        "reverse_exact_numerator_overflow_layers": sum(
+            int(row["reverse_exact_numerator_overflow_layers"]) for row in details
+        ),
+        "reverse_q_unit_phase_layers": sum(
+            int(row["reverse_q_unit_phase_layers"]) for row in details
+        ),
         "orientation_with_nontrivial_denominator_count": orientation_has_denominator,
         "odd_overflow_denominator_record_count": odd_denominator_rows,
         "formal_first_denominator_integral_record_count": sum(
@@ -380,6 +427,10 @@ def main() -> int:
         "reverse_canonical_repair_modulus_nontrivial_count",
         "reverse_canonical_repair_gap_candidate_count",
         "reverse_canonical_repair_square_hit_count",
+        "forward_exact_numerator_overflow_layers",
+        "forward_q_unit_phase_layers",
+        "reverse_exact_numerator_overflow_layers",
+        "reverse_q_unit_phase_layers",
         "denominator_support_counts",
     )}, ensure_ascii=False, indent=2))
     return 0
