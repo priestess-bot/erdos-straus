@@ -821,7 +821,28 @@ R=mt,\qquad A=mu-1,\qquad B=mv+1.
 下一步应将逃逸端点接到 G/Type II 证书或跨状态容量。完整主张见
 [端点平衡小模数表示下降](../claims/type-I-f-overflow-balanced-endpoint-descent.md)。
 结果文件最新哈希为
-df4415bb0753c3ba9e7d8c09b383f7ab092aa3dcb7f6d28fb29fca9c1aab7cf1。
+f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
+
+## 目标三十二：端点下降后的更小模数 F/G 盒分流
+
+对严格端点下降的 \(t=R/m\)，将原 \(K\)-素因子支撑生成的子群
+\(H_t\le(\mathbb Z/t\mathbb Z)^\times\) 与原有限指数盒的像
+\(\mathcal C_t\) 分开记录。目标 \(-1\) 的精确分流为：
+\[
+-1\notin H_t\quad(\text{更小模数 G 分离}),\qquad
+-1\in\mathcal C_t\quad(\text{盒内命中}),\qquad
+-1\in H_t\setminus\mathcal C_t\quad(\text{盒外 F 障碍}).
+\]
+冻结的 48 个严格下降中得到 0、6、42 个；正向为 0、4、20，反向为 0、2、22。
+这里 \(R,m\equiv3\pmod4\)，所以 \(t\equiv1\pmod4\)，该分流仍不是合法 Type I
+缺口证书：6 个命中要继续做奇偶/终端提升，42 个盒外障碍要接 Fourier/关系格容量
+或 Type II，0 个 G 分离说明当前样本的支撑逃逸没有在 \(t\) 上自动释放为 G 型。
+33 个更小模数还满足 \(2^j\equiv-1\pmod t\)，但这 48 个样本的 \(K\) 全部为奇数，
+二进预算 \(v_2(2K)=1\)，最小 \(j\) 均至少为 2，故没有一个直接满足广义二进终端
+的预算；其余 15 个模数没有二进幂反足点。完整主张见
+[端点下降的更小模数 F/G 盒分流](../claims/type-I-f-overflow-balanced-lower-modulus-fiber-profile.md)，
+结果文件哈希为
+f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
 
 ## 依赖顺序
 

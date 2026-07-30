@@ -123,7 +123,7 @@ reproductions/type-i-f-overflow-r-modulus-repair-results.json
 结果文件 SHA-256：
 
 ~~~text
-df4415bb0753c3ba9e7d8c09b383f7ab092aa3dcb7f6d28fb29fca9c1aab7cf1
+f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809
 ~~~
 
 该边界把一级修复失败分成两个可证明的方向：
@@ -138,6 +138,11 @@ df4415bb0753c3ba9e7d8c09b383f7ab092aa3dcb7f6d28fb29fca9c1aab7cf1
 
 当前样本全部落入第二类，因此下一步不应把小模数表示直接当作 F 型命中，而应研究
 支撑逃逸端点能否构造 G/Type II 短证书，或其外部素因子是否在跨状态中形成容量超载。
+
+更细的下游分流见[端点下降的更小模数 F/G 盒分流](type-I-f-overflow-balanced-lower-modulus-fiber-profile.md)：
+在严格下降的 48 个冻结样本中，6 个在更小模数 \(t\) 上重新命中原 \(K\)-指数盒，
+42 个仍为 \(K\)-支撑内的盒外 F 型障碍，0 个转成更小模数的 G 型分离。由于
+\(t\equiv1\pmod4\)，这三分仍是对偶/关系接口，不能直接当作合法 Type I 缺口。
 
 ## 复现
 

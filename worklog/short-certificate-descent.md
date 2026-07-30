@@ -1927,7 +1927,37 @@ R=mt,\qquad A=mu-1,\qquad B=mv+1,\qquad u+v=t\,m_0.
 claims/type-I-f-overflow-balanced-endpoint-descent.md。
 并在同一脚本中检查 \(K\)-支撑残差。149 个一级候选中 48 个进入严格小模数分支，
 但 48 个都在两个端点同时发生支撑逃逸，支撑保持数为 0。最新结果哈希：
-df4415bb0753c3ba9e7d8c09b383f7ab092aa3dcb7f6d28fb29fca9c1aab7cf1。
+f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809。
 
 这给出当前最清晰的下一道门：证明支撑逃逸端点必产生 G/Type II 短证书，或把外部
 素因子残差接入跨状态容量；不能把端点下降直接当作原有限目标纤维下降。
+
+## 2026-07-30 端点下降后的更小模数 F/G 盒分流
+
+在 48 个严格端点下降样本上继续固定原 \(K\)-支撑和原指数盒，并令
+\(t=R/m\)。脚本显式生成
+\[
+H_t=\langle q\bmod t:q\mid K\rangle,\qquad
+\mathcal C_t=\{\prod q^{z_q}\bmod t:-\nu_q\le z_q\le\nu_q\}.
+\]
+目标 \(-1\) 的分类按三类实现：\(-1\notin H_t\)、\(-1\in\mathcal C_t\)、
+\(-1\in H_t\setminus\mathcal C_t\)，同时记录子群阶、盒内表示重数和最短
+\(\ell^1\) 指数向量。冻结结果为：
+
+~~~text
+strict_balanced_reduction_count: 48
+lower_modulus_f_box_hit_count: 6
+lower_modulus_f_box_miss_count: 42
+lower_modulus_g_count: 0
+forward: 4 / 20 / 0
+reverse: 2 / 22 / 0
+~~~
+
+这一步把“端点双支撑逃逸”细分为更小模数的 G 分离、盒内命中和盒外 F 障碍；但
+\(t\equiv1\pmod4\)，因此它仍是关系格/对偶接口，不能直接称为合法 Type I gap。
+6 个盒内命中需要额外的奇偶终端提升，42 个盒外样本是下一轮 Fourier/容量输入。
+33 个严格下降模数满足某个 \(2^j\equiv-1\pmod t\)，但所有 48 个样本的 \(K\) 都是
+奇数，预算 \(v_2(2K)=1\)，最小 \(j\) 至少为 2，二进预算可行数为 0；另外 15 个
+模数没有二进幂反足点。结果文件 reproductions/type-i-f-overflow-r-modulus-repair-results.json 的
+SHA-256 为 f6da0544498862bceec95529cdef68f8202dc75042ee89b67d2d258be16ef809；
+主张卡见[端点下降的更小模数 F/G 盒分流](../claims/type-I-f-overflow-balanced-lower-modulus-fiber-profile.md)。
