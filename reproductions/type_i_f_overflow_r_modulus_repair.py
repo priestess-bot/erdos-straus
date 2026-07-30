@@ -12,8 +12,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "reproductions" / "type-i-f-overflow-rational-gap-denominator-results.json"
+SOURCE_INPUT = ROOT / "reproductions" / "type-i-f-overflow-support-boundary-results.json"
 OUTPUT = ROOT / "reproductions" / "type-i-f-overflow-r-modulus-repair-results.json"
 EXPECTED_INPUT_SHA256 = "60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768"
+EXPECTED_SOURCE_SHA256 = "93c571a0fdfe12d18028c21d10c1f8445b1e34ae979489c852478d0bce8ad9b1"
 
 
 def sha256(path: Path) -> str:
@@ -41,7 +43,17 @@ def divisors(value: int) -> list[int]:
     return sorted(result)
 
 
-def audit_orientation(row: dict[str, object], orientation: str) -> dict[str, object]:
+def valuation(value: int, prime: int) -> int:
+    count = 0
+    while value % prime == 0:
+        value //= prime
+        count += 1
+    return count
+
+
+def audit_orientation(
+    row: dict[str, object], source_row: dict[str, object], orientation: str
+) -> dict[str, object]:
     if orientation not in {"forward", "reverse"}:
         raise ValueError("unknown orientation")
     prime = int(row["prime"])
@@ -53,6 +65,10 @@ def audit_orientation(row: dict[str, object], orientation: str) -> dict[str, obj
     else:
         A = int(row["formal_B"])
         B = int(row["formal_A"])
+    factorization = [(int(q), int(nu)) for q, nu in source_row["factorization"]]
+    witness = tuple(int(value) for value in source_row["witness_exponents"])
+    if orientation == "reverse":
+        witness = tuple(-value for value in witness)
 
     repair_gcd = math.gcd(original_R, B - 1)
     target_divisor = K * A
@@ -73,12 +89,28 @@ def audit_orientation(row: dict[str, object], orientation: str) -> dict[str, obj
         if repaired_R % 4 != 3 or math.gcd(repaired_K, repaired_R) != 1:
             raise AssertionError("candidate did not reconstruct an admissible modulus state")
         square_hit = first_denominator * first_denominator % target_divisor == 0
+        identity_numerator = 4 * K + gap * gap * (original_R // gap) - 1
+        square_deficits: dict[str, int] = {}
+        for (q, nu), exponent in zip(factorization, witness):
+            first_valuation = valuation(first_denominator, q)
+            identity_valuation = valuation(identity_numerator, q) - (2 if q == 2 else 0)
+            if identity_valuation != first_valuation:
+                raise AssertionError("R-factor q-adic identity did not recover x_m")
+            target_exponent = nu + max(exponent, 0)
+            deficit = max(target_exponent - 2 * first_valuation, 0)
+            if deficit:
+                square_deficits[str(q)] = deficit
+        if square_hit != (not square_deficits):
+            raise AssertionError("square-divisibility and q-adic deficit disagree")
         candidates.append(
             {
                 "gap": gap,
                 "target_divisor": target_divisor,
                 "first_denominator": first_denominator,
                 "target_divisor_divides_first_square": square_hit,
+                "square_deficits": square_deficits,
+                "square_deficit_layers": sum(square_deficits.values()),
+                "deficient_q_coordinate_count": len(square_deficits),
                 "repaired_R": repaired_R,
                 "repaired_K": repaired_K,
             }
@@ -95,6 +127,12 @@ def audit_orientation(row: dict[str, object], orientation: str) -> dict[str, obj
         "square_hit_count": sum(
             int(candidate["target_divisor_divides_first_square"]) for candidate in candidates
         ),
+        "square_deficit_layers": sum(
+            int(candidate["square_deficit_layers"]) for candidate in candidates
+        ),
+        "deficient_q_coordinate_count": sum(
+            int(candidate["deficient_q_coordinate_count"]) for candidate in candidates
+        ),
         "candidates": candidates,
     }
 
@@ -102,12 +140,24 @@ def audit_orientation(row: dict[str, object], orientation: str) -> dict[str, obj
 def run() -> dict[str, object]:
     if sha256(INPUT) != EXPECTED_INPUT_SHA256:
         raise AssertionError("the rational-gap input changed")
+    if sha256(SOURCE_INPUT) != EXPECTED_SOURCE_SHA256:
+        raise AssertionError("the frozen factorization input changed")
     payload = json.loads(INPUT.read_text(encoding="utf-8"))
+    source_payload = json.loads(SOURCE_INPUT.read_text(encoding="utf-8"))
+    source_rows = {
+        (int(row["prime"]), int(row["R"]), tuple(row["witness_exponents"])): dict(row)
+        for row in source_payload["records"]
+        if row.get("within_radius_cap")
+    }
     records: list[dict[str, object]] = []
     for row in payload["records"]:
         row = dict(row)
+        key = (int(row["prime"]), int(row["R"]), tuple(row["witness_exponents"]))
+        if key not in source_rows:
+            raise AssertionError("rational-gap row is missing its frozen factorization")
+        source_row = source_rows[key]
         for orientation in ("forward", "reverse"):
-            detail = audit_orientation(row, orientation)
+            detail = audit_orientation(row, source_row, orientation)
             records.append(
                 {
                     "prime": int(row["prime"]),
@@ -127,7 +177,9 @@ def run() -> dict[str, object]:
             "with m=3 mod 4 gives an integer target divisor e=K*A satisfying "
             "4e+1=0 mod m. It therefore defines a new admissible state "
             "R'=(4e+1)/m, K'=(p+m)R'/4-e; a direct Type-I certificate exists "
-            "exactly when e divides ((p+m)/4)^2."
+            "exactly when e divides ((p+m)/4)^2. The square failure has the exact "
+            "q-adic deficit e_q-2*v_q((p+m)/4), recoverable from "
+            "v_q(4K+m^2(R/m)-1)."
         ),
         "scope_note": (
             "This is an unconditional repair branch and a finite frozen audit. "
@@ -138,6 +190,8 @@ def run() -> dict[str, object]:
         ),
         "input": INPUT.name,
         "input_sha256": sha256(INPUT),
+        "factorization_input": SOURCE_INPUT.name,
+        "factorization_input_sha256": sha256(SOURCE_INPUT),
         "input_record_count": len(payload["records"]),
         "orientation_record_count": len(records),
         "nontrivial_repair_modulus_count": sum(
@@ -146,6 +200,18 @@ def run() -> dict[str, object]:
         "candidate_orientation_count": sum(int(row["candidate_count"] > 0) for row in records),
         "candidate_gap_count": sum(int(row["candidate_count"]) for row in records),
         "direct_square_hit_count": sum(int(row["square_hit_count"]) for row in records),
+        "square_deficit_layers": sum(int(row["square_deficit_layers"]) for row in records),
+        "deficient_q_coordinate_count": sum(
+            int(row["deficient_q_coordinate_count"]) for row in records
+        ),
+        "maximum_square_deficit": max(
+            (
+                int(candidate["square_deficit_layers"])
+                for row in records
+                for candidate in row["candidates"]
+            ),
+            default=0,
+        ),
         "by_orientation": {
             orientation: {
                 "record_count": len(rows),
@@ -157,6 +223,10 @@ def run() -> dict[str, object]:
                 ),
                 "candidate_gap_count": sum(int(row["candidate_count"]) for row in rows),
                 "direct_square_hit_count": sum(int(row["square_hit_count"]) for row in rows),
+                "square_deficit_layers": sum(int(row["square_deficit_layers"]) for row in rows),
+                "deficient_q_coordinate_count": sum(
+                    int(row["deficient_q_coordinate_count"]) for row in rows
+                ),
             }
             for orientation, rows in by_orientation.items()
         },
@@ -184,6 +254,9 @@ def main() -> int:
                     "candidate_orientation_count",
                     "candidate_gap_count",
                     "direct_square_hit_count",
+                    "square_deficit_layers",
+                    "deficient_q_coordinate_count",
+                    "maximum_square_deficit",
                     "by_orientation",
                 )
             },

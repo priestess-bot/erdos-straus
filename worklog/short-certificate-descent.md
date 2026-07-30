@@ -1879,17 +1879,31 @@ D_m=\gcd(e,x_m^2),\qquad M_m=\gcd(m,4D_m+1)
 claims/type-I-f-overflow-r-modulus-repair.md、
 reproductions/type_i_f_overflow_r_modulus_repair.py。
 
+平方整除失败不是一个不可分解的布尔事件。写 \(R=mt\)，则
+\[
+4mt\,x_m=4K+m^2t-1.
+\]
+对 \(q\mid K\)，这给出
+\[
+\delta_{q,m}
+=\max\{\nu_q+\max(z_q,0)-2v_q(x_m),0\},
+\]
+并且 \(e\mid x_m^2\) 当且仅当所有 \(\delta_{q,m}\) 为零。验证器同时检查
+\(v_q(x_m)\) 与 \(v_q(4K+m^2t-1)\) 的这个恒等式。
+
 冻结 253 个见证的正反方向审计结果：
 
 ~~~text
 nontrivial_repair_modulus_count: 138
 candidate_gap_count: 149
 direct_square_hit_count: 0
+square_deficit_layers: 1736
+deficient_q_coordinate_count: 581
 forward: nontrivial 33, candidates 27, square hits 0
 reverse: nontrivial 105, candidates 122, square hits 0
 ~~~
 
 结果文件 reproductions/type-i-f-overflow-r-modulus-repair-results.json 的 SHA-256 为
-df1173b719c104b8a3f7e0ef37adcf463706a0069900eb1f554fe331eed87702。
+eb261d60a8a3395b4a28b69818ec3e5650a5b272428cf5df4d23b95becff348f。
 这条分支新增了“新合法状态或带 \(R\)-因子失败标签”的状态出口，但 \(R_m\) 未必更小，
 所以仍需证明其良基下降或跨状态容量约束。
