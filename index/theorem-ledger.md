@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 350 |
+| 数学状态 | `computationally_reproduced` | 354 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 271 |
+| 数学状态 | `established` | 278 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 120 |
-| 证明来源 | `mixed` | 9 |
-| 证明来源 | `repository_derivation` | 103 |
+| 证明来源 | `computational_reproduction` | 123 |
+| 证明来源 | `mixed` | 10 |
+| 证明来源 | `repository_derivation` | 110 |
 | 证明来源 | `unspecified` | 427 |
-| 审阅状态 | `independent_review` | 16 |
-| 审阅状态 | `internal_review` | 216 |
+| 审阅状态 | `independent_review` | 18 |
+| 审阅状态 | `internal_review` | 225 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -242,16 +242,19 @@
 | [五亿偶桥支撑三或平移外源的终止混合闭合](../claims/type-I-even-source-support-external-hybrid-500m.md) (`type-I-even-source-support-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
 | [冻结 F 状态的有界规范 Fourier 证书](../claims/type-I-f-bounded-fourier-certificate.md) (`type-I-f-bounded-fourier-certificate`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [冻结完整线性谱的 F 型 Fourier 系数盒半径边界](../claims/type-I-f-bounded-fourier-radius-boundary.md) (`type-I-f-bounded-fourier-radius-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [线性 F 状态的当前块饱和与带符号分母缺陷](../claims/type-I-f-current-block-saturation-and-signed-denominator-defect.md) (`type-I-f-current-block-saturation-and-signed-denominator-defect`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [F 状态同分母指数清除的双向 q 进必要合同](../claims/type-I-f-denominator-clearing-qadic-lift-contract.md) (`type-I-f-denominator-clearing-qadic-lift-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [完整 F 谱的双颜色共享模数容量边界](../claims/type-I-f-full-cross-color-pair-capacity-boundary.md) (`type-I-f-full-cross-color-pair-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [完整 F 谱的宽松 q 进模数容量排除边界](../claims/type-I-f-full-spectrum-qadic-modulus-capacity-boundary.md) (`type-I-f-full-spectrum-qadic-modulus-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型固定层的 Fourier 谱余量约束](../claims/type-I-f-g-fixed-layer-spectral-slack.md) (`type-I-f-g-fixed-layer-spectral-slack`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F/G 状态的规范有限傅里叶障碍证书](../claims/type-I-f-g-fourier-obstruction-certificate.md) (`type-I-f-g-fourier-obstruction-certificate`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [冻结 F 状态的内禀联合分母缺陷与最小投影阻碍剖面](../claims/type-I-f-intrinsic-joint-denominator-defect-profile.md) (`type-I-f-intrinsic-joint-denominator-defect-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [分色 F 状态的盒溢出不局限于规范 Fourier 活跃支持](../claims/type-I-f-overflow-active-support-boundary.md) (`type-I-f-overflow-active-support-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
-| [全部合法载体分配下的 F 溢出高度上界](../claims/type-I-f-overflow-all-assignment-height-upper-bound.md) (`type-I-f-overflow-all-assignment-height-upper-bound`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [方向编码下的 F 溢出反事实重复高度审计](../claims/type-I-f-overflow-all-assignment-height-upper-bound.md) (`type-I-f-overflow-all-assignment-height-upper-bound`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [盒外见证的端点平衡小模数表示下降](../claims/type-I-f-overflow-balanced-endpoint-descent.md) (`type-I-f-overflow-balanced-endpoint-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [端点下降 F-box miss 的平衡端点 Type II 边界](../claims/type-I-f-overflow-balanced-endpoint-type-ii-boundary.md) (`type-I-f-overflow-balanced-endpoint-type-ii-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [端点下降的更小模数 F/G 盒分流](../claims/type-I-f-overflow-balanced-lower-modulus-fiber-profile.md) (`type-I-f-overflow-balanced-lower-modulus-fiber-profile`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
-| [普适盒溢出坐标的跨状态 q 进容量压力边界](../claims/type-I-f-overflow-cross-state-qadic-capacity.md) (`type-I-f-overflow-cross-state-qadic-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [同状态重复与异状态未配型的跨状态 q 进压力边界](../claims/type-I-f-overflow-cross-state-qadic-capacity.md) (`type-I-f-overflow-cross-state-qadic-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的标准偶源 n 除以 2 一项保留边界](../claims/type-I-f-overflow-even-standard-half-one-denominator-boundary.md) (`type-I-f-overflow-even-standard-half-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的偶标准源一项保留提升边界](../claims/type-I-f-overflow-even-standard-one-denominator-boundary.md) (`type-I-f-overflow-even-standard-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的四倍源非标准平方尾一项提升边界](../claims/type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary.md) (`type-I-f-overflow-four-divisible-nonstandard-one-denominator-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `subramanian2026`, `bradford2024` | 2026-07-30 |
@@ -269,7 +272,7 @@
 | [更小模数 F 关系的选择不变溢出价格接口](../claims/type-I-f-overflow-lower-modulus-weighted-cost-interface.md) (`type-I-f-overflow-lower-modulus-weighted-cost-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [低模数 F-box miss 的单位权溢出价格有限剖面](../claims/type-I-f-overflow-lower-modulus-weighted-cost-profile.md) (`type-I-f-overflow-lower-modulus-weighted-cost-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [分色 F 状态的多支持盒溢出条件性容量边界](../claims/type-I-f-overflow-multi-support-conditional-capacity.md) (`type-I-f-overflow-multi-support-conditional-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
-| [多支持盒溢出收费与实际载体高度的局部边界](../claims/type-I-f-overflow-multi-support-height-boundary.md) (`type-I-f-overflow-multi-support-height-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [多支持盒溢出与当前块重复高度的历史边界](../claims/type-I-f-overflow-multi-support-height-boundary.md) (`type-I-f-overflow-multi-support-height-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持溢出分支的较小块平方终端边界](../claims/type-I-f-overflow-multi-support-square-descent-boundary.md) (`type-I-f-overflow-multi-support-square-descent-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [盒外见证的 R 因子修复分支](../claims/type-I-f-overflow-r-modulus-repair.md) (`type-I-f-overflow-r-modulus-repair`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [盒外目标见证的精确有理缺口分母](../claims/type-I-f-overflow-rational-gap-denominator.md) (`type-I-f-overflow-rational-gap-denominator`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
@@ -277,13 +280,16 @@
 | [多支持较小块平方终端的 b 等于 1、2、4 缩放提升边界](../claims/type-I-f-overflow-scaled-source-lift-boundary.md) (`type-I-f-overflow-scaled-source-lift-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的移位外部源提升边界](../claims/type-I-f-overflow-shifted-external-lift-boundary.md) (`type-I-f-overflow-shifted-external-lift-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [多支持较小块平方终端的奇数距离提升边界](../claims/type-I-f-overflow-square-terminal-lift-boundary.md) (`type-I-f-overflow-square-terminal-lift-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
-| [F 溢出的块—模数差—标签差三通道容量边界](../claims/type-I-f-overflow-three-channel-capacity.md) (`type-I-f-overflow-three-channel-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [F 溢出的块—模数差—标签差三通道反事实压力边界](../claims/type-I-f-overflow-three-channel-capacity.md) (`type-I-f-overflow-three-channel-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [分色 F 状态的盒溢出到载体高度的条件性容量接口](../claims/type-I-f-overflow-to-carrier-conditional-capacity.md) (`type-I-f-overflow-to-carrier-conditional-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
-| [两个局部余核的容量一代理最小面与短证书选择器](../claims/type-I-f-overflow-two-residual-capacity-one-selector.md) (`type-I-f-overflow-two-residual-capacity-one-selector`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
-| [普适多坐标溢出的联合层容量压力边界](../claims/type-I-f-overflow-universal-joint-capacity.md) (`type-I-f-overflow-universal-joint-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
-| [普适高度缺口的多坐标和混合符号边界](../claims/type-I-f-overflow-universal-support-profile.md) (`type-I-f-overflow-universal-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [两个局部余核的重复高度容量一代理面与短证书选择器](../claims/type-I-f-overflow-two-residual-capacity-one-selector.md) (`type-I-f-overflow-two-residual-capacity-one-selector`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [同状态重复与异状态未配型的多坐标联合压力边界](../claims/type-I-f-overflow-universal-joint-capacity.md) (`type-I-f-overflow-universal-joint-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
+| [历史重复高度代理子集的多坐标和混合符号剖面](../claims/type-I-f-overflow-universal-support-profile.md) (`type-I-f-overflow-universal-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [内禀缺陷一的最近目标纤维与一层逃逸边界](../claims/type-I-f-psi-one-nearest-fiber-escape-boundary.md) (`type-I-f-psi-one-nearest-fiber-escape-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-30 |
+| [F 状态 q 进清分子的参数刚性与公因子约分](../claims/type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction.md) (`type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [冻结 F 状态的关系格规范证书重建](../claims/type-I-f-relation-lattice-certificate-reconstruction.md) (`type-I-f-relation-lattice-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型规范 Fourier 需求的同色联合容量边界](../claims/type-I-f-same-color-subset-capacity-boundary.md) (`type-I-f-same-color-subset-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [冻结 F 状态的单坐标零缺陷与反事实重复高度扩盒边界](../claims/type-I-f-selection-invariant-coordinate-and-optimistic-box-boundary.md) (`type-I-f-selection-invariant-coordinate-and-optimistic-box-boundary`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | - | 2026-07-30 |
 | [分色 F 状态的有限指数盒溢出半径边界](../claims/type-I-f-split-color-overflow-radius-boundary.md) (`type-I-f-split-color-overflow-radius-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [分色 F 状态的二维 Fourier 目标投影边界](../claims/type-I-f-split-color-phase-projection-boundary.md) (`type-I-f-split-color-phase-projection-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [分色 F 状态的关系格多角色盒空缺证书](../claims/type-I-f-split-color-relation-certificate.md) (`type-I-f-split-color-relation-certificate`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
@@ -300,6 +306,7 @@
 | [固定 p 减一射线残余的三层自适应解析](../claims/type-I-fixed-ray-residual-resolution-600m.md) (`type-I-fixed-ray-residual-resolution-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [固定源窗口不能判定线性 B 等于一逃逸的平方本质](../claims/type-I-fixed-source-window-linear-escape-boundary-600m.md) (`type-I-fixed-source-window-linear-escape-boundary-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [核心素数的九条固定 p 减一 B 等于一因子射线](../claims/type-I-fixed-universal-pminusone-b1-rays.md) (`type-I-fixed-universal-pminusone-b1-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [形式目标因子对转移的 m 等于一支撑内循环边界](../claims/type-I-formal-target-pair-descent-cycle-boundary.md) (`type-I-formal-target-pair-descent-cycle-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [冻结 G 状态的规范有限群分离证书重建](../claims/type-I-g-separator-certificate-reconstruction.md) (`type-I-g-separator-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [一般 B 中心化谱的反足点除子刻画](../claims/type-I-general-b-antipodal-divisor-spectrum.md) (`type-I-general-b-antipodal-divisor-spectrum`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -382,6 +389,7 @@
 | [57,399,241 的真正四阶线性 G 型分离角色](../claims/type-I-linear-order-four-separator-boundary-57399241.md) (`type-I-linear-order-four-separator-boundary-57399241`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [四阶分离角色的二次影子跨源相容律](../claims/type-I-linear-order-four-shadow-compatibility-57399241.md) (`type-I-linear-order-four-shadow-compatibility-57399241`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性源私有 q 载体的唯一性判据与迁移边界](../claims/type-I-linear-private-carrier-isolation-criterion.md) (`type-I-linear-private-carrier-isolation-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [线性私有载体的跨状态支撑退出与共享两尾等价](../claims/type-I-linear-private-carrier-support-exit-marked-equivalence.md) (`type-I-linear-private-carrier-support-exit-marked-equivalence`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [线性一般 B 命中的私有与共享素因子边界](../claims/type-I-linear-private-shared-factor-boundary-500m.md) (`type-I-linear-private-shared-factor-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 二次障碍的互反拉回](../claims/type-I-linear-quadratic-obstruction-reciprocity-pullback.md) (`type-I-linear-quadratic-obstruction-reciprocity-pullback`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [线性一般 B 选择器的 s 等于一子族边界](../claims/type-I-linear-s1-source-boundary-profile-600m.md) (`type-I-linear-s1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -454,6 +462,7 @@
 | [五亿 p减一遗漏经四缺口扩展的上半区 B 等于一状态闭合](../claims/type-I-pminusone-miss-upper-b1-gap-extension-500m.md) (`type-I-pminusone-miss-upper-b1-gap-extension-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿p减一遗漏经上半区源重选的B不大于三闭合](../claims/type-I-pminusone-miss-upper-b3-reselection-profile-500m.md) (`type-I-pminusone-miss-upper-b3-reselection-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿 p减一桥遗漏的最短上半区源剖面](../claims/type-I-pminusone-miss-upper-half-profile-500m.md) (`type-I-pminusone-miss-upper-half-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [私有载体代理过载的较小 R 或 Type II 有限分流](../claims/type-I-private-carrier-proxy-overflow-escape-profile.md) (`type-I-private-carrier-proxy-overflow-escape-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [Type I 多私有因子商群指数盒的饱和判据](../claims/type-I-private-quotient-box-saturation.md) (`type-I-private-quotient-box-saturation`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-29 |
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
@@ -491,6 +500,7 @@
 | [五亿普通双尾遗漏的上半区 B 等于一终端闭合](../claims/type-I-tail-upper-b1-completion-profile-500m.md) (`type-I-tail-upper-b1-completion-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type I 目标除子与偶终端桥的双因子选择器](../claims/type-I-target-divisor-even-terminal-selector.md) (`type-I-target-divisor-even-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 目标除子的溢出因子与正规形精确对应](../claims/type-I-target-divisor-overflow.md) (`type-I-target-divisor-overflow`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [目标纤维单坐标缺陷的商群与关系格精确公式](../claims/type-I-target-fiber-coordinate-quotient-floor.md) (`type-I-target-fiber-coordinate-quotient-floor`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
 | [目标纤维溢出的精确 Fourier 生成函数](../claims/type-I-target-fiber-fourier-overflow-generating-function.md) (`type-I-target-fiber-fourier-overflow-generating-function`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
 | [目标指数纤维反足与近邻终端引理](../claims/type-I-target-fiber-neighbor-terminal.md) (`type-I-target-fiber-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
@@ -589,6 +599,7 @@
 | [H19 首个 r 状态零溢出失败的子群-指数分流](../claims/type-II-h19-zero-overflow-subgroup-profile.md) (`type-II-h19-zero-overflow-subgroup-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-26 |
 | [H23 模数扩张使一私有因子模型重新出现可采纳分支](../claims/type-II-h23-modulus-renewal-witness.md) (`type-II-h23-modulus-renewal-witness`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-25 |
 | [标准源、偶源与 Type II 射线的联合有限碰撞引理](../claims/type-II-hybrid-even-source-collision-lemma.md) (`type-II-hybrid-even-source-collision-lemma`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [Type II 的 K 等于二切片与相邻 Type I 图表桥](../claims/type-II-k2-adjacent-type-I-cross-chart-bridge.md) (`type-II-k2-adjacent-type-I-cross-chart-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [规范 Type II 首次成功移位在一亿内不超过五十二](../claims/type-II-minimal-canonical-shift-spectrum.md) (`type-II-minimal-canonical-shift-spectrum`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-25 |
 | [H19 单新因子证书的最小碰撞支持](../claims/type-II-minimal-collision-support.md) (`type-II-minimal-collision-support`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [模三强制因子剥离后出现可采纳的十四移位逃逸分支](../claims/type-II-mod-three-recursive-escape-boundary.md) (`type-II-mod-three-recursive-escape-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-24 |
