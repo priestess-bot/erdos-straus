@@ -923,6 +923,44 @@ z\equiv-\sigma\pmod\mu,
 > 恒等式。详见
 > [来源路径的底层投影、双节点相位差与双容量接口](../claims/type-I-source-word-bottom-projection-dual-capacity.md)。
 
+> **2026-08-01 联合容量更新。** 对任一来源交叉乘积 \(L\)，令
+>
+> \[
+> e_K=\frac{L}{(L,K)},
+> \qquad
+> e_x=\frac{L}{(L,x_R)},
+> \qquad
+> g=(K,x_R).
+> \]
+>
+> 现已证明
+>
+> \[
+> (e_K,e_x)=\frac{L}{(L,\operatorname{lcm}(K,x_R))},
+> \qquad
+> \operatorname{lcm}(e_K,e_x)=\frac{L}{(L,g)}.
+> \]
+>
+> 因而双容量 miss 精确二分为“同一 \(q\) 同时过载”与“两个互素缺陷分别由
+> \(x_R/g,K/g\) 的独占容量承担”。split 支还满足
+>
+> \[
+> R e_K a-e_x b=\frac{R^2-1}{4g},
+> \qquad
+> a=\frac{x_R}{ge_K},
+> \quad
+> b=\frac{K}{ge_x}.
+> \]
+>
+> 这条交换恒等式本身不是终端：\(p=122014489,R=471\) 给出来源锚定、内部终端为空的
+> 单边 split，尽管同一路径另一交叉表示仍有共同过载，且完整 Reach 在 external gap
+> \(35\) 有 Type I。两个共同过载表示也不必共享同一 \(q\)。另一方面，70 条现有
+> formal-descendant residual 的探索性重建中，140 个交叉乘积全部仍有共同过载，且
+> external slab 素数是唯一逐记录稳定的载体字段。由此下一步不再笼统寻找“某个缺陷
+> 素数”，而应把 slab/suffix 载体组成跨状态可比较的向量容量；split 支则研究有界深度
+> external 终端或真正 E4。详见
+> [来源交叉表示的联合容量共同过载—分裂交换二分](../claims/type-I-source-word-joint-capacity-common-split-dichotomy.md)。
+
 更长远的目标是证明一个选择定理：
 
 \[

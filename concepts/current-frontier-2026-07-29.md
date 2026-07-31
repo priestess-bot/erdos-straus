@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。来源路径字现可规范产生两个相位 -1 交叉表示及其 K/x_R 双容量缺陷；双节点底层差则只有相位 +1，且已有完整终端反例。自然保留pK与好尾的E4在非汇点上是空纤维；D-only 现已二分为与原中心命中等价的 source-supported 分支，以及满足 H|4lambda^2 的非自然三目标平方除子谱，且同模路径字桥强制 mu>2sqrt(p)-1。真正余项已收缩为：从大尺度路径字、高层仿射量或跨模数恒等式制造共同容量载体或三目标命中，否则构造改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
+summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。来源路径字现可规范产生两个相位 -1 交叉表示；其 K/x_R 双容量 miss 已精确二分为共同 q 进过载或互素的分裂容量交换，并有 lcm/gcd 联合判据。双节点底层差仍只有相位 +1，且共同过载、分裂交换都不自动产生终端。自然保留pK与好尾的E4在非汇点上是空纤维；D-only 现已二分为与原中心命中等价的 source-supported 分支，以及满足 H|4lambda^2 的非自然三目标平方除子谱，且同模路径字桥强制 mu>2sqrt(p)-1。真正余项已收缩为：把路径字的 slab/suffix 共同载体变成跨状态可比较的向量容量，或从分裂交换构造有界 Reach 终端/改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
 topics:
 - research-map
 - proof-program
@@ -1721,6 +1721,47 @@ D-only 还强制
 或建立从模 \(R\) 到 \(\mu=4\lambda-1\) 的新跨模数恒等式。见
 [来源路径的底层投影、双节点相位差与双容量接口](../claims/type-I-source-word-bottom-projection-dual-capacity.md)。
 
+双容量缺陷现已进一步精确化。令
+
+\[
+x=x_R=\frac{p+R}{4},
+\qquad
+g=(K,x),
+\qquad
+e_K(L)=\frac{L}{(L,K)},
+\qquad
+e_x(L)=\frac{L}{(L,x)}.
+\]
+
+任一交叉目标乘积 \(L\) 都满足
+
+\[
+\gcd(e_K,e_x)=\frac{L}{(L,\operatorname{lcm}(K,x))},
+\qquad
+\operatorname{lcm}(e_K,e_x)=\frac{L}{(L,g)}.
+\]
+
+因此双 miss 恰分成两支：若第一式大于 1，就有同一素数同时超过 \(K,x\) 容量；否则
+\(L\mid\operatorname{lcm}(K,x)\)，且 \(e_K,e_x\) 互素，分别由 \(x/g,K/g\) 的独占
+容量承担。后一支还有精确交换恒等式
+
+\[
+R e_K a-e_x b=\frac{R^2-1}{4g},
+\qquad
+a=\frac{x}{ge_K},
+\quad
+b=\frac{K}{ge_x}.
+\]
+
+对两个来源交叉乘积，“至少一边共同过载”由它们的 lcm 是否越出联合容量判断；“同一
+\(q\) 同时服务两边”则由它们的 gcd 判断，不能用乘积重复计价。冻结反例已经否定
+“split 必有内部终端”和“两个共同过载表示必共享同一 \(q\)”；但在 70 个完整 formal
+后继无 good single-slab 的探索性 residual 中，140 个交叉乘积全部仍有共同过载。这里
+唯一稳定的局部字段是 external slab 素数，而不是首缺陷素数。所以下一步应证明
+slab/suffix 载体在不同状态间形成可比较的嵌套同余链，或从 split 的交换恒等式构造有界
+Reach 外部终端。详见
+[来源交叉表示的联合容量共同过载—分裂交换二分](../claims/type-I-source-word-joint-capacity-common-split-dichotomy.md)。
+
 较小方程路线也得到一个比显式偶源更一般的状态接口。对 \(2\le n<p\)，全部可能承载
 双尾保留提升的正替换坐标对，由 \(D\mid(np)^2\) 的两个模 \(4(p-n)\) 同余及严格界
 \(D<n^2\) 精确参数化；
@@ -1851,6 +1892,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{底层双节点相位差、来源交叉表示与 }K/x_R\text{ 双容量缺陷；小尺度 D-only 桥受阻}\\
 \downarrow\\
+\text{双容量共同过载—分裂交换二分、两表示 lcm/gcd 判据与 residual 载体剖面}\\
+\downarrow\\
 \text{D-only 支撑二分、非自然 }H\mid4\lambda^2\text{ 正规形与三目标平方除子谱}\\
 \downarrow\\
 \text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
@@ -1868,9 +1911,12 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 桥。新的完整 formal Reach 审计又排除了“源见证关系会使三个 large-slab 锚点自动
 终端”：三个分支各有 strong miss，且 70 个起始 slab 的完整 formal 后继图没有 good
 single-slab 候选。
-真正余项现已从有限状态转为全称量词：后续计算只应服务于把来源路径字与高层仿射量或
-多节点组合转成 E1--E4，或把 \(D\nmid n^2\) 的三目标 miss 转成改变根尾数据的递归非空
-证书。小 \(\mu\) 与 \(z=1\) 的核心 D-only 子族已经证明为空，不应继续枚举。
+交叉表示又把这些 residual 的容量缺陷分成共同过载与 split：有限 residual 当前全部落在
+前者，但共同载体可以在两个表示间分裂，且大部分位于 \(Kx_R\) 支撑之外。真正余项现已
+从有限状态转为全称量词：后续计算只应服务于把 slab/suffix 载体变成跨状态可比较的向量
+容量，把 split 交换式转成有界 Reach 终端，或把 \(D\nmid n^2\) 的三目标 miss 转成改变
+根尾数据的递归非空证书。小 \(\mu\) 与 \(z=1\) 的核心 D-only 子族已经证明为空，不应
+继续枚举。
 不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。

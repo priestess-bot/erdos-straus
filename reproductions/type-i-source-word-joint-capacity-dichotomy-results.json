@@ -1,0 +1,616 @@
+{
+  "schema_version": "type-i-source-word-joint-capacity-dichotomy/v1",
+  "scope_note": "Focused exact verification of the algebraic capacity dichotomy and seven boundary paths. It does not reproduce the full 1412-slab census and does not upgrade a formal edge to an E4 transition.",
+  "inputs": {
+    "frozen_psi_one_sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
+    "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
+  },
+  "summary": {
+    "path_case_count": 7,
+    "cross_pair_count": 14,
+    "branch_histogram": {
+      "common_overload": 7,
+      "split_exchange": 7
+    },
+    "split_exchange_path_count": 4,
+    "disjoint_common_carrier_path_count": 2
+  },
+  "path_records": [
+    {
+      "name": "smallest_core_ambient_empty_suffix_split",
+      "prime": 73,
+      "R": 23,
+      "K": 420,
+      "x_R": 24,
+      "source": [
+        1,
+        45,
+        2
+      ],
+      "edge_count": 1,
+      "post_first_oriented": [
+        15,
+        8,
+        1
+      ],
+      "endpoint_oriented": [
+        15,
+        8,
+        1
+      ],
+      "theta": 1,
+      "u": 0,
+      "v": 0,
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 15,
+          "Q": 8,
+          "layer": 1,
+          "product": 120,
+          "capacity": {
+            "product": 120,
+            "product_factorization": {
+              "2": 3,
+              "3": 1,
+              "5": 1
+            },
+            "K_defect": 2,
+            "x_R_defect": 5,
+            "common_overload_factor": 1,
+            "defect_union": 10,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 11,
+              "a": 1,
+              "b": 7,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        },
+        {
+          "common": 1,
+          "P": 8,
+          "Q": 15,
+          "layer": 1,
+          "product": 120,
+          "capacity": {
+            "product": 120,
+            "product_factorization": {
+              "2": 3,
+              "3": 1,
+              "5": 1
+            },
+            "K_defect": 2,
+            "x_R_defect": 5,
+            "common_overload_factor": 1,
+            "defect_union": 10,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 11,
+              "a": 1,
+              "b": 7,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        }
+      ],
+      "common_carrier_intersection": {},
+      "boundary": "ambient_formal_state_not_F",
+      "frozen_boundary": null
+    },
+    {
+      "name": "nonempty_both_split",
+      "prime": 1297,
+      "R": 47,
+      "K": 15240,
+      "x_R": 336,
+      "source": [
+        12,
+        35,
+        1
+      ],
+      "edge_count": 1,
+      "post_first_oriented": [
+        12,
+        35,
+        1
+      ],
+      "endpoint_oriented": [
+        42,
+        5,
+        1
+      ],
+      "theta": 7,
+      "u": 6,
+      "v": 0,
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 12,
+          "Q": 35,
+          "layer": 1,
+          "product": 420,
+          "capacity": {
+            "product": 420,
+            "product_factorization": {
+              "2": 2,
+              "3": 1,
+              "5": 1,
+              "7": 1
+            },
+            "K_defect": 7,
+            "x_R_defect": 5,
+            "common_overload_factor": 1,
+            "defect_union": 35,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 23,
+              "a": 2,
+              "b": 127,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        },
+        {
+          "common": 7,
+          "P": 5,
+          "Q": 42,
+          "layer": 1,
+          "product": 210,
+          "capacity": {
+            "product": 210,
+            "product_factorization": {
+              "2": 1,
+              "3": 1,
+              "5": 1,
+              "7": 1
+            },
+            "K_defect": 7,
+            "x_R_defect": 5,
+            "common_overload_factor": 1,
+            "defect_union": 35,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 23,
+              "a": 2,
+              "b": 127,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        }
+      ],
+      "common_carrier_intersection": {},
+      "boundary": "formal_path_not_source_anchored",
+      "frozen_boundary": null
+    },
+    {
+      "name": "frozen_F_empty_suffix_split_with_internal_terminal",
+      "prime": 68822329,
+      "R": 14231,
+      "K": 244852641000,
+      "x_R": 17209140,
+      "source": [
+        207,
+        3870625,
+        272
+      ],
+      "edge_count": 1,
+      "post_first_oriented": [
+        14075,
+        156,
+        1
+      ],
+      "endpoint_oriented": [
+        14075,
+        156,
+        1
+      ],
+      "theta": 1,
+      "u": 0,
+      "v": 0,
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 14075,
+          "Q": 156,
+          "layer": 1,
+          "product": 2195700,
+          "capacity": {
+            "product": 2195700,
+            "product_factorization": {
+              "2": 2,
+              "3": 1,
+              "5": 2,
+              "13": 1,
+              "563": 1
+            },
+            "K_defect": 13,
+            "x_R_defect": 2815,
+            "common_overload_factor": 1,
+            "defect_union": 36595,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 843839,
+              "a": 22063,
+              "b": 1449690,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        },
+        {
+          "common": 1,
+          "P": 156,
+          "Q": 14075,
+          "layer": 1,
+          "product": 2195700,
+          "capacity": {
+            "product": 2195700,
+            "product_factorization": {
+              "2": 2,
+              "3": 1,
+              "5": 2,
+              "13": 1,
+              "563": 1
+            },
+            "K_defect": 13,
+            "x_R_defect": 2815,
+            "common_overload_factor": 1,
+            "defect_union": 36595,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 843839,
+              "a": 22063,
+              "b": 1449690,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        }
+      ],
+      "common_carrier_intersection": {},
+      "boundary": "frozen_F_but_internal_gap_191_is_Type_I",
+      "frozen_boundary": {
+        "internal_hit": true,
+        "gap": 191,
+        "type": "Type_I"
+      }
+    },
+    {
+      "name": "source_anchored_internal_free_mixed_branch",
+      "prime": 122014489,
+      "R": 471,
+      "K": 14367206080,
+      "x_R": 30503740,
+      "source": [
+        16,
+        80525,
+        171
+      ],
+      "edge_count": 2,
+      "post_first_oriented": [
+        3221,
+        76,
+        7
+      ],
+      "endpoint_oriented": [
+        467,
+        4,
+        1
+      ],
+      "theta": 19,
+      "u": 12,
+      "v": 0,
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 3221,
+          "Q": 76,
+          "layer": 7,
+          "product": 244796,
+          "capacity": {
+            "product": 244796,
+            "product_factorization": {
+              "2": 2,
+              "19": 1,
+              "3221": 1
+            },
+            "K_defect": 19,
+            "x_R_defect": 3221,
+            "common_overload_factor": 1,
+            "defect_union": 61199,
+            "branch": "split_exchange",
+            "exchange": {
+              "reduced_delta": 2773,
+              "a": 80273,
+              "b": 223024,
+              "identity": "R*E_K*a-E_x*b=delta"
+            }
+          }
+        },
+        {
+          "common": 19,
+          "P": 4,
+          "Q": 467,
+          "layer": 1,
+          "product": 1868,
+          "capacity": {
+            "product": 1868,
+            "product_factorization": {
+              "2": 2,
+              "467": 1
+            },
+            "K_defect": 467,
+            "x_R_defect": 467,
+            "common_overload_factor": 467,
+            "defect_union": 467,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        }
+      ],
+      "common_carrier_intersection": {},
+      "boundary": "internal_free_but_external_gap_35_is_Type_I",
+      "frozen_boundary": {
+        "internal_hit": false,
+        "reachable_external_gap": 35,
+        "type": "Type_I"
+      }
+    },
+    {
+      "name": "minimum_formal_descendant_residual_common_overload",
+      "prime": 5596369,
+      "R": 35,
+      "K": 48968229,
+      "x_R": 1399101,
+      "source": [
+        107,
+        18723,
+        538
+      ],
+      "edge_count": 4,
+      "post_first_oriented": [
+        237,
+        8,
+        7
+      ],
+      "endpoint_oriented": [
+        32,
+        3,
+        1
+      ],
+      "theta": 1496,
+      "u": 1361,
+      "v": 128,
+      "cross_pairs": [
+        {
+          "common": 3,
+          "P": 79,
+          "Q": 1496,
+          "layer": 45,
+          "product": 118184,
+          "capacity": {
+            "product": 118184,
+            "product_factorization": {
+              "2": 3,
+              "11": 1,
+              "17": 1,
+              "79": 1
+            },
+            "K_defect": 1496,
+            "x_R_defect": 10744,
+            "common_overload_factor": 136,
+            "defect_union": 118184,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        },
+        {
+          "common": 8,
+          "P": 1,
+          "Q": 5984,
+          "layer": 171,
+          "product": 5984,
+          "capacity": {
+            "product": 5984,
+            "product_factorization": {
+              "2": 5,
+              "11": 1,
+              "17": 1
+            },
+            "K_defect": 5984,
+            "x_R_defect": 544,
+            "common_overload_factor": 544,
+            "defect_union": 5984,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        }
+      ],
+      "common_carrier_intersection": {
+        "2": 3,
+        "17": 1
+      },
+      "boundary": "formal_descendant_residual_analysis_evidence",
+      "frozen_boundary": null
+    },
+    {
+      "name": "alpha_three_cycle_entry_common_overload",
+      "prime": 212973049,
+      "R": 215,
+      "K": 11447301384,
+      "x_R": 53243316,
+      "source": [
+        1585081,
+        2273094,
+        17945
+      ],
+      "edge_count": 2,
+      "post_first_oriented": [
+        1259,
+        1966,
+        15
+      ],
+      "endpoint_oriented": [
+        213,
+        2,
+        1
+      ],
+      "theta": 983,
+      "u": 968,
+      "v": 0,
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 1259,
+          "Q": 1966,
+          "layer": 15,
+          "product": 2475194,
+          "capacity": {
+            "product": 2475194,
+            "product_factorization": {
+              "2": 1,
+              "983": 1,
+              "1259": 1
+            },
+            "K_defect": 983,
+            "x_R_defect": 1237597,
+            "common_overload_factor": 983,
+            "defect_union": 1237597,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        },
+        {
+          "common": 983,
+          "P": 2,
+          "Q": 213,
+          "layer": 1,
+          "product": 426,
+          "capacity": {
+            "product": 426,
+            "product_factorization": {
+              "2": 1,
+              "3": 1,
+              "71": 1
+            },
+            "K_defect": 71,
+            "x_R_defect": 71,
+            "common_overload_factor": 71,
+            "defect_union": 71,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        }
+      ],
+      "common_carrier_intersection": {},
+      "boundary": "formal_cycle_entry_analysis_evidence",
+      "frozen_boundary": null
+    },
+    {
+      "name": "two_cross_products_have_disjoint_common_carriers",
+      "prime": 37793809,
+      "R": 12423,
+      "K": 117378122302,
+      "x_R": 9451558,
+      "source": [
+        3493,
+        149532158,
+        12037
+      ],
+      "edge_count": 2,
+      "post_first_oriented": [
+        48143,
+        1549,
+        4
+      ],
+      "endpoint_oriented": [
+        12422,
+        1,
+        1
+      ],
+      "theta": 1549,
+      "u": 1545,
+      "v": 0,
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 48143,
+          "Q": 1549,
+          "layer": 4,
+          "product": 74573507,
+          "capacity": {
+            "product": 74573507,
+            "product_factorization": {
+              "31": 1,
+              "1549": 1,
+              "1553": 1
+            },
+            "K_defect": 1549,
+            "x_R_defect": 48019,
+            "common_overload_factor": 1549,
+            "defect_union": 48019,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        },
+        {
+          "common": 1549,
+          "P": 1,
+          "Q": 12422,
+          "layer": 1,
+          "product": 12422,
+          "capacity": {
+            "product": 12422,
+            "product_factorization": {
+              "2": 1,
+              "6211": 1
+            },
+            "K_defect": 6211,
+            "x_R_defect": 6211,
+            "common_overload_factor": 6211,
+            "defect_union": 6211,
+            "branch": "common_overload",
+            "exchange": null
+          }
+        }
+      ],
+      "common_carrier_intersection": {},
+      "boundary": "same_common_overload_prime_is_not_forced_across_pairs",
+      "frozen_boundary": {
+        "internal_hit": false,
+        "common_carrier_intersection": null
+      }
+    }
+  ],
+  "ambient_difference_counterexample": {
+    "prime": 97,
+    "R": 47,
+    "bottom_node": [
+      2,
+      45,
+      1
+    ],
+    "capacity": {
+      "product": 90,
+      "product_factorization": {
+        "2": 1,
+        "3": 2,
+        "5": 1
+      },
+      "K_defect": 3,
+      "x_R_defect": 5,
+      "common_overload_factor": 1,
+      "defect_union": 15,
+      "branch": "split_exchange",
+      "exchange": {
+        "reduced_delta": 46,
+        "a": 1,
+        "b": 19,
+        "identity": "R*E_K*a-E_x*b=delta"
+      }
+    },
+    "coordinate_difference_gap": 43,
+    "complete_gap_hit": false,
+    "boundary": "A split-exchange product does not make its coordinate difference a Type I/II terminal."
+  }
+}
