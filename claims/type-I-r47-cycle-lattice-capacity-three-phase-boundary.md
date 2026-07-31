@@ -257,6 +257,20 @@ p\equiv1\pmod q.
 或跨状态 \(q\)-进容量。式 (12) 本身不是 Erdős--Straus 猜想的反例，而是统一选择器必须
 显式处理的无限三相压力族。
 
+这里的六个 `MISS_CAPACITY` 后来已得到周期外的解析出口，而不是继续扩大周期格盒：
+[R=47 非空周期支撑的短 Type I/II 选择器](type-I-r47-cycle-nonempty-support-short-selector.md)
+证明，只要 \(T\ne\varnothing\)，就可由 \(31,5,13,43\) 中的首个可用素数触发一张
+显式 Type I 或 Type II 证书，并统一满足
+
+\[
+m\le\frac{p+32}{15}<p-2.
+\]
+
+因此本相图的十五个非空掩码现已全部闭合；真正保留的局部余核只有
+\(T=\varnothing\) 的 `MISS_EXTERNAL`。这项后续闭合不改变 (12) 的周期格分类：它给出的
+是周期外证书，不能把 `MISS_CAPACITY` 重命名为周期格 `HIT`，也不能把周期格三相混同于
+使用 \(K\) 全部素因子的环境 F/G/hit 三分。
+
 复现程序与结果为
 `reproductions/type_i_cycle_lattice_capacity_certificate.py` 和
 `reproductions/type-i-cycle-lattice-capacity-certificate-results.json`。结果保存四个显式实例的

@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 358 |
+| 数学状态 | `computationally_reproduced` | 357 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 283 |
+| 数学状态 | `established` | 286 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 123 |
-| 证明来源 | `mixed` | 15 |
-| 证明来源 | `repository_derivation` | 114 |
+| 证明来源 | `computational_reproduction` | 122 |
+| 证明来源 | `mixed` | 16 |
+| 证明来源 | `repository_derivation` | 116 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 234 |
+| 审阅状态 | `internal_review` | 236 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -356,7 +356,7 @@
 | [线性块不平衡的双向广义二进终端](../claims/type-I-linear-block-imbalance-bidirectional-dyadic.md) (`type-I-linear-block-imbalance-bidirectional-dyadic`) | `computationally_reproduced` | `mixed` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [双向块不平衡终端的奇数距离偶源提升](../claims/type-I-linear-block-imbalance-bidirectional-lift.md) (`type-I-linear-block-imbalance-bidirectional-lift`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [线性块不平衡关系与广义二进终端三分](../claims/type-I-linear-block-imbalance-dyadic-trichotomy.md) (`type-I-linear-block-imbalance-dyadic-trichotomy`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
-| [双向未决二进状态的阶—预算缺口](../claims/type-I-linear-block-imbalance-order-budget-gap.md) (`type-I-linear-block-imbalance-order-budget-gap`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [双向广义二进终端的阶—预算二分](../claims/type-I-linear-block-imbalance-order-budget-gap.md) (`type-I-linear-block-imbalance-order-budget-gap`) | `established` | `mixed` | `internal_review` | `bradford2024` | 2026-07-31 |
 | [线性源双因子块的坐标标签碰撞分解](../claims/type-I-linear-block-label-collision.md) (`type-I-linear-block-label-collision`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [双向未决线性状态的较小块平方终端边界](../claims/type-I-linear-block-square-terminal-boundary.md) (`type-I-linear-block-square-terminal-boundary`) | `established` | `mixed` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [线性 Type I 源的角色总积信息边界](../claims/type-I-linear-character-product-information-boundary.md) (`type-I-linear-character-product-information-boundary`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -472,7 +472,9 @@
 | [私有载体代理过载的较小 R 或 Type II 有限分流](../claims/type-I-private-carrier-proxy-overflow-escape-profile.md) (`type-I-private-carrier-proxy-overflow-escape-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [Type I 多私有因子商群指数盒的饱和判据](../claims/type-I-private-quotient-box-saturation.md) (`type-I-private-quotient-box-saturation`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-29 |
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [私有 u=3 载体族的二进终端与 Type II 支撑退出](../claims/type-I-private-u3-carrier-dyadic-terminal-q-free-type-II.md) (`type-I-private-u3-carrier-dyadic-terminal-q-free-type-II`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [R=47 五周期的表示格容量三相与无限核心射线](../claims/type-I-r47-cycle-lattice-capacity-three-phase-boundary.md) (`type-I-r47-cycle-lattice-capacity-three-phase-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
+| [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自七 p 加一五模七因子的 R 等于七 B 等于一上半区桥](../claims/type-I-seven-p-plus-one-r7-b1-upper-bridge.md) (`type-I-seven-p-plus-one-r7-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |

@@ -1,0 +1,369 @@
+{
+  "arithmetic": "For every core prime with at least one of 5,13,31,43 in K=(47p+1)/4, choose a fixed Type I tail or a fixed-parameter Type II affine ray and certify gap <= (p+32)/15.",
+  "common_gap_bound": "m <= (p+32)/15 < p-2",
+  "mask_selector": {
+    "counts": {
+      "EMPTY_RESIDUAL": 1,
+      "TYPE_I": 8,
+      "TYPE_II": 7
+    },
+    "rows": [
+      {
+        "mask": 0,
+        "optional_support": [],
+        "selector_branch": "EMPTY_RESIDUAL",
+        "trigger_prime": null
+      },
+      {
+        "mask": 1,
+        "optional_support": [
+          5
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 5
+      },
+      {
+        "mask": 2,
+        "optional_support": [
+          13
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 13
+      },
+      {
+        "mask": 3,
+        "optional_support": [
+          5,
+          13
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 5
+      },
+      {
+        "mask": 4,
+        "optional_support": [
+          31
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 5,
+        "optional_support": [
+          5,
+          31
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 6,
+        "optional_support": [
+          13,
+          31
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 7,
+        "optional_support": [
+          5,
+          13,
+          31
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 8,
+        "optional_support": [
+          43
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 43
+      },
+      {
+        "mask": 9,
+        "optional_support": [
+          5,
+          43
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 5
+      },
+      {
+        "mask": 10,
+        "optional_support": [
+          13,
+          43
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 13
+      },
+      {
+        "mask": 11,
+        "optional_support": [
+          5,
+          13,
+          43
+        ],
+        "selector_branch": "TYPE_II",
+        "trigger_prime": 5
+      },
+      {
+        "mask": 12,
+        "optional_support": [
+          31,
+          43
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 13,
+        "optional_support": [
+          5,
+          31,
+          43
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 14,
+        "optional_support": [
+          13,
+          31,
+          43
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      },
+      {
+        "mask": 15,
+        "optional_support": [
+          5,
+          13,
+          31,
+          43
+        ],
+        "selector_branch": "TYPE_I",
+        "trigger_prime": 31
+      }
+    ]
+  },
+  "priority": [
+    31,
+    5,
+    13,
+    43
+  ],
+  "schema_version": "r47-nonempty-support-short-selector/v1",
+  "scope_note": "This closes the 15 nonempty R=47 support masks. It does not cover the empty MISS_EXTERNAL mask or general moduli.",
+  "script_sha256": "069902f8fc55606282441d0b2cb1b0870690f002c60610f8dcd98f859ed857ec",
+  "symbolic_ray_cases": [
+    {
+      "certificate_type": "I",
+      "common_bound_minus_gap": "16*(13*n + 12)/5",
+      "formula": {
+        "A": "2",
+        "B": "1",
+        "C": "94*n + 82",
+        "H": "93",
+        "gap": "8*n + 7"
+      },
+      "progression": {
+        "modulus": 744,
+        "n_min_for_formula": 0,
+        "p": "649 + 744*n",
+        "residue": 649
+      },
+      "sample": {
+        "K": 25110,
+        "certificate": {
+          "A": 2,
+          "B": 1,
+          "C": 270,
+          "H": 93,
+          "denominators": [
+            540,
+            50220,
+            53660070
+          ],
+          "gap": 23,
+          "type": "I"
+        },
+        "p": 2137,
+        "short_bound": "(p+32)/15 = 723/5",
+        "trigger_prime": 31
+      },
+      "support_prime": 31,
+      "symbolic_identities_verified": true
+    },
+    {
+      "certificate_type": "II",
+      "common_bound_minus_gap": "8/5",
+      "formula": {
+        "A": "1",
+        "B": "16*n + 13",
+        "C": "2",
+        "gap": "8*n + 7",
+        "kappa": "2",
+        "ray_factor": "15"
+      },
+      "progression": {
+        "modulus": 120,
+        "n_min_for_formula": 0,
+        "p": "97 + 120*n",
+        "residue": 97
+      },
+      "sample": {
+        "K": 1140,
+        "certificate": {
+          "A": 1,
+          "B": 13,
+          "C": 2,
+          "denominators": [
+            26,
+            388,
+            5044
+          ],
+          "divisor": 2,
+          "gap": 7,
+          "kappa": 2,
+          "ray_factor": 15,
+          "type": "II",
+          "x": 26
+        },
+        "p": 97,
+        "short_bound": "(p+32)/15 = 43/5",
+        "trigger_prime": 5
+      },
+      "support_prime": 5,
+      "symbolic_identities_verified": true
+    },
+    {
+      "certificate_type": "II",
+      "common_bound_minus_gap": "64*n/5",
+      "formula": {
+        "A": "5",
+        "B": "8*n + 2",
+        "C": "2",
+        "gap": "8*n + 7",
+        "kappa": "1",
+        "ray_factor": "39"
+      },
+      "progression": {
+        "modulus": 312,
+        "n_min_for_formula": 1,
+        "p": "73 + 312*n",
+        "residue": 73
+      },
+      "sample": {
+        "K": 11856,
+        "certificate": {
+          "A": 5,
+          "B": 26,
+          "C": 2,
+          "denominators": [
+            260,
+            10090,
+            52468
+          ],
+          "divisor": 50,
+          "gap": 31,
+          "kappa": 1,
+          "ray_factor": 39,
+          "type": "II",
+          "x": 260
+        },
+        "p": 1009,
+        "short_bound": "(p+32)/15 = 347/5",
+        "trigger_prime": 13
+      },
+      "support_prime": 13,
+      "symbolic_identities_verified": true
+    },
+    {
+      "certificate_type": "II",
+      "common_bound_minus_gap": "32*(7*n + 2)/5",
+      "formula": {
+        "A": "11",
+        "B": "24*n + 12",
+        "C": "1",
+        "gap": "24*n + 23",
+        "kappa": "1",
+        "ray_factor": "43"
+      },
+      "progression": {
+        "modulus": 1032,
+        "n_min_for_formula": 0,
+        "p": "505 + 1032*n",
+        "residue": 505
+      },
+      "sample": {
+        "K": 102942,
+        "certificate": {
+          "A": 11,
+          "B": 204,
+          "C": 1,
+          "denominators": [
+            2244,
+            96371,
+            1787244
+          ],
+          "divisor": 121,
+          "gap": 215,
+          "kappa": 1,
+          "ray_factor": 43,
+          "type": "II",
+          "x": 2244
+        },
+        "p": 8761,
+        "short_bound": "(p+32)/15 = 2931/5",
+        "trigger_prime": 43
+      },
+      "support_prime": 43,
+      "symbolic_identities_verified": true
+    },
+    {
+      "certificate_type": "II-special",
+      "common_bound_minus_gap": "0",
+      "formula": {
+        "A": 2,
+        "B": 5,
+        "C": 2,
+        "kappa": 1
+      },
+      "progression": {
+        "n": 0,
+        "p": "73"
+      },
+      "sample": {
+        "K": 858,
+        "certificate": {
+          "A": 2,
+          "B": 5,
+          "C": 2,
+          "denominators": [
+            20,
+            292,
+            730
+          ],
+          "divisor": 8,
+          "gap": 7,
+          "kappa": 1,
+          "ray_factor": 15,
+          "type": "II",
+          "x": 20
+        },
+        "p": 73,
+        "short_bound": "(p+32)/15 = 7",
+        "trigger_prime": 13
+      },
+      "support_prime": 13,
+      "symbolic_identities_verified": true
+    }
+  ]
+}
