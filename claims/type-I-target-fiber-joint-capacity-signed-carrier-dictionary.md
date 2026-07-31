@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-target-fiber-joint-capacity-signed-carrier-dictionary
 title: 目标纤维溢出与联合容量的带符号载体字典
-statement: 在合法核心图表 4K=pR+1、x_R=(p+R)/4 中，设 P,Q 互素且 P/Q 模 R 为 -1，令 z_l=v_l(P)-v_l(Q)、L=PQ，并以 K 和 x_R 的赋值向量 nu、sigma 及联合预算 mu=max(nu,sigma) 计量。则 e_K(L)、e_x(L) 与共同过载 C(L) 分别精确等于 z 对 nu、sigma、mu 的盒外向量的整数编码；strict split 恰等价于 z 位于联合盒 B_mu 但同时越出 B_nu、B_sigma，共同过载则恰等价于 z 越出 B_mu。给定表示见证 z 后，溢出的正负部分还指出实际承载该 q 进需求的是 P 还是 Q；无符号 Pareto 向量本身不保留该方向。若两个任意目标表示在 K 外坐标完全相同、在 K 内逐坐标相距不超过 nu，则它们仍直接产生偶终端；联合盒内目标表示数超过显式分箱数时必有这种近邻对。
+statement: 在合法核心图表 4K=pR+1、x_R=(p+R)/4 中，设 P,Q 互素且 P/Q 模 R 为 -1，令 z_l=v_l(P)-v_l(Q)、L=PQ，并以 K 和 x_R 的赋值向量 nu、sigma 及联合预算 mu=max(nu,sigma) 计量。则 e_K(L)、e_x(L) 与共同过载 C(L) 分别精确等于 z 对 nu、sigma、mu 的盒外向量的整数编码；strict split 恰等价于 z 位于联合盒 B_mu 但同时越出 B_nu、B_sigma，共同过载则恰等价于 z 越出 B_mu。给定表示见证 z 后，溢出的正负部分还指出实际承载该 q 进需求的是 P 还是 Q；无符号 Pareto 向量本身不保留该方向。若两个任意目标表示在 K 外坐标完全相同、在 K 内逐坐标相距不超过 nu，则它们仍直接产生偶终端；联合盒内目标表示数超过显式分箱数时必有这种近邻对。对已经非空的完整目标纤维扩张生成元支撑时，旧坐标的 forced height 只能下降，新坐标的 forced height 恒为零；因此 sink-SCC 新标签不能自动制造单素数强制收费，必须保留多坐标 Pareto 价格或受限路径语言。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -410,24 +410,200 @@ N_\ell=\left\lceil
 取 \(\mu=\nu\) 时，每个正预算坐标贡献两个分箱，(27) 退化为原来的
 \(2^{\omega(K)}\) 阈值。新式允许表示落在 \(K\) 盒外，只要它们仍受联合容量盒控制。
 
-## 7. 边界与下一步
+## 7. 支撑扩张不能制造单坐标强制高度
 
-本字典完成了三项此前分离的局部工作：
+设有限交换群 \(H\) 中有生成元支撑 \(I\)，目标
+
+\[
+y\in\langle g_i:i\in I\rangle
+\tag{28}
+\]
+
+已经可表示。给每个坐标预算 \(b_i\ge0\)，定义完整目标纤维和盒外向量
+
+\[
+\mathcal F_I(y)
+=\left\{z\in\mathbb Z^I:
+\prod_{i\in I}g_i^{z_i}=y\right\},
+\qquad
+e_b(z)_i=(|z_i|-b_i)_+.
+\tag{29}
+\]
+
+令 \(\mathcal D_I\) 为全部 \(e_b(z)\) 的 Pareto 极小集。单坐标强制高度为
+
+\[
+\boxed{
+h_{I,i}^{\rm forced}
+=\min_{e\in\mathcal D_I}e_i
+=\min_{z\in\mathcal F_I(y)}(|z_i|-b_i)_+.
+}
+\tag{30}
+\]
+
+最后一个等号成立，因为对任意纤维点，都可在其下方选择一个 Pareto 极小向量；反向
+不等式显然。
+
+现在扩张到 \(J\supset I\)，允许任意新生成元，旧预算放宽为
+\(b_i'\ge b_i\)，新预算只要求 \(b_j'\ge0\)。把旧表示嵌入为
+
+\[
+\iota:\mathcal F_I(y)\longrightarrow\mathcal F_J(y),
+\qquad
+z\longmapsto(z,0).
+\tag{31}
+\]
+
+于是旧坐标 overflow 不增，而每个新坐标恰为零。得到一般单调性
+
+\[
+\boxed{
+h_{J,i}^{\rm forced}\le h_{I,i}^{\rm forced}
+\quad(i\in I),
+\qquad
+h_{J,j}^{\rm forced}=0
+\quad(j\in J\setminus I).
+}
+\tag{32}
+\]
+
+这条结论的前提 \(\mathcal F_I(y)\ne\varnothing\) 不可删除。G 状态若只有加入新支撑后
+才首次表示目标，(31) 不存在；若扩张后仍不可达，则应保留无穷支撑障碍，而不是赋
+forced height。
+
+### 7.1 p=2017 的完整纤维与路径静态严格不同
+
+对
+
+\[
+(p,R,K,x_R)=(2017,207,2^2\cdot5\cdot17\cdot307,2^2\cdot139),
+\tag{33}
+\]
+
+加入 sink 二循环标签 \(41,101\)，取支撑
+
+\[
+\mathcal P=\{2,5,17,307,139,41,101\}
+\tag{34}
+\]
+
+和联合预算
+
+\[
+\mu=(2,1,1,1,1,0,0).
+\tag{35}
+\]
+
+对每个坐标 \(q\in\mathcal P\)，都有一个模 \(207\) 的目标表示令 \(z_q=0\)：
+
+\[
+\begin{array}{c|c}
+\text{避开的坐标}&\text{模 }207\text{ 的 }-1\text{ 表示}\\ \hline
+2&5^{-1}307^2\cdot139\\
+5&2^{-2}17^{-1}\cdot139\\
+17,307,139,101&2^{-1}\cdot5\cdot41\\
+41&2^{-1}\cdot5\cdot101^{-1}.
+\end{array}
+\tag{36}
+\]
+
+逐项有 \(307\equiv100\)、\(101^{-1}\equiv41\)，并可直接核对四行都等于
+\(-1\pmod {207}\)。所以
+
+\[
+\boxed{h_q^{\rm forced}=0\qquad(q\in\mathcal P).}
+\tag{37}
+\]
+
+再加入瞬态标签 \(103\) 时，(32) 还给 \(h_{103}^{\rm forced}=0\)，旧坐标仍为零。
+这与来源路径语言中的 \(\texttt{MISS\_STATIC}(103)\) 不矛盾：路径字只量化完整目标
+纤维的一个受限子集
+
+\[
+\mathcal Z_{\rm path}\subsetneq\mathcal F_{\mathcal P}(-1),
+\tag{38}
+\]
+
+所以受限最小值可以严格大于完整纤维最小值。不能把 path-static \(103\) 直接当成完整
+纤维的选择不变单 \(q\) 需求。
+
+### 7.2 单坐标全零仍可有正的多坐标价格
+
+取
+
+\[
+(p,R,K)=(214729,43,151\cdot15287).
+\tag{39}
+\]
+
+两个生成元都同余 \(22\pmod {43}\)，其阶为 \(14\)，目标条件为
+
+\[
+z_1+z_2\equiv7\pmod {14},
+\qquad
+(b_1,b_2)=(1,1).
+\tag{40}
+\]
+
+完整无符号 Pareto 集恰为
+
+\[
+\boxed{
+\mathcal D
+=\{(k,5-k):0\le k\le5\}.
+}
+\tag{41}
+\]
+
+因此两个单坐标 forced height 都为零，但对任意 \(w_1,w_2>0\)，
+
+\[
+\min_{e\in\mathcal D}w\cdot e
+=5\min(w_1,w_2)>0.
+\tag{42}
+\]
+
+正确的跨状态容量对象因而是完整多坐标 Pareto 价格。进一步按高度层定义
+
+\[
+a_{q,k}(e)=\mathbf1_{e_q\ge k}
+\tag{43}
+\]
+
+后，可使用层依赖价格 \(\lambda_{q,k}\ge0\)；若存在已证明的实际载体容量
+\(C_{q,k}\)，有限 LP 分离给出充分矛盾证书
+
+\[
+\sum_s\min_{e\in\mathcal D_s}
+\sum_{q,k\le e_q}\lambda_{q,k}
+>
+\sum_{q,k}\lambda_{q,k}C_{q,k}.
+\tag{44}
+\]
+
+式 (44) 的难点不是有限优化，而是把每一层 overflow 注入固定颜色、有限区间且重复度
+受控的实际算术载体。没有这条映射时，LP 仍只是条件接口。
+
+## 8. 边界与下一步
+
+本字典完成了四项此前分离的局部工作：
 
 1. 固定支撑上的规范 Fourier/Pareto 溢出与 \(K/x_R\) 联合容量逐坐标相同；
 2. 每个带表示见证的正需求有实际整数侧 \(P\) 或 \(Q\) 的符号载体；
-3. 联合盒中足够丰富的目标纤维仍由近邻机制直接终端。
+3. 联合盒中足够丰富的目标纤维仍由近邻机制直接终端；
+4. 完整纤维的单坐标 forced height 在支撑扩张下只能下降，新坐标恒为零。
 
 它仍没有提供跨状态全称容量矛盾。为此还必须证明：规范载体落在共同有限区间，且不同
-状态的标签互异或重复度有统一上界。对一个素数 \(q\)，只有强制高度
+状态的标签互异或重复度有统一上界。对一个素数 \(q\)，只有在固定支撑上证明强制高度
 
 \[
 h_q^{\rm forced}
 =\min_{e\in\operatorname{Pareto}}e_q
 \]
 
-为正时，才得到选择不变的单 \(q\) 收费。若该最小值为零，就不能用任意选定路径上的
-正过载替代它；多坐标需求必须保留同一个全局价格向量或完整 Pareto 集。
+为正时，才得到选择不变的单 \(q\) 收费。式 (32)--(37) 进一步说明，单纯加入
+sink-SCC 标签不可能制造这种收费。若该最小值为零，就不能用任意选定路径上的正过载
+替代它；多坐标需求必须保留同一个全局价格向量、层化价格或完整 Pareto 集。
 
 对 large-slab 因子层还要注意
 

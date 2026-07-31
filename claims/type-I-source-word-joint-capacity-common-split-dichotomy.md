@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-source-word-joint-capacity-common-split-dichotomy
 title: 来源交叉表示的联合容量共同过载—分裂交换二分
-statement: 对核心图表 4K=pR+1 和 x_R=(p+R)/4，令 g=gcd(K,x_R)、kappa=K/g、xi=x_R/g。任一目标乘积 L 相对 K 与 x_R 的缺陷 e_K=L/gcd(L,K)、e_x=L/gcd(L,x_R) 满足 gcd(e_K,e_x)=L/gcd(L,lcm(K,x_R))、lcm(e_K,e_x)=L/gcd(L,g)。因此双容量 miss 精确二分为：存在同一素数同时超过两种容量；或 L 整除联合容量且两个缺陷互素，分别整除 xi、kappa，并满足一条精确容量交换恒等式。来源路径字产生的两个交叉目标乘积逐一适用该二分；至少一个乘积共同过载和两个乘积共享同一过载素数分别由 lcm、gcd 的整除失败精确刻画。分裂交换本身不推出 Type I/II、E4 或任何有界深度 formal 终端；已有 F、internal-free 且完整 post-first Reach 全 miss 的精确反例。
+statement: 对核心图表 4K=pR+1 和 x_R=(p+R)/4，令 g=gcd(K,x_R)、kappa=K/g、xi=x_R/g。任一目标乘积 L 相对 K 与 x_R 的缺陷 e_K=L/gcd(L,K)、e_x=L/gcd(L,x_R) 满足 gcd(e_K,e_x)=L/gcd(L,lcm(K,x_R))、lcm(e_K,e_x)=L/gcd(L,g)。因此双容量 miss 精确二分为：存在同一素数同时超过两种容量；或 L 整除联合容量且两个缺陷互素，分别整除 xi、kappa，并满足一条精确容量交换恒等式。来源路径字产生的两个交叉目标乘积逐一适用该二分；至少一个乘积共同过载和两个乘积共享同一过载素数分别由 lcm、gcd 的整除失败精确刻画。分裂交换恒等式本身没有构造标记状态、解提升或 E4，也不强制任何有界深度的同图表 external Reach 终端；p=2017,R=207 是后一个窄命题的精确反例，但它已有 ordinary gap 15 和前缀 q=103 absorption，不能作为 terminal-first 或 terminal-or-descent 反例。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -560,7 +560,7 @@ C(L_V)=6211,
 所以即使两个交叉表示都处于共同过载支，也不能假定存在同一个载体素数；(23) 是必须
 实际检查的额外条件。
 
-### 6.6 strict split 不强制任何 formal Reach 终端
+### 6.6 strict split 不强制同图表 external Reach 终端
 
 取核心素数
 
@@ -609,9 +609,10 @@ L_U=L_V=68\cdot139=9452.
 \tag{35}
 \]
 
-这个状态不是被 terminal-first 漏掉的简单例外：中心 \(K\) 盒为空，全部合法内部 gap
-只有 \(307,1535\)，两者的完整 Type I/II 平方除子谱都 miss。因此它是 F 且
-internal-free。
+中心 \(K\) 盒为空，全部 \(K\)-内部合法 gap 只有 \(307,1535\)，两者的完整
+Type I/II 平方除子谱都 miss。因此它在 \(R=207\) 的局部菜单中是 F 且
+internal-free。这个限定不能改写成 terminal-first：原素数已有 ordinary gap \(15\)
+的 Type I 和 Type II 证书。
 
 从终点出发的完整 formal Reach 恰为
 
@@ -628,8 +629,27 @@ internal-free。
 Type I/II miss。加入同一状态的第二个真实首后继 \((85,122,1)\) 后，状态级完整
 post-first Reach 只有 5 个节点、5 条边，候选集合仍不变且全部 miss。
 
+同一条路径在进入二循环前还经过 clean slab
+
+\[
+(1,206)=(1,103\cdot2),
+\qquad 2\mid K,
+\]
+
+并满足
+
+\[
+R_{103}=115<207.
+\tag{36a}
+\]
+
+所以现有 absorption 合同已经给出 E1--E5 verified rechart。循环节点的
+\(101\)-slab 还满足 \(R_{101}=135<207\)，且新图表立即中心 Type I 命中。
+这些事实不改变 external gap 集合的 miss，却说明本例不反驳 E4、absorption 或
+terminal-or-descent。
+
 特别地，交换余量 \(2678=2\cdot13\cdot103\) 的素因子 \(103\) 已在一步后作为
-\(103\mid R-1\) 被显式暴露，仍不产生终端。因此以下命题全部为假：
+\(103\mid R-1\) 被显式暴露，仍不产生同图表 external 终端。因此以下窄命题为假：
 
 \[
 \text{strict split}
@@ -639,6 +659,7 @@ post-first Reach 只有 5 个节点、5 条边，候选集合仍不变且全部 
 \]
 
 对任意固定 \(d\)，甚至把右侧换成“完整 formal Reach 中有 external 终端”仍为假。
+这里不能删除 external，也不能把右侧换成“直接终端或合法递降”。
 
 ### 6.7 一表示不变、另一表示仿射更新
 

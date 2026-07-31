@@ -2,7 +2,7 @@
 kind: claim
 claim_id: two-denominator-lift-d-only-marked-normal-form
 title: 双尾提升的 D-only 标记正规形与 p 载体刚性
-statement: 设 2<=n<p、r=p-n、N=np、C=4r。所有可能承载双尾保留提升的正替换坐标对，恰由满足 D|N^2、0<D<n^2、D=N (mod C)、N^2/D=N (mod C) 的因子 D 参数化；a=(N-D)/C、a'=(N^2/D-N)/C，且对所有 b,c 有 (a,b,c)∈Sol(n) 当且仅当 (a',b,c)∈Sol(p)。实际标记提升存在还等价于正因子同余 z|sigma^2、z=-sigma (mod mu)。当 p 为素数时必有 p|a'，所以替换坐标不是目标解的最小分母。D-only 数据只给出局部已验证的条件边；后继标记状态递归闭合后才承载证明，同时给出 z 则已显式闭合为终端。
+statement: 设 2<=n<p、r=p-n、N=np、C=4r。所有可能承载双尾保留提升的正替换坐标对，恰由满足 D|N^2、0<D<n^2、D=N (mod C)、N^2/D=N (mod C) 的因子 D 参数化；a=(N-D)/C、a'=(N^2/D-N)/C，且对所有 b,c 有 (a,b,c)∈Sol(n) 当且仅当 (a',b,c)∈Sol(p)。若 kappa∈{1,2,3,4} 且 n+kappa=0 (mod 4)，则每个合法 D 都满足 D<=n(n+kappa)-kappa p；特别当 kappa p>=n(n+kappa) 时整个 D 集为空。实际标记提升存在还等价于正因子同余 z|sigma^2、z=-sigma (mod mu)。当 p 为素数时必有 p|a'，所以替换坐标不是目标解的最小分母。D-only 数据只给出局部已验证的条件边；后继标记状态递归闭合后才承载证明，同时给出 z 则已显式闭合为终端。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -110,6 +110,51 @@ a'=\frac{Na}{D},
 D=np-4(p-n)a<n^2.
 \tag{7}
 \]
+
+这里还有一个对后续候选选择非常强的全域尺寸推论。令唯一的
+
+\[
+\kappa\in\{1,2,3,4\},
+\qquad
+n+\kappa\equiv0\pmod4.
+\tag{7a}
+\]
+
+因为 \(a=a_D\) 为整数且 \(a_D>n/4\)，有
+
+\[
+a_D\ge\frac{n+\kappa}{4}.
+\]
+
+代回 \(D=np-4(p-n)a_D\)，得到
+
+\[
+\boxed{
+D\le n(n+\kappa)-\kappa p.
+}
+\tag{7b}
+\]
+
+所以
+
+\[
+\boxed{
+\kappa p\ge n(n+\kappa)
+\Longrightarrow
+\mathcal D(p,n)=\varnothing.
+}
+\tag{7c}
+\]
+
+特别地，若 \(n\equiv3\pmod4\)，则 \(\kappa=1\)，从而
+
+\[
+p\ge n(n+1)
+\Longrightarrow
+\mathcal D(p,n)=\varnothing.
+\]
+
+这个结论排除的是全部 D-only 参数，不只是一种标准源坐标。
 
 式 (5)--(7) 立即推出 (2)，并由 (5)--(6) 恢复 (3)。
 

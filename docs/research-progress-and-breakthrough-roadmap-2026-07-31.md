@@ -993,9 +993,11 @@ z\equiv-\sigma\pmod\mu,
 > 单边 split，尽管同一路径另一交叉表示仍有共同过载，且完整 Reach 在 external gap
 > \(35\) 有 Type I。更强地，\((p,R)=(2017,207)\) 是 F 且 internal-free，来源交叉
 > 乘积严格 split，但其完整 post-first formal Reach 只有 5 个节点、5 条边，全部
-> external gap 候选 \(103,139\) 都完整 miss。因此“split 强制任意有界深度终端”，甚至
-> “split 的完整 formal Reach 必有终端”都为假。一般底层边还会保持一个交叉表示完全
-> 不变，只仿射更新另一个，所以 split 本身不是下降量。
+> external gap 候选 \(103,139\) 都完整 miss。因此“split 强制任意有界深度的同图表
+> external 终端”，甚至“split 的完整 formal Reach 必有 external 终端”都为假。
+> 这里不能删除 external：该素数已有 ordinary gap \(15\)，且路径前缀还有
+> \(R_{103}=115\) 的合法 absorption。一般底层边还会保持一个交叉表示完全不变，只
+> 仿射更新另一个，所以 split 本身不是下降量。
 >
 > 两个共同过载表示也不必共享同一 \(q\)。另一方面，70 条现有
 > formal-descendant residual 的探索性重建中，140 个交叉乘积全部仍有共同过载，且
@@ -1089,7 +1091,8 @@ z\equiv-\sigma\pmod\mu,
 > 所以“strong miss 必有最短来源字使 slab \(q\) 进入共同过载”即使在 linear-source
 > 下也为假。该例已有内部 gap \(15\) 和 Reach gap \(7\) 的 Type I，只是否定旧载体规则。
 > 另一个 \((p,R)=(2017,207)\) 的 internal-free 例在底部二循环上由静态素数 \(103\)
-> 分离四个容量通道，说明完整 Pareto/SCC 判定也可能严格输出 miss。
+> 分离四个容量通道，说明指定 cycle ray 可以严格输出 miss；它不说明整个状态没有
+> terminal 或 descent。
 >
 > 短词可继续生成直接终端，但语义必须分开：\((5596369,35)\) 的路径积 \(38\) 选择出
 > 中心命中的 \(R_{38}=23\)，却不是现有 E4；\((212973049,215)\) 到达
@@ -1099,6 +1102,90 @@ z\equiv-\sigma\pmod\mu,
 > D-only 状态，或完整 E1--E5 合法递降。SCC 凝聚序只是分析调度，不是猜想下降。详见
 > [目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md)和
 > [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
+
+> **2026-08-01 静态载体来源、完整纤维与 D-only 尺寸更新。** 对上述 \(p=2017\)
+> 的语义已作事实更正。它不只是“可能另有出口”：路径前缀中
+>
+> \[
+> (1,206)=(1,103\cdot2)
+> \]
+>
+> 是 clean single-external slab，且
+>
+> \[
+> R_{103}=115<207,\qquad K_{103}=103\cdot563,
+> \]
+>
+> 所以现有合同已给出 E1--E5 verified absorption。循环节点的 \(101\)-slab 还有
+> \(R_{101}=135\) 的中心 Type I gap \(3\)；原素数本身则同时有 gap \(15\) 的 Type I
+> 和 Type II 证书。因此该例只反驳 cycle-ray 容量修复和同图表 external 终端，不能
+> 再称 terminal-first 或 terminal-or-descent 反例。
+>
+> 这一更正可以提升为无样本来源三分。对任意 bottom 节点
+> \(X=q^e a,Y\)、外部 \(q\nmid K\)，有
+>
+> \[
+> \boxed{
+> aY\mid K
+> \Longrightarrow
+> \text{ABSORB}(q^e)\ \lor\
+> \text{LARGE}(q^e,a),\ a\in\{1,2,3\};
+> }
+> \]
+>
+> 若 \(aY\nmid K\)，则同一节点必有 \(r\ne q\) 满足
+> \(v_r(aY)>v_r(K)\)，从而产生竞争 raw 边。于是 path-carried
+> \(\texttt{MISS\_STATIC}(q)\) 可回溯为
+>
+> \[
+> \boxed{
+> \texttt{VERIFIED\_ABSORB}
+> \ \lor\
+> \texttt{LARGE\_SLAB}
+> \ \lor\
+> \texttt{COMPETING\_EXCESS}.
+> }
+> \]
+>
+> 三分不能再加强成“同一静态 \(q\) 必给出口”。精确边界
+>
+> \[
+> (p,R)=(107722177,207)
+> \]
+>
+> 保留同一个 \(103\)-static 二循环，但 \(R_{103}=375>207\)，gap \(103\)、两类
+> collision、节点/锚点菜单和新图表中心谱全部 miss，所以指定 \(103\) 真正落入
+> large-slab \(a=2\)。该状态仍不是全局 unresolved：循环的 \(q=41\) 给
+> \(R_{41}=35<207\) 并立即中心命中，\(q=101\) 的新图表也中心命中。详见
+> [底层外部静态载体的来源三分与吸收边界](../claims/type-I-bottom-external-static-carrier-support-fork.md)。
+>
+> 完整目标纤维还排除了另一条过强容量路线。若基础支撑已经能表示 \(-1\)，扩张到 SCC
+> 新标签并放宽预算时，旧坐标 forced height 只能下降，每个新坐标都可取指数 \(0\)，
+> 因而 forced height 恒为零。\(p=2017,R=207\) 的完整联合支撑逐坐标全为零，尽管受限
+> path language 有 \(\texttt{MISS\_STATIC}(103)\)。所以跨状态证明不能寻找“加入 SCC
+> 后自动出现的强制单 \(q\)”；应保留完整多坐标 Pareto 或层化价格，并先证明 overflow
+> 到实际有限载体容量的注入。
+>
+> D-only 方向也获得两个一般尺寸障碍。令
+> \(\kappa\in\{1,2,3,4\}\) 由 \(n+\kappa\equiv0\pmod4\) 确定，则每个合法参数满足
+>
+> \[
+> D\le n(n+\kappa)-\kappa p.
+> \]
+>
+> 因而 \(\kappa p\ge n(n+\kappa)\) 时整个参数集为空；特别地，
+> \(n\equiv3\pmod4,\ p\ge n(n+1)\) 时没有任何 D-only 后继。non-source-supported
+> 分支还强制
+>
+> \[
+> n>\sqrt p,\qquad
+> \lambda>\max\left(p-n,\frac{\sqrt p}{2}\right).
+> \]
+>
+> 这结构性关闭了把小 endpoint gap、短路径标签或小 rechart 模数直接当作 equation rank
+> 的方案。当前优先级因此进一步收紧为：先在所有路径前缀和 SCC 节点扫描 direct
+> terminal 与 clean-slab absorption；剩余只主攻 large-slab \(a=1,2,3\)、
+> multi-excess SCC 的 clean-slab 强制，以及多坐标层价格的真实算术容量映射。
 
 更长远的目标是证明一个选择定理：
 

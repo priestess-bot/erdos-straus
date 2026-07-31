@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
 title: 底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器
-statement: 底层 formal 边在祖先定向的缩放坐标上由两个三角整数矩阵作用，任意完整定向路径字唯一压成 M(Q,A,B)=((A+1,A),(B,B+1))，其中 A+B=Q-1，并满足 QX'=X+AR、QY'=Y+BR、SNF(M)=diag(1,Q)。固定路径字的根位于指标 Q 的格；同向闭环进一步满足 Q=1 mod R 和 M=I+((Q-1)/R)(X,Y)^T(1,1)。沿闭环重复时，每个来源交叉乘积的赋值向量恰为 |d-nv(Q)|，故命中 K 或 x_R 等价于一维整数区间交，miss 有静态素数或区间分离证书。对任意有限 ancestry-lifted Reach，固定首后继和定向终点后的全部路径四通道容量 Pareto 前沿有限，且每个极小签名及任一直接容量命中都有显式有限长度见证。线性 F strong miss (p,R)=(57073,23) 反驳“必有最短来源字使 slab-q 进入至少一个共同过载因子”；(2017,207) 的底部二循环给出静态 103 分离，而短路径在另外两个 residual 中确实恢复直接 Type I 终端。
+statement: 底层 formal 边在祖先定向的缩放坐标上由两个三角整数矩阵作用，任意完整定向路径字唯一压成 M(Q,A,B)=((A+1,A),(B,B+1))，其中 A+B=Q-1，并满足 QX'=X+AR、QY'=Y+BR、SNF(M)=diag(1,Q)。固定路径字的根位于指标 Q 的格；同向闭环进一步满足 Q=1 mod R 和 M=I+((Q-1)/R)(X,Y)^T(1,1)。沿闭环重复时，每个来源交叉乘积的赋值向量恰为 |d-nv(Q)|，故命中 K 或 x_R 等价于一维整数区间交，miss 有静态素数或区间分离证书。对任意有限 ancestry-lifted Reach，固定首后继和定向终点后的全部路径四通道容量 Pareto 前沿有限，且每个极小签名及任一直接容量命中都有显式有限长度见证。线性 F strong miss (p,R)=(57073,23) 反驳“必有最短来源字使 slab-q 进入至少一个共同过载因子”；(2017,207) 的底部二循环确有静态 103 分离，但其路径前缀已有 R_103=115 的合法 absorption，且 p 本身已有 gap 15 终端，所以它不是 terminal-first 或 terminal-or-descent 反例。路径字还给出端点差的闭式，但闭合词只恢复节点自身的 affine gap，不能由周期积自动产生新终端。
 claim_status: established
 proof_provenance: mixed
 review_status: internal_review
@@ -528,7 +528,7 @@ R_{13}=43>23.
 所以 (33) 只关闭按现有 strong-miss 定义写出的载体量词；它不否定同时加入完整
 terminal-first unresolved 前提的更窄命题，更不是 Erdős--Straus 反例。
 
-### 7.2 internal-free 的底部静态分离
+### 7.2 局部 internal-free 的底部静态分离
 
 取
 
@@ -576,7 +576,140 @@ M=
 \(103\nmid Kx_R\)。所以四个容量通道均有 MISS_STATIC(103)；无限重复 (41) 只改变
 \(41,101\) 的赋值，永远不能修复该容量盒。
 
-## 8. 短路径确实可以生成合法直接终端
+这个结论只描述进入二循环后的受限 path language。它不能被写成完整选择器反例：
+路径前缀中的中间节点
+
+\[
+(1,206)=(1,103\cdot2)
+\]
+
+是 clean single-external slab，并满足
+
+\[
+R_{103}=115<207,
+\qquad
+K_{103}=57989=103\cdot563.
+\tag{42a}
+\]
+
+所以 SCC 压缩前已经存在现有 E1--E5 合同下的 verified absorption。循环节点
+\((5,202)=(5,101\cdot2)\) 还给出 \(R_{101}=135<207\)，新图表中心除子 \(101\)
+直接产生 gap \(3\) 的 Type I 证书。更早的 terminal-first 又会发现原素数 gap \(15\)
+同时有 Type I 和 Type II 证书。因此 (39) 只反驳“沿指定 cycle ray 重复必修复四通道
+容量”，不反驳终端、absorption 或递降。
+
+## 8. 路径字对端点差的闭式与证书边界
+
+固定 canonical 节点
+
+\[
+N_r=\{r,R-r\},
+\qquad
+N_s=\{s,R-s\},
+\qquad
+1\le r,s<\frac R2.
+\tag{42b}
+\]
+
+设路径字 \(M(Q,A,B)\) 从定向 \((r,R-r)\) 出发，ancestry 终点第一坐标为
+
+\[
+t=\frac{r+AR}{Q}.
+\tag{42c}
+\]
+
+于是无序终点为 \(N_s\) 当且仅当 \(t=s\) 或 \(t=R-s\)。定义
+
+\[
+\begin{aligned}
+D_0&=A(R-r)-Br=Q(t-r),\\
+D_1&=(B+1)R-(Q+1)r=Q((R-r)-t),
+\end{aligned}
+\tag{42d}
+\]
+
+以及
+
+\[
+\begin{aligned}
+g_\parallel
+&=(r,R-s)(s,R-r),\\
+g_\times
+&=(r,s)(R-r,R-s).
+\end{aligned}
+\tag{42e}
+\]
+
+把两节点的 parallel/cross 乘积对约到互素后，其 \(R\)-倍差值为
+
+\[
+\begin{array}{c|cc}
+&h_\parallel&h_\times\\ \hline
+t=s&
+\dfrac{D_1}{Qg_\parallel}&
+\dfrac{|D_0|}{Qg_\times}\\[2mm]
+t=R-s&
+\dfrac{D_0}{Qg_\parallel}&
+\dfrac{|D_1|}{Qg_\times}.
+\end{array}
+\tag{42f}
+\]
+
+这把端点差变成路径字的精确有界候选；但它不是路径矩阵自身的新 primitive 关系。若约分
+后的端点差对为
+
+\[
+(u,v)=1,
+\qquad
+v-u=Rh,
+\tag{42g}
+\]
+
+则对合法奇数 \(h>1\)，这对 \((u,v)\) 本身严格不可能充当 gap \(h\) 的 Type II
+正规形：条件 \(h\mid u+v\) 会与 \(v\equiv u\pmod h\)、\((u,h)=1\) 一起推出
+\(h\mid2\)。它自身充当 Type I 正规形当且仅当
+
+\[
+\boxed{
+uv\mid\frac{p+h}{4},
+\qquad
+h\mid p+1.
+}
+\tag{42h}
+\]
+
+同一 gap 仍可由另一组平方除子命中，所以 (42h) 是 native-pair 判据，不是 gap 的完整
+miss 判据。
+
+若路径闭合回 \(N_r\)，则端点差退化为
+
+\[
+\boxed{
+h_\times=0,
+\qquad
+h_\parallel=R-2r.
+}
+\tag{42i}
+\]
+
+右侧完全不含 \(Q,A,B\)。因此闭环端点差只恢复节点自身已在仿射菜单中的 gap；周期积
+\(Q\) 的新增信息只存在于容量射线或载体锚定 rechart 中。
+
+两个冻结例的归因据此精确化：
+
+1. \(p=5596369,R=35\) 的两步词 \((2,19)\) 从 \(N_3\) 到 \(N_1\)，给
+   \((h_\parallel,h_\times)=(31,1)\)；gap \(31\) 的实际证书使用另一正规形，而
+   \(Q=38\) 选择 \(R_{38}=23\) 是独立 candidate rechart。
+2. \(p=212973049,R=215\) 的 gap \(35\) 来自单边
+   \(N_2\xrightarrow{71}N_3\)。三步词 \((107,71,53)\) 的首尾
+   \(N_1\to N_4\) 只给 \((105,3)\)；完整闭环在 \(N_4\) 给出的 \(207\) 只是
+   \(R-2\cdot4\)，不是周期积产生的新 gap。
+
+最小核心例 \(p=73,R=11\) 的真实边
+\(N_4\xrightarrow7N_1\) 两种端点差都给合法 gap \(3\)，但完整 Type I/II 平方除子谱
+仍 miss。因此“任意真实路径端点必有一个差值终端”也是错误的。
+
+## 9. 短路径确实可以生成合法直接终端
 
 上述反例否定特定载体规则，不否定把路径作为候选生成器。
 
@@ -645,7 +778,7 @@ K_{53}=9104597845,
 \(\{3,212\}\) 的前导 \(71\)-formal 边仍只是候选生成步骤。由于新图表已经直接命中，
 本例最终不需要递归使用那条 formal 边。
 
-## 9. 良基边界与下一接口
+## 10. 良基边界与下一接口
 
 任何只依赖当前 bottom 节点的势函数都不可能沿完整边集严格下降，因为 (41) 一类有向环
 真实存在。对固定权赋值势
@@ -667,7 +800,7 @@ K_{53}=9104597845,
 凝聚 DAG 的下降只是分析调度，不是 E4。当前仍需证明：每个 sink-SCC 的规范 miss
 证书如何强制新的 Type I/II、改变根尾数据的标记状态，或另一条严格可提升递降。
 
-## 10. 聚焦复现
+## 11. 聚焦复现
 
 聚焦脚本只验证 (4)--(17)、两个反例、两个短路径终端和相应 unit-fraction 恒等式；它
 不重跑 483 态或 1412 slabs 的历史普查：

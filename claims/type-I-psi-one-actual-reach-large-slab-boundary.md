@@ -243,7 +243,10 @@ external-affine 菜单命中 86 个 slab 记录，锚点菜单命中 397 个记�
 \tag{13}
 \]
 
-最小例正是 (9)。它来自线性源 \((a,s)=(331,483)\) 和唯一正见证
+按 \((p,R)\) 排序的最小 \(\texttt{single\mbox{-}slab basic\mbox{-}good}\) 后继残余
+正是 (9)。这里的“残余”只相对于两碰撞或 \(R_Q<R\) 的 single-slab 菜单；
+该有限状态本身已由完整 Reach 的 endpoint gap \(31\) 直接 Type I 终端，不能称为
+terminal-first unresolved。它来自线性源 \((a,s)=(331,483)\) 和唯一正见证
 \((1,2,-1,0)\)，有精确路径
 
 \[

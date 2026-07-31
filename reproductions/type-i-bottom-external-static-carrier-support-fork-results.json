@@ -1,0 +1,613 @@
+{
+  "competing_excess_branch": {
+    "K": 48968229,
+    "Q": 8,
+    "R": 35,
+    "alpha": 1,
+    "beta": 27,
+    "branch": "COMPETING_EXCESS",
+    "competing_excess_primes": [
+      3
+    ],
+    "exponent": 3,
+    "node": [
+      8,
+      27,
+      1
+    ],
+    "prime": 5596369,
+    "q": 2,
+    "raw_out_labels": [
+      2,
+      3
+    ],
+    "residual_divides_K": false,
+    "residual_product": 27,
+    "selected_side": "left"
+  },
+  "full_fiber_forced_height_boundary": {
+    "R": 207,
+    "coordinate_avoidance_witnesses": [
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 2,
+        "target_residue": 206,
+        "witness": {
+          "139": 1,
+          "307": 2,
+          "5": -1
+        }
+      },
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 5,
+        "target_residue": 206,
+        "witness": {
+          "139": 1,
+          "17": -1,
+          "2": -2
+        }
+      },
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 17,
+        "target_residue": 206,
+        "witness": {
+          "2": -1,
+          "41": 1,
+          "5": 1
+        }
+      },
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 307,
+        "target_residue": 206,
+        "witness": {
+          "2": -1,
+          "41": 1,
+          "5": 1
+        }
+      },
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 139,
+        "target_residue": 206,
+        "witness": {
+          "2": -1,
+          "41": 1,
+          "5": 1
+        }
+      },
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 41,
+        "target_residue": 206,
+        "witness": {
+          "101": -1,
+          "2": -1,
+          "5": 1
+        }
+      },
+      {
+        "avoided_coordinate_overflow": 0,
+        "avoided_prime": 101,
+        "target_residue": 206,
+        "witness": {
+          "2": -1,
+          "41": 1,
+          "5": 1
+        }
+      }
+    ],
+    "forced_height_by_coordinate": {
+      "101": 0,
+      "139": 0,
+      "17": 0,
+      "2": 0,
+      "307": 0,
+      "41": 0,
+      "5": 0
+    },
+    "joint_budgets": {
+      "101": 0,
+      "139": 1,
+      "17": 1,
+      "2": 2,
+      "307": 1,
+      "41": 0,
+      "5": 1
+    },
+    "path_fiber_distinction": "the restricted path language has MISS_STATIC(103), while the full target fiber has zero forced height in every coordinate",
+    "support": [
+      2,
+      5,
+      17,
+      307,
+      139,
+      41,
+      101
+    ],
+    "support_expansion_corollary": "adding q=103 with exponent zero also has forced height zero"
+  },
+  "inputs": {
+    "formal_closure_script": "type_i_f_psi_one_formal_transition_closure.py",
+    "sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
+  },
+  "p107722177_static_large_slab_boundary": {
+    "K": 5574622660,
+    "K_factorization": {
+      "17": 1,
+      "2": 2,
+      "307": 1,
+      "5": 1,
+      "53407": 1
+    },
+    "R": 207,
+    "centered_hits": [],
+    "centered_square_space_size": 405,
+    "correct_semantics": "counterexample only to a prescribed static prime forcing its own local terminal or absorption; the SCC has other exits",
+    "prime": 107722177,
+    "q101_alternative_cycle_exit": {
+      "K": 5574622660,
+      "K_Q": 8806287970,
+      "Q": 101,
+      "Q_over_R_fourth": true,
+      "R": 207,
+      "R_Q": 327,
+      "alpha": 2,
+      "anchor": [
+        2,
+        205,
+        1
+      ],
+      "anchor_external_hits": [],
+      "beta": 5,
+      "branch": "LARGE_SLAB",
+      "competing_excess_primes": [],
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "large_alpha_class": 2,
+      "new_centered_hits": [
+        {
+          "centered_divisor": 1447220,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 501300845,
+          "first_denominator": 26934970,
+          "gap": 17703,
+          "normal_form": {
+            "A": 10013,
+            "B": 538,
+            "C": 5,
+            "H": 3273713
+          },
+          "solution": [
+            26934970,
+            163898441345,
+            948632511417310690
+          ],
+          "state_K": 8806287970,
+          "state_modulus": 327,
+          "type": "Type_I"
+        }
+      ],
+      "new_centered_space_size": 243,
+      "node": [
+        5,
+        202,
+        1
+      ],
+      "node_external_hits": [],
+      "prime": 107722177,
+      "q": 101,
+      "raw_out_labels": [
+        101
+      ],
+      "residual_divides_K": true,
+      "residual_product": 10,
+      "selected_side": "right"
+    },
+    "q103_static_birth_slab": {
+      "K": 5574622660,
+      "K_Q": 10098954094,
+      "Q": 103,
+      "Q_over_R_fourth": true,
+      "R": 207,
+      "R_Q": 375,
+      "alpha": 2,
+      "anchor": [
+        2,
+        205,
+        1
+      ],
+      "anchor_external_hits": [],
+      "beta": 1,
+      "branch": "LARGE_SLAB",
+      "competing_excess_primes": [],
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "large_alpha_class": 2,
+      "new_centered_hits": [],
+      "new_centered_space_size": 81,
+      "node": [
+        1,
+        206,
+        1
+      ],
+      "node_external_hits": [],
+      "prime": 107722177,
+      "q": 103,
+      "raw_out_labels": [
+        103
+      ],
+      "residual_divides_K": true,
+      "residual_product": 2,
+      "selected_side": "right"
+    },
+    "q41_alternative_cycle_exit": {
+      "K": 5574622660,
+      "K_Q": 942569049,
+      "Q": 41,
+      "Q_over_R_fourth": false,
+      "R": 207,
+      "R_Q": 35,
+      "alpha": 5,
+      "anchor": [
+        5,
+        202,
+        1
+      ],
+      "anchor_external_hits": [],
+      "beta": 2,
+      "branch": "VERIFIED_ABSORB",
+      "competing_excess_primes": [],
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "large_alpha_class": null,
+      "new_centered_hits": [
+        {
+          "centered_divisor": 10701,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 67775972500,
+          "first_denominator": 26930850,
+          "gap": 1223,
+          "normal_form": {
+            "A": 7550,
+            "B": 3,
+            "C": 1189,
+            "H": 264247
+          },
+          "solution": [
+            26930850,
+            2372132106650,
+            101535589931099673
+          ],
+          "state_K": 942569049,
+          "state_modulus": 35,
+          "type": "Type_I"
+        },
+        {
+          "centered_divisor": 792741,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 916408596,
+          "first_denominator": 26953194,
+          "gap": 90599,
+          "normal_form": {
+            "A": 34,
+            "B": 1,
+            "C": 792741,
+            "H": 1189
+          },
+          "solution": [
+            26953194,
+            32047347666,
+            101535589931099673
+          ],
+          "state_K": 942569049,
+          "state_modulus": 35,
+          "type": "Type_I"
+        },
+        {
+          "centered_divisor": 13660421,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 54641684,
+          "first_denominator": 27320842,
+          "gap": 1561191,
+          "normal_form": {
+            "A": 2,
+            "B": 1,
+            "C": 13660421,
+            "H": 69
+          },
+          "solution": [
+            27320842,
+            1885138098,
+            101535589931099673
+          ],
+          "state_K": 942569049,
+          "state_modulus": 35,
+          "type": "Type_I"
+        },
+        {
+          "centered_divisor": 666695181,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 3170964,
+          "first_denominator": 45978978,
+          "gap": 76193735,
+          "normal_form": {
+            "A": 2,
+            "B": 29,
+            "C": 792741,
+            "H": 41
+          },
+          "solution": [
+            45978978,
+            65004762,
+            101535589931099673
+          ],
+          "state_K": 942569049,
+          "state_modulus": 35,
+          "type": "Type_I"
+        }
+      ],
+      "new_centered_space_size": 243,
+      "node": [
+        2,
+        205,
+        1
+      ],
+      "node_external_hits": [],
+      "prime": 107722177,
+      "q": 41,
+      "raw_out_labels": [
+        41
+      ],
+      "residual_divides_K": true,
+      "residual_product": 10,
+      "selected_side": "right"
+    },
+    "static_cycle": {
+      "K": 5574622660,
+      "R": 207,
+      "budgets": {
+        "K": 0,
+        "x_R": 0
+      },
+      "cycle_Q": 4141,
+      "d_U": -1,
+      "d_V": -1,
+      "endpoint": [
+        2,
+        205
+      ],
+      "prime": 107722177,
+      "q": 103,
+      "receipt": "four_channel_MISS_STATIC",
+      "source_ancestry": [
+        68,
+        139
+      ],
+      "theta": 14317,
+      "x_R": 26930596
+    },
+    "x_R": 26930596,
+    "x_R_factorization": {
+      "11": 1,
+      "12491": 1,
+      "2": 2,
+      "7": 2
+    }
+  },
+  "p2017_prefix_absorption_correction": {
+    "correct_semantics": "ray-static but prefix-absorbable and globally terminal; not a terminal-first-unresolved state",
+    "gap15_certificates": [
+      {
+        "certificate_semantics": "verified_direct_terminal",
+        "divisor": 2,
+        "first_denominator": 508,
+        "gap": 15,
+        "solution": [
+          508,
+          68578,
+          17418812
+        ],
+        "type": "Type_II"
+      },
+      {
+        "certificate_semantics": "verified_direct_terminal",
+        "divisor": 254,
+        "first_denominator": 508,
+        "gap": 15,
+        "solution": [
+          508,
+          68326,
+          275627084
+        ],
+        "type": "Type_I"
+      }
+    ],
+    "prime": 2017,
+    "q101_cycle_slab": {
+      "K": 104380,
+      "K_Q": 68074,
+      "Q": 101,
+      "Q_over_R_fourth": true,
+      "R": 207,
+      "R_Q": 135,
+      "alpha": 2,
+      "anchor": [
+        2,
+        205,
+        1
+      ],
+      "anchor_external_hits": [],
+      "beta": 5,
+      "branch": "VERIFIED_ABSORB",
+      "competing_excess_primes": [],
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "large_alpha_class": null,
+      "new_centered_hits": [
+        {
+          "centered_divisor": 101,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 2525,
+          "first_denominator": 505,
+          "gap": 3,
+          "normal_form": {
+            "A": 5,
+            "B": 1,
+            "C": 101,
+            "H": 674
+          },
+          "solution": [
+            505,
+            340370,
+            137305258
+          ],
+          "state_K": 68074,
+          "state_modulus": 135,
+          "type": "Type_I"
+        }
+      ],
+      "new_centered_space_size": 27,
+      "node": [
+        5,
+        202,
+        1
+      ],
+      "node_external_hits": [],
+      "prime": 2017,
+      "q": 101,
+      "raw_out_labels": [
+        101
+      ],
+      "residual_divides_K": true,
+      "residual_product": 10,
+      "selected_side": "right"
+    },
+    "q103_birth_slab": {
+      "K": 104380,
+      "K_Q": 57989,
+      "Q": 103,
+      "Q_over_R_fourth": true,
+      "R": 207,
+      "R_Q": 115,
+      "alpha": 2,
+      "anchor": [
+        2,
+        205,
+        1
+      ],
+      "anchor_external_hits": [],
+      "beta": 1,
+      "branch": "VERIFIED_ABSORB",
+      "competing_excess_primes": [],
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "large_alpha_class": null,
+      "new_centered_hits": [],
+      "new_centered_space_size": 9,
+      "node": [
+        1,
+        206,
+        1
+      ],
+      "node_external_hits": [],
+      "prime": 2017,
+      "q": 103,
+      "raw_out_labels": [
+        103
+      ],
+      "residual_divides_K": true,
+      "residual_product": 2,
+      "selected_side": "right"
+    },
+    "static_cycle": {
+      "K": 104380,
+      "R": 207,
+      "budgets": {
+        "K": 0,
+        "x_R": 0
+      },
+      "cycle_Q": 4141,
+      "d_U": -1,
+      "d_V": -1,
+      "endpoint": [
+        2,
+        205
+      ],
+      "prime": 2017,
+      "q": 103,
+      "receipt": "four_channel_MISS_STATIC",
+      "source_ancestry": [
+        68,
+        139
+      ],
+      "theta": 14317,
+      "x_R": 556
+    }
+  },
+  "positive_multicoordinate_price_example": {
+    "K": 2308337,
+    "R": 43,
+    "budgets": [
+      1,
+      1
+    ],
+    "generators": [
+      151,
+      15287
+    ],
+    "minimum_unit_weight_price": 5,
+    "prime": 214729,
+    "single_coordinate_forced_heights": [
+      0,
+      0
+    ],
+    "unsigned_pareto": [
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        5,
+        0
+      ]
+    ]
+  },
+  "schema_version": "type-i-bottom-external-static-carrier-support-fork/v1",
+  "scope_note": "Focused exact verification of the three support-fork branches, two four-channel static receipts, the p=107722177 local counterexample, and full-fiber forced-height boundaries. It does not rerun historical censuses or prove universal sink-SCC escape.",
+  "summary": {
+    "alternative_global_exits_in_counterexample": 2,
+    "four_channel_static_profiles": 2,
+    "full_fiber_zero_forced_coordinates": 7,
+    "positive_multicoordinate_price": 5,
+    "static_local_counterexamples": 1,
+    "support_fork_branches_verified": [
+      "VERIFIED_ABSORB",
+      "LARGE_SLAB",
+      "COMPETING_EXCESS"
+    ]
+  }
+}

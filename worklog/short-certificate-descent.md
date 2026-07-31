@@ -3407,3 +3407,69 @@ formal 后继图没有该候选，分布为 \(53,16,1\)。最小例是
 自然尾定理和来源路径字分别见
 [形式节点自然双尾整数性刚性](../claims/type-I-formal-natural-tail-integrality-rigidity.md)与
 [Psi 一层来源路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md)。
+
+## 2026-08-01 path-static 来源三分、完整纤维单调性与尺寸收缩
+
+对 bottom 节点 \(X=q^e a,Y\) 和外部 \(q\nmid K\)，完整 \(q\)-部分剥离后有精确
+支持分叉：
+
+\[
+aY\mid K
+\Longrightarrow
+\text{clean slab}
+\Longrightarrow
+\text{ABSORB}\ \lor\ \text{large-slab }a\in\{1,2,3\};
+\]
+
+\[
+aY\nmid K
+\Longrightarrow
+\exists r\ne q:\ v_r(aY)>v_r(K),
+\]
+
+后者在同一节点给出竞争 raw 边。若静态素数实际来自路径词 \(\Theta\)，就能回溯到
+相应 \(q\)-边的源节点并应用此三分；若只来自来源/端点坐标，则不能假造 raw provenance。
+
+该引理纠正了 \(p=2017,R=207\) 的解释。二循环中的四通道
+\(\texttt{MISS\_STATIC}(103)\) 仍正确，但进入 SCC 前的节点
+\((1,206)=(1,103\cdot2)\) 已满足 \(R_{103}=115<207\)，是合法 E1--E5 absorption；
+循环 \(101\)-slab 还在 \(R_{101}=135\) 中心命中，原素数本身又有 gap \(15\) 的
+Type I/II。因此它不是 terminal-first 或 terminal-or-descent 反例。
+
+同一骨架的
+
+\[
+(p,R)=(107722177,207)
+\]
+
+给出必要边界：指定 static \(103\) 的 gap/collision/affine/新中心菜单全部 miss，且
+\(R_{103}=375>207\)，所以 local receipt 真正进入 large-slab \(a=2\)。但该 SCC 的
+\(q=41\) 仍给 \(R_{41}=35\) 的 absorption 并中心命中；它只关闭“同一个 static
+\(q\) 必给局部出口”，不关闭全局选择器。
+
+完整目标纤维方面，若基础支撑已经能表示目标，扩张生成元并放宽预算时，旧坐标 forced
+height 只能下降，新坐标恒为零。\(p=2017,R=207\) 的完整联合支撑逐坐标都有避开该坐标
+的 \(-1\) 表示，所以 path-static \(103\) 不能当作完整 fiber 的单 \(q\) 强制需求。
+下一步容量对象必须保留多坐标 Pareto 或层化价格，并证明每层 overflow 到实际有限载体
+的算术注入。
+
+D-only 同时得到
+
+\[
+D\le n(n+\kappa)-\kappa p,
+\qquad
+n+\kappa\equiv0\pmod4,\quad1\le\kappa\le4,
+\]
+
+以及 non-source-supported 分支的
+
+\[
+n>\sqrt p,
+\qquad
+\lambda>\max\left(p-n,\frac{\sqrt p}{2}\right).
+\]
+
+因此小 gap、短路径标签和小 rechart 模数不能直接承担新的 D-only equation rank。
+当前真正剩余的是 large-slab \(a=1,2,3\)、multi-excess SCC 的 clean-slab/终端强制，
+以及多坐标价格的跨状态真实容量。严格主张与聚焦整数核验见
+[底层外部静态载体来源三分](../claims/type-I-bottom-external-static-carrier-support-fork.md)。

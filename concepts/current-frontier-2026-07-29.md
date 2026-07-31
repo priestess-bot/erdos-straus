@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。相位 -1 表示的指数盒外向量与 K/x_R 共同过载逐坐标相同；带表示见证时可保留 P/Q 侧载体，但无符号 Pareto 向量本身不含方向。来源路径字的双容量 miss 精确二分为共同过载或 strict split；后者已有 F、internal-free 且完整 post-first Reach 全 miss 的反例。更强地，线性 F strong miss (p,R)=(57073,23) 已否定“某条最短来源字必使 slab-q 进入共同过载”。底层定向路径字现有 M(Q,A,B) 格正规形、指标 Q 根容量和闭环容量射线；任意有限 ancestry-lifted Reach 的固定端点 Pareto 前沿都有显式有限见证界，周期 miss 可压成静态素数或整数区间分离证书。路径仍只用于候选生成：p=5596369 的 Q=38 不是 E4，p=212973049 的中间 Q=53 single-slab 才满足已有 absorption 合同。真正余项是把每个 sink-SCC 的 Pareto/周期 miss 证书强制转成直接 Type I/II、改变根尾数据的非空 D-only 状态或完整 E1--E5 合法递降；PRE--ABSORB 只解决调度，不补 E1--E4。
+summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。相位 -1 表示的指数盒外向量与 K/x_R 共同过载逐坐标相同；带表示见证时可保留 P/Q 侧载体，但无符号 Pareto 向量本身不含方向。完整目标纤维扩张 SCC 支撑时，旧坐标 forced height 只能下降、新坐标恒为零，所以不能靠新增标签制造单 q 收费。来源路径字的双容量 miss 精确二分为共同过载或 strict split；p=2017,R=207 只反驳同图表 external Reach 终端和 cycle-ray 容量修复，它已有 ordinary gap 15、前缀 R_103=115 absorption 及循环 q=101 中心出口，不是 terminal-first 或 terminal-or-descent 反例。底层 path-carried static 素数现可无条件回溯为 verified absorption、large-slab a∈{1,2,3} 或竞争 raw 超额分支；p=107722177,R=207 证明指定静态 q 本身仍可能落入 local strong large-slab miss。D-only 又有全域空集界和 non-source 分支 n>sqrt(p) 的尺寸障碍。真正余项已压为 large-slab、multi-excess SCC 的 clean-slab/终端强制，以及多坐标 Pareto 层价格到实际跨状态载体容量的算术注入；PRE--ABSORB 只解决调度，不补 E1--E4。
 topics:
 - research-map
 - proof-program
@@ -1869,6 +1869,11 @@ split 的有界 Reach 希望则已经被一个更小的精确反例关闭。对
 边且全 miss。因此 strict split 不只不能保证深度 1--3，而是不能保证完整 formal Reach
 中存在外部终端。
 
+这里的“全 miss”严格限定于该 \(R=207\) centered/internal/external 菜单。原素数已有
+ordinary gap \(15\) 的 Type I/II 终端；而且路径前缀节点 \((1,206)\) 的
+\(103\)-slab 满足 \(R_{103}=115<207\)，循环中的 \(101\)-slab 也下降并中心命中。
+所以该例不能用于否定 terminal-first、E4 或 terminal-or-descent。
+
 一般底层边若选中 \(q\mid X\)，在
 \(S_X=\Theta X,S_Y=\Theta Y\) 上满足
 
@@ -1909,6 +1914,15 @@ Fourier/Pareto 单项式不能恢复该方向，必须使用双颜色变量。�
 产生偶终端；联合盒表示数超过显式分箱积时必有这种近邻。详见
 [目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md)。
 
+完整目标纤维的单坐标强制高度还有一个排除性定理。若基础支撑已经能表示目标，把支撑
+扩张到任意 SCC 标签并放宽预算，则旧坐标 forced height 只能下降，每个新坐标都可在
+旧表示中取指数 \(0\)，所以 forced height 恒为 \(0\)。在 \(p=2017,R=207\) 的完整
+联合支撑 \(\{2,5,17,307,139,41,101\}\) 上，每个坐标都能被一个显式 \(-1\) 表示避开；
+加入 \(103\) 也不能改变这一点。路径语言的 \(\texttt{MISS\_STATIC}(103)\) 因而不能
+升级为完整纤维的单 \(q\) 收费。正向容量路线必须保留多坐标 Pareto 或层化价格；例如
+\((p,R,K)=(214729,43,151\cdot15287)\) 的 Pareto 集
+\(\{(k,5-k):0\le k\le5\}\) 两个单坐标最小值都为零，但任意正权总价格仍为正。
+
 bottom SCC 也不再需要按任意最短路径处理。底层定向边在
 \((\Theta X,\Theta Y)\) 上由
 
@@ -1943,8 +1957,23 @@ B=N\prod_{\ell\in\mathcal P_{\rm move}}
 \]
 
 的见证。这给出了真正路径选择无关的有限 SCC 判定。\((p,R)=(2017,207)\) 的二循环
-\(Q=41\cdot101\) 在四个容量通道上都有静态素数 \(103\) 分离；说明有限判定可以输出
-严格 miss，而不会自动给终端。
+\(Q=41\cdot101\) 在四个容量通道上都有静态素数 \(103\) 分离；说明指定 cycle ray
+可以严格 miss。但该 \(103\) 来自更早的 clean slab
+\((1,206)=(1,103\cdot2)\)，且 \(R_{103}=115<207\)，所以路径前缀已经给出合法
+absorption；同一循环的 \(101\)-slab 还在 \(R_{101}=135\) 中心命中。原素数又有
+ordinary gap \(15\) 终端。因此它不能被列作完整 sink-SCC 逃逸的反例。
+
+一般地，对底层节点 \(X=q^e a,Y\) 和外部 \(q\nmid K\)，若 \(aY\mid K\)，该节点
+就是 clean slab，精确进入 \(R_{q^e}<R\) 的 verified absorption 或
+\(q^e>R/4,a\in\{1,2,3\}\) 的 large-slab；若 \(aY\nmid K\)，同一节点必有另一个
+\(r\ne q\) 超过 \(K\) 容量并产生竞争 raw 边。path-carried static receipt 因此已有
+\[
+\texttt{ABSORB}\ \lor\ \texttt{LARGE}\ \lor\ \texttt{COMPETING\_EXCESS}
+\]
+的无样本来源三分。它没有闭合 large/multi-excess 两支；\(p=107722177,R=207\)
+给出指定 static \(103\) 的 local strong large-slab miss，但同一 SCC 仍由 \(q=41\)
+下降并中心命中。详见
+[底层外部静态载体的来源三分与吸收边界](../claims/type-I-bottom-external-static-carrier-support-fork.md)。
 
 短路径仍有价值，但只能作为候选生成器。\((p,R)=(5596369,35)\) 的三次 dyadic peeling
 到达 gap \(31\) 并给出直接 Type I；路径积 \(38\) 选出的 \(R_{38}=23\) 中心也命中，
@@ -1962,6 +1991,13 @@ B=N\prod_{\ell\in\mathcal P_{\rm move}}
 双尾保留提升的正替换坐标对，由 \(D\mid(np)^2\) 的两个模 \(4(p-n)\) 同余及严格界
 \(D<n^2\) 精确参数化；
 固定 \(D\) 后，替换坐标 \(a,a'\) 已确定，并对全部保留尾 \(b,c\) 给出全域提升。
+若 \(\kappa\in\{1,2,3,4\}\) 由 \(n+\kappa\equiv0\pmod4\) 唯一确定，则全部合法参数
+还满足
+\[
+D\le n(n+\kappa)-\kappa p.
+\]
+所以 \(\kappa p\ge n(n+\kappa)\) 时整个 D-only 参数集为空；特别地，
+\(n\equiv3\pmod4,\ p\ge n(n+1)\) 时不能把该小 gap 当作 equation rank。
 指定坐标标记集的非空性又精确等价于第二层
 \(z\mid\sigma^2,z\equiv-\sigma\pmod\mu\)。素数目标还强制 \(p\mid a'\)，所以替换项
 永远不是目标最小分母。只给 \(D\) 是局部已验证的 marked 条件边；同时给 \(z\) 就已经
@@ -1994,6 +2030,20 @@ B=N\prod_{\ell\in\mathcal P_{\rm move}}
 \qquad
 H=p+(4\lambda-1)(p-n)\mid4\lambda^2.
 \]
+
+该分支还无条件强制
+
+\[
+\boxed{
+n>\sqrt p,
+\qquad
+\lambda>\max\left(p-n,\frac{\sqrt p}{2}\right).
+}
+\]
+
+因此小 endpoint gap、短路径标签和小 rechart 模数在尺寸上已经不可能承载
+non-source-supported D-only；后续只应从大尺度路径量或新的跨模数恒等式构造
+\((n,\lambda)\)。
 
 反过来，每组满足最后一个整除的 \((p-n,\lambda)\) 都唯一恢复一个合法非自然
 \(D\)-only 状态。其标记非空性精确化为 \(\lambda^2\) 的三目标平方除子谱：
@@ -2092,6 +2142,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{目标纤维三盒字典、底层路径字格正规形、周期射线与有限 Pareto 见证界}\\
 \downarrow\\
+\text{完整纤维支撑扩张单调性、path-static 来源三分与 local large-slab 反例}\\
+\downarrow\\
 \text{D-only 支撑二分、非自然 }H\mid4\lambda^2\text{ 正规形与三目标平方除子谱}\\
 \downarrow\\
 \text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
@@ -2116,8 +2168,10 @@ Pareto 前沿。底层 SCC 的无限路径也已压成显式有限见证界和�
 现已从“继续走多深”转为全称算术桥：后续计算只应服务于把 sink-SCC 的规范 miss
 证书映入新的容量下降或合法 E4，或把
 \(D\nmid n^2\) 的三目标 miss 转成改变根尾数据的递归非空证书。小 \(\mu\) 与
-\(z=1\) 的核心 D-only 子族已经证明为空，不应继续枚举；split 有界深度菜单也已被
-完整 Reach 反例关闭。
+\(z=1\) 的核心 D-only 子族已经证明为空，不应继续枚举；D-only 尺寸界还关闭了小
+equation-rank 候选。split 有界深度的同图表 external 菜单已被反例关闭，但该反例有
+普通终端和合法 absorption，不能据此关闭 terminal-or-descent。path-static receipt
+现在只能先按 ABSORB/LARGE/COMPETING_EXCESS 三分，再把后两支送入完整 SCC/Pareto。
 不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。

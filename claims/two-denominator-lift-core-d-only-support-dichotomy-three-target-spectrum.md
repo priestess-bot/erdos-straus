@@ -2,7 +2,7 @@
 kind: claim
 claim_id: two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum
 title: 核心 D-only 的支撑二分、非自然完全正规形与三目标谱
-statement: 对核心素数 p、2<=n<p 及任意合法 D-only 参数 D，令 a'=p lambda。既约尾比总由 delta=gcd(4lambda-1,p) 决定，且 delta=p 当且仅当 D|n^2；所以 source-supported 分支就是已有中心 Type I 谱。若 D 不整除 n^2，则唯一有 D=pd、mu=4lambda-1、sigma=p lambda，并存在 H=p+(4lambda-1)(p-n) 整除 4lambda^2 的完全正规形；标记纤维非空当且仅当 lambda^2 的某个规范真因子命中 -p lambda、-lambda、-p^{-1}lambda 三个模 mu 目标之一。所有核心 D-only 状态均有 mu=3 (mod 4)，且报告建议的 mu=1、mu=2、mu|(sigma+1) 三个低复杂度出口全部不可能。
+statement: 对核心素数 p、2<=n<p 及任意合法 D-only 参数 D，令 a'=p lambda。既约尾比总由 delta=gcd(4lambda-1,p) 决定，且 delta=p 当且仅当 D|n^2；所以 source-supported 分支就是已有中心 Type I 谱。若 D 不整除 n^2，则唯一有 D=pd、mu=4lambda-1、sigma=p lambda，并存在 H=p+(4lambda-1)(p-n) 整除 4lambda^2 的完全正规形；该分支强制 n>sqrt(p) 以及 lambda>max(p-n,sqrt(p)/2)。标记纤维非空当且仅当 lambda^2 的某个规范真因子命中 -p lambda、-lambda、-p^{-1}lambda 三个模 mu 目标之一。所有核心 D-only 状态均有 mu=3 (mod 4)，且报告建议的 mu=1、mu=2、mu|(sigma+1) 三个低复杂度出口全部不可能。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -158,6 +158,19 @@ D=pd,
 \tag{12}
 \]
 
+由 \(0<D<n^2\) 和 \(d\ge1\) 立即得到
+
+\[
+p\le D<n^2,
+\qquad
+\boxed{n>\sqrt p.}
+\tag{12a}
+\]
+
+所以任意 \(n\le\sqrt p\) 的合法 D-only 参数都只能落在 source-supported 分支。
+若另一路线明确把某个 gap、路径标签或重图表模数选作后继秩 \(n\)，它才受此界约束；
+本结论本身不提供这种桥接。
+
 式 (3) 又强制 \(a=pt\)，并给出
 
 \[
@@ -218,6 +231,27 @@ a'=p\lambda.}
 \[
 H=p+(4\lambda-1)r\mid4\lambda^2,
 \tag{18}
+\]
+
+还有两个无条件尺寸约束。由 \(H>p\) 和 \(H\le4\lambda^2\) 得
+
+\[
+\lambda>\frac{\sqrt p}{2}.
+\]
+
+若 \(\lambda\le r=p-n\)，则
+
+\[
+H=n+4r\lambda>4\lambda^2,
+\]
+
+与 \(H\mid4\lambda^2\) 矛盾。因此
+
+\[
+\boxed{
+\lambda>\max\left(p-n,\frac{\sqrt p}{2}\right).
+}
+\tag{18a}
 \]
 
 则置 \(n=p-r\)、\(s=4\lambda^2/H\)、\(t=\lambda-rs\)。因为
