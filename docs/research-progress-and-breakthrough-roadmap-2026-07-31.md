@@ -41,7 +41,8 @@
 
 - \(R_{AQ}>p\) 的 clean-slab overflow；
 - competing-excess sink-SCC 到 clean slab 或直接终端的强制；
-- overflow 补秩中近 \(p\) 平方超额的 \(D\)-only 非空选择，以及多坐标 Pareto 容量注入。
+- overflow 中 source-anchored alternate carrier 或非保尾 marked 状态的构造，以及多坐标
+  Pareto 容量注入。
 
 综合判断：
 
@@ -52,7 +53,7 @@
 | 冻结 \(\Psi_0=1\) 状态 | 483/483 状态内候选闭合 | 很强有限证据 |
 | 广义二进终端 | 内部选择器成熟，自然提升被关闭 | 路线澄清 |
 | external slab | \(R_{AQ}<p\) 已有 absorbed-support 良基边 | clean 余项只剩 overflow |
-| 标记递降 | \(n=p-1\) 与 overflow 原指数预算层均已证明全空 | 近 \(p\) 平方超额仍开放 |
+| 标记递降 | \(n=p-1\) 层及同 \(1\bmod4\) 的 non-source D-only 均已证明全空 | overflow 必须换尾或换载体 |
 | 全称选择器 | 尚未闭合 | 决定性缺口仍在 |
 | 独立复核 | 仍明显不足 | 可信度瓶颈 |
 
@@ -68,13 +69,12 @@
 
 \[
 \boxed{
-\text{一个规范 \(D\)-only 后继族的标记集自动非空定理}.
+\text{source-anchored alternate carrier 或非保尾 marked 状态的全称构造定理}.
 }
 \]
 
-前者有机会闭合 clean external slab 分支；后者若来自 overflow，还必须进入
-\(\delta=cw^2\)、\(w\ge3\)、\(13u\ge12p+9\) 的平方超额层，才可能产生新的可递归
-标记解提升。
+前者有机会闭合 clean external slab 分支。过去设想的 overflow D-only 平方超额后继
+现已被同余类 Vieta no-go 全部排除，不能再作为第二条突破路线。
 
 ---
 
@@ -1308,14 +1308,45 @@ z\equiv-\sigma\pmod\mu,
 > 三目标，或把其缺失转成换载体/competing-excess E4。详见
 > [overflow D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md)。
 
-更长远的目标是证明一个选择定理：
+> **2026-08-01 同 \(1\bmod4\) 的 D-only 全域闭合更新。** 上一更新中的
+> square-excess 余项现已完全关闭。更一般地，设 \(p\) 是
+> \(1\pmod4\) 的奇素数，\(2\le n<p\) 且 \(n\equiv1\pmod4\)。每个 non-source
+> D-only 参数都可统一写成
+>
+> \[
+> H=a^2c,\qquad
+> \lambda=abc,\qquad
+> n=acw,\qquad
+> \delta=cw^2,\qquad
+> a=w+4(p-n)b.
+> \]
+>
+> 规范 \(e=1,e=2\) 目标由大小直接排除；假设 \(e=0\) 命中，则因子互补与消元给出
+>
+> \[
+> 2XY=\frac{X^2}{L}+\frac{Y^2}{m}+\frac1c,
+> \qquad X\text{ 奇},\quad Y\text{ 偶},\quad L>1.
+> \]
+>
+> 奇偶保持的 Vieta 极小下降证明该方程没有正整数解。因此
+>
+> \[
+> D\nmid n^2\Longrightarrow W(p,n,D)=\varnothing.
+> \]
+>
+> overflow 的严格补秩 \(u\) 自动满足 \(p\equiv u\equiv1\pmod4\)。source-supported
+> 分支只复述中心 Type I，non-source 分支由上式全空，所以 overflow-to-D-only 应从
+> 选择器菜单整体删除；\(u<p\) 不能把空 marked state 变成合法递降。真正余项是从
+> source/path/node 锚定的其它载体构造直接终端或 MARKED_ABSORB，或证明
+> competing-excess SCC 必到达其中之一。详见
+> [同 1 mod 4 秩的 D-only 全域 no-go](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
+
+更长远的目标应改写为不预设 D-only 的选择定理：
 
 \[
 \forall(p,S)\text{ 未闭合状态}
 \quad
-\exists n<p,\ D\in\mathcal D(p,n):
-W(p,n,D)
-\ne\varnothing.
+\exists\text{ 直接 Type I/II、MARKED\_ABSORB，或其它满足 E1--E5 的非空后继}.
 \]
 
 ### 9.4 第三优先级：核心可实现的两翻转周期

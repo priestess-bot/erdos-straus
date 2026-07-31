@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 313 |
+| 数学状态 | `established` | 314 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 139 |
+| 证明来源 | `repository_derivation` | 140 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 267 |
+| 审阅状态 | `internal_review` | 268 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -210,6 +210,7 @@
 | [p 减一秩的非自然 D-only 标记纤维全域空定理](../claims/two-denominator-lift-core-rank-one-no-go.md) (`two-denominator-lift-core-rank-one-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [保留两个源分母的一项替换提升判据](../claims/two-denominator-lift-criterion.md) (`two-denominator-lift-criterion`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [双尾提升的 D-only 标记正规形与 p 载体刚性](../claims/two-denominator-lift-d-only-marked-normal-form.md) (`two-denominator-lift-d-only-marked-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [同 1 mod 4 秩的 non-source D-only 标记纤维全域空定理](../claims/two-denominator-lift-same-one-mod-four-no-go.md) (`two-denominator-lift-same-one-mod-four-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [source-supported D-only 提升的固定尾比刚性与中心 Type I 等价](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md) (`two-denominator-lift-source-supported-tail-ratio-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [双外部源仿射尾倍率的刚性障碍](../claims/two-source-affine-tail-rigidity.md) (`two-source-affine-tail-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [固定尾分母的双源严格提升刚性障碍](../claims/two-source-fixed-tail-rigidity.md) (`two-source-fixed-tail-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |

@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。底层 path-carried static 素数可回溯为 clean slab 或竞争 raw 超额；clean slab 携带 absorbed support A|K，并以 R_{AQ}<p 的规范重图表给出恒等解提升及势 floor((p-1)^2/(4A)) 严格下降。真正 clean 余项是 R_{AQ}>p 的 overflow，满足 pu=4AQd+1。若补秩 u<p，则所有 D-only 参数都与 AQ、d、p-u 互素；non-source 的 delta|u 层全域空，唯一幸存必要形为 delta=cw^2、u=acw、a=w+4(p-u)b、w>=3，并强制 13u>=12p+9。固定图表的 clean slabs 还产生至多三个 beta-ratio cocycle，但不能自动饱和。当前决定性余项是近 p 平方超额的三目标命中或换载体、multi-excess SCC 的 clean-slab 强制，以及多坐标 Pareto 价格到实际跨状态载体容量的算术注入。
+summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。底层 path-carried static 素数可回溯为 clean slab 或竞争 raw 超额；clean slab 携带 absorbed support A|K，并以 R_{AQ}<p 的规范重图表给出恒等解提升及势 floor((p-1)^2/(4A)) 严格下降。真正 clean 余项是 R_{AQ}>p 的 overflow，满足 pu=4AQd+1。若补秩 u<p，则 u=1 (mod 4)；现已证明每个 same-class non-source D-only 标记纤维都为空，source-supported 又只复述中心 Type I，因此 overflow-to-D-only 应整体删除，平方超额不再开放。固定图表的 clean slabs 还产生至多三个 beta-ratio cocycle，但不能自动饱和。当前决定性余项是 source-anchored alternate carrier 或非保尾 marked 状态的构造、multi-excess SCC 的 clean-slab 强制，以及多坐标 Pareto 价格到实际跨状态载体容量的算术注入。
 topics:
 - research-map
 - proof-program
@@ -2355,19 +2355,93 @@ u(u+3)>12p.
 \(\delta=405\mid u^2,\delta\nmid u\) 的 square-excess 参数；后者三目标仍全部 miss。
 所以 square-excess 是必要条件，不是非空充分条件。
 
-下一步顺序因此改为：
-
-1. 只从 \((C,u^2)\) 或其它真实跨状态载体中提取上述平方载体，不再枚举任意
-   \(D\)；
-2. 对实际 square-excess 参数证明 \(\lambda^2\) 三目标命中，或从其规范 miss 证书构造
-   另一条 E1--E5 边；
-3. 若 overflow 不强制任何 square-excess，则把这一失败本身转成换载体或
-   competing-excess 的容量证书；
-4. 保持 accumulated-support 势与 equation-rank 势分层，禁止在没有外层支付时重置
-   \(A\)。
+本目标给出的“继续研究 square-excess 命中”已经被下一目标的全域 no-go 取代。
+仍保留的信息是支撑互素性、正规形和近 \(p\) 阈值；它们现在描述被排除分支，而不是
+新的后继候选。
 
 严格主张和聚焦复现见
 [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md)。
+
+## 目标五十三：同余类 D-only 全域 no-go 与 overflow 菜单删除
+
+对任意奇素数 \(p\) 和较小秩 \(n\)，若
+
+\[
+p\equiv n\equiv1\pmod4,
+\]
+
+则每个 non-source \(D\)-only 参数都具有统一正规形
+
+\[
+H=a^2c,
+\qquad
+\lambda=abc,
+\qquad
+n=acw,
+\qquad
+\delta=cw^2,
+\qquad
+a=w+4(p-n)b.
+\]
+
+它同时包含 \(w=1\) 的原预算层和 \(w\ge3\) 的平方超额层。规范三目标中，
+\(e=1\) 与 \(e=2\) 的最小正代表都严格大于 \(\lambda\)。若 \(e=0\) 命中，令
+\(Y_1=\lambda^2/v\)，消元会得到
+
+\[
+2XY=\frac{X^2}{L}+\frac{Y^2}{m}+\frac1c,
+\qquad
+X\text{ 为奇数},
+\quad
+Y\text{ 为偶数},
+\quad
+L>1.
+\]
+
+固定 \(L,m,c\) 后，两个 Vieta 伴根保持正整数和奇偶型。取 \(X+Y\) 极小解并写
+
+\[
+A=LY-X,
+\qquad
+B=mX-Y,
+\]
+
+可得
+
+\[
+Lm=cXmA+cYLB,
+\qquad
+L\ge cXA.
+\]
+
+按 \(A<L\) 与 \(A\ge L\) 分情况都产生矛盾。因此
+
+\[
+\boxed{
+D\nmid n^2
+\Longrightarrow
+W(p,n,D)=\varnothing.}
+\]
+
+对 overflow 严格补秩 \(u\)，自动有 \(p\equiv u\equiv1\pmod4\)。结合
+source-supported 等价，D-only 的合同状态更新为：
+
+| 检查结果 | 选择器动作 |
+|---|---|
+| \(D\mid u^2\) | 中心 Type I 的重复探针；中心 miss 时拒绝 |
+| \(D\nmid u^2\) | 引用同余类 no-go，输出 `rejected_branch` |
+| 仅有 \(u<p\) | 不得登记递降；空标记集没有 E4 |
+
+这关闭的是“保持同一双尾的 D-only 递降”，不是整个 overflow。下一步必须改变尾或实际
+支撑，优先顺序为：
+
+1. 从 source/path/node 锚定的 alternate carrier \(Q'\) 构造直接 Type I/II；
+2. 若 \(Q'\) 给出 clean slab 且 \(R_{AQ'}<p\)，使用已有 MARKED_ABSORB 边；
+3. 否则把实际节点送入 competing-excess，并证明其 sink-SCC 必产生 clean slab 或终端；
+4. Pareto/\(q\)-进容量只有在给出相位匹配、实际载体和有界复用后才能登记为 E4。
+
+严格证明与聚焦复现见
+[同 1 mod 4 秩的 non-source D-only 标记纤维全域空定理](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
 
 ## 依赖顺序
 
@@ -2421,6 +2495,8 @@ u(u+3)>12p.
 \downarrow\\
 \text{overflow 补秩的支撑擦除、原预算空纤维与平方超额必要条件}\\
 \downarrow\\
+\text{同 }1\pmod4\text{ 秩的 non-source D-only 三目标全域空；overflow D-only 菜单删除}\\
+\downarrow\\
 \text{PRE--ABSORB 分型势只解决旧候选 E5；其它 formal 边 E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
@@ -2443,9 +2519,9 @@ slab-\(q\) 载体候选现已被线性 strong-miss 反例否定；替代对象�
 Pareto 前沿和同图表至多三个 \(\beta\)-ratio cocycle。底层 SCC 的无限路径也已压成
 显式有限见证界和周期静态/区间证书。真正余项现已从“继续走多深”转为
 \(R_{AQ}>p\) overflow、competing-excess 与跨状态容量的全称算术桥。
-\(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 外，又关闭了整个 \(n=p-1\) 层；
-overflow 补秩中所有 \(\delta\mid u\) 的原预算参数也已关闭，后续只研究满足
-\(13u\ge12p+9\) 的平方超额参数。path-static receipt 现在按
+\(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 和 \(n=p-1\) 层外，现又关闭了
+全部 \(p\equiv n\equiv1\pmod4\) 的 non-source 参数。overflow 补秩恰在这一同余类，
+所以 square-excess 不再是后继候选，D-only 应整体输出 `rejected_branch`。path-static receipt 现在按
 MARKED_ABSORB/OVERFLOW/COMPETING_EXCESS 分流，再把后两支送入完整 SCC/Pareto。
 不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复

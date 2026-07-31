@@ -31,6 +31,7 @@ used_by:
 - type-I-marked-support-accumulation-rechart-saturation
 - type-I-large-slab-three-alpha-arithmetic-boundaries
 - type-I-overflow-d-only-square-excess-no-go
+- two-denominator-lift-same-one-mod-four-no-go
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -518,6 +519,28 @@ overflow receipt，不伪造后继。
 可替代方案可以加入规范 Fourier 导子、marked 复杂度或 q-adic 提升深度，但每个分量
 都必须是非负整数、从状态本身可重算，并且必须重新证明全体允许边严格下降。
 
+### 6.3 同 \(1\pmod4\) 秩的 D-only 拒绝门
+
+若候选把核心素数 \(p\equiv1\pmod4\) 送到
+
+\[
+2\le n<p,
+\qquad
+n\equiv1\pmod4,
+\]
+
+并保持同一双尾，只替换 distinguished coordinate，则不得仅凭 \(n<p\) 登记递降。
+完整 \(D\)-only 支撑二分现在给出：
+
+1. \(D\mid n^2\) 时只复述中心 Type I 尾谱；中心 miss 后输出 `rejected_branch`；
+2. \(D\nmid n^2\) 时，三个规范目标由同余类 Vieta no-go 全部排空，同样输出
+   `rejected_branch`。
+
+因此该门没有 E2 后继、E4 lift 或 E5 边。它尤其适用于 absorbed-support overflow 的
+严格补秩 \(u\equiv1\pmod4\)。这只是删除一类无效边，不代表 overflow 已有其它出口。
+证明见
+[同 1 mod 4 秩的 non-source D-only 标记纤维全域空定理](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
+
 ## 7. 明确不构成递降的对象
 
 下列结果可以是重要的分析证据，但单独出现时不得标记为 verified_edge：
@@ -534,6 +557,7 @@ overflow receipt，不伪造后继。
 | \((e-h_{\mathrm{current}})_+\) 变小 | 重复使用了当前 \(K\) 已吸收的 q 进层 |
 | 有限扫描中每个样本都有出口 | 不给出全称构造，也不证明递归闭合 |
 | 把同一 Type I 证书改写成 marked source | 没有产生独立的第三出口或新的下降机制 |
+| 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
 
 ## 8. 验收表
 

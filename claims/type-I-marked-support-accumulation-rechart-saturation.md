@@ -317,11 +317,12 @@ d=p-C>0.
 保证 \(n<p\)；即使偶然 \(n<p\)，(22) 仍只排除 \(D=M\)，不会自动排除其它
 \(D\)-only 参数。式 (17)--(22) 是 marked_support_overflow receipt，不是后继状态。
 
-后续细化已经把最后一句进一步收紧。若 \(2\le n<p\)，则每个 D-only 参数不仅与
-\(M\) 互素，还与 \(d\) 和 \(p-n\) 互素；non-source 分支中所有
-\(D=p\delta,\delta\mid n\) 的标记纤维恒空。唯一尚可能的新参数必须满足
-\(\delta\mid n^2\) 但 \(\delta\nmid n\)，并自动满足近 \(p\) 的大补秩阈值。见
-[overflow 补秩的累积支撑互素性与 D-only 平方超额边界](type-I-overflow-d-only-square-excess-no-go.md)。
+后续细化已经把最后一句完全关闭。若 \(2\le n<p\)，则每个 D-only 参数不仅与
+\(M\) 互素，还与 \(d\) 和 \(p-n\) 互素；又因
+\(p\equiv n\equiv1\pmod4\)，所有 non-source 标记纤维都由奇偶 Vieta 下降证明为空，
+包括过去留下的 \(\delta\mid n^2,\delta\nmid n\) 平方超额层。source-supported 分支
+仍只复述中心 Type I，所以 overflow-to-D-only 应整体拒绝。见
+[同 1 mod 4 秩的 non-source D-only 全域 no-go](two-denominator-lift-same-one-mod-four-no-go.md)。
 
 ## 4. 初始 large-slab 的直接 gap 谱
 

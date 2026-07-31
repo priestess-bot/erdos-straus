@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-d-only-square-excess-no-go
 title: overflow 补秩的累积支撑互素性与 D-only 平方超额边界
-statement: 设核心素数 p 的 absorbed-support overflow 给出 R_M>p、u=4M-R_M 及 pu=4Md+1。若 2<=u<p，则 u=1 (mod 4)、r=p-u 是 4 的正倍数，且每个 D-only 参数 D 都与 M、d、r 互素。source-supported 分支只复述中心 Type I；non-source 分支唯一写成 D=p delta、delta|u^2。若 delta|u，则三个规范平方除子目标全部无解，标记纤维恒空。因此任何真正新的非空 D-only 后继必须满足 delta|u^2 但 delta 不整除 u，并唯一具有 delta=cw^2、u=acw、lambda=abc、t=bcw、a=w+4rb 的平方载体正规形，其中 w>=3。特别地 delta>=9、u>3sqrt(p)、13u>=12p+9 且 u(u+3)>12p。该结论把 overflow-to-D-only 收缩到近 p 的平方超额分支，但不证明该分支存在或命中。
+statement: 设核心素数 p 的 absorbed-support overflow 给出 R_M>p、u=4M-R_M 及 pu=4Md+1。若 2<=u<p，则 u=1 (mod 4)、r=p-u 是 4 的正倍数，且每个 D-only 参数 D 都与 M、d、r 互素。source-supported 分支只复述中心 Type I；non-source 分支唯一写成 D=p delta、delta|u^2。若 delta|u，则三个规范平方除子目标全部无解；若 delta 不整除 u，则唯一具有 delta=cw^2、u=acw、lambda=abc、t=bcw、a=w+4rb 的平方载体正规形，其中 w>=3，并满足 delta>=9、u>3sqrt(p)、13u>=12p+9 且 u(u+3)>12p。本卡给出这一必要条件边界；后续同 1 mod 4 秩的全域 no-go 又证明平方超额层同样为空，因而 overflow-to-D-only 已整体关闭。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -522,7 +522,7 @@ u(u+3)-12p
 
 即 \(C\) 必须真的携带 \(u^2\) 的平方超额指数。
 
-## 7. 对选择器的含义与边界
+## 7. 本卡得到的选择器边界
 
 本卡完成的是 overflow-to-D-only 的必要条件压缩，不是存在性定理：
 
@@ -530,7 +530,8 @@ u(u+3)-12p
 2. \(2\le u<p\) 时，所有 \(D\) 都擦除 \(M,d,r\) 的因子支撑；
 3. source-supported 分支只复述已有中心 Type I；
 4. non-source 的原预算层 \(\delta\mid u\) 全空；
-5. 只有满足 (36)、(41)、(43)--(46) 的近 \(p\) 平方超额候选仍可能产生新 E4。
+5. 仅凭本卡的论证，当时尚未排除满足 (36)、(41)、(43)--(46) 的近 \(p\)
+   平方超额候选。
 
 一个同时来自真实 clean slab 的边界为
 
@@ -556,9 +557,9 @@ u(u+3)-12p
 
 也有空标记纤维。这说明 (36)、(41)、(43)--(46) 只是严格必要条件，不是非空充分条件。
 
-因此下一步不再枚举任意 \(D\)，而只需研究：overflow 或 competing-excess 是否强制
-产生 (41) 的实际平方载体，以及该载体为什么必命中 \(\lambda^2\) 三目标，或如何转换成
-另一条满足 E1--E5 的支撑切换边。
+后续的同余类 no-go 已经继续证明 (41) 的三个目标也恒空。因此平方载体现在只保留为
+被排除分支的正规形，不再是待搜索的 E4 候选。完整闭合见
+[同 1 mod 4 秩的 non-source D-only 标记纤维全域空定理](two-denominator-lift-same-one-mod-four-no-go.md)。
 
 聚焦复现入口为
 
@@ -581,4 +582,4 @@ reproductions/type-i-overflow-d-only-square-excess-no-go-results.json
 ~~~
 
 该脚本只核对五个聚焦 overflow receipt、支撑互素性、一个原预算 no-go 参数和两个
-square-excess 空纤维参数；它不扫描历史数据，也不把必要条件升级为全称 E4。
+square-excess 空纤维参数；它不扫描历史数据，也不承担后续全域 no-go 的证明。

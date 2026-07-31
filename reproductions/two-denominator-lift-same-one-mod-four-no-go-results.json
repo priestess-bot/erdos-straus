@@ -1,0 +1,186 @@
+{
+  "schema_version": "same-one-mod-four-d-only-no-go/v1",
+  "scope_note": "Focused exact verification of five non-source D-only parameters, their unified normal forms, and their normalized target misses. It is not a historical scan or a substitute for the Vieta proof.",
+  "summary": {
+    "parameter_count": 5,
+    "w_one_count": 2,
+    "square_excess_count": 3,
+    "e0_inside_window_count": 2,
+    "normalized_target_hit_count": 0,
+    "clean_overflow_parameter_count": 2
+  },
+  "vieta_lemma_excluded_boundary": {
+    "X": 1,
+    "Y": 2,
+    "L": 1,
+    "m": 2,
+    "c": 1
+  },
+  "records": [
+    {
+      "name": "unified_w_one_minimal_core",
+      "p": 73,
+      "n": 65,
+      "r": 8,
+      "D": 73,
+      "delta": 1,
+      "delta_divides_n": true,
+      "source_coordinate": 146,
+      "target_coordinate": 9490,
+      "t": 2,
+      "lambda": 130,
+      "mu": 519,
+      "H": 4225,
+      "s": 16,
+      "normal_form": {
+        "a": 65,
+        "b": 2,
+        "c": 1,
+        "w": 1
+      },
+      "target_residues": {
+        "e0": 371,
+        "e1": 389,
+        "e2": 503
+      },
+      "e0_inside_normalized_window": false,
+      "e0_quotient": null,
+      "normalized_target_hits": [],
+      "overflow": null
+    },
+    {
+      "name": "square_excess_minimal_core",
+      "p": 193,
+      "n": 185,
+      "r": 8,
+      "D": 4825,
+      "delta": 25,
+      "delta_divides_n": false,
+      "source_coordinate": 965,
+      "target_coordinate": 7141,
+      "t": 5,
+      "lambda": 37,
+      "mu": 147,
+      "H": 1369,
+      "s": 4,
+      "normal_form": {
+        "a": 37,
+        "b": 1,
+        "c": 1,
+        "w": 5
+      },
+      "target_residues": {
+        "e0": 62,
+        "e1": 110,
+        "e2": 143
+      },
+      "e0_inside_normalized_window": false,
+      "e0_quotient": null,
+      "normalized_target_hits": [],
+      "overflow": null
+    },
+    {
+      "name": "e0_target_inside_window_but_not_divisor",
+      "p": 673,
+      "n": 657,
+      "r": 16,
+      "D": 54513,
+      "delta": 81,
+      "delta_divides_n": false,
+      "source_coordinate": 6057,
+      "target_coordinate": 49129,
+      "t": 9,
+      "lambda": 73,
+      "mu": 291,
+      "H": 5329,
+      "s": 4,
+      "normal_form": {
+        "a": 73,
+        "b": 1,
+        "c": 1,
+        "w": 9
+      },
+      "target_residues": {
+        "e0": 50,
+        "e1": 218,
+        "e2": 287
+      },
+      "e0_inside_normalized_window": true,
+      "e0_quotient": 3,
+      "normalized_target_hits": [],
+      "overflow": null
+    },
+    {
+      "name": "clean_overflow_w_one",
+      "p": 1129,
+      "n": 1125,
+      "r": 4,
+      "D": 5645,
+      "delta": 5,
+      "delta_divides_n": true,
+      "source_coordinate": 79030,
+      "target_coordinate": 17781750,
+      "t": 70,
+      "lambda": 15750,
+      "mu": 62999,
+      "H": 253125,
+      "s": 3920,
+      "normal_form": {
+        "a": 225,
+        "b": 14,
+        "c": 5,
+        "w": 1
+      },
+      "target_residues": {
+        "e0": 46967,
+        "e1": 47249,
+        "e2": 59079
+      },
+      "e0_inside_normalized_window": false,
+      "e0_quotient": null,
+      "normalized_target_hits": [],
+      "overflow": {
+        "M": 1021,
+        "R_M": 2959,
+        "d": 311,
+        "C": 818
+      }
+    },
+    {
+      "name": "clean_overflow_square_excess",
+      "p": 1129,
+      "n": 1125,
+      "r": 4,
+      "D": 457245,
+      "delta": 405,
+      "delta_divides_n": false,
+      "source_coordinate": 50805,
+      "target_coordinate": 141125,
+      "t": 45,
+      "lambda": 125,
+      "mu": 499,
+      "H": 3125,
+      "s": 20,
+      "normal_form": {
+        "a": 25,
+        "b": 1,
+        "c": 5,
+        "w": 9
+      },
+      "target_residues": {
+        "e0": 92,
+        "e1": 374,
+        "e2": 479
+      },
+      "e0_inside_normalized_window": true,
+      "e0_quotient": 3,
+      "normalized_target_hits": [],
+      "overflow": {
+        "M": 1021,
+        "R_M": 2959,
+        "d": 311,
+        "C": 818
+      }
+    }
+  ]
+}

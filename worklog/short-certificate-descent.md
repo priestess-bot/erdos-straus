@@ -3631,3 +3631,96 @@ square-excess + 三目标命中”或其 miss 到换载体/competing-excess 的�
 
 严格主张和小型复现见
 [overflow D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md)。
+
+## 2026-08-01 同 1 mod 4 秩的 D-only 全域 no-go
+
+上一轮留下的 square-excess 余项已被进一步关闭。对任意
+
+\[
+p\equiv n\equiv1\pmod4,
+\qquad
+2\le n<p,
+\qquad
+r=p-n,
+\]
+
+固定 non-source \(D\)-only 参数。由 \(H\mid4\lambda^2\) 的奇数正规化，唯一写成
+
+\[
+H=a^2c,
+\qquad
+\lambda=abc,
+\qquad
+n=acw,
+\qquad
+\delta=cw^2,
+\qquad
+a=w+4rb.
+\]
+
+该正规形统一包含 \(w=1\) 的原预算层和 \(w\ge3\) 的平方超额层。规范 \(e=1\)
+目标由 \(0<v+\lambda<\mu\) 排除；\(e=2\) 目标化为
+
+\[
+\mu\mid v+4b^2c,
+\]
+
+而其最小正代表严格大于 \(\lambda\)。
+
+若 \(e=0\) 命中，置互补因子 \(Y_1=\lambda^2/v\)，并写
+
+\[
+4v+a^2c=L\mu,
+\qquad
+Y_1+4b^2c=m\mu.
+\]
+
+消元得到
+
+\[
+2XY=\frac{X^2}{L}+\frac{Y^2}{m}+\frac1c,
+\qquad
+X=a\text{ 为奇数},
+\quad
+Y=2b\text{ 为偶数},
+\quad
+L>1.
+\]
+
+固定 \(L,m,c\) 并取 \(X+Y\) 极小解。两个 Vieta 伴根保持正整数和奇偶型；令
+
+\[
+A=LY-X,
+\qquad
+B=mX-Y,
+\]
+
+则
+
+\[
+Lm=cXmA+cYLB,
+\qquad
+L\ge cXA.
+\]
+
+若 \(A<L\)，则 \(X>L\)，矛盾；若 \(A\ge L\)，只能有
+\(A=L,c=X=1\)，继而 \((Y-1)L=1\)，仍与 \(L>1\) 矛盾。因此
+
+\[
+\boxed{
+D\nmid n^2
+\Longrightarrow
+W(p,n,D)=\varnothing.}
+\]
+
+这项证明经过三路逐式内部复核；其中一条复核专门检查了 Vieta 闭合类、伴根正性和
+极小性论证。聚焦参数 \(p=73,193,673,1129\) 只作为边界复现，不承担全称证明。
+
+对 overflow 严格补秩 \(u\)，自动有 \(p\equiv u\equiv1\pmod4\)。因此
+source-supported 只重复中心 Type I，non-source 全空，D-only 必须作为
+`rejected_branch` 从菜单删除。该结论没有闭合 overflow；下一步转向 source-anchored
+alternate carrier、改变双尾的 marked 状态，或 competing-excess SCC 到 clean slab/
+直接终端的强制。
+
+严格主张和聚焦复现见
+[同 1 mod 4 秩的 D-only 全域 no-go](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
