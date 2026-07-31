@@ -1374,12 +1374,21 @@ Type I。因此中心谱 miss 时，任意持续选边的游走都在有限步�
 关系格
 \(L=\langle z_i-z_0,2z_0\rangle\) 在周期表示格中指数为 2；奇陪集
 \(z_0+L\) 与 \(K\) 内禀盒相交，当且仅当一个奇次节点组合消去全部外部指数并产生
-Type I。商格 Smith 正规形和有限角色和给出规范的表示—对偶—容量证书，见
+Type I。商格 Smith 正规形和有限角色和给出精确、可重放的表示—对偶—容量证书，见
 [一层周期的表示格与容量盒判据](../claims/type-I-formal-cycle-representation-lattice-capacity.md)。
 该判据现已有精确有限算法：先用 Smith 分解解外部坐标消元方程；若可解，再把内部候选
 化成仿射格商签名，并在 \(K\) 的指数盒中直接枚举或 meet-in-the-middle。命中会恢复
 奇次节点系数与 Type I 正规形；失败则区分为 `MISS_EXTERNAL` 或
-`MISS_CAPACITY`，不再把有限搜索失败混同为格障碍。
+`MISS_CAPACITY`。Smith 变换坐标本身不唯一，因此保存的是固定实现下可重放的矩阵回执，
+而不是跨实现唯一的“规范基”。
+
+这一接口已在真实 \(R=47\) 五周期上得到首个完整相图。固定
+\(v_2(K)=v_3(K)=1\)，并令 \(T=\operatorname{Supp}(K)\cap\{5,13,31,43\}\)，
+十六个平方自由掩码精确分成：空掩码 1 个 `MISS_EXTERNAL`；含 \(31\) 或包含
+\(\{5,13,43\}\) 的 9 个 `HIT`；其余 6 个 `MISS_CAPACITY`。完整单位盒的 729 个点
+恰有 12 个有向交点，即互逆归一后的 6 个比。每个掩码又有一条原始 CRT 素数进程，故
+三相都在无穷多个真实核心周期上发生。见
+[R=47 五周期的表示格容量三相](../claims/type-I-r47-cycle-lattice-capacity-three-phase-boundary.md)。
 
 第二，\(K\) 支撑周期的平方自由支撑积记为 \(B\)。旧的 direct radical 猜想已经被
 \(R=30031\) 五周期否定：其 support cube 不含 \(-1\)。但若该 cube 命中

@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 357 |
+| 数学状态 | `computationally_reproduced` | 358 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 283 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 123 |
-| 证明来源 | `mixed` | 14 |
+| 证明来源 | `mixed` | 15 |
 | 证明来源 | `repository_derivation` | 114 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 233 |
+| 审阅状态 | `internal_review` | 234 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -472,6 +472,7 @@
 | [私有载体代理过载的较小 R 或 Type II 有限分流](../claims/type-I-private-carrier-proxy-overflow-escape-profile.md) (`type-I-private-carrier-proxy-overflow-escape-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [Type I 多私有因子商群指数盒的饱和判据](../claims/type-I-private-quotient-box-saturation.md) (`type-I-private-quotient-box-saturation`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-29 |
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [R=47 五周期的表示格容量三相与无限核心射线](../claims/type-I-r47-cycle-lattice-capacity-three-phase-boundary.md) (`type-I-r47-cycle-lattice-capacity-three-phase-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自七 p 加一五模七因子的 R 等于七 B 等于一上半区桥](../claims/type-I-seven-p-plus-one-r7-b1-upper-bridge.md) (`type-I-seven-p-plus-one-r7-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |

@@ -314,7 +314,7 @@ C=\frac K{ab}=725.
 
 对 \((p,R,K)=(1009,3,757)\) 的自环 \(\{1,2\}\)，唯一周期向量在外部素数 2
 坐标上为 \(-1\)。其关系格是偶数倍子格，目标类是奇类；但 \(\mathcal B_K\) 强制外部
-2 坐标为 0。因此 (20) miss，精确解释了为什么这个周期不能在原 \(K\) 容量内消去其
+2 坐标为 0。因此 (21) miss，精确解释了为什么这个周期不能在原 \(K\) 容量内消去其
 外部素数。
 
 ## 6. 与 radical cube 的关系
@@ -354,9 +354,31 @@ M_Et=-z_{0,E}
 \tag{29}
 \]
 
-作带左右幺模变换的 Smith 分解。若相应对角元整除条件失败，则 (13) 必定 miss，并且
-这些失败的整除条件就是规范的 `MISS_EXTERNAL` 证书。若方程可解，则 Smith 数据给出一个
-特解 \(t_0\) 和整数核基 \(N\)，全部外部坐标为零的候选可唯一归约为内部仿射格
+作带左右幺模变换的 Smith 分解。更明确地，置
+
+\[
+U_EM_EV_E=D_E,
+\qquad
+\beta=U_E(-z_{0,E}),
+\qquad
+r_E=\operatorname{rank}M_E,
+\tag{29a}
+\]
+
+并记非零 Smith 元为 \(d_1,\ldots,d_{r_E}\)。方程可解当且仅当
+
+\[
+d_j\mid\beta_j\quad(1\le j\le r_E),
+\qquad
+\beta_j=0\quad(r_E<j\le |E|).
+\tag{29b}
+\]
+
+因此必须同时检查非零对角元整除条件与秩后的所有零行等式。任一条件失败都推出
+(13) miss；保存
+输入矩阵、左右幺模变换、Smith 对角阵和变换后右端，即得到可重放的
+`MISS_EXTERNAL` 证书。若方程可解，则 Smith 数据给出一个特解 \(t_0\) 和**饱和整数核**
+的基矩阵 \(N\)，全部外部坐标为零的候选被参数化为内部仿射格
 
 \[
 t=t_0+Nu,
@@ -365,7 +387,8 @@ x_I=c+Au,
 \qquad
 c=z_{0,I}+M_It_0,
 \qquad
-A=M_IN.
+A=M_IN,
+\qquad d=\operatorname{cols}N.
 \tag{30}
 \]
 
@@ -377,7 +400,7 @@ UAV=\operatorname{diag}(s_1,\ldots,s_\rho,0,\ldots,0),
 \tag{31}
 \]
 
-并定义商格签名
+并定义相对于这组 Smith 变换的可重放商格签名
 
 \[
 \sigma_A(x)=
@@ -391,11 +414,24 @@ UAV=\operatorname{diag}(s_1,\ldots,s_\rho,0,\ldots,0),
 于是
 
 \[
-x-c\in A\mathbb Z^{\operatorname{rank}N}
+x-c\in A\mathbb Z^d
 \quad\Longleftrightarrow\quad
 \sigma_A(x)=\sigma_A(c).
 \tag{33}
 \]
+
+命中时若 \(\eta=U(x-c)\)，可取
+
+\[
+y_j=\eta_j/s_j\ (1\le j\le\rho),
+\qquad
+y_j=0\ (j>\rho),
+\qquad
+u=Vy.
+\tag{33a}
+\]
+
+式 (33) 保证这些除法整除且秩后行均为零；自由列取零只是选择一个预像代表。
 
 算法只需在有限盒 \(-\nu_q\le x(q)\le\nu_q\) 中检查 (33)。周期中没有出现的
 \(K\)-素数行在 \(z_0,M\) 中恒为零，必须固定为零，可在搜索前删去。记剩余活跃盒大小为
@@ -405,11 +441,26 @@ B_{\rm eff}=\prod_{q\in I_{\rm active}}(2\nu_q+1).
 \tag{34}
 \]
 
-直接枚举需要 \(O(|I|B_{\rm eff})\) 次整数运算；把坐标按盒大小平衡分成两半，并利用
-签名的可加性做 meet-in-the-middle，时间和内存降为
-\(O(|I|\sqrt{B_{\rm eff}})\) 量级。所有比较都是精确整数等式或同余，不使用浮点近似。
+直接流式枚举需要 \(O(|I|B_{\rm eff})\) 次整数运算和常数个候选向量的额外内存。若把
+活跃坐标分成 \(J=L\sqcup R\)，定义
 
-命中时，由 (31) 恢复 \(u\)，再由 (30) 恢复 \(t\)。若
+\[
+\begin{aligned}
+B_L&=\prod_{q\in L}(2\nu_q+1),
+&S_L&=\left\{\sum_{q\in L}e_q\sigma_A(\mathbf e_q):|e_q|\le\nu_q\right\},\\
+B_R&=\prod_{q\in R}(2\nu_q+1),
+&S_R&=\left\{\sum_{q\in R}e_q\sigma_A(\mathbf e_q):|e_q|\le\nu_q\right\}.
+\end{aligned}
+\tag{34a}
+\]
+
+利用签名的可加性做 meet-in-the-middle，时间为 \(O(|I|(B_L+B_R))\)，辅助内存可取
+\(O(|I|\min(B_L,B_R))\)。只有盒因子能近似均衡分割时，才可
+简写为 \(O(|I|\sqrt{B_{\rm eff}})\)；单个大指数坐标等情形没有这个无条件平方根界。
+所有比较都是精确整数等式或同余，不使用浮点近似。
+
+命中时，由 (31) 恢复一个 \(u\) 的预像，再由 (30) 恢复 \(t\)。若 \(A\) 有非平凡整数
+核，则同一个内部向量可以对应多个 \(u\)；判定与恢复只需要其中一个。若
 
 \[
 t=(t_1,\ldots,t_{\ell-1},t_*),
@@ -426,12 +477,28 @@ c_i=t_i\quad(1\le i<\ell).
 \]
 
 其系数和恒为 \(1+2t_*\)，所以恢复的是奇陪集中的真实表示；随后按 (14)--(18) 输出并
-精确核验 Type I 证书。若有限盒全部 miss，则 Smith 数据、目标签名和完整盒签名缺失共同
-构成固定周期的 `MISS_CAPACITY` 证书。该两阶段算法因此同时给出规范 hit 见证和规范 miss
-障碍，而不是只报告启发式搜索失败。
+精确核验 Type I 证书。若有限盒全部 miss，小盒可保存完整的可达签名集合并核对目标签名
+不在其中；MITM 实现则保存两侧完整签名集合 \(S_L,S_R\)，逐项核对
+
+\[
+\sigma_A(c)\notin S_L+S_R.
+\tag{36a}
+\]
+
+连同坐标范围和 Smith 重建数据，这给出可重放的固定周期
+`MISS_CAPACITY` 证书。一般情形并未证明存在比完整盒或两侧签名表更短的 miss 证书。
+
+Smith 对角不变量和 hit/miss 结论是内禀的，但左右幺模矩阵、仿射特解和签名坐标并不唯一。
+所以这里的“证书”是固定素数次序、固定算法版本下确定且可独立验算的回执，不应把某一组
+\(U,V,t_0,N\) 称为跨实现的规范对象。
 
 ## 8. 证明边界
 
-本卡证明的是固定周期的完整判据和有限判定算法，不是“每个周期必命中”。当 (20) miss
+本卡证明的是固定周期的完整判据和有限判定算法，不是“每个周期必命中”。当 (21) miss
 时，仍必须使用周期外信息：全局 Type I/II 终端、跨模数中心谱、源可达性，或具有
 E1--E5 与全域解提升的合法 support switch。
+
+该算法在真实 \(R=47\) 五周期上的完整单位容量特化见
+[表示格容量三相与无限核心射线](type-I-r47-cycle-lattice-capacity-three-phase-boundary.md)：
+同一个周期随 \(K\) 的支撑容量精确出现 `MISS_EXTERNAL`、`MISS_CAPACITY` 与 `HIT`
+三种状态。

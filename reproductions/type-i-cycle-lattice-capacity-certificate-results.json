@@ -1,0 +1,3321 @@
+{
+  "arithmetic": "For the R=47 five-cycle, solve external exponent cancellation with replayable Smith data, enumerate the exact internal capacity box by quotient signatures, and recover every stored hit as an odd cycle combination and a Type I unit-fraction certificate.",
+  "core_squarefree_mask_phase": {
+    "capacity_per_present_prime": 1,
+    "classification": {
+      "HIT": "31 is present, or 5, 13, and 43 are all present",
+      "MISS_CAPACITY": "all other nonempty optional supports",
+      "MISS_EXTERNAL": "the optional support is empty"
+    },
+    "fixed_primes": [
+      2,
+      3
+    ],
+    "mask_count": 16,
+    "minimal_hit_carriers": [
+      {
+        "box_vector": [
+          0,
+          -1,
+          -1
+        ],
+        "normalized_exponent_vector": [
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "normalized_node_coefficients": [
+          -1,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "optional_support": [
+          31
+        ],
+        "tail_pair": {
+          "a": 1,
+          "b": 93
+        },
+        "used_primes": [
+          3,
+          31
+        ]
+      },
+      {
+        "box_vector": [
+          0,
+          -1,
+          -1,
+          1,
+          -1
+        ],
+        "normalized_exponent_vector": [
+          0,
+          -1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          -1,
+          0,
+          0,
+          -1,
+          1
+        ],
+        "optional_support": [
+          5,
+          13,
+          43
+        ],
+        "tail_pair": {
+          "a": 13,
+          "b": 645
+        },
+        "used_primes": [
+          3,
+          5,
+          13,
+          43
+        ]
+      }
+    ],
+    "optional_primes": [
+      5,
+      13,
+      31,
+      43
+    ],
+    "rows": [
+      {
+        "mask": 0,
+        "optional_support": [],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 12476880,
+          "primitive": true,
+          "residue": 6238441
+        },
+        "status": "MISS_EXTERNAL"
+      },
+      {
+        "mask": 1,
+        "optional_support": [
+          5
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 62384400,
+          "primitive": true,
+          "residue": 33687577
+        },
+        "status": "MISS_CAPACITY"
+      },
+      {
+        "mask": 2,
+        "optional_support": [
+          13
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 162199440,
+          "primitive": true,
+          "residue": 63824041
+        },
+        "status": "MISS_CAPACITY"
+      },
+      {
+        "mask": 3,
+        "optional_support": [
+          5,
+          13
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 810997200,
+          "primitive": true,
+          "residue": 777501577
+        },
+        "status": "MISS_CAPACITY"
+      },
+      {
+        "mask": 4,
+        "optional_support": [
+          31
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 386783280,
+          "primitive": true,
+          "residue": 182524681
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 5,
+        "optional_support": [
+          5,
+          31
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 1933916400,
+          "primitive": true,
+          "residue": 1420231177
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 6,
+        "optional_support": [
+          13,
+          31
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 5028182640,
+          "primitive": true,
+          "residue": 152772121
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 7,
+        "optional_support": [
+          5,
+          13,
+          31
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 0",
+              "included": false,
+              "modulus": 43,
+              "prime": 43,
+              "residue": 1
+            }
+          ],
+          "modulus": 25140913200,
+          "primitive": true,
+          "residue": 2164045177
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 8,
+        "optional_support": [
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 536505840,
+          "primitive": true,
+          "residue": 506184121
+        },
+        "status": "MISS_CAPACITY"
+      },
+      {
+        "mask": 9,
+        "optional_support": [
+          5,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 2682529200,
+          "primitive": true,
+          "residue": 2330303977
+        },
+        "status": "MISS_CAPACITY"
+      },
+      {
+        "mask": 10,
+        "optional_support": [
+          13,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 6974575920,
+          "primitive": true,
+          "residue": 4880770201
+        },
+        "status": "MISS_CAPACITY"
+      },
+      {
+        "mask": 11,
+        "optional_support": [
+          5,
+          13,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 0",
+              "included": false,
+              "modulus": 31,
+              "prime": 31,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 34872879600,
+          "primitive": true,
+          "residue": 24409582777
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 12,
+        "optional_support": [
+          31,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 16631681040,
+          "primitive": true,
+          "residue": 10526728681
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 13,
+        "optional_support": [
+          5,
+          31,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 0",
+              "included": false,
+              "modulus": 13,
+              "prime": 13,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 83158405200,
+          "primitive": true,
+          "residue": 50442763177
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 14,
+        "optional_support": [
+          13,
+          31,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 0",
+              "included": false,
+              "modulus": 5,
+              "prime": 5,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 216211853520,
+          "primitive": true,
+          "residue": 47628171001
+        },
+        "status": "HIT"
+      },
+      {
+        "mask": 15,
+        "optional_support": [
+          5,
+          13,
+          31,
+          43
+        ],
+        "prime_progression": {
+          "core_congruence": "p = 1 (mod 24)",
+          "local_conditions": [
+            {
+              "guarantee": "v_2(K) = 1",
+              "included": true,
+              "modulus": 16,
+              "prime": 2,
+              "residue": 9
+            },
+            {
+              "guarantee": "v_3(K) = 1",
+              "included": true,
+              "modulus": 9,
+              "prime": 3,
+              "residue": 1
+            },
+            {
+              "guarantee": "v_5(K) = 1",
+              "included": true,
+              "modulus": 25,
+              "prime": 5,
+              "residue": 2
+            },
+            {
+              "guarantee": "v_13(K) = 1",
+              "included": true,
+              "modulus": 169,
+              "prime": 13,
+              "residue": 8
+            },
+            {
+              "guarantee": "v_31(K) = 1",
+              "included": true,
+              "modulus": 961,
+              "prime": 31,
+              "residue": 29
+            },
+            {
+              "guarantee": "v_43(K) = 1",
+              "included": true,
+              "modulus": 1849,
+              "prime": 43,
+              "residue": 32
+            }
+          ],
+          "modulus": 1081059267600,
+          "primitive": true,
+          "residue": 869233214377
+        },
+        "status": "HIT"
+      }
+    ],
+    "status_counts": {
+      "HIT": 9,
+      "MISS_CAPACITY": 6,
+      "MISS_EXTERNAL": 1
+    }
+  },
+  "cycle": {
+    "R": 47,
+    "edge_labels": [
+      3,
+      2,
+      2,
+      2,
+      2
+    ],
+    "node_pairs": [
+      [
+        2,
+        45
+      ],
+      [
+        15,
+        32
+      ],
+      [
+        16,
+        31
+      ],
+      [
+        8,
+        39
+      ],
+      [
+        4,
+        43
+      ]
+    ],
+    "nodes": [
+      2,
+      15,
+      16,
+      8,
+      4
+    ],
+    "oriented_node_vectors": [
+      [
+        -1,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        -1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      [
+        3,
+        -1,
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ]
+    ],
+    "relation_generators": [
+      "z1-z0",
+      "z2-z0",
+      "z3-z0",
+      "z4-z0",
+      "2*z0"
+    ],
+    "relation_matrix_M": {
+      "rows": [
+        [
+          6,
+          5,
+          4,
+          3,
+          -2
+        ],
+        [
+          -3,
+          -2,
+          -3,
+          -2,
+          4
+        ],
+        [
+          -2,
+          -1,
+          -1,
+          -1,
+          2
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0
+        ]
+      ],
+      "shape": [
+        6,
+        5
+      ]
+    },
+    "selected_coordinates": [
+      45,
+      32,
+      16,
+      8,
+      4
+    ],
+    "support_primes": [
+      2,
+      3,
+      5,
+      13,
+      31,
+      43
+    ]
+  },
+  "fixtures": [
+    {
+      "K": 3678,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          613,
+          1
+        ]
+      ],
+      "R": 47,
+      "capacity": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "external_primes": [
+        5,
+        13,
+        31,
+        43
+      ],
+      "external_stage": {
+        "equation": "A_external * t = -z0_external",
+        "rhs": [
+          -1,
+          0,
+          0,
+          0
+        ],
+        "smith": {
+          "A": {
+            "rows": [
+              [
+                -2,
+                -1,
+                -1,
+                -1,
+                2
+              ],
+              [
+                0,
+                0,
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                -1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                -1,
+                0
+              ]
+            ],
+            "shape": [
+              4,
+              5
+            ]
+          },
+          "D": {
+            "rows": [
+              [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                2,
+                0
+              ]
+            ],
+            "shape": [
+              4,
+              5
+            ]
+          },
+          "D_zero_columns": [
+            4
+          ],
+          "D_zero_rows": [],
+          "U": {
+            "rows": [
+              [
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                -1,
+                0,
+                1,
+                0
+              ],
+              [
+                -1,
+                1,
+                1,
+                0
+              ],
+              [
+                1,
+                -1,
+                -1,
+                -1
+              ]
+            ],
+            "shape": [
+              4,
+              4
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                0,
+                0,
+                0,
+                -1,
+                1
+              ],
+              [
+                -1,
+                -1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              5,
+              5
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 4
+        },
+        "solution_exists": false,
+        "solvability_failures": [
+          {
+            "kind": "diagonal_divisibility",
+            "required_divisor": 2,
+            "row": 3,
+            "transformed_rhs": -1
+          }
+        ],
+        "transformed_rhs_Ub": [
+          -1,
+          1,
+          1,
+          -1
+        ]
+      },
+      "inactive_K_factors": [
+        [
+          613,
+          1
+        ]
+      ],
+      "internal_primes": [
+        2,
+        3
+      ],
+      "p": 313,
+      "status": "MISS_EXTERNAL"
+    },
+    {
+      "K": 858,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "R": 47,
+      "capacity": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "external_primes": [
+        5,
+        31,
+        43
+      ],
+      "external_stage": {
+        "equation": "A_external * t = -z0_external",
+        "kernel_is_saturated": true,
+        "particular_solution_t0": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "rhs": [
+          -1,
+          0,
+          0
+        ],
+        "saturated_kernel_N": {
+          "rows": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "shape": [
+            5,
+            2
+          ]
+        },
+        "saturation_witness": "N consists of columns V[:, rank:] in the unimodular ambient basis V.",
+        "smith": {
+          "A": {
+            "rows": [
+              [
+                -2,
+                -1,
+                -1,
+                -1,
+                2
+              ],
+              [
+                0,
+                -1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                -1,
+                0
+              ]
+            ],
+            "shape": [
+              3,
+              5
+            ]
+          },
+          "D": {
+            "rows": [
+              [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ]
+            ],
+            "shape": [
+              3,
+              5
+            ]
+          },
+          "D_zero_columns": [
+            3,
+            4
+          ],
+          "D_zero_rows": [],
+          "U": {
+            "rows": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                -1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                0,
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                -1,
+                -1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                -1,
+                2,
+                2
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              5,
+              5
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 3
+        },
+        "smith_particular_coordinates": [
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "solution_exists": true,
+        "solvability_failures": [],
+        "transformed_rhs_Ub": [
+          -1,
+          1,
+          0
+        ]
+      },
+      "inactive_K_factors": [
+        [
+          11,
+          1
+        ]
+      ],
+      "internal_primes": [
+        2,
+        3,
+        13
+      ],
+      "internal_stage": {
+        "A_internal": {
+          "rows": [
+            [
+              2,
+              6
+            ],
+            [
+              -3,
+              -2
+            ],
+            [
+              -2,
+              -2
+            ]
+          ],
+          "shape": [
+            3,
+            2
+          ]
+        },
+        "affine_lattice": "x_internal = c + A_internal * u",
+        "box_points_checked": 27,
+        "box_size": 27,
+        "c": [
+          3,
+          -1,
+          -1
+        ],
+        "hit_vector_count": 0,
+        "reachable_signature_count": 27,
+        "reachable_signatures": [
+          [
+            0,
+            0,
+            -5
+          ],
+          [
+            0,
+            0,
+            -4
+          ],
+          [
+            0,
+            0,
+            -3
+          ],
+          [
+            0,
+            0,
+            -1
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            3
+          ],
+          [
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            0,
+            1,
+            -12
+          ],
+          [
+            0,
+            1,
+            -11
+          ],
+          [
+            0,
+            1,
+            -10
+          ],
+          [
+            0,
+            1,
+            -8
+          ],
+          [
+            0,
+            1,
+            -7
+          ],
+          [
+            0,
+            1,
+            -6
+          ],
+          [
+            0,
+            1,
+            -4
+          ],
+          [
+            0,
+            1,
+            -3
+          ],
+          [
+            0,
+            1,
+            -2
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            4
+          ],
+          [
+            0,
+            1,
+            6
+          ],
+          [
+            0,
+            1,
+            7
+          ],
+          [
+            0,
+            1,
+            8
+          ],
+          [
+            0,
+            1,
+            10
+          ],
+          [
+            0,
+            1,
+            11
+          ],
+          [
+            0,
+            1,
+            12
+          ]
+        ],
+        "signature_components": [
+          {
+            "kind": "residue",
+            "modulus": 1
+          },
+          {
+            "kind": "residue",
+            "modulus": 2
+          },
+          {
+            "kind": "exact_integer"
+          }
+        ],
+        "smith": {
+          "A": {
+            "rows": [
+              [
+                2,
+                6
+              ],
+              [
+                -3,
+                -2
+              ],
+              [
+                -2,
+                -2
+              ]
+            ],
+            "shape": [
+              3,
+              2
+            ]
+          },
+          "D": {
+            "rows": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "shape": [
+              3,
+              2
+            ]
+          },
+          "D_zero_columns": [],
+          "D_zero_rows": [
+            2
+          ],
+          "U": {
+            "rows": [
+              [
+                -1,
+                -1,
+                0
+              ],
+              [
+                0,
+                2,
+                -3
+              ],
+              [
+                1,
+                -4,
+                7
+              ]
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                1,
+                4
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              2,
+              2
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 2
+        },
+        "target_signature_absent": true,
+        "target_signature_sigma_c": [
+          0,
+          1,
+          0
+        ]
+      },
+      "p": 73,
+      "status": "MISS_CAPACITY"
+    },
+    {
+      "K": 60078,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "R": 47,
+      "capacity": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "external_primes": [
+        5,
+        13,
+        43
+      ],
+      "external_stage": {
+        "equation": "A_external * t = -z0_external",
+        "kernel_is_saturated": true,
+        "particular_solution_t0": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "rhs": [
+          -1,
+          0,
+          0
+        ],
+        "saturated_kernel_N": {
+          "rows": [
+            [
+              -1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "shape": [
+            5,
+            2
+          ]
+        },
+        "saturation_witness": "N consists of columns V[:, rank:] in the unimodular ambient basis V.",
+        "smith": {
+          "A": {
+            "rows": [
+              [
+                -2,
+                -1,
+                -1,
+                -1,
+                2
+              ],
+              [
+                0,
+                0,
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                -1,
+                0
+              ]
+            ],
+            "shape": [
+              3,
+              5
+            ]
+          },
+          "D": {
+            "rows": [
+              [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ]
+            ],
+            "shape": [
+              3,
+              5
+            ]
+          },
+          "D_zero_columns": [
+            3,
+            4
+          ],
+          "D_zero_rows": [],
+          "U": {
+            "rows": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                0,
+                -1
+              ]
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                0,
+                0,
+                0,
+                -1,
+                0
+              ],
+              [
+                -1,
+                -1,
+                -1,
+                2,
+                2
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              5,
+              5
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 3
+        },
+        "smith_particular_coordinates": [
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "solution_exists": true,
+        "solvability_failures": [],
+        "transformed_rhs_Ub": [
+          -1,
+          0,
+          0
+        ]
+      },
+      "hit": {
+        "box_vector": [
+          0,
+          -1,
+          -1
+        ],
+        "full_exponent_vector": [
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "internal_solution_u": [
+          1,
+          -1
+        ],
+        "node_coefficient_sum": -1,
+        "node_coefficients": [
+          -1,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "normalization_sign": 1,
+        "normalized_exponent_vector": [
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "normalized_node_coefficients": [
+          -1,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "oriented_ratio": {
+          "denominator": 93,
+          "numerator": 1
+        },
+        "relation_parameter_t": [
+          -1,
+          1,
+          0,
+          0,
+          -1
+        ],
+        "tail_pair": {
+          "a": 1,
+          "b": 93
+        },
+        "type_I_certificate": {
+          "A": 2,
+          "B": 1,
+          "C": 646,
+          "H": 93,
+          "center_divisor": 646,
+          "h": 55,
+          "unit_fraction": {
+            "denominators": [
+              1292,
+              120156,
+              307178814
+            ],
+            "left": [
+              4,
+              5113
+            ],
+            "verified": true
+          }
+        },
+        "used_primes": [
+          3,
+          31
+        ]
+      },
+      "inactive_K_factors": [
+        [
+          17,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "internal_primes": [
+        2,
+        3,
+        31
+      ],
+      "internal_stage": {
+        "A_internal": {
+          "rows": [
+            [
+              4,
+              8
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -2,
+              -2
+            ]
+          ],
+          "shape": [
+            3,
+            2
+          ]
+        },
+        "affine_lattice": "x_internal = c + A_internal * u",
+        "box_points_checked": 27,
+        "box_size": 27,
+        "c": [
+          4,
+          0,
+          -1
+        ],
+        "hit_vector_count": 2,
+        "reachable_signature_count": 24,
+        "signature_components": [
+          {
+            "kind": "residue",
+            "modulus": 1
+          },
+          {
+            "kind": "residue",
+            "modulus": 2
+          },
+          {
+            "kind": "exact_integer"
+          }
+        ],
+        "smith": {
+          "A": {
+            "rows": [
+              [
+                4,
+                8
+              ],
+              [
+                -1,
+                0
+              ],
+              [
+                -2,
+                -2
+              ]
+            ],
+            "shape": [
+              3,
+              2
+            ]
+          },
+          "D": {
+            "rows": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "shape": [
+              3,
+              2
+            ]
+          },
+          "D_zero_columns": [],
+          "D_zero_rows": [
+            2
+          ],
+          "U": {
+            "rows": [
+              [
+                0,
+                -1,
+                0
+              ],
+              [
+                0,
+                2,
+                -1
+              ],
+              [
+                1,
+                -4,
+                4
+              ]
+            ],
+            "shape": [
+              3,
+              3
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              2,
+              2
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 2
+        },
+        "target_signature_absent": false,
+        "target_signature_sigma_c": [
+          0,
+          1,
+          0
+        ]
+      },
+      "p": 5113,
+      "status": "HIT"
+    },
+    {
+      "K": 75381150,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ]
+      ],
+      "R": 47,
+      "capacity": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ]
+      ],
+      "external_primes": [],
+      "external_stage": {
+        "equation": "A_external * t = -z0_external",
+        "kernel_is_saturated": true,
+        "particular_solution_t0": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "rhs": [],
+        "saturated_kernel_N": {
+          "rows": [
+            [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1
+            ]
+          ],
+          "shape": [
+            5,
+            5
+          ]
+        },
+        "saturation_witness": "N consists of columns V[:, rank:] in the unimodular ambient basis V.",
+        "smith": {
+          "A": {
+            "rows": [],
+            "shape": [
+              0,
+              5
+            ]
+          },
+          "D": {
+            "rows": [],
+            "shape": [
+              0,
+              5
+            ]
+          },
+          "D_zero_columns": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "D_zero_rows": [],
+          "U": {
+            "rows": [],
+            "shape": [
+              0,
+              0
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              5,
+              5
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 0
+        },
+        "smith_particular_coordinates": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "solution_exists": true,
+        "solvability_failures": [],
+        "transformed_rhs_Ub": []
+      },
+      "hit": {
+        "box_vector": [
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "full_exponent_vector": [
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "internal_solution_u": [
+          1,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "node_coefficient_sum": -1,
+        "node_coefficients": [
+          0,
+          1,
+          -1,
+          0,
+          -1
+        ],
+        "normalization_sign": -1,
+        "normalized_exponent_vector": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          0,
+          -1,
+          1,
+          0,
+          1
+        ],
+        "oriented_ratio": {
+          "denominator": 30,
+          "numerator": 1333
+        },
+        "relation_parameter_t": [
+          1,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "tail_pair": {
+          "a": 30,
+          "b": 1333
+        },
+        "type_I_certificate": {
+          "A": 29,
+          "B": 30,
+          "C": 1885,
+          "H": 1333,
+          "center_divisor": 1696500,
+          "h": 144383,
+          "unit_fraction": {
+            "denominators": [
+              1639950,
+              72868445,
+              483601511189550
+            ],
+            "left": [
+              4,
+              6415417
+            ],
+            "verified": true
+          }
+        },
+        "used_primes": [
+          2,
+          3,
+          5,
+          31,
+          43
+        ]
+      },
+      "inactive_K_factors": [
+        [
+          29,
+          1
+        ]
+      ],
+      "internal_primes": [
+        2,
+        3,
+        5,
+        13,
+        31,
+        43
+      ],
+      "internal_stage": {
+        "A_internal": {
+          "rows": [
+            [
+              6,
+              5,
+              4,
+              3,
+              -2
+            ],
+            [
+              -3,
+              -2,
+              -3,
+              -2,
+              4
+            ],
+            [
+              -2,
+              -1,
+              -1,
+              -1,
+              2
+            ],
+            [
+              0,
+              0,
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              -1,
+              0
+            ]
+          ],
+          "shape": [
+            6,
+            5
+          ]
+        },
+        "affine_lattice": "x_internal = c + A_internal * u",
+        "box_points_checked": 1215,
+        "box_size": 1215,
+        "c": [
+          -1,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "hit_vector_count": 14,
+        "reachable_signature_count": 140,
+        "signature_components": [
+          {
+            "kind": "residue",
+            "modulus": 1
+          },
+          {
+            "kind": "residue",
+            "modulus": 1
+          },
+          {
+            "kind": "residue",
+            "modulus": 1
+          },
+          {
+            "kind": "residue",
+            "modulus": 1
+          },
+          {
+            "kind": "residue",
+            "modulus": 2
+          },
+          {
+            "kind": "exact_integer"
+          }
+        ],
+        "smith": {
+          "A": {
+            "rows": [
+              [
+                6,
+                5,
+                4,
+                3,
+                -2
+              ],
+              [
+                -3,
+                -2,
+                -3,
+                -2,
+                4
+              ],
+              [
+                -2,
+                -1,
+                -1,
+                -1,
+                2
+              ],
+              [
+                0,
+                0,
+                -1,
+                0,
+                0
+              ],
+              [
+                0,
+                -1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                -1,
+                0
+              ]
+            ],
+            "shape": [
+              6,
+              5
+            ]
+          },
+          "D": {
+            "rows": [
+              [
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "shape": [
+              6,
+              5
+            ]
+          },
+          "D_zero_columns": [],
+          "D_zero_rows": [
+            5
+          ],
+          "U": {
+            "rows": [
+              [
+                0,
+                -1,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                2,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                -1,
+                0,
+                0
+              ],
+              [
+                -1,
+                -2,
+                0,
+                2,
+                -1,
+                0
+              ],
+              [
+                0,
+                2,
+                -3,
+                -3,
+                -1,
+                -1
+              ],
+              [
+                1,
+                -4,
+                9,
+                7,
+                4,
+                2
+              ]
+            ],
+            "shape": [
+              6,
+              6
+            ]
+          },
+          "U_unimodular": true,
+          "V": {
+            "rows": [
+              [
+                1,
+                -1,
+                -4,
+                -2,
+                -4
+              ],
+              [
+                0,
+                1,
+                2,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                6
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1
+              ]
+            ],
+            "shape": [
+              5,
+              5
+            ]
+          },
+          "V_unimodular": true,
+          "identity": "D = U A V",
+          "rank": 5
+        },
+        "target_signature_absent": false,
+        "target_signature_sigma_c": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "p": 6415417,
+      "status": "HIT"
+    }
+  ],
+  "full_unit_box_phase": {
+    "box_points_checked": 729,
+    "box_size": 729,
+    "capacity_per_support_prime": 1,
+    "normalized_ratio_count": 6,
+    "oriented_hit_vector_count": 12,
+    "ratios_up_to_inversion": [
+      {
+        "box_vector": [
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "normalized_exponent_vector": [
+          0,
+          -1,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "normalized_node_coefficients": [
+          -1,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "relation_parameter_t": [
+          -1,
+          1,
+          0,
+          0,
+          -1
+        ],
+        "sum_multiple_of_R": 2,
+        "support": [
+          3,
+          31
+        ],
+        "tail_pair": {
+          "a": 1,
+          "b": 93
+        }
+      },
+      {
+        "box_vector": [
+          0,
+          0,
+          -1,
+          1,
+          0,
+          1
+        ],
+        "normalized_exponent_vector": [
+          0,
+          0,
+          1,
+          -1,
+          0,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          0,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "relation_parameter_t": [
+          1,
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        "sum_multiple_of_R": 12,
+        "support": [
+          5,
+          13,
+          43
+        ],
+        "tail_pair": {
+          "a": 5,
+          "b": 559
+        }
+      },
+      {
+        "box_vector": [
+          0,
+          -1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        "normalized_exponent_vector": [
+          0,
+          -1,
+          -1,
+          1,
+          0,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          -1,
+          0,
+          0,
+          -1,
+          1
+        ],
+        "relation_parameter_t": [
+          0,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        "sum_multiple_of_R": 14,
+        "support": [
+          3,
+          5,
+          13,
+          43
+        ],
+        "tail_pair": {
+          "a": 13,
+          "b": 645
+        }
+      },
+      {
+        "box_vector": [
+          -1,
+          -1,
+          -1,
+          0,
+          1,
+          1
+        ],
+        "normalized_exponent_vector": [
+          1,
+          1,
+          1,
+          0,
+          -1,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          0,
+          -1,
+          1,
+          0,
+          1
+        ],
+        "relation_parameter_t": [
+          1,
+          -1,
+          0,
+          -1,
+          -1
+        ],
+        "sum_multiple_of_R": 29,
+        "support": [
+          2,
+          3,
+          5,
+          31,
+          43
+        ],
+        "tail_pair": {
+          "a": 30,
+          "b": 1333
+        }
+      },
+      {
+        "box_vector": [
+          -1,
+          1,
+          0,
+          1,
+          -1,
+          1
+        ],
+        "normalized_exponent_vector": [
+          1,
+          -1,
+          0,
+          -1,
+          1,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          0,
+          0,
+          -1,
+          1,
+          1
+        ],
+        "relation_parameter_t": [
+          0,
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "sum_multiple_of_R": 37,
+        "support": [
+          2,
+          3,
+          13,
+          31,
+          43
+        ],
+        "tail_pair": {
+          "a": 62,
+          "b": 1677
+        }
+      },
+      {
+        "box_vector": [
+          -1,
+          0,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        "normalized_exponent_vector": [
+          -1,
+          0,
+          0,
+          1,
+          -1,
+          -1
+        ],
+        "normalized_node_coefficients": [
+          -1,
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "relation_parameter_t": [
+          -1,
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "sum_multiple_of_R": 57,
+        "support": [
+          2,
+          13,
+          31,
+          43
+        ],
+        "tail_pair": {
+          "a": 13,
+          "b": 2666
+        }
+      }
+    ],
+    "support_minimal_elements": [
+      [
+        2,
+        13,
+        31,
+        43
+      ],
+      [
+        3,
+        31
+      ],
+      [
+        5,
+        13,
+        43
+      ]
+    ]
+  },
+  "schema_version": "cycle-lattice-capacity/v1",
+  "scope_note": "This is an exact certificate for the declared cycle, fixtures, and 16 squarefree support masks. It is not a proof that every formal cycle or every core prime has a capacity hit.",
+  "script_sha256": "be838644c2f761a3b5700fed4ad7b60e7c7dd295ac4217df34968d5ec021bc8c"
+}

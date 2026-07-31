@@ -29,7 +29,7 @@ last_checked: '2026-07-27'
 Type II $p-1$ 尾遗漏的 $1{,}717$ 个点有 $34$ 个不具备
 
 $$
-S=rac{E}{\gcd(E,4K)}=1\quad\text{或}\quad q^a
+S=\frac{E}{\gcd(E,4K)}=1\quad\text{或}\quad q^a
 $$
 
 的严格 Type I 最大尾反向边。对这 $34$ 点，独立重建完整平方因子外源递降及其必要的平移
