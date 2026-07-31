@@ -1,0 +1,20 @@
+{
+  "arithmetic": "Complete SCC scan of every R=7 mod 8 up to the limit; enumerate only simple cycles whose accumulated coordinate support still misses -1, then test -1, -4B, and -(4B)^-1 in the signed radical cube.",
+  "limit":100000,
+  "residue_class":"R=7 mod 8",
+  "summary":{"moduli":12500,"cyclic_moduli":511,"cyclic_components":807,"cyclic_nodes":9809,"dangerous_components":798,"direct_radical_miss_cycles":1,"multiplier_bridge_miss_cycles":0},
+  "layers":[
+    {"upper":10000,"moduli":1250,"cyclic_moduli":99,"cyclic_components":135,"cyclic_nodes":1319,"dangerous_components":132,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":20000,"moduli":1250,"cyclic_moduli":67,"cyclic_components":106,"cyclic_nodes":1255,"dangerous_components":104,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":30000,"moduli":1250,"cyclic_moduli":59,"cyclic_components":87,"cyclic_nodes":1053,"dangerous_components":86,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":40000,"moduli":1250,"cyclic_moduli":58,"cyclic_components":104,"cyclic_nodes":1231,"dangerous_components":103,"direct_radical_miss_cycles":1,"multiplier_bridge_miss_cycles":0},
+    {"upper":50000,"moduli":1250,"cyclic_moduli":48,"cyclic_components":75,"cyclic_nodes":990,"dangerous_components":75,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":60000,"moduli":1250,"cyclic_moduli":40,"cyclic_components":63,"cyclic_nodes":799,"dangerous_components":63,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":70000,"moduli":1250,"cyclic_moduli":37,"cyclic_components":68,"cyclic_nodes":895,"dangerous_components":67,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":80000,"moduli":1250,"cyclic_moduli":33,"cyclic_components":46,"cyclic_nodes":624,"dangerous_components":46,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":90000,"moduli":1250,"cyclic_moduli":39,"cyclic_components":77,"cyclic_nodes":1047,"dangerous_components":76,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0},
+    {"upper":100000,"moduli":1250,"cyclic_moduli":31,"cyclic_components":46,"cyclic_nodes":596,"dangerous_components":46,"direct_radical_miss_cycles":0,"multiplier_bridge_miss_cycles":0}
+  ],
+  "first_direct_radical_miss":{"R":30031,"cycle":[31,6000,1200,240,961],"support":[2,3,5,7,11,17,19,31,2621,3433]},
+  "first_multiplier_bridge_miss":null
+}

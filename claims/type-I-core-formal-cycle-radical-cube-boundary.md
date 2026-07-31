@@ -1,8 +1,8 @@
 ---
 kind: claim
 claim_id: type-I-core-formal-cycle-radical-cube-boundary
-title: 核心一层形式周期的奇偶约化与 radical cube 命中边界
-statement: 对核心素数 p≡1(mod24) 和 4K=pR+1，必有 R≡3(mod4)。若 R≡3(mod8)，则 K 为奇数，任何 A+B=R 的互素 K 支撑形式对都因一侧为偶数而不存在；所以核心的一层 K 支撑周期只可能位于 R≡7(mod8)。任一实际周期嵌入通用图 U_R：节点为 {x,R-x}，q^2 整除所选坐标时允许把它除以 q。对 7≤R≤9999 的全部 1250 个 R≡7(mod8) 模数，U_R 的 435 个有向简单周期全部满足其坐标素因子集合 S 的带符号平方自由立方包含 -1，因而产生 ab|rad(K)|K、a+b≡0(modR) 的同状态 Type I 命中。这个结论是完整有限验证；全域 R 的 radical-cycle 引理仍未证明。
+title: 核心一层形式周期的奇偶约化、有限 radical 命中与反例边界
+statement: 对核心素数 p≡1(mod24) 和 4K=pR+1，必有 R≡3(mod4)。若 R≡3(mod8)，则 K 为奇数，任何 A+B=R 的互素 K 支撑形式对都因一侧为偶数而不存在；所以核心的一层 K 支撑周期只可能位于 R≡7(mod8)。任一实际周期嵌入通用图 U_R：节点为 {x,R-x}，q^2 整除所选坐标时允许把它除以 q。对 7≤R≤9999 的全部 1250 个 R≡7(mod8) 模数，U_R 的 435 个有向简单周期的坐标素因子 radical cube 全部包含 -1，因而产生同状态 Type I 命中。这个完整有限结论不能推广为所有 R：R=30031 已给出 direct radical miss 五周期；该周期由更弱的 multiplier bridge 闭合且不兼容核心 K 支撑。
 claim_status: computationally_reproduced
 proof_provenance: mixed
 review_status: internal_review
@@ -182,9 +182,9 @@ p\equiv5\pmod{24}.
 的全部素因子后完整中心盒仍不含 \(-1\)。所以“任意奇 \(R\) 的周期都强制中心命中”
 是假的；(3) 的核心约化是实质条件。
 
-## 6. 剩余全称命题
+## 6. 原全称命题已被否定
 
-有限结果 (10) 指向一个不再含 \(p\)、\(K\) 或解提升的纯组合命题：
+有限结果 (10) 曾指向一个不再含 \(p\)、\(K\) 或解提升的纯组合命题：
 
 \[
 \boxed{
@@ -192,6 +192,33 @@ R\equiv7\pmod8\text{ 时，}U_R\text{ 的每个有向简单周期 }\mathcal Z
 \text{ 都满足 }-1\in\mathcal C_{S(\mathcal Z)}.}
 \tag{14}
 
-若证明 (14)，则核心的一层 \(K\) 支撑周期必与状态级 Type I 命中共存，因而不会进入
-terminal-free 余核。当前 435/435 只支持这一方向，不能代替对任意 \(R\) 的证明；更
-不能处理含外部支撑的合法 support switch 或 \(m>1\) 状态。
+这个命题现在已知为假。第一个按 \(R\) 递增找到的反例位于
+
+\[
+R=30031,
+\qquad
+\mathcal Z=(31,6000,1200,240,961).
+\tag{15}
+\]
+
+它的周期坐标支撑为
+
+\[
+S=\{2,3,5,7,11,17,19,31,2621,3433\},
+\tag{16}
+\]
+
+完整 signed cube 有 25357 个不同残数，但不含 \(-1\)。因此 435/435 只能保留为
+\(R\le9999\) 的完整有限定理，不能再作为 (14) 的无反例证据外推。
+
+不过 (15) 没有否定“实际核心 \(K\) 支撑周期必终端”。一方面，它的支撑含 3，而
+\(R\equiv1\pmod3\)、核心 \(p\equiv1\pmod3\) 强制 \(K\equiv2\pmod3\)，所以它不可能
+嵌入真实核心 \(K\) 支撑图。另一方面，同一 support cube 命中
+\(-4\operatorname{rad}(S)\) 及其对应的逆目标，并由三目标乘子桥恢复完整 \(K\) 中心盒
+命中。精确反例、桥定理和见证见
+[周期平方自由支撑的三目标乘子桥与首个直接反例](type-I-formal-cycle-radical-multiplier-bridge.md)。
+
+所以新的开放对象不再是 (14)，而是以下更弱且更贴近原状态的析取：实际核心支撑周期
+是否总由三目标乘子桥命中，或由
+[周期表示格与容量盒判据](type-I-formal-cycle-representation-lattice-capacity.md)
+产生交点。两者都仍不处理含外部支撑的合法 support switch 或 \(m>1\) 状态。

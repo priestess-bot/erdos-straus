@@ -322,12 +322,16 @@ A^2C=24{,}361{,}547{,}152,
 \[
 \boxed{
 \begin{array}{l}
-\text{对任意 terminal-free 的 }\Psi_0=1\text{ 状态，两个良基剪枝中至少一个}\
+\text{对任意 terminal-first 后仍未闭合的 }\Psi_0=1\text{ 状态，两个良基剪枝}\
 
-\text{产生外部缺口 Type I/II，或产生中心谱跨图表命中，或产生满足}\
+\text{或其源可达一层 SCC 产生周期表示格盒交、}K\text{ 支撑乘子桥、外部}\
+
+\text{缺口 Type I/II、中心谱跨图表命中，或产生满足}\
 
 \text{完整 E1--E5 与解提升合同的合法 support switch。}
 \end{array}}
 \tag{29}
 
-证明 (29) 才能把本卡升级为全称短证书或递降引理。
+完整超高图的汇点现已证明等价于同状态 Type I，但纯外部周期在
+\(R\equiv3\pmod8\) 时普遍存在，不能单独算作出口。因此证明 (29) 仍需要周期外的
+terminal-first 与源可达信息；证明该析取才能把本卡升级为全称短证书或递降引理。

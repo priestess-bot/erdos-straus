@@ -1,0 +1,189 @@
+{
+  "arithmetic": "Verify the first direct radical-cube cycle boundary, its two multiplier-bridge targets, the all-external p=241 cycle with three failed cycle-derived terminals, and the R=3 external self-loop.",
+  "external_cycle_boundary": {
+    "K": 1145,
+    "R": 19,
+    "cross_modulus_3": {
+      "K_Q": 181,
+      "centered_spectrum": [
+        1
+      ],
+      "hit": false
+    },
+    "cycle_pairs": [
+      [
+        1,
+        18
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        3,
+        16
+      ]
+    ],
+    "edge_labels": [
+      2,
+      3,
+      3
+    ],
+    "edge_product": 18,
+    "edge_product_mod_R": 18,
+    "external_gap_candidates": [
+      3
+    ],
+    "factorization_K": {
+      "5": 1,
+      "229": 1
+    },
+    "gap_3": {
+      "type_II_hits": [],
+      "type_I_hits": [],
+      "x": 61
+    },
+    "independent_type_II": {
+      "divisor": 1,
+      "gap": 7,
+      "solution": [
+        62,
+        2169,
+        134478
+      ],
+      "x": 62
+    },
+    "orientation_signs": [
+      1,
+      1,
+      -1
+    ],
+    "original_centered_spectrum": [
+      1,
+      4,
+      5
+    ],
+    "p": 241,
+    "selected_coordinates": [
+      18,
+      9,
+      3
+    ]
+  },
+  "multiplier_boundary": {
+    "R": 30031,
+    "core_support_compatibility": {
+      "compatible": false,
+      "reason": "R=1 mod 3 and core p=1 mod 3 imply K=2 mod 3, but the cycle support contains 3"
+    },
+    "cycle": [
+      31,
+      6000,
+      1200,
+      240,
+      961
+    ],
+    "cycle_pairs": [
+      [
+        31,
+        30000
+      ],
+      [
+        6000,
+        24031
+      ],
+      [
+        1200,
+        28831
+      ],
+      [
+        240,
+        29791
+      ],
+      [
+        961,
+        29070
+      ]
+    ],
+    "direct_radical_hit": false,
+    "edge_labels": [
+      {
+        "q": 5,
+        "selected_coordinate": 30000
+      },
+      {
+        "q": 5,
+        "selected_coordinate": 6000
+      },
+      {
+        "q": 5,
+        "selected_coordinate": 1200
+      },
+      {
+        "q": 31,
+        "selected_coordinate": 29791
+      },
+      {
+        "q": 31,
+        "selected_coordinate": 961
+      }
+    ],
+    "factorization_R": {
+      "59": 1,
+      "509": 1
+    },
+    "four_radical_mod_R": 21680,
+    "multiplier_bridge_hits": {
+      "minus_four_radical": {
+        "denominator": 4493797,
+        "numerator": 155
+      },
+      "minus_multiplier": {
+        "denominator": 155,
+        "numerator": 4493797
+      }
+    },
+    "multiplier_centered_divisor": 6033909224121185946,
+    "multiplier_centered_divisor_mod_R": 22523,
+    "multiplier_mod_R": 2395,
+    "radical": 208121535026790,
+    "radical_mod_R": 5420,
+    "signed_cube_size": 25357,
+    "support": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      17,
+      19,
+      31,
+      2621,
+      3433
+    ],
+    "targets": {
+      "minus_four_radical": 8351,
+      "minus_multiplier": 27636,
+      "minus_one": 30030
+    }
+  },
+  "script_sha256": "950bf42f9028db7cf8dcf1c2640f1ffd4e31efbbc945367c5c55698eb5443a96",
+  "self_loop_boundary": {
+    "K": 757,
+    "R": 3,
+    "centered_spectrum": [
+      1
+    ],
+    "destination": [
+      1,
+      2
+    ],
+    "node": [
+      1,
+      2
+    ],
+    "p": 1009,
+    "q": 2,
+    "selected_coordinate": 2
+  }
+}

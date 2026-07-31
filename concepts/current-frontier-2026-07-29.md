@@ -1356,12 +1356,34 @@ Type I 盒内命中。真正剩余的是迫使这些端点满足独立 Type II �
 而不是放弃这条局部恒等式。详见
 [形式目标因子对转移的 m=1 支撑内循环边界](../claims/type-I-formal-target-pair-descent-cycle-boundary.md)。
 
-周期风险在核心同余类中又得到一层约化。若 \(R\equiv3\pmod8\)，则核心状态的 \(K\)
-为奇数，而 \(A+B=R\) 必有一个偶坐标，所以一层 \(K\) 支撑图为空。对剩余的
-\(R\equiv7\pmod8\)、\(R\le9999\)，不限制 \(K\) 大小的通用放大图共有 435 个简单
-周期；每个周期的坐标素因子 radical cube 都直接包含 \(-1\)，从而与同状态 Type I
-中心盒命中共存。全域组合引理尚未证明，有限边界见
-[核心一层形式周期的奇偶约化与 radical cube 命中边界](../claims/type-I-core-formal-cycle-radical-cube-boundary.md)。
+完整超高形式图现在有一个全称的 cycle-or-hit 归约。固定起点的可达图有限，\(m>1\)
+的每条边严格降 \(m\)，而节点无出边当且仅当 \(AB\mid K\)，此时直接恢复同状态
+Type I。因此中心谱 miss 时，任意持续选边的游走都在有限步内形成 \(m=1\) 周期。
+一层非自环边恰降低 `min` 或 `max` 之一，唯一自环参数为 \((R,q,x)=(3,2,1)\)。详见
+[完整超高形式图的 Type I 或一层周期归约](../claims/type-I-formal-full-excess-cycle-or-hit-reduction.md)。
+
+这个归约不能被误读成周期自动接近终端。对任意奇 \(R\)，总选偶坐标再除以 2 是
+\((\mathbb Z/R\mathbb Z)^\times/\{\pm1\}\) 上的置换；核心
+\(R\equiv3\pmod8\) 时 \(K\) 为奇数，故这些置换周期全部是实际外部超高边。更强地，
+\((p,R,K)=(241,19,1145)\) 有全外部三周期，但原中心谱、周期唯一外部缺口 \(Q=3\)
+的 Type I/II 以及跨模数 \(K_3\) 中心谱同时 miss；它只在周期外由 \(h=7\) Type II
+闭合。见
+[外部一层周期的带符号乘积律与自动终端边界](../claims/type-I-formal-external-cycle-product-law-boundary.md)。
+
+周期内部现有两个精确正接口。第一，把每个节点编码成映到 \(-1\) 的指数向量 \(z_i\)，
+关系格
+\(L=\langle z_i-z_0,2z_0\rangle\) 在周期表示格中指数为 2；奇陪集
+\(z_0+L\) 与 \(K\) 内禀盒相交，当且仅当一个奇次节点组合消去全部外部指数并产生
+Type I。商格 Smith 正规形和有限角色和给出规范的表示—对偶—容量证书，见
+[一层周期的表示格与容量盒判据](../claims/type-I-formal-cycle-representation-lattice-capacity.md)。
+
+第二，\(K\) 支撑周期的平方自由支撑积记为 \(B\)。旧的 direct radical 猜想已经被
+\(R=30031\) 五周期否定：其 support cube 不含 \(-1\)。但若该 cube 命中
+\(-4B\) 或 \(-(4B)^{-1}\)，便直接构造 \(D\mid B^2\)、\(4D\equiv-1\pmod R\)，仍
+进入原 \(K\) 中心盒。到 \(R<100000\) 的 12500 个 \(R\equiv7\pmod8\) 模数中，只有
+上述一个 direct miss，而三目标 multiplier bridge 为 0 miss；该周期又因含 3 与核心
+支撑不相容。有限结果和新的两目标开放命题见
+[三目标乘子桥与首个直接反例](../claims/type-I-formal-cycle-radical-multiplier-bridge.md)。
 
 终端优先剪枝现在已有一个可复现的正向版本。允许所有满足
 \(v_q(AB)>v_q(K)\) 的素数后，分别只保留严格降低
@@ -1380,9 +1402,10 @@ Type I 盒内命中。真正剩余的是迫使这些端点满足独立 Type II �
 [分母缺陷逃逸的合法状态与转移合同](denominator-escape-state-contract.md)验收。前两项尚未
 证明所需外部对象对每个状态存在，故仍不能闭合全称选择器。
 
-验收条件现更新为：证明一个不含有限样本上界的“排秩外部缺口逃逸”引理，即任意
-terminal-free 的 \(\Psi_0=1\) 状态在两个良基剪枝中至少一个产生直接 Type I/II、
-跨模数中心谱命中，或产生满足完整 E1--E5 与解提升合同的合法 support switch。
+验收条件现更新为：证明一个不含有限样本上界的“源可达 SCC 逃逸”引理，即任意
+terminal-first 后仍未闭合的 \(\Psi_0=1\) 状态，其两个良基剪枝或完整一层 SCC 至少产生
+周期表示格盒交、\(K\) 支撑的两目标乘子桥、直接 Type I/II、跨模数中心谱命中，或满足
+完整 E1--E5 与解提升合同的合法 support switch。纯外部周期和整圈标签乘积不计为出口。
 只增加素数
 扫描、只证明裸 q 进同余可解、只报告反事实扩盒 miss、允许全部形式边后再事后赋拓扑号、
 把当前块高度从 \(e\) 中再次扣除，
@@ -1408,7 +1431,9 @@ terminal-free 的 \(\Psi_0=1\) 状态在两个良基剪枝中至少一个产生�
 \downarrow\\
 \text{双秩剪枝、一步外部缺口前瞻与冻结分支 }55/55\\
 \downarrow\\
-\text{全称排秩外部缺口逃逸，或合法换 }K/R\text{ 支撑与解提升}\\
+\text{cycle-or-hit、周期表示格与两目标乘子桥}\\
+\downarrow\\
+\text{全称源可达 SCC 逃逸，或合法换 }K/R\text{ 支撑与解提升}\\
 \downarrow\\
 \text{旗舰全称选择器}
 \end{array}
