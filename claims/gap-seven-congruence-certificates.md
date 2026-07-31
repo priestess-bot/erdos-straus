@@ -52,7 +52,7 @@ d=2x\mid x^2,
 且 \(7\mid x(p+2)=px+d\)，故是 Type I 证书。
 
 当 \(p\equiv6\pmod7\) 时，\(x\equiv5\pmod7\)，所以 \(7\mid x+2\)。
-又 \(2mid x^2\)、\(2\le x\)，故 \(d=2\) 给出 Type II 证书。
+又 \(2\mid x^2\)、\(2\le x\)，故 \(d=2\) 给出 Type II 证书。
 
 三个情形均有 \(m=7\equiv3\pmod4\)，且核心素数 \(p\ge73\)，所以
 \(3\le7\le p-2\)。Bradford 的恢复公式于是给出 \(4/p\) 的三项单位分数解。

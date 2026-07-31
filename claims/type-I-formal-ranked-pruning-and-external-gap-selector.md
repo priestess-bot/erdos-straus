@@ -203,6 +203,20 @@ z=\frac{xy}{d}.
 
 所以 (13) 的命中不依赖形式边是否合法；形式闭包只承担候选生成作用。
 
+与 (11) 的外部候选互补，若候选缺口本身满足 \(M\mid K\)，则
+\(pR\equiv-1\pmod M\) 可把 (13) 精确拉回为
+
+\[
+4dR^2\equiv-1\pmod M
+\quad\text{或}\quad
+4dR\equiv1\pmod M.
+\]
+
+这对复合 \(M\) 也成立，但仍必须保留 \(M\equiv3\pmod4\)、\(M\le p-2\) 与
+\(d\mid x_M^2\)。冻结 55 态的完整内部菜单只闭合 37 态，因此它是
+`terminal-first` 的另一条直接叶，不替代本卡的外部前瞻。见
+[K 内部缺口的 R 坐标残数拉回](internal-support-gap-residue-pullback.md)。
+
 ## 4. 把同一个 Q 切换为中心谱模数
 
 若 (11)--(13) 未命中，还可以把 \(Q\) 当作新模数并令

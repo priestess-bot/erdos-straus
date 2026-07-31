@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 357 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 290 |
+| 数学状态 | `established` | 292 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
-| 证明来源 | `mixed` | 17 |
+| 证明来源 | `mixed` | 19 |
 | 证明来源 | `repository_derivation` | 119 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 240 |
+| 审阅状态 | `internal_review` | 242 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -137,6 +137,7 @@
 | [H19-k23 两条无固定桥压力进程各有无穷低缺陷选择器素数子射线](../claims/h19-k23-unbridged-pressure-low-defect-subrays.md) (`h19-k23-unbridged-pressure-low-defect-subrays`) | `established` | `mixed` | `independent_review` | `bradford2024` | 2026-07-27 |
 | [H19-k23 普通双尾的最大统一基底不变量](../claims/h19-k23-uniform-tail-base-invariant.md) (`h19-k23-uniform-tail-base-invariant`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-26 |
 | [计算验证应按来源和复现状态读取](../claims/historical-computation-ladder.md) (`historical-computation-ladder`) | `computationally_reported` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bello2012`, `salez2014`, `mihnea_dumitru2025` | 2026-07-23 |
+| [K 内部缺口的 R 坐标残数拉回与终端选择边界](../claims/internal-support-gap-residue-pullback.md) (`internal-support-gap-residue-pullback`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [Li 的任意对数幂界渐近弱于 Vaughan](../claims/li-bound-weaker-than-vaughan.md) (`li-bound-weaker-than-vaughan`) | `established` | `unspecified` | `unspecified` | `li1981`, `vaughan1970` | 2026-07-23 |
 | [线性比例主族精确等价于固定缺口 Type I 证书](../claims/linear-ratio-ansatz-type-I-translation.md) (`linear-ratio-ansatz-type-I-translation`) | `established` | `unspecified` | `unspecified` | `linear_ratio_ansatz2026`, `bradford2024` | 2026-07-24 |
 | [关键恒等式与除子证书的小尺度复现](../claims/local-reproduction-2026-07-23.md) (`local-reproduction-2026-07-23`) | `computationally_reproduced` | `unspecified` | `unspecified` | `salez2014`, `bradford2024` | 2026-07-23 |
@@ -287,7 +288,7 @@
 | [两个局部余核的重复高度容量一代理面与短证书选择器](../claims/type-I-f-overflow-two-residual-capacity-one-selector.md) (`type-I-f-overflow-two-residual-capacity-one-selector`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [同状态重复与异状态未配型的多坐标联合压力边界](../claims/type-I-f-overflow-universal-joint-capacity.md) (`type-I-f-overflow-universal-joint-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [历史重复高度代理子集的多坐标和混合符号剖面](../claims/type-I-f-overflow-universal-support-profile.md) (`type-I-f-overflow-universal-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
-| [内禀缺陷一的最近目标纤维与一层逃逸边界](../claims/type-I-f-psi-one-nearest-fiber-escape-boundary.md) (`type-I-f-psi-one-nearest-fiber-escape-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-30 |
+| [内禀缺陷一的最近目标纤维与一层逃逸边界](../claims/type-I-f-psi-one-nearest-fiber-escape-boundary.md) (`type-I-f-psi-one-nearest-fiber-escape-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [F 状态 q 进清分子的参数刚性与公因子约分](../claims/type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction.md) (`type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [冻结 F 状态的关系格规范证书重建](../claims/type-I-f-relation-lattice-certificate-reconstruction.md) (`type-I-f-relation-lattice-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型规范 Fourier 需求的同色联合容量边界](../claims/type-I-f-same-color-subset-capacity-boundary.md) (`type-I-f-same-color-subset-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
@@ -313,6 +314,7 @@
 | [外部一层周期的带符号乘积律与自动终端边界](../claims/type-I-formal-external-cycle-product-law-boundary.md) (`type-I-formal-external-cycle-product-law-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [完整超高形式图的 Type I 或一层周期归约](../claims/type-I-formal-full-excess-cycle-or-hit-reduction.md) (`type-I-formal-full-excess-cycle-or-hit-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [形式目标对的双秩剪枝、一步终端前瞻与外部缺口选择器](../claims/type-I-formal-ranked-pruning-and-external-gap-selector.md) (`type-I-formal-ranked-pruning-and-external-gap-selector`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
+| [一层周期单外部行的 Smith 奇偶选择器与容量边界](../claims/type-I-formal-single-external-smith-parity-selector.md) (`type-I-formal-single-external-smith-parity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [形式目标因子对转移的 m 等于一支撑内循环边界](../claims/type-I-formal-target-pair-descent-cycle-boundary.md) (`type-I-formal-target-pair-descent-cycle-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [冻结 G 状态的规范有限群分离证书重建](../claims/type-I-g-separator-certificate-reconstruction.md) (`type-I-g-separator-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |

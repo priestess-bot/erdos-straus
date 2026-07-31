@@ -498,6 +498,14 @@ Smith 对角不变量和 hit/miss 结论是内禀的，但左右幺模矩阵、�
 时，仍必须使用周期外信息：全局 Type I/II 终端、跨模数中心谱、源可达性，或具有
 E1--E5 与全域解提升的合法 support switch。
 
+当外部部分恰有一个非零素数行 \(e_i\) 时，第一阶段可进一步压成一条闭式选择器。令
+\(g=\gcd_i|e_i|\)、\(f_i=e_i/g\)，则外部零组合中存在奇系数和，当且仅当 \(f_i\)
+不全为奇数；对应的一行 Smith 不变量在全奇时为 \(2g\)，否则为 \(g\)。因此全奇
+精确对应 `MISS_EXTERNAL`，混合奇偶只把状态送入 `HIT`/`MISS_CAPACITY` 二分。
+\(p=178513,R=183\) 的纯外部 13 三周期给出后一类的解析
+`MISS_CAPACITY` 例子，并在周期外由内部缺口 7 的直接 Type II 证书闭合。详见
+[单外部行的 Smith 奇偶选择器](type-I-formal-single-external-smith-parity-selector.md)。
+
 该算法在真实 \(R=47\) 五周期上的完整单位容量特化见
 [表示格容量三相与无限核心射线](type-I-r47-cycle-lattice-capacity-three-phase-boundary.md)：
 同一个周期随 \(K\) 的支撑容量精确出现 `MISS_EXTERNAL`、`MISS_CAPACITY` 与 `HIT`
