@@ -1,0 +1,884 @@
+{
+  "generic_bottom_word": {
+    "A": 0,
+    "B": 7,
+    "Q": 8,
+    "R": 35,
+    "admissible_root_congruence_class": [
+      8,
+      16,
+      24,
+      32
+    ],
+    "endpoint": [
+      4,
+      31
+    ],
+    "matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "root": [
+      32,
+      3
+    ],
+    "root_capacity_bound": 5,
+    "smith_diagonal": [
+      1,
+      8
+    ],
+    "word": [
+      [
+        "X",
+        2
+      ],
+      [
+        "X",
+        2
+      ],
+      [
+        "X",
+        2
+      ]
+    ]
+  },
+  "inputs": {
+    "formal_closure_script": "type_i_f_psi_one_formal_transition_closure.py",
+    "sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
+  },
+  "internal_free_cycle_counterexample": {
+    "K": 104380,
+    "R": 207,
+    "boundary": "internal_free_split_entry_with_static_cycle_separator_not_a_linear_source",
+    "centered_hits": [],
+    "centered_square_spectrum_size": 135,
+    "complete_reach": {
+      "edges": [
+        {
+          "destination": [
+            2,
+            205,
+            1
+          ],
+          "q": 103,
+          "source": [
+            1,
+            206,
+            1
+          ]
+        },
+        {
+          "destination": [
+            5,
+            202,
+            1
+          ],
+          "q": 41,
+          "source": [
+            2,
+            205,
+            1
+          ]
+        },
+        {
+          "destination": [
+            2,
+            205,
+            1
+          ],
+          "q": 101,
+          "source": [
+            5,
+            202,
+            1
+          ]
+        },
+        {
+          "destination": [
+            1,
+            206,
+            1
+          ],
+          "q": 139,
+          "source": [
+            68,
+            139,
+            1
+          ]
+        }
+      ],
+      "external_gaps": [
+        103,
+        139
+      ],
+      "nodes": [
+        [
+          1,
+          206,
+          1
+        ],
+        [
+          2,
+          205,
+          1
+        ],
+        [
+          5,
+          202,
+          1
+        ],
+        [
+          68,
+          139,
+          1
+        ]
+      ]
+    },
+    "cycle_capacity": {
+      "cycle_Q": 4141,
+      "entry": {
+        "U": 68,
+        "V": 139,
+        "endpoint": [
+          2,
+          205
+        ],
+        "theta": 14317
+      },
+      "interval_receipt_unit_examples": {
+        "hit": {
+          "intervals": {
+            "2": [
+              3,
+              5
+            ],
+            "3": [
+              3,
+              3
+            ]
+          },
+          "kind": "CYCLE_RAY_HIT",
+          "n": 3
+        },
+        "miss": {
+          "intervals": {
+            "2": [
+              4,
+              4
+            ],
+            "3": [
+              3,
+              3
+            ]
+          },
+          "kind": "MISS_INTERVAL",
+          "maximum_lower_bound": 4,
+          "minimum_upper_bound": 3
+        }
+      },
+      "moving_valuations": {
+        "101": 1,
+        "41": 1
+      },
+      "static_receipts": {
+        "U_to_K": {
+          "all_static_primes": [
+            103,
+            139
+          ],
+          "budget": 0,
+          "d": -1,
+          "kind": "MISS_STATIC",
+          "prime": 103
+        },
+        "U_to_x_R": {
+          "all_static_primes": [
+            5,
+            17,
+            103
+          ],
+          "budget": 0,
+          "d": -1,
+          "kind": "MISS_STATIC",
+          "prime": 103
+        },
+        "V_to_K": {
+          "all_static_primes": [
+            103
+          ],
+          "budget": 0,
+          "d": -1,
+          "kind": "MISS_STATIC",
+          "prime": 103
+        },
+        "V_to_x_R": {
+          "all_static_primes": [
+            103
+          ],
+          "budget": 0,
+          "d": -1,
+          "kind": "MISS_STATIC",
+          "prime": 103
+        }
+      }
+    },
+    "cycle_entry_common_overload_pairs": [
+      {
+        "P": 68,
+        "Q": 2934985,
+        "branch": "common_overload",
+        "budgets": {
+          "K": {
+            "17": 1,
+            "2": 2,
+            "307": 1,
+            "5": 1
+          },
+          "joint": {
+            "139": 1,
+            "17": 1,
+            "2": 2,
+            "307": 1,
+            "5": 1
+          },
+          "x_R": {
+            "139": 1,
+            "2": 2
+          }
+        },
+        "defects": {
+          "K": 586997,
+          "joint": 4223,
+          "x_R": 358955
+        },
+        "product": 199578980,
+        "signed_common_overload": {
+          "P_side": {},
+          "Q_side": {
+            "103": 1,
+            "41": 1
+          }
+        },
+        "signed_exponents": {
+          "103": -1,
+          "139": -1,
+          "17": 1,
+          "2": 2,
+          "41": -1,
+          "5": -1
+        }
+      },
+      {
+        "P": 1,
+        "Q": 206,
+        "branch": "common_overload",
+        "budgets": {
+          "K": {
+            "17": 1,
+            "2": 2,
+            "307": 1,
+            "5": 1
+          },
+          "joint": {
+            "139": 1,
+            "17": 1,
+            "2": 2,
+            "307": 1,
+            "5": 1
+          },
+          "x_R": {
+            "139": 1,
+            "2": 2
+          }
+        },
+        "defects": {
+          "K": 103,
+          "joint": 103,
+          "x_R": 103
+        },
+        "product": 206,
+        "signed_common_overload": {
+          "P_side": {},
+          "Q_side": {
+            "103": 1
+          }
+        },
+        "signed_exponents": {
+          "103": -1,
+          "2": -1
+        }
+      }
+    ],
+    "cycle_word": {
+      "A": 40,
+      "B": 4100,
+      "Q": 4141,
+      "R": 207,
+      "admissible_root_congruence_class": [
+        2
+      ],
+      "endpoint": [
+        2,
+        205
+      ],
+      "matrix": [
+        [
+          41,
+          40
+        ],
+        [
+          4100,
+          4101
+        ]
+      ],
+      "root": [
+        2,
+        205
+      ],
+      "root_capacity_bound": 1,
+      "smith_diagonal": [
+        1,
+        4141
+      ],
+      "word": [
+        [
+          "Y",
+          41
+        ],
+        [
+          "X",
+          101
+        ]
+      ]
+    },
+    "empty_suffix_cross_pair": {
+      "P": 68,
+      "Q": 139,
+      "branch": "strict_split",
+      "budgets": {
+        "K": {
+          "17": 1,
+          "2": 2,
+          "307": 1,
+          "5": 1
+        },
+        "joint": {
+          "139": 1,
+          "17": 1,
+          "2": 2,
+          "307": 1,
+          "5": 1
+        },
+        "x_R": {
+          "139": 1,
+          "2": 2
+        }
+      },
+      "defects": {
+        "K": 139,
+        "joint": 1,
+        "x_R": 17
+      },
+      "product": 9452,
+      "signed_common_overload": {
+        "P_side": {},
+        "Q_side": {}
+      },
+      "signed_exponents": {
+        "139": -1,
+        "17": 1,
+        "2": 2
+      }
+    },
+    "internal_profile": {
+      "R": 207,
+      "gaps": [
+        307,
+        1535
+      ],
+      "hits": []
+    },
+    "positive_linear_sources": [],
+    "prime": 2017,
+    "source_edge": {
+      "destination": [
+        68,
+        139,
+        1
+      ],
+      "g": 1,
+      "q": 17,
+      "source": [
+        1156,
+        1535,
+        13
+      ]
+    },
+    "strong_slab": {
+      "Q": 139,
+      "R_Q": 231,
+      "alpha": 1,
+      "anchor": [
+        1,
+        206,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "beta": 68,
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "node": [
+        68,
+        139,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "q": 139,
+      "strong_miss": true
+    },
+    "x_R": 556
+  },
+  "linear_strong_miss_counterexample": {
+    "K": 328170,
+    "R": 23,
+    "boundary": "counterexample_to_shortest_source_path_slab_q_carrier_even_with_linear_source",
+    "centered_hits": [],
+    "centered_square_spectrum_size": 81,
+    "complete_reach": {
+      "edges": [
+        {
+          "destination": [
+            2,
+            21,
+            1
+          ],
+          "q": 11,
+          "source": [
+            1,
+            22,
+            1
+          ]
+        },
+        {
+          "destination": [
+            3,
+            20,
+            1
+          ],
+          "q": 7,
+          "source": [
+            2,
+            21,
+            1
+          ]
+        },
+        {
+          "destination": [
+            10,
+            13,
+            1
+          ],
+          "q": 2,
+          "source": [
+            3,
+            20,
+            1
+          ]
+        },
+        {
+          "destination": [
+            1,
+            22,
+            1
+          ],
+          "q": 13,
+          "source": [
+            10,
+            13,
+            1
+          ]
+        }
+      ],
+      "nodes": [
+        [
+          1,
+          22,
+          1
+        ],
+        [
+          2,
+          21,
+          1
+        ],
+        [
+          3,
+          20,
+          1
+        ],
+        [
+          10,
+          13,
+          1
+        ]
+      ]
+    },
+    "empty_suffix_cross_pair": {
+      "P": 10,
+      "Q": 13,
+      "branch": "strict_split",
+      "budgets": {
+        "K": {
+          "10939": 1,
+          "2": 1,
+          "3": 1,
+          "5": 1
+        },
+        "joint": {
+          "10939": 1,
+          "13": 1,
+          "2": 1,
+          "3": 2,
+          "5": 1,
+          "61": 1
+        },
+        "x_R": {
+          "13": 1,
+          "2": 1,
+          "3": 2,
+          "61": 1
+        }
+      },
+      "defects": {
+        "K": 13,
+        "joint": 1,
+        "x_R": 5
+      },
+      "product": 130,
+      "signed_common_overload": {
+        "P_side": {},
+        "Q_side": {}
+      },
+      "signed_exponents": {
+        "13": -1,
+        "2": 1,
+        "5": 1
+      }
+    },
+    "external_gaps": [
+      7,
+      11
+    ],
+    "external_hit": {
+      "certificate_semantics": "verified_direct_terminal",
+      "complete_divisor_space_size": 27,
+      "divisor": 20,
+      "first_denominator": 14270,
+      "gap": 7,
+      "solution": [
+        14270,
+        116347390,
+        4737850189586845
+      ],
+      "type": "Type_I"
+    },
+    "internal_profile": {
+      "R": 23,
+      "gaps": [
+        3,
+        15,
+        10939,
+        54695
+      ],
+      "hits": [
+        {
+          "certificate_semantics": "verified_direct_terminal",
+          "complete_divisor_space_size": 39,
+          "divisor": 1784,
+          "first_denominator": 14272,
+          "gap": 15,
+          "solution": [
+            14272,
+            54303176,
+            24793961310784
+          ],
+          "type": "Type_I"
+        }
+      ]
+    },
+    "linear_source": {
+      "a": 2378,
+      "s": 1
+    },
+    "prime": 57073,
+    "source_edge": {
+      "destination": [
+        10,
+        13,
+        1
+      ],
+      "g": 1,
+      "q": 2,
+      "source": [
+        3,
+        20,
+        1
+      ]
+    },
+    "strong_slab": {
+      "Q": 13,
+      "R_Q": 43,
+      "alpha": 1,
+      "anchor": [
+        1,
+        22,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "beta": 10,
+      "cross_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "node": [
+        10,
+        13,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "q": 13,
+      "strong_miss": true
+    },
+    "x_R": 14274
+  },
+  "pareto_finite_bound_example": {
+    "a": {
+      "101": 0,
+      "41": -1
+    },
+    "b": {
+      "101": 0,
+      "41": 1
+    },
+    "clip_thresholds": {
+      "101": 0,
+      "41": 1
+    },
+    "lifted_vertex_count": 2,
+    "moving_primes": [
+      41,
+      101
+    ],
+    "theorem_semantics": "illustration_of_the_general_proof_not_a_finite_substitute_for_it",
+    "witness_length_bound_B": 4
+  },
+  "path_selected_terminals": [
+    {
+      "R": 35,
+      "alternative_path_labels": [
+        2,
+        19
+      ],
+      "direct_gap_terminal": {
+        "certificate_semantics": "verified_direct_terminal",
+        "complete_divisor_space_size": 225,
+        "divisor": 85,
+        "first_denominator": 1399100,
+        "gap": 31,
+        "solution": [
+          1399100,
+          252576769935,
+          23266420776626664606900
+        ],
+        "type": "Type_I"
+      },
+      "dyadic_path": [
+        [
+          3,
+          32,
+          1
+        ],
+        [
+          16,
+          19,
+          1
+        ],
+        [
+          8,
+          27,
+          1
+        ],
+        [
+          4,
+          31,
+          1
+        ]
+      ],
+      "dyadic_word": {
+        "A": 0,
+        "B": 7,
+        "Q": 8,
+        "R": 35,
+        "admissible_root_congruence_class": [
+          8,
+          16,
+          24,
+          32
+        ],
+        "endpoint": [
+          4,
+          31
+        ],
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            7,
+            8
+          ]
+        ],
+        "root": [
+          32,
+          3
+        ],
+        "root_capacity_bound": 5,
+        "smith_diagonal": [
+          1,
+          8
+        ],
+        "word": [
+          [
+            "X",
+            2
+          ],
+          [
+            "X",
+            2
+          ],
+          [
+            "X",
+            2
+          ]
+        ]
+      },
+      "formal_edge_semantics": "candidate_generation_only",
+      "prime": 5596369,
+      "rechart": {
+        "Q": 38,
+        "centered_hit_count": 8,
+        "centered_search_space": 405,
+        "new_K": 32179122,
+        "new_R": 23,
+        "old_R": 35,
+        "selected_hit": {
+          "centered_divisor": 684,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 2861904051,
+          "first_denominator": 1399122,
+          "gap": 119,
+          "normal_form": {
+            "A": 4091,
+            "B": 2,
+            "C": 171,
+            "H": 94091
+          },
+          "solution": [
+            1399122,
+            65822394051,
+            180086240808018
+          ],
+          "state_K": 32179122,
+          "state_modulus": 23,
+          "type": "Type_I"
+        },
+        "semantics": "path_selected_terminal_not_existing_E4"
+      }
+    },
+    {
+      "R": 215,
+      "leading_q71_edge_semantics": "candidate_generation_only",
+      "path": [
+        [
+          2,
+          213,
+          1
+        ],
+        [
+          3,
+          212,
+          1
+        ],
+        [
+          4,
+          211,
+          1
+        ]
+      ],
+      "path_labels": [
+        71,
+        53
+      ],
+      "prime": 212973049,
+      "rechart": {
+        "Q": 53,
+        "centered_hit_count": 1,
+        "centered_search_space": 81,
+        "new_K": 9104597845,
+        "new_R": 171,
+        "old_R": 215,
+        "selected_hit": {
+          "centered_divisor": 1325,
+          "certificate_semantics": "verified_direct_terminal",
+          "divisor": 2139506264372,
+          "first_denominator": 53243270,
+          "gap": 31,
+          "normal_form": {
+            "A": 200918,
+            "B": 5,
+            "C": 53,
+            "H": 34356973
+          },
+          "solution": [
+            53243270,
+            365855517964342,
+            1939033962968479405
+          ],
+          "state_K": 9104597845,
+          "state_modulus": 171,
+          "type": "Type_I"
+        },
+        "semantics": "support_derived_verified_rechart_from_node_3_212"
+      },
+      "single_slab_at_middle_node": {
+        "Q": 53,
+        "alpha": 4,
+        "alpha_beta_divides_K": true,
+        "beta": 3
+      }
+    }
+  ],
+  "schema_version": "type-i-bottom-word-lattice-pareto-cycle-capacity/v1",
+  "scope_note": "Focused exact checks of the bottom-word matrix normal form, two strong-miss boundaries, one cycle-ray separator, and two path-selected direct terminals. This does not rerun historical state/slab censuses, prove the universal sink-SCC escape, or upgrade an unanchored formal path to a legal descent edge.",
+  "summary": {
+    "candidate_rechart_count": 1,
+    "cycle_static_receipts": 4,
+    "focused_direct_terminal_primes": [
+      5596369,
+      212973049
+    ],
+    "linear_source_counterexamples": 1,
+    "pareto_example_bound": 4,
+    "strong_miss_counterexamples": 2,
+    "verified_rechart_count": 1,
+    "word_profiles": 2
+  }
+}

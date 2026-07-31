@@ -1004,6 +1004,102 @@ z\equiv-\sigma\pmod\mu,
 > 表示与 bottom SCC 一起纳入状态，再证明新容量下降或真正 E4，不再增加 depth 菜单。详见
 > [来源交叉表示的联合容量共同过载—分裂交换二分](../claims/type-I-source-word-joint-capacity-common-split-dichotomy.md)。
 
+> **2026-08-01 表示--对偶--容量与 bottom-SCC 更新。** 上述“向量容量”现已完成两层
+> 一般化，但也出现了一个必须接受的反例边界。
+>
+> 第一层是精确三盒字典。对固定状态级有限素数支撑和互素相位 \(-1\) 表示 \((P,Q)\)，令
+>
+> \[
+> z_\ell=v_\ell(P)-v_\ell(Q),
+> \quad
+> \nu_\ell=v_\ell(K),
+> \quad
+> \sigma_\ell=v_\ell(x_R),
+> \quad
+> \mu_\ell=\max(\nu_\ell,\sigma_\ell).
+> \]
+>
+> 则
+>
+> \[
+> e_K=\prod_\ell\ell^{(|z_\ell|-\nu_\ell)_+},
+> \quad
+> e_x=\prod_\ell\ell^{(|z_\ell|-\sigma_\ell)_+},
+> \quad
+> C=\prod_\ell\ell^{(|z_\ell|-\mu_\ell)_+}.
+> \]
+>
+> strict split 因而恰是 \(B_\mu\setminus(B_\nu\cup B_\sigma)\)，共同过载恰是
+> \(B_\mu\) 外部。给定见证 \(z\) 后，正负溢出指出载体位于 \(P\) 或 \(Q\)；但原来的
+> 无符号 Fourier/Pareto 单项式不能恢复方向，跨状态证明若需要颜色必须使用
+> \(T_\ell^+,T_\ell^-\) 双变量。联合盒内的目标表示数超过
+>
+> \[
+> \prod_\ell\left\lceil
+> \frac{2\mu_\ell+1}{\nu_\ell+1}
+> \right\rceil
+> \]
+>
+> 时，外盒近邻引理仍强制一个偶终端。这里的“选择不变”只相对于预先固定的支撑成立，
+> 不能让每条路径自行改变生成元集合。
+>
+> 第二层是 bottom-word 正规形。底层定向路径字在缩放 ancestry 坐标上唯一写成
+>
+> \[
+> M(Q,A,B)=
+> \begin{pmatrix}A+1&A\\B&B+1\end{pmatrix},
+> \qquad A+B=Q-1,
+> \]
+>
+> 满足 \(QX'=X+AR\)、\(QY'=Y+BR\) 及
+> \(\operatorname{SNF}(M)=\operatorname{diag}(1,Q)\)。同向周期重复 \(n\) 次后的四通道
+> 赋值都是
+>
+> \[
+> |d_{i,\ell}-n v_\ell(Q)|,
+> \]
+>
+> 所以无限周期可由 CYCLE_RAY_HIT、MISS_STATIC 或 MISS_INTERVAL 有限判定。更一般地，
+> 对 \(N\) 个 ancestry-lifted 顶点，固定首后继和定向终点后的每个 Pareto 极小签名及
+> 任一容量命中，都有长度小于
+>
+> \[
+> B=N\prod_{\ell\in\mathcal P_{\rm move}}
+> \bigl(\max(0,a_\ell,b_\ell)+1\bigr)
+> \]
+>
+> 的见证。因此无需再把任意图最短路径当成容量最优路径。
+>
+> 反例边界是
+>
+> \[
+> (p,R,K,x_R)=(57073,23,328170,14274).
+> \]
+>
+> 它有线性源、中心 F 状态和真实首边
+> \((20,3,1)\to(10,13,1)\)；首后继就是 strong slab
+> \((Q,\alpha,\beta)=(13,1,10)\)，但唯一最短空后缀满足
+>
+> \[
+> L_U=L_V=130,
+> \qquad
+> C(L_U)=C(L_V)=1.
+> \]
+>
+> 所以“strong miss 必有最短来源字使 slab \(q\) 进入共同过载”即使在 linear-source
+> 下也为假。该例已有内部 gap \(15\) 和 Reach gap \(7\) 的 Type I，只是否定旧载体规则。
+> 另一个 \((p,R)=(2017,207)\) 的 internal-free 例在底部二循环上由静态素数 \(103\)
+> 分离四个容量通道，说明完整 Pareto/SCC 判定也可能严格输出 miss。
+>
+> 短词可继续生成直接终端，但语义必须分开：\((5596369,35)\) 的路径积 \(38\) 选择出
+> 中心命中的 \(R_{38}=23\)，却不是现有 E4；\((212973049,215)\) 到达
+> \(\{3,212\}\) 后暴露的 single-slab \(Q=53\) 才满足已有 absorption 合同，并在
+> \(R_{53}=171\) 中心命中。下一步主命题因此改为：对每个 terminal-first unresolved
+> sink-SCC，把规范 Pareto/周期 miss 证书强制转成直接 Type I/II、改变根尾数据的非空
+> D-only 状态，或完整 E1--E5 合法递降。SCC 凝聚序只是分析调度，不是猜想下降。详见
+> [目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md)和
+> [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
+
 更长远的目标是证明一个选择定理：
 
 \[

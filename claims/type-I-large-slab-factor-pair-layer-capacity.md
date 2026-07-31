@@ -514,7 +514,7 @@ b=e.
 也就是说，二进 external carrier 只有在“路径字不含 2、\(V\) 含恰好 \(2^e\)，且
 endpoint 外部幂位于 \(U\)-ancestry”这一交叉匹配中，才能同时避开两个共同过载因子。
 
-### 7.2 source-anchored 反例与正确候选
+### 7.2 source-anchored 反例与 shortest-carrier 候选的否定
 
 slab \(q\) 的 union 命中即使在来源锚定 F 状态中也不是无条件全称。一条冻结来源锚定
 反例为
@@ -555,22 +555,89 @@ L_V=11969510,
 
 所以 \(101\nmid C(L_U)C(L_V)\)。这正是 (37) 的边界等号
 \(a+e=s=1\)，不是公式失败。该记录也不是 strong miss：锚点 gap \(63\) 已有 Type I，
-且 \(R_{101}=35<R\)。令 \(\mathcal W_{\min}(S)\) 表示到达 slab \(S\) 的全部最短
-来源锚定路径字，并把相应交叉乘积写成 \(L_U(w),L_V(w)\)。因此下一条量词明确、不会
-依赖任意长 cycle word 的全称候选应限定为
+且 \(R_{101}=35<R\)。
+
+事实上，加入 strong miss 甚至 linear-source 都不能救回最短路径候选。先记录一个精确的
+零距离引理：若 post-first anchor 本身就是
+
+\[
+U=\beta,
+\qquad
+V=Q\alpha,
+\qquad
+Q=q^e
+\]
+
+的 single-external slab，则唯一空后缀满足
 
 \[
 \boxed{
-S\text{ 是 strong large-slab miss}
-\Longrightarrow
-\exists w\in\mathcal W_{\min}(S):
-q\mid C(L_U(w))C(L_V(w)),
+L_U=L_V=Q\alpha\beta,
+\qquad
+v_qC(L_U)=v_qC(L_V)=\bigl(e-v_q(x_R)\bigr)_+.
 }
 \tag{47}
 \]
 
-或把 (37) 的等号支直接送入已有碰撞/ABSORB 出口；(47) 目前仍是开放命题，而且“最短”
-本身尚未给出跨状态统一的路径长度上界。
+这是因为 \((Q\alpha,\beta)=1\)、\(q\nmid K\)，且空路有 \(\Theta=1\)，直接代入
+(29)--(32) 即得。
+
+现在取
+
+\[
+(p,R,K,x_R)=(57073,23,328170,14274).
+\tag{48}
+\]
+
+它有线性源
+
+\[
+(a_0,s_0)=(2378,1),
+\qquad
+p=a_0+s_0+a_0s_0R,
+\qquad
+(a_0R+1)(s_0R+1)=4K.
+\tag{49}
+\]
+
+中心平方除子盒含 81 点且零命中。一条真实首边为
+
+\[
+(20,3,1)\xrightarrow{q_*=2,\ g=1}(10,13,1),
+\tag{50}
+\]
+
+而首后继自身就是
+
+\[
+(Q,\alpha,\beta)=(13,1,10)
+\tag{51}
+\]
+
+的 strong large-slab miss：direct/cross 命中集、节点/锚点 external-affine 命中集均空，
+且 \(R_{13}=43>23\)。由 (47)，唯一最短后缀给出
+
+\[
+L_U=L_V=130,
+\qquad
+C(L_U)=C(L_V)=1,
+\tag{52}
+\]
+
+因为 \(v_{13}(x_R)=1\)。所以旧候选
+
+\[
+\text{strong miss}
+\Longrightarrow
+\exists w\in\mathcal W_{\min}(S):
+q\mid C(L_U(w))C(L_V(w))
+\]
+
+为假，即使补上 linear-source 也仍为假。该例已有内部 gap \(15\) 的 Type I，完整 Reach
+也有 external gap \(7\) 的 Type I，因此它不否定再附加 terminal-first unresolved 的
+更窄量词；但目前没有理由把该窄量词提升为新候选。正确的选择不变量应是固定支撑上的
+完整 Pareto 容量前沿，并在 bottom SCC 内使用周期射线的命中或静态/区间 miss 证书，
+而不是任意最短图路径。
 
 ## 8. 与统一选择器的接口及边界
 
@@ -587,12 +654,15 @@ q\mid C(L_U(w))C(L_V(w)),
 - admissible divisor 必给出 Type I/II；
 - 一个算术 slab 必在指定源的 formal Reach 中出现；
 - external slab 素数 \(q\) 对每条来源路径都必是共同过载素数；
-- strong miss 必存在满足 (47) 的来源路径字；
 - 因子对 miss 必产生非空 D-only 状态或满足 E1--E4 的合法递降。
 
-所以 (14)--(42) 是后续 slab/suffix 向量容量的严格输入，不是 large-slab 三分逃逸定理
-本身。下一步应把来源路径字的共同过载因子映入这些 \(N_{\alpha,e}\) 尾坐标，或从
-不满足该映射的 split 支构造改变根尾数据的合法后继。
+此外，“strong miss 必存在最短来源路径字使 slab \(q\) 进入共同过载”不是尚待证明的
+开放项，而是已由 (48)--(52) 否定。
+
+所以 (14)--(47) 是后续 slab/suffix 向量容量的严格输入，不是 large-slab 三分逃逸定理
+本身。下一步应把完整路径 Pareto 前沿的共同过载因子映入这些 \(N_{\alpha,e}\) 尾坐标，
+或从不满足该映射的 split/SCC miss 支构造改变根尾数据的合法后继。完整路径的有限性与
+周期证书见[底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
 
 ## 9. 聚焦复现
 

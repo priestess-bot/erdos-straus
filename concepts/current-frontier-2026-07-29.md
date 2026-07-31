@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3，并进一步等价编码为 beta H=alpha p q^e+1 的受限因子对；跨指数层公共支撑由精确 gcd 和乘法阶容量控制。来源路径字现可规范产生两个相位 -1 交叉表示；其 K/x_R 双容量 miss 已精确二分为共同 q 进过载或互素的分裂容量交换，slab q 是否进入共同过载又有逐赋值充要判据。无条件 slab-q 载体命题已有 source-anchored 反例，正确余项是 strong miss 下存在共同载体路径，或 x_R 覆盖出生后的碰撞/ABSORB，或首边继承 carrier-swap。strict split 也已有 F、internal-free 且完整 post-first Reach 全 miss 的反例，不能再依赖有界 formal 深度。自然保留pK与好尾的E4在非汇点上是空纤维；D-only 现已二分为与原中心命中等价的 source-supported 分支，以及满足 H|4lambda^2 的非自然三目标平方除子谱。真正余项已收缩为：把 slab/suffix 载体变成跨状态可比较的向量容量，或把 split/carrier-swap 与 bottom SCC 一起映入改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
+summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。相位 -1 表示的指数盒外向量与 K/x_R 共同过载逐坐标相同；带表示见证时可保留 P/Q 侧载体，但无符号 Pareto 向量本身不含方向。来源路径字的双容量 miss 精确二分为共同过载或 strict split；后者已有 F、internal-free 且完整 post-first Reach 全 miss 的反例。更强地，线性 F strong miss (p,R)=(57073,23) 已否定“某条最短来源字必使 slab-q 进入共同过载”。底层定向路径字现有 M(Q,A,B) 格正规形、指标 Q 根容量和闭环容量射线；任意有限 ancestry-lifted Reach 的固定端点 Pareto 前沿都有显式有限见证界，周期 miss 可压成静态素数或整数区间分离证书。路径仍只用于候选生成：p=5596369 的 Q=38 不是 E4，p=212973049 的中间 Q=53 single-slab 才满足已有 absorption 合同。真正余项是把每个 sink-SCC 的 Pareto/周期 miss 证书强制转成直接 Type I/II、改变根尾数据的非空 D-only 状态或完整 E1--E5 合法递降；PRE--ABSORB 只解决调度，不补 E1--E4。
 topics:
 - research-map
 - proof-program
@@ -23,7 +23,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-01'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -1819,23 +1819,31 @@ v_qC(L_V)=(|b-a-e_U|-s)_+.
 \]
 
 若 \(b=0\)，slab \(q\) 命中 union 当且仅当 \(a+e>s\)；miss 会刚性推出
-\(q^{a+e}\mid x_R\) 和 \(R_Q\equiv R^{-1}\pmod {4Q}\)。但无条件 union 命题为假：
-来源锚定 F 例 \((p,R)=(10170169,127)\) 满足 \(a+e=s=1\)，slab \(q=101\) 被
-\(x_R\) 的一层容量完全吸收。该例同时已有锚点 gap \(63\) Type I 且
-\(R_{101}=35<R\)，所以没有否定更窄的候选
-
-令 \(\mathcal W_{\min}(S)\) 为到达 slab \(S\) 的最短来源锚定路径字集合，则该候选应
-写成
+\(q^{a+e}\mid x_R\) 和 \(R_Q\equiv R^{-1}\pmod {4Q}\)。无条件 union 命题为假，
+而“strong miss 的某条最短来源字必命中 union”现在也已被否定。精确反例为
 
 \[
-\text{strong miss}
-\Longrightarrow
-\exists w\in\mathcal W_{\min}(S):
-q\mid C(L_U(w))C(L_V(w)).
+(p,R,K,x_R)=(57073,23,328170,14274).
 \]
 
-正确的下一步是证明这一 strong 分支，或把等号 miss 统一送入碰撞/ABSORB，再单独处理
-二进首边继承的 carrier-swap。详见
+它有线性源 \((a_0,s_0)=(2378,1)\)、中心 F 状态和真实首边
+
+\[
+(20,3,1)\xrightarrow{2}(10,13,1).
+\]
+
+首后继自身就是 \((Q,\alpha,\beta)=(13,1,10)\) 的 strong slab，故最短后缀唯一为空；
+但
+
+\[
+L_U=L_V=130,
+\qquad
+C(L_U)=C(L_V)=1
+\]
+
+因为 \(13\mid x_R\) 恰一层。该例已有内部 gap \(15\) 和完整 Reach external gap
+\(7\) 的 Type I，所以只否定旧载体量词，不是否定猜想。terminal-first unresolved 的更窄
+版本仍未被反例击中，但也没有结构依据，应降为未采纳问题，不能继续作为主攻候选。详见
 [large-slab 的受限因子对正规形与跨指数层支撑容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md)。
 
 split 的有界 Reach 希望则已经被一个更小的精确反例关闭。对
@@ -1871,6 +1879,84 @@ split 的有界 Reach 希望则已经被一个更小的精确反例关闭。对
 故一个交叉表示完全不变，另一个才仿射更新；split 本身不是下降量。下一步必须把两个
 交叉表示和 bottom SCC 一起纳入容量/良基状态，不能继续追加 formal depth 菜单。详见
 [来源交叉表示的联合容量共同过载—分裂交换二分](../claims/type-I-source-word-joint-capacity-common-split-dichotomy.md)。
+
+表示--对偶--容量之间现有一条精确字典。固定状态级有限素数支撑，令
+
+\[
+z_\ell=v_\ell(P)-v_\ell(Q),
+\quad
+\nu_\ell=v_\ell(K),
+\quad
+\sigma_\ell=v_\ell(x_R),
+\quad
+\mu_\ell=\max(\nu_\ell,\sigma_\ell).
+\]
+
+对互素相位 \(-1\) 对有 \(|z_\ell|=v_\ell(PQ)\)，并且三个缺陷正是
+
+\[
+e_K=\prod_\ell\ell^{(|z_\ell|-\nu_\ell)_+},
+\quad
+e_x=\prod_\ell\ell^{(|z_\ell|-\sigma_\ell)_+},
+\quad
+C=\prod_\ell\ell^{(|z_\ell|-\mu_\ell)_+}.
+\]
+
+所以 strict split 是联合盒 \(B_\mu\) 内、两个单容量盒外的精确区域；共同过载则是
+\(B_\mu\) 外部。给定见证 \(z\) 后，正负溢出还指出载体位于 \(P\) 或 \(Q\)，但无符号
+Fourier/Pareto 单项式不能恢复该方向，必须使用双颜色变量。外盒近邻也得到强化：两个
+目标表示只要在 \(K\) 外坐标相同、在 \(K\) 内逐坐标相距不超过 \(v_\ell(K)\)，仍直接
+产生偶终端；联合盒表示数超过显式分箱积时必有这种近邻。详见
+[目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md)。
+
+bottom SCC 也不再需要按任意最短路径处理。底层定向边在
+\((\Theta X,\Theta Y)\) 上由
+
+\[
+M_X(q)=\begin{pmatrix}1&0\\q-1&q\end{pmatrix},
+\qquad
+M_Y(q)=\begin{pmatrix}q&q-1\\0&1\end{pmatrix}
+\]
+
+作用；完整定向字唯一压成
+
+\[
+M(Q,A,B)=\begin{pmatrix}A+1&A\\B&B+1\end{pmatrix},
+\qquad A+B=Q-1,
+\]
+
+并满足 \(QX'=X+AR\)、\(QY'=Y+BR\)、
+\(\operatorname{SNF}(M)=\operatorname{diag}(1,Q)\)。同向闭环强制
+\(Q\equiv1\pmod R\)；绕环 \(n\) 次后的每个容量坐标精确为
+
+\[
+v_\ell(L_i(n))=|d_{i,\ell}-n v_\ell(Q)|.
+\]
+
+因此无限周期只剩 CYCLE_RAY_HIT、MISS_STATIC 或 MISS_INTERVAL 三种有限证书。更一般地，
+对 \(N\) 个 ancestry-lifted 顶点、移动素数集 \(\mathcal P_{\rm move}\)，固定首后继和
+定向终点后，每个 Pareto 极小签名及任一容量命中都有长度小于
+
+\[
+B=N\prod_{\ell\in\mathcal P_{\rm move}}
+\bigl(\max(0,a_\ell,b_\ell)+1\bigr)
+\]
+
+的见证。这给出了真正路径选择无关的有限 SCC 判定。\((p,R)=(2017,207)\) 的二循环
+\(Q=41\cdot101\) 在四个容量通道上都有静态素数 \(103\) 分离；说明有限判定可以输出
+严格 miss，而不会自动给终端。
+
+短路径仍有价值，但只能作为候选生成器。\((p,R)=(5596369,35)\) 的三次 dyadic peeling
+到达 gap \(31\) 并给出直接 Type I；路径积 \(38\) 选出的 \(R_{38}=23\) 中心也命中，
+却不满足现有 single-slab E1，不能登记为 E4。\((p,R)=(212973049,215)\) 先到
+\(\{3,212\}\) 后暴露 \(212=53\cdot4\)，此时 \(Q=53\) 才是支撑锚定的合法 absorption，
+并在 \(R_{53}=171\) 中心命中。详见
+[底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
+
+因此当前最窄且真正有证明价值的余项是：对 terminal-first unresolved 状态的每个 sink-SCC，
+把其规范 Pareto 前沿和周期 miss 证书强制转成直接 Type I/II、改变根尾数据的非空标记
+状态，或满足完整 E1--E5 的 support switch。SCC 凝聚序只负责有限分析调度，不是算术
+下降；任意路径积给出的较小 \(R_Q\) 也不是自动 E4。
 
 较小方程路线也得到一个比显式偶源更一般的状态接口。对 \(2\le n<p\)，全部可能承载
 双尾保留提升的正替换坐标对，由 \(D\mid(np)^2\) 的两个模 \(4(p-n)\) 同余及严格界
@@ -2004,6 +2090,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{双容量共同过载—分裂交换二分、两表示 lcm/gcd 判据与 residual 载体剖面}\\
 \downarrow\\
+\text{目标纤维三盒字典、底层路径字格正规形、周期射线与有限 Pareto 见证界}\\
+\downarrow\\
 \text{D-only 支撑二分、非自然 }H\mid4\lambda^2\text{ 正规形与三目标平方除子谱}\\
 \downarrow\\
 \text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
@@ -2022,9 +2110,11 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 终端”：三个分支各有 strong miss，且 70 个起始 slab 的完整 formal 后继图没有 good
 single-slab 候选。
 交叉表示又把这些 residual 的容量缺陷分成共同过载与 split：有限 residual 当前全部落在
-前者，但共同载体可以在两个表示间分裂，且大部分位于 \(Kx_R\) 支撑之外。真正余项现已
-从有限状态转为全称量词：后续计算只应服务于把 slab/suffix 载体变成跨状态可比较的向量
-容量，把 split 的双交叉表示与 bottom SCC 映入新的容量下降或合法 E4，或把
+前者，但共同载体可以在两个表示间分裂，且大部分位于 \(Kx_R\) 支撑之外。最短路径的
+slab-\(q\) 载体候选现已被线性 strong-miss 反例否定；替代对象是固定支撑上的完整
+Pareto 前沿。底层 SCC 的无限路径也已压成显式有限见证界和周期静态/区间证书。真正余项
+现已从“继续走多深”转为全称算术桥：后续计算只应服务于把 sink-SCC 的规范 miss
+证书映入新的容量下降或合法 E4，或把
 \(D\nmid n^2\) 的三目标 miss 转成改变根尾数据的递归非空证书。小 \(\mu\) 与
 \(z=1\) 的核心 D-only 子族已经证明为空，不应继续枚举；split 有界深度菜单也已被
 完整 Reach 反例关闭。

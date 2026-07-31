@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 306 |
+| 数学状态 | `established` | 308 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
-| 证明来源 | `mixed` | 23 |
-| 证明来源 | `repository_derivation` | 133 |
+| 证明来源 | `mixed` | 24 |
+| 证明来源 | `repository_derivation` | 134 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 260 |
+| 审阅状态 | `internal_review` | 262 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -233,6 +233,7 @@
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-10m.md) (`type-I-b5-maximum-tail-even-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [两千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-20m.md) (`type-I-b5-maximum-tail-even-source-closure-20m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md) (`type-I-bottom-word-lattice-pareto-cycle-capacity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-08-01 |
 | [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md) (`type-I-canonical-complete-support-rechart-g-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [Type I 除子证书的互素因子正规形](../claims/type-I-coprime-factor-normal-form.md) (`type-I-coprime-factor-normal-form`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-23 |
 | [核心一层形式周期的奇偶约化、有限 radical 命中与反例边界](../claims/type-I-core-formal-cycle-radical-cube-boundary.md) (`type-I-core-formal-cycle-radical-cube-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
@@ -536,6 +537,7 @@
 | [Type I 目标除子的溢出因子与正规形精确对应](../claims/type-I-target-divisor-overflow.md) (`type-I-target-divisor-overflow`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [目标纤维单坐标缺陷的商群与关系格精确公式](../claims/type-I-target-fiber-coordinate-quotient-floor.md) (`type-I-target-fiber-coordinate-quotient-floor`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
 | [目标纤维溢出的精确 Fourier 生成函数](../claims/type-I-target-fiber-fourier-overflow-generating-function.md) (`type-I-target-fiber-fourier-overflow-generating-function`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
+| [目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md) (`type-I-target-fiber-joint-capacity-signed-carrier-dictionary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [目标指数纤维反足与近邻终端引理](../claims/type-I-target-fiber-neighbor-terminal.md) (`type-I-target-fiber-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
