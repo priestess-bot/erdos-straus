@@ -1,0 +1,91 @@
+{
+  "schema_version": "formal-external-slab-absorption-rechart/v1",
+  "scope_note": "Focused exact verification of two boundary slabs. It does not establish a universal slab-existence or large-slab terminal theorem.",
+  "summary": {
+    "case_count": 2,
+    "case_with_divisor_collision_count": 0,
+    "case_with_descending_absorption_count": 1,
+    "large_slab_local_miss_count": 1
+  },
+  "records": [
+    {
+      "prime": 178513,
+      "R": 183,
+      "Q": 13,
+      "X": 13,
+      "Y": 170,
+      "K": 8166970,
+      "S": 183,
+      "L": 2210,
+      "divisors_of_S": [
+        1,
+        3,
+        61,
+        183
+      ],
+      "divisor_collisions": [],
+      "absorption_candidate_count": 8,
+      "descending_absorption_candidates": [
+        {
+          "M": 13,
+          "R_M": 35,
+          "K_M": 1561989,
+          "decreases_R": true
+        },
+        {
+          "M": 26,
+          "R_M": 87,
+          "K_M": 3882658,
+          "decreases_R": true
+        }
+      ],
+      "Q_chart": {
+        "M": 13,
+        "R_M": 35,
+        "K_M": 1561989,
+        "decreases_R": true
+      },
+      "full_slab_chart": {
+        "M": 2210,
+        "R_M": 1543,
+        "K_M": 68861390,
+        "decreases_R": false
+      }
+    },
+    {
+      "prime": 78268369,
+      "R": 8895,
+      "Q": 8243,
+      "X": 8243,
+      "Y": 652,
+      "K": 174049285564,
+      "S": 8895,
+      "L": 5374436,
+      "divisors_of_S": [
+        1,
+        3,
+        5,
+        15,
+        593,
+        1779,
+        2965,
+        8895
+      ],
+      "divisor_collisions": [],
+      "absorption_candidate_count": 6,
+      "descending_absorption_candidates": [],
+      "Q_chart": {
+        "M": 8243,
+        "R_M": 10395,
+        "K_M": 203399923939,
+        "decreases_R": false
+      },
+      "full_slab_chart": {
+        "M": 5374436,
+        "R_M": 11319791,
+        "K_M": 221495394747720,
+        "decreases_R": false
+      }
+    }
+  ]
+}

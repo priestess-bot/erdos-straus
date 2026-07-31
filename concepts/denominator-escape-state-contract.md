@@ -23,6 +23,8 @@ used_by:
 - type-I-canonical-complete-support-rechart-g-obstruction
 - type-I-psi-one-full-spectrum-terminal-descent-boundary
 - type-I-formal-target-pair-descent-cycle-boundary
+- type-I-formal-external-slab-collision-absorption-rechart
+- two-denominator-lift-d-only-marked-normal-form
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion

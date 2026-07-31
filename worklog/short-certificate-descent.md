@@ -3137,3 +3137,79 @@ K'=\frac{nS}{2Q},
 跨图表终端；\(R'=R\) 又恰等价于被替换尾为自然标记 \(\alpha=nK/E\)。这关闭了
 “非自然 E-split 是否产生新 E4 类型”的歧义：即使 \(R'\ne R\)，它仍是直接证书，
 而不是独立递降。
+
+## 2026-07-31 外部 slab 的双碰撞与容量吸收边界
+
+多节点奇组合不能回到原 \(K\) 盒后，保留一个外部素数幂 \(Q=q^e\) 的结果可规范写成
+
+\[
+X=Qa,
+\qquad Y=b,
+\qquad (X,Y)=1,
+\qquad ab\mid K,
+\qquad X+Y=Rm.
+\]
+
+令 \(S=X+Y,L=XY\)。对每个 \(T\mid S\)，已经证明两个无样本终端：
+
+\[
+4L\mid p+T
+\Longrightarrow \text{gap }T\text{ 的 Type II},
+\]
+
+\[
+4L\mid pT+1
+\Longrightarrow \text{模数 }T\text{ 的中心 Type I}.
+\]
+
+若 \(q\ne p\)，对任意 \(Q\mid M\mid L\) 定义
+
+\[
+pR_M\equiv-1\pmod {4M},
+\qquad1\le R_M<4M,
+\qquad K_M=\frac{pR_M+1}{4}.
+\]
+
+则 \(M\mid K_M\)。在预先隔离的容量吸收阶段中，\(R_M<R\) 以
+\(W=\operatorname{Sol}(p)\) 给出恒等提升和严格 \(R\) 下降。取 \(M=Q\) 时
+\(R_Q\ne R\)，故 \(4Q\le R\) 自动下降；未下降者必是 \(Q>R/4\) 的 large-slab。
+
+这不是全称闭合。聚焦例 \((78268369,8895)\) 的 slab \((8243,652)\) 两碰撞均空，
+而所有含 \(8243\) 的子积 \(M\) 都满足 \(R_M>R\)。此外，同 \(p\) 图表若保留全部
+旧 \(K\)，则 \(K'=cK\) 强制 \(R'=R+4Kt>R\)。所以下降必损失部分旧容量，下一步
+必须用其它 slab、直接终端、坐标重组或新 equation target 处理 large-slab 与 \(q=p\)。
+严格主张与聚焦复现见
+[单新支撑 q-slab 的双碰撞终端与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md)。
+
+## 2026-07-31 双尾提升的 D-only 标记状态
+
+对任意 \(2\le n<p\)，置 \(N=np,C=4(p-n)\)。全部可能承载双尾保留提升的正替换
+坐标对，现在可在读取源解之前由一个因子 \(D\) 参数化：
+
+\[
+D\mid N^2,
+\quad0<D<n^2,
+\quad D\equiv N\pmod C,
+\quad N^2/D\equiv N\pmod C.
+\]
+
+相应待替换坐标及目标坐标为
+
+\[
+a=\frac{N-D}{C},
+\qquad a'=\frac{N^2/D-N}{C},
+\]
+
+而 \((a,b,c)\mapsto(a',b,c)\) 对指定坐标标记集是全域提升。该标记集非空又精确等价于
+第二层因子同余
+
+\[
+z>0,\qquad z\mid\sigma^2,
+\qquad z\equiv-\sigma\pmod\mu.
+\]
+
+素数目标还强制 \(p\mid a'\)，所以替换项永远不是目标解的最小分母。这给出局部已验证
+的较小秩 marked 条件边，但没有完成全称选择：若同时给出 \(D,z\)，已经显式构造目标
+解，只是终端；只给 \(D\) 时必须再递归闭合指定标记集。合法 \(D\) 不保证非空，例如
+\((p,n,D)=(73,57,1)\) 满足全部 \(D\) 条件，但第二层 \(z\) 纤维为空，应拒绝该分支。
+详见[双尾提升的 D-only 标记正规形与 p 载体刚性](../claims/two-denominator-lift-d-only-marked-normal-form.md)。
