@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 358 |
+| 数学状态 | `computationally_reproduced` | 359 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 293 |
+| 数学状态 | `established` | 294 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
-| 证明来源 | `mixed` | 20 |
-| 证明来源 | `repository_derivation` | 120 |
+| 证明来源 | `mixed` | 21 |
+| 证明来源 | `repository_derivation` | 121 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 244 |
+| 审阅状态 | `internal_review` | 246 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -230,6 +230,7 @@
 | [B等于5、E等于32的无穷Type I终端射线](../claims/type-I-b5-dyadic-terminal-ray.md) (`type-I-b5-dyadic-terminal-ray`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [一千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-10m.md) (`type-I-b5-maximum-tail-even-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [两千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-20m.md) (`type-I-b5-maximum-tail-even-source-closure-20m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md) (`type-I-canonical-complete-support-rechart-g-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [Type I 除子证书的互素因子正规形](../claims/type-I-coprime-factor-normal-form.md) (`type-I-coprime-factor-normal-form`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-23 |
 | [核心一层形式周期的奇偶约化、有限 radical 命中与反例边界](../claims/type-I-core-formal-cycle-radical-cube-boundary.md) (`type-I-core-formal-cycle-radical-cube-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [通用一层周期的核心可实现性与十万模数闭合](../claims/type-I-core-universal-cycle-realizability-and-100k-closure.md) (`type-I-core-universal-cycle-realizability-and-100k-closure`) | `computationally_reproduced` | `mixed` | `internal_review` | `linnik1944` | 2026-07-31 |
@@ -327,6 +328,7 @@
 | [双向广义二进窗口的规范最大指数选择引理](../claims/type-I-general-bidirectional-dyadic-window-selector.md) (`type-I-general-bidirectional-dyadic-window-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [一般二进传输的偶终端判据](../claims/type-I-general-dyadic-terminal-transfer.md) (`type-I-general-dyadic-terminal-transfer`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [广义二进偶前驱的自然标记提升等价与 F 态零分支](../claims/type-I-generalized-dyadic-natural-lift-equivalence.md) (`type-I-generalized-dyadic-natural-lift-equivalence`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [广义二进前驱的标准偶源分类与完整提升零边界](../claims/type-I-generalized-dyadic-standard-even-lift-boundary.md) (`type-I-generalized-dyadic-standard-even-lift-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [五亿全局 p 减一遗漏的线性 B 等于一失败与一般 B 障碍剖面](../claims/type-I-global-linear-b1-failure-general-b-profile-500m.md) (`type-I-global-linear-b1-failure-general-b-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [H19-k23 残存进程的完整统一仿射 Type I 审计](../claims/type-I-h19-affine-uniform-square-audit.md) (`type-I-h19-affine-uniform-square-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19偶桥的B等于1源状态实现边界](../claims/type-I-h19-b1-source-state-boundary-1b.md) (`type-I-h19-b1-source-state-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

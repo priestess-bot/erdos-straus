@@ -1,7 +1,7 @@
 {
-  "schema_version": "psi-one-full-spectrum-terminal-descent-audit/v1",
-  "arithmetic": "Identify every Psi_0=1 state in the frozen 2,752-state finite-exponent F spectrum; run internal gaps, min/max ranked accepted closures, rejected one-step terminal lookahead, external-gap direct certificates, and centered cross-chart certificates; then enumerate every generalized dyadic predecessor and audit its natural marked lift.",
-  "scope_note": "The 483 states come from 200 frozen pressure primes and are not all core primes. Formal transitions remain analysis evidence. Cross-chart hits and the final small-gap fallbacks are independently verified direct certificates. All generalized dyadic objects are recorded as unlifted predecessors: they do not satisfy E4 and are not counted in the 479 state-local direct hits or the final verified total.",
+  "schema_version": "psi-one-full-spectrum-terminal-descent-audit/v2",
+  "arithmetic": "Identify every Psi_0=1 state in the frozen 2,752-state finite-exponent F spectrum; run internal gaps, min/max ranked accepted closures, rejected one-step terminal lookahead, external-gap direct certificates, and centered cross-chart certificates; exhaust the complete finite raw-transition reach only for unresolved states; then enumerate every generalized dyadic predecessor and audit its natural marked lift.",
+  "scope_note": "The 483 states come from 200 frozen pressure primes and are not all core primes. Formal transitions remain analysis evidence. Complete-reach, cross-chart, and final small-gap hits are independently verified direct certificates. All generalized dyadic objects are recorded as unlifted predecessors: they do not satisfy E4 and are not counted in the 479 state-local direct hits or the final verified total.",
   "inputs": {
     "full_spectrum": {
       "path": "type-i-f-bounded-fourier-full-spectrum-results.json",
@@ -12,7 +12,7 @@
       "sha256": "a7babc394423104647090a6bdae4255ff8cc73d2bb06dae6a0e3e1aefce4b2d2"
     }
   },
-  "script_sha256": "fbd6bec0493a0216c68c2e96352f6e2e67b1bca455d55799c6f29f489968a7b5",
+  "script_sha256": "1b51191a99ef39e9c16153078d5d711bc9acb0daaa5db650032e200ce352240a",
   "summary": {
     "source_f_state_count": 2752,
     "one_layer_face_point_count": 13533050,
@@ -38,6 +38,11 @@
     "cross_chart_hit_state_count": 4,
     "state_local_direct_hit_state_count": 479,
     "state_local_direct_residual_count": 4,
+    "complete_reach_input_residual_count": 4,
+    "complete_reach_direct_hit_state_count": 1,
+    "complete_reach_cross_chart_hit_state_count": 1,
+    "complete_reach_verified_state_count": 2,
+    "complete_reach_final_residual_count": 2,
     "external_gap_candidate_count": 29058,
     "external_gap_hit_count": 5166,
     "external_type_i_gap_count": 4073,
@@ -51,7 +56,7 @@
     "dyadic_alpha_equals_n_over_2_count": 0,
     "dyadic_alpha_equals_n_count": 0,
     "global_gap_cap": 127,
-    "global_fallback_hit_state_count": 4,
+    "global_fallback_hit_state_count": 2,
     "finite_final_verified_state_count": 483
   },
   "priority_stage_counts": {
@@ -61,6 +66,7 @@
     "after_max_visited": 473,
     "after_max_lookahead": 475,
     "after_cross_chart": 479,
+    "after_complete_reach": 481,
     "after_global_gap_cap_127": 483
   },
   "set_intersections": {
@@ -1007,24 +1013,655 @@
       231
     ]
   ],
-  "global_fallback_certificates": [
-    {
-      "prime": 37793809,
-      "R": 35,
-      "certificate": {
-        "type": "Type_I",
-        "gap": 43,
-        "first_denominator": 9448463,
-        "divisor": 8789857,
-        "solution": [
-          9448463,
-          8304498017568,
-          337375395518682064608
+  "complete_reach_residual_audit": {
+    "input_residual_count": 4,
+    "direct_hit_state_count": 1,
+    "cross_chart_hit_state_count": 1,
+    "verified_state_count": 2,
+    "final_residual_count": 2,
+    "final_residuals": [
+      [
+        78268369,
+        8895
+      ],
+      [
+        278505049,
+        231
+      ]
+    ],
+    "records": [
+      {
+        "prime": 37793809,
+        "R": 35,
+        "reachable_node_count": 20,
+        "reachable_edge_count": 35,
+        "maximum_start_layer": 2715622,
+        "coarse_node_bound": 64527798671927,
+        "external_gap_candidate_count": 6,
+        "external_gap_candidates": [
+          11,
+          19,
+          23,
+          27,
+          31,
+          1223
         ],
-        "certificate_semantics": "verified_direct_terminal",
-        "complete_divisor_space_size": 27
+        "direct": {
+          "hit_count": 0,
+          "type_i_count": 0,
+          "type_ii_count": 0,
+          "first_verified_certificate": null
+        },
+        "cross_chart": {
+          "candidate_moduli": [
+            11,
+            19,
+            23,
+            27,
+            31,
+            1223
+          ],
+          "scans": [
+            {
+              "new_modulus": 11,
+              "new_K": 103932975,
+              "centered_search_space": 135,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 19,
+              "new_K": 179520593,
+              "centered_search_space": 27,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 23,
+              "new_K": 217314402,
+              "centered_search_space": 81,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 27,
+              "new_K": 255108211,
+              "centered_search_space": 9,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 31,
+              "new_K": 292902020,
+              "centered_search_space": 405,
+              "hit_count": 6,
+              "first_hit": {
+                "state_modulus": 31,
+                "state_K": 292902020,
+                "centered_divisor": 8300,
+                "normal_form": {
+                  "A": 5692,
+                  "B": 5,
+                  "C": 332,
+                  "H": 176447
+                },
+                "type": "Type_I",
+                "gap": 1071,
+                "first_denominator": 9448720,
+                "divisor": 10756422848,
+                "solution": [
+                  9448720,
+                  333439659568,
+                  11069882999594180
+                ],
+                "certificate_semantics": "verified_direct_terminal"
+              }
+            },
+            {
+              "new_modulus": 1223,
+              "new_K": 11555457102,
+              "centered_search_space": 405,
+              "hit_count": 0,
+              "first_hit": null
+            }
+          ],
+          "first_hit": {
+            "new_modulus": 31,
+            "new_K": 292902020,
+            "centered_search_space": 405,
+            "hit_count": 6,
+            "first_hit": {
+              "state_modulus": 31,
+              "state_K": 292902020,
+              "centered_divisor": 8300,
+              "normal_form": {
+                "A": 5692,
+                "B": 5,
+                "C": 332,
+                "H": 176447
+              },
+              "type": "Type_I",
+              "gap": 1071,
+              "first_denominator": 9448720,
+              "divisor": 10756422848,
+              "solution": [
+                9448720,
+                333439659568,
+                11069882999594180
+              ],
+              "certificate_semantics": "verified_direct_terminal"
+            }
+          },
+          "hit": true,
+          "semantics": "direct Type I certificate for the original prime, not a recursive edge"
+        },
+        "selected_channel": "complete_reach_cross_chart",
+        "selected_certificate": {
+          "new_modulus": 31,
+          "new_K": 292902020,
+          "centered_search_space": 405,
+          "hit_count": 6,
+          "first_hit": {
+            "state_modulus": 31,
+            "state_K": 292902020,
+            "centered_divisor": 8300,
+            "normal_form": {
+              "A": 5692,
+              "B": 5,
+              "C": 332,
+              "H": 176447
+            },
+            "type": "Type_I",
+            "gap": 1071,
+            "first_denominator": 9448720,
+            "divisor": 10756422848,
+            "solution": [
+              9448720,
+              333439659568,
+              11069882999594180
+            ],
+            "certificate_semantics": "verified_direct_terminal"
+          }
+        },
+        "hit": true,
+        "edge_semantics": "analysis_evidence_not_verified_edge",
+        "terminal_semantics": "independently_verified_direct_certificate",
+        "termination_bound": "Every reachable node has 1<=m<=m0 and A+B=R*m; hence the unordered coprime node set is finite and bounded by sum_{m<=m0} floor((R*m-1)/2)."
+      },
+      {
+        "prime": 78268369,
+        "R": 8895,
+        "reachable_node_count": 6,
+        "reachable_edge_count": 6,
+        "maximum_start_layer": 201,
+        "coarse_node_bound": 90288697,
+        "external_gap_candidate_count": 4,
+        "external_gap_candidates": [
+          4447,
+          8243,
+          8431,
+          255367
+        ],
+        "direct": {
+          "hit_count": 0,
+          "type_i_count": 0,
+          "type_ii_count": 0,
+          "first_verified_certificate": null
+        },
+        "cross_chart": {
+          "candidate_moduli": [
+            4447,
+            8243,
+            8431,
+            255367
+          ],
+          "scans": [
+            {
+              "new_modulus": 4447,
+              "new_K": 87014859236,
+              "centered_search_space": 45,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 8243,
+              "new_K": 161291541417,
+              "centered_search_space": 27,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 8431,
+              "new_K": 164970154760,
+              "centered_search_space": 63,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 255367,
+              "new_K": 4996789646606,
+              "centered_search_space": 27,
+              "hit_count": 0,
+              "first_hit": null
+            }
+          ],
+          "first_hit": null,
+          "hit": false,
+          "semantics": "direct Type I certificate for the original prime, not a recursive edge"
+        },
+        "selected_channel": "miss",
+        "selected_certificate": null,
+        "hit": false,
+        "edge_semantics": "analysis_evidence_not_verified_edge",
+        "terminal_semantics": "independently_verified_direct_certificate",
+        "termination_bound": "Every reachable node has 1<=m<=m0 and A+B=R*m; hence the unordered coprime node set is finite and bounded by sum_{m<=m0} floor((R*m-1)/2)."
+      },
+      {
+        "prime": 174600409,
+        "R": 20631,
+        "reachable_node_count": 200,
+        "reachable_edge_count": 518,
+        "maximum_start_layer": 274067,
+        "coarse_node_bound": 387414047671209,
+        "external_gap_candidate_count": 192,
+        "external_gap_candidates": [
+          7,
+          11,
+          19,
+          31,
+          35,
+          43,
+          47,
+          55,
+          59,
+          67,
+          71,
+          79,
+          83,
+          95,
+          103,
+          119,
+          127,
+          139,
+          151,
+          155,
+          163,
+          167,
+          187,
+          191,
+          199,
+          211,
+          215,
+          235,
+          239,
+          251,
+          259,
+          263,
+          271,
+          275,
+          287,
+          295,
+          335,
+          355,
+          367,
+          371,
+          379,
+          383,
+          419,
+          443,
+          463,
+          479,
+          499,
+          503,
+          515,
+          551,
+          571,
+          583,
+          599,
+          635,
+          643,
+          659,
+          703,
+          719,
+          727,
+          803,
+          823,
+          863,
+          931,
+          935,
+          995,
+          1003,
+          1031,
+          1199,
+          1211,
+          1255,
+          1279,
+          1283,
+          1303,
+          1423,
+          1471,
+          1811,
+          1855,
+          2027,
+          2051,
+          2059,
+          2063,
+          2215,
+          2219,
+          2263,
+          2347,
+          2491,
+          2519,
+          2527,
+          2531,
+          2543,
+          2567,
+          2575,
+          2579,
+          2851,
+          2879,
+          2911,
+          2915,
+          2923,
+          2939,
+          2947,
+          3539,
+          3551,
+          3619,
+          3911,
+          4015,
+          4019,
+          4051,
+          4099,
+          4111,
+          4115,
+          4123,
+          4423,
+          4427,
+          5015,
+          5063,
+          5099,
+          5111,
+          5119,
+          5143,
+          5147,
+          5155,
+          8263,
+          8843,
+          9023,
+          9379,
+          9403,
+          9427,
+          9779,
+          9983,
+          10039,
+          10067,
+          10123,
+          10135,
+          10147,
+          10183,
+          10187,
+          10211,
+          10255,
+          10259,
+          10271,
+          10279,
+          10291,
+          10295,
+          10303,
+          10307,
+          10315,
+          16511,
+          16691,
+          17695,
+          17723,
+          17755,
+          18091,
+          18095,
+          18779,
+          18799,
+          19547,
+          19555,
+          19579,
+          19699,
+          19979,
+          20047,
+          20075,
+          20087,
+          20095,
+          20159,
+          20207,
+          20219,
+          20255,
+          20287,
+          20291,
+          20299,
+          20383,
+          20387,
+          20431,
+          20459,
+          20483,
+          20491,
+          20495,
+          20507,
+          20531,
+          20543,
+          20551,
+          20555,
+          20575,
+          20587,
+          20591,
+          20599,
+          20603,
+          20611,
+          20615,
+          20623,
+          20627
+        ],
+        "direct": {
+          "hit_count": 23,
+          "type_i_count": 15,
+          "type_ii_count": 8,
+          "first_verified_certificate": {
+            "external_gap": 19,
+            "origin": {
+              "node": "16:20615:1",
+              "side": "larger",
+              "side_value": 20615,
+              "external_part": 19
+            },
+            "type": "Type_I",
+            "gap": 19,
+            "first_denominator": 43650107,
+            "divisor": 4200193,
+            "solution": [
+              43650107,
+              401122449436524,
+              727843974720301329865284
+            ],
+            "certificate_semantics": "verified_direct_terminal",
+            "complete_divisor_space_size": 27
+          }
+        },
+        "cross_chart": null,
+        "selected_channel": "complete_reach_direct",
+        "selected_certificate": {
+          "external_gap": 19,
+          "origin": {
+            "node": "16:20615:1",
+            "side": "larger",
+            "side_value": 20615,
+            "external_part": 19
+          },
+          "type": "Type_I",
+          "gap": 19,
+          "first_denominator": 43650107,
+          "divisor": 4200193,
+          "solution": [
+            43650107,
+            401122449436524,
+            727843974720301329865284
+          ],
+          "certificate_semantics": "verified_direct_terminal",
+          "complete_divisor_space_size": 27
+        },
+        "hit": true,
+        "edge_semantics": "analysis_evidence_not_verified_edge",
+        "terminal_semantics": "independently_verified_direct_certificate",
+        "termination_bound": "Every reachable node has 1<=m<=m0 and A+B=R*m; hence the unordered coprime node set is finite and bounded by sum_{m<=m0} floor((R*m-1)/2)."
+      },
+      {
+        "prime": 278505049,
+        "R": 231,
+        "reachable_node_count": 28,
+        "reachable_edge_count": 50,
+        "maximum_start_layer": 1020024742,
+        "coarse_node_bound": 60086014949279047921,
+        "external_gap_candidate_count": 13,
+        "external_gap_candidates": [
+          23,
+          79,
+          107,
+          115,
+          131,
+          223,
+          227,
+          1051,
+          1559,
+          13663,
+          62071,
+          64111,
+          833443
+        ],
+        "direct": {
+          "hit_count": 0,
+          "type_i_count": 0,
+          "type_ii_count": 0,
+          "first_verified_certificate": null
+        },
+        "cross_chart": {
+          "candidate_moduli": [
+            23,
+            79,
+            107,
+            115,
+            131,
+            223,
+            227,
+            1051,
+            1559,
+            13663,
+            62071,
+            64111,
+            833443
+          ],
+          "scans": [
+            {
+              "new_modulus": 23,
+              "new_K": 1601404032,
+              "centered_search_space": 405,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 79,
+              "new_K": 5500474718,
+              "centered_search_space": 45,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 107,
+              "new_K": 7450010061,
+              "centered_search_space": 27,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 115,
+              "new_K": 8007020159,
+              "centered_search_space": 27,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 131,
+              "new_K": 9121040355,
+              "centered_search_space": 81,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 223,
+              "new_K": 15526656482,
+              "centered_search_space": 81,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 227,
+              "new_K": 15805161531,
+              "centered_search_space": 99,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 1051,
+              "new_K": 73177201625,
+              "centered_search_space": 63,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 1559,
+              "new_K": 108547342848,
+              "centered_search_space": 2565,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 13663,
+              "new_K": 951303621122,
+              "centered_search_space": 243,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 62071,
+              "new_K": 4321771724120,
+              "centered_search_space": 189,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 64111,
+              "new_K": 4463809299110,
+              "centered_search_space": 729,
+              "hit_count": 0,
+              "first_hit": null
+            },
+            {
+              "new_modulus": 833443,
+              "new_K": 58029520888427,
+              "centered_search_space": 243,
+              "hit_count": 0,
+              "first_hit": null
+            }
+          ],
+          "first_hit": null,
+          "hit": false,
+          "semantics": "direct Type I certificate for the original prime, not a recursive edge"
+        },
+        "selected_channel": "miss",
+        "selected_certificate": null,
+        "hit": false,
+        "edge_semantics": "analysis_evidence_not_verified_edge",
+        "terminal_semantics": "independently_verified_direct_certificate",
+        "termination_bound": "Every reachable node has 1<=m<=m0 and A+B=R*m; hence the unordered coprime node set is finite and bounded by sum_{m<=m0} floor((R*m-1)/2)."
       }
-    },
+    ]
+  },
+  "global_fallback_certificates": [
     {
       "prime": 78268369,
       "R": 8895,
@@ -1037,23 +1674,6 @@
           19567097,
           80604461487166,
           90701326246124033095655758
-        ],
-        "certificate_semantics": "verified_direct_terminal",
-        "complete_divisor_space_size": 27
-      }
-    },
-    {
-      "prime": 174600409,
-      "R": 20631,
-      "certificate": {
-        "type": "Type_I",
-        "gap": 19,
-        "first_denominator": 43650107,
-        "divisor": 4200193,
-        "solution": [
-          43650107,
-          401122449436524,
-          727843974720301329865284
         ],
         "certificate_semantics": "verified_direct_terminal",
         "complete_divisor_space_size": 27

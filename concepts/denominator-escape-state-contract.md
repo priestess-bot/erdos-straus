@@ -19,6 +19,8 @@ used_by:
 - type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction
 - type-I-f-psi-one-nearest-fiber-escape-boundary
 - type-I-generalized-dyadic-natural-lift-equivalence
+- type-I-generalized-dyadic-standard-even-lift-boundary
+- type-I-canonical-complete-support-rechart-g-obstruction
 - type-I-psi-one-full-spectrum-terminal-descent-boundary
 - type-I-formal-target-pair-descent-cycle-boundary
 sources:
@@ -81,8 +83,8 @@ S\longrightarrow T
 | induction_rank | \(\rho(S)\in\mathbb N\)；普通状态默认 \(\rho(S)=n_S\) | 若不取 \(n_S\)，必须证明该秩与解提升合同相容 |
 | modulus_context | 合法模数 \(R_S\)、同余类型和定义 \(R_S\) 的整数恒等式 | 检查正性、奇偶、所需模 \(4\) 类、互素性及全部整除条件 |
 | K_context | \(K_S\)、完整素因子赋值 \(\nu_{S,q}=v_q(K_S)\) 与支撑 \(\mathcal Q_S\) | 重乘得到 \(K_S\)；根线性状态还须验证 \(4K_S=p_0R_S+1\) |
-| target_fiber | \(\phi_S(z)=\prod_{q\in\mathcal Q_S}q^{z_q}\bmod R_S\)、目标相位 \(\tau_S\)、关系格 \(\Lambda_S=\ker\phi_S\) 和纤维 \(F_S=\phi_S^{-1}(\tau_S)\) | 验证所有生成元为单位、格基完备且所用见证确在 \(F_S\) |
-| signed_defect | 对一个**全局定向**见证 \(z\) 记录 \(D^-(z),D^+(z)\) | 必须按式 (1) 重算；不得逐坐标拼接 \(z\) 与 \(-z\) |
+| target_fiber | \(\phi_S(z)=\prod_{q\in\mathcal Q_S}q^{z_q}\bmod R_S\)、目标相位 \(\tau_S\)、关系格 \(\Lambda_S=\ker\phi_S\) 和带类型的纤维状态 | F/hit 记录规范见证；G 记录 `status=empty` 及分离角色，不伪造纤维元素 |
+| signed_defect | F/hit 对一个**全局定向**见证 \(z\) 记录 \(D^-(z),D^+(z)\)；G 记录 `status=not_applicable` | 非空时必须按式 (1) 重算；不得逐坐标拼接 \(z\) 与 \(-z\)，也不得用零向量冒充 G 态缺陷 |
 | certificate_context | F/G 分类以及实际使用的规范 Fourier 角色、关系格基或加法组合证书 | 写明规范选择规则、完备性范围、哈希或精确代数见证 |
 | normal_form | 当前状态所属的 Type I、Type II、marked-source、dyadic 或其它已定义正规形 | 调用具名 verifier；“由搜索程序生成”本身不是验证 |
 | potential_record | 候选势函数方案、重算值和比较顺序 | 每个分量取值于明示的良基集合；不得使用只对冻结图定义的拓扑编号 |
@@ -100,7 +102,33 @@ S\longrightarrow T
 状态类。任何新 \((c_S,n_S)\) 都必须定义 \(W_S\)、给出合法正规形，并在边上证明
 \(\Phi_{T\to S}\) 对 \(W_T\) 的每个元素都有定义。
 
-### 2.1 合法模数与分析商对象的分离
+### 2.1 F、G 与 hit 的类型化纤维字段
+
+状态合同必须允许 G 态的目标纤维严格为空。三种分类使用互斥模式：
+
+```text
+hit/F:
+  target_fiber.status = nonempty
+  target_fiber.witness = <canonical exponent vector>
+  signed_defect.status = defined
+
+G:
+  target_fiber.status = empty
+  target_fiber.emptiness_certificate = <canonical separating character>
+  signed_defect.status = not_applicable
+  signed_defect.reason = G_empty_target_fiber
+```
+
+G 态的 `not_applicable` 是类型信息，不是数值零。验证器必须重算分离角色在所有
+\(q\mid K_S\) 上为平凡、而在目标相位上非平凡。任何从 F/hit 换图表到 G 的边还必须
+重新计算分类；不得继承旧图表的见证或缺陷。
+
+这个修订只使 G 图表成为可准确记录的状态，不会自动证明其
+`marked_solution_set` 非空，也不会给出解提升。若边使用与图表无关的
+\(W_S=\operatorname{Sol}(p_0)\)，必须单独验证提升映射和良基势；若使用中心标记集，
+G 态的该集合为空，不能作为递降来源。
+
+### 2.2 合法模数与分析商对象的分离
 
 满足 \(t\mid R\) 的商模数、稳定子商 \(Q/T\) 或某个投影群，可以作为
 certificate_context 中的分析对象，但它们默认不是新的算术状态。要把商模数 \(t\)

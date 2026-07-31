@@ -59,6 +59,11 @@ EXPECTED_SUMMARY = {
     "cross_chart_hit_state_count": 4,
     "state_local_direct_hit_state_count": 479,
     "state_local_direct_residual_count": 4,
+    "complete_reach_input_residual_count": 4,
+    "complete_reach_direct_hit_state_count": 1,
+    "complete_reach_cross_chart_hit_state_count": 1,
+    "complete_reach_verified_state_count": 2,
+    "complete_reach_final_residual_count": 2,
     "external_gap_candidate_count": 29_058,
     "external_gap_hit_count": 5_166,
     "external_type_i_gap_count": 4_073,
@@ -72,7 +77,7 @@ EXPECTED_SUMMARY = {
     "dyadic_alpha_equals_n_over_2_count": 0,
     "dyadic_alpha_equals_n_count": 0,
     "global_gap_cap": 127,
-    "global_fallback_hit_state_count": 4,
+    "global_fallback_hit_state_count": 2,
     "finite_final_verified_state_count": 483,
 }
 EXPECTED_RESIDUALS = [
@@ -80,6 +85,16 @@ EXPECTED_RESIDUALS = [
     [78_268_369, 8_895],
     [174_600_409, 20_631],
     [278_505_049, 231],
+]
+EXPECTED_COMPLETE_REACH_FINAL_RESIDUALS = [
+    [78_268_369, 8_895],
+    [278_505_049, 231],
+]
+EXPECTED_COMPLETE_REACH_PROFILES = [
+    [37_793_809, 35, 20, 35, 6, "complete_reach_cross_chart", 31],
+    [78_268_369, 8_895, 6, 6, 4, "miss", 0],
+    [174_600_409, 20_631, 200, 518, 192, "complete_reach_direct", 19],
+    [278_505_049, 231, 28, 50, 13, "miss", 0],
 ]
 EXPECTED_CROSS_KEYS = [
     [5_596_369, 35],
@@ -94,9 +109,7 @@ EXPECTED_CROSS_FIRST_HITS = [
     [556_685_089, 199, 19, 71_466_329, 15_045_543],
 ]
 EXPECTED_FALLBACKS = [
-    [37_793_809, 35, 43, 9_448_463, 8_789_857],
     [78_268_369, 8_895, 19, 19_567_097, 1_361],
-    [174_600_409, 20_631, 19, 43_650_107, 4_200_193],
     [278_505_049, 231, 15, 69_626_266, 2_066],
 ]
 
@@ -367,6 +380,81 @@ def cross_chart_profile(prime: int, candidate_moduli: list[int]) -> dict[str, ob
     }
 
 
+def complete_reach_profile(record: dict[str, object]) -> dict[str, object]:
+    """Exhaust the finite raw-transition graph for one unresolved state."""
+    prime = int(record["prime"])
+    R = int(record["R"])
+    K = int(record["K"])
+    bounds = {int(q): int(exponent) for q, exponent in record["factorization"]}
+    starts = {
+        tuple(int(value) for value in witness["start"])
+        for witness in record["positive_witnesses"]
+    }
+    maximum_start_layer = max(node[2] for node in starts)
+    coarse_node_bound = R * maximum_start_layer * (maximum_start_layer + 1) // 4
+
+    visited: set[Node] = set()
+    frontier = list(sorted(starts, reverse=True))
+    edge_count = 0
+    while frontier:
+        node = frontier.pop()
+        if node in visited:
+            continue
+        visited.add(node)
+        edges = closure.raw_transitions(node, R, bounds)
+        edge_count += len(edges)
+        for edge in edges:
+            destination = tuple(edge["destination"])
+            if destination not in visited:
+                frontier.append(destination)
+        if len(visited) > coarse_node_bound:
+            raise AssertionError("complete reach exceeded its arithmetic node bound")
+
+    gaps, origins = closure.external_gap_candidates(visited, prime, K)
+    direct_hit_count, direct_first, direct_types = first_certificate_for_gaps(
+        prime, gaps, origins
+    )
+    cross = None
+    selected_channel = "miss"
+    selected_certificate = None
+    if direct_first is not None:
+        selected_channel = "complete_reach_direct"
+        selected_certificate = direct_first
+    else:
+        cross = cross_chart_profile(prime, gaps)
+        if cross["hit"]:
+            selected_channel = "complete_reach_cross_chart"
+            selected_certificate = cross["first_hit"]
+
+    return {
+        "prime": prime,
+        "R": R,
+        "reachable_node_count": len(visited),
+        "reachable_edge_count": edge_count,
+        "maximum_start_layer": maximum_start_layer,
+        "coarse_node_bound": coarse_node_bound,
+        "external_gap_candidate_count": len(gaps),
+        "external_gap_candidates": gaps,
+        "direct": {
+            "hit_count": direct_hit_count,
+            "type_i_count": int(direct_types["Type_I"]),
+            "type_ii_count": int(direct_types["Type_II"]),
+            "first_verified_certificate": direct_first,
+        },
+        "cross_chart": cross,
+        "selected_channel": selected_channel,
+        "selected_certificate": selected_certificate,
+        "hit": selected_certificate is not None,
+        "edge_semantics": "analysis_evidence_not_verified_edge",
+        "terminal_semantics": "independently_verified_direct_certificate",
+        "termination_bound": (
+            "Every reachable node has 1<=m<=m0 and A+B=R*m; hence the "
+            "unordered coprime node set is finite and bounded by "
+            "sum_{m<=m0} floor((R*m-1)/2)."
+        ),
+    }
+
+
 def first_global_gap_certificate(prime: int, cap: int) -> dict[str, object] | None:
     for gap in range(3, cap + 1, 4):
         certificate = closure.exact_gap_certificate(prime, gap)
@@ -451,8 +539,25 @@ def run(workers: int) -> dict[str, object]:
     local_direct = before_cross | cross_hits
     residuals = sorted(new_keys - local_direct)
 
+    record_by_key = {key(record): record for record in records}
+    complete_reach_profiles = [
+        complete_reach_profile(record_by_key[state_key]) for state_key in residuals
+    ]
+    complete_reach_direct = {
+        key(profile)
+        for profile in complete_reach_profiles
+        if profile["selected_channel"] == "complete_reach_direct"
+    }
+    complete_reach_cross = {
+        key(profile)
+        for profile in complete_reach_profiles
+        if profile["selected_channel"] == "complete_reach_cross_chart"
+    }
+    complete_reach_verified = complete_reach_direct | complete_reach_cross
+    complete_reach_final_residuals = sorted(set(residuals) - complete_reach_verified)
+
     fallback_records = []
-    for prime, R in residuals:
+    for prime, R in complete_reach_final_residuals:
         certificate = first_global_gap_certificate(
             prime, EXPECTED_SUMMARY["global_gap_cap"]
         )
@@ -463,6 +568,32 @@ def run(workers: int) -> dict[str, object]:
     cross_keys = sorted(cross_hits)
     if [list(item) for item in residuals] != EXPECTED_RESIDUALS:
         raise AssertionError(f"state-local residual set changed: {residuals}")
+    if [list(item) for item in complete_reach_final_residuals] != EXPECTED_COMPLETE_REACH_FINAL_RESIDUALS:
+        raise AssertionError(
+            f"complete-reach residual set changed: {complete_reach_final_residuals}"
+        )
+    complete_reach_profile_keys = [
+        [
+            int(profile["prime"]),
+            int(profile["R"]),
+            int(profile["reachable_node_count"]),
+            int(profile["reachable_edge_count"]),
+            int(profile["external_gap_candidate_count"]),
+            str(profile["selected_channel"]),
+            (
+                int(profile["selected_certificate"]["new_modulus"])
+                if profile["selected_channel"] == "complete_reach_cross_chart"
+                else int(profile["selected_certificate"]["gap"])
+                if profile["selected_channel"] == "complete_reach_direct"
+                else 0
+            ),
+        ]
+        for profile in complete_reach_profiles
+    ]
+    if complete_reach_profile_keys != EXPECTED_COMPLETE_REACH_PROFILES:
+        raise AssertionError(
+            f"complete-reach profiles changed: {complete_reach_profile_keys}"
+        )
     if [list(item) for item in cross_keys] != EXPECTED_CROSS_KEYS:
         raise AssertionError(f"cross-chart exclusive set changed: {cross_keys}")
     cross_first_hits = [
@@ -517,6 +648,11 @@ def run(workers: int) -> dict[str, object]:
         "cross_chart_hit_state_count": len(cross_hits),
         "state_local_direct_hit_state_count": len(local_direct),
         "state_local_direct_residual_count": len(residuals),
+        "complete_reach_input_residual_count": len(residuals),
+        "complete_reach_direct_hit_state_count": len(complete_reach_direct),
+        "complete_reach_cross_chart_hit_state_count": len(complete_reach_cross),
+        "complete_reach_verified_state_count": len(complete_reach_verified),
+        "complete_reach_final_residual_count": len(complete_reach_final_residuals),
         "external_gap_candidate_count": sum(int(record["external_gap_union"]["candidate_count"]) for record in records),
         "external_gap_hit_count": sum(int(record["external_gap_union"]["hit_gap_count"]) for record in records),
         "external_type_i_gap_count": sum(int(record["external_gap_union"]["type_i_gap_count"]) for record in records),
@@ -531,7 +667,9 @@ def run(workers: int) -> dict[str, object]:
         "dyadic_alpha_equals_n_count": sum(int(record["alpha_equals_n_count"]) for record in dyadic_records),
         "global_gap_cap": EXPECTED_SUMMARY["global_gap_cap"],
         "global_fallback_hit_state_count": len(fallback_records),
-        "finite_final_verified_state_count": len(local_direct) + len(fallback_records),
+        "finite_final_verified_state_count": (
+            len(local_direct) + len(complete_reach_verified) + len(fallback_records)
+        ),
     }
     if summary != EXPECTED_SUMMARY:
         raise AssertionError(f"full Psi_0=1 audit changed: {summary}")
@@ -543,7 +681,10 @@ def run(workers: int) -> dict[str, object]:
         "after_max_visited": len(internal | min_visited | min_lookahead | max_visited),
         "after_max_lookahead": len(before_cross),
         "after_cross_chart": len(local_direct),
-        "after_global_gap_cap_127": len(local_direct) + len(fallback_records),
+        "after_complete_reach": len(local_direct) + len(complete_reach_verified),
+        "after_global_gap_cap_127": (
+            len(local_direct) + len(complete_reach_verified) + len(fallback_records)
+        ),
     }
     expected_stages = {
         "internal": 328,
@@ -552,6 +693,7 @@ def run(workers: int) -> dict[str, object]:
         "after_max_visited": 473,
         "after_max_lookahead": 475,
         "after_cross_chart": 479,
+        "after_complete_reach": 481,
         "after_global_gap_cap_127": 483,
     }
     if priority_stages != expected_stages:
@@ -564,17 +706,18 @@ def run(workers: int) -> dict[str, object]:
             record["state_local_residual_internal_gaps"] = record["internal"]["_legal_gaps"]
 
     return {
-        "schema_version": "psi-one-full-spectrum-terminal-descent-audit/v1",
+        "schema_version": "psi-one-full-spectrum-terminal-descent-audit/v2",
         "arithmetic": (
             "Identify every Psi_0=1 state in the frozen 2,752-state finite-exponent F spectrum; "
             "run internal gaps, min/max ranked accepted closures, rejected one-step terminal "
             "lookahead, external-gap direct certificates, and centered cross-chart certificates; "
-            "then enumerate every generalized dyadic predecessor and audit its natural marked lift."
+            "exhaust the complete finite raw-transition reach only for unresolved states; then "
+            "enumerate every generalized dyadic predecessor and audit its natural marked lift."
         ),
         "scope_note": (
             "The 483 states come from 200 frozen pressure primes and are not all core primes. "
-            "Formal transitions remain analysis evidence. Cross-chart hits and the final small-gap "
-            "fallbacks are independently verified direct certificates. All generalized dyadic "
+            "Formal transitions remain analysis evidence. Complete-reach, cross-chart, and final "
+            "small-gap hits are independently verified direct certificates. All generalized dyadic "
             "objects are recorded as unlifted predecessors: they do not satisfy E4 and are not "
             "counted in the 479 state-local direct hits or the final verified total."
         ),
@@ -598,6 +741,15 @@ def run(workers: int) -> dict[str, object]:
         },
         "cross_chart_profiles": cross_profiles,
         "state_local_direct_residuals": [list(item) for item in residuals],
+        "complete_reach_residual_audit": {
+            "input_residual_count": len(residuals),
+            "direct_hit_state_count": len(complete_reach_direct),
+            "cross_chart_hit_state_count": len(complete_reach_cross),
+            "verified_state_count": len(complete_reach_verified),
+            "final_residual_count": len(complete_reach_final_residuals),
+            "final_residuals": [list(item) for item in complete_reach_final_residuals],
+            "records": complete_reach_profiles,
+        },
         "global_fallback_certificates": fallback_records,
         "natural_dyadic_lift_contract": {
             "marked_denominator": "alpha=n*K/E",
