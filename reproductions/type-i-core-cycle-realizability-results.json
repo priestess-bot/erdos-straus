@@ -1,0 +1,126 @@
+{
+  "arithmetic": "Verify the exact local criterion for realizing every coordinate prime of a universal R=7 mod 8 cycle with valuation one in K=(pR+1)/4, exhibit a compatible core prime and Type I terminal, and combine the criterion with the locked R<100000 cycle scan.",
+  "compatible_witness": {
+    "K": 35618383057530,
+    "R": 47,
+    "cycle": [
+      2,
+      15,
+      16,
+      8,
+      4
+    ],
+    "cycle_pairs": [
+      [
+        2,
+        45
+      ],
+      [
+        15,
+        32
+      ],
+      [
+        16,
+        31
+      ],
+      [
+        8,
+        39
+      ],
+      [
+        4,
+        43
+      ]
+    ],
+    "edge_labels": [
+      3,
+      2,
+      2,
+      2,
+      2
+    ],
+    "p": 3031351749577,
+    "progression": {
+      "modulus": 1081059267600,
+      "prime_step": 2,
+      "residue": 869233214377
+    },
+    "radical_witness": {
+      "denominator": 1,
+      "numerator": 93
+    },
+    "selected_coordinates": [
+      45,
+      32,
+      16,
+      8,
+      4
+    ],
+    "support": [
+      2,
+      3,
+      5,
+      13,
+      31,
+      43
+    ],
+    "support_valuations_in_K": {
+      "13": 1,
+      "2": 1,
+      "3": 1,
+      "31": 1,
+      "43": 1,
+      "5": 1
+    },
+    "type_I_normal_form": {
+      "A": 2,
+      "B": 1,
+      "C": 382993366210,
+      "H": 93,
+      "gap": 32595180103,
+      "solution": [
+        765986732420,
+        71236766115060,
+        107971847798547340144164810
+      ]
+    }
+  },
+  "criterion": {
+    "necessary_and_sufficient_local_condition": "3 not in S or R=2 mod 3",
+    "prime_existence_input": "Dirichlet's theorem on primes in progressions"
+  },
+  "finite_prefix": {
+    "all_direct_radical_misses": 1,
+    "core_realizable_direct_radical_misses": 0,
+    "inference": "The complete scan has one direct miss, and the exact core-support criterion excludes that cycle.",
+    "limit": 100000,
+    "moduli": 12500,
+    "source_result": "reproductions/type-i-core-formal-cycle-multiplier-scan-results.json",
+    "source_result_sha256": "59b29fa210167c04615c6f332854b7679462e44517590b51572b2be30ae2fbd3"
+  },
+  "incompatible_first_direct_miss": {
+    "R": 30031,
+    "compatible": false,
+    "cycle": [
+      31,
+      6000,
+      1200,
+      240,
+      961
+    ],
+    "obstruction": "3 is in S but R is not 2 mod 3",
+    "support": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      17,
+      19,
+      31,
+      2621,
+      3433
+    ]
+  },
+  "script_sha256": "3079f009fce36a23f5140601bc8790b8e6b7232d6691e1c49d49ba3b4735cb9d"
+}

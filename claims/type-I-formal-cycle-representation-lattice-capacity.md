@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-formal-cycle-representation-lattice-capacity
 title: 一层形式周期的表示格、二阶目标类与容量盒判据
-statement: 对任意 m=1 形式周期，把第 i 个互素节点 a_i+b_i=R 编码为素因子指数向量 z_i，使其模 R 像为 a_i/b_i=-1。周期表示格 Gamma=<z_i> 的关系子格 L=<z_i-z_0,2z_0> 精确等于 Gamma 中模 R 像为 1 的核，故 Gamma/L 为二阶群，全部周期生成的 -1 表示恰为陪集 z_0+L。该陪集与 K 的内禀指数盒相交，当且仅当周期节点的奇次乘法组合可消去所有外部素数并落入 K 容量；任一交点都规范恢复同状态直接 Type I 证书。商格 Z^P/L 及其 Smith 正规形给出精确的表示—对偶—容量判据，但不保证每个周期都有交点。
+statement: 对任意 m=1 形式周期，把第 i 个互素节点 a_i+b_i=R 编码为素因子指数向量 z_i，使其模 R 像为 a_i/b_i=-1。周期表示格 Gamma=<z_i> 的关系子格 L=<z_i-z_0,2z_0> 精确等于 Gamma 中模 R 像为 1 的核，故 Gamma/L 为二阶群，全部周期生成的 -1 表示恰为陪集 z_0+L。该陪集与 K 的内禀指数盒相交，当且仅当周期节点的奇次乘法组合可消去所有外部素数并落入 K 容量；任一交点都规范恢复同状态直接 Type I 证书。先对外部行作 Smith 消元、再对内部仿射格作商签名盒搜索，可有限且精确地输出 hit 见证或外部/容量 miss 证书，但不保证每个周期都有交点。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -136,6 +136,7 @@ L_{\mathcal Z}
 \sum_i c_i z_i:\sum_i c_i\equiv1\pmod2
 \right\}.}
 \tag{11}
+\]
 
 这一定义不依赖基节点 \(z_0\) 或节点定向：反转某个 \((a_i,b_i)\) 只把 \(z_i\) 换为
 \(-z_i\)，仍属于同一个奇陪集。
@@ -162,6 +163,7 @@ z(q)=0\ (q\nmid K),\quad
 \quad\Longleftrightarrow\quad
 \text{周期节点的一个奇次乘法组合消去全部外部指数并落入 }K\text{ 盒}.}
 \tag{13}
+\]
 
 右侧的“奇次”是所有整数系数之和为奇数，允许负系数。它不是启发式条件，而正是
 (11)--(12) 的整数形式。
@@ -173,6 +175,7 @@ a=\prod_{w(q)>0}q^{w(q)},
 \qquad
 b=\prod_{w(q)<0}q^{-w(q)}.
 \tag{14}
+\]
 
 则
 
@@ -181,6 +184,7 @@ b=\prod_{w(q)<0}q^{-w(q)}.
 \qquad ab\mid K,
 \qquad a+b\equiv0\pmod R.
 \tag{15}
+\]
 
 其中最后一个合同来自 \(\varphi_R(w)=-1\)。盒与目标陪集都关于 \(w\mapsto-w\) 对称：
 对陪集而言，\(-w=w-2w\)，而 \(2w\in L_{\mathcal Z}\)。所以可交换后设 \(a<b\)。令
@@ -301,6 +305,7 @@ C=\frac K{ab}=725.
 \[
 (A,B,C,H,h)=(37,62,725,1677,237183),
 \tag{26}
+\]
 
 给出该周期自身生成的一张同状态 Type I 终端。它与先前从完整中心盒取得的规范首证书
 可以不同。
@@ -312,7 +317,7 @@ C=\frac K{ab}=725.
 2 坐标为 0。因此 (20) miss，精确解释了为什么这个周期不能在原 \(K\) 容量内消去其
 外部素数。
 
-## 6. 与 radical cube 的关系及证明边界
+## 6. 与 radical cube 的关系
 
 radical-cube 判据允许从周期坐标的全部素因子中任取指数
 \(\{-1,0,1\}\)，但不要求所得向量属于 \(\Gamma_{\mathcal Z}\)。本卡则只允许周期节点的
@@ -321,6 +326,112 @@ radical-cube 判据允许从周期坐标的全部素因子中任取指数
 不自动成立；若 \(K\) 含高次幂，本卡还可能使用 radical cube 看不到的高指数。一个
 radical witness 若同时属于 \(\Gamma_{\mathcal Z}\) 且不含外部素数，就是 (13) 的交点。
 
-本卡证明的是固定周期的完整判据，不是“每个周期必命中”。当 (20) miss 时，仍必须使用
-周期外信息：全局 Type I/II 终端、跨模数中心谱、源可达性，或具有 E1--E5 与全域解提升的
-合法 support switch。
+## 7. 精确有限判定算法
+
+式 (13) 不需要枚举无限多个周期系数组合。把 (6) 的生成元写成列矩阵
+
+\[
+M=\left[z_1-z_0\mid\cdots\mid z_{\ell-1}-z_0\mid2z_0\right]
+\in\mathbb Z^{P\times\ell},
+\qquad
+\mathcal T_{\mathcal Z}=z_0+M\mathbb Z^\ell.
+\tag{27}
+\]
+
+按是否整除 \(K\) 把行坐标分成
+
+\[
+I=\{q\in P:q\mid K\},
+\qquad
+E=P\setminus I.
+\tag{28}
+\]
+
+第一步只消去外部坐标。对整数方程
+
+\[
+M_Et=-z_{0,E}
+\tag{29}
+\]
+
+作带左右幺模变换的 Smith 分解。若相应对角元整除条件失败，则 (13) 必定 miss，并且
+这些失败的整除条件就是规范的 `MISS_EXTERNAL` 证书。若方程可解，则 Smith 数据给出一个
+特解 \(t_0\) 和整数核基 \(N\)，全部外部坐标为零的候选可唯一归约为内部仿射格
+
+\[
+t=t_0+Nu,
+\qquad
+x_I=c+Au,
+\qquad
+c=z_{0,I}+M_It_0,
+\qquad
+A=M_IN.
+\tag{30}
+\]
+
+再取 \(A\) 的 Smith 分解
+
+\[
+UAV=\operatorname{diag}(s_1,\ldots,s_\rho,0,\ldots,0),
+\qquad s_j>0,
+\tag{31}
+\]
+
+并定义商格签名
+
+\[
+\sigma_A(x)=
+\left(
+(Ux)_1\bmod s_1,\ldots,(Ux)_\rho\bmod s_\rho,
+(Ux)_{\rho+1},\ldots,(Ux)_{|I|}
+\right).
+\tag{32}
+\]
+
+于是
+
+\[
+x-c\in A\mathbb Z^{\operatorname{rank}N}
+\quad\Longleftrightarrow\quad
+\sigma_A(x)=\sigma_A(c).
+\tag{33}
+\]
+
+算法只需在有限盒 \(-\nu_q\le x(q)\le\nu_q\) 中检查 (33)。周期中没有出现的
+\(K\)-素数行在 \(z_0,M\) 中恒为零，必须固定为零，可在搜索前删去。记剩余活跃盒大小为
+
+\[
+B_{\rm eff}=\prod_{q\in I_{\rm active}}(2\nu_q+1).
+\tag{34}
+\]
+
+直接枚举需要 \(O(|I|B_{\rm eff})\) 次整数运算；把坐标按盒大小平衡分成两半，并利用
+签名的可加性做 meet-in-the-middle，时间和内存降为
+\(O(|I|\sqrt{B_{\rm eff}})\) 量级。所有比较都是精确整数等式或同余，不使用浮点近似。
+
+命中时，由 (31) 恢复 \(u\)，再由 (30) 恢复 \(t\)。若
+
+\[
+t=(t_1,\ldots,t_{\ell-1},t_*),
+\tag{35}
+\]
+
+则原节点的整数系数为
+
+\[
+c_0=1-\sum_{i=1}^{\ell-1}t_i+2t_*,
+\qquad
+c_i=t_i\quad(1\le i<\ell).
+\tag{36}
+\]
+
+其系数和恒为 \(1+2t_*\)，所以恢复的是奇陪集中的真实表示；随后按 (14)--(18) 输出并
+精确核验 Type I 证书。若有限盒全部 miss，则 Smith 数据、目标签名和完整盒签名缺失共同
+构成固定周期的 `MISS_CAPACITY` 证书。该两阶段算法因此同时给出规范 hit 见证和规范 miss
+障碍，而不是只报告启发式搜索失败。
+
+## 8. 证明边界
+
+本卡证明的是固定周期的完整判据和有限判定算法，不是“每个周期必命中”。当 (20) miss
+时，仍必须使用周期外信息：全局 Type I/II 终端、跨模数中心谱、源可达性，或具有
+E1--E5 与全域解提升的合法 support switch。

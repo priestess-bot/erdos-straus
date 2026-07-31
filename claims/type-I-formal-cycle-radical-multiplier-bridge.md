@@ -333,3 +333,10 @@ D\equiv-B\ \text{或}\ 4D\equiv-1\pmod R.}
 固定反例、两个乘子见证及核心不相容性由
 `reproductions/type_i_formal_cycle_multiplier_boundary.py` 独立核验；它不把有限前缀证据
 升级成全称证明。
+
+后续的真实图分析进一步证明：\(U_R\) 周期的补数翻转数为正偶数，并可分解为满足
+\(A_j=Q_j(R-A_{j+1})\) 和
+\(\operatorname{rad}(Q_j)\mid R-A_{j+1}\) 的下降段。恰有两次翻转时存在闭式
+\((Q,T,h)\) 正规形；三目标命中则成为完整同余关系格三个陪集的单位盒短代表问题。
+这提供了比继续强化整圈乘积律更精确的下一证明对象，见
+[通用一层周期的偶补数分段与两翻转正规形](type-I-universal-cycle-complement-flip-segment-normal-form.md)。

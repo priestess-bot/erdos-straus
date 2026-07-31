@@ -1,0 +1,195 @@
+{
+  "arithmetic": "Verify even positive complement-flip parity, the exact segment identity and radical divisibility, the two-flip closed form, and the necessity of using unselected complementary coordinates.",
+  "cycle_30031": {
+    "R": 30031,
+    "cycle": [
+      31,
+      6000,
+      1200,
+      240,
+      961
+    ],
+    "cycle_pairs": [
+      [
+        31,
+        30000
+      ],
+      [
+        6000,
+        24031
+      ],
+      [
+        1200,
+        28831
+      ],
+      [
+        240,
+        29791
+      ],
+      [
+        961,
+        29070
+      ]
+    ],
+    "edge_labels": [
+      5,
+      5,
+      5,
+      31,
+      31
+    ],
+    "edge_product_mod_R": 1,
+    "flip_count": 2,
+    "orientation_signs": [
+      1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "segments": [
+      {
+        "final_quotient": 240,
+        "labels": [
+          5,
+          5,
+          5
+        ],
+        "next_start": 29791,
+        "product": 125,
+        "start": 30000
+      },
+      {
+        "final_quotient": 31,
+        "labels": [
+          31,
+          31
+        ],
+        "next_start": 30000,
+        "product": 961,
+        "start": 29791
+      }
+    ],
+    "selected_coordinates": [
+      30000,
+      6000,
+      1200,
+      29791,
+      961
+    ],
+    "two_flip_normal_form": {
+      "A": 30000,
+      "B": 29791,
+      "Q": 125,
+      "R_minus_A": 31,
+      "R_minus_B": 240,
+      "T": 961,
+      "h": 4
+    }
+  },
+  "cycle_55": {
+    "R": 55,
+    "cycle": [
+      6,
+      7,
+      24,
+      12
+    ],
+    "cycle_pairs": [
+      [
+        6,
+        49
+      ],
+      [
+        7,
+        48
+      ],
+      [
+        24,
+        31
+      ],
+      [
+        12,
+        43
+      ]
+    ],
+    "edge_labels": [
+      7,
+      2,
+      2,
+      2
+    ],
+    "edge_product_mod_R": 1,
+    "flip_count": 2,
+    "orientation_signs": [
+      -1,
+      1,
+      1,
+      -1
+    ],
+    "segments": [
+      {
+        "final_quotient": 7,
+        "labels": [
+          7
+        ],
+        "next_start": 48,
+        "product": 7,
+        "start": 49
+      },
+      {
+        "final_quotient": 6,
+        "labels": [
+          2,
+          2,
+          2
+        ],
+        "next_start": 49,
+        "product": 8,
+        "start": 48
+      }
+    ],
+    "selected_coordinates": [
+      49,
+      48,
+      24,
+      12
+    ],
+    "two_flip_normal_form": {
+      "A": 49,
+      "B": 48,
+      "Q": 7,
+      "R_minus_A": 6,
+      "R_minus_B": 7,
+      "T": 8,
+      "h": 1
+    }
+  },
+  "script_sha256": "0da41cd7026be88dbc494a67dede3ab20b2deb7063a5db05894832fa300024f6",
+  "selected_support_boundary": {
+    "R": 55,
+    "full_support": [
+      2,
+      3,
+      7,
+      31,
+      43
+    ],
+    "full_support_direct_witness": {
+      "denominator": 217,
+      "numerator": 3
+    },
+    "selected_signed_cube_size": 24,
+    "selected_support": [
+      2,
+      3,
+      7
+    ],
+    "selected_support_hits_any_target": false,
+    "selected_support_targets": {
+      "minus_four_radical": 52,
+      "minus_inverse_four_radical": 18,
+      "minus_one": 54
+    }
+  }
+}

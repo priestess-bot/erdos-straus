@@ -1376,6 +1376,10 @@ Type I。因此中心谱 miss 时，任意持续选边的游走都在有限步�
 \(z_0+L\) 与 \(K\) 内禀盒相交，当且仅当一个奇次节点组合消去全部外部指数并产生
 Type I。商格 Smith 正规形和有限角色和给出规范的表示—对偶—容量证书，见
 [一层周期的表示格与容量盒判据](../claims/type-I-formal-cycle-representation-lattice-capacity.md)。
+该判据现已有精确有限算法：先用 Smith 分解解外部坐标消元方程；若可解，再把内部候选
+化成仿射格商签名，并在 \(K\) 的指数盒中直接枚举或 meet-in-the-middle。命中会恢复
+奇次节点系数与 Type I 正规形；失败则区分为 `MISS_EXTERNAL` 或
+`MISS_CAPACITY`，不再把有限搜索失败混同为格障碍。
 
 第二，\(K\) 支撑周期的平方自由支撑积记为 \(B\)。旧的 direct radical 猜想已经被
 \(R=30031\) 五周期否定：其 support cube 不含 \(-1\)。但若该 cube 命中
@@ -1384,6 +1388,32 @@ Type I。商格 Smith 正规形和有限角色和给出规范的表示—对偶�
 上述一个 direct miss，而三目标 multiplier bridge 为 0 miss；该周期又因含 3 与核心
 支撑不相容。有限结果和新的两目标开放命题见
 [三目标乘子桥与首个直接反例](../claims/type-I-formal-cycle-radical-multiplier-bridge.md)。
+
+通用周期与真实核心周期之间的量词现在也已闭合。若 \(S\) 是 \(U_R\) 周期的完整坐标
+支撑，则存在无穷多个核心素数使所有 \(q\in S\) 在 \(K=(pR+1)/4\) 中恰出现一次，当且
+仅当 \(3\notin S\) 或 \(R\equiv2\pmod3\)。证明由逐素数精确赋值的 CRT 剩余类和
+狄利克雷定理给出；在该剩余类上每条 \(q^2\) 边都成为真实 \(K\) 支撑超高边。因此
+十万扫描的唯一 direct miss 恰被核心兼容条件排除，并得到无 \(p\) 上界的结论：
+\(R<100000\) 时每个真实核心 \(K\) 支撑周期都直接 radical 终端。见
+[通用一层周期的核心可实现性与十万模数闭合](../claims/type-I-core-universal-cycle-realizability-and-100k-closure.md)。
+后续周期搜索只应保留这个核心可实现域；否则抽象反例不能进入真实证明图。
+
+在核心可实现域内，真实 \(q^2\) 周期还具有新的分段正规形。取补数恰等价于所选坐标
+奇偶翻转，所以闭环翻转数为正偶数，边标号积必为 \(1\pmod R\)。每个下降段的起点
+\(A_j\)、标号积 \(Q_j\) 与下一段起点满足
+
+\[
+A_j=Q_j(R-A_{j+1}),
+\qquad
+\operatorname{rad}(Q_j)\mid R-A_{j+1}.
+\]
+
+恰有两次翻转时，\(h=(QT-1)/R\) 给出四个端点的闭式、交叉 radical 整除及
+\((Q,T)=1\)。三目标桥因此可精确写成完整同余关系格的三个陪集是否含
+\(\ell_\infty\le1\) 代表；周期标号向量和节点差生成一个可直接检查的关系子格。
+但 \(R=55\) 证明只用边标号和全部选中坐标支撑仍可三目标全 miss，必须使用未选互补
+坐标产生的素数。严格结果见
+[通用一层周期的偶补数分段与两翻转正规形](../claims/type-I-universal-cycle-complement-flip-segment-normal-form.md)。
 
 终端优先剪枝现在已有一个可复现的正向版本。允许所有满足
 \(v_q(AB)>v_q(K)\) 的素数后，分别只保留严格降低
@@ -1431,7 +1461,7 @@ terminal-first 后仍未闭合的 \(\Psi_0=1\) 状态，其两个良基剪枝或
 \downarrow\\
 \text{双秩剪枝、一步外部缺口前瞻与冻结分支 }55/55\\
 \downarrow\\
-\text{cycle-or-hit、周期表示格与两目标乘子桥}\\
+\text{cycle-or-hit、周期表示格、两目标乘子桥、核心可实现性与偶翻转分段}\\
 \downarrow\\
 \text{全称源可达 SCC 逃逸，或合法换 }K/R\text{ 支撑与解提升}\\
 \downarrow\\

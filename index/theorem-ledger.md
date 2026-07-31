@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 356 |
+| 数学状态 | `computationally_reproduced` | 357 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 282 |
+| 数学状态 | `established` | 283 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 123 |
-| 证明来源 | `mixed` | 13 |
-| 证明来源 | `repository_derivation` | 113 |
+| 证明来源 | `mixed` | 14 |
+| 证明来源 | `repository_derivation` | 114 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 231 |
+| 审阅状态 | `internal_review` | 233 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -231,6 +231,7 @@
 | [两千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-20m.md) (`type-I-b5-maximum-tail-even-source-closure-20m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 除子证书的互素因子正规形](../claims/type-I-coprime-factor-normal-form.md) (`type-I-coprime-factor-normal-form`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-23 |
 | [核心一层形式周期的奇偶约化、有限 radical 命中与反例边界](../claims/type-I-core-formal-cycle-radical-cube-boundary.md) (`type-I-core-formal-cycle-radical-cube-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
+| [通用一层周期的核心可实现性与十万模数闭合](../claims/type-I-core-universal-cycle-realizability-and-100k-closure.md) (`type-I-core-universal-cycle-realizability-and-100k-closure`) | `computationally_reproduced` | `mixed` | `internal_review` | `linnik1944` | 2026-07-31 |
 | [跨状态嵌套 q 进证书的容量上界](../claims/type-I-cross-state-q-adic-capacity-bound.md) (`type-I-cross-state-q-adic-capacity-bound`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [五亿尾遗漏的目标级B等于1缺口扩展闭合](../claims/type-I-direct-b1-gap-extension-500m.md) (`type-I-direct-b1-gap-extension-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [H19与五亿尾遗漏的目标级小B偶源闭合](../claims/type-I-direct-small-b-even-source-audit.md) (`type-I-direct-small-b-even-source-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -511,6 +512,7 @@
 | [目标指数纤维反足与近邻终端引理](../claims/type-I-target-fiber-neighbor-terminal.md) (`type-I-target-fiber-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [通用一层周期的偶补数分段与两翻转正规形](../claims/type-I-universal-cycle-complement-flip-segment-normal-form.md) (`type-I-universal-cycle-complement-flip-segment-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [九条固定 p 减一单素因子桥菜单的 536219/212520 维筛残余](../claims/type-I-universal-pminusone-prime-factor-menu-sieve.md) (`type-I-universal-pminusone-prime-factor-menu-sieve`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [上半区偶源混合终端选择猜想](../claims/type-I-upper-half-mixed-terminal-selector-conjecture.md) (`type-I-upper-half-mixed-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type II 规范扇的 CRT 小好因子屏蔽与十射线压力点](../claims/type-II-ac-adversarial-crt-small-factor-screen.md) (`type-II-ac-adversarial-crt-small-factor-screen`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `chamberland2026`, `grynkiewicz_marchan_ordaz2009` | 2026-07-28 |
