@@ -1,6 +1,6 @@
 {
-  "schema_version": "type-i-source-word-joint-capacity-dichotomy/v1",
-  "scope_note": "Focused exact verification of the algebraic capacity dichotomy and seven boundary paths. It does not reproduce the full 1412-slab census and does not upgrade a formal edge to an E4 transition.",
+  "schema_version": "type-i-source-word-joint-capacity-dichotomy/v2",
+  "scope_note": "Focused exact verification of the algebraic capacity dichotomy and seven boundary paths, plus the five-node p=2017 complete-Reach split counterexample. It does not reproduce the full 1412-slab census and does not upgrade a formal edge to an E4 transition.",
   "inputs": {
     "frozen_psi_one_sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
     "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
@@ -612,5 +612,178 @@
     "coordinate_difference_gap": 43,
     "complete_gap_hit": false,
     "boundary": "A split-exchange product does not make its coordinate difference a Type I/II terminal."
+  },
+  "complete_reach_split_counterexample": {
+    "prime": 2017,
+    "R": 207,
+    "K": 104380,
+    "x_R": 556,
+    "source": [
+      1156,
+      1535,
+      13
+    ],
+    "post_first": [
+      68,
+      139,
+      1
+    ],
+    "capacity": {
+      "product": 9452,
+      "product_factorization": {
+        "2": 2,
+        "17": 1,
+        "139": 1
+      },
+      "K_defect": 139,
+      "x_R_defect": 17,
+      "common_overload_factor": 1,
+      "defect_union": 2363,
+      "branch": "split_exchange",
+      "exchange": {
+        "reduced_delta": 2678,
+        "a": 1,
+        "b": 1535,
+        "identity": "R*E_K*a-E_x*b=delta"
+      }
+    },
+    "centered_type_i_hit": false,
+    "internal_gaps": [
+      307,
+      1535
+    ],
+    "internal_gap_hits": [],
+    "endpoint_reach": {
+      "nodes": [
+        [
+          1,
+          206,
+          1
+        ],
+        [
+          2,
+          205,
+          1
+        ],
+        [
+          5,
+          202,
+          1
+        ],
+        [
+          68,
+          139,
+          1
+        ]
+      ],
+      "edges": [
+        {
+          "source": [
+            68,
+            139,
+            1
+          ],
+          "q": 139,
+          "destination": [
+            1,
+            206,
+            1
+          ]
+        },
+        {
+          "source": [
+            1,
+            206,
+            1
+          ],
+          "q": 103,
+          "destination": [
+            2,
+            205,
+            1
+          ]
+        },
+        {
+          "source": [
+            2,
+            205,
+            1
+          ],
+          "q": 41,
+          "destination": [
+            5,
+            202,
+            1
+          ]
+        },
+        {
+          "source": [
+            5,
+            202,
+            1
+          ],
+          "q": 101,
+          "destination": [
+            2,
+            205,
+            1
+          ]
+        }
+      ],
+      "external_gaps": [
+        103,
+        139
+      ],
+      "external_gap_origins": {
+        "103": {
+          "node": "1:206:1",
+          "side": "larger",
+          "side_value": 206,
+          "external_part": 103
+        },
+        "139": {
+          "node": "68:139:1",
+          "side": "larger",
+          "side_value": 139,
+          "external_part": 139
+        }
+      },
+      "external_gap_hits": []
+    },
+    "state_post_first_reach": {
+      "starts": [
+        [
+          68,
+          139,
+          1
+        ],
+        [
+          85,
+          122,
+          1
+        ]
+      ],
+      "node_count": 5,
+      "edge_count": 5,
+      "external_gaps": [
+        103,
+        139
+      ],
+      "external_gap_hits": []
+    },
+    "first_bottom_transition": {
+      "selected_q": 139,
+      "scaled_pair_before": [
+        68,
+        139
+      ],
+      "scaled_pair_after": [
+        68,
+        28634
+      ],
+      "invariant_cross_product": 9452,
+      "updated_cross_product": 206
+    },
+    "boundary": "Strict split does not force an external terminal at any bounded depth or anywhere in the complete formal Reach."
   }
 }

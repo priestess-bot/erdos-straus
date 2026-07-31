@@ -416,6 +416,146 @@ def analyze_ambient_difference_case() -> dict[str, object]:
     }
 
 
+def complete_reach(
+    starts: tuple[tuple[int, int, int], ...], R: int, K: int
+) -> tuple[set[tuple[int, int, int]], list[dict[str, object]]]:
+    bounds = closure.factorization(K)
+    visited: set[tuple[int, int, int]] = set()
+    edges: list[dict[str, object]] = []
+    frontier = list(starts)
+    while frontier:
+        node = frontier.pop()
+        if node in visited:
+            continue
+        visited.add(node)
+        for edge in closure.raw_transitions(node, R, bounds):
+            destination = tuple(int(value) for value in edge["destination"])
+            edges.append(
+                {
+                    "source": list(node),
+                    "q": int(edge["q"]),
+                    "destination": list(destination),
+                }
+            )
+            if destination not in visited:
+                frontier.append(destination)
+    return visited, edges
+
+
+def analyze_complete_reach_split_counterexample() -> dict[str, object]:
+    prime = 2_017
+    R = 207
+    K = (prime * R + 1) // 4
+    x_R = (prime + R) // 4
+    assert K == 104_380 and x_R == 556 and prime % 24 == 1
+
+    source = (1_156, 1_535, 13)
+    endpoint = (68, 139, 1)
+    require_edge(source, endpoint, 17, 1, R, K)
+    assert 1_535 * 68 == K and 1_156 == 17 * 68
+    assert math.gcd(source[0], source[1]) == 1 and sum(source[:2]) == R * source[2]
+
+    profile = capacity_profile(prime, R, 68 * 139)
+    assert profile["branch"] == "split_exchange"
+    assert (
+        profile["K_defect"],
+        profile["x_R_defect"],
+        profile["common_overload_factor"],
+    ) == (139, 17, 1)
+    assert profile["exchange"] == {
+        "reduced_delta": 2_678,
+        "a": 1,
+        "b": 1_535,
+        "identity": "R*E_K*a-E_x*b=delta",
+    }
+
+    _, centered_hits = closure.centered_type_i_hits(prime, R, K)
+    assert not centered_hits
+    internal_gaps = [
+        gap
+        for gap in closure.divisors(K)
+        if gap % 4 == 3 and 3 <= gap <= prime - 2
+    ]
+    assert internal_gaps == [307, 1_535]
+    assert all(closure.exact_gap_certificate(prime, gap) is None for gap in internal_gaps)
+
+    endpoint_nodes, endpoint_edges = complete_reach((endpoint,), R, K)
+    expected_endpoint_nodes = {
+        (68, 139, 1),
+        (1, 206, 1),
+        (2, 205, 1),
+        (5, 202, 1),
+    }
+    assert endpoint_nodes == expected_endpoint_nodes and len(endpoint_edges) == 4
+    gaps, origins = closure.external_gap_candidates(endpoint_nodes, prime, K)
+    assert gaps == [103, 139]
+    assert all(closure.exact_gap_certificate(prime, gap) is None for gap in gaps)
+
+    second_source = (4, 1_445, 7)
+    second_endpoint = (85, 122, 1)
+    require_edge(second_source, second_endpoint, 17, 1, R, K)
+    state_nodes, state_edges = complete_reach((endpoint, second_endpoint), R, K)
+    assert state_nodes == expected_endpoint_nodes | {second_endpoint}
+    assert len(state_edges) == 5
+    state_gaps, _ = closure.external_gap_candidates(state_nodes, prime, K)
+    assert state_gaps == gaps
+
+    first_edge = next(
+        edge
+        for edge in endpoint_edges
+        if edge["source"] == list(endpoint) and edge["q"] == 139
+    )
+    assert first_edge["destination"] == [1, 206, 1]
+    old_pairs = (
+        normalized_pair(68, 139, R),
+        normalized_pair(139, 68, R),
+    )
+    new_pairs = (
+        normalized_pair(68, 139, R),
+        normalized_pair(139, 139 * 206, R),
+    )
+    assert old_pairs[0] == new_pairs[0]
+    assert old_pairs[1]["product"] == 9_452 and new_pairs[1]["product"] == 206
+
+    return {
+        "prime": prime,
+        "R": R,
+        "K": K,
+        "x_R": x_R,
+        "source": list(source),
+        "post_first": list(endpoint),
+        "capacity": profile,
+        "centered_type_i_hit": False,
+        "internal_gaps": internal_gaps,
+        "internal_gap_hits": [],
+        "endpoint_reach": {
+            "nodes": [list(node) for node in sorted(endpoint_nodes)],
+            "edges": endpoint_edges,
+            "external_gaps": gaps,
+            "external_gap_origins": {str(gap): origin for gap, origin in origins.items()},
+            "external_gap_hits": [],
+        },
+        "state_post_first_reach": {
+            "starts": [list(endpoint), list(second_endpoint)],
+            "node_count": len(state_nodes),
+            "edge_count": len(state_edges),
+            "external_gaps": state_gaps,
+            "external_gap_hits": [],
+        },
+        "first_bottom_transition": {
+            "selected_q": 139,
+            "scaled_pair_before": [68, 139],
+            "scaled_pair_after": [68, 139 * 206],
+            "invariant_cross_product": old_pairs[0]["product"],
+            "updated_cross_product": new_pairs[1]["product"],
+        },
+        "boundary": (
+            "Strict split does not force an external terminal at any bounded "
+            "depth or anywhere in the complete formal Reach."
+        ),
+    }
+
+
 def run() -> dict[str, object]:
     if sha256(INPUT) != EXPECTED_INPUT_SHA256:
         raise AssertionError("frozen Psi-one input hash changed")
@@ -460,10 +600,11 @@ def run() -> dict[str, object]:
     if summary != expected_summary:
         raise AssertionError(f"focused joint-capacity boundary changed: {summary}")
     return {
-        "schema_version": "type-i-source-word-joint-capacity-dichotomy/v1",
+        "schema_version": "type-i-source-word-joint-capacity-dichotomy/v2",
         "scope_note": (
             "Focused exact verification of the algebraic capacity dichotomy and "
-            "seven boundary paths. It does not reproduce the full 1412-slab "
+            "seven boundary paths, plus the five-node p=2017 complete-Reach "
+            "split counterexample. It does not reproduce the full 1412-slab "
             "census and does not upgrade a formal edge to an E4 transition."
         ),
         "inputs": {
@@ -473,6 +614,7 @@ def run() -> dict[str, object]:
         "summary": summary,
         "path_records": path_records,
         "ambient_difference_counterexample": analyze_ambient_difference_case(),
+        "complete_reach_split_counterexample": analyze_complete_reach_split_counterexample(),
     }
 
 

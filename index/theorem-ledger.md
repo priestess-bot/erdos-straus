@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 305 |
+| 数学状态 | `established` | 306 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 23 |
-| 证明来源 | `repository_derivation` | 132 |
+| 证明来源 | `repository_derivation` | 133 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 259 |
+| 审阅状态 | `internal_review` | 260 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -358,6 +358,7 @@
 | [H19双固定尺度边界的全变量偶尺度外源审计](../claims/type-I-h19-variable-even-scale-after-k6-1b.md) (`type-I-h19-variable-even-scale-after-k6-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
+| [large-slab 的受限因子对正规形与跨指数层支撑容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md) (`type-I-large-slab-factor-pair-layer-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [四个真实对抗核心的 F 型活跃方向下界](../claims/type-I-linear-adversarial-core-f-active-direction-profile-600m.md) (`type-I-linear-adversarial-core-f-active-direction-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [四个对抗核心全部 F 状态的块级鸽巢余量](../claims/type-I-linear-adversarial-core-f-block-alignment-profile-600m.md) (`type-I-linear-adversarial-core-f-block-alignment-profile-600m`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |

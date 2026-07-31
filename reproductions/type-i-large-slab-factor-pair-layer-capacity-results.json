@@ -1,0 +1,716 @@
+{
+  "schema_version": "type-i-large-slab-factor-pair-layer-capacity/v1",
+  "scope_note": "Focused exact checks of four arithmetic large slabs and a 15-layer gcd grid. This does not rerun the historical 1412-slab census, prove source Reach membership, or upgrade a slab to a Type I/II or E4 exit.",
+  "summary": {
+    "slab_case_count": 4,
+    "covered_alpha": [
+      1,
+      2,
+      3
+    ],
+    "admissible_factor_pair_count": 5,
+    "layer_gcd_pair_check_count": 105,
+    "same_exponent_check_count": 15,
+    "repeated_carrier_count": 4,
+    "source_word_carrier_case_count": 5,
+    "source_word_slab_q_union_hit_count": 4
+  },
+  "slab_records": [
+    {
+      "prime": 5596369,
+      "R": 35,
+      "q": 2,
+      "e": 5,
+      "alpha": 1,
+      "beta": 3,
+      "Q": 32,
+      "K": 48968229,
+      "N": 179083809,
+      "N_factorization": {
+        "3": 2,
+        "19898201": 1
+      },
+      "H": 59694603,
+      "c": 16322743,
+      "admissible_records_in_linear_range": [
+        {
+          "beta": 3,
+          "H": 59694603,
+          "c": 16322743,
+          "R": 35,
+          "K": 48968229
+        }
+      ]
+    },
+    {
+      "prime": 212973049,
+      "R": 215,
+      "q": 71,
+      "e": 1,
+      "alpha": 3,
+      "beta": 2,
+      "Q": 71,
+      "K": 11447301384,
+      "N": 45363259438,
+      "N_factorization": {
+        "2": 1,
+        "7": 1,
+        "3240232817": 1
+      },
+      "H": 22681629719,
+      "c": 1907883564,
+      "admissible_records_in_linear_range": [
+        {
+          "beta": 2,
+          "H": 22681629719,
+          "c": 1907883564,
+          "R": 215,
+          "K": 11447301384
+        }
+      ]
+    },
+    {
+      "prime": 122014489,
+      "R": 471,
+      "q": 467,
+      "e": 1,
+      "alpha": 1,
+      "beta": 4,
+      "Q": 467,
+      "K": 14367206080,
+      "N": 56980766364,
+      "N_factorization": {
+        "2": 2,
+        "3": 1,
+        "61": 1,
+        "77842577": 1
+      },
+      "H": 14245191591,
+      "c": 3591801520,
+      "admissible_records_in_linear_range": [
+        {
+          "beta": 4,
+          "H": 14245191591,
+          "c": 3591801520,
+          "R": 471,
+          "K": 14367206080
+        },
+        {
+          "beta": 244,
+          "H": 233527731,
+          "c": 88885555,
+          "R": 711,
+          "K": 21688075420
+        }
+      ]
+    },
+    {
+      "prime": 37793809,
+      "R": 12423,
+      "q": 6211,
+      "e": 1,
+      "alpha": 2,
+      "beta": 1,
+      "Q": 6211,
+      "K": 117378122302,
+      "N": 469474695399,
+      "N_factorization": {
+        "3": 1,
+        "173": 1,
+        "904575521": 1
+      },
+      "H": 469474695399,
+      "c": 58689061151,
+      "admissible_records_in_linear_range": [
+        {
+          "beta": 1,
+          "H": 469474695399,
+          "c": 58689061151,
+          "R": 12423,
+          "K": 117378122302
+        }
+      ]
+    }
+  ],
+  "layer_capacity": {
+    "prime": 337,
+    "q": 7,
+    "alphas": [
+      1,
+      2,
+      3
+    ],
+    "exponents": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "pair_check_count": 105,
+    "same_exponent_checks": [
+      {
+        "exponent": 1,
+        "alphas": [
+          1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 1,
+        "alphas": [
+          2,
+          3
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 1,
+        "alphas": [
+          1,
+          3
+        ],
+        "gcd": 2
+      },
+      {
+        "exponent": 2,
+        "alphas": [
+          1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 2,
+        "alphas": [
+          2,
+          3
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 2,
+        "alphas": [
+          1,
+          3
+        ],
+        "gcd": 2
+      },
+      {
+        "exponent": 3,
+        "alphas": [
+          1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 3,
+        "alphas": [
+          2,
+          3
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 3,
+        "alphas": [
+          1,
+          3
+        ],
+        "gcd": 2
+      },
+      {
+        "exponent": 4,
+        "alphas": [
+          1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 4,
+        "alphas": [
+          2,
+          3
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 4,
+        "alphas": [
+          1,
+          3
+        ],
+        "gcd": 2
+      },
+      {
+        "exponent": 5,
+        "alphas": [
+          1,
+          2
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 5,
+        "alphas": [
+          2,
+          3
+        ],
+        "gcd": 1
+      },
+      {
+        "exponent": 5,
+        "alphas": [
+          1,
+          3
+        ],
+        "gcd": 2
+      }
+    ],
+    "repeated_carriers": [
+      {
+        "alpha": 1,
+        "carrier": 2,
+        "exponents": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "order": 1,
+        "interval_capacity": 5
+      },
+      {
+        "alpha": 1,
+        "carrier": 5,
+        "exponents": [
+          1,
+          5
+        ],
+        "order": 4,
+        "interval_capacity": 2
+      },
+      {
+        "alpha": 2,
+        "carrier": 3,
+        "exponents": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "order": 1,
+        "interval_capacity": 5
+      },
+      {
+        "alpha": 3,
+        "carrier": 2,
+        "exponents": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "order": 1,
+        "interval_capacity": 5
+      }
+    ],
+    "multi_layer_checks": [
+      {
+        "alpha": 1,
+        "exponents": [
+          1,
+          3,
+          5
+        ],
+        "step_gcd": 2,
+        "common_gcd": 8
+      },
+      {
+        "alpha": 2,
+        "exponents": [
+          1,
+          2,
+          5
+        ],
+        "step_gcd": 1,
+        "common_gcd": 3
+      },
+      {
+        "alpha": 3,
+        "exponents": [
+          2,
+          4,
+          5
+        ],
+        "step_gcd": 1,
+        "common_gcd": 2
+      }
+    ],
+    "nontrivial_pair_examples": [
+      {
+        "left": [
+          1,
+          1
+        ],
+        "right": [
+          3,
+          2
+        ],
+        "gcd": 20,
+        "difference": 20
+      },
+      {
+        "left": [
+          1,
+          1
+        ],
+        "right": [
+          1,
+          3
+        ],
+        "gcd": 8,
+        "difference": 48
+      },
+      {
+        "left": [
+          1,
+          1
+        ],
+        "right": [
+          2,
+          4
+        ],
+        "gcd": 5,
+        "difference": 685
+      },
+      {
+        "left": [
+          1,
+          1
+        ],
+        "right": [
+          3,
+          4
+        ],
+        "gcd": 4,
+        "difference": 1028
+      },
+      {
+        "left": [
+          1,
+          1
+        ],
+        "right": [
+          1,
+          5
+        ],
+        "gcd": 40,
+        "difference": 2400
+      },
+      {
+        "left": [
+          2,
+          1
+        ],
+        "right": [
+          2,
+          2
+        ],
+        "gcd": 3,
+        "difference": 12
+      },
+      {
+        "left": [
+          2,
+          1
+        ],
+        "right": [
+          2,
+          3
+        ],
+        "gcd": 3,
+        "difference": 96
+      },
+      {
+        "left": [
+          2,
+          1
+        ],
+        "right": [
+          1,
+          4
+        ],
+        "gcd": 11,
+        "difference": 341
+      }
+    ]
+  },
+  "source_word_carrier_records": [
+    {
+      "prime": 10170169,
+      "R": 127,
+      "q": 101,
+      "e": 1,
+      "U": 1,
+      "V": 5079,
+      "theta": 210,
+      "X_U": 101,
+      "X_V": 26,
+      "source_path": [
+        {
+          "node": [
+            4,
+            20189,
+            159
+          ],
+          "q": 2,
+          "g": 2
+        },
+        {
+          "node": [
+            1,
+            5079,
+            40
+          ],
+          "q": 3,
+          "g": 1
+        },
+        {
+          "node": [
+            85,
+            1693,
+            14
+          ],
+          "q": 5,
+          "g": 1
+        },
+        {
+          "node": [
+            17,
+            364,
+            3
+          ],
+          "q": 7,
+          "g": 1
+        },
+        {
+          "node": [
+            52,
+            75,
+            1
+          ],
+          "q": 2,
+          "g": 1
+        },
+        {
+          "node": [
+            26,
+            101,
+            1
+          ]
+        }
+      ],
+      "anchor_gap": 63,
+      "anchor_type_i_divisor": 62,
+      "expected_R_Q": 35,
+      "K": 322902866,
+      "x_R": 2542574,
+      "path_valuations": {
+        "a": 0,
+        "b": 0,
+        "s": 1,
+        "e_U": 1,
+        "e_V": 0
+      },
+      "path_quotients": {
+        "u": 167,
+        "v": 3
+      },
+      "cross_products": {
+        "L_U": 5460,
+        "L_V": 11969510
+      },
+      "common_overload_factors": {
+        "C_U": 210,
+        "C_V": 59255
+      },
+      "q_overload_exponents": {
+        "U": 0,
+        "V": 0
+      },
+      "q_in_union": false,
+      "boundary": {
+        "anchor_type_i": {
+          "gap": 63,
+          "divisor": 62,
+          "solution": [
+            2542558,
+            410448326228,
+            171185051543333146844788
+          ]
+        },
+        "R_Q": 35,
+        "decreases_R": true
+      }
+    },
+    {
+      "prime": 5596369,
+      "R": 35,
+      "q": 2,
+      "e": 5,
+      "U": 237,
+      "V": 8,
+      "theta": 1496,
+      "X_U": 32,
+      "X_V": 3,
+      "K": 48968229,
+      "x_R": 1399101,
+      "path_valuations": {
+        "a": 3,
+        "b": 3,
+        "s": 0,
+        "e_U": 5,
+        "e_V": 0
+      },
+      "path_quotients": {
+        "u": 1361,
+        "v": 128
+      },
+      "cross_products": {
+        "L_U": 118184,
+        "L_V": 5984
+      },
+      "common_overload_factors": {
+        "C_U": 136,
+        "C_V": 544
+      },
+      "q_overload_exponents": {
+        "U": 3,
+        "V": 5
+      },
+      "q_in_union": true,
+      "boundary": null
+    },
+    {
+      "prime": 212973049,
+      "R": 215,
+      "q": 71,
+      "e": 1,
+      "U": 1259,
+      "V": 1966,
+      "theta": 983,
+      "X_U": 213,
+      "X_V": 2,
+      "K": 11447301384,
+      "x_R": 53243316,
+      "path_valuations": {
+        "a": 0,
+        "b": 0,
+        "s": 0,
+        "e_U": 1,
+        "e_V": 0
+      },
+      "path_quotients": {
+        "u": 968,
+        "v": 0
+      },
+      "cross_products": {
+        "L_U": 2475194,
+        "L_V": 426
+      },
+      "common_overload_factors": {
+        "C_U": 983,
+        "C_V": 71
+      },
+      "q_overload_exponents": {
+        "U": 0,
+        "V": 1
+      },
+      "q_in_union": true,
+      "boundary": null
+    },
+    {
+      "prime": 122014489,
+      "R": 471,
+      "q": 467,
+      "e": 1,
+      "U": 3221,
+      "V": 76,
+      "theta": 19,
+      "X_U": 467,
+      "X_V": 4,
+      "K": 14367206080,
+      "x_R": 30503740,
+      "path_valuations": {
+        "a": 0,
+        "b": 0,
+        "s": 0,
+        "e_U": 1,
+        "e_V": 0
+      },
+      "path_quotients": {
+        "u": 12,
+        "v": 0
+      },
+      "cross_products": {
+        "L_U": 244796,
+        "L_V": 1868
+      },
+      "common_overload_factors": {
+        "C_U": 1,
+        "C_V": 467
+      },
+      "q_overload_exponents": {
+        "U": 0,
+        "V": 1
+      },
+      "q_in_union": true,
+      "boundary": null
+    },
+    {
+      "prime": 37793809,
+      "R": 12423,
+      "q": 6211,
+      "e": 1,
+      "U": 48143,
+      "V": 1549,
+      "theta": 1549,
+      "X_U": 12422,
+      "X_V": 1,
+      "K": 117378122302,
+      "x_R": 9451558,
+      "path_valuations": {
+        "a": 0,
+        "b": 0,
+        "s": 0,
+        "e_U": 1,
+        "e_V": 0
+      },
+      "path_quotients": {
+        "u": 1545,
+        "v": 0
+      },
+      "cross_products": {
+        "L_U": 74573507,
+        "L_V": 12422
+      },
+      "common_overload_factors": {
+        "C_U": 1549,
+        "C_V": 6211
+      },
+      "q_overload_exponents": {
+        "U": 0,
+        "V": 1
+      },
+      "q_in_union": true,
+      "boundary": null
+    }
+  ]
+}

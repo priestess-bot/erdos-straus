@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-source-word-joint-capacity-common-split-dichotomy
 title: 来源交叉表示的联合容量共同过载—分裂交换二分
-statement: 对核心图表 4K=pR+1 和 x_R=(p+R)/4，令 g=gcd(K,x_R)、kappa=K/g、xi=x_R/g。任一目标乘积 L 相对 K 与 x_R 的缺陷 e_K=L/gcd(L,K)、e_x=L/gcd(L,x_R) 满足 gcd(e_K,e_x)=L/gcd(L,lcm(K,x_R))、lcm(e_K,e_x)=L/gcd(L,g)。因此双容量 miss 精确二分为：存在同一素数同时超过两种容量；或 L 整除联合容量且两个缺陷互素，分别整除 xi、kappa，并满足一条精确容量交换恒等式。来源路径字产生的两个交叉目标乘积逐一适用该二分；至少一个乘积共同过载和两个乘积共享同一过载素数分别由 lcm、gcd 的整除失败精确刻画。分裂交换本身不推出 Type I/II 或 E4，且已有来源锚定、内部终端为空的单边分裂反例。
+statement: 对核心图表 4K=pR+1 和 x_R=(p+R)/4，令 g=gcd(K,x_R)、kappa=K/g、xi=x_R/g。任一目标乘积 L 相对 K 与 x_R 的缺陷 e_K=L/gcd(L,K)、e_x=L/gcd(L,x_R) 满足 gcd(e_K,e_x)=L/gcd(L,lcm(K,x_R))、lcm(e_K,e_x)=L/gcd(L,g)。因此双容量 miss 精确二分为：存在同一素数同时超过两种容量；或 L 整除联合容量且两个缺陷互素，分别整除 xi、kappa，并满足一条精确容量交换恒等式。来源路径字产生的两个交叉目标乘积逐一适用该二分；至少一个乘积共同过载和两个乘积共享同一过载素数分别由 lcm、gcd 的整除失败精确刻画。分裂交换本身不推出 Type I/II、E4 或任何有界深度 formal 终端；已有 F、internal-free 且完整 post-first Reach 全 miss 的精确反例。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -525,8 +525,8 @@ e_K(L_V)=e_x(L_V)=C(L_V)=467.
 \text{“同状态内部终端”}.
 \]
 
-不过完整冻结记录在可达 external gap \(35\) 有 Type I 证书。因此尚未被否定的更窄候选
-是：split 是否强制一个有界深度的可达外部终端。
+不过完整冻结记录在可达 external gap \(35\) 有 Type I 证书。这个例子本身仍未排除
+有界深度候选，但下面的 \(p=2017\) 反例会把该候选完整否定。
 
 ### 6.5 坐标差与共同载体也不自动出现
 
@@ -560,6 +560,125 @@ C(L_V)=6211,
 所以即使两个交叉表示都处于共同过载支，也不能假定存在同一个载体素数；(23) 是必须
 实际检查的额外条件。
 
+### 6.6 strict split 不强制任何 formal Reach 终端
+
+取核心素数
+
+\[
+(p,R,K,x)=(2017,207,104380,556).
+\tag{31}
+\]
+
+存在真正的 \(\Psi_0=1\) 来源边
+
+\[
+(1156,1535,13)
+\xrightarrow{q=17,\ g=1}
+(68,139,1).
+\tag{32}
+\]
+
+这里 \(1535\mid K\)，且
+
+\[
+1156=17\cdot68,
+\qquad
+1535\cdot68=K,
+\]
+
+所以它具有规范的一层超额来源结构。空后缀 \(\Theta=1\) 的两个交叉乘积相同：
+
+\[
+L_U=L_V=68\cdot139=9452.
+\tag{33}
+\]
+
+其联合容量数据为
+
+\[
+(e_K,e_x,C)=(139,17,1),
+\tag{34}
+\]
+
+故这是 strict split。又有 \(g=(K,x)=4\)，以及精确交换式
+
+\[
+207\cdot139-17\cdot1535
+=2678
+=\frac{207^2-1}{4g}.
+\tag{35}
+\]
+
+这个状态不是被 terminal-first 漏掉的简单例外：中心 \(K\) 盒为空，全部合法内部 gap
+只有 \(307,1535\)，两者的完整 Type I/II 平方除子谱都 miss。因此它是 F 且
+internal-free。
+
+从终点出发的完整 formal Reach 恰为
+
+\[
+(68,139)
+\xrightarrow{139}(1,206)
+\xrightarrow{103}(2,205)
+\xrightarrow{41}(5,202)
+\xrightarrow{101}(2,205).
+\tag{36}
+\]
+
+即 4 个节点、4 条边。全图的 external gap 候选只有 \(139,103\)，两者也都完整
+Type I/II miss。加入同一状态的第二个真实首后继 \((85,122,1)\) 后，状态级完整
+post-first Reach 只有 5 个节点、5 条边，候选集合仍不变且全部 miss。
+
+特别地，交换余量 \(2678=2\cdot13\cdot103\) 的素因子 \(103\) 已在一步后作为
+\(103\mid R-1\) 被显式暴露，仍不产生终端。因此以下命题全部为假：
+
+\[
+\text{strict split}
+\Longrightarrow
+\text{深度 }d\text{ 内有 external 终端}
+\tag{37}
+\]
+
+对任意固定 \(d\)，甚至把右侧换成“完整 formal Reach 中有 external 终端”仍为假。
+
+### 6.7 一表示不变、另一表示仿射更新
+
+上述反例的机制来自一条一般恒等式。设底层节点 \(X+Y=R\)，路径字为 \(\Theta\)，
+且下一步选中 \(q\mid X\)。底层迁移无需额外正规约分，并且
+
+\[
+(X,Y,\Theta)
+\longmapsto
+\left(\frac Xq,R-\frac Xq,q\Theta\right).
+\tag{38}
+\]
+
+若记
+
+\[
+S_X=\Theta X,
+\qquad
+S_Y=\Theta Y,
+\]
+
+则更新精确为
+
+\[
+\boxed{
+(S_X,S_Y)
+\longmapsto
+\left(S_X,qS_Y+(q-1)S_X\right).
+}
+\tag{39}
+\]
+
+所以使用 \(S_X\) 的那一个交叉约分对完全不变，使用 \(S_Y\) 的另一个才作仿射更新；
+选中 \(Y\) 时完全对称。由此，split 缺陷和交换恒等式可以沿 formal 边原封不动地保留，
+它们本身不是下降量。
+
+这关闭了“继续增加 depth 菜单”的方向。split 支若要进入递归证明，状态至少必须同时
+记录两个交叉表示、split/common 分支和底层 SCC 信息，再证明新的容量下降或合法 E4；
+不能再把 formal Reach 深度当作势函数。
+
 ## 7. 冻结 residual 的探索性剖面
 
 对已有 70 条 `basic-local miss` 且完整 formal 后继图没有 good single slab 的冻结记录，
@@ -576,8 +695,8 @@ C(L_V)=6211,
 中落入 \(C(L_U)\cup C(L_V)\)，而首缺陷素数只命中 2/34。59 个不同载体素数中只有
 16 个跨状态复用；固定 \(q\le31\) 仍漏掉 24 个状态中的 3 个。
 
-这些数字是研究方向证据，不参与本主张的一般证明。聚焦复现只验证本节之前的代数恒等式
-和七条代表路径，没有重跑 1412 条 slab 的历史普查。
+这些数字是研究方向证据，不参与本主张的一般证明。聚焦复现验证本节之前的代数恒等式、
+七条代表路径和 \(p=2017\) 的 5 节点完整反例，没有重跑 1412 条 slab 的历史普查。
 
 ## 8. 当前推进意义
 
@@ -586,8 +705,9 @@ Type I/II、D-only 或 E4。它同时把下一步缩成两个具体任务：
 
 1. 对共同过载支，将 \(C(L)\) 的外部 slab / suffix 载体映到不同状态间可比较的同余链，
    使用向量容量而不是假设两边共享单个 \(q\)；
-2. 对分裂交换支，利用 (19)--(21) 的跨容量恒等式证明有界 Reach 外部终端，或把
-   \((e_K,e_x,\delta)\) 映入一个真正非空、可提升且良基下降的标记状态。
+2. 对分裂交换支，把两个交叉表示、split/common 分支和 bottom SCC 一起纳入状态，
+   再证明新的容量下降，或把 \((e_K,e_x,\delta)\) 映入一个真正非空、可提升且良基
+   下降的标记状态；不能继续假设有界 Reach 自动终端。
 
 有限 residual 中每个交叉乘积都有共同过载，是强正信号，但在证明来源锚定全称命题前，
 它只能作为待证明的候选规律，不能替代量词。
@@ -604,5 +724,6 @@ Type I/II、D-only 或 E4。它同时把下一步缩成两个具体任务：
   `reproductions/type_i_f_psi_one_formal_transition_closure.py`
 
 聚焦复现逐式检查 (3)、(5)--(10)、分裂支 (16)--(21)、七条 formal 路径、\(p=97\)
-坐标差完整 miss，以及 \(p=68822329\)、\(p=122014489\) 的冻结终端边界。其语义是
+坐标差完整 miss、\(p=2017\) 的 complete-Reach split 反例，以及
+\(p=68822329\)、\(p=122014489\) 的冻结终端边界。其语义是
 `algebraic theorem plus focused analysis evidence`，不是 formal 边到合法递降边的升级。

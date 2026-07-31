@@ -811,6 +811,43 @@ R\equiv2\pmod3,
 
 这是目前最有可能把有限正信号升级成一般分支的方向。
 
+> **2026-08-01 因子对与载体更新。** large-slab 的三分现已进一步精确参数化。写
+> \(Q=q^e,K=\alpha\beta c\)，则
+> \[
+> \beta(4\alpha c-p)=\alpha p q^e+1.
+> \]
+> 反向加入一个模 \(4\alpha\) 条件、\(q\nmid c\) 和
+> \(\beta<(4-\alpha)q^e\)，便与算术 large-slab 双射。不同层还满足
+> \[
+> \gcd(N_{\alpha,e},N_{\alpha',f})
+> =\gcd(N_{\alpha,e},\alpha'q^{f-e}-\alpha),
+> \qquad N_{\alpha,e}=\alpha p q^e+1,
+> \]
+> 因此尾素数跨指数层的复用受乘法阶容量控制，同一指数的所有 admissible \(\alpha\) 分支不共享
+> 奇尾素数。
+>
+> 来源路径字中的 slab 素数也有了精确判据。若
+> \(a=v_q(\Theta),b=v_q(V),s=v_q(x_R)\)，终点两坐标的指数为
+> \(e_U,e_V\)，则
+> \[
+> v_qC(L_U)=(a+e_V-s)_+,
+> \qquad
+> v_qC(L_V)=(|b-a-e_U|-s)_+.
+> \]
+> 这同时否定了“slab \(q\) 无条件属于共同过载 union”：
+> \((p,R,q)=(10170169,127,101)\) 是来源锚定反例，但它已有锚点 Type I 和
+> \(R_q<R\)。所以本节的主攻命题应收紧成以下三分，而不是继续证明错误的无条件载体：
+> \[
+> \boxed{
+> \text{共同过载}
+> \quad\lor\quad
+> x_R\text{-覆盖出生并进入碰撞/ABSORB}
+> \quad\lor\quad
+> \text{首边继承 carrier-swap 的有界终端或合法 E4}.
+> }
+> \]
+> 详见[large-slab 的受限因子对正规形与跨指数层支撑容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md)。
+
 ### 9.2 一个可能快速删去的分支：原始线性图表中的 \(q=p\)
 
 对于原始线性源状态
@@ -954,11 +991,17 @@ z\equiv-\sigma\pmod\mu,
 >
 > 这条交换恒等式本身不是终端：\(p=122014489,R=471\) 给出来源锚定、内部终端为空的
 > 单边 split，尽管同一路径另一交叉表示仍有共同过载，且完整 Reach 在 external gap
-> \(35\) 有 Type I。两个共同过载表示也不必共享同一 \(q\)。另一方面，70 条现有
+> \(35\) 有 Type I。更强地，\((p,R)=(2017,207)\) 是 F 且 internal-free，来源交叉
+> 乘积严格 split，但其完整 post-first formal Reach 只有 5 个节点、5 条边，全部
+> external gap 候选 \(103,139\) 都完整 miss。因此“split 强制任意有界深度终端”，甚至
+> “split 的完整 formal Reach 必有终端”都为假。一般底层边还会保持一个交叉表示完全
+> 不变，只仿射更新另一个，所以 split 本身不是下降量。
+>
+> 两个共同过载表示也不必共享同一 \(q\)。另一方面，70 条现有
 > formal-descendant residual 的探索性重建中，140 个交叉乘积全部仍有共同过载，且
 > external slab 素数是唯一逐记录稳定的载体字段。由此下一步不再笼统寻找“某个缺陷
-> 素数”，而应把 slab/suffix 载体组成跨状态可比较的向量容量；split 支则研究有界深度
-> external 终端或真正 E4。详见
+> 素数”，而应把 slab/suffix 载体组成跨状态可比较的向量容量；split 支必须把两个交叉
+> 表示与 bottom SCC 一起纳入状态，再证明新容量下降或真正 E4，不再增加 depth 菜单。详见
 > [来源交叉表示的联合容量共同过载—分裂交换二分](../claims/type-I-source-word-joint-capacity-common-split-dichotomy.md)。
 
 更长远的目标是证明一个选择定理：
