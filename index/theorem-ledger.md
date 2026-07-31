@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 357 |
+| 数学状态 | `computationally_reproduced` | 358 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 292 |
+| 数学状态 | `established` | 293 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
-| 证明来源 | `mixed` | 19 |
-| 证明来源 | `repository_derivation` | 119 |
+| 证明来源 | `mixed` | 20 |
+| 证明来源 | `repository_derivation` | 120 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 242 |
+| 审阅状态 | `internal_review` | 244 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -326,6 +326,7 @@
 | [一般 B 正规形的自然自平方补因子刚性](../claims/type-I-general-b-self-square-rigidity.md) (`type-I-general-b-self-square-rigidity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [双向广义二进窗口的规范最大指数选择引理](../claims/type-I-general-bidirectional-dyadic-window-selector.md) (`type-I-general-bidirectional-dyadic-window-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [一般二进传输的偶终端判据](../claims/type-I-general-dyadic-terminal-transfer.md) (`type-I-general-dyadic-terminal-transfer`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
+| [广义二进偶前驱的自然标记提升等价与 F 态零分支](../claims/type-I-generalized-dyadic-natural-lift-equivalence.md) (`type-I-generalized-dyadic-natural-lift-equivalence`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [五亿全局 p 减一遗漏的线性 B 等于一失败与一般 B 障碍剖面](../claims/type-I-global-linear-b1-failure-general-b-profile-500m.md) (`type-I-global-linear-b1-failure-general-b-profile-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [H19-k23 残存进程的完整统一仿射 Type I 审计](../claims/type-I-h19-affine-uniform-square-audit.md) (`type-I-h19-affine-uniform-square-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19偶桥的B等于1源状态实现边界](../claims/type-I-h19-b1-source-state-boundary-1b.md) (`type-I-h19-b1-source-state-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -477,6 +478,7 @@
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [私有 u=3 载体族的二进终端与 Type II 支撑退出](../claims/type-I-private-u3-carrier-dyadic-terminal-q-free-type-II.md) (`type-I-private-u3-carrier-dyadic-terminal-q-free-type-II`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [私有 u=3 偶终端的自然提升障碍与 q-free 因子三分](../claims/type-I-private-u3-terminal-natural-lift-obstruction.md) (`type-I-private-u3-terminal-natural-lift-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [完整 F 谱中四百八十三个缺陷一状态的终端与提升边界](../claims/type-I-psi-one-full-spectrum-terminal-descent-boundary.md) (`type-I-psi-one-full-spectrum-terminal-descent-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 五周期的表示格容量三相与无限核心射线](../claims/type-I-r47-cycle-lattice-capacity-three-phase-boundary.md) (`type-I-r47-cycle-lattice-capacity-three-phase-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md) (`type-I-r47-empty-support-pminusone-dyadic-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |

@@ -18,6 +18,8 @@ used_by:
 - type-I-f-denominator-clearing-qadic-lift-contract
 - type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction
 - type-I-f-psi-one-nearest-fiber-escape-boundary
+- type-I-generalized-dyadic-natural-lift-equivalence
+- type-I-psi-one-full-spectrum-terminal-descent-boundary
 - type-I-formal-target-pair-descent-cycle-boundary
 sources:
 - claim: marked-solution-descent-closure
@@ -33,7 +35,7 @@ sources:
 - claim: type-I-general-dyadic-terminal-transfer
   role: generalized-dyadic-terminal-verifier
 visibility: public
-last_checked: '2026-07-30'
+last_checked: '2026-07-31'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -279,6 +281,20 @@ n=\frac{2L-E_j}{R},\qquad 0<n<p_0,\qquad 2\mid n.
 “\(n\) 为偶数”只说明它可以进入已知基例；回执仍须附上该基例的显式解或具名构造，
 以及从该解到 \(W_S\) 的公式。若把它表示为边 \(S\to T_n\)，则必须验证
 \(\Pi(T_n)<\Pi(S)\)；若已经在同一回执中恢复目标解，则可登记为终端叶。
+
+对 finite-exponent F 状态还可排除一类容易误计的自然提升。若
+
+\[
+E\mid4K^2,\qquad E\equiv1\pmod R,\qquad
+n=\frac{4K-E}{R},\qquad \alpha=\frac{nK}{E},
+\]
+
+则 \(\alpha\) 自动为整数，但包含 \(\alpha\) 的较小方程解非空，当且仅当原状态已经
+存在中心 Type I 除子。并且当 \(R>3\) 时，\(\alpha\notin\{n/2,n\}\)，所以偶数基例
+\((n/2,n,n)\) 不能承担这个标记。证明见
+[广义二进偶前驱的自然标记提升等价](../claims/type-I-generalized-dyadic-natural-lift-equivalence.md)。
+因此在 F 状态中，只有上述 \(E,n\) 而没有不同的非空标记集和全域提升公式时，回执必须
+标为 `unlifted_generalized_dyadic_candidate`，不得标为终端或 verified edge。
 
 ## 5. 每条边的统一回执
 
