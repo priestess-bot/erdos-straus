@@ -347,3 +347,20 @@ a_D'=p\lambda,
 关闭为“直接 Type I 或空”；真正未解的 \(D\)-only 候选要么满足 \(D\nmid n^2\)，
 要么下一条 E4 边必须改变保留尾、被替换坐标或既约尾比，而不能只在同一双尾恒等类中
 继续降低 \(n\)。
+
+## 8. 非自然支撑分支的后续完全消元
+
+\(D\nmid n^2\) 的余项现已进一步化为
+
+\[
+\mu=4\lambda-1,
+\qquad
+\sigma=p\lambda,
+\qquad
+p+(4\lambda-1)(p-n)\mid4\lambda^2,
+\]
+
+其标记非空性等价于 \(\lambda^2\) 的一个真因子命中三个显式模 \(\mu\) 目标之一。
+这个分型同时排除了核心状态中的 \(\mu=1\)、\(\mu=2\) 与 \(z=1\) 捷径。完整证明、
+反向参数化和边界例见
+[核心 D-only 的支撑二分、非自然完全正规形与三目标谱](two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md)。

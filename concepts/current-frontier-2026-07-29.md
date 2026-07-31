@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。自然保留pK与好尾的E4在非汇点上是空纤维，source-supported D-only又与原中心命中等价。真正余项已收缩为：把带正规公因子累计贡献的来源路径字、高层仿射量或多节点有界组合接到改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
+summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。自然保留pK与好尾的E4在非汇点上是空纤维；D-only 现已二分为与原中心命中等价的 source-supported 分支，以及满足 H|4lambda^2 的非自然三目标平方除子谱，且 mu=1,2,z=1 三个核心 shortcut 全部关闭。真正余项已收缩为：把带正规公因子累计贡献的来源路径字、高层仿射量或多节点有界组合接到三目标谱或改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
 topics:
 - research-map
 - proof-program
@@ -1721,6 +1721,35 @@ formal 后继图没有该候选。因此来源关系不能再被当作待补的�
 [双尾提升的 D-only 标记正规形](../claims/two-denominator-lift-d-only-marked-normal-form.md)及
 [source-supported 尾比刚性](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md)。
 
+非 source-supported 子类 \(D\nmid n^2\) 也已有完全正规形。令 \(a'=p\lambda\)，则
+
+\[
+\mu=4\lambda-1,
+\qquad
+\sigma=p\lambda,
+\qquad
+H=p+(4\lambda-1)(p-n)\mid4\lambda^2.
+\]
+
+反过来，每组满足最后一个整除的 \((p-n,\lambda)\) 都唯一恢复一个合法非自然
+\(D\)-only 状态。其标记非空性精确化为 \(\lambda^2\) 的三目标平方除子谱：
+
+\[
+u\equiv-p\lambda,\ -\lambda,\ -p^{-1}\lambda\pmod\mu
+\]
+
+三者至少一个必须由 \(u\mid\lambda^2\)、\(u<\lambda\) 命中。命中即显式给出共同双尾；
+miss 仍只是空标记风险，不能计作递降。这个消元同时证明所有核心 \(D\)-only 状态均有
+\(\mu\equiv3\pmod4\)，并且 \(\mu=1\)、\(\mu=2\) 与
+\(\mu\mid\sigma+1\) 三个原建议的低复杂度出口全部不可能。负 Pell 方程产生的
+\(p\equiv7\pmod8\) 非核心正例族说明非自然纤维并非普遍为空，但它不触及核心类。
+见[核心 D-only 的支撑二分与三目标谱](../claims/two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md)。
+
+因此 \(D\)-only 的下一步不再是搜索小 \(\mu\) 或 \(z=1\)，而是把 large-slab 的
+\(\alpha=1,2,3\)、完整来源路径字或高层仿射量规范映到 \(H\mid4\lambda^2\)，并证明
+上述三个目标之一有非平凡平方因子命中；若三者都 miss，必须把 miss 证书变成改变尾比的
+合法 E4。
+
 第 2 项已有一个带额外整除条件的窄解析出口
 [Type II 的 K=2 切片与相邻 Type I 图表桥](../claims/type-II-k2-adjacent-type-I-cross-chart-bridge.md)，
 并有相同联合合同但整除失败的显式边界。所有后继状态和递降边统一按
@@ -1793,6 +1822,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{源见证锚定 formal Reach 的 }1412\text{ 个 slab、来源路径字、自然尾空纤维与 }70\text{ 个后继残余}\\
 \downarrow\\
+\text{D-only 支撑二分、非自然 }H\mid4\lambda^2\text{ 正规形与三目标平方除子谱}\\
+\downarrow\\
 \text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
@@ -1809,8 +1840,9 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 终端”：三个分支各有 strong miss，且 70 个起始 slab 的完整 formal 后继图没有 good
 single-slab 候选。
 真正余项现已从有限状态转为全称量词：后续计算只应服务于把来源路径字与高层仿射量或
-多节点组合转成 E1--E4，或为 \(D\nmid n^2\) 及改变根尾数据的标记状态构造递归非空
-证书。不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
+多节点组合转成 E1--E4，或把 \(D\nmid n^2\) 的三目标 miss 转成改变根尾数据的递归非空
+证书。小 \(\mu\) 与 \(z=1\) 的核心 D-only 子族已经证明为空，不应继续枚举。
+不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。
 

@@ -1,0 +1,148 @@
+{
+  "schema_version": "two-denominator-core-d-only-three-target/v1",
+  "scope_note": "Focused exact verification of the support dichotomy, one empty core non-source-supported fiber, and two noncore positive boundary cases. It is not an exhaustive search or a universal three-target hit claim.",
+  "summary": {
+    "case_count": 4,
+    "source_supported_count": 1,
+    "non_source_supported_count": 3,
+    "nonempty_fiber_count": 3,
+    "empty_fiber_count": 1
+  },
+  "records": [
+    {
+      "name": "core_source_supported_nonempty",
+      "prime": 73,
+      "core_prime": true,
+      "rank": 33,
+      "r": 40,
+      "D": 9,
+      "source_supported": true,
+      "a": 15,
+      "a_prime": 4015,
+      "lambda": 55,
+      "delta": 73,
+      "mu": 3,
+      "sigma": 55,
+      "normal_form": null,
+      "pell_parameters": null,
+      "tail_witness_count": 4,
+      "three_target_witnesses": [],
+      "selected_tail": {
+        "z": 11,
+        "b": 22,
+        "c": 110
+      }
+    },
+    {
+      "name": "core_non_source_supported_empty",
+      "prime": 73,
+      "core_prime": true,
+      "rank": 65,
+      "r": 8,
+      "D": 73,
+      "source_supported": false,
+      "a": 146,
+      "a_prime": 9490,
+      "lambda": 130,
+      "delta": 1,
+      "mu": 519,
+      "sigma": 9490,
+      "normal_form": {
+        "d": 1,
+        "H": 4225,
+        "s": 16,
+        "t": 2
+      },
+      "pell_parameters": null,
+      "tail_witness_count": 0,
+      "three_target_witnesses": [],
+      "selected_tail": null
+    },
+    {
+      "name": "noncore_non_source_supported_z_one",
+      "prime": 7,
+      "core_prime": false,
+      "rank": 6,
+      "r": 1,
+      "D": 14,
+      "source_supported": false,
+      "a": 7,
+      "a_prime": 21,
+      "lambda": 3,
+      "delta": 1,
+      "mu": 11,
+      "sigma": 21,
+      "normal_form": {
+        "d": 2,
+        "H": 18,
+        "s": 2,
+        "t": 1
+      },
+      "pell_parameters": {
+        "u": 1,
+        "v": 1
+      },
+      "tail_witness_count": 2,
+      "three_target_witnesses": [
+        {
+          "z": 1,
+          "e": 0,
+          "u": 1
+        },
+        {
+          "z": 441,
+          "e": 2,
+          "u": 9
+        }
+      ],
+      "selected_tail": {
+        "z": 1,
+        "b": 2,
+        "c": 42
+      }
+    },
+    {
+      "name": "noncore_non_source_supported_nontrivial",
+      "prime": 239,
+      "core_prime": false,
+      "rank": 238,
+      "r": 1,
+      "D": 23422,
+      "source_supported": false,
+      "a": 8365,
+      "a_prime": 20315,
+      "lambda": 85,
+      "delta": 1,
+      "mu": 339,
+      "sigma": 20315,
+      "normal_form": {
+        "d": 98,
+        "H": 578,
+        "s": 50,
+        "t": 35
+      },
+      "pell_parameters": {
+        "u": 5,
+        "v": 7
+      },
+      "tail_witness_count": 2,
+      "three_target_witnesses": [
+        {
+          "z": 25,
+          "e": 0,
+          "u": 25
+        },
+        {
+          "z": 16507969,
+          "e": 2,
+          "u": 289
+        }
+      ],
+      "selected_tail": {
+        "z": 25,
+        "b": 60,
+        "c": 48756
+      }
+    }
+  ]
+}

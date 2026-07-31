@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 302 |
+| 数学状态 | `established` | 303 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 23 |
-| 证明来源 | `repository_derivation` | 129 |
+| 证明来源 | `repository_derivation` | 130 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 256 |
+| 审阅状态 | `internal_review` | 257 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -206,6 +206,7 @@
 | [(3p+1)/4 标记递降覆盖相对密度一的核心素数](../claims/three-p-plus-one-density-one-descent.md) (`three-p-plus-one-density-one-descent`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013` | 2026-07-23 |
 | [来自 (3p+1)/4 的完整二分母递降分类与平方根级 Type I 证书](../claims/three-p-plus-one-descent-certificate.md) (`three-p-plus-one-descent-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [来自 3p+A 的幂二内部 Type I 射线](../claims/three-p-plus-power-two-internal-type-I-ray.md) (`three-p-plus-power-two-internal-type-I-ray`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-23 |
+| [核心 D-only 的支撑二分、非自然完全正规形与三目标谱](../claims/two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md) (`two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [保留两个源分母的一项替换提升判据](../claims/two-denominator-lift-criterion.md) (`two-denominator-lift-criterion`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [双尾提升的 D-only 标记正规形与 p 载体刚性](../claims/two-denominator-lift-d-only-marked-normal-form.md) (`two-denominator-lift-d-only-marked-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [source-supported D-only 提升的固定尾比刚性与中心 Type I 等价](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md) (`two-denominator-lift-source-supported-tail-ratio-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |

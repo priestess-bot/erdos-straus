@@ -60,7 +60,7 @@
 
 \[
 \boxed{
-\text{\(m=1\) large-slab 的 }a=1,2,3	ext{ 三分逃逸定理}
+\text{\(m=1\) large-slab 的 }a=1,2,3\text{ 三分逃逸定理}
 }
 \]
 
@@ -318,21 +318,21 @@ A_j=Q_j(R-A_{j+1}),
 恰有两次翻转时，可写成闭式
 
 \[
-A=rac{Q(T-1)}h,
+A=\frac{Q(T-1)}h,
 \qquad
-R-A=rac{Q-1}h,
+R-A=\frac{Q-1}h,
 \]
 
 \[
-B=rac{T(Q-1)}h,
+B=\frac{T(Q-1)}h,
 \qquad
-R-B=rac{T-1}h,
+R-B=\frac{T-1}h,
 \]
 
 其中
 
 \[
-h=rac{QT-1}{R},
+h=\frac{QT-1}{R},
 \qquad(Q,T)=1,
 \]
 
@@ -356,8 +356,8 @@ h=rac{QT-1}{R},
 
 \[
 \boxed{
-483	ext{ 个 }\Psi_0=1	ext{ 状态},
-\qquad1615	ext{ 条正向见证}.
+483\text{ 个 }\Psi_0=1\text{ 状态},
+\qquad1615\text{ 条正向见证}.
 }
 \]
 
@@ -409,7 +409,7 @@ M\mid K,\qquad M\equiv3\pmod4,
 令
 
 \[
-x=rac{p+M}{4}.
+x=\frac{p+M}{4}.
 \]
 
 则对任意 \(d\)：
@@ -469,15 +469,15 @@ v_2(L)-|v_2(A)-v_2(B)|.
 对广义二进候选 \(E,n\)，定义自然标记分母
 
 \[
-\alpha=rac{nK}{E}.
+\alpha=\frac{nK}{E}.
 \]
 
 已有精确恒等式
 
 \[
 \frac4n-\frac1\alpha
-=rac RK
-=rac4p-rac1{pK}.
+=\frac RK
+=\frac4p-\frac1{pK}.
 \]
 
 因此包含 \(\alpha\) 的较小方程标记解，与包含 \(pK\) 的目标标记解精确双射。
@@ -485,7 +485,7 @@ v_2(L)-|v_2(A)-v_2(B)|.
 但该标记源非空，当且仅当
 
 \[
-rac RK
+\frac RK
 \]
 
 本身能分成两个单位分数，也就是当前图表已经存在中心 Type I 除子。于是对 finite-exponent F 状态：
@@ -563,7 +563,7 @@ Q\mid M\mid L
 以及
 
 \[
-K_M=rac{pR_M+1}{4}.
+K_M=\frac{pR_M+1}{4}.
 \]
 
 则
@@ -591,7 +591,7 @@ e R\)，得到
 
 \[
 \boxed{
-Q\lerac R4
+Q\le\frac R4
 \Longrightarrow
 R_Q<R.
 }
@@ -605,7 +605,7 @@ R_Q<R.
 \quad\lor\quad
 \text{small-slab 吸收}
 \quad\lor\quad
-Q>rac R4.
+Q>\frac R4.
 }
 \]
 
@@ -660,9 +660,9 @@ N^2/D\equiv N\pmod C
 的因子 \(D\) 参数化。定义
 
 \[
-a_D=rac{N-D}{C},
+a_D=\frac{N-D}{C},
 \qquad
- a_D'=rac{N^2/D-N}{C}.
+ a_D'=\frac{N^2/D-N}{C}.
 \]
 
 则对所有正整数 \(b,c\)：
@@ -709,9 +709,9 @@ W(p,n,D)
 \[
 \boxed{
 \begin{array}{c}
-\text{任意 terminal-first 后仍未闭合的 }\Psi_0=1\text{ 状态}\[1mm]
-\Downarrow\[1mm]
-\text{完整 Reach 中存在直接终端、跨图表中心命中、}\
+\text{任意 terminal-first 后仍未闭合的 }\Psi_0=1\text{ 状态}\\[1mm]
+\Downarrow\\[1mm]
+\text{完整 Reach 中存在直接终端、跨图表中心命中、}\\
 \text{可吸收 external slab，或非空且可提升的 D-only 后继。}
 \end{array}
 }
@@ -745,7 +745,7 @@ W(p,n,D)
 
 \[
 Qa+b=R,
-\qquad Q>rac R4.
+\qquad Q>\frac R4.
 \]
 
 因为 \(Qa<R\)，立即得到
@@ -790,7 +790,7 @@ R\equiv7\pmod8.
 同时
 
 \[
-rac R4<Q<rac R2.
+\frac R4<Q<\frac R2.
 \]
 
 这个分支应与 \(R\equiv7\pmod8\) 的周期翻转正规形、radical/multiplier bridge 和二进窗口一起分析，而不是当作一般 slab。
@@ -802,7 +802,7 @@ R\equiv7\pmod8.
 \[
 R\equiv2\pmod3,
 \qquad
-rac R4<Q<rac R3.
+\frac R4<Q<\frac R3.
 \]
 
 这与周期核心可实现性的模 3 条件高度一致，可能允许用 CRT、Jacobi 或 Type II 射线作进一步分流。
@@ -852,13 +852,13 @@ Qa+b=R
 建议将其写成独立引理并核对所有状态合同。如果成立，可把当前前沿列出的
 
 \[
-	ext{large-slab},\quad q=p,\quad	ext{标记集非空}
+\text{large-slab},\quad q=p,\quad\text{标记集非空}
 \]
 
 进一步收缩为
 
 \[
-	ext{large-slab},\quad	ext{标记集非空}
+\text{large-slab},\quad\text{标记集非空}
 \]
 
 至少在原始线性分支上成立。
@@ -890,14 +890,27 @@ z\equiv-\sigma\pmod\mu,
 
 若能对一个无限子族证明这一点，就能直接写出 \(z,b,c\) 和目标解，得到真正的终端定理，而不是空标记风险尚存的条件边。
 
+> **2026-07-31 后续校正。** 对合法核心 \(D\)-only 状态做完全消元后，两支都满足
+> \(\mu\equiv3\pmod4\)，所以 \(\mu=1,2\) 实际上不会出现；
+> \(\mu\mid\sigma+1\) 也在核心类中不可能。非 source-supported 分支的正确正规形为
+> \[
+> \mu=4\lambda-1,\qquad
+> \sigma=p\lambda,\qquad
+> H=p+(4\lambda-1)(p-n)\mid4\lambda^2,
+> \]
+> 其非空性等价于 \(\lambda^2\) 的因子命中三个模 \(\mu\) 目标之一。因此本节列出的
+> 三个 shortcut 应关闭，替代任务是把 large-slab 或来源路径字映到上述 \(H\)-整除条件，
+> 再证明三目标命中或构造合法 E4。详见
+> [核心 D-only 的支撑二分与三目标谱](../claims/two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md)。
+
 更长远的目标是证明一个选择定理：
 
 \[
-\forall(p,S)	ext{ 未闭合状态}
+\forall(p,S)\text{ 未闭合状态}
 \quad
 \exists n<p,\ D\in\mathcal D(p,n):
 W(p,n,D)
-e\varnothing.
+\ne\varnothing.
 \]
 
 ### 9.4 第三优先级：核心可实现的两翻转周期
@@ -978,7 +991,7 @@ e\varnothing.
 对周期关系格执行：
 
 \[
-	ext{HIT}\quad\lor\quad	exttt{MISS\_EXTERNAL}\quad\lor\quad	exttt{MISS\_CAPACITY}.
+\text{HIT}\quad\lor\quad\texttt{MISS\_EXTERNAL}\quad\lor\quad\texttt{MISS\_CAPACITY}.
 \]
 
 - HIT：直接 Type I；
@@ -990,11 +1003,11 @@ e\varnothing.
 应用：
 
 \[
-	ext{双碰撞}
+\text{双碰撞}
 \quad\lor\quad
-Q\le R/4	ext{ 的吸收重图表}
+Q\le R/4\text{ 的吸收重图表}
 \quad\lor\quad
-m=1,\ a\in\{1,2,3\}	ext{ 的 large-slab}.
+m=1,\ a\in\{1,2,3\}\text{ 的 large-slab}.
 \]
 
 ### Phase E：真正递归
@@ -1146,7 +1159,7 @@ m=1,\ a\in\{1,2,3\}	ext{ 的 large-slab}.
 
 \[
 \boxed{
-\text{large-slab 的 }a=1,2,3	ext{ 三分}
+\text{large-slab 的 }a=1,2,3\text{ 三分}
 }
 \]
 
