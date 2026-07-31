@@ -1,0 +1,76 @@
+{
+  "schema_version": "type-i-general-bidirectional-dyadic-window-selector/v1",
+  "arithmetic": "For each nonzero dyadic block imbalance, select the largest forward and reverse exponents in 1<=J<=v_2(2K), then prefer a valid forward height and otherwise use a valid reverse height.",
+  "scope_note": "This is a hash-frozen audit of 15,356 directed dyadic states from 200 selected pressure primes. It verifies a local maximal-window selector, not a global Type I/II selector or lifting theorem.",
+  "input": "type-i-linear-block-imbalance-bidirectional-results.json",
+  "input_sha256": "83af514607e7ab111a3d1905e823bcfe7658f81282de5ab715aad81b2dd09c4f",
+  "state_count": 15356,
+  "unique_directed_state_count": 15356,
+  "prime_count": 200,
+  "unique_modulus_count": 4879,
+  "window_counts": {
+    "none": 7433,
+    "forward_only": 6460,
+    "both": 1231,
+    "reverse_only": 232
+  },
+  "window_classification_cross_table": {
+    "none": {
+      "bidirectional_terminal": 0,
+      "bidirectional_unresolved": 7433
+    },
+    "forward_only": {
+      "bidirectional_terminal": 2274,
+      "bidirectional_unresolved": 4186
+    },
+    "both": {
+      "bidirectional_terminal": 1231,
+      "bidirectional_unresolved": 0
+    },
+    "reverse_only": {
+      "bidirectional_terminal": 178,
+      "bidirectional_unresolved": 54
+    }
+  },
+  "height_pattern_counts": {
+    "neither": 11673,
+    "forward_only": 2643,
+    "both": 133,
+    "reverse_only": 907
+  },
+  "both_window_implication": {
+    "checked": 1231,
+    "terminal": 1231,
+    "violations": 0
+  },
+  "selector_classification_counts": {
+    "bidirectional_terminal": 3683,
+    "bidirectional_unresolved": 11673
+  },
+  "selector_classification_mismatch_count": 0,
+  "selected_terminal_arithmetic_check": {
+    "checked": 3683,
+    "failures": 0
+  },
+  "selected_terminal_frozen_candidate_mismatch_count": 0,
+  "canonical_orientation_counts": {
+    "forward": 2776,
+    "reverse": 907
+  },
+  "canonical_orientation_mismatch_count": 0,
+  "both_height_count": 133,
+  "order_budget_matrix": {
+    "order_lt_budget": {
+      "bidirectional_terminal": 616,
+      "bidirectional_unresolved": 0
+    },
+    "order_eq_budget": {
+      "bidirectional_terminal": 469,
+      "bidirectional_unresolved": 0
+    },
+    "order_gt_budget": {
+      "bidirectional_terminal": 2598,
+      "bidirectional_unresolved": 11673
+    }
+  }
+}

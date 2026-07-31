@@ -8,6 +8,7 @@ proof_provenance: mixed
 review_status: internal_review
 depends_on:
   - type-I-general-dyadic-terminal-transfer
+  - type-I-general-bidirectional-dyadic-window-selector
   - type-I-linear-block-imbalance-dyadic-trichotomy
 topics:
 - type-I
@@ -65,6 +66,11 @@ B<2^JA,
 
 仍由同一个二进传输判据得到合法偶终端。这里没有增加新的除子假设，只是保留原同余关系的另一方向；正向和反向候选可以同时存在。
 
+由[双向广义二进窗口的规范最大指数选择引理](type-I-general-bidirectional-dyadic-window-selector.md)，
+每个非空方向只须检查其窗口中的最大 \(J\)。若正反窗口同时非空，则两个高度条件不可能
+同时失败，故必有终端；因此双向未决精确分成“无窗口”“仅正向窗口且高度失败”和
+“仅反向窗口且高度失败”三类，不存在双窗口未决。
+
 ## 冻结审计
 
 复现脚本：
@@ -85,6 +91,18 @@ forward candidates: 3017
 reverse candidates: 1284
 terminal_prime_count: 200
 ~~~
+
+最大窗口规范选择对同一批状态给出窗口计数
+
+~~~text
+none: 7433
+forward_only: 6460 = 2274 hit + 4186 unresolved
+reverse_only: 232 = 178 hit + 54 unresolved
+both: 1231 = 1231 hit + 0 unresolved
+~~~
+
+按正向优先的规范选择只返回每个状态一个终端，方向计数为正向 2776、反向 907，并与
+原完整枚举的 3683 个命中状态逐项一致。
 
 其中 \`rescued_from_forward\` 表示原单向三分被标记为 \`dyadic_unresolved\`、但反向方向满足预算和高度条件的状态。候选数大于状态数，是因为同一状态可能有多个合法 \(J\) 或两个方向均可行。
 

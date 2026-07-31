@@ -8,6 +8,7 @@ proof_provenance: mixed
 review_status: internal_review
 depends_on:
   - type-I-linear-block-imbalance-bidirectional-dyadic
+  - type-I-general-bidirectional-dyadic-window-selector
   - type-I-general-dyadic-terminal-transfer
 topics:
 - type-I
@@ -23,6 +24,8 @@ sources:
 - paper: bradford2024
   locator: Propositions 1--4
   role: Type-I-linear-normal-form-context
+- claim: type-I-general-bidirectional-dyadic-window-selector
+  role: exact-two-window-selector
 visibility: public
 last_checked: '2026-07-31'
 ---
@@ -30,6 +33,9 @@ last_checked: '2026-07-31'
 # 双向广义二进终端的阶—预算二分
 
 ## 全称二分定理
+
+这是一般[双向二进窗口选择引理](type-I-general-bidirectional-dyadic-window-selector.md)
+在 \(A,B\) 都为奇数时的直接推论。下面保留自包含证明，以固定线性块分支的作用域。
 
 在线性块不平衡三分的奇除子归一化中，取互素奇除子
 

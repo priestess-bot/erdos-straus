@@ -1,0 +1,1721 @@
+{
+  "schema_version": "r47-pminusone-jacobi-ray-selector/v1",
+  "scope_note": "This artifact verifies finite divisor and residue-class identities. It does not infer AP-wide coverage from the displayed samples.",
+  "canonical_progression": {
+    "N": 6238440,
+    "N_factorization": [
+      {
+        "prime": 2,
+        "exponent": 3
+      },
+      {
+        "prime": 3,
+        "exponent": 2
+      },
+      {
+        "prime": 5,
+        "exponent": 1
+      },
+      {
+        "prime": 13,
+        "exponent": 1
+      },
+      {
+        "prime": 31,
+        "exponent": 1
+      },
+      {
+        "prime": 43,
+        "exponent": 1
+      }
+    ],
+    "formula": "p(t)=1+N(2t+1)"
+  },
+  "derived_identity": "For admissible S, h=(p-1)/S is 1 mod 4, R=S-1, A_S=(Rh+1)/4, and K_S=S*A_S.",
+  "jacobi_obstruction": "Every prime supported on S has Jacobi symbol +1 modulo R, whereas -1 has symbol -1; fixed S-supported divisors cannot hit.",
+  "parity_menus": {
+    "even": {
+      "two_t_plus_one_mod_4": 1,
+      "admissible_scale_count": 24,
+      "admissible_scales": [
+        8,
+        40,
+        72,
+        104,
+        360,
+        520,
+        744,
+        936,
+        1032,
+        3720,
+        4680,
+        5160,
+        9672,
+        10664,
+        13416,
+        48360,
+        53320,
+        67080,
+        95976,
+        138632,
+        479880,
+        693160,
+        1247688,
+        6238440
+      ],
+      "fixed_support_rows": [
+        {
+          "S": 8,
+          "R": 7,
+          "complement_N_over_S": 779805,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 3,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 40,
+          "R": 39,
+          "complement_N_over_S": 155961,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 12,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 72,
+          "R": 71,
+          "complement_N_over_S": 86645,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 23,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 104,
+          "R": 103,
+          "complement_N_over_S": 59985,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 13,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 360,
+          "R": 359,
+          "complement_N_over_S": 17329,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 81,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 520,
+          "R": 519,
+          "complement_N_over_S": 11997,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 744,
+          "R": 743,
+          "complement_N_over_S": 8385,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 936,
+          "R": 935,
+          "complement_N_over_S": 6665,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 81,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 1032,
+          "R": 1031,
+          "complement_N_over_S": 6045,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 3720,
+          "R": 3719,
+          "complement_N_over_S": 1677,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 4680,
+          "R": 4679,
+          "complement_N_over_S": 1333,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 267,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 5160,
+          "R": 5159,
+          "complement_N_over_S": 1209,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 9672,
+          "R": 9671,
+          "complement_N_over_S": 645,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 10664,
+          "R": 10663,
+          "complement_N_over_S": 585,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 13416,
+          "R": 13415,
+          "complement_N_over_S": 465,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 48360,
+          "R": 48359,
+          "complement_N_over_S": 129,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 503,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 53320,
+          "R": 53319,
+          "complement_N_over_S": 117,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 67080,
+          "R": 67079,
+          "complement_N_over_S": 93,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 503,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 95976,
+          "R": 95975,
+          "complement_N_over_S": 65,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 267,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 138632,
+          "R": 138631,
+          "complement_N_over_S": 45,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 479880,
+          "R": 479879,
+          "complement_N_over_S": 13,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 849,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 693160,
+          "R": 693159,
+          "complement_N_over_S": 9,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 503,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 1247688,
+          "R": 1247687,
+          "complement_N_over_S": 5,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 849,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 6238440,
+          "R": 6238439,
+          "complement_N_over_S": 1,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 2643,
+          "fixed_centered_target_hit": false
+        }
+      ]
+    },
+    "odd": {
+      "two_t_plus_one_mod_4": 3,
+      "admissible_scale_count": 24,
+      "admissible_scales": [
+        24,
+        120,
+        248,
+        312,
+        344,
+        1240,
+        1560,
+        1720,
+        2232,
+        3096,
+        3224,
+        4472,
+        11160,
+        15480,
+        16120,
+        22360,
+        29016,
+        31992,
+        40248,
+        145080,
+        159960,
+        201240,
+        415896,
+        2079480
+      ],
+      "fixed_support_rows": [
+        {
+          "S": 24,
+          "R": 23,
+          "complement_N_over_S": 259935,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 11,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 120,
+          "R": 119,
+          "complement_N_over_S": 51987,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 44,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 248,
+          "R": 247,
+          "complement_N_over_S": 25155,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 13,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 312,
+          "R": 311,
+          "complement_N_over_S": 19995,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 344,
+          "R": 343,
+          "complement_N_over_S": 18135,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 13,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 1240,
+          "R": 1239,
+          "complement_N_over_S": 5031,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 1560,
+          "R": 1559,
+          "complement_N_over_S": 3999,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 1720,
+          "R": 1719,
+          "complement_N_over_S": 3627,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 2232,
+          "R": 2231,
+          "complement_N_over_S": 2795,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 81,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 3096,
+          "R": 3095,
+          "complement_N_over_S": 2015,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 81,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 3224,
+          "R": 3223,
+          "complement_N_over_S": 1935,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 4472,
+          "R": 4471,
+          "complement_N_over_S": 1395,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 47,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 11160,
+          "R": 11159,
+          "complement_N_over_S": 559,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 267,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 15480,
+          "R": 15479,
+          "complement_N_over_S": 403,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 267,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 16120,
+          "R": 16119,
+          "complement_N_over_S": 387,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 22360,
+          "R": 22359,
+          "complement_N_over_S": 279,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 29016,
+          "R": 29015,
+          "complement_N_over_S": 215,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 267,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 31992,
+          "R": 31991,
+          "complement_N_over_S": 195,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 157,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 40248,
+          "R": 40247,
+          "complement_N_over_S": 155,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 267,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 145080,
+          "R": 145079,
+          "complement_N_over_S": 43,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 849,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 159960,
+          "R": 159959,
+          "complement_N_over_S": 39,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 503,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 201240,
+          "R": 201239,
+          "complement_N_over_S": 31,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 2,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 849,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 415896,
+          "R": 415895,
+          "complement_N_over_S": 15,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 503,
+          "fixed_centered_target_hit": false
+        },
+        {
+          "S": 2079480,
+          "R": 2079479,
+          "complement_N_over_S": 3,
+          "S_factorization": [
+            {
+              "prime": 2,
+              "exponent": 3,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 3,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 5,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 13,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 31,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            },
+            {
+              "prime": 43,
+              "exponent": 1,
+              "jacobi_symbol": 1
+            }
+          ],
+          "jacobi_minus_one": -1,
+          "fixed_centered_spectrum_size": 1573,
+          "fixed_centered_target_hit": false
+        }
+      ]
+    }
+  },
+  "exact_selectors": [
+    {
+      "S": 8,
+      "R": 7,
+      "applicable_t_parity": "even",
+      "fixed_centered_spectrum": [
+        1,
+        2,
+        4
+      ],
+      "positive_unit_classes": [
+        1,
+        2,
+        4
+      ],
+      "negative_unit_classes": [
+        3,
+        5,
+        6
+      ],
+      "exact_criterion": "the K_S target hits iff A_S has a prime divisor in a negative Jacobi class"
+    },
+    {
+      "S": 24,
+      "R": 23,
+      "applicable_t_parity": "odd",
+      "fixed_centered_spectrum": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        13,
+        16,
+        18
+      ],
+      "positive_unit_classes": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        8,
+        9,
+        12,
+        13,
+        16,
+        18
+      ],
+      "negative_unit_classes": [
+        5,
+        7,
+        10,
+        11,
+        14,
+        15,
+        17,
+        19,
+        20,
+        21,
+        22
+      ],
+      "exact_criterion": "the K_S target hits iff A_S has a prime divisor in a negative Jacobi class"
+    },
+    {
+      "S": 40,
+      "R": 39,
+      "applicable_t_parity": "even",
+      "fixed_centered_spectrum": [
+        1,
+        2,
+        4,
+        5,
+        8,
+        10,
+        11,
+        16,
+        20,
+        22,
+        25,
+        32
+      ],
+      "positive_unit_classes": [
+        1,
+        2,
+        4,
+        5,
+        8,
+        10,
+        11,
+        16,
+        20,
+        22,
+        25,
+        32
+      ],
+      "negative_unit_classes": [
+        7,
+        14,
+        17,
+        19,
+        23,
+        28,
+        29,
+        31,
+        34,
+        35,
+        37,
+        38
+      ],
+      "exact_criterion": "the K_S target hits iff A_S has a prime divisor in a negative Jacobi class"
+    }
+  ],
+  "directed_iff_samples": [
+    {
+      "progression_parameter": 2,
+      "p": 31192201,
+      "p_is_prime": true,
+      "S": 8,
+      "R": 7,
+      "A_S": 6823294,
+      "A_S_factorization": [
+        {
+          "prime": 2,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 117643,
+          "exponent": 1
+        }
+      ],
+      "negative_jacobi_prime_factors": [],
+      "centered_target_hit": false
+    },
+    {
+      "progression_parameter": 2,
+      "p": 31192201,
+      "p_is_prime": true,
+      "S": 40,
+      "R": 39,
+      "A_S": 7603099,
+      "A_S_factorization": [
+        {
+          "prime": 7,
+          "exponent": 1
+        },
+        {
+          "prime": 107,
+          "exponent": 1
+        },
+        {
+          "prime": 10151,
+          "exponent": 1
+        }
+      ],
+      "negative_jacobi_prime_factors": [
+        7,
+        107
+      ],
+      "centered_target_hit": true
+    },
+    {
+      "progression_parameter": 6,
+      "p": 81099721,
+      "p_is_prime": true,
+      "S": 8,
+      "R": 7,
+      "A_S": 17740564,
+      "A_S_factorization": [
+        {
+          "prime": 2,
+          "exponent": 2
+        },
+        {
+          "prime": 293,
+          "exponent": 1
+        },
+        {
+          "prime": 15137,
+          "exponent": 1
+        }
+      ],
+      "negative_jacobi_prime_factors": [
+        293,
+        15137
+      ],
+      "centered_target_hit": true
+    },
+    {
+      "progression_parameter": 6,
+      "p": 81099721,
+      "p_is_prime": true,
+      "S": 40,
+      "R": 39,
+      "A_S": 19768057,
+      "A_S_factorization": [
+        {
+          "prime": 89,
+          "exponent": 1
+        },
+        {
+          "prime": 222113,
+          "exponent": 1
+        }
+      ],
+      "negative_jacobi_prime_factors": [],
+      "centered_target_hit": false
+    },
+    {
+      "progression_parameter": 21,
+      "p": 268252921,
+      "p_is_prime": true,
+      "S": 24,
+      "R": 23,
+      "A_S": 64268929,
+      "A_S_factorization": [
+        {
+          "prime": 61,
+          "exponent": 1
+        },
+        {
+          "prime": 1053589,
+          "exponent": 1
+        }
+      ],
+      "negative_jacobi_prime_factors": [
+        61,
+        1053589
+      ],
+      "centered_target_hit": true
+    },
+    {
+      "progression_parameter": 35,
+      "p": 442929241,
+      "p_is_prime": true,
+      "S": 24,
+      "R": 23,
+      "A_S": 106118464,
+      "A_S_factorization": [
+        {
+          "prime": 2,
+          "exponent": 6
+        },
+        {
+          "prime": 1658101,
+          "exponent": 1
+        }
+      ],
+      "negative_jacobi_prime_factors": [],
+      "centered_target_hit": false
+    }
+  ]
+}
