@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。自然保留pK与好尾的E4在非汇点上是空纤维；D-only 现已二分为与原中心命中等价的 source-supported 分支，以及满足 H|4lambda^2 的非自然三目标平方除子谱，且 mu=1,2,z=1 三个核心 shortcut 全部关闭。真正余项已收缩为：把带正规公因子累计贡献的来源路径字、高层仿射量或多节点有界组合接到三目标谱或改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
+summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。来源路径字现可规范产生两个相位 -1 交叉表示及其 K/x_R 双容量缺陷；双节点底层差则只有相位 +1，且已有完整终端反例。自然保留pK与好尾的E4在非汇点上是空纤维；D-only 现已二分为与原中心命中等价的 source-supported 分支，以及满足 H|4lambda^2 的非自然三目标平方除子谱，且同模路径字桥强制 mu>2sqrt(p)-1。真正余项已收缩为：从大尺度路径字、高层仿射量或跨模数恒等式制造共同容量载体或三目标命中，否则构造改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
 topics:
 - research-map
 - proof-program
@@ -1694,6 +1694,33 @@ formal 后继图没有该候选。因此来源关系不能再被当作待补的�
 [源见证锚定的 formal Reach large-slab 边界](../claims/type-I-psi-one-actual-reach-large-slab-boundary.md)和
 [自然双尾整数性刚性](../claims/type-I-formal-natural-tail-integrality-rigidity.md)。
 
+路径字接口现已进一步中心化。若按 \(U_1,V_1\) 的后代定向底层终点为 \(X,Y\)，则
+
+\[
+\Theta X=U_1+Ru,
+\qquad
+\Theta Y=V_1+Rv,
+\qquad
+u,v\ge0,
+\qquad
+u+v=\Theta-m_1.
+\]
+
+交叉约分 \((U_1,\Theta Y)\) 与 \((V_1,\Theta X)\) 产生两个互素的相位 \(-1\)
+表示。其乘积只要整除 \(K\)，就恢复直接 Type I；只要整除
+\(x_R=(p+R)/4\)，就恢复 gap \(R\) 的 Type II。双 miss 时则输出两组规范
+\(q\)-进容量缺陷。与此相反，两个底层节点的两种乘法配对只产生相位 \(+1\) 差值，
+并不自动终端；\(p=73,R=11\) 已给出绝对最小核心反例。把路径字同模送入非自然
+D-only 还强制
+
+\[
+\mu>2\sqrt p-1,
+\]
+
+所以小底层 gap 不能承担统一 E4；下一步必须使用尺寸至少约为 \(\sqrt p\) 的高层量，
+或建立从模 \(R\) 到 \(\mu=4\lambda-1\) 的新跨模数恒等式。见
+[来源路径的底层投影、双节点相位差与双容量接口](../claims/type-I-source-word-bottom-projection-dual-capacity.md)。
+
 较小方程路线也得到一个比显式偶源更一般的状态接口。对 \(2\le n<p\)，全部可能承载
 双尾保留提升的正替换坐标对，由 \(D\mid(np)^2\) 的两个模 \(4(p-n)\) 同余及严格界
 \(D<n^2\) 精确参数化；
@@ -1821,6 +1848,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \text{线性 }p\text{ 边瞬态、large-slab 三锚点与 source-supported 尾比刚性}\\
 \downarrow\\
 \text{源见证锚定 formal Reach 的 }1412\text{ 个 slab、来源路径字、自然尾空纤维与 }70\text{ 个后继残余}\\
+\downarrow\\
+\text{底层双节点相位差、来源交叉表示与 }K/x_R\text{ 双容量缺陷；小尺度 D-only 桥受阻}\\
 \downarrow\\
 \text{D-only 支撑二分、非自然 }H\mid4\lambda^2\text{ 正规形与三目标平方除子谱}\\
 \downarrow\\

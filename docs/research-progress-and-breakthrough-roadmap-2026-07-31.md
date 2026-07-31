@@ -546,8 +546,7 @@ L=XY.
 
 ### 6.2 部分容量吸收
 
-若 \(q
-e p\)，对任意
+若 \(q\ne p\)，对任意
 
 \[
 Q\mid M\mid L
@@ -586,8 +585,7 @@ W=\operatorname{Sol}(p)
 
 作为两端标记，恒等映射给出全域解提升，而势函数 \(R\) 严格下降。这是一条真正满足局部 E1--E5 的合法重图表边。
 
-特别取 \(M=Q\)，因为 \(R_Q
-e R\)，得到
+特别取 \(M=Q\)，因为 \(R_Q\ne R\)，得到
 
 \[
 \boxed{
@@ -903,6 +901,28 @@ z\equiv-\sigma\pmod\mu,
 > 再证明三目标命中或构造合法 E4。详见
 > [核心 D-only 的支撑二分与三目标谱](../claims/two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md)。
 
+> **2026-08-01 路径字接口更新。** 来源路径字现可按祖先坐标写成
+> \[
+> \Theta X=U+Ru,
+> \qquad
+> \Theta Y=V+Rv,
+> \qquad
+> u,v\ge0,
+> \qquad
+> u+v=\Theta-m_1.
+> \]
+> 交叉约分 \((U,\Theta Y)\)、\((V,\Theta X)\) 产生两个规范相位 \(-1\)
+> 表示；其乘积整除 \(K\) 即为直接 Type I，整除
+> \(x_R=(p+R)/4\) 即为 gap \(R\) 的 Type II。双 miss 时得到可记录的
+> \(q\)-进容量缺陷，但还没有跨状态超载。另一方面，把模 \(R\) 路径字送入同模
+> 非自然 D-only 必须满足 \(\mu\mid R\) 且
+> \[
+> \mu>2\sqrt p-1.
+> \]
+> 因此小底层差值不能普遍承担该 E4；下一步应改为寻找大尺度路径量或新的跨模数
+> 恒等式。详见
+> [来源路径的底层投影、双节点相位差与双容量接口](../claims/type-I-source-word-bottom-projection-dual-capacity.md)。
+
 更长远的目标是证明一个选择定理：
 
 \[
@@ -1082,15 +1102,23 @@ m=1,\ a\in\{1,2,3\}\text{ 的 large-slab}.
 
 输出必须是定理候选或明确反例，不是覆盖率表。
 
-### 第 3 周：D-only 低复杂度非空子族
+### 第 3 周：D-only 三目标与跨模数接口
 
-系统搜索和证明：
+关闭已经证明为空的
 
 \[
 \mu=1,\quad\mu=2,\quad\mu\mid\sigma+1
 \]
 
-是否能由 large-slab 三类中的某一类强制。若不能，保存最小核心可实现反例，并寻找下一个规范条件，而不是任意扩大 \(D\) 菜单。
+三个方向。改为从 large-slab 或来源路径构造满足
+
+\[
+H=p+(4\lambda-1)(p-n)\mid4\lambda^2
+\]
+
+的大尺度 \(\lambda\)，并检查 \(\lambda^2\) 三目标真因子谱。若只得到模 \(R\) 的
+路径字，必须显式建立到 \(\mu=4\lambda-1\) 的跨模数恒等式；同模方案先应用
+\(\mu>2\sqrt p-1\) 的尺寸筛，不再枚举已被结构性排除的小参数。
 
 ### 第 4 周：两翻转周期三目标短代表
 

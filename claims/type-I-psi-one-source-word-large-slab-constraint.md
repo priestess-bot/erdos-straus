@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-psi-one-source-word-large-slab-constraint
 title: Psi 一层缺陷到 single-external slab 的规范路径字约束
-statement: 对 Psi_0=1 的 F 状态，把一层见证定向为 A_0|K、B_0=q_*H、A_0H|K 且 q_* 是唯一容量超额。首条 formal 边唯一并由 q_* 标记；首步正规约分后得到 U_1=H/g_0|K，而补坐标 V_1 必越出 K 容量。若从该后继经标签 r_i、正规公因子 g_i 到达 m=1 的 single-external slab {Qalpha,beta}，令 Theta=prod_i(r_i g_i)，则存在 epsilon属于{+1,-1}及整数u使 Theta Qalpha=epsilon U_1+Ru、Theta beta=-epsilon U_1+R(Theta-u)。因此路径证书必须保留累计正规公因子乘积或等价信息，终端外素数也只能首次出生于某条仿射补坐标。该必要条件与线性源、奇偶和模24约束仍不强制现有 slab 终端或容量下降。
+statement: 对 Psi_0=1 的 F 状态，把一层见证定向为 A_0|K、B_0=q_*H、A_0H|K 且 q_* 是唯一容量超额。首条 formal 边唯一并由 q_* 标记；首步正规约分后得到 U_1=H/g_0|K，而补坐标 V_1 必越出 K 容量。若从该后继经标签 r_i、正规公因子 g_i 到达 m=1 的 single-external slab，令 Theta=prod_i(r_i g_i)，并按 U_1、V_1 的后代定向终点为 X_U、X_V，则存在非负整数 u,v 使 Theta X_U=U_1+Ru、Theta X_V=V_1+Rv 且 u+v=Theta-m_1；固定 slab 定向后等价恢复 epsilon 属于 {+1,-1} 的原路径字公式。因此路径证书必须保留累计正规公因子乘积或等价信息，终端外素数也只能首次出生于某条仿射补坐标。该必要条件与线性源、奇偶和模24约束仍不强制现有 slab 终端或容量下降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -28,7 +28,7 @@ sources:
   - claim: type-I-formal-linear-chart-p-transience-large-slab-anchor
     role: large-slab-and-anchor-interface
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-01'
 ---
 
 # Psi 一层缺陷到 single-external slab 的规范路径字约束
@@ -132,20 +132,38 @@ X=Q\alpha,
 \tag{11}
 \]
 
-则存在 \(\varepsilon\in\{+1,-1\}\) 和 \(u\in\mathbb Z\)，使
+先按两个原坐标的后代关系定向终点为 \(X_U,X_V\)。则存在
+
+\[
+u,v\in\mathbb Z_{\ge0},
+\qquad u+v=\Theta-m_1,
+\tag{12}
+\]
+
+使
+
+\[
+\boxed{\Theta X_U=U_1+Ru,}
+\qquad
+\boxed{\Theta X_V=V_1+Rv.}
+\tag{13}
+\]
+
+若仍固定使用 (11) 的 slab 定向，则存在
+\(\varepsilon\in\{+1,-1\}\) 和整数 \(u_*\)，使
 
 \[
 \boxed{
-\Theta Q\alpha=\varepsilon U_1+Ru,
+\Theta Q\alpha=\varepsilon U_1+Ru_*,
 }
-\tag{12}
+\tag{14}
 \]
 
 \[
 \boxed{
-\Theta\beta=-\varepsilon U_1+R(\Theta-u).
+\Theta\beta=-\varepsilon U_1+R(\Theta-u_*).
 }
-\tag{13}
+\tag{15}
 \]
 
 ### 证明
@@ -164,24 +182,44 @@ D'=\frac{D+Rt_i}{r_ig_i}.
 h_iC'\equiv C,
 \qquad
 h_iD'\equiv D.
-\tag{14}
+\tag{16}
 \]
 
-沿路径迭代 (14)，并记录每次坐标互换，得到
+不只同余被保留，整数商还具有非负性。若剩余路径已给出
+\(\Theta_sE=C'+Ra\)、\(a\ge0\)，则选中侧满足
+
+\[
+h_i\Theta_sE=C+R(h_i a).
+\]
+
+若剩余路径给出 \(\Theta_sF=D'+Rb\)、\(b\ge0\)，则补坐标侧满足
+
+\[
+h_i\Theta_sF=D+R(t_i+h_i b).
+\]
+
+两种新系数仍非负。逐边反向归纳得到 (13)。两式相加，并使用
+\(U_1+V_1=Rm_1\)、\(X_U+X_V=R\)，便有
+
+\[
+u+v=\Theta-m_1,
+\]
+
+因而 \(\Theta\ge m_1\)。若改回固定 slab 定向并记录最终是否互换，迭代 (16) 得到
 
 \[
 \Theta X\equiv\varepsilon U_1\pmod R,
 \qquad
 \Theta Y\equiv-\varepsilon U_1\pmod R.
-\tag{15}
+\tag{17}
 \]
 
-第一式定义整数 \(u\)。又因 \(X+Y=R\)，两式的整数商之和必须为 \(\Theta\)，即得
-(12)--(13)。
+第一式定义整数 \(u_*\)。又因 \(X+Y=R\)，两式的整数商之和必须为 \(\Theta\)，即得
+(14)--(15)。
 
 这个证明解释了为什么只记录标签乘积 \(\prod r_i\) 不够：路径证书必须保留累计正规
 贡献 \(\prod g_i\) 或能恢复它的等价信息。若再把 large-slab 的 \(e\) 条
-\(q\)-peeling 接到锚点，完整路径字乘积变为 \(\Theta Q\)，而 (12) 的左端保持为
+\(q\)-peeling 接到锚点，完整路径字乘积变为 \(\Theta Q\)，而 (14) 的左端保持为
 \(\Theta Q\alpha\)。
 
 ## 3. 外素数的出生位置
@@ -204,7 +242,7 @@ single-external slab 来源边的确定位置，但尚未把该边升级为 E4�
 K=\alpha\beta c,
 \qquad Q=q^e,
 \qquad q\nmid K,
-\tag{16}
+\tag{18}
 \]
 
 则由 \(4K=pR+1\) 和 \(R=Q\alpha+\beta\) 直接得到
@@ -213,7 +251,7 @@ K=\alpha\beta c,
 \boxed{
 \beta(4\alpha c-p)=\alpha pQ+1.
 }
-\tag{17}
+\tag{19}
 \]
 
 因此
@@ -224,36 +262,36 @@ K=\alpha\beta c,
 \qquad
 \beta\mid pQ\alpha+1.
 }
-\tag{18}
+\tag{20}
 \]
 
 若还有真正线性源
 
 \[
 p=a+s+asR,
-\tag{19}
+\tag{21}
 \]
 
 则
 
 \[
 (aR+1)(sR+1)=4K,
-\tag{20}
+\tag{22}
 \]
 
 \[
 p-(a+s+as\beta)=\alpha asQ.
-\tag{21}
+\tag{23}
 \]
 
 对奇数外素数 \(q\)，由 \(q\nmid4K\) 和 \(R\equiv\beta\pmod q\) 还可推出
 
 \[
 (a\beta+1,Q)=(s\beta+1,Q)=1.
-\tag{22}
+\tag{24}
 \]
 
-式 (22) 不能不加区分地用于 \(q=2\)，因为此时 \(2\nmid K\) 仍不意味着
+式 (24) 不能不加区分地用于 \(q=2\)，因为此时 \(2\nmid K\) 仍不意味着
 \(2\nmid4K\)。
 
 结合 \(p\equiv1\pmod {24}\) 与 large-slab 的
@@ -268,7 +306,7 @@ p-(a+s+as\beta)=\alpha asQ.
 
 ## 5. 量词边界
 
-(12)--(22) 都是必要条件，不是新终端。冻结源见证锚定的 formal Reach 中，三个
+(12)--(24) 都是必要条件，不是新终端。冻结源见证锚定的 formal Reach 中，三个
 \(\alpha=1,2,3\) 分支各自都有同时满足这些来源约束、但现有双碰撞和规范容量吸收仍
 失败的节点。尤其
 
@@ -278,9 +316,9 @@ p-(a+s+as\beta)=\alpha asQ.
 \]
 
 的规范路径中有一步 \(g_i=4\)。相对原始节点的全路径正规乘积为 \(118184\)，全路径
-纯标签乘积为 \(29546\)；而定理 (12)--(13) 从首后继开始，故其
+纯标签乘积为 \(29546\)；而定理 (13)--(15) 从首后继开始，故其
 \(\Theta=(2\cdot4)\cdot17\cdot11=1496\)，相应后缀纯标签乘积为 \(374\)。取
-\(U_1=237,\varepsilon=1,u=1361\) 时，
+\(U_1=237,V_1=8,\varepsilon=1,u_*=1361\) 时，
 
 \[
 1496\cdot32=237+35\cdot1361,
@@ -288,6 +326,13 @@ p-(a+s+as\beta)=\alpha asQ.
 1496\cdot3=-237+35(1496-1361),
 \]
 
-逐式验证 (12)--(13)。该节点的完整 formal 后继图也没有任何 good single slab。精确路径、完整
+逐式验证 (14)--(15)。按祖先坐标追踪的两个非负系数则为
+
+\[
+(u,v)=(1361,128),
+\qquad1361+128=1496-7.
+\]
+
+该节点的完整 formal 后继图也没有任何 good single slab。精确路径、完整
 计数及另一个 \(\alpha=3\) 四周期见
 [源见证锚定的 formal Reach large-slab 边界](type-I-psi-one-actual-reach-large-slab-boundary.md)。

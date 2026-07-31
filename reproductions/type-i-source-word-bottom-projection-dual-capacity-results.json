@@ -1,0 +1,388 @@
+{
+  "schema_version": "type-i-source-word-bottom-dual-capacity/v1",
+  "scope_note": "Focused exact verification of two frozen source paths, two-node difference normalization, dual K/x_R capacity misses, and one complete exact-gap counterexample. It is not a universal selector or a formal-edge-to-E4 upgrade.",
+  "inputs": {
+    "frozen_psi_one_sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
+    "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
+  },
+  "summary": {
+    "path_case_count": 2,
+    "cross_pair_count": 4,
+    "delta_case_count": 4,
+    "delta_terminal_count": 2,
+    "delta_complete_miss_count": 2
+  },
+  "path_records": [
+    {
+      "name": "minimum_source_anchored_residual",
+      "prime": 5596369,
+      "R": 35,
+      "K": 48968229,
+      "source": [
+        107,
+        18723,
+        538
+      ],
+      "post_first_oriented": [
+        237,
+        8,
+        7
+      ],
+      "suffix_edges": [
+        {
+          "source": [
+            8,
+            237,
+            7
+          ],
+          "q": 2,
+          "gcd_reduction": 4,
+          "destination": [
+            1,
+            34,
+            1
+          ]
+        },
+        {
+          "source": [
+            1,
+            34,
+            1
+          ],
+          "q": 17,
+          "gcd_reduction": 1,
+          "destination": [
+            2,
+            33,
+            1
+          ]
+        },
+        {
+          "source": [
+            2,
+            33,
+            1
+          ],
+          "q": 11,
+          "gcd_reduction": 1,
+          "destination": [
+            3,
+            32,
+            1
+          ]
+        }
+      ],
+      "endpoint_oriented": [
+        32,
+        3,
+        1
+      ],
+      "theta": 1496,
+      "u": 1361,
+      "v": 128,
+      "bottom_projection_of_post_first": [
+        8,
+        27
+      ],
+      "cross_pairs": [
+        {
+          "common": 3,
+          "P": 79,
+          "Q": 1496,
+          "layer": 45,
+          "product": 118184,
+          "divides_K": false,
+          "divides_x_R": false,
+          "K_deficits": {
+            "2": 3,
+            "11": 1,
+            "17": 1
+          },
+          "x_R_deficits": {
+            "2": 3,
+            "17": 1,
+            "79": 1
+          }
+        },
+        {
+          "common": 8,
+          "P": 1,
+          "Q": 5984,
+          "layer": 171,
+          "product": 5984,
+          "divides_K": false,
+          "divides_x_R": false,
+          "K_deficits": {
+            "2": 5,
+            "11": 1,
+            "17": 1
+          },
+          "x_R_deficits": {
+            "2": 5,
+            "17": 1
+          }
+        }
+      ],
+      "x_R": 1399101,
+      "same_modulus_d_only_size_obstruction": {
+        "mu_candidates": [
+          7,
+          35
+        ],
+        "necessary_lower_bound": "mu > 2*sqrt(p)-1",
+        "threshold_approx": 4730.329200129706,
+        "all_candidates_excluded": true
+      }
+    },
+    {
+      "name": "alpha_three_four_cycle_entry",
+      "prime": 212973049,
+      "R": 215,
+      "K": 11447301384,
+      "source": [
+        1585081,
+        2273094,
+        17945
+      ],
+      "post_first_oriented": [
+        1259,
+        1966,
+        15
+      ],
+      "suffix_edges": [
+        {
+          "source": [
+            1259,
+            1966,
+            15
+          ],
+          "q": 983,
+          "gcd_reduction": 1,
+          "destination": [
+            2,
+            213,
+            1
+          ]
+        }
+      ],
+      "endpoint_oriented": [
+        213,
+        2,
+        1
+      ],
+      "theta": 983,
+      "u": 968,
+      "v": 0,
+      "bottom_projection_of_post_first": [
+        31,
+        184
+      ],
+      "cross_pairs": [
+        {
+          "common": 1,
+          "P": 1259,
+          "Q": 1966,
+          "layer": 15,
+          "product": 2475194,
+          "divides_K": false,
+          "divides_x_R": false,
+          "K_deficits": {
+            "983": 1
+          },
+          "x_R_deficits": {
+            "983": 1,
+            "1259": 1
+          }
+        },
+        {
+          "common": 983,
+          "P": 2,
+          "Q": 213,
+          "layer": 1,
+          "product": 426,
+          "divides_K": false,
+          "divides_x_R": false,
+          "K_deficits": {
+            "71": 1
+          },
+          "x_R_deficits": {
+            "71": 1
+          }
+        }
+      ],
+      "x_R": 53243316,
+      "same_modulus_d_only_size_obstruction": {
+        "mu_candidates": [
+          43,
+          215
+        ],
+        "necessary_lower_bound": "mu > 2*sqrt(p)-1",
+        "threshold_approx": 29186.192328142835,
+        "all_candidates_excluded": true
+      }
+    }
+  ],
+  "delta_records": [
+    {
+      "name": "both_type_i_and_ii",
+      "prime": 5596369,
+      "R": 35,
+      "bottom_coordinates": [
+        [
+          1,
+          34
+        ],
+        [
+          3,
+          32
+        ]
+      ],
+      "gcd_normalization": 1,
+      "difference_pair": [
+        3,
+        1088
+      ],
+      "delta": 31,
+      "cross_gcd_normalization": 2,
+      "cross_difference_pair": [
+        16,
+        51
+      ],
+      "cross_delta": 1,
+      "complete_gap_hit": true,
+      "selected_certificates": [
+        {
+          "type": "Type_I",
+          "gap": 31,
+          "first_denominator": 1399100,
+          "divisor": 85,
+          "solution": [
+            1399100,
+            252576769935,
+            23266420776626664606900
+          ],
+          "certificate_semantics": "verified_direct_terminal"
+        },
+        {
+          "type": "Type_II",
+          "gap": 31,
+          "first_denominator": 1399100,
+          "divisor": 85,
+          "solution": [
+            1399100,
+            252592114815,
+            4157666209854900
+          ],
+          "certificate_semantics": "verified_direct_terminal"
+        }
+      ]
+    },
+    {
+      "name": "type_i_only_selected_divisor",
+      "prime": 212973049,
+      "R": 215,
+      "bottom_coordinates": [
+        [
+          2,
+          213
+        ],
+        [
+          3,
+          212
+        ]
+      ],
+      "gcd_normalization": 6,
+      "difference_pair": [
+        1,
+        7526
+      ],
+      "delta": 35,
+      "cross_gcd_normalization": 1,
+      "cross_difference_pair": [
+        424,
+        639
+      ],
+      "cross_delta": 1,
+      "complete_gap_hit": true,
+      "selected_certificates": [
+        {
+          "type": "Type_I",
+          "gap": 35,
+          "first_denominator": 53243271,
+          "divisor": 66471,
+          "solution": [
+            53243271,
+            323982336104850,
+            55268604259856543238307650
+          ],
+          "certificate_semantics": "verified_direct_terminal"
+        }
+      ]
+    },
+    {
+      "name": "minimum_core_ambient_counterexample",
+      "prime": 73,
+      "R": 11,
+      "bottom_coordinates": [
+        [
+          1,
+          10
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "gcd_normalization": 2,
+      "difference_pair": [
+        2,
+        35
+      ],
+      "delta": 3,
+      "cross_gcd_normalization": 1,
+      "cross_difference_pair": [
+        7,
+        40
+      ],
+      "cross_delta": 3,
+      "complete_gap_hit": false,
+      "selected_certificates": []
+    },
+    {
+      "name": "complete_gap_miss",
+      "prime": 212973049,
+      "R": 215,
+      "bottom_coordinates": [
+        [
+          3,
+          212
+        ],
+        [
+          1,
+          214
+        ]
+      ],
+      "gcd_normalization": 1,
+      "difference_pair": [
+        3,
+        45368
+      ],
+      "delta": 211,
+      "cross_gcd_normalization": 2,
+      "cross_difference_pair": [
+        321,
+        106
+      ],
+      "cross_delta": 1,
+      "complete_gap_hit": false,
+      "selected_certificates": []
+    }
+  ],
+  "fixed_tail_d_only_size_boundary": {
+    "prime": 5596369,
+    "U": 16322743,
+    "h": 59694603,
+    "minimum_lambda_from_H_gt_p": 1183,
+    "minimum_delta": 70602392606
+  }
+}
