@@ -3311,3 +3311,99 @@ PRE。该分型势沿允许边严格下降；真正 equation rank 可置于最�
 这解决的是 E5 兼容性，不是 E4。formal cursor 仍缺合法后继状态和全域解提升，不能
 因调度良基而升级为证明边。严格边集合与二环边界见
 [不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。
+
+## 2026-07-31 源见证锚定 formal Reach large-slab 的完整压力边界
+
+对哈希冻结的 483 个 \(\Psi_0=1\) F 状态、1615 条正见证重建完整未剪枝 formal Reach，
+共得到 520559 个节点、1874407 条带标签边和 1412 个 large-slab 记录。双秩 accepted
+闭包加一步 rejected lookahead 只覆盖其中 638 个，所以此前的双秩范围不是 slab 来源的
+完备替代品。
+
+1412 个 slab 中，两类 \(\operatorname{Div}(R)\) 碰撞各只命中 2 个；完整 formal Reach
+新增 774 个 slab 没有新增碰撞。当前节点 external-affine 菜单命中 86 个记录，peeling
+锚点菜单命中 397 个记录；加入规范 \(R_Q<R\) 吸收后仍有
+
+\[
+566\text{ 个 strong miss},
+\qquad198\text{ 态},
+\]
+
+按 \(\alpha=1,2,3\) 为 \(420,126,20\)。这严格否定了“源见证关系会使三个锚点按
+现有菜单自动闭合”：三个分支各有 strong-miss 记录。
+
+若只把碰撞或容量下降称为 good single-slab，则 831 个 large-slab 局部 miss 中，761 个
+存在至少一条 formal 路径到达 good single-slab；仍有 70 个起始 slab、45 态的完整
+formal 后继图没有该候选，分布为 \(53,16,1\)。最小例是
+
+\[
+(p,R,K)=(5596369,35,48968229),
+\qquad(Q,\alpha,\beta)=(32,1,3).
+\]
+
+其来源路径为
+
+\[
+(107,18723,538)
+\xrightarrow{79}(8,237,7)
+\xrightarrow{2,\,g=4}(1,34,1)
+\xrightarrow{17}(2,33,1)
+\xrightarrow{11}(3,32,1).
+\]
+
+从末节点出发的完整图只有 12 节点、26 边，唯一 single-slab 即自身。含首条强制边的
+纯标签乘积 29546 不是正确全路径字；计入正规公因子后为 118184。source-word 定理从
+首后继开始，其后缀纯标签乘积为 374，而正确的 \(\Theta=1496\)。
+
+另一个源见证锚定的 formal \(\alpha=3\) strong miss
+\((p,R,Q,\alpha,\beta)=(212973049,215,71,3,2)\) 进入 formal 四周期
+
+\[
+\{2,213\}\to\{3,212\}\to\{4,211\}\to\{1,214\}\to\{2,213\}.
+\]
+
+它在后继节点分别暴露 \(R_{53}=171\) 与 \(R_{107}=55\) 的容量下降候选，说明下一接口
+不应只盯原 large-slab 或锚点，而应研究整段来源路径上的 bounded combination。
+
+严格计数和路径见
+[源见证锚定的完整 formal Reach large-slab 边界](../claims/type-I-psi-one-actual-reach-large-slab-boundary.md)。
+
+## 2026-07-31 自然尾 E4 的固定目标像空纤维
+
+任意形式节点 \(A+B=Rm,(A,B)=1\) 都满足
+
+\[
+(m,A)=(m,B)=1,
+\]
+
+并有唯一自然有理恒等式
+
+\[
+\frac4p
+=\frac1{pK}
++\frac1{mK/B}
++\frac1{mK/A}.
+\]
+
+两条自然尾同时为整数当且仅当 \(AB\mid K\)，即节点已经直接终端。对
+\(A=Q\alpha,B=\beta,K=\alpha\beta c\)，保留好尾后的坏残余是最低项
+\(Q/(m\beta c)\)；它只有在 \(Q\mid4\) 时能写成 \(4/n\)，而此时必有 \(n>p\)。
+三锚点保留 \(pK\) 与 \(K/\alpha\) 时同样只有“已为汇点”或“固定目标像纤维为空”。
+
+因此下一条 E4 不能继续固定根分母和自然好尾。当前最窄的正向任务改为：
+
+1. 用规范路径字
+   \[
+   \Theta Q\alpha=\varepsilon U_1+Ru,
+   \qquad
+   \Theta\beta=-\varepsilon U_1+R(\Theta-u)
+   \]
+   同时编码来源、全部 \(g_i\) 与终点 slab；
+2. 从路径上的 \(m,|A-R|,|B-R|\) 提取一个有界高层仿射量，或组合少量节点保留一个
+   可吸收外部因子；
+3. 把该组合改写为改变根分母、两条尾或 equation target 的 marked 状态，逐项证明
+   E1--E4；
+4. 只有通过该合同后，才接入现有 PRE--ABSORB 势完成 E5。
+
+自然尾定理和来源路径字分别见
+[形式节点自然双尾整数性刚性](../claims/type-I-formal-natural-tail-integrality-rigidity.md)与
+[Psi 一层来源路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md)。

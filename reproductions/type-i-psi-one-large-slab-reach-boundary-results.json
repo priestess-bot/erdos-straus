@@ -1,0 +1,1079 @@
+{
+  "alpha_histograms": {
+    "complete_reach": {
+      "1": 899,
+      "2": 368,
+      "3": 145
+    },
+    "formal_descendant_residual": {
+      "1": 53,
+      "2": 16,
+      "3": 1
+    },
+    "ranked_scope": {
+      "1": 378,
+      "2": 202,
+      "3": 58
+    },
+    "ranked_scope_strong_miss": {
+      "1": 172,
+      "2": 67,
+      "3": 8
+    },
+    "strong_miss": {
+      "1": 420,
+      "2": 126,
+      "3": 20
+    }
+  },
+  "alpha_three_formal_descendant_residual": {
+    "K": 2813980374,
+    "R": 455,
+    "boundary": "The sole alpha=3 formal-descendant residual reaches alpha=1 and alpha=2 large slabs, but every single slab in the descendant graph misses both collisions and canonical capacity descent.",
+    "descendant_edge_count": 43,
+    "descendant_node_count": 20,
+    "edge_semantics": "analysis_evidence_not_verified_edge",
+    "large_slab": {
+      "K": 2813980374,
+      "Q": 151,
+      "R": 455,
+      "R_Q": 523,
+      "alpha": 3,
+      "anchor": [
+        3,
+        452,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 2,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 937993458,
+        "numerator": 151
+      },
+      "natural_bad_tail": {
+        "denominator": 151,
+        "numerator": 937993458
+      },
+      "natural_endpoint_gap": 5603222459,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 1406990187,
+      "node": [
+        2,
+        453,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 24738289,
+      "q": 151,
+      "reaches_good_single": false,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 134,
+      "selected_side": "B",
+      "strong_miss": true
+    },
+    "linear_source": {
+      "a": 4,
+      "s": 13585
+    },
+    "prime": 24738289,
+    "single_slabs": [
+      {
+        "Q": 227,
+        "R_Q": 531,
+        "alpha": 2,
+        "basic_good": false,
+        "beta": 1,
+        "node": [
+          1,
+          454,
+          1
+        ]
+      },
+      {
+        "Q": 151,
+        "R_Q": 523,
+        "alpha": 3,
+        "basic_good": false,
+        "beta": 2,
+        "node": [
+          2,
+          453,
+          1
+        ]
+      },
+      {
+        "Q": 449,
+        "R_Q": 1563,
+        "alpha": 1,
+        "basic_good": false,
+        "beta": 6,
+        "node": [
+          6,
+          449,
+          1
+        ]
+      }
+    ],
+    "source_path_labels": [
+      2,
+      281,
+      227
+    ],
+    "source_path_nodes": [
+      [
+        107,
+        348,
+        1
+      ],
+      [
+        174,
+        281,
+        1
+      ],
+      [
+        1,
+        454,
+        1
+      ],
+      [
+        2,
+        453,
+        1
+      ]
+    ]
+  },
+  "arithmetic": "For all 483 hash-frozen Psi_0=1 F states, rebuild the unpruned formal Reach and both ranked scopes; extract every m=1 single-external slab with Q>R/4; exhaust the two divisor collisions, filtered external-affine coordinate-divisor gaps at the node and anchor, and the canonical Q-capacity chart; then verify the natural-tail integrality identities and selected source paths exactly.",
+  "closure_script": {
+    "path": "type_i_f_psi_one_formal_transition_closure.py",
+    "sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
+  },
+  "collision_records": [
+    {
+      "K": 4961424970,
+      "Q": 101,
+      "R": 111,
+      "R_Q": 91,
+      "alpha": 1,
+      "anchor": [
+        1,
+        110,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": true,
+      "beta": 10,
+      "canonical_absorption": true,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [
+        111
+      ],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": false,
+      "in_min_visited": false,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 4961424970,
+        "numerator": 101
+      },
+      "natural_bad_tail": {
+        "denominator": 101,
+        "numerator": 4961424970
+      },
+      "natural_endpoint_gap": 1805779899,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 496142497,
+      "node": [
+        10,
+        101,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": false,
+      "prime": 178790089,
+      "q": 101,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 5,
+      "selected_side": "B",
+      "strong_miss": false
+    },
+    {
+      "K": 4190765812,
+      "Q": 31,
+      "R": 63,
+      "R_Q": 7,
+      "alpha": 2,
+      "anchor": [
+        2,
+        61,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": true,
+      "beta": 1,
+      "canonical_absorption": true,
+      "cross_chart_collision_T": [
+        7
+      ],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 2095382906,
+        "numerator": 31
+      },
+      "natural_bad_tail": {
+        "denominator": 31,
+        "numerator": 2095382906
+      },
+      "natural_endpoint_gap": 16496982879,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 4190765812,
+      "node": [
+        1,
+        62,
+        1
+      ],
+      "node_affine_hit_gaps": [
+        31
+      ],
+      "pre_absorption_menu_miss": false,
+      "prime": 266080369,
+      "q": 31,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 14,
+      "selected_side": "B",
+      "strong_miss": false
+    },
+    {
+      "K": 7120734532,
+      "Q": 31,
+      "R": 63,
+      "R_Q": 7,
+      "alpha": 2,
+      "anchor": [
+        2,
+        61,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": true,
+      "beta": 1,
+      "canonical_absorption": true,
+      "cross_chart_collision_T": [
+        7
+      ],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 3560367266,
+        "numerator": 31
+      },
+      "natural_bad_tail": {
+        "denominator": 31,
+        "numerator": 3560367266
+      },
+      "natural_endpoint_gap": 28030827999,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 7120734532,
+      "node": [
+        1,
+        62,
+        1
+      ],
+      "node_affine_hit_gaps": [
+        31
+      ],
+      "pre_absorption_menu_miss": false,
+      "prime": 452110129,
+      "q": 31,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 14,
+      "selected_side": "B",
+      "strong_miss": false
+    },
+    {
+      "K": 13094960852,
+      "Q": 101,
+      "R": 103,
+      "R_Q": 51,
+      "alpha": 1,
+      "anchor": [
+        1,
+        102,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": true,
+      "beta": 2,
+      "canonical_absorption": true,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [
+        103
+      ],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 13094960852,
+        "numerator": 101
+      },
+      "natural_bad_tail": {
+        "denominator": 101,
+        "numerator": 13094960852
+      },
+      "natural_endpoint_gap": 25681379535,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 6547480426,
+      "node": [
+        2,
+        101,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": false,
+      "prime": 508542169,
+      "q": 101,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 13,
+      "selected_side": "B",
+      "strong_miss": false
+    }
+  ],
+  "counting_and_completeness": {
+    "closure": "raw_transitions enumerates both coordinates and every prime whose coordinate valuation exceeds v_q(K), until the frontier is empty; m decreases above layer one and stays one at the bottom layer",
+    "counting_unit": "nodes and labeled transition occurrences are summed over the 483 per-state graphs; slab-menu counts are slab records",
+    "external_affine_filter": "h divides a node coordinate, 3<=h<=p-2, h=3 mod 4, and h/gcd(h,K)>1; each retained gap is checked by exact square-divisor Type I/II enumeration",
+    "pre_absorption_accounting": "948 slab records miss both collisions and both external-affine menus; 382 of those have R_Q<R, leaving 566 strong misses"
+  },
+  "input": {
+    "path": "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json",
+    "sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2"
+  },
+  "minimum_formal_descendant_residual": {
+    "K": 48968229,
+    "R": 35,
+    "boundary": "The complete formal descendant graph contains no good single slab. The q=2 step has gcd reduction 4, so a label-only path word is invalid.",
+    "descendant_edge_count": 26,
+    "descendant_node_count": 12,
+    "edge_semantics": "analysis_evidence_not_verified_edge",
+    "full_path_word": {
+      "normalized_product": 118184,
+      "pure_label_product": 29546
+    },
+    "large_slab": {
+      "K": 48968229,
+      "Q": 32,
+      "R": 35,
+      "R_Q": 79,
+      "alpha": 1,
+      "anchor": [
+        1,
+        34,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 3,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 5,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": false,
+      "in_min_visited": false,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 48968229,
+        "numerator": 32
+      },
+      "natural_bad_tail": {
+        "denominator": 32,
+        "numerator": 48968229
+      },
+      "natural_endpoint_gap": 59694603,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 16322743,
+      "node": [
+        3,
+        32,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 5596369,
+      "q": 2,
+      "reaches_good_single": false,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 21,
+      "selected_side": "B",
+      "strong_miss": true
+    },
+    "linear_source": {
+      "a": 331,
+      "s": 483
+    },
+    "path": [
+      {
+        "destination": [
+          8,
+          237,
+          7
+        ],
+        "gcd_reduction": 1,
+        "q": 79,
+        "shift": 15,
+        "source": [
+          107,
+          18723,
+          538
+        ]
+      },
+      {
+        "destination": [
+          1,
+          34,
+          1
+        ],
+        "gcd_reduction": 4,
+        "q": 2,
+        "shift": 1,
+        "source": [
+          8,
+          237,
+          7
+        ]
+      },
+      {
+        "destination": [
+          2,
+          33,
+          1
+        ],
+        "gcd_reduction": 1,
+        "q": 17,
+        "shift": 16,
+        "source": [
+          1,
+          34,
+          1
+        ]
+      },
+      {
+        "destination": [
+          3,
+          32,
+          1
+        ],
+        "gcd_reduction": 1,
+        "q": 11,
+        "shift": 10,
+        "source": [
+          2,
+          33,
+          1
+        ]
+      }
+    ],
+    "post_first_edge_source_word": {
+      "Theta": 1496,
+      "U_1": 237,
+      "X": 32,
+      "Y": 3,
+      "epsilon": 1,
+      "identities": [
+        "Theta*X = epsilon*U_1 + R*u",
+        "Theta*Y = -epsilon*U_1 + R*(Theta-u)"
+      ],
+      "pure_label_product": 374,
+      "u": 1361
+    },
+    "prime": 5596369,
+    "single_external_slab_count": 1,
+    "source_witness_exponents": [
+      1,
+      2,
+      -1,
+      0
+    ]
+  },
+  "natural_tail_boundary": {
+    "anchor_consequence": "keeping pK and K/alpha forces K/(R-alpha), integral iff the anchor is already a sink",
+    "formal_node_identity": "4/p = 1/(pK) + 1/(mK/B) + 1/(mK/A)",
+    "integrality_criterion": "gcd(m,A)=gcd(m,B)=1, so both natural tails are integral iff A*B divides K",
+    "ordinary_target_boundary": "Q/(m*beta*c)=4/n only if Q divides 4; any resulting n is greater than p",
+    "slab_consequence": "for A=Q*alpha, B=beta, K=alpha*beta*c, the good tail is m*alpha*c and the other residual is Q/(m*beta*c) in lowest terms"
+  },
+  "representative_strong_misses": {
+    "minimum_both_rank_accepted": {
+      "K": 3664169418,
+      "Q": 349,
+      "R": 719,
+      "R_Q": 1319,
+      "alpha": 2,
+      "anchor": [
+        2,
+        717,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 21,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 1832084709,
+        "numerator": 349
+      },
+      "natural_bad_tail": {
+        "denominator": 349,
+        "numerator": 1832084709
+      },
+      "natural_endpoint_gap": 677552223,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 174484258,
+      "node": [
+        21,
+        698,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 20384809,
+      "q": 349,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": true,
+      "rho": 199,
+      "selected_side": "B",
+      "strong_miss": true
+    },
+    "minimum_complete_reach": {
+      "K": 20989760,
+      "Q": 193,
+      "R": 391,
+      "R_Q": 731,
+      "alpha": 2,
+      "anchor": [
+        2,
+        389,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 5,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": false,
+      "in_max_visited": false,
+      "in_min_accepted_destination": false,
+      "in_min_visited": false,
+      "in_ranked_scope": false,
+      "natural_bad_residual": {
+        "denominator": 10494880,
+        "numerator": 193
+      },
+      "natural_bad_tail": {
+        "denominator": 193,
+        "numerator": 10494880
+      },
+      "natural_endpoint_gap": 16577079,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 4197952,
+      "node": [
+        5,
+        386,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 214729,
+      "q": 193,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": true,
+      "rho": 108,
+      "selected_side": "B",
+      "strong_miss": true
+    },
+    "minimum_ranked_alpha_three": {
+      "K": 2813980374,
+      "Q": 151,
+      "R": 455,
+      "R_Q": 523,
+      "alpha": 3,
+      "anchor": [
+        3,
+        452,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 2,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 937993458,
+        "numerator": 151
+      },
+      "natural_bad_tail": {
+        "denominator": 151,
+        "numerator": 937993458
+      },
+      "natural_endpoint_gap": 5603222459,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 1406990187,
+      "node": [
+        2,
+        453,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 24738289,
+      "q": 151,
+      "reaches_good_single": false,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 134,
+      "selected_side": "B",
+      "strong_miss": true
+    },
+    "minimum_ranked_scope": {
+      "K": 48968229,
+      "Q": 32,
+      "R": 35,
+      "R_Q": 79,
+      "alpha": 1,
+      "anchor": [
+        1,
+        34,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 3,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 5,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": false,
+      "in_min_visited": false,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 48968229,
+        "numerator": 32
+      },
+      "natural_bad_tail": {
+        "denominator": 32,
+        "numerator": 48968229
+      },
+      "natural_endpoint_gap": 59694603,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 16322743,
+      "node": [
+        3,
+        32,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 5596369,
+      "q": 2,
+      "reaches_good_single": false,
+      "reaches_strict_descendant_good_single": false,
+      "rho": 21,
+      "selected_side": "B",
+      "strong_miss": true
+    }
+  },
+  "residual_pressure_point": {
+    "boundary": "The m=1 slab and its anchor miss every audited local channel, while a higher-layer affine quantity supplies the direct terminal.",
+    "higher_layer_escape": {
+      "divisor": 1361,
+      "gap": 19,
+      "origin_node": [
+        326,
+        1787569,
+        201
+      ],
+      "quantity": "abs_A_minus_R",
+      "quantity_value": 8569,
+      "solution": [
+        19567097,
+        80604461487166,
+        90701326246124033095655758
+      ],
+      "type": "Type_I"
+    },
+    "large_slab": {
+      "K": 174049285564,
+      "Q": 8243,
+      "R": 8895,
+      "R_Q": 10395,
+      "alpha": 1,
+      "anchor": [
+        1,
+        8894,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 652,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 174049285564,
+        "numerator": 8243
+      },
+      "natural_bad_tail": {
+        "denominator": 8243,
+        "numerator": 174049285564
+      },
+      "natural_endpoint_gap": 989518659,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 266946757,
+      "node": [
+        652,
+        8243,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 78268369,
+      "q": 8243,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": true,
+      "rho": 7868,
+      "selected_side": "B",
+      "strong_miss": true
+    }
+  },
+  "schema_version": "psi-one-large-slab-reach-boundary/v1",
+  "scope_note": "This is exact finite evidence on a frozen 483-state family. Formal Reach edges are candidate-generation evidence and do not satisfy E4. A strong miss refutes only automatic closure of the audited local menu; it is not an Erdos-Straus counterexample or a universal impossibility result.",
+  "script_sha256": "528bb7a0fa58cfd35cd9655bdf124c67f20f52367766d415501775339a126448",
+  "source_anchored_alpha_three_formal_path": {
+    "K": 11447301384,
+    "R": 215,
+    "bottom_layer_formal_cycle": {
+      "labels": [
+        71,
+        53,
+        211,
+        107
+      ],
+      "nodes": [
+        [
+          2,
+          213,
+          1
+        ],
+        [
+          3,
+          212,
+          1
+        ],
+        [
+          4,
+          211,
+          1
+        ],
+        [
+          1,
+          214,
+          1
+        ],
+        [
+          2,
+          213,
+          1
+        ]
+      ],
+      "single_slabs": [
+        {
+          "Q": 107,
+          "R_Q": 55,
+          "alpha": 2,
+          "basic_good": true,
+          "beta": 1,
+          "node": [
+            1,
+            214,
+            1
+          ]
+        },
+        {
+          "Q": 71,
+          "R_Q": 235,
+          "alpha": 3,
+          "basic_good": false,
+          "beta": 2,
+          "node": [
+            2,
+            213,
+            1
+          ]
+        },
+        {
+          "Q": 53,
+          "R_Q": 171,
+          "alpha": 4,
+          "basic_good": true,
+          "beta": 3,
+          "node": [
+            3,
+            212,
+            1
+          ]
+        },
+        {
+          "Q": 211,
+          "R_Q": 299,
+          "alpha": 1,
+          "basic_good": false,
+          "beta": 4,
+          "node": [
+            4,
+            211,
+            1
+          ]
+        }
+      ]
+    },
+    "boundary": "The source-witness-anchored formal path and its bottom-layer cycle refute automatic closure of the present slab/anchor menu; the independent gap 431 terminal means this is not an Erdos-Straus counterexample.",
+    "edge_semantics": "analysis_evidence_not_verified_edge",
+    "independent_original_state_terminal": {
+      "divisor": 772782,
+      "gap": 431,
+      "solution": [
+        53243370,
+        26309519370552,
+        386052261670486395400680
+      ],
+      "type": "Type_I"
+    },
+    "labels": [
+      1259,
+      983,
+      71,
+      53,
+      211,
+      107,
+      71
+    ],
+    "large_slab": {
+      "K": 11447301384,
+      "Q": 71,
+      "R": 215,
+      "R_Q": 235,
+      "alpha": 3,
+      "anchor": [
+        3,
+        212,
+        1
+      ],
+      "anchor_affine_hit_gaps": [],
+      "basic_local_good": false,
+      "beta": 2,
+      "canonical_absorption": false,
+      "cross_chart_collision_T": [],
+      "direct_collision_T": [],
+      "exponent": 1,
+      "in_max_accepted_destination": true,
+      "in_max_visited": true,
+      "in_min_accepted_destination": true,
+      "in_min_visited": true,
+      "in_ranked_scope": true,
+      "natural_bad_residual": {
+        "denominator": 3815767128,
+        "numerator": 71
+      },
+      "natural_bad_tail": {
+        "denominator": 71,
+        "numerator": 3815767128
+      },
+      "natural_endpoint_gap": 22681629719,
+      "natural_endpoint_hit": false,
+      "natural_endpoint_is_legal": false,
+      "natural_good_tail": 5723650692,
+      "node": [
+        2,
+        213,
+        1
+      ],
+      "node_affine_hit_gaps": [],
+      "pre_absorption_menu_miss": true,
+      "prime": 212973049,
+      "q": 71,
+      "reaches_good_single": true,
+      "reaches_strict_descendant_good_single": true,
+      "rho": 66,
+      "selected_side": "B",
+      "strong_miss": true
+    },
+    "linear_source": {
+      "a": 2,
+      "s": 494137
+    },
+    "nodes": [
+      [
+        1585081,
+        2273094,
+        17945
+      ],
+      [
+        1259,
+        1966,
+        15
+      ],
+      [
+        2,
+        213,
+        1
+      ],
+      [
+        3,
+        212,
+        1
+      ],
+      [
+        4,
+        211,
+        1
+      ],
+      [
+        1,
+        214,
+        1
+      ],
+      [
+        2,
+        213,
+        1
+      ],
+      [
+        3,
+        212,
+        1
+      ]
+    ],
+    "prime": 212973049,
+    "source_witness_exponents": [
+      -1,
+      -2,
+      -1,
+      -1,
+      2
+    ]
+  },
+  "stable_source_constraints": {
+    "all_records_checked": 1412,
+    "alpha_three_odd_q": "R=23 (mod 24), beta=2 (mod 6)",
+    "alpha_three_q_two": "R=11 (mod 24), beta=5 (mod 6)",
+    "capacity_test": "R_Q<R iff 4*rho<R, rho=K*p^{-1} mod Q",
+    "source_congruences": [
+      "p*Q*alpha == -1 (mod beta)",
+      "p*beta == -1 (mod alpha)"
+    ],
+    "support": "gcd(Q,alpha*beta)=1 and alpha*beta divides K"
+  },
+  "summary": {
+    "anchor_affine_hit_count": 397,
+    "basic_local_good_count": 581,
+    "basic_local_miss_count": 831,
+    "canonical_absorption_count": 581,
+    "collision_union_count": 4,
+    "complete_reach_edge_count": 1874407,
+    "complete_reach_large_slab_count": 1412,
+    "complete_reach_large_slab_state_count": 282,
+    "complete_reach_node_count": 520559,
+    "complete_reach_only_large_slab_count": 774,
+    "complete_reach_only_large_slab_state_count": 26,
+    "cross_chart_collision_count": 2,
+    "direct_collision_count": 2,
+    "exponent_one_count": 1349,
+    "formal_descendant_residual_count": 70,
+    "formal_descendant_residual_state_count": 45,
+    "higher_exponent_count": 63,
+    "local_miss_reaches_good_single_count": 761,
+    "maximum_external_exponent": 13,
+    "natural_endpoint_hit_count": 0,
+    "natural_endpoint_legal_gap_count": 14,
+    "node_affine_hit_count": 86,
+    "node_anchor_affine_overlap_count": 21,
+    "positive_witness_count": 1615,
+    "pre_absorption_menu_miss_count": 948,
+    "q_equals_2_count": 36,
+    "ranked_scope_large_slab_count": 638,
+    "ranked_scope_large_slab_state_count": 256,
+    "ranked_scope_natural_endpoint_hit_count": 0,
+    "ranked_scope_natural_endpoint_legal_gap_count": 11,
+    "ranked_scope_strong_miss_count": 247,
+    "ranked_scope_strong_miss_state_count": 150,
+    "source_state_count": 483,
+    "strong_miss_count": 566,
+    "strong_miss_state_count": 198
+  }
+}

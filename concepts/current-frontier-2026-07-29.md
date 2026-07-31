@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯现已证明由 R_Q 支配；在线性图表的最终 m=1 周期中 q=p 自动消失，large-slab 可剥离到 alpha=1,2,3 三个单侧锚点。source-supported D-only 标记集又与原中心 Type I 命中精确等价；不可逆 PRE--ABSORB 调度解决了候选边的 E5 兼容性。真正余项是证明源可达三锚点必终端，或构造改变尾比且满足 E1--E4 的合法状态边。
+summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯由 R_Q 支配，large-slab 可剥离到 alpha=1,2,3；但源见证锚定的完整 formal Reach 的1412个large-slab中仍有566个现有局部菜单strong miss，70个起始slab的完整formal后继图也没有good single-slab候选。自然保留pK与好尾的E4在非汇点上是空纤维，source-supported D-only又与原中心命中等价。真正余项已收缩为：把带正规公因子累计贡献的来源路径字、高层仿射量或多节点有界组合接到改变根尾数据的E1--E4合法边，再使用PRE--ABSORB良基调度。
 topics:
 - research-map
 - proof-program
@@ -1667,10 +1667,32 @@ large-slab \(Q>R/4\) 也不再是无结构余项。写 \(X=Q\alpha,Y=\beta\) 后
 
 连续剥离 \(q\) 可到达锚点 \(\{\alpha,R-\alpha\}\)，且锚点当时的全部超额都在
 \(R-\alpha\) 一侧。除唯一 \(R=3\) 二进自环外，这段路径先至多走一步
-\(\max\)-下降，随后全是 \(\min\)-下降。但三个 \(\alpha\) 分支都有真正线性图表上的
-双碰撞与容量吸收全 miss 例子，所以尚须利用 slab 的源可达性或锚点因子结构。详见
+\(\max\)-下降，随后全是 \(\min\)-下降。
+
+源见证锚定的完整 formal Reach 已检验“再加入源关系”是否足够。483 个冻结 F 状态的
+未剪枝 formal 闭包含 520559 个节点、1874407 条边和 1412 个 large-slab；加入双碰撞、
+节点/锚点 external-affine 终端与规范容量吸收后，仍有 566 个 strong miss，且三个
+\(\alpha\) 分支各有实例。只按碰撞或容量下降判断时，831 个 local miss 中有 761 个
+存在至少一条 formal 路径到达 good single-slab，但仍有 70 个起始 slab、45 态的完整
+formal 后继图没有该候选。因此来源关系不能再被当作待补的一句自动闭合假设。
+
+来源仍给出可用的精确结构：首缺陷边强制，首后继保留一个 \(U_1\mid K\) 的内部坐标；
+若后续路径字为 \(\Theta=\prod_i(r_ig_i)\)，终点为 \(Q\alpha,\beta\)，则
+
+\[
+\Theta Q\alpha=\varepsilon U_1+Ru,
+\qquad
+\Theta\beta=-\varepsilon U_1+R(\Theta-u).
+\]
+
+路径字必须保留累计正规公因子乘积 \(\prod_i g_i\) 或等价信息。另一方面，固定根分母
+\(pK\) 和自然好尾后，
+另一尾为整数当且仅当节点已经是汇点；非汇点的对应固定目标像纤维严格为空。详见
 [单新支撑 q-slab 的双碰撞与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md)及
-[线性图表中 \(p\) 边的有限瞬态与 large-slab 三锚点压缩](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md)。
+[线性图表中 \(p\) 边的有限瞬态与 large-slab 三锚点压缩](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md)、
+[来源路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md)、
+[源见证锚定的 formal Reach large-slab 边界](../claims/type-I-psi-one-actual-reach-large-slab-boundary.md)和
+[自然双尾整数性刚性](../claims/type-I-formal-natural-tail-integrality-rigidity.md)。
 
 较小方程路线也得到一个比显式偶源更一般的状态接口。对 \(2\le n<p\)，全部可能承载
 双尾保留提升的正替换坐标对，由 \(D\mid(np)^2\) 的两个模 \(4(p-n)\) 同余及严格界
@@ -1723,8 +1745,9 @@ large-slab \(Q>R/4\) 也不再是无结构余项。写 \(X=Q\alpha,Y=\beta\) 后
 terminal-first 后仍未闭合的 \(\Psi_0=1\) 状态，其完整
 \(\operatorname{Reach}(S)\) 中至少由仿射边界或外部 slab 产生直接 Type I/II、
 跨模数中心谱命中、\(K\) 支撑的两目标乘子桥，或满足完整 E1--E5 与解提升合同的合法
-support switch；若进入 large-slab，则必须在三个锚点上构造新的 equation target，
-或选择一个改变尾比的 \(D\)-only 双尾标记状态并递归闭合；空标记候选必须拒绝。
+support switch；若进入 large-slab，必须从完整来源路径字、高层仿射量或多个节点的有界
+组合中构造新的 equation target，或选择一个改变根尾数据的 \(D\)-only 双尾标记状态并
+递归闭合。只保留 \(pK\) 与自然好尾的标记纤维已经证明为空或直接终端，必须拒绝。
 固定线性图表的 \(q=p\) 已不是底层周期障碍，但高层 formal \(p\)-边若要进入证明图，
 仍须补足合法状态与 E4。
 不能先只保留汇 SCC：瞬态节点可以独占产生终端；只有完整 Reach 已经
@@ -1768,6 +1791,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{线性 }p\text{ 边瞬态、large-slab 三锚点与 source-supported 尾比刚性}\\
 \downarrow\\
+\text{源见证锚定 formal Reach 的 }1412\text{ 个 slab、来源路径字、自然尾空纤维与 }70\text{ 个后继残余}\\
+\downarrow\\
 \text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
@@ -1780,9 +1805,12 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 
 当前块饱和、同需求整数提升、双秩规范边集和 483 个缺陷一冻结状态的有限闭合已经完成；
 仿射边界 Reach 审计已在冻结谱中消除四个状态余项，标准提升审计则排除了最自然的偶源
-桥。真正余项现已从有限状态转为全称量词：后续计算只应服务于证明完整可达域中三个
-large-slab 锚点的源约束强迫终端，或为 \(D\nmid n^2\) 及换尾比标记状态构造
-递归非空证书。不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
+桥。新的完整 formal Reach 审计又排除了“源见证关系会使三个 large-slab 锚点自动
+终端”：三个分支各有 strong miss，且 70 个起始 slab 的完整 formal 后继图没有 good
+single-slab 候选。
+真正余项现已从有限状态转为全称量词：后续计算只应服务于把来源路径字与高层仿射量或
+多节点组合转成 E1--E4，或为 \(D\nmid n^2\) 及改变根尾数据的标记状态构造递归非空
+证书。不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。
 

@@ -425,8 +425,19 @@ v_\ell(\alpha(R-\alpha))>v_\ell(K)
 
 这些例子不是 Erdos--Straus 反例，也不声称对应 slab 必然属于某个指定缺陷见证的
 源可达域。它们严格否定的是：仅凭 \(\alpha=1,2,3\) 和现有双碰撞/部分容量吸收条件，
-就能逐分支推出直接终端或降 \(R\)。下一步必须利用 slab 的来源关系、锚点
-\(R-\alpha\) 的额外因子结构，或构造改变 equation target 的合法状态边。
+就能逐分支推出直接终端或降 \(R\)。
+
+后续完整审计已把这条边界加强到源见证锚定的 formal 闭包：冻结的 483 个
+\(\Psi_0=1\) F 状态中，完整 formal Reach 产生 1412 个 large-slab；加入双碰撞、当前
+节点 external-affine 菜单、三锚点 external-affine 菜单和规范容量吸收后，仍有 566 个
+strong miss，并且 \(\alpha=1,2,3\) 三支各有实例。即使把 formal 后继中的
+small-slab 吸收也算作候选，
+仍有 70 个起始 slab 的完整 formal 后继图没有这种候选。精确量词见
+[源见证锚定的完整 formal Reach large-slab 边界](type-I-psi-one-actual-reach-large-slab-boundary.md)。
+
+所以“再加入源见证关系”本身也不是闭合条件。下一步必须利用带累计正规公因子贡献的来源
+路径字、高层仿射边界量或多个节点的有界组合，并为其中真正跨状态的部分构造改变根尾
+数据且满足 E1--E4 的合法边。
 
 ## 8. 聚焦复现
 

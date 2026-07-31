@@ -352,10 +352,16 @@ R'=R+4Kt.
 4. 高层 \(q=p\) formal 瞬态如何获得 E4，或为何只需用作候选生成。
 
 large-slab 在固定线性图表的 \(m=1\) 层已经可剥离到
-\(\{\alpha,R-\alpha\}\)、\(\alpha\in\{1,2,3\}\)，而三个分支都有现有碰撞与吸收菜单
-全 miss 的线性例子。因此下一步应利用 slab 的来源关系或锚点另一侧的因子结构构造
-直接终端或新的 equation target，并为真正状态边给出全域解提升；否则 unrestricted
-rechart 只是在不同图表中重新编码原短证书问题。
+\(\{\alpha,R-\alpha\}\)、\(\alpha\in\{1,2,3\}\)。源见证锚定的完整 formal Reach
+审计进一步表明，三个分支各自都有满足来源路径约束、但碰撞、锚点 external-affine
+菜单和容量吸收仍同时失败的节点；
+完整 formal 后继图中甚至还有 70 个起始 slab 不能到达任何 good single-slab 候选。
+因此仅加入“来自冻结 F 正见证”也不能关闭本卡的第 2 项。
+
+下一步应把带累计正规公因子贡献的来源路径字与 slab 之外的高层仿射量作有界组合，或构造改变
+根尾数据的新 equation target，并为真正状态边给出全域解提升；否则 unrestricted
+rechart 只是在不同图表中重新编码原短证书问题。精确计数和最小后继残余见
+[Psi 一层 F 状态源见证锚定的完整 formal Reach large-slab 边界](type-I-psi-one-actual-reach-large-slab-boundary.md)。
 
 ## 7. 聚焦复现
 
