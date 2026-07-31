@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 354 |
+| 数学状态 | `computationally_reproduced` | 356 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 278 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 123 |
-| 证明来源 | `mixed` | 10 |
+| 证明来源 | `mixed` | 12 |
 | 证明来源 | `repository_derivation` | 110 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 225 |
+| 审阅状态 | `internal_review` | 227 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -230,6 +230,7 @@
 | [一千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-10m.md) (`type-I-b5-maximum-tail-even-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [两千万核心素数的B不大于5最大尾偶源闭合](../claims/type-I-b5-maximum-tail-even-source-closure-20m.md) (`type-I-b5-maximum-tail-even-source-closure-20m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Type I 除子证书的互素因子正规形](../claims/type-I-coprime-factor-normal-form.md) (`type-I-coprime-factor-normal-form`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-23 |
+| [核心一层形式周期的奇偶约化与 radical cube 命中边界](../claims/type-I-core-formal-cycle-radical-cube-boundary.md) (`type-I-core-formal-cycle-radical-cube-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [跨状态嵌套 q 进证书的容量上界](../claims/type-I-cross-state-q-adic-capacity-bound.md) (`type-I-cross-state-q-adic-capacity-bound`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [五亿尾遗漏的目标级B等于1缺口扩展闭合](../claims/type-I-direct-b1-gap-extension-500m.md) (`type-I-direct-b1-gap-extension-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [H19与五亿尾遗漏的目标级小B偶源闭合](../claims/type-I-direct-small-b-even-source-audit.md) (`type-I-direct-small-b-even-source-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -306,6 +307,7 @@
 | [固定 p 减一射线残余的三层自适应解析](../claims/type-I-fixed-ray-residual-resolution-600m.md) (`type-I-fixed-ray-residual-resolution-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [固定源窗口不能判定线性 B 等于一逃逸的平方本质](../claims/type-I-fixed-source-window-linear-escape-boundary-600m.md) (`type-I-fixed-source-window-linear-escape-boundary-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [核心素数的九条固定 p 减一 B 等于一因子射线](../claims/type-I-fixed-universal-pminusone-b1-rays.md) (`type-I-fixed-universal-pminusone-b1-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [形式目标对的双秩剪枝、一步终端前瞻与外部缺口选择器](../claims/type-I-formal-ranked-pruning-and-external-gap-selector.md) (`type-I-formal-ranked-pruning-and-external-gap-selector`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [形式目标因子对转移的 m 等于一支撑内循环边界](../claims/type-I-formal-target-pair-descent-cycle-boundary.md) (`type-I-formal-target-pair-descent-cycle-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [冻结 G 状态的规范有限群分离证书重建](../claims/type-I-g-separator-certificate-reconstruction.md) (`type-I-g-separator-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
