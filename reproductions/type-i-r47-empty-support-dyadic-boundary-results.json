@@ -1,0 +1,298 @@
+{
+  "schema_version": "r47-empty-support-dyadic-boundary/v1",
+  "arithmetic": "derive the universal E=48, n=p-1 dyadic terminal from K=6Q; classify two exact centered spectra; factor all four AC<=2 shifted integers; and run a directed 100-prime profile on the stored canonical empty-mask progression",
+  "scope_note": "The universal terminal and explicit F/G and four-ray boundary are exact claims. The 100-prime p-1 tail closure is finite hypothesis-supporting evidence, not an AP-wide theorem.",
+  "canonical_progression": {
+    "residue": 6238441,
+    "modulus": 12476880
+  },
+  "universal_terminal_sample": {
+    "p": 31192201,
+    "K": 366508362,
+    "Q": 61084727,
+    "L": 733016724,
+    "a": 4,
+    "b": 61084727,
+    "j": 1,
+    "E": 48,
+    "source_denominator": 31192200
+  },
+  "same_R_boundaries": {
+    "F_example": {
+      "p": 31192201,
+      "K": 366508362,
+      "K_factorization": [
+        {
+          "prime": 2,
+          "exponent": 1
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 11,
+          "exponent": 1
+        },
+        {
+          "prime": 5553157,
+          "exponent": 1
+        }
+      ],
+      "centered_spectrum_size": 45,
+      "centered_target_hit": false,
+      "support_subgroup_size": 46,
+      "support_subgroup_target_hit": true,
+      "state": "F"
+    },
+    "G_example": {
+      "p": 81099721,
+      "K": 952921722,
+      "K_factorization": [
+        {
+          "prime": 2,
+          "exponent": 1
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 158820287,
+          "exponent": 1
+        }
+      ],
+      "centered_spectrum_size": 13,
+      "centered_target_hit": false,
+      "support_subgroup_size": 23,
+      "support_subgroup_target_hit": false,
+      "state": "G"
+    },
+    "ordinary_p_minus_one_tail_exits": {
+      "31192201": {
+        "gap": 7,
+        "x": 7798052,
+        "divisor": 4,
+        "source_denominator": 3899026
+      },
+      "81099721": {
+        "gap": 3,
+        "x": 20274931,
+        "divisor": 17,
+        "source_denominator": 20274931
+      }
+    }
+  },
+  "four_small_ray_counterexample": {
+    "terminal": {
+      "p": 193391641,
+      "K": 2272351782,
+      "Q": 378725297,
+      "L": 4544703564,
+      "a": 4,
+      "b": 378725297,
+      "j": 1,
+      "E": 48,
+      "source_denominator": 193391640
+    },
+    "centered_profile": {
+      "p": 193391641,
+      "K": 2272351782,
+      "K_factorization": [
+        {
+          "prime": 2,
+          "exponent": 1
+        },
+        {
+          "prime": 3,
+          "exponent": 1
+        },
+        {
+          "prime": 29,
+          "exponent": 1
+        },
+        {
+          "prime": 1297,
+          "exponent": 1
+        },
+        {
+          "prime": 10069,
+          "exponent": 1
+        }
+      ],
+      "centered_spectrum_size": 46,
+      "centered_target_hit": true,
+      "support_subgroup_size": 46,
+      "support_subgroup_target_hit": true,
+      "state": "HIT"
+    },
+    "ray_profiles": [
+      {
+        "A": 1,
+        "C": 1,
+        "shifted_integer": 193391645,
+        "shifted_factorization": [
+          {
+            "prime": 5,
+            "exponent": 1
+          },
+          {
+            "prime": 229,
+            "exponent": 1
+          },
+          {
+            "prime": 168901,
+            "exponent": 1
+          }
+        ],
+        "ray_modulus": 4,
+        "target_residue": 3,
+        "divisor_residues": [
+          1
+        ],
+        "hit": false,
+        "witness": null
+      },
+      {
+        "A": 1,
+        "C": 2,
+        "shifted_integer": 193391649,
+        "shifted_factorization": [
+          {
+            "prime": 3,
+            "exponent": 2
+          },
+          {
+            "prime": 11,
+            "exponent": 1
+          },
+          {
+            "prime": 1953451,
+            "exponent": 1
+          }
+        ],
+        "ray_modulus": 8,
+        "target_residue": 7,
+        "divisor_residues": [
+          1,
+          3
+        ],
+        "hit": false,
+        "witness": null
+      },
+      {
+        "A": 2,
+        "C": 1,
+        "shifted_integer": 193391657,
+        "shifted_factorization": [
+          {
+            "prime": 5939,
+            "exponent": 1
+          },
+          {
+            "prime": 32563,
+            "exponent": 1
+          }
+        ],
+        "ray_modulus": 8,
+        "target_residue": 7,
+        "divisor_residues": [
+          1,
+          3
+        ],
+        "hit": false,
+        "witness": null
+      },
+      {
+        "A": 2,
+        "C": 2,
+        "shifted_integer": 193391673,
+        "shifted_factorization": [
+          {
+            "prime": 3,
+            "exponent": 1
+          },
+          {
+            "prime": 73,
+            "exponent": 1
+          },
+          {
+            "prime": 139,
+            "exponent": 1
+          },
+          {
+            "prime": 6353,
+            "exponent": 1
+          }
+        ],
+        "ray_modulus": 16,
+        "target_residue": 15,
+        "divisor_residues": [
+          1,
+          3,
+          9,
+          11
+        ],
+        "hit": false,
+        "witness": null
+      }
+    ],
+    "ordinary_p_minus_one_tail_exit": {
+      "gap": 3,
+      "x": 48347911,
+      "divisor": 6761,
+      "source_denominator": 48347911
+    }
+  },
+  "directed_prefix_profile": {
+    "prime_count": 100,
+    "parameter_min": 2,
+    "parameter_max": 479,
+    "prime_min": 31192201,
+    "prime_max": 5982663961,
+    "prime_list_sha256": "fe9a3c0a56035b0f538de6eee996b4df216b5fb262cd1dc304aa335fe6e53ec2",
+    "small_ray_hit_count": 97,
+    "small_ray_miss_count": 3,
+    "small_ray_misses": [
+      {
+        "progression_parameter": 15,
+        "p": 193391641,
+        "ordinary_p_minus_one_tail": {
+          "gap": 3,
+          "x": 48347911,
+          "divisor": 6761,
+          "source_denominator": 48347911
+        }
+      },
+      {
+        "progression_parameter": 87,
+        "p": 1091727001,
+        "ordinary_p_minus_one_tail": {
+          "gap": 7,
+          "x": 272931752,
+          "divisor": 82,
+          "source_denominator": 136465876
+        }
+      },
+      {
+        "progression_parameter": 295,
+        "p": 3686918041,
+        "ordinary_p_minus_one_tail": {
+          "gap": 3,
+          "x": 921729511,
+          "divisor": 17,
+          "source_denominator": 921729511
+        }
+      }
+    ],
+    "ordinary_p_minus_one_tail_hit_count": 100,
+    "ordinary_p_minus_one_tail_miss_count": 0,
+    "ordinary_tail_first_gap_counts": {
+      "3": 44,
+      "7": 41,
+      "11": 7,
+      "19": 3,
+      "23": 5
+    }
+  }
+}

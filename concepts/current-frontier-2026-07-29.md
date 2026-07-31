@@ -1287,6 +1287,15 @@ d\mid h^2,\qquad d\equiv-1\ \text{或}\ -h\pmod R.
 完整证明见
 [私有 u=3 载体族的二进终端与 Type II 支撑退出](../claims/type-I-private-u3-carrier-dyadic-terminal-q-free-type-II.md)。
 
+该偶终端的提升合同也已完成精确复核。自然源中的标记分母
+\(\alpha=q(t-3)/2\) 的源纤维非空，当且仅当上式的同状态 Type I 条件已经命中；
+\(\alpha\) 不等于平凡解中的 \(n/2\) 或 \(n\)。保留平凡解两个坐标的提升由通用障碍
+排除，而把 \(E=4h^2\) 直接用作保留 \(n/2\) 或 \(n\) 的一分母因子，又分别要求
+\(-1\) 成为模 \(3\pmod4\) 整数的平方，或要求一个 \(2\pmod3\) 的数被 3 整除。
+因此两条最自然的 \(E\) 循环使用都不可能；剩余条件精确落在
+\(h^2,(n/2)^2,n^2\) 的三个 \(q\)-free 因子族。见
+[私有 u=3 偶终端的自然提升障碍与 q-free 因子三分](../claims/type-I-private-u3-terminal-natural-lift-obstruction.md)。
+
 ## 目标五十：内禀联合分母缺陷与外部提升
 
 对目标纤维
@@ -1447,9 +1456,13 @@ m\le\frac{p+32}{15}<p-2
 的显式证书。详见
 [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md)。
 这不是把周期 `MISS_CAPACITY` 改成格内命中，而是首次在一个完整无限周期相族上把
-“容量失败”严格转成了周期外短证书。当前 \(R=47\) 只剩空掩码 `MISS_EXTERNAL`；下一步
-应对该余核检验普通 \(p-1\) 双尾递降、完整 Type I \(p-1\) 桥与
-\(A,C\in\{1,2\}\) 可变射线的有限析取，单个失败素数即可推翻候选命题。
+“容量失败”严格转成了周期外短证书。空掩码随后也得到统一终端：写 \(K=6Q\)，
+\(Q\equiv2\pmod {47}\) 强制 \((a,b,j)=(4,Q,1)\)，从而
+\(E=48,n=p-1\)。但真实 F/G 点说明它没有同 \(R=47\) 的自然标记提升；
+\(p=193391641\) 又同时反驳 \(A,C\in\{1,2\}\) 的四射线菜单。定向前 100 个规范
+进程素数均由普通 \(p-1\) Type II 双尾闭合，这只把下一步候选压缩为
+“变化的 \(p-1\) 因子容量，或失败后的合法换状态”，不能充当全称证明。见
+[R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md)。
 
 第二，\(K\) 支撑周期的平方自由支撑积记为 \(B\)。旧的 direct radical 猜想已经被
 \(R=30031\) 五周期否定：其 support cube 不含 \(-1\)。但若该 cube 命中
@@ -1523,6 +1536,8 @@ terminal-first 后仍未闭合的 \(\Psi_0=1\) 状态，其两个良基剪枝或
 \downarrow\\
 \text{私有支撑退出与 marked 等价；代理过载有限分流 }35+2\\
 \downarrow\\
+\text{私有偶终端自然提升障碍与 }q\text{-free 三因子筛}\\
+\downarrow\\
 \text{完整坐标审计排除固定 }q\text{；提取原始盒的全部最小联合投影阻碍}\\
 \downarrow\\
 \text{当前块饱和、带符号分母前沿与 }q\text{ 进清分子参数刚性}\\
@@ -1532,6 +1547,8 @@ terminal-first 后仍未闭合的 \(\Psi_0=1\) 状态，其两个良基剪枝或
 \text{双秩剪枝、一步外部缺口前瞻与冻结分支 }55/55\\
 \downarrow\\
 \text{cycle-or-hit、周期表示格、两目标乘子桥、核心可实现性与偶翻转分段}\\
+\downarrow\\
+\text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
 \downarrow\\
 \text{全称源可达 SCC 逃逸，或合法换 }K/R\text{ 支撑与解提升}\\
 \downarrow\\

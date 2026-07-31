@@ -271,6 +271,13 @@ m\le\frac{p+32}{15}<p-2.
 是周期外证书，不能把 `MISS_CAPACITY` 重命名为周期格 `HIT`，也不能把周期格三相混同于
 使用 \(K\) 全部素因子的环境 F/G/hit 三分。
 
+空掩码的终端结构也已进一步明确。写 \(K=6Q\) 后，
+\(Q\equiv2\pmod {47}\) 强制普通二进对 \((a,b)=(4,Q)\)，从而全族都有
+\(E=48,n=p-1\) 的偶终端；但环境 F/G 点没有可承载它的同 \(R=47\) Type I 正规形。
+此外，\(A,C\in\{1,2\}\) 的四条小 Type II 射线存在真实空掩码反例。详见
+[R=47 空掩码的 p-1 二进终端与外部出口边界](type-I-r47-empty-support-pminusone-dyadic-boundary.md)。
+所以这里剩余的对象已不是“找一个终端”，而是选择新的 \(p-1\) 正规形或合法可提升后继。
+
 复现程序与结果为
 `reproductions/type_i_cycle_lattice_capacity_certificate.py` 和
 `reproductions/type-i-cycle-lattice-capacity-certificate-results.json`。结果保存四个显式实例的

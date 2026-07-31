@@ -251,9 +251,13 @@ T=\varnothing,
 \]
 
 即周期格的 MISS_EXTERNAL 相。该相不能由 \(p=313\) 的个例证书外推，也不存在一条
-固定 \((A,C,\kappa)\) 的 Type II 原始射线覆盖仓库选定的整条 CRT 素数进程。下一步应
-只针对这个空掩码族检验一个可证伪的有限析取：普通 \(p-1\) 双尾递降、完整 Type I
-\(p-1\) 桥，或 \(A,C\in\{1,2\}\) 的四类可变 \(\kappa\) Type II 射线。
+固定 \((A,C,\kappa)\) 的 Type II 原始射线覆盖仓库选定的整条 CRT 素数进程。后续分析
+已经证明该族统一具有 \(E=48,n=p-1\) 的二进终端，同时找到
+\(A,C\in\{1,2\}\) 四类可变 \(\kappa\) 射线的显式反例；定向前 100 个进程素数则全部
+被普通 \(p-1\) 双尾闭合。严格边界见
+[R=47 空掩码的 p-1 二进终端与外部出口边界](type-I-r47-empty-support-pminusone-dyadic-boundary.md)。
+因此下一步只保留普通 \(p-1\) 双尾、完整 Type I \(p-1\) 桥及其失败后合法换状态之间的
+结构析取，不再把四条小射线当作独立全称候选。
 
 符号恒等式、样本单位分数恢复和全部十六个掩码的选择分支由
 reproductions/type_i_r47_nonempty_support_short_selector.py 重放，冻结结果为
