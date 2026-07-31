@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-formal-linear-chart-p-transience-large-slab-anchor
 title: 线性图表中 p 边的有限瞬态与 large-slab 三锚点压缩
-statement: 对真正线性图表 p=a+s+asR，恒有 R<=p-2；formal Reach 保持 R，故任一 m=1 节点都不可能含 q=p 出边，所有 p 边只在 m>1 严格降层并且不属于周期。若 m=1 的单外部 slab 写成 X=q^e alpha、Y=beta、alpha beta|K、q不整除K 且 q^e>R/4，则 alpha只能为1、2、3，q不等于p；对全部 Q|M|Q alpha beta，存在降 R 的 M 当且仅当 M=Q 已经下降，扩大保留容量无补救作用。规范 q-peeling 路径到达锚点 {alpha,R-alpha}；除可能的第一步外，这一 peeling 段全部严格降 min，第一步只可能降 min、降 max 或成为唯一的 R=3 二进自环。锚点若非 Type I 汇点，当时的全部剩余超额集中在 R-alpha。三个 alpha 分支均有现有碰撞与容量吸收菜单全 miss 的线性例子，因此该压缩尚不是全称终端或合法 E4 递降。
+statement: 对真正线性图表 p=a+s+asR，恒有 R<=p-2；formal Reach 保持 R，故任一 m=1 节点都不可能含 q=p 出边，所有 p 边只在 m>1 严格降层并且不属于周期。若 m=1 的单外部 slab 写成 X=q^e alpha、Y=beta、alpha beta|K、q不整除K 且 q^e>R/4，则 alpha只能为1、2、3，q不等于p；对当前 slab 内全部 Q|M|Q alpha beta，存在降 R 的 M 当且仅当 M=Q 已经下降。规范 q-peeling 路径到达锚点 {alpha,R-alpha}；除可能的第一步外，这一 peeling 段全部严格降 min。三个 alpha 分支均有旧碰撞/锚点/降R菜单全 miss 的线性例子，但后续 absorbed-support 增广已把其中 R_Q<p 的上升图表重新分类为合法 marked edge；当前真正 clean residual 是 R_{AQ}>p 的 overflow。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -28,10 +28,16 @@ sources:
   - claim: type-I-formal-external-slab-collision-absorption-rechart
     role: large-slab-input-and-existing-terminal-menu
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-01'
 ---
 
 # 线性图表中 \(p\) 边的有限瞬态与 large-slab 三锚点压缩
+
+> 本卡中“扩大保留容量无补救”和 strong miss 的原量词只覆盖当前 slab 内
+> \(M=Qd,\ d\mid\alpha\beta\)，并以 \(R\) 为势。跨步骤保存
+> absorbed support \(A\mid K\) 后，可以取 \(M=AQ\) 并用另一全局势接受
+> \(R<R_{AQ}<p\)。见
+> [累积支撑重图表与 overflow 边界](type-I-marked-support-accumulation-rechart-saturation.md)。
 
 ## 1. 线性可实现性给出的 \(R<p\)
 

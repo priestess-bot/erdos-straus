@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-large-slab-factor-pair-layer-capacity
 title: large-slab 的受限因子对正规形与跨指数层支撑容量
-statement: 对 m=1 单外部 large-slab X=q^e alpha、Y=beta、K=alpha beta c，其中 alpha属于{1,2,3}且q不整除alpha，令 N_{alpha,e}=alpha p q^e+1、H=4 alpha c-p，则 beta H=N_{alpha,e}；反之，满足 H=N/beta、H同余-p模4alpha、q不整除(H+p)/(4alpha)及 beta<(4-alpha)q^e 的每个除子 beta，都唯一恢复一个算术 large-slab。对 f>=e 还有精确公式 gcd(N_{alpha,e},N_{alpha',f})=gcd(N_{alpha,e},alpha' q^{f-e}-alpha)，故固定 alpha 的尾素数只出现在一个指数剩余类中。对来源路径字的两个交叉乘积，slab 素数进入共同过载因子的指数又由 v_q(Theta)、v_q(V)、e、v_q(x_R) 精确决定。这给出无扫描上界的因子层和路径层容量接口，但不自动产生 Type I/II 或合法 E4。
+statement: 对 m=1 单外部 large-slab X=q^e alpha、Y=beta、K=alpha beta c，其中 alpha属于{1,2,3}且q不整除alpha，令 N_{alpha,e}=alpha p q^e+1、H=4 alpha c-p，则 beta H=N_{alpha,e}；反之，满足 H=N/beta、H同余-p模4alpha、q不整除(H+p)/(4alpha)及 beta<(4-alpha)q^e 的每个除子 beta，都唯一恢复一个算术 large-slab。对 f>=e 有精确 N-gcd 公式；同一图表的任意两个 clean slab 还有 beta_j/beta_i=(alpha_j/alpha_i)q^(e_j-e_i) (mod R) 的真实中心谱 cocycle，且固定 (p,R,q) 最多只有三条 large-slab。对来源路径字的两个交叉乘积，slab 素数进入共同过载因子的指数又由 v_q(Theta)、v_q(V)、e、v_q(x_R) 精确决定。这给出无扫描上界的因子层、图表层和路径层容量接口，但不自动产生 Type I/II 或合法 E4。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -10,6 +10,7 @@ depends_on:
   - type-I-formal-linear-chart-p-transience-large-slab-anchor
   - type-I-psi-one-source-word-large-slab-constraint
   - type-I-source-word-joint-capacity-common-split-dichotomy
+  - type-I-general-b-antipodal-divisor-spectrum
 topics:
   - type-I
   - formal-target-pair
@@ -27,6 +28,8 @@ sources:
     role: source-word-slab-arithmetic-identity
   - claim: type-I-source-word-joint-capacity-common-split-dichotomy
     role: cross-product-common-overload-factor
+  - claim: type-I-general-b-antipodal-divisor-spectrum
+    role: centered-divisor-ratio-spectrum
 visibility: public
 last_checked: '2026-08-01'
 ---
@@ -335,6 +338,73 @@ e\equiv e_0\pmod {\operatorname{ord}_\ell(q)}.
 因此同一 \((p,q,e)\) 下，所有 admissible \(\alpha\) 分支不可能共享任何奇尾素数。
 奇 \(q\) 时 \(\alpha=1,3\) 之间唯一的公共载体只是普适奇偶因子 \(2\)；还要保留
 \(q\nmid\alpha\) 对可用分支的删除。
+
+### 6.1 固定图表的 \(\beta\)-ratio cocycle
+
+现在进一步固定同一张 \((p,R,K)\) 图表和外部素数 \(q\)。设两条 clean large-slab 为
+
+\[
+\beta_i=R-\alpha_iq^{e_i},
+\qquad
+\alpha_i\beta_i\mid K,
+\tag{25a}
+\]
+
+其中 \(q\nmid K\)。由 \((\alpha_iq^{e_i},\beta_i)=1\) 可知
+\((\beta_i,R)=1\)，故每个 \(\beta_i\) 都是模 \(R\) 单位。直接模 \(R\) 相除得到
+
+\[
+\boxed{
+\gamma_{ij}:=\beta_j\beta_i^{-1}
+\equiv
+\frac{\alpha_j}{\alpha_i}q^{e_j-e_i}\pmod R.}
+\tag{25b}
+\]
+
+这不是支撑生成群中的抽象元素。因为 \(\beta_i,\beta_j\mid K\)，中心平方除子谱的商集
+刻画给出
+
+\[
+\boxed{\gamma_{ij}\in\mathcal C_R(K).}
+\tag{25c}
+\]
+
+而且这些元素满足真正的 cocycle 关系
+
+\[
+\gamma_{ij}\gamma_{jk}=\gamma_{ik}.
+\tag{25d}
+\]
+
+若 \(e_j\ge e_i\)，同一减法还给出尾因子的精确交叠：
+
+\[
+\boxed{
+(\beta_i,\beta_j)
+=
+\gcd\left(\beta_i,\alpha_jq^{e_j-e_i}-\alpha_i\right).}
+\tag{25e}
+\]
+
+large-slab 大小条件使同一状态内的层数本身有常数界。对固定 \(\alpha=2\) 或 \(3\)，
+若存在两个指数 \(e<f\)，则 \(q^f\ge2q^e>R/2\)，从而
+\(\alpha q^f\ge R\)，矛盾。因此两支各至多一层。对 \(\alpha=1\)，只有 \(q=2\)
+或 \(3\) 时可能有相邻两层；其它素数也至多一层。又因 \(q\nmid\alpha\)，
+\(q=2\) 删除 \(\alpha=2\)，\(q=3\) 删除 \(\alpha=3\)。所以
+
+\[
+\boxed{
+\#\{\text{同一 }(p,R,K,q)\text{ 的 clean large-slabs}\}\le3.}
+\tag{25f}
+\]
+
+若 \(\alpha=1\) 的相邻两层同时存在，(25b) 直接把 \(q\) 注入
+\(\mathcal C_R(K)\)。由 (25e)，两尾在 \(q=2\) 时互素，在 \(q=3\) 时公因子恰为
+\(2\)。若同一指数有不同 \(\alpha\)，(25b) 则注入 \(2,3\) 或 \(3/2\) 的相应比值。
+
+这些 cocycle 是固定状态 Kneser 分析的真实低成本输入，但不能直接声称谱饱和：
+\(\mathcal C_R(K)\) 一般不是子群。要调用稳定子商容量，仍须先固定一个因子层并证明其
+谱在相应稳定子下闭合。不同 \(R\) 的 slab 位于不同单位群，更不能直接相加。
 
 ## 7. 来源交叉表示中的 slab-\(q\) 精确载体判据
 
@@ -647,7 +717,8 @@ q\mid C(L_U(w))C(L_V(w))
 2. 固定外部 \(q\) 的高度层数和候选数有精确有限容量；
 3. 尾素数跨层复用由 (17)、(22)、(24) 控制；
 4. 同一指数的所有 admissible \(\alpha\) 分支在奇支撑上完全分离；
-5. slab 素数进入来源共同过载因子的条件由 (33)--(35) 精确判定。
+5. 同图表 clean slabs 产生至多三条真实中心谱 cocycle；
+6. slab 素数进入来源共同过载因子的条件由 (33)--(35) 精确判定。
 
 它仍没有证明以下任何一项：
 

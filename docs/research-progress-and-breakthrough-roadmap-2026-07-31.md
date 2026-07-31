@@ -39,9 +39,9 @@
 
 当前最窄的三个余项是：
 
-- `large-slab`；
-- 特殊外部载体（仓库前沿仍列有 \(q=p\)，但在原始线性图表的 \(m=1\) 层可能可以进一步排除）；
-- \(D\)-only 后继标记集的递归非空性。
+- \(R_{AQ}>p\) 的 clean-slab overflow；
+- competing-excess sink-SCC 到 clean slab 或直接终端的强制；
+- \(p-n\ge2\) 的 \(D\)-only 非空选择和多坐标 Pareto 容量注入。
 
 综合判断：
 
@@ -51,8 +51,8 @@
 | 周期障碍的规范化 | 已有关系格和容量盒判据 | 强进展 |
 | 冻结 \(\Psi_0=1\) 状态 | 483/483 状态内候选闭合 | 很强有限证据 |
 | 广义二进终端 | 内部选择器成熟，自然提升被关闭 | 路线澄清 |
-| external slab | small-slab 已有合法吸收边 | 接近一般分支 |
-| 标记递降 | \(D\)-only 正规形已完成，非空选择未完成 | 核心开放点 |
+| external slab | \(R_{AQ}<p\) 已有 absorbed-support 良基边 | clean 余项只剩 overflow |
+| 标记递降 | \(D\)-only 正规形完成，\(n=p-1\) 层已证明全空 | \(p-n\ge2\) 仍开放 |
 | 全称选择器 | 尚未闭合 | 决定性缺口仍在 |
 | 独立复核 | 仍明显不足 | 可信度瓶颈 |
 
@@ -60,7 +60,7 @@
 
 \[
 \boxed{
-\text{\(m=1\) large-slab 的 }a=1,2,3\text{ 三分逃逸定理}
+\text{overflow determinant 的换载体、终端或合法后继定理}
 }
 \]
 
@@ -72,7 +72,8 @@
 }
 \]
 
-前者有机会闭合 external slab 分支；后者有机会产生第一族真正可用于归纳的标记解提升。
+前者有机会闭合 clean external slab 分支；后者必须避开已经证明为空的 \(n=p-1\) 层，
+才可能产生新的可递归标记解提升。
 
 ---
 
@@ -739,6 +740,11 @@ W(p,n,D)
 
 ### 9.1 第一优先级：\(m=1\) large-slab 的 \(a=1,2,3\) 压缩
 
+> **当前重分类：** 三系数压缩仍是正确参数化，但不再是当前开放量词。
+> absorbed-support 定理已经统一处理所有 \(R_{AQ}<p\) 的 clean slab，包括
+> \(R_{AQ}>R\) 的上升图表。以下 \(a=1,2,3\) 分析保留为 overflow 的输入；
+> 当前第一优先级是 \(R_{AQ}>p\) 的 determinant 分支，而不是重新证明三类局部菜单。
+
 在最终 \(m=1\) 周期层，单外部 slab 满足
 
 \[
@@ -1154,8 +1160,9 @@ z\equiv-\sigma\pmod\mu,
 > \]
 >
 > 保留同一个 \(103\)-static 二循环，但 \(R_{103}=375>207\)，gap \(103\)、两类
-> collision、节点/锚点菜单和新图表中心谱全部 miss，所以指定 \(103\) 真正落入
-> large-slab \(a=2\)。该状态仍不是全局 unresolved：循环的 \(q=41\) 给
+> collision、节点/锚点菜单和新图表中心谱全部 miss，所以它是旧的固定 \(R\) 菜单
+> 边界；然而 \(R_{103}=375<p\)，在携带 absorbed support 后已经是势严格下降的
+> marked edge。该状态也不是全局 unresolved：循环的 \(q=41\) 给
 > \(R_{41}=35<207\) 并立即中心命中，\(q=101\) 的新图表也中心命中。详见
 > [底层外部静态载体的来源三分与吸收边界](../claims/type-I-bottom-external-static-carrier-support-fork.md)。
 >
@@ -1184,8 +1191,92 @@ z\equiv-\sigma\pmod\mu,
 >
 > 这结构性关闭了把小 endpoint gap、短路径标签或小 rechart 模数直接当作 equation rank
 > 的方案。当前优先级因此进一步收紧为：先在所有路径前缀和 SCC 节点扫描 direct
-> terminal 与 clean-slab absorption；剩余只主攻 large-slab \(a=1,2,3\)、
+> terminal 与 clean-slab marked absorption；剩余只主攻 \(R_{AQ}>p\) 的 overflow、
 > multi-excess SCC 的 clean-slab 强制，以及多坐标层价格的真实算术容量映射。
+
+> **2026-08-01 累积支撑下降与 overflow 重分类。** 上一段的 “large-slab”
+> 余项现在可以再严格缩小。在线性图表状态中增加 absorbed support
+> \(A\mid K\)。clean external slab 给出 \(Q=q^e,\ q\nmid K\) 后，令
+>
+> \[
+> M=AQ,\qquad
+> pR_M\equiv-1\pmod {4M},\qquad
+> 1\le R_M<4M.
+> \]
+>
+> 若 \(R_M<p\)，则后继 \((p,R_M,K_M;M)\) 保持同一个 equation target \(4/p\)
+> 和同一个标记集 \(\operatorname{Sol}(p)\)，解提升为恒等映射，而且
+>
+> \[
+> \left\lfloor\frac{(p-1)^2}{4AQ}\right\rfloor
+> <
+> \left\lfloor\frac{(p-1)^2}{4A}\right\rfloor.
+> \]
+>
+> 因此不再要求 \(R_M<R\)。已吸收素数永久保留在 \(A\mid K\) 中，不能重新作为
+> external \(q\) 收费；每条边至少把 \(A\) 翻倍。过去列作 local strong miss 的
+> \((107722177,207,Q=103)\)、\((21169,23,Q=7)\) 等例，由于 \(R_Q<p\)，现已是
+> verified marked edge，而不是 residual。
+>
+> 真正 clean residual 是
+>
+> \[
+> R_M>p.
+> \]
+>
+> 此时 \(M>p/4\)。写 \(K_M=MC\)，并令
+>
+> \[
+> n=4M-R_M,\qquad d=p-C,
+> \]
+>
+> 得到精确 overflow determinant
+>
+> \[
+> \boxed{pn=4Md+1,\qquad(M,pn)=1.}
+> \]
+>
+> 它尚不是后继。初始 \(A=1,\alpha=2,3\) 时 \(h=4Q-p\) 是合法 gap，但完整
+> \(p^iq^j\) 三目标谱已有 \(9,9,75\) 个候选全 miss 的三个精确边界，所以 overflow
+> 后不能依赖 generalized prime-power terminal 自动闭合。
+>
+> 三个内部系数还给出不同接口：\(\alpha=1\) 有“gap 3 Type II 或规范
+> \(\ell\equiv2\pmod3\) 容量超额”二分；\(\alpha=2\) 的固定载体补量严格下降
+> \(d\mapsto d-4\tau\)，但换载体会重置；\(\alpha=3\) 产生
+> \(n_*Q-p\beta'=1\)、\(0<n_*<p\) 的 Farey 邻接候选，但尚无全域解提升。
+> 一个无穷 \(\alpha=1\) 算术族还给出 \(E=196,n=p-5\) 的广义 \(2^2\) 数据；
+> 自然标记在中心 miss 时为空，所以它只能登记为
+> unlifted_generalized_dyadic_candidate。
+>
+> 同图表的两个 clean slabs 还给出真实中心谱 cocycle
+>
+> \[
+> \beta_j\beta_i^{-1}
+> \equiv
+> \frac{\alpha_j}{\alpha_i}q^{e_j-e_i}\pmod R,
+> \]
+>
+> 且固定 \((p,R,K,q)\) 最多只有三条 slab。这为稳定子/Kneser 容量提供了常数大小的
+> 真实输入，但中心谱本身不是群，尚不能直接推出饱和。
+>
+> \(D\)-only 方向也有新的全域 no-go：对每个 \(p\equiv1\pmod4\)，
+> \(n=p-1\) 的 non-source-supported 标记纤维恒空；source-supported 分支只等价已有
+> 中心 Type I。证明通过 \(s=a^2c,\lambda=abc\) 参数化和 Vieta 下降完成。因此后续
+> D-only 只研究 \(p-n\ge2\) 的大尺度路径量。
+>
+> 这轮工作的净结论不是 large-slab 已闭合，而是优先级被改写为：
+>
+> 1. overflow determinant 的换载体/终端/合法标记状态三分；
+> 2. 至多三个 \(\beta\)-ratio cocycle 的固定层稳定子容量；
+> 3. \(\alpha=1\) 的 gap 3 容量超额及 \(\alpha=3\) determinant pair 的合法标记提升；
+> 4. competing-excess SCC 到 clean slab 或直接终端的强制；
+> 5. \(r\ge2\) 的大尺度 D-only 三目标，不再测试 \(r=1\)。
+>
+> 详见
+> [累积支撑重图表与 overflow 边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md)、
+> [large-slab 因子层与 cocycle 容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md)、
+> [large-slab 三系数算术边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md)和
+> [p 减一秩 D-only no-go](../claims/two-denominator-lift-core-rank-one-no-go.md)。
 
 更长远的目标是证明一个选择定理：
 
@@ -1289,9 +1380,11 @@ W(p,n,D)
 \[
 \text{双碰撞}
 \quad\lor\quad
-Q\le R/4\text{ 的吸收重图表}
+\text{clean slab 的 }R_{AQ}<p\text{ 累积支撑边}
 \quad\lor\quad
-m=1,\ a\in\{1,2,3\}\text{ 的 large-slab}.
+R_{AQ}>p\text{ overflow}
+\quad\lor\quad
+\text{competing excess}.
 \]
 
 ### Phase E：真正递归
@@ -1314,7 +1407,7 @@ m=1,\ a\in\{1,2,3\}\text{ 的 large-slab}.
 
 证明一个不含有限扫描上界的非平凡分支，例如：
 
-- large-slab \(a=1,2,3\) 全部分流；
+- overflow determinant 的换载体/终端/合法后继全部分流；
 - 核心可实现两翻转周期全部三目标命中；
 - 一个无限 D-only 子族标记集自动非空。
 
@@ -1353,16 +1446,16 @@ m=1,\ a\in\{1,2,3\}\text{ 的 large-slab}.
 - 不再扩大 483 状态菜单；
 - 将 \(m=1\) 原始线性图表中的 \(q=p\) 排除写成正式候选引理并做反例审计。
 
-### 第 2 周：large-slab 三类完全分类
+### 第 2 周：overflow 与换载体分类
 
-对 \(a=1,2,3\) 分别推导：
+对 \(R_{AQ}>p\) 的 overflow 分别推导：
 
-- 可用模类；
-- \(Q\) 的大小区间；
-- 两碰撞的因子条件；
-- \(R_Q\) 和其它 \(R_M\) 的方向；
-- 与五项仿射边界菜单的重合；
-- 可构造的 \(n,D,\mu,\sigma\)。
+- determinant \(pn=4AQd+1\) 的互补坐标；
+- 同状态其它 clean carrier 是否必存在；
+- 素数幂 gap 三目标 miss 的 Fourier 分离角色；
+- \(\beta\)-ratio cocycle 的稳定子闭包；
+- 可构造的 \(n,D,\mu,\sigma\)，并排除 \(p-n=1\)；
+- competing-excess 与 overflow 的相互转换。
 
 输出必须是定理候选或明确反例，不是覆盖率表。
 
@@ -1443,7 +1536,9 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 - 抽象周期是否与核心素数相容已有无穷素数判据；
 - 周期的直接 radical 错误命题被三目标乘子桥修正；
 - external slab 首次接上直接终端和合法降 \(R\) 重图表；
-- 双尾提升首次具有完整的 \(D\)-only 状态参数化和全域解提升。
+- absorbed support 使所有 \(R_{AQ}<p\) 的 clean slab 都成为良基边，不再要求降 \(R\)；
+- clean residual 已压成带 \(pn=4AQd+1\) 的 overflow；
+- 双尾提升具有完整的 \(D\)-only 状态参数化，且 \(n=p-1\) 非自然层已证明全空。
 
 项目已经从“证书搜索实验室”进入“少数结构引理决定成败”的阶段。
 
@@ -1451,7 +1546,7 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 
 \[
 \boxed{
-\text{large-slab 的 }a=1,2,3\text{ 三分}
+\text{overflow determinant 的换载体、终端或合法后继三分}
 }
 \]
 
@@ -1463,6 +1558,8 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 }
 \]
 
-其中任意一条获得无样本上界的定理，都可以称为真正的近期突破。若两者能够连接——large-slab 规范地产生一个低复杂度且非空的 D-only 后继——就可能形成项目第一条真正可重复递归的证明分支。
+其中任意一条获得无样本上界的定理，都可以称为真正的近期突破。若两者能够连接——
+overflow 规范地产生一个 \(p-n\ge2\) 且非空的 D-only 后继——就可能把当前已经良基的
+clean-slab 子程序继续接到新的递归分支。
 
 完整猜想是否能很快解决，目前仍高度不确定；但在未来数周内取得一个可发表的无限分支定理、合法递降子族或周期全称子类闭合，是现实目标。研究资源应集中在这些严格定义的节点上，而不再分散到新的有限菜单和同类终端枚举中。

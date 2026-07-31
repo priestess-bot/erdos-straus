@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。相位 -1 表示的指数盒外向量与 K/x_R 共同过载逐坐标相同；带表示见证时可保留 P/Q 侧载体，但无符号 Pareto 向量本身不含方向。完整目标纤维扩张 SCC 支撑时，旧坐标 forced height 只能下降、新坐标恒为零，所以不能靠新增标签制造单 q 收费。来源路径字的双容量 miss 精确二分为共同过载或 strict split；p=2017,R=207 只反驳同图表 external Reach 终端和 cycle-ray 容量修复，它已有 ordinary gap 15、前缀 R_103=115 absorption 及循环 q=101 中心出口，不是 terminal-first 或 terminal-or-descent 反例。底层 path-carried static 素数现可无条件回溯为 verified absorption、large-slab a∈{1,2,3} 或竞争 raw 超额分支；p=107722177,R=207 证明指定静态 q 本身仍可能落入 local strong large-slab miss。D-only 又有全域空集界和 non-source 分支 n>sqrt(p) 的尺寸障碍。真正余项已压为 large-slab、multi-excess SCC 的 clean-slab/终端强制，以及多坐标 Pareto 层价格到实际跨状态载体容量的算术注入；PRE--ABSORB 只解决调度，不补 E1--E4。
+summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。底层 path-carried static 素数可回溯为 clean slab 或竞争 raw 超额；clean slab 现进一步携带 absorbed support A|K，并以 R_{AQ}<p 的规范重图表给出恒等解提升及势 floor((p-1)^2/(4A)) 严格下降，即使新 R 增大也不成环。过去 p=107722177,R=207 等 local strong large-slab miss 因 R_Q<p 已重新分类为 marked descent；真正 clean 余项收紧为 R_{AQ}>p 的 overflow，其精确边界为 pn=4AQd+1，且 generalized prime-power gap 谱已有全 miss 反例。固定图表的 clean slabs 还产生真实 beta-ratio 中心谱 cocycle，且同一 q 最多三层。D-only 方面，non-source 分支除 n>sqrt(p) 外，n=p-1 层现已由 Vieta 下降证明全域空。当前决定性余项是 overflow 换载体/终端、multi-excess SCC 的 clean-slab 强制，以及多坐标 Pareto 价格到实际跨状态载体容量的算术注入。
 topics:
 - research-map
 - proof-program
@@ -1964,15 +1964,17 @@ absorption；同一循环的 \(101\)-slab 还在 \(R_{101}=135\) 中心命中。
 ordinary gap \(15\) 终端。因此它不能被列作完整 sink-SCC 逃逸的反例。
 
 一般地，对底层节点 \(X=q^e a,Y\) 和外部 \(q\nmid K\)，若 \(aY\mid K\)，该节点
-就是 clean slab，精确进入 \(R_{q^e}<R\) 的 verified absorption 或
-\(q^e>R/4,a\in\{1,2,3\}\) 的 large-slab；若 \(aY\nmid K\)，同一节点必有另一个
-\(r\ne q\) 超过 \(K\) 容量并产生竞争 raw 边。path-carried static receipt 因此已有
+就是 clean slab。状态继续携带此前的 absorbed support \(A\mid K\)，并令
+\(M=Aq^e\) 后，它精确进入 \(R_M<p\) 的 marked absorption 或 \(R_M>p\) 的
+overflow；若 \(aY\nmid K\)，同一节点必有另一个 \(r\ne q\) 超过 \(K\) 容量并产生
+竞争 raw 边。path-carried static receipt 因此现在已有
 \[
-\texttt{ABSORB}\ \lor\ \texttt{LARGE}\ \lor\ \texttt{COMPETING\_EXCESS}
+\texttt{MARKED\_ABSORB}\ \lor\ \texttt{OVERFLOW}\ \lor\ \texttt{COMPETING\_EXCESS}
 \]
-的无样本来源三分。它没有闭合 large/multi-excess 两支；\(p=107722177,R=207\)
-给出指定 static \(103\) 的 local strong large-slab miss，但同一 SCC 仍由 \(q=41\)
-下降并中心命中。详见
+的无样本来源三分。它没有闭合 overflow/multi-excess 两支。旧例
+\(p=107722177,R=207,Q=103\) 的指定 static 局部菜单虽全部 miss，但
+\(R_Q=375<p\)，现已由 absorbed-support 势登记为合法 marked descent；同一 SCC
+还可由 \(q=41\) 下降并中心命中。详见
 [底层外部静态载体的来源三分与吸收边界](../claims/type-I-bottom-external-static-carrier-support-fork.md)。
 
 短路径仍有价值，但只能作为候选生成器。\((p,R)=(5596369,35)\) 的三次 dyadic peeling
@@ -2100,6 +2102,138 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 把当前块高度从 \(e\) 中再次扣除，
 或把 \(\forall z\exists q\) 交换成 \(\exists q\forall z\)，都不算推进。
 
+## 目标五十一：累积支撑下降、overflow 与 rank-one no-go
+
+large-slab 的旧余项已经发生实质性收缩。在线性图表状态中加入
+
+\[
+A\mid K
+\]
+
+作为此前已吸收支撑，并令 clean external \(Q=q^e\) 更新
+
+\[
+M=AQ,\qquad
+pR_M\equiv-1\pmod {4M},\qquad
+1\le R_M<4M.
+\]
+
+若 \(R_M<p\)，则新状态 \((p,R_M,K_M;M)\) 保持
+\(W=\operatorname{Sol}(p)\)，解提升为恒等映射，而
+
+\[
+\Phi(A)=
+\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor
+\]
+
+严格下降。关键点是势由被永久保留的 \(A\) 支付，不再要求 \(R_M<R\)。因此
+
+\[
+(241,7,Q=5),\quad
+(193,15,Q=7),\quad
+(337,23,Q=7),\quad
+(107722177,207,Q=103),\quad
+(21169,23,Q=7)
+\]
+
+等旧 local strong miss 都已经是合法 marked edge，而不是 residual。聚焦链
+
+\[
+(R,A)=(3,1)\to(7,2)\to(23,6)\to(47,66)
+\]
+
+的势依次为 \(1296,648,216,19\)，随后 \(Q=23\) 首次进入 overflow，直接展示了
+“累积且不重入”的良基机制。
+
+若 \(R_M>p\)，则 \(M>p/4\)。写 \(K_M=MC\)，并令
+
+\[
+n=4M-R_M,\qquad d=p-C,
+\]
+
+有精确 determinant
+
+\[
+\boxed{pn=4Md+1,\qquad(M,pn)=1.}
+\]
+
+这是当前真正的 clean residual。初始 \(A=1,\alpha=2,3\) 时
+\(h=4Q-p\) 是合法 gap，但包含首分母 \(Q=q^e\) 的完整
+\(3(2e+1)\) 个 \(p^iq^j\) 因子候选并不自动命中：
+\((73,63,Q=31)\)、\((241,215,Q=71)\) 和
+\((13177,12299,Q=4096)\) 分别给出 \(9,9,75\) 个全 miss。条件双素数族
+
+\[
+Q\equiv13\pmod {24},\qquad p=2Q-1,\qquad R=Q+2
+\]
+
+还满足 \(R_Q=p+2,K_Q=Q^2,n=p\)，说明同一载体可精确自对偶；最小点
+\(Q=37,p=73\) 仍可换 \(Q'=19\) 下降，所以这不是全局反例。
+
+三个内部系数还给出互不相同的精确接口。对 \(\alpha=1\)，令
+\(d=3c-p\)、\(x_3=(p+3)/4\)、\(g=(d,x_3^2)\)，则 \(g\equiv2\pmod3\)
+直接给出 gap 3 的 Type II；否则 \(d/g\equiv2\pmod3\) 是规范容量超额。
+对 \(\alpha=2\)，上升图表使局部补量
+\(4Q-R\) 严格变成 \(4Q-R_Q=(4Q-R)-4\tau\)，但换载体会重置它，尚不是全局势。
+对 \(\alpha=3\)，上升图表规范地产生
+
+\[
+0<n_*=\frac{p\beta'+1}{Q}<p,
+\qquad
+n_*Q-p\beta'=1,
+\]
+
+但尚无 \(n_*\) 解到 \(p\) 解的全域提升。另有一个无穷 \(\alpha=1\) 算术族产生
+\(E=196,n=p-5\) 的广义 \(2^2\) 候选；自然标记在中心 miss 时严格为空，所以该族
+明确说明“偶前驱存在”仍不等于 E4。
+
+固定 \((p,R,K,q)\) 内，两条 clean slabs 产生真实中心谱元素
+
+\[
+\beta_j\beta_i^{-1}
+\equiv
+\frac{\alpha_j}{\alpha_i}q^{e_j-e_i}\pmod R,
+\qquad
+\gamma_{ij}\gamma_{jk}=\gamma_{ik}.
+\]
+
+同一 \(q\) 最多三条 large-slab。这把跨层 Kneser 任务从无界层族降成至多三个真实
+cocycle，但 \(\mathcal C_R(K)\) 不是群，仍须先证明固定因子层的稳定子闭合。
+
+\(D\)-only 路线也关闭了一个自然层。对 \(p\equiv1\pmod4\)、\(n=p-1\)，
+non-source-supported 正规形的三个平方除子目标全部为空。证明将
+\(s\mid\lambda^2\) 参数化为
+
+\[
+s=a^2c,\qquad\lambda=abc,\qquad p=4bc(b-a)+1
+\]
+
+并把唯一剩余目标化为
+
+\[
+4ah=\frac{a^2}{m}+\frac{h^2}{k}+\frac1c,
+\]
+
+再由 Vieta 下降排除全部正整数解。source-supported 分支仍只复述已有中心 Type I，
+所以新的 D-only 构造必须满足 \(p-n\ge2\)。
+
+下一步按以下顺序推进：
+
+1. 对 overflow 的 determinant \(pn=4Md+1\) 证明换载体、直接 Type I/II 或新的合法
+   marked 状态三分；
+2. 把至多三个 \(\beta\)-ratio cocycle 放入固定层稳定子商，证明容量增长或提取规范
+   Fourier 分离角色；
+3. 优先把 \(\alpha=1\) 的 gap 3 容量超额或 \(\alpha=3\) 的 determinant pair
+   转成非空且可提升的标记状态；
+4. 对 competing-excess SCC 证明有限 Pareto receipt 必产生 clean slab 或终端；
+5. D-only 不再测试 \(n=p-1\)，只从满足尺寸下界的大尺度路径量构造 \(r\ge2\)。
+
+严格主张见
+[累积支撑重图表与 overflow 边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md)、
+[large-slab 因子层与 cocycle 容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md)、
+[large-slab 三系数算术边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md)和
+[p 减一秩 D-only no-go](../claims/two-denominator-lift-core-rank-one-no-go.md)。
+
 ## 依赖顺序
 
 \[
@@ -2146,7 +2280,11 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{D-only 支撑二分、非自然 }H\mid4\lambda^2\text{ 正规形与三目标平方除子谱}\\
 \downarrow\\
-\text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
+\text{absorbed-support 重图表的全局势、overflow determinant 与固定图表 slab cocycle}\\
+\downarrow\\
+\text{D-only 的 }n=p-1\text{ 非自然标记纤维全域空定理}\\
+\downarrow\\
+\text{PRE--ABSORB 分型势只解决旧候选 E5；其它 formal 边 E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
 \downarrow\\
@@ -2160,18 +2298,17 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 仿射边界 Reach 审计已在冻结谱中消除四个状态余项，标准提升审计则排除了最自然的偶源
 桥。新的完整 formal Reach 审计又排除了“源见证关系会使三个 large-slab 锚点自动
 终端”：三个分支各有 strong miss，且 70 个起始 slab 的完整 formal 后继图没有 good
-single-slab 候选。
-交叉表示又把这些 residual 的容量缺陷分成共同过载与 split：有限 residual 当前全部落在
-前者，但共同载体可以在两个表示间分裂，且大部分位于 \(Kx_R\) 支撑之外。最短路径的
+single-slab 候选。这些结果仍否定局部终端菜单，但其中所有 \(R_Q<p\) 的上升图表现已
+由 absorbed-support 势升级为合法边；不能继续把旧 strong miss 数量当作 clean residual。
+交叉表示把其容量缺陷分成共同过载与 split：冻结记录落在前者，但共同载体可以在两个
+表示间分裂，且大部分位于 \(Kx_R\) 支撑之外。最短路径的
 slab-\(q\) 载体候选现已被线性 strong-miss 反例否定；替代对象是固定支撑上的完整
-Pareto 前沿。底层 SCC 的无限路径也已压成显式有限见证界和周期静态/区间证书。真正余项
-现已从“继续走多深”转为全称算术桥：后续计算只应服务于把 sink-SCC 的规范 miss
-证书映入新的容量下降或合法 E4，或把
-\(D\nmid n^2\) 的三目标 miss 转成改变根尾数据的递归非空证书。小 \(\mu\) 与
-\(z=1\) 的核心 D-only 子族已经证明为空，不应继续枚举；D-only 尺寸界还关闭了小
-equation-rank 候选。split 有界深度的同图表 external 菜单已被反例关闭，但该反例有
-普通终端和合法 absorption，不能据此关闭 terminal-or-descent。path-static receipt
-现在只能先按 ABSORB/LARGE/COMPETING_EXCESS 三分，再把后两支送入完整 SCC/Pareto。
+Pareto 前沿和同图表至多三个 \(\beta\)-ratio cocycle。底层 SCC 的无限路径也已压成
+显式有限见证界和周期静态/区间证书。真正余项现已从“继续走多深”转为
+\(R_{AQ}>p\) overflow、competing-excess 与跨状态容量的全称算术桥。
+\(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 外，又关闭了整个 \(n=p-1\) 层；
+后续只研究满足尺寸下界的 \(p-n\ge2\) 参数。path-static receipt 现在按
+MARKED_ABSORB/OVERFLOW/COMPETING_EXCESS 分流，再把后两支送入完整 SCC/Pareto。
 不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。

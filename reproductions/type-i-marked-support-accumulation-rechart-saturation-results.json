@@ -1,0 +1,1050 @@
+{
+  "schema_version": "marked-support-accumulation-rechart-saturation/v1",
+  "scope_note": "Focused exact verification of the arithmetic state/edge verifier, one accumulated chain, six reclassified strong misses, and three overflow spectra. It does not scan historical data or close overflow.",
+  "summary": {
+    "accepted_chain_edge_count": 3,
+    "chain_overflow_count": 1,
+    "former_strong_miss_reclassified_count": 6,
+    "overflow_boundary_count": 3,
+    "overflow_spectrum_candidate_counts": [
+      9,
+      9,
+      75
+    ],
+    "overflow_spectrum_hit_count": 0
+  },
+  "accumulation_chain": {
+    "states": [
+      {
+        "focused_state_key": "linear_absorbed_support_v1:73:3:1",
+        "prime": 73,
+        "R": 3,
+        "K": 55,
+        "absorbed_support": 1,
+        "factorization": [
+          [
+            5,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "equation_target": [
+          4,
+          73
+        ],
+        "marked_solution_set": "Sol(4,73)",
+        "normal_form": "linear_chart_with_absorbed_support_v1",
+        "potential_bound": 1296,
+        "potential": 1296,
+        "centered_classification": {
+          "type": "hit",
+          "centered_spectrum_size": 2,
+          "canonical_witness": [
+            -1,
+            0
+          ]
+        }
+      },
+      {
+        "focused_state_key": "linear_absorbed_support_v1:73:7:2",
+        "prime": 73,
+        "R": 7,
+        "K": 128,
+        "absorbed_support": 2,
+        "factorization": [
+          [
+            2,
+            7
+          ]
+        ],
+        "equation_target": [
+          4,
+          73
+        ],
+        "marked_solution_set": "Sol(4,73)",
+        "normal_form": "linear_chart_with_absorbed_support_v1",
+        "potential_bound": 1296,
+        "potential": 648,
+        "centered_classification": {
+          "type": "G",
+          "centered_spectrum_size": 3,
+          "support_subgroup_size": 3
+        }
+      },
+      {
+        "focused_state_key": "linear_absorbed_support_v1:73:23:6",
+        "prime": 73,
+        "R": 23,
+        "K": 420,
+        "absorbed_support": 6,
+        "factorization": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            1
+          ]
+        ],
+        "equation_target": [
+          4,
+          73
+        ],
+        "marked_solution_set": "Sol(4,73)",
+        "normal_form": "linear_chart_with_absorbed_support_v1",
+        "potential_bound": 1296,
+        "potential": 216,
+        "centered_classification": {
+          "type": "hit",
+          "centered_spectrum_size": 22,
+          "canonical_witness": [
+            -1,
+            1,
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "focused_state_key": "linear_absorbed_support_v1:73:47:66",
+        "prime": 73,
+        "R": 47,
+        "K": 858,
+        "absorbed_support": 66,
+        "factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            13,
+            1
+          ]
+        ],
+        "equation_target": [
+          4,
+          73
+        ],
+        "marked_solution_set": "Sol(4,73)",
+        "normal_form": "linear_chart_with_absorbed_support_v1",
+        "potential_bound": 1296,
+        "potential": 19,
+        "centered_classification": {
+          "type": "F",
+          "centered_spectrum_size": 45,
+          "support_subgroup_size": 46
+        }
+      }
+    ],
+    "edges": [
+      {
+        "classification": "verified_marked_support_edge",
+        "slab": {
+          "Q": 2,
+          "q": 2,
+          "e": 1,
+          "alpha": 1,
+          "beta": 1
+        },
+        "combined_support": 2,
+        "source_state_key": "linear_absorbed_support_v1:73:3:1",
+        "target_state": {
+          "focused_state_key": "linear_absorbed_support_v1:73:7:2",
+          "prime": 73,
+          "R": 7,
+          "K": 128,
+          "absorbed_support": 2,
+          "factorization": [
+            [
+              2,
+              7
+            ]
+          ],
+          "equation_target": [
+            4,
+            73
+          ],
+          "marked_solution_set": "Sol(4,73)",
+          "normal_form": "linear_chart_with_absorbed_support_v1",
+          "potential_bound": 1296,
+          "potential": 648,
+          "centered_classification": {
+            "type": "G",
+            "centered_spectrum_size": 3,
+            "support_subgroup_size": 3
+          }
+        },
+        "solution_lift": "identity_on_Sol(4,p)"
+      },
+      {
+        "classification": "verified_marked_support_edge",
+        "slab": {
+          "Q": 3,
+          "q": 3,
+          "e": 1,
+          "alpha": 1,
+          "beta": 4
+        },
+        "combined_support": 6,
+        "source_state_key": "linear_absorbed_support_v1:73:7:2",
+        "target_state": {
+          "focused_state_key": "linear_absorbed_support_v1:73:23:6",
+          "prime": 73,
+          "R": 23,
+          "K": 420,
+          "absorbed_support": 6,
+          "factorization": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "equation_target": [
+            4,
+            73
+          ],
+          "marked_solution_set": "Sol(4,73)",
+          "normal_form": "linear_chart_with_absorbed_support_v1",
+          "potential_bound": 1296,
+          "potential": 216,
+          "centered_classification": {
+            "type": "hit",
+            "centered_spectrum_size": 22,
+            "canonical_witness": [
+              -1,
+              1,
+              0,
+              1
+            ]
+          }
+        },
+        "solution_lift": "identity_on_Sol(4,p)"
+      },
+      {
+        "classification": "verified_marked_support_edge",
+        "slab": {
+          "Q": 11,
+          "q": 11,
+          "e": 1,
+          "alpha": 2,
+          "beta": 1
+        },
+        "combined_support": 66,
+        "source_state_key": "linear_absorbed_support_v1:73:23:6",
+        "target_state": {
+          "focused_state_key": "linear_absorbed_support_v1:73:47:66",
+          "prime": 73,
+          "R": 47,
+          "K": 858,
+          "absorbed_support": 66,
+          "factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              13,
+              1
+            ]
+          ],
+          "equation_target": [
+            4,
+            73
+          ],
+          "marked_solution_set": "Sol(4,73)",
+          "normal_form": "linear_chart_with_absorbed_support_v1",
+          "potential_bound": 1296,
+          "potential": 19,
+          "centered_classification": {
+            "type": "F",
+            "centered_spectrum_size": 45,
+            "support_subgroup_size": 46
+          }
+        },
+        "solution_lift": "identity_on_Sol(4,p)"
+      },
+      {
+        "classification": "marked_support_overflow",
+        "slab": {
+          "Q": 23,
+          "q": 23,
+          "e": 1,
+          "alpha": 2,
+          "beta": 1
+        },
+        "combined_support": 1518,
+        "R_M": 3743,
+        "K_M": 68310,
+        "C": 45,
+        "n": 2329,
+        "d": 28,
+        "determinant": 170017
+      }
+    ]
+  },
+  "former_strong_misses": [
+    {
+      "prime": 241,
+      "R": 7,
+      "Q": 5,
+      "q": 5,
+      "e": 1,
+      "alpha": 1,
+      "beta": 2,
+      "R_M": 19,
+      "source_potential": 14400,
+      "target_potential": 2880
+    },
+    {
+      "prime": 193,
+      "R": 15,
+      "Q": 7,
+      "q": 7,
+      "e": 1,
+      "alpha": 2,
+      "beta": 1,
+      "R_M": 19,
+      "source_potential": 9216,
+      "target_potential": 1316
+    },
+    {
+      "prime": 337,
+      "R": 23,
+      "Q": 7,
+      "q": 7,
+      "e": 1,
+      "alpha": 3,
+      "beta": 2,
+      "R_M": 27,
+      "source_potential": 28224,
+      "target_potential": 4032
+    },
+    {
+      "prime": 107722177,
+      "R": 207,
+      "Q": 103,
+      "q": 103,
+      "e": 1,
+      "alpha": 2,
+      "beta": 1,
+      "R_M": 375,
+      "source_potential": 2901016800543744,
+      "target_potential": 28165211655764
+    },
+    {
+      "prime": 214729,
+      "R": 391,
+      "Q": 193,
+      "q": 193,
+      "e": 1,
+      "alpha": 2,
+      "beta": 5,
+      "R_M": 731,
+      "source_potential": 11527028496,
+      "target_potential": 59725536
+    },
+    {
+      "prime": 21169,
+      "R": 23,
+      "Q": 7,
+      "q": 7,
+      "e": 1,
+      "alpha": 3,
+      "beta": 2,
+      "R_M": 27,
+      "source_potential": 112021056,
+      "target_potential": 16003008
+    }
+  ],
+  "overflow_boundaries": [
+    {
+      "prime": 73,
+      "R": 63,
+      "Q": 31,
+      "q": 31,
+      "e": 1,
+      "alpha": 2,
+      "beta": 1,
+      "expected_R_M": 107,
+      "expected_gap": 51,
+      "K": 1150,
+      "overflow": {
+        "classification": "marked_support_overflow",
+        "slab": {
+          "Q": 31,
+          "q": 31,
+          "e": 1,
+          "alpha": 2,
+          "beta": 1
+        },
+        "combined_support": 31,
+        "R_M": 107,
+        "K_M": 1953,
+        "C": 63,
+        "n": 17,
+        "d": 10,
+        "determinant": 1241
+      },
+      "one_denominator_spectrum": {
+        "gap": 51,
+        "candidate_count": 9,
+        "hit_count": 0,
+        "rows": [
+          {
+            "p_exponent": 0,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 2,
+            "hit": false
+          }
+        ]
+      }
+    },
+    {
+      "prime": 241,
+      "R": 215,
+      "Q": 71,
+      "q": 71,
+      "e": 1,
+      "alpha": 3,
+      "beta": 2,
+      "expected_R_M": 251,
+      "expected_gap": 43,
+      "K": 12954,
+      "overflow": {
+        "classification": "marked_support_overflow",
+        "slab": {
+          "Q": 71,
+          "q": 71,
+          "e": 1,
+          "alpha": 3,
+          "beta": 2
+        },
+        "combined_support": 71,
+        "R_M": 251,
+        "K_M": 15123,
+        "C": 213,
+        "n": 33,
+        "d": 28,
+        "determinant": 7953
+      },
+      "one_denominator_spectrum": {
+        "gap": 43,
+        "candidate_count": 9,
+        "hit_count": 0,
+        "rows": [
+          {
+            "p_exponent": 0,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 2,
+            "hit": false
+          }
+        ]
+      }
+    },
+    {
+      "prime": 13177,
+      "R": 12299,
+      "Q": 4096,
+      "q": 2,
+      "e": 12,
+      "alpha": 3,
+      "beta": 11,
+      "expected_R_M": 14647,
+      "expected_gap": 3207,
+      "K": 40515981,
+      "overflow": {
+        "classification": "marked_support_overflow",
+        "slab": {
+          "Q": 4096,
+          "q": 2,
+          "e": 12,
+          "alpha": 3,
+          "beta": 11
+        },
+        "combined_support": 4096,
+        "R_M": 14647,
+        "K_M": 48250880,
+        "C": 11780,
+        "n": 1737,
+        "d": 1397,
+        "determinant": 22888449
+      },
+      "one_denominator_spectrum": {
+        "gap": 3207,
+        "candidate_count": 75,
+        "hit_count": 0,
+        "rows": [
+          {
+            "p_exponent": 0,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 3,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 4,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 5,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 6,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 7,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 8,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 9,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 10,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 11,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 12,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 13,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 14,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 15,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 16,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 17,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 18,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 19,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 20,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 21,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 22,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 23,
+            "hit": false
+          },
+          {
+            "p_exponent": 0,
+            "q_exponent": 24,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 3,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 4,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 5,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 6,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 7,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 8,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 9,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 10,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 11,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 12,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 13,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 14,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 15,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 16,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 17,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 18,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 19,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 20,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 21,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 22,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 23,
+            "hit": false
+          },
+          {
+            "p_exponent": 1,
+            "q_exponent": 24,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 0,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 1,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 2,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 3,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 4,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 5,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 6,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 7,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 8,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 9,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 10,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 11,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 12,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 13,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 14,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 15,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 16,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 17,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 18,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 19,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 20,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 21,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 22,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 23,
+            "hit": false
+          },
+          {
+            "p_exponent": 2,
+            "q_exponent": 24,
+            "hit": false
+          }
+        ]
+      }
+    }
+  ],
+  "self_dual_sample": {
+    "Q": 37,
+    "prime": 73,
+    "R": 39,
+    "K": 712,
+    "same_Q_overflow": {
+      "classification": "marked_support_overflow",
+      "slab": {
+        "Q": 37,
+        "q": 37,
+        "e": 1,
+        "alpha": 1,
+        "beta": 2
+      },
+      "combined_support": 37,
+      "R_M": 75,
+      "K_M": 1369,
+      "C": 37,
+      "n": 73,
+      "d": 36,
+      "determinant": 5329
+    },
+    "same_Q_spectrum": {
+      "gap": 75,
+      "candidate_count": 9,
+      "hit_count": 0,
+      "rows": [
+        {
+          "p_exponent": 0,
+          "q_exponent": 0,
+          "hit": false
+        },
+        {
+          "p_exponent": 0,
+          "q_exponent": 1,
+          "hit": false
+        },
+        {
+          "p_exponent": 0,
+          "q_exponent": 2,
+          "hit": false
+        },
+        {
+          "p_exponent": 1,
+          "q_exponent": 0,
+          "hit": false
+        },
+        {
+          "p_exponent": 1,
+          "q_exponent": 1,
+          "hit": false
+        },
+        {
+          "p_exponent": 1,
+          "q_exponent": 2,
+          "hit": false
+        },
+        {
+          "p_exponent": 2,
+          "q_exponent": 0,
+          "hit": false
+        },
+        {
+          "p_exponent": 2,
+          "q_exponent": 1,
+          "hit": false
+        },
+        {
+          "p_exponent": 2,
+          "q_exponent": 2,
+          "hit": false
+        }
+      ]
+    },
+    "alternative_carrier_R": 51
+  }
+}

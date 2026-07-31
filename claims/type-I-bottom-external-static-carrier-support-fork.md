@@ -2,13 +2,14 @@
 kind: claim
 claim_id: type-I-bottom-external-static-carrier-support-fork
 title: 底层外部静态载体的来源三分与吸收边界
-statement: 在合法核心图表 4K=pR+1 的完整 raw bottom Reach 中，取本原节点 X+Y=R 和外部素数 q 不整除 K；若 q^e 恰为 X 的完整 q 部分、X=q^e a，则 q 不整除 aY，并且恰有两种支持情形：aY|K 时该节点是 clean single-external q^e-slab，其规范图表 R_Q 不等于 R，R_Q<R 给出现有合同下的 E1--E5 absorption，R_Q>R 则 Q>R/4 且 a 属于 {1,2,3}；aY 不整除 K 时，必有 r 不等于 q 在同一节点超过 K 的 r 进容量并产生竞争 raw 边。若一条 q 边直接进入完整且 q-free 的 sink-SCC，则源精确写成 (qA,B)->(A,R-A)，并有 q 不整除 AB(R-A)，所以 Q=q 且上述三分可直接回溯。该回溯只适用于 path-carried static 素数，并不把 MISS_STATIC 自动升级为终端或全局单 q 收费；p=107722177,R=207 给出 q=103 四通道静态、与指定 q=103 slab 关联的 gap/collision/node-anchor/new-chart-centered 菜单全 miss 且 R_103>R 的精确 large-slab 边界，而原 p=2017 的同一 103 前缀实际有 R_103=115<R 的合法 absorption。
+statement: 在合法核心图表 4K=pR+1 的完整 raw bottom Reach 中，取本原节点 X+Y=R 和外部素数 q 不整除 K；若 q^e 恰为 X 的完整 q 部分、X=q^e a，则 q 不整除 aY，并且恰有两种支持情形：aY|K 时该节点是 clean single-external q^e-slab；在 absorbed support A|K 的增广状态中，R_{Aq^e}<p 给出恒等解提升且全局势严格下降的 E1--E5 边，R_{Aq^e}>p 则给出 overflow determinant。若 aY 不整除 K，则必有 r 不等于 q 在同一节点超过 K 的 r 进容量并产生竞争 raw 边。若一条 q 边直接进入完整且 q-free 的 sink-SCC，则源精确写成 (qA,B)->(A,R-A)，并有 q 不整除 AB(R-A)，所以 Q=q 且上述分流可直接回溯。该回溯只适用于 path-carried static 素数，并不把 MISS_STATIC 自动升级为终端或全局单 q 收费；p=107722177,R=207 的指定 q=103 旧 local strong miss 现由 R_103=375<p 重新分类为 marked descent，而真正 clean 余项已收紧到 R_{AQ}>p。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-formal-full-excess-cycle-or-hit-reduction
   - type-I-formal-external-slab-collision-absorption-rechart
+  - type-I-marked-support-accumulation-rechart-saturation
   - type-I-bottom-word-lattice-pareto-cycle-capacity-selector
   - type-I-target-fiber-joint-capacity-signed-carrier-dictionary
   - denominator-escape-state-contract
@@ -28,6 +29,8 @@ sources:
     role: complete-raw-transition-interface
   - claim: type-I-formal-external-slab-collision-absorption-rechart
     role: verified-single-slab-absorption-contract
+  - claim: type-I-marked-support-accumulation-rechart-saturation
+    role: accumulated-support-edge-and-overflow-boundary
   - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
     role: path-static-and-sink-SCC-receipt
 visibility: public
@@ -138,17 +141,23 @@ Q>\frac R4.
 \tag{10}
 \]
 
-所以 clean 分支不是“吸收或未知”，而是精确落入
+式 (8)--(10) 仍是旧的“以 \(R\) 为势”局部分解。若状态携带
+absorbed support \(A\mid K\)，令 \(M=AQ\) 并构造 \(R_M\)。则 clean 分支还有更强的
+状态级精确分流
 
 \[
 \boxed{
-\text{verified absorption}
+R_M<p:\ \text{MARKED\_ABSORB}(M)
 \quad\lor\quad
-\text{large-slab }a=1,2,3.
+R_M>p:\ \text{OVERFLOW}(M).
 }
 \tag{11}
 \]
 
+第一支允许 \(R_M>R\)，但 \(A\mapsto AQ\) 使势
+\(\lfloor(p-1)^2/(4A)\rfloor\) 严格下降；第二支保存
+\(pn=4M(p-C)+1\) 的 determinant receipt。初始状态 \(A=1\) 时，旧 large-slab
+中所有 \(R_Q<p\) 的上升记录现在都属于第一支，只有 \(R_Q>p\) 才是 clean residual。
 两类 slab collision 或新图表中心命中可以在 (11) 之前直接终端，但并非 (11) 的必要
 条件。
 
@@ -168,13 +177,14 @@ v_r(XY)=v_r(QaY)=v_r(aY)>v_r(K).
 \tag{13}
 \]
 
-所以同一节点存在一条标号 \(r\) 的 raw bottom transition。于是得到无条件的局部三分
+所以同一节点存在一条标号 \(r\) 的 raw bottom transition。于是增广状态中的无条件
+局部分流为
 
 \[
 \boxed{
-\text{ABSORB}(Q)
+\text{MARKED\_ABSORB}(AQ)
 \quad\lor\quad
-\text{LARGE}(Q,a)
+\text{OVERFLOW}(AQ)
 \quad\lor\quad
 \text{COMPETING\_EXCESS}(r).
 }
@@ -261,9 +271,9 @@ raw 边来源。
 
 \[
 \boxed{
-\text{clean ABSORB}
+\text{clean MARKED\_ABSORB}
 \quad\lor\quad
-\text{clean LARGE}
+\text{clean OVERFLOW}
 \quad\lor\quad
 \text{另一 raw 超额分支}.
 }
@@ -271,7 +281,7 @@ raw 边来源。
 \]
 
 式 (21) 是候选选择器的正向桥，但还不是 sink-SCC 的全称逃逸：第三支可能继续循环，
-第二支正是尚未闭合的 large-slab；若静态素数只来自 \(U,V,X,Y\)，还不能调用它。
+第二支正是尚未闭合的饱和分支；若静态素数只来自 \(U,V,X,Y\)，还不能调用它。
 
 ## 4. 原 p=2017 的静态 receipt 实际先有 absorption
 
@@ -336,7 +346,7 @@ R_{101}=135<207,
 \(\texttt{terminal\mbox{-}first\ unresolved}\)；F、internal-free 只描述 \(R=207\)
 的局部菜单。
 
-## 5. static 素数不强制吸收：精确 large-slab 边界
+## 5. static 素数不强制旧局部菜单：marked 重分类
 
 同一个 \(R=207\) 骨架可取
 
@@ -380,11 +390,14 @@ gap \(103\) 的完整 Type I/II 平方除子谱、\(T\mid207\) 的两类 collisi
 \[
 \text{four-channel path static }q
 \Longrightarrow
-\text{同一 }q\text{ 给 external terminal 或 ABSORB}.
+\text{同一 }q\text{ 给 external terminal 或降 }R\text{ ABSORB}.
 \tag{32}
 \]
 
-它只把该 receipt 送入 large-slab \(a=2\) 分支。
+但 \(375<p\)，所以在 absorbed support \(A=1\) 的增广状态中，(31) 现在是
+\(A:1\mapsto103\) 的 verified marked-support edge。它仍证明旧局部 terminal/new-center/
+降 \(R\) 菜单不充分，却不再是 clean residual。真正 overflow 必须满足
+\(R_{AQ}>p\)。
 
 必须紧邻保留全局边界：这个新素数也不是统一选择器反例。循环节点
 \((2,205)=(2,41\cdot5)\) 给出
@@ -439,17 +452,17 @@ aY=27\nmid K.
 \texttt{PATH\_STATIC}(q)
 \mapsto
 \begin{cases}
-\texttt{VERIFIED\_ABSORB}(Q),\\
-\texttt{LARGE\_SLAB}(Q,a),\\
+\texttt{VERIFIED\_MARKED\_ABSORB}(AQ),\\
+\texttt{OVERFLOW}(AQ),\\
 \texttt{COMPETING\_RAW}(r).
 \end{cases}
 \tag{37}
 \]
 
 这已经把原 \(p=2017\) 的静态 receipt 正确拉回合法递降，并把更强错误命题压到一个
-真实 large-slab 反例。尚未解决的是：
+旧菜单反例；累积支撑又把该例升级为 marked edge。尚未解决的是：
 
-1. large-slab \(a=1,2,3\) 的全称出口；
+1. \(R_{AQ}>p\) overflow 的换载体、直接终端或合法后继；
 2. 竞争超额分支在完整 SCC/Pareto 前沿中为何最终出现 clean slab 或直接终端；
 3. 不是 path-carried 的源/端点 static 如何映到外部载体；
 4. 多坐标 Pareto 价格如何注入跨状态的真实有限容量。

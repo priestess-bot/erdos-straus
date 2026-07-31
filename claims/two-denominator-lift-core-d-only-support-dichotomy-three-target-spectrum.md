@@ -518,6 +518,12 @@ H=p+(4\lambda-1)r\mid4\lambda^2}
 \(r,\lambda,H\)，再证明 (21) 命中或把其 miss 证书映成新的合法 E4；继续搜索
 \(\mu=1,2\) 或 \(z=1\) 已没有意义。
 
+其中最靠近原素数的 \(r=1\)、即 \(n=p-1\) 层现已完全关闭：
+对每个 \(p\equiv1\pmod4\)，所有 non-source-supported 参数的三个目标都恒空；
+source-supported 参数则仍只复述已有中心 Type I。完整的互素参数化和 Vieta 下降见
+[p 减一秩的非自然 D-only 标记纤维全域空定理](two-denominator-lift-core-rank-one-no-go.md)。
+所以后续构造必须满足 \(r\ge2\)，不能再把最小 rank drop 当作默认候选。
+
 聚焦复现入口为
 
 ~~~bash

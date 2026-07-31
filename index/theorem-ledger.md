@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 309 |
+| 数学状态 | `established` | 312 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 135 |
+| 证明来源 | `repository_derivation` | 138 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 263 |
+| 审阅状态 | `internal_review` | 266 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -207,6 +207,7 @@
 | [来自 (3p+1)/4 的完整二分母递降分类与平方根级 Type I 证书](../claims/three-p-plus-one-descent-certificate.md) (`three-p-plus-one-descent-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [来自 3p+A 的幂二内部 Type I 射线](../claims/three-p-plus-power-two-internal-type-I-ray.md) (`three-p-plus-power-two-internal-type-I-ray`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-23 |
 | [核心 D-only 的支撑二分、非自然完全正规形与三目标谱](../claims/two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md) (`two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [p 减一秩的非自然 D-only 标记纤维全域空定理](../claims/two-denominator-lift-core-rank-one-no-go.md) (`two-denominator-lift-core-rank-one-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [保留两个源分母的一项替换提升判据](../claims/two-denominator-lift-criterion.md) (`two-denominator-lift-criterion`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [双尾提升的 D-only 标记正规形与 p 载体刚性](../claims/two-denominator-lift-d-only-marked-normal-form.md) (`two-denominator-lift-d-only-marked-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [source-supported D-only 提升的固定尾比刚性与中心 Type I 等价](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md) (`two-denominator-lift-source-supported-tail-ratio-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
@@ -318,9 +319,9 @@
 | [周期平方自由支撑的三目标乘子桥与首个直接反例](../claims/type-I-formal-cycle-radical-multiplier-bridge.md) (`type-I-formal-cycle-radical-multiplier-bridge`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [一层形式周期的表示格、二阶目标类与容量盒判据](../claims/type-I-formal-cycle-representation-lattice-capacity.md) (`type-I-formal-cycle-representation-lattice-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [外部一层周期的带符号乘积律与自动终端边界](../claims/type-I-formal-external-cycle-product-law-boundary.md) (`type-I-formal-external-cycle-product-law-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
-| [单新支撑 q-slab 的双碰撞终端与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md) (`type-I-formal-external-slab-collision-absorption-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [单新支撑 q-slab 的双碰撞终端与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md) (`type-I-formal-external-slab-collision-absorption-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [完整超高形式图的 Type I 或一层周期归约](../claims/type-I-formal-full-excess-cycle-or-hit-reduction.md) (`type-I-formal-full-excess-cycle-or-hit-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
-| [线性图表中 p 边的有限瞬态与 large-slab 三锚点压缩](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md) (`type-I-formal-linear-chart-p-transience-large-slab-anchor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [线性图表中 p 边的有限瞬态与 large-slab 三锚点压缩](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md) (`type-I-formal-linear-chart-p-transience-large-slab-anchor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [形式节点自然双尾的整数性刚性与 E4 空纤维边界](../claims/type-I-formal-natural-tail-integrality-rigidity.md) (`type-I-formal-natural-tail-integrality-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [形式目标对的双秩剪枝、一步终端前瞻与外部缺口选择器](../claims/type-I-formal-ranked-pruning-and-external-gap-selector.md) (`type-I-formal-ranked-pruning-and-external-gap-selector`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [形式可达节点的奇组合不能返回 F 态容量盒](../claims/type-I-formal-reach-odd-combination-box-rigidity.md) (`type-I-formal-reach-odd-combination-box-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
@@ -361,6 +362,7 @@
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [large-slab 的受限因子对正规形与跨指数层支撑容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md) (`type-I-large-slab-factor-pair-layer-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
+| [large-slab 三个内部系数的算术出口与提升边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md) (`type-I-large-slab-three-alpha-arithmetic-boundaries`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [线性一般 B 选择器的 a 等于一子族边界](../claims/type-I-linear-a1-source-boundary-profile-600m.md) (`type-I-linear-a1-source-boundary-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [四个真实对抗核心的 F 型活跃方向下界](../claims/type-I-linear-adversarial-core-f-active-direction-profile-600m.md) (`type-I-linear-adversarial-core-f-active-direction-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [四个对抗核心全部 F 状态的块级鸽巢余量](../claims/type-I-linear-adversarial-core-f-block-alignment-profile-600m.md) (`type-I-linear-adversarial-core-f-block-alignment-profile-600m`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
@@ -436,6 +438,7 @@
 | [线性二残数逃逸与两块 Kneser 密度的组合终端选择器](../claims/type-I-linear-two-adic-kneser-terminal-selector.md) (`type-I-linear-two-adic-kneser-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-29 |
 | [线性两块除子积集的 Kneser F 型必要条件](../claims/type-I-linear-two-block-kneser-f-obstruction.md) (`type-I-linear-two-block-kneser-f-obstruction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-29 |
 | [线性双颜色载体的共享模数交集容量](../claims/type-I-linear-two-color-carrier-intersection-capacity.md) (`type-I-linear-two-color-carrier-intersection-capacity`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [外部支撑累积重图表的良基下降与 overflow 饱和边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md) (`type-I-marked-support-accumulation-rechart-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [九亿至十亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1b.md) (`type-I-mixed-terminal-dense-1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [十亿至十一亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1p1b.md) (`type-I-mixed-terminal-dense-1p1b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
 | [十一亿至十二亿连续核心区间的混合终端闭合](../claims/type-I-mixed-terminal-dense-1p2b.md) (`type-I-mixed-terminal-dense-1p2b`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024`, `chamberland2026` | 2026-07-29 |
@@ -491,7 +494,7 @@
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [私有 u=3 载体族的二进终端与 Type II 支撑退出](../claims/type-I-private-u3-carrier-dyadic-terminal-q-free-type-II.md) (`type-I-private-u3-carrier-dyadic-terminal-q-free-type-II`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [私有 u=3 偶终端的自然提升障碍与 q-free 因子三分](../claims/type-I-private-u3-terminal-natural-lift-obstruction.md) (`type-I-private-u3-terminal-natural-lift-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
-| [Psi 一层 F 状态源见证锚定的完整 formal Reach large-slab 边界](../claims/type-I-psi-one-actual-reach-large-slab-boundary.md) (`type-I-psi-one-actual-reach-large-slab-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
+| [Psi 一层 F 状态源见证锚定的完整 formal Reach large-slab 边界](../claims/type-I-psi-one-actual-reach-large-slab-boundary.md) (`type-I-psi-one-actual-reach-large-slab-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-08-01 |
 | [完整 Reach 的仿射边界终端菜单闭合四个状态余项](../claims/type-I-psi-one-affine-boundary-terminal-profile.md) (`type-I-psi-one-affine-boundary-terminal-profile`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [完整 F 谱中四百八十三个缺陷一状态的终端与提升边界](../claims/type-I-psi-one-full-spectrum-terminal-descent-boundary.md) (`type-I-psi-one-full-spectrum-terminal-descent-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [Psi 一层缺陷到 single-external slab 的规范路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md) (`type-I-psi-one-source-word-large-slab-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |

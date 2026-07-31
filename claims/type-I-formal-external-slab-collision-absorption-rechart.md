@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-formal-external-slab-collision-absorption-rechart
 title: 单新支撑 q-slab 的双碰撞终端与容量吸收图表族
-statement: 设核心图表 4K=pR+1 的一个形式表示只留下单个 K 外素数幂 Q=q^e，写成 X=Qa、Y=b、(X,Y)=1、ab|K、X+Y=Rm，并令 L=XY。对任意 T|(X+Y)，4L|(p+T) 直接给出 gap T 的 Type II 证书，4L|(pT+1) 则直接给出以 T 为模数的中心 Type I 命中及其自然 gap 证书。若 q!=p，对任意 Q|M|L 都有 M-indexed 规范图表 pR_M=-1 (mod 4M)、1<=R_M<4M，使 M|K_M；写 M=Qd 后恒有 R_M=R_Q+4Qk_d>=R_Q，所以存在任一降 R 子积当且仅当 M=Q 已下降。在隔离的 absorption-only 阶段中，该下降以 W=Sol(p) 给出恒等提升；未受限全局图仍须使用 phase 调度。特别地，R_Q!=R，故要么下降，要么 Q>R/4。该析取不覆盖一般高层 q=p、其它外部坐标或 large-slab 锚点闭合，下降也不可能保留全部旧 K。
+statement: 设核心图表 4K=pR+1 的一个形式表示只留下单个 K 外素数幂 Q=q^e，写成 X=Qa、Y=b、(X,Y)=1、ab|K、X+Y=Rm，并令 L=XY。对任意 T|(X+Y)，4L|(p+T) 直接给出 gap T 的 Type II 证书，4L|(pT+1) 则直接给出以 T 为模数的中心 Type I 命中及其自然 gap 证书。若 q!=p，对任意 Q|M|L 都有 M-indexed 规范图表 pR_M=-1 (mod 4M)、1<=R_M<4M，使 M|K_M；写 M=Qd 后恒有 R_M=R_Q+4Qk_d>=R_Q，所以存在任一降 R 子积当且仅当 M=Q 已下降。在隔离的 absorption-only 阶段中，该下降以 W=Sol(p) 给出恒等提升；未受限全局图仍须使用 phase 调度。特别地，R_Q!=R，故要么下降，要么 Q>R/4。后续 absorbed-support 增广把初始 large-slab 中所有 R_Q<p 的上升图表也升级为另一种良基边；真正新余项是 R_Q>p 的 overflow。下降不可能保留全部旧 K。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -30,7 +30,7 @@ sources:
   - claim: denominator-escape-state-contract
     role: support-switch-and-phase-contract
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-01'
 ---
 
 # 单新支撑 \(q\)-slab 的双碰撞终端与容量吸收图表族
@@ -291,6 +291,12 @@ R<R_Q<4Q.
 \(Q\le R/4\) 可进入规范容量吸收；剩余困难被压到 \(Q>R/4\) 的 large-slab 分支。
 由 (19b)，large-slab 中无需再尝试扩大 \(M\)：\(R_Q>R\) 时整条容量梯都不下降。
 
+最后一句的量词只覆盖当前 slab 内的 \(M=Qd,\ d\mid ab\)，并且势取旧模数 \(R\)。
+若状态另外保存此前已吸收的 \(A\mid K\)，则可以改取 \(M=AQ\)；此时
+\(R_{AQ}<p\) 即使大于 \(R\)，仍由 absorbed-support 势给出合法下降。该扩展不改变
+(19a)--(19b)，而是改变了状态和 E5。严格定理见
+[外部支撑累积重图表的良基下降与 overflow 边界](type-I-marked-support-accumulation-rechart-saturation.md)。
+
 若 \(q=p\)，则任意同 \(p\) 图表都满足
 
 \[
@@ -353,14 +359,15 @@ R'=R+4Kt.
 
 large-slab 在固定线性图表的 \(m=1\) 层已经可剥离到
 \(\{\alpha,R-\alpha\}\)、\(\alpha\in\{1,2,3\}\)。源见证锚定的完整 formal Reach
-审计进一步表明，三个分支各自都有满足来源路径约束、但碰撞、锚点 external-affine
-菜单和容量吸收仍同时失败的节点；
-完整 formal 后继图中甚至还有 70 个起始 slab 不能到达任何 good single-slab 候选。
-因此仅加入“来自冻结 F 正见证”也不能关闭本卡的第 2 项。
+审计曾找到三个分支中碰撞、锚点 external-affine 菜单和旧降 \(R\) absorption 同时
+失败的节点；这些记录仍是否定局部终端菜单的有效边界，但其中 \(R_Q<p\) 的上升图表
+现已由累积支撑状态重新分类为 verified edge。不能再把它们统称为 large-slab residual。
+真正 clean residual 是 \(R_{AQ}>p\) 的 overflow；非 clean 节点还保留 competing
+excess。
 
-下一步应把带累计正规公因子贡献的来源路径字与 slab 之外的高层仿射量作有界组合，或构造改变
-根尾数据的新 equation target，并为真正状态边给出全域解提升；否则 unrestricted
-rechart 只是在不同图表中重新编码原短证书问题。精确计数和最小后继残余见
+下一步应优先处理 overflow determinant、换载体强制和 competing-excess；若仍需改变
+根尾数据，则必须为新 equation target 给出全域解提升。否则 unrestricted rechart
+只是在不同图表中重新编码原短证书问题。旧计数和最小后继边界见
 [Psi 一层 F 状态源见证锚定的完整 formal Reach large-slab 边界](type-I-psi-one-actual-reach-large-slab-boundary.md)。
 
 ## 7. 聚焦复现

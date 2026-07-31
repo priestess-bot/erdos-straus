@@ -35,10 +35,17 @@ sources:
   - claim: type-I-psi-one-affine-boundary-terminal-profile
     role: affine-terminal-menu
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-01'
 ---
 
 # Psi 一层 F 状态源见证锚定的完整 formal Reach large-slab 边界
+
+> **后续重分类。** 本卡的计数按当时的旧菜单定义，其中 absorption 只接受
+> \(R_Q<R\)。加入 absorbed support \(A\mid K\) 后，所有 \(R_{AQ}<p\) 的 clean
+> 上升图表都成为良基 marked edge；所以 566 个 strong miss 和 70 个“无 good
+> successor”仍是旧局部菜单的可复现统计，不能继续解释为当前 clean residual 数量。
+> 当前 residual 判据是 \(R_{AQ}>p\)。见
+> [累积支撑重图表与 overflow 边界](type-I-marked-support-accumulation-rechart-saturation.md)。
 
 ## 1. 审计对象与判据
 

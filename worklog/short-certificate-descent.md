@@ -3473,3 +3473,82 @@ n>\sqrt p,
 当前真正剩余的是 large-slab \(a=1,2,3\)、multi-excess SCC 的 clean-slab/终端强制，
 以及多坐标价格的跨状态真实容量。严格主张与聚焦整数核验见
 [底层外部静态载体来源三分](../claims/type-I-bottom-external-static-carrier-support-fork.md)。
+
+## 2026-08-01 累积支撑 rechart、overflow 与 \(r=1\) no-go
+
+旧 large-slab 分流只允许 \(R_Q<R\)，因此把大量 \(R<R_Q<p\) 的 clean slab 留作
+residual。现在给状态加入此前已吸收支撑
+
+\[
+A\mid K
+\]
+
+并在新 clean external \(Q=q^e\) 出现时取 \(M=AQ\)。若规范
+\(R_M<p\)，则
+
+\[
+(p,R,K;A)\longrightarrow(p,R_M,K_M;AQ)
+\]
+
+保持标记集 \(\operatorname{Sol}(p)\)，解提升为恒等映射，而且
+
+\[
+\left\lfloor\frac{(p-1)^2}{4AQ}\right\rfloor
+<
+\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor.
+\]
+
+该势允许 \(R_M\) 增大，并因 \(A\) 永久整除后继 \(K\) 而禁止已吸收素数重入。
+\(p=73\) 的聚焦链
+
+\[
+(R,A)=(3,1)\to(7,2)\to(23,6)\to(47,66)
+\]
+
+把势从 \(1296\) 降到 \(648,216,19\)，随后 \(Q=23\) 进入 overflow。由此，
+\((107722177,207,Q=103)\) 的旧 local strong miss 因 \(R_{103}=375<p\) 已重分类为
+marked descent。
+
+overflow 的精确边界是
+
+\[
+R_M>p,\qquad
+pn=4Md+1,\qquad
+(M,pn)=1.
+\]
+
+初始 \(\alpha=2,3\) 时 \(h=4Q-p\) 虽是合法 gap，但三个边界分别有
+\(9,9,75\) 个 \(p^iq^j\) 因子全部 miss；因此该分支仍需换载体、Fourier 分离后的
+容量矛盾或新的 marked 状态。
+
+三个 \(\alpha\) 分支的后续接口也已分开。对 \(\alpha=1\)，\(d=3c-p\) 与
+gap 3 给出直接 Type II 或一个规范的 \(\ell\equiv2\pmod3\) 容量超额。对
+\(\alpha=2\)，固定载体的补量严格下降 \(d\mapsto d-4\tau\)，但尚无防重置的全局势。
+对 \(\alpha=3\)，规范产生 \(0<n_*<p\) 及
+\(n_*Q-p\beta'=1\)，但缺少标记集和全域解提升。
+
+还复核并纠正了一个容易误报的二进结论。进程
+\(p=19801+25872k\) 的素数项确实给出 \(E=196,n=p-5\) 的广义 \(2^2\) 算术数据，
+但自然标记集在中心 miss 时为空，标准偶数解也不包含该标记。因此它是
+unlifted_generalized_dyadic_candidate，不是已闭合终端。
+
+同一 \((p,R,K,q)\) 的 clean slabs 产生
+
+\[
+\beta_j\beta_i^{-1}
+\equiv
+\frac{\alpha_j}{\alpha_i}q^{e_j-e_i}\pmod R
+\]
+
+的真实中心谱 cocycle，且总数至多三条。这是下一轮固定层稳定子/Kneser 分析的输入，
+不是自动饱和结论。
+
+\(D\)-only 方面，对所有 \(p\equiv1\pmod4\)，\(n=p-1\) 的 non-source-supported
+三目标纤维已经由 Vieta 下降证明恒空；source-supported 分支只复述已有中心 Type I。
+后续不再测试 \(r=p-n=1\)，只从大尺度路径量构造 \(r\ge2\)。
+
+主张和聚焦复现见
+[累积支撑重图表与 overflow 边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md)、
+[large-slab 因子层与 cocycle](../claims/type-I-large-slab-factor-pair-layer-capacity.md)、
+[large-slab 三系数算术边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md)及
+[p 减一秩 D-only no-go](../claims/two-denominator-lift-core-rank-one-no-go.md)。

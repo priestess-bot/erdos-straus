@@ -28,6 +28,8 @@ used_by:
 - two-denominator-lift-source-supported-tail-ratio-rigidity
 - type-I-formal-linear-chart-p-transience-large-slab-anchor
 - type-I-phase-labeled-candidate-selector-well-founded-schedule
+- type-I-marked-support-accumulation-rechart-saturation
+- type-I-large-slab-three-alpha-arithmetic-boundaries
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -42,7 +44,7 @@ sources:
 - claim: type-I-general-dyadic-terminal-transfer
   role: generalized-dyadic-terminal-verifier
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-01'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -88,6 +90,7 @@ S\longrightarrow T
 | induction_rank | \(\rho(S)\in\mathbb N\)；普通状态默认 \(\rho(S)=n_S\) | 若不取 \(n_S\)，必须证明该秩与解提升合同相容 |
 | modulus_context | 合法模数 \(R_S\)、同余类型和定义 \(R_S\) 的整数恒等式 | 检查正性、奇偶、所需模 \(4\) 类、互素性及全部整除条件 |
 | K_context | \(K_S\)、完整素因子赋值 \(\nu_{S,q}=v_q(K_S)\) 与支撑 \(\mathcal Q_S\) | 重乘得到 \(K_S\)；根线性状态还须验证 \(4K_S=p_0R_S+1\) |
+| absorbed_support | 默认取 \(1\)；累积外部支撑状态记录 \(A_S\mid K_S\) 及来源版本 | verifier 重算整除；使用该字段下降的边必须证明它只增不减，或由更外层秩支付重置 |
 | target_fiber | \(\phi_S(z)=\prod_{q\in\mathcal Q_S}q^{z_q}\bmod R_S\)、目标相位 \(\tau_S\)、关系格 \(\Lambda_S=\ker\phi_S\) 和带类型的纤维状态 | F/hit 记录规范见证；G 记录 `status=empty` 及分离角色，不伪造纤维元素 |
 | signed_defect | F/hit 对一个**全局定向**见证 \(z\) 记录 \(D^-(z),D^+(z)\)；G 记录 `status=not_applicable` | 非空时必须按式 (1) 重算；不得逐坐标拼接 \(z\) 与 \(-z\)，也不得用零向量冒充 G 态缺陷 |
 | certificate_context | F/G 分类以及实际使用的规范 Fourier 角色、关系格基或加法组合证书 | 写明规范选择规则、完备性范围、哈希或精确代数见证 |
@@ -140,6 +143,27 @@ certificate_context 中的分析对象，但它们默认不是新的算术状态
 登记为后继，必须重新构造完整的 equation_target、modulus_context、K_context、
 marked_solution_set 和 normal_form。例如 \(t\equiv1\pmod4\) 的商表示不能在没有
 额外桥接时冒充要求 \(R\equiv3\pmod4\) 的 Type I 状态。
+
+### 2.3 累积外部支撑状态
+
+linear_absorbed_support_v1 是一个已定义的线性图表子类型。它保持
+
+\[
+\texttt{equation\_target}=4/p_0,
+\qquad
+W_S=\operatorname{Sol}(4,p_0),
+\qquad
+A_S\mid K_S.
+\]
+
+该子类型的 state_id 由版本号、\(p_0,R_S,A_S\) 生成；\(K_S\)、完整因子分解、
+目标纤维、F/G/hit、规范见证或分离角色、带符号缺陷及势均从这些字段确定性重算。
+重图表时不得继承旧 F/G 标签，也不得只记录新的模数。
+
+若 clean external receipt 给出 \(Q=q^e\)、\(q\nmid K_S\)，则合法累积边只能把
+\(A_S\) 更新为 \(A_SQ\)。任意其它更新都不是该正规形。完整构造、具名 verifier、
+恒等解提升和势证明见
+[外部支撑累积重图表的良基下降与 overflow 边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md)。
 
 ## 3. 选择器的唯一缺陷输入
 
@@ -464,6 +488,31 @@ rechart，以及固定 \(R\) 时降低 \(m\) 或所选 \(r_\varepsilon\) 的 for
 式 (5) 只供应 E5。它不能把缺少合法后继或解提升的 formal cursor 边升级为
 verified_edge；每条实际递归边仍须单独通过 E1--E4。完整证明、二环和自环边界见
 [重图表与形式吸收的两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。
+
+### 6.2 已验证的 absorbed-support 势
+
+对固定核心素数 \(p_0\) 的 linear_absorbed_support_v1 子程序，定义
+
+\[
+B_{p_0}=\frac{(p_0-1)^2}{4},
+\qquad
+\Pi_A(S)=\left\lfloor\frac{B_{p_0}}{A_S}\right\rfloor.
+\tag{6}
+\]
+
+若一条 clean external 边吸收 \(Q=q^e>1\)，并且规范后继仍满足
+\(R_T<p_0\)，则
+
+\[
+A_T=A_SQ\ge2A_S,
+\qquad
+A_T\mid K_T\le B_{p_0}.
+\]
+
+所以 \(\Pi_A(T)<\Pi_A(S)\)。该势允许 \(R_T>R_S\)，且已吸收素数不能以
+\(q\nmid K\) 身份重入。它只覆盖保持 absorbed_support 的边；若另一边丢弃或重置
+\(A_S\)，必须把一个严格下降的外层秩放在 (6) 之前。规范图表超过 \(p_0\) 时只输出
+overflow receipt，不伪造后继。
 
 可替代方案可以加入规范 Fourier 导子、marked 复杂度或 q-adic 提升深度，但每个分量
 都必须是非负整数、从状态本身可重算，并且必须重新证明全体允许边严格下降。
