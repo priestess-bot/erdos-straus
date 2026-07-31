@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-psi-one-full-spectrum-terminal-descent-boundary
 title: 完整 F 谱中四百八十三个缺陷一状态的终端与提升边界
-statement: 冻结的 200 个压力素数共有 2752 个 finite-exponent F 状态；完整枚举 13533050 个正向一层面点后，恰有 483 个 Psi_0=1 状态和 1615 条正向见证，旧 55 态是其真子集。内部缺口、双秩 accepted 闭包、一步 rejected 前瞻及跨图表中心谱把直接证书覆盖推进到 479 态；只对四个局部残余穷尽有限的未剪枝 Reach 后又闭合两态，达到 481 态，最终两态由状态外 gap 19、15 闭合，所以冻结样本为 483/483。完整广义二进枚举虽在 483/483 态产生 3976 个较小偶前驱，但自然及标准偶源提升均未给出 E4；这些对象不能计作递降。该结果是冻结有限边界，不是全称选择器定理。
+statement: 冻结的 200 个压力素数共有 2752 个 finite-exponent F 状态；完整枚举 13533050 个正向一层面点后，恰有 483 个 Psi_0=1 状态和 1615 条正向见证，旧 55 态是其真子集。内部缺口、双秩 accepted 闭包、一步 rejected 前瞻及跨图表中心谱把直接证书覆盖推进到 479 态；旧坐标因子菜单只对四个局部残余中的两态闭合。对四态完整 Reach 再固定加入节点层 m 及一层仿射边界 |A-R|、|B-R| 的因子后，四态全部直接命中，故冻结样本达到状态内候选生成的 483/483，不再需要状态外固定 gap 回退。完整广义二进枚举虽在 483/483 态产生 3976 个较小偶前驱，但自然及标准偶源提升均未给出 E4；这些对象不能计作递降。该结果是冻结有限边界，不是全称选择器定理。
 claim_status: computationally_reproduced
 proof_provenance: mixed
 review_status: internal_review
@@ -13,6 +13,7 @@ depends_on:
   - type-I-formal-ranked-pruning-and-external-gap-selector
   - type-I-generalized-dyadic-natural-lift-equivalence
   - type-I-generalized-dyadic-standard-even-lift-boundary
+  - type-I-psi-one-affine-boundary-terminal-profile
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -100,12 +101,13 @@ z_j=\nu_j+1,
 | 双秩并集 | 467 |
 | 内部与双秩并集 | 475 |
 | 再加跨图表中心谱 | 479 |
-| 四余项的完整未剪枝 Reach | 481 |
+| 四余项的完整未剪枝 Reach 旧坐标菜单 | 481 |
+| 再加完整 Reach 仿射边界菜单 | 483 |
 
 按实际优先级，累计覆盖为
 
 \[
-328\to468\to473\to473\to475\to479\to481.
+328\to468\to473\to473\to475\to479\to481\to483.
 \tag{3}
 \]
 
@@ -168,17 +170,41 @@ z_j=\nu_j+1,
 \tag{6}
 \]
 
-这把状态局部候选生成覆盖从 479 推进到 481。最后两态不是猜想反例；对原素数执行
-独立的小缺口终端优先扫描得到：
+这把旧坐标因子菜单的状态局部候选生成覆盖从 479 推进到 481。最后两态不是猜想反例；
+基线脚本对原素数执行独立的小缺口终端优先扫描得到：
 
 | \(p\) | gap | \(x=(p+\text{gap})/4\) | Type I 除子 \(d\) |
 |---:|---:|---:|---:|
 | 78268369 | 19 | 19567097 | 1361 |
 | 278505049 | 15 | 69626266 | 2066 |
 
-两张证书都从 \(d\mid x^2\)、gap\(\mid px+d\) 独立恢复并验真。因此对这个冻结样本，
-完整 Reach 后补固定缺口集合 \(\{15,19\}\) 即达到 483/483。这个有限闭合仍不能解释为
-一个无样本上界的选择器。
+两张证书都从 \(d\mid x^2\)、gap\(\mid px+d\) 独立恢复并验真。它们的 Type I 互素
+正规形还统一落在几何 lcm 面：
+
+\[
+(A,B,C)=(1,14377,1361),\qquad(1,33701,2066).
+\]
+
+不过后续的仿射边界审计已不再把 \(\{15,19\}\) 当作状态外补丁。对完整 Reach 节点
+\((A_v,B_v,m_v)\) 固定检查
+
+\[
+X\in\{A_v,B_v,m_v,|A_v-R|,|B_v-R|\}
+\]
+
+的合法外部因子，并对每个候选完整核验 Type I/II。四态共 254 个节点、609 条边、
+298 个逐态候选和 39 个命中；规范首来源依次为
+
+\[
+43\mid m_v,\qquad
+19\mid|A_v-R|,\qquad
+19\mid B_v,\qquad
+15\mid m_v.
+\]
+
+因此扩展菜单在四态上直接命中 4/4，把冻结覆盖推进为状态内候选生成的 483/483。严格
+计数见[完整 Reach 的仿射边界终端菜单](type-I-psi-one-affine-boundary-terminal-profile.md)。
+这仍是有限闭合，不能解释为一个无样本上界的选择器。
 
 ## 5. 完整广义二进菜单为何仍是零分支
 
@@ -225,21 +251,28 @@ E4 递降合同。
    [标准偶源提升边界](type-I-generalized-dyadic-standard-even-lift-boundary.md)；
 3. 全称引理必须使用整个源可达域中的终端或合法边，不能要求汇 SCC 自身含证书；
 4. 剩余工作应改变尾项或全部三分母，或构造合法换支撑；同尾非自然标记没有自由度；
-5. 固定 \(\{15,19\}\)、481/483 或 483/483 都只是冻结有限现象。
+5. 仿射边界菜单把固定 \(\{15,19\}\) 改成了状态内、可证伪的候选规则，但 483/483
+   仍只是冻结有限现象；全称量词尚未证明。
 
 ## 7. 复现
 
 ```bash
 python3 reproductions/type_i_psi_one_full_spectrum_terminal_descent_audit.py --workers 6
 python3 reproductions/type_i_psi_one_full_spectrum_terminal_descent_audit.py --workers 6 --verify
+python3 reproductions/type_i_psi_one_affine_boundary_terminal_profile.py
+python3 reproductions/type_i_psi_one_affine_boundary_terminal_profile.py --verify
 ```
 
 结果文件：
 
 ```text
 reproductions/type-i-psi-one-full-spectrum-terminal-descent-audit-results.json
+reproductions/type-i-psi-one-affine-boundary-terminal-profile-results.json
 ```
 
 脚本与结果 SHA-256 分别为
 `1b51191a99ef39e9c16153078d5d711bc9acb0daaa5db650032e200ce352240a`、
 `eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2`。
+仿射边界脚本与结果 SHA-256 分别为
+`f8d3aabe2da41865f42d4c5809c7a5abf8ccfdd058686a1816d9452790347759`、
+`ca986e77a01cf7c8f571c082553f5d18fca143e3b19c70062cda796e4ec3726e`。

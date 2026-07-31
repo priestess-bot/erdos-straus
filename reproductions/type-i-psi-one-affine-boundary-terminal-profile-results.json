@@ -1,0 +1,251 @@
+{
+  "schema_version": "psi-one-affine-boundary-terminal-profile/v1",
+  "arithmetic": "For each node (A,B,m) in the complete raw-transition Reach of the four frozen state-local residuals, enumerate legal external divisors of A, B, m, |A-R|, and |B-R|; then exhaust the square-divisor Type I/II test for each gap.",
+  "scope_note": "This is a finite candidate-generation profile on four frozen states. Formal Reach edges remain analysis evidence. Every reported terminal independently reconstructs a solution for the original prime, but the profile does not prove that the affine boundary menu succeeds for every Psi_0=1 F state.",
+  "input": {
+    "path": "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json",
+    "sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2"
+  },
+  "closure_script": {
+    "path": "type_i_f_psi_one_formal_transition_closure.py",
+    "sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846"
+  },
+  "script_sha256": "f8d3aabe2da41865f42d4c5809c7a5abf8ccfdd058686a1816d9452790347759",
+  "summary": {
+    "input_residual_state_count": 4,
+    "reachable_node_count": 254,
+    "reachable_edge_count": 609,
+    "candidate_gap_count": 298,
+    "hit_gap_count": 39,
+    "direct_hit_state_count": 4,
+    "previous_complete_reach_verified_state_count": 2,
+    "expanded_complete_reach_verified_state_count": 4,
+    "frozen_psi_one_state_count": 483,
+    "frozen_final_verified_state_count": 483
+  },
+  "records": [
+    {
+      "prime": 37793809,
+      "R": 35,
+      "reachable_node_count": 20,
+      "reachable_edge_count": 35,
+      "candidate_gap_count": 28,
+      "candidate_quantity_occurrences": {
+        "A": 3,
+        "B": 7,
+        "layer_m": 20,
+        "abs_A_minus_R": 10,
+        "abs_B_minus_R": 11
+      },
+      "hit_gap_count": 3,
+      "type_i_gap_count": 3,
+      "type_ii_gap_count": 0,
+      "first_verified_hit": {
+        "candidate_gap": 43,
+        "origin": {
+          "node": [
+            3769,
+            95043001,
+            2715622
+          ],
+          "quantity": "layer_m",
+          "quantity_value": 2715622,
+          "external_part": 43
+        },
+        "type": "Type_I",
+        "gap": 43,
+        "first_denominator": 9448463,
+        "divisor": 8789857,
+        "solution": [
+          9448463,
+          8304498017568,
+          337375395518682064608
+        ],
+        "certificate_semantics": "verified_direct_terminal",
+        "complete_divisor_space_size": 27
+      },
+      "all_hit_gaps": [
+        43,
+        91,
+        127
+      ],
+      "hit": true,
+      "edge_semantics": "analysis_evidence_not_verified_edge",
+      "terminal_semantics": "independently_verified_direct_certificate"
+    },
+    {
+      "prime": 78268369,
+      "R": 8895,
+      "reachable_node_count": 6,
+      "reachable_edge_count": 6,
+      "candidate_gap_count": 9,
+      "candidate_quantity_occurrences": {
+        "A": 1,
+        "B": 3,
+        "layer_m": 2,
+        "abs_A_minus_R": 5,
+        "abs_B_minus_R": 0
+      },
+      "hit_gap_count": 2,
+      "type_i_gap_count": 2,
+      "type_ii_gap_count": 0,
+      "first_verified_hit": {
+        "candidate_gap": 19,
+        "origin": {
+          "node": [
+            326,
+            1787569,
+            201
+          ],
+          "quantity": "abs_A_minus_R",
+          "quantity_value": 8569,
+          "external_part": 19
+        },
+        "type": "Type_I",
+        "gap": 19,
+        "first_denominator": 19567097,
+        "divisor": 1361,
+        "solution": [
+          19567097,
+          80604461487166,
+          90701326246124033095655758
+        ],
+        "certificate_semantics": "verified_direct_terminal",
+        "complete_divisor_space_size": 27
+      },
+      "all_hit_gaps": [
+        19,
+        451
+      ],
+      "hit": true,
+      "edge_semantics": "analysis_evidence_not_verified_edge",
+      "terminal_semantics": "independently_verified_direct_certificate"
+    },
+    {
+      "prime": 174600409,
+      "R": 20631,
+      "reachable_node_count": 200,
+      "reachable_edge_count": 518,
+      "candidate_gap_count": 199,
+      "candidate_quantity_occurrences": {
+        "A": 189,
+        "B": 284,
+        "layer_m": 3,
+        "abs_A_minus_R": 288,
+        "abs_B_minus_R": 190
+      },
+      "hit_gap_count": 23,
+      "type_i_gap_count": 15,
+      "type_ii_gap_count": 8,
+      "first_verified_hit": {
+        "candidate_gap": 19,
+        "origin": {
+          "node": [
+            16,
+            20615,
+            1
+          ],
+          "quantity": "B",
+          "quantity_value": 20615,
+          "external_part": 19
+        },
+        "type": "Type_I",
+        "gap": 19,
+        "first_denominator": 43650107,
+        "divisor": 4200193,
+        "solution": [
+          43650107,
+          401122449436524,
+          727843974720301329865284
+        ],
+        "certificate_semantics": "verified_direct_terminal",
+        "complete_divisor_space_size": 27
+      },
+      "all_hit_gaps": [
+        19,
+        31,
+        43,
+        47,
+        55,
+        59,
+        103,
+        119,
+        151,
+        199,
+        215,
+        239,
+        251,
+        263,
+        335,
+        367,
+        371,
+        479,
+        503,
+        599,
+        1279,
+        2939,
+        5015
+      ],
+      "hit": true,
+      "edge_semantics": "analysis_evidence_not_verified_edge",
+      "terminal_semantics": "independently_verified_direct_certificate"
+    },
+    {
+      "prime": 278505049,
+      "R": 231,
+      "reachable_node_count": 28,
+      "reachable_edge_count": 50,
+      "candidate_gap_count": 62,
+      "candidate_quantity_occurrences": {
+        "A": 2,
+        "B": 19,
+        "layer_m": 34,
+        "abs_A_minus_R": 24,
+        "abs_B_minus_R": 22
+      },
+      "hit_gap_count": 11,
+      "type_i_gap_count": 10,
+      "type_ii_gap_count": 1,
+      "first_verified_hit": {
+        "candidate_gap": 15,
+        "origin": {
+          "node": [
+            197,
+            13663,
+            60
+          ],
+          "quantity": "layer_m",
+          "quantity_value": 60,
+          "external_part": 3
+        },
+        "type": "Type_I",
+        "gap": 15,
+        "first_denominator": 69626266,
+        "divisor": 2066,
+        "solution": [
+          69626266,
+          1292751108267940,
+          12133630890085738670674151060
+        ],
+        "certificate_semantics": "verified_direct_terminal",
+        "complete_divisor_space_size": 81
+      },
+      "all_hit_gaps": [
+        15,
+        19,
+        27,
+        31,
+        59,
+        71,
+        103,
+        191,
+        211,
+        215,
+        451
+      ],
+      "hit": true,
+      "edge_semantics": "analysis_evidence_not_verified_edge",
+      "terminal_semantics": "independently_verified_direct_certificate"
+    }
+  ]
+}

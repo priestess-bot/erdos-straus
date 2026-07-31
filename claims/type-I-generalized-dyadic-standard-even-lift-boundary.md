@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-generalized-dyadic-standard-even-lift-boundary
 title: 广义二进前驱的标准偶源分类与完整提升零边界
-statement: 对广义二进偶前驱 n<p，标准解 (n/2,n,n) 的全部一分母保留提升按 E 与 2K、3K 的位置精确分成非正余量、缺口 2n-p 或 4n-p 的直接 Type I/II，以及保留大坐标 n 的 Type I 重图表；任何成功都已是原 p 的直接终端，不是新的 E4 递降边。另令 H=n^2/E，则 H 必为偶数，且 (n/2,(n+E)/2,(n+H)/2) 是显式 E-split 源解；它的两个两分母保留通道同样保留 n/2，成功仍只是直接缺口终端。冻结 483 个 Psi_0=1 F 状态的 3976 条原始表示去重为 1385 个前驱；完整检查 3792095 个标准一分母因子对与 2770 个 E-split 通道，命中均为零。该零结果是有限边界，不是全称障碍。
+statement: 对广义二进偶前驱 n<p，标准解 (n/2,n,n) 的全部一分母保留提升按 E 与 2K、3K 的位置精确分成非正余量、缺口 2n-p 或 4n-p 的直接 Type I/II，以及保留大坐标 n 的 Type I 重图表；任何成功都已是原 p 的直接终端，不是新的 E4 递降边。另令 H=n^2/E，并规范化 E=A^2C、H=B^2C、n=ABC。E-split 的两个尾替换分别等价于 Q_H=Ap-2(p-n)(A+B)>0、Q_H|n/2 或 Q_E=Bp-2(p-n)(A+B)>0、Q_E|n/2；成功时显式恢复 4K'=pR'+1 的中心 Type I 重图表，且 R'=R 当且仅当被替换尾是自然标记 alpha=nK/E。冻结 483 个 Psi_0=1 F 状态的 3976 条原始表示去重为 1385 个前驱；完整检查 3792095 个标准一分母因子对与 2770 个 E-split 通道，命中均为零。该零结果是有限边界，不是全称障碍。
 claim_status: computationally_reproduced
 proof_provenance: mixed
 review_status: internal_review
@@ -140,7 +140,138 @@ D_T\mid\frac{np(n+T)}2.
 (8) 一旦成功，仍精确嵌入 gap \(2n-p\) 的一分母完整因子空间。它提供显式候选源，
 却仍不是新递降类型。
 
-## 3. 483 态完整零审计
+## 3. E-split 命中的规范中心重图表
+
+令
+
+\[
+\delta=p-n=\frac{E-1}{R}.
+\tag{9}
+\]
+
+因为 \(EH=n^2\)，存在唯一的互素正规化
+
+\[
+E=A^2C,\qquad H=B^2C,\qquad n=ABC,\qquad(A,B)=1.
+\tag{10}
+\]
+
+由 \(E,H\) 都是偶数可知 \(C\) 为偶数。记 \(S=A+B\)，则 E-split 两个尾为
+
+\[
+c_E=\frac{n+E}{2}=\frac{ACS}{2},
+\qquad
+c_H=\frac{n+H}{2}=\frac{BCS}{2}.
+\tag{11}
+\]
+
+### 3.1 替换 H-tail
+
+替换 \(c_H\)、保留 \(n/2,c_E\) 时，定义
+
+\[
+Q_H=Ap-2\delta S.
+\tag{12}
+\]
+
+式 (8) 的判别量恰为 \(D_H=BCQ_H\)。又
+\(\gcd(Q_H,pS)=1\)，所以整除条件严格等价于
+
+\[
+\boxed{Q_H>0,\qquad Q_H\mid n/2.}
+\tag{13}
+\]
+
+这里 \((A,S)=1\)、\(S\le n<p\) 及 \((p,\delta)=1\) 给出
+\((Q_H,pS)=1\)。又由 \(\delta R=A^2C-1\) 得 \((A,\delta)=1\)，所以
+\((Q_H,\delta)=1\)。在 (13) 下有 \(n\equiv0\)、\(p\equiv\delta\pmod {Q_H}\)，
+将其代入 (12) 便得到 \(Q_H\mid A+2B\)。于是
+
+\[
+R'_H=\frac{A+2B}{Q_H},
+\qquad
+K'_H=\frac{nS}{2Q_H}
+\tag{14}
+\]
+
+都是正整数，并且
+
+\[
+4K'_H=pR'_H+1.
+\tag{15}
+\]
+
+式 (8) 恢复的新分母正是 \(pK'_H\)。保留的两项还满足
+
+\[
+\frac2n+\frac2{ACS}=\frac{R'_H}{K'_H},
+\]
+
+故成功输出是新图表 \((R'_H,K'_H)\) 上的中心 Type I 直接终端。
+
+### 3.2 替换 E-tail
+
+替换 E-tail 时直接计算得到
+
+\[
+Q_E=Bp-2\delta S.
+\tag{16}
+\]
+
+此时 \(D_E=ACQ_E\)。与上一通道相同，\((Q_E,pS)=1\)，故命中当且仅当
+
+\[
+Q_E>0,\qquad Q_E\mid n/2,
+\]
+
+又因 \(B\mid n<p\) 且 \(p\) 为素数，有 \((B,\delta)=1\)，进而
+\((Q_E,\delta)=1\)。由 \(p\equiv\delta\pmod {Q_E}\) 可得
+\(Q_E\mid2A+B\)。成功时
+
+\[
+R'_E=\frac{2A+B}{Q_E},
+\qquad
+K'_E=\frac{nS}{2Q_E},
+\qquad
+4K'_E=pR'_E+1,
+\tag{17}
+\]
+
+而被替换尾恢复为 \(pK'_E\)。所以这一通道同样只能产生中心 Type I 重图表，不会产生
+Type II 或新的递归状态类型。
+
+### 3.3 自然图表的精确等号条件
+
+两条通道回到原图表的条件为
+
+\[
+\begin{aligned}
+R'_H=R
+&\iff A=B(R-2)
+\iff c_H=\alpha=\frac{nK}{E},\\
+R'_E=R
+&\iff RB^2=A(2A+B)
+\iff c_E=\alpha.
+\end{aligned}
+\tag{18}
+\]
+
+第一行结合 \((A,B)=1\) 还推出 \(B=1,A=R-2\)；第二行推出 \(B\mid2\)。方向也由
+
+\[
+\operatorname{sgn}(R-R'_H)=\operatorname{sgn}(B(R-2)-A),
+\]
+
+\[
+\operatorname{sgn}(R-R'_E)=
+\operatorname{sgn}(RB^2-A(2A+B))
+\]
+
+完全决定。因此 \(R'\ne R\) 精确等价于被替换尾不是自然标记；但即使如此，(15) 或
+(17) 已经把它恢复成原 \(p\) 的直接 Type I 证书，而不是一条需要较小状态非空性的
+E4 边。
+
+## 4. 483 态完整零审计
 
 输入为完整 F 谱中的 483 个 \(\Psi_0=1\) 状态。3976 条原始 \((j,a,b)\) 表示先按
 逐态 \((E,n)\) 去重；否则变换 \((j,a,b)\mapsto(j+1,2a,b)\) 会给同一个前驱制造
@@ -166,7 +297,7 @@ D_T\mid\frac{np(n+T)}2.
 
 对 (7) 则检查 1385 个源、2770 个尾替换，其中 2557 个满足 \(D_T>0\)，整除命中仍为
 零。原四个状态局部余项含 88 条 raw 表示、12 个不同前驱；其 12274 个一分母因子对
-与 24 个 E-split 通道也全部失败。完整 Reach 后真正剩余的两态含 7 个前驱；其
+与 24 个 E-split 通道也全部失败。旧坐标菜单的完整 Reach 后剩余两态含 7 个前驱；其
 5825 个一分母因子对与 14 个 E-split 通道仍全部失败。
 
 首个冻结反例为
@@ -198,18 +329,22 @@ D_T\mid\frac{np(n+T)}2.
 这确认审计器并非恒零；但该成功恰是已知自然标记 \(28\mapsto pK\)，并且当前图表
 已有中心命中。
 
-## 4. 证明边界与下一问题
+## 5. 证明边界与下一问题
 
 有限零结果不能外推为“所有 F 态的标准通道都失败”。相反，本页证明的全称部分只是：
 
-1. 一分母保留或 E-split 一旦成功，就已经是直接 Type I/II 证书的重写；
+1. 一分母保留一旦成功，就已经是直接 Type I/II 证书的重写；E-split 成功更精确地是
+   (14) 或 (17) 的中心 Type I 重图表；
 2. 它们不能充当独立 E4 递降边；
 3. 当前冻结 F 样本恰好全部失败。
 
-若仍研究 E-split，最窄的新问题是：在 (8) 成功时，恢复的新图表是否必等于自然图表。
-自然分支会回到 \(\alpha=nK/E\)；若能出现不同图表，它才可能暴露新的跨状态结构。
+若仍研究 E-split，最窄的新问题已由 (18) 化成：核心域中的命中是否必满足相应丢番图
+等式。当前已知正例 \(p=97\) 满足 \(R'=R\)，冻结 483 态则没有 E-split 命中；仓库中
+目前没有合法的 \(R'\ne R\) 成功例，因此“所有合法成功是否都自然”仍是开放问题。
+即使核心域最终出现 \(R'\ne R\)，(14)--(17) 也已证明它应登记为直接 Type I
+跨图表终端；真正的递降增量仍须来自不预先包含目标证书的合法状态映射。
 
-## 5. 复现
+## 6. 复现
 
 ```bash
 python3 reproductions/type_i_psi_one_full_spectrum_standard_even_lift_audit.py

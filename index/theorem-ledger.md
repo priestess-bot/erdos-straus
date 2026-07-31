@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 359 |
+| 数学状态 | `computationally_reproduced` | 360 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 294 |
+| 数学状态 | `established` | 295 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
-| 证明来源 | `mixed` | 21 |
-| 证明来源 | `repository_derivation` | 121 |
+| 证明来源 | `mixed` | 22 |
+| 证明来源 | `repository_derivation` | 122 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 246 |
+| 审阅状态 | `internal_review` | 248 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -315,6 +315,7 @@
 | [外部一层周期的带符号乘积律与自动终端边界](../claims/type-I-formal-external-cycle-product-law-boundary.md) (`type-I-formal-external-cycle-product-law-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [完整超高形式图的 Type I 或一层周期归约](../claims/type-I-formal-full-excess-cycle-or-hit-reduction.md) (`type-I-formal-full-excess-cycle-or-hit-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [形式目标对的双秩剪枝、一步终端前瞻与外部缺口选择器](../claims/type-I-formal-ranked-pruning-and-external-gap-selector.md) (`type-I-formal-ranked-pruning-and-external-gap-selector`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
+| [形式可达节点的奇组合不能返回 F 态容量盒](../claims/type-I-formal-reach-odd-combination-box-rigidity.md) (`type-I-formal-reach-odd-combination-box-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [一层周期单外部行的 Smith 奇偶选择器与容量边界](../claims/type-I-formal-single-external-smith-parity-selector.md) (`type-I-formal-single-external-smith-parity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [形式目标因子对转移的 m 等于一支撑内循环边界](../claims/type-I-formal-target-pair-descent-cycle-boundary.md) (`type-I-formal-target-pair-descent-cycle-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -480,6 +481,7 @@
 | [Type I 私有因子平移首达指数判据](../claims/type-I-private-translate-index.md) (`type-I-private-translate-index`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [私有 u=3 载体族的二进终端与 Type II 支撑退出](../claims/type-I-private-u3-carrier-dyadic-terminal-q-free-type-II.md) (`type-I-private-u3-carrier-dyadic-terminal-q-free-type-II`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [私有 u=3 偶终端的自然提升障碍与 q-free 因子三分](../claims/type-I-private-u3-terminal-natural-lift-obstruction.md) (`type-I-private-u3-terminal-natural-lift-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [完整 Reach 的仿射边界终端菜单闭合四个状态余项](../claims/type-I-psi-one-affine-boundary-terminal-profile.md) (`type-I-psi-one-affine-boundary-terminal-profile`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [完整 F 谱中四百八十三个缺陷一状态的终端与提升边界](../claims/type-I-psi-one-full-spectrum-terminal-descent-boundary.md) (`type-I-psi-one-full-spectrum-terminal-descent-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 五周期的表示格容量三相与无限核心射线](../claims/type-I-r47-cycle-lattice-capacity-three-phase-boundary.md) (`type-I-r47-cycle-lattice-capacity-three-phase-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |

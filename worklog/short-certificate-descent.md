@@ -3071,3 +3071,69 @@ a=\frac{p-1}{4},
 零缺陷或旧见证冒充新状态数据。这个结果证明合法 rechart 存在，也严格说明它本身不能
 闭合猜想。详见
 [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md)。
+
+## 2026-07-31 完整 Reach 的仿射边界终端与组合刚性
+
+对完整缺陷一谱最后四个状态局部余项，旧 external-gap 菜单只取 Reach 节点的
+\(A,B\) 因子，因此完整未剪枝 Reach 后仍有两项必须由状态外 gap \(19,15\) 回退。
+本轮把候选严格扩成
+
+\[
+\mathcal X_R(A,B,m)=
+\{A,B,m,|A-R|,|B-R|\}\setminus\{0\}.
+\]
+
+新增三类量分别是形式迁移分子 \(m+t\)、\(B+Rt\) 在 \(t=0,-1\) 的边界及其交换
+对称；它们只生成 gap，不冒充形式边。对每个合法外部因子仍完整枚举
+\(d\mid((p+h)/4)^2\)，并独立恢复 Type I/II 三分母。
+
+四态的聚焦审计得到：
+
+- 254 个完整 Reach 节点、609 条形式边；
+- 298 个逐态候选 gap、39 个直接命中；
+- 四态规范首来源依次为 \(43\mid m\)、\(19\mid|A-R|\)、\(19\mid B\)、
+  \(15\mid m\)；
+- 状态内直接终端覆盖由 481/483 推进到 483/483，不再使用全局 gap cap 127。
+
+这只是冻结四态的有限正信号。下一条可证伪命题是：每个 terminal-first 后仍未闭合的
+\(\Psi_0=1\) F 状态，其完整 Reach 中至少有一个上述边界量的合法因子命中直接终端。
+若出现一个完整 Reach 全 miss 的核心可实现状态，应立即否定这个具体菜单，而不是继续
+追加临时表达式。严格主张与复现见
+[完整 Reach 的仿射边界终端菜单](../claims/type-I-psi-one-affine-boundary-terminal-profile.md)。
+脚本和结果 SHA-256 分别为
+f8d3aabe2da41865f42d4c5809c7a5abf8ccfdd058686a1816d9452790347759、
+ca986e77a01cf7c8f571c082553f5d18fca143e3b19c70062cda796e4ec3726e。
+
+同时证明了一个无样本的组合边界。每个 Reach 节点指数向量都表示
+\(-1\pmod R\)，所以整数线性组合的相位只由系数和奇偶决定。奇组合若消掉全部外部
+坐标并落回原 \(K\) 指数盒，就已经是一张中心 Type I 证书，与 F 状态矛盾；偶组合则
+表示 \(+1\)。因此 Smith/关系格组合不能“修复”F 态容量盒，只能给出
+MISS_EXTERNAL 或 MISS_CAPACITY，或保留外部 slab 后另行寻找终端。见
+[形式可达节点的奇组合容量刚性](../claims/type-I-formal-reach-odd-combination-box-rigidity.md)。
+
+E-split 的最后一个图表歧义也已消除。写
+
+\[
+E=A^2C,\qquad H=B^2C,\qquad n=ABC,\qquad S=A+B.
+\]
+
+两个尾替换分别由
+
+\[
+Q_H=Ap-2(p-n)S,\qquad Q_E=Bp-2(p-n)S
+\]
+
+控制；命中严格等价于相应 \(Q>0\)、\(Q\mid n/2\)。成功时
+
+\[
+R'_H=\frac{A+2B}{Q_H}
+\quad\text{或}\quad
+R'_E=\frac{2A+B}{Q_E},
+\qquad
+K'=\frac{nS}{2Q},
+\]
+
+并有 \(4K'=pR'+1\)，替换尾正是 \(pK'\)。所以任何成功都是中心 Type I
+跨图表终端；\(R'=R\) 又恰等价于被替换尾为自然标记 \(\alpha=nK/E\)。这关闭了
+“非自然 E-split 是否产生新 E4 类型”的歧义：即使 \(R'\ne R\)，它仍是直接证书，
+而不是独立递降。
