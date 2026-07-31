@@ -3552,3 +3552,82 @@ unlifted_generalized_dyadic_candidate，不是已闭合终端。
 [large-slab 因子层与 cocycle](../claims/type-I-large-slab-factor-pair-layer-capacity.md)、
 [large-slab 三系数算术边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md)及
 [p 减一秩 D-only no-go](../claims/two-denominator-lift-core-rank-one-no-go.md)。
+
+## 2026-08-01 overflow 补秩的 D-only 平方超额收缩
+
+对 marked-support overflow 写
+
+\[
+u=4M-R_M,
+\qquad
+pu=4Md+1,
+\qquad
+2\le u<p.
+\]
+
+核心模类自动给出 \(u\equiv1\pmod4\) 和 \(r=p-u\in4\mathbb N\)。determinant 又给出
+
+\[
+(M,pu)=(d,pu)=(r,pu)=1,
+\]
+
+所以每个 \(D\mid(pu)^2\) 都与 \(Mdr\) 互素。D-only 不能在 distinguished factor
+中保留 accumulated support；若重置 \(A\)，必须由新的 equation-rank 层支付。
+
+non-source 参数写成 \(D=p\delta,\delta\mid u^2\)。若再有 \(\delta\mid u\)，令
+\(H=u^2/\delta=uh\)，则
+
+\[
+\lambda=\ell u,
+\qquad
+h=1+4\ell r,
+\qquad
+\mu=4\ell u-1.
+\]
+
+三个 \(\lambda^2\) 真因子目标分别由大小、模 \(4\) 和模 \(h\) 矛盾全部排除。因此
+
+\[
+\delta\mid u
+\Longrightarrow
+W(p,u,p\delta)=\varnothing.
+\]
+
+唯一幸存必要条件是
+
+\[
+\delta\mid u^2,
+\qquad
+\delta\nmid u.
+\]
+
+它具有精确平方载体正规形
+
+\[
+\delta=cw^2,\qquad
+u=acw,\qquad
+\lambda=abc,\qquad
+t=bcw,\qquad
+a=w+4rb,\qquad
+w\ge3,
+\]
+
+并强制
+
+\[
+\delta\ge9,
+\qquad
+u>3\sqrt p,
+\qquad
+13u\ge12p+9,
+\qquad
+u(u+3)>12p.
+\]
+
+聚焦 clean receipt \(p=1129,R=1023,Q=1021\) 在 \(R_Q=2959\) 给出 \(u=1125\)：
+\(\delta=5\) 落在全域 no-go，\(\delta=405\) 是合法 square-excess 但三目标仍 miss。
+这轮没有构造新的 E4；它删除了全部原预算候选，并把下一步精确收缩为“真实载体强制
+square-excess + 三目标命中”或其 miss 到换载体/competing-excess 的桥。
+
+严格主张和小型复现见
+[overflow D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md)。

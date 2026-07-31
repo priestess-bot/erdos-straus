@@ -1,0 +1,240 @@
+{
+  "schema_version": "overflow-d-only-square-excess-boundary/v1",
+  "scope_note": "Focused exact verification of five overflow receipts, support erasure, one layer-supported no-go parameter, and two square-excess parameters. It is not a historical scan or a universal E4 claim.",
+  "summary": {
+    "receipt_count": 5,
+    "clean_large_slab_receipt_count": 4,
+    "support_erasure_verified_count": 5,
+    "non_source_parameter_count": 3,
+    "layer_supported_no_go_count": 1,
+    "square_excess_parameter_count": 2,
+    "marked_nonempty_count": 0,
+    "low_rank_square_excess_excluded_count": 2
+  },
+  "records": [
+    {
+      "name": "clean_overflow_p73",
+      "provenance": "clean_large_slab",
+      "source_slab": {
+        "R": 63,
+        "K": 1150,
+        "Q": 31,
+        "q": 31,
+        "e": 1,
+        "alpha": 2,
+        "beta": 1
+      },
+      "prime": 73,
+      "rank": 17,
+      "distance": 56,
+      "support": 31,
+      "R_M": 107,
+      "K_M": 1953,
+      "C": 63,
+      "d": 10,
+      "support_erasure_verified": true,
+      "rank_times_rank_plus_three": 340,
+      "twelve_p": 876,
+      "low_rank_square_excess_excluded": true,
+      "source_supported_D": [],
+      "non_source_parameters": []
+    },
+    {
+      "name": "clean_overflow_p241",
+      "provenance": "clean_large_slab",
+      "source_slab": {
+        "R": 215,
+        "K": 12954,
+        "Q": 71,
+        "q": 71,
+        "e": 1,
+        "alpha": 3,
+        "beta": 2
+      },
+      "prime": 241,
+      "rank": 33,
+      "distance": 208,
+      "support": 71,
+      "R_M": 251,
+      "K_M": 15123,
+      "C": 213,
+      "d": 28,
+      "support_erasure_verified": true,
+      "rank_times_rank_plus_three": 1188,
+      "twelve_p": 2892,
+      "low_rank_square_excess_excluded": true,
+      "source_supported_D": [],
+      "non_source_parameters": []
+    },
+    {
+      "name": "clean_overflow_p13177",
+      "provenance": "clean_large_slab",
+      "source_slab": {
+        "R": 12299,
+        "K": 40515981,
+        "Q": 4096,
+        "q": 2,
+        "e": 12,
+        "alpha": 3,
+        "beta": 11
+      },
+      "prime": 13177,
+      "rank": 1737,
+      "distance": 11440,
+      "support": 4096,
+      "R_M": 14647,
+      "K_M": 48250880,
+      "C": 11780,
+      "d": 1397,
+      "support_erasure_verified": true,
+      "rank_times_rank_plus_three": 3022380,
+      "twelve_p": 158124,
+      "low_rank_square_excess_excluded": false,
+      "source_supported_D": [],
+      "non_source_parameters": []
+    },
+    {
+      "name": "layer_supported_delta_no_go",
+      "provenance": "clean_large_slab",
+      "source_slab": {
+        "R": 1023,
+        "K": 288742,
+        "Q": 1021,
+        "q": 1021,
+        "e": 1,
+        "alpha": 1,
+        "beta": 2
+      },
+      "prime": 1129,
+      "rank": 1125,
+      "distance": 4,
+      "support": 1021,
+      "R_M": 2959,
+      "K_M": 835178,
+      "C": 818,
+      "d": 311,
+      "support_erasure_verified": true,
+      "rank_times_rank_plus_three": 1269000,
+      "twelve_p": 13548,
+      "low_rank_square_excess_excluded": false,
+      "source_supported_D": [
+        45,
+        125,
+        10125,
+        28125
+      ],
+      "non_source_parameters": [
+        {
+          "D": 5645,
+          "delta": 5,
+          "delta_factorization": [
+            [
+              5,
+              1
+            ]
+          ],
+          "layer_supported": true,
+          "square_excess_primes": [],
+          "a": 79030,
+          "a_prime": 17781750,
+          "lambda": 15750,
+          "mu": 62999,
+          "H": 253125,
+          "layer_normal_form": {
+            "h": 225,
+            "ell": 14
+          },
+          "square_carrier_normal_form": null,
+          "normalized_target_hits": [],
+          "marked_fiber_nonempty": false
+        },
+        {
+          "D": 457245,
+          "delta": 405,
+          "delta_factorization": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "layer_supported": false,
+          "square_excess_primes": [
+            3
+          ],
+          "a": 50805,
+          "a_prime": 141125,
+          "lambda": 125,
+          "mu": 499,
+          "H": 3125,
+          "layer_normal_form": null,
+          "square_carrier_normal_form": {
+            "a": 25,
+            "b": 1,
+            "c": 5,
+            "w": 9,
+            "t": 45
+          },
+          "normalized_target_hits": [],
+          "marked_fiber_nonempty": false
+        }
+      ]
+    },
+    {
+      "name": "square_excess_parameter_still_empty",
+      "provenance": "abstract_overflow_receipt",
+      "source_slab": null,
+      "prime": 193,
+      "rank": 185,
+      "distance": 8,
+      "support": 8926,
+      "R_M": 35519,
+      "K_M": 1713792,
+      "C": 192,
+      "d": 1,
+      "support_erasure_verified": true,
+      "rank_times_rank_plus_three": 34780,
+      "twelve_p": 2316,
+      "low_rank_square_excess_excluded": false,
+      "source_supported_D": [
+        25,
+        185,
+        1369
+      ],
+      "non_source_parameters": [
+        {
+          "D": 4825,
+          "delta": 25,
+          "delta_factorization": [
+            [
+              5,
+              2
+            ]
+          ],
+          "layer_supported": false,
+          "square_excess_primes": [
+            5
+          ],
+          "a": 965,
+          "a_prime": 7141,
+          "lambda": 37,
+          "mu": 147,
+          "H": 1369,
+          "layer_normal_form": null,
+          "square_carrier_normal_form": {
+            "a": 37,
+            "b": 1,
+            "c": 1,
+            "w": 5,
+            "t": 5
+          },
+          "normalized_target_hits": [],
+          "marked_fiber_nonempty": false
+        }
+      ]
+    }
+  ]
+}

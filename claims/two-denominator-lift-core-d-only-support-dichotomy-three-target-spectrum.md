@@ -524,6 +524,13 @@ source-supported 参数则仍只复述已有中心 Type I。完整的互素参�
 [p 减一秩的非自然 D-only 标记纤维全域空定理](two-denominator-lift-core-rank-one-no-go.md)。
 所以后续构造必须满足 \(r\ge2\)，不能再把最小 rank drop 当作默认候选。
 
+对 absorbed-support overflow 产生的严格补秩 \(u=4M-R_M<p\)，还可利用
+\(u\equiv1\pmod4\) 继续关闭一整层：若 non-source 参数写成
+\(D=p\delta\)、\(\delta\mid u^2\)，则 \(\delta\mid u\) 时三个目标恒空。于是新的
+overflow-to-D-only 后继必须是 \(\delta\nmid u\) 的平方超额，并满足
+\(u>3\sqrt p\)、\(13u\ge12p+9\) 和 \(u(u+3)>12p\)。见
+[overflow D-only 平方超额边界](type-I-overflow-d-only-square-excess-no-go.md)。
+
 聚焦复现入口为
 
 ~~~bash

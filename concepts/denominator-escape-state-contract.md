@@ -30,6 +30,7 @@ used_by:
 - type-I-phase-labeled-candidate-selector-well-founded-schedule
 - type-I-marked-support-accumulation-rechart-saturation
 - type-I-large-slab-three-alpha-arithmetic-boundaries
+- type-I-overflow-d-only-square-excess-no-go
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion

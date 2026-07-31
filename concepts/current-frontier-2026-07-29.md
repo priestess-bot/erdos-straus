@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。底层 path-carried static 素数可回溯为 clean slab 或竞争 raw 超额；clean slab 现进一步携带 absorbed support A|K，并以 R_{AQ}<p 的规范重图表给出恒等解提升及势 floor((p-1)^2/(4A)) 严格下降，即使新 R 增大也不成环。过去 p=107722177,R=207 等 local strong large-slab miss 因 R_Q<p 已重新分类为 marked descent；真正 clean 余项收紧为 R_{AQ}>p 的 overflow，其精确边界为 pn=4AQd+1，且 generalized prime-power gap 谱已有全 miss 反例。固定图表的 clean slabs 还产生真实 beta-ratio 中心谱 cocycle，且同一 q 最多三层。D-only 方面，non-source 分支除 n>sqrt(p) 外，n=p-1 层现已由 Vieta 下降证明全域空。当前决定性余项是 overflow 换载体/终端、multi-excess SCC 的 clean-slab 强制，以及多坐标 Pareto 价格到实际跨状态载体容量的算术注入。
+summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。底层 path-carried static 素数可回溯为 clean slab 或竞争 raw 超额；clean slab 携带 absorbed support A|K，并以 R_{AQ}<p 的规范重图表给出恒等解提升及势 floor((p-1)^2/(4A)) 严格下降。真正 clean 余项是 R_{AQ}>p 的 overflow，满足 pu=4AQd+1。若补秩 u<p，则所有 D-only 参数都与 AQ、d、p-u 互素；non-source 的 delta|u 层全域空，唯一幸存必要形为 delta=cw^2、u=acw、a=w+4(p-u)b、w>=3，并强制 13u>=12p+9。固定图表的 clean slabs 还产生至多三个 beta-ratio cocycle，但不能自动饱和。当前决定性余项是近 p 平方超额的三目标命中或换载体、multi-excess SCC 的 clean-slab 强制，以及多坐标 Pareto 价格到实际跨状态载体容量的算术注入。
 topics:
 - research-map
 - proof-program
@@ -2234,6 +2234,141 @@ s=a^2c,\qquad\lambda=abc,\qquad p=4bc(b-a)+1
 [large-slab 三系数算术边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md)和
 [p 减一秩 D-only no-go](../claims/two-denominator-lift-core-rank-one-no-go.md)。
 
+## 目标五十二：overflow-to-D-only 的支撑擦除与平方超额边界
+
+overflow determinant 到 D-only 的桥已经获得新的无样本必要条件。写
+
+\[
+u=4M-R_M,
+\qquad
+r=p-u,
+\qquad
+pu=4Md+1,
+\]
+
+并只考虑真正较小的 \(2\le u<p\)。由于 \(R_M\equiv3\pmod4\) 和核心
+\(p\equiv1\pmod4\)，自动有
+
+\[
+u\equiv1\pmod4,
+\qquad
+r\equiv0\pmod4,
+\qquad
+r\ge4.
+\]
+
+因此 overflow 补秩不会进入已经关闭的 \(r=1\) 层。更强地，
+
+\[
+(M,pu)=(d,pu)=(r,pu)=1.
+\]
+
+每个 D-only 参数 \(D\mid(pu)^2\) 因而满足
+
+\[
+\boxed{(D,Mdr)=1.}
+\]
+
+所以任何这类 handoff 都会在 \(D\) 的算术支撑中擦除已累积的 \(M\)，不能把
+absorbed support 机械继承到 D-only。若要重置该字段，必须由严格较小 rank 或外层
+良基势支付。
+
+non-source 参数仍唯一写成
+
+\[
+D=p\delta,
+\qquad
+\delta\mid u^2,
+\qquad
+H=\frac{u^2}{\delta}=p+(4\lambda-1)r.
+\]
+
+新的全域 no-go 是
+
+\[
+\boxed{
+\delta\mid u
+\Longrightarrow
+W(p,u,p\delta)=\varnothing.}
+\]
+
+证明写 \(H=uh\)，由 \(h\mid u\) 得
+
+\[
+\lambda=\ell u,
+\qquad
+h=1+4\ell r,
+\qquad
+\mu=4\ell u-1.
+\]
+
+三个规范真因子目标依次由 \(0<v+\lambda<\mu\)、模 \(4\) 矛盾以及
+\(h\mid L+\ell\) 与 \(0<L+\ell<h\) 排除。因此 \(D=p\) 和所有只使用 \(u\)
+原指数预算的自然候选都不能提供非空 E4。
+
+唯一尚可能的 genuinely new 分支已经压成
+
+\[
+\boxed{
+D=p\delta,
+\qquad
+\delta\mid u^2,
+\qquad
+\delta\nmid u.}
+\]
+
+它还有显式平方载体正规形
+
+\[
+\delta=cw^2,
+\qquad
+u=acw,
+\qquad
+\lambda=abc,
+\qquad
+t=bcw,
+\qquad
+a=w+4rb,
+\qquad
+w\ge3.
+\]
+
+因此潜在后继必须满足
+
+\[
+\delta\ge9,
+\qquad
+u>3\sqrt p,
+\qquad
+13u\ge12p+9,
+\qquad
+u(u+3)>12p.
+\]
+
+真实 clean overflow
+
+\[
+(p,R,Q,R_M,u)=(1129,1023,1021,2959,1125)
+\]
+
+同时给出 \(\delta=5\mid u\) 的 no-go 参数和
+\(\delta=405\mid u^2,\delta\nmid u\) 的 square-excess 参数；后者三目标仍全部 miss。
+所以 square-excess 是必要条件，不是非空充分条件。
+
+下一步顺序因此改为：
+
+1. 只从 \((C,u^2)\) 或其它真实跨状态载体中提取上述平方载体，不再枚举任意
+   \(D\)；
+2. 对实际 square-excess 参数证明 \(\lambda^2\) 三目标命中，或从其规范 miss 证书构造
+   另一条 E1--E5 边；
+3. 若 overflow 不强制任何 square-excess，则把这一失败本身转成换载体或
+   competing-excess 的容量证书；
+4. 保持 accumulated-support 势与 equation-rank 势分层，禁止在没有外层支付时重置
+   \(A\)。
+
+严格主张和聚焦复现见
+[overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md)。
+
 ## 依赖顺序
 
 \[
@@ -2284,6 +2419,8 @@ s=a^2c,\qquad\lambda=abc,\qquad p=4bc(b-a)+1
 \downarrow\\
 \text{D-only 的 }n=p-1\text{ 非自然标记纤维全域空定理}\\
 \downarrow\\
+\text{overflow 补秩的支撑擦除、原预算空纤维与平方超额必要条件}\\
+\downarrow\\
 \text{PRE--ABSORB 分型势只解决旧候选 E5；其它 formal 边 E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
@@ -2307,7 +2444,8 @@ Pareto 前沿和同图表至多三个 \(\beta\)-ratio cocycle。底层 SCC 的�
 显式有限见证界和周期静态/区间证书。真正余项现已从“继续走多深”转为
 \(R_{AQ}>p\) overflow、competing-excess 与跨状态容量的全称算术桥。
 \(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 外，又关闭了整个 \(n=p-1\) 层；
-后续只研究满足尺寸下界的 \(p-n\ge2\) 参数。path-static receipt 现在按
+overflow 补秩中所有 \(\delta\mid u\) 的原预算参数也已关闭，后续只研究满足
+\(13u\ge12p+9\) 的平方超额参数。path-static receipt 现在按
 MARKED_ABSORB/OVERFLOW/COMPETING_EXCESS 分流，再把后两支送入完整 SCC/Pareto。
 不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复

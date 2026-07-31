@@ -41,7 +41,7 @@
 
 - \(R_{AQ}>p\) 的 clean-slab overflow；
 - competing-excess sink-SCC 到 clean slab 或直接终端的强制；
-- \(p-n\ge2\) 的 \(D\)-only 非空选择和多坐标 Pareto 容量注入。
+- overflow 补秩中近 \(p\) 平方超额的 \(D\)-only 非空选择，以及多坐标 Pareto 容量注入。
 
 综合判断：
 
@@ -52,7 +52,7 @@
 | 冻结 \(\Psi_0=1\) 状态 | 483/483 状态内候选闭合 | 很强有限证据 |
 | 广义二进终端 | 内部选择器成熟，自然提升被关闭 | 路线澄清 |
 | external slab | \(R_{AQ}<p\) 已有 absorbed-support 良基边 | clean 余项只剩 overflow |
-| 标记递降 | \(D\)-only 正规形完成，\(n=p-1\) 层已证明全空 | \(p-n\ge2\) 仍开放 |
+| 标记递降 | \(n=p-1\) 与 overflow 原指数预算层均已证明全空 | 近 \(p\) 平方超额仍开放 |
 | 全称选择器 | 尚未闭合 | 决定性缺口仍在 |
 | 独立复核 | 仍明显不足 | 可信度瓶颈 |
 
@@ -72,8 +72,9 @@
 }
 \]
 
-前者有机会闭合 clean external slab 分支；后者必须避开已经证明为空的 \(n=p-1\) 层，
-才可能产生新的可递归标记解提升。
+前者有机会闭合 clean external slab 分支；后者若来自 overflow，还必须进入
+\(\delta=cw^2\)、\(w\ge3\)、\(13u\ge12p+9\) 的平方超额层，才可能产生新的可递归
+标记解提升。
 
 ---
 
@@ -1277,6 +1278,35 @@ z\equiv-\sigma\pmod\mu,
 > [large-slab 因子层与 cocycle 容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md)、
 > [large-slab 三系数算术边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md)和
 > [p 减一秩 D-only no-go](../claims/two-denominator-lift-core-rank-one-no-go.md)。
+
+> **2026-08-01 overflow-to-D-only 平方超额更新。** 对严格补秩
+> \(u=4AQ-R_{AQ}<p\)，现已证明 \(u\equiv1\pmod4\)、\(p-u\in4\mathbb N\)，且每个
+> D-only 参数都与累积支撑 \(AQ\)、determinant 互补量 \(d\) 和 rank gap \(p-u\)
+> 互素。non-source 参数唯一写成 \(D=p\delta,\delta\mid u^2\)；若
+> \(\delta\mid u\)，三个标记目标全部为空。因此真正可能的新后继必须具有
+>
+> \[
+> \delta=cw^2,\qquad
+> u=acw,\qquad
+> \lambda=abc,\qquad
+> a=w+4(p-u)b,\qquad
+> w\ge3,
+> \]
+>
+> 并满足
+>
+> \[
+> \delta\ge9,\qquad
+> 13u\ge12p+9,\qquad
+> u(u+3)>12p.
+> \]
+>
+> 这把 overflow-to-D-only 从任意因子搜索压成近 \(p\) 的平方超额问题。真实 clean
+> overflow \((p,R,Q,R_Q,u)=(1129,1023,1021,2959,1125)\) 同时含
+> \(\delta=5\mid u\) 的全域 no-go 和 \(\delta=405\nmid u\) 的 square-excess
+> miss，说明平方超额仍只是必要条件。下一步只应证明真实载体为何强制这种超额并命中
+> 三目标，或把其缺失转成换载体/competing-excess E4。详见
+> [overflow D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md)。
 
 更长远的目标是证明一个选择定理：
 

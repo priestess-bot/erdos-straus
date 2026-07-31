@@ -317,6 +317,12 @@ d=p-C>0.
 保证 \(n<p\)；即使偶然 \(n<p\)，(22) 仍只排除 \(D=M\)，不会自动排除其它
 \(D\)-only 参数。式 (17)--(22) 是 marked_support_overflow receipt，不是后继状态。
 
+后续细化已经把最后一句进一步收紧。若 \(2\le n<p\)，则每个 D-only 参数不仅与
+\(M\) 互素，还与 \(d\) 和 \(p-n\) 互素；non-source 分支中所有
+\(D=p\delta,\delta\mid n\) 的标记纤维恒空。唯一尚可能的新参数必须满足
+\(\delta\mid n^2\) 但 \(\delta\nmid n\)，并自动满足近 \(p\) 的大补秩阈值。见
+[overflow 补秩的累积支撑互素性与 D-only 平方超额边界](type-I-overflow-d-only-square-excess-no-go.md)。
+
 ## 4. 初始 large-slab 的直接 gap 谱
 
 现在取初始 \(A=1\)，并把完整 clean receipt 写成
