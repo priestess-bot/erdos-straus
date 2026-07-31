@@ -297,3 +297,53 @@ a_D=65,
 但 \(3705^2\) 没有正因子 \(z\equiv-3705\pmod {203}\)，所以
 \(W(73,57,1)=\varnothing\)。这严格说明 \(D\)-坐标正规形与实际非空提升之间仍隔着
 (14)，也说明空标记状态上的空映射不能冒充证明递降。
+
+## 7. source-supported 子类已经不能再作为递归出口
+
+若再有
+
+\[
+D\mid n^2,
+\tag{20}
+\]
+
+则该分支可以完全消元。令
+
+\[
+h=\frac{n^2}{D},
+\qquad
+k=\frac{h-1}{p-n},
+\qquad
+\lambda=\frac{pk+1}{4}.
+\tag{21}
+\]
+
+已有
+[source-supported 尾比刚性定理](two-denominator-lift-source-supported-tail-ratio-rigidity.md)
+证明
+
+\[
+a_D=\frac{n\lambda}{h},
+\qquad
+a_D'=p\lambda,
+\tag{22}
+\]
+
+而标记尾方程恒为
+
+\[
+\frac1b+\frac1c=\frac{k}{\lambda},
+\qquad
+4\lambda=pk+1.
+\tag{23}
+\]
+
+所以该标记集非空当且仅当图表 \((R,K)=(k,\lambda)\) 已有中心 Type I 命中。
+固定这张图表后，只继续替换 distinguished coordinate、保持同一双尾的数值递降，
+不会改变尾投影或其非空性：miss 时整类标记集都为空，hit 时已经得到原 \(p\) 的直接
+终端。
+
+因此第 5 节的开放递归问题现在必须进一步限定。source-supported 的固定尾比子类已经
+关闭为“直接 Type I 或空”；真正未解的 \(D\)-only 候选要么满足 \(D\nmid n^2\)，
+要么下一条 E4 边必须改变保留尾、被替换坐标或既约尾比，而不能只在同一双尾恒等类中
+继续降低 \(n\)。

@@ -25,6 +25,9 @@ used_by:
 - type-I-formal-target-pair-descent-cycle-boundary
 - type-I-formal-external-slab-collision-absorption-rechart
 - two-denominator-lift-d-only-marked-normal-form
+- two-denominator-lift-source-supported-tail-ratio-rigidity
+- type-I-formal-linear-chart-p-transience-large-slab-anchor
+- type-I-phase-labeled-candidate-selector-well-founded-schedule
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -424,6 +427,43 @@ K_S,
 4. \(R\) 或 \(K\) 增大的合法修复只有在更早分量已严格下降时才可能被接受；
 5. 若任何合法边系统性违反此顺序，应更换**全局预先定义**的势函数，而不是逐边重排
    分量。
+
+### 6.1 已验证的 PRE--ABSORB 分型调度
+
+对“固定 \(s\) 因子重选 + 降 \(R\) absorption + formal 剪枝”这一具名边菜单，
+普通的统一字段次序已经不可能成立：前向因子边增大 \(R\)，其代数逆边又会与之形成
+精确二环；完整 \(m=1\) 图还含 terminal-free 自环。该菜单必须增广不可逆阶段
+
+\[
+\mathrm{PRE}\longrightarrow\mathrm{ABSORB}
+\]
+
+并在 ABSORB 提交时固定
+
+\[
+\varepsilon\in\{\min,\max\}.
+\]
+
+相应的已验证 E5 调度为
+
+\[
+\boxed{
+\Pi_{\mathrm{phase}}(S)=
+\begin{cases}
+(1,a,0,0),&S\in\mathrm{PRE},\\
+(0,R,m,r_\varepsilon),&S\in\mathrm{ABSORB},
+\end{cases}}
+\tag{5}
+\]
+
+其中 PRE 只允许严格降低 \(a\) 的固定 \(s\) 边；ABSORB 只允许严格降低 \(R\) 的
+rechart，以及固定 \(R\) 时降低 \(m\) 或所选 \(r_\varepsilon\) 的 formal 剪枝。
+禁止无成本返回 PRE。若另有真正 equation rank \(\rho\)，应把它置于最外层并只在
+\(\rho\) 严格下降时允许重置全部阶段字段。
+
+式 (5) 只供应 E5。它不能把缺少合法后继或解提升的 formal cursor 边升级为
+verified_edge；每条实际递归边仍须单独通过 E1--E4。完整证明、二环和自环边界见
+[重图表与形式吸收的两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。
 
 可替代方案可以加入规范 Fourier 导子、marked 复杂度或 q-adic 提升深度，但每个分量
 都必须是非负整数、从状态本身可重算，并且必须重新证明全体允许边严格下降。

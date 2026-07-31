@@ -3213,3 +3213,101 @@ z>0,\qquad z\mid\sigma^2,
 解，只是终端；只给 \(D\) 时必须再递归闭合指定标记集。合法 \(D\) 不保证非空，例如
 \((p,n,D)=(73,57,1)\) 满足全部 \(D\) 条件，但第二层 \(z\) 纤维为空，应拒绝该分支。
 详见[双尾提升的 D-only 标记正规形与 p 载体刚性](../claims/two-denominator-lift-d-only-marked-normal-form.md)。
+
+## 2026-07-31 source-supported D-only 的固定尾比闭合
+
+对 \(D\)-only 分支再加 \(D\mid n^2\) 后，全部变量可以无损消元。写
+
+\[
+h=\frac{n^2}{D},
+\qquad
+k=\frac{h-1}{p-n},
+\qquad
+\lambda=\frac{pk+1}{4},
+\]
+
+则
+
+\[
+4\lambda=pk+1,
+\qquad
+a=\frac{n\lambda}{h},
+\qquad
+a'=p\lambda,
+\]
+
+而标记尾方程精确固定为
+
+\[
+\frac1b+\frac1c=\frac{k}{\lambda}.
+\]
+
+所以该标记集非空，当且仅当图表 \((R,K)=(k,\lambda)\) 已有中心 Type I 命中。
+固定图表后继续降低 \(n\) 只改变 distinguished coordinate，不改变尾投影：
+miss 时整类状态全空，hit 时已经恢复原 \(p\) 的直接终端。反向参数化还揭示出一个
+不可省略的条件：除 \(h\mid n^2\) 外必须有 \(h\mid n\lambda\)；
+\((p,n,k,\lambda,h)=(73,36,35,639,1296)\) 是删除该条件的核心反例。
+
+这关闭了 source-supported、固定尾比的同类递归路线。下一条有证明增量的 E4 边必须
+改变保留尾、被替换坐标或既约尾比；一般 \(D\nmid n^2\) 分支仍开放。严格主张与两个
+聚焦例见
+[source-supported 尾比刚性](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md)。
+
+## 2026-07-31 线性 \(p\) 边瞬态与 large-slab 三锚点
+
+真正线性图表自动满足 \(R\le p-2\)，formal Reach 又保持 \(R\)。因此底层
+\(A+B=R\) 时两坐标都小于 \(p\)，\(q=p\) 不可能成为 \(m=1\) 出边；所有
+\(p\)-边只在 \(m>1\) 严格降层。若写 \(m=up+r_0\)，其后继层精确为
+
+\[
+m'=\frac{u+1}{(C_0,u+1)}
+\le\left\lceil\frac mp\right\rceil,
+\]
+
+所以从 \(m_0\) 出发至多有 \(\lceil\log_p m_0\rceil\) 条 \(p\)-边。
+但 \(R<p\) 不能跨任意 rechart 继承：
+\((p,R,K)=(73,75,37^2)\) 的 \(m=1\) 图有含标签 \(73\) 的真实三周期。
+
+对底层 large-slab \(X=Q\alpha,Y=\beta,Q>R/4\)，现已证明
+
+\[
+\alpha\in\{1,2,3\}.
+\]
+
+连续剥离 \(q\) 精确到达 \(\{\alpha,R-\alpha\}\)。除唯一
+\((R,q)=(3,2)\) 自环外，这一 peeling 段先至多走一步 \(\max\)-下降，随后只走
+\(\min\)-下降；锚点当时的全部可触发超额都在 \(R-\alpha\) 一侧。
+
+容量吸收也不再需要枚举全部 \(M\)。若 \(M=Qd\)，则
+
+\[
+\boxed{R_{Qd}=R_Q+4Q\kappa_d\ge R_Q},
+\]
+
+故存在任一含 \(Q\) 的降 \(R\) 子积，当且仅当 \(R_Q<R\)。三个
+\(\alpha=1,2,3\) 分支都有真正线性图表上的双碰撞与容量吸收全 miss 例子，所以新的
+全称问题已压到：源可达性还会给三个锚点的 \(R-\alpha\) 增加什么结构。见
+[线性 \(p\) 边与 large-slab 锚点](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md)。
+
+## 2026-07-31 PRE--ABSORB 的 E5 调度
+
+固定 \(s\) 因子前向边增大 \(R\)、降低 \(a\)，而其降 \(R\) 代数逆边会精确返回
+原图表；未分阶段全边系统因此含二环。完整 \(m=1\) formal 图又有 terminal-free
+二进自环。普通 \(\operatorname{lex}(m,R,a)\) 或字段重排不能同时处理这两种障碍。
+
+可行的候选调度是不可逆两阶段：
+
+\[
+\mathrm{PRE}\mapsto(1,a,0,0),
+\qquad
+\mathrm{ABSORB}\mapsto(0,R,m,r_\varepsilon).
+\]
+
+PRE 只走固定 \(s\) 前向边；一次提交后，ABSORB 固定
+\(\varepsilon\in\{\min,\max\}\)，只走降 \(R\) rechart 及相应形式剪枝，且禁止返回
+PRE。该分型势沿允许边严格下降；真正 equation rank 可置于最外层并在下降时重置全部
+阶段字段。
+
+这解决的是 E5 兼容性，不是 E4。formal cursor 仍缺合法后继状态和全域解提升，不能
+因调度良基而升级为证明边。严格边集合与二环边界见
+[不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。

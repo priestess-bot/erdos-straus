@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-formal-external-slab-collision-absorption-rechart
 title: 单新支撑 q-slab 的双碰撞终端与容量吸收图表族
-statement: 设核心图表 4K=pR+1 的一个形式表示只留下单个 K 外素数幂 Q=q^e，写成 X=Qa、Y=b、(X,Y)=1、ab|K、X+Y=Rm，并令 L=XY。对任意 T|(X+Y)，4L|(p+T) 直接给出 gap T 的 Type II 证书，4L|(pT+1) 则直接给出以 T 为模数的中心 Type I 命中及其自然 gap 证书。若 q!=p，对任意 Q|M|L 都有 M-indexed 规范图表 pR_M=-1 (mod 4M)、1<=R_M<4M，使 M|K_M；在隔离的 absorption-only 阶段中，R_M<R 给出 W=Sol(p) 上恒等提升且严格降 R 的 rechart，在未受限全局图中则仍只是 candidate_transition。特别地，R_Q!=R，故要么下降，要么 Q>R/4。该析取不覆盖 q=p、其它外部坐标或 large-slab 分支，下降也不可能保留全部旧 K。
+statement: 设核心图表 4K=pR+1 的一个形式表示只留下单个 K 外素数幂 Q=q^e，写成 X=Qa、Y=b、(X,Y)=1、ab|K、X+Y=Rm，并令 L=XY。对任意 T|(X+Y)，4L|(p+T) 直接给出 gap T 的 Type II 证书，4L|(pT+1) 则直接给出以 T 为模数的中心 Type I 命中及其自然 gap 证书。若 q!=p，对任意 Q|M|L 都有 M-indexed 规范图表 pR_M=-1 (mod 4M)、1<=R_M<4M，使 M|K_M；写 M=Qd 后恒有 R_M=R_Q+4Qk_d>=R_Q，所以存在任一降 R 子积当且仅当 M=Q 已下降。在隔离的 absorption-only 阶段中，该下降以 W=Sol(p) 给出恒等提升；未受限全局图仍须使用 phase 调度。特别地，R_Q!=R，故要么下降，要么 Q>R/4。该析取不覆盖一般高层 q=p、其它外部坐标或 large-slab 锚点闭合，下降也不可能保留全部旧 K。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -224,7 +224,25 @@ K_M=\frac{pR_M+1}{4}.
 \]
 
 所以对每个给定的 \(M\)，(17) 是把该 slab 子积注入新 \(K\) 容量的唯一同 \(p\)
-图表。\(M\) 本身只形成由 (16) 索引的容量梯，并没有规范选择规则。若
+图表。事实上这条容量梯有规范的最小模数。因为 \((Q,ab)=1\)，每个 (16) 中的
+\(M\) 唯一写成 \(M=Qd\)、\(d\mid ab\)。把 \(R_{Qd}\) 的同余模 \(4Q\) 约化，得到
+
+\[
+\boxed{R_{Qd}=R_Q+4Q\kappa_d\ge R_Q},
+\qquad0\le\kappa_d<d.
+\tag{19a}
+\]
+
+因此
+
+\[
+\boxed{
+\exists\,Q\mid M\mid L:\ R_M<R
+\iff R_Q<R.}
+\tag{19b}
+\]
+
+扩大保留容量只可能增大规范模数，永远不能补救一个不下降的 \(Q\)-图表。若
 
 \[
 R_M<R,
@@ -243,9 +261,12 @@ R_M<R,
 | E5 | 该隔离阶段只允许 (20) 的边，势函数 \(R\in\mathbb N\) 严格下降 |
 
 这里必须重算新状态，不能把旧图表的指数见证、Fourier 角色或缺陷向量直接搬过去。
-这一 E5 只对隔离的吸收阶段成立；若同时允许使 \(R\) 增大的反向因子转移，便会产生
-二环，不能把两种定向混写成一个良基系统。在完整 phase 状态机尚未定义时，该输出在
-未受限的全局递降图中只能标为 `candidate_transition`，不能直接并入主递降闭包。
+这一 E5 只对隔离的吸收阶段成立；若同时允许使 \(R\) 增大的固定 \(s\) 因子转移，便会
+产生二环，不能把两种定向混写成一个无阶段系统。现已知的合法调度是
+[不可逆 PRE--ABSORB 两阶段势](type-I-phase-labeled-candidate-selector-well-founded-schedule.md)：
+PRE 只走增 \(R\)、降 \(a\) 的因子边，提交后 ABSORB 只走降 \(R\) rechart 和固定方向
+的形式剪枝。即使如此，只有另行通过 E1--E4 的边才能借该调度取得 E5；裸 formal 边
+仍只是 candidate_transition。
 
 ## 4. 小 slab 析取、\(q=p\) 与容量损失
 
@@ -268,6 +289,7 @@ R<R_Q<4Q.
 
 因此单外部 slab 至少给出如下无样本析取：两类碰撞直接终端；否则，小外部幂
 \(Q\le R/4\) 可进入规范容量吸收；剩余困难被压到 \(Q>R/4\) 的 large-slab 分支。
+由 (19b)，large-slab 中无需再尝试扩大 \(M\)：\(R_Q>R\) 时整条容量梯都不下降。
 
 若 \(q=p\)，则任意同 \(p\) 图表都满足
 
@@ -281,6 +303,12 @@ R<R_Q<4Q.
 这一分支下，前两种 slab 碰撞本身也为空：由 \((X,Y)=1\) 可知 \(p\nmid Y\)，故
 \(p\nmid S\) 及 \(p\nmid T\)；但 (6) 模 \(p\) 会要求 \(p\mid T\)，而 (8) 模
 \(p\) 会给出 \(0\equiv1\)，均不可能。此时当然也不能使用 (15) 中的 \(p^{-1}\)。
+
+但在固定的真正线性图表中，\(R\le p-2\)，而最终周期层满足 \(X+Y=R\)。所以
+\(m=1\) 时 \(q=p\) 根本不可能出现；所有 \(p\)-边只在 \(m>1\) 严格降低层数。
+这把 \(q=p\) 从线性图表的最终 SCC 障碍中删除，但不删除高层 formal \(p\)-边，也
+不能跨到 \(R'\ge p\) 的任意 rechart 后继。精确范围见
+[线性图表中的 \(p\) 边瞬态与 large-slab 锚点](type-I-formal-linear-chart-p-transience-large-slab-anchor.md)。
 
 下降图表也不能保留全部旧容量。若某个同 \(p\) 图表满足 \(K'=cK\)，则
 
@@ -308,10 +336,10 @@ R'=R+4Kt.
 | \((178513,183)\) | \((13,170)\) | \(2210\) | 均空 | 仅 \(M=13,26\)；\(R_{13}=35\)、\(R_{26}=87\) |
 | \((78268369,8895)\) | \((8243,652)\) | \(5374436\) | 均空 | 无；\(R_{8243}=10395>R\) |
 
-第一例的完整子积满足 \(R_L=1543>R\)，说明下降会损失大部分 slab 容量。第二例对
-所有 \(Q\mid M\mid L\) 都有 \(R_M>R\)，严格否定“总能保留某个含 \(Q\) 的容量
-子积并降 \(R\)”这一更强命题。它不是 Erdos--Straus 猜想的反例；该素数仍可由其它
-仿射边界 gap 直接终端。
+第一例的完整子积满足 \(R_L=1543>R\)，说明下降会损失大部分 slab 容量。第二例因
+\(R_Q=10395>R\)，由 (19a) 已自动推出所有 \(Q\mid M\mid L\) 都不下降，不再需要
+逐个枚举才能证明。它不是 Erdos--Straus 猜想的反例；该素数仍可由其它仿射边界 gap
+直接终端。
 
 ## 6. 证明边界与下一接口
 
@@ -319,13 +347,15 @@ R'=R+4Kt.
 但没有证明下列全称命题：
 
 1. 每个 terminal-free F/G 状态都产生单外部 slab；
-2. large-slab 必有 \(\operatorname{Div}(S)\) 碰撞；
+2. large-slab 的三锚点之一必有新的直接终端或合法状态边；
 3. 吸收后的新图表必为 hit，或必继续产生可下降 slab；
-4. \(q=p\) 分支存在其它同目标修复。
+4. 高层 \(q=p\) formal 瞬态如何获得 E4，或为何只需用作候选生成。
 
-因此下一步应为 large-slab 寻找其它 Reach slab、直接终端或新的 equation target，
-并为真正的状态边给出全域解提升；否则 unrestricted rechart 只是在不同图表中重新编码
-原短证书问题。
+large-slab 在固定线性图表的 \(m=1\) 层已经可剥离到
+\(\{\alpha,R-\alpha\}\)、\(\alpha\in\{1,2,3\}\)，而三个分支都有现有碰撞与吸收菜单
+全 miss 的线性例子。因此下一步应利用 slab 的来源关系或锚点另一侧的因子结构构造
+直接终端或新的 equation target，并为真正状态边给出全域解提升；否则 unrestricted
+rechart 只是在不同图表中重新编码原短证书问题。
 
 ## 7. 聚焦复现
 

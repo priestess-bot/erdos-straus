@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。标准偶源与 E-split 提升成功时只重写直接终端，多节点奇组合也不能返回原容量盒。外部 q-slab 现有无样本的双碰撞终端和 small-slab 容量吸收析取，双尾提升也已化为 D-only 标记正规形；真正余项是 large-slab、q=p 与标记集递归非空性。
+summary: 完整目标纤维审计已将 F/G 失败压缩为规范 Fourier、关系格与带符号容量对象。完整 Psi_0=1 谱含 483 个冻结 F 状态：状态局部终端覆盖 479 态，固定仿射边界菜单后状态内候选生成覆盖 483/483。外部 q-slab 的容量梯现已证明由 R_Q 支配；在线性图表的最终 m=1 周期中 q=p 自动消失，large-slab 可剥离到 alpha=1,2,3 三个单侧锚点。source-supported D-only 标记集又与原中心 Type I 命中精确等价；不可逆 PRE--ABSORB 调度解决了候选边的 E5 兼容性。真正余项是证明源可达三锚点必终端，或构造改变尾比且满足 E1--E4 的合法状态边。
 topics:
 - research-map
 - proof-program
@@ -1648,12 +1648,29 @@ pR_M\equiv-1\pmod {4M},
 \qquad1\le R_M<4M
 \]
 
-把 \(M\) 注入新 \(K_M\)。在隔离的 absorption-only 阶段中，\(R_M<R\) 以
-\(W=\operatorname{Sol}(p)\) 给出恒等提升并严格降 \(R\)。特别地，\(M=Q\) 时要么
-下降，要么 \(Q>R/4\)。但 \((p,R)=(78268369,8895)\) 的 slab
-\((8243,652)\) 对两种碰撞和全部含 \(8243\) 的下降子积都 miss，所以 large-slab
-局部分支确实非空，仍须寻找其它 slab、直接终端或新 equation target。详见
-[单新支撑 q-slab 的双碰撞与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md)。
+把 \(M\) 注入新 \(K_M\)。这条容量梯现已完全排序：若 \(M=Qd\)，则
+
+\[
+R_{Qd}=R_Q+4Q\kappa_d\ge R_Q.
+\]
+
+所以存在任一含 \(Q\) 的降 \(R\) 子积，当且仅当 \(M=Q\) 已经下降；扩大旧容量
+永远不能补救 \(R_Q>R\)。在固定的真正线性图表中还有 \(R\le p-2\)，故最终
+\(m=1\) 周期不可能出现 \(q=p\)；高层 \(p\)-边仍可存在，但只按 \(m\) 严格下降，
+不能从整个 Reach 删除。
+
+large-slab \(Q>R/4\) 也不再是无结构余项。写 \(X=Q\alpha,Y=\beta\) 后必有
+
+\[
+\alpha\in\{1,2,3\},
+\]
+
+连续剥离 \(q\) 可到达锚点 \(\{\alpha,R-\alpha\}\)，且锚点当时的全部超额都在
+\(R-\alpha\) 一侧。除唯一 \(R=3\) 二进自环外，这段路径先至多走一步
+\(\max\)-下降，随后全是 \(\min\)-下降。但三个 \(\alpha\) 分支都有真正线性图表上的
+双碰撞与容量吸收全 miss 例子，所以尚须利用 slab 的源可达性或锚点因子结构。详见
+[单新支撑 q-slab 的双碰撞与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md)及
+[线性图表中 \(p\) 边的有限瞬态与 large-slab 三锚点压缩](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md)。
 
 较小方程路线也得到一个比显式偶源更一般的状态接口。对 \(2\le n<p\)，全部可能承载
 双尾保留提升的正替换坐标对，由 \(D\mid(np)^2\) 的两个模 \(4(p-n)\) 同余及严格界
@@ -1661,10 +1678,26 @@ pR_M\equiv-1\pmod {4M},
 固定 \(D\) 后，替换坐标 \(a,a'\) 已确定，并对全部保留尾 \(b,c\) 给出全域提升。
 指定坐标标记集的非空性又精确等价于第二层
 \(z\mid\sigma^2,z\equiv-\sigma\pmod\mu\)。素数目标还强制 \(p\mid a'\)，所以替换项
-永远不是目标最小分母。只给 \(D\) 是局部已验证、仍待递归闭合的 marked 条件边；
-同时给 \(z\) 就已经是显式终端，而 \((p,n,D)=(73,57,1)\) 表明合法 \(D\) 的标记集
-可以为空。见
-[双尾提升的 D-only 标记正规形](../claims/two-denominator-lift-d-only-marked-normal-form.md)。
+永远不是目标最小分母。只给 \(D\) 是局部已验证的 marked 条件边；同时给 \(z\) 就已经
+是显式终端，而 \((p,n,D)=(73,57,1)\) 表明合法 \(D\) 的标记集可以为空。
+
+其中 source-supported 子类 \(D\mid n^2\) 现已进一步完全消元。存在唯一图表
+
+\[
+4\lambda=pk+1
+\]
+
+使替换坐标为 \(a=n\lambda/h,a'=p\lambda\)，而所有较小秩状态共享同一个尾方程
+
+\[
+\frac1b+\frac1c=\frac{k}{\lambda}.
+\]
+
+所以该标记集非空当且仅当原 \(p\) 在这张图表已有中心 Type I 命中。固定尾比的
+数值递降不降低算术存在性核心；下一条有效 E4 必须改变保留尾、被替换坐标或尾比。
+见
+[双尾提升的 D-only 标记正规形](../claims/two-denominator-lift-d-only-marked-normal-form.md)及
+[source-supported 尾比刚性](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md)。
 
 第 2 项已有一个带额外整除条件的窄解析出口
 [Type II 的 K=2 切片与相邻 Type I 图表桥](../claims/type-II-k2-adjacent-type-I-cross-chart-bridge.md)，
@@ -1672,12 +1705,28 @@ pR_M\equiv-1\pmod {4M},
 [分母缺陷逃逸的合法状态与转移合同](denominator-escape-state-contract.md)验收。前两项尚未
 证明所需外部对象对每个状态存在，故仍不能闭合全称选择器。
 
+重图表边的 E5 兼容性也已收口。固定 \(s\) 前向边与降 \(R\) 逆边在未分阶段图中
+形成精确二环，\(m=1\) 形式图另有 terminal-free 自环。合法候选调度必须不可逆地
+从 PRE 提交到 ABSORB：前者只降 \(a\)，后者固定 \(\min\) 或 \(\max\) 方向并按
+\((R,m,r_\varepsilon)\) 下降。分型势
+
+\[
+\mathrm{PRE}\mapsto(1,a,0,0),
+\qquad
+\mathrm{ABSORB}\mapsto(0,R,m,r_\varepsilon)
+\]
+
+解决这一菜单的 E5，但不补足 formal 边缺少的 E1--E4。见
+[不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。
+
 验收条件现更新为：证明一个不含有限样本上界的“完整可达域逃逸”引理，即任意
 terminal-first 后仍未闭合的 \(\Psi_0=1\) 状态，其完整
 \(\operatorname{Reach}(S)\) 中至少由仿射边界或外部 slab 产生直接 Type I/II、
 跨模数中心谱命中、\(K\) 支撑的两目标乘子桥，或满足完整 E1--E5 与解提升合同的合法
-support switch；若进入 large-slab 或 \(q=p\) 分支，则必须构造新的 equation target
-或选择一个 \(D\)-only 双尾标记状态，并递归闭合该指定标记集；空标记候选必须拒绝。
+support switch；若进入 large-slab，则必须在三个锚点上构造新的 equation target，
+或选择一个改变尾比的 \(D\)-only 双尾标记状态并递归闭合；空标记候选必须拒绝。
+固定线性图表的 \(q=p\) 已不是底层周期障碍，但高层 formal \(p\)-边若要进入证明图，
+仍须补足合法状态与 E4。
 不能先只保留汇 SCC：瞬态节点可以独占产生终端；只有完整 Reach 已经
 terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整圈标签乘积不计为出口。
 只增加素数
@@ -1715,7 +1764,11 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 \downarrow\\
 \text{cycle-or-hit、周期表示格、两目标乘子桥、核心可实现性与偶翻转分段}\\
 \downarrow\\
-\text{外部 slab 双碰撞、small-slab 容量吸收与 D-only 双尾标记正规形}\\
+\text{外部 slab 双碰撞、容量梯支配与 D-only 双尾标记正规形}\\
+\downarrow\\
+\text{线性 }p\text{ 边瞬态、large-slab 三锚点与 source-supported 尾比刚性}\\
+\downarrow\\
+\text{PRE--ABSORB 分型势解决候选边 E5；E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
 \downarrow\\
@@ -1727,8 +1780,8 @@ terminal-free 后，汇 SCC 才适合作为反证结构。纯外部周期和整�
 
 当前块饱和、同需求整数提升、双秩规范边集和 483 个缺陷一冻结状态的有限闭合已经完成；
 仿射边界 Reach 审计已在冻结谱中消除四个状态余项，标准提升审计则排除了最自然的偶源
-桥。真正余项现已从有限状态转为全称量词：后续计算只应服务于抽取完整可达域中外部
-\(Q\) 必然存在的结构条件，证明 large-slab 的新目标分流，或为 D-only 标记集构造
+桥。真正余项现已从有限状态转为全称量词：后续计算只应服务于证明完整可达域中三个
+large-slab 锚点的源约束强迫终端，或为 \(D\nmid n^2\) 及换尾比标记状态构造
 递归非空证书。不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。

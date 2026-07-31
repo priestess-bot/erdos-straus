@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 360 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 297 |
+| 数学状态 | `established` | 300 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 22 |
-| 证明来源 | `repository_derivation` | 124 |
+| 证明来源 | `repository_derivation` | 127 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 250 |
+| 审阅状态 | `internal_review` | 253 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -208,6 +208,7 @@
 | [来自 3p+A 的幂二内部 Type I 射线](../claims/three-p-plus-power-two-internal-type-I-ray.md) (`three-p-plus-power-two-internal-type-I-ray`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-23 |
 | [保留两个源分母的一项替换提升判据](../claims/two-denominator-lift-criterion.md) (`two-denominator-lift-criterion`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-23 |
 | [双尾提升的 D-only 标记正规形与 p 载体刚性](../claims/two-denominator-lift-d-only-marked-normal-form.md) (`two-denominator-lift-d-only-marked-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [source-supported D-only 提升的固定尾比刚性与中心 Type I 等价](../claims/two-denominator-lift-source-supported-tail-ratio-rigidity.md) (`two-denominator-lift-source-supported-tail-ratio-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [双外部源仿射尾倍率的刚性障碍](../claims/two-source-affine-tail-rigidity.md) (`two-source-affine-tail-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [固定尾分母的双源严格提升刚性障碍](../claims/two-source-fixed-tail-rigidity.md) (`two-source-fixed-tail-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [双完整外部源尾的点态大小障碍](../claims/two-source-full-tail-size-obstruction.md) (`two-source-full-tail-size-obstruction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
@@ -316,6 +317,7 @@
 | [外部一层周期的带符号乘积律与自动终端边界](../claims/type-I-formal-external-cycle-product-law-boundary.md) (`type-I-formal-external-cycle-product-law-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [单新支撑 q-slab 的双碰撞终端与容量吸收图表族](../claims/type-I-formal-external-slab-collision-absorption-rechart.md) (`type-I-formal-external-slab-collision-absorption-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [完整超高形式图的 Type I 或一层周期归约](../claims/type-I-formal-full-excess-cycle-or-hit-reduction.md) (`type-I-formal-full-excess-cycle-or-hit-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [线性图表中 p 边的有限瞬态与 large-slab 三锚点压缩](../claims/type-I-formal-linear-chart-p-transience-large-slab-anchor.md) (`type-I-formal-linear-chart-p-transience-large-slab-anchor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [形式目标对的双秩剪枝、一步终端前瞻与外部缺口选择器](../claims/type-I-formal-ranked-pruning-and-external-gap-selector.md) (`type-I-formal-ranked-pruning-and-external-gap-selector`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [形式可达节点的奇组合不能返回 F 态容量盒](../claims/type-I-formal-reach-odd-combination-box-rigidity.md) (`type-I-formal-reach-odd-combination-box-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [一层周期单外部行的 Smith 奇偶选择器与容量边界](../claims/type-I-formal-single-external-smith-parity-selector.md) (`type-I-formal-single-external-smith-parity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
@@ -470,6 +472,7 @@
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md) (`type-I-pareto-overflow-capacity-separation-theorem`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
+| [重图表与形式吸收的不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md) (`type-I-phase-labeled-candidate-selector-well-founded-schedule`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [Type I的p减一B一二除子剩余类选择器](../claims/type-I-pminusone-b12-divisor-residue-selector.md) (`type-I-pminusone-b12-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [五亿有限盒 p 减一遗漏的全正规形全局审计](../claims/type-I-pminusone-box-miss-global-audit-500m.md) (`type-I-pminusone-box-miss-global-audit-500m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |
 | [297049 的全正规形 p 减一 Type I 最大尾终端桥排除](../claims/type-I-pminusone-global-exclusion-297049.md) (`type-I-pminusone-global-exclusion-297049`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |

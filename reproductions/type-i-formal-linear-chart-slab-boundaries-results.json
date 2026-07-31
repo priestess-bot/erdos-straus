@@ -1,0 +1,309 @@
+{
+  "schema_version": "formal-linear-chart-slab-boundaries/v1",
+  "scope_note": "Focused exact checks for the p-edge scope boundary and three local large-slab misses. The slab examples are not asserted to arise from a specified F-witness Reach graph.",
+  "summary": {
+    "large_slab_case_count": 3,
+    "covered_alpha": [
+      1,
+      2,
+      3
+    ],
+    "existing_menu_miss_count": 3,
+    "p_cycle_requires_non_linear_R_ge_p": true,
+    "linear_high_layer_p_edge_present": true,
+    "unique_binary_self_loop_reproduced": true,
+    "unphased_chart_two_cycle_reproduced": true,
+    "terminal_free_binary_self_loop_reproduced": true
+  },
+  "large_slab_records": [
+    {
+      "prime": 241,
+      "R": 7,
+      "source_a": 30,
+      "source_s": 1,
+      "Q": 5,
+      "alpha": 1,
+      "beta": 2,
+      "K": 422,
+      "X": 5,
+      "Y": 2,
+      "L": 10,
+      "collision_T": [],
+      "absorption": [
+        {
+          "M": 5,
+          "d": 1,
+          "rho_d": 2,
+          "R_M": 19,
+          "K_M": 1145,
+          "decreases_R": false,
+          "kappa_d": 0
+        },
+        {
+          "M": 10,
+          "d": 2,
+          "rho_d": 1,
+          "R_M": 39,
+          "K_M": 2350,
+          "decreases_R": false,
+          "kappa_d": 1
+        }
+      ],
+      "peeling": [
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "layer": 1
+        },
+        {
+          "pair": [
+            1,
+            6
+          ],
+          "layer": 1
+        }
+      ],
+      "anchor": [
+        1,
+        6
+      ]
+    },
+    {
+      "prime": 193,
+      "R": 15,
+      "source_a": 12,
+      "source_s": 1,
+      "Q": 7,
+      "alpha": 2,
+      "beta": 1,
+      "K": 724,
+      "X": 14,
+      "Y": 1,
+      "L": 14,
+      "collision_T": [],
+      "absorption": [
+        {
+          "M": 7,
+          "d": 1,
+          "rho_d": 6,
+          "R_M": 19,
+          "K_M": 917,
+          "decreases_R": false,
+          "kappa_d": 0
+        },
+        {
+          "M": 14,
+          "d": 2,
+          "rho_d": 3,
+          "R_M": 47,
+          "K_M": 2268,
+          "decreases_R": false,
+          "kappa_d": 1
+        }
+      ],
+      "peeling": [
+        {
+          "pair": [
+            1,
+            14
+          ],
+          "layer": 1
+        },
+        {
+          "pair": [
+            2,
+            13
+          ],
+          "layer": 1
+        }
+      ],
+      "anchor": [
+        2,
+        13
+      ]
+    },
+    {
+      "prime": 337,
+      "R": 23,
+      "source_a": 14,
+      "source_s": 1,
+      "Q": 7,
+      "alpha": 3,
+      "beta": 2,
+      "K": 1938,
+      "X": 21,
+      "Y": 2,
+      "L": 42,
+      "collision_T": [],
+      "absorption": [
+        {
+          "M": 7,
+          "d": 1,
+          "rho_d": 6,
+          "R_M": 27,
+          "K_M": 2275,
+          "decreases_R": false,
+          "kappa_d": 0
+        },
+        {
+          "M": 14,
+          "d": 2,
+          "rho_d": 3,
+          "R_M": 55,
+          "K_M": 4634,
+          "decreases_R": false,
+          "kappa_d": 1
+        },
+        {
+          "M": 21,
+          "d": 3,
+          "rho_d": 2,
+          "R_M": 83,
+          "K_M": 6993,
+          "decreases_R": false,
+          "kappa_d": 2
+        },
+        {
+          "M": 42,
+          "d": 6,
+          "rho_d": 1,
+          "R_M": 167,
+          "K_M": 14070,
+          "decreases_R": false,
+          "kappa_d": 5
+        }
+      ],
+      "peeling": [
+        {
+          "pair": [
+            2,
+            21
+          ],
+          "layer": 1
+        },
+        {
+          "pair": [
+            3,
+            20
+          ],
+          "layer": 1
+        }
+      ],
+      "anchor": [
+        3,
+        20
+      ]
+    }
+  ],
+  "non_linear_p_cycle": {
+    "prime": 73,
+    "R": 75,
+    "K": 1369,
+    "labels": [
+      73,
+      2,
+      19
+    ],
+    "nodes": [
+      [
+        2,
+        73
+      ],
+      [
+        1,
+        74
+      ],
+      [
+        37,
+        38
+      ],
+      [
+        2,
+        73
+      ]
+    ]
+  },
+  "linear_high_layer_p_edge": {
+    "prime": 73,
+    "R": 3,
+    "K": 55,
+    "labels": [
+      11,
+      2,
+      73
+    ],
+    "nodes": [
+      {
+        "pair": [
+          1,
+          19487171
+        ],
+        "layer": 6495724
+      },
+      {
+        "pair": [
+          2,
+          1771561
+        ],
+        "layer": 590521
+      },
+      {
+        "pair": [
+          1,
+          885782
+        ],
+        "layer": 295261
+      },
+      {
+        "pair": [
+          1,
+          12134
+        ],
+        "layer": 4045
+      }
+    ]
+  },
+  "binary_self_loop": {
+    "prime": 73,
+    "R": 3,
+    "K": 55,
+    "Q": 2,
+    "pair": [
+      1,
+      2
+    ]
+  },
+  "unphased_chart_two_cycle": {
+    "prime": 73,
+    "Q": 2,
+    "source": {
+      "a": 2,
+      "s": 1,
+      "R": 35,
+      "K": 639
+    },
+    "sink": {
+      "a": 1,
+      "s": 1,
+      "R": 71,
+      "K": 1296
+    },
+    "reverse_R": 35,
+    "reverse_K": 639
+  },
+  "terminal_free_binary_self_loop": {
+    "prime": 1009,
+    "R": 3,
+    "K": 757,
+    "center_target": 2,
+    "center_divisors_below_K": [
+      1
+    ],
+    "pair": [
+      1,
+      2
+    ]
+  }
+}
