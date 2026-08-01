@@ -3948,3 +3948,12 @@ python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
 `recursive_edge_eligible=false`。六次单位根采用整数基
 \(1,\zeta_6\)、\(\zeta_6^2=\zeta_6-1\) 计算，故选择角色的谱范数平方精确为
 \(12\)，而非由浮点振幅近似判断；商阈值和提升阈值分别保存为 \([6,5]\)、\([36,5]\)。
+
+在同一回执中新增有限角色阶债务字段。所选角色在残余块 \(q=5,b=1\) 上的商阶为
+\(d_5=6\)，故
+\[
+\mathsf D_{\rm ord}=\min\{1,(1/6)^2\}=1/36.
+\]
+该字段只记录角色相位的离散负载；它尚未映射到带颜色的 \(q\)-进载体，载荷的
+`carrier_mapping_status` 保持 `unproved`，typed 回执仍为
+`analysis_evidence` 且 `recursive_edge_eligible=false`。

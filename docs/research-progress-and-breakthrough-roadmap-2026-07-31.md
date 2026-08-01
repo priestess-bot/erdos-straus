@@ -93,7 +93,9 @@ state 或直接短证书。
    `certificate_type=fixed_layer_quotient_fourier`、`selector_status=analysis_evidence`、
    `recursive_edge_eligible=false`；幅度以精确平方范数 `12` 保存，而不是用浮点值承担
    证据。这样可以把表示、对偶和容量字段放进同一状态记录，同时保留“对偶证书不是
-   递归边”的类型边界。
+   递归边”的类型边界。新增的有限角色阶债务在该回执中为 `1/36`，但
+   `carrier_mapping_status=unproved`；它只是连接 Fourier 与容量的中间字段，不能
+   被解释为已经得到跨状态 (q)-进容量矛盾。
 
 因此原六周计划应立即调整：
 

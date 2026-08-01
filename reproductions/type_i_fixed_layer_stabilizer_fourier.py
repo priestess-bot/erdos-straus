@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from fractions import Fraction
 from pathlib import Path
 
 
@@ -294,6 +295,22 @@ def verify_case() -> dict[str, object]:
     if character_order != quotient_order:
         raise AssertionError("focused character is not primitive in the quotient")
 
+    character_index = int(chosen["character_index"])
+    phase_numerator = (character_index * q_coordinate) % quotient_order
+    phase_distance = min(phase_numerator, quotient_order - phase_numerator)
+    if phase_distance == 0:
+        raise AssertionError("selected character is trivial on the residual block")
+    phase_debt_fraction = Fraction(
+        min(quotient_order * quotient_order,
+            residual_exponent * residual_exponent * phase_distance * phase_distance),
+        quotient_order * quotient_order,
+    )
+    finite_order_debt_fraction = Fraction(
+        min(character_order * character_order,
+            residual_exponent * residual_exponent),
+        character_order * character_order,
+    )
+
     return {
         "prime": prime,
         "R": modulus,
@@ -324,6 +341,13 @@ def verify_case() -> dict[str, object]:
         "lifted_fourier_threshold_fraction": [len(J) * box_size, quotient_order - 1],
         "maximum_quotient_fourier_amplitude_squared": max_amplitude_squared,
         "maximum_quotient_fourier_amplitude": max_amplitude,
+        "selected_character_phase_distance_fraction": [phase_distance, quotient_order],
+        "phase_debt_fraction": [phase_debt_fraction.numerator, phase_debt_fraction.denominator],
+        "finite_order_debt_fraction": [
+            finite_order_debt_fraction.numerator,
+            finite_order_debt_fraction.denominator,
+        ],
+        "carrier_mapping_status": "unproved",
         "selected_character": chosen,
         "typed_certificate": {
             "certificate_type": "fixed_layer_quotient_fourier",
@@ -339,6 +363,11 @@ def verify_case() -> dict[str, object]:
                 quotient_order - 1,
             ],
             "lifted_threshold_fraction": [len(J) * box_size, quotient_order - 1],
+            "finite_order_debt_fraction": [
+                finite_order_debt_fraction.numerator,
+                finite_order_debt_fraction.denominator,
+            ],
+            "carrier_mapping_status": "unproved",
             "recursive_edge_eligible": False,
         },
         "classification": "fixed_layer_stabilizer_quotient_fourier_miss",

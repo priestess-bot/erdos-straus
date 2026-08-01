@@ -94,6 +94,15 @@ N_J(t)=\bar N(\pi(t)),
 \(|A_J(\chi)|^2=12\)、阈值 \(6/5\)（提升阈值 \(36/5\)）。该回执现在进入统一
 选择器的 `fixed_layer_quotient_fourier / analysis_evidence` 类型；它完成了状态内的
 稳定子—Fourier 精确约化，但仍没有把谱幅度映射成跨状态容量或解可提升递降。
+进一步可从所选商角色记录有限的角色阶债务
+\[
+\mathsf D_{\rm ord}(\bar\chi)=
+\sum_{\bar\chi(\pi(q_i))\ne1}
+\min\{1,(b_i/d_i)^2\}
+\le60\log(|H/P|-1),
+\]
+聚焦状态的精确值为 \(1/36\)。这只是表示—对偶侧的中间字段；
+`carrier_mapping_status=unproved`，不能直接当作 (q)-进容量或递归势函数。
 
 ## 目标二：目标纤维近邻或稀疏结构
 

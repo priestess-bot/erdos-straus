@@ -244,6 +244,81 @@ recursive_edge_eligible = false
 这一区分是统一选择器的类型安全边界：固定目标计数恒等式是状态内算术事实，商谱
 幅度是对偶事实，二者都不能被误写成跨状态容量或解可提升递降。
 
+## 商角色阶债务：连接 Fourier 与容量的中间字段
+
+对残余块指数 \(b_i\)，令所选商角色满足
+
+\[
+\bar\chi(\pi(q_i))=e^{2\pi i\theta_i},
+\qquad
+\delta_i=\|\theta_i\|_{\mathbb R/\mathbb Z}.
+\]
+
+记归一化 Dirichlet 因子为
+
+\[
+\rho_b(\delta)=\frac1{2b+1}
+\left|\sum_{z=-b}^{b}e^{2\pi iz\delta}\right|.
+\]
+
+对所有整数 \(b\ge1\) 和 \(0\le\delta\le1/2\)，有初等界
+
+\[
+-\log\rho_b(\delta)\ge
+\frac1{60}\min\{1,b^2\delta^2\},
+\tag{11a}
+\]
+
+其中 \(\rho_b(\delta)=0\) 时左侧按 \(+\infty\) 解释。证明可按
+\(b\delta\le1/4\)、\(1/4<b\delta<1\) 和 \(b\delta\ge1\) 三段处理：第一段把
+指数视为均匀变量并用 \(1-\cos u\ge2u^2/\pi^2\)，第二段用
+\(|\sin x|\le1\) 及正弦凹性给出 \(\rho_b\le4/5\)，第三段用
+\(|\sin((2b+1)\pi\delta)|\le1\)、\(\sin(\pi\delta)\ge2\delta\) 给出
+\(\rho_b\le1/4\)。
+
+由 (9) 的商群角色展开，若目标在商群中缺失，则某个非平凡角色满足
+\(\prod_i\rho_{b_i}(\delta_i)\ge1/(|H/P|-1)\)，故
+
+\[
+\boxed{
+\sum_i\min\{1,b_i^2\delta_i^2\}
+\le 60\log(|H/P|-1).}
+\tag{11}
+\]
+
+若 \(d_i=\operatorname{ord}(\bar\chi(\pi(q_i)))\)，则非平凡坐标满足
+
+\[
+\delta_i\ge\frac1{d_i},
+\]
+
+从而得到可离散记录的角色阶债务
+
+\[
+\boxed{
+\mathsf D_{\rm ord}(\bar\chi)=
+\sum_{\bar\chi(\pi(q_i))\ne1}
+\min\left\{1,\left(\frac{b_i}{d_i}\right)^2\right\}
+\le60\log(|H/P|-1).}
+\tag{12}
+\]
+
+\(\mathsf D_{\rm ord}\) 是表示—对偶侧的有限字段：它可以按
+\((q_i,d_i,b_i)\) 跨状态分组，但不能直接改写成 \(v_{q_i}(tR+1)\) 或其它算术高度。
+只有另行证明角色阶、线性块颜色和 \(q_i\)-进载荷之间的映射，(12) 才能作为容量需求；
+否则它仍是 `analysis_evidence`。这一区分避免把“角色阶小”错误解释为“载体高度大”，
+也把下一步的跨状态桥明确成一个可检验的映射命题。
+
+在聚焦回执 \((p,R,K)=(193,63,3040)\) 中，所选原始角色的商阶为
+\(d_5=6\)、\(b_5=1\)，因而
+
+\[
+\mathsf D_{\rm ord}=\min\{1,(1/6)^2\}=\frac1{36}.
+\]
+
+该数值与相位债务同为 \([1,36]\)，但 `carrier_mapping_status` 仍为
+`unproved`，不承担任何跨状态容量结论。
+
 ## 研究作用与边界
 
 这条定理把“固定层必须恰好是子群”的特殊假设改成稳定子约化。约化后的

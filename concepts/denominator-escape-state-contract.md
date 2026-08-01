@@ -164,6 +164,8 @@ character_order = ord(chi_bar)
 amplitude_squared = |A_J(chi)|^2
 threshold_fraction = [|bar J| product_i(2 b_i + 1), |H/P|-1]
 lifted_threshold_fraction = [|J| product_i(2 b_i + 1), |H/P|-1]
+finite_order_debt_fraction = [numerator, denominator]
+carrier_mapping_status = unproved
 recursive_edge_eligible = false
 ```
 
@@ -172,6 +174,14 @@ recursive_edge_eligible = false
 为零。由于 `amplitude_squared` 与阈值分数可以用整数/有理数保存，typed 回执不依赖
 浮点相位。规范选择键为
 `(|H/P|, ord(chi_bar), -|A_J(chi)|^2, phase(chi_bar))`。
+
+`finite_order_debt_fraction` 记录
+\(
+\sum_{\bar\chi(\pi(q_i))\ne1}\min\{1,(b_i/d_i)^2\}
+\)
+的精确有理数；它属于表示—对偶分析字段。`carrier_mapping_status` 在没有把角色阶、
+方向颜色和 \(q\)-进载荷连接起来之前必须保持 `unproved`，因此该字段不能增加递归边
+资格或替代 E1--E5。
 
 该对象只能说明状态内 F/G 对偶结构。若要升级为 `support_switch`、`q_adic_lift` 或
 `verified_edge`，仍必须重新完成第 4 节的 E1--E5 和全域解提升；稳定子商阶下降或
