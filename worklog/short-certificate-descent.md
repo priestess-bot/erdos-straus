@@ -3888,3 +3888,57 @@ python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
 脚本和结果 SHA-256 分别为
 \(48afe06bed5fa05a8c90b3afcd9f9fc162bb64aca240a171424266283d82f195\) 和
 \(74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a\)。
+
+## 2026-08-01 固定层稳定子—Fourier 精确约化
+
+本轮把路线图中“固定层稳定子”和“规范 Fourier 证书”两条接口接成一个可复查的
+状态内对象。令
+
+\[
+\bar H=H/P,\qquad \bar J=\pi(J),\qquad
+P=\operatorname{Stab}_H(J).
+\]
+
+因为 \(P\subseteq J\)，固定层是 \(P\)-陪集的不交并。对每个固定目标
+\(t\in H\)，商群中的每个表示恰好有一个原群固定层代表，因此
+
+\[
+\boxed{N_J(t)=\bar N(\pi(t)).}
+\]
+
+这里不能把 \(|P|\) 重复乘入固定目标的计数；只有对整个目标陪集 \(tP\) 求和时才有
+\(\sum_{u\in tP}N_J(u)=|P|\bar N(\pi(t))\)。另一方面，对
+\[
+A_J(\chi)=\left(\sum_{j\in J}\chi(j)\right)
+\prod_iD_{b_i}(\chi(q_i))
+\]
+有
+\[
+\chi\notin P^\perp\Longrightarrow A_J(\chi)=0,
+\qquad
+A_J(\bar\chi\circ\pi)=|P|A_{\bar J}(\bar\chi).
+\]
+若目标在商群中缺失，则某个非平凡商角色的幅度至少为
+\(|\bar J|\prod_i(2b_i+1)/(|H/P|-1)\)，提升后等价于
+\(|J|\prod_i(2b_i+1)/(|H/P|-1)\) 的下界。因而稳定子不仅压缩群阶，还把 F 证书
+规范限制到 \(P^\perp\setminus\{1\}\)，但尚未给出跨状态容量或解可提升递降。
+
+聚焦算术回执取
+
+\[
+(p,R,K)=(193,63,3040),\qquad
+J=\mathcal C_{63}(608),\qquad
+P=\{1,2,4,8,16,32\},
+\]
+
+并取 residual block \(q=5,b=1\)。此时 \(|H|=36\)、\(|H/P|=6\)、\(|J|=12\)、
+\(|\bar J|=2\)，目标 \(-1\) 缺失；商 Fourier 最大幅度为 \(2\sqrt3\)，超过
+\(2\cdot3/(6-1)=6/5\) 的商阈值。回执逐个目标元素检查计数恒等式、商群无周期、
+F 缺失和 Fourier 下界，运行：
+
+~~~bash
+python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
+~~~
+
+这是一次新的聚焦验证，不重跑历史普查。脚本和结果文件的 SHA-256 应以提交前的
+`sha256sum` 输出为准；它们只支持上述状态内接口，不支持全称选择器。
