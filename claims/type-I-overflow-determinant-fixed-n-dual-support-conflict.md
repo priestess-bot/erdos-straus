@@ -1,0 +1,540 @@
+---
+kind: claim
+claim_id: type-I-overflow-determinant-fixed-n-dual-support-conflict
+title: overflow 行列式的固定 n 对偶图谱与累积支撑冲突
+statement: 设 verified complete-excess bundle overflow 满足 R_M>p、pR_M+1=4K_M 且 K_M=MC，写 n=4M-R_M、d=p-C，则 pn=4Md+1。固定 n 时，每个 L|Md 且 n<4L<p+n 都给出合法小图表 R_L=4L-n、K_L=L(p-Md/L)；若旧 charged support A 满足 A|L、L>A，则这是保持 Sol(p)、恒等提升且使 floor((p-1)^2/(4A)) 严格下降的 overflow-derived edge。特别地，A=1 时 d>=2 且 L=d 总在该窗口，所以所有初始 overflow 都有 verified determinant-charged 后继。一般 overflow 另有由 r=M mod p 与 d 构成的两个对偶图表，其中至少一个 R<p；但 A>1 时小图表未必保留旧支撑，固定 n 窗口也可为空，lcm 迭代还可成环。故余项已精确收缩为可达累积支撑 overflow 的 support-preserving alternate/终端/外层重置问题，而非裸 G、初始 overflow 或小算术载体存在性。
+claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
+depends_on:
+  - type-I-marked-support-accumulation-rechart-saturation
+  - type-I-bottom-sink-scc-complete-excess-bundle-selector
+  - type-I-universal-p-source-capacity-anchor-orbit
+topics:
+  - type-I
+  - overflow
+  - determinant
+  - fixed-n-atlas
+  - divisor-window
+  - dual-carrier
+  - charged-support
+  - marked-descent
+  - well-founded-potential
+  - counterexample
+  - proof-boundary
+sources:
+  - claim: type-I-marked-support-accumulation-rechart-saturation
+    role: overflow-determinant-and-absorbed-support-potential
+  - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
+    role: verified-bundle-overflow-provenance
+  - claim: type-I-universal-p-source-capacity-anchor-orbit
+    role: universal-anchor-and-path-provenance
+visibility: public
+last_checked: '2026-08-01'
+---
+
+# overflow 行列式的固定 \(n\) 对偶图谱与累积支撑冲突
+
+## 1. overflow 行列式正规形
+
+固定一个已经通过 source/path/node provenance 验证的 bundle overflow：
+
+\[
+p\equiv1\pmod {24},
+\qquad
+1\le R_M<4M,
+\qquad
+R_M>p,
+\qquad
+pR_M+1=4MC.
+\tag{1}
+\]
+
+这里 \(M\mid K_M\)、\(K_M=MC\)。定义
+
+\[
+n=4M-R_M,
+\qquad
+d=p-C.
+\tag{2}
+\]
+
+由 \(R_M<4M\) 得 \(n>0\)。又因
+
+\[
+C=\frac{pR_M+1}{4M}<p+\frac1{4M},
+\tag{3}
+\]
+
+且 \(p\nmid1\)，有 \(1\le C\le p-1\)，从而 \(1\le d\le p-1\)。直接消元得到
+
+\[
+\boxed{pn=4Md+1,}
+\tag{4}
+\]
+
+并且
+
+\[
+(M,pn)=1.
+\tag{5}
+\]
+
+式 (4) 是 `complete_excess_bundle_overflow` 的 determinant receipt。以下所有新边都必须
+保留原 bundle receipt 及其可重放路径；不能从一个任意满足 (4) 的四元组反推来源。
+
+## 2. 固定 \(n\) 的完整因子图谱
+
+令
+
+\[
+S=Md=\frac{pn-1}{4}.
+\tag{6}
+\]
+
+对任意因子 \(L\mid S\)，若
+
+\[
+n<4L<p+n,
+\tag{7}
+\]
+
+定义
+
+\[
+\boxed{
+R_L=4L-n,
+\qquad
+K_L=L\left(p-\frac SL\right).
+}
+\tag{8}
+\]
+
+左侧不等式保证 \(R_L>0\)，右侧不等式给 \(R_L<p\)。而
+
+\[
+pR_L+1
+=4pL-pn+1
+=4(pL-S)
+=4K_L.
+\tag{9}
+\]
+
+由 (7) 还有 \(S/L<p\)，所以 \(K_L>0\)。又因 \(n\equiv1\pmod4\)，
+\(R_L\equiv3\pmod4\)，故
+
+\[
+3\le R_L\le p-2,
+\qquad
+L\mid K_L.
+\tag{10}
+\]
+
+若当前状态携带 charged support \(A\mid K\)，则保持旧承诺并严格增长的完整候选集恰为
+
+\[
+\boxed{
+\mathcal W_A(M,d,n)=
+\{L:A\mid L,\ L>A,\ L\mid Md,\ n<4L<p+n\}.
+}
+\tag{11}
+\]
+
+对任一 \(L\in\mathcal W_A\)，定义后继
+
+\[
+T=(p,R_L,K_L;L).
+\tag{12}
+\]
+
+它与原状态有同一个
+
+\[
+W_T=W_S=\operatorname{Sol}(p),
+\tag{13}
+\]
+
+所以 E4 是恒等映射。若 \(B_p=(p-1)^2/4\)，则 \(A\mid L\)、\(L>A\) 蕴含
+\(L\ge2A\)，因而
+
+\[
+\left\lfloor\frac{B_p}{L}\right\rfloor
+<
+\left\lfloor\frac{B_p}{A}\right\rfloor.
+\tag{14}
+\]
+
+取 (11) 的最小元素可得到确定性 `overflow_fixed_n_charged_support_v1`。这里的新支撑来源
+是 `overflow_determinant`，不是原节点上的 complete-excess bundle；这是一个新增且必须
+显式记录的 E1 provenance。
+
+## 3. 初始 \(A=1\) overflow 全部有合法后继
+
+初始层有
+
+\[
+A=1,
+\qquad
+M=Q<R<p.
+\tag{15}
+\]
+
+若 \(d=1\)，则由 (4) 及 \(M<p\) 得 \(n<4\)；又 \(n\equiv1\pmod4\)，所以
+\(n=1\)。这会给出
+
+\[
+M=\frac{p-1}{4},
+\qquad
+R_M=4M-n=p-2<p,
+\tag{16}
+\]
+
+与 overflow 矛盾。因此
+
+\[
+d\ge2.
+\tag{17}
+\]
+
+取 \(L=d\)，则
+
+\[
+R_d=4d-n,
+\qquad
+K_d=d(p-M).
+\tag{18}
+\]
+
+因为 \(R_M=4M-n>p\)，有 \(4M>p+n\)。结合 (4)，
+
+\[
+4d=\frac{pn-1}{M}
+<\frac{4pn}{p+n}
+\le p+n,
+\tag{19}
+\]
+
+最后一步等价于 \((p-n)^2\ge0\)。式 (18) 的恒等式保证 \(R_d>0\)，故
+
+\[
+n<4d<p+n.
+\tag{20}
+\]
+
+于是 \(d\in\mathcal W_1\)，并有
+
+\[
+\boxed{
+3\le R_d\le p-2,
+\qquad
+pR_d+1=4d(p-M),
+\qquad
+d\mid K_d.
+}
+\tag{21}
+\]
+
+因此
+
+\[
+\boxed{
+(p,R,K;1)
+\longrightarrow
+(p,R_d,d(p-M);d)
+}
+\tag{22}
+\]
+
+是完整 E1--E5 identity-lift edge，命名为
+`overflow_determinant_charged_support_v1`。即使 \(R_d=R\)，支撑也由 \(1\) 严格增长到
+\(d\)，所以 (14) 仍下降。该定理关闭的是初始 overflow 的“一步出口”；后继已经具有
+\(A>1\)，仍须继续处理累积层。
+
+## 4. 任意 overflow 至少有一个小算术对偶图表
+
+将
+
+\[
+M=kp+r,
+\qquad
+1\le r<p
+\tag{23}
+\]
+
+代入 (4)，并定义
+
+\[
+s=n-4kd.
+\tag{24}
+\]
+
+则
+
+\[
+ps=4rd+1,
+\qquad
+s\equiv1\pmod4.
+\tag{25}
+\]
+
+定义对称的两个图表
+
+\[
+R_d=4d-s,
+\qquad
+K_d=d(p-r),
+\tag{26}
+\]
+
+\[
+R_r=4r-s,
+\qquad
+K_r=r(p-d).
+\tag{27}
+\]
+
+它们满足
+
+\[
+pR_d+1=4K_d,
+\qquad
+pR_r+1=4K_r,
+\tag{28}
+\]
+
+并且都是正的 \(3\pmod4\) 规范代表。若二者同时大于 \(p\)，则
+
+\[
+4d(p-r)>p^2,
+\qquad
+4r(p-d)>p^2.
+\tag{29}
+\]
+
+相乘并除以 \(p^4\) 会得到
+
+\[
+16\frac dp\left(1-\frac dp\right)
+\frac rp\left(1-\frac rp\right)>1,
+\tag{30}
+\]
+
+与 \(x(1-x)\le1/4\) 矛盾。因此
+
+\[
+\boxed{\min(R_d,R_r)<p.}
+\tag{31}
+\]
+
+这解决了“小算术图表是否存在”，但没有解决旧支撑是否保留。对载体 \(t=d\) 或
+\(t=r\)，令 \(L_t=\operatorname{lcm}(A,t)\)。它升级为合法 charged-support edge 当且
+仅当
+
+\[
+R_t<p,
+\qquad
+L_t\mid K_t,
+\qquad
+L_t>A.
+\tag{32}
+\]
+
+其中整除条件分别等价于
+
+\[
+\frac A{(A,d)}\mid p-r,
+\qquad
+\frac A{(A,r)}\mid p-d.
+\tag{33}
+\]
+
+不满足 (32) 的小图表只能标为 `candidate_transition`；把旧 \(A\) 直接重置为 \(t\)
+会破坏单调势合同。
+
+## 5. 累积支撑层的严格边界
+
+### 5.1 fixed-\(n\) 窗口可以为空
+
+在
+
+\[
+(p,R,K;A)=(241,111,6688;38)
+\tag{34}
+\]
+
+的 receipt \(Q=5\)、\(M=190\) 上，
+
+\[
+R_M=719,
+\quad
+n=41,
+\quad
+d=13,
+\quad
+S=Md=2470.
+\tag{35}
+\]
+
+不存在满足
+
+\[
+38\mid L,
+\quad L>38,
+\quad L\mid2470,
+\quad41<4L<282
+\tag{36}
+\]
+
+的因子，所以 \(\mathcal W_{38}=\varnothing\)。一般 \(A>1\) 时甚至可以有 \(d=1\)：
+
+\[
+(p,R,K;A,Q,M,R_M,n,d)
+=(73,23,420,7,13,91,359,5,1).
+\tag{37}
+\]
+
+因此第 3 节不能逐字推广到累积层。
+
+### 5.2 小对偶图表可以丢失旧支撑
+
+真实 F-source 路径可到达
+
+\[
+(p,R,K;A)=(241,79,4760;8),
+\qquad
+\{8,71\},
+\tag{38}
+\]
+
+其 bundle 有
+
+\[
+Q=71,
+\quad
+M=568,
+\quad
+R_M=1103,
+\quad
+n=1169,
+\quad
+d=124.
+\tag{39}
+\]
+
+式 (23)--(27) 给出 \(r=86,s=177\) 及
+
+\[
+(R_d,K_d)=(319,19220),
+\qquad
+(R_r,K_r)=(167,10062).
+\tag{40}
+\]
+
+唯一小图表是 \(r\) 支，但
+
+\[
+\operatorname{lcm}(8,86)=344\nmid10062.
+\tag{41}
+\]
+
+所以 (31) 不能替代 (32)。
+
+### 5.3 lcm/determinant 的朴素迭代可以成环
+
+在 \((p,R,K;A)=(73,47,858;66)\) 上，先取 \(Q=23\)，有
+
+\[
+M_0=1518,
+\quad R_{M_0}=3743,
+\quad n=2329,
+\quad d_0=28.
+\tag{42}
+\]
+
+以 \(\operatorname{lcm}(66,28)=924\) 再算得到
+
+\[
+R_{924}=1367,
+\quad d_1=46,
+\quad
+\operatorname{lcm}(66,46)=1518=M_0.
+\tag{43}
+\]
+
+这是精确二环，故 determinant 本身不提供新的良基量。
+
+### 5.4 从根状态可达的完整菜单冲突
+
+上述边界并非只来自任意填写 \(A\)。根状态
+
+\[
+(p,R,K;A)=(73,39,712;1)
+\tag{44}
+\]
+
+是 Jacobi-G；第 2 节的通用源到达 \(\{1,38\}\)，其
+\(Q=19,\beta=2\) 给出合法吸收边
+
+\[
+(73,39,712;1)
+\longrightarrow
+(73,51,931;19).
+\tag{45}
+\]
+
+从新状态 anchor 出发的完整 bottom Reach 有 \(16\) 个节点、没有 raw terminal。逐个节点
+和方向核验后，全部合法 complete-bundle receipt 恰有
+
+\[
+Q\in\{2,32,44,50\}.
+\tag{46}
+\]
+
+它们与 \(A=19\) 合并后全部 overflow；对每张 receipt 检查 (26)--(33)，没有一个小
+对偶图表既保留 \(19\) 又严格增加 charged support。
+
+式 (44)--(46) 只反驳“通用 anchor Reach + 当前 bundle/双载体菜单必闭合”的机制命题。
+它不是 Erdos--Straus 反例，且不排除另一个形式源、不同 marked 状态或直接短证书。
+
+## 6. 精确的新余项
+
+通用源定理和第 3--4 节已经删除三个旧问题：
+
+1. 裸 G 是否有实际 source；
+2. 初始 \(A=1\) overflow 是否有合法下一边；
+3. 任意 overflow 是否至少存在一个 \(R<p\) 的算术对偶图表。
+
+剩余全称命题必须量化**递归历史可达的 \(A>1\) 状态**，并证明以下至少一项：
+
+\[
+\boxed{
+\mathcal W_A\ne\varnothing
+\quad\lor\quad
+\text{某个 source/path/node alternate 通过 (32)}
+\quad\lor\quad
+\text{直接 Type I/II terminal}
+\quad\lor\quad
+\text{有独立外层秩支付的 support reset}.
+}
+\tag{47}
+\]
+
+前三项保持当前单调 charged-support phase；最后一项必须先定义新的 phase 和全局良基序，
+不能仅因小图表存在就丢弃旧 \(A\)。这就是路线图后续最窄的证明目标。
+
+## 7. 聚焦复现
+
+~~~bash
+python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
+~~~
+
+结果文件为
+`reproductions/type-i-universal-anchor-overflow-dual-results.json`。对应 SHA-256 为
+
+~~~text
+94fb9625361e8184ee6cb6991aef03d8d806f623a1e8123952e8c8ff2f667e21  reproductions/type_i_universal_anchor_overflow_dual.py
+1fceb021f77ea88ac391b09cee9aafe0eee9348d98b75779c94b0ec45d71d025  reproductions/type-i-universal-anchor-overflow-dual-results.json
+~~~
+
+脚本只验证本卡中的代数恒等式、少量正反 receipt 和 (44)--(46) 的局部 Reach；不重跑
+历史测试。全称的固定 \(n\)、初始层与对称双图表结论由第 2--4 节证明承担。

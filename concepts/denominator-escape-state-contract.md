@@ -33,6 +33,8 @@ used_by:
 - type-I-overflow-d-only-square-excess-no-go
 - two-denominator-lift-same-one-mod-four-no-go
 - type-I-bottom-sink-scc-complete-excess-bundle-selector
+- type-I-universal-p-source-capacity-anchor-orbit
+- type-I-overflow-determinant-fixed-n-dual-support-conflict
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -93,7 +95,7 @@ S\longrightarrow T
 | induction_rank | \(\rho(S)\in\mathbb N\)；普通状态默认 \(\rho(S)=n_S\) | 若不取 \(n_S\)，必须证明该秩与解提升合同相容 |
 | modulus_context | 合法模数 \(R_S\)、同余类型和定义 \(R_S\) 的整数恒等式 | 检查正性、奇偶、所需模 \(4\) 类、互素性及全部整除条件 |
 | K_context | \(K_S\)、完整素因子赋值 \(\nu_{S,q}=v_q(K_S)\) 与支撑 \(\mathcal Q_S\) | 重乘得到 \(K_S\)；根线性状态还须验证 \(4K_S=p_0R_S+1\) |
-| absorbed_support | 默认取 \(1\)；累积外部支撑状态记录 \(A_S\mid K_S\) 及来源版本 | verifier 重算整除；使用该字段下降的边必须证明它只增不减，或由更外层秩支付重置 |
+| absorbed_support | 默认取 \(1\)；兼容字段名保留，但语义扩展为 charged support \(A_S\mid K_S\) | verifier 重算整除；边回执记录 bundle 或 overflow-determinant provenance；该字段只增不减，除非由更外层秩支付重置 |
 | target_fiber | \(\phi_S(z)=\prod_{q\in\mathcal Q_S}q^{z_q}\bmod R_S\)、目标相位 \(\tau_S\)、关系格 \(\Lambda_S=\ker\phi_S\) 和带类型的纤维状态 | F/hit 记录规范见证；G 记录 `status=empty` 及分离角色，不伪造纤维元素 |
 | signed_defect | F/hit 对一个**全局定向**见证 \(z\) 记录 \(D^-(z),D^+(z)\)；G 记录 `status=not_applicable` | 非空时必须按式 (1) 重算；不得逐坐标拼接 \(z\) 与 \(-z\)，也不得用零向量冒充 G 态缺陷 |
 | certificate_context | F/G 分类以及实际使用的规范 Fourier 角色、关系格基或加法组合证书 | 写明规范选择规则、完备性范围、哈希或精确代数见证 |
@@ -149,7 +151,9 @@ marked_solution_set 和 normal_form。例如 \(t\equiv1\pmod4\) 的商表示不�
 
 ### 2.3 累积外部支撑状态
 
-linear_absorbed_support_v1 是一个已定义的线性图表子类型。它保持
+linear_absorbed_support_v1 是一个已定义的线性图表子类型。字段名为兼容既有 artifact
+继续保留；从 v2 边开始，其数学语义是 **charged support ledger**，既包括实际吸收的
+complete-excess block，也包括由已验证 overflow determinant 收费的规范因子。它保持
 
 \[
 \texttt{equation\_target}=4/p_0,
@@ -193,6 +197,53 @@ bundle receipt 允许两种 E1 provenance：
 第二种不能冒充第一种，但一旦这些整数条件成立，后续 lcm 更新、恒等解提升和势下降
 完全相同。特别地，source-anchored clean \(Q=q^e,\ q\nmid K_S\) 可以沿 \(q\)-peeling
 到达 \(\{1,R-1\}\)，再从该 anchor 构造新的 complete-excess bundle。
+
+当前 raw 合同还有一个对所有 F/G/hit 图表统一的具名来源：
+
+\[
+\texttt{universal\_p\_source\_v1}:
+\qquad
+(U,V,m)=\bigl(p,R(p-1)-p,p-1\bigr).
+\]
+
+verifier 检查 \(V>0\)、\((U,V)=1\)、\(p\nmid K\)，再重放唯一的 \(q=p,t=1\)
+边并核对终点为 \((1,R-1,1)\)、gcd reduction 为 \(1\)。因此 G 的空目标纤维不再意味
+没有实际形式源；该边只承担 E1 path provenance，不是递归状态边。证明见
+[通用 \(p\) 源与容量锚点轨道](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)。
+
+charged support 的允许来源现在有两类，必须在边回执中区分：
+
+1. `complete_excess_bundle`：保存 `sink_minimum` 或 `path_anchored` receipt，并更新为
+   \(\operatorname{lcm}(A,Q)\)；
+2. `overflow_determinant`：保存产生 \(pn=4Md+1\) 的原 bundle overflow receipt，并从
+   固定 \(n\) 因子图谱选择新的 \(L\)。
+
+第二类定义
+
+\[
+S=Md=\frac{pn-1}{4},
+\qquad
+\mathcal W_A=
+\{L:A\mid L,\ L>A,\ L\mid S,\ n<4L<p+n\}.
+\]
+
+`verify_overflow_fixed_n_charged_support_v1` 取 \(\mathcal W_A\) 的最小元素，重算
+
+\[
+R_L=4L-n,
+\qquad
+K_L=L\left(p-\frac SL\right),
+\]
+
+并验证 \(3\le R_L\le p-2\)、\(pR_L+1=4K_L\)、\(L\mid K_L\)、恒等解提升及
+absorbed-support 势严格下降。初始 \(A=1\) 的 overflow 另用特化 verifier
+`verify_overflow_determinant_charged_support_v1`：它证明 \(d\ge2\)，固定取 \(L=d\)，
+因此该层候选集永不为空。
+
+`overflow_determinant` 不是旧节点的 complete-excess bundle，不能把 \(d\) 伪写成
+path-anchored \(Q\)。反过来，在 \(A>1\) 时也不得把支撑重置为较小对偶载体；只有
+\(A\mid L\)、\(L>A\) 的边可留在当前 phase。完整证明与反例见
+[overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
 
 ## 3. 选择器的唯一缺陷输入
 
@@ -551,6 +602,11 @@ A_T=\operatorname{lcm}(A_S,Q).
 严格下降的外层秩放在 (6) 之前。规范图表超过 \(p_0\) 时只输出 overflow receipt，
 不伪造后继。
 
+对已验证 overflow receipt，固定 \(n\) 图谱中的 \(L\in\mathcal W_{A_S}\) 也满足
+\(A_S\mid L\)、\(L>A_S\)，故同一个势证明适用。特别地，\(A_S=1\) 时规范
+determinant carrier \(d\ge2\) 总给出这种边。一般 \(A_S>1\) 的
+\(\mathcal W_{A_S}\) 可以为空；此时不得把任一较小对偶载体直接写入 \(A_T\)。
+
 可替代方案可以加入规范 Fourier 导子、marked 复杂度或 q-adic 提升深度，但每个分量
 都必须是非负整数、从状态本身可重算，并且必须重新证明全体允许边严格下降。
 
@@ -593,6 +649,8 @@ n\equiv1\pmod4,
 | 有限扫描中每个样本都有出口 | 不给出全称构造，也不证明递归闭合 |
 | 把同一 Type I 证书改写成 marked source | 没有产生独立的第三出口或新的下降机制 |
 | 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
+| overflow 的某个 \(R_t<p\) 对偶图表 | 若 \(\operatorname{lcm}(A,t)\nmid K_t\)，它丢失旧 charged support，只是 candidate_transition |
+| 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
 
 ## 8. 验收表
 
@@ -627,15 +685,21 @@ rejected
 
 ## 9. 与统一选择器目标的衔接
 
-complete-excess 定理已经把每个有形式源的完整 Reach 压成直接 Type I、bundle marked
-edge 或 bundle overflow，并因此消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项。
-本合同把当前主缺口压缩成两个可以明确证伪或推进的问题：
+complete-excess 定理已经把每个完整 Reach 压成直接 Type I、bundle marked edge 或
+bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项。通用
+\(p\)-source 又覆盖所有 F/G/hit 图表；初始 \(A=1\) overflow 也总能通过 determinant
+收费得到一条 verified edge。因此“裸 G source”和“初始 overflow 无出口”不再是主缺口。
 
-1. 能否把每个 `complete_excess_bundle_overflow` 统一转成 source/path/node 锚定的
-   alternate carrier、直接 Type I/II 或其它合法 marked 状态？
-2. 能否为没有 \(K\)-支撑形式源的裸 G 状态构造实际 source，并让所有 resulting
-   verified_edge 共享同一个良基势函数？
+当前唯一集中的全称问题是：对每个递归历史可达的 \(A>1\) overflow，是否必有
 
-第一个问题负责“表示--对偶”到真实算术对象的接口；第二个问题负责“容量或递降”闭合。
-在二者同时完成以前，商群压缩、目标纤维距离、q-adic 必要同余和冻结图无环都只能作为
-构造候选边的输入，不能被单独写成统一选择器定理。
+\[
+\mathcal W_A\ne\varnothing,
+\quad\text{或某个 source/path/node alternate 保持并增加 }A,
+\quad\text{或直接 Type I/II 终端？}
+\]
+
+若三者都没有，就必须构造改变 marked state 的新边，并以一个严格下降的外层 phase
+支付 support reset。任何 overflow 至少有一个 \(R<p\) 的算术对偶图表，但反例证明该
+图表可能不保留 \(A\)；这正是“表示--对偶”已经完成而“容量或递降”仍未闭合的接口。
+在该问题解决以前，商群压缩、目标纤维距离、q-adic 必要同余和冻结图无环都只能作为
+候选输入，不能单独写成统一选择器定理。

@@ -1,0 +1,990 @@
+{
+  "overflow_dual": {
+    "accumulated_d_one_boundary": {
+      "A": 7,
+      "K": 420,
+      "Q": 13,
+      "R": 23,
+      "node": [
+        10,
+        13
+      ],
+      "overflow": {
+        "C": 72,
+        "K_M": 6552,
+        "M": 91,
+        "R_M": 359,
+        "d": 1,
+        "n": 5
+      },
+      "prime": 73
+    },
+    "accumulated_positive_fixed_n_edge": {
+      "A": 5,
+      "overflow": {
+        "C": 209,
+        "K_M": 52250,
+        "M": 250,
+        "R_M": 511,
+        "d": 200,
+        "n": 489
+      },
+      "prime": 409,
+      "window": {
+        "S": 50000,
+        "lower_numerator": 489,
+        "support_preserving_candidates": [
+          {
+            "K_L": 1125,
+            "L": 125,
+            "R_L": 11
+          },
+          {
+            "K_L": 31800,
+            "L": 200,
+            "R_L": 311
+          }
+        ],
+        "upper_numerator": 898
+      }
+    },
+    "empty_fixed_n_window": {
+      "A": 38,
+      "K": 6688,
+      "Q": 5,
+      "R": 111,
+      "node": [
+        1,
+        110
+      ],
+      "overflow": {
+        "C": 228,
+        "K_M": 43320,
+        "M": 190,
+        "R_M": 719,
+        "d": 13,
+        "n": 41
+      },
+      "prime": 241,
+      "window": {
+        "S": 2470,
+        "lower_numerator": 41,
+        "support_preserving_candidates": [],
+        "upper_numerator": 282
+      }
+    },
+    "lcm_dual_cycle": {
+      "A": 66,
+      "K": 858,
+      "R": 47,
+      "classification": "support_preserving_lcm_dual_two_cycle",
+      "prime": 73,
+      "returned_M": 1518,
+      "steps": [
+        {
+          "C": 45,
+          "K_M": 68310,
+          "M": 1518,
+          "R_M": 3743,
+          "d": 28,
+          "n": 2329
+        },
+        {
+          "C": 27,
+          "K_M": 24948,
+          "M": 924,
+          "R_M": 1367,
+          "d": 46,
+          "n": 2329
+        }
+      ]
+    },
+    "reachable_accumulated_full_menu_conflict": {
+      "absorbed_state": {
+        "A": 19,
+        "K": 931,
+        "R": 51,
+        "classification": "not_needed_for_receipt"
+      },
+      "bundle_receipts": [
+        {
+          "M": 38,
+          "Q": 2,
+          "beta": 1,
+          "dual": {
+            "d_chart": {
+              "K": 420,
+              "R": 23,
+              "support": 12
+            },
+            "r": 38,
+            "r_chart": {
+              "K": 2318,
+              "R": 127,
+              "support": 38
+            },
+            "s": 25,
+            "smaller_chart_supports": [
+              12
+            ]
+          },
+          "node": [
+            2,
+            49
+          ],
+          "orientation": [
+            49,
+            2
+          ],
+          "overflow": {
+            "C": 61,
+            "K_M": 2318,
+            "M": 38,
+            "R_M": 127,
+            "d": 12,
+            "n": 25
+          },
+          "support_preserving_duals": []
+        },
+        {
+          "M": 608,
+          "Q": 32,
+          "beta": 1,
+          "dual": {
+            "d_chart": {
+              "K": 931,
+              "R": 51,
+              "support": 19
+            },
+            "r": 24,
+            "r_chart": {
+              "K": 1296,
+              "R": 71,
+              "support": 24
+            },
+            "s": 25,
+            "smaller_chart_supports": [
+              19,
+              24
+            ]
+          },
+          "node": [
+            19,
+            32
+          ],
+          "orientation": [
+            19,
+            32
+          ],
+          "overflow": {
+            "C": 54,
+            "K_M": 32832,
+            "M": 608,
+            "R_M": 1799,
+            "d": 19,
+            "n": 633
+          },
+          "support_preserving_duals": []
+        },
+        {
+          "M": 836,
+          "Q": 44,
+          "beta": 1,
+          "dual": {
+            "d_chart": {
+              "K": 1880,
+              "R": 103,
+              "support": 47
+            },
+            "r": 33,
+            "r_chart": {
+              "K": 858,
+              "R": 47,
+              "support": 33
+            },
+            "s": 85,
+            "smaller_chart_supports": [
+              33
+            ]
+          },
+          "node": [
+            7,
+            44
+          ],
+          "orientation": [
+            7,
+            44
+          ],
+          "overflow": {
+            "C": 26,
+            "K_M": 21736,
+            "M": 836,
+            "R_M": 1191,
+            "d": 47,
+            "n": 2153
+          },
+          "support_preserving_duals": []
+        },
+        {
+          "M": 950,
+          "Q": 50,
+          "beta": 1,
+          "dual": {
+            "d_chart": {
+              "K": 1296,
+              "R": 71,
+              "support": 18
+            },
+            "r": 1,
+            "r_chart": {
+              "K": 55,
+              "R": 3,
+              "support": 1
+            },
+            "s": 1,
+            "smaller_chart_supports": [
+              18,
+              1
+            ]
+          },
+          "node": [
+            1,
+            50
+          ],
+          "orientation": [
+            1,
+            50
+          ],
+          "overflow": {
+            "C": 55,
+            "K_M": 52250,
+            "M": 950,
+            "R_M": 2863,
+            "d": 18,
+            "n": 937
+          },
+          "support_preserving_duals": []
+        }
+      ],
+      "classification": "reachable_accumulated_support_conflict_for_current_menu",
+      "prime": 73,
+      "reachable_nodes": [
+        [
+          1,
+          50
+        ],
+        [
+          2,
+          49
+        ],
+        [
+          4,
+          47
+        ],
+        [
+          5,
+          46
+        ],
+        [
+          7,
+          44
+        ],
+        [
+          8,
+          43
+        ],
+        [
+          10,
+          41
+        ],
+        [
+          11,
+          40
+        ],
+        [
+          13,
+          38
+        ],
+        [
+          14,
+          37
+        ],
+        [
+          16,
+          35
+        ],
+        [
+          19,
+          32
+        ],
+        [
+          20,
+          31
+        ],
+        [
+          22,
+          29
+        ],
+        [
+          23,
+          28
+        ],
+        [
+          25,
+          26
+        ]
+      ],
+      "root": {
+        "G_separator": {
+          "support_values": {
+            "2": 1,
+            "89": 1
+          },
+          "target_minus_one": -1
+        },
+        "K": 712,
+        "R": 39,
+        "anchor_bundle": {
+          "Q": 19,
+          "beta": 2
+        },
+        "classification": "G",
+        "source_receipt": {
+          "edge": {
+            "destination": [
+              1,
+              38,
+              1
+            ],
+            "gcd_reduction": 1,
+            "q": 73,
+            "shift": 1
+          },
+          "source": [
+            73,
+            2735,
+            72
+          ]
+        }
+      }
+    },
+    "root_edges": [
+      {
+        "Q": 34,
+        "R": 35,
+        "dual_edge": {
+          "K": 858,
+          "R": 47,
+          "support": 22
+        },
+        "fixed_n_window": {
+          "S": 748,
+          "lower_numerator": 41,
+          "support_preserving_candidates": [
+            {
+              "K_L": 55,
+              "L": 11,
+              "R_L": 3
+            },
+            {
+              "K_L": 493,
+              "L": 17,
+              "R_L": 27
+            },
+            {
+              "K_L": 858,
+              "L": 22,
+              "R_L": 47
+            }
+          ],
+          "upper_numerator": 114
+        },
+        "overflow": {
+          "C": 51,
+          "K_M": 1734,
+          "M": 34,
+          "R_M": 95,
+          "d": 22,
+          "n": 41
+        },
+        "prime": 73
+      },
+      {
+        "Q": 71,
+        "R": 79,
+        "dual_edge": {
+          "K": 4760,
+          "R": 79,
+          "support": 28
+        },
+        "fixed_n_window": {
+          "S": 1988,
+          "lower_numerator": 33,
+          "support_preserving_candidates": [
+            {
+              "K_L": 1386,
+              "L": 14,
+              "R_L": 23
+            },
+            {
+              "K_L": 4760,
+              "L": 28,
+              "R_L": 79
+            }
+          ],
+          "upper_numerator": 274
+        },
+        "overflow": {
+          "C": 213,
+          "K_M": 15123,
+          "M": 71,
+          "R_M": 251,
+          "d": 28,
+          "n": 33
+        },
+        "prime": 241
+      }
+    ],
+    "symmetric_small_chart_support_conflict": {
+      "A": 8,
+      "K": 4760,
+      "Q": 71,
+      "R": 79,
+      "dual": {
+        "d_chart": {
+          "K": 19220,
+          "R": 319,
+          "support": 124
+        },
+        "r": 86,
+        "r_chart": {
+          "K": 10062,
+          "R": 167,
+          "support": 86
+        },
+        "s": 177,
+        "smaller_chart_supports": [
+          86
+        ]
+      },
+      "node": [
+        8,
+        71
+      ],
+      "overflow": {
+        "C": 117,
+        "K_M": 66456,
+        "M": 568,
+        "R_M": 1103,
+        "d": 124,
+        "n": 1169
+      },
+      "prime": 241,
+      "small_chart_required_support": 344
+    }
+  },
+  "schema_version": 1,
+  "scope": "Focused algebraic receipts only; no historical census is rerun.",
+  "summary": {
+    "G_source_gap_eliminated_count": 2,
+    "accumulated_fixed_n_positive_count": 2,
+    "accumulated_support_conflict_count": 5,
+    "capacity_anchor_cycle_count": 1,
+    "root_dual_verified_edge_count": 2,
+    "universal_p_source_count": 3
+  },
+  "universal_anchor": {
+    "G_bundle_overflow": {
+      "G_separator": {
+        "support_values": {
+          "3": 1,
+          "71": 1
+        },
+        "target_minus_one": -1
+      },
+      "K": 639,
+      "R": 35,
+      "anchor_orbit": {
+        "cycle": [
+          1
+        ],
+        "cycle_excess_quotient_product": 34,
+        "cycle_product_mod_R": 34,
+        "orbit": [
+          1
+        ],
+        "rows": [
+          {
+            "K_M": 1734,
+            "M": 34,
+            "Q": 34,
+            "R_M": 95,
+            "beta": 1,
+            "classification": "overflow",
+            "excess_quotient": 34,
+            "h": 1,
+            "next_h": 1,
+            "other": 34,
+            "overlap": 1,
+            "strip": {
+              "selected": 34,
+              "steps": [
+                {
+                  "destination": [
+                    17,
+                    18
+                  ],
+                  "q": 2,
+                  "source": [
+                    1,
+                    34
+                  ]
+                },
+                {
+                  "destination": [
+                    1,
+                    34
+                  ],
+                  "q": 17,
+                  "source": [
+                    17,
+                    18
+                  ]
+                }
+              ],
+              "target": 1
+            }
+          }
+        ]
+      },
+      "prime": 73,
+      "source_receipt": {
+        "edge": {
+          "destination": [
+            1,
+            34,
+            1
+          ],
+          "gcd_reduction": 1,
+          "q": 73,
+          "shift": 1
+        },
+        "source": [
+          73,
+          2447,
+          72
+        ]
+      }
+    },
+    "G_marked_absorb": {
+      "G_separator": {
+        "support_values": {
+          "2": 1,
+          "3": 1
+        },
+        "target_minus_one": -1
+      },
+      "K": 1296,
+      "R": 71,
+      "anchor_orbit": {
+        "cycle": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "cycle_excess_quotient_product": 916895,
+        "cycle_product_mod_R": 1,
+        "orbit": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "rows": [
+          {
+            "K_M": 420,
+            "M": 35,
+            "Q": 35,
+            "R_M": 23,
+            "beta": 2,
+            "classification": "marked_absorb",
+            "excess_quotient": 35,
+            "h": 1,
+            "next_h": 2,
+            "other": 70,
+            "overlap": 1,
+            "strip": {
+              "selected": 70,
+              "steps": [
+                {
+                  "destination": [
+                    14,
+                    57
+                  ],
+                  "q": 5,
+                  "source": [
+                    1,
+                    70
+                  ]
+                },
+                {
+                  "destination": [
+                    2,
+                    69
+                  ],
+                  "q": 7,
+                  "source": [
+                    14,
+                    57
+                  ]
+                }
+              ],
+              "target": 2
+            }
+          },
+          {
+            "K_M": 1150,
+            "M": 23,
+            "Q": 23,
+            "R_M": 63,
+            "beta": 3,
+            "classification": "marked_absorb",
+            "excess_quotient": 23,
+            "h": 2,
+            "next_h": 3,
+            "other": 69,
+            "overlap": 1,
+            "strip": {
+              "selected": 69,
+              "steps": [
+                {
+                  "destination": [
+                    3,
+                    68
+                  ],
+                  "q": 23,
+                  "source": [
+                    2,
+                    69
+                  ]
+                }
+              ],
+              "target": 3
+            }
+          },
+          {
+            "K_M": 493,
+            "M": 17,
+            "Q": 17,
+            "R_M": 27,
+            "beta": 4,
+            "classification": "marked_absorb",
+            "excess_quotient": 17,
+            "h": 3,
+            "next_h": 4,
+            "other": 68,
+            "overlap": 1,
+            "strip": {
+              "selected": 68,
+              "steps": [
+                {
+                  "destination": [
+                    4,
+                    67
+                  ],
+                  "q": 17,
+                  "source": [
+                    3,
+                    68
+                  ]
+                }
+              ],
+              "target": 4
+            }
+          },
+          {
+            "K_M": 201,
+            "M": 67,
+            "Q": 67,
+            "R_M": 11,
+            "beta": 1,
+            "classification": "marked_absorb",
+            "excess_quotient": 67,
+            "h": 4,
+            "next_h": 1,
+            "other": 67,
+            "overlap": 1,
+            "strip": {
+              "selected": 67,
+              "steps": [
+                {
+                  "destination": [
+                    1,
+                    70
+                  ],
+                  "q": 67,
+                  "source": [
+                    4,
+                    67
+                  ]
+                }
+              ],
+              "target": 1
+            }
+          }
+        ]
+      },
+      "prime": 73,
+      "source_receipt": {
+        "edge": {
+          "destination": [
+            1,
+            70,
+            1
+          ],
+          "gcd_reduction": 1,
+          "q": 73,
+          "shift": 1
+        },
+        "source": [
+          73,
+          5039,
+          72
+        ]
+      }
+    },
+    "accumulated_all_overflow_cycle": {
+      "A": 5,
+      "K": 25665,
+      "R": 251,
+      "anchor_orbit": {
+        "cycle": [
+          1,
+          5,
+          3
+        ],
+        "cycle_excess_quotient_product": 1016800,
+        "cycle_product_mod_R": 250,
+        "orbit": [
+          1,
+          5,
+          3
+        ],
+        "rows": [
+          {
+            "K_M": 52250,
+            "M": 250,
+            "Q": 250,
+            "R_M": 511,
+            "beta": 1,
+            "classification": "overflow",
+            "excess_quotient": 50,
+            "h": 1,
+            "next_h": 5,
+            "other": 250,
+            "overlap": 5,
+            "strip": {
+              "selected": 250,
+              "steps": [
+                {
+                  "destination": [
+                    125,
+                    126
+                  ],
+                  "q": 2,
+                  "source": [
+                    1,
+                    250
+                  ]
+                },
+                {
+                  "destination": [
+                    25,
+                    226
+                  ],
+                  "q": 5,
+                  "source": [
+                    125,
+                    126
+                  ]
+                },
+                {
+                  "destination": [
+                    5,
+                    246
+                  ],
+                  "q": 5,
+                  "source": [
+                    25,
+                    226
+                  ]
+                }
+              ],
+              "target": 5
+            }
+          },
+          {
+            "K_M": 125870,
+            "M": 410,
+            "Q": 82,
+            "R_M": 1231,
+            "beta": 3,
+            "classification": "overflow",
+            "excess_quotient": 82,
+            "h": 5,
+            "next_h": 3,
+            "other": 246,
+            "overlap": 1,
+            "strip": {
+              "selected": 246,
+              "steps": [
+                {
+                  "destination": [
+                    123,
+                    128
+                  ],
+                  "q": 2,
+                  "source": [
+                    5,
+                    246
+                  ]
+                },
+                {
+                  "destination": [
+                    3,
+                    248
+                  ],
+                  "q": 41,
+                  "source": [
+                    123,
+                    128
+                  ]
+                }
+              ],
+              "target": 3
+            }
+          },
+          {
+            "K_M": 146320,
+            "M": 1240,
+            "Q": 248,
+            "R_M": 1431,
+            "beta": 1,
+            "classification": "overflow",
+            "excess_quotient": 248,
+            "h": 3,
+            "next_h": 1,
+            "other": 248,
+            "overlap": 1,
+            "strip": {
+              "selected": 248,
+              "steps": [
+                {
+                  "destination": [
+                    124,
+                    127
+                  ],
+                  "q": 2,
+                  "source": [
+                    3,
+                    248
+                  ]
+                },
+                {
+                  "destination": [
+                    62,
+                    189
+                  ],
+                  "q": 2,
+                  "source": [
+                    124,
+                    127
+                  ]
+                },
+                {
+                  "destination": [
+                    31,
+                    220
+                  ],
+                  "q": 2,
+                  "source": [
+                    62,
+                    189
+                  ]
+                },
+                {
+                  "destination": [
+                    1,
+                    250
+                  ],
+                  "q": 31,
+                  "source": [
+                    31,
+                    220
+                  ]
+                }
+              ],
+              "target": 1
+            }
+          }
+        ]
+      },
+      "prime": 409,
+      "source_receipt": {
+        "edge": {
+          "destination": [
+            1,
+            250,
+            1
+          ],
+          "gcd_reduction": 1,
+          "q": 409,
+          "shift": 1
+        },
+        "source": [
+          409,
+          101999,
+          408
+        ]
+      }
+    },
+    "overlapping_capacity_strip": {
+      "K": 56364,
+      "R": 335,
+      "node": [
+        7,
+        328
+      ],
+      "prime": 673,
+      "strip": {
+        "selected": 328,
+        "steps": [
+          {
+            "destination": [
+              164,
+              171
+            ],
+            "q": 2,
+            "source": [
+              7,
+              328
+            ]
+          },
+          {
+            "destination": [
+              4,
+              331
+            ],
+            "q": 41,
+            "source": [
+              164,
+              171
+            ]
+          }
+        ],
+        "target": 4
+      }
+    }
+  }
+}

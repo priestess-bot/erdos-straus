@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 315 |
+| 数学状态 | `established` | 317 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 141 |
+| 证明来源 | `repository_derivation` | 143 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 269 |
+| 审阅状态 | `internal_review` | 271 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -479,6 +479,7 @@
 | [Type I 一私有因子的三余类饱和判据](../claims/type-I-one-private-three-coset-saturation.md) (`type-I-one-private-three-coset-saturation`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [有序 R 位置的迁移最小费用对偶与局部容量升级准则](../claims/type-I-ordered-r-migration-min-cost-duality.md) (`type-I-ordered-r-migration-min-cost-duality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md) (`type-I-overflow-d-only-square-excess-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
+| [overflow 行列式的固定 n 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md) (`type-I-overflow-determinant-fixed-n-dual-support-conflict`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -549,6 +550,7 @@
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [通用一层周期的偶补数分段与两翻转正规形](../claims/type-I-universal-cycle-complement-flip-segment-normal-form.md) (`type-I-universal-cycle-complement-flip-segment-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [通用 p 源、容量锚点轨道与周期对偶证书](../claims/type-I-universal-p-source-capacity-anchor-orbit.md) (`type-I-universal-p-source-capacity-anchor-orbit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [九条固定 p 减一单素因子桥菜单的 536219/212520 维筛残余](../claims/type-I-universal-pminusone-prime-factor-menu-sieve.md) (`type-I-universal-pminusone-prime-factor-menu-sieve`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [上半区偶源混合终端选择猜想](../claims/type-I-upper-half-mixed-terminal-selector-conjecture.md) (`type-I-upper-half-mixed-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [Type II 规范扇的 CRT 小好因子屏蔽与十射线压力点](../claims/type-II-ac-adversarial-crt-small-factor-screen.md) (`type-II-ac-adversarial-crt-small-factor-screen`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `chamberland2026`, `grynkiewicz_marchan_ordaz2009` | 2026-07-28 |

@@ -3811,3 +3811,67 @@ competing-excess 作为独立余项。重叠例 \(A=5,Q=50\) 还证明必须使�
 聚焦脚本与结果 SHA-256 分别为
 \(1407e23353804cef2995aa0fd0b85b14abb8fc6f70b8ade60fdd49cdc268fc1a\) 和
 \(92458fe092c86a8db3ce1d693bd2234c87ab66094c1a80ad6d53cb3f4e8c583b\)。
+
+## 2026-08-01 通用源与 overflow determinant 对偶收口
+
+已吸纳远程新增的
+[研究进展与突破路线图](../docs/research-progress-and-breakthrough-roadmap-2026-07-31.md)，并按其中
+两个最高优先级接口展开定向推导，没有重跑历史普查。
+
+第一项新定理是通用实际形式源：对任意合法 \(4K=pR+1\)，
+
+\[
+(p,R(p-1)-p,p-1)
+\xrightarrow{q=p,t=1}
+(1,R-1,1).
+\]
+
+该边满足正性、互素性、\(p\nmid K\) 和 gcd reduction \(1\)，所以 F/G/hit 全部可以
+进入 anchor 的 direct Type I / bundle absorb / overflow 三分。裸 G source 不再是余项。
+
+同时证明了任一 primitive side \(u\) 可沿真实 raw 边完整剥离到 \((u,K)\)，并得到
+确定轨道 \(h_{i+1}=(R-h_i,K)\)。周期上的外部商满足
+
+\[
+\prod e_i\equiv(-1)^\ell\pmod R,
+\]
+
+且 G 分离角色逐边给出 \(\chi(e_i)=\chi(-1)\)。聚焦
+\((409,251,25665;5)\) 的 \(1\to5\to3\to1\) 三周期全部 overflow，证明该对偶证书
+本身不是良基势。
+
+第二项新定理从 \(pn=4Md+1\) 构造完整 fixed-\(n\) divisor atlas：
+
+\[
+L\mid Md,
+\quad n<4L<p+n
+\Longrightarrow
+(R_L,K_L)=
+\left(4L-n,L\left(p-\frac{Md}{L}\right)\right).
+\]
+
+若 \(A\mid L\)、\(L>A\)，它是新的 `overflow_determinant` charged-support identity
+edge。特别地 \(A=1\) 时 \(L=d\) 总合法，故全部初始 overflow 已有下一边。任意
+overflow 还至少有一个 \(R<p\) 的对称 \(d/r\) 图表。
+
+一般 \(A>1\) 不能据此全称闭合：fixed-\(n\) 窗口可为空、\(d\) 可等于 \(1\)、小图表
+可丢失旧支撑，lcm/determinant 迭代可出现二环。更强的可达机制边界从
+\((73,39,712;1)\) 合法进入 \((73,51,931;19)\)；其 universal-anchor Reach 的全部
+四张 bundle receipt 都 overflow，且双载体均不能保持并增加 \(19\)。因此新的唯一主余项
+是递归可达 \(A>1\) overflow 的 support-preserving alternate/终端，或由独立外层秩
+支付的 support reset。
+
+新增主张：
+
+- [通用 \(p\) 源、容量锚点轨道与周期对偶证书](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)；
+- [overflow 行列式的固定 \(n\) 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
+
+聚焦复现为
+
+~~~bash
+python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
+~~~
+
+脚本和结果 SHA-256 分别为
+\(94fb9625361e8184ee6cb6991aef03d8d806f623a1e8123952e8c8ff2f667e21\) 和
+\(1fceb021f77ea88ac391b09cee9aafe0eee9348d98b75779c94b0ec45d71d025\)。

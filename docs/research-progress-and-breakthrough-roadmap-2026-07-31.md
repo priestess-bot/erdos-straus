@@ -7,6 +7,83 @@
 > 提交范围：基线之后 13 次提交  
 > 报告性质：研究进展、证明量词、有限证据和下一阶段优先级的综合评估；没有独立重跑全部新增复现程序，也不是对所有新增主张的外部同行评议。
 
+## 2026-08-01 吸纳更新
+
+本报告已从远程仓库拉取并逐节用于下一轮研究。以下更新晚于原审计 HEAD，并覆盖本文
+后文关于“两个主余项”的旧表述；原文其余部分保留为 2026-07-31 的路线基线。
+
+报告提出的两个最高优先级方向都已产生一般结果：
+
+1. **裸 G source 已解决。** 对每个合法核心图表 \(4K=pR+1\)，
+
+   \[
+   (U,V,m)=\bigl(p,R(p-1)-p,p-1\bigr)
+   \]
+
+   是显式实际形式源。因为 \(p\nmid K\)，唯一 \(q=p,t=1\) 边无 gcd 约分地一步到达
+   \((1,R-1,1)\)。因此完整 raw 合同下，G 不再缺 source；anchor 直接进入 Type I、
+   bundle marked absorb 或 bundle overflow。
+
+2. **初始 overflow 已解决一步出口。** 对 verified overflow
+
+   \[
+   R_M>p,
+   \qquad
+   pn=4Md+1,
+   \]
+
+   固定 \(n\) 的每个因子
+
+   \[
+   L\mid Md,
+   \qquad
+   n<4L<p+n
+   \]
+
+   都给出合法小图表
+
+   \[
+   R_L=4L-n,
+   \qquad
+   K_L=L\left(p-\frac{Md}{L}\right).
+   \]
+
+   若 \(A\mid L\)、\(L>A\)，这是保持 \(\operatorname{Sol}(p)\)、恒等提升且严格降低
+   absorbed-support 势的 `overflow_determinant` 边。特别地，\(A=1\) 时 \(d\ge2\)，
+   且 \(L=d\) 总合法，所以全部初始 overflow 都有 verified 后继。
+
+此外，任意 overflow 写 \(M=kp+r\) 后都有载体 \(d,r\) 的两个对称图表，至少一个满足
+\(R_t<p\)。这解决了 arithmetic alternate carrier 的存在性，但没有自动保留累积
+support。
+
+新的精确瓶颈是：
+
+\[
+\boxed{
+\text{递归可达的 }A>1\text{ overflow 是否必有保持旧 }A\text{ 的 alternate/终端，}
+\text{或能否由独立外层秩支付 support reset。}
+}
+\]
+
+这不是措辞上的保守。根 Jacobi-G 状态 \((73,39,712;1)\) 经通用 anchor 合法进入
+\((73,51,931;19)\)；从该 anchor 出发的完整 16 节点 bottom Reach 无 raw terminal，
+全部合法 bundle 只有 \(Q\in\{2,32,44,50\}\)。四者全部 overflow，且其对称双图表
+没有一个既保留 \(A=19\) 又严格增加 support。该例反驳当前菜单的全称闭合，不是
+Erdős--Straus 反例，也不排除别的 source、marked state 或直接短证书。
+
+因此原六周计划应立即调整：
+
+- 原第 3 周“寻找裸 G source”已完成，转为研究可达 \(A>1\) 的 alternate-source 完备性；
+- 原第 2 周的 determinant 推导已完成到 fixed-\(n\) divisor atlas，下一步证明该窗口在
+  哪些历史可达不变量下必非空；
+- 同步研究允许丢弃旧 \(A\) 的 phase transition，但必须先给出跨 phase 的全局良基序；
+- 两翻转周期三目标路线保留为独立辅助方向，不与当前支撑冲突菜单混写；
+- 继续遵守只验证本轮新增公式、不重跑历史测试的证据策略。
+
+新增严格主张见
+[通用 \(p\) 源与容量锚点轨道](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)及
+[overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
+
 ## 一、结论先行
 
 最近这一轮工作的价值明显高于继续扩大有限扫描。项目已经把上一阶段的“联合带符号分母缺陷”推进成一条更完整的结构链：

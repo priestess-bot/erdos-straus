@@ -508,6 +508,13 @@ R_{AQ}>p\text{ 的 overflow receipt}.}
 sink-SCC 余项；本卡仍未证明的是 prime-power 或 bundle overflow 必有另一载体、直接
 证书或可提升后继。
 
+下游的
+[overflow 固定 \(n\) 对偶图谱](type-I-overflow-determinant-fixed-n-dual-support-conflict.md)
+又加强了最后一句：若当前 \(A=1\)，每个 overflow 都有规范 determinant-charged
+identity edge；若 \(A>1\)，固定 \(n\) 因子窗口非空时也有同类边。真正未闭合的只剩
+累积支撑窗口为空且所有小对偶载体都不能保留旧 \(A\) 的分支。该下游边使用
+`overflow_determinant` provenance，不能倒写成本卡的 clean \(Q\)-slab receipt。
+
 ## 7. 聚焦复现
 
 ~~~bash

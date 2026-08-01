@@ -432,8 +432,18 @@ F
 完整 raw Reach 负责到达 sink；带符号容量在最小节点打包成实际整数载体；(18)、(28)
 负责跨状态容量账本与良基性。
 
-G 状态没有只用 \(K\) 支撑的形式源，故 (33) 不适用于裸 G。若另一个
-source/path/node 构造给出实际形式源，则仍可直接使用更一般的 (32)。
+G 状态确实没有只用 \(K\) 支撑的形式源，但后续的通用源定理给出
+
+\[
+(U,V,m)=\bigl(p,R(p-1)-p,p-1\bigr)
+\xrightarrow{q=p,t=1}
+(1,R-1,1).
+\tag{33a}
+\]
+
+因此按当前允许外部超容量素数的 raw 合同，裸 G 也有实际 source；(32) 对每个合法
+F/G/hit 图表都可调用。这是本卡第 1--5 节之后的下游加强，不参与其原证明。严格证明见
+[通用 \(p\) 源与容量锚点轨道](type-I-universal-p-source-capacity-anchor-orbit.md)。
 
 ## 7. 线性源的初始 overflow 只剩三条窄射线
 
@@ -853,19 +863,20 @@ R_{37}=35<p,
 
 ## 10. 证明边界与下一目标
 
-本定理完成两项此前开放的接口：
+本定理及其两个下游加强完成四项此前开放的接口：
 
 1. `COMPETING_EXCESS` 不再是 bottom sink-SCC 的独立余项；多素数和 K 内超指数都由
    规范 bundle 一次打包；
 2. 每个 F 状态的规范表示证书都能产生合法 marked edge 或显式 overflow，而不再只
-   输出 formal cycle/Pareto miss。
+   输出 formal cycle/Pareto miss；
+3. `universal_p_source_v1` 把同一结论扩展到裸 G，不再要求 \(K\)-支撑形式源；
+4. 初始 \(A=1\) 的每个 bundle overflow 都由 determinant 派生出合法 charged-support
+   identity edge。
 
 它没有关闭：
 
-- `complete_excess_bundle_overflow` 的全称 alternate carrier；
-- 没有外部形式源的裸 G 状态；
 - \(A>1\) 累积图表的 overflow；
-- 一般 composite/overlapping bundle 的三条 \(\alpha=1\) 线性 F 射线。
+- 累积层中保持旧支撑的 source/path/node alternate、直接终端或外层 support reset。
 
 在更窄的 source-anchored clean single-external \(\alpha=1\) 子类中，第 8 节已经关闭
 全部 \(as=3\) 和除 \(p\equiv169\pmod{240}\) 外的 \(as=2\)；该结论不能推广到一般
@@ -875,15 +886,15 @@ complete-excess bundle。
 
 \[
 \boxed{
-\text{对每个 bundle overflow 构造 source/path/node 锚定的 }Q'
-\text{，使其直接终端或 }R_{\operatorname{lcm}(A,Q')}<p.}
+\text{对每个递归可达的 }A>1\text{ overflow，构造保持 }A\text{ 的严格边或直接终端；}
+\text{否则以独立外层秩支付 support reset。}
 \tag{58}
 \]
 
-在线性初始 F 子类中，先区分第 8 节已经压缩的 clean 射线与一般
-composite/overlapping bundle；前者只剩 \(as=2,\ p\equiv169\pmod{240}\) 的必要类，
-后者仍需攻击 (44) 的三条源方向。固定层格/Fourier 证书在本定理后仍用于选择规范
-source 和保存 overflow miss；它不再需要承担单素数 clean 强制。
+第 7--8 节的线性射线和模 \(240\) 分类仍是有用的局部结构，但初始 overflow 已有统一
+下一边，故它们不再是独立递归余项。固定层格/Fourier 证书仍用于选择 alternate 和保存
+overflow miss；它不再需要承担裸 G source 或单素数 clean 强制。下游定理及精确反例见
+[overflow 固定 \(n\) 对偶图谱](type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
 
 ## 11. 聚焦复现
 

@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。对任一来源可达的完整 raw Reach，bottom sink-SCC 的最小小坐标 x 必整除 K；把另一坐标的全部超容量完整素数幂块打包为复合 Q，并以 M=lcm(A,Q) 合并 absorbed support 后，严格得到直接 Type I、R_M<p 的恒等提升 marked edge 或 R_M>p 的 bundle overflow。故 COMPETING_EXCESS 不再是独立 sink-SCC 余项，每个 F 状态都进入 marked absorb 或 bundle overflow。若 overflow 补秩 u<p，则 same-class non-source D-only 标记纤维全空，source-supported 又只复述中心 Type I，因此该菜单已删除。当前决定性余项收缩为 complete-excess bundle overflow 的 source-anchored alternate carrier、直接终端或非保尾 marked 状态，以及没有 K 支撑形式源的裸 G 状态。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱又证明 A=1 时总有合法 charged-support identity edge，且任意 overflow 至少有一个 R<p 的算术对偶图表。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
 topics:
 - research-map
 - proof-program
@@ -16,6 +16,10 @@ used_by:
 - type-I-private-quotient-box-saturation
 - type-I-linear-single-active-prime-cross-state-compatibility
 sources:
+- claim: type-I-universal-p-source-capacity-anchor-orbit
+  role: universal-source-and-capacity-orbit
+- claim: type-I-overflow-determinant-fixed-n-dual-support-conflict
+  role: fixed-n-dual-atlas-and-current-residual
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -2556,12 +2560,152 @@ single-prime-power slab，却在最小点 \(\{1,18\}\) 给出复合 \(Q=18\) 和
 source-anchored clean single-external \(Q=q^e,\ q\nmid K\)，则 \(q\)-peeling 到
 \(\{1,R-1\}\) 后，\(as=3\) 全部吸收；\(as=2\) 除必要类
 \(p\equiv169\pmod{240}\) 外也由 anchor bundle 或统一 gap \(7\) Type I 闭合。这个
-模 \(240\) 收缩不适用于含 \(K\) 内超指数的 general bundle。当前真正余项因此只剩
-一般 bundle overflow、clean 子类的上述必要模类与裸 G source，而不再包含
-competing-excess SCC。
+模 \(240\) 收缩不适用于含 \(K\) 内超指数的 general bundle。在目标五十四完成时，余项
+是一般 bundle overflow、clean 子类的上述必要模类与裸 G source，而不再包含
+competing-excess SCC；目标五十五的通用源和 determinant 对偶已继续更新这三个边界。
 
 严格证明与聚焦复现见
 [底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md)。
+
+## 目标五十五：通用源、overflow 对偶图谱与累积支撑冲突
+
+路线图中的“裸 G source”和“初始 overflow”两个接口已经取得无样本推进。对每个合法
+核心图表
+
+\[
+4K=pR+1,
+\qquad
+3\le R\le p-2,
+\]
+
+都有规范实际形式源
+
+\[
+\boxed{
+(U,V,m)=\bigl(p,R(p-1)-p,p-1\bigr).
+}
+\]
+
+因为 \(p\nmid K\)，唯一 \(q=p,t=1\) 的 raw 边无约分地一步到达
+\((1,R-1,1)\)。所以该构造同时适用于 F、G 和 hit；旧的“G 没有只用 \(K\) 支撑的
+源”不再构成完整形式 Reach 的 source 缺口。anchor 若不直接 Type I，就给出规范
+path-anchored complete-excess bundle。
+
+更一般地，从任一 primitive bottom side \(u\) 完整剥离超出 \(K\) 容量的素数层，会沿
+真实 raw 路径、与次序无关地到达 \((u,K)\)。由此得到确定有限轨道
+
+\[
+h_0=1,
+\qquad
+h_{i+1}=(R-h_i,K).
+\]
+
+若不终端，写 \(R-h_i=e_i h_{i+1}\)，则
+
+\[
+h_i h_{i+1}\mid K,
+\qquad
+(h_i,h_{i+1})=1.
+\]
+
+长度 \(\ell\) 的周期满足
+
+\[
+\prod_i e_i\equiv(-1)^\ell\pmod R.
+\]
+
+G 分离角色逐边读取 \(\chi(e_i)=\chi(-1)\)。这给出规范格/Fourier 对偶证书，但
+\((p,R,K;A)=(409,251,25665;5)\) 的 \(1\to5\to3\to1\) 三周期全部 overflow，说明
+轨道本身不是良基势。
+
+对任一 verified bundle overflow，写
+
+\[
+n=4M-R_M,
+\qquad
+K_M=MC,
+\qquad
+d=p-C.
+\]
+
+则
+
+\[
+pn=4Md+1.
+\]
+
+令 \(S=Md=(pn-1)/4\)。固定 \(n\) 时，每个
+
+\[
+L\mid S,
+\qquad
+n<4L<p+n
+\]
+
+都给出
+
+\[
+R_L=4L-n,
+\qquad
+K_L=L\left(p-\frac SL\right),
+\qquad
+3\le R_L\le p-2.
+\]
+
+若旧 charged support 满足 \(A\mid L\)、\(L>A\)，这就是保持
+\(\operatorname{Sol}(p)\)、恒等提升且使 \(\lfloor B_p/A\rfloor\) 严格下降的
+`overflow_determinant` 边。特别在 \(A=1\) 时，\(d\ge2\) 且 \(L=d\) 总在窗口中，
+所以全部初始 overflow 已有合法下一边。
+
+一般情形还有更对称的算术对偶。写 \(M=kp+r\)、\(ps=4rd+1\)，则载体 \(d,r\) 给出
+
+\[
+(R_d,K_d)=(4d-s,d(p-r)),
+\qquad
+(R_r,K_r)=(4r-s,r(p-d)),
+\]
+
+并且至少一个 \(R_t<p\)。因此“小图表存在性”也已经解决。困难完全落在支撑保持：
+小图表只有在
+
+\[
+\operatorname{lcm}(A,t)\mid K_t,
+\qquad
+\operatorname{lcm}(A,t)>A
+\]
+
+时才是当前 phase 的 verified edge。
+
+这个限制是真实的。根 Jacobi-G 状态
+
+\[
+(73,39,712;1)
+\]
+
+经通用 anchor bundle 合法进入 \((73,51,931;19)\)。从新状态 anchor 出发的完整
+16 节点 bottom Reach 无 raw terminal，全部合法 complete-bundle receipt 恰有
+
+\[
+Q\in\{2,32,44,50\}.
+\]
+
+四者全部 overflow，且其双对偶图表没有一个既保留 \(A=19\) 又严格增加支撑。这不是
+Erdős--Straus 反例，也不排除别的 source 或终端；它严格证伪“通用 anchor Reach 加
+当前 bundle/双载体菜单必闭合”。fixed-\(n\) 窗口为空、\(d=1\) 和 lcm 二环也都有
+聚焦整数回执。
+
+因此当前主目标不再是裸 G 或初始 overflow，而是
+
+\[
+\boxed{
+\text{对每个递归可达的 }A>1\text{ overflow，证明存在保持 }A\text{ 的 alternate/终端；}
+\text{否则构造由独立外层秩支付的 support reset。}
+}
+\]
+
+严格证明与聚焦复现见
+[通用 \(p\) 源与容量锚点轨道](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)、
+[overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
 
 ## 依赖顺序
 
@@ -2619,6 +2763,10 @@ competing-excess SCC。
 \downarrow\\
 \text{sink 最小坐标、complete-excess bundle、lcm 容量并与 F 到 marked/overflow 宏边}\\
 \downarrow\\
+\text{通用 }p\text{ 源、容量锚点轨道与 G source 缺口消除}\\
+\downarrow\\
+\text{固定 }n\text{ 对偶图谱、初始 overflow 收费边与累积支撑冲突}\\
+\downarrow\\
 \text{PRE--ABSORB 分型势只解决旧候选 E5；其它 formal 边 E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
@@ -2641,8 +2789,11 @@ slab-\(q\) 载体候选现已被线性 strong-miss 反例否定；替代对象�
 Pareto 前沿和同图表至多三个 \(\beta\)-ratio cocycle。底层 SCC 的无限路径也已压成
 显式有限见证界和周期静态/区间证书。sink 最小坐标定理又把所有 competing-excess
 完整块规范合并为复合 \(Q\)，并以 \(\operatorname{lcm}(A,Q)\) 直接进入 marked edge
-或 bundle overflow。真正余项现已从“继续走多深”和“能否出现单素数 clean slab”
-转为 bundle overflow 的 alternate carrier/直接终端/非保尾 E4，以及裸 G 的实际 source。
+或 bundle overflow。通用 \(p\) 源现已覆盖裸 G；固定 \(n\) determinant 图谱又关闭
+全部 \(A=1\) overflow，并证明任意 overflow 至少有一个较小算术对偶图表。真正余项已
+从“继续走多深”“能否出现单素数 clean slab”“裸 G 是否有 source”进一步压成：递归
+可达的 \(A>1\) overflow 是否总有保持旧 charged support 的 alternate/终端，或能否由
+独立外层秩合法支付 support reset。
 \(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 和 \(n=p-1\) 层外，现又关闭了
 全部 \(p\equiv n\equiv1\pmod4\) 的 non-source 参数。overflow 补秩恰在这一同余类，
 所以 square-excess 不再是后继候选，D-only 应整体输出 `rejected_branch`。path-static
