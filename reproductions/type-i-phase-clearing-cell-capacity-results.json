@@ -1,5 +1,5 @@
 {
-  "arithmetic": "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the selected labels therefore obey q^min(e_i,e_j) | (s_i-s_j); the standard nested q-adic capacity bound applies.",
+  "arithmetic": "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the cross determinant A_i R_j - A_j R_i has the same q-adic threshold as the phase difference. Within a pairwise compatible phase cell, the selected labels therefore obey q^min(e_i,e_j) | (s_i-s_j); the standard nested q-adic capacity bound applies.",
   "scope_note": "Conditional bridge only. The least positive phase representative is used as a bounded diagnostic label in these fixtures; it is not asserted to produce a positive marked lift. A future recursive edge still needs full E1--E5, nonempty marked solutions, and a well-founded potential. Incompatible phase cells receive no capacity bound. Repeated labels are charged by their maximum multiplicity.",
   "input": "type-i-f-overflow-rational-gap-denominator-results.json",
   "input_sha256": "60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768",
@@ -48,7 +48,10 @@
           "common_height": 1,
           "required_power": 5,
           "phase_difference": -10,
-          "phase_compatible": true
+          "cross_determinant": -4163519807549679055922440,
+          "cross_determinant_q_valuation": 1,
+          "phase_compatible": true,
+          "cross_determinant_compatible": true
         }
       ],
       "phase_compatible": true,
@@ -112,7 +115,10 @@
           "common_height": 2,
           "required_power": 22801,
           "phase_difference": 0,
-          "phase_compatible": true
+          "cross_determinant": 0,
+          "cross_determinant_q_valuation": null,
+          "phase_compatible": true,
+          "cross_determinant_compatible": true
         }
       ],
       "phase_compatible": true,
@@ -176,7 +182,10 @@
           "common_height": 1,
           "required_power": 5,
           "phase_difference": -2,
-          "phase_compatible": false
+          "cross_determinant": -38997756993928,
+          "cross_determinant_q_valuation": 0,
+          "phase_compatible": false,
+          "cross_determinant_compatible": false
         }
       ],
       "phase_compatible": false,

@@ -4038,6 +4038,25 @@ q^{\min(e_i,e_j)}\mid(s_i-s_j).
 \qquad H=\max_i e_i.
 \]
 
+相位兼容还可完全改写为表示坐标的交叉行列式判据。令
+
+\[
+\Delta_{ij}=A_iR_j-A_jR_i,
+\qquad k_{ij}=\min(e_i,e_j),
+\]
+
+则
+
+\[
+\gamma_i\equiv\gamma_j\pmod{q^{k_{ij}}}
+\iff
+q^{k_{ij}}\mid\Delta_{ij}.
+\]
+
+因此 \(v_q(\Delta_{ij})<k_{ij}\) 是可重算的相位分离层数；
+\(\Delta_{ij}=0\) 则表示所有共同层完全兼容。三组聚焦回执分别给出
+\(v_5(\Delta)=1\)、零行列式和 \(v_5(\Delta)=0\)，与逆元相位判据逐项一致。
+
 聚焦回执包含：\(q=5\) 的 \(e=1,2\) 兼容不同标签、\(q=151\) 的相同标签重数，
 以及 \(q=5\) 的不兼容对照；前两组容量通过，第三组不进入容量计算。主张卡见
 [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
@@ -4048,6 +4067,6 @@ marked lift；相位胞合同仍是 `analysis_evidence` / `candidate_transition`
 产生统一有界的相位兼容标签，或把相位不兼容转成合法 support-switch。
 
 脚本 SHA-256 为
-`c62a706cb343396b0128e4f854f964bfe67d60e0092e843528bcea4d4187c5a6`，结果回执 SHA-256 为
-`f4b204018d38f669ee85603a68fd560ea31e3565ec272755a05d6b51ca0220e2`；输入冻结哈希为
+`eff82f027c13717d264a642db123adbc46198072a5fa29583b0855583226bef9`，结果回执 SHA-256 为
+`7d1cbf98457b8c7181948aa829df38e24b4e1a05383aea0cf6ee2422b60f2e0f`；输入冻结哈希为
 `60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768`。

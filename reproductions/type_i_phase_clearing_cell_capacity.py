@@ -119,6 +119,23 @@ def compatible(left: dict[str, Any], right: dict[str, Any]) -> bool:
     return (int(left["phase_center"]) - int(right["phase_center"])) % modulus == 0
 
 
+def valuation(value: int, prime: int) -> int | None:
+    """Return v_prime(value), using None for the zero determinant."""
+    if value == 0:
+        return None
+    value = abs(value)
+    height = 0
+    while value % prime == 0:
+        value //= prime
+        height += 1
+    return height
+
+
+def cross_determinant(left: dict[str, Any], right: dict[str, Any]) -> int:
+    """The 2x2 wedge A_i R_j - A_j R_i of the phase coordinates."""
+    return int(left["A"]) * int(right["R"]) - int(right["A"]) * int(left["R"])
+
+
 def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[str, Any]]) -> dict[str, Any]:
     q = int(fixture["q"])
     entries = [
@@ -131,6 +148,11 @@ def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[s
             common_height = min(int(left["height"]), int(right["height"]))
             required = q**common_height
             divides = compatible(left, right)
+            determinant = cross_determinant(left, right)
+            determinant_height = valuation(determinant, q)
+            determinant_compatible = determinant == 0 or determinant_height >= common_height
+            if divides != determinant_compatible:
+                raise AssertionError("phase and cross-determinant compatibility disagree")
             pair_checks.append(
                 {
                     "left": [left["prime"], left["R"]],
@@ -139,7 +161,10 @@ def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[s
                     "required_power": required,
                     "phase_difference": int(left["phase_center"])
                     - int(right["phase_center"]),
+                    "cross_determinant": determinant,
+                    "cross_determinant_q_valuation": determinant_height,
                     "phase_compatible": divides,
+                    "cross_determinant_compatible": determinant_compatible,
                 }
             )
 
@@ -191,8 +216,10 @@ def build_payload(path: Path = INPUT) -> dict[str, Any]:
         "arithmetic": (
             "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies "
             "s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the "
-            "selected labels therefore obey q^min(e_i,e_j) | (s_i-s_j); the standard "
-            "nested q-adic capacity bound applies."
+            "cross determinant A_i R_j - A_j R_i has the same q-adic threshold as the "
+            "phase difference. Within a pairwise compatible phase cell, the selected labels "
+            "therefore obey q^min(e_i,e_j) | (s_i-s_j); the standard nested q-adic capacity "
+            "bound applies."
         ),
         "scope_note": (
             "Conditional bridge only. The least positive phase representative is used as "
@@ -237,6 +264,15 @@ def main() -> int:
         )
         if duplicate["label_distinct"] or duplicate["label_multiplicity_bound"] != 2:
             raise AssertionError("duplicate-label multiplicity was not recorded")
+        expected_separation = {
+            "q5_distinct_phase_labels": 1,
+            "q151_duplicate_phase_label": None,
+            "q5_incompatible_phase_pair": 0,
+        }
+        for cell in payload["cells"]:
+            observed = cell["pair_checks"][0]["cross_determinant_q_valuation"]
+            if observed != expected_separation[cell["cell_id"]]:
+                raise AssertionError("cross-determinant separation fixture changed")
 
     args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(

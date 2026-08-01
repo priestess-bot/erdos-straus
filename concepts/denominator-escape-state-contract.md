@@ -222,6 +222,8 @@ phase_clearing_height = e
 phase_center_modulus = q**e
 phase_center_residue = -A * inverse(R, q**e) mod q**e
 phase_cell_id = explicit compatible-cell identifier
+phase_cross_determinant = A_i * R_j - A_j * R_i, for a pair
+phase_separation_height = v_q(phase_cross_determinant), or null if it is zero
 phase_label = bounded integer representative, if one is supplied
 phase_label_interval = [lower, upper], if one is supplied
 phase_label_multiplicity_bound = mu
@@ -237,6 +239,9 @@ phase_capacity_status = compatible / incompatible / unproved
 
 并且标签落在已给出的有限区间时，才可调用
 [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
+相位胞兼容可以直接由 `phase_cross_determinant` 的 \(q\)-进赋值重算：共同高度为
+\(k=\min(e_i,e_j)\) 时，兼容当且仅当 \(q^k\) 整除
+\(A_iR_j-A_jR_i\)；小于 \(k\) 的赋值是明确的分离层数。
 标签重复必须乘入显式重数；相位不兼容的状态不得共享容量账本。最小正相位代表只
 是诊断标签，不自动提供正性、标记集非空、解提升或 E1--E5，因此该字段默认属于
 `analysis_evidence`，不能把 `carrier_mapping_status=unproved` 升级为递归边。

@@ -2888,6 +2888,24 @@ q^{\min(e_i,e_j)}\mid(s_i-s_j).
 这把 \(q\) 进 numerator-lift 刚性严格接到已有跨状态容量上界；标签重复时须显式乘以
 最大重数。新增合同和聚焦回执见
 [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
+相位兼容可进一步用表示坐标的交叉行列式直接判定：令
+
+\[
+\Delta_{ij}=A_iR_j-A_jR_i,
+\qquad k_{ij}=\min(e_i,e_j),
+\]
+
+则
+
+\[
+\gamma_i\equiv\gamma_j\pmod{q^{k_{ij}}}
+\iff
+q^{k_{ij}}\mid\Delta_{ij}.
+\]
+
+若 \(v_q(\Delta_{ij})<k_{ij}\)，该赋值就是两状态的相位分离层数；
+\(\Delta_{ij}=0\) 则表示共同层完全兼容。该形式把关系格/表示坐标直接接到相位胞
+划分，不需要依赖浮点角色值。
 当前证据只验证了两组兼容冻结回执和一组不兼容对照：它证明桥接合同的算术正确性，
 不证明全体 F/G 状态存在统一有界标签，也不提供实际 marked lift。因此下一步的真正
 任务被精确化为：从规范 Fourier/格证书构造有界且相位兼容的清分标签，或证明这些

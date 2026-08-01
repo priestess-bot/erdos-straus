@@ -102,6 +102,47 @@ s_i-s_j
 因此相位胞恰好提供现有跨状态容量引理所需的嵌套同余链。注意 (3) 是额外的
 跨状态假设；单个状态的 q 进刚性不自动产生它。
 
+## 2.1 表示坐标的交叉行列式判据
+
+因为 \(q\nmid R_iR_j\)，相位差可以完全改写为整数交叉行列式：
+
+\[
+\gamma_i-\gamma_j
+\equiv
+-\frac{A_iR_j-A_jR_i}{R_iR_j}
+\pmod{q^{\min(e_i,e_j)}}.
+\tag{3a}
+\]
+
+所以令
+
+\[
+\Delta_{ij}=A_iR_j-A_jR_i,
+\qquad k_{ij}=\min(e_i,e_j),
+\]
+
+就有精确等价
+
+\[
+\boxed{
+\gamma_i\equiv\gamma_j\pmod{q^{k_{ij}}}
+\iff
+q^{k_{ij}}\mid\Delta_{ij}.
+}
+\tag{3b}
+\]
+
+当 \(\Delta_{ij}\ne0\) 且 \(v_q(\Delta_{ij})<k_{ij}\) 时，
+
+\[
+\operatorname{sep}_q(i,j)=v_q(\Delta_{ij})
+\]
+
+是一个可重算的相位分离层数；它说明这两个状态不能共用高度超过
+\(\operatorname{sep}_q(i,j)\) 的同一清分胞。若 \(\Delta_{ij}=0\)，则两状态的相位
+中心在所有共同层完全一致。该判据把关系格/表示坐标直接接到相位胞划分，不需要
+用浮点角色值或先枚举逆元代表。
+
 ## 3. 容量结论
 
 设相位胞中的标签 \(s_i\) 两两不同且落在长度为 \(M\) 的整数区间内。令
@@ -189,6 +230,6 @@ python3 reproductions/type_i_phase_clearing_cell_capacity.py --verify
 聚焦复现的 SHA-256：
 
 ```text
-c62a706cb343396b0128e4f854f964bfe67d60e0092e843528bcea4d4187c5a6  reproductions/type_i_phase_clearing_cell_capacity.py
-f4b204018d38f669ee85603a68fd560ea31e3565ec272755a05d6b51ca0220e2  reproductions/type-i-phase-clearing-cell-capacity-results.json
+eff82f027c13717d264a642db123adbc46198072a5fa29583b0855583226bef9  reproductions/type_i_phase_clearing_cell_capacity.py
+7d1cbf98457b8c7181948aa829df38e24b4e1a05383aea0cf6ee2422b60f2e0f  reproductions/type-i-phase-clearing-cell-capacity-results.json
 ```
