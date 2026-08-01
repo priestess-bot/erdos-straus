@@ -95,7 +95,11 @@ state 或直接短证书。
    证据。这样可以把表示、对偶和容量字段放进同一状态记录，同时保留“对偶证书不是
    递归边”的类型边界。新增的有限角色阶债务在该回执中为 `1/36`，但
    `carrier_mapping_status=unproved`；它只是连接 Fourier 与容量的中间字段，不能
-   被解释为已经得到跨状态 (q)-进容量矛盾。
+   被解释为已经得到跨状态 \(q\)-进容量矛盾。
+
+   近邻偶前驱、广义 \(2^j\) 偶前驱和该商 Fourier 回执现已统一到终端优先协议；协议
+   明确保存标准偶解但将 `lift_status` 保持为 `unproved`，因此这些回执仍不能替代
+   F/G 状态的全域解提升或 overflow 的良基递降。见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。
 
 因此原六周计划应立即调整：
 

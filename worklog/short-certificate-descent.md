@@ -3957,3 +3957,13 @@ python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
 该字段只记录角色相位的离散负载；它尚未映射到带颜色的 \(q\)-进载体，载荷的
 `carrier_mapping_status` 保持 `unproved`，typed 回执仍为
 `analysis_evidence` 且 `recursive_edge_eligible=false`。
+
+## 2026-08-01 终端优先统一回执
+
+将目标纤维近邻、广义 \(2^j\) 偶前驱和固定层商 Fourier 接入同一选择顺序：
+先检查直接 Type I/II，再检查近邻，再检查广义二进，最后登记对偶证书。新增脚本
+`reproductions/type_i_unified_terminal_selector.py` 从既有冻结结果中重算三类回执，
+并统一保存 `terminal_kind`、标准偶解、`lift_status` 和
+`recursive_edge_eligible`。近邻示例给出 \(n=5596368\)，广义二进示例给出
+\(n=235724824\)；两者均只证明算术偶前驱，未证明原状态的全域提升。固定层 Fourier
+示例仍保留角色阶债务 \(1/36\) 和 `carrier_mapping_status=unproved`。

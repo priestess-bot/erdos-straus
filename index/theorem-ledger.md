@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 361 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 317 |
+| 数学状态 | `established` | 318 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 122 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 143 |
+| 证明来源 | `repository_derivation` | 144 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 271 |
+| 审阅状态 | `internal_review` | 272 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -549,6 +549,7 @@
 | [目标指数纤维反足与近邻终端引理](../claims/type-I-target-fiber-neighbor-terminal.md) (`type-I-target-fiber-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
+| [Type I 终端优先的近邻—广义二进—对偶统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md) (`type-I-unified-terminal-first-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [通用一层周期的偶补数分段与两翻转正规形](../claims/type-I-universal-cycle-complement-flip-segment-normal-form.md) (`type-I-universal-cycle-complement-flip-segment-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [通用 p 源、容量锚点轨道与周期对偶证书](../claims/type-I-universal-p-source-capacity-anchor-orbit.md) (`type-I-universal-p-source-capacity-anchor-orbit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [九条固定 p 减一单素因子桥菜单的 536219/212520 维筛残余](../claims/type-I-universal-pminusone-prime-factor-menu-sieve.md) (`type-I-universal-pminusone-prime-factor-menu-sieve`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |

@@ -35,6 +35,7 @@ used_by:
 - type-I-bottom-sink-scc-complete-excess-bundle-selector
 - type-I-universal-p-source-capacity-anchor-orbit
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
+- type-I-unified-terminal-first-selector-contract
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -186,6 +187,23 @@ recursive_edge_eligible = false
 该对象只能说明状态内 F/G 对偶结构。若要升级为 `support_switch`、`q_adic_lift` 或
 `verified_edge`，仍必须重新完成第 4 节的 E1--E5 和全域解提升；稳定子商阶下降或
 Fourier 幅度超过阈值本身不能承担递归。
+
+### 2.2b 终端优先的统一 typed 回执
+
+近邻偶前驱、广义 \(2^j\) 偶前驱和商 Fourier 证书共用以下选择顺序：
+
+```text
+direct_type_i_or_type_ii
+target_fiber_neighbor_terminal
+generalized_dyadic_terminal
+fixed_layer_quotient_fourier
+```
+
+前两类回执必须保存 `terminal_kind=even_predecessor`、标准偶方程解和
+`lift_status=unproved`；在没有非空标记集、全域解提升和严格势下降时，统一保持
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。这使“较小偶数
+前驱”与真正的 `terminal_leaf` 或 `verified_edge` 在类型上分离。精确的近邻、二进和
+对偶字段见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。
 
 ### 2.3 累积外部支撑状态
 

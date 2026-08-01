@@ -102,7 +102,7 @@ N_J(t)=\bar N(\pi(t)),
 \le60\log(|H/P|-1),
 \]
 聚焦状态的精确值为 \(1/36\)。这只是表示—对偶侧的中间字段；
-`carrier_mapping_status=unproved`，不能直接当作 (q)-进容量或递归势函数。
+`carrier_mapping_status=unproved`，不能直接当作 \(q\)-进容量或递归势函数。
 
 ## 目标二：目标纤维近邻或稀疏结构
 
@@ -178,6 +178,9 @@ Type I 重图表，不是独立 E4 递降。见
 [广义二进前驱的标准偶源分类与完整提升零边界](../claims/type-I-generalized-dyadic-standard-even-lift-boundary.md)。
 因此下一步不再扩大同类终端枚举，而应改变尾项或全部三分母，或从终端失败证书构造
 合法换状态。
+
+近邻、广义二进和固定层商 Fourier 已接入同一终端优先 typed 选择器；它统一回执顺序，
+但保留“偶前驱尚未提升”的边界，见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。
 
 ## 目标四：困难状态的完整谱记录
 
