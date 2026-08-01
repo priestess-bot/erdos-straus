@@ -101,6 +101,13 @@ state 或直接短证书。
    明确保存标准偶解但将 `lift_status` 保持为 `unproved`，因此这些回执仍不能替代
    F/G 状态的全域解提升或 overflow 的良基递降。见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。
 
+   随后的相位阶—载体高度聚焦复现进一步收紧了这条桥梁。冻结的 45 个双方向 F 状态共
+   90 个活跃方向，其中 78 个非空相位投影方向的角色阶全为 2；其余 12 个高阶方向
+   全部属于 6 个空投影状态。81 个同色实际载体组均满足模数差整除与 \(q\)-进容量上界，
+   没有出现跨状态超载。因此角色阶债务目前只能作为状态内空投影证书，不能与实际块
+   高度直接相加或互换；这一步仍没有得到一般的 `carrier_mapping`。详见[冻结 F 状态的
+   相位阶—载体高度二分与容量边界](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md)。
+
 因此原六周计划应立即调整：
 
 - 原第 3 周“寻找裸 G source”已完成，转为研究可达 \(A>1\) 的 alternate-source 完备性；
@@ -112,7 +119,8 @@ state 或直接短证书。
 
 新增严格主张见
 [通用 \(p\) 源与容量锚点轨道](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)及
-[overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
+[overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)，
+相位阶—载体高度的冻结边界见[相位阶—载体高度二分](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md)。
 
 ## 一、结论先行
 

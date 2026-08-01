@@ -3967,3 +3967,41 @@ python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
 `recursive_edge_eligible`。近邻示例给出 \(n=5596368\)，广义二进示例给出
 \(n=235724824\)；两者均只证明算术偶前驱，未证明原状态的全域提升。固定层 Fourier
 示例仍保留角色阶债务 \(1/36\) 和 `carrier_mapping_status=unproved`。
+
+## 2026-08-01 相位阶—载体高度字典边界
+
+为直接检验上一节留下的 `carrier_mapping_status=unproved`，新增
+`reproductions/type_i_f_phase_weighted_carrier_dictionary.py`。脚本只读取冻结的
+45 个双方向 F 状态，不扩大历史普查；对每个活跃方向保存
+
+\[
+(q,b=v_q(K),d=\operatorname{ord}(\chi(q)),h=v_q(tR+1),\text{color}(t)).
+\]
+
+其中有限角色阶债务取
+
+\[
+\mathsf D_{\rm ord}=\min\{1,(b/d)^2\},
+\]
+
+并额外记录只在单活跃模型中有意义的余量 \(d-2b\)。结果为：90 个方向中 78 个来自
+非空相位投影且 \(d=2\)；12 个高阶方向全部属于 6 个空投影状态。对同一 \((p,q,t)\)
+的 81 个实际载体组，逐对检查
+
+\[
+q^{\min(h_i,h_j)}\mid R_i-R_j
+\]
+
+并按坐标区间验证
+
+\[
+\sum_i h_i\le M/(q-1)+H;
+\]
+
+没有容量超载。
+
+这给出一个严格的证据边界：当前数据支持“高阶相位 → 状态内空投影、阶二相位
+→ 实际载体容量输入”，但不支持“角色阶债务 → 跨状态 \(q\)-进超载”。
+因此不能把 \(d\) 与 \(h\) 直接相加、相乘或互换；下一步必须补上相位—载体匹配，或
+把相位缺口转成完整 E1--E5 的 support-switch。脚本和结果回执见
+[相位阶—载体高度二分](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md)。

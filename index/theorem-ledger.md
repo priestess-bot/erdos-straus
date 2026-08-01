@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 361 |
+| 数学状态 | `computationally_reproduced` | 362 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 318 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 122 |
+| 证明来源 | `computational_reproduction` | 123 |
 | 证明来源 | `mixed` | 24 |
 | 证明来源 | `repository_derivation` | 144 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 272 |
+| 审阅状态 | `internal_review` | 273 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -297,6 +297,7 @@
 | [两个局部余核的重复高度容量一代理面与短证书选择器](../claims/type-I-f-overflow-two-residual-capacity-one-selector.md) (`type-I-f-overflow-two-residual-capacity-one-selector`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [同状态重复与异状态未配型的多坐标联合压力边界](../claims/type-I-f-overflow-universal-joint-capacity.md) (`type-I-f-overflow-universal-joint-capacity`) | `conditional` | `computational_reproduction` | `internal_review` | - | 2026-07-30 |
 | [历史重复高度代理子集的多坐标和混合符号剖面](../claims/type-I-f-overflow-universal-support-profile.md) (`type-I-f-overflow-universal-support-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [冻结 F 状态的相位阶—载体高度二分与容量边界](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md) (`type-I-f-phase-order-carrier-capacity-dichotomy`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-01 |
 | [内禀缺陷一的最近目标纤维与一层逃逸边界](../claims/type-I-f-psi-one-nearest-fiber-escape-boundary.md) (`type-I-f-psi-one-nearest-fiber-escape-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [F 状态 q 进清分子的参数刚性与公因子约分](../claims/type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction.md) (`type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [冻结 F 状态的关系格规范证书重建](../claims/type-I-f-relation-lattice-certificate-reconstruction.md) (`type-I-f-relation-lattice-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
