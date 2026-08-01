@@ -1,0 +1,189 @@
+{
+  "arithmetic": "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the selected labels therefore obey q^min(e_i,e_j) | (s_i-s_j); the standard nested q-adic capacity bound applies.",
+  "scope_note": "Conditional bridge only. The least positive phase representative is used as a bounded diagnostic label in these fixtures; it is not asserted to produce a positive marked lift. A future recursive edge still needs full E1--E5, nonempty marked solutions, and a well-founded potential. Incompatible phase cells receive no capacity bound. Repeated labels are charged by their maximum multiplicity.",
+  "input": "type-i-f-overflow-rational-gap-denominator-results.json",
+  "input_sha256": "60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768",
+  "cell_count": 3,
+  "compatible_cell_count": 2,
+  "incompatible_cell_count": 1,
+  "capacity_satisfied_count": 2,
+  "cells": [
+    {
+      "cell_id": "q5_distinct_phase_labels",
+      "q": 5,
+      "entries": [
+        {
+          "prime": 5596369,
+          "R": 1251,
+          "A": 6390243721,
+          "q": 5,
+          "height": 1,
+          "modulus": 5,
+          "phase_center": 4,
+          "label": 4,
+          "label_is_minimal_positive_representative": true
+        },
+        {
+          "prime": 48991849,
+          "R": 7931,
+          "A": 3328153323421550822441,
+          "q": 5,
+          "height": 2,
+          "modulus": 25,
+          "phase_center": 14,
+          "label": 14,
+          "label_is_minimal_positive_representative": true
+        }
+      ],
+      "pair_checks": [
+        {
+          "left": [
+            5596369,
+            1251
+          ],
+          "right": [
+            48991849,
+            7931
+          ],
+          "common_height": 1,
+          "required_power": 5,
+          "phase_difference": -10,
+          "phase_compatible": true
+        }
+      ],
+      "phase_compatible": true,
+      "label_distinct": true,
+      "label_multiplicity_bound": 1,
+      "status": "phase_compatible",
+      "label_interval": [
+        4,
+        14
+      ],
+      "label_interval_width": 10,
+      "height_sum": 3,
+      "maximum_height": 2,
+      "raw_capacity_bound": [
+        9,
+        2
+      ],
+      "multiplicity_adjusted_capacity_bound": [
+        9,
+        2
+      ],
+      "capacity_status": "satisfied"
+    },
+    {
+      "cell_id": "q151_duplicate_phase_label",
+      "q": 151,
+      "entries": [
+        {
+          "prime": 214729,
+          "R": 43,
+          "A": 1,
+          "q": 151,
+          "height": 2,
+          "modulus": 22801,
+          "phase_center": 2121,
+          "label": 2121,
+          "label_is_minimal_positive_representative": true
+        },
+        {
+          "prime": 5596369,
+          "R": 43,
+          "A": 1,
+          "q": 151,
+          "height": 2,
+          "modulus": 22801,
+          "phase_center": 2121,
+          "label": 2121,
+          "label_is_minimal_positive_representative": true
+        }
+      ],
+      "pair_checks": [
+        {
+          "left": [
+            214729,
+            43
+          ],
+          "right": [
+            5596369,
+            43
+          ],
+          "common_height": 2,
+          "required_power": 22801,
+          "phase_difference": 0,
+          "phase_compatible": true
+        }
+      ],
+      "phase_compatible": true,
+      "label_distinct": false,
+      "label_multiplicity_bound": 2,
+      "status": "phase_compatible",
+      "label_interval": [
+        2121,
+        2121
+      ],
+      "label_interval_width": 0,
+      "height_sum": 4,
+      "maximum_height": 2,
+      "raw_capacity_bound": [
+        2,
+        1
+      ],
+      "multiplicity_adjusted_capacity_bound": [
+        4,
+        1
+      ],
+      "capacity_status": "satisfied"
+    },
+    {
+      "cell_id": "q5_incompatible_phase_pair",
+      "q": 5,
+      "entries": [
+        {
+          "prime": 5596369,
+          "R": 1251,
+          "A": 6390243721,
+          "q": 5,
+          "height": 1,
+          "modulus": 5,
+          "phase_center": 4,
+          "label": 4,
+          "label_is_minimal_positive_representative": true
+        },
+        {
+          "prime": 79312489,
+          "R": 6611,
+          "A": 64942972209,
+          "q": 5,
+          "height": 2,
+          "modulus": 25,
+          "phase_center": 6,
+          "label": 6,
+          "label_is_minimal_positive_representative": true
+        }
+      ],
+      "pair_checks": [
+        {
+          "left": [
+            5596369,
+            1251
+          ],
+          "right": [
+            79312489,
+            6611
+          ],
+          "common_height": 1,
+          "required_power": 5,
+          "phase_difference": -2,
+          "phase_compatible": false
+        }
+      ],
+      "phase_compatible": false,
+      "label_distinct": true,
+      "label_multiplicity_bound": 1,
+      "status": "phase_incompatible",
+      "capacity_status": "not_applicable"
+    }
+  ]
+}

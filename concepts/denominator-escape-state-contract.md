@@ -205,6 +205,42 @@ fixed_layer_quotient_fourier
 前驱”与真正的 `terminal_leaf` 或 `verified_edge` 在类型上分离。精确的近邻、二进和
 对偶字段见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。
 
+### 2.2c q 进清分相位胞容量字段
+
+固定 \(B\) 的盒外见证还可以输出一个精确的相位中心：若奇素数 \(q\) 的盒外高度为
+\(e>0\)，则所有保留该固定分母局部结构的清分移位都满足
+
+\[
+s\equiv-A R^{-1}\pmod{q^e}.
+\]
+
+跨状态使用该条件时，不能只记录 \(e\)。必须同时保存：
+
+```text
+phase_clearing_prime = q
+phase_clearing_height = e
+phase_center_modulus = q**e
+phase_center_residue = -A * inverse(R, q**e) mod q**e
+phase_cell_id = explicit compatible-cell identifier
+phase_label = bounded integer representative, if one is supplied
+phase_label_interval = [lower, upper], if one is supplied
+phase_label_multiplicity_bound = mu
+phase_capacity_status = compatible / incompatible / unproved
+```
+
+只有在同一 `phase_cell_id` 中验证
+
+\[
+\gamma_i\equiv\gamma_j
+\pmod{q^{\min(e_i,e_j)}}
+\]
+
+并且标签落在已给出的有限区间时，才可调用
+[q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
+标签重复必须乘入显式重数；相位不兼容的状态不得共享容量账本。最小正相位代表只
+是诊断标签，不自动提供正性、标记集非空、解提升或 E1--E5，因此该字段默认属于
+`analysis_evidence`，不能把 `carrier_mapping_status=unproved` 升级为递归边。
+
 ### 2.3 累积外部支撑状态
 
 linear_absorbed_support_v1 是一个已定义的线性图表子类型。字段名为兼容既有 artifact

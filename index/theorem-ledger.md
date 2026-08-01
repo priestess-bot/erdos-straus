@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 362 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 318 |
+| 数学状态 | `established` | 319 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 123 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 144 |
+| 证明来源 | `repository_derivation` | 145 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 273 |
+| 审阅状态 | `internal_review` | 274 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -485,6 +485,7 @@
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md) (`type-I-pareto-overflow-capacity-separation-theorem`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
+| [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md) (`type-I-phase-clearing-cell-capacity-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [重图表与形式吸收的不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md) (`type-I-phase-labeled-candidate-selector-well-founded-schedule`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [Type I的p减一B一二除子剩余类选择器](../claims/type-I-pminusone-b12-divisor-residue-selector.md) (`type-I-pminusone-b12-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [五亿有限盒 p 减一遗漏的全正规形全局审计](../claims/type-I-pminusone-box-miss-global-audit-500m.md) (`type-I-pminusone-box-miss-global-audit-500m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |

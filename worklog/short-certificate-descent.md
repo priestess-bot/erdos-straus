@@ -4005,3 +4005,49 @@ q^{\min(h_i,h_j)}\mid R_i-R_j
 因此不能把 \(d\) 与 \(h\) 直接相加、相乘或互换；下一步必须补上相位—载体匹配，或
 把相位缺口转成完整 E1--E5 的 support-switch。脚本和结果回执见
 [相位阶—载体高度二分](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md)。
+
+## 2026-08-01 q 进清分相位胞容量合同
+
+为补上上一节留下的 `carrier_mapping_status=unproved` 边界，新增
+`reproductions/type_i_phase_clearing_cell_capacity.py`。对固定 \(B\) 的盒外见证，
+若 \(e=v_q(B)-v_q(K)>0\)，已有清分刚性给出唯一相位中心
+
+\[
+\gamma=-AR^{-1}\pmod{q^e},
+\qquad s\equiv\gamma\pmod{q^e}.
+\]
+
+因此，若不同状态属于同一个相位胞，即
+
+\[
+\gamma_i\equiv\gamma_j
+\pmod{q^{\min(e_i,e_j)}},
+\]
+
+则任意各自命中的标签都满足
+
+\[
+q^{\min(e_i,e_j)}\mid(s_i-s_j).
+\]
+
+这正好满足现有嵌套 \(q\) 进容量引理的前提。标签落在长度 \(M\) 的区间且最大重复度
+不超过 \(\mu\) 时，得到
+
+\[
+\sum_i e_i\le\mu\left(\frac M{q-1}+H\right),
+\qquad H=\max_i e_i.
+\]
+
+聚焦回执包含：\(q=5\) 的 \(e=1,2\) 兼容不同标签、\(q=151\) 的相同标签重数，
+以及 \(q=5\) 的不兼容对照；前两组容量通过，第三组不进入容量计算。主张卡见
+[q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
+
+逻辑边界保持严格：脚本使用最小正相位代表作为**诊断标签**，没有声称该标签产生正的
+marked lift；相位胞合同仍是 `analysis_evidence` / `candidate_transition`，尚不能
+承担 E1--E5 或 `recursive_edge_eligible=true`。下一步须证明规范 Fourier/格证书能
+产生统一有界的相位兼容标签，或把相位不兼容转成合法 support-switch。
+
+脚本 SHA-256 为
+`c62a706cb343396b0128e4f854f964bfe67d60e0092e843528bcea4d4187c5a6`，结果回执 SHA-256 为
+`f4b204018d38f669ee85603a68fd560ea31e3565ec272755a05d6b51ca0220e2`；输入冻结哈希为
+`60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768`。

@@ -2863,6 +2863,36 @@ BUNDLE_MARKED_ABSORB/BUNDLE_OVERFLOW，不再作为第三个全局分支。
 输入；不能把角色阶 \(d\) 与块高度 \(h\) 直接相加或替换。要完成统一选择器，仍需一个
 额外的相位—载体匹配定理，或把非空相位缺口转成带完整 E1--E5 的 support-switch。
 
+## q 进清分相位胞容量接口
+
+固定 \(B\) 的盒外见证对奇素数 \(q\) 的清分移位具有唯一相位中心
+
+\[
+\gamma_i\equiv-A_iR_i^{-1}\pmod{q^{e_i}},
+\qquad e_i=v_q(B_i)-v_q(K_i)>0.
+\]
+
+若一组状态满足相位胞兼容条件
+
+\[
+\gamma_i\equiv\gamma_j
+\pmod{q^{\min(e_i,e_j)}},
+\]
+
+则任何各自命中相位的标签都自动满足
+
+\[
+q^{\min(e_i,e_j)}\mid(s_i-s_j).
+\]
+
+这把 \(q\) 进 numerator-lift 刚性严格接到已有跨状态容量上界；标签重复时须显式乘以
+最大重数。新增合同和聚焦回执见
+[q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
+当前证据只验证了两组兼容冻结回执和一组不兼容对照：它证明桥接合同的算术正确性，
+不证明全体 F/G 状态存在统一有界标签，也不提供实际 marked lift。因此下一步的真正
+任务被精确化为：从规范 Fourier/格证书构造有界且相位兼容的清分标签，或证明这些
+标签不可能存在并转入合法 support-switch。
+
 ## 统一术语与暂停项
 
 后续文档固定区分：

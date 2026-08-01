@@ -108,6 +108,13 @@ state 或直接短证书。
    高度直接相加或互换；这一步仍没有得到一般的 `carrier_mapping`。详见[冻结 F 状态的
    相位阶—载体高度二分与容量边界](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md)。
 
+   清分分支随后补上了一个严格的条件性容量接口。对固定 \(B\) 的盒外高度
+   \(e=v_q(B)-v_q(K)>0\)，清分移位必须命中
+   \(\gamma=-AR^{-1}\pmod{q^e}\)。若跨状态相位中心在每个最低共同层兼容，则任何
+   命中相位的有界标签自动满足嵌套 \(q\)-进容量前提；标签重复度必须显式计入。新增
+   合同只证明这条算术桥，不证明有界标签的全称存在或 marked lift，见[清分相位胞与
+   跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md)。
+
 因此原六周计划应立即调整：
 
 - 原第 3 周“寻找裸 G source”已完成，转为研究可达 \(A>1\) 的 alternate-source 完备性；
