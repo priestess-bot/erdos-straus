@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-determinant-fixed-n-dual-support-conflict
 title: overflow 行列式的固定 n 对偶图谱与累积支撑冲突
-statement: 设 verified complete-excess bundle overflow 满足 R_M>p、pR_M+1=4K_M 且 K_M=MC，写 n=4M-R_M、d=p-C，则 pn=4Md+1。固定 n 时，每个 L|Md 且 n<4L<p+n 都给出合法小图表 R_L=4L-n、K_L=L(p-Md/L)；若旧 charged support A 满足 A|L、L>A，则这是保持 Sol(p)、恒等提升且使 floor((p-1)^2/(4A)) 严格下降的 overflow-derived edge。特别地，A=1 时 d>=2 且 L=d 总在该窗口，所以所有初始 overflow 都有 verified determinant-charged 后继。一般 overflow 另有由 r=M mod p 与 d 构成的两个对偶图表，其中至少一个 R<p；但 A>1 时小图表未必保留旧支撑，固定 n 窗口也可为空，lcm 迭代还可成环。故余项已精确收缩为可达累积支撑 overflow 的 support-preserving alternate/终端/外层重置问题，而非裸 G、初始 overflow 或小算术载体存在性。
+statement: 设 verified complete-excess bundle overflow 满足 R_M>p、pR_M+1=4K_M 且 K_M=MC，写 n=4M-R_M、d=p-C，则 pn=4Md+1。固定 n 时，每个 L|Md 且 n<4L<p+n 都给出合法小图表 R_L=4L-n、K_L=L(p-Md/L)；若旧 charged support A 满足 A|L、L>A，则这是保持 Sol(p)、恒等提升且使 floor((p-1)^2/(4A)) 严格下降的 overflow-derived edge。特别地，A=1 时 d>=2 且 L=d 总在该窗口，所以所有初始 overflow 都有 verified determinant-charged 后继。一般 overflow 另有由 r=M mod p 与 d 构成的两个对偶图表，其中至少一个 R<p，且相应载体 t<M；但 A>1 时小图表未必保留旧支撑，固定 n 窗口也可为空，lcm 迭代还可成环。故余项已精确收缩为可达累积支撑 overflow 的 support-preserving alternate/终端/外层重置问题，而非裸 G、初始 overflow 或小算术载体存在性。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -351,6 +351,57 @@ L_t>A.
 不满足 (32) 的小图表只能标为 `candidate_transition`；把旧 \(A\) 直接重置为 \(t\)
 会破坏单调势合同。
 
+### 4.1 载体大小严格下降，但 phase 合同仍需补足
+
+原 bundle provenance 给出 \(p\nmid M\)：\(A\mid K\) 且 \(p\nmid K\)，而 \(Q<R<p\)。
+因此在 (23) 中 \(r=M\bmod p\) 满足 \(1\le r<p\)。若 \(M>p\)，则
+
+\[
+d<p<M,
+\qquad
+r<p<M.
+\tag{34}
+\]
+
+若 \(M<p\)，则 \(r=M\)，并且 \(s=n\)、\(R_r=4M-n=R_M>p\)。所以 (31) 的小
+图表只能是 \(d\)-图表。又由 overflow
+
+\[
+4M>p+n,
+\qquad
+d=\frac{pn-1}{4M},
+\]
+
+得到
+
+\[
+d<\frac{p(4M-p)-1}{4M}<M,
+\tag{35}
+\]
+
+最后一个不等式使用 \(4M^2-p(4M-p)=(2M-p)^2\ge0\)。因此任一满足 \(R_t<p\) 的
+对偶载体都满足
+
+\[
+\boxed{1\le t<M.}
+\tag{36}
+\]
+
+这给出新的 `overflow_carrier_reset_v1` 候选：以原 overflow receipt 为 E1 provenance，
+取小图表
+
+\[
+T_t=(p,R_t,K_t;t),
+\qquad
+W_{T_t}=W_S=\operatorname{Sol}(p),
+\]
+
+并使用外层载体秩 \(\Pi_M(T)=t<M=\Pi_M(S)\)。它完整满足算术正规形、恒等解提升和
+载体大小下降。若 \(\operatorname{lcm}(A,t)\nmid K_t\) 或不严格增加旧支撑，它仍不能
+作为当前 charged-support phase 的边，只能作为**有条件的 phase reset candidate**。
+要把该候选升级为统一递归边，还需定义不可逆 phase 转换，并证明 reset 后允许的
+marked/overflow 边不会重新回到较大的 \(M\)；这正是当前剩余的良基调度问题。
+
 ## 5. 累积支撑层的严格边界
 
 ### 5.1 fixed-\(n\) 窗口可以为空
@@ -491,7 +542,8 @@ Q\in\{2,32,44,50\}.
 \]
 
 它们与 \(A=19\) 合并后全部 overflow；对每张 receipt 检查 (26)--(33)，没有一个小
-对偶图表既保留 \(19\) 又严格增加 charged support。
+对偶图表既保留 \(19\) 又严格增加 charged support；四张 receipt 的 fixed-\(n\) 候选集
+\(\mathcal W_{19}\) 也全部为空。
 
 式 (44)--(46) 只反驳“通用 anchor Reach + 当前 bundle/双载体菜单必闭合”的机制命题。
 它不是 Erdos--Straus 反例，且不排除另一个形式源、不同 marked 状态或直接短证书。
@@ -532,8 +584,8 @@ python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
 `reproductions/type-i-universal-anchor-overflow-dual-results.json`。对应 SHA-256 为
 
 ~~~text
-94fb9625361e8184ee6cb6991aef03d8d806f623a1e8123952e8c8ff2f667e21  reproductions/type_i_universal_anchor_overflow_dual.py
-1fceb021f77ea88ac391b09cee9aafe0eee9348d98b75779c94b0ec45d71d025  reproductions/type-i-universal-anchor-overflow-dual-results.json
+d38bf4111aad67485e1733b8f506528b24eaa84c827ea7fb3159c272897459a4  reproductions/type_i_universal_anchor_overflow_dual.py
+934349e80e73df68d0b1aa92df7f7a149e97bd4143ec00c19aba58ca3510f173  reproductions/type-i-universal-anchor-overflow-dual-results.json
 ~~~
 
 脚本只验证本卡中的代数恒等式、少量正反 receipt 和 (44)--(46) 的局部 Reach；不重跑

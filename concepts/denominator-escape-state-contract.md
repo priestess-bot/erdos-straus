@@ -245,6 +245,13 @@ path-anchored \(Q\)。反过来，在 \(A>1\) 时也不得把支撑重置为较�
 \(A\mid L\)、\(L>A\) 的边可留在当前 phase。完整证明与反例见
 [overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
 
+同一 overflow receipt 还可生成 `overflow_carrier_reset_v1` 候选。取任一对偶小图表
+\(t\in\{d,r\}\) 且 \(R_t<p\)，则有严格整数下降 \(t<M\)。该候选保持
+\(\operatorname{equation\_target}=4/p\) 和 \(W_T=\operatorname{Sol}(p)\)，但可能丢弃
+旧 \(A\)。因此它只能登记为 `candidate_transition`，除非回执同时声明不可逆的
+outer phase、秩 \(\Pi_M(T)=t<M\)，以及 reset 后所有允许边的 phase-compatible E5。
+当前合同不允许用 \(t<M\) 单独掩盖后续 marked 边重新增大 carrier 的可能性。
+
 ## 3. 选择器的唯一缺陷输入
 
 对线性 F 状态，取目标纤维见证
@@ -568,6 +575,12 @@ rechart，以及固定 \(R\) 时降低 \(m\) 或所选 \(r_\varepsilon\) 的 for
 式 (5) 只供应 E5。它不能把缺少合法后继或解提升的 formal cursor 边升级为
 verified_edge；每条实际递归边仍须单独通过 E1--E4。完整证明、二环和自环边界见
 [重图表与形式吸收的两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。
+
+`overflow_carrier_reset_v1` 应放在 PRE/ABSORB 之外的不可逆 `RESET` phase。其局部秩
+可以取载体大小 \(M\)，因为每条 reset 候选满足 \(M_T<M_S\)；但 RESET 不能无条件
+复用 ABSORB 的增支撑边。若允许 reset 后再次进入会增大 \(M\) 的 marked phase，必须
+再增加一个更外层 rank 或证明一个封闭的 phase 组合势；否则只能保留为
+`candidate_transition`，不能承担统一递归。
 
 ### 6.2 已验证的 absorbed-support 势
 

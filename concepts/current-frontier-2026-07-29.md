@@ -2676,6 +2676,13 @@ K_L=L\left(p-\frac SL\right),
 
 时才是当前 phase 的 verified edge。
 
+对偶载体还满足更强的大小下降：任一满足 \(R_t<p\) 的载体都有 \(t<M\)。当
+\(M>p\) 时这是 \(d,r<p<M\)；当 \(M<p\) 时 \(r=M\) 仍是原 overflow 图表，故
+小图表只能是 \(d\)，而 \(4M>p+n\) 与 \(pn=4Md+1\) 给出 \(d<M\)。因此每个
+overflow 都有一个算术上严格降低 carrier-size 的 `overflow_carrier_reset` 候选。
+它保留方程目标和恒等解提升，但若丢弃旧 \(A\)，仍需要不可逆 phase 合同；这把
+剩余问题精确化为“载体大小下降候选能否与后续边组成全局良基调度”。
+
 这个限制是真实的。根 Jacobi-G 状态
 
 \[
@@ -2689,10 +2696,10 @@ K_L=L\left(p-\frac SL\right),
 Q\in\{2,32,44,50\}.
 \]
 
-四者全部 overflow，且其双对偶图表没有一个既保留 \(A=19\) 又严格增加支撑。这不是
-Erdős--Straus 反例，也不排除别的 source 或终端；它严格证伪“通用 anchor Reach 加
-当前 bundle/双载体菜单必闭合”。fixed-\(n\) 窗口为空、\(d=1\) 和 lcm 二环也都有
-聚焦整数回执。
+四者全部 overflow，且其双对偶图表没有一个既保留 \(A=19\) 又严格增加支撑；四张
+receipt 的 fixed-\(n\) 支撑保持窗口也全部为空。这不是 Erdős--Straus 反例，也不排除
+别的 source 或终端；它严格证伪“通用 anchor Reach 加当前 bundle、fixed-\(n\) 和
+双载体菜单必闭合”。\(d=1\) 和 lcm 二环也都有聚焦整数回执。
 
 因此当前主目标不再是裸 G 或初始 overflow，而是
 

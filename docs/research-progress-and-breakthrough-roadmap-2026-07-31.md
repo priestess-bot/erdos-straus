@@ -53,8 +53,9 @@
    且 \(L=d\) 总合法，所以全部初始 overflow 都有 verified 后继。
 
 此外，任意 overflow 写 \(M=kp+r\) 后都有载体 \(d,r\) 的两个对称图表，至少一个满足
-\(R_t<p\)。这解决了 arithmetic alternate carrier 的存在性，但没有自动保留累积
-support。
+\(R_t<p\)，并且该小图表的载体严格满足 \(t<M\)。这给出一个可定义外层
+`overflow_carrier_reset` 秩的候选，但没有自动保留累积 support，也没有自动保证
+reset 后的 phase 不重新回到较大的 carrier。
 
 新的精确瓶颈是：
 
@@ -67,9 +68,10 @@ support。
 
 这不是措辞上的保守。根 Jacobi-G 状态 \((73,39,712;1)\) 经通用 anchor 合法进入
 \((73,51,931;19)\)；从该 anchor 出发的完整 16 节点 bottom Reach 无 raw terminal，
-全部合法 bundle 只有 \(Q\in\{2,32,44,50\}\)。四者全部 overflow，且其对称双图表
-没有一个既保留 \(A=19\) 又严格增加 support。该例反驳当前菜单的全称闭合，不是
-Erdős--Straus 反例，也不排除别的 source、marked state 或直接短证书。
+全部合法 bundle 只有 \(Q\in\{2,32,44,50\}\)。四者全部 overflow，其对称双图表
+没有一个既保留 \(A=19\) 又严格增加 support，且 fixed-\(n\) 支撑保持窗口也全部为空。
+该例反驳当前菜单的全称闭合，不是 Erdős--Straus 反例，也不排除别的 source、marked
+state 或直接短证书。
 
 因此原六周计划应立即调整：
 

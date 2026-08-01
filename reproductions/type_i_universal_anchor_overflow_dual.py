@@ -251,16 +251,20 @@ def symmetric_dual(prime: int, M: int, d: int) -> dict[str, object]:
         and min(R_d, R_r) < prime
     ):
         raise AssertionError("symmetric dual-chart theorem failed")
+    smaller_chart_supports = [
+        value
+        for value, chart_R in ((d, R_d), (r, R_r))
+        if chart_R < prime
+    ]
+    if not smaller_chart_supports or any(value >= M for value in smaller_chart_supports):
+        raise AssertionError("overflow dual did not strictly lower carrier size")
     return {
         "r": r,
         "s": s,
         "d_chart": {"support": d, "R": R_d, "K": K_d},
         "r_chart": {"support": r, "R": R_r, "K": K_r},
-        "smaller_chart_supports": [
-            value
-            for value, chart_R in ((d, R_d), (r, R_r))
-            if chart_R < prime
-        ],
+        "smaller_chart_supports": smaller_chart_supports,
+        "strict_carrier_descent_supports": smaller_chart_supports,
     }
 
 
@@ -397,6 +401,7 @@ def reachable_accumulated_conflict_profile() -> dict[str, object]:
                 continue
             M = lcm(A, Q)
             overflow = overflow_receipt(prime, M)
+            window = fixed_n_window(prime, A, overflow)
             dual = symmetric_dual(prime, M, overflow["d"])
             support_preserving = []
             for key in ("d_chart", "r_chart"):
@@ -419,6 +424,7 @@ def reachable_accumulated_conflict_profile() -> dict[str, object]:
                     "beta": beta,
                     "M": M,
                     "overflow": overflow,
+                    "fixed_n_window": window,
                     "dual": dual,
                     "support_preserving_duals": support_preserving,
                 }
@@ -428,6 +434,8 @@ def reachable_accumulated_conflict_profile() -> dict[str, object]:
         raise AssertionError("reachable conflict bundle menu changed")
     if any(row["support_preserving_duals"] for row in receipts):
         raise AssertionError("reachable conflict unexpectedly acquired a dual edge")
+    if any(row["fixed_n_window"]["support_preserving_candidates"] for row in receipts):
+        raise AssertionError("reachable conflict unexpectedly acquired a fixed-n edge")
     return {
         "prime": prime,
         "root": {

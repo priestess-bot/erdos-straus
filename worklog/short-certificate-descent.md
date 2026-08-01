@@ -3861,6 +3861,12 @@ overflow 还至少有一个 \(R<p\) 的对称 \(d/r\) 图表。
 是递归可达 \(A>1\) overflow 的 support-preserving alternate/终端，或由独立外层秩
 支付的 support reset。
 
+又得到一个无条件的载体大小引理：每个 overflow 的任一小对偶图表载体 \(t\) 都满足
+\(t<M\)。若 \(M>p\)，这是 \(d,r<p<M\)；若 \(M<p\)，则 \(r=M\) 仍是 overflow
+图表，故小图表只能是 \(d\)，并由 \(4M>p+n\)、\(pn=4Md+1\) 得 \(d<M\)。这使
+`overflow_carrier_reset` 成为严格的算术载体下降候选，但仍需证明不可逆 phase 合同，
+避免 reset 后的 marked 边重新增加 carrier 并形成全局环。
+
 新增主张：
 
 - [通用 \(p\) 源、容量锚点轨道与周期对偶证书](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)；
@@ -3873,5 +3879,5 @@ python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
 ~~~
 
 脚本和结果 SHA-256 分别为
-\(94fb9625361e8184ee6cb6991aef03d8d806f623a1e8123952e8c8ff2f667e21\) 和
-\(1fceb021f77ea88ac391b09cee9aafe0eee9348d98b75779c94b0ec45d71d025\)。
+\(d38bf4111aad67485e1733b8f506528b24eaa84c827ea7fb3159c272897459a4\) 和
+\(934349e80e73df68d0b1aa92df7f7a149e97bd4143ec00c19aba58ca3510f173\)。
