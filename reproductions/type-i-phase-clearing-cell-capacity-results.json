@@ -1,5 +1,5 @@
 {
-  "arithmetic": "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the cross determinant A_i R_j - A_j R_i has the same q-adic threshold as the phase difference. The compatibility relation partitions states into pairwise compatible equivalence cells. Every cell has one nonzero first-layer residue, but distinct cells may share that residue; a q-1 cell bound requires an additional first-layer injectivity hypothesis. Within each cell the selected labels obey q^min(e_i,e_j) | (s_i-s_j), so the standard nested q-adic capacity bound applies cellwise.",
+  "arithmetic": "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the cross determinant A_i R_j - A_j R_i has the same q-adic threshold as the phase difference. The compatibility relation partitions states into pairwise compatible equivalence cells. Every cell has one nonzero first-layer residue, but distinct cells may share that residue; a q-1 cell bound requires an additional first-layer injectivity hypothesis. Within each cell the selected labels obey q^min(e_i,e_j) | (s_i-s_j), so the standard nested q-adic capacity bound applies cellwise. If cells split at higher levels, the level-k phase trie has D_k distinct residues and contributes at most mu*D_k*(floor(M/q^k)+1) states.",
   "scope_note": "Conditional bridge only. The least positive phase representative is used as a bounded diagnostic label in these fixtures; it is not asserted to produce a positive marked lift. A future recursive edge still needs full E1--E5, nonempty marked solutions, and a well-founded potential. Incompatible phase pairs receive no shared capacity bound; each compatibility cell is charged separately. Repeated labels are charged by their maximum multiplicity.",
   "input": "type-i-f-overflow-rational-gap-denominator-results.json",
   "input_sha256": "60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768",
@@ -7,6 +7,7 @@
   "compatible_cell_count": 2,
   "incompatible_cell_count": 2,
   "capacity_satisfied_count": 2,
+  "trie_capacity_satisfied_count": 4,
   "cells": [
     {
       "cell_id": "q5_distinct_phase_labels",
@@ -89,6 +90,43 @@
           "capacity_satisfied": true
         }
       ],
+      "phase_layer_profile": [
+        {
+          "height": 1,
+          "modulus": 5,
+          "active_state_count": 2,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            4
+          ],
+          "labels_per_residue_bound": 3,
+          "layer_capacity_bound": 3
+        },
+        {
+          "height": 2,
+          "modulus": 25,
+          "active_state_count": 1,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            14
+          ],
+          "labels_per_residue_bound": 1,
+          "layer_capacity_bound": 1
+        }
+      ],
+      "trie_capacity_bound": [
+        4,
+        1
+      ],
+      "single_residue_capacity_bound": [
+        4,
+        1
+      ],
+      "phase_diversity_tax": [
+        0,
+        1
+      ],
+      "trie_capacity_satisfied": true,
       "first_layer_residues": [
         4
       ],
@@ -201,6 +239,43 @@
           "capacity_satisfied": true
         }
       ],
+      "phase_layer_profile": [
+        {
+          "height": 1,
+          "modulus": 151,
+          "active_state_count": 2,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            7
+          ],
+          "labels_per_residue_bound": 1,
+          "layer_capacity_bound": 2
+        },
+        {
+          "height": 2,
+          "modulus": 22801,
+          "active_state_count": 2,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            2121
+          ],
+          "labels_per_residue_bound": 1,
+          "layer_capacity_bound": 2
+        }
+      ],
+      "trie_capacity_bound": [
+        4,
+        1
+      ],
+      "single_residue_capacity_bound": [
+        4,
+        1
+      ],
+      "phase_diversity_tax": [
+        0,
+        1
+      ],
+      "trie_capacity_satisfied": true,
       "first_layer_residues": [
         7
       ],
@@ -336,6 +411,44 @@
           "capacity_satisfied": true
         }
       ],
+      "phase_layer_profile": [
+        {
+          "height": 1,
+          "modulus": 5,
+          "active_state_count": 2,
+          "distinct_phase_residue_count": 2,
+          "phase_residues": [
+            1,
+            4
+          ],
+          "labels_per_residue_bound": 1,
+          "layer_capacity_bound": 2
+        },
+        {
+          "height": 2,
+          "modulus": 25,
+          "active_state_count": 1,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            6
+          ],
+          "labels_per_residue_bound": 1,
+          "layer_capacity_bound": 1
+        }
+      ],
+      "trie_capacity_bound": [
+        3,
+        1
+      ],
+      "single_residue_capacity_bound": [
+        2,
+        1
+      ],
+      "phase_diversity_tax": [
+        1,
+        1
+      ],
+      "trie_capacity_satisfied": true,
       "first_layer_residues": [
         1,
         4
@@ -457,6 +570,55 @@
           "capacity_satisfied": true
         }
       ],
+      "phase_layer_profile": [
+        {
+          "height": 1,
+          "modulus": 5,
+          "active_state_count": 2,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            4
+          ],
+          "labels_per_residue_bound": 14,
+          "layer_capacity_bound": 14
+        },
+        {
+          "height": 2,
+          "modulus": 25,
+          "active_state_count": 2,
+          "distinct_phase_residue_count": 2,
+          "phase_residues": [
+            4,
+            14
+          ],
+          "labels_per_residue_bound": 3,
+          "layer_capacity_bound": 6
+        },
+        {
+          "height": 3,
+          "modulus": 125,
+          "active_state_count": 1,
+          "distinct_phase_residue_count": 1,
+          "phase_residues": [
+            79
+          ],
+          "labels_per_residue_bound": 1,
+          "layer_capacity_bound": 1
+        }
+      ],
+      "trie_capacity_bound": [
+        21,
+        1
+      ],
+      "single_residue_capacity_bound": [
+        18,
+        1
+      ],
+      "phase_diversity_tax": [
+        3,
+        1
+      ],
+      "trie_capacity_satisfied": true,
       "first_layer_residues": [
         4
       ],

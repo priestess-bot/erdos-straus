@@ -253,6 +253,9 @@ phase_cell_first_layer_residue = nonzero residue mod q
 phase_cell_height_sum = sum(e_i) within the cell
 phase_cell_capacity_bound = mu * (M_c/(q-1) + H_c)
 phase_first_layer_residue_injective = explicit additional hypothesis
+phase_layer_profile = [{height, modulus, active_state_count,
+  distinct_phase_residue_count, phase_residues, layer_capacity_bound}]
+phase_diversity_tax = sum_k mu*(D_k-1)*(floor(M/q**k)+1)
 ```
 
 并核验
@@ -263,8 +266,20 @@ phase_first_layer_residue_injective = explicit additional hypothesis
 \mu\sum_c\left(\frac{M_c}{q-1}+H_c\right).
 \]
 
-这仍以每个胞存在有界清分标签为前提；若首层残基不满足单射，就不能把逐胞求和
-压缩成单个 \(M\) 项。最小正相位代表只是诊断标签，不自动提供
+当不同等价胞在更高层继续分裂时，逐层残基谱还给出
+
+\[
+D_k=\#\{\gamma_i\bmod q^k:e_i\ge k\},
+\qquad
+\sum_i e_i
+\le
+\mu\sum_{k=1}^{H}
+D_k\left(\left\lfloor\frac{M}{q^k}\right\rfloor+1\right).
+\]
+
+这条相位树界不需要把等价胞数压到 \(q-1\)；`phase_diversity_tax` 显式记录相对于
+每层单残基界的高层相位分裂成本。它仍以每个胞存在有界清分标签为前提；若首层
+残基不满足单射，就不能把逐胞求和压缩成单个 \(M\) 项。最小正相位代表只是诊断标签，不自动提供
 正性、标记解非空、解提升或 E1--E5，因此这些字段默认属于 `analysis_evidence`，
 不能把 `carrier_mapping_status=unproved` 升级为递归边。
 

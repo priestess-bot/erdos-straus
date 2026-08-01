@@ -4074,6 +4074,26 @@ q^{k_{ij}}\mid\Delta_{ij}.
 \mu\sum_c\left(\frac{M_c}{q-1}+H_c\right).
 \]
 
+为处理不同等价胞在高层继续分裂的情形，回执现在还记录相位树谱
+
+\[
+D_k=\#\{\gamma_i\bmod q^k:e_i\ge k\}.
+\]
+
+若所有标签落在宽度 \(M\) 的区间且最大重复度为 \(\mu\)，逐层装箱给出
+
+\[
+\sum_i e_i
+\le
+\mu\sum_{k=1}^{H}
+D_k\left(\left\lfloor\frac{M}{q^k}\right\rfloor+1\right).
+\]
+
+相对于每层单残基界，额外项
+\(\mu\sum_k(D_k-1)(\lfloor M/q^k\rfloor+1)\) 是相位多样性税。四组冻结回执均通过
+该树界；同首层残基碰撞样本的层谱为 \(D_1,D_2,D_3=(1,2,1)\)，说明它在首层
+不分裂、在第二层分裂。这个推广仍只处理有界诊断标签，不提供 marked lift 或递归边。
+
 这只是把容量账本从“单个兼容胞”扩展到“所有两两兼容等价胞”；它仍要求每个胞有
 有界清分标签。只有额外证明首层残基单射时，才能恢复至多 \(q-1\) 胞和全局 \(M\) 的
 压缩；本合同仍不提供正性、标记解非空、解提升或 E1--E5 递归边。
@@ -4084,6 +4104,6 @@ marked lift；相位胞合同仍是 `analysis_evidence` / `candidate_transition`
 产生统一有界的相位兼容标签，或把相位不兼容转成合法 support-switch。
 
 脚本 SHA-256 为
-`02e8c4d65a3c32a0ed69a9f940c655f08f248d2af231318bcc045d64156dd706`，结果回执 SHA-256 为
-`df96187492abbd06dbc1697d5faeaeff933289af883ae79866f33a9a81edfdfb`；输入冻结哈希为
+`5b3228f2766494c99df3f7cc23e5411bb1289f9425344cc0f9cd5d531c0dfcc1`，结果回执 SHA-256 为
+`ae9f765afedc5928ecc4fa2d45ac9e2b7721f3680cb9ce66d97d948f4c600b18`；输入冻结哈希为
 `60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768`。

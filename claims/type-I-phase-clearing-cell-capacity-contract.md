@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-phase-clearing-cell-capacity-contract
 title: q 进清分相位胞与跨状态容量合同
-statement: 设奇素数 q 对每个状态 i 给出盒外高度 e_i>0、固定 B 清分相位 gamma_i=-A_i R_i^{-1} (mod q^e_i)，并选择整数标签 s_i 满足 s_i=gamma_i (mod q^e_i)。相位兼容关系按 gamma_i=gamma_j (mod q^min(e_i,e_j)) 将状态分成两两兼容的等价胞；同胞内 q^min(e_i,e_j) 整除 s_i-s_j。若每个胞的标签落在长度 M_c 的区间、最大重复度不超过 mu，则逐胞求和给出 sum_i e_i <= mu*sum_c(M_c/(q-1)+H_c)。若另加不同胞的模 q 首层残基互异这一假设，胞数才至多为 q-1，并可在共同长度 M 的区间下进一步压缩为 mu*(M+sum_c H_c)。该合同只把 q-adic 清分必要条件转成条件性容量上界，不证明有界标签存在、标记解非空或合法 E1--E5 递归边。
+statement: 设奇素数 q 对每个状态 i 给出盒外高度 e_i>0、固定 B 清分相位 gamma_i=-A_i R_i^{-1} (mod q^e_i)，并选择整数标签 s_i 满足 s_i=gamma_i (mod q^e_i)。相位兼容关系按 gamma_i=gamma_j (mod q^min(e_i,e_j)) 将状态分成两两兼容的等价胞；同胞内 q^min(e_i,e_j) 整除 s_i-s_j。若每个胞的标签落在长度 M_c 的区间、最大重复度不超过 mu，则逐胞求和给出 sum_i e_i <= mu*sum_c(M_c/(q-1)+H_c)。若另加不同胞的模 q 首层残基互异这一假设，胞数才至多为 q-1，并可在共同长度 M 的区间下进一步压缩为 mu*(M+sum_c H_c)。更一般地，按每个高度层的相位残基数 D_k 计数有 sum_i e_i <= mu*sum_k D_k*(floor(M/q^k)+1)。该合同只把 q-adic 清分必要条件转成条件性容量上界，不证明有界标签存在、标记解非空或合法 E1--E5 递归边。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -188,6 +188,57 @@ q^{\min(e_i,e_j)}\mid\Delta_{ij}.
 \]
 式 (3c)--(3d) 仍是有界标签的条件性容量上界；它不声称相位胞本身产生标记解或递归边。
 
+## 2.3 相位树容量
+
+逐胞求和在首层残基碰撞时可能很松。无需假设等价胞的首层残基单射，可以直接按
+高度层记录相位残基的分裂。设所有标签落在长度 \(M\) 的整数区间内，令
+
+\[
+\mathcal R_k=
+\{\gamma_i\bmod q^k:e_i\ge k\},
+\qquad
+D_k=|\mathcal R_k|,
+\qquad
+N_k=\#\{i:e_i\ge k\}.
+\]
+
+同一个 \(q^k\) 残基类在该区间中至多容纳
+\(\lfloor M/q^k\rfloor+1\) 个不同标签；若标签最大重复度为 \(\mu\)，则逐残基类装箱给出
+
+\[
+\boxed{
+N_k\le
+\mu D_k\left(\left\lfloor\frac M{q^k}\right\rfloor+1\right).
+}
+\tag{3e}
+\]
+
+层析求和得到不依赖相位胞数的统一上界
+
+\[
+\boxed{
+\sum_i e_i
+\le
+\mu\sum_{k=1}^{H}
+D_k\left(\left\lfloor\frac M{q^k}\right\rfloor+1\right),
+\qquad H=\max_i e_i.
+}
+\tag{3f}
+\]
+
+相对于假设每层只有一个相位残基的有限装箱界，其显式相位多样性税为
+
+\[
+\mu\sum_{k=1}^{H}
+(D_k-1)\left(\left\lfloor\frac M{q^k}\right\rfloor+1\right).
+\tag{3g}
+\]
+
+兼容单胞恰有 \(D_k=1\)；而不同胞共享首层残基时，通常只有 \(D_1=1\)，更高层
+的 \(D_k\) 才记录分裂。注意 \(D_1\le q-1\) 并不推出等价胞总数至多 \(q-1\)，
+也不消除 (3g) 的高层代价。式 (3e)--(3g) 仍要求有界标签和相位中心已经由固定
+\(B\) 清分合同给出；它们没有提供标签存在性或解可提升性。
+
 ## 3. 容量结论
 
 设相位胞中的标签 \(s_i\) 两两不同且落在长度为 \(M\) 的整数区间内。令
@@ -265,7 +316,9 @@ H=\max_i e_i.
 - \(q=5\) 的一个保持同首层残基、但在更高层分离的不兼容相位对。
 
 兼容胞的容量均不超载；两个不兼容 fixture 只分别展示跨胞不共享容量账本和首层
-残基碰撞。这些只是桥接合同的算术回放，不声称冻结状态已经产生可提升清分解。
+残基碰撞。新增逐层相位树回执在四组 fixture 上均满足 (3e)--(3f)；首层碰撞样本
+的残基数谱为 \(D_1,D_2,D_3=(1,2,1)\)。这些只是桥接合同的算术回放，不声称冻结
+状态已经产生可提升清分解。
 
 复现：
 
@@ -276,6 +329,6 @@ python3 reproductions/type_i_phase_clearing_cell_capacity.py --verify
 聚焦复现的 SHA-256：
 
 ```text
-02e8c4d65a3c32a0ed69a9f940c655f08f248d2af231318bcc045d64156dd706  reproductions/type_i_phase_clearing_cell_capacity.py
-df96187492abbd06dbc1697d5faeaeff933289af883ae79866f33a9a81edfdfb  reproductions/type-i-phase-clearing-cell-capacity-results.json
+5b3228f2766494c99df3f7cc23e5411bb1289f9425344cc0f9cd5d531c0dfcc1  reproductions/type_i_phase_clearing_cell_capacity.py
+ae9f765afedc5928ecc4fa2d45ac9e2b7721f3680cb9ce66d97d948f4c600b18  reproductions/type-i-phase-clearing-cell-capacity-results.json
 ```

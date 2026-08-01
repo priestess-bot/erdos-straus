@@ -200,6 +200,57 @@ def cell_capacity(group: list[dict[str, Any]], q: int) -> dict[str, Any]:
     }
 
 
+def phase_trie_capacity(entries: list[dict[str, Any]], q: int) -> dict[str, Any]:
+    """Apply the level-by-level capacity bound when phase cells split."""
+    labels = [int(entry["label"]) for entry in entries]
+    if not labels:
+        raise AssertionError("phase-trie capacity needs at least one entry")
+    label_min, label_max = min(labels), max(labels)
+    width = label_max - label_min
+    multiplicity = max(Counter(labels).values())
+    maximum_height = max(int(entry["height"]) for entry in entries)
+    layers: list[dict[str, Any]] = []
+    trie_bound = Fraction(0)
+    single_residue_bound = Fraction(0)
+    for height in range(1, maximum_height + 1):
+        modulus = q**height
+        active = [
+            entry for entry in entries if int(entry["height"]) >= height
+        ]
+        residues = sorted(
+            {int(entry["phase_center"]) % modulus for entry in active}
+        )
+        slot_count = width // modulus + 1
+        layer_bound = multiplicity * len(residues) * slot_count
+        state_count = len(active)
+        if state_count > layer_bound:
+            raise AssertionError("phase-trie capacity bound was violated")
+        trie_bound += layer_bound
+        single_residue_bound += multiplicity * slot_count
+        layers.append(
+            {
+                "height": height,
+                "modulus": modulus,
+                "active_state_count": state_count,
+                "distinct_phase_residue_count": len(residues),
+                "phase_residues": residues,
+                "labels_per_residue_bound": slot_count,
+                "layer_capacity_bound": layer_bound,
+            }
+        )
+    return {
+        "label_interval": [label_min, label_max],
+        "label_interval_width": width,
+        "label_multiplicity_bound": multiplicity,
+        "maximum_height": maximum_height,
+        "layers": layers,
+        "trie_capacity_bound": trie_bound,
+        "single_residue_capacity_bound": single_residue_bound,
+        "phase_diversity_tax": trie_bound - single_residue_bound,
+        "height_sum": sum(int(entry["height"]) for entry in entries),
+    }
+
+
 def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[str, Any]]) -> dict[str, Any]:
     q = int(fixture["q"])
     entries = [
@@ -235,6 +286,7 @@ def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[s
     phase_compatible = all(check["phase_compatible"] for check in pair_checks)
     partition = phase_partition(entries)
     phase_cells = [cell_capacity(group, q) for group in partition]
+    trie = phase_trie_capacity(entries, q)
     partition_height_sum = sum(int(entry["height"]) for entry in entries)
     partition_capacity_bound = sum(
         (
@@ -255,6 +307,15 @@ def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[s
         "phase_compatible": phase_compatible,
         "phase_cell_count": len(phase_cells),
         "phase_cells": phase_cells,
+        "phase_layer_profile": trie["layers"],
+        "trie_capacity_bound": pair(trie["trie_capacity_bound"]),
+        "single_residue_capacity_bound": pair(
+            trie["single_residue_capacity_bound"]
+        ),
+        "phase_diversity_tax": pair(trie["phase_diversity_tax"]),
+        "trie_capacity_satisfied": (
+            Fraction(trie["height_sum"]) <= trie["trie_capacity_bound"]
+        ),
         "first_layer_residues": sorted(first_layer_residues),
         "first_layer_residue_injective": first_layer_residue_injective,
         "first_layer_residue_collision": not first_layer_residue_injective,
@@ -306,7 +367,9 @@ def build_payload(path: Path = INPUT) -> dict[str, Any]:
             "but distinct cells may share that residue; a q-1 cell bound requires an "
             "additional first-layer injectivity hypothesis. Within each cell "
             "the selected labels obey q^min(e_i,e_j) | (s_i-s_j), so the standard nested "
-            "q-adic capacity bound applies cellwise."
+            "q-adic capacity bound applies cellwise. If cells split at higher levels, "
+            "the level-k phase trie has D_k distinct residues and contributes at most "
+            "mu*D_k*(floor(M/q^k)+1) states."
         ),
         "scope_note": (
             "Conditional bridge only. The least positive phase representative is used as "
@@ -323,6 +386,9 @@ def build_payload(path: Path = INPUT) -> dict[str, Any]:
         "incompatible_cell_count": sum(not cell["phase_compatible"] for cell in cells),
         "capacity_satisfied_count": sum(
             cell.get("capacity_status") == "satisfied" for cell in cells
+        ),
+        "trie_capacity_satisfied_count": sum(
+            cell["trie_capacity_satisfied"] for cell in cells
         ),
         "cells": cells,
     }
@@ -346,6 +412,8 @@ def main() -> int:
         for cell in payload["cells"]:
             if cell["phase_compatible"] and cell["capacity_status"] != "satisfied":
                 raise AssertionError(f"compatible cell exceeded capacity: {cell['cell_id']}")
+            if not cell["trie_capacity_satisfied"]:
+                raise AssertionError(f"phase-trie capacity exceeded: {cell['cell_id']}")
         duplicate = next(
             cell for cell in payload["cells"] if cell["cell_id"] == "q151_duplicate_phase_label"
         )
@@ -377,6 +445,13 @@ def main() -> int:
         )
         if not collision["first_layer_residue_collision"] or collision["first_layer_residues"] != [4]:
             raise AssertionError("the first-layer collision counterexample changed")
+        expected_layers = [(1, 1), (2, 2), (3, 1)]
+        observed_layers = [
+            (layer["height"], layer["distinct_phase_residue_count"])
+            for layer in collision["phase_layer_profile"]
+        ]
+        if observed_layers != expected_layers:
+            raise AssertionError("the phase-trie collision profile changed")
 
     args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
@@ -388,6 +463,7 @@ def main() -> int:
                     "compatible_cell_count",
                     "incompatible_cell_count",
                     "capacity_satisfied_count",
+                    "trie_capacity_satisfied_count",
                 )
             },
             ensure_ascii=False,
