@@ -28,8 +28,9 @@ EXPECTED_INPUT_SHA256 = (
     "60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768"
 )
 
-# These are deliberately small, named fixtures. Two are compatible cells;
-# the third is a phase-incompatible pair and must not receive a capacity bound.
+# These are deliberately small, named fixtures. The fourth fixture is a counterexample
+# to the tempting but false inference that distinct compatibility cells have distinct
+# first-layer residues.
 FIXTURES = [
     {
         "cell_id": "q5_distinct_phase_labels",
@@ -45,6 +46,11 @@ FIXTURES = [
         "cell_id": "q5_incompatible_phase_pair",
         "q": 5,
         "rows": [(5596369, 1251), (79312489, 6611)],
+    },
+    {
+        "cell_id": "q5_same_first_layer_incompatible",
+        "q": 5,
+        "rows": [(48991849, 7931), (301304089, 4691)],
     },
 ]
 
@@ -136,6 +142,64 @@ def cross_determinant(left: dict[str, Any], right: dict[str, Any]) -> int:
     return int(left["A"]) * int(right["R"]) - int(right["A"]) * int(left["R"])
 
 
+def phase_partition(entries: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+    """Partition entries by the pairwise phase-compatibility relation."""
+    parent = list(range(len(entries)))
+
+    def find(index: int) -> int:
+        while parent[index] != index:
+            parent[index] = parent[parent[index]]
+            index = parent[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root, right_root = find(left), find(right)
+        if left_root != right_root:
+            parent[right_root] = left_root
+
+    for index, left in enumerate(entries):
+        for right_index, right in enumerate(entries[index + 1 :], index + 1):
+            if compatible(left, right):
+                union(index, right_index)
+
+    groups: dict[int, list[dict[str, Any]]] = {}
+    for index, entry in enumerate(entries):
+        groups.setdefault(find(index), []).append(entry)
+    partition = list(groups.values())
+    for group in partition:
+        for index, left in enumerate(group):
+            if any(not compatible(left, right) for right in group[index + 1 :]):
+                raise AssertionError("phase compatibility relation was not transitive")
+    return sorted(partition, key=lambda group: min(int(entry["prime"]) for entry in group))
+
+
+def cell_capacity(group: list[dict[str, Any]], q: int) -> dict[str, Any]:
+    labels = [int(entry["label"]) for entry in group]
+    label_min, label_max = min(labels), max(labels)
+    width = label_max - label_min
+    height_sum = sum(int(entry["height"]) for entry in group)
+    maximum_height = max(int(entry["height"]) for entry in group)
+    multiplicity = max(Counter(labels).values())
+    raw_bound = Fraction(width, q - 1) + maximum_height
+    adjusted_bound = multiplicity * raw_bound
+    residues = sorted({int(entry["phase_center"]) % q for entry in group})
+    if len(residues) != 1 or residues[0] == 0:
+        raise AssertionError("a phase cell must have one nonzero first-layer residue")
+    return {
+        "state_count": len(group),
+        "states": [[int(entry["prime"]), int(entry["R"])] for entry in group],
+        "first_layer_residue": residues[0],
+        "label_interval": [label_min, label_max],
+        "label_interval_width": width,
+        "height_sum": height_sum,
+        "maximum_height": maximum_height,
+        "label_multiplicity_bound": multiplicity,
+        "raw_capacity_bound": pair(raw_bound),
+        "multiplicity_adjusted_capacity_bound": pair(adjusted_bound),
+        "capacity_satisfied": Fraction(height_sum) <= adjusted_bound,
+    }
+
+
 def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[str, Any]]) -> dict[str, Any]:
     q = int(fixture["q"])
     entries = [
@@ -169,6 +233,18 @@ def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[s
             )
 
     phase_compatible = all(check["phase_compatible"] for check in pair_checks)
+    partition = phase_partition(entries)
+    phase_cells = [cell_capacity(group, q) for group in partition]
+    partition_height_sum = sum(int(entry["height"]) for entry in entries)
+    partition_capacity_bound = sum(
+        (
+            Fraction(cell["multiplicity_adjusted_capacity_bound"][0], cell["multiplicity_adjusted_capacity_bound"][1])
+            for cell in phase_cells
+        ),
+        Fraction(0),
+    )
+    first_layer_residues = {cell["first_layer_residue"] for cell in phase_cells}
+    first_layer_residue_injective = len(first_layer_residues) == len(phase_cells)
     labels = [int(entry["label"]) for entry in entries]
     multiplicity = max(Counter(labels).values()) if labels else 0
     result: dict[str, Any] = {
@@ -177,6 +253,14 @@ def audit_fixture(fixture: dict[str, Any], indexed: dict[tuple[int, int], dict[s
         "entries": entries,
         "pair_checks": pair_checks,
         "phase_compatible": phase_compatible,
+        "phase_cell_count": len(phase_cells),
+        "phase_cells": phase_cells,
+        "first_layer_residues": sorted(first_layer_residues),
+        "first_layer_residue_injective": first_layer_residue_injective,
+        "first_layer_residue_collision": not first_layer_residue_injective,
+        "partition_height_sum": partition_height_sum,
+        "partition_capacity_bound": pair(partition_capacity_bound),
+        "partition_capacity_satisfied": Fraction(partition_height_sum) <= partition_capacity_bound,
         "label_distinct": len(set(labels)) == len(labels),
         "label_multiplicity_bound": multiplicity,
     }
@@ -217,17 +301,20 @@ def build_payload(path: Path = INPUT) -> dict[str, Any]:
             "For a fixed-B q-adic overflow e, every numerator-clearing shift s satisfies "
             "s = -A R^{-1} (mod q^e). Within a pairwise compatible phase cell, the "
             "cross determinant A_i R_j - A_j R_i has the same q-adic threshold as the "
-            "phase difference. Within a pairwise compatible phase cell, the selected labels "
-            "therefore obey q^min(e_i,e_j) | (s_i-s_j); the standard nested q-adic capacity "
-            "bound applies."
+            "phase difference. The compatibility relation partitions states into pairwise "
+            "compatible equivalence cells. Every cell has one nonzero first-layer residue, "
+            "but distinct cells may share that residue; a q-1 cell bound requires an "
+            "additional first-layer injectivity hypothesis. Within each cell "
+            "the selected labels obey q^min(e_i,e_j) | (s_i-s_j), so the standard nested "
+            "q-adic capacity bound applies cellwise."
         ),
         "scope_note": (
             "Conditional bridge only. The least positive phase representative is used as "
             "a bounded diagnostic label in these fixtures; it is not asserted to produce "
             "a positive marked lift. A future recursive edge still needs full E1--E5, "
             "nonempty marked solutions, and a well-founded potential. Incompatible phase "
-            "cells receive no capacity bound. Repeated labels are charged by their maximum "
-            "multiplicity."
+            "pairs receive no shared capacity bound; each compatibility cell is charged "
+            "separately. Repeated labels are charged by their maximum multiplicity."
         ),
         "input": path.name,
         "input_sha256": sha256(path),
@@ -254,7 +341,7 @@ def main() -> int:
     if args.verify:
         if payload["compatible_cell_count"] != 2:
             raise AssertionError("the compatible fixture count changed")
-        if payload["incompatible_cell_count"] != 1:
+        if payload["incompatible_cell_count"] != 2:
             raise AssertionError("the incompatible fixture count changed")
         for cell in payload["cells"]:
             if cell["phase_compatible"] and cell["capacity_status"] != "satisfied":
@@ -268,11 +355,28 @@ def main() -> int:
             "q5_distinct_phase_labels": 1,
             "q151_duplicate_phase_label": None,
             "q5_incompatible_phase_pair": 0,
+            "q5_same_first_layer_incompatible": 1,
         }
         for cell in payload["cells"]:
             observed = cell["pair_checks"][0]["cross_determinant_q_valuation"]
             if observed != expected_separation[cell["cell_id"]]:
                 raise AssertionError("cross-determinant separation fixture changed")
+        expected_cells = {
+            "q5_distinct_phase_labels": 1,
+            "q151_duplicate_phase_label": 1,
+            "q5_incompatible_phase_pair": 2,
+            "q5_same_first_layer_incompatible": 2,
+        }
+        for cell in payload["cells"]:
+            if cell["phase_cell_count"] != expected_cells[cell["cell_id"]]:
+                raise AssertionError("phase-cell partition fixture changed")
+            if not cell["partition_capacity_satisfied"]:
+                raise AssertionError("phase-cell partition exceeded capacity")
+        collision = next(
+            cell for cell in payload["cells"] if cell["cell_id"] == "q5_same_first_layer_incompatible"
+        )
+        if not collision["first_layer_residue_collision"] or collision["first_layer_residues"] != [4]:
+            raise AssertionError("the first-layer collision counterexample changed")
 
     args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(

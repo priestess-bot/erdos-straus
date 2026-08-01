@@ -242,9 +242,31 @@ phase_capacity_status = compatible / incompatible / unproved
 相位胞兼容可以直接由 `phase_cross_determinant` 的 \(q\)-进赋值重算：共同高度为
 \(k=\min(e_i,e_j)\) 时，兼容当且仅当 \(q^k\) 整除
 \(A_iR_j-A_jR_i\)；小于 \(k\) 的赋值是明确的分离层数。
-标签重复必须乘入显式重数；相位不兼容的状态不得共享容量账本。最小正相位代表只
-是诊断标签，不自动提供正性、标记集非空、解提升或 E1--E5，因此该字段默认属于
-`analysis_evidence`，不能把 `carrier_mapping_status=unproved` 升级为递归边。
+标签重复必须乘入显式重数；相位不兼容的状态不得共享同一个容量账本，但可以按
+上述兼容关系分成两两兼容的等价胞。每个胞的首层相位是非零残基，但不同胞可能
+共享同一个首层残基，因此 `phase_cell_count <= q - 1` 需要额外的
+`phase_first_layer_residue_injective=true` 假设。若第 \(c\) 个胞的标签区间宽度为
+\(M_c\)、最大高度为 \(H_c\)，且全局重复度上界为 \(\mu\)，则可逐胞记录
+
+```text
+phase_cell_first_layer_residue = nonzero residue mod q
+phase_cell_height_sum = sum(e_i) within the cell
+phase_cell_capacity_bound = mu * (M_c/(q-1) + H_c)
+phase_first_layer_residue_injective = explicit additional hypothesis
+```
+
+并核验
+
+\[
+\sum_i e_i
+\le
+\mu\sum_c\left(\frac{M_c}{q-1}+H_c\right).
+\]
+
+这仍以每个胞存在有界清分标签为前提；若首层残基不满足单射，就不能把逐胞求和
+压缩成单个 \(M\) 项。最小正相位代表只是诊断标签，不自动提供
+正性、标记解非空、解提升或 E1--E5，因此这些字段默认属于 `analysis_evidence`，
+不能把 `carrier_mapping_status=unproved` 升级为递归边。
 
 ### 2.3 累积外部支撑状态
 
