@@ -3724,3 +3724,90 @@ alternate carrier、改变双尾的 marked 状态，或 competing-excess SCC 到
 
 严格主张和聚焦复现见
 [同 1 mod 4 秩的 D-only 全域 no-go](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
+
+## 2026-08-01 路线图吸纳：complete-excess bundle 与 F 宏边
+
+已逐节吸纳
+[最新研究进展与突破路线评估](../docs/research-progress-and-breakthrough-roadmap-2026-07-31.md)。
+报告将当前主攻点定位为 overflow、competing-excess SCC 和 source-anchored alternate
+carrier。第一项仍是核心；第二项现已得到比“强制单素数 clean slab”更正确的闭合。
+
+设来源可达完整 bottom raw 图的 sink-SCC 中最小小坐标节点为
+
+\[
+\{x,y\},\qquad x<y,\qquad x+y=R.
+\]
+
+若 \(x\) 有任一超出 \(K\) 容量的素数 \(q\)，完整 raw 边会到达同一 SCC 中更小的
+\(x/q\)，矛盾。因此 \(x\mid K\)。若 \(xy\nmid K\)，定义
+
+\[
+Q=\prod_{v_q(y)>v_q(K)}q^{v_q(y)},
+\qquad
+\beta=y/Q.
+\]
+
+逐素数得到
+
+\[
+Q>1,\qquad
+x\beta\mid K,\qquad
+(Q,x\beta)=1,\qquad
+Q\nmid K.
+\]
+
+这个 \(Q\) 是全部超额完整幂块的 composite bundle；它可以含多个素数，也可以含
+\(K\) 内已有但指数不足的素数。对旧 absorbed support \(A\mid K\)，正确更新是
+
+\[
+\boxed{M=\operatorname{lcm}(A,Q),}
+\]
+
+不是一般的 \(AQ\)。并且 \(M/A\ge2\)。规范 \(R_M\) 因而给出严格二分：
+
+\[
+R_M<p
+\Longrightarrow
+\text{identity-lift marked edge},
+\]
+
+\[
+R_M>p
+\Longrightarrow
+pn=4Md+1,\quad(M,pn)=1.
+\]
+
+所以完整来源可达 Reach 已压成 direct Type I、bundle marked absorb 或 bundle
+overflow。每个 F 状态自身都有 \(K\)-支撑形式源，直接汇点又与盒 miss 矛盾，故
+
+\[
+\boxed{F\Longrightarrow
+\text{BUNDLE MARKED ABSORB}\ \lor\ \text{BUNDLE OVERFLOW}.}
+\]
+
+精确边界 \(p=21169,R=19,K=193\cdot521\) 的九节点 sink-SCC 没有任何 clean
+single-prime-power slab；最小点 \(\{1,18\}\) 却给 \(Q=18\)、\(R_{18}=71<p\)。
+这否定了报告中“competing SCC 必到 clean 单素数 slab”的建议，同时关闭
+competing-excess 作为独立余项。重叠例 \(A=5,Q=50\) 还证明必须使用 lcm 而不是乘积。
+
+初始线性 F bundle overflow 由大小和 Jacobi 分离进一步压成
+
+\[
+\alpha=1,\qquad as\in\{2,3\}.
+\]
+
+对其中 source-anchored clean single-external \(Q=q^e,\ q\nmid K\) 的更窄子类，
+\(q\)-peeling 到 \(\{1,R-1\}\) 后，\(as=3\) 全部吸收；\(as=2\) 除必要类
+\(p\equiv169\pmod{240}\) 外，也由 anchor bundle 或统一 gap \(7\) Type I 终端化。
+该模类结论不能推广到一般 composite/overlapping bundle。
+
+当前主余项因此更新为：
+
+1. 一般 complete-excess bundle overflow 的 source/path/node 锚定 alternate carrier；
+2. 改变尾数据且标记集非空的合法 E4；
+3. 没有 \(K\)-支撑形式源的裸 G 状态。
+
+本轮只增加聚焦 bundle receipt 和新路径的验证，不重跑历史测试或冻结普查。
+聚焦脚本与结果 SHA-256 分别为
+\(1407e23353804cef2995aa0fd0b85b14abb8fc6f70b8ade60fdd49cdc268fc1a\) 和
+\(92458fe092c86a8db3ce1d693bd2234c87ab66094c1a80ad6d53cb3f4e8c583b\)。

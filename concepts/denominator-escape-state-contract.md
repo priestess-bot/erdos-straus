@@ -32,6 +32,7 @@ used_by:
 - type-I-large-slab-three-alpha-arithmetic-boundaries
 - type-I-overflow-d-only-square-excess-no-go
 - two-denominator-lift-same-one-mod-four-no-go
+- type-I-bottom-sink-scc-complete-excess-bundle-selector
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -162,10 +163,36 @@ A_S\mid K_S.
 目标纤维、F/G/hit、规范见证或分离角色、带符号缺陷及势均从这些字段确定性重算。
 重图表时不得继承旧 F/G 标签，也不得只记录新的模数。
 
-若 clean external receipt 给出 \(Q=q^e\)、\(q\nmid K_S\)，则合法累积边只能把
-\(A_S\) 更新为 \(A_SQ\)。任意其它更新都不是该正规形。完整构造、具名 verifier、
+若 v1 clean external receipt 给出 \(Q=q^e\)、\(q\nmid K_S\)，则合法累积边只能把
+\(A_S\) 更新为 \(A_SQ\)。任意其它更新都不是该 v1 正规形。完整构造、具名 verifier、
 恒等解提升和势证明见
 [外部支撑累积重图表的良基下降与 overflow 边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md)。
+
+更一般地，bottom sink-SCC 的最小节点会给出 `complete_excess_bundle`：若
+
+\[
+Q=\prod_{v_q(y)>v_q(K_S)}q^{v_q(y)},
+\]
+
+则 \(Q\) 可以是复合数，也可以含 \(K_S\) 已有的素数。此时规范更新是逐素数容量并
+
+\[
+\boxed{A_T=\operatorname{lcm}(A_S,Q),}
+\]
+
+不能一般写成 \(A_SQ\)。所以 absorbed_support 记录的是带指数的乘法容量承诺，不只是
+素数 radical。完整 bundle receipt、lcm 来源规则和 marked edge 见
+[底层汇 SCC 的完整超额 bundle 选择器](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md)。
+
+bundle receipt 允许两种 E1 provenance：
+
+1. `sink_minimum`：重放完整 sink-SCC，并由最小小坐标证明剩余侧落入 \(K_S\) 容量；
+2. `path_anchored`：重放从已验证 source 到该 bottom 节点的完整路径，并直接逐素数验证
+   \(x\beta\mid K_S\)、\((Q,x\beta)=1\) 与 \(Q\nmid K_S\)。
+
+第二种不能冒充第一种，但一旦这些整数条件成立，后续 lcm 更新、恒等解提升和势下降
+完全相同。特别地，source-anchored clean \(Q=q^e,\ q\nmid K_S\) 可以沿 \(q\)-peeling
+到达 \(\{1,R-1\}\)，再从该 anchor 构造新的 complete-excess bundle。
 
 ## 3. 选择器的唯一缺陷输入
 
@@ -502,7 +529,7 @@ B_{p_0}=\frac{(p_0-1)^2}{4},
 \tag{6}
 \]
 
-若一条 clean external 边吸收 \(Q=q^e>1\)，并且规范后继仍满足
+若一条 v1 clean external 边吸收 \(Q=q^e>1\)，并且规范后继仍满足
 \(R_T<p_0\)，则
 
 \[
@@ -511,10 +538,18 @@ A_T=A_SQ\ge2A_S,
 A_T\mid K_T\le B_{p_0}.
 \]
 
-所以 \(\Pi_A(T)<\Pi_A(S)\)。该势允许 \(R_T>R_S\)，且已吸收素数不能以
-\(q\nmid K\) 身份重入。它只覆盖保持 absorbed_support 的边；若另一边丢弃或重置
-\(A_S\)，必须把一个严格下降的外层秩放在 (6) 之前。规范图表超过 \(p_0\) 时只输出
-overflow receipt，不伪造后继。
+所以 \(\Pi_A(T)<\Pi_A(S)\)。对 complete-excess bundle 则令
+
+\[
+A_T=\operatorname{lcm}(A_S,Q).
+\]
+
+每个 \(q\mid Q\) 的新完整块指数都严格超过 \(v_q(K_S)\ge v_q(A_S)\)，故仍有
+\(A_T/A_S\ge2\)，同一个势证明原样成立。该势允许 \(R_T>R_S\)。v1 中已吸收素数
+不能重新以 \(q\nmid K\) 身份收费；bundle v2 允许同一素数以后以严格更高的完整块
+重现，但只有 lcm 账本确实增长时才能收费。若另一边丢弃或重置 \(A_S\)，必须把一个
+严格下降的外层秩放在 (6) 之前。规范图表超过 \(p_0\) 时只输出 overflow receipt，
+不伪造后继。
 
 可替代方案可以加入规范 Fourier 导子、marked 复杂度或 q-adic 提升深度，但每个分量
 都必须是非负整数、从状态本身可重算，并且必须重新证明全体允许边严格下降。
@@ -592,12 +627,13 @@ rejected
 
 ## 9. 与统一选择器目标的衔接
 
+complete-excess 定理已经把每个有形式源的完整 Reach 压成直接 Type I、bundle marked
+edge 或 bundle overflow，并因此消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项。
 本合同把当前主缺口压缩成两个可以明确证伪或推进的问题：
 
-1. 能否把规范 Fourier、关系格或加法组合 F 证书产生的某个非零
-   \(D^-/D^+\) 合同，统一构造成 q_adic_lift、support_switch 或
-   generalized_dyadic_terminal 回执？
-2. 能否对所有没有 Type I/II 短证书的核心素数证明至少一个回执通过，并让所有
+1. 能否把每个 `complete_excess_bundle_overflow` 统一转成 source/path/node 锚定的
+   alternate carrier、直接 Type I/II 或其它合法 marked 状态？
+2. 能否为没有 \(K\)-支撑形式源的裸 G 状态构造实际 source，并让所有 resulting
    verified_edge 共享同一个良基势函数？
 
 第一个问题负责“表示--对偶”到真实算术对象的接口；第二个问题负责“容量或递降”闭合。

@@ -194,6 +194,11 @@ v_r(XY)=v_r(QaY)=v_r(aY)>v_r(K).
 第三支只是完整 Reach 中的竞争分析分支；它没有自动的标记状态、解提升或良基势，不能
 登记为 E4。
 
+这是单个节点上的局部三分，不是最终 sink-SCC 三分。后续的 complete-excess bundle
+定理表明：沿完整 raw Reach 进入任一 sink-SCC 后，取最小小坐标节点即可把所有竞争
+超额完整块一次打包为复合 \(Q\)，继而只剩 marked absorb 或 bundle overflow。因此
+`COMPETING_EXCESS` 在本卡中仍是必要的局部标签，但不再是独立的全局余项。
+
 ## 2. q-free sink-SCC 的入口强化
 
 设一条标号 \(q\nmid K\) 的底层边直接进入完整 raw Reach 的 sink-SCC：
@@ -460,12 +465,14 @@ aY=27\nmid K.
 \]
 
 这已经把原 \(p=2017\) 的静态 receipt 正确拉回合法递降，并把更强错误命题压到一个
-旧菜单反例；累积支撑又把该例升级为 marked edge。尚未解决的是：
+旧菜单反例；累积支撑又把该例升级为 marked edge。下游
+[完整超额 bundle 选择器](type-I-bottom-sink-scc-complete-excess-bundle-selector.md)
+进一步关闭了“竞争 SCC 必出现单素数 clean slab”这一错误目标。尚未解决的是：
 
 1. \(R_{AQ}>p\) overflow 的换载体、直接终端或合法后继；
-2. 竞争超额分支在完整 SCC/Pareto 前沿中为何最终出现 clean slab 或直接终端；
+2. complete-excess bundle overflow 的 source/path/node 锚定 alternate carrier；
 3. 不是 path-carried 的源/端点 static 如何映到外部载体；
-4. 多坐标 Pareto 价格如何注入跨状态的真实有限容量。
+4. 裸 G 状态如何获得可进入完整 Reach 的实际形式源。
 
 聚焦复现为
 

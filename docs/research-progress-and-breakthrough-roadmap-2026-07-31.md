@@ -20,7 +20,7 @@
 \longrightarrow
 \text{周期表示格 / 外部 slab}
 \longrightarrow
-\text{直接终端或合法标记状态}.
+\text{直接终端、bundle marked edge 或 bundle overflow}.
 \]
 
 这一链条中的多项接口已经成为不含素数扫描上界的一般命题：
@@ -29,7 +29,10 @@
 2. 一个 \(m=1\) 周期生成的全部目标表示构成关系格中的二阶陪集，是否终端精确等价于该陪集是否与 \(K\) 指数容量盒相交；
 3. 抽象通用周期何时能在无穷多个核心素数上实现为真实 \(K\)-支撑周期，已有完整 CRT/算术级数判据；
 4. 外部单 \(q\)-slab 已有“两类直接碰撞或 small-slab 降 \(R\) 吸收”的无样本析取；
-5. 所有保留两尾、替换一个分母的正提升，已经被压缩成 \(D\)-only 标记正规形，并带有精确的标记集非空判据和全域解提升公式。
+5. bottom sink-SCC 的全部 competing excess 已规范打包为 composite complete-excess
+   bundle，并以 lcm 容量账本给出 marked edge 或显式 overflow；
+6. 所有保留两尾、替换一个分母的正提升，已经被压缩成 \(D\)-only 标记正规形；同
+   \(1\pmod4\) 的 non-source 标记纤维又已由 Vieta 下降全部排空。
 
 同时，冻结有限证据也显著加强：完整 \(\Psi_0=1\) 谱由原来的 55 个状态扩展为 483 个状态，固定的内部缺口、双秩 Reach、跨图表中心谱和仿射边界菜单最终在这 483 个状态上全部产生独立验真的直接证书。
 
@@ -37,12 +40,15 @@
 
 > 对任意 terminal-first 后仍未闭合的状态，为什么完整可达域必然产生直接 Type I/II、跨图表中心命中、可吸收 external slab，或一个标记集非空且满足完整解提升与良基下降的合法后继？
 
-当前最窄的三个余项是：
+当前最窄的两个余项是：
 
-- \(R_{AQ}>p\) 的 clean-slab overflow；
-- competing-excess sink-SCC 到 clean slab 或直接终端的强制；
-- overflow 中 source-anchored alternate carrier 或非保尾 marked 状态的构造，以及多坐标
-  Pareto 容量注入。
+- \(R_M>p\) 的 complete-excess bundle overflow，其中
+  \(M=\operatorname{lcm}(A,Q)\)；
+- 没有 \(K\)-支撑形式源的裸 G 状态，以及 overflow 中 source-anchored alternate
+  carrier 或非保尾 marked 状态的构造。
+
+此前列出的 competing-excess sink-SCC 已由最小坐标 complete-excess bundle 定理
+关闭为 marked absorb 或 bundle overflow，不再是独立余项。
 
 综合判断：
 
@@ -52,7 +58,7 @@
 | 周期障碍的规范化 | 已有关系格和容量盒判据 | 强进展 |
 | 冻结 \(\Psi_0=1\) 状态 | 483/483 状态内候选闭合 | 很强有限证据 |
 | 广义二进终端 | 内部选择器成熟，自然提升被关闭 | 路线澄清 |
-| external slab | \(R_{AQ}<p\) 已有 absorbed-support 良基边 | clean 余项只剩 overflow |
+| external slab | clean \(AQ\) 与一般 bundle \(\operatorname{lcm}(A,Q)\) 均有良基边 | 余项只剩 bundle overflow |
 | 标记递降 | \(n=p-1\) 层及同 \(1\bmod4\) 的 non-source D-only 均已证明全空 | overflow 必须换尾或换载体 |
 | 全称选择器 | 尚未闭合 | 决定性缺口仍在 |
 | 独立复核 | 仍明显不足 | 可信度瓶颈 |
@@ -69,7 +75,7 @@
 
 \[
 \boxed{
-\text{source-anchored alternate carrier 或非保尾 marked 状态的全称构造定理}.
+\text{裸 G 的实际 source，或非保尾 marked 状态的全称构造定理}.
 }
 \]
 
@@ -712,7 +718,7 @@ W(p,n,D)
 \text{任意 terminal-first 后仍未闭合的 }\Psi_0=1\text{ 状态}\\[1mm]
 \Downarrow\\[1mm]
 \text{完整 Reach 中存在直接终端、跨图表中心命中、}\\
-\text{可吸收 external slab，或非空且可提升的 D-only 后继。}
+\text{bundle marked edge，或其它非空且可提升的合法后继。}
 \end{array}
 }
 \]
@@ -812,11 +818,14 @@ R\equiv2\pmod3,
 
 这与周期核心可实现性的模 3 条件高度一致，可能允许用 CRT、Jacobi 或 Type II 射线作进一步分流。
 
-建议建立明确候选命题：
+该局部命题现在已由 absorbed-support/bundle 二分取代。真正候选命题应直接针对
+\(R_M>p\)：
 
-> 对 \(m=1\) 单外部 large-slab，若 \(Qa+b=R\)、\(Q>R/4\)、\(ab\mid K\)，则在 \(a=1,2,3\) 三类中至少发生：直接 Type I/II、跨图表中心命中，或一个显式非空的 D-only 标记状态。
+> 对每个 source/path/node 锚定的 large-slab 或 complete-excess bundle overflow，
+> 至少发生直接 Type I/II、另一个 \(R_{M'}<p\) 的 anchored carrier，或一个改变尾数据
+> 且满足完整 E1--E5 的非空 marked 状态。
 
-这是目前最有可能把有限正信号升级成一般分支的方向。
+这避免把已经全空的 same-class D-only 补秩重新放回菜单。
 
 > **2026-08-01 因子对与载体更新。** large-slab 的三分现已进一步精确参数化。写
 > \(Q=q^e,K=\alpha\beta c\)，则
@@ -1341,6 +1350,74 @@ z\equiv-\sigma\pmod\mu,
 > competing-excess SCC 必到达其中之一。详见
 > [同 1 mod 4 秩的 D-only 全域 no-go](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
 
+> **2026-08-01 complete-excess bundle 更新。** 上一段最后保留的 competing-excess
+> SCC 量词现已闭合，但结论不是“必出现单素数 clean slab”。对任一来源可达完整
+> bottom raw 图的 sink-SCC，取小坐标最小节点 \(\{x,y\}\)。若 \(x\) 仍有超出
+> \(K\) 容量的素数 \(q\)，完整 raw 边会到达更小坐标 \(x/q\) 的同一 SCC，矛盾；
+> 因而 \(x\mid K\)。若 \(xy\nmid K\)，令
+>
+> \[
+> Q=\prod_{v_q(y)>v_q(K)}q^{v_q(y)},
+> \qquad
+> \beta=y/Q.
+> \]
+>
+> 则
+>
+> \[
+> Q>1,\qquad x\beta\mid K,\qquad
+> (Q,x\beta)=1,\qquad Q\nmid K.
+> \]
+>
+> 对 absorbed support \(A\mid K\)，规范容量并必须取
+>
+> \[
+> \boxed{M=\operatorname{lcm}(A,Q),}
+> \]
+>
+> 而不是一般的 \(AQ\)。它满足 \(M/A\ge2\)。若 \(R_M<p\)，两端均以
+> \(\operatorname{Sol}(p)\) 为标记集、恒等映射为提升，并由
+> \(\lfloor (p-1)^2/(4M)\rfloor<\lfloor (p-1)^2/(4A)\rfloor\) 得到完整
+> E1--E5 边；若 \(R_M>p\)，则仍有
+>
+> \[
+> pn=4Md+1,\qquad(M,pn)=1.
+> \]
+>
+> 因此完整 Reach 已严格压成
+>
+> \[
+> \boxed{
+> \text{DIRECT TYPE I}
+> \ \lor\
+> \text{BUNDLE MARKED ABSORB}
+> \ \lor\
+> \text{BUNDLE OVERFLOW}.}
+> \]
+>
+> 每个 F 状态自身给出 \(K\)-支撑的无界形式源，故 F 无条件进入后两支。精确例
+> \((p,R,K)=(21169,19,193\cdot521)\) 的九节点 sink-SCC 没有任何 clean
+> single-prime-power slab，却在最小点 \(\{1,18\}\) 给出复合 \(Q=18\) 和
+> \(R_{18}=71<p\)。这既否定旧的单素数强化，也说明 competing-excess 已被正确吸收为
+> composite bundle。初始线性 F overflow 还被压到 \(\alpha=1,\ as\in\{2,3\}\)；
+> \(as=1\) 整族由 Jacobi 角色严格属于 G。详见
+> [底层汇 SCC 的完整超额 bundle 选择器](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md)。
+
+> 对更窄的 source-anchored clean single-external \(\alpha=1\) overflow，还能继续
+> 无样本收缩。因 \(Q=q^e,\ q\nmid K\)，合法 \(q\)-peeling 会到达
+> \(\{1,R-1\}\)。令 \(S=(R-1)/2\)：\(as=3\) 时 anchor 的新 bundle 是
+> \((S,2)\) 且 \(R_S<p\)，故整支吸收；\(as=2\) 时，\(K\) 偶支同样吸收，\(K\)
+> 奇支经规范余数分类只在 \(p\equiv73,169\pmod{240}\) overflow。前一类有统一
+> gap \(7\) Type I 证书
+>
+> \[
+> x=\frac{p+7}{4},\qquad d=\frac{x^2}{5},
+> \]
+>
+> 所以该 clean 子类只剩必要类 \(p\equiv169\pmod{240}\)。此处必须保留范围：
+> general complete-excess bundle 可以含 \(q\mid K\)，不能保证 peeling 到 \(1\)；
+> 因而该模 \(240\) 结论不能推广到全部 bundle overflow。
+
 更长远的目标应改写为不预设 D-only 的选择定理：
 
 \[
@@ -1431,22 +1508,23 @@ z\equiv-\sigma\pmod\mu,
 \]
 
 - HIT：直接 Type I；
-- `MISS_EXTERNAL`：提取最小外部 Smith circuit 或单 external slab；
-- `MISS_CAPACITY`：提取最小内部超限向量和带符号缺陷。
+- `MISS_EXTERNAL` 或 `MISS_CAPACITY`：保存规范格/Pareto miss receipt，并进入完整
+  bottom sink-SCC；不再要求先提取单 external prime。
 
 ### Phase D：external slab
 
 应用：
 
 \[
-\text{双碰撞}
+\text{直接 Type I}
 \quad\lor\quad
-\text{clean slab 的 }R_{AQ}<p\text{ 累积支撑边}
+R_{\operatorname{lcm}(A,Q)}<p\text{ 的 bundle marked edge}
 \quad\lor\quad
-R_{AQ}>p\text{ overflow}
-\quad\lor\quad
-\text{competing excess}.
+R_{\operatorname{lcm}(A,Q)}>p\text{ 的 bundle overflow}.
 \]
+
+这里 \(Q\) 由 sink 最小节点的全部超容量完整素数幂块唯一确定。单素数 clean slab 的
+双碰撞仍可在此前作为快捷终端，但 competing excess 不再保留为独立 Phase D 输出。
 
 ### Phase E：真正递归
 
@@ -1470,7 +1548,7 @@ R_{AQ}>p\text{ overflow}
 
 - overflow determinant 的换载体/终端/合法后继全部分流；
 - 核心可实现两翻转周期全部三目标命中；
-- 一个无限 D-only 子族标记集自动非空。
+- 裸 G 状态的规范实际 source 或非保尾 marked 状态构造。
 
 ### 二级突破
 
@@ -1484,7 +1562,7 @@ R_{AQ}>p\text{ overflow}
 
 ### 三级突破
 
-把当前三个余项压成一个，或者证明其中一个分支结构性为空。
+把当前两个余项压成一个，或者证明其中一个分支结构性为空。
 
 ### 不再计为突破
 
@@ -1500,43 +1578,34 @@ R_{AQ}>p\text{ overflow}
 
 ## 十二、建议的六周集中计划
 
-### 第 1 周：冻结主干与补独立验证
+### 第 1 周：冻结主干与定向复核
 
-- 固定 cycle-or-hit、周期格、核心可实现性、三目标桥、external slab 和 D-only 六条核心主张；
-- 为它们建立独立 verifier；
+- 固定 cycle-or-hit、周期格、external slab、complete-excess bundle 和同余类 D-only
+  no-go 五条核心主张；
+- 只对本轮新增或实质修改的证明做定向复核，不重跑已通过的历史测试；
 - 不再扩大 483 状态菜单；
-- 将 \(m=1\) 原始线性图表中的 \(q=p\) 排除写成正式候选引理并做反例审计。
+- 固化 bundle 的 lcm 容量合同和代表性 receipt。
 
 ### 第 2 周：overflow 与换载体分类
 
-对 \(R_{AQ}>p\) 的 overflow 分别推导：
+对 \(R_M>p\)、\(M=\operatorname{lcm}(A,Q)\) 的 bundle overflow 分别推导：
 
-- determinant \(pn=4AQd+1\) 的互补坐标；
-- 同状态其它 clean carrier 是否必存在；
+- determinant \(pn=4Md+1\) 的互补坐标；
+- source/path/node 锚定的 alternate carrier 是否必存在；
 - 素数幂 gap 三目标 miss 的 Fourier 分离角色；
 - \(\beta\)-ratio cocycle 的稳定子闭包；
-- 可构造的 \(n,D,\mu,\sigma\)，并排除 \(p-n=1\)；
-- competing-excess 与 overflow 的相互转换。
+- 初始线性源的一般 \(\alpha=1,\ as\in\{2,3\}\) bundle，以及 clean 子类剩余的
+  \(as=2,\ p\equiv169\pmod{240}\) 必要类；
+- 一般 \(A>1\) bundle overflow 与初始 clean overflow 的边界差异。
 
 输出必须是定理候选或明确反例，不是覆盖率表。
 
-### 第 3 周：D-only 三目标与跨模数接口
+### 第 3 周：裸 G source 与非保尾接口
 
-关闭已经证明为空的
-
-\[
-\mu=1,\quad\mu=2,\quad\mu\mid\sigma+1
-\]
-
-三个方向。改为从 large-slab 或来源路径构造满足
-
-\[
-H=p+(4\lambda-1)(p-n)\mid4\lambda^2
-\]
-
-的大尺度 \(\lambda\)，并检查 \(\lambda^2\) 三目标真因子谱。若只得到模 \(R\) 的
-路径字，必须显式建立到 \(\mu=4\lambda-1\) 的跨模数恒等式；同模方案先应用
-\(\mu>2\sqrt p-1\) 的尺寸筛，不再枚举已被结构性排除的小参数。
+- 为 G 状态寻找不只使用 \(K\) 支撑的 source/path/node 形式源；
+- 从 bundle overflow 构造改变一条或两条尾的 marked 状态；
+- 每个候选必须同时给出标记集非空、全域提升和预定义势下降；
+- 不再把同 \(1\pmod4\) 的 D-only 补秩放回 overflow 菜单。
 
 ### 第 4 周：两翻转周期三目标短代表
 
@@ -1547,7 +1616,8 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 
 ### 第 5 周：统一状态机
 
-把 terminal-first、Reach、周期格、slab、D-only 写入同一 typed selector：
+把 terminal-first、Reach、周期格、complete-excess bundle 和 marked edge 写入同一
+typed selector：
 
 - 每个输出标明 `terminal`、`candidate_transition` 或 `verified_edge`；
 - 只有 verified edge 承担递归；
@@ -1555,16 +1625,16 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 
 ### 第 6 周：外部审阅与论文级整理
 
-- 邀请至少一名数论研究者审阅六条核心主张；
-- 将周期结构、external slab 和 D-only 拆成可独立阅读的三个章节；
-- 用第二实现复核所有代表性整数例和有限扫描摘要；
+- 邀请至少一名数论研究者审阅压缩后的核心证明链；
+- 将周期结构、bundle overflow 和 G/marked source 拆成可独立阅读的章节；
+- 只为新结论保留聚焦复现；已通过且未重大修改的历史代码不重复审计；
 - 决定哪一个方向进入下一轮主攻，另外两条降为辅助接口。
 
 ---
 
 ## 十三、证据治理风险
 
-当前主张账本共有 695 条主张，其中：
+原审计 HEAD 的主张账本快照共有 695 条主张，其中：
 
 - `established`：297；
 - `computationally_reproduced`：360；
@@ -1598,8 +1668,10 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 - 周期的直接 radical 错误命题被三目标乘子桥修正；
 - external slab 首次接上直接终端和合法降 \(R\) 重图表；
 - absorbed support 使所有 \(R_{AQ}<p\) 的 clean slab 都成为良基边，不再要求降 \(R\)；
-- clean residual 已压成带 \(pn=4AQd+1\) 的 overflow；
-- 双尾提升具有完整的 \(D\)-only 状态参数化，且 \(n=p-1\) 非自然层已证明全空。
+- sink 最小坐标把所有 competing excess 规范化为 composite complete-excess bundle；
+- \(M=\operatorname{lcm}(A,Q)\) 把一般 bundle 压成 marked edge 或带
+  \(pn=4Md+1\) 的 overflow；
+- 同 \(1\pmod4\) 的 non-source D-only 标记纤维已全部证明为空。
 
 项目已经从“证书搜索实验室”进入“少数结构引理决定成败”的阶段。
 
@@ -1615,12 +1687,12 @@ H=p+(4\lambda-1)(p-n)\mid4\lambda^2
 
 \[
 \boxed{
-\text{D-only 标记集的规范非空选择}
+\text{裸 G 的实际 source 或非保尾 marked 状态构造}
 }
 \]
 
-其中任意一条获得无样本上界的定理，都可以称为真正的近期突破。若两者能够连接——
-overflow 规范地产生一个 \(p-n\ge2\) 且非空的 D-only 后继——就可能把当前已经良基的
-clean-slab 子程序继续接到新的递归分支。
+其中任意一条获得无样本上界的定理，都可以称为真正的近期突破。若两者能够连接，即
+overflow 的 alternate carrier 同时为 G 状态提供实际 source，就可能把当前已经良基的
+bundle 子程序接到统一递归分支。
 
 完整猜想是否能很快解决，目前仍高度不确定；但在未来数周内取得一个可发表的无限分支定理、合法递降子族或周期全称子类闭合，是现实目标。研究资源应集中在这些严格定义的节点上，而不再分散到新的有限菜单和同类终端枚举中。

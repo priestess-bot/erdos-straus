@@ -493,8 +493,20 @@ R_{AQ}>p\text{ 的 overflow receipt}.}
 \tag{33}
 \]
 
-若完整节点不是 clean slab，还保留 competing-excess 分支。本卡没有证明 overflow 必有
-另一载体、直接证书或可提升后继，因而没有闭合全称选择器。
+本卡的 v1 定理严格针对 \(Q=q^e,\ q\nmid K\)，所以 \(M=AQ\) 仍是正确写法。若完整
+节点不是 clean slab，局部上仍会出现 competing-excess raw 分支；但下游的
+[完整超额 bundle 选择器](type-I-bottom-sink-scc-complete-excess-bundle-selector.md)
+已经证明：在完整 sink-SCC 的最小节点，把所有超额完整块组成复合 \(Q_{\rm bun}\) 后，
+规范容量并应取
+
+\[
+\boxed{M_{\rm bun}=\operatorname{lcm}(A,Q_{\rm bun}),}
+\]
+
+并严格分流到 \(R_{M_{\rm bun}}<p\) 的同类 marked edge 或
+\(R_{M_{\rm bun}}>p\) 的 bundle overflow。于是 competing-excess 不再是独立的
+sink-SCC 余项；本卡仍未证明的是 prime-power 或 bundle overflow 必有另一载体、直接
+证书或可提升后继。
 
 ## 7. 聚焦复现
 

@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。底层 path-carried static 素数可回溯为 clean slab 或竞争 raw 超额；clean slab 携带 absorbed support A|K，并以 R_{AQ}<p 的规范重图表给出恒等解提升及势 floor((p-1)^2/(4A)) 严格下降。真正 clean 余项是 R_{AQ}>p 的 overflow，满足 pu=4AQd+1。若补秩 u<p，则 u=1 (mod 4)；现已证明每个 same-class non-source D-only 标记纤维都为空，source-supported 又只复述中心 Type I，因此 overflow-to-D-only 应整体删除，平方超额不再开放。固定图表的 clean slabs 还产生至多三个 beta-ratio cocycle，但不能自动饱和。当前决定性余项是 source-anchored alternate carrier 或非保尾 marked 状态的构造、multi-excess SCC 的 clean-slab 强制，以及多坐标 Pareto 价格到实际跨状态载体容量的算术注入。
+summary: 完整目标纤维审计已将 F/G 失败压缩为固定支撑上的 Fourier、关系格和联合容量对象。对任一来源可达的完整 raw Reach，bottom sink-SCC 的最小小坐标 x 必整除 K；把另一坐标的全部超容量完整素数幂块打包为复合 Q，并以 M=lcm(A,Q) 合并 absorbed support 后，严格得到直接 Type I、R_M<p 的恒等提升 marked edge 或 R_M>p 的 bundle overflow。故 COMPETING_EXCESS 不再是独立 sink-SCC 余项，每个 F 状态都进入 marked absorb 或 bundle overflow。若 overflow 补秩 u<p，则 same-class non-source D-only 标记纤维全空，source-supported 又只复述中心 Type I，因此该菜单已删除。当前决定性余项收缩为 complete-excess bundle overflow 的 source-anchored alternate carrier、直接终端或非保尾 marked 状态，以及没有 K 支撑形式源的裸 G 状态。
 topics:
 - research-map
 - proof-program
@@ -1971,7 +1971,23 @@ overflow；若 \(aY\nmid K\)，同一节点必有另一个 \(r\ne q\) 超过 \(K
 \[
 \texttt{MARKED\_ABSORB}\ \lor\ \texttt{OVERFLOW}\ \lor\ \texttt{COMPETING\_EXCESS}
 \]
-的无样本来源三分。它没有闭合 overflow/multi-excess 两支。旧例
+的无样本来源三分。这里的 competing 标签是单节点局部分支；下游 complete-excess
+定理已经证明，任取完整 sink-SCC 的最小小坐标节点 \(\{x,y\}\)，必有 \(x\mid K\)。
+把 \(y\) 中所有满足 \(v_q(y)>v_q(K)\) 的完整 \(q^{v_q(y)}\) 块组成复合 \(Q\)，则
+
+\[
+x\beta\mid K,\qquad (Q,x\beta)=1,\qquad Q\nmid K,
+\]
+
+并以
+
+\[
+M=\operatorname{lcm}(A,Q)
+\]
+
+严格进入 \(R_M<p\) 的 marked absorption 或 \(R_M>p\) 的 bundle overflow。因此
+multi-excess 已不再是独立 sink-SCC 余项，也不再需要证明它必出现单素数 clean slab。
+旧例
 \(p=107722177,R=207,Q=103\) 的指定 static 局部菜单虽全部 miss，但
 \(R_Q=375<p\)，现已由 absorbed-support 势登记为合法 marked descent；同一 SCC
 还可由 \(q=41\) 下降并中心命中。详见
@@ -1984,9 +2000,9 @@ overflow；若 \(aY\nmid K\)，同一节点必有另一个 \(r\ne q\) 超过 \(K
 并在 \(R_{53}=171\) 中心命中。详见
 [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
 
-因此当前最窄且真正有证明价值的余项是：对 terminal-first unresolved 状态的每个 sink-SCC，
-把其规范 Pareto 前沿和周期 miss 证书强制转成直接 Type I/II、改变根尾数据的非空标记
-状态，或满足完整 E1--E5 的 support switch。SCC 凝聚序只负责有限分析调度，不是算术
+因此当前最窄且真正有证明价值的余项是：把规范 bundle overflow 强制转成直接
+Type I/II、source/path/node 锚定的 alternate carrier、改变根尾数据的非空标记状态，
+或为裸 G 构造实际形式源。SCC 凝聚序只负责找到 bundle receipt，不是逐 raw 边的算术
 下降；任意路径积给出的较小 \(R_Q\) 也不是自动 E4。
 
 较小方程路线也得到一个比显式偶源更一般的状态接口。对 \(2\le n<p\)，全部可能承载
@@ -2225,8 +2241,9 @@ s=a^2c,\qquad\lambda=abc,\qquad p=4bc(b-a)+1
    Fourier 分离角色；
 3. 优先把 \(\alpha=1\) 的 gap 3 容量超额或 \(\alpha=3\) 的 determinant pair
    转成非空且可提升的标记状态；
-4. 对 competing-excess SCC 证明有限 Pareto receipt 必产生 clean slab 或终端；
-5. D-only 不再测试 \(n=p-1\)，只从满足尺寸下界的大尺度路径量构造 \(r\ge2\)。
+4. 用完整超额 bundle 取代“competing SCC 强制单素数 clean slab”的错误目标；
+5. D-only 不再测试同 \(1\pmod4\) 的补秩，改为 source-anchored alternate carrier
+   或改变尾数据。
 
 严格主张见
 [累积支撑重图表与 overflow 边界](../claims/type-I-marked-support-accumulation-rechart-saturation.md)、
@@ -2437,11 +2454,114 @@ source-supported 等价，D-only 的合同状态更新为：
 
 1. 从 source/path/node 锚定的 alternate carrier \(Q'\) 构造直接 Type I/II；
 2. 若 \(Q'\) 给出 clean slab 且 \(R_{AQ'}<p\)，使用已有 MARKED_ABSORB 边；
-3. 否则把实际节点送入 competing-excess，并证明其 sink-SCC 必产生 clean slab 或终端；
-4. Pareto/\(q\)-进容量只有在给出相位匹配、实际载体和有界复用后才能登记为 E4。
+3. 否则在 sink-SCC 最小节点构造 complete-excess bundle，并只保留其规范 overflow；
+4. 对裸 G 状态先构造实际形式源；Pareto/\(q\)-进容量只有在给出相位匹配、实际载体
+   和有界复用后才能登记为 E4。
 
 严格证明与聚焦复现见
 [同 1 mod 4 秩的 non-source D-only 标记纤维全域空定理](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
+
+## 目标五十四：完整超额 bundle 与 F 状态的规范宏边
+
+competing-excess 的全局量词已经得到无样本闭合。设 \(\mathcal C\) 是来源可达完整
+bottom raw 图的 sink-SCC，在其中取小坐标最小节点
+
+\[
+\{x,y\},\qquad x<y,\qquad x+y=R.
+\]
+
+若 \(x\) 仍有超过 \(K\) 容量的素数 \(q\)，完整 raw 边会到达小坐标
+\(x/q<x\) 的同一 sink-SCC，矛盾。因此 \(x\mid K\)。若 \(xy\mid K\)，节点直接给
+Type I；否则定义
+
+\[
+E=\{q:v_q(y)>v_q(K)\},\qquad
+Q=\prod_{q\in E}q^{v_q(y)},\qquad
+\beta=\frac yQ.
+\]
+
+则
+
+\[
+Q>1,\qquad x\beta\mid K,\qquad
+(Q,x\beta)=1,\qquad Q\nmid K,\qquad Q<R<p.
+\]
+
+这是规范 complete-excess bundle。它允许多个超额素数，也允许 \(q\mid K\) 但节点中的
+完整 \(q\)-块指数超过 \(v_q(K)\)。所以旧 single-external clean slab 并不是正确的
+全局正规形。
+
+若状态已有 absorbed support \(A\mid K\)，正确容量并是
+
+\[
+\boxed{M=\operatorname{lcm}(A,Q),}
+\]
+
+而不是一般的 \(AQ\)。逐素数有 \(v_q(Q)>v_q(K)\ge v_q(A)\)，故
+
+\[
+A\mid M,\qquad M/A\ge2,\qquad M\nmid K.
+\]
+
+令 \(pR_M\equiv-1\pmod{4M}\)、\(1\le R_M<4M\)。若 \(R_M<p\)，两端都取
+\(\operatorname{Sol}(p)\)，恒等提升与
+
+\[
+\left\lfloor\frac{(p-1)^2}{4M}\right\rfloor
+<
+\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor
+\]
+
+给出完整 E1--E5 边；若 \(R_M>p\)，则
+
+\[
+n=4M-R_M,\qquad K_M=MC,\qquad d=p-C
+\]
+
+满足
+
+\[
+\boxed{pn=4Md+1,\qquad(M,pn)=1,}
+\]
+
+并输出 bundle overflow receipt。由此
+
+\[
+\boxed{
+\text{DIRECT TYPE I}
+\ \lor\
+\text{BUNDLE MARKED ABSORB}
+\ \lor\
+\text{BUNDLE OVERFLOW}.}
+\]
+
+每个 F 状态自身都有 \(K\)-支撑的无界目标纤维形式源，而直接汇点会与 F 的盒 miss
+矛盾，所以
+
+\[
+\boxed{F\Rightarrow
+\text{BUNDLE MARKED ABSORB}\ \lor\ \text{BUNDLE OVERFLOW}.}
+\]
+
+精确边界 \((p,R,K)=(21169,19,193\cdot521)\) 的九节点 sink-SCC 没有任何 clean
+single-prime-power slab，却在最小点 \(\{1,18\}\) 给出复合 \(Q=18\) 和
+\(R_{18}=71<p\)。它反驳旧的单素数强化，同时验证 bundle 正规形。初始 \(A=1\) 且有
+线性源 \(p=a+s+asR\) 时，bundle overflow 还强制
+
+\[
+\alpha=1,\qquad as\in\{2,3\};
+\]
+
+\(as=1\) 的整族由 Jacobi 角色严格属于 G。若该 \(\alpha=1\) 节点进一步是
+source-anchored clean single-external \(Q=q^e,\ q\nmid K\)，则 \(q\)-peeling 到
+\(\{1,R-1\}\) 后，\(as=3\) 全部吸收；\(as=2\) 除必要类
+\(p\equiv169\pmod{240}\) 外也由 anchor bundle 或统一 gap \(7\) Type I 闭合。这个
+模 \(240\) 收缩不适用于含 \(K\) 内超指数的 general bundle。当前真正余项因此只剩
+一般 bundle overflow、clean 子类的上述必要模类与裸 G source，而不再包含
+competing-excess SCC。
+
+严格证明与聚焦复现见
+[底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩](../claims/type-I-bottom-sink-scc-complete-excess-bundle-selector.md)。
 
 ## 依赖顺序
 
@@ -2497,6 +2617,8 @@ source-supported 等价，D-only 的合同状态更新为：
 \downarrow\\
 \text{同 }1\pmod4\text{ 秩的 non-source D-only 三目标全域空；overflow D-only 菜单删除}\\
 \downarrow\\
+\text{sink 最小坐标、complete-excess bundle、lcm 容量并与 F 到 marked/overflow 宏边}\\
+\downarrow\\
 \text{PRE--ABSORB 分型势只解决旧候选 E5；其它 formal 边 E1--E4 仍待构造}\\
 \downarrow\\
 \text{R=47 空掩码的 }p-1\text{ 终端与跨正规形因子容量}\\
@@ -2517,12 +2639,15 @@ single-slab 候选。这些结果仍否定局部终端菜单，但其中所有 \
 表示间分裂，且大部分位于 \(Kx_R\) 支撑之外。最短路径的
 slab-\(q\) 载体候选现已被线性 strong-miss 反例否定；替代对象是固定支撑上的完整
 Pareto 前沿和同图表至多三个 \(\beta\)-ratio cocycle。底层 SCC 的无限路径也已压成
-显式有限见证界和周期静态/区间证书。真正余项现已从“继续走多深”转为
-\(R_{AQ}>p\) overflow、competing-excess 与跨状态容量的全称算术桥。
+显式有限见证界和周期静态/区间证书。sink 最小坐标定理又把所有 competing-excess
+完整块规范合并为复合 \(Q\)，并以 \(\operatorname{lcm}(A,Q)\) 直接进入 marked edge
+或 bundle overflow。真正余项现已从“继续走多深”和“能否出现单素数 clean slab”
+转为 bundle overflow 的 alternate carrier/直接终端/非保尾 E4，以及裸 G 的实际 source。
 \(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 和 \(n=p-1\) 层外，现又关闭了
 全部 \(p\equiv n\equiv1\pmod4\) 的 non-source 参数。overflow 补秩恰在这一同余类，
-所以 square-excess 不再是后继候选，D-only 应整体输出 `rejected_branch`。path-static receipt 现在按
-MARKED_ABSORB/OVERFLOW/COMPETING_EXCESS 分流，再把后两支送入完整 SCC/Pareto。
+所以 square-excess 不再是后继候选，D-only 应整体输出 `rejected_branch`。path-static
+receipt 的局部 COMPETING_EXCESS 标签仍用于 raw 调度，但完整 sink-SCC 会把它收束为
+BUNDLE_MARKED_ABSORB/BUNDLE_OVERFLOW，不再作为第三个全局分支。
 不能再把任意静态重图表当成进展：同 \(p\) 的 unrestricted 中心/internal
 命中与预先存在 Type I/II 短证书精确同难。后续也不再扩大同一冻结样本的壳层、重复
 同一候选菜单，或把无标记的较小偶数误计为递降。
