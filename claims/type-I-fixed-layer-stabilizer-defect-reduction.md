@@ -201,6 +201,49 @@ python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
 
 生成；它逐个目标元素核验 (7)、商群无周期、F 缺失和 Fourier 下界。
 
+## 统一选择器中的 typed 对偶回执
+
+固定层商 Fourier 不另造一个递归边类型，而是写入状态的
+`certificate_context`，其最小字段为
+
+```text
+certificate_type = fixed_layer_quotient_fourier
+selector_status = analysis_evidence
+state_class = F 或 G
+phase = DUAL_CERTIFICATE
+quotient_order = |H/P|
+stabilizer_order = |P|
+character_order = ord(chi_bar)
+amplitude_squared = |A_J(chi)|^2
+threshold_fraction = [|bar J| product_i(2 b_i + 1), |H/P|-1]
+lifted_threshold_fraction = [|J| product_i(2 b_i + 1), |H/P|-1]
+recursive_edge_eligible = false
+```
+
+`amplitude_squared` 和两个阈值分数优先于浮点幅度保存；规范字典序使用
+\((|H/P|,\operatorname{ord}(\bar\chi),-|A_J(\chi)|^2,
+\operatorname{phase}(\bar\chi))\)。因此该回执能作为 F/G 的规范表示—对偶证书，
+但不能单独进入递归图。只有后续另行通过 E1--E5、给出全域解提升和严格势下降，才可
+把它连接到 `support_switch`、`q_adic_lift` 或 `verified_edge`。
+
+在聚焦状态中，typed 载荷为
+
+```text
+certificate_type = fixed_layer_quotient_fourier
+selector_status = analysis_evidence
+state_class = F
+quotient_order = 6
+stabilizer_order = 6
+character_order = 6
+amplitude_squared = 12
+threshold_fraction = [6, 5]
+lifted_threshold_fraction = [36, 5]
+recursive_edge_eligible = false
+```
+
+这一区分是统一选择器的类型安全边界：固定目标计数恒等式是状态内算术事实，商谱
+幅度是对偶事实，二者都不能被误写成跨状态容量或解可提升递降。
+
 ## 研究作用与边界
 
 这条定理把“固定层必须恰好是子群”的特殊假设改成稳定子约化。约化后的

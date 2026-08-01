@@ -149,6 +149,34 @@ certificate_context 中的分析对象，但它们默认不是新的算术状态
 marked_solution_set 和 normal_form。例如 \(t\equiv1\pmod4\) 的商表示不能在没有
 额外桥接时冒充要求 \(R\equiv3\pmod4\) 的 Type I 状态。
 
+### 2.2a 固定层商 Fourier 的 typed 对偶证书
+
+固定层稳定子约化产生的是 `certificate_context`，不是第六种递归边。其规范载荷为：
+
+```text
+certificate_type = fixed_layer_quotient_fourier
+selector_status = analysis_evidence
+state_class = F 或 G
+phase = DUAL_CERTIFICATE
+quotient_order = |H/P|
+stabilizer_order = |P|
+character_order = ord(chi_bar)
+amplitude_squared = |A_J(chi)|^2
+threshold_fraction = [|bar J| product_i(2 b_i + 1), |H/P|-1]
+lifted_threshold_fraction = [|J| product_i(2 b_i + 1), |H/P|-1]
+recursive_edge_eligible = false
+```
+
+固定目标的计数字段必须使用 `N_J(t)=N_bar(pi(t))`，而不能把 `|P|` 乘入单个目标；
+`|P|` 只在目标陪集求和时出现。Fourier 系数则在 `P^perp` 上按 `|P|` 放大、其外
+为零。由于 `amplitude_squared` 与阈值分数可以用整数/有理数保存，typed 回执不依赖
+浮点相位。规范选择键为
+`(|H/P|, ord(chi_bar), -|A_J(chi)|^2, phase(chi_bar))`。
+
+该对象只能说明状态内 F/G 对偶结构。若要升级为 `support_switch`、`q_adic_lift` 或
+`verified_edge`，仍必须重新完成第 4 节的 E1--E5 和全域解提升；稳定子商阶下降或
+Fourier 幅度超过阈值本身不能承担递归。
+
 ### 2.3 累积外部支撑状态
 
 linear_absorbed_support_v1 是一个已定义的线性图表子类型。字段名为兼容既有 artifact

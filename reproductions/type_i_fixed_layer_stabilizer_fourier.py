@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import cmath
 import json
 import math
 from pathlib import Path
@@ -14,6 +13,45 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = (
     ROOT / "reproductions" / "type-i-fixed-layer-stabilizer-fourier-results.json"
 )
+
+
+# For the focused receipt H/P is cyclic of order six.  Writing zeta_6 in the
+# integral basis {1, zeta_6}, with zeta_6^2 = zeta_6 - 1, keeps the Fourier
+# norm exact instead of relying on a floating-point phase comparison.
+SixRoot = tuple[int, int]
+
+
+def six_root_power(exponent: int) -> SixRoot:
+    return {
+        0: (1, 0),
+        1: (0, 1),
+        2: (-1, 1),
+        3: (-1, 0),
+        4: (0, -1),
+        5: (1, -1),
+    }[exponent % 6]
+
+
+def six_root_add(left: SixRoot, right: SixRoot) -> SixRoot:
+    return left[0] + right[0], left[1] + right[1]
+
+
+def six_root_multiply(left: SixRoot, right: SixRoot) -> SixRoot:
+    a, b = left
+    c, d = right
+    return a * c - b * d, a * d + b * c + b * d
+
+
+def six_root_norm_squared(value: SixRoot) -> int:
+    a, b = value
+    return a * a + a * b + b * b
+
+
+def six_root_sum(exponents: list[int]) -> SixRoot:
+    result: SixRoot = (0, 0)
+    for exponent in exponents:
+        result = six_root_add(result, six_root_power(exponent))
+    return result
 
 
 def factorization(value: int) -> dict[int, int]:
@@ -210,28 +248,31 @@ def verify_case() -> dict[str, object]:
     box_size = 2 * residual_exponent + 1
     amplitudes: list[dict[str, object]] = []
     for character_index in range(1, quotient_order):
-        def character(coordinate: int) -> complex:
-            return cmath.exp(
-                2j * math.pi * character_index * coordinate / quotient_order
-            )
-
-        fixed_sum = sum(character(coordinate) for coordinate in J_coordinates)
-        dirichlet_sum = sum(
-            character((q_coordinate * exponent) % quotient_order)
-            for exponent in range(-residual_exponent, residual_exponent + 1)
+        fixed_sum = six_root_sum(
+            [character_index * coordinate for coordinate in J_coordinates]
         )
-        amplitude = abs(fixed_sum * dirichlet_sum)
+        dirichlet_sum = six_root_sum(
+            [
+                character_index * q_coordinate * exponent
+                for exponent in range(-residual_exponent, residual_exponent + 1)
+            ]
+        )
+        fourier_value = six_root_multiply(fixed_sum, dirichlet_sum)
+        amplitude_squared = six_root_norm_squared(fourier_value)
         amplitudes.append(
             {
                 "character_index": character_index,
-                "amplitude": amplitude,
+                "algebraic_value_basis_1_zeta6": list(fourier_value),
+                "amplitude_squared": amplitude_squared,
+                "amplitude": math.sqrt(amplitude_squared),
             }
         )
     threshold_quotient = len(fixed_indices) * box_size / (quotient_order - 1)
-    max_amplitude = max(float(row["amplitude"]) for row in amplitudes)
+    max_amplitude_squared = max(int(row["amplitude_squared"]) for row in amplitudes)
+    max_amplitude = math.sqrt(max_amplitude_squared)
     if max_amplitude + 1e-9 < threshold_quotient:
         raise AssertionError("quotient Fourier lower bound failed")
-    if abs(max_amplitude * max_amplitude - 12.0) > 1e-8:
+    if max_amplitude_squared != 12:
         raise AssertionError("focused quotient Fourier amplitude changed")
     threshold_lifted = len(J) * box_size / (quotient_order - 1)
     if len(P) * max_amplitude + 1e-9 < threshold_lifted:
@@ -240,12 +281,18 @@ def verify_case() -> dict[str, object]:
         (
             row
             for row in amplitudes
-            if float(row["amplitude"]) >= max_amplitude - 1e-9
+            if int(row["amplitude_squared"]) == max_amplitude_squared
         ),
         key=lambda row: int(row["character_index"]),
     )
     if chosen["character_index"] != 1:
         raise AssertionError("canonical focused Fourier character changed")
+
+    character_order = quotient_order // math.gcd(
+        quotient_order, int(chosen["character_index"])
+    )
+    if character_order != quotient_order:
+        raise AssertionError("focused character is not primitive in the quotient")
 
     return {
         "prime": prime,
@@ -269,9 +316,31 @@ def verify_case() -> dict[str, object]:
         "quotient_fixed_coordinates": J_coordinates,
         "quotient_residual_coordinate": q_coordinate,
         "quotient_fourier_threshold": threshold_quotient,
+        "quotient_fourier_threshold_fraction": [
+            len(fixed_indices) * box_size,
+            quotient_order - 1,
+        ],
         "lifted_fourier_threshold": threshold_lifted,
+        "lifted_fourier_threshold_fraction": [len(J) * box_size, quotient_order - 1],
+        "maximum_quotient_fourier_amplitude_squared": max_amplitude_squared,
         "maximum_quotient_fourier_amplitude": max_amplitude,
         "selected_character": chosen,
+        "typed_certificate": {
+            "certificate_type": "fixed_layer_quotient_fourier",
+            "selector_status": "analysis_evidence",
+            "state_class": "F",
+            "phase": "DUAL_CERTIFICATE",
+            "quotient_order": quotient_order,
+            "stabilizer_order": len(P),
+            "character_order": character_order,
+            "amplitude_squared": max_amplitude_squared,
+            "threshold_fraction": [
+                len(fixed_indices) * box_size,
+                quotient_order - 1,
+            ],
+            "lifted_threshold_fraction": [len(J) * box_size, quotient_order - 1],
+            "recursive_edge_eligible": False,
+        },
         "classification": "fixed_layer_stabilizer_quotient_fourier_miss",
     }
 

@@ -3942,3 +3942,9 @@ python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
 
 这是一次新的聚焦验证，不重跑历史普查。脚本和结果文件的 SHA-256 应以提交前的
 `sha256sum` 输出为准；它们只支持上述状态内接口，不支持全称选择器。
+
+随后将该回执接入统一状态合同：其 `certificate_type` 为
+`fixed_layer_quotient_fourier`，`selector_status=analysis_evidence`，并明确
+`recursive_edge_eligible=false`。六次单位根采用整数基
+\(1,\zeta_6\)、\(\zeta_6^2=\zeta_6-1\) 计算，故选择角色的谱范数平方精确为
+\(12\)，而非由浮点振幅近似判断；商阈值和提升阈值分别保存为 \([6,5]\)、\([36,5]\)。

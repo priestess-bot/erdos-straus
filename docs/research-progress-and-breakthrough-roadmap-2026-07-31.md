@@ -89,6 +89,12 @@ state 或直接短证书。
    跨状态容量定理；下一步要把商角色阶、幅度和相位分子转成 overflow 的带符号载体
    需求。
 
+   该回执已按统一状态合同登记为
+   `certificate_type=fixed_layer_quotient_fourier`、`selector_status=analysis_evidence`、
+   `recursive_edge_eligible=false`；幅度以精确平方范数 `12` 保存，而不是用浮点值承担
+   证据。这样可以把表示、对偶和容量字段放进同一状态记录，同时保留“对偶证书不是
+   递归边”的类型边界。
+
 因此原六周计划应立即调整：
 
 - 原第 3 周“寻找裸 G source”已完成，转为研究可达 \(A>1\) 的 alternate-source 完备性；

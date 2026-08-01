@@ -76,7 +76,12 @@
       ]
     ],
     "lifted_fourier_threshold": 7.2,
+    "lifted_fourier_threshold_fraction": [
+      36,
+      5
+    ],
     "maximum_quotient_fourier_amplitude": 3.4641016151377544,
+    "maximum_quotient_fourier_amplitude_squared": 12,
     "prime": 193,
     "quotient_fixed_coordinates": [
       0,
@@ -87,6 +92,10 @@
       3
     ],
     "quotient_fourier_threshold": 1.2,
+    "quotient_fourier_threshold_fraction": [
+      6,
+      5
+    ],
     "quotient_generator": 5,
     "quotient_generator_order": 6,
     "quotient_order": 6,
@@ -101,11 +110,35 @@
       "prime": 5
     },
     "selected_character": {
+      "algebraic_value_basis_1_zeta6": [
+        4,
+        -2
+      ],
       "amplitude": 3.4641016151377544,
+      "amplitude_squared": 12,
       "character_index": 1
     },
     "target": 62,
-    "target_quotient_coordinate": 3
+    "target_quotient_coordinate": 3,
+    "typed_certificate": {
+      "amplitude_squared": 12,
+      "certificate_type": "fixed_layer_quotient_fourier",
+      "character_order": 6,
+      "lifted_threshold_fraction": [
+        36,
+        5
+      ],
+      "phase": "DUAL_CERTIFICATE",
+      "quotient_order": 6,
+      "recursive_edge_eligible": false,
+      "selector_status": "analysis_evidence",
+      "stabilizer_order": 6,
+      "state_class": "F",
+      "threshold_fraction": [
+        6,
+        5
+      ]
+    }
   },
   "schema_version": 1,
   "scope_note": "Focused algebraic receipt only; the quotient theorem is general, while this case does not establish a cross-state capacity contradiction."
