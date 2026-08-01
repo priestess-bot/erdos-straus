@@ -354,6 +354,91 @@ def lcm_dual_cycle_profile() -> dict[str, object]:
     }
 
 
+def reset_reentry_cycle_profile() -> dict[str, object]:
+    """Show why a carrier decrease is not a global rank after support re-entry."""
+    prime = 73
+    carriers = [38, 132, 330]
+    expected = [
+        {
+            "carrier": 38,
+            "reset_support": 12,
+            "reset_R": 23,
+            "reset_K": 420,
+            "anchor_Q": 11,
+            "anchor_beta": 2,
+            "next_carrier": 132,
+            "next_R": 311,
+            "next_K": 5676,
+        },
+        {
+            "carrier": 132,
+            "reset_support": 30,
+            "reset_R": 23,
+            "reset_K": 420,
+            "anchor_Q": 11,
+            "anchor_beta": 2,
+            "next_carrier": 330,
+            "next_R": 1103,
+            "next_K": 20130,
+        },
+        {
+            "carrier": 330,
+            "reset_support": 12,
+            "reset_R": 23,
+            "reset_K": 420,
+            "anchor_Q": 11,
+            "anchor_beta": 2,
+            "next_carrier": 132,
+            "next_R": 311,
+            "next_K": 5676,
+        },
+    ]
+    rows: list[dict[str, int]] = []
+    for carrier, expected_row in zip(carriers, expected):
+        receipt = overflow_receipt(prime, carrier)
+        dual = symmetric_dual(prime, carrier, receipt["d"])
+        smaller = [
+            chart
+            for key in ("d_chart", "r_chart")
+            for chart in [dual[key]]
+            if int(chart["R"]) < prime
+        ]
+        if len(smaller) != 1:
+            raise AssertionError("reset re-entry profile lost its unique small chart")
+        chart = smaller[0]
+        reset_support = int(chart["support"])
+        reset_R = int(chart["R"])
+        reset_K = int(chart["K"])
+        anchor_Q, anchor_beta = complete_bundle(reset_R - 1, reset_K)
+        next_carrier = lcm(reset_support, anchor_Q)
+        next_R, next_K = canonical_chart(prime, next_carrier)
+        row = {
+            "carrier": carrier,
+            "reset_support": reset_support,
+            "reset_R": reset_R,
+            "reset_K": reset_K,
+            "anchor_Q": anchor_Q,
+            "anchor_beta": anchor_beta,
+            "next_carrier": next_carrier,
+            "next_R": next_R,
+            "next_K": next_K,
+        }
+        if row != expected_row or next_R <= prime:
+            raise AssertionError("reset re-entry cycle changed")
+        rows.append(row)
+    if [row["next_carrier"] for row in rows] != [132, 330, 132]:
+        raise AssertionError("reset re-entry did not return to the 132/330 cycle")
+    return {
+        "prime": prime,
+        "rows": rows,
+        "classification": "reset_reentry_carrier_cycle",
+        "scope_note": (
+            "The reset keeps the smaller dual support as charged support and then permits "
+            "the ordinary anchor/lcm absorption step."
+        ),
+    }
+
+
 def bottom_reach(R: int, K: int, start: tuple[int, int]) -> list[tuple[int, int]]:
     pending = [tuple(sorted(start))]
     seen: set[tuple[int, int]] = set()
@@ -592,6 +677,7 @@ def build_results() -> dict[str, object]:
                 "small_chart_required_support": L,
             },
             "lcm_dual_cycle": lcm_dual_cycle_profile(),
+            "reset_reentry_cycle": reset_reentry_cycle_profile(),
             "reachable_accumulated_full_menu_conflict": (
                 reachable_accumulated_conflict_profile()
             ),
@@ -605,6 +691,7 @@ def build_results() -> dict[str, object]:
                 positive_window["support_preserving_candidates"]
             ),
             "accumulated_support_conflict_count": 5,
+            "reset_reentry_cycle_count": 1,
         },
     }
 

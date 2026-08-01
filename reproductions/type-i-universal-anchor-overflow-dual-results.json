@@ -406,6 +406,46 @@
         }
       }
     },
+    "reset_reentry_cycle": {
+      "classification": "reset_reentry_carrier_cycle",
+      "prime": 73,
+      "rows": [
+        {
+          "anchor_Q": 11,
+          "anchor_beta": 2,
+          "carrier": 38,
+          "next_K": 5676,
+          "next_R": 311,
+          "next_carrier": 132,
+          "reset_K": 420,
+          "reset_R": 23,
+          "reset_support": 12
+        },
+        {
+          "anchor_Q": 11,
+          "anchor_beta": 2,
+          "carrier": 132,
+          "next_K": 20130,
+          "next_R": 1103,
+          "next_carrier": 330,
+          "reset_K": 420,
+          "reset_R": 23,
+          "reset_support": 30
+        },
+        {
+          "anchor_Q": 11,
+          "anchor_beta": 2,
+          "carrier": 330,
+          "next_K": 5676,
+          "next_R": 311,
+          "next_carrier": 132,
+          "reset_K": 420,
+          "reset_R": 23,
+          "reset_support": 12
+        }
+      ],
+      "scope_note": "The reset keeps the smaller dual support as charged support and then permits the ordinary anchor/lcm absorption step."
+    },
     "root_edges": [
       {
         "Q": 34,
@@ -531,6 +571,7 @@
     "accumulated_fixed_n_positive_count": 2,
     "accumulated_support_conflict_count": 5,
     "capacity_anchor_cycle_count": 1,
+    "reset_reentry_cycle_count": 1,
     "root_dual_verified_edge_count": 2,
     "universal_p_source_count": 3
   },

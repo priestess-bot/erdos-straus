@@ -402,6 +402,38 @@ W_{T_t}=W_S=\operatorname{Sol}(p),
 要把该候选升级为统一递归边，还需定义不可逆 phase 转换，并证明 reset 后允许的
 marked/overflow 边不会重新回到较大的 \(M\)；这正是当前剩余的良基调度问题。
 
+### 4.2 允许普通 anchor 重入会产生真实载体环
+
+上面的 phase 警告可以由一个完全算术的回执具体化。对 \(p=73\)，若从 overflow
+\(M=38\) 取小图表 \(t=12\)，则
+
+\[
+R_{12}=23,\qquad K_{12}=420.
+\]
+
+若 RESET 把 \(t\) 重新记作 charged support，并允许随后执行普通 anchor/lcm 吸收，
+\(R_{12}-1=22\) 的 complete bundle 为 \(Q=11,\beta=2\)，于是
+
+\[
+\begin{array}{c|c|c|c|c}
+\text{当前载体 }M&\text{RESET 载体 }t& R_t&Q&\operatorname{lcm}(t,Q)\\
+\hline
+38&12&23&11&132\\
+132&30&23&11&330\\
+330&12&23&11&132
+\end{array}
+\]
+
+对应的新图表分别为
+\[
+(R_{132},K_{132})=(311,5676),\qquad
+(R_{330},K_{330})=(1103,20130),
+\]
+二者都再次 overflow。因而这是 `RESET -> anchor/lcm -> RESET` 的实际二环；它不否定
+小对偶载体的严格下降 (36)，而是证明“每个 RESET 局部降 \(M\)”不能单独提供全局
+良基势。统一选择器若采用这一重入方式，必须禁止普通 ABSORB 回边，或在 RESET 之上
+引入一个更外层的不可重置 rank。
+
 ## 5. 累积支撑层的严格边界
 
 ### 5.1 fixed-\(n\) 窗口可以为空
@@ -584,8 +616,8 @@ python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
 `reproductions/type-i-universal-anchor-overflow-dual-results.json`。对应 SHA-256 为
 
 ~~~text
-d38bf4111aad67485e1733b8f506528b24eaa84c827ea7fb3159c272897459a4  reproductions/type_i_universal_anchor_overflow_dual.py
-934349e80e73df68d0b1aa92df7f7a149e97bd4143ec00c19aba58ca3510f173  reproductions/type-i-universal-anchor-overflow-dual-results.json
+48afe06bed5fa05a8c90b3afcd9f9fc162bb64aca240a171424266283d82f195  reproductions/type_i_universal_anchor_overflow_dual.py
+74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a  reproductions/type-i-universal-anchor-overflow-dual-results.json
 ~~~
 
 脚本只验证本卡中的代数恒等式、少量正反 receipt 和 (44)--(46) 的局部 Reach；不重跑

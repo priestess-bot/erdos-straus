@@ -333,8 +333,8 @@ python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
 `reproductions/type-i-universal-anchor-overflow-dual-results.json`。对应 SHA-256 为
 
 ~~~text
-d38bf4111aad67485e1733b8f506528b24eaa84c827ea7fb3159c272897459a4  reproductions/type_i_universal_anchor_overflow_dual.py
-934349e80e73df68d0b1aa92df7f7a149e97bd4143ec00c19aba58ca3510f173  reproductions/type-i-universal-anchor-overflow-dual-results.json
+48afe06bed5fa05a8c90b3afcd9f9fc162bb64aca240a171424266283d82f195  reproductions/type_i_universal_anchor_overflow_dual.py
+74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a  reproductions/type-i-universal-anchor-overflow-dual-results.json
 ~~~
 
 脚本只验证通用源公式、容量剥离、一个三周期和少量 overflow receipt；不重跑历史普查。

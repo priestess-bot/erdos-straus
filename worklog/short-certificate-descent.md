@@ -3867,6 +3867,13 @@ overflow 还至少有一个 \(R<p\) 的对称 \(d/r\) 图表。
 `overflow_carrier_reset` 成为严格的算术载体下降候选，但仍需证明不可逆 phase 合同，
 避免 reset 后的 marked 边重新增加 carrier 并形成全局环。
 
+本轮把“全局环”具体化为 \(p=73\) 的 RESET 重入回执：\(M=38\) 的小图表是
+\(t=12\)、\(R_t=23\)、\(K_t=420\)，其 anchor bundle \(Q=11\) 在重新收费 \(t\) 后
+给出 \(M'=\operatorname{lcm}(12,11)=132\)；随后 \(M=132\) reset 到 \(t=30\)，同一
+\(Q=11\) 给出 \(M'=330\)，而 \(330\) 又 reset 到 \(t=12\) 并回到 \(132\)。因此
+局部 \(t<M\) 不能作为全局 rank，普通 anchor/lcm 必须在 RESET 后禁止，或由更外层
+不可重置秩控制。
+
 新增主张：
 
 - [通用 \(p\) 源、容量锚点轨道与周期对偶证书](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)；
@@ -3879,5 +3886,5 @@ python3 reproductions/type_i_universal_anchor_overflow_dual.py --verify
 ~~~
 
 脚本和结果 SHA-256 分别为
-\(d38bf4111aad67485e1733b8f506528b24eaa84c827ea7fb3159c272897459a4\) 和
-\(934349e80e73df68d0b1aa92df7f7a149e97bd4143ec00c19aba58ca3510f173\)。
+\(48afe06bed5fa05a8c90b3afcd9f9fc162bb64aca240a171424266283d82f195\) 和
+\(74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a\)。

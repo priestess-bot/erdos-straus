@@ -57,6 +57,12 @@
 `overflow_carrier_reset` 秩的候选，但没有自动保留累积 support，也没有自动保证
 reset 后的 phase 不重新回到较大的 carrier。
 
+这一 phase 风险已有精确回执：\(p=73\) 上的 \(M=38\) overflow 取 \(t=12\)，其
+\(R_t=23,K_t=420\) 的 anchor bundle 为 \(Q=11\)。若把 \(t\) 作为新的 charged
+support，普通 `lcm` 重入给出 \(38\to132\to330\to132\)，其中 \(M=132\) 的 reset
+载体为 \(30\)，而 \(M=330\) 的 reset 载体回到 \(12\)。因此 \(t<M\) 只证明局部
+算术下降，不能证明全局良基；RESET 必须封闭在不可重入 phase，或由独立外层秩支付。
+
 新的精确瓶颈是：
 
 \[

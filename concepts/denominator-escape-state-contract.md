@@ -582,6 +582,13 @@ verified_edge；每条实际递归边仍须单独通过 E1--E4。完整证明、
 再增加一个更外层 rank 或证明一个封闭的 phase 组合势；否则只能保留为
 `candidate_transition`，不能承担统一递归。
 
+这一限制有精确回执：在 \(p=73\) 上，\(M=38\) 的 reset 载体 \(t=12\) 经
+\(Q=11\) 的 anchor/lcm 重入到 \(M=132\)；随后 \(M=132\) 经 \(t=30\) 重入到
+\(M=330\)，而 \(M=330\) 又回到 \(M=132\)。因此任何允许普通 ABSORB 回边的 RESET
+合同都不能把 \(M\) 作为全局秩。该路径已登记为
+`reset_reentry_carrier_cycle`，RESET 要么封闭在终端/严格外层降秩内，要么必须引入
+不可重置的额外状态分量。
+
 ### 6.2 已验证的 absorbed-support 势
 
 对固定核心素数 \(p_0\) 的 linear_absorbed_support_v1 子程序，定义
