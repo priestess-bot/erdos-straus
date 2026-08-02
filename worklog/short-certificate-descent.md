@@ -16,6 +16,14 @@ profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
 
 主张卡见[固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md)。
 
+同一 profile 现在还保存角色阶的 q-primary 投影。角色阶为 `d` 时，只有
+`q^h || d` 的 q 才能产生非平凡投影 `(d/q^h)u mod q^h`；q 不整除 d 的投影明确
+记为平凡边界。C6 聚焦角色在 q=3 上得到模 3 相位 2，q=5 被排除；C18 伴随角色
+在 q=3 上得到模 9 相位 4。该结果只建立有限群同态层，不把投影自动解释为真实
+清分中心或跨状态容量。
+
+主张卡见[固定层 Fourier 角色阶的 q-primary 精确投影](../claims/type-I-fixed-layer-fourier-q-primary-projection.md)。
+
 ## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
 
 将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。

@@ -329,6 +329,11 @@ def verify_case() -> dict[str, object]:
         raise AssertionError("generic quotient target count changed")
     if not generic_spectrum["missing_target_fourier_witness_exists"]:
         raise AssertionError("generic missing-target Fourier witness disappeared")
+    first_phase = generic_spectrum["character_profile"][0]
+    if first_phase["q_primary_projections"].get("3") != [2]:
+        raise AssertionError("focused q-primary Fourier projection changed")
+    if "5" in first_phase["q_primary_projections"]:
+        raise AssertionError("q not dividing the character order was projected")
 
     return {
         "prime": prime,
@@ -414,6 +419,8 @@ def verify_companion_case() -> dict[str, object]:
         raise AssertionError("companion target unexpectedly hit")
     if not profile["missing_target_fourier_witness_exists"]:
         raise AssertionError("companion Fourier witness disappeared")
+    if profile["character_profile"][0]["q_primary_projections"].get("3") != [4]:
+        raise AssertionError("companion q-primary Fourier projection changed")
     return {
         "prime": prime,
         "R": modulus,

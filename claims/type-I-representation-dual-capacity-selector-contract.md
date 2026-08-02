@@ -19,6 +19,7 @@ depends_on:
   - type-I-overflow-phase-reset-cycle-boundary
   - type-I-fixed-layer-cyclic-fourier-profile
   - type-I-fixed-layer-fourier-qadic-phase-bridge
+  - type-I-fixed-layer-fourier-q-primary-projection
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -144,6 +145,9 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 素数幂块重新生成该 profile 并逐字段比对；profile 缺失或过期时拒绝状态回执。该字段
 只加强状态内 Fourier 证据，仍不改变 `carrier_mapping_status=unproved`、
 `selector_status=analysis_evidence` 或 `recursive_edge_eligible=false`。
+
+profile 同时保存角色阶的 q-primary 投影规则：只有 q 整除角色阶时才有非平凡投影，
+否则群同态边界强制其为平凡。该投影仍需额外整数坐标识别才能进入真实清分相位胞。
 
 对冻结的 overflow fixture，直接分支另行重建 \(p+4\) 的 Type II 证书。12 条全部为
 `terminal_leaf`；唯一 \(d=1\) 的 `accumulated_d_one_boundary` 取

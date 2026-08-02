@@ -105,6 +105,73 @@ def _modular_power(value: int, exponent: int, modulus: int) -> int:
     return pow(pow(value, -1, modulus), -exponent, modulus)
 
 
+def _factorization(value: int) -> list[tuple[int, int]]:
+    factors: list[tuple[int, int]] = []
+    divisor = 2
+    while divisor * divisor <= value:
+        exponent = 0
+        while value % divisor == 0:
+            value //= divisor
+            exponent += 1
+        if exponent:
+            factors.append((divisor, exponent))
+        divisor = 3 if divisor == 2 else divisor + 2
+    if value > 1:
+        factors.append((value, 1))
+    return factors
+
+
+def q_primary_phase_projection(
+    *,
+    character_index: int,
+    quotient_order: int,
+    coordinate: int,
+    prime: int,
+) -> dict[str, int | bool | str]:
+    """Project a character phase to the q-primary part of its order.
+
+    If d is the character order and q**h || d, a reduced phase numerator u in
+    Z/dZ is sent to (d/q**h) * u in Z/q**hZ.  This is a well-defined additive
+    homomorphism.  When q does not divide d, every such homomorphism is
+    trivial, which is recorded rather than silently treated as a carrier.
+    """
+    if prime <= 1 or any(prime % divisor == 0 for divisor in range(2, math.isqrt(prime) + 1)):
+        raise AssertionError("q-primary projection requires a prime")
+    if quotient_order <= 0 or not 0 <= character_index < quotient_order:
+        raise AssertionError("invalid character index")
+    gcd_index = math.gcd(quotient_order, character_index)
+    character_order = quotient_order // gcd_index
+    if character_order == 1:
+        raise AssertionError("the trivial character has no nontrivial phase projection")
+    q_exponent = next(
+        (exponent for factor, exponent in _factorization(character_order) if factor == prime),
+        0,
+    )
+    if q_exponent == 0:
+        return {
+            "available": False,
+            "reason": "q_not_dividing_character_order",
+            "character_order": character_order,
+            "q": prime,
+            "q_exponent": 0,
+            "reduced_phase_numerator": 0,
+            "projected_phase_numerator": 0,
+        }
+    reduced_numerator = (character_index // gcd_index * coordinate) % character_order
+    q_modulus = prime**q_exponent
+    projected_numerator = (character_order // q_modulus * reduced_numerator) % q_modulus
+    return {
+        "available": True,
+        "reason": "q_primary_character_order_projection",
+        "character_order": character_order,
+        "q": prime,
+        "q_exponent": q_exponent,
+        "q_modulus": q_modulus,
+        "reduced_phase_numerator": reduced_numerator,
+        "projected_phase_numerator": projected_numerator,
+    }
+
+
 def _residual_values(
     residual_blocks: Sequence[tuple[int, int]], modulus: int
 ) -> list[int]:
@@ -252,14 +319,38 @@ def cyclic_quotient_fourier_profile(
     residual_coordinates = [coordinates[index[prime % modulus]] for prime, _ in residual_blocks]
     for character_index in range(1, quotient_order):
         character_order = quotient_order // math.gcd(quotient_order, character_index)
+        reduced_index = character_index // math.gcd(quotient_order, character_index)
+        reduced_phase_numerators = [
+            (reduced_index * coordinate) % character_order
+            for coordinate in residual_coordinates
+        ]
+        q_primary_projections = {
+            str(prime): [
+                int(
+                    q_primary_phase_projection(
+                        character_index=character_index,
+                        quotient_order=quotient_order,
+                        coordinate=coordinate,
+                        prime=prime,
+                    )["projected_phase_numerator"]
+                )
+                for coordinate in residual_coordinates
+            ]
+            for prime, _ in _factorization(character_order)
+        }
         phase_signatures.append(
             {
                 "character_index": character_index,
                 "character_order": character_order,
+                "reduced_phase_numerators": reduced_phase_numerators,
                 "residual_phase_numerators": [
                     (character_index * coordinate) % quotient_order
                     for coordinate in residual_coordinates
                 ],
+                "q_primary_prime_divisors": sorted(
+                    int(prime) for prime, _ in _factorization(character_order)
+                ),
+                "q_primary_projections": q_primary_projections,
             }
         )
 
@@ -300,6 +391,10 @@ def cyclic_quotient_fourier_profile(
         },
         "canonical_profile_policy": (
             "full_character_index_order; algebraic amplitude ordering is deferred"
+        ),
+        "q_primary_projection_rule": (
+            "for character order d, map reduced phase u in Z/dZ to "
+            "(d/q**h)*u mod q**h when q**h || d; q not dividing d is trivial"
         ),
         "qadic_phase_bridge": {
             "status": "conditional_contract_only",

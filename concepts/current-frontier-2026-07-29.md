@@ -3160,6 +3160,13 @@ $(p,R,K)=(97,27,655)$ 作为不同商阶的交叉核验。
 
 主张卡见[固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md)。
 
+进一步增加了角色阶的 q-primary 投影：若角色阶为 `d` 且 `q^h || d`，约化相位
+`u in Z/dZ` 映到 `(d/q^h)*u mod q^h`；若 q 不整除 d，则任何到 q-primary
+加法群的群同态都是平凡的。该字段可作为相位树输入，但仍需显式整数坐标映射才能
+识别为清分中心，不能替代 `carrier_mapping_status=unproved`。
+
+主张卡见[固定层 Fourier 角色阶的 q-primary 精确投影](../claims/type-I-fixed-layer-fourier-q-primary-projection.md)。
+
 ## 2026-08-03 joined-support 外层秩 RESET
 
 为支付 RESET 的全局 E5，统一 selector 现在要求旧 charged support 不得被小载体直接

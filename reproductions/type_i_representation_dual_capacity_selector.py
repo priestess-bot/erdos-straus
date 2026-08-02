@@ -251,6 +251,7 @@ def state_receipt(receipt: dict[str, object], source_name: str) -> dict[str, obj
                 "threshold_amplitude_squared_fraction"
             ],
             "canonical_profile_policy": profile["canonical_profile_policy"],
+            "q_primary_projection_rule": profile["q_primary_projection_rule"],
             "qadic_phase_bridge": profile["qadic_phase_bridge"],
             "carrier_mapping_status": profile["carrier_mapping_status"],
         }

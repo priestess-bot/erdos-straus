@@ -6123,7 +6123,7 @@
     "overflow_qadic_phase_capacity"
   ],
   "source_sha256": {
-    "type-i-fixed-layer-stabilizer-fourier-results.json": "0c0bbe8693e273e7efc533973ef4fa2e20c752536159320604ee22e6dd9f3a1d",
+    "type-i-fixed-layer-stabilizer-fourier-results.json": "e00071c2d4496a0ceda3c3cb9810de7adb7875af0eeb828c75ffeab14a37c6d4",
     "type-i-overflow-defect-unit-phase-capacity-results.json": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c",
     "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
     "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d",
@@ -6404,6 +6404,7 @@
           "canonical_profile_policy": "full_character_index_order; algebraic amplitude ordering is deferred",
           "carrier_mapping_status": "unproved",
           "parseval_nontrivial_energy": 24,
+          "q_primary_projection_rule": "for character order d, map reduced phase u in Z/dZ to (d/q**h)*u mod q**h when q**h || d; q not dividing d is trivial",
           "qadic_phase_bridge": {
             "carrier_mapping_status": "unproved",
             "phase_source": "character_profile",
@@ -6545,6 +6546,21 @@
             {
               "character_index": 1,
               "character_order": 6,
+              "q_primary_prime_divisors": [
+                2,
+                3
+              ],
+              "q_primary_projections": {
+                "2": [
+                  1
+                ],
+                "3": [
+                  2
+                ]
+              },
+              "reduced_phase_numerators": [
+                1
+              ],
               "residual_phase_numerators": [
                 1
               ]
@@ -6552,6 +6568,17 @@
             {
               "character_index": 2,
               "character_order": 3,
+              "q_primary_prime_divisors": [
+                3
+              ],
+              "q_primary_projections": {
+                "3": [
+                  1
+                ]
+              },
+              "reduced_phase_numerators": [
+                1
+              ],
               "residual_phase_numerators": [
                 2
               ]
@@ -6559,6 +6586,17 @@
             {
               "character_index": 3,
               "character_order": 2,
+              "q_primary_prime_divisors": [
+                2
+              ],
+              "q_primary_projections": {
+                "2": [
+                  1
+                ]
+              },
+              "reduced_phase_numerators": [
+                1
+              ],
               "residual_phase_numerators": [
                 3
               ]
@@ -6566,6 +6604,17 @@
             {
               "character_index": 4,
               "character_order": 3,
+              "q_primary_prime_divisors": [
+                3
+              ],
+              "q_primary_projections": {
+                "3": [
+                  2
+                ]
+              },
+              "reduced_phase_numerators": [
+                2
+              ],
               "residual_phase_numerators": [
                 4
               ]
@@ -6573,6 +6622,21 @@
             {
               "character_index": 5,
               "character_order": 6,
+              "q_primary_prime_divisors": [
+                2,
+                3
+              ],
+              "q_primary_projections": {
+                "2": [
+                  1
+                ],
+                "3": [
+                  1
+                ]
+              },
+              "reduced_phase_numerators": [
+                5
+              ],
               "residual_phase_numerators": [
                 5
               ]
@@ -6602,6 +6666,7 @@
           "group_order": 36,
           "missing_target_fourier_witness_exists": true,
           "parseval_nontrivial_energy": 24,
+          "q_primary_projection_rule": "for character order d, map reduced phase u in Z/dZ to (d/q**h)*u mod q**h when q**h || d; q not dividing d is trivial",
           "qadic_phase_bridge": {
             "carrier_mapping_status": "unproved",
             "phase_source": "character_profile",
