@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 322 |
+| 数学状态 | `established` | 324 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 154 |
+| 证明来源 | `repository_derivation` | 156 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 284 |
+| 审阅状态 | `internal_review` | 286 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -315,6 +315,8 @@
 | [Type I 有限指数障碍的五十层中心化盒边界](../claims/type-I-finite-exponent-dilation-boundary-297640249.md) (`type-I-finite-exponent-dilation-boundary-297640249`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [十六桥模板的CRT无穷源侧逃逸](../claims/type-I-fixed-bridge-menu-crt-escape.md) (`type-I-fixed-bridge-menu-crt-escape`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [每个自然缺口都有无穷Type I/II双终端重叠射线](../claims/type-I-fixed-gap-b1-pminusone-terminal-rays.md) (`type-I-fixed-gap-b1-pminusone-terminal-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md) (`type-I-fixed-layer-cyclic-fourier-profile`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [固定层 Fourier 相位到 q 进容量的条件桥](../claims/type-I-fixed-layer-fourier-qadic-phase-bridge.md) (`type-I-fixed-layer-fourier-qadic-phase-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定层稳定子缺陷约化](../claims/type-I-fixed-layer-stabilizer-defect-reduction.md) (`type-I-fixed-layer-stabilizer-defect-reduction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-08-01 |
 | [固定 p 减一射线将六亿普通尾压力集压缩至二十五点](../claims/type-I-fixed-pminusone-ray-pressure-profile-600m.md) (`type-I-fixed-pminusone-ray-pressure-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [固定 p 减一射线残余的三层自适应解析](../claims/type-I-fixed-ray-residual-resolution-600m.md) (`type-I-fixed-ray-residual-resolution-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |

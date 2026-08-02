@@ -17,6 +17,8 @@ depends_on:
   - type-I-overflow-fixed-n-gap-dual-obstruction
   - type-I-overflow-outer-rank-reset
   - type-I-overflow-phase-reset-cycle-boundary
+  - type-I-fixed-layer-cyclic-fourier-profile
+  - type-I-fixed-layer-fourier-qadic-phase-bridge
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -136,6 +138,12 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 | 目标纤维近邻 | 1 | `analysis_evidence`，非空近邻见证，偶前驱提升未证 |
 | 广义 \(2^j\) | 1 | `analysis_evidence`，来源为命中状态档案，偶前驱提升未证 |
 | 固定层商 Fourier | 1 | `analysis_evidence`，空纤维分离角色，载体映射未证 |
+
+固定层回执另外携带 `generic_spectrum_profile`：在循环商 (C_m) 上保存商表示计数向量、
+整数群环自相关、Parseval 非平凡能量和逐角色相位签名。选择器用原始 `H`、`J` 和残余
+素数幂块重新生成该 profile 并逐字段比对；profile 缺失或过期时拒绝状态回执。该字段
+只加强状态内 Fourier 证据，仍不改变 `carrier_mapping_status=unproved`、
+`selector_status=analysis_evidence` 或 `recursive_edge_eligible=false`。
 
 对冻结的 overflow fixture，直接分支另行重建 \(p+4\) 的 Type II 证书。12 条全部为
 `terminal_leaf`；唯一 \(d=1\) 的 `accumulated_d_one_boundary` 取

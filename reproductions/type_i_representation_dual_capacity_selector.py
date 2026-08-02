@@ -15,6 +15,11 @@ import json
 from math import lcm
 from pathlib import Path
 
+try:
+    from fixed_layer_quotient_fourier import cyclic_quotient_fourier_profile
+except ModuleNotFoundError:
+    from reproductions.fixed_layer_quotient_fourier import cyclic_quotient_fourier_profile
+
 
 ROOT = Path(__file__).resolve().parents[1]
 UNIFIED_INPUT = ROOT / "reproductions" / "type-i-unified-terminal-selector-results.json"
@@ -149,6 +154,23 @@ def state_receipt(receipt: dict[str, object], source_name: str) -> dict[str, obj
     state_id = "state:" + canonical_hash(state_descriptor)
 
     if certificate_type == "fixed_layer_quotient_fourier":
+        generic_profile = receipt.get("generic_spectrum_profile")
+        if not isinstance(generic_profile, dict):
+            raise AssertionError("fixed-layer receipt lacks generic cyclic spectrum")
+        residual_block = receipt.get("residual_block")
+        if not isinstance(residual_block, dict):
+            raise AssertionError("fixed-layer receipt lacks residual block")
+        expected_profile = cyclic_quotient_fourier_profile(
+            modulus=modulus,
+            group={int(value) for value in receipt["H"]},
+            fixed_layer={int(value) for value in receipt["J"]},
+            residual_blocks=[
+                (int(residual_block["prime"]), int(residual_block["exponent"]))
+            ],
+            target=int(receipt["target"]),
+        )
+        if expected_profile != generic_profile:
+            raise AssertionError("stored generic cyclic spectrum is stale")
         target_fiber = {
             "status": "empty",
             "separating_character": {
@@ -160,7 +182,7 @@ def state_receipt(receipt: dict[str, object], source_name: str) -> dict[str, obj
         marked_set = {"status": "empty", "source": "fixed_layer_quotient"}
         signed_defect = {"status": "not_applicable"}
         branch_phase = "DUAL_CERTIFICATE"
-        proof_boundary = "state_internal_dual_only"
+        proof_boundary = "state_internal_exact_fourier_only"
     elif certificate_type == "target_fiber_neighbor_terminal":
         target_fiber = {
             "status": "nonempty",
@@ -217,6 +239,21 @@ def state_receipt(receipt: dict[str, object], source_name: str) -> dict[str, obj
         "proof_boundary": proof_boundary,
         "source_receipt": receipt,
     }
+    if certificate_type == "fixed_layer_quotient_fourier":
+        profile = receipt["generic_spectrum_profile"]
+        result["certificate_context"]["cyclic_spectrum_profile"] = {
+            "quotient_order": profile["quotient_order"],
+            "target_count": profile["target_count"],
+            "total_representation_count": profile["total_representation_count"],
+            "parseval_nontrivial_energy": profile["parseval_nontrivial_energy"],
+            "threshold_amplitude_fraction": profile["threshold_amplitude_fraction"],
+            "threshold_amplitude_squared_fraction": profile[
+                "threshold_amplitude_squared_fraction"
+            ],
+            "canonical_profile_policy": profile["canonical_profile_policy"],
+            "qadic_phase_bridge": profile["qadic_phase_bridge"],
+            "carrier_mapping_status": profile["carrier_mapping_status"],
+        }
     check_status_boundary(result)
     return result
 
@@ -1484,6 +1521,13 @@ def build_results() -> dict[str, object]:
         if normalized.get("certificate_type") == "fixed_layer_quotient_fourier":
             for key in ("prime", "R", "K"):
                 normalized[key] = fourier_receipt[key]
+            normalized["generic_spectrum_profile"] = fourier_receipt[
+                "generic_spectrum_profile"
+            ]
+            normalized["H"] = fourier_receipt["H"]
+            normalized["J"] = fourier_receipt["J"]
+            normalized["residual_block"] = fourier_receipt["residual_block"]
+            normalized["target"] = fourier_receipt["target"]
         normalized_receipts.append(normalized)
     states = [state_receipt(receipt, UNIFIED_INPUT.name) for receipt in normalized_receipts]
     verified_edge = verified_fixed_n_edge(overflow)

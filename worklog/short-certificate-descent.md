@@ -2,6 +2,20 @@
 
 状态：研究中；截至 2026-07-31 未得到全称存在性或解可提升的算术递降构造。
 
+## 2026-08-03 固定层循环商 Fourier profile
+
+固定层商 Fourier 不再只依赖 `H/P = C6` 的六次单位根脚本。新增
+`reproductions/fixed_layer_quotient_fourier.py`，对循环商 `C_m` 精确保存商表示向量、
+循环自相关、Parseval 非平凡能量以及逐角色相位分子。目标缺失只推出存在性阈值
+`T/(m-1)`；通用 profile 不用浮点幅度排序，也不声称已经选出最大角色。
+
+原 `(193,63,3040)` 聚焦状态与新增 `(97,27,655)` 的 `C18` 伴随状态均通过
+原群/商群计数恒等式和目标缺失核验。统一选择器会按原始 `H,J` 和残余块重生成
+profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
+`carrier_mapping_status=unproved`，不具备递归资格。
+
+主张卡见[固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md)。
+
 ## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
 
 将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。

@@ -9,6 +9,11 @@ import math
 from fractions import Fraction
 from pathlib import Path
 
+try:
+    from fixed_layer_quotient_fourier import cyclic_quotient_fourier_profile
+except ModuleNotFoundError:
+    from reproductions.fixed_layer_quotient_fourier import cyclic_quotient_fourier_profile
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = (
@@ -311,6 +316,20 @@ def verify_case() -> dict[str, object]:
         character_order * character_order,
     )
 
+    generic_spectrum = cyclic_quotient_fourier_profile(
+        modulus=modulus,
+        group=H,
+        fixed_layer=J,
+        residual_blocks=[(residual_prime, residual_exponent)],
+        target=target,
+    )
+    if generic_spectrum["quotient_order"] != quotient_order:
+        raise AssertionError("generic quotient profile order changed")
+    if generic_spectrum["target_count"] != raw[target]:
+        raise AssertionError("generic quotient target count changed")
+    if not generic_spectrum["missing_target_fourier_witness_exists"]:
+        raise AssertionError("generic missing-target Fourier witness disappeared")
+
     return {
         "prime": prime,
         "R": modulus,
@@ -349,6 +368,7 @@ def verify_case() -> dict[str, object]:
         ],
         "carrier_mapping_status": "unproved",
         "selected_character": chosen,
+        "generic_spectrum_profile": generic_spectrum,
         "typed_certificate": {
             "certificate_type": "fixed_layer_quotient_fourier",
             "selector_status": "analysis_evidence",
@@ -374,6 +394,36 @@ def verify_case() -> dict[str, object]:
     }
 
 
+def verify_companion_case() -> dict[str, object]:
+    """Exercise the generic profile on a cyclic quotient of a different order."""
+    prime, modulus, K = 97, 27, 655
+    if (prime * modulus + 1) // 4 != K:
+        raise AssertionError("companion arithmetic case changed")
+    group = generated_subgroup({5, 131}, modulus)
+    fixed_layer = {1, 5}
+    profile = cyclic_quotient_fourier_profile(
+        modulus=modulus,
+        group=group,
+        fixed_layer=fixed_layer,
+        residual_blocks=[(131, 1)],
+        target=-1,
+    )
+    if profile["quotient_order"] != 18 or profile["stabilizer_order"] != 1:
+        raise AssertionError("companion quotient shape changed")
+    if profile["target_count"] != 0:
+        raise AssertionError("companion target unexpectedly hit")
+    if not profile["missing_target_fourier_witness_exists"]:
+        raise AssertionError("companion Fourier witness disappeared")
+    return {
+        "prime": prime,
+        "R": modulus,
+        "K": K,
+        "fixed_layer": sorted(fixed_layer),
+        "classification": "cyclic_quotient_fourier_profile_companion",
+        "profile": profile,
+    }
+
+
 def build_results() -> dict[str, object]:
     return {
         "schema_version": 1,
@@ -386,6 +436,7 @@ def build_results() -> dict[str, object]:
             "case does not establish a cross-state capacity contradiction."
         ),
         "receipt": verify_case(),
+        "generic_companion": verify_companion_case(),
     }
 
 

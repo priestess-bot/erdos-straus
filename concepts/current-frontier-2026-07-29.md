@@ -3136,6 +3136,30 @@ fixture 中；因此“dual_support_preserving 为 0”只是按固定-\(n\) 优
 必须禁止该 continuation、把它封闭到已验证降 R 分支，或引入不可重置外层秩。详见
 [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md)。
 
+## 2026-08-03 固定层循环商 Fourier profile
+
+固定层 Fourier 现已从 H/P = C_6 的单一六次单位根样例提升为可重放的循环商
+profile。新模块 `reproductions/fixed_layer_quotient_fourier.py` 对任意循环商
+$C_m$ 重算：
+
+- 原群与商群的固定目标表示数恒等式；
+- 商表示计数向量 $c_t$；
+- 整数群环 `Z[C_m]` 中的循环自相关 $C_d$；
+- Parseval 非平凡能量 $m * sum(c_t^2) - T^2$；
+- 每个角色阶和残余块的精确相位分子。
+
+目标缺失仍只推出“存在某个非平凡角色满足 $|A_k| >= T/(m-1)$”；通用
+profile 不用浮点数排序代数幅度，也不假设已选出最大角色。原 $C_6$ 回执继续由六次
+单位根整基给出精确 `amplitude_squared=12`，并新增 $C_{18}$ 伴随状态
+$(p,R,K)=(97,27,655)$ 作为不同商阶的交叉核验。
+
+统一选择器现在重新生成并比对该 profile；缺失或过期时拒绝回执。它仍保存
+`carrier_mapping_status=unproved`、`selector_status=analysis_evidence` 和
+`recursive_edge_eligible=false`，所以这一步补强的是“表示—对偶”证书的通用性，
+没有把状态内 Fourier 事实提升为跨状态 $q$-进容量或递归递降。
+
+主张卡见[固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md)。
+
 ## 2026-08-03 joined-support 外层秩 RESET
 
 为支付 RESET 的全局 E5，统一 selector 现在要求旧 charged support 不得被小载体直接
