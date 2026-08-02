@@ -3053,3 +3053,22 @@ q\mid r\Longrightarrow v_q(k+1)=0.
 ```bash
 python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 ```
+
+## overflow 缺陷单位的相位容量边界（2026-08-02）
+
+对每个未支付高度 \(h>0\)，令通道标签为 \(\ell\)、\(b=v_q(\ell)\)，并定义
+
+\[
+\eta=(\ell/q^b)\pmod {q^h}.
+\]
+
+\(\eta\) 是精确的 q-进单位，但只有当不同状态的单位满足
+\[
+\eta_i\equiv\eta_j\pmod {q^{\min(h_i,h_j)}}
+\]
+时，才可以把它们送入已有相位树容量合同。新增审计读取 17 条非零阻碍幂记录，得到
+5 个 q 分组、13 个条件性相位胞、5 对兼容记录和 0 个容量超载胞；因此原始双对偶
+阻碍不会自动形成共享相位资源。这个负边界不否定真实 alternate/source-switch，
+但要求后者提供额外的同余映射、重复度界和标签区间，或者直接把缺陷转为 Type I/II
+终端或合法下降。主张卡见
+[overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md)。

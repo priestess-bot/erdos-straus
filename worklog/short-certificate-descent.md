@@ -4207,3 +4207,14 @@ python3 reproductions/type_i_overflow_support_preserving_dual_criterion.py --ver
 阻碍乘积。该结果只是表示--对偶--容量链的局部 typed 输入；没有声称跨状态标签兼容、
 容量超载、marked lift 或递归边。主张卡见
 `claims/type-I-overflow-qadic-obstruction-transfer.md`。
+
+同一账本的下一层审计把每个非零阻碍高度 \(h\) 的余数标签 \(\ell\) 规范化为
+\[
+\eta=(\ell/q^{v_q(\ell)})\pmod {q^h}.
+\]
+\(\eta\) 是 q-进单位，但只有额外证明不同状态的 \(\eta\) 满足嵌套同余时，才可进入
+phase-tree capacity。冻结的 17 条阻碍幂记录形成 5 个 q 分组、13 个条件性相位胞，
+5 对兼容记录和 0 个容量超载胞；因此“原始双对偶阻碍自动共享相位”已被排除为过强
+命题。新增验证器 `reproductions/type_i_overflow_defect_unit_phase_capacity.py`
+和主张卡 `claims/type-I-overflow-defect-unit-phase-capacity.md` 只记录条件性桥接，
+不承担 marked lift 或 E1--E5。

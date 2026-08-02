@@ -1,0 +1,820 @@
+{
+  "arithmetic": "For each obstruction row, normalize the determinant residue label ell by removing its q-adic valuation b and retain eta=(ell/q**b) mod q**h, where h is the unpaid support height. Defect-unit phase compatibility is eta_i = eta_j modulo q**min(h_i,h_j). Compatible cells then satisfy the usual nested phase-tree capacity bound.",
+  "scope_note": "Conditional bridge only. The local overflow ledger does not prove that an alternate/source-switch must use these units as phases. The audit therefore reports the extra compatibility assumption and does not promote any cell to a recursive edge.",
+  "input": "type-i-overflow-qadic-obstruction-transfer-results.json",
+  "input_sha256": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
+  "obstruction_row_count": 17,
+  "q_group_count": 5,
+  "phase_cell_count": 13,
+  "non_singleton_cell_count": 3,
+  "compatible_pair_count": 5,
+  "pair_count": 31,
+  "capacity_overload_cell_count": 0,
+  "groups": [
+    {
+      "q": 2,
+      "row_count": 3,
+      "pair_count": 3,
+      "compatible_pair_count": 3,
+      "phase_cell_count": 1,
+      "non_singleton_cell_count": 1,
+      "capacity_overload_cell_count": 0,
+      "cells": [
+        {
+          "state_count": 3,
+          "states": [
+            [
+              241,
+              190,
+              "d"
+            ],
+            [
+              241,
+              568,
+              "d"
+            ],
+            [
+              241,
+              568,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            1,
+            3
+          ],
+          "label_interval_width": 2,
+          "label_multiplicity": 2,
+          "maximum_height": 2,
+          "demand_height_sum": 4,
+          "capacity_bound": [
+            6,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 3,
+              "distinct_residue_count": 1,
+              "residues": [
+                1
+              ],
+              "slots_per_residue": 2,
+              "capacity": 4
+            },
+            {
+              "height": 2,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                3
+              ],
+              "slots_per_residue": 1,
+              "capacity": 2
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "case": "empty_fixed_n_window",
+          "prime": 241,
+          "A": 38,
+          "M": 190,
+          "side": "d",
+          "q": 2,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 1,
+          "normalized_unit": 1,
+          "unit_modulus": 2
+        },
+        {
+          "case": "symmetric_small_chart_support_conflict",
+          "prime": 241,
+          "A": 8,
+          "M": 568,
+          "side": "d",
+          "q": 2,
+          "support_exponent": 3,
+          "carrier_height": 2,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 3,
+          "normalized_unit": 1,
+          "unit_modulus": 2
+        },
+        {
+          "case": "symmetric_small_chart_support_conflict",
+          "prime": 241,
+          "A": 8,
+          "M": 568,
+          "side": "r",
+          "q": 2,
+          "support_exponent": 3,
+          "carrier_height": 1,
+          "residue_height": 0,
+          "obstruction_height": 2,
+          "residue_label": 144955,
+          "normalized_unit": 3,
+          "unit_modulus": 4
+        }
+      ]
+    },
+    {
+      "q": 3,
+      "row_count": 1,
+      "pair_count": 0,
+      "compatible_pair_count": 0,
+      "phase_cell_count": 1,
+      "non_singleton_cell_count": 0,
+      "capacity_overload_cell_count": 0,
+      "cells": [
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              924,
+              "d"
+            ]
+          ],
+          "label_interval": [
+            1,
+            1
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                1
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "case": "lcm_cycle_step_1",
+          "prime": 73,
+          "A": 66,
+          "M": 924,
+          "side": "d",
+          "q": 3,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 13,
+          "normalized_unit": 1,
+          "unit_modulus": 3
+        }
+      ]
+    },
+    {
+      "q": 7,
+      "row_count": 2,
+      "pair_count": 1,
+      "compatible_pair_count": 0,
+      "phase_cell_count": 2,
+      "non_singleton_cell_count": 0,
+      "capacity_overload_cell_count": 0,
+      "cells": [
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              91,
+              "d"
+            ]
+          ],
+          "label_interval": [
+            2,
+            2
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                2
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              91,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            4,
+            4
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                4
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "case": "accumulated_d_one_boundary",
+          "prime": 73,
+          "A": 7,
+          "M": 91,
+          "side": "d",
+          "q": 7,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 2,
+          "normalized_unit": 2,
+          "unit_modulus": 7
+        },
+        {
+          "case": "accumulated_d_one_boundary",
+          "prime": 73,
+          "A": 7,
+          "M": 91,
+          "side": "r",
+          "q": 7,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 4,
+          "normalized_unit": 4,
+          "unit_modulus": 7
+        }
+      ]
+    },
+    {
+      "q": 11,
+      "row_count": 4,
+      "pair_count": 6,
+      "compatible_pair_count": 0,
+      "phase_cell_count": 4,
+      "non_singleton_cell_count": 0,
+      "capacity_overload_cell_count": 0,
+      "cells": [
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              1518,
+              "d"
+            ]
+          ],
+          "label_interval": [
+            10,
+            10
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                10
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              1518,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            3,
+            3
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                3
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              924,
+              "d"
+            ]
+          ],
+          "label_interval": [
+            2,
+            2
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                2
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              924,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            4,
+            4
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                4
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "case": "lcm_cycle_step_0",
+          "prime": 73,
+          "A": 66,
+          "M": 1518,
+          "side": "d",
+          "q": 11,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 21,
+          "normalized_unit": 10,
+          "unit_modulus": 11
+        },
+        {
+          "case": "lcm_cycle_step_0",
+          "prime": 73,
+          "A": 66,
+          "M": 1518,
+          "side": "r",
+          "q": 11,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 65211,
+          "normalized_unit": 3,
+          "unit_modulus": 11
+        },
+        {
+          "case": "lcm_cycle_step_1",
+          "prime": 73,
+          "A": 66,
+          "M": 924,
+          "side": "d",
+          "q": 11,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 13,
+          "normalized_unit": 2,
+          "unit_modulus": 11
+        },
+        {
+          "case": "lcm_cycle_step_1",
+          "prime": 73,
+          "A": 66,
+          "M": 924,
+          "side": "r",
+          "q": 11,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 107133,
+          "normalized_unit": 4,
+          "unit_modulus": 11
+        }
+      ]
+    },
+    {
+      "q": 19,
+      "row_count": 7,
+      "pair_count": 21,
+      "compatible_pair_count": 2,
+      "phase_cell_count": 5,
+      "non_singleton_cell_count": 2,
+      "capacity_overload_cell_count": 0,
+      "cells": [
+        {
+          "state_count": 2,
+          "states": [
+            [
+              241,
+              190,
+              "d"
+            ],
+            [
+              73,
+              38,
+              "d"
+            ]
+          ],
+          "label_interval": [
+            1,
+            1
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 2,
+          "maximum_height": 1,
+          "demand_height_sum": 2,
+          "capacity_bound": [
+            2,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 2,
+              "distinct_residue_count": 1,
+              "residues": [
+                1
+              ],
+              "slots_per_residue": 1,
+              "capacity": 2
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              608,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            18,
+            18
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                18
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        },
+        {
+          "state_count": 2,
+          "states": [
+            [
+              73,
+              836,
+              "d"
+            ],
+            [
+              73,
+              950,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            12,
+            12
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 2,
+          "maximum_height": 1,
+          "demand_height_sum": 2,
+          "capacity_bound": [
+            2,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 2,
+              "distinct_residue_count": 1,
+              "residues": [
+                12
+              ],
+              "slots_per_residue": 1,
+              "capacity": 2
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              836,
+              "r"
+            ]
+          ],
+          "label_interval": [
+            15,
+            15
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                15
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        },
+        {
+          "state_count": 1,
+          "states": [
+            [
+              73,
+              950,
+              "d"
+            ]
+          ],
+          "label_interval": [
+            14,
+            14
+          ],
+          "label_interval_width": 0,
+          "label_multiplicity": 1,
+          "maximum_height": 1,
+          "demand_height_sum": 1,
+          "capacity_bound": [
+            1,
+            1
+          ],
+          "capacity_satisfied": true,
+          "layers": [
+            {
+              "height": 1,
+              "active_count": 1,
+              "distinct_residue_count": 1,
+              "residues": [
+                14
+              ],
+              "slots_per_residue": 1,
+              "capacity": 1
+            }
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "case": "empty_fixed_n_window",
+          "prime": 241,
+          "A": 38,
+          "M": 190,
+          "side": "d",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 1,
+          "normalized_unit": 1,
+          "unit_modulus": 19
+        },
+        {
+          "case": "reachable_conflict_bundle_0",
+          "prime": 73,
+          "A": 19,
+          "M": 38,
+          "side": "d",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 1,
+          "normalized_unit": 1,
+          "unit_modulus": 19
+        },
+        {
+          "case": "reachable_conflict_bundle_1",
+          "prime": 73,
+          "A": 19,
+          "M": 608,
+          "side": "r",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 12026,
+          "normalized_unit": 18,
+          "unit_modulus": 19
+        },
+        {
+          "case": "reachable_conflict_bundle_2",
+          "prime": 73,
+          "A": 19,
+          "M": 836,
+          "side": "d",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 12,
+          "normalized_unit": 12,
+          "unit_modulus": 19
+        },
+        {
+          "case": "reachable_conflict_bundle_2",
+          "prime": 73,
+          "A": 19,
+          "M": 836,
+          "side": "r",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 101190,
+          "normalized_unit": 15,
+          "unit_modulus": 19
+        },
+        {
+          "case": "reachable_conflict_bundle_3",
+          "prime": 73,
+          "A": 19,
+          "M": 950,
+          "side": "d",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 14,
+          "normalized_unit": 14,
+          "unit_modulus": 19
+        },
+        {
+          "case": "reachable_conflict_bundle_3",
+          "prime": 73,
+          "A": 19,
+          "M": 950,
+          "side": "r",
+          "q": 19,
+          "support_exponent": 1,
+          "carrier_height": 0,
+          "residue_height": 0,
+          "obstruction_height": 1,
+          "residue_label": 16865,
+          "normalized_unit": 12,
+          "unit_modulus": 19
+        }
+      ]
+    }
+  ]
+}

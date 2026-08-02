@@ -97,6 +97,14 @@ state 或直接短证书。
    截断赋值、方向性单位和阻碍乘积核验。它仍不产生跨状态容量或递归边，详见
    [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md)。
 
+   **缺陷单位相位边界。** 对每个非零未支付高度 \(h\)，把通道标签 \(\ell\) 去掉其
+   \(q\)-进赋值 \(b\)，得到 \(\eta=(\ell/q^b)\pmod {q^h}\)。只有额外证明不同状态
+   的 \(\eta\) 满足嵌套同余，才能把它们送入 phase-tree capacity。17 条阻碍幂记录
+   形成 5 个 q 分组和 13 个条件性相位胞，5 对兼容记录、0 个容量超载胞；因此
+   原始 obstruction 不自动形成共享相位资源。下一步必须寻找真实 alternate 的同余
+   映射，或把缺陷单位直接转成 Type I/II/合法下降。见
+   [overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md)。
+
 3. **固定层稳定子—Fourier 接口已精确化。** 对固定层稳定子
    \(P=\operatorname{Stab}_H(J)\)，固定目标的表示数满足
    \(N_J(t)=\bar N(\pi(t))\)；只有在目标陪集 \(tP\) 上求和时才出现 \(|P|\) 因子。
