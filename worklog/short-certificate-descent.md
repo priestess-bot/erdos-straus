@@ -4248,3 +4248,23 @@ Type I/II；`verified_edge` 必须带完整 E1--E5、解提升和严格势下降
 `recursive_edge_eligible=true`；这只是固定-\(n\) 分支的正控制，不改变一般 \(A>1\)
 窗口可能为空的边界。完整选择器回执仍将近邻、二进和 Fourier 保持为
 `analysis_evidence`，容量账本保持条件性负证据。
+
+### 2026-08-03：固定-\(n\) 因子间隙与双对偶 hard-core 回执
+
+为把“固定-\(n\) 窗口为空且两个双对偶都失配”从叙述性余项变成可检索对象，
+统一选择器新增 `overflow_hard_core_gap_obstruction` 分支。对
+\(pn=4Md+1\)、\(A\mid M\)、\(S=Md\)，令 \(L=At\)；固定-\(n\) 候选精确满足
+\(t\mid S/A\)、\(t>1\) 及 \(n<4At<p+n\)。回执保存 \(S/A\) 的因子分解、所有
+\(t\)、窗口两侧最近因子和精确的开区间核验。
+
+对同一 fixture 的 d/r 通道，回执还保存规范图表余数、严格载体增长、旧支撑阻碍
+及每个 \(q^a\parallel A\) 的支付/未支付高度。当前 12 个 overflow fixture 分类为：
+3 个固定-\(n\) 窗口非空；q-adic 双通道共有 3 个旧支撑保持正通道，均已被这 3 行覆盖；另有 9 个 `hard_core_fixed_n_gap_and_dual_obstruction`。9 个样本全部是 `analysis_evidence` 且 `recursive_edge_eligible=false`；每个仍至少有一个
+小载体 reset 候选，所以这不是无后继定理。
+
+主张卡见[overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md)，
+结果位于 `overflow_menu.hard_core_receipts`，统一验证命令仍为：
+
+```bash
+python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+```

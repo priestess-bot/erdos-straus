@@ -44,9 +44,2762 @@
   ],
   "invariants": {
     "analysis_evidence_never_recursive": true,
+    "hard_core_negative_receipt_never_recursive": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
+  },
+  "overflow_menu": {
+    "classification_counts": {
+      "fixed_n_window_nonempty": 3,
+      "hard_core_fixed_n_gap_and_dual_obstruction": 9
+    },
+    "fixture_count": 12,
+    "hard_core_count": 9,
+    "hard_core_receipts": [
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 1,
+              "chart_R": 3,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 7,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": false,
+              "support_obstruction": 7,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 18,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 7,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 7,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 91,
+          "divisor_count": 2,
+          "divisors_t": [
+            1,
+            13
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              13,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 5,
+            "scale": 28,
+            "strict": true,
+            "upper_numerator": 78
+          },
+          "normalized_S_over_A": 13,
+          "predecessor_t": null,
+          "predecessor_t_value": null,
+          "successor_t": 13,
+          "successor_t_value": 364
+        },
+        "fixture_name": "accumulated_d_one_boundary",
+        "hard_core_id": "hard-core:0c28fb90d75db58e58851778ad79e65c9bab1e53b016f24ade5ec4e02ee46329",
+        "overflow_determinant": {
+          "d": 1,
+          "four_M_d_plus_1": 365,
+          "n": 5,
+          "pn": 365
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 6552,
+          "M": 91,
+          "R_M": 359,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 7
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 13,
+              "chart_R": 11,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 38,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 190,
+              "chart_R": 719,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 2,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 19,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 2470,
+          "divisor_count": 4,
+          "divisors_t": [
+            1,
+            5,
+            13,
+            65
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              5,
+              1
+            ],
+            [
+              13,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 41,
+            "scale": 152,
+            "strict": true,
+            "upper_numerator": 282
+          },
+          "normalized_S_over_A": 65,
+          "predecessor_t": null,
+          "predecessor_t_value": null,
+          "successor_t": 5,
+          "successor_t_value": 760
+        },
+        "fixture_name": "empty_fixed_n_window",
+        "hard_core_id": "hard-core:105334269a342927c92e9e768287df0c7ad03f36ba5358dad33ec4b81720c8b7",
+        "overflow_determinant": {
+          "d": 13,
+          "four_M_d_plus_1": 9881,
+          "n": 41,
+          "pn": 9881
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 43320,
+          "M": 190,
+          "R_M": 719,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            241
+          ],
+          "overflow_support": 38
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 12,
+              "chart_R": 23,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 38,
+              "chart_R": 127,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 456,
+          "divisor_count": 8,
+          "divisors_t": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            12,
+            24
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 25,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 98
+          },
+          "normalized_S_over_A": 24,
+          "predecessor_t": null,
+          "predecessor_t_value": null,
+          "successor_t": 2,
+          "successor_t_value": 152
+        },
+        "fixture_name": "reachable_conflict_bundle_0",
+        "hard_core_id": "hard-core:049a48a4c875fb1385d3e20573efb6f3be897ad8d47ed439c85eee1dcd0896dc",
+        "overflow_determinant": {
+          "d": 12,
+          "four_M_d_plus_1": 1825,
+          "n": 25,
+          "pn": 1825
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 2318,
+          "M": 38,
+          "R_M": 127,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 19,
+              "chart_R": 51,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": false,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 24,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 11552,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            8,
+            16,
+            19,
+            32,
+            38,
+            76,
+            152,
+            304,
+            608
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              5
+            ],
+            [
+              19,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 633,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 706
+          },
+          "normalized_S_over_A": 608,
+          "predecessor_t": 8,
+          "predecessor_t_value": 608,
+          "successor_t": 16,
+          "successor_t_value": 1216
+        },
+        "fixture_name": "reachable_conflict_bundle_1",
+        "hard_core_id": "hard-core:f1ac310db113f22c753921e794e3c3093e050662b6e992d2096836804b61484c",
+        "overflow_determinant": {
+          "d": 19,
+          "four_M_d_plus_1": 46209,
+          "n": 633,
+          "pn": 46209
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 32832,
+          "M": 608,
+          "R_M": 1799,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 47,
+              "chart_R": 103,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 33,
+              "chart_R": 47,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 39292,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            11,
+            22,
+            44,
+            47,
+            94,
+            188,
+            517,
+            1034,
+            2068
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              47,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 2153,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 2226
+          },
+          "normalized_S_over_A": 2068,
+          "predecessor_t": 22,
+          "predecessor_t_value": 1672,
+          "successor_t": 44,
+          "successor_t_value": 3344
+        },
+        "fixture_name": "reachable_conflict_bundle_2",
+        "hard_core_id": "hard-core:7a2426cf7dfcd9301e6cb7f2762ca8b69dc45820e97d6c182fad2cca5ff6cdc2",
+        "overflow_determinant": {
+          "d": 47,
+          "four_M_d_plus_1": 157169,
+          "n": 2153,
+          "pn": 157169
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 21736,
+          "M": 836,
+          "R_M": 1191,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 18,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 1,
+              "chart_R": 3,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": false,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 17100,
+          "divisor_count": 27,
+          "divisors_t": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            12,
+            15,
+            18,
+            20,
+            25,
+            30,
+            36,
+            45,
+            50,
+            60,
+            75,
+            90,
+            100,
+            150,
+            180,
+            225,
+            300,
+            450,
+            900
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 937,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 1010
+          },
+          "normalized_S_over_A": 900,
+          "predecessor_t": 12,
+          "predecessor_t_value": 912,
+          "successor_t": 15,
+          "successor_t_value": 1140
+        },
+        "fixture_name": "reachable_conflict_bundle_3",
+        "hard_core_id": "hard-core:daab98d60af39dc9d4a76bc882e7ac56bb703c12469202a120a65f5d10a4899f",
+        "overflow_determinant": {
+          "d": 18,
+          "four_M_d_plus_1": 68401,
+          "n": 937,
+          "pn": 68401
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 52250,
+          "M": 950,
+          "R_M": 2863,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 28,
+              "chart_R": 23,
+              "q_deficits": [
+                {
+                  "carrier_height": 2,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 3,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 11,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 58,
+              "chart_R": 143,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 3,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 11,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 42504,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            7,
+            14,
+            23,
+            28,
+            46,
+            92,
+            161,
+            322,
+            644
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 2329,
+            "scale": 264,
+            "strict": true,
+            "upper_numerator": 2402
+          },
+          "normalized_S_over_A": 644,
+          "predecessor_t": 7,
+          "predecessor_t_value": 1848,
+          "successor_t": 14,
+          "successor_t_value": 3696
+        },
+        "fixture_name": "lcm_cycle_step_0",
+        "hard_core_id": "hard-core:a3be0bba51cd5cdb151e69fd6dd7994a919f7d3db1becab182a8121fedbe3b57",
+        "overflow_determinant": {
+          "d": 28,
+          "four_M_d_plus_1": 170017,
+          "n": 2329,
+          "pn": 170017
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 68310,
+          "M": 1518,
+          "R_M": 3743,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 66
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 46,
+              "chart_R": 63,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 3,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 33,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 48,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 4,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 3,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 11,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 2,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 42504,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            7,
+            14,
+            23,
+            28,
+            46,
+            92,
+            161,
+            322,
+            644
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 2329,
+            "scale": 264,
+            "strict": true,
+            "upper_numerator": 2402
+          },
+          "normalized_S_over_A": 644,
+          "predecessor_t": 7,
+          "predecessor_t_value": 1848,
+          "successor_t": 14,
+          "successor_t_value": 3696
+        },
+        "fixture_name": "lcm_cycle_step_1",
+        "hard_core_id": "hard-core:bce462075cd549b80373ad527f7bd2f813ff9a69da74c10ea4a6cc57e1791e97",
+        "overflow_determinant": {
+          "d": 46,
+          "four_M_d_plus_1": 170017,
+          "n": 2329,
+          "pn": 170017
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 24948,
+          "M": 924,
+          "R_M": 1367,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 66
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 124,
+              "chart_R": 319,
+              "q_deficits": [
+                {
+                  "carrier_height": 2,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 2,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 3
+                }
+              ],
+              "side": "d",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 2,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 86,
+              "chart_R": 167,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 2,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 3
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 4,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 70432,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            31,
+            62,
+            71,
+            124,
+            142,
+            284,
+            2201,
+            4402,
+            8804
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 1169,
+            "scale": 32,
+            "strict": true,
+            "upper_numerator": 1410
+          },
+          "normalized_S_over_A": 8804,
+          "predecessor_t": 31,
+          "predecessor_t_value": 992,
+          "successor_t": 62,
+          "successor_t_value": 1984
+        },
+        "fixture_name": "symmetric_small_chart_support_conflict",
+        "hard_core_id": "hard-core:4a61106bbeb75542a729fef2ec3e190ec77b2572f1b69bce9c0bd86b9fd128de",
+        "overflow_determinant": {
+          "d": 124,
+          "four_M_d_plus_1": 281729,
+          "n": 1169,
+          "pn": 281729
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 66456,
+          "M": 568,
+          "R_M": 1103,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            241
+          ],
+          "overflow_support": 8
+        }
+      }
+    ],
+    "receipts": [
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 1,
+              "chart_R": 3,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 7,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": false,
+              "support_obstruction": 7,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 18,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 7,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 7,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 91,
+          "divisor_count": 2,
+          "divisors_t": [
+            1,
+            13
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              13,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 5,
+            "scale": 28,
+            "strict": true,
+            "upper_numerator": 78
+          },
+          "normalized_S_over_A": 13,
+          "predecessor_t": null,
+          "predecessor_t_value": null,
+          "successor_t": 13,
+          "successor_t_value": 364
+        },
+        "fixture_name": "accumulated_d_one_boundary",
+        "hard_core_id": "hard-core:0c28fb90d75db58e58851778ad79e65c9bab1e53b016f24ade5ec4e02ee46329",
+        "overflow_determinant": {
+          "d": 1,
+          "four_M_d_plus_1": 365,
+          "n": 5,
+          "pn": 365
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 6552,
+          "M": 91,
+          "R_M": 359,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 7
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": false,
+          "channels": [
+            {
+              "carrier": 200,
+              "chart_R": 311,
+              "q_deficits": [
+                {
+                  "carrier_height": 2,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 5,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": true
+            },
+            {
+              "carrier": 250,
+              "chart_R": 511,
+              "q_deficits": [
+                {
+                  "carrier_height": 3,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 5,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 1
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 50000,
+          "divisor_count": 25,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            5,
+            8,
+            10,
+            16,
+            20,
+            25,
+            40,
+            50,
+            80,
+            100,
+            125,
+            200,
+            250,
+            400,
+            500,
+            625,
+            1000,
+            1250,
+            2000,
+            2500,
+            5000,
+            10000
+          ],
+          "eligible_candidates": [
+            {
+              "K_L": 1125,
+              "L": 125,
+              "R_L": 11,
+              "t": 25
+            },
+            {
+              "K_L": 31800,
+              "L": 200,
+              "R_L": 311,
+              "t": 40
+            }
+          ],
+          "eligible_t": [
+            25,
+            40
+          ],
+          "empty_verified": false,
+          "factorization_S_over_A": [
+            [
+              2,
+              4
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 489,
+            "scale": 20,
+            "strict": true,
+            "upper_numerator": 898
+          },
+          "normalized_S_over_A": 10000,
+          "predecessor_t": 20,
+          "predecessor_t_value": 400,
+          "successor_t": 50,
+          "successor_t_value": 1000
+        },
+        "fixture_name": "accumulated_positive_fixed_n_edge",
+        "hard_core_id": "hard-core:17607c54fee634665e7c425e984c33e5c3ea1f4172fd9a71a9fbf530c98ef9e8",
+        "overflow_determinant": {
+          "d": 200,
+          "four_M_d_plus_1": 200001,
+          "n": 489,
+          "pn": 200001
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "fixed_n_window_nonempty",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 52250,
+          "M": 250,
+          "R_M": 511,
+          "classification": "fixed_n_window_nonempty",
+          "equation_target": [
+            4,
+            409
+          ],
+          "overflow_support": 5
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 13,
+              "chart_R": 11,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 38,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 190,
+              "chart_R": 719,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 2,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 19,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 2470,
+          "divisor_count": 4,
+          "divisors_t": [
+            1,
+            5,
+            13,
+            65
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              5,
+              1
+            ],
+            [
+              13,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 41,
+            "scale": 152,
+            "strict": true,
+            "upper_numerator": 282
+          },
+          "normalized_S_over_A": 65,
+          "predecessor_t": null,
+          "predecessor_t_value": null,
+          "successor_t": 5,
+          "successor_t_value": 760
+        },
+        "fixture_name": "empty_fixed_n_window",
+        "hard_core_id": "hard-core:105334269a342927c92e9e768287df0c7ad03f36ba5358dad33ec4b81720c8b7",
+        "overflow_determinant": {
+          "d": 13,
+          "four_M_d_plus_1": 9881,
+          "n": 41,
+          "pn": 9881
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 43320,
+          "M": 190,
+          "R_M": 719,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            241
+          ],
+          "overflow_support": 38
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 12,
+              "chart_R": 23,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 38,
+              "chart_R": 127,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 456,
+          "divisor_count": 8,
+          "divisors_t": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            12,
+            24
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 25,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 98
+          },
+          "normalized_S_over_A": 24,
+          "predecessor_t": null,
+          "predecessor_t_value": null,
+          "successor_t": 2,
+          "successor_t_value": 152
+        },
+        "fixture_name": "reachable_conflict_bundle_0",
+        "hard_core_id": "hard-core:049a48a4c875fb1385d3e20573efb6f3be897ad8d47ed439c85eee1dcd0896dc",
+        "overflow_determinant": {
+          "d": 12,
+          "four_M_d_plus_1": 1825,
+          "n": 25,
+          "pn": 1825
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 2318,
+          "M": 38,
+          "R_M": 127,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 19,
+              "chart_R": 51,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": false,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 24,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 11552,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            8,
+            16,
+            19,
+            32,
+            38,
+            76,
+            152,
+            304,
+            608
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              5
+            ],
+            [
+              19,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 633,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 706
+          },
+          "normalized_S_over_A": 608,
+          "predecessor_t": 8,
+          "predecessor_t_value": 608,
+          "successor_t": 16,
+          "successor_t_value": 1216
+        },
+        "fixture_name": "reachable_conflict_bundle_1",
+        "hard_core_id": "hard-core:f1ac310db113f22c753921e794e3c3093e050662b6e992d2096836804b61484c",
+        "overflow_determinant": {
+          "d": 19,
+          "four_M_d_plus_1": 46209,
+          "n": 633,
+          "pn": 46209
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 32832,
+          "M": 608,
+          "R_M": 1799,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 47,
+              "chart_R": 103,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 33,
+              "chart_R": 47,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 39292,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            11,
+            22,
+            44,
+            47,
+            94,
+            188,
+            517,
+            1034,
+            2068
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              47,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 2153,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 2226
+          },
+          "normalized_S_over_A": 2068,
+          "predecessor_t": 22,
+          "predecessor_t_value": 1672,
+          "successor_t": 44,
+          "successor_t_value": 3344
+        },
+        "fixture_name": "reachable_conflict_bundle_2",
+        "hard_core_id": "hard-core:7a2426cf7dfcd9301e6cb7f2762ca8b69dc45820e97d6c182fad2cca5ff6cdc2",
+        "overflow_determinant": {
+          "d": 47,
+          "four_M_d_plus_1": 157169,
+          "n": 2153,
+          "pn": 157169
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 21736,
+          "M": 836,
+          "R_M": 1191,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 18,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 1,
+              "chart_R": 3,
+              "q_deficits": [
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 19,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": false,
+              "support_obstruction": 19,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 17100,
+          "divisor_count": 27,
+          "divisors_t": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            9,
+            10,
+            12,
+            15,
+            18,
+            20,
+            25,
+            30,
+            36,
+            45,
+            50,
+            60,
+            75,
+            90,
+            100,
+            150,
+            180,
+            225,
+            300,
+            450,
+            900
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 937,
+            "scale": 76,
+            "strict": true,
+            "upper_numerator": 1010
+          },
+          "normalized_S_over_A": 900,
+          "predecessor_t": 12,
+          "predecessor_t_value": 912,
+          "successor_t": 15,
+          "successor_t_value": 1140
+        },
+        "fixture_name": "reachable_conflict_bundle_3",
+        "hard_core_id": "hard-core:daab98d60af39dc9d4a76bc882e7ac56bb703c12469202a120a65f5d10a4899f",
+        "overflow_determinant": {
+          "d": 18,
+          "four_M_d_plus_1": 68401,
+          "n": 937,
+          "pn": 68401
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 52250,
+          "M": 950,
+          "R_M": 2863,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 19
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": false,
+          "channels": [
+            {
+              "carrier": 22,
+              "chart_R": 47,
+              "q_deficits": [],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": true
+            },
+            {
+              "carrier": 34,
+              "chart_R": 95,
+              "q_deficits": [],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 1
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 748,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            11,
+            17,
+            22,
+            34,
+            44,
+            68,
+            187,
+            374,
+            748
+          ],
+          "eligible_candidates": [
+            {
+              "K_L": 55,
+              "L": 11,
+              "R_L": 3,
+              "t": 11
+            },
+            {
+              "K_L": 493,
+              "L": 17,
+              "R_L": 27,
+              "t": 17
+            },
+            {
+              "K_L": 858,
+              "L": 22,
+              "R_L": 47,
+              "t": 22
+            }
+          ],
+          "eligible_t": [
+            11,
+            17,
+            22
+          ],
+          "empty_verified": false,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              17,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 41,
+            "scale": 4,
+            "strict": true,
+            "upper_numerator": 114
+          },
+          "normalized_S_over_A": 748,
+          "predecessor_t": 4,
+          "predecessor_t_value": 16,
+          "successor_t": 34,
+          "successor_t_value": 136
+        },
+        "fixture_name": "root_edge_0",
+        "hard_core_id": "hard-core:57bf7dee4d1f94093f30ad77d46551ccb7a929408e31af8c908f468c5aa8c3c4",
+        "overflow_determinant": {
+          "d": 22,
+          "four_M_d_plus_1": 2993,
+          "n": 41,
+          "pn": 2993
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "fixed_n_window_nonempty",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 1734,
+          "M": 34,
+          "R_M": 95,
+          "classification": "fixed_n_window_nonempty",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 1
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": false,
+          "channels": [
+            {
+              "carrier": 28,
+              "chart_R": 79,
+              "q_deficits": [],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": true
+            },
+            {
+              "carrier": 71,
+              "chart_R": 251,
+              "q_deficits": [],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 1,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 1
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 1988,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            7,
+            14,
+            28,
+            71,
+            142,
+            284,
+            497,
+            994,
+            1988
+          ],
+          "eligible_candidates": [
+            {
+              "K_L": 1386,
+              "L": 14,
+              "R_L": 23,
+              "t": 14
+            },
+            {
+              "K_L": 4760,
+              "L": 28,
+              "R_L": 79,
+              "t": 28
+            }
+          ],
+          "eligible_t": [
+            14,
+            28
+          ],
+          "empty_verified": false,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 33,
+            "scale": 4,
+            "strict": true,
+            "upper_numerator": 274
+          },
+          "normalized_S_over_A": 1988,
+          "predecessor_t": 7,
+          "predecessor_t_value": 28,
+          "successor_t": 71,
+          "successor_t_value": 284
+        },
+        "fixture_name": "root_edge_1",
+        "hard_core_id": "hard-core:ad21d91bf98d295b7a26cee80c80ff730d88117f158a04f1de2d545fa39e4b0f",
+        "overflow_determinant": {
+          "d": 28,
+          "four_M_d_plus_1": 7953,
+          "n": 33,
+          "pn": 7953
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "fixed_n_window_nonempty",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 15123,
+          "M": 71,
+          "R_M": 251,
+          "classification": "fixed_n_window_nonempty",
+          "equation_target": [
+            4,
+            241
+          ],
+          "overflow_support": 1
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 28,
+              "chart_R": 23,
+              "q_deficits": [
+                {
+                  "carrier_height": 2,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 3,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 11,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 58,
+              "chart_R": 143,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 3,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 11,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 42504,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            7,
+            14,
+            23,
+            28,
+            46,
+            92,
+            161,
+            322,
+            644
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 2329,
+            "scale": 264,
+            "strict": true,
+            "upper_numerator": 2402
+          },
+          "normalized_S_over_A": 644,
+          "predecessor_t": 7,
+          "predecessor_t_value": 1848,
+          "successor_t": 14,
+          "successor_t_value": 3696
+        },
+        "fixture_name": "lcm_cycle_step_0",
+        "hard_core_id": "hard-core:a3be0bba51cd5cdb151e69fd6dd7994a919f7d3db1becab182a8121fedbe3b57",
+        "overflow_determinant": {
+          "d": 28,
+          "four_M_d_plus_1": 170017,
+          "n": 2329,
+          "pn": 170017
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 68310,
+          "M": 1518,
+          "R_M": 3743,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 66
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 46,
+              "chart_R": 63,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 3,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "d",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 33,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 48,
+              "chart_R": 71,
+              "q_deficits": [
+                {
+                  "carrier_height": 4,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 0,
+                  "paid_height_capped": 1,
+                  "q": 3,
+                  "residue_height": 1,
+                  "support_exponent": 1
+                },
+                {
+                  "carrier_height": 0,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 0,
+                  "q": 11,
+                  "residue_height": 0,
+                  "support_exponent": 1
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 11,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 2,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 42504,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            7,
+            14,
+            23,
+            28,
+            46,
+            92,
+            161,
+            322,
+            644
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 2329,
+            "scale": 264,
+            "strict": true,
+            "upper_numerator": 2402
+          },
+          "normalized_S_over_A": 644,
+          "predecessor_t": 7,
+          "predecessor_t_value": 1848,
+          "successor_t": 14,
+          "successor_t_value": 3696
+        },
+        "fixture_name": "lcm_cycle_step_1",
+        "hard_core_id": "hard-core:bce462075cd549b80373ad527f7bd2f813ff9a69da74c10ea4a6cc57e1791e97",
+        "overflow_determinant": {
+          "d": 46,
+          "four_M_d_plus_1": 170017,
+          "n": 2329,
+          "pn": 170017
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 24948,
+          "M": 924,
+          "R_M": 1367,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            73
+          ],
+          "overflow_support": 66
+        }
+      },
+      {
+        "dual_obstruction": {
+          "both_channels_obstructed": true,
+          "channels": [
+            {
+              "carrier": 124,
+              "chart_R": 319,
+              "q_deficits": [
+                {
+                  "carrier_height": 2,
+                  "obstruction_height": 1,
+                  "paid_height_capped": 2,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 3
+                }
+              ],
+              "side": "d",
+              "small_chart": false,
+              "strict_gain": true,
+              "support_obstruction": 2,
+              "support_preserving_edge": false
+            },
+            {
+              "carrier": 86,
+              "chart_R": 167,
+              "q_deficits": [
+                {
+                  "carrier_height": 1,
+                  "obstruction_height": 2,
+                  "paid_height_capped": 1,
+                  "q": 2,
+                  "residue_height": 0,
+                  "support_exponent": 3
+                }
+              ],
+              "side": "r",
+              "small_chart": true,
+              "strict_gain": true,
+              "support_obstruction": 4,
+              "support_preserving_edge": false
+            }
+          ],
+          "small_reset_channel_count": 1,
+          "support_preserving_channel_count": 0
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_n_gap": {
+          "S": 70432,
+          "divisor_count": 12,
+          "divisors_t": [
+            1,
+            2,
+            4,
+            31,
+            62,
+            71,
+            124,
+            142,
+            284,
+            2201,
+            4402,
+            8804
+          ],
+          "eligible_candidates": [],
+          "eligible_t": [],
+          "empty_verified": true,
+          "factorization_S_over_A": [
+            [
+              2,
+              2
+            ],
+            [
+              31,
+              1
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "interval": {
+            "lower_numerator": 1169,
+            "scale": 32,
+            "strict": true,
+            "upper_numerator": 1410
+          },
+          "normalized_S_over_A": 8804,
+          "predecessor_t": 31,
+          "predecessor_t_value": 992,
+          "successor_t": 62,
+          "successor_t_value": 1984
+        },
+        "fixture_name": "symmetric_small_chart_support_conflict",
+        "hard_core_id": "hard-core:4a61106bbeb75542a729fef2ec3e190ec77b2572f1b69bce9c0bd86b9fd128de",
+        "overflow_determinant": {
+          "d": 124,
+          "four_M_d_plus_1": 281729,
+          "n": 1169,
+          "pn": 281729
+        },
+        "proof_boundary": "finite_menu_negative_receipt",
+        "recursive_edge_eligible": false,
+        "scope_note": "This receipt proves only that the fixed-n divisor menu and both local dual support-preserving channels fail for this fixture. A smaller carrier reset, alternate source, or direct Type I/II certificate is not ruled out.",
+        "selected_branch": "overflow_hard_core_gap_obstruction",
+        "selector_status": "analysis_evidence",
+        "state_descriptor": {
+          "K_M": 66456,
+          "M": 568,
+          "R_M": 1103,
+          "classification": "hard_core_fixed_n_gap_and_dual_obstruction",
+          "equation_target": [
+            4,
+            241
+          ],
+          "overflow_support": 8
+        }
+      }
+    ],
+    "scope_note": "The hard-core label is a typed negative boundary for the focused menu, not a proof that the underlying overflow state has no valid successor.",
+    "support_preserving_channel_count": 3
   },
   "schema_version": 1,
   "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains one verified fixed-n identity-lift edge, but does not prove universal branch existence or well-founded descent for all overflow states.",
@@ -56,6 +2809,7 @@
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
+    "overflow_hard_core_gap_obstruction",
     "overflow_qadic_phase_capacity"
   ],
   "source_sha256": {

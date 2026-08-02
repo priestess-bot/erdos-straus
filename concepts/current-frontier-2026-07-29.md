@@ -3100,3 +3100,31 @@ direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> ove
 ```bash
 python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 ```
+
+## 2026-08-03 固定-\(n\) 因子间隙与双对偶 hard-core 负边界
+
+统一选择器现在把 overflow 的两个局部菜单做成可重放的负边界回执。对
+\(pn=4Md+1\)、\(A\mid M\)、\(S=Md\)，固定-\(n\) 支撑增长写成 \(L=At\) 后，合法窗口
+恰等价于
+
+\[
+t\mid S/A,\qquad t>1,\qquad n<4At<p+n.
+\]
+
+同一回执逐通道保存 \(R_t<p\)、严格载体增长和每个 \(q^a\parallel A\) 的未支付高度。
+当前 12 个 overflow fixture 中，3 个固定-\(n\) 窗口非空，9 个同时满足：
+
+1. \(S/A\) 的所有因子都落在窗口外；
+2. \(d\)-与 \(r\)-双通道都没有旧 \(A\) 的 support-preserving edge。
+
+q-adic 双通道总计有 3 个旧支撑保持正通道，且全部落在上述 3 个固定-\(n\) 非空
+fixture 中；因此“dual_support_preserving 为 0”只是按固定-\(n\) 优先级后的分类计数，
+不是说双对偶账本没有正通道。
+
+这 9 个样本被标记为
+`hard_core_fixed_n_gap_and_dual_obstruction`，但仍是
+`analysis_evidence`、`recursive_edge_eligible=false`。其中每个样本至少有一个
+\(R_t<p\) 的小载体 reset 候选，因此 hard-core 只说明“保持旧支撑的当前菜单失配”，
+不说明不存在 alternate、直接 Type I/II 或良基 phase reset。回执保存因子分解、窗口
+两侧最近因子与双通道逐素数幂 deficit，见
+[overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md)。

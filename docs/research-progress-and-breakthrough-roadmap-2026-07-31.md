@@ -199,6 +199,12 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 [overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)，
 相位阶—载体高度的冻结边界见[相位阶—载体高度二分](../claims/type-I-f-phase-order-carrier-capacity-dichotomy.md)。
 
+> **口径修正（2026-08-03）。** 本报告后文若仍把“裸 G source”列为独立开放方向，均
+> 属于 2026-07-31 审计基线的历史措辞；2026-08-01 更新中的显式
+> \((p,R(p-1)-p,p-1)\) source 已关闭该接口。当前全称余项应只记为递归可达
+> \(A>1\) bundle overflow 的 alternate/终端/良基 support reset；裸 G source 可作为
+> 已解决前置引理，不再重复计入决定性缺口。
+
 ## 一、结论先行
 
 最近这一轮工作的价值明显高于继续扩大有限扫描。项目已经把上一阶段的“联合带符号分母缺陷”推进成一条更完整的结构链：

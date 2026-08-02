@@ -28,6 +28,7 @@ SELECTOR_ORDER = [
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
+    "overflow_hard_core_gap_obstruction",
     "overflow_qadic_phase_capacity",
 ]
 
@@ -69,6 +70,30 @@ def factorization(value: int) -> list[list[int]]:
     if value > 1:
         result.append([value, 1])
     return result
+
+
+def divisors(value: int) -> list[int]:
+    if value <= 0:
+        raise AssertionError("divisors require a positive integer")
+    result = [1]
+    for prime, exponent in factorization(value):
+        old = tuple(result)
+        power = 1
+        for _ in range(exponent):
+            power *= prime
+            result.extend(item * power for item in old)
+    return sorted(result)
+
+
+def canonical_chart(prime: int, support: int) -> tuple[int, int]:
+    if prime <= 1 or support <= 0:
+        raise AssertionError("canonical chart arguments must be positive")
+    modulus = 4 * support
+    R = (-pow(prime, -1, modulus)) % modulus
+    K = (prime * R + 1) // 4
+    if not 1 <= R < modulus or K % support:
+        raise AssertionError("canonical chart normalization changed")
+    return R, K
 
 
 def source_hashes() -> dict[str, str]:
@@ -277,7 +302,6 @@ def verified_fixed_n_edge(payload: dict[str, object]) -> dict[str, object]:
     if not (
         prime == 409
         and support == 5
-        and M == 250
         and R_M > prime
         and K_M == M * C
         and prime * n == 4 * M * d + 1
@@ -381,6 +405,252 @@ def verified_fixed_n_edge(payload: dict[str, object]) -> dict[str, object]:
     return result
 
 
+def overflow_fixture_rows(payload: dict[str, object]) -> list[dict[str, object]]:
+    overflow_dual = payload.get("overflow_dual")
+    if not isinstance(overflow_dual, dict):
+        raise AssertionError("overflow dual payload shape changed")
+    rows: list[dict[str, object]] = []
+
+    def add(name: str, prime: int, support: int, row: object) -> None:
+        if not isinstance(row, dict):
+            raise AssertionError(f"overflow fixture row changed: {name}")
+        data = dict(row["overflow"] if "overflow" in row else row)
+        data.update({"name": name, "prime": prime, "A": support})
+        rows.append(data)
+
+    add("accumulated_d_one_boundary", 73, 7, overflow_dual["accumulated_d_one_boundary"])
+    add(
+        "accumulated_positive_fixed_n_edge",
+        409,
+        5,
+        overflow_dual["accumulated_positive_fixed_n_edge"],
+    )
+    add("empty_fixed_n_window", 241, 38, overflow_dual["empty_fixed_n_window"])
+    full_menu = overflow_dual["reachable_accumulated_full_menu_conflict"]
+    if not isinstance(full_menu, dict):
+        raise AssertionError("reachable conflict fixture changed")
+    bundles = full_menu.get("bundle_receipts")
+    if not isinstance(bundles, list):
+        raise AssertionError("reachable conflict bundles changed")
+    for index, row in enumerate(bundles):
+        add(f"reachable_conflict_bundle_{index}", 73, 19, row)
+
+    root_edges = overflow_dual.get("root_edges")
+    if not isinstance(root_edges, list):
+        raise AssertionError("root edge fixtures changed")
+    for index, row in enumerate(root_edges):
+        if not isinstance(row, dict):
+            raise AssertionError("root edge row changed")
+        add(f"root_edge_{index}", int(row["prime"]), 1, row)
+
+    cycle = overflow_dual["lcm_dual_cycle"]
+    if not isinstance(cycle, dict) or not isinstance(cycle.get("steps"), list):
+        raise AssertionError("lcm cycle fixtures changed")
+    for index, row in enumerate(cycle["steps"]):
+        add(f"lcm_cycle_step_{index}", 73, 66, row)
+
+    add(
+        "symmetric_small_chart_support_conflict",
+        241,
+        8,
+        overflow_dual["symmetric_small_chart_support_conflict"],
+    )
+    if len(rows) != 12:
+        raise AssertionError(f"overflow fixture count changed: {len(rows)}")
+    return rows
+
+
+def overflow_menu_receipts(
+    overflow_payload: dict[str, object], qadic_payload: dict[str, object]
+) -> dict[str, object]:
+    """Classify the fixed-n/dual menu without promoting a negative row.
+
+    For L=A*t, the fixed-n window is exactly the open interval
+    n < 4*A*t < p+n with t | S/A.  A hard-core row records all divisor data
+    needed to replay an empty interval together with the uncapped q-adic
+    deficits from both dual channels.
+    """
+    if qadic_payload.get("input_sha256") != sha256(OVERFLOW_INPUT):
+        raise AssertionError("q-adic ledger is stale relative to overflow input")
+    qadic_cases = qadic_payload.get("cases")
+    if not isinstance(qadic_cases, list) or len(qadic_cases) != 12:
+        raise AssertionError("q-adic case count changed")
+    qadic_by_name: dict[str, dict[str, object]] = {}
+    for case in qadic_cases:
+        if not isinstance(case, dict) or not isinstance(case.get("name"), str):
+            raise AssertionError("q-adic case shape changed")
+        qadic_by_name[str(case["name"])] = case
+
+    receipts: list[dict[str, object]] = []
+    counts: dict[str, int] = {}
+    support_preserving_channel_count = 0
+    for fixture in overflow_fixture_rows(overflow_payload):
+        name = str(fixture["name"])
+        qadic_case = qadic_by_name.get(name)
+        if qadic_case is None:
+            raise AssertionError(f"q-adic case missing: {name}")
+        channels = qadic_case.get("channels")
+        if not isinstance(channels, list) or len(channels) != 2:
+            raise AssertionError(f"dual channel count changed: {name}")
+
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        M = int(fixture["M"])
+        R_M = int(fixture["R_M"])
+        K_M = int(fixture["K_M"])
+        n = int(fixture["n"])
+        d = int(fixture["d"])
+        S = M * d
+        if S % support or K_M % support:
+            raise AssertionError(f"charged support does not divide overflow: {name}")
+        normalized_size = S // support
+        all_t = divisors(normalized_size)
+        eligible_t = [
+            t for t in all_t if t > 1 and n < 4 * support * t < prime + n
+        ]
+        eligible_candidates: list[dict[str, int]] = []
+        for t in eligible_t:
+            L = support * t
+            R_L = 4 * L - n
+            K_L = L * (prime - S // L)
+            if canonical_chart(prime, L) != (R_L, K_L):
+                raise AssertionError(f"fixed-n chart changed: {name}, t={t}")
+            eligible_candidates.append({"t": t, "L": L, "R_L": R_L, "K_L": K_L})
+        below = [t for t in all_t if t > 1 and 4 * support * t <= n]
+        above = [t for t in all_t if t > 1 and 4 * support * t >= prime + n]
+
+        normalized_channels: list[dict[str, object]] = []
+        for channel in channels:
+            if not isinstance(channel, dict):
+                raise AssertionError(f"dual channel shape changed: {name}")
+            q_layers = channel.get("q_layers")
+            if not isinstance(q_layers, list):
+                raise AssertionError(f"q-layer shape changed: {name}")
+            normalized_channels.append(
+                {
+                    "side": channel["side"],
+                    "carrier": int(channel["carrier"]),
+                    "chart_R": int(channel["chart_R"]),
+                    "small_chart": bool(channel["small_chart"]),
+                    "strict_gain": bool(channel["strict_gain"]),
+                    "support_obstruction": int(channel["support_obstruction"]),
+                    "support_preserving_edge": bool(channel["support_preserving_edge"]),
+                    "q_deficits": [
+                        {
+                            "q": int(row["q"]),
+                            "support_exponent": int(row["support_exponent"]),
+                            "carrier_height": int(row["carrier_height"]),
+                            "residue_height": int(row["residue_height"]),
+                            "paid_height_capped": int(row["paid_height_capped"]),
+                            "obstruction_height": int(row["obstruction_height"]),
+                        }
+                        for row in q_layers
+                    ],
+                }
+            )
+
+        fixed_n_nonempty = bool(eligible_t)
+        support_preserving = [
+            channel for channel in normalized_channels if channel["support_preserving_edge"]
+        ]
+        support_preserving_channel_count += len(support_preserving)
+        small_reset = [
+            channel
+            for channel in normalized_channels
+            if channel["small_chart"] and channel["strict_gain"]
+        ]
+        if fixed_n_nonempty:
+            classification = "fixed_n_window_nonempty"
+        elif support_preserving:
+            classification = "dual_support_preserving"
+        else:
+            classification = "hard_core_fixed_n_gap_and_dual_obstruction"
+        counts[classification] = counts.get(classification, 0) + 1
+
+        fixed_n_gap = {
+            "S": S,
+            "normalized_S_over_A": normalized_size,
+            "factorization_S_over_A": factorization(normalized_size),
+            "divisor_count": len(all_t),
+            "divisors_t": all_t,
+            "interval": {
+                "lower_numerator": n,
+                "upper_numerator": prime + n,
+                "scale": 4 * support,
+                "strict": True,
+            },
+            "eligible_t": eligible_t,
+            "eligible_candidates": eligible_candidates,
+            "predecessor_t": max(below) if below else None,
+            "successor_t": min(above) if above else None,
+            "empty_verified": not fixed_n_nonempty,
+        }
+        for key in ("predecessor_t", "successor_t"):
+            t = fixed_n_gap[key]
+            fixed_n_gap[f"{key}_value"] = None if t is None else 4 * support * int(t)
+
+        descriptor = {
+            "equation_target": [4, prime],
+            "overflow_support": support,
+            "M": M,
+            "R_M": R_M,
+            "K_M": K_M,
+            "classification": classification,
+        }
+        receipt = {
+            "hard_core_id": "hard-core:" + canonical_hash(descriptor),
+            "fixture_name": name,
+            "state_descriptor": descriptor,
+            "overflow_determinant": {
+                "pn": prime * n,
+                "four_M_d_plus_1": 4 * M * d + 1,
+                "n": n,
+                "d": d,
+            },
+            "fixed_n_gap": fixed_n_gap,
+            "dual_obstruction": {
+                "channels": normalized_channels,
+                "support_preserving_channel_count": len(support_preserving),
+                "small_reset_channel_count": len(small_reset),
+                "both_channels_obstructed": not support_preserving,
+            },
+            "selected_branch": (
+                "overflow_hard_core_gap_obstruction"
+                if classification == "hard_core_fixed_n_gap_and_dual_obstruction"
+                else classification
+            ),
+            "selector_status": "analysis_evidence",
+            "recursive_edge_eligible": False,
+            "e1_e5": {f"E{i}": False for i in range(1, 6)},
+            "proof_boundary": "finite_menu_negative_receipt",
+            "scope_note": (
+                "This receipt proves only that the fixed-n divisor menu and both local dual "
+                "support-preserving channels fail for this fixture. A smaller carrier reset, "
+                "alternate source, or direct Type I/II certificate is not ruled out."
+            ),
+        }
+        check_status_boundary(receipt)
+        receipts.append(receipt)
+
+    hard_core = [
+        receipt
+        for receipt in receipts
+        if receipt["selected_branch"] == "overflow_hard_core_gap_obstruction"
+    ]
+    return {
+        "fixture_count": len(receipts),
+        "classification_counts": counts,
+        "support_preserving_channel_count": support_preserving_channel_count,
+        "hard_core_count": len(hard_core),
+        "receipts": receipts,
+        "hard_core_receipts": hard_core,
+        "scope_note": (
+            "The hard-core label is a typed negative boundary for the focused menu, not a "
+            "proof that the underlying overflow state has no valid successor."
+        ),
+    }
+
+
 def build_results() -> dict[str, object]:
     unified = json.loads(UNIFIED_INPUT.read_text(encoding="utf-8"))
     overflow = json.loads(OVERFLOW_INPUT.read_text(encoding="utf-8"))
@@ -403,6 +673,7 @@ def build_results() -> dict[str, object]:
     states = [state_receipt(receipt, UNIFIED_INPUT.name) for receipt in normalized_receipts]
     verified_edge = verified_fixed_n_edge(overflow)
     capacity = capacity_receipt(qadic, phase)
+    overflow_menu = overflow_menu_receipts(overflow, qadic)
     return {
         "schema_version": 1,
         "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
@@ -410,12 +681,14 @@ def build_results() -> dict[str, object]:
         "status_lattice": STATUS_LATTICE,
         "states": states,
         "verified_edges": [verified_edge],
+        "overflow_menu": overflow_menu,
         "capacity_receipts": [capacity],
         "invariants": {
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
             "terminal_leaf_requires_direct_certificate": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
+            "hard_core_negative_receipt_never_recursive": True,
         },
         "source_sha256": source_hashes(),
         "scope_note": (
@@ -426,13 +699,48 @@ def build_results() -> dict[str, object]:
     }
 
 
+def verify_overflow_menu_contract(result: dict[str, object]) -> None:
+    menu = result.get("overflow_menu")
+    if not isinstance(menu, dict):
+        raise AssertionError("overflow menu receipt missing")
+    if menu.get("fixture_count") != 12:
+        raise AssertionError("focused overflow fixture count changed")
+    if menu.get("classification_counts") != {
+        "fixed_n_window_nonempty": 3,
+        "hard_core_fixed_n_gap_and_dual_obstruction": 9,
+    }:
+        raise AssertionError("focused overflow classification counts changed")
+    if menu.get("support_preserving_channel_count") != 3:
+        raise AssertionError("focused dual support-preserving channel count changed")
+    hard_core = menu.get("hard_core_receipts")
+    if not isinstance(hard_core, list) or len(hard_core) != 9:
+        raise AssertionError("focused hard-core receipt count changed")
+    for receipt in hard_core:
+        if not isinstance(receipt, dict):
+            raise AssertionError("hard-core receipt shape changed")
+        gap = receipt.get("fixed_n_gap")
+        obstruction = receipt.get("dual_obstruction")
+        if not isinstance(gap, dict) or not isinstance(obstruction, dict):
+            raise AssertionError("hard-core receipt payload changed")
+        if gap.get("eligible_t") != [] or not gap.get("empty_verified"):
+            raise AssertionError("hard-core row has a fixed-n candidate")
+        if obstruction.get("support_preserving_channel_count") != 0:
+            raise AssertionError("hard-core row retained an old-support dual edge")
+        if receipt.get("selector_status") != "analysis_evidence":
+            raise AssertionError("hard-core row crossed the status boundary")
+        if receipt.get("recursive_edge_eligible") is not False:
+            raise AssertionError("hard-core row became recursive")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--verify", action="store_true")
     args = parser.parse_args()
-    rendered = json.dumps(build_results(), ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    result = build_results()
+    rendered = json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.verify:
+        verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")
         print("verified", args.output)
