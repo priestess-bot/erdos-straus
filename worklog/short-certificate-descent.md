@@ -4107,3 +4107,34 @@ marked lift；相位胞合同仍是 `analysis_evidence` / `candidate_transition`
 `5b3228f2766494c99df3f7cc23e5411bb1289f9425344cc0f9cd5d531c0dfcc1`，结果回执 SHA-256 为
 `ae9f765afedc5928ecc4fa2d45ac9e2b7721f3680cb9ce66d97d948f4c600b18`；输入冻结哈希为
 `60cbb80428d6e2fbb1295138fe265893d7bfecbd23a92ed863edf10e0361b768`。
+
+## 2026-08-02 规范 Fourier 到实际载体的容量负边界
+
+为检验规范 Fourier 是否已经足以制造跨状态压力，新增聚焦审计
+`type_i_f_bounded_fourier_carrier_capacity.py`。它对 45 个冻结记录逐一恢复线性源
+状态，并重算每个选择方向的实际块高度
+
+\[
+h=v_q(tR+1),\qquad t=s\text{ 或 }a.
+\]
+
+141 个方向全部通过高度核验。固定核心素数和载体素数后，标签不同的方向检查标签差
+整除，标签相同的方向检查模数差整除，再同时对同色纤维和混色并集应用
+\[
+\sum h_i\le
+\frac{M_tM_R}{q^2-1}+\frac{M_t+M_R}{q-1}+H.
+\]
+同色 113 组、混色 100 组，128 次两两整除检查和所有容量比较全部通过；非单例组的
+最大容量比仍分别只有 \(12835/186111\) 和 \(38505/4787548\)。
+
+这一步没有产生递归边，反而排除了一个过强的近期猜想：不能仅凭有界 Fourier 角色的
+非平凡性，把角色阶/相位债务视为同一载体上的额外高度并期待样本容量超载。后续若要
+让表示--对偶--容量链继续收紧，必须证明相位信息对实际载体的有方向注入，或把它
+转译为合法的非空 support-switch；否则该结果只保留为有限 `analysis_evidence`。
+
+主张卡见[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)，
+复现命令为：
+
+```bash
+python3 reproductions/type_i_f_bounded_fourier_carrier_capacity.py --verify
+```

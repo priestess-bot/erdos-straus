@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 362 |
+| 数学状态 | `computationally_reproduced` | 363 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 319 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 123 |
+| 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
 | 证明来源 | `repository_derivation` | 145 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 274 |
+| 审阅状态 | `internal_review` | 275 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -252,6 +252,7 @@
 | [深层 AC 条件逃逸进程的统一固定缺口 Type I 边界](../claims/type-I-escape-affine-boundary.md) (`type-I-escape-affine-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-25 |
 | [偶二次外源严格提升精确落入 Type I 正规形终端桥](../claims/type-I-even-external-source-normal-bridge.md) (`type-I-even-external-source-normal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [五亿偶桥支撑三或平移外源的终止混合闭合](../claims/type-I-even-source-support-external-hybrid-500m.md) (`type-I-even-source-support-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
+| [冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md) (`type-I-f-bounded-fourier-carrier-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-02 |
 | [冻结 F 状态的有界规范 Fourier 证书](../claims/type-I-f-bounded-fourier-certificate.md) (`type-I-f-bounded-fourier-certificate`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [冻结完整线性谱的 F 型 Fourier 系数盒半径边界](../claims/type-I-f-bounded-fourier-radius-boundary.md) (`type-I-f-bounded-fourier-radius-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [线性 F 状态的当前块饱和与带符号分母缺陷](../claims/type-I-f-current-block-saturation-and-signed-denominator-defect.md) (`type-I-f-current-block-saturation-and-signed-denominator-defect`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |

@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱又证明 A=1 时总有合法 charged-support identity edge，且任意 overflow 至少有一个 R<p 的算术对偶图表。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱又证明 A=1 时总有合法 charged-support identity edge，且任意 overflow 至少有一个 R<p 的算术对偶图表。规范有界 Fourier 的 45 个冻结 F 状态现已逐方向投影到 141 个实际线性载体，整除链和混合容量均无超载，说明相位/角色债务尚未形成跨状态需求。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
 topics:
 - research-map
 - proof-program
@@ -20,6 +20,8 @@ sources:
   role: universal-source-and-capacity-orbit
 - claim: type-I-overflow-determinant-fixed-n-dual-support-conflict
   role: fixed-n-dual-atlas-and-current-residual
+- claim: type-I-f-bounded-fourier-carrier-capacity-boundary
+  role: finite-Fourier-carrier-capacity-boundary
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -372,6 +374,26 @@ G 状态，使用支撑格 HNF 的对偶向量
 它把下一步缺口明确化为：需要把相位质量、投影空缺、Fourier 半径或可提升代价加入
 需求，或者证明不同同色需求在跨状态中必须共享同一嵌套链；单纯的同色联合 (q)-进
 容量已经不足以关闭 F 分支。
+
+### 规范 Fourier 选择的实际载体边界（2026-08-02）
+
+上一项审计使用的是全谱需求子集；现在再把冻结 45 个关系格状态的**规范有界 Fourier
+选择本身**逐方向送入线性源。对每个方向重新核验
+
+\[
+h=v_q(tR+1),\qquad t\in\{s,a\},
+\]
+
+并分别检查同色 \((p,q,\mathrm{label})\) 纤维和混色 \((p,q)\) 并集的标签--模数整除
+与混合容量界。141 个方向形成 113 个同色组和 100 个混色组；128 次两两整除检查
+全部通过，容量超载组为零。排除单例后的最大容量比同色为
+\(12835/186111\)，混色为 \(38505/4787548\)。
+
+这是一条更直接但仍然是负面的桥接结果：规范角色确实有实际正载体，却没有自动
+产生跨状态超载。角色阶、相位分子和 Fourier 质量不能直接加到 \(h\)，也不能据此
+声称标记集非空或递归边。后续必须证明独立的相位--载体匹配定理，或把高阶/空投影
+证书转成已验证非空且势严格下降的 support-switch。详见
+[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)。
 把每个已选同色子集展开为二方向子集后，共有 551 个同色方向对，仍无超载，最高
 需求/容量比为 1，417 组达到饱和。因而“重复的同色方向对”本身也不足以产生矛盾；
 这进一步支持把相位投影空缺、Fourier 盒半径或提升代价纳入需求，而不是继续增加
