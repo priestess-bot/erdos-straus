@@ -1,0 +1,139 @@
+---
+kind: claim
+claim_id: type-I-representation-dual-capacity-selector-contract
+title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier 与 overflow q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执和一个跨状态容量审计均保持 analysis_evidence，因此该合同统一证据类型但不证明全称选择器存在。
+claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
+depends_on:
+  - type-I-unified-terminal-first-selector-contract
+  - type-I-overflow-qadic-obstruction-transfer
+  - type-I-overflow-defect-unit-phase-capacity
+  - denominator-escape-state-contract
+topics:
+- type-I
+- selector
+- representation
+- dual
+- capacity
+- typed-receipt
+- state-id
+- q-adic
+- proof-boundary
+- proof-program
+sources:
+  - claim: type-I-unified-terminal-first-selector-contract
+    role: terminal-first-arithmetic-and-Fourier-branches
+  - claim: type-I-overflow-qadic-obstruction-transfer
+    role: local-overflow-ledger
+  - claim: type-I-overflow-defect-unit-phase-capacity
+    role: conditional-cross-state-capacity-boundary
+  - claim: denominator-escape-state-contract
+    role: E1-E5-state-and-edge-contract
+visibility: public
+last_checked: '2026-08-02'
+---
+
+# 表示—对偶—容量统一选择器的状态级 typed 分派合同
+
+## 1. 目的与边界
+
+路线图要求把三种状态内证据放进同一个可检索对象：目标纤维的表示/近邻、固定层商的
+对偶证书，以及 overflow 的 (q)-进容量账本。本卡给出这个对象的最小分派合同。它是
+证据编排规范，不声称任意 (pequiv1pmod {24}) 都会命中某一分支。
+
+选择顺序固定为
+
+```text
+direct_type_i_or_type_ii
+target_fiber_neighbor_terminal
+generalized_dyadic_terminal
+fixed_layer_quotient_fourier
+overflow_qadic_phase_capacity
+```
+
+同一个状态只选择最先可验证的分支；后续证据仍可作为 `capacity_receipts` 附加保存，
+但不能覆盖已选分支的证明边界。
+
+## 2. 状态回执
+
+每个状态回执至少携带：
+
+| 字段 | 语义 |
+|---|---|
+| `state_id` | 对规范化方程、模数、(K) 和证书类型的 JSON 内容寻址哈希 |
+| `equation_target` | 当前 Type I 根方程 (4/p)；跨状态族账本可使用关系式对象 |
+| `modulus_context` | (R)、`4K=pR+1` 及 Type I 正规形 |
+| `K_context` | (K) 与精确素因子赋值 |
+| `target_fiber` | `nonempty`、`nonempty_source_profile` 或带分离角色的 `empty` |
+| `marked_solution_set` | 明确说明非空、为空或尚未携带；不把较小偶数的标准解伪装成根解 |
+| `signed_defect` | 全局带向缺陷；未构造时显式标记 `not_carried`，G 空纤维标记 `not_applicable` |
+| `certificate_context` | 表示、对偶或容量证书的来源、阶段和证明边界 |
+| `normal_form` | 当前 Type I/II 或终端优先正规形 |
+| `potential_record` | 若没有良基势和重算值，显式标记 `absent` |
+
+`state_id` 不依赖回执枚举顺序。输入结果文件的 SHA-256 也必须保留，使回执可以在
+知识库中重放。
+
+## 3. 状态类型与升级不变量
+
+分派状态使用以下四级标签：
+
+```text
+terminal_leaf
+analysis_evidence
+candidate_transition
+verified_edge
+```
+
+当前近邻和广义 (2^j) 回执验证的是较小偶前驱的整除、同余和范围；固定层 Fourier
+回执验证的是稳定子商、精确谱范数和角色阶债务；overflow 回执验证的是逐素数幂支付、
+缺陷单位相位分胞及条件性容量统计。因此这四类输出统一标为
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。
+
+升级不变量为：
+
+1. `terminal_leaf` 只能来自已经闭合的直接 Type I/II 证书；标准偶前驱不是该类型；
+2. `candidate_transition` 必须给出明确后继和缺失的 E 项，不能只凭较小 (n) 或较小
+   carrier-size 登记递归；
+3. `verified_edge` 必须同时满足 E1--E5、全域解提升和严格势下降，并且
+   `recursive_edge_eligible=true`；
+4. 任何 `analysis_evidence` 都不得具有递归资格；
+5. 缺陷单位只有在实际 alternate/source-switch 证明其同余映射后，才可进入跨状态相位
+   容量；原始 (O_d,O_r) 不自动是共享相位。
+
+## 4. 当前聚焦回执
+
+统一验证器为
+
+```bash
+python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+```
+
+当前输出包含三条状态记录：
+
+| 分支 | 状态数 | 结果 |
+|---|---:|---|
+| 目标纤维近邻 | 1 | `analysis_evidence`，非空近邻见证，偶前驱提升未证 |
+| 广义 (2^j) | 1 | `analysis_evidence`，来源为命中状态档案，偶前驱提升未证 |
+| 固定层商 Fourier | 1 | `analysis_evidence`，空纤维分离角色，载体映射未证 |
+
+另附一条跨状态 overflow 容量回执。它重放 12 个 overflow、24 个双通道和 17 条
+阻碍幂记录；相位审计得到 5 个 (q) 组、13 个相位胞、5 对兼容记录，容量超载胞为
+0。该结果只是负边界：当前没有从缺陷单位得到容量矛盾，也没有生成递归边。
+
+结果文件为
+`reproductions/type-i-representation-dual-capacity-selector-results.json`。
+
+## 5. 未闭合的全称缺口
+
+该合同解决的是证据编排和类型安全，不解决以下命题：
+
+- 每个核心素数的 terminal-first 失败状态必有 alternate、终端或合法后继；
+- Fourier 角色阶或缺陷单位必能映射为有界、可重复控制的 (q)-进载体；
+- 丢弃旧 charged support 的 phase reset 具有全局良基秩；
+- 某个候选后继对全部标记解都给出 E4 提升并满足 E5。
+
+因此下一步仍应集中证明可达 (A>1) overflow 的 support-preserving alternate/终端
+完备性，或建立封闭且良基的外层 phase-reset 秩；本卡不把有限回执误写成这些全称结论。

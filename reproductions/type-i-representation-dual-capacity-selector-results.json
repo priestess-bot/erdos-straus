@@ -1,0 +1,430 @@
+{
+  "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
+  "capacity_receipts": [
+    {
+      "certificate_context": {
+        "carrier_mapping_status": "unproved",
+        "certificate_type": "overflow_qadic_phase_capacity",
+        "phase": "CAPACITY_AUDIT",
+        "proof_boundary": "conditional_phase_compatibility_only"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "pn=4Md+1"
+      },
+      "overflow_defect_ledger": {
+        "case_count": 12,
+        "channels_with_obstruction": 15,
+        "dual_channel_count": 24,
+        "obstruction_prime_power_rows": 17,
+        "q_layer_row_count": 30
+      },
+      "phase_capacity_summary": {
+        "capacity_overload_cell_count": 0,
+        "compatible_pair_count": 5,
+        "non_singleton_cell_count": 3,
+        "obstruction_row_count": 17,
+        "pair_count": 31,
+        "phase_cell_count": 13,
+        "q_group_count": 5
+      },
+      "recursive_edge_eligible": false,
+      "scope": "cross_state_overflow_audit",
+      "scope_note": "The obstruction units are not assumed to be the phases of an alternate. No capacity overload or recursive edge is inferred.",
+      "selected_branch": "overflow_qadic_phase_capacity",
+      "selector_status": "analysis_evidence",
+      "state_id": "family:4928b25c8d264a7d392ed98cfdf1211931cef82c0645c1670ff1ea65cd3847ae"
+    }
+  ],
+  "invariants": {
+    "analysis_evidence_never_recursive": true,
+    "overflow_phase_requires_explicit_cross_state_mapping": true,
+    "terminal_leaf_requires_direct_certificate": true,
+    "verified_edge_requires_E1_E5": true
+  },
+  "schema_version": 1,
+  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It does not prove universal branch existence, marked lifting, or well-founded descent.",
+  "selector_order": [
+    "direct_type_i_or_type_ii",
+    "target_fiber_neighbor_terminal",
+    "generalized_dyadic_terminal",
+    "fixed_layer_quotient_fourier",
+    "overflow_qadic_phase_capacity"
+  ],
+  "source_sha256": {
+    "type-i-overflow-defect-unit-phase-capacity-results.json": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c",
+    "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
+    "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d"
+  },
+  "states": [
+    {
+      "K_context": {
+        "K": 9793646,
+        "factorization": [
+          [
+            2,
+            1
+          ],
+          [
+            59,
+            1
+          ],
+          [
+            82997,
+            1
+          ]
+        ]
+      },
+      "certificate_context": {
+        "certificate_type": "target_fiber_neighbor_terminal",
+        "phase": "TERMINAL_FIRST",
+        "proof_boundary": "arithmetic_terminal_only",
+        "source": "type-i-unified-terminal-selector-results.json"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "denominator": 5596369,
+        "numerator": 4
+      },
+      "induction_rank": {
+        "reason": "no recursive edge",
+        "status": "not_assigned"
+      },
+      "marked_solution_set": {
+        "source": "terminal_first",
+        "status": "not_carried"
+      },
+      "modulus_context": {
+        "R": 7,
+        "identity": "4K=pR+1",
+        "type": "Type_I"
+      },
+      "normal_form": "type-I-terminal-first",
+      "potential_record": {
+        "reason": "E1-E5 lift and strict potential decrease are not proved",
+        "status": "absent"
+      },
+      "proof_boundary": "arithmetic_terminal_only",
+      "recursive_edge_eligible": false,
+      "selected_branch": "target_fiber_neighbor_terminal",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "source": "terminal_first",
+        "status": "not_carried"
+      },
+      "source_receipt": {
+        "K": 9793646,
+        "R": 7,
+        "certificate_type": "target_fiber_neighbor_terminal",
+        "lift_status": "unproved",
+        "near_pair": {
+          "w": [
+            -1,
+            0,
+            1
+          ],
+          "z": [
+            -1,
+            -1,
+            0
+          ]
+        },
+        "phase": "TERMINAL_FIRST",
+        "prime": 5596369,
+        "proof_boundary": "arithmetic_terminal_only",
+        "ratio_fraction": [
+          1,
+          4896823
+        ],
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "state_class": "hit",
+        "support_budgets": [
+          1,
+          1,
+          1
+        ],
+        "support_primes": [
+          2,
+          59,
+          82997
+        ],
+        "terminal": {
+          "E": 8,
+          "U": 2,
+          "base_solution": [
+            2798184,
+            5596368,
+            5596368
+          ],
+          "n": 5596368
+        },
+        "terminal_kind": "even_predecessor"
+      },
+      "state_descriptor": {
+        "K": 9793646,
+        "certificate_type": "target_fiber_neighbor_terminal",
+        "equation_target": [
+          4,
+          5596369
+        ],
+        "modulus": 7
+      },
+      "state_id": "state:9c4366c311e3459390867eaf33fdb25bd91e95bc6bd9d1829e34c8c34578ae58",
+      "target_fiber": {
+        "status": "nonempty",
+        "witness": {
+          "w": [
+            -1,
+            0,
+            1
+          ],
+          "z": [
+            -1,
+            -1,
+            0
+          ]
+        },
+        "witness_type": "coordinate_budget_near_pair"
+      }
+    },
+    {
+      "K_context": {
+        "K": 1205496083,
+        "factorization": [
+          [
+            11,
+            1
+          ],
+          [
+            59,
+            1
+          ],
+          [
+            157,
+            1
+          ],
+          [
+            11831,
+            1
+          ]
+        ]
+      },
+      "certificate_context": {
+        "certificate_type": "generalized_dyadic_terminal",
+        "phase": "TERMINAL_FIRST",
+        "proof_boundary": "arithmetic_terminal_only",
+        "source": "type-i-unified-terminal-selector-results.json"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "denominator": 253788649,
+        "numerator": 4
+      },
+      "induction_rank": {
+        "reason": "no recursive edge",
+        "status": "not_assigned"
+      },
+      "marked_solution_set": {
+        "source": "terminal_first",
+        "status": "not_carried"
+      },
+      "modulus_context": {
+        "R": 19,
+        "identity": "4K=pR+1",
+        "type": "Type_I"
+      },
+      "normal_form": "type-I-terminal-first",
+      "potential_record": {
+        "reason": "E1-E5 lift and strict potential decrease are not proved",
+        "status": "absent"
+      },
+      "proof_boundary": "arithmetic_terminal_only",
+      "recursive_edge_eligible": false,
+      "selected_branch": "generalized_dyadic_terminal",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "source": "terminal_first",
+        "status": "not_carried"
+      },
+      "source_receipt": {
+        "K": 1205496083,
+        "L": 2410992166,
+        "R": 19,
+        "a": 18526,
+        "b": 130141,
+        "certificate_type": "generalized_dyadic_terminal",
+        "j": 1,
+        "lift_status": "unproved",
+        "phase": "TERMINAL_FIRST",
+        "prime": 253788649,
+        "proof_boundary": "arithmetic_terminal_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "state_class": "hit",
+        "terminal": {
+          "E": 343212676,
+          "base_solution": [
+            117862412,
+            235724824,
+            235724824
+          ],
+          "n": 235724824
+        },
+        "terminal_kind": "even_predecessor",
+        "two_adic_budget": {
+          "alpha": 1,
+          "beta": 0,
+          "lambda": 1,
+          "upper_bound": 2
+        }
+      },
+      "state_descriptor": {
+        "K": 1205496083,
+        "certificate_type": "generalized_dyadic_terminal",
+        "equation_target": [
+          4,
+          253788649
+        ],
+        "modulus": 19
+      },
+      "state_id": "state:89e440003bd05d2a49c0d542a749b0fde1db407a21ec4d89716eafb5b3abab75",
+      "target_fiber": {
+        "source": "target-fiber-hit-profile",
+        "status": "nonempty_source_profile",
+        "witness_type": "generalized_dyadic_pair"
+      }
+    },
+    {
+      "K_context": {
+        "K": 3040,
+        "factorization": [
+          [
+            2,
+            5
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            19,
+            1
+          ]
+        ]
+      },
+      "certificate_context": {
+        "certificate_type": "fixed_layer_quotient_fourier",
+        "phase": "DUAL_CERTIFICATE",
+        "proof_boundary": "state_internal_dual_only",
+        "source": "type-i-unified-terminal-selector-results.json"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "denominator": 193,
+        "numerator": 4
+      },
+      "induction_rank": {
+        "reason": "no recursive edge",
+        "status": "not_assigned"
+      },
+      "marked_solution_set": {
+        "source": "fixed_layer_quotient",
+        "status": "empty"
+      },
+      "modulus_context": {
+        "R": 63,
+        "identity": "4K=pR+1",
+        "type": "Type_I"
+      },
+      "normal_form": "type-I-terminal-first",
+      "potential_record": {
+        "reason": "E1-E5 lift and strict potential decrease are not proved",
+        "status": "absent"
+      },
+      "proof_boundary": "state_internal_dual_only",
+      "recursive_edge_eligible": false,
+      "selected_branch": "fixed_layer_quotient_fourier",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "status": "not_applicable"
+      },
+      "source_receipt": {
+        "K": 3040,
+        "R": 63,
+        "amplitude_squared": 12,
+        "carrier_mapping_status": "unproved",
+        "certificate_type": "fixed_layer_quotient_fourier",
+        "character_order": 6,
+        "finite_order_debt_fraction": [
+          1,
+          36
+        ],
+        "lifted_threshold_fraction": [
+          36,
+          5
+        ],
+        "phase": "DUAL_CERTIFICATE",
+        "prime": 193,
+        "proof_boundary": "state_internal_dual_only",
+        "quotient_order": 6,
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "stabilizer_order": 6,
+        "state_class": "F",
+        "threshold_fraction": [
+          6,
+          5
+        ]
+      },
+      "state_descriptor": {
+        "K": 3040,
+        "certificate_type": "fixed_layer_quotient_fourier",
+        "equation_target": [
+          4,
+          193
+        ],
+        "modulus": 63
+      },
+      "state_id": "state:e2d8bafce161614ff840eda341d28fa0aaa17e9d64f25c293a1122c3b220e752",
+      "target_fiber": {
+        "separating_character": {
+          "character_amplitude_squared": 12,
+          "character_order": 6,
+          "quotient_order": 6
+        },
+        "status": "empty"
+      }
+    }
+  ],
+  "status_lattice": [
+    "terminal_leaf",
+    "analysis_evidence",
+    "candidate_transition",
+    "verified_edge"
+  ]
+}

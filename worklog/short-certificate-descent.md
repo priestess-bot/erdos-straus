@@ -4218,3 +4218,18 @@ phase-tree capacity。冻结的 17 条阻碍幂记录形成 5 个 q 分组、13 
 命题。新增验证器 `reproductions/type_i_overflow_defect_unit_phase_capacity.py`
 和主张卡 `claims/type-I-overflow-defect-unit-phase-capacity.md` 只记录条件性桥接，
 不承担 marked lift 或 E1--E5。
+
+### 2026-08-02：表示—对偶—容量状态级分派
+
+新增 `type_i_representation_dual_capacity_selector.py`，将已有终端优先三类回执与
+overflow q 进账本装配成内容寻址的状态对象。状态对象显式保存 `equation_target`、
+`modulus_context`、`K_context`、`target_fiber`、`marked_solution_set`、
+`signed_defect`、`certificate_context` 和 `potential_record`；Fourier 源回执缺少根状态
+字段时由其原始输入补齐，而不是猜测。
+
+新的升级不变量为：`analysis_evidence` 永远不可递归；`terminal_leaf` 只能来自直接
+Type I/II；`verified_edge` 必须带完整 E1--E5、解提升和严格势下降。当前三条状态记录
+和一条跨状态容量记录全部保持分析证据，17 条阻碍幂记录的相位胞容量超载数为 0。
+该结果统一了检索和审计边界，但没有推进“每个核心素数必有分支”的全称量词；下一步
+仍是证明可达 \(A>1\) overflow 的 support-preserving alternate/终端完备性或封闭的
+良基 phase-reset 秩。

@@ -123,6 +123,21 @@ state 或直接短证书。
    `carrier_mapping_status=unproved`；它只是连接 Fourier 与容量的中间字段，不能
    被解释为已经得到跨状态 \(q\)-进容量矛盾。
 
+**2026-08-02 状态级分派收口。** 以上三类证据现已由
+`reproductions/type_i_representation_dual_capacity_selector.py` 装配为统一的
+内容寻址状态回执，并把 overflow q 进支付/缺陷单位审计作为独立的容量回执附加。分派
+顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-capacity`；每条
+回执均保存 `state_id`、根方程、目标纤维、标记集、带符号缺陷、证书上下文和势记录。
+当前三条状态回执与一条容量回执都严格保持 `analysis_evidence`，且
+`recursive_edge_eligible=false`。只有 E1--E5、解提升和严格势下降齐备时才允许
+`verified_edge`，因此该实现是类型安全的证据编排，不是全称选择器证明。聚焦命令为：
+
+```bash
+python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+```
+
+新增合同见[表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md)。
+
    近邻偶前驱、广义 \(2^j\) 偶前驱和该商 Fourier 回执现已统一到终端优先协议；协议
    明确保存标准偶解但将 `lift_status` 保持为 `unproved`，因此这些回执仍不能替代
    F/G 状态的全域解提升或 overflow 的良基递降。见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。

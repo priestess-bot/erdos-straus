@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 363 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 321 |
+| 数学状态 | `established` | 322 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 148 |
+| 证明来源 | `repository_derivation` | 149 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 278 |
+| 审阅状态 | `internal_review` | 279 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -512,6 +512,7 @@
 | [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md) (`type-I-r47-empty-support-pminusone-dyadic-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码 p-1 射线的 Jacobi 障碍与三条精确角色选择器](../claims/type-I-r47-pminusone-jacobi-ray-selector.md) (`type-I-r47-pminusone-jacobi-ray-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md) (`type-I-representation-dual-capacity-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自七 p 加一五模七因子的 R 等于七 B 等于一上半区桥](../claims/type-I-seven-p-plus-one-r7-b1-upper-bridge.md) (`type-I-seven-p-plus-one-r7-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |

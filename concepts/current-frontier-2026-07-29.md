@@ -3072,3 +3072,29 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 但要求后者提供额外的同余映射、重复度界和标签区间，或者直接把缺陷转为 Type I/II
 终端或合法下降。主张卡见
 [overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md)。
+
+## 2026-08-02 表示—对偶—容量的状态级 typed 分派
+
+路线图要求的统一选择器现在有一个可重放的状态级装配器
+`reproductions/type_i_representation_dual_capacity_selector.py`。它按
+
+```text
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-capacity
+```
+
+顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
+目标纤维、标记集、带符号缺陷、证书上下文和势记录。当前样例的近邻、广义 \(2^j\) 和
+固定层 Fourier 三条状态，以及一条 overflow 缺陷相位账本，都保持
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。只有 E1--E5、
+全域解提升和严格势下降同时出现时才允许 `verified_edge`；标准偶前驱不会被误标成
+`terminal_leaf`。
+
+这一步解决了证据编排和类型边界，不解决全称分支存在性。尤其是 overflow 缺陷单位仍
+没有被证明是实际 alternate 的共享相位；当前冻结账本的 13 个条件性相位胞没有超载。
+完整合同见[表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md)，
+结果回执为
+`reproductions/type-i-representation-dual-capacity-selector-results.json`，聚焦验证命令为：
+
+```bash
+python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+```
