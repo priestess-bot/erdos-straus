@@ -140,7 +140,7 @@ A_r\mid(p-d).
 由 overflow 恒等式和 \(A_r\mid M\) 得
 
 \[
-pn\equiv1pmod {A_r}.
+pn\equiv1\pmod {A_r}.
 \tag{9}
 \]
 

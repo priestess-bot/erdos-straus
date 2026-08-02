@@ -4185,3 +4185,25 @@ support-preserving 判据。其失败可记录为
 ```bash
 python3 reproductions/type_i_overflow_support_preserving_dual_criterion.py --verify
 ```
+
+2026-08-02 的后续消元把双对偶阻碍按旧支撑的每个素数幂拆成有方向的支付账本。若
+\(q^a\parallel A\)，则 d 通道支付
+
+\[
+\min\{a,v_q(d)+v_q(k+1)\}
+\]
+
+层，r 通道支付
+
+\[
+\min\{a,v_q(r)+v_q(dn-1)\}
+\]
+
+层；未支付高度就是对应的正部差值。由 \(q\mid d\) 时 \(dn-1\) 为 q-进单位、
+\(q\mid r\) 时 \(k+1\) 为 q-进单位，支付来源具有方向性，不能把两个通道的余数层
+无符号合并。新增验证器
+`reproductions/type_i_overflow_qadic_obstruction_transfer.py` 对冻结的 12 个 overflow、
+24 个双通道和 30 个 \(q^a\) 行逐项核验了 determinant 余数赋值、支付层、单位推论和
+阻碍乘积。该结果只是表示--对偶--容量链的局部 typed 输入；没有声称跨状态标签兼容、
+容量超载、marked lift 或递归边。主张卡见
+`claims/type-I-overflow-qadic-obstruction-transfer.md`。

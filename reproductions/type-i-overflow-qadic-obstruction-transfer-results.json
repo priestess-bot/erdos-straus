@@ -1,0 +1,881 @@
+{
+  "arithmetic": "For q**a || A, the d-channel q payment is min(a, v_q(d)+v_q(k+1)) and the r-channel payment is min(a, v_q(r)+v_q(d*n-1)). The remaining support obstruction is the uncapped deficit. The determinant congruences transfer the residue heights exactly, and q|d forces dn-1 to be a q-unit while q|r forces k+1 to be a q-unit.",
+  "scope_note": "Exact local prime-power ledger only. It does not identify a cross-state phase, prove bounded labels, produce a Type I/II certificate, or upgrade a support reset to an E1--E5 recursive edge.",
+  "input": "type-i-universal-anchor-overflow-dual-results.json",
+  "input_sha256": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a",
+  "case_count": 12,
+  "dual_channel_count": 24,
+  "q_layer_row_count": 30,
+  "channels_with_obstruction": 15,
+  "obstruction_prime_power_rows": 17,
+  "carrier_payment_rows": 13,
+  "residue_payment_rows": 5,
+  "cases": [
+    {
+      "name": "accumulated_d_one_boundary",
+      "prime": 73,
+      "A": 7,
+      "M": 91,
+      "n": 5,
+      "d": 1,
+      "r": 18,
+      "k": 1,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 1,
+          "chart_R": 3,
+          "chart_K": 55,
+          "small_chart": true,
+          "strict_gain": false,
+          "joined_support": 7,
+          "direct_support_divisibility": false,
+          "support_obstruction": 7,
+          "q_layers": [
+            {
+              "q": 7,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 2,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 18,
+          "chart_R": 71,
+          "chart_K": 1296,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 126,
+          "direct_support_divisibility": false,
+          "support_obstruction": 7,
+          "q_layers": [
+            {
+              "q": 7,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 4,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "accumulated_positive_fixed_n_edge",
+      "prime": 409,
+      "A": 5,
+      "M": 250,
+      "n": 489,
+      "d": 200,
+      "r": 250,
+      "k": 0,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 200,
+          "chart_R": 311,
+          "chart_K": 31800,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 200,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [
+            {
+              "q": 5,
+              "support_exponent": 1,
+              "carrier_height": 2,
+              "residue_label": 1,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": true
+        },
+        {
+          "side": "r",
+          "carrier": 250,
+          "chart_R": 511,
+          "chart_K": 52250,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 250,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [
+            {
+              "q": 5,
+              "support_exponent": 1,
+              "carrier_height": 3,
+              "residue_label": 97799,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "empty_fixed_n_window",
+      "prime": 241,
+      "A": 38,
+      "M": 190,
+      "n": 41,
+      "d": 13,
+      "r": 190,
+      "k": 0,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 13,
+          "chart_R": 11,
+          "chart_K": 663,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 494,
+          "direct_support_divisibility": false,
+          "support_obstruction": 38,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 1,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            },
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 1,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 190,
+          "chart_R": 719,
+          "chart_K": 43320,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 190,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 532,
+              "residue_label_name": "d*n-1",
+              "residue_height": 2,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": true,
+              "carrier_divisible": true
+            },
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 532,
+              "residue_label_name": "d*n-1",
+              "residue_height": 1,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": true,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "reachable_conflict_bundle_0",
+      "prime": 73,
+      "A": 19,
+      "M": 38,
+      "n": 25,
+      "d": 12,
+      "r": 38,
+      "k": 0,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 12,
+          "chart_R": 23,
+          "chart_K": 420,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 228,
+          "direct_support_divisibility": false,
+          "support_obstruction": 19,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 1,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 38,
+          "chart_R": 127,
+          "chart_K": 2318,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 38,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 299,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "reachable_conflict_bundle_1",
+      "prime": 73,
+      "A": 19,
+      "M": 608,
+      "n": 633,
+      "d": 19,
+      "r": 24,
+      "k": 8,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 19,
+          "chart_R": 51,
+          "chart_K": 931,
+          "small_chart": true,
+          "strict_gain": false,
+          "joined_support": 19,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 9,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 24,
+          "chart_R": 71,
+          "chart_K": 1296,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 456,
+          "direct_support_divisibility": false,
+          "support_obstruction": 19,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 12026,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "reachable_conflict_bundle_2",
+      "prime": 73,
+      "A": 19,
+      "M": 836,
+      "n": 2153,
+      "d": 47,
+      "r": 33,
+      "k": 11,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 47,
+          "chart_R": 103,
+          "chart_K": 1880,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 893,
+          "direct_support_divisibility": false,
+          "support_obstruction": 19,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 12,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 33,
+          "chart_R": 47,
+          "chart_K": 858,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 627,
+          "direct_support_divisibility": false,
+          "support_obstruction": 19,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 101190,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "reachable_conflict_bundle_3",
+      "prime": 73,
+      "A": 19,
+      "M": 950,
+      "n": 937,
+      "d": 18,
+      "r": 1,
+      "k": 13,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 18,
+          "chart_R": 71,
+          "chart_K": 1296,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 342,
+          "direct_support_divisibility": false,
+          "support_obstruction": 19,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 14,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 1,
+          "chart_R": 3,
+          "chart_K": 55,
+          "small_chart": true,
+          "strict_gain": false,
+          "joined_support": 19,
+          "direct_support_divisibility": false,
+          "support_obstruction": 19,
+          "q_layers": [
+            {
+              "q": 19,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 16865,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "root_edge_0",
+      "prime": 73,
+      "A": 1,
+      "M": 34,
+      "n": 41,
+      "d": 22,
+      "r": 34,
+      "k": 0,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 22,
+          "chart_R": 47,
+          "chart_K": 858,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 22,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [],
+          "support_preserving_edge": true
+        },
+        {
+          "side": "r",
+          "carrier": 34,
+          "chart_R": 95,
+          "chart_K": 1734,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 34,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "root_edge_1",
+      "prime": 241,
+      "A": 1,
+      "M": 71,
+      "n": 33,
+      "d": 28,
+      "r": 71,
+      "k": 0,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 28,
+          "chart_R": 79,
+          "chart_K": 4760,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 28,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [],
+          "support_preserving_edge": true
+        },
+        {
+          "side": "r",
+          "carrier": 71,
+          "chart_R": 251,
+          "chart_K": 15123,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 71,
+          "direct_support_divisibility": true,
+          "support_obstruction": 1,
+          "q_layers": [],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "lcm_cycle_step_0",
+      "prime": 73,
+      "A": 66,
+      "M": 1518,
+      "n": 2329,
+      "d": 28,
+      "r": 58,
+      "k": 20,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 28,
+          "chart_R": 23,
+          "chart_K": 420,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 924,
+          "direct_support_divisibility": false,
+          "support_obstruction": 11,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 1,
+              "carrier_height": 2,
+              "residue_label": 21,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            },
+            {
+              "q": 3,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 21,
+              "residue_label_name": "k+1",
+              "residue_height": 1,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": false,
+              "residue_pays_any": true,
+              "carrier_divisible": false
+            },
+            {
+              "q": 11,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 21,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 58,
+          "chart_R": 143,
+          "chart_K": 2610,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 1914,
+          "direct_support_divisibility": false,
+          "support_obstruction": 11,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 65211,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            },
+            {
+              "q": 3,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 65211,
+              "residue_label_name": "d*n-1",
+              "residue_height": 1,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": false,
+              "residue_pays_any": true,
+              "carrier_divisible": false
+            },
+            {
+              "q": 11,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 65211,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "lcm_cycle_step_1",
+      "prime": 73,
+      "A": 66,
+      "M": 924,
+      "n": 2329,
+      "d": 46,
+      "r": 48,
+      "k": 12,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 46,
+          "chart_R": 63,
+          "chart_K": 1150,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 1518,
+          "direct_support_divisibility": false,
+          "support_obstruction": 33,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 13,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            },
+            {
+              "q": 3,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 13,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            },
+            {
+              "q": 11,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 13,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 48,
+          "chart_R": 71,
+          "chart_K": 1296,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 528,
+          "direct_support_divisibility": false,
+          "support_obstruction": 11,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 1,
+              "carrier_height": 4,
+              "residue_label": 107133,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            },
+            {
+              "q": 3,
+              "support_exponent": 1,
+              "carrier_height": 1,
+              "residue_label": 107133,
+              "residue_label_name": "d*n-1",
+              "residue_height": 1,
+              "paid_height_capped": 1,
+              "obstruction_height": 0,
+              "carrier_pays_any": true,
+              "residue_pays_any": true,
+              "carrier_divisible": true
+            },
+            {
+              "q": 11,
+              "support_exponent": 1,
+              "carrier_height": 0,
+              "residue_label": 107133,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 0,
+              "obstruction_height": 1,
+              "carrier_pays_any": false,
+              "residue_pays_any": false,
+              "carrier_divisible": false
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    },
+    {
+      "name": "symmetric_small_chart_support_conflict",
+      "prime": 241,
+      "A": 8,
+      "M": 568,
+      "n": 1169,
+      "d": 124,
+      "r": 86,
+      "k": 2,
+      "channels": [
+        {
+          "side": "d",
+          "carrier": 124,
+          "chart_R": 319,
+          "chart_K": 19220,
+          "small_chart": false,
+          "strict_gain": true,
+          "joined_support": 248,
+          "direct_support_divisibility": false,
+          "support_obstruction": 2,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 3,
+              "carrier_height": 2,
+              "residue_label": 3,
+              "residue_label_name": "k+1",
+              "residue_height": 0,
+              "paid_height_capped": 2,
+              "obstruction_height": 1,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": false
+        },
+        {
+          "side": "r",
+          "carrier": 86,
+          "chart_R": 167,
+          "chart_K": 10062,
+          "small_chart": true,
+          "strict_gain": true,
+          "joined_support": 344,
+          "direct_support_divisibility": false,
+          "support_obstruction": 4,
+          "q_layers": [
+            {
+              "q": 2,
+              "support_exponent": 3,
+              "carrier_height": 1,
+              "residue_label": 144955,
+              "residue_label_name": "d*n-1",
+              "residue_height": 0,
+              "paid_height_capped": 1,
+              "obstruction_height": 2,
+              "carrier_pays_any": true,
+              "residue_pays_any": false,
+              "carrier_divisible": true
+            }
+          ],
+          "support_preserving_edge": false
+        }
+      ]
+    }
+  ]
+}

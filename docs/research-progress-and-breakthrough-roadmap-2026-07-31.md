@@ -79,15 +79,23 @@ support，普通 `lcm` 重入给出 \(38\to132\to330\to132\)，其中 \(M=132\) 
 该例反驳当前菜单的全称闭合，不是 Erdős--Straus 反例，也不排除别的 source、marked
 state 或直接短证书。
 
-   对称双载体的支撑失败现已进一步消元。若 (M=kp+r)，则 d 通道的旧 support
-   整除等价于
-   (,A/\gcd(A,d)\mid k+1,)，r 通道等价于
-   (,A/\gcd(A,r)\mid dn-1,)。分别定义两个余因子
-   (mathcal O_d,mathcal O_r) 记录未支付的旧 support q 进层数；加上图表小于 (p)
-   和严格增加 support 的条件，这给出了 symmetric dual 的完整 support-preserving
-   判据。12 个代表性 overflow 的 24 个双通道中，3 个通过、15 个留下非平凡阻碍。
-   这不是 overflow 闭合，但把下一个容量/alternate-source 命题从整除黑盒收紧为
-   两个显式有向 q 进余项。见[overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md)。
+   **2026-08-02 账本细化。** 对称双载体的支撑失败现已进一步消元。若
+   \(M=kp+r\)，则 d 通道的旧 support 整除等价于
+   \(A/\gcd(A,d)\mid k+1\)，r 通道等价于
+   \(A/\gcd(A,r)\mid dn-1\)。对每个 \(q^a\parallel A\)，这两个条件又精确分解为
+   载体支付和余数支付：
+
+   \[
+   P_d(q)=\min\{a,v_q(d)+v_q(k+1)\},
+   \qquad
+   P_r(q)=\min\{a,v_q(r)+v_q(dn-1)\}.
+   \]
+
+   相应未支付高度是正部差值；若 \(q\mid d\)，则 \(dn-1\) 是 q-进单位，若
+   \(q\mid r\)，则 \(k+1\) 是 q-进单位。因此阻碍带有方向性，不能无符号合并两个
+   通道的余数层。聚焦的 12 个 overflow、24 个双通道和 30 个素数幂账本行全部通过
+   截断赋值、方向性单位和阻碍乘积核验。它仍不产生跨状态容量或递归边，详见
+   [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md)。
 
 3. **固定层稳定子—Fourier 接口已精确化。** 对固定层稳定子
    \(P=\operatorname{Stab}_H(J)\)，固定目标的表示数满足

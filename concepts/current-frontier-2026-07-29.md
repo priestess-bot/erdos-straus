@@ -3006,3 +3006,50 @@ A_d=A/\gcd(A,d),\qquad A_r=A/\gcd(A,r).
 
 短期暂停：单纯把稠密扫描上界继续外推、继续堆叠固定有限 AC 扇、只研究二次角色、
 在固定层为子群的假设上增加特例，以及没有提升映射或良基势函数的局部状态图扩边。
+
+## overflow 双对偶的逐素数幂支付账本（2026-08-02）
+
+双对偶余项现在可以进一步按每个旧支撑素数幂拆开。设
+
+\[
+q^a\parallel A,
+\qquad M=kp+r,
+\qquad pn=4Md+1.
+\]
+
+在 \(d\) 通道，旧 \(q\)-层由载体 \(d\) 和余数标签 \(k+1\) 支付；在 \(r\) 通道，
+由载体 \(r\) 和余数标签 \(dn-1\) 支付。精确支付高度与剩余高度分别为
+
+\[
+P_d(q)=\min\{a,v_q(d)+v_q(k+1)\},
+\qquad
+O_d(q)=\bigl(a-v_q(d)-v_q(k+1)\bigr)_+,
+\]
+
+\[
+P_r(q)=\min\{a,v_q(r)+v_q(dn-1)\},
+\qquad
+O_r(q)=\bigl(a-v_q(r)-v_q(dn-1)\bigr)_+.
+\]
+
+这是现有 \(\mathcal O_d,\mathcal O_r\) 的逐素数幂展开，不是新的跨状态容量假设。
+其方向性边界为
+
+\[
+q\mid d\Longrightarrow v_q(dn-1)=0,
+\qquad
+q\mid r\Longrightarrow v_q(k+1)=0.
+\]
+
+因此某一通道把 \(q\) 放进载体后，另一通道不能再从对应余数标签支付同一首层；这为
+后续的带符号容量向量提供了明确的 `carrier_paid`/`residue_paid` 字段。聚焦的 12
+个 overflow、24 个通道和 30 个 \(q^a\) 账本行全部通过截断赋值、方向性单位和乘积
+阻碍三重核验。它仍然没有产生跨状态相位、标记非空性或 E1--E5 递归边，下一步需
+把这些有方向的剩余高度与真实 alternate/source-switch 连接起来。
+
+主张卡见[overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md)，
+复现命令为：
+
+```bash
+python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
+```
