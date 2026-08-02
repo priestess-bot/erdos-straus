@@ -22,6 +22,8 @@ sources:
   role: fixed-n-dual-atlas-and-current-residual
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
+- claim: type-I-overflow-support-preserving-dual-criterion
+  role: determinant-dual-support-obstruction
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -2954,6 +2956,43 @@ q^{k_{ij}}\mid\Delta_{ij}.
 它证明桥接合同的算术正确性，不证明全体 F/G 状态存在统一有界标签，也不提供实际
 marked lift。因此下一步的真正任务被精确化为：从规范 Fourier/格证书构造有界且
 相位兼容的清分标签，或证明这些标签不可能存在并转入合法 support-switch。
+
+## overflow 双对偶支撑阻碍的精确消元（2026-08-02）
+
+对 overflow 行列式
+
+\[
+pn=4Md+1,\qquad M=kp+r,\qquad 1\le r<p,
+\]
+
+旧 charged support \(A\mid M\) 的对称载体 \(d,r\) 不再需要用
+\(\operatorname{lcm}(A,t)\mid K_t\) 作为黑盒条件。令
+
+\[
+A_d=A/\gcd(A,d),\qquad A_r=A/\gcd(A,r).
+\]
+
+直接消元得到
+
+\[
+\operatorname{lcm}(A,d)\mid K_d\iff A_d\mid k+1,
+\qquad
+\operatorname{lcm}(A,r)\mid K_r\iff A_r\mid dn-1.
+\]
+
+加上图表在 \(p\) 以下和严格 support 增长
+\(d\nmid A\) 或 \(r\nmid A\)，这就是两个对称通道的完整 support-preserving
+判据。失败部分可规范记录为
+
+\[
+\mathcal O_d=A_d/\gcd(A_d,k+1),\qquad
+\mathcal O_r=A_r/\gcd(A_r,dn-1),
+\]
+
+即旧支撑在该 determinant 通道中未被支付的 q 进阻碍向量。12 个代表性 overflow 的
+24 个通道逐项核验无失配，其中 3 个通过支撑保持，15 个带非平凡阻碍。这把
+“alternate 失败”推进成可直接送入跨状态容量/相位匹配的有向输入，但尚未证明阻碍
+一定产生新状态或终端。详见[overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md)。
 
 ## 统一术语与暂停项
 

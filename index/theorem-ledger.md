@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 363 |
 | 数学状态 | `conditional` | 17 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 319 |
+| 数学状态 | `established` | 320 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 145 |
+| 证明来源 | `repository_derivation` | 146 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 275 |
+| 审阅状态 | `internal_review` | 276 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -483,6 +483,7 @@
 | [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md) (`type-I-overflow-d-only-square-excess-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [overflow 行列式的固定 n 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md) (`type-I-overflow-determinant-fixed-n-dual-support-conflict`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md) (`type-I-overflow-support-preserving-dual-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md) (`type-I-pareto-overflow-capacity-separation-theorem`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |

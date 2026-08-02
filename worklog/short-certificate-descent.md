@@ -4138,3 +4138,50 @@ h=v_q(tR+1),\qquad t=s\text{ 或 }a.
 ```bash
 python3 reproductions/type_i_f_bounded_fourier_carrier_capacity.py --verify
 ```
+
+## 2026-08-02 overflow 双对偶的支撑阻碍消元
+
+当前 overflow 余项中的对称小图表原先只用
+\(
+\operatorname{lcm}(A,t)\mid K_t
+\)
+逐项试除。对
+
+\[
+pn=4Md+1,\qquad M=kp+r,
+\]
+
+可以完全消去图表因子。令
+
+\[
+A_d=A/\gcd(A,d),\qquad A_r=A/\gcd(A,r).
+\]
+
+因为 (p-r=(k+1)p-M)、(pn\equiv1\pmod{A_r})，有
+
+\[
+\operatorname{lcm}(A,d)\mid d(p-r)\iff A_d\mid k+1,
+\]
+\[
+\operatorname{lcm}(A,r)\mid r(p-d)\iff A_r\mid dn-1.
+\]
+
+再加上对偶图表的 (R_t<p) 和 (t\nmid A)，这给出完整的双通道
+support-preserving 判据。其失败可记录为
+
+\[
+\mathcal O_d=A_d/\gcd(A_d,k+1),\qquad
+\mathcal O_r=A_r/\gcd(A_r,dn-1),
+\]
+
+这两个因子直接携带旧 charged support 未支付的 q 进层。新复现从已有通用 overflow
+回执抽取 12 个代表性案例，共 24 个通道，解析判据与直接 lcm 整除逐项一致；3 个
+通道通过支撑保持，15 个通道产生非平凡阻碍。它把 alternate 失败从黑盒整除问题
+改写成可供跨状态容量或 support-switch 使用的有向残差，但尚未证明残差必产生递归边。
+
+主张卡见[overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md)，
+复现命令为：
+
+```bash
+python3 reproductions/type_i_overflow_support_preserving_dual_criterion.py --verify
+```

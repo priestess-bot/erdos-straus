@@ -79,6 +79,16 @@ support，普通 `lcm` 重入给出 \(38\to132\to330\to132\)，其中 \(M=132\) 
 该例反驳当前菜单的全称闭合，不是 Erdős--Straus 反例，也不排除别的 source、marked
 state 或直接短证书。
 
+   对称双载体的支撑失败现已进一步消元。若 (M=kp+r)，则 d 通道的旧 support
+   整除等价于
+   (,A/\gcd(A,d)\mid k+1,)，r 通道等价于
+   (,A/\gcd(A,r)\mid dn-1,)。分别定义两个余因子
+   (mathcal O_d,mathcal O_r) 记录未支付的旧 support q 进层数；加上图表小于 (p)
+   和严格增加 support 的条件，这给出了 symmetric dual 的完整 support-preserving
+   判据。12 个代表性 overflow 的 24 个双通道中，3 个通过、15 个留下非平凡阻碍。
+   这不是 overflow 闭合，但把下一个容量/alternate-source 命题从整除黑盒收紧为
+   两个显式有向 q 进余项。见[overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md)。
+
 3. **固定层稳定子—Fourier 接口已精确化。** 对固定层稳定子
    \(P=\operatorname{Stab}_H(J)\)，固定目标的表示数满足
    \(N_J(t)=\bar N(\pi(t))\)；只有在目标陪集 \(tP\) 上求和时才出现 \(|P|\) 因子。
