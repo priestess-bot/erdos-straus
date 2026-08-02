@@ -45,6 +45,7 @@
   "invariants": {
     "analysis_evidence_never_recursive": true,
     "fixed_n_overflow_rank_requires_positive_chart": true,
+    "fixed_s_overflow_rank_requires_product_divisor": true,
     "hard_core_negative_receipt_never_recursive": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
@@ -909,6 +910,758 @@
         },
         "target_fiber": {
           "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      }
+    ]
+  },
+  "overflow_fixed_s_outer_rank": {
+    "absorption_target_count": 0,
+    "fixture_count": 12,
+    "new_after_fixed_n_outer_rank_count": 2,
+    "overflow_target_count": 7,
+    "overlap_with_fixed_n_outer_rank_count": 5,
+    "rank_definition": {
+      "acceptance": "L|r*d, L>A, R_L>0, canonical_chart(p,L)=(R_L,K_L), and strict potential decrease",
+      "candidate": "L=lcm(A,r)",
+      "fixed_identity": "p*s=4*r*d+1; R_L=4L-s; K_L=L*(p-r*d/L)",
+      "formula": "floor(((p-1)^2)/4 / A)",
+      "kind": "absorbed_support_potential"
+    },
+    "rejected_fixture_count": 5,
+    "rejected_fixtures": [
+      {
+        "candidate_chart": {
+          "K": null,
+          "R": 503,
+          "positive": true
+        },
+        "dual_carrier": 18,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixed_s": 1,
+        "fixture_name": "accumulated_d_one_boundary",
+        "joined_support": 126,
+        "missing_conditions": [
+          "fixed_s_support_divisor",
+          "fixed_s_chart_identity"
+        ],
+        "proof_boundary": "fixed_s_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 91,
+        "source_support": 7
+      },
+      {
+        "candidate_chart": {
+          "K": null,
+          "R": 2423,
+          "positive": true
+        },
+        "dual_carrier": 33,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixed_s": 85,
+        "fixture_name": "reachable_conflict_bundle_2",
+        "joined_support": 627,
+        "missing_conditions": [
+          "fixed_s_support_divisor",
+          "fixed_s_chart_identity"
+        ],
+        "proof_boundary": "fixed_s_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 836,
+        "source_support": 19
+      },
+      {
+        "candidate_chart": {
+          "K": null,
+          "R": 75,
+          "positive": true
+        },
+        "dual_carrier": 1,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixed_s": 1,
+        "fixture_name": "reachable_conflict_bundle_3",
+        "joined_support": 19,
+        "missing_conditions": [
+          "fixed_s_support_divisor",
+          "fixed_s_chart_identity",
+          "strict_support_gain",
+          "strict_potential_decrease"
+        ],
+        "proof_boundary": "fixed_s_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 950,
+        "source_support": 19
+      },
+      {
+        "candidate_chart": {
+          "K": null,
+          "R": 7567,
+          "positive": true
+        },
+        "dual_carrier": 58,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixed_s": 89,
+        "fixture_name": "lcm_cycle_step_0",
+        "joined_support": 1914,
+        "missing_conditions": [
+          "fixed_s_support_divisor",
+          "fixed_s_chart_identity"
+        ],
+        "proof_boundary": "fixed_s_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 1518,
+        "source_support": 66
+      },
+      {
+        "candidate_chart": {
+          "K": null,
+          "R": 1991,
+          "positive": true
+        },
+        "dual_carrier": 48,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixed_s": 121,
+        "fixture_name": "lcm_cycle_step_1",
+        "joined_support": 528,
+        "missing_conditions": [
+          "fixed_s_support_divisor",
+          "fixed_s_chart_identity"
+        ],
+        "proof_boundary": "fixed_s_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 924,
+        "source_support": 66
+      }
+    ],
+    "scope_note": "This branch is the symmetric r-side fixed-s atlas. It complements the d-side fixed-n branch but does not assert that every overflow has L|r*d.",
+    "verified_edge_count": 7,
+    "verified_receipts": [
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 250,
+            "d": 200,
+            "identity": "p*s=4*r*d+1",
+            "r": 250,
+            "s": 489
+          },
+          "fixture_name": "accumulated_positive_fixed_n_edge",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 52250,
+            "L": 250,
+            "R_L": 511
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:95d219198fbdb85c4d211247dddc0ce03209d8a139745dfba4a07076ceb99581",
+        "equation_target": {
+          "denominator": 409,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 8323,
+          "successor": 166
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 41616,
+          "source_support": 5,
+          "source_value": 8323,
+          "strict_decrease": true,
+          "successor_support": 250,
+          "successor_value": 166,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 511,
+          "absorbed_support": 5,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 52250,
+          "R": 511,
+          "absorbed_support": 250,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 190,
+            "d": 13,
+            "identity": "p*s=4*r*d+1",
+            "r": 190,
+            "s": 41
+          },
+          "fixture_name": "empty_fixed_n_window",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 43320,
+            "L": 190,
+            "R_L": 719
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:2b89802d57198a0b963bebd92ccc8623f5cb5dcd1a18c950857a0a6ad7bde0c4",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 378,
+          "successor": 75
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 38,
+          "source_value": 378,
+          "strict_decrease": true,
+          "successor_support": 190,
+          "successor_value": 75,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 43320,
+          "R": 719,
+          "absorbed_support": 38,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 43320,
+          "R": 719,
+          "absorbed_support": 190,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 38,
+            "d": 12,
+            "identity": "p*s=4*r*d+1",
+            "r": 38,
+            "s": 25
+          },
+          "fixture_name": "reachable_conflict_bundle_0",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 2318,
+            "L": 38,
+            "R_L": 127
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:c812417ad1f11002aff3f620eff6895faa88f0352f741841aaa818818c86740b",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 34
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 38,
+          "successor_value": 34,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 2318,
+          "R": 127,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 2318,
+          "R": 127,
+          "absorbed_support": 38,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 608,
+            "d": 19,
+            "identity": "p*s=4*r*d+1",
+            "r": 24,
+            "s": 25
+          },
+          "fixture_name": "reachable_conflict_bundle_1",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 32832,
+            "L": 456,
+            "R_L": 1799
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:8076968d2f8db4d31edeab0e1ff7fbb4dfb641c1f4e923988b3af8bee2d7a84b",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 2
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 456,
+          "successor_value": 2,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 32832,
+          "R": 1799,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 32832,
+          "R": 1799,
+          "absorbed_support": 456,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 34,
+            "d": 22,
+            "identity": "p*s=4*r*d+1",
+            "r": 34,
+            "s": 41
+          },
+          "fixture_name": "root_edge_0",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 1734,
+            "L": 34,
+            "R_L": 95
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:829e136078b5f225ac62f9d0fc19a90b33053ac5ff6edc77cc3696ae259b988f",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1296,
+          "successor": 38
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 1,
+          "source_value": 1296,
+          "strict_decrease": true,
+          "successor_support": 34,
+          "successor_value": 38,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 34,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 71,
+            "d": 28,
+            "identity": "p*s=4*r*d+1",
+            "r": 71,
+            "s": 33
+          },
+          "fixture_name": "root_edge_1",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 15123,
+            "L": 71,
+            "R_L": 251
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:6bbce81ee03df684e11621bf5fb8698cf1c1b98784dd6ebca0e92fc94cceca7a",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 14400,
+          "successor": 202
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 1,
+          "source_value": 14400,
+          "strict_decrease": true,
+          "successor_support": 71,
+          "successor_value": 202,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 71,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "decomposition": {
+            "M": 568,
+            "d": 124,
+            "identity": "p*s=4*r*d+1",
+            "r": 86,
+            "s": 177
+          },
+          "fixture_name": "symmetric_small_chart_support_conflict",
+          "provenance": "overflow_symmetric_dual_fixed_s",
+          "selected_candidate": {
+            "K_L": 72240,
+            "L": 344,
+            "R_L": 1199
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_s_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:60a2684922342840113bb3401790ef4c2a0ba37b1f238121e0fd4f310c282d6c",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1800,
+          "successor": 41
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 8,
+          "source_value": 1800,
+          "strict_decrease": true,
+          "successor_support": 344,
+          "successor_value": 41,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_s_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The symmetric r-side fixed-s determinant chart preserves the old support through L|r*d and strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 66456,
+          "R": 1103,
+          "absorbed_support": 8,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 72240,
+          "R": 1199,
+          "absorbed_support": 344,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-s dual determinant identity with chart-independent marking",
           "status": "inherited_full_solution_set"
         }
       }
@@ -4923,7 +5676,7 @@
     "scope_note": "RESET remains candidate_transition until an outer non-resettable rank is supplied."
   },
   "schema_version": 1,
-  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n identity-lift edges and focused joined-support RESET edges, but does not prove universal branch existence or well-founded descent for all overflow states.",
+  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, but does not prove universal branch existence or well-founded descent for all overflow states.",
   "selector_order": [
     "direct_type_i_or_type_ii",
     "target_fiber_neighbor_terminal",
@@ -4931,6 +5684,7 @@
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
+    "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",

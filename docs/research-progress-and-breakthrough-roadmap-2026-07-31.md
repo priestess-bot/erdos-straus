@@ -126,7 +126,7 @@ state 或直接短证书。
 **2026-08-02 状态级分派收口。** 以上三类证据现已由
 `reproductions/type_i_representation_dual_capacity_selector.py` 装配为统一的
 内容寻址状态回执，并把 overflow q 进支付/缺陷单位审计作为独立的容量回执附加。分派
-顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity`；
+顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity`；
 每条回执均保存 `state_id`、根方程、目标纤维、标记集、带符号缺陷、证书上下文和势记录。
 当前三条状态回执与一条容量回执仍严格保持 `analysis_evidence`，且
 `recursive_edge_eligible=false`；但固定-\(n\) 行列式图谱中的正例
@@ -156,6 +156,14 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 因 \(d=1\) 或 \(R_L\le0\) 失败。该结果把“窗口空”从无后继误读改为“没有窗口内
 吸收态”，不关闭 r 通道或全称 \(A>1\) 存在性。详见
 [固定 \(n\) 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md)。
+
+**2026-08-03 对偶固定-\(s\) 更新。** 对 \(M=kp+r\) 的同一 overflow，恒有
+\(ps=4rd+1\)。若 \(L=\operatorname{lcm}(A,r)\mid rd\)，则固定-\(s\) 图谱
+\(R_L^{(s)}=4L-s\)、\(K_L^{(s)}=L(p-rd/L)\) 同样给出 canonical chart、恒等
+提升和外层势下降。12 个 fixture 中该分支得到 7 条 E1--E5 边，5 条与 d 侧重叠，
+2 条补上此前拒绝的 fixture；与固定-\(n\) 分支合计覆盖 11/12。剩余 d=1 边界仍不满足
+\(L\mid rd\)，因此这一步收缩但没有消除 r 通道的全称整除缺口。详见
+[overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)。
 
    近邻偶前驱、广义 \(2^j\) 偶前驱和该商 Fourier 回执现已统一到终端优先协议；协议
    明确保存标准偶解但将 `lift_status` 保持为 `unproved`，因此这些回执仍不能替代

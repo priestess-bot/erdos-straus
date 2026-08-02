@@ -4324,3 +4324,32 @@ overflow_fixed_n_outer_rank_reset 后，12 个 fixture 中 9 条通过 E1--E5，
 支付。主张卡见
 [固定 \(n\) 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md)，
 回执位于 `overflow_fixed_n_outer_rank`。
+
+### 2026-08-03：对偶固定-\(s\) 的 r 侧外层秩边
+
+将 \(M=kp+r\) 代入 \(pn=4Md+1\)，得到
+
+\[
+ps=4rd+1,
+\qquad s=n-4kd.
+\]
+
+所以 r 侧可以在固定-\(s\) 图谱中取
+
+\[
+L=\operatorname{lcm}(A,r),
+\qquad
+R_L^{(s)}=4L-s,
+\qquad
+K_L^{(s)}=L\left(p-\frac{rd}{L}\right).
+\]
+
+当 \(L\mid rd\)、\(L>A\)、\(R_L^{(s)}>0\) 且外层势严格下降时，恒等标记提升给出
+完整 E1--E5。12 个 fixture 中该分支有 7 条 `verified_edge`，全部仍是 overflow；其中
+5 条与 fixed-\(n\) 分支重叠，2 条补上 `reachable_conflict_bundle_1` 和
+`symmetric_small_chart_support_conflict`，两侧并集覆盖 11/12。唯一留下的是 d=1 的
+`accumulated_d_one_boundary`，其 \(\operatorname{lcm}(A,r)\nmid rd\)。
+
+新主张卡见
+[overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)，
+回执位于 `overflow_fixed_s_outer_rank`。

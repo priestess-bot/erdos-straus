@@ -3079,7 +3079,7 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
@@ -3171,3 +3171,23 @@ overflow 的 24 个双通道中，8 条满足该合同，其中 3 条到达 \(R_
 可能有递归 overflow”。它仍没有处理 r 通道的支撑整除失败，也没有证明任意
 \(A>1\) overflow 都有正的 \(L\)。详见
 [固定 \(n\) 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md)。
+
+## 2026-08-03 对偶固定-\(s\) 的 r 侧外层秩边
+
+对 \(M=kp+r\) 的 overflow，来源恒等式还给出
+\[
+ps=4rd+1,
+\qquad s=n-4kd.
+\]
+因此 r 侧可以在固定-\(s\) 图谱上取
+\(L=\operatorname{lcm}(A,r)\)。只要 \(L\mid rd\)、\(L>A\)、目标
+\(R_L^{(s)}=4L-s>0\) 且 canonical chart 恒等式成立，恒等标记提升和
+\(\Pi_A(L)<\Pi_A(A)\) 即给出完整 E1--E5 外层秩边。
+
+冻结 12 个 fixture 的固定-\(s\) 分支有 7 条 verified_edge（全为 overflow），其中
+5 条与 d 侧固定-\(n\) 分支重叠，2 条补上此前拒绝的
+`reachable_conflict_bundle_1` 与 `symmetric_small_chart_support_conflict`。两侧并集现
+覆盖 11/12 个 fixture；剩余 `accumulated_d_one_boundary` 仍因
+\(\operatorname{lcm}(A,r)\nmid rd\) 未闭合。该分支是对旧 r 图表支撑判据的补充，不把
+\(A/\gcd(A,r)\mid d\) 与 \(A/\gcd(A,r)\mid(p-d)\) 混为同一条件。详见
+[overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)。

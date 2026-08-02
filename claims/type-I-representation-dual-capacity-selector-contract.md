@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、固定-n 支撑增长边、overflow 固定-n/双对偶 hard-core 负边界与 q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、fixed-n、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、hard-core 负边界和容量审计仍是 analysis_evidence，但已有一个固定-n identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界与 q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、hard-core 负边界和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -12,6 +12,7 @@ depends_on:
   - type-I-overflow-defect-unit-phase-capacity
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-fixed-n-overflow-rank-descent
+  - type-I-overflow-fixed-s-dual-outer-rank-descent
   - type-I-overflow-fixed-n-gap-dual-obstruction
   - type-I-overflow-outer-rank-reset
   - type-I-overflow-phase-reset-cycle-boundary
@@ -58,6 +59,7 @@ generalized_dyadic_terminal
 fixed_layer_quotient_fourier
 overflow_fixed_n_charged_support
 overflow_fixed_n_outer_rank_reset
+overflow_fixed_s_outer_rank_reset
 overflow_outer_rank_reset
 overflow_hard_core_gap_obstruction
 overflow_qadic_phase_capacity
@@ -145,6 +147,11 @@ E1--E5，其中 3 条落入 \(R_L<p\) 吸收态，6 条落入 \(R_L>p\) 的严�
 这 6 条不是直接终端，但可以继续进入 overflow 选择器。详见
 [固定 \(n\) 窗口上方的 overflow 支撑秩递降](type-I-overflow-fixed-n-overflow-rank-descent.md)。
 
+对称的 r 侧恒等式 \(M=kp+r\) 给出 \(ps=4rd+1\)。选择
+\(L=\operatorname{lcm}(A,r)\) 且 \(L\mid rd\) 时，固定-\(s\) 图谱又产生 7 条完整
+E1--E5 外层秩边，其中 5 条与 d 侧重叠、2 条补上此前拒绝的 fixture。详见
+[overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](type-I-overflow-fixed-s-dual-outer-rank-descent.md)。
+
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 
 | 分类 | 数量 | 证明边界 |
@@ -175,8 +182,9 @@ RESET 现又增加一条带不可重置外层秩的 typed 分支：先取
 阻碍幂记录；相位审计得到 5 个 \(q\) 组、13 个相位胞、5 对兼容记录，容量超载胞为
 0。该结果只是负边界：当前没有从缺陷单位得到容量矛盾，也没有生成递归边。
 
-固定-\(n\) 正例只证明该分支在一个完整 receipt 上可升级；它不改变已有事实：一般 \(A>1\)
-overflow 的固定-\(n\) 窗口可以为空，且两个对称载体也可能同时失去旧支撑。
+固定-\(n\)/固定-\(s\) 正例只证明这些分支在满足各自整除条件的完整 receipt 上可升级；
+它不改变已有事实：一般 \(A>1\) overflow 可能同时失去固定-\(n\) 与固定-\(s\) 的合法
+外层秩候选，仍需 alternate、终端或容量证书。
 
 结果文件为
 `reproductions/type-i-representation-dual-capacity-selector-results.json`。

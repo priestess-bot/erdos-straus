@@ -30,6 +30,7 @@ SELECTOR_ORDER = [
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
+    "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
@@ -838,6 +839,214 @@ def overflow_fixed_n_outer_rank(payload: dict[str, object]) -> dict[str, object]
     }
 
 
+def overflow_fixed_s_outer_rank(payload: dict[str, object]) -> dict[str, object]:
+    """Audit the symmetric r-side fixed-s divisor atlas.
+
+    Writing M=kp+r turns pn=4Md+1 into p*s=4*r*d+1 with
+    s=n-4*k*d.  A divisor L of r*d therefore gives a second canonical
+    chart, independent of the fixed-n chart used by the d-side branch.
+    """
+    verified: list[dict[str, object]] = []
+    rejected: list[dict[str, object]] = []
+    rows = overflow_fixture_rows(payload)
+    for fixture in rows:
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        source_carrier = int(fixture["M"])
+        source_R = int(fixture["R_M"])
+        source_K = int(fixture["K_M"])
+        d = int(fixture["d"])
+        residue = source_carrier % prime
+        numerator = 4 * residue * d + 1
+        integral_s = numerator % prime == 0
+        fixed_s = numerator // prime if integral_s else None
+        B_prime = (prime - 1) ** 2 // 4
+        joined_support = lcm(support, residue) if residue > 0 else 0
+        product = residue * d
+        divides_product = joined_support > 0 and product % joined_support == 0
+        target_R = 4 * joined_support - fixed_s if integral_s else None
+        target_K = (
+            joined_support * (prime - product // joined_support)
+            if divides_product
+            else None
+        )
+        target_positive = isinstance(target_R, int) and target_R > 0
+        chart_match = bool(
+            divides_product
+            and target_positive
+            and canonical_chart(prime, joined_support) == (target_R, target_K)
+        )
+        strict_gain = joined_support > support
+        source_in_domain = support <= B_prime
+        source_potential = B_prime // support
+        successor_potential = (
+            B_prime // joined_support if joined_support > 0 else source_potential
+        )
+        strict_potential = successor_potential < source_potential
+        if (
+            source_in_domain
+            and 1 <= residue < prime
+            and integral_s
+            and divides_product
+            and target_positive
+            and chart_match
+            and strict_gain
+            and strict_potential
+        ):
+            assert isinstance(target_R, int)
+            assert isinstance(target_K, int)
+            target_class = "marked_absorb" if target_R < prime else "overflow"
+            source_state = {
+                "equation_target": [4, prime],
+                "R": source_R,
+                "K": source_K,
+                "absorbed_support": support,
+                "state_class": "overflow",
+            }
+            target_state = {
+                "equation_target": [4, prime],
+                "R": target_R,
+                "K": target_K,
+                "absorbed_support": joined_support,
+                "state_class": target_class,
+            }
+            receipt = {
+                "edge_id": "edge:" + canonical_hash(
+                    {"source": source_state, "successor": target_state}
+                ),
+                "certificate_type": "overflow_fixed_s_outer_rank_reset",
+                "phase": "OVERFLOW_DUAL_DETERMINANT",
+                "state_class": target_class,
+                "source_state": source_state,
+                "successor_state": target_state,
+                "equation_target": {"numerator": 4, "denominator": prime},
+                "marked_solution_set": {
+                    "source": "Sol(p)",
+                    "successor": "Sol(p)",
+                    "lift": "identity",
+                },
+                "target_fiber": {
+                    "status": "inherited_full_solution_set",
+                    "reason": "fixed-s dual determinant identity with chart-independent marking",
+                },
+                "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+                "certificate_context": {
+                    "source": OVERFLOW_INPUT.name,
+                    "provenance": "overflow_symmetric_dual_fixed_s",
+                    "fixture_name": name,
+                    "decomposition": {
+                        "M": source_carrier,
+                        "r": residue,
+                        "d": d,
+                        "identity": "p*s=4*r*d+1",
+                        "s": fixed_s,
+                    },
+                    "selected_candidate": {
+                        "L": joined_support,
+                        "R_L": target_R,
+                        "K_L": target_K,
+                    },
+                },
+                "normal_form": "overflow_fixed_s_outer_rank_reset_v1",
+                "induction_rank": {
+                    "kind": "absorbed_support_potential",
+                    "source": source_potential,
+                    "successor": successor_potential,
+                },
+                "potential_record": {
+                    "B_p": B_prime,
+                    "source_support": support,
+                    "successor_support": joined_support,
+                    "source_value": source_potential,
+                    "successor_value": successor_potential,
+                    "strict_decrease": strict_potential,
+                    "support_monotone": strict_gain,
+                },
+                "e1_e5": {f"E{i}": True for i in range(1, 6)},
+                "selector_status": "verified_edge",
+                "recursive_edge_eligible": True,
+                "lift_status": "proved_identity",
+                "proof_boundary": (
+                    "fixed_s_absorption"
+                    if target_class == "marked_absorb"
+                    else "fixed_s_overflow_rank_descent"
+                ),
+                "scope_note": (
+                    "The symmetric r-side fixed-s determinant chart preserves the old support "
+                    "through L|r*d and strictly lowers the outer rank."
+                ),
+            }
+            check_status_boundary(receipt)
+            verified.append(receipt)
+            continue
+
+        missing: list[str] = []
+        if not source_in_domain:
+            missing.append("source_potential_domain")
+        if not 1 <= residue < prime:
+            missing.append("positive_residue_carrier")
+        if not integral_s:
+            missing.append("fixed_s_integrality")
+        if not divides_product:
+            missing.append("fixed_s_support_divisor")
+        if not target_positive:
+            missing.append("positive_target_chart")
+        if target_positive and not chart_match:
+            missing.append("fixed_s_chart_identity")
+        if not strict_gain:
+            missing.append("strict_support_gain")
+        if not strict_potential:
+            missing.append("strict_potential_decrease")
+        rejected.append(
+            {
+                "fixture_name": name,
+                "equation_target": [4, prime],
+                "source_carrier": source_carrier,
+                "dual_carrier": residue,
+                "source_support": support,
+                "joined_support": joined_support,
+                "fixed_s": fixed_s,
+                "candidate_chart": {
+                    "R": target_R,
+                    "K": target_K,
+                    "positive": target_positive,
+                },
+                "missing_conditions": missing,
+                "selector_status": "analysis_evidence",
+                "recursive_edge_eligible": False,
+                "proof_boundary": "fixed_s_overflow_rank_filter",
+            }
+        )
+    return {
+        "fixture_count": len(rows),
+        "verified_edge_count": len(verified),
+        "absorption_target_count": sum(
+            receipt["state_class"] == "marked_absorb" for receipt in verified
+        ),
+        "overflow_target_count": sum(
+            receipt["state_class"] == "overflow" for receipt in verified
+        ),
+        "rejected_fixture_count": len(rejected),
+        "verified_receipts": verified,
+        "rejected_fixtures": rejected,
+        "rank_definition": {
+            "kind": "absorbed_support_potential",
+            "formula": "floor(((p-1)^2)/4 / A)",
+            "candidate": "L=lcm(A,r)",
+            "fixed_identity": "p*s=4*r*d+1; R_L=4L-s; K_L=L*(p-r*d/L)",
+            "acceptance": (
+                "L|r*d, L>A, R_L>0, canonical_chart(p,L)=(R_L,K_L), "
+                "and strict potential decrease"
+            ),
+        },
+        "scope_note": (
+            "This branch is the symmetric r-side fixed-s atlas. It complements the d-side "
+            "fixed-n branch but does not assert that every overflow has L|r*d."
+        ),
+    }
+
+
 def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
     """Pay a RESET with the non-resettable absorbed-support potential.
 
@@ -1196,6 +1405,21 @@ def build_results() -> dict[str, object]:
     capacity = capacity_receipt(qadic, phase)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
+    fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
+    fixed_n_fixture_names = {
+        receipt["certificate_context"]["fixture_name"]
+        for receipt in fixed_n_outer_rank["verified_receipts"]
+    }
+    fixed_s_fixture_names = {
+        receipt["certificate_context"]["fixture_name"]
+        for receipt in fixed_s_outer_rank["verified_receipts"]
+    }
+    fixed_s_outer_rank["overlap_with_fixed_n_outer_rank_count"] = len(
+        fixed_n_fixture_names & fixed_s_fixture_names
+    )
+    fixed_s_outer_rank["new_after_fixed_n_outer_rank_count"] = len(
+        fixed_s_fixture_names - fixed_n_fixture_names
+    )
     outer_rank_reset = overflow_outer_rank_reset(overflow)
     reset_boundary = phase_reset_boundary(overflow)
     return {
@@ -1206,6 +1430,7 @@ def build_results() -> dict[str, object]:
         "states": states,
         "verified_edges": [verified_edge],
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
+        "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
@@ -1217,13 +1442,14 @@ def build_results() -> dict[str, object]:
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
+            "fixed_s_overflow_rank_requires_product_divisor": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
         },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
-            "It contains fixed-n identity-lift edges and focused joined-support RESET edges, "
+            "It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, "
             "but does not prove universal branch existence or "
             "well-founded descent for all overflow states."
         ),
@@ -1281,6 +1507,48 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
             raise AssertionError("fixed-n outer rejection crossed status boundary")
         if receipt.get("recursive_edge_eligible") is not False:
             raise AssertionError("fixed-n outer rejection became recursive")
+    fixed_s_outer = result.get("overflow_fixed_s_outer_rank")
+    if not isinstance(fixed_s_outer, dict):
+        raise AssertionError("fixed-s overflow-rank receipt missing")
+    if fixed_s_outer.get("fixture_count") != 12:
+        raise AssertionError("fixed-s outer fixture count changed")
+    if fixed_s_outer.get("verified_edge_count") != 7:
+        raise AssertionError("fixed-s outer verified edge count changed")
+    if fixed_s_outer.get("absorption_target_count") != 0:
+        raise AssertionError("fixed-s outer absorption count changed")
+    if fixed_s_outer.get("overflow_target_count") != 7:
+        raise AssertionError("fixed-s outer overflow count changed")
+    if fixed_s_outer.get("rejected_fixture_count") != 5:
+        raise AssertionError("fixed-s outer rejected count changed")
+    if fixed_s_outer.get("overlap_with_fixed_n_outer_rank_count") != 5:
+        raise AssertionError("fixed-s outer overlap count changed")
+    if fixed_s_outer.get("new_after_fixed_n_outer_rank_count") != 2:
+        raise AssertionError("fixed-s outer new-edge count changed")
+    fixed_s_verified = fixed_s_outer.get("verified_receipts")
+    fixed_s_rejected = fixed_s_outer.get("rejected_fixtures")
+    if not isinstance(fixed_s_verified, list) or len(fixed_s_verified) != 7:
+        raise AssertionError("fixed-s outer receipt shape changed")
+    if not isinstance(fixed_s_rejected, list) or len(fixed_s_rejected) != 5:
+        raise AssertionError("fixed-s outer rejection shape changed")
+    for receipt in fixed_s_verified:
+        if not isinstance(receipt, dict):
+            raise AssertionError("fixed-s outer receipt shape changed")
+        if receipt.get("selector_status") != "verified_edge":
+            raise AssertionError("fixed-s outer edge lost verified status")
+        if receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}:
+            raise AssertionError("fixed-s outer edge lacks E1-E5")
+        if receipt.get("recursive_edge_eligible") is not True:
+            raise AssertionError("fixed-s outer edge became nonrecursive")
+        potential = receipt.get("potential_record")
+        if not isinstance(potential, dict) or potential.get("strict_decrease") is not True:
+            raise AssertionError("fixed-s outer potential did not decrease")
+    for receipt in fixed_s_rejected:
+        if not isinstance(receipt, dict):
+            raise AssertionError("fixed-s outer rejection shape changed")
+        if receipt.get("selector_status") != "analysis_evidence":
+            raise AssertionError("fixed-s outer rejection crossed status boundary")
+        if receipt.get("recursive_edge_eligible") is not False:
+            raise AssertionError("fixed-s outer rejection became recursive")
     hard_core = menu.get("hard_core_receipts")
     if not isinstance(hard_core, list) or len(hard_core) != 9:
         raise AssertionError("focused hard-core receipt count changed")
