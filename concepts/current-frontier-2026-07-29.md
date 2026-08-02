@@ -3079,15 +3079,17 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-capacity
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-capacity
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
 目标纤维、标记集、带符号缺陷、证书上下文和势记录。当前样例的近邻、广义 \(2^j\) 和
 固定层 Fourier 三条状态，以及一条 overflow 缺陷相位账本，都保持
-`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。只有 E1--E5、
-全域解提升和严格势下降同时出现时才允许 `verified_edge`；标准偶前驱不会被误标成
-`terminal_leaf`。
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。同时，固定-(n)
+行列式图谱中的正例 \((p,M,A)=(409,250,5)\to L=125\) 已完整重算为
+`verified_edge`：\(R_L=11\)、\(K_L=1125\)，恒等解提升成立，支撑势
+\(8323\to332\) 严格下降。只有 E1--E5、全域解提升和严格势下降同时出现时才允许
+`verified_edge`；标准偶前驱不会被误标成 `terminal_leaf`。
 
 这一步解决了证据编排和类型边界，不解决全称分支存在性。尤其是 overflow 缺陷单位仍
 没有被证明是实际 alternate 的共享相位；当前冻结账本的 13 个条件性相位胞没有超载。

@@ -49,18 +49,21 @@
     "verified_edge_requires_E1_E5": true
   },
   "schema_version": 1,
-  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It does not prove universal branch existence, marked lifting, or well-founded descent.",
+  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains one verified fixed-n identity-lift edge, but does not prove universal branch existence or well-founded descent for all overflow states.",
   "selector_order": [
     "direct_type_i_or_type_ii",
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "overflow_fixed_n_charged_support",
     "overflow_qadic_phase_capacity"
   ],
   "source_sha256": {
+    "type-i-fixed-layer-stabilizer-fourier-results.json": "e14b4e10e6f0f51d730066f85edc3c38d44c80da1095a8b98c3412156cc4fb22",
     "type-i-overflow-defect-unit-phase-capacity-results.json": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c",
     "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
-    "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d"
+    "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d",
+    "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a"
   },
   "states": [
     {
@@ -426,5 +429,89 @@
     "analysis_evidence",
     "candidate_transition",
     "verified_edge"
+  ],
+  "verified_edges": [
+    {
+      "certificate_context": {
+        "determinant": {
+          "four_M_d_plus_1": 200001,
+          "pn": 200001
+        },
+        "provenance": "overflow_determinant_fixed_n",
+        "selected_candidate": {
+          "K_L": 1125,
+          "L": 125,
+          "R_L": 11
+        },
+        "source": "type-i-universal-anchor-overflow-dual-results.json"
+      },
+      "certificate_type": "overflow_fixed_n_charged_support",
+      "e1_e5": {
+        "E1": true,
+        "E2": true,
+        "E3": true,
+        "E4": true,
+        "E5": true
+      },
+      "edge_id": "edge:03815893e516cd673b8a75de3bf3d7a97773ef66c492ed0134e270b819739272",
+      "equation_target": {
+        "denominator": 409,
+        "numerator": 4
+      },
+      "induction_rank": {
+        "kind": "absorbed_support_potential",
+        "source": 8323,
+        "successor": 332
+      },
+      "lift_status": "proved_identity",
+      "marked_solution_set": {
+        "lift": "identity",
+        "source": "Sol(p)",
+        "successor": "Sol(p)"
+      },
+      "normal_form": "overflow_fixed_n_charged_support_v1",
+      "phase": "OVERFLOW_DETERMINANT",
+      "potential_record": {
+        "B_p": 41616,
+        "source_support": 5,
+        "source_value": 8323,
+        "strict_decrease": true,
+        "successor_support": 125,
+        "successor_value": 332
+      },
+      "proof_boundary": "fixed_n_identity_lift",
+      "recursive_edge_eligible": true,
+      "scope_note": "This is one verified fixed-n edge; it does not imply that every A>1 overflow has a nonempty fixed-n window.",
+      "selector_status": "verified_edge",
+      "signed_defect": {
+        "reason": "identity lift",
+        "status": "not_applicable"
+      },
+      "source_state": {
+        "K": 52250,
+        "R": 511,
+        "absorbed_support": 5,
+        "equation_target": [
+          4,
+          409
+        ]
+      },
+      "source_state_id": "state:aa4b3475e517fa43397b754754449e156acd65566538b1285294f60a720dbdb6",
+      "state_class": "overflow",
+      "successor_state": {
+        "K": 1125,
+        "R": 11,
+        "absorbed_support": 125,
+        "equation_target": [
+          4,
+          409
+        ]
+      },
+      "successor_state_id": "state:a58f83dc172b7ed930a266e76e6cb4c946f9ab08ad06f1aeacb739087b691c32",
+      "target_fiber": {
+        "reason": "identity-lift edge does not require a new target-fiber witness",
+        "status": "inherited_full_solution_set"
+      }
+    }
   ]
 }

@@ -16,8 +16,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 UNIFIED_INPUT = ROOT / "reproductions" / "type-i-unified-terminal-selector-results.json"
+FOURIER_INPUT = ROOT / "reproductions" / "type-i-fixed-layer-stabilizer-fourier-results.json"
 QADIC_INPUT = ROOT / "reproductions" / "type-i-overflow-qadic-obstruction-transfer-results.json"
 PHASE_INPUT = ROOT / "reproductions" / "type-i-overflow-defect-unit-phase-capacity-results.json"
+OVERFLOW_INPUT = ROOT / "reproductions" / "type-i-universal-anchor-overflow-dual-results.json"
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-representation-dual-capacity-selector-results.json"
 
 SELECTOR_ORDER = [
@@ -25,6 +27,7 @@ SELECTOR_ORDER = [
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "overflow_fixed_n_charged_support",
     "overflow_qadic_phase_capacity",
 ]
 
@@ -71,8 +74,10 @@ def factorization(value: int) -> list[list[int]]:
 def source_hashes() -> dict[str, str]:
     return {
         UNIFIED_INPUT.name: sha256(UNIFIED_INPUT),
+        FOURIER_INPUT.name: sha256(FOURIER_INPUT),
         QADIC_INPUT.name: sha256(QADIC_INPUT),
         PHASE_INPUT.name: sha256(PHASE_INPUT),
+        OVERFLOW_INPUT.name: sha256(OVERFLOW_INPUT),
     }
 
 
@@ -242,12 +247,146 @@ def capacity_receipt(qadic: dict[str, object], phase: dict[str, object]) -> dict
     return result
 
 
+def verified_fixed_n_edge(payload: dict[str, object]) -> dict[str, object]:
+    """Recompute one genuine fixed-n identity-lift edge.
+
+    The selected receipt is deliberately a positive control for the status
+    lattice: it has old support A=5, the smallest admissible L=125, and all
+    five state-contract checks are arithmetic identities.
+    """
+    overflow_dual = payload.get("overflow_dual")
+    if not isinstance(overflow_dual, dict):
+        raise AssertionError("overflow dual payload shape changed")
+    case = overflow_dual.get("accumulated_positive_fixed_n_edge")
+    if not isinstance(case, dict):
+        raise AssertionError("fixed-n positive control missing")
+    overflow = case.get("overflow")
+    window = case.get("window")
+    if not isinstance(overflow, dict) or not isinstance(window, dict):
+        raise AssertionError("fixed-n receipt shape changed")
+
+    prime = int(case["prime"])
+    support = int(case["A"])
+    M = int(overflow["M"])
+    R_M = int(overflow["R_M"])
+    K_M = int(overflow["K_M"])
+    C = int(overflow["C"])
+    n = int(overflow["n"])
+    d = int(overflow["d"])
+    S = M * d
+    if not (
+        prime == 409
+        and support == 5
+        and M == 250
+        and R_M > prime
+        and K_M == M * C
+        and prime * n == 4 * M * d + 1
+        and M > support
+        and 4 * S == prime * n - 1
+    ):
+        raise AssertionError("fixed-n positive control changed")
+
+    candidates = window.get("support_preserving_candidates")
+    if not isinstance(candidates, list) or not candidates:
+        raise AssertionError("fixed-n positive control lost its window")
+    candidate = min(candidates, key=lambda row: int(row["L"]))
+    L = int(candidate["L"])
+    R_L = int(candidate["R_L"])
+    K_L = int(candidate["K_L"])
+    if not (
+        L == 125
+        and L > support
+        and S % L == 0
+        and n < 4 * L < prime + n
+        and R_L == 4 * L - n
+        and K_L == L * (prime - S // L)
+        and 3 <= R_L <= prime - 2
+        and 4 * K_L == prime * R_L + 1
+        and K_L % L == 0
+    ):
+        raise AssertionError("fixed-n candidate arithmetic changed")
+
+    B_prime = (prime - 1) ** 2 // 4
+    source_potential = B_prime // support
+    successor_potential = B_prime // L
+    if not successor_potential < source_potential:
+        raise AssertionError("fixed-n support potential did not decrease")
+
+    source_descriptor = {
+        "equation_target": [4, prime],
+        "R": R_M,
+        "K": K_M,
+        "absorbed_support": support,
+    }
+    successor_descriptor = {
+        "equation_target": [4, prime],
+        "R": R_L,
+        "K": K_L,
+        "absorbed_support": L,
+    }
+    checks = {f"E{i}": True for i in range(1, 6)}
+    result = {
+        "edge_id": "edge:" + canonical_hash(
+            {"source": source_descriptor, "successor": successor_descriptor}
+        ),
+        "source_state_id": "state:" + canonical_hash(source_descriptor),
+        "successor_state_id": "state:" + canonical_hash(successor_descriptor),
+        "certificate_type": "overflow_fixed_n_charged_support",
+        "phase": "OVERFLOW_DETERMINANT",
+        "state_class": "overflow",
+        "source_state": source_descriptor,
+        "successor_state": successor_descriptor,
+        "equation_target": {"numerator": 4, "denominator": prime},
+        "marked_solution_set": {
+            "source": "Sol(p)",
+            "successor": "Sol(p)",
+            "lift": "identity",
+        },
+        "target_fiber": {
+            "status": "inherited_full_solution_set",
+            "reason": "identity-lift edge does not require a new target-fiber witness",
+        },
+        "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+        "certificate_context": {
+            "source": OVERFLOW_INPUT.name,
+            "provenance": "overflow_determinant_fixed_n",
+            "determinant": {"pn": prime * n, "four_M_d_plus_1": 4 * M * d + 1},
+            "selected_candidate": {"L": L, "R_L": R_L, "K_L": K_L},
+        },
+        "normal_form": "overflow_fixed_n_charged_support_v1",
+        "induction_rank": {
+            "kind": "absorbed_support_potential",
+            "source": source_potential,
+            "successor": successor_potential,
+        },
+        "potential_record": {
+            "B_p": B_prime,
+            "source_support": support,
+            "successor_support": L,
+            "source_value": source_potential,
+            "successor_value": successor_potential,
+            "strict_decrease": True,
+        },
+        "e1_e5": checks,
+        "selector_status": "verified_edge",
+        "recursive_edge_eligible": True,
+        "lift_status": "proved_identity",
+        "proof_boundary": "fixed_n_identity_lift",
+        "scope_note": (
+            "This is one verified fixed-n edge; it does not imply that every A>1 overflow "
+            "has a nonempty fixed-n window."
+        ),
+    }
+    check_status_boundary(result)
+    return result
+
+
 def build_results() -> dict[str, object]:
     unified = json.loads(UNIFIED_INPUT.read_text(encoding="utf-8"))
+    overflow = json.loads(OVERFLOW_INPUT.read_text(encoding="utf-8"))
     qadic = json.loads(QADIC_INPUT.read_text(encoding="utf-8"))
     phase = json.loads(PHASE_INPUT.read_text(encoding="utf-8"))
-    fourier_source = ROOT / "reproductions" / "type-i-fixed-layer-stabilizer-fourier-results.json"
-    fourier_payload = json.loads(fourier_source.read_text(encoding="utf-8"))
+    fourier_payload = json.loads(FOURIER_INPUT.read_text(encoding="utf-8"))
     fourier_receipt = fourier_payload["receipt"]
     if unified.get("selector_order") != SELECTOR_ORDER[:4]:
         raise AssertionError("unified selector order changed")
@@ -262,6 +401,7 @@ def build_results() -> dict[str, object]:
                 normalized[key] = fourier_receipt[key]
         normalized_receipts.append(normalized)
     states = [state_receipt(receipt, UNIFIED_INPUT.name) for receipt in normalized_receipts]
+    verified_edge = verified_fixed_n_edge(overflow)
     capacity = capacity_receipt(qadic, phase)
     return {
         "schema_version": 1,
@@ -269,6 +409,7 @@ def build_results() -> dict[str, object]:
         "selector_order": SELECTOR_ORDER,
         "status_lattice": STATUS_LATTICE,
         "states": states,
+        "verified_edges": [verified_edge],
         "capacity_receipts": [capacity],
         "invariants": {
             "analysis_evidence_never_recursive": True,
@@ -279,7 +420,8 @@ def build_results() -> dict[str, object]:
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
-            "It does not prove universal branch existence, marked lifting, or well-founded descent."
+            "It contains one verified fixed-n identity-lift edge, but does not prove universal "
+            "branch existence or well-founded descent for all overflow states."
         ),
     }
 

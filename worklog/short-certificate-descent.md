@@ -4233,3 +4233,18 @@ Type I/II；`verified_edge` 必须带完整 E1--E5、解提升和严格势下降
 该结果统一了检索和审计边界，但没有推进“每个核心素数必有分支”的全称量词；下一步
 仍是证明可达 \(A>1\) overflow 的 support-preserving alternate/终端完备性或封闭的
 良基 phase-reset 秩。
+
+固定-\(n\) 正例现在也接入同一选择器：从
+\((p,M,A)=(409,250,5)\) 的 overflow receipt 选规范最小候选 \(L=125\)，重算得到
+\(R_L=11\)、\(K_L=1125\)、\(L\mid Md\)、\(489<4L<898\)，并验证恒等解提升与
+
+\[
+\left\lfloor\frac{(p-1)^2/4}{125}\right\rfloor=332
+<8323=
+\left\lfloor\frac{(p-1)^2/4}{5}\right\rfloor.
+\]
+
+因此输出中首次出现真实 `selector_status=verified_edge`、
+`recursive_edge_eligible=true`；这只是固定-\(n\) 分支的正控制，不改变一般 \(A>1\)
+窗口可能为空的边界。完整选择器回执仍将近邻、二进和 Fourier 保持为
+`analysis_evidence`，容量账本保持条件性负证据。

@@ -126,11 +126,14 @@ state 或直接短证书。
 **2026-08-02 状态级分派收口。** 以上三类证据现已由
 `reproductions/type_i_representation_dual_capacity_selector.py` 装配为统一的
 内容寻址状态回执，并把 overflow q 进支付/缺陷单位审计作为独立的容量回执附加。分派
-顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-capacity`；每条
-回执均保存 `state_id`、根方程、目标纤维、标记集、带符号缺陷、证书上下文和势记录。
-当前三条状态回执与一条容量回执都严格保持 `analysis_evidence`，且
-`recursive_edge_eligible=false`。只有 E1--E5、解提升和严格势下降齐备时才允许
-`verified_edge`，因此该实现是类型安全的证据编排，不是全称选择器证明。聚焦命令为：
+顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-capacity`；
+每条回执均保存 `state_id`、根方程、目标纤维、标记集、带符号缺陷、证书上下文和势记录。
+当前三条状态回执与一条容量回执仍严格保持 `analysis_evidence`，且
+`recursive_edge_eligible=false`；但固定-\(n\) 行列式图谱中的正例
+\((p,M,A)=(409,250,5)\to L=125\) 已重算出 \(R_L=11,K_L=1125\)，恒等解提升和
+\(8323\to332\) 的支撑势下降均成立，故可标记 `verified_edge`。只有 E1--E5、解提升
+和严格势下降齐备时才允许该升级，因此实现仍是类型安全的证据编排，不是全称选择器证明。
+聚焦命令为：
 
 ```bash
 python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

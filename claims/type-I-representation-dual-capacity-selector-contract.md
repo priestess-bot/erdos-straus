@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier 与 overflow q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执和一个跨状态容量审计均保持 analysis_evidence，因此该合同统一证据类型但不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、固定-n 支撑增长边与 overflow q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、fixed-n、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执和容量审计仍是 analysis_evidence，但已有一个固定-n identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -10,6 +10,7 @@ depends_on:
   - type-I-unified-terminal-first-selector-contract
   - type-I-overflow-qadic-obstruction-transfer
   - type-I-overflow-defect-unit-phase-capacity
+  - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -50,6 +51,7 @@ direct_type_i_or_type_ii
 target_fiber_neighbor_terminal
 generalized_dyadic_terminal
 fixed_layer_quotient_fourier
+overflow_fixed_n_charged_support
 overflow_qadic_phase_capacity
 ```
 
@@ -88,9 +90,11 @@ verified_edge
 ```
 
 当前近邻和广义 (2^j) 回执验证的是较小偶前驱的整除、同余和范围；固定层 Fourier
-回执验证的是稳定子商、精确谱范数和角色阶债务；overflow 回执验证的是逐素数幂支付、
-缺陷单位相位分胞及条件性容量统计。因此这四类输出统一标为
-`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。
+回执验证的是稳定子商、精确谱范数和角色阶债务；固定-n 回执则重算一个保持
+`Sol(p)` 的恒等提升和 absorbed-support 势下降；overflow 容量回执验证的是逐素数幂支付、
+缺陷单位相位分胞及条件性容量统计。前三类证据和容量审计统一标为
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`；固定-n 正例可在
+E1--E5 完整时标为 `verified_edge`。
 
 升级不变量为：
 
@@ -119,9 +123,18 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 | 广义 (2^j) | 1 | `analysis_evidence`，来源为命中状态档案，偶前驱提升未证 |
 | 固定层商 Fourier | 1 | `analysis_evidence`，空纤维分离角色，载体映射未证 |
 
+另外有一条可完整重算的固定-n 支撑增长边：
+
+| 分支 | 源/后继 | 结果 |
+|---|---|---|
+| overflow fixed-n | \((p,M,A)=(409,250,5)\to L=125\) | `verified_edge`，\(8323\to332\) 的支撑势严格下降，解提升为恒等映射 |
+
 另附一条跨状态 overflow 容量回执。它重放 12 个 overflow、24 个双通道和 17 条
 阻碍幂记录；相位审计得到 5 个 (q) 组、13 个相位胞、5 对兼容记录，容量超载胞为
 0。该结果只是负边界：当前没有从缺陷单位得到容量矛盾，也没有生成递归边。
+
+固定-n 正例只证明该分支在一个完整 receipt 上可升级；它不改变已有事实：一般 (A>1)
+overflow 的固定-n 窗口可以为空，且两个对称载体也可能同时失去旧支撑。
 
 结果文件为
 `reproductions/type-i-representation-dual-capacity-selector-results.json`。
