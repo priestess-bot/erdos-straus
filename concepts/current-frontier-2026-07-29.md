@@ -3128,3 +3128,10 @@ fixture 中；因此“dual_support_preserving 为 0”只是按固定-\(n\) 优
 不说明不存在 alternate、直接 Type I/II 或良基 phase reset。回执保存因子分解、窗口
 两侧最近因子与双通道逐素数幂 deficit，见
 [overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md)。
+
+同一 selector 现在登记 RESET 阶段的 E5 边界：p=73 的局部载体下降与恒等解提升均
+成立，但普通 anchor/lcm continuation 形成
+\(38\to132\to330\to132\) 重入循环。该回执标为 `candidate_transition`，
+仅 E5 缺失；因此 carrier-size 是局部 RESET 秩，不是全局良基势。若要启用 support reset，
+必须禁止该 continuation、把它封闭到已验证降 R 分支，或引入不可重置外层秩。详见
+[overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md)。

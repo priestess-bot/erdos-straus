@@ -4259,7 +4259,9 @@ Type I/II；`verified_edge` 必须带完整 E1--E5、解提升和严格势下降
 
 对同一 fixture 的 d/r 通道，回执还保存规范图表余数、严格载体增长、旧支撑阻碍
 及每个 \(q^a\parallel A\) 的支付/未支付高度。当前 12 个 overflow fixture 分类为：
-3 个固定-\(n\) 窗口非空；q-adic 双通道共有 3 个旧支撑保持正通道，均已被这 3 行覆盖；另有 9 个 `hard_core_fixed_n_gap_and_dual_obstruction`。9 个样本全部是 `analysis_evidence` 且 `recursive_edge_eligible=false`；每个仍至少有一个
+3 个固定-\(n\) 窗口非空；q-adic 双通道共有 3 个旧支撑保持正通道，均已被这 3 行覆盖；
+另有 9 个 `hard_core_fixed_n_gap_and_dual_obstruction`。9 个样本全部是
+`analysis_evidence` 且 `recursive_edge_eligible=false`；每个仍至少有一个
 小载体 reset 候选，所以这不是无后继定理。
 
 主张卡见[overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md)，
@@ -4268,3 +4270,14 @@ Type I/II；`verified_edge` 必须带完整 E1--E5、解提升和严格势下降
 ```bash
 python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 ```
+
+### 2026-08-03：RESET 局部下降的 E5 循环边界
+
+统一 selector 进一步接入已有 RESET 重入回执。对 p=73，三条局部边均重算
+E1--E4，且 reset support 严格小于源 carrier；但 ordinary anchor/lcm continuation
+形成 \(38\to132\to330\to132\) 二环。回执因此标为 `candidate_transition`，
+E1=true, E2=true, E3=true, E4=true, E5=false，`recursive_edge_eligible=false`。
+这把“carrier-size 局部下降”与“全局良基递归”分开：若不禁止 RESET 后增载，
+必须提供不可重置的外层 rank。新增主张卡见
+[overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md)，
+回执位于 `phase_reset_receipts`。

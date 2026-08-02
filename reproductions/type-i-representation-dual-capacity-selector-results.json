@@ -46,6 +46,7 @@
     "analysis_evidence_never_recursive": true,
     "hard_core_negative_receipt_never_recursive": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
+    "reset_cycle_boundary_requires_E5": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
   },
@@ -2801,6 +2802,169 @@
     "scope_note": "The hard-core label is a typed negative boundary for the focused menu, not a proof that the underlying overflow state has no valid successor.",
     "support_preserving_channel_count": 3
   },
+  "phase_reset_receipts": {
+    "cycle_count": 1,
+    "receipts": [
+      {
+        "certificate_context": {
+          "missing_global_condition": "E5_well_founded_phase",
+          "proof_boundary": "local_RESET_arithmetic_only",
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_phase_reset_cycle_boundary",
+        "cycle_witness": {
+          "cycle_nodes": [
+            132,
+            330
+          ],
+          "edges": [
+            {
+              "continuation_carrier_decrease": false,
+              "local_reset_decrease": true,
+              "reset_state": {
+                "K": 420,
+                "R": 23,
+                "charged_support": 12,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              },
+              "source_state": {
+                "K": 2318,
+                "R": 127,
+                "charged_support": 38,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              },
+              "successor_state": {
+                "K": 5676,
+                "R": 311,
+                "charged_support": 132,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              }
+            },
+            {
+              "continuation_carrier_decrease": false,
+              "local_reset_decrease": true,
+              "reset_state": {
+                "K": 420,
+                "R": 23,
+                "charged_support": 30,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              },
+              "source_state": {
+                "K": 5676,
+                "R": 311,
+                "charged_support": 132,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              },
+              "successor_state": {
+                "K": 20130,
+                "R": 1103,
+                "charged_support": 330,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              }
+            },
+            {
+              "continuation_carrier_decrease": true,
+              "local_reset_decrease": true,
+              "reset_state": {
+                "K": 420,
+                "R": 23,
+                "charged_support": 12,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              },
+              "source_state": {
+                "K": 20130,
+                "R": 1103,
+                "charged_support": 330,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              },
+              "successor_state": {
+                "K": 5676,
+                "R": 311,
+                "charged_support": 132,
+                "equation_target": [
+                  4,
+                  73
+                ]
+              }
+            }
+          ],
+          "trace": [
+            38,
+            132,
+            330
+          ]
+        },
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": false
+        },
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "local_rank": {
+          "global_status": "rejected_by_reentry_cycle",
+          "kind": "carrier_size",
+          "strict_on_reset": true
+        },
+        "marked_solution_set": {
+          "lift": "identity_on_focused_charts",
+          "reset": "Sol(p)",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "missing_conditions": [
+          "E5"
+        ],
+        "normal_form": "overflow_phase_reset_v1",
+        "phase": "RESET",
+        "potential_record": {
+          "reason": "carrier decreases at RESET but re-entry closes a 132/330 cycle",
+          "status": "local_only"
+        },
+        "receipt_id": "reset-boundary:aeec2b01cf9c03f3f167e9020da1b3149c7fdfa5ec86363bc536061ee776037d",
+        "recursive_edge_eligible": false,
+        "scope_note": "The local reset and identity lift are verified for this fixture, but the ordinary anchor/lcm continuation re-enters a carrier cycle; no global rank is inferred from local carrier decrease.",
+        "selected_branch": "overflow_phase_reset_cycle_boundary",
+        "selector_status": "candidate_transition",
+        "signed_defect": {
+          "status": "not_carried"
+        },
+        "target_fiber": {
+          "reason": "focused reset uses the chart-independent Sol(p) set",
+          "status": "inherited_full_solution_set"
+        }
+      }
+    ],
+    "scope_note": "RESET remains candidate_transition until an outer non-resettable rank is supplied."
+  },
   "schema_version": 1,
   "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains one verified fixed-n identity-lift edge, but does not prove universal branch existence or well-founded descent for all overflow states.",
   "selector_order": [
@@ -2810,6 +2974,7 @@
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
     "overflow_hard_core_gap_obstruction",
+    "overflow_phase_reset_cycle_boundary",
     "overflow_qadic_phase_capacity"
   ],
   "source_sha256": {

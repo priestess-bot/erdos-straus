@@ -29,6 +29,7 @@ SELECTOR_ORDER = [
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
     "overflow_hard_core_gap_obstruction",
+    "overflow_phase_reset_cycle_boundary",
     "overflow_qadic_phase_capacity",
 ]
 
@@ -651,6 +652,151 @@ def overflow_menu_receipts(
     }
 
 
+def phase_reset_boundary(payload: dict[str, object]) -> dict[str, object]:
+    """Register the focused RESET re-entry cycle as a non-recursive edge menu.
+
+    The local reset support is smaller than the source carrier and the identity
+    lift is harmless, but the ordinary anchor/lcm continuation closes a 132/330
+    cycle. This is therefore candidate_transition with E5 missing.
+    """
+    overflow_dual = payload.get("overflow_dual")
+    if not isinstance(overflow_dual, dict):
+        raise AssertionError("overflow dual payload shape changed")
+    cycle = overflow_dual.get("reset_reentry_cycle")
+    if not isinstance(cycle, dict):
+        raise AssertionError("reset re-entry fixture missing")
+    rows = cycle.get("rows")
+    if not isinstance(rows, list) or len(rows) != 3:
+        raise AssertionError("reset re-entry row count changed")
+    prime = int(cycle["prime"])
+    edge_by_carrier: dict[int, int] = {}
+    edge_rows: list[dict[str, object]] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            raise AssertionError("reset re-entry row shape changed")
+        carrier = int(row["carrier"])
+        reset_support = int(row["reset_support"])
+        next_carrier = int(row["next_carrier"])
+        source_R, source_K = canonical_chart(prime, carrier)
+        reset_R, reset_K = canonical_chart(prime, reset_support)
+        next_R, next_K = canonical_chart(prime, next_carrier)
+        if not reset_support < carrier:
+            raise AssertionError("reset support did not decrease locally")
+        if (
+            reset_R != int(row["reset_R"])
+            or reset_K != int(row["reset_K"])
+            or next_R != int(row["next_R"])
+            or next_K != int(row["next_K"])
+        ):
+            raise AssertionError("reset chart continuation changed")
+        source_C = source_K // carrier
+        source_n = 4 * carrier - source_R
+        source_d = prime - source_C
+        if min(source_n, source_d) <= 0 or prime * source_n != 4 * carrier * source_d + 1:
+            raise AssertionError("reset source overflow determinant changed")
+        if carrier in edge_by_carrier:
+            raise AssertionError("reset fixture has duplicate source carrier")
+        edge_by_carrier[carrier] = next_carrier
+        source_descriptor = {
+            "equation_target": [4, prime],
+            "R": source_R,
+            "K": source_K,
+            "charged_support": carrier,
+        }
+        reset_descriptor = {
+            "equation_target": [4, prime],
+            "R": reset_R,
+            "K": reset_K,
+            "charged_support": reset_support,
+        }
+        successor_descriptor = {
+            "equation_target": [4, prime],
+            "R": next_R,
+            "K": next_K,
+            "charged_support": next_carrier,
+        }
+        edge_rows.append(
+            {
+                "source_state": source_descriptor,
+                "reset_state": reset_descriptor,
+                "successor_state": successor_descriptor,
+                "local_reset_decrease": True,
+                "continuation_carrier_decrease": next_carrier < carrier,
+            }
+        )
+    start = int(rows[0]["carrier"])
+    trace: list[int] = []
+    seen: dict[int, int] = {}
+    current = start
+    while current not in seen:
+        seen[current] = len(trace)
+        trace.append(current)
+        if current not in edge_by_carrier:
+            raise AssertionError("reset continuation left the focused graph")
+        current = edge_by_carrier[current]
+    cycle_nodes = trace[seen[current] :]
+    if cycle_nodes != [132, 330]:
+        raise AssertionError("focused reset cycle changed")
+    descriptor = {
+        "equation_target": [4, prime],
+        "phase": "RESET",
+        "cycle_nodes": cycle_nodes,
+    }
+    result = {
+        "receipt_id": "reset-boundary:" + canonical_hash(descriptor),
+        "certificate_type": "overflow_phase_reset_cycle_boundary",
+        "phase": "RESET",
+        "equation_target": {"numerator": 4, "denominator": prime},
+        "cycle_witness": {
+            "trace": trace,
+            "cycle_nodes": cycle_nodes,
+            "edges": edge_rows,
+        },
+        "local_rank": {
+            "kind": "carrier_size",
+            "strict_on_reset": True,
+            "global_status": "rejected_by_reentry_cycle",
+        },
+        "marked_solution_set": {
+            "source": "Sol(p)",
+            "reset": "Sol(p)",
+            "successor": "Sol(p)",
+            "lift": "identity_on_focused_charts",
+        },
+        "target_fiber": {
+            "status": "inherited_full_solution_set",
+            "reason": "focused reset uses the chart-independent Sol(p) set",
+        },
+        "signed_defect": {"status": "not_carried"},
+        "certificate_context": {
+            "source": OVERFLOW_INPUT.name,
+            "proof_boundary": "local_RESET_arithmetic_only",
+            "missing_global_condition": "E5_well_founded_phase",
+        },
+        "normal_form": "overflow_phase_reset_v1",
+        "potential_record": {
+            "status": "local_only",
+            "reason": "carrier decreases at RESET but re-entry closes a 132/330 cycle",
+        },
+        "e1_e5": {"E1": True, "E2": True, "E3": True, "E4": True, "E5": False},
+        "missing_conditions": ["E5"],
+        "selected_branch": "overflow_phase_reset_cycle_boundary",
+        "selector_status": "candidate_transition",
+        "recursive_edge_eligible": False,
+        "scope_note": (
+            "The local reset and identity lift are verified for this fixture, but the "
+            "ordinary anchor/lcm continuation re-enters a carrier cycle; no global rank "
+            "is inferred from local carrier decrease."
+        ),
+    }
+    check_status_boundary(result)
+    return {
+        "cycle_count": 1,
+        "receipts": [result],
+        "scope_note": "RESET remains candidate_transition until an outer non-resettable rank is supplied.",
+    }
+
+
 def build_results() -> dict[str, object]:
     unified = json.loads(UNIFIED_INPUT.read_text(encoding="utf-8"))
     overflow = json.loads(OVERFLOW_INPUT.read_text(encoding="utf-8"))
@@ -674,6 +820,7 @@ def build_results() -> dict[str, object]:
     verified_edge = verified_fixed_n_edge(overflow)
     capacity = capacity_receipt(qadic, phase)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
+    reset_boundary = phase_reset_boundary(overflow)
     return {
         "schema_version": 1,
         "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
@@ -682,6 +829,7 @@ def build_results() -> dict[str, object]:
         "states": states,
         "verified_edges": [verified_edge],
         "overflow_menu": overflow_menu,
+        "phase_reset_receipts": reset_boundary,
         "capacity_receipts": [capacity],
         "invariants": {
             "analysis_evidence_never_recursive": True,
@@ -689,6 +837,7 @@ def build_results() -> dict[str, object]:
             "terminal_leaf_requires_direct_certificate": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
+            "reset_cycle_boundary_requires_E5": True,
         },
         "source_sha256": source_hashes(),
         "scope_note": (
@@ -730,6 +879,22 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
             raise AssertionError("hard-core row crossed the status boundary")
         if receipt.get("recursive_edge_eligible") is not False:
             raise AssertionError("hard-core row became recursive")
+    reset = result.get("phase_reset_receipts")
+    if not isinstance(reset, dict) or reset.get("cycle_count") != 1:
+        raise AssertionError("focused reset-cycle receipt changed")
+    reset_receipts = reset.get("receipts")
+    if not isinstance(reset_receipts, list) or len(reset_receipts) != 1:
+        raise AssertionError("focused reset-cycle receipt shape changed")
+    reset_receipt = reset_receipts[0]
+    if not isinstance(reset_receipt, dict):
+        raise AssertionError("focused reset-cycle payload changed")
+    if (
+        reset_receipt.get("selector_status") != "candidate_transition"
+        or reset_receipt.get("recursive_edge_eligible") is not False
+        or reset_receipt.get("e1_e5", {}).get("E5") is not False
+        or reset_receipt.get("cycle_witness", {}).get("cycle_nodes") != [132, 330]
+    ):
+        raise AssertionError("reset-cycle status boundary changed")
 
 
 def main() -> None:

@@ -12,6 +12,7 @@ depends_on:
   - type-I-overflow-defect-unit-phase-capacity
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-fixed-n-gap-dual-obstruction
+  - type-I-overflow-phase-reset-cycle-boundary
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -147,6 +148,12 @@ q-adic 双通道共保存 3 个 `support_preserving_edge`；选择器的优先�
 固定-\(n\) 非空的 3 行。hard-core 回执保存 \(S/A\) 的因子分解、窗口两侧最近因子和两个通道的逐素数幂
 deficit；全部保持 `analysis_evidence`、`recursive_edge_eligible=false`。独立主张卡见
 [overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](type-I-overflow-fixed-n-gap-dual-obstruction.md)。
+
+另有一条 RESET 阶段边界回执：局部 \(t<M\) 与恒等解提升成立，但
+\(38\to132\to330\to132\) 的 continuation 形成重入循环。因此该记录是
+`candidate_transition`、\(E5=false\)，不可递归；它验证的是 phase 调度边界，而不是
+一个新的下降边。详见
+[overflow RESET 局部载体下降与重入循环边界](type-I-overflow-phase-reset-cycle-boundary.md)。
 
 另附一条跨状态 overflow 容量回执。它重放 12 个 overflow、24 个双通道和 17 条
 阻碍幂记录；相位审计得到 5 个 \(q\) 组、13 个相位胞、5 对兼容记录，容量超载胞为
