@@ -165,6 +165,11 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 \(L\mid rd\)，因此这一步收缩但没有消除 r 通道的全称整除缺口。详见
 [overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)。
 
+同一选择器现在把已建立的 \(p+4\) Type II 证书放在 overflow 递降之前：冻结的 12 个
+fixture 全部重建为 `terminal_leaf`，其中 d=1 边界由 \(q=7\) 的证书直接
+闭合。该有限覆盖不能外推为所有核心素数，因为一般 \(p+4\) 可能没有 \(3\bmod4\)
+素因子。
+
    近邻偶前驱、广义 \(2^j\) 偶前驱和该商 Fourier 回执现已统一到终端优先协议；协议
    明确保存标准偶解但将 `lift_status` 保持为 `unproved`，因此这些回执仍不能替代
    F/G 状态的全域解提升或 overflow 的良基递降。见[Type I 终端优先统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md)。

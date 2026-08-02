@@ -4353,3 +4353,19 @@ K_L^{(s)}=L\left(p-\frac{rd}{L}\right).
 新主张卡见
 [overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)，
 回执位于 `overflow_fixed_s_outer_rank`。
+
+### 2026-08-03：直接 \(p+4\) Type II 优先分支
+
+固定-\(s\) 分支留下的 d=1 fixture 并非全局未决：对
+\(p=73\)，有 \(p+4=77=7\cdot11\)，取 \(q=7\equiv3\pmod4\)、
+\(x=(p+q)/4=20\)、\(d=1\)，得到精确分母
+\[
+(20,219,4380),
+\qquad
+\frac4{73}=\frac1{20}+\frac1{219}+\frac1{4380}.
+\]
+
+选择器现对冻结的 12 个 overflow fixture 逐项重建该已建立的 \(p+4\) Type II
+证书，12 条均为 `terminal_leaf`；因此直接 Type II 优先于 fixed-\(n\)、
+fixed-\(s\) 和 RESET，后者仍作为同状态的后备证据保留。该结果只闭合冻结菜单，
+不声称任意核心素数的 \(p+4\) 都含 \(3\bmod4\) 因子。

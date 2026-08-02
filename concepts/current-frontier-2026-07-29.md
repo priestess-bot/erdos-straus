@@ -3191,3 +3191,7 @@ ps=4rd+1,
 \(\operatorname{lcm}(A,r)\nmid rd\) 未闭合。该分支是对旧 r 图表支撑判据的补充，不把
 \(A/\gcd(A,r)\mid d\) 与 \(A/\gcd(A,r)\mid(p-d)\) 混为同一条件。详见
 [overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)。
+
+此外，统一回执对同一批 12 个 fixture 先重建已建立的 \(p+4\) Type II 直接证书；
+12/12 均为 `terminal_leaf`。这使唯一的 d=1 边界在冻结菜单中由直接证书
+闭合，但不改变一般核心素数仍可能满足 \(p+4\) 全部因子为 \(1\bmod4\) 的事实。

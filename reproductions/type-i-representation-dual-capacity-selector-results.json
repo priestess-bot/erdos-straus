@@ -44,6 +44,7 @@
   ],
   "invariants": {
     "analysis_evidence_never_recursive": true,
+    "direct_terminal_precedes_overflow_descent": true,
     "fixed_n_overflow_rank_requires_positive_chart": true,
     "fixed_s_overflow_rank_requires_product_divisor": true,
     "hard_core_negative_receipt_never_recursive": true,
@@ -52,6 +53,437 @@
     "reset_cycle_boundary_requires_E5": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
+  },
+  "overflow_direct_type_ii": {
+    "certificate_family": "p_plus_four_type_ii_sqrt_bound",
+    "d_one_direct_terminal_count": 1,
+    "d_one_fixture_count": 1,
+    "fixture_count": 12,
+    "rejected_fixtures": [],
+    "scope_note": "Focused direct Type II reconstruction for the stored overflow fixtures. It does not assert that every core prime has a 3 mod 4 factor in p+4.",
+    "verified_receipts": [
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "accumulated_d_one_boundary",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          104,
+          6135,
+          638040
+        ],
+        "fixture_name": "accumulated_positive_fixed_n_edge",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 409,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            59,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 104
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          62,
+          2169,
+          134478
+        ],
+        "fixture_name": "empty_fixed_n_window",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 241,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            2
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 62
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "reachable_conflict_bundle_0",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "reachable_conflict_bundle_1",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "reachable_conflict_bundle_2",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "reachable_conflict_bundle_3",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "root_edge_0",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          62,
+          2169,
+          134478
+        ],
+        "fixture_name": "root_edge_1",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 241,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            2
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 62
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "lcm_cycle_step_0",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "lcm_cycle_step_1",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 73,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "direct_type_ii_p_plus_four",
+        "denominators": [
+          62,
+          2169,
+          134478
+        ],
+        "fixture_name": "symmetric_small_chart_support_conflict",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "prime": 241,
+        "proof_boundary": "p_plus_four_type_ii_certificate",
+        "recursive_edge_eligible": false,
+        "scope_note": "Established p+4 Type II certificate; this direct branch has precedence over overflow descent for the same prime.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            5,
+            1
+          ],
+          [
+            7,
+            2
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 62
+        }
+      }
+    ],
+    "verified_terminal_count": 12
   },
   "overflow_fixed_n_outer_rank": {
     "absorption_target_count": 3,

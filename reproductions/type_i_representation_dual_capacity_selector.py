@@ -9,6 +9,7 @@ capacity ledger is never promoted to a recursive edge without E1--E5.
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 import hashlib
 import json
 from math import lcm
@@ -463,6 +464,90 @@ def overflow_fixture_rows(payload: dict[str, object]) -> list[dict[str, object]]
     if len(rows) != 12:
         raise AssertionError(f"overflow fixture count changed: {len(rows)}")
     return rows
+
+
+def overflow_direct_type_ii(payload: dict[str, object]) -> dict[str, object]:
+    """Reconstruct the established p+4 Type II certificate for overflow fixtures."""
+    receipts: list[dict[str, object]] = []
+    rows = overflow_fixture_rows(payload)
+    for fixture in rows:
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        if prime % 24 != 1:
+            raise AssertionError(f"direct p+4 branch received a non-core prime: {name}")
+        p_plus_four = prime + 4
+        candidates = [
+            factor
+            for factor, _ in factorization(p_plus_four)
+            if factor % 4 == 3
+        ]
+        if not candidates:
+            receipts.append(
+                {
+                    "fixture_name": name,
+                    "prime": prime,
+                    "selector_status": "analysis_evidence",
+                    "recursive_edge_eligible": False,
+                    "certificate_type": "direct_type_ii_p_plus_four",
+                    "proof_boundary": "p_plus_four_factor_filter",
+                    "missing_conditions": ["q_congruent_3_mod_4_factor"],
+                }
+            )
+            continue
+        gap = min(candidates)
+        x = (prime + gap) // 4
+        if (prime + gap) % 4 or (x + 1) % gap:
+            raise AssertionError(f"p+4 Type II congruence changed: {name}")
+        y = prime * (x + 1) // gap
+        z = prime * x * (x + 1) // gap
+        if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, prime):
+            raise AssertionError(f"p+4 Type II identity changed: {name}")
+        receipt = {
+            "fixture_name": name,
+            "prime": prime,
+            "certificate_type": "direct_type_ii_p_plus_four",
+            "selector_status": "terminal_leaf",
+            "state_class": "hit",
+            "recursive_edge_eligible": False,
+            "proof_boundary": "p_plus_four_type_ii_certificate",
+            "gap": gap,
+            "source_factorization": factorization(p_plus_four),
+            "type_ii_parameters": {"m": gap, "x": x, "d": 1},
+            "denominators": [x, y, z],
+            "identity": {
+                "equation": "4/p=1/x+1/y+1/z",
+                "verified_exactly": True,
+            },
+            "scope_note": (
+                "Established p+4 Type II certificate; this direct branch has precedence "
+                "over overflow descent for the same prime."
+            ),
+        }
+        check_status_boundary(receipt)
+        receipts.append(receipt)
+    verified = [receipt for receipt in receipts if receipt["selector_status"] == "terminal_leaf"]
+    rejected = [receipt for receipt in receipts if receipt["selector_status"] != "terminal_leaf"]
+    return {
+        "fixture_count": len(receipts),
+        "verified_terminal_count": len(verified),
+        "d_one_fixture_count": sum(int(fixture["d"]) == 1 for fixture in rows),
+        "d_one_direct_terminal_count": sum(
+            int(fixture["d"]) == 1
+            and any(
+                receipt["fixture_name"] == fixture["name"]
+                and receipt["selector_status"] == "terminal_leaf"
+                for receipt in verified
+            )
+            for fixture in rows
+        ),
+        "verified_receipts": verified,
+        "rejected_fixtures": rejected,
+        "certificate_family": "p_plus_four_type_ii_sqrt_bound",
+        "scope_note": (
+            "Focused direct Type II reconstruction for the stored overflow fixtures. "
+            "It does not assert that every core prime has a 3 mod 4 factor in p+4."
+        ),
+    }
 
 
 def overflow_menu_receipts(
@@ -1402,6 +1487,7 @@ def build_results() -> dict[str, object]:
         normalized_receipts.append(normalized)
     states = [state_receipt(receipt, UNIFIED_INPUT.name) for receipt in normalized_receipts]
     verified_edge = verified_fixed_n_edge(overflow)
+    direct_type_ii = overflow_direct_type_ii(overflow)
     capacity = capacity_receipt(qadic, phase)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
@@ -1429,6 +1515,7 @@ def build_results() -> dict[str, object]:
         "status_lattice": STATUS_LATTICE,
         "states": states,
         "verified_edges": [verified_edge],
+        "overflow_direct_type_ii": direct_type_ii,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
         "overflow_menu": overflow_menu,
@@ -1439,6 +1526,7 @@ def build_results() -> dict[str, object]:
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
             "terminal_leaf_requires_direct_certificate": True,
+            "direct_terminal_precedes_overflow_descent": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
@@ -1469,6 +1557,32 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
         raise AssertionError("focused overflow classification counts changed")
     if menu.get("support_preserving_channel_count") != 3:
         raise AssertionError("focused dual support-preserving channel count changed")
+    direct_type_ii = result.get("overflow_direct_type_ii")
+    if not isinstance(direct_type_ii, dict):
+        raise AssertionError("direct overflow Type II receipt missing")
+    if direct_type_ii.get("fixture_count") != 12:
+        raise AssertionError("direct overflow Type II fixture count changed")
+    if direct_type_ii.get("verified_terminal_count") != 12:
+        raise AssertionError("direct overflow Type II terminal count changed")
+    if direct_type_ii.get("d_one_fixture_count") != 1:
+        raise AssertionError("direct overflow d=1 fixture count changed")
+    if direct_type_ii.get("d_one_direct_terminal_count") != 1:
+        raise AssertionError("direct overflow d=1 terminal count changed")
+    direct_receipts = direct_type_ii.get("verified_receipts")
+    direct_rejected = direct_type_ii.get("rejected_fixtures")
+    if not isinstance(direct_receipts, list) or len(direct_receipts) != 12:
+        raise AssertionError("direct overflow Type II receipt shape changed")
+    if not isinstance(direct_rejected, list) or direct_rejected:
+        raise AssertionError("direct overflow Type II rejection shape changed")
+    for receipt in direct_receipts:
+        if not isinstance(receipt, dict):
+            raise AssertionError("direct overflow Type II receipt shape changed")
+        if receipt.get("selector_status") != "terminal_leaf":
+            raise AssertionError("direct overflow Type II lost terminal status")
+        if receipt.get("recursive_edge_eligible") is not False:
+            raise AssertionError("direct overflow Type II became recursive")
+        if receipt.get("identity", {}).get("verified_exactly") is not True:
+            raise AssertionError("direct overflow Type II identity lost exact verification")
     fixed_n_outer = result.get("overflow_fixed_n_outer_rank")
     if not isinstance(fixed_n_outer, dict):
         raise AssertionError("fixed-n overflow-rank receipt missing")

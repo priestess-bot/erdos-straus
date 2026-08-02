@@ -8,6 +8,7 @@ proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-unified-terminal-first-selector-contract
+  - p-plus-four-sqrt-certificate
   - type-I-overflow-qadic-obstruction-transfer
   - type-I-overflow-defect-unit-phase-capacity
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
@@ -135,6 +136,11 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 | 目标纤维近邻 | 1 | `analysis_evidence`，非空近邻见证，偶前驱提升未证 |
 | 广义 \(2^j\) | 1 | `analysis_evidence`，来源为命中状态档案，偶前驱提升未证 |
 | 固定层商 Fourier | 1 | `analysis_evidence`，空纤维分离角色，载体映射未证 |
+
+对冻结的 overflow fixture，直接分支另行重建 \(p+4\) 的 Type II 证书。12 条全部为
+`terminal_leaf`；唯一 \(d=1\) 的 `accumulated_d_one_boundary` 取
+\(q=7\)、\(x=20\)，分母为 \((20,219,4380)\)。因此直接证书在选择顺序上优先于
+fixed-\(n\)、fixed-\(s\) 和 RESET；后续递降回执仍作为同一状态的可检索替代证据保存。
 
 另外有一条可完整重算的固定-n 支撑增长边：
 
