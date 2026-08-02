@@ -29,6 +29,7 @@ SELECTOR_ORDER = [
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
+    "overflow_fixed_n_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
@@ -654,6 +655,189 @@ def overflow_menu_receipts(
     }
 
 
+def overflow_fixed_n_outer_rank(payload: dict[str, object]) -> dict[str, object]:
+    """Promote fixed-n determinant charts even when the target remains overflow."""
+    verified: list[dict[str, object]] = []
+    rejected: list[dict[str, object]] = []
+    rows = overflow_fixture_rows(payload)
+    for fixture in rows:
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        source_carrier = int(fixture["M"])
+        source_R = int(fixture["R_M"])
+        source_K = int(fixture["K_M"])
+        n = int(fixture["n"])
+        d = int(fixture["d"])
+        S = source_carrier * d
+        B_prime = (prime - 1) ** 2 // 4
+        joined_support = lcm(support, d)
+        if S % joined_support:
+            raise AssertionError(f"fixed-n outer support is not a divisor: {name}")
+        target_R = 4 * joined_support - n
+        target_K = joined_support * (prime - S // joined_support)
+        target_positive = target_R > 0
+        chart_match = (
+            target_positive
+            and canonical_chart(prime, joined_support) == (target_R, target_K)
+        )
+        strict_gain = joined_support > support
+        source_potential = B_prime // support
+        successor_potential = (
+            B_prime // joined_support if joined_support > 0 else source_potential
+        )
+        strict_potential = successor_potential < source_potential
+        source_in_domain = support <= B_prime
+        if (
+            source_in_domain
+            and target_positive
+            and chart_match
+            and strict_gain
+            and strict_potential
+        ):
+            target_class = "marked_absorb" if target_R < prime else "overflow"
+            source_state = {
+                "equation_target": [4, prime],
+                "R": source_R,
+                "K": source_K,
+                "absorbed_support": support,
+                "state_class": "overflow",
+            }
+            target_state = {
+                "equation_target": [4, prime],
+                "R": target_R,
+                "K": target_K,
+                "absorbed_support": joined_support,
+                "state_class": target_class,
+            }
+            receipt = {
+                "edge_id": "edge:" + canonical_hash(
+                    {"source": source_state, "successor": target_state}
+                ),
+                "certificate_type": "overflow_fixed_n_outer_rank_reset",
+                "phase": "OVERFLOW_DETERMINANT",
+                "state_class": target_class,
+                "source_state": source_state,
+                "successor_state": target_state,
+                "equation_target": {"numerator": 4, "denominator": prime},
+                "marked_solution_set": {
+                    "source": "Sol(p)",
+                    "successor": "Sol(p)",
+                    "lift": "identity",
+                },
+                "target_fiber": {
+                    "status": "inherited_full_solution_set",
+                    "reason": "fixed-n determinant identity with chart-independent marking",
+                },
+                "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+                "certificate_context": {
+                    "source": OVERFLOW_INPUT.name,
+                    "provenance": "overflow_determinant_fixed_n_window_extension",
+                    "fixture_name": name,
+                    "determinant": {
+                        "pn": prime * n,
+                        "four_M_d_plus_1": 4 * source_carrier * d + 1,
+                        "S": S,
+                    },
+                    "selected_candidate": {
+                        "L": joined_support,
+                        "R_L": target_R,
+                        "K_L": target_K,
+                    },
+                    "window_position": "inside" if target_R < prime else "above",
+                },
+                "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+                "induction_rank": {
+                    "kind": "absorbed_support_potential",
+                    "source": source_potential,
+                    "successor": successor_potential,
+                },
+                "potential_record": {
+                    "B_p": B_prime,
+                    "source_support": support,
+                    "successor_support": joined_support,
+                    "source_value": source_potential,
+                    "successor_value": successor_potential,
+                    "strict_decrease": strict_potential,
+                    "support_monotone": strict_gain,
+                },
+                "e1_e5": {f"E{i}": True for i in range(1, 6)},
+                "selector_status": "verified_edge",
+                "recursive_edge_eligible": True,
+                "lift_status": "proved_identity",
+                "proof_boundary": (
+                    "fixed_n_absorption"
+                    if target_class == "marked_absorb"
+                    else "fixed_n_overflow_rank_descent"
+                ),
+                "scope_note": (
+                    "The fixed-n determinant chart is valid above the R<p window as an "
+                    "overflow state; the joined support strictly lowers the outer rank."
+                ),
+            }
+            check_status_boundary(receipt)
+            verified.append(receipt)
+            continue
+
+        missing: list[str] = []
+        if not source_in_domain:
+            missing.append("source_potential_domain")
+        if not target_positive:
+            missing.append("positive_target_chart")
+        if target_positive and not chart_match:
+            missing.append("fixed_n_chart_identity")
+        if not strict_gain:
+            missing.append("strict_support_gain")
+        if not strict_potential:
+            missing.append("strict_potential_decrease")
+        rejected.append(
+            {
+                "fixture_name": name,
+                "equation_target": [4, prime],
+                "source_carrier": source_carrier,
+                "dual_carrier": d,
+                "source_support": support,
+                "joined_support": joined_support,
+                "candidate_chart": {
+                    "R": target_R,
+                    "K": target_K,
+                    "positive": target_positive,
+                },
+                "missing_conditions": missing,
+                "selector_status": "analysis_evidence",
+                "recursive_edge_eligible": False,
+                "proof_boundary": "fixed_n_overflow_rank_filter",
+            }
+        )
+    return {
+        "fixture_count": len(rows),
+        "verified_edge_count": len(verified),
+        "absorption_target_count": sum(
+            receipt["state_class"] == "marked_absorb" for receipt in verified
+        ),
+        "overflow_target_count": sum(
+            receipt["state_class"] == "overflow" for receipt in verified
+        ),
+        "rejected_fixture_count": len(rejected),
+        "verified_receipts": verified,
+        "rejected_fixtures": rejected,
+        "rank_definition": {
+            "kind": "absorbed_support_potential",
+            "formula": "floor(((p-1)^2)/4 / A)",
+            "candidate": "L=lcm(A,d)",
+            "target_formula": "R_L=4L-n; K_L=L*(p-M*d/L)",
+            "acceptance": (
+                "L>A, R_L>0, canonical_chart(p,L)=(R_L,K_L), "
+                "and strict potential decrease"
+            ),
+        },
+        "scope_note": (
+            "This branch extends the fixed-n determinant menu above the R<p window. "
+            "It does not assert that every overflow has a positive candidate."
+        ),
+    }
+
+
 def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
     """Pay a RESET with the non-resettable absorbed-support potential.
 
@@ -1011,6 +1195,7 @@ def build_results() -> dict[str, object]:
     verified_edge = verified_fixed_n_edge(overflow)
     capacity = capacity_receipt(qadic, phase)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
+    fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     outer_rank_reset = overflow_outer_rank_reset(overflow)
     reset_boundary = phase_reset_boundary(overflow)
     return {
@@ -1020,6 +1205,7 @@ def build_results() -> dict[str, object]:
         "status_lattice": STATUS_LATTICE,
         "states": states,
         "verified_edges": [verified_edge],
+        "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
@@ -1030,14 +1216,15 @@ def build_results() -> dict[str, object]:
             "terminal_leaf_requires_direct_certificate": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
+            "fixed_n_overflow_rank_requires_positive_chart": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
         },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
-            "It contains one verified fixed-n identity-lift edge and a focused set of "
-            "joined-support RESET edges, but does not prove universal branch existence or "
+            "It contains fixed-n identity-lift edges and focused joined-support RESET edges, "
+            "but does not prove universal branch existence or "
             "well-founded descent for all overflow states."
         ),
     }
@@ -1056,6 +1243,44 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
         raise AssertionError("focused overflow classification counts changed")
     if menu.get("support_preserving_channel_count") != 3:
         raise AssertionError("focused dual support-preserving channel count changed")
+    fixed_n_outer = result.get("overflow_fixed_n_outer_rank")
+    if not isinstance(fixed_n_outer, dict):
+        raise AssertionError("fixed-n overflow-rank receipt missing")
+    if fixed_n_outer.get("fixture_count") != 12:
+        raise AssertionError("fixed-n outer fixture count changed")
+    if fixed_n_outer.get("verified_edge_count") != 9:
+        raise AssertionError("fixed-n outer verified edge count changed")
+    if fixed_n_outer.get("absorption_target_count") != 3:
+        raise AssertionError("fixed-n outer absorption count changed")
+    if fixed_n_outer.get("overflow_target_count") != 6:
+        raise AssertionError("fixed-n outer overflow count changed")
+    if fixed_n_outer.get("rejected_fixture_count") != 3:
+        raise AssertionError("fixed-n outer rejected count changed")
+    fixed_n_verified = fixed_n_outer.get("verified_receipts")
+    fixed_n_rejected = fixed_n_outer.get("rejected_fixtures")
+    if not isinstance(fixed_n_verified, list) or len(fixed_n_verified) != 9:
+        raise AssertionError("fixed-n outer receipt shape changed")
+    if not isinstance(fixed_n_rejected, list) or len(fixed_n_rejected) != 3:
+        raise AssertionError("fixed-n outer rejection shape changed")
+    for receipt in fixed_n_verified:
+        if not isinstance(receipt, dict):
+            raise AssertionError("fixed-n outer receipt shape changed")
+        if receipt.get("selector_status") != "verified_edge":
+            raise AssertionError("fixed-n outer edge lost verified status")
+        if receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}:
+            raise AssertionError("fixed-n outer edge lacks E1-E5")
+        if receipt.get("recursive_edge_eligible") is not True:
+            raise AssertionError("fixed-n outer edge became nonrecursive")
+        potential = receipt.get("potential_record")
+        if not isinstance(potential, dict) or potential.get("strict_decrease") is not True:
+            raise AssertionError("fixed-n outer potential did not decrease")
+    for receipt in fixed_n_rejected:
+        if not isinstance(receipt, dict):
+            raise AssertionError("fixed-n outer rejection shape changed")
+        if receipt.get("selector_status") != "analysis_evidence":
+            raise AssertionError("fixed-n outer rejection crossed status boundary")
+        if receipt.get("recursive_edge_eligible") is not False:
+            raise AssertionError("fixed-n outer rejection became recursive")
     hard_core = menu.get("hard_core_receipts")
     if not isinstance(hard_core, list) or len(hard_core) != 9:
         raise AssertionError("focused hard-core receipt count changed")

@@ -44,12 +44,875 @@
   ],
   "invariants": {
     "analysis_evidence_never_recursive": true,
+    "fixed_n_overflow_rank_requires_positive_chart": true,
     "hard_core_negative_receipt_never_recursive": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
+  },
+  "overflow_fixed_n_outer_rank": {
+    "absorption_target_count": 3,
+    "fixture_count": 12,
+    "overflow_target_count": 6,
+    "rank_definition": {
+      "acceptance": "L>A, R_L>0, canonical_chart(p,L)=(R_L,K_L), and strict potential decrease",
+      "candidate": "L=lcm(A,d)",
+      "formula": "floor(((p-1)^2)/4 / A)",
+      "kind": "absorbed_support_potential",
+      "target_formula": "R_L=4L-n; K_L=L*(p-M*d/L)"
+    },
+    "rejected_fixture_count": 3,
+    "rejected_fixtures": [
+      {
+        "candidate_chart": {
+          "K": 420,
+          "R": 23,
+          "positive": true
+        },
+        "dual_carrier": 1,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixture_name": "accumulated_d_one_boundary",
+        "joined_support": 7,
+        "missing_conditions": [
+          "strict_support_gain",
+          "strict_potential_decrease"
+        ],
+        "proof_boundary": "fixed_n_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 91,
+        "source_support": 7
+      },
+      {
+        "candidate_chart": {
+          "K": -10165,
+          "R": -557,
+          "positive": false
+        },
+        "dual_carrier": 19,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixture_name": "reachable_conflict_bundle_1",
+        "joined_support": 19,
+        "missing_conditions": [
+          "positive_target_chart",
+          "strict_support_gain",
+          "strict_potential_decrease"
+        ],
+        "proof_boundary": "fixed_n_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 608,
+        "source_support": 19
+      },
+      {
+        "candidate_chart": {
+          "K": -10664,
+          "R": -177,
+          "positive": false
+        },
+        "dual_carrier": 124,
+        "equation_target": [
+          4,
+          241
+        ],
+        "fixture_name": "symmetric_small_chart_support_conflict",
+        "joined_support": 248,
+        "missing_conditions": [
+          "positive_target_chart"
+        ],
+        "proof_boundary": "fixed_n_overflow_rank_filter",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 568,
+        "source_support": 8
+      }
+    ],
+    "scope_note": "This branch extends the fixed-n determinant menu above the R<p window. It does not assert that every overflow has a positive candidate.",
+    "verified_edge_count": 9,
+    "verified_receipts": [
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 50000,
+            "four_M_d_plus_1": 200001,
+            "pn": 200001
+          },
+          "fixture_name": "accumulated_positive_fixed_n_edge",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 31800,
+            "L": 200,
+            "R_L": 311
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "inside"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:aeb59672ecff129efc97fd203ec23f20113b2083f5ef583ec30851f2d9d1837c",
+        "equation_target": {
+          "denominator": 409,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 8323,
+          "successor": 208
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 41616,
+          "source_support": 5,
+          "source_value": 8323,
+          "strict_decrease": true,
+          "successor_support": 200,
+          "successor_value": 208,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_absorption",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 511,
+          "absorbed_support": 5,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "marked_absorb",
+        "successor_state": {
+          "K": 31800,
+          "R": 311,
+          "absorbed_support": 200,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "marked_absorb"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 2470,
+            "four_M_d_plus_1": 9881,
+            "pn": 9881
+          },
+          "fixture_name": "empty_fixed_n_window",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 116584,
+            "L": 494,
+            "R_L": 1935
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "above"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:33c76570e2766a50775bc260596b56ff60b0b9e2c2b08949f4664a0e882f3a4e",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 378,
+          "successor": 29
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 38,
+          "source_value": 378,
+          "strict_decrease": true,
+          "successor_support": 494,
+          "successor_value": 29,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 43320,
+          "R": 719,
+          "absorbed_support": 38,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 116584,
+          "R": 1935,
+          "absorbed_support": 494,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 456,
+            "four_M_d_plus_1": 1825,
+            "pn": 1825
+          },
+          "fixture_name": "reachable_conflict_bundle_0",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 16188,
+            "L": 228,
+            "R_L": 887
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "above"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:c357a69e19089f16be1624b386a12ce0a84bd00a4cd28b58dda382b77a92af59",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 5
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 228,
+          "successor_value": 5,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 2318,
+          "R": 127,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 16188,
+          "R": 887,
+          "absorbed_support": 228,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 39292,
+            "four_M_d_plus_1": 157169,
+            "pn": 157169
+          },
+          "fixture_name": "reachable_conflict_bundle_2",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 25897,
+            "L": 893,
+            "R_L": 1419
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "above"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:af11f273dfb0dd0c25f2c6a20a84e20ca339f39217ded0b4127715e4ce5a5b4d",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 893,
+          "successor_value": 1,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 21736,
+          "R": 1191,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 25897,
+          "R": 1419,
+          "absorbed_support": 893,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 17100,
+            "four_M_d_plus_1": 68401,
+            "pn": 68401
+          },
+          "fixture_name": "reachable_conflict_bundle_3",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 7866,
+            "L": 342,
+            "R_L": 431
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "above"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:5f1e2123d6868f440e37d66b9479d4dbbb5f5af78140c3e7eb7e7d99b5375e15",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 3
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 342,
+          "successor_value": 3,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 2863,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 7866,
+          "R": 431,
+          "absorbed_support": 342,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 748,
+            "four_M_d_plus_1": 2993,
+            "pn": 2993
+          },
+          "fixture_name": "root_edge_0",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 858,
+            "L": 22,
+            "R_L": 47
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "inside"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:fb2561a970e996fa1438357d4cf96a02540f4a1b6376363651034b48bb81c62f",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1296,
+          "successor": 58
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 1,
+          "source_value": 1296,
+          "strict_decrease": true,
+          "successor_support": 22,
+          "successor_value": 58,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_absorption",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "marked_absorb",
+        "successor_state": {
+          "K": 858,
+          "R": 47,
+          "absorbed_support": 22,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "marked_absorb"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 1988,
+            "four_M_d_plus_1": 7953,
+            "pn": 7953
+          },
+          "fixture_name": "root_edge_1",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 4760,
+            "L": 28,
+            "R_L": 79
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "inside"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:739dcf52e70a8fdeb16868d07da80caa52a58dd2eccaedc3143d042f6f526d3e",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 14400,
+          "successor": 514
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 1,
+          "source_value": 14400,
+          "strict_decrease": true,
+          "successor_support": 28,
+          "successor_value": 514,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_absorption",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "marked_absorb",
+        "successor_state": {
+          "K": 4760,
+          "R": 79,
+          "absorbed_support": 28,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "marked_absorb"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 42504,
+            "four_M_d_plus_1": 170017,
+            "pn": 170017
+          },
+          "fixture_name": "lcm_cycle_step_0",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 24948,
+            "L": 924,
+            "R_L": 1367
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "above"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:c68ac383a87bd36f93f9ee5dddb3712c80dd3e162d1659b4104c2829186c24fd",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 19,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 66,
+          "source_value": 19,
+          "strict_decrease": true,
+          "successor_support": 924,
+          "successor_value": 1,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 68310,
+          "R": 3743,
+          "absorbed_support": 66,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 24948,
+          "R": 1367,
+          "absorbed_support": 924,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "S": 42504,
+            "four_M_d_plus_1": 170017,
+            "pn": 170017
+          },
+          "fixture_name": "lcm_cycle_step_1",
+          "provenance": "overflow_determinant_fixed_n_window_extension",
+          "selected_candidate": {
+            "K_L": 68310,
+            "L": 1518,
+            "R_L": 3743
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "window_position": "above"
+        },
+        "certificate_type": "overflow_fixed_n_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:5d6e4a1eb11dfa6c8aeb443f95f63bfb35688bb972654393eac4c03bc5d79578",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 19,
+          "successor": 0
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_outer_rank_reset_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 66,
+          "source_value": 19,
+          "strict_decrease": true,
+          "successor_support": 1518,
+          "successor_value": 0,
+          "support_monotone": true
+        },
+        "proof_boundary": "fixed_n_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "The fixed-n determinant chart is valid above the R<p window as an overflow state; the joined support strictly lowers the outer rank.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 24948,
+          "R": 1367,
+          "absorbed_support": 66,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 68310,
+          "R": 3743,
+          "absorbed_support": 1518,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      }
+    ]
   },
   "overflow_menu": {
     "classification_counts": {
@@ -4060,13 +4923,14 @@
     "scope_note": "RESET remains candidate_transition until an outer non-resettable rank is supplied."
   },
   "schema_version": 1,
-  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains one verified fixed-n identity-lift edge and a focused set of joined-support RESET edges, but does not prove universal branch existence or well-founded descent for all overflow states.",
+  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n identity-lift edges and focused joined-support RESET edges, but does not prove universal branch existence or well-founded descent for all overflow states.",
   "selector_order": [
     "direct_type_i_or_type_ii",
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
+    "overflow_fixed_n_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",

@@ -11,6 +11,7 @@ depends_on:
   - type-I-overflow-qadic-obstruction-transfer
   - type-I-overflow-defect-unit-phase-capacity
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
+  - type-I-overflow-fixed-n-overflow-rank-descent
   - type-I-overflow-fixed-n-gap-dual-obstruction
   - type-I-overflow-outer-rank-reset
   - type-I-overflow-phase-reset-cycle-boundary
@@ -56,6 +57,7 @@ target_fiber_neighbor_terminal
 generalized_dyadic_terminal
 fixed_layer_quotient_fourier
 overflow_fixed_n_charged_support
+overflow_fixed_n_outer_rank_reset
 overflow_outer_rank_reset
 overflow_hard_core_gap_obstruction
 overflow_qadic_phase_capacity
@@ -137,6 +139,11 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 | 分支 | 源/后继 | 结果 |
 |---|---|---|
 | overflow fixed-n | \((p,M,A)=(409,250,5)\to L=125\) | `verified_edge`，\(8323\to332\) 的支撑势严格下降，解提升为恒等映射 |
+
+固定-\(n\) 分支还检查窗口上方的正 overflow 图表：12 个 fixture 中 9 条通过完整
+E1--E5，其中 3 条落入 \(R_L<p\) 吸收态，6 条落入 \(R_L>p\) 的严格支撑秩递降。
+这 6 条不是直接终端，但可以继续进入 overflow 选择器。详见
+[固定 \(n\) 窗口上方的 overflow 支撑秩递降](type-I-overflow-fixed-n-overflow-rank-descent.md)。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

@@ -126,7 +126,7 @@ state 或直接短证书。
 **2026-08-02 状态级分派收口。** 以上三类证据现已由
 `reproductions/type_i_representation_dual_capacity_selector.py` 装配为统一的
 内容寻址状态回执，并把 overflow q 进支付/缺陷单位审计作为独立的容量回执附加。分派
-顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-outer-rank-reset -> overflow-capacity`；
+顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity`；
 每条回执均保存 `state_id`、根方程、目标纤维、标记集、带符号缺陷、证书上下文和势记录。
 当前三条状态回执与一条容量回执仍严格保持 `analysis_evidence`，且
 `recursive_edge_eligible=false`；但固定-\(n\) 行列式图谱中的正例
@@ -148,6 +148,14 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 16 条不能支付旧支撑或 E5，继续保留为分析证据。该更新把“carrier-size 局部下降”与
 “不可重置的全局支撑秩”分开，但尚未证明任意递归可达 \(A>1\) overflow 都能进入这
 一分支。详见[overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md)。
+
+同一批回执还修正了固定-\(n\) 空窗口的解释：对 d 通道
+\(L=\operatorname{lcm}(A,d)\) 总有 \(L\mid Md\)，若 \(R_L>p\) 仍可生成 overflow
+后继，并由 \(\Pi_A(L)<\Pi_A(A)\) 支付 E5。12 个 fixture 中 9 条通过该固定-\(n\)
+窗口扩展，6 条是此前未登记的 overflow 递降，3 条落入 \(R_L<p\) 吸收态；只有 3 条
+因 \(d=1\) 或 \(R_L\le0\) 失败。该结果把“窗口空”从无后继误读改为“没有窗口内
+吸收态”，不关闭 r 通道或全称 \(A>1\) 存在性。详见
+[固定 \(n\) 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md)。
 
    近邻偶前驱、广义 \(2^j\) 偶前驱和该商 Fourier 回执现已统一到终端优先协议；协议
    明确保存标准偶解但将 `lift_status` 保持为 `unproved`，因此这些回执仍不能替代

@@ -4301,3 +4301,26 @@ E1=true, E2=true, E3=true, E4=true, E5=false，`recursive_edge_eligible=false`�
 \(\operatorname{lcm}(19,12)=228\nmid 420\) 仍被拒绝。新主张卡见
 [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md)，
 selector 回执位于 `overflow_outer_rank_reset`。
+
+### 2026-08-03：固定-\(n\) 窗口上方的 overflow 支撑秩边
+
+进一步检查发现，d 通道的 \(L=\operatorname{lcm}(A,d)\) 总是整除 \(Md\)。固定-\(n\)
+公式
+\[
+R_L=4L-n,\qquad K_L=L\left(p-\frac{Md}{L}\right)
+\]
+在 \(R_L>p\) 时仍给出正的 canonical overflow chart；因此原先只检查
+\(n<4L<p+n\) 的窗口，遗漏了窗口上方的递降边。新增
+overflow_fixed_n_outer_rank_reset 后，12 个 fixture 中 9 条通过 E1--E5，其中
+3 条到达 \(R_L<p\) 吸收态，6 条到达 \(R_L>p\) 的 overflow；3 条因 \(d=1\) 或
+\(R_L\le0\) 拒绝。
+
+新边的 E5 仍由
+\[
+\Pi_A(L)=\left\lfloor\frac{(p-1)^2}{4L}\right\rfloor
+<
+\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor=\Pi_A(A)
+\]
+支付。主张卡见
+[固定 \(n\) 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md)，
+回执位于 `overflow_fixed_n_outer_rank`。

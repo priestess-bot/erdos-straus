@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 366 |
+| 数学状态 | `computationally_reproduced` | 367 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 322 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 152 |
+| 证明来源 | `repository_derivation` | 153 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 282 |
+| 审阅状态 | `internal_review` | 283 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -484,6 +484,7 @@
 | [overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md) (`type-I-overflow-defect-unit-phase-capacity`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
 | [overflow 行列式的固定 n 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md) (`type-I-overflow-determinant-fixed-n-dual-support-conflict`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md) (`type-I-overflow-fixed-n-gap-dual-obstruction`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [固定 n 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md) (`type-I-overflow-fixed-n-overflow-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md) (`type-I-overflow-outer-rank-reset`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md) (`type-I-overflow-phase-reset-cycle-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |

@@ -3079,7 +3079,7 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-outer-rank-reset -> overflow-capacity
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
@@ -3158,3 +3158,16 @@ overflow 的 24 个双通道中，8 条满足该合同，其中 3 条到达 \(R_
 \(K_t=420\)。因此该结果支付了一个不可重置外层秩，却没有关闭全部 \(A>1\) overflow；
 剩余 16 条通道仍需 alternate、直接终端或跨状态容量。详见
 [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md)。
+
+## 2026-08-03 固定-\(n\) 窗口上方的 overflow 递降
+
+固定-\(n\) d 通道取 \(L=\operatorname{lcm}(A,d)\) 时，\(L\mid Md\) 始终成立；原先的
+窗口条件 \(n<4L<p+n\) 只保证目标 \(R_L<p\)，并不覆盖 \(R_L>p\) 的合法 overflow。
+统一 selector 现在对这一区域也重算 canonical chart、恒等提升和
+\(\Pi_A(L)<\Pi_A(A)\)。12 个 fixture 中 9 条成为完整 verified_edge，其中 3 条为
+吸收目标、6 条为新的 overflow 支撑秩递降；仅 3 条因 \(d=1\) 或 \(R_L\le0\) 拒绝。
+
+这进一步把“fixed-\(n\) 窗口为空”的负边界收缩为“窗口下方没有吸收态，但窗口上方
+可能有递归 overflow”。它仍没有处理 r 通道的支撑整除失败，也没有证明任意
+\(A>1\) overflow 都有正的 \(L\)。详见
+[固定 \(n\) 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md)。
