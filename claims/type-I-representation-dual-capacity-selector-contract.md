@@ -12,6 +12,7 @@ depends_on:
   - type-I-overflow-defect-unit-phase-capacity
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-fixed-n-gap-dual-obstruction
+  - type-I-overflow-outer-rank-reset
   - type-I-overflow-phase-reset-cycle-boundary
   - denominator-escape-state-contract
 topics:
@@ -55,6 +56,7 @@ target_fiber_neighbor_terminal
 generalized_dyadic_terminal
 fixed_layer_quotient_fourier
 overflow_fixed_n_charged_support
+overflow_outer_rank_reset
 overflow_hard_core_gap_obstruction
 overflow_qadic_phase_capacity
 ```
@@ -154,6 +156,13 @@ deficit；全部保持 `analysis_evidence`、`recursive_edge_eligible=false`。�
 `candidate_transition`、\(E5=false\)，不可递归；它验证的是 phase 调度边界，而不是
 一个新的下降边。详见
 [overflow RESET 局部载体下降与重入循环边界](type-I-overflow-phase-reset-cycle-boundary.md)。
+
+RESET 现又增加一条带不可重置外层秩的 typed 分支：先取
+\(A'=\operatorname{lcm}(A,t)\)，再要求 \(A'\mid K_t\) 和
+\(\Pi_A(A')<\Pi_A(A)\)。聚焦 24 个双通道中 8 条满足完整 E1--E5，其中 3 条到达
+\(R_t<p\) 吸收态、5 条仍为 overflow 但支撑秩严格下降；16 条继续保留为
+`analysis_evidence`。详见
+[overflow RESET 的 joined-support 外层秩递降](type-I-overflow-outer-rank-reset.md)。
 
 另附一条跨状态 overflow 容量回执。它重放 12 个 overflow、24 个双通道和 17 条
 阻碍幂记录；相位审计得到 5 个 \(q\) 组、13 个相位胞、5 对兼容记录，容量超载胞为

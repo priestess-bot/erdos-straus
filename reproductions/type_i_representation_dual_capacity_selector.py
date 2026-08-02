@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from math import lcm
 from pathlib import Path
 
 
@@ -28,6 +29,7 @@ SELECTOR_ORDER = [
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
     "overflow_fixed_n_charged_support",
+    "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
     "overflow_qadic_phase_capacity",
@@ -652,6 +654,195 @@ def overflow_menu_receipts(
     }
 
 
+def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
+    """Pay a RESET with the non-resettable absorbed-support potential.
+
+    A dual carrier may be used only after joining it with the old charged
+    support.  This keeps the support commitment monotone even when the target
+    canonical chart is itself still an overflow chart.
+    """
+    overflow_dual = payload.get("overflow_dual")
+    if not isinstance(overflow_dual, dict):
+        raise AssertionError("overflow dual payload shape changed")
+
+    verified: list[dict[str, object]] = []
+    rejected: list[dict[str, object]] = []
+    channel_count = 0
+    for fixture in overflow_fixture_rows(payload):
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        carrier = int(fixture["M"])
+        R_M = int(fixture["R_M"])
+        K_M = int(fixture["K_M"])
+        n = int(fixture["n"])
+        d = int(fixture["d"])
+        if not (
+            support > 0
+            and carrier > 0
+            and carrier % support == 0
+            and K_M % carrier == 0
+            and prime * n == 4 * carrier * d + 1
+            and R_M == 4 * carrier - n
+        ):
+            raise AssertionError(f"outer-rank source invariant changed: {name}")
+
+        residue = carrier % prime
+        if not 1 <= residue < prime:
+            raise AssertionError(f"outer-rank residue left its range: {name}")
+        for side, dual_carrier in (("d", d), ("r", residue)):
+            channel_count += 1
+            if dual_carrier <= 0:
+                raise AssertionError(f"outer-rank dual carrier is not positive: {name}")
+            dual_R, dual_K = canonical_chart(prime, dual_carrier)
+            joined_support = lcm(support, dual_carrier)
+            strict_gain = joined_support > support
+            support_divisibility = dual_K % joined_support == 0
+            B_prime = (prime - 1) ** 2 // 4
+            source_potential = B_prime // support
+            successor_potential = B_prime // joined_support
+            strict_potential = successor_potential < source_potential
+            descriptor = {
+                "equation_target": [4, prime],
+                "phase": "RESET",
+                "fixture_name": name,
+                "side": side,
+                "source_carrier": carrier,
+                "dual_carrier": dual_carrier,
+                "joined_support": joined_support,
+            }
+            if strict_gain and support_divisibility and strict_potential:
+                target_class = "marked_absorb" if dual_R < prime else "overflow"
+                source_state = {
+                    "equation_target": [4, prime],
+                    "R": R_M,
+                    "K": K_M,
+                    "absorbed_support": support,
+                    "state_class": "overflow",
+                }
+                target_state = {
+                    "equation_target": [4, prime],
+                    "R": dual_R,
+                    "K": dual_K,
+                    "absorbed_support": joined_support,
+                    "state_class": target_class,
+                }
+                receipt = {
+                    "edge_id": "edge:" + canonical_hash(
+                        {"source": source_state, "successor": target_state}
+                    ),
+                    "certificate_type": "overflow_outer_rank_reset",
+                    "phase": "RESET",
+                    "state_class": target_class,
+                    "source_state": source_state,
+                    "successor_state": target_state,
+                    "equation_target": {"numerator": 4, "denominator": prime},
+                    "marked_solution_set": {
+                        "source": "Sol(p)",
+                        "successor": "Sol(p)",
+                        "lift": "identity",
+                    },
+                    "target_fiber": {
+                        "status": "inherited_full_solution_set",
+                        "reason": "canonical dual chart with chart-independent marking",
+                    },
+                    "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+                    "certificate_context": {
+                        "source": OVERFLOW_INPUT.name,
+                        "provenance": "symmetric_dual_with_joined_support",
+                        "fixture_name": name,
+                        "dual_side": side,
+                        "dual_carrier": dual_carrier,
+                        "dual_chart": {"R": dual_R, "K": dual_K},
+                        "joined_support": joined_support,
+                        "overflow_determinant": {
+                            "pn": prime * n,
+                            "four_M_d_plus_1": 4 * carrier * d + 1,
+                        },
+                    },
+                    "normal_form": "overflow_outer_rank_reset_v1",
+                    "induction_rank": {
+                        "kind": "absorbed_support_potential",
+                        "source": source_potential,
+                        "successor": successor_potential,
+                    },
+                    "potential_record": {
+                        "B_p": B_prime,
+                        "source_support": support,
+                        "successor_support": joined_support,
+                        "source_value": source_potential,
+                        "successor_value": successor_potential,
+                        "strict_decrease": successor_potential < source_potential,
+                        "support_monotone": joined_support > support,
+                    },
+                    "e1_e5": {f"E{i}": True for i in range(1, 6)},
+                    "selector_status": "verified_edge",
+                    "recursive_edge_eligible": True,
+                    "lift_status": "proved_identity",
+                    "proof_boundary": (
+                        "joined_support_rank_descent"
+                        if target_class == "overflow"
+                        else "joined_support_absorption"
+                    ),
+                    "scope_note": (
+                        "The RESET preserves the old support by joining the dual carrier; "
+                        "the target may remain overflow, but the absorbed-support rank is "
+                        "strictly smaller and cannot be reset by this edge."
+                    ),
+                }
+                check_status_boundary(receipt)
+                verified.append(receipt)
+                continue
+
+            missing: list[str] = []
+            if not strict_gain:
+                missing.append("strict_support_gain")
+            if not support_divisibility:
+                missing.append("joined_support_divisibility")
+            if not strict_potential:
+                missing.append("strict_potential_decrease")
+            rejected.append(
+                {
+                    "fixture_name": name,
+                    "equation_target": [4, prime],
+                    "side": side,
+                    "source_carrier": carrier,
+                    "dual_carrier": dual_carrier,
+                    "dual_chart": {"R": dual_R, "K": dual_K},
+                    "source_support": support,
+                    "joined_support": joined_support,
+                    "strict_support_gain": strict_gain,
+                    "joined_support_divides_dual_K": support_divisibility,
+                    "missing_conditions": missing,
+                    "selector_status": "analysis_evidence",
+                    "recursive_edge_eligible": False,
+                    "proof_boundary": "outer_rank_reset_filter",
+                }
+            )
+
+    if channel_count != 24:
+        raise AssertionError(f"outer-rank channel count changed: {channel_count}")
+    return {
+        "channel_count": channel_count,
+        "verified_edge_count": len(verified),
+        "rejected_channel_count": len(rejected),
+        "verified_receipts": verified,
+        "rejected_channels": rejected,
+        "rank_definition": {
+            "kind": "absorbed_support_potential",
+            "formula": "floor(((p-1)^2)/4 / A)",
+            "reset_rule": "A_next=lcm(A,dual_carrier)",
+            "strict_condition": (
+                "A_next>A, A_next divides K_dual, and floor(B_p/A_next)<floor(B_p/A)"
+            ),
+        },
+        "scope_note": (
+            "Only support-preserving RESET channels are promoted. Rejected channels retain "
+            "their local dual arithmetic but cannot discard the old charged support."
+        ),
+    }
+
+
 def phase_reset_boundary(payload: dict[str, object]) -> dict[str, object]:
     """Register the focused RESET re-entry cycle as a non-recursive edge menu.
 
@@ -820,6 +1011,7 @@ def build_results() -> dict[str, object]:
     verified_edge = verified_fixed_n_edge(overflow)
     capacity = capacity_receipt(qadic, phase)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
+    outer_rank_reset = overflow_outer_rank_reset(overflow)
     reset_boundary = phase_reset_boundary(overflow)
     return {
         "schema_version": 1,
@@ -829,6 +1021,7 @@ def build_results() -> dict[str, object]:
         "states": states,
         "verified_edges": [verified_edge],
         "overflow_menu": overflow_menu,
+        "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
         "capacity_receipts": [capacity],
         "invariants": {
@@ -837,13 +1030,15 @@ def build_results() -> dict[str, object]:
             "terminal_leaf_requires_direct_certificate": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
+            "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
         },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
-            "It contains one verified fixed-n identity-lift edge, but does not prove universal "
-            "branch existence or well-founded descent for all overflow states."
+            "It contains one verified fixed-n identity-lift edge and a focused set of "
+            "joined-support RESET edges, but does not prove universal branch existence or "
+            "well-founded descent for all overflow states."
         ),
     }
 
@@ -879,6 +1074,40 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
             raise AssertionError("hard-core row crossed the status boundary")
         if receipt.get("recursive_edge_eligible") is not False:
             raise AssertionError("hard-core row became recursive")
+    outer_rank = result.get("overflow_outer_rank_reset")
+    if not isinstance(outer_rank, dict):
+        raise AssertionError("outer-rank RESET receipt missing")
+    if outer_rank.get("channel_count") != 24:
+        raise AssertionError("focused outer-rank channel count changed")
+    if outer_rank.get("verified_edge_count") != 8:
+        raise AssertionError("focused outer-rank verified edge count changed")
+    if outer_rank.get("rejected_channel_count") != 16:
+        raise AssertionError("focused outer-rank rejected count changed")
+    verified_outer = outer_rank.get("verified_receipts")
+    rejected_outer = outer_rank.get("rejected_channels")
+    if not isinstance(verified_outer, list) or len(verified_outer) != 8:
+        raise AssertionError("outer-rank verified receipt shape changed")
+    if not isinstance(rejected_outer, list) or len(rejected_outer) != 16:
+        raise AssertionError("outer-rank rejection receipt shape changed")
+    for receipt in verified_outer:
+        if not isinstance(receipt, dict):
+            raise AssertionError("outer-rank receipt shape changed")
+        if receipt.get("selector_status") != "verified_edge":
+            raise AssertionError("outer-rank edge lost verified status")
+        if receipt.get("recursive_edge_eligible") is not True:
+            raise AssertionError("outer-rank edge became nonrecursive")
+        if receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}:
+            raise AssertionError("outer-rank edge lacks E1-E5")
+        potential = receipt.get("potential_record")
+        if not isinstance(potential, dict) or potential.get("strict_decrease") is not True:
+            raise AssertionError("outer-rank potential did not decrease")
+    for receipt in rejected_outer:
+        if not isinstance(receipt, dict):
+            raise AssertionError("outer-rank rejection shape changed")
+        if receipt.get("selector_status") != "analysis_evidence":
+            raise AssertionError("outer-rank rejection crossed status boundary")
+        if receipt.get("recursive_edge_eligible") is not False:
+            raise AssertionError("outer-rank rejection became recursive")
     reset = result.get("phase_reset_receipts")
     if not isinstance(reset, dict) or reset.get("cycle_count") != 1:
         raise AssertionError("focused reset-cycle receipt changed")

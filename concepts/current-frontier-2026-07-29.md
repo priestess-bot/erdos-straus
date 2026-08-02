@@ -3079,7 +3079,7 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-capacity
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-outer-rank-reset -> overflow-capacity
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
@@ -3135,3 +3135,26 @@ fixture 中；因此“dual_support_preserving 为 0”只是按固定-\(n\) 优
 仅 E5 缺失；因此 carrier-size 是局部 RESET 秩，不是全局良基势。若要启用 support reset，
 必须禁止该 continuation、把它封闭到已验证降 R 分支，或引入不可重置外层秩。详见
 [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md)。
+
+## 2026-08-03 joined-support 外层秩 RESET
+
+为支付 RESET 的全局 E5，统一 selector 现在要求旧 charged support 不得被小载体直接
+替换。对 overflow 的双载体 \(t\in\{d,M\bmod p\}\)，先取
+
+\[
+A'=\operatorname{lcm}(A,t),
+\qquad
+\Pi_A(A)=\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor.
+\]
+
+只有 \(A'>A\)、\(A'\mid K_t\) 且 \(\Pi_A(A')<\Pi_A(A)\) 时，才生成
+`overflow_outer_rank_reset_v1` 的 `verified_edge`。目标 \(R_t<p\) 是吸收态；目标
+仍有 \(R_t>p\) 时也可作为严格降低 absorbed-support 秩的 overflow 后继。当前 12 个
+overflow 的 24 个双通道中，8 条满足该合同，其中 3 条到达 \(R_t<p\) 吸收态、5 条
+仍为 overflow；16 条因旧支撑整除或严格秩条件失败而拒绝。
+
+这给 p=73 的可达冲突行增加了 \(A=19\to38\) 的同图表支撑增强，但不把原来的
+\(t=12\) 局部 reset 误升级：\(\operatorname{lcm}(19,12)=228\) 不整除其小图表
+\(K_t=420\)。因此该结果支付了一个不可重置外层秩，却没有关闭全部 \(A>1\) overflow；
+剩余 16 条通道仍需 alternate、直接终端或跨状态容量。详见
+[overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md)。

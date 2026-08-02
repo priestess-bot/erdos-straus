@@ -4281,3 +4281,23 @@ E1=true, E2=true, E3=true, E4=true, E5=false，`recursive_edge_eligible=false`�
 必须提供不可重置的外层 rank。新增主张卡见
 [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md)，
 回执位于 `phase_reset_receipts`。
+
+### 2026-08-03：joined-support 外层秩支付 RESET
+
+为避免把小对偶载体直接写成新支撑，统一 selector 对每个 RESET 通道先计算
+\(A'=\operatorname{lcm}(A,t)\)，再检查 \(A'\mid K_t\) 及
+\[
+\Pi_A(A')=\left\lfloor\frac{(p-1)^2}{4A'}\right\rfloor
+<
+\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor=\Pi_A(A).
+\]
+这允许目标图表仍为 overflow，只要支撑状态严格增强；它与旧的 carrier-size RESET
+是不同类型。现有 12 个 overflow 的 24 个双通道中，8 条成为完整 E1--E5
+`verified_edge`，其中 3 条到达 \(R_t<p\) 吸收态、5 条仍为 overflow；其余 16 条
+保留为 `analysis_evidence`。
+
+在 p=73 的可达冲突行，\(A=19,M=38\) 的 \(t=38\) 通道把同一图表的支撑增强为
+\(A'=38\)，而原 \(t=12\) 小载体因
+\(\operatorname{lcm}(19,12)=228\nmid 420\) 仍被拒绝。新主张卡见
+[overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md)，
+selector 回执位于 `overflow_outer_rank_reset`。

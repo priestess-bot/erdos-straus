@@ -35,6 +35,7 @@ used_by:
 - type-I-bottom-sink-scc-complete-excess-bundle-selector
 - type-I-universal-p-source-capacity-anchor-orbit
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
+- type-I-overflow-outer-rank-reset
 - type-I-unified-terminal-first-selector-contract
 sources:
 - claim: marked-solution-descent-closure
@@ -764,6 +765,43 @@ determinant carrier \(d\ge2\) 总给出这种边。一般 \(A_S>1\) 的
 可替代方案可以加入规范 Fourier 导子、marked 复杂度或 q-adic 提升深度，但每个分量
 都必须是非负整数、从状态本身可重算，并且必须重新证明全体允许边严格下降。
 
+### 6.2a RESET 的 joined-support 外层秩
+
+对 overflow determinant 回执
+
+\[
+pn=4Md+1,
+\qquad A\mid M,
+\]
+
+以及对称双载体 \(t\in\{d,M\bmod p\}\)，允许一个单独命名的
+`overflow_outer_rank_reset_v1`。它不得把小载体 \(t\) 直接写成新支撑，而必须先取
+
+\[
+A'=\operatorname{lcm}(A,t).
+\]
+
+该分支先要求 \(1\le A\le B_p=(p-1)^2/4\)。若 \(A'>A\)、\(A'\mid K_t\)，并且
+
+\[
+\left\lfloor\frac{(p-1)^2}{4A'}\right\rfloor
+<
+\left\lfloor\frac{(p-1)^2}{4A}\right\rfloor,
+\tag{7}
+\]
+
+则目标状态带 \(A'\) 而不是 \(t\)。目标 \(R_t<p\) 时属于已有
+`marked_absorb`；目标 \(R_t>p\) 时仍是 overflow，但可作为新的合法 overflow 状态
+继续进入选择器。两种情形都用图表无关的 \(\operatorname{Sol}(p)\) 恒等映射完成 E4，
+并用 (7) 完成 E5。目标仍为 overflow 并不取消秩下降，也不能被误报成直接终端。
+若源 \(A>B_p\)，当前 \(\Pi_A=0\)，本分支不接受该 RESET，必须改用另一个外层秩。
+
+该边的 E2 还必须明确重算 \(A'\mid K_t\)。若 \(A'=A\) 或整除失败，不能用
+`carrier-size` 的局部下降掩盖旧支撑退出；该通道只能是 `analysis_evidence`。这是一条
+比普通 `overflow_carrier_reset_v1` 更强的类型边界，因为它把“支撑只增不减”作为
+不可重置外层秩的一部分。当前聚焦回执见
+[overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md)。
+
 ### 6.3 同 \(1\pmod4\) 秩的 D-only 拒绝门
 
 若候选把核心素数 \(p\equiv1\pmod4\) 送到
@@ -803,7 +841,7 @@ n\equiv1\pmod4,
 | 有限扫描中每个样本都有出口 | 不给出全称构造，也不证明递归闭合 |
 | 把同一 Type I 证书改写成 marked source | 没有产生独立的第三出口或新的下降机制 |
 | 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
-| overflow 的某个 \(R_t<p\) 对偶图表 | 若 \(\operatorname{lcm}(A,t)\nmid K_t\)，它丢失旧 charged support，只是 candidate_transition |
+| overflow 的某个对偶图表 | 只有 \(A'=\operatorname{lcm}(A,t)>A\)、\(A'\mid K_t\) 且 (7) 成立时才是 joined-support verified edge；否则仍是 candidate/analysis evidence |
 | 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
 
 ## 8. 验收表
