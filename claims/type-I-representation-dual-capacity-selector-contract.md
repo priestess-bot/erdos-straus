@@ -189,6 +189,12 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 但 `formal_edge_status` 仍为 `candidate_generation_only`、`carrier_mapping_status=unproved`，
 不具备递归资格。
 
+此外登记 `source_word_joint_capacity_dichotomy` 回执，逐对重算 \(K/x_R\) 缺陷
+的共同过载—分裂交换二分：14 个交叉对分为 7 个 `common_overload` 与 7 个
+`split_exchange`，并保留 \(p=2017\) 的四节点 split Reach 边界。交换恒等式和
+缺陷方向是精确代数证据，但不提供共享载体、标记提升或 E4，因此同样保持
+`analysis_evidence`。
+
 统一结果还包含一个 `universal_p_source_anchor_orbit` source receipt。它重放
 \[
 (U,V,m)=(p,R(p-1)-p,p-1)

@@ -691,6 +691,76 @@
         "reason": "signed target-fiber dictionary is state/family evidence only",
         "status": "recomputed_focused_boundary"
       }
+    },
+    {
+      "certificate_context": {
+        "carrier_mapping_status": "unproved",
+        "certificate_type": "source_word_joint_capacity_dichotomy",
+        "formal_edge_status": "candidate_generation_only",
+        "phase": "CAPACITY_AUDIT",
+        "proof_boundary": "algebraic_joint_capacity_and_focused_path_boundary",
+        "source": "type-i-source-word-joint-capacity-dichotomy-results.json"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "4K=pR+1; 4x_R=p+R"
+      },
+      "induction_rank": {
+        "reason": "no E1-E5 recursive edge",
+        "status": "not_assigned"
+      },
+      "joint_capacity_summary": {
+        "branch_histogram": {
+          "common_overload": 7,
+          "split_exchange": 7
+        },
+        "complete_reach_split_counterexample": {
+          "R": 207,
+          "node_count": 4,
+          "prime": 2017
+        },
+        "cross_pair_count": 14,
+        "disjoint_common_carrier_path_count": 2,
+        "path_case_count": 7,
+        "split_exchange_path_count": 4
+      },
+      "marked_solution_set": {
+        "reason": "capacity exchange does not provide a marked lift",
+        "status": "not_carried"
+      },
+      "potential_record": {
+        "reason": "capacity dichotomy supplies no E5",
+        "status": "absent"
+      },
+      "proof_boundary": "algebraic_joint_capacity_and_focused_path_boundary",
+      "recursive_edge_eligible": false,
+      "scope": "cross_state_source_word_joint_capacity_audit",
+      "scope_note": "The common-overload/split-exchange dichotomy is exact for each recorded cross pair. It does not force a shared carrier, a Type I/II terminal, or a recursive E4 edge.",
+      "selected_branch": "source_word_joint_capacity_dichotomy",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "source": "cross_pair capacities",
+        "status": "recomputed"
+      },
+      "source_receipt": {
+        "formal_closure": "type_i_f_psi_one_formal_transition_closure.py",
+        "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
+        "frozen_input": "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json",
+        "frozen_input_sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
+        "result_file": "type-i-source-word-joint-capacity-dichotomy-results.json",
+        "result_sha256": "b248bce1655bf1b04e0c3079c14029a5938d6202970da9a5a5a96d6175f12e15"
+      },
+      "state_id": "family:224e8a404c8b5c5c693c28746922d53b64f95d8c5bb879b4086a9cb1357747c4",
+      "target_fiber": {
+        "reason": "common-overload and split-exchange are capacity branches only",
+        "status": "signed_cross_pair_dictionary"
+      }
     }
   ],
   "invariants": {
@@ -7597,11 +7667,83 @@
     "type-i-fixed-layer-stabilizer-fourier-results.json": "e00071c2d4496a0ceda3c3cb9810de7adb7875af0eeb828c75ffeab14a37c6d4",
     "type-i-overflow-defect-unit-phase-capacity-results.json": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c",
     "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
+    "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
+    "type-i-source-word-joint-capacity-dichotomy-results.json": "b248bce1655bf1b04e0c3079c14029a5938d6202970da9a5a5a96d6175f12e15",
     "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d",
     "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a",
     "type_i_bottom_word_lattice_pareto_cycle_capacity.py": "ecfafce270eaf981de948985e3e0b3818f795452ae6591574e9c5462bf2993fe",
     "type_i_f_psi_one_formal_transition_closure.py": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
     "type_i_global_linear_b1_failure_general_b_profile_500m.py": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d"
+  },
+  "source_word_joint_capacity": {
+    "certificate_context": {
+      "carrier_mapping_status": "unproved",
+      "certificate_type": "source_word_joint_capacity_dichotomy",
+      "formal_edge_status": "candidate_generation_only",
+      "phase": "CAPACITY_AUDIT",
+      "proof_boundary": "algebraic_joint_capacity_and_focused_path_boundary",
+      "source": "type-i-source-word-joint-capacity-dichotomy-results.json"
+    },
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "equation_target": {
+      "relation": "4K=pR+1; 4x_R=p+R"
+    },
+    "induction_rank": {
+      "reason": "no E1-E5 recursive edge",
+      "status": "not_assigned"
+    },
+    "joint_capacity_summary": {
+      "branch_histogram": {
+        "common_overload": 7,
+        "split_exchange": 7
+      },
+      "complete_reach_split_counterexample": {
+        "R": 207,
+        "node_count": 4,
+        "prime": 2017
+      },
+      "cross_pair_count": 14,
+      "disjoint_common_carrier_path_count": 2,
+      "path_case_count": 7,
+      "split_exchange_path_count": 4
+    },
+    "marked_solution_set": {
+      "reason": "capacity exchange does not provide a marked lift",
+      "status": "not_carried"
+    },
+    "potential_record": {
+      "reason": "capacity dichotomy supplies no E5",
+      "status": "absent"
+    },
+    "proof_boundary": "algebraic_joint_capacity_and_focused_path_boundary",
+    "recursive_edge_eligible": false,
+    "scope": "cross_state_source_word_joint_capacity_audit",
+    "scope_note": "The common-overload/split-exchange dichotomy is exact for each recorded cross pair. It does not force a shared carrier, a Type I/II terminal, or a recursive E4 edge.",
+    "selected_branch": "source_word_joint_capacity_dichotomy",
+    "selector_status": "analysis_evidence",
+    "signed_defect": {
+      "source": "cross_pair capacities",
+      "status": "recomputed"
+    },
+    "source_receipt": {
+      "formal_closure": "type_i_f_psi_one_formal_transition_closure.py",
+      "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
+      "frozen_input": "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json",
+      "frozen_input_sha256": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
+      "result_file": "type-i-source-word-joint-capacity-dichotomy-results.json",
+      "result_sha256": "b248bce1655bf1b04e0c3079c14029a5938d6202970da9a5a5a96d6175f12e15"
+    },
+    "state_id": "family:224e8a404c8b5c5c693c28746922d53b64f95d8c5bb879b4086a9cb1357747c4",
+    "target_fiber": {
+      "reason": "common-overload and split-exchange are capacity branches only",
+      "status": "signed_cross_pair_dictionary"
+    }
   },
   "states": [
     {

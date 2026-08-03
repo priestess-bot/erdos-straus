@@ -46,6 +46,12 @@ BOTTOM_WORD_CAPACITY_SOURCE = (
 BOTTOM_WORD_CLOSURE_SOURCE = (
     ROOT / "reproductions" / "type_i_f_psi_one_formal_transition_closure.py"
 )
+SOURCE_WORD_CAPACITY_INPUT = (
+    ROOT / "reproductions" / "type-i-source-word-joint-capacity-dichotomy-results.json"
+)
+SOURCE_WORD_FROZEN_INPUT = (
+    ROOT / "reproductions" / "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json"
+)
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-representation-dual-capacity-selector-results.json"
 
 SELECTOR_ORDER = [
@@ -141,6 +147,8 @@ def source_hashes() -> dict[str, str]:
         BOTTOM_WORD_CAPACITY_INPUT.name: sha256(BOTTOM_WORD_CAPACITY_INPUT),
         BOTTOM_WORD_CAPACITY_SOURCE.name: sha256(BOTTOM_WORD_CAPACITY_SOURCE),
         BOTTOM_WORD_CLOSURE_SOURCE.name: sha256(BOTTOM_WORD_CLOSURE_SOURCE),
+        SOURCE_WORD_CAPACITY_INPUT.name: sha256(SOURCE_WORD_CAPACITY_INPUT),
+        SOURCE_WORD_FROZEN_INPUT.name: sha256(SOURCE_WORD_FROZEN_INPUT),
     }
 
 
@@ -675,6 +683,180 @@ def bottom_word_lattice_capacity_receipt(payload: dict[str, object]) -> dict[str
             "generator_file": BOTTOM_WORD_CAPACITY_SOURCE.name,
             "generator_sha256": sha256(BOTTOM_WORD_CAPACITY_SOURCE),
             "formal_closure_file": BOTTOM_WORD_CLOSURE_SOURCE.name,
+            "formal_closure_sha256": sha256(BOTTOM_WORD_CLOSURE_SOURCE),
+        },
+    }
+    check_status_boundary(result)
+    return result
+
+
+def source_word_joint_capacity_receipt(payload: dict[str, object]) -> dict[str, object]:
+    """Attach the exact common-overload/split-exchange capacity dichotomy."""
+    if payload.get("schema_version") != "type-i-source-word-joint-capacity-dichotomy/v2":
+        raise AssertionError("source-word capacity schema changed")
+    inputs = payload.get("inputs")
+    summary = payload.get("summary")
+    records = payload.get("path_records")
+    counterexample = payload.get("complete_reach_split_counterexample")
+    if not isinstance(inputs, dict) or not isinstance(summary, dict):
+        raise AssertionError("source-word capacity input summary missing")
+    if not isinstance(records, list) or not isinstance(counterexample, dict):
+        raise AssertionError("source-word capacity records missing")
+    if inputs.get("frozen_psi_one_sha256") != sha256(SOURCE_WORD_FROZEN_INPUT):
+        raise AssertionError("source-word frozen spectrum input is stale")
+    if inputs.get("formal_closure_sha256") != sha256(BOTTOM_WORD_CLOSURE_SOURCE):
+        raise AssertionError("source-word formal closure input is stale")
+    expected_summary = {
+        "path_case_count": 7,
+        "cross_pair_count": 14,
+        "branch_histogram": {"common_overload": 7, "split_exchange": 7},
+        "split_exchange_path_count": 4,
+        "disjoint_common_carrier_path_count": 2,
+    }
+    if summary != expected_summary or len(records) != expected_summary["path_case_count"]:
+        raise AssertionError("source-word capacity summary changed")
+
+    branch_counts = {"common_overload": 0, "split_exchange": 0}
+    checked_pairs = 0
+    for record in records:
+        if not isinstance(record, dict):
+            raise AssertionError("source-word path record shape changed")
+        prime = int(record["prime"])
+        modulus = int(record["R"])
+        K = int(record["K"])
+        x_value = int(record["x_R"])
+        if 4 * K != prime * modulus + 1 or 4 * x_value != prime + modulus:
+            raise AssertionError("source-word chart identity changed")
+        pairs = record.get("cross_pairs")
+        if not isinstance(pairs, list) or len(pairs) != 2:
+            raise AssertionError("source-word cross-pair count changed")
+        common_capacity = gcd(K, x_value)
+        joint_capacity = lcm(K, x_value)
+        for pair in pairs:
+            if not isinstance(pair, dict):
+                raise AssertionError("source-word cross-pair shape changed")
+            P = int(pair["P"])
+            Q = int(pair["Q"])
+            product = int(pair["product"])
+            if gcd(P, Q) != 1 or (P + Q) % modulus or P * Q != product:
+                raise AssertionError("source-word primitive pair changed")
+            capacity = pair.get("capacity")
+            if not isinstance(capacity, dict):
+                raise AssertionError("source-word capacity payload changed")
+            K_defect = product // gcd(product, K)
+            x_defect = product // gcd(product, x_value)
+            common_overload = product // gcd(product, joint_capacity)
+            if capacity.get("K_defect") != K_defect or capacity.get("x_R_defect") != x_defect:
+                raise AssertionError("source-word single-capacity defect changed")
+            if capacity.get("common_overload_factor") != common_overload:
+                raise AssertionError("source-word joint-capacity defect changed")
+            branch = str(capacity.get("branch"))
+            expected_branch = (
+                "common_overload"
+                if K_defect > 1 and x_defect > 1 and common_overload > 1
+                else "split_exchange"
+                if K_defect > 1 and x_defect > 1
+                else "not_double_miss"
+            )
+            if branch != expected_branch or branch not in branch_counts:
+                raise AssertionError("source-word capacity branch changed")
+            branch_counts[branch] += 1
+            checked_pairs += 1
+            if branch == "split_exchange":
+                exchange = capacity.get("exchange")
+                if not isinstance(exchange, dict):
+                    raise AssertionError("source-word split exchange missing")
+                g = common_capacity
+                e_k = K_defect
+                e_x = x_defect
+                if gcd(e_k, e_x) != 1 or joint_capacity % product:
+                    raise AssertionError("source-word split exchange divisibility changed")
+                if x_value % (g * e_k) or K % (g * e_x):
+                    raise AssertionError("source-word split exchange coordinates changed")
+                a = x_value // (g * e_k)
+                b = K // (g * e_x)
+                delta = (modulus * modulus - 1) // (4 * g)
+                if exchange.get("a") != a or exchange.get("b") != b:
+                    raise AssertionError("source-word split exchange coordinates changed")
+                if exchange.get("reduced_delta") != delta or modulus * e_k * a - e_x * b != delta:
+                    raise AssertionError("source-word split exchange identity changed")
+            elif capacity.get("exchange") is not None:
+                raise AssertionError("common-overload pair unexpectedly has exchange")
+    if checked_pairs != 14 or branch_counts != summary["branch_histogram"]:
+        raise AssertionError("source-word branch histogram changed")
+
+    counter_capacity = counterexample.get("capacity")
+    reach = counterexample.get("endpoint_reach")
+    if not isinstance(counter_capacity, dict) or not isinstance(reach, dict):
+        raise AssertionError("source-word split counterexample payload changed")
+    if counterexample.get("prime") != 2017 or counterexample.get("R") != 207:
+        raise AssertionError("source-word split counterexample identity changed")
+    if (
+        counter_capacity.get("branch") != "split_exchange"
+        or counterexample.get("centered_type_i_hit") is not False
+    ):
+        raise AssertionError("source-word split counterexample boundary changed")
+    nodes = reach.get("nodes")
+    edges = reach.get("edges")
+    if not isinstance(nodes, list) or len(nodes) != 4 or not isinstance(edges, list) or len(edges) != 4:
+        raise AssertionError("source-word split Reach boundary changed")
+
+    descriptor = {
+        "family": "source_word_joint_capacity_dichotomy",
+        "input_sha256": sha256(SOURCE_WORD_CAPACITY_INPUT),
+        "frozen_sha256": sha256(SOURCE_WORD_FROZEN_INPUT),
+        "closure_sha256": sha256(BOTTOM_WORD_CLOSURE_SOURCE),
+    }
+    result = {
+        "state_id": "family:" + canonical_hash(descriptor),
+        "scope": "cross_state_source_word_joint_capacity_audit",
+        "equation_target": {"relation": "4K=pR+1; 4x_R=p+R"},
+        "certificate_context": {
+            "certificate_type": "source_word_joint_capacity_dichotomy",
+            "source": SOURCE_WORD_CAPACITY_INPUT.name,
+            "phase": "CAPACITY_AUDIT",
+            "proof_boundary": "algebraic_joint_capacity_and_focused_path_boundary",
+            "carrier_mapping_status": "unproved",
+            "formal_edge_status": "candidate_generation_only",
+        },
+        "joint_capacity_summary": {
+            "path_case_count": int(summary["path_case_count"]),
+            "cross_pair_count": checked_pairs,
+            "branch_histogram": branch_counts,
+            "split_exchange_path_count": int(summary["split_exchange_path_count"]),
+            "disjoint_common_carrier_path_count": int(summary["disjoint_common_carrier_path_count"]),
+            "complete_reach_split_counterexample": {
+                "prime": 2017,
+                "R": 207,
+                "node_count": len(nodes),
+            },
+        },
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "capacity exchange does not provide a marked lift",
+        },
+        "target_fiber": {
+            "status": "signed_cross_pair_dictionary",
+            "reason": "common-overload and split-exchange are capacity branches only",
+        },
+        "signed_defect": {"status": "recomputed", "source": "cross_pair capacities"},
+        "induction_rank": {"status": "not_assigned", "reason": "no E1-E5 recursive edge"},
+        "potential_record": {"status": "absent", "reason": "capacity dichotomy supplies no E5"},
+        "selected_branch": "source_word_joint_capacity_dichotomy",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "algebraic_joint_capacity_and_focused_path_boundary",
+        "scope_note": (
+            "The common-overload/split-exchange dichotomy is exact for each recorded cross pair. "
+            "It does not force a shared carrier, a Type I/II terminal, or a recursive E4 edge."
+        ),
+        "source_receipt": {
+            "result_file": SOURCE_WORD_CAPACITY_INPUT.name,
+            "result_sha256": sha256(SOURCE_WORD_CAPACITY_INPUT),
+            "frozen_input": SOURCE_WORD_FROZEN_INPUT.name,
+            "frozen_input_sha256": sha256(SOURCE_WORD_FROZEN_INPUT),
+            "formal_closure": BOTTOM_WORD_CLOSURE_SOURCE.name,
             "formal_closure_sha256": sha256(BOTTOM_WORD_CLOSURE_SOURCE),
         },
     }
@@ -2216,6 +2398,9 @@ def build_results() -> dict[str, object]:
     bottom_word_payload = json.loads(
         BOTTOM_WORD_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
+    source_word_payload = json.loads(
+        SOURCE_WORD_CAPACITY_INPUT.read_text(encoding="utf-8")
+    )
     bounded_fourier_payload = json.loads(
         BOUNDED_FOURIER_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
@@ -2245,6 +2430,7 @@ def build_results() -> dict[str, object]:
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
     bottom_word = bottom_word_lattice_capacity_receipt(bottom_word_payload)
+    source_word = source_word_joint_capacity_receipt(source_word_payload)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
@@ -2283,7 +2469,8 @@ def build_results() -> dict[str, object]:
         "overflow_support_debt_phase_bridge": debt_phase,
         "bounded_fourier_carrier_capacity": bounded_fourier,
         "bottom_word_lattice_capacity": bottom_word,
-        "capacity_receipts": [bounded_fourier, debt_phase, capacity, bottom_word],
+        "source_word_joint_capacity": source_word,
+        "capacity_receipts": [bounded_fourier, debt_phase, capacity, bottom_word, source_word],
         "invariants": {
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
@@ -2461,6 +2648,48 @@ def verify_support_debt_phase_contract(result: dict[str, object]) -> None:
         raise AssertionError("support-debt phase source receipt missing")
     if source_receipt.get("phase_sha256") != sha256(PHASE_INPUT):
         raise AssertionError("support-debt phase result hash changed")
+
+
+def verify_source_word_joint_capacity_contract(result: dict[str, object]) -> None:
+    receipts = result.get("capacity_receipts")
+    if not isinstance(receipts, list):
+        raise AssertionError("capacity receipt list missing")
+    matches = [
+        receipt
+        for receipt in receipts
+        if isinstance(receipt, dict)
+        and receipt.get("certificate_context", {}).get("certificate_type")
+        == "source_word_joint_capacity_dichotomy"
+    ]
+    if len(matches) != 1:
+        raise AssertionError("source-word capacity receipt shape changed")
+    receipt = matches[0]
+    if receipt.get("selector_status") != "analysis_evidence":
+        raise AssertionError("source-word capacity receipt crossed status boundary")
+    if receipt.get("recursive_edge_eligible") is not False:
+        raise AssertionError("source-word capacity receipt became recursive")
+    if receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
+        raise AssertionError("source-word capacity receipt has an E1-E5 witness")
+    summary = receipt.get("joint_capacity_summary")
+    if not isinstance(summary, dict):
+        raise AssertionError("source-word joint summary missing")
+    if summary.get("cross_pair_count") != 14 or summary.get("branch_histogram") != {
+        "common_overload": 7,
+        "split_exchange": 7,
+    }:
+        raise AssertionError("source-word joint summary changed")
+    counterexample = summary.get("complete_reach_split_counterexample")
+    if counterexample != {"prime": 2017, "R": 207, "node_count": 4}:
+        raise AssertionError("source-word split counterexample summary changed")
+    source_receipt = receipt.get("source_receipt")
+    if not isinstance(source_receipt, dict):
+        raise AssertionError("source-word capacity source receipt missing")
+    if source_receipt.get("result_sha256") != sha256(SOURCE_WORD_CAPACITY_INPUT):
+        raise AssertionError("source-word capacity result hash changed")
+    if source_receipt.get("frozen_input_sha256") != sha256(SOURCE_WORD_FROZEN_INPUT):
+        raise AssertionError("source-word frozen input hash changed")
+    if source_receipt.get("formal_closure_sha256") != sha256(BOTTOM_WORD_CLOSURE_SOURCE):
+        raise AssertionError("source-word closure hash changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -2731,6 +2960,7 @@ def main() -> None:
     if args.verify:
         verify_bounded_fourier_contract(result)
         verify_bottom_word_lattice_contract(result)
+        verify_source_word_joint_capacity_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_overflow_menu_contract(result)

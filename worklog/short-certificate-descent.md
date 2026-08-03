@@ -4463,3 +4463,14 @@ K_L^{(s)}=L\left(p-\frac{rd}{L}\right).
 证书，12 条均为 `terminal_leaf`；因此直接 Type II 优先于 fixed-\(n\)、
 fixed-\(s\) 和 RESET，后者仍作为同状态的后备证据保留。该结果只闭合冻结菜单，
 不声称任意核心素数的 \(p+4\) 都含 \(3\bmod4\) 因子。
+主张卡见[底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
+
+同一 `capacity_receipts` 还接入 `source_word_joint_capacity_dichotomy`。它从
+`type-i-source-word-joint-capacity-dichotomy-results.json` 重算 7 条来源路径的 14 个
+交叉目标对，按 \(K/x_R\) 的精确缺陷分成 7 条 `common_overload` 和 7 条
+`split_exchange`，并核验交换式 \(R e_K a-e_x b=\delta\)。
+
+\(p=2017\) 的四节点完整 Reach 仍是 split 分支的反例边界：它没有 centered hit，但
+这不产生递归边。回执保留 `carrier_mapping_status=unproved`、
+`formal_edge_status=candidate_generation_only` 和 `recursive_edge_eligible=false`，
+说明共同过载/分裂交换二分是容量证书，不是全称逃逸引理。
