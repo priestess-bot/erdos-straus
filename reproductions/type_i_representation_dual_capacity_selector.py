@@ -3255,6 +3255,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     """
     verified: list[dict[str, object]] = []
     rejected: list[dict[str, object]] = []
+    unconditional_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3283,6 +3284,16 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
         product = residue * d
         B_prime = (prime - 1) ** 2 // 4
         source_in_domain = 0 < support <= B_prime
+        if integral_s and isinstance(fixed_s, int) and residue >= 2 * support:
+            if not (
+                residue <= B_prime
+                and 4 * residue > fixed_s
+                and B_prime // residue < B_prime // support
+                and canonical_chart(prime, residue)
+                == (4 * residue - fixed_s, residue * (prime - d))
+            ):
+                raise AssertionError(f"r>=2A fixed-s subfamily changed: {name}")
+            unconditional_names.append(name)
         candidates: list[tuple[int, int, int]] = []
         if source_in_domain and integral_s and isinstance(fixed_s, int):
             for L in divisors(product):
@@ -3436,6 +3447,16 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
         "rejected_fixture_count": len(rejected),
         "verified_receipts": verified,
         "rejected_fixtures": rejected,
+        "unconditional_fixed_s_subfamily": {
+            "condition": "r>=2A",
+            "candidate": "L=r",
+            "fixture_count": len(unconditional_names),
+            "fixture_names": unconditional_names,
+            "conclusion": (
+                "r<=p-1<=B_p, d<=p-1 implies s<4r; r>=2A gives strict "
+                "Pi(r)<Pi(A), so L=r is a complete fixed-s identity-lift edge"
+            ),
+        },
         "rank_definition": {
             "kind": "absorbed_support_potential",
             "formula": "floor(((p-1)^2)/4 / A)",
@@ -4420,6 +4441,25 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         raise AssertionError("bounded fixed-s divisor rejection shape changed")
     if rejected[0].get("fixture_name") != "reachable_conflict_bundle_3":
         raise AssertionError("bounded fixed-s divisor boundary changed")
+    subfamily = branch.get("unconditional_fixed_s_subfamily")
+    if not isinstance(subfamily, dict):
+        raise AssertionError("bounded fixed-s sufficient subfamily missing")
+    if subfamily.get("condition") != "r>=2A" or subfamily.get("candidate") != "L=r":
+        raise AssertionError("bounded fixed-s sufficient condition changed")
+    expected_subfamily = {
+        "accumulated_d_one_boundary",
+        "accumulated_positive_fixed_n_edge",
+        "empty_fixed_n_window",
+        "reachable_conflict_bundle_0",
+        "root_edge_0",
+        "root_edge_1",
+        "symmetric_small_chart_support_conflict",
+    }
+    if (
+        subfamily.get("fixture_count") != len(expected_subfamily)
+        or set(subfamily.get("fixture_names", [])) != expected_subfamily
+    ):
+        raise AssertionError("bounded fixed-s sufficient subfamily coverage changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
