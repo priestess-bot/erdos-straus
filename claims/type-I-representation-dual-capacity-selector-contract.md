@@ -21,6 +21,7 @@ depends_on:
   - type-I-fixed-layer-fourier-qadic-phase-bridge
   - type-I-fixed-layer-fourier-q-primary-projection
   - type-I-f-bounded-fourier-carrier-capacity-boundary
+  - type-I-universal-p-source-capacity-anchor-orbit
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -46,6 +47,8 @@ sources:
     role: frozen-F-real-carrier-capacity-negative-boundary
   - claim: type-I-overflow-defect-unit-phase-capacity
     role: typed-support-debt-phase-bridge
+  - claim: type-I-universal-p-source-capacity-anchor-orbit
+    role: universal-F-G-source-and-anchor-orbit
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -96,6 +99,9 @@ overflow_support_debt_phase_bridge
 | `certificate_context` | 表示、对偶或容量证书的来源、阶段和证明边界 |
 | `normal_form` | 当前 Type I/II 或终端优先正规形 |
 | `potential_record` | 若没有良基势和重算值，显式标记 `absent` |
+
+族级 source 证据放在 `source_receipts` 中；它可以携带通用形式源、容量锚点轨道和周期
+格摘要，但不能绕过标记集非空、全域解提升或 E5 检查。
 
 `state_id` 不依赖回执枚举顺序。输入结果文件的 SHA-256 也必须保留，使回执可以在
 知识库中重放。
@@ -166,6 +172,15 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 同色 113 组、混色 100 组，50+78 次两两检查和两类容量界均无失败或超载。它重算真实
 线性块高度，但仍保留 `carrier_mapping_status=unproved`、无标记集和无递归势；因此只能
 作为 `capacity_receipts` 的有限负边界，不能替代 overflow 的全称分支。
+
+统一结果还包含一个 `universal_p_source_anchor_orbit` source receipt。它重放
+\[
+(U,V,m)=(p,R(p-1)-p,p-1)
+\]
+及其唯一 (q=p,t=1) 的无约分边，覆盖 3 个焦点 source/anchor 记录；对应锚点周期长度
+为 (1,4,3)，轨道行分类为 4 条 `marked_absorb` 与 4 条 `overflow`。该回执关闭的是
+F/G 的 raw source 缺口，不是递归证明；周期和 overflow 仍保持
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。
 
 固定层回执另外携带 `generic_spectrum_profile`：在循环商 (C_m) 上保存商表示计数向量、
 整数群环自相关、Parseval 非平凡能量和逐角色相位签名。选择器用原始 `H`、`J` 和残余

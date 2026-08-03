@@ -36,6 +36,7 @@ BOUNDED_FOURIER_SOURCE = (
 QADIC_INPUT = ROOT / "reproductions" / "type-i-overflow-qadic-obstruction-transfer-results.json"
 PHASE_INPUT = ROOT / "reproductions" / "type-i-overflow-defect-unit-phase-capacity-results.json"
 OVERFLOW_INPUT = ROOT / "reproductions" / "type-i-universal-anchor-overflow-dual-results.json"
+UNIVERSAL_ANCHOR_INPUT = OVERFLOW_INPUT
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-representation-dual-capacity-selector-results.json"
 
 SELECTOR_ORDER = [
@@ -461,6 +462,156 @@ def bounded_fourier_capacity_receipt(payload: dict[str, object]) -> dict[str, ob
             "certificate_input_sha256": payload["input_sha256"],
             "linear_source": BOUNDED_FOURIER_SOURCE.name,
             "linear_source_sha256": payload["source_sha256"],
+        },
+    }
+    check_status_boundary(result)
+    return result
+
+
+def universal_source_anchor_receipt(payload: dict[str, object]) -> dict[str, object]:
+    """Attach the universal formal source and focused anchor-orbit evidence.
+
+    The source formula is general, while the orbit rows remain focused arithmetic
+    evidence.  Neither is promoted to a recursive edge: an anchor cycle still
+    needs a separate terminal or well-founded phase argument.
+    """
+    summary = payload.get("summary")
+    anchor = payload.get("universal_anchor")
+    if not isinstance(summary, dict) or not isinstance(anchor, dict):
+        raise AssertionError("universal source/anchor payload shape changed")
+    if summary.get("universal_p_source_count") != 3:
+        raise AssertionError("universal source count changed")
+    focused_names = (
+        "G_bundle_overflow",
+        "G_marked_absorb",
+        "accumulated_all_overflow_cycle",
+    )
+    records: list[dict[str, object]] = []
+    classification_counts: dict[str, int] = {}
+    cycle_lengths: list[int] = []
+    for name in focused_names:
+        record = anchor.get(name)
+        if not isinstance(record, dict):
+            raise AssertionError(f"universal anchor record missing: {name}")
+        source_receipt = record.get("source_receipt")
+        orbit = record.get("anchor_orbit")
+        if not isinstance(source_receipt, dict) or not isinstance(orbit, dict):
+            raise AssertionError(f"universal anchor record shape changed: {name}")
+        source = source_receipt.get("source")
+        edge = source_receipt.get("edge")
+        if not isinstance(source, list) or len(source) != 3:
+            raise AssertionError(f"universal source shape changed: {name}")
+        if not isinstance(edge, dict):
+            raise AssertionError(f"universal source edge shape changed: {name}")
+        prime = int(record["prime"])
+        modulus = int(record["R"])
+        K = (prime * modulus + 1) // 4
+        expected_source = [prime, modulus * (prime - 1) - prime, prime - 1]
+        if source != expected_source:
+            raise AssertionError(f"universal source formula changed: {name}")
+        if edge.get("q") != prime or edge.get("shift") != 1:
+            raise AssertionError(f"universal source edge changed: {name}")
+        if edge.get("gcd_reduction") != 1 or edge.get("destination") != [1, modulus - 1, 1]:
+            raise AssertionError(f"universal source destination changed: {name}")
+        cycle = orbit.get("cycle")
+        orbit_nodes = orbit.get("orbit")
+        rows = orbit.get("rows")
+        if not isinstance(cycle, list) or not isinstance(orbit_nodes, list) or not isinstance(rows, list):
+            raise AssertionError(f"anchor orbit shape changed: {name}")
+        if cycle != orbit_nodes:
+            raise AssertionError(f"focused anchor orbit is not a cycle: {name}")
+        cycle_lengths.append(len(cycle))
+        row_receipts: list[dict[str, object]] = []
+        for row in rows:
+            if not isinstance(row, dict):
+                raise AssertionError(f"anchor orbit row shape changed: {name}")
+            h = int(row["h"])
+            other = int(row["other"])
+            if h not in orbit_nodes or h <= 0 or other <= 0 or h + other != modulus:
+                raise AssertionError(f"anchor orbit coordinates changed: {name}")
+            if K % h:
+                raise AssertionError(f"anchor orbit capacity coordinate changed: {name}")
+            classification = str(row["classification"])
+            if classification not in {"marked_absorb", "overflow", "terminal"}:
+                raise AssertionError(f"unknown anchor classification: {classification}")
+            classification_counts[classification] = classification_counts.get(classification, 0) + 1
+            row_receipts.append(
+                {
+                    "h": h,
+                    "other": other,
+                    "classification": classification,
+                    "M": int(row["M"]) if "M" in row else None,
+                    "R_M": int(row["R_M"]) if "R_M" in row else None,
+                    "Q": int(row["Q"]) if "Q" in row else None,
+                    "next_h": int(row["next_h"]) if "next_h" in row else None,
+                }
+            )
+        records.append(
+            {
+                "name": name,
+                "prime": prime,
+                "R": modulus,
+                "K": K,
+                "source": source,
+                "destination": edge["destination"],
+                "orbit": [int(value) for value in orbit_nodes],
+                "cycle": [int(value) for value in cycle],
+                "cycle_product_mod_R": int(orbit.get("cycle_product_mod_R", 0)),
+                "rows": row_receipts,
+            }
+        )
+    descriptor = {
+        "family": "universal_p_source_anchor_orbit",
+        "input_sha256": sha256(UNIVERSAL_ANCHOR_INPUT),
+        "record_names": list(focused_names),
+    }
+    result = {
+        "state_id": "family:" + canonical_hash(descriptor),
+        "scope": "universal_formal_source_and_capacity_anchor_orbit",
+        "equation_target": {"relation": "4K=pR+1"},
+        "certificate_context": {
+            "certificate_type": "universal_p_source_anchor_orbit",
+            "source": UNIVERSAL_ANCHOR_INPUT.name,
+            "phase": "FORMAL_SOURCE_AND_ANCHOR",
+            "source_formula": "(U,V,m)=(p,R(p-1)-p,p-1)",
+            "proof_boundary": "formal_source_and_focused_cycle_lattice_only",
+            "recursive_mapping_status": "unproved",
+        },
+        "source_summary": {
+            "universal_p_source_count": int(summary["universal_p_source_count"]),
+            "focused_record_count": len(records),
+            "cycle_length_histogram": {
+                str(length): cycle_lengths.count(length) for length in sorted(set(cycle_lengths))
+            },
+            "orbit_classification_counts": classification_counts,
+            "records": records,
+        },
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "formal source and anchor orbit do not provide a marked lift",
+        },
+        "target_fiber": {
+            "status": "not_carried",
+            "reason": "source provenance is independent of target-fiber nonemptiness",
+        },
+        "signed_defect": {"status": "not_carried"},
+        "potential_record": {
+            "status": "absent",
+            "reason": "focused anchor cycles have no global well-founded rank",
+        },
+        "selected_branch": "universal_p_source_anchor_orbit",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "formal_source_and_focused_anchor_cycle_only",
+        "scope_note": (
+            "The universal p-source closes the raw F/G source gap and the focused orbit rows "
+            "are replayable capacity/lattice evidence.  A cycle or an overflow row is not a "
+            "terminal or recursive edge without an independent E1-E5 mapping and rank."
+        ),
+        "source_receipt": {
+            "result_file": UNIVERSAL_ANCHOR_INPUT.name,
+            "result_sha256": sha256(UNIVERSAL_ANCHOR_INPUT),
         },
     }
     check_status_boundary(result)
@@ -1896,11 +2047,13 @@ def build_results() -> dict[str, object]:
     outer_rank_reset = overflow_outer_rank_reset(overflow)
     reset_boundary = phase_reset_boundary(overflow)
     debt_phase = support_debt_phase_receipt(outer_rank_reset, phase)
+    universal_source = universal_source_anchor_receipt(overflow)
     return {
         "schema_version": 1,
         "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
         "selector_order": SELECTOR_ORDER,
         "status_lattice": STATUS_LATTICE,
+        "source_receipts": [universal_source],
         "states": states,
         "verified_edges": [verified_edge],
         "overflow_direct_type_ii": direct_type_ii,
@@ -2024,6 +2177,59 @@ def verify_support_debt_phase_contract(result: dict[str, object]) -> None:
         raise AssertionError("support-debt phase source receipt missing")
     if source_receipt.get("phase_sha256") != sha256(PHASE_INPUT):
         raise AssertionError("support-debt phase result hash changed")
+
+
+def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
+    receipts = result.get("source_receipts")
+    if not isinstance(receipts, list) or len(receipts) != 1:
+        raise AssertionError("universal source receipt shape changed")
+    receipt = receipts[0]
+    if not isinstance(receipt, dict):
+        raise AssertionError("universal source receipt is not an object")
+    if receipt.get("selector_status") != "analysis_evidence":
+        raise AssertionError("universal source receipt crossed status boundary")
+    if receipt.get("recursive_edge_eligible") is not False:
+        raise AssertionError("universal source receipt became recursive")
+    if receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
+        raise AssertionError("universal source receipt has an E1-E5 witness")
+    context = receipt.get("certificate_context")
+    if not isinstance(context, dict):
+        raise AssertionError("universal source context missing")
+    if context.get("source_formula") != "(U,V,m)=(p,R(p-1)-p,p-1)":
+        raise AssertionError("universal source formula changed")
+    summary = receipt.get("source_summary")
+    if not isinstance(summary, dict):
+        raise AssertionError("universal source summary missing")
+    if summary.get("universal_p_source_count") != 3 or summary.get("focused_record_count") != 3:
+        raise AssertionError("universal source counts changed")
+    if summary.get("cycle_length_histogram") != {"1": 1, "3": 1, "4": 1}:
+        raise AssertionError("universal anchor cycle lengths changed")
+    if summary.get("orbit_classification_counts") != {"marked_absorb": 4, "overflow": 4}:
+        raise AssertionError("universal anchor classifications changed")
+    records = summary.get("records")
+    if not isinstance(records, list) or len(records) != 3:
+        raise AssertionError("universal source records changed")
+    for record in records:
+        if not isinstance(record, dict):
+            raise AssertionError("universal source record shape changed")
+        prime = int(record["prime"])
+        modulus = int(record["R"])
+        if record.get("source") != [prime, modulus * (prime - 1) - prime, prime - 1]:
+            raise AssertionError("universal source witness changed")
+        if record.get("destination") != [1, modulus - 1, 1]:
+            raise AssertionError("universal source destination changed")
+        cycle = record.get("cycle")
+        rows = record.get("rows")
+        if not isinstance(cycle, list) or not isinstance(rows, list) or len(cycle) != len(record["orbit"]):
+            raise AssertionError("universal anchor orbit record changed")
+        for row in rows:
+            if not isinstance(row, dict) or row.get("h") not in cycle:
+                raise AssertionError("universal anchor row changed")
+    source_receipt = receipt.get("source_receipt")
+    if not isinstance(source_receipt, dict):
+        raise AssertionError("universal source hash receipt missing")
+    if source_receipt.get("result_sha256") != sha256(UNIVERSAL_ANCHOR_INPUT):
+        raise AssertionError("universal source input hash changed")
 
 
 def verify_overflow_menu_contract(result: dict[str, object]) -> None:
@@ -2241,6 +2447,7 @@ def main() -> None:
     if args.verify:
         verify_bounded_fourier_contract(result)
         verify_support_debt_phase_contract(result)
+        verify_universal_source_anchor_contract(result)
         verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")

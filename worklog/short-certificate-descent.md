@@ -63,6 +63,22 @@ profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
 source-switch 采用该单位作为清分相位，也没有标记集、全域提升或 E5。因此回执保持
 `analysis_evidence`，仅作为 `capacity_receipts` 的条件接口。
 
+## 2026-08-03 通用 p-source 接入统一 selector
+
+统一结果新增 `source_receipts`，读取
+`type-i-universal-anchor-overflow-dual-results.json` 并重算通用形式源
+
+\[
+(U,V,m)=(p,R(p-1)-p,p-1)
+\]
+
+及唯一 (q=p,t=1) 的无约分边到 ((1,R-1,1))。3 个焦点 source/anchor 记录的周期长度
+为 (1,4,3)，8 条轨道行中 4 条进入 `marked_absorb`、4 条仍为 `overflow`。
+
+这一步把已解决的 F/G source 缺口纳入表示--对偶--容量对象，但不把周期误写成终端；
+source receipt 的 `selector_status` 仍为 `analysis_evidence`，后续仍需真实 marked
+lift 或独立的良基秩。
+
 ## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
 
 将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。

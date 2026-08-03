@@ -7173,6 +7173,226 @@
     "overflow_qadic_phase_capacity",
     "overflow_support_debt_phase_bridge"
   ],
+  "source_receipts": [
+    {
+      "certificate_context": {
+        "certificate_type": "universal_p_source_anchor_orbit",
+        "phase": "FORMAL_SOURCE_AND_ANCHOR",
+        "proof_boundary": "formal_source_and_focused_cycle_lattice_only",
+        "recursive_mapping_status": "unproved",
+        "source": "type-i-universal-anchor-overflow-dual-results.json",
+        "source_formula": "(U,V,m)=(p,R(p-1)-p,p-1)"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "4K=pR+1"
+      },
+      "marked_solution_set": {
+        "reason": "formal source and anchor orbit do not provide a marked lift",
+        "status": "not_carried"
+      },
+      "potential_record": {
+        "reason": "focused anchor cycles have no global well-founded rank",
+        "status": "absent"
+      },
+      "proof_boundary": "formal_source_and_focused_anchor_cycle_only",
+      "recursive_edge_eligible": false,
+      "scope": "universal_formal_source_and_capacity_anchor_orbit",
+      "scope_note": "The universal p-source closes the raw F/G source gap and the focused orbit rows are replayable capacity/lattice evidence.  A cycle or an overflow row is not a terminal or recursive edge without an independent E1-E5 mapping and rank.",
+      "selected_branch": "universal_p_source_anchor_orbit",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "status": "not_carried"
+      },
+      "source_receipt": {
+        "result_file": "type-i-universal-anchor-overflow-dual-results.json",
+        "result_sha256": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a"
+      },
+      "source_summary": {
+        "cycle_length_histogram": {
+          "1": 1,
+          "3": 1,
+          "4": 1
+        },
+        "focused_record_count": 3,
+        "orbit_classification_counts": {
+          "marked_absorb": 4,
+          "overflow": 4
+        },
+        "records": [
+          {
+            "K": 639,
+            "R": 35,
+            "cycle": [
+              1
+            ],
+            "cycle_product_mod_R": 34,
+            "destination": [
+              1,
+              34,
+              1
+            ],
+            "name": "G_bundle_overflow",
+            "orbit": [
+              1
+            ],
+            "prime": 73,
+            "rows": [
+              {
+                "M": 34,
+                "Q": 34,
+                "R_M": 95,
+                "classification": "overflow",
+                "h": 1,
+                "next_h": 1,
+                "other": 34
+              }
+            ],
+            "source": [
+              73,
+              2447,
+              72
+            ]
+          },
+          {
+            "K": 1296,
+            "R": 71,
+            "cycle": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "cycle_product_mod_R": 1,
+            "destination": [
+              1,
+              70,
+              1
+            ],
+            "name": "G_marked_absorb",
+            "orbit": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "prime": 73,
+            "rows": [
+              {
+                "M": 35,
+                "Q": 35,
+                "R_M": 23,
+                "classification": "marked_absorb",
+                "h": 1,
+                "next_h": 2,
+                "other": 70
+              },
+              {
+                "M": 23,
+                "Q": 23,
+                "R_M": 63,
+                "classification": "marked_absorb",
+                "h": 2,
+                "next_h": 3,
+                "other": 69
+              },
+              {
+                "M": 17,
+                "Q": 17,
+                "R_M": 27,
+                "classification": "marked_absorb",
+                "h": 3,
+                "next_h": 4,
+                "other": 68
+              },
+              {
+                "M": 67,
+                "Q": 67,
+                "R_M": 11,
+                "classification": "marked_absorb",
+                "h": 4,
+                "next_h": 1,
+                "other": 67
+              }
+            ],
+            "source": [
+              73,
+              5039,
+              72
+            ]
+          },
+          {
+            "K": 25665,
+            "R": 251,
+            "cycle": [
+              1,
+              5,
+              3
+            ],
+            "cycle_product_mod_R": 250,
+            "destination": [
+              1,
+              250,
+              1
+            ],
+            "name": "accumulated_all_overflow_cycle",
+            "orbit": [
+              1,
+              5,
+              3
+            ],
+            "prime": 409,
+            "rows": [
+              {
+                "M": 250,
+                "Q": 250,
+                "R_M": 511,
+                "classification": "overflow",
+                "h": 1,
+                "next_h": 5,
+                "other": 250
+              },
+              {
+                "M": 410,
+                "Q": 82,
+                "R_M": 1231,
+                "classification": "overflow",
+                "h": 5,
+                "next_h": 3,
+                "other": 246
+              },
+              {
+                "M": 1240,
+                "Q": 248,
+                "R_M": 1431,
+                "classification": "overflow",
+                "h": 3,
+                "next_h": 1,
+                "other": 248
+              }
+            ],
+            "source": [
+              409,
+              101999,
+              408
+            ]
+          }
+        ],
+        "universal_p_source_count": 3
+      },
+      "state_id": "family:fbd070cdff71e2b4662f4cb2033c02611858811158f831906ac669d25f704421",
+      "target_fiber": {
+        "reason": "source provenance is independent of target-fiber nonemptiness",
+        "status": "not_carried"
+      }
+    }
+  ],
   "source_sha256": {
     "type-i-f-bounded-fourier-carrier-capacity-results.json": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074",
     "type-i-f-bounded-fourier-certificate-results.json": "97bd474f82271b3d6a1eb5260fc49b7d48551c4fc2872402b74759f3d817bd68",

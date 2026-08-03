@@ -3091,6 +3091,19 @@ direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bou
 \(8323\to332\) 严格下降。只有 E1--E5、全域解提升和严格势下降同时出现时才允许
 `verified_edge`；标准偶前驱不会被误标成 `terminal_leaf`。
 
+同一结果对象新增 `source_receipts`，接入已解决的通用 (p)-source：
+
+\[
+(U,V,m)=(p,R(p-1)-p,p-1),
+\qquad
+(U,V,m)\longrightarrow(1,R-1,1).
+\]
+
+3 个焦点记录的 source 边均以 (q=p,t=1) 且 gcd reduction 为 1；锚点轨道周期长度为
+1、4、3，8 条轨道行分为 4 条 `marked_absorb` 和 4 条 `overflow`。这使 F/G、周期格和
+overflow 共享同一个 source provenance，但 source receipt 仍是
+`analysis_evidence`，不能提供标记解的非空性或全局 E5。
+
 这一步解决了证据编排和类型边界，不解决全称分支存在性。尤其是 overflow 缺陷单位仍
 没有被证明是实际 alternate 的共享相位；当前冻结账本的 13 个条件性相位胞没有超载。
 完整合同见[表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md)，
