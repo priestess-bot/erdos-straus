@@ -3257,6 +3257,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     rejected: list[dict[str, object]] = []
     unconditional_names: list[str] = []
     product_saturation_names: list[str] = []
+    d_saturation_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3272,6 +3273,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             and source_carrier > 0
             and source_carrier % support == 0
             and source_K % source_carrier == 0
+            and 1 <= d < prime
             and prime * n == 4 * source_carrier * d + 1
             and source_R == 4 * source_carrier - n
         ):
@@ -3304,6 +3306,14 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             ):
                 raise AssertionError(f"rd saturation subfamily changed: {name}")
             product_saturation_names.append(name)
+        if integral_s and isinstance(fixed_s, int) and 2 * support <= d <= B_prime:
+            if not (
+                4 * d > fixed_s
+                and B_prime // d < B_prime // support
+                and canonical_chart(prime, d) == (4 * d - fixed_s, d * (prime - residue))
+            ):
+                raise AssertionError(f"d saturation subfamily changed: {name}")
+            d_saturation_names.append(name)
         candidates: list[tuple[int, int, int]] = []
         if source_in_domain and integral_s and isinstance(fixed_s, int):
             for L in divisors(product):
@@ -3475,6 +3485,16 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             "conclusion": (
                 "s<4*r*d and r*d>=2A give positive chart and strict Pi(r*d)<Pi(A); "
                 "the target has K_L=r*d*(p-1)"
+            ),
+        },
+        "unconditional_d_saturation_subfamily": {
+            "condition": "2A<=d<=B_p",
+            "candidate": "L=d",
+            "fixture_count": len(d_saturation_names),
+            "fixture_names": d_saturation_names,
+            "conclusion": (
+                "d|r*d, s<4d, and 2A<=d<=B_p give strict Pi(d)<Pi(A); "
+                "the target has K_L=d*(p-r)"
             ),
         },
         "rank_definition": {
@@ -4499,6 +4519,23 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         or set(product_subfamily.get("fixture_names", [])) != expected_product_subfamily
     ):
         raise AssertionError("bounded fixed-s product subfamily coverage changed")
+    d_subfamily = branch.get("unconditional_d_saturation_subfamily")
+    if not isinstance(d_subfamily, dict):
+        raise AssertionError("bounded fixed-s d subfamily missing")
+    expected_d_subfamily = {
+        "accumulated_positive_fixed_n_edge",
+        "reachable_conflict_bundle_2",
+        "root_edge_0",
+        "root_edge_1",
+        "symmetric_small_chart_support_conflict",
+    }
+    if (
+        d_subfamily.get("condition") != "2A<=d<=B_p"
+        or d_subfamily.get("candidate") != "L=d"
+        or d_subfamily.get("fixture_count") != len(expected_d_subfamily)
+        or set(d_subfamily.get("fixture_names", [])) != expected_d_subfamily
+    ):
+        raise AssertionError("bounded fixed-s d subfamily coverage changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")

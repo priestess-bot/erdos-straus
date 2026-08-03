@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-fixed-s-bounded-divisor-saturation
 title: overflow 对偶 fixed-s 的有界除子外层秩递降
-statement: 设 verified overflow 满足 pn=4Md+1、M=kp+r、1≤r<p，并令 s=(4rd+1)/p。若当前 absorbed support 满足 1≤A≤B_p=(p-1)^2/4，且存在 L|rd 使 A<L≤B_p、4L>s、floor(B_p/L)<floor(B_p/A)，则 R_L=4L-s、K_L=L(p-rd/L) 给出保持 Sol(p) 恒等提升、完整 E1--E5 和严格外层势下降的 overflow_fixed_s_bounded_divisor_outer_rank_v1 边；若 R_L<p 则为 marked absorb，否则仍为 overflow。A|L 不是必要条件：若 A∤L，严格外层势显式支付 support reset。该存在性条件不对所有 overflow 自动成立。
+statement: 设 verified overflow 满足 pn=4Md+1、M=kp+r、1≤r<p、1≤d<p，并令 s=(4rd+1)/p。若当前 absorbed support 满足 1≤A≤B_p=(p-1)^2/4，且存在 L|rd 使 A<L≤B_p、4L>s、floor(B_p/L)<floor(B_p/A)，则 R_L=4L-s、K_L=L(p-rd/L) 给出保持 Sol(p) 恒等提升、完整 E1--E5 和严格外层势下降的 overflow_fixed_s_bounded_divisor_outer_rank_v1 边；若 R_L<p 则为 marked absorb，否则仍为 overflow。A|L 不是必要条件：若 A∤L，严格外层势显式支付 support reset。该存在性条件不对所有 overflow 自动成立。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -34,7 +34,7 @@ last_checked: '2026-08-04'
 
 ## 1. 算术恒等式
 
-设已验证 overflow 状态满足 pn=4Md+1，M=kp+r，1≤r<p。
+设已验证 overflow 状态满足 pn=4Md+1，M=kp+r，1≤r<p，1≤d<p。
 
 由 M=kp+r 消去 k 得 p*s=4*r*d+1，其中 s=(4*r*d+1)/p。
 
@@ -43,8 +43,34 @@ last_checked: '2026-08-04'
 
 同样，若 2A≤r*d≤B_p，则取 L=r*d。此时 s<4*r*d，
 Pi(r*d)<Pi(A)，并且 K_L=r*d*(p-1)，所以这是另一个无样本的完整 fixed-s 边。
-两条充分条件的并集把未覆盖部分压到 r<2A 且 (r*d>B_p 或 r*d<2A)；
+前述三条充分条件共同把简单饱和子族之外的部分压到
+\(r<2A\)、\(d<2A\) 或 \(d>B_p\)，并且 \(r*d>B_p\) 或 \(r*d<2A\)；
 这只是双通道算术边界的结构收缩，剩余部分仍需因子、容量或 alternate 论证。
+
+还存在一个此前未单列的 d-饱和子族。若
+
+\[
+2A\le d\le B_p,
+\]
+
+则直接取 \(L=d\)。因为 \(d\mid r*d\)，且
+
+\[
+s=\frac{4rd+1}{p}<4d
+\]
+
+（\(1\le r<p\)），所以 \(R_L=4d-s>0\)。同时 \(d\ge2A\) 且 \(d\le B_p\)
+给出
+
+\[
+\Pi(d)=\left\lfloor\frac{B_p}{d}\right\rfloor
+<
+\left\lfloor\frac{B_p}{A}\right\rfloor=\Pi(A),
+\]
+
+并且 \(K_L=d(p-r)\)。因此该条件同样给出完整的 fixed-s 恒等提升边；它在
+\(r<2A\) 而 \(d\) 较大时补上 product-saturation 子族未覆盖的部分。它仍不处理
+\(d=1\) 或 \(d>B_p\) 的余项。
 
 ## 2. 支持势与完整边
 
