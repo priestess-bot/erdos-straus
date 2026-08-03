@@ -344,7 +344,7 @@ def shortest_nonempty_subproduct_one(
             if current is None or candidate < current:
                 if pending is None or candidate < pending:
                     updates[next_residue] = candidate
-    reachable.update(updates)
+        reachable.update(updates)
     return best
 
 
