@@ -4212,10 +4212,10 @@
         "missing_conditions": [
           "admissible_L"
         ],
-        "proof_boundary": "fixed_s_23_smooth_residual",
+        "proof_boundary": "fixed_s_23_smooth_one_dimensional_boundary",
         "recursive_edge_eligible": false,
         "residual_routing": [
-          "generalized_dyadic",
+          "r_one_fixed_s_boundary",
           "type_ii",
           "q_adic_capacity"
         ],
@@ -4228,18 +4228,54 @@
       "This is the complete bounded fixed-s divisor atlas above the absorbed-support potential domain. It complements the lcm(A,r) fixed-s branch; an empty admissible set remains analysis evidence and is not promoted."
     ],
     "smooth23_fixed_s_residual": {
-      "conclusion": "The fixed-s divisor set is a two-dimensional exponent grid L=2^i*3^j; an empty grid cell is not a recursive failure and must be passed to the dyadic, Type II, or q-adic branches.",
+      "boundary_lemma": "For L_plus=max{L|r*d: L<=B_p and 4L>s}, L_plus>=2A implies an admissible fixed-s edge; every rejected row therefore has L_plus<2A.",
+      "conclusion": "The fixed-s divisor set is an exponent grid L=2^i*3^j. If the grid has no admissible point, its positive bounded frontier lies below 2A; r=1 or d=1 rows are exact one-dimensional boundary specializations, not new two-dimensional overflow residuals.",
       "condition": "no admissible fixed-s L and Supp(r*d) subset {2,3}",
       "fixture_count": 1,
       "fixture_names": [
         "reachable_conflict_bundle_3"
       ],
-      "recursive_edge_eligible": false,
-      "routing": [
-        "generalized_dyadic",
-        "type_ii",
-        "q_adic_capacity"
+      "genuine_two_dimensional_fixture_count": 0,
+      "genuine_two_dimensional_fixture_names": [],
+      "grid_receipts": [
+        {
+          "boundary_condition_verified": true,
+          "boundary_gap": 20,
+          "factorization": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "fixture_name": "reachable_conflict_bundle_3",
+          "grid_dimension": "one_dimensional_boundary",
+          "max_positive_bounded_divisor": 18,
+          "product": 18,
+          "source_support": 19
+        }
       ],
+      "one_dimensional_fixture_count": 1,
+      "one_dimensional_fixture_names": [
+        "reachable_conflict_bundle_3"
+      ],
+      "recursive_edge_eligible": false,
+      "routing": {
+        "genuine_two_dimensional": [
+          "generalized_dyadic",
+          "type_ii",
+          "q_adic_capacity"
+        ],
+        "one_dimensional": [
+          "r_one_fixed_s_boundary",
+          "d_one_fixed_s_boundary",
+          "type_ii",
+          "q_adic_capacity"
+        ]
+      },
       "selector_status": "analysis_evidence"
     },
     "unconditional_cofactor_saturation_subfamily": {

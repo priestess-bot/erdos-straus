@@ -3266,6 +3266,9 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     prime_power_cofactor_names: list[str] = []
     large_prime_cofactor_names: list[str] = []
     smooth23_residual_names: list[str] = []
+    smooth23_one_dimensional_names: list[str] = []
+    smooth23_two_dimensional_names: list[str] = []
+    smooth23_grid_receipts: list[dict[str, object]] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3553,8 +3556,64 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
         smooth23_residual = product > 0 and all(
             q <= 3 for q, _ in factorization(product)
         )
+        smooth23_boundary: dict[str, object] | None = None
         if smooth23_residual:
             smooth23_residual_names.append(name)
+            if source_in_domain and integral_s and isinstance(fixed_s, int):
+                positive_bounded_divisors = [
+                    L
+                    for L in divisors(product)
+                    if L <= B_prime and 4 * L > fixed_s
+                ]
+                max_positive_bounded_divisor = max(positive_bounded_divisors, default=0)
+                one_dimensional = residue == 1 or d == 1
+                if one_dimensional:
+                    smooth23_one_dimensional_names.append(name)
+                else:
+                    smooth23_two_dimensional_names.append(name)
+                smooth23_boundary = {
+                    "fixture_name": name,
+                    "product": product,
+                    "factorization": factorization(product),
+                    "source_support": support,
+                    "max_positive_bounded_divisor": max_positive_bounded_divisor,
+                    "boundary_gap": 2 * support - max_positive_bounded_divisor,
+                    "boundary_condition_verified": max_positive_bounded_divisor < 2 * support,
+                    "grid_dimension": (
+                        "one_dimensional_boundary"
+                        if one_dimensional
+                        else "genuine_two_dimensional_grid"
+                    ),
+                }
+                smooth23_grid_receipts.append(smooth23_boundary)
+        if smooth23_boundary is not None:
+            if residue == 1:
+                residual_routing = ["r_one_fixed_s_boundary", "type_ii", "q_adic_capacity"]
+            elif d == 1:
+                residual_routing = [
+                    "d_one_fixed_s_boundary",
+                    "overflow_d_one_p_minus_two_g_rechart",
+                    "type_ii",
+                    "q_adic_capacity",
+                ]
+            else:
+                residual_routing = ["generalized_dyadic", "type_ii", "q_adic_capacity"]
+            proof_boundary = (
+                "fixed_s_23_smooth_one_dimensional_boundary"
+                if residue == 1 or d == 1
+                else "fixed_s_23_smooth_residual"
+            )
+        else:
+            residual_routing = (
+                ["generalized_dyadic", "type_ii", "q_adic_capacity"]
+                if smooth23_residual
+                else []
+            )
+            proof_boundary = (
+                "fixed_s_23_smooth_residual"
+                if smooth23_residual
+                else "fixed_s_bounded_divisor_rank_filter"
+            )
         rejected.append(
             {
                 "fixture_name": name,
@@ -3567,16 +3626,8 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 "missing_conditions": missing,
                 "selector_status": "analysis_evidence",
                 "recursive_edge_eligible": False,
-                "proof_boundary": (
-                    "fixed_s_23_smooth_residual"
-                    if smooth23_residual
-                    else "fixed_s_bounded_divisor_rank_filter"
-                ),
-                "residual_routing": (
-                    ["generalized_dyadic", "type_ii", "q_adic_capacity"]
-                    if smooth23_residual
-                    else []
-                ),
+                "proof_boundary": proof_boundary,
+                "residual_routing": residual_routing,
             }
         )
     return {
@@ -3697,13 +3748,35 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             ),
             "fixture_count": len(smooth23_residual_names),
             "fixture_names": smooth23_residual_names,
+            "one_dimensional_fixture_count": len(smooth23_one_dimensional_names),
+            "one_dimensional_fixture_names": smooth23_one_dimensional_names,
+            "genuine_two_dimensional_fixture_count": len(smooth23_two_dimensional_names),
+            "genuine_two_dimensional_fixture_names": smooth23_two_dimensional_names,
+            "grid_receipts": smooth23_grid_receipts,
             "selector_status": "analysis_evidence",
             "recursive_edge_eligible": False,
-            "routing": ["generalized_dyadic", "type_ii", "q_adic_capacity"],
+            "boundary_lemma": (
+                "For L_plus=max{L|r*d: L<=B_p and 4L>s}, L_plus>=2A "
+                "implies an admissible fixed-s edge; every rejected row therefore has L_plus<2A."
+            ),
+            "routing": {
+                "one_dimensional": [
+                    "r_one_fixed_s_boundary",
+                    "d_one_fixed_s_boundary",
+                    "type_ii",
+                    "q_adic_capacity",
+                ],
+                "genuine_two_dimensional": [
+                    "generalized_dyadic",
+                    "type_ii",
+                    "q_adic_capacity",
+                ],
+            },
             "conclusion": (
-                "The fixed-s divisor set is a two-dimensional exponent grid "
-                "L=2^i*3^j; an empty grid cell is not a recursive failure and "
-                "must be passed to the dyadic, Type II, or q-adic branches."
+                "The fixed-s divisor set is an exponent grid L=2^i*3^j. "
+                "If the grid has no admissible point, its positive bounded frontier lies below "
+                "2A; r=1 or d=1 rows are exact one-dimensional boundary specializations, not "
+                "new two-dimensional overflow residuals."
             ),
         },
         "rank_definition": {
@@ -4861,12 +4934,51 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         or smooth23_residual.get("fixture_count") != 1
         or set(smooth23_residual.get("fixture_names", []))
         != {"reachable_conflict_bundle_3"}
+        or smooth23_residual.get("one_dimensional_fixture_count") != 1
+        or set(smooth23_residual.get("one_dimensional_fixture_names", []))
+        != {"reachable_conflict_bundle_3"}
+        or smooth23_residual.get("genuine_two_dimensional_fixture_count") != 0
+        or set(smooth23_residual.get("genuine_two_dimensional_fixture_names", []))
+        != set()
         or smooth23_residual.get("selector_status") != "analysis_evidence"
         or smooth23_residual.get("recursive_edge_eligible") is not False
+        or smooth23_residual.get("boundary_lemma")
+        != (
+            "For L_plus=max{L|r*d: L<=B_p and 4L>s}, L_plus>=2A "
+            "implies an admissible fixed-s edge; every rejected row therefore has L_plus<2A."
+        )
         or smooth23_residual.get("routing")
-        != ["generalized_dyadic", "type_ii", "q_adic_capacity"]
+        != {
+            "one_dimensional": [
+                "r_one_fixed_s_boundary",
+                "d_one_fixed_s_boundary",
+                "type_ii",
+                "q_adic_capacity",
+            ],
+            "genuine_two_dimensional": [
+                "generalized_dyadic",
+                "type_ii",
+                "q_adic_capacity",
+            ],
+        }
     ):
         raise AssertionError("bounded fixed-s 2,3-smooth residual changed")
+    grid_receipts = smooth23_residual.get("grid_receipts")
+    if not isinstance(grid_receipts, list) or len(grid_receipts) != 1:
+        raise AssertionError("bounded fixed-s smooth grid receipt changed")
+    grid_receipt = grid_receipts[0]
+    if (
+        not isinstance(grid_receipt, dict)
+        or grid_receipt.get("fixture_name") != "reachable_conflict_bundle_3"
+        or grid_receipt.get("product") != 18
+        or grid_receipt.get("factorization") != [[2, 1], [3, 2]]
+        or grid_receipt.get("source_support") != 19
+        or grid_receipt.get("max_positive_bounded_divisor") != 18
+        or grid_receipt.get("boundary_gap") != 20
+        or grid_receipt.get("boundary_condition_verified") is not True
+        or grid_receipt.get("grid_dimension") != "one_dimensional_boundary"
+    ):
+        raise AssertionError("bounded fixed-s smooth grid frontier changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
