@@ -22,8 +22,12 @@ topics:
 sources:
   - claim: type-I-overflow-support-preserving-dual-criterion
     role: dual-support-divisibility-filter
+  - reproduction: reproductions/type_i_representation_dual_capacity_selector.py
+    role: joined-support-debt-replay
+  - result: reproductions/type-i-representation-dual-capacity-selector-results.json
+    role: typed-reset-debt-fields
 visibility: public
-last_checked: '2026-08-02'
+last_checked: '2026-08-03'
 ---
 
 # overflow 双对偶支撑阻碍的逐素数幂支付分解
@@ -158,6 +162,30 @@ O_r(q)=\bigl(a-v_q(r)-v_q(dn-1)\bigr)_+.
 
 输出结果保留每一行的 `carrier_height`、`residue_height`、`paid_height_capped` 和
 `obstruction_height`，可直接作为后续跨状态容量或 alternate-source 搜索的 typed 输入。
+
+统一 selector 进一步对每个双载体 RESET 重算
+
+\[
+\operatorname{Debt}_t
+=\frac{\operatorname{lcm}(A,t)}{\gcd(\operatorname{lcm}(A,t),K_t)}.
+\]
+
+当 $t=d$ 时它精确等于
+
+\[
+\frac{A/\gcd(A,d)}{\gcd(A/\gcd(A,d),k+1)},
+\]
+
+当 $t=r$ 时精确等于
+
+\[
+\frac{A/\gcd(A,r)}{\gcd(A/\gcd(A,r),dn-1)}.
+\]
+
+因此 `support_debt.value=1` 与旧支撑整除完全等价；但它仍不是充分的递归条件，
+还必须同时满足严格 support gain、正 canonical chart 和外层势下降。聚焦的 24 个
+双通道中 8 条 verified edge 的 debt 为 1，16 条拒绝通道的 debt 逐行保留（其中
+个别 debt=1 行仍因其它 E 条件失败）。
 
 ## 6. 逻辑边界
 

@@ -39,6 +39,19 @@ profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
 主张卡见[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)
 和[表示—对偶—容量统一选择器合同](../claims/type-I-representation-dual-capacity-selector-contract.md)。
 
+## 2026-08-03 RESET 支撑 debt 的有向账本
+
+统一 selector 对双载体 RESET 逐行保存
+`lcm(A,t)/gcd(lcm(A,t),K_t)`，并验证它等于 d/r 两侧的
+`O_d/O_r` q 进阻碍。24 个聚焦通道中 8 条 verified edge 的 debt 为 1；16 条拒绝
+通道仍保留具体 debt，且有 debt=1 但因严格支撑增长、正图表或 E5 失败的行。
+
+因此 debt 清零只是旧支撑整除的等价判据，不是递归边充分条件。该字段现在作为
+`overflow_outer_rank_reset` 的有向容量输入，后续可与真实 alternate 的跨状态相位
+映射比较，不能把局部 RESET 账本当作全局良基下降。
+
+主张卡见[overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md)。
+
 ## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
 
 将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。

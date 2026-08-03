@@ -492,7 +492,7 @@
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md) (`type-I-overflow-outer-rank-reset`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md) (`type-I-overflow-phase-reset-cycle-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
-| [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
+| [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md) (`type-I-overflow-support-preserving-dual-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

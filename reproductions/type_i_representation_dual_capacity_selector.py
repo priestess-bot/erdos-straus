@@ -12,7 +12,7 @@ import argparse
 from fractions import Fraction
 import hashlib
 import json
-from math import lcm
+from math import gcd, lcm
 from pathlib import Path
 
 try:
@@ -1362,6 +1362,24 @@ def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
                 raise AssertionError(f"outer-rank dual carrier is not positive: {name}")
             dual_R, dual_K = canonical_chart(prime, dual_carrier)
             joined_support = lcm(support, dual_carrier)
+            support_modulus = support // gcd(support, dual_carrier)
+            if side == "d":
+                residue_label = ((carrier - residue) // prime) + 1
+            else:
+                residue_label = d * n - 1
+            support_debt = joined_support // gcd(joined_support, dual_K)
+            expected_support_debt = support_modulus // gcd(
+                support_modulus, residue_label
+            )
+            if support_debt != expected_support_debt:
+                raise AssertionError(f"support debt identity changed: {name}, side={side}")
+            support_debt_record = {
+                "value": support_debt,
+                "factorization": factorization(support_debt),
+                "support_modulus": support_modulus,
+                "residue_label": residue_label,
+                "paid_status": support_debt == 1,
+            }
             strict_gain = joined_support > support
             support_divisibility = dual_K % joined_support == 0
             B_prime = (prime - 1) ** 2 // 4
@@ -1413,6 +1431,7 @@ def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
                         "reason": "canonical dual chart with chart-independent marking",
                     },
                     "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+                    "support_debt": support_debt_record,
                     "certificate_context": {
                         "source": OVERFLOW_INPUT.name,
                         "provenance": "symmetric_dual_with_joined_support",
@@ -1421,6 +1440,7 @@ def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
                         "dual_carrier": dual_carrier,
                         "dual_chart": {"R": dual_R, "K": dual_K},
                         "joined_support": joined_support,
+                        "support_debt": support_debt_record,
                         "overflow_determinant": {
                             "pn": prime * n,
                             "four_M_d_plus_1": 4 * carrier * d + 1,
@@ -1477,6 +1497,7 @@ def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
                     "dual_chart": {"R": dual_R, "K": dual_K},
                     "source_support": support,
                     "joined_support": joined_support,
+                    "support_debt": support_debt_record,
                     "strict_support_gain": strict_gain,
                     "joined_support_divides_dual_K": support_divisibility,
                     "missing_conditions": missing,
@@ -1501,6 +1522,13 @@ def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
             "strict_condition": (
                 "A_next>A, A_next divides K_dual, and floor(B_p/A_next)<floor(B_p/A)"
             ),
+        },
+        "support_debt_definition": {
+            "formula": "lcm(A,t)/gcd(lcm(A,t),K_t)",
+            "d_label": "k+1",
+            "r_label": "d*n-1",
+            "identity": "support_debt=O_d or O_r",
+            "zero_debt_is_not_sufficient": True,
         },
         "scope_note": (
             "Only support-preserving RESET channels are promoted. Rejected channels retain "
@@ -1934,6 +1962,14 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
     for receipt in verified_outer:
         if not isinstance(receipt, dict):
             raise AssertionError("outer-rank receipt shape changed")
+        debt = receipt.get("support_debt")
+        if (
+            not isinstance(debt, dict)
+            or not isinstance(debt.get("value"), int)
+            or debt["value"] < 1
+            or debt.get("paid_status") != (debt["value"] == 1)
+        ):
+            raise AssertionError("outer-rank verified debt receipt changed")
         if receipt.get("selector_status") != "verified_edge":
             raise AssertionError("outer-rank edge lost verified status")
         if receipt.get("recursive_edge_eligible") is not True:
@@ -1946,6 +1982,14 @@ def verify_overflow_menu_contract(result: dict[str, object]) -> None:
     for receipt in rejected_outer:
         if not isinstance(receipt, dict):
             raise AssertionError("outer-rank rejection shape changed")
+        debt = receipt.get("support_debt")
+        if (
+            not isinstance(debt, dict)
+            or not isinstance(debt.get("value"), int)
+            or debt["value"] < 1
+            or debt.get("paid_status") != (debt["value"] == 1)
+        ):
+            raise AssertionError("outer-rank rejected debt receipt changed")
         if receipt.get("selector_status") != "analysis_evidence":
             raise AssertionError("outer-rank rejection crossed status boundary")
         if receipt.get("recursive_edge_eligible") is not False:

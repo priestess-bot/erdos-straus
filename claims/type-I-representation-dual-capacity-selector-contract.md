@@ -89,6 +89,7 @@ overflow_qadic_phase_capacity
 | `target_fiber` | `nonempty`、`nonempty_source_profile` 或带分离角色的 `empty` |
 | `marked_solution_set` | 明确说明非空、为空或尚未携带；不把较小偶数的标准解伪装成根解 |
 | `signed_defect` | 全局带向缺陷；未构造时显式标记 `not_carried`，G 空纤维标记 `not_applicable` |
+| `support_debt` | RESET 目标 joined support 在 \(K_t\) 中未支付的精确因子；只作为局部对偶账本 |
 | `certificate_context` | 表示、对偶或容量证书的来源、阶段和证明边界 |
 | `normal_form` | 当前 Type I/II 或终端优先正规形 |
 | `potential_record` | 若没有良基势和重算值，显式标记 `absent` |
@@ -115,6 +116,16 @@ verified_edge
 及条件性容量统计。前三类证据、hard-core 负边界和容量审计统一标为
 `selector_status=analysis_evidence`、`recursive_edge_eligible=false`；固定-\(n\) 正例可在
 E1--E5 完整时标为 `verified_edge`。
+
+RESET 回执还保存
+
+\[
+\operatorname{Debt}_t
+=\operatorname{lcm}(A,t)/\gcd(\operatorname{lcm}(A,t),K_t),
+\]
+
+并按 d/r 通道展开为 q 进支付账本。`support_debt.value=1` 只等价于旧支撑在目标图表
+中整除；严格支撑增长、正图表和 E5 仍需独立验证，故 debt 清零不能单独升级回执。
 
 升级不变量为：
 
