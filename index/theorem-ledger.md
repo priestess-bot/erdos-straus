@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 369 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 337 |
+| 数学状态 | `established` | 338 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 125 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 169 |
+| 证明来源 | `repository_derivation` | 170 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 300 |
+| 审阅状态 | `internal_review` | 301 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -503,6 +503,7 @@
 | [overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md) (`type-I-overflow-r-one-dual-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md) (`type-I-overflow-same-chart-support-promotion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [2,3-光滑二维 fixed-s overflow 的 k=1 fixed-n 饱和递降](../claims/type-I-overflow-smooth23-k-one-fixed-n-saturation.md) (`type-I-overflow-smooth23-k-one-fixed-n-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
+| [2,3-光滑二维 overflow 的低 k fixed-n cofactor 递降](../claims/type-I-overflow-smooth23-low-k-fixed-n-cofactor.md) (`type-I-overflow-smooth23-low-k-fixed-n-cofactor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md) (`type-I-overflow-support-preserving-dual-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |

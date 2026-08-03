@@ -4581,6 +4581,684 @@
           "selector_status": "verified_edge_conditional_on_reachability",
           "source_reach_status": "unproved"
         },
+        "low_k_fixed_n_cofactor": {
+          "automatic_checks": "q|d, L=q*M=S/(d/q), L>=2A, L<=B_p, 4L>n, and Pi(L)<Pi(A)",
+          "candidate": "L=q*M",
+          "condition": "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, A=M, q=2 if 2|d else 3, 1<=k<=floor((B_p-2q)/(q*p))",
+          "high_k_residual_route": [
+            "fixed_n_factor_divisor",
+            "type_ii",
+            "q_adic_capacity"
+          ],
+          "high_k_residual_status": "analysis_evidence",
+          "proof_boundary": "smooth23_low_k_fixed_n_cofactor",
+          "recursive_edge_eligible": true,
+          "seed_count": 5,
+          "seeds": [
+            {
+              "P": 18,
+              "checked_rows": [
+                {
+                  "determinant": {
+                    "M": 75,
+                    "P": 18,
+                    "S": 675,
+                    "cofactor": 3,
+                    "d": 9,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 37,
+                    "q": 3,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 1,
+                  "potential_record": {
+                    "B_p": 1296,
+                    "source": 17,
+                    "strict_decrease": true,
+                    "successor": 5,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 15750,
+                    "L": 225,
+                    "R_L": 863,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 4800,
+                    "R": 263,
+                    "absorbed_support": 75,
+                    "equation_target": [
+                      4,
+                      73
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 15750,
+                    "R": 863,
+                    "absorbed_support": 225,
+                    "equation_target": [
+                      4,
+                      73
+                    ],
+                    "state_class": "overflow"
+                  }
+                },
+                {
+                  "determinant": {
+                    "M": 367,
+                    "P": 18,
+                    "S": 3303,
+                    "cofactor": 3,
+                    "d": 9,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 181,
+                    "q": 3,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 5,
+                  "potential_record": {
+                    "B_p": 1296,
+                    "source": 3,
+                    "strict_decrease": true,
+                    "successor": 1,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 77070,
+                    "L": 1101,
+                    "R_L": 4223,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 23488,
+                    "R": 1287,
+                    "absorbed_support": 367,
+                    "equation_target": [
+                      4,
+                      73
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 77070,
+                    "R": 4223,
+                    "absorbed_support": 1101,
+                    "equation_target": [
+                      4,
+                      73
+                    ],
+                    "state_class": "overflow"
+                  }
+                }
+              ],
+              "d": 9,
+              "exponents": [
+                1,
+                2
+              ],
+              "k_cofactor_max": 5,
+              "k_global_max": 17,
+              "prime": 73,
+              "q": 3,
+              "remaining_k_range": [
+                6,
+                17
+              ]
+            },
+            {
+              "P": 24,
+              "checked_rows": [
+                {
+                  "determinant": {
+                    "M": 99,
+                    "P": 24,
+                    "S": 1188,
+                    "cofactor": 6,
+                    "d": 12,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 49,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 1,
+                  "potential_record": {
+                    "B_p": 2304,
+                    "source": 23,
+                    "strict_decrease": true,
+                    "successor": 11,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 18018,
+                    "L": 198,
+                    "R_L": 743,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 8415,
+                    "R": 347,
+                    "absorbed_support": 99,
+                    "equation_target": [
+                      4,
+                      97
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 18018,
+                    "R": 743,
+                    "absorbed_support": 198,
+                    "equation_target": [
+                      4,
+                      97
+                    ],
+                    "state_class": "overflow"
+                  }
+                },
+                {
+                  "determinant": {
+                    "M": 1069,
+                    "P": 24,
+                    "S": 12828,
+                    "cofactor": 6,
+                    "d": 12,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 529,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 11,
+                  "potential_record": {
+                    "B_p": 2304,
+                    "source": 2,
+                    "strict_decrease": true,
+                    "successor": 1,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 194558,
+                    "L": 2138,
+                    "R_L": 8023,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 90865,
+                    "R": 3747,
+                    "absorbed_support": 1069,
+                    "equation_target": [
+                      4,
+                      97
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 194558,
+                    "R": 8023,
+                    "absorbed_support": 2138,
+                    "equation_target": [
+                      4,
+                      97
+                    ],
+                    "state_class": "overflow"
+                  }
+                }
+              ],
+              "d": 12,
+              "exponents": [
+                3,
+                1
+              ],
+              "k_cofactor_max": 11,
+              "k_global_max": 23,
+              "prime": 97,
+              "q": 2,
+              "remaining_k_range": [
+                12,
+                23
+              ]
+            },
+            {
+              "P": 48,
+              "checked_rows": [
+                {
+                  "determinant": {
+                    "M": 195,
+                    "P": 48,
+                    "S": 4680,
+                    "cofactor": 12,
+                    "d": 24,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 97,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 1,
+                  "potential_record": {
+                    "B_p": 9216,
+                    "source": 47,
+                    "strict_decrease": true,
+                    "successor": 23,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 70590,
+                    "L": 390,
+                    "R_L": 1463,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 32955,
+                    "R": 683,
+                    "absorbed_support": 195,
+                    "equation_target": [
+                      4,
+                      193
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 70590,
+                    "R": 1463,
+                    "absorbed_support": 390,
+                    "equation_target": [
+                      4,
+                      193
+                    ],
+                    "state_class": "overflow"
+                  }
+                },
+                {
+                  "determinant": {
+                    "M": 4441,
+                    "P": 48,
+                    "S": 106584,
+                    "cofactor": 12,
+                    "d": 24,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 2209,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 23,
+                  "potential_record": {
+                    "B_p": 9216,
+                    "source": 2,
+                    "strict_decrease": true,
+                    "successor": 1,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 1607642,
+                    "L": 8882,
+                    "R_L": 33319,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 750529,
+                    "R": 15555,
+                    "absorbed_support": 4441,
+                    "equation_target": [
+                      4,
+                      193
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 1607642,
+                    "R": 33319,
+                    "absorbed_support": 8882,
+                    "equation_target": [
+                      4,
+                      193
+                    ],
+                    "state_class": "overflow"
+                  }
+                }
+              ],
+              "d": 24,
+              "exponents": [
+                4,
+                1
+              ],
+              "k_cofactor_max": 23,
+              "k_global_max": 47,
+              "prime": 193,
+              "q": 2,
+              "remaining_k_range": [
+                24,
+                47
+              ]
+            },
+            {
+              "P": 108,
+              "checked_rows": [
+                {
+                  "determinant": {
+                    "M": 435,
+                    "P": 108,
+                    "S": 23490,
+                    "cofactor": 27,
+                    "d": 54,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 217,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 1,
+                  "potential_record": {
+                    "B_p": 46656,
+                    "source": 107,
+                    "strict_decrease": true,
+                    "successor": 53,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 353220,
+                    "L": 870,
+                    "R_L": 3263,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 164865,
+                    "R": 1523,
+                    "absorbed_support": 435,
+                    "equation_target": [
+                      4,
+                      433
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 353220,
+                    "R": 3263,
+                    "absorbed_support": 870,
+                    "equation_target": [
+                      4,
+                      433
+                    ],
+                    "state_class": "overflow"
+                  }
+                },
+                {
+                  "determinant": {
+                    "M": 22951,
+                    "P": 108,
+                    "S": 1239354,
+                    "cofactor": 27,
+                    "d": 54,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 11449,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 53,
+                  "potential_record": {
+                    "B_p": 46656,
+                    "source": 2,
+                    "strict_decrease": true,
+                    "successor": 1,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 18636212,
+                    "L": 45902,
+                    "R_L": 172159,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 8698429,
+                    "R": 80355,
+                    "absorbed_support": 22951,
+                    "equation_target": [
+                      4,
+                      433
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 18636212,
+                    "R": 172159,
+                    "absorbed_support": 45902,
+                    "equation_target": [
+                      4,
+                      433
+                    ],
+                    "state_class": "overflow"
+                  }
+                }
+              ],
+              "d": 54,
+              "exponents": [
+                2,
+                3
+              ],
+              "k_cofactor_max": 53,
+              "k_global_max": 107,
+              "prime": 433,
+              "q": 2,
+              "remaining_k_range": [
+                54,
+                107
+              ]
+            },
+            {
+              "P": 324,
+              "checked_rows": [
+                {
+                  "determinant": {
+                    "M": 1299,
+                    "P": 324,
+                    "S": 210438,
+                    "cofactor": 81,
+                    "d": 162,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 649,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 1,
+                  "potential_record": {
+                    "B_p": 419904,
+                    "source": 323,
+                    "strict_decrease": true,
+                    "successor": 161,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 3159168,
+                    "L": 2598,
+                    "R_L": 9743,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 1474365,
+                    "R": 4547,
+                    "absorbed_support": 1299,
+                    "equation_target": [
+                      4,
+                      1297
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 3159168,
+                    "R": 9743,
+                    "absorbed_support": 2598,
+                    "equation_target": [
+                      4,
+                      1297
+                    ],
+                    "state_class": "overflow"
+                  }
+                },
+                {
+                  "determinant": {
+                    "M": 208819,
+                    "P": 324,
+                    "S": 33828678,
+                    "cofactor": 81,
+                    "d": 162,
+                    "identity": "p*n=4*M*d+1",
+                    "n": 104329,
+                    "q": 2,
+                    "r": 2
+                  },
+                  "e1_e5": {
+                    "E1": true,
+                    "E2": true,
+                    "E3": true,
+                    "E4": true,
+                    "E5": true
+                  },
+                  "k": 161,
+                  "potential_record": {
+                    "B_p": 419904,
+                    "source": 2,
+                    "strict_decrease": true,
+                    "successor": 1,
+                    "support_monotone": true
+                  },
+                  "recursive_edge_eligible": true,
+                  "selected_candidate": {
+                    "K_L": 507847808,
+                    "L": 417638,
+                    "R_L": 1566223,
+                    "selection_rule": "L=q*M=S/(d/q)"
+                  },
+                  "selector_status": "verified_edge",
+                  "source_reach_status": "unproved",
+                  "source_state": {
+                    "K": 237009565,
+                    "R": 730947,
+                    "absorbed_support": 208819,
+                    "equation_target": [
+                      4,
+                      1297
+                    ],
+                    "state_class": "overflow"
+                  },
+                  "successor_state": {
+                    "K": 507847808,
+                    "R": 1566223,
+                    "absorbed_support": 417638,
+                    "equation_target": [
+                      4,
+                      1297
+                    ],
+                    "state_class": "overflow"
+                  }
+                }
+              ],
+              "d": 162,
+              "exponents": [
+                2,
+                4
+              ],
+              "k_cofactor_max": 161,
+              "k_global_max": 323,
+              "prime": 1297,
+              "q": 2,
+              "remaining_k_range": [
+                162,
+                323
+              ]
+            }
+          ],
+          "selector_status": "verified_edge_conditional_on_reachability",
+          "source_reach_status": "unproved"
+        },
         "parameter_range": "1<=k<=floor((B_p-r)/p)",
         "proof_boundary": "smooth23_parametric_fixed_s_support_saturation",
         "recursive_edge_eligible": false,

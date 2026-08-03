@@ -3338,6 +3338,7 @@ def smooth23_fixed_s_parametric_family() -> dict[str, object]:
         "recursive_edge_eligible": False,
         "proof_boundary": "smooth23_parametric_fixed_s_support_saturation",
         "k_one_fixed_n_saturation": smooth23_k_one_fixed_n_saturation(),
+        "low_k_fixed_n_cofactor": smooth23_low_k_fixed_n_cofactor(),
         "conclusion": (
             "For each listed prime seed and every allowed k, p*n=4*M*d+1, "
             "R_M>p, s=1, and every fixed-s divisor L|r*d is below A=M. "
@@ -3453,6 +3454,141 @@ def smooth23_k_one_fixed_n_saturation() -> dict[str, object]:
             "K_L=S*(p-1), and Pi(S)<Pi(M)"
         ),
         "receipts": receipts,
+    }
+
+
+def smooth23_low_k_fixed_n_cofactor() -> dict[str, object]:
+    """Verify the low-k cofactor edge L=q*M for the smooth family.
+
+    Here q is the smallest prime supplied by d=P/2 (2 when a>=2, otherwise
+    3).  The edge is conditional on source reachability and is available
+    whenever q*M is inside the B_p capacity box.
+    """
+    seed_exponents = [(1, 2), (3, 1), (4, 1), (2, 3), (2, 4)]
+    seeds: list[dict[str, object]] = []
+    for exponent_two, exponent_three in seed_exponents:
+        product = 2**exponent_two * 3**exponent_three
+        prime = 4 * product + 1
+        if factorization(prime) != [[prime, 1]]:
+            raise AssertionError("smooth low-k fixed-n seed changed")
+        residue = 2
+        dual_carrier = product // residue
+        q = 2 if dual_carrier % 2 == 0 else 3
+        if dual_carrier % q:
+            raise AssertionError("smooth low-k cofactor is not available")
+        B_prime = (prime - 1) ** 2 // 4
+        k_global_max = (B_prime - residue) // prime
+        k_cofactor_max = (B_prime - q * residue) // (q * prime)
+        if k_cofactor_max < 1 or k_cofactor_max > k_global_max:
+            raise AssertionError("smooth low-k cofactor range changed")
+        checked_k = [1] if k_cofactor_max == 1 else [1, k_cofactor_max]
+        rows: list[dict[str, object]] = []
+        for k in checked_k:
+            carrier = k * prime + residue
+            n = 4 * k * dual_carrier + 1
+            S = carrier * dual_carrier
+            L = q * carrier
+            target_R = 4 * L - n
+            target_K = L * (prime - dual_carrier // q)
+            source_R = 4 * carrier - n
+            source_K = carrier * (prime - dual_carrier)
+            source_potential = B_prime // carrier
+            successor_potential = B_prime // L
+            if (
+                prime * n != 4 * carrier * dual_carrier + 1
+                or source_R <= prime
+                or L != S // (dual_carrier // q)
+                or L <= carrier
+                or L > B_prime
+                or 4 * L <= n
+                or target_R <= 0
+                or target_K != L * (prime - S // L)
+                or canonical_chart(prime, L) != (target_R, target_K)
+                or successor_potential >= source_potential
+            ):
+                raise AssertionError("smooth low-k fixed-n cofactor identity changed")
+            source_state = {
+                "equation_target": [4, prime],
+                "R": source_R,
+                "K": source_K,
+                "absorbed_support": carrier,
+                "state_class": "overflow",
+            }
+            successor_state = {
+                "equation_target": [4, prime],
+                "R": target_R,
+                "K": target_K,
+                "absorbed_support": L,
+                "state_class": "overflow" if target_R > prime else "marked_absorb",
+            }
+            rows.append(
+                {
+                    "k": k,
+                    "source_state": source_state,
+                    "successor_state": successor_state,
+                    "determinant": {
+                        "P": product,
+                        "M": carrier,
+                        "r": residue,
+                        "d": dual_carrier,
+                        "n": n,
+                        "S": S,
+                        "q": q,
+                        "cofactor": dual_carrier // q,
+                        "identity": "p*n=4*M*d+1",
+                    },
+                    "selected_candidate": {
+                        "L": L,
+                        "R_L": target_R,
+                        "K_L": target_K,
+                        "selection_rule": "L=q*M=S/(d/q)",
+                    },
+                    "potential_record": {
+                        "B_p": B_prime,
+                        "source": source_potential,
+                        "successor": successor_potential,
+                        "strict_decrease": True,
+                        "support_monotone": True,
+                    },
+                    "e1_e5": {f"E{i}": True for i in range(1, 6)},
+                    "selector_status": "verified_edge",
+                    "recursive_edge_eligible": True,
+                    "source_reach_status": "unproved",
+                }
+            )
+        seeds.append(
+            {
+                "exponents": [exponent_two, exponent_three],
+                "prime": prime,
+                "P": product,
+                "d": dual_carrier,
+                "q": q,
+                "k_global_max": k_global_max,
+                "k_cofactor_max": k_cofactor_max,
+                "remaining_k_range": [k_cofactor_max + 1, k_global_max]
+                if k_cofactor_max < k_global_max
+                else [],
+                "checked_rows": rows,
+            }
+        )
+    return {
+        "condition": (
+            "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, "
+            "A=M, q=2 if 2|d else 3, 1<=k<=floor((B_p-2q)/(q*p))"
+        ),
+        "candidate": "L=q*M",
+        "seed_count": len(seeds),
+        "source_reach_status": "unproved",
+        "selector_status": "verified_edge_conditional_on_reachability",
+        "recursive_edge_eligible": True,
+        "proof_boundary": "smooth23_low_k_fixed_n_cofactor",
+        "automatic_checks": (
+            "q|d, L=q*M=S/(d/q), L>=2A, L<=B_p, 4L>n, "
+            "and Pi(L)<Pi(A)"
+        ),
+        "seeds": seeds,
+        "high_k_residual_status": "analysis_evidence",
+        "high_k_residual_route": ["fixed_n_factor_divisor", "type_ii", "q_adic_capacity"],
     }
 
 
@@ -5320,6 +5456,105 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
             or potential.get("support_monotone") is not True
         ):
             raise AssertionError("smooth k=1 fixed-n saturation identity changed")
+    low_k = family.get("low_k_fixed_n_cofactor")
+    if not isinstance(low_k, dict):
+        raise AssertionError("smooth low-k fixed-n cofactor receipt missing")
+    if (
+        low_k.get("condition")
+        != (
+            "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, "
+            "A=M, q=2 if 2|d else 3, 1<=k<=floor((B_p-2q)/(q*p))"
+        )
+        or low_k.get("candidate") != "L=q*M"
+        or low_k.get("seed_count") != 5
+        or low_k.get("source_reach_status") != "unproved"
+        or low_k.get("selector_status")
+        != "verified_edge_conditional_on_reachability"
+        or low_k.get("recursive_edge_eligible") is not True
+        or low_k.get("proof_boundary") != "smooth23_low_k_fixed_n_cofactor"
+        or low_k.get("high_k_residual_status") != "analysis_evidence"
+        or low_k.get("high_k_residual_route")
+        != ["fixed_n_factor_divisor", "type_ii", "q_adic_capacity"]
+    ):
+        raise AssertionError("smooth low-k fixed-n cofactor metadata changed")
+    low_k_seeds = low_k.get("seeds")
+    if not isinstance(low_k_seeds, list) or len(low_k_seeds) != 5:
+        raise AssertionError("smooth low-k fixed-n cofactor seed shape changed")
+    expected_low_k_pairs = {
+        (1, 2, 73, 3, 5),
+        (3, 1, 97, 2, 11),
+        (4, 1, 193, 2, 23),
+        (2, 3, 433, 2, 53),
+        (2, 4, 1297, 2, 161),
+    }
+    actual_low_k_pairs = {
+        (
+            int(seed["exponents"][0]),
+            int(seed["exponents"][1]),
+            int(seed["prime"]),
+            int(seed["q"]),
+            int(seed["k_cofactor_max"]),
+        )
+        for seed in low_k_seeds
+        if isinstance(seed, dict)
+    }
+    if actual_low_k_pairs != expected_low_k_pairs:
+        raise AssertionError("smooth low-k fixed-n cofactor seed coverage changed")
+    for seed in low_k_seeds:
+        if not isinstance(seed, dict):
+            raise AssertionError("smooth low-k fixed-n cofactor seed is not an object")
+        rows = seed.get("checked_rows")
+        if not isinstance(rows, list) or not rows:
+            raise AssertionError("smooth low-k fixed-n cofactor rows missing")
+        if int(seed["k_cofactor_max"]) > int(seed["k_global_max"]):
+            raise AssertionError("smooth low-k cofactor range exceeds global range")
+        for receipt in rows:
+            if not isinstance(receipt, dict):
+                raise AssertionError("smooth low-k cofactor row is not an object")
+            if (
+                receipt.get("selector_status") != "verified_edge"
+                or receipt.get("recursive_edge_eligible") is not True
+                or receipt.get("source_reach_status") != "unproved"
+                or receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}
+            ):
+                raise AssertionError("smooth low-k cofactor crossed status boundary")
+            source = receipt.get("source_state")
+            successor = receipt.get("successor_state")
+            determinant = receipt.get("determinant")
+            selected = receipt.get("selected_candidate")
+            potential = receipt.get("potential_record")
+            if not all(
+                isinstance(value, dict)
+                for value in (source, successor, determinant, selected, potential)
+            ):
+                raise AssertionError("smooth low-k cofactor payload incomplete")
+            prime = int(source["equation_target"][1])
+            M = int(determinant["M"])
+            d = int(determinant["d"])
+            n = int(determinant["n"])
+            S = int(determinant["S"])
+            q = int(determinant["q"])
+            L = int(selected["L"])
+            B_prime = (prime - 1) ** 2 // 4
+            if (
+                determinant.get("identity") != "p*n=4*M*d+1"
+                or prime * n != 4 * M * d + 1
+                or d % q
+                or L != q * M
+                or L != S // (d // q)
+                or L <= M
+                or L > B_prime
+                or 4 * L <= n
+                or int(selected["R_L"]) != 4 * L - n
+                or int(selected["K_L"]) != L * (prime - S // L)
+                or canonical_chart(prime, L)
+                != (int(selected["R_L"]), int(selected["K_L"]))
+                or int(potential["source"]) != B_prime // M
+                or int(potential["successor"]) != B_prime // L
+                or potential.get("strict_decrease") is not True
+                or potential.get("support_monotone") is not True
+            ):
+                raise AssertionError("smooth low-k cofactor identity changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
