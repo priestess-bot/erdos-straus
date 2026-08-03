@@ -72,6 +72,7 @@
 - 2010-10-11 · [On Egyptian Fractions](../papers/bello2012.md) — Manuel Bello-Hernandez, Manuel Benito, Emilio Fernandez; 出版年 2012; `preprint` / `computationally_reported`
 ## 2011
 
+- 2011-02-14 · [The Inverse Problem Associated to the Davenport Constant for C2 direct sum C2 direct sum C2n](../papers/schmid2011-c2-squared-c2n.md) — Wolfgang A. Schmid; 出版年 2011; `peer_reviewed` / `verified`
 - 2011-07-06 · [Counting the number of solutions to the Erdos-Straus equation on unit fractions](../papers/elsholtz_tao2013.md) — Christian Elsholtz, Terence Tao; 出版年 2013; `peer_reviewed` / `verified`
 - 2011-07-27 · [A Note on Terence Tao's Paper On the Number of Solutions to 4/p = 1/n1 + 1/n2 + 1/n3](../papers/jia2011.md) — Chaohua Jia; 出版年 2011; `preprint` / `verified_with_caveat`
 - 2011-07-29 · [The estimate for mean values on prime numbers relative to 4/p = 1/n1 + 1/n2 + 1/n3](../papers/jia2012.md) — Chaohua Jia; 出版年 2012; `peer_reviewed` / `verified_with_caveat`
@@ -88,6 +89,7 @@
 ## 2018
 
 - 2018-05-08 · [The number of solutions of the Erdos-Straus Equation and sums of k unit fractions](../papers/elsholtz_planitzer2020.md) — Christian Elsholtz, Stefan Planitzer; 出版年 2020; `peer_reviewed` / `verified`
+- 2018-06-20 · [Direct zero-sum problems for certain groups of rank three](../papers/girard-schmid2019-direct-zero-sum-rank-three.md) — Benjamin Girard, Wolfgang A. Schmid; 出版年 2019; `preprint` / `verified`
 - 2018-12-31 · [Solutions to Diophantine equation of Erdos-Straus Conjecture](../papers/negash2018.md) — Dagnachew Jenber Negash; 出版年 2018; `preprint` / `verified_with_caveat`
 ## 2019
 

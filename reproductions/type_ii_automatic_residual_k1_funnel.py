@@ -305,6 +305,34 @@ def rank_two_davenport_data(
     return invariant_factors, primary_data, davenport
 
 
+def rank_three_girard_schmid_data(
+    subgroup: frozenset[int], modulus: int
+) -> tuple[tuple[int, ...], tuple[tuple[int, tuple[int, ...]], ...], int, int, int] | None:
+    """Return the exact Davenport data for C2 direct_sum C2m direct_sum C2mn.
+
+    Girard--Schmid, Theorem 2.7, proves
+    D(C2 direct_sum C2m direct_sum C2mn) = 2m + 2mn for m,n >= 1.
+    The invariant factors are recovered first, so the theorem is applied only
+    when the generated subgroup has exactly the stated shape.
+    """
+    invariant_factors, primary_data = abelian_invariant_factor_data(
+        subgroup, modulus
+    )
+    if len(invariant_factors) != 3:
+        return None
+    first, second, third = invariant_factors
+    if first != 2 or second % 2 or third % second:
+        return None
+    m = second // 2
+    n = third // second
+    if m < 1 or n < 1:
+        return None
+    davenport = 2 * m + 2 * m * n
+    if davenport != 1 + sum(invariant - 1 for invariant in invariant_factors):
+        raise AssertionError("rank-three exact Davenport formula changed")
+    return invariant_factors, primary_data, davenport, m, n
+
+
 def nonempty_subproduct_one(factors: list[int], modulus: int) -> int | None:
     """Construct any nonempty subproduct equal to one modulo ``modulus``."""
     reachable: dict[int, tuple[int, int]] = {1: (1, 0)}
@@ -805,6 +833,130 @@ def higher_rank_short_shared_profile(
     }
 
 
+def rank_three_exact_davenport_profile(
+    records: list[dict[str, object]], gap_cap: int, spf: list[int]
+) -> dict[str, object]:
+    """Apply Girard--Schmid's exact rank-three Davenport threshold.
+
+    The theorem covers every group with invariant factors
+    ``(2, 2*m, 2*m*n)``.  Reaching the threshold forces a shared unit
+    subproduct; being below it is recorded only as a threshold boundary.
+    """
+    witnesses: list[dict[str, object]] = []
+    pressure_points: list[dict[str, object]] = []
+    misses: list[int] = []
+    exact_gap_count = 0
+    threshold_eligible_gap_count = 0
+    threshold_histogram: Counter[int] = Counter()
+    invariant_factor_histogram: Counter[tuple[int, ...]] = Counter()
+    threshold_status_histogram: Counter[str] = Counter()
+    for record in records:
+        prime = int(record["prime"])
+        candidates: list[dict[str, object]] = []
+        exact_candidates: list[dict[str, object]] = []
+        for gap in range(3, min(gap_cap, prime - 2) + 1, 4):
+            certificate = short_certificate.type_ii_residue_certificate(
+                prime, gap, spf
+            )
+            if certificate is None:
+                continue
+            factors = unit_prime_factor_multiset_from_spf(prime + gap, gap, spf)
+            subgroup = generated_unit_residue_subgroup(factors, gap)
+            davenport_data = rank_three_girard_schmid_data(subgroup, gap)
+            if davenport_data is None:
+                continue
+            (
+                invariant_factors,
+                primary_data,
+                davenport,
+                parameter_m,
+                parameter_n,
+            ) = davenport_data
+            exact_gap_count += 1
+            threshold_histogram[davenport] += 1
+            invariant_factor_histogram[invariant_factors] += 1
+            threshold_reached = len(factors) >= davenport
+            threshold_status = "reached" if threshold_reached else "not_reached"
+            threshold_status_histogram[threshold_status] += 1
+            point: dict[str, object] = {
+                "prime": prime,
+                "gap": gap,
+                "unit_factor_multiplicity": len(factors),
+                "generated_subgroup_order": math.prod(invariant_factors),
+                "invariant_factors": list(invariant_factors),
+                "parameters": {"m": parameter_m, "n": parameter_n},
+                "davenport_constant": davenport,
+                "threshold_reached": threshold_reached,
+                "threshold_status": threshold_status,
+                "primary_components": [
+                    {"prime": group_prime, "exponents": list(exponents)}
+                    for group_prime, exponents in primary_data
+                ],
+            }
+            exact_candidates.append(point)
+            if threshold_reached:
+                threshold_eligible_gap_count += 1
+                shared_divisor = nonempty_subproduct_one(factors, gap)
+                if shared_divisor is None:
+                    raise AssertionError(
+                        "rank-three exact Davenport threshold did not force a divisor"
+                    )
+                first_scale = (shared_divisor - 1) // gap
+                witness = short_certificate.type_ii_scaled_first_tail_deflation_witness(
+                    prime, gap, first_scale, spf
+                )
+                if witness is None:
+                    raise AssertionError(
+                        "rank-three exact Davenport candidate did not lift"
+                    )
+                point.update(
+                    {
+                        "shared_divisor": shared_divisor,
+                        "first_scale": first_scale,
+                        "marked_witness": True,
+                    }
+                )
+                candidates.append(point)
+            else:
+                point["marked_witness"] = False
+            pressure_points.append(point)
+        if exact_candidates and not candidates:
+            misses.append(prime)
+        if candidates:
+            chosen = min(
+                candidates,
+                key=lambda item: (int(item["gap"]), int(item["shared_divisor"])),
+            )
+            witnesses.append(dict(chosen))
+    return {
+        "arithmetic": (
+            "exact invariant-factor recovery followed by Girard--Schmid Theorem 2.7; "
+            "a factor sequence reaching D(C2 direct_sum C2m direct_sum C2mn) "
+            "forces a nonempty unit subproduct and a scaled-first marked witness"
+        ),
+        "scope_note": (
+            "The theorem applies only to invariant factors (2,2*m,2*m*n). "
+            "A pressure point below the exact threshold is a rigorous Davenport "
+            "no-force boundary, not a proof that no shorter zero product exists."
+        ),
+        "rank_three_exact_davenport_shared_count": len(witnesses),
+        "rank_three_exact_davenport_shared_witnesses": witnesses,
+        "rank_three_exact_davenport_shared_misses": misses,
+        "rank_three_exact_gap_count": exact_gap_count,
+        "rank_three_exact_pressure_prime_count": len(set(
+            int(point["prime"]) for point in pressure_points
+        )),
+        "threshold_eligible_gap_count": threshold_eligible_gap_count,
+        "pressure_points": pressure_points,
+        "threshold_histogram": dict(sorted(threshold_histogram.items())),
+        "invariant_factor_histogram": {
+            ",".join(str(value) for value in invariant_factors): count
+            for invariant_factors, count in sorted(invariant_factor_histogram.items())
+        },
+        "threshold_status_histogram": dict(sorted(threshold_status_histogram.items())),
+    }
+
+
 def totient_threshold_shared_profile(
     records: list[dict[str, object]], gap_cap: int, spf: list[int]
 ) -> dict[str, object]:
@@ -1091,6 +1243,7 @@ def run_audit(
     include_p_group_davenport_profile: bool = False,
     include_rank_two_davenport_profile: bool = False,
     include_higher_rank_short_profile: bool = False,
+    include_rank_three_exact_davenport_profile: bool = False,
     include_totient_threshold_profile: bool = False,
     include_prime_power_profile: bool = False,
     include_support_profile: bool = False,
@@ -1178,6 +1331,10 @@ def run_audit(
         result["higher_rank_short_shared_profile"] = higher_rank_short_shared_profile(
             non_k1_records, gap_cap, spf
         )
+    if include_rank_three_exact_davenport_profile:
+        result["rank_three_exact_davenport_profile"] = (
+            rank_three_exact_davenport_profile(non_k1_records, gap_cap, spf)
+        )
     if include_totient_threshold_profile:
         result["totient_threshold_shared_profile"] = totient_threshold_shared_profile(
             non_k1_records, gap_cap, spf
@@ -1232,6 +1389,11 @@ def main() -> int:
         help="also search rank-at-least-three states for shortest sequence zero products",
     )
     parser.add_argument(
+        "--rank-three-exact-davenport-profile",
+        action="store_true",
+        help="also apply the exact C2 direct_sum C2m direct_sum C2mn Davenport threshold",
+    )
+    parser.add_argument(
         "--prime-power-profile",
         action="store_true",
         help="also scan every legal gap for a one-prime-power shared divisor",
@@ -1256,6 +1418,9 @@ def main() -> int:
         include_p_group_davenport_profile=args.p_group_davenport_profile,
         include_rank_two_davenport_profile=args.rank_two_davenport_profile,
         include_higher_rank_short_profile=args.higher_rank_short_profile,
+        include_rank_three_exact_davenport_profile=(
+            args.rank_three_exact_davenport_profile
+        ),
         include_totient_threshold_profile=args.totient_threshold_profile,
         include_prime_power_profile=args.prime_power_profile,
         include_support_profile=args.support_profile,

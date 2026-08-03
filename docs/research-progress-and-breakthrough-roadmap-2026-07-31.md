@@ -302,6 +302,18 @@ m<=239 的 84 个压力点中只有 19 个秩三缺口：17 个结构为 C2 + C2
 除子证明。主张卡见[共享 Type II 秩至少三序列短 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md)，
 结果见[10M 秩至少三回执](../reproductions/type-ii-automatic-residual-higher-rank-short-profile-10m-results.json)。
 
+**2026-08-04 秩三精确阈值补充。** Girard--Schmid 的 Theorem 2.7 给出
+\[
+D(C_2\oplus C_{2a}\oplus C_{2ab})=2a+2ab.
+\]
+当前 19 个秩三缺口分别落在
+\(C_2\oplus C_2\oplus C_{30}\)（17 个，\(D=32\)）和
+\(C_2\oplus C_4\oplus C_{12}\)（2 个，\(D=16\)）。19 个单位素因子序列均低于对应
+阈值，因此 Davenport 分支命中为 0；这严格关闭的是“阈值强制共享除子”这一充分条件，
+不是共享除子不存在。低于阈值的动态短零积 4 个命中仍独立保留。详见
+[共享 Type II 秩三精确 Davenport 阈值](../claims/type-II-shared-rank-three-exact-davenport-threshold.md)
+和[秩三精确 Davenport profile](../reproductions/type-ii-automatic-residual-rank-three-exact-davenport-profile-10m-results.json)。
+
 ## 一、结论先行
 
 最近这一轮工作的价值明显高于继续扩大有限扫描。项目已经把上一阶段的“联合带符号分母缺陷”推进成一条更完整的结构链：

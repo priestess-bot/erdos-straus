@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 369 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 340 |
+| 数学状态 | `established` | 341 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 125 |
-| 证明来源 | `mixed` | 24 |
+| 证明来源 | `mixed` | 25 |
 | 证明来源 | `repository_derivation` | 172 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 303 |
+| 审阅状态 | `internal_review` | 304 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -710,6 +710,7 @@
 | [共享 Type II 秩至少三子群的序列级短零积 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md) (`type-II-shared-higher-rank-sequence-short-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-04 |
 | [共享 Type II 选择器的 p 群 Davenport 阈值](../claims/type-II-shared-p-group-davenport-threshold.md) (`type-II-shared-p-group-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `olson1969_davenport_p_groups`, `grynkiewicz_marchan_ordaz2009` | 2026-08-04 |
 | [共享 Type II 选择器的单素数幂边界](../claims/type-II-shared-prime-power-selection-boundary.md) (`type-II-shared-prime-power-selection-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
+| [共享 Type II 秩三精确 Davenport 阈值与 no-force 边界](../claims/type-II-shared-rank-three-exact-davenport-threshold.md) (`type-II-shared-rank-three-exact-davenport-threshold`) | `established` | `mixed` | `internal_review` | `girard_schmid2019_direct_zero_sum_rank_three`, `schmid2011_c2_squared_c2n` | 2026-08-04 |
 | [共享 Type II 选择器的秩至多二 Davenport 阈值](../claims/type-II-shared-rank-two-davenport-threshold.md) (`type-II-shared-rank-two-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `zhong2025_davenport_rank_two`, `olson1969_davenport_p_groups` | 2026-08-04 |
 | [共享除子残数选择器的固定缺口耦合边界](../claims/type-II-shared-residue-fixed-gap-boundary.md) (`type-II-shared-residue-fixed-gap-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [共享除子残数 Type II 选择器猜想](../claims/type-II-shared-residue-selector-conjecture.md) (`type-II-shared-residue-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-08-04 |

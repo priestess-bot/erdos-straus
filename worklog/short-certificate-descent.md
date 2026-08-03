@@ -4799,3 +4799,46 @@ p=2852809 与秩二 profile 重合，其余 3 个是新增压力点。这是有�
 重放命令：
 
     python3 reproductions/type_ii_automatic_residual_k1_funnel.py --limit 10000000 --gap-cap 239 --higher-rank-short-profile --output reproductions/type-ii-automatic-residual-higher-rank-short-profile-10m-results.json
+
+## 2026-08-04 秩三精确 Davenport 阈值 no-force profile
+
+### 新的群论分支
+
+Girard--Schmid 的 Theorem 2.7 给出
+
+\[
+D(C_2\oplus C_{2a}\oplus C_{2ab})=2a+2ab
+\quad(a,b\ge1).
+\]
+
+因此，对 Type II 缺口中单位素因子残数生成的这类秩三群，若因子多重序列长度
+\(t\ge D(H)\)，则必有非空子序列积为 \(1\pmod m\)，并可重建
+scaled-first marked witness。该输入与已有的动态短零积 profile 分开登记。
+
+### 10M 回放
+
+在同一 \(p\le10^7\)、\(m\le239\) 的 84 个非 \(k=1\) 压力点中，实际出现的 19 个
+秩三缺口全部落在两个精确群族：
+
+- \(C_2\oplus C_2\oplus C_{30}\)：17 个，\(D=32\)；
+- \(C_2\oplus C_4\oplus C_{12}\)：2 个，\(D=16\)。
+
+19 个因子序列都未达到对应阈值；阈值命中为 0。其因子重数上界分别只有 10 和 6，
+所以这里得到的是严格的 Davenport no-force 边界，不是“没有共享除子”的结论。
+此前动态序列 profile 的 4 个低于阈值命中保持为独立证据。
+
+### 证据边界
+
+该分支只处理 \(C_2\oplus C_{2a}\oplus C_{2ab}\) 群族；阈值以下短零积、其它秩三群、
+跨缺口联合选择以及 marked 到无标记递降仍开放。它收紧了 Type II 辅助路线，但不
+改变当前旗舰余项 \(R_M>p\) 的 bundle overflow。
+
+结果文件见[秩三精确 Davenport profile](../reproductions/type-ii-automatic-residual-rank-three-exact-davenport-profile-10m-results.json)，
+主张卡见[共享 Type II 秩三精确 Davenport 阈值](../claims/type-II-shared-rank-three-exact-davenport-threshold.md)，
+文献卡见[Girard--Schmid 秩三零和论文](../papers/girard-schmid2019-direct-zero-sum-rank-three.md)。
+
+重放命令：
+
+    python3 reproductions/type_ii_automatic_residual_k1_funnel.py \
+      --limit 10000000 --gap-cap 239 --rank-three-exact-davenport-profile \
+      --output reproductions/type-ii-automatic-residual-rank-three-exact-davenport-profile-10m-results.json
