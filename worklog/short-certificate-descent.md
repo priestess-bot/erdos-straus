@@ -4474,3 +4474,19 @@ fixed-\(s\) 和 RESET，后者仍作为同状态的后备证据保留。该结�
 这不产生递归边。回执保留 `carrier_mapping_status=unproved`、
 `formal_edge_status=candidate_generation_only` 和 `recursive_edge_eligible=false`，
 说明共同过载/分裂交换二分是容量证书，不是全称逃逸引理。
+
+### 2026-08-03：large-slab 因子对与跨指数层容量接入
+
+统一 selector 新增 `large_slab_factor_pair_layer_capacity` 回执，逐项重算 4 个
+large-slab 案例，覆盖三个锚点 \(\alpha=1,2,3\)。对
+\(N_{\alpha,e}=\alpha p q^e+1\) 的 admissible \(\beta\) 重建
+\(\beta(4\alpha c-p)=N_{\alpha,e}\)，共得到 5 个线性范围内因子对。
+
+层容量部分在 \((p,q)=(337,7)\) 的 15 层网格上重算 105 个跨层 gcd 对、15 个同指数
+分离检查和 4 个重复载体阶记录；来源词部分重算 5 条记录的两端 q-进过载指数，
+4/5 条进入 q-union。\((p,q)=(10170169,101)\) 仍是负边界：q 不进入共同过载，
+但锚点 \(R_Q<R\) 已存在。
+
+该回执把 large-slab 的因子层、图表层和来源路径层放入同一可检索容量对象，但保持
+`carrier_mapping_status=unproved`、`formal_edge_status=candidate_generation_only`、
+`recursive_edge_eligible=false`；不能把层容量统计升级为 Type I/II 终端或 E4。

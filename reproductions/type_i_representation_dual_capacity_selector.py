@@ -52,6 +52,12 @@ SOURCE_WORD_CAPACITY_INPUT = (
 SOURCE_WORD_FROZEN_INPUT = (
     ROOT / "reproductions" / "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json"
 )
+LARGE_SLAB_CAPACITY_INPUT = (
+    ROOT / "reproductions" / "type-i-large-slab-factor-pair-layer-capacity-results.json"
+)
+LARGE_SLAB_CAPACITY_SOURCE = (
+    ROOT / "reproductions" / "type_i_large_slab_factor_pair_layer_capacity.py"
+)
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-representation-dual-capacity-selector-results.json"
 
 SELECTOR_ORDER = [
@@ -123,6 +129,16 @@ def divisors(value: int) -> list[int]:
     return sorted(result)
 
 
+def valuation(value: int, prime: int) -> int:
+    if value <= 0 or prime <= 1:
+        raise AssertionError("valuation arguments must be positive")
+    exponent = 0
+    while value % prime == 0:
+        value //= prime
+        exponent += 1
+    return exponent
+
+
 def canonical_chart(prime: int, support: int) -> tuple[int, int]:
     if prime <= 1 or support <= 0:
         raise AssertionError("canonical chart arguments must be positive")
@@ -149,6 +165,8 @@ def source_hashes() -> dict[str, str]:
         BOTTOM_WORD_CLOSURE_SOURCE.name: sha256(BOTTOM_WORD_CLOSURE_SOURCE),
         SOURCE_WORD_CAPACITY_INPUT.name: sha256(SOURCE_WORD_CAPACITY_INPUT),
         SOURCE_WORD_FROZEN_INPUT.name: sha256(SOURCE_WORD_FROZEN_INPUT),
+        LARGE_SLAB_CAPACITY_INPUT.name: sha256(LARGE_SLAB_CAPACITY_INPUT),
+        LARGE_SLAB_CAPACITY_SOURCE.name: sha256(LARGE_SLAB_CAPACITY_SOURCE),
     }
 
 
@@ -858,6 +876,304 @@ def source_word_joint_capacity_receipt(payload: dict[str, object]) -> dict[str, 
             "frozen_input_sha256": sha256(SOURCE_WORD_FROZEN_INPUT),
             "formal_closure": BOTTOM_WORD_CLOSURE_SOURCE.name,
             "formal_closure_sha256": sha256(BOTTOM_WORD_CLOSURE_SOURCE),
+        },
+    }
+    check_status_boundary(result)
+    return result
+
+
+def large_slab_factor_pair_capacity_receipt(payload: dict[str, object]) -> dict[str, object]:
+    """Attach exact large-slab factor-pair and layer-capacity evidence."""
+    if payload.get("schema_version") != "type-i-large-slab-factor-pair-layer-capacity/v1":
+        raise AssertionError("large-slab capacity schema changed")
+    summary = payload.get("summary")
+    slab_records = payload.get("slab_records")
+    layer = payload.get("layer_capacity")
+    source_records = payload.get("source_word_carrier_records")
+    if (
+        not isinstance(summary, dict)
+        or not isinstance(slab_records, list)
+        or not isinstance(layer, dict)
+        or not isinstance(source_records, list)
+    ):
+        raise AssertionError("large-slab capacity payload shape changed")
+    expected_summary = {
+        "slab_case_count": 4,
+        "covered_alpha": [1, 2, 3],
+        "admissible_factor_pair_count": 5,
+        "layer_gcd_pair_check_count": 105,
+        "same_exponent_check_count": 15,
+        "repeated_carrier_count": 4,
+        "source_word_carrier_case_count": 5,
+        "source_word_slab_q_union_hit_count": 4,
+    }
+    if summary != expected_summary or len(slab_records) != 4 or len(source_records) != 5:
+        raise AssertionError("large-slab capacity summary changed")
+
+    expected_betas = {
+        (5_596_369, 2, 5, 1): [3],
+        (212_973_049, 71, 1, 3): [2],
+        (122_014_489, 467, 1, 1): [4, 244],
+        (37_793_809, 6_211, 1, 2): [1],
+    }
+    for record in slab_records:
+        if not isinstance(record, dict):
+            raise AssertionError("large-slab record shape changed")
+        prime = int(record["prime"])
+        modulus = int(record["R"])
+        q = int(record["q"])
+        exponent = int(record["e"])
+        alpha = int(record["alpha"])
+        beta = int(record["beta"])
+        Q = int(record["Q"])
+        K = int(record["K"])
+        N = int(record["N"])
+        H = int(record["H"])
+        c = int(record["c"])
+        if prime % 24 != 1 or alpha not in (1, 2, 3) or alpha % q == 0:
+            raise AssertionError("large-slab anchor restriction changed")
+        if (
+            Q != q**exponent
+            or modulus != alpha * Q + beta
+            or K != (prime * modulus + 1) // 4
+            or 4 * K != prime * modulus + 1
+            or N != alpha * prime * Q + 1
+            or H != 4 * alpha * c - prime
+            or beta * H != N
+            or beta >= (4 - alpha) * Q
+            or (4 - alpha) * H <= alpha * prime
+        ):
+            raise AssertionError("large-slab factor-pair normal form changed")
+        factor_payload = record.get("N_factorization")
+        if not isinstance(factor_payload, dict):
+            raise AssertionError("large-slab factorization missing")
+        factor_product = 1
+        for prime_text, factor_exponent in factor_payload.items():
+            factor_prime = int(prime_text)
+            factor_exponent = int(factor_exponent)
+            if factor_prime < 2 or factor_exponent < 1:
+                raise AssertionError("large-slab factorization entry changed")
+            factor_product *= factor_prime**factor_exponent
+        if factor_product != N:
+            raise AssertionError("large-slab factorization no longer factors N")
+        admissible = record.get("admissible_records_in_linear_range")
+        if not isinstance(admissible, list):
+            raise AssertionError("large-slab admissible list missing")
+        key = (prime, q, exponent, alpha)
+        if [int(candidate["beta"]) for candidate in admissible] != expected_betas[key]:
+            raise AssertionError("large-slab admissible beta set changed")
+        for candidate in admissible:
+            candidate_beta = int(candidate["beta"])
+            candidate_H = int(candidate["H"])
+            candidate_c = int(candidate["c"])
+            candidate_R = int(candidate["R"])
+            candidate_K = int(candidate["K"])
+            if (
+                candidate_beta * candidate_H != N
+                or candidate_H != 4 * alpha * candidate_c - prime
+                or candidate_R != alpha * Q + candidate_beta
+                or candidate_K != alpha * candidate_beta * candidate_c
+                or 4 * candidate_K != prime * candidate_R + 1
+            ):
+                raise AssertionError("large-slab admissible reconstruction changed")
+
+    if (
+        layer.get("prime") != 337
+        or layer.get("q") != 7
+        or layer.get("alphas") != [1, 2, 3]
+        or layer.get("exponents") != [1, 2, 3, 4, 5]
+        or layer.get("pair_check_count") != 105
+    ):
+        raise AssertionError("large-slab layer grid changed")
+    same_exponent = layer.get("same_exponent_checks")
+    if not isinstance(same_exponent, list) or len(same_exponent) != 15:
+        raise AssertionError("large-slab same-exponent grid changed")
+    expected_same = {
+        (exponent, tuple(alphas)): gcd(
+            337 * 7**exponent * alphas[0] + 1,
+            337 * 7**exponent * alphas[1] + 1,
+        )
+        for exponent in range(1, 6)
+        for alphas in ((1, 2), (2, 3), (1, 3))
+    }
+    for row in same_exponent:
+        if not isinstance(row, dict):
+            raise AssertionError("large-slab same-exponent row changed")
+        exponent = int(row["exponent"])
+        alphas = tuple(int(value) for value in row["alphas"])
+        if row.get("gcd") != expected_same.get((exponent, alphas)):
+            raise AssertionError("large-slab same-exponent gcd changed")
+    repeated = layer.get("repeated_carriers")
+    expected_repeated = [
+        {"alpha": 1, "carrier": 2, "exponents": [1, 2, 3, 4, 5], "order": 1},
+        {"alpha": 1, "carrier": 5, "exponents": [1, 5], "order": 4},
+        {"alpha": 2, "carrier": 3, "exponents": [1, 2, 3, 4, 5], "order": 1},
+        {"alpha": 3, "carrier": 2, "exponents": [1, 2, 3, 4, 5], "order": 1},
+    ]
+    if not isinstance(repeated, list) or len(repeated) != 4:
+        raise AssertionError("large-slab repeated-carrier count changed")
+    if [
+        {
+            key: row[key]
+            for key in ("alpha", "carrier", "exponents", "order")
+        }
+        for row in repeated
+    ] != expected_repeated:
+        raise AssertionError("large-slab repeated-carrier order changed")
+    multi_layer = layer.get("multi_layer_checks")
+    if not isinstance(multi_layer, list) or len(multi_layer) != 3:
+        raise AssertionError("large-slab multi-layer checks changed")
+    for row in multi_layer:
+        if not isinstance(row, dict):
+            raise AssertionError("large-slab multi-layer row changed")
+        alpha = int(row["alpha"])
+        exponents = [int(value) for value in row["exponents"]]
+        anchor = min(exponents)
+        step_gcd = gcd(*(value - anchor for value in exponents if value > anchor))
+        values = [alpha * 337 * 7**value + 1 for value in exponents]
+        if (
+            row.get("step_gcd") != step_gcd
+            or row.get("common_gcd") != gcd(*values)
+            or gcd(*values) != gcd(values[0], 7**step_gcd - 1)
+        ):
+            raise AssertionError("large-slab multi-layer gcd identity changed")
+
+    q_union_count = 0
+    q_union_false: list[dict[str, object]] = []
+    for record in source_records:
+        if not isinstance(record, dict):
+            raise AssertionError("source-word slab record shape changed")
+        prime = int(record["prime"])
+        modulus = int(record["R"])
+        q = int(record["q"])
+        exponent = int(record["e"])
+        U = int(record["U"])
+        V = int(record["V"])
+        theta = int(record["theta"])
+        X_U = int(record["X_U"])
+        X_V = int(record["X_V"])
+        K = (prime * modulus + 1) // 4
+        x_R = (prime + modulus) // 4
+        if (
+            prime % 24 != 1
+            or (U + V) % modulus
+            or X_U + X_V != modulus
+            or K % U
+            or K % q == 0
+            or valuation(X_U, q) + valuation(X_V, q) != exponent
+        ):
+            raise AssertionError("source-word slab boundary changed")
+        u_numerator = theta * X_U - U
+        v_numerator = theta * X_V - V
+        if (
+            u_numerator % modulus
+            or v_numerator % modulus
+            or u_numerator // modulus < 0
+            or v_numerator // modulus < 0
+            or (u_numerator // modulus) + (v_numerator // modulus)
+            != theta - (U + V) // modulus
+        ):
+            raise AssertionError("source-word path quotient identity changed")
+        d_U = gcd(U, theta * X_V)
+        d_V = gcd(V, theta * X_U)
+        L_U = U * theta * X_V // d_U**2
+        L_V = V * theta * X_U // d_V**2
+        common_capacity = lcm(K, x_R)
+        C_U = L_U // gcd(L_U, common_capacity)
+        C_V = L_V // gcd(L_V, common_capacity)
+        actual_exponents = (valuation(C_U, q), valuation(C_V, q))
+        predicted_exponents = (
+            max(0, valuation(theta, q) + valuation(X_V, q) - valuation(x_R, q)),
+            max(
+                0,
+                abs(valuation(V, q) - valuation(theta, q) - valuation(X_U, q))
+                - valuation(x_R, q),
+            ),
+        )
+        if actual_exponents != predicted_exponents:
+            raise AssertionError("source-word q-overload exponent formula changed")
+        if bool(record.get("q_in_union")) != bool(any(actual_exponents)):
+            raise AssertionError("source-word q-union classification changed")
+        if record.get("q_in_union"):
+            q_union_count += 1
+        else:
+            q_union_false.append(record)
+        boundary = record.get("boundary")
+        if isinstance(boundary, dict):
+            expected_R_Q = (-pow(prime, -1, 4 * q**exponent)) % (4 * q**exponent)
+            if boundary.get("R_Q") != expected_R_Q or boundary.get("decreases_R") is not True:
+                raise AssertionError("source-word anchor boundary changed")
+    if q_union_count != 4 or len(q_union_false) != 1:
+        raise AssertionError("source-word q-union count changed")
+    if (
+        int(q_union_false[0]["prime"]) != 10_170_169
+        or int(q_union_false[0]["q"]) != 101
+    ):
+        raise AssertionError("source-word q-union negative boundary changed")
+
+    descriptor = {
+        "family": "large_slab_factor_pair_layer_capacity",
+        "input_sha256": sha256(LARGE_SLAB_CAPACITY_INPUT),
+        "source_sha256": sha256(LARGE_SLAB_CAPACITY_SOURCE),
+        "summary": expected_summary,
+    }
+    result = {
+        "state_id": "family:" + canonical_hash(descriptor),
+        "scope": "large_slab_factor_pair_and_cross_layer_capacity_audit",
+        "equation_target": {"relation": "4K=pR+1"},
+        "certificate_context": {
+            "certificate_type": "large_slab_factor_pair_layer_capacity",
+            "source": LARGE_SLAB_CAPACITY_INPUT.name,
+            "phase": "CAPACITY_AUDIT",
+            "proof_boundary": "large_slab_factor_pair_and_focused_layer_boundary",
+            "carrier_mapping_status": "unproved",
+            "formal_edge_status": "candidate_generation_only",
+        },
+        "large_slab_summary": {
+            "slab_case_count": int(summary["slab_case_count"]),
+            "covered_alpha": list(summary["covered_alpha"]),
+            "admissible_factor_pair_count": int(summary["admissible_factor_pair_count"]),
+            "layer_gcd_pair_check_count": int(summary["layer_gcd_pair_check_count"]),
+            "same_exponent_check_count": int(summary["same_exponent_check_count"]),
+            "repeated_carrier_count": int(summary["repeated_carrier_count"]),
+            "source_word_carrier_case_count": int(summary["source_word_carrier_case_count"]),
+            "source_word_slab_q_union_hit_count": q_union_count,
+            "source_word_q_union_negative_boundary": {
+                "prime": int(q_union_false[0]["prime"]),
+                "q": int(q_union_false[0]["q"]),
+            },
+        },
+        "normal_forms": {
+            "factor_pair": "N_alpha_e=alpha*p*q^e+1=beta*(4*alpha*c-p)",
+            "layer_gcd": "gcd(N_alpha_e,N_alpha2_f)=gcd(N_alpha_e,alpha2*q^(f-e)-alpha)",
+            "source_word_q_excess": "v_q(C_U),v_q(C_V) from theta, endpoint and x_R valuations",
+        },
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "large-slab capacity does not provide a marked lift",
+        },
+        "target_fiber": {
+            "status": "factor_pair_and_qadic_dictionary",
+            "reason": "layer and source-word identities are capacity evidence only",
+        },
+        "signed_defect": {"status": "not_assigned"},
+        "induction_rank": {"status": "not_assigned", "reason": "no E1-E5 recursive edge"},
+        "potential_record": {"status": "absent", "reason": "no well-founded descent is supplied"},
+        "selected_branch": "large_slab_factor_pair_layer_capacity",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "large_slab_factor_pair_and_focused_layer_boundary",
+        "scope_note": (
+            "The factor-pair normal form and layer gcd identities are exact for the recorded "
+            "large slabs. The focused examples do not prove source Reach completeness, "
+            "cross-state carrier mapping, a Type I/II terminal, or E4."
+        ),
+        "source_receipt": {
+            "result_file": LARGE_SLAB_CAPACITY_INPUT.name,
+            "result_sha256": sha256(LARGE_SLAB_CAPACITY_INPUT),
+            "generator_file": LARGE_SLAB_CAPACITY_SOURCE.name,
+            "generator_sha256": sha256(LARGE_SLAB_CAPACITY_SOURCE),
         },
     }
     check_status_boundary(result)
@@ -2401,6 +2717,9 @@ def build_results() -> dict[str, object]:
     source_word_payload = json.loads(
         SOURCE_WORD_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
+    large_slab_payload = json.loads(
+        LARGE_SLAB_CAPACITY_INPUT.read_text(encoding="utf-8")
+    )
     bounded_fourier_payload = json.loads(
         BOUNDED_FOURIER_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
@@ -2431,6 +2750,7 @@ def build_results() -> dict[str, object]:
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
     bottom_word = bottom_word_lattice_capacity_receipt(bottom_word_payload)
     source_word = source_word_joint_capacity_receipt(source_word_payload)
+    large_slab = large_slab_factor_pair_capacity_receipt(large_slab_payload)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
@@ -2470,7 +2790,15 @@ def build_results() -> dict[str, object]:
         "bounded_fourier_carrier_capacity": bounded_fourier,
         "bottom_word_lattice_capacity": bottom_word,
         "source_word_joint_capacity": source_word,
-        "capacity_receipts": [bounded_fourier, debt_phase, capacity, bottom_word, source_word],
+        "large_slab_factor_pair_capacity": large_slab,
+        "capacity_receipts": [
+            bounded_fourier,
+            debt_phase,
+            capacity,
+            bottom_word,
+            source_word,
+            large_slab,
+        ],
         "invariants": {
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
@@ -2484,6 +2812,7 @@ def build_results() -> dict[str, object]:
             "reset_cycle_boundary_requires_E5": True,
            "support_debt_phase_bridge_requires_alternate_mapping": True,
             "bottom_word_capacity_requires_signed_dictionary": True,
+            "large_slab_capacity_requires_carrier_mapping": True,
        },
         "source_sha256": source_hashes(),
         "scope_note": (
@@ -2690,6 +3019,51 @@ def verify_source_word_joint_capacity_contract(result: dict[str, object]) -> Non
         raise AssertionError("source-word frozen input hash changed")
     if source_receipt.get("formal_closure_sha256") != sha256(BOTTOM_WORD_CLOSURE_SOURCE):
         raise AssertionError("source-word closure hash changed")
+
+
+def verify_large_slab_factor_pair_capacity_contract(result: dict[str, object]) -> None:
+    receipts = result.get("capacity_receipts")
+    if not isinstance(receipts, list):
+        raise AssertionError("capacity receipt list missing")
+    matches = [
+        receipt
+        for receipt in receipts
+        if isinstance(receipt, dict)
+        and receipt.get("certificate_context", {}).get("certificate_type")
+        == "large_slab_factor_pair_layer_capacity"
+    ]
+    if len(matches) != 1:
+        raise AssertionError("large-slab capacity receipt shape changed")
+    receipt = matches[0]
+    if (
+        receipt.get("selector_status") != "analysis_evidence"
+        or receipt.get("recursive_edge_eligible") is not False
+        or receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+    ):
+        raise AssertionError("large-slab capacity receipt crossed status boundary")
+    summary = receipt.get("large_slab_summary")
+    if not isinstance(summary, dict):
+        raise AssertionError("large-slab capacity summary missing")
+    expected = {
+        "slab_case_count": 4,
+        "covered_alpha": [1, 2, 3],
+        "admissible_factor_pair_count": 5,
+        "layer_gcd_pair_check_count": 105,
+        "same_exponent_check_count": 15,
+        "repeated_carrier_count": 4,
+        "source_word_carrier_case_count": 5,
+        "source_word_slab_q_union_hit_count": 4,
+        "source_word_q_union_negative_boundary": {"prime": 10_170_169, "q": 101},
+    }
+    if summary != expected:
+        raise AssertionError("large-slab capacity summary changed")
+    source_receipt = receipt.get("source_receipt")
+    if not isinstance(source_receipt, dict):
+        raise AssertionError("large-slab capacity source receipt missing")
+    if source_receipt.get("result_sha256") != sha256(LARGE_SLAB_CAPACITY_INPUT):
+        raise AssertionError("large-slab capacity result hash changed")
+    if source_receipt.get("generator_sha256") != sha256(LARGE_SLAB_CAPACITY_SOURCE):
+        raise AssertionError("large-slab capacity generator hash changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -2961,6 +3335,7 @@ def main() -> None:
         verify_bounded_fourier_contract(result)
         verify_bottom_word_lattice_contract(result)
         verify_source_word_joint_capacity_contract(result)
+        verify_large_slab_factor_pair_capacity_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_overflow_menu_contract(result)

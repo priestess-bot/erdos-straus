@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier 与底层路径字族级容量边界、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -23,6 +23,7 @@ depends_on:
   - type-I-f-bounded-fourier-carrier-capacity-boundary
   - type-I-bottom-word-lattice-pareto-cycle-capacity-selector
   - type-I-target-fiber-joint-capacity-signed-carrier-dictionary
+  - type-I-large-slab-factor-pair-layer-capacity
   - type-I-universal-p-source-capacity-anchor-orbit
   - denominator-escape-state-contract
 topics:
@@ -55,6 +56,8 @@ sources:
     role: path-word-SNF-cycle-capacity-boundary
   - claim: type-I-target-fiber-joint-capacity-signed-carrier-dictionary
     role: signed-target-fiber-capacity-dictionary
+  - claim: type-I-large-slab-factor-pair-layer-capacity
+    role: large-slab-factor-pair-and-cross-layer-capacity-boundary
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -194,6 +197,12 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 `split_exchange`，并保留 \(p=2017\) 的四节点 split Reach 边界。交换恒等式和
 缺陷方向是精确代数证据，但不提供共享载体、标记提升或 E4，因此同样保持
 `analysis_evidence`。
+
+另登记 `large_slab_factor_pair_layer_capacity` 回执。它重算四个三锚点 large-slab
+案例、105 个跨指数层 gcd 对、15 个同指数分离检查，以及 5 条来源词的两端 q-进过载
+指数；其中 4/5 条来源记录进入 q-union，\((p,q)=(10170169,101)\) 保留为“q 不进
+共同过载但锚点 \(R_Q<R\)”的边界。因子对正规形和层 gcd 恒等式是精确证据，但不提供
+跨状态 carrier mapping、标记提升或 E4，所以回执仍是 `analysis_evidence`。
 
 统一结果还包含一个 `universal_p_source_anchor_orbit` source receipt。它重放
 \[

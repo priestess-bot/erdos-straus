@@ -26,6 +26,8 @@ sources:
   role: path-word-lattice-and-cycle-capacity-boundary
 - claim: type-I-target-fiber-joint-capacity-signed-carrier-dictionary
   role: signed-target-fiber-capacity-dictionary
+- claim: type-I-large-slab-factor-pair-layer-capacity
+  role: large-slab-factor-pair-and-cross-layer-capacity-boundary
 - claim: type-I-overflow-support-preserving-dual-criterion
   role: determinant-dual-support-obstruction
 - paper: bradford2024
@@ -3300,3 +3302,11 @@ ps=4rd+1,
 7/7 的 `common_overload` 与 `split_exchange`，并保留 \(p=2017\) 四节点完整 Reach
 作为“分裂交换不自动终端”的边界。该结果把带符号交换恒等式纳入容量对象，但仍不
 提供共享载体、Type I/II 终端或 E4。
+
+统一容量对象现又登记 `large_slab_factor_pair_layer_capacity`：重算 4 个三锚点
+large-slab、105 个跨指数层 gcd 对、15 个同指数分离检查和 5 条来源词载体记录。
+因子对正规形
+\(\beta(4\alpha c-p)=\alpha p q^e+1\) 与层 gcd 恒等式是精确的；来源词记录中
+4/5 条的 slab 素数进入 q-union，但 \((p,q)=(10170169,101)\) 仍是 q 不进入
+共同过载而锚点有 \(R_Q<R\) 的边界。因此这条回执加强了 large-slab 的跨层容量字典，
+仍不提供 carrier mapping、Type I/II 终端或 E4。

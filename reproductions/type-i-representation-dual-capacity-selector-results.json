@@ -761,6 +761,81 @@
         "reason": "common-overload and split-exchange are capacity branches only",
         "status": "signed_cross_pair_dictionary"
       }
+    },
+    {
+      "certificate_context": {
+        "carrier_mapping_status": "unproved",
+        "certificate_type": "large_slab_factor_pair_layer_capacity",
+        "formal_edge_status": "candidate_generation_only",
+        "phase": "CAPACITY_AUDIT",
+        "proof_boundary": "large_slab_factor_pair_and_focused_layer_boundary",
+        "source": "type-i-large-slab-factor-pair-layer-capacity-results.json"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "4K=pR+1"
+      },
+      "induction_rank": {
+        "reason": "no E1-E5 recursive edge",
+        "status": "not_assigned"
+      },
+      "large_slab_summary": {
+        "admissible_factor_pair_count": 5,
+        "covered_alpha": [
+          1,
+          2,
+          3
+        ],
+        "layer_gcd_pair_check_count": 105,
+        "repeated_carrier_count": 4,
+        "same_exponent_check_count": 15,
+        "slab_case_count": 4,
+        "source_word_carrier_case_count": 5,
+        "source_word_q_union_negative_boundary": {
+          "prime": 10170169,
+          "q": 101
+        },
+        "source_word_slab_q_union_hit_count": 4
+      },
+      "marked_solution_set": {
+        "reason": "large-slab capacity does not provide a marked lift",
+        "status": "not_carried"
+      },
+      "normal_forms": {
+        "factor_pair": "N_alpha_e=alpha*p*q^e+1=beta*(4*alpha*c-p)",
+        "layer_gcd": "gcd(N_alpha_e,N_alpha2_f)=gcd(N_alpha_e,alpha2*q^(f-e)-alpha)",
+        "source_word_q_excess": "v_q(C_U),v_q(C_V) from theta, endpoint and x_R valuations"
+      },
+      "potential_record": {
+        "reason": "no well-founded descent is supplied",
+        "status": "absent"
+      },
+      "proof_boundary": "large_slab_factor_pair_and_focused_layer_boundary",
+      "recursive_edge_eligible": false,
+      "scope": "large_slab_factor_pair_and_cross_layer_capacity_audit",
+      "scope_note": "The factor-pair normal form and layer gcd identities are exact for the recorded large slabs. The focused examples do not prove source Reach completeness, cross-state carrier mapping, a Type I/II terminal, or E4.",
+      "selected_branch": "large_slab_factor_pair_layer_capacity",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "status": "not_assigned"
+      },
+      "source_receipt": {
+        "generator_file": "type_i_large_slab_factor_pair_layer_capacity.py",
+        "generator_sha256": "e6cbdadcd01827ee981032ba7b9c83b74e2adf4cb0dc5cd398cd2e865db0ef64",
+        "result_file": "type-i-large-slab-factor-pair-layer-capacity-results.json",
+        "result_sha256": "f12981313d95ccc0afdf975f0112c48160be2eff308c4131e911782b208637bf"
+      },
+      "state_id": "family:46c274c951915c16c07f8e24918cc63bd445b73a5d10655c1150475c7ae77b76",
+      "target_fiber": {
+        "reason": "layer and source-word identities are capacity evidence only",
+        "status": "factor_pair_and_qadic_dictionary"
+      }
     }
   ],
   "invariants": {
@@ -770,12 +845,88 @@
     "fixed_n_overflow_rank_requires_positive_chart": true,
     "fixed_s_overflow_rank_requires_product_divisor": true,
     "hard_core_negative_receipt_never_recursive": true,
+    "large_slab_capacity_requires_carrier_mapping": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
     "support_debt_phase_bridge_requires_alternate_mapping": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
+  },
+  "large_slab_factor_pair_capacity": {
+    "certificate_context": {
+      "carrier_mapping_status": "unproved",
+      "certificate_type": "large_slab_factor_pair_layer_capacity",
+      "formal_edge_status": "candidate_generation_only",
+      "phase": "CAPACITY_AUDIT",
+      "proof_boundary": "large_slab_factor_pair_and_focused_layer_boundary",
+      "source": "type-i-large-slab-factor-pair-layer-capacity-results.json"
+    },
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "equation_target": {
+      "relation": "4K=pR+1"
+    },
+    "induction_rank": {
+      "reason": "no E1-E5 recursive edge",
+      "status": "not_assigned"
+    },
+    "large_slab_summary": {
+      "admissible_factor_pair_count": 5,
+      "covered_alpha": [
+        1,
+        2,
+        3
+      ],
+      "layer_gcd_pair_check_count": 105,
+      "repeated_carrier_count": 4,
+      "same_exponent_check_count": 15,
+      "slab_case_count": 4,
+      "source_word_carrier_case_count": 5,
+      "source_word_q_union_negative_boundary": {
+        "prime": 10170169,
+        "q": 101
+      },
+      "source_word_slab_q_union_hit_count": 4
+    },
+    "marked_solution_set": {
+      "reason": "large-slab capacity does not provide a marked lift",
+      "status": "not_carried"
+    },
+    "normal_forms": {
+      "factor_pair": "N_alpha_e=alpha*p*q^e+1=beta*(4*alpha*c-p)",
+      "layer_gcd": "gcd(N_alpha_e,N_alpha2_f)=gcd(N_alpha_e,alpha2*q^(f-e)-alpha)",
+      "source_word_q_excess": "v_q(C_U),v_q(C_V) from theta, endpoint and x_R valuations"
+    },
+    "potential_record": {
+      "reason": "no well-founded descent is supplied",
+      "status": "absent"
+    },
+    "proof_boundary": "large_slab_factor_pair_and_focused_layer_boundary",
+    "recursive_edge_eligible": false,
+    "scope": "large_slab_factor_pair_and_cross_layer_capacity_audit",
+    "scope_note": "The factor-pair normal form and layer gcd identities are exact for the recorded large slabs. The focused examples do not prove source Reach completeness, cross-state carrier mapping, a Type I/II terminal, or E4.",
+    "selected_branch": "large_slab_factor_pair_layer_capacity",
+    "selector_status": "analysis_evidence",
+    "signed_defect": {
+      "status": "not_assigned"
+    },
+    "source_receipt": {
+      "generator_file": "type_i_large_slab_factor_pair_layer_capacity.py",
+      "generator_sha256": "e6cbdadcd01827ee981032ba7b9c83b74e2adf4cb0dc5cd398cd2e865db0ef64",
+      "result_file": "type-i-large-slab-factor-pair-layer-capacity-results.json",
+      "result_sha256": "f12981313d95ccc0afdf975f0112c48160be2eff308c4131e911782b208637bf"
+    },
+    "state_id": "family:46c274c951915c16c07f8e24918cc63bd445b73a5d10655c1150475c7ae77b76",
+    "target_fiber": {
+      "reason": "layer and source-word identities are capacity evidence only",
+      "status": "factor_pair_and_qadic_dictionary"
+    }
   },
   "overflow_direct_type_ii": {
     "certificate_family": "p_plus_four_type_ii_sqrt_bound",
@@ -7665,6 +7816,7 @@
     "type-i-f-bounded-fourier-carrier-capacity-results.json": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074",
     "type-i-f-bounded-fourier-certificate-results.json": "97bd474f82271b3d6a1eb5260fc49b7d48551c4fc2872402b74759f3d817bd68",
     "type-i-fixed-layer-stabilizer-fourier-results.json": "e00071c2d4496a0ceda3c3cb9810de7adb7875af0eeb828c75ffeab14a37c6d4",
+    "type-i-large-slab-factor-pair-layer-capacity-results.json": "f12981313d95ccc0afdf975f0112c48160be2eff308c4131e911782b208637bf",
     "type-i-overflow-defect-unit-phase-capacity-results.json": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c",
     "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
     "type-i-psi-one-full-spectrum-terminal-descent-audit-results.json": "eb0ef6c4fe5103d907916ebb4d2fc0bc97913344d3cb143e1f17cb582fa0adc2",
@@ -7673,7 +7825,8 @@
     "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a",
     "type_i_bottom_word_lattice_pareto_cycle_capacity.py": "ecfafce270eaf981de948985e3e0b3818f795452ae6591574e9c5462bf2993fe",
     "type_i_f_psi_one_formal_transition_closure.py": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
-    "type_i_global_linear_b1_failure_general_b_profile_500m.py": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d"
+    "type_i_global_linear_b1_failure_general_b_profile_500m.py": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d",
+    "type_i_large_slab_factor_pair_layer_capacity.py": "e6cbdadcd01827ee981032ba7b9c83b74e2adf4cb0dc5cd398cd2e865db0ef64"
   },
   "source_word_joint_capacity": {
     "certificate_context": {
