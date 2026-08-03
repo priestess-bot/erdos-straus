@@ -11,17 +11,17 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 368 |
+| 数学状态 | `computationally_reproduced` | 369 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 334 |
 | 数学状态 | `open` | 12 |
-| 证明来源 | `computational_reproduction` | 124 |
+| 证明来源 | `computational_reproduction` | 125 |
 | 证明来源 | `mixed` | 24 |
 | 证明来源 | `repository_derivation` | 166 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 296 |
+| 审阅状态 | `internal_review` | 297 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -701,6 +701,7 @@
 | [无界首尺度、缺口至多 239 的共享因子 Type II 扇覆盖一千万](../claims/type-II-shared-divisor-fan-audit.md) (`type-II-shared-divisor-fan-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [缺口 23 的自动共享因子及九类 Type II 子扇](../claims/type-II-shared-gap-23-automatic-fan.md) (`type-II-shared-gap-23-automatic-fan`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [共享 Type II 选择器的半百万缺口逃逸边界](../claims/type-II-shared-half-million-gap-escape-boundary.md) (`type-II-shared-half-million-gap-escape-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
+| [共享 Type II 秩至少三子群的序列级短零积 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md) (`type-II-shared-higher-rank-sequence-short-profile`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-04 |
 | [共享 Type II 选择器的 p 群 Davenport 阈值](../claims/type-II-shared-p-group-davenport-threshold.md) (`type-II-shared-p-group-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `olson1969_davenport_p_groups`, `grynkiewicz_marchan_ordaz2009` | 2026-08-04 |
 | [共享 Type II 选择器的单素数幂边界](../claims/type-II-shared-prime-power-selection-boundary.md) (`type-II-shared-prime-power-selection-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [共享 Type II 选择器的秩至多二 Davenport 阈值](../claims/type-II-shared-rank-two-davenport-threshold.md) (`type-II-shared-rank-two-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `zhong2025_davenport_rank_two`, `olson1969_davenport_p_groups` | 2026-08-04 |

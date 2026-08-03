@@ -20,6 +20,7 @@ used_by:
 - type-I-overflow-a-one-dual-outer-rank-reset
 - type-II-shared-p-group-davenport-threshold
 - type-II-shared-rank-two-davenport-threshold
+- type-II-shared-higher-rank-sequence-short-profile
 sources:
 - claim: type-I-universal-p-source-capacity-anchor-orbit
   role: universal-source-and-capacity-orbit
@@ -37,6 +38,8 @@ sources:
   role: p-primary-shared-Type-II-threshold
 - claim: type-II-shared-rank-two-davenport-threshold
   role: rank-at-most-two-shared-Type-II-threshold
+- claim: type-II-shared-higher-rank-sequence-short-profile
+  role: rank-at-least-three-finite-sequence-profile
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
 - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
@@ -3479,3 +3482,21 @@ t=13,\quad D(H)=13,
 对应共享除子 \(D_I=44032\)、首尺度 \(k=1129\)。仍有 55 个压力点未被该阈值覆盖。
 秩至少三、低于 Davenport 阈值的短零积和跨缺口共同避靶仍未处理；因此这只是 Type II
 局部结构层的扩大，不改变旗舰全称余项。
+
+## 2026-08-04：秩至少三 Type II 的序列级短零积 profile
+
+为处理秩二阈值之外的下一层状态，脚本对同一 84 个非 k=1 压力点的全部合法
+Type II 缺口恢复生成子群不变因子，并只对 rank 至少三的状态运行精确 0/1
+最短零积动态程序。10M、m<=239 扫描得到 19 个秩三缺口：17 个为
+C2 + C2 + C30，2 个为 C2 + C4 + C12。
+
+序列级动态程序命中 4/84 个压力点并重建 scaled-first marked witness，80 个未命中。
+4 个见证为 p=2669209（m=231, D_I=667360, length=8）、p=2852809
+（m=195, D_I=18526, length=3）、p=6254329（m=231, D_I=2080, length=7）和
+p=7504249（m=231, D_I=16864, length=7）。p=2852809 与秩二 profile 重合，
+其余 3 个是新的压力点。
+
+这是一条有限序列 profile，不是秩至少三 Davenport 定理；80 个 miss 只表示给定
+因子多重序列未找到动态零积，不能排除其它排序、其它缺口、群论证书或直接终端。
+因此下一步应研究秩三低于阈值的逆零和结构和跨缺口联合避靶，同时保持 marked
+见证与无标记递降的证据边界。详见[秩至少三序列短 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md)。

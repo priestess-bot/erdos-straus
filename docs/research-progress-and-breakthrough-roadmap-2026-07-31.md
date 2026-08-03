@@ -290,6 +290,18 @@ marked Type II 表示升级为无标记递降。后文关于“两个主余项�
 profile 仍有 55/84 个压力点未覆盖，且秩至少三、阈值以下短零积、跨缺口共同避靶和
 marked 到无标记递降均未解决。详见[共享 Type II 秩至多二 Davenport 阈值](../claims/type-II-shared-rank-two-davenport-threshold.md)。
 
+**2026-08-04 秩至少三序列级 profile。** 沿着上述未覆盖边界，新增回放只对秩至少三
+的生成子群运行 0/1 动态程序，寻找给定 p+m 素因子多重序列的最短非空零积。10M、
+m<=239 的 84 个压力点中只有 19 个秩三缺口：17 个结构为 C2 + C2 + C30，2 个
+结构为 C2 + C4 + C12；动态序列搜索命中 4/84，80/84 未命中。4 个 marked
+见证为 p=2669209、2852809、6254329、7504249，其中 3 个相对秩二 profile 是
+新压力点，最短子积长度为 8、3、7、7。
+
+这一步把下一阶段的可证方向收缩为秩三低于阈值的逆零和结构、因子顺序/分组不变量和
+跨缺口联合避靶；它不声称一般秩三 Davenport 公式，也不把有限序列 miss 当作无共享
+除子证明。主张卡见[共享 Type II 秩至少三序列短 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md)，
+结果见[10M 秩至少三回执](../reproductions/type-ii-automatic-residual-higher-rank-short-profile-10m-results.json)。
+
 ## 一、结论先行
 
 最近这一轮工作的价值明显高于继续扩大有限扫描。项目已经把上一阶段的“联合带符号分母缺陷”推进成一条更完整的结构链：

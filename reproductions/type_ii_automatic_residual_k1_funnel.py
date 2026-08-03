@@ -322,6 +322,32 @@ def nonempty_subproduct_one(factors: list[int], modulus: int) -> int | None:
     return None
 
 
+def shortest_nonempty_subproduct_one(
+    factors: list[int], modulus: int
+) -> tuple[int, int] | None:
+    """Return the shortest nonempty unit-factor subproduct equal to one."""
+    reachable: dict[int, tuple[int, int]] = {1: (0, 1)}
+    best: tuple[int, int] | None = None
+    for factor in factors:
+        previous = tuple(reachable.items())
+        updates: dict[int, tuple[int, int]] = {}
+        for residue, (length, product) in previous:
+            next_residue = residue * factor % modulus
+            candidate = (length + 1, product * factor)
+            if next_residue == 1 and candidate[0] > 0:
+                if candidate[1] <= 1 or candidate[1] % modulus != 1:
+                    raise AssertionError("shortest subproduct witness is invalid")
+                if best is None or candidate < best:
+                    best = candidate
+            current = reachable.get(next_residue)
+            pending = updates.get(next_residue)
+            if current is None or candidate < current:
+                if pending is None or candidate < pending:
+                    updates[next_residue] = candidate
+    reachable.update(updates)
+    return best
+
+
 def single_prime_shared_profile(
     records: list[dict[str, object]], gap_cap: int, spf: list[int]
 ) -> dict[str, object]:
@@ -654,6 +680,131 @@ def rank_two_davenport_shared_profile(
     }
 
 
+def higher_rank_short_shared_profile(
+    records: list[dict[str, object]], gap_cap: int, spf: list[int]
+) -> dict[str, object]:
+    """Search rank-at-least-three states for shortest finite zero products."""
+    witnesses: list[dict[str, object]] = []
+    misses: list[int] = []
+    higher_rank_gap_count = 0
+    rank_histogram: Counter[int] = Counter()
+    invariant_factor_histogram: Counter[tuple[int, ...]] = Counter()
+    primary_structure_histogram: Counter[str] = Counter()
+    short_product_length_histogram: Counter[int] = Counter()
+    for record in records:
+        prime = int(record["prime"])
+        candidates: list[
+            tuple[
+                int,
+                int,
+                int,
+                int,
+                tuple[int, ...],
+                tuple[tuple[int, tuple[int, ...]], ...],
+            ]
+        ] = []
+        for gap in range(3, min(gap_cap, prime - 2) + 1, 4):
+            certificate = short_certificate.type_ii_residue_certificate(
+                prime, gap, spf
+            )
+            if certificate is None:
+                continue
+            factors = unit_prime_factor_multiset_from_spf(prime + gap, gap, spf)
+            subgroup = generated_unit_residue_subgroup(factors, gap)
+            invariant_factors, primary_data = abelian_invariant_factor_data(
+                subgroup, gap
+            )
+            if len(invariant_factors) < 3:
+                continue
+            higher_rank_gap_count += 1
+            rank_histogram[len(invariant_factors)] += 1
+            invariant_factor_histogram[invariant_factors] += 1
+            primary_label = ";".join(
+                str(group_prime) + ":" + ",".join(
+                    str(exponent) for exponent in exponents
+                )
+                for group_prime, exponents in primary_data
+            )
+            primary_structure_histogram[primary_label] += 1
+            shortest = shortest_nonempty_subproduct_one(factors, gap)
+            if shortest is None:
+                continue
+            shortest_length, shared_divisor = shortest
+            first_scale = (shared_divisor - 1) // gap
+            witness = short_certificate.type_ii_scaled_first_tail_deflation_witness(
+                prime, gap, first_scale, spf
+            )
+            if witness is None:
+                raise AssertionError(
+                    "higher-rank candidate did not lift through the marked first term"
+                )
+            candidates.append(
+                (
+                    gap,
+                    shortest_length,
+                    shared_divisor,
+                    len(factors),
+                    invariant_factors,
+                    primary_data,
+                )
+            )
+        if not candidates:
+            misses.append(prime)
+            continue
+        (
+            gap,
+            shortest_length,
+            shared_divisor,
+            factor_count,
+            invariant_factors,
+            primary_data,
+        ) = min(candidates, key=lambda item: (item[0], item[1], item[2]))
+        short_product_length_histogram[shortest_length] += 1
+        witnesses.append(
+            {
+                "prime": prime,
+                "gap": gap,
+                "shared_divisor": shared_divisor,
+                "first_scale": (shared_divisor - 1) // gap,
+                "shortest_subproduct_length": shortest_length,
+                "unit_factor_multiplicity": factor_count,
+                "generated_subgroup_order": math.prod(invariant_factors),
+                "invariant_factors": list(invariant_factors),
+                "primary_components": [
+                    {"prime": group_prime, "exponents": list(exponents)}
+                    for group_prime, exponents in primary_data
+                ],
+            }
+        )
+    return {
+        "arithmetic": (
+            "complete legal-gap Type II certificate scan; rank-at-least-three "
+            "generated unit subgroups are profiled by exact invariant factors, "
+            "then searched by a 0/1 dynamic program for the shortest nonempty "
+            "factor subsequence with product one modulo the gap"
+        ),
+        "scope_note": (
+            "This is an exact finite sequence profile, not a general rank-at-least-three "
+            "Davenport theorem. A miss means only that the supplied prime-factor sequence "
+            "has no dynamic zero product under this scan; it does not rule out another "
+            "ordering, a different gap, or a non-sequence group-theoretic certificate."
+        ),
+        "higher_rank_short_shared_count": len(witnesses),
+        "higher_rank_short_shared_witnesses": witnesses,
+        "higher_rank_short_shared_misses": misses,
+        "higher_rank_gap_count": higher_rank_gap_count,
+        "rank_histogram": dict(sorted(rank_histogram.items())),
+        "invariant_factor_histogram": {
+            ",".join(str(value) for value in invariant_factors): count
+            for invariant_factors, count in sorted(invariant_factor_histogram.items())
+        },
+        "primary_structure_histogram": dict(sorted(primary_structure_histogram.items())),
+        "short_product_length_histogram": dict(
+            sorted(short_product_length_histogram.items())
+        ),
+    }
+
+
 def totient_threshold_shared_profile(
     records: list[dict[str, object]], gap_cap: int, spf: list[int]
 ) -> dict[str, object]:
@@ -939,6 +1090,7 @@ def run_audit(
     include_subgroup_threshold_profile: bool = False,
     include_p_group_davenport_profile: bool = False,
     include_rank_two_davenport_profile: bool = False,
+    include_higher_rank_short_profile: bool = False,
     include_totient_threshold_profile: bool = False,
     include_prime_power_profile: bool = False,
     include_support_profile: bool = False,
@@ -1022,6 +1174,10 @@ def run_audit(
         result["rank_two_davenport_shared_profile"] = rank_two_davenport_shared_profile(
             non_k1_records, gap_cap, spf
         )
+    if include_higher_rank_short_profile:
+        result["higher_rank_short_shared_profile"] = higher_rank_short_shared_profile(
+            non_k1_records, gap_cap, spf
+        )
     if include_totient_threshold_profile:
         result["totient_threshold_shared_profile"] = totient_threshold_shared_profile(
             non_k1_records, gap_cap, spf
@@ -1071,6 +1227,11 @@ def main() -> int:
         help="also apply the exact Davenport threshold for rank-at-most-two subgroups",
     )
     parser.add_argument(
+        "--higher-rank-short-profile",
+        action="store_true",
+        help="also search rank-at-least-three states for shortest sequence zero products",
+    )
+    parser.add_argument(
         "--prime-power-profile",
         action="store_true",
         help="also scan every legal gap for a one-prime-power shared divisor",
@@ -1094,6 +1255,7 @@ def main() -> int:
         include_subgroup_threshold_profile=args.subgroup_threshold_profile,
         include_p_group_davenport_profile=args.p_group_davenport_profile,
         include_rank_two_davenport_profile=args.rank_two_davenport_profile,
+        include_higher_rank_short_profile=args.higher_rank_short_profile,
         include_totient_threshold_profile=args.totient_threshold_profile,
         include_prime_power_profile=args.prime_power_profile,
         include_support_profile=args.support_profile,

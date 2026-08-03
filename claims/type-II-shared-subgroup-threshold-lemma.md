@@ -110,3 +110,6 @@ D=q_{i+1}\cdots q_j
 [共享 Type II 秩至多二 Davenport 阈值](type-II-shared-rank-two-davenport-threshold.md)。
 这些分支只改变充分条件的阈值，不改变本卡的零覆盖结论，也不处理秩至少三的子群、
 低于阈值的短零积或跨缺口的共同避靶。
+秩至少三的有限序列 profile 已单独回放，但只命中 4/84 个压力点，见
+[共享 Type II 秩至少三序列短 profile](type-II-shared-higher-rank-sequence-short-profile.md)；
+它同样不提供一般秩三 Davenport 公式。

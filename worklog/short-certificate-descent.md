@@ -4764,3 +4764,38 @@ scaled-first marked Type II 提升。实现、文献输入和边界见[秩至多
 秩至少三、低于 Davenport 阈值的短零积、跨缺口共同避靶以及 marked 到无标记递降均
 仍开放。profile miss 只表示未达到本充分条件，不表示没有其它共享除子，也不构成
 overflow 的全称递归出口。
+
+## 2026-08-04 秩至少三 Type II 序列级短零积 profile
+
+### 目的
+
+在秩至多二 Davenport 阈值之外，检查同一 84 个非 k=1 压力点中秩至少三的单位
+残数生成子群，寻找给定 p+m 素因子多重序列中的最短非空零积。
+
+### 实现与回执
+
+脚本用各 primary 扭元的精确计数恢复不变因子；对 rank >= 3 的状态运行 0/1 动态
+程序，每个因子至多使用一次，并在每个残数保留最短长度和实际整数乘积。找到
+D_I = 1 mod m 后，逐项验证 D_I | p+m、D_I > 1 以及 scaled-first marked lift。
+
+10M、m<=239 完整扫描得到：
+
+- 秩至少三缺口 19 个，全部为秩三；结构为 C2 + C2 + C30 的 17 个和
+  C2 + C4 + C12 的 2 个；
+- 序列级命中 4/84，未命中 80/84；
+- 命中见证为 p=2669209,m=231,D_I=667360,length=8；p=2852809,m=195,
+  D_I=18526,length=3；p=6254329,m=231,D_I=2080,length=7；以及
+  p=7504249,m=231,D_I=16864,length=7。
+
+### 解释与边界
+
+p=2852809 与秩二 profile 重合，其余 3 个是新增压力点。这是有限序列 profile，不是
+一般秩至少三 Davenport 定理；80 个 miss 只对给定因子序列负责，不能推出其它排序、
+其它缺口或群论零和证书不存在。命中仍是 marked 表示，不能替代无标记递降。
+
+结果文件见[10M 秩至少三回执](../reproductions/type-ii-automatic-residual-higher-rank-short-profile-10m-results.json)，
+主张卡见[共享 Type II 秩至少三序列短 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md)。
+
+重放命令：
+
+    python3 reproductions/type_ii_automatic_residual_k1_funnel.py --limit 10000000 --gap-cap 239 --higher-rank-short-profile --output reproductions/type-ii-automatic-residual-higher-rank-short-profile-10m-results.json

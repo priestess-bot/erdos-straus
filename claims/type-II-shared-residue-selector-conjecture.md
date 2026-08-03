@@ -20,6 +20,8 @@ sources:
   role: Type-II-factorization-context
 - claim: type-II-shared-rank-two-davenport-threshold
   role: rank-at-most-two-local-threshold
+- claim: type-II-shared-higher-rank-sequence-short-profile
+  role: finite-rank-at-least-three-sequence-profile
 visibility: public
 last_checked: '2026-08-04'
 ---
@@ -151,6 +153,17 @@ type-II-shared-p-group-davenport-threshold 中实现。10M 聚焦回放对 84 �
 \(p=1497049,m=39,H=C_2\oplus C_{12}\) 的共享除子。仍有 55 个 profile miss，且
 秩至少三、阈值以下短零积和 marked 到无标记递降未处理；详见
 [共享 Type II 秩至多二 Davenport 阈值](type-II-shared-rank-two-davenport-threshold.md)。
+
+继续向上检查同一压力集的秩至少三状态后，10M、m<=239 的完整扫描只发现 19 个
+此类缺口，全部为秩三：17 个生成子群不变因子为 C2 + C2 + C30，2 个为
+C2 + C4 + C12。对实际 p+m 素因子序列运行最短非空零积动态程序，只在 4/84 个
+压力点得到共享除子并重建 marked witness，80 个仍未命中；其中 3 个素数是对秩二
+profile 的新增压力点。这个结果把下一层边界定位为秩三有限群中的序列级短零积、因子
+排序与跨缺口联合选择，而不是声称有一个可直接套用的秩三 Davenport 阈值。详见
+[共享 Type II 秩至少三序列短 profile](type-II-shared-higher-rank-sequence-short-profile.md)。
+
+因此共享选择器猜想仍保持 open：有限 profile 的 miss 不能推出不存在其它除子积、
+另一缺口或直接 Type II 终端，marked witness 也不能替代无标记递降。
 
 最短零积长度的六因子强化已在更大范围失败：\(p=95741809\) 于 \(m=71\) 的最短
 共享因子为 \(7364760=2^3\cdot3\cdot5\cdot13\cdot4721\)，有
