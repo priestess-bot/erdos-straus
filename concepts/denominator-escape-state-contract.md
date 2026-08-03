@@ -844,6 +844,7 @@ n\equiv1\pmod4,
 | 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
 | overflow 的某个对偶图表 | 只有 \(A'=\operatorname{lcm}(A,t)>A\)、\(A'\mid K_t\) 且 (7) 成立时才是 joined-support verified edge；否则仍是 candidate/analysis evidence |
 | d=1 overflow 的 \(p-2\) G 重图表 | \(M\bmod p=(p-1)/4\) 只给出普适 G 分离和空支撑纤维；它丢弃旧支撑，不能作为 RESET 或恒等 marked lift |
+| overflow 余数 \(r=1\) 的对称边界 | \(s=1\)、\(d=(p-1)/4\)，两侧固定为 \((p-2,(p-1)^2/4)\) 与 \((3,(3p+1)/4)\)；不自动支付旧 support，不能作为新的递归出口 |
 | 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
 
 ## 8. 验收表
@@ -902,3 +903,7 @@ bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项�
 \((p-2,(p-1)^2/4)\)，并且普适地属于 G 态。该分类只删除“d=1 固定-\(n\) 支撑边”
 这一误读；若 \(p+4\) 没有 \(3\bmod4\) 因子，仍需回到上述非支撑终端或容量问题。
 详见[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)。
+
+对称的 \(r=1\) 分支也已分类：它强制 \(s=1,d=(p-1)/4\)，d 侧仍是上述 G 图表，
+r 侧是 \(R=3\) 的单位载体。它可以在 \(M=kp+1\) 中真实出现，但不能绕过
+`lcm(A,t)>A`、支撑整除和外层势条件；详见[overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md)。

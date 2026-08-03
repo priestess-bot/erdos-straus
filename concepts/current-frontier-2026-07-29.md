@@ -3325,3 +3325,11 @@ M\equiv r=\frac{p-1}{4}\pmod p,
 \(\left(\frac q{p-2}\right)=1\)，而 \(\left(\frac{-1}{p-2}\right)=-1\)。因此该 dual chart 普适地是 G 态，支撑内目标纤维为空；它不能被误写成保留旧 charged support 的 RESET。若 \(p+4\) 有
 \(3\pmod4\) 因子，直接 Type II 仍由 terminal-first 优先登记，否则剩余任务必须转向非支撑终端、marked lift 或跨状态容量。主张卡见
 [d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)，选择器字段为 overflow_d_one_p_minus_two_g_rechart。
+
+同一 determinant 还有一个对称的 \(r=1\) 边界。写 \(M=kp+r\)、
+\(ps=4rd+1\)；若 \(r=1\)，则 \(4d+1=ps\)。由 \(d<p\)、\(p\equiv1\pmod4\) 和
+\(0<4d+1<4p\)，必有 \(s=1\)、\(d=(p-1)/4\)。于是 d 侧再次固定为
+\((p-2,(p-1)^2/4)\) 的 G 图表，而 r 侧固定为 \((3,(3p+1)/4)\) 的单位载体。
+对每个 \(k\ge1\)，\(M=kp+1\)、\(n=k(p-1)+1\) 确实给出真实 overflow，因此这不是
+有限样本空缺；但 \(r=1\) 本身不自动保留一般 \(A>1\) 的旧 charged support，不能登记为新的递归出口；初始 \(A=1\) 的 d 侧出口已由既有 determinant 边覆盖。该
+边界已记录为[overflow 余数 \(r=1\) 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md)。

@@ -4523,6 +4523,39 @@ R=p-2,
 合法容量接口，不能继续把 d=1 当作固定-n 支撑递降候选。
 
 主张卡：[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)。
+
+## 2026-08-03 overflow 余数 \(r=1\) 的对偶边界
+
+对同一 determinant
+
+\[
+pn=4Md+1,
+\qquad M=kp+r,
+\qquad ps=4rd+1,
+\]
+
+若 \(r=1\)，则 \(ps=4d+1\)。因为 \(d<p\)、\(p\equiv1\pmod4\)，模 \(4\) 与
+\(0<4d+1<4p\) 共同强制
+
+\[
+s=1,
+\qquad d=(p-1)/4.
+\]
+
+故两侧对偶图表退化为
+
+\[
+(R_d,K_d)=\left(p-2,\frac{(p-1)^2}{4}\right),
+\qquad
+(R_r,K_r)=\left(3,\frac{3p+1}{4}\right).
+\]
+
+该边界实际可达：对任意 \(k\ge1\)，\(M=kp+1,n=k(p-1)+1\) 给出
+\(R_M=k(3p+1)+3>p\) 的 overflow。因此不能因为冻结菜单没有 \(r=1\) 行就把它
+误判为空分支。不过 r 侧载体恒为 \(1\)，d 侧是已知的 \(p-2\) G 重图表；\(r=1\)
+本身不自动保留一般 \(A>1\) 的旧 charged support，初始 \(A=1\) 的 d 侧出口已由既有
+determinant 边覆盖，仍必须经过完整 E1--E5 检查。主张卡：
+[overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md)。
 统一回执新增 overflow_d_one_p_minus_two_g_rechart，保留
 selector_status=analysis_evidence、recursive_edge_eligible=false；聚焦样本
 \((p,M,n)=(73,91,5)\) 给出 \((R,K)=(71,1296)\)，支撑 Jacobi 值为 \(+1,+1\)，

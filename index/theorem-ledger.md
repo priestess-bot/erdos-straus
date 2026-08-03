@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 326 |
+| 数学状态 | `established` | 327 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 158 |
+| 证明来源 | `repository_derivation` | 159 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 288 |
+| 审阅状态 | `internal_review` | 289 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -494,6 +494,7 @@
 | [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md) (`type-I-overflow-outer-rank-reset`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md) (`type-I-overflow-phase-reset-cycle-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md) (`type-I-overflow-r-one-dual-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 双对偶载体的支撑保持判据与 q 进阻碍](../claims/type-I-overflow-support-preserving-dual-criterion.md) (`type-I-overflow-support-preserving-dual-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-02 |
 | [来自p加一三模四因子的B等于一上半区终端桥](../claims/type-I-p-plus-one-b1-upper-bridge.md) (`type-I-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
