@@ -3594,6 +3594,7 @@ def smooth23_low_k_fixed_n_cofactor() -> dict[str, object]:
             "remaining_candidates": "L|M*d with M not dividing L",
         },
         "outer_potential_boundary": smooth23_outer_potential_boundary(),
+        "high_k_dual_no_go": smooth23_high_k_dual_no_go(),
         "seeds": seeds,
         "high_k_residual_status": "analysis_evidence",
         "high_k_residual_route": ["fixed_n_factor_divisor", "type_ii", "q_adic_capacity"],
@@ -3648,6 +3649,64 @@ def smooth23_outer_potential_boundary() -> dict[str, object]:
         "q3_consequence": (
             "q=3 and qM>B_p splits into a Phi=2 interval and a Phi=1 hard tail"
         ),
+        "seeds": seeds,
+    }
+
+
+def smooth23_high_k_dual_no_go() -> dict[str, object]:
+    """Record the bounded dual-carrier RESET no-go in the qM>B tail."""
+    seed_exponents = [(1, 2), (3, 1), (4, 1), (2, 3), (2, 4)]
+    seeds: list[dict[str, object]] = []
+    for exponent_two, exponent_three in seed_exponents:
+        product = 2**exponent_two * 3**exponent_three
+        prime = 4 * product + 1
+        dual_carrier = product // 2
+        q = 2 if dual_carrier % 2 == 0 else 3
+        B_prime = (prime - 1) ** 2 // 4
+        k_global_max = (B_prime - 2) // prime
+        high_k_min = (B_prime - 2 * q) // (q * prime) + 1
+        if not (1 <= high_k_min <= k_global_max + 1):
+            raise AssertionError("smooth high-k dual threshold changed")
+        seeds.append(
+            {
+                "exponents": [exponent_two, exponent_three],
+                "prime": prime,
+                "P": product,
+                "d": dual_carrier,
+                "q": q,
+                "high_k_range": [high_k_min, k_global_max]
+                if high_k_min <= k_global_max
+                else [],
+                "d_channel": {
+                    "carrier": "d=P/2",
+                    "minimum_gain_multiplier": q,
+                    "joined_support": "M*(d/gcd(M,d))",
+                    "tail_bound": "q*M>B_p implies joined support>B_p when gain>1",
+                },
+                "r_channel": {
+                    "carrier": 2,
+                    "chart": "R_r=7, K_r=2*(p-d)",
+                    "gain_multiplier": 2,
+                    "divisibility_if_M_odd": "M|p-d",
+                    "impossible_interval": "0<p-d<M",
+                },
+            }
+        )
+    return {
+        "condition": (
+            "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, A=M, "
+            "q*M>B_p"
+        ),
+        "selector_status": "verified_arithmetic_no_go",
+        "recursive_edge_eligible": False,
+        "proof_boundary": "smooth23_high_k_dual_carrier_no_go",
+        "fixed_s_reason": "L|r*d=P<M=A",
+        "d_reason": "gain>1 gives lcm(M,d)>=q*M>B_p",
+        "r_reason": (
+            "gain requires M odd and 2M<=B_p; divisibility would force M|p-d, "
+            "contradicting 0<p-d<M"
+        ),
+        "remaining_route": ["type_ii", "alternate_carrier", "second_rank", "q_adic_capacity"],
         "seeds": seeds,
     }
 
@@ -5562,6 +5621,88 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
     boundary_seeds = potential_boundary.get("seeds")
     if not isinstance(boundary_seeds, list) or len(boundary_seeds) != 5:
         raise AssertionError("smooth outer-potential boundary seed shape changed")
+    high_k_no_go = low_k.get("high_k_dual_no_go")
+    if not isinstance(high_k_no_go, dict):
+        raise AssertionError("smooth high-k dual no-go receipt missing")
+    if (
+        high_k_no_go.get("condition")
+        != (
+            "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, A=M, "
+            "q*M>B_p"
+        )
+        or high_k_no_go.get("selector_status") != "verified_arithmetic_no_go"
+        or high_k_no_go.get("recursive_edge_eligible") is not False
+        or high_k_no_go.get("proof_boundary")
+        != "smooth23_high_k_dual_carrier_no_go"
+        or high_k_no_go.get("fixed_s_reason") != "L|r*d=P<M=A"
+        or high_k_no_go.get("d_reason")
+        != "gain>1 gives lcm(M,d)>=q*M>B_p"
+        or high_k_no_go.get("r_reason")
+        != (
+            "gain requires M odd and 2M<=B_p; divisibility would force M|p-d, "
+            "contradicting 0<p-d<M"
+        )
+        or high_k_no_go.get("remaining_route")
+        != ["type_ii", "alternate_carrier", "second_rank", "q_adic_capacity"]
+    ):
+        raise AssertionError("smooth high-k dual no-go metadata changed")
+    no_go_seeds = high_k_no_go.get("seeds")
+    if not isinstance(no_go_seeds, list) or len(no_go_seeds) != 5:
+        raise AssertionError("smooth high-k dual no-go seed shape changed")
+    expected_no_go_pairs = {
+        (1, 2, 73, 3),
+        (3, 1, 97, 2),
+        (4, 1, 193, 2),
+        (2, 3, 433, 2),
+        (2, 4, 1297, 2),
+    }
+    actual_no_go_pairs: set[tuple[int, int, int, int]] = set()
+    for seed in no_go_seeds:
+        if not isinstance(seed, dict):
+            raise AssertionError("smooth high-k dual no-go seed is not an object")
+        exponents = seed.get("exponents")
+        if not isinstance(exponents, list) or len(exponents) != 2:
+            raise AssertionError("smooth high-k dual no-go exponents changed")
+        exponent_two, exponent_three = map(int, exponents)
+        product = 2**exponent_two * 3**exponent_three
+        prime = int(seed["prime"])
+        dual_carrier = int(seed["d"])
+        q = int(seed["q"])
+        if (
+            prime != 4 * product + 1
+            or dual_carrier != product // 2
+            or q != (2 if dual_carrier % 2 == 0 else 3)
+        ):
+            raise AssertionError("smooth high-k dual no-go seed arithmetic changed")
+        actual_no_go_pairs.add((exponent_two, exponent_three, prime, q))
+        B_prime = (prime - 1) ** 2 // 4
+        k_global_max = (B_prime - 2) // prime
+        high_k_min = (B_prime - 2 * q) // (q * prime) + 1
+        expected_range = [high_k_min, k_global_max] if high_k_min <= k_global_max else []
+        if seed.get("high_k_range") != expected_range:
+            raise AssertionError("smooth high-k dual no-go range changed")
+        d_channel = seed.get("d_channel")
+        r_channel = seed.get("r_channel")
+        if (
+            d_channel
+            != {
+                "carrier": "d=P/2",
+                "minimum_gain_multiplier": q,
+                "joined_support": "M*(d/gcd(M,d))",
+                "tail_bound": "q*M>B_p implies joined support>B_p when gain>1",
+            }
+            or r_channel
+            != {
+                "carrier": 2,
+                "chart": "R_r=7, K_r=2*(p-d)",
+                "gain_multiplier": 2,
+                "divisibility_if_M_odd": "M|p-d",
+                "impossible_interval": "0<p-d<M",
+            }
+        ):
+            raise AssertionError("smooth high-k dual no-go channel metadata changed")
+    if actual_no_go_pairs != expected_no_go_pairs:
+        raise AssertionError("smooth high-k dual no-go seed coverage changed")
     low_k_seeds = low_k.get("seeds")
     if not isinstance(low_k_seeds, list) or len(low_k_seeds) != 5:
         raise AssertionError("smooth low-k fixed-n cofactor seed shape changed")

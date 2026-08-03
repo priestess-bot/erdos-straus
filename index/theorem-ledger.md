@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 369 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 339 |
+| 数学状态 | `established` | 340 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 125 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 171 |
+| 证明来源 | `repository_derivation` | 172 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 302 |
+| 审阅状态 | `internal_review` | 303 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -502,6 +502,7 @@
 | [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md) (`type-I-overflow-r-one-dual-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md) (`type-I-overflow-same-chart-support-promotion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [2,3-光滑 overflow 高 k 双载体 joined-support RESET 无 go](../claims/type-I-overflow-smooth23-high-k-dual-carrier-no-go.md) (`type-I-overflow-smooth23-high-k-dual-carrier-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [2,3-光滑 overflow 高 k 的外层势硬边界](../claims/type-I-overflow-smooth23-high-k-potential-boundary.md) (`type-I-overflow-smooth23-high-k-potential-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [2,3-光滑二维 fixed-s overflow 的 k=1 fixed-n 饱和递降](../claims/type-I-overflow-smooth23-k-one-fixed-n-saturation.md) (`type-I-overflow-smooth23-k-one-fixed-n-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [2,3-光滑二维 overflow 的低 k fixed-n cofactor 递降](../claims/type-I-overflow-smooth23-low-k-fixed-n-cofactor.md) (`type-I-overflow-smooth23-low-k-fixed-n-cofactor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |

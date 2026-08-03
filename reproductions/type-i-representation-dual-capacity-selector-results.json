@@ -4585,6 +4585,158 @@
           "automatic_checks": "q|d, L=q*M=S/(d/q), L>=2A, L<=B_p, 4L>n, and Pi(L)<Pi(A)",
           "candidate": "L=q*M",
           "condition": "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, A=M, q=2 if 2|d else 3, 1<=k<=floor((B_p-2q)/(q*p))",
+          "high_k_dual_no_go": {
+            "condition": "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=k*p+2, A=M, q*M>B_p",
+            "d_reason": "gain>1 gives lcm(M,d)>=q*M>B_p",
+            "fixed_s_reason": "L|r*d=P<M=A",
+            "proof_boundary": "smooth23_high_k_dual_carrier_no_go",
+            "r_reason": "gain requires M odd and 2M<=B_p; divisibility would force M|p-d, contradicting 0<p-d<M",
+            "recursive_edge_eligible": false,
+            "remaining_route": [
+              "type_ii",
+              "alternate_carrier",
+              "second_rank",
+              "q_adic_capacity"
+            ],
+            "seeds": [
+              {
+                "P": 18,
+                "d": 9,
+                "d_channel": {
+                  "carrier": "d=P/2",
+                  "joined_support": "M*(d/gcd(M,d))",
+                  "minimum_gain_multiplier": 3,
+                  "tail_bound": "q*M>B_p implies joined support>B_p when gain>1"
+                },
+                "exponents": [
+                  1,
+                  2
+                ],
+                "high_k_range": [
+                  6,
+                  17
+                ],
+                "prime": 73,
+                "q": 3,
+                "r_channel": {
+                  "carrier": 2,
+                  "chart": "R_r=7, K_r=2*(p-d)",
+                  "divisibility_if_M_odd": "M|p-d",
+                  "gain_multiplier": 2,
+                  "impossible_interval": "0<p-d<M"
+                }
+              },
+              {
+                "P": 24,
+                "d": 12,
+                "d_channel": {
+                  "carrier": "d=P/2",
+                  "joined_support": "M*(d/gcd(M,d))",
+                  "minimum_gain_multiplier": 2,
+                  "tail_bound": "q*M>B_p implies joined support>B_p when gain>1"
+                },
+                "exponents": [
+                  3,
+                  1
+                ],
+                "high_k_range": [
+                  12,
+                  23
+                ],
+                "prime": 97,
+                "q": 2,
+                "r_channel": {
+                  "carrier": 2,
+                  "chart": "R_r=7, K_r=2*(p-d)",
+                  "divisibility_if_M_odd": "M|p-d",
+                  "gain_multiplier": 2,
+                  "impossible_interval": "0<p-d<M"
+                }
+              },
+              {
+                "P": 48,
+                "d": 24,
+                "d_channel": {
+                  "carrier": "d=P/2",
+                  "joined_support": "M*(d/gcd(M,d))",
+                  "minimum_gain_multiplier": 2,
+                  "tail_bound": "q*M>B_p implies joined support>B_p when gain>1"
+                },
+                "exponents": [
+                  4,
+                  1
+                ],
+                "high_k_range": [
+                  24,
+                  47
+                ],
+                "prime": 193,
+                "q": 2,
+                "r_channel": {
+                  "carrier": 2,
+                  "chart": "R_r=7, K_r=2*(p-d)",
+                  "divisibility_if_M_odd": "M|p-d",
+                  "gain_multiplier": 2,
+                  "impossible_interval": "0<p-d<M"
+                }
+              },
+              {
+                "P": 108,
+                "d": 54,
+                "d_channel": {
+                  "carrier": "d=P/2",
+                  "joined_support": "M*(d/gcd(M,d))",
+                  "minimum_gain_multiplier": 2,
+                  "tail_bound": "q*M>B_p implies joined support>B_p when gain>1"
+                },
+                "exponents": [
+                  2,
+                  3
+                ],
+                "high_k_range": [
+                  54,
+                  107
+                ],
+                "prime": 433,
+                "q": 2,
+                "r_channel": {
+                  "carrier": 2,
+                  "chart": "R_r=7, K_r=2*(p-d)",
+                  "divisibility_if_M_odd": "M|p-d",
+                  "gain_multiplier": 2,
+                  "impossible_interval": "0<p-d<M"
+                }
+              },
+              {
+                "P": 324,
+                "d": 162,
+                "d_channel": {
+                  "carrier": "d=P/2",
+                  "joined_support": "M*(d/gcd(M,d))",
+                  "minimum_gain_multiplier": 2,
+                  "tail_bound": "q*M>B_p implies joined support>B_p when gain>1"
+                },
+                "exponents": [
+                  2,
+                  4
+                ],
+                "high_k_range": [
+                  162,
+                  323
+                ],
+                "prime": 1297,
+                "q": 2,
+                "r_channel": {
+                  "carrier": 2,
+                  "chart": "R_r=7, K_r=2*(p-d)",
+                  "divisibility_if_M_odd": "M|p-d",
+                  "gain_multiplier": 2,
+                  "impossible_interval": "0<p-d<M"
+                }
+              }
+            ],
+            "selector_status": "verified_arithmetic_no_go"
+          },
           "high_k_residual_route": [
             "fixed_n_factor_divisor",
             "type_ii",
