@@ -36,6 +36,7 @@ used_by:
 - type-I-universal-p-source-capacity-anchor-orbit
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
 - type-I-overflow-outer-rank-reset
+- type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 sources:
 - claim: marked-solution-descent-closure
@@ -842,6 +843,7 @@ n\equiv1\pmod4,
 | 把同一 Type I 证书改写成 marked source | 没有产生独立的第三出口或新的下降机制 |
 | 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
 | overflow 的某个对偶图表 | 只有 \(A'=\operatorname{lcm}(A,t)>A\)、\(A'\mid K_t\) 且 (7) 成立时才是 joined-support verified edge；否则仍是 candidate/analysis evidence |
+| d=1 overflow 的 \(p-2\) G 重图表 | \(M\bmod p=(p-1)/4\) 只给出普适 G 分离和空支撑纤维；它丢弃旧支撑，不能作为 RESET 或恒等 marked lift |
 | 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
 
 ## 8. 验收表
@@ -895,3 +897,8 @@ bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项�
 图表可能不保留 \(A\)；这正是“表示--对偶”已经完成而“容量或递降”仍未闭合的接口。
 在该问题解决以前，商群压缩、目标纤维距离、q-adic 必要同余和冻结图无环都只能作为
 候选输入，不能单独写成统一选择器定理。
+
+对 overflow 的 \(d=1\) 子分支，已有更强的算术分类：其对偶规范图表固定为
+\((p-2,(p-1)^2/4)\)，并且普适地属于 G 态。该分类只删除“d=1 固定-\(n\) 支撑边”
+这一误读；若 \(p+4\) 没有 \(3\bmod4\) 因子，仍需回到上述非支撑终端或容量问题。
+详见[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)。

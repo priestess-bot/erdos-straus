@@ -74,6 +74,7 @@ SELECTOR_ORDER = [
     "overflow_phase_reset_cycle_boundary",
     "overflow_qadic_phase_capacity",
     "overflow_support_debt_phase_bridge",
+    "overflow_d_one_p_minus_two_g_rechart",
 ]
 
 STATUS_LATTICE = [
@@ -137,6 +138,24 @@ def valuation(value: int, prime: int) -> int:
         value //= prime
         exponent += 1
     return exponent
+
+
+def jacobi_symbol(numerator: int, denominator: int) -> int:
+    """Return the Jacobi symbol using exact integer reciprocity steps."""
+    if denominator <= 0 or denominator % 2 == 0:
+        raise AssertionError("Jacobi denominator must be positive and odd")
+    numerator %= denominator
+    result = 1
+    while numerator:
+        while numerator % 2 == 0:
+            numerator //= 2
+            if denominator % 8 in (3, 5):
+                result = -result
+        numerator, denominator = denominator, numerator
+        if numerator % 4 == denominator % 4 == 3:
+            result = -result
+        numerator %= denominator
+    return result if denominator == 1 else 0
 
 
 def canonical_chart(prime: int, support: int) -> tuple[int, int]:
@@ -1862,6 +1881,142 @@ def overflow_direct_type_ii(payload: dict[str, object]) -> dict[str, object]:
     }
 
 
+def overflow_d_one_p_minus_two_g_rechart(payload: dict[str, object]) -> dict[str, object]:
+    """Record the universal G rechart forced by the d=1 determinant branch.
+
+    This is an arithmetic classification, not a recursive edge: the canonical
+    small chart loses the old charged support and its target fiber is empty.
+    """
+    rows = [row for row in overflow_fixture_rows(payload) if int(row["d"]) == 1]
+    receipts: list[dict[str, object]] = []
+    for fixture in rows:
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        carrier = int(fixture["M"])
+        n = int(fixture["n"])
+        if prime % 24 != 1 or prime * n != 4 * carrier + 1 or n % 4 != 1:
+            raise AssertionError(f"d=1 determinant normal form changed: {name}")
+        r = (prime - 1) // 4
+        if carrier % prime != r:
+            raise AssertionError(f"d=1 residue reduction changed: {name}")
+        chart_R, chart_K = canonical_chart(prime, r)
+        expected_R = prime - 2
+        expected_K = (prime - 1) ** 2 // 4
+        if (chart_R, chart_K) != (expected_R, expected_K) or chart_K != 4 * r * r:
+            raise AssertionError(f"d=1 p-2 chart changed: {name}")
+
+        support_values = {
+            str(q): jacobi_symbol(q, chart_R)
+            for q, _ in factorization(chart_K)
+        }
+        if any(value != 1 for value in support_values.values()):
+            raise AssertionError(f"d=1 G separator failed: {name}")
+        target_minus_one = jacobi_symbol(-1, chart_R)
+        if target_minus_one != -1:
+            raise AssertionError(f"d=1 target Jacobi separator changed: {name}")
+
+        source = [prime, chart_R * (prime - 1) - prime, prime - 1]
+        if source[0] + source[1] != chart_R * source[2] or gcd(source[0], source[1]) != 1:
+            raise AssertionError(f"d=1 universal source changed: {name}")
+        destination = (
+            source[0] // prime,
+            (source[1] + chart_R) // prime,
+            (source[2] + 1) // prime,
+        )
+        if destination != (1, chart_R - 1, 1):
+            raise AssertionError(f"d=1 universal anchor changed: {name}")
+
+        p_plus_four = prime + 4
+        p_plus_four_candidates = [
+            factor for factor, _ in factorization(p_plus_four) if factor % 4 == 3
+        ]
+        descriptor = {
+            "equation_target": [4, prime],
+            "source_carrier": carrier,
+            "d": 1,
+            "rechart_support": r,
+        }
+        receipt = {
+            "edge_id": "edge:" + canonical_hash(descriptor),
+            "certificate_type": "overflow_d_one_p_minus_two_g_rechart",
+            "phase": "OVERFLOW_DUAL_DETERMINANT",
+            "state_class": "G",
+            "source_state": {
+                "equation_target": [4, prime],
+                "carrier": carrier,
+                "R": int(fixture["R_M"]),
+                "K": int(fixture["K_M"]),
+                "d": 1,
+            },
+            "successor_state": {
+                "equation_target": [4, prime],
+                "R": chart_R,
+                "K": chart_K,
+                "charged_support": r,
+                "state_class": "G",
+            },
+            "equation_target": {"numerator": 4, "denominator": prime},
+            "g_separator": {
+                "support_values": support_values,
+                "target_minus_one": target_minus_one,
+                "support_factorization": factorization(chart_K),
+            },
+            "universal_source": {
+                "source": source,
+                "q": prime,
+                "shift": 1,
+                "destination": list(destination),
+                "gcd_reduction": 1,
+            },
+            "p_plus_four_probe": {
+                "factorization": factorization(p_plus_four),
+                "q_congruent_3_mod_4": p_plus_four_candidates,
+                "direct_terminal_available": bool(p_plus_four_candidates),
+            },
+            "marked_solution_set": {
+                "status": "empty_in_support_group",
+                "reason": "Jacobi support separator at R=p-2",
+            },
+            "target_fiber": {
+                "status": "empty",
+                "reason": "-1 is outside the subgroup generated by K support",
+            },
+            "signed_defect": {"status": "not_applicable", "reason": "G state"},
+            "potential_record": {"status": "absent", "reason": "support is not preserved"},
+            "e1_e5": {f"E{i}": False for i in range(1, 6)},
+            "selector_status": "analysis_evidence",
+            "recursive_edge_eligible": False,
+            "lift_status": "unproved",
+            "proof_boundary": "d_one_p_minus_two_g_rechart",
+            "scope_note": (
+                "For every d=1 overflow, the dual residue is (p-1)/4 and the canonical chart "
+                "is the universal G state (p-2,(p-1)^2/4).  A p+4 Type II factor, when present, "
+                "is a separate terminal-first branch; the G rechart itself is not a recursive edge."
+            ),
+        }
+        check_status_boundary(receipt)
+        receipts.append(receipt)
+    return {
+        "fixture_count": len(rows),
+        "g_rechart_count": len(receipts),
+        "p_plus_four_terminal_probe_count": sum(
+            receipt["p_plus_four_probe"]["direct_terminal_available"] for receipt in receipts
+        ),
+        "receipts": receipts,
+        "normal_form": {
+            "determinant": "p*n=4*M+1",
+            "residue": "M mod p=(p-1)/4",
+            "canonical_chart": "R=p-2; K=(p-1)^2/4",
+            "jacobi_separator": "(q/(p-2))=1 for every q|K; (-1/(p-2))=-1",
+        },
+        "scope_note": (
+            "The d=1 branch is universally classified as a p-2 G rechart. This removes any "
+            "claim that d=1 alone supplies a support-preserving descent; closure still requires "
+            "a separate Type I/II certificate or a non-support marked construction."
+        ),
+    }
+
+
 def overflow_menu_receipts(
     overflow_payload: dict[str, object], qadic_payload: dict[str, object]
 ) -> dict[str, object]:
@@ -2847,6 +3002,7 @@ def build_results() -> dict[str, object]:
     states = [state_receipt(receipt, UNIFIED_INPUT.name) for receipt in normalized_receipts]
     verified_edge = verified_fixed_n_edge(overflow)
     direct_type_ii = overflow_direct_type_ii(overflow)
+    d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
     bottom_word = bottom_word_lattice_capacity_receipt(bottom_word_payload)
@@ -2882,6 +3038,7 @@ def build_results() -> dict[str, object]:
         "states": states,
         "verified_edges": [verified_edge],
         "overflow_direct_type_ii": direct_type_ii,
+        "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
         "overflow_menu": overflow_menu,
@@ -2914,6 +3071,7 @@ def build_results() -> dict[str, object]:
            "support_debt_phase_bridge_requires_alternate_mapping": True,
             "bottom_word_capacity_requires_signed_dictionary": True,
             "large_slab_capacity_requires_carrier_mapping": True,
+            "d_one_rechart_is_g_analysis_only": True,
        },
         "source_sha256": source_hashes(),
         "scope_note": (
@@ -3233,6 +3391,44 @@ def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
         raise AssertionError("universal source input hash changed")
 
 
+def verify_d_one_g_rechart_contract(result: dict[str, object]) -> None:
+    branch = result.get("overflow_d_one_p_minus_two_g_rechart")
+    if not isinstance(branch, dict):
+        raise AssertionError("d=1 G rechart receipt missing")
+    if branch.get("fixture_count") != 1 or branch.get("g_rechart_count") != 1:
+        raise AssertionError("focused d=1 G rechart count changed")
+    if branch.get("p_plus_four_terminal_probe_count") != 1:
+        raise AssertionError("focused d=1 p+4 probe count changed")
+    receipts = branch.get("receipts")
+    if not isinstance(receipts, list) or len(receipts) != 1:
+        raise AssertionError("d=1 G rechart receipt shape changed")
+    for receipt in receipts:
+        if not isinstance(receipt, dict):
+            raise AssertionError("d=1 G rechart row is not an object")
+        if (
+            receipt.get("certificate_type") != "overflow_d_one_p_minus_two_g_rechart"
+            or receipt.get("selector_status") != "analysis_evidence"
+            or receipt.get("recursive_edge_eligible") is not False
+            or receipt.get("state_class") != "G"
+            or receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+        ):
+            raise AssertionError("d=1 G rechart crossed the status boundary")
+        separator = receipt.get("g_separator")
+        if not isinstance(separator, dict):
+            raise AssertionError("d=1 Jacobi separator missing")
+        values = separator.get("support_values")
+        if not isinstance(values, dict) or any(value != 1 for value in values.values()):
+            raise AssertionError("d=1 support Jacobi values changed")
+        if separator.get("target_minus_one") != -1:
+            raise AssertionError("d=1 target Jacobi value changed")
+        successor = receipt.get("successor_state")
+        if not isinstance(successor, dict):
+            raise AssertionError("d=1 successor state missing")
+        prime = int(receipt["equation_target"]["denominator"])
+        if successor.get("R") != prime - 2 or successor.get("K") != (prime - 1) ** 2 // 4:
+            raise AssertionError("d=1 p-2 successor changed")
+
+
 def verify_overflow_menu_contract(result: dict[str, object]) -> None:
     menu = result.get("overflow_menu")
     if not isinstance(menu, dict):
@@ -3452,6 +3648,7 @@ def main() -> None:
         verify_large_slab_factor_pair_capacity_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
+        verify_d_one_g_rechart_contract(result)
         verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")

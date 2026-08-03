@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 325 |
+| 数学状态 | `established` | 326 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 157 |
+| 证明来源 | `repository_derivation` | 158 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 287 |
+| 审阅状态 | `internal_review` | 288 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -483,6 +483,7 @@
 | [Type I 正规形的规范尾部递降选择器与平方因子外部源等价](../claims/type-I-normal-tail-deflation-selector.md) (`type-I-normal-tail-deflation-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 一私有因子的三余类饱和判据](../claims/type-I-one-private-three-coset-saturation.md) (`type-I-one-private-three-coset-saturation`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [有序 R 位置的迁移最小费用对偶与局部容量升级准则](../claims/type-I-ordered-r-migration-min-cost-duality.md) (`type-I-ordered-r-migration-min-cost-duality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md) (`type-I-overflow-d-one-p-minus-two-g-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md) (`type-I-overflow-d-only-square-excess-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md) (`type-I-overflow-defect-unit-phase-capacity`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 行列式的固定 n 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md) (`type-I-overflow-determinant-fixed-n-dual-support-conflict`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |

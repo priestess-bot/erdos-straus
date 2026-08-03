@@ -3311,3 +3311,17 @@ large-slab、105 个跨指数层 gcd 对、15 个同指数分离检查和 5 条�
 共同过载而锚点有 \(R_Q<R\) 的边界。因此这条回执加强了 large-slab 的跨层容量字典，
 并在三锚点上登记 gap-3 超额、\(\alpha=2\) 局部补量下降和
 \(\alpha=3\) Farey 行列式候选；仍不提供 carrier mapping、Type I/II 终端或 E4。
+
+## 2026-08-03 d=1 overflow 的 G 边界
+
+对 overflow 行列式的 d=1 分支，统一选择器现在登记一个无样本的重图表正规形。由
+\(pn=4M+1\) 和 \(n\equiv1\pmod4\)，有
+\[
+M\equiv r=\frac{p-1}{4}\pmod p,
+\qquad
+(R_r,K_r)=\left(p-2,\frac{(p-1)^2}{4}\right).
+\]
+对每个 \(q\mid K_r\)，二次互反律给出
+\(\left(\frac q{p-2}\right)=1\)，而 \(\left(\frac{-1}{p-2}\right)=-1\)。因此该 dual chart 普适地是 G 态，支撑内目标纤维为空；它不能被误写成保留旧 charged support 的 RESET。若 \(p+4\) 有
+\(3\pmod4\) 因子，直接 Type II 仍由 terminal-first 优先登记，否则剩余任务必须转向非支撑终端、marked lift 或跨状态容量。主张卡见
+[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)，选择器字段为 overflow_d_one_p_minus_two_g_rechart。

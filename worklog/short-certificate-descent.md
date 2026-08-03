@@ -4497,3 +4497,33 @@ large-slab 案例，覆盖三个锚点 \(\alpha=1,2,3\)。对
 \(4Q-R-4\tau\)，\(\alpha=3\) 样本给出
 \(n_*Q-p\beta'=1\) 及互补行列式恒等式。三者均记录为候选算术分支，缺少全域
 解提升和 E4，不能进入递归边。
+
+## 2026-08-03 d=1 overflow 的普适 G 重图表边界
+
+固定-s 的 12 个 fixture 中唯一未覆盖的 d=1 行并非偶然的窗口空值。对任意 verified
+d=1 overflow，行列式为
+\[
+pn=4M+1.
+\]
+因为 \(p\equiv1\pmod4\)，有 \(n\equiv1\pmod4\)，写 \(n=4k+1\) 即得
+\[
+M=pk+\frac{p-1}{4},
+\qquad M\bmod p=\frac{p-1}{4}.
+\]
+该载体的 canonical chart 固定为
+\[
+R=p-2,
+\qquad K=\frac{(p-1)^2}{4}=4\left(\frac{p-1}{4}\right)^2.
+\]
+对 \(q=2\) 及所有奇 \(q\mid p-1\)，二次互反律分别给出
+\(\left(\frac q{p-2}\right)=1\)，而
+\(\left(\frac{-1}{p-2}\right)=-1\)。所以该后继是普适 G 态，不能承载图表无关的
+恒等 marked lift；universal p-source 只能登记为 source/analysis 证书。若 \(p+4\)
+含 \(3\pmod4\) 因子，直接 Type II 先闭合；否则 d=1 分支必须寻找非支撑终端或其它
+合法容量接口，不能继续把 d=1 当作固定-n 支撑递降候选。
+
+主张卡：[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)。
+统一回执新增 overflow_d_one_p_minus_two_g_rechart，保留
+selector_status=analysis_evidence、recursive_edge_eligible=false；聚焦样本
+\((p,M,n)=(73,91,5)\) 给出 \((R,K)=(71,1296)\)，支撑 Jacobi 值为 \(+1,+1\)，
+目标值为 \(-1\)，且 \(p+4=7\cdot11\) 提供独立 Type II 叶。
