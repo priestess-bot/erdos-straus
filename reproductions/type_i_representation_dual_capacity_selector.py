@@ -3593,9 +3593,62 @@ def smooth23_low_k_fixed_n_cofactor() -> dict[str, object]:
             "empty_condition": "q*M>B_p implies no bounded multiple-M candidate",
             "remaining_candidates": "L|M*d with M not dividing L",
         },
+        "outer_potential_boundary": smooth23_outer_potential_boundary(),
         "seeds": seeds,
         "high_k_residual_status": "analysis_evidence",
         "high_k_residual_route": ["fixed_n_factor_divisor", "type_ii", "q_adic_capacity"],
+    }
+
+
+def smooth23_outer_potential_boundary() -> dict[str, object]:
+    """Classify the current outer-potential boundary of the smooth family."""
+    seed_exponents = [(1, 2), (3, 1), (4, 1), (2, 3), (2, 4)]
+    seeds: list[dict[str, object]] = []
+    for exponent_two, exponent_three in seed_exponents:
+        product = 2**exponent_two * 3**exponent_three
+        prime = 4 * product + 1
+        dual_carrier = product // 2
+        q = 2 if dual_carrier % 2 == 0 else 3
+        B_prime = (prime - 1) ** 2 // 4
+        global_k_max = (B_prime - 2) // prime
+        half_k_min = (B_prime - 4) // (2 * prime) + 1
+        third_k_min = (B_prime - 6) // (3 * prime) + 1
+        if not (1 <= third_k_min <= half_k_min <= global_k_max + 1):
+            raise AssertionError("smooth outer-potential thresholds changed")
+        seeds.append(
+            {
+                "exponents": [exponent_two, exponent_three],
+                "prime": prime,
+                "B_p": B_prime,
+                "q": q,
+                "global_k_range": [1, global_k_max],
+                "qM_overflow_k_range": [
+                    (B_prime - 2 * q) // (q * prime) + 1,
+                    global_k_max,
+                ],
+                "phi_two_k_range": [third_k_min, half_k_min - 1]
+                if third_k_min < half_k_min
+                else [],
+                "phi_one_k_range": [half_k_min, global_k_max]
+                if half_k_min <= global_k_max
+                else [],
+                "half_threshold_identity": "2*(k*p+2)>B_p",
+                "third_threshold_identity": "3*(k*p+2)>B_p",
+            }
+        )
+    return {
+        "potential": "Phi(A)=floor(B_p/A)",
+        "hard_boundary": (
+            "M>B_p/2 implies Phi(M)=1; no M<L<=B_p can have strict Phi descent"
+        ),
+        "intermediate_boundary": (
+            "B_p/3<M<=B_p/2 implies Phi(M)=2; any strict target must satisfy L>B_p/2"
+        ),
+        "q2_consequence": "q=2 and qM>B_p implies the current Phi has no fixed-n E5 target",
+        "q3_consequence": (
+            "q=3 and qM>B_p splits into a Phi=2 interval and a Phi=1 hard tail"
+        ),
+        "seeds": seeds,
     }
 
 
@@ -5490,8 +5543,25 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
             "empty_condition": "q*M>B_p implies no bounded multiple-M candidate",
             "remaining_candidates": "L|M*d with M not dividing L",
         }
+        or not isinstance(low_k.get("outer_potential_boundary"), dict)
     ):
         raise AssertionError("smooth low-k fixed-n cofactor metadata changed")
+    potential_boundary = low_k["outer_potential_boundary"]
+    if (
+        potential_boundary.get("potential") != "Phi(A)=floor(B_p/A)"
+        or potential_boundary.get("hard_boundary")
+        != "M>B_p/2 implies Phi(M)=1; no M<L<=B_p can have strict Phi descent"
+        or potential_boundary.get("intermediate_boundary")
+        != "B_p/3<M<=B_p/2 implies Phi(M)=2; any strict target must satisfy L>B_p/2"
+        or potential_boundary.get("q2_consequence")
+        != "q=2 and qM>B_p implies the current Phi has no fixed-n E5 target"
+        or potential_boundary.get("q3_consequence")
+        != "q=3 and qM>B_p splits into a Phi=2 interval and a Phi=1 hard tail"
+    ):
+        raise AssertionError("smooth outer-potential boundary metadata changed")
+    boundary_seeds = potential_boundary.get("seeds")
+    if not isinstance(boundary_seeds, list) or len(boundary_seeds) != 5:
+        raise AssertionError("smooth outer-potential boundary seed shape changed")
     low_k_seeds = low_k.get("seeds")
     if not isinstance(low_k_seeds, list) or len(low_k_seeds) != 5:
         raise AssertionError("smooth low-k fixed-n cofactor seed shape changed")

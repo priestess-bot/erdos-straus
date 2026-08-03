@@ -4598,6 +4598,150 @@
             "remaining_candidates": "L|M*d with M not dividing L",
             "scope": "fixed-n candidates L=M*u with u|d and u>1"
           },
+          "outer_potential_boundary": {
+            "hard_boundary": "M>B_p/2 implies Phi(M)=1; no M<L<=B_p can have strict Phi descent",
+            "intermediate_boundary": "B_p/3<M<=B_p/2 implies Phi(M)=2; any strict target must satisfy L>B_p/2",
+            "potential": "Phi(A)=floor(B_p/A)",
+            "q2_consequence": "q=2 and qM>B_p implies the current Phi has no fixed-n E5 target",
+            "q3_consequence": "q=3 and qM>B_p splits into a Phi=2 interval and a Phi=1 hard tail",
+            "seeds": [
+              {
+                "B_p": 1296,
+                "exponents": [
+                  1,
+                  2
+                ],
+                "global_k_range": [
+                  1,
+                  17
+                ],
+                "half_threshold_identity": "2*(k*p+2)>B_p",
+                "phi_one_k_range": [
+                  9,
+                  17
+                ],
+                "phi_two_k_range": [
+                  6,
+                  8
+                ],
+                "prime": 73,
+                "q": 3,
+                "qM_overflow_k_range": [
+                  6,
+                  17
+                ],
+                "third_threshold_identity": "3*(k*p+2)>B_p"
+              },
+              {
+                "B_p": 2304,
+                "exponents": [
+                  3,
+                  1
+                ],
+                "global_k_range": [
+                  1,
+                  23
+                ],
+                "half_threshold_identity": "2*(k*p+2)>B_p",
+                "phi_one_k_range": [
+                  12,
+                  23
+                ],
+                "phi_two_k_range": [
+                  8,
+                  11
+                ],
+                "prime": 97,
+                "q": 2,
+                "qM_overflow_k_range": [
+                  12,
+                  23
+                ],
+                "third_threshold_identity": "3*(k*p+2)>B_p"
+              },
+              {
+                "B_p": 9216,
+                "exponents": [
+                  4,
+                  1
+                ],
+                "global_k_range": [
+                  1,
+                  47
+                ],
+                "half_threshold_identity": "2*(k*p+2)>B_p",
+                "phi_one_k_range": [
+                  24,
+                  47
+                ],
+                "phi_two_k_range": [
+                  16,
+                  23
+                ],
+                "prime": 193,
+                "q": 2,
+                "qM_overflow_k_range": [
+                  24,
+                  47
+                ],
+                "third_threshold_identity": "3*(k*p+2)>B_p"
+              },
+              {
+                "B_p": 46656,
+                "exponents": [
+                  2,
+                  3
+                ],
+                "global_k_range": [
+                  1,
+                  107
+                ],
+                "half_threshold_identity": "2*(k*p+2)>B_p",
+                "phi_one_k_range": [
+                  54,
+                  107
+                ],
+                "phi_two_k_range": [
+                  36,
+                  53
+                ],
+                "prime": 433,
+                "q": 2,
+                "qM_overflow_k_range": [
+                  54,
+                  107
+                ],
+                "third_threshold_identity": "3*(k*p+2)>B_p"
+              },
+              {
+                "B_p": 419904,
+                "exponents": [
+                  2,
+                  4
+                ],
+                "global_k_range": [
+                  1,
+                  323
+                ],
+                "half_threshold_identity": "2*(k*p+2)>B_p",
+                "phi_one_k_range": [
+                  162,
+                  323
+                ],
+                "phi_two_k_range": [
+                  108,
+                  161
+                ],
+                "prime": 1297,
+                "q": 2,
+                "qM_overflow_k_range": [
+                  162,
+                  323
+                ],
+                "third_threshold_identity": "3*(k*p+2)>B_p"
+              }
+            ]
+          },
           "proof_boundary": "smooth23_low_k_fixed_n_cofactor",
           "recursive_edge_eligible": true,
           "seed_count": 5,
