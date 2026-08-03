@@ -3265,6 +3265,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     cofactor_saturation_names: list[str] = []
     prime_power_cofactor_names: list[str] = []
     large_prime_cofactor_names: list[str] = []
+    smooth23_residual_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3549,6 +3550,11 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
         if not integral_s:
             missing.append("fixed_s_integrality")
         missing.append("admissible_L")
+        smooth23_residual = product > 0 and all(
+            q <= 3 for q, _ in factorization(product)
+        )
+        if smooth23_residual:
+            smooth23_residual_names.append(name)
         rejected.append(
             {
                 "fixture_name": name,
@@ -3561,7 +3567,16 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 "missing_conditions": missing,
                 "selector_status": "analysis_evidence",
                 "recursive_edge_eligible": False,
-                "proof_boundary": "fixed_s_bounded_divisor_rank_filter",
+                "proof_boundary": (
+                    "fixed_s_23_smooth_residual"
+                    if smooth23_residual
+                    else "fixed_s_bounded_divisor_rank_filter"
+                ),
+                "residual_routing": (
+                    ["generalized_dyadic", "type_ii", "q_adic_capacity"]
+                    if smooth23_residual
+                    else []
+                ),
             }
         )
     return {
@@ -3674,6 +3689,21 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             "conclusion": (
                 "P<=4B_p implies P/q<B_p for q>=5; q<p gives positive "
                 "chart and K_L=(P/q)*(p-q)"
+            ),
+        },
+        "smooth23_fixed_s_residual": {
+            "condition": (
+                "no admissible fixed-s L and Supp(r*d) subset {2,3}"
+            ),
+            "fixture_count": len(smooth23_residual_names),
+            "fixture_names": smooth23_residual_names,
+            "selector_status": "analysis_evidence",
+            "recursive_edge_eligible": False,
+            "routing": ["generalized_dyadic", "type_ii", "q_adic_capacity"],
+            "conclusion": (
+                "The fixed-s divisor set is a two-dimensional exponent grid "
+                "L=2^i*3^j; an empty grid cell is not a recursive failure and "
+                "must be passed to the dyadic, Type II, or q-adic branches."
             ),
         },
         "rank_definition": {
@@ -4822,6 +4852,21 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         != expected_large_prime_subfamily
     ):
         raise AssertionError("bounded fixed-s large-prime cofactor coverage changed")
+    smooth23_residual = branch.get("smooth23_fixed_s_residual")
+    if not isinstance(smooth23_residual, dict):
+        raise AssertionError("bounded fixed-s 2,3-smooth residual missing")
+    if (
+        smooth23_residual.get("condition")
+        != "no admissible fixed-s L and Supp(r*d) subset {2,3}"
+        or smooth23_residual.get("fixture_count") != 1
+        or set(smooth23_residual.get("fixture_names", []))
+        != {"reachable_conflict_bundle_3"}
+        or smooth23_residual.get("selector_status") != "analysis_evidence"
+        or smooth23_residual.get("recursive_edge_eligible") is not False
+        or smooth23_residual.get("routing")
+        != ["generalized_dyadic", "type_ii", "q_adic_capacity"]
+    ):
+        raise AssertionError("bounded fixed-s 2,3-smooth residual changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")

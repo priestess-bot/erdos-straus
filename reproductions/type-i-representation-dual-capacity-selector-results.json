@@ -4212,8 +4212,13 @@
         "missing_conditions": [
           "admissible_L"
         ],
-        "proof_boundary": "fixed_s_bounded_divisor_rank_filter",
+        "proof_boundary": "fixed_s_23_smooth_residual",
         "recursive_edge_eligible": false,
+        "residual_routing": [
+          "generalized_dyadic",
+          "type_ii",
+          "q_adic_capacity"
+        ],
         "selector_status": "analysis_evidence",
         "source_carrier": 950,
         "source_support": 19
@@ -4222,6 +4227,21 @@
     "scope_note": [
       "This is the complete bounded fixed-s divisor atlas above the absorbed-support potential domain. It complements the lcm(A,r) fixed-s branch; an empty admissible set remains analysis evidence and is not promoted."
     ],
+    "smooth23_fixed_s_residual": {
+      "conclusion": "The fixed-s divisor set is a two-dimensional exponent grid L=2^i*3^j; an empty grid cell is not a recursive failure and must be passed to the dyadic, Type II, or q-adic branches.",
+      "condition": "no admissible fixed-s L and Supp(r*d) subset {2,3}",
+      "fixture_count": 1,
+      "fixture_names": [
+        "reachable_conflict_bundle_3"
+      ],
+      "recursive_edge_eligible": false,
+      "routing": [
+        "generalized_dyadic",
+        "type_ii",
+        "q_adic_capacity"
+      ],
+      "selector_status": "analysis_evidence"
+    },
     "unconditional_cofactor_saturation_subfamily": {
       "candidate": "L=r*d/ell",
       "conclusion": "ell< p and s<4L are automatic; K_L=L*(p-ell), so the cofactor gives a strict fixed-s identity-lift edge",
