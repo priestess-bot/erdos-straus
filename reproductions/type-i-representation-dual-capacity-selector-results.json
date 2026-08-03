@@ -921,6 +921,8 @@
     }
   ],
   "invariants": {
+    "a_one_determinant_boundary_requires_M_lt_p": true,
+    "a_one_dual_reset_family_replayed": true,
     "analysis_evidence_never_recursive": true,
     "bottom_word_capacity_requires_signed_dictionary": true,
     "d_one_rechart_is_g_analysis_only": true,
@@ -1092,6 +1094,294 @@
     "target_fiber": {
       "reason": "layer and source-word identities are capacity evidence only",
       "status": "factor_pair_and_qadic_dictionary"
+    }
+  },
+  "overflow_a_one_dual_reset_family": {
+    "fixture_count": 2,
+    "rejected_fixture_count": 0,
+    "scope_note": "The algebraic theorem is universal for verified A=1 overflow; the stored rows are focused replays, not a finite proof of the theorem.",
+    "theorem": {
+      "conclusion": "exists t in {d,r}: t>1, R_t<p, t|K_t, and strict Pi_A descent",
+      "condition": "A=1, pn=4*M*d+1, R_M>p",
+      "proof_boundary": "symmetric_dual_minimum_and_d_or_r_equals_one_split"
+    },
+    "verified_edge_count": 2,
+    "verified_receipts": [
+      {
+        "certificate_context": {
+          "dual_chart": {
+            "K": 858,
+            "R": 47,
+            "t": 22
+          },
+          "dual_parameters": {
+            "r": 34,
+            "s": 41
+          },
+          "dual_side": "d",
+          "fixture_name": "root_edge_0",
+          "provenance": "overflow_determinant_symmetric_dual",
+          "source_determinant": {
+            "K_M": 1734,
+            "M": 34,
+            "R_M": 95,
+            "d": 22,
+            "identity": "p*n=4*M*d+1",
+            "n": 41
+          }
+        },
+        "certificate_type": "overflow_a_one_dual_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:fb2561a970e996fa1438357d4cf96a02540f4a1b6376363651034b48bb81c62f",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1296,
+          "successor": 58
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_a_one_dual_outer_rank_reset_v1",
+        "phase": "RESET",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 1,
+          "source_value": 1296,
+          "strict_decrease": true,
+          "successor_support": 22,
+          "successor_value": 58,
+          "support_monotone": true
+        },
+        "proof_boundary": "a_one_dual_reset_universal_subfamily",
+        "recursive_edge_eligible": true,
+        "scope_note": "For A=1 the symmetric d/r chart theorem always supplies t>1 and R_t<p; this receipt replays the identity-lift RESET on the focused source rows.",
+        "selector_status": "verified_edge",
+        "source_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "marked_absorb",
+        "successor_state": {
+          "K": 858,
+          "R": 47,
+          "absorbed_support": 22,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "marked_absorb"
+        }
+      },
+      {
+        "certificate_context": {
+          "dual_chart": {
+            "K": 4760,
+            "R": 79,
+            "t": 28
+          },
+          "dual_parameters": {
+            "r": 71,
+            "s": 33
+          },
+          "dual_side": "d",
+          "fixture_name": "root_edge_1",
+          "provenance": "overflow_determinant_symmetric_dual",
+          "source_determinant": {
+            "K_M": 15123,
+            "M": 71,
+            "R_M": 251,
+            "d": 28,
+            "identity": "p*n=4*M*d+1",
+            "n": 33
+          }
+        },
+        "certificate_type": "overflow_a_one_dual_outer_rank_reset",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:739dcf52e70a8fdeb16868d07da80caa52a58dd2eccaedc3143d042f6f526d3e",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 14400,
+          "successor": 514
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_a_one_dual_outer_rank_reset_v1",
+        "phase": "RESET",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 1,
+          "source_value": 14400,
+          "strict_decrease": true,
+          "successor_support": 28,
+          "successor_value": 514,
+          "support_monotone": true
+        },
+        "proof_boundary": "a_one_dual_reset_universal_subfamily",
+        "recursive_edge_eligible": true,
+        "scope_note": "For A=1 the symmetric d/r chart theorem always supplies t>1 and R_t<p; this receipt replays the identity-lift RESET on the focused source rows.",
+        "selector_status": "verified_edge",
+        "source_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "marked_absorb",
+        "successor_state": {
+          "K": 4760,
+          "R": 79,
+          "absorbed_support": 28,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "marked_absorb"
+        }
+      }
+    ]
+  },
+  "overflow_a_one_generic_determinant_boundary": {
+    "bounded_divisors": [
+      1,
+      29
+    ],
+    "certificate_type": "overflow_a_one_generic_determinant_boundary",
+    "determinant": {
+      "B_p": 1296,
+      "K_M": 57068,
+      "M": 1297,
+      "R_M": 3127,
+      "S": 37613,
+      "d": 29,
+      "identity": "p*n=4*M*d+1",
+      "n": 2061,
+      "p": 73
+    },
+    "dual_charts": {
+      "d": {
+        "K": 493,
+        "R": 27,
+        "t": 29
+      },
+      "r": {
+        "K": 2464,
+        "R": 135,
+        "t": 56
+      }
+    },
+    "dual_parameters": {
+      "r": 56,
+      "s": 89
+    },
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "equation_target": {
+      "denominator": 73,
+      "numerator": 4
+    },
+    "factorization_S": [
+      [
+        29,
+        1
+      ],
+      [
+        1297,
+        1
+      ]
+    ],
+    "failure_conditions": {
+      "M_less_than_p": false,
+      "bounded_positive_divisor_exists": false,
+      "d_at_least_two": true,
+      "dual_reset_below_p": true,
+      "dual_reset_positive": true,
+      "dual_reset_support_gain": true,
+      "small_carrier_positive": false
+    },
+    "marked_solution_set": {
+      "reason": "negative arithmetic boundary has no successor",
+      "status": "not_carried"
+    },
+    "phase": "OVERFLOW_DETERMINANT",
+    "positive_candidates": [],
+    "potential_record": {
+      "reason": "no admissible bounded divisor",
+      "status": "absent"
+    },
+    "proof_boundary": "a_one_small_carrier_hypothesis_required",
+    "recursive_edge_eligible": false,
+    "scope_note": "This tuple satisfies the overflow determinant identities but has no raw Reach or source provenance. It refutes only the unrestricted arithmetic claim that L=d always works for A=1; the d-side dual RESET (t=29,R=27) remains valid, and it is not an Erdos-Straus counterexample.",
+    "selected_dual_reset": {
+      "K": 493,
+      "R": 27,
+      "side": "d",
+      "t": 29
+    },
+    "selector_status": "analysis_evidence",
+    "signed_defect": {
+      "status": "not_carried"
+    },
+    "small_carrier_candidate": {
+      "K_L_formula": -35496,
+      "L": 29,
+      "R_L": -1945,
+      "positive_chart": false
+    },
+    "source_state": {
+      "K": 57068,
+      "R": 3127,
+      "absorbed_support": 1,
+      "equation_target": [
+        4,
+        73
+      ],
+      "state_class": "overflow"
+    },
+    "state_class": "overflow",
+    "target_fiber": {
+      "status": "not_carried"
     }
   },
   "overflow_d_one_p_minus_two_g_rechart": {
@@ -9085,6 +9375,7 @@
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
     "overflow_fixed_n_bounded_divisor_outer_rank",
+    "overflow_a_one_generic_determinant_boundary",
     "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",

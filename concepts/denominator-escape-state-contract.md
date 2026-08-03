@@ -373,9 +373,11 @@ K_L=L\left(p-\frac SL\right),
 \]
 
 并验证 \(3\le R_L\le p-2\)、\(pR_L+1=4K_L\)、\(L\mid K_L\)、恒等解提升及
-absorbed-support 势严格下降。初始 \(A=1\) 的 overflow 另用特化 verifier
-`verify_overflow_determinant_charged_support_v1`：它证明 \(d\ge2\)，固定取 \(L=d\)，
-因此该层候选集永不为空。
+absorbed-support 势严格下降。若额外有 \(A=1\) 且 \(M<p\)，则 \(d\ge2\)，固定取
+\(L=d\) 可证明该小载体子族的候选集非空；这不是任意 \(A=1\) determinant overflow
+的自动性质。无 \(M<p\) 的负边界
+\((p,M,d,n)=(73,1297,29,2061)\) 已由选择器作为 `analysis_evidence` 记录，见
+[A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md)。
 
 `overflow_determinant` 不是旧节点的 complete-excess bundle，不能把 \(d\) 伪写成
 path-anchored \(Q\)。反过来，在 \(A>1\) 时也不得把支撑重置为较小对偶载体；只有
@@ -934,7 +936,9 @@ rejected
 complete-excess 定理已经把每个完整 Reach 压成直接 Type I、bundle marked edge 或
 bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项。通用
 \(p\)-source 又覆盖所有 F/G/hit 图表；初始 \(A=1\) overflow 也总能通过 determinant
-收费得到一条 verified edge。因此“裸 G source”和“初始 overflow 无出口”不再是主缺口。
+的固定-\(n\) 小载体或[对偶 \(d/r\) RESET 引理](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md)
+得到一条 verified edge。因此“裸 G source”和
+“初始 overflow 无出口”不再是主缺口。
 
 当前唯一集中的全称问题是：对每个递归历史可达的 \(A>1\) overflow，是否必有
 

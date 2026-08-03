@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-r-one-dual-boundary
 title: overflow 余数 r=1 的对偶边界
-statement: 设核心素数 p≡1 (mod 24) 的 overflow 满足 pn=4Md+1、M=kp+r、1≤r<p、1≤d<p，并令 s=(4rd+1)/p=n-4kd。若 r=1，则 s=1、d=(p-1)/4；d 对偶图表恒为 (p-2,(p-1)^2/4)，r 对偶图表恒为 (3,(3p+1)/4)。该参数族可形成真实 overflow，但 r=1 本身不自动给出一般 A>1 的保持累积支撑 E1--E5 递归边；初始 A=1 的 d 侧出口已由既有 determinant 边覆盖，r=1 只应作为对偶分类边界，不应作为新的统一出口。
+statement: 设核心素数 p≡1 (mod 24) 的 overflow 满足 pn=4Md+1、M=kp+r、1≤r<p、1≤d<p，并令 s=(4rd+1)/p=n-4kd。若 r=1，则 s=1、d=(p-1)/4；d 对偶图表恒为 (p-2,(p-1)^2/4)，r 对偶图表恒为 (3,(3p+1)/4)。该参数族可形成真实 overflow，但 r=1 本身不自动给出一般 A=1 或 A>1 的保持累积支撑 E1--E5 递归边；只有另有 M<p 的小载体假设时，旧的 L=d 论证才适用，r=1 只应作为对偶分类边界，不应作为新的统一出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -94,8 +94,9 @@ ps=4d+1.
 \]
 
 所以 \(r=1\) 并不是一个新的自由小载体问题：d 侧退化为已经分类的普适
-\(p-2\) G 图表，r 侧退化为单位载体的 \(R=3\) 图表。初始 \(A=1\) 时 d 侧的
-determinant 边仍然合法；新的问题只在 \(A>1\) 的支撑保持上。
+\(p-2\) G 图表，r 侧退化为单位载体的 \(R=3\) 图表。初始 \(A=1\) 时只有在
+\(M<p\) 的小载体子族中才能直接调用 \(L=d\) 的 determinant 边；本节的真实参数族
+\(M=kp+1\)（\(k\ge1\)）不满足该假设，仍须检查有界除子、直接终端或 alternate。
 
 ## 2. 真实 overflow 参数族
 

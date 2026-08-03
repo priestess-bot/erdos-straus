@@ -3945,8 +3945,9 @@ L\mid Md,
 \]
 
 若 \(A\mid L\)、\(L>A\)，它是新的 `overflow_determinant` charged-support identity
-edge。特别地 \(A=1\) 时 \(L=d\) 总合法，故全部初始 overflow 已有下一边。任意
-overflow 还至少有一个 \(R<p\) 的对称 \(d/r\) 图表。
+edge。若额外有 \(A=1,\ M<p\)，则 \(L=d\) 总合法，故小载体子族已有下一边。一般
+\(A=1\) 的算术负边界 \((p,M,d,n)=(73,1297,29,2061)\) 已登记；任意 overflow
+仍至少有一个 \(R<p\) 的对称 \(d/r\) 图表，但该图表不保证正的固定-\(n\) 除子。
 
 一般 \(A>1\) 不能据此全称闭合：fixed-\(n\) 窗口可为空、\(d\) 可等于 \(1\)、小图表
 可丢失旧支撑，lcm/determinant 迭代可出现二环。更强的可达机制边界从
@@ -4553,8 +4554,8 @@ s=1,
 该边界实际可达：对任意 \(k\ge1\)，\(M=kp+1,n=k(p-1)+1\) 给出
 \(R_M=k(3p+1)+3>p\) 的 overflow。因此不能因为冻结菜单没有 \(r=1\) 行就把它
 误判为空分支。不过 r 侧载体恒为 \(1\)，d 侧是已知的 \(p-2\) G 重图表；\(r=1\)
-本身不自动保留一般 \(A>1\) 的旧 charged support，初始 \(A=1\) 的 d 侧出口已由既有
-determinant 边覆盖，仍必须经过完整 E1--E5 检查。主张卡：
+本身不自动保留一般 \(A\ge1\) 的旧 charged support，且 \(M=kp+1>p\) 不属于
+\(L=d\) 小载体引理的范围，仍必须经过完整 E1--E5 检查。主张卡：
 [overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md)。
 统一回执新增 overflow_d_one_p_minus_two_g_rechart，保留
 selector_status=analysis_evidence、recursive_edge_eligible=false；聚焦样本
@@ -4605,3 +4606,30 @@ R_L=4L-n,
 主张卡见[overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
 全称缺口未消失：尚未证明每个递归可达 \(A>1\) overflow 都存在这样的 \(L\)，也未
 排除需要 alternate、直接 Type I/II 或独立外层秩的残差。
+
+## 2026-08-03：A=1 初始 overflow 量词纠错
+
+复核旧的固定-\(n\) claim 后发现，“\(A=1\) 时 \(L=d\) 总合法”隐含使用了
+\(M<p\)，但原 statement 把它写成了任意初始 overflow 的结论。算术 tuple
+
+\[
+(p,M,d,n)=(73,1297,29,2061)
+\]
+
+满足
+\[
+4Md+1=pn,\qquad R_M=4M-n=3127>73,
+\]
+但 \(4d-n=-1945<0\)。这里 \(S=Md=37613=29\cdot1297\)、
+\(B_p=1296\)，所有 \(S\) 的有界除子只有 \(1,29\)，故没有正的有界固定-\(n\)
+除子。
+
+这不是猜想反例，也没有 raw Reach/source provenance；它只反驳了过强的中间命题。正确
+结论是：\(A=1,M<p\) 的小载体子族由 \(L=d\) 关闭；一般 \(A=1\) 虽可能没有固定-\(n\)
+正除子，但对偶 \(d/r\) 图表总能提供 \(t>1,\ R_t<p\) 的外层 RESET。当前聚焦输入中的
+两条 \(A=1\) root edge 均已重放为完整 verified edge（2/2），统一 selector 新增
+overflow_a_one_generic_determinant_boundary，保持
+selector_status=analysis_evidence、recursive_edge_eligible=false。
+
+主张卡见[A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md)和
+[A=1 overflow 的对偶外层秩 RESET](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md)。

@@ -49,8 +49,10 @@
    \]
 
    若 \(A\mid L\)、\(L>A\)，这是保持 \(\operatorname{Sol}(p)\)、恒等提升且严格降低
-   absorbed-support 势的 `overflow_determinant` 边。特别地，\(A=1\) 时 \(d\ge2\)，
-   且 \(L=d\) 总合法，所以全部初始 overflow 都有 verified 后继。
+   absorbed-support 势的 `overflow_determinant` 边。若额外有 \(A=1,\ M<p\)，则
+   \(d\ge2\) 且 \(L=d\) 总合法，所以小载体子族有 verified 后继；一般 \(A=1\) 不能
+   删除 \(M<p\) 假设，负边界见[A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md)；
+   但该负边界仍由对偶 \(d/r\) 外层 RESET 处理，见[A=1 overflow 的对偶外层秩 RESET](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md)。
 
 此外，任意 overflow 写 \(M=kp+r\) 后都有载体 \(d,r\) 的两个对称图表，至少一个满足
 \(R_t<p\)，并且该小图表的载体严格满足 \(t<M\)。这给出一个可定义外层

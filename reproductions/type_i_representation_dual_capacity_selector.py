@@ -69,6 +69,7 @@ SELECTOR_ORDER = [
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
     "overflow_fixed_n_bounded_divisor_outer_rank",
+    "overflow_a_one_generic_determinant_boundary",
     "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
@@ -2587,6 +2588,239 @@ def overflow_fixed_n_bounded_divisor_outer_rank(
     }
 
 
+def overflow_a_one_generic_determinant_boundary(
+    payload: dict[str, object],
+) -> dict[str, object]:
+    """Record the missing-hypothesis boundary for the old A=1 claim.
+
+    This is an arithmetic boundary only: it has no raw Reach/source provenance
+    and therefore cannot be used as a counterexample to Erdős--Straus.  It
+    shows that the special choice L=d needs the additional M<p hypothesis.
+    """
+    del payload
+    prime = 73
+    M = 1297
+    d = 29
+    n = 2061
+    support = 1
+    B_prime = (prime - 1) ** 2 // 4
+    S = M * d
+    R_M = 4 * M - n
+    K_M = M * (prime - d)
+    residue = M % prime
+    s = (4 * residue * d + 1) // prime
+    dual_charts = {
+        "d": {"t": d, "R": 4 * d - s, "K": d * (prime - residue)},
+        "r": {"t": residue, "R": 4 * residue - s, "K": residue * (prime - d)},
+    }
+    all_divisors = divisors(S)
+    bounded_divisors = [L for L in all_divisors if L <= B_prime]
+    positive_candidates = [
+        L
+        for L in bounded_divisors
+        if L > support and 4 * L > n and B_prime // L < B_prime // support
+    ]
+    if positive_candidates or bounded_divisors != [1, d]:
+        raise AssertionError("A=1 generic determinant boundary changed")
+    receipt = {
+        "certificate_type": "overflow_a_one_generic_determinant_boundary",
+        "phase": "OVERFLOW_DETERMINANT",
+        "state_class": "overflow",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "equation_target": {"numerator": 4, "denominator": prime},
+        "source_state": {
+            "equation_target": [4, prime],
+            "R": R_M,
+            "K": K_M,
+            "absorbed_support": support,
+            "state_class": "overflow",
+        },
+        "determinant": {
+            "p": prime,
+            "M": M,
+            "d": d,
+            "n": n,
+            "S": S,
+            "R_M": R_M,
+            "K_M": K_M,
+            "B_p": B_prime,
+            "identity": "p*n=4*M*d+1",
+        },
+        "factorization_S": factorization(S),
+        "bounded_divisors": bounded_divisors,
+        "positive_candidates": positive_candidates,
+        "dual_parameters": {"r": residue, "s": s},
+        "dual_charts": dual_charts,
+        "selected_dual_reset": {"side": "d", **dual_charts["d"]},
+        "small_carrier_candidate": {
+            "L": d,
+            "R_L": 4 * d - n,
+            "K_L_formula": d * (prime - M),
+            "positive_chart": False,
+        },
+        "failure_conditions": {
+            "M_less_than_p": M < prime,
+            "d_at_least_two": d >= 2,
+            "small_carrier_positive": 4 * d > n,
+            "bounded_positive_divisor_exists": bool(positive_candidates),
+            "dual_reset_positive": dual_charts["d"]["R"] > 0,
+            "dual_reset_below_p": dual_charts["d"]["R"] < prime,
+            "dual_reset_support_gain": dual_charts["d"]["t"] > support,
+        },
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "negative arithmetic boundary has no successor",
+        },
+        "target_fiber": {"status": "not_carried"},
+        "signed_defect": {"status": "not_carried"},
+        "potential_record": {
+            "status": "absent",
+            "reason": "no admissible bounded divisor",
+        },
+        "proof_boundary": "a_one_small_carrier_hypothesis_required",
+        "scope_note": (
+            "This tuple satisfies the overflow determinant identities but has no raw Reach or "
+            "source provenance. It refutes only the unrestricted arithmetic claim that L=d "
+            "always works for A=1; the d-side dual RESET (t=29,R=27) remains valid, and it is "
+            "not an Erdos-Straus counterexample."
+        ),
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
+def overflow_a_one_dual_reset_family(payload: dict[str, object]) -> dict[str, object]:
+    """Replay the universal A=1 dual-carrier reset on focused source rows."""
+    receipts: list[dict[str, object]] = []
+    for fixture in overflow_fixture_rows(payload):
+        if int(fixture["A"]) != 1:
+            continue
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        M = int(fixture["M"])
+        d = int(fixture["d"])
+        n = int(fixture["n"])
+        R_M = int(fixture["R_M"])
+        K_M = int(fixture["K_M"])
+        r = M % prime
+        if (
+            not 1 <= r < prime
+            or not 1 <= d < prime
+            or gcd(M, prime) != 1
+            or prime * n != 4 * M * d + 1
+        ):
+            raise AssertionError(f"A=1 dual reset determinant changed: {name}")
+        s_numerator = 4 * r * d + 1
+        if s_numerator % prime:
+            raise AssertionError(f"A=1 dual reset s changed: {name}")
+        s = s_numerator // prime
+        candidates: list[tuple[int, str, int, int]] = []
+        for side, t, K_formula in (
+            ("d", d, d * (prime - r)),
+            ("r", r, r * (prime - d)),
+        ):
+            R_t = 4 * t - s
+            K_t = K_formula
+            if canonical_chart(prime, t) != (R_t, K_t):
+                raise AssertionError(f"A=1 dual chart changed: {name}, side={side}")
+            if t > 1 and R_t < prime:
+                candidates.append((R_t, side, t, K_t))
+        if not candidates:
+            raise AssertionError(f"A=1 dual reset candidate disappeared: {name}")
+        R_t, side, t, K_t = min(candidates)
+        B_prime = (prime - 1) ** 2 // 4
+        if t > B_prime or K_t % t or B_prime // t >= B_prime:
+            raise AssertionError(f"A=1 dual reset rank changed: {name}")
+        source_state = {
+            "equation_target": [4, prime],
+            "R": R_M,
+            "K": K_M,
+            "absorbed_support": 1,
+            "state_class": "overflow",
+        }
+        target_state = {
+            "equation_target": [4, prime],
+            "R": R_t,
+            "K": K_t,
+            "absorbed_support": t,
+            "state_class": "marked_absorb",
+        }
+        receipt = {
+            "edge_id": "edge:" + canonical_hash(
+                {"source": source_state, "successor": target_state}
+            ),
+            "certificate_type": "overflow_a_one_dual_outer_rank_reset",
+            "phase": "RESET",
+            "state_class": "marked_absorb",
+            "source_state": source_state,
+            "successor_state": target_state,
+            "equation_target": {"numerator": 4, "denominator": prime},
+            "marked_solution_set": {
+                "source": "Sol(p)",
+                "successor": "Sol(p)",
+                "lift": "identity",
+            },
+            "certificate_context": {
+                "fixture_name": name,
+                "dual_side": side,
+                "dual_parameters": {"r": r, "s": s},
+                "dual_chart": {"t": t, "R": R_t, "K": K_t},
+                "source_determinant": {
+                    "M": M,
+                    "d": d,
+                    "n": n,
+                    "R_M": R_M,
+                    "K_M": K_M,
+                    "identity": "p*n=4*M*d+1",
+                },
+                "provenance": "overflow_determinant_symmetric_dual",
+            },
+            "normal_form": "overflow_a_one_dual_outer_rank_reset_v1",
+            "induction_rank": {
+                "kind": "absorbed_support_potential",
+                "source": B_prime,
+                "successor": B_prime // t,
+            },
+            "potential_record": {
+                "B_p": B_prime,
+                "source_support": 1,
+                "successor_support": t,
+                "source_value": B_prime,
+                "successor_value": B_prime // t,
+                "strict_decrease": True,
+                "support_monotone": True,
+            },
+            "e1_e5": {f"E{i}": True for i in range(1, 6)},
+            "selector_status": "verified_edge",
+            "recursive_edge_eligible": True,
+            "lift_status": "proved_identity",
+            "proof_boundary": "a_one_dual_reset_universal_subfamily",
+            "scope_note": (
+                "For A=1 the symmetric d/r chart theorem always supplies t>1 and R_t<p; "
+                "this receipt replays the identity-lift RESET on the focused source rows."
+            ),
+        }
+        check_status_boundary(receipt)
+        receipts.append(receipt)
+    return {
+        "fixture_count": len(receipts),
+        "verified_edge_count": len(receipts),
+        "rejected_fixture_count": 0,
+        "verified_receipts": receipts,
+        "theorem": {
+            "condition": "A=1, pn=4*M*d+1, R_M>p",
+            "conclusion": "exists t in {d,r}: t>1, R_t<p, t|K_t, and strict Pi_A descent",
+            "proof_boundary": "symmetric_dual_minimum_and_d_or_r_equals_one_split",
+        },
+        "scope_note": (
+            "The algebraic theorem is universal for verified A=1 overflow; the stored rows are "
+            "focused replays, not a finite proof of the theorem."
+        ),
+    }
+
+
 def overflow_fixed_s_outer_rank(payload: dict[str, object]) -> dict[str, object]:
     """Audit the symmetric r-side fixed-s divisor atlas.
 
@@ -3207,6 +3441,8 @@ def build_results() -> dict[str, object]:
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     fixed_n_bounded_divisor = overflow_fixed_n_bounded_divisor_outer_rank(overflow)
+    a_one_boundary = overflow_a_one_generic_determinant_boundary(overflow)
+    a_one_dual_reset = overflow_a_one_dual_reset_family(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
     fixed_n_fixture_names = {
         receipt["certificate_context"]["fixture_name"]
@@ -3238,6 +3474,8 @@ def build_results() -> dict[str, object]:
         "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_n_bounded_divisor_outer_rank": fixed_n_bounded_divisor,
+        "overflow_a_one_generic_determinant_boundary": a_one_boundary,
+        "overflow_a_one_dual_reset_family": a_one_dual_reset,
         "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
@@ -3264,6 +3502,8 @@ def build_results() -> dict[str, object]:
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
             "fixed_n_bounded_divisor_requires_bounded_support": True,
+            "a_one_determinant_boundary_requires_M_lt_p": True,
+            "a_one_dual_reset_family_replayed": True,
             "fixed_s_overflow_rank_requires_product_divisor": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
@@ -3704,6 +3944,188 @@ def verify_overflow_fixed_n_bounded_divisor_contract(
             raise AssertionError("bounded fixed-n divisor support changed")
 
 
+def verify_overflow_a_one_generic_boundary_contract(result: dict[str, object]) -> None:
+    receipt = result.get("overflow_a_one_generic_determinant_boundary")
+    if not isinstance(receipt, dict):
+        raise AssertionError("A=1 generic determinant boundary missing")
+    if (
+        receipt.get("certificate_type")
+        != "overflow_a_one_generic_determinant_boundary"
+        or receipt.get("selector_status") != "analysis_evidence"
+        or receipt.get("recursive_edge_eligible") is not False
+        or receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+    ):
+        raise AssertionError("A=1 generic determinant boundary crossed the status boundary")
+    determinant = receipt.get("determinant")
+    if not isinstance(determinant, dict):
+        raise AssertionError("A=1 generic determinant payload missing")
+    p = int(determinant["p"])
+    M = int(determinant["M"])
+    d = int(determinant["d"])
+    n = int(determinant["n"])
+    S = int(determinant["S"])
+    B_prime = int(determinant["B_p"])
+    if (
+        (p, M, d, n) != (73, 1297, 29, 2061)
+        or S != M * d
+        or p * n != 4 * S + 1
+        or int(determinant["R_M"]) != 4 * M - n
+        or int(determinant["K_M"]) != M * (p - d)
+        or int(receipt["source_state"]["R"]) <= p
+        or B_prime != (p - 1) ** 2 // 4
+        or receipt.get("bounded_divisors") != [1, 29]
+        or receipt.get("positive_candidates") != []
+    ):
+        raise AssertionError("A=1 generic determinant boundary arithmetic changed")
+    small = receipt.get("small_carrier_candidate")
+    failure = receipt.get("failure_conditions")
+    dual_parameters = receipt.get("dual_parameters")
+    dual_charts = receipt.get("dual_charts")
+    selected_dual = receipt.get("selected_dual_reset")
+    if (
+        not isinstance(small, dict)
+        or not isinstance(failure, dict)
+        or not isinstance(dual_parameters, dict)
+        or not isinstance(dual_charts, dict)
+        or not isinstance(selected_dual, dict)
+        or small.get("L") != d
+        or small.get("R_L") != 4 * d - n
+        or small.get("positive_chart") is not False
+        or failure.get("M_less_than_p") is not False
+        or failure.get("small_carrier_positive") is not False
+        or failure.get("bounded_positive_divisor_exists") is not False
+        or dual_parameters != {"r": 56, "s": 89}
+        or dual_charts.get("d") != {"t": 29, "R": 27, "K": 493}
+        or dual_charts.get("r") != {"t": 56, "R": 135, "K": 2464}
+        or selected_dual != {"side": "d", "t": 29, "R": 27, "K": 493}
+        or failure.get("dual_reset_positive") is not True
+        or failure.get("dual_reset_below_p") is not True
+        or failure.get("dual_reset_support_gain") is not True
+    ):
+        raise AssertionError("A=1 generic determinant boundary failure fields changed")
+
+
+def verify_overflow_a_one_dual_reset_family_contract(
+    result: dict[str, object],
+) -> None:
+    branch = result.get("overflow_a_one_dual_reset_family")
+    if not isinstance(branch, dict):
+        raise AssertionError("A=1 dual RESET family missing")
+    if (
+        branch.get("fixture_count") != 2
+        or branch.get("verified_edge_count") != 2
+        or branch.get("rejected_fixture_count") != 0
+    ):
+        raise AssertionError("A=1 dual RESET family counts changed")
+    theorem = branch.get("theorem")
+    if (
+        not isinstance(theorem, dict)
+        or theorem.get("condition") != "A=1, pn=4*M*d+1, R_M>p"
+        or theorem.get("conclusion")
+        != "exists t in {d,r}: t>1, R_t<p, t|K_t, and strict Pi_A descent"
+        or theorem.get("proof_boundary")
+        != "symmetric_dual_minimum_and_d_or_r_equals_one_split"
+    ):
+        raise AssertionError("A=1 dual RESET theorem metadata changed")
+    receipts = branch.get("verified_receipts")
+    if not isinstance(receipts, list) or len(receipts) != 2:
+        raise AssertionError("A=1 dual RESET family receipt shape changed")
+    fixture_names: set[str] = set()
+    for receipt in receipts:
+        if not isinstance(receipt, dict):
+            raise AssertionError("A=1 dual RESET receipt is not an object")
+        if (
+            receipt.get("certificate_type")
+            != "overflow_a_one_dual_outer_rank_reset"
+            or receipt.get("phase") != "RESET"
+            or receipt.get("state_class") != "marked_absorb"
+            or receipt.get("selector_status") != "verified_edge"
+            or receipt.get("recursive_edge_eligible") is not True
+            or receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}
+            or receipt.get("lift_status") != "proved_identity"
+        ):
+            raise AssertionError("A=1 dual RESET family crossed the status boundary")
+        source = receipt.get("source_state")
+        successor = receipt.get("successor_state")
+        context = receipt.get("certificate_context")
+        potential = receipt.get("potential_record")
+        if (
+            not isinstance(source, dict)
+            or not isinstance(successor, dict)
+            or not isinstance(context, dict)
+            or not isinstance(potential, dict)
+        ):
+            raise AssertionError("A=1 dual RESET payload is incomplete")
+        fixture_name = context.get("fixture_name")
+        if not isinstance(fixture_name, str):
+            raise AssertionError("A=1 dual RESET fixture name missing")
+        fixture_names.add(fixture_name)
+        if fixture_name not in {"root_edge_0", "root_edge_1"}:
+            raise AssertionError("unexpected A=1 dual RESET fixture")
+        equation = receipt.get("equation_target")
+        if not isinstance(equation, dict):
+            raise AssertionError("A=1 dual RESET equation target missing")
+        prime = int(equation["denominator"])
+        source_determinant = context.get("source_determinant")
+        dual_parameters = context.get("dual_parameters")
+        dual_chart = context.get("dual_chart")
+        if (
+            not isinstance(source_determinant, dict)
+            or not isinstance(dual_parameters, dict)
+            or not isinstance(dual_chart, dict)
+        ):
+            raise AssertionError("A=1 dual RESET determinant payload missing")
+        M = int(source_determinant["M"])
+        d = int(source_determinant["d"])
+        n = int(source_determinant["n"])
+        R_M = int(source_determinant["R_M"])
+        K_M = int(source_determinant["K_M"])
+        r = int(dual_parameters["r"])
+        s = int(dual_parameters["s"])
+        side = context.get("dual_side")
+        t = int(dual_chart["t"])
+        target_R = int(dual_chart["R"])
+        target_K = int(dual_chart["K"])
+        if (
+            source.get("absorbed_support") != 1
+            or source.get("R") != R_M
+            or source.get("K") != K_M
+            or successor.get("absorbed_support") != t
+            or successor.get("R") != target_R
+            or successor.get("K") != target_K
+            or prime * n != 4 * M * d + 1
+            or R_M != 4 * M - n
+            or R_M <= prime
+            or not 1 <= r < prime
+            or prime * s != 4 * r * d + 1
+            or s % 4 != 1
+            or side not in {"d", "r"}
+            or t <= 1
+            or target_R <= 0
+            or target_R >= prime
+            or target_R % 4 != 3
+            or target_K != t * (prime - (r if side == "d" else d))
+            or prime * target_R + 1 != 4 * target_K
+            or canonical_chart(prime, t) != (target_R, target_K)
+            or target_K % t
+        ):
+            raise AssertionError("A=1 dual RESET determinant identity changed")
+        B_prime = (prime - 1) ** 2 // 4
+        if (
+            t > B_prime
+            or potential.get("B_p") != B_prime
+            or potential.get("source_support") != 1
+            or potential.get("successor_support") != t
+            or potential.get("source_value") != B_prime
+            or potential.get("successor_value") != B_prime // t
+            or potential.get("strict_decrease") is not True
+            or potential.get("support_monotone") is not True
+        ):
+            raise AssertionError("A=1 dual RESET potential changed")
+    if fixture_names != {"root_edge_0", "root_edge_1"}:
+        raise AssertionError("A=1 dual RESET fixture coverage changed")
+
+
 def verify_overflow_menu_contract(result: dict[str, object]) -> None:
     menu = result.get("overflow_menu")
     if not isinstance(menu, dict):
@@ -3925,6 +4347,8 @@ def main() -> None:
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)
         verify_overflow_fixed_n_bounded_divisor_contract(result)
+        verify_overflow_a_one_generic_boundary_contract(result)
+        verify_overflow_a_one_dual_reset_family_contract(result)
         verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")

@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱又证明 A=1 时总有合法 charged-support identity edge，并把有界除子条件下的 A>1 递降规范化为“取最大合格 L”，且任意 overflow 至少有一个 R<p 的算术对偶图表。规范有界 Fourier 的 45 个冻结 F 状态现已逐方向投影到 141 个实际线性载体，整除链和混合容量均无超载，说明相位/角色债务尚未形成跨状态需求。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在满足有界除子条件的 L、保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱在额外条件 M<p 下关闭小载体 A=1 子族，并把一般有界除子条件下的 A=1/A>1 递降规范化为“取最大合格 L”；不含旧 A 的候选由严格外层势支付 reset，任意 overflow 至少有一个 R<p 的算术对偶图表，但一般 A=1 也可能没有正的有界固定-n 除子。规范有界 Fourier 的 45 个冻结 F 状态现已逐方向投影到 141 个实际线性载体，整除链和混合容量均无超载，说明相位/角色债务尚未形成跨状态需求。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在满足有界除子条件的 L、保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
 topics:
 - research-map
 - proof-program
@@ -16,6 +16,7 @@ used_by:
 - type-I-private-quotient-box-saturation
 - type-I-linear-single-active-prime-cross-state-compatibility
 - type-I-overflow-fixed-n-bounded-divisor-saturation
+- type-I-overflow-a-one-dual-outer-rank-reset
 sources:
 - claim: type-I-universal-p-source-capacity-anchor-orbit
   role: universal-source-and-capacity-orbit
@@ -23,6 +24,10 @@ sources:
   role: fixed-n-dual-atlas-and-current-residual
 - claim: type-I-overflow-fixed-n-bounded-divisor-saturation
   role: bounded-fixed-n-divisor-outer-rank-and-low-complement-corollary
+- claim: type-I-overflow-a-one-generic-determinant-boundary
+  role: corrected-A-one-small-carrier-scope-and-negative-boundary
+- claim: type-I-overflow-a-one-dual-outer-rank-reset
+  role: universal-A-one-dual-reset-subfamily
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
 - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
@@ -2720,8 +2725,12 @@ K_L=L\left(p-\frac SL\right),
 
 若旧 charged support 满足 \(A\mid L\)、\(L>A\)，这就是保持
 \(\operatorname{Sol}(p)\)、恒等提升且使 \(\lfloor B_p/A\rfloor\) 严格下降的
-`overflow_determinant` 边。特别在 \(A=1\) 时，\(d\ge2\) 且 \(L=d\) 总在窗口中，
-所以全部初始 overflow 已有合法下一边。
+`overflow_determinant` 边。若额外有 \(A=1,\ M<p\)，则 \(d\ge2\) 且 \(L=d\) 总在窗口中，
+所以小载体子族已有合法下一边；一般 \(A=1\) 的负边界
+\((p,M,d,n)=(73,1297,29,2061)\) 表明不能删去 \(M<p\)。详见
+[A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md)。
+固定-\(n\) 失败不等于没有递归边：对偶 \(d/r\) 图表总能选择 \(t>1,\ R_t<p\)，由
+外层 RESET 支付严格势，见[A=1 overflow 的对偶外层秩 RESET](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md)。
 
 一般情形还有更对称的算术对偶。写 \(M=kp+r\)、\(ps=4rd+1\)，则载体 \(d,r\) 给出
 
@@ -2869,11 +2878,11 @@ slab-\(q\) 载体候选现已被线性 strong-miss 反例否定；替代对象�
 Pareto 前沿和同图表至多三个 \(\beta\)-ratio cocycle。底层 SCC 的无限路径也已压成
 显式有限见证界和周期静态/区间证书。sink 最小坐标定理又把所有 competing-excess
 完整块规范合并为复合 \(Q\)，并以 \(\operatorname{lcm}(A,Q)\) 直接进入 marked edge
-或 bundle overflow。通用 \(p\) 源现已覆盖裸 G；固定 \(n\) determinant 图谱又关闭
-全部 \(A=1\) overflow，并证明任意 overflow 至少有一个较小算术对偶图表。真正余项已
-从“继续走多深”“能否出现单素数 clean slab”“裸 G 是否有 source”进一步压成：递归
-可达的 \(A>1\) overflow 是否总有保持旧 charged support 的 alternate/终端，或能否由
-独立外层秩合法支付 support reset。
+或 bundle overflow。通用 \(p\) 源现已覆盖裸 G；固定 \(n\) determinant 图谱关闭了
+\(M<p\) 的小载体 \(A=1\) 子族，并证明任意 overflow 至少有一个较小算术对偶图表。
+一般 \(A=1\) 仍可能没有正的有界固定-\(n\) 除子，但对偶外层 RESET 已关闭其算术
+入口；故真正余项重新收缩为 RESET 后递归可达的 \(A>1\) overflow 是否总有
+alternate/终端，或能否由独立外层秩合法支付 support reset。
 \(D\nmid n^2\) 的三目标路线除小 \(\mu\)、\(z=1\) 和 \(n=p-1\) 层外，现又关闭了
 全部 \(p\equiv n\equiv1\pmod4\) 的 non-source 参数。overflow 补秩恰在这一同余类，
 所以 square-excess 不再是后继候选，D-only 应整体输出 `rejected_branch`。path-static
@@ -3088,7 +3097,7 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-n-bounded-divisor-outer-rank -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-n-bounded-divisor-outer-rank -> overflow-a-one-generic-determinant-boundary -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
@@ -3334,7 +3343,8 @@ M\equiv r=\frac{p-1}{4}\pmod p,
 \(0<4d+1<4p\)，必有 \(s=1\)、\(d=(p-1)/4\)。于是 d 侧再次固定为
 \((p-2,(p-1)^2/4)\) 的 G 图表，而 r 侧固定为 \((3,(3p+1)/4)\) 的单位载体。
 对每个 \(k\ge1\)，\(M=kp+1\)、\(n=k(p-1)+1\) 确实给出真实 overflow，因此这不是
-有限样本空缺；但 \(r=1\) 本身不自动保留一般 \(A>1\) 的旧 charged support，不能登记为新的递归出口；初始 \(A=1\) 的 d 侧出口已由既有 determinant 边覆盖。该
+有限样本空缺；但 \(r=1\) 本身不自动保留一般 \(A\ge1\) 的旧 charged support，且
+\(M=kp+1>p\) 不属于 \(L=d\) 小载体引理的范围，不能登记为新的递归出口。该
 边界已记录为[overflow 余数 \(r=1\) 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md)。
 
 ## 2026-08-03 固定-\(n\) 有界除子外层秩递降

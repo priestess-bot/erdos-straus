@@ -10,6 +10,7 @@ depends_on:
   - type-I-formal-external-slab-collision-absorption-rechart
   - type-I-general-b-centered-square-spectrum
   - type-I-f-g-fourier-obstruction-certificate
+  - type-I-overflow-a-one-dual-outer-rank-reset
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -33,7 +34,7 @@ sources:
   - claim: type-I-f-g-fourier-obstruction-certificate
     role: canonical-f-g-state-certificate
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-03'
 ---
 
 # 外部支撑累积重图表的良基下降与 overflow 饱和边界
@@ -510,6 +511,7 @@ sink-SCC 余项；本卡仍未证明的是 prime-power 或 bundle overflow 必�
 
 下游的
 [overflow 固定 \(n\) 对偶图谱](type-I-overflow-determinant-fixed-n-dual-support-conflict.md)
+及其 [\(A=1\) 对偶 RESET 引理](type-I-overflow-a-one-dual-outer-rank-reset.md)
 又加强了最后一句：若当前 \(A=1\)，每个 overflow 都有规范 determinant-charged
 identity edge；若 \(A>1\)，固定 \(n\) 因子窗口非空时也有同类边。真正未闭合的只剩
 累积支撑窗口为空且所有小对偶载体都不能保留旧 \(A\) 的分支。该下游边使用

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-determinant-fixed-n-dual-support-conflict
 title: overflow 行列式的固定 n 对偶图谱与累积支撑冲突
-statement: 设 verified complete-excess bundle overflow 满足 R_M>p、pR_M+1=4K_M 且 K_M=MC，写 n=4M-R_M、d=p-C，则 pn=4Md+1。固定 n 时，每个 L|Md 且 n<4L<p+n 都给出合法小图表 R_L=4L-n、K_L=L(p-Md/L)；若旧 charged support A 满足 A|L、L>A，则这是保持 Sol(p)、恒等提升且使 floor((p-1)^2/(4A)) 严格下降的 overflow-derived edge。特别地，A=1 时 d>=2 且 L=d 总在该窗口，所以所有初始 overflow 都有 verified determinant-charged 后继。一般 overflow 另有由 r=M mod p 与 d 构成的两个对偶图表，其中至少一个 R<p，且相应载体 t<M；但 A>1 时小图表未必保留旧支撑，固定 n 窗口也可为空，lcm 迭代还可成环。故余项已精确收缩为可达累积支撑 overflow 的 support-preserving alternate/终端/外层重置问题，而非裸 G、初始 overflow 或小算术载体存在性。
+statement: 设 verified complete-excess bundle overflow 满足 R_M>p、pR_M+1=4K_M 且 K_M=MC，写 n=4M-R_M、d=p-C，则 pn=4Md+1。固定 n 时，每个 L|Md 且 n<4L<p+n 都给出合法小图表 R_L=4L-n、K_L=L(p-Md/L)；若旧 charged support A 满足 A|L、L>A，则这是保持 Sol(p)、恒等提升且使 floor((p-1)^2/(4A)) 严格下降的 overflow-derived edge。若另外有 A=1 且 M<p，则 d>=2、L=d 总在该窗口；不加 M<p 时该结论为假，见 A=1 小载体假设边界。一般 overflow 另有由 r=M mod p 与 d 构成的两个对偶图表，其中至少一个 R<p，且相应载体 t<M；但 A>1 时小图表未必保留旧支撑，固定 n 窗口也可为空，lcm 迭代还可成环。故余项已精确收缩为可达累积支撑 overflow 的 alternate/终端/外层重置问题，而非把所有 A=1 算术 overflow 误判为已闭合。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -30,7 +30,7 @@ sources:
   - claim: type-I-universal-p-source-capacity-anchor-orbit
     role: universal-anchor-and-path-provenance
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-03'
 ---
 
 # overflow 行列式的固定 \(n\) 对偶图谱与累积支撑冲突
@@ -168,7 +168,7 @@ W_T=W_S=\operatorname{Sol}(p),
 是 `overflow_determinant`，不是原节点上的 complete-excess bundle；这是一个新增且必须
 显式记录的 E1 provenance。
 
-## 3. 初始 \(A=1\) overflow 全部有合法后继
+## 3. 小载体 \(A=1,\ M<p\) overflow 有合法后继
 
 初始层有
 
@@ -178,6 +178,9 @@ A=1,
 M=Q<R<p.
 \tag{15}
 \]
+
+这里的 \(M<p\) 是本节的必要假设，不是任意 determinant overflow 的自动性质；因此本节
+只关闭小载体子族。
 
 若 \(d=1\)，则由 (4) 及 \(M<p\) 得 \(n<4\)；又 \(n\equiv1\pmod4\)，所以
 \(n=1\)。这会给出
@@ -249,6 +252,11 @@ d\mid K_d.
 `overflow_determinant_charged_support_v1`。即使 \(R_d=R\)，支撑也由 \(1\) 严格增长到
 \(d\)，所以 (14) 仍下降。该定理关闭的是初始 overflow 的“一步出口”；后继已经具有
 \(A>1\)，仍须继续处理累积层。
+
+若删去 \(M<p\)，上述 \(L=d\) 推论不成立：例如
+\((p,M,d,n)=(73,1297,29,2061)\) 满足同一 determinant overflow，但
+\(4d-n<0\)，且 \(S=Md\) 在 \(B_p\) 以下没有正候选除子。该负边界及其逻辑范围见
+[A=1 overflow 的小载体假设边界](type-I-overflow-a-one-generic-determinant-boundary.md)。
 
 ## 4. 任意 overflow 至少有一个小算术对偶图表
 
@@ -582,13 +590,15 @@ Q\in\{2,32,44,50\}.
 
 ## 6. 精确的新余项
 
-通用源定理和第 3--4 节已经删除三个旧问题：
+通用源定理和第 3--4 节已经删除两个旧问题，并将第三个拆分为受限子族：
 
 1. 裸 G 是否有实际 source；
-2. 初始 \(A=1\) overflow 是否有合法下一边；
+2. \(M<p\) 的小载体 \(A=1\) overflow 是否有合法下一边；
 3. 任意 overflow 是否至少存在一个 \(R<p\) 的算术对偶图表。
 
-剩余全称命题必须量化**递归历史可达的 \(A>1\) 状态**，并证明以下至少一项：
+一般 \(A=1\) 的固定-\(n\) 分支仍不能自动闭合，但[A=1 overflow 的对偶外层秩
+RESET](type-I-overflow-a-one-dual-outer-rank-reset.md) 已提供另一条算术出口；合并
+两者后，剩余全称命题可量化**递归历史可达的 \(A>1\) 状态**，并证明以下至少一项：
 
 \[
 \boxed{
