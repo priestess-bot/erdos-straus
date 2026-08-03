@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier 族级容量负边界、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier 与底层路径字族级容量边界、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -21,6 +21,8 @@ depends_on:
   - type-I-fixed-layer-fourier-qadic-phase-bridge
   - type-I-fixed-layer-fourier-q-primary-projection
   - type-I-f-bounded-fourier-carrier-capacity-boundary
+  - type-I-bottom-word-lattice-pareto-cycle-capacity-selector
+  - type-I-target-fiber-joint-capacity-signed-carrier-dictionary
   - type-I-universal-p-source-capacity-anchor-orbit
   - denominator-escape-state-contract
 topics:
@@ -49,6 +51,10 @@ sources:
     role: typed-support-debt-phase-bridge
   - claim: type-I-universal-p-source-capacity-anchor-orbit
     role: universal-F-G-source-and-anchor-orbit
+  - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
+    role: path-word-SNF-cycle-capacity-boundary
+  - claim: type-I-target-fiber-joint-capacity-signed-carrier-dictionary
+    role: signed-target-fiber-capacity-dictionary
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -122,7 +128,10 @@ verified_edge
 45 个 F 状态重算 141 个实际线性载体方向及同色/混色容量摘要；固定-\(n\) 回执则重算一个保持
 `Sol(p)` 的恒等提升和 absorbed-support 势下降；hard-core 回执精确记录固定-\(n\) 因子
 间隙与双对偶未支付 \(q\)-幂；overflow 容量回执验证的是逐素数幂支付、缺陷单位相位分胞
-及条件性容量统计。前三类证据、hard-core 负边界、support-debt phase bridge 和容量审计统一标为
+及条件性容量统计。底层路径字回执另行重算两个三角矩阵的 SNF、一个 \(Q=4141\) 周期
+的静态 MISS 分离，以及带符号目标纤维的 `strict_split/common_overload` 字典；它仍
+只说明路径/容量边界，不提供实际 carrier mapping。前三类证据、hard-core 负边界、
+support-debt phase bridge、底层路径字回执和容量审计统一标为
 `selector_status=analysis_evidence`、`recursive_edge_eligible=false`；固定-\(n\) 正例可在
 E1--E5 完整时标为 `verified_edge`。
 
@@ -172,6 +181,13 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 同色 113 组、混色 100 组，50+78 次两两检查和两类容量界均无失败或超载。它重算真实
 线性块高度，但仍保留 `carrier_mapping_status=unproved`、无标记集和无递归势；因此只能
 作为 `capacity_receipts` 的有限负边界，不能替代 overflow 的全称分支。
+
+同一 `capacity_receipts` 还包含 `bottom_word_lattice_pareto_cycle_capacity`。该回执
+重算底层路径字的 \(\operatorname{SNF}=\operatorname{diag}(1,Q)\)、根格容量、
+周期射线的静态素数分离，以及带符号 \(K/x_R\) 联合容量的
+`strict_split/common_overload` 二分。它把表示格和目标纤维缺陷放进同一个可检索对象，
+但 `formal_edge_status` 仍为 `candidate_generation_only`、`carrier_mapping_status=unproved`，
+不具备递归资格。
 
 统一结果还包含一个 `universal_p_source_anchor_orbit` source receipt。它重放
 \[

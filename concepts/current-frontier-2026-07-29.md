@@ -22,6 +22,10 @@ sources:
   role: fixed-n-dual-atlas-and-current-residual
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
+- claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
+  role: path-word-lattice-and-cycle-capacity-boundary
+- claim: type-I-target-fiber-joint-capacity-signed-carrier-dictionary
+  role: signed-target-fiber-capacity-dictionary
 - claim: type-I-overflow-support-preserving-dual-criterion
   role: determinant-dual-support-obstruction
 - paper: bradford2024
@@ -3198,6 +3202,14 @@ Fourier 方向可以无损读取为实际 `U=sR+1`、`V=aR+1` 块高度，但没
 
 主张卡见[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)，
 统一结果见 `reproductions/type-i-representation-dual-capacity-selector-results.json`。
+
+同一统一结果的 `capacity_receipts` 现在还登记
+`bottom_word_lattice_pareto_cycle_capacity`：它重算底层路径字的
+\(\operatorname{SNF}=\operatorname{diag}(1,Q)\)、根格容量、\(Q=4141\) 周期的
+静态 `MISS_STATIC` 分离，以及带符号目标纤维的 `strict_split/common_overload` 二分。
+该回执把路径格、周期和 \(K/x_R\) 联合容量放入同一内容寻址对象，但仍是
+`analysis_evidence`，`formal_edge_status=candidate_generation_only`，不能提供
+carrier mapping、标记提升或 E5。
 
 ## 2026-08-03 joined-support 外层秩 RESET
 

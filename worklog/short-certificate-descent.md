@@ -39,6 +39,23 @@ profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
 主张卡见[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)
 和[表示—对偶—容量统一选择器合同](../claims/type-I-representation-dual-capacity-selector-contract.md)。
 
+## 2026-08-03 底层路径字格与带符号容量接入统一 selector
+
+统一结果新增 `bottom_word_lattice_pareto_cycle_capacity` capacity receipt，读取
+`type-i-bottom-word-lattice-pareto-cycle-capacity-results.json` 并重算底层路径字的
+三角矩阵正规形、SNF、根格容量和周期射线账本。聚焦周期的
+`Q=4141` 词保留 4 条 `MISS_STATIC` 素数 103 分离；两个强 miss 例的带符号目标
+纤维字典分别给出 `strict_split`，周期入口的两条共同过载记录给出
+`common_overload`。
+
+这一步把路径格、周期和 (K/x_R) 联合容量放进同一内容寻址对象，但没有把形式
+路径自动升级为 E4：`formal_edge_status=candidate_generation_only`、
+`carrier_mapping_status=unproved`、`selector_status=analysis_evidence`，
+`recursive_edge_eligible=false`。因此它是可检索的表示—对偶—容量接口，不是
+overflow 的全称递归证明。
+
+主张卡见[底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md)。
+
 ## 2026-08-03 RESET 支撑 debt 的有向账本
 
 统一 selector 对双载体 RESET 逐行保存

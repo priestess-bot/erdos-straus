@@ -37,6 +37,15 @@ QADIC_INPUT = ROOT / "reproductions" / "type-i-overflow-qadic-obstruction-transf
 PHASE_INPUT = ROOT / "reproductions" / "type-i-overflow-defect-unit-phase-capacity-results.json"
 OVERFLOW_INPUT = ROOT / "reproductions" / "type-i-universal-anchor-overflow-dual-results.json"
 UNIVERSAL_ANCHOR_INPUT = OVERFLOW_INPUT
+BOTTOM_WORD_CAPACITY_INPUT = (
+    ROOT / "reproductions" / "type-i-bottom-word-lattice-pareto-cycle-capacity-results.json"
+)
+BOTTOM_WORD_CAPACITY_SOURCE = (
+    ROOT / "reproductions" / "type_i_bottom_word_lattice_pareto_cycle_capacity.py"
+)
+BOTTOM_WORD_CLOSURE_SOURCE = (
+    ROOT / "reproductions" / "type_i_f_psi_one_formal_transition_closure.py"
+)
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-representation-dual-capacity-selector-results.json"
 
 SELECTOR_ORDER = [
@@ -129,6 +138,9 @@ def source_hashes() -> dict[str, str]:
         QADIC_INPUT.name: sha256(QADIC_INPUT),
         PHASE_INPUT.name: sha256(PHASE_INPUT),
         OVERFLOW_INPUT.name: sha256(OVERFLOW_INPUT),
+        BOTTOM_WORD_CAPACITY_INPUT.name: sha256(BOTTOM_WORD_CAPACITY_INPUT),
+        BOTTOM_WORD_CAPACITY_SOURCE.name: sha256(BOTTOM_WORD_CAPACITY_SOURCE),
+        BOTTOM_WORD_CLOSURE_SOURCE.name: sha256(BOTTOM_WORD_CLOSURE_SOURCE),
     }
 
 
@@ -462,6 +474,208 @@ def bounded_fourier_capacity_receipt(payload: dict[str, object]) -> dict[str, ob
             "certificate_input_sha256": payload["input_sha256"],
             "linear_source": BOUNDED_FOURIER_SOURCE.name,
             "linear_source_sha256": payload["source_sha256"],
+        },
+    }
+    check_status_boundary(result)
+    return result
+
+
+def bottom_word_lattice_capacity_receipt(payload: dict[str, object]) -> dict[str, object]:
+    """Attach the exact bottom-word lattice and signed-capacity boundary.
+
+    The matrix/SNF identities and the signed K/x_R capacity dictionary are exact,
+    but the focused strong misses still do not supply a marked lift or a global
+    carrier map.  Keep this family as non-recursive capacity evidence.
+    """
+    if payload.get("schema_version") != "type-i-bottom-word-lattice-pareto-cycle-capacity/v1":
+        raise AssertionError("bottom-word capacity schema changed")
+    inputs = payload.get("inputs")
+    summary = payload.get("summary")
+    generic = payload.get("generic_bottom_word")
+    cycle_case = payload.get("internal_free_cycle_counterexample")
+    linear_case = payload.get("linear_strong_miss_counterexample")
+    if not isinstance(inputs, dict) or not isinstance(summary, dict):
+        raise AssertionError("bottom-word capacity input summary missing")
+    if not isinstance(generic, dict) or not isinstance(cycle_case, dict):
+        raise AssertionError("bottom-word capacity core payload missing")
+    if not isinstance(linear_case, dict):
+        raise AssertionError("bottom-word linear miss payload missing")
+    if inputs.get("formal_closure_script") != BOTTOM_WORD_CLOSURE_SOURCE.name:
+        raise AssertionError("bottom-word closure source name changed")
+    if inputs.get("sha256") != sha256(BOTTOM_WORD_CLOSURE_SOURCE):
+        raise AssertionError("bottom-word closure source is stale")
+
+    expected_summary = {
+        "word_profiles": 2,
+        "strong_miss_counterexamples": 2,
+        "linear_source_counterexamples": 1,
+        "cycle_static_receipts": 4,
+        "focused_direct_terminal_primes": [5_596_369, 212_973_049],
+        "verified_rechart_count": 1,
+        "candidate_rechart_count": 1,
+        "pareto_example_bound": 4,
+    }
+    if summary != expected_summary:
+        raise AssertionError("bottom-word capacity summary changed")
+
+    Q = int(generic["Q"])
+    A = int(generic["A"])
+    B = int(generic["B"])
+    R = int(generic["R"])
+    root = tuple(int(value) for value in generic["root"])
+    endpoint = tuple(int(value) for value in generic["endpoint"])
+    matrix = generic.get("matrix")
+    if not isinstance(matrix, list) or len(matrix) != 2 or any(
+        not isinstance(row, list) or len(row) != 2 for row in matrix
+    ):
+        raise AssertionError("bottom-word matrix shape changed")
+    m00, m01 = (int(value) for value in matrix[0])
+    m10, m11 = (int(value) for value in matrix[1])
+    determinant = m00 * m11 - m01 * m10
+    entry_gcd = gcd(gcd(gcd(abs(m00), abs(m01)), abs(m10)), abs(m11))
+    scaled = (m00 * root[0] + m01 * root[1], m10 * root[0] + m11 * root[1])
+    if not (
+        Q == 8
+        and A == 0
+        and B == 7
+        and R == 35
+        and A + B == Q - 1
+        and determinant == Q
+        and entry_gcd == 1
+        and generic.get("smith_diagonal") == [1, Q]
+        and root == (32, 3)
+        and endpoint == (4, 31)
+        and scaled == (Q * endpoint[0], Q * endpoint[1])
+        and sum(endpoint) == R
+    ):
+        raise AssertionError("bottom-word matrix/SNF identity changed")
+    roots = [x for x in range(1, R) if (x + A * R) % Q == 0]
+    if roots != generic.get("admissible_root_congruence_class"):
+        raise AssertionError("bottom-word root lattice changed")
+    if generic.get("root_capacity_bound") != 5 or len(roots) > int(generic["root_capacity_bound"]):
+        raise AssertionError("bottom-word root capacity bound changed")
+
+    cycle_capacity = cycle_case.get("cycle_capacity")
+    cycle_word = cycle_case.get("cycle_word")
+    cycle_pairs = cycle_case.get("cycle_entry_common_overload_pairs")
+    cycle_split = cycle_case.get("empty_suffix_cross_pair")
+    linear_split = linear_case.get("empty_suffix_cross_pair")
+    if not isinstance(cycle_capacity, dict) or not isinstance(cycle_word, dict):
+        raise AssertionError("bottom-word cycle capacity payload changed")
+    if not isinstance(cycle_pairs, list) or not isinstance(cycle_split, dict):
+        raise AssertionError("bottom-word cycle pair payload changed")
+    if not isinstance(linear_split, dict):
+        raise AssertionError("bottom-word linear pair payload changed")
+    static_receipts = cycle_capacity.get("static_receipts")
+    if not isinstance(static_receipts, dict) or len(static_receipts) != 4:
+        raise AssertionError("bottom-word static separator count changed")
+    if any(
+        not isinstance(receipt, dict)
+        or receipt.get("kind") != "MISS_STATIC"
+        or receipt.get("prime") != 103
+        for receipt in static_receipts.values()
+    ):
+        raise AssertionError("bottom-word static separator changed")
+    if cycle_capacity.get("cycle_Q") != 4141:
+        raise AssertionError("bottom-word cycle product changed")
+    if cycle_word.get("Q") != 4141 or cycle_word.get("smith_diagonal") != [1, 4141]:
+        raise AssertionError("bottom-word cycle lattice changed")
+    if cycle_split.get("branch") != "strict_split" or linear_split.get("branch") != "strict_split":
+        raise AssertionError("bottom-word strict-split boundary changed")
+    if len(cycle_pairs) != 2 or any(
+        not isinstance(pair, dict) or pair.get("branch") != "common_overload"
+        for pair in cycle_pairs
+    ):
+        raise AssertionError("bottom-word common-overload boundary changed")
+
+    descriptor = {
+        "family": "bottom_word_lattice_pareto_cycle_capacity",
+        "input_sha256": sha256(BOTTOM_WORD_CAPACITY_INPUT),
+        "closure_sha256": sha256(BOTTOM_WORD_CLOSURE_SOURCE),
+    }
+    result = {
+        "state_id": "family:" + canonical_hash(descriptor),
+        "scope": "cross_state_bottom_word_lattice_and_signed_capacity_audit",
+        "equation_target": {"relation": "4K=pR+1"},
+        "certificate_context": {
+            "certificate_type": "bottom_word_lattice_pareto_cycle_capacity",
+            "source": BOTTOM_WORD_CAPACITY_INPUT.name,
+            "phase": "CAPACITY_AUDIT",
+            "proof_boundary": "finite_path_word_cycle_and_signed_capacity_only",
+            "carrier_mapping_status": "unproved",
+            "formal_edge_status": "candidate_generation_only",
+        },
+        "lattice_summary": {
+            "word_profile_count": int(summary["word_profiles"]),
+            "generic_word": {
+                "Q": Q,
+                "A": A,
+                "B": B,
+                "R": R,
+                "smith_diagonal": generic["smith_diagonal"],
+                "root_capacity_bound": int(generic["root_capacity_bound"]),
+            },
+            "cycle_word": {
+                "Q": int(cycle_word["Q"]),
+                "R": int(cycle_word["R"]),
+                "smith_diagonal": cycle_word["smith_diagonal"],
+                "root_capacity_bound": int(cycle_word["root_capacity_bound"]),
+            },
+        },
+        "cycle_capacity_summary": {
+            "static_separator_count": len(static_receipts),
+            "static_separator_prime": 103,
+            "moving_primes": cycle_capacity["moving_valuations"],
+            "cycle_Q": int(cycle_capacity["cycle_Q"]),
+            "interval_example_kinds": {
+                key: value["kind"]
+                for key, value in cycle_capacity["interval_receipt_unit_examples"].items()
+            },
+        },
+        "signed_target_fiber_summary": {
+            "strong_miss_count": int(summary["strong_miss_counterexamples"]),
+            "linear_source_counterexample_count": int(summary["linear_source_counterexamples"]),
+            "strict_split_count": 2,
+            "common_overload_count": 2,
+            "dictionary": "signed_exponents -> K/x_R/joint box overflow",
+        },
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "capacity and path-word receipts have no universal marked lift",
+        },
+        "target_fiber": {
+            "status": "recomputed_focused_boundary",
+            "reason": "signed target-fiber dictionary is state/family evidence only",
+        },
+        "signed_defect": {
+            "status": "recomputed",
+            "direction": "retained in source result; not charged to a carrier map",
+        },
+        "induction_rank": {
+            "status": "not_assigned",
+            "reason": "cycle and strong-miss receipts do not prove E5",
+        },
+        "potential_record": {
+            "status": "absent",
+            "reason": "path-word capacity does not provide a global well-founded descent",
+        },
+        "selected_branch": "bottom_word_lattice_pareto_cycle_capacity",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "finite_path_word_cycle_and_signed_capacity_only",
+        "scope_note": (
+            "The matrix/SNF normal form, cycle-ray separator, and signed K/x_R capacity "
+            "dictionary are exact for the recorded witnesses. They do not imply a universal "
+            "carrier map, marked lift, or recursive edge."
+        ),
+        "source_receipt": {
+            "result_file": BOTTOM_WORD_CAPACITY_INPUT.name,
+            "result_sha256": sha256(BOTTOM_WORD_CAPACITY_INPUT),
+            "generator_file": BOTTOM_WORD_CAPACITY_SOURCE.name,
+            "generator_sha256": sha256(BOTTOM_WORD_CAPACITY_SOURCE),
+            "formal_closure_file": BOTTOM_WORD_CLOSURE_SOURCE.name,
+            "formal_closure_sha256": sha256(BOTTOM_WORD_CLOSURE_SOURCE),
         },
     }
     check_status_boundary(result)
@@ -1999,6 +2213,9 @@ def build_results() -> dict[str, object]:
     qadic = json.loads(QADIC_INPUT.read_text(encoding="utf-8"))
     phase = json.loads(PHASE_INPUT.read_text(encoding="utf-8"))
     fourier_payload = json.loads(FOURIER_INPUT.read_text(encoding="utf-8"))
+    bottom_word_payload = json.loads(
+        BOTTOM_WORD_CAPACITY_INPUT.read_text(encoding="utf-8")
+    )
     bounded_fourier_payload = json.loads(
         BOUNDED_FOURIER_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
@@ -2027,6 +2244,7 @@ def build_results() -> dict[str, object]:
     direct_type_ii = overflow_direct_type_ii(overflow)
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
+    bottom_word = bottom_word_lattice_capacity_receipt(bottom_word_payload)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
@@ -2064,7 +2282,8 @@ def build_results() -> dict[str, object]:
         "phase_reset_receipts": reset_boundary,
         "overflow_support_debt_phase_bridge": debt_phase,
         "bounded_fourier_carrier_capacity": bounded_fourier,
-        "capacity_receipts": [bounded_fourier, debt_phase, capacity],
+        "bottom_word_lattice_capacity": bottom_word,
+        "capacity_receipts": [bounded_fourier, debt_phase, capacity, bottom_word],
         "invariants": {
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
@@ -2076,8 +2295,9 @@ def build_results() -> dict[str, object]:
             "fixed_s_overflow_rank_requires_product_divisor": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
-            "support_debt_phase_bridge_requires_alternate_mapping": True,
-        },
+           "support_debt_phase_bridge_requires_alternate_mapping": True,
+            "bottom_word_capacity_requires_signed_dictionary": True,
+       },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
@@ -2121,6 +2341,70 @@ def verify_bounded_fourier_contract(result: dict[str, object]) -> None:
         raise AssertionError("bounded-Fourier source receipt missing")
     if source_receipt.get("result_sha256") != sha256(BOUNDED_FOURIER_CAPACITY_INPUT):
         raise AssertionError("bounded-Fourier result hash changed")
+
+
+def verify_bottom_word_lattice_contract(result: dict[str, object]) -> None:
+    receipts = result.get("capacity_receipts")
+    if not isinstance(receipts, list):
+        raise AssertionError("capacity receipt list missing")
+    matches = [
+        receipt
+        for receipt in receipts
+        if isinstance(receipt, dict)
+        and receipt.get("certificate_context", {}).get("certificate_type")
+        == "bottom_word_lattice_pareto_cycle_capacity"
+    ]
+    if len(matches) != 1:
+        raise AssertionError("bottom-word lattice capacity receipt shape changed")
+    receipt = matches[0]
+    if receipt.get("selector_status") != "analysis_evidence":
+        raise AssertionError("bottom-word lattice receipt crossed status boundary")
+    if receipt.get("recursive_edge_eligible") is not False:
+        raise AssertionError("bottom-word lattice receipt became recursive")
+    if receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
+        raise AssertionError("bottom-word lattice receipt has an E1-E5 witness")
+    lattice = receipt.get("lattice_summary")
+    if not isinstance(lattice, dict):
+        raise AssertionError("bottom-word lattice summary missing")
+    generic = lattice.get("generic_word")
+    cycle = lattice.get("cycle_word")
+    if not isinstance(generic, dict) or not isinstance(cycle, dict):
+        raise AssertionError("bottom-word lattice summary shape changed")
+    if (
+        generic.get("Q") != 8
+        or generic.get("smith_diagonal") != [1, 8]
+        or generic.get("root_capacity_bound") != 5
+        or cycle.get("Q") != 4141
+        or cycle.get("smith_diagonal") != [1, 4141]
+    ):
+        raise AssertionError("bottom-word lattice summary changed")
+    cycle_capacity = receipt.get("cycle_capacity_summary")
+    if not isinstance(cycle_capacity, dict):
+        raise AssertionError("bottom-word cycle summary missing")
+    if (
+        cycle_capacity.get("static_separator_count") != 4
+        or cycle_capacity.get("static_separator_prime") != 103
+        or cycle_capacity.get("cycle_Q") != 4141
+    ):
+        raise AssertionError("bottom-word cycle summary changed")
+    signed = receipt.get("signed_target_fiber_summary")
+    if not isinstance(signed, dict):
+        raise AssertionError("bottom-word signed capacity summary missing")
+    if (
+        signed.get("strong_miss_count") != 2
+        or signed.get("strict_split_count") != 2
+        or signed.get("common_overload_count") != 2
+    ):
+        raise AssertionError("bottom-word signed capacity summary changed")
+    source_receipt = receipt.get("source_receipt")
+    if not isinstance(source_receipt, dict):
+        raise AssertionError("bottom-word lattice source receipt missing")
+    if source_receipt.get("result_sha256") != sha256(BOTTOM_WORD_CAPACITY_INPUT):
+        raise AssertionError("bottom-word lattice result hash changed")
+    if source_receipt.get("generator_sha256") != sha256(BOTTOM_WORD_CAPACITY_SOURCE):
+        raise AssertionError("bottom-word lattice generator hash changed")
+    if source_receipt.get("formal_closure_sha256") != sha256(BOTTOM_WORD_CLOSURE_SOURCE):
+        raise AssertionError("bottom-word lattice closure hash changed")
 
 
 def verify_support_debt_phase_contract(result: dict[str, object]) -> None:
@@ -2446,6 +2730,7 @@ def main() -> None:
     rendered = json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.verify:
         verify_bounded_fourier_contract(result)
+        verify_bottom_word_lattice_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_overflow_menu_contract(result)

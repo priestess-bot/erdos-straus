@@ -1,5 +1,103 @@
 {
   "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
+  "bottom_word_lattice_capacity": {
+    "certificate_context": {
+      "carrier_mapping_status": "unproved",
+      "certificate_type": "bottom_word_lattice_pareto_cycle_capacity",
+      "formal_edge_status": "candidate_generation_only",
+      "phase": "CAPACITY_AUDIT",
+      "proof_boundary": "finite_path_word_cycle_and_signed_capacity_only",
+      "source": "type-i-bottom-word-lattice-pareto-cycle-capacity-results.json"
+    },
+    "cycle_capacity_summary": {
+      "cycle_Q": 4141,
+      "interval_example_kinds": {
+        "hit": "CYCLE_RAY_HIT",
+        "miss": "MISS_INTERVAL"
+      },
+      "moving_primes": {
+        "101": 1,
+        "41": 1
+      },
+      "static_separator_count": 4,
+      "static_separator_prime": 103
+    },
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "equation_target": {
+      "relation": "4K=pR+1"
+    },
+    "induction_rank": {
+      "reason": "cycle and strong-miss receipts do not prove E5",
+      "status": "not_assigned"
+    },
+    "lattice_summary": {
+      "cycle_word": {
+        "Q": 4141,
+        "R": 207,
+        "root_capacity_bound": 1,
+        "smith_diagonal": [
+          1,
+          4141
+        ]
+      },
+      "generic_word": {
+        "A": 0,
+        "B": 7,
+        "Q": 8,
+        "R": 35,
+        "root_capacity_bound": 5,
+        "smith_diagonal": [
+          1,
+          8
+        ]
+      },
+      "word_profile_count": 2
+    },
+    "marked_solution_set": {
+      "reason": "capacity and path-word receipts have no universal marked lift",
+      "status": "not_carried"
+    },
+    "potential_record": {
+      "reason": "path-word capacity does not provide a global well-founded descent",
+      "status": "absent"
+    },
+    "proof_boundary": "finite_path_word_cycle_and_signed_capacity_only",
+    "recursive_edge_eligible": false,
+    "scope": "cross_state_bottom_word_lattice_and_signed_capacity_audit",
+    "scope_note": "The matrix/SNF normal form, cycle-ray separator, and signed K/x_R capacity dictionary are exact for the recorded witnesses. They do not imply a universal carrier map, marked lift, or recursive edge.",
+    "selected_branch": "bottom_word_lattice_pareto_cycle_capacity",
+    "selector_status": "analysis_evidence",
+    "signed_defect": {
+      "direction": "retained in source result; not charged to a carrier map",
+      "status": "recomputed"
+    },
+    "signed_target_fiber_summary": {
+      "common_overload_count": 2,
+      "dictionary": "signed_exponents -> K/x_R/joint box overflow",
+      "linear_source_counterexample_count": 1,
+      "strict_split_count": 2,
+      "strong_miss_count": 2
+    },
+    "source_receipt": {
+      "formal_closure_file": "type_i_f_psi_one_formal_transition_closure.py",
+      "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
+      "generator_file": "type_i_bottom_word_lattice_pareto_cycle_capacity.py",
+      "generator_sha256": "ecfafce270eaf981de948985e3e0b3818f795452ae6591574e9c5462bf2993fe",
+      "result_file": "type-i-bottom-word-lattice-pareto-cycle-capacity-results.json",
+      "result_sha256": "444bc5c38d4ee8fa16bb53a34526275de961ad1dcc589dd9e44bb9427d9aaedd"
+    },
+    "state_id": "family:0583974be94bd3cc2b363ebc645477d5b9f726e019693e3a4fe75e671d632fef",
+    "target_fiber": {
+      "reason": "signed target-fiber dictionary is state/family evidence only",
+      "status": "recomputed_focused_boundary"
+    }
+  },
   "bounded_fourier_carrier_capacity": {
     "carrier_capacity_summary": {
       "direction_count": 141,
@@ -495,10 +593,109 @@
       "selected_branch": "overflow_qadic_phase_capacity",
       "selector_status": "analysis_evidence",
       "state_id": "family:4928b25c8d264a7d392ed98cfdf1211931cef82c0645c1670ff1ea65cd3847ae"
+    },
+    {
+      "certificate_context": {
+        "carrier_mapping_status": "unproved",
+        "certificate_type": "bottom_word_lattice_pareto_cycle_capacity",
+        "formal_edge_status": "candidate_generation_only",
+        "phase": "CAPACITY_AUDIT",
+        "proof_boundary": "finite_path_word_cycle_and_signed_capacity_only",
+        "source": "type-i-bottom-word-lattice-pareto-cycle-capacity-results.json"
+      },
+      "cycle_capacity_summary": {
+        "cycle_Q": 4141,
+        "interval_example_kinds": {
+          "hit": "CYCLE_RAY_HIT",
+          "miss": "MISS_INTERVAL"
+        },
+        "moving_primes": {
+          "101": 1,
+          "41": 1
+        },
+        "static_separator_count": 4,
+        "static_separator_prime": 103
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "4K=pR+1"
+      },
+      "induction_rank": {
+        "reason": "cycle and strong-miss receipts do not prove E5",
+        "status": "not_assigned"
+      },
+      "lattice_summary": {
+        "cycle_word": {
+          "Q": 4141,
+          "R": 207,
+          "root_capacity_bound": 1,
+          "smith_diagonal": [
+            1,
+            4141
+          ]
+        },
+        "generic_word": {
+          "A": 0,
+          "B": 7,
+          "Q": 8,
+          "R": 35,
+          "root_capacity_bound": 5,
+          "smith_diagonal": [
+            1,
+            8
+          ]
+        },
+        "word_profile_count": 2
+      },
+      "marked_solution_set": {
+        "reason": "capacity and path-word receipts have no universal marked lift",
+        "status": "not_carried"
+      },
+      "potential_record": {
+        "reason": "path-word capacity does not provide a global well-founded descent",
+        "status": "absent"
+      },
+      "proof_boundary": "finite_path_word_cycle_and_signed_capacity_only",
+      "recursive_edge_eligible": false,
+      "scope": "cross_state_bottom_word_lattice_and_signed_capacity_audit",
+      "scope_note": "The matrix/SNF normal form, cycle-ray separator, and signed K/x_R capacity dictionary are exact for the recorded witnesses. They do not imply a universal carrier map, marked lift, or recursive edge.",
+      "selected_branch": "bottom_word_lattice_pareto_cycle_capacity",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "direction": "retained in source result; not charged to a carrier map",
+        "status": "recomputed"
+      },
+      "signed_target_fiber_summary": {
+        "common_overload_count": 2,
+        "dictionary": "signed_exponents -> K/x_R/joint box overflow",
+        "linear_source_counterexample_count": 1,
+        "strict_split_count": 2,
+        "strong_miss_count": 2
+      },
+      "source_receipt": {
+        "formal_closure_file": "type_i_f_psi_one_formal_transition_closure.py",
+        "formal_closure_sha256": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
+        "generator_file": "type_i_bottom_word_lattice_pareto_cycle_capacity.py",
+        "generator_sha256": "ecfafce270eaf981de948985e3e0b3818f795452ae6591574e9c5462bf2993fe",
+        "result_file": "type-i-bottom-word-lattice-pareto-cycle-capacity-results.json",
+        "result_sha256": "444bc5c38d4ee8fa16bb53a34526275de961ad1dcc589dd9e44bb9427d9aaedd"
+      },
+      "state_id": "family:0583974be94bd3cc2b363ebc645477d5b9f726e019693e3a4fe75e671d632fef",
+      "target_fiber": {
+        "reason": "signed target-fiber dictionary is state/family evidence only",
+        "status": "recomputed_focused_boundary"
+      }
     }
   ],
   "invariants": {
     "analysis_evidence_never_recursive": true,
+    "bottom_word_capacity_requires_signed_dictionary": true,
     "direct_terminal_precedes_overflow_descent": true,
     "fixed_n_overflow_rank_requires_positive_chart": true,
     "fixed_s_overflow_rank_requires_product_divisor": true,
@@ -7394,6 +7591,7 @@
     }
   ],
   "source_sha256": {
+    "type-i-bottom-word-lattice-pareto-cycle-capacity-results.json": "444bc5c38d4ee8fa16bb53a34526275de961ad1dcc589dd9e44bb9427d9aaedd",
     "type-i-f-bounded-fourier-carrier-capacity-results.json": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074",
     "type-i-f-bounded-fourier-certificate-results.json": "97bd474f82271b3d6a1eb5260fc49b7d48551c4fc2872402b74759f3d817bd68",
     "type-i-fixed-layer-stabilizer-fourier-results.json": "e00071c2d4496a0ceda3c3cb9810de7adb7875af0eeb828c75ffeab14a37c6d4",
@@ -7401,6 +7599,8 @@
     "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
     "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d",
     "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a",
+    "type_i_bottom_word_lattice_pareto_cycle_capacity.py": "ecfafce270eaf981de948985e3e0b3818f795452ae6591574e9c5462bf2993fe",
+    "type_i_f_psi_one_formal_transition_closure.py": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
     "type_i_global_linear_b1_failure_general_b_profile_500m.py": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d"
   },
   "states": [
