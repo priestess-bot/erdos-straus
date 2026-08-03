@@ -3262,6 +3262,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     r_one_empty_names: list[str] = []
     d_one_edge_names: list[str] = []
     d_one_empty_names: list[str] = []
+    cofactor_saturation_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3355,6 +3356,19 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 if any(L > support for L in divisors(product)):
                     raise AssertionError(f"d=1 fixed-s empty boundary changed: {name}")
                 d_one_empty_names.append(name)
+        if integral_s and isinstance(fixed_s, int) and product > 1:
+            smallest_factor = min(q for q, _ in factorization(product))
+            cofactor = product // smallest_factor
+            if 2 * support <= cofactor <= B_prime:
+                if not (
+                    smallest_factor < prime
+                    and 4 * cofactor > fixed_s
+                    and B_prime // cofactor < B_prime // support
+                    and canonical_chart(prime, cofactor)
+                    == (4 * cofactor - fixed_s, cofactor * (prime - smallest_factor))
+                ):
+                    raise AssertionError(f"fixed-s cofactor subfamily changed: {name}")
+                cofactor_saturation_names.append(name)
         candidates: list[tuple[int, int, int]] = []
         if source_in_domain and integral_s and isinstance(fixed_s, int):
             for L in divisors(product):
@@ -3560,6 +3574,16 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 "The fixed-s bounded-divisor atlas is complete for d=1: "
                 "L=r is a strict identity-lift edge exactly when A<r; otherwise "
                 "every divisor of r*d is at most the charged support."
+            ),
+        },
+        "unconditional_cofactor_saturation_subfamily": {
+            "condition": "ell=spf(r*d), 2A<=r*d/ell<=B_p",
+            "candidate": "L=r*d/ell",
+            "fixture_count": len(cofactor_saturation_names),
+            "fixture_names": cofactor_saturation_names,
+            "conclusion": (
+                "ell< p and s<4L are automatic; K_L=L*(p-ell), so the "
+                "cofactor gives a strict fixed-s identity-lift edge"
             ),
         },
         "rank_definition": {
@@ -4629,6 +4653,31 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         or set(d_one_boundary.get("empty_fixture_names", [])) != set()
     ):
         raise AssertionError("bounded fixed-s d=1 boundary changed")
+    cofactor_subfamily = branch.get("unconditional_cofactor_saturation_subfamily")
+    if not isinstance(cofactor_subfamily, dict):
+        raise AssertionError("bounded fixed-s cofactor subfamily missing")
+    expected_cofactor_subfamily = {
+        "accumulated_positive_fixed_n_edge",
+        "empty_fixed_n_window",
+        "reachable_conflict_bundle_0",
+        "reachable_conflict_bundle_1",
+        "reachable_conflict_bundle_2",
+        "root_edge_0",
+        "root_edge_1",
+        "lcm_cycle_step_0",
+        "lcm_cycle_step_1",
+        "symmetric_small_chart_support_conflict",
+    }
+    if (
+        cofactor_subfamily.get("condition")
+        != "ell=spf(r*d), 2A<=r*d/ell<=B_p"
+        or cofactor_subfamily.get("candidate") != "L=r*d/ell"
+        or cofactor_subfamily.get("fixture_count")
+        != len(expected_cofactor_subfamily)
+        or set(cofactor_subfamily.get("fixture_names", []))
+        != expected_cofactor_subfamily
+    ):
+        raise AssertionError("bounded fixed-s cofactor subfamily coverage changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")

@@ -72,6 +72,37 @@ s=\frac{4rd+1}{p}<4d
 \(r<2A\) 而 \(d\) 较大时补上 product-saturation 子族未覆盖的部分。它仍不处理
 \(d=1\) 或 \(d>B_p\) 的余项。
 
+还可以把一般复合 \(r*d\) 压成一个规范 cofactor。令
+\(\ell=\operatorname{spf}(r*d)\) 为 \(r*d\) 的最小素因子，并令
+
+\[
+L=\frac{r*d}{\ell}.
+\]
+
+若
+
+\[
+2A\le L\le B_p,
+\]
+
+则 \(\ell<p\)，且 \(d,r<p\) 保证 \(r*d\ge\ell\)。因此
+
+\[
+s=\frac{4r*d+1}{p}<\frac{4r*d}{\ell}=4L,
+\qquad
+K_L=L(p-\ell)>0.
+\]
+
+再结合 \(L\mid r*d\)、\(L\ge2A\) 和 \(L\le B_p\)，得到
+\(\Pi(L)<\Pi(A)\) 以及
+
+\[
+4K_L=p(4L-s)+1.
+\]
+
+所以 \(L=r*d/\operatorname{spf}(r*d)\) 是一个规范的 fixed-s 恒等提升边。该条件
+覆盖 \(r,d>1\) 且乘积较大的残余；它仍是充分条件，不声称所有 overflow 都满足。
+
 ## 2. 支持势与完整边
 
 令 B_p=(p-1)^2/4，Pi(A)=floor(B_p/A)。

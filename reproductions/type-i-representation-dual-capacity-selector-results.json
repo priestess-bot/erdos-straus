@@ -4217,6 +4217,24 @@
     "scope_note": [
       "This is the complete bounded fixed-s divisor atlas above the absorbed-support potential domain. It complements the lcm(A,r) fixed-s branch; an empty admissible set remains analysis evidence and is not promoted."
     ],
+    "unconditional_cofactor_saturation_subfamily": {
+      "candidate": "L=r*d/ell",
+      "conclusion": "ell< p and s<4L are automatic; K_L=L*(p-ell), so the cofactor gives a strict fixed-s identity-lift edge",
+      "condition": "ell=spf(r*d), 2A<=r*d/ell<=B_p",
+      "fixture_count": 10,
+      "fixture_names": [
+        "accumulated_positive_fixed_n_edge",
+        "empty_fixed_n_window",
+        "reachable_conflict_bundle_0",
+        "reachable_conflict_bundle_1",
+        "reachable_conflict_bundle_2",
+        "root_edge_0",
+        "root_edge_1",
+        "lcm_cycle_step_0",
+        "lcm_cycle_step_1",
+        "symmetric_small_chart_support_conflict"
+      ]
+    },
     "unconditional_d_saturation_subfamily": {
       "candidate": "L=d",
       "conclusion": "d|r*d, s<4d, and 2A<=d<=B_p give strict Pi(d)<Pi(A); the target has K_L=d*(p-r)",
