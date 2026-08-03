@@ -4560,3 +4560,48 @@ determinant 边覆盖，仍必须经过完整 E1--E5 检查。主张卡：
 selector_status=analysis_evidence、recursive_edge_eligible=false；聚焦样本
 \((p,M,n)=(73,91,5)\) 给出 \((R,K)=(71,1296)\)，支撑 Jacobi 值为 \(+1,+1\)，
 目标值为 \(-1\)，且 \(p+4=7\cdot11\) 提供独立 Type II 叶。
+
+## 2026-08-03：固定-\(n\) 有界除子外层秩递降
+
+固定-\(n\) overflow 行列式满足
+
+\[
+pn=4Md+1,
+\qquad S=Md=\frac{pn-1}{4}.
+\]
+
+此前只把 \(L=\operatorname{lcm}(A,d)\) 或固定窗口内的除子作为候选。新的
+overflow_fixed_n_bounded_divisor_outer_rank_v1 枚举全部 \(L\mid S\)，保留
+
+\[
+A<L\le B_p=\frac{(p-1)^2}{4},
+\qquad 4L>n,
+\qquad
+\left\lfloor B_p/L\right\rfloor<
+\left\lfloor B_p/A\right\rfloor.
+\]
+
+对每个保留的 \(L\)，恒等式
+
+\[
+R_L=4L-n,
+\qquad K_L=L\left(p-S/L\right),
+\qquad pR_L+1=4K_L,
+\qquad L\mid K_L
+\]
+
+直接支付 E1--E4；最后一个条件支付外层 E5。若 \(A\mid L\)，旧支撑被保留；若
+\(A\nmid L\)，同一个外层势显式支付 support reset。选择器按最大合格 \(L\) 规范化，
+目标 \(R_L<p\) 记为 marked absorb，目标 \(R_L>p\) 仍记为 overflow，但外层势严格
+下降。
+
+聚焦的 12 个 overflow fixture 全部得到 verified edge（12/12），其中 8 条保留旧支撑、
+4 条是外层势支付的重置；0 个目标落入 \(R_L<p\)，12 个仍是 overflow。因此这一步
+是递归秩边的普适形式化，而不是终端闭合。
+若 \(S/A\ge2\) 且 \(S\le B_p\)（等价于 \(n\le p-2\)），可直接取 \(L=S\)，并得到
+\(R_S=(p-1)n-1\)。只有 \(n=1\) 时该目标是 marked absorb，\(n\ge2\) 仍需继续
+处理。
+
+主张卡见[overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
+全称缺口未消失：尚未证明每个递归可达 \(A>1\) overflow 都存在这样的 \(L\)，也未
+排除需要 alternate、直接 Type I/II 或独立外层秩的残差。

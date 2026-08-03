@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 327 |
+| 数学状态 | `established` | 328 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 159 |
+| 证明来源 | `repository_derivation` | 160 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 289 |
+| 审阅状态 | `internal_review` | 290 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -487,6 +487,7 @@
 | [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md) (`type-I-overflow-d-only-square-excess-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md) (`type-I-overflow-defect-unit-phase-capacity`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 行列式的固定 n 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md) (`type-I-overflow-determinant-fixed-n-dual-support-conflict`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
+| [overflow 固定 n 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md) (`type-I-overflow-fixed-n-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md) (`type-I-overflow-fixed-n-gap-dual-obstruction`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定 n 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md) (`type-I-overflow-fixed-n-overflow-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |

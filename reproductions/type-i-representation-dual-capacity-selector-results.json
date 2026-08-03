@@ -925,6 +925,7 @@
     "bottom_word_capacity_requires_signed_dictionary": true,
     "d_one_rechart_is_g_analysis_only": true,
     "direct_terminal_precedes_overflow_descent": true,
+    "fixed_n_bounded_divisor_requires_bounded_support": true,
     "fixed_n_overflow_rank_requires_positive_chart": true,
     "fixed_s_overflow_rank_requires_product_divisor": true,
     "hard_core_negative_receipt_never_recursive": true,
@@ -1645,6 +1646,1201 @@
     ],
     "verified_terminal_count": 12
   },
+  "overflow_fixed_n_bounded_divisor_outer_rank": {
+    "absorption_target_count": 0,
+    "fixture_count": 12,
+    "overflow_target_count": 12,
+    "rank_definition": {
+      "acceptance": "L|M*d, A<L<=B_p, 4L>n, canonical_chart(p,L)=(R_L,K_L), and strict potential decrease; A|L is optional only when the same potential explicitly pays an outer-rank reset",
+      "candidate": "any L|M*d with A<L<=B_p and 4L>n",
+      "formula": "floor(((p-1)^2)/4 / A)",
+      "kind": "absorbed_support_potential",
+      "selection_rule": "maximum admissible L",
+      "target_formula": "R_L=4L-n; K_L=L*(p-M*d/L)"
+    },
+    "rejected_fixture_count": 0,
+    "rejected_fixtures": [],
+    "scope_note": "This is the complete bounded fixed-n divisor atlas above and inside the absorbed-support potential domain. An empty admissible set remains an open overflow boundary and is not promoted.",
+    "verified_edge_count": 12,
+    "verified_receipts": [
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 91,
+            "S": 91,
+            "d": 1,
+            "four_M_d_plus_1": 365,
+            "pn": 365
+          },
+          "fixture_name": "accumulated_d_one_boundary",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 6552,
+            "L": 91,
+            "R_L": 359,
+            "candidate_count": 2,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:77c2f120ea6a3833884b9b3b1f7dccd58895e27ea077d4855a129e5d4b1f67fa",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 185,
+          "successor": 14
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": false,
+          "source_support": 7,
+          "source_value": 185,
+          "strict_decrease": true,
+          "successor_support": 91,
+          "successor_value": 14,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 6552,
+          "R": 359,
+          "absorbed_support": 7,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 6552,
+          "R": 359,
+          "absorbed_support": 91,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 250,
+            "S": 50000,
+            "d": 200,
+            "four_M_d_plus_1": 200001,
+            "pn": 200001
+          },
+          "fixture_name": "accumulated_positive_fixed_n_edge",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 10175000,
+            "L": 25000,
+            "R_L": 99511,
+            "candidate_count": 16,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:9d8199be4c29dd4dc33f301b9c6ed760b6f874373a214d6642d0bbb4c86366d8",
+        "equation_target": {
+          "denominator": 409,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 8323,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 41616,
+          "outer_rank_reset": false,
+          "source_support": 5,
+          "source_value": 8323,
+          "strict_decrease": true,
+          "successor_support": 25000,
+          "successor_value": 1,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 511,
+          "absorbed_support": 5,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 10175000,
+          "R": 99511,
+          "absorbed_support": 25000,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 190,
+            "S": 2470,
+            "d": 13,
+            "four_M_d_plus_1": 9881,
+            "pn": 9881
+          },
+          "fixture_name": "empty_fixed_n_window",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 592800,
+            "L": 2470,
+            "R_L": 9839,
+            "candidate_count": 8,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:451b49cde5085e8a932c9744ff19f9639f472fa23e9ee5a3981ee6850bfa4299",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 378,
+          "successor": 5
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "outer_rank_reset": false,
+          "source_support": 38,
+          "source_value": 378,
+          "strict_decrease": true,
+          "successor_support": 2470,
+          "successor_value": 5,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 43320,
+          "R": 719,
+          "absorbed_support": 38,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 592800,
+          "R": 9839,
+          "absorbed_support": 2470,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 38,
+            "S": 456,
+            "d": 12,
+            "four_M_d_plus_1": 1825,
+            "pn": 1825
+          },
+          "fixture_name": "reachable_conflict_bundle_0",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 32832,
+            "L": 456,
+            "R_L": 1799,
+            "candidate_count": 8,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:6464386a2475821d3d647eef968dffdae8e70a02a8aa5eec67f9845084a5e3ff",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 2
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": false,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 456,
+          "successor_value": 2,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 2318,
+          "R": 127,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 32832,
+          "R": 1799,
+          "absorbed_support": 456,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 608,
+            "S": 11552,
+            "d": 19,
+            "four_M_d_plus_1": 46209,
+            "pn": 46209
+          },
+          "fixture_name": "reachable_conflict_bundle_1",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 41154,
+            "L": 722,
+            "R_L": 2255,
+            "candidate_count": 4,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:34fe87dfbda1d44a140bc8e45fccc20b1d0b1b5fb1d683153246074d8763cda6",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": false,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 722,
+          "successor_value": 1,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 32832,
+          "R": 1799,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 41154,
+          "R": 2255,
+          "absorbed_support": 722,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 836,
+            "S": 39292,
+            "d": 47,
+            "four_M_d_plus_1": 157169,
+            "pn": 157169
+          },
+          "fixture_name": "reachable_conflict_bundle_2",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 36190,
+            "L": 1034,
+            "R_L": 1983,
+            "candidate_count": 3,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:13254df2ac0cfcd1f40a9d42aaa4879a8a6cde2ae9271aa73a103f64708714e6",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": true,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 1034,
+          "successor_value": 1,
+          "support_monotone": false,
+          "support_reset_paid": true
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 21736,
+          "R": 1191,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 36190,
+          "R": 1983,
+          "absorbed_support": 1034,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 950,
+            "S": 17100,
+            "d": 18,
+            "four_M_d_plus_1": 68401,
+            "pn": 68401
+          },
+          "fixture_name": "reachable_conflict_bundle_3",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 66120,
+            "L": 1140,
+            "R_L": 3623,
+            "candidate_count": 12,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:217025f769c09e3913a1eeadd6e610aa17d40546ba3b237a7981f25310bffeab",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": false,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 1140,
+          "successor_value": 1,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 2863,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 66120,
+          "R": 3623,
+          "absorbed_support": 1140,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 34,
+            "S": 748,
+            "d": 22,
+            "four_M_d_plus_1": 2993,
+            "pn": 2993
+          },
+          "fixture_name": "root_edge_0",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 53856,
+            "L": 748,
+            "R_L": 2951,
+            "candidate_count": 9,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:b1b51203205a1af04aa59e23d3ddf1f945fc0e80375e071bd7590a05d8bd0af4",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1296,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": false,
+          "source_support": 1,
+          "source_value": 1296,
+          "strict_decrease": true,
+          "successor_support": 748,
+          "successor_value": 1,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 53856,
+          "R": 2951,
+          "absorbed_support": 748,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 71,
+            "S": 1988,
+            "d": 28,
+            "four_M_d_plus_1": 7953,
+            "pn": 7953
+          },
+          "fixture_name": "root_edge_1",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 477120,
+            "L": 1988,
+            "R_L": 7919,
+            "candidate_count": 8,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:f7088c15af6cc131bf55a445dba80fded1e64a9702f4df2af20e1148b0fbf403",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 14400,
+          "successor": 7
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "outer_rank_reset": false,
+          "source_support": 1,
+          "source_value": 14400,
+          "strict_decrease": true,
+          "successor_support": 1988,
+          "successor_value": 7,
+          "support_monotone": true,
+          "support_reset_paid": false
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 477120,
+          "R": 7919,
+          "absorbed_support": 1988,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 1518,
+            "S": 42504,
+            "d": 28,
+            "four_M_d_plus_1": 170017,
+            "pn": 170017
+          },
+          "fixture_name": "lcm_cycle_step_0",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 51520,
+            "L": 1288,
+            "R_L": 2823,
+            "candidate_count": 7,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:995dcb2a1478706ca749a2ebdccb4846300cb50c204983e14ec90f87e56b1481",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 19,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": true,
+          "source_support": 66,
+          "source_value": 19,
+          "strict_decrease": true,
+          "successor_support": 1288,
+          "successor_value": 1,
+          "support_monotone": false,
+          "support_reset_paid": true
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 68310,
+          "R": 3743,
+          "absorbed_support": 66,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 51520,
+          "R": 2823,
+          "absorbed_support": 1288,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 924,
+            "S": 42504,
+            "d": 46,
+            "four_M_d_plus_1": 170017,
+            "pn": 170017
+          },
+          "fixture_name": "lcm_cycle_step_1",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 51520,
+            "L": 1288,
+            "R_L": 2823,
+            "candidate_count": 7,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:437b812f906d6a857024d79046ff740f9e46aafee7d70e6e77448813a090d0db",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 19,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 1296,
+          "outer_rank_reset": true,
+          "source_support": 66,
+          "source_value": 19,
+          "strict_decrease": true,
+          "successor_support": 1288,
+          "successor_value": 1,
+          "support_monotone": false,
+          "support_reset_paid": true
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 24948,
+          "R": 1367,
+          "absorbed_support": 66,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 51520,
+          "R": 2823,
+          "absorbed_support": 1288,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "admissibility": {
+            "bounded_support": "L<=B_p",
+            "positive_chart": "4L>n",
+            "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+            "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+            "support_gain": "A<L"
+          },
+          "determinant": {
+            "M": 568,
+            "S": 70432,
+            "d": 124,
+            "four_M_d_plus_1": 281729,
+            "pn": 281729
+          },
+          "fixture_name": "symmetric_small_chart_support_conflict",
+          "provenance": "overflow_determinant_fixed_n_bounded_divisor",
+          "selected_candidate": {
+            "K_L": 2051332,
+            "L": 8804,
+            "R_L": 34047,
+            "candidate_count": 8,
+            "selection_rule": "maximum admissible L"
+          },
+          "source": "type-i-universal-anchor-overflow-dual-results.json"
+        },
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:ca37af12eeef07640f6e474d2a1f19ac332fc6a9b32ce09227d28c0dd02050b3",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1800,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_fixed_n_bounded_divisor_outer_rank_v1",
+        "phase": "OVERFLOW_DETERMINANT",
+        "potential_record": {
+          "B_p": 14400,
+          "outer_rank_reset": true,
+          "source_support": 8,
+          "source_value": 1800,
+          "strict_decrease": true,
+          "successor_support": 8804,
+          "successor_value": 1,
+          "support_monotone": false,
+          "support_reset_paid": true
+        },
+        "proof_boundary": "fixed_n_bounded_divisor_overflow_rank_descent",
+        "recursive_edge_eligible": true,
+        "scope_note": "Any divisor L of S=M*d satisfying the bounded support, positive-chart, and strict-potential conditions yields this identity-lift edge; the selector chooses the largest admissible L deterministically. If A does not divide L, the strict absorbed-support potential explicitly pays the support reset.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 66456,
+          "R": 1103,
+          "absorbed_support": 8,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 2051332,
+          "R": 34047,
+          "absorbed_support": 8804,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "fixed-n determinant identity with chart-independent marking",
+          "status": "inherited_full_solution_set"
+        }
+      }
+    ]
+  },
   "overflow_fixed_n_outer_rank": {
     "absorption_target_count": 3,
     "fixture_count": 12,
@@ -1734,7 +2930,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 250,
             "S": 50000,
+            "d": 200,
             "four_M_d_plus_1": 200001,
             "pn": 200001
           },
@@ -1820,7 +3018,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 190,
             "S": 2470,
+            "d": 13,
             "four_M_d_plus_1": 9881,
             "pn": 9881
           },
@@ -1906,7 +3106,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 38,
             "S": 456,
+            "d": 12,
             "four_M_d_plus_1": 1825,
             "pn": 1825
           },
@@ -1992,7 +3194,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 836,
             "S": 39292,
+            "d": 47,
             "four_M_d_plus_1": 157169,
             "pn": 157169
           },
@@ -2078,7 +3282,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 950,
             "S": 17100,
+            "d": 18,
             "four_M_d_plus_1": 68401,
             "pn": 68401
           },
@@ -2164,7 +3370,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 34,
             "S": 748,
+            "d": 22,
             "four_M_d_plus_1": 2993,
             "pn": 2993
           },
@@ -2250,7 +3458,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 71,
             "S": 1988,
+            "d": 28,
             "four_M_d_plus_1": 7953,
             "pn": 7953
           },
@@ -2336,7 +3546,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 1518,
             "S": 42504,
+            "d": 28,
             "four_M_d_plus_1": 170017,
             "pn": 170017
           },
@@ -2422,7 +3634,9 @@
       {
         "certificate_context": {
           "determinant": {
+            "M": 924,
             "S": 42504,
+            "d": 46,
             "four_M_d_plus_1": 170017,
             "pn": 170017
           },
@@ -7870,6 +9084,7 @@
     "bounded_fourier_carrier_capacity",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
+    "overflow_fixed_n_bounded_divisor_outer_rank",
     "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",

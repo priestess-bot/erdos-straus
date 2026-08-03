@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、固定-n 有界除子外层秩递降、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、bounded-fixed-n-rank、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n、bounded-fixed-n 和固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -13,6 +13,7 @@ depends_on:
   - type-I-overflow-defect-unit-phase-capacity
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-fixed-n-overflow-rank-descent
+  - type-I-overflow-fixed-n-bounded-divisor-saturation
   - type-I-overflow-fixed-s-dual-outer-rank-descent
   - type-I-overflow-fixed-n-gap-dual-obstruction
   - type-I-overflow-outer-rank-reset
@@ -81,6 +82,7 @@ fixed_layer_quotient_fourier
 bounded_fourier_carrier_capacity
 overflow_fixed_n_charged_support
 overflow_fixed_n_outer_rank_reset
+overflow_fixed_n_bounded_divisor_outer_rank
 overflow_fixed_s_outer_rank_reset
 overflow_outer_rank_reset
 overflow_hard_core_gap_obstruction
@@ -243,6 +245,15 @@ E1--E5，其中 3 条落入 \(R_L<p\) 吸收态，6 条落入 \(R_L>p\) 的严�
 \(L=\operatorname{lcm}(A,r)\) 且 \(L\mid rd\) 时，固定-\(s\) 图谱又产生 7 条完整
 E1--E5 外层秩边，其中 5 条与 d 侧重叠、2 条补上此前拒绝的 fixture。详见
 [overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](type-I-overflow-fixed-s-dual-outer-rank-descent.md)。
+
+固定-\(n\) 还可以在不预设 \(L=\operatorname{lcm}(A,d)\) 的情况下枚举全部
+\(L\mid Md\)。若 \(A<L\le B_p\)、\(4L>n\) 且
+\(\lfloor B_p/L\rfloor<\lfloor B_p/A\rfloor\)，则
+\(R_L=4L-n\)、\(K_L=L(p-Md/L)\) 给出新的完整 E1--E5 边。若 \(A\mid L\)，
+旧 charged support 被保留；若 \(A\nmid L\)，同一外层势必须显式标为
+`support_reset_paid`，不能伪装成 support-preserving。现有 12 个 overflow fixture
+全部有该边，其中 8 条保留支撑、4 条由外层势支付重置，12 条目标仍是 overflow。
+详见[overflow 固定 \(n\) 的有界除子外层秩递降](type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

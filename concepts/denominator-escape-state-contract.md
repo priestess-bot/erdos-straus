@@ -35,6 +35,7 @@ used_by:
 - type-I-bottom-sink-scc-complete-excess-bundle-selector
 - type-I-universal-p-source-capacity-anchor-orbit
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
+- type-I-overflow-fixed-n-bounded-divisor-saturation
 - type-I-overflow-outer-rank-reset
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
@@ -52,7 +53,7 @@ sources:
 - claim: type-I-general-dyadic-terminal-transfer
   role: generalized-dyadic-terminal-verifier
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-03'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -380,6 +381,55 @@ absorbed-support 势严格下降。初始 \(A=1\) 的 overflow 另用特化 veri
 path-anchored \(Q\)。反过来，在 \(A>1\) 时也不得把支撑重置为较小对偶载体；只有
 \(A\mid L\)、\(L>A\) 的边可留在当前 phase。完整证明与反例见
 [overflow 固定 \(n\) 对偶图谱](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md)。
+
+固定-\(n\) 分支还允许一个更宽的有界除子选择器
+`overflow_fixed_n_bounded_divisor_outer_rank_v1`。令
+
+\[
+B_p=\frac{(p-1)^2}{4},
+\qquad S=Md=\frac{pn-1}{4}.
+\]
+
+从全部 \(L\mid S\) 中只保留
+
+\[
+A_S<L\le B_p,
+\qquad 4L>n,
+\qquad
+\left\lfloor\frac{B_p}{L}\right\rfloor
+<
+\left\lfloor\frac{B_p}{A_S}\right\rfloor.
+\tag{6}
+\]
+
+对任意这样的 \(L\)，回执重算
+
+\[
+R_L=4L-n,
+\qquad
+K_L=L\left(p-\frac SL\right),
+\qquad
+pR_L+1=4K_L.
+\tag{7}
+\]
+
+因为 \(4L>n\) 强制 \(S/L<p\)，所以 \(K_L>0\)；\(L\mid K_L\) 和 (6) 则分别承担
+E2 与 E5。该分支仍使用图表无关的 \(W_T=\operatorname{Sol}(p)\) 恒等提升，目标
+\(R_L<p\) 时为 `marked_absorb`，目标 \(R_L>p\) 时为可继续处理的 overflow。
+选择器按最大合格 \(L\) 规范化，但候选集为空时必须停留在
+`analysis_evidence`，不得把较小对偶载体直接登记为后继。
+
+该分支允许两种明确类型：若 \(A_S\mid L\)，后继保留旧 charged support；若
+\(A_S\nmid L\)，则不能声称支撑单调，而必须把同一个
+\(\Pi_A(L)<\Pi_A(A_S)\) 记录为 support_reset_paid=true 的外层秩重置。后一类
+仍可使用图表无关的 \(\operatorname{Sol}(p)\) 恒等提升，但不是当前 phase 的
+support-preserving 边；这一区分由回执的 support_monotone 与
+outer_rank_reset 字段共同核验。
+
+若 \(S/A_S\ge2\) 且 \(S\le B_p\)，则 \(L=S\) 自动满足 (6)；而
+\(S\le B_p\iff n\le p-2\)。这只是条件性充分条件，不能替代对一般递归可达
+\(A_S>1\) overflow 的有界除子存在性证明。完整引理、低互补量推论和 12 个聚焦回执见
+[overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
 
 同一 overflow receipt 还可生成 `overflow_carrier_reset_v1` 候选。取任一对偶小图表
 \(t\in\{d,r\}\) 且 \(R_t<p\)，则有严格整数下降 \(t<M\)。该候选保持
@@ -843,6 +893,7 @@ n\equiv1\pmod4,
 | 把同一 Type I 证书改写成 marked source | 没有产生独立的第三出口或新的下降机制 |
 | 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
 | overflow 的某个对偶图表 | 只有 \(A'=\operatorname{lcm}(A,t)>A\)、\(A'\mid K_t\) 且 (7) 成立时才是 joined-support verified edge；否则仍是 candidate/analysis evidence |
+| overflow 固定-n 的有界除子 \(L\mid Md\) | 只有 \(A<L\le B_p\)、\(4L>n\) 且严格外层势下降时才是 overflow_fixed_n_bounded_divisor_outer_rank_v1；\(A\nmid L\) 时必须显式支付 support reset，候选集为空不能伪造后继 |
 | d=1 overflow 的 \(p-2\) G 重图表 | \(M\bmod p=(p-1)/4\) 只给出普适 G 分离和空支撑纤维；它丢弃旧支撑，不能作为 RESET 或恒等 marked lift |
 | overflow 余数 \(r=1\) 的对称边界 | \(s=1\)、\(d=(p-1)/4\)，两侧固定为 \((p-2,(p-1)^2/4)\) 与 \((3,(3p+1)/4)\)；不自动支付旧 support，不能作为新的递归出口 |
 | 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
@@ -888,12 +939,13 @@ bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项�
 当前唯一集中的全称问题是：对每个递归历史可达的 \(A>1\) overflow，是否必有
 
 \[
-\mathcal W_A\ne\varnothing,
+\mathcal W_A\ne\varnothing
+\quad\text{或存在满足有界除子条件的 }L\mid Md,
 \quad\text{或某个 source/path/node alternate 保持并增加 }A,
 \quad\text{或直接 Type I/II 终端？}
 \]
 
-若三者都没有，就必须构造改变 marked state 的新边，并以一个严格下降的外层 phase
+若这些出口都没有，就必须构造改变 marked state 的新边，并以一个严格下降的外层 phase
 支付 support reset。任何 overflow 至少有一个 \(R<p\) 的算术对偶图表，但反例证明该
 图表可能不保留 \(A\)；这正是“表示--对偶”已经完成而“容量或递降”仍未闭合的接口。
 在该问题解决以前，商群压缩、目标纤维距离、q-adic 必要同余和冻结图无环都只能作为

@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱又证明 A=1 时总有合法 charged-support identity edge，且任意 overflow 至少有一个 R<p 的算术对偶图表。规范有界 Fourier 的 45 个冻结 F 状态现已逐方向投影到 141 个实际线性载体，整除链和混合容量均无超载，说明相位/角色债务尚未形成跨状态需求。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱又证明 A=1 时总有合法 charged-support identity edge，并把有界除子条件下的 A>1 递降规范化为“取最大合格 L”，且任意 overflow 至少有一个 R<p 的算术对偶图表。规范有界 Fourier 的 45 个冻结 F 状态现已逐方向投影到 141 个实际线性载体，整除链和混合容量均无超载，说明相位/角色债务尚未形成跨状态需求。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在满足有界除子条件的 L、保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
 topics:
 - research-map
 - proof-program
@@ -15,11 +15,14 @@ used_by:
 - type-I-target-divisor-even-terminal-selector
 - type-I-private-quotient-box-saturation
 - type-I-linear-single-active-prime-cross-state-compatibility
+- type-I-overflow-fixed-n-bounded-divisor-saturation
 sources:
 - claim: type-I-universal-p-source-capacity-anchor-orbit
   role: universal-source-and-capacity-orbit
 - claim: type-I-overflow-determinant-fixed-n-dual-support-conflict
   role: fixed-n-dual-atlas-and-current-residual
+- claim: type-I-overflow-fixed-n-bounded-divisor-saturation
+  role: bounded-fixed-n-divisor-outer-rank-and-low-complement-corollary
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
 - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
@@ -3085,19 +3088,19 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-n-bounded-divisor-outer-rank -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
 目标纤维、标记集、带符号缺陷、证书上下文和势记录。当前样例的近邻、广义 \(2^j\) 和
 固定层 Fourier 三条状态、一个 bounded-Fourier 族级载体回执，以及一条 overflow 缺陷相位账本，都保持
-`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。同时，固定-(n)
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。同时，固定-\(n\)
 行列式图谱中的正例 \((p,M,A)=(409,250,5)\to L=125\) 已完整重算为
 `verified_edge`：\(R_L=11\)、\(K_L=1125\)，恒等解提升成立，支撑势
 \(8323\to332\) 严格下降。只有 E1--E5、全域解提升和严格势下降同时出现时才允许
 `verified_edge`；标准偶前驱不会被误标成 `terminal_leaf`。
 
-同一结果对象新增 `source_receipts`，接入已解决的通用 (p)-source：
+同一结果对象新增 `source_receipts`，接入已解决的通用 \(p\)-source：
 
 \[
 (U,V,m)=(p,R(p-1)-p,p-1),
@@ -3333,3 +3336,36 @@ M\equiv r=\frac{p-1}{4}\pmod p,
 对每个 \(k\ge1\)，\(M=kp+1\)、\(n=k(p-1)+1\) 确实给出真实 overflow，因此这不是
 有限样本空缺；但 \(r=1\) 本身不自动保留一般 \(A>1\) 的旧 charged support，不能登记为新的递归出口；初始 \(A=1\) 的 d 侧出口已由既有 determinant 边覆盖。该
 边界已记录为[overflow 余数 \(r=1\) 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md)。
+
+## 2026-08-03 固定-\(n\) 有界除子外层秩递降
+
+固定-\(n\) 图谱可以再向上扩展：不必把 \(L\) 固定为
+\(\operatorname{lcm}(A,d)\)，而是枚举 \(S=Md=(pn-1)/4\) 的全部除子。只要
+
+\[
+A<L\le B_p,
+\qquad 4L>n,
+\qquad
+\left\lfloor B_p/L\right\rfloor<
+\left\lfloor B_p/A\right\rfloor,
+\]
+
+就有
+
+\[
+R_L=4L-n,
+\qquad K_L=L\left(p-S/L\right),
+\qquad pR_L+1=4K_L,
+\]
+
+以及 \(L\mid K_L\)。因此该边保持 \(\operatorname{Sol}(p)\) 的恒等提升，并支付
+absorbed-support 外层势；若 \(A\mid L\) 则保留旧支撑，若 \(A\nmid L\) 则由同一
+严格势显式支付支撑重置。\(R_L<p\) 时是吸收态，\(R_L>p\) 时仍是严格秩下降的
+overflow。统一 selector 对冻结的 12 个 overflow 全部找到合格 \(L\)：8 条保留
+支撑，4 条是外层势支付的重置；12 个目标均仍为 overflow，故这一步把当前边界进一步
+收缩为“可达 overflow 是否总有合格除子或其它出口”，没有把溢出递归误报成终端。
+
+一个有用的充分条件是 \(S/A\ge2\) 且 \(S\le B_p\)：此时取 \(L=S\) 即可，且
+\(S\le B_p\) 等价于 \(n\le p-2\)。相应目标
+\(R_S=(p-1)n-1\)；只有 \(n=1\) 直接落入 \(R_S<p\)，\(n\ge2\) 仍需继续处理。
+详见[overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
