@@ -14,6 +14,7 @@ depends_on:
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-fixed-n-overflow-rank-descent
   - type-I-overflow-fixed-n-bounded-divisor-saturation
+  - type-I-overflow-high-carrier-fixed-n-R-descent
   - type-I-overflow-same-chart-support-promotion
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -261,6 +262,17 @@ E1--E5 外层秩边，其中 5 条与 d 侧重叠、2 条补上此前拒绝的 f
 `support_reset_paid`，不能伪装成 support-preserving。现有 12 个 overflow fixture
 全部有该边，其中 8 条保留支撑、4 条由外层势支付重置，12 条目标仍是 overflow。
 详见[overflow 固定 \(n\) 的有界除子外层秩递降](type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
+
+当来源载体位于高载体域 \(M>B_p\) 时，任何已接受的有界后继还满足
+\(L\le B_p<M\)，故
+
+\[
+R_L=4L-n<R_M=4M-n.
+\]
+
+选择器将这个事实保存为 high_carrier_R_descent 次级秩字段，并由 verifier 从
+\(M,B_p,L,R_M,R_L\) 重算；它只在候选边已通过 E1--E5 后生效，不提供候选存在性，
+也不替代全局 phase 的良基性。详见[高载体 overflow 固定 \(n\) 有界除子的 \(R\) 严格递降](type-I-overflow-high-carrier-fixed-n-R-descent.md)。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

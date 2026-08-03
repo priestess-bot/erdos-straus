@@ -927,6 +927,7 @@
     "bottom_word_capacity_requires_signed_dictionary": true,
     "d_one_rechart_is_g_analysis_only": true,
     "direct_terminal_precedes_overflow_descent": true,
+    "fixed_n_bounded_divisor_high_carrier_R_descent_replayed": true,
     "fixed_n_bounded_divisor_requires_bounded_support": true,
     "fixed_n_overflow_rank_requires_positive_chart": true,
     "fixed_s_overflow_rank_requires_product_divisor": true,
@@ -1940,18 +1941,21 @@
   "overflow_fixed_n_bounded_divisor_outer_rank": {
     "absorption_target_count": 0,
     "fixture_count": 12,
+    "high_carrier_R_descent_count": 1,
+    "high_carrier_verified_edge_count": 1,
     "overflow_target_count": 12,
     "rank_definition": {
       "acceptance": "L|M*d, A<L<=B_p, 4L>n, canonical_chart(p,L)=(R_L,K_L), and strict potential decrease; A|L is optional only when the same potential explicitly pays an outer-rank reset",
       "candidate": "any L|M*d with A<L<=B_p and 4L>n",
       "formula": "floor(((p-1)^2)/4 / A)",
+      "high_carrier_secondary_rank": "if M>B_p then every accepted L satisfies L<=B_p<M and R_L=4L-n<R_M=4M-n",
       "kind": "absorbed_support_potential",
       "selection_rule": "maximum admissible L",
       "target_formula": "R_L=4L-n; K_L=L*(p-M*d/L)"
     },
     "rejected_fixture_count": 0,
     "rejected_fixtures": [],
-    "scope_note": "This is the complete bounded fixed-n divisor atlas above and inside the absorbed-support potential domain. An empty admissible set remains an open overflow boundary and is not promoted.",
+    "scope_note": "This is the complete bounded fixed-n divisor atlas above and inside the absorbed-support potential domain. An empty admissible set remains an open overflow boundary and is not promoted. When M>B_p, an accepted bounded successor also carries a strict canonical-R descent; this is conditional on the existence of the accepted divisor and does not supply that divisor.",
     "verified_edge_count": 12,
     "verified_receipts": [
       {
@@ -1993,6 +1997,18 @@
         "equation_target": {
           "denominator": 73,
           "numerator": 4
+        },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": 0,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 359,
+          "source_carrier": 91,
+          "strict_decrease": false,
+          "successor_R": 359,
+          "successor_carrier": 91
         },
         "induction_rank": {
           "kind": "absorbed_support_potential",
@@ -2092,6 +2108,18 @@
           "denominator": 409,
           "numerator": 4
         },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -99000,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 511,
+          "source_carrier": 250,
+          "strict_decrease": false,
+          "successor_R": 99511,
+          "successor_carrier": 25000
+        },
         "induction_rank": {
           "kind": "absorbed_support_potential",
           "source": 8323,
@@ -2189,6 +2217,18 @@
         "equation_target": {
           "denominator": 241,
           "numerator": 4
+        },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -9120,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 719,
+          "source_carrier": 190,
+          "strict_decrease": false,
+          "successor_R": 9839,
+          "successor_carrier": 2470
         },
         "induction_rank": {
           "kind": "absorbed_support_potential",
@@ -2288,6 +2328,18 @@
           "denominator": 73,
           "numerator": 4
         },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -1672,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 127,
+          "source_carrier": 38,
+          "strict_decrease": false,
+          "successor_R": 1799,
+          "successor_carrier": 456
+        },
         "induction_rank": {
           "kind": "absorbed_support_potential",
           "source": 68,
@@ -2385,6 +2437,18 @@
         "equation_target": {
           "denominator": 73,
           "numerator": 4
+        },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -456,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 1799,
+          "source_carrier": 608,
+          "strict_decrease": false,
+          "successor_R": 2255,
+          "successor_carrier": 722
         },
         "induction_rank": {
           "kind": "absorbed_support_potential",
@@ -2484,6 +2548,18 @@
           "denominator": 73,
           "numerator": 4
         },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -792,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 1191,
+          "source_carrier": 836,
+          "strict_decrease": false,
+          "successor_R": 1983,
+          "successor_carrier": 1034
+        },
         "induction_rank": {
           "kind": "absorbed_support_potential",
           "source": 68,
@@ -2581,6 +2657,18 @@
         "equation_target": {
           "denominator": 73,
           "numerator": 4
+        },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -760,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 2863,
+          "source_carrier": 950,
+          "strict_decrease": false,
+          "successor_R": 3623,
+          "successor_carrier": 1140
         },
         "induction_rank": {
           "kind": "absorbed_support_potential",
@@ -2680,6 +2768,18 @@
           "denominator": 73,
           "numerator": 4
         },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -2856,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 95,
+          "source_carrier": 34,
+          "strict_decrease": false,
+          "successor_R": 2951,
+          "successor_carrier": 748
+        },
         "induction_rank": {
           "kind": "absorbed_support_potential",
           "source": 1296,
@@ -2777,6 +2877,18 @@
         "equation_target": {
           "denominator": 241,
           "numerator": 4
+        },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -7668,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 251,
+          "source_carrier": 71,
+          "strict_decrease": false,
+          "successor_R": 7919,
+          "successor_carrier": 1988
         },
         "induction_rank": {
           "kind": "absorbed_support_potential",
@@ -2876,6 +2988,18 @@
           "denominator": 73,
           "numerator": 4
         },
+        "high_carrier_R_descent": {
+          "applicable": true,
+          "bounded_successor": "L<=B_p<M",
+          "condition": "M>B_p",
+          "delta_R": 920,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 3743,
+          "source_carrier": 1518,
+          "strict_decrease": true,
+          "successor_R": 2823,
+          "successor_carrier": 1288
+        },
         "induction_rank": {
           "kind": "absorbed_support_potential",
           "source": 19,
@@ -2974,6 +3098,18 @@
           "denominator": 73,
           "numerator": 4
         },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -1456,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 1367,
+          "source_carrier": 924,
+          "strict_decrease": false,
+          "successor_R": 2823,
+          "successor_carrier": 1288
+        },
         "induction_rank": {
           "kind": "absorbed_support_potential",
           "source": 19,
@@ -3071,6 +3207,18 @@
         "equation_target": {
           "denominator": 241,
           "numerator": 4
+        },
+        "high_carrier_R_descent": {
+          "applicable": false,
+          "bounded_successor": "L<=B_p",
+          "condition": "M>B_p",
+          "delta_R": -32944,
+          "identity": "R_M-R_L=4*(M-L)",
+          "source_R": 1103,
+          "source_carrier": 568,
+          "strict_decrease": false,
+          "successor_R": 34047,
+          "successor_carrier": 8804
         },
         "induction_rank": {
           "kind": "absorbed_support_potential",

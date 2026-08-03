@@ -2520,6 +2520,22 @@ def overflow_fixed_n_bounded_divisor_outer_rank(
                     "support_reset_paid": not support_retained,
                     "outer_rank_reset": not support_retained,
                 },
+                "high_carrier_R_descent": {
+                    "condition": "M>B_p",
+                    "applicable": source_carrier > B_prime,
+                    "bounded_successor": (
+                        "L<=B_p<M" if source_carrier > B_prime else "L<=B_p"
+                    ),
+                    "source_carrier": source_carrier,
+                    "successor_carrier": L,
+                    "source_R": source_R,
+                    "successor_R": target_R,
+                    "delta_R": source_R - target_R,
+                    "identity": "R_M-R_L=4*(M-L)",
+                    "strict_decrease": (
+                        target_R < source_R if source_carrier > B_prime else False
+                    ),
+                },
                 "e1_e5": {f"E{i}": True for i in range(1, 6)},
                 "selector_status": "verified_edge",
                 "recursive_edge_eligible": True,
@@ -2569,6 +2585,17 @@ def overflow_fixed_n_bounded_divisor_outer_rank(
         "rejected_fixture_count": len(rejected),
         "verified_receipts": verified,
         "rejected_fixtures": rejected,
+        "high_carrier_verified_edge_count": sum(
+            int(
+                receipt["certificate_context"]["determinant"]["M"]
+                > (int(receipt["equation_target"]["denominator"]) - 1) ** 2 // 4
+            )
+            for receipt in verified
+        ),
+        "high_carrier_R_descent_count": sum(
+            int(receipt["high_carrier_R_descent"]["strict_decrease"])
+            for receipt in verified
+        ),
         "rank_definition": {
             "kind": "absorbed_support_potential",
             "formula": "floor(((p-1)^2)/4 / A)",
@@ -2580,11 +2607,17 @@ def overflow_fixed_n_bounded_divisor_outer_rank(
                 "and strict potential decrease; A|L is optional only when the same "
                 "potential explicitly pays an outer-rank reset"
             ),
+            "high_carrier_secondary_rank": (
+                "if M>B_p then every accepted L satisfies L<=B_p<M and "
+                "R_L=4L-n<R_M=4M-n"
+            ),
         },
         "scope_note": (
             "This is the complete bounded fixed-n divisor atlas above and inside the "
             "absorbed-support potential domain. An empty admissible set remains an open "
-            "overflow boundary and is not promoted."
+            "overflow boundary and is not promoted. When M>B_p, an accepted bounded "
+            "successor also carries a strict canonical-R descent; this is conditional "
+            "on the existence of the accepted divisor and does not supply that divisor."
         ),
     }
 
@@ -3673,6 +3706,7 @@ def build_results() -> dict[str, object]:
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
             "fixed_n_bounded_divisor_requires_bounded_support": True,
+            "fixed_n_bounded_divisor_high_carrier_R_descent_replayed": True,
             "same_chart_promotion_requires_M_le_B_p": True,
             "a_one_determinant_boundary_requires_M_lt_p": True,
             "a_one_dual_reset_family_replayed": True,
@@ -4082,8 +4116,11 @@ def verify_overflow_fixed_n_bounded_divisor_contract(
             raise AssertionError("bounded fixed-n divisor payload is incomplete")
         determinant = context.get("determinant")
         selected = context.get("selected_candidate")
+        high_carrier_rank = receipt.get("high_carrier_R_descent")
         if not isinstance(determinant, dict) or not isinstance(selected, dict):
             raise AssertionError("bounded fixed-n divisor determinant payload changed")
+        if not isinstance(high_carrier_rank, dict):
+            raise AssertionError("high-carrier R descent payload missing")
         prime = int(receipt["equation_target"]["denominator"])
         M = int(determinant["M"])
         d = int(determinant["d"])
@@ -4095,6 +4132,7 @@ def verify_overflow_fixed_n_bounded_divisor_contract(
         source_support = int(source["absorbed_support"])
         B_prime = (prime - 1) ** 2 // 4
         support_retained = L % source_support == 0
+        high_carrier = M > B_prime
         if (
             S != M * d
             or prime * n != 4 * S + 1
@@ -4112,6 +4150,23 @@ def verify_overflow_fixed_n_bounded_divisor_contract(
             or potential.get("outer_rank_reset") is not (not support_retained)
         ):
             raise AssertionError("bounded fixed-n divisor identity changed")
+        if (
+            high_carrier_rank.get("condition") != "M>B_p"
+            or high_carrier_rank.get("applicable") is not high_carrier
+            or high_carrier_rank.get("bounded_successor")
+            != ("L<=B_p<M" if high_carrier else "L<=B_p")
+            or high_carrier_rank.get("source_carrier") != M
+            or high_carrier_rank.get("successor_carrier") != L
+            or high_carrier_rank.get("source_R") != int(source["R"])
+            or high_carrier_rank.get("successor_R") != target_R
+            or high_carrier_rank.get("delta_R") != int(source["R"]) - target_R
+            or high_carrier_rank.get("identity") != "R_M-R_L=4*(M-L)"
+            or high_carrier_rank.get("strict_decrease")
+            is not (high_carrier and target_R < int(source["R"]))
+        ):
+            raise AssertionError("high-carrier R descent identity changed")
+        if high_carrier and not (L <= B_prime < M and target_R < int(source["R"])):
+            raise AssertionError("high-carrier bounded successor did not lower R")
         if successor.get("absorbed_support") != L:
             raise AssertionError("bounded fixed-n divisor support changed")
 

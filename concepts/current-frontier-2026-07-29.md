@@ -3383,6 +3383,22 @@ overflow。统一 selector 对冻结的 12 个 overflow 全部找到合格 \(L\)
 \(R_S=(p-1)n-1\)；只有 \(n=1\) 直接落入 \(R_S<p\)，\(n\ge2\) 仍需继续处理。
 详见[overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
 
+### 高载体固定-\(n\) 的次级 \(R\) 下降
+
+有界除子边在 \(M>B_p\) 时还携带一个独立的算术秩事实。任何被接受的
+\(L\) 都满足 \(L\le B_p<M\)，所以
+
+\[
+R_M-R_L=(4M-n)-(4L-n)=4(M-L)>0.
+\]
+
+这条 `high_carrier_R_descent` 字段由选择器从原始 \(M,B_p,L,R_M,R_L\) 重算；它只在
+候选 \(L\) 已存在时提供 canonical-\(R\) 次级下降，不能证明高载体状态必有候选，也不能
+单独构成整个 overflow 图的全局良基势。当前 12 条有界固定-\(n\) 回执中只有
+\(p=73,M=1518>B_{73}=1296\) 的 `lcm_cycle_step_0` 进入该域，
+\(L=1288\) 给出 \(3743\to2823\)；回放计数为 1/1。主张卡见
+[高载体 overflow 固定 \(n\) 有界除子的 \(R\) 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md)。
+
 ### 2026-08-03 同图表支撑升级
 
 complete-excess bundle overflow 还带有一个更直接的支撑边界。若来源回执满足

@@ -4658,3 +4658,31 @@ selector_status=analysis_evidence、recursive_edge_eligible=false。
 或其它外层秩尚未支付的状态；11/12 仅是有限回放证据。
 
 实现和合同见[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
+
+## 2026-08-03：高载体固定-\(n\) 的 canonical-\(R\) 次级下降
+
+有界固定-\(n\) 分支的高载体残差还可以提炼出一个不依赖支撑是否保留的算术字段。
+若来源载体满足 \(M>B_p\)，而选择器找到有界后继 \(L\le B_p\)，则自动有
+
+\[
+L<M,
+\qquad
+R_M-R_L=(4M-n)-(4L-n)=4(M-L)>0.
+\]
+
+这条 `high_carrier_R_descent` 不替代 absorbed-support 势，也不证明候选 \(L\) 的存在；
+它只在完整 E1--E5 边已经成立后，为高载体出口提供严格的 canonical-\(R\) 次级秩。
+选择器回执和 verifier 都从 determinant 原值重算 \(M,B_p,L,R_M,R_L\)，并明确把该
+字段限制在 \(M>B_p\)；低载体行不会被伪造为高载体下降。
+
+聚焦的 12 条有界固定-\(n\) 回执中只有 `lcm_cycle_step_0` 适用：
+
+\[
+(p,M,A,n,L)=(73,1518,66,379,1288),
+\qquad
+R_M=3743>R_L=2823,
+\]
+
+故高载体回放计数为 1/1。若高载体行没有合格 \(L\)，该字段不产生后继，残余仍需
+fixed-\(s\)、alternate、终端、容量或另一个全局相位秩。主张卡见[高载体 overflow
+固定 \(n\) 有界除子的 \(R\) 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md)。

@@ -433,6 +433,11 @@ outer_rank_reset 字段共同核验。
 \(A_S>1\) overflow 的有界除子存在性证明。完整引理、低互补量推论和 12 个聚焦回执见
 [overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
 
+若来源载体落在 \(M>B_p\)，同一有界后继还自动满足 \(L\le B_p<M\)，从而
+\(R_L=4L-n<R_M=4M-n\)。选择器把它记录为 high_carrier_R_descent 次级秩；
+该字段只在候选边已经通过 E1--E5 时有效，不能证明候选存在或替代全局 phase 的良基
+性。详见[高载体 overflow 固定 \(n\) 有界除子的 \(R\) 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md)。
+
 对来源可达的 complete-excess bundle overflow，还必须优先检查同图表支撑升级：
 若 \(A\mid M\)、\(M/A\ge2\) 且 \(M\le B_p\)，则直接把 absorbed support 从 \(A\)
 升到 \(M\)。因为 \(M\mid K_M\)、\(\operatorname{Sol}(p)\) 对 chart 独立且

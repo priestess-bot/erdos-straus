@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 331 |
+| 数学状态 | `established` | 332 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 163 |
+| 证明来源 | `repository_derivation` | 164 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 293 |
+| 审阅状态 | `internal_review` | 294 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -494,6 +494,7 @@
 | [固定 n 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md) (`type-I-overflow-fixed-n-overflow-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [高载体 overflow 固定 n 有界除子的 R 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md) (`type-I-overflow-high-carrier-fixed-n-R-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md) (`type-I-overflow-outer-rank-reset`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md) (`type-I-overflow-phase-reset-cycle-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |

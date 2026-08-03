@@ -179,6 +179,17 @@ overflow 同图表 verified edge，但目标仍是 overflow。12 个聚焦来源
 Type I/II 或其它外层秩的分支；11/12 只是有限回放，不是全称覆盖。详见
 [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
 
+同一高载体残差现在有一个更窄的固定-\(n\) 出口：若有界除子选择器找到
+\(L\mid Md\) 且 \(L\le B_p<M\)，则
+\[
+R_L=4L-n<R_M=4M-n.
+\]
+因此该边在 absorbed-support 势之外还携带严格的 canonical-\(R\) 次级下降；选择器以
+`high_carrier_R_descent` 字段逐项重算这一事实。当前 12 条有界固定-\(n\) 回执中仅
+`lcm_cycle_step_0` 适用，\(3743\to2823\)，回放为 1/1。该结论仍是“候选存在时的
+秩下降”，不证明高载体残差必有这样的除子，也不替代 alternate、终端或全局相位秩。
+详见[高载体 overflow 固定 \(n\) 有界除子的 \(R\) 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md)。
+
 同一选择器现在把已建立的 \(p+4\) Type II 证书放在 overflow 递降之前：冻结的 12 个
 fixture 全部重建为 `terminal_leaf`，其中 d=1 边界由 \(q=7\) 的证书直接
 闭合。该有限覆盖不能外推为所有核心素数，因为一般 \(p+4\) 可能没有 \(3\bmod4\)
