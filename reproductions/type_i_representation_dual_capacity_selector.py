@@ -3263,6 +3263,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     d_one_edge_names: list[str] = []
     d_one_empty_names: list[str] = []
     cofactor_saturation_names: list[str] = []
+    prime_power_cofactor_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3357,7 +3358,8 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                     raise AssertionError(f"d=1 fixed-s empty boundary changed: {name}")
                 d_one_empty_names.append(name)
         if integral_s and isinstance(fixed_s, int) and product > 1:
-            smallest_factor = min(q for q, _ in factorization(product))
+            factor_rows = factorization(product)
+            smallest_factor, smallest_factor_exponent = min(factor_rows)
             cofactor = product // smallest_factor
             if 2 * support <= cofactor <= B_prime:
                 if not (
@@ -3369,6 +3371,35 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 ):
                     raise AssertionError(f"fixed-s cofactor subfamily changed: {name}")
                 cofactor_saturation_names.append(name)
+            power_exponent = 1
+            power_divisor = smallest_factor
+            prime_power_cofactor = product // power_divisor
+            while (
+                prime_power_cofactor > B_prime
+                and power_exponent < smallest_factor_exponent
+            ):
+                power_exponent += 1
+                power_divisor *= smallest_factor
+                prime_power_cofactor = product // power_divisor
+            if (
+                power_exponent >= 1
+                and prime_power_cofactor <= B_prime
+                and 2 * support <= prime_power_cofactor
+                and power_divisor < prime
+            ):
+                if not (
+                    4 * prime_power_cofactor > fixed_s
+                    and B_prime // prime_power_cofactor < B_prime // support
+                    and canonical_chart(prime, prime_power_cofactor)
+                    == (
+                        4 * prime_power_cofactor - fixed_s,
+                        prime_power_cofactor * (prime - power_divisor),
+                    )
+                ):
+                    raise AssertionError(
+                        f"fixed-s prime-power cofactor subfamily changed: {name}"
+                    )
+                prime_power_cofactor_names.append(name)
         candidates: list[tuple[int, int, int]] = []
         if source_in_domain and integral_s and isinstance(fixed_s, int):
             for L in divisors(product):
@@ -3584,6 +3615,19 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             "conclusion": (
                 "ell< p and s<4L are automatic; K_L=L*(p-ell), so the "
                 "cofactor gives a strict fixed-s identity-lift edge"
+            ),
+        },
+        "unconditional_prime_power_cofactor_subfamily": {
+            "condition": (
+                "ell=spf(r*d), e=min{j>=1: r*d/ell^j<=B_p}, "
+                "ell^e<p, 2A<=r*d/ell^e"
+            ),
+            "candidate": "L=r*d/ell^e",
+            "fixture_count": len(prime_power_cofactor_names),
+            "fixture_names": prime_power_cofactor_names,
+            "conclusion": (
+                "For the first bounded power cofactor, s<4L is automatic and "
+                "K_L=L*(p-ell^e), giving a strict fixed-s identity-lift edge"
             ),
         },
         "rank_definition": {
@@ -4678,6 +4722,23 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         != expected_cofactor_subfamily
     ):
         raise AssertionError("bounded fixed-s cofactor subfamily coverage changed")
+    power_cofactor_subfamily = branch.get("unconditional_prime_power_cofactor_subfamily")
+    if not isinstance(power_cofactor_subfamily, dict):
+        raise AssertionError("bounded fixed-s prime-power cofactor subfamily missing")
+    expected_power_cofactor_subfamily = expected_cofactor_subfamily
+    if (
+        power_cofactor_subfamily.get("condition")
+        != (
+            "ell=spf(r*d), e=min{j>=1: r*d/ell^j<=B_p}, "
+            "ell^e<p, 2A<=r*d/ell^e"
+        )
+        or power_cofactor_subfamily.get("candidate") != "L=r*d/ell^e"
+        or power_cofactor_subfamily.get("fixture_count")
+        != len(expected_power_cofactor_subfamily)
+        or set(power_cofactor_subfamily.get("fixture_names", []))
+        != expected_power_cofactor_subfamily
+    ):
+        raise AssertionError("bounded fixed-s prime-power cofactor coverage changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")

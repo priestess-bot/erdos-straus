@@ -103,6 +103,27 @@ K_L=L(p-\ell)>0.
 所以 \(L=r*d/\operatorname{spf}(r*d)\) 是一个规范的 fixed-s 恒等提升边。该条件
 覆盖 \(r,d>1\) 且乘积较大的残余；它仍是充分条件，不声称所有 overflow 都满足。
 
+若一次 cofactor 仍超过容量盒，可沿同一最小素因子继续剥离。令
+\[
+e=\min\{j\ge1:r*d/\ell^j\le B_p\},
+\qquad
+L=\frac{r*d}{\ell^e}.
+\]
+
+只要 \(e\) 存在、\(\ell^e<p\) 且 \(2A\le L\)，便有
+
+\[
+s=\frac{4r*d+1}{p}<4L,
+\qquad
+K_L=L(p-\ell^e)>0,
+\qquad
+4K_L=p(4L-s)+1.
+\]
+
+所以第一次落入 \(B_p\) 的素因子幂 cofactor 同样给出规范 fixed-s 恒等提升边。
+一次 cofactor 条件是 \(e=1\) 的特例；幂次版本只扩展候选，不把不满足
+\(\ell^e<p\) 或 \(L<2A\) 的行误标为递归边。
+
 ## 2. 支持势与完整边
 
 令 B_p=(p-1)^2/4，Pi(A)=floor(B_p/A)。
