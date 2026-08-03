@@ -4262,6 +4262,228 @@
       "one_dimensional_fixture_names": [
         "reachable_conflict_bundle_3"
       ],
+      "parametric_family": {
+        "conclusion": "For each listed prime seed and every allowed k, p*n=4*M*d+1, R_M>p, s=1, and every fixed-s divisor L|r*d is below A=M. This is a genuine r,d>1 arithmetic overflow boundary, not a recursive edge or a reachability claim.",
+        "condition": "P=2^a*3^b, a,b>=1, p=4P+1 prime, r=2, d=P/2, M=k*p+r, A=M, 1<=k<=floor((B_p-r)/p)",
+        "parameter_range": "1<=k<=floor((B_p-r)/p)",
+        "proof_boundary": "smooth23_parametric_fixed_s_support_saturation",
+        "recursive_edge_eligible": false,
+        "seed_count": 5,
+        "seeds": [
+          {
+            "B_p": 1296,
+            "checked_rows": [
+              {
+                "K": 4800,
+                "R": 263,
+                "carrier": 75,
+                "dual_carrier": 9,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 1,
+                "max_positive_bounded_divisor": 18,
+                "n": 37,
+                "product": 18,
+                "residue": 2,
+                "source_support": 75
+              },
+              {
+                "K": 79552,
+                "R": 4359,
+                "carrier": 1243,
+                "dual_carrier": 9,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 17,
+                "max_positive_bounded_divisor": 18,
+                "n": 613,
+                "product": 18,
+                "residue": 2,
+                "source_support": 1243
+              }
+            ],
+            "dual_carrier": 9,
+            "exponents": [
+              1,
+              2
+            ],
+            "k_max": 17,
+            "prime": 73,
+            "product": 18,
+            "residue": 2
+          },
+          {
+            "B_p": 2304,
+            "checked_rows": [
+              {
+                "K": 8415,
+                "R": 347,
+                "carrier": 99,
+                "dual_carrier": 12,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 1,
+                "max_positive_bounded_divisor": 24,
+                "n": 49,
+                "product": 24,
+                "residue": 2,
+                "source_support": 99
+              },
+              {
+                "K": 189805,
+                "R": 7827,
+                "carrier": 2233,
+                "dual_carrier": 12,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 23,
+                "max_positive_bounded_divisor": 24,
+                "n": 1105,
+                "product": 24,
+                "residue": 2,
+                "source_support": 2233
+              }
+            ],
+            "dual_carrier": 12,
+            "exponents": [
+              3,
+              1
+            ],
+            "k_max": 23,
+            "prime": 97,
+            "product": 24,
+            "residue": 2
+          },
+          {
+            "B_p": 9216,
+            "checked_rows": [
+              {
+                "K": 32955,
+                "R": 683,
+                "carrier": 195,
+                "dual_carrier": 24,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 1,
+                "max_positive_bounded_divisor": 48,
+                "n": 97,
+                "product": 48,
+                "residue": 2,
+                "source_support": 195
+              },
+              {
+                "K": 1533337,
+                "R": 31779,
+                "carrier": 9073,
+                "dual_carrier": 24,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 47,
+                "max_positive_bounded_divisor": 48,
+                "n": 4513,
+                "product": 48,
+                "residue": 2,
+                "source_support": 9073
+              }
+            ],
+            "dual_carrier": 24,
+            "exponents": [
+              4,
+              1
+            ],
+            "k_max": 47,
+            "prime": 193,
+            "product": 48,
+            "residue": 2
+          },
+          {
+            "B_p": 46656,
+            "checked_rows": [
+              {
+                "K": 164865,
+                "R": 1523,
+                "carrier": 435,
+                "dual_carrier": 54,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 1,
+                "max_positive_bounded_divisor": 108,
+                "n": 217,
+                "product": 108,
+                "residue": 2,
+                "source_support": 435
+              },
+              {
+                "K": 17560207,
+                "R": 162219,
+                "carrier": 46333,
+                "dual_carrier": 54,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 107,
+                "max_positive_bounded_divisor": 108,
+                "n": 23113,
+                "product": 108,
+                "residue": 2,
+                "source_support": 46333
+              }
+            ],
+            "dual_carrier": 54,
+            "exponents": [
+              2,
+              3
+            ],
+            "k_max": 107,
+            "prime": 433,
+            "product": 108,
+            "residue": 2
+          },
+          {
+            "B_p": 419904,
+            "checked_rows": [
+              {
+                "K": 1474365,
+                "R": 4547,
+                "carrier": 1299,
+                "dual_carrier": 162,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 1,
+                "max_positive_bounded_divisor": 324,
+                "n": 649,
+                "product": 324,
+                "residue": 2,
+                "source_support": 1299
+              },
+              {
+                "K": 475488955,
+                "R": 1466427,
+                "carrier": 418933,
+                "dual_carrier": 162,
+                "fixed_s": 1,
+                "fixed_s_candidate_count": 0,
+                "k": 323,
+                "max_positive_bounded_divisor": 324,
+                "n": 209305,
+                "product": 324,
+                "residue": 2,
+                "source_support": 418933
+              }
+            ],
+            "dual_carrier": 162,
+            "exponents": [
+              2,
+              4
+            ],
+            "k_max": 323,
+            "prime": 1297,
+            "product": 324,
+            "residue": 2
+          }
+        ],
+        "selector_status": "analysis_evidence",
+        "source_reach_status": "unproved"
+      },
       "recursive_edge_eligible": false,
       "routing": {
         "genuine_two_dimensional": [

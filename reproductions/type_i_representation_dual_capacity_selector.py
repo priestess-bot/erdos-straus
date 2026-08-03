@@ -3242,6 +3242,110 @@ def overflow_fixed_s_outer_rank(payload: dict[str, object]) -> dict[str, object]
     }
 
 
+def smooth23_fixed_s_parametric_family() -> dict[str, object]:
+    """Reconstruct a genuine r,d>1 smooth fixed-s overflow family.
+
+    This is an arithmetic boundary, not a reachability theorem.  For
+    P=2^a*3^b and p=4P+1 prime, choosing rd=P, M=k*p+r and A=M forces
+    s=1 while every fixed-s divisor remains below the charged support.
+    """
+    seed_exponents = [(1, 2), (3, 1), (4, 1), (2, 3), (2, 4)]
+    seeds: list[dict[str, object]] = []
+    for exponent_two, exponent_three in seed_exponents:
+        product = 2**exponent_two * 3**exponent_three
+        prime = 4 * product + 1
+        if (
+            prime % 24 != 1
+            or factorization(prime) != [[prime, 1]]
+            or product < 6
+        ):
+            raise AssertionError("smooth fixed-s family seed changed")
+        residue = 2
+        dual_carrier = product // residue
+        B_prime = (prime - 1) ** 2 // 4
+        max_k = (B_prime - residue) // prime
+        if max_k < 1 or residue <= 1 or dual_carrier <= 1:
+            raise AssertionError("smooth fixed-s family parameter range changed")
+        checked_k = [1] if max_k == 1 else [1, max_k]
+        rows: list[dict[str, object]] = []
+        for k in checked_k:
+            carrier = k * prime + residue
+            support = carrier
+            n = 4 * k * dual_carrier + 1
+            chart_R = 4 * carrier - n
+            chart_K = carrier * (prime - dual_carrier)
+            fixed_s = (4 * residue * dual_carrier + 1) // prime
+            if (
+                carrier > B_prime
+                or chart_R <= prime
+                or prime * n != 4 * carrier * dual_carrier + 1
+                or fixed_s != 1
+                or canonical_chart(prime, carrier) != (chart_R, chart_K)
+                or product >= carrier
+            ):
+                raise AssertionError("smooth fixed-s family identity changed")
+            if any(
+                L > support
+                for L in divisors(product)
+                if L <= B_prime and 4 * L > fixed_s
+            ):
+                raise AssertionError("smooth fixed-s family lost its empty atlas")
+            rows.append(
+                {
+                    "k": k,
+                    "carrier": carrier,
+                    "source_support": support,
+                    "n": n,
+                    "R": chart_R,
+                    "K": chart_K,
+                    "fixed_s": fixed_s,
+                    "product": product,
+                    "residue": residue,
+                    "dual_carrier": dual_carrier,
+                    "max_positive_bounded_divisor": max(
+                        (
+                            L
+                            for L in divisors(product)
+                            if L <= B_prime and 4 * L > fixed_s
+                        ),
+                        default=0,
+                    ),
+                    "fixed_s_candidate_count": 0,
+                }
+            )
+        seeds.append(
+            {
+                "exponents": [exponent_two, exponent_three],
+                "product": product,
+                "prime": prime,
+                "residue": residue,
+                "dual_carrier": dual_carrier,
+                "B_p": B_prime,
+                "k_max": max_k,
+                "checked_rows": rows,
+            }
+        )
+    return {
+        "condition": (
+            "P=2^a*3^b, a,b>=1, p=4P+1 prime, r=2, d=P/2, "
+            "M=k*p+r, A=M, 1<=k<=floor((B_p-r)/p)"
+        ),
+        "parameter_range": "1<=k<=floor((B_p-r)/p)",
+        "seed_count": len(seeds),
+        "seeds": seeds,
+        "source_reach_status": "unproved",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "proof_boundary": "smooth23_parametric_fixed_s_support_saturation",
+        "conclusion": (
+            "For each listed prime seed and every allowed k, p*n=4*M*d+1, "
+            "R_M>p, s=1, and every fixed-s divisor L|r*d is below A=M. "
+            "This is a genuine r,d>1 arithmetic overflow boundary, not a "
+            "recursive edge or a reachability claim."
+        ),
+    }
+
+
 def overflow_fixed_s_bounded_divisor_outer_rank(
     payload: dict[str, object],
 ) -> dict[str, object]:
@@ -3778,6 +3882,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 "2A; r=1 or d=1 rows are exact one-dimensional boundary specializations, not "
                 "new two-dimensional overflow residuals."
             ),
+            "parametric_family": smooth23_fixed_s_parametric_family(),
         },
         "rank_definition": {
             "kind": "absorbed_support_potential",
@@ -4979,6 +5084,65 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         or grid_receipt.get("grid_dimension") != "one_dimensional_boundary"
     ):
         raise AssertionError("bounded fixed-s smooth grid frontier changed")
+    family = smooth23_residual.get("parametric_family")
+    if not isinstance(family, dict):
+        raise AssertionError("bounded fixed-s smooth parametric family missing")
+    if (
+        family.get("condition")
+        != (
+            "P=2^a*3^b, a,b>=1, p=4P+1 prime, r=2, d=P/2, "
+            "M=k*p+r, A=M, 1<=k<=floor((B_p-r)/p)"
+        )
+        or family.get("parameter_range") != "1<=k<=floor((B_p-r)/p)"
+        or family.get("seed_count") != 5
+        or family.get("source_reach_status") != "unproved"
+        or family.get("selector_status") != "analysis_evidence"
+        or family.get("recursive_edge_eligible") is not False
+        or family.get("proof_boundary")
+        != "smooth23_parametric_fixed_s_support_saturation"
+    ):
+        raise AssertionError("bounded fixed-s smooth parametric family changed")
+    seeds = family.get("seeds")
+    if not isinstance(seeds, list) or len(seeds) != 5:
+        raise AssertionError("bounded fixed-s smooth family seed shape changed")
+    expected_seed_pairs = {
+        (1, 2, 73),
+        (3, 1, 97),
+        (4, 1, 193),
+        (2, 3, 433),
+        (2, 4, 1297),
+    }
+    actual_seed_pairs = {
+        (
+            int(seed["exponents"][0]),
+            int(seed["exponents"][1]),
+            int(seed["prime"]),
+        )
+        for seed in seeds
+        if isinstance(seed, dict)
+        and isinstance(seed.get("exponents"), list)
+        and len(seed["exponents"]) == 2
+    }
+    if actual_seed_pairs != expected_seed_pairs:
+        raise AssertionError("bounded fixed-s smooth family seed coverage changed")
+    for seed in seeds:
+        if not isinstance(seed, dict):
+            raise AssertionError("bounded fixed-s smooth family seed is not an object")
+        rows = seed.get("checked_rows")
+        if not isinstance(rows, list) or not rows:
+            raise AssertionError("bounded fixed-s smooth family rows missing")
+        if int(seed["k_max"]) < 1:
+            raise AssertionError("bounded fixed-s smooth family k range changed")
+        for row in rows:
+            if (
+                not isinstance(row, dict)
+                or row.get("fixed_s") != 1
+                or row.get("fixed_s_candidate_count") != 0
+                or int(row["max_positive_bounded_divisor"]) >= int(row["source_support"])
+                or int(row["R"]) <= int(seed["prime"])
+                or int(row["K"]) % int(row["carrier"])
+            ):
+                raise AssertionError("bounded fixed-s smooth family row changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")

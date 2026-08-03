@@ -129,3 +129,51 @@ L_+=18<2A=38,\qquad r=1.
 r=1 对偶边界，再保留 Type II 和 q-adic capacity 作为非支撑出口。
 
 这是一条状态类型和支撑饱和边界，不是 2,3-光滑残余的全称终端定理。
+
+## 4. 真正二维的参数化边界
+
+上述一条冻结回执不是二维余项的唯一算术形状。设
+
+\[
+P=2^a3^b,\qquad a,b\ge1,\qquad p=4P+1\ \text{为素数},
+\]
+
+取
+
+\[
+r=2,\qquad d=P/2,\qquad M=kp+r,\qquad A=M,
+\]
+
+其中
+
+\[
+1\le k\le\left\lfloor\frac{B_p-r}{p}\right\rfloor.
+\]
+
+则 \(r,d>1\)、\(rd=P\)、\(s=1\)，并且
+
+\[
+n=4kd+1,\qquad
+p n=4Md+1,
+\]
+
+\[
+R_M=4M-n>p,\qquad
+K_M=M(p-d).
+\]
+
+由于 \(M\ge p+2>P\)，所有 fixed-s 除子 \(L\mid rd=P\) 都满足 \(L<A\)，所以这族
+状态的 fixed-s 指数格恒为空，且
+
+\[
+L_+\le P<A.
+\]
+
+这是一族真实的 \(r,d>1\) 算术 overflow 边界；它说明“2,3-光滑残余只有
+\(r=1/d=1\)”是错误的。当前回执只验证素数种子
+\[
+p\in\{73,97,193,433,1297\}
+\]
+及每个种子的 \(k=1\) 和允许范围末端，未证明这些状态从原始 F/G Reach 可达。因此它们
+保持 analysis_evidence，后续必须寻找 alternate carrier、Type II 终端或显式跨状态
+容量映射。
