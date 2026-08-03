@@ -4591,6 +4591,13 @@
             "q_adic_capacity"
           ],
           "high_k_residual_status": "analysis_evidence",
+          "multiple_M_atlas": {
+            "complete_condition": "q*M<=B_p",
+            "empty_condition": "q*M>B_p implies no bounded multiple-M candidate",
+            "minimum_multiplier": "q=spf(d)",
+            "remaining_candidates": "L|M*d with M not dividing L",
+            "scope": "fixed-n candidates L=M*u with u|d and u>1"
+          },
           "proof_boundary": "smooth23_low_k_fixed_n_cofactor",
           "recursive_edge_eligible": true,
           "seed_count": 5,

@@ -3586,6 +3586,13 @@ def smooth23_low_k_fixed_n_cofactor() -> dict[str, object]:
             "q|d, L=q*M=S/(d/q), L>=2A, L<=B_p, 4L>n, "
             "and Pi(L)<Pi(A)"
         ),
+        "multiple_M_atlas": {
+            "scope": "fixed-n candidates L=M*u with u|d and u>1",
+            "minimum_multiplier": "q=spf(d)",
+            "complete_condition": "q*M<=B_p",
+            "empty_condition": "q*M>B_p implies no bounded multiple-M candidate",
+            "remaining_candidates": "L|M*d with M not dividing L",
+        },
         "seeds": seeds,
         "high_k_residual_status": "analysis_evidence",
         "high_k_residual_route": ["fixed_n_factor_divisor", "type_ii", "q_adic_capacity"],
@@ -5475,6 +5482,14 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         or low_k.get("high_k_residual_status") != "analysis_evidence"
         or low_k.get("high_k_residual_route")
         != ["fixed_n_factor_divisor", "type_ii", "q_adic_capacity"]
+        or low_k.get("multiple_M_atlas")
+        != {
+            "scope": "fixed-n candidates L=M*u with u|d and u>1",
+            "minimum_multiplier": "q=spf(d)",
+            "complete_condition": "q*M<=B_p",
+            "empty_condition": "q*M>B_p implies no bounded multiple-M candidate",
+            "remaining_candidates": "L|M*d with M not dividing L",
+        }
     ):
         raise AssertionError("smooth low-k fixed-n cofactor metadata changed")
     low_k_seeds = low_k.get("seeds")

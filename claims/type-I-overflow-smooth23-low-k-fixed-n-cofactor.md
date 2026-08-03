@@ -119,7 +119,34 @@ pR_L+1=4K_L,\qquad L\mid K_L,
 固定-\(n\) 行列式的图表无关标记集给出恒等 E4，故该边满足完整 E1--E5，目标状态
 仍可继续作为 overflow 递归节点。
 
-## 3. 覆盖范围与剩余边界
+## 3. 对保持 \(M\) 倍性的 fixed-\(n\) 子图的完备性
+
+若限制候选保持旧支撑并写成
+
+\[
+L=Mu,\qquad u\mid d,\qquad u>1,
+\]
+
+则 \(u\) 的最小可能值就是 \(q=\operatorname{spf}(d)\)。因此在这个子图中：
+
+\[
+qM\le B_p
+\quad\Longleftrightarrow\quad
+\text{存在有界的 multiple-}M\text{ 候选},
+\]
+
+而
+
+\[
+qM>B_p
+\quad\Longrightarrow\quad
+\text{所有 }L=Mu,\ u\mid d,\ u>1\text{ 都越出容量盒}.
+\]
+
+这不是整个 fixed-\(n\) 因子图谱的完备性结论；仍可能存在
+\(L\mid Md\) 但 \(M\nmid L\) 的支撑重置候选，必须单独枚举并支付外层势。
+
+## 4. 覆盖范围与剩余边界
 
 该引理覆盖每个合法种子从 \(k=1\) 到
 
@@ -139,7 +166,7 @@ k_{\mathrm{cof}}=
 规范 cofactor 候选，不能推出 fixed-\(n\) 因子图谱为空。剩余行应继续检查其它
 \(L\mid Md\)，或转交 Type II、alternate carrier 与 q-进容量分支。
 
-## 4. 逻辑边界与回执
+## 5. 逻辑边界与回执
 
 该结论是“若状态可达，则有严格后继”的参数性引理；它不证明
 \(P=2^a3^b\) 产生的形式状态实际出现在原始 F/G Reach 中，也不关闭高-\(k\) 残余。
@@ -151,4 +178,3 @@ source_reach_status 保持为 unproved，并把高-\(k\) 部分保留为 analysi
 重放命令：
 
 python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
-
