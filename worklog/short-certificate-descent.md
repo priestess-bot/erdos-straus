@@ -4490,3 +4490,10 @@ large-slab 案例，覆盖三个锚点 \(\alpha=1,2,3\)。对
 该回执把 large-slab 的因子层、图表层和来源路径层放入同一可检索容量对象，但保持
 `carrier_mapping_status=unproved`、`formal_edge_status=candidate_generation_only`、
 `recursive_edge_eligible=false`；不能把层容量统计升级为 Type I/II 终端或 E4。
+
+同一回执还重算三锚点的分支边界：\(\alpha=1\) 两例均给出 gap-3 capacity overflow
+（\(d=3c-p\)、\(g=(d,x_3^2)\) 的余量含有 \(\ell\equiv2\pmod3\) 因子），
+\(\alpha=2\) 样本给出 \(\tau\equiv-Kp^{-1}\pmod Q\) 和正的局部补量
+\(4Q-R-4\tau\)，\(\alpha=3\) 样本给出
+\(n_*Q-p\beta'=1\) 及互补行列式恒等式。三者均记录为候选算术分支，缺少全域
+解提升和 E4，不能进入递归边。

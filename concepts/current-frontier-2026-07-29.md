@@ -3309,4 +3309,5 @@ large-slab、105 个跨指数层 gcd 对、15 个同指数分离检查和 5 条�
 \(\beta(4\alpha c-p)=\alpha p q^e+1\) 与层 gcd 恒等式是精确的；来源词记录中
 4/5 条的 slab 素数进入 q-union，但 \((p,q)=(10170169,101)\) 仍是 q 不进入
 共同过载而锚点有 \(R_Q<R\) 的边界。因此这条回执加强了 large-slab 的跨层容量字典，
-仍不提供 carrier mapping、Type I/II 终端或 E4。
+并在三锚点上登记 gap-3 超额、\(\alpha=2\) 局部补量下降和
+\(\alpha=3\) Farey 行列式候选；仍不提供 carrier mapping、Type I/II 终端或 E4。

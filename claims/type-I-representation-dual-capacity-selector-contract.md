@@ -201,7 +201,8 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 另登记 `large_slab_factor_pair_layer_capacity` 回执。它重算四个三锚点 large-slab
 案例、105 个跨指数层 gcd 对、15 个同指数分离检查，以及 5 条来源词的两端 q-进过载
 指数；其中 4/5 条来源记录进入 q-union，\((p,q)=(10170169,101)\) 保留为“q 不进
-共同过载但锚点 \(R_Q<R\)”的边界。因子对正规形和层 gcd 恒等式是精确证据，但不提供
+共同过载但锚点 \(R_Q<R\)”的边界。三锚点分支还重算了 gap-3 超额、\(\alpha=2\)
+局部补量下降和 \(\alpha=3\) 的 Farey 行列式候选。因子对正规形和层 gcd 恒等式是精确证据，但不提供
 跨状态 carrier mapping、标记提升或 E4，所以回执仍是 `analysis_evidence`。
 
 统一结果还包含一个 `universal_p_source_anchor_orbit` source receipt。它重放

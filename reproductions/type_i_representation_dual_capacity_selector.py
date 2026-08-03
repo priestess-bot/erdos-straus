@@ -916,6 +916,7 @@ def large_slab_factor_pair_capacity_receipt(payload: dict[str, object]) -> dict[
         (122_014_489, 467, 1, 1): [4, 244],
         (37_793_809, 6_211, 1, 2): [1],
     }
+    alpha_branch_records: list[dict[str, object]] = []
     for record in slab_records:
         if not isinstance(record, dict):
             raise AssertionError("large-slab record shape changed")
@@ -976,6 +977,98 @@ def large_slab_factor_pair_capacity_receipt(payload: dict[str, object]) -> dict[
                 or 4 * candidate_K != prime * candidate_R + 1
             ):
                 raise AssertionError("large-slab admissible reconstruction changed")
+        R_Q = (-pow(prime, -1, 4 * Q)) % (4 * Q)
+        rho = (K * pow(prime, -1, Q)) % Q
+        if not 1 <= rho < Q or R_Q == modulus:
+            raise AssertionError("large-slab canonical Q-chart changed")
+        branch: dict[str, object] = {
+            "prime": prime,
+            "R": modulus,
+            "Q": Q,
+            "alpha": alpha,
+            "beta": beta,
+            "R_Q": R_Q,
+            "rho": rho,
+        }
+        if alpha == 1:
+            x_three = (prime + 3) // 4
+            H_three = 4 * c - prime
+            d_three = 3 * c - prime
+            W_three = 4 * Q - modulus
+            if (
+                beta * H_three != prime * Q + 1
+                or beta * d_three != (prime * W_three + 3) // 4
+                or (prime * W_three + 3) % 4
+                or H_three % 4 != 3
+                or d_three % 3 != 2
+            ):
+                raise AssertionError("alpha=1 gap-3 identities changed")
+            g_three = gcd(d_three, x_three * x_three)
+            if g_three % 3 == 2:
+                gap_divisor = min(g_three, x_three * x_three // g_three)
+                if (
+                    gap_divisor > x_three
+                    or (gap_divisor + x_three) % 3
+                    or gap_divisor <= 0
+                ):
+                    raise AssertionError("alpha=1 gap-3 Type II branch changed")
+                branch["gap3_branch"] = "type_ii_terminal_candidate"
+                branch["gap3_divisor"] = gap_divisor
+            else:
+                excess = d_three // g_three
+                excess_factors = factorization(excess)
+                if excess <= 1 or not any(prime_factor % 3 == 2 for prime_factor, _ in excess_factors):
+                    raise AssertionError("alpha=1 gap-3 capacity branch changed")
+                branch["gap3_branch"] = "gap3_capacity_overflow"
+                branch["gap3_excess"] = excess
+                branch["gap3_excess_factors"] = excess_factors
+        elif alpha == 2:
+            complement = 2 * Q - beta
+            if modulus % 8 != 7 or complement % 8 != 5:
+                raise AssertionError("alpha=2 congruence boundary changed")
+            tau = (-rho) % Q
+            if not 1 <= tau < Q or (K + prime * tau) % Q:
+                raise AssertionError("alpha=2 canonical shift changed")
+            h = (complement - 1) // 4
+            expected_R_Q = (
+                modulus + 4 * tau
+                if tau <= h
+                else modulus + 4 * tau - 4 * Q
+            )
+            if R_Q != expected_R_Q:
+                raise AssertionError("alpha=2 Q-chart formula changed")
+            branch["local_complement_drop"] = complement - 4 * tau
+            branch["tau"] = tau
+            branch["branch"] = "local_complement_drop"
+        else:
+            if beta >= Q or modulus % 3 != 2:
+                raise AssertionError("alpha=3 congruence boundary changed")
+            delta = Q - rho
+            branch["branch"] = "farey_pair_candidate" if R_Q > modulus else "q_absorb"
+            if R_Q > modulus:
+                beta_prime = beta + 4 * delta
+                if not 0 < 4 * delta < Q - beta:
+                    raise AssertionError("alpha=3 Farey size boundary changed")
+                n_star_numerator = prime * beta_prime + 1
+                if n_star_numerator % Q:
+                    raise AssertionError("alpha=3 Farey divisibility changed")
+                n_star = n_star_numerator // Q
+                if not 0 < n_star < prime:
+                    raise AssertionError("alpha=3 Farey rank boundary changed")
+                if (
+                    n_star * Q - prime * beta_prime != 1
+                    or prime * (Q - beta_prime) - Q * (prime - n_star) != 1
+                ):
+                    raise AssertionError("alpha=3 Farey determinant changed")
+                branch.update(
+                    {
+                        "delta": delta,
+                        "beta_prime": beta_prime,
+                        "n_star": n_star,
+                        "determinant_pair": [1, 1],
+                    }
+                )
+        alpha_branch_records.append(branch)
 
     if (
         layer.get("prime") != 337
@@ -1110,6 +1203,12 @@ def large_slab_factor_pair_capacity_receipt(payload: dict[str, object]) -> dict[
         or int(q_union_false[0]["q"]) != 101
     ):
         raise AssertionError("source-word q-union negative boundary changed")
+    alpha_branch_counts = {
+        str(alpha): sum(int(row["alpha"]) == alpha for row in alpha_branch_records)
+        for alpha in (1, 2, 3)
+    }
+    if alpha_branch_counts != {"1": 2, "2": 1, "3": 1}:
+        raise AssertionError("large-slab alpha branch count changed")
 
     descriptor = {
         "family": "large_slab_factor_pair_layer_capacity",
@@ -1138,6 +1237,8 @@ def large_slab_factor_pair_capacity_receipt(payload: dict[str, object]) -> dict[
             "repeated_carrier_count": int(summary["repeated_carrier_count"]),
             "source_word_carrier_case_count": int(summary["source_word_carrier_case_count"]),
             "source_word_slab_q_union_hit_count": q_union_count,
+            "alpha_branch_counts": alpha_branch_counts,
+            "alpha_branch_records": alpha_branch_records,
             "source_word_q_union_negative_boundary": {
                 "prime": int(q_union_false[0]["prime"]),
                 "q": int(q_union_false[0]["q"]),
@@ -3053,10 +3154,23 @@ def verify_large_slab_factor_pair_capacity_contract(result: dict[str, object]) -
         "repeated_carrier_count": 4,
         "source_word_carrier_case_count": 5,
         "source_word_slab_q_union_hit_count": 4,
-        "source_word_q_union_negative_boundary": {"prime": 10_170_169, "q": 101},
+        "alpha_branch_counts": {"1": 2, "2": 1, "3": 1},
     }
-    if summary != expected:
+    if any(summary.get(key) != value for key, value in expected.items()):
         raise AssertionError("large-slab capacity summary changed")
+    branch_records = summary.get("alpha_branch_records")
+    if (
+        not isinstance(branch_records, list)
+        or len(branch_records) != 4
+        or {int(row["alpha"]) for row in branch_records if isinstance(row, dict)}
+        != {1, 2, 3}
+    ):
+        raise AssertionError("large-slab alpha branch records changed")
+    if summary.get("source_word_q_union_negative_boundary") != {
+        "prime": 10_170_169,
+        "q": 101,
+    }:
+        raise AssertionError("large-slab q-union negative boundary changed")
     source_receipt = receipt.get("source_receipt")
     if not isinstance(source_receipt, dict):
         raise AssertionError("large-slab capacity source receipt missing")
