@@ -4174,6 +4174,11 @@
       "fixture_count": 1
     },
     "fixture_count": 12,
+    "high_product_prime_power_boundary": {
+      "classification": "If P/ell>B_p for ell=spf(P), then ell in {2,3}; if v_ell(P)>=2, P/ell^2<=B_p and ell^2<p; otherwise v_ell(P)=1 and the residual is squarefree at ell, or the bounded cofactor is below 2A.",
+      "conclusion": "Prime-power cofactor failure above B_p is reduced to a single 2-or-3 factor boundary or to support saturation A>P/ell^e.",
+      "condition": "P=r*d>B_p and P<=4B_p"
+    },
     "overflow_target_count": 10,
     "r_one_fixed_s_boundary": {
       "candidate_rule": "A<d => L=d; A>=d => no divisor L|r*d with L>A",

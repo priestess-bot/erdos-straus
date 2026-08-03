@@ -124,6 +124,26 @@ K_L=L(p-\ell^e)>0,
 一次 cofactor 条件是 \(e=1\) 的特例；幂次版本只扩展候选，不把不满足
 \(\ell^e<p\) 或 \(L<2A\) 的行误标为递归边。
 
+高乘积残余还可以进一步分类。令 \(P=rd\)。由于
+
+\[
+P\le(p-1)^2=4B_p,
+\]
+
+若 \(P>B_p\) 且一次 cofactor \(P/\ell>B_p\)，则
+\(\ell<P/B_p\le4\)，故 \(\ell\in\{2,3\}\)。若此时
+\(v_\ell(P)\ge2\)，则
+
+\[
+\frac{P}{\ell^2}\le\frac{4B_p}{4}=B_p,
+\qquad \ell^2<p
+\]
+
+（核心素数 \(p\ge73\)），二次 cofactor 已进入容量盒。因而 prime-power cofactor
+仍失败时，只剩下 \(\ell\in\{2,3\}\) 且 \(v_\ell(P)=1\) 的平方自由小因子边界，
+或第一次落入容量盒的 cofactor 小于 \(2A\) 的支撑饱和边界。这个三分把高乘积余项
+交给后续的 q-进容量或 alternate carrier 分支。
+
 ## 2. 支持势与完整边
 
 令 B_p=(p-1)^2/4，Pi(A)=floor(B_p/A)。

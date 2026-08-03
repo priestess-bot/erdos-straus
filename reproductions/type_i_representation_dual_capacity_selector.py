@@ -3630,6 +3630,19 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                 "K_L=L*(p-ell^e), giving a strict fixed-s identity-lift edge"
             ),
         },
+        "high_product_prime_power_boundary": {
+            "condition": "P=r*d>B_p and P<=4B_p",
+            "classification": (
+                "If P/ell>B_p for ell=spf(P), then ell in {2,3}; "
+                "if v_ell(P)>=2, P/ell^2<=B_p and ell^2<p; "
+                "otherwise v_ell(P)=1 and the residual is squarefree at ell, "
+                "or the bounded cofactor is below 2A."
+            ),
+            "conclusion": (
+                "Prime-power cofactor failure above B_p is reduced to a single "
+                "2-or-3 factor boundary or to support saturation A>P/ell^e."
+            ),
+        },
         "rank_definition": {
             "kind": "absorbed_support_potential",
             "formula": "floor(((p-1)^2)/4 / A)",
@@ -4739,6 +4752,25 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         != expected_power_cofactor_subfamily
     ):
         raise AssertionError("bounded fixed-s prime-power cofactor coverage changed")
+    high_product_boundary = branch.get("high_product_prime_power_boundary")
+    if not isinstance(high_product_boundary, dict):
+        raise AssertionError("high-product prime-power boundary missing")
+    if (
+        high_product_boundary.get("condition") != "P=r*d>B_p and P<=4B_p"
+        or high_product_boundary.get("classification")
+        != (
+            "If P/ell>B_p for ell=spf(P), then ell in {2,3}; "
+            "if v_ell(P)>=2, P/ell^2<=B_p and ell^2<p; "
+            "otherwise v_ell(P)=1 and the residual is squarefree at ell, "
+            "or the bounded cofactor is below 2A."
+        )
+        or high_product_boundary.get("conclusion")
+        != (
+            "Prime-power cofactor failure above B_p is reduced to a single "
+            "2-or-3 factor boundary or to support saturation A>P/ell^e."
+        )
+    ):
+        raise AssertionError("high-product prime-power boundary changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
