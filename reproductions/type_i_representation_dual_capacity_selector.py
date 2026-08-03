@@ -72,6 +72,7 @@ SELECTOR_ORDER = [
     "overflow_same_chart_support_promotion",
     "overflow_a_one_generic_determinant_boundary",
     "overflow_fixed_s_outer_rank_reset",
+    "overflow_fixed_s_bounded_divisor_outer_rank",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
@@ -3040,7 +3041,17 @@ def overflow_fixed_s_outer_rank(payload: dict[str, object]) -> dict[str, object]
         source_carrier = int(fixture["M"])
         source_R = int(fixture["R_M"])
         source_K = int(fixture["K_M"])
+        n = int(fixture["n"])
         d = int(fixture["d"])
+        if not (
+            support > 0
+            and source_carrier > 0
+            and source_carrier % support == 0
+            and source_K % source_carrier == 0
+            and prime * n == 4 * source_carrier * d + 1
+            and source_R == 4 * source_carrier - n
+        ):
+            raise AssertionError(f"bounded fixed-s source invariant changed: {name}")
         residue = source_carrier % prime
         numerator = 4 * residue * d + 1
         integral_s = numerator % prime == 0
@@ -3230,6 +3241,219 @@ def overflow_fixed_s_outer_rank(payload: dict[str, object]) -> dict[str, object]
         ),
     }
 
+
+def overflow_fixed_s_bounded_divisor_outer_rank(
+    payload: dict[str, object],
+) -> dict[str, object]:
+    """Use any bounded fixed-s divisor as a support-rank edge.
+
+    Writing ``M = k*p + r`` gives ``p*s = 4*r*d + 1``.  Every divisor
+    ``L`` of ``r*d`` therefore yields the dual determinant chart
+    ``R_L = 4*L - s`` and ``K_L = L*(p - r*d/L)``.  The old support need
+    not divide ``L``: a strict outer-potential decrease explicitly pays the
+    support reset, exactly as in the bounded fixed-n atlas.
+    """
+    verified: list[dict[str, object]] = []
+    rejected: list[dict[str, object]] = []
+    rows = overflow_fixture_rows(payload)
+    for fixture in rows:
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        source_carrier = int(fixture["M"])
+        source_R = int(fixture["R_M"])
+        source_K = int(fixture["K_M"])
+        d = int(fixture["d"])
+        n = int(fixture["n"])
+        if not (
+            support > 0
+            and source_carrier > 0
+            and source_carrier % support == 0
+            and source_K % source_carrier == 0
+            and prime * n == 4 * source_carrier * d + 1
+            and source_R == 4 * source_carrier - n
+        ):
+            raise AssertionError(f"bounded fixed-s source invariant changed: {name}")
+        residue = source_carrier % prime
+        numerator = 4 * residue * d + 1
+        integral_s = residue > 0 and numerator % prime == 0
+        fixed_s = numerator // prime if integral_s else None
+        if integral_s and isinstance(fixed_s, int) and prime * fixed_s != numerator:
+            raise AssertionError(f"bounded fixed-s integrality changed: {name}")
+        product = residue * d
+        B_prime = (prime - 1) ** 2 // 4
+        source_in_domain = 0 < support <= B_prime
+        candidates: list[tuple[int, int, int]] = []
+        if source_in_domain and integral_s and isinstance(fixed_s, int):
+            for L in divisors(product):
+                if L <= support or L > B_prime or 4 * L <= fixed_s:
+                    continue
+                if B_prime // L >= B_prime // support:
+                    continue
+                target_R = 4 * L - fixed_s
+                target_K = L * (prime - product // L)
+                if target_K <= 0:
+                    continue
+                if canonical_chart(prime, L) != (target_R, target_K):
+                    raise AssertionError(f"bounded fixed-s chart changed: {name}, L={L}")
+                candidates.append((L, target_R, target_K))
+
+        if candidates:
+            L, target_R, target_K = max(candidates, key=lambda row: row[0])
+            successor_potential = B_prime // L
+            support_retained = L % support == 0
+            target_class = "marked_absorb" if target_R < prime else "overflow"
+            source_state = {
+                "equation_target": [4, prime],
+                "R": source_R,
+                "K": source_K,
+                "absorbed_support": support,
+                "state_class": "overflow",
+            }
+            target_state = {
+                "equation_target": [4, prime],
+                "R": target_R,
+                "K": target_K,
+                "absorbed_support": L,
+                "state_class": target_class,
+            }
+            receipt = {
+                "edge_id": "edge:" + canonical_hash(
+                    {"source": source_state, "successor": target_state}
+                ),
+                "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+                "phase": "OVERFLOW_DUAL_DETERMINANT",
+                "state_class": target_class,
+                "source_state": source_state,
+                "successor_state": target_state,
+                "equation_target": {"numerator": 4, "denominator": prime},
+                "marked_solution_set": {
+                    "source": "Sol(p)",
+                    "successor": "Sol(p)",
+                    "lift": "identity",
+                },
+                "target_fiber": {
+                    "status": "inherited_full_solution_set",
+                    "reason": "fixed-s dual determinant identity with chart-independent marking",
+                },
+                "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+                "certificate_context": {
+                    "source": OVERFLOW_INPUT.name,
+                    "provenance": "overflow_determinant_fixed_s_bounded_divisor",
+                    "fixture_name": name,
+                    "decomposition": {
+                        "M": source_carrier,
+                        "r": residue,
+                        "d": d,
+                        "s": fixed_s,
+                        "identity": "p*s=4*r*d+1",
+                    },
+                    "selected_candidate": {
+                        "L": L,
+                        "R_L": target_R,
+                        "K_L": target_K,
+                        "candidate_count": len(candidates),
+                        "selection_rule": "maximum admissible L",
+                    },
+                    "admissibility": {
+                        "support_gain": "A<L",
+                        "support_containment": "A|L when retained; otherwise paid outer-rank reset",
+                        "bounded_support": "L<=B_p",
+                        "positive_chart": "4L>s",
+                        "strict_potential": "floor(B_p/L)<floor(B_p/A)",
+                    },
+                },
+                "normal_form": "overflow_fixed_s_bounded_divisor_outer_rank_v1",
+                "induction_rank": {
+                    "kind": "absorbed_support_potential",
+                    "source": B_prime // support,
+                    "successor": successor_potential,
+                },
+                "potential_record": {
+                    "B_p": B_prime,
+                    "source_support": support,
+                    "successor_support": L,
+                    "source_value": B_prime // support,
+                    "successor_value": successor_potential,
+                    "strict_decrease": True,
+                    "support_monotone": support_retained,
+                    "support_reset_paid": not support_retained,
+                    "outer_rank_reset": not support_retained,
+                },
+                "e1_e5": {f"E{i}": True for i in range(1, 6)},
+                "selector_status": "verified_edge",
+                "recursive_edge_eligible": True,
+                "lift_status": "proved_identity",
+                "proof_boundary": (
+                    "fixed_s_bounded_divisor_absorption"
+                    if target_class == "marked_absorb"
+                    else "fixed_s_bounded_divisor_overflow_rank_descent"
+                ),
+                "scope_note": (
+                    "Any divisor L of r*d satisfying the bounded support, positive-chart, "
+                    "and strict-potential conditions yields this identity-lift edge; the "
+                    "selector chooses the largest admissible L deterministically. If A "
+                    "does not divide L, the strict absorbed-support potential explicitly "
+                    "pays the support reset.",
+                ),
+            }
+            check_status_boundary(receipt)
+            verified.append(receipt)
+            continue
+
+        missing: list[str] = []
+        if not source_in_domain:
+            missing.append("source_potential_domain")
+        if not 1 <= residue < prime:
+            missing.append("positive_dual_carrier")
+        if not integral_s:
+            missing.append("fixed_s_integrality")
+        missing.append("admissible_L")
+        rejected.append(
+            {
+                "fixture_name": name,
+                "equation_target": [4, prime],
+                "source_carrier": source_carrier,
+                "dual_carrier": residue,
+                "source_support": support,
+                "fixed_s": fixed_s,
+                "candidate_count": 0,
+                "missing_conditions": missing,
+                "selector_status": "analysis_evidence",
+                "recursive_edge_eligible": False,
+                "proof_boundary": "fixed_s_bounded_divisor_rank_filter",
+            }
+        )
+    return {
+        "fixture_count": len(rows),
+        "verified_edge_count": len(verified),
+        "absorption_target_count": sum(
+            receipt["state_class"] == "marked_absorb" for receipt in verified
+        ),
+        "overflow_target_count": sum(
+            receipt["state_class"] == "overflow" for receipt in verified
+        ),
+        "rejected_fixture_count": len(rejected),
+        "verified_receipts": verified,
+        "rejected_fixtures": rejected,
+        "rank_definition": {
+            "kind": "absorbed_support_potential",
+            "formula": "floor(((p-1)^2)/4 / A)",
+            "candidate": "any L|r*d with A<L<=B_p and 4L>s",
+            "target_formula": "R_L=4L-s; K_L=L*(p-r*d/L)",
+            "selection_rule": "maximum admissible L",
+            "acceptance": (
+                "L|r*d, A<L<=B_p, 4L>s, canonical_chart(p,L)=(R_L,K_L), "
+                "and strict potential decrease; A|L is optional only when the same "
+                "potential explicitly pays an outer-rank reset"
+            ),
+        },
+        "scope_note": (
+            "This is the complete bounded fixed-s divisor atlas above the absorbed-support "
+            "potential domain. It complements the lcm(A,r) fixed-s branch; an empty "
+            "admissible set remains analysis evidence and is not promoted.",
+        ),
+    }
 
 def overflow_outer_rank_reset(payload: dict[str, object]) -> dict[str, object]:
     """Pay a RESET with the non-resettable absorbed-support potential.
@@ -3647,6 +3871,7 @@ def build_results() -> dict[str, object]:
     a_one_boundary = overflow_a_one_generic_determinant_boundary(overflow)
     a_one_dual_reset = overflow_a_one_dual_reset_family(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
+    fixed_s_bounded_divisor = overflow_fixed_s_bounded_divisor_outer_rank(overflow)
     fixed_n_fixture_names = {
         receipt["certificate_context"]["fixture_name"]
         for receipt in fixed_n_outer_rank["verified_receipts"]
@@ -3681,6 +3906,7 @@ def build_results() -> dict[str, object]:
         "overflow_a_one_generic_determinant_boundary": a_one_boundary,
         "overflow_a_one_dual_reset_family": a_one_dual_reset,
         "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
+        "overflow_fixed_s_bounded_divisor_outer_rank": fixed_s_bounded_divisor,
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
@@ -3711,6 +3937,7 @@ def build_results() -> dict[str, object]:
             "a_one_determinant_boundary_requires_M_lt_p": True,
             "a_one_dual_reset_family_replayed": True,
             "fixed_s_overflow_rank_requires_product_divisor": True,
+            "fixed_s_bounded_divisor_requires_product_divisor": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
            "support_debt_phase_bridge_requires_alternate_mapping": True,
@@ -4169,6 +4396,78 @@ def verify_overflow_fixed_n_bounded_divisor_contract(
             raise AssertionError("high-carrier bounded successor did not lower R")
         if successor.get("absorbed_support") != L:
             raise AssertionError("bounded fixed-n divisor support changed")
+
+
+def verify_overflow_fixed_s_bounded_divisor_contract(
+    result: dict[str, object],
+) -> None:
+    branch = result.get("overflow_fixed_s_bounded_divisor_outer_rank")
+    if not isinstance(branch, dict):
+        raise AssertionError("bounded fixed-s divisor receipt missing")
+    if (
+        branch.get("fixture_count") != 12
+        or branch.get("verified_edge_count") != 11
+        or branch.get("absorption_target_count") != 1
+        or branch.get("overflow_target_count") != 10
+        or branch.get("rejected_fixture_count") != 1
+    ):
+        raise AssertionError("bounded fixed-s divisor counts changed")
+    receipts = branch.get("verified_receipts")
+    rejected = branch.get("rejected_fixtures")
+    if not isinstance(receipts, list) or len(receipts) != 11:
+        raise AssertionError("bounded fixed-s divisor receipt shape changed")
+    if not isinstance(rejected, list) or len(rejected) != 1:
+        raise AssertionError("bounded fixed-s divisor rejection shape changed")
+    if rejected[0].get("fixture_name") != "reachable_conflict_bundle_3":
+        raise AssertionError("bounded fixed-s divisor boundary changed")
+    for receipt in receipts:
+        if not isinstance(receipt, dict):
+            raise AssertionError("bounded fixed-s divisor row is not an object")
+        if (
+            receipt.get("certificate_type")
+            != "overflow_fixed_s_bounded_divisor_outer_rank"
+            or receipt.get("selector_status") != "verified_edge"
+            or receipt.get("recursive_edge_eligible") is not True
+            or receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}
+        ):
+            raise AssertionError("bounded fixed-s divisor crossed the status boundary")
+        source = receipt.get("source_state")
+        successor = receipt.get("successor_state")
+        context = receipt.get("certificate_context")
+        potential = receipt.get("potential_record")
+        if not all(isinstance(item, dict) for item in (source, successor, context, potential)):
+            raise AssertionError("bounded fixed-s divisor payload is incomplete")
+        decomposition = context.get("decomposition")
+        selected = context.get("selected_candidate")
+        if not isinstance(decomposition, dict) or not isinstance(selected, dict):
+            raise AssertionError("bounded fixed-s divisor arithmetic payload changed")
+        prime = int(receipt["equation_target"]["denominator"])
+        A = int(source["absorbed_support"])
+        M = int(decomposition["M"])
+        r = int(decomposition["r"])
+        d = int(decomposition["d"])
+        s = int(decomposition["s"])
+        L = int(selected["L"])
+        target_R = int(successor["R"])
+        target_K = int(successor["K"])
+        B_prime = (prime - 1) ** 2 // 4
+        if (
+            not 1 <= r < prime
+            or prime * s != 4 * r * d + 1
+            or r * d % L
+            or not A < L <= B_prime
+            or 4 * L <= s
+            or target_R != 4 * L - s
+            or target_K != L * (prime - (r * d) // L)
+            or canonical_chart(prime, L) != (target_R, target_K)
+            or B_prime // L >= B_prime // A
+            or potential.get("strict_decrease") is not True
+            or potential.get("support_monotone") is not (L % A == 0)
+            or potential.get("support_reset_paid") is not (L % A != 0)
+            or potential.get("outer_rank_reset") is not (L % A != 0)
+            or successor.get("absorbed_support") != L
+        ):
+            raise AssertionError("bounded fixed-s divisor identity changed")
 
 
 def verify_overflow_same_chart_support_promotion_contract(
@@ -4677,6 +4976,7 @@ def main() -> None:
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)
         verify_overflow_fixed_n_bounded_divisor_contract(result)
+        verify_overflow_fixed_s_bounded_divisor_contract(result)
         verify_overflow_same_chart_support_promotion_contract(result)
         verify_overflow_a_one_generic_boundary_contract(result)
         verify_overflow_a_one_dual_reset_family_contract(result)
