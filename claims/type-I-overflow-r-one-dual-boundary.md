@@ -9,6 +9,7 @@ review_status: internal_review
 depends_on:
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-d-one-p-minus-two-g-rechart
+  - type-I-overflow-fixed-s-bounded-divisor-saturation
 topics:
   - type-I
   - overflow
@@ -146,6 +147,34 @@ R_M=4M-n=k(3p+1)+3>p,
 因此 \(r=1\) 只删除一类“期待对偶小图表必然提供新边”的错误搜索目标。它不关闭
 递归可达的 \(A>1,\ R_M>p\) bundle overflow；剩余任务仍是 support-preserving
 alternate、直接 Type I/II 终端，或有独立良基势支付的 support reset。
+
+## 4. fixed-s 有界除子的精确二分
+
+对 fixed-s 图谱，\(r=1\) 时 \(rd=d\)，且由 (4)
+
+\[
+B_p=\frac{(p-1)^2}{4}=4d^2,\qquad s=1.
+\]
+
+若 \(A<d\)，取 \(L=d\)。则 \(L\mid rd\)、\(4L>s\)，并且
+
+\[
+\left\lfloor\frac{B_p}{L}\right\rfloor=4d
+<
+\left\lfloor\frac{B_p}{A}\right\rfloor,
+\]
+
+所以 \(L=d\) 给出完整 fixed-s 恒等提升边。若 \(A\ge d\)，则 \(rd=d\) 的每个
+除子都满足 \(L\le d\le A\)，不可能有固定-s 有界除子满足 \(L>A\)。因此
+
+\[
+\boxed{A<d\Longleftrightarrow\text{ fixed-s 有界除子边 }L=d
+\text{ 可用；}\quad
+A\ge d\Longrightarrow\text{该图谱为空}.}
+\]
+
+这一区分把 \(r=1\) 的 rejected 行从一般的 admissible_L 缺失提升为可证明的结构性
+边界；\(A\ge d\) 时必须转向非支撑终端、marked lift 或跨状态容量。
 
 ## 复核边界
 

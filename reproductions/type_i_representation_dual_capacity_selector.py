@@ -3258,6 +3258,8 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     unconditional_names: list[str] = []
     product_saturation_names: list[str] = []
     d_saturation_names: list[str] = []
+    r_one_edge_names: list[str] = []
+    r_one_empty_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3314,6 +3316,22 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             ):
                 raise AssertionError(f"d saturation subfamily changed: {name}")
             d_saturation_names.append(name)
+        if integral_s and isinstance(fixed_s, int) and residue == 1:
+            expected_d = (prime - 1) // 4
+            if fixed_s != 1 or d != expected_d or B_prime != 4 * d * d:
+                raise AssertionError(f"r=1 fixed-s normal form changed: {name}")
+            if support < d:
+                if not (
+                    4 * d > fixed_s
+                    and B_prime // d < B_prime // support
+                    and canonical_chart(prime, d) == (4 * d - fixed_s, d * (prime - 1))
+                ):
+                    raise AssertionError(f"r=1 fixed-s edge changed: {name}")
+                r_one_edge_names.append(name)
+            else:
+                if any(L > support for L in divisors(product)):
+                    raise AssertionError(f"r=1 fixed-s empty boundary changed: {name}")
+                r_one_empty_names.append(name)
         candidates: list[tuple[int, int, int]] = []
         if source_in_domain and integral_s and isinstance(fixed_s, int):
             for L in divisors(product):
@@ -3495,6 +3513,18 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             "conclusion": (
                 "d|r*d, s<4d, and 2A<=d<=B_p give strict Pi(d)<Pi(A); "
                 "the target has K_L=d*(p-r)"
+            ),
+        },
+        "r_one_fixed_s_boundary": {
+            "condition": "r=1, d=(p-1)/4, s=1, B_p=4*d^2",
+            "candidate_rule": "A<d => L=d; A>=d => no divisor L|r*d with L>A",
+            "fixture_count": len(r_one_edge_names) + len(r_one_empty_names),
+            "edge_fixture_names": r_one_edge_names,
+            "empty_fixture_names": r_one_empty_names,
+            "conclusion": (
+                "The fixed-s bounded-divisor atlas is complete for r=1: "
+                "L=d is a strict identity-lift edge exactly when A<d; otherwise "
+                "every divisor of r*d is at most the charged support."
             ),
         },
         "rank_definition": {
@@ -4536,6 +4566,20 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         or set(d_subfamily.get("fixture_names", [])) != expected_d_subfamily
     ):
         raise AssertionError("bounded fixed-s d subfamily coverage changed")
+    r_one_boundary = branch.get("r_one_fixed_s_boundary")
+    if not isinstance(r_one_boundary, dict):
+        raise AssertionError("bounded fixed-s r=1 boundary missing")
+    if (
+        r_one_boundary.get("condition")
+        != "r=1, d=(p-1)/4, s=1, B_p=4*d^2"
+        or r_one_boundary.get("candidate_rule")
+        != "A<d => L=d; A>=d => no divisor L|r*d with L>A"
+        or r_one_boundary.get("fixture_count") != 1
+        or set(r_one_boundary.get("edge_fixture_names", [])) != set()
+        or set(r_one_boundary.get("empty_fixture_names", []))
+        != {"reachable_conflict_bundle_3"}
+    ):
+        raise AssertionError("bounded fixed-s r=1 boundary changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
