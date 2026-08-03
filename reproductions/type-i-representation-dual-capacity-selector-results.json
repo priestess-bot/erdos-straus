@@ -935,6 +935,7 @@
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
+    "same_chart_promotion_requires_M_le_B_p": true,
     "support_debt_phase_bridge_requires_alternate_mapping": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
@@ -8922,6 +8923,1016 @@
       }
     ]
   },
+  "overflow_same_chart_support_promotion": {
+    "fixture_count": 12,
+    "high_carrier_residual": {
+      "condition": "M>B_p",
+      "necessary_complement_bound": "n>=p+4",
+      "proof": "S=M*d=(p*n-1)/4>B_p; n<=p-2 would force S<=B_p-1, while n=p gives S=B_p; together with n=1 mod 4 this leaves n>=p+4."
+    },
+    "promotion_rule": {
+      "potential": "floor(B_p/M)<floor(B_p/A)",
+      "source_condition": "M|K_M, A|M, M/A>=2, M<=B_p",
+      "target": "same (p,R_M,K_M) chart with absorbed_support=M"
+    },
+    "rejected_fixture_count": 1,
+    "rejected_fixtures": [
+      {
+        "B_p": 1296,
+        "equation_target": [
+          4,
+          73
+        ],
+        "fixture_name": "lcm_cycle_step_0",
+        "high_carrier_complement_boundary": {
+          "n_mod_4": 1,
+          "necessary_condition": "n>=p+4",
+          "prime_mod_4": 1,
+          "verified": true
+        },
+        "missing_conditions": [
+          "carrier_above_B_p"
+        ],
+        "proof_boundary": "same_chart_support_promotion_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_carrier": 1518,
+        "source_support": 66
+      }
+    ],
+    "scope_note": "This closes every source-receipt overflow with A|M, M/A>=2 and carrier M in the outer-rank domain.  Rows with M>B_p remain outside this same-chart promotion and require another exit; they necessarily have n>=p+4.",
+    "verified_edge_count": 11,
+    "verified_receipts": [
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 6552,
+            "M": 91,
+            "R_M": 359,
+            "d": 1,
+            "four_M_d_plus_1": 365,
+            "pn": 365
+          },
+          "fixture_name": "accumulated_d_one_boundary",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 7,
+            "successor": 91
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:77c2f120ea6a3833884b9b3b1f7dccd58895e27ea077d4855a129e5d4b1f67fa",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 185,
+          "successor": 14
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 7,
+          "source_value": 185,
+          "strict_decrease": true,
+          "successor_support": 91,
+          "successor_value": 14,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 6552,
+          "R": 359,
+          "absorbed_support": 7,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 6552,
+          "R": 359,
+          "absorbed_support": 91,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 52250,
+            "M": 250,
+            "R_M": 511,
+            "d": 200,
+            "four_M_d_plus_1": 200001,
+            "pn": 200001
+          },
+          "fixture_name": "accumulated_positive_fixed_n_edge",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 5,
+            "successor": 250
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:95d219198fbdb85c4d211247dddc0ce03209d8a139745dfba4a07076ceb99581",
+        "equation_target": {
+          "denominator": 409,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 8323,
+          "successor": 166
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 41616,
+          "source_support": 5,
+          "source_value": 8323,
+          "strict_decrease": true,
+          "successor_support": 250,
+          "successor_value": 166,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 511,
+          "absorbed_support": 5,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 52250,
+          "R": 511,
+          "absorbed_support": 250,
+          "equation_target": [
+            4,
+            409
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 43320,
+            "M": 190,
+            "R_M": 719,
+            "d": 13,
+            "four_M_d_plus_1": 9881,
+            "pn": 9881
+          },
+          "fixture_name": "empty_fixed_n_window",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 38,
+            "successor": 190
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:2b89802d57198a0b963bebd92ccc8623f5cb5dcd1a18c950857a0a6ad7bde0c4",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 378,
+          "successor": 75
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 38,
+          "source_value": 378,
+          "strict_decrease": true,
+          "successor_support": 190,
+          "successor_value": 75,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 43320,
+          "R": 719,
+          "absorbed_support": 38,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 43320,
+          "R": 719,
+          "absorbed_support": 190,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 2318,
+            "M": 38,
+            "R_M": 127,
+            "d": 12,
+            "four_M_d_plus_1": 1825,
+            "pn": 1825
+          },
+          "fixture_name": "reachable_conflict_bundle_0",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 19,
+            "successor": 38
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:c812417ad1f11002aff3f620eff6895faa88f0352f741841aaa818818c86740b",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 34
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 38,
+          "successor_value": 34,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 2318,
+          "R": 127,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 2318,
+          "R": 127,
+          "absorbed_support": 38,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 32832,
+            "M": 608,
+            "R_M": 1799,
+            "d": 19,
+            "four_M_d_plus_1": 46209,
+            "pn": 46209
+          },
+          "fixture_name": "reachable_conflict_bundle_1",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 19,
+            "successor": 608
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:02bd7c0e2812229a17bbcc23f290425ae97106c9d379740929092fd44b290494",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 2
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 608,
+          "successor_value": 2,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 32832,
+          "R": 1799,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 32832,
+          "R": 1799,
+          "absorbed_support": 608,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 21736,
+            "M": 836,
+            "R_M": 1191,
+            "d": 47,
+            "four_M_d_plus_1": 157169,
+            "pn": 157169
+          },
+          "fixture_name": "reachable_conflict_bundle_2",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 19,
+            "successor": 836
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:b66942d3ab49a48f0b18809567fb094733a568e3fd0e4a7ac3bd6b417986e388",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 836,
+          "successor_value": 1,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 21736,
+          "R": 1191,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 21736,
+          "R": 1191,
+          "absorbed_support": 836,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 52250,
+            "M": 950,
+            "R_M": 2863,
+            "d": 18,
+            "four_M_d_plus_1": 68401,
+            "pn": 68401
+          },
+          "fixture_name": "reachable_conflict_bundle_3",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 19,
+            "successor": 950
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:9b9f068e49b2b84ab1d5ac5dd804ed04ba647b56cf1e625de22b0e5a528ab7a8",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 68,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 19,
+          "source_value": 68,
+          "strict_decrease": true,
+          "successor_support": 950,
+          "successor_value": 1,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 52250,
+          "R": 2863,
+          "absorbed_support": 19,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 52250,
+          "R": 2863,
+          "absorbed_support": 950,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 1734,
+            "M": 34,
+            "R_M": 95,
+            "d": 22,
+            "four_M_d_plus_1": 2993,
+            "pn": 2993
+          },
+          "fixture_name": "root_edge_0",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 1,
+            "successor": 34
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:829e136078b5f225ac62f9d0fc19a90b33053ac5ff6edc77cc3696ae259b988f",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1296,
+          "successor": 38
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 1,
+          "source_value": 1296,
+          "strict_decrease": true,
+          "successor_support": 34,
+          "successor_value": 38,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 1734,
+          "R": 95,
+          "absorbed_support": 34,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 15123,
+            "M": 71,
+            "R_M": 251,
+            "d": 28,
+            "four_M_d_plus_1": 7953,
+            "pn": 7953
+          },
+          "fixture_name": "root_edge_1",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 1,
+            "successor": 71
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:6bbce81ee03df684e11621bf5fb8698cf1c1b98784dd6ebca0e92fc94cceca7a",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 14400,
+          "successor": 202
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 1,
+          "source_value": 14400,
+          "strict_decrease": true,
+          "successor_support": 71,
+          "successor_value": 202,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 1,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 15123,
+          "R": 251,
+          "absorbed_support": 71,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 24948,
+            "M": 924,
+            "R_M": 1367,
+            "d": 46,
+            "four_M_d_plus_1": 170017,
+            "pn": 170017
+          },
+          "fixture_name": "lcm_cycle_step_1",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 66,
+            "successor": 924
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:7dac2c7092d6bb1527d21cff56942f12a414f7ac66b8ab82ae7a6b15d4268b8e",
+        "equation_target": {
+          "denominator": 73,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 19,
+          "successor": 1
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 1296,
+          "source_support": 66,
+          "source_value": 19,
+          "strict_decrease": true,
+          "successor_support": 924,
+          "successor_value": 1,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 24948,
+          "R": 1367,
+          "absorbed_support": 66,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 24948,
+          "R": 1367,
+          "absorbed_support": 924,
+          "equation_target": [
+            4,
+            73
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      },
+      {
+        "certificate_context": {
+          "determinant": {
+            "K_M": 66456,
+            "M": 568,
+            "R_M": 1103,
+            "d": 124,
+            "four_M_d_plus_1": 281729,
+            "pn": 281729
+          },
+          "fixture_name": "symmetric_small_chart_support_conflict",
+          "provenance": "verified_overflow_source_atlas",
+          "source": "type-i-universal-anchor-overflow-dual-results.json",
+          "support_promotion": {
+            "ratio_lower_bound": "M/A>=2",
+            "source": 8,
+            "successor": 568
+          }
+        },
+        "certificate_type": "overflow_same_chart_support_promotion",
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        },
+        "edge_id": "edge:3fa092f16434d95d351282b1482c9725918473ed841cb4d8d80cd28bd1d3a7a1",
+        "equation_target": {
+          "denominator": 241,
+          "numerator": 4
+        },
+        "induction_rank": {
+          "kind": "absorbed_support_potential",
+          "source": 1800,
+          "successor": 25
+        },
+        "lift_status": "proved_identity",
+        "marked_solution_set": {
+          "lift": "identity",
+          "source": "Sol(p)",
+          "successor": "Sol(p)"
+        },
+        "normal_form": "overflow_same_chart_support_promotion_v1",
+        "phase": "OVERFLOW_SUPPORT_PROMOTION",
+        "potential_record": {
+          "B_p": 14400,
+          "source_support": 8,
+          "source_value": 1800,
+          "strict_decrease": true,
+          "successor_support": 568,
+          "successor_value": 25,
+          "support_monotone": true
+        },
+        "proof_boundary": "same_chart_support_promotion",
+        "recursive_edge_eligible": true,
+        "scope_note": "The overflow carrier M is already a divisor of K_M.  Promoting the absorbed support to M keeps the equation chart and Sol(p) unchanged; the target remains overflow, while the outer support potential strictly decreases.",
+        "selector_status": "verified_edge",
+        "signed_defect": {
+          "reason": "identity lift",
+          "status": "not_applicable"
+        },
+        "source_state": {
+          "K": 66456,
+          "R": 1103,
+          "absorbed_support": 8,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "state_class": "overflow",
+        "successor_state": {
+          "K": 66456,
+          "R": 1103,
+          "absorbed_support": 568,
+          "equation_target": [
+            4,
+            241
+          ],
+          "state_class": "overflow"
+        },
+        "target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        }
+      }
+    ]
+  },
   "overflow_support_debt_phase_bridge": {
     "certificate_context": {
       "alternate_phase_mapping_status": "unproved",
@@ -9375,6 +10386,7 @@
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
     "overflow_fixed_n_bounded_divisor_outer_rank",
+    "overflow_same_chart_support_promotion",
     "overflow_a_one_generic_determinant_boundary",
     "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",

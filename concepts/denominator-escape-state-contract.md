@@ -433,6 +433,15 @@ outer_rank_reset 字段共同核验。
 \(A_S>1\) overflow 的有界除子存在性证明。完整引理、低互补量推论和 12 个聚焦回执见
 [overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
 
+对来源可达的 complete-excess bundle overflow，还必须优先检查同图表支撑升级：
+若 \(A\mid M\)、\(M/A\ge2\) 且 \(M\le B_p\)，则直接把 absorbed support 从 \(A\)
+升到 \(M\)。因为 \(M\mid K_M\)、\(\operatorname{Sol}(p)\) 对 chart 独立且
+\(\lfloor B_p/M\rfloor<\lfloor B_p/A\rfloor\)，这条
+same-chart support promotion 边完整满足 E1--E5，但目标仍为
+overflow。若 \(M>B_p\)，该同图表升级不在当前势域内，必须进入 alternate、终端或
+新的外层秩分支。完整主张与 12 行聚焦回放见
+[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
+
 同一 overflow receipt 还可生成 `overflow_carrier_reset_v1` 候选。取任一对偶小图表
 \(t\in\{d,r\}\) 且 \(R_t<p\)，则有严格整数下降 \(t<M\)。该候选保持
 \(\operatorname{equation\_target}=4/p\) 和 \(W_T=\operatorname{Sol}(p)\)，但可能丢弃

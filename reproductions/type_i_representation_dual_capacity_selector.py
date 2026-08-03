@@ -69,6 +69,7 @@ SELECTOR_ORDER = [
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
     "overflow_fixed_n_bounded_divisor_outer_rank",
+    "overflow_same_chart_support_promotion",
     "overflow_a_one_generic_determinant_boundary",
     "overflow_fixed_s_outer_rank_reset",
     "overflow_outer_rank_reset",
@@ -2588,6 +2589,174 @@ def overflow_fixed_n_bounded_divisor_outer_rank(
     }
 
 
+def overflow_same_chart_support_promotion(
+    payload: dict[str, object],
+) -> dict[str, object]:
+    """Promote the bundle carrier itself when it lies inside the outer-rank domain.
+
+    Complete-excess bundle construction supplies M/A >= 2.  If M <= B_p, the
+    same canonical chart can carry support M, so no dual rechart or new target
+    fiber is needed.
+    """
+    verified: list[dict[str, object]] = []
+    rejected: list[dict[str, object]] = []
+    for fixture in overflow_fixture_rows(payload):
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        carrier = int(fixture["M"])
+        source_R = int(fixture["R_M"])
+        source_K = int(fixture["K_M"])
+        n = int(fixture["n"])
+        d = int(fixture["d"])
+        B_prime = (prime - 1) ** 2 // 4
+        if (
+            support <= 0
+            or carrier <= 0
+            or carrier % support
+            or carrier // support < 2
+            or prime * n != 4 * carrier * d + 1
+            or source_R != 4 * carrier - n
+            or source_R <= prime
+            or source_K != carrier * (prime - d)
+            or source_K % carrier
+        ):
+            raise AssertionError(f"same-chart promotion source invariant changed: {name}")
+        if carrier > B_prime:
+            if prime % 4 != 1 or n % 4 != 1 or n < prime + 4:
+                raise AssertionError(f"high-carrier complement boundary changed: {name}")
+            rejected.append(
+                {
+                    "fixture_name": name,
+                    "equation_target": [4, prime],
+                    "source_support": support,
+                    "source_carrier": carrier,
+                    "B_p": B_prime,
+                    "selector_status": "analysis_evidence",
+                    "recursive_edge_eligible": False,
+                    "proof_boundary": "same_chart_support_promotion_domain",
+                    "missing_conditions": ["carrier_above_B_p"],
+                    "high_carrier_complement_boundary": {
+                        "necessary_condition": "n>=p+4",
+                        "prime_mod_4": prime % 4,
+                        "n_mod_4": n % 4,
+                        "verified": True,
+                    },
+                }
+            )
+            continue
+        source_potential = B_prime // support
+        successor_potential = B_prime // carrier
+        if carrier <= support or successor_potential >= source_potential:
+            raise AssertionError(f"same-chart promotion rank changed: {name}")
+        source_state = {
+            "equation_target": [4, prime],
+            "R": source_R,
+            "K": source_K,
+            "absorbed_support": support,
+            "state_class": "overflow",
+        }
+        successor_state = {
+            "equation_target": [4, prime],
+            "R": source_R,
+            "K": source_K,
+            "absorbed_support": carrier,
+            "state_class": "overflow",
+        }
+        receipt = {
+            "edge_id": "edge:" + canonical_hash(
+                {"source": source_state, "successor": successor_state}
+            ),
+            "certificate_type": "overflow_same_chart_support_promotion",
+            "phase": "OVERFLOW_SUPPORT_PROMOTION",
+            "state_class": "overflow",
+            "source_state": source_state,
+            "successor_state": successor_state,
+            "equation_target": {"numerator": 4, "denominator": prime},
+            "marked_solution_set": {
+                "source": "Sol(p)",
+                "successor": "Sol(p)",
+                "lift": "identity",
+            },
+            "target_fiber": {
+                "status": "inherited_full_solution_set",
+                "reason": "same canonical chart; support metadata only is promoted",
+            },
+            "signed_defect": {"status": "not_applicable", "reason": "identity lift"},
+            "certificate_context": {
+                "source": OVERFLOW_INPUT.name,
+                "provenance": "verified_overflow_source_atlas",
+                "fixture_name": name,
+                "determinant": {
+                    "pn": prime * n,
+                    "four_M_d_plus_1": 4 * carrier * d + 1,
+                    "M": carrier,
+                    "d": d,
+                    "R_M": source_R,
+                    "K_M": source_K,
+                },
+                "support_promotion": {
+                    "source": support,
+                    "successor": carrier,
+                    "ratio_lower_bound": "M/A>=2",
+                },
+            },
+            "normal_form": "overflow_same_chart_support_promotion_v1",
+            "induction_rank": {
+                "kind": "absorbed_support_potential",
+                "source": source_potential,
+                "successor": successor_potential,
+            },
+            "potential_record": {
+                "B_p": B_prime,
+                "source_support": support,
+                "successor_support": carrier,
+                "source_value": source_potential,
+                "successor_value": successor_potential,
+                "strict_decrease": True,
+                "support_monotone": True,
+            },
+            "e1_e5": {f"E{i}": True for i in range(1, 6)},
+            "selector_status": "verified_edge",
+            "recursive_edge_eligible": True,
+            "lift_status": "proved_identity",
+            "proof_boundary": "same_chart_support_promotion",
+            "scope_note": (
+                "The overflow carrier M is already a divisor of K_M.  Promoting the "
+                "absorbed support to M keeps the equation chart and Sol(p) unchanged; "
+                "the target remains overflow, while the outer support potential strictly "
+                "decreases."
+            ),
+        }
+        check_status_boundary(receipt)
+        verified.append(receipt)
+    return {
+        "fixture_count": len(verified) + len(rejected),
+        "verified_edge_count": len(verified),
+        "rejected_fixture_count": len(rejected),
+        "verified_receipts": verified,
+        "rejected_fixtures": rejected,
+        "promotion_rule": {
+            "source_condition": "M|K_M, A|M, M/A>=2, M<=B_p",
+            "target": "same (p,R_M,K_M) chart with absorbed_support=M",
+            "potential": "floor(B_p/M)<floor(B_p/A)",
+        },
+        "high_carrier_residual": {
+            "condition": "M>B_p",
+            "necessary_complement_bound": "n>=p+4",
+            "proof": (
+                "S=M*d=(p*n-1)/4>B_p; n<=p-2 would force S<=B_p-1, "
+                "while n=p gives S=B_p; together with n=1 mod 4 this leaves n>=p+4."
+            ),
+        },
+        "scope_note": (
+            "This closes every source-receipt overflow with A|M, M/A>=2 and carrier "
+            "M in the outer-rank domain.  Rows with M>B_p remain outside this same-chart "
+            "promotion and require another exit; they necessarily have n>=p+4."
+        ),
+    }
+
+
 def overflow_a_one_generic_determinant_boundary(
     payload: dict[str, object],
 ) -> dict[str, object]:
@@ -3441,6 +3610,7 @@ def build_results() -> dict[str, object]:
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     fixed_n_bounded_divisor = overflow_fixed_n_bounded_divisor_outer_rank(overflow)
+    same_chart_promotion = overflow_same_chart_support_promotion(overflow)
     a_one_boundary = overflow_a_one_generic_determinant_boundary(overflow)
     a_one_dual_reset = overflow_a_one_dual_reset_family(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
@@ -3474,6 +3644,7 @@ def build_results() -> dict[str, object]:
         "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_n_bounded_divisor_outer_rank": fixed_n_bounded_divisor,
+        "overflow_same_chart_support_promotion": same_chart_promotion,
         "overflow_a_one_generic_determinant_boundary": a_one_boundary,
         "overflow_a_one_dual_reset_family": a_one_dual_reset,
         "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
@@ -3502,6 +3673,7 @@ def build_results() -> dict[str, object]:
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
             "fixed_n_bounded_divisor_requires_bounded_support": True,
+            "same_chart_promotion_requires_M_le_B_p": True,
             "a_one_determinant_boundary_requires_M_lt_p": True,
             "a_one_dual_reset_family_replayed": True,
             "fixed_s_overflow_rank_requires_product_divisor": True,
@@ -3944,6 +4116,109 @@ def verify_overflow_fixed_n_bounded_divisor_contract(
             raise AssertionError("bounded fixed-n divisor support changed")
 
 
+def verify_overflow_same_chart_support_promotion_contract(
+    result: dict[str, object],
+) -> None:
+    branch = result.get("overflow_same_chart_support_promotion")
+    if not isinstance(branch, dict):
+        raise AssertionError("same-chart support promotion receipt missing")
+    if (
+        branch.get("fixture_count") != 12
+        or branch.get("verified_edge_count") != 11
+        or branch.get("rejected_fixture_count") != 1
+    ):
+        raise AssertionError("same-chart support promotion counts changed")
+    receipts = branch.get("verified_receipts")
+    rejected = branch.get("rejected_fixtures")
+    if not isinstance(receipts, list) or len(receipts) != 11:
+        raise AssertionError("same-chart promotion receipt shape changed")
+    if not isinstance(rejected, list) or len(rejected) != 1:
+        raise AssertionError("same-chart promotion rejection shape changed")
+    rejected_names = {
+        item.get("fixture_name")
+        for item in rejected
+        if isinstance(item, dict)
+    }
+    if rejected_names != {"lcm_cycle_step_0"}:
+        raise AssertionError("same-chart promotion domain boundary changed")
+    residual = branch.get("high_carrier_residual")
+    if (
+        not isinstance(residual, dict)
+        or residual.get("condition") != "M>B_p"
+        or residual.get("necessary_complement_bound") != "n>=p+4"
+    ):
+        raise AssertionError("high-carrier residual contract changed")
+    rejected_boundary = rejected[0].get("high_carrier_complement_boundary")
+    if (
+        not isinstance(rejected_boundary, dict)
+        or rejected_boundary.get("necessary_condition") != "n>=p+4"
+        or rejected_boundary.get("verified") is not True
+    ):
+        raise AssertionError("high-carrier fixture boundary changed")
+    for receipt in receipts:
+        if not isinstance(receipt, dict):
+            raise AssertionError("same-chart promotion row is not an object")
+        if (
+            receipt.get("certificate_type")
+            != "overflow_same_chart_support_promotion"
+            or receipt.get("phase") != "OVERFLOW_SUPPORT_PROMOTION"
+            or receipt.get("state_class") != "overflow"
+            or receipt.get("selector_status") != "verified_edge"
+            or receipt.get("recursive_edge_eligible") is not True
+            or receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}
+        ):
+            raise AssertionError("same-chart promotion crossed the status boundary")
+        source = receipt.get("source_state")
+        successor = receipt.get("successor_state")
+        context = receipt.get("certificate_context")
+        potential = receipt.get("potential_record")
+        if (
+            not isinstance(source, dict)
+            or not isinstance(successor, dict)
+            or not isinstance(context, dict)
+            or not isinstance(potential, dict)
+        ):
+            raise AssertionError("same-chart promotion payload is incomplete")
+        determinant = context.get("determinant")
+        promotion = context.get("support_promotion")
+        if not isinstance(determinant, dict) or not isinstance(promotion, dict):
+            raise AssertionError("same-chart promotion determinant payload missing")
+        prime = int(receipt["equation_target"]["denominator"])
+        M = int(determinant["M"])
+        d = int(determinant["d"])
+        n = int(determinant["pn"]) // prime
+        R_M = int(determinant["R_M"])
+        K_M = int(determinant["K_M"])
+        A = int(source["absorbed_support"])
+        B_prime = (prime - 1) ** 2 // 4
+        if (
+            successor.get("R") != R_M
+            or successor.get("K") != K_M
+            or source.get("R") != R_M
+            or source.get("K") != K_M
+            or successor.get("absorbed_support") != M
+            or M <= A
+            or M % A
+            or M // A < 2
+            or M > B_prime
+            or prime * n != 4 * M * d + 1
+            or R_M != 4 * M - n
+            or R_M <= prime
+            or K_M != M * (prime - d)
+            or K_M % M
+            or potential.get("B_p") != B_prime
+            or potential.get("source_support") != A
+            or potential.get("successor_support") != M
+            or potential.get("source_value") != B_prime // A
+            or potential.get("successor_value") != B_prime // M
+            or potential.get("strict_decrease") is not True
+            or potential.get("support_monotone") is not True
+            or promotion.get("source") != A
+            or promotion.get("successor") != M
+        ):
+            raise AssertionError("same-chart promotion identity changed")
+
+
 def verify_overflow_a_one_generic_boundary_contract(result: dict[str, object]) -> None:
     receipt = result.get("overflow_a_one_generic_determinant_boundary")
     if not isinstance(receipt, dict):
@@ -4347,6 +4622,7 @@ def main() -> None:
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)
         verify_overflow_fixed_n_bounded_divisor_contract(result)
+        verify_overflow_same_chart_support_promotion_contract(result)
         verify_overflow_a_one_generic_boundary_contract(result)
         verify_overflow_a_one_dual_reset_family_contract(result)
         verify_overflow_menu_contract(result)

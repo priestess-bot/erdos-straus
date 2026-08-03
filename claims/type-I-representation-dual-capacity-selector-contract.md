@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、固定-n 有界除子外层秩递降、A=1 对偶外层秩 RESET、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、bounded-fixed-n-rank、A-one-dual-reset、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n、bounded-fixed-n、A=1 dual RESET 和固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、固定-n 有界除子外层秩递降、同图表支撑升级、A=1 对偶外层秩 RESET、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、bounded-fixed-n-rank、same-chart-promotion、A-one-dual-reset、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 和固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -14,6 +14,7 @@ depends_on:
   - type-I-overflow-determinant-fixed-n-dual-support-conflict
   - type-I-overflow-fixed-n-overflow-rank-descent
   - type-I-overflow-fixed-n-bounded-divisor-saturation
+  - type-I-overflow-same-chart-support-promotion
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
   - type-I-overflow-fixed-s-dual-outer-rank-descent
@@ -87,6 +88,7 @@ bounded_fourier_carrier_capacity
 overflow_fixed_n_charged_support
 overflow_fixed_n_outer_rank_reset
 overflow_fixed_n_bounded_divisor_outer_rank
+overflow_same_chart_support_promotion
 overflow_a_one_generic_determinant_boundary
 overflow_fixed_s_outer_rank_reset
 overflow_outer_rank_reset

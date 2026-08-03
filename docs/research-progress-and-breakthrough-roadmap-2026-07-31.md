@@ -128,7 +128,7 @@ state 或直接短证书。
 **2026-08-02 状态级分派收口。** 以上三类证据现已由
 `reproductions/type_i_representation_dual_capacity_selector.py` 装配为统一的
 内容寻址状态回执，并把 overflow q 进支付/缺陷单位审计作为独立的容量回执附加。分派
-顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity`；
+顺序固定为 `direct -> near -> dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-n-bounded-divisor-outer-rank -> overflow-same-chart-support-promotion -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity`；
 每条回执均保存 `state_id`、根方程、目标纤维、标记集、带符号缺陷、证书上下文和势记录。
 当前三条状态回执与一条容量回执仍严格保持 `analysis_evidence`，且
 `recursive_edge_eligible=false`；但固定-\(n\) 行列式图谱中的正例
@@ -166,6 +166,18 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 2 条补上此前拒绝的 fixture；与固定-\(n\) 分支合计覆盖 11/12。剩余 d=1 边界仍不满足
 \(L\mid rd\)，因此这一步收缩但没有消除 r 通道的全称整除缺口。详见
 [overflow 对偶固定 \(s\) 图谱与 \(r\) 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md)。
+
+**2026-08-03 同图表支撑升级。** 对来源可达的 complete-excess bundle overflow，若
+\(A\mid M\)、\(M/A\ge2\) 且 \(M\le B_p=(p-1)^2/4\)，则可以保持同一个
+canonical chart \((p,R_M,K_M)\)，把 absorbed support 从 \(A\) 升到 \(M\)。因为
+\(K_M=MC\)，该升级支付 E2；\(\operatorname{Sol}(p)\) 对图表独立，恒等映射支付
+E4；而 \(\lfloor B_p/M\rfloor<\lfloor B_p/A\rfloor\) 支付 E5。因此这是完整的
+overflow 同图表 verified edge，但目标仍是 overflow。12 个聚焦来源行中有 11 条满足
+该条件，唯一拒绝项是 \(p=73,M=1518>B_{73}=1296\) 的高载体行。对任意这样的高载体
+行，令 \(S=Md=(pn-1)/4\)，则 \(M>B_p\) 强制 \(n\ge p+4\)；因此残差同时落在
+大载体和大补余区域。当前余项可收缩为这一高载体区域，以及需要 alternate、直接
+Type I/II 或其它外层秩的分支；11/12 只是有限回放，不是全称覆盖。详见
+[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
 
 同一选择器现在把已建立的 \(p+4\) Type II 证书放在 overflow 递降之前：冻结的 12 个
 fixture 全部重建为 `terminal_leaf`，其中 d=1 边界由 \(q=7\) 的证书直接

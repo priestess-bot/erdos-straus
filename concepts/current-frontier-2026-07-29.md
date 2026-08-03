@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱在额外条件 M<p 下关闭小载体 A=1 子族，并把一般有界除子条件下的 A=1/A>1 递降规范化为“取最大合格 L”；不含旧 A 的候选由严格外层势支付 reset，任意 overflow 至少有一个 R<p 的算术对偶图表，但一般 A=1 也可能没有正的有界固定-n 除子。规范有界 Fourier 的 45 个冻结 F 状态现已逐方向投影到 141 个实际线性载体，整除链和混合容量均无超载，说明相位/角色债务尚未形成跨状态需求。当前决定性余项已唯一收缩为递归历史可达的 A>1 overflow：必须证明存在满足有界除子条件的 L、保持旧 charged support 的 source/path/node alternate 或直接终端，否则构造由独立外层良基秩支付的 support reset。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱在额外条件 M<p 下关闭小载体 A=1 子族，并把一般有界除子条件下的 A=1/A>1 递降规范化为“取最大合格 L”；来源 bundle 若满足 M/A≥2 且 M≤B_p，还可在同一 chart 上把 support 升到 M 并严格下降外层势。一般 A=1 的对偶 RESET 已关闭其算术入口；当前决定性余项收缩为 M>B_p 的递归可达 A>1 overflow，以及其中的 alternate、终端或独立外层秩问题。
 topics:
 - research-map
 - proof-program
@@ -16,6 +16,7 @@ used_by:
 - type-I-private-quotient-box-saturation
 - type-I-linear-single-active-prime-cross-state-compatibility
 - type-I-overflow-fixed-n-bounded-divisor-saturation
+- type-I-overflow-same-chart-support-promotion
 - type-I-overflow-a-one-dual-outer-rank-reset
 sources:
 - claim: type-I-universal-p-source-capacity-anchor-orbit
@@ -24,6 +25,8 @@ sources:
   role: fixed-n-dual-atlas-and-current-residual
 - claim: type-I-overflow-fixed-n-bounded-divisor-saturation
   role: bounded-fixed-n-divisor-outer-rank-and-low-complement-corollary
+- claim: type-I-overflow-same-chart-support-promotion
+  role: same-chart-promotion-and-M-above-Bp-residual
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -3097,7 +3100,7 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-n-bounded-divisor-outer-rank -> overflow-a-one-generic-determinant-boundary -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-n-bounded-divisor-outer-rank -> overflow-same-chart-support-promotion -> overflow-a-one-generic-determinant-boundary -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
@@ -3379,3 +3382,24 @@ overflow。统一 selector 对冻结的 12 个 overflow 全部找到合格 \(L\)
 \(S\le B_p\) 等价于 \(n\le p-2\)。相应目标
 \(R_S=(p-1)n-1\)；只有 \(n=1\) 直接落入 \(R_S<p\)，\(n\ge2\) 仍需继续处理。
 详见[overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
+
+### 2026-08-03 同图表支撑升级
+
+complete-excess bundle overflow 还带有一个更直接的支撑边界。若来源回执满足
+\(A\mid M\)、\(M/A\ge2\) 且
+\[
+M\le B_p=\frac{(p-1)^2}{4},
+\]
+则不必重选 \(L\) 或改变 canonical chart，直接把同一图表的 absorbed support 从
+\(A\) 升到 \(M\)。由于 \(M\mid K_M\)、\(W_T=W_S=\operatorname{Sol}(p)\)，并且
+\[
+\left\lfloor\frac{B_p}{M}\right\rfloor
+<
+\left\lfloor\frac{B_p}{A}\right\rfloor,
+\]
+这是一条完整 E1--E5 的 same-chart support promotion 边；目标仍然是 overflow。12 个
+聚焦来源行中 11 条满足这一条件，唯一越界的是
+\(p=73,M=1518>B_{73}=1296\)。对高载体行，\(S=Md=(pn-1)/4\) 与
+\(n\equiv1\pmod4\) 进一步给出必要边界 \(n\ge p+4\)。因此当前全称余项可进一步按
+\(M\le B_p\) 与 \(M>B_p,\ n\ge p+4\) 分层，后者才需要跨状态 alternate 或新的外层秩。
+详见[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。

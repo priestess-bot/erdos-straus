@@ -4633,3 +4633,28 @@ selector_status=analysis_evidence、recursive_edge_eligible=false。
 
 主张卡见[A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md)和
 [A=1 overflow 的对偶外层秩 RESET](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md)。
+
+## 2026-08-03：M≤B_p 的同图表支撑升级
+
+对来源可达的 complete-excess bundle overflow，统一回执现在显式保留结构条件
+
+\[
+4K_M=pR_M+1,\qquad K_M=MC,\qquad A\mid M,\qquad M/A\ge2.
+\]
+
+当 \(M\le B_p=(p-1)^2/4\) 时，把 absorbed support 从 \(A\) 改写为 \(M\)，而
+保持 \((p,R_M,K_M)\) 图表不变。\(M\mid K_M\) 支付 E2，图表无关的
+\(\operatorname{Sol}(p)\) 恒等提升支付 E4，且
+\[
+\left\lfloor B_p/M\right\rfloor<\left\lfloor B_p/A\right\rfloor
+\]
+支付外层秩 E5；目标仍满足 \(R_M>p\)，因此是 overflow 后继而不是终端。
+
+当前 12 个聚焦来源行重放得到 11 条完整 verified edge。唯一被该分支拒绝的是
+\(p=73,M=1518>B_{73}=1296\) 的高载体行。对任意高载体行，
+\(S=Md=(pn-1)/4>B_p\)、\(n\equiv1\pmod4\) 且 \(n=p\) 时 \(S=B_p\)，所以
+必有 \(n\ge p+4\)。这个结果把同图表分支的全称任务压缩成一个条件性引理，同时把
+下一阶段的残差明确限定为 \(M>B_p, n\ge p+4\) 以及 alternate、直接 Type I/II
+或其它外层秩尚未支付的状态；11/12 仅是有限回放证据。
+
+实现和合同见[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
