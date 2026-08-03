@@ -147,11 +147,20 @@ p-2\equiv-1\pmod q.
 r=\frac{p-1}{4},\qquad s=1,\qquad rd=r.
 \]
 
-因此若当前 charged support 满足 \(A\ge r\)，则任意 \(L\mid rd\) 都有
-\(L\le r\le A\)，不可能满足固定-s 外层秩边所需的 \(A<L\)。此时 fixed-s
-有界除子图谱为空，不是选择器漏检；后继只能来自非支撑 Type I/II、marked lift
-或跨状态容量。若 \(A<r\)，则 \(L=r\) 才可能成为候选，且严格势的无样本充分
-条件是 \(r\ge2A\)。
+由于 \(B_p=(p-1)^2/4=4r^2\)，若 \(A<r\)，则取 \(L=r\) 有
+\[
+\left\lfloor\frac{B_p}{L}\right\rfloor=4r
+<
+\left\lfloor\frac{B_p}{A}\right\rfloor,
+\]
+且 \(4L>s\)，所以 \(L=r\) 给出完整 fixed-s 恒等提升边。反之若当前 charged
+support 满足 \(A\ge r\)，则任意 \(L\mid rd\) 都有 \(L\le r\le A\)，不可能满足
+固定-s 外层秩边所需的 \(A<L\)。因此
+\[
+\boxed{A<r\Longleftrightarrow L=r\text{ 是 fixed-s 严格降边；}\quad
+A\ge r\Longrightarrow\text{fixed-s 有界除子图谱为空}.}
+\]
+后者不是选择器漏检；后继只能来自非支撑 Type I/II、marked lift 或跨状态容量。
 
 因此该定理把 d=1 从“固定-(n) 候选为空”的算术杂项，收缩为一个普适的 G 边界；它
 没有关闭一般 (A>1, R_M>p) overflow。

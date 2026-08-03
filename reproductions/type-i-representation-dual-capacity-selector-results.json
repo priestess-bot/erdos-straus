@@ -4163,6 +4163,16 @@
   },
   "overflow_fixed_s_bounded_divisor_outer_rank": {
     "absorption_target_count": 1,
+    "d_one_fixed_s_boundary": {
+      "candidate_rule": "A<r => L=r; A>=r => no divisor L|r*d with L>A",
+      "conclusion": "The fixed-s bounded-divisor atlas is complete for d=1: L=r is a strict identity-lift edge exactly when A<r; otherwise every divisor of r*d is at most the charged support.",
+      "condition": "d=1, r=(p-1)/4, s=1, B_p=4*r^2",
+      "edge_fixture_names": [
+        "accumulated_d_one_boundary"
+      ],
+      "empty_fixture_names": [],
+      "fixture_count": 1
+    },
     "fixture_count": 12,
     "overflow_target_count": 10,
     "r_one_fixed_s_boundary": {
