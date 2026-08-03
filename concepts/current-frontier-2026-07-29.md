@@ -18,6 +18,7 @@ used_by:
 - type-I-overflow-fixed-n-bounded-divisor-saturation
 - type-I-overflow-same-chart-support-promotion
 - type-I-overflow-a-one-dual-outer-rank-reset
+- type-II-shared-p-group-davenport-threshold
 sources:
 - claim: type-I-universal-p-source-capacity-anchor-orbit
   role: universal-source-and-capacity-orbit
@@ -31,6 +32,8 @@ sources:
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
   role: universal-A-one-dual-reset-subfamily
+- claim: type-II-shared-p-group-davenport-threshold
+  role: p-primary-shared-Type-II-threshold
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
 - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
@@ -48,7 +51,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-03'
+last_checked: '2026-08-04'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -3419,3 +3422,30 @@ M\le B_p=\frac{(p-1)^2}{4},
 \(n\equiv1\pmod4\) 进一步给出必要边界 \(n\ge p+4\)。因此当前全称余项可进一步按
 \(M\le B_p\) 与 \(M>B_p,\ n\ge p+4\) 分层，后者才需要跨状态 alternate 或新的外层秩。
 详见[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
+
+## 2026-08-04：p-primary 共享 Type II 的 Davenport 收紧
+
+共享 Type II 选择器的生成子群阶阈值已经有一个严格的 p-primary 收紧。对合法缺口
+\(m\) 的单位素因子残数生成子群
+\[
+H=\langle q_i\bmod m\rangle
+\]
+若 \(H\simeq\bigoplus_i C_{\ell^{a_i}}\)，则有限阿贝尔 \(\ell\)-群的精确 Davenport
+阈值为
+\[
+D(H)=1+\sum_i(\ell^{a_i}-1).
+\]
+当单位素因子按重数计数达到 \(D(H)\) 时，非空子序列积必为 \(1\bmod m\)，从而构造
+\(D\mid p+m\)、\(D>1\)、\(D\equiv1\pmod m\) 的共享除子；现有 Type II 证书可同时
+重建 scaled-first marked witness。与旧的 \(t\ge |H|\) 前缀阈值相比，
+\(H=C_2\oplus C_4\) 的阈值由 8 降至 5。
+
+10M、\(m\le239\) 的聚焦回放在 84 个非 \(k=1\) 压力点中发现 51 个
+p-primary 缺口，其中 28 个达到 Davenport 阈值并构造出共享见证；阈值按缺口计为
+\(D=5\) 的 28 个和 \(D=17\) 的 23 个。结果文件和重放脚本分别见
+[p 群 Davenport 回放](../reproductions/type-ii-automatic-residual-p-group-davenport-profile-10m-results.json)
+与[共享 Type II p 群阈值](../claims/type-II-shared-p-group-davenport-threshold.md)。
+
+这条分支是 Type II 侧的实质性局部推进，但仍留下 56/84 个压力点；非 p-primary
+子群、低于 \(D(H)\) 的短零积和跨缺口共同避靶尚未处理。它不改变旗舰全称余项仍集中
+在 overflow 换载体、终端或合法后继三分，也不把 marked 表示误报成无标记递归证明。

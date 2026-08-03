@@ -4686,3 +4686,43 @@ R_M=3743>R_L=2823,
 故高载体回放计数为 1/1。若高载体行没有合格 \(L\)，该字段不产生后继，残余仍需
 fixed-\(s\)、alternate、终端、容量或另一个全局相位秩。主张卡见[高载体 overflow
 固定 \(n\) 有界除子的 \(R\) 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md)。
+
+## 2026-08-04 p-primary Type II 共享选择器的 Davenport 收紧
+
+共享 Type II 选择器的旧生成子群阈值要求单位素因子重数 \(t\ge |H|\)，并通过前缀
+碰撞得到 \(D\equiv1\pmod m\)。本轮对 p-primary 子群补上精确的有限群零积阈值：
+若
+\[
+H\simeq\bigoplus_i C_{\ell^{a_i}},
+\qquad
+D(H)=1+\sum_i(\ell^{a_i}-1),
+\]
+则任意长度至少 \(D(H)\) 的单位残数序列含有非空子序列积 \(1\)。这严格利用了
+子群的初等因子结构，而不是只比较 \(|H|\)；例如 \(C_2\oplus C_4\) 的阈值由 8
+降为 5。
+
+实现位于
+reproductions/type_ii_automatic_residual_k1_funnel.py 的
+p_group_davenport_data、nonempty_subproduct_one 和
+p_group_davenport_shared_profile。指数由 \(H[\ell^k]\) 的精确扭元计数恢复，动态
+状态表再构造子积并重放 scaled-first Type II 提升，避免把群结构或算术除子留在
+未核验的黑箱中。
+
+10M、\(m\le239\) 的完整合法缺口回放覆盖四自动缺口后的 84 个非 \(k=1\) 压力点：
+
+- 51 个已有 Type II 证书的缺口落在 p-primary 子群；
+- 28 个缺口达到 \(D(H)\)，并给出 28 个压力点的共享除子和 marked witness；
+- 阈值按缺口计为 \(D=5\) 的 28 个、\(D=17\) 的 23 个；
+- 仍有 56 个压力点没有被本阈值覆盖。
+
+结果见[p 群 Davenport 10M 回放](../reproductions/type-ii-automatic-residual-p-group-davenport-profile-10m-results.json)，
+主张卡见[共享 Type II p 群 Davenport 阈值](../claims/type-II-shared-p-group-davenport-threshold.md)。
+这是一条 Type II 侧的实质性局部推进，但不处理非 p-primary 群、低于 \(D(H)\) 的
+短零积逆结构或跨缺口共同避靶；profile miss 也不等价于没有任何共享除子。即使
+共享除子存在，当前接口仍是 marked Type II 表示，不能直接当作无标记递降。
+
+重放命令：
+
+    python3 reproductions/type_ii_automatic_residual_k1_funnel.py \
+      --limit 10000000 --gap-cap 239 --p-group-davenport-profile \
+      --output reproductions/type-ii-automatic-residual-p-group-davenport-profile-10m-results.json

@@ -24,6 +24,7 @@
 ## 1969
 
 - 1969-01-01 · [Diophantine Equations](../papers/mordell1969.md) — Louis J. Mordell; 出版年 1969; `book` / `verified_with_caveat`
+- 1969-01-01 · [A combinatorial problem on finite Abelian groups, I](../papers/olson1969-davenport-p-groups.md) — John E. Olson; 出版年 1969; `peer_reviewed` / `verified_with_caveat`
 ## 1970
 
 - 1970-01-01 · [On 4/n = 1/x + 1/y + 1/z](../papers/webb1970.md) — William A. Webb; 出版年 1970; `peer_reviewed` / `unverified`

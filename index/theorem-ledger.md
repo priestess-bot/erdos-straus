@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 332 |
+| 数学状态 | `established` | 333 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 164 |
+| 证明来源 | `repository_derivation` | 165 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 294 |
+| 审阅状态 | `internal_review` | 295 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -701,6 +701,7 @@
 | [无界首尺度、缺口至多 239 的共享因子 Type II 扇覆盖一千万](../claims/type-II-shared-divisor-fan-audit.md) (`type-II-shared-divisor-fan-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [缺口 23 的自动共享因子及九类 Type II 子扇](../claims/type-II-shared-gap-23-automatic-fan.md) (`type-II-shared-gap-23-automatic-fan`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [共享 Type II 选择器的半百万缺口逃逸边界](../claims/type-II-shared-half-million-gap-escape-boundary.md) (`type-II-shared-half-million-gap-escape-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
+| [共享 Type II 选择器的 p 群 Davenport 阈值](../claims/type-II-shared-p-group-davenport-threshold.md) (`type-II-shared-p-group-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `olson1969_davenport_p_groups`, `grynkiewicz_marchan_ordaz2009` | 2026-08-04 |
 | [共享 Type II 选择器的单素数幂边界](../claims/type-II-shared-prime-power-selection-boundary.md) (`type-II-shared-prime-power-selection-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [共享除子残数选择器的固定缺口耦合边界](../claims/type-II-shared-residue-fixed-gap-boundary.md) (`type-II-shared-residue-fixed-gap-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [共享除子残数 Type II 选择器猜想](../claims/type-II-shared-residue-selector-conjecture.md) (`type-II-shared-residue-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
@@ -708,7 +709,7 @@
 | [共享 Type II 选择器的单素因子边界](../claims/type-II-shared-single-prime-selection-boundary.md) (`type-II-shared-single-prime-selection-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [共享 Type II 选择器的最短零积长度谱及六因子反例](../claims/type-II-shared-six-factor-profile-boundary.md) (`type-II-shared-six-factor-profile-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-25 |
 | [共享 Type II 选择器不存在全局小 A 界](../claims/type-II-shared-small-a-boundary.md) (`type-II-shared-small-a-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
-| [共享 Type II 选择器的生成子群阈值引理及零覆盖边界](../claims/type-II-shared-subgroup-threshold-lemma.md) (`type-II-shared-subgroup-threshold-lemma`) | `established` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-25 |
+| [共享 Type II 选择器的生成子群阈值引理及零覆盖边界](../claims/type-II-shared-subgroup-threshold-lemma.md) (`type-II-shared-subgroup-threshold-lemma`) | `established` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-08-04 |
 | [共享 Type II 选择器的单位因子总数充分引理及零覆盖边界](../claims/type-II-shared-totient-threshold-lemma.md) (`type-II-shared-totient-threshold-lemma`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19 新因子状态的单因子释放审计](../claims/type-II-single-new-factor-release.md) (`type-II-single-new-factor-release`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [小 r 或 p-1 缩放在全部核心素数上的有限边界](../claims/type-II-small-r-p-minus-one-core-boundary.md) (`type-II-small-r-p-minus-one-core-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |

@@ -123,6 +123,92 @@ def generated_unit_residue_subgroup(
     return frozenset(subgroup)
 
 
+def p_group_davenport_data(
+    subgroup: frozenset[int], modulus: int
+) -> tuple[int, tuple[int, ...], int] | None:
+    """Return the exact Davenport data when ``subgroup`` is an abelian p-group.
+
+    For H = direct_sum C_(p**a_i), the p-group formula is
+    D(H)=1+sum_i(p**a_i-1).  The exponents are recovered from the exact
+    cardinalities of H[p**k], so no invariant-factor guess is used.
+    """
+    order = len(subgroup)
+    if order == 1:
+        return 1, (), 1
+    remaining = order
+    prime = None
+    candidate = 2
+    while candidate * candidate <= remaining:
+        if remaining % candidate == 0:
+            if prime is not None:
+                return None
+            prime = candidate
+            while remaining % candidate == 0:
+                remaining //= candidate
+        candidate += 1
+    if remaining > 1:
+        if prime is not None:
+            return None
+        prime = remaining
+    if prime is None:
+        return None
+
+    exponents_at_least: list[int] = []
+    previous_log = 0
+    prime_power = prime
+    while True:
+        torsion_count = sum(
+            pow(element, prime_power, modulus) == 1 for element in subgroup
+        )
+        if torsion_count < 1 or torsion_count > order:
+            raise AssertionError("invalid p-primary torsion count")
+        log_count = 0
+        count = torsion_count
+        while count > 1:
+            if count % prime:
+                raise AssertionError("torsion count is not a p-power")
+            count //= prime
+            log_count += 1
+        components_at_least = log_count - previous_log
+        exponents_at_least.append(components_at_least)
+        previous_log = log_count
+        if torsion_count == order:
+            break
+        prime_power *= prime
+        if prime_power > order * prime:
+            raise AssertionError("p-primary torsion did not exhaust subgroup")
+
+    exponents: list[int] = []
+    for index, count_at_least in enumerate(exponents_at_least):
+        next_count = (
+            exponents_at_least[index + 1]
+            if index + 1 < len(exponents_at_least)
+            else 0
+        )
+        exponents.extend([index + 1] * (count_at_least - next_count))
+    if prime ** sum(exponents) != order:
+        raise AssertionError("recovered p-group exponents have wrong order")
+    davenport = 1 + sum(prime**exponent - 1 for exponent in exponents)
+    return prime, tuple(exponents), davenport
+
+
+def nonempty_subproduct_one(factors: list[int], modulus: int) -> int | None:
+    """Construct any nonempty subproduct equal to one modulo ``modulus``."""
+    reachable: dict[int, tuple[int, int]] = {1: (1, 0)}
+    for factor in factors:
+        previous = tuple(reachable.items())
+        for residue, (product, length) in previous:
+            next_residue = residue * factor % modulus
+            next_product = product * factor
+            if next_residue == 1:
+                if next_product <= 1 or next_product % modulus != 1:
+                    raise AssertionError("subproduct witness is not nontrivial")
+                return next_product
+            if next_residue not in reachable:
+                reachable[next_residue] = (next_product, length + 1)
+    return None
+
+
 def single_prime_shared_profile(
     records: list[dict[str, object]], gap_cap: int, spf: list[int]
 ) -> dict[str, object]:
@@ -239,6 +325,103 @@ def subgroup_threshold_shared_profile(
         "subgroup_threshold_shared_count": len(witnesses),
         "subgroup_threshold_shared_witnesses": witnesses,
         "subgroup_threshold_shared_misses": misses,
+    }
+
+
+def p_group_davenport_shared_profile(
+    records: list[dict[str, object]], gap_cap: int, spf: list[int]
+) -> dict[str, object]:
+    """Apply the exact Davenport threshold for p-primary residue subgroups."""
+    witnesses: list[dict[str, object]] = []
+    misses: list[int] = []
+    p_group_gap_count = 0
+    threshold_eligible_gap_count = 0
+    threshold_histogram: Counter[int] = Counter()
+    group_prime_histogram: Counter[int] = Counter()
+    for record in records:
+        prime = int(record["prime"])
+        candidates: list[tuple[int, int, int, int, int, int, tuple[int, ...]]] = []
+        for gap in range(3, min(gap_cap, prime - 2) + 1, 4):
+            certificate = short_certificate.type_ii_residue_certificate(
+                prime, gap, spf
+            )
+            if certificate is None:
+                continue
+            factors = unit_prime_factor_multiset_from_spf(prime + gap, gap, spf)
+            subgroup = generated_unit_residue_subgroup(factors, gap)
+            davenport_data = p_group_davenport_data(subgroup, gap)
+            if davenport_data is None:
+                continue
+            p_group_gap_count += 1
+            group_prime, exponents, davenport = davenport_data
+            threshold_histogram[davenport] += 1
+            group_prime_histogram[group_prime] += 1
+            if len(factors) < davenport:
+                continue
+            threshold_eligible_gap_count += 1
+            shared_divisor = nonempty_subproduct_one(factors, gap)
+            if shared_divisor is None:
+                raise AssertionError("p-group Davenport threshold did not force a divisor")
+            first_scale = (shared_divisor - 1) // gap
+            witness = short_certificate.type_ii_scaled_first_tail_deflation_witness(
+                prime, gap, first_scale, spf
+            )
+            if witness is None:
+                raise AssertionError("p-group Davenport candidate did not lift")
+            candidates.append(
+                (
+                    gap,
+                    shared_divisor,
+                    len(factors),
+                    len(subgroup),
+                    davenport,
+                    group_prime,
+                    exponents,
+                )
+            )
+        if not candidates:
+            misses.append(prime)
+            continue
+        (
+            gap,
+            shared_divisor,
+            factor_count,
+            subgroup_order,
+            davenport,
+            group_prime,
+            exponents,
+        ) = min(candidates)
+        witnesses.append(
+            {
+                "prime": prime,
+                "gap": gap,
+                "shared_divisor": shared_divisor,
+                "first_scale": (shared_divisor - 1) // gap,
+                "unit_factor_multiplicity": factor_count,
+                "generated_subgroup_order": subgroup_order,
+                "p_group_prime": group_prime,
+                "davenport_constant": davenport,
+                "p_group_exponents": list(exponents),
+            }
+        )
+    return {
+        "arithmetic": (
+            "complete legal-gap Type II certificate scan; for p-primary generated "
+            "unit subgroups, exact H[p^k] counts recover the p-group Davenport constant "
+            "and a dynamic subproduct witness"
+        ),
+        "scope_note": (
+            "This is a sufficient condition only. It applies only when the generated "
+            "residue subgroup is a finite abelian p-group; all other gaps remain outside "
+            "this threshold."
+        ),
+        "p_group_davenport_shared_count": len(witnesses),
+        "p_group_davenport_shared_witnesses": witnesses,
+        "p_group_davenport_shared_misses": misses,
+        "p_group_gap_count": p_group_gap_count,
+        "threshold_eligible_gap_count": threshold_eligible_gap_count,
+        "davenport_threshold_histogram": dict(sorted(threshold_histogram.items())),
+        "p_group_prime_histogram": dict(sorted(group_prime_histogram.items())),
     }
 
 
@@ -525,6 +708,7 @@ def run_audit(
     gap_cap: int = 239,
     include_single_prime_profile: bool = False,
     include_subgroup_threshold_profile: bool = False,
+    include_p_group_davenport_profile: bool = False,
     include_totient_threshold_profile: bool = False,
     include_prime_power_profile: bool = False,
     include_support_profile: bool = False,
@@ -600,6 +784,10 @@ def run_audit(
         result["subgroup_threshold_shared_profile"] = subgroup_threshold_shared_profile(
             non_k1_records, gap_cap, spf
         )
+    if include_p_group_davenport_profile:
+        result["p_group_davenport_shared_profile"] = p_group_davenport_shared_profile(
+            non_k1_records, gap_cap, spf
+        )
     if include_totient_threshold_profile:
         result["totient_threshold_shared_profile"] = totient_threshold_shared_profile(
             non_k1_records, gap_cap, spf
@@ -639,6 +827,11 @@ def main() -> int:
         help="also apply the generated-unit-subgroup prefix-product threshold",
     )
     parser.add_argument(
+        "--p-group-davenport-profile",
+        action="store_true",
+        help="also apply the exact Davenport threshold for p-primary unit subgroups",
+    )
+    parser.add_argument(
         "--prime-power-profile",
         action="store_true",
         help="also scan every legal gap for a one-prime-power shared divisor",
@@ -660,6 +853,7 @@ def main() -> int:
         args.gap_cap,
         include_single_prime_profile=args.single_prime_profile,
         include_subgroup_threshold_profile=args.subgroup_threshold_profile,
+        include_p_group_davenport_profile=args.p_group_davenport_profile,
         include_totient_threshold_profile=args.totient_threshold_profile,
         include_prime_power_profile=args.prime_power_profile,
         include_support_profile=args.support_profile,

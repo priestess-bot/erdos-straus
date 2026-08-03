@@ -135,6 +135,13 @@ Type II 缺口扫描后，9 点有 \(q\mid p+m,\ q\equiv1\pmod m\)；在其余 7
 `type-II-shared-subgroup-threshold-lemma`。剩余任务因而是短零积的逆结构与跨缺口
 共同避靶条件，而非再替换一个群规模阈值。
 
+在 p-primary 生成子群上可以再收紧一次：若
+\(H\simeq\bigoplus_i C_{\ell^{a_i}}\)，则精确 Davenport 阈值
+\(D(H)=1+\sum_i(\ell^{a_i}-1)\) 已在
+type-II-shared-p-group-davenport-threshold 中实现。10M 聚焦回放对 84 个
+压力点产生 28 个新构造性命中，但仍留下 56 个未覆盖点；因此这是一条有限群结构
+分支，不是共享选择器猜想的全称闭合。
+
 最短零积长度的六因子强化已在更大范围失败：\(p=95741809\) 于 \(m=71\) 的最短
 共享因子为 \(7364760=2^3\cdot3\cdot5\cdot13\cdot4721\)，有
 \(\Omega(D)=7\)，见 `type-II-shared-six-factor-profile-boundary`。同一 100M

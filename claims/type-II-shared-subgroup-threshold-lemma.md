@@ -23,7 +23,7 @@ sources:
   locator: "Proposition 2"
   role: Type-II-divisor-criterion
 visibility: public
-last_checked: '2026-07-25'
+last_checked: '2026-08-04'
 ---
 
 # 共享 Type II 选择器的生成子群阈值引理及零覆盖边界
@@ -103,3 +103,8 @@ D=q_{i+1}\cdots q_j
 但实际共享证书常由远短于 \(|H|\) 的零积子序列给出。故下一步不能再只比较长度和
 群阶，而应研究短零积的逆结构，或用多个可选缺口 \(p+m\) 的固定差值关系排除这些
 短零积避靶状态的共同实现。
+
+在 p-primary 生成子群上，精确 Davenport 阈值已经进一步收紧这一边界，见
+[共享 Type II p 群 Davenport 阈值](type-II-shared-p-group-davenport-threshold.md)。
+该分支只改变充分条件的阈值，不改变本卡的零覆盖结论，也不处理非 p-primary 子群或
+跨缺口的共同避靶。
