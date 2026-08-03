@@ -4268,6 +4268,17 @@
         "symmetric_small_chart_support_conflict"
       ]
     },
+    "unconditional_large_prime_cofactor_subfamily": {
+      "candidate": "L=P/q",
+      "conclusion": "P<=4B_p implies P/q<B_p for q>=5; q<p gives positive chart and K_L=(P/q)*(p-q)",
+      "condition": "P=r*d>B_p, q|P, q>=5, 2A<=P/q<=B_p",
+      "fixture_count": 3,
+      "fixture_names": [
+        "accumulated_positive_fixed_n_edge",
+        "reachable_conflict_bundle_2",
+        "lcm_cycle_step_0"
+      ]
+    },
     "unconditional_prime_power_cofactor_subfamily": {
       "candidate": "L=r*d/ell^e",
       "conclusion": "For the first bounded power cofactor, s<4L is automatic and K_L=L*(p-ell^e), giving a strict fixed-s identity-lift edge",

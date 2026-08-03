@@ -3264,6 +3264,7 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
     d_one_empty_names: list[str] = []
     cofactor_saturation_names: list[str] = []
     prime_power_cofactor_names: list[str] = []
+    large_prime_cofactor_names: list[str] = []
     rows = overflow_fixture_rows(payload)
     for fixture in rows:
         name = str(fixture["name"])
@@ -3400,6 +3401,28 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
                         f"fixed-s prime-power cofactor subfamily changed: {name}"
                     )
                 prime_power_cofactor_names.append(name)
+            large_prime_candidates = []
+            if product > B_prime:
+                for large_factor, _ in factor_rows:
+                    if large_factor < 5 or large_factor >= prime:
+                        continue
+                    large_cofactor = product // large_factor
+                    if 2 * support <= large_cofactor <= B_prime:
+                        if not (
+                            4 * large_cofactor > fixed_s
+                            and B_prime // large_cofactor < B_prime // support
+                            and canonical_chart(prime, large_cofactor)
+                            == (
+                                4 * large_cofactor - fixed_s,
+                                large_cofactor * (prime - large_factor),
+                            )
+                        ):
+                            raise AssertionError(
+                                f"fixed-s large-prime cofactor changed: {name}"
+                            )
+                        large_prime_candidates.append(large_factor)
+            if large_prime_candidates:
+                large_prime_cofactor_names.append(name)
         candidates: list[tuple[int, int, int]] = []
         if source_in_domain and integral_s and isinstance(fixed_s, int):
             for L in divisors(product):
@@ -3641,6 +3664,16 @@ def overflow_fixed_s_bounded_divisor_outer_rank(
             "conclusion": (
                 "Prime-power cofactor failure above B_p is reduced to a single "
                 "2-or-3 factor boundary or to support saturation A>P/ell^e."
+            ),
+        },
+        "unconditional_large_prime_cofactor_subfamily": {
+            "condition": "P=r*d>B_p, q|P, q>=5, 2A<=P/q<=B_p",
+            "candidate": "L=P/q",
+            "fixture_count": len(large_prime_cofactor_names),
+            "fixture_names": large_prime_cofactor_names,
+            "conclusion": (
+                "P<=4B_p implies P/q<B_p for q>=5; q<p gives positive "
+                "chart and K_L=(P/q)*(p-q)"
             ),
         },
         "rank_definition": {
@@ -4771,6 +4804,24 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
         )
     ):
         raise AssertionError("high-product prime-power boundary changed")
+    large_prime_subfamily = branch.get("unconditional_large_prime_cofactor_subfamily")
+    if not isinstance(large_prime_subfamily, dict):
+        raise AssertionError("bounded fixed-s large-prime cofactor subfamily missing")
+    expected_large_prime_subfamily = {
+        "accumulated_positive_fixed_n_edge",
+        "reachable_conflict_bundle_2",
+        "lcm_cycle_step_0",
+    }
+    if (
+        large_prime_subfamily.get("condition")
+        != "P=r*d>B_p, q|P, q>=5, 2A<=P/q<=B_p"
+        or large_prime_subfamily.get("candidate") != "L=P/q"
+        or large_prime_subfamily.get("fixture_count")
+        != len(expected_large_prime_subfamily)
+        or set(large_prime_subfamily.get("fixture_names", []))
+        != expected_large_prime_subfamily
+    ):
+        raise AssertionError("bounded fixed-s large-prime cofactor coverage changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
