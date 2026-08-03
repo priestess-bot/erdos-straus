@@ -4263,8 +4263,324 @@
         "reachable_conflict_bundle_3"
       ],
       "parametric_family": {
-        "conclusion": "For each listed prime seed and every allowed k, p*n=4*M*d+1, R_M>p, s=1, and every fixed-s divisor L|r*d is below A=M. This is a genuine r,d>1 arithmetic overflow boundary, not a recursive edge or a reachability claim.",
+        "conclusion": "For each listed prime seed and every allowed k, p*n=4*M*d+1, R_M>p, s=1, and every fixed-s divisor L|r*d is below A=M. This is a genuine r,d>1 arithmetic overflow boundary. The k=1 subfamily additionally has a conditional fixed-n saturation edge; source reachability for the family remains unproved.",
         "condition": "P=2^a*3^b, a,b>=1, p=4P+1 prime, r=2, d=P/2, M=k*p+r, A=M, 1<=k<=floor((B_p-r)/p)",
+        "k_one_fixed_n_saturation": {
+          "condition": "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=p+2, n=2P+1, A=M",
+          "proof_boundary": "smooth23_k_one_fixed_n_saturation",
+          "receipts": [
+            {
+              "certificate_type": "smooth23_k_one_fixed_n_saturation",
+              "determinant": {
+                "M": 75,
+                "P": 18,
+                "S": 675,
+                "d": 9,
+                "identity": "p*n=4*M*d+1",
+                "n": 37,
+                "r": 2
+              },
+              "e1_e5": {
+                "E1": true,
+                "E2": true,
+                "E3": true,
+                "E4": true,
+                "E5": true
+              },
+              "edge_id": "edge:370673a23b7e6815bfa04b26bfa3c0b129c1bc596e565ac5189991c6c23984d4",
+              "equation_target": {
+                "denominator": 73,
+                "numerator": 4
+              },
+              "potential_record": {
+                "B_p": 1296,
+                "source": 17,
+                "strict_decrease": true,
+                "successor": 1,
+                "support_monotone": true
+              },
+              "proof_boundary": "fixed_n_low_n_saturation",
+              "recursive_edge_eligible": true,
+              "selected_candidate": {
+                "K_L": 48600,
+                "L": 675,
+                "R_L": 2663,
+                "selection_rule": "L=S=M*d"
+              },
+              "selector_status": "verified_edge",
+              "source_reach_status": "unproved",
+              "source_state": {
+                "K": 4800,
+                "R": 263,
+                "absorbed_support": 75,
+                "equation_target": [
+                  4,
+                  73
+                ],
+                "state_class": "overflow"
+              },
+              "successor_state": {
+                "K": 48600,
+                "R": 2663,
+                "absorbed_support": 675,
+                "equation_target": [
+                  4,
+                  73
+                ],
+                "state_class": "overflow"
+              }
+            },
+            {
+              "certificate_type": "smooth23_k_one_fixed_n_saturation",
+              "determinant": {
+                "M": 99,
+                "P": 24,
+                "S": 1188,
+                "d": 12,
+                "identity": "p*n=4*M*d+1",
+                "n": 49,
+                "r": 2
+              },
+              "e1_e5": {
+                "E1": true,
+                "E2": true,
+                "E3": true,
+                "E4": true,
+                "E5": true
+              },
+              "edge_id": "edge:1e618cece80fa9ec4db4b5c13efc771c15e734712d645b7fda4175c0fbb842f5",
+              "equation_target": {
+                "denominator": 97,
+                "numerator": 4
+              },
+              "potential_record": {
+                "B_p": 2304,
+                "source": 23,
+                "strict_decrease": true,
+                "successor": 1,
+                "support_monotone": true
+              },
+              "proof_boundary": "fixed_n_low_n_saturation",
+              "recursive_edge_eligible": true,
+              "selected_candidate": {
+                "K_L": 114048,
+                "L": 1188,
+                "R_L": 4703,
+                "selection_rule": "L=S=M*d"
+              },
+              "selector_status": "verified_edge",
+              "source_reach_status": "unproved",
+              "source_state": {
+                "K": 8415,
+                "R": 347,
+                "absorbed_support": 99,
+                "equation_target": [
+                  4,
+                  97
+                ],
+                "state_class": "overflow"
+              },
+              "successor_state": {
+                "K": 114048,
+                "R": 4703,
+                "absorbed_support": 1188,
+                "equation_target": [
+                  4,
+                  97
+                ],
+                "state_class": "overflow"
+              }
+            },
+            {
+              "certificate_type": "smooth23_k_one_fixed_n_saturation",
+              "determinant": {
+                "M": 195,
+                "P": 48,
+                "S": 4680,
+                "d": 24,
+                "identity": "p*n=4*M*d+1",
+                "n": 97,
+                "r": 2
+              },
+              "e1_e5": {
+                "E1": true,
+                "E2": true,
+                "E3": true,
+                "E4": true,
+                "E5": true
+              },
+              "edge_id": "edge:3d1c3b692bd3877738ad10519a9cfd361d6aef70a9b786f2b04c8558381c464f",
+              "equation_target": {
+                "denominator": 193,
+                "numerator": 4
+              },
+              "potential_record": {
+                "B_p": 9216,
+                "source": 47,
+                "strict_decrease": true,
+                "successor": 1,
+                "support_monotone": true
+              },
+              "proof_boundary": "fixed_n_low_n_saturation",
+              "recursive_edge_eligible": true,
+              "selected_candidate": {
+                "K_L": 898560,
+                "L": 4680,
+                "R_L": 18623,
+                "selection_rule": "L=S=M*d"
+              },
+              "selector_status": "verified_edge",
+              "source_reach_status": "unproved",
+              "source_state": {
+                "K": 32955,
+                "R": 683,
+                "absorbed_support": 195,
+                "equation_target": [
+                  4,
+                  193
+                ],
+                "state_class": "overflow"
+              },
+              "successor_state": {
+                "K": 898560,
+                "R": 18623,
+                "absorbed_support": 4680,
+                "equation_target": [
+                  4,
+                  193
+                ],
+                "state_class": "overflow"
+              }
+            },
+            {
+              "certificate_type": "smooth23_k_one_fixed_n_saturation",
+              "determinant": {
+                "M": 435,
+                "P": 108,
+                "S": 23490,
+                "d": 54,
+                "identity": "p*n=4*M*d+1",
+                "n": 217,
+                "r": 2
+              },
+              "e1_e5": {
+                "E1": true,
+                "E2": true,
+                "E3": true,
+                "E4": true,
+                "E5": true
+              },
+              "edge_id": "edge:897cc42862c6fffcf2e4793b0c563cbc68473c9f352eb48b503252ece5a7fd97",
+              "equation_target": {
+                "denominator": 433,
+                "numerator": 4
+              },
+              "potential_record": {
+                "B_p": 46656,
+                "source": 107,
+                "strict_decrease": true,
+                "successor": 1,
+                "support_monotone": true
+              },
+              "proof_boundary": "fixed_n_low_n_saturation",
+              "recursive_edge_eligible": true,
+              "selected_candidate": {
+                "K_L": 10147680,
+                "L": 23490,
+                "R_L": 93743,
+                "selection_rule": "L=S=M*d"
+              },
+              "selector_status": "verified_edge",
+              "source_reach_status": "unproved",
+              "source_state": {
+                "K": 164865,
+                "R": 1523,
+                "absorbed_support": 435,
+                "equation_target": [
+                  4,
+                  433
+                ],
+                "state_class": "overflow"
+              },
+              "successor_state": {
+                "K": 10147680,
+                "R": 93743,
+                "absorbed_support": 23490,
+                "equation_target": [
+                  4,
+                  433
+                ],
+                "state_class": "overflow"
+              }
+            },
+            {
+              "certificate_type": "smooth23_k_one_fixed_n_saturation",
+              "determinant": {
+                "M": 1299,
+                "P": 324,
+                "S": 210438,
+                "d": 162,
+                "identity": "p*n=4*M*d+1",
+                "n": 649,
+                "r": 2
+              },
+              "e1_e5": {
+                "E1": true,
+                "E2": true,
+                "E3": true,
+                "E4": true,
+                "E5": true
+              },
+              "edge_id": "edge:4dfc57144dbb2cd3728ffff3bd9a0d0f3ba9793b269b7ad25ca12fc201332535",
+              "equation_target": {
+                "denominator": 1297,
+                "numerator": 4
+              },
+              "potential_record": {
+                "B_p": 419904,
+                "source": 323,
+                "strict_decrease": true,
+                "successor": 1,
+                "support_monotone": true
+              },
+              "proof_boundary": "fixed_n_low_n_saturation",
+              "recursive_edge_eligible": true,
+              "selected_candidate": {
+                "K_L": 272727648,
+                "L": 210438,
+                "R_L": 841103,
+                "selection_rule": "L=S=M*d"
+              },
+              "selector_status": "verified_edge",
+              "source_reach_status": "unproved",
+              "source_state": {
+                "K": 1474365,
+                "R": 4547,
+                "absorbed_support": 1299,
+                "equation_target": [
+                  4,
+                  1297
+                ],
+                "state_class": "overflow"
+              },
+              "successor_state": {
+                "K": 272727648,
+                "R": 841103,
+                "absorbed_support": 210438,
+                "equation_target": [
+                  4,
+                  1297
+                ],
+                "state_class": "overflow"
+              }
+            }
+          ],
+          "recursive_edge_eligible": true,
+          "saturation_lemma": "n<=p-2 and S=M*d<=B_p; L=S gives R_L=(p-1)*n-1, K_L=S*(p-1), and Pi(S)<Pi(M)",
+          "seed_count": 5,
+          "selector_status": "verified_edge_conditional_on_reachability",
+          "source_reach_status": "unproved"
+        },
         "parameter_range": "1<=k<=floor((B_p-r)/p)",
         "proof_boundary": "smooth23_parametric_fixed_s_support_saturation",
         "recursive_edge_eligible": false,

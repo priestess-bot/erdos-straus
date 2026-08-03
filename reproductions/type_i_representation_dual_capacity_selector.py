@@ -3337,12 +3337,122 @@ def smooth23_fixed_s_parametric_family() -> dict[str, object]:
         "selector_status": "analysis_evidence",
         "recursive_edge_eligible": False,
         "proof_boundary": "smooth23_parametric_fixed_s_support_saturation",
+        "k_one_fixed_n_saturation": smooth23_k_one_fixed_n_saturation(),
         "conclusion": (
             "For each listed prime seed and every allowed k, p*n=4*M*d+1, "
             "R_M>p, s=1, and every fixed-s divisor L|r*d is below A=M. "
-            "This is a genuine r,d>1 arithmetic overflow boundary, not a "
-            "recursive edge or a reachability claim."
+            "This is a genuine r,d>1 arithmetic overflow boundary. The k=1 "
+            "subfamily additionally has a conditional fixed-n saturation edge; "
+            "source reachability for the family remains unproved."
         ),
+    }
+
+
+def smooth23_k_one_fixed_n_saturation() -> dict[str, object]:
+    """Give the exact fixed-n rank edge for the k=1 smooth family.
+
+    The family remains conditional on source reachability.  Once a member is
+    reached, the fixed-n determinant admits the saturated divisor L=M*d,
+    because n=2*P+1 <= p-2 and S=M*d <= B_p.
+    """
+    seed_exponents = [(1, 2), (3, 1), (4, 1), (2, 3), (2, 4)]
+    receipts: list[dict[str, object]] = []
+    for exponent_two, exponent_three in seed_exponents:
+        product = 2**exponent_two * 3**exponent_three
+        prime = 4 * product + 1
+        if factorization(prime) != [[prime, 1]]:
+            raise AssertionError("smooth k=1 fixed-n seed changed")
+        residue = 2
+        dual_carrier = product // residue
+        carrier = prime + residue
+        n = 2 * product + 1
+        S = carrier * dual_carrier
+        B_prime = (prime - 1) ** 2 // 4
+        target_R = 4 * S - n
+        target_K = S * (prime - 1)
+        source_potential = B_prime // carrier
+        successor_potential = B_prime // S
+        if (
+            prime * n != 4 * carrier * dual_carrier + 1
+            or n > prime - 2
+            or S > B_prime
+            or dual_carrier < 2
+            or S <= carrier
+            or 4 * S <= n
+            or target_R != (prime - 1) * n - 1
+            or target_R <= prime
+            or target_K != S * (prime - 1)
+            or canonical_chart(prime, S) != (target_R, target_K)
+            or successor_potential >= source_potential
+        ):
+            raise AssertionError("smooth k=1 fixed-n saturation identity changed")
+        source_state = {
+            "equation_target": [4, prime],
+            "R": 4 * carrier - n,
+            "K": carrier * (prime - dual_carrier),
+            "absorbed_support": carrier,
+            "state_class": "overflow",
+        }
+        successor_state = {
+            "equation_target": [4, prime],
+            "R": target_R,
+            "K": target_K,
+            "absorbed_support": S,
+            "state_class": "overflow",
+        }
+        receipts.append(
+            {
+                "edge_id": "edge:" + canonical_hash(
+                    {"source": source_state, "successor": successor_state}
+                ),
+                "certificate_type": "smooth23_k_one_fixed_n_saturation",
+                "source_state": source_state,
+                "successor_state": successor_state,
+                "equation_target": {"numerator": 4, "denominator": prime},
+                "determinant": {
+                    "P": product,
+                    "M": carrier,
+                    "r": residue,
+                    "d": dual_carrier,
+                    "n": n,
+                    "S": S,
+                    "identity": "p*n=4*M*d+1",
+                },
+                "selected_candidate": {
+                    "L": S,
+                    "R_L": target_R,
+                    "K_L": target_K,
+                    "selection_rule": "L=S=M*d",
+                },
+                "potential_record": {
+                    "B_p": B_prime,
+                    "source": source_potential,
+                    "successor": successor_potential,
+                    "strict_decrease": True,
+                    "support_monotone": True,
+                },
+                "e1_e5": {f"E{i}": True for i in range(1, 6)},
+                "selector_status": "verified_edge",
+                "recursive_edge_eligible": True,
+                "source_reach_status": "unproved",
+                "proof_boundary": "fixed_n_low_n_saturation",
+            }
+        )
+    return {
+        "condition": (
+            "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=p+2, "
+            "n=2P+1, A=M"
+        ),
+        "seed_count": len(receipts),
+        "source_reach_status": "unproved",
+        "selector_status": "verified_edge_conditional_on_reachability",
+        "recursive_edge_eligible": True,
+        "proof_boundary": "smooth23_k_one_fixed_n_saturation",
+        "saturation_lemma": (
+            "n<=p-2 and S=M*d<=B_p; L=S gives R_L=(p-1)*n-1, "
+            "K_L=S*(p-1), and Pi(S)<Pi(M)"
+        ),
+        "receipts": receipts,
     }
 
 
@@ -5143,6 +5253,73 @@ def verify_overflow_fixed_s_bounded_divisor_contract(
                 or int(row["K"]) % int(row["carrier"])
             ):
                 raise AssertionError("bounded fixed-s smooth family row changed")
+    k_one = family.get("k_one_fixed_n_saturation")
+    if not isinstance(k_one, dict):
+        raise AssertionError("smooth k=1 fixed-n saturation receipt missing")
+    if (
+        k_one.get("condition")
+        != (
+            "P=2^a*3^b, p=4P+1 prime, r=2, d=P/2, M=p+2, "
+            "n=2P+1, A=M"
+        )
+        or k_one.get("seed_count") != 5
+        or k_one.get("source_reach_status") != "unproved"
+        or k_one.get("selector_status")
+        != "verified_edge_conditional_on_reachability"
+        or k_one.get("recursive_edge_eligible") is not True
+        or k_one.get("proof_boundary") != "smooth23_k_one_fixed_n_saturation"
+    ):
+        raise AssertionError("smooth k=1 fixed-n saturation metadata changed")
+    k_one_receipts = k_one.get("receipts")
+    if not isinstance(k_one_receipts, list) or len(k_one_receipts) != 5:
+        raise AssertionError("smooth k=1 fixed-n saturation receipt shape changed")
+    for receipt in k_one_receipts:
+        if not isinstance(receipt, dict):
+            raise AssertionError("smooth k=1 fixed-n saturation row is not an object")
+        if (
+            receipt.get("certificate_type")
+            != "smooth23_k_one_fixed_n_saturation"
+            or receipt.get("selector_status") != "verified_edge"
+            or receipt.get("recursive_edge_eligible") is not True
+            or receipt.get("source_reach_status") != "unproved"
+            or receipt.get("e1_e5") != {f"E{i}": True for i in range(1, 6)}
+        ):
+            raise AssertionError("smooth k=1 fixed-n saturation crossed status boundary")
+        source = receipt.get("source_state")
+        successor = receipt.get("successor_state")
+        determinant = receipt.get("determinant")
+        selected = receipt.get("selected_candidate")
+        potential = receipt.get("potential_record")
+        if not all(
+            isinstance(value, dict)
+            for value in (source, successor, determinant, selected, potential)
+        ):
+            raise AssertionError("smooth k=1 fixed-n saturation payload incomplete")
+        prime = int(receipt["equation_target"]["denominator"])
+        M = int(determinant["M"])
+        d = int(determinant["d"])
+        n = int(determinant["n"])
+        S = int(determinant["S"])
+        L = int(selected["L"])
+        B_prime = (prime - 1) ** 2 // 4
+        if (
+            determinant.get("identity") != "p*n=4*M*d+1"
+            or prime * n != 4 * M * d + 1
+            or L != S
+            or L != M * d
+            or L > B_prime
+            or M >= L
+            or 4 * L <= n
+            or int(selected["R_L"]) != 4 * L - n
+            or int(selected["K_L"]) != L * (prime - 1)
+            or canonical_chart(prime, L)
+            != (int(selected["R_L"]), int(selected["K_L"]))
+            or int(potential["source"]) != B_prime // M
+            or int(potential["successor"]) != B_prime // L
+            or potential.get("strict_decrease") is not True
+            or potential.get("support_monotone") is not True
+        ):
+            raise AssertionError("smooth k=1 fixed-n saturation identity changed")
     for receipt in receipts:
         if not isinstance(receipt, dict):
             raise AssertionError("bounded fixed-s divisor row is not an object")
