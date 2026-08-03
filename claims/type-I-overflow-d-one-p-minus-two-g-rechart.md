@@ -141,6 +141,18 @@ p-2\equiv-1\pmod q.
    证书。若没有该因子，d=1 分支的剩余任务明确变成非支撑 Type I/II、marked lift
    或跨状态容量，而不是继续寻找固定-(n) 支撑边。
 
+还有一个与 fixed-s 有界除子选择器直接相容的负边界。d=1 时
+
+\[
+r=\frac{p-1}{4},\qquad s=1,\qquad rd=r.
+\]
+
+因此若当前 charged support 满足 \(A\ge r\)，则任意 \(L\mid rd\) 都有
+\(L\le r\le A\)，不可能满足固定-s 外层秩边所需的 \(A<L\)。此时 fixed-s
+有界除子图谱为空，不是选择器漏检；后继只能来自非支撑 Type I/II、marked lift
+或跨状态容量。若 \(A<r\)，则 \(L=r\) 才可能成为候选，且严格势的无样本充分
+条件是 \(r\ge2A\)。
+
 因此该定理把 d=1 从“固定-(n) 候选为空”的算术杂项，收缩为一个普适的 G 边界；它
 没有关闭一般 (A>1, R_M>p) overflow。
 
