@@ -111,6 +111,7 @@
 
 - 2025-02-26 · [The Erdos-Straus Conjecture and Pythagorean Primes](../papers/schuh2025.md) — Bernd R. Schuh; 出版年 2025; `preprint` / `heuristic`
 - 2025-02-28 · [Partial Resolution of the Erdos-Straus, Sierpinski, and Generalized Erdos-Straus Conjectures Using New Analytical Formulas](../papers/mballa2025.md) — Philemon Urbain Mballa; 出版年 2025; `preprint` / `verified_with_caveat`
+- 2025-05-26 · [On the Inverse Problem of the k-th Davenport Constants for Groups of Rank 2](../papers/zhong2025-davenport-rank-two.md) — Qinghai Zhong; 出版年 2025; `peer_reviewed` / `verified_with_caveat`
 - 2025-08-10 · [Exact Polynomial Families Solving the Erdos-Straus Equation](../papers/ghermoul2025.md) — Bilal Ghermoul; 出版年 2025; `preprint` / `computationally_reported`
 - 2025-08-29 · [Further verification and empirical evidence for the Erdos-Straus conjecture](../papers/mihnea_dumitru2025.md) — Spiridon Mihnea, Bogdan C. Dumitru; 出版年 2025; `preprint` / `computationally_reported`
 - 2025-11-07 · [Constructive Proofs of the Erdos-Straus Conjecture for Prime Numbers with P congruent to 1 modulo 4](../papers/dyachenko2025.md) — E. Dyachenko; 出版年 2025; `preprint` / `claim_with_gap`

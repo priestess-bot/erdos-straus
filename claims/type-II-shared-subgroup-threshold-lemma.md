@@ -106,5 +106,7 @@ D=q_{i+1}\cdots q_j
 
 在 p-primary 生成子群上，精确 Davenport 阈值已经进一步收紧这一边界，见
 [共享 Type II p 群 Davenport 阈值](type-II-shared-p-group-davenport-threshold.md)。
-该分支只改变充分条件的阈值，不改变本卡的零覆盖结论，也不处理非 p-primary 子群或
-跨缺口的共同避靶。
+对更一般的循环或秩二子群，现有精确公式又给出
+[共享 Type II 秩至多二 Davenport 阈值](type-II-shared-rank-two-davenport-threshold.md)。
+这些分支只改变充分条件的阈值，不改变本卡的零覆盖结论，也不处理秩至少三的子群、
+低于阈值的短零积或跨缺口的共同避靶。

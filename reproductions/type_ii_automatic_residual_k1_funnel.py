@@ -192,6 +192,119 @@ def p_group_davenport_data(
     return prime, tuple(exponents), davenport
 
 
+def integer_prime_factorization(value: int) -> dict[int, int]:
+    """Factor a small positive integer without relying on the SPF table."""
+    if value < 1:
+        raise ValueError("value must be positive")
+    factors: dict[int, int] = {}
+    divisor = 2
+    while divisor * divisor <= value:
+        while value % divisor == 0:
+            factors[divisor] = factors.get(divisor, 0) + 1
+            value //= divisor
+        divisor += 1
+    if value > 1:
+        factors[value] = factors.get(value, 0) + 1
+    return factors
+
+
+def primary_component_exponents(
+    subgroup: frozenset[int],
+    modulus: int,
+    prime: int,
+    primary_order: int,
+) -> tuple[int, ...]:
+    """Recover elementary-divisor exponents of one primary component."""
+    if primary_order < 1:
+        raise ValueError("primary order must be positive")
+    exponents_at_least: list[int] = []
+    previous_log = 0
+    prime_power = prime
+    while True:
+        torsion_count = sum(
+            pow(element, prime_power, modulus) == 1 for element in subgroup
+        )
+        if torsion_count < 1 or torsion_count > primary_order:
+            raise AssertionError("invalid primary torsion count")
+        log_count = 0
+        count = torsion_count
+        while count > 1:
+            if count % prime:
+                raise AssertionError("primary torsion count is not a prime power")
+            count //= prime
+            log_count += 1
+        components_at_least = log_count - previous_log
+        if components_at_least < 0:
+            raise AssertionError("primary torsion dimensions decreased")
+        exponents_at_least.append(components_at_least)
+        previous_log = log_count
+        if torsion_count == primary_order:
+            break
+        prime_power *= prime
+        if prime_power > primary_order * prime:
+            raise AssertionError("primary torsion did not exhaust subgroup")
+
+    exponents: list[int] = []
+    for index, count_at_least in enumerate(exponents_at_least):
+        next_count = (
+            exponents_at_least[index + 1]
+            if index + 1 < len(exponents_at_least)
+            else 0
+        )
+        if count_at_least < next_count:
+            raise AssertionError("primary component counts are not nested")
+        exponents.extend([index + 1] * (count_at_least - next_count))
+    if prime ** sum(exponents) != primary_order:
+        raise AssertionError("recovered primary exponents have wrong order")
+    return tuple(exponents)
+
+
+def abelian_invariant_factor_data(
+    subgroup: frozenset[int], modulus: int
+) -> tuple[tuple[int, ...], tuple[tuple[int, tuple[int, ...]], ...]]:
+    """Recover invariant factors and primary exponents of a finite unit subgroup."""
+    order = len(subgroup)
+    if order == 1:
+        return (1,), ()
+    factorization = integer_prime_factorization(order)
+    primary_data = tuple(
+        (
+            prime,
+            primary_component_exponents(
+                subgroup, modulus, prime, prime**exponent
+            ),
+        )
+        for prime, exponent in sorted(factorization.items())
+    )
+    rank = max(len(exponents) for _, exponents in primary_data)
+    invariant_factors = [1] * rank
+    for prime, exponents in primary_data:
+        padded = [0] * (rank - len(exponents)) + list(exponents)
+        for index, exponent in enumerate(padded):
+            invariant_factors[index] *= prime**exponent
+    if any(
+        invariant_factors[index + 1] % invariant_factors[index]
+        for index in range(rank - 1)
+    ):
+        raise AssertionError("invariant factors are not nested")
+    if math.prod(invariant_factors) != order:
+        raise AssertionError("invariant factors have wrong order")
+    return tuple(invariant_factors), primary_data
+
+
+def rank_two_davenport_data(
+    subgroup: frozenset[int], modulus: int
+) -> tuple[tuple[int, ...], tuple[tuple[int, tuple[int, ...]], ...], int] | None:
+    """Return exact Davenport data for cyclic or rank-two abelian subgroups."""
+    invariant_factors, primary_data = abelian_invariant_factor_data(
+        subgroup, modulus
+    )
+    if len(invariant_factors) > 2:
+        return None
+    davenport = 1 + sum(invariant - 1 for invariant in invariant_factors)
+    return invariant_factors, primary_data, davenport
+
+
 def nonempty_subproduct_one(factors: list[int], modulus: int) -> int | None:
     """Construct any nonempty subproduct equal to one modulo ``modulus``."""
     reachable: dict[int, tuple[int, int]] = {1: (1, 0)}
@@ -422,6 +535,122 @@ def p_group_davenport_shared_profile(
         "threshold_eligible_gap_count": threshold_eligible_gap_count,
         "davenport_threshold_histogram": dict(sorted(threshold_histogram.items())),
         "p_group_prime_histogram": dict(sorted(group_prime_histogram.items())),
+    }
+
+
+def rank_two_davenport_shared_profile(
+    records: list[dict[str, object]], gap_cap: int, spf: list[int]
+) -> dict[str, object]:
+    """Apply the exact Davenport threshold for abelian groups of rank at most two."""
+    witnesses: list[dict[str, object]] = []
+    misses: list[int] = []
+    rank_two_gap_count = 0
+    threshold_eligible_gap_count = 0
+    rank_histogram: Counter[int] = Counter()
+    threshold_histogram: Counter[int] = Counter()
+    invariant_factor_histogram: Counter[tuple[int, ...]] = Counter()
+    for record in records:
+        prime = int(record["prime"])
+        candidates: list[
+            tuple[
+                int,
+                int,
+                int,
+                tuple[int, ...],
+                int,
+                tuple[tuple[int, tuple[int, ...]], ...],
+            ]
+        ] = []
+        for gap in range(3, min(gap_cap, prime - 2) + 1, 4):
+            certificate = short_certificate.type_ii_residue_certificate(
+                prime, gap, spf
+            )
+            if certificate is None:
+                continue
+            factors = unit_prime_factor_multiset_from_spf(prime + gap, gap, spf)
+            subgroup = generated_unit_residue_subgroup(factors, gap)
+            davenport_data = rank_two_davenport_data(subgroup, gap)
+            if davenport_data is None:
+                continue
+            invariant_factors, primary_data, davenport = davenport_data
+            rank_two_gap_count += 1
+            rank = len(invariant_factors)
+            rank_histogram[rank] += 1
+            threshold_histogram[davenport] += 1
+            invariant_factor_histogram[invariant_factors] += 1
+            if len(factors) < davenport:
+                continue
+            threshold_eligible_gap_count += 1
+            shared_divisor = nonempty_subproduct_one(factors, gap)
+            if shared_divisor is None:
+                raise AssertionError(
+                    "rank-two Davenport threshold did not force a divisor"
+                )
+            first_scale = (shared_divisor - 1) // gap
+            witness = short_certificate.type_ii_scaled_first_tail_deflation_witness(
+                prime, gap, first_scale, spf
+            )
+            if witness is None:
+                raise AssertionError("rank-two Davenport candidate did not lift")
+            candidates.append(
+                (
+                    gap,
+                    shared_divisor,
+                    len(factors),
+                    invariant_factors,
+                    davenport,
+                    primary_data,
+                )
+            )
+        if not candidates:
+            misses.append(prime)
+            continue
+        (
+            gap,
+            shared_divisor,
+            factor_count,
+            invariant_factors,
+            davenport,
+            primary_data,
+        ) = min(candidates)
+        witnesses.append(
+            {
+                "prime": prime,
+                "gap": gap,
+                "shared_divisor": shared_divisor,
+                "first_scale": (shared_divisor - 1) // gap,
+                "unit_factor_multiplicity": factor_count,
+                "generated_subgroup_order": math.prod(invariant_factors),
+                "invariant_factors": list(invariant_factors),
+                "davenport_constant": davenport,
+                "primary_components": [
+                    {"prime": group_prime, "exponents": list(exponents)}
+                    for group_prime, exponents in primary_data
+                ],
+            }
+        )
+    return {
+        "arithmetic": (
+            "complete legal-gap Type II certificate scan; invariant factors are "
+            "recovered from exact primary torsion counts, and the rank-at-most-two "
+            "Davenport formula is followed by a dynamic subproduct witness"
+        ),
+        "scope_note": (
+            "This is a sufficient condition only. It applies to cyclic or rank-two "
+            "generated residue subgroups; groups of rank at least three remain outside "
+            "this threshold."
+        ),
+        "rank_two_davenport_shared_count": len(witnesses),
+        "rank_two_davenport_shared_witnesses": witnesses,
+        "rank_two_davenport_shared_misses": misses,
+        "rank_two_gap_count": rank_two_gap_count,
+        "threshold_eligible_gap_count": threshold_eligible_gap_count,
+        "rank_histogram": dict(sorted(rank_histogram.items())),
+        "davenport_threshold_histogram": dict(sorted(threshold_histogram.items())),
+        "invariant_factor_histogram": {
+            ",".join(str(value) for value in invariant_factors): count
+            for invariant_factors, count in sorted(invariant_factor_histogram.items())
+        },
     }
 
 
@@ -709,6 +938,7 @@ def run_audit(
     include_single_prime_profile: bool = False,
     include_subgroup_threshold_profile: bool = False,
     include_p_group_davenport_profile: bool = False,
+    include_rank_two_davenport_profile: bool = False,
     include_totient_threshold_profile: bool = False,
     include_prime_power_profile: bool = False,
     include_support_profile: bool = False,
@@ -788,6 +1018,10 @@ def run_audit(
         result["p_group_davenport_shared_profile"] = p_group_davenport_shared_profile(
             non_k1_records, gap_cap, spf
         )
+    if include_rank_two_davenport_profile:
+        result["rank_two_davenport_shared_profile"] = rank_two_davenport_shared_profile(
+            non_k1_records, gap_cap, spf
+        )
     if include_totient_threshold_profile:
         result["totient_threshold_shared_profile"] = totient_threshold_shared_profile(
             non_k1_records, gap_cap, spf
@@ -832,6 +1066,11 @@ def main() -> int:
         help="also apply the exact Davenport threshold for p-primary unit subgroups",
     )
     parser.add_argument(
+        "--rank-two-davenport-profile",
+        action="store_true",
+        help="also apply the exact Davenport threshold for rank-at-most-two subgroups",
+    )
+    parser.add_argument(
         "--prime-power-profile",
         action="store_true",
         help="also scan every legal gap for a one-prime-power shared divisor",
@@ -854,6 +1093,7 @@ def main() -> int:
         include_single_prime_profile=args.single_prime_profile,
         include_subgroup_threshold_profile=args.subgroup_threshold_profile,
         include_p_group_davenport_profile=args.p_group_davenport_profile,
+        include_rank_two_davenport_profile=args.rank_two_davenport_profile,
         include_totient_threshold_profile=args.totient_threshold_profile,
         include_prime_power_profile=args.prime_power_profile,
         include_support_profile=args.support_profile,

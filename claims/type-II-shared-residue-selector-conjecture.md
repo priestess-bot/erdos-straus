@@ -18,8 +18,10 @@ sources:
 - paper: chamberland2026
   locator: Theorem 1
   role: Type-II-factorization-context
+- claim: type-II-shared-rank-two-davenport-threshold
+  role: rank-at-most-two-local-threshold
 visibility: public
-last_checked: '2026-07-24'
+last_checked: '2026-08-04'
 ---
 
 # 共享除子残数 Type II 选择器猜想
@@ -141,6 +143,14 @@ Type II 缺口扫描后，9 点有 \(q\mid p+m,\ q\equiv1\pmod m\)；在其余 7
 type-II-shared-p-group-davenport-threshold 中实现。10M 聚焦回放对 84 个
 压力点产生 28 个新构造性命中，但仍留下 56 个未覆盖点；因此这是一条有限群结构
 分支，不是共享选择器猜想的全称闭合。
+
+对非 p-primary 但秩至多二的生成子群，循环或
+\(H=C_{n_1}\oplus C_{n_2}\)、\(n_1\mid n_2\) 时可用
+\(D(H)=n\) 或 \(D(H)=n_1+n_2-1\) 的精确阈值。10M、\(m\le239\) 的秩二 profile
+覆盖 29/84 个压力点，其中 28 个是既有 \(C_2\oplus C_4\) 见证，新增
+\(p=1497049,m=39,H=C_2\oplus C_{12}\) 的共享除子。仍有 55 个 profile miss，且
+秩至少三、阈值以下短零积和 marked 到无标记递降未处理；详见
+[共享 Type II 秩至多二 Davenport 阈值](type-II-shared-rank-two-davenport-threshold.md)。
 
 最短零积长度的六因子强化已在更大范围失败：\(p=95741809\) 于 \(m=71\) 的最短
 共享因子为 \(7364760=2^3\cdot3\cdot5\cdot13\cdot4721\)，有

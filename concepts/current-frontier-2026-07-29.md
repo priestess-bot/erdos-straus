@@ -19,6 +19,7 @@ used_by:
 - type-I-overflow-same-chart-support-promotion
 - type-I-overflow-a-one-dual-outer-rank-reset
 - type-II-shared-p-group-davenport-threshold
+- type-II-shared-rank-two-davenport-threshold
 sources:
 - claim: type-I-universal-p-source-capacity-anchor-orbit
   role: universal-source-and-capacity-orbit
@@ -34,6 +35,8 @@ sources:
   role: universal-A-one-dual-reset-subfamily
 - claim: type-II-shared-p-group-davenport-threshold
   role: p-primary-shared-Type-II-threshold
+- claim: type-II-shared-rank-two-davenport-threshold
+  role: rank-at-most-two-shared-Type-II-threshold
 - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
   role: finite-Fourier-carrier-capacity-boundary
 - claim: type-I-bottom-word-lattice-pareto-cycle-capacity-selector
@@ -3449,3 +3452,30 @@ p-primary 缺口，其中 28 个达到 Davenport 阈值并构造出共享见证�
 这条分支是 Type II 侧的实质性局部推进，但仍留下 56/84 个压力点；非 p-primary
 子群、低于 \(D(H)\) 的短零积和跨缺口共同避靶尚未处理。它不改变旗舰全称余项仍集中
 在 overflow 换载体、终端或合法后继三分，也不把 marked 表示误报成无标记递归证明。
+
+## 2026-08-04：秩至多二的非 p-primary Type II Davenport 收紧
+
+为继续处理 p-primary 分支之外的低秩子群，脚本按各 primary 分量的精确扭元计数恢复
+不变因子。对循环群 \(C_n\) 使用 \(D(C_n)=n\)，对
+\(C_{n_1}\oplus C_{n_2}\)、\(n_1\mid n_2\)，使用秩二公式
+
+\[
+D(H)=n_1+n_2-1.
+\]
+
+这把 p-primary 见证扩展到一般的秩至多二单位残数子群；群论输入见
+[Zhong 2025 秩二 Davenport 文献卡](../papers/zhong2025-davenport-rank-two.md)，
+应用主张见[共享 Type II 秩至多二 Davenport 阈值](../claims/type-II-shared-rank-two-davenport-threshold.md)。
+
+10M、\(m\le239\) 回放中，933 个已有 Type II 的秩至多二缺口分为 496 个循环和
+437 个秩二缺口；29 个达到阈值并重建共享 marked witness，覆盖 84 个压力点中的
+29 个。此前 28 个 \(C_2\oplus C_4\) p-primary 见证全部保留，并新增
+
+\[
+p=1497049,\quad m=39,\quad H\simeq C_2\oplus C_{12},\quad
+t=13,\quad D(H)=13,
+\]
+
+对应共享除子 \(D_I=44032\)、首尺度 \(k=1129\)。仍有 55 个压力点未被该阈值覆盖。
+秩至少三、低于 Davenport 阈值的短零积和跨缺口共同避靶仍未处理；因此这只是 Type II
+局部结构层的扩大，不改变旗舰全称余项。

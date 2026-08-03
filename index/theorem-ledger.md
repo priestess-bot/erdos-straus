@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 368 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 333 |
+| 数学状态 | `established` | 334 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 124 |
 | 证明来源 | `mixed` | 24 |
-| 证明来源 | `repository_derivation` | 165 |
+| 证明来源 | `repository_derivation` | 166 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 295 |
+| 审阅状态 | `internal_review` | 296 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -703,8 +703,9 @@
 | [共享 Type II 选择器的半百万缺口逃逸边界](../claims/type-II-shared-half-million-gap-escape-boundary.md) (`type-II-shared-half-million-gap-escape-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [共享 Type II 选择器的 p 群 Davenport 阈值](../claims/type-II-shared-p-group-davenport-threshold.md) (`type-II-shared-p-group-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `olson1969_davenport_p_groups`, `grynkiewicz_marchan_ordaz2009` | 2026-08-04 |
 | [共享 Type II 选择器的单素数幂边界](../claims/type-II-shared-prime-power-selection-boundary.md) (`type-II-shared-prime-power-selection-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
+| [共享 Type II 选择器的秩至多二 Davenport 阈值](../claims/type-II-shared-rank-two-davenport-threshold.md) (`type-II-shared-rank-two-davenport-threshold`) | `established` | `repository_derivation` | `internal_review` | `zhong2025_davenport_rank_two`, `olson1969_davenport_p_groups` | 2026-08-04 |
 | [共享除子残数选择器的固定缺口耦合边界](../claims/type-II-shared-residue-fixed-gap-boundary.md) (`type-II-shared-residue-fixed-gap-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
-| [共享除子残数 Type II 选择器猜想](../claims/type-II-shared-residue-selector-conjecture.md) (`type-II-shared-residue-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
+| [共享除子残数 Type II 选择器猜想](../claims/type-II-shared-residue-selector-conjecture.md) (`type-II-shared-residue-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-08-04 |
 | [连续共享 Type II 窗口的联合有限碰撞状态分解](../claims/type-II-shared-selector-finite-collision-state.md) (`type-II-shared-selector-finite-collision-state`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-25 |
 | [共享 Type II 选择器的单素因子边界](../claims/type-II-shared-single-prime-selection-boundary.md) (`type-II-shared-single-prime-selection-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [共享 Type II 选择器的最短零积长度谱及六因子反例](../claims/type-II-shared-six-factor-profile-boundary.md) (`type-II-shared-six-factor-profile-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `grynkiewicz_marchan_ordaz2009` | 2026-07-25 |

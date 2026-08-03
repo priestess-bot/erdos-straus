@@ -4726,3 +4726,41 @@ p_group_davenport_shared_profile。指数由 \(H[\ell^k]\) 的精确扭元计数
     python3 reproductions/type_ii_automatic_residual_k1_funnel.py \
       --limit 10000000 --gap-cap 239 --p-group-davenport-profile \
       --output reproductions/type-ii-automatic-residual-p-group-davenport-profile-10m-results.json
+
+## 2026-08-04 秩至多二 Type II Davenport 收紧
+
+### 目的
+
+沿着路线复查中指出的“非 p-primary 低秩子群”方向，检查生成子群的完整不变因子，
+把 p-primary 阈值扩展到循环和秩二的有限阿贝尔群。
+
+### 精确输入与实现
+
+对 \(H\le(\mathbb Z/m\mathbb Z)^\times\) 的每个 primary 分量，脚本用
+\(|H[\ell^j]|\) 的精确扭元计数恢复 elementary-divisor 指数；左补齐各分量后得到
+不变因子 \(C_n\) 或 \(C_{n_1}\oplus C_{n_2}\)。采用
+
+\[
+D(C_n)=n,\quad D(C_{n_1}\oplus C_{n_2})=n_1+n_2-1
+\quad(n_1\mid n_2).
+\]
+
+达到阈值后，动态子积表构造非空 \(D_I\equiv1\pmod m\)，并重放
+scaled-first marked Type II 提升。实现、文献输入和边界见[秩至多二 Davenport 阈值主张](../claims/type-II-shared-rank-two-davenport-threshold.md)。
+
+### 10M 回放
+
+在 84 个非 \(k=1\) 压力点、完整合法 \(m\le239\) 扫描中：
+
+- 秩至多二缺口 933 个，其中循环 496、秩二 437；
+- 29 个缺口达到阈值并产生 29 个压力点见证；
+- 28 个见证与既有 \(C_2\oplus C_4\) p-primary 分支重合；
+- 新增 \(p=1497049,m=39,H=C_2\oplus C_{12},t=13,D(H)=13\) 的见证，
+  共享除子 \(D_I=44032\)，首尺度 \(k=1129\)；
+- 55/84 个压力点仍未被该 profile 覆盖。
+
+### 边界与下一步
+
+秩至少三、低于 Davenport 阈值的短零积、跨缺口共同避靶以及 marked 到无标记递降均
+仍开放。profile miss 只表示未达到本充分条件，不表示没有其它共享除子，也不构成
+overflow 的全称递归出口。

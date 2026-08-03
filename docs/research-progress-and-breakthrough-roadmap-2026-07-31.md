@@ -280,6 +280,16 @@ witness。10M、\(m\le239\) 回放在 84 个非 \(k=1\) 压力点中识别 51 �
 marked Type II 表示升级为无标记递降。后文关于“两个主余项”的历史文字按上述
 2026-08-03 口径解释。
 
+**2026-08-04 秩至多二扩展。** 为处理上述非 p-primary 低秩缺口，现按单位残数生成子群
+的完整 primary 分量恢复不变因子。对循环群 \(C_n\) 使用 \(D(C_n)=n\)，对
+\(C_{n_1}\oplus C_{n_2}\)、\(n_1\mid n_2\)，使用
+\(D(H)=n_1+n_2-1\)。10M、\(m\le239\) 回放在同一 84 个压力点中找到 933 个秩至多二
+缺口（496 个循环、437 个秩二），29 个达到阈值并重建共享 marked witness；这 29 个
+包含原 p-primary 分支的 28 个见证，并新增
+\(p=1497049,m=39,H=C_2\oplus C_{12},t=13,D(H)=13,D_I=44032\)。
+profile 仍有 55/84 个压力点未覆盖，且秩至少三、阈值以下短零积、跨缺口共同避靶和
+marked 到无标记递降均未解决。详见[共享 Type II 秩至多二 Davenport 阈值](../claims/type-II-shared-rank-two-davenport-threshold.md)。
+
 ## 一、结论先行
 
 最近这一轮工作的价值明显高于继续扩大有限扫描。项目已经把上一阶段的“联合带符号分母缺陷”推进成一条更完整的结构链：
@@ -318,8 +328,8 @@ marked Type II 表示升级为无标记递降。后文关于“两个主余项�
 - \(R_M>p\) 的 complete-excess bundle overflow，其中
   \(M=\operatorname{lcm}(A,Q)\)，需要换载体、终端或全局良基 support reset。
 
-独立的 Type II 共享选择器仍有 84 个有限压力点，其中 p-primary Davenport 分支只
-覆盖 28 个；它是辅助短证书路线，不是 overflow 余项的替代名称。
+独立的 Type II 共享选择器仍有 84 个有限压力点，其中秩至多二 Davenport 分支覆盖
+29 个（p-primary 子分支覆盖 28 个）；它是辅助短证书路线，不是 overflow 余项的替代名称。
 
 此前列出的 competing-excess sink-SCC 已由最小坐标 complete-excess bundle 定理
 关闭为 marked absorb 或 bundle overflow，不再是独立余项。
@@ -333,7 +343,7 @@ marked Type II 表示升级为无标记递降。后文关于“两个主余项�
 | 冻结 \(\Psi_0=1\) 状态 | 483/483 状态内候选闭合 | 很强有限证据 |
 | 广义二进终端 | 内部选择器成熟，自然提升被关闭 | 路线澄清 |
 | external slab | clean \(AQ\) 与一般 bundle \(\operatorname{lcm}(A,Q)\) 均有良基边 | 余项只剩 bundle overflow |
-| 标记递降 | \(n=p-1\) 层及同 \(1\bmod4\) 的 non-source D-only 均已证明全空；Type II p-primary 分支新增 28 个有限命中 | overflow 必须换尾或换载体，全称 Type II 仍开放 |
+| 标记递降 | \(n=p-1\) 层及同 \(1\bmod4\) 的 non-source D-only 均已证明全空；Type II 秩至多二 Davenport 分支新增 29 个有限命中 | overflow 必须换尾或换载体，全称 Type II 仍开放 |
 | 全称选择器 | 尚未闭合 | 决定性缺口仍在 |
 | 独立复核 | 仍明显不足 | 可信度瓶颈 |
 
