@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界与 q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier 族级容量负边界、hard-core 负边界和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier 族级容量负边界、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -44,6 +44,8 @@ sources:
     role: E1-E5-state-and-edge-contract
   - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
     role: frozen-F-real-carrier-capacity-negative-boundary
+  - claim: type-I-overflow-defect-unit-phase-capacity
+    role: typed-support-debt-phase-bridge
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -71,6 +73,7 @@ overflow_fixed_s_outer_rank_reset
 overflow_outer_rank_reset
 overflow_hard_core_gap_obstruction
 overflow_qadic_phase_capacity
+overflow_support_debt_phase_bridge
 ```
 
 同一个状态只选择最先可验证的分支；后续证据仍可作为 `capacity_receipts` 附加保存，
@@ -113,7 +116,7 @@ verified_edge
 45 个 F 状态重算 141 个实际线性载体方向及同色/混色容量摘要；固定-\(n\) 回执则重算一个保持
 `Sol(p)` 的恒等提升和 absorbed-support 势下降；hard-core 回执精确记录固定-\(n\) 因子
 间隙与双对偶未支付 \(q\)-幂；overflow 容量回执验证的是逐素数幂支付、缺陷单位相位分胞
-及条件性容量统计。前三类证据、hard-core 负边界和容量审计统一标为
+及条件性容量统计。前三类证据、hard-core 负边界、support-debt phase bridge 和容量审计统一标为
 `selector_status=analysis_evidence`、`recursive_edge_eligible=false`；固定-\(n\) 正例可在
 E1--E5 完整时标为 `verified_edge`。
 
@@ -139,6 +142,9 @@ RESET 回执还保存
    容量；原始 \(O_d,O_r\) 不自动是共享相位。
 6. `overflow_hard_core_gap_obstruction` 只是否定当前固定-\(n\)/双对偶菜单；它不能
    被解释为无后继、标记纤维为空或猜想反例。
+7. `overflow_support_debt_phase_bridge` 只要求每个聚焦 RESET debt 因子与 phase-unit
+   账本逐行匹配；它不声称该单位来自真实 alternate/source-switch，也不提供 marked
+   lift、E4 或 E5。
 
 ## 4. 当前聚焦回执
 
@@ -220,6 +226,11 @@ RESET 现又增加一条带不可重置外层秩的 typed 分支：先取
 另附一条跨状态 overflow 容量回执。它重放 12 个 overflow、24 个双通道和 17 条
 阻碍幂记录；相位审计得到 5 个 \(q\) 组、13 个相位胞、5 对兼容记录，容量超载胞为
 0。该结果只是负边界：当前没有从缺陷单位得到容量矛盾，也没有生成递归边。
+
+同一结果文件新增 `overflow_support_debt_phase_bridge`：17 个 RESET debt 素数幂均按
+`(p,A,M,side,q)` 与 phase-unit 行匹配，阻碍高度和余数标签逐项相同。该桥只证明
+`Debt_t` 与规范化缺陷单位的算术身份，`alternate_phase_mapping_status` 仍为
+`unproved`，所以仍是 `analysis_evidence`，不携带 marked lift、E4 或 E5。
 
 固定-\(n\)/固定-\(s\) 正例只证明这些分支在满足各自整除条件的完整 receipt 上可升级；
 它不改变已有事实：一般 \(A>1\) overflow 可能同时失去固定-\(n\) 与固定-\(s\) 的合法

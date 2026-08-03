@@ -52,6 +52,17 @@ profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
 
 主张卡见[overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md)。
 
+## 2026-08-03 RESET debt 到 phase-unit 的条件桥
+
+统一 selector 新增 `overflow_support_debt_phase_bridge`。它读取上述 24 个双通道和
+`type-i-overflow-defect-unit-phase-capacity-results.json`，按
+`(p,A,M,side,q)` 将 17 个 debt 素数幂与 phase 行逐一配对，并重核阻碍高度、余数标签、
+规范单位和单位模数。当前得到 5 个 q 分组、13 个胞、5 对兼容记录、0 个容量超载。
+
+这一步只证明 debt 的 q 进单位可以被精确索引到现有相位账本；没有证明 alternate 或
+source-switch 采用该单位作为清分相位，也没有标记集、全域提升或 E5。因此回执保持
+`analysis_evidence`，仅作为 `capacity_receipts` 的条件接口。
+
 ## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
 
 将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。

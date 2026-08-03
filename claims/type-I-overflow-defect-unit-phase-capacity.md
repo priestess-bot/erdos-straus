@@ -24,8 +24,10 @@ sources:
     role: local-obstruction-height-and-residue-label
   - claim: type-I-phase-clearing-cell-capacity-contract
     role: nested-phase-tree-capacity
+  - claim: type-I-representation-dual-capacity-selector-contract
+    role: typed-support-debt-phase-bridge
 visibility: public
-last_checked: '2026-08-02'
+last_checked: '2026-08-03'
 ---
 
 # overflow 缺陷单位的条件性相位胞与容量边界

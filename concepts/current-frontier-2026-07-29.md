@@ -3079,7 +3079,7 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity -> support-debt-phase-bridge
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
@@ -3220,6 +3220,19 @@ selector 现在还把每条双通道的未支付支撑显式保存为
 边的 debt 均为 1；拒绝通道逐行保留 debt，即使 debt=1 也不跳过严格 support gain、
 正图表和 E5 检查。这使 support obstruction 成为可比较的有向容量输入，但还不是
 跨状态容量超载或递归边。
+
+在此基础上，selector 新增 `overflow_support_debt_phase_bridge` 族级回执。它读取
+RESET 的 24 条 d/r 通道和 phase-capacity 账本，逐素数幂检查
+
+\[
+(p,A,M,\mathrm{side},q,\mathrm{height},\mathrm{label})
+\]
+
+的完全匹配；当前 17 条 debt 因子全部命中，汇总为 5 个 q 分组、13 个相位胞、5 对
+兼容记录和 0 个容量超载。该结果只把局部 debt 接到规范化 phase unit，仍没有证明
+真实 alternate/source-switch 使用该 unit，因此 `alternate_phase_mapping_status=unproved`、
+`selector_status=analysis_evidence`、`recursive_edge_eligible=false`。它是表示--对偶--容量
+链的条件接口，不是新的递归边。
 
 ## 2026-08-03 固定-\(n\) 窗口上方的 overflow 递降
 

@@ -179,6 +179,285 @@
     },
     {
       "certificate_context": {
+        "alternate_phase_mapping_status": "unproved",
+        "certificate_type": "overflow_support_debt_phase_bridge",
+        "phase": "CONDITIONAL_CAPACITY_AUDIT",
+        "proof_boundary": "debt_to_phase_unit_identity_only",
+        "source": "type-i-overflow-defect-unit-phase-capacity-results.json"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "pn=4Md+1"
+      },
+      "marked_solution_set": {
+        "reason": "phase-unit matching has no alternate lift witness",
+        "status": "not_carried"
+      },
+      "potential_record": {
+        "reason": "phase-unit matching does not provide E5",
+        "status": "absent"
+      },
+      "proof_boundary": "conditional_phase_capacity_only",
+      "recursive_edge_eligible": false,
+      "scope": "cross_state_overflow_support_debt_phase_audit",
+      "scope_note": "Each non-unit RESET debt is matched to its exact normalized q-adic residue unit. The matching is not an assertion that an alternate/source-switch uses that unit as a clearing phase.",
+      "selected_branch": "overflow_support_debt_phase_bridge",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "status": "not_carried"
+      },
+      "source_receipt": {
+        "phase_file": "type-i-overflow-defect-unit-phase-capacity-results.json",
+        "phase_sha256": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c"
+      },
+      "state_id": "family:9f048b4f2c7ce2e0671b727bce3912281b400f043be982b9c4beed46a79159bf",
+      "support_debt_phase_summary": {
+        "linked_row_count": 17,
+        "links": [
+          {
+            "channel": [
+              73,
+              7,
+              91,
+              "d"
+            ],
+            "normalized_unit": 2,
+            "obstruction_height": 1,
+            "q": 7,
+            "residue_label": 2,
+            "unit_modulus": 7
+          },
+          {
+            "channel": [
+              73,
+              7,
+              91,
+              "r"
+            ],
+            "normalized_unit": 4,
+            "obstruction_height": 1,
+            "q": 7,
+            "residue_label": 4,
+            "unit_modulus": 7
+          },
+          {
+            "channel": [
+              241,
+              38,
+              190,
+              "d"
+            ],
+            "normalized_unit": 1,
+            "obstruction_height": 1,
+            "q": 2,
+            "residue_label": 1,
+            "unit_modulus": 2
+          },
+          {
+            "channel": [
+              241,
+              38,
+              190,
+              "d"
+            ],
+            "normalized_unit": 1,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 1,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              19,
+              38,
+              "d"
+            ],
+            "normalized_unit": 1,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 1,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              19,
+              608,
+              "r"
+            ],
+            "normalized_unit": 18,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 12026,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              19,
+              836,
+              "d"
+            ],
+            "normalized_unit": 12,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 12,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              19,
+              836,
+              "r"
+            ],
+            "normalized_unit": 15,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 101190,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              19,
+              950,
+              "d"
+            ],
+            "normalized_unit": 14,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 14,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              19,
+              950,
+              "r"
+            ],
+            "normalized_unit": 12,
+            "obstruction_height": 1,
+            "q": 19,
+            "residue_label": 16865,
+            "unit_modulus": 19
+          },
+          {
+            "channel": [
+              73,
+              66,
+              1518,
+              "d"
+            ],
+            "normalized_unit": 10,
+            "obstruction_height": 1,
+            "q": 11,
+            "residue_label": 21,
+            "unit_modulus": 11
+          },
+          {
+            "channel": [
+              73,
+              66,
+              1518,
+              "r"
+            ],
+            "normalized_unit": 3,
+            "obstruction_height": 1,
+            "q": 11,
+            "residue_label": 65211,
+            "unit_modulus": 11
+          },
+          {
+            "channel": [
+              73,
+              66,
+              924,
+              "d"
+            ],
+            "normalized_unit": 1,
+            "obstruction_height": 1,
+            "q": 3,
+            "residue_label": 13,
+            "unit_modulus": 3
+          },
+          {
+            "channel": [
+              73,
+              66,
+              924,
+              "d"
+            ],
+            "normalized_unit": 2,
+            "obstruction_height": 1,
+            "q": 11,
+            "residue_label": 13,
+            "unit_modulus": 11
+          },
+          {
+            "channel": [
+              73,
+              66,
+              924,
+              "r"
+            ],
+            "normalized_unit": 4,
+            "obstruction_height": 1,
+            "q": 11,
+            "residue_label": 107133,
+            "unit_modulus": 11
+          },
+          {
+            "channel": [
+              241,
+              8,
+              568,
+              "d"
+            ],
+            "normalized_unit": 1,
+            "obstruction_height": 1,
+            "q": 2,
+            "residue_label": 3,
+            "unit_modulus": 2
+          },
+          {
+            "channel": [
+              241,
+              8,
+              568,
+              "r"
+            ],
+            "normalized_unit": 3,
+            "obstruction_height": 2,
+            "q": 2,
+            "residue_label": 144955,
+            "unit_modulus": 4
+          }
+        ],
+        "phase_summary": {
+          "capacity_overload_cell_count": 0,
+          "compatible_pair_count": 5,
+          "obstruction_row_count": 17,
+          "pair_count": 31,
+          "phase_cell_count": 13,
+          "q_group_count": 5
+        }
+      },
+      "target_fiber": {
+        "reason": "conditional phase capacity evidence",
+        "status": "not_carried"
+      }
+    },
+    {
+      "certificate_context": {
         "carrier_mapping_status": "unproved",
         "certificate_type": "overflow_qadic_phase_capacity",
         "phase": "CAPACITY_AUDIT",
@@ -227,6 +506,7 @@
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
+    "support_debt_phase_bridge_requires_alternate_mapping": true,
     "terminal_leaf_requires_direct_certificate": true,
     "verified_edge_requires_E1_E5": true
   },
@@ -6434,6 +6714,285 @@
       }
     ]
   },
+  "overflow_support_debt_phase_bridge": {
+    "certificate_context": {
+      "alternate_phase_mapping_status": "unproved",
+      "certificate_type": "overflow_support_debt_phase_bridge",
+      "phase": "CONDITIONAL_CAPACITY_AUDIT",
+      "proof_boundary": "debt_to_phase_unit_identity_only",
+      "source": "type-i-overflow-defect-unit-phase-capacity-results.json"
+    },
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "equation_target": {
+      "relation": "pn=4Md+1"
+    },
+    "marked_solution_set": {
+      "reason": "phase-unit matching has no alternate lift witness",
+      "status": "not_carried"
+    },
+    "potential_record": {
+      "reason": "phase-unit matching does not provide E5",
+      "status": "absent"
+    },
+    "proof_boundary": "conditional_phase_capacity_only",
+    "recursive_edge_eligible": false,
+    "scope": "cross_state_overflow_support_debt_phase_audit",
+    "scope_note": "Each non-unit RESET debt is matched to its exact normalized q-adic residue unit. The matching is not an assertion that an alternate/source-switch uses that unit as a clearing phase.",
+    "selected_branch": "overflow_support_debt_phase_bridge",
+    "selector_status": "analysis_evidence",
+    "signed_defect": {
+      "status": "not_carried"
+    },
+    "source_receipt": {
+      "phase_file": "type-i-overflow-defect-unit-phase-capacity-results.json",
+      "phase_sha256": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c"
+    },
+    "state_id": "family:9f048b4f2c7ce2e0671b727bce3912281b400f043be982b9c4beed46a79159bf",
+    "support_debt_phase_summary": {
+      "linked_row_count": 17,
+      "links": [
+        {
+          "channel": [
+            73,
+            7,
+            91,
+            "d"
+          ],
+          "normalized_unit": 2,
+          "obstruction_height": 1,
+          "q": 7,
+          "residue_label": 2,
+          "unit_modulus": 7
+        },
+        {
+          "channel": [
+            73,
+            7,
+            91,
+            "r"
+          ],
+          "normalized_unit": 4,
+          "obstruction_height": 1,
+          "q": 7,
+          "residue_label": 4,
+          "unit_modulus": 7
+        },
+        {
+          "channel": [
+            241,
+            38,
+            190,
+            "d"
+          ],
+          "normalized_unit": 1,
+          "obstruction_height": 1,
+          "q": 2,
+          "residue_label": 1,
+          "unit_modulus": 2
+        },
+        {
+          "channel": [
+            241,
+            38,
+            190,
+            "d"
+          ],
+          "normalized_unit": 1,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 1,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            19,
+            38,
+            "d"
+          ],
+          "normalized_unit": 1,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 1,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            19,
+            608,
+            "r"
+          ],
+          "normalized_unit": 18,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 12026,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            19,
+            836,
+            "d"
+          ],
+          "normalized_unit": 12,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 12,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            19,
+            836,
+            "r"
+          ],
+          "normalized_unit": 15,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 101190,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            19,
+            950,
+            "d"
+          ],
+          "normalized_unit": 14,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 14,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            19,
+            950,
+            "r"
+          ],
+          "normalized_unit": 12,
+          "obstruction_height": 1,
+          "q": 19,
+          "residue_label": 16865,
+          "unit_modulus": 19
+        },
+        {
+          "channel": [
+            73,
+            66,
+            1518,
+            "d"
+          ],
+          "normalized_unit": 10,
+          "obstruction_height": 1,
+          "q": 11,
+          "residue_label": 21,
+          "unit_modulus": 11
+        },
+        {
+          "channel": [
+            73,
+            66,
+            1518,
+            "r"
+          ],
+          "normalized_unit": 3,
+          "obstruction_height": 1,
+          "q": 11,
+          "residue_label": 65211,
+          "unit_modulus": 11
+        },
+        {
+          "channel": [
+            73,
+            66,
+            924,
+            "d"
+          ],
+          "normalized_unit": 1,
+          "obstruction_height": 1,
+          "q": 3,
+          "residue_label": 13,
+          "unit_modulus": 3
+        },
+        {
+          "channel": [
+            73,
+            66,
+            924,
+            "d"
+          ],
+          "normalized_unit": 2,
+          "obstruction_height": 1,
+          "q": 11,
+          "residue_label": 13,
+          "unit_modulus": 11
+        },
+        {
+          "channel": [
+            73,
+            66,
+            924,
+            "r"
+          ],
+          "normalized_unit": 4,
+          "obstruction_height": 1,
+          "q": 11,
+          "residue_label": 107133,
+          "unit_modulus": 11
+        },
+        {
+          "channel": [
+            241,
+            8,
+            568,
+            "d"
+          ],
+          "normalized_unit": 1,
+          "obstruction_height": 1,
+          "q": 2,
+          "residue_label": 3,
+          "unit_modulus": 2
+        },
+        {
+          "channel": [
+            241,
+            8,
+            568,
+            "r"
+          ],
+          "normalized_unit": 3,
+          "obstruction_height": 2,
+          "q": 2,
+          "residue_label": 144955,
+          "unit_modulus": 4
+        }
+      ],
+      "phase_summary": {
+        "capacity_overload_cell_count": 0,
+        "compatible_pair_count": 5,
+        "obstruction_row_count": 17,
+        "pair_count": 31,
+        "phase_cell_count": 13,
+        "q_group_count": 5
+      }
+    },
+    "target_fiber": {
+      "reason": "conditional phase capacity evidence",
+      "status": "not_carried"
+    }
+  },
   "phase_reset_receipts": {
     "cycle_count": 1,
     "receipts": [
@@ -6598,7 +7157,7 @@
     "scope_note": "RESET remains candidate_transition until an outer non-resettable rank is supplied."
   },
   "schema_version": 1,
-  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, but does not prove universal branch existence or well-founded descent for all overflow states.",
+  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, plus a conditional support-debt phase bridge, but does not prove universal branch existence or well-founded descent for all overflow states.",
   "selector_order": [
     "direct_type_i_or_type_ii",
     "target_fiber_neighbor_terminal",
@@ -6611,7 +7170,8 @@
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
-    "overflow_qadic_phase_capacity"
+    "overflow_qadic_phase_capacity",
+    "overflow_support_debt_phase_bridge"
   ],
   "source_sha256": {
     "type-i-f-bounded-fourier-carrier-capacity-results.json": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074",

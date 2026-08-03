@@ -51,6 +51,7 @@ SELECTOR_ORDER = [
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
     "overflow_qadic_phase_capacity",
+    "overflow_support_debt_phase_bridge",
 ]
 
 STATUS_LATTICE = [
@@ -460,6 +461,165 @@ def bounded_fourier_capacity_receipt(payload: dict[str, object]) -> dict[str, ob
             "certificate_input_sha256": payload["input_sha256"],
             "linear_source": BOUNDED_FOURIER_SOURCE.name,
             "linear_source_sha256": payload["source_sha256"],
+        },
+    }
+    check_status_boundary(result)
+    return result
+
+
+def support_debt_phase_receipt(
+    outer_rank: dict[str, object], phase: dict[str, object]
+) -> dict[str, object]:
+    """Match every non-unit support debt to its conditional phase-unit row."""
+    if phase.get("input") != QADIC_INPUT.name:
+        raise AssertionError("phase capacity input name changed")
+    if phase.get("input_sha256") != sha256(QADIC_INPUT):
+        raise AssertionError("phase capacity input is stale")
+    phase_groups = phase.get("groups")
+    if not isinstance(phase_groups, list):
+        raise AssertionError("phase capacity groups are missing")
+    phase_rows: list[dict[str, object]] = []
+    for group in phase_groups:
+        if not isinstance(group, dict) or not isinstance(group.get("rows"), list):
+            raise AssertionError("phase capacity group shape changed")
+        for row in group["rows"]:
+            if not isinstance(row, dict):
+                raise AssertionError("phase capacity row shape changed")
+            phase_rows.append(row)
+    if len(phase_rows) != 17:
+        raise AssertionError("phase debt row count changed")
+
+    channels = list(outer_rank.get("verified_receipts", [])) + list(
+        outer_rank.get("rejected_channels", [])
+    )
+    links: list[dict[str, object]] = []
+    used: set[tuple[int, int, int, str, int]] = set()
+    for channel in channels:
+        if not isinstance(channel, dict):
+            raise AssertionError("outer-rank channel shape changed")
+        debt = channel.get("support_debt")
+        if not isinstance(debt, dict):
+            raise AssertionError("outer-rank channel lacks support debt")
+        for raw_factor in debt.get("factorization", []):
+            if not isinstance(raw_factor, list) or len(raw_factor) != 2:
+                raise AssertionError("support debt factorization shape changed")
+            q, height = int(raw_factor[0]), int(raw_factor[1])
+            key_prefix = (
+                int(channel["equation_target"][1]),
+                int(channel["source_support"]),
+                int(channel["source_carrier"]),
+                str(channel["side"]),
+                q,
+            )
+            matches = [
+                row
+                for row in phase_rows
+                if (
+                    int(row["prime"]),
+                    int(row["A"]),
+                    int(row["M"]),
+                    str(row["side"]),
+                    int(row["q"]),
+                )
+                == key_prefix
+            ]
+            if len(matches) != 1:
+                raise AssertionError(f"support debt phase row missing: {key_prefix}")
+            row = matches[0]
+            if (
+                int(row["obstruction_height"]) != height
+                or int(row["residue_label"]) != int(debt["residue_label"])
+            ):
+                raise AssertionError("support debt phase height/label mismatch")
+            link_key = key_prefix[:4] + (q,)
+            if link_key in used:
+                raise AssertionError("support debt phase row was reused")
+            used.add(link_key)
+            links.append(
+                {
+                    "channel": [
+                        key_prefix[0],
+                        key_prefix[1],
+                        key_prefix[2],
+                        key_prefix[3],
+                    ],
+                    "q": q,
+                    "obstruction_height": height,
+                    "residue_label": int(row["residue_label"]),
+                    "normalized_unit": int(row["normalized_unit"]),
+                    "unit_modulus": int(row["unit_modulus"]),
+                }
+            )
+    all_phase_keys = {
+        (
+            int(row["prime"]),
+            int(row["A"]),
+            int(row["M"]),
+            str(row["side"]),
+            int(row["q"]),
+        )
+        for row in phase_rows
+    }
+    if used != all_phase_keys:
+        raise AssertionError("not every phase debt row was linked")
+    summary = {
+        key: phase[key]
+        for key in (
+            "obstruction_row_count",
+            "q_group_count",
+            "phase_cell_count",
+            "compatible_pair_count",
+            "pair_count",
+            "capacity_overload_cell_count",
+        )
+    }
+    descriptor = {
+        "family": "overflow_support_debt_phase_bridge",
+        "phase_input_sha256": phase.get("input_sha256"),
+        "link_count": len(links),
+    }
+    result = {
+        "state_id": "family:" + canonical_hash(descriptor),
+        "scope": "cross_state_overflow_support_debt_phase_audit",
+        "equation_target": {"relation": "pn=4Md+1"},
+        "certificate_context": {
+            "certificate_type": "overflow_support_debt_phase_bridge",
+            "phase": "CONDITIONAL_CAPACITY_AUDIT",
+            "source": PHASE_INPUT.name,
+            "proof_boundary": "debt_to_phase_unit_identity_only",
+            "alternate_phase_mapping_status": "unproved",
+        },
+        "support_debt_phase_summary": {
+            "linked_row_count": len(links),
+            "phase_summary": summary,
+            "links": links,
+        },
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "phase-unit matching has no alternate lift witness",
+        },
+        "target_fiber": {
+            "status": "not_carried",
+            "reason": "conditional phase capacity evidence",
+        },
+        "signed_defect": {"status": "not_carried"},
+        "potential_record": {
+            "status": "absent",
+            "reason": "phase-unit matching does not provide E5",
+        },
+        "selected_branch": "overflow_support_debt_phase_bridge",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "conditional_phase_capacity_only",
+        "scope_note": (
+            "Each non-unit RESET debt is matched to its exact normalized q-adic residue unit. "
+            "The matching is not an assertion that an alternate/source-switch uses that unit "
+            "as a clearing phase."
+        ),
+        "source_receipt": {
+            "phase_file": PHASE_INPUT.name,
+            "phase_sha256": sha256(PHASE_INPUT),
         },
     }
     check_status_boundary(result)
@@ -1735,6 +1895,7 @@ def build_results() -> dict[str, object]:
     )
     outer_rank_reset = overflow_outer_rank_reset(overflow)
     reset_boundary = phase_reset_boundary(overflow)
+    debt_phase = support_debt_phase_receipt(outer_rank_reset, phase)
     return {
         "schema_version": 1,
         "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
@@ -1748,8 +1909,9 @@ def build_results() -> dict[str, object]:
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
+        "overflow_support_debt_phase_bridge": debt_phase,
         "bounded_fourier_carrier_capacity": bounded_fourier,
-        "capacity_receipts": [bounded_fourier, capacity],
+        "capacity_receipts": [bounded_fourier, debt_phase, capacity],
         "invariants": {
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
@@ -1761,12 +1923,13 @@ def build_results() -> dict[str, object]:
             "fixed_s_overflow_rank_requires_product_divisor": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
+            "support_debt_phase_bridge_requires_alternate_mapping": True,
         },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
             "It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, "
-            "but does not prove universal branch existence or "
+            "plus a conditional support-debt phase bridge, but does not prove universal branch existence or "
             "well-founded descent for all overflow states."
         ),
     }
@@ -1805,6 +1968,62 @@ def verify_bounded_fourier_contract(result: dict[str, object]) -> None:
         raise AssertionError("bounded-Fourier source receipt missing")
     if source_receipt.get("result_sha256") != sha256(BOUNDED_FOURIER_CAPACITY_INPUT):
         raise AssertionError("bounded-Fourier result hash changed")
+
+
+def verify_support_debt_phase_contract(result: dict[str, object]) -> None:
+    receipt = result.get("overflow_support_debt_phase_bridge")
+    if not isinstance(receipt, dict):
+        raise AssertionError("support-debt phase bridge receipt missing")
+    if receipt.get("selector_status") != "analysis_evidence":
+        raise AssertionError("support-debt phase bridge crossed status boundary")
+    if receipt.get("recursive_edge_eligible") is not False:
+        raise AssertionError("support-debt phase bridge became recursive")
+    if receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
+        raise AssertionError("support-debt phase bridge has an E1-E5 witness")
+    context = receipt.get("certificate_context")
+    if not isinstance(context, dict):
+        raise AssertionError("support-debt phase bridge context missing")
+    if context.get("alternate_phase_mapping_status") != "unproved":
+        raise AssertionError("support-debt phase bridge mapping status changed")
+    summary = receipt.get("support_debt_phase_summary")
+    if not isinstance(summary, dict) or summary.get("linked_row_count") != 17:
+        raise AssertionError("support-debt phase link count changed")
+    if summary.get("phase_summary") != {
+        "obstruction_row_count": 17,
+        "q_group_count": 5,
+        "phase_cell_count": 13,
+        "compatible_pair_count": 5,
+        "pair_count": 31,
+        "capacity_overload_cell_count": 0,
+    }:
+        raise AssertionError("support-debt phase summary changed")
+    links = summary.get("links")
+    if not isinstance(links, list) or len(links) != 17:
+        raise AssertionError("support-debt phase link shape changed")
+    for link in links:
+        if not isinstance(link, dict):
+            raise AssertionError("support-debt phase link is not an object")
+        channel = link.get("channel")
+        if not isinstance(channel, list) or len(channel) != 4:
+            raise AssertionError("support-debt phase channel shape changed")
+        q = link.get("q")
+        modulus = link.get("unit_modulus")
+        unit = link.get("normalized_unit")
+        if (
+            not isinstance(q, int)
+            or not isinstance(modulus, int)
+            or not isinstance(unit, int)
+            or q <= 1
+            or modulus <= 1
+            or not 0 < unit < modulus
+            or gcd(unit, modulus) != 1
+        ):
+            raise AssertionError("support-debt phase unit is not normalized")
+    source_receipt = receipt.get("source_receipt")
+    if not isinstance(source_receipt, dict):
+        raise AssertionError("support-debt phase source receipt missing")
+    if source_receipt.get("phase_sha256") != sha256(PHASE_INPUT):
+        raise AssertionError("support-debt phase result hash changed")
 
 
 def verify_overflow_menu_contract(result: dict[str, object]) -> None:
@@ -2021,6 +2240,7 @@ def main() -> None:
     rendered = json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.verify:
         verify_bounded_fourier_contract(result)
+        verify_support_debt_phase_contract(result)
         verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")
