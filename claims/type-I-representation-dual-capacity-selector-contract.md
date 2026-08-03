@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界与 q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、hard-core 负边界和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、固定-n/固定-s 支撑增长边、overflow 双对偶 hard-core 负边界与 q 进缺陷账本装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier 族级容量负边界、hard-core 负边界和容量审计仍是 analysis_evidence，但已有固定-n 与固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -20,6 +20,7 @@ depends_on:
   - type-I-fixed-layer-cyclic-fourier-profile
   - type-I-fixed-layer-fourier-qadic-phase-bridge
   - type-I-fixed-layer-fourier-q-primary-projection
+  - type-I-f-bounded-fourier-carrier-capacity-boundary
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -41,6 +42,8 @@ sources:
     role: conditional-cross-state-capacity-boundary
   - claim: denominator-escape-state-contract
     role: E1-E5-state-and-edge-contract
+  - claim: type-I-f-bounded-fourier-carrier-capacity-boundary
+    role: frozen-F-real-carrier-capacity-negative-boundary
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -50,7 +53,7 @@ last_checked: '2026-08-03'
 ## 1. 目的与边界
 
 路线图要求把状态内与 overflow 证据放进同一个可检索对象：目标纤维的表示/近邻、固定层商的
-对偶证书、固定-\(n\) 因子间隙/双对偶阻碍，以及 overflow 的 \(q\)-进容量账本。本卡给出
+对偶证书、冻结 F 状态的规范 Fourier 载体容量、固定-\(n\) 因子间隙/双对偶阻碍，以及 overflow 的 \(q\)-进容量账本。本卡给出
 这个对象的最小分派合同。它是证据编排规范，不声称任意
 \(p\equiv1\pmod {24}\) 都会命中某一分支。
 
@@ -61,6 +64,7 @@ direct_type_i_or_type_ii
 target_fiber_neighbor_terminal
 generalized_dyadic_terminal
 fixed_layer_quotient_fourier
+bounded_fourier_carrier_capacity
 overflow_fixed_n_charged_support
 overflow_fixed_n_outer_rank_reset
 overflow_fixed_s_outer_rank_reset
@@ -104,7 +108,8 @@ verified_edge
 ```
 
 当前近邻和广义 \(2^j\) 回执验证的是较小偶前驱的整除、同余和范围；固定层 Fourier
-回执验证的是稳定子商、精确谱范数和角色阶债务；固定-\(n\) 回执则重算一个保持
+回执验证的是稳定子商、精确谱范数和角色阶债务；bounded-Fourier 族级回执从冻结的
+45 个 F 状态重算 141 个实际线性载体方向及同色/混色容量摘要；固定-\(n\) 回执则重算一个保持
 `Sol(p)` 的恒等提升和 absorbed-support 势下降；hard-core 回执精确记录固定-\(n\) 因子
 间隙与双对偶未支付 \(q\)-幂；overflow 容量回执验证的是逐素数幂支付、缺陷单位相位分胞
 及条件性容量统计。前三类证据、hard-core 负边界和容量审计统一标为
@@ -139,6 +144,11 @@ python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 | 目标纤维近邻 | 1 | `analysis_evidence`，非空近邻见证，偶前驱提升未证 |
 | 广义 \(2^j\) | 1 | `analysis_evidence`，来源为命中状态档案，偶前驱提升未证 |
 | 固定层商 Fourier | 1 | `analysis_evidence`，空纤维分离角色，载体映射未证 |
+
+另有一个族级 `bounded_fourier_carrier_capacity` 回执：45 个冻结 F 状态产生 141 个方向，
+同色 113 组、混色 100 组，50+78 次两两检查和两类容量界均无失败或超载。它重算真实
+线性块高度，但仍保留 `carrier_mapping_status=unproved`、无标记集和无递归势；因此只能
+作为 `capacity_receipts` 的有限负边界，不能替代 overflow 的全称分支。
 
 固定层回执另外携带 `generic_spectrum_profile`：在循环商 (C_m) 上保存商表示计数向量、
 整数群环自相关、Parseval 非平凡能量和逐角色相位签名。选择器用原始 `H`、`J` 和残余

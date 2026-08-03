@@ -31,7 +31,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-03'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -3079,12 +3079,12 @@ python3 reproductions/type_i_overflow_qadic_obstruction_transfer.py --verify
 `reproductions/type_i_representation_dual_capacity_selector.py`。它按
 
 ```text
-direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity
+direct -> target-fiber-neighbor -> generalized-dyadic -> quotient-Fourier -> bounded-Fourier-capacity -> overflow-fixed-n -> overflow-fixed-n-outer-rank-reset -> overflow-fixed-s-outer-rank-reset -> overflow-outer-rank-reset -> overflow-capacity
 ```
 
 顺序分派，给每条状态回执生成内容寻址 `state_id`，并保留方程目标、模数、\(K\) 支撑、
 目标纤维、标记集、带符号缺陷、证书上下文和势记录。当前样例的近邻、广义 \(2^j\) 和
-固定层 Fourier 三条状态，以及一条 overflow 缺陷相位账本，都保持
+固定层 Fourier 三条状态、一个 bounded-Fourier 族级载体回执，以及一条 overflow 缺陷相位账本，都保持
 `selector_status=analysis_evidence`、`recursive_edge_eligible=false`。同时，固定-(n)
 行列式图谱中的正例 \((p,M,A)=(409,250,5)\to L=125\) 已完整重算为
 `verified_edge`：\(R_L=11\)、\(K_L=1125\)，恒等解提升成立，支撑势
@@ -3166,6 +3166,25 @@ $(p,R,K)=(97,27,655)$ 作为不同商阶的交叉核验。
 识别为清分中心，不能替代 `carrier_mapping_status=unproved`。
 
 主张卡见[固定层 Fourier 角色阶的 q-primary 精确投影](../claims/type-I-fixed-layer-fourier-q-primary-projection.md)。
+
+## 2026-08-03 bounded-Fourier 载体容量进入统一回执
+
+统一 selector 在固定层商 Fourier 之后增加族级
+`bounded_fourier_carrier_capacity` 回执。它锁定 bounded-Fourier 结果、规范 Fourier
+输入和线性源生成器的 SHA-256，并从冻结记录重算 45 个 F 状态的 141 个实际线性载体
+方向。结果为同色 113 组、混色 100 组，分别有 50 和 78 次两两检查；整除失败与容量
+超载均为 0，非单例最大容量比仍为
+`12835/186111`（同色）和 `38505/4787548`（混色）。
+
+该回执只作为 `capacity_receipts` 的族级 `analysis_evidence` 保存，
+`carrier_mapping_status=unproved`、`recursive_edge_eligible=false`。它验证了规范
+Fourier 方向可以无损读取为实际 `U=sR+1`、`V=aR+1` 块高度，但没有把角色阶或
+相位债务加入高度，也没有得到 marked lift、E1--E5 或 overflow 的跨状态超载。因此
+它补齐的是统一知识库的表示—对偶—容量接口，不改变当前决定性余项：递归可达
+`A>1` 的 `R_M>p` bundle overflow。
+
+主张卡见[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)，
+统一结果见 `reproductions/type-i-representation-dual-capacity-selector-results.json`。
 
 ## 2026-08-03 joined-support 外层秩 RESET
 

@@ -24,6 +24,15 @@ except ModuleNotFoundError:
 ROOT = Path(__file__).resolve().parents[1]
 UNIFIED_INPUT = ROOT / "reproductions" / "type-i-unified-terminal-selector-results.json"
 FOURIER_INPUT = ROOT / "reproductions" / "type-i-fixed-layer-stabilizer-fourier-results.json"
+BOUNDED_FOURIER_CAPACITY_INPUT = (
+    ROOT / "reproductions" / "type-i-f-bounded-fourier-carrier-capacity-results.json"
+)
+BOUNDED_FOURIER_CERTIFICATE_INPUT = (
+    ROOT / "reproductions" / "type-i-f-bounded-fourier-certificate-results.json"
+)
+BOUNDED_FOURIER_SOURCE = (
+    ROOT / "reproductions" / "type_i_global_linear_b1_failure_general_b_profile_500m.py"
+)
 QADIC_INPUT = ROOT / "reproductions" / "type-i-overflow-qadic-obstruction-transfer-results.json"
 PHASE_INPUT = ROOT / "reproductions" / "type-i-overflow-defect-unit-phase-capacity-results.json"
 OVERFLOW_INPUT = ROOT / "reproductions" / "type-i-universal-anchor-overflow-dual-results.json"
@@ -34,6 +43,7 @@ SELECTOR_ORDER = [
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "bounded_fourier_carrier_capacity",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
     "overflow_fixed_s_outer_rank_reset",
@@ -111,6 +121,9 @@ def source_hashes() -> dict[str, str]:
     return {
         UNIFIED_INPUT.name: sha256(UNIFIED_INPUT),
         FOURIER_INPUT.name: sha256(FOURIER_INPUT),
+        BOUNDED_FOURIER_CAPACITY_INPUT.name: sha256(BOUNDED_FOURIER_CAPACITY_INPUT),
+        BOUNDED_FOURIER_CERTIFICATE_INPUT.name: sha256(BOUNDED_FOURIER_CERTIFICATE_INPUT),
+        BOUNDED_FOURIER_SOURCE.name: sha256(BOUNDED_FOURIER_SOURCE),
         QADIC_INPUT.name: sha256(QADIC_INPUT),
         PHASE_INPUT.name: sha256(PHASE_INPUT),
         OVERFLOW_INPUT.name: sha256(OVERFLOW_INPUT),
@@ -311,6 +324,143 @@ def capacity_receipt(qadic: dict[str, object], phase: dict[str, object]) -> dict
             "The obstruction units are not assumed to be the phases of an alternate. "
             "No capacity overload or recursive edge is inferred."
         ),
+    }
+    check_status_boundary(result)
+    return result
+
+
+def bounded_fourier_capacity_receipt(payload: dict[str, object]) -> dict[str, object]:
+    """Attach the finite bounded-Fourier carrier audit to the typed selector.
+
+    The audit has already reconstructed the real linear blocks and checked the
+    q-adic capacity inequalities.  This wrapper only makes that evidence
+    content-addressed and keeps its non-recursive proof boundary explicit.
+    """
+    if payload.get("input") != BOUNDED_FOURIER_CERTIFICATE_INPUT.name:
+        raise AssertionError("bounded-Fourier capacity input name changed")
+    if payload.get("input_sha256") != sha256(BOUNDED_FOURIER_CERTIFICATE_INPUT):
+        raise AssertionError("bounded-Fourier certificate input is stale")
+    if payload.get("source_script") != BOUNDED_FOURIER_SOURCE.name:
+        raise AssertionError("bounded-Fourier source name changed")
+    if payload.get("source_sha256") != sha256(BOUNDED_FOURIER_SOURCE):
+        raise AssertionError("bounded-Fourier source is stale")
+    certificate_payload = json.loads(
+        BOUNDED_FOURIER_CERTIFICATE_INPUT.read_text(encoding="utf-8")
+    )
+    if certificate_payload.get("state_count") != 45:
+        raise AssertionError("bounded-Fourier certificate state count changed")
+    dual_coordinate_box = certificate_payload.get("dual_coordinate_box")
+    target_phase_filter = certificate_payload.get("target_phase_filter")
+    if dual_coordinate_box != [-1, 1] or target_phase_filter != "nonintegral":
+        raise AssertionError("bounded-Fourier canonical selection rule changed")
+
+    expected_counts = {
+        "state_count": 45,
+        "direction_count": 141,
+    }
+    for key, expected in expected_counts.items():
+        if payload.get(key) != expected:
+            raise AssertionError(f"bounded-Fourier {key} changed")
+    audit = payload.get("audit")
+    if not isinstance(audit, dict):
+        raise AssertionError("bounded-Fourier audit is missing")
+    expected_families = {
+        "same_color": {
+            "group_count": 113,
+            "non_singleton_group_count": 15,
+            "pair_check_count": 50,
+        },
+        "mixed_color": {
+            "group_count": 100,
+            "non_singleton_group_count": 21,
+            "pair_check_count": 78,
+        },
+    }
+    family_summary: dict[str, dict[str, object]] = {}
+    for family_name, expected in expected_families.items():
+        family = audit.get(family_name)
+        if not isinstance(family, dict):
+            raise AssertionError(f"bounded-Fourier {family_name} summary is missing")
+        for key, expected_value in expected.items():
+            if family.get(key) != expected_value:
+                raise AssertionError(f"bounded-Fourier {family_name}.{key} changed")
+        if family.get("divisibility_failure_count") != 0:
+            raise AssertionError(f"bounded-Fourier {family_name} has a divisibility failure")
+        if family.get("capacity_violation_count") != 0:
+            raise AssertionError(f"bounded-Fourier {family_name} has a capacity violation")
+        family_summary[family_name] = {
+            key: family[key]
+            for key in (
+                "group_count",
+                "non_singleton_group_count",
+                "pair_check_count",
+                "divisibility_failure_count",
+                "capacity_violation_count",
+                "max_non_singleton_capacity_ratio",
+            )
+        }
+
+    descriptor = {
+        "family": "frozen_bounded_fourier_carrier_capacity",
+        "state_count": expected_counts["state_count"],
+        "direction_count": expected_counts["direction_count"],
+        "input_sha256": payload["input_sha256"],
+    }
+    result = {
+        "state_id": "family:" + canonical_hash(descriptor),
+        "scope": "cross_state_frozen_F_capacity_audit",
+        "equation_target": {"relation": "frozen Psi_0=1 F states"},
+        "certificate_context": {
+            "certificate_type": "bounded_fourier_carrier_capacity",
+            "source": BOUNDED_FOURIER_CAPACITY_INPUT.name,
+            "phase": "CAPACITY_AUDIT",
+            "proof_boundary": "finite_frozen_cross_state_capacity_only",
+            "dual_coordinate_box": dual_coordinate_box,
+            "target_phase_filter": target_phase_filter,
+            "real_carrier_vector_status": "recomputed",
+            "carrier_mapping_status": "unproved",
+            "global_fourier_maximizer_status": "unproved",
+        },
+        "carrier_capacity_summary": {
+            "state_count": expected_counts["state_count"],
+            "direction_count": expected_counts["direction_count"],
+            "families": family_summary,
+        },
+        "marked_solution_set": {
+            "status": "not_carried",
+            "reason": "capacity audit has no marked-lift witness",
+        },
+        "target_fiber": {
+            "status": "not_carried",
+            "reason": "family-level Fourier capacity evidence",
+        },
+        "signed_defect": {"status": "not_carried"},
+        "induction_rank": {
+            "status": "not_assigned",
+            "reason": "no E1-E5 recursive edge",
+        },
+        "potential_record": {
+            "status": "absent",
+            "reason": "capacity inequalities do not provide a well-founded descent",
+        },
+        "selected_branch": "bounded_fourier_carrier_capacity",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "finite_capacity_negative_boundary",
+        "scope_note": (
+            "Real carrier heights are verified for the frozen F sample, but character order "
+            "and phase are not charged as extra height. No overload, marked lift, or universal "
+            "Fourier-to-carrier map is inferred."
+        ),
+        "source_receipt": {
+            "result_file": BOUNDED_FOURIER_CAPACITY_INPUT.name,
+            "result_sha256": sha256(BOUNDED_FOURIER_CAPACITY_INPUT),
+            "certificate_input": BOUNDED_FOURIER_CERTIFICATE_INPUT.name,
+            "certificate_input_sha256": payload["input_sha256"],
+            "linear_source": BOUNDED_FOURIER_SOURCE.name,
+            "linear_source_sha256": payload["source_sha256"],
+        },
     }
     check_status_boundary(result)
     return result
@@ -1510,6 +1660,9 @@ def build_results() -> dict[str, object]:
     qadic = json.loads(QADIC_INPUT.read_text(encoding="utf-8"))
     phase = json.loads(PHASE_INPUT.read_text(encoding="utf-8"))
     fourier_payload = json.loads(FOURIER_INPUT.read_text(encoding="utf-8"))
+    bounded_fourier_payload = json.loads(
+        BOUNDED_FOURIER_CAPACITY_INPUT.read_text(encoding="utf-8")
+    )
     fourier_receipt = fourier_payload["receipt"]
     if unified.get("selector_order") != SELECTOR_ORDER[:4]:
         raise AssertionError("unified selector order changed")
@@ -1534,6 +1687,7 @@ def build_results() -> dict[str, object]:
     verified_edge = verified_fixed_n_edge(overflow)
     direct_type_ii = overflow_direct_type_ii(overflow)
     capacity = capacity_receipt(qadic, phase)
+    bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
     overflow_menu = overflow_menu_receipts(overflow, qadic)
     fixed_n_outer_rank = overflow_fixed_n_outer_rank(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
@@ -1566,7 +1720,8 @@ def build_results() -> dict[str, object]:
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
-        "capacity_receipts": [capacity],
+        "bounded_fourier_carrier_capacity": bounded_fourier,
+        "capacity_receipts": [bounded_fourier, capacity],
         "invariants": {
             "analysis_evidence_never_recursive": True,
             "verified_edge_requires_E1_E5": True,
@@ -1587,6 +1742,41 @@ def build_results() -> dict[str, object]:
             "well-founded descent for all overflow states."
         ),
     }
+
+
+def verify_bounded_fourier_contract(result: dict[str, object]) -> None:
+    receipt = result.get("bounded_fourier_carrier_capacity")
+    if not isinstance(receipt, dict):
+        raise AssertionError("bounded-Fourier carrier receipt missing")
+    if receipt.get("selector_status") != "analysis_evidence":
+        raise AssertionError("bounded-Fourier carrier receipt crossed status boundary")
+    if receipt.get("recursive_edge_eligible") is not False:
+        raise AssertionError("bounded-Fourier carrier receipt became recursive")
+    if receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
+        raise AssertionError("bounded-Fourier carrier receipt has an E1-E5 witness")
+    summary = receipt.get("carrier_capacity_summary")
+    if not isinstance(summary, dict):
+        raise AssertionError("bounded-Fourier carrier summary missing")
+    if summary.get("state_count") != 45 or summary.get("direction_count") != 141:
+        raise AssertionError("bounded-Fourier carrier counts changed")
+    families = summary.get("families")
+    if not isinstance(families, dict):
+        raise AssertionError("bounded-Fourier carrier family summary missing")
+    for name, pair_count in (("same_color", 50), ("mixed_color", 78)):
+        family = families.get(name)
+        if not isinstance(family, dict):
+            raise AssertionError(f"bounded-Fourier {name} family missing")
+        if family.get("pair_check_count") != pair_count:
+            raise AssertionError(f"bounded-Fourier {name} pair count changed")
+        if family.get("divisibility_failure_count") != 0:
+            raise AssertionError(f"bounded-Fourier {name} divisibility failure")
+        if family.get("capacity_violation_count") != 0:
+            raise AssertionError(f"bounded-Fourier {name} capacity violation")
+    source_receipt = receipt.get("source_receipt")
+    if not isinstance(source_receipt, dict):
+        raise AssertionError("bounded-Fourier source receipt missing")
+    if source_receipt.get("result_sha256") != sha256(BOUNDED_FOURIER_CAPACITY_INPUT):
+        raise AssertionError("bounded-Fourier result hash changed")
 
 
 def verify_overflow_menu_contract(result: dict[str, object]) -> None:
@@ -1786,6 +1976,7 @@ def main() -> None:
     result = build_results()
     rendered = json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.verify:
+        verify_bounded_fourier_contract(result)
         verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")

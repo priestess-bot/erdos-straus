@@ -26,8 +26,12 @@ sources:
     role: canonical-Fourier-input
   - claim: type-I-linear-hybrid-label-modulus-q-adic-capacity
     role: exact-capacity-bound
+  - reproduction: reproductions/type_i_representation_dual_capacity_selector.py
+    role: typed-family-capacity-receipt
+  - result: reproductions/type-i-representation-dual-capacity-selector-results.json
+    role: content-addressed-selector-attachment
 visibility: public
-last_checked: '2026-08-02'
+last_checked: '2026-08-03'
 ---
 
 # 冻结 F 状态规范 Fourier 载体容量边界

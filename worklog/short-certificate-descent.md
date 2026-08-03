@@ -24,6 +24,21 @@ profile，过期数据直接拒绝；两类回执仍为 `analysis_evidence`，
 
 主张卡见[固定层 Fourier 角色阶的 q-primary 精确投影](../claims/type-I-fixed-layer-fourier-q-primary-projection.md)。
 
+## 2026-08-03 bounded-Fourier 载体容量接入统一 selector
+
+统一 selector 新增族级 `bounded_fourier_carrier_capacity` 回执，锁定
+`type-i-f-bounded-fourier-carrier-capacity-results.json`、bounded-Fourier 输入和线性源
+生成器的 SHA-256，并重算冻结 45 个 F 状态的 141 个实际载体方向。结果为同色 113 组、
+混色 100 组，50+78 次两两整除检查和两类容量界均通过，容量超载为 0。
+
+该回执只放入 `capacity_receipts`，`selector_status=analysis_evidence`、
+`recursive_edge_eligible=false`、`carrier_mapping_status=unproved`；角色阶与相位没有被
+擅自加入载体高度，也没有推导标记提升或 E1--E5。它补齐了表示—对偶—容量选择器的
+可检索接口，但仍是有限负边界，不缩短 overflow 的全称缺口。
+
+主张卡见[冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md)
+和[表示—对偶—容量统一选择器合同](../claims/type-I-representation-dual-capacity-selector-contract.md)。
+
 ## 2026-07-29 下一阶段主要发展目标：目标纤维近邻或稀疏递降
 
 将“目标指数纤维的近邻表示或稀疏结构递降”列为下一阶段主要发展目标之一。

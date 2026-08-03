@@ -1,6 +1,182 @@
 {
   "arithmetic": "Typed dispatch for the representation-dual-capacity selector.",
+  "bounded_fourier_carrier_capacity": {
+    "carrier_capacity_summary": {
+      "direction_count": 141,
+      "families": {
+        "mixed_color": {
+          "capacity_violation_count": 0,
+          "divisibility_failure_count": 0,
+          "group_count": 100,
+          "max_non_singleton_capacity_ratio": [
+            38505,
+            4787548
+          ],
+          "non_singleton_group_count": 21,
+          "pair_check_count": 78
+        },
+        "same_color": {
+          "capacity_violation_count": 0,
+          "divisibility_failure_count": 0,
+          "group_count": 113,
+          "max_non_singleton_capacity_ratio": [
+            12835,
+            186111
+          ],
+          "non_singleton_group_count": 15,
+          "pair_check_count": 50
+        }
+      },
+      "state_count": 45
+    },
+    "certificate_context": {
+      "carrier_mapping_status": "unproved",
+      "certificate_type": "bounded_fourier_carrier_capacity",
+      "dual_coordinate_box": [
+        -1,
+        1
+      ],
+      "global_fourier_maximizer_status": "unproved",
+      "phase": "CAPACITY_AUDIT",
+      "proof_boundary": "finite_frozen_cross_state_capacity_only",
+      "real_carrier_vector_status": "recomputed",
+      "source": "type-i-f-bounded-fourier-carrier-capacity-results.json",
+      "target_phase_filter": "nonintegral"
+    },
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "equation_target": {
+      "relation": "frozen Psi_0=1 F states"
+    },
+    "induction_rank": {
+      "reason": "no E1-E5 recursive edge",
+      "status": "not_assigned"
+    },
+    "marked_solution_set": {
+      "reason": "capacity audit has no marked-lift witness",
+      "status": "not_carried"
+    },
+    "potential_record": {
+      "reason": "capacity inequalities do not provide a well-founded descent",
+      "status": "absent"
+    },
+    "proof_boundary": "finite_capacity_negative_boundary",
+    "recursive_edge_eligible": false,
+    "scope": "cross_state_frozen_F_capacity_audit",
+    "scope_note": "Real carrier heights are verified for the frozen F sample, but character order and phase are not charged as extra height. No overload, marked lift, or universal Fourier-to-carrier map is inferred.",
+    "selected_branch": "bounded_fourier_carrier_capacity",
+    "selector_status": "analysis_evidence",
+    "signed_defect": {
+      "status": "not_carried"
+    },
+    "source_receipt": {
+      "certificate_input": "type-i-f-bounded-fourier-certificate-results.json",
+      "certificate_input_sha256": "97bd474f82271b3d6a1eb5260fc49b7d48551c4fc2872402b74759f3d817bd68",
+      "linear_source": "type_i_global_linear_b1_failure_general_b_profile_500m.py",
+      "linear_source_sha256": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d",
+      "result_file": "type-i-f-bounded-fourier-carrier-capacity-results.json",
+      "result_sha256": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074"
+    },
+    "state_id": "family:9cea6562376aee52e74f485ae6f4b96c337147d8e8c11a99c444a401406499d5",
+    "target_fiber": {
+      "reason": "family-level Fourier capacity evidence",
+      "status": "not_carried"
+    }
+  },
   "capacity_receipts": [
+    {
+      "carrier_capacity_summary": {
+        "direction_count": 141,
+        "families": {
+          "mixed_color": {
+            "capacity_violation_count": 0,
+            "divisibility_failure_count": 0,
+            "group_count": 100,
+            "max_non_singleton_capacity_ratio": [
+              38505,
+              4787548
+            ],
+            "non_singleton_group_count": 21,
+            "pair_check_count": 78
+          },
+          "same_color": {
+            "capacity_violation_count": 0,
+            "divisibility_failure_count": 0,
+            "group_count": 113,
+            "max_non_singleton_capacity_ratio": [
+              12835,
+              186111
+            ],
+            "non_singleton_group_count": 15,
+            "pair_check_count": 50
+          }
+        },
+        "state_count": 45
+      },
+      "certificate_context": {
+        "carrier_mapping_status": "unproved",
+        "certificate_type": "bounded_fourier_carrier_capacity",
+        "dual_coordinate_box": [
+          -1,
+          1
+        ],
+        "global_fourier_maximizer_status": "unproved",
+        "phase": "CAPACITY_AUDIT",
+        "proof_boundary": "finite_frozen_cross_state_capacity_only",
+        "real_carrier_vector_status": "recomputed",
+        "source": "type-i-f-bounded-fourier-carrier-capacity-results.json",
+        "target_phase_filter": "nonintegral"
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "equation_target": {
+        "relation": "frozen Psi_0=1 F states"
+      },
+      "induction_rank": {
+        "reason": "no E1-E5 recursive edge",
+        "status": "not_assigned"
+      },
+      "marked_solution_set": {
+        "reason": "capacity audit has no marked-lift witness",
+        "status": "not_carried"
+      },
+      "potential_record": {
+        "reason": "capacity inequalities do not provide a well-founded descent",
+        "status": "absent"
+      },
+      "proof_boundary": "finite_capacity_negative_boundary",
+      "recursive_edge_eligible": false,
+      "scope": "cross_state_frozen_F_capacity_audit",
+      "scope_note": "Real carrier heights are verified for the frozen F sample, but character order and phase are not charged as extra height. No overload, marked lift, or universal Fourier-to-carrier map is inferred.",
+      "selected_branch": "bounded_fourier_carrier_capacity",
+      "selector_status": "analysis_evidence",
+      "signed_defect": {
+        "status": "not_carried"
+      },
+      "source_receipt": {
+        "certificate_input": "type-i-f-bounded-fourier-certificate-results.json",
+        "certificate_input_sha256": "97bd474f82271b3d6a1eb5260fc49b7d48551c4fc2872402b74759f3d817bd68",
+        "linear_source": "type_i_global_linear_b1_failure_general_b_profile_500m.py",
+        "linear_source_sha256": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d",
+        "result_file": "type-i-f-bounded-fourier-carrier-capacity-results.json",
+        "result_sha256": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074"
+      },
+      "state_id": "family:9cea6562376aee52e74f485ae6f4b96c337147d8e8c11a99c444a401406499d5",
+      "target_fiber": {
+        "reason": "family-level Fourier capacity evidence",
+        "status": "not_carried"
+      }
+    },
     {
       "certificate_context": {
         "carrier_mapping_status": "unproved",
@@ -6114,6 +6290,7 @@
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "bounded_fourier_carrier_capacity",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
     "overflow_fixed_s_outer_rank_reset",
@@ -6123,11 +6300,14 @@
     "overflow_qadic_phase_capacity"
   ],
   "source_sha256": {
+    "type-i-f-bounded-fourier-carrier-capacity-results.json": "4b4bec67fe5e9690fc03b0c362a93449fc94d2f96ad6ba1982ea00a47563b074",
+    "type-i-f-bounded-fourier-certificate-results.json": "97bd474f82271b3d6a1eb5260fc49b7d48551c4fc2872402b74759f3d817bd68",
     "type-i-fixed-layer-stabilizer-fourier-results.json": "e00071c2d4496a0ceda3c3cb9810de7adb7875af0eeb828c75ffeab14a37c6d4",
     "type-i-overflow-defect-unit-phase-capacity-results.json": "84d60683970586ce18f79b9db3c392b3dbc37231c955328226a875983e26e74c",
     "type-i-overflow-qadic-obstruction-transfer-results.json": "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a",
     "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d",
-    "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a"
+    "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a",
+    "type_i_global_linear_b1_failure_general_b_profile_500m.py": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d"
   },
   "states": [
     {
