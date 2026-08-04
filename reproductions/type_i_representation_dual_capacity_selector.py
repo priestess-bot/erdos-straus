@@ -65,6 +65,7 @@ SELECTOR_ORDER = [
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "overflow_high_carrier_p_plus_four_complement",
     "bounded_fourier_carrier_capacity",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
@@ -1885,6 +1886,176 @@ def overflow_direct_type_ii(payload: dict[str, object]) -> dict[str, object]:
     }
 
 
+def high_carrier_complement_classification(
+    prime: int, carrier: int, dual_carrier: int
+) -> dict[str, object]:
+    """Classify the high-carrier complement before the remaining overflow menu.
+
+    The determinant gives n=(4*M*d+1)/p.  If M>B_p, then M*d>B_p, while
+    n is 1 mod 4; values n<=p-4 are impossible.  Thus the exact boundary
+    is n=p or n>=p+4.  A 3 mod 4 factor of p+4 gives the exact standard
+    Type II certificate; otherwise this branch records a hard-core boundary.
+    """
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("high-carrier classification requires a core prime")
+    if carrier <= 0 or dual_carrier <= 0 or dual_carrier >= prime:
+        raise AssertionError("high-carrier determinant coordinates are out of range")
+    determinant = 4 * carrier * dual_carrier + 1
+    if determinant % prime:
+        raise AssertionError("high-carrier determinant is not divisible by p")
+    n = determinant // prime
+    R_M = 4 * carrier - n
+    if R_M <= prime:
+        raise AssertionError("high-carrier classifier received a non-overflow row")
+    B_prime = (prime - 1) ** 2 // 4
+    base = {
+        "prime": prime,
+        "carrier": carrier,
+        "dual_carrier": dual_carrier,
+        "n": n,
+        "R_M": R_M,
+        "B_p": B_prime,
+        "high_carrier": carrier > B_prime,
+    }
+    if carrier <= B_prime:
+        return {
+            **base,
+            "applicable": False,
+            "proof_boundary": "carrier_inside_outer_rank_domain",
+            "selector_status": "analysis_evidence",
+            "recursive_edge_eligible": False,
+        }
+
+    if n % 4 != 1:
+        raise AssertionError("determinant complement lost n=1 mod 4")
+    # M>B_p implies M*d>B_p.  For n<=p-4 (the largest n below p in this
+    # congruence class), (p*n-1)/4 < B_p.  The value n=p is possible and is
+    # therefore retained as a separate exact-complement boundary.
+    if n < prime:
+        raise AssertionError("high-carrier complement bound changed")
+    p_plus_four = prime + 4
+    q3_factors = [q for q, _ in factorization(p_plus_four) if q % 4 == 3]
+    return {
+        **base,
+        "applicable": True,
+        "complement_bound": {
+            "necessary_condition": "n=p or n>=p+4",
+            "case": "n=p" if n == prime else "n>=p+4",
+            "verified": True,
+            "p_plus_four": p_plus_four,
+            "factorization": factorization(p_plus_four),
+            "q_congruent_3_mod_4": q3_factors,
+        },
+        "direct_terminal_available": bool(q3_factors),
+        "selector_status": "terminal_leaf" if q3_factors else "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "proof_boundary": (
+            "high_carrier_p_plus_four_type_ii"
+            if q3_factors
+            else "high_carrier_p_plus_four_factor_filter"
+        ),
+    }
+
+
+def overflow_high_carrier_p_plus_four_complement(
+    payload: dict[str, object],
+) -> dict[str, object]:
+    """Route high-carrier overflow through the p+4 Type II complement."""
+    receipts: list[dict[str, object]] = []
+    for fixture in overflow_fixture_rows(payload):
+        name = str(fixture["name"])
+        prime = int(fixture["prime"])
+        carrier = int(fixture["M"])
+        dual_carrier = int(fixture["d"])
+        classification = high_carrier_complement_classification(
+            prime, carrier, dual_carrier
+        )
+        if not classification["applicable"]:
+            receipts.append(
+                {
+                    "fixture_name": name,
+                    "classification": classification,
+                    "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+                    "selector_status": "analysis_evidence",
+                    "recursive_edge_eligible": False,
+                    "proof_boundary": "carrier_inside_outer_rank_domain",
+                }
+            )
+            continue
+
+        q3_factors = classification["complement_bound"]["q_congruent_3_mod_4"]
+        if not q3_factors:
+            receipts.append(
+                {
+                    "fixture_name": name,
+                    "classification": classification,
+                    "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+                    "selector_status": "analysis_evidence",
+                    "recursive_edge_eligible": False,
+                    "proof_boundary": "high_carrier_p_plus_four_factor_filter",
+                    "missing_conditions": ["q_congruent_3_mod_4_factor"],
+                }
+            )
+            continue
+
+        gap = min(int(q) for q in q3_factors)
+        p_plus_four = prime + 4
+        x = (prime + gap) // 4
+        if (prime + gap) % 4 or (x + 1) % gap:
+            raise AssertionError(f"high-carrier Type II congruence changed: {name}")
+        y = prime * (x + 1) // gap
+        z = prime * x * (x + 1) // gap
+        if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, prime):
+            raise AssertionError(f"high-carrier Type II identity changed: {name}")
+        receipt = {
+            "fixture_name": name,
+            "classification": classification,
+            "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+            "state_class": "hit",
+            "selector_status": "terminal_leaf",
+            "recursive_edge_eligible": False,
+            "proof_boundary": "high_carrier_p_plus_four_type_ii",
+            "gap": gap,
+            "source_factorization": factorization(p_plus_four),
+            "type_ii_parameters": {"m": gap, "x": x, "d": 1},
+            "denominators": [x, y, z],
+            "identity": {
+                "equation": "4/p=1/x+1/y+1/z",
+                "verified_exactly": True,
+            },
+            "scope_note": (
+                "The high-carrier complement is checked before overflow descent; this is a "
+                "terminal certificate for the p+4 factor subfamily, not a universal p+4 claim."
+            ),
+        }
+        check_status_boundary(receipt)
+        receipts.append(receipt)
+
+    return {
+        "fixture_count": len(receipts),
+        "high_carrier_count": sum(
+            int(receipt["classification"]["high_carrier"]) for receipt in receipts
+        ),
+        "not_applicable_count": sum(
+            int(not receipt["classification"]["high_carrier"]) for receipt in receipts
+        ),
+        "verified_terminal_count": sum(
+            int(receipt["selector_status"] == "terminal_leaf") for receipt in receipts
+        ),
+        "hard_core_count": sum(
+            int(receipt["proof_boundary"] == "high_carrier_p_plus_four_factor_filter")
+            for receipt in receipts
+        ),
+        "receipts": receipts,
+        "scope_note": (
+            "The determinant complement bound is unconditional for high-carrier overflow. "
+            "Only rows with a 3 mod 4 factor in p+4 close in this branch; the remaining "
+            "factor-filter rows stay analysis evidence and require another Type I/II, alternate, "
+            "capacity, or well-founded reset argument."
+        ),
+    }
+
+
 def overflow_d_one_p_minus_two_g_rechart(payload: dict[str, object]) -> dict[str, object]:
     """Record the universal G rechart forced by the d=1 determinant branch.
 
@@ -2657,7 +2828,7 @@ def overflow_same_chart_support_promotion(
         ):
             raise AssertionError(f"same-chart promotion source invariant changed: {name}")
         if carrier > B_prime:
-            if prime % 4 != 1 or n % 4 != 1 or n < prime + 4:
+            if prime % 4 != 1 or n % 4 != 1 or n < prime:
                 raise AssertionError(f"high-carrier complement boundary changed: {name}")
             rejected.append(
                 {
@@ -2671,7 +2842,8 @@ def overflow_same_chart_support_promotion(
                     "proof_boundary": "same_chart_support_promotion_domain",
                     "missing_conditions": ["carrier_above_B_p"],
                     "high_carrier_complement_boundary": {
-                        "necessary_condition": "n>=p+4",
+                        "necessary_condition": "n=p or n>=p+4",
+                        "case": "n=p" if n == prime else "n>=p+4",
                         "prime_mod_4": prime % 4,
                         "n_mod_4": n % 4,
                         "verified": True,
@@ -2777,16 +2949,16 @@ def overflow_same_chart_support_promotion(
         },
         "high_carrier_residual": {
             "condition": "M>B_p",
-            "necessary_complement_bound": "n>=p+4",
+            "necessary_complement_bound": "n=p or n>=p+4",
             "proof": (
-                "S=M*d=(p*n-1)/4>B_p; n<=p-2 would force S<=B_p-1, "
-                "while n=p gives S=B_p; together with n=1 mod 4 this leaves n>=p+4."
+                "S=M*d=(p*n-1)/4>B_p; n<=p-4 forces S<B_p, while n=p "
+                "is possible; together with n=1 mod 4 this leaves n=p or n>=p+4."
             ),
         },
         "scope_note": (
             "This closes every source-receipt overflow with A|M, M/A>=2 and carrier "
             "M in the outer-rank domain.  Rows with M>B_p remain outside this same-chart "
-            "promotion and require another exit; they necessarily have n>=p+4."
+            "promotion and require another exit; they have n=p or n>=p+4."
         ),
     }
 
@@ -4671,6 +4843,7 @@ def build_results() -> dict[str, object]:
     states = [state_receipt(receipt, UNIFIED_INPUT.name) for receipt in normalized_receipts]
     verified_edge = verified_fixed_n_edge(overflow)
     direct_type_ii = overflow_direct_type_ii(overflow)
+    high_carrier_complement = overflow_high_carrier_p_plus_four_complement(overflow)
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
@@ -4712,6 +4885,7 @@ def build_results() -> dict[str, object]:
         "states": states,
         "verified_edges": [verified_edge],
         "overflow_direct_type_ii": direct_type_ii,
+        "overflow_high_carrier_p_plus_four_complement": high_carrier_complement,
         "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_n_bounded_divisor_outer_rank": fixed_n_bounded_divisor,
@@ -4741,6 +4915,8 @@ def build_results() -> dict[str, object]:
             "verified_edge_requires_E1_E5": True,
             "terminal_leaf_requires_direct_certificate": True,
             "direct_terminal_precedes_overflow_descent": True,
+            "high_carrier_complement_requires_q3_factor": True,
+            "high_carrier_complement_bound_replayed": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
@@ -4762,8 +4938,8 @@ def build_results() -> dict[str, object]:
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
             "It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, "
-            "plus a conditional support-debt phase bridge, but does not prove universal branch existence or "
-            "well-founded descent for all overflow states."
+            "a high-carrier p+4 complement router, and a conditional support-debt phase bridge, "
+            "but does not prove universal branch existence or well-founded descent for all overflow states."
         ),
     }
 
@@ -5021,6 +5197,75 @@ def verify_large_slab_factor_pair_capacity_contract(result: dict[str, object]) -
         raise AssertionError("large-slab capacity result hash changed")
     if source_receipt.get("generator_sha256") != sha256(LARGE_SLAB_CAPACITY_SOURCE):
         raise AssertionError("large-slab capacity generator hash changed")
+
+
+def verify_high_carrier_complement_contract(result: dict[str, object]) -> None:
+    receipt = result.get("overflow_high_carrier_p_plus_four_complement")
+    if not isinstance(receipt, dict):
+        raise AssertionError("high-carrier complement receipt missing")
+    if (
+        receipt.get("fixture_count") != 12
+        or receipt.get("high_carrier_count") != 1
+        or receipt.get("not_applicable_count") != 11
+        or receipt.get("verified_terminal_count") != 1
+        or receipt.get("hard_core_count") != 0
+    ):
+        raise AssertionError("high-carrier complement counts changed")
+    rows = receipt.get("receipts")
+    if not isinstance(rows, list) or len(rows) != 12:
+        raise AssertionError("high-carrier complement receipt shape changed")
+    high_rows = [row for row in rows if row["classification"]["high_carrier"]]
+    if len(high_rows) != 1:
+        raise AssertionError("high-carrier complement fixture changed")
+    high = high_rows[0]
+    classification = high.get("classification")
+    if not isinstance(classification, dict):
+        raise AssertionError("high-carrier classification missing")
+    bound = classification.get("complement_bound")
+    if (
+        classification.get("prime") != 73
+        or classification.get("carrier") != 1518
+        or classification.get("n") != 2329
+        or classification.get("B_p") != 1296
+        or not isinstance(bound, dict)
+        or bound.get("necessary_condition") != "n=p or n>=p+4"
+        or bound.get("case") != "n>=p+4"
+        or bound.get("p_plus_four") != 77
+        or bound.get("q_congruent_3_mod_4") != [7, 11]
+    ):
+        raise AssertionError("high-carrier complement boundary changed")
+    if (
+        high.get("selector_status") != "terminal_leaf"
+        or high.get("recursive_edge_eligible") is not False
+        or high.get("gap") != 7
+        or high.get("identity", {}).get("verified_exactly") is not True
+    ):
+        raise AssertionError("high-carrier Type II terminal changed")
+
+    # Keep the factor-filter boundary executable even though the focused source
+    # fixture currently lies in the terminal subfamily.
+    synthetic = high_carrier_complement_classification(97, 2449, 1)
+    synthetic_bound = synthetic.get("complement_bound")
+    if (
+        not synthetic["applicable"]
+        or synthetic["direct_terminal_available"]
+        or synthetic["selector_status"] != "analysis_evidence"
+        or synthetic.get("n") != 101
+        or not isinstance(synthetic_bound, dict)
+        or synthetic_bound.get("case") != "n>=p+4"
+        or synthetic_bound.get("p_plus_four") != 101
+        or synthetic_bound.get("q_congruent_3_mod_4") != []
+    ):
+        raise AssertionError("synthetic high-carrier factor-filter boundary changed")
+    exact_boundary = high_carrier_complement_classification(97, 2352, 1)
+    exact_bound = exact_boundary.get("complement_bound")
+    if (
+        not exact_boundary["applicable"]
+        or exact_boundary.get("n") != 97
+        or not isinstance(exact_bound, dict)
+        or exact_bound.get("case") != "n=p"
+    ):
+        raise AssertionError("n=p high-carrier boundary changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -5860,13 +6105,14 @@ def verify_overflow_same_chart_support_promotion_contract(
     if (
         not isinstance(residual, dict)
         or residual.get("condition") != "M>B_p"
-        or residual.get("necessary_complement_bound") != "n>=p+4"
+        or residual.get("necessary_complement_bound") != "n=p or n>=p+4"
     ):
         raise AssertionError("high-carrier residual contract changed")
     rejected_boundary = rejected[0].get("high_carrier_complement_boundary")
     if (
         not isinstance(rejected_boundary, dict)
-        or rejected_boundary.get("necessary_condition") != "n>=p+4"
+        or rejected_boundary.get("necessary_condition") != "n=p or n>=p+4"
+        or rejected_boundary.get("case") != "n>=p+4"
         or rejected_boundary.get("verified") is not True
     ):
         raise AssertionError("high-carrier fixture boundary changed")
@@ -6333,6 +6579,7 @@ def main() -> None:
         verify_bottom_word_lattice_contract(result)
         verify_source_word_joint_capacity_contract(result)
         verify_large_slab_factor_pair_capacity_contract(result)
+        verify_high_carrier_complement_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)

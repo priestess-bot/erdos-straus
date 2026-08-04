@@ -174,7 +174,8 @@ canonical chart \((p,R_M,K_M)\)，把 absorbed support 从 \(A\) 升到 \(M\)。
 E4；而 \(\lfloor B_p/M\rfloor<\lfloor B_p/A\rfloor\) 支付 E5。因此这是完整的
 overflow 同图表 verified edge，但目标仍是 overflow。12 个聚焦来源行中有 11 条满足
 该条件，唯一拒绝项是 \(p=73,M=1518>B_{73}=1296\) 的高载体行。对任意这样的高载体
-行，令 \(S=Md=(pn-1)/4\)，则 \(M>B_p\) 强制 \(n\ge p+4\)；因此残差同时落在
+行，令 \(S=Md=(pn-1)/4\)，则 \(M>B_p\) 排除 \(n\le p-4\)，而 \(n=p\) 仍是允许的
+精确边界；结合 \(n\equiv1\pmod4\)，高载体残差满足 \(n=p\) 或 \(n\ge p+4\)。因此残差落在
 大载体和大补余区域。当前余项可收缩为这一高载体区域，以及需要 alternate、直接
 Type I/II 或其它外层秩的分支；11/12 只是有限回放，不是全称覆盖。详见
 [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
@@ -2004,3 +2005,72 @@ overflow 的 alternate carrier 同时为 G 状态提供实际 source，就可能
 bundle 子程序接到统一递归分支。
 
 完整猜想是否能很快解决，目前仍高度不确定；但在未来数周内取得一个可发表的无限分支定理、合法递降子族或周期全称子类闭合，是现实目标。研究资源应集中在这些严格定义的节点上，而不再分散到新的有限菜单和同类终端枚举中。
+
+## 2026-08-04 高载体 overflow 的 p+4 互补分流补充
+
+本轮把报告中“同图表支撑升级留下的高载体残差”接入统一选择器，得到一个明确的
+量词分类。设 verified overflow 满足
+
+\[
+pn=4Md+1,
+\qquad R_M=4M-n>p,
+\qquad B_p=\frac{(p-1)^2}{4}.
+\]
+
+若 \(M>B_p\)，则 \(Md=(pn-1)/4>B_p\)。同时 \(n\equiv1\pmod4\)；若
+\(n\le p-4\)，则 \(Md<B_p\)，而 \(n=p\) 时
+
+\[
+Md=\frac{p^2-1}{4}=B_p+\frac{p-1}{2}>B_p.
+\]
+
+故有无条件边界
+
+\[
+\boxed{M>B_p\Longrightarrow n=p\ \text{或}\ n\ge p+4.}
+\]
+
+这不是新的猜想证明，但把高载体余项压到 \(n=p\) 或 \(p+4\) 以上的互补区域。
+
+进一步，若 \(p+4\) 含素因子 \(q\equiv3\pmod4\)，取
+
+\[
+m=q,
+\qquad x=\frac{p+m}{4},
+\qquad y=\frac{p(x+1)}m,
+\qquad z=\frac{px(x+1)}m,
+\]
+
+则 \(m\mid p+4\)、\(m\mid x+1\)，并直接得到
+
+\[
+\frac1x+\frac1y+\frac1z=\frac4p.
+\]
+
+统一选择器新增分支
+`overflow_high_carrier_p_plus_four_complement`，优先于其它 overflow 递降。冻结的
+12 条来源回执中，1 条属于高载体且由 \(p+4=77=7\cdot11\) 直接终端化：
+
+\[
+(p,M,d,n)=(73,1518,28,2329),
+\qquad (x,y,z)=(20,219,4380).
+\]
+
+若 \(p+4\) 没有 \(3\pmod4\) 素因子，分支明确保留为
+`analysis_evidence`/factor-filter hard core，不生成递归边。合成算术边界
+
+\[
+(p,M,d,n)=(97,2449,1,101),
+\qquad p+4=101
+\]
+
+验证了该负分支不会因当前冻结样本缺失而消失；\((97,2352,1,97)\) 同时展示了允许的
+精确边界 \(n=p\)。这些行没有 raw Reach/source provenance，也不是猜想反例。该分流
+只关闭高载体的 \(p+4\) 因子子族，不能替代一般 \(A>1\) bundle overflow 的
+alternate/容量/良基后继定理。
+
+主张卡：[高载体 overflow 的 p+4 互补分流](../claims/type-I-overflow-high-carrier-p-plus-four-complement.md)。
+回执位于
+`reproductions/type-i-representation-dual-capacity-selector-results.json`，验证命令：
+
+    python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

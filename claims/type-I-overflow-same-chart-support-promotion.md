@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-same-chart-support-promotion
 title: overflow 同图表支撑升级
-statement: 设已验证来源回执给出的 overflow canonical chart 满足 pn=4Md+1、R_M>p，并携带 A|M、M/A≥2 和 M≤B_p=(p-1)^2/4。则在不改变 (p,R_M,K_M) 图表的情况下，可把 absorbed support 从 A 升到 M；由于 M|K_M、Sol(p) 对图表独立且 floor(B_p/M)<floor(B_p/A)，这给出完整 E1--E5、恒等解提升和严格外层秩下降的同图表 overflow 后继。complete-excess bundle 是提供 M/A≥2 的一个来源，但该代数引理也适用于满足这些字段的其它已验证 overflow 回执。若 M>B_p，则由 S=Md=(pn-1)/4>B_p、n≡1 (mod 4) 排除 n≤p，必有 n≥p+4；该高载体大补余项仍需另一出口。
+statement: 设已验证来源回执给出的 overflow canonical chart 满足 pn=4Md+1、R_M>p，并携带 A|M、M/A≥2 和 M≤B_p=(p-1)^2/4。则在不改变 (p,R_M,K_M) 图表的情况下，可把 absorbed support 从 A 升到 M；由于 M|K_M、Sol(p) 对图表独立且 floor(B_p/M)<floor(B_p/A)，这给出完整 E1--E5、恒等解提升和严格外层秩下降的同图表 overflow 后继。complete-excess bundle 是提供 M/A≥2 的一个来源，但该代数引理也适用于满足这些字段的其它已验证 overflow 回执。若 M>B_p，则由 S=Md=(pn-1)/4>B_p、n≡1 (mod 4) 排除 n≤p-4，精确边界为 n=p 或 n≥p+4；该高载体大补余项仍需另一出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -117,11 +117,16 @@ overflow 选择器，不能把同图表升级误写成 Type I/II 终端。
 S=Md=\frac{pn-1}{4}.
 \]
 
-若 \(n\le p-2\)，则 \(S\le B_p-1\)，与 \(S\ge M>B_p\) 矛盾；\(n=p\) 时
-\(S=B_p\)，同样矛盾。又 \(n\equiv1\pmod4\)，故高载体残差必满足
+若 \(n\le p-4\)，则 \(S<B_p\)，与 \(S\ge M>B_p\) 矛盾；\(n=p\) 时
 
 \[
-n\ge p+4.
+S=\frac{p^2-1}{4}=B_p+\frac{p-1}{2}>B_p,
+\]
+
+恰好允许。又 \(n\equiv1\pmod4\)，故高载体残差满足
+
+\[
+n=p\quad\text{或}\quad n\ge p+4.
 \]
 
 这些状态仍需要 bounded divisor、固定-\(s\) alternate、直接 Type I/II 或另一个

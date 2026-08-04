@@ -3425,8 +3425,9 @@ M\le B_p=\frac{(p-1)^2}{4},
 这是一条完整 E1--E5 的 same-chart support promotion 边；目标仍然是 overflow。12 个
 聚焦来源行中 11 条满足这一条件，唯一越界的是
 \(p=73,M=1518>B_{73}=1296\)。对高载体行，\(S=Md=(pn-1)/4\) 与
-\(n\equiv1\pmod4\) 进一步给出必要边界 \(n\ge p+4\)。因此当前全称余项可进一步按
-\(M\le B_p\) 与 \(M>B_p,\ n\ge p+4\) 分层，后者才需要跨状态 alternate 或新的外层秩。
+\(n\equiv1\pmod4\) 排除 \(n\le p-4\)，但 \(n=p\) 是允许的精确边界。因此当前全称
+余项可进一步按 \(M\le B_p\) 与 \(M>B_p,\ (n=p\ \text{或}\ n\ge p+4)\) 分层，后者
+才需要跨状态 alternate 或新的外层秩。
 详见[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
 
 ## 2026-08-04：p-primary 共享 Type II 的 Davenport 收紧

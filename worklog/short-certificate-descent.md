@@ -4652,9 +4652,10 @@ selector_status=analysis_evidence、recursive_edge_eligible=false。
 
 当前 12 个聚焦来源行重放得到 11 条完整 verified edge。唯一被该分支拒绝的是
 \(p=73,M=1518>B_{73}=1296\) 的高载体行。对任意高载体行，
-\(S=Md=(pn-1)/4>B_p\)、\(n\equiv1\pmod4\) 且 \(n=p\) 时 \(S=B_p\)，所以
-必有 \(n\ge p+4\)。这个结果把同图表分支的全称任务压缩成一个条件性引理，同时把
-下一阶段的残差明确限定为 \(M>B_p, n\ge p+4\) 以及 alternate、直接 Type I/II
+\(S=Md=(pn-1)/4>B_p\)、\(n\equiv1\pmod4\) 且 \(n\le p-4\) 时 \(S<B_p\)；
+\(n=p\) 时 \(S=(p^2-1)/4>B_p\)，所以精确边界是 \(n=p\) 或 \(n\ge p+4\)。
+这个结果把同图表分支的全称任务压缩成一个条件性引理，同时把下一阶段的残差明确
+限定为 \(M>B_p, n=p\) 或 \(n\ge p+4\)，以及 alternate、直接 Type I/II
 或其它外层秩尚未支付的状态；11/12 仅是有限回放证据。
 
 实现和合同见[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
@@ -4842,3 +4843,83 @@ scaled-first marked witness。该输入与已有的动态短零积 profile 分�
     python3 reproductions/type_ii_automatic_residual_k1_funnel.py \
       --limit 10000000 --gap-cap 239 --rank-three-exact-davenport-profile \
       --output reproductions/type-ii-automatic-residual-rank-three-exact-davenport-profile-10m-results.json
+
+## 2026-08-04 高载体 overflow 的 p+4 互补分流
+
+### 新的量词分类
+
+对 verified overflow 行列式
+
+\[
+pn=4Md+1,\qquad R_M=4M-n>p,
+\qquad B_p=\frac{(p-1)^2}{4}
+\]
+
+若 \(M>B_p\)，则 \(Md>B_p\)。又 \(n\equiv1\pmod4\)：当 \(n\le p-4\) 时
+
+\[
+Md=\frac{pn-1}{4}<B_p,
+\]
+
+而 \(n=p\) 时
+
+\[
+Md=\frac{p^2-1}{4}=B_p+\frac{p-1}{2}>B_p.
+\]
+
+因此高载体残差满足
+
+\[
+n=p\quad\text{或}\quad n\ge p+4.
+\]
+
+这把同图表支撑升级留下的高载体余项压到一个明确的互补量边界，但不声称该
+边界本身已经递归闭合。
+
+### p+4 Type II 子族
+
+若 \(q\mid p+4\) 且 \(q\equiv3\pmod4\)，取
+
+\[
+m=q,\qquad x=(p+m)/4,\qquad
+y=p(x+1)/m,\qquad z=px(x+1)/m,
+\]
+
+则 \(m\mid x+1\)，并精确得到
+
+\[
+\frac1x+\frac1y+\frac1z=\frac4p.
+\]
+
+统一选择器新增
+`overflow_high_carrier_p_plus_four_complement`，在其它 overflow 递降分支之前执行。
+它对当前 12 条来源行给出 1 条高载体终端、11 条低载体不适用：唯一高载体行
+
+\[
+(p,M,d,n)=(73,1518,28,2329),
+\]
+
+有 \(p+4=77=7\cdot11\)，选择 \(q=7\) 得精确分母
+
+\[
+(x,y,z)=(20,219,4380).
+\]
+
+### hard-core 负边界
+
+当 \(p+4\) 没有 \(3\pmod4\) 素因子，选择器保留
+`analysis_evidence`，不生成递归边。合成算术边界
+
+\[
+(p,M,d,n)=(97,2449,1,101),\qquad p+4=101
+\]
+
+验证了该 factor-filter 分支确实可达；\((97,2352,1,97)\) 同时展示了允许的精确边界
+\(n=p\)。这些行没有 raw Reach/source provenance，也不是猜想反例。下一步仍需
+alternate、容量或其它良基外层秩。
+
+主张卡见[高载体 overflow 的 p+4 互补分流](../claims/type-I-overflow-high-carrier-p-plus-four-complement.md)。
+
+复现：
+
+    python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

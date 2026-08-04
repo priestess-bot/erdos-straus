@@ -933,6 +933,8 @@
     "fixed_s_bounded_divisor_requires_product_divisor": true,
     "fixed_s_overflow_rank_requires_product_divisor": true,
     "hard_core_negative_receipt_never_recursive": true,
+    "high_carrier_complement_bound_replayed": true,
+    "high_carrier_complement_requires_q3_factor": true,
     "large_slab_capacity_requires_carrier_mapping": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
@@ -7743,6 +7745,304 @@
       }
     ]
   },
+  "overflow_high_carrier_p_plus_four_complement": {
+    "fixture_count": 12,
+    "hard_core_count": 0,
+    "high_carrier_count": 1,
+    "not_applicable_count": 11,
+    "receipts": [
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 359,
+          "applicable": false,
+          "carrier": 91,
+          "dual_carrier": 1,
+          "high_carrier": false,
+          "n": 5,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "accumulated_d_one_boundary",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 41616,
+          "R_M": 511,
+          "applicable": false,
+          "carrier": 250,
+          "dual_carrier": 200,
+          "high_carrier": false,
+          "n": 489,
+          "prime": 409,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "accumulated_positive_fixed_n_edge",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 14400,
+          "R_M": 719,
+          "applicable": false,
+          "carrier": 190,
+          "dual_carrier": 13,
+          "high_carrier": false,
+          "n": 41,
+          "prime": 241,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "empty_fixed_n_window",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 127,
+          "applicable": false,
+          "carrier": 38,
+          "dual_carrier": 12,
+          "high_carrier": false,
+          "n": 25,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "reachable_conflict_bundle_0",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 1799,
+          "applicable": false,
+          "carrier": 608,
+          "dual_carrier": 19,
+          "high_carrier": false,
+          "n": 633,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "reachable_conflict_bundle_1",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 1191,
+          "applicable": false,
+          "carrier": 836,
+          "dual_carrier": 47,
+          "high_carrier": false,
+          "n": 2153,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "reachable_conflict_bundle_2",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 2863,
+          "applicable": false,
+          "carrier": 950,
+          "dual_carrier": 18,
+          "high_carrier": false,
+          "n": 937,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "reachable_conflict_bundle_3",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 95,
+          "applicable": false,
+          "carrier": 34,
+          "dual_carrier": 22,
+          "high_carrier": false,
+          "n": 41,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "root_edge_0",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 14400,
+          "R_M": 251,
+          "applicable": false,
+          "carrier": 71,
+          "dual_carrier": 28,
+          "high_carrier": false,
+          "n": 33,
+          "prime": 241,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "root_edge_1",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 3743,
+          "applicable": true,
+          "carrier": 1518,
+          "complement_bound": {
+            "case": "n>=p+4",
+            "factorization": [
+              [
+                7,
+                1
+              ],
+              [
+                11,
+                1
+              ]
+            ],
+            "necessary_condition": "n=p or n>=p+4",
+            "p_plus_four": 77,
+            "q_congruent_3_mod_4": [
+              7,
+              11
+            ],
+            "verified": true
+          },
+          "direct_terminal_available": true,
+          "dual_carrier": 28,
+          "high_carrier": true,
+          "n": 2329,
+          "prime": 73,
+          "proof_boundary": "high_carrier_p_plus_four_type_ii",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf"
+        },
+        "denominators": [
+          20,
+          219,
+          4380
+        ],
+        "fixture_name": "lcm_cycle_step_0",
+        "gap": 7,
+        "identity": {
+          "equation": "4/p=1/x+1/y+1/z",
+          "verified_exactly": true
+        },
+        "proof_boundary": "high_carrier_p_plus_four_type_ii",
+        "recursive_edge_eligible": false,
+        "scope_note": "The high-carrier complement is checked before overflow descent; this is a terminal certificate for the p+4 factor subfamily, not a universal p+4 claim.",
+        "selector_status": "terminal_leaf",
+        "source_factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "state_class": "hit",
+        "type_ii_parameters": {
+          "d": 1,
+          "m": 7,
+          "x": 20
+        }
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 1296,
+          "R_M": 1367,
+          "applicable": false,
+          "carrier": 924,
+          "dual_carrier": 46,
+          "high_carrier": false,
+          "n": 2329,
+          "prime": 73,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "lcm_cycle_step_1",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      },
+      {
+        "certificate_type": "overflow_high_carrier_p_plus_four_complement",
+        "classification": {
+          "B_p": 14400,
+          "R_M": 1103,
+          "applicable": false,
+          "carrier": 568,
+          "dual_carrier": 124,
+          "high_carrier": false,
+          "n": 1169,
+          "prime": 241,
+          "proof_boundary": "carrier_inside_outer_rank_domain",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence"
+        },
+        "fixture_name": "symmetric_small_chart_support_conflict",
+        "proof_boundary": "carrier_inside_outer_rank_domain",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence"
+      }
+    ],
+    "scope_note": "The determinant complement bound is unconditional for high-carrier overflow. Only rows with a 3 mod 4 factor in p+4 close in this branch; the remaining factor-filter rows stay analysis evidence and require another Type I/II, alternate, capacity, or well-founded reset argument.",
+    "verified_terminal_count": 1
+  },
   "overflow_menu": {
     "classification_counts": {
       "fixed_n_window_nonempty": 3,
@@ -11906,8 +12206,8 @@
     "fixture_count": 12,
     "high_carrier_residual": {
       "condition": "M>B_p",
-      "necessary_complement_bound": "n>=p+4",
-      "proof": "S=M*d=(p*n-1)/4>B_p; n<=p-2 would force S<=B_p-1, while n=p gives S=B_p; together with n=1 mod 4 this leaves n>=p+4."
+      "necessary_complement_bound": "n=p or n>=p+4",
+      "proof": "S=M*d=(p*n-1)/4>B_p; n<=p-4 forces S<B_p, while n=p is possible; together with n=1 mod 4 this leaves n=p or n>=p+4."
     },
     "promotion_rule": {
       "potential": "floor(B_p/M)<floor(B_p/A)",
@@ -11924,8 +12224,9 @@
         ],
         "fixture_name": "lcm_cycle_step_0",
         "high_carrier_complement_boundary": {
+          "case": "n>=p+4",
           "n_mod_4": 1,
-          "necessary_condition": "n>=p+4",
+          "necessary_condition": "n=p or n>=p+4",
           "prime_mod_4": 1,
           "verified": true
         },
@@ -11939,7 +12240,7 @@
         "source_support": 66
       }
     ],
-    "scope_note": "This closes every source-receipt overflow with A|M, M/A>=2 and carrier M in the outer-rank domain.  Rows with M>B_p remain outside this same-chart promotion and require another exit; they necessarily have n>=p+4.",
+    "scope_note": "This closes every source-receipt overflow with A|M, M/A>=2 and carrier M in the outer-rank domain.  Rows with M>B_p remain outside this same-chart promotion and require another exit; they have n=p or n>=p+4.",
     "verified_edge_count": 11,
     "verified_receipts": [
       {
@@ -13355,12 +13656,13 @@
     "scope_note": "RESET remains candidate_transition until an outer non-resettable rank is supplied."
   },
   "schema_version": 1,
-  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, plus a conditional support-debt phase bridge, but does not prove universal branch existence or well-founded descent for all overflow states.",
+  "scope_note": "This receipt unifies state-local representation, dual, and capacity evidence. It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, a high-carrier p+4 complement router, and a conditional support-debt phase bridge, but does not prove universal branch existence or well-founded descent for all overflow states.",
   "selector_order": [
     "direct_type_i_or_type_ii",
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "overflow_high_carrier_p_plus_four_complement",
     "bounded_fourier_carrier_capacity",
     "overflow_fixed_n_charged_support",
     "overflow_fixed_n_outer_rank_reset",
