@@ -936,6 +936,7 @@
     "high_carrier_complement_bound_replayed": true,
     "high_carrier_complement_requires_q3_factor": true,
     "large_slab_capacity_requires_carrier_mapping": true,
+    "n_prime_g_anchor_phase_requires_source_provenance": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
@@ -7744,6 +7745,896 @@
         }
       }
     ]
+  },
+  "overflow_high_carrier_n_prime_g_anchor_phase": {
+    "profile_count": 2,
+    "profiles": [
+      {
+        "low_phase_count": 6,
+        "overflow_phase_count": 2,
+        "prime": 73,
+        "profile_type": "synthetic_arithmetic_boundary",
+        "row_count": 8,
+        "rows": [
+          {
+            "absorbed_support": 1,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                0
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 37,
+              "old": 1296,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 1296,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 420,
+              "R": 23,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 35,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 2,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                1
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 18,
+              "old": 648,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 648,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 420,
+              "R": 23,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 70,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 3,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                2
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 12,
+              "old": 432,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 432,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 420,
+              "R": 23,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 105,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 4,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                3
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 9,
+              "old": 324,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 324,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 420,
+              "R": 23,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 140,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 6,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                5
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 6,
+              "old": 216,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 216,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 420,
+              "R": 23,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 210,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 8,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                7
+              ],
+              "t": 4
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 162,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 162,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 10640,
+              "R": 583,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 280,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 12,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                11
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 3,
+              "old": 108,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 108,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 420,
+              "R": 23,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 420,
+              "carrier_over_support": 35
+            }
+          },
+          {
+            "absorbed_support": 18,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                17
+              ],
+              "t": 6
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 72,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 72,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 15750,
+              "R": 863,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 630,
+              "carrier_over_support": 35
+            }
+          }
+        ],
+        "scope_note": "Rows verify the exact n=p G-anchor phase formula for supplied A|B_p supports. They carry no raw Reach provenance and never constitute recursive edges."
+      },
+      {
+        "low_phase_count": 5,
+        "overflow_phase_count": 3,
+        "prime": 97,
+        "profile_type": "synthetic_arithmetic_boundary",
+        "row_count": 8,
+        "rows": [
+          {
+            "absorbed_support": 1,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                0
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 49,
+              "old": 2304,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 2304,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 752,
+              "R": 31,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 47,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 2,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                1
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 24,
+              "old": 1152,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 1152,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 752,
+              "R": 31,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 94,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 3,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                2
+              ],
+              "t": 2
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 768,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 768,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 9870,
+              "R": 407,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 141,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 4,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                3
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 12,
+              "old": 576,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 576,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 752,
+              "R": 31,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 188,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 6,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                5
+              ],
+              "t": 2
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 384,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 384,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 9870,
+              "R": 407,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 282,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 8,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                7
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 6,
+              "old": 288,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 288,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 752,
+              "R": 31,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 376,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 9,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                8
+              ],
+              "t": 8
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 256,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 256,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 37224,
+              "R": 1535,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 423,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 16,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": true,
+              "range": [
+                0,
+                15
+              ],
+              "t": 0
+            },
+            "phase_class": "conditional_bundle_marked_absorb",
+            "potential_record": {
+              "new": 3,
+              "old": 144,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 144,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 752,
+              "R": 31,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 752,
+              "carrier_over_support": 47
+            }
+          }
+        ],
+        "scope_note": "Rows verify the exact n=p G-anchor phase formula for supplied A|B_p supports. They carry no raw Reach provenance and never constitute recursive edges."
+      }
+    ],
+    "scope_note": "Synthetic exact-n=p profiles expose the deterministic G-anchor phase split; they do not supply raw source provenance or recursive E1-E5 edges."
   },
   "overflow_high_carrier_p_plus_four_complement": {
     "exact_n_prime_count": 0,

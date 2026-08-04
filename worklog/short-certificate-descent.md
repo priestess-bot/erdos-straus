@@ -4948,3 +4948,48 @@ alternate、容量或其它良基外层秩。
 exact_n_prime_count=0；合成边界验证通过。
 
 主张卡见[高载体 n=p overflow 的唯一 d=1 G-anchor 正规形](../claims/type-I-overflow-high-carrier-n-prime-normal-form.md)。
+
+## 2026-08-04 exact n=p G-anchor bundle 的精确相位二分
+
+继续处理 n=p 的 G-anchor。令
+
+\[
+B_p=(p-1)^2/4,\qquad Q=(p-3)/2,\qquad c=(p-1)/6.
+\]
+
+对 G 图表中已携带的 proper support \(A\mid B_p\)、\(B_p/A\ge2\)，令 \(t_A\) 为
+\(0\le t_A<A\) 中满足
+
+\[
+c+pt_A\equiv0\pmod A
+\]
+
+的唯一相位。因为
+\[
+R_Q=(p-4)/3,\qquad K_Q=Qc,
+\]
+所以 \(M=AQ\) 的规范图表严格满足
+
+\[
+R_M=R_Q+4Qt_A,\qquad K_M=Q(c+pt_A).
+\]
+
+这给出无样本二分：
+
+\[
+R_M<p
+\iff t_A=0
+\iff A\mid(p-1)/6.
+\]
+
+低相位时 \(M\le B_p\)，具有同图表 marked-absorb 的算术容量形状；非零相位时
+\(R_M\ge R_Q+4Q>p\)，精确进入 bundle overflow。实现新增
+high_carrier_n_prime_g_anchor_bundle_phase 和两个 synthetic arithmetic profile，
+但所有行都保持 analysis_evidence、E1--E5 全假、不可递归；这一步只完成相位分类，
+没有伪造 source provenance 或 marked lift。
+
+复现：
+
+    python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+
+主张卡见[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

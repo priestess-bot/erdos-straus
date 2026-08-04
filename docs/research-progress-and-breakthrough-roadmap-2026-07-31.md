@@ -2103,3 +2103,54 @@ alternate/容量/良基后继定理。
 该分支不存在，而是冻结样本没有覆盖 n=p 行。
 
 主张卡：[高载体 n=p overflow 的唯一 d=1 G-anchor 正规形](../claims/type-I-overflow-high-carrier-n-prime-normal-form.md)。
+
+## 2026-08-04 高载体 n=p G-anchor bundle 的精确相位二分
+
+exact \(n=p\) 的 G-anchor 还可以继续压缩。令
+
+\[
+B_p=\frac{(p-1)^2}{4},\qquad
+Q=\frac{p-3}{2},\qquad
+c=\frac{p-1}{6}.
+\]
+
+若当前 G 图表携带 proper support \(A\mid B_p\)、\(B_p/A\ge2\)，则
+\(\gcd(A,Q)=1\)。令 \(t_A\) 是 \(0\le t_A<A\) 中满足
+
+\[
+c+pt_A\equiv0\pmod A
+\]
+
+的唯一相位。对 G-anchor bundle \(M=AQ\)，规范图表可直接写成
+
+\[
+R_M=R_Q+4Qt_A,\qquad
+R_Q=\frac{p-4}{3},\qquad
+K_M=Q(c+pt_A).
+\]
+
+因 \(p\equiv1\pmod{24}\) 且 \(p\ge73\)，得到精确二分：
+
+\[
+\boxed{
+R_M<p
+\iff
+t_A=0
+\iff
+A\mid\frac{p-1}{6};
+}
+\]
+
+若 \(A\mid(p-1)/6\)，则 \(M\le B_p\)，该行具备
+conditional_bundle_marked_absorb 的算术形状；否则
+\(R_M\ge R_Q+4Q>p\)，精确进入 bundle overflow。两种回执都没有自动携带 raw
+source provenance、标记集提升或 E1--E5，因此统一选择器保持
+analysis_evidence，不把公式误报为递归边。
+
+选择器以没有来源路径的合成 profile 重算：
+\(p=73\) 的 8 个 supports 中 6 个低相位、2 个 overflow；
+\(p=97\) 的 8 个 supports 中 5 个低相位、3 个 overflow。该结果把 exact \(n=p\)
+从未分类的 G-anchor 参数族压成确定相位选择器，但全称缺口仍是：来源可达的低相位是否
+能补齐完整 E1--E5，非整除相位是否必有 alternate、直接证书或跨状态良基秩。
+
+主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

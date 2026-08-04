@@ -15,6 +15,7 @@ depends_on:
   - type-I-overflow-fixed-n-overflow-rank-descent
   - type-I-overflow-fixed-n-bounded-divisor-saturation
   - type-I-overflow-high-carrier-fixed-n-R-descent
+  - type-I-overflow-high-carrier-n-prime-g-anchor-phase
   - type-I-overflow-same-chart-support-promotion
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -65,6 +66,8 @@ sources:
     role: large-slab-factor-pair-and-cross-layer-capacity-boundary
   - claim: type-I-overflow-a-one-dual-outer-rank-reset
     role: universal-A-one-dual-reset-subfamily
+  - claim: type-I-overflow-high-carrier-n-prime-g-anchor-phase
+    role: exact-n-prime-G-anchor-phase-classification
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -273,6 +276,15 @@ R_L=4L-n<R_M=4M-n.
 选择器将这个事实保存为 high_carrier_R_descent 次级秩字段，并由 verifier 从
 \(M,B_p,L,R_M,R_L\) 重算；它只在候选边已通过 E1--E5 后生效，不提供候选存在性，
 也不替代全局 phase 的良基性。详见[高载体 overflow 固定 \(n\) 有界除子的 \(R\) 严格递降](type-I-overflow-high-carrier-fixed-n-R-descent.md)。
+
+exact \(n=p\) 高载体行还附带
+overflow_high_carrier_n_prime_g_anchor_phase 算术回执。对 G 图表的 proper support
+\(A\mid B_p\)，令 \(Q=(p-3)/2\)、\(c=(p-1)/6\)，唯一相位
+\(0\le t_A<A\) 满足 \(c+pt_A\equiv0\pmod A\)。选择器重算
+\(R_{AQ}=R_Q+4Qt_A\)，并把 \(A\mid c\) 的低相位标为
+conditional_bundle_marked_absorb、其余标为 bundle_overflow。这两类回执均保持
+analysis_evidence；该字段只补足 exact \(n=p\) 的算术分类，不携带来源路径、标记提升
+或递归 E1--E5。详见[高载体 n=p G-anchor bundle 的精确相位二分](type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

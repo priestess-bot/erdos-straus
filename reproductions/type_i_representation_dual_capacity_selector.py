@@ -1940,6 +1940,121 @@ def high_carrier_n_prime_normal_form(
     }
 
 
+def high_carrier_n_prime_g_anchor_bundle_phase(
+    prime: int, absorbed_support: int
+) -> dict[str, object]:
+    """Classify the exact n=p G-anchor bundle phase for a proper support A|B_p.
+
+    The source support is intentionally treated as an input condition.  This
+    helper proves the canonical arithmetic of M=AQ, but does not invent the
+    source/path provenance or promote the low phase to an E1--E5 edge.
+    """
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("n=p G-anchor phase requires a core prime")
+    B_prime = (prime - 1) ** 2 // 4
+    A = absorbed_support
+    if A <= 0 or B_prime % A or B_prime // A < 2:
+        raise AssertionError("G-anchor phase requires a proper A|B_p support")
+
+    Q = (prime - 3) // 2
+    c = (prime - 1) // 6
+    if prime % 6 != 1 or prime - 3 != 2 * Q or gcd(Q, B_prime) != 1:
+        raise AssertionError("n=p G-anchor constants changed")
+    R_Q, K_Q = canonical_chart(prime, Q)
+    if R_Q != (prime - 4) // 3 or K_Q != Q * c:
+        raise AssertionError("n=p G-anchor base chart changed")
+
+    inverse = 0 if A == 1 else pow(prime, -1, A)
+    phase = (-c * inverse) % A
+    carrier = A * Q
+    expected_R = R_Q + 4 * Q * phase
+    expected_K = Q * (c + prime * phase)
+    chart_R, chart_K = canonical_chart(prime, carrier)
+    if (chart_R, chart_K) != (expected_R, expected_K):
+        raise AssertionError("n=p G-anchor bundle phase formula changed")
+    if (c + prime * phase) % A:
+        raise AssertionError("n=p G-anchor phase does not pay A")
+
+    low_phase = phase == 0
+    if low_phase:
+        if c % A or chart_R >= prime or carrier > B_prime:
+            raise AssertionError("n=p G-anchor low phase boundary changed")
+    else:
+        if chart_R <= prime:
+            raise AssertionError("n=p G-anchor overflow phase boundary changed")
+
+    receipt = {
+        "prime": prime,
+        "absorbed_support": A,
+        "support_domain": {
+            "K": B_prime,
+            "A_divides_K": True,
+            "B_over_A": B_prime // A,
+            "proper_support": True,
+        },
+        "anchor": {
+            "Q": Q,
+            "beta": 2,
+            "c": c,
+            "base_chart": {"R": R_Q, "K": K_Q},
+        },
+        "phase": {
+            "t": phase,
+            "range": [0, A - 1],
+            "congruence": "c+p*t=0 (mod A)",
+            "low_phase": low_phase,
+            "equivalent_low_condition": "A divides (p-1)/6",
+        },
+        "target_chart": {
+            "carrier": carrier,
+            "R": chart_R,
+            "K": chart_K,
+            "carrier_over_support": Q,
+            "canonical_formula": "R=R_Q+4*Q*t",
+        },
+        "phase_class": (
+            "conditional_bundle_marked_absorb" if low_phase else "bundle_overflow"
+        ),
+        "potential_record": {
+            "status": "conditional_arithmetic",
+            "old": B_prime // A,
+            "new": B_prime // carrier if low_phase else None,
+            "strict_decrease": low_phase,
+            "requires_source_bundle_provenance": True,
+        },
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
+def high_carrier_n_prime_g_anchor_phase_profile(
+    prime: int, supports: list[int]
+) -> dict[str, object]:
+    """Build a small synthetic arithmetic profile for both phase outcomes."""
+    rows = [
+        high_carrier_n_prime_g_anchor_bundle_phase(prime, support)
+        for support in sorted(set(supports))
+    ]
+    return {
+        "prime": prime,
+        "profile_type": "synthetic_arithmetic_boundary",
+        "rows": rows,
+        "row_count": len(rows),
+        "low_phase_count": sum(row["phase"]["low_phase"] for row in rows),
+        "overflow_phase_count": sum(
+            not row["phase"]["low_phase"] for row in rows
+        ),
+        "scope_note": (
+            "Rows verify the exact n=p G-anchor phase formula for supplied A|B_p supports. "
+            "They carry no raw Reach provenance and never constitute recursive edges."
+        ),
+    }
+
+
 def high_carrier_complement_classification(
     prime: int, carrier: int, dual_carrier: int
 ) -> dict[str, object]:
@@ -4910,6 +5025,14 @@ def build_results() -> dict[str, object]:
     verified_edge = verified_fixed_n_edge(overflow)
     direct_type_ii = overflow_direct_type_ii(overflow)
     high_carrier_complement = overflow_high_carrier_p_plus_four_complement(overflow)
+    n_prime_phase_profiles = [
+        high_carrier_n_prime_g_anchor_phase_profile(
+            73, [1, 2, 3, 4, 6, 8, 12, 18]
+        ),
+        high_carrier_n_prime_g_anchor_phase_profile(
+            97, [1, 2, 3, 4, 6, 8, 9, 16]
+        ),
+    ]
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
@@ -4952,6 +5075,14 @@ def build_results() -> dict[str, object]:
         "verified_edges": [verified_edge],
         "overflow_direct_type_ii": direct_type_ii,
         "overflow_high_carrier_p_plus_four_complement": high_carrier_complement,
+        "overflow_high_carrier_n_prime_g_anchor_phase": {
+            "profiles": n_prime_phase_profiles,
+            "profile_count": len(n_prime_phase_profiles),
+            "scope_note": (
+                "Synthetic exact-n=p profiles expose the deterministic G-anchor phase split; "
+                "they do not supply raw source provenance or recursive E1-E5 edges."
+            ),
+        },
         "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_n_bounded_divisor_outer_rank": fixed_n_bounded_divisor,
@@ -4983,6 +5114,7 @@ def build_results() -> dict[str, object]:
             "direct_terminal_precedes_overflow_descent": True,
             "high_carrier_complement_requires_q3_factor": True,
             "high_carrier_complement_bound_replayed": True,
+            "n_prime_g_anchor_phase_requires_source_provenance": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
@@ -5341,6 +5473,55 @@ def verify_high_carrier_complement_contract(result: dict[str, object]) -> None:
         or exact_normal_form.get("anchor", {}).get("beta") != 2
     ):
         raise AssertionError("n=p high-carrier boundary changed")
+
+
+def verify_high_carrier_n_prime_g_anchor_phase_contract(
+    result: dict[str, object]
+) -> None:
+    payload = result.get("overflow_high_carrier_n_prime_g_anchor_phase")
+    if not isinstance(payload, dict) or payload.get("profile_count") != 2:
+        raise AssertionError("n=p G-anchor phase profile shape changed")
+    profiles = payload.get("profiles")
+    if not isinstance(profiles, list) or len(profiles) != 2:
+        raise AssertionError("n=p G-anchor phase profiles missing")
+    expected = {
+        73: {"supports": [1, 2, 3, 4, 6, 8, 12, 18], "low": 6, "overflow": 2},
+        97: {"supports": [1, 2, 3, 4, 6, 8, 9, 16], "low": 5, "overflow": 3},
+    }
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            raise AssertionError("n=p G-anchor profile is not an object")
+        prime = profile.get("prime")
+        if prime not in expected:
+            raise AssertionError("unexpected n=p G-anchor profile prime")
+        spec = expected[prime]
+        if (
+            profile.get("profile_type") != "synthetic_arithmetic_boundary"
+            or profile.get("row_count") != len(spec["supports"])
+            or profile.get("low_phase_count") != spec["low"]
+            or profile.get("overflow_phase_count") != spec["overflow"]
+        ):
+            raise AssertionError("n=p G-anchor phase counts changed")
+        rows = profile.get("rows")
+        if not isinstance(rows, list) or {
+            row.get("absorbed_support") for row in rows if isinstance(row, dict)
+        } != set(spec["supports"]):
+            raise AssertionError("n=p G-anchor support profile changed")
+        for row in rows:
+            if not isinstance(row, dict):
+                raise AssertionError("n=p G-anchor phase row is not an object")
+            if (
+                row.get("selector_status") != "analysis_evidence"
+                or row.get("recursive_edge_eligible") is not False
+                or row.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+            ):
+                raise AssertionError("n=p G-anchor phase crossed status boundary")
+            support = int(row["absorbed_support"])
+            expected_row = high_carrier_n_prime_g_anchor_bundle_phase(
+                int(prime), support
+            )
+            if row != expected_row:
+                raise AssertionError("stored n=p G-anchor phase row is stale")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -6655,6 +6836,7 @@ def main() -> None:
         verify_source_word_joint_capacity_contract(result)
         verify_large_slab_factor_pair_capacity_contract(result)
         verify_high_carrier_complement_contract(result)
+        verify_high_carrier_n_prime_g_anchor_phase_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)
