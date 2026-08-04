@@ -2008,6 +2008,9 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
             complement_C * window_denominator > window_numerator
         ):
             raise AssertionError("n=p G-anchor fixed-n window threshold changed")
+        universal_k_two_no_go = residue_class == 2 and not window_possible
+        if residue_class == 2 and not universal_k_two_no_go:
+            raise AssertionError("k=2 fixed-n window no-go changed")
         closed_form_phase = {
             "applicable": True,
             "complement_C": complement_C,
@@ -2025,6 +2028,7 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
                 ),
                 "threshold_numerator": window_numerator,
                 "threshold_denominator": window_denominator,
+                "universal_k_two_no_go": universal_k_two_no_go,
             },
         }
 
@@ -5838,6 +5842,8 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
             or closed.get("residue_class_k") != expected_case[1]
             or closed.get("identity") != "p*n=4*M*d+1"
             or closed.get("fixed_n_window", {}).get("possible") is not False
+            or closed.get("fixed_n_window", {}).get("universal_k_two_no_go")
+            != (expected_case[1] == 2)
         ):
             raise AssertionError("n=p G-anchor residue-class phase formula changed")
 

@@ -2188,5 +2188,14 @@ C(2p^2-p-4)>4kB_pQ.
 \]
 这提供了一个先验空窗口筛选器：不满足该不等式的 \(C\equiv1,2\) 行无需继续枚举
 有界 fixed-\(n\) 除子，应直接进入 fixed-\(s\)、alternate 或 q 进容量分支。
+特别地，\(k=2\) 时阈值 \(D_2=8B_pQ/(2p^2-p-4)\) 满足
+\(Q-1<D_2<Q\)，所以所有整数 \(C<Q\) 都落在空窗口一侧。由此
+\[
+C\equiv2\pmod3
+\Longrightarrow
+\text{无 }B_p\text{-bounded fixed-}n_C\text{ 后继窗口}.
+\]
+当前 exact \(n=p\) fixed-\(n\) 余项因此只剩 \(C\equiv1\pmod3\) 的可能窗口，以及
+\(C\equiv0\) 已完成的条件性重置子族。
 
 主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

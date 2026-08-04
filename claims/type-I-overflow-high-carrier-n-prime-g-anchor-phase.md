@@ -185,6 +185,19 @@ C(2p^2-p-4)>4kB_pQ.
 当 (7) 失败时，\(C\equiv1,2\pmod3\) 分支不能靠当前 \(B_p\)-bounded fixed-\(n\)
 除子支付外层势，必须转向固定-\(s\)、alternate 或跨状态容量。
 
+其中 \(k=2\) 时阈值为
+\[
+D_2=\frac{8B_pQ}{2p^2-p-4}.
+\]
+直接计算给出 \(Q-1<D_2<Q\)。而 \(C<Q\) 为整数，所以 \(C\le Q-1<D_2\)，
+式 (7) 必然失败。故
+\[
+\boxed{C\equiv2\pmod3\Longrightarrow
+\text{没有 }B_p\text{-bounded fixed-}n_C\text{ 后继窗口}.}
+\tag{8}
+\]
+这是一条无样本的 fixed-\(n\) 负边界；它不排除 fixed-\(s\)、alternate 或容量出口。
+
 ## 5. 聚焦算术回执
 
 统一选择器用没有 raw Reach provenance 的合成 supports 重算两组 profile：

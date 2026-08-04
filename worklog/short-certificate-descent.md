@@ -5012,6 +5012,8 @@ n_*=(p^2-5p+7)/3,\qquad Md=2B_pQ/3.
 后续只需判断 fixed-\(n_C\) 的有界除子窗口，或转入对偶容量/alternate。窗口先验条件
 \(n_C<4B_p\iff C(2p^2-p-4)>4kB_pQ\) 已接入回执；失败行无需再枚举
 \(B_p\)-bounded fixed-\(n\) 除子。
+进一步，\(k=2\) 时 \(Q-1<D_2<Q\)，所以 \(C<Q\) 的整数补余全部落入空窗口；
+\(C\equiv2\pmod3\) 的 exact \(n=p\) fixed-\(n\) 路线已被无样本排除。
 
 复现：
 

@@ -303,6 +303,8 @@ analysis_evidence，不承担递归。
 分支直接进入 fixed-\(n\) divisor atlas。
 回执同时保存 \(n_C<4B_p\) 的精确窗口判据；判据失败时禁止把
 \(B_p\)-bounded fixed-\(n\) 空窗口误写成递归边。
+对 \(C\equiv2\pmod3\)，合同还记录无样本 \(Q-1<D_2<Q\) 负边界，固定-\(n\)
+分派必须跳过该类，转入 fixed-\(s\)、alternate 或容量阶段。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 
