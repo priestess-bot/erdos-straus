@@ -26,7 +26,7 @@ sources:
   locator: Theorem 1
   role: Type-II-factorization-context
 visibility: public
-last_checked: '2026-07-28'
+last_checked: '2026-08-04'
 ---
 
 # 规范 Type II 扇不能长期全为一孔临界失败

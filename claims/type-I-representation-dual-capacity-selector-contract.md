@@ -77,7 +77,7 @@ sources:
   - claim: type-II-canonical-critical-fan-escape-trichotomy
     role: Type-II-fan-support-character-and-target-fiber-prefilter
 visibility: public
-last_checked: '2026-08-03'
+last_checked: '2026-08-04'
 ---
 
 # 表示—对偶—容量统一选择器的状态级 typed 分派合同
