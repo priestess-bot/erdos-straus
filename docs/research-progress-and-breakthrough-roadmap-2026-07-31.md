@@ -2227,22 +2227,28 @@ A<L\le B_p,\qquad 4L>s,\qquad
 (R_L,K_L)=\left(4L-s,\;L\left(p-\frac{T}{L}\right)\right),
 \]
 
-并严格降低外层支撑势。选择器对四个合成行得到：
+并严格降低外层支撑势。选择器对六个合成行得到：
 
 | \(p,C\) | \(A\) | \(T\) | 候选数 | 路由 |
 | --- | ---: | ---: | ---: | --- |
 | \((193,64)\) | 144 | 18190 | 7 | fixed-s 条件边候选 |
 | \((241,64)\) | 225 | 2952 | 8 | fixed-s 条件边候选 |
 | \((241,100)\) | 144 | 3675 | 7 | fixed-s 条件边候选 |
-| \((15601,4000)\) | 15210 | 65980529 | 0 | fixed-s hard core |
+| \((5281,1408)\) | 1872 | 1950 | 0 | gap-7 Type II terminal |
+| \((15601,4000)\) | 15210 | 65980529 | 0 | gap-3 Type II terminal |
+| \((16633,4312)\) | 16008 | 20790 | 0 | gap-7 Type II terminal |
 
 这组数据把剩余分支从“是否有固定 \(s\) 除子”转成了可检验的 \(T=rd\) 素因子与
 目标余数结构问题。前三行仍只属于 `analysis_evidence`：完整标记集、来源可达性和
-恒等提升没有从合成参数自动推出。最后一行的 hard core 不是猜想反例，只表示当前
-fixed-s 菜单没有满足支撑、正余数和势下降条件的除子；它应进入 alternate、对偶容量
-或跨状态良基势分析。
+恒等提升没有从合成参数自动推出。后三行虽然没有 fixed-s 除子，但都被 gap<=255 的
+A=1 Type II factor-ray 探针覆盖；其中
+\(x=(15601+3)/4=3901=83\cdot47\)，取 \(A=1,B=83,D=47\)，因为
+\(83\equiv2\pmod3\)，直接得到 gap-3 三项恒等式。这说明 fixed-s hard core 应先经过
+有界直接 Type II 后置路由；若探针失败，才进入 alternate、对偶容量或跨状态良基势分析。
 
 主张卡：[高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md)。
+
+独立引理见：[A=1 gap=3 的因子型 Type II 终端](../claims/type-II-a-one-gap-three-factor-terminal.md)。
 
 复现：
 

@@ -2314,6 +2314,121 @@ def high_carrier_n_prime_three_complement_profile(
     }
 
 
+def high_carrier_n_prime_a_one_gap_three_type_ii(prime: int) -> dict[str, object]:
+    """Check the exact A=1, gap=3 Type II terminal menu."""
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("gap-three Type II probe requires a core prime")
+    x = (prime + 3) // 4
+    if 4 * x != prime + 3:
+        raise AssertionError("gap-three Type II numerator is not integral")
+    for C in divisors(x):
+        B = x // C
+        if (1 + B) % 3:
+            continue
+        divisor = C
+        y = prime * (x + divisor) // 3
+        z = prime * (x + x * x // divisor) // 3
+        if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, prime):
+            raise AssertionError("gap-three Type II identity changed")
+        receipt = {
+            "applicable": True,
+            "certificate_type": "direct_type_ii_a_one_gap_three",
+            "prime": prime,
+            "gap": 3,
+            "x": x,
+            "normal_form": {"A": 1, "B": B, "C": C},
+            "divisor": divisor,
+            "certificate": {"x": x, "y": y, "z": z},
+            "identity": "4/p=1/x+1/y+1/z",
+            "identity_verified": True,
+            "selector_status": "terminal_leaf",
+            "recursive_edge_eligible": False,
+            "e1_e5": {f"E{i}": False for i in range(1, 6)},
+            "proof_boundary": "a_one_type_ii_gap_three_exact",
+        }
+        check_status_boundary(receipt)
+        return receipt
+    receipt = {
+        "applicable": False,
+        "certificate_type": "direct_type_ii_a_one_gap_three",
+        "prime": prime,
+        "gap": 3,
+        "x": x,
+        "normal_form": None,
+        "divisor": None,
+        "certificate": None,
+        "identity": "4/p=1/x+1/y+1/z",
+        "identity_verified": False,
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "a_one_type_ii_gap_three_exact",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
+def high_carrier_n_prime_a_one_type_ii_probe(
+    prime: int, gap_cap: int = 255
+) -> dict[str, object]:
+    """Probe the bounded A=1 Type II factor-ray menu."""
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("A=1 Type II probe requires a core prime")
+    if gap_cap < 3:
+        raise AssertionError("A=1 Type II probe bound is too small")
+    upper_gap = min(prime - 2, gap_cap)
+    for gap in range(3, upper_gap + 1, 4):
+        x = (prime + gap) // 4
+        if 4 * x != prime + gap:
+            raise AssertionError("A=1 Type II probe numerator is not integral")
+        for D in divisors(x):
+            B = x // D
+            if (1 + B) % gap:
+                continue
+            y = prime * (x + D) // gap
+            z = prime * (x + x * x // D) // gap
+            if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, prime):
+                raise AssertionError("A=1 Type II probe identity changed")
+            receipt = {
+                "applicable": True,
+                "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+                "prime": prime,
+                "gap": gap,
+                "gap_cap": gap_cap,
+                "x": x,
+                "normal_form": {"A": 1, "B": B, "C": D},
+                "divisor": D,
+                "certificate": {"x": x, "y": y, "z": z},
+                "identity": "4/p=1/x+1/y+1/z",
+                "identity_verified": True,
+                "selector_status": "terminal_leaf",
+                "recursive_edge_eligible": False,
+                "e1_e5": {f"E{i}": False for i in range(1, 6)},
+                "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+            }
+            check_status_boundary(receipt)
+            return receipt
+    receipt = {
+        "applicable": False,
+        "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+        "prime": prime,
+        "gap": None,
+        "gap_cap": gap_cap,
+        "x": None,
+        "normal_form": None,
+        "divisor": None,
+        "certificate": None,
+        "identity": "4/p=1/x+1/y+1/z",
+        "identity_verified": False,
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
 def high_carrier_n_prime_c_one_fixed_s_atlas(
     prime: int, complement: int
 ) -> dict[str, object]:
@@ -2339,6 +2454,8 @@ def high_carrier_n_prime_c_one_fixed_s_atlas(
     product = residue * d
     if prime * s != 4 * product + 1:
         raise AssertionError("C=1 fixed-s determinant identity changed")
+    gap_three_terminal = high_carrier_n_prime_a_one_gap_three_type_ii(prime)
+    bounded_type_ii_terminal = high_carrier_n_prime_a_one_type_ii_probe(prime)
 
     accepted: list[dict[str, object]] = []
     for L in divisors(product):
@@ -2380,6 +2497,17 @@ def high_carrier_n_prime_c_one_fixed_s_atlas(
         "accepted_divisors": accepted,
         "accepted_count": len(accepted),
         "fixed_s_hard_core": not accepted,
+        "hard_core_route": (
+            "fixed_s_divisor"
+            if accepted
+            else (
+                "direct_type_ii_bounded_probe"
+                if bounded_type_ii_terminal["applicable"]
+                else "alternate_or_capacity"
+            )
+        ),
+        "direct_type_ii_gap_three": gap_three_terminal,
+        "direct_type_ii_bounded_probe": bounded_type_ii_terminal,
         "conditional_edge_contract": {
             "E1": True,
             "E2": True,
@@ -2412,6 +2540,12 @@ def high_carrier_n_prime_c_one_fixed_s_profile(
         "row_count": len(rows),
         "positive_count": sum(row["accepted_count"] > 0 for row in rows),
         "hard_core_count": sum(row["fixed_s_hard_core"] for row in rows),
+        "direct_gap_three_count": sum(
+            row["direct_type_ii_gap_three"]["applicable"] for row in rows
+        ),
+        "direct_bounded_probe_count": sum(
+            row["direct_type_ii_bounded_probe"]["applicable"] for row in rows
+        ),
         "scope_note": (
             "Accepted divisors are conditional fixed-s edges.  The atlas does not infer source "
             "marked sets or reachability, and a hard core is not a counterexample."
@@ -5407,7 +5541,14 @@ def build_results() -> dict[str, object]:
         ),
     ]
     n_prime_c_one_fixed_s_profile = high_carrier_n_prime_c_one_fixed_s_profile(
-        [(193, 64), (241, 64), (241, 100), (15601, 4000)]
+        [
+            (193, 64),
+            (241, 64),
+            (241, 100),
+            (5281, 1408),
+            (15601, 4000),
+            (16633, 4312),
+        ]
     )
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
@@ -6052,12 +6193,21 @@ def verify_high_carrier_n_prime_c_one_fixed_s_contract(
     payload = result.get("overflow_high_carrier_n_prime_c_one_fixed_s")
     if not isinstance(payload, dict):
         raise AssertionError("C=1 fixed-s atlas missing")
-    expected_cases = {(193, 64), (241, 64), (241, 100), (15601, 4000)}
+    expected_cases = {
+        (193, 64),
+        (241, 64),
+        (241, 100),
+        (5281, 1408),
+        (15601, 4000),
+        (16633, 4312),
+    }
     if (
         payload.get("profile_type") != "synthetic_c_one_fixed_s_atlas"
         or payload.get("row_count") != len(expected_cases)
         or payload.get("positive_count") != 3
-        or payload.get("hard_core_count") != 1
+        or payload.get("hard_core_count") != 3
+        or payload.get("direct_gap_three_count") != 1
+        or payload.get("direct_bounded_probe_count") != 5
     ):
         raise AssertionError("C=1 fixed-s atlas summary changed")
     rows = payload.get("rows")
@@ -6096,13 +6246,32 @@ def verify_high_carrier_n_prime_c_one_fixed_s_contract(
         )
         if row != expected_row:
             raise AssertionError("stored C=1 fixed-s atlas row is stale")
-    hard_core = next(
-        row
+    hard_core_rows = [row for row in rows if row["fixed_s_hard_core"]]
+    if len(hard_core_rows) != 3:
+        raise AssertionError("C=1 fixed-s hard-core count changed")
+    for row in hard_core_rows:
+        direct = row.get("direct_type_ii_bounded_probe")
+        if (
+            not isinstance(direct, dict)
+            or direct.get("applicable") is not True
+            or direct.get("selector_status") != "terminal_leaf"
+            or direct.get("recursive_edge_eligible") is not False
+            or direct.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+        ):
+            raise AssertionError("C=1 fixed-s hard-core Type II route changed")
+    gap_three = next(
+        row["direct_type_ii_gap_three"]
         for row in rows
         if row["prime"] == 15601 and row["complement_C"] == 4000
     )
-    if hard_core.get("accepted_count") != 0 or hard_core.get("fixed_s_hard_core") is not True:
-        raise AssertionError("C=1 fixed-s hard-core witness changed")
+    if (
+        gap_three.get("applicable") is not True
+        or gap_three.get("normal_form") != {"A": 1, "B": 83, "C": 47}
+        or gap_three.get("certificate", {}).get("x") != 3901
+        or gap_three.get("certificate", {}).get("y") != 20530916
+        or gap_three.get("certificate", {}).get("z") != 1704066028
+    ):
+        raise AssertionError("C=1 fixed-s gap-three Type II terminal changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:

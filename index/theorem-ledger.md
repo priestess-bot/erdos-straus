@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 370 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 345 |
+| 数学状态 | `established` | 346 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 125 |
 | 证明来源 | `mixed` | 25 |
-| 证明来源 | `repository_derivation` | 177 |
+| 证明来源 | `repository_derivation` | 178 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 309 |
+| 审阅状态 | `internal_review` | 310 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -587,6 +587,7 @@
 | [通用 p 源、容量锚点轨道与周期对偶证书](../claims/type-I-universal-p-source-capacity-anchor-orbit.md) (`type-I-universal-p-source-capacity-anchor-orbit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [九条固定 p 减一单素因子桥菜单的 536219/212520 维筛残余](../claims/type-I-universal-pminusone-prime-factor-menu-sieve.md) (`type-I-universal-pminusone-prime-factor-menu-sieve`) | `established` | `repository_derivation` | `internal_review` | `shute2022`, `montgomery_vaughan2007`, `bradford2024` | 2026-07-28 |
 | [上半区偶源混合终端选择猜想](../claims/type-I-upper-half-mixed-terminal-selector-conjecture.md) (`type-I-upper-half-mixed-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024` | 2026-07-28 |
+| [A=1 gap=3 的因子型 Type II 终端](../claims/type-II-a-one-gap-three-factor-terminal.md) (`type-II-a-one-gap-three-factor-terminal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [Type II 规范扇的 CRT 小好因子屏蔽与十射线压力点](../claims/type-II-ac-adversarial-crt-small-factor-screen.md) (`type-II-ac-adversarial-crt-small-factor-screen`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `chamberland2026`, `grynkiewicz_marchan_ordaz2009` | 2026-07-28 |
 | [原始 AC 半径五盒的四层局部覆盖递归重新出现可采纳逃逸](../claims/type-II-ac-box-depth-four-recursive-escape.md) (`type-II-ac-box-depth-four-recursive-escape`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |
 | [原始 AC 射线盒的一私有余因子局部覆盖边界](../claims/type-II-ac-box-one-prime-local-closure.md) (`type-II-ac-box-one-prime-local-closure`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-25 |

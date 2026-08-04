@@ -7750,10 +7750,12 @@
     ]
   },
   "overflow_high_carrier_n_prime_c_one_fixed_s": {
-    "hard_core_count": 1,
+    "direct_bounded_probe_count": 5,
+    "direct_gap_three_count": 1,
+    "hard_core_count": 3,
     "positive_count": 3,
     "profile_type": "synthetic_c_one_fixed_s_atlas",
-    "row_count": 4,
+    "row_count": 6,
     "rows": [
       {
         "accepted_count": 7,
@@ -7935,6 +7937,51 @@
           "source_marked_solution_set_required": true,
           "source_reach_status": "unproved"
         },
+        "direct_type_ii_bounded_probe": {
+          "applicable": false,
+          "certificate": null,
+          "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+          "divisor": null,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": null,
+          "gap_cap": 255,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": false,
+          "normal_form": null,
+          "prime": 193,
+          "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "x": null
+        },
+        "direct_type_ii_gap_three": {
+          "applicable": false,
+          "certificate": null,
+          "certificate_type": "direct_type_ii_a_one_gap_three",
+          "divisor": null,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": false,
+          "normal_form": null,
+          "prime": 193,
+          "proof_boundary": "a_one_type_ii_gap_three_exact",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "x": 49
+        },
         "e1_e5": {
           "E1": false,
           "E2": false,
@@ -7951,6 +7998,7 @@
           "source_carrier_M": 13680
         },
         "fixed_s_hard_core": false,
+        "hard_core_route": "fixed_s_divisor",
         "prime": 193,
         "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
         "recursive_edge_eligible": false,
@@ -8149,6 +8197,59 @@
           "source_marked_solution_set_required": true,
           "source_reach_status": "unproved"
         },
+        "direct_type_ii_bounded_probe": {
+          "applicable": true,
+          "certificate": {
+            "x": 62,
+            "y": 2169,
+            "z": 134478
+          },
+          "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+          "divisor": 1,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 7,
+          "gap_cap": 255,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": true,
+          "normal_form": {
+            "A": 1,
+            "B": 62,
+            "C": 1
+          },
+          "prime": 241,
+          "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf",
+          "x": 62
+        },
+        "direct_type_ii_gap_three": {
+          "applicable": false,
+          "certificate": null,
+          "certificate_type": "direct_type_ii_a_one_gap_three",
+          "divisor": null,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": false,
+          "normal_form": null,
+          "prime": 241,
+          "proof_boundary": "a_one_type_ii_gap_three_exact",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "x": 61
+        },
         "e1_e5": {
           "E1": false,
           "E2": false,
@@ -8165,6 +8266,7 @@
           "source_carrier_M": 26775
         },
         "fixed_s_hard_core": false,
+        "hard_core_route": "fixed_s_divisor",
         "prime": 241,
         "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
         "recursive_edge_eligible": false,
@@ -8351,6 +8453,59 @@
           "source_marked_solution_set_required": true,
           "source_reach_status": "unproved"
         },
+        "direct_type_ii_bounded_probe": {
+          "applicable": true,
+          "certificate": {
+            "x": 62,
+            "y": 2169,
+            "z": 134478
+          },
+          "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+          "divisor": 1,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 7,
+          "gap_cap": 255,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": true,
+          "normal_form": {
+            "A": 1,
+            "B": 62,
+            "C": 1
+          },
+          "prime": 241,
+          "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf",
+          "x": 62
+        },
+        "direct_type_ii_gap_three": {
+          "applicable": false,
+          "certificate": null,
+          "certificate_type": "direct_type_ii_a_one_gap_three",
+          "divisor": null,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": false,
+          "normal_form": null,
+          "prime": 241,
+          "proof_boundary": "a_one_type_ii_gap_three_exact",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "x": 61
+        },
         "e1_e5": {
           "E1": false,
           "E2": false,
@@ -8367,11 +8522,183 @@
           "source_carrier_M": 17136
         },
         "fixed_s_hard_core": false,
+        "hard_core_route": "fixed_s_divisor",
         "prime": 241,
         "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
         "recursive_edge_eligible": false,
         "selector_status": "analysis_evidence",
         "source_support_A": 144
+      },
+      {
+        "accepted_count": 0,
+        "accepted_divisors": [],
+        "anchor_phase": {
+          "absorbed_support": 4950,
+          "anchor": {
+            "Q": 2639,
+            "base_chart": {
+              "K": 2322320,
+              "R": 1759
+            },
+            "beta": 2,
+            "c": 880
+          },
+          "carrier_domain": {
+            "B_p_over_carrier_floor": 0,
+            "Q_over_complement": 1,
+            "complement_C": 1408,
+            "high_carrier": true,
+            "inside_outer_rank": false,
+            "same_chart_support_promotion_available_conditionally": false
+          },
+          "closed_form_phase": {
+            "applicable": true,
+            "complement_C": 1408,
+            "d": 2699,
+            "fixed_n_window": {
+              "C_threshold_inequality": "C*(2*p^2-p-4)>4*k*B_p*Q",
+              "lower_bound_for_4L": 26704921,
+              "possible": true,
+              "threshold_denominator": 55772637,
+              "threshold_numerator": 73571097600,
+              "universal_k_two_no_go": false,
+              "upper_carrier_bound": 6969600
+            },
+            "identity": "p*n=4*M*d+1",
+            "n": 26704921,
+            "residue_class_k": 1,
+            "u=A-t": 2530
+          },
+          "conditional_route": "high_carrier_overflow",
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "phase": {
+            "congruence": "c+p*t=0 (mod A)",
+            "equivalent_low_condition": "A divides (p-1)/6",
+            "low_phase": false,
+            "range": [
+              0,
+              4949
+            ],
+            "t": 2420
+          },
+          "phase_class": "bundle_overflow",
+          "potential_record": {
+            "new": null,
+            "old": 1408,
+            "requires_source_bundle_provenance": true,
+            "status": "conditional_arithmetic",
+            "strict_decrease": false
+          },
+          "prime": 5281,
+          "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "support_domain": {
+            "A_divides_K": true,
+            "B_over_A": 1408,
+            "K": 6969600,
+            "proper_support": true
+          },
+          "target_chart": {
+            "K": 33728795100,
+            "R": 25547279,
+            "canonical_formula": "R=R_Q+4*Q*t",
+            "carrier": 13063050,
+            "carrier_over_support": 2639
+          }
+        },
+        "complement_C": 1408,
+        "conditional_edge_contract": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true,
+          "lift": "identity_on_Sol(p)",
+          "source_marked_solution_set_required": true,
+          "source_reach_status": "unproved"
+        },
+        "direct_type_ii_bounded_probe": {
+          "applicable": true,
+          "certificate": {
+            "x": 1322,
+            "y": 998109,
+            "z": 1319500098
+          },
+          "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+          "divisor": 1,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 7,
+          "gap_cap": 255,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": true,
+          "normal_form": {
+            "A": 1,
+            "B": 1322,
+            "C": 1
+          },
+          "prime": 5281,
+          "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf",
+          "x": 1322
+        },
+        "direct_type_ii_gap_three": {
+          "applicable": false,
+          "certificate": null,
+          "certificate_type": "direct_type_ii_a_one_gap_three",
+          "divisor": null,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": false,
+          "normal_form": null,
+          "prime": 5281,
+          "proof_boundary": "a_one_type_ii_gap_three_exact",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "x": 1321
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_s_determinant": {
+          "d": 2699,
+          "identity": "p*s=4*r*d+1",
+          "product_T": 8466763,
+          "residue_r": 3137,
+          "s": 6413,
+          "source_carrier_M": 13063050
+        },
+        "fixed_s_hard_core": true,
+        "hard_core_route": "direct_type_ii_bounded_probe",
+        "prime": 5281,
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_support_A": 4950
       },
       {
         "accepted_count": 0,
@@ -8468,6 +8795,67 @@
           "source_marked_solution_set_required": true,
           "source_reach_status": "unproved"
         },
+        "direct_type_ii_bounded_probe": {
+          "applicable": true,
+          "certificate": {
+            "x": 3901,
+            "y": 20530916,
+            "z": 1704066028
+          },
+          "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+          "divisor": 47,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "gap_cap": 255,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": true,
+          "normal_form": {
+            "A": 1,
+            "B": 83,
+            "C": 47
+          },
+          "prime": 15601,
+          "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf",
+          "x": 3901
+        },
+        "direct_type_ii_gap_three": {
+          "applicable": true,
+          "certificate": {
+            "x": 3901,
+            "y": 20530916,
+            "z": 1704066028
+          },
+          "certificate_type": "direct_type_ii_a_one_gap_three",
+          "divisor": 47,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": true,
+          "normal_form": {
+            "A": 1,
+            "B": 83,
+            "C": 47
+          },
+          "prime": 15601,
+          "proof_boundary": "a_one_type_ii_gap_three_exact",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf",
+          "x": 3901
+        },
         "e1_e5": {
           "E1": false,
           "E2": false,
@@ -8484,11 +8872,183 @@
           "source_carrier_M": 118622790
         },
         "fixed_s_hard_core": true,
+        "hard_core_route": "direct_type_ii_bounded_probe",
         "prime": 15601,
         "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
         "recursive_edge_eligible": false,
         "selector_status": "analysis_evidence",
         "source_support_A": 15210
+      },
+      {
+        "accepted_count": 0,
+        "accepted_divisors": [],
+        "anchor_phase": {
+          "absorbed_support": 16038,
+          "anchor": {
+            "Q": 8315,
+            "base_chart": {
+              "K": 23049180,
+              "R": 5543
+            },
+            "beta": 2,
+            "c": 2772
+          },
+          "carrier_domain": {
+            "B_p_over_carrier_floor": 0,
+            "Q_over_complement": 1,
+            "complement_C": 4312,
+            "high_carrier": true,
+            "inside_outer_rank": false,
+            "same_chart_support_promotion_available_conditionally": false
+          },
+          "closed_form_phase": {
+            "applicable": true,
+            "complement_C": 4312,
+            "d": 8419,
+            "fixed_n_window": {
+              "C_threshold_inequality": "C*(2*p^2-p-4)>4*k*B_p*Q",
+              "lower_bound_for_4L": 269999137,
+              "possible": true,
+              "threshold_denominator": 553296741,
+              "threshold_numerator": 2300123770560,
+              "universal_k_two_no_go": false,
+              "upper_carrier_bound": 69155856
+            },
+            "identity": "p*n=4*M*d+1",
+            "n": 269999137,
+            "residue_class_k": 1,
+            "u=A-t": 8118
+          },
+          "conditional_route": "high_carrier_overflow",
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "phase": {
+            "congruence": "c+p*t=0 (mod A)",
+            "equivalent_low_condition": "A divides (p-1)/6",
+            "low_phase": false,
+            "range": [
+              0,
+              16037
+            ],
+            "t": 7920
+          },
+          "phase_class": "bundle_overflow",
+          "potential_record": {
+            "new": null,
+            "old": 4312,
+            "requires_source_bundle_provenance": true,
+            "status": "conditional_arithmetic",
+            "strict_decrease": false
+          },
+          "prime": 16633,
+          "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "support_domain": {
+            "A_divides_K": true,
+            "B_over_A": 4312,
+            "K": 69155856,
+            "proper_support": true
+          },
+          "target_chart": {
+            "K": 1095385937580,
+            "R": 263424743,
+            "canonical_formula": "R=R_Q+4*Q*t",
+            "carrier": 133355970,
+            "carrier_over_support": 8315
+          }
+        },
+        "complement_C": 4312,
+        "conditional_edge_contract": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true,
+          "lift": "identity_on_Sol(p)",
+          "source_marked_solution_set_required": true,
+          "source_reach_status": "unproved"
+        },
+        "direct_type_ii_bounded_probe": {
+          "applicable": true,
+          "certificate": {
+            "x": 4160,
+            "y": 9896635,
+            "z": 8234000320
+          },
+          "certificate_type": "direct_type_ii_a_one_bounded_gap_probe",
+          "divisor": 5,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 7,
+          "gap_cap": 255,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": true,
+          "normal_form": {
+            "A": 1,
+            "B": 832,
+            "C": 5
+          },
+          "prime": 16633,
+          "proof_boundary": "a_one_type_ii_bounded_gap_probe",
+          "recursive_edge_eligible": false,
+          "selector_status": "terminal_leaf",
+          "x": 4160
+        },
+        "direct_type_ii_gap_three": {
+          "applicable": false,
+          "certificate": null,
+          "certificate_type": "direct_type_ii_a_one_gap_three",
+          "divisor": null,
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "gap": 3,
+          "identity": "4/p=1/x+1/y+1/z",
+          "identity_verified": false,
+          "normal_form": null,
+          "prime": 16633,
+          "proof_boundary": "a_one_type_ii_gap_three_exact",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "x": 4159
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_s_determinant": {
+          "d": 8419,
+          "identity": "p*s=4*r*d+1",
+          "product_T": 77530571,
+          "residue_r": 9209,
+          "s": 18645,
+          "source_carrier_M": 133355970
+        },
+        "fixed_s_hard_core": true,
+        "hard_core_route": "direct_type_ii_bounded_probe",
+        "prime": 16633,
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_support_A": 16038
       }
     ],
     "scope_note": "Accepted divisors are conditional fixed-s edges.  The atlas does not infer source marked sets or reachability, and a hard core is not a counterexample."
