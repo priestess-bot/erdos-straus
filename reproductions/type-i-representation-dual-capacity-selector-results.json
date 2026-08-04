@@ -7750,11 +7750,13 @@
     "profile_count": 2,
     "profiles": [
       {
+        "high_carrier_count": 1,
+        "inside_outer_rank_count": 8,
         "low_phase_count": 6,
-        "overflow_phase_count": 2,
+        "overflow_phase_count": 3,
         "prime": 73,
         "profile_type": "synthetic_arithmetic_boundary",
-        "row_count": 8,
+        "row_count": 9,
         "rows": [
           {
             "absorbed_support": 1,
@@ -7767,6 +7769,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 37,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -7821,6 +7830,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 18,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -7875,6 +7891,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 12,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -7929,6 +7952,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 9,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -7983,6 +8013,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 6,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8037,6 +8074,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 4,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "same_chart_support_promotion",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8056,11 +8100,11 @@
             },
             "phase_class": "bundle_overflow",
             "potential_record": {
-              "new": null,
+              "new": 4,
               "old": 162,
               "requires_source_bundle_provenance": true,
               "status": "conditional_arithmetic",
-              "strict_decrease": false
+              "strict_decrease": true
             },
             "prime": 73,
             "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
@@ -8091,6 +8135,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 3,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8145,6 +8196,13 @@
               "beta": 2,
               "c": 12
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 2,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "same_chart_support_promotion",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8164,11 +8222,11 @@
             },
             "phase_class": "bundle_overflow",
             "potential_record": {
-              "new": null,
+              "new": 2,
               "old": 72,
               "requires_source_bundle_provenance": true,
               "status": "conditional_arithmetic",
-              "strict_decrease": false
+              "strict_decrease": true
             },
             "prime": 73,
             "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
@@ -8187,16 +8245,79 @@
               "carrier": 630,
               "carrier_over_support": 35
             }
+          },
+          {
+            "absorbed_support": 48,
+            "anchor": {
+              "Q": 35,
+              "base_chart": {
+                "K": 420,
+                "R": 23
+              },
+              "beta": 2,
+              "c": 12
+            },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 0,
+              "high_carrier": true,
+              "inside_outer_rank": false,
+              "same_chart_support_promotion_available_conditionally": false
+            },
+            "conditional_route": "high_carrier_overflow",
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                47
+              ],
+              "t": 36
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 27,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 27,
+              "K": 1296,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 92400,
+              "R": 5063,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 1680,
+              "carrier_over_support": 35
+            }
           }
         ],
         "scope_note": "Rows verify the exact n=p G-anchor phase formula for supplied A|B_p supports. They carry no raw Reach provenance and never constitute recursive edges."
       },
       {
+        "high_carrier_count": 1,
+        "inside_outer_rank_count": 8,
         "low_phase_count": 5,
-        "overflow_phase_count": 3,
+        "overflow_phase_count": 4,
         "prime": 97,
         "profile_type": "synthetic_arithmetic_boundary",
-        "row_count": 8,
+        "row_count": 9,
         "rows": [
           {
             "absorbed_support": 1,
@@ -8209,6 +8330,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 49,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8263,6 +8391,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 24,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8317,6 +8452,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 16,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "same_chart_support_promotion",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8336,11 +8478,11 @@
             },
             "phase_class": "bundle_overflow",
             "potential_record": {
-              "new": null,
+              "new": 16,
               "old": 768,
               "requires_source_bundle_provenance": true,
               "status": "conditional_arithmetic",
-              "strict_decrease": false
+              "strict_decrease": true
             },
             "prime": 97,
             "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
@@ -8371,6 +8513,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 12,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8425,6 +8574,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 8,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "same_chart_support_promotion",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8444,11 +8600,11 @@
             },
             "phase_class": "bundle_overflow",
             "potential_record": {
-              "new": null,
+              "new": 8,
               "old": 384,
               "requires_source_bundle_provenance": true,
               "status": "conditional_arithmetic",
-              "strict_decrease": false
+              "strict_decrease": true
             },
             "prime": 97,
             "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
@@ -8479,6 +8635,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 6,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8533,6 +8696,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 5,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "same_chart_support_promotion",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8552,11 +8722,11 @@
             },
             "phase_class": "bundle_overflow",
             "potential_record": {
-              "new": null,
+              "new": 5,
               "old": 256,
               "requires_source_bundle_provenance": true,
               "status": "conditional_arithmetic",
-              "strict_decrease": false
+              "strict_decrease": true
             },
             "prime": 97,
             "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
@@ -8587,6 +8757,13 @@
               "beta": 2,
               "c": 16
             },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 3,
+              "high_carrier": false,
+              "inside_outer_rank": true,
+              "same_chart_support_promotion_available_conditionally": true
+            },
+            "conditional_route": "marked_absorb",
             "e1_e5": {
               "E1": false,
               "E2": false,
@@ -8627,6 +8804,67 @@
               "R": 31,
               "canonical_formula": "R=R_Q+4*Q*t",
               "carrier": 752,
+              "carrier_over_support": 47
+            }
+          },
+          {
+            "absorbed_support": 64,
+            "anchor": {
+              "Q": 47,
+              "base_chart": {
+                "K": 752,
+                "R": 31
+              },
+              "beta": 2,
+              "c": 16
+            },
+            "carrier_domain": {
+              "B_p_over_carrier_floor": 0,
+              "high_carrier": true,
+              "inside_outer_rank": false,
+              "same_chart_support_promotion_available_conditionally": false
+            },
+            "conditional_route": "high_carrier_overflow",
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "phase": {
+              "congruence": "c+p*t=0 (mod A)",
+              "equivalent_low_condition": "A divides (p-1)/6",
+              "low_phase": false,
+              "range": [
+                0,
+                63
+              ],
+              "t": 48
+            },
+            "phase_class": "bundle_overflow",
+            "potential_record": {
+              "new": null,
+              "old": 36,
+              "requires_source_bundle_provenance": true,
+              "status": "conditional_arithmetic",
+              "strict_decrease": false
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+            "recursive_edge_eligible": false,
+            "selector_status": "analysis_evidence",
+            "support_domain": {
+              "A_divides_K": true,
+              "B_over_A": 36,
+              "K": 2304,
+              "proper_support": true
+            },
+            "target_chart": {
+              "K": 219584,
+              "R": 9055,
+              "canonical_formula": "R=R_Q+4*Q*t",
+              "carrier": 3008,
               "carrier_over_support": 47
             }
           }

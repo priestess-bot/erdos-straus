@@ -1976,6 +1976,7 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
         raise AssertionError("n=p G-anchor phase does not pay A")
 
     low_phase = phase == 0
+    inside_outer_rank = carrier <= B_prime
     if low_phase:
         if c % A or chart_R >= prime or carrier > B_prime:
             raise AssertionError("n=p G-anchor low phase boundary changed")
@@ -2012,14 +2013,29 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
             "carrier_over_support": Q,
             "canonical_formula": "R=R_Q+4*Q*t",
         },
+        "carrier_domain": {
+            "inside_outer_rank": inside_outer_rank,
+            "high_carrier": not inside_outer_rank,
+            "B_p_over_carrier_floor": B_prime // carrier,
+            "same_chart_support_promotion_available_conditionally": inside_outer_rank,
+        },
         "phase_class": (
             "conditional_bundle_marked_absorb" if low_phase else "bundle_overflow"
+        ),
+        "conditional_route": (
+            "marked_absorb"
+            if low_phase
+            else (
+                "same_chart_support_promotion"
+                if inside_outer_rank
+                else "high_carrier_overflow"
+            )
         ),
         "potential_record": {
             "status": "conditional_arithmetic",
             "old": B_prime // A,
-            "new": B_prime // carrier if low_phase else None,
-            "strict_decrease": low_phase,
+            "new": B_prime // carrier if inside_outer_rank else None,
+            "strict_decrease": inside_outer_rank,
             "requires_source_bundle_provenance": True,
         },
         "selector_status": "analysis_evidence",
@@ -2047,6 +2063,12 @@ def high_carrier_n_prime_g_anchor_phase_profile(
         "low_phase_count": sum(row["phase"]["low_phase"] for row in rows),
         "overflow_phase_count": sum(
             not row["phase"]["low_phase"] for row in rows
+        ),
+        "inside_outer_rank_count": sum(
+            row["carrier_domain"]["inside_outer_rank"] for row in rows
+        ),
+        "high_carrier_count": sum(
+            row["carrier_domain"]["high_carrier"] for row in rows
         ),
         "scope_note": (
             "Rows verify the exact n=p G-anchor phase formula for supplied A|B_p supports. "
@@ -5027,10 +5049,10 @@ def build_results() -> dict[str, object]:
     high_carrier_complement = overflow_high_carrier_p_plus_four_complement(overflow)
     n_prime_phase_profiles = [
         high_carrier_n_prime_g_anchor_phase_profile(
-            73, [1, 2, 3, 4, 6, 8, 12, 18]
+            73, [1, 2, 3, 4, 6, 8, 12, 18, 48]
         ),
         high_carrier_n_prime_g_anchor_phase_profile(
-            97, [1, 2, 3, 4, 6, 8, 9, 16]
+            97, [1, 2, 3, 4, 6, 8, 9, 16, 64]
         ),
     ]
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
@@ -5485,8 +5507,20 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
     if not isinstance(profiles, list) or len(profiles) != 2:
         raise AssertionError("n=p G-anchor phase profiles missing")
     expected = {
-        73: {"supports": [1, 2, 3, 4, 6, 8, 12, 18], "low": 6, "overflow": 2},
-        97: {"supports": [1, 2, 3, 4, 6, 8, 9, 16], "low": 5, "overflow": 3},
+        73: {
+            "supports": [1, 2, 3, 4, 6, 8, 12, 18, 48],
+            "low": 6,
+            "overflow": 3,
+            "inside": 8,
+            "high": 1,
+        },
+        97: {
+            "supports": [1, 2, 3, 4, 6, 8, 9, 16, 64],
+            "low": 5,
+            "overflow": 4,
+            "inside": 8,
+            "high": 1,
+        },
     }
     for profile in profiles:
         if not isinstance(profile, dict):
@@ -5500,6 +5534,8 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
             or profile.get("row_count") != len(spec["supports"])
             or profile.get("low_phase_count") != spec["low"]
             or profile.get("overflow_phase_count") != spec["overflow"]
+            or profile.get("inside_outer_rank_count") != spec["inside"]
+            or profile.get("high_carrier_count") != spec["high"]
         ):
             raise AssertionError("n=p G-anchor phase counts changed")
         rows = profile.get("rows")
@@ -5522,6 +5558,17 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
             )
             if row != expected_row:
                 raise AssertionError("stored n=p G-anchor phase row is stale")
+            route = row.get("conditional_route")
+            if row["phase"]["low_phase"] and route != "marked_absorb":
+                raise AssertionError("n=p G-anchor low route changed")
+            if not row["phase"]["low_phase"]:
+                expected_route = (
+                    "same_chart_support_promotion"
+                    if row["carrier_domain"]["inside_outer_rank"]
+                    else "high_carrier_overflow"
+                )
+                if route != expected_route:
+                    raise AssertionError("n=p G-anchor overflow route changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:

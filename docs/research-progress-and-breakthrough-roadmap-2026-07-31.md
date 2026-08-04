@@ -2143,13 +2143,15 @@ A\mid\frac{p-1}{6};
 
 若 \(A\mid(p-1)/6\)，则 \(M\le B_p\)，该行具备
 conditional_bundle_marked_absorb 的算术形状；否则
-\(R_M\ge R_Q+4Q>p\)，精确进入 bundle overflow。两种回执都没有自动携带 raw
+\(R_M\ge R_Q+4Q>p\)，进入 bundle overflow；但若 \(AQ\le B_p\)，已有同图表支撑
+升级在来源回执携带 \(A\) 的前提下可以支付一个继续为 overflow 的支撑递降，只有
+\(AQ>B_p\) 才是真正的高载体残差。两种回执都没有自动携带 raw
 source provenance、标记集提升或 E1--E5，因此统一选择器保持
 analysis_evidence，不把公式误报为递归边。
 
 选择器以没有来源路径的合成 profile 重算：
-\(p=73\) 的 8 个 supports 中 6 个低相位、2 个 overflow；
-\(p=97\) 的 8 个 supports 中 5 个低相位、3 个 overflow。该结果把 exact \(n=p\)
+\(p=73\) 的 9 个 supports 中 6 个低相位、2 个同图表 overflow、1 个高载体；
+\(p=97\) 的 9 个 supports 中 5 个低相位、3 个同图表 overflow、1 个高载体。该结果把 exact \(n=p\)
 从未分类的 G-anchor 参数族压成确定相位选择器，但全称缺口仍是：来源可达的低相位是否
 能补齐完整 E1--E5，非整除相位是否必有 alternate、直接证书或跨状态良基秩。
 

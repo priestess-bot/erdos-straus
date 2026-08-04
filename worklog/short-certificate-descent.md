@@ -4983,9 +4983,12 @@ R_M<p
 \]
 
 低相位时 \(M\le B_p\)，具有同图表 marked-absorb 的算术容量形状；非零相位时
-\(R_M\ge R_Q+4Q>p\)，精确进入 bundle overflow。实现新增
+\(R_M\ge R_Q+4Q>p\)，进入 bundle overflow。若非零相位仍满足 \(M\le B_p\)，
+已有同图表支撑升级可在来源回执携带 \(A\) 的条件下支付一个继续为 overflow 的支撑
+递降；只有 \(M>B_p\) 才是真正高载体残差。实现新增
 high_carrier_n_prime_g_anchor_bundle_phase 和两个 synthetic arithmetic profile，
-但所有行都保持 analysis_evidence、E1--E5 全假、不可递归；这一步只完成相位分类，
+并额外记录 same-chart overflow 与 high-carrier 的 carrier-domain 路由，但所有行都保持
+analysis_evidence、E1--E5 全假、不可递归；这一步只完成相位分类，
 没有伪造 source provenance 或 marked lift。
 
 复现：

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-high-carrier-n-prime-g-anchor-phase
 title: 高载体 n=p G-anchor bundle 的精确相位二分
-statement: 设核心素数 p=1 (mod 24)，B_p=(p-1)^2/4，Q=(p-3)/2，且 A|B_p、B_p/A>=2。令 c=(p-1)/6，并令 t_A 为 0<=t_A<A 中满足 c+p*t_A=0 (mod A) 的唯一整数。则 M=AQ 的 canonical chart 满足 R_M=R_Q+4Q*t_A、R_Q=(p-4)/3、K_M=Q(c+p*t_A)。因此 R_M<p 当且仅当 A|(p-1)/6；此时 M<=B_p 且该算术分支是 conditional bundle marked-absorb 候选。若 A 不整除 (p-1)/6，则 R_M>p，精确进入 G-anchor bundle overflow。两支都不自动提供 source provenance、标记提升或 E1--E5 递归边。
+statement: 设核心素数 p=1 (mod 24)，B_p=(p-1)^2/4，Q=(p-3)/2，且 A|B_p、B_p/A>=2。令 c=(p-1)/6，并令 t_A 为 0<=t_A<A 中满足 c+p*t_A=0 (mod A) 的唯一整数。则 M=AQ 的 canonical chart 满足 R_M=R_Q+4Q*t_A、R_Q=(p-4)/3、K_M=Q(c+p*t_A)。因此 R_M<p 当且仅当 A|(p-1)/6；此时 M<=B_p 且该算术分支是 conditional bundle marked-absorb 候选。若 A 不整除 (p-1)/6，则 R_M>p；若同时 M<=B_p，已有同图表支撑升级只需来源回执即可条件支付，若 M>B_p 才进入真正的 high-carrier bundle overflow。两支都不自动提供 source provenance、标记提升或 E1--E5 递归边。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -129,6 +129,17 @@ R_M<p\iff t_A=0\iff A\mid\frac{p-1}{6}.
 \tag{4}
 \]
 
+相位二分还必须与 carrier domain 分开记录。若 \(t_A\ge1\) 但 \(M=AQ\le B_p\)，则
+
+\[
+A\mid M,\qquad M/A=Q\ge2,\qquad M\le B_p,\qquad
+R_M>p,
+\]
+
+在来源回执已经携带 \(A\) 的前提下，现有同图表支撑升级可支付一个保持图表的
+overflow 后继；它不是终端，但外层支撑势严格下降。只有 \(AQ>B_p\) 时，才进入真正的
+高载体 overflow 残差，需要另一个载体、直接证书、容量或不可重置外层秩。
+
 低相位只说明“若来源回执确实携带 \(A\)，则同图表 E1--E5 具有可支付的算术形状”；
 它不提供来源路径、标记集、全域解提升或严格势下降的完整证据。选择器因此将两种相位都
 保存为 `analysis_evidence`，而不是递归边。
@@ -137,10 +148,10 @@ R_M<p\iff t_A=0\iff A\mid\frac{p-1}{6}.
 
 统一选择器用没有 raw Reach provenance 的合成 supports 重算两组 profile：
 
-| \(p\) | supports | 低相位 | overflow 相位 |
-|---:|---|---:|---:|
-| 73 | \(1,2,3,4,6,8,12,18\) | 6 | 2 |
-| 97 | \(1,2,3,4,6,8,9,16\) | 5 | 3 |
+| \(p\) | supports | 低相位 | 同图表 overflow | 真高载体 |
+|---:|---|---:|---:|---:|
+| 73 | \(1,2,3,4,6,8,12,18,48\) | 6 | 2 | 1 |
+| 97 | \(1,2,3,4,6,8,9,16,64\) | 5 | 3 | 1 |
 
 例如 \(p=97\) 时 \(Q=47,c=16\)：\(A=16\) 给 \(t_A=0,R_M=31<p\)，而
 \(A=3\) 给 \(t_A=2,R_M=407>p\)。这些 profile 只验证 (1)--(4)，不声称对应的
