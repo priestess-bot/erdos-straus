@@ -143,11 +143,14 @@ H=\left\lceil(1+\epsilon)\log p\right\rceil. \tag{10}
 在已有有限审计中，绝大多数失败本来就属于第二项的支撑外型，故该三分法没有把剩余
 自动变成证书。
 
-现已将该三分接入表示--对偶--容量选择器。支撑外行由商群
-`U(4*a_s*c_s)/K_s` 的二次角色给出精确分离回执；支撑内多孔行保存
-`K_s minus Pi_s` 作为目标纤维缺陷。统一状态仍标为
+现已将该三分接入表示--对偶--容量选择器。支撑外行进一步按
+`-1 not in K_s * U(4*a_s*c_s)^2` 二分：可分行由商群的二次角色给出精确分离回执，
+平方饱和行保留为二次不可分核；支撑内多孔行保存 `K_s minus Pi_s` 作为目标纤维缺陷。
+统一状态仍标为
 `certificate_type=type_ii_canonical_fan_escape_trichotomy`、
 `selector_status=analysis_evidence`，因为这两类回执尚未给出跨状态载体映射或完整解提升。
+边界样本 `(p,s)=(97,16)` 明确落在二次不可分支撑外类，防止把“支撑外”误写成自动
+二次分离。
 七个聚焦核心素数的可重放结果位于
 [Type II 扇逃逸三分结果](../reproductions/type-ii-canonical-fan-escape-trichotomy-results.json)。
 

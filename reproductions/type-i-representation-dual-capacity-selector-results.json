@@ -18619,7 +18619,7 @@
     "type-i-source-word-joint-capacity-dichotomy-results.json": "b248bce1655bf1b04e0c3079c14029a5938d6202970da9a5a5a96d6175f12e15",
     "type-i-unified-terminal-selector-results.json": "d09feb1ce5323c3a07f7eca03bb990ebe2f3f4581d1943ca60bebcc5a24ddc6d",
     "type-i-universal-anchor-overflow-dual-results.json": "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a",
-    "type-ii-canonical-fan-escape-trichotomy-results.json": "d94914a4dedec66f30866cc04684f11387e2e64c8f4d5e9959d4f9f343aa207f",
+    "type-ii-canonical-fan-escape-trichotomy-results.json": "30a742867d28d3945cda611485e26556ad5b820b08ddbd075836cb3ae0afcc0a",
     "type_i_bottom_word_lattice_pareto_cycle_capacity.py": "ecfafce270eaf981de948985e3e0b3818f795452ae6591574e9c5462bf2993fe",
     "type_i_f_psi_one_formal_transition_closure.py": "cd76a4f2c0e602324f87d91ab4be86754feb2c256ab9553a6a05615f91286846",
     "type_i_global_linear_b1_failure_general_b_profile_500m.py": "96ee0c6711a4995fe387686a4915b41f1fcefa70cd4fe808c05a4092bf05e07d",
@@ -19327,7 +19327,8 @@
     "certificate_context": {
       "cross_state_mapping_status": "unproved",
       "failure_classes": [
-        "support_outside_quadratic_separator",
+        "support_outside_quadratically_separable",
+        "support_outside_quadratically_inseparable",
         "support_inside_multi_hole_target_fiber",
         "direct_type_ii_hit"
       ],
@@ -19341,6 +19342,39 @@
       "E4": false,
       "E5": false
     },
+    "edge_cases": [
+      {
+        "prime": 97,
+        "ray": {
+          "canonical_parameters": {
+            "A": 4,
+            "C": 1,
+            "modulus": 16
+          },
+          "classification": "support_outside_quadratically_inseparable",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 16,
+          "shifted_integer": 161,
+          "support_size": 2,
+          "target": 15,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        "shift": 16
+      }
+    ],
     "phase": "TYPE_II_DUAL_PREFILTER",
     "profile_count": 7,
     "profiles": [
@@ -19349,7 +19383,7 @@
         "classification_counts": {
           "direct_type_ii": 1,
           "support_inside_multi_hole": 1,
-          "support_outside": 3
+          "support_outside_quadratically_separable": 3
         },
         "e1_e5": {
           "E1": false,
@@ -19423,7 +19457,7 @@
               "C": 2,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -19457,7 +19491,7 @@
               "C": 3,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -19495,7 +19529,7 @@
               "C": 1,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -19565,7 +19599,7 @@
         "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
         "classification_counts": {
           "direct_type_ii": 2,
-          "support_outside": 3
+          "support_outside_quadratically_separable": 3
         },
         "e1_e5": {
           "E1": false,
@@ -19612,7 +19646,7 @@
               "C": 1,
               "modulus": 4
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -19676,7 +19710,7 @@
               "C": 3,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -19710,7 +19744,7 @@
               "C": 1,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -19778,7 +19812,7 @@
         "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
         "classification_counts": {
           "support_inside_multi_hole": 1,
-          "support_outside": 6
+          "support_outside_quadratically_separable": 6
         },
         "e1_e5": {
           "E1": false,
@@ -19831,7 +19865,7 @@
               "C": 1,
               "modulus": 4
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -19864,7 +19898,7 @@
               "C": 2,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -19902,7 +19936,7 @@
               "C": 3,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -19940,7 +19974,7 @@
               "C": 1,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20010,7 +20044,7 @@
               "C": 6,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20049,7 +20083,7 @@
               "C": 7,
               "modulus": 28
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               5,
               9
@@ -20094,7 +20128,7 @@
         "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
         "classification_counts": {
           "direct_type_ii": 2,
-          "support_outside": 5
+          "support_outside_quadratically_separable": 5
         },
         "e1_e5": {
           "E1": false,
@@ -20174,7 +20208,7 @@
               "C": 2,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20239,7 +20273,7 @@
               "C": 1,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -20273,7 +20307,7 @@
               "C": 5,
               "modulus": 20
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 4,
             "factorization": [
@@ -20311,7 +20345,7 @@
               "C": 6,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20350,7 +20384,7 @@
               "C": 7,
               "modulus": 28
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               5,
               9,
@@ -20394,7 +20428,7 @@
         "classification_counts": {
           "direct_type_ii": 2,
           "support_inside_multi_hole": 1,
-          "support_outside": 8
+          "support_outside_quadratically_separable": 8
         },
         "e1_e5": {
           "E1": false,
@@ -20484,7 +20518,7 @@
               "C": 2,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20526,7 +20560,7 @@
               "C": 3,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20564,7 +20598,7 @@
               "C": 1,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -20629,7 +20663,7 @@
               "C": 6,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -20668,7 +20702,7 @@
               "C": 7,
               "modulus": 28
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               5,
               9,
@@ -20745,7 +20779,7 @@
               "C": 1,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -20783,7 +20817,7 @@
               "C": 10,
               "modulus": 40
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               9
             ],
@@ -20824,7 +20858,7 @@
               "C": 11,
               "modulus": 44
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               23
             ],
@@ -20873,7 +20907,7 @@
         "classification_counts": {
           "direct_type_ii": 1,
           "support_inside_multi_hole": 1,
-          "support_outside": 11
+          "support_outside_quadratically_separable": 11
         },
         "e1_e5": {
           "E1": false,
@@ -20938,7 +20972,7 @@
               "C": 1,
               "modulus": 4
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -20975,7 +21009,7 @@
               "C": 2,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -21017,7 +21051,7 @@
               "C": 3,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -21086,7 +21120,7 @@
               "C": 5,
               "modulus": 20
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               9
             ],
@@ -21130,7 +21164,7 @@
               "C": 6,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -21165,7 +21199,7 @@
               "C": 7,
               "modulus": 28
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               9,
               13,
@@ -21204,7 +21238,7 @@
               "C": 2,
               "modulus": 16
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 4,
             "factorization": [
@@ -21242,7 +21276,7 @@
               "C": 1,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -21280,7 +21314,7 @@
               "C": 10,
               "modulus": 40
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -21359,7 +21393,7 @@
               "C": 3,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -21394,7 +21428,7 @@
               "C": 13,
               "modulus": 52
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               7,
               9,
@@ -21447,7 +21481,7 @@
         "classification_counts": {
           "direct_type_ii": 3,
           "support_inside_multi_hole": 2,
-          "support_outside": 8
+          "support_outside_quadratically_separable": 8
         },
         "e1_e5": {
           "E1": false,
@@ -21539,7 +21573,7 @@
               "C": 2,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -21577,7 +21611,7 @@
               "C": 3,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -21615,7 +21649,7 @@
               "C": 1,
               "modulus": 8
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -21687,7 +21721,7 @@
               "C": 6,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -21722,7 +21756,7 @@
               "C": 7,
               "modulus": 28
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 1,
             "factorization": [
@@ -21793,7 +21827,7 @@
               "C": 1,
               "modulus": 12
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -21831,7 +21865,7 @@
               "C": 10,
               "modulus": 40
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [
               9,
               17
@@ -21911,7 +21945,7 @@
               "C": 3,
               "modulus": 24
             },
-            "classification": "support_outside",
+            "classification": "support_outside_quadratically_separable",
             "defect": [],
             "divisor_residue_count": 2,
             "factorization": [
@@ -22005,7 +22039,7 @@
     "selector_status": "analysis_evidence",
     "source_receipt": {
       "result_file": "type-ii-canonical-fan-escape-trichotomy-results.json",
-      "result_sha256": "d94914a4dedec66f30866cc04684f11387e2e64c8f4d5e9959d4f9f343aa207f"
+      "result_sha256": "30a742867d28d3945cda611485e26556ad5b820b08ddbd075836cb3ae0afcc0a"
     }
   },
   "verified_edges": [

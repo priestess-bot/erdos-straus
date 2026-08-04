@@ -5613,13 +5613,15 @@ def type_ii_canonical_fan_escape_receipt(payload: dict[str, object]) -> dict[str
         "e1_e5": {f"E{i}": False for i in range(1, 6)},
         "profiles": profiles,
         "profile_count": len(profiles),
+        "edge_cases": payload.get("edge_cases", []),
         "source_receipt": {
             "result_file": TYPE_II_FAN_INPUT.name,
             "result_sha256": sha256(TYPE_II_FAN_INPUT),
         },
         "certificate_context": {
             "failure_classes": [
-                "support_outside_quadratic_separator",
+                "support_outside_quadratically_separable",
+                "support_outside_quadratically_inseparable",
                 "support_inside_multi_hole_target_fiber",
                 "direct_type_ii_hit",
             ],
@@ -5650,6 +5652,14 @@ def verify_type_ii_canonical_fan_contract(result: dict[str, object]) -> None:
         raise AssertionError("Type II fan trichotomy crossed the status boundary")
     if receipt.get("profile_count") != 7:
         raise AssertionError("Type II fan trichotomy profile count changed")
+    edge_cases = receipt.get("edge_cases")
+    if (
+        not isinstance(edge_cases, list)
+        or len(edge_cases) != 1
+        or edge_cases[0].get("ray", {}).get("classification")
+        != "support_outside_quadratically_inseparable"
+    ):
+        raise AssertionError("Type II fan quadratic-inseparable edge boundary changed")
     source = receipt.get("source_receipt")
     if not isinstance(source, dict) or source.get("result_sha256") != sha256(TYPE_II_FAN_INPUT):
         raise AssertionError("Type II fan trichotomy source hash changed")
@@ -5657,13 +5667,13 @@ def verify_type_ii_canonical_fan_contract(result: dict[str, object]) -> None:
     if not isinstance(profiles, list):
         raise AssertionError("Type II fan trichotomy profile list missing")
     expected_counts = {
-        73: {"direct_type_ii": 1, "support_inside_multi_hole": 1, "support_outside": 3},
-        97: {"direct_type_ii": 2, "support_outside": 3},
-        193: {"support_inside_multi_hole": 1, "support_outside": 6},
-        241: {"direct_type_ii": 2, "support_outside": 5},
-        5281: {"direct_type_ii": 2, "support_inside_multi_hole": 1, "support_outside": 8},
-        15601: {"direct_type_ii": 1, "support_inside_multi_hole": 1, "support_outside": 11},
-        16633: {"direct_type_ii": 3, "support_inside_multi_hole": 2, "support_outside": 8},
+        73: {"direct_type_ii": 1, "support_inside_multi_hole": 1, "support_outside_quadratically_separable": 3},
+        97: {"direct_type_ii": 2, "support_outside_quadratically_separable": 3},
+        193: {"support_inside_multi_hole": 1, "support_outside_quadratically_separable": 6},
+        241: {"direct_type_ii": 2, "support_outside_quadratically_separable": 5},
+        5281: {"direct_type_ii": 2, "support_inside_multi_hole": 1, "support_outside_quadratically_separable": 8},
+        15601: {"direct_type_ii": 1, "support_inside_multi_hole": 1, "support_outside_quadratically_separable": 11},
+        16633: {"direct_type_ii": 3, "support_inside_multi_hole": 2, "support_outside_quadratically_separable": 8},
     }
     for profile in profiles:
         if not isinstance(profile, dict):
@@ -5676,7 +5686,7 @@ def verify_type_ii_canonical_fan_contract(result: dict[str, object]) -> None:
         for ray in profile.get("rays", []):
             if not isinstance(ray, dict):
                 raise AssertionError("Type II fan ray is not an object")
-            if ray.get("classification") == "support_outside":
+            if ray.get("classification") == "support_outside_quadratically_separable":
                 separator = ray.get("quadratic_separator")
                 if not isinstance(separator, dict) or separator.get("character_order") != 2:
                     raise AssertionError("support-outside Type II ray lost its separator")

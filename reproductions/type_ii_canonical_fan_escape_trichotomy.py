@@ -21,6 +21,7 @@ DEFAULT_OUTPUT = (
     ROOT / "reproductions" / "type-ii-canonical-fan-escape-trichotomy-results.json"
 )
 FOCUSED_PRIMES = (73, 97, 193, 241, 5281, 15601, 16633)
+EDGE_CASES = ((97, 16),)
 
 
 def is_prime(value: int) -> bool:
@@ -186,20 +187,20 @@ def ray_record(prime: int, shift: int, spf: list[int]) -> dict[str, object]:
     support = generated_subgroup(factors, modulus)
     target = modulus - 1
     defect = sorted(support - divisor_residues)
+    separator = None
     if target in divisor_residues:
         classification = "direct_type_ii"
     elif target not in support:
-        classification = "support_outside"
+        separator = quadratic_separator(support, modulus)
+        classification = (
+            "support_outside_quadratically_separable"
+            if separator is not None
+            else "support_outside_quadratically_inseparable"
+        )
     elif len(defect) >= 2:
         classification = "support_inside_multi_hole"
     else:
         classification = "one_hole_critical"
-
-    separator = None
-    if classification == "support_outside":
-        separator = quadratic_separator(support, modulus)
-        if separator is None:
-            raise AssertionError("support-outside target lacks a quadratic separator")
 
     return {
         "shift": shift,
@@ -228,9 +229,15 @@ def fan_profile(prime: int) -> dict[str, object]:
     for ray in rays:
         classification = str(ray["classification"])
         counts[classification] = counts.get(classification, 0) + 1
-    noncritical = counts.get("direct_type_ii", 0) + counts.get(
-        "support_outside", 0
-    ) + counts.get("support_inside_multi_hole", 0)
+    noncritical = sum(
+        counts.get(classification, 0)
+        for classification in (
+            "direct_type_ii",
+            "support_outside_quadratically_separable",
+            "support_outside_quadratically_inseparable",
+            "support_inside_multi_hole",
+        )
+    )
     if noncritical == 0:
         raise AssertionError("primorial fan unexpectedly stayed in one-hole class")
     prime_ray_checks = [
@@ -278,11 +285,17 @@ def fan_profile(prime: int) -> dict[str, object]:
 
 def build_results(primes: tuple[int, ...] = FOCUSED_PRIMES) -> dict[str, object]:
     profiles = [fan_profile(prime) for prime in primes]
+    edge_cases = []
+    for prime, shift in EDGE_CASES:
+        spf = smallest_prime_factors(prime + 4 * shift)
+        ray = ray_record(prime, shift, spf)
+        edge_cases.append({"prime": prime, "shift": shift, "ray": ray})
     return {
         "schema_version": "type-ii-canonical-fan-escape-trichotomy/v1",
         "arithmetic": "exact SPF factorization, divisor residues, subgroup closure, and quadratic character separation",
         "profiles": profiles,
         "profile_count": len(profiles),
+        "edge_cases": edge_cases,
         "scope_note": (
             "Focused typed replay of the canonical fan theorem. The theorem is general, "
             "while factorization and class counts here cover only the listed primes."
@@ -309,12 +322,23 @@ def verify_results(payload: dict[str, object]) -> None:
         if stored.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
             raise AssertionError("fan trichotomy has an E1-E5 witness")
         for ray in stored["rays"]:
-            if ray["classification"] == "support_outside":
+            if ray["classification"] == "support_outside_quadratically_separable":
                 separator = ray.get("quadratic_separator")
                 if not isinstance(separator, dict) or separator.get(
                     "annihilates_support"
                 ) is not True:
                     raise AssertionError("support-outside separator changed")
+    edge_cases = payload.get("edge_cases")
+    if not isinstance(edge_cases, list) or len(edge_cases) != len(EDGE_CASES):
+        raise AssertionError("fan trichotomy edge-case count changed")
+    for expected, stored in zip(EDGE_CASES, edge_cases):
+        if not isinstance(stored, dict) or (stored.get("prime"), stored.get("shift")) != expected:
+            raise AssertionError("fan trichotomy edge-case identity changed")
+        ray = stored.get("ray")
+        if not isinstance(ray, dict) or ray.get("classification") != "support_outside_quadratically_inseparable":
+            raise AssertionError("quadratic-inseparable support-outside boundary changed")
+        if ray.get("quadratic_separator") is not None:
+            raise AssertionError("quadratic-inseparable ray unexpectedly has a separator")
 
 
 def main() -> None:
