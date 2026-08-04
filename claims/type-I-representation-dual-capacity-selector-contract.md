@@ -298,6 +298,9 @@ overflow_high_carrier_n_prime_three_complement_fixed_n：若 \(C=B_p/A<Q\) 且
 \(L=2B_p/3\)（\(C=3\)）。该回执逐行给出 \(L\mid Md\)、严格外层势下降以及
 条件性 E1--E5；由于 synthetic 行没有来源标记和完整 Reach，它仍是
 analysis_evidence，不承担递归。
+同一 exact-\(n=p\) phase receipt 还保存 \(C\bmod3\) 的闭式
+\(u=A-t_A\)、\(d_C\)、\(n_C\) 和 determinant identity，供 \(C\equiv1,2\pmod3\)
+分支直接进入 fixed-\(n\) divisor atlas。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

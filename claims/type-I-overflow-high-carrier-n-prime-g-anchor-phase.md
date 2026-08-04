@@ -144,7 +144,35 @@ overflow 后继；它不是终端，但外层支撑势严格下降。只有 \(AQ
 它不提供来源路径、标记集、全域解提升或严格势下降的完整证据。选择器因此将两种相位都
 保存为 `analysis_evidence`，而不是递归边。
 
-## 4. 聚焦算术回执
+## 4. 真高载体的三类闭式
+
+令 \(C=B_p/A<Q\)，并记 \(k\in\{0,1,2\}\) 为 \(C\) 的模 3 余数。核心条件保证
+\(k>0\) 时 \(3\mid A\)，于是
+
+\[
+u:=A-t_A=c+\frac{kA}{3},
+\qquad
+d_C=\frac{2C+kp}{3},
+\qquad
+n_C=4Qu-\frac{p-4}{3}.
+\tag{5}
+\]
+
+直接代入相位同余可得
+
+\[
+t_A=A-u,\qquad
+p n_C=4(AQ)d_C+1.
+\tag{6}
+\]
+
+因此 \(C\equiv0\pmod3\) 给出共同的
+\(n_C=(p^2-5p+7)/3\)，而 \(C\equiv1,2\pmod3\) 也分别给出显式
+fixed-\(n_C\) determinant。后两类是否能找到 \(L\mid(AQd_C)\) 且
+\(4L>n_C\) 的有界除子，是后续固定-\(n\) / 对偶容量问题；选择器不把 (5)--(6)
+误写成自动递归边。
+
+## 5. 聚焦算术回执
 
 统一选择器用没有 raw Reach provenance 的合成 supports 重算两组 profile：
 
@@ -170,7 +198,7 @@ support 已由某条完整来源路径产生。
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 
-## 5. 研究边界
+## 6. 研究边界
 
 该二分把 exact \(n=p\) 高载体族从未分类参数压成一个确定的 G-anchor phase。真正的
 后续问题是：对来源可达的 \(A\)，低相位能否补齐 source bundle 的 E1--E5 回执；对

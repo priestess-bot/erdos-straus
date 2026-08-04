@@ -2170,4 +2170,15 @@ n_*=\frac{p^2-5p+7}{3},\qquad d=\frac{2C}{3},\qquad Md=\frac{2B_pQ}{3}.
 严格支撑势下降；\(C>3\) 回到 G 图表，\(C=3\) 仍是 overflow。该结论在来源标记
 和可达性成立时给出条件性 E1--E5 边，当前合成回执仍保持 analysis_evidence。
 
+更一般地，所有 \(C<Q\) 的真高载体都可按 \(k=C\bmod3\) 写成
+\[
+u=A-t_A=c+\frac{kA}{3},\qquad
+d_C=\frac{2C+kp}{3},\qquad
+n_C=4Qu-\frac{p-4}{3},\qquad
+pn_C=4(AQ)d_C+1.
+\]
+因此 \(C\equiv1,2\pmod3\) 的剩余部分也不再是模逆黑箱，而是明确的
+fixed-\(n_C\) determinant；当前缺口转为是否存在满足 \(L\mid AQd_C\)、\(4L>n_C\)
+且支付外层势的有界除子，或是否需要对偶容量/alternate。
+
 主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

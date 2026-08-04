@@ -5006,6 +5006,11 @@ n_*=(p^2-5p+7)/3,\qquad Md=2B_pQ/3.
 前者回到 G 图表，后者仍为 overflow。实现新增 3|C 条件性 fixed-n reset profile，
 但 synthetic 行没有来源标记，故不升级递归。
 
+同时已把所有真高载体的相位写成三类闭式：令 \(k=C\bmod3\)，则
+\(u=A-t_A=c+kA/3\)、\(d_C=(2C+kp)/3\)、\(n_C=4Qu-(p-4)/3\)，并重算
+\(pn_C=4(AQ)d_C+1\)。因此 \(C\equiv1,2\pmod3\) 的剩余区不再依赖模逆黑箱；
+后续只需判断 fixed-\(n_C\) 的有界除子窗口，或转入对偶容量/alternate。
+
 复现：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

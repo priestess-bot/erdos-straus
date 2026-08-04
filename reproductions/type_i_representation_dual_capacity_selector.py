@@ -1984,6 +1984,33 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
         if chart_R <= prime:
             raise AssertionError("n=p G-anchor overflow phase boundary changed")
 
+    complement_C = B_prime // A
+    closed_form_phase: dict[str, object] = {"applicable": False}
+    if complement_C < Q:
+        residue_class = complement_C % 3
+        if residue_class and A % 3:
+            raise AssertionError("high-carrier phase support lost its factor 3")
+        u = c + residue_class * (A // 3)
+        d_closed = (2 * complement_C + residue_class * prime) // 3
+        n_closed = 4 * Q * u - R_Q
+        if (
+            u != A - phase
+            or d_closed <= 0
+            or n_closed % 4 != 1
+            or prime * n_closed != 4 * carrier * d_closed + 1
+            or chart_K != carrier * (prime - d_closed)
+        ):
+            raise AssertionError("n=p G-anchor residue-class phase formula changed")
+        closed_form_phase = {
+            "applicable": True,
+            "complement_C": complement_C,
+            "residue_class_k": residue_class,
+            "u=A-t": u,
+            "d": d_closed,
+            "n": n_closed,
+            "identity": "p*n=4*M*d+1",
+        }
+
     receipt = {
         "prime": prime,
         "absorbed_support": A,
@@ -2016,9 +2043,12 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
         "carrier_domain": {
             "inside_outer_rank": inside_outer_rank,
             "high_carrier": not inside_outer_rank,
+            "complement_C": complement_C,
+            "Q_over_complement": Q // complement_C,
             "B_p_over_carrier_floor": B_prime // carrier,
             "same_chart_support_promotion_available_conditionally": inside_outer_rank,
         },
+        "closed_form_phase": closed_form_phase,
         "phase_class": (
             "conditional_bundle_marked_absorb" if low_phase else "bundle_overflow"
         ),
@@ -5775,6 +5805,23 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
                 )
                 if route != expected_route:
                     raise AssertionError("n=p G-anchor overflow route changed")
+    closed_form_cases = {
+        (73, 324): (4, 1),
+        (73, 648): (2, 2),
+        (97, 576): (4, 1),
+        (97, 1152): (2, 2),
+    }
+    for (prime, support), expected_case in closed_form_cases.items():
+        row = high_carrier_n_prime_g_anchor_bundle_phase(prime, support)
+        closed = row.get("closed_form_phase")
+        if (
+            not isinstance(closed, dict)
+            or closed.get("applicable") is not True
+            or closed.get("complement_C") != expected_case[0]
+            or closed.get("residue_class_k") != expected_case[1]
+            or closed.get("identity") != "p*n=4*M*d+1"
+        ):
+            raise AssertionError("n=p G-anchor residue-class phase formula changed")
 
 
 def verify_high_carrier_n_prime_g_anchor_source_contract(
