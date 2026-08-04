@@ -2161,4 +2161,13 @@ analysis_evidence，不把公式误报为递归边。
 provenance。这里的 \(M=1332\) 是原始载体，而 \(K=1296=B_{73}\) 是对偶 G 图表容量；
 回执尚未补齐完整 E1--E5，故仍只作 analysis_evidence。
 
+对真正的高载体 \(AQ>B_p\)，令 \(C=B_p/A\)。若 \(C<Q\) 且 \(3\mid C\)，相位公式
+进一步给出共同的
+\[
+n_*=\frac{p^2-5p+7}{3},\qquad d=\frac{2C}{3},\qquad Md=\frac{2B_pQ}{3}.
+\]
+固定-\(n_*\) 选择 \(L=B_p/3\)（\(C>3\)）或 \(L=2B_p/3\)（\(C=3\)），逐行满足
+严格支撑势下降；\(C>3\) 回到 G 图表，\(C=3\) 仍是 overflow。该结论在来源标记
+和可达性成立时给出条件性 E1--E5 边，当前合成回执仍保持 analysis_evidence。
+
 主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

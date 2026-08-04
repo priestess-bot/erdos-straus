@@ -2142,6 +2142,127 @@ def high_carrier_n_prime_g_anchor_source_profile(
     return receipt
 
 
+def high_carrier_n_prime_three_complement_fixed_n_reset(
+    prime: int, complement: int
+) -> dict[str, object]:
+    """Classify the 3|C exact-n=p high-carrier fixed-n reset subfamily."""
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("three-complement reset requires a core prime")
+    B_prime = (prime - 1) ** 2 // 4
+    Q = (prime - 3) // 2
+    c = (prime - 1) // 6
+    C = complement
+    if C <= 1 or B_prime % C or C >= Q or C % 3:
+        raise AssertionError("three-complement reset requires 2<=C<Q and 3|C")
+    A = B_prime // C
+    phase = high_carrier_n_prime_g_anchor_bundle_phase(prime, A)
+    if phase["phase"]["t"] != A - c or not phase["carrier_domain"]["high_carrier"]:
+        raise AssertionError("three-complement G-anchor phase changed")
+
+    n_star = (prime * prime - 5 * prime + 7) // 3
+    d = 2 * C // 3
+    carrier = int(phase["target_chart"]["carrier"])
+    S = carrier * d
+    if (
+        prime * n_star != 4 * S + 1
+        or S != 2 * B_prime * Q // 3
+        or n_star % 4 != 1
+    ):
+        raise AssertionError("three-complement determinant family changed")
+
+    L = 2 * B_prime // 3 if C == 3 else B_prime // 3
+    if S % L or L <= A or L > B_prime or 4 * L <= n_star:
+        raise AssertionError("three-complement fixed-n divisor window changed")
+    cofactor = S // L
+    target_R, target_K = canonical_chart(prime, L)
+    expected_R = 4 * L - n_star
+    expected_K = L * (prime - cofactor)
+    old_potential = B_prime // A
+    new_potential = B_prime // L
+    if (
+        target_R != expected_R
+        or target_K != expected_K
+        or new_potential >= old_potential
+    ):
+        raise AssertionError("three-complement fixed-n reset arithmetic changed")
+    target_overflow = target_R > prime
+    if C == 3 and not target_overflow:
+        raise AssertionError("C=3 reset should remain overflow")
+    if C > 3 and target_R != prime - 2:
+        raise AssertionError("C>3 reset should land on the G chart")
+
+    receipt = {
+        "prime": prime,
+        "complement_C": C,
+        "source_support_A": A,
+        "anchor_phase": phase,
+        "determinant_family": {
+            "n": n_star,
+            "d": d,
+            "carrier_M": carrier,
+            "product_S": S,
+            "identity": "p*n=4*M*d+1",
+        },
+        "selected_divisor": {
+            "L": L,
+            "cofactor_S_over_L": cofactor,
+            "R_L": target_R,
+            "K_L": target_K,
+            "target_class": "overflow" if target_overflow else "G_marked_absorb",
+        },
+        "potential_record": {
+            "B_p": B_prime,
+            "source": old_potential,
+            "successor": new_potential,
+            "strict_decrease": True,
+            "support_reset_paid": True,
+        },
+        "conditional_edge_contract": {
+            "E1": True,
+            "E2": True,
+            "E3": True,
+            "E4": True,
+            "E5": True,
+            "lift": "identity_on_Sol(p)",
+            "source_marked_solution_set_required": True,
+            "source_reach_status": "unproved",
+        },
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
+def high_carrier_n_prime_three_complement_profile(
+    prime: int, complements: list[int]
+) -> dict[str, object]:
+    rows = [
+        high_carrier_n_prime_three_complement_fixed_n_reset(prime, complement)
+        for complement in sorted(set(complements))
+    ]
+    return {
+        "prime": prime,
+        "profile_type": "synthetic_conditional_fixed_n_reset",
+        "rows": rows,
+        "row_count": len(rows),
+        "G_chart_target_count": sum(
+            row["selected_divisor"]["target_class"] == "G_marked_absorb"
+            for row in rows
+        ),
+        "overflow_target_count": sum(
+            row["selected_divisor"]["target_class"] == "overflow"
+            for row in rows
+        ),
+        "scope_note": (
+            "The fixed-n divisor is an arithmetic conditional edge: source marked-set and "
+            "reachability are deliberately not inferred from the synthetic complement profile."
+        ),
+    }
+
+
 def high_carrier_complement_classification(
     prime: int, carrier: int, dual_carrier: int
 ) -> dict[str, object]:
@@ -5121,6 +5242,14 @@ def build_results() -> dict[str, object]:
             97, [1, 2, 3, 4, 6, 8, 9, 16, 64]
         ),
     ]
+    n_prime_three_complement_profiles = [
+        high_carrier_n_prime_three_complement_profile(
+            73, [3, 6, 9, 12, 18, 24, 27]
+        ),
+        high_carrier_n_prime_three_complement_profile(
+            97, [3, 6, 9, 12, 18, 24, 36]
+        ),
+    ]
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
@@ -5172,6 +5301,14 @@ def build_results() -> dict[str, object]:
                 "they do not supply raw source provenance or recursive E1-E5 edges."
             ),
         },
+        "overflow_high_carrier_n_prime_three_complement_fixed_n": {
+            "profiles": n_prime_three_complement_profiles,
+            "profile_count": len(n_prime_three_complement_profiles),
+            "scope_note": (
+                "The 3|C fixed-n reset is conditional on source marked-set and reachability; "
+                "synthetic rows are arithmetic evidence only."
+            ),
+        },
         "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_n_bounded_divisor_outer_rank": fixed_n_bounded_divisor,
@@ -5205,6 +5342,7 @@ def build_results() -> dict[str, object]:
             "high_carrier_complement_bound_replayed": True,
             "n_prime_g_anchor_phase_requires_source_provenance": True,
             "n_prime_g_anchor_source_never_auto_recursive": True,
+            "n_prime_three_complement_reset_requires_source_mark": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
@@ -5667,6 +5805,64 @@ def verify_high_carrier_n_prime_g_anchor_source_contract(
     anchor_row = receipt.get("source_provenance", {}).get("anchor_row")
     if not isinstance(anchor_row, dict) or anchor_row.get("classification") != "marked_absorb":
         raise AssertionError("n=p G-anchor source anchor row changed")
+
+
+def verify_high_carrier_n_prime_three_complement_contract(
+    result: dict[str, object]
+) -> None:
+    payload = result.get("overflow_high_carrier_n_prime_three_complement_fixed_n")
+    if not isinstance(payload, dict) or payload.get("profile_count") != 2:
+        raise AssertionError("3|C n=p reset profile shape changed")
+    profiles = payload.get("profiles")
+    if not isinstance(profiles, list) or len(profiles) != 2:
+        raise AssertionError("3|C n=p reset profiles missing")
+    expected = {
+        73: {"complements": [3, 6, 9, 12, 18, 24, 27], "G": 6, "overflow": 1},
+        97: {"complements": [3, 6, 9, 12, 18, 24, 36], "G": 6, "overflow": 1},
+    }
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            raise AssertionError("3|C n=p reset profile is not an object")
+        prime = profile.get("prime")
+        if prime not in expected:
+            raise AssertionError("unexpected 3|C n=p reset prime")
+        spec = expected[prime]
+        if (
+            profile.get("profile_type") != "synthetic_conditional_fixed_n_reset"
+            or profile.get("row_count") != len(spec["complements"])
+            or profile.get("G_chart_target_count") != spec["G"]
+            or profile.get("overflow_target_count") != spec["overflow"]
+        ):
+            raise AssertionError("3|C n=p reset profile counts changed")
+        rows = profile.get("rows")
+        if not isinstance(rows, list) or {
+            row.get("complement_C") for row in rows if isinstance(row, dict)
+        } != set(spec["complements"]):
+            raise AssertionError("3|C n=p reset complement profile changed")
+        for row in rows:
+            if not isinstance(row, dict):
+                raise AssertionError("3|C n=p reset row is not an object")
+            if (
+                row.get("selector_status") != "analysis_evidence"
+                or row.get("recursive_edge_eligible") is not False
+                or row.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+                or row.get("conditional_edge_contract") != {
+                    "E1": True,
+                    "E2": True,
+                    "E3": True,
+                    "E4": True,
+                    "E5": True,
+                    "lift": "identity_on_Sol(p)",
+                    "source_marked_solution_set_required": True,
+                    "source_reach_status": "unproved",
+                }
+            ):
+                raise AssertionError("3|C n=p reset crossed status boundary")
+            expected_row = high_carrier_n_prime_three_complement_fixed_n_reset(
+                int(prime), int(row["complement_C"])
+            )
+            if row != expected_row:
+                raise AssertionError("stored 3|C n=p reset row is stale")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -6983,6 +7179,7 @@ def main() -> None:
         verify_high_carrier_complement_contract(result)
         verify_high_carrier_n_prime_g_anchor_phase_contract(result)
         verify_high_carrier_n_prime_g_anchor_source_contract(result)
+        verify_high_carrier_n_prime_three_complement_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)

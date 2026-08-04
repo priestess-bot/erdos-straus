@@ -4997,6 +4997,15 @@ G_marked_absorb 的 raw source/anchor 记录，首个 \(A=1,Q=35\) 行正是低�
 \(R_Q=23\)。必须把原始 carrier 1332 与对偶容量 1296 分开记账；该真实回执仍没有
 完整 E1--E5，因此保持 analysis_evidence。
 
+进一步令真高载体的补余 \(C=B_p/A<Q\)。当 \(3\mid C\) 时，相位满足
+\(t_A=A-c\)，并出现共同 fixed-\(n_*\) 乘积
+\[
+n_*=(p^2-5p+7)/3,\qquad Md=2B_pQ/3.
+\]
+固定-\(n_*\) 除子 \(L=B_p/3\)（\(C>3\)）或 \(2B_p/3\)（\(C=3\)）均支付严格外层势；
+前者回到 G 图表，后者仍为 overflow。实现新增 3|C 条件性 fixed-n reset profile，
+但 synthetic 行没有来源标记，故不升级递归。
+
 复现：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

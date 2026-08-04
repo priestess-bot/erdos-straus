@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 369 |
 | 数学状态 | `conditional` | 18 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 344 |
+| 数学状态 | `established` | 345 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 125 |
 | 证明来源 | `mixed` | 25 |
-| 证明来源 | `repository_derivation` | 175 |
+| 证明来源 | `repository_derivation` | 176 |
 | 证明来源 | `unspecified` | 427 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 307 |
+| 审阅状态 | `internal_review` | 308 |
 | 审阅状态 | `unspecified` | 427 |
 
 ## 全部主张
@@ -499,6 +499,7 @@
 | [高载体 overflow 固定 n 有界除子的 R 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md) (`type-I-overflow-high-carrier-fixed-n-R-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md) (`type-I-overflow-high-carrier-n-prime-g-anchor-phase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [高载体 n=p overflow 的唯一 d=1 G-anchor 正规形](../claims/type-I-overflow-high-carrier-n-prime-normal-form.md) (`type-I-overflow-high-carrier-n-prime-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
+| [exact n=p 高载体中 3\|C 的固定 n 支撑重置](../claims/type-I-overflow-high-carrier-n-prime-three-complement-fixed-n-reset.md) (`type-I-overflow-high-carrier-n-prime-three-complement-fixed-n-reset`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [高载体 overflow 的 p+4 互补分流](../claims/type-I-overflow-high-carrier-p-plus-four-complement.md) (`type-I-overflow-high-carrier-p-plus-four-complement`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow RESET 的 joined-support 外层秩递降](../claims/type-I-overflow-outer-rank-reset.md) (`type-I-overflow-outer-rank-reset`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow RESET 局部载体下降与重入循环边界](../claims/type-I-overflow-phase-reset-cycle-boundary.md) (`type-I-overflow-phase-reset-cycle-boundary`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |

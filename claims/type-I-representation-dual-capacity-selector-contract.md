@@ -16,6 +16,7 @@ depends_on:
   - type-I-overflow-fixed-n-bounded-divisor-saturation
   - type-I-overflow-high-carrier-fixed-n-R-descent
   - type-I-overflow-high-carrier-n-prime-g-anchor-phase
+  - type-I-overflow-high-carrier-n-prime-three-complement-fixed-n-reset
   - type-I-overflow-same-chart-support-promotion
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -68,6 +69,8 @@ sources:
     role: universal-A-one-dual-reset-subfamily
   - claim: type-I-overflow-high-carrier-n-prime-g-anchor-phase
     role: exact-n-prime-G-anchor-phase-classification
+  - claim: type-I-overflow-high-carrier-n-prime-three-complement-fixed-n-reset
+    role: conditional-three-divisible-complement-fixed-n-reset
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -288,6 +291,13 @@ analysis_evidence；该字段只补足 exact \(n=p\) 的算术分类，不携带
 现有 \(p=73\) 的 G_marked_absorb 回执还提供一个真实 source/anchor provenance 行；
 其原始高载体 \(M=1332\) 与对偶 G 容量 \(K=B_{73}=1296\) 分开保存，仍不自动升级
 为递归边。
+
+exact \(n=p\) 的真高载体还登记
+overflow_high_carrier_n_prime_three_complement_fixed_n：若 \(C=B_p/A<Q\) 且
+\(3\mid C\)，选择器重算共同的 fixed-\(n_*\) 乘积和 \(L=B_p/3\)（\(C>3\)）或
+\(L=2B_p/3\)（\(C=3\)）。该回执逐行给出 \(L\mid Md\)、严格外层势下降以及
+条件性 E1--E5；由于 synthetic 行没有来源标记和完整 Reach，它仍是
+analysis_evidence，不承担递归。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

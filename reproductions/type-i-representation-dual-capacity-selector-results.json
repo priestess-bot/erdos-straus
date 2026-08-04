@@ -938,6 +938,7 @@
     "large_slab_capacity_requires_carrier_mapping": true,
     "n_prime_g_anchor_phase_requires_source_provenance": true,
     "n_prime_g_anchor_source_never_auto_recursive": true,
+    "n_prime_three_complement_reset_requires_source_mark": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
@@ -9012,6 +9013,1530 @@
       "status": "focused_raw_source_and_anchor"
     },
     "source_record": "G_marked_absorb"
+  },
+  "overflow_high_carrier_n_prime_three_complement_fixed_n": {
+    "profile_count": 2,
+    "profiles": [
+      {
+        "G_chart_target_count": 6,
+        "overflow_target_count": 1,
+        "prime": 73,
+        "profile_type": "synthetic_conditional_fixed_n_reset",
+        "row_count": 7,
+        "rows": [
+          {
+            "anchor_phase": {
+              "absorbed_support": 432,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  431
+                ],
+                "t": 420
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 3,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 3,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 1073520,
+                "R": 58823,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 15120,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 3,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 15120,
+              "d": 2,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 3,
+              "strict_decrease": true,
+              "successor": 1,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 32832,
+              "L": 864,
+              "R_L": 1799,
+              "cofactor_S_over_L": 35,
+              "target_class": "overflow"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 432
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 216,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  215
+                ],
+                "t": 204
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 6,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 6,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 521640,
+                "R": 28583,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 7560,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 6,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 7560,
+              "d": 4,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 6,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 1296,
+              "L": 432,
+              "R_L": 71,
+              "cofactor_S_over_L": 70,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 216
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 144,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  143
+                ],
+                "t": 132
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 9,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 9,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 337680,
+                "R": 18503,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 5040,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 9,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 5040,
+              "d": 6,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 9,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 1296,
+              "L": 432,
+              "R_L": 71,
+              "cofactor_S_over_L": 70,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 144
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 108,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  107
+                ],
+                "t": 96
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 12,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 12,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 245700,
+                "R": 13463,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 3780,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 12,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 3780,
+              "d": 8,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 12,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 1296,
+              "L": 432,
+              "R_L": 71,
+              "cofactor_S_over_L": 70,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 108
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 72,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  71
+                ],
+                "t": 60
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 18,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 18,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 153720,
+                "R": 8423,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 2520,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 18,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 2520,
+              "d": 12,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 18,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 1296,
+              "L": 432,
+              "R_L": 71,
+              "cofactor_S_over_L": 70,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 72
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 54,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  53
+                ],
+                "t": 42
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 24,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 24,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 107730,
+                "R": 5903,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 1890,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 24,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 1890,
+              "d": 16,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 24,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 1296,
+              "L": 432,
+              "R_L": 71,
+              "cofactor_S_over_L": 70,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 54
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 48,
+              "anchor": {
+                "Q": 35,
+                "base_chart": {
+                  "K": 420,
+                  "R": 23
+                },
+                "beta": 2,
+                "c": 12
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  47
+                ],
+                "t": 36
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 27,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 73,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 27,
+                "K": 1296,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 92400,
+                "R": 5063,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 1680,
+                "carrier_over_support": 35
+              }
+            },
+            "complement_C": 27,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 1680,
+              "d": 18,
+              "identity": "p*n=4*M*d+1",
+              "n": 1657,
+              "product_S": 30240
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 1296,
+              "source": 27,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 73,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 1296,
+              "L": 432,
+              "R_L": 71,
+              "cofactor_S_over_L": 70,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 48
+          }
+        ],
+        "scope_note": "The fixed-n divisor is an arithmetic conditional edge: source marked-set and reachability are deliberately not inferred from the synthetic complement profile."
+      },
+      {
+        "G_chart_target_count": 6,
+        "overflow_target_count": 1,
+        "prime": 97,
+        "profile_type": "synthetic_conditional_fixed_n_reset",
+        "row_count": 7,
+        "rows": [
+          {
+            "anchor_phase": {
+              "absorbed_support": 768,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  767
+                ],
+                "t": 752
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 3,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 3,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 3429120,
+                "R": 141407,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 36096,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 3,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 36096,
+              "d": 2,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 3,
+              "strict_decrease": true,
+              "successor": 1,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 76800,
+              "L": 1536,
+              "R_L": 3167,
+              "cofactor_S_over_L": 47,
+              "target_class": "overflow"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 768
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 384,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  383
+                ],
+                "t": 368
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 6,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 6,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 1678464,
+                "R": 69215,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 18048,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 6,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 18048,
+              "d": 4,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 6,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 2304,
+              "L": 768,
+              "R_L": 95,
+              "cofactor_S_over_L": 94,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 384
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 256,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  255
+                ],
+                "t": 240
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 9,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 9,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 1094912,
+                "R": 45151,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 12032,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 9,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 12032,
+              "d": 6,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 9,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 2304,
+              "L": 768,
+              "R_L": 95,
+              "cofactor_S_over_L": 94,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 256
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 192,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  191
+                ],
+                "t": 176
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 12,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 12,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 803136,
+                "R": 33119,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 9024,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 12,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 9024,
+              "d": 8,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 12,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 2304,
+              "L": 768,
+              "R_L": 95,
+              "cofactor_S_over_L": 94,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 192
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 128,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  127
+                ],
+                "t": 112
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 18,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 18,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 511360,
+                "R": 21087,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 6016,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 18,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 6016,
+              "d": 12,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 18,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 2304,
+              "L": 768,
+              "R_L": 95,
+              "cofactor_S_over_L": 94,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 128
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 96,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  95
+                ],
+                "t": 80
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 24,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 24,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 365472,
+                "R": 15071,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 4512,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 24,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 4512,
+              "d": 16,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 24,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 2304,
+              "L": 768,
+              "R_L": 95,
+              "cofactor_S_over_L": 94,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 96
+          },
+          {
+            "anchor_phase": {
+              "absorbed_support": 64,
+              "anchor": {
+                "Q": 47,
+                "base_chart": {
+                  "K": 752,
+                  "R": 31
+                },
+                "beta": 2,
+                "c": 16
+              },
+              "carrier_domain": {
+                "B_p_over_carrier_floor": 0,
+                "high_carrier": true,
+                "inside_outer_rank": false,
+                "same_chart_support_promotion_available_conditionally": false
+              },
+              "conditional_route": "high_carrier_overflow",
+              "e1_e5": {
+                "E1": false,
+                "E2": false,
+                "E3": false,
+                "E4": false,
+                "E5": false
+              },
+              "phase": {
+                "congruence": "c+p*t=0 (mod A)",
+                "equivalent_low_condition": "A divides (p-1)/6",
+                "low_phase": false,
+                "range": [
+                  0,
+                  63
+                ],
+                "t": 48
+              },
+              "phase_class": "bundle_overflow",
+              "potential_record": {
+                "new": null,
+                "old": 36,
+                "requires_source_bundle_provenance": true,
+                "status": "conditional_arithmetic",
+                "strict_decrease": false
+              },
+              "prime": 97,
+              "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+              "recursive_edge_eligible": false,
+              "selector_status": "analysis_evidence",
+              "support_domain": {
+                "A_divides_K": true,
+                "B_over_A": 36,
+                "K": 2304,
+                "proper_support": true
+              },
+              "target_chart": {
+                "K": 219584,
+                "R": 9055,
+                "canonical_formula": "R=R_Q+4*Q*t",
+                "carrier": 3008,
+                "carrier_over_support": 47
+              }
+            },
+            "complement_C": 36,
+            "conditional_edge_contract": {
+              "E1": true,
+              "E2": true,
+              "E3": true,
+              "E4": true,
+              "E5": true,
+              "lift": "identity_on_Sol(p)",
+              "source_marked_solution_set_required": true,
+              "source_reach_status": "unproved"
+            },
+            "determinant_family": {
+              "carrier_M": 3008,
+              "d": 24,
+              "identity": "p*n=4*M*d+1",
+              "n": 2977,
+              "product_S": 72192
+            },
+            "e1_e5": {
+              "E1": false,
+              "E2": false,
+              "E3": false,
+              "E4": false,
+              "E5": false
+            },
+            "potential_record": {
+              "B_p": 2304,
+              "source": 36,
+              "strict_decrease": true,
+              "successor": 3,
+              "support_reset_paid": true
+            },
+            "prime": 97,
+            "proof_boundary": "n_prime_three_divisible_complement_fixed_n_conditional_reset",
+            "recursive_edge_eligible": false,
+            "selected_divisor": {
+              "K_L": 2304,
+              "L": 768,
+              "R_L": 95,
+              "cofactor_S_over_L": 94,
+              "target_class": "G_marked_absorb"
+            },
+            "selector_status": "analysis_evidence",
+            "source_support_A": 64
+          }
+        ],
+        "scope_note": "The fixed-n divisor is an arithmetic conditional edge: source marked-set and reachability are deliberately not inferred from the synthetic complement profile."
+      }
+    ],
+    "scope_note": "The 3|C fixed-n reset is conditional on source marked-set and reachability; synthetic rows are arithmetic evidence only."
   },
   "overflow_high_carrier_p_plus_four_complement": {
     "exact_n_prime_count": 0,
