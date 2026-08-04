@@ -5020,3 +5020,46 @@ n_*=(p^2-5p+7)/3,\qquad Md=2B_pQ/3.
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 
 主张卡见[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。
+
+## 2026-08-04 高载体 n=p 的 C=1 fixed-s 除子图谱
+
+在三类相位闭式完成后，继续处理仍可能有 \(B_p\)-bounded fixed-\(n\) 窗口的
+\(C\equiv1\pmod3\) 子族。令 \(A=B_p/C\)、\(M=AQ\)、\(r=M\bmod p\)，则
+
+\[
+d=(2C+p)/3,\qquad T=rd,\qquad s=(4T+1)/p,
+\qquad ps=4T+1.
+\]
+
+因此可以枚举 \(L\mid T\)，并保留
+
+\[
+A<L\le B_p,\qquad 4L>s,\qquad
+\lfloor B_p/L\rfloor<C.
+\]
+
+保留项的规范图表为
+
+\[
+(R_L,K_L)=\left(4L-s,\;L\left(p-T/L\right)\right),
+\]
+
+且外层势严格下降。新增 `high_carrier_n_prime_c_one_fixed_s_atlas` 和四行 profile，
+并将所有结果保持为 `analysis_evidence`：条件合同中的 E1--E5 是算术候选，来源标记
+集与 Reach 仍未证明，不能自动进入递归图。
+
+四行合成结果为：
+
+| \(p,C\) | \(A\) | \(T\) | 候选数 |
+| --- | ---: | ---: | ---: |
+| \((193,64)\) | 144 | 18190 | 7 |
+| \((241,64)\) | 225 | 2952 | 8 |
+| \((241,100)\) | 144 | 3675 | 7 |
+| \((15601,4000)\) | 15210 | 65980529 | 0 |
+
+最后一行是 fixed-s hard core，而不是猜想反例；它要求 alternate、对偶容量或跨状态
+良基势。主张卡见[高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md)。
+
+定向复核：
+
+    python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

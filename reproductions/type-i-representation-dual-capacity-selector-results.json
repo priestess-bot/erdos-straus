@@ -936,6 +936,7 @@
     "high_carrier_complement_bound_replayed": true,
     "high_carrier_complement_requires_q3_factor": true,
     "large_slab_capacity_requires_carrier_mapping": true,
+    "n_prime_c_one_fixed_s_requires_source_mark": true,
     "n_prime_g_anchor_phase_requires_source_provenance": true,
     "n_prime_g_anchor_source_never_auto_recursive": true,
     "n_prime_three_complement_reset_requires_source_mark": true,
@@ -7747,6 +7748,750 @@
         }
       }
     ]
+  },
+  "overflow_high_carrier_n_prime_c_one_fixed_s": {
+    "hard_core_count": 1,
+    "positive_count": 3,
+    "profile_type": "synthetic_c_one_fixed_s_atlas",
+    "row_count": 4,
+    "rows": [
+      {
+        "accepted_count": 7,
+        "accepted_divisors": [
+          {
+            "K_L": 14620,
+            "L": 170,
+            "R_L": 303,
+            "cofactor_product_over_L": 107,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 54
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 23112,
+            "L": 214,
+            "R_L": 479,
+            "cofactor_product_over_L": 85,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 43
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 85065,
+            "L": 535,
+            "R_L": 1763,
+            "cofactor_product_over_L": 34,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 17
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 188320,
+            "L": 1070,
+            "R_L": 3903,
+            "cofactor_product_over_L": 17,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 8
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 332877,
+            "L": 1819,
+            "R_L": 6899,
+            "cofactor_product_over_L": 10,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 5
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 683944,
+            "L": 3638,
+            "R_L": 14175,
+            "cofactor_product_over_L": 5,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 2
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 1737145,
+            "L": 9095,
+            "R_L": 36003,
+            "cofactor_product_over_L": 2,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 1
+            },
+            "target_class": "overflow"
+          }
+        ],
+        "anchor_phase": {
+          "absorbed_support": 144,
+          "anchor": {
+            "Q": 95,
+            "base_chart": {
+              "K": 3040,
+              "R": 63
+            },
+            "beta": 2,
+            "c": 32
+          },
+          "carrier_domain": {
+            "B_p_over_carrier_floor": 0,
+            "Q_over_complement": 1,
+            "complement_C": 64,
+            "high_carrier": true,
+            "inside_outer_rank": false,
+            "same_chart_support_promotion_available_conditionally": false
+          },
+          "closed_form_phase": {
+            "applicable": true,
+            "complement_C": 64,
+            "d": 107,
+            "fixed_n_window": {
+              "C_threshold_inequality": "C*(2*p^2-p-4)>4*k*B_p*Q",
+              "lower_bound_for_4L": 30337,
+              "possible": true,
+              "threshold_denominator": 74301,
+              "threshold_numerator": 3502080,
+              "universal_k_two_no_go": false,
+              "upper_carrier_bound": 9216
+            },
+            "identity": "p*n=4*M*d+1",
+            "n": 30337,
+            "residue_class_k": 1,
+            "u=A-t": 80
+          },
+          "conditional_route": "high_carrier_overflow",
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "phase": {
+            "congruence": "c+p*t=0 (mod A)",
+            "equivalent_low_condition": "A divides (p-1)/6",
+            "low_phase": false,
+            "range": [
+              0,
+              143
+            ],
+            "t": 64
+          },
+          "phase_class": "bundle_overflow",
+          "potential_record": {
+            "new": null,
+            "old": 64,
+            "requires_source_bundle_provenance": true,
+            "status": "conditional_arithmetic",
+            "strict_decrease": false
+          },
+          "prime": 193,
+          "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "support_domain": {
+            "A_divides_K": true,
+            "B_over_A": 64,
+            "K": 9216,
+            "proper_support": true
+          },
+          "target_chart": {
+            "K": 1176480,
+            "R": 24383,
+            "canonical_formula": "R=R_Q+4*Q*t",
+            "carrier": 13680,
+            "carrier_over_support": 95
+          }
+        },
+        "complement_C": 64,
+        "conditional_edge_contract": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true,
+          "lift": "identity_on_Sol(p)",
+          "source_marked_solution_set_required": true,
+          "source_reach_status": "unproved"
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_s_determinant": {
+          "d": 107,
+          "identity": "p*s=4*r*d+1",
+          "product_T": 18190,
+          "residue_r": 170,
+          "s": 377,
+          "source_carrier_M": 13680
+        },
+        "fixed_s_hard_core": false,
+        "prime": 193,
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_support_A": 144
+      },
+      {
+        "accepted_count": 8,
+        "accepted_divisors": [
+          {
+            "K_L": 56334,
+            "L": 246,
+            "R_L": 935,
+            "cofactor_product_over_L": 12,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 58
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 76096,
+            "L": 328,
+            "R_L": 1263,
+            "cofactor_product_over_L": 9,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 43
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 85977,
+            "L": 369,
+            "R_L": 1427,
+            "cofactor_product_over_L": 8,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 39
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 115620,
+            "L": 492,
+            "R_L": 1919,
+            "cofactor_product_over_L": 6,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 29
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 174906,
+            "L": 738,
+            "R_L": 2903,
+            "cofactor_product_over_L": 4,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 19
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 234192,
+            "L": 984,
+            "R_L": 3887,
+            "cofactor_product_over_L": 3,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 14
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 352764,
+            "L": 1476,
+            "R_L": 5855,
+            "cofactor_product_over_L": 2,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 9
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 708480,
+            "L": 2952,
+            "R_L": 11759,
+            "cofactor_product_over_L": 1,
+            "potential": {
+              "source": 64,
+              "strict_decrease": true,
+              "successor": 4
+            },
+            "target_class": "overflow"
+          }
+        ],
+        "anchor_phase": {
+          "absorbed_support": 225,
+          "anchor": {
+            "Q": 119,
+            "base_chart": {
+              "K": 4760,
+              "R": 79
+            },
+            "beta": 2,
+            "c": 40
+          },
+          "carrier_domain": {
+            "B_p_over_carrier_floor": 0,
+            "Q_over_complement": 1,
+            "complement_C": 64,
+            "high_carrier": true,
+            "inside_outer_rank": false,
+            "same_chart_support_promotion_available_conditionally": false
+          },
+          "closed_form_phase": {
+            "applicable": true,
+            "complement_C": 64,
+            "d": 123,
+            "fixed_n_window": {
+              "C_threshold_inequality": "C*(2*p^2-p-4)>4*k*B_p*Q",
+              "lower_bound_for_4L": 54661,
+              "possible": true,
+              "threshold_denominator": 115917,
+              "threshold_numerator": 6854400,
+              "universal_k_two_no_go": false,
+              "upper_carrier_bound": 14400
+            },
+            "identity": "p*n=4*M*d+1",
+            "n": 54661,
+            "residue_class_k": 1,
+            "u=A-t": 115
+          },
+          "conditional_route": "high_carrier_overflow",
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "phase": {
+            "congruence": "c+p*t=0 (mod A)",
+            "equivalent_low_condition": "A divides (p-1)/6",
+            "low_phase": false,
+            "range": [
+              0,
+              224
+            ],
+            "t": 110
+          },
+          "phase_class": "bundle_overflow",
+          "potential_record": {
+            "new": null,
+            "old": 64,
+            "requires_source_bundle_provenance": true,
+            "status": "conditional_arithmetic",
+            "strict_decrease": false
+          },
+          "prime": 241,
+          "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "support_domain": {
+            "A_divides_K": true,
+            "B_over_A": 64,
+            "K": 14400,
+            "proper_support": true
+          },
+          "target_chart": {
+            "K": 3159450,
+            "R": 52439,
+            "canonical_formula": "R=R_Q+4*Q*t",
+            "carrier": 26775,
+            "carrier_over_support": 119
+          }
+        },
+        "complement_C": 64,
+        "conditional_edge_contract": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true,
+          "lift": "identity_on_Sol(p)",
+          "source_marked_solution_set_required": true,
+          "source_reach_status": "unproved"
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_s_determinant": {
+          "d": 123,
+          "identity": "p*s=4*r*d+1",
+          "product_T": 2952,
+          "residue_r": 24,
+          "s": 49,
+          "source_carrier_M": 26775
+        },
+        "fixed_s_hard_core": false,
+        "prime": 241,
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_support_A": 225
+      },
+      {
+        "accepted_count": 7,
+        "accepted_divisors": [
+          {
+            "K_L": 31752,
+            "L": 147,
+            "R_L": 527,
+            "cofactor_product_over_L": 25,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 97
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 38500,
+            "L": 175,
+            "R_L": 639,
+            "cofactor_product_over_L": 21,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 82
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 55370,
+            "L": 245,
+            "R_L": 919,
+            "cofactor_product_over_L": 15,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 58
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 122850,
+            "L": 525,
+            "R_L": 2039,
+            "cofactor_product_over_L": 7,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 27
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 173460,
+            "L": 735,
+            "R_L": 2879,
+            "cofactor_product_over_L": 5,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 19
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 291550,
+            "L": 1225,
+            "R_L": 4839,
+            "cofactor_product_over_L": 3,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 11
+            },
+            "target_class": "overflow"
+          },
+          {
+            "K_L": 882000,
+            "L": 3675,
+            "R_L": 14639,
+            "cofactor_product_over_L": 1,
+            "potential": {
+              "source": 100,
+              "strict_decrease": true,
+              "successor": 3
+            },
+            "target_class": "overflow"
+          }
+        ],
+        "anchor_phase": {
+          "absorbed_support": 144,
+          "anchor": {
+            "Q": 119,
+            "base_chart": {
+              "K": 4760,
+              "R": 79
+            },
+            "beta": 2,
+            "c": 40
+          },
+          "carrier_domain": {
+            "B_p_over_carrier_floor": 0,
+            "Q_over_complement": 1,
+            "complement_C": 100,
+            "high_carrier": true,
+            "inside_outer_rank": false,
+            "same_chart_support_promotion_available_conditionally": false
+          },
+          "closed_form_phase": {
+            "applicable": true,
+            "complement_C": 100,
+            "d": 147,
+            "fixed_n_window": {
+              "C_threshold_inequality": "C*(2*p^2-p-4)>4*k*B_p*Q",
+              "lower_bound_for_4L": 41809,
+              "possible": true,
+              "threshold_denominator": 115917,
+              "threshold_numerator": 6854400,
+              "universal_k_two_no_go": false,
+              "upper_carrier_bound": 14400
+            },
+            "identity": "p*n=4*M*d+1",
+            "n": 41809,
+            "residue_class_k": 1,
+            "u=A-t": 88
+          },
+          "conditional_route": "high_carrier_overflow",
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "phase": {
+            "congruence": "c+p*t=0 (mod A)",
+            "equivalent_low_condition": "A divides (p-1)/6",
+            "low_phase": false,
+            "range": [
+              0,
+              143
+            ],
+            "t": 56
+          },
+          "phase_class": "bundle_overflow",
+          "potential_record": {
+            "new": null,
+            "old": 100,
+            "requires_source_bundle_provenance": true,
+            "status": "conditional_arithmetic",
+            "strict_decrease": false
+          },
+          "prime": 241,
+          "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "support_domain": {
+            "A_divides_K": true,
+            "B_over_A": 100,
+            "K": 14400,
+            "proper_support": true
+          },
+          "target_chart": {
+            "K": 1610784,
+            "R": 26735,
+            "canonical_formula": "R=R_Q+4*Q*t",
+            "carrier": 17136,
+            "carrier_over_support": 119
+          }
+        },
+        "complement_C": 100,
+        "conditional_edge_contract": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true,
+          "lift": "identity_on_Sol(p)",
+          "source_marked_solution_set_required": true,
+          "source_reach_status": "unproved"
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_s_determinant": {
+          "d": 147,
+          "identity": "p*s=4*r*d+1",
+          "product_T": 3675,
+          "residue_r": 25,
+          "s": 61,
+          "source_carrier_M": 17136
+        },
+        "fixed_s_hard_core": false,
+        "prime": 241,
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_support_A": 144
+      },
+      {
+        "accepted_count": 0,
+        "accepted_divisors": [],
+        "anchor_phase": {
+          "absorbed_support": 15210,
+          "anchor": {
+            "Q": 7799,
+            "base_chart": {
+              "K": 20277400,
+              "R": 5199
+            },
+            "beta": 2,
+            "c": 2600
+          },
+          "carrier_domain": {
+            "B_p_over_carrier_floor": 0,
+            "Q_over_complement": 1,
+            "complement_C": 4000,
+            "high_carrier": true,
+            "inside_outer_rank": false,
+            "same_chart_support_promotion_available_conditionally": false
+          },
+          "closed_form_phase": {
+            "applicable": true,
+            "complement_C": 4000,
+            "d": 7867,
+            "fixed_n_window": {
+              "C_threshold_inequality": "C*(2*p^2-p-4)>4*k*B_p*Q",
+              "lower_bound_for_4L": 239268121,
+              "possible": true,
+              "threshold_denominator": 486766797,
+              "threshold_numerator": 1897964640000,
+              "universal_k_two_no_go": false,
+              "upper_carrier_bound": 60840000
+            },
+            "identity": "p*n=4*M*d+1",
+            "n": 239268121,
+            "residue_class_k": 1,
+            "u=A-t": 7670
+          },
+          "conditional_route": "high_carrier_overflow",
+          "e1_e5": {
+            "E1": false,
+            "E2": false,
+            "E3": false,
+            "E4": false,
+            "E5": false
+          },
+          "phase": {
+            "congruence": "c+p*t=0 (mod A)",
+            "equivalent_low_condition": "A divides (p-1)/6",
+            "low_phase": false,
+            "range": [
+              0,
+              15209
+            ],
+            "t": 7540
+          },
+          "phase_class": "bundle_overflow",
+          "potential_record": {
+            "new": null,
+            "old": 4000,
+            "requires_source_bundle_provenance": true,
+            "status": "conditional_arithmetic",
+            "strict_decrease": false
+          },
+          "prime": 15601,
+          "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+          "recursive_edge_eligible": false,
+          "selector_status": "analysis_evidence",
+          "support_domain": {
+            "A_divides_K": true,
+            "B_over_A": 4000,
+            "K": 60840000,
+            "proper_support": true
+          },
+          "target_chart": {
+            "K": 917428657860,
+            "R": 235223039,
+            "canonical_formula": "R=R_Q+4*Q*t",
+            "carrier": 118622790,
+            "carrier_over_support": 7799
+          }
+        },
+        "complement_C": 4000,
+        "conditional_edge_contract": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true,
+          "lift": "identity_on_Sol(p)",
+          "source_marked_solution_set_required": true,
+          "source_reach_status": "unproved"
+        },
+        "e1_e5": {
+          "E1": false,
+          "E2": false,
+          "E3": false,
+          "E4": false,
+          "E5": false
+        },
+        "fixed_s_determinant": {
+          "d": 7867,
+          "identity": "p*s=4*r*d+1",
+          "product_T": 65980529,
+          "residue_r": 8387,
+          "s": 16917,
+          "source_carrier_M": 118622790
+        },
+        "fixed_s_hard_core": true,
+        "prime": 15601,
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+        "recursive_edge_eligible": false,
+        "selector_status": "analysis_evidence",
+        "source_support_A": 15210
+      }
+    ],
+    "scope_note": "Accepted divisors are conditional fixed-s edges.  The atlas does not infer source marked sets or reachability, and a hard core is not a counterexample."
   },
   "overflow_high_carrier_n_prime_g_anchor_phase": {
     "profile_count": 2,

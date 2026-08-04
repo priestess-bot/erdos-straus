@@ -2199,3 +2199,51 @@ C\equiv2\pmod3
 \(C\equiv0\) 已完成的条件性重置子族。
 
 主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。
+
+## 2026-08-04 高载体 n=p 中 C=1 mod 3 的 fixed-s 图谱
+
+前面的闭式把真正高载体的 exact \(n=p\) 余项分成 \(C\equiv0,1,2\pmod3\)。其中
+\(C\equiv2\pmod3\) 已排除 \(B_p\)-bounded fixed-\(n\) 窗口，\(3\mid C\) 有条件性
+fixed-\(n\) 支撑重置；本轮对剩余的 \(C\equiv1\pmod3\) 建立了一个精确 fixed-\(s\)
+除子图谱。
+
+令 \(A=B_p/C\)、\(M=AQ\)，并令 \(r=M\bmod p\)。闭式中的
+\(d=(2C+p)/3\) 给出
+
+\[
+T=rd,\qquad s=\frac{4T+1}{p},\qquad ps=4T+1.
+\]
+
+枚举 \(L\mid T\)，保留
+
+\[
+A<L\le B_p,\qquad 4L>s,\qquad
+\left\lfloor\frac{B_p}{L}\right\rfloor<C.
+\]
+
+每个保留除子都生成
+
+\[
+(R_L,K_L)=\left(4L-s,\;L\left(p-\frac{T}{L}\right)\right),
+\]
+
+并严格降低外层支撑势。选择器对四个合成行得到：
+
+| \(p,C\) | \(A\) | \(T\) | 候选数 | 路由 |
+| --- | ---: | ---: | ---: | --- |
+| \((193,64)\) | 144 | 18190 | 7 | fixed-s 条件边候选 |
+| \((241,64)\) | 225 | 2952 | 8 | fixed-s 条件边候选 |
+| \((241,100)\) | 144 | 3675 | 7 | fixed-s 条件边候选 |
+| \((15601,4000)\) | 15210 | 65980529 | 0 | fixed-s hard core |
+
+这组数据把剩余分支从“是否有固定 \(s\) 除子”转成了可检验的 \(T=rd\) 素因子与
+目标余数结构问题。前三行仍只属于 `analysis_evidence`：完整标记集、来源可达性和
+恒等提升没有从合成参数自动推出。最后一行的 hard core 不是猜想反例，只表示当前
+fixed-s 菜单没有满足支撑、正余数和势下降条件的除子；它应进入 alternate、对偶容量
+或跨状态良基势分析。
+
+主张卡：[高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md)。
+
+复现：
+
+    python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

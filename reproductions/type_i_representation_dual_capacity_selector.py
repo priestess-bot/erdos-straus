@@ -2314,6 +2314,111 @@ def high_carrier_n_prime_three_complement_profile(
     }
 
 
+def high_carrier_n_prime_c_one_fixed_s_atlas(
+    prime: int, complement: int
+) -> dict[str, object]:
+    """Enumerate the exact fixed-s divisor atlas for a C=1 mod 3 row."""
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("C=1 fixed-s atlas requires a core prime")
+    B_prime = (prime - 1) ** 2 // 4
+    Q = (prime - 3) // 2
+    C = complement
+    if C <= 1 or B_prime % C or C >= Q or C % 3 != 1:
+        raise AssertionError("C=1 fixed-s atlas requires 2<=C<Q and C=1 mod 3")
+    A = B_prime // C
+    phase = high_carrier_n_prime_g_anchor_bundle_phase(prime, A)
+    closed = phase["closed_form_phase"]
+    if closed.get("residue_class_k") != 1:
+        raise AssertionError("C=1 phase class changed")
+    source_carrier = int(phase["target_chart"]["carrier"])
+    d = int(closed["d"])
+    residue = source_carrier % prime
+    if residue == 0 or (4 * residue * d + 1) % prime:
+        raise AssertionError("C=1 fixed-s determinant is not integral")
+    s = (4 * residue * d + 1) // prime
+    product = residue * d
+    if prime * s != 4 * product + 1:
+        raise AssertionError("C=1 fixed-s determinant identity changed")
+
+    accepted: list[dict[str, object]] = []
+    for L in divisors(product):
+        if not (A < L <= B_prime and 4 * L > s and B_prime // L < C):
+            continue
+        cofactor = product // L
+        target_R = 4 * L - s
+        target_K = L * (prime - cofactor)
+        if canonical_chart(prime, L) != (target_R, target_K):
+            raise AssertionError("C=1 fixed-s canonical chart changed")
+        accepted.append(
+            {
+                "L": L,
+                "cofactor_product_over_L": cofactor,
+                "R_L": target_R,
+                "K_L": target_K,
+                "target_class": "overflow" if target_R > prime else "G_marked_absorb",
+                "potential": {
+                    "source": B_prime // A,
+                    "successor": B_prime // L,
+                    "strict_decrease": True,
+                },
+            }
+        )
+
+    receipt = {
+        "prime": prime,
+        "complement_C": C,
+        "source_support_A": A,
+        "anchor_phase": phase,
+        "fixed_s_determinant": {
+            "source_carrier_M": source_carrier,
+            "residue_r": residue,
+            "d": d,
+            "s": s,
+            "product_T": product,
+            "identity": "p*s=4*r*d+1",
+        },
+        "accepted_divisors": accepted,
+        "accepted_count": len(accepted),
+        "fixed_s_hard_core": not accepted,
+        "conditional_edge_contract": {
+            "E1": True,
+            "E2": True,
+            "E3": True,
+            "E4": True,
+            "E5": True,
+            "lift": "identity_on_Sol(p)",
+            "source_marked_solution_set_required": True,
+            "source_reach_status": "unproved",
+        },
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "n_prime_c_one_fixed_s_atlas_arithmetic_only",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
+def high_carrier_n_prime_c_one_fixed_s_profile(
+    cases: list[tuple[int, int]]
+) -> dict[str, object]:
+    rows = [
+        high_carrier_n_prime_c_one_fixed_s_atlas(prime, complement)
+        for prime, complement in cases
+    ]
+    return {
+        "profile_type": "synthetic_c_one_fixed_s_atlas",
+        "rows": rows,
+        "row_count": len(rows),
+        "positive_count": sum(row["accepted_count"] > 0 for row in rows),
+        "hard_core_count": sum(row["fixed_s_hard_core"] for row in rows),
+        "scope_note": (
+            "Accepted divisors are conditional fixed-s edges.  The atlas does not infer source "
+            "marked sets or reachability, and a hard core is not a counterexample."
+        ),
+    }
+
+
 def high_carrier_complement_classification(
     prime: int, carrier: int, dual_carrier: int
 ) -> dict[str, object]:
@@ -5301,6 +5406,9 @@ def build_results() -> dict[str, object]:
             97, [3, 6, 9, 12, 18, 24, 36]
         ),
     ]
+    n_prime_c_one_fixed_s_profile = high_carrier_n_prime_c_one_fixed_s_profile(
+        [(193, 64), (241, 64), (241, 100), (15601, 4000)]
+    )
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
@@ -5360,6 +5468,7 @@ def build_results() -> dict[str, object]:
                 "synthetic rows are arithmetic evidence only."
             ),
         },
+        "overflow_high_carrier_n_prime_c_one_fixed_s": n_prime_c_one_fixed_s_profile,
         "overflow_d_one_p_minus_two_g_rechart": d_one_g_rechart,
         "overflow_fixed_n_outer_rank": fixed_n_outer_rank,
         "overflow_fixed_n_bounded_divisor_outer_rank": fixed_n_bounded_divisor,
@@ -5394,6 +5503,7 @@ def build_results() -> dict[str, object]:
             "n_prime_g_anchor_phase_requires_source_provenance": True,
             "n_prime_g_anchor_source_never_auto_recursive": True,
             "n_prime_three_complement_reset_requires_source_mark": True,
+            "n_prime_c_one_fixed_s_requires_source_mark": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
@@ -5934,6 +6044,65 @@ def verify_high_carrier_n_prime_three_complement_contract(
             )
             if row != expected_row:
                 raise AssertionError("stored 3|C n=p reset row is stale")
+
+
+def verify_high_carrier_n_prime_c_one_fixed_s_contract(
+    result: dict[str, object]
+) -> None:
+    payload = result.get("overflow_high_carrier_n_prime_c_one_fixed_s")
+    if not isinstance(payload, dict):
+        raise AssertionError("C=1 fixed-s atlas missing")
+    expected_cases = {(193, 64), (241, 64), (241, 100), (15601, 4000)}
+    if (
+        payload.get("profile_type") != "synthetic_c_one_fixed_s_atlas"
+        or payload.get("row_count") != len(expected_cases)
+        or payload.get("positive_count") != 3
+        or payload.get("hard_core_count") != 1
+    ):
+        raise AssertionError("C=1 fixed-s atlas summary changed")
+    rows = payload.get("rows")
+    if not isinstance(rows, list) or len(rows) != len(expected_cases):
+        raise AssertionError("C=1 fixed-s atlas rows missing")
+    observed_cases = {
+        (row.get("prime"), row.get("complement_C"))
+        for row in rows
+        if isinstance(row, dict)
+    }
+    if observed_cases != expected_cases:
+        raise AssertionError("C=1 fixed-s atlas case set changed")
+    conditional_contract = {
+        "E1": True,
+        "E2": True,
+        "E3": True,
+        "E4": True,
+        "E5": True,
+        "lift": "identity_on_Sol(p)",
+        "source_marked_solution_set_required": True,
+        "source_reach_status": "unproved",
+    }
+    for row in rows:
+        if not isinstance(row, dict):
+            raise AssertionError("C=1 fixed-s atlas row is not an object")
+        if (
+            row.get("selector_status") != "analysis_evidence"
+            or row.get("recursive_edge_eligible") is not False
+            or row.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+            or row.get("conditional_edge_contract") != conditional_contract
+            or row.get("proof_boundary") != "n_prime_c_one_fixed_s_atlas_arithmetic_only"
+        ):
+            raise AssertionError("C=1 fixed-s atlas crossed status boundary")
+        expected_row = high_carrier_n_prime_c_one_fixed_s_atlas(
+            int(row["prime"]), int(row["complement_C"])
+        )
+        if row != expected_row:
+            raise AssertionError("stored C=1 fixed-s atlas row is stale")
+    hard_core = next(
+        row
+        for row in rows
+        if row["prime"] == 15601 and row["complement_C"] == 4000
+    )
+    if hard_core.get("accepted_count") != 0 or hard_core.get("fixed_s_hard_core") is not True:
+        raise AssertionError("C=1 fixed-s hard-core witness changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -7251,6 +7420,7 @@ def main() -> None:
         verify_high_carrier_n_prime_g_anchor_phase_contract(result)
         verify_high_carrier_n_prime_g_anchor_source_contract(result)
         verify_high_carrier_n_prime_three_complement_contract(result)
+        verify_high_carrier_n_prime_c_one_fixed_s_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)
