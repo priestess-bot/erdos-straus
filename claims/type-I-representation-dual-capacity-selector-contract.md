@@ -17,6 +17,8 @@ depends_on:
   - type-I-overflow-high-carrier-fixed-n-R-descent
   - type-I-overflow-high-carrier-n-prime-g-anchor-phase
   - type-I-overflow-high-carrier-n-prime-three-complement-fixed-n-reset
+  - type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas
+  - type-II-a-one-gap-three-factor-terminal
   - type-I-overflow-same-chart-support-promotion
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -305,6 +307,12 @@ analysis_evidence，不承担递归。
 \(B_p\)-bounded fixed-\(n\) 空窗口误写成递归边。
 对 \(C\equiv2\pmod3\)，合同还记录无样本 \(Q-1<D_2<Q\) 负边界，固定-\(n\)
 分派必须跳过该类，转入 fixed-\(s\)、alternate 或容量阶段。
+
+对剩余 C=1 (mod 3) 真高载体，合同新增一个嵌套后置路由：先枚举 L|rd 的 fixed-s
+有界除子；若该菜单为空，再探测 gap<=255 的 A=1 Type II factor-ray。该后置路由只产生
+terminal_leaf 直接证书或 analysis_evidence 失败回执，不携带来源 Reach、标记提升或
+递归资格。六行合成图谱中三行 fixed-s 候选、三行 fixed-s hard core，后三行均被有界
+Type II 探针覆盖；独立的 gap=3 因子引理只负责其中的精确 x=(p+3)/4 子族。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 
