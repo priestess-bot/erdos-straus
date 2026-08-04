@@ -2368,6 +2368,94 @@ def high_carrier_n_prime_a_one_gap_three_type_ii(prime: int) -> dict[str, object
     return receipt
 
 
+def high_carrier_n_prime_ac_ray_probe(
+    prime: int, ac_bound: int = 14
+) -> dict[str, object]:
+    """Probe the bounded (A,C), unbounded-K Type II factor-ray menu."""
+    if prime <= 1 or prime % 24 != 1:
+        raise AssertionError("AC-ray probe requires a core prime")
+    if ac_bound < 1:
+        raise AssertionError("AC-ray probe bound is too small")
+    max_shift = prime + 4 * ac_bound**3
+    for radius in range(1, ac_bound + 1):
+        for a in range(1, radius + 1):
+            for c in range(1, radius + 1):
+                if max(a, c) != radius:
+                    continue
+                shifted = prime + 4 * a * a * c
+                for h in divisors(shifted):
+                    modulus = 4 * a * c
+                    if h <= 1 or (h + 1) % modulus:
+                        continue
+                    k = (h + 1) // modulus
+                    numerator = k * prime + a
+                    if numerator % h:
+                        raise AssertionError("AC-ray factor equivalence changed")
+                    b = numerator // h
+                    if b <= 0 or a > b:
+                        continue
+                    if (a + b) % k:
+                        continue
+                    gap = (a + b) // k
+                    x = a * b * c
+                    divisor = a * a * c
+                    if (
+                        gap < 3
+                        or gap > prime - 2
+                        or gap % 4 != 3
+                        or (prime * (x + divisor)) % gap
+                        or (prime * (x + x * x // divisor)) % gap
+                    ):
+                        continue
+                    y = prime * (x + divisor) // gap
+                    z = prime * (x + x * x // divisor) // gap
+                    if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, prime):
+                        raise AssertionError("AC-ray Type II identity changed")
+                    receipt = {
+                        "applicable": True,
+                        "certificate_type": "direct_type_ii_bounded_ac_ray",
+                        "prime": prime,
+                        "ac_bound": ac_bound,
+                        "normal_form": {"A": a, "B": b, "C": c},
+                        "factor_h": h,
+                        "K": k,
+                        "gap": gap,
+                        "x": x,
+                        "divisor": divisor,
+                        "certificate": {"x": x, "y": y, "z": z},
+                        "identity": "4/p=1/x+1/y+1/z",
+                        "identity_verified": True,
+                        "selector_status": "terminal_leaf",
+                        "recursive_edge_eligible": False,
+                        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+                        "proof_boundary": "bounded_ac_ray_factor_probe",
+                    }
+                    check_status_boundary(receipt)
+                    return receipt
+    receipt = {
+        "applicable": False,
+        "certificate_type": "direct_type_ii_bounded_ac_ray",
+        "prime": prime,
+        "ac_bound": ac_bound,
+        "max_shift": max_shift,
+        "normal_form": None,
+        "factor_h": None,
+        "K": None,
+        "gap": None,
+        "x": None,
+        "divisor": None,
+        "certificate": None,
+        "identity": "4/p=1/x+1/y+1/z",
+        "identity_verified": False,
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "bounded_ac_ray_factor_probe",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
 def high_carrier_n_prime_a_one_type_ii_probe(
     prime: int, gap_cap: int = 255
 ) -> dict[str, object]:
@@ -2455,6 +2543,7 @@ def high_carrier_n_prime_c_one_fixed_s_atlas(
     if prime * s != 4 * product + 1:
         raise AssertionError("C=1 fixed-s determinant identity changed")
     gap_three_terminal = high_carrier_n_prime_a_one_gap_three_type_ii(prime)
+    ac_ray_terminal = high_carrier_n_prime_ac_ray_probe(prime)
     bounded_type_ii_terminal = high_carrier_n_prime_a_one_type_ii_probe(prime)
 
     accepted: list[dict[str, object]] = []
@@ -2503,10 +2592,15 @@ def high_carrier_n_prime_c_one_fixed_s_atlas(
             else (
                 "direct_type_ii_bounded_probe"
                 if bounded_type_ii_terminal["applicable"]
-                else "alternate_or_capacity"
+                else (
+                    "direct_type_ii_bounded_ac_ray"
+                    if ac_ray_terminal["applicable"]
+                    else "alternate_or_capacity"
+                )
             )
         ),
         "direct_type_ii_gap_three": gap_three_terminal,
+        "direct_type_ii_bounded_ac_ray": ac_ray_terminal,
         "direct_type_ii_bounded_probe": bounded_type_ii_terminal,
         "conditional_edge_contract": {
             "E1": True,
@@ -2545,6 +2639,9 @@ def high_carrier_n_prime_c_one_fixed_s_profile(
         ),
         "direct_bounded_probe_count": sum(
             row["direct_type_ii_bounded_probe"]["applicable"] for row in rows
+        ),
+        "direct_ac_ray_count": sum(
+            row["direct_type_ii_bounded_ac_ray"]["applicable"] for row in rows
         ),
         "scope_note": (
             "Accepted divisors are conditional fixed-s edges.  The atlas does not infer source "
@@ -6208,6 +6305,7 @@ def verify_high_carrier_n_prime_c_one_fixed_s_contract(
         or payload.get("hard_core_count") != 3
         or payload.get("direct_gap_three_count") != 1
         or payload.get("direct_bounded_probe_count") != 5
+        or payload.get("direct_ac_ray_count") != 6
     ):
         raise AssertionError("C=1 fixed-s atlas summary changed")
     rows = payload.get("rows")
@@ -6246,6 +6344,15 @@ def verify_high_carrier_n_prime_c_one_fixed_s_contract(
         )
         if row != expected_row:
             raise AssertionError("stored C=1 fixed-s atlas row is stale")
+        ac_ray = row.get("direct_type_ii_bounded_ac_ray")
+        if (
+            not isinstance(ac_ray, dict)
+            or ac_ray.get("applicable") is not True
+            or ac_ray.get("selector_status") != "terminal_leaf"
+            or ac_ray.get("recursive_edge_eligible") is not False
+            or ac_ray.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+        ):
+            raise AssertionError("C=1 AC-ray Type II post-router changed")
     hard_core_rows = [row for row in rows if row["fixed_s_hard_core"]]
     if len(hard_core_rows) != 3:
         raise AssertionError("C=1 fixed-s hard-core count changed")

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas
 title: 高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱
-statement: 对 exact n=p G-anchor 的真高载体行，令 B_p=(p-1)^2/4、Q=(p-3)/2、A=B_p/C、2<=C<Q 且 C=1 (mod 3)。相位闭式给出固定行列式 p*s=4*r*d+1，其中 r=(AQ mod p)、d=(2C+p)/3。所有满足 A<L<=B_p、4L>s、B_p/L<C 且 L|r*d 的 L 都给出 canonical chart (4L-s, L(p-r*d/L))，并严格降低外层势 floor(B_p/L)<C；它们仍是依赖来源标记集和可达性的条件边。六个代表性合成样本中，三个 fixed-s 有候选，三个 fixed-s hard core 均被 gap<=255 的 A=1 Type II 直接探针覆盖；该有限图谱不是全称定理。
+statement: 对 exact n=p G-anchor 的真高载体行，令 B_p=(p-1)^2/4、Q=(p-3)/2、A=B_p/C、2<=C<Q 且 C=1 (mod 3)。相位闭式给出固定行列式 p*s=4*r*d+1，其中 r=(AQ mod p)、d=(2C+p)/3。所有满足 A<L<=B_p、4L>s、B_p/L<C 且 L|r*d 的 L 都给出 canonical chart (4L-s, L(p-r*d/L))，并严格降低外层势 floor(B_p/L)<C；它们仍是依赖来源标记集和可达性的条件边。六个代表性合成样本中，三个 fixed-s 有候选，三个 fixed-s hard core 均有 A,C<=2 的 Type II AC 射线终端；该有限图谱不是全称定理。
 claim_status: computationally_reproduced
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -11,6 +11,7 @@ depends_on:
   - type-I-overflow-high-carrier-n-prime-g-anchor-phase
   - type-I-overflow-fixed-s-bounded-divisor-saturation
   - type-II-a-one-gap-three-factor-terminal
+  - type-II-ac-ray-audit
 topics:
 - type-I
 - overflow
@@ -26,7 +27,7 @@ sources:
   - reproduction: reproductions/type_i_representation_dual_capacity_selector.py
     role: exact C=1 fixed-s divisor enumeration and verifier
   - result: reproductions/type-i-representation-dual-capacity-selector-results.json
-    role: six-row synthetic atlas with bounded Type II post-router
+    role: six-row synthetic atlas with bounded (A,C), unbounded-K Type II post-router
 visibility: public
 last_checked: '2026-08-04'
 ---
@@ -99,13 +100,13 @@ A<L\le B,\qquad 4L>s,\qquad \left\lfloor\frac{B}{L}\right\rfloor<C.
 | 193 | 64 | 144 | 18190 | 7 | fixed-\(s\) 条件边候选 |
 | 241 | 64 | 225 | 2952 | 8 | fixed-\(s\) 条件边候选 |
 | 241 | 100 | 144 | 3675 | 7 | fixed-\(s\) 条件边候选 |
-| 5281 | 1408 | 1872 | 1950 | 0 | gap-7 Type II 终端 |
-| 15601 | 4000 | 15210 | 65980529 | 0 | gap-3 Type II 终端 |
-| 16633 | 4312 | 16008 | 20790 | 0 | gap-7 Type II 终端 |
+| 5281 | 1408 | 1872 | 1950 | 0 | A,C<=2 Type II AC 射线 |
+| 15601 | 4000 | 15210 | 65980529 | 0 | A,C<=2 Type II AC 射线 |
+| 16633 | 4312 | 16008 | 20790 | 0 | A,C<=2 Type II AC 射线 |
 
 前三行的所有候选均满足严格势下降。后三行没有满足 (2) 的 fixed-\(s\) 除子，但均在
-gap<=255 的 A=1 Type II factor-ray 探针中得到直接终端；这只是有限探针结果，不能替代
-对所有 p,C 的短证书或递降证明。
+A,C<=2 的 Type II AC factor-ray 探针中得到直接终端；该探针让 K 随移位因子自动变化，
+但仍是有限参数盒的有限证据，不能替代对所有 p,C 的短证书或递降证明。
 
 ## 4. 证明边界与下一步
 
@@ -114,7 +115,7 @@ gap<=255 的 A=1 Type II factor-ray 探针中得到直接终端；这只是有�
 字段虽全部可写出，但 `source_marked_solution_set_required` 和 `source_reach_status`
 仍未满足。
 
-下一步应把 gap 探针失败的 fixed-\(s\) hard core 接入 alternate/对偶容量分支，优先分析
+下一步应把 AC-ray 探针失败的 fixed-\(s\) hard core 接入 alternate/对偶容量分支，优先分析
 T=rd 的素因子结构、目标余数 R_L 的跨状态映射，以及能否建立与 C=0 (mod 3) 重置
 或 C=2 (mod 3) 空窗口之间的统一良基势。
 

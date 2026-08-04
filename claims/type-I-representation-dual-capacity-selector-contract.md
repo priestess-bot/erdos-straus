@@ -309,10 +309,10 @@ analysis_evidence，不承担递归。
 分派必须跳过该类，转入 fixed-\(s\)、alternate 或容量阶段。
 
 对剩余 C=1 (mod 3) 真高载体，合同新增一个嵌套后置路由：先枚举 L|rd 的 fixed-s
-有界除子；若该菜单为空，再探测 gap<=255 的 A=1 Type II factor-ray。该后置路由只产生
-terminal_leaf 直接证书或 analysis_evidence 失败回执，不携带来源 Reach、标记提升或
-递归资格。六行合成图谱中三行 fixed-s 候选、三行 fixed-s hard core，后三行均被有界
-Type II 探针覆盖；独立的 gap=3 因子引理只负责其中的精确 x=(p+3)/4 子族。
+有界除子；若该菜单为空，再探测 A,C<=14、K 不设上限的 Type II AC factor-ray。
+该后置路由只产生 terminal_leaf 直接证书或 analysis_evidence 失败回执，不携带来源
+Reach、标记提升或递归资格。六行合成图谱中三行 fixed-s 候选、三行 fixed-s hard core，
+六行均有 AC-ray 命中；独立 gap=3 引理只负责其中一个精确子族。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

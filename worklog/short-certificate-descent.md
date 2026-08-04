@@ -5059,10 +5059,10 @@ A<L\le B_p,\qquad 4L>s,\qquad
 | \((15601,4000)\) | 15210 | 65980529 | 0 |
 | \((16633,4312)\) | 16008 | 20790 | 0 |
 
-后三行虽然是 fixed-s hard core，但都被 gap<=255 的 A=1 Type II 探针覆盖；其中
-p=15601 时 x=(p+3)/4=3901=83*47，取 A=1、B=83、D=47，得到精确 gap-3
-三项恒等式。因此当前路由是 fixed-s -> bounded Type II；只有有界探针失败时才进入
-alternate、对偶容量或跨状态良基势。主张卡见[高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md)，
+后三行虽然是 fixed-s hard core，但都被 A,C<=2、K 不设上限的 Type II AC 射线探针覆盖；
+p=15601 时还同时有 x=(p+3)/4=3901=83*47 的精确 gap-3 三项恒等式。因此当前
+路由是 fixed-s -> bounded AC-ray Type II；只有小 A,C 射线失败时才进入 alternate、
+对偶容量或跨状态良基势。主张卡见[高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md)，
 引理见[A=1 gap=3 的因子型 Type II 终端](../claims/type-II-a-one-gap-three-factor-terminal.md)。
 
 定向复核：
