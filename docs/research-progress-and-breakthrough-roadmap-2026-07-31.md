@@ -2180,5 +2180,13 @@ pn_C=4(AQ)d_C+1.
 因此 \(C\equiv1,2\pmod3\) 的剩余部分也不再是模逆黑箱，而是明确的
 fixed-\(n_C\) determinant；当前缺口转为是否存在满足 \(L\mid AQd_C\)、\(4L>n_C\)
 且支付外层势的有界除子，或是否需要对偶容量/alternate。
+任何 \(B_p\)-bounded fixed-\(n_C\) 后继还必须满足
+\[
+n_C<4B_p
+\iff
+C(2p^2-p-4)>4kB_pQ.
+\]
+这提供了一个先验空窗口筛选器：不满足该不等式的 \(C\equiv1,2\) 行无需继续枚举
+有界 fixed-\(n\) 除子，应直接进入 fixed-\(s\)、alternate 或 q 进容量分支。
 
 主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

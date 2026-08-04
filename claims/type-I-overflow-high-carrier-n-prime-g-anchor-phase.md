@@ -172,6 +172,19 @@ fixed-\(n_C\) determinant。后两类是否能找到 \(L\mid(AQd_C)\) 且
 \(4L>n_C\) 的有界除子，是后续固定-\(n\) / 对偶容量问题；选择器不把 (5)--(6)
 误写成自动递归边。
 
+任何有界 fixed-\(n_C\) 后继都还必须满足 \(L\le B_p\) 和 \(4L>n_C\)。因此窗口非空
+的必要且精确的算术条件为
+
+\[
+n_C<4B_p
+\iff
+C(2p^2-p-4)>4kB_pQ.
+\tag{7}
+\]
+
+当 (7) 失败时，\(C\equiv1,2\pmod3\) 分支不能靠当前 \(B_p\)-bounded fixed-\(n\)
+除子支付外层势，必须转向固定-\(s\)、alternate 或跨状态容量。
+
 ## 5. 聚焦算术回执
 
 统一选择器用没有 raw Reach provenance 的合成 supports 重算两组 profile：

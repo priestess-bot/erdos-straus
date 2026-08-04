@@ -2001,6 +2001,13 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
             or chart_K != carrier * (prime - d_closed)
         ):
             raise AssertionError("n=p G-anchor residue-class phase formula changed")
+        window_denominator = 2 * prime * prime - prime - 4
+        window_numerator = 4 * residue_class * B_prime * Q
+        window_possible = n_closed < 4 * B_prime
+        if window_possible != (
+            complement_C * window_denominator > window_numerator
+        ):
+            raise AssertionError("n=p G-anchor fixed-n window threshold changed")
         closed_form_phase = {
             "applicable": True,
             "complement_C": complement_C,
@@ -2009,6 +2016,16 @@ def high_carrier_n_prime_g_anchor_bundle_phase(
             "d": d_closed,
             "n": n_closed,
             "identity": "p*n=4*M*d+1",
+            "fixed_n_window": {
+                "lower_bound_for_4L": n_closed,
+                "upper_carrier_bound": B_prime,
+                "possible": window_possible,
+                "C_threshold_inequality": (
+                    "C*(2*p^2-p-4)>4*k*B_p*Q"
+                ),
+                "threshold_numerator": window_numerator,
+                "threshold_denominator": window_denominator,
+            },
         }
 
     receipt = {
@@ -5820,6 +5837,7 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
             or closed.get("complement_C") != expected_case[0]
             or closed.get("residue_class_k") != expected_case[1]
             or closed.get("identity") != "p*n=4*M*d+1"
+            or closed.get("fixed_n_window", {}).get("possible") is not False
         ):
             raise AssertionError("n=p G-anchor residue-class phase formula changed")
 

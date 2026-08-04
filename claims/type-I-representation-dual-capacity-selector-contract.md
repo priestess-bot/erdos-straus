@@ -301,6 +301,8 @@ analysis_evidence，不承担递归。
 同一 exact-\(n=p\) phase receipt 还保存 \(C\bmod3\) 的闭式
 \(u=A-t_A\)、\(d_C\)、\(n_C\) 和 determinant identity，供 \(C\equiv1,2\pmod3\)
 分支直接进入 fixed-\(n\) divisor atlas。
+回执同时保存 \(n_C<4B_p\) 的精确窗口判据；判据失败时禁止把
+\(B_p\)-bounded fixed-\(n\) 空窗口误写成递归边。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 
