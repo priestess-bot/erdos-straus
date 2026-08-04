@@ -1,0 +1,2662 @@
+{
+  "arithmetic": "exact SPF factorization, divisor residues, subgroup closure, and quadratic character separation",
+  "profile_count": 7,
+  "profiles": [
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "direct_type_ii": 1,
+        "support_inside_multi_hole": 1,
+        "support_outside": 3
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 5,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 5,
+      "one_hole_only_forbidden": true,
+      "prime": 73,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 13,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        }
+      ],
+      "primorial": 30,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              11,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 1,
+          "shifted_integer": 77,
+          "support_size": 2,
+          "target": 3,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              3,
+              4
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 2,
+          "shifted_integer": 81,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              17,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 3,
+          "shifted_integer": 85,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              89,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 4,
+          "shifted_integer": 89,
+          "support_size": 1,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "support_inside_multi_hole",
+          "defect": [
+            7,
+            9,
+            17,
+            19
+          ],
+          "divisor_residue_count": 4,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              31,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 5,
+          "shifted_integer": 93,
+          "support_size": 8,
+          "target": 19,
+          "target_in_divisor_residues": false,
+          "target_in_support": true
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    },
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "direct_type_ii": 2,
+        "support_outside": 3
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 5,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 5,
+      "one_hole_only_forbidden": true,
+      "prime": 97,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 17,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        }
+      ],
+      "primorial": 30,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              101,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 1,
+          "shifted_integer": 101,
+          "support_size": 1,
+          "target": 3,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 4,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 2,
+          "shifted_integer": 105,
+          "support_size": 4,
+          "target": 7,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              109,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 3,
+          "shifted_integer": 109,
+          "support_size": 1,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              113,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 4,
+          "shifted_integer": 113,
+          "support_size": 1,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "direct_type_ii",
+          "defect": [
+            7,
+            11
+          ],
+          "divisor_residue_count": 6,
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              13,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 5,
+          "shifted_integer": 117,
+          "support_size": 8,
+          "target": 19,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    },
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "support_inside_multi_hole": 1,
+        "support_outside": 6
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 7,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 7,
+      "one_hole_only_forbidden": true,
+      "prime": 193,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 13,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        },
+        {
+          "modulus": 28,
+          "observed_prime_congruence": 25,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 7
+        }
+      ],
+      "primorial": 210,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              197,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 1,
+          "shifted_integer": 197,
+          "support_size": 1,
+          "target": 3,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              67,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 2,
+          "shifted_integer": 201,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              41,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 3,
+          "shifted_integer": 205,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              11,
+              1
+            ],
+            [
+              19,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 4,
+          "shifted_integer": 209,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "support_inside_multi_hole",
+          "defect": [
+            7,
+            9,
+            17,
+            19
+          ],
+          "divisor_residue_count": 4,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 5,
+          "shifted_integer": 213,
+          "support_size": 8,
+          "target": 19,
+          "target_in_divisor_residues": false,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 6,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              31,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 6,
+          "shifted_integer": 217,
+          "support_size": 2,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 7,
+            "modulus": 28
+          },
+          "classification": "support_outside",
+          "defect": [
+            5,
+            9
+          ],
+          "divisor_residue_count": 4,
+          "factorization": [
+            [
+              13,
+              1
+            ],
+            [
+              17,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 7,
+          "shifted_integer": 221,
+          "support_size": 6,
+          "target": 27,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    },
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "direct_type_ii": 2,
+        "support_outside": 5
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 7,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 7,
+      "one_hole_only_forbidden": true,
+      "prime": 241,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        },
+        {
+          "modulus": 28,
+          "observed_prime_congruence": 17,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 7
+        }
+      ],
+      "primorial": 210,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 1,
+          "shifted_integer": 245,
+          "support_size": 2,
+          "target": 3,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              83,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 2,
+          "shifted_integer": 249,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              11,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 3,
+          "shifted_integer": 253,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              257,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 4,
+          "shifted_integer": 257,
+          "support_size": 1,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 4,
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              29,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              11
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 5,
+          "shifted_integer": 261,
+          "support_size": 4,
+          "target": 19,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 6,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              53,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 6,
+          "shifted_integer": 265,
+          "support_size": 2,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 7,
+            "modulus": 28
+          },
+          "classification": "support_outside",
+          "defect": [
+            5,
+            9,
+            13,
+            25
+          ],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              269,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 7,
+          "shifted_integer": 269,
+          "support_size": 6,
+          "target": 27,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    },
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "direct_type_ii": 2,
+        "support_inside_multi_hole": 1,
+        "support_outside": 8
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 11,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 11,
+      "one_hole_only_forbidden": true,
+      "prime": 5281,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        },
+        {
+          "modulus": 28,
+          "observed_prime_congruence": 17,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 7
+        },
+        {
+          "modulus": 44,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 11
+        }
+      ],
+      "primorial": 2310,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              151,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 1,
+          "shifted_integer": 5285,
+          "support_size": 2,
+          "target": 3,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              41,
+              1
+            ],
+            [
+              43,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 2,
+          "shifted_integer": 5289,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              67,
+              1
+            ],
+            [
+              79,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 3,
+          "shifted_integer": 5293,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              5297,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 4,
+          "shifted_integer": 5297,
+          "support_size": 1,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 8,
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              19,
+              1
+            ],
+            [
+              31,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 5,
+          "shifted_integer": 5301,
+          "support_size": 8,
+          "target": 19,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 6,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              1061,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 6,
+          "shifted_integer": 5305,
+          "support_size": 2,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 7,
+            "modulus": 28
+          },
+          "classification": "support_outside",
+          "defect": [
+            5,
+            9,
+            13,
+            25
+          ],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5309,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 7,
+          "shifted_integer": 5309,
+          "support_size": 6,
+          "target": 27,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 2,
+            "modulus": 16
+          },
+          "classification": "support_inside_multi_hole",
+          "defect": [
+            9,
+            15
+          ],
+          "divisor_residue_count": 6,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              23,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 8,
+          "shifted_integer": 5313,
+          "support_size": 8,
+          "target": 15,
+          "target_in_divisor_residues": false,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 3,
+            "C": 1,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              13,
+              1
+            ],
+            [
+              409,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 9,
+          "shifted_integer": 5317,
+          "support_size": 1,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 10,
+            "modulus": 40
+          },
+          "classification": "support_outside",
+          "defect": [
+            9
+          ],
+          "divisor_residue_count": 3,
+          "factorization": [
+            [
+              17,
+              1
+            ],
+            [
+              313,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              7,
+              11
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 10,
+          "shifted_integer": 5321,
+          "support_size": 4,
+          "target": 39,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 11,
+            "modulus": 44
+          },
+          "classification": "support_outside",
+          "defect": [
+            23
+          ],
+          "divisor_residue_count": 9,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 11,
+          "shifted_integer": 5325,
+          "support_size": 10,
+          "target": 43,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    },
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "direct_type_ii": 1,
+        "support_inside_multi_hole": 1,
+        "support_outside": 11
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 13,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 13,
+      "one_hole_only_forbidden": true,
+      "prime": 15601,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        },
+        {
+          "modulus": 28,
+          "observed_prime_congruence": 5,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 7
+        },
+        {
+          "modulus": 44,
+          "observed_prime_congruence": 25,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 11
+        },
+        {
+          "modulus": 52,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 13
+        }
+      ],
+      "primorial": 30030,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              3121,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 1,
+          "shifted_integer": 15605,
+          "support_size": 1,
+          "target": 3,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              11,
+              2
+            ],
+            [
+              43,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 2,
+          "shifted_integer": 15609,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              13,
+              1
+            ],
+            [
+              1201,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 3,
+          "shifted_integer": 15613,
+          "support_size": 1,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              23,
+              1
+            ],
+            [
+              97,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 4,
+          "shifted_integer": 15617,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "support_outside",
+          "defect": [
+            9
+          ],
+          "divisor_residue_count": 3,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              41,
+              1
+            ],
+            [
+              127,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              11
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 5,
+          "shifted_integer": 15621,
+          "support_size": 4,
+          "target": 19,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 6,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              6
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 6,
+          "shifted_integer": 15625,
+          "support_size": 2,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 7,
+            "modulus": 28
+          },
+          "classification": "support_outside",
+          "defect": [
+            9,
+            13,
+            17,
+            25
+          ],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              15629,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 7,
+          "shifted_integer": 15629,
+          "support_size": 6,
+          "target": 27,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 2,
+            "modulus": 16
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 4,
+          "factorization": [
+            [
+              3,
+              4
+            ],
+            [
+              193,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 8,
+          "shifted_integer": 15633,
+          "support_size": 4,
+          "target": 15,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 3,
+            "C": 1,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              19,
+              1
+            ],
+            [
+              823,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 9,
+          "shifted_integer": 15637,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 10,
+            "modulus": 40
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              15641,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              7,
+              11
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 4,
+            "target_phase": -1
+          },
+          "shift": 10,
+          "shifted_integer": 15641,
+          "support_size": 1,
+          "target": 39,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 11,
+            "modulus": 44
+          },
+          "classification": "support_inside_multi_hole",
+          "defect": [
+            9,
+            13,
+            19,
+            27,
+            29,
+            37,
+            39,
+            43
+          ],
+          "divisor_residue_count": 12,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              149,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 11,
+          "shifted_integer": 15645,
+          "support_size": 20,
+          "target": 43,
+          "target_in_divisor_residues": false,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 3,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              15649,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 4,
+            "target_phase": -1
+          },
+          "shift": 12,
+          "shifted_integer": 15649,
+          "support_size": 1,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 13,
+            "modulus": 52
+          },
+          "classification": "support_outside",
+          "defect": [
+            7,
+            9,
+            15,
+            17,
+            25,
+            29,
+            31,
+            47,
+            49
+          ],
+          "divisor_residue_count": 3,
+          "factorization": [
+            [
+              11,
+              1
+            ],
+            [
+              1423,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 3,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 13,
+          "shifted_integer": 15653,
+          "support_size": 12,
+          "target": 51,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    },
+    {
+      "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+      "classification_counts": {
+        "direct_type_ii": 3,
+        "support_inside_multi_hole": 2,
+        "support_outside": 8
+      },
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "fan_bound": 13,
+      "fan_conditions": {
+        "four_H_less_than_p": true,
+        "four_primorial_greater_than_p_minus_one": true,
+        "verified": true
+      },
+      "noncritical_ray_count": 13,
+      "one_hole_only_forbidden": true,
+      "prime": 16633,
+      "prime_shift_congruence_checks": [
+        {
+          "modulus": 8,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 2
+        },
+        {
+          "modulus": 12,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 3
+        },
+        {
+          "modulus": 20,
+          "observed_prime_congruence": 13,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 5
+        },
+        {
+          "modulus": 28,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 7
+        },
+        {
+          "modulus": 44,
+          "observed_prime_congruence": 1,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 11
+        },
+        {
+          "modulus": 52,
+          "observed_prime_congruence": 45,
+          "one_hole_congruence_required": "p=1 mod 4*ell",
+          "prime_shift": 13
+        }
+      ],
+      "primorial": 30030,
+      "proof_boundary": "fan_trichotomy_dual_prefilter",
+      "rays": [
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 1,
+            "modulus": 4
+          },
+          "classification": "direct_type_ii",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              127,
+              1
+            ],
+            [
+              131,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 1,
+          "shifted_integer": 16637,
+          "support_size": 2,
+          "target": 3,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 2,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              43,
+              2
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 2,
+          "shifted_integer": 16641,
+          "support_size": 2,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 3,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              3329,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 3,
+          "shifted_integer": 16645,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 1,
+            "modulus": 8
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              16649,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 4,
+          "shifted_integer": 16649,
+          "support_size": 1,
+          "target": 7,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 5,
+            "modulus": 20
+          },
+          "classification": "direct_type_ii",
+          "defect": [
+            9,
+            17
+          ],
+          "divisor_residue_count": 6,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              13,
+              1
+            ],
+            [
+              61,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 5,
+          "shifted_integer": 16653,
+          "support_size": 8,
+          "target": 19,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 6,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              16657,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 4,
+            "target_phase": -1
+          },
+          "shift": 6,
+          "shifted_integer": 16657,
+          "support_size": 1,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 7,
+            "modulus": 28
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 1,
+          "factorization": [
+            [
+              16661,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              5
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 7,
+          "shifted_integer": 16661,
+          "support_size": 1,
+          "target": 27,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 2,
+            "modulus": 16
+          },
+          "classification": "direct_type_ii",
+          "defect": [
+            13
+          ],
+          "divisor_residue_count": 7,
+          "factorization": [
+            [
+              3,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              101,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 8,
+          "shifted_integer": 16665,
+          "support_size": 8,
+          "target": 15,
+          "target_in_divisor_residues": true,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 3,
+            "C": 1,
+            "modulus": 12
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              79,
+              1
+            ],
+            [
+              211,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 1,
+            "target_phase": -1
+          },
+          "shift": 9,
+          "shifted_integer": 16669,
+          "support_size": 2,
+          "target": 11,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 10,
+            "modulus": 40
+          },
+          "classification": "support_outside",
+          "defect": [
+            9,
+            17
+          ],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              16673,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              3,
+              7,
+              11
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 2,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 10,
+          "shifted_integer": 16673,
+          "support_size": 4,
+          "target": 39,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 11,
+            "modulus": 44
+          },
+          "classification": "support_inside_multi_hole",
+          "defect": [
+            23,
+            25,
+            27,
+            29,
+            31,
+            35,
+            37,
+            39,
+            41,
+            43
+          ],
+          "divisor_residue_count": 10,
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              17,
+              1
+            ],
+            [
+              109,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 11,
+          "shifted_integer": 16677,
+          "support_size": 20,
+          "target": 43,
+          "target_in_divisor_residues": false,
+          "target_in_support": true
+        },
+        {
+          "canonical_parameters": {
+            "A": 2,
+            "C": 3,
+            "modulus": 24
+          },
+          "classification": "support_outside",
+          "defect": [],
+          "divisor_residue_count": 2,
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              2383,
+              1
+            ]
+          ],
+          "quadratic_separator": {
+            "annihilates_support": true,
+            "basis_residues": [
+              5,
+              7,
+              13
+            ],
+            "character_order": 2,
+            "character_type": "quadratic",
+            "functional_mask": 1,
+            "separator_count": 2,
+            "target_phase": -1
+          },
+          "shift": 12,
+          "shifted_integer": 16681,
+          "support_size": 2,
+          "target": 23,
+          "target_in_divisor_residues": false,
+          "target_in_support": false
+        },
+        {
+          "canonical_parameters": {
+            "A": 1,
+            "C": 13,
+            "modulus": 52
+          },
+          "classification": "support_inside_multi_hole",
+          "defect": [
+            3,
+            7,
+            11,
+            15,
+            17,
+            21,
+            23,
+            25,
+            29,
+            31,
+            33,
+            35,
+            37,
+            41,
+            49,
+            51
+          ],
+          "divisor_residue_count": 8,
+          "factorization": [
+            [
+              5,
+              1
+            ],
+            [
+              47,
+              1
+            ],
+            [
+              71,
+              1
+            ]
+          ],
+          "quadratic_separator": null,
+          "shift": 13,
+          "shifted_integer": 16685,
+          "support_size": 24,
+          "target": 51,
+          "target_in_divisor_residues": false,
+          "target_in_support": true
+        }
+      ],
+      "recursive_edge_eligible": false,
+      "scope_note": "The fan theorem removes the all-one-hole failure stratum. Support-outside rows carry an exact quadratic separator; multi-hole rows carry a target-fiber defect. Neither receipt supplies a cross-state lift or recursive descent.",
+      "selector_status": "analysis_evidence",
+      "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
+    }
+  ],
+  "schema_version": "type-ii-canonical-fan-escape-trichotomy/v1",
+  "scope_note": "Focused typed replay of the canonical fan theorem. The theorem is general, while factorization and class counts here cover only the listed primes."
+}

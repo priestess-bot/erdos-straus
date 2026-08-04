@@ -58,6 +58,9 @@ LARGE_SLAB_CAPACITY_INPUT = (
 LARGE_SLAB_CAPACITY_SOURCE = (
     ROOT / "reproductions" / "type_i_large_slab_factor_pair_layer_capacity.py"
 )
+TYPE_II_FAN_INPUT = (
+    ROOT / "reproductions" / "type-ii-canonical-fan-escape-trichotomy-results.json"
+)
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-representation-dual-capacity-selector-results.json"
 
 SELECTOR_ORDER = [
@@ -65,6 +68,7 @@ SELECTOR_ORDER = [
     "target_fiber_neighbor_terminal",
     "generalized_dyadic_terminal",
     "fixed_layer_quotient_fourier",
+    "type_ii_canonical_fan_escape_trichotomy",
     "overflow_high_carrier_p_plus_four_complement",
     "bounded_fourier_carrier_capacity",
     "overflow_fixed_n_charged_support",
@@ -191,6 +195,7 @@ def source_hashes() -> dict[str, str]:
         SOURCE_WORD_FROZEN_INPUT.name: sha256(SOURCE_WORD_FROZEN_INPUT),
         LARGE_SLAB_CAPACITY_INPUT.name: sha256(LARGE_SLAB_CAPACITY_INPUT),
         LARGE_SLAB_CAPACITY_SOURCE.name: sha256(LARGE_SLAB_CAPACITY_SOURCE),
+        TYPE_II_FAN_INPUT.name: sha256(TYPE_II_FAN_INPUT),
     }
 
 
@@ -5578,6 +5583,105 @@ def phase_reset_boundary(payload: dict[str, object]) -> dict[str, object]:
     }
 
 
+def type_ii_canonical_fan_escape_receipt(payload: dict[str, object]) -> dict[str, object]:
+    """Attach the Type II fan trichotomy as a non-recursive dual prefilter."""
+    expected_schema = "type-ii-canonical-fan-escape-trichotomy/v1"
+    if payload.get("schema_version") != expected_schema:
+        raise AssertionError("Type II fan trichotomy schema changed")
+    profiles = payload.get("profiles")
+    if not isinstance(profiles, list) or not profiles:
+        raise AssertionError("Type II fan trichotomy profiles missing")
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            raise AssertionError("Type II fan trichotomy profile is not an object")
+        conditions = profile.get("fan_conditions")
+        if not isinstance(conditions, dict) or conditions.get("verified") is not True:
+            raise AssertionError("Type II fan bound is not verified")
+        if int(profile.get("noncritical_ray_count", 0)) < 1:
+            raise AssertionError("Type II fan stayed in the one-hole stratum")
+        if profile.get("selector_status") != "analysis_evidence":
+            raise AssertionError("Type II fan profile crossed status boundary")
+        if profile.get("recursive_edge_eligible") is not False:
+            raise AssertionError("Type II fan profile became recursive")
+        if profile.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}:
+            raise AssertionError("Type II fan profile has an E1-E5 witness")
+    return {
+        "certificate_type": "type_ii_canonical_fan_escape_trichotomy",
+        "phase": "TYPE_II_DUAL_PREFILTER",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "profiles": profiles,
+        "profile_count": len(profiles),
+        "source_receipt": {
+            "result_file": TYPE_II_FAN_INPUT.name,
+            "result_sha256": sha256(TYPE_II_FAN_INPUT),
+        },
+        "certificate_context": {
+            "failure_classes": [
+                "support_outside_quadratic_separator",
+                "support_inside_multi_hole_target_fiber",
+                "direct_type_ii_hit",
+            ],
+            "one_hole_class": "ruled_out_by_primorial_fan_bound",
+            "cross_state_mapping_status": "unproved",
+        },
+        "proof_boundary": "fan_trichotomy_dual_prefilter",
+        "scope_note": (
+            "The canonical fan theorem removes the all-one-hole failure stratum. "
+            "It supplies state-local dual or target-fiber evidence only; no source lift, "
+            "capacity injection, or recursive edge is inferred."
+        ),
+    }
+
+
+def verify_type_ii_canonical_fan_contract(result: dict[str, object]) -> None:
+    receipt = result.get("type_ii_canonical_fan_escape_trichotomy")
+    if not isinstance(receipt, dict):
+        raise AssertionError("Type II fan trichotomy receipt missing")
+    if (
+        receipt.get("certificate_type")
+        != "type_ii_canonical_fan_escape_trichotomy"
+        or receipt.get("phase") != "TYPE_II_DUAL_PREFILTER"
+        or receipt.get("selector_status") != "analysis_evidence"
+        or receipt.get("recursive_edge_eligible") is not False
+        or receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+    ):
+        raise AssertionError("Type II fan trichotomy crossed the status boundary")
+    if receipt.get("profile_count") != 7:
+        raise AssertionError("Type II fan trichotomy profile count changed")
+    source = receipt.get("source_receipt")
+    if not isinstance(source, dict) or source.get("result_sha256") != sha256(TYPE_II_FAN_INPUT):
+        raise AssertionError("Type II fan trichotomy source hash changed")
+    profiles = receipt.get("profiles")
+    if not isinstance(profiles, list):
+        raise AssertionError("Type II fan trichotomy profile list missing")
+    expected_counts = {
+        73: {"direct_type_ii": 1, "support_inside_multi_hole": 1, "support_outside": 3},
+        97: {"direct_type_ii": 2, "support_outside": 3},
+        193: {"support_inside_multi_hole": 1, "support_outside": 6},
+        241: {"direct_type_ii": 2, "support_outside": 5},
+        5281: {"direct_type_ii": 2, "support_inside_multi_hole": 1, "support_outside": 8},
+        15601: {"direct_type_ii": 1, "support_inside_multi_hole": 1, "support_outside": 11},
+        16633: {"direct_type_ii": 3, "support_inside_multi_hole": 2, "support_outside": 8},
+    }
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            raise AssertionError("Type II fan profile is not an object")
+        prime = int(profile.get("prime", 0))
+        if profile.get("classification_counts") != expected_counts.get(prime):
+            raise AssertionError("Type II fan class counts changed")
+        if int(profile.get("noncritical_ray_count", 0)) != profile.get("fan_bound"):
+            raise AssertionError("Type II fan did not expose a noncritical ray")
+        for ray in profile.get("rays", []):
+            if not isinstance(ray, dict):
+                raise AssertionError("Type II fan ray is not an object")
+            if ray.get("classification") == "support_outside":
+                separator = ray.get("quadratic_separator")
+                if not isinstance(separator, dict) or separator.get("character_order") != 2:
+                    raise AssertionError("support-outside Type II ray lost its separator")
+
+
 def build_results() -> dict[str, object]:
     unified = json.loads(UNIFIED_INPUT.read_text(encoding="utf-8"))
     overflow = json.loads(OVERFLOW_INPUT.read_text(encoding="utf-8"))
@@ -5593,6 +5697,7 @@ def build_results() -> dict[str, object]:
     large_slab_payload = json.loads(
         LARGE_SLAB_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
+    type_ii_fan_payload = json.loads(TYPE_II_FAN_INPUT.read_text(encoding="utf-8"))
     bounded_fourier_payload = json.loads(
         BOUNDED_FOURIER_CAPACITY_INPUT.read_text(encoding="utf-8")
     )
@@ -5649,6 +5754,7 @@ def build_results() -> dict[str, object]:
     )
     d_one_g_rechart = overflow_d_one_p_minus_two_g_rechart(overflow)
     capacity = capacity_receipt(qadic, phase)
+    type_ii_fan = type_ii_canonical_fan_escape_receipt(type_ii_fan_payload)
     bounded_fourier = bounded_fourier_capacity_receipt(bounded_fourier_payload)
     bottom_word = bottom_word_lattice_capacity_receipt(bottom_word_payload)
     source_word = source_word_joint_capacity_receipt(source_word_payload)
@@ -5687,6 +5793,7 @@ def build_results() -> dict[str, object]:
         "source_receipts": [universal_source],
         "states": states,
         "verified_edges": [verified_edge],
+        "type_ii_canonical_fan_escape_trichotomy": type_ii_fan,
         "overflow_direct_type_ii": direct_type_ii,
         "overflow_high_carrier_p_plus_four_complement": high_carrier_complement,
         "overflow_high_carrier_n_prime_g_anchor_source": n_prime_source_profile,
@@ -5758,12 +5865,14 @@ def build_results() -> dict[str, object]:
             "bottom_word_capacity_requires_signed_dictionary": True,
             "large_slab_capacity_requires_carrier_mapping": True,
             "d_one_rechart_is_g_analysis_only": True,
+            "type_ii_fan_escape_requires_character_or_multi_hole": True,
        },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
             "It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, "
             "a high-carrier p+4 complement router, and a conditional support-debt phase bridge, "
+            "a Type II canonical-fan dual prefilter, "
             "but does not prove universal branch existence or well-founded descent for all overflow states."
         ),
     }
@@ -7693,6 +7802,7 @@ def main() -> None:
         verify_source_word_joint_capacity_contract(result)
         verify_large_slab_factor_pair_capacity_contract(result)
         verify_high_carrier_complement_contract(result)
+        verify_type_ii_canonical_fan_contract(result)
         verify_high_carrier_n_prime_g_anchor_phase_contract(result)
         verify_high_carrier_n_prime_g_anchor_source_contract(result)
         verify_high_carrier_n_prime_three_complement_contract(result)

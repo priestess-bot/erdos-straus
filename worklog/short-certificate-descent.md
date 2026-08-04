@@ -4924,6 +4924,17 @@ alternate、容量或其它良基外层秩。
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 
+## Type II 扇失败的三分回执
+
+为把 Type II 失败接入统一选择器，新增 `type_ii_canonical_fan_escape_trichotomy`。
+对每个聚焦素数选取满足 `4H < p`、`4*primorial(H) > p-1` 的最小扇宽，并逐条重算
+`p+4s` 的因子残数、生成支撑和目标缺陷。支撑外失败保存二次角色分离子，支撑内
+多孔失败保存 `K_s minus Pi_s`；primorial 引理排除整扇一孔临界。七个样本均有
+至少一条非临界射线，`p=193` 特别给出 6 条支撑外和 1 条多孔失败、没有直接扇命中。
+
+该回执只提供状态内对偶/目标纤维证据，仍是 `analysis_evidence`，未声明跨状态载体映射、
+解提升或递归下降。结果见[Type II 扇逃逸三分结果](../reproductions/type-ii-canonical-fan-escape-trichotomy-results.json)。
+
 ## 2026-08-04 高载体 n=p 的唯一 d=1 G-anchor 正规形
 
 本轮继续细化修正后的高载体边界。若 overflow 满足 n=p 且 M>B_p，则

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、固定-n 有界除子外层秩递降、同图表支撑升级、A=1 对偶外层秩 RESET、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、bounded-Fourier、fixed-n、bounded-fixed-n-rank、same-chart-promotion、A-one-dual-reset、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 和固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
+statement: 统一选择器可将目标纤维近邻、广义 2^j 偶前驱、固定层商 Fourier、Type II 规范扇失败三分、冻结 F 状态的 bounded-Fourier 载体容量、底层路径字格与周期容量、large-slab 因子对与跨指数层容量、固定-n/固定-s 支撑增长边、固定-n 有界除子外层秩递降、同图表支撑升级、A=1 对偶外层秩 RESET、overflow 双对偶 hard-core 负边界、q 进缺陷账本及 support-debt 到 phase-unit 的条件桥接装配为内容寻址的状态回执，并按 direct、near、dyadic、Fourier、Type II fan、bounded-Fourier、fixed-n、bounded-fixed-n-rank、same-chart-promotion、A-one-dual-reset、fixed-s、hard-core、capacity 的顺序分派；analysis_evidence 永不自动升级为递归边，只有同时具备 E1--E5、已证明解提升和严格势下降才可标记 verified_edge。当前三类状态回执、Type II fan、bounded-Fourier、底层路径字族级容量边界、large-slab 层容量、hard-core 负边界、phase bridge 和容量审计仍是 analysis_evidence，但已有固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 和固定-s identity-lift 正边被完整重算为 verified_edge；该合同仍不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -34,6 +34,7 @@ depends_on:
   - type-I-target-fiber-joint-capacity-signed-carrier-dictionary
   - type-I-large-slab-factor-pair-layer-capacity
   - type-I-universal-p-source-capacity-anchor-orbit
+  - type-II-canonical-critical-fan-escape-trichotomy
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -73,6 +74,8 @@ sources:
     role: exact-n-prime-G-anchor-phase-classification
   - claim: type-I-overflow-high-carrier-n-prime-three-complement-fixed-n-reset
     role: conditional-three-divisible-complement-fixed-n-reset
+  - claim: type-II-canonical-critical-fan-escape-trichotomy
+    role: Type-II-fan-support-character-and-target-fiber-prefilter
 visibility: public
 last_checked: '2026-08-03'
 ---
@@ -93,6 +96,7 @@ direct_type_i_or_type_ii
 target_fiber_neighbor_terminal
 generalized_dyadic_terminal
 fixed_layer_quotient_fourier
+type_ii_canonical_fan_escape_trichotomy
 bounded_fourier_carrier_capacity
 overflow_fixed_n_charged_support
 overflow_fixed_n_outer_rank_reset
@@ -155,6 +159,11 @@ verified_edge
 support-debt phase bridge、底层路径字回执和容量审计统一标为
 `selector_status=analysis_evidence`、`recursive_edge_eligible=false`；固定-\(n\) 正例可在
 E1--E5 完整时标为 `verified_edge`。
+
+Type II 规范扇三分回执位于固定层 Fourier 之后、overflow 之前：满足 primorial 条件的
+有限扇不能全部停留在一孔支撑临界层；支撑外行附带二次角色分离子，支撑内多孔行附带
+目标纤维缺陷集。该分支仍是 `analysis_evidence`，只为后续对偶或容量映射提供 typed
+输入，不自动给出 Type I/II 终端或递归后继。
 
 RESET 回执还保存
 

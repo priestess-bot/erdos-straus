@@ -15,6 +15,10 @@ topics:
 - deterministic-reduction
 - proof-program
 sources:
+- reproduction: reproductions/type_ii_canonical_fan_escape_trichotomy.py
+  role: exact canonical-fan factor, subgroup, and quadratic-separator replay
+- result: reproductions/type-ii-canonical-fan-escape-trichotomy-results.json
+  role: focused typed fan escape profiles
 - paper: montgomery_vaughan2007
   locator: Chapter 11, fixed-modulus prime-number-theorem context
   role: primorial-growth-consequence
@@ -138,6 +142,14 @@ H=\left\lceil(1+\epsilon)\log p\right\rceil. \tag{10}
 本定理则对单个 \(p\) 排除一种会妨碍结构分类的失败组合。它与筛法不相替代：
 在已有有限审计中，绝大多数失败本来就属于第二项的支撑外型，故该三分法没有把剩余
 自动变成证书。
+
+现已将该三分接入表示--对偶--容量选择器。支撑外行由商群
+`U(4*a_s*c_s)/K_s` 的二次角色给出精确分离回执；支撑内多孔行保存
+`K_s minus Pi_s` 作为目标纤维缺陷。统一状态仍标为
+`certificate_type=type_ii_canonical_fan_escape_trichotomy`、
+`selector_status=analysis_evidence`，因为这两类回执尚未给出跨状态载体映射或完整解提升。
+七个聚焦核心素数的可重放结果位于
+[Type II 扇逃逸三分结果](../reproductions/type-ii-canonical-fan-escape-trichotomy-results.json)。
 
 下一步若要把这里推进为逐点结论，必须针对第二项或第三项建立跨移位不相容性、可提升的
 递降，或新的因子选择定理。仅继续强化一孔临界的同余陷阱不会覆盖主导残余。

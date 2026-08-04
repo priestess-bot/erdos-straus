@@ -2075,6 +2075,23 @@ alternate/容量/良基后继定理。
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 
+## 2026-08-04 Type II 规范扇的支撑--目标纤维三分
+
+统一选择器现在接入规范 Type II 扇的逐点三分。若
+`4H < p` 且 `4*product(primes <= H) > p-1`，前 `H` 条规范射线不能全部是
+一孔支撑临界失败：要么已有直接 Type II 命中，要么某条失败射线满足
+`-1 not in K_s` 并产生二次角色分离子，要么 `-1 in K_s` 但目标纤维缺陷
+`K_s minus Pi_s` 至少有两个元素。
+
+七个聚焦核心素数的精确回放中，`H` 取 5、7、11 或 13；所有样本的非临界射线数均为
+`H`。其中 `p=193` 的前 7 条射线全部没有直接命中，但 6 条是支撑外二次分离、1 条是
+支撑内多孔失败。这把 Type II 失败明确接入表示--对偶--容量选择器：支撑外行进入
+角色/对偶接口，支撑内多孔行进入目标纤维缺陷接口；两者仍保持
+`analysis_evidence`，不自动产生解提升或递归边。
+
+主张卡：[规范 Type II 扇不能长期全为一孔临界失败](../claims/type-II-canonical-critical-fan-escape-trichotomy.md)。
+结果：[Type II 扇逃逸三分结果](../reproductions/type-ii-canonical-fan-escape-trichotomy-results.json)。
+
 ## 2026-08-04 高载体 n=p 的精确正规形补充
 
 高载体边界中的 n=p 分支还可以完全算术化。由
