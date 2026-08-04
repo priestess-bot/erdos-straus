@@ -2155,4 +2155,10 @@ analysis_evidence，不把公式误报为递归边。
 从未分类的 G-anchor 参数族压成确定相位选择器，但全称缺口仍是：来源可达的低相位是否
 能补齐完整 E1--E5，非整除相位是否必有 alternate、直接证书或跨状态良基秩。
 
+此外，现有真实 G_marked_absorb 回执连接了一个 exact \(n=p\) 行：
+\((p,M,d,n)=(73,1332,1,73)\) 的原始高载体经过对偶重图表成为
+\((R,K)=(71,1296)\)，其 \(A=1,Q=35\) anchor 处于低相位并带 raw source/anchor
+provenance。这里的 \(M=1332\) 是原始载体，而 \(K=1296=B_{73}\) 是对偶 G 图表容量；
+回执尚未补齐完整 E1--E5，故仍只作 analysis_evidence。
+
 主张卡：[高载体 n=p G-anchor bundle 的精确相位二分](../claims/type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。

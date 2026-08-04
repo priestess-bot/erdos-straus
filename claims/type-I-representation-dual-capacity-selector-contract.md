@@ -285,6 +285,9 @@ overflow_high_carrier_n_prime_g_anchor_phase 算术回执。对 G 图表的 prop
 conditional_bundle_marked_absorb、其余标为 bundle_overflow。这两类回执均保持
 analysis_evidence；该字段只补足 exact \(n=p\) 的算术分类，不携带来源路径、标记提升
 或递归 E1--E5。详见[高载体 n=p G-anchor bundle 的精确相位二分](type-I-overflow-high-carrier-n-prime-g-anchor-phase.md)。
+现有 \(p=73\) 的 G_marked_absorb 回执还提供一个真实 source/anchor provenance 行；
+其原始高载体 \(M=1332\) 与对偶 G 容量 \(K=B_{73}=1296\) 分开保存，仍不自动升级
+为递归边。
 
 同一选择器还输出 12 个 overflow fixture 的菜单分类：
 

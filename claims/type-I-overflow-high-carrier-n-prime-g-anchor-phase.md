@@ -157,6 +157,15 @@ overflow 后继；它不是终端，但外层支撑势严格下降。只有 \(AQ
 \(A=3\) 给 \(t_A=2,R_M=407>p\)。这些 profile 只验证 (1)--(4)，不声称对应的
 support 已由某条完整来源路径产生。
 
+另有一条真实来源锚定回执：原始高载体
+\[
+(p,M,d,n)=(73,1332,1,73)
+\]
+的对偶 G 图表是 \((R,K)=(71,1296)\)，其 G_marked_absorb source/anchor 记录给出
+\(A=1,Q=35,R_Q=23\) 的低相位行。这里必须区分原始 carrier \(M=1332\) 与对偶图表
+\(K=B_{73}=1296\)；回执含 raw source/anchor provenance，但仍没有完整 E1--E5，
+所以状态保持 analysis_evidence。
+
 复现：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

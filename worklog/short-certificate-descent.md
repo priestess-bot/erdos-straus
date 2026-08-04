@@ -4991,6 +4991,12 @@ high_carrier_n_prime_g_anchor_bundle_phase 和两个 synthetic arithmetic profil
 analysis_evidence、E1--E5 全假、不可递归；这一步只完成相位分类，
 没有伪造 source provenance 或 marked lift。
 
+现有 universal-anchor 数据还提供一个真实连接：\(p=73\) 的原始
+\((M,d,n)=(1332,1,73)\) 在对偶 G 图表 \((R,K)=(71,1296)\) 上有
+G_marked_absorb 的 raw source/anchor 记录，首个 \(A=1,Q=35\) 行正是低相位
+\(R_Q=23\)。必须把原始 carrier 1332 与对偶容量 1296 分开记账；该真实回执仍没有
+完整 E1--E5，因此保持 analysis_evidence。
+
 复现：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify

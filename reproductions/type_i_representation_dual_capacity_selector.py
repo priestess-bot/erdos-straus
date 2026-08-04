@@ -2077,6 +2077,71 @@ def high_carrier_n_prime_g_anchor_phase_profile(
     }
 
 
+def high_carrier_n_prime_g_anchor_source_profile(
+    payload: dict[str, object]
+) -> dict[str, object]:
+    """Attach the focused raw G_marked_absorb n=p source row when present."""
+    universal_anchor = payload.get("universal_anchor")
+    if not isinstance(universal_anchor, dict):
+        raise AssertionError("universal anchor payload changed")
+    record = universal_anchor.get("G_marked_absorb")
+    if not isinstance(record, dict):
+        raise AssertionError("G_marked_absorb source record is missing")
+    prime = int(record["prime"])
+    B_prime = (prime - 1) ** 2 // 4
+    original_carrier = (prime * prime - 1) // 4
+    if (
+        record.get("K") != B_prime
+        or record.get("R") != prime - 2
+        or record.get("source_receipt", {}).get("source")
+        != [prime, (prime - 2) * (prime - 1) - prime, prime - 1]
+    ):
+        raise AssertionError("G_marked_absorb n=p source normal form changed")
+    determinant = 4 * original_carrier + 1
+    if determinant != prime * prime:
+        raise AssertionError("G_marked_absorb n=p determinant changed")
+    orbit = record.get("anchor_orbit")
+    if not isinstance(orbit, dict) or not isinstance(orbit.get("rows"), list):
+        raise AssertionError("G_marked_absorb anchor orbit changed")
+    rows = orbit["rows"]
+    anchor_row = next((row for row in rows if row.get("M") == (prime - 3) // 2), None)
+    if not isinstance(anchor_row, dict):
+        raise AssertionError("G_marked_absorb Q anchor row is missing")
+    if (
+        anchor_row.get("classification") != "marked_absorb"
+        or anchor_row.get("beta") != 2
+        or anchor_row.get("R_M") != (prime - 4) // 3
+        or anchor_row.get("K_M") != ((prime - 3) // 2) * ((prime - 1) // 6)
+    ):
+        raise AssertionError("G_marked_absorb Q anchor arithmetic changed")
+    phase = high_carrier_n_prime_g_anchor_bundle_phase(prime, 1)
+    if phase["target_chart"]["carrier"] != anchor_row["M"]:
+        raise AssertionError("G_marked_absorb source phase target changed")
+    receipt = {
+        "source_record": "G_marked_absorb",
+        "prime": prime,
+        "source_chart": {"R": record["R"], "K": record["K"]},
+        "n_prime_normal_form": {
+            "carrier": original_carrier,
+            "dual_carrier": 1,
+            "n": prime,
+        },
+        "source_provenance": {
+            "status": "focused_raw_source_and_anchor",
+            "source": record["source_receipt"]["source"],
+            "destination": record["source_receipt"]["edge"]["destination"],
+            "anchor_row": anchor_row,
+        },
+        "phase_receipt": phase,
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": False,
+        "e1_e5": {f"E{i}": False for i in range(1, 6)},
+        "proof_boundary": "n_prime_g_anchor_source_provenance_without_E1_E5",
+    }
+    check_status_boundary(receipt)
+    return receipt
+
+
 def high_carrier_complement_classification(
     prime: int, carrier: int, dual_carrier: int
 ) -> dict[str, object]:
@@ -5047,6 +5112,7 @@ def build_results() -> dict[str, object]:
     verified_edge = verified_fixed_n_edge(overflow)
     direct_type_ii = overflow_direct_type_ii(overflow)
     high_carrier_complement = overflow_high_carrier_p_plus_four_complement(overflow)
+    n_prime_source_profile = high_carrier_n_prime_g_anchor_source_profile(overflow)
     n_prime_phase_profiles = [
         high_carrier_n_prime_g_anchor_phase_profile(
             73, [1, 2, 3, 4, 6, 8, 12, 18, 48]
@@ -5097,6 +5163,7 @@ def build_results() -> dict[str, object]:
         "verified_edges": [verified_edge],
         "overflow_direct_type_ii": direct_type_ii,
         "overflow_high_carrier_p_plus_four_complement": high_carrier_complement,
+        "overflow_high_carrier_n_prime_g_anchor_source": n_prime_source_profile,
         "overflow_high_carrier_n_prime_g_anchor_phase": {
             "profiles": n_prime_phase_profiles,
             "profile_count": len(n_prime_phase_profiles),
@@ -5137,6 +5204,7 @@ def build_results() -> dict[str, object]:
             "high_carrier_complement_requires_q3_factor": True,
             "high_carrier_complement_bound_replayed": True,
             "n_prime_g_anchor_phase_requires_source_provenance": True,
+            "n_prime_g_anchor_source_never_auto_recursive": True,
             "overflow_phase_requires_explicit_cross_state_mapping": True,
             "hard_core_negative_receipt_never_recursive": True,
             "fixed_n_overflow_rank_requires_positive_chart": True,
@@ -5569,6 +5637,36 @@ def verify_high_carrier_n_prime_g_anchor_phase_contract(
                 )
                 if route != expected_route:
                     raise AssertionError("n=p G-anchor overflow route changed")
+
+
+def verify_high_carrier_n_prime_g_anchor_source_contract(
+    result: dict[str, object]
+) -> None:
+    receipt = result.get("overflow_high_carrier_n_prime_g_anchor_source")
+    if not isinstance(receipt, dict):
+        raise AssertionError("n=p G-anchor source receipt missing")
+    if (
+        receipt.get("source_record") != "G_marked_absorb"
+        or receipt.get("prime") != 73
+        or receipt.get("selector_status") != "analysis_evidence"
+        or receipt.get("recursive_edge_eligible") is not False
+        or receipt.get("e1_e5") != {f"E{i}": False for i in range(1, 6)}
+    ):
+        raise AssertionError("n=p G-anchor source status boundary changed")
+    if receipt.get("source_provenance", {}).get("status") != (
+        "focused_raw_source_and_anchor"
+    ):
+        raise AssertionError("n=p G-anchor source provenance changed")
+    normal_form = receipt.get("n_prime_normal_form")
+    if normal_form != {"carrier": 1332, "dual_carrier": 1, "n": 73}:
+        raise AssertionError("n=p G-anchor source normal form changed")
+    phase = receipt.get("phase_receipt")
+    expected_phase = high_carrier_n_prime_g_anchor_bundle_phase(73, 1)
+    if phase != expected_phase:
+        raise AssertionError("n=p G-anchor source phase receipt is stale")
+    anchor_row = receipt.get("source_provenance", {}).get("anchor_row")
+    if not isinstance(anchor_row, dict) or anchor_row.get("classification") != "marked_absorb":
+        raise AssertionError("n=p G-anchor source anchor row changed")
 
 
 def verify_universal_source_anchor_contract(result: dict[str, object]) -> None:
@@ -6884,6 +6982,7 @@ def main() -> None:
         verify_large_slab_factor_pair_capacity_contract(result)
         verify_high_carrier_complement_contract(result)
         verify_high_carrier_n_prime_g_anchor_phase_contract(result)
+        verify_high_carrier_n_prime_g_anchor_source_contract(result)
         verify_support_debt_phase_contract(result)
         verify_universal_source_anchor_contract(result)
         verify_d_one_g_rechart_contract(result)

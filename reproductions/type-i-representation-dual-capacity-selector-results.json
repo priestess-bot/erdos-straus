@@ -937,6 +937,7 @@
     "high_carrier_complement_requires_q3_factor": true,
     "large_slab_capacity_requires_carrier_mapping": true,
     "n_prime_g_anchor_phase_requires_source_provenance": true,
+    "n_prime_g_anchor_source_never_auto_recursive": true,
     "outer_rank_reset_requires_joined_support": true,
     "overflow_phase_requires_explicit_cross_state_mapping": true,
     "reset_cycle_boundary_requires_E5": true,
@@ -8873,6 +8874,144 @@
       }
     ],
     "scope_note": "Synthetic exact-n=p profiles expose the deterministic G-anchor phase split; they do not supply raw source provenance or recursive E1-E5 edges."
+  },
+  "overflow_high_carrier_n_prime_g_anchor_source": {
+    "e1_e5": {
+      "E1": false,
+      "E2": false,
+      "E3": false,
+      "E4": false,
+      "E5": false
+    },
+    "n_prime_normal_form": {
+      "carrier": 1332,
+      "dual_carrier": 1,
+      "n": 73
+    },
+    "phase_receipt": {
+      "absorbed_support": 1,
+      "anchor": {
+        "Q": 35,
+        "base_chart": {
+          "K": 420,
+          "R": 23
+        },
+        "beta": 2,
+        "c": 12
+      },
+      "carrier_domain": {
+        "B_p_over_carrier_floor": 37,
+        "high_carrier": false,
+        "inside_outer_rank": true,
+        "same_chart_support_promotion_available_conditionally": true
+      },
+      "conditional_route": "marked_absorb",
+      "e1_e5": {
+        "E1": false,
+        "E2": false,
+        "E3": false,
+        "E4": false,
+        "E5": false
+      },
+      "phase": {
+        "congruence": "c+p*t=0 (mod A)",
+        "equivalent_low_condition": "A divides (p-1)/6",
+        "low_phase": true,
+        "range": [
+          0,
+          0
+        ],
+        "t": 0
+      },
+      "phase_class": "conditional_bundle_marked_absorb",
+      "potential_record": {
+        "new": 37,
+        "old": 1296,
+        "requires_source_bundle_provenance": true,
+        "status": "conditional_arithmetic",
+        "strict_decrease": true
+      },
+      "prime": 73,
+      "proof_boundary": "n_prime_g_anchor_bundle_phase_arithmetic_only",
+      "recursive_edge_eligible": false,
+      "selector_status": "analysis_evidence",
+      "support_domain": {
+        "A_divides_K": true,
+        "B_over_A": 1296,
+        "K": 1296,
+        "proper_support": true
+      },
+      "target_chart": {
+        "K": 420,
+        "R": 23,
+        "canonical_formula": "R=R_Q+4*Q*t",
+        "carrier": 35,
+        "carrier_over_support": 35
+      }
+    },
+    "prime": 73,
+    "proof_boundary": "n_prime_g_anchor_source_provenance_without_E1_E5",
+    "recursive_edge_eligible": false,
+    "selector_status": "analysis_evidence",
+    "source_chart": {
+      "K": 1296,
+      "R": 71
+    },
+    "source_provenance": {
+      "anchor_row": {
+        "K_M": 420,
+        "M": 35,
+        "Q": 35,
+        "R_M": 23,
+        "beta": 2,
+        "classification": "marked_absorb",
+        "excess_quotient": 35,
+        "h": 1,
+        "next_h": 2,
+        "other": 70,
+        "overlap": 1,
+        "strip": {
+          "selected": 70,
+          "steps": [
+            {
+              "destination": [
+                14,
+                57
+              ],
+              "q": 5,
+              "source": [
+                1,
+                70
+              ]
+            },
+            {
+              "destination": [
+                2,
+                69
+              ],
+              "q": 7,
+              "source": [
+                14,
+                57
+              ]
+            }
+          ],
+          "target": 2
+        }
+      },
+      "destination": [
+        1,
+        70,
+        1
+      ],
+      "source": [
+        73,
+        5039,
+        72
+      ],
+      "status": "focused_raw_source_and_anchor"
+    },
+    "source_record": "G_marked_absorb"
   },
   "overflow_high_carrier_p_plus_four_complement": {
     "exact_n_prime_count": 0,
