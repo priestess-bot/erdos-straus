@@ -4923,3 +4923,28 @@ alternate、容量或其它良基外层秩。
 复现：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+
+## 2026-08-04 高载体 n=p 的唯一 d=1 G-anchor 正规形
+
+本轮继续细化修正后的高载体边界。若 overflow 满足 n=p 且 M>B_p，则
+
+    M*d=(p^2-1)/4,
+    (p^2-1)/4 < 2*B_p.
+
+因此 d<2，强制 d=1、M=(p^2-1)/4。写 r=(p-1)/4 后，唯一对偶规范图表为
+
+    (R_r,K_r)=(p-2,(p-1)^2/4).
+
+其 G-anchor 的剩余块固定为
+
+    p-3=2*Q,    Q=(p-3)/2,    beta=2,
+
+且 gcd(Q,K_r)=1。通用 p-source 以 shift=1 到达 (1,p-3,1)，所以 n=p 不是一个
+需要继续搜索 d 的开放算术菜单，而是一个确定的 G-anchor 分流。
+
+统一选择器新增 `n_prime_normal_form` 字段，并在验证器中用
+(p,M,d,n)=(97,2352,1,97) 检查该精确边界；它没有 raw Reach/source provenance，
+也不被误报为递归边。当前来源样本的高载体行属于 n>=p+4，因此正式回执中的
+exact_n_prime_count=0；合成边界验证通过。
+
+主张卡见[高载体 n=p overflow 的唯一 d=1 G-anchor 正规形](../claims/type-I-overflow-high-carrier-n-prime-normal-form.md)。

@@ -2074,3 +2074,32 @@ alternate/容量/良基后继定理。
 `reproductions/type-i-representation-dual-capacity-selector-results.json`，验证命令：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+
+## 2026-08-04 高载体 n=p 的精确正规形补充
+
+高载体边界中的 n=p 分支还可以完全算术化。由
+
+    M*d=(p^2-1)/4
+
+以及 (p^2-1)/4 < 2*((p-1)^2/4)，结合 M>B_p，得到 d=1、M=(p^2-1)/4。
+令 r=(p-1)/4，则对偶图表唯一固定为
+
+    (R_r,K_r)=(p-2,(p-1)^2/4).
+
+其 anchor 剩余块满足
+
+    p-3=2*Q,    Q=(p-3)/2,    beta=2,    gcd(Q,K_r)=1.
+
+因此 n=p 不再需要作为一个未分类的高载体参数族处理，而是被压到 G-anchor 的
+规范 Q 分流。通用 p-source 的 shift=1 直接到达 (1,p-3,1)，但该 source 仍不提供
+旧 charged support 的保持，也不自动支付 E5；选择器状态保持 analysis_evidence。
+
+新增字段 n_prime_normal_form 已接入统一回执。算术边界
+
+    (p,M,d,n)=(97,2352,1,97),
+
+验证了 n=p 的合法高载体形态；它没有 raw Reach/source provenance，也不是猜想反例。
+当前 12 条来源行的高载体样本属于 n>=p+4，因此 exact_n_prime_count=0；这不是
+该分支不存在，而是冻结样本没有覆盖 n=p 行。
+
+主张卡：[高载体 n=p overflow 的唯一 d=1 G-anchor 正规形](../claims/type-I-overflow-high-carrier-n-prime-normal-form.md)。

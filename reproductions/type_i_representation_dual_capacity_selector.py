@@ -1886,6 +1886,60 @@ def overflow_direct_type_ii(payload: dict[str, object]) -> dict[str, object]:
     }
 
 
+def high_carrier_n_prime_normal_form(
+    prime: int, carrier: int, dual_carrier: int
+) -> dict[str, object]:
+    """Recover the unique arithmetic normal form when the complement is n=p."""
+    determinant = 4 * carrier * dual_carrier + 1
+    if determinant % prime:
+        raise AssertionError("n=p normal-form determinant is not divisible by p")
+    n = determinant // prime
+    if n != prime:
+        return {"applicable": False, "n": n}
+    B_prime = (prime - 1) ** 2 // 4
+    if carrier <= B_prime:
+        raise AssertionError("n=p normal form is not high-carrier")
+    if dual_carrier != 1 or carrier != (prime * prime - 1) // 4:
+        raise AssertionError("n=p high-carrier normal form changed")
+    r = (prime - 1) // 4
+    g_R, g_K = canonical_chart(prime, r)
+    expected_K = B_prime
+    Q = (prime - 3) // 2
+    if (
+        g_R != prime - 2
+        or g_K != expected_K
+        or Q <= 1
+        or prime - 3 != 2 * Q
+        or gcd(Q, g_K) != 1
+        or canonical_chart(prime, Q)[0] <= 0
+    ):
+        raise AssertionError("n=p G-anchor normal form changed")
+    source = [prime, (prime - 2) * (prime - 1) - prime, prime - 1]
+    if source[0] + source[1] != (prime - 2) * source[2]:
+        raise AssertionError("n=p G-source normal form changed")
+    return {
+        "applicable": True,
+        "n": n,
+        "dual_carrier": dual_carrier,
+        "carrier": carrier,
+        "r": r,
+        "g_chart": {"R": g_R, "K": g_K},
+        "anchor": {
+            "other": prime - 3,
+            "Q": Q,
+            "beta": 2,
+            "Q_coprime_to_K": True,
+        },
+        "universal_source": {
+            "source": source,
+            "destination": [1, prime - 3, 1],
+            "shift": 1,
+            "gcd_reduction": 1,
+        },
+        "proof_boundary": "high_carrier_n_equals_p_d_one_g_anchor",
+    }
+
+
 def high_carrier_complement_classification(
     prime: int, carrier: int, dual_carrier: int
 ) -> dict[str, object]:
@@ -1926,6 +1980,9 @@ def high_carrier_complement_classification(
             "recursive_edge_eligible": False,
         }
 
+    n_prime_normal_form = high_carrier_n_prime_normal_form(
+        prime, carrier, dual_carrier
+    )
     if n % 4 != 1:
         raise AssertionError("determinant complement lost n=1 mod 4")
     # M>B_p implies M*d>B_p.  For n<=p-4 (the largest n below p in this
@@ -1938,6 +1995,7 @@ def high_carrier_complement_classification(
     return {
         **base,
         "applicable": True,
+        "n_prime_normal_form": n_prime_normal_form,
         "complement_bound": {
             "necessary_condition": "n=p or n>=p+4",
             "case": "n=p" if n == prime else "n>=p+4",
@@ -2035,6 +2093,14 @@ def overflow_high_carrier_p_plus_four_complement(
         "fixture_count": len(receipts),
         "high_carrier_count": sum(
             int(receipt["classification"]["high_carrier"]) for receipt in receipts
+        ),
+        "exact_n_prime_count": sum(
+            int(
+                receipt["classification"].get("n_prime_normal_form", {}).get("applicable")
+                is True
+            )
+            for receipt in receipts
+            if receipt["classification"]["high_carrier"]
         ),
         "not_applicable_count": sum(
             int(not receipt["classification"]["high_carrier"]) for receipt in receipts
@@ -5206,6 +5272,7 @@ def verify_high_carrier_complement_contract(result: dict[str, object]) -> None:
     if (
         receipt.get("fixture_count") != 12
         or receipt.get("high_carrier_count") != 1
+        or receipt.get("exact_n_prime_count") != 0
         or receipt.get("not_applicable_count") != 11
         or receipt.get("verified_terminal_count") != 1
         or receipt.get("hard_core_count") != 0
@@ -5259,11 +5326,19 @@ def verify_high_carrier_complement_contract(result: dict[str, object]) -> None:
         raise AssertionError("synthetic high-carrier factor-filter boundary changed")
     exact_boundary = high_carrier_complement_classification(97, 2352, 1)
     exact_bound = exact_boundary.get("complement_bound")
+    exact_normal_form = exact_boundary.get("n_prime_normal_form")
     if (
         not exact_boundary["applicable"]
         or exact_boundary.get("n") != 97
         or not isinstance(exact_bound, dict)
         or exact_bound.get("case") != "n=p"
+        or not isinstance(exact_normal_form, dict)
+        or exact_normal_form.get("applicable") is not True
+        or exact_normal_form.get("dual_carrier") != 1
+        or exact_normal_form.get("carrier") != 2352
+        or exact_normal_form.get("g_chart") != {"R": 95, "K": 2304}
+        or exact_normal_form.get("anchor", {}).get("Q") != 47
+        or exact_normal_form.get("anchor", {}).get("beta") != 2
     ):
         raise AssertionError("n=p high-carrier boundary changed")
 
