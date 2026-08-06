@@ -329,6 +329,9 @@ def p193_f_quotient() -> tuple[dict[int, int], dict[str, object]]:
         coordinate.update({element: exponent for element in coset})
     if set(coordinate) != group or coordinate[5] != 1 or coordinate[62] != 3:
         raise AssertionError("p=193 C6 quotient coordinates changed")
+    bar_phi_image = {coordinate[pow(5, exponent, modulus)] for exponent in range(6)}
+    if bar_phi_image != set(range(6)):
+        raise AssertionError("p=193 residual exponent image no longer fills C6")
 
     fixed_layer = centered_residues({2: 5, 19: 1}, modulus)
     actual_stabilizer = {
@@ -356,8 +359,98 @@ def p193_f_quotient() -> tuple[dict[int, int], dict[str, object]]:
         "generator": 5,
         "target_coordinate": coordinate[62],
         "fixed_coordinates": sorted(fixed_coordinates),
+        "bar_phi_image": sorted(bar_phi_image),
         "representation_counts": representation_counts,
         "q_primary_target_exponent_mod_3": coordinate[62] % 3,
+    }
+
+
+def verify_p193_common_q_coprime_anchor_no_go(
+    *, quotient_coordinate: dict[int, int], phase_zero: int, phase_one: int
+) -> dict[str, object]:
+    """Prove the focused two-vertex native q=3 anchor assignment is impossible."""
+    group_order, q = 6, 3
+    bar_j = {0, 1, 5}
+    phi_zero = quotient_coordinate[phase_zero % 63]
+    phi_one = quotient_coordinate[phase_one % 63]
+    if (phi_zero, phi_one) != (0, 2):
+        raise AssertionError("p=193 native phase coordinates changed")
+
+    def order(coordinate: int) -> int:
+        coordinate %= group_order
+        return 1 if coordinate == 0 else group_order // gcd(group_order, coordinate)
+
+    theta_zero = {(phi_zero + entry) % group_order for entry in bar_j}
+    theta_one = {(phi_one + entry) % group_order for entry in bar_j}
+    common_theta = theta_zero & theta_one
+    if theta_zero != {0, 1, 5} or theta_one != {1, 2, 3} or common_theta != {1}:
+        raise AssertionError("p=193 common native anchor set changed")
+
+    forced_theta = next(iter(common_theta))
+    forced_assignment = (
+        (forced_theta - phi_zero) % group_order,
+        (forced_theta - phi_one) % group_order,
+    )
+    if forced_assignment != (1, 5) or order(forced_theta) != 6:
+        raise AssertionError("p=193 forced native anchor assignment changed")
+    if order(forced_theta) % q:
+        raise AssertionError("p=193 forced anchor unexpectedly became q-coprime")
+
+    q_coprime_thetas = [
+        coordinate
+        for coordinate in range(group_order)
+        if order(coordinate) % q != 0
+    ]
+    q_coprime_checks = [
+        {
+            "theta": theta,
+            "order": order(theta),
+            "j_phi0": (theta - phi_zero) % group_order,
+            "j_phi1": (theta - phi_one) % group_order,
+            "j_phi0_in_bar_J": (theta - phi_zero) % group_order in bar_j,
+            "j_phi1_in_bar_J": (theta - phi_one) % group_order in bar_j,
+        }
+        for theta in q_coprime_thetas
+    ]
+    if q_coprime_checks != [
+        {
+            "theta": 0,
+            "order": 1,
+            "j_phi0": 0,
+            "j_phi1": 4,
+            "j_phi0_in_bar_J": True,
+            "j_phi1_in_bar_J": False,
+        },
+        {
+            "theta": 3,
+            "order": 2,
+            "j_phi0": 3,
+            "j_phi1": 1,
+            "j_phi0_in_bar_J": False,
+            "j_phi1_in_bar_J": True,
+        },
+    ]:
+        raise AssertionError("p=193 q-coprime anchor enumeration changed")
+    if any(
+        row["j_phi0"] in bar_j and row["j_phi1"] in bar_j
+        for row in q_coprime_checks
+    ):
+        raise AssertionError("p=193 acquired a common q-coprime native anchor")
+
+    return {
+        "bar_J_coordinates": sorted(bar_j),
+        "bar_phi_image": list(range(group_order)),
+        "phase_coordinates": [phi_zero, phi_one],
+        "common_theta_coordinates": sorted(common_theta),
+        "forced_non_q_coprime_assignment": {
+            "theta": forced_theta,
+            "order": order(forced_theta),
+            "q_divides_order": order(forced_theta) % q == 0,
+            "j_phi0": forced_assignment[0],
+            "j_phi1": forced_assignment[1],
+        },
+        "q_coprime_theta_checks": q_coprime_checks,
+        "status": "no_common_q_coprime_native_anchor",
     }
 
 
@@ -419,6 +512,11 @@ def verify_p193_control() -> dict[str, object]:
         or psi_three_exponent(prime) != 0
     ):
         raise AssertionError("p=193 q=3 gcd-omission character control changed")
+    native_anchor_no_go = verify_p193_common_q_coprime_anchor_no_go(
+        quotient_coordinate=quotient_coordinate,
+        phase_zero=int(trace["phases"][0]),
+        phase_one=actual_phase,
+    )
     return {
         "chart": {"p": prime, "R": modulus, "K": K},
         "scope": (
@@ -430,6 +528,7 @@ def verify_p193_control() -> dict[str, object]:
         "lineage": trace,
         "physical_tail_row": physical,
         "factor_only_phase": factor_only_phase,
+        "native_q_coprime_anchor_no_go": native_anchor_no_go,
         "q3_character_exponents": {
             "gcd_reduction_25": psi_three_exponent(25),
             "actual_enriched_phase": psi_three_exponent(actual_phase),

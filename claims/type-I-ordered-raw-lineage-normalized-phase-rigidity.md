@@ -476,6 +476,65 @@ E_1=193\cdot25=37,
 direct zero-offset identification，则实际 enriched phase 在 (27) 处失败，而漏掉 gcd
 的版本会错误地通过。该例严格说明 (20)--(23) 的必要性。
 
+### Native \(q=3\) 共同锚定赋值的严格 no-go
+
+现在只检查同一 \(C_6\) F 商内的 native anchored preflight，而不声明新的
+source-to-F map。因为 \(5P\) 生成整个商，已有 residual exponent map 的像是
+\(\operatorname{im}\bar\phi=C_6\)。故对任意 \(\theta\)，都有
+\(\bar J_\theta=\bar J=\{0,1,5\}\)。以 \(5P\) 为加法生成元，(37) 给出
+
+\[
+\bar\Phi_0=0,\qquad \bar\Phi_1=2.
+\tag{41}
+\]
+
+native assignment 若同时覆盖这条 raw 边的两个端点，必须强制满足
+
+\[
+\bar j_i=\theta-\bar\Phi_i\in\bar J,
+\qquad
+\theta\in(\bar\Phi_0+\bar J)\cap(\bar\Phi_1+\bar J)
+=\{0,1,5\}\cap\{2,3,1\}=\{1\}.
+\tag{42}
+\]
+
+唯一的形式解因此是
+
+\[
+\theta=1,\qquad
+(\bar j_0,\bar j_1)=(1,5),\qquad
+\operatorname{ord}_{C_6}(\theta)=6.
+\tag{43}
+\]
+
+但 \(3\mid6\)，它不满足 anchored phase contract 所要求的 q-coprime anchor。
+实际 \(q=3\) 互素的锚点只有 \(0,3\)；它们的强制赋值分别为
+
+\[
+\begin{array}{c|c|c|c}
+\theta&\operatorname{ord}(\theta)&\bar j_0&\bar j_1\\ \hline
+0&1&0\in\bar J&4\notin\bar J\\
+3&2&3\notin\bar J&1\in\bar J.
+\end{array}
+\tag{44}
+\]
+
+所以固定 \(\bar J\)、两个 actual phase 与 \(q=3\) 后，**不存在**覆盖完整两顶点
+谱系的 native q-coprime anchored assignment。其最小差分形式是
+\[
+\bar\Phi_1-\bar\Phi_0=2=\bar j_0-\bar j_1;
+\]
+\(\bar J\) 中唯一给出此差的有序对正是 \((1,5)\)，从而再次强制非 q-coprime 的
+\(\theta=1\)。
+
+这与 direct-F zero-phase gate 不同。direct gate 在 \(\bar\Phi_0\) 处通过、在
+\(\bar\Phi_1\) 处失败，因为其 q-primary 指数是 \(0,2\pmod3\)；而若孤立保留
+\(\bar\Phi_1\)，\(\theta=3,\bar j_1=1\) 是一个合法的单端 q-coprime anchored
+assignment，且其锚定相位非零。故 direct failure 本身不排除 anchored semantics；
+这里的严格障碍是一个共同 q-coprime \(\theta\) 无法覆盖 raw 边两端。该 no-go 也不是
+\(H\)-membership 或 enriched-tree integrability 的失败：两相位和 \(r=193,g=25\)
+均属于 \(H=U(63)\)，且单边 ancestry tree 自动可积。
+
 不过 (35) 是从 endpoint 反向生成的 formal p-parent，故它不是 root provenance；
 \(\Lambda_{\rm nat}\) 也只是同一 chart 上可测试的群商候选，并没有被证明为所需的
 source-to-F semantic map。该反控制既不排除其它 \(\Lambda\)、其它 offset 或其它

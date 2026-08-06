@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Verify the persistent-ledger carry core for physical overflow transcripts.
+"""Verify persistent-ledger carry cores and a local c=3 congruence screen.
 
 For rows that already have a sound raw-to-overflow interpretation, this
 script computes the largest old ledger charge that can survive every row and
 pass E2 wherever E2 is required.  The p=5281 raw ledger is also checked as a
 negative scope control: its rows are not cofactor-overflow rows, so E2 cannot
 be invoked there.
+
+The final c=3 calculation is deliberately weaker: it is an arithmetic
+single-row screen for gcd(M, C * (M mod p)), not a raw-source, F-layer, E2,
+terminal, or selector certificate.
 """
 
 from __future__ import annotations
@@ -147,6 +151,97 @@ def verify_p5281_scope_control() -> dict[str, object]:
     }
 
 
+def standard_c3_local_core(h: int) -> dict[str, int]:
+    """Evaluate the local c=3 core screen without claiming a source receipt."""
+    if h <= 0:
+        raise AssertionError("c=3 local screen requires positive h")
+    p = 24 * h + 1
+    M = 26 * h + 1
+    C = 24 * h - 2
+    r = M % p
+    if r != 2 * h or gcd(M, 2 * h) != 1:
+        raise AssertionError("c=3 local carrier reduction changed")
+    core = gcd(M, C * r)
+    expected_core = 19 if h % 19 == 8 else 1
+    if core != expected_core:
+        raise AssertionError("c=3 local core congruence changed")
+    return {
+        "h": h,
+        "p_parameter": p,
+        "M": M,
+        "C": C,
+        "r": r,
+        "core": core,
+        "expected_core": expected_core,
+    }
+
+
+def verify_standard_c3_local_core_screen() -> dict[str, object]:
+    """Check one representative of every h class modulo 19, without a scan."""
+    residue_rows = []
+    for residue in range(19):
+        # Use h=19 for the zero residue so every arithmetic input is positive.
+        h = residue if residue else 19
+        row = standard_c3_local_core(h)
+        if row["h"] % 19 != residue:
+            raise AssertionError("c=3 residue representative changed")
+        residue_rows.append(row)
+    if [row["core"] for row in residue_rows] != [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        19,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+    ]:
+        raise AssertionError("c=3 residue core table changed")
+
+    h8 = standard_c3_local_core(8)
+    h297 = standard_c3_local_core(297)
+    if h8 != {
+        "h": 8,
+        "p_parameter": 193,
+        "M": 209,
+        "C": 190,
+        "r": 16,
+        "core": 19,
+        "expected_core": 19,
+    }:
+        raise AssertionError("c=3 h=8 arithmetic control changed")
+    if h297 != {
+        "h": 297,
+        "p_parameter": 7129,
+        "M": 7723,
+        "C": 7126,
+        "r": 594,
+        "core": 1,
+        "expected_core": 1,
+    }:
+        raise AssertionError("c=3 p=7129 local core control changed")
+    return {
+        "scope": (
+            "A single-row arithmetic screen only. It does not assert primality, a raw "
+            "source/transcript, an F layer, E2 admission, terminal status, or a selector edge."
+        ),
+        "residue_class_representatives_mod_19": residue_rows,
+        "h8_arithmetic_positive_control": h8,
+        "p7129_h297_core_one_control": h297,
+    }
+
+
 def build_result() -> dict[str, object]:
     """Build the focused theorem controls only."""
     return {
@@ -158,6 +253,7 @@ def build_result() -> dict[str, object]:
         ),
         "p73_overflow_controls": verify_p73_controls(),
         "p5281_pre_e2_scope_control": verify_p5281_scope_control(),
+        "standard_c3_local_core_screen": verify_standard_c3_local_core_screen(),
     }
 
 
