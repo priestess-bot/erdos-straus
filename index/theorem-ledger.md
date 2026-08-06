@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 500 |
+| 数学状态 | `established` | 504 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 333 |
+| 证明来源 | `repository_derivation` | 337 |
 | 证明来源 | `unspecified` | 428 |
-| 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 470 |
+| 审阅状态 | `independent_review` | 19 |
+| 审阅状态 | `internal_review` | 473 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -219,6 +219,7 @@
 | [Type I 自适应逃逸深度在千万级种子中可达九十七窗口](../claims/type-I-adaptive-escape-seed-profile.md) (`type-I-adaptive-escape-seed-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [自适应上半区 B 等于一混合终端选择猜想](../claims/type-I-adaptive-upper-b1-terminal-selector-conjecture.md) (`type-I-adaptive-upper-b1-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [有序谱系到锚定相位的富集 row-to-anchor 准入门](../claims/type-I-ancestry-enriched-row-to-anchor-preflight.md) (`type-I-ancestry-enriched-row-to-anchor-preflight`) | `established` | `repository_derivation` | `independent_review` | - | 2026-08-07 |
 | [锚定仿射相位图的无竖直元与条件相位树容量](../claims/type-I-anchored-affine-phase-tree-capacity.md) (`type-I-anchored-affine-phase-tree-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [六亿 B 等于一自平方残余的补偿平方剖面](../claims/type-I-b1-compensated-square-profile-600m.md) (`type-I-b1-compensated-square-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B 等于一正规形的补偿平方终端桥](../claims/type-I-b1-compensated-square-terminal-bridge.md) (`type-I-b1-compensated-square-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -257,6 +258,8 @@
 | [冻结 F 状态规范 Fourier 载体容量边界](../claims/type-I-f-bounded-fourier-carrier-capacity-boundary.md) (`type-I-f-bounded-fourier-carrier-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-03 |
 | [冻结 F 状态的有界规范 Fourier 证书](../claims/type-I-f-bounded-fourier-certificate.md) (`type-I-f-bounded-fourier-certificate`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [冻结完整线性谱的 F 型 Fourier 系数盒半径边界](../claims/type-I-f-bounded-fourier-radius-boundary.md) (`type-I-f-bounded-fourier-radius-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [p=7129 F 型 c=3 三尾 raw-to-affine 的两个窄障碍](../claims/type-I-f-c3-triple-tail-raw-affine-obstruction-p7129.md) (`type-I-f-c3-triple-tail-raw-affine-obstruction-p7129`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [p=73, R=79 的最小 F-C78 universal raw-source 终端预先截断控制](../claims/type-I-f-c78-raw-root-fixture-p73-r79.md) (`type-I-f-c78-raw-root-fixture-p73-r79`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [线性 F 状态的当前块饱和与带符号分母缺陷](../claims/type-I-f-current-block-saturation-and-signed-denominator-defect.md) (`type-I-f-current-block-saturation-and-signed-denominator-defect`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [F 状态同分母指数清除的双向 q 进必要合同](../claims/type-I-f-denominator-clearing-qadic-lift-contract.md) (`type-I-f-denominator-clearing-qadic-lift-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [完整 F 谱的双颜色共享模数容量边界](../claims/type-I-f-full-cross-color-pair-capacity-boundary.md) (`type-I-f-full-cross-color-pair-capacity-boundary`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
@@ -546,6 +549,7 @@
 | [Type I 正规形的规范尾部递降选择器与平方因子外部源等价](../claims/type-I-normal-tail-deflation-selector.md) (`type-I-normal-tail-deflation-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 一私有因子的三余类饱和判据](../claims/type-I-one-private-three-coset-saturation.md) (`type-I-one-private-three-coset-saturation`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [有序 R 位置的迁移最小费用对偶与局部容量升级准则](../claims/type-I-ordered-r-migration-min-cost-duality.md) (`type-I-ordered-r-migration-min-cost-duality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
+| [有序 raw 谱系的归一化相位刚性、gcd 富集标签与 F 奇主层门](../claims/type-I-ordered-raw-lineage-normalized-phase-rigidity.md) (`type-I-ordered-raw-lineage-normalized-phase-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [A=1 overflow 的对偶外层秩 RESET](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md) (`type-I-overflow-a-one-dual-outer-rank-reset`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md) (`type-I-overflow-a-one-generic-determinant-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow cofactor r-图表的带账本 E2 存在性门](../claims/type-I-overflow-cofactor-ledger-e2-gate.md) (`type-I-overflow-cofactor-ledger-e2-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |

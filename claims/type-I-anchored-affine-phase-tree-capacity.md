@@ -274,16 +274,24 @@ physical_carry_status = checked
 ~~~
 
 若 `row_to_anchor_map` 或共同仿射律声称由该表的 raw transition relation 导出，
-还必须独立通过
+必须明确选择其来源语义，不能只给逐行指定的锚点标签：
 
 ~~~text
-raw_factor_action_compatibility = verified
+factor-local raw graph claim:
+  raw_factor_action_compatibility = verified
+
+declared ordered ancestry-tree claim:
+  ancestry_enriched_row_to_anchor_preflight = verified
 ~~~
 
-即相位差对每一个 raw 因子必须是路径无关的一维作用。这个附加门不修改 (12) 的
-纯装箱证明：它只防止把逐行任意指定的锚点标签误作由 physical raw paths 支持的
-source map。精确的 cycle-lattice 判据、tail-only 反例和完整 marked-row 修复见
-[raw 因子作用到共同仿射相位图的可积性门](type-I-raw-factor-action-affine-preflight.md)。
+第一种语义要求相位差对每一个 raw 因子是路径无关的一维作用。第二种语义允许实际
+gcd reduction 进入富集边 token (r(e)g(e))，但要求 source coordinate、每步完整
+gcd、固定 anchor/layer、forced row-to-anchor assignment 和 history-merge policy 都已
+验证；它不能冒充 factor-local action。若 ancestry history 被合并，必须额外通过
+无向多重图 holonomy 门。两种来源都不修改 (12) 的纯装箱证明：它们只防止把逐行任意
+指定的锚点标签误作由 physical raw paths 支持的 source map。精确的 factor-local
+cycle-lattice 判据见 [raw 因子作用到共同仿射相位图的可积性门](type-I-raw-factor-action-affine-preflight.md)；
+富集谱系的条件准入见 [有序谱系到锚定相位的富集 row-to-anchor 准入门](type-I-ancestry-enriched-row-to-anchor-preflight.md)。
 
 缺少任一项时，输出必须保持
 \(\mathrm{ANCHORED\_PHASE\_MAP\_UNCLOSED}\)。即使 (12) 可用，它仍不构造实际
