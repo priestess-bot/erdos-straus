@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 496 |
+| 数学状态 | `established` | 497 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 329 |
+| 证明来源 | `repository_derivation` | 330 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 466 |
+| 审阅状态 | `internal_review` | 467 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -219,6 +219,7 @@
 | [Type I 自适应逃逸深度在千万级种子中可达九十七窗口](../claims/type-I-adaptive-escape-seed-profile.md) (`type-I-adaptive-escape-seed-profile`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [自适应上半区 B 等于一混合终端选择猜想](../claims/type-I-adaptive-upper-b1-terminal-selector-conjecture.md) (`type-I-adaptive-upper-b1-terminal-selector-conjecture`) | `open` | `mixed` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [锚定仿射相位图的无竖直元与条件相位树容量](../claims/type-I-anchored-affine-phase-tree-capacity.md) (`type-I-anchored-affine-phase-tree-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [六亿 B 等于一自平方残余的补偿平方剖面](../claims/type-I-b1-compensated-square-profile-600m.md) (`type-I-b1-compensated-square-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B 等于一正规形的补偿平方终端桥](../claims/type-I-b1-compensated-square-terminal-bridge.md) (`type-I-b1-compensated-square-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B等于一正规形回缩到完整平方因子外部源的判据](../claims/type-I-b1-external-source-retraction-criterion.md) (`type-I-b1-external-source-retraction-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |

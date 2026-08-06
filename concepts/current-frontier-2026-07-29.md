@@ -2989,6 +2989,21 @@ q^{k_{ij}}\mid\Delta_{ij}.
 marked lift。因此下一步的真正任务被精确化为：从规范 Fourier/格证书构造有界且
 相位兼容的清分标签，或证明这些标签不可能存在并转入合法 support-switch。
 
+锚定相位现在给出这个任务的一个严格中间接口。若锚点 \(t\) 的阶与奇素数 \(q\) 互素，
+则完整锚定图 \((tj^{-1},\gamma_{j,k})\) 没有非零纯标签元；但带标记 SNF 菜单的
+群饱和只保留角色约束，不保留完整锚定集的相位数 \(D_{J_t,k}\)。在已证明 complete 的
+物理 source 表、共同仿射标签律、区间和重复度同时给定时，才可使用
+
+\[
+\sum_wh_w\le
+\mu\sum_kD_{J_t,k}\left(\left\lfloor\frac B{q^k}\right\rfloor+1\right).
+\]
+
+\(C_6\) 控制中，单行饱和菜单与完整三相位锚定图生成同一带标记群；把后者错误压成一个
+相位胞会给出 \(3\le1\) 的假容量界。因此后续 source-map 回执必须分别保存完整锚定
+相位数、物理 transition complete 性、仿射偏移和 carry 状态，不能把 SNF 饱和误作
+载体容量。详见[锚定仿射相位图的无竖直元与条件相位树容量](../claims/type-I-anchored-affine-phase-tree-capacity.md)。
+
 ## overflow 双对偶支撑阻碍的精确消元（2026-08-02）
 
 对 overflow 行列式
