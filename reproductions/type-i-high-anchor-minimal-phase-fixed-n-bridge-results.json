@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "certificate_type": "high_anchor_minimal_phase_fixed_n_bridge_v1",
+  "selector_status": "analysis_evidence",
+  "recursive_edge_eligible": false,
+  "scope": {
+    "targeted_fixtures": 4,
+    "does_not_verify": [
+      "charged_parent_receipt",
+      "terminal_first_exhaustion",
+      "global_E1_E5_macro_admission"
+    ],
+    "conditional_conclusion": "A minimal positive target with an admissible inherited state receipt has a forced bounded fixed-n strict-potential successor."
+  },
+  "fixtures": [
+    {
+      "prime": 1201,
+      "phase": 1,
+      "provenance": "arithmetic_only",
+      "anchor": {
+        "A": 319,
+        "B": 1185,
+        "R": 1259,
+        "K": 378015,
+        "n": 17
+      },
+      "minimal_target": {
+        "A": 638,
+        "t": 1193,
+        "d_T": 8,
+        "R": 2535,
+        "K": 761134
+      },
+      "fixed_n_pivot": {
+        "S": 5104,
+        "L": 5104,
+        "R": 20399,
+        "K": 6124800,
+        "Pi_before": 564,
+        "Pi_after": 70
+      },
+      "checks": {
+        "core_prime_class": true,
+        "anchor_high_canonical": true,
+        "minimal_positive_parameters": true,
+        "minimal_phase_relation": true,
+        "target_is_fixed_n_shadow": true,
+        "residual_window": true,
+        "target_defect_forced_nonunit": true,
+        "saturated_divisor": true,
+        "pivot_chart": true,
+        "strict_outer_payment": true
+      }
+    },
+    {
+      "prime": 1201,
+      "phase": 2,
+      "provenance": "arithmetic_only",
+      "anchor": {
+        "A": 346,
+        "B": 1096,
+        "R": 1263,
+        "K": 379216,
+        "n": 121
+      },
+      "minimal_target": {
+        "A": 1038,
+        "t": 1166,
+        "d_T": 35,
+        "R": 4031,
+        "K": 1210308
+      },
+      "fixed_n_pivot": {
+        "S": 36330,
+        "L": 36330,
+        "R": 145199,
+        "K": 43596000,
+        "Pi_before": 346,
+        "Pi_after": 9
+      },
+      "checks": {
+        "core_prime_class": true,
+        "anchor_high_canonical": true,
+        "minimal_positive_parameters": true,
+        "minimal_phase_relation": true,
+        "target_is_fixed_n_shadow": true,
+        "residual_window": true,
+        "target_defect_forced_nonunit": true,
+        "saturated_divisor": true,
+        "pivot_chart": true,
+        "strict_outer_payment": true
+      }
+    },
+    {
+      "prime": 3793,
+      "phase": 1,
+      "provenance": "local_candidate",
+      "anchor": {
+        "A": 1811,
+        "B": 3671,
+        "R": 7011,
+        "K": 6648181,
+        "n": 233
+      },
+      "minimal_target": {
+        "A": 3622,
+        "t": 3732,
+        "d_T": 61,
+        "R": 14255,
+        "K": 13517304
+      },
+      "fixed_n_pivot": {
+        "S": 220942,
+        "L": 220942,
+        "R": 883535,
+        "K": 837812064,
+        "Pi_before": 992,
+        "Pi_after": 16
+      },
+      "checks": {
+        "core_prime_class": true,
+        "anchor_high_canonical": true,
+        "minimal_positive_parameters": true,
+        "minimal_phase_relation": true,
+        "target_is_fixed_n_shadow": true,
+        "residual_window": true,
+        "target_defect_forced_nonunit": true,
+        "saturated_divisor": true,
+        "pivot_chart": true,
+        "strict_outer_payment": true
+      }
+    },
+    {
+      "prime": 60913,
+      "phase": 2,
+      "provenance": "local_candidate",
+      "anchor": {
+        "A": 18647,
+        "B": 59011,
+        "R": 72259,
+        "K": 1100378117,
+        "n": 2329
+      },
+      "minimal_target": {
+        "A": 55941,
+        "t": 60279,
+        "d_T": 634,
+        "R": 221435,
+        "K": 3372067539
+      },
+      "fixed_n_pivot": {
+        "S": 35466594,
+        "L": 35466594,
+        "R": 141864047,
+        "K": 2160341173728,
+        "Pi_before": 16581,
+        "Pi_after": 26
+      },
+      "checks": {
+        "core_prime_class": true,
+        "anchor_high_canonical": true,
+        "minimal_positive_parameters": true,
+        "minimal_phase_relation": true,
+        "target_is_fixed_n_shadow": true,
+        "residual_window": true,
+        "target_defect_forced_nonunit": true,
+        "saturated_divisor": true,
+        "pivot_chart": true,
+        "strict_outer_payment": true
+      }
+    }
+  ],
+  "excluded_boundary_without_C_less_than_p": {
+    "prime": 73,
+    "phase": 1,
+    "anchor": {
+      "A": 82,
+      "R": 319,
+      "K": 5822,
+      "n": 9
+    },
+    "formal_target": {
+      "C": 164,
+      "A_T": 164,
+      "t": 72,
+      "d_T": 1
+    },
+    "fixed_n_quantity": {
+      "S": 164,
+      "strict_support_growth": false
+    },
+    "classification": "excluded_without_C_less_than_p",
+    "checks": {
+      "high_anchor": true,
+      "formal_minimal_phase": true,
+      "target_chart": true,
+      "outside_direct_cofactor_domain": true,
+      "unit_target_defect": true
+    }
+  }
+}

@@ -1,0 +1,1018 @@
+{
+  "schema_version": 1,
+  "purpose": "focused token-exit/reentry boundary; not a global selector proof",
+  "input": "type-i-representation-dual-capacity-selector-results.json",
+  "prime": 73,
+  "B_p": 1296,
+  "lambda_definition": "(floor(B_p/A), Omega(K/A))",
+  "artifact_state_edges": {
+    "count": 44,
+    "all_strictly_decrease_first_coordinate": true,
+    "support_reset_paid": [
+      {
+        "edge_id": "edge:0496222483f9b85405c14af802e26aacee67d1c748058455a466de641e9db112",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 19,
+          "R": 1191,
+          "K": 21736,
+          "Lambda": [
+            68,
+            5
+          ]
+        },
+        "target": {
+          "A": 517,
+          "R": 1983,
+          "K": 36190,
+          "Lambda": [
+            2,
+            3
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:13254df2ac0cfcd1f40a9d42aaa4879a8a6cde2ae9271aa73a103f64708714e6",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 19,
+          "R": 1191,
+          "K": 21736,
+          "Lambda": [
+            68,
+            5
+          ]
+        },
+        "target": {
+          "A": 1034,
+          "R": 1983,
+          "K": 36190,
+          "Lambda": [
+            1,
+            2
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:437b812f906d6a857024d79046ff740f9e46aafee7d70e6e77448813a090d0db",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 1367,
+          "K": 24948,
+          "Lambda": [
+            19,
+            5
+          ]
+        },
+        "target": {
+          "A": 1288,
+          "R": 2823,
+          "K": 51520,
+          "Lambda": [
+            1,
+            4
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:54a269ed4f4d7cf92d4a942de91b10b922ad25423f9c85d5a6c140336f792fbb",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 3743,
+          "K": 68310,
+          "Lambda": [
+            19,
+            4
+          ]
+        },
+        "target": {
+          "A": 812,
+          "R": 3159,
+          "K": 57652,
+          "Lambda": [
+            1,
+            1
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:995dcb2a1478706ca749a2ebdccb4846300cb50c204983e14ec90f87e56b1481",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 3743,
+          "K": 68310,
+          "Lambda": [
+            19,
+            4
+          ]
+        },
+        "target": {
+          "A": 1288,
+          "R": 2823,
+          "K": 51520,
+          "Lambda": [
+            1,
+            4
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:ca37af12eeef07640f6e474d2a1f19ac332fc6a9b32ce09227d28c0dd02050b3",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 241,
+        "source": {
+          "A": 8,
+          "R": 1103,
+          "K": 66456,
+          "Lambda": [
+            1800,
+            4
+          ]
+        },
+        "target": {
+          "A": 8804,
+          "R": 34047,
+          "K": 2051332,
+          "Lambda": [
+            1,
+            1
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:f25a0548f8c01bcee317651e5eddb2c2de83390d9278851c8bc26cb3dbc6715c",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 1367,
+          "K": 24948,
+          "Lambda": [
+            19,
+            5
+          ]
+        },
+        "target": {
+          "A": 1104,
+          "R": 4295,
+          "K": 78384,
+          "Lambda": [
+            1,
+            1
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:fcc8073447cf94aac2bc347aaa783d89ad7e79ca27b0817f63d297212df539e7",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 7,
+          "R": 359,
+          "K": 6552,
+          "Lambda": [
+            185,
+            6
+          ]
+        },
+        "target": {
+          "A": 18,
+          "R": 71,
+          "K": 1296,
+          "Lambda": [
+            72,
+            5
+          ]
+        },
+        "support_reset_paid": true
+      }
+    ]
+  },
+  "p73_paid_reset_boundary": {
+    "records": [
+      {
+        "edge_id": "edge:0496222483f9b85405c14af802e26aacee67d1c748058455a466de641e9db112",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 19,
+          "R": 1191,
+          "K": 21736,
+          "Lambda": [
+            68,
+            5
+          ]
+        },
+        "target": {
+          "A": 517,
+          "R": 1983,
+          "K": 36190,
+          "Lambda": [
+            2,
+            3
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:13254df2ac0cfcd1f40a9d42aaa4879a8a6cde2ae9271aa73a103f64708714e6",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 19,
+          "R": 1191,
+          "K": 21736,
+          "Lambda": [
+            68,
+            5
+          ]
+        },
+        "target": {
+          "A": 1034,
+          "R": 1983,
+          "K": 36190,
+          "Lambda": [
+            1,
+            2
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:437b812f906d6a857024d79046ff740f9e46aafee7d70e6e77448813a090d0db",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 1367,
+          "K": 24948,
+          "Lambda": [
+            19,
+            5
+          ]
+        },
+        "target": {
+          "A": 1288,
+          "R": 2823,
+          "K": 51520,
+          "Lambda": [
+            1,
+            4
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:54a269ed4f4d7cf92d4a942de91b10b922ad25423f9c85d5a6c140336f792fbb",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 3743,
+          "K": 68310,
+          "Lambda": [
+            19,
+            4
+          ]
+        },
+        "target": {
+          "A": 812,
+          "R": 3159,
+          "K": 57652,
+          "Lambda": [
+            1,
+            1
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:995dcb2a1478706ca749a2ebdccb4846300cb50c204983e14ec90f87e56b1481",
+        "certificate_type": "overflow_fixed_n_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 3743,
+          "K": 68310,
+          "Lambda": [
+            19,
+            4
+          ]
+        },
+        "target": {
+          "A": 1288,
+          "R": 2823,
+          "K": 51520,
+          "Lambda": [
+            1,
+            4
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:f25a0548f8c01bcee317651e5eddb2c2de83390d9278851c8bc26cb3dbc6715c",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 66,
+          "R": 1367,
+          "K": 24948,
+          "Lambda": [
+            19,
+            5
+          ]
+        },
+        "target": {
+          "A": 1104,
+          "R": 4295,
+          "K": 78384,
+          "Lambda": [
+            1,
+            1
+          ]
+        },
+        "support_reset_paid": true
+      },
+      {
+        "edge_id": "edge:fcc8073447cf94aac2bc347aaa783d89ad7e79ca27b0817f63d297212df539e7",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 7,
+          "R": 359,
+          "K": 6552,
+          "Lambda": [
+            185,
+            6
+          ]
+        },
+        "target": {
+          "A": 18,
+          "R": 71,
+          "K": 1296,
+          "Lambda": [
+            72,
+            5
+          ]
+        },
+        "support_reset_paid": true
+      }
+    ],
+    "targets_below_p": [
+      {
+        "edge_id": "edge:fcc8073447cf94aac2bc347aaa783d89ad7e79ca27b0817f63d297212df539e7",
+        "certificate_type": "overflow_fixed_s_bounded_divisor_outer_rank",
+        "phase": "OVERFLOW_DUAL_DETERMINANT",
+        "prime": 73,
+        "source": {
+          "A": 7,
+          "R": 359,
+          "K": 6552,
+          "Lambda": [
+            185,
+            6
+          ]
+        },
+        "target": {
+          "A": 18,
+          "R": 71,
+          "K": 1296,
+          "Lambda": [
+            72,
+            5
+          ]
+        },
+        "support_reset_paid": true
+      }
+    ],
+    "support_preserving_multiples_of_18_below_p": [
+      {
+        "A": 18,
+        "R": 71,
+        "K": 1296,
+        "high": false
+      },
+      {
+        "A": 36,
+        "R": 71,
+        "K": 1296,
+        "high": false
+      },
+      {
+        "A": 54,
+        "R": 71,
+        "K": 1296,
+        "high": false
+      },
+      {
+        "A": 72,
+        "R": 71,
+        "K": 1296,
+        "high": false
+      }
+    ],
+    "conclusion": "The only current verified paid reset below p lands at A=18.  Any support-preserving descendant below p has A in {18,36,54,72} and canonical R=71<p, so it cannot start a high positive cofactor phase."
+  },
+  "p73_high_gate_vs_forced_bundle": {
+    "canonical_high_supports_below_p": [
+      {
+        "A": 31,
+        "R": 107,
+        "K": 1953,
+        "positive_gate_rows": [
+          {
+            "r": 62,
+            "C": 68,
+            "h": 1,
+            "A_target": 2108,
+            "R_target": 231
+          },
+          {
+            "r": 68,
+            "C": 62,
+            "h": 1,
+            "A_target": 62,
+            "R_target": 231
+          }
+        ]
+      },
+      {
+        "A": 34,
+        "R": 95,
+        "K": 1734,
+        "positive_gate_rows": [
+          {
+            "r": 62,
+            "C": 68,
+            "h": 1,
+            "A_target": 68,
+            "R_target": 231
+          },
+          {
+            "r": 68,
+            "C": 62,
+            "h": 1,
+            "A_target": 1054,
+            "R_target": 231
+          }
+        ]
+      },
+      {
+        "A": 37,
+        "R": 75,
+        "K": 1369,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 38,
+        "R": 127,
+        "K": 2318,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 40,
+        "R": 103,
+        "K": 1880,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 41,
+        "R": 155,
+        "K": 2829,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 43,
+        "R": 139,
+        "K": 2537,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 44,
+        "R": 135,
+        "K": 2464,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 45,
+        "R": 143,
+        "K": 2610,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 47,
+        "R": 103,
+        "K": 1880,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 51,
+        "R": 95,
+        "K": 1734,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 52,
+        "R": 151,
+        "K": 2756,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 53,
+        "R": 151,
+        "K": 2756,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 56,
+        "R": 135,
+        "K": 2464,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 57,
+        "R": 203,
+        "K": 3705,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 58,
+        "R": 143,
+        "K": 2610,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 59,
+        "R": 139,
+        "K": 2537,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 61,
+        "R": 127,
+        "K": 2318,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 62,
+        "R": 231,
+        "K": 4216,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 63,
+        "R": 107,
+        "K": 1953,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 65,
+        "R": 203,
+        "K": 3705,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 68,
+        "R": 231,
+        "K": 4216,
+        "positive_gate_rows": []
+      },
+      {
+        "A": 69,
+        "R": 155,
+        "K": 2829,
+        "positive_gate_rows": []
+      }
+    ],
+    "algebraic_positive_gate_supports": {
+      "31": [
+        {
+          "r": 62,
+          "C": 68,
+          "h": 1,
+          "A_target": 2108,
+          "R_target": 231
+        },
+        {
+          "r": 68,
+          "C": 62,
+          "h": 1,
+          "A_target": 62,
+          "R_target": 231
+        }
+      ],
+      "34": [
+        {
+          "r": 62,
+          "C": 68,
+          "h": 1,
+          "A_target": 68,
+          "R_target": 231
+        },
+        {
+          "r": 68,
+          "C": 62,
+          "h": 1,
+          "A_target": 1054,
+          "R_target": 231
+        }
+      ]
+    },
+    "forced_complete_excess_rows": [
+      {
+        "A": 31,
+        "R": 107,
+        "K": 1953,
+        "Q": 106,
+        "M": 3286,
+        "C": 55,
+        "r": 1,
+        "a": 31,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 34,
+        "R": 95,
+        "K": 1734,
+        "Q": 47,
+        "M": 1598,
+        "C": 57,
+        "r": 65,
+        "a": 34,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 37,
+        "R": 75,
+        "K": 1369,
+        "Q": 2,
+        "M": 74,
+        "C": 55,
+        "r": 1,
+        "a": 37,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 38,
+        "R": 127,
+        "K": 2318,
+        "Q": 63,
+        "M": 2394,
+        "C": 45,
+        "r": 58,
+        "a": 38,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 40,
+        "R": 103,
+        "K": 1880,
+        "Q": 51,
+        "M": 2040,
+        "C": 41,
+        "r": 69,
+        "a": 40,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 41,
+        "R": 155,
+        "K": 2829,
+        "Q": 154,
+        "M": 6314,
+        "C": 36,
+        "r": 36,
+        "a": 41,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 43,
+        "R": 139,
+        "K": 2537,
+        "Q": 138,
+        "M": 5934,
+        "C": 20,
+        "r": 21,
+        "a": 43,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 44,
+        "R": 135,
+        "K": 2464,
+        "Q": 67,
+        "M": 2948,
+        "C": 15,
+        "r": 28,
+        "a": 44,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 45,
+        "R": 143,
+        "K": 2610,
+        "Q": 71,
+        "M": 3195,
+        "C": 44,
+        "r": 56,
+        "a": 45,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 47,
+        "R": 103,
+        "K": 1880,
+        "Q": 51,
+        "M": 2397,
+        "C": 38,
+        "r": 61,
+        "a": 47,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 51,
+        "R": 95,
+        "K": 1734,
+        "Q": 47,
+        "M": 2397,
+        "C": 38,
+        "r": 61,
+        "a": 51,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 52,
+        "R": 151,
+        "K": 2756,
+        "Q": 75,
+        "M": 3900,
+        "C": 63,
+        "r": 31,
+        "a": 52,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 53,
+        "R": 151,
+        "K": 2756,
+        "Q": 75,
+        "M": 3975,
+        "C": 26,
+        "r": 33,
+        "a": 53,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 56,
+        "R": 135,
+        "K": 2464,
+        "Q": 67,
+        "M": 3752,
+        "C": 17,
+        "r": 29,
+        "a": 56,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 57,
+        "R": 203,
+        "K": 3705,
+        "Q": 202,
+        "M": 11514,
+        "C": 52,
+        "r": 53,
+        "a": 57,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 58,
+        "R": 143,
+        "K": 2610,
+        "Q": 71,
+        "M": 4118,
+        "C": 14,
+        "r": 30,
+        "a": 29,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 59,
+        "R": 139,
+        "K": 2537,
+        "Q": 138,
+        "M": 8142,
+        "C": 22,
+        "r": 39,
+        "a": 59,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 61,
+        "R": 127,
+        "K": 2318,
+        "Q": 63,
+        "M": 3843,
+        "C": 40,
+        "r": 47,
+        "a": 61,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 62,
+        "R": 231,
+        "K": 4216,
+        "Q": 115,
+        "M": 7130,
+        "C": 19,
+        "r": 49,
+        "a": 62,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 63,
+        "R": 107,
+        "K": 1953,
+        "Q": 106,
+        "M": 6678,
+        "C": 12,
+        "r": 35,
+        "a": 21,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 65,
+        "R": 203,
+        "K": 3705,
+        "Q": 202,
+        "M": 13130,
+        "C": 31,
+        "r": 63,
+        "a": 65,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 68,
+        "R": 231,
+        "K": 4216,
+        "Q": 115,
+        "M": 7820,
+        "C": 71,
+        "r": 9,
+        "a": 68,
+        "gate": false,
+        "h": null
+      },
+      {
+        "A": 69,
+        "R": 155,
+        "K": 2829,
+        "Q": 154,
+        "M": 10626,
+        "C": 69,
+        "r": 41,
+        "a": 1,
+        "gate": true,
+        "h": 0
+      }
+    ],
+    "forced_gate_rows": [
+      {
+        "A": 69,
+        "R": 155,
+        "K": 2829,
+        "Q": 154,
+        "M": 10626,
+        "C": 69,
+        "r": 41,
+        "a": 1,
+        "gate": true,
+        "h": 0
+      }
+    ],
+    "conclusion": "At chart level A=31 and A=34 admit h=1 gates, but the forced complete-excess replay from every p=73 canonical high A<p has no positive gated row.  In particular the fresh-root A=34 chart has Q=47, M=1598, C=57, r=65 and fails 34|65."
+  },
+  "forgetful_reset_counterexample_to_lambda": {
+    "cycle": {
+      "node_132": {
+        "R": 311,
+        "K": 5676,
+        "A": 132,
+        "Lambda": [
+          9,
+          1
+        ]
+      },
+      "node_330": {
+        "R": 1103,
+        "K": 20130,
+        "A": 330,
+        "Lambda": [
+          3,
+          1
+        ]
+      }
+    },
+    "conclusion": "The candidate RESET continuation 132 -> 330 -> 132 has Lambda (9,1) -> (3,1) -> (9,1); forgetful RESET cannot be admitted under the Lambda rank."
+  },
+  "fresh_root_scope_boundary": {
+    "root_support_promotion": {
+      "edge_id": "edge:829e136078b5f225ac62f9d0fc19a90b33053ac5ff6edc77cc3696ae259b988f",
+      "certificate_type": "overflow_same_chart_support_promotion",
+      "phase": "OVERFLOW_SUPPORT_PROMOTION",
+      "prime": 73,
+      "source": {
+        "A": 1,
+        "R": 95,
+        "K": 1734,
+        "Lambda": [
+          1296,
+          4
+        ]
+      },
+      "target": {
+        "A": 34,
+        "R": 95,
+        "K": 1734,
+        "Lambda": [
+          38,
+          2
+        ]
+      },
+      "support_reset_paid": false
+    },
+    "illegal_historical_reentry_example": {
+      "spent_gate_level_target": {
+        "A": 68,
+        "R": 231,
+        "K": 4216,
+        "Lambda": [
+          19,
+          2
+        ]
+      },
+      "fresh_root_source": {
+        "A": 1,
+        "R": 95,
+        "K": 1734,
+        "Lambda": [
+          1296,
+          4
+        ]
+      },
+      "status": "not_a_legal_transition_without_root_scope"
+    },
+    "conclusion": "The root A=1 -> A=34 receipt is decreasing only at a true root.  Treating it as a transition from a spent history can raise Lambda, so source_tree_scope/root-entry must remain part of state identity."
+  }
+}

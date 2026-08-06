@@ -551,6 +551,8 @@ def build_results() -> dict[str, object]:
 
     G_absorb_orbit = anchor_orbit(G_absorb_p, G_absorb_R, 1)
     G_over_orbit = anchor_orbit(G_over_p, G_over_R, 1)
+    default_overflow_cycle = anchor_orbit(409, 251, 1)
+    default_initial_overflow = overflow_receipt(409, 250)
     accumulated_cycle = anchor_orbit(409, 251, 5)
     if not (
         G_absorb_orbit["rows"][0]["Q"] == 35
@@ -559,6 +561,11 @@ def build_results() -> dict[str, object]:
         and G_over_orbit["rows"][0]["Q"] == 34
         and G_over_orbit["rows"][0]["R_M"] == 95
         and G_over_orbit["rows"][0]["classification"] == "overflow"
+        and default_overflow_cycle["rows"][0]["Q"] == 250
+        and default_overflow_cycle["rows"][0]["R_M"] == 511
+        and default_overflow_cycle["rows"][0]["M"] == default_initial_overflow["M"]
+        and default_overflow_cycle["rows"][0]["K_M"] == default_initial_overflow["K_M"]
+        and default_overflow_cycle["rows"][1]["classification"] == "marked_absorb"
         and accumulated_cycle["cycle"] == [1, 5, 3]
         and all(row["classification"] == "overflow" for row in accumulated_cycle["rows"])
     ):
@@ -575,7 +582,7 @@ def build_results() -> dict[str, object]:
     if root_profiles[1]["dual_edge"]["R"] != 79:
         raise AssertionError("same-chart determinant charge changed")
 
-    positive = overflow_receipt(409, 250)
+    positive = default_initial_overflow
     positive_window = fixed_n_window(409, 5, positive)
     if 200 not in [row["L"] for row in positive_window["support_preserving_candidates"]]:
         raise AssertionError("positive accumulated dual edge disappeared")
@@ -615,12 +622,26 @@ def build_results() -> dict[str, object]:
                 "anchor_orbit": G_absorb_orbit,
             },
             "G_bundle_overflow": {
+                "state_origin": "universal_raw_default_entry_v1",
+                "state_scope": "fresh_source_tree_only",
                 "prime": G_over_p,
                 "R": G_over_R,
                 "K": G_over_K,
+                "A": 1,
                 "G_separator": G_separator(G_over_R, G_over_K),
                 "source_receipt": universal_p_source(G_over_p, G_over_R),
                 "anchor_orbit": G_over_orbit,
+            },
+            "universal_default_anchor_orbit": {
+                "state_origin": "universal_raw_default_entry_v1",
+                "state_scope": "fresh_source_tree_only",
+                "prime": 409,
+                "R": 251,
+                "K": 25_665,
+                "A": 1,
+                "source_receipt": universal_p_source(409, 251),
+                "anchor_orbit": default_overflow_cycle,
+                "overflow": default_initial_overflow,
             },
             "accumulated_all_overflow_cycle": {
                 "prime": 409,

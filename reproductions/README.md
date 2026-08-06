@@ -17,6 +17,161 @@ python3 -m unittest discover -s tests -v
 生成的 `results.json` 记录运行范围和脚本 SHA-256。它是有限范围的交叉核对，
 不是 Salez `10^17` 或 Mihnea–Dumitru `10^18` 搜索的全量复现。
 
+两个无扫描的线性 escape 夹具分别固定重复 \(q\) 的 shared-ledger/raw 回退边界，以及
+固定 \(D\) canonical 菜单的残余范围边界。运行：
+
+```bash
+python3 reproductions/type_i_linear_escape_primary_source_switch_fixture.py --verify
+python3 reproductions/type_i_linear_escape_canonical_d_lattice_fixture.py --verify
+python3 reproductions/type_i_linear_escape_divisor_stratified_source_fixture.py --verify
+python3 reproductions/type_i_g_anchor_jacobi_raw_terminal_source_switch_fixture.py --verify
+python3 reproductions/type_i_linear_escape_primary_factor_donly_no_conductor_fixture.py --verify
+```
+
+前者对应 `type-I-linear-escape-primary-source-switch-finite-dispatch`，后者对应
+`type-I-linear-escape-canonical-d-lattice-source-menu`，第三个对应
+`type-I-linear-escape-divisor-stratified-recursive-source-closure`，第四个对应 G-anchor
+raw terminal/source-switch 退化的
+`type-I-g-anchor-jacobi-raw-terminal-source-switch-bridge`，第五个对应
+`type-I-linear-escape-primary-factor-donly-no-conductor`；它们只复现声明中的精确例子，
+不执行历史范围扫描。
+
+余因子支撑 r-图表分支由 `type_i_representation_dual_capacity_selector.py` 的
+`overflow_cofactor_r_chart_support` 键重放。它只检查三条已保存的 source/path
+回执：两个 `universal_raw_default_entry_v1` 的 fresh-source local
+`candidate_transition` 控制与一个父 charged-support ledger 缺失边界，不执行
+范围搜索。前两条仅有 same-chart \(r=M\)；在全局 non-resetting phase rank 建立前，它们
+不递归。
+
+```bash
+python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+```
+
+对应主张为 `type-I-overflow-cofactor-r-chart-support`。默认入口仅能建立新鲜
+source tree，不能从已收费状态重置支撑；其 `source_tree_scope` 必须随状态传播。
+
+高 (R) cofactor 的专用 non-return 控制例不运行范围扫描：(p=3793) 验证
+Legendre-G 父状态可经同图表支撑升级收费，(p=7393) 则验证独立的 F-to-F
+\(h=1\) 非回返路径，(p=60913) 验证 CRT-parity G-to-G-to-F 的最小
+\(h=2\) 路径。三者都有独立 Type I terminal，故只用于检验来源、F/G
+证书、相位支付与局部势，不是困难余项覆盖。
+
+```bash
+python3 reproductions/type_i_high_r_chart_p3793_audit.py --verify
+python3 reproductions/type_i_high_r_chart_7393_nonreturn.py --verify
+python3 reproductions/type_i_high_r_chart_60913_h2_nonreturn.py --verify
+```
+
+`type_i_high_anchor_token_exit_p73_reentry.py` 是更小的只读拼接检查：它不运行 selector，
+只从冻结回执抽取已付款的外层边，重算
+\(\Lambda_p=(\lfloor B_p/A\rfloor,\Omega(K/A))\)，并检查 \(p=73\) 的 paid exit、
+forced high-bundle 与 forgetful-RESET 边界。它对应
+`type-I-high-anchor-cofactor-outer-rank-composition`，用于验证“只有严格
+\(\Pi_p\) 付款的 token exit 才能开启新 epoch”，不作为范围覆盖实验。
+
+```bash
+python3 reproductions/type_i_high_anchor_token_exit_p73_reentry.py --verify
+```
+
+`type_i_high_anchor_direct_c1_finite_menu_exhaustion.py` 是另一张更小的整数夹具，
+只重放 (p=97) 的实际 (c=1) 自环、(p=1657) 的 full/partial-excess 分界，及
+(p=73,R=159) 的 H1/H2 非唯一边界。它不运行 selector；其用途是固定
+`type-I-high-anchor-direct-c1-finite-menu-exhaustion` 的两个接口：
+算术 \(u\mid A\) 标签的充要条件，以及只有冻结且完整检查的 action 才能记入
+`STUTTER_EXHAUSTED`。H1/v1 的 complete-excess 菜单是 singleton，H2 或 partial
+bundle 不是自动可耗尽的 action。
+
+```bash
+python3 reproductions/type_i_high_anchor_direct_c1_finite_menu_exhaustion.py --verify
+```
+
+`type_i_high_anchor_cofactor_macro_replay.py` 用正确的
+`parent -> H -> transient S -> T` 形状回放 high-cofactor 宏，而不把 transient
+overflow 错当作 parent 的直接 successor。它对 \(p=1201\) 的 F-F-F \(h=0\) 和
+\(p=60913\) 的 G-G-F \(h=2\) 分别重算 E1--E5，并按持久 \(H\to T\) 边计算
+\(\Lambda_p\)。两例都保留 `analysis_evidence` 与 terminal-first 叶，不注册到统一
+selector。
+
+```bash
+python3 reproductions/type_i_high_anchor_cofactor_macro_replay.py --verify
+```
+
+`type_i_high_anchor_full_excess_gate_template.py` 只重放三个固定 high-R 控制例的
+full-excess carrier。它固定余因子 gate 的两个等价形式：
+\(A/\gcd(A,C)\mid\lfloor M/p\rfloor\) 与一个短剩余窗口；并验证
+\(C=qA\) 的单同余自动通过子族，以及 \(p=1201\) 的同图表 return 除子模板。
+它不扫描素数、不读取 selector/history，也不把算术命中升级为 E1--E5 边。
+
+```bash
+python3 reproductions/type_i_high_anchor_full_excess_gate_template.py --verify
+```
+
+type_i_high_anchor_automatic_q_source_template.py 将 automatic \(C=qA\) 子族反向成
+complete-excess 商 \(t=Q/(A,Q)\) 的单一剩余条件。它只回放
+\(p=3793,q=2\)、\(p=60913,q=3\) 两个 terminal-preempted 控制、七个指定
+fresh-root 边界和一个 q-choice 近失。它验证 \(q\in\{2,3\}\)、最小正相位指纹、
+root \(\beta_0\in\{1,2\}\)、\(\beta_0=1\) 对第二 full-excess 的 \(2\)-adic no-go，
+以及 \(Q=R-1\) 所需的严格赋值而非互素判据；它还重建一个有限 gap-7 Type II
+terminal prefix。它不扫描素数或注册 selector 边。
+
+```bash
+python3 reproductions/type_i_high_anchor_automatic_q_source_template.py --verify
+```
+
+`type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
+它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
+在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供
+source/path、F/G 或 E1--E5 provenance。
+
+```bash
+python3 reproductions/type_i_high_anchor_positive_phase_terminal_boundary.py --verify
+```
+
+type_i_high_anchor_minimal_phase_fixed_n_bridge.py 只重放最小正相位 \(e=0\) 的
+fixed-\(n\) 后继桥：在完整 \(1\le r,C<p\) 范围内，它强制
+\(5\le n\le p-4\)、\(d_T\ge2\)，并把 \(L=A_Td_T\) 送入严格
+\(\Pi_p\)-paid bounded-divisor pivot。四个夹具都只验证该第二段算术；它们不补
+parent、terminal-first 或 global macro admission。脚本还保留 \(p=73,C>p\) 的
+排除控制，避免删去 direct-chart 范围后误报严格 pivot。
+
+```bash
+python3 reproductions/type_i_high_anchor_minimal_phase_fixed_n_bridge.py --verify
+```
+
+type_i_high_anchor_parent_atlas.py 和
+type_i_high_anchor_same_chart_gate_engineering.py 都只读取冻结 selector artifact。
+前者提取 51 个严格 verified-parent 高锚并重放 bundle，确认没有一条通过 cofactor gate；
+后者再枚举保留 \(A\mid L\) 的 49 条 \(\Pi_p\)-paid same-chart 提升，仍无 gate rescue。
+它们是有限来源边界，不执行 selector/history，也不排除非整除 support reset。
+
+```bash
+python3 reproductions/type_i_high_anchor_parent_atlas.py --verify
+python3 reproductions/type_i_high_anchor_same_chart_gate_engineering.py --verify
+```
+
+type_i_high_anchor_frozen_same_chart_parent_envelope.py 对其中 11 条
+overflow_same_chart_support_promotion_v1 high parent 建立 content-addressed 的有限
+artifact scope，并重放 source/successor、determinant、同图表提升、势下降和
+\(\operatorname{Sol}(p)\) 标记。它还检查篡改会破坏 successor content hash；结果仍是
+analysis_evidence，因为没有 local H/S/T fiber、terminal-first 或 selector 注册。
+
+```bash
+python3 reproductions/type_i_high_anchor_frozen_same_chart_parent_envelope.py --verify
+```
+
+`type_i_high_anchor_nonmonotone_reset_gate.py` 补上同图表但不保留
+\(A\mid L\) 的有限 reset 域。冻结的 31 个高锚给出 162 个候选、135 个严格
+\(\Pi_p\)-paid reset；唯一通过随后 cofactor gate 的行是 \(p=409,A=250,L=2090\)，
+但 target 精确回到 reset 后状态，故按 direct action 规则是应抑制的 \(h=0\) 自环。
+脚本还验证 gate-pass 情形的 \(L=ga,C=gc,r=au\) 相位分解：exact state self-loop
+当且仅当 \(C\mid L\)。指定的 \(p=1201\) 控制是 \(h=0\) chart return、但 \(c=28\)
+的非自环边界。脚本把算术命中与所缺的 E1--E4 parent/reset 合同分开输出，不运行
+selector/history。
+
+```bash
+python3 reproductions/type_i_high_anchor_nonmonotone_reset_gate.py --verify
+```
+
 `short_certificate.py` 按递增首分母缺口搜索精确 Bradford Type I/II 证书。
 它还实现 \(n=(3p+1)/4\) 的显式标记递降：若 \(n\) 有 \(2\pmod3\) 素因子，
 则可把 \(4/n\) 的一个显式解提升至 \(4/p\)，并同时恢复平方根级 Type I 证书。

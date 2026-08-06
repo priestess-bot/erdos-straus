@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "certificate_type": "type_ii_filtered_composition_terminal_v1",
+  "selector_status": "terminal_leaf",
+  "recursive_edge_eligible": false,
+  "theorem_scope": "conditional on same-fiber independently selectable physical source slots and a final stabilizer-saturated quotient lift",
+  "example": {
+    "prime": 3313,
+    "fiber": {
+      "original_D": 12,
+      "A": 1,
+      "D_star": 3,
+      "C": 3,
+      "modulus": 12,
+      "N": 3325,
+      "base_factor": 1,
+      "same_fiber_id": "A=1,D*=3",
+      "N_factorization": [
+        5,
+        5,
+        7,
+        19
+      ]
+    },
+    "composition_series": [
+      {
+        "index": 0,
+        "order": 1,
+        "elements": [
+          [
+            0,
+            0
+          ]
+        ]
+      },
+      {
+        "index": 1,
+        "order": 2,
+        "elements": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      {
+        "index": 2,
+        "order": 4,
+        "elements": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    ],
+    "physical_source_slots": [
+      {
+        "label": "source-q-5",
+        "factor": 5,
+        "vector": [
+          1,
+          0
+        ],
+        "layer": 1,
+        "source_a": 4,
+        "same_fiber": "A=1,D*=3",
+        "independent": true
+      },
+      {
+        "label": "source-q-7",
+        "factor": 7,
+        "vector": [
+          0,
+          1
+        ],
+        "layer": 2,
+        "source_a": 2,
+        "same_fiber": "A=1,D*=3",
+        "independent": true
+      }
+    ],
+    "filtered_capacity": [
+      {
+        "layer": 1,
+        "quotient_order": 2,
+        "available_slots": 1
+      },
+      {
+        "layer": 2,
+        "quotient_order": 2,
+        "available_slots": 1
+      }
+    ],
+    "unit_group_coordinate_map": {
+      "0,0": 1,
+      "0,1": 7,
+      "1,0": 5,
+      "1,1": 11
+    },
+    "target": {
+      "coordinate": [
+        1,
+        1
+      ],
+      "residue": 11,
+      "selected_factors": [
+        5,
+        7
+      ],
+      "h": 35
+    },
+    "coverage": {
+      "reached_coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "full_group_covered": true,
+      "one_slot_target_missing": true,
+      "ledger_products": [
+        1,
+        7,
+        5,
+        35
+      ],
+      "final_stabilizer_coordinates": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "final_stabilizer_saturated": true
+    },
+    "type_ii_certificate": {
+      "raw_parameters": {
+        "A": 1,
+        "B": 284,
+        "C": 3,
+        "K": 3
+      },
+      "normal_form": {
+        "A": 1,
+        "B": 284,
+        "C": 3,
+        "K": 3
+      },
+      "gap": 95,
+      "x": 852,
+      "d": 3,
+      "denominators": [
+        852,
+        29817,
+        8468028
+      ]
+    }
+  }
+}

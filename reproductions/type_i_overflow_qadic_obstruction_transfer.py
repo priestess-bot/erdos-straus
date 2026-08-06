@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "reproductions" / "type-i-universal-anchor-overflow-dual-results.json"
 OUTPUT = ROOT / "reproductions" / "type-i-overflow-qadic-obstruction-transfer-results.json"
 EXPECTED_INPUT_SHA256 = (
-    "74724ef248bd13b5dbd0977ede341315f22302357b513c3f8b45602036d8101a"
+    "01755f31bdbb5747c340519b997a38f021575efe0ea1652bf38278b5bf832f21"
 )
 EXPECTED_CASE_COUNT = 12
 

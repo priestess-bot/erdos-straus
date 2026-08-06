@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "certificate_type": "type_i_high_r_chart_p3793_g_parent_nonreturn_v2",
+  "selector_status": "candidate_transition",
+  "recursive_edge_eligible": false,
+  "proof_boundary": "the G-aware same-chart parent and F-to-F cofactor normal form prove a source-local non-return candidate.  It remains outside the global selector because no non-resetting phase rank has been proved; terminal-first already solves this prime by a direct Type I normal form.",
+  "prime": 3793,
+  "B_p": 3594816,
+  "core_anchor": {
+    "R": 3623,
+    "K": 3435510
+  },
+  "first_high_anchor": {
+    "Q": 1811,
+    "beta": 2,
+    "R": 7011,
+    "K": 6648181,
+    "fiber": {
+      "classification": "G",
+      "support_factorization": [
+        [
+          1811,
+          1
+        ],
+        [
+          3671,
+          1
+        ]
+      ],
+      "target_in_generated_subgroup": false,
+      "separator": {
+        "kind": "Legendre",
+        "modulus": 19,
+        "support_values": {
+          "1811": 1,
+          "3671": 1
+        },
+        "minus_one": -1
+      },
+      "signed_defect": {
+        "status": "not_applicable",
+        "reason": "G_support_separator"
+      },
+      "conditions": {
+        "conductor_divides_modulus": true,
+        "support_is_character_trivial": true,
+        "minus_one_is_character_nontrivial": true
+      }
+    },
+    "same_chart_parent_replay": {
+      "certificate_type": "overflow_same_chart_support_promotion",
+      "normal_form_replay_adapter": "high_r_same_chart_parent_replay_v1",
+      "selector_status": "verified_edge",
+      "recursive_edge_eligible": true,
+      "source_state": {
+        "equation_target": [
+          4,
+          3793
+        ],
+        "R": 7011,
+        "K": 6648181,
+        "absorbed_support": 1,
+        "state_class": "overflow",
+        "fiber_class": "G",
+        "source_tree_scope": "fresh_source_tree_only",
+        "state_id": "state:55dcf9b5afb691ccd8a976ad5e66a7dd28550c88dcb66f97bd11e171bbf6a1c0"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          3793
+        ],
+        "R": 7011,
+        "K": 6648181,
+        "absorbed_support": 1811,
+        "state_class": "overflow",
+        "fiber_class": "G",
+        "source_tree_scope": "fresh_source_tree_only",
+        "state_id": "state:69442ae993866bc7c0da38e3d1e096076a0954c6862de9fc0901eb14db9efd47"
+      },
+      "source_provenance": {
+        "state_origin": "universal_raw_default_entry_v1",
+        "source_tree_scope": "fresh_source_tree_only",
+        "root_bundle_adapter": "high_R_path_anchored_bundle_v1",
+        "root_anchor": [
+          1,
+          3622,
+          1
+        ]
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "fiber_certificate": {
+        "classification": "G",
+        "support_factorization": [
+          [
+            1811,
+            1
+          ],
+          [
+            3671,
+            1
+          ]
+        ],
+        "target_in_generated_subgroup": false,
+        "separator": {
+          "kind": "Legendre",
+          "modulus": 19,
+          "support_values": {
+            "1811": 1,
+            "3671": 1
+          },
+          "minus_one": -1
+        },
+        "signed_defect": {
+          "status": "not_applicable",
+          "reason": "G_support_separator"
+        },
+        "conditions": {
+          "conductor_divides_modulus": true,
+          "support_is_character_trivial": true,
+          "minus_one_is_character_nontrivial": true
+        }
+      },
+      "e1_e5": {
+        "E1": true,
+        "E2": true,
+        "E3": true,
+        "E4": true,
+        "E5": true
+      },
+      "checks": {
+        "root_entry": true,
+        "source_state": true,
+        "same_chart_successor": true,
+        "identity_lift": true,
+        "strict_support_potential": true,
+        "scope_propagated": true
+      },
+      "potential": {
+        "source": 3594816,
+        "successor": 1984
+      },
+      "edge_id": "edge:2a799fc561ca9c2b42d6ea48a40fe686677bcfd6ab524ca33a4ad9fd633779f9"
+    }
+  },
+  "formal_high_overflow": {
+    "Q": 7010,
+    "beta": 1,
+    "M": 12695110,
+    "R": 48491103,
+    "K": 45981688420,
+    "C": 3622,
+    "d": 171,
+    "n": 2289337,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          701,
+          1
+        ],
+        [
+          1811,
+          2
+        ]
+      ],
+      "witness": [
+        0,
+        -133,
+        -11,
+        1
+      ],
+      "witness_residue": 48491102,
+      "witness_l1": 145,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              5,
+              132
+            ],
+            [
+              701,
+              10
+            ]
+          ],
+          "value": 5262847090966829788613540580307217441928477799208484720325584349787812889917234561443226681376472697593271732330322265625
+        },
+        "D_plus": {
+          "factorization": [],
+          "value": 1
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        3793
+      ],
+      "R": 48491103,
+      "K": 45981688420,
+      "absorbed_support": 1811,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:e95cf3627d4b1fcaa395add06b19749ff6140d7e0bc1a7673ad1cbe248d8876f"
+    }
+  },
+  "formal_nonreturn_target": {
+    "k": 3346,
+    "r": 3732,
+    "s": 673,
+    "R": 14255,
+    "K": 13517304,
+    "gcd_A_C": 1811,
+    "A_over_gcd": 1,
+    "A_C": 3622,
+    "C": 3732,
+    "d": 61,
+    "n": 233,
+    "checks": {
+      "nonreturn": true,
+      "cofactor_gate": true,
+      "strict_support_growth": true,
+      "r_chart": true,
+      "target_canonical_chart": true,
+      "target_overflow_normal_form": true
+    },
+    "fiber": {
+      "factors": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          311,
+          1
+        ],
+        [
+          1811,
+          1
+        ]
+      ],
+      "witness": [
+        -1,
+        -3,
+        -2,
+        9
+      ],
+      "witness_residue": 14254,
+      "witness_l1": 15,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              3,
+              2
+            ],
+            [
+              311,
+              1
+            ]
+          ],
+          "value": 2799
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              1811,
+              8
+            ]
+          ],
+          "value": 115703794676350757035541281
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        3793
+      ],
+      "R": 14255,
+      "K": 13517304,
+      "absorbed_support": 3622,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:3387c204d6ab120e6dfba70a79589db2c51b87f8d0037b199835f5d1f88d3dc5"
+    }
+  },
+  "candidate_e1_e5": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": true
+  },
+  "cofactor_normal_form": {
+    "source_state": true,
+    "construction": true,
+    "successor_state": true,
+    "source_tree_scope": true,
+    "parent_ledger": true,
+    "passed": true
+  },
+  "direct_terminal": {
+    "certificate_type": "type_i_normal_form_terminal",
+    "selector_status": "terminal_leaf",
+    "recursive_edge_eligible": false,
+    "normal_form": {
+      "gap": 7,
+      "A": 1,
+      "B": 1,
+      "C": 950,
+      "H": 542
+    },
+    "denominators": {
+      "x": 950,
+      "y": 514900,
+      "z": 1953015700
+    },
+    "checks": {
+      "normal_form": true,
+      "gap_divides_Bp_plus_A": true,
+      "denominator_parameters": true,
+      "unit_fraction_identity": true
+    }
+  },
+  "p_plus_four_factorization": [
+    [
+      3797,
+      1
+    ]
+  ],
+  "conclusion": {
+    "source_local_nonreturn_candidate": true,
+    "nonreturn_phase": 1,
+    "terminal_first_status": "terminal_leaf"
+  }
+}

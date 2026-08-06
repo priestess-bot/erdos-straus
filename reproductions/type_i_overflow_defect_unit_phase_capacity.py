@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "reproductions" / "type-i-overflow-qadic-obstruction-transfer-results.json"
 OUTPUT = ROOT / "reproductions" / "type-i-overflow-defect-unit-phase-capacity-results.json"
 EXPECTED_INPUT_SHA256 = (
-    "c6f529c74493f37a3acd6bbeca1a672bc8a5c35e6390c56d5462debc48228f1a"
+    "86a5427670661e4eeaf8e48ddde9ccb7811fbfbbeed1a084b1b3000730fcd30f"
 )
 
 

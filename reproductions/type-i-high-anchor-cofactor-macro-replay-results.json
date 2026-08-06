@@ -1,0 +1,608 @@
+{
+  "schema_version": 1,
+  "certificate_type": "high_anchor_cofactor_macro_replay_suite_v1",
+  "scope": "Independent macro replay only: parent -> H, deterministic bundle H -> S, and cofactor S -> T.  The global selector remains unchanged.",
+  "fixtures": [
+    {
+      "prime": 1201,
+      "fixture": "p1201_h0_F_F_F",
+      "macro": {
+        "certificate_type": "high_anchor_cofactor_macro_replay_v1",
+        "certificate_status": "verified_macro_replay",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": false,
+        "proof_boundary": "This standalone verifier closes a concrete macro E1--E5 receipt. It does not register the macro in the global selector or override terminal-first dispatch.",
+        "macro_edge_id": "macro:2bd28ac6da70082b1e7b4e709c1bcac7558a195b37b389ecd8ecf54766fcdf43",
+        "parent_edge_id": "edge:6c049f271b5389a2a66c93758780aa2d86c1cf8a6f9c1fee5eab7997a8524e02",
+        "parent_receipt_digest": "cd378ceb2d0e2f01c80c543046bb84f3affa0eb6747873a6bf2a9c2a4349170a",
+        "verifier_contract": {
+          "macro_replay_adapter": "high_anchor_cofactor_macro_replay_v1",
+          "parent_replay_adapter": "high_r_same_chart_parent_replay_v1",
+          "parent_verifier": "type_i_high_r_chart_two_anchor.verify_charged_parent_replay",
+          "fiber_verifier": "type_i_high_r_chart_two_anchor.fiber_certificate_is_valid",
+          "bundle_adapter": "high_R_path_anchored_bundle_v1",
+          "cofactor_derivation": "derive_cofactor_v1"
+        },
+        "anchor_state": {
+          "equation_target": [
+            4,
+            1201
+          ],
+          "R": 1839,
+          "K": 552160,
+          "absorbed_support": 986,
+          "state_class": "overflow",
+          "fiber_class": "F",
+          "source_tree_scope": "fresh_source_tree_only",
+          "state_id": "state:fd535d2004dcf0c8bb71b854d1c7e1dbe562c4de6653db31773e1130d0950dd4"
+        },
+        "intermediate_state": {
+          "equation_target": [
+            4,
+            1201
+          ],
+          "R": 2873071,
+          "K": 862639568,
+          "absorbed_support": 986,
+          "state_class": "overflow",
+          "fiber_class": "F",
+          "source_tree_scope": "fresh_source_tree_only",
+          "state_id": "state:5c1bb6ab9ea745f8b1245322b01f1770ef15f238d9c99c3cf1eb71a680420bac"
+        },
+        "target_state": {
+          "equation_target": [
+            4,
+            1201
+          ],
+          "R": 1839,
+          "K": 552160,
+          "absorbed_support": 27608,
+          "state_class": "overflow",
+          "fiber_class": "F",
+          "source_tree_scope": "fresh_source_tree_only",
+          "state_id": "state:36befe51867053ba117b9e1f0f53f2df3306f50782127f62643a08e609baded0"
+        },
+        "bundle_digest": "1f2c3eee9e337cc86905ac16ab48188cd257a4b41577250220249abb1bb15ec1",
+        "cofactor": {
+          "M": 906134,
+          "R_M": 2873071,
+          "K_M": 862639568,
+          "C": 952,
+          "d": 249,
+          "n": 751465,
+          "k": 754,
+          "r": 580,
+          "s": 481,
+          "R_T": 1839,
+          "K_T": 552160,
+          "g": 34,
+          "a": 29,
+          "A_T": 27608,
+          "C_T": 20,
+          "d_T": 1181,
+          "n_T": 108593
+        },
+        "links": {
+          "parent_successor_is_anchor": true,
+          "bundle_source_is_anchor": true,
+          "bundle_output_is_intermediate": true,
+          "cofactor_source_is_intermediate": true,
+          "cofactor_target_is_target": true,
+          "scope_propagated": true
+        },
+        "typed_fibers": {
+          "anchor": {
+            "classification": "F",
+            "target_fiber": {
+              "status": "nonempty",
+              "witness": [
+                0,
+                0,
+                -2,
+                2,
+                -3
+              ]
+            },
+            "signed_defect": {
+              "status": "defined",
+              "data": {
+                "orientation": "canonical_minimum_l1_then_lexicographic",
+                "D_minus": {
+                  "factorization": [
+                    [
+                      7,
+                      1
+                    ],
+                    [
+                      29,
+                      2
+                    ]
+                  ],
+                  "value": 5887
+                },
+                "D_plus": {
+                  "factorization": [
+                    [
+                      17,
+                      1
+                    ]
+                  ],
+                  "value": 17
+                }
+              }
+            }
+          },
+          "intermediate": {
+            "classification": "F",
+            "target_fiber": {
+              "status": "nonempty",
+              "witness": [
+                -2,
+                1,
+                19,
+                1,
+                -13
+              ]
+            },
+            "signed_defect": {
+              "status": "defined",
+              "data": {
+                "orientation": "canonical_minimum_l1_then_lexicographic",
+                "D_minus": {
+                  "factorization": [
+                    [
+                      919,
+                      12
+                    ]
+                  ],
+                  "value": 362899305136334267124119218581291361
+                },
+                "D_plus": {
+                  "factorization": [
+                    [
+                      17,
+                      17
+                    ]
+                  ],
+                  "value": 827240261886336764177
+                }
+              }
+            }
+          },
+          "target": {
+            "classification": "F",
+            "target_fiber": {
+              "status": "nonempty",
+              "witness": [
+                0,
+                0,
+                -2,
+                2,
+                -3
+              ]
+            },
+            "signed_defect": {
+              "status": "defined",
+              "data": {
+                "orientation": "canonical_minimum_l1_then_lexicographic",
+                "D_minus": {
+                  "factorization": [
+                    [
+                      7,
+                      1
+                    ],
+                    [
+                      29,
+                      2
+                    ]
+                  ],
+                  "value": 5887
+                },
+                "D_plus": {
+                  "factorization": [
+                    [
+                      17,
+                      1
+                    ]
+                  ],
+                  "value": 17
+                }
+              }
+            }
+          },
+          "marked_solution_lift": {
+            "source": "Sol(p)",
+            "successor": "Sol(p)",
+            "lift": "identity",
+            "direction": "T_to_H"
+          }
+        },
+        "phase": {
+          "h": 0,
+          "h_integral": true,
+          "h_in_three_phase_window": true,
+          "chart_difference": true,
+          "not_full_state_stutter": true
+        },
+        "lambda_p": {
+          "source": [
+            365,
+            6
+          ],
+          "target": [
+            13,
+            3
+          ],
+          "strict_lexicographic_decrease": true
+        },
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        }
+      },
+      "terminal_first": {
+        "certificate_type": "type_i_normal_form_terminal",
+        "selector_status": "terminal_leaf",
+        "gap": 1043,
+        "parameters": {
+          "A": 1,
+          "B": 33
+        },
+        "denominators": {
+          "x": 561,
+          "y": 646,
+          "z": 25602918
+        }
+      },
+      "terminal_note": "same-bundle exhaustion reaches the formal low-chart Type I leaf"
+    },
+    {
+      "prime": 60913,
+      "fixture": "p60913_h2_G_G_F",
+      "macro": {
+        "certificate_type": "high_anchor_cofactor_macro_replay_v1",
+        "certificate_status": "verified_macro_replay",
+        "selector_status": "analysis_evidence",
+        "recursive_edge_eligible": false,
+        "proof_boundary": "This standalone verifier closes a concrete macro E1--E5 receipt. It does not register the macro in the global selector or override terminal-first dispatch.",
+        "macro_edge_id": "macro:0cd1fe5fbd9eb76c07f91aeefade9eda2241bf8b10acefca8fad8e29d73c471e",
+        "parent_edge_id": "edge:f05320a2f6b56c7ece46ac4db37c0ea397028378d80d6a251df255ede8bbf728",
+        "parent_receipt_digest": "fb2cd6b8425b098b98fc1b042b28796ab8d1a95893f1f95c69bb0d2ea9a21b9e",
+        "verifier_contract": {
+          "macro_replay_adapter": "high_anchor_cofactor_macro_replay_v1",
+          "parent_replay_adapter": "high_r_same_chart_parent_replay_crt_parity_v1",
+          "parent_verifier": "type_i_high_r_chart_60913_h2_nonreturn.verify_charged_parent_replay",
+          "fiber_verifier": "type_i_high_r_chart_60913_h2_nonreturn.fiber_certificate_is_valid",
+          "bundle_adapter": "high_R_path_anchored_bundle_v1",
+          "cofactor_derivation": "derive_cofactor_v1"
+        },
+        "anchor_state": {
+          "equation_target": [
+            4,
+            60913
+          ],
+          "R": 72259,
+          "K": 1100378117,
+          "absorbed_support": 18647,
+          "state_class": "overflow",
+          "fiber_class": "G",
+          "source_tree_scope": "fresh_source_tree_only",
+          "state_id": "state:5ce7aaa35aea07a6c5800a01301e9d6575873dab2fe6166ec6359f2028ef4896"
+        },
+        "intermediate_state": {
+          "equation_target": [
+            4,
+            60913
+          ],
+          "R": 4949657351,
+          "K": 75374619555366,
+          "absorbed_support": 18647,
+          "state_class": "overflow",
+          "fiber_class": "G",
+          "source_tree_scope": "fresh_source_tree_only",
+          "state_id": "state:ba5ee801fc9ea5c61c8ad48bf0fb2c80c0437ecdcb2ef7404fb017c656e9c2ef"
+        },
+        "target_state": {
+          "equation_target": [
+            4,
+            60913
+          ],
+          "R": 221435,
+          "K": 3372067539,
+          "absorbed_support": 55941,
+          "state_class": "overflow",
+          "fiber_class": "F",
+          "source_tree_scope": "fresh_source_tree_only",
+          "state_id": "state:29f93b919b126c3a2bcdf9a87fcf7465929b188984487da013a0cd8df09f6f47"
+        },
+        "bundle_digest": "896fb10bbfcea8a381e188220e2c783388925c8195b4079e0d6ea4ef34310e3e",
+        "cofactor": {
+          "M": 1347394926,
+          "R_M": 4949657351,
+          "K_M": 75374619555366,
+          "C": 55941,
+          "d": 4972,
+          "n": 439922353,
+          "k": 22119,
+          "r": 60279,
+          "s": 19681,
+          "R_T": 221435,
+          "K_T": 3372067539,
+          "g": 18647,
+          "a": 1,
+          "A_T": 55941,
+          "C_T": 60279,
+          "d_T": 634,
+          "n_T": 2329
+        },
+        "links": {
+          "parent_successor_is_anchor": true,
+          "bundle_source_is_anchor": true,
+          "bundle_output_is_intermediate": true,
+          "cofactor_source_is_intermediate": true,
+          "cofactor_target_is_target": true,
+          "scope_propagated": true
+        },
+        "typed_fibers": {
+          "anchor": {
+            "classification": "G",
+            "target_fiber": {
+              "status": "empty",
+              "emptiness_certificate": {
+                "kind": "crt_discrete_log_parity",
+                "components": [
+                  {
+                    "modulus": 11,
+                    "primitive_root": 2,
+                    "factor_logs": [
+                      [
+                        29,
+                        7
+                      ],
+                      [
+                        643,
+                        4
+                      ],
+                      [
+                        59011,
+                        7
+                      ]
+                    ],
+                    "minus_one_log": 5
+                  },
+                  {
+                    "modulus": 6569,
+                    "primitive_root": 3,
+                    "factor_logs": [
+                      [
+                        29,
+                        1737
+                      ],
+                      [
+                        643,
+                        4000
+                      ],
+                      [
+                        59011,
+                        3015
+                      ]
+                    ],
+                    "minus_one_log": 3284
+                  }
+                ],
+                "support_parity": {
+                  "29": 0,
+                  "643": 0,
+                  "59011": 0
+                },
+                "minus_one_parity": 1
+              }
+            },
+            "signed_defect": {
+              "status": "not_applicable",
+              "reason": "CRT_discrete_log_parity_separator"
+            }
+          },
+          "intermediate": {
+            "classification": "G",
+            "target_fiber": {
+              "status": "empty",
+              "emptiness_certificate": {
+                "kind": "crt_discrete_log_parity",
+                "components": [
+                  {
+                    "modulus": 37,
+                    "primitive_root": 2,
+                    "factor_logs": [
+                      [
+                        2,
+                        1
+                      ],
+                      [
+                        3,
+                        26
+                      ],
+                      [
+                        29,
+                        21
+                      ],
+                      [
+                        643,
+                        33
+                      ],
+                      [
+                        12043,
+                        17
+                      ]
+                    ],
+                    "minus_one_log": 18
+                  },
+                  {
+                    "modulus": 677,
+                    "primitive_root": 2,
+                    "factor_logs": [
+                      [
+                        2,
+                        1
+                      ],
+                      [
+                        3,
+                        479
+                      ],
+                      [
+                        29,
+                        229
+                      ],
+                      [
+                        643,
+                        350
+                      ],
+                      [
+                        12043,
+                        585
+                      ]
+                    ],
+                    "minus_one_log": 338
+                  },
+                  {
+                    "modulus": 197599,
+                    "primitive_root": 3,
+                    "factor_logs": [
+                      [
+                        2,
+                        166274
+                      ],
+                      [
+                        3,
+                        1
+                      ],
+                      [
+                        29,
+                        123248
+                      ],
+                      [
+                        643,
+                        71787
+                      ],
+                      [
+                        12043,
+                        99096
+                      ]
+                    ],
+                    "minus_one_log": 98799
+                  }
+                ],
+                "support_parity": {
+                  "2": 0,
+                  "3": 0,
+                  "29": 0,
+                  "643": 0,
+                  "12043": 0
+                },
+                "minus_one_parity": 1
+              }
+            },
+            "signed_defect": {
+              "status": "not_applicable",
+              "reason": "CRT_discrete_log_parity_separator"
+            }
+          },
+          "target": {
+            "classification": "F",
+            "target_fiber": {
+              "status": "nonempty",
+              "witness": [
+                -5,
+                -2,
+                5,
+                0,
+                -5
+              ]
+            },
+            "signed_defect": {
+              "status": "defined",
+              "data": {
+                "orientation": "canonical_minimum_l1_then_lexicographic",
+                "D_minus": {
+                  "factorization": [
+                    [
+                      3,
+                      3
+                    ],
+                    [
+                      29,
+                      1
+                    ],
+                    [
+                      643,
+                      4
+                    ]
+                  ],
+                  "value": 133846079195583
+                },
+                "D_plus": {
+                  "factorization": [
+                    [
+                      71,
+                      4
+                    ]
+                  ],
+                  "value": 25411681
+                }
+              }
+            }
+          },
+          "marked_solution_lift": {
+            "source": "Sol(p)",
+            "successor": "Sol(p)",
+            "lift": "identity",
+            "direction": "T_to_H"
+          }
+        },
+        "phase": {
+          "h": 2,
+          "h_integral": true,
+          "h_in_three_phase_window": true,
+          "chart_difference": true,
+          "not_full_state_stutter": true
+        },
+        "lambda_p": {
+          "source": [
+            49743,
+            1
+          ],
+          "target": [
+            16581,
+            3
+          ],
+          "strict_lexicographic_decrease": true
+        },
+        "e1_e5": {
+          "E1": true,
+          "E2": true,
+          "E3": true,
+          "E4": true,
+          "E5": true
+        }
+      },
+      "terminal_first": {
+        "certificate_type": "type_i_normal_form_terminal",
+        "selector_status": "terminal_leaf",
+        "gap": 7,
+        "parameters": {
+          "A": 1,
+          "B": 1
+        },
+        "denominators": {
+          "x": 15230,
+          "y": 132531460,
+          "z": 8072888822980
+        }
+      },
+      "terminal_note": "gap-7 direct Type I terminal preempts recursive enqueueing"
+    }
+  ]
+}

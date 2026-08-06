@@ -36,6 +36,7 @@ used_by:
 - type-I-universal-p-source-capacity-anchor-orbit
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
 - type-I-overflow-fixed-n-bounded-divisor-saturation
+- type-I-overflow-cofactor-r-chart-support
 - type-I-overflow-outer-rank-reset
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
@@ -100,6 +101,7 @@ S\longrightarrow T
 | modulus_context | 合法模数 \(R_S\)、同余类型和定义 \(R_S\) 的整数恒等式 | 检查正性、奇偶、所需模 \(4\) 类、互素性及全部整除条件 |
 | K_context | \(K_S\)、完整素因子赋值 \(\nu_{S,q}=v_q(K_S)\) 与支撑 \(\mathcal Q_S\) | 重乘得到 \(K_S\)；根线性状态还须验证 \(4K_S=p_0R_S+1\) |
 | absorbed_support | 默认取 \(1\)；兼容字段名保留，但语义扩展为 charged support \(A_S\mid K_S\) | verifier 重算整除；边回执记录 bundle 或 overflow-determinant provenance；该字段只增不减，除非由更外层秩支付重置 |
+| source_tree_scope | 来源树域：通常为 `charged_history_only`；结构化 raw 默认根及其后继为 `fresh_source_tree_only` | 纳入 state_id；`fresh_source_tree_only` 只能由具名 root-entry 创建并沿边原样传播，任何 charged-history 入边都不得生成它 |
 | target_fiber | \(\phi_S(z)=\prod_{q\in\mathcal Q_S}q^{z_q}\bmod R_S\)、目标相位 \(\tau_S\)、关系格 \(\Lambda_S=\ker\phi_S\) 和带类型的纤维状态 | F/hit 记录规范见证；G 记录 `status=empty` 及分离角色，不伪造纤维元素 |
 | signed_defect | F/hit 对一个**全局定向**见证 \(z\) 记录 \(D^-(z),D^+(z)\)；G 记录 `status=not_applicable` | 非空时必须按式 (1) 重算；不得逐坐标拼接 \(z\) 与 \(-z\)，也不得用零向量冒充 G 态缺陷 |
 | certificate_context | F/G 分类以及实际使用的规范 Fourier 角色、关系格基或加法组合证书 | 写明规范选择规则、完备性范围、哈希或精确代数见证 |
@@ -300,7 +302,7 @@ W_S=\operatorname{Sol}(4,p_0),
 A_S\mid K_S.
 \]
 
-该子类型的 state_id 由版本号、\(p_0,R_S,A_S\) 生成；\(K_S\)、完整因子分解、
+该子类型的 state_id 由版本号、\(p_0,R_S,A_S,\texttt{source\_tree\_scope}\) 生成；\(K_S\)、完整因子分解、
 目标纤维、F/G/hit、规范见证或分离角色、带符号缺陷及势均从这些字段确定性重算。
 重图表时不得继承旧 F/G 标签，也不得只记录新的模数。
 
@@ -347,6 +349,14 @@ verifier 检查 \(V>0\)、\((U,V)=1\)、\(p\nmid K\)，再重放唯一的 \(q=p,
 边并核对终点为 \((1,R-1,1)\)、gcd reduction 为 \(1\)。因此 G 的空目标纤维不再意味
 没有实际形式源；该边只承担 E1 path provenance，不是递归状态边。证明见
 [通用 \(p\) 源与容量锚点轨道](../claims/type-I-universal-p-source-capacity-anchor-orbit.md)。
+
+一个更窄的根构造可把该 raw source 接到新鲜的默认支撑：只有同一回执额外序列化
+`state_origin=universal_raw_default_entry_v1`、`state_scope=fresh_source_tree_only`、
+\(A=1\) 的 anchor orbit 和 complete-excess bundle 时，才允许创建该 source tree 的
+默认根。这个入口本身仍不是递归边，也不能从任意 \(A>1\) 的 charged history 调用来
+重置支撑；它只为随后的 path-anchored bundle/overflow 产生一个 source-local 的合法
+前提。该根和它的后继必须把 `source_tree_scope=fresh_source_tree_only` 写入状态；
+选择器只允许它在这里创建并沿边原样传播。缺少这个结构化入口时，raw source 仍只承担 E1。
 
 charged support 的允许来源现在有两类，必须在边回执中区分：
 
@@ -446,6 +456,47 @@ same-chart support promotion 边完整满足 E1--E5，但目标仍为
 overflow。若 \(M>B_p\)，该同图表升级不在当前势域内，必须进入 alternate、终端或
 新的外层秩分支。完整主张与 12 行聚焦回放见
 [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
+
+### overflow 的 cofactor-supported r-chart 支撑升级
+
+另一个独立的 `overflow_cofactor_r_chart_support_v1` 正规形只适用于带完整来源的
+overflow。设
+
+\[
+pn=4Md+1,\qquad M=kp+r,\qquad C=p-d,\qquad
+g=(A,C),\qquad a=A/g,\qquad A_C=\operatorname{lcm}(A,C)=Ca.
+\]
+
+令 \(s=(4rd+1)/p\)、\(R_r=4r-s\)、\(K_r=rC\)。接收门必须逐项重算
+
+\[
+a\mid r\Longleftrightarrow A_C\mid K_r,\qquad
+p<R_r,\qquad
+\operatorname{canonical\_chart}(p,A_C)=(R_r,K_r),
+\]
+
+并要求 \(A<A_C\le B_p\) 与
+\(\lfloor B_p/A_C\rfloor<\lfloor B_p/A\rfloor\)。来源必须保存 universal raw source、
+anchor、complete-excess bundle 和原 determinant；若 \(A>1\)，还必须保存并经具名
+normal-form verifier 重放把 support 合法收费到 \(A\) 的父回执。默认 \(A=1\) 也必须来自结构化
+`universal_raw_default_entry_v1`，且只在新鲜 source tree 内建立；绝不能借此抹去
+另一条已收费状态的 ledger。缺少任一来源条件只能是 `analysis_evidence`。
+
+这里的后继载体是 \(M_T=A_C\)，不是余数 \(r\)。令
+
+\[
+C_T=r/a,\qquad d_T=p-C_T,\qquad n_T=4A_C-R_r,
+\]
+
+则 \(K_r=M_TC_T\) 和 \(pn_T=4M_Td_T+1\)，所以目标重新闭合在现有 overflow
+状态类型。E4 仍须显式取 \(W_S=W_T=\operatorname{Sol}(p)\) 和恒等 lift，并重算
+source/target 的完整 F/G 类型；F/hit 还须重算同一全局定向的 \(D^-,D^+\)。
+`r=M` 只是 `same_chart` 标记，不能作为拒绝条件。
+
+当前回执有两个新鲜 source-tree 默认支撑的 source-local candidate 控制及一个父 ledger
+缺失的分析边界。前两者的 absorbed-support 势严格下降，但尚未接入禁止后续 reset 的全局
+phase scheduler，故不标为递归 `verified_edge`。详见
+[overflow 的余因子支撑 r-图表候选与同图表正控制](../claims/type-I-overflow-cofactor-r-chart-support.md)。
 
 同一 overflow receipt 还可生成 `overflow_carrier_reset_v1` 候选。取任一对偶小图表
 \(t\in\{d,r\}\) 且 \(R_t<p\)，则有严格整数下降 \(t<M\)。该候选保持

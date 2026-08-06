@@ -317,7 +317,10 @@ recursive_edge_eligible = false
 \]
 
 该数值与相位债务同为 \([1,36]\)，但 `carrier_mapping_status` 仍为
-`unproved`，不承担任何跨状态容量结论。
+`unproved`，不承担任何跨状态容量结论。现在可以把这一步精确分成 q-primary
+phase-lift 三分：有独立标签映射才进入相位树容量，局部无标签或联合 Hall 缺口则保留
+对应阻碍回执，详见
+[Fourier q-primary 相位到算术载体的有限提升—容量二分](type-I-fourier-qprimary-phase-lift-capacity-dichotomy.md)。
 
 ## 研究作用与边界
 

@@ -1,0 +1,898 @@
+{
+  "schema_version": 2,
+  "certificate_type": "type_i_high_anchor_frozen_same_chart_parent_envelope_atlas_v1",
+  "input": {
+    "path": "reproductions/type-i-representation-dual-capacity-selector-results.json",
+    "sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7"
+  },
+  "scope": "One-family read-only reconstruction of frozen same-chart verified parents. It neither runs the selector nor converts envelopes into selector edges.",
+  "six_family_audit": {
+    "high_parent_occurrences_by_normal_form": {
+      "overflow_fixed_n_bounded_divisor_outer_rank_v1": 12,
+      "overflow_fixed_n_outer_rank_reset_v1": 6,
+      "overflow_fixed_s_bounded_divisor_outer_rank_v1": 10,
+      "overflow_fixed_s_outer_rank_reset_v1": 7,
+      "overflow_outer_rank_reset_v1": 5,
+      "overflow_same_chart_support_promotion_v1": 11
+    },
+    "total_strict_high_parent_occurrences": 51,
+    "selected_family_adapter_additions": [
+      "content_addressed_state_ids_in_frozen_scope",
+      "legacy_receipt_digest_bound_to_input_artifact",
+      "named_replay_adapter_and_checks_for_same_chart_family"
+    ],
+    "macro_information_not_added_by_this_adapter": [
+      "local_H_S_T_FG_or_hit_reclassification",
+      "terminal_or_alternate_first_menu"
+    ],
+    "selected_family_reason": "The same-chart family has no hidden branch choice after its receipt is fixed: the exact source/successor chart, M/A>=2, determinant, canonicality, and absorbed-support rank are all recomputable from the receipt itself.",
+    "full_macro_no_go_from_legacy_alone": "This one-family adapter does not add local F/G/hit certificates for H, S, and T or a terminal-first result. A global Sol(p) identity marking does not substitute for those missing local proofs."
+  },
+  "summary": {
+    "family_verified_receipt_occurrences": 11,
+    "strict_high_anchor_occurrences": 11,
+    "verified_frozen_parent_envelopes": 11,
+    "selector_edges_registered": 0,
+    "full_macro_E4_certificates_constructed": 0
+  },
+  "envelopes": [
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 359,
+        "K": 6552,
+        "absorbed_support": 7,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:2fc5661f28618e171d6bcc6d637d0ba989a22d2579acfce1998cd360619e963c"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 359,
+        "K": 6552,
+        "absorbed_support": 91,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:de3916a77ece45b16faa6583547e88c70761632bf5367195526401b50363b1df"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "7f14873a9ded6a8dc15e405748cfb1bef96888c2fdc81f83a7e9ce45d6301cf3",
+        "legacy_edge_id": "edge:77c2f120ea6a3833884b9b3b1f7dccd58895e27ea077d4855a129e5d4b1f67fa",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:7560b7761a6211e2def44c3f123689fb8c3b5e372e9a82c50a8ea08f77dd3064"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          409
+        ],
+        "R": 511,
+        "K": 52250,
+        "absorbed_support": 5,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:a396d0227b5f7fbecdedf9dff12bfb8e7b94985909f845feecf5cda15dbb5f2a"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          409
+        ],
+        "R": 511,
+        "K": 52250,
+        "absorbed_support": 250,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:72c2f77d7a763a3883497607c37bd9180950c87be36d0469dbdfaf2400280289"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "b1b733171a740785c34b4899cc7b7dee3c1fdac3d3e8bd534acb7108e5063624",
+        "legacy_edge_id": "edge:95d219198fbdb85c4d211247dddc0ce03209d8a139745dfba4a07076ceb99581",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:2a67a3849b1cb49d7f3fa1647e797988f0a6100d5003353c7ac9133056cdc798"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          241
+        ],
+        "R": 719,
+        "K": 43320,
+        "absorbed_support": 38,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:3a01616f603306c34868b3b1eec16bd79eda6469e372672bf6539df23aaa5bc1"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          241
+        ],
+        "R": 719,
+        "K": 43320,
+        "absorbed_support": 190,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:58658100adfbac8cbca7099fa8aad91f81511cbecc3ba5933cfd4afd014c2768"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "7dc373ab7bd122146d7f0a50d550cf05f30cdf7a20aa6be5981670329e0bb9c4",
+        "legacy_edge_id": "edge:2b89802d57198a0b963bebd92ccc8623f5cb5dcd1a18c950857a0a6ad7bde0c4",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:38049b168d4b7673e9202878f8edb2ac65b1c6e4f1f20140d21a0626a7ee3b36"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 127,
+        "K": 2318,
+        "absorbed_support": 19,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:b528abe70bf8ec1d36fdd2801aec8d5a80296a242e12966d17a6101adcf90dea"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 127,
+        "K": 2318,
+        "absorbed_support": 38,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:1e1edee05a9d29a7109cad8b08182a9d5847c3fb26d6883717927e6e482470a0"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "da393b1ca3c929a1085f96a78ef4c6f75f0103ada0d6caf51c71b4299afd338a",
+        "legacy_edge_id": "edge:c812417ad1f11002aff3f620eff6895faa88f0352f741841aaa818818c86740b",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:0f38e0c77eb5d4844534be619dfc5aad40937f26736d34e9409f83714911f8b7"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 1799,
+        "K": 32832,
+        "absorbed_support": 19,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:6bba0c4b7d254eaea0e73c95ada0e5fad775bfac880d5d5669833053475b1cb7"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 1799,
+        "K": 32832,
+        "absorbed_support": 608,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:f245bf9c7afba24a99e241260286fc17f4defc37491802cae36b29259ac2a4f1"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "10dc143250e5ca102a672c19d3ebb0d7a0b3ad5af1b5c993b34fc90ce0c5001c",
+        "legacy_edge_id": "edge:02bd7c0e2812229a17bbcc23f290425ae97106c9d379740929092fd44b290494",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:a18e051e1dc4d8e3153ce631337f8bd9e9cbd1c7da169d95441dd927dab92a67"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 1191,
+        "K": 21736,
+        "absorbed_support": 19,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:708f1a5c0320b31b1d768fa0d8ed4794f3e0cad85b92aa543adc51f5ce04aa80"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 1191,
+        "K": 21736,
+        "absorbed_support": 836,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:197209a9bef57195214cd3ff9ed19f6127d3ce0205ace243b97255836f81ae8f"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "58804a5c72b739826f80130ee7d15e9007f83f7df953cc01a73957dbb3a034b6",
+        "legacy_edge_id": "edge:b66942d3ab49a48f0b18809567fb094733a568e3fd0e4a7ac3bd6b417986e388",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:d18e99e25b57ff2874f482e591df5f39d2f17f0f30584953fddbb03990505ab0"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 2863,
+        "K": 52250,
+        "absorbed_support": 19,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:7d10a8a589591ad235bb89374657a3be955c27977bfe2acdd78edd9c89dce343"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 2863,
+        "K": 52250,
+        "absorbed_support": 950,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:bd6a77f4bcc7e8bb311e29b230bc2aa78eade72fb412cb85409f95de7f0df77f"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "da7f7f6372bf8b15ed942f90d9b073182c94ca07477be95fcefe7758bafe0399",
+        "legacy_edge_id": "edge:9b9f068e49b2b84ab1d5ac5dd804ed04ba647b56cf1e625de22b0e5a528ab7a8",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:316405ba67fea119532a98ec21dd63dcc1d924b6cb6abbe4d095459a8b4d4c03"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 95,
+        "K": 1734,
+        "absorbed_support": 1,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:2687b5c4815cc1c25c0d71780ccc6eec9f953c50035d505acbcf969410cf695b"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 95,
+        "K": 1734,
+        "absorbed_support": 34,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:9b496a31ffb09e4d254ddffd175d2b0d36c069688a95b87a4b0c6cf1007171b7"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "3bf77bcd0fdb6420f99d0f89ea1116a31b5856430065f142d152696dae392b32",
+        "legacy_edge_id": "edge:829e136078b5f225ac62f9d0fc19a90b33053ac5ff6edc77cc3696ae259b988f",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:7808b771e436f1ae44c633ff387c1d1bb75a889c4cfeba912f5dc062b1688e0c"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          241
+        ],
+        "R": 251,
+        "K": 15123,
+        "absorbed_support": 1,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:5f8205d7132ef813f47aaaa08f50d1bb8cb3752722994d8a9a20af12614b0272"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          241
+        ],
+        "R": 251,
+        "K": 15123,
+        "absorbed_support": 71,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:b04ddf7637b3c63bc8e569ebd7fd518072f6559e36dc29be4f9f915f0c760a31"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "d5162b25ad6b0b7c43b3daccb2efaa70aabf1c6688aa06beb0fa31455cd82296",
+        "legacy_edge_id": "edge:6bbce81ee03df684e11621bf5fb8698cf1c1b98784dd6ebca0e92fc94cceca7a",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:b426c07abba9044e68f4145ae3d92b745978e94b6a6cf04c463292fc0b2d96b8"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 1367,
+        "K": 24948,
+        "absorbed_support": 66,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:fa07353d4997a33f98c9b1660ba08fda1269c50efbfb8d699d1340ecfa5ac5a4"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          73
+        ],
+        "R": 1367,
+        "K": 24948,
+        "absorbed_support": 924,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:6cfac7b464f810158802aa5c6ef0015408260688d93b7854ce9d438ba22b8970"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "fb9f3b460d047f9cbc2c9635f461214bce2537c3a27d0503210504534c07a9e7",
+        "legacy_edge_id": "edge:7dac2c7092d6bb1527d21cff56942f12a414f7ac66b8ab82ae7a6b15d4268b8e",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:a998962075ca473bcefb69c090e012b6e6b9a2409267d1ba58fd7cd8194e7415"
+    },
+    {
+      "certificate_type": "frozen_same_chart_parent_envelope",
+      "normal_form_replay_adapter": "frozen_same_chart_parent_envelope_v1",
+      "adapter_version": 2,
+      "selector_status": "analysis_evidence",
+      "recursive_edge_eligible": false,
+      "parent_api_status": "verified_frozen_envelope",
+      "scope_semantics": "Finite content-addressed evidence namespace only; this does not recover or assert a live global selector-tree origin.",
+      "source_state": {
+        "equation_target": [
+          4,
+          241
+        ],
+        "R": 1103,
+        "K": 66456,
+        "absorbed_support": 8,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:a233c629f41c0f1d1b42113abf0c6487361b2048c2ce870c1564f5125c220b1c"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          241
+        ],
+        "R": 1103,
+        "K": 66456,
+        "absorbed_support": 568,
+        "state_class": "overflow",
+        "fiber_class": "global_solution_marking",
+        "source_tree_scope": "frozen_selector_artifact_sha256:d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "state_id": "state:4130b44d0bd1c770e197ec1c2962f3ad9ad4d90fad4c4f38b6b7c6438ebcfdf9"
+      },
+      "fiber_certificate": {
+        "kind": "global_solution_marking",
+        "status": "inherited_full_solution_set",
+        "marking": "Sol(p)",
+        "identity_lift": {
+          "source": "Sol(p)",
+          "successor": "Sol(p)",
+          "lift": "identity"
+        },
+        "legacy_target_fiber": {
+          "reason": "same canonical chart; support metadata only is promoted",
+          "status": "inherited_full_solution_set"
+        },
+        "local_chart_classification": "unclassified",
+        "reclassification_required": true
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "checks": {
+        "family_and_legacy_edge": true,
+        "source_and_successor_exact": true,
+        "determinant": true,
+        "canonical_same_chart_promotion": true,
+        "global_marking": true,
+        "high_canonical_successor": true
+      },
+      "legacy_binding": {
+        "artifact_sha256": "d5899f44423b64709384aa282a70cd6168f3380932456f0e8564256d2017aba7",
+        "legacy_receipt_digest": "6bdf11503d6f443a089283a824a7295b7a7845f367dced77b5388216ac406959",
+        "legacy_edge_id": "edge:3fa092f16434d95d351282b1482c9725918473ed841cb4d8d80cd28bd1d3a7a1",
+        "legacy_normal_form": "overflow_same_chart_support_promotion_v1",
+        "receipt_replayed_from_artifact": true
+      },
+      "macro_boundary": {
+        "parent_chain_content_addressed_in_frozen_scope": true,
+        "local_H_S_T_FG_reclassification": "not_carried",
+        "terminal_or_alternate_first_menu": "not_carried",
+        "global_selector_registration": "not_attempted"
+      },
+      "edge_id": "edge:350f018418165a344192aa0d46c130d29826ebc80227620b37269aa802c14ab4"
+    }
+  ]
+}

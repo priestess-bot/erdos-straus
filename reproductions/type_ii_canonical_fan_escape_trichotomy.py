@@ -11,6 +11,7 @@ critical stratum.  A primorial bound rules out an all-one-hole fan.
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import math
 from pathlib import Path
@@ -22,6 +23,18 @@ DEFAULT_OUTPUT = (
 )
 FOCUSED_PRIMES = (73, 97, 193, 241, 5281, 15601, 16633)
 EDGE_CASES = ((97, 16),)
+# These rows use the original (A, C) ray rather than the square-free
+# canonical representative.  They pin the higher 2^j-depth examples from
+# the independent divisor-residue audit.
+DEPTH_EDGE_CASES = (
+    (97, 16, 4, 1),
+    (3457, 64, 4, 4),
+    (14593, 64, 4, 4),
+)
+SHARED_FACTOR_DEPTH_EDGE_CASES = (
+    (433, 16, 4, 1),
+    (433, 100, 5, 4),
+)
 
 
 def is_prime(value: int) -> bool:
@@ -114,6 +127,517 @@ def unit_square_subgroup(modulus: int) -> frozenset[int]:
     )
 
 
+def unit_power_subgroup(modulus: int, power: int) -> frozenset[int]:
+    """Return U(modulus)^power exactly as a residue set."""
+    if modulus < 2 or power < 1:
+        raise ValueError("modulus must be at least two and power must be positive")
+    return frozenset(
+        pow(value, power, modulus)
+        for value in range(modulus)
+        if math.gcd(value, modulus) == 1
+    )
+
+
+def target_outside_two_power_depth(
+    support: frozenset[int], modulus: int
+) -> int | None:
+    """Return max d with -1 in support*U(modulus)^(2^d)."""
+    target = modulus - 1
+    if target in support:
+        return None
+    for depth in range(modulus.bit_length() + 1):
+        powers = unit_power_subgroup(modulus, 1 << (depth + 1))
+        saturation = {
+            left * right % modulus for left in support for right in powers
+        }
+        if target not in saturation:
+            return depth
+    raise AssertionError("two-power saturation did not terminate")
+
+
+def two_power_depth_profile(
+    support: frozenset[int], modulus: int
+) -> dict[str, object]:
+    """Record the exact saturation boundary used by the 2^j character lemma."""
+    target = modulus - 1
+    depth = target_outside_two_power_depth(support, modulus)
+    if depth is None:
+        return {
+            "status": "target_in_support",
+            "depth": None,
+            "minimal_character_order": None,
+            "previous_power": None,
+            "next_power": None,
+            "previous_saturation_contains_target": True,
+            "next_saturation_contains_target": True,
+            "saturation_witness": None,
+            "character_existence_status": "not_applicable",
+            "explicit_character_status": "not_applicable",
+        }
+
+    previous_power = 1 << depth
+    next_power = 1 << (depth + 1)
+    previous_subgroup = unit_power_subgroup(modulus, previous_power)
+    next_subgroup = unit_power_subgroup(modulus, next_power)
+    previous_saturation = {
+        left * right % modulus for left in support for right in previous_subgroup
+    }
+    next_saturation = {
+        left * right % modulus for left in support for right in next_subgroup
+    }
+    witness = None
+    if target in previous_saturation:
+        for support_value in sorted(support):
+            for base in range(1, modulus):
+                if math.gcd(base, modulus) != 1:
+                    continue
+                if (
+                    support_value * pow(base, previous_power, modulus) % modulus
+                    == target
+                ):
+                    witness = {
+                        "support_value": support_value,
+                        "base_unit": base,
+                        "power": previous_power,
+                    }
+                    break
+            if witness is not None:
+                break
+    if witness is None:
+        raise AssertionError("outside row lost its previous-layer saturation witness")
+    if target in next_saturation:
+        raise AssertionError("reported depth is not the first failed 2-power layer")
+    character_certificate = explicit_two_power_character(
+        support, modulus, next_power
+    )
+    return {
+        "status": (
+            "quadratic_separable" if depth == 0 else "quadratic_inseparable"
+        ),
+        "depth": depth,
+        "minimal_character_order": next_power,
+        "previous_power": previous_power,
+        "next_power": next_power,
+        "previous_saturation_contains_target": target in previous_saturation,
+        "next_saturation_contains_target": False,
+        "saturation_witness": witness,
+        "character_existence_status": "implied_by_two_power_character_depth_lemma",
+        "explicit_character_status": "constructed_on_generators",
+        "character_certificate": character_certificate,
+        "character_target_phase": -1,
+        "character_annihilates_support": True,
+    }
+
+
+def unit_order(value: int, modulus: int) -> int:
+    """Return the multiplicative order of a unit by exact iteration."""
+    if math.gcd(value, modulus) != 1:
+        raise ValueError("unit_order requires a unit")
+    current = 1 % modulus
+    for exponent in range(1, modulus * modulus + 1):
+        current = current * value % modulus
+        if current == 1 % modulus:
+            return exponent
+    raise AssertionError("unit order did not terminate")
+
+
+def generated_unit_subgroup(
+    generators: tuple[int, ...], modulus: int
+) -> frozenset[int]:
+    reached = {1 % modulus}
+    pending = [1 % modulus]
+    while pending:
+        value = pending.pop()
+        for generator in generators:
+            candidate = value * generator % modulus
+            if candidate not in reached:
+                reached.add(candidate)
+                pending.append(candidate)
+    return frozenset(reached)
+
+
+def unit_group_coordinates(
+    modulus: int,
+) -> tuple[tuple[int, ...], tuple[int, ...], dict[int, tuple[int, ...]], tuple[tuple[int, ...], ...]]:
+    """Return generators, their orders, coordinates, and all relation tuples."""
+    units = tuple(value for value in range(modulus) if math.gcd(value, modulus) == 1)
+    generators: list[int] = []
+    generated = frozenset({1 % modulus})
+    for value in units:
+        if value in generated:
+            continue
+        generators.append(value)
+        generated = generated_unit_subgroup(tuple(generators), modulus)
+    if generated != frozenset(units):
+        raise AssertionError("unit-group generator search did not close")
+    orders = tuple(unit_order(value, modulus) for value in generators)
+    coordinates: dict[int, tuple[int, ...]] = {}
+    relations: list[tuple[int, ...]] = []
+    ranges = [range(order) for order in orders]
+    for exponents in itertools.product(*ranges):
+        value = 1 % modulus
+        for generator, exponent in zip(generators, exponents):
+            value = value * pow(generator, exponent, modulus) % modulus
+        coordinates.setdefault(value, tuple(exponents))
+        if value == 1 % modulus:
+            relations.append(tuple(exponents))
+    if set(coordinates) != set(units):
+        raise AssertionError("unit-group coordinates are incomplete")
+    return tuple(generators), orders, coordinates, tuple(relations)
+
+
+def explicit_two_power_character(
+    support: frozenset[int], modulus: int, character_order: int
+) -> dict[str, object]:
+    """Construct a finite-generator certificate for the depth character."""
+    if character_order < 2 or character_order & (character_order - 1):
+        raise ValueError("character order must be a power of two")
+    generators, orders, coordinates, relations = unit_group_coordinates(modulus)
+    target = modulus - 1
+    for exponents in itertools.product(
+        range(character_order), repeat=len(generators)
+    ):
+        if any(
+            sum(relation * exponent for relation, exponent in zip(relation_tuple, exponents))
+            % character_order
+            for relation_tuple in relations
+        ):
+            continue
+        def character_exponent(value: int) -> int:
+            coordinate = coordinates[value]
+            return sum(
+                coordinate_exponent * exponent
+                for coordinate_exponent, exponent in zip(coordinate, exponents)
+            ) % character_order
+
+        if character_exponent(target) != character_order // 2:
+            continue
+        if any(character_exponent(value) != 0 for value in support):
+            continue
+        if math.gcd(character_order, *exponents) != 1:
+            continue
+        return {
+            "character_type": "higher_order_two_power",
+            "character_order": character_order,
+            "generator_residues": list(generators),
+            "generator_orders": list(orders),
+            "generator_exponents": list(exponents),
+            "target_exponent": character_order // 2,
+            "support_exponents": [
+                [value, character_exponent(value)] for value in sorted(support)
+            ],
+            "relation_count": len(relations),
+            "image_order_verified": character_order,
+        }
+    raise AssertionError("depth lemma character was not constructed")
+
+
+def character_exponent_from_certificate(
+    value: int, modulus: int, certificate: dict[str, object]
+) -> int:
+    """Evaluate a stored generator-level character exactly."""
+    if math.gcd(value, modulus) != 1:
+        raise ValueError("character evaluation requires a unit")
+    generators, _, coordinates, _ = unit_group_coordinates(modulus)
+    expected_generators = tuple(int(item) for item in certificate["generator_residues"])
+    if generators != expected_generators:
+        raise AssertionError("character generator basis changed during evaluation")
+    coordinate = coordinates[value % modulus]
+    exponents = tuple(int(item) for item in certificate["generator_exponents"])
+    character_order = int(certificate["character_order"])
+    return sum(left * right for left, right in zip(coordinate, exponents)) % character_order
+
+
+def core_character_profile(
+    prime: int, modulus: int, certificate: dict[str, object]
+) -> dict[str, object]:
+    """Measure the character on the core-prime residue subgroup."""
+    core_modulus = math.gcd(modulus, 24)
+    core_residues = tuple(
+        value
+        for value in range(modulus)
+        if math.gcd(value, modulus) == 1 and value % core_modulus == 1
+    )
+    image = sorted(
+        {
+            character_exponent_from_certificate(value, modulus, certificate)
+            for value in core_residues
+        }
+    )
+    return {
+        "core_congruence_modulus": core_modulus,
+        "core_residue_count": len(core_residues),
+        "core_character_image": image,
+        "core_character_image_order": len(image),
+        "core_character_active": len(image) > 1,
+        "observed_prime_residue": prime % modulus,
+        "observed_prime_phase": character_exponent_from_certificate(
+            prime, modulus, certificate
+        ),
+    }
+
+
+def q_adic_shift_capacity_profile(
+    prime: int,
+    shifts: tuple[int, ...],
+    q: int,
+    valuations: tuple[int, ...],
+) -> dict[str, object]:
+    """Evaluate the finite-shift q-adic capacity inequality."""
+    if q <= 2 or not is_prime(q):
+        raise ValueError("q-adic capacity requires an odd prime")
+    if len(shifts) != len(valuations) or not shifts:
+        raise ValueError("shifts and valuations must be nonempty and aligned")
+    if any(valuation < 0 for valuation in valuations):
+        raise ValueError("valuations must be nonnegative")
+    max_level = max(valuations)
+    levels = []
+    demand = 0
+    capacity = 0
+    for level in range(1, max_level + 1):
+        modulus = q**level
+        target_residue = (
+            -prime * pow(4, -1, modulus)
+        ) % modulus
+        classes: dict[str, list[int]] = {}
+        for index, shift in enumerate(shifts):
+            residue = shift % modulus
+            classes.setdefault(str(residue), []).append(index)
+        target_class = classes.get(str(target_residue), [])
+        active_rows = [
+            index for index, valuation in enumerate(valuations)
+            if valuation >= level
+        ]
+        if sorted(target_class) != sorted(active_rows):
+            raise AssertionError("shift valuation does not match its q-adic target class")
+        max_class_occupancy = max(len(indices) for indices in classes.values())
+        active_count = len(active_rows)
+        demand += active_count
+        capacity += max_class_occupancy
+        levels.append(
+            {
+                "level": level,
+                "modulus": modulus,
+                "target_residue": target_residue,
+                "active_row_indices": active_rows,
+                "active_count": active_count,
+                "max_class_occupancy": max_class_occupancy,
+                "capacity_slack": max_class_occupancy - active_count,
+            }
+        )
+    return {
+        "prime": prime,
+        "q": q,
+        "shift_count": len(shifts),
+        "max_level": max_level,
+        "truncated_valuation_demand": demand,
+        "capacity_bound": capacity,
+        "capacity_slack": capacity - demand,
+        "capacity_bound_holds": demand <= capacity,
+        "capacity_bound_status": (
+            "tight" if demand == capacity else "strict"
+        ),
+        "levels": levels,
+        "scope_note": (
+            "For every cutoff E, summing the active q^r target classes gives "
+            "sum_s min(v_q(p+4s), E) <= sum_{r<=E} C_r(S,q), where C_r is "
+            "the largest shift-residue class modulo q^r. This is a finite "
+            "shift-capacity bound, not a Type II certificate or descent."
+        ),
+    }
+
+
+def cross_state_character_compatibility(
+    depth_edge_cases: list[dict[str, object]],
+) -> dict[str, object]:
+    """Check only the finite core-residue compatibility of depth characters."""
+    records = []
+    moduli = []
+    for edge in depth_edge_cases:
+        ray = edge["ray"]
+        modulus = int(ray["canonical_parameters"]["modulus"])
+        profile = ray["two_power_depth_profile"]
+        certificate = profile["character_certificate"]
+        moduli.append(modulus)
+        records.append(
+            {
+                "prime": int(edge["prime"]),
+                "modulus": modulus,
+                "character_order": int(certificate["character_order"]),
+                "certificate": certificate,
+                "core_profile": core_character_profile(
+                    int(edge["prime"]), modulus, certificate
+                ),
+            }
+        )
+    common_modulus = math.lcm(24, *moduli)
+    common_core_modulus = math.gcd(common_modulus, 24)
+    core_residues = [
+        value
+        for value in range(common_modulus)
+        if math.gcd(value, common_modulus) == 1
+        and value % common_core_modulus == 1
+    ]
+    joint_kernel = []
+    for value in core_residues:
+        if all(
+            character_exponent_from_certificate(
+                value % record["modulus"],
+                record["modulus"],
+                record["certificate"],
+            )
+            == 0
+            for record in records
+        ):
+            joint_kernel.append(value)
+    return {
+        "common_modulus": common_modulus,
+        "common_core_congruence_modulus": common_core_modulus,
+        "common_core_residue_count": len(core_residues),
+        "rows": [
+            {key: value for key, value in record.items() if key != "certificate"}
+            for record in records
+        ],
+        "joint_kernel_count": len(joint_kernel),
+        "joint_kernel_index": (
+            len(core_residues) // len(joint_kernel) if joint_kernel else None
+        ),
+        "joint_kernel_witness_residue": joint_kernel[0] if joint_kernel else None,
+        "compatibility_status": "compatible" if joint_kernel else "incompatible",
+        "capacity_mapping_status": "unproved",
+        "scope_note": (
+            "This is only a finite character-kernel compatibility check on core residue "
+            "classes. It does not use the prime factors of p+4*A^2*C and cannot prove "
+            "a Type II certificate or a cross-state q-adic capacity contradiction."
+        ),
+    }
+
+
+def shared_factor_q_adic_bridge(
+    depth_edge_cases: list[dict[str, object]],
+) -> dict[str, object]:
+    """Record shared-prime valuations and private factors for a finite pair."""
+    if len(depth_edge_cases) != 2:
+        raise ValueError("the finite q-adic bridge currently expects one pair")
+    if depth_edge_cases[0]["shift"] == depth_edge_cases[1]["shift"]:
+        raise ValueError("the q-adic difference bound needs distinct shifts")
+    factor_maps = [
+        {
+            int(prime_factor): int(exponent)
+            for prime_factor, exponent in edge["ray"]["factorization"]
+        }
+        for edge in depth_edge_cases
+    ]
+    shared_primes = sorted(set(factor_maps[0]) & set(factor_maps[1]))
+    rows = []
+    for edge, factor_map in zip(depth_edge_cases, factor_maps):
+        ray = edge["ray"]
+        modulus = int(ray["canonical_parameters"]["modulus"])
+        certificate = ray["two_power_depth_profile"]["character_certificate"]
+        rows.append(
+            {
+                "prime": int(edge["prime"]),
+                "shift": int(edge["shift"]),
+                "factorization": {
+                    str(prime_factor): exponent
+                    for prime_factor, exponent in factor_map.items()
+                },
+                "shared_valuations": {
+                    str(shared_prime): factor_map[shared_prime]
+                    for shared_prime in shared_primes
+                },
+                "private_factorization": {
+                    str(prime_factor): exponent
+                    for prime_factor, exponent in factor_map.items()
+                    if prime_factor not in shared_primes
+                },
+                "shared_character_phases": {
+                    str(shared_prime): character_exponent_from_certificate(
+                        shared_prime % modulus, modulus, certificate
+                    )
+                    for shared_prime in shared_primes
+                },
+            }
+        )
+    valuation_profiles = []
+    for shared_prime in shared_primes:
+        valuations = [row["shared_valuations"][str(shared_prime)] for row in rows]
+        first_shift = int(depth_edge_cases[0]["shift"])
+        second_shift = int(depth_edge_cases[1]["shift"])
+        offset_difference = abs(4 * (second_shift - first_shift))
+        difference_valuation = 0
+        difference_quotient = offset_difference
+        while difference_quotient % shared_prime == 0:
+            difference_valuation += 1
+            difference_quotient //= shared_prime
+        minimum_shared_valuation = min(valuations)
+        q_adic_capacity = q_adic_shift_capacity_profile(
+            int(depth_edge_cases[0]["prime"]),
+            tuple(int(edge["shift"]) for edge in depth_edge_cases),
+            shared_prime,
+            tuple(valuations),
+        )
+        collision_levels = []
+        for level in range(1, max(valuations) + 1):
+            active_rows = [
+                index for index, valuation in enumerate(valuations)
+                if valuation >= level
+            ]
+            residue_classes: dict[str, list[int]] = {}
+            level_modulus = shared_prime**level
+            for index in active_rows:
+                residue = int(depth_edge_cases[index]["shift"]) % level_modulus
+                residue_classes.setdefault(str(residue), []).append(index)
+            collision_levels.append(
+                {
+                    "level": level,
+                    "modulus": level_modulus,
+                    "active_row_indices": active_rows,
+                    "shift_residue_classes": residue_classes,
+                    "active_class_count": len(residue_classes),
+                    "all_active_shifts_congruent": len(residue_classes) <= 1,
+                }
+            )
+        valuation_profiles.append(
+            {
+                "prime": shared_prime,
+                "valuations": valuations,
+                "minimum_height": min(valuations),
+                "maximum_height": max(valuations),
+                "height_gap": max(valuations) - min(valuations),
+                "offset_difference": offset_difference,
+                "offset_difference_valuation": difference_valuation,
+                "minimum_shared_valuation": minimum_shared_valuation,
+                "difference_bound_holds": (
+                    minimum_shared_valuation <= difference_valuation
+                ),
+                "difference_bound_status": (
+                    "tight" if minimum_shared_valuation == difference_valuation
+                    else "strict"
+                ),
+                "collision_levels": collision_levels,
+                "capacity_profile": q_adic_capacity,
+            }
+        )
+    return {
+        "shared_primes": shared_primes,
+        "rows": rows,
+        "valuation_profiles": valuation_profiles,
+        "q_adic_bridge_status": "local_valuation_ledger_only",
+        "collision_tree_status": "exact_local_collision_tree",
+        "q_adic_capacity_status": "exact_local_shift_capacity_bound",
+        "capacity_mapping_status": "unproved",
+        "scope_note": (
+            "The shared-prime valuation and character-phase data are exact for this pair. "
+            "The difference-valuation field only records the elementary bound "
+            "min(v_q(N_i),v_q(N_j)) <= v_q(4(s_j-s_i)); no injection into a "
+            "cross-state capacity tree or recursive descent is claimed. The collision levels "
+            "only partition active shifts by their exact q^level residues; the capacity "
+            "profile is the finite residue-class inequality, not a certificate selector."
+        ),
+    }
+
+
 def quadratic_coordinates(modulus: int) -> tuple[tuple[int, ...], dict[int, int]]:
     """Coordinate U(modulus)/U(modulus)^2 as an elementary 2-group."""
     squares = unit_square_subgroup(modulus)
@@ -178,8 +702,13 @@ def canonical_fan_bound(prime: int) -> tuple[int, int]:
     raise AssertionError("canonical fan bound was not found")
 
 
-def ray_record(prime: int, shift: int, spf: list[int]) -> dict[str, object]:
-    a, c = canonical_pair(shift, spf)
+def ray_record(
+    prime: int,
+    shift: int,
+    spf: list[int],
+    pair: tuple[int, int] | None = None,
+) -> dict[str, object]:
+    a, c = canonical_pair(shift, spf) if pair is None else pair
     modulus = 4 * a * c
     shifted = prime + 4 * a * a * c
     factors = factorization(shifted, spf)
@@ -187,6 +716,11 @@ def ray_record(prime: int, shift: int, spf: list[int]) -> dict[str, object]:
     support = generated_subgroup(factors, modulus)
     target = modulus - 1
     defect = sorted(support - divisor_residues)
+    depth_profile = two_power_depth_profile(support, modulus)
+    if depth_profile.get("character_certificate") is not None:
+        depth_profile["core_character_profile"] = core_character_profile(
+            prime, modulus, depth_profile["character_certificate"]
+        )
     separator = None
     if target in divisor_residues:
         classification = "direct_type_ii"
@@ -204,6 +738,7 @@ def ray_record(prime: int, shift: int, spf: list[int]) -> dict[str, object]:
 
     return {
         "shift": shift,
+        "parameterization": "canonical_shift" if pair is None else "raw_ac",
         "canonical_parameters": {"A": a, "C": c, "modulus": modulus},
         "shifted_integer": shifted,
         "factorization": [[prime_factor, exponent] for prime_factor, exponent in factors],
@@ -215,6 +750,7 @@ def ray_record(prime: int, shift: int, spf: list[int]) -> dict[str, object]:
         "target_in_support": target in support,
         "classification": classification,
         "quadratic_separator": separator,
+        "two_power_depth_profile": depth_profile,
     }
 
 
@@ -290,21 +826,68 @@ def build_results(primes: tuple[int, ...] = FOCUSED_PRIMES) -> dict[str, object]
         spf = smallest_prime_factors(prime + 4 * shift)
         ray = ray_record(prime, shift, spf)
         edge_cases.append({"prime": prime, "shift": shift, "ray": ray})
+    depth_edge_cases = []
+    for prime, shift, a, c in DEPTH_EDGE_CASES:
+        spf = smallest_prime_factors(prime + 4 * shift)
+        ray = ray_record(prime, shift, spf, pair=(a, c))
+        depth_edge_cases.append(
+            {
+                "prime": prime,
+                "shift": shift,
+                "raw_parameters": {"A": a, "C": c},
+                "ray": ray,
+            }
+        )
+    cross_state_profile = cross_state_character_compatibility(depth_edge_cases)
+    shared_factor_edges = []
+    for prime, shift, a, c in SHARED_FACTOR_DEPTH_EDGE_CASES:
+        spf = smallest_prime_factors(prime + 4 * shift)
+        ray = ray_record(prime, shift, spf, pair=(a, c))
+        shared_factor_edges.append(
+            {
+                "prime": prime,
+                "shift": shift,
+                "raw_parameters": {"A": a, "C": c},
+                "ray": ray,
+            }
+        )
+    shared_factor_profile = cross_state_character_compatibility(shared_factor_edges)
+    shared_factor_profile["shared_factor_primes"] = sorted(
+        set(
+            prime_factor
+            for prime_factor, _ in shared_factor_edges[0]["ray"]["factorization"]
+        )
+        & set(
+            prime_factor
+            for prime_factor, _ in shared_factor_edges[1]["ray"]["factorization"]
+        )
+    )
+    shared_factor_profile["shared_factor_edge_count"] = len(shared_factor_edges)
+    shared_factor_q_adic_profile = shared_factor_q_adic_bridge(shared_factor_edges)
     return {
-        "schema_version": "type-ii-canonical-fan-escape-trichotomy/v1",
-        "arithmetic": "exact SPF factorization, divisor residues, subgroup closure, and quadratic character separation",
+        "schema_version": "type-ii-canonical-fan-escape-trichotomy/v2",
+        "arithmetic": (
+            "exact SPF factorization, divisor residues, subgroup closure, quadratic "
+            "separation, and 2^j saturation-depth certificates"
+        ),
         "profiles": profiles,
         "profile_count": len(profiles),
         "edge_cases": edge_cases,
+        "depth_edge_cases": depth_edge_cases,
+        "depth_edge_case_cross_state_compatibility": cross_state_profile,
+        "shared_factor_depth_edges": shared_factor_edges,
+        "shared_factor_depth_compatibility": shared_factor_profile,
+        "shared_factor_q_adic_bridge": shared_factor_q_adic_profile,
         "scope_note": (
             "Focused typed replay of the canonical fan theorem. The theorem is general, "
-            "while factorization and class counts here cover only the listed primes."
+            "while factorization, class counts, and depth edge cases here cover only "
+            "the listed primes."
         ),
     }
 
 
 def verify_results(payload: dict[str, object]) -> None:
-    if payload.get("schema_version") != "type-ii-canonical-fan-escape-trichotomy/v1":
+    if payload.get("schema_version") != "type-ii-canonical-fan-escape-trichotomy/v2":
         raise AssertionError("fan trichotomy schema changed")
     profiles = payload.get("profiles")
     if not isinstance(profiles, list) or len(profiles) != len(FOCUSED_PRIMES):
@@ -328,6 +911,15 @@ def verify_results(payload: dict[str, object]) -> None:
                     "annihilates_support"
                 ) is not True:
                     raise AssertionError("support-outside separator changed")
+            depth_profile = ray.get("two_power_depth_profile")
+            if not isinstance(depth_profile, dict):
+                raise AssertionError("Type II fan depth profile missing")
+            if ray["classification"].startswith("support_outside"):
+                depth = depth_profile.get("depth")
+                if not isinstance(depth, int):
+                    raise AssertionError("support-outside depth is not exact")
+                if depth_profile.get("minimal_character_order") != 2 ** (depth + 1):
+                    raise AssertionError("2^j character order does not match depth")
     edge_cases = payload.get("edge_cases")
     if not isinstance(edge_cases, list) or len(edge_cases) != len(EDGE_CASES):
         raise AssertionError("fan trichotomy edge-case count changed")
@@ -339,6 +931,141 @@ def verify_results(payload: dict[str, object]) -> None:
             raise AssertionError("quadratic-inseparable support-outside boundary changed")
         if ray.get("quadratic_separator") is not None:
             raise AssertionError("quadratic-inseparable ray unexpectedly has a separator")
+        depth_profile = ray.get("two_power_depth_profile")
+        if not isinstance(depth_profile, dict) or depth_profile.get("depth") != 1:
+            raise AssertionError("quadratic-inseparable edge depth changed")
+
+    depth_edge_cases = payload.get("depth_edge_cases")
+    if not isinstance(depth_edge_cases, list) or len(depth_edge_cases) != len(
+        DEPTH_EDGE_CASES
+    ):
+        raise AssertionError("2^j depth edge-case count changed")
+    expected_depths = {97: 1, 3457: 2, 14593: 3}
+    for expected, stored in zip(DEPTH_EDGE_CASES, depth_edge_cases):
+        prime, shift, a, c = expected
+        if (
+            not isinstance(stored, dict)
+            or (stored.get("prime"), stored.get("shift")) != (prime, shift)
+            or stored.get("raw_parameters") != {"A": a, "C": c}
+        ):
+            raise AssertionError("2^j depth edge-case identity changed")
+        ray = stored.get("ray")
+        if not isinstance(ray, dict) or ray.get("classification") != (
+            "support_outside_quadratically_inseparable"
+        ):
+            raise AssertionError("2^j depth edge class changed")
+        if ray.get("parameterization") != "raw_ac":
+            raise AssertionError("2^j depth edge parameterization changed")
+        profile = ray.get("two_power_depth_profile")
+        if not isinstance(profile, dict) or profile.get("depth") != expected_depths[prime]:
+            raise AssertionError("2^j depth edge value changed")
+        if profile.get("minimal_character_order") != 2 ** (expected_depths[prime] + 1):
+            raise AssertionError("2^j depth edge character order changed")
+    compatibility = payload.get("depth_edge_case_cross_state_compatibility")
+    if not isinstance(compatibility, dict):
+        raise AssertionError("2^j cross-state compatibility receipt missing")
+    if compatibility.get("compatibility_status") != "compatible":
+        raise AssertionError("2^j edge compatibility boundary changed")
+    if compatibility.get("joint_kernel_count", 0) < 1:
+        raise AssertionError("2^j joint kernel lost its finite witness")
+    if compatibility.get("capacity_mapping_status") != "unproved":
+        raise AssertionError("2^j compatibility crossed the capacity boundary")
+    shared_edges = payload.get("shared_factor_depth_edges")
+    if not isinstance(shared_edges, list) or len(shared_edges) != 2:
+        raise AssertionError("shared-factor depth edge count changed")
+    shared_profile = payload.get("shared_factor_depth_compatibility")
+    if (
+        not isinstance(shared_profile, dict)
+        or shared_profile.get("common_modulus") != 240
+        or shared_profile.get("shared_factor_primes") != [7]
+        or shared_profile.get("joint_kernel_count") != 4
+        or shared_profile.get("compatibility_status") != "compatible"
+        or shared_profile.get("capacity_mapping_status") != "unproved"
+    ):
+        raise AssertionError("shared-factor character boundary changed")
+    q_adic_bridge = payload.get("shared_factor_q_adic_bridge")
+    if (
+        not isinstance(q_adic_bridge, dict)
+        or q_adic_bridge.get("shared_primes") != [7]
+        or q_adic_bridge.get("valuation_profiles")
+        != [
+            {
+                "prime": 7,
+                "valuations": [1, 2],
+                "minimum_height": 1,
+                "maximum_height": 2,
+                "height_gap": 1,
+                "offset_difference": 336,
+                "offset_difference_valuation": 1,
+                "minimum_shared_valuation": 1,
+                "difference_bound_holds": True,
+                "difference_bound_status": "tight",
+                "collision_levels": [
+                    {
+                        "level": 1,
+                        "modulus": 7,
+                        "active_row_indices": [0, 1],
+                        "shift_residue_classes": {"2": [0, 1]},
+                        "active_class_count": 1,
+                        "all_active_shifts_congruent": True,
+                    },
+                    {
+                        "level": 2,
+                        "modulus": 49,
+                        "active_row_indices": [1],
+                        "shift_residue_classes": {"2": [1]},
+                        "active_class_count": 1,
+                        "all_active_shifts_congruent": True,
+                    },
+                ],
+                "capacity_profile": {
+                    "prime": 433,
+                    "q": 7,
+                    "shift_count": 2,
+                    "max_level": 2,
+                    "truncated_valuation_demand": 3,
+                    "capacity_bound": 3,
+                    "capacity_slack": 0,
+                    "capacity_bound_holds": True,
+                    "capacity_bound_status": "tight",
+                    "scope_note": (
+                        "For every cutoff E, summing the active q^r target classes gives "
+                        "sum_s min(v_q(p+4s), E) <= sum_{r<=E} C_r(S,q), where C_r is "
+                        "the largest shift-residue class modulo q^r. This is a finite "
+                        "shift-capacity bound, not a Type II certificate or descent."
+                    ),
+                    "levels": [
+                        {
+                            "level": 1,
+                            "modulus": 7,
+                            "target_residue": 2,
+                            "active_row_indices": [0, 1],
+                            "active_count": 2,
+                            "max_class_occupancy": 2,
+                            "capacity_slack": 0,
+                        },
+                        {
+                            "level": 2,
+                            "modulus": 49,
+                            "target_residue": 2,
+                            "active_row_indices": [1],
+                            "active_count": 1,
+                            "max_class_occupancy": 1,
+                            "capacity_slack": 0,
+                        },
+                    ],
+                },
+            }
+        ]
+        or q_adic_bridge.get("q_adic_bridge_status")
+        != "local_valuation_ledger_only"
+        or q_adic_bridge.get("collision_tree_status")
+        != "exact_local_collision_tree"
+        or q_adic_bridge.get("q_adic_capacity_status")
+        != "exact_local_shift_capacity_bound"
+        or q_adic_bridge.get("capacity_mapping_status") != "unproved"
+    ):
+        raise AssertionError("shared-factor q-adic bridge changed")
 
 
 def main() -> None:

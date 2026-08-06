@@ -8,6 +8,7 @@ proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-target-fiber-neighbor-terminal
+  - type-I-target-fiber-neighbor-dyadic-normalization
   - type-I-general-dyadic-terminal-transfer
   - type-I-generalized-dyadic-natural-lift-equivalence
   - type-I-fixed-layer-stabilizer-defect-reduction
@@ -25,12 +26,14 @@ topics:
 sources:
 - claim: type-I-target-fiber-neighbor-terminal
   role: near-pair-even-predecessor
+- claim: type-I-target-fiber-neighbor-dyadic-normalization
+  role: near-to-dyadic-terminal-deduplication
 - claim: type-I-general-dyadic-terminal-transfer
   role: dyadic-even-predecessor
 - claim: type-I-fixed-layer-stabilizer-defect-reduction
   role: quotient-dual-evidence
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-06'
 ---
 
 # Type I 终端优先的近邻—广义二进—对偶统一选择器合同
@@ -49,7 +52,7 @@ last_checked: '2026-08-01'
 
 1. 已有直接 Type I/II 命中；
 2. 目标指数纤维中的逐坐标近邻对；
-3. 独立的广义 \(2^j\) 除子比值碰撞；
+3. 未被近邻回执规范化的广义 \(2^j\) 除子比值碰撞；
 4. 固定层稳定子商上的规范 Fourier/格对偶证书。
 
 前两类是算术偶前驱接口，第四类是对偶分析接口。选择顺序不把“有一个较小偶数”
@@ -88,6 +91,24 @@ U=K\rho,
 该解只属于较小方程。除非另有全域标记提升，否则回执为
 `certificate_type=target_fiber_neighbor_terminal`、`selector_status=analysis_evidence`、
 `terminal_kind=even_predecessor`、`lift_status=unproved`。
+
+近邻与二进回执在算术终端层并非独立。把上式的 \(u/v\) 既约化并写
+\(v=2^\beta v_0\)，则近邻差规范地产生
+
+\[
+(A,B,j)=
+\begin{cases}
+(2u,v,1),&\beta=0,\\
+(u,v_0,\beta),&\beta>0,
+\end{cases}
+\qquad
+E_j=E,\qquad n_j=n.
+\]
+
+因此近邻回执应同时保存该二进正规化；第 3 步只搜索尚未由近邻产生同一
+\((E,n)\) 的二进候选。这个去重只作用于算术终端，仍须保留 \(z,w\) 和近邻差，
+因为二进三元组不保留目标纤维的位置或表示重数。精确证明见
+[目标纤维近邻对的规范二进归一化与关系格中性](type-I-target-fiber-neighbor-dyadic-normalization.md)。
 
 ## 3. 广义二进回执
 

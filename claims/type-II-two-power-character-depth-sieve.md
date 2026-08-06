@@ -13,6 +13,10 @@ topics:
 - residual-set
 - proof-program
 sources:
+- reproduction: reproductions/type_ii_canonical_fan_escape_trichotomy.py
+  role: exact finite saturation-depth and boundary-witness replay
+- result: reproductions/type-ii-canonical-fan-escape-trichotomy-results.json
+  role: typed canonical-fan depth edge cases
 - paper: elsholtz_tao2013
   locator: "Appendix A, shifted-prime additive functions and sieve estimates"
   role: upper-bound-sieve-methodology
@@ -23,7 +27,7 @@ sources:
   locator: "Theorem 1"
   role: Type-II-application-context
 visibility: public
-last_checked: '2026-07-24'
+last_checked: '2026-08-04'
 ---
 
 # Type II 支撑外失败的二幂字符深度与增强筛界
@@ -109,6 +113,71 @@ R_{\mathcal S}^{\ge s}(X)
 
 当 \(s=0\)，每条贡献 \(1/2\)，恢复支撑外层的半大小机制；当 \(s=1\)，每条贡献
 \(3/4\)；当 \(s=2\)，每条贡献 \(7/8\)。
+
+## 统一选择器中的有限深度回执
+
+规范 Type II 扇现在对每条支撑外失败保存两个相邻饱和层：
+
+\[
+K\,U(M)^{2^\nu}\ni-1,\qquad
+-1\notin K\,U(M)^{2^{\nu+1}}. \tag{5}
+\]
+
+回执同时保存一个有限群见证
+\[
+k\,g^{2^\nu}\equiv-1\pmod M
+\]
+以及下一层的集合排除。由字符引理，最小所需像阶为
+\(2^{\nu+1}\)。当 \(\nu=0\) 时，这就是二次分离；当 \(\nu\ge1\) 时，回执进入
+高阶字符分支。当前实现同时登记
+character_existence_status=implied_by_two_power_character_depth_lemma、
+explicit_character_status=constructed_on_generators；生成元、关系、字符指数和支撑值
+均可在有限回执中复核。该证书仍不等于完整的跨状态角色坐标或容量映射。
+
+三个 raw-\((A,C)\) 边界行给出
+\[
+(p,A,C,\nu)=(97,4,1,1),(3457,4,4,2),(14593,4,4,3),
+\]
+对应像阶 \(4,8,16\)。这只是精确的状态内对偶分层；共同核心素数的角色条件仍可能由
+同一个 \(p\equiv1\) 算术级数同时满足，必须继续保留移位素因子和跨移位关联。
+
+对这三条回执的有限兼容性检查取共同模数
+\[
+\operatorname{lcm}(24,16,64,64)=192.
+\]
+三个角色拉回到核心残余类后，联合核有一个代表残基
+\(r=1\pmod {192}\)，联合核指数为 \(8\)。因此该组高阶角色是
+compatibility_status=compatible，而不是容量矛盾；回执把
+capacity_mapping_status 保持为 unproved。这个有限计算具体重现了字符积同余兼容性
+边界：只有把 \(p+4A^2C\) 的逐素因子条件、公共因子排斥或可下降载体一起纳入，才可能
+从高阶字符继续推进。
+
+为测试逐素因子接口，另取 \(p=433\) 的两条 raw 射线
+\((A,C)=(4,1)\) 与 \((5,4)\)。它们的移位整数分别为
+\(497=7\cdot71\) 和 \(833=7^2\cdot17\)，共享素因子 \(7\)，两条支撑外深度都为
+\(\nu=1\)。共同模数为 \(240\)，角色联合核仍有 \(4\) 个核心残余类，联合核指数为
+\(2\)。所以“共享素因子 + 高阶角色”仍只是兼容性负边界；下一步需要记录共享素因子的
+赋值、角色层和私有余因子的避靶条件，才能定义真正的 q 进容量价格。
+
+当前回执已把该局部账本具体化为
+\[
+v_7(497)=1,\qquad v_7(833)=2,\qquad
+\Delta_7=1,
+\]
+且两条角色对共享因子 \(7\) 的相位均为零；私有余因子分别为 \(71\) 和 \(17\)。
+此外，任意两条移位满足初等差值约束：若同一素数幂同时整除
+\(p+4s_i\) 与 \(p+4s_j\)，则
+\[
+q^{\min(v_q(p+4s_i),v_q(p+4s_j))}\mid4(s_j-s_i).
+\]
+对本例 \(4(100-16)=336\)、\(v_7(336)=1\)，故共享高度上界恰为
+\(\min(1,2)=1\)，回执记录 `difference_bound_status=tight`。这是一个可复核的
+局部 q 进容量约束，但仍不是把高度差 \(\Delta_7\) 注入跨状态容量树的单射，亦未给出
+严格势下降；状态仍为 local_valuation_ledger_only。
+
+这个逐对界已单独登记为[Type II 共享素因子幂的移位差 q 进上界](type-II-shared-factor-q-adic-difference-bound.md)，
+供后续把局部高度预算接到跨移位状态转移时复用；回执中的 collision_levels 进一步按
+\(q^e\) 层给出活动移位的精确同余分区。
 
 ## 边界
 

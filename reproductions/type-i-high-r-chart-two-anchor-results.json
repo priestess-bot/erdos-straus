@@ -1,0 +1,650 @@
+{
+  "schema_version": 1,
+  "certificate_type": "type_i_two_anchor_high_r_chart_v1",
+  "selector_status": "candidate_transition",
+  "recursive_edge_eligible": false,
+  "proof_boundary": "the dedicated high-R adapter proves the local source/path and parent replay; same-anchor bundle reuse is exhausted after one strict support step, and the p=1201 formal low chart supplies a direct Type I terminal; a global non-resetting phase rank is still absent for the general branch",
+  "e1_e5": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": false
+  },
+  "local_e1_e5": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": true
+  },
+  "missing_conditions": [
+    "global_nonresetting_phase_rank"
+  ],
+  "prime": 1201,
+  "B_p": 360000,
+  "core_anchor": {
+    "adapter": "high_R_path_anchored_bundle_v1",
+    "R_domain": "core_R",
+    "source": {
+      "R": 987,
+      "K": 296347,
+      "source": [
+        1201,
+        1183199,
+        1200
+      ],
+      "raw_p_edge": {
+        "q": 1201,
+        "shift": 1,
+        "gcd_reduction": 1,
+        "destination": [
+          1,
+          986,
+          1
+        ]
+      }
+    },
+    "anchor_node": [
+      1,
+      986,
+      1
+    ],
+    "complete_excess_bundle": {
+      "Q": 986,
+      "beta": 1
+    },
+    "conditions": {
+      "support_divides_parent_K": true,
+      "complete_excess_nontrivial": true,
+      "anchor_factorization": true,
+      "beta_divides_parent_K": true,
+      "bundle_coprime_to_beta": true,
+      "bundle_not_dividing_parent_K": true,
+      "bundle_below_anchor": true,
+      "p_coprime_to_bundle": true,
+      "source_coprime_condition": true,
+      "lcm_contains_support": true,
+      "lcm_contains_bundle": true,
+      "strict_support_growth": true,
+      "new_carrier_not_in_parent_K": true,
+      "canonical_chart_changed": true,
+      "canonical_chart_not_equal_p": true,
+      "canonical_R_mod_4": true
+    },
+    "rechart": {
+      "M": 986,
+      "R": 1839,
+      "K": 552160,
+      "C": 560,
+      "result_class": "overflow",
+      "d": 641,
+      "n": 2105
+    }
+  },
+  "first_overflow": {
+    "M": 986,
+    "R": 1839,
+    "K": 552160,
+    "C": 560,
+    "d": 641,
+    "n": 2105,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "witness": [
+        0,
+        0,
+        -2,
+        2,
+        -3
+      ],
+      "witness_residue": 1838,
+      "witness_l1": 7,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              29,
+              2
+            ]
+          ],
+          "value": 5887
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              17,
+              1
+            ]
+          ],
+          "value": 17
+        }
+      }
+    }
+  },
+  "same_chart_parent_replay": {
+    "certificate_type": "overflow_same_chart_support_promotion",
+    "normal_form_replay_adapter": "high_r_same_chart_parent_replay_v1",
+    "selector_status": "verified_edge",
+    "recursive_edge_eligible": true,
+    "source_state": {
+      "equation_target": [
+        4,
+        1201
+      ],
+      "R": 1839,
+      "K": 552160,
+      "absorbed_support": 1,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:b52f24895f503ed3a525f491aa79335030bb83ebe20ebfb3306130594946647c"
+    },
+    "successor_state": {
+      "equation_target": [
+        4,
+        1201
+      ],
+      "R": 1839,
+      "K": 552160,
+      "absorbed_support": 986,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:fd535d2004dcf0c8bb71b854d1c7e1dbe562c4de6653db31773e1130d0950dd4"
+    },
+    "source_provenance": {
+      "state_origin": "universal_raw_default_entry_v1",
+      "source_tree_scope": "fresh_source_tree_only",
+      "root_bundle_adapter": "high_R_path_anchored_bundle_v1",
+      "root_anchor": [
+        1,
+        986,
+        1
+      ]
+    },
+    "marked_solution_set": {
+      "source": "Sol(p)",
+      "successor": "Sol(p)",
+      "lift": "identity"
+    },
+    "fiber_certificate": {
+      "factors": [
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "witness": [
+        0,
+        0,
+        -2,
+        2,
+        -3
+      ],
+      "witness_residue": 1838,
+      "witness_l1": 7,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              29,
+              2
+            ]
+          ],
+          "value": 5887
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              17,
+              1
+            ]
+          ],
+          "value": 17
+        }
+      }
+    },
+    "e1_e5": {
+      "E1": true,
+      "E2": true,
+      "E3": true,
+      "E4": true,
+      "E5": true
+    },
+    "checks": {
+      "root_entry": true,
+      "source_state": true,
+      "same_chart_successor": true,
+      "identity_lift": true,
+      "strict_support_potential": true,
+      "scope_propagated": true
+    },
+    "potential": {
+      "source": 360000,
+      "successor": 365
+    },
+    "edge_id": "edge:6c049f271b5389a2a66c93758780aa2d86c1cf8a6f9c1fee5eab7997a8524e02"
+  },
+  "high_R_anchor": {
+    "adapter": "high_R_path_anchored_bundle_v1",
+    "R_domain": "high_R",
+    "source": {
+      "R": 1839,
+      "K": 552160,
+      "source": [
+        1201,
+        2205599,
+        1200
+      ],
+      "raw_p_edge": {
+        "q": 1201,
+        "shift": 1,
+        "gcd_reduction": 1,
+        "destination": [
+          1,
+          1838,
+          1
+        ]
+      }
+    },
+    "anchor_node": [
+      1,
+      1838,
+      1
+    ],
+    "complete_excess_bundle": {
+      "Q": 919,
+      "beta": 2
+    },
+    "conditions": {
+      "support_divides_parent_K": true,
+      "complete_excess_nontrivial": true,
+      "anchor_factorization": true,
+      "beta_divides_parent_K": true,
+      "bundle_coprime_to_beta": true,
+      "bundle_not_dividing_parent_K": true,
+      "bundle_below_anchor": true,
+      "p_coprime_to_bundle": true,
+      "source_coprime_condition": true,
+      "lcm_contains_support": true,
+      "lcm_contains_bundle": true,
+      "strict_support_growth": true,
+      "new_carrier_not_in_parent_K": true,
+      "canonical_chart_changed": true,
+      "canonical_chart_not_equal_p": true,
+      "canonical_R_mod_4": true
+    },
+    "rechart": {
+      "M": 906134,
+      "R": 2873071,
+      "K": 862639568,
+      "C": 952,
+      "result_class": "overflow",
+      "d": 249,
+      "n": 751465
+    }
+  },
+  "source_overflow": {
+    "A": 986,
+    "M": 906134,
+    "R": 2873071,
+    "K": 862639568,
+    "C": 952,
+    "d": 249,
+    "n": 751465,
+    "k": 754,
+    "r": 580,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          4
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          919,
+          1
+        ]
+      ],
+      "witness": [
+        -2,
+        1,
+        19,
+        1,
+        -13
+      ],
+      "witness_residue": 2873070,
+      "witness_l1": 36,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              919,
+              12
+            ]
+          ],
+          "value": 362899305136334267124119218581291361
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              17,
+              17
+            ]
+          ],
+          "value": 827240261886336764177
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        1201
+      ],
+      "R": 2873071,
+      "K": 862639568,
+      "absorbed_support": 986,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:5c1bb6ab9ea745f8b1245322b01f1770ef15f238d9c99c3cf1eb71a680420bac"
+    }
+  },
+  "r_chart_target": {
+    "A": 27608,
+    "R": 1839,
+    "K": 552160,
+    "C": 20,
+    "d": 1181,
+    "n": 108593,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "witness": [
+        0,
+        0,
+        -2,
+        2,
+        -3
+      ],
+      "witness_residue": 1838,
+      "witness_l1": 7,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              7,
+              1
+            ],
+            [
+              29,
+              2
+            ]
+          ],
+          "value": 5887
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              17,
+              1
+            ]
+          ],
+          "value": 17
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        1201
+      ],
+      "R": 1839,
+      "K": 552160,
+      "absorbed_support": 27608,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:36befe51867053ba117b9e1f0f53f2df3306f50782127f62643a08e609baded0"
+    }
+  },
+  "cofactor_normal_form": {
+    "source_state": true,
+    "construction": true,
+    "successor_state": true,
+    "source_tree_scope": true,
+    "parent_ledger": true,
+    "passed": true
+  },
+  "same_anchor_bundle_reuse_exhaustion": {
+    "lemma": "same_anchor_complete_excess_one_shot_exhaustion_v1",
+    "first_conditions": {
+      "anchor_support_divides_K": true,
+      "first_carrier_is_bundle_lcm": true,
+      "first_canonical_overflow": true,
+      "first_cofactor_support": true,
+      "first_target_returns_anchor": true
+    },
+    "reuse_conditions": {
+      "second_carrier_lcm_identity": true,
+      "second_carrier_divides_first_K": true,
+      "canonical_chart_is_fixed": true,
+      "cofactor_is_gcd": true,
+      "second_cofactor_is_already_absorbed": true,
+      "second_cofactor_support_is_fixed": true,
+      "overflow_determinant": true,
+      "formal_r_chart": true
+    },
+    "first": {
+      "A": 986,
+      "Q": 919,
+      "M": 906134,
+      "R_M": 2873071,
+      "K_M": 862639568,
+      "C": 952,
+      "A_next": 27608
+    },
+    "second": {
+      "M": 25371752,
+      "R_M": 2873071,
+      "K_M": 862639568,
+      "C": 34,
+      "d": 1167,
+      "n": 98613937,
+      "k": 21125,
+      "r": 627,
+      "s": 2437,
+      "R_r": 71,
+      "K_r": 21318,
+      "gcd_A_C": 34,
+      "A_over_gcd": 812,
+      "A_C": 27608,
+      "support_gate": false,
+      "formal_target_support_wall": {
+        "K_r_below_current_support": true,
+        "all_legal_supports_below_current_if_true": true
+      }
+    },
+    "conclusion": {
+      "strict_support_growth": false,
+      "same_anchor_reuse_exhausted": true,
+      "reason": "the second cofactor divides the already charged support, so a same-bundle cofactor reuse cannot pay a second strict support step"
+    }
+  },
+  "local_potential": {
+    "source": 365,
+    "target": 13
+  },
+  "terminal_first_diagnostic": {
+    "p_plus_four_factorization": [
+      [
+        5,
+        1
+      ],
+      [
+        241,
+        1
+      ]
+    ],
+    "p_plus_four_direct_gap_candidates": [],
+    "formal_low_chart_type_i_terminal": {
+      "certificate_type": "type_i_normal_form_terminal",
+      "selector_status": "terminal_leaf",
+      "recursive_edge_eligible": false,
+      "formal_chart": {
+        "R": 71,
+        "K": 21318
+      },
+      "formal_box_hit": {
+        "factors": [
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            19,
+            1
+          ]
+        ],
+        "vector": [
+          -1,
+          1,
+          1,
+          0,
+          -1
+        ],
+        "residue": 70,
+        "target_divisor": 18513
+      },
+      "normal_form": {
+        "gap": 1043,
+        "A": 1,
+        "B": 33,
+        "C": 17,
+        "H": 38,
+        "K": 21318
+      },
+      "denominators": {
+        "x": 561,
+        "y": 646,
+        "z": 25602918
+      },
+      "conditions": {
+        "formal_chart": true,
+        "normal_form": true,
+        "box_hit": true,
+        "target_divisor": true,
+        "unit_fraction_identity": true
+      }
+    },
+    "preempts_high_r_candidate_for_p1201": true,
+    "does_not_rule_out_other_certificates": true
+  },
+  "terminal_first_status": "terminal_leaf",
+  "integration_status": "dedicated_reproducer_only"
+}

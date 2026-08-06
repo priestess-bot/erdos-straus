@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 from fractions import Fraction
 import hashlib
+from heapq import heappop, heappush
 import json
 from math import gcd, lcm
 from pathlib import Path
@@ -78,6 +79,7 @@ SELECTOR_ORDER = [
     "overflow_a_one_generic_determinant_boundary",
     "overflow_fixed_s_outer_rank_reset",
     "overflow_fixed_s_bounded_divisor_outer_rank",
+    "overflow_cofactor_r_chart_support",
     "overflow_outer_rank_reset",
     "overflow_hard_core_gap_obstruction",
     "overflow_phase_reset_cycle_boundary",
@@ -1805,6 +1807,550 @@ def overflow_fixture_rows(payload: dict[str, object]) -> list[dict[str, object]]
     if len(rows) != 12:
         raise AssertionError(f"overflow fixture count changed: {len(rows)}")
     return rows
+
+
+def cofactor_provenanced_overflow_rows(payload: dict[str, object]) -> list[dict[str, object]]:
+    """Recover focused complete-excess overflows without flattening provenance.
+
+    The ordinary 12-row overflow atlas deliberately omits the raw source path.
+    This branch needs it to distinguish a default support ``A=1`` from an
+    already charged support whose parent ledger was not serialized.
+    """
+    overflow_dual = payload.get("overflow_dual")
+    universal_anchor = payload.get("universal_anchor")
+    if not isinstance(overflow_dual, dict) or not isinstance(universal_anchor, dict):
+        raise AssertionError("cofactor provenance payload shape changed")
+
+    def replay(
+        fixture_name: str,
+        focused: dict[str, object],
+        anchor_name: str,
+        anchor: dict[str, object],
+        support: int,
+        charged_support_parent_status: str,
+        expected_strip_target: int | None,
+        expected_state_origin: str | None,
+    ) -> dict[str, object]:
+        overflow = focused.get("overflow")
+        source_receipt = anchor.get("source_receipt")
+        orbit = anchor.get("anchor_orbit")
+        if (
+            not isinstance(overflow, dict)
+            or not isinstance(source_receipt, dict)
+            or not isinstance(orbit, dict)
+        ):
+            raise AssertionError("cofactor focused provenance shape changed")
+
+        prime = int(focused["prime"])
+        M = int(overflow["M"])
+        R_M = int(overflow["R_M"])
+        K_M = int(overflow["K_M"])
+        C = int(overflow["C"])
+        d = int(overflow["d"])
+        n = int(overflow["n"])
+        anchor_prime = int(anchor["prime"])
+        anchor_R = int(anchor["R"])
+        anchor_K = int(anchor["K"])
+        serialized_anchor_support = int(anchor.get("A", 1))
+        state_origin = str(anchor.get("state_origin", ""))
+        state_scope = str(anchor.get("state_scope", ""))
+        parent_receipt = anchor.get("charged_support_parent_receipt")
+        if parent_receipt is not None and not isinstance(parent_receipt, dict):
+            raise AssertionError("cofactor charged-support parent receipt changed")
+        is_fresh_default = (
+            charged_support_parent_status == "universal_raw_default_entry"
+        )
+        if (
+            anchor_prime != prime
+            or anchor_K != (prime * anchor_R + 1) // 4
+            or support <= 0
+            or serialized_anchor_support != support
+            or anchor_K % support
+            or canonical_chart(prime, M) != (R_M, K_M)
+            or K_M != M * C
+            or C != prime - d
+            or prime * n != 4 * M * d + 1
+            or R_M != 4 * M - n
+            or R_M <= prime
+            or (
+                expected_state_origin is not None
+                and (
+                    support != 1
+                    or serialized_anchor_support != 1
+                    or state_origin != expected_state_origin
+                    or state_scope != "fresh_source_tree_only"
+                    or parent_receipt is not None
+                )
+            )
+        ):
+            raise AssertionError("cofactor focused overflow determinant changed")
+        if is_fresh_default != (expected_state_origin is not None):
+            raise AssertionError("cofactor default-source status changed")
+        if (
+            charged_support_parent_status == "serialized_charged_support_parent"
+            and (support <= 1 or not isinstance(parent_receipt, dict))
+        ):
+            raise AssertionError("cofactor serialized parent receipt is incomplete")
+        if (
+            charged_support_parent_status == "missing_charged_support_parent"
+            and (support <= 1 or parent_receipt is not None)
+        ):
+            raise AssertionError("cofactor missing parent boundary changed")
+        if charged_support_parent_status not in {
+            "universal_raw_default_entry",
+            "serialized_charged_support_parent",
+            "missing_charged_support_parent",
+        }:
+            raise AssertionError("cofactor charged-support parent status changed")
+
+        raw_source = source_receipt.get("source")
+        raw_edge = source_receipt.get("edge")
+        if not isinstance(raw_source, list) or not isinstance(raw_edge, dict):
+            raise AssertionError("cofactor universal p-source shape changed")
+        expected_source = [prime, anchor_R * (prime - 1) - prime, prime - 1]
+        expected_destination = [1, anchor_R - 1, 1]
+        if (
+            raw_source != expected_source
+            or raw_edge.get("q") != prime
+            or raw_edge.get("shift") != 1
+            or raw_edge.get("gcd_reduction") != 1
+            or raw_edge.get("destination") != expected_destination
+            or len(factorization(prime)) != 1
+            or factorization(prime) != [[prime, 1]]
+            or prime % 24 != 1
+            or raw_source[1] <= 0
+            or gcd(prime, int(raw_source[1])) != 1
+            or anchor_K % prime == 0
+        ):
+            raise AssertionError("cofactor universal p-source replay changed")
+
+        orbit_rows = orbit.get("rows")
+        if not isinstance(orbit_rows, list):
+            raise AssertionError("cofactor anchor orbit rows changed")
+        matching_rows = [
+            row
+            for row in orbit_rows
+            if isinstance(row, dict)
+            and int(row.get("M", 0)) == M
+            and str(row.get("classification")) == "overflow"
+        ]
+        if len(matching_rows) != 1:
+            raise AssertionError("cofactor anchor overflow row is not unique")
+        row = matching_rows[0]
+        h = int(row["h"])
+        other = int(row["other"])
+        Q = int(row["Q"])
+        beta = int(row["beta"])
+        strip = row.get("strip")
+        if not isinstance(strip, dict):
+            raise AssertionError("cofactor anchor capacity strip missing")
+        if (
+            h != 1
+            or other != anchor_R - 1
+            or Q <= 1
+            or other != Q * beta
+            or M != lcm(support, Q)
+            or anchor_K % (h * beta)
+            or gcd(Q, h * beta) != 1
+            or anchor_K % Q == 0
+            or int(row["R_M"]) != R_M
+            or int(row["K_M"]) != K_M
+            or int(row["next_h"]) != gcd(other, anchor_K)
+            or strip.get("selected") != other
+            or strip.get("target") != gcd(other, anchor_K)
+            or (
+                expected_strip_target is not None
+                and int(strip["target"]) != expected_strip_target
+            )
+        ):
+            raise AssertionError("cofactor complete-excess provenance changed")
+        current = other
+        strip_steps = strip.get("steps")
+        if not isinstance(strip_steps, list):
+            raise AssertionError("cofactor capacity strip steps changed")
+        for step in strip_steps:
+            if not isinstance(step, dict):
+                raise AssertionError("cofactor capacity strip step changed")
+            q = int(step["q"])
+            if current % q:
+                raise AssertionError("cofactor capacity strip stopped dividing")
+            next_value = current // q
+            if (
+                step.get("source") != sorted([current, anchor_R - current])
+                or step.get("destination")
+                != sorted([next_value, anchor_R - next_value])
+            ):
+                raise AssertionError("cofactor capacity strip transition changed")
+            current = next_value
+        if current != int(strip["target"]):
+            raise AssertionError("cofactor capacity strip target changed")
+
+        provenance = {
+            "kind": "universal_p_source_path_anchored_complete_excess_bundle",
+            "anchor_record": anchor_name,
+            "parent_state": {
+                "equation_target": [4, prime],
+                "R": anchor_R,
+                "K": anchor_K,
+                "selected_absorbed_support": support,
+                "serialized_anchor_support": serialized_anchor_support,
+                "state_origin": state_origin,
+                "state_scope": state_scope,
+                "charged_support_parent_status": charged_support_parent_status,
+                "charged_support_parent_receipt": (
+                    dict(parent_receipt)
+                    if isinstance(parent_receipt, dict)
+                    else None
+                ),
+            },
+            "universal_p_source": {
+                "source": raw_source,
+                "edge": dict(raw_edge),
+            },
+            "anchor_node": expected_destination,
+            "complete_excess_bundle": {
+                "x": h,
+                "Q": Q,
+                "beta": beta,
+                "x_beta": h * beta,
+                "M": M,
+                "conditions": {
+                    "x_beta_divides_parent_K": True,
+                    "Q_coprime_to_x_beta": True,
+                    "Q_not_dividing_parent_K": True,
+                },
+            },
+            "capacity_strip": dict(strip),
+        }
+        return {
+            "fixture_name": fixture_name,
+            "prime": prime,
+            "A": support,
+            "M": M,
+            "R_M": R_M,
+            "K_M": K_M,
+            "C": C,
+            "d": d,
+            "n": n,
+            "charged_support_parent_status": charged_support_parent_status,
+            "source_provenance": provenance,
+        }
+
+    root_edges = overflow_dual.get("root_edges")
+    root_anchor = universal_anchor.get("G_bundle_overflow")
+    focused = overflow_dual.get("accumulated_positive_fixed_n_edge")
+    default_overflow_anchor = universal_anchor.get("universal_default_anchor_orbit")
+    accumulated_anchor = universal_anchor.get("accumulated_all_overflow_cycle")
+    if (
+        not isinstance(root_edges, list)
+        or not root_edges
+        or not isinstance(root_edges[0], dict)
+        or not isinstance(root_anchor, dict)
+        or not isinstance(focused, dict)
+        or not isinstance(default_overflow_anchor, dict)
+        or not isinstance(accumulated_anchor, dict)
+    ):
+        raise AssertionError("cofactor focused provenance record missing")
+    return [
+        replay(
+            "root_edge_0_cofactor_default_support",
+            root_edges[0],
+            "G_bundle_overflow",
+            root_anchor,
+            1,
+            "universal_raw_default_entry",
+            1,
+            "universal_raw_default_entry_v1",
+        ),
+        replay(
+            "accumulated_default_support",
+            default_overflow_anchor,
+            "universal_default_anchor_orbit",
+            default_overflow_anchor,
+            1,
+            "universal_raw_default_entry",
+            None,
+            "universal_raw_default_entry_v1",
+        ),
+        replay(
+            "accumulated_positive_fixed_n_edge",
+            focused,
+            "accumulated_all_overflow_cycle",
+            accumulated_anchor,
+            5,
+            "missing_charged_support_parent",
+            5,
+            None,
+        ),
+    ]
+
+
+def registered_cofactor_charged_parent_replay(
+    parent_state: dict[str, object],
+    source_state: dict[str, object],
+) -> bool:
+    """Accept a charged parent only through a registered replay adapter.
+
+    Version one has no such adapter because the only serialized charged
+    control lacks its parent edge.  Keeping the registry empty is deliberate:
+    a future status string or embedded receipt must not silently become an
+    E3 witness before its concrete normal-form verifier is wired here.
+    """
+    parent_receipt = parent_state.get("charged_support_parent_receipt")
+    if not isinstance(parent_receipt, dict):
+        return False
+    parent_source = parent_receipt.get("source_state")
+    parent_successor = parent_receipt.get("successor_state")
+    if not isinstance(parent_source, dict) or not isinstance(parent_successor, dict):
+        return False
+    expected_edge_id = "edge:" + canonical_hash(
+        {"source": parent_source, "successor": parent_successor}
+    )
+    try:
+        check_status_boundary(parent_receipt)
+    except AssertionError:
+        return False
+    if (
+        parent_receipt.get("edge_id") != expected_edge_id
+        or parent_successor != source_state
+        or parent_receipt.get("normal_form_replay_adapter") is None
+    ):
+        return False
+    # Registered adapters are intentionally added only with their own
+    # deterministic source replay and contract verifier.
+    return False
+
+
+def verify_overflow_cofactor_r_chart_normal_form(
+    *,
+    prime: int,
+    support: int,
+    M: int,
+    R_M: int,
+    K_M: int,
+    C: int,
+    d: int,
+    n: int,
+    r: int,
+    s: int | None,
+    R_r: int | None,
+    K_r: int,
+    cofactor_support: int,
+    support_quotient: int,
+    source_state: dict[str, object],
+    successor_state: dict[str, object],
+    source_tree_scope: str,
+    parent_ledger_complete: bool,
+) -> dict[str, bool]:
+    """Recompute the source, construction, and successor normal-form fields."""
+    source_state_id = "state:" + canonical_hash(
+        {
+            key: value
+            for key, value in source_state.items()
+            if key != "state_id"
+        }
+    )
+    successor_state_id = "state:" + canonical_hash(
+        {
+            key: value
+            for key, value in successor_state.items()
+            if key != "state_id"
+        }
+    )
+    source_state_valid = bool(
+        source_state.get("state_id") == source_state_id
+        and source_state.get("equation_target") == [4, prime]
+        and source_state.get("R") == R_M
+        and source_state.get("K") == K_M
+        and source_state.get("absorbed_support") == support
+        and source_state.get("state_class") == "overflow"
+        and source_state.get("source_tree_scope") == source_tree_scope
+        and R_M > prime
+        and support > 0
+        and M % support == 0
+        and canonical_chart(prime, M) == (R_M, K_M)
+        and K_M == M * C
+        and C == prime - d
+        and prime * n == 4 * M * d + 1
+        and R_M == 4 * M - n
+    )
+    construction_valid = bool(
+        r > 0
+        and isinstance(s, int)
+        and isinstance(R_r, int)
+        and prime * s == 4 * r * d + 1
+        and prime * R_r + 1 == 4 * K_r
+        and K_r == r * C
+        and support_quotient > 0
+        and support % gcd(support, C) == 0
+        and cofactor_support == C * support_quotient
+        and r % support_quotient == 0
+        and K_r % cofactor_support == 0
+    )
+    target_C = r // support_quotient if support_quotient > 0 else None
+    target_d = prime - target_C if isinstance(target_C, int) else None
+    target_n = (
+        4 * cofactor_support - R_r if isinstance(R_r, int) else None
+    )
+    successor_state_valid = bool(
+        isinstance(R_r, int)
+        and R_r > prime
+        and successor_state.get("state_id") == successor_state_id
+        and successor_state.get("equation_target") == [4, prime]
+        and successor_state.get("R") == R_r
+        and successor_state.get("K") == K_r
+        and successor_state.get("absorbed_support") == cofactor_support
+        and successor_state.get("state_class") == "overflow"
+        and successor_state.get("source_tree_scope") == source_tree_scope
+        and canonical_chart(prime, cofactor_support) == (R_r, K_r)
+        and isinstance(target_C, int)
+        and isinstance(target_d, int)
+        and isinstance(target_n, int)
+        and target_C > 0
+        and target_d > 0
+        and target_n > 0
+        and K_r == cofactor_support * target_C
+        and prime * target_n == 4 * cofactor_support * target_d + 1
+        and R_r == 4 * cofactor_support - target_n
+    )
+    scope_valid = (
+        source_tree_scope in {"fresh_source_tree_only", "charged_history_only"}
+        and source_state.get("source_tree_scope")
+        == successor_state.get("source_tree_scope")
+    )
+    return {
+        "source_state": source_state_valid,
+        "construction": construction_valid,
+        "successor_state": successor_state_valid,
+        "source_tree_scope": scope_valid,
+        "parent_ledger": parent_ledger_complete,
+        "passed": bool(
+            source_state_valid
+            and construction_valid
+            and successor_state_valid
+            and scope_valid
+            and parent_ledger_complete
+        ),
+    }
+
+
+def overflow_chart_fiber_profile(prime: int, R: int, K: int) -> dict[str, object]:
+    """Recompute the centered target fibre and a canonical F witness.
+
+    The finite box has coordinates ``[-v_q(K), v_q(K)]`` and represents the
+    centered target ``-1 mod R``.  When it misses but the generated subgroup
+    contains the target, the heap search supplies the least-L1, then
+    lexicographically first, signed F witness.
+    """
+    if prime * R + 1 != 4 * K or R <= 1 or K <= 0:
+        raise AssertionError("overflow fibre chart is not canonical")
+    factors = factorization(K)
+    target = R - 1
+    box_hits: list[tuple[int, ...]] = []
+
+    def enumerate_box(index: int, residue: int, vector: tuple[int, ...]) -> None:
+        if index == len(factors):
+            if residue == target:
+                box_hits.append(vector)
+            return
+        q, budget = factors[index]
+        for exponent in range(-budget, budget + 1):
+            enumerate_box(
+                index + 1,
+                residue * pow(q, exponent, R) % R,
+                vector + (exponent,),
+            )
+
+    enumerate_box(0, 1, ())
+    zero = (0,) * len(factors)
+    heap: list[tuple[int, tuple[int, ...], int]] = [(0, zero, 1)]
+    best: dict[int, tuple[int, tuple[int, ...]]] = {1: (0, zero)}
+    while heap:
+        distance, vector, residue = heappop(heap)
+        if best.get(residue) != (distance, vector):
+            continue
+        for index, (q, _budget) in enumerate(factors):
+            for direction in (-1, 1):
+                next_vector = list(vector)
+                next_vector[index] += direction
+                normalized = tuple(next_vector)
+                next_residue = residue * pow(q, direction, R) % R
+                candidate = (distance + 1, normalized)
+                if next_residue not in best or candidate < best[next_residue]:
+                    best[next_residue] = candidate
+                    heappush(heap, (candidate[0], normalized, next_residue))
+
+    if box_hits:
+        witness = min(box_hits, key=lambda vector: (sum(abs(value) for value in vector), vector))
+        classification = "hit"
+    elif target in best:
+        witness = best[target][1]
+        classification = "F"
+    else:
+        witness = None
+        classification = "G"
+    profile: dict[str, object] = {
+        "status": "nonempty" if classification != "G" else "empty",
+        "classification": classification,
+        "target_residue": target,
+        "support_factorization": factorization(K),
+        "bounded_box_target_count": len(box_hits),
+        "generated_subgroup_size": len(best),
+    }
+    if witness is not None:
+        residue = 1
+        for (q, _budget), exponent in zip(factors, witness):
+            residue = residue * pow(q, exponent, R) % R
+        if residue != target:
+            raise AssertionError("canonical overflow fibre witness changed")
+        profile["witness"] = list(witness)
+        profile["witness_l1"] = sum(abs(value) for value in witness)
+    return profile
+
+
+def signed_defect_profile(
+    fiber: dict[str, object],
+) -> dict[str, object]:
+    """Record the two globally oriented denominator defects of an F/hit witness."""
+    if fiber.get("classification") not in {"F", "hit"}:
+        return {"status": "not_applicable", "reason": "G_empty_target_fiber"}
+    raw_factors = fiber.get("support_factorization")
+    raw_witness = fiber.get("witness")
+    if not isinstance(raw_factors, list) or not isinstance(raw_witness, list):
+        raise AssertionError("nonempty overflow fibre lacks a witness")
+    factors = [(int(item[0]), int(item[1])) for item in raw_factors]
+    witness = tuple(int(value) for value in raw_witness)
+    if len(factors) != len(witness):
+        raise AssertionError("overflow defect witness dimension changed")
+    d_minus = [max(-value - budget, 0) for value, (_q, budget) in zip(witness, factors)]
+    d_plus = [max(value - budget, 0) for value, (_q, budget) in zip(witness, factors)]
+    minus_value = 1
+    plus_value = 1
+    for (q, _budget), exponent in zip(factors, d_minus):
+        minus_value *= q**exponent
+    for (q, _budget), exponent in zip(factors, d_plus):
+        plus_value *= q**exponent
+    return {
+        "status": "defined",
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "witness": list(witness),
+        "D_minus": {
+            "factorization": [
+                [q, exponent]
+                for (q, _budget), exponent in zip(factors, d_minus)
+                if exponent
+            ],
+            "value": minus_value,
+        },
+        "D_plus": {
+            "factorization": [
+                [q, exponent]
+                for (q, _budget), exponent in zip(factors, d_plus)
+                if exponent
+            ],
+            "value": plus_value,
+        },
+    }
 
 
 def overflow_direct_type_ii(payload: dict[str, object]) -> dict[str, object]:
@@ -4195,6 +4741,409 @@ def overflow_fixed_s_outer_rank(payload: dict[str, object]) -> dict[str, object]
     }
 
 
+def overflow_cofactor_r_chart_support(payload: dict[str, object]) -> dict[str, object]:
+    """Charge an r-chart by the determinant cofactor rather than by r itself.
+
+    This v1 branch records source-local candidates.  Its support potential is
+    strictly decreasing on the displayed edge, but no global non-resetting
+    phase scheduler has been proved, so it must not become a recursive edge.
+    """
+    candidates: list[dict[str, object]] = []
+    analysis: list[dict[str, object]] = []
+    rows = cofactor_provenanced_overflow_rows(payload)
+    for fixture in rows:
+        name = str(fixture["fixture_name"])
+        prime = int(fixture["prime"])
+        support = int(fixture["A"])
+        M = int(fixture["M"])
+        R_M = int(fixture["R_M"])
+        K_M = int(fixture["K_M"])
+        C = int(fixture["C"])
+        d = int(fixture["d"])
+        n = int(fixture["n"])
+        source_provenance = fixture["source_provenance"]
+        if not isinstance(source_provenance, dict):
+            raise AssertionError("cofactor source provenance changed")
+        parent_status = str(fixture["charged_support_parent_status"])
+        parent_state = source_provenance.get("parent_state")
+        if not isinstance(parent_state, dict):
+            raise AssertionError("cofactor parent-state provenance changed")
+        fresh_source_tree_entry = bool(
+            parent_status == "universal_raw_default_entry"
+            and support == 1
+            and parent_state.get("selected_absorbed_support") == 1
+            and parent_state.get("serialized_anchor_support") == 1
+            and parent_state.get("state_origin")
+            == "universal_raw_default_entry_v1"
+            and parent_state.get("state_scope") == "fresh_source_tree_only"
+            and parent_state.get("charged_support_parent_receipt") is None
+        )
+        source_tree_scope = (
+            "fresh_source_tree_only"
+            if fresh_source_tree_entry
+            else "charged_history_only"
+        )
+        quotient, r = divmod(M, prime)
+        s_numerator = 4 * r * d + 1
+        integral_s = r > 0 and s_numerator % prime == 0
+        s = s_numerator // prime if integral_s else None
+        R_r = 4 * r - s if isinstance(s, int) else None
+        K_r = r * C
+        g = gcd(support, C)
+        cofactor_support = lcm(support, C)
+        support_quotient = support // g
+        B_prime = (prime - 1) ** 2 // 4
+        source_potential = B_prime // support
+        successor_potential = B_prime // cofactor_support
+        source_fiber = overflow_chart_fiber_profile(prime, R_M, K_M)
+        successor_fiber = (
+            overflow_chart_fiber_profile(prime, R_r, K_r)
+            if isinstance(R_r, int) and R_r > 0
+            else None
+        )
+        source_defect = signed_defect_profile(source_fiber)
+        successor_defect = (
+            signed_defect_profile(successor_fiber)
+            if isinstance(successor_fiber, dict)
+            else {"status": "not_carried"}
+        )
+        source_in_domain = 1 <= support <= B_prime
+        target_in_domain = support < cofactor_support <= B_prime
+        source_determinant = (
+            support > 0
+            and M % support == 0
+            and canonical_chart(prime, M) == (R_M, K_M)
+            and K_M == M * C
+            and C == prime - d
+            and prime * n == 4 * M * d + 1
+            and R_M == 4 * M - n
+            and R_M > prime
+        )
+        r_chart_match = bool(
+            isinstance(R_r, int)
+            and r > 0
+            and canonical_chart(prime, r) == (R_r, K_r)
+        )
+        dual_identity = bool(
+            integral_s
+            and isinstance(R_r, int)
+            and prime * s == 4 * r * d + 1
+            and prime * R_r + 1 == 4 * K_r
+            and K_r == r * C
+            and r_chart_match
+        )
+        support_gate = support_quotient > 0 and r % support_quotient == 0
+        support_divisibility = K_r % cofactor_support == 0
+        if support_divisibility != support_gate:
+            raise AssertionError("cofactor support equivalence changed")
+        chart_match = bool(
+            isinstance(R_r, int)
+            and R_r > prime
+            and canonical_chart(prime, cofactor_support) == (R_r, K_r)
+        )
+        target_C = r // support_quotient if support_gate else None
+        target_n = (
+            4 * cofactor_support - R_r if isinstance(R_r, int) else None
+        )
+        target_d = prime - target_C if isinstance(target_C, int) else None
+        target_normal_form = bool(
+            isinstance(target_C, int)
+            and isinstance(target_n, int)
+            and isinstance(target_d, int)
+            and target_C > 0
+            and target_d > 0
+            and target_n > 0
+            and cofactor_support == C * support_quotient
+            and K_r == cofactor_support * target_C
+            and prime * target_n == 4 * cofactor_support * target_d + 1
+            and isinstance(R_r, int)
+            and R_r == 4 * cofactor_support - target_n
+        )
+        fiber_recomputed = bool(
+            isinstance(successor_fiber, dict)
+            and source_fiber.get("classification") in {"F", "hit"}
+            and successor_fiber.get("classification") in {"F", "hit"}
+        )
+        strict_potential = successor_potential < source_potential
+        source_replayed = (
+            source_provenance.get("kind")
+            == "universal_p_source_path_anchored_complete_excess_bundle"
+        )
+        target_class = (
+            "overflow" if isinstance(R_r, int) and R_r > prime else "marked_absorb"
+        )
+        source_state = {
+            "equation_target": [4, prime],
+            "R": R_M,
+            "K": K_M,
+            "absorbed_support": support,
+            "state_class": "overflow",
+            "fiber_class": source_fiber["classification"],
+            "source_tree_scope": source_tree_scope,
+        }
+        source_state["state_id"] = "state:" + canonical_hash(source_state)
+        successor_state = {
+            "equation_target": [4, prime],
+            "R": R_r,
+            "K": K_r,
+            "absorbed_support": cofactor_support,
+            "state_class": target_class,
+            "fiber_class": (
+                successor_fiber["classification"]
+                if isinstance(successor_fiber, dict)
+                else "unclassified"
+            ),
+            "source_tree_scope": source_tree_scope,
+        }
+        successor_state["state_id"] = "state:" + canonical_hash(successor_state)
+        serialized_charged_parent = bool(
+            parent_status == "serialized_charged_support_parent"
+            and support > 1
+            and parent_state.get("selected_absorbed_support") == support
+            and parent_state.get("serialized_anchor_support") == support
+            and registered_cofactor_charged_parent_replay(parent_state, source_state)
+        )
+        parent_ledger_complete = (
+            fresh_source_tree_entry or serialized_charged_parent
+        )
+        normal_form = verify_overflow_cofactor_r_chart_normal_form(
+            prime=prime,
+            support=support,
+            M=M,
+            R_M=R_M,
+            K_M=K_M,
+            C=C,
+            d=d,
+            n=n,
+            r=r,
+            s=s,
+            R_r=R_r,
+            K_r=K_r,
+            cofactor_support=cofactor_support,
+            support_quotient=support_quotient,
+            source_state=source_state,
+            successor_state=successor_state,
+            source_tree_scope=source_tree_scope,
+            parent_ledger_complete=parent_ledger_complete,
+        )
+        local_e1_e5 = {
+            "E1": source_determinant and source_replayed,
+            "E2": bool(
+                source_in_domain
+                and target_in_domain
+                and dual_identity
+                and support_gate
+                and support_divisibility
+                and chart_match
+                and target_normal_form
+            ),
+            "E3": normal_form["passed"],
+            "E4": fiber_recomputed,
+            "E5": strict_potential,
+        }
+        conditional_local_e1_e5 = dict(local_e1_e5)
+        if parent_status == "missing_charged_support_parent":
+            conditional_local_e1_e5["E3"] = bool(
+                normal_form["source_state"]
+                and normal_form["construction"]
+                and normal_form["successor_state"]
+                and normal_form["source_tree_scope"]
+            )
+        e1_e5 = dict(local_e1_e5)
+        e1_e5["E5"] = False
+        is_candidate = local_e1_e5 == {f"E{i}": True for i in range(1, 6)}
+        direct_gaps = [
+            factor
+            for factor, _exponent in factorization(prime + 4)
+            if factor % 4 == 3
+        ]
+        direct_gap = min(direct_gaps) if direct_gaps else None
+        missing: list[str] = []
+        if not local_e1_e5["E1"]:
+            missing.append("complete_path_anchored_overflow_source")
+        if not source_in_domain:
+            missing.append("source_potential_domain")
+        if not target_in_domain:
+            missing.append("strict_bounded_cofactor_support")
+        if not dual_identity:
+            missing.append("r_chart_dual_identity")
+        if not support_gate:
+            missing.append("A_over_gcd_A_C_divides_r")
+        if not chart_match:
+            missing.append("canonical_target_chart")
+        if not target_normal_form:
+            missing.append("successor_overflow_normal_form")
+        if not parent_ledger_complete:
+            missing.append("charged_support_parent_ledger")
+        if not normal_form["passed"]:
+            missing.append("cofactor_normal_form_verifier")
+        if not fiber_recomputed:
+            missing.append("recomputed_F_or_hit_target_fiber")
+        if not strict_potential:
+            missing.append("strict_potential_decrease")
+        if strict_potential:
+            missing.append("global_nonresetting_phase_rank")
+        receipt = {
+            "edge_id": "edge:"
+            + canonical_hash({"source": source_state, "successor": successor_state}),
+            "certificate_type": "overflow_cofactor_r_chart_support",
+            "phase": "OVERFLOW_DETERMINANT_COFACTOR_SUPPORT",
+            "state_class": target_class,
+            "source_state": source_state,
+            "successor_state": successor_state,
+            "equation_target": {"numerator": 4, "denominator": prime},
+            "marked_solution_set": {
+                "source": "Sol(p)",
+                "successor": "Sol(p)",
+                "lift": "identity",
+            },
+            "target_fiber": {
+                "status": "recomputed",
+                "source": source_fiber,
+                "successor": successor_fiber,
+                "reason": "both canonical charts are reclassified before the identity lift",
+            },
+            "signed_defect": {
+                "status": "recomputed",
+                "source": source_defect,
+                "successor": successor_defect,
+            },
+            "certificate_context": {
+                "source": OVERFLOW_INPUT.name,
+                "provenance": "universal_p_source_path_anchored_complete_excess_bundle",
+                "fixture_name": name,
+                "source_provenance": source_provenance,
+                "charged_support_parent_status": parent_status,
+                "source_tree": {
+                    "scope": source_tree_scope,
+                    "root_entry": fresh_source_tree_entry,
+                    "root_entry_only": fresh_source_tree_entry,
+                    "fresh_scope_is_propagated_not_synthesized": True,
+                },
+                "normal_form_verifier": {
+                    "name": "verify_overflow_cofactor_r_chart_normal_form",
+                    "checks": normal_form,
+                    "registered_charged_parent_replay": serialized_charged_parent,
+                },
+                "overflow_determinant": {
+                    "M": M,
+                    "d": d,
+                    "n": n,
+                    "C": C,
+                    "R_M": R_M,
+                    "K_M": K_M,
+                    "identity": "p*n=4*M*d+1",
+                },
+                "r_cofactor": {
+                    "quotient": quotient,
+                    "r": r,
+                    "s": s,
+                    "R_r": R_r,
+                    "K_r": K_r,
+                    "gcd_A_C": g,
+                    "support_quotient_A_over_g": support_quotient,
+                    "cofactor_support_A_C": cofactor_support,
+                    "support_equivalence": "A/gcd(A,C) divides r iff lcm(A,C) divides K_r",
+                    "chart_relation": (
+                        "same_chart"
+                        if (R_r, K_r) == (R_M, K_M)
+                        else "r_chart"
+                    ),
+                },
+                "successor_carrier_normal_form": {
+                    "M_T": cofactor_support,
+                    "C_T": target_C,
+                    "d_T": target_d,
+                    "n_T": target_n,
+                    "R_T": R_r,
+                    "K_T": K_r,
+                    "identity": "p*n_T=4*M_T*d_T+1",
+                },
+                "terminal_first": {
+                    "direct_type_ii_gap": direct_gap,
+                    "preempts_this_branch": direct_gap is not None,
+                },
+            },
+            "normal_form": "overflow_cofactor_r_chart_support_v1",
+            "induction_rank": {
+                "kind": "absorbed_support_potential",
+                "source": source_potential,
+                "successor": successor_potential,
+            },
+            "potential_record": {
+                "B_p": B_prime,
+                "source_support": support,
+                "successor_support": cofactor_support,
+                "source_value": source_potential,
+                "successor_value": successor_potential,
+                "strict_decrease": strict_potential,
+                "support_monotone": True,
+                "continuation_boundary": (
+                    "the successor carrier is A_C, not the residue r; "
+                    "A_C divides K_r and is reconstructed as a new overflow determinant; "
+                    "this is a local support potential, not a global scheduler rank"
+                ),
+            },
+            "e1_e5": e1_e5,
+            "local_e1_e5": local_e1_e5,
+            "conditional_local_e1_e5": conditional_local_e1_e5,
+            "selector_status": (
+                "candidate_transition" if is_candidate else "analysis_evidence"
+            ),
+            "recursive_edge_eligible": False,
+            "lift_status": "proved_identity" if fiber_recomputed else "not_established",
+            "proof_boundary": (
+                "cofactor_r_chart_source_local_potential_only"
+                if is_candidate
+                else "cofactor_r_chart_support_parent_ledger_boundary"
+            ),
+            "missing_conditions": missing,
+            "scope_note": (
+                "The structured universal_raw_default_entry_v1 establishes a fresh default "
+                "source tree and only propagates that tree scope; it neither resets nor erases "
+                "charged history. The strict support potential is local until a non-resetting "
+                "phase scheduler is proved; terminal-first still takes a direct Type II "
+                "certificate when present."
+                if is_candidate and fresh_source_tree_entry
+                else "All displayed arithmetic, target-fibre, and potential checks are local; "
+                "the edge is not recursive until both the charged-support parent replay and a "
+                "global non-resetting phase rank are supplied."
+            ),
+        }
+        check_status_boundary(receipt)
+        if is_candidate:
+            candidates.append(receipt)
+        else:
+            analysis.append(receipt)
+    return {
+        "fixture_count": len(rows),
+        "verified_edge_count": 0,
+        "candidate_transition_count": len(candidates),
+        "analysis_evidence_count": len(analysis),
+        "verified_receipts": [],
+        "candidate_receipts": candidates,
+        "analysis_receipts": analysis,
+        "rank_definition": {
+            "kind": "absorbed_support_potential",
+            "formula": "floor(((p-1)^2)/4 / A)",
+            "candidate": "A_C=lcm(A,C), C=p-d, K_r=r*C",
+            "acceptance": (
+                "complete source provenance with a structured fresh root or a registered "
+                "charged-support parent replay, "
+                "A/gcd(A,C)|r, canonical_chart(p,A_C)=(R_r,K_r), the successor "
+                "M_T=A_C overflow determinant, A<A_C<=B_p, recomputed F/hit fibre, and "
+                "strict local potential decrease"
+            ),
+        },
+        "scope_note": (
+            "Cofactor support is not a free reset. The two default-support positive controls "
+            "are terminal-preempted source-local candidate transitions, not recursive edges; "
+            "the accumulated A=5 row remains analysis evidence until its charged-support parent "
+            "is replayed by a registered adapter."
+        ),
+    }
+
+
 def smooth23_fixed_s_parametric_family() -> dict[str, object]:
     """Reconstruct a genuine r,d>1 smooth fixed-s overflow family.
 
@@ -5585,7 +6534,7 @@ def phase_reset_boundary(payload: dict[str, object]) -> dict[str, object]:
 
 def type_ii_canonical_fan_escape_receipt(payload: dict[str, object]) -> dict[str, object]:
     """Attach the Type II fan trichotomy as a non-recursive dual prefilter."""
-    expected_schema = "type-ii-canonical-fan-escape-trichotomy/v1"
+    expected_schema = "type-ii-canonical-fan-escape-trichotomy/v2"
     if payload.get("schema_version") != expected_schema:
         raise AssertionError("Type II fan trichotomy schema changed")
     profiles = payload.get("profiles")
@@ -5614,6 +6563,17 @@ def type_ii_canonical_fan_escape_receipt(payload: dict[str, object]) -> dict[str
         "profiles": profiles,
         "profile_count": len(profiles),
         "edge_cases": payload.get("edge_cases", []),
+        "depth_edge_cases": payload.get("depth_edge_cases", []),
+        "depth_edge_case_cross_state_compatibility": payload.get(
+            "depth_edge_case_cross_state_compatibility", {}
+        ),
+        "shared_factor_depth_edges": payload.get("shared_factor_depth_edges", []),
+        "shared_factor_depth_compatibility": payload.get(
+            "shared_factor_depth_compatibility", {}
+        ),
+        "shared_factor_q_adic_bridge": payload.get(
+            "shared_factor_q_adic_bridge", {}
+        ),
         "source_receipt": {
             "result_file": TYPE_II_FAN_INPUT.name,
             "result_sha256": sha256(TYPE_II_FAN_INPUT),
@@ -5626,13 +6586,36 @@ def type_ii_canonical_fan_escape_receipt(payload: dict[str, object]) -> dict[str
                 "direct_type_ii_hit",
             ],
             "one_hole_class": "ruled_out_by_primorial_fan_bound",
+            "two_power_character_route": (
+                "depth d supplies a character of image order 2^(d+1); "
+                "finite-generator values are constructed, but no cross-state map is supplied"
+            ),
+            "higher_order_character_status": "finite_generator_certificate",
+            "finite_character_compatibility_status": payload.get(
+                "depth_edge_case_cross_state_compatibility", {}
+            ).get("compatibility_status", "missing"),
+            "shared_factor_difference_bound_status": payload.get(
+                "shared_factor_q_adic_bridge", {}
+            ).get("valuation_profiles", [{}])[0].get(
+                "difference_bound_status", "missing"
+            ),
+            "shared_factor_collision_tree_status": payload.get(
+                "shared_factor_q_adic_bridge", {}
+            ).get("collision_tree_status", "missing"),
+            "shared_factor_q_adic_capacity_status": payload.get(
+                "shared_factor_q_adic_bridge", {}
+            ).get("q_adic_capacity_status", "missing"),
             "cross_state_mapping_status": "unproved",
         },
         "proof_boundary": "fan_trichotomy_dual_prefilter",
         "scope_note": (
             "The canonical fan theorem removes the all-one-hole failure stratum. "
-            "It supplies state-local dual or target-fiber evidence only; no source lift, "
-            "capacity injection, or recursive edge is inferred."
+            "It supplies state-local dual or target-fiber evidence only. The exact 2^j "
+            "depth separates quadratic-inseparable rows and finite-generator character "
+            "values are recorded. Shared-prime powers additionally satisfy the exact local "
+            "difference bound and are stratified by q-power collision levels. The finite "
+            "residue-class capacity bound is recorded, but no source lift, global capacity "
+            "injection, or recursive edge is inferred."
         ),
     }
 
@@ -5660,6 +6643,132 @@ def verify_type_ii_canonical_fan_contract(result: dict[str, object]) -> None:
         != "support_outside_quadratically_inseparable"
     ):
         raise AssertionError("Type II fan quadratic-inseparable edge boundary changed")
+    depth_edge_cases = receipt.get("depth_edge_cases")
+    if not isinstance(depth_edge_cases, list) or len(depth_edge_cases) != 3:
+        raise AssertionError("Type II fan 2^j depth edge count changed")
+    expected_depths = {97: 1, 3457: 2, 14593: 3}
+    for edge in depth_edge_cases:
+        if not isinstance(edge, dict):
+            raise AssertionError("Type II fan depth edge is not an object")
+        prime = int(edge.get("prime", 0))
+        ray = edge.get("ray")
+        profile = ray.get("two_power_depth_profile") if isinstance(ray, dict) else None
+        if (
+            prime not in expected_depths
+            or not isinstance(profile, dict)
+            or profile.get("depth") != expected_depths[prime]
+            or profile.get("minimal_character_order")
+            != 2 ** (expected_depths[prime] + 1)
+            or profile.get("character_existence_status")
+            != "implied_by_two_power_character_depth_lemma"
+            or profile.get("explicit_character_status") != "constructed_on_generators"
+        ):
+            raise AssertionError("Type II fan 2^j depth certificate changed")
+    compatibility = receipt.get("depth_edge_case_cross_state_compatibility")
+    if (
+        not isinstance(compatibility, dict)
+        or compatibility.get("common_modulus") != 192
+        or compatibility.get("compatibility_status") != "compatible"
+        or compatibility.get("joint_kernel_count") != 1
+        or compatibility.get("capacity_mapping_status") != "unproved"
+    ):
+        raise AssertionError("Type II fan finite character compatibility changed")
+    shared_compatibility = receipt.get("shared_factor_depth_compatibility")
+    shared_edges = receipt.get("shared_factor_depth_edges")
+    if (
+        not isinstance(shared_edges, list)
+        or len(shared_edges) != 2
+        or not isinstance(shared_compatibility, dict)
+        or shared_compatibility.get("shared_factor_primes") != [7]
+        or shared_compatibility.get("common_modulus") != 240
+        or shared_compatibility.get("joint_kernel_count") != 4
+        or shared_compatibility.get("compatibility_status") != "compatible"
+        or shared_compatibility.get("capacity_mapping_status") != "unproved"
+    ):
+        raise AssertionError("Type II shared-factor character boundary changed")
+    q_adic_bridge = receipt.get("shared_factor_q_adic_bridge")
+    if (
+        not isinstance(q_adic_bridge, dict)
+        or q_adic_bridge.get("shared_primes") != [7]
+        or q_adic_bridge.get("valuation_profiles")
+        != [
+            {
+                "prime": 7,
+                "valuations": [1, 2],
+                "minimum_height": 1,
+                "maximum_height": 2,
+                "height_gap": 1,
+                "offset_difference": 336,
+                "offset_difference_valuation": 1,
+                "minimum_shared_valuation": 1,
+                "difference_bound_holds": True,
+                "difference_bound_status": "tight",
+                "collision_levels": [
+                    {
+                        "level": 1,
+                        "modulus": 7,
+                        "active_row_indices": [0, 1],
+                        "shift_residue_classes": {"2": [0, 1]},
+                        "active_class_count": 1,
+                        "all_active_shifts_congruent": True,
+                    },
+                    {
+                        "level": 2,
+                        "modulus": 49,
+                        "active_row_indices": [1],
+                        "shift_residue_classes": {"2": [1]},
+                        "active_class_count": 1,
+                        "all_active_shifts_congruent": True,
+                    },
+                ],
+                "capacity_profile": {
+                    "prime": 433,
+                    "q": 7,
+                    "shift_count": 2,
+                    "max_level": 2,
+                    "truncated_valuation_demand": 3,
+                    "capacity_bound": 3,
+                    "capacity_slack": 0,
+                    "capacity_bound_holds": True,
+                    "capacity_bound_status": "tight",
+                    "scope_note": (
+                        "For every cutoff E, summing the active q^r target classes gives "
+                        "sum_s min(v_q(p+4s), E) <= sum_{r<=E} C_r(S,q), where C_r is "
+                        "the largest shift-residue class modulo q^r. This is a finite "
+                        "shift-capacity bound, not a Type II certificate or descent."
+                    ),
+                    "levels": [
+                        {
+                            "level": 1,
+                            "modulus": 7,
+                            "target_residue": 2,
+                            "active_row_indices": [0, 1],
+                            "active_count": 2,
+                            "max_class_occupancy": 2,
+                            "capacity_slack": 0,
+                        },
+                        {
+                            "level": 2,
+                            "modulus": 49,
+                            "target_residue": 2,
+                            "active_row_indices": [1],
+                            "active_count": 1,
+                            "max_class_occupancy": 1,
+                            "capacity_slack": 0,
+                        },
+                    ],
+                },
+            }
+        ]
+        or q_adic_bridge.get("q_adic_bridge_status")
+        != "local_valuation_ledger_only"
+        or q_adic_bridge.get("collision_tree_status")
+        != "exact_local_collision_tree"
+        or q_adic_bridge.get("q_adic_capacity_status")
+        != "exact_local_shift_capacity_bound"
+        or q_adic_bridge.get("capacity_mapping_status") != "unproved"
+    ):
+        raise AssertionError("Type II shared-factor q-adic bridge changed")
     source = receipt.get("source_receipt")
     if not isinstance(source, dict) or source.get("result_sha256") != sha256(TYPE_II_FAN_INPUT):
         raise AssertionError("Type II fan trichotomy source hash changed")
@@ -5690,6 +6799,15 @@ def verify_type_ii_canonical_fan_contract(result: dict[str, object]) -> None:
                 separator = ray.get("quadratic_separator")
                 if not isinstance(separator, dict) or separator.get("character_order") != 2:
                     raise AssertionError("support-outside Type II ray lost its separator")
+            if ray.get("classification") == "support_outside_quadratically_inseparable":
+                depth_profile = ray.get("two_power_depth_profile")
+                if (
+                    not isinstance(depth_profile, dict)
+                    or int(depth_profile.get("depth", 0)) < 1
+                    or depth_profile.get("minimal_character_order")
+                    != 2 ** (int(depth_profile["depth"]) + 1)
+                ):
+                    raise AssertionError("support-outside Type II depth route changed")
 
 
 def build_results() -> dict[str, object]:
@@ -5777,6 +6895,7 @@ def build_results() -> dict[str, object]:
     a_one_dual_reset = overflow_a_one_dual_reset_family(overflow)
     fixed_s_outer_rank = overflow_fixed_s_outer_rank(overflow)
     fixed_s_bounded_divisor = overflow_fixed_s_bounded_divisor_outer_rank(overflow)
+    cofactor_r_chart_support = overflow_cofactor_r_chart_support(overflow)
     fixed_n_fixture_names = {
         receipt["certificate_context"]["fixture_name"]
         for receipt in fixed_n_outer_rank["verified_receipts"]
@@ -5832,6 +6951,7 @@ def build_results() -> dict[str, object]:
         "overflow_a_one_dual_reset_family": a_one_dual_reset,
         "overflow_fixed_s_outer_rank": fixed_s_outer_rank,
         "overflow_fixed_s_bounded_divisor_outer_rank": fixed_s_bounded_divisor,
+        "overflow_cofactor_r_chart_support": cofactor_r_chart_support,
         "overflow_menu": overflow_menu,
         "overflow_outer_rank_reset": outer_rank_reset,
         "phase_reset_receipts": reset_boundary,
@@ -5869,6 +6989,9 @@ def build_results() -> dict[str, object]:
             "a_one_dual_reset_family_replayed": True,
             "fixed_s_overflow_rank_requires_product_divisor": True,
             "fixed_s_bounded_divisor_requires_product_divisor": True,
+            "cofactor_r_chart_support_requires_complete_source_provenance": True,
+            "cofactor_r_chart_support_requires_charged_support_parent": True,
+            "cofactor_r_chart_support_recomputes_target_fiber": True,
             "outer_rank_reset_requires_joined_support": True,
             "reset_cycle_boundary_requires_E5": True,
            "support_debt_phase_bridge_requires_alternate_mapping": True,
@@ -5876,11 +6999,16 @@ def build_results() -> dict[str, object]:
             "large_slab_capacity_requires_carrier_mapping": True,
             "d_one_rechart_is_g_analysis_only": True,
             "type_ii_fan_escape_requires_character_or_multi_hole": True,
+            "type_ii_fan_depth_requires_higher_character_bridge": True,
+            "type_ii_fan_character_compatibility_is_not_capacity": True,
+            "type_ii_fan_shared_factor_requires_q_adic_bridge": True,
+            "type_ii_fan_q_adic_bridge_is_local_only": True,
        },
         "source_sha256": source_hashes(),
         "scope_note": (
             "This receipt unifies state-local representation, dual, and capacity evidence. "
-            "It contains fixed-n/fixed-s identity-lift edges and focused joined-support RESET edges, "
+            "It contains fixed-n/fixed-s identity-lift edges, focused cofactor-supported r-chart "
+            "edges, and focused joined-support RESET edges, "
             "a high-carrier p+4 complement router, and a conditional support-debt phase bridge, "
             "a Type II canonical-fan dual prefilter, "
             "but does not prove universal branch existence or well-founded descent for all overflow states."
@@ -7594,6 +8722,324 @@ def verify_overflow_a_one_dual_reset_family_contract(
         raise AssertionError("A=1 dual RESET fixture coverage changed")
 
 
+def verify_overflow_cofactor_r_chart_support_contract(
+    result: dict[str, object],
+) -> None:
+    branch = result.get("overflow_cofactor_r_chart_support")
+    if not isinstance(branch, dict):
+        raise AssertionError("cofactor r-chart support receipt missing")
+    if (
+        branch.get("fixture_count") != 3
+        or branch.get("verified_edge_count") != 0
+        or branch.get("candidate_transition_count") != 2
+        or branch.get("analysis_evidence_count") != 1
+    ):
+        raise AssertionError("cofactor r-chart support counts changed")
+    verified = branch.get("verified_receipts")
+    candidates = branch.get("candidate_receipts")
+    analysis = branch.get("analysis_receipts")
+    if not isinstance(verified, list) or verified:
+        raise AssertionError("cofactor verified-edge boundary changed")
+    if not isinstance(candidates, list) or len(candidates) != 2:
+        raise AssertionError("cofactor candidate receipt shape changed")
+    if not isinstance(analysis, list) or len(analysis) != 1:
+        raise AssertionError("cofactor analysis receipt shape changed")
+    expected_rows = {
+        "root_edge_0_cofactor_default_support": {
+            "prime": 73,
+            "A": 1,
+            "M": 34,
+            "d": 22,
+            "n": 41,
+            "C": 51,
+            "R": 95,
+            "K": 1734,
+            "A_C": 51,
+            "C_T": 34,
+            "d_T": 39,
+            "n_T": 109,
+            "potential": (1296, 25),
+            "witness": [-2, 3, -1],
+            "defect": (2, 9),
+            "parent_status": "universal_raw_default_entry",
+            "state_origin": "universal_raw_default_entry_v1",
+            "state_scope": "fresh_source_tree_only",
+            "anchor": "G_bundle_overflow",
+            "raw_source": [73, 2447, 72],
+        },
+        "accumulated_default_support": {
+            "prime": 409,
+            "A": 1,
+            "M": 250,
+            "d": 200,
+            "n": 489,
+            "C": 209,
+            "R": 511,
+            "K": 52250,
+            "A_C": 209,
+            "C_T": 250,
+            "d_T": 159,
+            "n_T": 325,
+            "potential": (41616, 199),
+            "witness": [-1, 0, -2, -1],
+            "defect": (11, 1),
+            "parent_status": "universal_raw_default_entry",
+            "state_origin": "universal_raw_default_entry_v1",
+            "state_scope": "fresh_source_tree_only",
+            "anchor": "universal_default_anchor_orbit",
+            "raw_source": [409, 101999, 408],
+        },
+    }
+    seen: set[str] = set()
+    for receipt in candidates:
+        if not isinstance(receipt, dict):
+            raise AssertionError("cofactor candidate receipt is not an object")
+        context = receipt.get("certificate_context")
+        source = receipt.get("source_state")
+        successor = receipt.get("successor_state")
+        fiber = receipt.get("target_fiber")
+        defect = receipt.get("signed_defect")
+        potential = receipt.get("potential_record")
+        if (
+            not isinstance(context, dict)
+            or not isinstance(source, dict)
+            or not isinstance(successor, dict)
+            or not isinstance(fiber, dict)
+            or not isinstance(defect, dict)
+            or not isinstance(potential, dict)
+        ):
+            raise AssertionError("cofactor candidate receipt payload is incomplete")
+        name = context.get("fixture_name")
+        if not isinstance(name, str) or name not in expected_rows:
+            raise AssertionError("unexpected cofactor candidate fixture")
+        expected = expected_rows[name]
+        seen.add(name)
+        p = expected["prime"]
+        determinant = context.get("overflow_determinant")
+        cofactor = context.get("r_cofactor")
+        successor_normal = context.get("successor_carrier_normal_form")
+        provenance = context.get("source_provenance")
+        terminal = context.get("terminal_first")
+        source_tree = context.get("source_tree")
+        normal_verifier = context.get("normal_form_verifier")
+        if (
+            not isinstance(determinant, dict)
+            or not isinstance(cofactor, dict)
+            or not isinstance(successor_normal, dict)
+            or not isinstance(provenance, dict)
+            or not isinstance(terminal, dict)
+            or not isinstance(source_tree, dict)
+            or not isinstance(normal_verifier, dict)
+        ):
+            raise AssertionError("cofactor candidate context is incomplete")
+        if (
+            receipt.get("certificate_type") != "overflow_cofactor_r_chart_support"
+            or receipt.get("phase") != "OVERFLOW_DETERMINANT_COFACTOR_SUPPORT"
+            or receipt.get("normal_form") != "overflow_cofactor_r_chart_support_v1"
+            or receipt.get("selector_status") != "candidate_transition"
+            or receipt.get("recursive_edge_eligible") is not False
+            or receipt.get("lift_status") != "proved_identity"
+            or receipt.get("e1_e5")
+            != {"E1": True, "E2": True, "E3": True, "E4": True, "E5": False}
+            or receipt.get("local_e1_e5") != {f"E{i}": True for i in range(1, 6)}
+            or receipt.get("conditional_local_e1_e5")
+            != {f"E{i}": True for i in range(1, 6)}
+            or receipt.get("missing_conditions") != ["global_nonresetting_phase_rank"]
+            or source.get("absorbed_support") != expected["A"]
+            or successor.get("absorbed_support") != expected["A_C"]
+            or source.get("R") != expected["R"]
+            or successor.get("R") != expected["R"]
+            or source.get("K") != expected["K"]
+            or successor.get("K") != expected["K"]
+            or source.get("state_class") != "overflow"
+            or successor.get("state_class") != "overflow"
+            or source.get("fiber_class") != "F"
+            or successor.get("fiber_class") != "F"
+            or source.get("source_tree_scope") != expected["state_scope"]
+            or successor.get("source_tree_scope") != expected["state_scope"]
+            or determinant
+            != {
+                "M": expected["M"],
+                "d": expected["d"],
+                "n": expected["n"],
+                "C": expected["C"],
+                "R_M": expected["R"],
+                "K_M": expected["K"],
+                "identity": "p*n=4*M*d+1",
+            }
+            or cofactor.get("r") != expected["M"]
+            or cofactor.get("R_r") != expected["R"]
+            or cofactor.get("K_r") != expected["K"]
+            or cofactor.get("cofactor_support_A_C") != expected["A_C"]
+            or cofactor.get("chart_relation") != "same_chart"
+            or successor_normal.get("M_T") != expected["A_C"]
+            or successor_normal.get("C_T") != expected["C_T"]
+            or successor_normal.get("d_T") != expected["d_T"]
+            or successor_normal.get("n_T") != expected["n_T"]
+            or successor_normal.get("R_T") != expected["R"]
+            or successor_normal.get("K_T") != expected["K"]
+            or context.get("charged_support_parent_status") != expected["parent_status"]
+            or provenance.get("anchor_record") != expected["anchor"]
+            or not isinstance(provenance.get("parent_state"), dict)
+            or provenance["parent_state"].get("state_origin") != expected["state_origin"]
+            or provenance["parent_state"].get("state_scope") != expected["state_scope"]
+            or provenance["parent_state"].get("selected_absorbed_support")
+            != expected["A"]
+            or provenance["parent_state"].get("serialized_anchor_support")
+            != expected["A"]
+            or provenance["parent_state"].get("charged_support_parent_receipt")
+            is not None
+            or provenance.get("universal_p_source", {}).get("source")
+            != expected["raw_source"]
+            or source_tree
+            != {
+                "scope": expected["state_scope"],
+                "root_entry": True,
+                "root_entry_only": True,
+                "fresh_scope_is_propagated_not_synthesized": True,
+            }
+            or normal_verifier.get("name")
+            != "verify_overflow_cofactor_r_chart_normal_form"
+            or normal_verifier.get("registered_charged_parent_replay") is not False
+            or normal_verifier.get("checks")
+            != {
+                "source_state": True,
+                "construction": True,
+                "successor_state": True,
+                "source_tree_scope": True,
+                "parent_ledger": True,
+                "passed": True,
+            }
+            or terminal.get("direct_type_ii_gap") != 7
+            or terminal.get("preempts_this_branch") is not True
+        ):
+            raise AssertionError("cofactor candidate receipt identity changed")
+        if (
+            p * expected["n"] != 4 * expected["M"] * expected["d"] + 1
+            or expected["C"] != p - expected["d"]
+            or canonical_chart(p, expected["M"])
+            != (expected["R"], expected["K"])
+            or canonical_chart(p, expected["A_C"])
+            != (expected["R"], expected["K"])
+            or p * expected["n_T"]
+            != 4 * expected["A_C"] * expected["d_T"] + 1
+            or expected["A_C"] * expected["C_T"] != expected["K"]
+        ):
+            raise AssertionError("cofactor candidate normal form changed")
+        source_fiber = fiber.get("source")
+        successor_fiber = fiber.get("successor")
+        source_defect = defect.get("source")
+        successor_defect = defect.get("successor")
+        if (
+            not isinstance(source_fiber, dict)
+            or not isinstance(successor_fiber, dict)
+            or not isinstance(source_defect, dict)
+            or not isinstance(successor_defect, dict)
+            or source_fiber.get("classification") != "F"
+            or successor_fiber.get("classification") != "F"
+            or source_fiber.get("bounded_box_target_count") != 0
+            or successor_fiber.get("bounded_box_target_count") != 0
+            or source_fiber.get("witness") != expected["witness"]
+            or successor_fiber.get("witness") != expected["witness"]
+            or source_defect.get("D_minus", {}).get("value") != expected["defect"][0]
+            or source_defect.get("D_plus", {}).get("value") != expected["defect"][1]
+            or successor_defect.get("D_minus", {}).get("value") != expected["defect"][0]
+            or successor_defect.get("D_plus", {}).get("value") != expected["defect"][1]
+        ):
+            raise AssertionError("cofactor target fibre or defect changed")
+        B_prime = (p - 1) ** 2 // 4
+        if (
+            potential.get("B_p") != B_prime
+            or potential.get("source_value") != expected["potential"][0]
+            or potential.get("successor_value") != expected["potential"][1]
+            or potential.get("strict_decrease") is not True
+            or potential.get("support_monotone") is not True
+        ):
+            raise AssertionError("cofactor candidate potential changed")
+    if seen != set(expected_rows):
+        raise AssertionError("cofactor candidate fixture coverage changed")
+
+    boundary = analysis[0]
+    if not isinstance(boundary, dict):
+        raise AssertionError("cofactor analysis receipt is not an object")
+    context = boundary.get("certificate_context")
+    potential = boundary.get("potential_record")
+    fiber = boundary.get("target_fiber")
+    defect = boundary.get("signed_defect")
+    if (
+        not isinstance(context, dict)
+        or not isinstance(potential, dict)
+        or not isinstance(fiber, dict)
+        or not isinstance(defect, dict)
+    ):
+        raise AssertionError("cofactor analysis payload is incomplete")
+    cofactor = context.get("r_cofactor")
+    successor_normal = context.get("successor_carrier_normal_form")
+    source = boundary.get("source_state")
+    successor = boundary.get("successor_state")
+    source_tree = context.get("source_tree")
+    normal_verifier = context.get("normal_form_verifier")
+    if (
+        boundary.get("selector_status") != "analysis_evidence"
+        or boundary.get("recursive_edge_eligible") is not False
+        or boundary.get("e1_e5")
+        != {"E1": True, "E2": True, "E3": False, "E4": True, "E5": False}
+        or boundary.get("local_e1_e5")
+        != {"E1": True, "E2": True, "E3": False, "E4": True, "E5": True}
+        or boundary.get("conditional_local_e1_e5")
+        != {f"E{i}": True for i in range(1, 6)}
+        or boundary.get("missing_conditions")
+        != [
+            "charged_support_parent_ledger",
+            "cofactor_normal_form_verifier",
+            "global_nonresetting_phase_rank",
+        ]
+        or context.get("fixture_name") != "accumulated_positive_fixed_n_edge"
+        or context.get("charged_support_parent_status")
+        != "missing_charged_support_parent"
+        or not isinstance(cofactor, dict)
+        or not isinstance(successor_normal, dict)
+        or not isinstance(source, dict)
+        or not isinstance(successor, dict)
+        or not isinstance(source_tree, dict)
+        or not isinstance(normal_verifier, dict)
+        or source.get("source_tree_scope") != "charged_history_only"
+        or successor.get("source_tree_scope") != "charged_history_only"
+        or source_tree
+        != {
+            "scope": "charged_history_only",
+            "root_entry": False,
+            "root_entry_only": False,
+            "fresh_scope_is_propagated_not_synthesized": True,
+        }
+        or normal_verifier.get("name")
+        != "verify_overflow_cofactor_r_chart_normal_form"
+        or normal_verifier.get("registered_charged_parent_replay") is not False
+        or normal_verifier.get("checks")
+        != {
+            "source_state": True,
+            "construction": True,
+            "successor_state": True,
+            "source_tree_scope": True,
+            "parent_ledger": False,
+            "passed": False,
+        }
+        or cofactor.get("cofactor_support_A_C") != 1045
+        or cofactor.get("support_quotient_A_over_g") != 5
+        or successor_normal.get("M_T") != 1045
+        or successor_normal.get("C_T") != 50
+        or successor_normal.get("d_T") != 359
+        or successor_normal.get("n_T") != 3669
+        or potential.get("source_value") != 8323
+        or potential.get("successor_value") != 39
+        or potential.get("strict_decrease") is not True
+        or fiber.get("successor", {}).get("witness") != [-1, 0, -2, -1]
+        or defect.get("successor", {}).get("D_minus", {}).get("value") != 11
+        or defect.get("successor", {}).get("D_plus", {}).get("value") != 1
+    ):
+        raise AssertionError("cofactor parent-ledger boundary changed")
+
+
 def verify_overflow_menu_contract(result: dict[str, object]) -> None:
     menu = result.get("overflow_menu")
     if not isinstance(menu, dict):
@@ -7825,6 +9271,7 @@ def main() -> None:
         verify_overflow_same_chart_support_promotion_contract(result)
         verify_overflow_a_one_generic_boundary_contract(result)
         verify_overflow_a_one_dual_reset_family_contract(result)
+        verify_overflow_cofactor_r_chart_support_contract(result)
         verify_overflow_menu_contract(result)
         if not args.output.exists() or args.output.read_text(encoding="utf-8") != rendered:
             raise SystemExit("stored selector result does not match regenerated output")

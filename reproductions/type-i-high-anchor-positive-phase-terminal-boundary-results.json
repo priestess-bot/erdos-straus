@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "certificate_type": "high_anchor_positive_phase_terminal_boundary_v1",
+  "selector_status": "analysis_evidence",
+  "recursive_edge_eligible": false,
+  "prime": 1201,
+  "scope": {
+    "positive_phases": [
+      1,
+      2
+    ],
+    "arithmetic_only": true,
+    "not_verified": [
+      "source_path_provenance",
+      "charged_parent_receipt",
+      "F_G_fiber_lift",
+      "global_E1_E5_edge"
+    ]
+  },
+  "minimal_phase_charts": [
+    {
+      "phase": 1,
+      "q": 2,
+      "anchor": {
+        "A": 319,
+        "B": 1185,
+        "R": 1259,
+        "K": 378015,
+        "n": 17
+      },
+      "arithmetic_source_only": {
+        "M": 163328,
+        "k": 135,
+        "r": 1193,
+        "C": 638,
+        "d_source": 563,
+        "n_source": 306257,
+        "R_source": 347055,
+        "K_source": 104203264
+      },
+      "target": {
+        "A": 638,
+        "R": 2535,
+        "K": 761134,
+        "n": 17,
+        "target_defect": 8,
+        "s": 2237
+      },
+      "checks": {
+        "prime_is_1_mod_24": true,
+        "source_carrier_decomposition": true,
+        "source_support_divisibility": true,
+        "source_overflow_equation": true,
+        "source_chart": true,
+        "source_canonical_chart": true,
+        "cofactor_range": true,
+        "high_anchor": true,
+        "anchor_chart": true,
+        "anchor_canonical_chart": true,
+        "minimal_parameters": true,
+        "phase_relation": true,
+        "cofactor_gate": true,
+        "r_chart": true,
+        "target_canonical_chart": true,
+        "phase_value": true,
+        "fixed_n_shadow": true,
+        "residual_mod_4": true
+      }
+    },
+    {
+      "phase": 2,
+      "q": 3,
+      "anchor": {
+        "A": 346,
+        "B": 1096,
+        "R": 1263,
+        "K": 379216,
+        "n": 121
+      },
+      "arithmetic_source_only": {
+        "M": 99648,
+        "k": 82,
+        "r": 1166,
+        "C": 1038,
+        "d_source": 163,
+        "n_source": 54097,
+        "R_source": 344495,
+        "K_source": 103434624
+      },
+      "target": {
+        "A": 1038,
+        "R": 4031,
+        "K": 1210308,
+        "n": 121,
+        "target_defect": 35,
+        "s": 633
+      },
+      "checks": {
+        "prime_is_1_mod_24": true,
+        "source_carrier_decomposition": true,
+        "source_support_divisibility": true,
+        "source_overflow_equation": true,
+        "source_chart": true,
+        "source_canonical_chart": true,
+        "cofactor_range": true,
+        "high_anchor": true,
+        "anchor_chart": true,
+        "anchor_canonical_chart": true,
+        "minimal_parameters": true,
+        "phase_relation": true,
+        "cofactor_gate": true,
+        "r_chart": true,
+        "target_canonical_chart": true,
+        "phase_value": true,
+        "fixed_n_shadow": true,
+        "residual_mod_4": true
+      }
+    }
+  ],
+  "Bradford_gaps_below_23": [
+    {
+      "gap": 3,
+      "x": 301,
+      "x_factorization": [
+        [
+          7,
+          1
+        ],
+        [
+          43,
+          1
+        ]
+      ],
+      "divisor_residues": [
+        1
+      ],
+      "type_i_target_residue": 2,
+      "type_ii_target_residue": 2,
+      "type_i_hits": [],
+      "type_ii_hits": []
+    },
+    {
+      "gap": 7,
+      "x": 302,
+      "x_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          151,
+          1
+        ]
+      ],
+      "divisor_residues": [
+        1,
+        2,
+        4
+      ],
+      "type_i_target_residue": 3,
+      "type_ii_target_residue": 6,
+      "type_i_hits": [],
+      "type_ii_hits": []
+    },
+    {
+      "gap": 11,
+      "x": 303,
+      "x_factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          101,
+          1
+        ]
+      ],
+      "divisor_residues": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        9
+      ],
+      "type_i_target_residue": 10,
+      "type_ii_target_residue": 5,
+      "type_i_hits": [],
+      "type_ii_hits": []
+    },
+    {
+      "gap": 15,
+      "x": 304,
+      "x_factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "divisor_residues": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "type_i_target_residue": 11,
+      "type_ii_target_residue": 11,
+      "type_i_hits": [],
+      "type_ii_hits": []
+    },
+    {
+      "gap": 19,
+      "x": 305,
+      "x_factorization": [
+        [
+          5,
+          1
+        ],
+        [
+          61,
+          1
+        ]
+      ],
+      "divisor_residues": [
+        1,
+        4,
+        5,
+        6,
+        16
+      ],
+      "type_i_target_residue": 15,
+      "type_ii_target_residue": 18,
+      "type_i_hits": [],
+      "type_ii_hits": []
+    }
+  ],
+  "first_type_i_certificate": {
+    "gap": 23,
+    "x": 306,
+    "divisor": 34,
+    "y": 15980,
+    "z": 172727820
+  },
+  "conclusion": {
+    "all_Bradford_gaps_3_through_19_miss": true,
+    "first_Bradford_hit_gap": 23,
+    "positive_phase_does_not_force_gap_below_23_terminal": true,
+    "not_an_Erdos_Straus_counterexample": true
+  }
+}

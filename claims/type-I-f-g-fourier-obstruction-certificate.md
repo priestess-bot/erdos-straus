@@ -261,7 +261,14 @@ y_i\in[-1/2,1/2],\qquad y_i\equiv\theta_i\pmod1.
 
 所以规范 Fourier 证书和规范关系格证书是同一个有限对象的两个投影。对 F 型或
 \(H\) 内部非平凡角色，活跃坐标一旦选定即可从线性块分解提取逐状态的高载体高度；
-尚未解决的是把该支撑/分母转成跨状态可重复的素数—颜色分组和联合容量需求。
+尚未解决的是把该支撑/分母转成跨状态可重复的素数—颜色分组和联合容量需求。现在可
+先做一个不偷换语义的中间步骤：对角色的 q-primary 分量抽取目标相位，并要求独立
+source map 给出同余标签；有标签时再调用相位树容量，无标签时保存显式的
+`FOURIER_PHASE_NO_LOCAL_LIFT`/`FOURIER_PHASE_ASSIGNMENT_DEFICIT`。详见
+[Fourier q-primary 相位到算术载体的有限提升—容量二分](type-I-fourier-qprimary-phase-lift-capacity-dichotomy.md)。
+若进一步把标签固定为同一 \(B\) 图表的清分参数，则相位一致只产生非互素中间候选，
+约分后完整 q 缺陷消失；相位不一致则是精确的局部冲突，而不是容量需求。详见
+[Fourier 与固定 B 清分相位的冲突—非互素吸收二分](type-I-fourier-fixed-b-phase-compatibility-no-go.md)。
 外部 G 型分离角色在 \(H\) 上恒等，继续由支撑外分离证书处理。
 固定层归一化因子 \(g_J(\chi)\) 还会把相位预算右端收紧为
 \(60\log((|H|-1)g_J(\chi))\)，详见

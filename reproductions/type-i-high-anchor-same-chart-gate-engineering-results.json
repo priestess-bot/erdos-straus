@@ -1,0 +1,4814 @@
+{
+  "schema_version": 1,
+  "certificate_type": "type_i_high_anchor_same_chart_gate_engineering_v1",
+  "inputs": {
+    "frozen_parent_atlas": {
+      "path": "reproductions/type-i-high-anchor-parent-atlas-results.json",
+      "sha256": "85d74919353f2c88308da1542338552e1331aa50799a338b098b74644af69d70"
+    }
+  },
+  "exact_domain": {
+    "paid_support_monotone_lattice": "{L : A divides L divides K, A < L <= B_p}",
+    "why_same_chart": "R<4A<4L and L|K imply canonical_chart(p,L)=(R,K)",
+    "exact_gate": "L/gcd(L,C_L) divides r_L, where M_L=lcm(L,Q), C_L=K_{M_L}/M_L, r_L=M_L mod p",
+    "payment": "Pi_p(L)<Pi_p(A); if the gate passes, require a separate macro E5 check from L to lcm(L,C_L)"
+  },
+  "summary": {
+    "frozen_high_anchor_occurrences": 51,
+    "frozen_distinct_high_anchors": 31,
+    "frozen_anchors_with_paid_support_promotion": 13,
+    "frozen_paid_promotion_attempts": 49,
+    "frozen_gate_hits_after_paid_promotion": 0,
+    "frozen_baseline_gate_hits": 0,
+    "control_gate_hits_after_paid_promotion": 1
+  },
+  "conclusion": {
+    "frozen_atlas": "No paid support-monotone same-chart promotion makes the high-R full-excess cofactor gate pass on any of the 31 distinct frozen verified-parent high anchors.",
+    "controls": "The p=1201 control has one paid promoted gate hit, but its unpromoted gate already passes; p=3793 and p=60913 have no paid proper same-chart support lift. Thus the finite evidence does not exhibit a gate rescue from a failing high anchor.",
+    "proof_boundary": "This is a finite arithmetic atlas plus the support-monotone same-chart Pi_p lemma. It neither upgrades legacy parents nor excludes non-divisibility support resets or proves global availability of a cofactor macro."
+  },
+  "frozen_rows": [
+    {
+      "row_id": "same-chart-gate:a8b3c8629a23e4de",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 3,
+      "anchor": {
+        "p": 73,
+        "R": 95,
+        "K": 1734,
+        "absorbed_support": 34
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          2
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1598,
+        "C": 57,
+        "r": 65,
+        "A_over_gcd": 34,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        102,
+        578
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 102,
+          "source_same_chart": {
+            "R": 95,
+            "K": 1734,
+            "C": 17
+          },
+          "bundle": {
+            "Q": 47,
+            "M": 4794,
+            "R": 4991,
+            "K": 91086,
+            "C": 19,
+            "d": 54,
+            "n": 14185
+          },
+          "cofactor": {
+            "k": 65,
+            "r": 49,
+            "s": 145,
+            "gcd_L_C": 1,
+            "L_over_gcd": 102,
+            "target_support": 1938,
+            "R": 51,
+            "K": 931
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 49
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 38,
+            "promoted_source": 12,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 578,
+          "source_same_chart": {
+            "R": 95,
+            "K": 1734,
+            "C": 3
+          },
+          "bundle": {
+            "Q": 47,
+            "M": 27166,
+            "R": 62519,
+            "K": 1140972,
+            "C": 42,
+            "d": 31,
+            "n": 46145
+          },
+          "cofactor": {
+            "k": 372,
+            "r": 10,
+            "s": 17,
+            "gcd_L_C": 2,
+            "L_over_gcd": 289,
+            "target_support": 12138,
+            "R": 23,
+            "K": 420
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 10
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 38,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:5fa6ad0f40607fc5",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 3,
+      "anchor": {
+        "p": 73,
+        "R": 127,
+        "K": 2318,
+        "absorbed_support": 38
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          61,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 2394,
+        "C": 45,
+        "r": 58,
+        "A_over_gcd": 38,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:2edef3ab13effffa",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 73,
+        "R": 359,
+        "K": 6552,
+        "absorbed_support": 91
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          13,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 16289,
+        "C": 42,
+        "r": 10,
+        "A_over_gcd": 13,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        182,
+        273,
+        364,
+        546,
+        728,
+        819,
+        1092
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 182,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 36
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 32578,
+            "R": 37487,
+            "K": 684138,
+            "C": 21,
+            "d": 52,
+            "n": 92825
+          },
+          "cofactor": {
+            "k": 446,
+            "r": 20,
+            "s": 57,
+            "gcd_L_C": 7,
+            "L_over_gcd": 26,
+            "target_support": 546,
+            "R": 23,
+            "K": 420
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 20
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 7,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 273,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 24
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 48867,
+            "R": 37487,
+            "K": 684138,
+            "C": 14,
+            "d": 59,
+            "n": 157981
+          },
+          "cofactor": {
+            "k": 669,
+            "r": 30,
+            "s": 97,
+            "gcd_L_C": 7,
+            "L_over_gcd": 39,
+            "target_support": 546,
+            "R": 23,
+            "K": 420
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 30
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 4,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 364,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 18
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 65156,
+            "R": 167799,
+            "K": 3062332,
+            "C": 47,
+            "d": 26,
+            "n": 92825
+          },
+          "cofactor": {
+            "k": 892,
+            "r": 40,
+            "s": 57,
+            "gcd_L_C": 1,
+            "L_over_gcd": 364,
+            "target_support": 17108,
+            "R": 103,
+            "K": 1880
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 40
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 3,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 546,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 12
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 97734,
+            "R": 37487,
+            "K": 684138,
+            "C": 7,
+            "d": 66,
+            "n": 353449
+          },
+          "cofactor": {
+            "k": 1338,
+            "r": 60,
+            "s": 217,
+            "gcd_L_C": 7,
+            "L_over_gcd": 78,
+            "target_support": 546,
+            "R": 23,
+            "K": 420
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 60
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 728,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 9
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 130312,
+            "R": 428423,
+            "K": 7818720,
+            "C": 60,
+            "d": 13,
+            "n": 92825
+          },
+          "cofactor": {
+            "k": 1785,
+            "r": 7,
+            "s": 5,
+            "gcd_L_C": 4,
+            "L_over_gcd": 182,
+            "target_support": 10920,
+            "R": 23,
+            "K": 420
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 7
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 819,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 8
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 146601,
+            "R": 232955,
+            "K": 4251429,
+            "C": 29,
+            "d": 44,
+            "n": 353449
+          },
+          "cofactor": {
+            "k": 2008,
+            "r": 17,
+            "s": 41,
+            "gcd_L_C": 1,
+            "L_over_gcd": 819,
+            "target_support": 23751,
+            "R": 27,
+            "K": 493
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 17
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 1092,
+          "source_same_chart": {
+            "R": 359,
+            "K": 6552,
+            "C": 6
+          },
+          "bundle": {
+            "Q": 179,
+            "M": 195468,
+            "R": 428423,
+            "K": 7818720,
+            "C": 40,
+            "d": 33,
+            "n": 353449
+          },
+          "cofactor": {
+            "k": 2677,
+            "r": 47,
+            "s": 85,
+            "gcd_L_C": 4,
+            "L_over_gcd": 273,
+            "target_support": 10920,
+            "R": 103,
+            "K": 1880
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 47
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 14,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:b67cd9dda8fed077",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 431,
+        "K": 7866,
+        "absorbed_support": 342
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          23,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 73530,
+        "C": 49,
+        "r": 19,
+        "A_over_gcd": 342,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:48a1a633e689c340",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 887,
+        "K": 16188,
+        "absorbed_support": 228
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          71,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 101004,
+        "C": 58,
+        "r": 45,
+        "A_over_gcd": 114,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:a232ed89ef9ba880",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 1191,
+        "K": 21736,
+        "absorbed_support": 836
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 497420,
+        "C": 9,
+        "r": 71,
+        "A_over_gcd": 836,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:323a293c8db5cf7a",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 73,
+        "R": 1367,
+        "K": 24948,
+        "absorbed_support": 924
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 631092,
+        "C": 60,
+        "r": 7,
+        "A_over_gcd": 77,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:75f5452bb5900b03",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 1419,
+        "K": 25897,
+        "absorbed_support": 893
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          47,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1266274,
+        "C": 8,
+        "r": 16,
+        "A_over_gcd": 893,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:a9f61f68a62de362",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 4,
+      "anchor": {
+        "p": 73,
+        "R": 1799,
+        "K": 32832,
+        "absorbed_support": 456
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 409944,
+        "C": 19,
+        "r": 49,
+        "A_over_gcd": 24,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        912
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 912,
+          "source_same_chart": {
+            "R": 1799,
+            "K": 32832,
+            "C": 36
+          },
+          "bundle": {
+            "Q": 899,
+            "M": 819888,
+            "R": 2066567,
+            "K": 37714848,
+            "C": 46,
+            "d": 27,
+            "n": 1212985
+          },
+          "cofactor": {
+            "k": 11231,
+            "r": 25,
+            "s": 37,
+            "gcd_L_C": 2,
+            "L_over_gcd": 456,
+            "target_support": 20976,
+            "R": 63,
+            "K": 1150
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 25
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 2,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:16ba826fbaefecb9",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 1799,
+        "K": 32832,
+        "absorbed_support": 608
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 546592,
+        "C": 69,
+        "r": 41,
+        "A_over_gcd": 608,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        1216
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 1216,
+          "source_same_chart": {
+            "R": 1799,
+            "K": 32832,
+            "C": 27
+          },
+          "bundle": {
+            "Q": 899,
+            "M": 1093184,
+            "R": 4252935,
+            "K": 77616064,
+            "C": 71,
+            "d": 2,
+            "n": 119801
+          },
+          "cofactor": {
+            "k": 14975,
+            "r": 9,
+            "s": 1,
+            "gcd_L_C": 1,
+            "L_over_gcd": 1216,
+            "target_support": 86336,
+            "R": 35,
+            "K": 639
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 9
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 2,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:0ed96cb02b1a5cc7",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 1983,
+        "K": 36190,
+        "absorbed_support": 517
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          47,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 512347,
+        "C": 26,
+        "r": 33,
+        "A_over_gcd": 517,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        1034
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 1034,
+          "source_same_chart": {
+            "R": 1983,
+            "K": 36190,
+            "C": 35
+          },
+          "bundle": {
+            "Q": 991,
+            "M": 1024694,
+            "R": 729919,
+            "K": 13321022,
+            "C": 13,
+            "d": 60,
+            "n": 3368857
+          },
+          "cofactor": {
+            "k": 14036,
+            "r": 66,
+            "s": 217,
+            "gcd_L_C": 1,
+            "L_over_gcd": 1034,
+            "target_support": 13442,
+            "R": 47,
+            "K": 858
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 66
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 2,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:f21a7f137984e09f",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 1983,
+        "K": 36190,
+        "absorbed_support": 1034
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          47,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1024694,
+        "C": 13,
+        "r": 66,
+        "A_over_gcd": 1034,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:91be3a3710c19533",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 2255,
+        "K": 41154,
+        "absorbed_support": 722
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          19,
+          3
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 813694,
+        "C": 36,
+        "r": 36,
+        "A_over_gcd": 361,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:fff07c7552542e79",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 73,
+        "R": 2823,
+        "K": 51520,
+        "absorbed_support": 1288
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          23,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1817368,
+        "C": 26,
+        "r": 33,
+        "A_over_gcd": 644,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:8683ef0748eb2bb2",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 2863,
+        "K": 52250,
+        "absorbed_support": 950
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1359450,
+        "C": 56,
+        "r": 44,
+        "A_over_gcd": 475,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:4b5293c878ad6b27",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 73,
+        "R": 2951,
+        "K": 53856,
+        "absorbed_support": 748
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1103300,
+        "C": 34,
+        "r": 51,
+        "A_over_gcd": 22,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:d021cb8b5206b9cd",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 3159,
+        "K": 57652,
+        "absorbed_support": 812
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          71,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1282148,
+        "C": 19,
+        "r": 49,
+        "A_over_gcd": 812,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:823b77e60ed13681",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 3623,
+        "K": 66120,
+        "absorbed_support": 1140
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 2064540,
+        "C": 48,
+        "r": 27,
+        "A_over_gcd": 95,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:d2e9cbcc1e2c9b15",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 3743,
+        "K": 68310,
+        "absorbed_support": 1518
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": false,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          23,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 2840178,
+        "C": 47,
+        "r": 40,
+        "A_over_gcd": 1518,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:a5cfc07e8d762aaa",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 73,
+        "R": 4295,
+        "K": 78384,
+        "absorbed_support": 1104
+      },
+      "B_p": 1296,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          71,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 2370288,
+        "C": 34,
+        "r": 51,
+        "A_over_gcd": 552,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:0514fecd0679482a",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 3,
+      "anchor": {
+        "p": 241,
+        "R": 251,
+        "K": 15123,
+        "absorbed_support": 71
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          3,
+          1
+        ],
+        [
+          71,
+          2
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 17750,
+        "C": 104,
+        "r": 157,
+        "A_over_gcd": 71,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        213,
+        5041
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 213,
+          "source_same_chart": {
+            "R": 251,
+            "K": 15123,
+            "C": 71
+          },
+          "bundle": {
+            "Q": 250,
+            "M": 53250,
+            "R": 101639,
+            "K": 6123750,
+            "C": 115,
+            "d": 126,
+            "n": 111361
+          },
+          "cofactor": {
+            "k": 220,
+            "r": 230,
+            "s": 481,
+            "gcd_L_C": 1,
+            "L_over_gcd": 213,
+            "target_support": 24495,
+            "R": 439,
+            "K": 26450
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 17
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 202,
+            "promoted_source": 67,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 5041,
+          "source_same_chart": {
+            "R": 251,
+            "K": 15123,
+            "C": 3
+          },
+          "bundle": {
+            "Q": 250,
+            "M": 1260250,
+            "R": 3367639,
+            "K": 202900250,
+            "C": 161,
+            "d": 80,
+            "n": 1673361
+          },
+          "cofactor": {
+            "k": 5229,
+            "r": 61,
+            "s": 81,
+            "gcd_L_C": 1,
+            "L_over_gcd": 5041,
+            "target_support": 811601,
+            "R": 163,
+            "K": 9821
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 61
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 202,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:f852abbcdd09af7a",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 3,
+      "anchor": {
+        "p": 241,
+        "R": 719,
+        "K": 43320,
+        "absorbed_support": 190
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          19,
+          2
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 68210,
+        "C": 198,
+        "r": 7,
+        "A_over_gcd": 95,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        380,
+        570,
+        760,
+        1140,
+        2280,
+        3610,
+        7220,
+        10830
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 380,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 114
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 136420,
+            "R": 224159,
+            "K": 13505580,
+            "C": 99,
+            "d": 142,
+            "n": 321521
+          },
+          "cofactor": {
+            "k": 566,
+            "r": 14,
+            "s": 33,
+            "gcd_L_C": 1,
+            "L_over_gcd": 380,
+            "target_support": 37620,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 14
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 37,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 570,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 76
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 204630,
+            "R": 224159,
+            "K": 13505580,
+            "C": 66,
+            "d": 175,
+            "n": 594361
+          },
+          "cofactor": {
+            "k": 849,
+            "r": 21,
+            "s": 61,
+            "gcd_L_C": 6,
+            "L_over_gcd": 95,
+            "target_support": 6270,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 21
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 25,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 760,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 57
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 272840,
+            "R": 769839,
+            "K": 46382800,
+            "C": 170,
+            "d": 71,
+            "n": 321521
+          },
+          "cofactor": {
+            "k": 1132,
+            "r": 28,
+            "s": 33,
+            "gcd_L_C": 10,
+            "L_over_gcd": 76,
+            "target_support": 12920,
+            "R": 79,
+            "K": 4760
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 28
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 18,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 1140,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 38
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 409260,
+            "R": 224159,
+            "K": 13505580,
+            "C": 33,
+            "d": 208,
+            "n": 1412881
+          },
+          "cofactor": {
+            "k": 1698,
+            "r": 42,
+            "s": 145,
+            "gcd_L_C": 3,
+            "L_over_gcd": 380,
+            "target_support": 12540,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 42
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 12,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 2280,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 19
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 818520,
+            "R": 1861199,
+            "K": 112137240,
+            "C": 137,
+            "d": 104,
+            "n": 1412881
+          },
+          "cofactor": {
+            "k": 3396,
+            "r": 84,
+            "s": 145,
+            "gcd_L_C": 1,
+            "L_over_gcd": 2280,
+            "target_support": 312360,
+            "R": 191,
+            "K": 11508
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 84
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 6,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 3610,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 12
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 1295990,
+            "R": 4043919,
+            "K": 243646120,
+            "C": 188,
+            "d": 53,
+            "n": 1140041
+          },
+          "cofactor": {
+            "k": 5377,
+            "r": 133,
+            "s": 117,
+            "gcd_L_C": 2,
+            "L_over_gcd": 1805,
+            "target_support": 339340,
+            "R": 415,
+            "K": 25004
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 133
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 3,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 7220,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 6
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 2591980,
+            "R": 4043919,
+            "K": 243646120,
+            "C": 94,
+            "d": 147,
+            "n": 6324001
+          },
+          "cofactor": {
+            "k": 10755,
+            "r": 25,
+            "s": 61,
+            "gcd_L_C": 2,
+            "L_over_gcd": 3610,
+            "target_support": 339340,
+            "R": 39,
+            "K": 2350
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 25
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 10830,
+          "source_same_chart": {
+            "R": 719,
+            "K": 43320,
+            "C": 4
+          },
+          "bundle": {
+            "Q": 359,
+            "M": 3887970,
+            "R": 9227879,
+            "K": 555979710,
+            "C": 143,
+            "d": 98,
+            "n": 6324001
+          },
+          "cofactor": {
+            "k": 16132,
+            "r": 158,
+            "s": 257,
+            "gcd_L_C": 1,
+            "L_over_gcd": 10830,
+            "target_support": 1548690,
+            "R": 375,
+            "K": 22594
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 158
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 75,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:7be0f1d4d152f628",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 241,
+        "R": 1103,
+        "K": 66456,
+        "absorbed_support": 568
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          71,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 312968,
+        "C": 96,
+        "r": 150,
+        "A_over_gcd": 71,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        1704,
+        5112,
+        7384
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 1704,
+          "source_same_chart": {
+            "R": 1103,
+            "K": 66456,
+            "C": 39
+          },
+          "bundle": {
+            "Q": 551,
+            "M": 938904,
+            "R": 498671,
+            "K": 30044928,
+            "C": 32,
+            "d": 209,
+            "n": 3256945
+          },
+          "cofactor": {
+            "k": 3895,
+            "r": 209,
+            "s": 725,
+            "gcd_L_C": 8,
+            "L_over_gcd": 213,
+            "target_support": 6816,
+            "R": 111,
+            "K": 6688
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 209
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 25,
+            "promoted_source": 8,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 5112,
+          "source_same_chart": {
+            "R": 1103,
+            "K": 66456,
+            "C": 13
+          },
+          "bundle": {
+            "Q": 551,
+            "M": 2816712,
+            "R": 4254287,
+            "K": 256320792,
+            "C": 91,
+            "d": 150,
+            "n": 7012561
+          },
+          "cofactor": {
+            "k": 11687,
+            "r": 145,
+            "s": 361,
+            "gcd_L_C": 1,
+            "L_over_gcd": 5112,
+            "target_support": 465192,
+            "R": 219,
+            "K": 13195
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 145
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 25,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 7384,
+          "source_same_chart": {
+            "R": 1103,
+            "K": 66456,
+            "C": 9
+          },
+          "bundle": {
+            "Q": 551,
+            "M": 4068584,
+            "R": 4254287,
+            "K": 256320792,
+            "C": 63,
+            "d": 178,
+            "n": 12020049
+          },
+          "cofactor": {
+            "k": 16882,
+            "r": 22,
+            "s": 65,
+            "gcd_L_C": 1,
+            "L_over_gcd": 7384,
+            "target_support": 465192,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 22
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 25,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:622ebd5258b08c62",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 241,
+        "R": 1199,
+        "K": 72240,
+        "absorbed_support": 344
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          43,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 206056,
+        "C": 181,
+        "r": 1,
+        "A_over_gcd": 344,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        688,
+        1032,
+        1720,
+        2064,
+        2408,
+        3440,
+        4816,
+        5160,
+        7224,
+        10320,
+        12040
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 688,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 105
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 412112,
+            "R": 1443247,
+            "K": 86955632,
+            "C": 211,
+            "d": 30,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 1710,
+            "r": 2,
+            "s": 1,
+            "gcd_L_C": 1,
+            "L_over_gcd": 688,
+            "target_support": 145168,
+            "R": 7,
+            "K": 422
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 2
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 20,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 1032,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 70
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 618168,
+            "R": 2267471,
+            "K": 136615128,
+            "C": 221,
+            "d": 20,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 2565,
+            "r": 3,
+            "s": 1,
+            "gcd_L_C": 1,
+            "L_over_gcd": 1032,
+            "target_support": 228072,
+            "R": 11,
+            "K": 663
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 3
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 13,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 1720,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 42
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 1030280,
+            "R": 3915919,
+            "K": 235934120,
+            "C": 229,
+            "d": 12,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 4275,
+            "r": 5,
+            "s": 1,
+            "gcd_L_C": 1,
+            "L_over_gcd": 1720,
+            "target_support": 393880,
+            "R": 19,
+            "K": 1145
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 5
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 8,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 2064,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 35
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 1236336,
+            "R": 4740143,
+            "K": 285593616,
+            "C": 231,
+            "d": 10,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 5130,
+            "r": 6,
+            "s": 1,
+            "gcd_L_C": 3,
+            "L_over_gcd": 688,
+            "target_support": 158928,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 6
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 6,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 2408,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 30
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 1442392,
+            "R": 4740143,
+            "K": 285593616,
+            "C": 198,
+            "d": 43,
+            "n": 1029425
+          },
+          "cofactor": {
+            "k": 5985,
+            "r": 7,
+            "s": 5,
+            "gcd_L_C": 2,
+            "L_over_gcd": 1204,
+            "target_support": 238392,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 7
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 5,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 3440,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 21
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 2060560,
+            "R": 8037039,
+            "K": 484231600,
+            "C": 235,
+            "d": 6,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 8550,
+            "r": 10,
+            "s": 1,
+            "gcd_L_C": 5,
+            "L_over_gcd": 688,
+            "target_support": 161680,
+            "R": 39,
+            "K": 2350
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 10
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 4,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 4816,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 15
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 2884784,
+            "R": 4740143,
+            "K": 285593616,
+            "C": 99,
+            "d": 142,
+            "n": 6798993
+          },
+          "cofactor": {
+            "k": 11970,
+            "r": 14,
+            "s": 33,
+            "gcd_L_C": 1,
+            "L_over_gcd": 4816,
+            "target_support": 476784,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 14
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 5160,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 14
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 3090840,
+            "R": 12158159,
+            "K": 732529080,
+            "C": 237,
+            "d": 4,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 12825,
+            "r": 15,
+            "s": 1,
+            "gcd_L_C": 3,
+            "L_over_gcd": 1720,
+            "target_support": 407640,
+            "R": 59,
+            "K": 3555
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 15
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 7224,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 10
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 4327176,
+            "R": 4740143,
+            "K": 285593616,
+            "C": 66,
+            "d": 175,
+            "n": 12568561
+          },
+          "cofactor": {
+            "k": 17955,
+            "r": 21,
+            "s": 61,
+            "gcd_L_C": 6,
+            "L_over_gcd": 1204,
+            "target_support": 79464,
+            "R": 23,
+            "K": 1386
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 21
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 10320,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 7
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 6181680,
+            "R": 24521519,
+            "K": 1477421520,
+            "C": 239,
+            "d": 2,
+            "n": 205201
+          },
+          "cofactor": {
+            "k": 25650,
+            "r": 30,
+            "s": 1,
+            "gcd_L_C": 1,
+            "L_over_gcd": 10320,
+            "target_support": 2466480,
+            "R": 119,
+            "K": 7170
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 30
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 12040,
+          "source_same_chart": {
+            "R": 1199,
+            "K": 72240,
+            "C": 6
+          },
+          "bundle": {
+            "Q": 599,
+            "M": 7211960,
+            "R": 16279279,
+            "K": 980826560,
+            "C": 136,
+            "d": 105,
+            "n": 12568561
+          },
+          "cofactor": {
+            "k": 29925,
+            "r": 35,
+            "s": 61,
+            "gcd_L_C": 8,
+            "L_over_gcd": 1505,
+            "target_support": 204680,
+            "R": 79,
+            "K": 4760
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 35
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 41,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:5b2f22ea4f42934b",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 241,
+        "R": 1935,
+        "K": 116584,
+        "absorbed_support": 494
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          59,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 477698,
+        "C": 159,
+        "r": 36,
+        "A_over_gcd": 494,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        988,
+        1976
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 988,
+          "source_same_chart": {
+            "R": 1935,
+            "K": 116584,
+            "C": 118
+          },
+          "bundle": {
+            "Q": 967,
+            "M": 955396,
+            "R": 3171439,
+            "K": 191079200,
+            "C": 200,
+            "d": 41,
+            "n": 650145
+          },
+          "cofactor": {
+            "k": 3964,
+            "r": 72,
+            "s": 49,
+            "gcd_L_C": 4,
+            "L_over_gcd": 247,
+            "target_support": 49400,
+            "R": 239,
+            "K": 14400
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 72
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 29,
+            "promoted_source": 14,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 1976,
+          "source_same_chart": {
+            "R": 1935,
+            "K": 116584,
+            "C": 59
+          },
+          "bundle": {
+            "Q": 967,
+            "M": 1910792,
+            "R": 3171439,
+            "K": 191079200,
+            "C": 100,
+            "d": 141,
+            "n": 4471729
+          },
+          "cofactor": {
+            "k": 7928,
+            "r": 144,
+            "s": 337,
+            "gcd_L_C": 4,
+            "L_over_gcd": 494,
+            "target_support": 49400,
+            "R": 239,
+            "K": 14400
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 144
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 29,
+            "promoted_source": 7,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:dec8629df027204c",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 241,
+        "R": 7919,
+        "K": 477120,
+        "absorbed_support": 1988
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          71,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 7870492,
+        "C": 124,
+        "r": 155,
+        "A_over_gcd": 497,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        3976,
+        5964,
+        7952,
+        9940,
+        11928
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 3976,
+          "source_same_chart": {
+            "R": 7919,
+            "K": 477120,
+            "C": 120
+          },
+          "bundle": {
+            "Q": 3959,
+            "M": 15740984,
+            "R": 16198191,
+            "K": 975941008,
+            "C": 62,
+            "d": 179,
+            "n": 46765745
+          },
+          "cofactor": {
+            "k": 65315,
+            "r": 69,
+            "s": 205,
+            "gcd_L_C": 2,
+            "L_over_gcd": 1988,
+            "target_support": 123256,
+            "R": 71,
+            "K": 4278
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 69
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 7,
+            "promoted_source": 3,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 5964,
+          "source_same_chart": {
+            "R": 7919,
+            "K": 477120,
+            "C": 80
+          },
+          "bundle": {
+            "Q": 3959,
+            "M": 23611476,
+            "R": 79162127,
+            "K": 4769518152,
+            "C": 202,
+            "d": 39,
+            "n": 15283777
+          },
+          "cofactor": {
+            "k": 97972,
+            "r": 224,
+            "s": 145,
+            "gcd_L_C": 2,
+            "L_over_gcd": 2982,
+            "target_support": 602364,
+            "R": 751,
+            "K": 45248
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 224
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 7,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 7952,
+          "source_same_chart": {
+            "R": 7919,
+            "K": 477120,
+            "C": 60
+          },
+          "bundle": {
+            "Q": 3959,
+            "M": 31481968,
+            "R": 16198191,
+            "K": 975941008,
+            "C": 31,
+            "d": 210,
+            "n": 109729681
+          },
+          "cofactor": {
+            "k": 130630,
+            "r": 138,
+            "s": 481,
+            "gcd_L_C": 1,
+            "L_over_gcd": 7952,
+            "target_support": 246512,
+            "R": 71,
+            "K": 4278
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 138
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 7,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 9940,
+          "source_same_chart": {
+            "R": 7919,
+            "K": 477120,
+            "C": 48
+          },
+          "bundle": {
+            "Q": 3959,
+            "M": 39352460,
+            "R": 47680159,
+            "K": 2872729580,
+            "C": 73,
+            "d": 168,
+            "n": 109729681
+          },
+          "cofactor": {
+            "k": 163288,
+            "r": 52,
+            "s": 145,
+            "gcd_L_C": 1,
+            "L_over_gcd": 9940,
+            "target_support": 725620,
+            "R": 63,
+            "K": 3796
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 52
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 7,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 11928,
+          "source_same_chart": {
+            "R": 7919,
+            "K": 477120,
+            "C": 40
+          },
+          "bundle": {
+            "Q": 3959,
+            "M": 47222952,
+            "R": 79162127,
+            "K": 4769518152,
+            "C": 101,
+            "d": 140,
+            "n": 109729681
+          },
+          "cofactor": {
+            "k": 195945,
+            "r": 207,
+            "s": 481,
+            "gcd_L_C": 1,
+            "L_over_gcd": 11928,
+            "target_support": 1204728,
+            "R": 347,
+            "K": 20907
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 207
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 7,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:66ebf887e82527bd",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 241,
+        "R": 9839,
+        "K": 592800,
+        "absorbed_support": 2470
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 12149930,
+        "C": 185,
+        "r": 156,
+        "A_over_gcd": 494,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        4940,
+        7410,
+        9880,
+        12350
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 4940,
+          "source_same_chart": {
+            "R": 9839,
+            "K": 592800,
+            "C": 120
+          },
+          "bundle": {
+            "Q": 4919,
+            "M": 24299860,
+            "R": 85906559,
+            "K": 5175870180,
+            "C": 213,
+            "d": 28,
+            "n": 11292881
+          },
+          "cofactor": {
+            "k": 100829,
+            "r": 71,
+            "s": 33,
+            "gcd_L_C": 1,
+            "L_over_gcd": 4940,
+            "target_support": 1052220,
+            "R": 251,
+            "K": 15123
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 71
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 5,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 7410,
+          "source_same_chart": {
+            "R": 9839,
+            "K": 592800,
+            "C": 80
+          },
+          "bundle": {
+            "Q": 4919,
+            "M": 36449790,
+            "R": 85906559,
+            "K": 5175870180,
+            "C": 142,
+            "d": 99,
+            "n": 59892601
+          },
+          "cofactor": {
+            "k": 151243,
+            "r": 227,
+            "s": 373,
+            "gcd_L_C": 2,
+            "L_over_gcd": 3705,
+            "target_support": 526110,
+            "R": 535,
+            "K": 32234
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 227
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 5,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 9880,
+          "source_same_chart": {
+            "R": 9839,
+            "K": 592800,
+            "C": 60
+          },
+          "bundle": {
+            "Q": 4919,
+            "M": 48599720,
+            "R": 183105999,
+            "K": 11032136440,
+            "C": 227,
+            "d": 14,
+            "n": 11292881
+          },
+          "cofactor": {
+            "k": 201658,
+            "r": 142,
+            "s": 33,
+            "gcd_L_C": 1,
+            "L_over_gcd": 9880,
+            "target_support": 2242760,
+            "R": 535,
+            "K": 32234
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 142
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 5,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 12350,
+          "source_same_chart": {
+            "R": 9839,
+            "K": 592800,
+            "C": 48
+          },
+          "bundle": {
+            "Q": 4919,
+            "M": 60749650,
+            "R": 37306839,
+            "K": 2247737050,
+            "C": 37,
+            "d": 204,
+            "n": 205691761
+          },
+          "cofactor": {
+            "k": 252073,
+            "r": 57,
+            "s": 193,
+            "gcd_L_C": 1,
+            "L_over_gcd": 12350,
+            "target_support": 456950,
+            "R": 35,
+            "K": 2109
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 57
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 5,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:0714e6b0659b56e2",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 241,
+        "R": 34047,
+        "K": 2051332,
+        "absorbed_support": 8804
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          2
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          233,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 149870492,
+        "C": 22,
+        "r": 63,
+        "A_over_gcd": 4402,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:523f34fce94b1fd5",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 1,
+      "anchor": {
+        "p": 241,
+        "R": 42479,
+        "K": 2559360,
+        "absorbed_support": 10664
+      },
+      "B_p": 14400,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          31,
+          1
+        ],
+        [
+          43,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 226492696,
+        "C": 171,
+        "r": 173,
+        "A_over_gcd": 10664,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:9314eaa5d4b696bf",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 3,
+      "anchor": {
+        "p": 409,
+        "R": 511,
+        "K": 52250,
+        "absorbed_support": 250
+      },
+      "B_p": 41616,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 12750,
+        "C": 373,
+        "r": 71,
+        "A_over_gcd": 250,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [
+        2750,
+        4750
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 2750,
+          "source_same_chart": {
+            "R": 511,
+            "K": 52250,
+            "C": 19
+          },
+          "bundle": {
+            "Q": 51,
+            "M": 140250,
+            "R": 352511,
+            "K": 36044250,
+            "C": 257,
+            "d": 152,
+            "n": 208489
+          },
+          "cofactor": {
+            "k": 342,
+            "r": 372,
+            "s": 553,
+            "gcd_L_C": 1,
+            "L_over_gcd": 2750,
+            "target_support": 706750,
+            "R": 935,
+            "K": 95604
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 372
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 166,
+            "promoted_source": 15,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 4750,
+          "source_same_chart": {
+            "R": 511,
+            "K": 52250,
+            "C": 11
+          },
+          "bundle": {
+            "Q": 51,
+            "M": 242250,
+            "R": 760511,
+            "K": 77762250,
+            "C": 321,
+            "d": 88,
+            "n": 208489
+          },
+          "cofactor": {
+            "k": 592,
+            "r": 122,
+            "s": 105,
+            "gcd_L_C": 1,
+            "L_over_gcd": 4750,
+            "target_support": 1524750,
+            "R": 383,
+            "K": 39162
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 122
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 166,
+            "promoted_source": 8,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:00e62dffe2780651",
+      "origin": "frozen_verified_parent_atlas",
+      "frozen_occurrences": 2,
+      "anchor": {
+        "p": 409,
+        "R": 99511,
+        "K": 10175000,
+        "absorbed_support": 25000
+      },
+      "B_p": 41616,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          37,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 248775000,
+        "C": 206,
+        "r": 341,
+        "A_over_gcd": 12500,
+        "gate_passes": false
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    }
+  ],
+  "independent_controls": [
+    {
+      "row_id": "same-chart-gate:56bfeccaccfe3789",
+      "origin": "independent_high_macro_control",
+      "frozen_occurrences": 0,
+      "anchor": {
+        "p": 1201,
+        "R": 1839,
+        "K": 552160,
+        "absorbed_support": 986
+      },
+      "B_p": 360000,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 906134,
+        "C": 952,
+        "r": 580,
+        "A_over_gcd": 29,
+        "gate_passes": true
+      },
+      "paid_support_lattice": [
+        1972,
+        3944,
+        4930,
+        6902,
+        7888,
+        9860,
+        13804,
+        15776,
+        19720,
+        27608,
+        34510,
+        39440,
+        55216,
+        69020,
+        78880,
+        110432,
+        138040,
+        276080
+      ],
+      "cofactor_attempts": [
+        {
+          "promoted_support": 1972,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 280
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 1812268,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 476,
+            "d": 725,
+            "n": 4376001
+          },
+          "cofactor": {
+            "k": 1508,
+            "r": 1160,
+            "s": 2801,
+            "gcd_L_C": 68,
+            "L_over_gcd": 29,
+            "target_support": 13804,
+            "R": 1839,
+            "K": 552160
+          },
+          "gate_passes": true,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 0
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": true,
+            "target_support_divides_K": true,
+            "canonical_target": true
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 182,
+            "target": 26,
+            "promotion_strict": true,
+            "macro_strict_if_gate": true
+          }
+        },
+        {
+          "promoted_support": 3944,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 140
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 3624536,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 238,
+            "d": 963,
+            "n": 11625073
+          },
+          "cofactor": {
+            "k": 3017,
+            "r": 1119,
+            "s": 3589,
+            "gcd_L_C": 34,
+            "L_over_gcd": 116,
+            "target_support": 27608,
+            "R": 887,
+            "K": 266322
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 75
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 91,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 4930,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 112
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 4530670,
+            "R": 13746679,
+            "K": 4127440370,
+            "C": 911,
+            "d": 290,
+            "n": 4376001
+          },
+          "cofactor": {
+            "k": 3772,
+            "r": 498,
+            "s": 481,
+            "gcd_L_C": 1,
+            "L_over_gcd": 4930,
+            "target_support": 4491230,
+            "R": 1511,
+            "K": 453678
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 498
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 73,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 6902,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 80
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 6342938,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 136,
+            "d": 1065,
+            "n": 22498681
+          },
+          "cofactor": {
+            "k": 5281,
+            "r": 457,
+            "s": 1621,
+            "gcd_L_C": 34,
+            "L_over_gcd": 203,
+            "target_support": 27608,
+            "R": 207,
+            "K": 62152
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 51
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 52,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 7888,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 70
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 7249072,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 119,
+            "d": 1082,
+            "n": 26123217
+          },
+          "cofactor": {
+            "k": 6035,
+            "r": 1037,
+            "s": 3737,
+            "gcd_L_C": 17,
+            "L_over_gcd": 464,
+            "target_support": 55216,
+            "R": 411,
+            "K": 123403
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 109
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 45,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 9860,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 56
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 9061340,
+            "R": 31869359,
+            "K": 9568775040,
+            "C": 1056,
+            "d": 145,
+            "n": 4376001
+          },
+          "cofactor": {
+            "k": 7544,
+            "r": 996,
+            "s": 481,
+            "gcd_L_C": 4,
+            "L_over_gcd": 2465,
+            "target_support": 2603040,
+            "R": 3503,
+            "K": 1051776
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 996
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 36,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 13804,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 40
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 12685876,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 68,
+            "d": 1133,
+            "n": 47870433
+          },
+          "cofactor": {
+            "k": 10562,
+            "r": 914,
+            "s": 3449,
+            "gcd_L_C": 68,
+            "L_over_gcd": 203,
+            "target_support": 13804,
+            "R": 207,
+            "K": 62152
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 102
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 26,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 15776,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 35
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 14498144,
+            "R": 31869359,
+            "K": 9568775040,
+            "C": 660,
+            "d": 541,
+            "n": 26123217
+          },
+          "cofactor": {
+            "k": 12071,
+            "r": 873,
+            "s": 1573,
+            "gcd_L_C": 4,
+            "L_over_gcd": 3944,
+            "target_support": 2603040,
+            "R": 1919,
+            "K": 576180
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 873
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 22,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 19720,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 28
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 18122680,
+            "R": 31869359,
+            "K": 9568775040,
+            "C": 528,
+            "d": 673,
+            "n": 40621361
+          },
+          "cofactor": {
+            "k": 15089,
+            "r": 791,
+            "s": 1773,
+            "gcd_L_C": 8,
+            "L_over_gcd": 2465,
+            "target_support": 1301520,
+            "R": 1391,
+            "K": 417648
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 791
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 18,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 27608,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 20
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 25371752,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 34,
+            "d": 1167,
+            "n": 98613937
+          },
+          "cofactor": {
+            "k": 21125,
+            "r": 627,
+            "s": 2437,
+            "gcd_L_C": 34,
+            "L_over_gcd": 812,
+            "target_support": 27608,
+            "R": 71,
+            "K": 21318
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 627
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 13,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 34510,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 16
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 31714690,
+            "R": 104360079,
+            "K": 31334113720,
+            "C": 988,
+            "d": 213,
+            "n": 22498681
+          },
+          "cofactor": {
+            "k": 26406,
+            "r": 1084,
+            "s": 769,
+            "gcd_L_C": 2,
+            "L_over_gcd": 17255,
+            "target_support": 17047940,
+            "R": 3567,
+            "K": 1070992
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 1084
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 10,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 39440,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 14
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 36245360,
+            "R": 31869359,
+            "K": 9568775040,
+            "C": 264,
+            "d": 937,
+            "n": 113112081
+          },
+          "cofactor": {
+            "k": 30179,
+            "r": 381,
+            "s": 1189,
+            "gcd_L_C": 8,
+            "L_over_gcd": 4930,
+            "target_support": 1301520,
+            "R": 335,
+            "K": 100584
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 381
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 9,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 55216,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 10
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 50743504,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 17,
+            "d": 1184,
+            "n": 200100945
+          },
+          "cofactor": {
+            "k": 42251,
+            "r": 53,
+            "s": 209,
+            "gcd_L_C": 17,
+            "L_over_gcd": 3248,
+            "target_support": 55216,
+            "R": 3,
+            "K": 901
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 53
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 6,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 69020,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 8
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 63429380,
+            "R": 104360079,
+            "K": 31334113720,
+            "C": 494,
+            "d": 707,
+            "n": 149357441
+          },
+          "cofactor": {
+            "k": 52813,
+            "r": 967,
+            "s": 2277,
+            "gcd_L_C": 2,
+            "L_over_gcd": 34510,
+            "target_support": 17047940,
+            "R": 1591,
+            "K": 477698
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 967
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 5,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 78880,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 7
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 72490720,
+            "R": 31869359,
+            "K": 9568775040,
+            "C": 132,
+            "d": 1069,
+            "n": 258093521
+          },
+          "cofactor": {
+            "k": 60358,
+            "r": 762,
+            "s": 2713,
+            "gcd_L_C": 4,
+            "L_over_gcd": 19720,
+            "target_support": 2603040,
+            "R": 335,
+            "K": 100584
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 762
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 4,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 110432,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 5
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 101487008,
+            "R": 205847087,
+            "K": 61805587872,
+            "C": 609,
+            "d": 592,
+            "n": 200100945
+          },
+          "cofactor": {
+            "k": 84502,
+            "r": 106,
+            "s": 209,
+            "gcd_L_C": 203,
+            "L_over_gcd": 544,
+            "target_support": 331296,
+            "R": 215,
+            "K": 64554
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 106
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 3,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 138040,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 4
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 126858760,
+            "R": 104360079,
+            "K": 31334113720,
+            "C": 247,
+            "d": 954,
+            "n": 403074961
+          },
+          "cofactor": {
+            "k": 105627,
+            "r": 733,
+            "s": 2329,
+            "gcd_L_C": 1,
+            "L_over_gcd": 138040,
+            "target_support": 34095880,
+            "R": 603,
+            "K": 181051
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 733
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 2,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        },
+        {
+          "promoted_support": 276080,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 2
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 253717520,
+            "R": 611795119,
+            "K": 183691484480,
+            "C": 724,
+            "d": 477,
+            "n": 403074961
+          },
+          "cofactor": {
+            "k": 211255,
+            "r": 265,
+            "s": 421,
+            "gcd_L_C": 4,
+            "L_over_gcd": 69020,
+            "target_support": 49970480,
+            "R": 639,
+            "K": 191860
+          },
+          "gate_passes": false,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": true,
+            "remainder_mod_L_over_gcd": 265
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": false,
+            "target_support_divides_K": false,
+            "canonical_target": false
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 1,
+            "target": null,
+            "promotion_strict": true,
+            "macro_strict_if_gate": false
+          }
+        }
+      ],
+      "gate_hits_after_paid_promotion": [
+        {
+          "promoted_support": 1972,
+          "source_same_chart": {
+            "R": 1839,
+            "K": 552160,
+            "C": 280
+          },
+          "bundle": {
+            "Q": 919,
+            "M": 1812268,
+            "R": 2873071,
+            "K": 862639568,
+            "C": 476,
+            "d": 725,
+            "n": 4376001
+          },
+          "cofactor": {
+            "k": 1508,
+            "r": 1160,
+            "s": 2801,
+            "gcd_L_C": 68,
+            "L_over_gcd": 29,
+            "target_support": 13804,
+            "R": 1839,
+            "K": 552160
+          },
+          "gate_passes": true,
+          "gate_diagnostic": {
+            "size_obstruction_L_over_gcd_gt_r": false,
+            "remainder_mod_L_over_gcd": 0
+          },
+          "target_checks": {
+            "intermediate_chart": true,
+            "intermediate_determinant": true,
+            "cofactor_identity": true,
+            "target_chart_equation": true,
+            "gate": true,
+            "target_support_divides_K": true,
+            "canonical_target": true
+          },
+          "pi_p": {
+            "pre_promotion": 365,
+            "promoted_source": 182,
+            "target": 26,
+            "promotion_strict": true,
+            "macro_strict_if_gate": true
+          }
+        }
+      ],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:6db49510ed1f0017",
+      "origin": "independent_high_macro_control",
+      "frozen_occurrences": 0,
+      "anchor": {
+        "p": 3793,
+        "R": 7011,
+        "K": 6648181,
+        "absorbed_support": 1811
+      },
+      "B_p": 3594816,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          1811,
+          1
+        ],
+        [
+          3671,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 12695110,
+        "C": 3622,
+        "r": 3732,
+        "A_over_gcd": 1,
+        "gate_passes": true
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    },
+    {
+      "row_id": "same-chart-gate:844030af48324ebb",
+      "origin": "independent_high_macro_control",
+      "frozen_occurrences": 0,
+      "anchor": {
+        "p": 60913,
+        "R": 72259,
+        "K": 1100378117,
+        "absorbed_support": 18647
+      },
+      "B_p": 927567936,
+      "same_chart_promotion_domain": true,
+      "K_factorization": [
+        [
+          29,
+          1
+        ],
+        [
+          643,
+          1
+        ],
+        [
+          59011,
+          1
+        ]
+      ],
+      "unpromoted_gate": {
+        "M": 1347394926,
+        "C": 55941,
+        "r": 60279,
+        "A_over_gcd": 1,
+        "gate_passes": true
+      },
+      "paid_support_lattice": [],
+      "cofactor_attempts": [],
+      "gate_hits_after_paid_promotion": [],
+      "scope": "Arithmetic plus support-monotone Pi_p payment only. A hit does not supply a typed fiber, a content-addressed parent chain, terminal-first exhaustion, or a selector edge."
+    }
+  ]
+}

@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "certificate_type": "type_i_high_r_h2_nonreturn_g_g_f_v1",
+  "selector_status": "candidate_transition",
+  "recursive_edge_eligible": false,
+  "proof_boundary": "this dedicated receipt verifies a fresh root, a CRT-G charged parent, a G-to-F h=2 cofactor transition, and a strict local support potential. It is not a global recursive edge because a non-resetting cross-anchor phase rank is still unproved; terminal-first independently closes p=60913.",
+  "prime": 60913,
+  "B_p": 927567936,
+  "bounded_search_provenance": {
+    "range": "p <= 100000, p == 1 (mod 24)",
+    "purpose": "construction discovery only, not a coverage statement",
+    "arithmetic_h_two_rows_before_fresh_root_filter": 13,
+    "fresh_root_rows_after_exact_complete_excess_replay": 2,
+    "h_two_predicates": [
+      "p/4 < A <= (3p-9)/8",
+      "fresh core complete-excess root",
+      "charged same-chart parent",
+      "high complete-excess overflow",
+      "cofactor gate and A < lcm(A,C) <= B_p"
+    ]
+  },
+  "core_anchor": {
+    "R": 37295,
+    "K": 567937584
+  },
+  "first_high_anchor": {
+    "Q": 18647,
+    "beta": 2,
+    "R": 72259,
+    "K": 1100378117,
+    "fiber": {
+      "classification": "G",
+      "support_factorization": [
+        [
+          29,
+          1
+        ],
+        [
+          643,
+          1
+        ],
+        [
+          59011,
+          1
+        ]
+      ],
+      "target_in_generated_subgroup": false,
+      "separator": {
+        "kind": "crt_discrete_log_parity",
+        "components": [
+          {
+            "modulus": 11,
+            "primitive_root": 2,
+            "factor_logs": [
+              [
+                29,
+                7
+              ],
+              [
+                643,
+                4
+              ],
+              [
+                59011,
+                7
+              ]
+            ],
+            "minus_one_log": 5
+          },
+          {
+            "modulus": 6569,
+            "primitive_root": 3,
+            "factor_logs": [
+              [
+                29,
+                1737
+              ],
+              [
+                643,
+                4000
+              ],
+              [
+                59011,
+                3015
+              ]
+            ],
+            "minus_one_log": 3284
+          }
+        ],
+        "support_parity": {
+          "29": 0,
+          "643": 0,
+          "59011": 0
+        },
+        "minus_one_parity": 1
+      },
+      "signed_defect": {
+        "status": "not_applicable",
+        "reason": "CRT_discrete_log_parity_separator"
+      },
+      "conditions": {
+        "prime_crt_factorization": true,
+        "pairwise_coprime_components": true,
+        "primitive_roots_and_logs": true,
+        "support_character_trivial": true,
+        "minus_one_character_nontrivial": true
+      }
+    },
+    "same_chart_parent_replay": {
+      "certificate_type": "overflow_same_chart_support_promotion",
+      "normal_form_replay_adapter": "high_r_same_chart_parent_replay_crt_parity_v1",
+      "selector_status": "verified_edge",
+      "recursive_edge_eligible": true,
+      "source_state": {
+        "equation_target": [
+          4,
+          60913
+        ],
+        "R": 72259,
+        "K": 1100378117,
+        "absorbed_support": 1,
+        "state_class": "overflow",
+        "fiber_class": "G",
+        "source_tree_scope": "fresh_source_tree_only",
+        "state_id": "state:43b175a40b4715f5e49d762a9862a12fd5899d5680ccb1b910dc045fa35ff6a7"
+      },
+      "successor_state": {
+        "equation_target": [
+          4,
+          60913
+        ],
+        "R": 72259,
+        "K": 1100378117,
+        "absorbed_support": 18647,
+        "state_class": "overflow",
+        "fiber_class": "G",
+        "source_tree_scope": "fresh_source_tree_only",
+        "state_id": "state:5ce7aaa35aea07a6c5800a01301e9d6575873dab2fe6166ec6359f2028ef4896"
+      },
+      "source_provenance": {
+        "state_origin": "universal_raw_default_entry_v1",
+        "source_tree_scope": "fresh_source_tree_only",
+        "root_bundle_adapter": "high_R_path_anchored_bundle_v1",
+        "root_anchor": [
+          1,
+          37294,
+          1
+        ]
+      },
+      "marked_solution_set": {
+        "source": "Sol(p)",
+        "successor": "Sol(p)",
+        "lift": "identity"
+      },
+      "fiber_certificate": {
+        "classification": "G",
+        "support_factorization": [
+          [
+            29,
+            1
+          ],
+          [
+            643,
+            1
+          ],
+          [
+            59011,
+            1
+          ]
+        ],
+        "target_in_generated_subgroup": false,
+        "separator": {
+          "kind": "crt_discrete_log_parity",
+          "components": [
+            {
+              "modulus": 11,
+              "primitive_root": 2,
+              "factor_logs": [
+                [
+                  29,
+                  7
+                ],
+                [
+                  643,
+                  4
+                ],
+                [
+                  59011,
+                  7
+                ]
+              ],
+              "minus_one_log": 5
+            },
+            {
+              "modulus": 6569,
+              "primitive_root": 3,
+              "factor_logs": [
+                [
+                  29,
+                  1737
+                ],
+                [
+                  643,
+                  4000
+                ],
+                [
+                  59011,
+                  3015
+                ]
+              ],
+              "minus_one_log": 3284
+            }
+          ],
+          "support_parity": {
+            "29": 0,
+            "643": 0,
+            "59011": 0
+          },
+          "minus_one_parity": 1
+        },
+        "signed_defect": {
+          "status": "not_applicable",
+          "reason": "CRT_discrete_log_parity_separator"
+        },
+        "conditions": {
+          "prime_crt_factorization": true,
+          "pairwise_coprime_components": true,
+          "primitive_roots_and_logs": true,
+          "support_character_trivial": true,
+          "minus_one_character_nontrivial": true
+        }
+      },
+      "e1_e5": {
+        "E1": true,
+        "E2": true,
+        "E3": true,
+        "E4": true,
+        "E5": true
+      },
+      "checks": {
+        "root_entry": true,
+        "source_state": true,
+        "same_chart_successor": true,
+        "identity_lift": true,
+        "strict_support_potential": true,
+        "scope_propagated": true
+      },
+      "edge_id": "edge:f05320a2f6b56c7ece46ac4db37c0ea397028378d80d6a251df255ede8bbf728"
+    }
+  },
+  "high_overflow": {
+    "Q": 72258,
+    "beta": 1,
+    "M": 1347394926,
+    "R": 4949657351,
+    "K": 75374619555366,
+    "C": 55941,
+    "d": 4972,
+    "n": 439922353,
+    "carrier_outside_support_potential_domain": true,
+    "fiber": {
+      "classification": "G",
+      "support_factorization": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          643,
+          2
+        ],
+        [
+          12043,
+          1
+        ]
+      ],
+      "target_in_generated_subgroup": false,
+      "separator": {
+        "kind": "crt_discrete_log_parity",
+        "components": [
+          {
+            "modulus": 37,
+            "primitive_root": 2,
+            "factor_logs": [
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                26
+              ],
+              [
+                29,
+                21
+              ],
+              [
+                643,
+                33
+              ],
+              [
+                12043,
+                17
+              ]
+            ],
+            "minus_one_log": 18
+          },
+          {
+            "modulus": 677,
+            "primitive_root": 2,
+            "factor_logs": [
+              [
+                2,
+                1
+              ],
+              [
+                3,
+                479
+              ],
+              [
+                29,
+                229
+              ],
+              [
+                643,
+                350
+              ],
+              [
+                12043,
+                585
+              ]
+            ],
+            "minus_one_log": 338
+          },
+          {
+            "modulus": 197599,
+            "primitive_root": 3,
+            "factor_logs": [
+              [
+                2,
+                166274
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                29,
+                123248
+              ],
+              [
+                643,
+                71787
+              ],
+              [
+                12043,
+                99096
+              ]
+            ],
+            "minus_one_log": 98799
+          }
+        ],
+        "support_parity": {
+          "2": 0,
+          "3": 0,
+          "29": 0,
+          "643": 0,
+          "12043": 0
+        },
+        "minus_one_parity": 1
+      },
+      "signed_defect": {
+        "status": "not_applicable",
+        "reason": "CRT_discrete_log_parity_separator"
+      },
+      "conditions": {
+        "prime_crt_factorization": true,
+        "pairwise_coprime_components": true,
+        "primitive_roots_and_logs": true,
+        "support_character_trivial": true,
+        "minus_one_character_nontrivial": true
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        60913
+      ],
+      "R": 4949657351,
+      "K": 75374619555366,
+      "absorbed_support": 18647,
+      "state_class": "overflow",
+      "fiber_class": "G",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:ba5ee801fc9ea5c61c8ad48bf0fb2c80c0437ecdcb2ef7404fb017c656e9c2ef"
+    }
+  },
+  "h_two_target": {
+    "k": 22119,
+    "r": 60279,
+    "s": 19681,
+    "R": 221435,
+    "K": 3372067539,
+    "gcd_A_C": 18647,
+    "A_over_gcd": 1,
+    "A_C": 55941,
+    "C": 60279,
+    "d": 634,
+    "n": 2329,
+    "h": 2,
+    "checks": {
+      "h_two": true,
+      "strict_nonreturn": true,
+      "cofactor_gate": true,
+      "strict_support_growth": true,
+      "target_canonical_chart": true,
+      "target_overflow_normal_form": true
+    },
+    "fiber": {
+      "factors": [
+        [
+          3,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          71,
+          1
+        ],
+        [
+          283,
+          1
+        ],
+        [
+          643,
+          1
+        ]
+      ],
+      "witness": [
+        -5,
+        -2,
+        5,
+        0,
+        -5
+      ],
+      "witness_residue": 221434,
+      "witness_l1": 17,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              3,
+              3
+            ],
+            [
+              29,
+              1
+            ],
+            [
+              643,
+              4
+            ]
+          ],
+          "value": 133846079195583
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              71,
+              4
+            ]
+          ],
+          "value": 25411681
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        60913
+      ],
+      "R": 221435,
+      "K": 3372067539,
+      "absorbed_support": 55941,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:29f93b919b126c3a2bcdf9a87fcf7465929b188984487da013a0cd8df09f6f47"
+    }
+  },
+  "cofactor_normal_form": {
+    "source_state": true,
+    "construction": true,
+    "successor_state": true,
+    "source_tree_scope": true,
+    "parent_ledger": true,
+    "passed": true
+  },
+  "local_potential": {
+    "source": 49743,
+    "target": 16581
+  },
+  "candidate_e1_e5": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": true
+  },
+  "terminal_first": {
+    "p_plus_four_factorization": [
+      [
+        60917,
+        1
+      ]
+    ],
+    "p_plus_four_has_3mod4_factor": false,
+    "direct_type_i_gap_seven": {
+      "certificate_type": "type_i_normal_form_terminal",
+      "selector_status": "terminal_leaf",
+      "recursive_edge_eligible": false,
+      "normal_form": {
+        "gap": 7,
+        "A": 1,
+        "B": 1,
+        "C": 15230,
+        "H": 8702
+      },
+      "denominators": {
+        "x": 15230,
+        "y": 132531460,
+        "z": 8072888822980
+      },
+      "checks": {
+        "normal_form": true,
+        "gap_condition": true,
+        "denominator_parameters": true,
+        "unit_fraction_identity": true
+      }
+    },
+    "status": "terminal_leaf"
+  },
+  "integration_status": "dedicated_reproducer_only"
+}

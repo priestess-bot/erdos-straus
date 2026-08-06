@@ -1,5 +1,382 @@
 {
-  "arithmetic": "exact SPF factorization, divisor residues, subgroup closure, and quadratic character separation",
+  "arithmetic": "exact SPF factorization, divisor residues, subgroup closure, quadratic separation, and 2^j saturation-depth certificates",
+  "depth_edge_case_cross_state_compatibility": {
+    "capacity_mapping_status": "unproved",
+    "common_core_congruence_modulus": 24,
+    "common_core_residue_count": 8,
+    "common_modulus": 192,
+    "compatibility_status": "compatible",
+    "joint_kernel_count": 1,
+    "joint_kernel_index": 8,
+    "joint_kernel_witness_residue": 1,
+    "rows": [
+      {
+        "character_order": 4,
+        "core_profile": {
+          "core_character_active": true,
+          "core_character_image": [
+            0,
+            2
+          ],
+          "core_character_image_order": 2,
+          "core_congruence_modulus": 8,
+          "core_residue_count": 2,
+          "observed_prime_phase": 0,
+          "observed_prime_residue": 1
+        },
+        "modulus": 16,
+        "prime": 97
+      },
+      {
+        "character_order": 8,
+        "core_profile": {
+          "core_character_active": true,
+          "core_character_image": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "core_character_image_order": 4,
+          "core_congruence_modulus": 8,
+          "core_residue_count": 8,
+          "observed_prime_phase": 0,
+          "observed_prime_residue": 1
+        },
+        "modulus": 64,
+        "prime": 3457
+      },
+      {
+        "character_order": 16,
+        "core_profile": {
+          "core_character_active": true,
+          "core_character_image": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12,
+            14
+          ],
+          "core_character_image_order": 8,
+          "core_congruence_modulus": 8,
+          "core_residue_count": 8,
+          "observed_prime_phase": 0,
+          "observed_prime_residue": 1
+        },
+        "modulus": 64,
+        "prime": 14593
+      }
+    ],
+    "scope_note": "This is only a finite character-kernel compatibility check on core residue classes. It does not use the prime factors of p+4*A^2*C and cannot prove a Type II certificate or a cross-state q-adic capacity contradiction."
+  },
+  "depth_edge_cases": [
+    {
+      "prime": 97,
+      "raw_parameters": {
+        "A": 4,
+        "C": 1
+      },
+      "ray": {
+        "canonical_parameters": {
+          "A": 4,
+          "C": 1,
+          "modulus": 16
+        },
+        "classification": "support_outside_quadratically_inseparable",
+        "defect": [],
+        "divisor_residue_count": 2,
+        "factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            23,
+            1
+          ]
+        ],
+        "parameterization": "raw_ac",
+        "quadratic_separator": null,
+        "shift": 16,
+        "shifted_integer": 161,
+        "support_size": 2,
+        "target": 15,
+        "target_in_divisor_residues": false,
+        "target_in_support": false,
+        "two_power_depth_profile": {
+          "character_annihilates_support": true,
+          "character_certificate": {
+            "character_order": 4,
+            "character_type": "higher_order_two_power",
+            "generator_exponents": [
+              1,
+              1
+            ],
+            "generator_orders": [
+              4,
+              4
+            ],
+            "generator_residues": [
+              3,
+              5
+            ],
+            "image_order_verified": 4,
+            "relation_count": 2,
+            "support_exponents": [
+              [
+                1,
+                0
+              ],
+              [
+                7,
+                0
+              ]
+            ],
+            "target_exponent": 2
+          },
+          "character_existence_status": "implied_by_two_power_character_depth_lemma",
+          "character_target_phase": -1,
+          "core_character_profile": {
+            "core_character_active": true,
+            "core_character_image": [
+              0,
+              2
+            ],
+            "core_character_image_order": 2,
+            "core_congruence_modulus": 8,
+            "core_residue_count": 2,
+            "observed_prime_phase": 0,
+            "observed_prime_residue": 1
+          },
+          "depth": 1,
+          "explicit_character_status": "constructed_on_generators",
+          "minimal_character_order": 4,
+          "next_power": 4,
+          "next_saturation_contains_target": false,
+          "previous_power": 2,
+          "previous_saturation_contains_target": true,
+          "saturation_witness": {
+            "base_unit": 3,
+            "power": 2,
+            "support_value": 7
+          },
+          "status": "quadratic_inseparable"
+        }
+      },
+      "shift": 16
+    },
+    {
+      "prime": 3457,
+      "raw_parameters": {
+        "A": 4,
+        "C": 4
+      },
+      "ray": {
+        "canonical_parameters": {
+          "A": 4,
+          "C": 4,
+          "modulus": 64
+        },
+        "classification": "support_outside_quadratically_inseparable",
+        "defect": [
+          33
+        ],
+        "divisor_residue_count": 3,
+        "factorization": [
+          [
+            47,
+            1
+          ],
+          [
+            79,
+            1
+          ]
+        ],
+        "parameterization": "raw_ac",
+        "quadratic_separator": null,
+        "shift": 64,
+        "shifted_integer": 3713,
+        "support_size": 4,
+        "target": 63,
+        "target_in_divisor_residues": false,
+        "target_in_support": false,
+        "two_power_depth_profile": {
+          "character_annihilates_support": true,
+          "character_certificate": {
+            "character_order": 8,
+            "character_type": "higher_order_two_power",
+            "generator_exponents": [
+              1,
+              7
+            ],
+            "generator_orders": [
+              16,
+              16
+            ],
+            "generator_residues": [
+              3,
+              5
+            ],
+            "image_order_verified": 8,
+            "relation_count": 8,
+            "support_exponents": [
+              [
+                1,
+                0
+              ],
+              [
+                15,
+                0
+              ],
+              [
+                33,
+                0
+              ],
+              [
+                47,
+                0
+              ]
+            ],
+            "target_exponent": 4
+          },
+          "character_existence_status": "implied_by_two_power_character_depth_lemma",
+          "character_target_phase": -1,
+          "core_character_profile": {
+            "core_character_active": true,
+            "core_character_image": [
+              0,
+              2,
+              4,
+              6
+            ],
+            "core_character_image_order": 4,
+            "core_congruence_modulus": 8,
+            "core_residue_count": 8,
+            "observed_prime_phase": 0,
+            "observed_prime_residue": 1
+          },
+          "depth": 2,
+          "explicit_character_status": "constructed_on_generators",
+          "minimal_character_order": 8,
+          "next_power": 8,
+          "next_saturation_contains_target": false,
+          "previous_power": 4,
+          "previous_saturation_contains_target": true,
+          "saturation_witness": {
+            "base_unit": 3,
+            "power": 4,
+            "support_value": 15
+          },
+          "status": "quadratic_inseparable"
+        }
+      },
+      "shift": 64
+    },
+    {
+      "prime": 14593,
+      "raw_parameters": {
+        "A": 4,
+        "C": 4
+      },
+      "ray": {
+        "canonical_parameters": {
+          "A": 4,
+          "C": 4,
+          "modulus": 64
+        },
+        "classification": "support_outside_quadratically_inseparable",
+        "defect": [],
+        "divisor_residue_count": 2,
+        "factorization": [
+          [
+            31,
+            1
+          ],
+          [
+            479,
+            1
+          ]
+        ],
+        "parameterization": "raw_ac",
+        "quadratic_separator": null,
+        "shift": 64,
+        "shifted_integer": 14849,
+        "support_size": 2,
+        "target": 63,
+        "target_in_divisor_residues": false,
+        "target_in_support": false,
+        "two_power_depth_profile": {
+          "character_annihilates_support": true,
+          "character_certificate": {
+            "character_order": 16,
+            "character_type": "higher_order_two_power",
+            "generator_exponents": [
+              1,
+              3
+            ],
+            "generator_orders": [
+              16,
+              16
+            ],
+            "generator_residues": [
+              3,
+              5
+            ],
+            "image_order_verified": 16,
+            "relation_count": 8,
+            "support_exponents": [
+              [
+                1,
+                0
+              ],
+              [
+                31,
+                0
+              ]
+            ],
+            "target_exponent": 8
+          },
+          "character_existence_status": "implied_by_two_power_character_depth_lemma",
+          "character_target_phase": -1,
+          "core_character_profile": {
+            "core_character_active": true,
+            "core_character_image": [
+              0,
+              2,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            "core_character_image_order": 8,
+            "core_congruence_modulus": 8,
+            "core_residue_count": 8,
+            "observed_prime_phase": 0,
+            "observed_prime_residue": 1
+          },
+          "depth": 3,
+          "explicit_character_status": "constructed_on_generators",
+          "minimal_character_order": 16,
+          "next_power": 16,
+          "next_saturation_contains_target": false,
+          "previous_power": 8,
+          "previous_saturation_contains_target": true,
+          "saturation_witness": {
+            "base_unit": 3,
+            "power": 8,
+            "support_value": 31
+          },
+          "status": "quadratic_inseparable"
+        }
+      },
+      "shift": 64
+    }
+  ],
   "edge_cases": [
     {
       "prime": 97,
@@ -22,13 +399,73 @@
             1
           ]
         ],
+        "parameterization": "canonical_shift",
         "quadratic_separator": null,
         "shift": 16,
         "shifted_integer": 161,
         "support_size": 2,
         "target": 15,
         "target_in_divisor_residues": false,
-        "target_in_support": false
+        "target_in_support": false,
+        "two_power_depth_profile": {
+          "character_annihilates_support": true,
+          "character_certificate": {
+            "character_order": 4,
+            "character_type": "higher_order_two_power",
+            "generator_exponents": [
+              1,
+              1
+            ],
+            "generator_orders": [
+              4,
+              4
+            ],
+            "generator_residues": [
+              3,
+              5
+            ],
+            "image_order_verified": 4,
+            "relation_count": 2,
+            "support_exponents": [
+              [
+                1,
+                0
+              ],
+              [
+                7,
+                0
+              ]
+            ],
+            "target_exponent": 2
+          },
+          "character_existence_status": "implied_by_two_power_character_depth_lemma",
+          "character_target_phase": -1,
+          "core_character_profile": {
+            "core_character_active": true,
+            "core_character_image": [
+              0,
+              2
+            ],
+            "core_character_image_order": 2,
+            "core_congruence_modulus": 8,
+            "core_residue_count": 2,
+            "observed_prime_phase": 0,
+            "observed_prime_residue": 1
+          },
+          "depth": 1,
+          "explicit_character_status": "constructed_on_generators",
+          "minimal_character_order": 4,
+          "next_power": 4,
+          "next_saturation_contains_target": false,
+          "previous_power": 2,
+          "previous_saturation_contains_target": true,
+          "saturation_witness": {
+            "base_unit": 3,
+            "power": 2,
+            "support_value": 7
+          },
+          "status": "quadratic_inseparable"
+        }
       },
       "shift": 16
     }
@@ -100,13 +537,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 1,
           "shifted_integer": 77,
           "support_size": 2,
           "target": 3,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -123,6 +573,7 @@
               4
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -140,7 +591,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -161,6 +670,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -178,7 +688,65 @@
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -195,6 +763,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -212,7 +781,61 @@
           "support_size": 1,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -238,13 +861,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 5,
           "shifted_integer": 93,
           "support_size": 8,
           "target": 19,
           "target_in_divisor_residues": false,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -312,6 +948,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -328,7 +965,58 @@
           "support_size": 1,
           "target": 3,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1
+              ],
+              "generator_orders": [
+                2
+              ],
+              "generator_residues": [
+                3
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 3,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -353,13 +1041,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 2,
           "shifted_integer": 105,
           "support_size": 4,
           "target": 7,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -376,6 +1077,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -393,7 +1095,61 @@
           "support_size": 1,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -410,6 +1166,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -427,7 +1184,61 @@
           "support_size": 1,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -451,13 +1262,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 5,
           "shifted_integer": 117,
           "support_size": 8,
           "target": 19,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -531,6 +1355,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -547,7 +1372,58 @@
           "support_size": 1,
           "target": 3,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1
+              ],
+              "generator_orders": [
+                2
+              ],
+              "generator_residues": [
+                3
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 3,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -568,6 +1444,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -585,7 +1462,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -606,6 +1541,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -623,7 +1559,65 @@
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -644,6 +1638,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -661,7 +1656,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -687,13 +1740,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 5,
           "shifted_integer": 213,
           "support_size": 8,
           "target": 19,
           "target_in_divisor_residues": false,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -714,6 +1780,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -732,7 +1799,68 @@
           "support_size": 2,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -756,6 +1884,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -773,7 +1902,81 @@
           "support_size": 6,
           "target": 27,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                6,
+                6
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 3,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  13,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 6,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 25
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 27,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -851,13 +2054,26 @@
               2
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 1,
           "shifted_integer": 245,
           "support_size": 2,
           "target": 3,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -878,6 +2094,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -895,7 +2112,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -916,13 +2191,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 3,
           "shifted_integer": 253,
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -939,6 +2227,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -956,7 +2245,61 @@
           "support_size": 1,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -977,6 +2320,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -994,7 +2338,74 @@
           "support_size": 4,
           "target": 19,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                4,
+                2
+              ],
+              "generator_residues": [
+                3,
+                11
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": true,
+              "core_character_image": [
+                0,
+                1
+              ],
+              "core_character_image_order": 2,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 4,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 19,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1015,6 +2426,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1033,7 +2445,68 @@
           "support_size": 2,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1055,6 +2528,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1072,7 +2546,81 @@
           "support_size": 6,
           "target": 27,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                6,
+                6
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 3,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  13,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 6,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 17
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 27,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -1161,13 +2709,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 1,
           "shifted_integer": 5285,
           "support_size": 2,
           "target": 3,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -1192,6 +2753,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1209,7 +2771,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1230,6 +2850,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1247,7 +2868,65 @@
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1264,6 +2943,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1281,7 +2961,61 @@
           "support_size": 1,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1306,13 +3040,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 5,
           "shifted_integer": 5301,
           "support_size": 8,
           "target": 19,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -1333,6 +3080,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1351,7 +3099,68 @@
           "support_size": 2,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1373,6 +3182,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1390,7 +3200,81 @@
           "support_size": 6,
           "target": 27,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                6,
+                6
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 3,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  13,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 6,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 17
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 27,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1422,13 +3306,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 8,
           "shifted_integer": 5313,
           "support_size": 8,
           "target": 15,
           "target_in_divisor_residues": false,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -1449,6 +3346,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1466,7 +3364,61 @@
           "support_size": 1,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1489,6 +3441,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1507,7 +3460,76 @@
           "support_size": 4,
           "target": 39,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1,
+                0
+              ],
+              "generator_orders": [
+                4,
+                4,
+                2
+              ],
+              "generator_residues": [
+                3,
+                7,
+                11
+              ],
+              "image_order_verified": 2,
+              "relation_count": 2,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  33,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 4,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 39,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1534,6 +3556,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1551,7 +3574,98 @@
           "support_size": 10,
           "target": 43,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                10,
+                10
+              ],
+              "generator_residues": [
+                3,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 5,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  15,
+                  0
+                ],
+                [
+                  23,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ],
+                [
+                  27,
+                  0
+                ],
+                [
+                  31,
+                  0
+                ],
+                [
+                  37,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": true,
+              "core_character_image": [
+                0,
+                1
+              ],
+              "core_character_image_order": 2,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 10,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 43,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -1642,6 +3756,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1658,7 +3773,58 @@
           "support_size": 1,
           "target": 3,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1
+              ],
+              "generator_orders": [
+                2
+              ],
+              "generator_residues": [
+                3
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 3,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1683,6 +3849,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1700,7 +3867,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1721,6 +3946,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1738,7 +3964,61 @@
           "support_size": 1,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1763,13 +4043,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 4,
           "shifted_integer": 15617,
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -1796,6 +4089,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1813,7 +4107,74 @@
           "support_size": 4,
           "target": 19,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                4,
+                2
+              ],
+              "generator_residues": [
+                3,
+                11
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": true,
+              "core_character_image": [
+                0,
+                1
+              ],
+              "core_character_image_order": 2,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 4,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 19,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1830,6 +4191,7 @@
               6
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1848,7 +4210,68 @@
           "support_size": 2,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1870,6 +4293,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1887,7 +4311,81 @@
           "support_size": 6,
           "target": 27,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                6,
+                6
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 3,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  13,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 6,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 5
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 27,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1908,6 +4406,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1925,7 +4424,73 @@
           "support_size": 4,
           "target": 15,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                4,
+                4
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 2,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  11,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 2,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 15,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1946,6 +4511,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1963,7 +4529,65 @@
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -1980,6 +4604,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -1998,7 +4623,65 @@
           "support_size": 1,
           "target": 39,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                4,
+                4,
+                2
+              ],
+              "generator_residues": [
+                3,
+                7,
+                11
+              ],
+              "image_order_verified": 2,
+              "relation_count": 2,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": true,
+              "core_character_image": [
+                0,
+                1
+              ],
+              "core_character_image_order": 2,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 4,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 39,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2036,13 +4719,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 11,
           "shifted_integer": 15645,
           "support_size": 20,
           "target": 43,
           "target_in_divisor_residues": false,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -2059,6 +4755,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2077,7 +4774,64 @@
           "support_size": 1,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2108,6 +4862,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2125,7 +4880,106 @@
           "support_size": 12,
           "target": 51,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                1
+              ],
+              "generator_orders": [
+                6,
+                4
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  11,
+                  0
+                ],
+                [
+                  15,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  19,
+                  0
+                ],
+                [
+                  25,
+                  0
+                ],
+                [
+                  29,
+                  0
+                ],
+                [
+                  31,
+                  0
+                ],
+                [
+                  47,
+                  0
+                ],
+                [
+                  49,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": true,
+              "core_character_image": [
+                0,
+                1
+              ],
+              "core_character_image_order": 2,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 12,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 51,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -2216,13 +5070,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 1,
           "shifted_integer": 16637,
           "support_size": 2,
           "target": 3,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -2243,6 +5110,7 @@
               2
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2260,7 +5128,65 @@
           "support_size": 2,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  3,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2281,6 +5207,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2298,7 +5225,65 @@
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  5,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2315,6 +5300,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2332,7 +5318,61 @@
           "support_size": 1,
           "target": 7,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 7,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2364,13 +5404,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 5,
           "shifted_integer": 16653,
           "support_size": 8,
           "target": 19,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -2387,6 +5440,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2405,7 +5459,64 @@
           "support_size": 1,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2422,6 +5533,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2439,7 +5551,61 @@
           "support_size": 1,
           "target": 27,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                6,
+                6
+              ],
+              "generator_residues": [
+                3,
+                5
+              ],
+              "image_order_verified": 2,
+              "relation_count": 3,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 4,
+              "core_residue_count": 6,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 27,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2470,13 +5636,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 8,
           "shifted_integer": 16665,
           "support_size": 8,
           "target": 15,
           "target_in_divisor_residues": true,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -2497,6 +5676,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2514,7 +5694,65 @@
           "support_size": 2,
           "target": 11,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                1,
+                0
+              ],
+              "generator_orders": [
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 12,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 11,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2534,6 +5772,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2552,7 +5791,76 @@
           "support_size": 4,
           "target": 39,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                1,
+                0
+              ],
+              "generator_orders": [
+                4,
+                4,
+                2
+              ],
+              "generator_residues": [
+                3,
+                7,
+                11
+              ],
+              "image_order_verified": 2,
+              "relation_count": 2,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  9,
+                  0
+                ],
+                [
+                  17,
+                  0
+                ],
+                [
+                  33,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 8,
+              "core_residue_count": 4,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 33
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 39,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2588,13 +5896,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 11,
           "shifted_integer": 16677,
           "support_size": 20,
           "target": 43,
           "target_in_divisor_residues": false,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         },
         {
           "canonical_parameters": {
@@ -2615,6 +5936,7 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": {
             "annihilates_support": true,
             "basis_residues": [
@@ -2633,7 +5955,68 @@
           "support_size": 2,
           "target": 23,
           "target_in_divisor_residues": false,
-          "target_in_support": false
+          "target_in_support": false,
+          "two_power_depth_profile": {
+            "character_annihilates_support": true,
+            "character_certificate": {
+              "character_order": 2,
+              "character_type": "higher_order_two_power",
+              "generator_exponents": [
+                0,
+                0,
+                1
+              ],
+              "generator_orders": [
+                2,
+                2,
+                2
+              ],
+              "generator_residues": [
+                5,
+                7,
+                13
+              ],
+              "image_order_verified": 2,
+              "relation_count": 1,
+              "support_exponents": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  0
+                ]
+              ],
+              "target_exponent": 1
+            },
+            "character_existence_status": "implied_by_two_power_character_depth_lemma",
+            "character_target_phase": -1,
+            "core_character_profile": {
+              "core_character_active": false,
+              "core_character_image": [
+                0
+              ],
+              "core_character_image_order": 1,
+              "core_congruence_modulus": 24,
+              "core_residue_count": 1,
+              "observed_prime_phase": 0,
+              "observed_prime_residue": 1
+            },
+            "depth": 0,
+            "explicit_character_status": "constructed_on_generators",
+            "minimal_character_order": 2,
+            "next_power": 2,
+            "next_saturation_contains_target": false,
+            "previous_power": 1,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": {
+              "base_unit": 23,
+              "power": 1,
+              "support_value": 1
+            },
+            "status": "quadratic_separable"
+          }
         },
         {
           "canonical_parameters": {
@@ -2675,13 +6058,26 @@
               1
             ]
           ],
+          "parameterization": "canonical_shift",
           "quadratic_separator": null,
           "shift": 13,
           "shifted_integer": 16685,
           "support_size": 24,
           "target": 51,
           "target_in_divisor_residues": false,
-          "target_in_support": true
+          "target_in_support": true,
+          "two_power_depth_profile": {
+            "character_existence_status": "not_applicable",
+            "depth": null,
+            "explicit_character_status": "not_applicable",
+            "minimal_character_order": null,
+            "next_power": null,
+            "next_saturation_contains_target": true,
+            "previous_power": null,
+            "previous_saturation_contains_target": true,
+            "saturation_witness": null,
+            "status": "target_in_support"
+          }
         }
       ],
       "recursive_edge_eligible": false,
@@ -2690,6 +6086,411 @@
       "theorem_conclusion": "direct hit or support-outside separator or support-inside multi-hole"
     }
   ],
-  "schema_version": "type-ii-canonical-fan-escape-trichotomy/v1",
-  "scope_note": "Focused typed replay of the canonical fan theorem. The theorem is general, while factorization and class counts here cover only the listed primes."
+  "schema_version": "type-ii-canonical-fan-escape-trichotomy/v2",
+  "scope_note": "Focused typed replay of the canonical fan theorem. The theorem is general, while factorization, class counts, and depth edge cases here cover only the listed primes.",
+  "shared_factor_depth_compatibility": {
+    "capacity_mapping_status": "unproved",
+    "common_core_congruence_modulus": 24,
+    "common_core_residue_count": 8,
+    "common_modulus": 240,
+    "compatibility_status": "compatible",
+    "joint_kernel_count": 4,
+    "joint_kernel_index": 2,
+    "joint_kernel_witness_residue": 1,
+    "rows": [
+      {
+        "character_order": 4,
+        "core_profile": {
+          "core_character_active": true,
+          "core_character_image": [
+            0,
+            2
+          ],
+          "core_character_image_order": 2,
+          "core_congruence_modulus": 8,
+          "core_residue_count": 2,
+          "observed_prime_phase": 0,
+          "observed_prime_residue": 1
+        },
+        "modulus": 16,
+        "prime": 433
+      },
+      {
+        "character_order": 4,
+        "core_profile": {
+          "core_character_active": true,
+          "core_character_image": [
+            0,
+            2
+          ],
+          "core_character_image_order": 2,
+          "core_congruence_modulus": 8,
+          "core_residue_count": 8,
+          "observed_prime_phase": 0,
+          "observed_prime_residue": 33
+        },
+        "modulus": 80,
+        "prime": 433
+      }
+    ],
+    "scope_note": "This is only a finite character-kernel compatibility check on core residue classes. It does not use the prime factors of p+4*A^2*C and cannot prove a Type II certificate or a cross-state q-adic capacity contradiction.",
+    "shared_factor_edge_count": 2,
+    "shared_factor_primes": [
+      7
+    ]
+  },
+  "shared_factor_depth_edges": [
+    {
+      "prime": 433,
+      "raw_parameters": {
+        "A": 4,
+        "C": 1
+      },
+      "ray": {
+        "canonical_parameters": {
+          "A": 4,
+          "C": 1,
+          "modulus": 16
+        },
+        "classification": "support_outside_quadratically_inseparable",
+        "defect": [],
+        "divisor_residue_count": 2,
+        "factorization": [
+          [
+            7,
+            1
+          ],
+          [
+            71,
+            1
+          ]
+        ],
+        "parameterization": "raw_ac",
+        "quadratic_separator": null,
+        "shift": 16,
+        "shifted_integer": 497,
+        "support_size": 2,
+        "target": 15,
+        "target_in_divisor_residues": false,
+        "target_in_support": false,
+        "two_power_depth_profile": {
+          "character_annihilates_support": true,
+          "character_certificate": {
+            "character_order": 4,
+            "character_type": "higher_order_two_power",
+            "generator_exponents": [
+              1,
+              1
+            ],
+            "generator_orders": [
+              4,
+              4
+            ],
+            "generator_residues": [
+              3,
+              5
+            ],
+            "image_order_verified": 4,
+            "relation_count": 2,
+            "support_exponents": [
+              [
+                1,
+                0
+              ],
+              [
+                7,
+                0
+              ]
+            ],
+            "target_exponent": 2
+          },
+          "character_existence_status": "implied_by_two_power_character_depth_lemma",
+          "character_target_phase": -1,
+          "core_character_profile": {
+            "core_character_active": true,
+            "core_character_image": [
+              0,
+              2
+            ],
+            "core_character_image_order": 2,
+            "core_congruence_modulus": 8,
+            "core_residue_count": 2,
+            "observed_prime_phase": 0,
+            "observed_prime_residue": 1
+          },
+          "depth": 1,
+          "explicit_character_status": "constructed_on_generators",
+          "minimal_character_order": 4,
+          "next_power": 4,
+          "next_saturation_contains_target": false,
+          "previous_power": 2,
+          "previous_saturation_contains_target": true,
+          "saturation_witness": {
+            "base_unit": 3,
+            "power": 2,
+            "support_value": 7
+          },
+          "status": "quadratic_inseparable"
+        }
+      },
+      "shift": 16
+    },
+    {
+      "prime": 433,
+      "raw_parameters": {
+        "A": 5,
+        "C": 4
+      },
+      "ray": {
+        "canonical_parameters": {
+          "A": 5,
+          "C": 4,
+          "modulus": 80
+        },
+        "classification": "support_outside_quadratically_inseparable",
+        "defect": [
+          23,
+          71
+        ],
+        "divisor_residue_count": 6,
+        "factorization": [
+          [
+            7,
+            2
+          ],
+          [
+            17,
+            1
+          ]
+        ],
+        "parameterization": "raw_ac",
+        "quadratic_separator": null,
+        "shift": 100,
+        "shifted_integer": 833,
+        "support_size": 8,
+        "target": 79,
+        "target_in_divisor_residues": false,
+        "target_in_support": false,
+        "two_power_depth_profile": {
+          "character_annihilates_support": true,
+          "character_certificate": {
+            "character_order": 4,
+            "character_type": "higher_order_two_power",
+            "generator_exponents": [
+              1,
+              0,
+              3
+            ],
+            "generator_orders": [
+              4,
+              4,
+              4
+            ],
+            "generator_residues": [
+              3,
+              7,
+              11
+            ],
+            "image_order_verified": 4,
+            "relation_count": 2,
+            "support_exponents": [
+              [
+                1,
+                0
+              ],
+              [
+                7,
+                0
+              ],
+              [
+                17,
+                0
+              ],
+              [
+                23,
+                0
+              ],
+              [
+                33,
+                0
+              ],
+              [
+                39,
+                0
+              ],
+              [
+                49,
+                0
+              ],
+              [
+                71,
+                0
+              ]
+            ],
+            "target_exponent": 2
+          },
+          "character_existence_status": "implied_by_two_power_character_depth_lemma",
+          "character_target_phase": -1,
+          "core_character_profile": {
+            "core_character_active": true,
+            "core_character_image": [
+              0,
+              2
+            ],
+            "core_character_image_order": 2,
+            "core_congruence_modulus": 8,
+            "core_residue_count": 8,
+            "observed_prime_phase": 0,
+            "observed_prime_residue": 33
+          },
+          "depth": 1,
+          "explicit_character_status": "constructed_on_generators",
+          "minimal_character_order": 4,
+          "next_power": 4,
+          "next_saturation_contains_target": false,
+          "previous_power": 2,
+          "previous_saturation_contains_target": true,
+          "saturation_witness": {
+            "base_unit": 11,
+            "power": 2,
+            "support_value": 39
+          },
+          "status": "quadratic_inseparable"
+        }
+      },
+      "shift": 100
+    }
+  ],
+  "shared_factor_q_adic_bridge": {
+    "capacity_mapping_status": "unproved",
+    "collision_tree_status": "exact_local_collision_tree",
+    "q_adic_bridge_status": "local_valuation_ledger_only",
+    "q_adic_capacity_status": "exact_local_shift_capacity_bound",
+    "rows": [
+      {
+        "factorization": {
+          "7": 1,
+          "71": 1
+        },
+        "prime": 433,
+        "private_factorization": {
+          "71": 1
+        },
+        "shared_character_phases": {
+          "7": 0
+        },
+        "shared_valuations": {
+          "7": 1
+        },
+        "shift": 16
+      },
+      {
+        "factorization": {
+          "17": 1,
+          "7": 2
+        },
+        "prime": 433,
+        "private_factorization": {
+          "17": 1
+        },
+        "shared_character_phases": {
+          "7": 0
+        },
+        "shared_valuations": {
+          "7": 2
+        },
+        "shift": 100
+      }
+    ],
+    "scope_note": "The shared-prime valuation and character-phase data are exact for this pair. The difference-valuation field only records the elementary bound min(v_q(N_i),v_q(N_j)) <= v_q(4(s_j-s_i)); no injection into a cross-state capacity tree or recursive descent is claimed. The collision levels only partition active shifts by their exact q^level residues; the capacity profile is the finite residue-class inequality, not a certificate selector.",
+    "shared_primes": [
+      7
+    ],
+    "valuation_profiles": [
+      {
+        "capacity_profile": {
+          "capacity_bound": 3,
+          "capacity_bound_holds": true,
+          "capacity_bound_status": "tight",
+          "capacity_slack": 0,
+          "levels": [
+            {
+              "active_count": 2,
+              "active_row_indices": [
+                0,
+                1
+              ],
+              "capacity_slack": 0,
+              "level": 1,
+              "max_class_occupancy": 2,
+              "modulus": 7,
+              "target_residue": 2
+            },
+            {
+              "active_count": 1,
+              "active_row_indices": [
+                1
+              ],
+              "capacity_slack": 0,
+              "level": 2,
+              "max_class_occupancy": 1,
+              "modulus": 49,
+              "target_residue": 2
+            }
+          ],
+          "max_level": 2,
+          "prime": 433,
+          "q": 7,
+          "scope_note": "For every cutoff E, summing the active q^r target classes gives sum_s min(v_q(p+4s), E) <= sum_{r<=E} C_r(S,q), where C_r is the largest shift-residue class modulo q^r. This is a finite shift-capacity bound, not a Type II certificate or descent.",
+          "shift_count": 2,
+          "truncated_valuation_demand": 3
+        },
+        "collision_levels": [
+          {
+            "active_class_count": 1,
+            "active_row_indices": [
+              0,
+              1
+            ],
+            "all_active_shifts_congruent": true,
+            "level": 1,
+            "modulus": 7,
+            "shift_residue_classes": {
+              "2": [
+                0,
+                1
+              ]
+            }
+          },
+          {
+            "active_class_count": 1,
+            "active_row_indices": [
+              1
+            ],
+            "all_active_shifts_congruent": true,
+            "level": 2,
+            "modulus": 49,
+            "shift_residue_classes": {
+              "2": [
+                1
+              ]
+            }
+          }
+        ],
+        "difference_bound_holds": true,
+        "difference_bound_status": "tight",
+        "height_gap": 1,
+        "maximum_height": 2,
+        "minimum_height": 1,
+        "minimum_shared_valuation": 1,
+        "offset_difference": 336,
+        "offset_difference_valuation": 1,
+        "prime": 7,
+        "valuations": [
+          1,
+          2
+        ]
+      }
+    ]
+  }
 }

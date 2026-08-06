@@ -1,0 +1,585 @@
+{
+  "certificate_type": "type_i_high_r_nonreturn_f_to_f_v1",
+  "selector_status": "candidate_transition",
+  "recursive_edge_eligible": false,
+  "proof_boundary": "the dedicated receipt closes the fresh root, F parent, high-R source, F-to-F non-return r-chart, and local support decrease; a global non-resetting phase rank is still absent",
+  "e1_e5": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": false
+  },
+  "local_e1_e5": {
+    "E1": true,
+    "E2": true,
+    "E3": true,
+    "E4": true,
+    "E5": true
+  },
+  "missing_conditions": [
+    "global_nonresetting_phase_rank"
+  ],
+  "prime": 7393,
+  "B_p": 13660416,
+  "core_anchor": {
+    "adapter": "high_R_path_anchored_bundle_v1",
+    "R_domain": "core_R",
+    "source": {
+      "R": 2491,
+      "K": 4603991,
+      "source": [
+        7393,
+        18406079,
+        7392
+      ],
+      "raw_p_edge": {
+        "q": 7393,
+        "shift": 1,
+        "gcd_reduction": 1,
+        "destination": [
+          1,
+          2490,
+          1
+        ]
+      }
+    },
+    "anchor_node": [
+      1,
+      2490,
+      1
+    ],
+    "complete_excess_bundle": {
+      "Q": 2490,
+      "beta": 1
+    },
+    "conditions": {
+      "support_divides_parent_K": true,
+      "complete_excess_nontrivial": true,
+      "anchor_factorization": true,
+      "beta_divides_parent_K": true,
+      "bundle_coprime_to_beta": true,
+      "bundle_not_dividing_parent_K": true,
+      "bundle_below_anchor": true,
+      "p_coprime_to_bundle": true,
+      "source_coprime_condition": true,
+      "lcm_contains_support": true,
+      "lcm_contains_bundle": true,
+      "strict_support_growth": true,
+      "new_carrier_not_in_parent_K": true,
+      "canonical_chart_changed": true,
+      "canonical_chart_not_equal_p": true,
+      "canonical_R_mod_4": true
+    },
+    "rechart": {
+      "M": 2490,
+      "R": 9863,
+      "K": 18229290,
+      "C": 7321,
+      "result_class": "overflow",
+      "d": 72,
+      "n": 97
+    }
+  },
+  "first_overflow": {
+    "M": 2490,
+    "R": 9863,
+    "K": 18229290,
+    "C": 7321,
+    "d": 72,
+    "n": 97,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          7321,
+          1
+        ]
+      ],
+      "witness": [
+        0,
+        -9,
+        0,
+        7,
+        -1
+      ],
+      "witness_residue": 9862,
+      "witness_l1": 17,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              3,
+              8
+            ]
+          ],
+          "value": 6561
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              83,
+              6
+            ]
+          ],
+          "value": 326940373369
+        }
+      }
+    }
+  },
+  "same_chart_parent_replay": {
+    "certificate_type": "overflow_same_chart_support_promotion",
+    "normal_form_replay_adapter": "high_r_same_chart_parent_replay_v1",
+    "selector_status": "verified_edge",
+    "recursive_edge_eligible": true,
+    "source_state": {
+      "equation_target": [
+        4,
+        7393
+      ],
+      "R": 9863,
+      "K": 18229290,
+      "absorbed_support": 1,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:7b9fdbd4a7a0b038a4726376d26f3cc5024d4680fbc5082fc4135dbeabb21c0e"
+    },
+    "successor_state": {
+      "equation_target": [
+        4,
+        7393
+      ],
+      "R": 9863,
+      "K": 18229290,
+      "absorbed_support": 2490,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:a35ccbdcb57f8329d5aadf9f820bc0cacf7d71f312f8fb67a6e725f6738fe69f"
+    },
+    "source_provenance": {
+      "state_origin": "universal_raw_default_entry_v1",
+      "source_tree_scope": "fresh_source_tree_only",
+      "root_bundle_adapter": "high_R_path_anchored_bundle_v1",
+      "root_anchor": [
+        1,
+        2490,
+        1
+      ]
+    },
+    "marked_solution_set": {
+      "source": "Sol(p)",
+      "successor": "Sol(p)",
+      "lift": "identity"
+    },
+    "fiber_certificate": {
+      "factors": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          7321,
+          1
+        ]
+      ],
+      "witness": [
+        0,
+        -9,
+        0,
+        7,
+        -1
+      ],
+      "witness_residue": 9862,
+      "witness_l1": 17,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              3,
+              8
+            ]
+          ],
+          "value": 6561
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              83,
+              6
+            ]
+          ],
+          "value": 326940373369
+        }
+      }
+    },
+    "e1_e5": {
+      "E1": true,
+      "E2": true,
+      "E3": true,
+      "E4": true,
+      "E5": true
+    },
+    "checks": {
+      "root_entry": true,
+      "source_state": true,
+      "same_chart_successor": true,
+      "identity_lift": true,
+      "strict_support_potential": true,
+      "scope_propagated": true
+    },
+    "potential": {
+      "source": 13660416,
+      "successor": 5486
+    },
+    "edge_id": "edge:a3eeca0b7d1aac5355afa9a88a59f440fa28cac2519b5b7e43cd6b0e59066d3c"
+  },
+  "high_R_anchor": {
+    "adapter": "high_R_path_anchored_bundle_v1",
+    "R_domain": "high_R",
+    "source": {
+      "R": 9863,
+      "K": 18229290,
+      "source": [
+        7393,
+        72899903,
+        7392
+      ],
+      "raw_p_edge": {
+        "q": 7393,
+        "shift": 1,
+        "gcd_reduction": 1,
+        "destination": [
+          1,
+          9862,
+          1
+        ]
+      }
+    },
+    "anchor_node": [
+      1,
+      9862,
+      1
+    ],
+    "complete_excess_bundle": {
+      "Q": 4931,
+      "beta": 2
+    },
+    "conditions": {
+      "support_divides_parent_K": true,
+      "complete_excess_nontrivial": true,
+      "anchor_factorization": true,
+      "beta_divides_parent_K": true,
+      "bundle_coprime_to_beta": true,
+      "bundle_not_dividing_parent_K": true,
+      "bundle_below_anchor": true,
+      "p_coprime_to_bundle": true,
+      "source_coprime_condition": true,
+      "lcm_contains_support": true,
+      "lcm_contains_bundle": true,
+      "strict_support_growth": true,
+      "new_carrier_not_in_parent_K": true,
+      "canonical_chart_changed": true,
+      "canonical_chart_not_equal_p": true,
+      "canonical_R_mod_4": true
+    },
+    "rechart": {
+      "M": 12278190,
+      "R": 41891663,
+      "K": 77426266140,
+      "C": 6306,
+      "result_class": "overflow",
+      "d": 1087,
+      "n": 7221097
+    }
+  },
+  "source_overflow": {
+    "A": 2490,
+    "M": 12278190,
+    "R": 41891663,
+    "K": 77426266140,
+    "C": 6306,
+    "d": 1087,
+    "n": 7221097,
+    "k": 1660,
+    "r": 5810,
+    "inside_support_potential_domain": true,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          1051,
+          1
+        ],
+        [
+          4931,
+          1
+        ]
+      ],
+      "witness": [
+        -26,
+        5,
+        0,
+        -9,
+        8,
+        5
+      ],
+      "witness_residue": 41891662,
+      "witness_l1": 53,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              2,
+              24
+            ],
+            [
+              83,
+              8
+            ]
+          ],
+          "value": 37787193273718832889856
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              3,
+              3
+            ],
+            [
+              1051,
+              7
+            ],
+            [
+              4931,
+              4
+            ]
+          ],
+          "value": 22611157050319917796029764743422407217
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        7393
+      ],
+      "R": 41891663,
+      "K": 77426266140,
+      "absorbed_support": 2490,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:b0fb4b80d6bd605e376f6d6362979797855ca0114c7f71f8f60a176d0484f7e8"
+    }
+  },
+  "r_chart_target": {
+    "A": 2616990,
+    "R": 19823,
+    "K": 36637860,
+    "C": 14,
+    "d": 7379,
+    "n": 10448137,
+    "fiber": {
+      "factors": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          1051,
+          1
+        ]
+      ],
+      "witness": [
+        0,
+        -4,
+        -1,
+        0,
+        4,
+        -2
+      ],
+      "witness_residue": 19822,
+      "witness_l1": 11,
+      "witness_policy": "minimum_l1_then_lexicographic",
+      "finite_box_hit": false,
+      "classification": "F",
+      "signed_defect": {
+        "orientation": "canonical_minimum_l1_then_lexicographic",
+        "D_minus": {
+          "factorization": [
+            [
+              3,
+              3
+            ],
+            [
+              1051,
+              1
+            ]
+          ],
+          "value": 28377
+        },
+        "D_plus": {
+          "factorization": [
+            [
+              83,
+              3
+            ]
+          ],
+          "value": 571787
+        }
+      }
+    },
+    "state": {
+      "equation_target": [
+        4,
+        7393
+      ],
+      "R": 19823,
+      "K": 36637860,
+      "absorbed_support": 2616990,
+      "state_class": "overflow",
+      "fiber_class": "F",
+      "source_tree_scope": "fresh_source_tree_only",
+      "state_id": "state:21136398c35992ce85d855b7214c10327797b538e8277677e7a87d117508bd3a"
+    }
+  },
+  "nonreturn_phase": {
+    "anchor_R": 9863,
+    "anchor_K": 18229290,
+    "delta": 2490,
+    "support_multiple_h": 1,
+    "formula": "R_r=R_1+4*delta; delta=A*h",
+    "large_divisor_return_test": {
+      "r_divides_anchor_K": false,
+      "return_condition": "r|K_1 and K_1/r<p",
+      "nonreturn_verified": true
+    }
+  },
+  "cofactor_normal_form": {
+    "source_state": true,
+    "construction": true,
+    "successor_state": true,
+    "source_tree_scope": true,
+    "parent_ledger": true,
+    "passed": true
+  },
+  "local_potential": {
+    "source": 5486,
+    "target": 5
+  },
+  "terminal_first_diagnostic": {
+    "p_plus_four_factorization": [
+      [
+        13,
+        1
+      ],
+      [
+        569,
+        1
+      ]
+    ],
+    "p_plus_four_direct_gap_candidates": [],
+    "gap_seven_type_i_terminal": {
+      "certificate_type": "type_i_gap_seven_terminal",
+      "selector_status": "terminal_leaf",
+      "recursive_edge_eligible": false,
+      "gap": 7,
+      "type_i_normal_form": {
+        "A": 1,
+        "B": 370,
+        "C": 5,
+        "H": 390773
+      },
+      "divisor": 5,
+      "denominators": {
+        "x": 1850,
+        "y": 1953865,
+        "z": 5344621859650
+      },
+      "checks": {
+        "gap_domain": true,
+        "x": true,
+        "type_i_divisor": true,
+        "normal_form": true,
+        "denominators": true,
+        "identity": true
+      }
+    },
+    "preempts_high_r_candidate_for_p7393": true,
+    "does_not_rule_out_the_local_nonreturn_construction": true
+  },
+  "terminal_first_status": "terminal_leaf",
+  "integration_status": "dedicated_reproducer_only"
+}

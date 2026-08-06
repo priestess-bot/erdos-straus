@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "claim_id": "type-I-high-anchor-direct-c1-finite-menu-exhaustion",
+  "purpose": "focused exact c=1 action-menu replay; it does not run the global selector",
+  "contracts": {
+    "arithmetic_label_iff": "u divides A, r=(K/A)u<p, C=A/u<p, and R<4r iff the direct candidate has h=0, c=1 and returns the same arithmetic checkpoint",
+    "finite_rank": "Xi=(floor(B_p/A), Omega(K/A), remaining_registered_actions)",
+    "exhaustion_rule": "Only a fully verified, terminal/alternate-complete no-progress action can be exhausted; unresolved actions are not exhausted."
+  },
+  "cases": {
+    "p97_actual_c1_loop": {
+      "input": {
+        "p": 97,
+        "R": 99,
+        "K": 2401,
+        "A": 2401,
+        "B": 1
+      },
+      "tau_A": 5,
+      "arithmetic_c1_labels": [
+        {
+          "u": 49,
+          "r": 49,
+          "C": 49
+        }
+      ],
+      "H1_v1": {
+        "Q": 2,
+        "beta": 49,
+        "source_conditions": {
+          "prime_is_core": true,
+          "high_R_raw_source": true,
+          "charged_support": true,
+          "full_excess_nontrivial": true,
+          "H2_consequences": true
+        },
+        "registered_action_menu": [
+          {
+            "action_id": "action:b078809a5ad520f5536da4a32d5751909c6c6608e94a9f259f226a273c3c4a1d",
+            "descriptor": {
+              "adapter": "high_R_path_anchored_bundle_v1",
+              "adapter_version": 1,
+              "canonical_raw_source": "universal_p_source_v1",
+              "canonical_path": "raw_p_edge_shift_1_to_(1,R-1,1)",
+              "input": {
+                "p": 97,
+                "R": 99,
+                "K": 2401,
+                "A": 2401
+              },
+              "complete_excess": {
+                "Q": 2,
+                "beta": 49,
+                "factorization_R_minus_1": [
+                  [
+                    2,
+                    1
+                  ],
+                  [
+                    7,
+                    2
+                  ]
+                ]
+              },
+              "carrier_and_cofactor": {
+                "M": 4802,
+                "r": 49,
+                "C": 49
+              },
+              "verifier_version": "c1_finite_menu_fixture_v1"
+            },
+            "replay": {
+              "Q": 2,
+              "M": 4802,
+              "canonical_rechart": {
+                "R": 9703,
+                "K": 235298
+              },
+              "r": 49,
+              "C": 49,
+              "A_target": 2401,
+              "gate": true,
+              "phase_integral": true,
+              "h": 0,
+              "c": 1,
+              "target": {
+                "R": 99,
+                "K": 2401,
+                "A": 2401
+              },
+              "exact_c1_return": true
+            }
+          }
+        ]
+      },
+      "conclusion": "The canonical v1 action is an actual arithmetic c=1 self-loop."
+    },
+    "p1657_partial_excess_boundary": {
+      "input": {
+        "p": 1657,
+        "R": 1991,
+        "K": 824772,
+        "A": 824772,
+        "B": 1
+      },
+      "factorization": {
+        "R_minus_1": [
+          [
+            2,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            199,
+            1
+          ]
+        ],
+        "K": [
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            13,
+            1
+          ],
+          [
+            17,
+            1
+          ],
+          [
+            311,
+            1
+          ]
+        ]
+      },
+      "tau_A": 48,
+      "arithmetic_c1_labels": [
+        {
+          "u": 622,
+          "r": 622,
+          "C": 1326
+        },
+        {
+          "u": 663,
+          "r": 663,
+          "C": 1244
+        },
+        {
+          "u": 884,
+          "r": 884,
+          "C": 933
+        },
+        {
+          "u": 933,
+          "r": 933,
+          "C": 884
+        },
+        {
+          "u": 1244,
+          "r": 1244,
+          "C": 663
+        },
+        {
+          "u": 1326,
+          "r": 1326,
+          "C": 622
+        }
+      ],
+      "H1_v1": {
+        "Q": 995,
+        "beta": 2,
+        "source_conditions": {
+          "prime_is_core": true,
+          "high_R_raw_source": true,
+          "charged_support": true,
+          "full_excess_nontrivial": true,
+          "H2_consequences": true
+        },
+        "registered_action_menu": [
+          {
+            "action_id": "action:469ecc01cffad90475187a5dd06fc1ad7d1b78026a5d2f129c0776b4b15eb44d",
+            "descriptor": {
+              "adapter": "high_R_path_anchored_bundle_v1",
+              "adapter_version": 1,
+              "canonical_raw_source": "universal_p_source_v1",
+              "canonical_path": "raw_p_edge_shift_1_to_(1,R-1,1)",
+              "input": {
+                "p": 1657,
+                "R": 1991,
+                "K": 824772,
+                "A": 824772
+              },
+              "complete_excess": {
+                "Q": 995,
+                "beta": 2,
+                "factorization_R_minus_1": [
+                  [
+                    2,
+                    1
+                  ],
+                  [
+                    5,
+                    1
+                  ],
+                  [
+                    199,
+                    1
+                  ]
+                ]
+              },
+              "carrier_and_cofactor": {
+                "M": 820648140,
+                "r": 663,
+                "C": 1244
+              },
+              "verifier_version": "c1_finite_menu_fixture_v1"
+            },
+            "replay": {
+              "Q": 995,
+              "M": 820648140,
+              "canonical_rechart": {
+                "R": 2464420727,
+                "K": 1020886286160
+              },
+              "r": 663,
+              "C": 1244,
+              "A_target": 824772,
+              "gate": true,
+              "phase_integral": true,
+              "h": 0,
+              "c": 1,
+              "target": {
+                "R": 1991,
+                "K": 824772,
+                "A": 824772
+              },
+              "exact_c1_return": true
+            }
+          }
+        ]
+      },
+      "unregistered_partial_Q_5": {
+        "H2_check": {
+          "Q": 5,
+          "beta": 398,
+          "conditions": {
+            "Q_gt_1": true,
+            "beta_divides_K": false,
+            "coprime_Q_beta": true,
+            "Q_not_dividing_K": true,
+            "Q_below_R": true,
+            "p_coprime_to_Q": true
+          },
+          "holds": false
+        },
+        "replay": {
+          "Q": 5,
+          "M": 4123860,
+          "canonical_rechart": {
+            "R": 6600167,
+            "K": 2734119180
+          },
+          "r": 1244,
+          "C": 663,
+          "A_target": 824772,
+          "gate": true,
+          "phase_integral": true,
+          "h": 0,
+          "c": 1,
+          "target": {
+            "R": 1991,
+            "K": 824772,
+            "A": 824772
+          },
+          "exact_c1_return": true
+        },
+        "conclusion": "Q=5 gives an arithmetic c=1 return, but beta=398 does not divide K; it is not the H1/v1 complete-excess action."
+      }
+    },
+    "p73_H1_vs_H2_nonuniqueness": {
+      "input": {
+        "p": 73,
+        "R": 159,
+        "K": 2902,
+        "A": 1451,
+        "B": 2
+      },
+      "H1_full_excess": {
+        "Q_star": 79,
+        "beta_star": 2
+      },
+      "H2_candidates": [
+        {
+          "Q": 79,
+          "beta": 2,
+          "conditions": {
+            "Q_gt_1": true,
+            "beta_divides_K": true,
+            "coprime_Q_beta": true,
+            "Q_not_dividing_K": true,
+            "Q_below_R": true,
+            "p_coprime_to_Q": true
+          },
+          "holds": true
+        },
+        {
+          "Q": 158,
+          "beta": 1,
+          "conditions": {
+            "Q_gt_1": true,
+            "beta_divides_K": true,
+            "coprime_Q_beta": true,
+            "Q_not_dividing_K": true,
+            "Q_below_R": true,
+            "p_coprime_to_Q": true
+          },
+          "holds": true
+        }
+      ],
+      "H1_v1": {
+        "Q": 79,
+        "beta": 2,
+        "source_conditions": {
+          "prime_is_core": true,
+          "high_R_raw_source": true,
+          "charged_support": true,
+          "full_excess_nontrivial": true,
+          "H2_consequences": true
+        },
+        "registered_action_menu": [
+          {
+            "action_id": "action:d6db616f225a28e670d4edda4282af4b4237f9ec2ff6e3cf1d57217595622821",
+            "descriptor": {
+              "adapter": "high_R_path_anchored_bundle_v1",
+              "adapter_version": 1,
+              "canonical_raw_source": "universal_p_source_v1",
+              "canonical_path": "raw_p_edge_shift_1_to_(1,R-1,1)",
+              "input": {
+                "p": 73,
+                "R": 159,
+                "K": 2902,
+                "A": 1451
+              },
+              "complete_excess": {
+                "Q": 79,
+                "beta": 2,
+                "factorization_R_minus_1": [
+                  [
+                    2,
+                    1
+                  ],
+                  [
+                    79,
+                    1
+                  ]
+                ]
+              },
+              "carrier_and_cofactor": {
+                "M": 114629,
+                "r": 19,
+                "C": 49
+              },
+              "verifier_version": "c1_finite_menu_fixture_v1"
+            },
+            "replay": {
+              "Q": 79,
+              "M": 114629,
+              "canonical_rechart": {
+                "R": 307771,
+                "K": 5616821
+              },
+              "r": 19,
+              "C": 49,
+              "A_target": 71099,
+              "gate": false,
+              "phase_integral": false,
+              "h": null,
+              "c": 49,
+              "target": {
+                "R": 23375,
+                "K": 426594,
+                "A": 71099
+              },
+              "exact_c1_return": false
+            }
+          }
+        ]
+      },
+      "conclusion": "Q*=79 is the unique H1 full-excess choice, while Q'=158 also passes the weaker H2 checks. H2 therefore cannot define a singleton action menu."
+    }
+  }
+}

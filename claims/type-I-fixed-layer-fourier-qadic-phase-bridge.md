@@ -65,6 +65,10 @@ sum_i h_i <= mu * sum_{t >= 1} D_t * (floor(M / q^t) + 1)
 
 ## 类型边界
 
+overflow 双通道的 q 缺陷高度不能直接充当本节所需的相位中心；同一状态中 d/r
+单位残数可能不同。见
+[overflow 双通道 q 缺陷的单位相位非识别反例](type-I-overflow-qadic-dual-unit-phase-nonidentification.md)。
+
 该桥的状态类型固定为：
 
 ```text

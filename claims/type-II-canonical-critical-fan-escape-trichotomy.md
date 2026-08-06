@@ -16,9 +16,11 @@ topics:
 - proof-program
 sources:
 - reproduction: reproductions/type_ii_canonical_fan_escape_trichotomy.py
-  role: exact canonical-fan factor, subgroup, and quadratic-separator replay
+  role: exact canonical-fan factor, subgroup, quadratic-separator, and 2^j-depth replay
 - result: reproductions/type-ii-canonical-fan-escape-trichotomy-results.json
   role: focused typed fan escape profiles
+- claim: type-II-two-power-character-depth-sieve
+  role: higher-order character existence at the exact saturation depth
 - paper: montgomery_vaughan2007
   locator: Chapter 11, fixed-modulus prime-number-theorem context
   role: primorial-growth-consequence
@@ -153,6 +155,28 @@ H=\left\lceil(1+\epsilon)\log p\right\rceil. \tag{10}
 二次分离。
 七个聚焦核心素数的可重放结果位于
 [Type II 扇逃逸三分结果](../reproductions/type-ii-canonical-fan-escape-trichotomy-results.json)。
+
+本轮回执又把支撑外行接到二幂深度。令
+nu_s = max{d >= 0 : -1 in K_s U(M_s)^(2^d)}。每条支撑外行均保存前一层
+K_s U(M_s)^(2^nu_s) 的目标见证、下一层
+K_s U(M_s)^(2^(nu_s+1)) 的排除，以及由深度引理要求的最小字符像阶
+2^(nu_s+1)。因此 nu_s=0 正好对应二次可分行；nu_s>=1 是二次不可分的
+平方饱和核。高阶字符在有限模数回执中已经保存生成元、关系和字符指数，但这只是
+状态内的有限生成元证书，不能把字符核直接当作跨状态容量。
+
+三条 raw-(A,C) 边界回放为
+(p,A,C,nu)=(97,4,1,1),(3457,4,4,2),(14593,4,4,3)，
+对应字符像阶 4,8,16。这些行说明高阶分支确实出现，但仍只是状态内对偶证据。
+把三条角色拉回共同模数 192 后，核心残余类的联合核仍非空，故该有限角色交集不能
+直接升级为跨状态容量矛盾。
+另一个 \(p=433\) 的两射线回放甚至带有共享素因子 \(7\)，但共同模数 \(240\) 的角色
+联合核仍非空；这把后续任务明确收缩为共享素因子赋值和私有余因子的联合避靶，而不是
+单纯的角色核相交。回执同时核验了逐素因子差值界
+\(\min(v_7(497),v_7(833))=1\le v_7(4(100-16))=1\)，该局部界达到等号，
+但仍未形成跨状态容量注入。
+
+该局部差值界的独立证明见[Type II 共享素因子幂的移位差 q 进上界](type-II-shared-factor-q-adic-difference-bound.md)。
+其回执还保存按 \(q^e\) 分层的活动移位同余类；这仍是局部碰撞树，未升级为容量树。
 
 下一步若要把这里推进为逐点结论，必须针对第二项或第三项建立跨移位不相容性、可提升的
 递降，或新的因子选择定理。仅继续强化一孔临界的同余陷阱不会覆盖主导残余。

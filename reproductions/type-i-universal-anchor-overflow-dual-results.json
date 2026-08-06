@@ -577,6 +577,7 @@
   },
   "universal_anchor": {
     "G_bundle_overflow": {
+      "A": 1,
       "G_separator": {
         "support_values": {
           "3": 1,
@@ -656,7 +657,9 @@
           2447,
           72
         ]
-      }
+      },
+      "state_origin": "universal_raw_default_entry_v1",
+      "state_scope": "fresh_source_tree_only"
     },
     "G_marked_absorb": {
       "G_separator": {
@@ -1067,6 +1070,211 @@
         ],
         "target": 4
       }
+    },
+    "universal_default_anchor_orbit": {
+      "A": 1,
+      "K": 25665,
+      "R": 251,
+      "anchor_orbit": {
+        "cycle": [
+          1,
+          5,
+          3
+        ],
+        "cycle_excess_quotient_product": 1016800,
+        "cycle_product_mod_R": 250,
+        "orbit": [
+          1,
+          5,
+          3
+        ],
+        "rows": [
+          {
+            "K_M": 52250,
+            "M": 250,
+            "Q": 250,
+            "R_M": 511,
+            "beta": 1,
+            "classification": "overflow",
+            "excess_quotient": 50,
+            "h": 1,
+            "next_h": 5,
+            "other": 250,
+            "overlap": 5,
+            "strip": {
+              "selected": 250,
+              "steps": [
+                {
+                  "destination": [
+                    125,
+                    126
+                  ],
+                  "q": 2,
+                  "source": [
+                    1,
+                    250
+                  ]
+                },
+                {
+                  "destination": [
+                    25,
+                    226
+                  ],
+                  "q": 5,
+                  "source": [
+                    125,
+                    126
+                  ]
+                },
+                {
+                  "destination": [
+                    5,
+                    246
+                  ],
+                  "q": 5,
+                  "source": [
+                    25,
+                    226
+                  ]
+                }
+              ],
+              "target": 5
+            }
+          },
+          {
+            "K_M": 25256,
+            "M": 82,
+            "Q": 82,
+            "R_M": 247,
+            "beta": 3,
+            "classification": "marked_absorb",
+            "excess_quotient": 82,
+            "h": 5,
+            "next_h": 3,
+            "other": 246,
+            "overlap": 1,
+            "strip": {
+              "selected": 246,
+              "steps": [
+                {
+                  "destination": [
+                    123,
+                    128
+                  ],
+                  "q": 2,
+                  "source": [
+                    5,
+                    246
+                  ]
+                },
+                {
+                  "destination": [
+                    3,
+                    248
+                  ],
+                  "q": 41,
+                  "source": [
+                    123,
+                    128
+                  ]
+                }
+              ],
+              "target": 3
+            }
+          },
+          {
+            "K_M": 44888,
+            "M": 248,
+            "Q": 248,
+            "R_M": 439,
+            "beta": 1,
+            "classification": "overflow",
+            "excess_quotient": 248,
+            "h": 3,
+            "next_h": 1,
+            "other": 248,
+            "overlap": 1,
+            "strip": {
+              "selected": 248,
+              "steps": [
+                {
+                  "destination": [
+                    124,
+                    127
+                  ],
+                  "q": 2,
+                  "source": [
+                    3,
+                    248
+                  ]
+                },
+                {
+                  "destination": [
+                    62,
+                    189
+                  ],
+                  "q": 2,
+                  "source": [
+                    124,
+                    127
+                  ]
+                },
+                {
+                  "destination": [
+                    31,
+                    220
+                  ],
+                  "q": 2,
+                  "source": [
+                    62,
+                    189
+                  ]
+                },
+                {
+                  "destination": [
+                    1,
+                    250
+                  ],
+                  "q": 31,
+                  "source": [
+                    31,
+                    220
+                  ]
+                }
+              ],
+              "target": 1
+            }
+          }
+        ]
+      },
+      "overflow": {
+        "C": 209,
+        "K_M": 52250,
+        "M": 250,
+        "R_M": 511,
+        "d": 200,
+        "n": 489
+      },
+      "prime": 409,
+      "source_receipt": {
+        "edge": {
+          "destination": [
+            1,
+            250,
+            1
+          ],
+          "gcd_reduction": 1,
+          "q": 409,
+          "shift": 1
+        },
+        "source": [
+          409,
+          101999,
+          408
+        ]
+      },
+      "state_origin": "universal_raw_default_entry_v1",
+      "state_scope": "fresh_source_tree_only"
     }
   }
 }

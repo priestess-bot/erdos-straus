@@ -196,6 +196,17 @@ O_r(q)=\bigl(a-v_q(r)-v_q(dn-1)\bigr)_+.
 - 某个阻碍因子自动给出 Type I/II、非空 marked 状态或 E1--E5 边；
 - 丢弃旧支撑后的 reset 具有全局良基势。
 
+还有一个不能省略的相位边界：\(O_d(q),O_r(q)\) 只记录未支付层数，并不确定
+去掉 q 进赋值后的单位残数。真实反例如
+[overflow 双通道 q 缺陷的单位相位非识别反例](type-I-overflow-qadic-dual-unit-phase-nonidentification.md)
+表明，同一状态中两个通道可以有相同缺陷高度但不同单位相位；因此相位树容量必须
+额外保存单位残数或显式仿射映射，不能仅按本卡的高度字段合并。
+
+当前相位分派已覆盖赋值不等的缺口：
+[不等赋值加权相位正规形](type-I-overflow-dual-valuation-asymmetry.md)证明这时先按
+加权首层分裂处理，并记录 \(v_q(2p-r-d)=\min(v_q(k+1),v_q(dn-1))\)；赋值相等时
+才进入 \(2p-r-d\) 的共同前缀判据。这个分派仍不等价于 source-switch 或递归边。
+
 因此本卡是“表示—对偶—容量”选择器中的局部对偶账本，不是全称选择器证明。
 
 ## 复现

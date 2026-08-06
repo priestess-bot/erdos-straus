@@ -1,0 +1,149 @@
+{
+  "boundary": "A passed arithmetic gate does not prove parent provenance, typed F/G fibers, terminal-first exhaustion, E1--E4, or a global recursive edge.",
+  "rows": [
+    {
+      "anchor": {
+        "A": 986,
+        "B": 560,
+        "K": 552160,
+        "R": 1839,
+        "p": 1201
+      },
+      "automatic_q_template": null,
+      "full_excess": {
+        "C": 952,
+        "M": 906134,
+        "Q": 919,
+        "k": 754,
+        "r": 580
+      },
+      "gate": {
+        "M_over_a_mod_p": 20,
+        "floor_M_over_p_mod_a": 0,
+        "gcd_A_C": 34,
+        "passed": true,
+        "r_mod_a": 0,
+        "reduced_divisor_a": 29,
+        "window_inequality_a_t_lt_p": true
+      },
+      "label": "p1201_return",
+      "return_divisor_template": {
+        "A_equals_g_a": true,
+        "B_equals_u_c": true,
+        "C_equals_g_c": true,
+        "C_in_direct_range": true,
+        "M_mod_p_equals_a_u": true,
+        "a": 29,
+        "a_u_in_residue_range": true,
+        "c": 28,
+        "congruence_4gcM_eq_1_mod_p": true,
+        "g": 34,
+        "gcd_a_c_is_one": true,
+        "r_equals_a_u": true,
+        "target_returns_to_anchor": true,
+        "u": 20
+      },
+      "target": {
+        "chart": [
+          1839,
+          552160
+        ],
+        "support": 27608
+      }
+    },
+    {
+      "anchor": {
+        "A": 1811,
+        "B": 3671,
+        "K": 6648181,
+        "R": 7011,
+        "p": 3793
+      },
+      "automatic_q_template": {
+        "C_equals_qA": true,
+        "automatic_gate": true,
+        "congruence_4qAM_eq_1_mod_p": true,
+        "q": 2,
+        "qA_below_p": true,
+        "reverse_characterization_conditions": true,
+        "strict_support_growth": true
+      },
+      "full_excess": {
+        "C": 3622,
+        "M": 12695110,
+        "Q": 7010,
+        "k": 3346,
+        "r": 3732
+      },
+      "gate": {
+        "M_over_a_mod_p": 3732,
+        "floor_M_over_p_mod_a": 0,
+        "gcd_A_C": 1811,
+        "passed": true,
+        "r_mod_a": 0,
+        "reduced_divisor_a": 1,
+        "window_inequality_a_t_lt_p": true
+      },
+      "label": "p3793_q2",
+      "return_divisor_template": null,
+      "target": {
+        "chart": [
+          14255,
+          13517304
+        ],
+        "support": 3622
+      }
+    },
+    {
+      "anchor": {
+        "A": 18647,
+        "B": 59011,
+        "K": 1100378117,
+        "R": 72259,
+        "p": 60913
+      },
+      "automatic_q_template": {
+        "C_equals_qA": true,
+        "automatic_gate": true,
+        "congruence_4qAM_eq_1_mod_p": true,
+        "q": 3,
+        "qA_below_p": true,
+        "reverse_characterization_conditions": true,
+        "strict_support_growth": true
+      },
+      "full_excess": {
+        "C": 55941,
+        "M": 1347394926,
+        "Q": 72258,
+        "k": 22119,
+        "r": 60279
+      },
+      "gate": {
+        "M_over_a_mod_p": 60279,
+        "floor_M_over_p_mod_a": 0,
+        "gcd_A_C": 18647,
+        "passed": true,
+        "r_mod_a": 0,
+        "reduced_divisor_a": 1,
+        "window_inequality_a_t_lt_p": true
+      },
+      "label": "p60913_q3",
+      "return_divisor_template": null,
+      "target": {
+        "chart": [
+          221435,
+          3372067539
+        ],
+        "support": 55941
+      }
+    }
+  ],
+  "schema_version": 1,
+  "scope": "three fixed high-R controls; arithmetic only; no selector/history replay",
+  "theorem_checks": {
+    "C_equals_qA_congruence_characterization": true,
+    "gate_iff_quotient_divisibility": true,
+    "gate_iff_short_residue_window": true,
+    "same_chart_return_divisor_factorization": true
+  }
+}

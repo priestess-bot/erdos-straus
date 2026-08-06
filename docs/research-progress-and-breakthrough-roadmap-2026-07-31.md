@@ -2075,6 +2075,312 @@ alternate/容量/良基后继定理。
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
 
+## 当前新增接口：中心化盒的对合瓶颈
+
+单活跃 Type I 退出后，目标指数不再适合按单向幂段计费。新增
+[中心化指数盒的 Kneser 对合瓶颈](../claims/type-I-symmetric-box-kneser-involution-bottleneck.md)：
+若
+
+\[
+P=A_0\prod_i\{g_i^z:-e_i\le z\le e_i\},\qquad
+T=\operatorname{Stab}(P),
+\]
+
+并令 \(o_i\) 为 \(g_iT\) 在 \(H/T\) 中的阶，则
+\(\lambda_i=\min(2e_i,o_i-1)\) 满足
+
+\[
+|P|\ge |A_0T|+|T|\sum_i\lambda_i.
+\]
+
+目标缺失时，所有方向的总 \(\lambda\)-预算受
+\(\lfloor(|H|-1-|A_0T|)/|T|\rfloor\) 控制；稳定子吸收、二阶商和非对合商分别收费
+0、1、至少 2。对 Type I 中心化私有盒，这化为
+
+\[
+\sum_i\min(2b_i,o_i-1)\le |Q/T|-2.
+\]
+
+并且，若所有未被 \(T\) 吸收的方向在 \(Q/T\) 中都为二阶元，则中心化盒像就是
+\(Q/T\) 本身；当 \(-1\in H\) 时该分支必命中，目标不在 \(H\) 时则已经是 G 型
+支撑逃逸。因此 F 型未命中不能停留在“纯 dyadic”状态，必须含有阶至少 3 的
+非对合方向。
+
+这一步把多活跃缺口从一般 Kneser 容量细分为 dyadic/吸收两类结构，下一阶段不应再把
+二阶方向与奇素数方向混合计费。仍未闭合的关键是：把真实 Fourier/Pareto 或 Type II
+移位缺陷证明性地注入 \(\lambda_i\)，或者在二阶/吸收商中给出保持标记解集的严格下降。
+
+## Type II q 高度的单状态精确注入
+
+新增[Type II 单状态 q 进高度到 Kneser 幂块的精确桥](../claims/type-II-qadic-height-kneser-block-bridge.md)。
+在 \(N=p+4A^2C\) 中若 \(q^e\mid N\)，其因子幂块
+\(B_q=\{1,q,\ldots,q^e\}\) 在最终稳定子商中的活跃容量不是未知量，而是
+
+\[
+\kappa_q=\min\{e,\operatorname{ord}_{H/T}(qT)-1\}.
+\]
+
+故 q 高度分成两个精确分支：低于商阶时逐层支付 Kneser 容量，达到商阶后多余高度
+转化为 \(q^{o_q}\in T\) 的有限阶关系。结合移位差容量后，跨状态 relay 只可使用
+完全支付部分；折叠部分必须进入商群或二幂分支，不能继续按原始高度重复计费。
+
+这一步尚未识别不同移位的 \(H_s/T_s\)，也没有把有限阶关系自动提升为更小核心素数。
+下一阶段的决定性问题是建立共同商群中的载体同态，或证明折叠关系导致严格可提升下降。
+
+## 同模数跨状态池化的负边界
+
+已构造[Type II 同模数跨状态积集池化的严格反例](../claims/type-II-cross-state-same-modulus-pooling-counterexample.md)：
+\(p=97,M=24\) 的 \(s=6\) 与 \(s=18\) 两条射线分别只有
+\(\{1,11\}\) 和 \(\{1,13\}\) 两个除子残数，均遗漏 \(23=-1\pmod{24}\)，但
+\(11\cdot13=23\pmod{24}\)。
+
+这排除了“同一模数的不同状态可以直接合并 Kneser 积集”的捷径。跨状态容量若要成立，
+必须证明混合因子具有共同整数来源、可逆 source-switch/alternate，或有标记解集提升；
+否则混合命中只是伪证书。当前研究重点因此从“识别共同商群”改为“证明共同载体同态
+且保持单状态因子来源”。
+
+同一反例还给出可正向使用的带来源 CRT 判据：固定 \(M=4D\)、\(N_a=p+aM\)，若
+来源块 \(h_i\mid N_{a_i}\) 两两互素，则
+\[
+h=\prod_i h_i\mid N_a
+\iff
+a\equiv a_i\pmod{h_i}\quad\forall i.
+\]
+若同时 \(h\equiv-1\pmod M\)，且 CRT 解满足 \(a\mid D\)、\(D/a\) 平方自由，
+则可构造 Type II 因子生成器。这个判据把“跨状态容量”改造成真正的
+source-switch 选择器；缺少 admissible CRT 解时，混合残数只能算伪命中。
+详见[Type II 同模数 source-switch 的带来源 CRT 判据](../claims/type-II-same-modulus-source-switch-crt-criterion.md)。
+
+该判据现在还给出一个有限的除子格分支。对混合因子
+\(h\mid p+4Da_0\)，定义
+\[
+\mathscr C_D(h,a_0;p)=
+\{(D',A):D'\mid D,\ A\mid D',\ D'/A\ {\rm squarefree},\
+4AD'<p,\ AD'\equiv Da_0\pmod h\}.
+\]
+它非空当且仅当 \(h\) 能沿 \(M'=4D'\) 产生一个 Type II source-switch 候选；
+为空是该分支的有限负证书。若 \(h>D^2\)，候选至多一个，最小剩余
+\(r=Da_0\bmod h\) 直接决定是否存在 \(r=A^2c\)、\(Ac\mid D\) 的候选。
+
+这一区分已经有正、负两个边界：\(p=5113,D=6\) 的来源块
+\(17\mid N_3\)、\(7\mid N_6\) 合成 \(h=119\)，可严格降到 \(M'=4\) 并得到
+\(m=43,d=1\)；而 \(p=97,D=6,h=143\) 的 CRT 剩余为 \(r=83>D^2\)，
+\(h\) 的同模数和除子格 source-switch 均被排除。该分支仍不保证全局下降，空候选时
+必须转入容量/字符障碍或另一条带标记提升的递降边。
+
+空候选还可转成加法群 \(\mathbb Z/h\mathbb Z\) 上的有限 Fourier 对偶。令
+\(\mathcal X_D=\{AD'\bmod h:(D',A)\in\mathscr L_D(p)\}\)、
+\(r=Da_0\bmod h\)，则 \(r\notin\mathcal X_D\) 时
+\[
+\widehat g(t)=
+\sum_{x\in\mathcal X_D}e^{2\pi i tx/h}-e^{2\pi i tr/h}
+\]
+满足
+\(\sum_t|\widehat g(t)|^2=h(|\mathcal X_D|+1)\)，故有一个频率的模至少为
+\(\sqrt{|\mathcal X_D|+1}\)。这是 source-switch 的严格残数分离证书，不是乘法
+单位群角色；只有建立带来源同态后，才能把它注入 Kneser/Fourier 容量。
+
+同态桥受到一个硬的阶障碍：若
+\(\Phi:\mathbb Z/h\mathbb Z\to U(M')\) 和乘法角色保留频率
+\(e^{2\pi i tx/h}\)，则 \(h/\gcd(h,t)\mid\lambda(M')\)。当
+\(\gcd(h,\lambda(M'))=1\) 时所有提升都是平凡的。\(p=97,M=24,h=143\) 的
+\(\lambda(24)=2\)，因此该负例的加法 Fourier 证书不能直接变成 \(U(24)\) 的非平凡
+角色。下一阶段若要继续容量路线，必须寻找共享阶的因子商/标记同态；否则应把这类
+空候选状态送入严格下降分支。阶条件对无标签单频率是充分的群论筛选，但对带来源
+标签仍只是必要条件，关系格判据才决定能否真正提升。
+
+有来源标签时，精确门槛是关系格相容性。若加法标签为 \(x_i\)、目标单位为
+\(u_i\)，则必须同时有
+\[
+\prod_i u_i^{n_i}=1\quad
+(\sum_i n_i x_i=0\pmod h),\qquad
+\sum_i n_i t x_i=0\pmod h\quad
+(\prod_i u_i^{n_i}=1).
+\]
+这两个关系格可由 Smith 正规形有限计算；任一失败都标记为 LIFT_OBSTRUCTED，
+不能继续把该频率计入容量。\(p=97,M=24,h=143\) 例因
+\(\lambda(24)=2\) 与 \(h\) 互素，直接落在该不可提升分支。
+
+还有一个更强的结构边界：\(h\equiv-1\pmod{4D'}\) 使 \(h\) 为奇数，
+\(\mathbb Z/h\mathbb Z\) 的同态像必为奇阶，不能包含目标二阶元 \(-1\)。
+因此 CRT 参数 Fourier 不能直接充当 Type II 的目标角色。正确载体应改为源块计数格
+\(\rho:\mathbb Z^r\to U(4D')\)、\(\rho(e_i)=h_i\)，并与 admissible 参数纤维
+\[
+\mathcal F(\mathbf n)=
+\{(D'',A)\in\mathscr L_D(p):
+AD''\equiv Da_0\pmod{h_i}\text{ 对所有 }n_i=1\}
+\]
+做拉回。只有 \(\rho(\mathbf1)=-1\) 且 \(\mathcal F(\mathbf1)\ne\varnothing\) 时，
+乘法目标命中才可回译为 Type II 证书；\(p=97\) 的 \(11\cdot13=-1\pmod{24}\)
+正是 \(\mathcal F(\mathbf1)=\varnothing\) 的伪命中。后续容量必须先保留源块计数，
+再施加参数纤维。
+
+这一步已整理为[Type II 源块计数格与参数纤维的 Kneser 选择器](../claims/type-II-source-lattice-fibered-kneser-selector.md)。
+固定候选 \(D_*\mid D\) 与参数 \(A\) 后，只允许兼容集合
+\[
+I_{D_*}(A)=\{i:AD_*\equiv Da_i\pmod{h_i}\}
+\]
+进入积集 \(P_A=\prod_{i\in I_{D_*}(A)}\{1,h_i\bmod4D_*\}\)。这是精确的
+“纤维先过滤、容量后计算”顺序：\(-1\in P_A\) 当且仅当该纤维产生 Type II
+source-switch。若 \(T_A=\operatorname{Stab}(P_A)\)，则
+\[
+|P_A|\ge |T_A|(1+\sum_i\kappa_{A,i}),\qquad
+\sum_i\kappa_{A,i}\le|G_*/T_A|-2
+\]
+在目标缺失时逐纤维成立；达到 \(|G_*/T_A|-1\) 则直接命中。不同 \(A\) 的稳定子和
+参数纤维不能相加。\(p=97\) 的 pooled pseudo-hit 被三个单独纤维全部排除，
+而 \(p=5113\) 的 \(D_*=1\) 纤维给出真实 \(M=24\to4\) 降模证书。
+
+在互异源素数模型中，q 进 relay 也已变成精确恒等式。若
+\(q_i^{e_i}\mid p+4Da_i\)，定义
+\[
+d_i(A)=\max\{d\le e_i:q_i^d\mid AD_*-Da_i\}.
+\]
+则 \(q_i^{d_i(A)}\mid p+4AD_*\)，并在同一纤维中使用
+\(B_{i,A}=\{1,q_i,\ldots,q_i^{d_i(A)}\}\)。其 Kneser 活跃容量
+\[
+\kappa_{i,A}=\min(d_i(A),\operatorname{ord}_{G_*/T_A}(q_iT_A)-1)
+\]
+是逐层精确的；目标缺失强制
+\(\sum_i\kappa_{i,A}\le|G_*/T_A|-2\)。因此这里不再假设整数 q 高度能注入
+容量，注入由同余恒等式直接证明。相同 q 的多来源仍需先合并共同高度，详见
+[Type II 源参数纤维的 q 进高度—Kneser 幂块精确桥](../claims/type-II-source-fiber-qheight-kneser-bridge.md)。
+
+重复 q 的合并也已形式化：对来源 \(b_i=Da_i\) 定义
+\[
+\ell_i(s)=\min(e_i,v_q(s-b_i)),\qquad
+d_q(s)=\min\left(v_q(p+4s),\sum_i\ell_i(s)\right).
+\]
+在保留逐层来源标签时，候选纤维可用的 q 幂恰为 \(q^{d_q(s)}\)，对应 Kneser
+幂块只出现一次。\(p=241,D=6,q=5\) 的两个来源都含一个 5，但候选
+\(p+24=265\) 的实际高度只有 1，严格排除把 \(5^2\) 当成两个独立容量单位。
+见[Type II 源参数纤维的重复 q 共同账本](../claims/type-II-source-fiber-shared-q-ledger.md)。
+
+稳定子约化现在也接上了低模数递降：若
+\(K=\ker[U(4D_*)\to U(4D')]\subseteq\operatorname{Stab}(P)\)，则
+\(P\) 是商积集的完整原像，原群与商群的 \(-1\) 命中完全等价；双重缺失时商群阶
+下降。若核不包含稳定子，才可能出现只在低模数商命中的伪分支，此时必须检查
+低模数参数纤维。\(p=97\) 的 \(P=\{1,11\}\subset U(24)\) 虽在模 \(4\) 投影中
+命中，但同余核不包含稳定子，正是这种伪分支。完整三分见
+[Type II 稳定子包含同余核时的低模数商—递降三分](../claims/type-II-stabilizer-kernel-quotient-descent-trichotomy.md)。
+
+核不饱和的伪分支现在也有规范对偶出口。对目标陪集截面
+\(S_t=\{k\in K:tk\in P\}\)，若 \(0<|S_t|<|K|\)，则
+\[
+\sum_{\chi\ne1}\left|\sum_{k\in S_t}\overline{\chi(k)}\right|^2
+=|S_t|(|K|-|S_t|),
+\]
+从而存在非平凡核字符。若 \(K\) 是 2-群，该字符阶为 \(2^j\)，直接进入广义
+二幂对偶分支；否则保留为一般有限 Fourier 证书。\(p=97\) 的
+\(S_{-1}=\{13\}\subset\{1,5,13,17\}\) 给出显式系数 \(-1\)。见
+[Type II 同余核分裂的有限 Fourier 证书](../claims/type-II-congruence-kernel-split-fourier-certificate.md)。
+
+## 2026-08-04 Type II 二幂深度回执与高阶字符分支
+
+规范扇的支撑外失败现在不再只记录“二次可分/不可分”。对
+\(M=4AC\) 和支撑子群 \(K\)，选择器精确计算
+
+\[
+\nu=\max\{d\ge0:-1\in K\,U(M)^{2^d}\}.
+\]
+
+回执同时保存
+\(K\,U(M)^{2^\nu}\) 中的有限群见证和下一层
+\(-1\notin K\,U(M)^{2^{\nu+1}}\) 的集合排除。由二幂字符深度引理，所需字符像阶为
+\(2^{\nu+1}\)：\(\nu=0\) 是二次分离，\(\nu\ge1\) 进入高阶字符分支。
+
+三条精确 raw-\((A,C)\) 边界为：
+
+| \(p\) | \(A\) | \(C\) | \(\nu\) | 最小字符像阶 |
+| ---: | ---: | ---: | ---: | ---: |
+| 97 | 4 | 1 | 1 | 4 |
+| 3457 | 4 | 4 | 2 | 8 |
+| 14593 | 4 | 4 | 3 | 16 |
+
+这一步证明平方饱和核确实有非二次层，不再允许把所有支撑外失败统一标为二次
+分离；有限回执已经构造生成元级高阶字符证书，但跨状态角色坐标、
+容量注入、目标纤维提升和 E1--E5 仍未建立。选择器继续保持
+analysis_evidence 与 recursive_edge_eligible=false。
+
+三条高阶角色拉回共同模数
+\(\operatorname{lcm}(24,16,64,64)=192\) 后，核心残余类联合核仍有代表
+\(1\pmod {192}\)，联合核指数为 \(8\)。因此这组字符条件是有限兼容而非容量矛盾；
+后续必须把移位数的逐素因子分布或真实载体相位加入容量映射。
+
+为验证逐素因子接口，\(p=433\) 的两条深度一射线
+\((A,C)=(4,1),(5,4)\) 共享素因子 \(7\)，对应
+\(v_7(497)=1\)、\(v_7(833)=2\)，高度差为 \(1\)，私有余因子为
+\(71,17\)。两条角色在 \(7\) 上的相位均为零，联合模 \(240\) 的核心核仍有
+4 个残余类。因此目前得到的是 local valuation ledger，而不是 q 进容量边；
+回执还核验了逐素因子差值界
+\(\min(v_7(497),v_7(833))=1\le v_7(4(100-16))=1\)，这是一个达到等号的
+局部容量上界。下一步仍要证明私有避靶条件如何支付该高度差，或把它转成可下降载体；
+局部上界本身不等于跨状态容量边。
+该逐对约束已登记为
+[Type II 共享素因子幂的移位差 q 进上界](../claims/type-II-shared-factor-q-adic-difference-bound.md)，
+后续可直接作为跨移位状态转移的局部预算接口。回执还按 \(q^e\) 层保存活动移位同余
+类，形成 exact_local_collision_tree；这仍不是容量注入。
+
+本轮把它提升为有限移位集容量不等式：若
+\(C_r(S,q)=\max_{a\bmod q^r}\#\{s\in S:s\equiv a\pmod{q^r}\}\)，则
+\[
+\sum_{s\in S}\min(v_q(p+4s),E)\le\sum_{r=1}^{E}C_r(S,q).
+\]
+对 \(p=433,S=\{16,100\},q=7,E=2\)，左、右两侧都为 \(3\)，形成一个紧的跨状态
+q 进容量证书。它仍未控制目标残数 \(-1\pmod{4AC}\)，所以全局选择器仍需证明严格
+容量缺口，或把等号分支转为 Type II 命中/严格递降。
+
+容量引理还给出刚性二分：等号当且仅当每一层的目标残类都是最大移位残类；
+否则至少支付一个单位的 q 进缺口。该二分已写入
+[Type II 共享素因子幂的移位差 q 进上界](../claims/type-II-shared-factor-q-adic-difference-bound.md)，
+下一步可分别处理“最大残类链”与“严格缺口”两种状态。
+该容量还可按 relay 来源标签计数：对 \(p=433,q=7\)，双来源同时携带 \(7^2\)
+需要 4 个单位而容量仅 3，因而被严格排除；实际 \(7^1,7^2\) 标签恰好饱和。
+但等号链并非障碍：同一 \(p=433\) 在 \(s=1\) 有
+\(437=19\cdot23\)、\(19\equiv-1\pmod4\)，取 \((A,C,K)=(1,1,5)\) 即得
+Type II 短证书。等号分支必须转入目标纤维，而不能停在 q 进核。
+
+本轮又得到一个有限目标纤维终端：对碰撞/私有分解
+\(x=ER\)，Kneser 分别作用于 \(C\Pi(R)^2\)、\(D^+\Pi(R)\) 和
+\(D\Pi(R)^+\)。任一乘积的下界达到 \(|H|\) 即构造相应 Type II/共享命中；
+否则联合失败显式支付三个稳定子容量缺口。\(p=33011449,m=63\) 的联合失败行给出
+缺口 \(6,12,20\)，见
+[Type II 共享选择器的 Kneser 目标纤维容量终端](../claims/type-II-shared-selector-kneser-target-fiber-terminal.md)。
+
+私有因子现在也有了逐因子接口：把私有残数按 \(g\) 加入目标积集时，若
+\(g\notin\operatorname{Stab}(P)\)，Kneser 给出至少一个稳定子块的增长；若
+\(g\in\operatorname{Stab}(P)\)，则该方向被吸收并投影到更小的商群。因而后续证明只需在
+“积集增长达到全群”与“稳定子商严格缩小”两条分支中继续闭合，而不再把私有残数当作
+未区分的容量项。具体桥接见
+[Type II 私有因子的 Kneser 增长—稳定子吸收二分](../claims/type-II-private-factor-kneser-growth-stabilizer-bridge.md)。
+
+进一步把逐因子接口合并为多块预算：对
+\(P=A_0\prod_i B_i\)、\(T=\operatorname{Stab}(P)\)，定义
+\(\kappa_i=|B_iT/T|-1\)，则
+\[
+|P|\ge |A_0T|+|T|\sum_i\kappa_i.
+\]
+目标缺失时，活跃容量总和不超过
+\(\lfloor(|H|-1-|A_0T|)/|T|\rfloor\)；所有
+\(g_i\in T\) 的私有块在 \(H/T\) 中消失。对
+\(p=33011449,j=16\)，两个私有块均有 \(\kappa_i=0\)，商群缺口完全来自固定碰撞层。
+这给出了 q 进 relay 需求的定量入口，但只有在证明真实坐标到
+\(\kappa_i\) 的注入后，超载才可升级为命中。见
+[Type II 多私有块的活跃容量—稳定子二分](../claims/type-II-multiblock-kneser-active-capacity-dichotomy.md)。
+
+Type I 单活跃循环商也已封闭为同样的出口三分：实际载荷总和若不超过
+\[
+\frac{M_tM_R}{q^2-1}+\frac{M_t+M_R}{q-1}+H_q,
+\]
+则状态仍可保持单活跃 F；若超载，至少一个状态要么有限盒命中，要么转为 G，
+要么退出单活跃循环商而进入多活跃/固定层目标纤维。该结论把单活跃分支从
+“容量输入”提升为真正的选择器出口，但第三分支仍未给出算术递降。见
+[单活跃 Fourier—载体容量的跨状态退出三分](../claims/type-I-single-active-cross-state-exit-trichotomy.md)。
+
+下一步应把这些高阶角色的层数与相邻移位的共同素因子/相位条件结合，尝试构造跨状态
+\(q\)-进容量或良基下降映射；单独叠加字符核仍可能被同一条
+\(p\equiv1\) 算术级数同时满足，不能直接产生矛盾。
+
 ## 2026-08-04 Type II 规范扇的支撑--目标纤维三分
 
 统一选择器现在接入规范 Type II 扇的逐点三分。若
@@ -2253,17 +2559,18 @@ A<L\le B_p,\qquad 4L>s,\qquad
 | \((193,64)\) | 144 | 18190 | 7 | fixed-s 条件边候选 |
 | \((241,64)\) | 225 | 2952 | 8 | fixed-s 条件边候选 |
 | \((241,100)\) | 144 | 3675 | 7 | fixed-s 条件边候选 |
-| \((5281,1408)\) | 1872 | 1950 | 0 | A,C<=2 Type II AC 射线 |
-| \((15601,4000)\) | 15210 | 65980529 | 0 | A,C<=2 Type II AC 射线 |
-| \((16633,4312)\) | 16008 | 20790 | 0 | A,C<=2 Type II AC 射线 |
+| \((5281,1408)\) | 4950 | 8466763 | 0 | 有界 Type II 终端；AC-ray 亦命中 |
+| \((15601,4000)\) | 15210 | 65980529 | 0 | 有界 Type II 终端；AC-ray 亦命中 |
+| \((16633,4312)\) | 16038 | 77530571 | 0 | 有界 Type II 终端；AC-ray 亦命中 |
 
 这组数据把剩余分支从“是否有固定 \(s\) 除子”转成了可检验的 \(T=rd\) 素因子与
 目标余数结构问题。前三行仍只属于 `analysis_evidence`：完整标记集、来源可达性和
-恒等提升没有从合成参数自动推出。后三行虽然没有 fixed-s 除子，但都被 A,C<=2、K
-不设上限的 Type II AC 射线探针覆盖；其中 \(p=15601\) 还同时有
-\(x=(15601+3)/4=3901=83\cdot47\) 的 gap-3 证书。这说明 fixed-s hard core
-应先经过可变 K 的 AC 射线后置路由；若小 A,C 射线也失败，才进入 alternate、对偶容量
-或跨状态良基势分析。
+恒等提升没有从合成参数自动推出。后三行虽然没有 fixed-s 除子，但都同时命中有界
+Type II 探针与 \(A,C\le2\)、\(K\) 不设上限的 Type II AC 射线探针；选择器的
+`hard_core_route` 当前优先前者，后者提供独立终端交叉核验。其中 \(p=15601\) 还同时有
+\(x=(15601+3)/4=3901=83\cdot47\) 的 gap-3 证书。因此 fixed-s hard core 应先经过
+有界 Type II 后置路由；两类终端探针均失败时，才进入 alternate、对偶容量或跨状态
+良基势分析。
 
 主张卡：[高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md)。
 
@@ -2272,3 +2579,1272 @@ A<L\le B_p,\qquad 4L>s,\qquad
 复现：
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+
+## 2026-08-04 核 Fourier 的源关系格提升门
+
+本轮把未吸收同余核分支再推进一层。对源指数盒
+
+\[
+\phi(z)=\prod_i u_i^{z_i},\qquad
+L_\pi=\{n:\pi(\phi(n))=1\},\qquad
+L_G=\{n:\phi(n)=1\},
+\]
+
+先按真实乘法碰撞商掉指数盒，再取目标陪集的相对支撑
+\(Q_t\subset L_\pi/L_G\) 和锚点
+\(\alpha=t^{-1}\phi(z_0)\)。核 Fourier 系数现在有精确仿射分解
+
+\[
+\widehat{1_{S_t}}(\chi)
+=\overline{\chi(\alpha)}
+  \sum_{\bar n\in Q_t}\overline{\chi(\phi(n))}.
+\]
+
+若外部频率给出相对相位 \(\theta\) 与锚点相位 \(a\)，则它能进入真实单位群的核角色
+当且仅当
+
+\[
+\theta|_{L_G}=1,
+\qquad
+\theta(n)a^m=1
+\quad\text{whenever }\phi(n)\alpha^m=1.
+\]
+
+这是一个有限 Smith 正规形可检验的相容性判据；任一失败都标记
+`LIFT_OBSTRUCTED`，不再把 CRT 加法 Fourier 频率误计入 Type II 容量。\(p=97\)
+的 \(P=\{1,11\}\subset U(24)\) 给出相容核角色；同一素数的 CRT 伪池化标签
+\((1,3)\) 与单位 \((11,13)\) 在关系 \((3,-1)\) 上失败，给出不相容回执。
+
+主张卡见[Type II 核 Fourier 与源关系格的仿射相容性判据](../claims/type-II-kernel-fourier-source-relation-compatibility.md)。
+这一结果关闭了“对偶频率是否真正来自源块”的接口，但没有关闭最后的算术桥：相容
+角色仍需被证明能够支付 q 进容量、命中 \(-1\)，或携带标记集严格下降。
+
+## 2026-08-04 核 Fourier 对偶能量的关系边需求
+
+在源关系格相容性门之后，本轮又把相容角色的谱幅度转成了一个精确的关系边数量。
+对去重源支撑 \(Q_t\) 令
+\[
+N=|Q_t|,\qquad
+\rho_\chi=\frac{|\widehat{1_{S_t}}(\chi)|}{N}.
+\]
+则
+\[
+\sum_{\bar n,\bar n'\in Q_t}
+\left|1-\chi(\phi(n-n'))\right|^2
+=2N^2(1-\rho_\chi^2),
+\]
+从而至少有 \(N^2(1-\rho_\chi^2)/2\) 条有序非平凡相位边。对这些边接入
+互异 q 或重复 q 共同账本，可以定义最小源成本和总关系需求；但只有进一步证明
+每个真实 q 层的边复用上界，才可把需求升级为 Kneser 容量矛盾。\(p=97\) 的单点
+伪命中有 \(\rho=1\)，关系边需求为零，明确排除了“核角色非平凡所以 q 进超载”的
+误读。
+
+主张卡见[Type II 核 Fourier 对偶能量到源关系边的 q 进需求](../claims/type-II-kernel-fourier-pair-energy-qheight-demand.md)。
+因此最后的算术子问题已经收缩为：证明 source-fiber 关系边的有限复用上界，或从
+一条非平凡关系边直接构造 Type II 证书/严格递降。
+
+同时发现，成对能量不能直接等同于独立容量：在
+\(H=C_2\times C_m\)、\(\chi(\varepsilon,j)=(-1)^\varepsilon\)、\(Q_t=H\) 时，
+\(\mathcal E_\chi=2|Q_t|^2\)，但有效相位商只有一个 \(C_2\) 方向。\(U(15)\)
+按模 \(3\) 的二值角色给出具体实例。因而下一阶段若继续容量路线，必须证明边复用
+上界，或同时积累多个独立角色并按商群秩收费；单角色的二次 pair-energy 不能直接
+推出全局 q 进超载。
+
+为修正这一点，现对差分群
+\(\Delta_t=\langle Q_t-Q_t\rangle\) 记录每个 \(\ell\)-初等商秩
+\[
+r_\ell(Q_t)=\dim_{\mathbb F_\ell}(\Delta_t/\ell\Delta_t).
+\]
+该秩等于可获得的独立 \(\ell\)-角色方向数。若 q-height 账本能证明一个
+\(\ell\)-primary 层至多提供一个独立方向，则有 q 层数至少为 \(r_\ell(Q_t)\)；
+这比按 pair-energy 边数收费更稳健。真正缺口转为“q 层到初等商秩的注入”，以及
+差分秩为 0/1 时的低秩残余处理。
+
+## 2026-08-05 固定纤维的 q-height—初等商秩列注入
+
+本轮将“q 层到差分群秩的注入”在固定参数纤维内严格完成。对源盒
+\(\phi(z)=\prod_i u_i^{z_i}\)、稳定子商 \(\overline G=G/T\) 和定义目标纤维的商映射
+\(\pi_0\)，令目标关系核 \(L_{\pi,J}\) 中的源组合像为
+\[
+\Delta_Q=\langle\phi(z-z')T:z,z'\in Q\rangle,
+\qquad
+A_{\pi,J}=\{\phi(n)T:n\in L_{\pi,J}\}.
+\]
+则对每个素数 \(\ell\) 有
+\[
+\dim_{\mathbb F_\ell}(\Delta_Q/\ell\Delta_Q)
+\le
+\dim_{\mathbb F_\ell}(A_{\pi,J}/\ell A_{\pi,J}).
+\]
+因此目标要求的独立 \(\ell\)-角色方向数不超过保持当前目标纤维的源列组合初等商秩。
+重复 q 来源和相同商群残数列自动合并；单个改变参数纤维的源列不能直接收费。
+
+这是一个真正的固定纤维 rank-capacity 映射，已排除两类重复收费：同一 q 的多来源
+不能提供多个列，稳定子吸收的 q 块不能提供任何列。主张卡见
+[Type II 源纤维 q-height 到差分群初等商秩的列注入](../claims/type-II-source-fiber-elementary-rank-qheight-injection.md)。
+全局缺口仍在于：跨 \(A,D_*\) 纤维如何强制秩超载，或在秩 \(0/1\) 饱和时构造
+Type II 证书/严格递降。
+
+## 2026-08-05 低秩锁定与素数阶循环终端
+
+进一步对固定纤维的差分群 \(\Delta_Q\) 做了低秩分解：
+
+* 所有 \(\ell\)-初等商秩为零，当且仅当所有盒内目标关系都被稳定子吸收；
+* 若每个初等商秩至多一，则 \(\Delta_Q\) 为循环群，目标测试化为有限循环指数集；
+* 若 \(\Delta_Q\simeq C_\ell\) 且锚点位于该群内，至少 \(\ell-1\) 个合法、保持参数
+  纤维的非零关系块由 Cauchy--Davenport 覆盖整个循环群，给出 Type II 命中；
+* 目标锚点位于差分群外时，即使相对关系完全覆盖，也只能得到
+  ANCHOR_OUTSIDE_DIFFERENCE 负证书。
+
+这一步把秩零/素数阶秩一残余从一般容量问题中剥离出来。尚未闭合的是高阶循环孔、
+关系块无法独立保持参数纤维，以及秩一锚点外分支的严格算术递降。主张卡见
+[Type II 源纤维低秩锁定与素数阶循环终端](../claims/type-II-source-fiber-low-rank-lock-cyclic-terminal.md)。
+
+## 2026-08-05 高阶循环的 \(\ell\)-primary 进位层终端
+
+对固定参数纤维中的循环差分群 \(C_{\ell^a}\)，将每个合法二点关系块按精确
+\(\ell\)-进赋值层 \(k=0,\ldots,a-1\) 分类。若每层至少有 \(\ell-1\) 个可独立
+选择的块，逐层 Cauchy--Davenport 归纳给出
+\[
+\sum_j\{0,v_j\}=C_{\ell^a}.
+\]
+因此锚点在差分群内时直接构造 Type II 命中；若仍缺失，则要么锚点在群外，要么
+存在明确的进位层缺口 \(c_k\le\ell-2\)。这把高阶循环孔压缩成可定位的
+CYCLIC_PRIMARY_DIGIT_DEFICIT，而不是笼统的容量不足。
+
+该终端的适用范围是固定 source-fiber。不同参数纤维之间的关系块不能自动合并，
+还必须满足 source-switch 合同、重复 q 共同账本和稳定子商的独立性。下一步应将
+某一层的数字缺口连接到低模数可提升实例、q-height 严格下降，或另一条 Type I/II
+证书；若无法连接，则保留为严格的高阶循环负边界。主张卡见
+[Type II 源纤维循环 \(\ell\)-primary 进位层终端](../claims/type-II-source-fiber-cyclic-primary-digit-terminal.md)。
+
+## 2026-08-05 锚点外置的分离角色回执
+
+固定 source-fiber 的目标相对截面可规范化为
+\[
+S_t=\alpha R_Q,\qquad R_Q\subseteq\Delta_Q.
+\]
+若 \(\alpha\notin\Delta_Q\)，有限阿贝尔对偶分离给出
+\(\chi|_{\Delta_Q}=1\)、\(\chi(\alpha)\ne1\)。于是
+\[
+\widehat{1_{S_t}}(\chi)=\overline{\chi(\alpha)}|R_Q|,
+\]
+得到最大幅度的 ANCHOR_SEPARATING_CHARACTER 负证书。该证书把“相对关系覆盖了
+但目标仍不在正确陪集”变成可枚举相位，而不是容量矛盾。
+
+若角色对候选低模商的核平凡，并通过源关系格仿射相容性检查，则可以回译为低模
+Fourier 负证书；否则必须标记 LIFT_OBSTRUCTED。\(p=97\) 的 \(U(24)\) 伪命中
+中，\(\Delta_Q=1,\alpha=13\) 确有分离角色，但它不对模4商核平凡，所以不能把
+模4伪命中当作 Type II 证书。主张卡见
+[Type II 源纤维锚点外置的分离角色证书](../claims/type-II-source-fiber-anchor-separating-character-certificate.md)。
+
+## 2026-08-05 数字缺口的商缺失—顶层核 Fourier 二分
+
+在 \(C_{\ell^a}\) 的固定 source-fiber 中沿自然投影塔取目标第一次缺失的层
+\(j_0\)。若 \(j_0<a\)，目标已经在严格较小的 \(\ell\)-primary 商中缺失；若
+所有 \(j<a\) 的投影都命中，则顶层核 \(K_{a-1}\simeq C_\ell\) 的目标截面是
+非空真子集，Parseval 给出非平凡核角色和精确 Fourier 负证书。前面的进位层终端
+同时保证任何缺失都伴随某个 \(c_k\le\ell-2\) 的数字缺口。
+
+这一步把“层容量不足”连接到已有的低模数商—核 Fourier 三分：低商分支必须检查
+source-switch 参数纤维是否存在；顶层核角色作为内禀乘法角色已经是合法 Fourier
+负证书，只有外部参数频率的再解释才需检查源关系格相容性。低商候选或外部相位失败
+时显式标记 LIFT_OBSTRUCTED，不能假设自动递降。主张卡见
+[Type II 循环 \(\ell\)-primary 数字缺口的商缺失—顶层核 Fourier 回执](../claims/type-II-source-fiber-cyclic-digit-deficit-quotient-kernel-relay.md)。
+
+本轮补上了低商的算术提升门。对当前 \(D_0\)、来源混合因子
+\(h=\prod h_i\equiv-1\pmod{4D_0}\) 和 CRT 参数 \(a_0\)，完整候选集为
+\[
+\mathscr L_{D_0}(h,a_0;p)
+=\{(D',A):D'\mid D_0,\ A\mid D',\ D'/A\text{ 平方自由},\
+4AD'<p,\ AD'\equiv D_0a_0\pmod h\}.
+\]
+该集合中的每个元素都等价地产生 \(h\mid p+4AD'\) 及
+\(K'=(h+1)/(4D')\)、\(B'=(K'p+A)/h\) 的 Type II 正规形；含严格
+\(D'<D_0\) 才是递降，只有 \(D'=D_0\) 是同层 source-switch。候选集为空时，
+抽象商分支必须标记 ARITHMETIC_LIFT_EMPTY。\(p=97,h=143\) 的候选集为空，
+而 \(p=5113,h=119\) 包含 \((D',A)=(1,1)\)，分别验证了两种边界。详见
+[数字缺口商缺失—顶层核 Fourier 回执](../claims/type-II-source-fiber-cyclic-digit-deficit-quotient-kernel-relay.md)。
+
+还需区分除子格空集与真正的算术空集。对同一 \(h\) 令
+\(L=(h+1)/4\)，枚举所有 \(ACK=L\) 的 raw 三元组，并筛
+\(A\equiv4D_0Ka_0\pmod h\)、\(A\le(Kp+A)/h\)。原除子格候选都嵌入该集合，
+但 raw 集允许 \(A,C\) 脱离旧 \(D_0\) 除子格；非空时立即给出 Type II。小例
+\(p=73,D_0=1,a_0=8,h=15\) 中旧除子格为空，而
+\((A,C,K,B)=(2,2,1,5)\) 是直接证书；\(p=97,h=143\) 的 raw 集仍为空。
+因此下一步记录顺序应为 ARITHMETIC_LIFT_EMPTY、raw 回退、再到
+RAW_LIFT_EMPTY，而不是把第一种空集直接当作全局负结果。详见
+[Type II 算术提升空集后的 raw 因子回退判据](../claims/type-II-arithmetic-lift-raw-factor-fallback.md)。
+
+raw 集仍为空时，失败不再只保留一个布尔值。令 \(L=(h+1)/4\)，把所有
+\(d\mid L,A\mid d\) 且满足 raw 序条件的 \(Ad=A^2C\) 收集为
+\(\mathcal S_{L,p}^{\rm ord}\)。raw 存在当且仅当
+\(D_0a_0\bmod h\in\mathcal S_{L,p}^{\rm ord}\)。不命中时，对
+\(1_{\mathcal S}-\delta_{D_0a_0}\) 做循环群 Fourier，非平凡能量精确为
+\[
+h(|\mathcal S|+1)-(|\mathcal S|-1)^2.
+\]
+若所选参数频率通过源关系格仿射相容性，就得到 F/G 对偶输入；否则标记
+RAW_DIVISOR_FOURIER/LIFT_OBSTRUCTED。\(p=97,h=143\) 的残数集大小为 11、目标为
+83，非平凡总能量为 1616。详见
+[Type II raw 空集的平方除子残数 Fourier 证书](../claims/type-II-raw-divisor-residue-fourier-certificate.md)。
+对指定源群 \(H\)，还可先按
+\[
+h/\gcd(h,j)\mid\exp(H)
+\]
+筛掉不可能提升的频率；\(p=97,h=143\) 时 \(U(24)\) 指数为 2，所有非平凡频率均
+被该阶筛排除。这把该边界明确归入 LIFT_OBSTRUCTED，而不是误记为 Type II 递降。
+一般令 \(e=\gcd(h,\exp H)\)，把残数集投影到 \(\mathbb Z/e\mathbb Z\) 并保留重数；
+投影锚定 Fourier 的非平凡能量若为正，则至少有一个阶合格频率可继续做关系格
+相容性检查；若为零，则同一源群的全部非平凡角色对该空集不可见，应立即切换到
+另一条射线或良基递降。
+
+## 2026-08-05 跨参数纤维 q-height 容量 surplus
+
+将每个 \(A\)-纤维的精确活跃容量
+\[
+\kappa_{i,A}=\min(d_i(A),\operatorname{ord}(u_iT_A)-1)
+\]
+先在纤维内计算，再取任意正权重 \(w_A\) 聚合：
+\[
+\mathcal Q_w=\sum_Aw_A\sum_i\kappa_{i,A},\qquad
+\mathcal B_w=\sum_Aw_A(|G_*/T_A|-2).
+\]
+若所有纤维都遗漏 \(-1\)，逐纤维 Kneser 缺口强制
+\(\mathcal Q_w\le\mathcal B_w\)；若可证明 \(\mathcal Q_w>\mathcal B_w\)，则至少一个
+纤维直接命中并给出 Type II 证书。该聚合允许同一来源在不同纤维复用，但不把
+不同纤维的乘积池化，因此避开 \(p=97\) 型伪命中。
+
+这给出了当前跨状态 q-height 容量的第一个严格 surplus 门。若 surplus 不正，保留
+\(\delta_A=|G_*/T_A|-2-\sum_i\kappa_{i,A}\) 的逐纤维缺口，再进入数字缺口商/核
+Fourier 或算术提升门。主张卡见
+[Type II 跨参数纤维 q-height 容量 surplus 证书](../claims/type-II-cross-state-fiber-capacity-surplus-certificate.md)。
+
+## 2026-08-05 Kneser 饱和纤维的一孔 Fourier 结构
+
+若某个目标缺失纤维满足
+\[
+\delta_A=|G_*/T_A|-2-\sum_i\kappa_{i,A}=0,
+\]
+则 Kneser 下界和目标陪集缺失上界同时取等号，严格得到
+\[
+P_A=G_*\setminus(-1T_A).
+\]
+因此它只缺稳定子商中的一个目标陪集，所有非平凡 quotient 角色都有精确 Fourier
+系数 \(-|T_A|\overline{\chi(-1)}\)。若 \(\delta_A>0\)，遗漏陪集数仍至多
+\(\delta_A+1\)，并可由跨纤维总 deficit 预算控制。
+
+这把 surplus 非正时的近饱和残余转成规范 quotient Fourier 证书，而不是笼统的
+“容量不足”。它仍是负证据，下一步需证明一孔/少孔角色能进入 F/G 容量、实际
+Type II source-switch 或严格递降。主张卡见
+[Type II Kneser 饱和纤维的一孔陪集与 quotient Fourier 证书](../claims/type-II-kneser-saturated-one-coset-hole-certificate.md)。
+
+一孔纤维的填洞引理进一步给出严格二分：若新增源块
+\(B(u)=\{1,u\}\) 保持同一参数纤维且 \(u\notin T_A\)，则
+\[
+P_AB(u)=G_*;
+\]
+若 \(u\in T_A\)，则 \(P_AB(u)=P_A\)。因此饱和分支要么由合法非平凡新增块直接
+得到 Type II，要么所有新增块均被稳定子吸收；跨纤维或合同不合法的来源必须标记
+UNAVAILABLE_SOURCE_BLOCK。
+
+
+少孔情形也有精确的平移交公式：若当前缺口集大小为 \(c_A\)，剩余合法源积集的
+商像大小超过 \(c_A\)，则所有平移缺口的交为空，必填满目标。结合
+\(c_A\le\delta_A+1\)，这给出“剩余 q-height 超过缺口预算即命中”的新容量门；
+等号时则进入 HOLE_LOCKED 的平移结构分支。
+
+在 HOLE_LOCKED 等号分支，目标积集的 quotient Fourier 系数等于剩余源积集
+系数乘以锚点相位并取负号；Parseval 给出
+\[
+\max_{\bar\chi\ne1}|\widehat{1_{\bar P}}(\bar\chi)|
+\ge\sqrt{\frac{|\bar R|(|\bar G|-|\bar R|)}{|\bar G|-1}}.
+\]
+这是把少孔源结构直接送入 F/G 对偶容量的内禀接口。
+
+剩余源块还满足一个直接 q-height 阈值：若其活跃容量总和
+\(\sum_i\kappa_i^{\rm rem}\ge c_A\)，Kneser 给出
+\(|\bar R|\ge1+\sum_i\kappa_i^{\rm rem}>c_A\)，因此必填满目标；只有容量至多
+\(c_A-1\) 时才可能保留 HOLE_LOCKED。
+
+选定 quotient 角色后还有锚点—关系二分：若角色在剩余源积集上恒相位，则关系
+需求为零，只留下锚点 Fourier 证书；若相位变化，则精确成对能量
+\(2N^2(1-\rho^2)\) 为正，差分群至少有一个非零初等商秩，源关系列注入必须提供
+对应方向，否则输出 SOURCE_RANK_INCONSISTENT。该分派避免把纯锚点 Fourier
+幅度误计为 q-height 超载。
+
+新增的条件性桥把这类非恒相位需求接到 F/G 的真实 q 进相位胞：若一组状态已经
+证明共享同一个 q-primary 方向，且每个需求 \(d_i\) 有真实清分高度
+\(e_i\ge d_i\)，则相位中心
+\(\gamma_i=-A_iR_i^{-1}\pmod {q^{e_i}}\) 和标签同余必须满足相位胞合同。因而
+\[
+\sum_i d_i\le\mu\sum_c\left(\frac{M_c}{q-1}+H_c\right).
+\]
+已验证的严格超载迫使目标命中、源秩不一致、相位提升受阻或已有 F/G 短证书/递降
+出口。共同 q、真实相位提升及有界标签仍需独立证明；该桥的完整陈述见
+[Type II HOLE Fourier 非恒相位到 F/G q 进相位胞容量桥](../claims/type-II-hole-fourier-phase-cell-capacity-bridge.md)。
+
+随后把共同 q 假设放宽为 primary 分解：对每个状态的差分群逐素数计算
+\(d_{i,q}=\dim_{\mathbb F_q}(\Delta_{i,q}/q\Delta_{i,q})\)，先用真实候选高度
+\(d_q(s)=\min(L_q(s),V_q(s))\) 合并重复 q，再对各 q 的相位胞容量求和。若
+\[
+\sum_q\sum_i d_{i,q}>
+\sum_q\mu_q\sum_{c\in\mathcal C_q}
+\left(\frac{M_{q,c}}{q-1}+H_{q,c}\right),
+\]
+且每个计入项都已有 source-switch、相位中心和标签合同，则当前 HOLE 族必有
+Type II 命中、源秩不一致、某个 q 的相位/算术提升失败或 F/G 出口。该多 primary
+桥不声称每个 q 方向都能提升；完整边界见
+[Type II HOLE Fourier 多 primary 到 F/G 分素数相位容量和](../claims/type-II-hole-fourier-multiprimary-phase-capacity-sum.md)。
+
+## 2026-08-05 循环源商的 raw 频率提升矩阵
+
+raw 残数 Fourier 的最后一个来源缺口在循环商上得到有限化。若真实源关系商
+\(H=\langle g\rangle\simeq C_m\)，源单位及锚点为 \(g^{c_j}\)，参数标签为
+\(\lambda_j\in\mathbb Z/e\mathbb Z\)，频率 \(k\) 可提升为真实角色当且仅当一元系统
+
+\[
+e c_j s-mk\lambda_j\equiv0\pmod{em}
+\]
+
+对所有源行和锚点行有解。逐行约化给出可除性条件；剩余同余由广义 CRT 检查。单行
+不可除性或两行 CRT 不相容，分别输出有限的 LIFT_OBSTRUCTED/源关系矛盾；有解时
+显式构造 \(\chi_s(g)=e^{2\pi i s/m}\)，其锚点相位才可以进入 F/G 容量账本。
+这把抽象的源关系格门变成可复核的整数算法，但仍不构造 raw 标签本身，也不证明
+相容角色必然超载。主张卡见
+[Type II raw 参数频率的循环源商提升矩阵](../claims/type-II-raw-cyclic-source-lift-matrix.md)。
+
+## 2026-08-05 有限阿贝尔源商的 SNF 提升
+
+循环源商之外，raw 参数频率的来源门已扩展到
+\(H=\bigoplus_{\nu=1}^{d}C_{m_\nu}\)。取
+\(L=\operatorname{lcm}(e,m_1,\ldots,m_d)\)，把源坐标系数写成
+\(A_{j\nu}=Lc_{j\nu}/m_\nu\)，把参数标签写成 \(b_j=Lk\lambda_j/e\)，则提升问题
+等价于
+\[
+B x=b,\qquad B=[A\mid -LI].
+\]
+对 \(B\) 求 Smith 正规形后，所有非零对角元必须整除 \(Ub\)，零行必须在 \(Ub\) 上
+消失；通过时解向量的角色坐标构造真实有限群字符，失败行则给出明确的
+SOURCE_RELATION_FOURIER/LIFT_OBSTRUCTED 关系组合。该结果把非循环源商也从
+“抽象相容性”推进为有限整数证书，但仍不构造 raw 标签映射，也不闭合容量超载。
+主张卡见
+[Type II raw 参数频率的有限阿贝尔源商 SNF 提升](../claims/type-II-raw-finite-abelian-source-lift-snf.md)。
+
+## 2026-08-05 CRT 局部标签的幂等元桥
+
+又定位到一个更早的来源错误：若 \(h=\prod_i h_i\) 且 \(h_i\) 两两互素，局部标签
+\(a_i\bmod h_i\) 不能直接当作共同 \(\mathbb Z/h\mathbb Z\) 元素做 Fourier。令
+\(E_i=(h/h_i)((h/h_i)^{-1}\bmod h_i)\)，则规范全局标签是
+\[
+\Phi(a_1,\ldots,a_r)=\sum_iE_i a_i\pmod h,
+\]
+全局角色的正确拉回为
+\[
+\exp(2\pi i k\Phi(a)/h)
+=\prod_i\exp(2\pi i k t_i a_i/h_i).
+\]
+若直接代入局部代表，则代表替换要求 \((h/h_i)\mid k\)；两个以上互素非平凡块
+合并后只有 \(k=0\) 与代表选择无关。\(p=97,h_1=11,h_2=13\) 的规范合并为
+\(a_0=133\bmod143\)，不是把 \(1,3\) 分别视为两个共同模数标签。该桥接修正后，
+局部相位还需继续通过有限阿贝尔源商 SNF，不能直接计入容量。主张卡见
+[Type II CRT 局部标签到全局 Fourier 的幂等元桥](../claims/type-II-crt-local-label-idempotent-phase-bridge.md)。
+若源商指数为 \(E\)，幂等元拉回的第 \(i\) 个频率阶为
+\(h_i/\gcd(h_i,k)\)，所以允许频率恰是
+\((h/\gcd(h,E))\mathbb Z/h\mathbb Z\)。这给出局部化的精确阶筛；\(p=97\) 的
+\(E=2\) 与 \(h=143\) 使该子群只有零频率。
+
+## 2026-08-05 有限阿贝尔多 primary 进位终端
+
+固定源纤维的差分商若分解为
+\[
+H=\bigoplus_\nu C_{\ell_\nu^{a_\nu}},
+\]
+并且合法二点关系块可按 primary 因子分组、保持纤维且独立选择，则每个
+\(\ell_\nu\)-进位层只要有至少 \(\ell_\nu-1\) 个块，各组由循环数字终端覆盖对应
+primary，直和后整体覆盖 \(H\)，锚点在商内时直接得到 Type II 命中。目标缺失
+因此给出锚点外置或一个明确的 \((\nu,k)\) 层缺口；\(\ell_\nu=2\) 时是广义
+\(2^j\) 终端。该结果把 q-height 源列去重后的容量直接接到多 primary 终端，但
+不假设跨 primary 混合块自动可分组。主张卡见
+[Type II 源纤维有限阿贝尔多 primary 进位终端](../claims/type-II-source-fiber-multiprimary-digit-terminal.md)。
+
+## 2026-08-05 有限阿贝尔合成列缺口回执
+
+对任意有限阿贝尔目标差分商 \(H\)，沿素数阶合成列
+\(0\leftarrow H_1\leftarrow\cdots\leftarrow H_L=H\) 追踪源和集与目标投影。第一个
+未命中若发生在 \(j<L\)，得到严格较小的有限阿贝尔商；若所有较小商都命中，则
+顶层核 \(C_{\ell_L}\) 的目标截面是非空真子集，Parseval 给出精确的非平凡核
+Fourier 角色。该二分把循环数字缺口推广到非循环相关缺失，并与
+MULTIPRIMARY_DIGIT_DEFICIT、SNF 提升和算术 source-switch 门相接。主张卡见
+[Type II 源纤维有限阿贝尔合成列商缺失—素数核 Fourier 回执](../claims/type-II-source-fiber-finite-abelian-composition-relay.md)。
+
+## 2026-08-05 顶层核角色的最小秩容量
+
+合成列顶层 \(C_\ell\) 核的 Fourier 角色现在有了有向容量接口。若角色在目标
+相对支撑上恒相位，系数只剩锚点相位，关系 q-height 需求为零；若相位非恒定，
+则差分群含一个 \(\ell\)-初等方向，任何真实保持纤维的源列账本至少支付一个
+独立 \(\ell\) 容量单位。多个独立角色按初等商秩收费，不能按 pair-energy 边数
+重复计数。主张卡见
+[Type II 合成列顶层核角色的锚点—初等秩容量二分](../claims/type-II-composition-kernel-role-rank-capacity-bridge.md)。
+
+## 2026-08-05 跨状态 Hall q 进容量桥
+
+把已证明的顶层秩方向、primary 数字层缺口等组成请求集，把真实 q-adic 赋值层
+组成资源槽；只有通过 source-switch、SNF、范围和 shared-q 合同的请求—资源对才
+连边。有限 Hall 定理给出精确二分：完整匹配时得到无重复收费的跨状态容量映射；
+存在请求子集 \(U\) 满足 \(|U|>|N(U)|\) 时得到严格容量缺口；边本身不合法则独立
+记为 EDGE_OBSTRUCTED。该桥为把局部 q-height 与跨状态竞争接起来提供了可计算的
+最小接口。主张卡见
+[Type II 跨状态源需求的 Hall q 进容量桥](../claims/type-II-cross-state-source-demand-hall-capacity-bridge.md)。
+
+## 2026-08-05 Hall 缺口的严格递降闭包判据
+
+进一步把 Hall 图接到良基势函数。对最大匹配从所有未匹配请求作交替可达闭包，
+得到规范最小割 \((U_M,N_M,u_M)\)，并证明
+\(|U_M|-|N_M|=u_M>0\)。因此多 q、多层和跨状态竞争都能压缩为一个可复核的
+有限缺口，而不必凭直觉选择“最拥挤的 q”。
+
+新判据要求每个最小割满足四类局部闭包之一：缺口请求有保持标签的 LOWER_RELAY；
+候选边有 SNF/CRT/算术 OBSTRUCTED；Kneser surplus 已越过纤维缺口；或顶层角色
+已有闭合锚点出口。若最大匹配覆盖所有请求但仍未越过 Kneser 缺口，还必须满足
+HC5，即每个已匹配请求都有终端、严格回退或 F/G 出口；不能把“已占用资源”冒充
+目标命中。有限势归纳由此给出 Type II、严格可提升递降或显式算术负证书。
+
+若某个最小割不满足这些条件，规范回执为
+UNRELAYABLE_HALL_DEFICIT；完整匹配但 HC5 失败则为
+UNRELAYABLE_FULL_MATCH。这两个回执不是猜想反例，而是当前全局证明仍需补上的
+最小闭包条件。主张卡见
+[Type II Hall 缺口到严格递降的有限闭包判据](../claims/type-II-hall-deficit-relay-closure-criterion.md)。
+
+## 2026-08-05 Hall 匹配的单纤维实现门
+
+进一步修正 surplus 分支：跨状态 Hall 完整匹配只说明 q 进资源没有重复使用，
+不能自动把不同整数 \(p+4s_A\) 的因子相乘。只有存在保持来源标签的
+FIBER_REALIZED(A) 映射，把匹配后的层回译到同一个参数纤维，并同时满足整除、
+\(h\equiv-1\pmod{4D_A}\) 和 \(B'>A\) 时，匹配才可计入该纤维的 Kneser surplus。
+否则统一记 UNREALIZED_CROSS_STATE_MATCH；若映射因 SNF/CRT/范围失败则记
+OBSTRUCTED。
+
+\(p=97\)、\(M=24\) 的 \(P_1=\{1,11\}\)、\(P_2=\{1,13\}\) 各自漏掉 23，
+但 \(11\cdot13\equiv23\pmod{24}\)，给出严格的混合纤维伪命中。因此 Hall 闭包的
+HC3 必须升级为 HC3-FIBER。主张卡见
+[Type II Hall 匹配触发 Kneser surplus 的单纤维实现门](../claims/type-II-hall-matching-fiber-realization-gate.md)。
+该实现门并非只能作抽象假设：固定 \(M=4D\) 时，带来源 CRT 给出充要条件
+\(a\equiv a_i\pmod{h_i}\) 的 admissible \(a\mid D\)；同模数失败后，除子格后继
+等价于 \(AD'\equiv Da_0\pmod h\)。当 \(h>D^2\) 时候选至多一个，因而
+HC3-FIBER 的同模数/降模来源检查可有限化；空集则记
+CRT_NO_ADMISSIBLE_FIBER。该有限判据来自
+[Type II 同模数与除子格 source-switch 的带来源 CRT 判据](../claims/type-II-same-modulus-source-switch-crt-criterion.md)。
+对一个已经由 Hall 匹配形成的带来源混合因子 \(h\)，这道门进一步闭合为有限三分：
+同模数 CRT、严格除子格和 raw 因子三类候选依次给出 Type II；三者全空才记
+ALL_ARITHMETIC_LIFT_EMPTY。该回执只排除当前 \(h\) 的三种提升族，不能误写成
+核心素数没有其它证书。主张卡见
+[Type II Hall 混合因子的同模数—降模—raw 算术闭合三分](../claims/type-II-hall-fiber-arithmetic-closure-trichotomy.md)。
+在进入该三分前新增源块束目标残数门：有限指数乘积集若含 \(-1\)，选择命中指数
+形成 \(h\)；若不含 \(-1\)，则在 \(\mathbb Z/(4D)\mathbb Z\) 上由 Parseval 给出
+规范非平凡 Fourier 能量。频率必须先通过源群指数阶筛和有限阿贝尔 SNF，才能
+进入 F/G 容量；不相容频率记 LIFT_OBSTRUCTED。主张卡见
+[Type II Hall 源块束的目标残数—Fourier 前置门](../claims/type-II-hall-bundle-target-residue-fourier-gate.md)。
+进一步令 \(e=\gcd(4D,\exp H)\)，把源块乘积集投影到 \(\mathbb Z/e\mathbb Z\)；
+Parseval 给出所有阶整除 \(\exp H\) 的可容许频率的精确总能量。正能量保证至少
+一个频率能通过指数阶筛，零能量则是“当前源群角色完全不可见”的有限证书，随后
+仍需 SNF 检查。
+零能量等价于投影重数满足
+\(m(y)=c+\mathbf 1_{y=\pi_e(t)}\)，因此不是频率尚未找到，而是当前源群角色
+全部不可见；任何锚点分离必须改用更大的环境商或不同稳定子纤维。
+零能量分支现在先检查规范锚点 \(\alpha\in\Delta\) 与否：外置时构造纯锚点环境
+角色；在差分群内时任何分离角色至少产生一个 \(\ell\)-初等源秩方向，秩账本为零
+则输出 SOURCE_RANK_INCONSISTENT，否则送入 SOURCE_RANK_DEMAND。主张卡见
+[Type II 锚点外置—关系初等秩的 Fourier dispatch](../claims/type-II-anchor-rank-fourier-dispatch.md)。
+多个独立 \(\ell\)-角色的 q 槽支付还需检查源列向量的线性独立性。Rado
+rank-Hall 条件要求每个请求子集的邻域源列秩不小于请求数；普通槽数量匹配但
+向量重复时输出 LINEAR_RANK_DEFICIT。主张卡见
+[Type II 顶层角色的 Rado 线性 rank-Hall 容量桥](../claims/type-II-rado-linear-rank-hall-capacity-bridge.md)。
+
+## 2026-08-05 跨状态完整匹配的算术实现—Fourier 三分
+
+把没有 FIBER_REALIZED 映射的完整匹配进一步闭合为有限 typed 分派。先确认所有
+匹配块能嵌入共同 \(U(4D_*)\) 且 shared-\(q\) 已合并；失败则记录
+AMBIENT_SOURCE_OBSTRUCTED。若匹配源块束的乘积集含 \(-1\)，目标见证依次进入
+同模数 CRT、严格除子格和 raw 三类算术候选：命中 Type II、较小模数后继、raw
+Type II，或三类全空后转 ALL_ARITHMETIC_LIFT_EMPTY→RAW_DIVISOR_FOURIER（调用
+raw 除子残数桥）。若不含 \(-1\)，
+在共同单位群上由 Parseval 构造非平凡角色，再经指数阶和 SNF 分成
+CROSS_STATE_SOURCE_RELATION_FOURIER 或 CROSS_STATE_ARITHMETIC_FOURIER_OBSTRUCTED。
+主张卡见
+[Type II 跨状态完整匹配的算术实现—Fourier 三分](../claims/type-II-cross-state-full-match-realization-fourier-trichotomy.md)。
+这一步不把跨状态混合积直接写成 Type II，而是将 UNREALIZED_CROSS_STATE_MATCH
+推进为可验证的算术/Fourier 后继；剩余问题是这些后继的 F/G 载体或严格势下降。
+
+## 2026-08-05 跨状态相容角色的锚点—初等秩—Hall 分派
+
+跨状态共同群 Fourier 通过指数阶和 SNF 后，新增一层真实源关系分派。若角色在
+源差分群上恒定，它只是纯锚点相位，不产生 q-height 需求；若角色在差分群上非恒定，
+则至少产生一个 \(\ell\)-初等关系方向。先检查保持纤维的合法源列秩：秩不足时输出
+SOURCE_RANK_INCONSISTENT；秩足够后把独立方向接入带来源的 Hall 图，缺口转为
+HALL_DEFICIT_FOURIER，完整匹配只有在稳定子商活跃容量达到 Kneser 缺口时才给出
+Type II。主张卡见
+[Type II 跨状态相容角色的锚点—初等秩—Hall 容量分派](../claims/type-II-cross-state-source-relation-role-capacity-dispatch.md)。
+这一步仍不保证每个相容角色都有足够 q 进载体，未闭合的边界是 Hall 缺口的严格
+递降或 F/G 终端。
+
+## 2026-08-05 跨状态分层 Rado—q 进容量切割
+
+把关系角色的源列秩与移位 q 进层放入同一个请求子集切割。对请求子集 \(U\)，
+逐层移位上界
+\[
+\mathsf C_q(U)=\sum_{j\le E_U}C_j(S_U,q)
+\]
+先给出只依赖移位集的硬上界；若 \(\mathsf C_q(U)<|U|\)，输出
+Q_ADIC_LAYER_CAPACITY_DEFICIT。只有该上界通过后，才检查 Rado 源列秩；
+秩不足输出 LINEAR_RANK_DEFICIT，实际兼容边稀疏才输出普通 HALL_DEFICIT。
+这修正了把 q 进缺口和线性秩缺口混为一个 Hall 数量缺口的逻辑跳步。
+\(p=433,S=\{16,100\},q=7\) 的高度 \(1,2\) 给出层容量 \(2+1=3\)，若两条
+来源都要求 \(7^2\)，需求 \(4>3\)，得到严格 q 进切割；实际高度恰好达到等号。
+主张卡见
+[Type II 跨状态分层 Rado—q 进容量切割](../claims/type-II-cross-state-layered-rado-qcapacity-cut.md)。
+
+## 2026-08-05 q 进缺口到 annihilator 商递降
+
+若固定 q 的分层容量切割给出 \(\mathsf C_q(U)<|U|\)，则实际邻域严格少于请求数，
+同一 \(\ell\)-初等商中可构造一个阶 \(\ell\) 对偶角色，平凡于全部邻域源列并分离
+未支付请求。若最小割满足 SOURCE-DOMINATING-CUT，即每个固定纤维源生成元都有
+合法同纤维邻接列，则该角色湮灭整个源集；目标相位非平凡时进入
+GLOBAL_ANNIHILATOR_LOWER_RELAY，核平凡时进入 TOP_PRIMARY_ANNIHILATOR，目标相位
+平凡时保留为关系 Fourier。源列逃逸则必须补入 Hall 菜单或记录障碍。
+主张卡见
+[Type II 跨状态 q 进缺口的 annihilator 商递降桥](../claims/type-II-cross-state-qcapacity-deficit-annihilator-relay.md)。
+该桥首次把 q 进容量缺口接到明确的商递降条件，但整数 source-switch 和 E1--E5
+提升仍是全局剩余。
+
+## 2026-08-05 秩缺口的对偶 Fourier 分离
+
+Rado 秩条件失败不再只停留在
+\(\mathrm{LINEAR\_RANK\_DEFICIT}\)。若需求方向张成 \(D_U\)，可用源槽张成
+\(W_U\)，且 \(\dim W_U<\dim D_U\)，有限维对偶的双正交关系直接给出
+\(\lambda\in V_\ell^*\)，使 \(\lambda|_{W_U}=0\)、\(\lambda|_{D_U}\ne0\)。
+将 \(\lambda\) 提升为
+\(\chi_\lambda(x)=\exp(2\pi i\lambda(x\bmod\ell A_\ell)/\ell)\)，即可得到在所有
+邻域源列上平凡、在至少一个未支付需求方向上非平凡的
+SOURCE_RANK_FOURIER_SEPARATION。
+
+该证书把普通 Hall 数量缺口和真实源关系缺口统一到同一有限角色接口：锚点被
+\(\lambda\) 分离时转入环境锚点/F/G 检查；锚点未被分离时保留为关系 Fourier
+缺口，并要求 F/G 载体或严格良基递降。它证明了“重复 q 槽不能支付独立角色”不仅
+是计数约定，而是存在一个可复核的阶 \(\ell\) 对偶角色。具体引理见
+[Type II 线性秩缺口的阶 \(\ell\) 对偶分离证书](../claims/type-II-linear-rank-deficit-dual-separation-certificate.md)。
+
+此推进仍不自动关闭全局猜想：对偶角色的 F/G 承接或其 annihilator 商的严格势下降
+仍需在每个来源纤维中独立证明。
+
+## 2026-08-05 固定纤维 Hall 缺口的线性精化
+
+在同一参数纤维、同一 \(\ell\)-初等源商中，若 Hall 缺口请求已取成独立方向，
+\(|N(U)|<|U|\) 立即给出
+\[
+\operatorname{rank}\operatorname{span}\{v_c:c\in N(U)\}
+\le |N(U)|<|U|.
+\]
+因此有限维对偶构造出一个在所有可用源槽上平凡、在至少一个请求方向上非平凡的
+阶 \(\ell\) 角色，回执精化为 HALL_DEFICIT_FOURIER_SEPARATION。这一步把
+固定纤维的数量 Hall 缺口接入前面已有的 Rado/对偶分派；只有跨纤维、未实现来源
+标签或算术边尚未合法化时，才保留粗粒度的 Hall 缺口。主张卡见
+[Type II 固定纤维 Hall 缺口到线性对偶分离桥](../claims/type-II-hall-deficit-linear-dual-bridge.md)。
+
+这仍不是整数 Type II 或素数递降定理：分离角色必须继续通过锚点/F/G 载体或
+annihilator 商的严格势下降，跨纤维容量仍必须通过单纤维实现门。
+
+## 2026-08-05 算术全空的 raw Fourier 闭合
+
+Hall 混合因子的同模数、严格降模和 raw 三类候选若全部为空，不能把
+ALL_ARITHMETIC_LIFT_EMPTY 当作最终负结论。三类全空蕴含 raw 候选集为空；将全部
+合法 raw 平方除子残数与目标残数作差后，Parseval 给出严格正的非平凡 Fourier
+能量。随后先做源群指数阶筛，再做循环同余/有限阿贝尔 SNF：通过者进入
+SOURCE_RELATION_FOURIER，全部不通过者形成显式
+ARITHMETIC_FOURIER_LIFT_OBSTRUCTED。主张卡见
+[Type II 算术提升全空到 raw Fourier 的闭合桥](../claims/type-II-arithmetic-empty-raw-fourier-bridge.md)。
+
+这一步把 HC2 的算术空集分支精化为对偶或障碍回执，但仍没有证明可提升角色必然
+产生 F/G 容量或严格整数递降。
+
+## 2026-08-05 完整匹配的稳定子增长—商 relay
+
+对已经通过 FIBER_REALIZED 的完整匹配，把真实源块按顺序加入同一纤维积集
+\(P_k=A_0B_1\cdots B_k\)，并记录 \(T_k=\operatorname{Stab}(P_k)\)。稳定子单调
+增大；若 \(g_k\notin T_k\)，Kneser 给出至少 \(|T_k|\) 个新增元素，若
+\(g_k\in T_k\)，该块被最终稳定子吸收。若累计下界
+\[
+|A_0|+\sum_{g_k\notin T_k}|T_k|>|H|-|T_m|
+\]
+成立，则目标陪集不可能缺失，直接得到 Type II；否则输出最终商
+\(H/T_m\)、吸收块标签和精确稳定子缺口，进入合成列/Fourier/严格 relay。主张卡见
+[Type II 单纤维完整匹配的稳定子增长或商 relay 证书](../claims/type-II-full-match-stabilizer-relay-certificate.md)。
+
+这使 HC5 从抽象的“完整匹配后仍需终端”变成可枚举的增长或吸收检查，但跨纤维
+匹配和稳定子商的整数解提升仍未自动闭合。
+
+## 2026-08-05 稳定子同余核的源指数盒格判据
+
+为处理低模数商递降的核心门 \(K\subseteq\operatorname{Stab}(P)\)，把真实源块写成
+\(\varphi:\mathbb Z^r\to G\) 的有限指数盒像，令
+\(\Lambda=\ker\varphi\)。严格证明：
+\[
+K\subseteq\operatorname{Stab}(P)
+\iff
+K\subseteq\operatorname{im}\varphi
+\ \text{且}\
+(\mathcal B+\Lambda)/\Lambda+
+\varphi^{-1}(K)/\Lambda
+=(\mathcal B+\Lambda)/\Lambda.
+\]
+前项由 SNF 源列成员检查，后项由有限商中的生成元平移检查。通过时得到
+KERNEL_STABILIZER_CERT，可合法进入饱和商；失败时区分
+KERNEL_NOT_IN_SOURCE 与 KERNEL_BOX_MISS。\(p=97\)、\(P=\{1,11\}\) 的模
+\(24\to4\) 伪命中在第一项即失败。主张卡见
+[Type II 稳定子同余核的源指数盒格判据](../claims/type-II-stabilizer-kernel-source-box-lattice-criterion.md)。
+
+该判据把“核包含”从抽象假设变成可构造来源门，但尚未证明所有核心素数的 q-height
+盒都通过该门。
+
+## 2026-08-05 稳定子核失败的对偶 Fourier 二分
+
+核门失败也不再只保留负标签。若 \(K\not\subseteq\operatorname{im}\varphi\)，有限
+商 \(G/\operatorname{im}\varphi\) 给出一个平凡于全部源块、但在某个核元素上非平凡
+的 KERNEL_SOURCE_ANNIHILATOR。若 \(K\subseteq\operatorname{im}\varphi\) 但
+盒像不被 \(K\) 平移保持，取任意 \(k\) 使 \(Pk\ne P\)，则
+\(1_P-1_{Pk}\) 的 Fourier 可逆性给出同时满足
+\(\chi(k)\ne1\) 与 \(\widehat{1_P}(\chi)\ne0\) 的
+KERNEL_BOX_FOURIER。目标商伪命中时，目标截面能量的
+KERNEL_SPLIT_FOURIER 更强。主张卡见
+[Type II 稳定子同余核失败的对偶 Fourier 二分](../claims/type-II-stabilizer-kernel-failure-dual-certificate.md)。
+
+这些角色仍须通过源关系格/SNF 和 F/G 载体；该结果完成的是核失败的有限对偶化，
+不是自动的整数递降。
+
+## 2026-08-05 低模数伪命中的完整分派
+
+把稳定子核、核失败 Fourier 和算术三分合并后，得到一个无悬空分支的伪命中定理：
+若 \(-1\notin P\) 但 \(-1\in\pi(P)\)，核饱和与目标缺失矛盾；核不饱和必给出
+KERNEL_SOURCE_ANNIHILATOR、KERNEL_BOX_FOURIER 或更强的
+KERNEL_SPLIT_FOURIER。若商命中因子束有单纤维来源，则同模数/降模/raw 三分给出
+Type II 或严格较小模数后继；三类全空时转 RAW_DIVISOR_FOURIER，再经指数/SNF
+成为 SOURCE_RELATION_FOURIER 或显式障碍。主张卡见
+[Type II 低模数伪命中的核—算术—Fourier 完整分派](../claims/type-II-low-modulus-pseudo-hit-complete-dispatch.md)。
+
+该分派闭合的是低模数伪命中状态树，不等于所有 Fourier 障碍都已有 F/G 容量或
+严格整数递降。
+
+## 2026-08-05 源指数盒 Fourier 的整周期预筛
+
+对带来源指数盒的重数测度，Fourier 系数逐列分解为几何和。若活跃列的角色像阶
+\(d_i\) 整除 \(e_i+1\)，该角色系数严格为零；否则该列只留下
+\(r_i=(e_i+1)\bmod d_i\) 的余段。q-primary 角色 \(d_i=q^{a_i}\) 进一步要求
+\(v_q(e_i+1)<a_i\)，回执记录 PHASE_DEPTH_DEFICIT。完整周期部分从该角色中消失，
+不得重复计入容量；角色阶和余段也不能直接冒充 F/G 清分高度，仍须通过真实源关系
+去重、相位映射和嵌套同余。主张卡见
+[Type II 源指数盒 Fourier 的整周期湮灭与相位深度缺口](../claims/type-II-source-box-fourier-full-cycle-phase-deficit.md)。
+
+这一步把兼容 Fourier 到容量的入口变成可执行的预筛：先删除整周期湮灭角色，再把
+剩余角色压缩到有限余段盒；若余段仍无法通过源关系或真实载体提升，回执继续保持
+LIFT_OBSTRUCTED/PHASE_LIFT_OBSTRUCTED，而不是伪造容量超载或递降。
+
+## 2026-08-05 q-height 集合 Fourier 与来源重数的饱和分流
+
+补上 q-height 与 Fourier 之间的模式边界。对角色商中像阶为 \(d\) 的幂块：
+当 \(e<d-1\) 时，指数幂块没有碰撞，集合 Fourier 与来源重数 Fourier 一致；
+当 \(e\ge d-1\) 时，集合已经饱和为完整循环子群，非平凡集合 Fourier 为零，
+Kneser 活跃容量最多 \(d-1\)。但来源重数仍可能因
+\((e+1)\bmod d\ne0\) 留下非零余段。因此饱和分支输出 WEIGHTED_SOURCE_ONLY，
+不能把该余段直接收费为无重数容量；必须转稳定子/碰撞去重、显式带权 source-switch
+或严格递降。主张卡见
+[Type II q 进幂块的集合 Fourier 与来源重数 Fourier 饱和分流](../claims/type-II-qheight-fourier-set-vs-multiplicity-saturation-boundary.md)。
+
+## 2026-08-05 饱和带权角色的商缺失—核 Fourier 二分
+
+进一步证明：若饱和幂块在选定商中生成子群 \(H\)，源集合像满足
+\(\pi(P)H=\pi(P)\)。对目标缺失 \(t\)，若目标在 \(G/\pi^{-1}(H)\) 中仍缺失，
+得到严格较小商回执 SATURATED_QUOTIENT_MISS；若商像命中，则目标核截面
+\(S_t=\{k:\ tk\in P\}\) 是非空真子集，Parseval 给出
+SATURATED_KERNEL_SPLIT。抽象商只有在整数 source-switch、来源标签和势下降均
+通过后才具备递归资格；否则记录明确的 LIFT_OBSTRUCTED。主张卡见
+[Type II 带权源饱和幂块的严格商缺失—核 Fourier 分派](../claims/type-II-weighted-source-saturated-quotient-kernel-dispatch.md)。
+
+## 2026-08-05 线性 escaped source 的高阶 primary 加权层终端
+
+上一轮的 \(\ell\)-初等商命题只对不同独立方向给出
+\(\prod_i\min(d_i+1,\ell)\) 的乘积容量。同一循环
+\(C_{\ell^a}\) 因子内的平行 source 不能这样相乘；新命题改用精确进位层加权容量
+\[
+W_k=\sum_{\nu_\ell(v_i)=k}\min(d_i,\ell-1).
+\]
+所有层 \(W_k\ge\ell-1\) 时，幂块和集覆盖整个循环 primary 因子，给出
+PRIMARY_POWER_LAYER_HIT。取最高不足层 \(k^*\) 后，若 \(k^*<a-1\)，高层尾部精确
+等于 \(\ell^{k^*+1}H\)，目标缺失严格投影到
+\(C_{\ell^{k^*+1}}\)，形成一次性 primary 稳定子商递降；顶层不足则保留
+PRIMARY_POWER_TOP_DIGIT_DEFICIT。只有 primary 坐标已分离、其它坐标饱和并且
+E1--E5 通过时，才将因子级尾压缩升级为全局稳定子边；否则保留
+PRIMARY_POWER_TAIL_LIFT_OBSTRUCTED。
+
+主张卡见
+[线性 escaped source 的高阶 primary 幂块进位容量终端](../claims/type-I-linear-escape-primary-digit-capacity-terminal.md)。
+这一步补上了高 q-height 在同一循环 primary 内的“加法层容量”接口，并明确禁止把
+初等乘积容量和高阶尾部容量重复计费；剩余决定性缺口是有限 source-switch 菜单的完备性、
+尾部商的整数回译以及顶层 primary 缺口的 Type I/II 或 Fourier/annihilator 出口。
+
+## 2026-08-05 escaped primary source-switch 的有限条件分派
+
+为避免把抽象 primary 容量直接当作整数证书，有限菜单的 profile 只提出带来源的
+q-prefix 请求。对每个候选 \(f=(D',A)\)、\(s_f=AD'\)，必须重新计算
+\[
+d_f(q)=\min\left\{
+\sum_{i:q_i=q}\min(e_i,v_q(s_f-Da_i)),
+v_q(p+4s_f)
+\right\}.
+\]
+只有经 q-prefix Hall 见证的 \(n_{f,q}\le d_f(q)\) 才可形成唯一
+\(q^{n_{f,q}}\) 整数块；同一个 q 不能由多条来源行重复收费。来源 CRT、平方自由和
+范围实现的是保持来源的 D-格整数纤维；单位群映射 \(\eta\)/SNF 是独立的 relay
+门，既不替代实际整除，也不推出 E1--E5。
+
+若 \(h\equiv-1\pmod{4D'}\)，正规形直接检查 Type II。D-格候选为空仍须枚举
+\(\mathscr R_{\rm raw}(h;p)\)：raw 非空时直接终端，raw 亦空才是该 \(h\) 的
+RAW_LIFT_EMPTY。容量命中若缺少整数回译或明确提升合同，保持
+LIFT_OBSTRUCTED；只有有目标状态、全域提升、E1--E5 和严格 E5 的 relay 才能登记
+PRIMARY_BLOCK_STRICT_RELAY。
+
+该表对声明的 source scope 是有限可回放的，却不覆盖未枚举 F/G alternate、raw
+来源或下一递归层。没有菜单覆盖定理时，空候选只能记
+PRIMARY_BLOCK_SOURCE_UNCLOSED，不能升级为全局算术失败。主张卡见
+[线性 escaped primary source-switch 的有限条件分派](../claims/type-I-linear-escape-primary-source-switch-finite-dispatch.md)。
+
+## 2026-08-05 canonical D-格菜单：局部闭合与固定层反例
+
+固定 \(D\) 的标准 Type II 来源/目标除子格可以真正闭合：枚举
+\[
+a\mid D,\qquad (D',A),\qquad
+e_{a,D',A,q}=\min\{v_q(p+4Da),v_q(p+4AD')\},
+\]
+并对每个 \((a,D',A,q)\) 只保留一个最大高度 route，profile 仅可选择其一个前缀，
+得到有限 canonical 原子菜单。只要来源格非空，\(p+4Da\) 自动与 \(4D\) 互素，
+故所有菜单 q 都是目标单位群的单位；该范围内没有 nonunit CRT 漏洞。菜单覆盖的是
+一跳、保持来源的 D-格 source-switch，不包括 raw、外部 F/G alternate 或下一递归层。
+
+这也给出可证的 residual 机制：若某目标纤维的菜单单位源子群不包含 escape 目标，
+商角色给出 CANONICAL_D_LATTICE_ESCAPE_OBSTRUCTED。不能把“菜单有限”误读为
+“菜单必支付”：固定
+\[
+(p,R,D)=(57{,}399{,}241,59,41)
+\]
+的所有原始来源在 \(\mathrm{QR}_{59}\) 中，对一个声明的 \(C_2\) rank-one demand
+零支付；但下层 \(D'=1\) 产生新的非剩余因子。这是固定层菜单覆盖命题的严格反例，
+不是 Erdős--Straus 的反例或递归 no-go。
+
+主张和定点证书见
+[canonical D-格来源菜单与纤维残余回执](../claims/type-I-linear-escape-canonical-d-lattice-source-menu.md)。
+
+## 2026-08-05 G-anchor 的 Jacobi-odd 实际来源
+
+高载体 \(n=p\) 的规范 G-anchor 不再只有抽象 Jacobi 分离。令
+\[
+R=p-2,\qquad K=(p-1)^2/4,\qquad Q=(p-3)/2.
+\]
+通用 source 的实际 raw 路径到达 \((1,2Q,1)\)，且 \(Q\) 正是完整超额 bundle；
+所有 \(K\) 支撑在 \((\cdot/R)\) 的核中而 \(Q\) 在负陪集。因而
+\[
+\{d\mid Q:(d/R)=-1\}
+\]
+是非空、有限、可回放的 source/path 菜单。它将主余项从“没有实际来源的 G 相位”
+收缩为“实际 Jacobi-odd source 如何回译到整数纤维或 strict relay”，后者仍未解决。
+
+主张见
+[G-anchor 的 Jacobi-odd 完整超额块与有限 raw 路径菜单](../claims/type-I-g-anchor-jacobi-odd-complete-excess-source-menu.md)。
+
+## 2026-08-05 Hall 缺口的全源列闭包
+
+现有 Hall 对偶角色只保证它在最小割的邻域槽上平凡；这不足以直接推出固定纤维
+递降。新增全源列闭包检查：对同一固定纤维的全部实际源生成元逐列验证
+\(\lambda(v_i)=0\)。若检查通过，源集整体落入
+\(K=\ker\chi_\lambda\)；目标相位非平凡且 \(|K|>1\) 时，投影到 \(H/K\simeq C_\ell\)
+得到严格商缺失和 GLOBAL_ANNIHILATOR_LOWER_RELAY，E1--E5/参数纤维通过后才是
+真正递降；\(|K|=1\) 则记录 TOP_PRIMARY_ANNIHILATOR，并在二点关系块模型中精化为
+CYCLIC_PRIMARY_DIGIT_DEFICIT\((\ell,0)\)。目标相位平凡时回执为
+RELATION_FOURIER_NO_TARGET_SEPARATION，不能收费容量。
+
+若某个源列被角色分离，输出 SOURCE_COLUMN_ESCAPE；有合法 source-switch 边则补入
+完整 Hall 菜单重算，所有候选失败则保留 SOURCE_COLUMN_EDGE_OBSTRUCTED，跨纤维
+未实现则记录 UNREALIZED_SOURCE_COLUMN。该分派见
+[Type II 固定纤维 Hall 缺口的全源列闭包—商递降三分](../claims/type-II-hall-source-column-closure-relay.md)，
+并将 HC6 加入 Hall 有限闭包条件。若最小割对每个源生成元都有同纤维合法邻接边，
+则构成 SOURCE-DOMINATING-CUT，闭包自动通过。它消除了“当前邻域角色平凡即可递降”的逻辑跳步，
+但没有解决跨纤维列实现、顶层 primary 终端或 FULL_MATCH relay 的全称问题。
+
+## 2026-08-05 稳定子包含放宽与同余三分闭合
+
+把同余核识别条件从 \(C_{D'}\subseteq H\) 放宽到真正必要的
+\(C_{D'}\subseteq\operatorname{Stab}(P)\)。对每个候选 \(D'\)，三分为：
+
+1. 稳定子包含：目标缺失精确传递到低模数，带来源标签的参数纤维门非空且回译
+   通过时给出 STABILIZER_CONGRUENCE_LOWER_EDGE，E1--E5 完整；若某个来源子列表
+   已满足 \(h_S\equiv-1\pmod{4D'}\)，先作为直接 Type II 终端处理；
+2. 稳定子不包含：取 \(c\in C_{D'}\) 使 \(Pc\ne P\)，由
+   \(1_P-1_{Pc}\) 构造 \(\chi(c)\ne1\) 且 \(\widehat{1_P}(\chi)\ne0\) 的
+   CONGRUENCE_KERNEL_FOURIER；低模数伪命中再给出目标核截面；
+3. 稳定子包含但来源参数纤维门为空：输出 ARITHMETIC_LIFT_OBSTRUCTED。
+
+这对每个固定 \(D'\) 是穷尽且互斥的，主张卡见
+[Type II 饱和源积集的同余稳定子—核 Fourier—算术三分](../claims/type-II-saturated-source-congruence-stabilizer-trichotomy.md)。
+
+该分派的旧“同余核识别”表述现改为参数纤维门：\(C_{D'}\subseteq H\) 仍是
+推出商缺失的方便充分条件，但一般递降只要求
+\(C_{D'}\subseteq\operatorname{Stab}(P)\)。保留来源标签的两两互素列表
+\(\mathbf h\) 必须逐项满足 \(h_i\mid p+4AD'\)、\(A\mid D'\)、平方自由和范围条件；
+若子列表乘积已经满足 \(h_S\equiv-1\pmod{4D'}\)，则直接构成 Type II 终端，
+不再算作“目标仍缺失”的后继。只有没有直接终端且参数纤维和 E1--E5 全部通过时，
+才输出 STABILIZER_CONGRUENCE_LOWER_EDGE；否则分别保留
+CONGRUENCE_KERNEL_FOURIER 或 ARITHMETIC_LIFT_OBSTRUCTED。\(p=97\)、
+\(U(24)\to U(4)\) 的 \(H=\langle11\rangle\) 与
+\(\ker=\{1,5,13,17\}\) 仍是核失败的严格边界。
+
+## 2026-08-05 三条整数桥的收缩结果
+
+本轮没有把有限菜单误报为统一递降，而是把三条看似可扩展的路径压缩到精确边界：
+
+1. 除子分层 D-格闭包只枚举合法新来源。profile 必须固定 \((d,f)\)，并通过实际
+   source-switch、标记提升与 E1--E5 后才形成边；\(d'<d\) 才有 \(\Omega(d)\) 下降。
+   因此 \(p=57{,}399{,}241,D=41\) 的 \(d=1\) 非剩余因子不是现成的 \(41\to1\)
+   递降。
+2. G-anchor 的 label-preserving raw normal form 唯一命中
+   \((A,C,k,h)=(1,1,2,7)\)。它是 \(D=1\) 的 Type II terminal，不能生成严格
+   canonical D-格 source-switch；gap-3、gap-7、full-\(Q\) path 和 raw \(h=7\)
+   只能作为平行分支处理。
+3. 任何已带来源的 \(n=(p+4s)/h\) 都不产生新的 non-source D-only 双尾导体：
+   \(h\equiv1\pmod4\) 进入既有 no-go，\(h\equiv3\pmod4\) 与
+   \(n>4p/5\) 和 \(n<2p/3\) 的矛盾。保留的 gap-\(h\) 与 raw-ray 命中都是终端。
+
+相应主张见
+[分层来源闭包](../claims/type-I-linear-escape-divisor-stratified-recursive-source-closure.md)、
+[G-anchor raw 终端唯一性](../claims/type-I-g-anchor-jacobi-raw-terminal-source-switch-bridge.md) 和
+[primary 因子 non-source D-only no-go](../claims/type-I-linear-escape-primary-factor-donly-no-conductor.md)。
+
+## 2026-08-05 复核后：带来源的 cofactor-supported r-chart 局部候选
+
+上述候选已收敛为一条严格条件性正规形。令
+
+\[
+C=p-d,\qquad g=(A,C),\qquad a=A/g,\qquad
+A_C=\operatorname{lcm}(A,C)=Ca,
+\]
+
+并由 \(M=kp+r\) 定义
+
+\[
+s=(4rd+1)/p,\qquad R_r=4r-s,\qquad K_r=rC.
+\]
+
+当 \(a\mid r\)、\(p<R_r\)、
+`canonical_chart(p,A_C)=(R_r,K_r)`、完整 source/path 与结构化 fresh root
+或经具名 adapter 重放的 charged-support 来源均已回放，且局部
+\(\Pi_p(A_C)<\Pi_p(A)\) 时，真正的后继载体是
+
+\[
+M_T=A_C,\qquad C_T=r/a,\qquad d_T=p-C_T,\qquad n_T=4A_C-R_r,
+\]
+
+满足 \(K_r=M_TC_T\) 和 \(pn_T=4M_Td_T+1\)。这消除了把 \(r\) 误写为 target
+carrier 的漏洞，也说明 \(r=M\) 只是 `same_chart`，不是拒绝门。
+
+选择器已从结构化 `universal_raw_default_entry_v1` 重放两条 fresh-source
+局部候选，并把 `source_tree_scope=fresh_source_tree_only` 写入 source/target state：
+
+| 来源 | 更新 | 势 | F 见证 |
+|---|---|---:|---|
+| \(p=73\) root anchor | \(1\to51\) | \(1296\to25\) | \((-2,3,-1)\), \(D^-=2,D^+=9\) |
+| \(p=409\) universal raw source | \(1\to209\) | \(41616\to199\) | \((-1,0,-2,-1)\), \(D^-=11,D^+=1\) |
+
+二者均为各自 fresh source tree 内的 `candidate_transition`，不是
+`verified_edge`：它们的局部 E1--E5 与恒等提升均成立，但 absorbed-support 势
+尚未嵌入禁止后续 RESET 的全局 non-resetting phase rank。二者还都满足 \(r=M\)，所以只
+是 same-chart 支撑更新，不是 \(k\ge1\) 的真正 r-chart 正控制。\(p+4\) 已有 gap-7 Type II
+叶，故 terminal-first 调度会优先终止；这些控制仅验证正规形与来源合同，不增加困难核心
+余项覆盖。已有
+\(p=409,A=5\) 行还给出 \(5\to1045\)、\(8323\to39\) 的局部算术正控制，但父
+charged-support ledger 未经注册 adapter 重放，严格保留 `analysis_evidence`。
+
+值得注意的是，真正的 r-chart 在纯算术层并不受阻。由两个已保存的低载体 determinant
+平移 \(M\mapsto M+p,\ n\mapsto n+4d\)，得到：
+
+| \((p,A,M,d,n)\) | source chart | r-chart target | F 见证 | 来源状态 |
+|---|---|---|---|---|
+| \((73,1,107,22,129)\) | \((R,K)=(299,5457)\) | \(A_C=51,(R_r,K_r)=(95,1734)\), \(1296\to25\) | source \((-1,1,-4)\), target \((-2,3,-1)\) | 缺 source/path/anchor |
+| \((409,1,659,200,1289)\) | \((1347,137731)\) | \(A_C=209,(511,52250)\), \(41616\to199\) | source \((-5,-2,-2)\), target \((-1,0,-2,-1)\) | 缺 source/path/anchor |
+
+二者都有 \(k=1\)、\(a=1\mid r\)、canonical target 和严格局部势，但均被 gap-7
+Type II 终端抢占。现有 fresh \(A=1\) anchor 的第一载体为
+\(M=\operatorname{lcm}(1,Q)=Q<R<p\)，所以发生器不能直接产出上述高载体；
+\(p=409,A=5\) 的现有高行 \(M=410,1240\) 又分别因
+\(a=5\nmid r=1,13\) 失败。这说明下一步应优先构造并序列化一条真实的
+fresh-source 或已收费父状态 \(\to M\ge p\) 路径，并先筛选
+\(a\mid r\)（等价的必要过滤是 \(a\mid k\)）；随后才可能把局部势嵌入全局 phase
+rank。G 目标仍须补齐分离角色型 E4 verifier。详见
+[overflow 的余因子支撑 r-图表候选与同图表正控制](../claims/type-I-overflow-cofactor-r-chart-support.md)。
+
+## 2026-08-05 饱和带权角色的商缺失—核 Fourier 二分
+
+进一步证明：若饱和幂块在选定商中生成子群 \(H\)，源集合像满足
+\(\pi(P)H=\pi(P)\)。对目标缺失 \(t\)，若目标在 \(G/\pi^{-1}(H)\) 中仍缺失，
+得到严格较小商回执 SATURATED_QUOTIENT_MISS；若商像命中，则目标核截面
+\(S_t=\{k:\ tk\in P\}\) 是非空真子集，Parseval 给出
+SATURATED_KERNEL_SPLIT。抽象商只有在整数 source-switch、来源标签和势下降均
+通过后才具备递归资格；否则记录明确的 LIFT_OBSTRUCTED。主张卡见
+[Type II 带权源饱和幂块的严格商缺失—核 Fourier 分派](../claims/type-II-weighted-source-saturated-quotient-kernel-dispatch.md)。
+
+## 2026-08-06 高 \(R\) 两锚点路径与有界单调支撑秩
+
+\(p=1201\) 的两锚点构造现已从纯算术 r-chart 升为带专用来源回放的
+source-local candidate。第一锚点把 \(A=1\) 收费为 \(986\)，高
+\(R=1839\) raw source 再产生
+
+\[
+M=\operatorname{lcm}(986,919)=906134=754p+580,
+\]
+
+并经 cofactor 图表把持久化支撑更新为 \(A_C=27608\)。专用回放验证高 \(R\)
+source/path、同图表 charged-parent 和 source/target F 纤维；局部 E1--E5 均真，
+而输出仍保持 candidate_transition、recursive_edge_eligible=false，因为全局 E5
+尚无 non-resetting phase rank。高 \(R\) bundle 的正确门为
+\(p\nmid RQ\)，不需要旧的 \(Q<p\)；\(p=73,R=159,Q=79>p\) 是其正向边界例。
+
+对固定高锚点的同 bundle 回返现在已有精确的单次耗尽定理。若第一次 cofactor target
+回返原锚点并把 \(A\) 严格升为 \(A_1\)，则第二 carrier 必为
+\(\operatorname{lcm}(M,C)\)，仍整除第一次 \(K_M\)，其新 cofactor 已整除
+\(A_1\)，不可能再支付第二次严格支撑势。p=1201 的第二轮精确落在该边界：
+\[
+M_1=25371752,\quad C_1=34,\quad
+\frac{27608}{(27608,34)}=812\nmid627.
+\]
+它不能作为 charged 后继，却给出形式低图表 \((71,21318)\)，并恢复了直接终端
+\[
+\frac4{1201}=\frac1{561}+\frac1{646}+\frac1{25602918}.
+\]
+因此 p=1201 本身应 terminal-first 结束；高 \(R\) r-chart 只保留为可复现的
+source-local 候选构造。详见
+[固定高锚点回返的 complete-excess 单次耗尽](../claims/type-I-fixed-high-anchor-return-one-shot-exhaustion.md)。
+
+新的 [有界单调支撑相位秩](../claims/type-I-bounded-monotone-support-phase-rank.md)
+澄清了这个缺口的精确形状：在固定 \(p\) 的递归闭合子图中，只要持久化支撑满足
+\(1\le A_S<A_T\le B_p\)，则
+
+\[
+H_p=B_p-A
+\]
+
+严格下降。它只作用于 absorbed support，故两锚点中的临时
+\(M=906134>B_p=360000\) 不构成反例；实际下降为
+\(359014\to332392\)。但 p=73 的 \(132\to330\to132\) RESET 重入环和
+\(66\to1518>B_{73}\) 的盒外边都显示，此秩不能替代全局调度器。下一项实质工作
+因此是证明：每个高 \(R\) r-chart 后的非终端分支要么属于上述一次耗尽并先终端，
+要么保留盒内严格增支撑，或转交到另一条已验证的外层秩。固定锚点回返已不值得
+反复迭代；下一轮搜索应优先筛选不回返的新锚点或不同 bundle。
+
+同日还补齐了 [Type II 过滤合成列来源槽终端](../claims/type-II-filtered-composition-source-slot-terminal.md)。
+它不再要求循环 primary 直和项使用两两不同的素数：固定参数纤维中，只要每个合成列层
+\(H_j/H_{j-1}\cong C_{\ell_j}\) 有 \(\ell_j-1\) 个带真实 \(q\)-账本的独立来源槽，
+Cauchy--Davenport 归纳即覆盖全部目标群。\(p=3313,D=12\) 的
+\(U(12)\cong C_2^2\) 样本以 \(5\) 与 \(7\) 两个物理来源槽命中
+\(-1\bmod12\)，并回译为实际 Type II 三单位分数证书。这是一个正向终端回归，
+不是困难核心反例。
+
+相反，若同一基积账本下的相对目标缺失，新的过滤层缺口只严格推出某层
+\(c_j\le\ell_j-2\)。它把未命中压缩成可检索的来源容量赤字，却不把它误报为
+递降或反例；把该赤字转成 Type I/II 终端或全局秩，仍是后续接口。
+
+## 2026-08-06 高 \(R\) non-return 的三相压缩
+
+此前固定锚点的同 bundle 回返已被单次耗尽引理压缩，但这并不排除真正改变
+anchor 的 cofactor 图表。本轮得到精确的局部替代：若高 anchor 是
+
+\[
+(p,R,K;A),\qquad p<R<4A,\qquad A\mid K,
+\]
+
+且 charged cofactor gate 已通过，则
+
+\[
+h=\frac{K_r-K}{pA}=\frac{R_r-R}{4A}
+\]
+
+只能为 \(0,1,2\)。其中 \(h=0\) 当且仅当回返旧图表；\(h=1,2\) 是严格
+non-return，且仍留在高 anchor 区。这把“另一个 r-chart”压缩成两个可枚举相位，
+但尚未给出跨 anchor 的良基秩。
+
+三个独立的 source-local 控制例表明该相位不是空的：
+
+| 素数 | 父/源/目标纤维 | non-return | 局部势 | terminal-first |
+|---|---|---|---:|---|
+| \(3793\) | G \(\to\) F \(\to\) F | \(h=1\), \(7011\to14255\) | \(1984\to992\) | gap-7 Type I |
+| \(7393\) | F \(\to\) F \(\to\) F | \(h=1\), \(9863\to19823\) | \(5486\to5\) | gap-7 Type I |
+| \(60913\) | G \(\to\) G \(\to\) F | \(h=2\), \(72259\to221435\) | \(49743\to16581\) | gap-7 Type I |
+
+第一行还修正了一个合同实现缺口：同图表 support promotion 的 E4 是
+\(\operatorname{Sol}(p)\) 的恒等提升，不应把 G 状态错误排除。对
+\(p=3793\)，模 \(19\) Legendre separator 在 \(1811,3671\) 上为正、在
+\(-1\) 上为负，给出可验证的 G parent；专用 high-R replay 已同步重算 F 或
+Legendre-G 证书。\(p=60913\) 则以 CRT-parity discrete-log character 验证两个 G
+状态，并以规范 signed witness 验证 F target。三例都有短终端，因而不能当作未解核心覆盖，但它们否定了
+“所有可收费高-R cofactor 必回返”的隐含假设。
+
+令 \(g=(A,C)\)、\(A=ga\)、\(C=gc\)、\(K=AB\)。gate 强制 \(r=at\)，因而
+\(ct=B+ph\)；任何正相位都满足 \(c\ge ha+1\)。所以 \(h=1\) 至少使 support
+翻倍、\(h=2\) 至少三倍，并且 canonical 余量 \(n=4A-R\) 不减。最小情形
+\((h,c,a)=(1,2,1)\) 或 \((2,3,1)\) 自动落回既有 fixed-\(n\) 分支；\(60913\)
+正是后者。
+
+进一步，直接 canonical+gate cofactor 链内的正相位已被严格压缩为一次：任意相邻两步
+都不可能同时有正 \(h\)，而插入的零相位要么完全停顿，要么将已消费后的 support 推到
+\(>p\)，此后正相位 source barrier 排除再次发生。该结论甚至不使用 \(h\le2\) 的上界。
+它是局部 `high_nonreturn_token: 1 -> 0`，不是全局 E5：\(p=13\) 的低 chart 链有
+连续正相位，说明 high 条件不可删；RESET、重新锚定、same-chart support promotion 和
+外部调度也仍在令牌范围外。
+
+零相位也已被精确拆开：\(h=0,c>1\) 时 \(K\) 不变而
+\[
+\Omega(K/A_T)=\Omega(K/A)-\Omega(c),
+\]
+故严格支付；\(h=0,c=1\) 才是完整 charged checkpoint 的 macro self-loop。将其在
+terminal/alternate 检查后以 capability-aware bundle digest 抑制，并令 \(T\) 记录正相位
+是否已消费，则
+\[
+(T,\Omega(K/A))
+\]
+在所有非平凡 direct cofactor 宏步上按字典序严格下降。该 phase 的非平凡深度至多
+\(2\lfloor\log_2(p-1)\rfloor+1\)。\(p=1201\) 的 \(c=28\) 回返给
+\(\Omega:6\to3\)，而 \(p=97\) 给出真实的 \(c=1\) 自环，说明两种情形均不可省略。
+
+这个 exit 接口现已进一步收口。对任一 charged state 定义
+\[
+\Lambda_p=\left(\left\lfloor\frac{B_p}{A}\right\rfloor,\Omega(K/A)\right).
+\]
+所有非停顿 direct cofactor 宏步都严格降低它：正相位与盒内严格零相位降低第一坐标，
+盒外严格零相位固定 \(K\) 并降低第二坐标。更重要的是，任何已有 E1--E4 且显式
+\(\Pi_p(A_T)<\Pi_p(A_S)\) 的外层边都可重置 token、bundle cursor 与 direct epoch；
+8 条 fixed-\(n\)/fixed-\(s\) `support_reset_paid` 正属于这一类，不再是未付款的
+token exit。\(p=73\) 的只读回放还确认：唯一落到 \(A<p\) 的 paid target 是
+\((A,R)=(18,71)\)，仍为低锚点；当前强制 bundle 菜单没有制造实际的正相位重入。
+
+因此现在的缺口更窄：direct cofactor candidate 仍缺逐边 E1--E4/parent-lift 与存在性，
+而未付款 forgetful RESET、fresh-root 重用、noncanonical carrier、以及 capability-changing
+\(c=1\) action 仍不能进入递归。后者必须由规范有限 action menu、独立 capability
+rank 或更高 equation rank 处理；\(p=73\) 的 \(132\to330\to132\) 仍是禁止免费重入的
+精确反例。详见
+[高锚点 charged r-图表的三相非回返窗口](../claims/type-I-high-anchor-three-phase-nonreturn-window.md)
+、[高锚点 direct cofactor 宏步的 token-Omega 良基秩](../claims/type-I-high-anchor-direct-cofactor-lexicographic-rank.md)
+、[高锚点 direct cofactor 与外层支撑秩重置的词典序拼接](../claims/type-I-high-anchor-cofactor-outer-rank-composition.md)
+和 [高锚点正相位 token 的 canonical checkpoint 传播合同](../claims/type-I-high-anchor-token-canonical-checkpoint-propagation.md)。
+
+## 2026-08-06 高锚宏回放、有限 c=1 菜单与正相位终端边界
+
+上段“缺 E1--E4/parent-lift 与全局 E5”的表述必须按边形状区分。旧 selector 的
+\(S\to T\) cofactor receipt 把 transient overflow 当作 source，因而仍只是局部
+candidate；但正确的 high-\(R\) 对象是
+
+\[
+P\longrightarrow H
+\Longrightarrow S
+\longrightarrow T,
+\]
+
+其中 parent 精确结束于 charged high anchor \(H\)，bundle 从 \(H\) 确定性生成
+transient \(S\)，递归候选才是持久的 \(H\to T\) 宏。新的
+[宏 E1--E4 准入合同](../claims/type-I-high-anchor-cofactor-macro-e1-e4-admission.md)
+显式绑定 \(p\nmid R\)、完整 parent receipt digest、adapter/verifier version、
+\(\operatorname{Sol}(p)\) 的 \(T\to H\) 恒等提升，以及 F/G 的 typed fiber
+证书。它不放宽旧 `S -> T` registry，也不允许 terminal-first 被绕过。
+
+独立宏回放器现已在两个不同相位上重算完整 E1--E5：\(p=1201\) 的
+F-to-F-to-F 零相位给出
+\[
+\Lambda_{1201}:(365,6)\longmapsto(13,3),
+\]
+而 \(p=60913\) 的 G-to-G-to-F \(h=2\) 宏给出
+\[
+\Lambda_{60913}:(49743,1)\longmapsto(16581,3).
+\]
+这两张是 `verified_macro_replay`，但仍保持 `analysis_evidence`：
+它们都有更高优先级的 Type I terminal leaf，且尚未把宏 verifier 注册进统一 selector。
+因此结果闭合的是真实宏边的 E1--E5 账本，不扩大困难核心的覆盖计数。
+
+对唯一没有被 \(\Lambda_p\) 数值坐标严格支付的 \(h=0,c=1\) checkpoint，
+[有限 action 菜单耗尽合同](../claims/type-I-high-anchor-direct-c1-finite-menu-exhaustion.md)
+给出第三坐标
+\[
+\Xi=\left(\Pi_p(A),\Omega(K/A),\sigma\right),
+\qquad
+\sigma=\#\{\hbox{冻结但尚未耗尽的 action}\}.
+\]
+算术标签由 \(u\mid A\)、\(r=(K/A)u\)、\(C=A/u\) 完全分类，至多有
+\(\tau(A)\) 个；但 provenance action 只有在 registry、parent、terminal/alternate
+菜单和 verifier version 均冻结后才可耗尽。H1 的 complete-excess v1 给出 singleton，
+H2 性质则不唯一：\(p=73,R=159\) 有 \(Q_\ast=79\) 与另一 H2 admissible
+\(Q'=158\)。\(p=1657\) 进一步显示 partial-excess 可产生不同的 c=1 回返，故不能
+静默合并。未证明 action 必须保留为 `UNRESOLVED_ACTION`，不能伪造耗尽。
+
+正相位的短终端路线则被精确限界。写 \(q=h+1\)、\(e=c-q\)，有
+\[
+c\,d_T=d+pe,\qquad n_T=n+4Ae\equiv1\pmod4.
+\]
+当 \(e=0\) 时恰是既有 fixed-\(n\) shadow；当 \(e\ge1\) 时 \(n_T>p\)，不能直接
+进入 Bradford \(3\bmod4\) gap 或现有偶 dyadic predecessor 接口。\(p=1201\) 的
+\(h=1,2\) 算术 normal forms 同时遗漏 gap \(3,7,11,15,19\)，首个 Type I 命中为
+gap \(23\)。这否定“正相位本身强迫很小 terminal”的捷径，不构成来源或递归反例。详见
+[正相位余量终端接口边界](../claims/type-I-high-anchor-positive-phase-terminal-boundary.md)。
+
+当前不能注册 `high_anchor_cofactor_macro_replay_v1`：它还不是具 terminal-first
+dispatch 的 state-to-decision normal form。此前的 `charged_history_only`
+\(p=409,A=5\) 行已确认为 noncanonical low-anchor 控制，不能补作 high-macro parent；
+若继续研究它，必须另建 noncanonical-low-anchor adapter。任何宏的 \(c=1\) 分支仍须
+接入冻结 action 菜单，不能以内容相同的 arithmetic chart 作为跳过 E5/E4 的理由。
+
+## 2026-08-06 高锚宏的可达性 atlas 与最小正相位固定 n pivot
+
+宏回放的两个控制例不能误读为现有递归骨架的覆盖。对冻结 selector 工件递归抽取的
+76 个 verified-edge occurrence，只有 51 个是严格的 verified-parent high canonical
+anchor（31 个不同 \((p,R,A)\)）。它们都可重放 high-\(R\) complete-excess bundle，
+但全部在精确 gate
+
+\[
+\frac{A}{(A,C)}\mid r
+\]
+
+失败：35 个因 \(a=A/(A,C)>r\) 失败，余下 16 个虽有 \(a\le r\) 但 \(a\nmid r\)。
+因此冻结的 verified-parent
+atlas 中没有任何可定义持久 \(H\to T\) 的 high-cofactor 宏候选；这是一张有限工件
+边界，不是否定新来源的全称定理。更严格地，对其中 13 个具有可付款同图表单调支撑提升的
+anchor，49 个 \(A\mid L\mid K,\ A<L\le B_p\) 候选仍全部 gate-fail。它排除了
+“先做一条保留旧 charged-support 链的 same-chart promotion 就可救活 gate”的捷径；
+非整除的 paid support reset 则须单独考察，不能从这张单调 atlas 推断。
+
+该单独 atlas 现也已完成：31 个高锚中 25 个有非整除 reset，形成 162 个候选、135 个
+严格 \(\Pi_p\)-付款 reset。唯一的随后 gate 命中为
+
+\[
+(p,R,K;A,L)=(409,511,52250;250,2090),\qquad
+\Pi_{409}:166\longrightarrow19,
+\]
+
+其 bundle 满足 \(Q=51,M=106590,C=209,r=250\)，但 cofactor target 恰回到
+reset 后的 \((409,511,52250;2090)\)，即 \(h=0\) exact self-loop。故这张有限 atlas
+没有给出 gate-rescue 后的第二条严格 direct cofactor 推进；它既不排除新来源，也不能只靠
+补 E1--E5 把现有唯一命中变成递归边。
+
+这也澄清了此前 \(p=409,A=5\) 的 charged_history_only 控制：其
+
+\[
+(R,K;A)=(251,25665;5)
+\]
+
+不是 \(A=5\) 的 canonical chart（后者是 \((11,1125)\)），且低于 high-anchor
+窗口。它既不能拿来补 high macro 的 parent，也不能由一条以其为 source 的 fixed-\(n\)
+edge 倒推 predecessor。若要继续研究该行，需要一个独立的 noncanonical-low-anchor
+adapter，而不是放宽当前 high-anchor 或 generic \(S\to T\) verifier。
+
+另一方面，最小正相位现在不再只是没有出口的 fixed-\(n\) shadow。完整 direct
+\(r\)-chart 条件 \(1\le r,C<p\) 下，若 \(h\in\{1,2\}\)、
+\(e=c-(h+1)=0\)，则
+
+\[
+5\le n\le p-4,\qquad d_T\ge2,\qquad
+L=A_Td_T=\frac{pn-1}{4}
+\]
+
+强制给出 fixed-\(n\) bounded-divisor pivot，且
+
+\[
+\Pi_p(L)<\Pi_p(A_T),\qquad
+R_L=(p-1)n-1>p.
+\]
+
+所以一旦 \(T\) 已带 terminal-first 后的完整 E1--E4 receipt，第二段是已有的严格
+付费后继。这里 \(C<p\) 不可省略：\(p=73,A=82,h=1,C=164\) 的形式 high chart 有
+\(d_T=1\)，恰好破坏严格 pivot。该桥补的是最小正相位的后继算术，不补第一段宏的
+parent、typed lift 或 dispatcher。
+
+full-excess gate 现在有可反向使用的精确构造目标。若
+\[
+a=\frac{A}{(A,C)},\qquad M=kp+r,\quad0<r<p,
+\]
+则
+\[
+a\mid r\quad\Longleftrightarrow\quad a\mid k.
+\]
+特别地，当 \(qA<p\) 时，
+\[
+C=qA\quad\Longleftrightarrow\quad4qAM\equiv1\pmod p,
+\]
+并自动有 \(a=1\) 与 gate 通过。\(p=3793,q=2\) 和 \(p=60913,q=3\) 是冻结控制；
+这是新来源的可检索算术设计模板，不补 parent provenance、local F/G、terminal-first
+或宏闭包。
+
+这个模板现可进一步反向化。写 \(K=AB\)、\(Q\) 为 complete-excess、并令
+\(t=Q/(A,Q)\)，则 \(M=At\)，且 \(C=qA\) 等价于
+
+\[
+4qA^2t\equiv1\pmod p
+\quad\Longleftrightarrow\quad
+qAt\equiv B\pmod p.
+\]
+
+严格 support growth 时 high window 强制 \(q\in\{2,3\}\)。若 \(B\equiv1\pmod q\)，
+automatic target 的相位恰为 \(h=q-1\)，故 \(q=2,3\) 分别自动接入已知的
+\(h=1,2,e=0\) fixed-\(n\) pivot 算术。更窄的 \(Q=R-1,(A,R-1)=1\) 子族中，令
+\(R=p+\delta\)，则
+
+\[
+\delta\equiv1+(4qA^2)^{-1}\pmod p
+\]
+
+在 \(0<\delta<4A-p\) 的 high window 内至多有一个候选；只需再检查
+\(4A\mid p(p+\delta)+1\)、complete-excess 和互素条件。两条控制均满足这一模板，
+但都有 terminal-first Type I 叶。这里的互素条件只定义一个方便的充分子族；完整
+excess 的正确判据是逐素数幂严格超过 \((p+1)/2\) 的赋值，不能误收紧为互素。
+
+fresh root 的入口也已被固定。若一个 core root 的第一次 complete-excess rechart 已进入
+高锚，写 \(R_0-1=A\beta_0\)，则 \(\beta_0\in\{1,2\}\)。第一根型
+\(\beta_0=1\) 强制高锚 \(R\equiv7\pmod8\)，故不可能有第二 bundle
+\(Q_1=R-1\)；two-anchor automatic-q 来源必须从 \(\beta_0=2\) 开始。后者仍非充分：
+\(p=97,A=39\) 是高锚但 \(Q_1=59\ne118\)。第二 bundle 的精确门是
+\[
+Q_1=R-1
+\quad\Longleftrightarrow\quad
+R\equiv3\pmod8,\quad
+\ell^e\parallel(R-1)/2\Longrightarrow e>\nu_\ell((p+1)/2)
+\]
+对每个奇素数幂 \(\ell^e\) 成立；\(p=409\) 和 \(p=1033\) 的共享奇因子控制证明互素不是
+必要条件。两条 automatic-q 控制又都在 \(p\equiv97\pmod{168}\)，所以可由固定的
+gap-7 Type II prefix 直接抢占。这把“找新来源”收缩为定向的、带 terminal-prefix
+预筛的因子条件，不是已有的全称存在性定理。
+
+reset 的唯一命中也已有精确归因。对 gate-pass reset 写
+\(L=ga,C=gc,r=au,K=LB\)，则 target support 为 \(Lc\)，
+\[
+h=(uc-B)/p.
+\]
+exact reset-state self-loop 当且仅当 \(C\mid L\)。所以 \(p=409\) 的命中是
+\(c=1\) 的特殊子情形；固定 \(p=1201\) 的 \(560\to986\) 非整除、严格付款
+chart-return 控制有 \(h=0,c=28\) 和 target support \(27608\)，明确排除了
+“gate 命中必为 reset-state 自环”的误读。
+
+另有 11 条 `overflow_same_chart_support_promotion_v1` high parent 已被包装为
+content-addressed、有限 scope 的 parent envelope；v2 replay 还将每一张 envelope 与输入
+工件 SHA-256 和原 receipt digest 重新绑定，并拒绝篡改。所有 11 条仍 gate-fail，且没有
+local H/S/T fiber 或 priority receipt，所以注册 selector edge 与完整 macro E4 的数量都为零。
+
+最后，宏即使 E1--E5 全真，也必须先具备 version/hash 绑定的 terminal-first priority
+prefix：持久 anchor \(H\) 与 transient \(S\) 都要无更高优先输出，\(T\) 只能以
+pending_dispatch 入队并在扩展前重新经过同一菜单。当前 selector 仍是静态结果汇编，
+不能只修改 recursive_edge_eligible。\(p=3793\) 与 \(p=60913\) 已有 fresh-root
+到 automatic gate 高锚的专用控制链，但均被 terminal-first 叶正确抢占，且已明确命中
+gap-7 Type II prefix。因此下一项主工作是构造满足以下**全部**条件的新来源：
+\(\beta_0=2\)、第二锚 strict-valuation full-excess、automatic-q high-window、未命中
+已记录的有限 terminal prefix，并同时完成 parent API、typed lift、priority guard 和 E5。
+prefix miss 只是必要初筛，不可被误报为非终端。若研究 reset，则必须先得到非自环、严格
+付款的 gate 命中，再讨论 reset 的完整合同。
