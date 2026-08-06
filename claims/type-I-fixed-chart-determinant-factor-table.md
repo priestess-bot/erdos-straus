@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-fixed-chart-determinant-factor-table
 title: 固定 Type I 图表的完整因子对 determinant 表与 carry 边界
-statement: 固定素数 p 与正规图表 pR+1=4K。所有满足 pn=4Md+1、0<d<p、n>0 且 4M-n=R 的 Type I determinant 行，恰与有限集合 W_det(p,R)={M|K: 1<=K/M<p,4M>R} 双射；对应式为 C=K/M、d=p-C、n=4M-R。故任何只列两个线性块 U°、V° 的模型都不是同图表全部 determinant 行的物理表。p=73,R=11,K=201 中 M=3 与 M=201 在 U(11) 的所有角色相位相同，但取 ledger A=3 后 E2 的带账本 carry/cofactor 前置门分别通过和失败，严格证明相位/两块不能替代实际 M carry。在线性式 p=a+s+asR 中恒有 R<p，故此完整表仅属 low rechart，不能直接成为 overflow source-lift 或 E1--E5 递降。
+statement: '固定素数 p 与正规图表 pR+1=4K。所有满足 pn=4Md+1、0<d<p、n>0 且 4M-n=R 的 Type I determinant 行，恰与有限集合 W_det(p,R)={M|K: 1<=K/M<p,4M>R} 双射；对应式为 C=K/M、d=p-C、n=4M-R。故任何只列两个线性块 U°、V° 的模型都不是同图表全部 determinant 行的物理表。p=73,R=11,K=201 中 M=3 与 M=201 在 U(11) 的所有角色相位相同，但取 ledger A=3 后 E2 的带账本 carry/cofactor 前置门分别通过和失败，严格证明相位/两块不能替代实际 M carry。在线性式 p=a+s+asR 中恒有 R<p，故此完整表仅属 low rechart，不能直接成为 overflow source-lift 或 E1--E5 递降。'
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review

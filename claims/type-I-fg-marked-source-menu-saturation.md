@@ -19,7 +19,9 @@ topics:
   - SNF
   - q-primary
   - proof-program
-sources: []
+sources:
+  - claim: type-II-raw-finite-abelian-source-lift-snf
+    role: finite-abelian-labelled-character-SNF
 visibility: public
 last_checked: '2026-08-06'
 ---

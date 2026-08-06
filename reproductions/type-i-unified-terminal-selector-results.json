@@ -59,11 +59,24 @@
       "certificate_type": "generalized_dyadic_terminal",
       "j": 1,
       "lift_status": "unproved",
+      "normalized_j_one_witness": {
+        "a": 18526,
+        "b": 130141,
+        "j": 1,
+        "two_adic_budget_upper_bound": 2
+      },
       "phase": "TERMINAL_FIRST",
       "prime": 253788649,
       "proof_boundary": "arithmetic_terminal_only",
       "recursive_edge_eligible": false,
       "selector_status": "analysis_evidence",
+      "source_provenance": {
+        "raw_generalized_dyadic_witness": {
+          "a": 18526,
+          "b": 130141,
+          "j": 1
+        }
+      },
       "state_class": "hit",
       "terminal": {
         "E": 343212676,
@@ -117,7 +130,7 @@
     "fixed_layer_quotient_fourier"
   ],
   "source_sha256": {
-    "type-i-fixed-layer-stabilizer-fourier-results.json": "e14b4e10e6f0f51d730066f85edc3c38d44c80da1095a8b98c3412156cc4fb22",
+    "type-i-fixed-layer-stabilizer-fourier-results.json": "e00071c2d4496a0ceda3c3cb9810de7adb7875af0eeb828c75ffeab14a37c6d4",
     "type-i-linear-target-fiber-dyadic-non-near-profile-600m-results.json": "17435209277da27774fece412d89e7e93503f7809978a748128e1946efcf98f9",
     "type-i-linear-target-fiber-neighbor-profile-600m-results.json": "9de9af84928e2837a717f1d6174a6a178997f30553edf770bebbbd976d3e6d31"
   }

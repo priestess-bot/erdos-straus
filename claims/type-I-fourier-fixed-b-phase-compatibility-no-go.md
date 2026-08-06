@@ -8,6 +8,7 @@ proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-fourier-qprimary-phase-lift-capacity-dichotomy
+  - type-I-f-target-involution-fourier-phase-collapse
   - type-I-f-denominator-clearing-qadic-lift-contract
   - type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction
 topics:
@@ -29,7 +30,7 @@ sources:
   - claim: type-I-f-qadic-numerator-lift-rigidity-and-gcd-reduction
     role: fixed-B-gcd-absorption
 visibility: public
-last_checked: '2026-08-05'
+last_checked: '2026-08-07'
 ---
 
 # Fourier 与固定 \(B\) 清分相位的冲突—非互素吸收二分
@@ -73,6 +74,13 @@ s\equiv\gamma_F\pmod {q^e}
 
 作为所选 source map 的 phase-lift 条件。式 (4) 是独立的算术映射假设；Fourier
 角色本身只产生 \(\gamma_F\)，不自动推出它等于 (3)。
+
+这里的 \(\gamma_F\) 是一个由 source map 已经指定的**一般 Fourier-side 标签相位**，并不
+自动等于直接目标 \(-1\) 的 q-primary 预像相位。后者在 F 型目标对合下对奇 \(q\) 恒为
+零，而 (3) 的 \(\gamma_B\) 是单位；因此若使用的是 direct-target 相位，完整相等分支
+(6) 对奇 \(q\) 不可达，只能得到冲突或 `SOURCE_UNCLOSED`。要进入 (6)，必须先给出
+锚定或仿射重编码的独立偏移，而不能把它归因于目标 Fourier 相位本身。详见
+[F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](type-I-f-target-involution-fourier-phase-collapse.md)。
 
 ## 2. 精确三分
 

@@ -47,6 +47,14 @@ def valuation_two(value: int) -> int:
     return (value & -value).bit_length() - 1
 
 
+def normalize_dyadic_j_one_pair(a: int, b: int, j: int) -> tuple[int, int]:
+    """Reduce 2^(1-j) a/b to the unique positive j=1 divisor pair."""
+    if a <= 0 or b <= 0 or j < 1:
+        raise ValueError("invalid generalized dyadic pair")
+    normalized = Fraction(a, b * (2 ** (j - 1)))
+    return normalized.numerator, normalized.denominator
+
+
 def residue_power(base: int, exponent: int, modulus: int) -> int:
     if exponent >= 0:
         return pow(base, exponent, modulus)
@@ -199,6 +207,24 @@ def dyadic_certificate(
     ):
         raise AssertionError("dyadic terminal arithmetic failed")
 
+    normalized_a, normalized_b = normalize_dyadic_j_one_pair(a, b, j)
+    if (
+        math.gcd(normalized_a, normalized_b) != 1
+        or L % normalized_a
+        or L % normalized_b
+        or (normalized_a - 2 * normalized_b) % modulus
+        or not normalized_a < 2 * normalized_b
+    ):
+        raise AssertionError("dyadic j=1 normalization is not a legal divisor pair")
+    normalized_budget = (
+        lambda_two + valuation_two(normalized_a) - valuation_two(normalized_b)
+    )
+    if normalized_budget < 1:
+        raise AssertionError("dyadic j=1 normalization lost its two-adic budget")
+    normalized_E = Fraction(L * normalized_a, normalized_b)
+    if normalized_E.denominator != 1 or normalized_E.numerator != E:
+        raise AssertionError("dyadic j=1 normalization changed the terminal")
+
     return {
         "certificate_type": "generalized_dyadic_terminal",
         "selector_status": "analysis_evidence",
@@ -220,6 +246,15 @@ def dyadic_certificate(
             "alpha": alpha,
             "beta": beta,
             "upper_bound": lambda_two + alpha - beta,
+        },
+        "normalized_j_one_witness": {
+            "a": normalized_a,
+            "b": normalized_b,
+            "j": 1,
+            "two_adic_budget_upper_bound": normalized_budget,
+        },
+        "source_provenance": {
+            "raw_generalized_dyadic_witness": {"a": a, "b": b, "j": j},
         },
         "terminal": {
             "E": E,

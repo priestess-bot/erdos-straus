@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-fixed-layer-stabilizer-defect-reduction
 title: 固定层稳定子缺陷约化
-statement: 设 K=N product q_i^{b_i} 且固定层 J=C_R(N) 不要求为子群。令 H 为 K 的素因子残数生成子群，P=Stab_H(J)，并投影到 H/P。则 P subset J，pi(J) 无周期，pi(C_R(K))=pi(J) product_i pi(S_i^+/-)，且固定目标的指数表示数满足 N_J(t)=N_bar_pi(J)(pi(t))；整层 Fourier 系数在 P^perp 上为 |P| 倍、在其外为零。因此 F 缺失可限制到 quotient characters，并把非平凡谱阈值从 |H|-1 收紧为 |H/P|-1。在 -1 属于 H 时，-1 属于 C_R(K) 当且仅当 pi(-1) 属于该投影积集。若 -1 不属于 H，应先分出 G 型支撑障碍。
+statement: 设 H 为有限单位子群且固定层 J subset H 含单位元，P=Stab_H(J)。则 P subset J、pi(J) 无周期，并且任意残余乘积 J product_i S_i 在 H/P 中保持精确成员关系、固定目标表示数和 Fourier 系数的稳定子约化。当 J=C_R(N) 是中心化固定层时，该乘积就是 C_R(K)，故 F 缺失可限制到 quotient characters，并把非平凡谱阈值从 |H|-1 收紧为 |H/P|-1。若 -1 不属于 H，应先分出 G 型支撑障碍。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -24,33 +24,42 @@ sources:
   locator: Propositions 1--4
   role: Type-I-terminal-selector-context
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-07'
 ---
 
 # 固定层稳定子缺陷约化
 
 ## 设置
 
-设 $R$ 为奇数，
+先给出任意固定层的有限群版本。设 $R$ 为奇数，
+
+\[
+H\le(\mathbb Z/R\mathbb Z)^\times,
+\qquad 1\in J\subseteq H,
+\qquad S_i^{\pm}=\{q_i^z:-b_i\le z\le b_i\}\subseteq H,
+\]
+
+并令
+
+\[
+\mathcal P_J=J\prod_{i=1}^{k}S_i^{\pm}.
+\tag{1}
+\]
+
+中心化 Type I 应用是下列特殊情形：
 
 \[
 K=N\prod_{i=1}^{k}q_i^{b_i},
+\qquad
+H=\left\langle q:q\mid K\right\rangle,
+\qquad
+J=\mathcal C_R(N).
 \]
 
-其中 $q_i$ 是固定层 $N$ 以外的不同素数。令
+此时 $q_i$ 是固定层 $N$ 以外的不同素数，并且
 
 \[
-H=\left\langle q:q\mid K\right\rangle\le(\mathbb Z/R\mathbb Z)^\times,
-\qquad
-J=\mathcal C_R(N),
-\qquad
-S_i^{\pm}=\{q_i^z:-b_i\le z\le b_i\}.
-\]
-
-指数坐标的直接分解给出
-
-\[
-\mathcal C_R(K)=J\prod_{i=1}^{k}S_i^{\pm}.
+\mathcal C_R(K)=\mathcal P_J.
 \]
 
 这里不假设 $J$ 是子群；通常它只是含单位元的对称有限子集。
@@ -72,16 +81,19 @@ P=\operatorname{Stab}_H(J)=\{h\in H:hJ=J\},
    $\operatorname{Stab}_{H/P}(\pi(J))=\{P\}$；
 3. 投影保持积集恒等式：
    \[
-   \boxed{\pi(\mathcal C_R(K))
+   \boxed{\pi(\mathcal P_J)
    =\pi(J)\prod_i\pi(S_i^{\pm}).}
    \]
 4. 若 $-1\in H$，则目标成员关系精确保留：
    \[
    \boxed{
-   -1\in\mathcal C_R(K)
+   -1\in\mathcal P_J
    \Longleftrightarrow
    \pi(-1)\in\pi(J)\prod_i\pi(S_i^{\pm}).}
    \]
+
+在中心化应用 $J=\mathcal C_R(N)$ 中，第三、四项的 $\mathcal P_J$ 可分别替换为
+$\mathcal C_R(K)$。
 
 若 $-1\notin H$，第四项不适用；该状态先归入 G 型支撑障碍，不能在商群中写成
 一个不存在的 $\pi(-1)$。
@@ -99,7 +111,7 @@ $x=x\cdot1\in xJ=J$，故 $P\subseteq J$。稳定子定义也给出 $JP=J$。
 因此投影后的固定层无周期，第二项成立。
 
 最后，
-\(\mathcal C_R(K)=J\prod_iS_i^{\pm}\) 是 $P$-周期集，因为 $P$ 稳定 $J$。
+\(\mathcal P_J=J\prod_iS_i^{\pm}\) 是 $P$-周期集，因为 $P$ 稳定 $J$。
 一个元素是否属于该集合完全由它在 $H/P$ 中的像决定，故得到第四项。
 证毕。
 
@@ -180,11 +192,11 @@ A_J(\chi)=\left(\sum_{j\in J}\chi(j)\right)
 
 ### 聚焦算术回执
 
-对
+下面先记录一个**一侧固定层切片**的有限群控制，而不是把它误作中心化固定层的回执。对
 
 \[
 (p,R,K)=(193,63,3040),\qquad K=608\cdot5,\qquad
-J=\mathcal C_{63}(608),\qquad P=\{1,2,4,8,16,32\},
+J=\mathcal A_{63}(608):=\{d\bmod63:d\mid608\},\qquad P=\{1,2,4,8,16,32\},
 \]
 
 有 \(|H|=36\)、\(|H/P|=6\)、\(|J|=12\)、\(|\bar J|=2\)。取 residual block
@@ -199,7 +211,16 @@ J=\mathcal C_{63}(608),\qquad P=\{1,2,4,8,16,32\},
 python3 reproductions/type_i_fixed_layer_stabilizer_fourier.py --verify
 ~~~
 
-生成；它逐个目标元素核验 (7)、商群无周期、F 缺失和 Fourier 下界。
+生成；它逐个目标元素核验 (7)、商群无周期和该切片的目标缺失/Fourier 下界。因为
+\(\mathcal A_{63}(608)\prod\{5^{-1},1,5\}\subsetneq\mathcal C_{63}(3040)\)，该脚本的
+`J`、计数向量和阈值**不能**被引用为中心化分解 \(\mathcal C_R(K)=J\prod S_i^{\pm}\) 的
+数值回执；它是一个实际 F 状态上的 slice-local 对偶控制。
+
+同一 $p=193$ 的中心化控制可取
+\(J=\mathcal C_{63}(608)\)，得到 \(|J|=18\)、商表示向量
+\((3,2,1,0,1,2)\) 和目标计数零。该完整中心化实例及其 target-odd 能量由
+`reproductions/type_i_f_target_involution_fourier.py --verify` 单独重算，详见
+[F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](type-I-f-target-involution-fourier-phase-collapse.md)。
 
 ## 统一选择器中的 typed 对偶回执
 
@@ -226,7 +247,7 @@ recursive_edge_eligible = false
 但不能单独进入递归图。只有后续另行通过 E1--E5、给出全域解提升和严格势下降，才可
 把它连接到 `support_switch`、`q_adic_lift` 或 `verified_edge`。
 
-在聚焦状态中，typed 载荷为
+在上述一侧切片控制中，typed 载荷为
 
 ```text
 certificate_type = fixed_layer_quotient_fourier
@@ -309,7 +330,7 @@ recursive_edge_eligible = false
 否则它仍是 `analysis_evidence`。这一区分避免把“角色阶小”错误解释为“载体高度大”，
 也把下一步的跨状态桥明确成一个可检验的映射命题。
 
-在聚焦回执 \((p,R,K)=(193,63,3040)\) 中，所选原始角色的商阶为
+在一侧切片回执 \((p,R,K)=(193,63,3040)\) 中，所选原始角色的商阶为
 \(d_5=6\)、\(b_5=1\)，因而
 
 \[

@@ -10,8 +10,10 @@ depends_on:
   - type-I-target-fiber-neighbor-terminal
   - type-I-target-fiber-neighbor-dyadic-normalization
   - type-I-general-dyadic-terminal-transfer
+  - type-I-generalized-dyadic-j-one-terminal-normalization
   - type-I-generalized-dyadic-natural-lift-equivalence
   - type-I-fixed-layer-stabilizer-defect-reduction
+  - type-I-f-target-involution-fourier-phase-collapse
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -33,7 +35,7 @@ sources:
 - claim: type-I-fixed-layer-stabilizer-defect-reduction
   role: quotient-dual-evidence
 visibility: public
-last_checked: '2026-08-06'
+last_checked: '2026-08-07'
 ---
 
 # Type I 终端优先的近邻—广义二进—对偶统一选择器合同
@@ -52,7 +54,7 @@ last_checked: '2026-08-06'
 
 1. 已有直接 Type I/II 命中；
 2. 目标指数纤维中的逐坐标近邻对；
-3. 未被近邻回执规范化的广义 \(2^j\) 除子比值碰撞；
+3. 未被近邻回执规范化、并已压缩到 \(j=1\) 终端正规形的广义二进除子比值碰撞；
 4. 固定层稳定子商上的规范 Fourier/格对偶证书。
 
 前两类是算术偶前驱接口，第四类是对偶分析接口。选择顺序不把“有一个较小偶数”
@@ -134,6 +136,21 @@ n=(2L-E_j)/R.
 \(E_j\equiv1\pmod R\)、\(0<n<p\) 和 \(2\mid n\)，并保存同一个标准偶方程解。
 回执为 `certificate_type=generalized_dyadic_terminal`，但在没有非空标记集和全域提升
 之前仍为 `analysis_evidence`，不得登记 `verified_edge`。
+
+在自由除子对终端层，批量分派器应把
+
+\[
+2^{1-j}\frac ab=\frac{a^\sharp}{b^\sharp}
+\]
+
+约为既约正分数，并重验 \((a^\sharp,b^\sharp,1)\) 的整除、同余、定向与二进预算。
+它保留同一 \((E,n)\)，所以批量终端去重和后续搜索只需使用 \(j=1\)；原始 \(j>1\) 三元组仅
+作为 `source_provenance` 保存。当前
+`type_i_unified_terminal_selector.py` 是单条规范回执验证器：它序列化原始三元组及其
+归一形，但不声称已经实现跨候选的批量去重。真正的批量分派器必须以
+\((p,R,K,E,n)\) 为键、按 terminal-first 优先级合并候选，同时保留被合并候选的来源。
+此归一化不把独立 divisor-ratio 终端伪称为目标纤维近邻，也不补足全域提升。详见
+[广义二进偶终端的唯一 \(j=1\) 归一化与二进盒外边界](type-I-generalized-dyadic-j-one-terminal-normalization.md)。
 
 对 finite-exponent F 状态，若采用自然分母 \(\alpha=nK/E_j\)，已有等价定理说明其
 非空标记源恰等价于当前中心 Type I 命中。因此这类回执不能绕过 F 缺口；必须改用

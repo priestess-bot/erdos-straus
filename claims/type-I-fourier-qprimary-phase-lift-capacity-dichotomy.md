@@ -2,13 +2,14 @@
 kind: claim
 claim_id: type-I-fourier-qprimary-phase-lift-capacity-dichotomy
 title: Fourier q-primary 相位到算术载体的有限提升—容量二分
-statement: 对每个固定层约化后的 F 型状态，规范角色的任意 q-primary 分量都给出一个良定义的目标相位 gamma_i (mod q^{e_i})。若外部算术选择器提供满足该相位同余的有界整数载体标签，则所有状态的 q-height 需求满足相位树容量上界；若有限候选标签表没有这样的局部或联合提升，则输出可验证的 FOURIER_PHASE_NO_LOCAL_LIFT 或 FOURIER_PHASE_ASSIGNMENT_DEFICIT。Fourier 分母本身不等于 q 进高度，因而本二分不声称全称载体存在或递降闭合。
+statement: 对每个固定层约化后的 F 型状态，若目标 tau=pi(-1) 属于残余指数映射的像，则规范角色的任意 q-primary 分量都给出一个良定义的无界目标预像相位 gamma_i (mod q^{e_i})。若外部算术选择器提供满足该相位同余的有界整数载体标签，则所有状态的 q-height 需求满足相位树容量上界；若有限候选标签表没有这样的局部或联合提升，则输出可验证的 FOURIER_PHASE_NO_LOCAL_LIFT 或 FOURIER_PHASE_ASSIGNMENT_DEFICIT。Fourier 分母本身不等于 q 进高度，因而本二分不声称全称载体存在或递降闭合。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-f-g-fourier-obstruction-certificate
   - type-I-fixed-layer-stabilizer-defect-reduction
+  - type-I-f-target-involution-fourier-phase-collapse
   - type-I-phase-clearing-cell-capacity-contract
   - type-I-linear-hybrid-label-modulus-q-adic-capacity
 topics:
@@ -30,7 +31,7 @@ sources:
   - claim: type-I-phase-clearing-cell-capacity-contract
     role: q-adic-capacity-template
 visibility: public
-last_checked: '2026-08-05'
+last_checked: '2026-08-07'
 ---
 
 # Fourier q-primary 相位到算术载体的有限提升—容量二分
@@ -47,7 +48,9 @@ last_checked: '2026-08-05'
 \Lambda_i=\ker\bar\phi_i,
 \]
 
-并取目标纤维的一个指数代表 \(z_i^0\)。规范 Fourier 证书给出一个非平凡角色
+并在 \(\pi_i(-1)\in\operatorname{im}\bar\phi_i\) 时取满足
+\(\bar\phi_i(z_i^0)=\pi_i(-1)\) 的一个**无界群论预像** \(z_i^0\)。F 型的有界目标
+纤维是空的，故这里不能把 \(z_i^0\) 称为盒内目标表示。规范 Fourier 证书给出一个非平凡角色
 
 \[
 \bar\chi_i(\bar\phi_i(z))
@@ -256,3 +259,8 @@ phase lift，也未证明容量 surplus 必然满足 E1--E5 或产生良基下�
 phase lift 存在，也只会得到唯一的 \(q^e\) 标签类，并在约分时消除原 q 缺陷；
 相位不一致则给出精确冲突回执。详见
 [Fourier 与固定 B 清分相位的冲突—非互素吸收二分](type-I-fourier-fixed-b-phase-compatibility-no-go.md)。
+
+若此处的相位恰是直接目标 \(\pi(-1)\) 的预像相位，则它还有更强的二阶约束：奇
+\(q\) 必为零相位，二进至多两胞。这个特化不提供 source map，但排除了把奇 q 的直接
+目标相位误当作 fixed-\(B\) 清分相位的桥，详见
+[F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](type-I-f-target-involution-fourier-phase-collapse.md)。
