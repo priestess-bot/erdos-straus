@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Replay the fixed p=1009 c=3 non-p universal-source raw bypass.
 
-This is a local raw-transcript check.  It deliberately does not assign an
-initial phase mark, create a root, or register a selector edge.
+This is a local raw-transcript check.  It verifies the source-origin
+lineage phase mark, but deliberately does not create a root or register a
+selector edge.
 """
 
 from __future__ import annotations
@@ -24,7 +25,7 @@ def valuation(value: int, prime: int) -> int:
 
 
 def verify_bypass() -> dict[str, object]:
-    """Replay all six raw steps and record the phase mismatch explicitly."""
+    """Replay the bypass and its source-lineage phase transport."""
     h = 42
     p = 1009
     R = 104 * h - 9
@@ -33,7 +34,13 @@ def verify_bypass() -> dict[str, object]:
     K = M * x
     source = (p, R * (p - 1) - p, p - 1)
     expected_source = (1009, 4392863, 1008)
-    if source != expected_source or not shared.is_prime(p):
+    high_r_source = shared.high_R_universal_source(p, R)
+    if (
+        source != expected_source
+        or not shared.is_prime(p)
+        or high_r_source.get("source") != list(source)
+        or high_r_source.get("K") != K
+    ):
         raise AssertionError("p=1009 universal source changed")
     if shared.factorization(K) != [(2, 1), (503, 1), (1093, 1)]:
         raise AssertionError("p=1009 carrier factorization changed")
@@ -48,9 +55,12 @@ def verify_bypass() -> dict[str, object]:
     )
 
     rows: list[dict[str, object]] = []
-    phase = 1
+    p_line_index = 0
+    p_line = p
+    transport_product = 1
     phases: list[int] = []
-    for source_node, side, prime, destination, name in steps:
+    lineage: list[dict[str, int]] = []
+    for index, (source_node, side, prime, destination, name) in enumerate(steps):
         row = prime_entry.ordered_raw_step(
             modulus=R,
             K=K,
@@ -62,8 +72,28 @@ def verify_bypass() -> dict[str, object]:
         )
         if not row["strict_capacity"] or not row["unit_condition"] or row["gcd_reduction"] != 1:
             raise AssertionError(f"{name}: raw contract failed")
-        phase = phase * prime % R
-        phases.append(phase)
+        reduction = int(row["gcd_reduction"])
+        next_p_line_index = 0 if p_line_index == side else 1
+        next_p_line = destination[next_p_line_index]
+        if prime * reduction * next_p_line % R != p_line:
+            raise AssertionError(f"{name}: p-line transport changed")
+        transport_product = transport_product * prime * reduction % R
+        if transport_product * next_p_line % R != p:
+            raise AssertionError(f"{name}: accumulated p-line transport changed")
+        phases.append(transport_product)
+        lineage.append(
+            {
+                "step": index + 1,
+                "q": prime,
+                "gcd_reduction": reduction,
+                "source_coordinate_index": p_line_index,
+                "destination_coordinate_index": next_p_line_index,
+                "p_line": next_p_line,
+                "transport_product": transport_product,
+            }
+        )
+        p_line = next_p_line
+        p_line_index = next_p_line_index
         rows.append(row)
 
     if rows[-1]["destination"] != [x, R - x, 1]:
@@ -72,8 +102,18 @@ def verify_bypass() -> dict[str, object]:
         raise AssertionError("exact t=4 physical-row carrier changed")
     if phases != [349, 1232, 1342, 10, 20, 40]:
         raise AssertionError("bypass phase transcript changed")
-    if phases[3] == (-M) % R or phases[-1] == (-13) % R:
-        raise AssertionError("bypass unexpectedly satisfied the p-first phase contract")
+    if steps[0][2] == p or rows[0]["destination"] == [1, R - 1, 1]:
+        raise AssertionError("bypass unexpectedly became the canonical p-first path")
+    source_mark = (-pow(p, -1, R)) % R
+    normalized_phases = [source_mark * phase % R for phase in phases]
+    if source_mark * p % R != R - 1:
+        raise AssertionError("source mark no longer normalizes the ordered p-line")
+    if normalized_phases != [2393, 2215, 3269, 3266, 2173, 4346]:
+        raise AssertionError("source-lineage phase transcript changed")
+    if [row["p_line"] for row in lineage[-3:]] != [4 * x, 2 * x, x]:
+        raise AssertionError("bypass even-tail orientation changed")
+    if normalized_phases[-3:] != [(-M) % R, (-2 * M) % R, (-13) % R]:
+        raise AssertionError("source-lineage phase did not close the c=3 tail")
 
     return {
         "p": p,
@@ -86,7 +126,9 @@ def verify_bypass() -> dict[str, object]:
         "step_count": len(rows),
         "final_destination": rows[-1]["destination"],
         "raw_phases": phases,
-        "p_first_required_phases": {"t4": (-M) % R, "seed": (-13) % R},
+        "source_phase_mark": source_mark,
+        "source_normalized_phases": normalized_phases,
+        "p_lineage": lineage,
     }
 
 
@@ -133,8 +175,9 @@ def build_result() -> dict[str, object]:
     return {
         "certificate_type": "c3_p1009_universal_source_bypass_raw_receipt_v1",
         "scope": (
-            "One raw-source transcript and one p-first m=1 trap check only; "
-            "the result is not a root, E3 phase proof, selector edge, or descent."
+            "One raw-source transcript, source-lineage phase check, and one "
+            "p-first m=1 trap check only; the result is not a root, selector "
+            "edge, or descent."
         ),
         "bypass": verify_bypass(),
         "p_first_trap": verify_p_first_m_one_trap(),

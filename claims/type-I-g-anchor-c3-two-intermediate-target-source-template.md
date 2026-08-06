@@ -12,7 +12,7 @@ depends_on:
   - type-I-g-anchor-c3-affine-prime-target-source-template
   - type-I-g-anchor-full-q-complement-r11-reset-boundary
   - type-I-g-anchor-marked-raw-peeling-calculus
-  - type-I-universal-p-source-capacity-anchor-orbit
+  - type-I-overflow-cofactor-r-chart-support
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -35,8 +35,8 @@ sources:
     role: original-a7-b2-specialization
   - claim: type-I-g-anchor-marked-raw-peeling-calculus
     role: raw-transition-semantics
-  - claim: type-I-universal-p-source-capacity-anchor-orbit
-    role: canonical-p-source-formula
+  - claim: type-I-overflow-cofactor-r-chart-support
+    role: high-R-universal-p-source-lemma
   - concept: denominator-escape-state-contract
     role: E1-E5-admission-boundary
 visibility: public

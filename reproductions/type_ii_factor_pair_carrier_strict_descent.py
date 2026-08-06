@@ -200,6 +200,15 @@ PAIR_CONTROLS = (
         "descent": (6123, 572, 20724),
     },
     {
+        "name": "gap19_joint_residual_exit",
+        "p": 12721,
+        "m": 19,
+        "A": 1,
+        "B": 455,
+        "C": 7,
+        "descent": (3185, 168, 76440),
+    },
+    {
         "name": "gap23_adjacent_exit",
         "p": 937,
         "m": 23,
@@ -216,6 +225,7 @@ def verify_ratio_carriers() -> dict[str, object]:
     carriers = {
         "m7_F2": (7, 2),
         "m11_F9": (11, 9),
+        "m19_F35": (19, 35),
         "m23_F12": (23, 12),
     }
     for name, (modulus, carrier) in carriers.items():
@@ -225,6 +235,7 @@ def verify_ratio_carriers() -> dict[str, object]:
     negative_controls = {
         "gap11_q27_all_QR": (11, 81),
         "gap11_q79_insufficient_3_carrier": (11, 237),
+        "gap19_n13_insufficient_carrier": (19, 65),
         "gap23_q9_insufficient_two_adic_carrier": (23, 30),
     }
     misses: dict[str, list[int]] = {}
@@ -233,13 +244,54 @@ def verify_ratio_carriers() -> dict[str, object]:
         if (-1) % modulus in box:
             raise AssertionError(f"{name}: fixed factor-pair miss changed")
         misses[name] = sorted(box)
+    normalized_gap19_box = signed_ratio_box(637, 19)
+    if not normalized_gap19_box.intersection({14, 15, 18}):
+        raise AssertionError("gap19 normalized target box no longer closes p=12721")
+    joint_residual_p = 12721
+    joint_residual_x = {3: 3181, 7: 3182, 11: 3183, 23: 3186}
+    joint_residual_misses: dict[str, list[int]] = {}
+    for modulus, x in joint_residual_x.items():
+        if (
+            4 * x != joint_residual_p + modulus
+            or (joint_residual_p - 1) % (modulus + 1)
+            or gcd(x, modulus) != 1
+        ):
+            raise AssertionError(f"gap-{modulus} joint residual chart changed")
+        box = signed_ratio_box(x, modulus)
+        if (-1) % modulus in box:
+            raise AssertionError(f"gap-{modulus} unexpectedly closes p=12721")
+        joint_residual_misses[f"m{modulus}"] = sorted(box)
     return {
         "quadratic_carriers": {
             name: sorted(signed_ratio_box(carrier, modulus))
             for name, (modulus, carrier) in carriers.items()
         },
         "negative_ratio_boxes": misses,
+        "gap19_normalized_box": sorted(normalized_gap19_box),
+        "p12721_joint_residual_misses": joint_residual_misses,
     }
+
+
+def verify_gap_nineteen_ray() -> dict[str, object]:
+    """Check the p=12721 member of the primitive gap-nineteen ray."""
+    u = 1
+    C = 6 * u + 1
+    p = 1801 + 10920 * u
+    n = 91 * C
+    x = 455 * C
+    if gcd(1801, 10920) != 1:
+        raise AssertionError("gap19 Dirichlet ray stopped being primitive")
+    if (p, n, x, C) != (12721, 637, 3185, 7):
+        raise AssertionError("gap19 ray control changed")
+    if (
+        not is_prime(p)
+        or p % 24 != 1
+        or (p + 19) // 20 != n
+        or (p + 19) // 4 != x
+    ):
+        raise AssertionError("gap19 source chart changed")
+    assert_egyptian_identity(n, (x, 24 * C, 10920 * C))
+    return {"u": u, "C": C, "p": p, "n": n, "x": x}
 
 
 def build_result() -> dict[str, object]:
@@ -261,11 +313,12 @@ def build_result() -> dict[str, object]:
     return {
         "certificate_type": "factor_pair_carrier_strict_descent_v1",
         "scope": (
-            "Four fixed Type II factor-pair controls, one gap-eleven Type I "
+            "Five fixed Type II factor-pair controls, one gap-eleven Type I "
             "companion, and finite ratio boxes only; no coverage scan is run."
         ),
         "pair_controls": receipts,
         "gap_eleven_companion": companion,
+        "gap_nineteen_ray": verify_gap_nineteen_ray(),
         "ratio_controls": verify_ratio_carriers(),
     }
 
@@ -276,7 +329,7 @@ def main() -> None:
     args = parser.parse_args()
     build_result()
     if args.verify:
-        print("verified factor-pair carrier strict-descent controls: m=7,11,23")
+        print("verified factor-pair carrier strict-descent controls: m=7,11,19,23")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 ---
 kind: claim
 claim_id: type-II-gap27-square-carrier-strict-descent
-title: gap 27 的平方子群载体与严格递降射线
-statement: 对 gap m=27，若 x=(p+27)/4 与 27 互素，且 x 含有一个模 27 的非平方素因子，同时一个因子 F|x 的 signed ratio box 等于 U(27) 的平方子群，则完整 Type II factor-pair 层命中并严格递降到 (p+27)/28。具体地，在 h=7t、91|(6t+1) 的核心子支，F=7^2*13 是完整平方载体。再加 5|(6t+1) 得到 p=76440u+63673 的无穷 Dirichlet 射线，每个素数值都有直接 Type II 终端和严格可提升递降。该结果只作用于 gap 27 的指定容量子支，不构成全核心覆盖。
+title: gap 27 的平方子群载体、残类扇与严格递降
+statement: 对素数 p 的 gap m=27，若 x=(p+27)/4 与 27 互素，且 x 含有一个模 27 的非平方素因子，同时一个因子 F|x 的 signed ratio box 等于 U(27) 的平方子群，则完整 Type II factor-pair 层命中并严格递降到 (p+27)/28。对核心域，严格递降恰要求 7|h；其中 h=7t、91|(6t+1) 时 F=7^2*13 是完整平方载体，而 W=6t+1 的单个素因子落在 20、23、26 (mod 27) 时有三条显式 factor-pair 扇。再加 5|(6t+1) 得到 p=76440u+63673 的无穷 Dirichlet 射线。所有结果都只作用于 gap 27 的指定容量子支，不构成全核心覆盖。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -31,11 +31,11 @@ visibility: public
 last_checked: '2026-08-06'
 ---
 
-# gap \(27\) 的平方子群载体与严格递降射线
+# gap \(27\) 的平方子群载体、残类扇与严格递降
 
 ## 1. 模 \(27\) 的平方载体
 
-令
+令 \(p\) 为素数，并令
 
 \[
 x=\frac{p+27}{4},\qquad
@@ -98,20 +98,36 @@ factor-pair certificate。反向时，若 \(x\) 的所有素因子均为平方�
 
 ## 2. \(h=7t\) 的完整载体分支
 
-令
+现在回到核心域。对任意 \(p=24h+1\)，有
 
 \[
-h=7t,\qquad 7\cdot13\mid6t+1.
-\tag{7}
+x_{27}=\frac{p+27}{4}=6h+7\equiv1\pmod3,
+\tag{7a}
 \]
 
-则
+所以 \((x_{27},27)=1\) 自动成立；而严格 two-tail source 的门恰为
+
+\[
+28\mid p-1=24h
+\Longleftrightarrow
+7\mid h.
+\tag{8a}
+\]
+
+因此 gap \(27\) 只能补充 \(7\mid h\) 的核心子支。写 \(h=7t\)，则
 
 \[
 p=168t+1,\qquad
 x=7(6t+1),\qquad
 n=6t+1.
-\tag{8}
+\tag{9a}
+\]
+
+下面的完整平方载体分支再附加容量条件
+
+\[
+7\cdot13\mid6t+1.
+\tag{10a}
 \]
 
 特别地，
@@ -120,7 +136,7 @@ n=6t+1.
 (x,27)=1,\qquad
 28\mid p-1,\qquad
 F=7^2\cdot13=637\mid x.
-\tag{9}
+\tag{11a}
 \]
 
 模 \(27\) 有
@@ -143,7 +159,7 @@ F=7^2\cdot13=637\mid x.
 \tag{11}
 \]
 
-由第 1 节，在 (7) 的全部参数上有精确判据：
+由第 1 节，在 (10a) 的全部参数上有精确判据：
 
 \[
 \boxed{
@@ -179,7 +195,7 @@ x\ \text{有一个模 \(27\) 的非平方素因子}.
 \tag{15}
 \]
 
-合并 (7) 与 (15) 得
+合并 (10a) 与 (15) 得
 
 \[
 t=455u+379,\qquad
@@ -277,11 +293,87 @@ d=A^2C=325T\le x.
 \tag{27}
 \]
 
-## 4. 边界
+## 4. 不依赖平方载体的单素因子残类扇
+
+仍令 \(h=7t\)、\(W=6t+1\)，于是 \(x=7W\)、\(n=W\)。若 \(W\) 含有素因子
+\(r\)，则下表的每一行都是一个直接的 factor-pair certificate：
+
+\[
+\begin{array}{c|c|c}
+r\pmod {27}&(A,B,C)&K\\ \hline
+20&(7,r,W/r)&(r+7)/27\\
+23&(1,7r,W/r)&(7r+1)/27\\
+26&(1,r,7W/r)&(r+1)/27
+\end{array}
+\tag{28}
+\]
+
+**定理（gap \(27\) 单素因子扇）。** 在表中任一行，\(A,B\) 互素、\(A\le B\)、
+\(ABC=x\)、\(A+B=27K\)。因此它给出一个 Type II direct terminal，且严格下降到
+\(n=W\)。这三个规则不以 \(91\mid W\) 为前提；它们的控制点覆盖固定平方载体容量子支
+之外的点，但两种机制不是包含关系。
+
+取 \(r=101\equiv20\pmod {27}\)。令
+
+\[
+t=84+101u,\qquad
+W=101(6u+5),\qquad
+p=14113+16968u.
+\tag{29}
+\]
+
+则
+
+\[
+(A,B,C,K)=(7,101,6u+5,4)
+\tag{30}
+\]
+
+对每个素数值 \(p\) 都给出上述严格递降。又
+
+\[
+\gcd(14113,16968)=1,
+\tag{31}
+\]
+
+故 Dirichlet 定理给出无穷多个该射线上的核心素数。
+
+这确实补到了旧的固定小 gap 残余。取 \(u=1\)，有
+
+\[
+p=31081,\qquad h=1295,\qquad W=1111,\qquad x=7777=7\cdot11\cdot101.
+\tag{32}
+\]
+
+这个点的 \(m=3,7,11,23\) 完整 Type II factor-pair 层均未命中；但 (28) 给出
+
+\[
+(A,B,C,K)=(7,101,11,4),\qquad d=A^2C=539,
+\tag{33}
+\]
+
+\[
+\frac4{1111}=\frac1{7777}+\frac1{308}+\frac1{4444},
+\qquad
+\frac4{31081}=\frac1{7777}+\frac1{9572948}+\frac1{138123964}.
+\tag{34}
+\]
+
+同一 source gate 也有真实边界。对
+
+\[
+p=18481,\qquad h=770,\qquad x=4627=7\cdot661,
+\tag{35}
+\]
+
+有 \(-1\notin\mathcal R_{27}(4627)\)，故 gap \(27\) 仍未命中。
+
+## 5. 边界
 
 本卡只建立 gap \(27\) 的 direct terminal 和严格 two-tail descent，且载体充分覆盖
-仅限 (7) 的容量子支。它不提供其它 \(h\) 类的 gap \(27\) 选择器，不证明不同 gap
-的并集覆盖，也不把小实例的可解性自动转化为其它形状的递降。
+仅限 \(7\mid h\) 的容量子支；第 2 节的平方载体和第 4 节的残类扇都不是全覆盖。
+它不提供其它 \(h\) 类的 gap \(27\) 选择器，不证明不同 gap 的并集覆盖，也不把小实例
+的可解性自动转化为其它形状的递降。
 
 复现：
 

@@ -2,12 +2,12 @@
 kind: claim
 claim_id: type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt
 title: p=1009 的 c=3 universal-source 非 p 绕行 raw receipt
-statement: 对 p=1009 的 c=3 chart，canonical p-edge 后的 m=1 raw 图严格困于 N_R(1) 与 N_R(2)，但从同一个 declared universal p-source 出发可绕开 p-edge，按 349,41,1013,13,2,2 六条实际 raw 边到达 complement seed N_R(p-3)。该 word 是新的 raw-source provenance 候选，却不满足现有 p-first root adapter 的相位/来源合同，因此不是 root、verified_edge 或递归边。它把该点的障碍精确定位为 source-bypass root policy，而非 raw-path 算术不存在。
+statement: 对 p=1009 的 c=3 chart，canonical p-edge 后的 m=1 raw 图严格困于 N_R(1) 与 N_R(2)，但从同一个 declared universal p-source 出发可绕开 p-edge，按 349,41,1013,13,2,2 六条实际 raw 边到达 complement seed N_R(p-3)。对 ordered universal source 首坐标的后代，source-origin mark sigma=-p^(-1) 通过 raw-lineage transport 在 t=4,2,1 自动给出 -M,-2M,-13；它不是 endpoint 倒推的自由 multiplier。现有 p-first adapter 仍硬编码首条 p-edge 与 anchor-relative phase，不能接纳该 receipt，因此它仍不是 root、verified_edge 或递归边。障碍现已精确缩为 source-bypass root policy、state identity 和 E4/E5 接入，而非 raw path 或独立相位来源。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
-  - type-I-universal-p-source-capacity-anchor-orbit
+  - type-I-overflow-cofactor-r-chart-support
   - type-I-g-anchor-marked-raw-peeling-calculus
   - type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form
   - type-I-g-anchor-c3-even-tail-root-entry-admission-boundary
@@ -21,10 +21,11 @@ topics:
   - raw-path
   - source-bypass
   - root-policy
+  - source-lineage
   - phase-boundary
   - proof-boundary
 sources:
-  - claim: type-I-universal-p-source-capacity-anchor-orbit
+  - claim: type-I-overflow-cofactor-r-chart-support
     role: declared-high-R-universal-source
   - claim: type-I-g-anchor-marked-raw-peeling-calculus
     role: ordered-raw-step-semantics
@@ -150,46 +151,98 @@ v_2(R-1)=v_2(K)=1
 \(p\)-edge 后重新进入 \(m=1\)，至少需要两条 non-\(p\) raw 边；(4) 的
 \(349,41\) 恰达到该下界。这个最小性不声称是到 seed 的全局最短 word。
 
-## 4. root phase 的严格边界
+## 4. source-lineage phase 的可验证来源
 
-从 source 起的原始标签积在 (4) 各步后为
+先给出不读取 endpoint 的一般传输式。对 ordered universal source 的首坐标 \(p\)，令
+\(z_i\) 是第 \(i\) 步后该坐标的确定后代；第 \(i\) 步的标签、实际 gcd reduction
+分别记为 \(q_i,g_i\)。raw transition 的坐标同余给出
 
 \[
-349,\ 1232,\ 1342,\ 10,\ 20,\ 40\pmod R.
+q_i g_i z_i\equiv z_{i-1}\pmod R.
 \tag{11}
 \]
 
-尤其 exact \(t=4\) 节点的相位为 \(10\)，seed 的相位为 \(40\)。现有
-\(p\)-first root adapter 所需的相位分别是
+每个 \(q_i\) 是 unit，且 \(z_0=p\) 是 unit。由 (11) 归纳，右侧是 unit；
+在交换环 \(\mathbb Z/R\mathbb Z\) 中，一个乘积为 unit 蕴含每个因子为 unit，
+故 \(g_i,z_i\) 也都是 unit。令
 
 \[
--M=3266,\qquad -13=4346\pmod{4359},
+\sigma=-p^{-1}\pmod R,
+\qquad
+E_i=\prod_{j\le i}q_jg_j,
+\qquad
+\Theta_i=\sigma E_i.
 \tag{12}
 \]
 
-故 (4) 不能被现有 adapter 接纳。
-
-纯代数上可取
+则归纳地有
 
 \[
-\theta_0=(-M)10^{-1}=2942\pmod R
+E_i z_i\equiv p,
+\qquad
+\Theta_i z_i\equiv-1\pmod R.
 \tag{13}
 \]
 
-把 (11) 归一化为所需尾相位；但 \(\theta_0\) 是从目标 endpoint 倒推的，并无
-独立 source-mark 合同。因此它不能充当 E3 phase evidence，不能用来伪造 root。
+\(\sigma\) 是唯一将 declared source 的有序首坐标归一到 \(-1\) 的 mark：
+\(\sigma p=-1\)。因此 (13) 完全由 source、ordered raw transcript 与每步实际
+gcd reduction 决定，不能由目标 endpoint 后置制造。
+
+在 (4) 中所有 \(g_i=1\)，p-line 和 raw 积依次为
+
+\[
+\begin{array}{c|cccccc}
+i&1&2&3&4&5&6\\ \hline
+z_i&490&4052&4&4024=4x&2012=2x&1006=x\\
+E_i&349&1232&1342&10&20&40\\
+\Theta_i&2393&2215&3269&3266&2173&4346
+\end{array}
+\pmod{4359}.
+\tag{14}
+\]
+
+特别地 \(\sigma=2942\)，并且
+
+\[
+\sigma=(-M)10^{-1}\equiv-p^{-1}\pmod R.
+\tag{15}
+\]
+
+证明顺序应是先由 source 定义 \(\sigma\)，再由 (13) 验证尾门，而不能将 (15) 当作
+endpoint-derived 定义。因为 \(4Mx\equiv1\pmod R\)，(13) 在 \(z_i=4x,2x,x\)
+时精确给出
+
+\[
+\Theta_{t=4}=-M=3266,\qquad
+\Theta_{t=2}=-2M=2173,\qquad
+\Theta_{t=1}=-13=4346\pmod{4359}.
+\tag{16}
+\]
+
+orientation 是必要字段：若 p-line 落在 \(R-tx\) 的另一侧，上式符号会反转。
+本绕行在三个尾点都落在 \(+4x,+2x,+x\) 侧；canonical p-first word 的 p-line
+方向不同，且其 \(W\) 是 p-edge 后的 anchor-relative 相位。因此 (16) 不能被错误
+当作对旧 \(W\) 合同的全局替代。
+
+现有 p-first root adapter 硬编码首条 \(q=p\) edge、canonical anchor 和随后
+anchor-relative phase；它没有 source-lineage 或 \(g_i\)-transport 字段，故 (4)
+仍不能被它接纳。
 
 ## 5. 后续接口
 
-(4) 已建立一张新的 E1 raw-source receipt 候选。要把这一类路径纳入 selector，
-仍须新建 target-independent 的 source-bypass root policy，至少明确：
+(4) 现已建立一张 E1 raw-source receipt 与 source-lineage transport evidence；后者只能作为
+未来 E3 normal-form verifier 的输入，尚不是一个独立 E3 gate。要把这一类路径纳入
+selector，仍须新建 target-independent 的 source-bypass root policy，至少明确：
 
-1. 完整 high-layer ordered transcript 的准入规则；
-2. 不由 endpoint 倒推的独立初始 phase mark，或替代 E3 合同；
-3. fresh_source_tree_only 与 terminal-first 的作用域；
-4. 通过 seed 后才可复用的 E4/E5 RESET 接口。
+1. ordered universal source、source-first-coordinate lineage 与全部 \(q_i,g_i\) 的准入规则；
+2. 三个尾点的 \(+4x,+2x,+x\) orientation gate；
+3. raw digest、lineage digest 与 policy version 如何进入 state identity，或如何一次性绑定
+   到 \(d=3\) RESET；
+4. fresh_source_tree_only 与 terminal-first 的作用域；
+5. 通过 seed 后才可复用的 E4 identity lift 和 E5 RESET 支付。
 
-在这些字段被证明前，本卡不创建 root、selector edge 或递归状态。
+现有统一 selector 尚未实现这些字段；在它们被证明并接入前，本卡不创建 root、
+selector edge 或递归状态。
 
 复现：
 

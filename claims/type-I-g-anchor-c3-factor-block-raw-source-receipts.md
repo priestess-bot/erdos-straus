@@ -9,7 +9,7 @@ review_status: internal_review
 depends_on:
   - type-I-g-anchor-c3-two-intermediate-target-source-template
   - type-I-g-anchor-marked-raw-peeling-calculus
-  - type-I-universal-p-source-capacity-anchor-orbit
+  - type-I-overflow-cofactor-r-chart-support
   - type-I-g-anchor-even-tail-complement-source-switch
   - denominator-escape-state-contract
 topics:
@@ -27,8 +27,8 @@ sources:
     role: target-chart-skeleton-and-phase
   - claim: type-I-g-anchor-marked-raw-peeling-calculus
     role: raw-transition-semantics
-  - claim: type-I-universal-p-source-capacity-anchor-orbit
-    role: declared-target-universal-p-source
+  - claim: type-I-overflow-cofactor-r-chart-support
+    role: declared-high-R-universal-p-source
   - concept: denominator-escape-state-contract
     role: E1-E5-boundary
 visibility: public

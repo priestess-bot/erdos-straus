@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-II-factor-pair-carrier-strict-descent
 title: Type II 互素因子对的二次比值载体与严格递降
-statement: 若一个合法 Type II gap m 的互素因子正规形 x=ABC、A+B=mK 同时满足 m+1|p-1，则它不仅给出 4/p 的直接 Type II 终端，而且给出严格且可提升的两尾递降到 n=(p+m)/(m+1)。当 m 是 3 (mod 4) 素数时，互素因子比值的二次剩余载体把该 Type II 选择问题化为 x 的非剩余素因子。特别地，gap 7 对全部核心素数有精确的非剩余因子判据；c=3 的 gap 11 在 3|q 时有精确的 11-二次非剩余判据，并在 3∤q 时缩为有限 signed-ratio box；gap 23 在 q=3 (mod 4) 时有相应的 23-二次非剩余判据。结果只覆盖这些指定 gap 的 Type II factor-pair 层，不构成全称覆盖或 Erdos--Straus 证明。
+statement: 若一个合法 Type II gap m 的互素因子正规形 x=ABC、A+B=mK 同时满足 m+1|p-1，则它不仅给出 4/p 的直接 Type II 终端，而且给出严格且可提升的两尾递降到 n=(p+m)/(m+1)。当 m 是 3 (mod 4) 素数时，互素因子比值的二次剩余载体把该 Type II 选择问题化为 x 的非剩余素因子。特别地，gap 7 对全部核心素数有精确的非剩余因子判据；c=3 的 gap 11 在 3|q 时有精确的 11-二次非剩余判据，并在 3∤q 时缩为有限 signed-ratio box；gap 19 在 5|h 时缩为 n=(p+19)/20 的三残类 box；gap 23 在 q=3 (mod 4) 时有相应的 23-二次非剩余判据。p=12721 说明 3、7、11、23 的指定层可共同未命中而由 gap 19 关闭。结果只覆盖这些指定 gap 的 Type II factor-pair 层，不构成全称覆盖或 Erdos--Straus 证明。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -21,6 +21,7 @@ topics:
   - c3
   - gap-seven
   - gap-eleven
+  - gap-nineteen
   - gap-twenty-three
   - proof-boundary
 sources:
@@ -446,13 +447,171 @@ q+1\ \text{有一个 \(23\)-二次非剩余素因子}
 
 故 gap \(23\) 不命中。
 
-## 7. 研究边界
+## 7. gap \(19\) 的精确三残类盒
 
-本卡将三个指定 gap 的 Type II 选择问题压缩为可检验的因子残余或有限 signed-ratio
+对核心素数 \(p=24h+1\)，gap \(19\) 的严格 source 条件恰为
+
+\[
+20\mid p-1
+\Longleftrightarrow
+5\mid h.
+\tag{42}
+\]
+
+写 \(h=5t\)，并令
+
+\[
+n_{19}=\frac{p+19}{20}=6t+1,
+\qquad
+x_{19}=\frac{p+19}{4}=5n_{19}.
+\tag{43}
+\]
+
+完整 Type II factor-pair 条件 (11) 在这里精确化为
+
+\[
+\boxed{
+-1\in\mathcal R_{19}(5n_{19})
+\Longleftrightarrow
+\mathcal R_{19}(n_{19})\cap\{14,15,18\}\ne\varnothing.
+}
+\tag{44}
+\]
+
+事实上
+
+\[
+\mathcal R_{19}(5)=\{1,4,5\},
+\tag{45}
+\]
+
+并且按 (8) 的指数区间有
+\(\mathcal R_{19}(5n_{19})=\mathcal R_{19}(5)\mathcal R_{19}(n_{19})\)，即使
+\(5\mid n_{19}\) 也成立：5 的两个指数区间相加恰给出
+\([-(v_5(n_{19})+1),v_5(n_{19})+1]\)。将 \(-1=18\) 逐一除以 (45) 的三个元素
+正好得到右侧的三残类。这是全 factor-pair 层的等价条件，不是单因子充分筛。
+
+控制点
+
+\[
+p=12721,\qquad h=530,\qquad n_{19}=637=7^2\cdot13,
+\qquad x_{19}=3185
+\tag{46}
+\]
+
+落在该层。这里
+
+\[
+\mathcal R_{19}(35)=\operatorname{QR}_{19}
+=\{1,4,5,6,7,9,11,16,17\},
+\tag{47}
+\]
+
+而 \(13\) 是模 \(19\) 的非剩余。取
+
+\[
+(A,B,C,K)=(1,455,7,24)
+\tag{48}
+\]
+
+得到
+
+\[
+\frac4{637}=\frac1{3185}+\frac1{168}+\frac1{76440},
+\qquad
+\frac4{12721}=\frac1{3185}+\frac1{2137128}+\frac1{972393240}.
+\tag{49}
+\]
+
+它还位于一个显式 Dirichlet 射线。令 \(u\ge0\)、\(C_u=6u+1\)，则
+
+\[
+p_u=1801+10920u,
+\qquad
+n_u=91C_u,
+\qquad
+x_u=455C_u.
+\tag{50}
+\]
+
+因为 \(\gcd(1801,10920)=1\)，每个使 \(p_u\) 为素数的参数都给出
+
+\[
+(A,B,C,K)=(1,455,C_u,24),
+\tag{51}
+\]
+
+以及
+
+\[
+\frac4{91C_u}
+=\frac1{455C_u}+\frac1{24C_u}+\frac1{10920C_u}.
+\tag{52}
+\]
+
+Dirichlet 定理因此给出无穷多个这类核心素数；\(u=1\) 正是 (46)。容量不可删除：
+
+\[
+p=241,\qquad n_{19}=13,\qquad x_{19}=65,
+\qquad -1\notin\mathcal R_{19}(65).
+\tag{53}
+\]
+
+故仅有一个 \(19\)-非剩余因子不足以保证 gap \(19\) 命中。
+
+## 8. 固定小 gap 的联合残余
+
+令 \(t=h+1\)，则 \(p=24t-23\)。gap \(7,11,23\) 的严格较小 source 分别为
+
+\[
+n_7=3t-2,
+\qquad
+n_{11}=2t-1,
+\qquad
+n_{23}=t.
+\tag{54}
+\]
+
+利用各自固定 carrier，三个完整 Type II 层共同未命中的精确条件为
+
+\[
+\mathcal R_7(3t-2)\cap\{3,5,6\}=\varnothing,
+\tag{55}
+\]
+
+\[
+\mathcal R_{11}(2t-1)\cap\{7,8,10\}=\varnothing,
+\tag{56}
+\]
+
+\[
+\mathcal R_{23}(t)\cap\{7,10,11,15,17,19,20,21,22\}=\varnothing.
+\tag{57}
+\]
+
+例如 \(p=12721\) 对应 \(t=531\)。它还有 gap \(3\) 的 complete factor-pair miss，且
+
+\[
+\begin{aligned}
+x_3&=3181,\\
+x_7&=3182=2\cdot37\cdot43,\\
+x_{11}&=3183=3\cdot1061,\\
+x_{23}&=3186=2\cdot3^3\cdot59.
+\end{aligned}
+\tag{58}
+\]
+
+这些因子在相应 signed-ratio box 中都不能产生 \(-1\)，故 \(m=3,7,11,23\) 的
+指定完整 Type II factor-pair/strict-descent 层均不命中。但 (48)--(49) 的 gap \(19\)
+证书已经关闭该点。因此这只是有限 gap dispatch 的真实压力点，而非猜想反例。
+
+## 9. 研究边界
+
+本卡将四个指定 gap 的 Type II 选择问题压缩为可检验的因子残余或有限 signed-ratio
 box，并把每个命中升级为可提升的严格递降。它没有证明这些 gap 的并集覆盖所有核心
-素数：例如 gap \(11\) 的全二次剩余乘法半群仍是严格残余，且 gap \(7\)、\(23\) 也各有
-自己的盒条件。下一步应研究这些残余之间是否存在独立的 mark-transfer 或其它 gap
-出口，不能把“较小 \(q\) 已可解”误当成自动可提升的资源。
+素数：例如 gap \(11\) 的全二次剩余乘法半群仍是严格残余，且 gap \(7\)、\(19\)、\(23\)
+也各有自己的盒条件。下一步应研究这些残余之间是否存在独立的 mark-transfer 或其它
+gap 出口，不能把“较小 \(q\) 已可解”误当成自动可提升的资源。
 
 复现：
 
