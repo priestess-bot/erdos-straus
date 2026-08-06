@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 497 |
+| 数学状态 | `established` | 498 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 330 |
+| 证明来源 | `repository_derivation` | 331 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 467 |
+| 审阅状态 | `internal_review` | 468 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -363,6 +363,7 @@
 | [G-anchor 固定图表的仿射与补余 overflow torsor](../claims/type-I-g-anchor-fixed-chart-affine-complement-overflow-torsor.md) (`type-I-g-anchor-fixed-chart-affine-complement-overflow-torsor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [full-Q 补余 seed 的 R=11 条件性 RESET 与标准 lift 边界](../claims/type-I-g-anchor-full-q-complement-r11-reset-boundary.md) (`type-I-g-anchor-full-q-complement-r11-reset-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [G-anchor 的 Jacobi-odd 完整超额块与有限 raw 路径菜单](../claims/type-I-g-anchor-jacobi-odd-complete-excess-source-menu.md) (`type-I-g-anchor-jacobi-odd-complete-excess-source-menu`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+| [p=5281 的 Jacobi-odd 有限物理 source/transition 账本](../claims/type-I-g-anchor-jacobi-odd-p5281-physical-row-ledger.md) (`type-I-g-anchor-jacobi-odd-p5281-physical-row-ledger`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [G-anchor Jacobi-odd raw 终端唯一性与 source-switch 退化](../claims/type-I-g-anchor-jacobi-raw-terminal-source-switch-bridge.md) (`type-I-g-anchor-jacobi-raw-terminal-source-switch-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [G-anchor 带精确尾标记的 raw-peeling calculus 与物理行边界](../claims/type-I-g-anchor-marked-raw-peeling-calculus.md) (`type-I-g-anchor-marked-raw-peeling-calculus`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [G-anchor Jacobi-odd raw 终点到固定图表因子表的投影、相位擦除与带标记嵌入](../claims/type-I-g-anchor-raw-fixed-chart-factor-projection.md) (`type-I-g-anchor-raw-fixed-chart-factor-projection`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
