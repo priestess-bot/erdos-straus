@@ -273,6 +273,18 @@ physical_label_multiplicity <= mu
 physical_carry_status = checked
 ~~~
 
+若 `row_to_anchor_map` 或共同仿射律声称由该表的 raw transition relation 导出，
+还必须独立通过
+
+~~~text
+raw_factor_action_compatibility = verified
+~~~
+
+即相位差对每一个 raw 因子必须是路径无关的一维作用。这个附加门不修改 (12) 的
+纯装箱证明：它只防止把逐行任意指定的锚点标签误作由 physical raw paths 支持的
+source map。精确的 cycle-lattice 判据、tail-only 反例和完整 marked-row 修复见
+[raw 因子作用到共同仿射相位图的可积性门](type-I-raw-factor-action-affine-preflight.md)。
+
 缺少任一项时，输出必须保持
 \(\mathrm{ANCHORED\_PHASE\_MAP\_UNCLOSED}\)。即使 (12) 可用，它仍不构造实际
 source、E2 carry、E4 全域解提升或 E5 良基下降；因此它是条件性容量证书，而不是

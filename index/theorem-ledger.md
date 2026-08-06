@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 498 |
+| 数学状态 | `established` | 500 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 331 |
+| 证明来源 | `repository_derivation` | 333 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 18 |
-| 审阅状态 | `internal_review` | 468 |
+| 审阅状态 | `internal_review` | 470 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -319,6 +319,7 @@
 | [F/G 有限带标记 source 菜单的饱和与相位实现判据](../claims/type-I-fg-marked-source-menu-saturation.md) (`type-I-fg-marked-source-menu-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [F/G 有限相位实现与 overflow E2 carry 门的独立性](../claims/type-I-fg-phase-e2-carry-independence.md) (`type-I-fg-phase-e2-carry-independence`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [F/G 相位到 E2 的物理 carry 短弧 lift 接口](../claims/type-I-fg-physical-carry-arc-lift-interface.md) (`type-I-fg-physical-carry-arc-lift-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [raw transcript 中持续 E2 账本的 gcd carry core](../claims/type-I-fg-raw-transcript-persistent-ledger-carry-core.md) (`type-I-fg-raw-transcript-persistent-ledger-carry-core`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [F/G 角色请求的 source-label SNF 四分终端](../claims/type-I-fg-role-snf-terminal-dispatch.md) (`type-I-fg-role-snf-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [Type I 有限指数障碍的五十层中心化盒边界](../claims/type-I-finite-exponent-dilation-boundary-297640249.md) (`type-I-finite-exponent-dilation-boundary-297640249`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [十六桥模板的CRT无穷源侧逃逸](../claims/type-I-fixed-bridge-menu-crt-escape.md) (`type-I-fixed-bridge-menu-crt-escape`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
@@ -610,6 +611,7 @@
 | [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md) (`type-I-r47-empty-support-pminusone-dyadic-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码 p-1 射线的 Jacobi 障碍与三条精确角色选择器](../claims/type-I-r47-pminusone-jacobi-ray-selector.md) (`type-I-r47-pminusone-jacobi-ray-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [raw 因子作用到共同仿射相位图的可积性门](../claims/type-I-raw-factor-action-affine-preflight.md) (`type-I-raw-factor-action-affine-preflight`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [任意 primitive raw node 的 p-parent 反向提升与 root-policy 边界](../claims/type-I-raw-universal-p-parent-root-policy-boundary.md) (`type-I-raw-universal-p-parent-root-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md) (`type-I-representation-dual-capacity-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
