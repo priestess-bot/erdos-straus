@@ -221,6 +221,17 @@ coordinate，未排除全新的 integer source map。
 不矛盾，因为它不采用这种 carrier-residue map；但它也尚未给出 raw occurrence 到
 \((a,b,H)\) 的完整 functor。
 
+固定 \(D=6303\) 的完整八纤维枚举现已显示，在已声明的 candidate-record mechanism
+内，这个候选模数既没有 target factor，也不能把两个 signed phase 分配到不同的
+\(q\)-active \(A\)-标签，详见
+[D=6303 完整候选纤维边界](type-I-g-anchor-c3-adaptive-core19-v5-d6303-complete-fiber-boundary.md)。
+这不排除同一 \(D\) 的新整数 map 或其它 allocation；当前仍需构造实际 raw functor、
+独立 target-odd carrier，或可审计的 slot allocation。
+
+后续发现的 [第三条 C=38 实际 raw 叶](type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf.md)
+故意不并入本卡的两路径 groupoid universe：它带来 phase \(\zeta^{11}\) 的新 occurrence，
+却尚未给出将三条 occurrence 共同投影到 candidate record 或 slot 的 functor。
+
 ## 4. 可检验的合同状态
 
 本卡的结果必须保持

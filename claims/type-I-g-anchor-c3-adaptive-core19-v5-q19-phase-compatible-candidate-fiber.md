@@ -165,6 +165,11 @@ H_0=53\cdot3671=194563,\qquad H_1=19H_0=3696697.
 其中相邻的一层，额外两层仍须由独立 request/slot allocation 说明，不能静默附着到
 \(\mu_1\)。
 
+[第三条 C=38 实际 raw 叶](type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf.md)
+现已给出与 \(\chi(H_0 19^3)\) 同 character class 的第三个实际 occurrence。它补强的是
+raw phase evidence，但不从 raw word 恢复 \(v_{19}(H_0 19^3)=3\)；这些因子仍嵌套在
+同一个 candidate record，不能被直接收费为三条 request 或三个 physical slot。
+
 ## 4. 这个纤维为什么仍不终止
 
 若这个固定 \((D_*,A)\) 纤维给出 Type II 短证书，则必须有
@@ -191,6 +196,10 @@ h=17^\alpha19^\beta53^\gamma3671^\delta\mid N
 
 三者均为 \(1\pmod3\)，而 \(-1\equiv2\pmod3\)。所以 (14) 无解。这是此固定
 候选纤维的 terminal boundary，不是否定其它 \(D_*,A\) 或其它 Type II 证书。
+
+[D=6303 完整候选纤维边界](type-I-g-anchor-c3-adaptive-core19-v5-d6303-complete-fiber-boundary.md)
+进一步穷尽了固定 \(D=6303\) candidate-record 格内的全部八个 \(A\)；其余七行同样不命中
+target。因此这里的 target 缺失不是只属于 \(A=573\) 的偶然相位现象。
 
 ## 5. 严格边界
 

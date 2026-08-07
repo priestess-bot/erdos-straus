@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 517 |
+| 数学状态 | `established` | 519 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 350 |
+| 证明来源 | `repository_derivation` | 352 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 486 |
+| 审阅状态 | `internal_review` | 488 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -356,7 +356,9 @@
 | [c=3 core-19 的广义 q 三段 raw 语言与 C=19^2 固定 RESET 实际族](../claims/type-I-g-anchor-c3-adaptive-core19-generalized-q-block-fixed-c.md) (`type-I-g-anchor-c3-adaptive-core19-generalized-q-block-fixed-c`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的 q=137 首标签 C=19 实际 raw 家族](../claims/type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family.md) (`type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的 q=23 首标签 C=19 入口与全分支 terminal 障碍](../claims/type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction.md) (`type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [v=5 的第三条 C=38 实际 raw 叶与 q=19 相位层](../claims/type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf.md) (`type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 C0/C1 的 centered mixed-source fiber no-go 与相对 q=19 边界](../claims/type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go.md) (`type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [v=5 的 D=6303 完整 Type II 候选纤维边界](../claims/type-I-g-anchor-c3-adaptive-core19-v5-d6303-complete-fiber-boundary.md) (`type-I-g-anchor-c3-adaptive-core19-v5-d6303-complete-fiber-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 adaptive core-19 首个素数点的双叶、F 型固定层与 q=19 控制](../claims/type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control.md) (`type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 signed 双叶的 q=19 相位兼容 Type II 候选纤维](../claims/type-I-g-anchor-c3-adaptive-core19-v5-q19-phase-compatible-candidate-fiber.md) (`type-I-g-anchor-c3-adaptive-core19-v5-q19-phase-compatible-candidate-fiber`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 C0/C1 的 signed marked-tail 非 native raw-source groupoid](../claims/type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid.md) (`type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
