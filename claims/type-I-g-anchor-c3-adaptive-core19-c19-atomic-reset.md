@@ -305,18 +305,22 @@ hit，而不是从源 F label 继承。
 \tag{16}
 \]
 
-所以若未来**非 native** mixed-side adapter 把两条 leaf 放入同一个 complete source
-fiber，它必须产生相对 SOURCE_RANK_DEMAND(19)，且相对 label map 必须满足
+所以若一个 **non-native** mixed-side capacity adapter 把两条 leaf 放入同一个 complete
+source fiber，它必须产生相对 SOURCE_RANK_DEMAND(19)，且相对 label map 必须满足
 
 \[
 \lambda(C_0)-\lambda(C_1)\equiv11\pmod {19}.
 \]
 
-当前情况比“尚未给出”更强：
+当前情况分成两个严格不同的层次。首先，
 [v=5 centered mixed-source fiber no-go](type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go.md)
-证明任何 \(N\mid K\) 的 native centered adapter 都不可能合并这两条 leaf。因此未来只可
-寻找带完整 frame morphism、source-map 和 SNF 回执的 non-native adapter；在它出现之前，
-不能登记 capacity 或 descent。这只是对
+证明任何 \(N\mid K\) 的 native centered adapter 都不可能合并这两条 leaf。其次，
+[signed marked-tail groupoid](type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid.md)
+已经给出带完整 frame morphism 的有限 non-native raw-phase presentation，并在抽象商中
+保留相对 \(19\)-方向。后者故意不是 complete source fiber：没有 parameter projection、
+整数 \((D_*,A,b)\) lift、physical slots 或 E4/E5；它也被 terminal-first 截断。因此它
+不能登记 capacity 或 descent，下一步只能寻找上述缺失接口，而不是把 phase/SNF 直接升级。
+这只是对
 [Fourier 角色到 source-rank 分派](type-I-fg-fourier-to-type-II-role-demand-bridge.md)
 在 target-even odd-primary 情形的精化。
 

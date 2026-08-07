@@ -1,13 +1,14 @@
 ---
 kind: claim
 claim_id: type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go
-title: v=5 C0/C1 的 centered mixed-source fiber no-go 与相对 q=19 合同
-statement: 对 adaptive core-19 的 v=5 控制，C0=p-3 与 C1=19 的两条 raw receipt 共享 universal source orbit，但 q=5 move 需要 coordinate-frame swap，故不构成共同 ordered prefix。令 Phi0=13=C0^{-1}、Phi1=-C1^{-1} (mod R) 及 delta=Phi1 Phi0^{-1}=-C0C1^{-1}。delta 不属于 C_R(K)C_R(K)^{-1}，因而不可能存在任何 native centered fixed layer J=C_R(N), N|K，将两叶放入同一 row-to-anchor/source fiber；换言之，当前 pair 不能产生可收费的 q=19 source-rank demand。若未来的非 native adapter 证明同一完整参数纤维、稳定子商中的 19 阶角色存活和相对相位 zeta^11，则它严格强制有限 source image 的 19-初等秩至少为 1；这仍不蕴含整数 q-height、容量、Type II 命中或递降。
+title: v=5 C0/C1 的 centered mixed-source fiber no-go 与相对 q=19 边界
+statement: 对 adaptive core-19 的 v=5 控制，C0=p-3 与 C1=19 的两条 raw receipt 共享 universal source orbit，但 q=5 move 需要 coordinate-frame swap，故不构成共同 ordered prefix。令 Phi0=13=C0^{-1}、Phi1=-C1^{-1} (mod R) 及 delta=Phi1 Phi0^{-1}=-C0C1^{-1}。delta 不属于 C_R(K)C_R(K)^{-1}，因而不可能存在任何 native centered fixed layer J=C_R(N), N|K，将两叶放入同一 row-to-anchor/source fiber。一个独立的 signed marked-tail finite nonnative groupoid 可以闭合两条声明 raw path 的 phase 并给出抽象非零 19-初等 relation；它不是完整参数纤维，故不产生可收费 source-rank demand、整数 q-height、容量、Type II 命中或递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control
+  - type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid
   - type-I-g-anchor-c3-adaptive-core19-c19-atomic-reset
   - type-I-fg-fourier-to-type-II-role-demand-bridge
   - type-II-source-fiber-elementary-rank-qheight-injection
@@ -17,6 +18,8 @@ topics:
   - core19
   - raw-source
   - coordinate-frame
+  - signed-tail
+  - source-groupoid
   - fixed-layer
   - source-fiber
   - no-go
@@ -125,7 +128,7 @@ q=171566399\mid R,\qquad g=7,\qquad \operatorname{ord}_q(g)=171566398.
 **定理。** v=5 的 C0/C1 pair 不可能进入任意 native centered fixed layer 的同一
 row-to-anchor/source fiber。改变 \(N\)、\(P\) 或 \(\theta\) 都不能修复它。
 
-## 4. 相对 q=19 合同
+## 4. 相对 q=19 合同与 nonnative 边界
 
 令 \(\zeta=150\in U(191)\)，\(\eta(a)=a^{10}\pmod {191}\)。该点有
 
@@ -135,7 +138,12 @@ row-to-anchor/source fiber。改变 \(N\)、\(P\) 或 \(\theta\) 都不能修复
 \eta(C_1)=\zeta^{11},
 \]
 
-因此 \(\eta(\delta)=\zeta^{11}\ne1\)。若未来存在 **非 native** adapter，给出有限
+因此 \(\eta(\delta)=\zeta^{11}\ne1\)。
+[signed marked-tail groupoid](type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid.md)
+已经在两条**声明的** raw path 上闭合了这个相对 phase，并构造了使两叶相等的抽象商。
+它刻意没有完整 source universe、参数纤维或整数 lift，因而不能代入下面的容量合同。
+
+为说明一个真正的 **non-native capacity adapter** 还必须满足什么，假设它给出有限
 Abelian 商 \(\bar H=H/T\)、参数纤维映射 \(\pi\)、源映射
 \(\phi:\mathbb Z^r\to\bar H\)，以及同一完整纤维内的坐标 \(z_0,z_1\)，满足
 
@@ -165,8 +173,9 @@ v\notin19A_\pi,\qquad
 `SOURCE_RANK_DEMAND(19,1)`。它并不证明这个秩恰为一，也不产生整数
 \(19\)-height 或 Type II capacity。
 
-一个合格 adapter 必须提供：两条 full raw lineage 和 frame morphism、\(T,\pi,\phi,z_0,z_1\)、
-角色存活性、有限像的 SNF 行与
+有限 groupoid 已经提供两条 full raw lineage、frame morphism 和抽象 \(19\)-relation；
+但它没有把它们放入同一**完整** source fiber。一个合格 capacity adapter 仍须提供
+\(T,\pi,\phi,z_0,z_1\)、角色存活性、有限像的 SNF 行与
 \(\sum_j a_jx_j\equiv11\pmod {19}\)、完整 source-table closure，以及随后独立的
 整数 source-map 和 physical slot 回执。v=5 当前还被两个独立条件截断：F witness 为
 `provided_unbounded_modular` 而非 canonical Fourier input，且已有 \((m,d)=(3,11)\)
