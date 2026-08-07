@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 507 |
+| 数学状态 | `established` | 509 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 340 |
+| 证明来源 | `repository_derivation` | 342 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 476 |
+| 审阅状态 | `internal_review` | 478 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -352,6 +352,7 @@
 | [Fourier q-primary 相位到算术载体的有限提升—容量二分](../claims/type-I-fourier-qprimary-phase-lift-capacity-dichotomy.md) (`type-I-fourier-qprimary-phase-lift-capacity-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [c=3 adaptive core-19 ambient-19 substrate 的固定 Type II 筛](../claims/type-I-g-anchor-c3-adaptive-core19-ambient19-terminal-screen.md) (`type-I-g-anchor-c3-adaptive-core19-ambient19-terminal-screen`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [c=3 adaptive core-19 首个素数点的双叶、F 型固定层与 q=19 控制](../claims/type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control.md) (`type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 双中间因子块路径的自适应除子正规形](../claims/type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form.md) (`type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 补余 seed 的 affine-prime target-source raw 模板](../claims/type-I-g-anchor-c3-affine-prime-target-source-template.md) (`type-I-g-anchor-c3-affine-prime-target-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [p=6121 的同源 c=3 双叶 raw tree、A=19 carry 与 terminal/q19 截断](../claims/type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121.md) (`type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
@@ -692,6 +693,7 @@
 | [四自动缺口残余到 k=1 与 k>1 共享证书的精确漏斗](../claims/type-II-automatic-residual-k-one-funnel.md) (`type-II-automatic-residual-k-one-funnel`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [核心同余类上自动共享因子缺口的完全分类](../claims/type-II-automatic-shared-gap-classification.md) (`type-II-automatic-shared-gap-classification`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [Type II C2 商的单逃逸因子精确终端门](../claims/type-II-c2-quotient-one-escape-factor-terminal.md) (`type-II-c2-quotient-one-escape-factor-terminal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c=3 adaptive core-19 ray 的 gap-191 无穷 carrier sieve 与严格下降](../claims/type-II-c3-adaptive-core19-gap191-carrier-sieve.md) (`type-II-c3-adaptive-core19-gap191-carrier-sieve`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 中共同 p-carrier 两尾提升的严格 no-go](../claims/type-II-c3-common-carrier-mark-transfer-no-go.md) (`type-II-c3-common-carrier-mark-transfer-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 中 q=(p+11)/12 的 7 mod 11 互补因子 Type II 递降](../claims/type-II-c3-q-complementary-divisor-r7mod11-descent.md) (`type-II-c3-q-complementary-divisor-r7mod11-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [规范 Type II 扇不能长期全为一孔临界失败](../claims/type-II-canonical-critical-fan-escape-trichotomy.md) (`type-II-canonical-critical-fan-escape-trichotomy`) | `established` | `repository_derivation` | `internal_review` | `montgomery_vaughan2007`, `chamberland2026` | 2026-08-04 |

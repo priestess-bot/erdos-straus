@@ -185,9 +185,17 @@ m\mid D,\ m\equiv3\pmod4&192\\
 \tag{13}
 \]
 
-这里甚至没有额外施加自然范围 \(mle P-2\)，所以零命中确实排除了每个整条 ray 的
+这里甚至没有额外施加自然范围 \(m\le P-2\)，所以零命中确实排除了每个整条 ray 的
 固定 \((m,d)\) 模板。它**不**排除依赖 \(v\) 的因子、只在部分 prime parameter 上
 成立的模板，或其它 Type I/II terminal。
+
+后一项现在已有明确的正例：限制 \(v=8w\) 后，gap \(191\) 存在由
+\(N=(p+191)/192\) 的特定素因子触发的 moving square divisor。它在一个
+\(v=224+488z\) 子射线上给出严格 two-tail descent，且其无限 carrier sieve 在
+该 \(v=8w\) 子射线的 prime parameter 中密度为 \(1\)；同时 \(v=32\) 是完整
+gap-191 miss。精确选择律、密度边界和反例见
+[gap-191 carrier sieve](type-II-c3-adaptive-core19-gap191-carrier-sieve.md)。
+因此 (13) 绝不能被解释为 terminal-free 结论。
 
 ## 4. 当前地位与下一条证明义务
 
@@ -202,16 +210,29 @@ m\mid D,\ m\equiv3\pmod4&192\\
 
 不是素数，而 (5) 只保证无穷多个后续 prime parameter。
 
+现在已有一个必须与这条一般性陈述区分开的单点控制：\(v=5\) 给出首个素数点
+
+\[
+p=1202376916441.
+\tag{15}
+\]
+
+该点已有同源 \(C_0=p-3,C_1=19\) 双叶、\(J=\{1\}\) 的 F 型 target-box miss，
+以及在该固定层商中存活的归一化 \(19\)-角色；详见
+[v=5 双叶/Fourier 控制](type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control.md)。
+但它同时有直接 Type II terminal，故只能验证 raw/Fourier 接口，不能作为 root。
+该单点不把本卡的整个 ray 升格为 terminal-free 或具有统一 mixed-side word 的族。
+
 下一步的顺序必须是：
 
-1. 在该 ray 的 prime parameter 上构造同一 declared source 的 mixed-side 双叶 raw tree
-   \(C_0=p-3\) 与 \(C_1=19\)；
+1. 在非 terminal 的 prime parameter 上构造可重复的同源 mixed-side 双叶，而不是把
+   \(v=5\) 的特定因子路径外推为整条 ray；
 2. 为 \(C_1\) 给出 odd/mixed-side entry，而不是错误复用硬编码 even-tail 的 entry；
-3. 证明某个 F fixed layer 的稳定子商仍保留这个 \(19\)-character；
-4. 建立两叶相位、完整 physical transcript、持续 ledger 与 terminal-first guard；
-5. 最后才讨论 `demand_to_slot`、E4 和 E5。
+3. 把目前 \(J=\{1\}\) 的角色存活推进到有实际状态语义的 fixed layer，并建立两叶相位、
+   完整 physical transcript、持续 ledger 与 terminal-first guard；
+4. 最后才讨论 `demand_to_slot`、E4 和 E5。
 
-本卡没有完成上述任何 selector 接口，也没有证明 Erd\H{o}s--Straus 猜想或其任何
+本卡没有完成上述任何 selector 接口，也没有证明 Erdos--Straus 猜想或其任何
 全称子情形。
 
 复现：
