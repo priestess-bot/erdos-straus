@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-fg-raw-transcript-persistent-ledger-carry-core
 title: raw transcript 中持续 E2 账本的 gcd carry core
-statement: 对同一核心素数的一个已证明 sound 的 raw-to-overflow 物理行 transcript，若同一个旧 ledger A 必须在所有行保留且在指定行通过 E2，则 A 可行当且仅当 A 整除所有 carrier M_i 与所有 C_i(M_i mod p) 的 gcd。该 gcd 是无需预先选择 A 的最大持续 E2 charge；局部边 core 为 gcd(M_w,M_w',C_w'(M_w' mod p))，等于 1 时没有非平凡旧账本可跨边并在目标 E2 通过。若同一张 sound/complete 物理表还给出持续旧账本、实际相位匹配且碰撞至多为 eta 的 demand_to_slot，则其 q-primary 需求必满足 D_tau <= eta |I| min(e,v_q(CarryCore))；这个必要不等式不构造该映射。标准 c=3 参数的单行局部筛满足 gcd(26h+1,(24h-2)2h)=19 当且仅当 h=8 (mod 19)，否则为 1；该筛不构造 raw source、F 层、E2、terminal 或 selector 证书。p=73 给出严格正、负 overflow 控制；p=5281 的 Jacobi-odd raw rows 则在 E2 之前失败，因为 4M-n=R=p-2<p，不能把它们误作为 cofactor-overflow lift。
+statement: 对同一核心素数的一个已证明 sound 的 raw-to-overflow 物理行 transcript，若同一个旧 ledger A 必须在所有行保留且在指定行通过 E2，则 A 可行当且仅当 A 整除所有 carrier M_i 与所有 C_i(M_i mod p) 的 gcd。该 gcd 是无需预先选择 A 的最大持续 E2 charge；局部边 core 为 gcd(M_w,M_w',C_w'(M_w' mod p))，等于 1 时没有非平凡旧账本可跨边并在目标 E2 通过。若同一张 sound/complete 物理表还给出持续旧账本、实际相位匹配且碰撞至多为 eta 的 demand_to_slot，则其 q-primary 需求必满足 D_tau <= eta |I| min(e,v_q(CarryCore))；这个必要不等式不构造该映射。标准 c=3 参数的单行局部筛满足 gcd(26h+1,(24h-2)2h)=19 当且仅当 h=8 (mod 19)，否则为 1；在该同余类还存在一个同图表、两条不同 cofactor-overflow determinant 行的 A=19 算术 pair，且其两行 CarryCore 恰为 19。后二者均不构造 raw source、sound/complete transcript、F 层、terminal 或 selector 证书。p=73 给出严格正、负 overflow 控制；p=5281 的 Jacobi-odd raw rows 则在 E2 之前失败，因为 4M-n=R=p-2<p，不能把它们误作为 cofactor-overflow lift。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -390,7 +390,138 @@ ledger charge 输入。
 \((M,C,r,\mathrm{core})=(209,190,16,19)\)，以及实际 p=7129 control 的
 \(h=297\)、\((M,C,r,\mathrm{core})=(7723,7126,594,1)\)。这不是 range scan。
 
-## 7. 接入边界
+## 7. 标准 \(c=3\) 同图表的两行 \(A=19\) 算术 pair
+
+现在固定 \(h\equiv8\pmod {19}\) 且 \(h>0\)，并继续使用 (27) 的
+\(p,M_0,C_0\)。写
+
+\[
+h=8+19t,
+\qquad
+\mu=26t+11,
+\qquad
+\gamma=24t+10.
+\tag{33}
+\]
+
+因 \(h>0\)，必有 \(t\ge0\)。于是
+
+\[
+M_0=19\mu,
+\qquad
+C_0=19\gamma,
+\qquad
+p=19\gamma+3,
+\qquad
+R=104h-9=76\mu-13.
+\tag{34}
+\]
+
+令 \(K=M_0C_0=19^2\mu\gamma\)。除了原来的 \(c=3\) 行，再取同一个
+\((p,R,K)\) 图表的互补因子行：
+
+\[
+\begin{array}{c|c|c|c|c}
+ i&M_i&C_i&d_i=p-C_i&n_i=4M_i-R\\ \hline
+0&19\mu&19\gamma&3&13\\
+1&19\mu\gamma&19&p-19&76\mu(\gamma-1)+13.
+\end{array}
+\tag{35}
+\]
+
+**命题（两行 \(A=19\) 算术证书）。** 若参数 \(p=24h+1\) 在所用语义中是核心素数，
+则 (35) 是两条不同的 cofactor-overflow determinant 行；候选旧账本 \(A=19\) 在两行都
+通过 E2。若声明 \(\mathcal T=I=\{0,1\}\)，则
+
+\[
+\boxed{
+\gcd\bigl(M_0,M_1,C_0(M_0\bmod p),C_1(M_1\bmod p)\bigr)=19.
+}
+\tag{36}
+\]
+
+**证明。** 由 (33)，直接消元得到
+
+\[
+13\gamma-12\mu=-2,
+\qquad
+19\mu-26h=1.
+\tag{37}
+\]
+
+特别地 \((\mu,\gamma)=(\mu,h)=1\)，且 \(\mu\) 为奇数。第一行的 determinant
+恒等式可写作
+
+\[
+p\cdot13=4(19\mu)\cdot3+1,
+\tag{38}
+\]
+
+它正是 (37) 的第一式乘以 \(19\) 后的重排。又由同一式，
+
+\[
+pR=(19\gamma+3)(76\mu-13)=76(19\mu\gamma)-1,
+\tag{39}
+\]
+
+故第二行满足
+
+\[
+p\bigl(4M_1-R\bigr)=4M_1(p-19)+1.
+\tag{40}
+\]
+
+两行都有 \(4M_i-n_i=R\)，而
+
+\[
+R-p=80h-10>0,
+\tag{41}
+\]
+
+所以均处于 cofactor-overflow 域。它们不同，因为 \(M_1>M_0\) 且 \(C_1<C_0\)
+（\(\gamma\ge10\)）。两个 \(M_i\) 都被 \(19\) 整除，且两个 \(C_i\) 也被 \(19\)
+整除，因此 \(A/(A,C_i)=1\)，两行的 E2 自动通过。
+
+为计算 (36)，第一行的余数是 \(r_0=2h\)，第二行的余数是
+\(r_1=p-3\mu=378t+160\)。由于
+
+\[
+\gcd(M_0,M_1,C_0r_0)
+=\gcd(19\mu,19\mu\gamma,38\gamma h)=19,
+\tag{42}
+\]
+
+左侧的四项 gcd 至多为 \(19\)。这里最后一个等式只使用
+\((\mu,\gamma)=(\mu,h)=1\) 和 \(\mu\) 为奇数。另一方面每个
+\(M_i\) 与每个 \(C_ir_i\) 都被 \(19\) 整除：对 \(i=0\) 由 (34)，对 \(i=1\)
+由 \(C_1=19\)。所以整个 gcd 恰为 \(19\)，证毕。
+
+这个命题只消除了“需要两条不同 physical determinant 行且候选 \(19\)-账本能在两行
+通过 E2”这一**算术**障碍。它没有产生一个持续旧账本，也没有给出第二行的 raw source
+word；第一行与第二行也尚未组成 sound/complete transcript。尤其 \(d_1=p-19\)，不是第二条 \(d=3\) 行。
+它同样不声明 F fixed layer、terminal-first 状态、角色、相位/anchor、
+`demand_to_slot`、E4、E5、解提升或递降。
+
+在 \(h=8\)、\(p=193\) 的有限正控制中，(35) 具体为
+
+\[
+(M_0,C_0,d_0,n_0,r_0)=(209,190,3,13,16),
+\]
+
+\[
+(M_1,C_1,d_1,n_1,r_1)=(2090,19,174,7537,160),
+\tag{45}
+\]
+
+并且其两行 CarryCore 为 \(19\)。复现仅检查这些符号恒等式和该正控制。
+
+对 \(h=255\)、\(p=6121\)，这组两行还各自有同一 declared universal source 下的逐步
+raw receipt，见 [p=6121 的同源双叶控制](type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121.md)。
+该点已有 direct Type II terminal，且没有 \(19\)-primary unit-group character；所以它只把
+本节的纯算术 pair 升级为一个 raw-provenance 正控制，不把 (24) 的物理表、q-slot 映射或
+selector 接口自动补齐。
+
+## 8. 接入边界
 
 `CarryCore` 只有在 raw 行与 transition universe 已独立证明 sound/complete、并且行确属
 cofactor-overflow 后才能调用。它不创建 source map，不从 finite Fourier/SNF 相位推出

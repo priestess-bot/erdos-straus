@@ -7,9 +7,10 @@ pass E2 wherever E2 is required.  The p=5281 raw ledger is also checked as a
 negative scope control: its rows are not cofactor-overflow rows, so E2 cannot
 be invoked there.
 
-The final c=3 calculation is deliberately weaker: it is an arithmetic
-single-row screen for gcd(M, C * (M mod p)), not a raw-source, F-layer, E2,
-terminal, or selector certificate.
+The final c=3 calculation is deliberately weaker: it establishes a one-row
+gcd screen and a same-chart two-row determinant/E2 arithmetic pair, not a
+raw-source, sound/complete transcript, F-layer, terminal, or selector
+certificate.
 """
 
 from __future__ import annotations
@@ -176,6 +177,48 @@ def standard_c3_local_core(h: int) -> dict[str, int]:
     }
 
 
+def standard_c3_two_row_ledger_pair(h: int) -> dict[str, object]:
+    """Build the same-chart two-row A=19 arithmetic pair in its exact class."""
+    base = standard_c3_local_core(h)
+    if h % 19 != 8 or base["core"] != 19:
+        raise AssertionError("the two-row c=3 pair requires the core-19 class")
+
+    t = (h - 8) // 19
+    p, M0, C0 = (base[key] for key in ("p_parameter", "M", "C"))
+    R = 104 * h - 9
+    K = M0 * C0
+    M1, C1 = K // 19, 19
+    rows = [
+        {"p": p, "A": 19, "M": M0, "C": C0, "d": p - C0, "n": 4 * M0 - R},
+        {"p": p, "A": 19, "M": M1, "C": C1, "d": p - C1, "n": 4 * M1 - R},
+    ]
+    if K % 19 or rows[0]["d"] != 3 or rows[1]["d"] != p - 19:
+        raise AssertionError("c=3 companion row parameters changed")
+    if not (M1 > M0 and C1 < C0):
+        raise AssertionError("c=3 companion is not a distinct physical row")
+    if rows[0]["M"] % p != 2 * h or rows[1]["M"] % p != 378 * t + 160:
+        raise AssertionError("c=3 two-row carry residues changed")
+    for row in rows:
+        verify_overflow_row(row)
+        if not e2_passes(A=19, C=row["C"], M=row["M"], p=p):
+            raise AssertionError("A=19 unexpectedly fails E2 on the c=3 pair")
+
+    core = persistent_carry_core(rows=rows, e2_indices={0, 1})
+    if core != 19:
+        raise AssertionError("c=3 two-row carry core changed")
+    return {
+        "h": h,
+        "chart": {"p": p, "R": R, "K": K},
+        "old_ledger": 19,
+        "rows": [{**row, "r": row["M"] % p} for row in rows],
+        "carry_core": core,
+        "scope": (
+            "A same-chart determinant/E2 arithmetic pair only; it does not supply a "
+            "sound complete raw transcript, F layer, terminal-first result, or selector edge."
+        ),
+    }
+
+
 def verify_standard_c3_local_core_screen() -> dict[str, object]:
     """Check one representative of every h class modulo 19, without a scan."""
     residue_rows = []
@@ -231,13 +274,21 @@ def verify_standard_c3_local_core_screen() -> dict[str, object]:
         "expected_core": 1,
     }:
         raise AssertionError("c=3 p=7129 local core control changed")
+    h8_pair = standard_c3_two_row_ledger_pair(8)
+    if h8_pair["rows"] != [
+        {"p": 193, "A": 19, "M": 209, "C": 190, "d": 3, "n": 13, "r": 16},
+        {"p": 193, "A": 19, "M": 2090, "C": 19, "d": 174, "n": 7537, "r": 160},
+    ] or h8_pair["carry_core"] != 19:
+        raise AssertionError("c=3 h=8 two-row ledger control changed")
     return {
         "scope": (
-            "A single-row arithmetic screen only. It does not assert primality, a raw "
-            "source/transcript, an F layer, E2 admission, terminal status, or a selector edge."
+            "A one-row arithmetic screen plus a same-chart two-row determinant/E2 pair "
+            "only. It does not assert primality, a raw source/transcript, an F layer, "
+            "terminal status, or a selector edge."
         ),
         "residue_class_representatives_mod_19": residue_rows,
         "h8_arithmetic_positive_control": h8,
+        "h8_two_row_ledger_pair": h8_pair,
         "p7129_h297_core_one_control": h297,
     }
 

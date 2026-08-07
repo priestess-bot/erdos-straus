@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 504 |
+| 数学状态 | `established` | 507 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 337 |
+| 证明来源 | `repository_derivation` | 340 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 473 |
+| 审阅状态 | `internal_review` | 476 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -351,10 +351,13 @@
 | [Fourier 与固定 B 清分相位的冲突—非互素吸收二分](../claims/type-I-fourier-fixed-b-phase-compatibility-no-go.md) (`type-I-fourier-fixed-b-phase-compatibility-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [Fourier q-primary 相位到算术载体的有限提升—容量二分](../claims/type-I-fourier-qprimary-phase-lift-capacity-dichotomy.md) (`type-I-fourier-qprimary-phase-lift-capacity-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [c=3 adaptive core-19 ambient-19 substrate 的固定 Type II 筛](../claims/type-I-g-anchor-c3-adaptive-core19-ambient19-terminal-screen.md) (`type-I-g-anchor-c3-adaptive-core19-ambient19-terminal-screen`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 双中间因子块路径的自适应除子正规形](../claims/type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form.md) (`type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 补余 seed 的 affine-prime target-source raw 模板](../claims/type-I-g-anchor-c3-affine-prime-target-source-template.md) (`type-I-g-anchor-c3-affine-prime-target-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [p=6121 的同源 c=3 双叶 raw tree、A=19 carry 与 terminal/q19 截断](../claims/type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121.md) (`type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 偶侧 seed 的 fresh root-entry 准入边界](../claims/type-I-g-anchor-c3-even-tail-root-entry-admission-boundary.md) (`type-I-g-anchor-c3-even-tail-root-entry-admission-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
-| [c=3 双中间 skeleton 的复合因子块 raw word](../claims/type-I-g-anchor-c3-factor-block-raw-source-receipts.md) (`type-I-g-anchor-c3-factor-block-raw-source-receipts`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c=3 双中间 skeleton 的复合因子块 raw word](../claims/type-I-g-anchor-c3-factor-block-raw-source-receipts.md) (`type-I-g-anchor-c3-factor-block-raw-source-receipts`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [c=3 factor-block actual raw rays 的 terminal-first 整条截断](../claims/type-I-g-anchor-c3-factor-block-terminal-preemption.md) (`type-I-g-anchor-c3-factor-block-terminal-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 双中间固定 skeleton 有限菜单不完备性](../claims/type-I-g-anchor-c3-fixed-skeleton-finite-menu-no-go.md) (`type-I-g-anchor-c3-fixed-skeleton-finite-menu-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [p=1009 的 c=3 universal-source 非 p 绕行 raw receipt](../claims/type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt.md) (`type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 一次性 root-to-R=11 RESET 与固定尾 terminal bridge](../claims/type-I-g-anchor-c3-root-to-r11-reset-terminal-bridge.md) (`type-I-g-anchor-c3-root-to-r11-reset-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |

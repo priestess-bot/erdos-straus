@@ -32,7 +32,7 @@ sources:
   - concept: denominator-escape-state-contract
     role: E1-E5-boundary
 visibility: public
-last_checked: '2026-08-06'
+last_checked: '2026-08-07'
 ---
 
 # \(c=3\) 双中间 skeleton 的复合因子块 raw word
@@ -317,3 +317,9 @@ h\bmod6&(a,b)&h(t)&p(t)\\ \hline
 factor-block receipt 进入递归分支。因子块引理的可复用研究价值在于：它把后续
 adaptive \((a,b)\) 搜索的容量条件缩成端点 reserve (10)，而不是错误地排除所有
 \(K\)-共享素因子。
+
+现已知 (18) 和 (21) 所列的五条 Dirichlet raw ray 都有整条参数线上成立的 Type II
+terminal 与严格双尾递降，见
+[factor-block ray 的 terminal-first 截断](type-I-g-anchor-c3-factor-block-terminal-preemption.md)。
+因此它们保留 raw provenance 的价值，却不再是 root 候选；这个结论不外推到本卡未列的
+adaptive \((a,b)\) 选择。
