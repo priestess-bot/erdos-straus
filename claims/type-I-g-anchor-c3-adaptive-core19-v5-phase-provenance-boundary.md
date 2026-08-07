@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-g-anchor-c3-adaptive-core19-v5-phase-provenance-boundary
 title: v=5 q=19 相位关系的 provenance 边界与条件重建
-statement: 在 v=5、D=6303 的完整带标签候选格中，eta(mu)=chi(H) 只给出 raw mark 与 candidate cofactor 的多值关系，不能推出 H 的 19-adic 高度、N_A 的 19-adic 预算或 A 标签。特别地，C38 的 phase zeta^11 有 8 个带标签 candidate cofactors，其 v19(H) 取遍 0,1,2,3；即使固定 A=573，仍有四个同 phase cofactor 分别具有 0,1,2,3 的高度。另一方面，若 future adapter 独立证明 A=573 与共同 q-free base U=53*3671，并使 H_i=U*19^j (0<=j<=3)，则三条 raw phase zeta^16,zeta^8,zeta^11 唯一强制 j=(0,1,3)。此外，对任何 191|D 的 target-odd h=-1 (mod 4D)，chi(h)=1；因此三条当前非平凡 raw phase 均不能经 eta-preserving 的直接 identification 变成 target 因子。结论要求 raw-to-fiber functor 明确保留 factor provenance、candidate label、shared-q ledger 与 slot injection；它不构成 adapter、capacity 或 selector edge。
+statement: 在 v=5、D=6303 的完整带标签候选格中，eta(mu)=chi(H) 只给出 raw mark 与 candidate cofactor 的多值关系，不能推出 H 的 19-adic 高度、N_A 的 19-adic 预算或 A 标签。特别地，C38 的 phase zeta^11 有 8 个带标签 candidate cofactors，其 v19(H) 取遍 0,1,2,3；即使固定 A=573，仍有四个同 phase cofactor 分别具有 0,1,2,3 的高度。另一方面，若 future adapter 独立证明 A=573 与共同 q-free base U=53*3671，并使 H_i=U*19^j (0<=j<=3)，则三条 raw phase zeta^16,zeta^8,zeta^11 唯一强制 j=(0,1,3)。此外，对任何 191|D 的 target-odd h=-1 (mod 4D)，chi(h)=1；因此三条当前非平凡 raw phase 均不能经 eta-preserving 的直接 identification 变成 target 因子。更强地，若试图以 cH=-1 (mod 25212) 作乘法 phase correction，则 c=-H^(-1) 唯一依赖 H (mod 25212)；同一 (A,phase)=(573,11) 的四个 H 已要求四个不同 c，故 phase 或 (A,phase) 单独不足以调谐 target residue。结论要求 raw-to-fiber functor 明确保留 factor provenance、candidate label、cofactor residue、shared-q ledger 与 slot injection；它不构成 adapter、capacity 或 selector edge。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -25,6 +25,8 @@ topics:
   - target-odd
   - no-go
   - conditional-reconstruction
+  - phase-correction
+  - target-residue
   - proof-boundary
 sources:
   - reproduction: reproductions/type_i_c3_adaptive_core19_v5_phase_provenance_boundary.py
@@ -189,14 +191,71 @@ U19^2=70237243\equiv49\pmod {191},\qquad
 因 \(191\nmid(70237243+1)\)，它也不可能是任何保留 \(191\) conductor 的 target
 factor。故不能把 phase 中性误读为 target-odd。
 
-## 5. Adapter 的必要信息
+## 5. Target correction 的残数刚性
+
+上一节只排除了保持相位的直接 identification。也可以试图把一个 candidate cofactor
+\(H\in U(M)\) 乘以校正因子 \(c\in U(M)\)，使
+
+\[
+cH\equiv-1\pmod M,
+\qquad M=25212.
+\tag{14}
+\]
+
+这里没有 phase 的自由选择：因为 \(H\) 是单位，(14) 当且仅当
+
+\[
+\boxed{c\equiv-H^{-1}\pmod M.}
+\tag{15}
+\]
+
+又 \(191\mid M\)、\(\chi(-1)=1\)，故 (15) 自动给
+
+\[
+\chi(c)=\chi(H)^{-1}.
+\tag{16}
+\]
+
+也就是说，相位校正只是 target 同余的必要投影；它不能替代完整的 \(M\)-残数。
+事实上 \(|U(M)|=7600\)，而 \(\chi\) 满射到 19 阶群，所以给定一个 inverse phase
+仍有 \(400\) 个单位校正候选。
+
+这个差距在同一 label 内已经不可消除。对 \(C_{38}\) 的 phase \(\zeta^{11}\)，固定
+\(A=573\) 后的四个允许 cofactor 是
+
+\[
+(H_1,H_2,H_3,H_4)
+=(19,1014049,3307571,1334507617),
+\tag{17}
+\]
+
+其 \(M\)-残数和由 (15) 唯一确定的 target corrections 分别为
+
+\[
+\begin{array}{c|cccc}
+H\bmod M&19&5569&4799&11245\\ \hline
+-H^{-1}\bmod M&23885&22799&21193&24647.
+\end{array}
+\tag{18}
+\]
+
+四个 \(c\) 都有相同 character \(\zeta^8\)，却彼此不同。因此不存在一个单值
+\(c=\kappa(A,\operatorname{phase})\)，使 (14) 对 (17) 中每一个当前允许的 \(H\)
+同时成立；对固定 raw mark \(\mu_{C_{38}}\) 的单值
+\(\kappa(\mu_{C_{38}},573)\) 也一样。
+
+这个结论不排除保存 \(H\bmod M\) 的 correction，也不排除非乘法 map。它说明任何后续
+整数 lift 至少要携带 cofactor residue，并给出 \(cH\mid N_A\) 或其它 target factor
+的真正整除回执；单独把 \(\chi(c)=\chi(H)^{-1}\) 写进 adapter 并没有 terminal 内容。
+
+## 6. Adapter 的必要信息
 
 任何能升级为 capacity 或 selector 的 raw-to-fiber functor，至少须保留与下列数据等价
 的信息：
 
 1. raw occurrence、entry digest、signed tail 与逐边 receipt；
 2. candidate fiber 标签 \((D_*,A,b,N_A)\)；
-3. \(H\mid N_A\) 的因子回执，或等价的 q-free base 与指数；
+3. \(H\mid N_A\) 的因子回执，以及 \(H\bmod4D_*\)，或等价的 q-free base、指数与残数；
 4. shared-q 的来源标签、逐层 ledger 与剩余预算；
 5. demand-to-slot 单射及 nonreuse/subset-divisibility 回执。
 

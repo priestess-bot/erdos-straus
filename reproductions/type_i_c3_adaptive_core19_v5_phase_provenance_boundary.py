@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from math import gcd
 
 import type_i_c3_adaptive_core19_v5_c38_q19_phase_leaf as c38
 import type_i_c3_adaptive_core19_v5_d6303_fiber_catalog as catalog
@@ -200,6 +201,57 @@ def verify_conductor_target_phase_barrier() -> dict[str, object]:
     }
 
 
+def verify_target_correction_residue_rigidity() -> dict[str, object]:
+    """Show that a target correction needs cofactor residue, not just phase."""
+    modulus = 4 * catalog.D
+    phase = RAW_MARKS["C38"][1]
+    same_label_cofactors = sorted(
+        H for A, H, _nu_H, _residual, _nu_N in record_rows(phase) if A == 573
+    )
+    residues = [H % modulus for H in same_label_cofactors]
+    corrections = [(-pow(H, -1, modulus)) % modulus for H in same_label_cofactors]
+    units = [value for value in range(1, modulus) if gcd(value, modulus) == 1]
+    inverse_phase = pow(ZETA, (-phase) % 19, CONDUCTOR)
+    phase_correctors = [
+        value for value in units if pow(value, 10, CONDUCTOR) == inverse_phase
+    ]
+    if not (
+        modulus == 25_212
+        and phase == 11
+        and same_label_cofactors == [19, 1_014_049, 3_307_571, 1_334_507_617]
+        and residues == [19, 5_569, 4_799, 11_245]
+        and corrections == [23_885, 22_799, 21_193, 24_647]
+        and len(units) == 7_600
+        and len(phase_correctors) == 400
+        and len(set(corrections)) == 4
+        and all(
+            correction in phase_correctors
+            and correction * H % modulus == modulus - 1
+            for H, correction in zip(same_label_cofactors, corrections)
+        )
+    ):
+        raise AssertionError("target correction residue rigidity changed")
+    return {
+        "A": 573,
+        "raw_leaf": "C38",
+        "phase": phase,
+        "same_phase_cofactors": same_label_cofactors,
+        "cofactor_residues_mod_25212": residues,
+        "unique_target_corrections_mod_25212": corrections,
+        "inverse_phase": inverse_phase,
+        "phase_corrector_count": len(phase_correctors),
+        "conclusion": (
+            "A multiplicative correction cH=-1 modulo 25212 is unique once H is "
+            "known; no one c determined only by the C38 phase and A=573 works for "
+            "all four current-compatible cofactors."
+        ),
+        "scope": (
+            "This blocks only phase-and-label-only multiplicative target corrections; "
+            "an H-residue-aware map still needs an integer factor/provenance lift."
+        ),
+    }
+
+
 def build_result() -> dict[str, object]:
     """Build the finite provenance boundary and its conditional reconstruction."""
     return {
@@ -209,6 +261,7 @@ def build_result() -> dict[str, object]:
         "same_record_height_disguise": verify_height_disguise(),
         "conditional_chain_reconstruction": verify_conditional_chain_reconstruction(),
         "conductor_target_phase_barrier": verify_conductor_target_phase_barrier(),
+        "target_correction_residue_rigidity": verify_target_correction_residue_rigidity(),
         "minimum_missing_provenance": [
             "raw occurrence and entry digest with signed-tail receipt",
             "candidate fiber label (D_star, A, b, N_A)",
