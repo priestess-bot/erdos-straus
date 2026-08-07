@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 521 |
+| 数学状态 | `established` | 523 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 354 |
+| 证明来源 | `repository_derivation` | 356 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 490 |
+| 审阅状态 | `internal_review` | 492 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -355,6 +355,7 @@
 | [c=3 adaptive core-19 的 C=19 原子 raw-to-R=63 RESET](../claims/type-I-g-anchor-c3-adaptive-core19-c19-atomic-reset.md) (`type-I-g-anchor-c3-adaptive-core19-c19-atomic-reset`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的广义 q 三段 raw 语言与 C=19^2 固定 RESET 实际族](../claims/type-I-g-anchor-c3-adaptive-core19-generalized-q-block-fixed-c.md) (`type-I-g-anchor-c3-adaptive-core19-generalized-q-block-fixed-c`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [q=137 实际 raw 族的 d=1 Type II moving-terminal 网](../claims/type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web.md) (`type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [q=137 实际 raw 族的 D=6303 target-tuned Type II 终端子射线](../claims/type-I-g-anchor-c3-adaptive-core19-q137-d6303-target-tuned-terminal-subray.md) (`type-I-g-anchor-c3-adaptive-core19-q137-d6303-target-tuned-terminal-subray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的 q=137 首标签 C=19 实际 raw 家族](../claims/type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family.md) (`type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的 q=23 首标签 C=19 入口与全分支 terminal 障碍](../claims/type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction.md) (`type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 的第三条 C=38 实际 raw 叶与 q=19 相位层](../claims/type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf.md) (`type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
@@ -733,6 +734,7 @@
 | [Type II CRT 局部标签到全局 Fourier 的幂等元桥](../claims/type-II-crt-local-label-idempotent-phase-bridge.md) (`type-II-crt-local-label-idempotent-phase-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 因子生成器在 10^8 内的有限参数盒审计](../claims/type-II-factor-box-audit.md) (`type-II-factor-box-audit`) | `computationally_reported` | `unspecified` | `unspecified` | `bello2026` | 2026-07-23 |
 | [Type II 互素因子对的二次比值载体与严格递降](../claims/type-II-factor-pair-carrier-strict-descent.md) (`type-II-factor-pair-carrier-strict-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [Type II 两尾严格源与广义二进终端的不交定理](../claims/type-II-factor-pair-dyadic-source-nonoverlap.md) (`type-II-factor-pair-dyadic-source-nonoverlap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [q 平方因子给出的 Type II 双尾递降同余族](../claims/type-II-factor-square-tail-descent-family.md) (`type-II-factor-square-tail-descent-family`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-26 |
 | [Type II 扇扩张的模数强制因子精确更新律](../claims/type-II-fan-extension-forced-factor-update.md) (`type-II-fan-extension-forced-factor-update`) | `established` | `repository_derivation` | `internal_review` | `chamberland2026` | 2026-07-28 |
 | [Type II 扇扩张的同余状态分支不可判定性](../claims/type-II-fan-lift-nondeterminism.md) (`type-II-fan-lift-nondeterminism`) | `established` | `repository_derivation` | `internal_review` | `linnik1944`, `chamberland2026` | 2026-07-28 |

@@ -241,8 +241,8 @@ H\bmod M&19&5569&4799&11245\\ \hline
 
 四个 \(c\) 都有相同 character \(\zeta^8\)，却彼此不同。因此不存在一个单值
 \(c=\kappa(A,\operatorname{phase})\)，使 (14) 对 (17) 中每一个当前允许的 \(H\)
-同时成立；对固定 raw mark \(\mu_{C_{38}}\) 的单值
-\(\kappa(\mu_{C_{38}},573)\) 也一样。
+同时成立；在未提供区分这四个 \(H\) 的 raw-to-\(H\) provenance 时，对固定 raw mark
+\(\mu_{C_{38}}\) 的单值 \(\kappa(\mu_{C_{38}},573)\) 也不能作这种一致认证。
 
 这个结论不排除保存 \(H\bmod M\) 的 correction，也不排除非乘法 map。它说明任何后续
 整数 lift 至少要携带 cofactor residue，并给出 \(cH\mid N_A\) 或其它 target factor

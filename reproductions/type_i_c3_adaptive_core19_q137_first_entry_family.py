@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from math import gcd
+from math import gcd, isqrt
 
 import type_i_c3_affine_prime_even_tail_root_entry as raw
 import type_i_c3_factor_block_even_tail_root_entry as factor_blocks
@@ -24,6 +24,18 @@ FIRST_LABEL = 137
 TERMINAL_GAP = 1_319
 TERMINAL_SUBRAY_STEP = P_STEP * TERMINAL_GAP
 D1_WEB_CONTROLS = ((11, 3), (55, 36), (1_319, 1))
+TARGET_D = 6_303
+TARGET_A = 1
+TARGET_C = TARGET_D
+TARGET_MODULUS = 4 * TARGET_D
+TARGET_FACTOR = TARGET_MODULUS - 1
+TARGET_W0 = 21_771
+TARGET_PARAMETER_STEP = TARGET_FACTOR
+TARGET_P_BASE = 16_822_803_693_721
+TARGET_P_STEP = 19_480_947_311_448
+TARGET_CONTROL_T = 2
+TARGET_CONTROL_W = 72_193
+TARGET_CONTROL_P = 55_784_698_316_617
 
 
 def prime_word(value: int) -> list[int]:
@@ -145,6 +157,141 @@ def verify_d1_terminal_web() -> dict[str, object]:
         "controls": controls,
         "base_w_zero_status": "outside the d=1 web; it has the separate (m,d)=(7,20) terminal",
         "scope": "d=1 factor-pair terminals only; this is an infinite web, not full coverage",
+    }
+
+
+def one_base_pocklington(
+    value: int,
+    base: int,
+    factors: tuple[tuple[int, int], ...],
+    verified_primes: set[int],
+) -> None:
+    """Replay a short Pocklington step from previously certified primes."""
+    proved_factor = 1
+    for prime, exponent in factors:
+        if prime not in verified_primes or exponent <= 0:
+            raise AssertionError("Pocklington chain has an uncertified factor")
+        proved_factor *= prime**exponent
+    if not (
+        value > 2
+        and (value - 1) % proved_factor == 0
+        and proved_factor > isqrt(value)
+        and pow(base, value - 1, value) == 1
+        and all(
+            gcd(pow(base, (value - 1) // prime, value) - 1, value) == 1
+            for prime, _exponent in factors
+        )
+    ):
+        raise AssertionError("target-tuned Pocklington step changed")
+
+
+def verify_target_tuned_prime_control() -> None:
+    """Certify one actual prime term without trial-dividing the large label."""
+    small_primes = {2, 3, 5, 7, 29, 43, 53, 1_163}
+    if not all(shared.is_prime(prime) for prime in small_primes):
+        raise AssertionError("target-tuned Pocklington base factor is not prime")
+    verified_primes = set(small_primes)
+    chain = (
+        (21_003_781, 10, ((2, 2), (3, 1), (5, 1), (7, 1), (43, 1), (1_163, 1))),
+        (252_045_373, 2, ((21_003_781, 1),)),
+        (43_855_894_903, 2, ((252_045_373, 1),)),
+        (TARGET_CONTROL_P, 2, ((43_855_894_903, 1),)),
+    )
+    for value, base, factors in chain:
+        one_base_pocklington(value, base, factors, verified_primes)
+        verified_primes.add(value)
+    if not (
+        21_003_781 - 1 == 2**2 * 3 * 5 * 7 * 43 * 1_163
+        and 252_045_373 - 1 == 2**2 * 3 * 21_003_781
+        and 43_855_894_903 - 1 == 2 * 3 * 29 * 252_045_373
+        and TARGET_CONTROL_P - 1 == 2**3 * 3 * 53 * 43_855_894_903
+    ):
+        raise AssertionError("target-tuned Pocklington factorizations changed")
+
+
+def verify_target_tuned_subray(
+    capacity_subray: dict[str, object] | None = None,
+) -> dict[str, object]:
+    """Construct an actual q=137 raw subray with a D=6303 Type II target."""
+    verify_target_tuned_prime_control()
+    if capacity_subray is None:
+        capacity_subray = verify_capacity_subray()
+    if capacity_subray.get("stable_subray") != {
+        "v": "12369*w",
+        "p": [P0, P_STEP],
+    }:
+        raise AssertionError("target-tuned subray lost its q=137 raw-family gate")
+    if not (
+        TARGET_D == 3 * 11 * 191
+        and TARGET_A == 1
+        and TARGET_C == TARGET_D // TARGET_A == 6_303
+        and TARGET_MODULUS == 25_212
+        and TARGET_FACTOR == 25_211 == 4 * TARGET_A * TARGET_C - 1
+        and gcd(TARGET_FACTOR, TARGET_MODULUS) == 1
+        and gcd(P_STEP, TARGET_FACTOR) == 1
+        and TARGET_W0
+        == (-(P0 + TARGET_A * TARGET_MODULUS) * pow(P_STEP, -1, TARGET_FACTOR))
+        % TARGET_FACTOR
+        and TARGET_P_BASE == P0 + P_STEP * TARGET_W0
+        and TARGET_P_STEP == P_STEP * TARGET_PARAMETER_STEP
+        and TARGET_CONTROL_W == TARGET_W0 + TARGET_PARAMETER_STEP * TARGET_CONTROL_T
+        and TARGET_CONTROL_P == TARGET_P_BASE + TARGET_P_STEP * TARGET_CONTROL_T
+        and gcd(TARGET_P_BASE, TARGET_P_STEP) == 1
+        and TARGET_P_BASE % 24 == 1
+        and TARGET_P_STEP % 24 == 0
+        and TARGET_A * TARGET_MODULUS < TARGET_P_BASE
+        and (TARGET_P_BASE + TARGET_A * TARGET_MODULUS) % TARGET_FACTOR == 0
+    ):
+        raise AssertionError("target-tuned raw progression changed")
+
+    certificates = []
+    for t in (0, TARGET_CONTROL_T, 17):
+        w = TARGET_W0 + TARGET_PARAMETER_STEP * t
+        prime = TARGET_P_BASE + TARGET_P_STEP * t
+        B = (prime + TARGET_A) // TARGET_FACTOR
+        gap = TARGET_A + B
+        x = TARGET_A * B * TARGET_C
+        certificate = type_ii_factor_pair(prime, gap, TARGET_A**2 * TARGET_C)
+        if not (
+            w >= 0
+            and prime == P0 + P_STEP * w
+            and prime + TARGET_A * TARGET_MODULUS == TARGET_FACTOR * gap
+            and TARGET_FACTOR * B == prime + TARGET_A
+            and gap % 4 == 3
+            and 3 <= gap <= prime - 2
+            and TARGET_A <= B
+            and gcd(TARGET_A, B) == 1
+            and x == TARGET_A * B * TARGET_C
+            and 0 < x < prime
+            and certificate
+            == {
+                "gap": gap,
+                "divisor": TARGET_A**2 * TARGET_C,
+                "x": x,
+                "y": prime * TARGET_A * TARGET_C,
+                "z": prime * B * TARGET_C,
+            }
+        ):
+            raise AssertionError("target-tuned Type II normal form changed")
+        certificates.append({"t": t, "w": w, "B": B, **certificate})
+    return {
+        "D_star": TARGET_D,
+        "A": TARGET_A,
+        "C": TARGET_C,
+        "K": 1,
+        "target_factor": TARGET_FACTOR,
+        "parameter_subray": {
+            "w": f"{TARGET_W0}+{TARGET_PARAMETER_STEP}*t",
+            "p": [TARGET_P_BASE, TARGET_P_STEP],
+            "prime_terms": "Dirichlet progression; t=2 is Pocklington-certified",
+        },
+        "prime_progression_gcd": gcd(TARGET_P_BASE, TARGET_P_STEP),
+        "actual_raw_status": "q=137 raw receipt follows for every prime parameter",
+        "certificates": certificates,
+        "scope": (
+            "An explicitly target-tuned terminal subray, not a raw-to-fiber adapter "
+            "or a terminal-free selector branch."
+        ),
     }
 
 
@@ -359,13 +506,15 @@ def verify_prime_control() -> dict[str, object]:
 
 
 def build_result() -> dict[str, object]:
-    """Build actual raw controls and their exact d=1 terminal-web boundary."""
+    """Build actual raw controls and their terminal-first boundaries."""
+    capacity_subray = verify_capacity_subray()
     return {
-        "certificate_type": "c3_core19_q137_first_entry_family_v2",
-        "capacity_subray": verify_capacity_subray(),
+        "certificate_type": "c3_core19_q137_first_entry_family_v3",
+        "capacity_subray": capacity_subray,
         "fixed_pair_screen": verify_fixed_pair_screen(),
         "terminal_preempted_subray": verify_terminal_preempted_subray(),
         "d1_terminal_web": verify_d1_terminal_web(),
+        "target_tuned_terminal_subray": verify_target_tuned_subray(capacity_subray),
         "prime_raw_control": verify_prime_control(),
         "base_terminal_control": type_ii_factor_pair(193, 7, 20),
         "selector_status": "actual_raw_family_with_terminal_preempted_subray",
@@ -378,7 +527,7 @@ def main() -> None:
     args = parser.parse_args()
     result = build_result()
     if args.verify:
-        print("verified q=137 C=19 raw family, fixed-pair boundary, and d=1 terminal web")
+        print("verified q=137 C=19 raw family, d=1 terminal web, and target-tuned Type II subray")
         return
     print(json.dumps(result, ensure_ascii=True, indent=2, sort_keys=True))
 
