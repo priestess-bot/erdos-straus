@@ -141,6 +141,11 @@ p+4(573\cdot6303)&=901H_3,
 这条 raw word 不含标签 \(19\)，故 (8)--(10) 只给出 character correspondence，既不是
 occurrence 到 \((a,b,H)\) 的 functor，也不从 \(\mu_2\) 恢复 \(v_{19}(H_3)=3\)。
 
+[相位 provenance 边界](type-I-g-anchor-c3-adaptive-core19-v5-phase-provenance-boundary.md)
+完整枚举了 \(\zeta^{11}\) 的八个 tagged cofactor，并证明即使固定 \(A=573\)，phase
+也无法恢复 \(H\) 的 \(19\)-height；\(H_3\) 只有在额外保存 q-free base 与指数时才是
+条件性唯一选择。
+
 ## 3. 三行 carry 控制与同 chart 算术
 
 对 \(C_0=p-3,C_1=19,C_2=38\)，取 \(A=19\)。三张 physical cofactor-overflow

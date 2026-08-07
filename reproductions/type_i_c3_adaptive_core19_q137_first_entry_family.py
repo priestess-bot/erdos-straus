@@ -23,6 +23,7 @@ Q_STEP = 174_947_136
 FIRST_LABEL = 137
 TERMINAL_GAP = 1_319
 TERMINAL_SUBRAY_STEP = P_STEP * TERMINAL_GAP
+D1_WEB_CONTROLS = ((11, 3), (55, 36), (1_319, 1))
 
 
 def prime_word(value: int) -> list[int]:
@@ -61,6 +62,90 @@ def type_ii_factor_pair(prime: int, gap: int, divisor: int) -> dict[str, int]:
     if 4 * x * y * z != prime * (x * y + x * z + y * z):
         raise AssertionError("q=137 control terminal identity changed")
     return {"gap": gap, "divisor": divisor, "x": x, "y": y, "z": z}
+
+
+def d1_terminal_web_entry(gap: int) -> dict[str, object]:
+    """Construct one exact d=1 moving-terminal ray inside the q=137 family."""
+    if gap <= 0 or gap % 4 != 3 or gcd(gap, P_STEP) != 1:
+        raise AssertionError("d=1 terminal-web gap is not admissible")
+    inverse = pow(P_STEP, -1, gap)
+    w0 = (-(P0 + 4) * inverse) % gap
+    prime0 = P0 + P_STEP * w0
+    prime_step = P_STEP * gap
+    L0 = (prime0 + 4) // gap
+    K0 = (L0 + 1) // 4
+    x0 = gap * K0 - 1
+    if not (
+        P_STEP == 2**3 * 3**2 * 7 * 19**2 * 31 * 137
+        and gcd(P0, P_STEP) == gcd(P_STEP, P0 + 4) == 1
+        and gap != 3
+        and 0 <= w0 < gap
+        and (prime0 + 4) % gap == 0
+        and L0 % 4 == 3
+        and prime0 + 4 == gap * (4 * K0 - 1)
+        and 4 * x0 == prime0 + gap
+        and prime0 > gap + 2
+        and 0 < x0 < prime0
+        and gcd(prime0, prime_step) == 1
+        and prime0 % 24 == 1
+        and prime_step % 24 == 0
+    ):
+        raise AssertionError("d=1 terminal-web base arithmetic changed")
+
+    certificates = []
+    for t in (0, 1, 17):
+        prime = prime0 + prime_step * t
+        K = K0 + (P_STEP // 4) * t
+        x = x0 + (gap * P_STEP // 4) * t
+        certificate = type_ii_factor_pair(prime, gap, 1)
+        if not (
+            (prime + 4) // gap == 4 * K - 1
+            and x == gap * K - 1
+            and 4 * x == prime + gap
+            and prime > gap + 2
+            and 0 < x < prime
+            and certificate == {
+                "gap": gap,
+                "divisor": 1,
+                "x": x,
+                "y": prime * K,
+                "z": prime * K * x,
+            }
+        ):
+            raise AssertionError("d=1 terminal-web affine identity changed")
+        certificates.append(certificate)
+    return {
+        "gap": gap,
+        "w_residue": w0,
+        "parameter_ray": {"w": f"{w0}+{gap}*t", "p": [prime0, prime_step]},
+        "Dirichlet_progression_gcd": gcd(prime0, prime_step),
+        "certificate_controls": certificates,
+        "scope": "for prime terms only; terminal-first preempts the actual q=137 raw receipt",
+    }
+
+
+def verify_d1_terminal_web() -> dict[str, object]:
+    """Prove the exact d=1 gap classification, not a full terminal cover."""
+    controls = [d1_terminal_web_entry(gap) for gap, _ in D1_WEB_CONTROLS]
+    by_gap = {int(control["gap"]): control for control in controls}
+    if not (
+        [(int(control["gap"]), int(control["w_residue"])) for control in controls]
+        == list(D1_WEB_CONTROLS)
+        and by_gap[1_319]["parameter_ray"]["p"]
+        == [772_716_361, TERMINAL_SUBRAY_STEP]
+        and P0 + 4 == 197
+        and 197 % 4 == 1
+    ):
+        raise AssertionError("d=1 terminal-web controls changed")
+    return {
+        "classification": (
+            "For m congruent to 3 modulo 4, d=1 holds at p(w)=193+D*w "
+            "iff gcd(m,D)=1 and w equals -(197)*D^-1 modulo m."
+        ),
+        "controls": controls,
+        "base_w_zero_status": "outside the d=1 web; it has the separate (m,d)=(7,20) terminal",
+        "scope": "d=1 factor-pair terminals only; this is an infinite web, not full coverage",
+    }
 
 
 def verify_capacity_subray() -> dict[str, object]:
@@ -274,12 +359,13 @@ def verify_prime_control() -> dict[str, object]:
 
 
 def build_result() -> dict[str, object]:
-    """Build actual raw controls and their deliberately narrow terminal boundary."""
+    """Build actual raw controls and their exact d=1 terminal-web boundary."""
     return {
         "certificate_type": "c3_core19_q137_first_entry_family_v2",
         "capacity_subray": verify_capacity_subray(),
         "fixed_pair_screen": verify_fixed_pair_screen(),
         "terminal_preempted_subray": verify_terminal_preempted_subray(),
+        "d1_terminal_web": verify_d1_terminal_web(),
         "prime_raw_control": verify_prime_control(),
         "base_terminal_control": type_ii_factor_pair(193, 7, 20),
         "selector_status": "actual_raw_family_with_terminal_preempted_subray",
@@ -292,7 +378,7 @@ def main() -> None:
     args = parser.parse_args()
     result = build_result()
     if args.verify:
-        print("verified q=137 C=19 actual raw family and fixed-pair boundary")
+        print("verified q=137 C=19 raw family, fixed-pair boundary, and d=1 terminal web")
         return
     print(json.dumps(result, ensure_ascii=True, indent=2, sort_keys=True))
 

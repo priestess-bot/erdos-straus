@@ -170,6 +170,10 @@ H_0=53\cdot3671=194563,\qquad H_1=19H_0=3696697.
 raw phase evidence，但不从 raw word 恢复 \(v_{19}(H_0 19^3)=3\)；这些因子仍嵌套在
 同一个 candidate record，不能被直接收费为三条 request 或三个 physical slot。
 
+[相位 provenance 边界](type-I-g-anchor-c3-adaptive-core19-v5-phase-provenance-boundary.md)
+给出这个不能直接收费的精确原因，并说明若能证明共同 q-free base
+\(53\cdot3671\)，三条 phase 才会条件性重建为 \(19\)-指数 \(0,1,3\)。
+
 ## 4. 这个纤维为什么仍不终止
 
 若这个固定 \((D_*,A)\) 纤维给出 Type II 短证书，则必须有

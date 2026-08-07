@@ -191,6 +191,10 @@ x+1&=1319\cdot146459.
 所以这个 control 必须由 terminal-first 分派关闭；其 raw receipt 和 \(R=63\)
 RESET 仍是正确的原始结构事实，但不能记为 selector edge。
 
+[q=137 的 d=1 moving-terminal 网](type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web.md)
+表明这一点并不只发生在 \(m=1319\)：它精确分类了整条 affine raw family 上所有
+\(d=1\) factor-pair gap 的参数同余类。
+
 ## 5. \(m=1319,d=1\) 的无穷 terminal 子射线
 
 令 \(D=772716168\)。有
