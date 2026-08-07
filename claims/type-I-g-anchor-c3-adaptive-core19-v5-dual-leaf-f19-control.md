@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control
 title: c=3 adaptive core-19 首个素数点的双叶、F 型固定层与 q=19 控制
-statement: 在 adaptive core-19 ambient-19 ray 的首个素数参数 v=5 上，p=1202376916441 的同一个 high-R universal source 有两条共享 (p,5) 前缀的 actual primitive raw word，分别到达 C0=p-3 与 C1=19。两行共享 A=19 的 E2/carry core 19。其 centered fixed layer J=C_R(1)={1} 是 F 型：完整 1215 点指数盒不含 -1，而 31641497801^105942250765=-1 mod R。由 191|R 与 4K=pR+1，eta(a)=a^10 mod191 在实际 K-support group 上有精确 19 阶，且因 P=Stab_H(J)=1 在固定层商中存活；其归一化相位向量为 (9,11,9,3,13,2)。但 eta 是 target-even，且该点有 (m,d)=(3,11) 的直接 Type II terminal，故该控制不是 root、odd/mixed entry 或 selector edge。更一般地，该 affine ray 的每个 prime parameter 点上，eta 的限制在 K-support group 中都非平凡。
+statement: 在 adaptive core-19 ambient-19 ray 的首个素数参数 v=5 上，p=1202376916441 的同一个 high-R universal source 有两条 actual primitive raw receipt，分别到达 C0=p-3 与 C1=19。它们共享 universal p-edge；后续的 q=5 move 仅在显式 coordinate-frame swap 后等价，不能误记为共同的 ordered raw prefix。两行共享 A=19 的 E2/carry core 19。其 centered fixed layer J=C_R(1)={1} 是 F 型：完整 1215 点指数盒不含 -1，而 31641497801^105942250765=-1 mod R。由 191|R 与 4K=pR+1，eta(a)=a^10 mod191 在实际 K-support group 上有精确 19 阶，且因 P=Stab_H(J)=1 在固定层商中存活；其归一化相位向量为 (9,11,9,3,13,2)。但 eta 是 target-even，且该点有 (m,d)=(3,11) 的直接 Type II terminal，故该控制不是 root、odd/mixed entry 或 selector edge。更一般地，该 affine ray 的每个 prime parameter 点上，eta 的限制在 K-support group 中都非平凡。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -101,16 +101,28 @@ K&=M_0C_0
 \tag{5}
 \]
 
-两支先共享两个实际 raw step：
+两支共享 universal (p)-edge：
 
 \[
 \mathsf S\xrightarrow{(0,p)}(1,R-1,1)
-\xrightarrow{(1,5)}(1042059994246,4168239976985,1).
 \tag{6}
 \]
 
-第一支是既有 adaptive factor-block normal form 的逐素因子展开；其共同前缀后的
-side/label word 是
+第一支随后先应用一个显式 coordinate-frame swap
+
+\[
+(1,R-1,1)\longmapsto(R-1,1,1),
+\]
+
+再在左侧执行 ((0,5))；第二支则从原 frame 的右侧执行 ((1,5))。这两个
+ordered raw step 到达同一个 destination
+
+\[
+(1042059994246,4168239976985,1),
+\]
+
+但它们不是同一条 ordered edge。第一支是既有 adaptive factor-block normal form
+的逐素因子展开；其 frame-aligned (q=5) 之后的 side/label word 是
 
 \[
 (1,7),(1,2),(0,2),(0,2),(0,2),(0,72106829959),(1,13),(1,2),(0,2),

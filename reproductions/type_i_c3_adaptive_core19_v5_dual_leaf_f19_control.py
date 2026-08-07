@@ -152,7 +152,7 @@ def verify_prime_point() -> dict[str, object]:
 
 
 def verify_raw_tree() -> dict[str, object]:
-    """Replay the C0 normal-form word and an independent C1 mixed-side word."""
+    """Replay two leaves and preserve their coordinate-frame distinction."""
     parameters = adaptive.c3_parameters(h=H, a=A, b=B)
     if parameters != {
         "h": H,
@@ -171,10 +171,24 @@ def verify_raw_tree() -> dict[str, object]:
         raise AssertionError("adaptive C0 parameters changed")
     c0_rows = adaptive.replay_positive_control(parameters)
     c1_rows = replay_word(COMMON + C1_SUFFIX)
-    if [row["destination"] for row in c0_rows[:2]] != [
-        row["destination"] for row in c1_rows[:2]
-    ]:
-        raise AssertionError("the declared dual leaves lost their common prefix")
+    p_edge_fields = {
+        key: value for key, value in c0_rows[0].items() if key != "name"
+    }
+    if p_edge_fields != {
+        key: value for key, value in c1_rows[0].items() if key != "name"
+    }:
+        raise AssertionError("the universal p edge is no longer common")
+    c0_first_five = c0_rows[1]
+    c1_first_five = c1_rows[1]
+    if not (
+        c0_first_five["source"] == [R - 1, 1, 1]
+        and c1_first_five["source"] == [1, R - 1, 1]
+        and c0_first_five["selected_coordinate_index"] == 0
+        and c1_first_five["selected_coordinate_index"] == 1
+        and c0_first_five["q"] == c1_first_five["q"] == 5
+        and c0_first_five["destination"] == c1_first_five["destination"]
+    ):
+        raise AssertionError("the frame-equivalent first five moves changed")
     if c0_rows[-1]["destination"] != [C0, R - C0, 1]:
         raise AssertionError("adaptive C0 word reached the wrong leaf")
     if c1_rows[-1]["destination"] != [C1, R - C1, 1]:
@@ -211,7 +225,15 @@ def verify_raw_tree() -> dict[str, object]:
         expected_phase=(-N1) % R,
     )
     return {
-        "common_prefix_length": len(COMMON),
+        "common_ordered_raw_prefix_length": 1,
+        "frame_equivalent_orbit_prefix": {
+            "coordinate_frame_swap": [[1, R - 1, 1], [R - 1, 1, 1]],
+            "first_five_destinations_agree": True,
+            "warning": (
+                "The two q=5 moves are not one shared ordered raw edge; "
+                "the C0 move uses an explicit coordinate-frame swap."
+            ),
+        },
         "C0_raw_step_count": len(c0_rows),
         "C1_raw_step_count": len(c1_rows),
         "C1_lineage": c1_trace,

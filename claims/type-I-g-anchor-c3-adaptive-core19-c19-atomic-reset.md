@@ -305,15 +305,19 @@ hit，而不是从源 F label 继承。
 \tag{16}
 \]
 
-所以若未来 mixed-side adapter 把两条 leaf 放入同一个 complete source fiber，
-它必须产生相对 SOURCE_RANK_DEMAND(19)，且相对 label map 必须满足
+所以若未来**非 native** mixed-side adapter 把两条 leaf 放入同一个 complete source
+fiber，它必须产生相对 SOURCE_RANK_DEMAND(19)，且相对 label map 必须满足
 
 \[
 \lambda(C_0)-\lambda(C_1)\equiv11\pmod {19}.
 \]
 
-当前 raw receipt 尚未给出这个 source adapter，故不能登记 capacity 或 descent。
-这只是对 [Fourier 角色到 source-rank 分派](type-I-fg-fourier-to-type-II-role-demand-bridge.md)
+当前情况比“尚未给出”更强：
+[v=5 centered mixed-source fiber no-go](type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go.md)
+证明任何 \(N\mid K\) 的 native centered adapter 都不可能合并这两条 leaf。因此未来只可
+寻找带完整 frame morphism、source-map 和 SNF 回执的 non-native adapter；在它出现之前，
+不能登记 capacity 或 descent。这只是对
+[Fourier 角色到 source-rank 分派](type-I-fg-fourier-to-type-II-role-demand-bridge.md)
 在 target-even odd-primary 情形的精化。
 
 ## 7. Terminal-first 状态
@@ -328,6 +332,6 @@ verified_edge。
     python3 reproductions/type_i_c3_adaptive_core19_c19_atomic_reset.py --verify
 
 当前 exact skeleton 的目标化 terminal screen 尚未产生 terminal-free point，因此下一步
-不应扩大同一 short-gap scan；应改变 C=19 中间 topology 或 chart parameterization，再为
-新的 raw language 建立 complete mixed-side source adapter。不能以 (13) 的
-noncanonical witness 或 (16) 的 target-even character 跳过这两个 gate。
+不应扩大同一 short-gap scan；应改变 C=19 中间 topology 或 chart parameterization，并只为
+新的 raw language 寻找 non-native complete mixed-side source adapter。不能以 (13) 的
+noncanonical witness 或 (16) 的 target-even character 跳过这些 gate。
