@@ -198,7 +198,9 @@ u\notin A_\pi^{19},\qquad
 \]
 
 这是一个精确的有限 Abelian/SNF 型 \(19\)-初等方向，而不是 Type II capacity。
-目前没有\(D_*,A\)、\(b_i\)、完整 parameter fiber、CRT/prefix 或
+[q=19 相位兼容候选纤维](type-I-g-anchor-c3-adaptive-core19-v5-q19-phase-compatible-candidate-fiber.md)
+现已给出一个通过范围和 shared-\(19\) ledger 的 \(D_*=6303,A=573,b_0,b_1\) 控制，
+但它仍没有完整 parameter fiber、CRT/prefix 或
 `demand_to_slot`。直接采用已有 E2 余数也不行：
 
 \[
@@ -212,6 +214,12 @@ C_1&996707180734&\text{否}&2.
 
 它们无法同时提供 Type II 所需的 range 与 \(19\)-height。这只排除当前自然整数
 coordinate，未排除全新的 integer source map。
+
+[直接载体余数提升障碍](type-I-g-anchor-c3-core19-direct-carrier-residue-lift-no-go.md)
+把这个单点现象推广到全部 \(h\equiv8\pmod {19}\) core-19 行：任何
+\(b\equiv M_i\pmod p\) 的方向保持标签仍无法同时通过范围和 \(19\)-height。新候选
+不矛盾，因为它不采用这种 carrier-residue map；但它也尚未给出 raw occurrence 到
+\((a,b,H)\) 的完整 functor。
 
 ## 4. 可检验的合同状态
 

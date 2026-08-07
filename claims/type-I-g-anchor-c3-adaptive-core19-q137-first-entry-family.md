@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family
 title: c=3 core-19 的 q=137 首标签 C=19 实际 raw 家族
-statement: 在 c=3 chart 中取 h=8+2603v，则 p=193+62472v、R=823+270712v，且 q=137 的首 raw edge 后可由 Q=43+14144v 到达 C=19。精确 gcd gate 是 v 不等于 1 (mod 3)、5 (mod 7)、16 (mod 19)、14 (mod 31)。因此在 v=12369w 上，每一个 prime p=193+772716168w 都有 actual primitive word 137;Fac(Q) 到达 (19,R-19,1)，从而有固定 R=63 的 C=19 RESET。这个 raw family 避开 q=23 首标签的自动 terminal；更强地，固定 pair Type II 筛在该 affine subray 的 36 个 m 和 144 个 d 候选上均无命中。但它不排除 moving divisor terminal，w=0 有 (m,d)=(7,20) terminal，而 prime 控制 w=1 尚未做完整 terminal-first 分类，故没有 selector edge。
+statement: 在 c=3 chart 中取 h=8+2603v，则 p=193+62472v、R=823+270712v，且 q=137 的首 raw edge 后可由 Q=43+14144v 到达 C=19。精确 gcd gate 是 v 不等于 1 (mod 3)、5 (mod 7)、16 (mod 19)、14 (mod 31)。因此在 v=12369w 上，每一个 prime p=193+772716168w 都有 actual primitive word 137;Fac(Q) 到达 (19,R-19,1)，从而有固定 R=63 的 C=19 RESET。这个 raw family 避开 q=23 首标签的自动 terminal；固定 pair Type II 筛在该 affine subray 的 36 个 m 和 144 个 d 候选上均无命中。但它不排除按参数移动的 terminal：w=0 有 (m,d)=(7,20)，而 w=1+1319t 的每个 prime 参数都有 (m,d)=(1319,1) 的直接 Type II 证书。该 terminal 子射线必须 terminal-first 关闭；它不为原始 raw receipt 登记 selector edge，也不分类其余 w。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -19,11 +19,12 @@ topics:
   - factor-block
   - infinite-family
   - terminal-first
+  - terminal-subray
   - fixed-pair-screen
   - proof-boundary
 sources:
   - reproduction: reproductions/type_i_c3_adaptive_core19_q137_first_entry_family.py
-    role: q=137 raw controls, capacity sieve, and fixed-pair screen
+    role: q=137 raw controls, capacity sieve, fixed-pair screen, and terminal subray
 visibility: public
 last_checked: '2026-08-07'
 ---
@@ -31,7 +32,8 @@ last_checked: '2026-08-07'
 # q=137 首标签的 C=19 实际 raw 家族
 
 本卡给出第二条与既有 q=5 和 q=23 语言不同的无限 C=19 raw family。它避开
-q=23 的首标签 terminal 定理，但没有把有限固定-pair 筛误报成 terminal-free。
+q=23 的首标签 terminal 定理，但没有把有限固定-pair 筛误报成 terminal-free；
+其中一条精确参数子射线反而有统一的直接 Type II 终端。
 
 ## 1. 两段 q=137 language
 
@@ -135,8 +137,8 @@ E_m=\gcd\left(\frac{P+m}{4},\frac D4\right).
 最后一个范围条件因 \(D>0\) 而对整条 ray 等价于其 \(w=0\) 版本。对 (8)，\(D\)
 有 36 个 \(3\pmod4\) 因子；所有 \(d\mid E_m^2\) 合计只有 144 个。逐一应用
 (9) 给出零命中。故这个 actual raw family 不携带一个
-uniform fixed-pair terminal。它仍不排除依赖 \(w\) 的因子或其它 Type I/II
-terminal。
+uniform fixed-pair terminal。特别地，下面的 \(m=1319\) 不整除 \(D\)，所以它只在
+一个参数子射线上成立，并不与这个固定模板结论矛盾。
 
 ## 4. 两个控制
 
@@ -164,5 +166,77 @@ Q&=174947179=11\cdot181\cdot87869.
 \]
 
 逐边满足 strict capacity、unit condition 和 gcd-reduction \(=1\)，并到达
-\((19,R-19,1)\)。本卡没有对它执行完整 terminal-first 分类，所以它不是
-selector control。
+\((19,R-19,1)\)。但它有直接 Type II 终端：
+
+\[
+\begin{aligned}
+p+4&=772716365=1319\cdot585835,\\
+m&=1319\equiv3\pmod4,\qquad
+x=\frac{p+m}{4}=193179420,\\
+x+1&=1319\cdot146459.
+\end{aligned}
+\tag{10}
+\]
+
+取 \(d=1\)。则 \(d\mid x^2\)、\(d\le x\)、\(m\mid x+d\)，故
+
+\[
+\frac4p
+=\frac1{193179420}
++\frac1{113171265515699}
++\frac1{21862359432988733714580}.
+\tag{11}
+\]
+
+所以这个 control 必须由 terminal-first 分派关闭；其 raw receipt 和 \(R=63\)
+RESET 仍是正确的原始结构事实，但不能记为 selector edge。
+
+## 5. \(m=1319,d=1\) 的无穷 terminal 子射线
+
+令 \(D=772716168\)。有
+
+\[
+D\equiv-197\pmod {1319},
+\qquad
+\gcd(197,1319)=1.
+\tag{12}
+\]
+
+因此对 (8) 的任意参数，
+
+\[
+1319\mid p(w)+4
+\Longleftrightarrow
+w\equiv1\pmod {1319}.
+\tag{13}
+\]
+
+写 \(w=1+1319t\)，则
+
+\[
+\begin{aligned}
+p_t&=772716361+1019212625592t,\\
+p_t+4&=1319(585835+772716168t),\\
+K_t&=146459+193179042t,\\
+x_t&=1319K_t-1.
+\end{aligned}
+\tag{14}
+\]
+
+这里 \(4K_t-1=(p_t+4)/1319\)、\(4x_t=p_t+1319\)。所以对每个 prime
+\(p_t\)，取 \(m=1319,d=1\) 有
+
+\[
+\boxed{
+\frac4{p_t}
+=\frac1{x_t}
++\frac1{p_tK_t}
++\frac1{p_tK_tx_t}.}
+\tag{15}
+\]
+
+\(\gcd(772716361,1019212625592)=1\)，而初项和步长分别为 \(1\) 与
+\(0\pmod {24}\)。Dirichlet 定理因此给出无穷多个核心 prime 参数。由第 2 节，
+这些 prime 同时保留 actual \(137;\operatorname{Fac}(Q)\) raw receipt；但 (15)
+优先终止它们。这个结论只覆盖 \(w\equiv1\pmod {1319}\)，不声称其余参数没有
+moving terminal。

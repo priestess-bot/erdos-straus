@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 515 |
+| 数学状态 | `established` | 517 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 348 |
+| 证明来源 | `repository_derivation` | 350 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 484 |
+| 审阅状态 | `internal_review` | 486 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -358,9 +358,11 @@
 | [c=3 core-19 的 q=23 首标签 C=19 入口与全分支 terminal 障碍](../claims/type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction.md) (`type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 C0/C1 的 centered mixed-source fiber no-go 与相对 q=19 边界](../claims/type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go.md) (`type-I-g-anchor-c3-adaptive-core19-v5-centered-mixed-source-fiber-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 adaptive core-19 首个素数点的双叶、F 型固定层与 q=19 控制](../claims/type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control.md) (`type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [v=5 signed 双叶的 q=19 相位兼容 Type II 候选纤维](../claims/type-I-g-anchor-c3-adaptive-core19-v5-q19-phase-compatible-candidate-fiber.md) (`type-I-g-anchor-c3-adaptive-core19-v5-q19-phase-compatible-candidate-fiber`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 C0/C1 的 signed marked-tail 非 native raw-source groupoid](../claims/type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid.md) (`type-I-g-anchor-c3-adaptive-core19-v5-signed-marked-source-groupoid`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 双中间因子块路径的自适应除子正规形](../claims/type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form.md) (`type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 补余 seed 的 affine-prime target-source raw 模板](../claims/type-I-g-anchor-c3-affine-prime-target-source-template.md) (`type-I-g-anchor-c3-affine-prime-target-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c=3 core-19 的直接载体余数 Type II q=19 提升障碍](../claims/type-I-g-anchor-c3-core19-direct-carrier-residue-lift-no-go.md) (`type-I-g-anchor-c3-core19-direct-carrier-residue-lift-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [p=6121 的同源 c=3 双叶 raw tree、A=19 carry 与 terminal/q19 截断](../claims/type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121.md) (`type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 偶侧 seed 的 fresh root-entry 准入边界](../claims/type-I-g-anchor-c3-even-tail-root-entry-admission-boundary.md) (`type-I-g-anchor-c3-even-tail-root-entry-admission-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 双中间 skeleton 的复合因子块 raw word](../claims/type-I-g-anchor-c3-factor-block-raw-source-receipts.md) (`type-I-g-anchor-c3-factor-block-raw-source-receipts`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |

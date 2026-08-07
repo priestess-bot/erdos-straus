@@ -21,6 +21,8 @@ H_STEP = 32_196_507
 Q0 = 43
 Q_STEP = 174_947_136
 FIRST_LABEL = 137
+TERMINAL_GAP = 1_319
+TERMINAL_SUBRAY_STEP = P_STEP * TERMINAL_GAP
 
 
 def prime_word(value: int) -> list[int]:
@@ -45,6 +47,8 @@ def positive_divisors(factors: tuple[tuple[int, int], ...]) -> list[int]:
 
 def type_ii_factor_pair(prime: int, gap: int, divisor: int) -> dict[str, int]:
     """Verify a direct factor-pair terminal without any terminal scan."""
+    if gap <= 0 or gap % 4 != 3 or (prime + gap) % 4:
+        raise AssertionError("q=137 terminal gap has the wrong parity")
     x = (prime + gap) // 4
     if not (
         divisor <= x
@@ -137,6 +141,66 @@ def verify_fixed_pair_screen() -> dict[str, object]:
     }
 
 
+def verify_terminal_preempted_subray() -> dict[str, object]:
+    """Close the moving m=1319 terminal subray before raw RESET dispatch."""
+    base = P0 + P_STEP
+    quotient = 585_835
+    K0 = 146_459
+    x0 = 193_179_420
+    K_step = 193_179_042
+    x_step = 254_803_156_398
+    if not (
+        TERMINAL_GAP == 1_319
+        and P_STEP % TERMINAL_GAP == -197 % TERMINAL_GAP
+        and gcd(197, TERMINAL_GAP) == 1
+        and TERMINAL_SUBRAY_STEP == 1_019_212_625_592
+        and base == 772_716_361
+        and shared.is_prime(base)
+        and gcd(base, TERMINAL_SUBRAY_STEP) == 1
+        and base % 24 == 1
+        and TERMINAL_SUBRAY_STEP % 24 == 0
+        and base + 4 == TERMINAL_GAP * quotient
+        and 4 * K0 - 1 == quotient
+        and x0 == TERMINAL_GAP * K0 - 1
+        and 4 * x0 == base + TERMINAL_GAP
+        and TERMINAL_GAP * K_step == x_step
+    ):
+        raise AssertionError("q=137 terminal subray arithmetic changed")
+    initial = type_ii_factor_pair(base, TERMINAL_GAP, 1)
+    if initial != {
+        "gap": TERMINAL_GAP,
+        "divisor": 1,
+        "x": x0,
+        "y": 113_171_265_515_699,
+        "z": 21_862_359_432_988_733_714_580,
+    }:
+        raise AssertionError("q=137 terminal control changed")
+    for t in (0, 1, 17):
+        prime = base + TERMINAL_SUBRAY_STEP * t
+        K = K0 + K_step * t
+        x = x0 + x_step * t
+        if not (
+            prime + 4 == TERMINAL_GAP * (quotient + P_STEP * t)
+            and 4 * K - 1 == (prime + 4) // TERMINAL_GAP
+            and x == TERMINAL_GAP * K - 1
+            and 4 * x == prime + TERMINAL_GAP
+            and type_ii_factor_pair(prime, TERMINAL_GAP, 1)["x"] == x
+        ):
+            raise AssertionError("q=137 terminal family identity changed")
+    return {
+        "gap": TERMINAL_GAP,
+        "divisor": 1,
+        "parameter_subray": {
+            "w": "1 + 1319*t",
+            "p": [base, TERMINAL_SUBRAY_STEP],
+            "t": "nonnegative; retain prime parameters",
+        },
+        "certificate": initial,
+        "prime_progression_gcd": gcd(base, TERMINAL_SUBRAY_STEP),
+        "raw_status": "q=137 admission remains actual; terminal-first preempts RESET",
+    }
+
+
 def verify_prime_control() -> dict[str, object]:
     """Replay the focused prime w=1 raw word."""
     w = 1
@@ -194,6 +258,9 @@ def verify_prime_control() -> dict[str, object]:
         for row in rows
     ):
         raise AssertionError("q=137 prime word lost a primitive raw edge")
+    terminal = type_ii_factor_pair(prime, TERMINAL_GAP, 1)
+    if terminal["x"] != 193_179_420:
+        raise AssertionError("q=137 prime control lost its direct terminal")
     return {
         "w": w,
         "p": prime,
@@ -201,19 +268,21 @@ def verify_prime_control() -> dict[str, object]:
         "Q": Q_value,
         "raw_word": [[1, 137], [1, 11], [0, 181], [0, 87869]],
         "destination": [19, R - 19, 1],
-        "terminal_status": "unclassified; no selector edge",
+        "terminal": terminal,
+        "terminal_status": "direct Type II m=1319,d=1; terminal-first",
     }
 
 
 def build_result() -> dict[str, object]:
     """Build actual raw controls and their deliberately narrow terminal boundary."""
     return {
-        "certificate_type": "c3_core19_q137_first_entry_family_v1",
+        "certificate_type": "c3_core19_q137_first_entry_family_v2",
         "capacity_subray": verify_capacity_subray(),
         "fixed_pair_screen": verify_fixed_pair_screen(),
+        "terminal_preempted_subray": verify_terminal_preempted_subray(),
         "prime_raw_control": verify_prime_control(),
         "base_terminal_control": type_ii_factor_pair(193, 7, 20),
-        "selector_status": "actual_raw_family_when_prime_no_registered_edge",
+        "selector_status": "actual_raw_family_with_terminal_preempted_subray",
     }
 
 
