@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-generalized-dyadic-j-one-terminal-normalization
 title: 广义二进偶终端的唯一 j=1 归一化与二进盒外边界
-statement: 设 L=2K。每个满足互素除子、二进预算、同余和定向条件的广义 2^j 偶终端 (A,B,j) 都唯一归一为一个满足 j=1 的互素 L-除子对 (A#,B#)，并保留完全相同的终端数据 (E,n)。因此在自由除子对的终端层，j>1 不扩张任何终端集合，只可保留 source-label provenance。相应关系向量恰有一层可能位于目标指数盒的二进负侧外；该层等价于 v_2(E)=1，不能来自目标纤维近邻对。
+statement: 设 L=2K。每个满足互素除子、二进预算、同余和定向条件的广义 2^j 偶终端 (A,B,j) 都唯一归一为一个满足 j=1 的互素 L-除子对 (A#,B#)，并保留完全相同的终端数据 (E,n)。因此在自由除子对的终端层，j>1 不扩张任何终端集合，只可保留 source-label provenance。相应关系向量恰有一层可能位于目标指数盒的二进负侧外；该层等价于 v_2(E)=1，不能来自目标纤维近邻对。进一步地，同图表的合法 Type II factor-pair two-tail 严格源不可能同时是任一广义二进偶终端源，故两类回执不得按 source_n 合并。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -10,6 +10,7 @@ depends_on:
   - type-I-general-dyadic-terminal-transfer
   - type-I-target-fiber-neighbor-terminal
   - type-I-target-fiber-neighbor-dyadic-normalization
+  - type-II-factor-pair-carrier-strict-descent
 topics:
   - type-I
   - generalized-dyadic
@@ -18,6 +19,9 @@ topics:
   - target-fiber
   - relation-lattice
   - terminal-first
+  - Type-II
+  - two-tail
+  - nonoverlap
   - proof-program
 sources:
   - claim: type-I-general-dyadic-terminal-transfer
@@ -275,7 +279,85 @@ E=8550,
 python3 reproductions/type_i_generalized_dyadic_j_one_normalization.py --verify
 ```
 
-## 5. 对选择器的影响
+## 5. Type II 两尾源与二进终端的不交性
+
+设同一 Type I 图表满足
+
+\[
+4K=pR+1,\qquad p\equiv1\pmod4,
+\tag{20}
+\]
+
+并且一个合法 \(m\equiv3\pmod4\) 的 Type II factor-pair 有 two-tail strict source
+
+\[
+n=\frac{p+m}{m+1}>1,\qquad m+1\mid p-1.
+\tag{21}
+\]
+
+**不交定理。** 该 \(n\) 不可能同时是 (20) 的任何广义 \(2^j\) 偶终端的源；因而也
+不可能是目标纤维近邻终端的源。
+
+**证明。** 反设它是广义二进源。其唯一的 bridge factor 为
+
+\[
+E=4K-nR=(p-n)R+1=mR(n-1)+1.
+\tag{22}
+\]
+
+二进 terminal 条件给出 \(E\mid4K^2\)，而 \(E\equiv1\pmod R\)。从
+\(4K\equiv nR\pmod E\) 和 \((E,R)=1\) 得
+
+\[
+E\mid n^2.
+\tag{23}
+\]
+
+记 \(a=mR\)。由 (22)，有 \(an\equiv a-1\pmod E\)，故 (23) 又给出
+
+\[
+E\mid(a-1)^2.
+\tag{24}
+\]
+
+正性和两次整除蕴含
+
+\[
+\begin{aligned}
+n^2-E&=(n-1)(n-a+1)\ge0,\\
+(a-1)^2-E&=a(a-1-n)\ge0.
+\end{aligned}
+\]
+
+所以 \(n=a-1\)、\(E=n^2\)。因为 (20) 强制 \(R\equiv3\pmod4\)，故
+\(a=mR\equiv1\pmod4\) 且 \(4\mid n\)。写 \(t=v_2(n)\)，则
+
+\[
+4K=n(R+n),
+\]
+
+其中 \(R+n\) 是奇数。因此 \(v_2(4K)=t\)，从而
+
+\[
+v_2(E)=2t>2t-2=v_2(4K^2),
+\]
+
+这与 \(E\mid4K^2\) 矛盾。目标纤维近邻终端已规范化为广义二进终端，故同样被排除。
+证毕。
+
+这给选择器一条状态不变量：
+
+```text
+type_ii_two_tail_descent(source_n)
+and generalized_dyadic_terminal(source_n)
+are mutually exclusive on one chart
+```
+
+二者不能按相同 `source_n` 去重、互相充当容量映射，或共用同一 E4 回执。窄复现器以
+\(p=73,R=3,K=55,m=7,n=10\) 的 actual factor-pair 控制重放 (22)，并直接验证其
+强制 \(E=190\) 不整除 \(4K^2\)。
+
+## 6. 对选择器的影响
 
 终端优先分派在自由除子对层只需搜索 \(j=1\)；原始 \(j>1\) 三元组可作为
 `source_provenance` 保存。真正尚未闭合的部分是：

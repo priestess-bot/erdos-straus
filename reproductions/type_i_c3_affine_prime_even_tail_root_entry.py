@@ -145,7 +145,15 @@ def materialize_typed_fiber(
         witness = declaration.get("witness")
         if not isinstance(witness, list) or not all(isinstance(value, int) for value in witness):
             raise AssertionError("F declaration requires an integer witness")
-        fiber = shared.residue_witness(R, shared.factorization(K), tuple(witness))
+        policy = declaration.get("witness_policy", "minimum_l1_then_lexicographic")
+        if policy == "minimum_l1_then_lexicographic":
+            fiber = shared.residue_witness(R, shared.factorization(K), tuple(witness))
+        elif policy == "provided_unbounded_modular":
+            fiber = shared.provided_unbounded_residue_witness(
+                R, shared.factorization(K), tuple(witness)
+            )
+        else:
+            raise AssertionError("unknown F witness policy")
     elif classification == "hit":
         witness = declaration.get("witness")
         if not isinstance(witness, list):

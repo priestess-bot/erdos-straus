@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 509 |
+| 数学状态 | `established` | 510 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 342 |
+| 证明来源 | `repository_derivation` | 343 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 478 |
+| 审阅状态 | `internal_review` | 479 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -352,6 +352,7 @@
 | [Fourier q-primary 相位到算术载体的有限提升—容量二分](../claims/type-I-fourier-qprimary-phase-lift-capacity-dichotomy.md) (`type-I-fourier-qprimary-phase-lift-capacity-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [p等于21169的完整Type I正规形偶源边界](../claims/type-I-full-normal-even-source-boundary-21169.md) (`type-I-full-normal-even-source-boundary-21169`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [c=3 adaptive core-19 ambient-19 substrate 的固定 Type II 筛](../claims/type-I-g-anchor-c3-adaptive-core19-ambient19-terminal-screen.md) (`type-I-g-anchor-c3-adaptive-core19-ambient19-terminal-screen`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [c=3 adaptive core-19 的 C=19 原子 raw-to-R=63 RESET](../claims/type-I-g-anchor-c3-adaptive-core19-c19-atomic-reset.md) (`type-I-g-anchor-c3-adaptive-core19-c19-atomic-reset`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 adaptive core-19 首个素数点的双叶、F 型固定层与 q=19 控制](../claims/type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control.md) (`type-I-g-anchor-c3-adaptive-core19-v5-dual-leaf-f19-control`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 双中间因子块路径的自适应除子正规形](../claims/type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form.md) (`type-I-g-anchor-c3-adaptive-divisor-factor-block-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 补余 seed 的 affine-prime target-source raw 模板](../claims/type-I-g-anchor-c3-affine-prime-target-source-template.md) (`type-I-g-anchor-c3-affine-prime-target-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |

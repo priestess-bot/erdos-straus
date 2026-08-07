@@ -7,7 +7,7 @@ import argparse
 import hashlib
 import json
 from itertools import product
-from math import gcd, lcm
+from math import gcd, lcm, prod
 from pathlib import Path
 
 
@@ -284,6 +284,79 @@ def signed_defect(
     }
 
 
+def finite_box_contains_residue(
+    modulus: int,
+    factors: list[tuple[int, int]],
+    target: int,
+) -> bool:
+    """Return whether the centered exponent box reaches one unit residue."""
+    target %= modulus
+    ranges = [range(-exponent, exponent + 1) for _prime, exponent in factors]
+    return any(
+        residue_product(modulus, factors, vector) == target
+        for vector in product(*ranges)
+    )
+
+
+def provided_unbounded_signed_defect(
+    factors: list[tuple[int, int]],
+    witness: tuple[int, ...],
+) -> dict[str, object]:
+    """Serialize a long witness without materializing its enormous defect."""
+    minus = [max(-value - budget, 0) for value, (_prime, budget) in zip(witness, factors)]
+    plus = [max(value - budget, 0) for value, (_prime, budget) in zip(witness, factors)]
+
+    def render(exponents: list[int]) -> dict[str, object]:
+        return {
+            "factorization": [
+                [prime, exponent]
+                for (prime, _budget), exponent in zip(factors, exponents)
+                if exponent
+            ],
+            "value_encoding": "prime_exponent_factorization_only",
+        }
+
+    return {
+        "orientation": "provided_unbounded_exponent_vector",
+        "D_minus": render(minus),
+        "D_plus": render(plus),
+    }
+
+
+def provided_unbounded_residue_witness(
+    modulus: int,
+    factors: list[tuple[int, int]],
+    witness: tuple[int, ...],
+) -> dict[str, object]:
+    """Verify an explicit F witness without searching for a canonical one.
+
+    The finite centered box is still enumerated exactly.  Only the supplied
+    unrestricted witness is allowed outside it, so this certificate proves an
+    F classification but deliberately cannot serve as a canonical Fourier
+    witness or a phase/capacity input.
+    """
+    if len(factors) != len(witness):
+        raise AssertionError("witness dimension mismatch")
+    if any(gcd(prime, modulus) != 1 for prime, _budget in factors):
+        raise AssertionError("F witness factors must be units modulo the chart")
+    value = residue_product(modulus, factors, witness)
+    box_hit = finite_box_contains_residue(modulus, factors, -1)
+    if value != (-1) % modulus or box_hit:
+        raise AssertionError("provided F witness or finite box classification failed")
+    return {
+        "factors": [[prime, exponent] for prime, exponent in factors],
+        "witness": list(witness),
+        "witness_residue": value,
+        "witness_l1": sum(abs(value) for value in witness),
+        "witness_policy": "provided_unbounded_modular",
+        "finite_box_hit": box_hit,
+        "finite_box_cardinality": prod(2 * exponent + 1 for _prime, exponent in factors),
+        "classification": "F",
+        "canonical_fourier_eligible": False,
+        "signed_defect": provided_unbounded_signed_defect(factors, witness),
+    }
+
+
 def residue_witness(
     modulus: int,
     factors: list[tuple[int, int]],
@@ -292,13 +365,7 @@ def residue_witness(
     if len(factors) != len(witness):
         raise AssertionError("witness dimension mismatch")
     value = residue_product(modulus, factors, witness)
-    box_hit = False
-    ranges = [range(-exponent, exponent + 1) for _, exponent in factors]
-    for vector in product(*ranges):
-        candidate = residue_product(modulus, factors, vector)
-        if candidate == (-1) % modulus:
-            box_hit = True
-            break
+    box_hit = finite_box_contains_residue(modulus, factors, -1)
     if value != (-1) % modulus or box_hit:
         raise AssertionError("F witness or finite box classification failed")
     canonical_witness = canonical_residue_witness(
@@ -374,7 +441,16 @@ def fiber_certificate_is_valid(
         if not isinstance(witness, list) or not all(isinstance(value, int) for value in witness):
             return False
         try:
-            return residue_witness(R, factorization(K), tuple(witness)) == fiber
+            policy = fiber.get("witness_policy")
+            if policy == "minimum_l1_then_lexicographic":
+                candidate = residue_witness(R, factorization(K), tuple(witness))
+            elif policy == "provided_unbounded_modular":
+                candidate = provided_unbounded_residue_witness(
+                    R, factorization(K), tuple(witness)
+                )
+            else:
+                return False
+            return candidate == fiber
         except AssertionError:
             return False
     if classification == "G":

@@ -189,6 +189,45 @@ def verify_j_three_control() -> dict[str, object]:
     }
 
 
+def verify_factor_pair_dyadic_nonoverlap() -> dict[str, object]:
+    """Check that a Type II two-tail source cannot reuse a dyadic source slot."""
+    p, R, K, gap = 73, 3, 55, 7
+    A, B, C = 2, 5, 2
+    n = (p + gap) // (gap + 1)
+    if not (
+        p % 4 == 1
+        and R % 4 == 3
+        and 4 * K == p * R + 1
+        and gap % 4 == 3
+        and (p - 1) % (gap + 1) == 0
+        and n == 10
+        and A * B * C == (p + gap) // 4
+        and gcd(A, B) == 1
+        and A + B == gap
+    ):
+        raise AssertionError("two-tail nonoverlap control changed")
+    E = 4 * K - n * R
+    a = gap * R
+    checks = {
+        "two_tail_source_relation": p - n == gap * (n - 1),
+        "forced_factor": E == a * (n - 1) + 1,
+        "dyadic_congruence": E % R == 1,
+        "source_square_fails": (4 * K * K) % E != 0,
+        "derived_n_square_fails": n * n % E != 0,
+    }
+    if not all(checks.values()):
+        failed = [name for name, passed in checks.items() if not passed]
+        raise AssertionError(f"two-tail/dyadic nonoverlap control failed: {failed}")
+    return {
+        "p": p,
+        "chart": {"R": R, "K": K},
+        "factor_pair": {"gap": gap, "A": A, "B": B, "C": C},
+        "two_tail_source": n,
+        "forced_dyadic_factor": E,
+        "checks": checks,
+    }
+
+
 def build_result() -> dict[str, object]:
     """Build only the two fixed normalization and provenance controls."""
     return {
@@ -199,6 +238,7 @@ def build_result() -> dict[str, object]:
         ),
         "outer_boundary": verify_outer_boundary(),
         "j_three_control": verify_j_three_control(),
+        "factor_pair_dyadic_nonoverlap": verify_factor_pair_dyadic_nonoverlap(),
     }
 
 
