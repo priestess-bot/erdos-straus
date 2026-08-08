@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-first-strip-complete-reduction
 title: 高载体首带的余因子完整递降分流
-statement: 设核心素数 p=1 (mod 24) 的已有来源回执 overflow 满足 pn=4M+1、M>B_p=(p-1)^2/4、p<=n<=2p-5，并携带 A|M、1<=A<=B_p 及图表无关标记集 Sol(p)。令 c=(p-1)/4、b=M/A。则必有一条严格可提升递降：A<c 时 L=c 给出 fixed-s 边；A>=c、b 合数时 L=M/spf(b) 给出保留 A 的 fixed-n 边；A>=c、b 为素数且 b<p 时，(M,d=1;A) 重图表为 (A,d=b;A)，并由不可逆预转移位 epsilon=1->0 严格下降；A>=c、b 为素数且 b>p 时 L=b 给出支付 support reset 的 fixed-n 边。b=p 不可能。故首高载体带在既有 source/solution-lift 合同下不留未分流的 overflow。
+statement: 设核心素数 p=1 (mod 24) 的已有来源回执 overflow 满足 pn=4M+1、M>B_p=(p-1)^2/4、p<=n<=2p-5，并携带 A|M、1<=A<=B_p 及图表无关标记集 Sol(p)。令 c=(p-1)/4、b=M/A。则必有一条严格可提升递降：A<c 时 L=c 给出 fixed-s 边；A>=c、b 合数时 L=M/spf(b) 给出保留 A 的 fixed-n 边；A>=c、b 为素数且 b<p 时，(M,d=1;A) 重图表为 (A,d=b;A)，并以 (floor(B_p/A),M) 的字典序严格下降；A>=c、b 为素数且 b>p 时 L=b 给出支付 support reset 的 fixed-n 边。b=p 不可能。故首高载体带在既有 source/solution-lift 合同下不留未分流的 overflow。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -10,6 +10,7 @@ depends_on:
   - type-I-overflow-high-carrier-height-staircase
   - type-I-overflow-fixed-n-bounded-divisor-saturation
   - type-I-overflow-fixed-s-bounded-divisor-saturation
+  - type-I-overflow-cofactor-factor-exchange-carrier-descent
 topics:
   - type-I
   - overflow
@@ -27,6 +28,8 @@ sources:
     role: complete-fixed-n-edge-contract
   - claim: type-I-overflow-fixed-s-bounded-divisor-saturation
     role: complete-fixed-s-edge-contract
+  - claim: type-I-overflow-cofactor-factor-exchange-carrier-descent
+    role: unified-carrier-rank-for-prime-cofactor-transfer
   - reproduction: reproductions/type_i_overflow_first_strip_complete_reduction.py
     role: focused-four-route-receipt
 visibility: public
@@ -63,7 +66,7 @@ c=\frac{p-1}{4},
 \text{条件}&\text{后继构造}&\text{严格付款}\\ \hline
 A<c&L=c\mid rd&\text{既有 fixed-}s\\
 A\ge c,\ b\text{ 合数}&L=M/\operatorname{spf}(b)&\text{fixed-}n\text{，保留 }A\\
-A\ge c,\ b\text{ 素数},\ 1<b<p&(M,d)\mapsto(A,b)&\text{预转移位 }1\to0\\
+A\ge c,\ b\text{ 素数},\ 1<b<p&(M,d)\mapsto(A,b)&\text{载体 }M\text{ 严格下降}\\
 A\ge c,\ b\text{ 素数},\ b>p&L=b&\text{fixed-}n\text{，支付 support reset}
 \end{array}
 \tag{3}
@@ -183,35 +186,26 @@ R_M-R_T=4A(b-1)>0.
 \tag{11}
 \]
 
-为避免把“较小 \(R\)”单独误当作全局势，定义由状态整数坐标重算的预转移位
-
-\[
-\epsilon(M,d;A)=
-\begin{cases}
-1,&d=1,\ M/A\text{ 为素数且 }1<M/A<p,\\
-0,&\text{其余情形},
-\end{cases}
-\tag{12}
-\]
-
-并在本分流与既有 fixed-\(n\)/fixed-\(s\) 外层秩边的并集中使用
+这里不再把较小 \(R\) 或一次性相位标志误当作全局势。源状态有 \(M=Ab\)，而 (9)
+的目标载体为 \(M_T=A<M\)。在本分流与既有 fixed-\(n\)/fixed-\(s\) 外层秩边的
+并集中，使用
 
 \[
 \Lambda_p(M,d;A)=
 \left(
 \left\lfloor\frac{B_p}{A}\right\rfloor,
-\epsilon(M,d;A)
+M
 \right)
-\tag{13}
+\tag{12}
 \]
 
-的字典序。普通 fixed-\(n\)/fixed-\(s\) 边已经严格降低第一坐标；(9) 保持 \(A\)
-而将 \(\epsilon\) 从 \(1\) 变为 \(0\)。反向重写不在这个有向 dispatcher 的规则中，
-且任何未来把 determinant 坐标改回 \(d=1\) 的提案必须另行通过 E1--E5。因此 (9) 对
-这个预先声明的边集合严格降低良基势。
+的字典序。普通 fixed-\(n\)/fixed-\(s\) 边把后继 support 设为 \(L\)，已经严格降低
+第一坐标；(9) 保持 \(A\) 而严格降低第二坐标。故这是一条状态内禀的良基递降；更一般
+的因子转移与余因子交换由[余因子因子转移与交换的载体秩递降](type-I-overflow-cofactor-factor-exchange-carrier-descent.md)
+统一给出。
 
 E1 继承原 overflow 的 source/path/node 回执；E2--E3 是 (9)--(10) 的整数恒等式；
-E4 取 \(W_T=W_S=\operatorname{Sol}(p)\) 与恒等映射；E5 是 (13)。故这是一条
+E4 取 \(W_T=W_S=\operatorname{Sol}(p)\) 与恒等映射；E5 是 (12)。故这是一条
 `first_strip_prime_cofactor_transfer_v1` verified edge，而不是只降低局部载体的 RESET
 候选。
 

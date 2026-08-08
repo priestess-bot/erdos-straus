@@ -49,13 +49,6 @@ def smallest_prime_factor(value: int) -> int:
     return value
 
 
-def d_two_transfer_bit(prime: int, carrier: int, d: int, support: int) -> int:
-    if carrier % support:
-        return 0
-    quotient = carrier // support
-    return int(d == 2 and 1 < quotient < prime and is_prime(quotient))
-
-
 def fixed_n_chart(prime: int, product: int, denominator: int, selected: int) -> tuple[int, int]:
     if product % selected:
         raise AssertionError("selected fixed-n carrier is not a divisor")
@@ -156,8 +149,8 @@ def audit(fixture: Fixture) -> str:
         if not (
             R_target < R_source
             and M_target % A == 0
-            and d_two_transfer_bit(p, M, d, A) == 1
-            and d_two_transfer_bit(p, M_target, d_target, A) == 0
+            and M_target < M
+            and (B // A, M_target) < (B // A, M)
         ):
             raise AssertionError(f"{fixture.name}: odd prime-cofactor transfer changed")
         return "prime_transfer"
@@ -169,8 +162,8 @@ def audit(fixture: Fixture) -> str:
         R_target, _ = transfer_chart(p, n, M_target, d_target, A)
         if not (
             R_target < R_source
-            and d_two_transfer_bit(p, M, d, A) == 1
-            and d_two_transfer_bit(p, M_target, d_target, A) == 0
+            and M_target < M
+            and (B // A, M_target) < (B // A, M)
         ):
             raise AssertionError(f"{fixture.name}: b=2 transfer changed")
         return "prime_two_transfer"

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-d-two-capacity-window-complete-reduction
 title: 高载体 d=2 容量窗的完整余因子递降
-statement: 设核心素数 p=1 (mod 24) 的已有来源回执 overflow 满足 pn=8M+1、M>B_p=(p-1)^2/4、2p-1<=n<=4p-11，并携带 A|M、1<=A<=B_p 及图表无关标记集 Sol(p)。令 c=(p-1)/4、b=M/A。则必有一条严格可提升递降：A<c 时 L=c 给出 fixed-s 边；A>=c、b 合数时 L=M/spf(b) 给出保留 A 的 fixed-n 边；A>=c、b 为奇素数且 b<p 时 (M,d=2;A) 重图表为 (2A,b;A)，而 b=2 时重图表为 (A,4;A)，二者均由不可逆 d=2 预转移位 1->0 严格下降；A>=c、b 为素数且 b>p 时 L=b 给出支付 support reset 的 fixed-n 边。b=p 不可能。故该 d=2 容量窗在既有 source/solution-lift 合同下不留未分流的 overflow。
+statement: 设核心素数 p=1 (mod 24) 的已有来源回执 overflow 满足 pn=8M+1、M>B_p=(p-1)^2/4、2p-1<=n<=4p-11，并携带 A|M、1<=A<=B_p 及图表无关标记集 Sol(p)。令 c=(p-1)/4、b=M/A。则必有一条严格可提升递降：A<c 时 L=c 给出 fixed-s 边；A>=c、b 合数时 L=M/spf(b) 给出保留 A 的 fixed-n 边；A>=c、b 为奇素数且 b<p 时 (M,d=2;A) 重图表为 (2A,b;A)，而 b=2 时重图表为 (A,4;A)，二者均以 (floor(B_p/A),M) 的字典序严格下降；A>=c、b 为素数且 b>p 时 L=b 给出支付 support reset 的 fixed-n 边。b=p 不可能。故该 d=2 容量窗在既有 source/solution-lift 合同下不留未分流的 overflow。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -10,6 +10,7 @@ depends_on:
   - type-I-overflow-high-carrier-height-staircase
   - type-I-overflow-fixed-n-bounded-divisor-saturation
   - type-I-overflow-fixed-s-bounded-divisor-saturation
+  - type-I-overflow-cofactor-factor-exchange-carrier-descent
 topics:
   - type-I
   - overflow
@@ -28,6 +29,8 @@ sources:
     role: complete-fixed-n-edge-contract
   - claim: type-I-overflow-fixed-s-bounded-divisor-saturation
     role: complete-fixed-s-edge-contract
+  - claim: type-I-overflow-cofactor-factor-exchange-carrier-descent
+    role: unified-carrier-rank-for-small-cofactor-transfer
   - reproduction: reproductions/type_i_overflow_d_two_capacity_window_complete_reduction.py
     role: focused-five-route-receipt
 visibility: public
@@ -64,8 +67,8 @@ c=\frac{p-1}{4},
 \text{条件}&\text{后继构造}&\text{严格付款}\\ \hline
 A<c&L=c\mid rd&\text{既有 fixed-}s\\
 A\ge c,\ b\text{ 合数}&L=M/\operatorname{spf}(b)&\text{fixed-}n\text{，保留 }A\\
-A\ge c,\ 2<b<p\text{ 为素数}&(M,2)\mapsto(2A,b)&d=2\text{ 预转移位 }1\to0\\
-A\ge c,\ b=2&(M,2)\mapsto(A,4)&d=2\text{ 预转移位 }1\to0\\
+A\ge c,\ 2<b<p\text{ 为素数}&(M,2)\mapsto(2A,b)&\text{载体 }M\text{ 严格下降}\\
+A\ge c,\ b=2&(M,2)\mapsto(A,4)&\text{载体 }M\text{ 严格下降}\\
 A\ge c,\ b>p\text{ 为素数}&L=b&\text{fixed-}n\text{，支付 support reset}
 \end{array}
 \tag{3}
@@ -223,35 +226,27 @@ M_T=A,
 \tag{15}
 \]
 
-为避免把“较小 \(R\)”单独误当作全局势，定义由状态整数坐标重算的预转移位
-
-\[
-\epsilon_2(M,d;A)=
-\begin{cases}
-1,&d=2,\ M/A\text{ 为素数且 }1<M/A<p,\\
-0,&\text{其余情形}.
-\end{cases}
-\tag{16}
-\]
-
-并在本分流与既有 fixed-\(n\)/fixed-\(s\) 外层秩边的并集中使用
+这里不再把较小 \(R\) 或一次性相位标志误当作全局势。对 (11)，\(M_T=2A<Ab=M\)
+（因为 \(b>2\)）；对 (14)，\(M_T=A<2A=M\)。在本分流与既有 fixed-\(n\)/fixed-\(s\)
+外层秩边的并集中，使用
 
 \[
 \Lambda_p(M,d;A)=
 \left(
 \left\lfloor\frac{B_p}{A}\right\rfloor,
-\epsilon_2(M,d;A)
+M
 \right)
-\tag{17}
+\tag{16}
 \]
 
-的字典序。普通 fixed-\(n\)/fixed-\(s\) 边已经严格降低第一坐标；(11) 与 (14)
-保持 \(A\)，并把 \(\epsilon_2\) 从 \(1\) 变为 \(0\)。反向重写不在这个有向
-dispatcher 的规则中，且任何未来把 determinant 坐标改回 \(d=2\) 的提案必须另行
-通过 E1--E5。因此两种转移都对预先声明的边集合严格降低良基势。
+的字典序。普通 fixed-\(n\)/fixed-\(s\) 边把后继 support 设为 \(L\)，已经严格降低
+第一坐标；(11) 与 (14) 保持 \(A\) 而严格降低第二坐标。\(b=2\) 是一般因子转移
+\(g=2\) 的实例，而奇素数分支是余因子交换的实例；它们都由
+[余因子因子转移与交换的载体秩递降](type-I-overflow-cofactor-factor-exchange-carrier-descent.md)
+统一说明。
 
 E1 继承原 overflow 的 source/path/node 回执；E2--E3 是 (11)--(15) 的整数恒等式；
-E4 取 \(W_T=W_S=\operatorname{Sol}(p)\) 与恒等映射；E5 是 (17)。故它们分别是
+E4 取 \(W_T=W_S=\operatorname{Sol}(p)\) 与恒等映射；E5 是 (16)。故它们分别是
 `d_two_odd_prime_cofactor_transfer_v1` 与
 `d_two_prime_two_cofactor_transfer_v1` verified edge，而不是只降低局部载体的
 RESET 候选。这完成 (3) 的全部分支。
