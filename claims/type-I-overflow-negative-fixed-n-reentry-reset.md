@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-negative-fixed-n-reentry-reset
 title: overflow 负固定-n 重入的支持重置递降
-statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、S=Md，并携带 1<=A<=B_p=(p-1)^2/4 的 charged support。若某个 L|S 满足 A<L<=B_p、floor(B_p/L)<floor(B_p/A)，且 D=S/L-p 满足 1<=D<p，则令 u=n-4L。恒等式 pu=4LD+1 给出正整数 u，并使 (M_T,d_T,n_T;A_T)=(L,D,u;L) 成为合法 canonical overflow/marked 状态；它以 Sol(p) 恒等提升并通过完整 E1--E5，其中 outer support rank 严格下降。对小-d 容量层的素大余因子残余，取 L=b=M/A 时 D=Ad-p；故 Ad<2p 的全部残余都被该边闭合，真正余项必有 Ad>=2p（从而 d>=5）。
+statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、S=Md，并携带 1<=A<=B_p=(p-1)^2/4 的 charged support。若某个 L|S 满足 A<L<=B_p、floor(B_p/L)<floor(B_p/A)，且 D=S/L-p 满足 1<=D<p，则令 u=n-4L。恒等式 pu=4LD+1 给出正整数 u，并使 (M_T,d_T,n_T;A_T)=(L,D,u;L) 成为合法 canonical overflow/marked 状态；它以 Sol(p) 恒等提升并通过完整 E1--E5，其中 outer support rank 严格下降。该卡是商模 p 折叠在 h=1 的特例；D>=p 的长余量也由后续的完整商折叠处理，不能再作为最终残余。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -152,16 +152,11 @@ rank 显式支付。这完成证明。
 
 该残余已经有 \(4b\le n\)，而 \(D=0\) 会使 (7) 给出 \(pu=1\)，不可能；所以
 \(D\ge1\)。若 \(Ad<2p\)，则 \(D<p\)，本定理立即给出完整 reentry-reset 边。
-因此三类旧规则加上本卡后，真正的素大余因子余项必须满足
-
-\[
-b\text{ 为素数},
-\qquad p<b<2(p-1),
-\qquad Ad\ge2p.
-\tag{11}
-\]
-
-此前已证明这类容量层有 \(A<p/2\)，所以 (11) 强制 \(d>4\)，即 \(d\ge5\)。
+因此本卡单独闭合 \(Ad<2p\) 的短余量。若 \(Ad\ge2p\)，则 \(D\ge p\)，它不再
+满足本卡的 \(h=1\) 门；但这不是最终残余，因为
+[固定-\(n\) 商模 \(p\) 折叠的完整外层秩递降](type-I-overflow-fixed-n-quotient-fold-descent.md)
+会把 \(D\) 继续约化到其非零模 \(p\) 余数。结合该一般引理后，整个小-\(d\) 容量层
+由[完整余因子递降](type-I-overflow-small-d-capacity-complete-reduction.md)闭合。
 
 短余量例
 
@@ -181,8 +176,9 @@ b\text{ 为素数},
 (p,d,n,M,A,b)=(97,5,833,4040,40,101)
 \]
 
-有 \(D=103\ge p\)，所以不满足本定理的 \(d_T<p\) 门；这只是新门的精确边界，
-不表示其它终端或 alternate 不存在。
+有 \(D=103\ge p\)，所以不满足本卡的 \(h=1\) 门；完整商折叠则取
+\(103\equiv6\pmod {97}\)，把它送到 \((101,6,25;101)\)。因此它是这个特例的边界，
+而不是完整选择器的边界。
 
 ## 聚焦复现
 

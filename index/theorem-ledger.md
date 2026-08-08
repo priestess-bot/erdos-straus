@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 535 |
+| 数学状态 | `established` | 537 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 368 |
+| 证明来源 | `repository_derivation` | 370 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 504 |
+| 审阅状态 | `internal_review` | 506 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -591,6 +591,7 @@
 | [overflow 固定 n 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md) (`type-I-overflow-fixed-n-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md) (`type-I-overflow-fixed-n-gap-dual-obstruction`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定 n 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md) (`type-I-overflow-fixed-n-overflow-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [overflow 固定-n 商模 p 折叠的完整外层秩递降](../claims/type-I-overflow-fixed-n-quotient-fold-descent.md) (`type-I-overflow-fixed-n-quotient-fold-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [fixed-s 的 2,3-光滑载体残余正规形](../claims/type-I-overflow-fixed-s-23-smooth-residual.md) (`type-I-overflow-fixed-s-23-smooth-residual`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶 fixed-s 的有界除子外层秩递降](../claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md) (`type-I-overflow-fixed-s-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
@@ -609,6 +610,7 @@
 | [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md) (`type-I-overflow-r-one-dual-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md) (`type-I-overflow-same-chart-support-promotion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [高载体小 d 容量层的完整余因子递降](../claims/type-I-overflow-small-d-capacity-complete-reduction.md) (`type-I-overflow-small-d-capacity-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体小 d 容量层的素大余因子残余二分](../claims/type-I-overflow-small-d-capacity-prime-residual-dichotomy.md) (`type-I-overflow-small-d-capacity-prime-residual-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [2,3-光滑 overflow 高 k 双载体 joined-support RESET 无 go](../claims/type-I-overflow-smooth23-high-k-dual-carrier-no-go.md) (`type-I-overflow-smooth23-high-k-dual-carrier-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [2,3-光滑 overflow 高 k 的外层势硬边界](../claims/type-I-overflow-smooth23-high-k-potential-boundary.md) (`type-I-overflow-smooth23-high-k-potential-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |

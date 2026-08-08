@@ -114,6 +114,12 @@ R_L\equiv3\pmod4.
 \(W_T=W_S=\operatorname{Sol}(p)\) 与图表无关；但它不是当前 phase 的
 support-preserving 边，回执必须将 support_reset_paid 置为真。
 
+本卡的 \(4L>n\) 是原始 fixed-\(n\) 图表保持同一内部 \(n\) 坐标的条件，而不是
+“有界除子能否产生后继”的必要条件。若它失败，商
+\(S/L\) 仍可由[固定-\(n\) 商模 \(p\) 折叠的完整外层秩递降](type-I-overflow-fixed-n-quotient-fold-descent.md)
+归一到 \(1,\ldots,p-1\)，并把内部 \(n\) 坐标同步折叠；在相同的有界 support 和
+严格势前提下，该加强仍给出完整 E1--E5。
+
 ## 2. 低互补量的饱和推论
 
 若

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-small-d-capacity-prime-residual-dichotomy
 title: 高载体小 d 容量层的素大余因子残余二分
-statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p=(p-1)^2/4<M<2B_p、1<=d<p，且 charged support 满足 c=(p-1)/4<=A<=B_p、A|M、2d^2<=p-1。写 b=M/A。则 b<2(p-1)；若 b 合数，余因子因子转移给出完整 E1--E5；若 b 是小于 p 的素数，则 b<=d 时因子转移、b>d 时余因子交换均给出完整 E1--E5；若 b 是大于 p 的素数且 4b>n，则 L=b 给出支付 support reset 的 fixed-n 完整 E1--E5。故唯一未由这三类规则闭合的三规则残余必满足 b 为素数、p<b<2(p-1) 且 4b<=n。该残余实际非空于算术层面：p=73,d=4,n=329,M=1501,A=19,b=79；负固定-n 重入随后闭合其 Ad<2p 子族，故进一步余项必有 Ad>=2p。两级残余都不是猜想反例，也不带额外可达性断言。
+statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p=(p-1)^2/4<M<2B_p、1<=d<p，且 charged support 满足 c=(p-1)/4<=A<=B_p、A|M、2d^2<=p-1。写 b=M/A。则 b<2(p-1)；若 b 合数，余因子因子转移给出完整 E1--E5；若 b 是小于 p 的素数，则 b<=d 时因子转移、b>d 时余因子交换均给出完整 E1--E5；若 b 是大于 p 的素数且 4b>n，则 L=b 给出支付 support reset 的 fixed-n 完整 E1--E5。故唯一未由这三类规则闭合的三规则残余必满足 b 为素数、p<b<2(p-1) 且 4b<=n。该残余实际非空于算术层面：p=73,d=4,n=329,M=1501,A=19,b=79；完整的固定-n 商模 p 折叠随后闭合全部这类素大余因子行，因此该卡是通向小-d 容量层完整闭合的中间二分，不是猜想反例，也不带额外可达性断言。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -199,13 +199,11 @@ B_{73}=1296<M<2B_{73},
 
 但这不是最终余项。该行有 \(Ad=76<2p\)，所以
 \(D=Ad-p=3<p\)。[负固定-\(n\) 重入的支持重置递降](type-I-overflow-negative-fixed-n-reentry-reset.md)
-把它重图表为 \((M,d,n;A)=(79,3,13;79)\) 并支付严格 outer-rank reset。因此合并
-该重入规则后，真正待处理的素大余因子核心还必须满足
-
-\[
-Ad\ge2p,
-\qquad d\ge5.
-\]
+把它重图表为 \((M,d,n;A)=(79,3,13;79)\) 并支付严格 outer-rank reset。更一般地，
+[固定-\(n\) 商模 \(p\) 折叠的完整外层秩递降](type-I-overflow-fixed-n-quotient-fold-descent.md)
+把任意正 \(D\) 折叠为非零的 \(D\bmod p\)，所以连 \(Ad\ge2p\) 的长余量也会闭合。
+由此得到[高载体小 \(d\) 容量层的完整余因子递降](type-I-overflow-small-d-capacity-complete-reduction.md)；
+本卡保留为三规则菜单如何精确暴露素大余因子分支的中间二分。
 
 作为一致性检查，\(d=1\) 或 \(d=2\) 时 (2) 分别强制 \(n<2p\) 或 \(n<4p\)，
 而素大余因子总有 \(b>p\)，故 \(4b>n\)。所以 (4) 的残余只能从 \(d\ge3\) 开始，
