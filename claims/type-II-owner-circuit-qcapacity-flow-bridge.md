@@ -184,6 +184,8 @@ source column；(8) 输出 source-rank deficit，而不是 Fourier 容量通过�
 ## 研究边界
 
 该桥把相容回路族的 q-height 需求和真实物理槽复用精确连接起来，消除了
-\(R_{\rm reuse}\) 未知时从 pair-energy 到全局容量的跳步。它仍不证明任意核心素数的
-相容回路族一定产生满流或严格递降；下一步必须把 (6)、(9) 的负证书接入
-source-column escape、Type I/F/G 终端或可提升良基下降。
+\(R_{\rm reuse}\) 未知时从 pair-energy 到全局容量的跳步。其两个负出口现在由
+[Type II owner 精确 q 流与 Rado 负证书的 typed 后继分派](type-II-owner-exact-flow-negative-certificate-relay.md)
+统一接入全源列闭合、source-column escape、依赖回路和算术障碍；因此不能把 (6)、(9)
+单独宣称为递降。全局仍未证明任意核心素数必有一个通过 canonicalization 的有限
+相容回路族，或所有顶层 primary 都已有 Type I/F/G 终端。

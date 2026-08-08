@@ -12,16 +12,16 @@
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
 | 数学状态 | `computationally_reproduced` | 371 |
-| 数学状态 | `conditional` | 24 |
+| 数学状态 | `conditional` | 25 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 567 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 400 |
+| 证明来源 | `repository_derivation` | 401 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 536 |
+| 审阅状态 | `internal_review` | 537 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -871,6 +871,7 @@
 | [十四规范移位的一私有素因子模型被模三覆盖阻断](../claims/type-II-one-prime-private-cofactor-boundary.md) (`type-II-one-prime-private-cofactor-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `linnik1944`, `chamberland2026` | 2026-07-24 |
 | [Type II owner 算术菜单过滤后的 Rado—q 容量—Fourier 完整分派](../claims/type-II-owner-arithmetic-menu-rado-fourier-closure.md) (`type-II-owner-arithmetic-menu-rado-fourier-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 相容回路族的 q 进需求—物理容量流桥](../claims/type-II-owner-circuit-qcapacity-flow-bridge.md) (`type-II-owner-circuit-qcapacity-flow-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [Type II owner 精确 q 流与 Rado 负证书的 typed 后继分派](../claims/type-II-owner-exact-flow-negative-certificate-relay.md) (`type-II-owner-exact-flow-negative-certificate-relay`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 流—Rado 分离测试不足的 source-preserving 规范化反例](../claims/type-II-owner-flow-rado-separation-counterexample.md) (`type-II-owner-flow-rado-separation-counterexample`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 联合依赖回路到 SNF—算术提升的三分](../claims/type-II-owner-joint-circuit-arithmetic-lift-trichotomy.md) (`type-II-owner-joint-circuit-arithmetic-lift-trichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 物理槽—source 联合匹配的有限穷尽闭合](../claims/type-II-owner-joint-matching-finite-obstruction-closure.md) (`type-II-owner-joint-matching-finite-obstruction-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
