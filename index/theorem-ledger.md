@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 565 |
+| 数学状态 | `established` | 566 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 398 |
+| 证明来源 | `repository_derivation` | 399 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 534 |
+| 审阅状态 | `internal_review` | 535 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -871,6 +871,7 @@
 | [十四规范移位的一私有素因子模型被模三覆盖阻断](../claims/type-II-one-prime-private-cofactor-boundary.md) (`type-II-one-prime-private-cofactor-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `linnik1944`, `chamberland2026` | 2026-07-24 |
 | [Type II owner 算术菜单过滤后的 Rado—q 容量—Fourier 完整分派](../claims/type-II-owner-arithmetic-menu-rado-fourier-closure.md) (`type-II-owner-arithmetic-menu-rado-fourier-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 流—Rado 分离测试不足的 source-preserving 规范化反例](../claims/type-II-owner-flow-rado-separation-counterexample.md) (`type-II-owner-flow-rado-separation-counterexample`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [Type II owner 联合依赖回路到 SNF—算术提升的三分](../claims/type-II-owner-joint-circuit-arithmetic-lift-trichotomy.md) (`type-II-owner-joint-circuit-arithmetic-lift-trichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 物理槽—source 联合匹配的有限穷尽闭合](../claims/type-II-owner-joint-matching-finite-obstruction-closure.md) (`type-II-owner-joint-matching-finite-obstruction-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 核截面到 primary 数字终端的物理去重证书](../claims/type-II-owner-kernel-primary-digit-certificate.md) (`type-II-owner-kernel-primary-digit-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner primary 掩码的带来源同余—正规形提升判据](../claims/type-II-owner-primary-mask-arithmetic-lift-criterion.md) (`type-II-owner-primary-mask-arithmetic-lift-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |

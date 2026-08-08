@@ -144,4 +144,7 @@ source-class 分槽合同、source-column escape、算术障碍、Type I/II 终�
 该闭合把“流通过但 Rado 不适用”的残余变成可复核的联合边证书，消除了把
 并集源秩误当成联合存在性的逻辑跳步。它仍未证明
 \(\mathrm{OWNER\_JOINT\_SOURCE\_SLOT\_OBSTRUCTION}\) 必然连接到每个核心素数的
-Type I/II 短证书或严格递降；这正是下一步需要研究的算术后继问题。
+Type I/II 短证书或严格递降；当前第一条算术后继是
+[联合依赖回路到 SNF—算术提升三分](type-II-owner-joint-circuit-arithmetic-lift-trichotomy.md)，
+它把每个回路分成直接 Type II、相容 SOURCE_RELATION_FOURIER 或精确 lift obstruction，
+但相容回路族的全局 F/G 容量和良基后继仍未闭合。
