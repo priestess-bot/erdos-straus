@@ -2,14 +2,14 @@
 kind: claim
 claim_id: type-I-overflow-small-d-capacity-complete-reduction
 title: 高载体小 d 容量层的完整余因子递降
-statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p=(p-1)^2/4<M<2B_p、1<=d<p，且 charged support 满足 c=(p-1)/4<=A<=B_p、A|M、2d^2<=p-1。则必有完整 E1--E5 严格递降：写 b=M/A；b 合数时用可移因子转移，b<p 为素数时按 b<=d 用因子转移或按 b>d 用余因子交换，b>p 为素数时 L=b 满足完整 outer-rank 条件并由固定-n 商模 p 折叠给出后继。b=p 不可能。故这个小 d 高载体容量层不留未分流的 overflow。
+statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p=(p-1)^2/4<M<2B_p、1<=d<p，且 charged support 满足 c=(p-1)/4<=A<=B_p、A|M、d^2<p。则必有完整 E1--E5 严格递降：写 b=M/A；b<=d 时用最小素因子转移，b<p 且 b>d 时用余因子交换，b>p 时 L=b 满足完整 outer-rank 条件并由固定-n 商模 p 折叠给出后继。b=p 不可能。故这个小 d 高载体容量层不留未分流的 overflow。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-overflow-cofactor-factor-exchange-carrier-descent
   - type-I-overflow-fixed-n-quotient-fold-descent
-  - type-I-overflow-small-d-capacity-prime-residual-dichotomy
+  - type-I-overflow-capacity-slab-factor-threshold-residual
 topics:
   - type-I
   - overflow
@@ -25,9 +25,9 @@ sources:
   - claim: type-I-overflow-cofactor-factor-exchange-carrier-descent
     role: composite-and-small-prime-transfers
   - claim: type-I-overflow-fixed-n-quotient-fold-descent
-    role: prime-large-folded-reset
-  - claim: type-I-overflow-small-d-capacity-prime-residual-dichotomy
-    role: prior-three-rule-case-split
+    role: large-cofactor-folded-reset
+  - claim: type-I-overflow-capacity-slab-factor-threshold-residual
+    role: sharp-capacity-slab-residual-and-square-threshold
   - reproduction: reproductions/type_i_overflow_small_d_capacity_complete_reduction.py
     role: focused-five-route-receipt
 visibility: public
@@ -60,7 +60,7 @@ pn=4Md+1,
 \[
 c\le A\le B_p,
 \qquad A\mid M,
-\qquad 2d^2\le p-1.
+\qquad d^2<p.
 \tag{3}
 \]
 
@@ -69,10 +69,9 @@ c\le A\le B_p,
 \[
 \begin{array}{c|c|c}
 \text{条件}&\text{规范构造}&\text{严格势}\\ \hline
-b\text{ 合数}&\text{最大可移 }g\mid b,\ dg<p&\left(\lfloor B_p/A\rfloor,M\right)\\
-b<p\text{ 素数},\ b\le d&g=b\text{ 因子转移}&\left(\lfloor B_p/A\rfloor,M\right)\\
-b<p\text{ 素数},\ b>d&(M,d)\mapsto(Ad,b)&\left(\lfloor B_p/A\rfloor,M\right)\\
-b>p\text{ 素数}&L=b\text{ 的商模 }p\text{ 折叠}&\left\lfloor B_p/A\right\rfloor
+b\le d&g=\operatorname{spf}(b)\text{ 的因子转移}&\left(\lfloor B_p/A\rfloor,M\right)\\
+b<p,\ b>d&(M,d)\mapsto(Ad,b)&\left(\lfloor B_p/A\rfloor,M\right)\\
+b>p&L=b\text{ 的商模 }p\text{ 折叠}&\left\lfloor B_p/A\right\rfloor
 \end{array}
 \tag{4}
 \]
@@ -91,35 +90,25 @@ b>p\text{ 素数}&L=b\text{ 的商模 }p\text{ 折叠}&\left\lfloor B_p/A\right\
 又 \(p\nmid M\)，所以当 \(b\) 是素数时 \(b\ne p\)。这穷尽了 (4) 的三类
 余因子。
 
-## 复合与小素数
+## 小余因子
 
-若 \(b\) 合数，令 \(q=\operatorname{spf}(b)\)。由 (5)，
-
-\[
-q\le\sqrt b<\sqrt{2(p-1)}.
-\]
-
-再由 (3)，
+先设 \(b\le d\)，并令 \(g=\operatorname{spf}(b)\)。由于
+\(g\le b\le d\)，(3) 给出
 
 \[
-d^2q^2<2d^2(p-1)\le(p-1)^2<p^2,
+dg\le d^2<p.
 \]
 
-所以 \(dq<p\)，存在可移因子。余因子因子转移引理给出保持 \(A\) 的严格载体递降。
+所以 \(g\) 可移，余因子因子转移引理给出保持 \(A\) 的严格载体递降。这里不要求
+\(b\) 为素数或合数。
 
-若 \(b<p\) 是素数且 \(b\le d\)，则
-
-\[
-db\le d^2\le\frac{p-1}{2}<p,
-\]
-
-所以 \(g=b\) 可移。若 \(b>d\)，直接使用余因子交换
-\((M,d)=(Ab,d)\mapsto(Ad,b)\)。两种情形均由
+再设 \(b<p\) 而 \(b>d\)。直接使用余因子交换
+\((M,d)=(Ab,d)\mapsto(Ad,b)\)。它同样由
 \(\left(\lfloor B_p/A\rfloor,M\right)\) 的字典序严格下降。
 
-## 素大余因子的商折叠
+## 大余因子的商折叠
 
-最后设 \(b>p\) 是素数。此时
+最后设 \(b>p\)。此时
 
 \[
 A=\frac Mb<\frac{2B_p}{p}=\frac{(p-1)^2}{2p}<\frac p2<b,
@@ -164,5 +153,5 @@ E1--E5 分别由两个所引的转移合同提供，故 (4) 完成所有情况�
 python3 reproductions/type_i_overflow_small_d_capacity_complete_reduction.py --verify
 ```
 
-五条精确回执覆盖复合因子转移、小素数因子转移、小素数交换、素大余因子的普通
-fixed-\(n\) 商，以及素大余因子的长商折叠；不做历史范围扫描。
+五条精确回执覆盖 \(b\le d\) 的因子转移、\(b<p,b>d\) 的交换、大余因子的普通
+fixed-\(n\) 商，以及大余因子的长商折叠；不做历史范围扫描。

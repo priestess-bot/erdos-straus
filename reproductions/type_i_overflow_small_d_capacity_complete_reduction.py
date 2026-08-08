@@ -24,7 +24,7 @@ class Fixture:
 
 
 FIXTURES = (
-    Fixture("composite_factor", 73, 2050, 3, 337, 41, "factor", (205, 30, 337)),
+    Fixture("composite_exchange", 73, 2050, 3, 337, 41, "exchange", (123, 50, 337)),
     Fixture("small_prime_factor", 73, 1396, 2, 153, 698, "factor", (698, 4, 153)),
     Fixture("small_prime_exchange", 73, 2491, 2, 273, 53, "exchange", (106, 47, 273)),
     Fixture("prime_large_ordinary", 73, 2573, 1, 141, 31, "fold", (83, 31, 141)),
@@ -86,7 +86,7 @@ def audit(fixture: Fixture) -> str:
         B < M < 2 * B
         and c <= A <= B
         and M % A == 0
-        and 2 * d * d <= p - 1
+        and d * d < p
         and 4 * M - n > p
     ):
         raise AssertionError(f"{fixture.name}: capacity or support gate changed")
@@ -96,15 +96,12 @@ def audit(fixture: Fixture) -> str:
         raise AssertionError(f"{fixture.name}: cofactor range changed")
     source_rank = (B // A, M)
 
-    if not is_prime(b):
+    if b <= d:
         choices = movable_factors(b, d, p)
         if not choices:
-            raise AssertionError(f"{fixture.name}: composite lost movable factor")
-        g = max(choices)
+            raise AssertionError(f"{fixture.name}: small cofactor lost movable factor")
+        g = min(choices)
         target = (M // g, d * g, n)
-        route = "factor"
-    elif b < p and b <= d:
-        target = (M // b, d * b, n)
         route = "factor"
     elif b < p:
         target = (A * d, b, n)
