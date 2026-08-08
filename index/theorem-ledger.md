@@ -12,16 +12,16 @@
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
 | 数学状态 | `computationally_reproduced` | 371 |
-| 数学状态 | `conditional` | 25 |
+| 数学状态 | `conditional` | 26 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 567 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 401 |
+| 证明来源 | `repository_derivation` | 402 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 537 |
+| 审阅状态 | `internal_review` | 538 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -446,6 +446,7 @@
 | [高锚同图表单调支撑提升的余因子 gate 工程边界](../claims/type-I-high-anchor-same-chart-gate-engineering-boundary.md) (`type-I-high-anchor-same-chart-gate-engineering-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-06 |
 | [高锚点 charged r-图表的三相非回返窗口](../claims/type-I-high-anchor-three-phase-nonreturn-window.md) (`type-I-high-anchor-three-phase-nonreturn-window`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高锚点正相位 token 的 canonical checkpoint 传播合同](../claims/type-I-high-anchor-token-canonical-checkpoint-propagation.md) (`type-I-high-anchor-token-canonical-checkpoint-propagation`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [Type I/II F-G 源映射的有限整数宇宙完备化](../claims/type-I-II-fg-universal-finite-source-map-completion.md) (`type-I-ii-fg-universal-finite-source-map-completion`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [large-slab 的受限因子对正规形与跨指数层支撑容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md) (`type-I-large-slab-factor-pair-layer-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [large-slab 三个内部系数的算术出口与提升边界](../claims/type-I-large-slab-three-alpha-arithmetic-boundaries.md) (`type-I-large-slab-three-alpha-arithmetic-boundaries`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |

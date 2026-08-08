@@ -235,7 +235,10 @@ Type II q-height。
 ## 6. 研究边界
 
 本卡把“F/G 角色已经出现但还没有整数载体”的宽泛状态压缩为四个可复核终端，
-并明确了严格商下降、纯锚点、源关系错配和真实 q 请求的边界。它仍未证明实际
+并明确了严格商下降、纯锚点、源关系错配和真实 q 请求的边界。对于已经声明
+Type I/II 整数 source contract 的状态，先使用
+[Type I/II F-G 源映射的有限整数宇宙完备化](type-I-II-fg-universal-finite-source-map-completion.md)
+把 `F_SOURCE_MAP_UNCLOSED` 精化为最小漏项或带标记 SNF 回执；本卡仍未证明实际
 Erdős--Straus 源映射对所有核心素数、所有候选纤维都是完备的；也未证明
 \(\mathrm{F\_FOURIER\_SOURCE\_TARGET\_LIFTED}\) 后必然通过 q-prefix/Kneser
 闭包。因此全局决定性缺口变为：证明实际 source-map 完备，或对
