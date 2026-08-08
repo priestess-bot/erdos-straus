@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 527 |
+| 数学状态 | `established` | 528 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 360 |
+| 证明来源 | `repository_derivation` | 361 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 496 |
+| 审阅状态 | `internal_review` | 497 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -357,6 +357,7 @@
 | [q=137 实际 raw 族的 d=1 Type II moving-terminal 网](../claims/type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web.md) (`type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [q=137 实际 raw 族的 D=6303 target-tuned Type II 终端子射线](../claims/type-I-g-anchor-c3-adaptive-core19-q137-d6303-target-tuned-terminal-subray.md) (`type-I-g-anchor-c3-adaptive-core19-q137-d6303-target-tuned-terminal-subray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的 q=137 首标签 C=19 实际 raw 家族](../claims/type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family.md) (`type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [q=137 raw C=19 的最小双 raw 因子完成与正规形纤维近邻](../claims/type-I-g-anchor-c3-adaptive-core19-q137-raw-c19-minimal-completion-neighbor.md) (`type-I-g-anchor-c3-adaptive-core19-q137-raw-c19-minimal-completion-neighbor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [q=137 raw C=19 原子到同纤维 Type II target 的实际 owner 控制](../claims/type-I-g-anchor-c3-adaptive-core19-q137-raw-c19-same-fiber-owner.md) (`type-I-g-anchor-c3-adaptive-core19-q137-raw-c19-same-fiber-owner`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [c=3 core-19 的 q=23 首标签 C=19 入口与全分支 terminal 障碍](../claims/type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction.md) (`type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 的第三条 C=38 实际 raw 叶与 q=19 相位层](../claims/type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf.md) (`type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
