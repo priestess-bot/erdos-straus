@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 556 |
+| 数学状态 | `established` | 557 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 389 |
+| 证明来源 | `repository_derivation` | 390 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 525 |
+| 审阅状态 | `internal_review` | 526 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -869,6 +869,7 @@
 | [H19 残余的旧私有因子释放审计](../claims/type-II-old-private-release.md) (`type-II-old-private-release`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [H19 后单新因子 Type II 选择器猜想](../claims/type-II-one-new-factor-selector-conjecture.md) (`type-II-one-new-factor-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [十四规范移位的一私有素因子模型被模三覆盖阻断](../claims/type-II-one-prime-private-cofactor-boundary.md) (`type-II-one-prime-private-cofactor-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `linnik1944`, `chamberland2026` | 2026-07-24 |
+| [Type II owner token 投影到物理 q 槽的流—割容量门](../claims/type-II-owner-projection-physical-capacity-flow-gate.md) (`type-II-owner-projection-physical-capacity-flow-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 加权稳定子—annihilator 良基选择器](../claims/type-II-owner-weighted-stabilizer-annihilator-well-founded-selector.md) (`type-II-owner-weighted-stabilizer-annihilator-well-founded-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [p+12 / p+36 因子给出的 Type II 终端扇](../claims/type-II-p-plus-12-36-divisor-terminal-fan.md) (`type-II-p-plus-12-36-divisor-terminal-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [规范移位一私有素因子模型的强制因子阶梯边界](../claims/type-II-prime-cofactor-forcing-ladder.md) (`type-II-prime-cofactor-forcing-ladder`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-25 |

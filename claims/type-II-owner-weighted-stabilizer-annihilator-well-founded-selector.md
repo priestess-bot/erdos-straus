@@ -8,6 +8,7 @@ proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-II-target-fiber-owner-weighted-fourier-capacity-bridge
+  - type-II-owner-projection-physical-capacity-flow-gate
   - type-II-cross-state-qcapacity-deficit-annihilator-relay
   - type-II-annihilator-two-sided-subgroup-quotient-descent
   - type-II-stabilizer-kernel-quotient-descent-trichotomy
@@ -166,9 +167,14 @@ P_f=\{x\in G_f:W_f(xg)=W_f(g)\text{ 对所有 }g\in G_f\}.
 * 若 \(\chi_*\) 在 source difference subgroup 上非平凡，但 SNF、角色阶、算术相位
   或 owner 对齐失败，输出相应的 'FOURIER_*_LIFT_OBSTRUCTED'，不把式 (11) 计为
   Type II 证书；
-* 若上述门通过，按每个 \((q,j)\) 产生独立 'SOURCE_RANK_DEMAND(q,j)'，再检查
-  q 进容量。容量没有严格缺口时，输出 'OWNER_FOURIER_CAPACITY_UNCLOSED'；有缺口
-  但源列未被支配时，输出 'SOURCE_COLUMN_ESCAPE'。
+* 若上述门通过，按每个 \((q,j)\) 产生独立 'SOURCE_RANK_DEMAND(q,j)'；先把
+  owner token 投影到物理 q 槽并通过
+  [owner 投影流—割容量门](type-II-owner-projection-physical-capacity-flow-gate.md)。
+  若流门失败，输出 'OWNER_PROJECTION_CAPACITY_DEFICIT' 或
+  'OWNER_TOKEN_ASSIGNMENT_OBSTRUCTED'，不收费 Fourier owner multiplicity；
+* 只有流门通过后才检查 q 进容量。容量没有严格缺口时，输出
+  'OWNER_FOURIER_CAPACITY_UNCLOSED'；有缺口但源列未被支配时，输出
+  'SOURCE_COLUMN_ESCAPE'。
 
 这一步把 owner 加权谱产生的对偶质量准确地送入已有的 F/G—Type II typed 接口，
 但不越过其算术前提。
@@ -255,5 +261,6 @@ Type II 的 \(t=-1\) 还有一个额外约束：
 
 该选择器仍未证明所有实际核心素数都满足 source-dominating cut、owner 对齐和
 整数 E1--E5 提升。当前决定性缺口已收紧为：对稳定子平凡且 Fourier 未命中的实际
-纤维，要么证明一个可提升的 q 进缺口，要么构造 Type I/广义 \(2^j\) 终端；不能
-再用无权支撑或未提升 Fourier 相关性替代这一步。
+纤维，要么先通过 owner 物理流门并证明一个可提升的 q 进缺口，要么构造 Type I/
+广义 \(2^j\) 终端；不能再用无权支撑、owner multiplicity 或未提升 Fourier 相关性
+替代这一步。
