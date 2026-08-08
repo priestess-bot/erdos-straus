@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 554 |
+| 数学状态 | `established` | 555 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 387 |
+| 证明来源 | `repository_derivation` | 388 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 523 |
+| 审阅状态 | `internal_review` | 524 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -983,6 +983,7 @@
 | [两亿平移平方外源压力点的平方尾必要性边界](../claims/type-II-tail-shifted-quadratic-square-necessity-200m.md) (`type-II-tail-shifted-quadratic-square-necessity-200m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [普通 Type II 双尾选择器的支持度缺陷判据](../claims/type-II-tail-support-defect-criterion.md) (`type-II-tail-support-defect-criterion`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [Xu 的 tame 解恰为 Type II 的 K=1 切片](../claims/type-II-tame-k-one-equivalence.md) (`type-II-tame-k-one-equivalence`) | `established` | `unspecified` | `unspecified` | `xu2026`, `bradford2024` | 2026-07-23 |
+| [目标纤维 owner 加权谱到稳定子 Fourier—q 容量的桥](../claims/type-II-target-fiber-owner-weighted-fourier-capacity-bridge.md) (`type-II-target-fiber-owner-weighted-fourier-capacity-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 支撑外失败的平方商二次特征分界](../claims/type-II-target-outside-support-quadratic-separation.md) (`type-II-target-outside-support-quadratic-separation`) | `established` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `chamberland2026` | 2026-07-24 |
 | [Type II 支撑外失败的二幂字符深度与增强筛界](../claims/type-II-two-power-character-depth-sieve.md) (`type-II-two-power-character-depth-sieve`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `grynkiewicz_marchan_ordaz2009`, `chamberland2026` | 2026-08-04 |
 | [Type II 双尾去 p 给出严格递降的充要整除条件](../claims/type-II-two-tail-deflation-descent.md) (`type-II-two-tail-deflation-descent`) | `established` | `unspecified` | `unspecified` | `chamberland2026`, `bradford2024` | 2026-07-24 |
