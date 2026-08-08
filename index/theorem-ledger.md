@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 552 |
+| 数学状态 | `established` | 553 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 385 |
+| 证明来源 | `repository_derivation` | 386 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 521 |
+| 审阅状态 | `internal_review` | 522 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -318,6 +318,7 @@
 | [F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](../claims/type-I-f-target-involution-fourier-phase-collapse.md) (`type-I-f-target-involution-fourier-phase-collapse`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [F 型关系格对偶的双方向相位需求映射](../claims/type-I-f-two-direction-phase-demand-map.md) (`type-I-f-two-direction-phase-demand-map`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型小对偶双方向需求的跨状态容量边界](../claims/type-I-f-two-direction-small-dual-candidate-census.md) (`type-I-f-two-direction-small-dual-candidate-census`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [固定 D 一跳 F/G source-map 的 canonical—SNF—owner 闭合三分](../claims/type-I-fg-canonical-d-lattice-owner-closure.md) (`type-I-fg-canonical-d-lattice-owner-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F/G Fourier q-primary 相位到 owner 紧链—容量松弛的类型安全桥](../claims/type-I-fg-fourier-phase-owner-capacity-bridge.md) (`type-I-fg-fourier-phase-owner-capacity-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F/G Fourier 角色到 Type II 初等 q 请求的跨层分派](../claims/type-I-fg-fourier-to-type-II-role-demand-bridge.md) (`type-I-fg-fourier-to-type-II-role-demand-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [F/G 有限带标记 source 菜单的饱和与相位实现判据](../claims/type-I-fg-marked-source-menu-saturation.md) (`type-I-fg-marked-source-menu-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
