@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 538 |
+| 数学状态 | `established` | 539 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 371 |
+| 证明来源 | `repository_derivation` | 372 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 507 |
+| 审阅状态 | `internal_review` | 508 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -573,6 +573,7 @@
 | [有序 raw 谱系的归一化相位刚性、gcd 富集标签与 F 奇主层门](../claims/type-I-ordered-raw-lineage-normalized-phase-rigidity.md) (`type-I-ordered-raw-lineage-normalized-phase-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [A=1 overflow 的对偶外层秩 RESET](../claims/type-I-overflow-a-one-dual-outer-rank-reset.md) (`type-I-overflow-a-one-dual-outer-rank-reset`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md) (`type-I-overflow-a-one-generic-determinant-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [高载体因子阈值残余的双有界除子空图谱](../claims/type-I-overflow-capacity-slab-dual-bounded-divisor-hole.md) (`type-I-overflow-capacity-slab-dual-bounded-divisor-hole`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体容量层的因子阈值残余二分](../claims/type-I-overflow-capacity-slab-factor-threshold-residual.md) (`type-I-overflow-capacity-slab-factor-threshold-residual`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow 余因子因子转移与交换的载体秩递降](../claims/type-I-overflow-cofactor-factor-exchange-carrier-descent.md) (`type-I-overflow-cofactor-factor-exchange-carrier-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow cofactor r-图表的带账本 E2 存在性门](../claims/type-I-overflow-cofactor-ledger-e2-gate.md) (`type-I-overflow-cofactor-ledger-e2-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
