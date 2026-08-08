@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 540 |
+| 数学状态 | `established` | 541 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 373 |
+| 证明来源 | `repository_derivation` | 374 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 509 |
+| 审阅状态 | `internal_review` | 510 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -328,6 +328,7 @@
 | [十六桥模板的CRT无穷源侧逃逸](../claims/type-I-fixed-bridge-menu-crt-escape.md) (`type-I-fixed-bridge-menu-crt-escape`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [固定 Type I 图表的完整因子对 determinant 表与 carry 边界](../claims/type-I-fixed-chart-determinant-factor-table.md) (`type-I-fixed-chart-determinant-factor-table`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [overflow 固定纤维的全账本仿射 q 进相位碰撞](../claims/type-I-fixed-fiber-affine-qprimary-phase-collapse.md) (`type-I-fixed-fiber-affine-qprimary-phase-collapse`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [固定纤维仿射 source-map 的 q 秩上限与 annihilator relay](../claims/type-I-fixed-fiber-affine-source-rank-cap-annihilator.md) (`type-I-fixed-fiber-affine-source-rank-cap-annihilator`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [每个自然缺口都有无穷Type I/II双终端重叠射线](../claims/type-I-fixed-gap-b1-pminusone-terminal-rays.md) (`type-I-fixed-gap-b1-pminusone-terminal-rays`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [固定高锚点回返的 complete-excess 单次耗尽](../claims/type-I-fixed-high-anchor-return-one-shot-exhaustion.md) (`type-I-fixed-high-anchor-return-one-shot-exhaustion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md) (`type-I-fixed-layer-cyclic-fourier-profile`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
