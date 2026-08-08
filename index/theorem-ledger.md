@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 544 |
+| 数学状态 | `established` | 545 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 377 |
+| 证明来源 | `repository_derivation` | 378 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 513 |
+| 审阅状态 | `internal_review` | 514 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -700,6 +700,7 @@
 | [目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md) (`type-I-target-fiber-joint-capacity-signed-carrier-dictionary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [目标纤维近邻对的规范二进归一化与关系格中性](../claims/type-I-target-fiber-neighbor-dyadic-normalization.md) (`type-I-target-fiber-neighbor-dyadic-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [目标指数纤维反足与近邻终端引理](../claims/type-I-target-fiber-neighbor-terminal.md) (`type-I-target-fiber-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
+| [目标纤维 q-primary 过滤密度与稳定子商 Fourier 桥](../claims/type-I-target-fiber-primary-filtered-density-fourier-relay.md) (`type-I-target-fiber-primary-filtered-density-fourier-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [来自三p加一四分之一的B等于一上半区终端桥](../claims/type-I-three-p-plus-one-b1-upper-bridge.md) (`type-I-three-p-plus-one-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 偶终端桥的二层普通除子对选择器](../claims/type-I-two-layer-ordinary-divisor-pair-selector.md) (`type-I-two-layer-ordinary-divisor-pair-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 终端优先的近邻—广义二进—对偶统一选择器合同](../claims/type-I-unified-terminal-first-selector-contract.md) (`type-I-unified-terminal-first-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
