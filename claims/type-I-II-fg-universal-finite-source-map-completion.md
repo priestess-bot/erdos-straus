@@ -227,7 +227,9 @@ r_* =\min(\mathcal U\setminus\mathcal M)
 ## 研究边界
 
 该引理把固定 Type I/II 整数合同下的 `source-map unclosed` 改写为有限、可定位的
-漏项或带标记 SNF 回执，并证明完整枚举不会制造额外 q 容量。它没有证明所有 F/G
+漏项或带标记 SNF 回执，并证明完整枚举不会制造额外 q 容量。对仍未处理的漏项，
+应继续使用 [Type I/II source universe 漏项的 admission—容量扩张递降桥](type-I-ii-source-universe-admission-expansion-relay.md)
+将其接回 exact flow，而不是停在菜单审计。它没有证明所有 F/G
 状态都属于 (2) 或 (6) 的 exact contract，也没有证明 exactness 未知时的
 `SOURCE_CONTRACT_EXACTNESS_UNPROVED` 必然能递降；因此全局剩余问题被精确收缩为
 证明 F/G 状态的整数合同覆盖，及其漏项/合同障碍到 Type I/F/G 或 E1--E5 递降的承接。
