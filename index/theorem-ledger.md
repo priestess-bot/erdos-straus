@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 570 |
+| 数学状态 | `established` | 571 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 406 |
+| 证明来源 | `repository_derivation` | 407 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 542 |
+| 审阅状态 | `internal_review` | 543 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1009,6 +1009,7 @@
 | [Type I/II source universe 漏项的 admission—容量扩张递降桥](../claims/type-I-ii-source-universe-admission-expansion-relay.md) (`type-i-ii-source-universe-admission-expansion-relay`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [目标纤维 source-supply spectrum 的严格降层 adapter 判据](../claims/type-i-linear-escape-target-supply-spectrum-strict-adapter.md) (`type-i-linear-escape-target-supply-spectrum-strict-adapter`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [核心素数 p=241 的 R=3/7 Type-I 图表扇区不足反例](../claims/type-I-r3-r7-chart-fan-coverage-counterexample.md) (`type-i-r3-r7-chart-fan-coverage-counterexample`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [target-odd Fourier 的奇 q-prefix 直接 owner 不可对齐引理](../claims/type-i-target-odd-qprefix-direct-owner-no-go.md) (`type-i-target-odd-qprefix-direct-owner-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [组合变量因子射线给出任意对数幂的共同残余界](../claims/variable-factor-rays-superlog-residual.md) (`variable-factor-rays-superlog-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-23 |
 | [Vaughan 的伸缩指数例外集界](../claims/vaughan-exception-bound.md) (`vaughan-exception-bound`) | `established` | `unspecified` | `unspecified` | `vaughan1970`, `pomerance_weingartner2026` | 2026-07-23 |
 | [当前公开报告的最高计算上界为 10^18](../claims/verification-1e18-reported.md) (`verification-1e18-reported`) | `computationally_reported` | `unspecified` | `unspecified` | `mihnea_dumitru2025`, `pomerance_weingartner2026` | 2026-07-23 |
