@@ -145,8 +145,18 @@ def verify_f_control() -> dict[str, object]:
         logs, support_points, target, 18
     )
     assert character_index == 1
+    assert character_index % 2 == 1
+    assert (character_index * logs[target]) % 18 == 9
     assert score > len(points) / (len(source) - 1)
     assert math.gcd(character_index, 18) == 1
+    target_odd_sum = 0.0
+    for odd_index in range(1, 18, 2):
+        total = sum(
+            cmath.exp(2j * math.pi * odd_index * logs[value] / 18)
+            for value in support_points
+        )
+        target_odd_sum += total.real
+    assert abs(target_odd_sum - len(source) / 2) <= 1e-10
     return {
         "p": 73,
         "R": modulus,
@@ -157,6 +167,7 @@ def verify_f_control() -> dict[str, object]:
         "q": 2,
         "source_rank": 1,
         "character_index": character_index,
+        "target_odd_sum": round(target_odd_sum, 12),
         "score": round(score, 12),
     }
 

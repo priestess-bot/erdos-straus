@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 569 |
+| 数学状态 | `established` | 570 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 405 |
+| 证明来源 | `repository_derivation` | 406 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 541 |
+| 审阅状态 | `internal_review` | 542 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1004,6 +1004,7 @@
 | [Type II 带权源饱和幂块的严格商缺失—核 Fourier 分派](../claims/type-II-weighted-source-saturated-quotient-kernel-dispatch.md) (`type-II-weighted-source-saturated-quotient-kernel-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [20 窗口与平方因子外部源递降的千万级混合闭合](../claims/type-II-window-descent-hybrid-10m.md) (`type-II-window-descent-hybrid-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19 后零/一碰撞素数 Type II 选择器](../claims/type-II-zero-one-collision-selector-conjecture.md) (`type-II-zero-one-collision-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-27 |
+| [空 F 纤维的 target-odd 支撑分离—源差分二分](../claims/type-i-empty-fiber-target-odd-source-demand.md) (`type-i-empty-fiber-target-odd-source-demand`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [固定 Type I 空目标纤维的规范 G/F/源差分三分](../claims/type-i-empty-target-fiber-gf-source-dispatch.md) (`type-i-empty-target-fiber-gf-source-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type I/II source universe 漏项的 admission—容量扩张递降桥](../claims/type-I-ii-source-universe-admission-expansion-relay.md) (`type-i-ii-source-universe-admission-expansion-relay`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [目标纤维 source-supply spectrum 的严格降层 adapter 判据](../claims/type-i-linear-escape-target-supply-spectrum-strict-adapter.md) (`type-i-linear-escape-target-supply-spectrum-strict-adapter`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
