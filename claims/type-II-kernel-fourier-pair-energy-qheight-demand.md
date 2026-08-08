@@ -276,4 +276,7 @@ Q_t=H.
 \]
 
 在该子问题解决前，式 (7) 只能作为 analysis_evidence，不能升级为
-verified_edge 或全称选择器定理。
+verified_edge 或全称选择器定理。对于已经提取出有限相容回路族的状态，可以改用
+[owner 相容回路族的 q 进需求—物理容量流桥](type-II-owner-circuit-qcapacity-flow-bridge.md)
+直接计算实际复用最小割，不再假设一个全局常数 \(R_{\mathrm{reuse}}\)；若该流仍有
+缺口，回执依然只表示 q 容量障碍，后继递降仍需单独验证。
