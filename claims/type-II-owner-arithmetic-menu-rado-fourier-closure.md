@@ -312,4 +312,6 @@ OWNER_GRAPH_PHYSICAL_HALL_DEFICIT，而不能把两个 owner 标签收费为两�
 每个请求族必有 q 容量、算术 Hall、物理最小割、源秩或 Fourier/短证书出口。它仍
 不证明每个核心素数都能建立一个满足 E1–E3 且可规范化的有限完备请求图，也不保证
 (8) 或 (10) 自动产生 \(D'<D\)；全局目标仍要求跨状态 source-complete 映射，或
-把这些负证书接到已经证明的 Type I/F/G 终端和良基递降。
+把这些负证书接到已经证明的 Type I/F/G 终端和良基递降。分离的物理流与并集源秩
+确实不足以替代规范化；严格两请求反例见
+[owner 流—Rado 分离测试不足反例](type-II-owner-flow-rado-separation-counterexample.md)。
