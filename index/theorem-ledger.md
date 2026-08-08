@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 541 |
+| 数学状态 | `established` | 542 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 374 |
+| 证明来源 | `repository_derivation` | 375 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 510 |
+| 审阅状态 | `internal_review` | 511 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -614,6 +614,7 @@
 | [overflow 双对偶支撑阻碍的逐素数幂支付分解](../claims/type-I-overflow-qadic-obstruction-transfer.md) (`type-I-overflow-qadic-obstruction-transfer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 余数 r=1 的对偶边界](../claims/type-I-overflow-r-one-dual-boundary.md) (`type-I-overflow-r-one-dual-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md) (`type-I-overflow-same-chart-support-promotion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [overflow 同 d 纤维 lcm 的跨纤维强制与同图表禁闭](../claims/type-I-overflow-same-d-lcm-cross-fiber-no-go.md) (`type-I-overflow-same-d-lcm-cross-fiber-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [高载体小 d 容量层的完整余因子递降](../claims/type-I-overflow-small-d-capacity-complete-reduction.md) (`type-I-overflow-small-d-capacity-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体小 d 容量层的素大余因子残余二分](../claims/type-I-overflow-small-d-capacity-prime-residual-dichotomy.md) (`type-I-overflow-small-d-capacity-prime-residual-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [2,3-光滑 overflow 高 k 双载体 joined-support RESET 无 go](../claims/type-I-overflow-smooth23-high-k-dual-carrier-no-go.md) (`type-I-overflow-smooth23-high-k-dual-carrier-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
