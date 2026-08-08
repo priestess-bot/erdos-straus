@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 548 |
+| 数学状态 | `established` | 549 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 381 |
+| 证明来源 | `repository_derivation` | 382 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 517 |
+| 审阅状态 | `internal_review` | 518 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -629,6 +629,7 @@
 | [Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md) (`type-I-pareto-overflow-capacity-separation-theorem`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
 | [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md) (`type-I-phase-clearing-cell-capacity-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [重图表与形式吸收的不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md) (`type-I-phase-labeled-candidate-selector-well-founded-schedule`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [Fourier—q-prefix 槽缺口的 source-dominating annihilator relay](../claims/type-I-phase-prefix-source-dominating-annihilator-relay.md) (`type-I-phase-prefix-source-dominating-annihilator-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type I的p减一B一二除子剩余类选择器](../claims/type-I-pminusone-b12-divisor-residue-selector.md) (`type-I-pminusone-b12-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [五亿有限盒 p 减一遗漏的全正规形全局审计](../claims/type-I-pminusone-box-miss-global-audit-500m.md) (`type-I-pminusone-box-miss-global-audit-500m`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |
 | [297049 的全正规形 p 减一 Type I 最大尾终端桥排除](../claims/type-I-pminusone-global-exclusion-297049.md) (`type-I-pminusone-global-exclusion-297049`) | `computationally_reproduced` | `computational_reproduction` | `independent_review` | `bradford2024` | 2026-07-28 |
