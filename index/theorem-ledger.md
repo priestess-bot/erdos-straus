@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 542 |
+| 数学状态 | `established` | 543 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 375 |
+| 证明来源 | `repository_derivation` | 376 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 511 |
+| 审阅状态 | `internal_review` | 512 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -577,6 +577,7 @@
 | [A=1 overflow 的小载体假设边界](../claims/type-I-overflow-a-one-generic-determinant-boundary.md) (`type-I-overflow-a-one-generic-determinant-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [高载体因子阈值残余的双有界除子空图谱](../claims/type-I-overflow-capacity-slab-dual-bounded-divisor-hole.md) (`type-I-overflow-capacity-slab-dual-bounded-divisor-hole`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体容量层的因子阈值残余二分](../claims/type-I-overflow-capacity-slab-factor-threshold-residual.md) (`type-I-overflow-capacity-slab-factor-threshold-residual`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
+| [高载体三素因子残差的双图谱空洞分类](../claims/type-I-overflow-capacity-slab-three-prime-hole-classification.md) (`type-I-overflow-capacity-slab-three-prime-hole-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [overflow 余因子因子转移与交换的载体秩递降](../claims/type-I-overflow-cofactor-factor-exchange-carrier-descent.md) (`type-I-overflow-cofactor-factor-exchange-carrier-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow cofactor r-图表的带账本 E2 存在性门](../claims/type-I-overflow-cofactor-ledger-e2-gate.md) (`type-I-overflow-cofactor-ledger-e2-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [overflow 的余因子支撑 r-图表候选与同图表正控制](../claims/type-I-overflow-cofactor-r-chart-support.md) (`type-I-overflow-cofactor-r-chart-support`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
