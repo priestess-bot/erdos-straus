@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Verify focused boundary receipts for the high-carrier d-height staircase.
+"""Verify focused receipts for the high-carrier height/cofactor reduction.
 
 This is deliberately a small exact arithmetic check.  It does not scan primes
 or replay the historical selector corpus; the proof is in the accompanying
-claim card.  The fixtures exercise the first-strip d=1 dichotomy and the first
-few threshold layers where d can exceed one.
+claim card.  The fixtures exercise the first-strip fixed-s/fixed-n cofactor
+dichotomy and the first few threshold layers where d can exceed one.
 """
 
 from __future__ import annotations
@@ -26,7 +26,8 @@ class Fixture:
 
 FIXTURES = (
     Fixture("p73_first_strip_fixed_s_descent", 73, 1332, 73, 1, 6),
-    Fixture("p73_first_strip_fixed_s_saturation", 73, 1332, 73, 1, 18),
+    Fixture("p73_first_strip_fixed_n_cofactor_descent", 73, 1332, 73, 1, 18),
+    Fixture("p73_first_strip_cofactor_prime_residual", 73, 1332, 73, 1, 666),
     Fixture("p97_first_strip_fixed_s_descent", 97, 2352, 97, 1, 12),
     Fixture("p73_d2_first_height", 73, 1323, 145, 2, 1),
     Fixture("p73_d3_first_height", 73, 1320, 217, 3, 1),
@@ -40,6 +41,26 @@ def is_prime(value: int) -> bool:
     if value % 2 == 0:
         return value == 2
     return all(value % divisor for divisor in range(3, isqrt(value) + 1, 2))
+
+
+def smallest_prime_factor(value: int) -> int:
+    if value < 2:
+        raise ValueError("smallest prime factor requires an integer above one")
+    if value % 2 == 0:
+        return 2
+    for divisor in range(3, isqrt(value) + 1, 2):
+        if value % divisor == 0:
+            return divisor
+    return value
+
+
+def divisors(value: int) -> list[int]:
+    result: set[int] = set()
+    for divisor in range(1, isqrt(value) + 1):
+        if value % divisor == 0:
+            result.add(divisor)
+            result.add(value // divisor)
+    return sorted(result)
 
 
 def threshold(prime: int, layer: int) -> int:
@@ -99,16 +120,41 @@ def audit(fixture: Fixture) -> str:
             raise AssertionError(f"{fixture.name}: fixed-s descent gate changed")
         return "first_strip_fixed_s_descent"
 
-    if A < c or any(divisor > A for divisor in range(1, c + 1) if c % divisor == 0):
+    if any(divisor > A for divisor in divisors(c)):
         raise AssertionError(f"{fixture.name}: fixed-s saturation boundary changed")
-    return "first_strip_fixed_s_empty"
+    b = M // A
+    if M % A or b <= 1:
+        raise AssertionError(f"{fixture.name}: invalid first-strip cofactor")
+    if not is_prime(b):
+        q = smallest_prime_factor(b)
+        L = M // q
+        if not (
+            b % q == 0
+            and q <= b // 2
+            and q < p
+            and L % A == 0
+            and L >= 2 * A
+            and A < L <= B
+            and 4 * L > n
+            and B // L < B // A
+        ):
+            raise AssertionError(f"{fixture.name}: fixed-n cofactor descent gate changed")
+        return "first_strip_fixed_n_support_preserving"
+
+    preserved_candidates = [
+        L for L in divisors(M) if A < L <= B and L % A == 0
+    ]
+    if preserved_candidates:
+        raise AssertionError(f"{fixture.name}: cofactor-prime residual gained a preserved edge")
+    return "first_strip_cofactor_prime_residual"
 
 
 def verify() -> None:
     routes = {fixture.name: audit(fixture) for fixture in FIXTURES}
     expected = {
         "p73_first_strip_fixed_s_descent": "first_strip_fixed_s_descent",
-        "p73_first_strip_fixed_s_saturation": "first_strip_fixed_s_empty",
+        "p73_first_strip_fixed_n_cofactor_descent": "first_strip_fixed_n_support_preserving",
+        "p73_first_strip_cofactor_prime_residual": "first_strip_cofactor_prime_residual",
         "p97_first_strip_fixed_s_descent": "first_strip_fixed_s_descent",
         "p73_d2_first_height": "higher_layer",
         "p73_d3_first_height": "higher_layer",

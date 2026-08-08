@@ -1,14 +1,15 @@
 ---
 kind: claim
 claim_id: type-I-overflow-high-carrier-height-staircase
-title: 高载体 overflow 的分母高度阶梯与首带 d=1 收缩
-statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、1<=d<p、M>B_p=(p-1)^2/4，并令 A|M、1<=A<=B_p 为当前 absorbed support。对每个 1<=j<=p-2，d>=j 必强制 n>=nu_j(p):=j(p-2)+1+(j mod 4)；特别地 n<2p-1 时必有 d=1。于是整个首高载体带 p<=n<=2p-5 收缩为 r=(p-1)/4、s=1、rd=(p-1)/4 的已知 p-2 G 图表：若 A<(p-1)/4，则 L=(p-1)/4 给出既有 fixed-s 完整 E1--E5 外层秩递降；若 A>=(p-1)/4，则该 fixed-s 除子图谱严格为空。后一个分支仍不是终端或全局递归边。
+title: 高载体 overflow 的分母高度阶梯与首带余因子二分
+statement: 设核心素数 p=1 (mod 24) 的 verified overflow 满足 pn=4Md+1、1<=d<p、M>B_p=(p-1)^2/4，并令 A|M、1<=A<=B_p 为当前 absorbed support。对每个 1<=j<=p-2，d>=j 必强制 n>=nu_j(p):=j(p-2)+1+(j mod 4)；特别地 n<2p-1 时必有 d=1。令 c=(p-1)/4，则首高载体带 p<=n<=2p-5 满足 r=c、rd=c、s=1，并重图表到已知 p-2 G 图表：若 A<c，则 L=c 给出既有 fixed-s 完整 E1--E5 外层秩递降；若 A>=c 且 b=M/A 为合数，则 L=M/spf(b) 是保留 A 的 fixed-n 完整 E1--E5 递降。若 A>=c 且 b 为素数，则 fixed-s 图谱以及所有保留 A 的有界 fixed-n 候选均为空；该余项仍不排除 support reset、终端或跨状态出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-overflow-high-carrier-p-plus-four-complement
   - type-I-overflow-d-one-p-minus-two-g-rechart
+  - type-I-overflow-fixed-n-bounded-divisor-saturation
   - type-I-overflow-fixed-s-bounded-divisor-saturation
 topics:
   - type-I
@@ -16,6 +17,7 @@ topics:
   - high-carrier
   - denominator-height
   - d-one
+  - cofactor-primality
   - G-state
   - fixed-s
   - well-founded-descent
@@ -25,6 +27,8 @@ sources:
     role: high-carrier-domain-and-n-congruence
   - claim: type-I-overflow-d-one-p-minus-two-g-rechart
     role: d-one-G-normal-form-and-fixed-s-boundary
+  - claim: type-I-overflow-fixed-n-bounded-divisor-saturation
+    role: complete-E1-E5-fixed-n-contract
   - claim: type-I-overflow-fixed-s-bounded-divisor-saturation
     role: complete-E1-E5-fixed-s-contract
   - reproduction: reproductions/type_i_overflow_high_carrier_height_staircase.py
@@ -33,7 +37,7 @@ visibility: public
 last_checked: '2026-08-08'
 ---
 
-# 高载体 overflow 的分母高度阶梯与首带 \(d=1\) 收缩
+# 高载体 overflow 的分母高度阶梯与首带余因子二分
 
 ## 定理
 
@@ -97,6 +101,31 @@ A\ge c\Longrightarrow\text{fixed-s 有界除子图谱为空}.
 第二个分支仅排除这一张 fixed-\(s\) 菜单；它不声称 Type I/II 终端、跨状态容量
 证书或完整递归边。
 
+在 (6) 的 \(A\ge c\) 分支中，令
+
+\[
+b:=\frac MA>1.
+\]
+
+则还有一个完整的余因子二分：
+
+\[
+\boxed{
+\begin{aligned}
+b\text{ 为合数}
+&\Longrightarrow
+q=\operatorname{spf}(b),\quad L=\frac Mq
+\text{ 给出保留 }A\text{ 的 fixed-}n\text{ 完整 E1--E5 边};\\
+b\text{ 为素数}
+&\Longrightarrow
+\{L:A\mid L\mid M,\ A<L\le B_p\}=\varnothing.
+\end{aligned}}
+\tag{7}
+\]
+
+后一行只穷尽保留旧 support 的 fixed-\(n\) 除子；它不排除支付 support reset 的
+fixed-\(n\) 除子，也不排除直接终端或跨状态出口。
+
 ## 证明
 
 由 (1) 和 \(M>B_p\)，若 \(d\ge j\)，则
@@ -109,7 +138,7 @@ pn-1=4Md>4jB_p=j(p-1)^2.
 
 \[
 n>j(p-2)+\frac{j+1}{p}.
-\tag{7}
+\tag{8}
 \]
 
 另一方面，\(p\equiv1\pmod4\) 与 (1) 给出 \(n\equiv1\pmod4\)。当
@@ -119,7 +148,7 @@ n>j(p-2)+\frac{j+1}{p}.
 j(p-2)\equiv-j\pmod4.
 \]
 
-因此严格大于 (7) 的最小 \(1\pmod4\) 整数，正是
+因此严格大于 (8) 的最小 \(1\pmod4\) 整数，正是
 
 \[
 j(p-2)+\bigl(1+[j]_4\bigr)=\nu_j(p).
@@ -136,18 +165,18 @@ M=pk+c,
 \qquad r=M\bmod p=c,
 \qquad s=\frac{4r+1}{p}=1,
 \qquad rd=c.
-\tag{8}
+\tag{9}
 \]
 
 现有的 \(d=1\) 重图表定理将该行送到
 
 \[
 (R_r,K_r)=(p-2,B_p),
-\tag{9}
+\tag{10}
 \]
 
 这是 G 态，而非自动的 support-preserving 后继。对 fixed-\(s\) 图谱，若 \(A<c\)，
-取 \(L=c\)。由 (8)，\(L\mid rd\)、\(4L>s\)，且
+取 \(L=c\)。由 (9)，\(L\mid rd\)、\(4L>s\)，且
 
 \[
 \left\lfloor\frac{B_p}{L}\right\rfloor=4c
@@ -155,8 +184,44 @@ M=pk+c,
 \]
 
 故已建立的 fixed-\(s\) 合同给出完整 E1--E5。反之，若 \(A\ge c\)，每个
-\(L\mid rd=c\) 都满足 \(L\le c\le A\)，不可能满足该合同所需的 \(A<L\)。这证明
-(6)。证毕。
+\(L\mid rd=c\) 都满足 \(L\le c\le A\)，不可能满足该合同所需的 \(A<L\)。
+
+最后设 \(A\ge c\)，并写 \(b=M/A\)。由 \(M>B_p\ge A\) 知 \(b>1\)。首带上界给出
+
+\[
+4M=pn-1\le2p^2-5p-1<2p^2-4p+2=8B_p,
+\]
+
+所以 \(M<2B_p\)，从而
+
+\[
+b\le\frac Mc<\frac{2B_p}{c}=2(p-1).
+\tag{11}
+\]
+
+若 \(b\) 合数，令 \(q=\operatorname{spf}(b)\)。则 \(q\le b/2<p\)，并且
+
+\[
+L=\frac Mq=A\frac bq
+\]
+
+是 \(M=S\) 的除子，满足 \(A\mid L\)、\(L\ge2A\) 与 \(L\le M/2<B_p\)。此外
+
+\[
+4L=\frac{pn-1}{q}>n,
+\]
+
+因为 \(n(p-q)-1>0\)。于是
+
+\[
+\left\lfloor\frac{B_p}{L}\right\rfloor
+\le\left\lfloor\frac{B_p}{2A}\right\rfloor
+<\left\lfloor\frac{B_p}{A}\right\rfloor.
+\]
+
+固定-\(n\) 有界除子合同遂给出保留 \(A\) 的完整 E1--E5 边。反之，若 \(b\) 是素数而
+\(A\mid L\mid M\)、\(A<L\)，写 \(L=At\)。则 \(t\mid b\) 且 \(t>1\)，故 \(t=b\)、
+\(L=M>B_p\)，与有界性矛盾。这证明 (6)--(7)。证毕。
 
 ## 对选择器的作用
 
@@ -164,21 +229,23 @@ M=pk+c,
 \((d,r,s)\) 搜索压成一个确定的分流：
 
 1. \(A<c\) 时直接进入已有的 fixed-\(s\) 严格外层秩递降；
-2. \(A\ge c\) 时不再枚举 fixed-\(s\) 除子，转交 G 态的非支撑 Type I/II、marked
-   lift 或跨状态容量接口；
-3. \(d\ge2\) 只可能从 \(n\ge2p-1\) 开始，因而不会污染首带的 d=1 专门分析。
+2. \(A\ge c\) 且 \(M/A\) 合数时，直接登记保留旧 support 的 fixed-\(n\) 严格递降；
+3. \(A\ge c\) 且 \(M/A\) 素数时，不再枚举 fixed-\(s\) 或保留 \(A\) 的 fixed-\(n\)
+   除子，转交 support reset、G 态的非支撑 Type I/II、marked lift 或跨状态容量接口；
+4. \(d\ge2\) 只可能从 \(n\ge2p-1\) 开始，因而不会污染首带的 d=1 专门分析。
 
 这保留了现有逻辑边界：G 图表的支撑内目标纤维为空，且 (6) 的空图谱不能被解释为
 Erdos--Straus 猜想的反例。
 
 ## 聚焦复现
 
-脚本只复核阶梯的边界行与 (6) 的两种路由，不做历史范围扫描：
+脚本只复核阶梯的边界行与 (6)--(7) 的三种路由，不做历史范围扫描：
 
 ```bash
 python3 reproductions/type_i_overflow_high_carrier_height_staircase.py --verify
 ```
 
-其中 \(p=73\) 的 \(d=2,n=145=2p-1\) 和 \(d=3,n=217=3p-2\) 展示前两个
-非 \(d=1\) 阈值可以达到；\(d=4\) 例子同时保留分母同余会把实际首项推到通用
-模 \(4\) 下界之上的事实。
+其中 \(p=73,A=18\) 给出 \(b=74\) 的保留 support fixed-\(n\) 递降，而
+\(p=73,A=666\) 给出 \(b=2\) 的精确余因子素数边界。\(d=2,n=145=2p-1\) 和
+\(d=3,n=217=3p-2\) 展示前两个非 \(d=1\) 阈值可以达到；\(d=4\) 例子同时保留
+分母同余会把实际首项推到通用模 \(4\) 下界之上的事实。
