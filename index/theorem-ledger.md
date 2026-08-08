@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 531 |
+| 数学状态 | `established` | 532 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 364 |
+| 证明来源 | `repository_derivation` | 365 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 500 |
+| 审阅状态 | `internal_review` | 501 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -577,6 +577,7 @@
 | [overflow 的余因子支撑 r-图表候选与同图表正控制](../claims/type-I-overflow-cofactor-r-chart-support.md) (`type-I-overflow-cofactor-r-chart-support`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md) (`type-I-overflow-d-one-p-minus-two-g-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md) (`type-I-overflow-d-only-square-excess-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
+| [高载体 d=2 容量窗的完整余因子递降](../claims/type-I-overflow-d-two-capacity-window-complete-reduction.md) (`type-I-overflow-d-two-capacity-window-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow 缺陷单位的条件性相位胞与容量边界](../claims/type-I-overflow-defect-unit-phase-capacity.md) (`type-I-overflow-defect-unit-phase-capacity`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 行列式的固定 n 对偶图谱与累积支撑冲突](../claims/type-I-overflow-determinant-fixed-n-dual-support-conflict.md) (`type-I-overflow-determinant-fixed-n-dual-support-conflict`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 双通道奇素数 q 首层单位相位分离](../claims/type-I-overflow-dual-channel-first-layer-phase-separation.md) (`type-I-overflow-dual-channel-first-layer-phase-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
