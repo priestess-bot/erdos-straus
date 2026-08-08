@@ -99,6 +99,54 @@ def flow_gate(
     }
 
 
+def gf2_basis(vectors: tuple[int, ...]) -> tuple[int, ...]:
+    """Return a compact Gaussian basis for bit-vector coordinates over F_2."""
+    pivots: dict[int, int] = {}
+    for value in vectors:
+        reduced = value
+        while reduced:
+            pivot = reduced.bit_length() - 1
+            if pivot not in pivots:
+                pivots[pivot] = reduced
+                break
+            reduced ^= pivots[pivot]
+    return tuple(pivots.values())
+
+
+def gf2_contains(value: int, basis: tuple[int, ...]) -> bool:
+    """Test membership in a bit-vector span."""
+    pivots = {vector.bit_length() - 1: vector for vector in basis}
+    reduced = value
+    while reduced:
+        pivot = reduced.bit_length() - 1
+        if pivot not in pivots:
+            return False
+        reduced ^= pivots[pivot]
+    return True
+
+
+def linear_deficit_status(
+    demands: tuple[int, ...], token_columns: tuple[int, ...]
+) -> dict[str, object]:
+    """Separate a physical collision from a source-column annihilator."""
+    demand_basis = gf2_basis(demands)
+    token_basis = gf2_basis(token_columns)
+    outside = tuple(
+        vector for vector in demand_basis if not gf2_contains(vector, token_basis)
+    )
+    status = (
+        "OWNER_PROJECTION_RANK_ANNIHILATOR"
+        if outside
+        else "OWNER_COLLISION_ONLY"
+    )
+    return {
+        "status": status,
+        "demand_rank": len(demand_basis),
+        "token_rank": len(token_basis),
+        "outside_demand": outside,
+    }
+
+
 def run_verification() -> dict[str, object]:
     # Real owner collision: two source rows expose one physical q factor.
     p_collision = 57_399_241
@@ -170,10 +218,28 @@ def run_verification() -> dict[str, object]:
         "request_count": 2,
     }
 
+    # The same physical collision can be pure collision or carry a linear annihilator.
+    collision_only_linear = linear_deficit_status((1, 2), (1, 2))
+    assert collision_only_linear == {
+        "status": "OWNER_COLLISION_ONLY",
+        "demand_rank": 2,
+        "token_rank": 2,
+        "outside_demand": (),
+    }
+    annihilator_linear = linear_deficit_status((1, 2), (1, 1))
+    assert annihilator_linear == {
+        "status": "OWNER_PROJECTION_RANK_ANNIHILATOR",
+        "demand_rank": 2,
+        "token_rank": 1,
+        "outside_demand": (2,),
+    }
+
     return {
         "real_collision": collision,
         "real_safe": safe,
         "declared_repeat_budget": repeated,
+        "collision_only_linear": collision_only_linear,
+        "annihilator_linear": annihilator_linear,
     }
 
 
@@ -185,7 +251,13 @@ def main() -> int:
         parser.error("use --verify")
     result = run_verification()
     print("verified owner-token projection physical-capacity flow gate")
-    for branch in ("real_collision", "real_safe", "declared_repeat_budget"):
+    for branch in (
+        "real_collision",
+        "real_safe",
+        "declared_repeat_budget",
+        "collision_only_linear",
+        "annihilator_linear",
+    ):
         print(branch, result[branch]["status"])
     return 0
 

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-II-owner-projection-physical-capacity-flow-gate
 title: Type II owner token 投影到物理 q 槽的流—割容量门
-statement: 对由 owner 加权 Fourier 谱产生的有限请求，先把每个 owner 见证展开为 owner token，再投影到实际可复用的物理 q 槽。构造请求—owner token—物理槽三层流网络；满流当且仅当请求可以同时通过 owner 唯一性和物理槽容量。若某请求割的物理邻域容量小于请求数，输出严格 OWNER_PROJECTION_CAPACITY_DEFICIT。owner multiplicity 或 Fourier 总质量只有在该流门通过、或满足每个物理槽的 owner fiber 不超过其容量的强注入合同后，才可作为 q 进容量输入；否则它只是表示权重，不能收费或产生递归边。
+statement: 对由 owner 加权 Fourier 谱产生的有限请求，先把每个 owner 见证展开为 owner token，再投影到实际可复用的物理 q 槽。构造请求—owner token—物理槽三层流网络；满流当且仅当请求可以同时通过 owner 唯一性和物理槽容量。若某请求割的物理邻域容量小于请求数，输出严格 OWNER_PROJECTION_CAPACITY_DEFICIT；再把 token 源列与请求需求放入共同有限线性空间：需求不包含于 token 源列张成空间时，存在可继续检查 source-dominating 的 annihilator；需求已包含时，严格标记 OWNER_COLLISION_ONLY，不能伪造 Fourier 递降。owner multiplicity 或 Fourier 总质量只有在该流门通过、或满足每个物理槽的 owner fiber 不超过其容量的强注入合同后，才可作为 q 进容量输入。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -206,7 +206,56 @@ W_f(g)=
 在不同 owner 标签下重复收费。若 source contract 明确把 owner 标签本身定义为
 互不相同的物理 token，则令 \(\pi\) 为恒等映射，网络退化为普通 Hall 图。
 
-## 6. 严格算术控制
+## 6. 物理缺口与线性对偶三分
+
+把每个 token 的真实 source column 记为
+\(\upsilon(\tau)\)，并在已经通过 SNF/source-switch 的共同有限线性空间 \(X\)
+中定义
+
+\[
+D(U')=\operatorname{span}\{d(r):r\in U'\},
+\qquad
+V_T(U')=\operatorname{span}\{\upsilon(\tau):
+\tau\in\widetilde N(U')\}.
+\tag{15}
+\]
+
+设 \(U'\) 是一个物理投影缺口，即 \(|U'|>\mathsf P(U')\)，且请求需求已经
+线性化为 \(D(U')\)。则有以下严格三分：
+
+1. 若
+   \[
+   D(U')\not\subseteq V_T(U'),
+   \tag{16}
+   \]
+   则存在 \(\lambda\in X^*\) 使
+   \[
+   \lambda|_{V_T(U')}=0,\qquad
+   \lambda|_{D(U')}\ne0.
+   \tag{17}
+   \]
+   若所有当前真实 source generators 都落在 \(V_T(U')\)，这是可送入
+   annihilator 子群/商 relay 的 'OWNER_PROJECTION_RANK_ANNIHILATOR' 候选；
+   否则输出 'OWNER_PROJECTION_SOURCE_COLUMN_ESCAPE'，先运行 source-column
+   扩张。
+2. 若
+   \[
+   D(U')\subseteq V_T(U'),
+   \tag{18}
+   \]
+   则任何湮灭 \(V_T(U')\) 的角色也湮灭全部需求；该物理缺口没有由当前割强制出的
+   annihilator，必须输出 'OWNER_COLLISION_ONLY'，转入 alternate-owner、
+   q-prefix 紧链或广义 \(2^j\) 终端。
+3. 若某个 \(\upsilon(\tau)\) 尚未通过 source-SNF 或整数回译，则不能使用
+   (16)--(18)，而应输出 'OWNER_TOKEN_SOURCE_LIFT_OBSTRUCTED'。
+
+式 (16) 的角色存在性是有限维商空间的直接结论：取
+\(d\in D(U')\setminus V_T(U')\)，在 \(X/V_T(U')\) 上取一个对
+\(d+V_T(U')\) 非零的线性泛函，再拉回 \(X\)。因此物理槽不足并不自动等于
+Fourier 缺口；只有需求方向真正离开 token 源列空间时，才出现新的 annihilator
+对象。这一三分把“源列不足”和“同一物理槽冲突”严格分开。
+
+## 7. 严格算术控制
 
 ### \(p=57399241,D=41\)：真实 owner 碰撞
 
@@ -247,7 +296,7 @@ W_f(g)=
 此时 owner 计数通过流门，可以继续进入加权 Fourier 稳定子商；这与 (13) 的
 物理碰撞严格区分。
 
-## 7. 证明
+## 8. 证明
 
 网络 (3) 中一单位从请求到 token 再到物理槽的流就是一个合法 owner assignment；
 容量约束分别实现 token 唯一性和物理槽预算。反过来，任一合法 assignment 逐条
@@ -258,9 +307,17 @@ W_f(g)=
 若 (10) 成立，任意 token 匹配在每个物理槽上的投影数量不超过该槽的容量，因而
 自动是物理可行匹配。式 (9) 只是标签数与物理容量之差；它说明为什么
 \(\omega_q(j)\) 不能单独代替物理账本。式 (11) 的 Fourier 正交关系不受投影模型
-影响，但其 q-demand 拉回必须经过 (3)。证毕。
+影响，但其 q-demand 拉回必须经过 (3)。
 
-## 研究边界
+若 (16) 成立，商空间 \(X/V_T(U')\) 中的非零需求向量可被一个线性泛函分离，
+拉回即得 (17)。若所有真实 source generators 也在 \(V_T(U')\) 中，该泛函湮灭
+整个源集，才满足 annihilator relay 的 source-dominating 前提；否则源列逃逸。
+若 (18) 成立，则 \(\lambda|_{V_T(U')}=0\) 蕴含
+\(\lambda|_{D(U')}=0\)，所以当前物理割不能提供非平凡需求分离。source-SNF 或
+整数回译未通过时，\(\upsilon(\tau)\) 不属于已认证的 \(X\)，只能记录提升障碍。
+这证明了 (16)--(18) 的三分。证毕。
+
+## 9. 研究边界
 
 该门完成了 owner 加权表示到物理 q 容量的精确映射，并给出一个真实的 owner
 collision 反例。它没有声称物理流缺口本身就是整数递降；后续仍需把最小割中的
