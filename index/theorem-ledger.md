@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 563 |
+| 数学状态 | `established` | 564 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 396 |
+| 证明来源 | `repository_derivation` | 397 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 532 |
+| 审阅状态 | `internal_review` | 533 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -876,6 +876,7 @@
 | [Type II owner token 投影到物理 q 槽的流—割容量门](../claims/type-II-owner-projection-physical-capacity-flow-gate.md) (`type-II-owner-projection-physical-capacity-flow-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 投影源列逃逸的物理槽扩张递降桥](../claims/type-II-owner-projection-source-column-expansion-relay.md) (`type-II-owner-projection-source-column-expansion-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 碰撞的饱和优先—商缺失/核截面分派](../claims/type-II-owner-saturation-quotient-kernel-dispatch.md) (`type-II-owner-saturation-quotient-kernel-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [Type II owner 物理槽 source-preserving 规范化的纤维一致性判据](../claims/type-II-owner-source-preserving-fiber-uniformity-criterion.md) (`type-II-owner-source-preserving-fiber-uniformity-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 加权稳定子—annihilator 良基选择器](../claims/type-II-owner-weighted-stabilizer-annihilator-well-founded-selector.md) (`type-II-owner-weighted-stabilizer-annihilator-well-founded-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [p+12 / p+36 因子给出的 Type II 终端扇](../claims/type-II-p-plus-12-36-divisor-terminal-fan.md) (`type-II-p-plus-12-36-divisor-terminal-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [规范移位一私有素因子模型的强制因子阶梯边界](../claims/type-II-prime-cofactor-forcing-ladder.md) (`type-II-prime-cofactor-forcing-ladder`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-25 |
