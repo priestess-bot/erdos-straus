@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 528 |
+| 数学状态 | `established` | 529 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 361 |
+| 证明来源 | `repository_derivation` | 362 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 497 |
+| 审阅状态 | `internal_review` | 498 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -474,6 +474,7 @@
 | [可容许 primary 因子商不产生新的 non-source D-only 双尾导体](../claims/type-I-linear-escape-primary-factor-donly-no-conductor.md) (`type-I-linear-escape-primary-factor-donly-no-conductor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [线性 escaped source 的 primary 幂块—目标缺口容量](../claims/type-I-linear-escape-primary-hole-capacity.md) (`type-I-linear-escape-primary-hole-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [线性 escaped primary source-switch 的有限条件分派](../claims/type-I-linear-escape-primary-source-switch-finite-dispatch.md) (`type-I-linear-escape-primary-source-switch-finite-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+| [线性 escape 严格降层的模 4 因子供给障碍](../claims/type-I-linear-escape-strict-layer-mod-four-supply-obstruction.md) (`type-I-linear-escape-strict-layer-mod-four-supply-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [线性 F 型稳定子群商的最小阶与四阶临界结构](../claims/type-I-linear-f-critical-quotient-boundary.md) (`type-I-linear-f-critical-quotient-boundary`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-07-29 |
 | [七个完整线性谱中 F 状态的跨源共享层拉回剖面](../claims/type-I-linear-f-cross-source-pullback-profile-600m.md) (`type-I-linear-f-cross-source-pullback-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [近饱和 F 型状态的两块反足点对齐边界](../claims/type-I-linear-f-near-saturation-block-alignment-600m.md) (`type-I-linear-f-near-saturation-block-alignment-600m`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
