@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 524 |
+| 数学状态 | `established` | 527 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 357 |
+| 证明来源 | `repository_derivation` | 360 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 493 |
+| 审阅状态 | `internal_review` | 496 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -357,6 +357,7 @@
 | [q=137 实际 raw 族的 d=1 Type II moving-terminal 网](../claims/type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web.md) (`type-I-g-anchor-c3-adaptive-core19-q137-d1-terminal-web`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [q=137 实际 raw 族的 D=6303 target-tuned Type II 终端子射线](../claims/type-I-g-anchor-c3-adaptive-core19-q137-d6303-target-tuned-terminal-subray.md) (`type-I-g-anchor-c3-adaptive-core19-q137-d6303-target-tuned-terminal-subray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 core-19 的 q=137 首标签 C=19 实际 raw 家族](../claims/type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family.md) (`type-I-g-anchor-c3-adaptive-core19-q137-first-entry-family`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [q=137 raw C=19 原子到同纤维 Type II target 的实际 owner 控制](../claims/type-I-g-anchor-c3-adaptive-core19-q137-raw-c19-same-fiber-owner.md) (`type-I-g-anchor-c3-adaptive-core19-q137-raw-c19-same-fiber-owner`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [c=3 core-19 的 q=23 首标签 C=19 入口与全分支 terminal 障碍](../claims/type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction.md) (`type-I-g-anchor-c3-adaptive-core19-q23-first-entry-terminal-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 的第三条 C=38 实际 raw 叶与 q=19 相位层](../claims/type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf.md) (`type-I-g-anchor-c3-adaptive-core19-v5-c38-q19-phase-leaf`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [v=5 物理载体子集的 q=19 前缀分配障碍](../claims/type-I-g-anchor-c3-adaptive-core19-v5-carrier-subset-q19-prefix-obstruction.md) (`type-I-g-anchor-c3-adaptive-core19-v5-carrier-subset-q19-prefix-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
@@ -633,9 +634,9 @@
 | [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md) (`type-I-r47-empty-support-pminusone-dyadic-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码 p-1 射线的 Jacobi 障碍与三条精确角色选择器](../claims/type-I-r47-pminusone-jacobi-ray-selector.md) (`type-I-r47-pminusone-jacobi-ray-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
-| [raw 因子作用到共同仿射相位图的可积性门](../claims/type-I-raw-factor-action-affine-preflight.md) (`type-I-raw-factor-action-affine-preflight`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [raw 认证 q 层到唯一 charge key 的不重计合同](../claims/type-I-raw-certified-q-layer-charge-key-nonreuse.md) (`type-I-raw-certified-q-layer-charge-key-nonreuse`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
-| [单首标签因子轨道的局部 raw-to-cofactor provenance](../claims/type-I-raw-factor-block-local-cofactor-provenance.md) (`type-I-raw-factor-block-local-cofactor-provenance`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [raw 因子作用到共同仿射相位图的可积性门](../claims/type-I-raw-factor-action-affine-preflight.md) (`type-I-raw-factor-action-affine-preflight`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [单首标签因子轨道的局部 raw-to-cofactor provenance](../claims/type-I-raw-factor-block-local-cofactor-provenance.md) (`type-I-raw-factor-block-local-cofactor-provenance`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [任意 primitive raw node 的 p-parent 反向提升与 root-policy 边界](../claims/type-I-raw-universal-p-parent-root-policy-boundary.md) (`type-I-raw-universal-p-parent-root-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md) (`type-I-representation-dual-capacity-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |

@@ -57,7 +57,7 @@ f=(D_*,A),\quad s_f=AD_*,\quad M_f=4D_*,\quad N_f=p+4s_f,
 其中 \(\mathsf S\) 是 state identity，\(\omega\) 是逐边 raw digest，且
 
 \[
-H\mid N_f,qquad (H,M_f)=1.
+H\mid N_f,\qquad (H,M_f)=1.
 \tag{2}
 \]
 
@@ -206,13 +206,13 @@ actual raw word
 到达 \(H=7\)。raw 首标签是 \(\lambda=5\)，但 charge prime 是
 
 \[
-q=7,\qquad e_{\rm raw}=v_7(H)=1,qquad v_7(N_f)=2.
+q=7,\qquad e_{\rm raw}=v_7(H)=1,\qquad v_7(N_f)=2.
 \tag{13}
 
 所以 self-binding \(b=s_f\) 的来源高度应封顶为一层：
 
 \[
-\ell_7(s_f)=1,qquad d^{\rm raw}_f(7)=1.
+\ell_7(s_f)=1,\qquad d^{\rm raw}_f(7)=1.
 \tag{14}
 
 在只放入这个 q 块的模型里，\(\operatorname{ord}_{U(25212)}(7)=10\)，而
