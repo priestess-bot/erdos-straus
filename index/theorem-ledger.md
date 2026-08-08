@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 550 |
+| 数学状态 | `established` | 551 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 383 |
+| 证明来源 | `repository_derivation` | 384 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 519 |
+| 审阅状态 | `internal_review` | 520 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -883,6 +883,7 @@
 | [Type II q 前缀来源标签与候选纤维的有限穷尽闭包](../claims/type-II-q-prefix-source-label-finite-closure.md) (`type-II-q-prefix-source-label-finite-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 单状态 q 进高度到 Kneser 幂块的精确桥](../claims/type-II-qadic-height-kneser-block-bridge.md) (`type-II-qadic-height-kneser-block-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [Type II q 进幂块的集合 Fourier 与来源重数 Fourier 饱和分流](../claims/type-II-qheight-fourier-set-vs-multiplicity-saturation-boundary.md) (`type-II-qheight-fourier-set-vs-multiplicity-saturation-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+| [q-prefix owner 逃逸的紧链—容量松弛分解](../claims/type-II-qprefix-owner-escape-capacity-decomposition.md) (`type-II-qprefix-owner-escape-capacity-decomposition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [q-prefix owner 高度到 source-dominating 闭合的有限判据](../claims/type-II-qprefix-owner-height-source-closure.md) (`type-II-qprefix-owner-height-source-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 顶层角色的 Rado 线性 rank-Hall 容量桥](../claims/type-II-rado-linear-rank-hall-capacity-bridge.md) (`type-II-rado-linear-rank-hall-capacity-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II raw 参数频率的循环源商提升矩阵](../claims/type-II-raw-cyclic-source-lift-matrix.md) (`type-II-raw-cyclic-source-lift-matrix`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
