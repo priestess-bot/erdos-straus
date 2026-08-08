@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 546 |
+| 数学状态 | `established` | 547 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 379 |
+| 证明来源 | `repository_derivation` | 380 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 515 |
+| 审阅状态 | `internal_review` | 516 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -646,6 +646,7 @@
 | [完整 Reach 的仿射边界终端菜单闭合四个状态余项](../claims/type-I-psi-one-affine-boundary-terminal-profile.md) (`type-I-psi-one-affine-boundary-terminal-profile`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [完整 F 谱中四百八十三个缺陷一状态的终端与提升边界](../claims/type-I-psi-one-full-spectrum-terminal-descent-boundary.md) (`type-I-psi-one-full-spectrum-terminal-descent-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [Psi 一层缺陷到 single-external slab 的规范路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md) (`type-I-psi-one-source-word-large-slab-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
+| [q-primary Fourier 相位到仿射整数标签的 gcd—区间提升判据](../claims/type-I-qprimary-phase-affine-label-gcd-lift.md) (`type-I-qprimary-phase-affine-label-gcd-lift`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [R=47 五周期的表示格容量三相与无限核心射线](../claims/type-I-r47-cycle-lattice-capacity-three-phase-boundary.md) (`type-I-r47-cycle-lattice-capacity-three-phase-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 非空周期支撑的短 Type I/II 选择器](../claims/type-I-r47-cycle-nonempty-support-short-selector.md) (`type-I-r47-cycle-nonempty-support-short-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md) (`type-I-r47-empty-support-pminusone-dyadic-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
