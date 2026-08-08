@@ -260,7 +260,10 @@ H\bmod M&19&5569&4799&11245\\ \hline
 5. demand-to-slot 单射及 nonreuse/subset-divisibility 回执。
 
 第 3 项认证 \(\nu_H\)，第 2 项认证 \(\nu_N\)，第 4--5 项才可能把高度转化为 slot。
-当前控制没有这些数据，故不构成 adapter、capacity 注入或 selector edge。
+[单首标签因子轨道的局部 raw-to-cofactor provenance](type-I-raw-factor-block-local-cofactor-provenance.md)
+现已给出一个 \(A=11,H=7\) 的同状态因子回执，以及 q=137 的 raw--candidate CRT
+失配控制；它们仍未给 v=5 的 \(A=573\) 选择、shared-q ledger 或第 5 项。因此当前
+控制依然不构成完整 adapter、capacity 注入或 selector edge。
 
 窄复现：
 

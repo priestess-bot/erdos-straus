@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 523 |
+| 数学状态 | `established` | 524 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 356 |
+| 证明来源 | `repository_derivation` | 357 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 492 |
+| 审阅状态 | `internal_review` | 493 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -633,6 +633,7 @@
 | [R=47 空掩码的 p-1 二进终端与外部出口边界](../claims/type-I-r47-empty-support-pminusone-dyadic-boundary.md) (`type-I-r47-empty-support-pminusone-dyadic-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [R=47 空掩码 p-1 射线的 Jacobi 障碍与三条精确角色选择器](../claims/type-I-r47-pminusone-jacobi-ray-selector.md) (`type-I-r47-pminusone-jacobi-ray-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [raw 因子作用到共同仿射相位图的可积性门](../claims/type-I-raw-factor-action-affine-preflight.md) (`type-I-raw-factor-action-affine-preflight`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [单首标签因子轨道的局部 raw-to-cofactor provenance](../claims/type-I-raw-factor-block-local-cofactor-provenance.md) (`type-I-raw-factor-block-local-cofactor-provenance`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [任意 primitive raw node 的 p-parent 反向提升与 root-policy 边界](../claims/type-I-raw-universal-p-parent-root-policy-boundary.md) (`type-I-raw-universal-p-parent-root-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md) (`type-I-representation-dual-capacity-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |

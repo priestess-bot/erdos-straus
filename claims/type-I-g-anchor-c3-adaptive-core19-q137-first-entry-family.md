@@ -199,6 +199,10 @@ RESET 仍是正确的原始结构事实，但不能记为 selector edge。
 则给出另一种正向机制：直接在 raw 参数上调谐 \(h\equiv-1\pmod {25212}\) 的实际
 target factor；它同样必须 terminal-first 关闭。
 
+[单首标签因子轨道的局部 raw-to-cofactor provenance](type-I-raw-factor-block-local-cofactor-provenance.md)
+进一步把这个 family 的 factor block 变成可核验的 endpoint--candidate-factor 接口，
+并精确显示非平凡 \(19U\) raw endpoint 与 \(A=573\) candidate record 的 CRT 失配。
+
 ## 5. \(m=1319,d=1\) 的无穷 terminal 子射线
 
 令 \(D=772716168\)。有
