@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 543 |
+| 数学状态 | `established` | 544 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 376 |
+| 证明来源 | `repository_derivation` | 377 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 512 |
+| 审阅状态 | `internal_review` | 513 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -695,6 +695,7 @@
 | [Type I 目标除子与偶终端桥的双因子选择器](../claims/type-I-target-divisor-even-terminal-selector.md) (`type-I-target-divisor-even-terminal-selector`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `elsholtz_tao2013` | 2026-07-28 |
 | [Type I 目标除子的溢出因子与正规形精确对应](../claims/type-I-target-divisor-overflow.md) (`type-I-target-divisor-overflow`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [目标纤维单坐标缺陷的商群与关系格精确公式](../claims/type-I-target-fiber-coordinate-quotient-floor.md) (`type-I-target-fiber-coordinate-quotient-floor`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
+| [目标纤维近邻—盒密度—规范 Fourier 三分](../claims/type-I-target-fiber-density-neighbor-fourier-trichotomy.md) (`type-I-target-fiber-density-neighbor-fourier-trichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [目标纤维溢出的精确 Fourier 生成函数](../claims/type-I-target-fiber-fourier-overflow-generating-function.md) (`type-I-target-fiber-fourier-overflow-generating-function`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
 | [目标纤维溢出与联合容量的带符号载体字典](../claims/type-I-target-fiber-joint-capacity-signed-carrier-dictionary.md) (`type-I-target-fiber-joint-capacity-signed-carrier-dictionary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [目标纤维近邻对的规范二进归一化与关系格中性](../claims/type-I-target-fiber-neighbor-dyadic-normalization.md) (`type-I-target-fiber-neighbor-dyadic-normalization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
