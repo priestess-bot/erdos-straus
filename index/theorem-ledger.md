@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 553 |
+| 数学状态 | `established` | 554 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 386 |
+| 证明来源 | `repository_derivation` | 387 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 522 |
+| 审阅状态 | `internal_review` | 523 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -989,6 +989,7 @@
 | [Type II 带权源饱和幂块的严格商缺失—核 Fourier 分派](../claims/type-II-weighted-source-saturated-quotient-kernel-dispatch.md) (`type-II-weighted-source-saturated-quotient-kernel-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [20 窗口与平方因子外部源递降的千万级混合闭合](../claims/type-II-window-descent-hybrid-10m.md) (`type-II-window-descent-hybrid-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19 后零/一碰撞素数 Type II 选择器](../claims/type-II-zero-one-collision-selector-conjecture.md) (`type-II-zero-one-collision-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-27 |
+| [目标纤维 source-supply spectrum 的严格降层 adapter 判据](../claims/type-i-linear-escape-target-supply-spectrum-strict-adapter.md) (`type-i-linear-escape-target-supply-spectrum-strict-adapter`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [组合变量因子射线给出任意对数幂的共同残余界](../claims/variable-factor-rays-superlog-residual.md) (`variable-factor-rays-superlog-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-23 |
 | [Vaughan 的伸缩指数例外集界](../claims/vaughan-exception-bound.md) (`vaughan-exception-bound`) | `established` | `unspecified` | `unspecified` | `vaughan1970`, `pomerance_weingartner2026` | 2026-07-23 |
 | [当前公开报告的最高计算上界为 10^18](../claims/verification-1e18-reported.md) (`verification-1e18-reported`) | `computationally_reported` | `unspecified` | `unspecified` | `mihnea_dumitru2025`, `pomerance_weingartner2026` | 2026-07-23 |
