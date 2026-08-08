@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 560 |
+| 数学状态 | `established` | 561 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 393 |
+| 证明来源 | `repository_derivation` | 394 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 529 |
+| 审阅状态 | `internal_review` | 530 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -870,6 +870,7 @@
 | [H19 后单新因子 Type II 选择器猜想](../claims/type-II-one-new-factor-selector-conjecture.md) (`type-II-one-new-factor-selector-conjecture`) | `open` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [十四规范移位的一私有素因子模型被模三覆盖阻断](../claims/type-II-one-prime-private-cofactor-boundary.md) (`type-II-one-prime-private-cofactor-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `linnik1944`, `chamberland2026` | 2026-07-24 |
 | [Type II owner 核截面到 primary 数字终端的物理去重证书](../claims/type-II-owner-kernel-primary-digit-certificate.md) (`type-II-owner-kernel-primary-digit-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [Type II owner primary 掩码的带来源同余—正规形提升判据](../claims/type-II-owner-primary-mask-arithmetic-lift-criterion.md) (`type-II-owner-primary-mask-arithmetic-lift-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner token 投影到物理 q 槽的流—割容量门](../claims/type-II-owner-projection-physical-capacity-flow-gate.md) (`type-II-owner-projection-physical-capacity-flow-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 投影源列逃逸的物理槽扩张递降桥](../claims/type-II-owner-projection-source-column-expansion-relay.md) (`type-II-owner-projection-source-column-expansion-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II owner 碰撞的饱和优先—商缺失/核截面分派](../claims/type-II-owner-saturation-quotient-kernel-dispatch.md) (`type-II-owner-saturation-quotient-kernel-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
