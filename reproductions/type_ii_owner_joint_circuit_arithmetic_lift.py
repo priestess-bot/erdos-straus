@@ -33,6 +33,7 @@ def classify_circuit(
     d: int,
     d_prime: int,
     a: int,
+    descent_verified: bool = False,
 ) -> dict[str, object]:
     """Apply SNF, power-closure, then the Type II normal-form test."""
     if not lattice_contains(coefficients, relation_generators):
@@ -71,6 +72,12 @@ def classify_circuit(
             "c": c_prime,
             "factor_product": factor_product,
         }
+    if descent_verified and d_prime < d:
+        return {
+            "status": "CIRCUIT_STRICT_SOURCE_SWITCH_RELAY",
+            "d_prime": d_prime,
+            "factor_product": factor_product,
+        }
     return {
         "status": "CIRCUIT_SOURCE_RELATION_FOURIER",
         "factor_product": factor_product,
@@ -91,6 +98,18 @@ def run_verification() -> dict[str, object]:
     assert direct["status"] == "CIRCUIT_TYPE_II_SHORT_CERTIFICATE"
     assert direct["k"] == 30
     assert direct["b"] == 1289
+
+    strict = classify_circuit(
+        (1, 2),
+        ((1, 2),),
+        (5, 7),
+        p=241,
+        d=6,
+        d_prime=1,
+        a=1,
+        descent_verified=True,
+    )
+    assert strict["status"] == "CIRCUIT_STRICT_SOURCE_SWITCH_RELAY"
 
     fourier = classify_circuit(
         (1, 2),
@@ -129,6 +148,7 @@ def run_verification() -> dict[str, object]:
 
     return {
         "direct": direct,
+        "strict": strict,
         "fourier": fourier,
         "obstructed": obstructed,
         "power_obstructed": power_obstructed,

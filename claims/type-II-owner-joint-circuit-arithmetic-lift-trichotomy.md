@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-II-owner-joint-circuit-arithmetic-lift-trichotomy
 title: Type II owner 联合依赖回路到 SNF—算术提升的三分
-statement: 对物理满匹配中的一个最小 source-column 依赖回路，先用保持参数纤维的 source-relation lattice/SNF 检查其有限域系数是否有整数提升。若提升及其 power-closed 来源合同存在，且带来源因子积在某个合法 D' 上命中 -1，则得到 Type II 短证书；若提升相容但未命中，则得到可继续筛选的 SOURCE_RELATION_FOURIER；若 SNF、CRT、power-closure 或范围门失败，则给出精确 CIRCUIT_SOURCE_RELATION_LIFT_OBSTRUCTED。该桥把联合 source-slot 障碍接到已有算术菜单，但不把相容回路自动宣称为递降。
+statement: 对物理满匹配中的一个最小 source-column 依赖回路，先用保持参数纤维的 source-relation lattice/SNF 检查其有限域系数是否有整数提升。若提升及其 power-closed 来源合同存在，且带来源因子积在某个合法 D' 上命中 -1，则得到 Type II 短证书；若未命中但存在保持来源标签且 D'<D 的已验证 source-switch，则得到严格递降；若只有同模数相容候选，则得到可继续筛选的 SOURCE_RELATION_FOURIER；若 SNF、CRT、power-closure 或范围门失败，则给出精确 CIRCUIT_SOURCE_RELATION_LIFT_OBSTRUCTED。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -114,7 +114,16 @@ B'-A=\frac{K'(p-4AD')+2A}{h(c)}>0.
 \tag{10}
 \]
 
-若至少一个合法提升通过 (3)、(5) 和范围门，但所有候选都未满足 (7)，输出
+若至少一个合法提升通过 (3)、(5) 和范围门，所有候选都未满足 (7)，但存在一个
+保持来源标签且 \(D'<D\) 的 E5 source-switch 映射，则输出
+\[
+\mathrm{CIRCUIT\_STRICT\_SOURCE\_SWITCH\_RELAY}
+=(C,c,D',A,\eta,\{h_i\}).
+\tag{11a}
+\]
+以 \((D',\operatorname{rk}_{\rm SNF},|C|)\) 为词典序势时，第一坐标严格下降；
+该回执才是可提升递降。若没有这样的严格候选、但至少一个合法提升通过 (3)、(5)
+和范围门，则输出
 \[
 \mathrm{CIRCUIT\_SOURCE\_RELATION\_FOURIER}
 =(C,c,D',A,\{h_i\},\text{failed target rows}).
@@ -143,12 +152,13 @@ owner primary 算术菜单、F/G 相位或 q-height/Kneser 分派，但本身不
 逐一执行本三分：
 
 * 任一回路进入 (9)，整个状态立即得到 Type II 短证书；
-* 所有回路都进入 (11)，得到一个有限的相容关系 Fourier 回路族，随后必须
+* 任一回路进入 (11a)，得到保持来源标签的严格递降；
+* 所有剩余回路都进入 (11)，得到一个有限的相容关系 Fourier 回路族，随后必须
   检查其 F/G 或 q 进后继；
 * 某个回路进入 (12)，保存其具体失败行；它只否定该回路的整数提升，不否定
   其它匹配、其它回路或 Type I 路径。
 
-这把“联合匹配不存在”细化为直接终端、相容对偶或算术障碍，而不使用
+这把“联合匹配不存在”细化为直接终端、严格递降、相容对偶或算术障碍，而不使用
 \(\operatorname{rank}\) 并集作为伪充分条件。
 
 ## 4. 证明
@@ -158,7 +168,8 @@ owner primary 算术菜单、F/G 相位或 q-height/Kneser 分派，但本身不
 目标因子。
 (7) 与正规形公式给出 (8)--(10)，故 (9) 是有效 Type II 证书。
 
-若所有合法提升均不命中 (7)，但至少一个通过 SNF/CRT/范围，则它定义了一个
+若所有合法提升均不命中 (7)，但 E5 给出 \(D'<D\) 的保持标签映射，则
+(11a) 的势严格下降。若没有严格候选但至少一个通过 SNF/CRT/范围，则它定义了一个
 带来源的非命中关系 Fourier 载荷，得到 (11)。若没有通过者，有限 SNF/CRT
 菜单的第一失败行给出 (12)。这些条件按优先级互斥且覆盖固定回路。对有限个
 物理满匹配逐回路应用即可，证毕。
@@ -186,6 +197,8 @@ K'=30,\qquad B'=1289,\qquad C'=1,
 取 \(\ell=3\)、\(\bar c=(1,2)\)、合法提升 \(c=(1,2)\)，令
 \(h_1=5,h_2=7\)，且来源关系格包含 \(c\)。在 \(D'=A=1\) 时
 \(h(c)=5\cdot7^2=245\equiv1\pmod4\)，所以不命中 (7)，但输出 (11)。
+若同一来源合同从原始 \(D=6\) 映射到 \(D'=1\)，且 E5 标签映射已验证，则同一
+控制输出 (11a)，其第一势坐标从 \(6\) 降到 \(1\)。
 
 ### SNF 不相容
 
