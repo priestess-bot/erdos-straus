@@ -6,6 +6,19 @@ from __future__ import annotations
 import argparse
 
 
+def canonical_admission(
+    source_records: tuple[str, ...],
+    requests: tuple[tuple[str, str], ...],
+    legal: set[tuple[str, tuple[str, str]]],
+) -> tuple[tuple[str, tuple[str, str]], ...]:
+    return tuple(
+        (record, request)
+        for record in source_records
+        for request in requests
+        if (record, request) in legal
+    )
+
+
 def step(
     universe: tuple[int, ...],
     menu: tuple[int, ...],
@@ -114,6 +127,12 @@ def run_verification() -> dict[str, object]:
     )
     assert complete["status"] == "SOURCE_UNIVERSE_COMPLETE"
 
+    source_records = ("u1", "u2")
+    requests = (("z0", "z1"), ("z1", "z2"))
+    legal = {("u1", requests[0]), ("u2", requests[1])}
+    admissions = canonical_admission(source_records, requests, legal)
+    assert admissions == (("u1", requests[0]), ("u2", requests[1]))
+
     blocked = step(
         universe,
         (1,),
@@ -131,6 +150,7 @@ def run_verification() -> dict[str, object]:
         "circuit": circuit,
         "unrealized": unrealized,
         "complete": complete,
+        "canonical_admission": admissions,
         "blocked": blocked,
     }
 
@@ -144,7 +164,10 @@ def main() -> int:
     result = run_verification()
     print("verified source-universe admission expansion relay")
     for key, value in result.items():
-        print(key, value["status"])
+        if isinstance(value, dict):
+            print(key, value["status"])
+        else:
+            print(key, value)
     return 0
 
 

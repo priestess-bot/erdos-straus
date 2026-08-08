@@ -172,10 +172,40 @@ source vector 合并成一个伪物理资源。
 真实 source relation circuit。有限宇宙保证扩张势最终归零或在当前状态产生一个
 typed 后继。最后，整数提升门是原参数递归的必要条件，不能由有限势下降替代。证毕。
 
-## 6. 研究边界
+## 6. Fixed-fiber admission completeness
+
+Fix a fully enumerated finite target exponent fiber Z and its source map phi. Let
+R_Z be all ordered pairs (z,z') of distinct points of Z. For a source record u and
+request r=(z,z'), define an admission edge exactly when the following finite rows pass:
+
+1. the fiber-preserving relation phi(z) phi(z')^{-1} is trivial in the parameter quotient;
+2. the group image of u equals that source relation;
+3. the marked label of u equals the prescribed label of (z,z');
+4. the source contract, q-height, range, and provenance rows of u pass.
+
+The finite table
+  Adm_Z(u) = { r in R_Z : all four rows pass }
+is complete for this fixed fiber. In particular, an empty table is a genuine
+SOURCE_RECORD_UNREALIZED receipt, while a nonempty table carries an explicit target pair,
+source vector, physical-slot projection, and all arithmetic provenance. Dependent request
+vectors can be reduced to a minimal circuit in this same table and sent to the owner-circuit
+arithmetic trichotomy.
+
+Proof. Both the source universe and R_Z are finite. Every legal edge satisfies the four
+rows by the exact source contract, so it occurs in the Cartesian-product enumeration.
+Conversely, the four rows are the contract's necessary and sufficient edge conditions, so
+every enumerated edge is legal. This proves completeness; finite row reduction extracts
+minimal dependent circuits without changing physical capacity.
+
+This lemma removes SOURCE_ADMISSION_EXACTNESS_UNPROVED for a fixed complete target fiber.
+It does not remove the obligation to prove that the target fiber is complete or that the
+source contract is exact.
+
+## 7. 研究边界
 
 该桥把 exact source universe 的整数漏项真正接回 q 容量和 source-column 选择器，
-并给出一个严格良基的 admission 扩张。它仍不证明所有 F/G 状态都有 exact admission
-map；`SOURCE_ADMISSION_EXACTNESS_UNPROVED` 是当前全局覆盖缺口的具体名称。它也不
+并给出一个严格良基的 admission 扩张；在固定且完整的目标纤维中，第 6 节进一步把
+admission exactness 变成一个有限完备枚举。它仍不证明所有 F/G 状态都有完整目标纤维
+或 exact source contract；SOURCE_ADMISSION_EXACTNESS_UNPROVED 是当前全局覆盖缺口的具体名称。它也不
 把 source-universe 补全本身宣称为 Type I/II 证书或整数递降；后者仍须经过 exact flow、
 SNF/CRT 和 E1--E5。
