@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 24 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 530 |
+| 数学状态 | `established` | 531 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 363 |
+| 证明来源 | `repository_derivation` | 364 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 499 |
+| 审阅状态 | `internal_review` | 500 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -585,6 +585,7 @@
 | [overflow 双通道相位树分裂的精确容量税](../claims/type-I-overflow-dual-phase-tree-split-capacity.md) (`type-I-overflow-dual-phase-tree-split-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [overflow 双通道不等赋值的加权相位正规形与首层分离](../claims/type-I-overflow-dual-valuation-asymmetry.md) (`type-I-overflow-dual-valuation-asymmetry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [overflow 固定纤维的 E2 carry 常值性](../claims/type-I-overflow-e2-fixed-fiber-constancy.md) (`type-I-overflow-e2-fixed-fiber-constancy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [高载体首带的余因子完整递降分流](../claims/type-I-overflow-first-strip-complete-reduction.md) (`type-I-overflow-first-strip-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow 固定 n 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md) (`type-I-overflow-fixed-n-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 固定-n 因子间隙与双对偶支撑阻碍的 typed 负边界](../claims/type-I-overflow-fixed-n-gap-dual-obstruction.md) (`type-I-overflow-fixed-n-gap-dual-obstruction`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定 n 窗口上方的 overflow 支撑秩递降](../claims/type-I-overflow-fixed-n-overflow-rank-descent.md) (`type-I-overflow-fixed-n-overflow-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |

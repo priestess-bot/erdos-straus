@@ -237,6 +237,10 @@ L=\frac Mq=A\frac bq
 这保留了现有逻辑边界：G 图表的支撑内目标纤维为空，且 (6) 的空图谱不能被解释为
 Erdos--Straus 猜想的反例。
 
+这里的素余因子行只是在局部菜单中为空；在同一首带内，其 \(b<p\) 与 \(b>p\) 两种
+后续分别由[高载体首带的余因子完整递降分流](type-I-overflow-first-strip-complete-reduction.md)
+的同支撑分母转移和 fixed-\(n\) support reset 闭合。
+
 ## 聚焦复现
 
 脚本只复核阶梯的边界行与 (6)--(7) 的三种路由，不做历史范围扫描：
