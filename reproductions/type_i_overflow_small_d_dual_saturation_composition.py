@@ -37,7 +37,7 @@ def verify_dual(
     B = (p - 1) ** 2 // 4
     c = (p - 1) // 4
     assert is_prime(p) and p % 24 == 1 and p >= 73
-    assert 1 <= d <= 8 and p * n == 4 * M * d + 1
+    assert 1 <= d and d * d < p and p * n == 4 * M * d + 1
     assert B < M < 2 * B and 1 <= A < c and M % A == 0
     assert 4 * M - n > p
 
@@ -113,9 +113,10 @@ def verify() -> None:
         (73, 433, 1317, 6, 1),
         (73, 509, 1327, 7, 1),
         (73, 569, 1298, 8, 1),
+        (97, 877, 2363, 9, 1),
     )
     dual_receipts = [verify_dual(*fixture) for fixture in dual_fixtures]
-    assert [receipt["d"] for receipt in dual_receipts] == list(range(1, 9))
+    assert [receipt["d"] for receipt in dual_receipts] == list(range(1, 10))
 
     delegated = {
         "d5_exchange": (73, 1376, 5, 377, 32, "exchange", (160, 43, 377)),
@@ -133,7 +134,7 @@ def verify() -> None:
         "d8_factor": "factor",
     }
 
-    print("verified d=1..8 dual saturation and small-d composition")
+    print("verified d^2<p dual saturation and small-d composition")
     for receipt in dual_receipts:
         print("dual", receipt["d"], receipt["r"], receipt["s"], receipt["P"])
     for name, route in routes.items():

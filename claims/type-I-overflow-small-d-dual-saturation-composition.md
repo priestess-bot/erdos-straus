@@ -1,13 +1,13 @@
 ---
 kind: claim
 claim_id: type-I-overflow-small-d-dual-saturation-composition
-title: \(d\le8\) 高载体容量层的 dual 饱和组合闭合
+title: \(d^2<p\) 高载体容量层的 dual 饱和组合闭合
 statement: >-
-  设 p≡1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p<M<2B_p、1≤d≤8，
+  设 p≡1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p<M<2B_p、1≤d 且 d^2<p，
   并携带 A|M、1≤A≤B_p 及 source/path、Sol(p)、E1--E5 合同。令 r=M mod p、
   s=(4rd+1)/p、P=rd、c=(p−1)/4。则 1≤s≤4d−1 且 c≤P≤B_p。若 A<c，
   取 L=P 给出完整 fixed-s 严格外层秩递降；若 A≥c，则 d^2<p，直接接入既有
-  small-d 容量层完整递降。因此整个 B_p<M<2B_p、d≤8 容量层没有未分流 overflow。
+  small-d 容量层完整递降。因此整个 B_p<M<2B_p、d^2<p 容量层没有未分流 overflow。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -31,12 +31,12 @@ sources:
   - claim: type-I-overflow-small-d-capacity-complete-reduction
     role: A-at-least-c-composition
   - reproduction: reproductions/type_i_overflow_small_d_dual_saturation_composition.py
-    role: d-one-through-d-eight-dual-and-composition-receipt
+    role: d-squared-less-than-p-dual-and-composition-receipt
 visibility: public
 last_checked: '2026-08-09'
 ---
 
-# \(d\le8\) 高载体容量层的 dual 饱和组合闭合
+# \(d^2<p\) 高载体容量层的 dual 饱和组合闭合
 
 ## 定理
 
@@ -46,7 +46,7 @@ verified overflow 满足
 \[
 pn=4Md+1,
 \qquad B_p<M<2B_p,
-\qquad 1\le d\le8,
+\qquad 1\le d,\quad d^2<p,
 \tag{1}
 \]
 
@@ -70,7 +70,7 @@ P=rd.
 则 \(r\ne0\)，\(s\) 是正整数，并且
 
 \[
-1\le s\le4d-1\le31,
+1\le s\le4d-1,
 \qquad
 c\le P\le B_p.
 \tag{4}
@@ -90,7 +90,7 @@ A\ge c&\text{small-}d\text{ 的因子转移/交换/商折叠}&
 
 两行互斥且穷尽；在既有图表无关的
 \(W=\operatorname{Sol}(p)\) 恒等提升和 E1--E5 合同下，(1) 的整个
-\(d\le8\) 容量层没有未分流 overflow。
+\(d^2<p\) 容量层没有未分流 overflow。
 
 ## 余数和容量界
 
@@ -127,18 +127,19 @@ P\ge\frac{p-1}{4}=c.
 \tag{9}
 \]
 
-核心素数 \(p\equiv1\pmod {24}\) 必有 \(p\ge73\)。由 \(d\le8\) 和 (7)，
+核心素数 \(p\equiv1\pmod {24}\) 必有 \(p\ge73\)。由 \(d^2<p\)，有
+\(d<\sqrt p\)，而
 
 \[
-4P=sp-1\le31p-1.
+p-4\sqrt p-1>0
+\qquad(p\ge73).
 \tag{10}
 \]
 
-而
+因此 \(p>4d+1\)，并由 (7) 得
 
 \[
-(p-1)^2-(31p-1)=p^2-33p+2>0
-\qquad(p\ge73),
+4P=sp-1\le(4d-1)p-1<(p-1)^2=4B_p.
 \tag{11}
 \]
 
@@ -200,14 +201,8 @@ R_P\equiv3\pmod4,\qquad
 
 ## \(A\ge c\) 的组合闭合
 
-若 \(A\ge c\)，由于 \(p\ge73\)，有
-
-\[
-d^2\le64<73\le p.
-\tag{18}
-\]
-
-输入还已经给出 \(B_p<M<2B_p\)、\(A\mid M\) 和 \(1\le A\le B_p\)，所以既有
+若 \(A\ge c\)，输入已经给出 \(B_p<M<2B_p\)、\(A\mid M\)、
+\(1\le A\le B_p\) 以及 \(d^2<p\)，所以既有
 “高载体小 \(d\) 容量层的完整余因子递降”定理逐项适用。它按
 \(b=M/A\) 穷尽三类后继：
 
@@ -223,19 +218,20 @@ d^2\le64<73\le p.
 \tag{19}
 \]
 
-因此 \(A\ge c\) 分支不再需要 d=1、d=2、……、d=8 的逐层余因子证明。
+因此 \(A\ge c\) 分支不再需要按 d 逐层重做余因子证明。
 
 ## 穷尽性与边界
 
 因为 \(A<c\) 或 \(A\ge c\) 必有其一，(12)--(17) 和 (18)--(19) 合起来给出整个
-\(d\le8\)、\(B_p<M<2B_p\) 层的严格可提升选择器入口。该结论仍不覆盖
-\(M\ge2B_p\)、\(d\ge9\) 或 source/path 可达性本身未给回执的状态；这些边界仍需
+\(d^2<p\)、\(B_p<M<2B_p\) 层的严格可提升选择器入口。该结论仍不覆盖
+\(M\ge2B_p\)、\(d^2\ge p\) 或 source/path 可达性本身未给回执的状态；这些边界仍需
 generalized \(2^j\)、q-adic capacity 或其它 Type I/II 短证书。
 
 ## 控制实例与复现
 
 本卡用 \(p=73\) 的 \(d=1,\ldots,8\) 各一条 \(A<c\) dual 控制，并用
-\(d=5,6,7,8\) 的 factor/exchange/fold 控制验证组合接口：
+\(p=97,d=9\) 的额外控制确认泛化边界；同时用 \(d=5,6,7,8\) 的
+factor/exchange/fold 控制验证组合接口：
 
 \[
 \begin{array}{c|r|r|r|r|r}
@@ -249,6 +245,11 @@ d&n&M&A&r&s\\ \hline
 7&509&1327&1&13&5\\
 8&569&1298&1&57&25
 \end{array}
+\]
+
+额外控制为
+\[
+(p,n,M,d,A,r,s)=(97,877,2363,9,1,35,13).
 \]
 
 精确复现命令：
