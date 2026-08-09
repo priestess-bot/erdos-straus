@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 590 |
+| 数学状态 | `established` | 591 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 426 |
+| 证明来源 | `repository_derivation` | 427 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 562 |
+| 审阅状态 | `internal_review` | 563 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -682,6 +682,7 @@
 | [Type I源状态的一重复因子选择器与两重复边界](../claims/type-I-source-state-one-repeat-boundary.md) (`type-I-source-state-one-repeat-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [来源路径的底层投影、双节点相位差与双容量接口](../claims/type-I-source-word-bottom-projection-dual-capacity.md) (`type-I-source-word-bottom-projection-dual-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [来源交叉表示的联合容量共同过载—分裂交换二分](../claims/type-I-source-word-joint-capacity-common-split-dichotomy.md) (`type-I-source-word-joint-capacity-common-split-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
+| [稳定子感知的仿射 q-primary phase-lift 与 owner 容量门](../claims/type-I-stabilizer-aware-affine-phase-owner-capacity.md) (`type-I-stabilizer-aware-affine-phase-owner-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type I 失败的子群--字符分流](../claims/type-I-subgroup-character-obstruction.md) (`type-I-subgroup-character-obstruction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 子群型失败的半维跨缺口筛界](../claims/type-I-subgroup-character-sieve.md) (`type-I-subgroup-character-sieve`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-25 |
 | [中心化指数盒的 Kneser 对合瓶颈](../claims/type-I-symmetric-box-kneser-involution-bottleneck.md) (`type-I-symmetric-box-kneser-involution-bottleneck`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
