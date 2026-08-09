@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the high-capacity small-d route split and residual cone."""
+"""Verify the high-capacity small-d exact floor-shell route split."""
 
 from __future__ import annotations
 
@@ -55,6 +55,15 @@ def divisors(value: int) -> list[int]:
     return sorted(values)
 
 
+def floor_shell_threshold(B: int, A: int) -> int:
+    """Least bounded carrier that strictly lowers floor(B / A)."""
+    level = B // A
+    assert level >= 1
+    threshold = B // level + 1
+    assert A < threshold <= 2 * A
+    return threshold
+
+
 def factor_route(p: int, n: int, M: int, d: int, A: int, b: int) -> dict[str, int]:
     g = smallest_prime_factor(b)
     assert 1 < g and b % g == 0 and d * g < p
@@ -80,7 +89,8 @@ def exchange_route(p: int, n: int, M: int, d: int, A: int, b: int) -> dict[str, 
 
 def fold_route(p: int, n: int, M: int, d: int, A: int, carrier: int) -> dict[str, int]:
     B = (p - 1) ** 2 // 4
-    assert 2 * A <= carrier <= B and M % carrier == 0
+    threshold = floor_shell_threshold(B, A)
+    assert threshold <= carrier <= B and M % carrier == 0
     assert (M * d) % carrier == 0 and B // carrier < B // A
     quotient, remainder = divmod(M * d // carrier, p)
     assert 1 <= remainder < p
@@ -90,6 +100,19 @@ def fold_route(p: int, n: int, M: int, d: int, A: int, carrier: int) -> dict[str
     K = carrier * (p - remainder)
     assert R > 0 and R % 4 == 3 and K > 0 and p * R + 1 == 4 * K
     return {"M": carrier, "d": remainder, "n": target_n, "h": quotient}
+
+
+def dual_route(p: int, M: int, d: int, A: int) -> dict[str, int]:
+    B = (p - 1) ** 2 // 4
+    threshold = floor_shell_threshold(B, A)
+    r = M % p
+    P = r * d
+    s, remainder = divmod(4 * P + 1, p)
+    assert remainder == 0 and threshold <= P < B
+    assert B // P < B // A
+    R, K = 4 * P - s, P * (p - 1)
+    assert R > 0 and R % 4 == 3 and K > 0 and p * R + 1 == 4 * K
+    return {"M": P, "R": R, "K": K, "s": s}
 
 
 def classify(p: int, n: int, M: int, d: int, A: int) -> str:
@@ -103,14 +126,13 @@ def classify(p: int, n: int, M: int, d: int, A: int) -> str:
     s, remainder = divmod(4 * r * d + 1, p)
     assert remainder == 0 and 1 <= s <= 4 * d - 1
     P = r * d
-    assert c <= P <= B
+    assert c <= P < B
     b = M // A
     assert b > 1 and b != p
+    threshold = floor_shell_threshold(B, A)
 
-    if P >= 2 * A:
-        assert P > A and B // P < B // A
-        R, K = 4 * P - s, P * (p - 1)
-        assert R > 0 and R % 4 == 3 and p * R + 1 == 4 * K
+    if P >= threshold:
+        dual_route(p, M, d, A)
         return "dual"
 
     g = smallest_prime_factor(b)
@@ -120,19 +142,19 @@ def classify(p: int, n: int, M: int, d: int, A: int) -> str:
     if d < b < p:
         exchange_route(p, n, M, d, A, b)
         return "exchange"
-    middle_divisors = [candidate for candidate in divisors(b) if 2 * A <= candidate <= B]
-    if middle_divisors:
-        carrier = max(middle_divisors)
+    shell_divisors = [candidate for candidate in divisors(b) if threshold <= candidate <= B]
+    if shell_divisors:
+        carrier = max(shell_divisors)
         fold_route(p, n, M, d, A, carrier)
         return "cofactor_divisor_fold"
 
-    assert P < 2 * A and b > p and not middle_divisors
+    assert P < threshold and b > p and not shell_divisors
     assert d * smallest_prime_factor(b) >= p
-    assert b > B or b < 2 * A
-    if b < 2 * A:
+    assert b > B or b < threshold
+    if b < threshold:
         assert A > (p - 1) // 2
-        return "high_support_residual"
-    assert b >= 2 * A and b > B
+        return "floor_shell_residual"
+    assert b > B
     if is_prime(b):
         return "ultra_prime_residual"
     return "composite_gap_residual"
@@ -141,27 +163,56 @@ def classify(p: int, n: int, M: int, d: int, A: int) -> str:
 def verify() -> None:
     fixtures = {
         "dual": (73, 1129, 5151, 4, 51),
+        "sharp_dual": (73, 28361, 129397, 4, 83),
         "factor": (73, 145, 2646, 1, 49),
         "exchange": (73, 337, 3075, 2, 75),
         "cofactor_divisor_fold": (73, 161, 2938, 1, 26),
         "intermediate_divisor_fold": (73, 27505, 501966, 1, 18),
-        "high_support_residual": (73, 317, 5785, 1, 65),
+        "sub_double_cofactor_fold": (73, 317, 5785, 1, 65),
+        "composite_shell_fold": (73, 23381, 426703, 1, 53),
+        "floor_shell_residual": (73, 645, 11771, 1, 149),
         "ultra_prime_residual": (73, 1585, 28926, 1, 18),
-        "composite_gap_residual": (73, 23381, 426703, 1, 53),
+        "composite_gap_residual": (73, 37617, 686510, 1, 110),
     }
     routes = {name: classify(*fixture) for name, fixture in fixtures.items()}
     assert routes == {
-        **{name: name for name in fixtures if name != "intermediate_divisor_fold"},
+        **{
+            name: name
+            for name in fixtures
+            if name not in {
+                "sharp_dual",
+                "intermediate_divisor_fold",
+                "sub_double_cofactor_fold",
+                "composite_shell_fold",
+            }
+        },
+        "sharp_dual": "dual",
         "intermediate_divisor_fold": "cofactor_divisor_fold",
+        "sub_double_cofactor_fold": "cofactor_divisor_fold",
+        "composite_shell_fold": "cofactor_divisor_fold",
     }
-    print("verified high-capacity small-d route split and residual cone")
+    print("verified high-capacity small-d exact floor-shell route split")
     for name, fixture in fixtures.items():
         p, n, M, d, A = fixture
+        B = (p - 1) ** 2 // 4
         r = M % p
         P = r * d
         b = M // A
-        middle_divisors = [candidate for candidate in divisors(b) if 2 * A <= candidate <= (p - 1) ** 2 // 4]
-        print(name, "p", p, "n", n, "M", M, "d", d, "A", A, "r", r, "P", P, "b", b, "middle", middle_divisors)
+        threshold = floor_shell_threshold(B, A)
+        shell_divisors = [candidate for candidate in divisors(b) if threshold <= candidate <= B]
+        print(
+            name,
+            "p", p,
+            "n", n,
+            "M", M,
+            "d", d,
+            "A", A,
+            "r", r,
+            "P", P,
+            "b", b,
+            "threshold", threshold,
+            "shell", shell_divisors,
+        )
 
 
 def main() -> int:
