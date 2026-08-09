@@ -448,18 +448,25 @@ request is unlayered and only minimum q-height restricts its algebraic layers:
     otherwise:
       NAMED_ROLE_QHEIGHT_TAIL_HALL_DEFICIT(k, named role subset)
 
-then intersect with range/label/occurrence/source-switch edges
+for every admitted and frozen role-layer pair, including an original fixed-layer pair,
+and its declared nonempty based finite source set:
+  run FINITE_SOURCE_OWNER_PROFILE_REQUEST
+then intersect surviving profiles with label/occurrence/source-switch edges
 run general layered Hall/Rado on the surviving physical graph
 ~~~
 
 本卡关闭了上一张 q-height 主张留下的“两个以上尚未绑定层的独立角色如何按最小深度
 支付”的纯代数部分，并给出 fixed-layer 角色子空间的精确原层秩，
-同时产生一个精确、基不变的容量映射。它没有证明 \(c_J\) 对应真实 owner rows，也没有
-自动满足整数范围、标签、occurrence、target state、Kneser 价格、E4 或 E5。特别地，
+同时产生一个精确、基不变的容量映射。后续
+[有限源集 q-height 对偶剖面的 owner 窗口仿射格准入](type-I-source-lattice-owner-window-affine-profile-admission.md)
+把每个已冻结 role-layer 对及其有限源集的整数范围门化为仿射格盒交；通过的 profile
+才产生一般 Hall/Rado 的候选物理边。两张卡合并仍不自动满足既定标签、全局
+occurrence、共同基 target、Kneser 价格、E4 或 E5。特别地，
 `TAIL_MATCH_READY` 只是进入物理 Hall/Rado 的准入回执，不是 Type I/II 终端。
 
-下一决定性缺口不再是重复计算单角色深度，而是：从实际 F/G 请求构造完整的物理层槽和
-兼容边；若额外门删边后出现 Hall/Rado 缺口，则把该严格缺口接到 Type I/II 终端、完整
+下一决定性缺口不再是重复计算单角色深度或自由平移范围，而是：把通过 profile 盒交的
+实际 F/G 边与 prescribed label、共同基 target、全局 occurrence 及 source-switch
+同时相交；若删边后出现 Hall/Rado 缺口，则把该严格缺口接到 Type I/II 终端、完整
 kernel source box 或保持标记的良基下降。
 
 ## 聚焦验证

@@ -726,21 +726,38 @@ source-line carrier；它不伪装成 whole-ambient same-prefix map。
 ~~~text
 SOURCE_RANK_DEMAND(q, gamma on L)
   -> requested physical layer J already fixed:
-       gamma(L intersect q^(J+1) Z^d) != 0:
-         SOURCE_LATTICE_QHEIGHT_DUAL_OBSTRUCTED(witness)
+       M_J < 0:
+         OWNER_WINDOW_EMPTY
        otherwise:
-         SOURCE_LATTICE_QHEIGHT_DUAL_READY
-         physical source/range/label gates remain
+         gamma(L intersect q^(J+1) Z^d) != 0:
+           SOURCE_LATTICE_QHEIGHT_DUAL_OBSTRUCTED(witness)
+         otherwise:
+           SOURCE_LATTICE_QHEIGHT_DUAL_READY
+           for a declared nonempty based finite source set X with z0 in X:
+             build the intrinsic affine dual-profile lattice P_J,X
+             P_J,X misses the owner box:
+               OWNER_WINDOW_DUAL_PROFILE_BOX_EMPTY
+             otherwise:
+               OWNER_WINDOW_AFFINE_DUAL_PROFILE_READY
+           prescribed-label/global-occurrence/common-base gates remain
   -> unlayered rank-one named edge:
        t = v_q(content(delta)); J0 = max(1,t)
        J0 > H_edge(p,q):
          EDGE_SOURCE_ROLE_QHEIGHT_WINDOW_OBSTRUCTED
        otherwise:
-         valuation-shift matched carrier
-           range pass + occurrence/label pass:
-             VALUATION_SHIFTED_SOURCE_LINE_CARRIER_READY
-           range fail:
-             VALUATION_SHIFTED_CARRIER_RANGE_UNCLOSED
+         choose and freeze a legal J >= J0
+         run FINITE_SOURCE_OWNER_PROFILE_REQUEST on X = {z0,z1}
+           profile box empty:
+             OWNER_WINDOW_DUAL_PROFILE_BOX_EMPTY at this J
+             an unlayered scheduler may try another legal J
+           profile ready:
+             keep OWNER_WINDOW_AFFINE_DUAL_PROFILE_READY
+             optionally attempt the stronger valuation-shift matched carrier
+               carrier range + occurrence/label pass:
+                 VALUATION_SHIFTED_SOURCE_LINE_CARRIER_READY
+               carrier range fail:
+                 VALUATION_SHIFTED_CARRIER_RANGE_UNCLOSED
+                 do not discard the generic profile receipt
   -> two or more independent roles:
        one carrier still has source_rank_capacity = 1
        form W <= Hom(L,F_q) and the obstruction filtration O_J
@@ -756,17 +773,21 @@ SOURCE_RANK_DEMAND(q, gamma on L)
 
 这关闭了一个真实缺口：rank-one named edge 不再需要先有第零层 ambient pullback；
 非饱和 content 的 \(q\)-部分被精确转成最小层成本，并在超出 owner 窗口时给出全窗口
-no-go。它没有证明每个实际 F/G 状态都通过 (38)，也没有把一般源子格的对偶向量自动
-变成全部记录都 canonical、范围合格的物理 rows。下一决定性缺口因此收紧为：
+no-go。对已经声明的有限源记录集，后续
+[有限源集 q-height 对偶剖面的 owner 窗口仿射格准入](type-I-source-lattice-owner-window-affine-profile-admission.md)
+现把“一般源子格的同一个对偶能否让全部记录同时进入真实窗口”化为内禀仿射格与
+有限 owner 盒的精确交；失败时给出逐盒点 Smith 整除证书。它仍没有证明每个实际
+F/G 状态都通过该盒交，也不自动支付既定标签或全局 occurrence。下一决定性缺口因此
+收紧为：
 
-1. 对 range-pass 的 receipt 构造完整 target state、occurrence assignment 与既定标签
-   联合 SNF；
-2. 对 range-fail 或 (48) 的状态，构造另一 Type I/II terminal、完整 kernel source
+1. 对 profile-pass 的 receipt 构造完整 target state、occurrence assignment、共同基
+   target 与既定标签联合 SNF；
+2. 对 profile-box-empty 或 (48) 的状态，构造另一 Type I/II terminal、完整 kernel source
    box，或已封闭的良基下降；
 3. 对 \(\dim\langle\gamma\rangle>1\) 的需求，先用
    [源格障碍过滤的短正合列与上尾 Hall 容量](type-I-source-lattice-filtered-dual-tail-hall-capacity.md)
    对 fixed-layer 请求计算原层障碍秩，对 unlayered 请求计算基不变的上尾代数缺口；
-   再为通过者证明真实 carrier 的范围、标签与 occurrence
+   再为通过者调用有限源剖面盒交生成真实范围边，并证明标签与 occurrence
    Hall/Rado 条件，不能复制本卡的一维块。
 
 ## 聚焦验证

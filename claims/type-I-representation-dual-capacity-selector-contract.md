@@ -105,6 +105,7 @@ depends_on:
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
   - type-I-source-lattice-qheight-dual-valuation-shift-carrier
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
+  - type-I-source-lattice-owner-window-affine-profile-admission
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -226,6 +227,8 @@ sources:
     role: minimal-source-lattice-qheight-dual-and-valuation-shift-admission
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
+  - claim: type-I-source-lattice-owner-window-affine-profile-admission
+    role: finite-source-integer-dual-profile-owner-window-admission
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -1209,6 +1212,21 @@ source prime \(q\) 和层 \(j\)，存在残数数目最优的有限 matched-carr
 各自最小深度的上尾 Hall 计数。失败输出基不变的严格容量缺口，通过者仍须把范围、标签、
 occurrence 与 source-switch 边交给一般 Hall/Rado。完整判据见
 [源格障碍过滤的短正合列与上尾 Hall 容量](type-I-source-lattice-filtered-dual-tail-hall-capacity.md)。
+
+fixed-layer 请求在原层准入，或 unlayered 上尾分派通过并冻结 \(J\) 后，范围门都不再
+使用“逐相位任选 owner”代理。对每个已经冻结的角色—层对及其非空带基点有限源记录集
+\(X\)（规范选择 \(z_0\in X\)），同一整数 \(q\)-height 对偶产生内禀仿射
+profile 格 \(\mathcal P_{J,X}\)。真实 owner 范围准入恰当且仅当
+\[
+\mathcal P_{J,X}\cap[0,M_J]^X\ne\varnothing;
+\]
+等价地，某个允许对偶的整数高度振幅不超过 \(M_J\)。成功回执保存
+\((a,y,c,u)\) 和 canonical owner 顶点；盒交为空时保存逐盒点 Smith 整除失败。
+本地单射、统一标签重数与“另有数值不同的 deep index”也可在同一有限交中精确判定，
+但最后一项既不是全局 occurrence iff，也不是共同基 next-layer toggle。完整判据见
+[有限源集 q-height 对偶剖面的 owner 窗口仿射格准入](type-I-source-lattice-owner-window-affine-profile-admission.md)。
+因此一般物理图现在应先用 profile 盒交生成范围边，再与 prescribed label、共同基
+target、全局 occurrence 和 source-switch 边相交；只在交图上运行 Hall/Rado。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子

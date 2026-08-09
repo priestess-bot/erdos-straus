@@ -58,6 +58,8 @@ sources:
   role: minimal-source-lattice-qheight-dual-valuation-shift-and-window-obstruction
 - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
   role: multi-role-obstruction-filtration-and-exact-tail-capacity
+- claim: type-I-source-lattice-owner-window-affine-profile-admission
+  role: finite-source-owner-window-affine-profile-and-local-depth-capacity
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -4472,3 +4474,54 @@ occurrence、source-switch 全部合格的层槽；若这些额外门删边后�
 `TAIL_MATCH_READY` 本身不是终端，也不自动给出 target state、Kneser 价格、E4 或 E5。
 详见
 [源格障碍过滤的短正合列与上尾 Hall 容量](../claims/type-I-source-lattice-filtered-dual-tail-hall-capacity.md)。
+
+## 2026-08-10：有限源集的真实 owner 范围门已化为仿射格盒交
+
+上尾容量只说明角色在某层有整数 \(q\)-height 对偶，并不说明同一个对偶能把实际有限
+源集的全部记录同时放入 \(0<4s<p\) 的 owner 窗口。这个缺口现有精确判据。取
+\(L\) 的整数基矩阵 \(\mathbf B_L\)，令
+\[
+\mathcal Y_J
+=\{y\in\mathbb Z^r:\exists a\in\mathbb Z^d,\
+\mathbf B_L^Ta=q^Jy,\ y\equiv g\pmod q\}.
+\]
+对带基点记录集 \(X\) 的坐标矩阵 \(N_X\)，全部 owner 指标剖面构成内禀仿射格
+\[
+\mathcal P_{J,X}
+=\{c\mathbf1+N_Xy:c\in\mathbb Z,\ y\in\mathcal Y_J\}.
+\]
+若窗口指标为 \(0,\ldots,M_J\)，则存在同一个整数对偶和同一个平移实现全部记录，
+当且仅当
+\[
+\boxed{\mathcal P_{J,X}\cap[0,M_J]^X\ne\varnothing.}
+\]
+等价地，某个 \(y\in\mathcal Y_J\) 的高度剖面振幅不超过 \(M_J\)；固定 \(y\)
+的全部平移是
+\[
+[-\min_Xh_y,\ M_J-\max_Xh_y]\cap\mathbb Z.
+\]
+
+这个无限格问题还有完全有限的严格判定：枚举 owner 盒中的 \(u\)，把
+\(\mathbf B_L^Ta=q^J(g+qk)\) 与
+\(u=c\mathbf1+N_X(g+qk)\) 合成一个固定整数矩阵；每个盒点由同一 Smith 分解判定。
+若盒交为空，每个 \(u\) 的首个整除失败组成可重放的严格证书。证书最坏是指数大小，
+因此它不是最终所需的统一短证书，但已经把“range 未证明”改成正负都可决定的物理前门。
+
+二点情形进一步闭合：若
+\(\mathcal Y_J=y_0+\Lambda_J\)、差坐标为 \(n\)，则可能的整数高度差是
+\[
+n^Ty_0+\gcd(n^T\Lambda_J)\mathbb Z,
+\]
+范围通过当且仅当这个一维仿射理想到 0 的距离不超过 \(M_J\)。严格控制
+\(p=97,q=3,J=1\) 中，\(X=\{0,7\}\) 在边界上通过并得到 labels \(2,23\)，
+而 \(X=\{0,8\}\) 虽然 q-height dual 存在，最小振幅仍为 8，大于 \(M_1=7\)，
+故全盒严格失败。
+
+本地标签单射、统一重数和未被 source 数值使用的 deep index 也成为同一有限盒交的
+精确子条件，但必须守住物理边界：本地未使用的数值不等于全局 occurrence 可用，
+canonical deep owner 也不自动属于 source 共同基 target 菜单。上述正控制的本地
+deep label \(5\) 就因共同基仅为 1 而不能升级成 next-layer toggle。当前决定性缺口
+因此收缩为：把通过 profile 盒交的边与 prescribed label、共同基 target、全局
+occurrence 和 source-switch 同时相交；若交图出现 Hall/Rado 缺口，把它接到另一
+Type I/II terminal、完整 kernel source box 或保持标记的严格下降。详见
+[有限源集 q-height 对偶剖面的 owner 窗口仿射格准入](../claims/type-I-source-lattice-owner-window-affine-profile-admission.md)。
