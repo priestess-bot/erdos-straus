@@ -275,6 +275,32 @@ def profile(
     else:
         cluster_subgroup_order = 1
         cluster_subgroup_depth = None
+    cluster_quotient: dict[str, object] | None = None
+    if cluster_subgroup_order > 1:
+        if cluster_subgroup_depth is None:
+            raise AssertionError("nontrivial cluster subgroup has no quotient depth")
+        quotient_modulus = 1 << cluster_subgroup_depth
+        quotient_moduli = tuple(moduli[:-1]) + (quotient_modulus,)
+
+        def project_to_cluster_quotient(element: Element) -> Element:
+            return tuple(
+                coordinate % modulus
+                for coordinate, modulus in zip(element, quotient_moduli)
+            )
+
+        quotient_source_set = {
+            project_to_cluster_quotient(source) for source in source_set
+        }
+        quotient_target = project_to_cluster_quotient(target)
+        if quotient_target in quotient_source_set:
+            raise AssertionError("cluster quotient unexpectedly hit the target")
+        cluster_quotient = {
+            "moduli": list(quotient_moduli),
+            "target": list(quotient_target),
+            "source_count": len(quotient_source_set),
+            "target_missing": True,
+            "strict": True,
+        }
     cluster = {
         "cell": list(cluster_cell),
         "members": [list(exponent) for exponent in cluster_members],
@@ -282,6 +308,7 @@ def profile(
         "relations": cluster_relations,
         "subgroup_order": cluster_subgroup_order,
         "subgroup_depth": cluster_subgroup_depth,
+        "quotient": cluster_quotient,
         "status": (
             "DYADIC_RELATION_SUBGROUP_CANDIDATE"
             if len(cluster_members) >= 2
@@ -444,6 +471,9 @@ def verify() -> None:
     assert packed["cluster"]["relation_count"] == 2
     assert packed["cluster"]["subgroup_order"] == 8
     assert packed["cluster"]["status"] == "DYADIC_RELATION_SUBGROUP_CANDIDATE"
+    assert packed["cluster"]["quotient"]["moduli"] == [2, 2]
+    assert packed["cluster"]["quotient"]["target_missing"] is True
+    assert packed["cluster"]["quotient"]["strict"] is True
     assert packed["cluster"]["binary_capacity_lower_bound"] == 2
     assert packed["packing_status"] == "SHORT_DYADIC_LAYER_RELATION"
     assert packed["packing_pair"] is not None
