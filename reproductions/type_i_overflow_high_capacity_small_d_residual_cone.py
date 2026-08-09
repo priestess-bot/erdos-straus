@@ -90,7 +90,7 @@ def exchange_route(p: int, n: int, M: int, d: int, A: int, b: int) -> dict[str, 
 def fold_route(p: int, n: int, M: int, d: int, A: int, carrier: int) -> dict[str, int]:
     B = (p - 1) ** 2 // 4
     threshold = floor_shell_threshold(B, A)
-    assert threshold <= carrier <= B and M % carrier == 0
+    assert threshold <= carrier <= B
     assert (M * d) % carrier == 0 and B // carrier < B // A
     quotient, remainder = divmod(M * d // carrier, p)
     assert 1 <= remainder < p
@@ -142,7 +142,7 @@ def classify(p: int, n: int, M: int, d: int, A: int) -> str:
     if d < b < p:
         exchange_route(p, n, M, d, A, b)
         return "exchange"
-    shell_divisors = [candidate for candidate in divisors(b) if threshold <= candidate <= B]
+    shell_divisors = [candidate for candidate in divisors(b * d) if threshold <= candidate <= B]
     if shell_divisors:
         carrier = max(shell_divisors)
         fold_route(p, n, M, d, A, carrier)
@@ -170,6 +170,7 @@ def verify() -> None:
         "intermediate_divisor_fold": (73, 27505, 501966, 1, 18),
         "sub_double_cofactor_fold": (73, 317, 5785, 1, 65),
         "composite_shell_fold": (73, 23381, 426703, 1, 53),
+        "dilated_cofactor_fold": (73, 7553, 68921, 2, 41),
         "floor_shell_residual": (73, 645, 11771, 1, 149),
         "ultra_prime_residual": (73, 1585, 28926, 1, 18),
         "composite_gap_residual": (73, 37617, 686510, 1, 110),
@@ -184,12 +185,14 @@ def verify() -> None:
                 "intermediate_divisor_fold",
                 "sub_double_cofactor_fold",
                 "composite_shell_fold",
+                "dilated_cofactor_fold",
             }
         },
         "sharp_dual": "dual",
         "intermediate_divisor_fold": "cofactor_divisor_fold",
         "sub_double_cofactor_fold": "cofactor_divisor_fold",
         "composite_shell_fold": "cofactor_divisor_fold",
+        "dilated_cofactor_fold": "cofactor_divisor_fold",
     }
     print("verified high-capacity small-d exact floor-shell route split")
     for name, fixture in fixtures.items():
@@ -199,7 +202,7 @@ def verify() -> None:
         P = r * d
         b = M // A
         threshold = floor_shell_threshold(B, A)
-        shell_divisors = [candidate for candidate in divisors(b) if threshold <= candidate <= B]
+        shell_divisors = [candidate for candidate in divisors(b * d) if threshold <= candidate <= B]
         print(
             name,
             "p", p,

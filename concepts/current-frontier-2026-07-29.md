@@ -3541,20 +3541,23 @@ A<\Theta_p(A)\le2A.
 \]
 因此若 \(P=rd\ge\Theta_p(A)\)，直接取 \(L=P\) 得 fixed-\(s\) 的完整外层
 递降；否则余因子 dispatcher 依次处理 \(dg<p\) 的因子转移、\(d<b<p\) 的交换，
-以及任意 \(t\mid b\) 且 \(\Theta_p(A)\le t\le B_p\) 的 fixed-\(n\) 商折叠。
+以及任意 \(t\mid bd\) 且 \(\Theta_p(A)\le t\le B_p\) 的 fixed-\(n\) 商折叠。
+这里仅需 \(t\mid Md\)，故不能错误额外要求 \(t\mid M\)。
 未闭合算术状态遂满足
 
 \[
 P<\Theta_p(A),\qquad b>p,\qquad
-\{t:t\mid b,\ \Theta_p(A)\le t\le B_p\}=\varnothing.
+\{t:t\mid bd,\ \Theta_p(A)\le t\le B_p\}=\varnothing.
 \]
 
-其中 \(b<\Theta_p(A)\) 仍强制 \(A>(p-1)/2\)，而 \(b>B_p\) 分支还可保留复合的
+其中 \(bd<\Theta_p(A)\) 仍强制 \(A>(p-1)/2\)，而 \(bd>B_p\) 分支还可保留复合的
 精确壳缺口，不能误缩约成素数余因子。特别地，\(\Pi_p(A)=1\) 时
 \(\Theta_p(A)=B_p+1\)，明确识别出没有 bounded-support reset 可支付的顶层容量壳。
 两个新控制说明旧 \(2A\) 门并非边界：\((p,A,d,P,b)=(73,83,4,164,1559)\) 在
 \(87=\Theta_p(A)\le164<2A\) 时由 fixed-\(s\) 关闭，而
-\((73,53,1,18,83\cdot97)\) 的 \(t=97\) 也在精确壳中折叠。该收紧仍不是全局
-选择器闭合，但把此前 \(M\ge2B_p,\ A\ge c,\ d^2<p\) 的边界压成
+\((73,53,1,18,83\cdot97)\) 的 \(t=97\) 也在精确壳中折叠。进一步，
+\((p,A,d,b)=(73,41,2,41^2)\) 的 \(L=82\) 不整除 \(M\)，却整除 \(Md\)，并给出
+商折叠到 \((M_T,d_T,n_T)=(82,2,9)\)。该收紧仍不是全局选择器闭合，但把此前
+\(M\ge2B_p,\ A\ge c,\ d^2<p\) 的边界压成
 prethreshold 高支撑/精确除子缺口两个明确锥；相应主张卡见
-[高容量小 \(d\) overflow 的精确容量壳/余因子残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)。
+[高容量小 \(d\) overflow 的精确容量壳/余因子—分母积残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)。

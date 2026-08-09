@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-I-overflow-high-capacity-small-d-residual-cone
-title: 高容量小 d overflow 的精确容量壳/余因子残余锥
+title: 高容量小 d overflow 的精确容量壳/余因子—分母积残余锥
 statement: >-
   设 p≡1 (mod 24) 的 verified overflow 满足 pn=4Md+1、2B_p≤M、d^2<p，且携带
   c=(p−1)/4≤A≤B_p、A|M 以及 source/path、Sol(p)、E1--E5 合同。令
@@ -9,9 +9,9 @@ statement: >-
   Θ_p(A)=floor(B_p/Π_p(A))+1。该 Θ_p(A) 是严格降低外层秩的最小有界载体，
   且 A<Θ_p(A)≤2A。若 P≥Θ_p(A)，则 L=P 给出完整 fixed-s 严格外层秩递降；
   若 P<Θ_p(A)，则余因子 dispatcher 依次给出 dg<p 的因子转移、d<b<p 的交换，或
-  b 的某个壳除子 t（Θ_p(A)≤t≤B_p）的 fixed-n 商模 p 折叠。因 d^2<p，所有
-  未分流状态必满足 P<Θ_p(A)、b>p、每个 q|b 有 dq≥p，并且 b 在闭区间
-  [Θ_p(A),B_p] 没有除子；特别地 b<Θ_p(A) 或 b>B_p，前一类还强制
+  bd 的某个壳除子 t（Θ_p(A)≤t≤B_p）的 fixed-n 商模 p 折叠。因 d^2<p，所有
+  未分流状态必满足 P<Θ_p(A)、b>p、每个 q|b 有 dq≥p，并且 bd 在闭区间
+  [Θ_p(A),B_p] 没有除子；特别地 bd<Θ_p(A) 或 bd>B_p，前一类还强制
   A>(p−1)/2。Π_p(A)=1 时 Θ_p(A)=B_p+1，明确记录为无 bounded-support
   reset 的顶层容量壳。该二分严格收紧旧的 2A 充分门，但不声称余项已经有
   Type I/II 终端或全局递降。
@@ -30,6 +30,7 @@ topics:
   - small-d
   - fixed-s
   - cofactor
+  - denominator-product
   - floor-shell
   - outer-rank
   - residual-cone
@@ -48,7 +49,7 @@ visibility: public
 last_checked: '2026-08-09'
 ---
 
-# 高容量小 \(d\) overflow 的精确容量壳/余因子残余锥
+# 高容量小 \(d\) overflow 的精确容量壳/余因子—分母积残余锥
 
 ## 设置
 
@@ -229,16 +230,16 @@ d\,\operatorname{spf}(b)\le d^2<p.
 
 同样给出完整 E1--E5 和相同势的严格下降。
 
-定义余因子精确容量壳除子集
+定义余因子—分母积的精确容量壳除子集
 
 \[
-\mathcal D_b^{\Theta}(A):=
-\{t:t\mid b,\ \Theta_p(A)\le t\le B_p\}.
+\mathcal D_{bd}^{\Theta}(A):=
+\{t:t\mid bd,\ \Theta_p(A)\le t\le B_p\}.
 \tag{17}
 \]
 
-若 \(\mathcal D_b^{\Theta}(A)\ne\varnothing\)，令 \(t_*\) 为其中最大的除子，并取
-\(L=t_*\)。由于 \(t_*\mid b\mid M\mid Md\)，有
+若 \(\mathcal D_{bd}^{\Theta}(A)\ne\varnothing\)，令 \(t_*\) 为其中最大的除子，并取
+\(L=t_*\)。由于 \(bd\mid Md\)，从而 \(t_*\mid Md\)，有
 
 \[
 A<L\le B_p,
@@ -265,7 +266,8 @@ M_T=L,\qquad d_T=\delta,\qquad n_T=n-4Lh,\qquad A_T=L
 \]
 
 的完整 E1--E5 后继。这里 \(L\) 不要求等于 \(b\)，也不要求是素数；它可以是
-\(b\) 的任意壳内复合除子。又不需要另加 \(4L>n\)，因为长商由折叠恒等式处理。
+\(bd\) 的任意壳内复合除子，也可以是一个 \(d\)-因子与余因子的乘积。又不需要另加
+\(4L>n\)，因为长商由折叠恒等式处理。
 
 ## 残余锥
 
@@ -276,20 +278,20 @@ M_T=L,\qquad d_T=\delta,\qquad n_T=n-4Lh,\qquad A_T=L
 \[
 P<\Theta_p(A),
 \qquad b>p,
-\qquad \mathcal D_b^{\Theta}(A)=\varnothing,
+\qquad \mathcal D_{bd}^{\Theta}(A)=\varnothing,
 \qquad d q\ge p\quad(q\mid b\text{ 为素数}).
 \tag{21}
 \]
 
-因为 \(b\) 本身是其除子，\(\mathcal D_b^{\Theta}(A)=\varnothing\) 必然推出
+因为 \(bd\) 本身是其除子，\(\mathcal D_{bd}^{\Theta}(A)=\varnothing\) 必然推出
 
 \[
-b<\Theta_p(A)\qquad\text{或}\qquad b>B_p.
+bd<\Theta_p(A)\qquad\text{或}\qquad bd>B_p.
 \tag{22}
 \]
 
 这是一个穷尽的算术二分。由 (7)，第一种分支还给出高支撑必要条件：若
-\(b<\Theta_p(A)\)，则
+\(bd<\Theta_p(A)\)，则
 
 \[
 2B_p\le M=Ab<2A^2,
@@ -300,9 +302,9 @@ A>\sqrt{B_p}=\frac{p-1}{2}.
 
 因此真正未由本菜单处理的高容量小 \(d\) 状态只落在：
 
-1. \(P<\Theta_p(A)\)、\(p<b<\Theta_p(A)\)、\(A>(p-1)/2\) 的
+1. \(P<\Theta_p(A)\)、\(p<b\)、\(bd<\Theta_p(A)\)、\(A>(p-1)/2\) 的
    prethreshold 高支撑余项；或
-2. \(P<\Theta_p(A)\)、\(b>B_p\)，且 \(b\) 的全部除子都避开
+2. \(P<\Theta_p(A)\)、\(bd>B_p\)，且 \(bd\) 的全部除子都避开
    \([\Theta_p(A),B_p]\) 的精确超容量壳缺口。
 
 当 \(\Pi_p(A)=1\) 时，(8) 表明第一类允许 \(b\le B_p\)，但这不是一个遗漏的
@@ -314,7 +316,7 @@ generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (2
 
 ## 聚焦回执
 
-算术回执脚本覆盖以下十一种状态：
+算术回执脚本覆盖以下十二种状态：
 
 \[
 \begin{array}{c|c}
@@ -327,6 +329,7 @@ generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (2
 (73,27505,501966,1,18)&t=353\mid b=79\cdot353\text{ 的壳除子折叠}\\
 (73,317,5785,1,65)&\Theta_p(A)=69\le b=89<2A\text{ 的壳除子折叠}\\
 (73,23381,426703,1,53)&t=97\mid b=83\cdot97,\ \Theta_p(A)=55\text{ 的壳除子折叠}\\
+(73,7553,68921,2,41)&L=82=2\cdot41\mid bd,\ \Theta_p(A)=42\text{ 的乘积壳折叠}\\
 (73,645,11771,1,149)&p<b=79<\Theta_p(A)=163\text{ 的 prethreshold 残余}\\
 (73,1585,28926,1,18)&\text{素数超容量残余}\\
 (73,37617,686510,1,110)&b=79^2\text{ 的复合精确壳缺口残余}
@@ -334,11 +337,12 @@ generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (2
 \]
 
 其中五元组顺序为 \((p,n,M,d,A)\)。这些控制只验证算术分类、规范图表和势支付。
-第 2、7、8 条分别说明：精确阈值能关闭 \(P<2A\) 的 fixed-\(s\) 行，以及
-旧 \(2A\) 门遗漏的单一和复合余因子折叠。第 11 条的
-\(\operatorname{Div}(b)=\{1,79,6241\}\) 与
+第 2、7、8、9 条分别说明：精确阈值能关闭 \(P<2A\) 的 fixed-\(s\) 行，
+旧 \(2A\) 门遗漏的单一和复合余因子折叠，以及 \(L\nmid M\) 仍可由
+\(L\mid Md\) 调用的乘积壳折叠。第 12 条的
+\(\operatorname{Div}(bd)=\{1,79,6241\}\) 与
 \([\Theta_p(A),B_{73}]=[118,1296]\) 不相交，严格否定“精确壳余项余因子必为素数”的
-错误缩约。第 9 条保留真实的 \(b<\Theta_p(A)\) 边界。所有控制都不提供新的
+错误缩约。第 10 条保留真实的 \(bd<\Theta_p(A)\) 边界。所有控制都不提供新的
 source/path 可达性，也不替代全局 F/G 选择器。
 
 复现命令：
