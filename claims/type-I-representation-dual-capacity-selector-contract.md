@@ -106,6 +106,7 @@ depends_on:
   - type-I-source-lattice-qheight-dual-valuation-shift-carrier
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
+  - type-I-owner-profile-canonical-base-target-slot-capacity
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -229,6 +230,8 @@ sources:
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
     role: finite-source-integer-dual-profile-owner-window-admission
+  - claim: type-I-owner-profile-canonical-base-target-slot-capacity
+    role: canonical-common-source-base-prescribed-target-and-phase-slot-capacity
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -348,6 +351,7 @@ q-primary 块：
 | `physical_occurrence_assignment` | 不含 edge id 的 source/target `(state_id,value,q,layer)` 键、内容寻址 assignment、`claimed_by` 与冲突回执；仅精确重放幂等，任意部分重叠不得再收费 |
 | `adjacent_fixed_base_lift` | endpoint gcd、共同算术行基 \(D_0\)、唯一 \((D_*,A,x)\)、\(\beta_j\) 与 exact-\(q^j\) E2 回执 |
 | `nonadjacent_common_base_lift` | \(D_0\mid\gcd(s_m,s_n)\)、平方除子菜单 \(x\mid D_0^2\)、余因子碰撞、唯一 deep endpoint 与目标下一层继承 |
+| `canonical_profile_target_join` | 同一整数剖面 \((a,y,c,u)\)、全部 source labels 的唯一共同规范基 \(D\)、指定目标的 \(D_x\mid D\) 与按相位数字分层的局部槽容量；不得用 arithmetic gcd-base 代理 |
 | `target_q_primary_lift` | 实际类 \([q]\in U(4D_*)\) 的阶及既定 SNF/\(\eta\)；环境群含 q-torsion 本身不支付源秩 |
 | `strict_source_switch_candidate` | \(D_*<D_0\) 只记局部参数下降；权威状态、marked lift 与 non-resetting 势未齐时不得升级 E5 |
 | `d1_raw_menu` | \(h\mid p+4,\ h\equiv3\pmod4\) 的完整 \(D=1\) 单因子菜单、终端或严格空菜单 |
@@ -1225,8 +1229,40 @@ profile 格 \(\mathcal P_{J,X}\)。真实 owner 范围准入恰当且仅当
 本地单射、统一标签重数与“另有数值不同的 deep index”也可在同一有限交中精确判定，
 但最后一项既不是全局 occurrence iff，也不是共同基 next-layer toggle。完整判据见
 [有限源集 q-height 对偶剖面的 owner 窗口仿射格准入](type-I-source-lattice-owner-window-affine-profile-admission.md)。
-因此一般物理图现在应先用 profile 盒交生成范围边，再与 prescribed label、共同基
-target、全局 occurrence 和 source-switch 边相交；只在交图上运行 Hall/Rado。
+通过范围门后，共同 canonical source base 与 prescribed target 不再保留为抽象后处理。
+若请求绑定了目标 \(x\)，先检查 \(0<4x<p\) 与
+\(x\equiv\beta_J\pmod{q^J}\)；以下联合只讨论该门已经通过的目标。
+对每个 profile 元组 \(u\)，标签 \(s_z=\beta_J+q^Ju_z\) 的规范源基
+
+\[
+D_{s_z}=\prod_\ell\ell^{\lceil v_\ell(s_z)/2\rceil}
+\]
+
+必须在全部 \(z\in X\) 上相同；固定 \(D\) 的所有 source slots 恰为
+\(D^2/c\)、\(c\mid\operatorname{rad}(D)\)。指定目标 \(x\) 可由同一 \(D\) 的
+除子格支持，当且仅当 \(D_x\mid D\)。因此联合准入精确为
+
+\[
+\mathcal P_{J,X}\cap
+\bigcup_{\substack{1\le D\le B_p\\D_x\mid D}}
+\mathcal U_J(D;p)^X\ne\varnothing.
+\]
+
+若为空，分别输出共同规范源基或指定目标联合空集证书，而不能用
+\(D\mid\gcd(endpoints)\) 的共同算术行基代理。固定 \(D\) 下按下一层 owner 数字计数
+\(n_r\) 后，全部非零 pair 是完全 \(q\)-部图，deep--shallow pair 是完全二部图；其
+匿名不交容量分别为
+
+\[
+\min\{\lfloor N/2\rfloor,N-\max n_r\},
+\qquad
+\min\{n_{\delta_J},N-n_{\delta_J}\}.
+\]
+
+加入 deep 且满足实际 \(q\)-order 门的 distinct target slots 后，局部三部算术容量是
+三类槽数的最小值。带名 profile、标签与 target 耦合仍须在 surviving finite graph
+上运行匹配/Rado；全局 occurrence、E4 和 marked E5 仍在其后。完整判据见
+[owner 剖面的规范共同源基、指定目标准入与相位槽容量](type-I-owner-profile-canonical-base-target-slot-capacity.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子

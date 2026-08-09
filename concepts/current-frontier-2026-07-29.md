@@ -60,6 +60,8 @@ sources:
   role: multi-role-obstruction-filtration-and-exact-tail-capacity
 - claim: type-I-source-lattice-owner-window-affine-profile-admission
   role: finite-source-owner-window-affine-profile-and-local-depth-capacity
+- claim: type-I-owner-profile-canonical-base-target-slot-capacity
+  role: canonical-common-source-base-prescribed-target-and-phase-slot-capacity
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -4525,3 +4527,62 @@ deep label \(5\) 就因共同基仅为 1 而不能升级成 next-layer toggle。
 occurrence 和 source-switch 同时相交；若交图出现 Hall/Rado 缺口，把它接到另一
 Type I/II terminal、完整 kernel source box 或保持标记的严格下降。详见
 [有限源集 q-height 对偶剖面的 owner 窗口仿射格准入](../claims/type-I-source-lattice-owner-window-affine-profile-admission.md)。
+
+## 2026-08-10：共同规范源基与指定 target 已并入同一 profile 见证
+
+上一节留下的“共同基 target”不能只用 endpoint gcd 处理。共同算术行基
+\(D\mid\gcd(s_0,s_1)\) 不要求两行属于同一个 canonical Type II source state。
+新的逆引理证明：若
+
+\[
+s=Da,\qquad a\mid D,\qquad D/a\text{ 平方自由},
+\]
+
+则 \(D\) 被 \(s\) 唯一强制为
+
+\[
+D_s=\prod_\ell\ell^{\lceil v_\ell(s)/2\rceil}.
+\]
+
+固定 \(D\) 的全部规范源标签恰为
+
+\[
+\left\{D^2/c:c\mid\operatorname{rad}(D)\right\}.
+\]
+
+加入 \(q^J\)-owner 前缀与范围后得到有限槽集
+\(\mathcal U_J(D;p)\)。因此对 profile 仿射格 \(\mathcal P_{J,X}\) 和已经通过同一
+owner prefix/range 门的指定目标 \(x\)，
+同一个整数对偶、平移、共同规范源基与 target 除子格参数同时存在，当且仅当
+
+\[
+\boxed{
+\mathcal P_{J,X}\cap
+\bigcup_{\substack{1\le D\le B_p\\D_x\mid D}}
+\mathcal U_J(D;p)^X\ne\varnothing.}
+\]
+
+这把原先分离的存在量词合成同一个有限见证。严格控制
+\(p=97,q=3,J=1,X=\{0,4\}\) 的整个 profile 虽含 labels \(8,20\) 且共同 gcd-base
+为 4，却没有任何共同 canonical base；因为 \(D_8=4,D_{20}=10\)。正控制
+\(p=2113,X=\{0,70\}\) 只有 \(D=35,70\) 两个共同基 profile，而指定 target
+\(x=14\) 唯一选出 \(D=70\) 及 labels \(140,350\)；指定 \(x=65\) 则严格为空。
+
+固定 \(D\) 的槽还产生闭式容量映射。按下一层 owner 数字分部，全部非零横向 pair
+构成完全 \(q\)-部图，最大不交容量为
+
+\[
+\min\{\lfloor N/2\rfloor,N-\max_r n_r\};
+\]
+
+deep--shallow 图为完全二部图，容量为
+\(\min(n_{\delta_J},N-n_{\delta_J})\)。再加入 deep 且
+\(q\mid\operatorname{ord}_{4D_x}(q)\) 的 target slots，匿名三部算术容量是三类槽数
+的最小值。对 \(D=70\) 的正控制，source 容量为 1，合格 targets 为 \(14,140\)，
+但三部不交容量仍为 1。
+
+当前决定性缺口不再是 profile、canonical source base 与 target 菜单之间的联合量词。
+剩余的是带名耦合：prescribed role/label 和全局 occurrence 会从上述完全图删边；若实际
+有限超图失配，必须把严格缺口送入完整 kernel source box、直接 Type I/II 终端或
+不可重置的 marked 良基下降。详见
+[owner 剖面的规范共同源基、指定目标准入与相位槽容量](../claims/type-I-owner-profile-canonical-base-target-slot-capacity.md)。
