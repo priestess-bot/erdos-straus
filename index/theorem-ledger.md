@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 580 |
+| 数学状态 | `established` | 581 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 416 |
+| 证明来源 | `repository_derivation` | 417 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 552 |
+| 审阅状态 | `internal_review` | 553 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -559,6 +559,7 @@
 | [五千万前缀的Type I八移位闭合](../claims/type-I-multitier-short-shift-closure-50m.md) (`type-I-multitier-short-shift-closure-50m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [千万前缀的Type I多层短源闭合](../claims/type-I-multitier-short-source-closure-10m.md) (`type-I-multitier-short-source-closure-10m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [百万前缀的Type I多层短源闭合](../claims/type-I-multitier-short-source-closure-1m.md) (`type-I-multitier-short-source-closure-1m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [非循环固定层稳定子商的规范 Fourier 证书](../claims/type-I-noncyclic-stabilizer-quotient-fourier.md) (`type-I-noncyclic-stabilizer-quotient-fourier`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type I 偶源桥的二进截断半密度判据](../claims/type-I-normal-even-source-parity-truncated-density-criterion.md) (`type-I-normal-even-source-parity-truncated-density-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [Type I 偶源桥比二除子残数的半密度入口引理](../claims/type-I-normal-even-source-ratio-two-density-criterion.md) (`type-I-normal-even-source-ratio-two-density-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [Type I 偶源桥的比二普通除子对等价](../claims/type-I-normal-even-source-ratio-two-pair.md) (`type-I-normal-even-source-ratio-two-pair`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
