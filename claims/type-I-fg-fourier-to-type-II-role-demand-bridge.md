@@ -286,3 +286,9 @@ F 型 Fourier 幅度给出相位预算，但角色阶本身不等于 q-height。
 都已枚举、或 q 请求闭包后必然命中/递降。剩余的决定性全称命题因此被缩小为：
 证明 F 型非恒相位角色的 source-map 完备性，或证明
 \(\mathrm{FOURIER\_ROLE\_NO\_ARITHMETIC\_LIFT}\) 能转成 Type I/F/G 或全局良基秩。
+
+多角色进入物理选择器前还须把
+\(\langle\chi_q|_{\Delta_Q}\rangle\) 与每条带 provenance 的 source relation
+放进同一求值配对；相关角色不能只取基后删除其余物理义务。该 typed 接口和精确
+generalized Rado 条件见
+[F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。

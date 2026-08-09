@@ -108,6 +108,7 @@ depends_on:
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
   - type-I-prescribed-target-occurrence-rado-contraction
+  - type-I-fg-dependent-role-evaluation-rado-tensor-selector
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -235,6 +236,8 @@ sources:
     role: canonical-common-source-base-prescribed-target-and-phase-slot-capacity
   - claim: type-I-prescribed-target-occurrence-rado-contraction
     role: fixed-target-incremental-occurrence-cut-and-rectangular-hall-rado-contraction
+  - claim: type-I-fg-dependent-role-evaluation-rado-tensor-selector
+    role: dependent-role-evaluation-generalized-rado-and-tensor-sumset-selector
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -356,6 +359,7 @@ q-primary 块：
 | `nonadjacent_common_base_lift` | \(D_0\mid\gcd(s_m,s_n)\)、平方除子菜单 \(x\mid D_0^2\)、余因子碰撞、唯一 deep endpoint 与目标下一层继承 |
 | `canonical_profile_target_join` | 同一整数剖面 \((a,y,c,u)\)、全部 source labels 的唯一共同规范基 \(D\)、指定目标的 \(D_x\mid D\) 与按相位数字分层的局部槽容量；不得用 arithmetic gcd-base 代理 |
 | `prescribed_target_occurrence_contraction` | fresh/replay 预处理、固定且不含 edge id 的 target key、共享 occurrence 容量 \(b_O\)、target 预收费 \(m_T\)、\(d=t(r)\) 的私有零增量 atom、其它 deep 的残余容量 \(b_O-m_T\)、shallow/独立 \(\ell\)-column atoms、矩形性及三组 Hall--Rado cut；target 随候选变化时必须拒绝收缩 |
+| `dependent_role_evaluation_selector` | 全部物理请求、共同角色空间 \(R\)、同一 source-SNF table 的求值配对、每条 edge 的 \(\kappa(e)\in R^*\)、真实角色秩 \(k\)、generalized Rado cut \(\operatorname{rank}\kappa(A(U))+n-|U|\ge k\)；规定真子空间时保存 rank-one tensor sumset、dual hitting cover 与 Fourier 卷积 |
 | `target_q_primary_lift` | 实际类 \([q]\in U(4D_*)\) 的阶及既定 SNF/\(\eta\)；环境群含 q-torsion 本身不支付源秩 |
 | `strict_source_switch_candidate` | \(D_*<D_0\) 只记局部参数下降；权威状态、marked lift 与 non-resetting 势未齐时不得升级 E5 |
 | `d1_raw_menu` | \(h\mid p+4,\ h\equiv3\pmod4\) 的完整 \(D=1\) 单因子菜单、终端或严格空菜单 |
@@ -1282,11 +1286,22 @@ D_{s_z}=\prod_\ell\ell^{\lceil v_\ell(s_z)/2\rceil}
 \(b_O-m_T\)。该预约只用于证明，完整 edge 选定后才原子写入 ledger。
 
 source 侧仍须保留增量 deep atom、shallow canonical slot 与共同 \(V_\ell\)-column。
-现有 column-Rado 定理只适用于物理请求方向本身构成独立 \(\ell\)-角色基的分支；
-相关角色若仍带不同物理义务，不能随基约化删除，也尚不能调用该定理，必须保留物理
-请求集、代数基集及二者的一般耦合。只有每个请求的 source 候选严格因子化为三类允许集
-的笛卡尔积时，完整选择才精确等价于 capacitated deep Hall、shallow Hall 与 column
-Rado。非矩形三候选 source 控制严格通过三个投影却无联合选择；甚至 fixed-\(D\) 的
+裸 column-Rado 只证明 source-rank matching；要解释为角色支付，必须从同一个 closed
+source-SNF table 构造角色空间 \(R\)、源关系空间及
+\(\kappa(e)(\rho)=\langle\rho,u_e\rangle\in R^*\)。相关角色若带不同物理义务，
+全部请求都保留；令 \(n\) 为物理请求数、\(k=\dim R\)，则完整矩形分支的精确
+column 条件改为
+\[
+\operatorname{rank}\kappa(A(U))+n-|U|\ge k
+\qquad(\forall U).
+\]
+它在 \(n=k\) 时恢复普通 Rado，在 \(n>k\) 时允许相关角色共享代数秩而不共享
+occurrence。若角色与 source columns 的共同求值尚未构造，输出
+ROLE_TO_COLUMN_EVALUATION_UNPROVED；不能比较两个裸秩。
+
+只有每个请求的 source 候选严格因子化为三类允许集的笛卡尔积时，完整选择才精确
+收缩为 capacitated deep Hall、shallow Hall 与上述 evaluation-Rado。非矩形三候选
+source 控制严格通过三个投影却无联合选择；甚至 fixed-\(D\) 的
 deep--shallow 投影为矩形时，四边 column twist 仍会使 (20) 与 Rado 分别通过而无
 联合选择。target 随候选变化时，
 两请求三候选也通过 source/target 投影 Hall 而无联合选择。Rado 缺口仅在
@@ -1294,7 +1309,9 @@ deep--shallow 投影为矩形时，四边 column twist 仍会使 (20) 与 Rado �
 \(p=4441\) 只证明匿名正容量不保证带名候选非空，\(p=10273\) 则分离 target 与 source
 occurrence 缺口；两者都是算术接口控制，不是完整 F/G states，role-SNF、完整 source
 table、E4 与 E5 仍必须另证。完整定理与控制见
-[指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](type-I-prescribed-target-occurrence-rado-contraction.md)。
+[指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](type-I-prescribed-target-occurrence-rado-contraction.md)
+与
+[相关角色求值、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子

@@ -76,6 +76,13 @@ f(r)\in\mathcal C(r),
 这里的“独立”是源关系容量的真实含义；只计槽数量而不看 \(v_c\) 会重复支付同一
 初等方向。
 
+式 (1) 本身只定义**裸 source-rank matching**。若要把它解释成 Fourier/关系角色
+已经支付，还必须从同一个 closed source-SNF table 构造角色空间 \(R\)、源关系空间
+\(L\) 和求值向量
+\(\kappa(c)(\rho)=\langle\rho,u_c\rangle\in R^*\)。裸 \(v_c\) 的独立性只有在另证
+\(v_c\mapsto\kappa(c)\) rank-preserving 时才等价于角色实现；否则应在
+\(\kappa\)-vectors 上运行 Rado。
+
 ## 2. Rado 秩—Hall 定理
 
 对任意请求子集 \(U\subseteq\mathcal R_\ell\)，令
@@ -157,8 +164,9 @@ v_{c_1}=(1,0),\qquad v_{c_2}=(0,1),
    \(\mathrm{SOURCE\_RANK\_FOURIER\_SEPARATION}\)；
 3. 若槽的允许集合因 SNF/CRT/范围为空，先输出 EDGE_OBSTRUCTED；不能把
    空邻域误报成线性秩缺口；
-4. 若角色请求本身并非线性独立，先在请求空间取基；pair-energy 边数不等于
-   \(|\mathcal R_\ell|\)。
+4. 若角色请求本身并非线性独立，但相关请求仍带不同物理义务，不能只取基并删除
+   请求。必须保留全部物理请求，并在已认证的角色求值向量上运行 generalized Rado
+   阈值；pair-energy 边数不等于独立角色秩。
 
 当 \(\rho(U)<|U|\) 且 \(U\) 已由非恒相位 Fourier 证明为独立需求时，这是一条
 固定纤维的 SOURCE_RANK_INCONSISTENT/容量不足证书；若只是在跨纤维合并后出现
@@ -167,8 +175,9 @@ v_{c_1}=(1,0),\qquad v_{c_2}=(0,1),
 ## 5. 与顶层核 Fourier 的接线
 
 锚点在差分群内时，anchor-rank dispatch 至少产生一个 \(\ell\)-初等角色方向。
-把多个独立顶层角色作为 \(\mathcal R_\ell\)，Rado 条件精确回答它们能否由实际
-保持纤维的 q 进源列支付。若通过，得到的独立源列基可送入
+把多个独立顶层角色作为 \(\mathcal R_\ell\)，Rado 条件精确回答能否选择相应的
+独立 source-rank resources；只有角色--源列求值配对也通过时，才回答这些资源是否
+支付实际角色。若通过，得到的独立源列基可送入
 type-II-cross-state-source-demand-hall-capacity-bridge；若失败，秩缺口本身就是
 该纤维不能支持声称角色数量的严格回执。
 
@@ -182,6 +191,10 @@ type-II-cross-state-source-demand-hall-capacity-bridge；若失败，秩缺口�
 线性拟阵证书，严格补上普通 Hall 数量容量遗漏的重复方向问题。它仍不证明
 LINEAR_RANK_DEFICIT 一定给出核心素数下降；下一步需要把秩缺口与稳定子商的
 composition relay、Type I/F/G 出口或带标签的 source-switch 递降连接起来。
+
+角色求值配对、相关角色保留全部物理义务时的 generalized Rado 定理，以及裸
+source rank 通过但角色求值为零的严格反例，见
+[F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。
 
 秩缺口到阶 \(\ell\) 对偶角色的具体消元公式、以及该角色的锚点—关系分派，见
 [Type II 线性秩缺口的阶 \(\ell\) 对偶分离证书](type-II-linear-rank-deficit-dual-separation-certificate.md)。

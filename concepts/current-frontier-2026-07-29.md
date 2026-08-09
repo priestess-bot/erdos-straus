@@ -4623,9 +4623,10 @@ b_D(o)=b_O(o)-m_T(o),
 并定义 \(b_D(\star_r)=1\)。其中 \(\star_r\) 是只对请求 \(r\) 可见的零增量 atom；
 target 预约只存在于组合证明，
 完整 edge 选定后才原子写 ledger。source 侧仍同时保存 incremental-deep、shallow
-canonical slot 与共同 \(V_\ell\)-column。现有 column-Rado 定理只处理物理请求方向
-本身独立的分支；相关角色若仍有不同物理义务，不能随基约化删除，而须保留物理请求集、
-代数基集及二者的一般耦合。
+canonical slot 与共同 \(V_\ell\)-column。裸 column-Rado 只证明 source-rank；
+要解释为角色支付，必须先从同一个 closed source-SNF table 构造角色--源关系求值。
+独立角色且该求值与裸列 rank-preserving 时才直接使用下式；相关角色的不同物理义务
+不能随基约化删除，而交给后述 generalized Rado。
 
 若每个请求的 source 候选严格因子化为三个允许集的笛卡尔积，则完整选择精确等价于
 
@@ -4661,3 +4662,114 @@ collision。这两个算术控制都不是完整 F/G states，role-SNF、完整 
 collision、source-column escape 或通过 closure 的 annihilator candidate 接到完整
 kernel source box、Type I/II 终端或不可重置的 marked 下降。详见
 [指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](../claims/type-I-prescribed-target-occurrence-rado-contraction.md)。
+
+## 2026-08-10：相关角色求值、广义 Rado 与 tensor Fourier
+
+此前把独立 Fourier roles 直接写成 \(V_\ell\) 中的需求方向，实际上跳过了一个 typed
+接口：roles 位于 \(\operatorname{Hom}(\Delta,\mu_\ell)\)，source columns 位于另一个
+初等 source quotient。现在要求同一个 closed source-SNF table 显式给出角色空间
+\(R\)、源关系空间 \(L\)、双线性配对和每条带 provenance edge 的关系向量 \(u_e\)。
+由此定义
+
+\[
+\kappa(e)(\rho)=\langle\rho,u_e\rangle\in R^*.
+\]
+
+没有该回执时输出 ROLE_TO_COLUMN_EVALUATION_UNPROVED；裸 source rank 等于 role
+rank 不再被视为角色支付。严格控制
+
+\[
+L=\mathbb F_2^2,\qquad
+R=\langle\rho_x\rangle,\qquad
+u=e_2
+\]
+
+中，裸 source rank 为一，但 \(\rho_x(e_2)=0\)，所以 evaluation rank 为零。
+
+保留全部 \(n\) 个物理请求，令 \(k=\dim R\)。每个请求恰选一个 column 且联合求值
+\(R\to\mathbb F_\ell^n\) 单射，当且仅当
+
+\[
+\boxed{
+\operatorname{rank}\kappa(A(U))+n-|U|\ge k
+\qquad(\forall U\subseteq P).}
+\]
+
+证明是在 \(R^*\) 旁加入 \(n-k\) 个公共 dummy directions 后应用普通 Rado。失败割
+\(U\) 的不可见角色空间
+
+\[
+Z_U=\{\rho\in R:
+\langle\rho,u_e\rangle=0
+\text{ 对全部 }e\in A(U)\}
+\]
+
+满足
+
+\[
+\dim Z_U=k-\operatorname{rank}\kappa(A(U))>n-|U|.
+\]
+
+因此补集无论怎样每请求选择一个 column，都至少留下一个非零角色对完整选择不可见。
+这是严格的 generalized-Rado 对偶容量缺口，但该角色可以依赖补集选择；未通过
+source-dominating closure 时不能冒充单一商下降。
+
+该定理真正覆盖了相关角色：三个物理请求
+
+\[
+\rho_1=\rho_2=\rho_x,\qquad \rho_3=\rho_y,
+\]
+
+分别只有 relations \(e_1,e_1,e_2\) 时，全部 occurrence 义务保留，而真实角色秩
+只有二；generalized Rado 通过，错误的三请求独立 Rado 则失败。反过来，
+\(A_1=\{e_1,e_2\},A_2=A_3=\{0\}\) 的并集秩虽为二，任何彩色选择的秩至多一，
+子集 \(U=\{2,3\}\) 精确暴露缺口。
+
+当 fixed target 已预收费且
+
+\[
+\widehat{\mathcal E}_{\rm src}(p)
+=\mathcal D(p)\times\mathcal S(p)\times A(p)
+\]
+
+是完整三维矩形时，target capacity、deep Hall、shallow Hall 与上述 generalized
+Rado 联合成为全部相关角色物理 assignment 的充要条件。非矩形时仍保留完整
+hypergraph，不使用分离投影。
+
+若调用者不是要求求值覆盖整个 \(R^*\)，而是要求所选实现向量生成一个较大空间
+\(K\) 中的规定真子空间 \(D\)，则所有 subspace Hall cuts 仍不充分。固定 \(D\)
+的基矩阵 \(B_D\)，定义
+
+\[
+\mathcal T_p
+=\{\kappa(e)c^T:e\in A(p),\ c\in\mathbb F_\ell^{\dim D}\}.
+\]
+
+精确判据为
+
+\[
+\boxed{
+D\subseteq\operatorname{span}\{\kappa(\sigma(p))\}
+\iff
+B_D\in\sum_p\mathcal T_p.}
+\]
+
+它等价于 projective dual directions 的一次统一 hitting cover，并且表示数是
+rank-one tensor functions 的 Fourier 卷积在 \(B_D\) 处的值。最小反例为
+
+\[
+K=\mathbb F_2^2,\qquad
+D=\langle e_1+e_2\rangle,\qquad
+A_1=\{e_1,e_2\}.
+\]
+
+每个 subspace cut 都通过，但没有单个选择生成 \(D\)；候选并集张成整个 \(K\)，
+所以也不存在一个湮灭全部候选的单一线性 separator。该失败必须保留 tensor
+sumset/Fourier 对象，不能降格为普通 Hall 或一个 annihilator。
+
+这关闭了相关角色分支中“已有求值配对 + fixed target + source-preserving +
+完整三维矩形”的部分。当前新缺口是从每个实际 F/G source-SNF table 构造上述
+pairing/edge relation vectors，或在其失败时生成完整 source-map terminal；以及把
+不可见角色空间或 tensor Fourier 零表示接到整数 kernel source box、Type I/II
+终端和不可重置 E5。详见
+[F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](../claims/type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。

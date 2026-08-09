@@ -12,8 +12,10 @@ statement: >-
   deep--shallow--column source 系统可选。
   若每个请求的剩余 source 候选进一步严格因子化为 deep、shallow 与 column 三个允许
   集的笛卡尔积，则后者精确等价于 deep Hall、shallow Hall 和 column Rado 三组子集
-  不等式；该 column 分支要求物理请求的角色方向本身独立，相关角色仍带不同物理义务
-  时须回到尚未收缩的一般耦合系统。固定 D、只按非零相位 c 分型时化为 target 预收费后的 deep residual
+  不等式；本卡的裸 column 分支要求物理请求方向独立且已有 rank-preserving transport。
+  相关角色仍带不同物理义务时，若同一 source-SNF provenance 已认证角色--关系求值，
+  则保留全部请求并转交 generalized evaluation-Rado；否则保留未收缩的一般耦合系统。
+  固定 D、只按非零相位 c 分型时化为 target 预收费后的 deep residual
   capacity 与各 shallow phase capacity 不等式，再加
   source-column Rado；只要求 deep--shallow 二维矩形再另验 Rado 仍有四边扭结反例。
   p=4441,q=5,J=1,D=66 给出严格反例：匿名三部容量为 1，但
@@ -79,11 +81,14 @@ last_checked: '2026-08-10'
 固定核心素数 \(p\)、奇素数 \(q\nmid p\) 和 owner 层 \(J\ge1\)。令
 \(\mathcal R\) 是有限个按语义/content id 去重的 F/G \(q\)-primary 请求。固定角色的
 初等素数 \(\ell\)，并令共同 source-column 空间为 \(V=V_\ell\)。对需要 column-Rado
-支付的分支，本卡只处理请求方向 \((\rho_r)_{r\in\mathcal R}\subset V\) 本身独立的
-情形。进入本卡前只能合并“代数角色与全部物理义务都相同”的重复请求；相关角色若
-仍带不同 occurrence/target 义务，就不能用角色基替换请求集，而须保留独立的物理
-请求集、代数基集及二者耦合，回到一般联合选择问题。下文的矩形 Hall--Rado 定理
-不声称处理该情形。纯物理请求在删除 column 坐标的分支处理。fixed-layer 请求的
+支付的分支，本卡只处理请求方向 \((\rho_r)_{r\in\mathcal R}\subset V\) 本身独立，
+且调用者已经证明角色方向与 source columns 之间有 rank-preserving identification
+的情形；否则下文定理只证明裸 source-column independence，不证明角色已支付。
+进入本卡前只能合并“代数角色与全部物理义务都相同”的重复请求。相关角色若仍带
+不同 occurrence/target 义务，不能用角色基替换请求集；若同一 source-SNF table
+已经给出角色--源关系求值配对，则交给相关角色广义 Rado 选择器，否则保留
+ROLE_TO_COLUMN_EVALUATION_UNPROVED。纯物理请求在删除 column 坐标的分支处理。
+fixed-layer 请求的
 \(J\) 已经冻结；unlayered 请求必须先通过上尾门并冻结 \(J\)，才能进入本卡。
 
 一个请求 \(r\in\mathcal R\) 保存 source state id、整数源格 \(L_r\)、带基点记录集
@@ -700,7 +705,10 @@ CANONICAL_PROFILE_PRESCRIBED_TARGET_READY
       preserve PHYSICAL_Q_LAYER_ASSIGNMENT_CAPACITY_OBSTRUCTED
   deduplicate only requests with identical role and identical physical obligations
   dependent role directions remain with distinct physical obligations:
-    DEPENDENT_ROLE_PHYSICAL_COUPLING_REQUIRED
+    common role--source evaluation pairing is unavailable:
+      ROLE_TO_COLUMN_EVALUATION_UNPROVED
+    pairing is available:
+      hand off all physical requests to DEPENDENT_ROLE_EVALUATION_SELECTOR
   physical-only branch:
     delete the column coordinate and preserve every physical obligation
   otherwise require the request directions themselves to be independent
@@ -750,7 +758,9 @@ target occurrence 可经 (10b) 的增量收费映射精确剥离；source 侧只
 与 source 缺口彼此独立。
 
 它没有证明每个实际 F/G 请求的完整 witness 集非空，也没有解决非矩形 source
-hypergraph 的全称匹配或相关角色与不同物理义务的双层耦合。Rado 对偶仍需全源列闭包，抽象有限群 relay 仍需整数后继、
+hypergraph 的全称匹配。相关角色与不同物理义务在已有共同求值配对和完整矩形性时，
+现由[相关角色求值--广义 Rado--张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)
+精确关闭；实际 source-SNF 尚未给出该配对时仍是独立缺口。Rado 对偶仍需全源列闭包，抽象有限群 relay 仍需整数后继、
 marked E4 与不可重置 E5。下一决定性缺口是：从真实 F/G source table 证明候选
 矩形性或直接处理其非矩形最小割；若失败，则把 \(p=4441\) 型 profile--phase 缺口、
 source-column escape 或 target collision 转成完整 kernel source box、Type I/II

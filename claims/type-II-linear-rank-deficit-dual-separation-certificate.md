@@ -50,6 +50,13 @@ w_r\in V,\qquad r\in U,
 \[
 D_U=\operatorname{span}_{\mathbb F_\ell}\{w_r:r\in U\}.
 \]
+
+这里 \(w_r\in V\) 是本卡的显式输入前提，不由
+\(\chi_r\in\operatorname{Hom}(\Delta,\mu_\ell)\) 自动产生。调用者必须给出同一
+source-SNF table 上的 common-space transport，或改用角色--源关系求值配对
+\(\kappa(c)\in R^*\)。缺少两者时应输出
+ROLE_TO_COLUMN_EVALUATION_UNPROVED，不能执行以下 \(D_U\) 与 \(W_U\) 的比较。
+
 Hall 邻域 \(N(U)\) 中的每个合法 q 槽 \(c\) 带源列向量 \(v_c\in V\)，定义
 \[
 W_U=\operatorname{span}_{\mathbb F_\ell}\{v_c:c\in N(U)\}.
@@ -157,7 +164,8 @@ D_U=V,\qquad W_U=\operatorname{span}(1,0),
 ## 6. 对统一选择器的作用
 
 Rado 条件通过时，源槽可以支付独立角色，继续进入 q-height/Kneser 容量；Rado
-条件失败时，(5) 把容量缺口转成阶 \(\ell\) 的对偶角色。于是跨状态 dispatch 不再
+条件失败时，在上述 common-space transport 前提下，(5) 把容量缺口转成阶
+\(\ell\) 的对偶角色。于是跨状态 dispatch 不再
 只有“FULL_MATCH/HALL_DEFICIT”两种粗粒度结果，而是：
 \[
 \text{线性独立容量匹配}
@@ -173,3 +181,7 @@ Rado 条件通过时，源槽可以支付独立角色，继续进入 q-height/Kn
 缺口回执。它仍不证明每个 SOURCE_RANK_FOURIER_SEPARATION 都自动产生核心素数
 下降；下一步需要证明该角色在固定层商中有 F/G 载体，或把其 annihilator 商作为
 严格变小的 source-fiber/参数状态。
+
+当请求角色相关但物理义务不同，或角色空间与 source-column 空间没有预先识别时，
+应使用[相关角色求值配对与广义 Rado 选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)
+中的不可见角色空间 \(Z_U\)，而不是虚构 \(w_r\in V\)。

@@ -616,11 +616,19 @@ OWNER_WINDOW_AFFINE_DUAL_PROFILE_READY(P_J,X)
 
 当 target state-id 与整数目标均已由请求固定时，先在 source/target 共享 occurrence
 ledger 上预收费 target；同一 edge 的 \(d=t(r)\) 映为私有零增量 atom，其它 deep
-使用残余容量。source 侧仍保留 incremental-deep--shallow--independent-column 耦合。
-只有请求角色方向本身独立且该耦合严格矩形化时，才进一步收缩为两组 capacitated
-Hall 加一组 Rado；相关角色带不同物理义务、target 或 source 组合随候选变化时保留
-一般耦合超图。详见
-[指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](type-I-prescribed-target-occurrence-rado-contraction.md)。
+使用残余容量。source 侧仍保留 incremental-deep--shallow--role-evaluation 耦合。
+若完整三维候选严格矩形化，且同一 closed source-SNF/provenance 已构造角色--关系
+配对，令 (P) 为全部物理请求、(R) 为其角色空间，则独立角色用普通 Rado，
+相关角色连同全部不同物理义务用 generalized Rado 阈值
+\[
+\operatorname{rank}\kappa(A(U))+|P|-|U|\ge \dim R
+\qquad(U\subseteq P)
+\]
+检查；不能先删去相关请求。若配对未证明，或 target/source 组合随候选变化而破坏
+三维矩形，则仍保留一般耦合超图。详见
+[指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](type-I-prescribed-target-occurrence-rado-contraction.md)
+与
+[相关角色 evaluation--Rado 与张量选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。
 
 ## 聚焦验证
 
