@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 579 |
+| 数学状态 | `established` | 580 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 415 |
+| 证明来源 | `repository_derivation` | 416 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 551 |
+| 审阅状态 | `internal_review` | 552 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -908,6 +908,7 @@
 | [Type II raw 参数频率的有限阿贝尔源商 SNF 提升](../claims/type-II-raw-finite-abelian-source-lift-snf.md) (`type-II-raw-finite-abelian-source-lift-snf`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 正规形的 sqrt(p) 有界 raw 盒](../claims/type-II-raw-normal-form-sqrt-cutoff.md) (`type-II-raw-normal-form-sqrt-cutoff`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [非互素 Type II 因子射线仍直接给出证书](../claims/type-II-raw-ray-certificate.md) (`type-II-raw-ray-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
+| [Type II raw 来源前缀的 K 同余槽完备性](../claims/type-II-raw-source-prefix-slot-completeness.md) (`type-II-raw-source-prefix-slot-completeness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [首个复合递降逃逸点的 Type II 二尾反向桥接障碍](../claims/type-II-reverse-two-tail-bridge-boundary.md) (`type-II-reverse-two-tail-bridge-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [Type II 同模数与除子格 source-switch 的带来源 CRT 判据](../claims/type-II-same-modulus-source-switch-crt-criterion.md) (`type-II-same-modulus-source-switch-crt-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [Type II 饱和源积集的同余稳定子—核 Fourier—算术三分](../claims/type-II-saturated-source-congruence-stabilizer-trichotomy.md) (`type-II-saturated-source-congruence-stabilizer-trichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
