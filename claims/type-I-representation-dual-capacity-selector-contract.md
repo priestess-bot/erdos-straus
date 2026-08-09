@@ -104,6 +104,7 @@ depends_on:
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
   - type-I-source-lattice-qheight-dual-valuation-shift-carrier
+  - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -223,6 +224,8 @@ sources:
     role: prime-matched-affine-carrier-kernel-fourier-and-global-E5-boundary
   - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
     role: minimal-source-lattice-qheight-dual-and-valuation-shift-admission
+  - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
+    role: multi-role-filtered-dual-and-exact-tail-capacity-cut
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -1191,6 +1194,22 @@ source prime \(q\) 和层 \(j\)，存在残数数目最优的有限 matched-carr
 失败后在未固定额外标签时已有显式、可确定化的 kernel Fourier twist，预设标签则可能严格
 阻塞它；全局 E5 仍要求完整 target state 和不可重置 owner phase。
 
+对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
+\(O_J=(F_J+qL)/qL\)，则有短正合列
+\[
+0\to V_J\to\operatorname{Hom}(L,\mathbb F_q)\to O_J^*\to0.
+\]
+任意角色子空间 \(W\) 在固定层的可实现秩因此精确为
+\(\dim(W\cap V_J)\)；已绑定 \(J_{\rm req}\) 的需求只能在原 singleton 层判定，
+禁止用更深层重标。对尚未绑定层、且合法层只由最小深度决定的请求，若下游允许在
+\(W\) 内换基，则存在过滤适配基的层分派，当且
+仅当总角色维数不超过总容量，且每个 \(k\ge2\) 的商维数
+\(\dim W-\dim(W\cap V_{k-1})\) 不超过第 \(k\) 层以上的总容量，并且
+\(W\subseteq V_H\)；若角色带名，则改用
+各自最小深度的上尾 Hall 计数。失败输出基不变的严格容量缺口，通过者仍须把范围、标签、
+occurrence 与 source-switch 边交给一般 Hall/Rado。完整判据见
+[源格障碍过滤的短正合列与上尾 Hall 容量](type-I-source-lattice-filtered-dual-tail-hall-capacity.md)。
+
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子
 \(R_+R_-=R\)；唯一 \(3\pmod4\) 因子 \(R_*\) 满足
@@ -1215,7 +1234,10 @@ F/G sink。详见
   rank-one 请求可选 \(J\ge\max(1,d_q)\)，且 valuation-shifted carrier 必通过当前
   \(p\) 的窗口、范围、occurrence 和既定标签门；dual/window no-go 保留严格见证，
   特定 carrier 的 range failure 只记为 unclosed。所有非 ready 回执与通过标签门的
-  显式 kernel Fourier 最终都必须进入终端、完整核来源盒或另一良基出口；
+  显式 kernel Fourier 最终都必须进入终端、完整核来源盒或另一良基出口。多角色需求
+  已绑定层者先运行原层过滤秩，尚未绑定层者才按角色合同运行过滤子空间或带名上尾
+  判据；该代数判据通过后仍不得省略物理
+  Hall/Rado；
 - 除已登记的不可逆半幂 CRT 真因子边外，任意丢弃旧 charged support 的 phase reset
   具有全局良基秩；
 - 某个候选后继对全部标记解都给出 E4 提升并满足 E5。
@@ -1225,7 +1247,8 @@ F/G sink。详见
 prime 的算术 carrier 已有统一构造；rank-one 请求的最小 \(q\)-height 已有统一判据，
 且 unlayered 请求的 source-line 仿射 provenance 不再要求第零层 ambient pullback。
 决定性缺口已收紧为证明 fixed-layer 请求在原层、unlayered 请求在新选层分别满足
-范围/occurrence/target-state 门，或把对偶、窗口与单块降模失败后
+范围/occurrence/target-state 门，并把多角色上尾匹配实现为真实物理槽，或把对偶、
+窗口、上尾容量与单块降模失败后
 的显式 kernel Fourier 扩成完整核来源盒。局部 \(D_*<D_0\) 还必须配上不可重置的
 owner phase；自然较小余因子在 \(p=2113,n=241\) 上已有严格空 marked-fiber 反例，
 不能再作为默认 E4。菜单空、来源阻塞或 rank 过载若不能进入因子选择，必须转成带标记的

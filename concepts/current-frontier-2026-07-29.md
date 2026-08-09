@@ -56,6 +56,8 @@ sources:
   role: prime-matched-affine-carrier-kernel-fourier-and-global-descent-boundary
 - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
   role: minimal-source-lattice-qheight-dual-valuation-shift-and-window-obstruction
+- claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
+  role: multi-role-obstruction-filtration-and-exact-tail-capacity
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -4414,6 +4416,59 @@ carrier 的初等源秩仍精确为 1，且它没有自动产生 target state、
 决定性缺口是：对每个真实 F/G fixed-layer demand，在原 \(J_{\rm req}\) 上证明它通过
 对偶、范围、occurrence 与标签门并构成完整 target state，或把严格原层 obstruction
 送入完整 kernel source box 或已封闭的良基出口。对 unlayered rank-one 请求，另选层
-只能生成新的 occurrence key；多个独立角色还必须另证 layered Rado/Hall 的 occurrence 匹配，
-不能复制一维 carrier 重复收费。详见
+只能生成新的 occurrence key；多个独立角色还必须另证物理 layered Rado/Hall 的
+occurrence 匹配，不能复制一维 carrier 重复收费。详见
 [源格角色的最小 q 层对偶与 content 估值移位载体](../claims/type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)。
+
+## 2026-08-10：多角色最小深度已压缩为基不变的上尾容量
+
+单角色最小深度还不能回答一个关键量词：多个 Fourier/格角色是否能在有限物理层内
+同时支付，而且结论是否依赖当前选取的生成元。这个缺口现已在纯代数层闭合。定义
+
+\[
+O_J(L)=\frac{F_J(L)+qL}{qL}\le L/qL,
+\qquad
+V_J=\operatorname{im}\rho_J.
+\]
+
+角色限制给出规范短正合列
+
+\[
+0\longrightarrow V_J\longrightarrow\operatorname{Hom}(L,\mathbb F_q)
+\longrightarrow O_J(L)^*\longrightarrow0.
+\]
+
+所以对任意角色子空间 \(W\)，固定层可实现空间恰为 \(W\cap V_J\)，未实现独立方向数
+是限制映射的秩。已绑定 \(J_{\rm req}\) 的角色只能在原层检查，不能移入更深后缀。
+对尚未绑定层、且合法层只由最小深度决定的请求，若层 \(1,\ldots,H\) 的纯代数容量为
+\(c_J\)，且角色合同允许在 \(W\) 中换基，则存在过滤适配基和无重复分派，当且仅当
+
+\[
+W\subseteq V_H,
+\qquad
+\dim W-\dim(W\cap V_{k-1})
+\le\sum_{J=k}^Hc_J
+\quad(2\le k\le H),
+\]
+
+并且总维数不超过总容量。失败阈值给出严格、基不变的上尾容量缺口。若角色绑定
+anchor/target/source label 或 occurrence key 而不可换基，则正确判据是逐角色最小深度
+的上尾 Hall 计数，不能用子空间换基消去命名障碍。
+
+严格二维控制
+
+\[
+L=3\mathbb Ze_1\oplus9\mathbb Ze_2
+\]
+
+说明了两个新边界。容量 \((c_1,c_2)=(2,0)\) 虽有两个总槽，但第二层商维数为 1，
+故严格失败；容量 \((1,1)\) 对适配基 \((\varepsilon_1,\varepsilon_2)\) 通过，而同一
+子空间的带名基 \((\varepsilon_1+\varepsilon_2,\varepsilon_2)\) 有两个深度 2 角色，
+作为不可换名请求严格失败。这排除了按任意展示基逐个取深度所产生的假容量缺口。
+
+因此当前缺口进一步移动到物理实现：必须为通过上尾判据的真实 F/G 请求构造范围、标签、
+occurrence、source-switch 全部合格的层槽；若这些额外门删边后出现一般 Hall/Rado 缺口，
+则把缺口送入 Type I/II 终端、完整 kernel source box 或保持标记的良基下降。纯代数
+`TAIL_MATCH_READY` 本身不是终端，也不自动给出 target state、Kneser 价格、E4 或 E5。
+详见
+[源格障碍过滤的短正合列与上尾 Hall 容量](../claims/type-I-source-lattice-filtered-dual-tail-hall-capacity.md)。

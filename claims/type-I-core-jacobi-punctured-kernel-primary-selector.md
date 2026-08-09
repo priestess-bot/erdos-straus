@@ -24,7 +24,8 @@ statement: >-
   最小 q-height 对偶。已绑定层的旗标只能在原层准入或输出严格 obstruction；只有
   尚未绑定层的请求才能在 owner 窗口可容纳时选择 valuation-shifted carrier 构造
   新层的 source-line 仿射 provenance，否则给出严格窗口阻碍。但其范围/target-state 门、
-  完整 kernel source box 与全局 E5 仍未证明。
+  完整 kernel source box 与全局 E5 仍未证明。多个独立角色的纯代数层容量已有
+  障碍商短正合列和精确上尾 Hall 判据；真实物理边仍需范围、标签与 occurrence 门。
   纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
   进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
 claim_status: established
@@ -40,6 +41,7 @@ depends_on:
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
   - type-I-source-lattice-qheight-dual-valuation-shift-carrier
+  - type-I-source-lattice-filtered-dual-tail-hall-capacity
 topics:
   - type-I
   - core-prime
@@ -66,6 +68,8 @@ sources:
     role: prime-matched-affine-admission-and-kernel-fourier-boundary
   - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
     role: minimal-qheight-dual-and-nonambient-rank-one-carrier
+  - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
+    role: multi-role-obstruction-filtration-and-tail-capacity
   - reproduction: reproductions/type_i_core_jacobi_punctured_kernel_primary_selector.py
     role: focused-capacity-Fourier-Sylow-and-boundary-controls
 visibility: public
@@ -782,6 +786,15 @@ menu；rank-one 带名记录对的 source-lattice 角色还有一个由 Smith �
 \(J\ge\max(1,d_q)\) 使用 valuation-shifted carrier；若该层超过 owner 窗口则有
 全窗口严格 no-go。该 carrier 在精确范围门通过时只关闭一个新层 named source line
 的代数 provenance；没有 layer-relay/retyping 时不能回填旧旗标。单个
+carrier 的秩仍为 1。对多个独立角色，令
+\(O_J=(F_J+qL)/qL\)；障碍短正合列精确计算角色子空间 \(W\) 在各层的可实现秩。
+已绑定层的角色子空间只能用 \(W\cap V_{J_{\rm req}}\) 在原层判定，不能借过滤移层。
+对尚未绑定层的请求，若角色合同允许换基，则所有上尾商维数不超过对应上尾容量，
+恰当且仅当存在过滤适配基分派；不可换名角色则由各自最小深度的上尾 Hall 计数判定。
+这个预筛给出严格的
+代数容量缺口，但通过后仍必须为每条边验证 range/label/occurrence/source-switch 并运行
+物理 Hall/Rado。详见
+[源格障碍过滤的短正合列与上尾 Hall 容量](type-I-source-lattice-filtered-dual-tail-hall-capacity.md)。而单个
 \(\{1,q\}\) 块的稳定子平凡，严格降模只能先输出显式
 kernel Fourier；该输出在预设标签下仍可能阻塞，且尚未给出完整核来源盒、跨状态
 target closure 或全局 E5。该关联格另有尺度二分：
@@ -806,7 +819,8 @@ recursive_edge_eligible = true
 [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](type-I-pure-dyadic-half-power-crt-rechart-descent.md)
 、[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)
 、[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)
-与[源格角色的最小 q 层对偶与 content 估值移位载体](type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)。
+、[源格角色的最小 q 层对偶与 content 估值移位载体](type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)
+与[源格障碍过滤的短正合列与上尾 Hall 容量](type-I-source-lattice-filtered-dual-tail-hall-capacity.md)。
 
 ## 聚焦验证
 

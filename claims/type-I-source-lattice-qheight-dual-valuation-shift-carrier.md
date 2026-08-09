@@ -743,7 +743,15 @@ SOURCE_RANK_DEMAND(q, gamma on L)
              VALUATION_SHIFTED_CARRIER_RANGE_UNCLOSED
   -> two or more independent roles:
        one carrier still has source_rank_capacity = 1
-       run layered Rado/Hall and distinct occurrence ledger
+       form W <= Hom(L,F_q) and the obstruction filtration O_J
+       fixed-layer request:
+         check W intersect V_J_req at the original singleton layer
+         never retag through a deeper tail
+       unlayered basis-flexible contract:
+         run the exact role-subspace tail-capacity criterion
+       unlayered named/immutable contract:
+         run the exact minimum-depth tail-Hall criterion
+       then run physical layered Rado/Hall and distinct occurrence ledger
 ~~~
 
 这关闭了一个真实缺口：rank-one named edge 不再需要先有第零层 ambient pullback；
@@ -755,8 +763,11 @@ no-go。它没有证明每个实际 F/G 状态都通过 (38)，也没有把一�
    联合 SNF；
 2. 对 range-fail 或 (48) 的状态，构造另一 Type I/II terminal、完整 kernel source
    box，或已封闭的良基下降；
-3. 对 \(\dim\langle\gamma\rangle>1\) 的需求，证明独立 carrier 的层/occurrence
-   Hall 条件，不能复制本卡的一维块。
+3. 对 \(\dim\langle\gamma\rangle>1\) 的需求，先用
+   [源格障碍过滤的短正合列与上尾 Hall 容量](type-I-source-lattice-filtered-dual-tail-hall-capacity.md)
+   对 fixed-layer 请求计算原层障碍秩，对 unlayered 请求计算基不变的上尾代数缺口；
+   再为通过者证明真实 carrier 的范围、标签与 occurrence
+   Hall/Rado 条件，不能复制本卡的一维块。
 
 ## 聚焦验证
 
