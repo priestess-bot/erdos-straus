@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-fixed-layer-qprimary-representation-dual-capacity-selector
 title: 固定层稳定子商的 q-primary 表示—对偶—容量选择器
-statement: 设 \(J\subset H\) 含单位元，\(P=\operatorname{Stab}_H(J)\)，\(X\le P^\perp\) 是非平凡 q-primary 角色子群。对 \(r\) 个残余生成元的有限指数盒，令 \(N_y\) 为目标 \(y\) 的精确 \(J\)-表示数，\(C_{y,X}\) 为目标陪集 \(yX^\perp\) 的表示数，\(T_J=|J|2^r\)、\(V=|J|\prod_i(2\nu_i+1)\)。按近邻、商陪集饱和、q-primary Fourier 缺口、低密度容量的顺序，四个条件互斥且穷尽；Fourier 分支存在非平凡 \(\chi\in X\) 使 \(-\operatorname{Re}(\overline{\chi(y)}F_J(\chi))\ge(V-|X|C_{y,X})/(|X|-1)\)，且稳定子商系数精确乘以 \(|P|\)。
+statement: 设 \(J\subset H\) 含单位元，\(P=\operatorname{Stab}_H(J)\)，\(X\le P^\perp\) 是非平凡 q-primary 角色子群。对 \(r\) 个残余生成元的有限指数盒，令 \(N_y\) 为目标 \(y\) 的精确 \(J\)-表示数，\(C_{y,X}\) 为目标陪集 \(yX^\perp\) 的表示数，\(T_J=|J|2^r\)、\(V=|J|\prod_i(2\nu_i+1)\)。对任意固定层，按近邻、商陪集饱和、q-primary Fourier 缺口、低密度容量的顺序，四个条件互斥且穷尽；Fourier 分支存在非平凡 \(\chi\in X\) 使 \(-\operatorname{Re}(\overline{\chi(y)}F_J(\chi))\ge(V-|X|C_{y,X})/(|X|-1)\)，且稳定子商系数精确乘以 \(|P|\)。若 \(J=C_R(N)\) 为中心化且素支撑分离，则稳定子吸收把精确阈值收紧为 \(|J/P|2^r\)，并在 \(C_{y,X}>[K_X:P]T_J\) 时直接给出偶终端。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -11,6 +11,7 @@ depends_on:
   - type-I-target-fiber-primary-filtered-density-fourier-relay
   - type-I-target-fiber-neighbor-terminal
   - type-I-target-fiber-neighbor-dyadic-normalization
+  - type-I-fixed-layer-stabilizer-collision-terminal
 topics:
 - type-I
 - F-state
@@ -31,6 +32,8 @@ sources:
     role: q-primary-filtered-density-identity
   - claim: type-I-target-fiber-neighbor-terminal
     role: same-fixed-layer-neighbor-terminal
+  - claim: type-I-fixed-layer-stabilizer-collision-terminal
+    role: centered-stabilizer-absorption-terminal-upgrade
   - reproduction: reproductions/type_i_fixed_layer_qprimary_selector.py
     role: four-branch-and-stabilizer-controls
 visibility: public
@@ -61,7 +64,9 @@ C_{y,X}=\#\{(j,z):j\Phi(z)\in yK_X\},
 F_J(\chi)=\sum_{j\in J}\sum_{z\in\mathcal B_\nu}\chi(j\Phi(z)).
 \tag{1}
 \]
-阈值 \(T_J\) 而不是 \(2^r\) 是必要的：近邻终端要求两条表示共享同一个固定层元素 \(j\)。
+对任意抽象 \(J\)，阈值 \(T_J\) 而不是 \(2^r\) 是必要的：近邻终端要求两条表示共享
+同一个固定层元素 \(j\)。当 \(J=\mathcal C_R(N)\) 且残余素支撑与 \(N\) 分离时，
+稳定子 \(P\) 可被固定层吸收，下面的 centered 特例会把这个阈值收紧。
 
 ## 2. 四分支
 
@@ -135,16 +140,64 @@ F_J(\chi)=\sum_{j\in J}\sum_{z\in\mathcal B_\nu}\chi(j\Phi(z)).
 \]
 这正是固定层无周期化后 q-primary 对偶的精确系数，不把 \(|P|\) 重复计入单点目标。
 
-## 5. typed 边界与验证
+## 5. centered 固定层的终端短路
+
+额外设
+
+\[
+K=N\prod_iq_i^{\nu_i},\qquad
+J=\mathcal C_R(N),\qquad
+\gcd\!\left(N,\prod_iq_i\right)=1,\qquad
+4K=pR+1.
+\tag{8}
+\]
+
+此时同一 \(jP\) 已足以由 fixed layer 补回一个完整短关系。因此在通用四分支之前可插入
+两个严格终端门：
+
+\[
+N_y>|J/P|2^r
+\quad\Longrightarrow\quad
+\text{固定层稳定子近邻偶终端},
+\tag{9}
+\]
+
+\[
+C_{y,X}>[K_X:P]\,T_J
+\quad\Longrightarrow\quad
+\text{q-primary 稳定子吸收偶终端}.
+\tag{10}
+\]
+
+第二门以 \(P\)-商后的目标陪集、\(jP\) 和符号盒装箱；第一门以 \(jP\) 和符号盒装箱。
+两者的碰撞差都落入 \(P\)，由中心化固定层吸收为完整指数盒核关系。特别地
+\(K_X=P\) 时，普通 \(C_{y,X}>T_J\) 饱和门直接终端。
+
+若 \(C_{y,X}>T_J\) 但未达到 (10)，它仍只输出一个
+\(\Phi(z-w)\in K_X\) 的有界 q-primary 商关系，不能把 \(K_X\supsetneq P\) 错写成
+固定层吸收。真实 \(p=97,R=67\) 控制满足 \(C_{y,X}=10>T_J=6\)，但没有非零完整
+短关系；相反，\(p=433,R=15\) 的 \(K_X=P\) 控制有
+\(N_y=5>|J/P|2^r=4\)、\(C_{y,X}=10>T_J=8\)，并给出 \(E=3136,n=224\)。
+通用四分支的 \(C_{y,X}\le T_J\) Fourier 前提不因这两个 centered 短路而改变：
+在中间区间 \(T_J<C_{y,X}\le[K_X:P]T_J\) 必须保留弱饱和商关系回执，不能直接跳到
+原来的 Fourier/capacity 分支。
+完整证明和两侧回执见
+[固定层稳定子商碰撞与 q-primary 饱和的短关系偶终端](type-I-fixed-layer-stabilizer-collision-terminal.md)。
+
+## 6. typed 边界与验证
 
 | 分支 | certificate_type | recursive_edge_eligible |
 |---|---|---|
 | 近邻 | target_fiber_neighbor | 仅 E1--E5 适配器通过时为真 |
+| centered 精确稳定子近邻 | fixed_layer_stabilizer_collision_terminal | direct terminal |
+| centered 强 q-primary 饱和 | q_primary_stabilizer_absorption_terminal | direct terminal |
 | 商饱和 | q_primary_quotient_saturated | false |
 | Fourier | fixed_layer_qprimary_fourier_deficit | false |
 | 低密度 | fixed_layer_qprimary_capacity | false |
 
-复现器 reproductions/type_i_fixed_layer_qprimary_selector.py 在加法循环群中验证四个
-分支、Fourier 下界和非平凡稳定子下的 \(|P|\) 缩放。该选择器补上固定层与 q-primary
-过滤之间的表示—对偶—容量接口，但 Fourier source-map、整数提升、跨状态容量和
-良基递降仍需单独证明；因此它不是猜想的全称证明。
+复现器 reproductions/type_i_fixed_layer_qprimary_selector.py 在加法循环群中验证通用四个
+分支、Fourier 下界和非平凡稳定子下的 \(|P|\) 缩放；
+reproductions/type_i_fixed_layer_stabilizer_collision_terminal.py 另核验 centered
+终端短路及弱饱和边界。该选择器补上固定层与 q-primary 过滤之间的表示—对偶—容量接口，
+但 Fourier source-map、整数提升、跨状态容量和良基递降仍需单独证明；因此它不是猜想的
+全称证明。

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the high-capacity small-d exact floor-shell route split."""
+"""Verify high-capacity small-d routes and arithmetic fold candidates."""
 
 from __future__ import annotations
 
@@ -17,17 +17,6 @@ def is_prime(value: int) -> bool:
             return False
         divisor += 2
     return True
-
-
-def smallest_prime_factor(value: int) -> int:
-    if value % 2 == 0:
-        return 2
-    divisor = 3
-    while divisor * divisor <= value:
-        if value % divisor == 0:
-            return divisor
-        divisor += 2
-    return value
 
 
 def divisors(value: int) -> list[int]:
@@ -64,8 +53,7 @@ def floor_shell_threshold(B: int, A: int) -> int:
     return threshold
 
 
-def factor_route(p: int, n: int, M: int, d: int, A: int, b: int) -> dict[str, int]:
-    g = smallest_prime_factor(b)
+def factor_route(p: int, n: int, M: int, d: int, A: int, b: int, g: int) -> dict[str, int]:
     assert 1 < g and b % g == 0 and d * g < p
     target_M, target_d = M // g, d * g
     assert target_M < M and target_M % A == 0
@@ -102,6 +90,32 @@ def fold_route(p: int, n: int, M: int, d: int, A: int, carrier: int) -> dict[str
     return {"M": carrier, "d": remainder, "n": target_n, "h": quotient}
 
 
+def total_cofactor_fold_route(
+    p: int, n: int, M: int, d: int, A: int, b: int
+) -> dict[str, int]:
+    """Fold the full support cofactor, preserving A and strictly lowering R."""
+    assert b > 1 and M == A * b
+    h, delta = divmod(b * d, p)
+    assert 1 <= delta < p and b * (p - d) > p
+    target_M = A
+    target_n = n - 4 * target_M * h
+    target_R = 4 * target_M - target_n
+    target_K = target_M * (p - delta)
+    source_R = 4 * M - n
+    assert target_n > 0 and p * target_n == 4 * target_M * delta + 1
+    assert target_R > 0 and target_R % 4 == 3 and target_K % A == 0
+    assert p * target_R + 1 == 4 * target_K
+    assert target_R < source_R
+    return {
+        "M": target_M,
+        "d": delta,
+        "n": target_n,
+        "R": target_R,
+        "K": target_K,
+        "h": h,
+    }
+
+
 def dual_route(p: int, M: int, d: int, A: int) -> dict[str, int]:
     B = (p - 1) ** 2 // 4
     threshold = floor_shell_threshold(B, A)
@@ -135,9 +149,9 @@ def classify(p: int, n: int, M: int, d: int, A: int) -> str:
         dual_route(p, M, d, A)
         return "dual"
 
-    g = smallest_prime_factor(b)
-    if d * g < p:
-        factor_route(p, n, M, d, A, b)
+    movable = [candidate for candidate in divisors(b) if candidate > 1 and d * candidate < p]
+    if movable:
+        factor_route(p, n, M, d, A, b, max(movable))
         return "factor"
     if d < b < p:
         exchange_route(p, n, M, d, A, b)
@@ -149,15 +163,10 @@ def classify(p: int, n: int, M: int, d: int, A: int) -> str:
         return "cofactor_divisor_fold"
 
     assert P < threshold and b > p and not shell_divisors
-    assert d * smallest_prime_factor(b) >= p
+    assert not movable
     assert b > B or b < threshold
-    if b < threshold:
-        assert A > (p - 1) // 2
-        return "floor_shell_residual"
-    assert b > B
-    if is_prime(b):
-        return "ultra_prime_residual"
-    return "composite_gap_residual"
+    total_cofactor_fold_route(p, n, M, d, A, b)
+    return "total_cofactor_candidate"
 
 
 def verify() -> None:
@@ -177,24 +186,20 @@ def verify() -> None:
     }
     routes = {name: classify(*fixture) for name, fixture in fixtures.items()}
     assert routes == {
-        **{
-            name: name
-            for name in fixtures
-            if name not in {
-                "sharp_dual",
-                "intermediate_divisor_fold",
-                "sub_double_cofactor_fold",
-                "composite_shell_fold",
-                "dilated_cofactor_fold",
-            }
-        },
+        "dual": "dual",
         "sharp_dual": "dual",
+        "factor": "factor",
+        "exchange": "exchange",
+        "cofactor_divisor_fold": "cofactor_divisor_fold",
         "intermediate_divisor_fold": "cofactor_divisor_fold",
         "sub_double_cofactor_fold": "cofactor_divisor_fold",
         "composite_shell_fold": "cofactor_divisor_fold",
         "dilated_cofactor_fold": "cofactor_divisor_fold",
+        "floor_shell_residual": "total_cofactor_candidate",
+        "ultra_prime_residual": "total_cofactor_candidate",
+        "composite_gap_residual": "total_cofactor_candidate",
     }
-    print("verified high-capacity small-d exact floor-shell route split")
+    print("verified high-capacity small-d routes and arithmetic cofactor fold candidates")
     for name, fixture in fixtures.items():
         p, n, M, d, A = fixture
         B = (p - 1) ** 2 // 4

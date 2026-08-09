@@ -12,16 +12,16 @@
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
 | 数学状态 | `computationally_reproduced` | 371 |
-| 数学状态 | `conditional` | 28 |
+| 数学状态 | `conditional` | 29 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 595 |
+| 数学状态 | `established` | 596 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 432 |
+| 证明来源 | `repository_derivation` | 434 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 568 |
+| 审阅状态 | `internal_review` | 570 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -337,6 +337,7 @@
 | [固定层 Fourier 角色阶的 q-primary 精确投影](../claims/type-I-fixed-layer-fourier-q-primary-projection.md) (`type-I-fixed-layer-fourier-q-primary-projection`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定层 Fourier 相位到 q 进容量的条件桥](../claims/type-I-fixed-layer-fourier-qadic-phase-bridge.md) (`type-I-fixed-layer-fourier-qadic-phase-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定层稳定子商的 q-primary 表示—对偶—容量选择器](../claims/type-I-fixed-layer-qprimary-representation-dual-capacity-selector.md) (`type-I-fixed-layer-qprimary-representation-dual-capacity-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [固定层稳定子商碰撞与 q-primary 饱和的短关系偶终端](../claims/type-I-fixed-layer-stabilizer-collision-terminal.md) (`type-I-fixed-layer-stabilizer-collision-terminal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [固定层稳定子缺陷约化](../claims/type-I-fixed-layer-stabilizer-defect-reduction.md) (`type-I-fixed-layer-stabilizer-defect-reduction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-08-07 |
 | [固定 p 减一射线将六亿普通尾压力集压缩至二十五点](../claims/type-I-fixed-pminusone-ray-pressure-profile-600m.md) (`type-I-fixed-pminusone-ray-pressure-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [固定 p 减一射线残余的三层自适应解析](../claims/type-I-fixed-ray-residual-resolution-600m.md) (`type-I-fixed-ray-residual-resolution-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
@@ -585,6 +586,7 @@
 | [高载体三素因子残差的双图谱空洞分类](../claims/type-I-overflow-capacity-slab-three-prime-hole-classification.md) (`type-I-overflow-capacity-slab-three-prime-hole-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [overflow 余因子因子转移与交换的载体秩递降](../claims/type-I-overflow-cofactor-factor-exchange-carrier-descent.md) (`type-I-overflow-cofactor-factor-exchange-carrier-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow cofactor r-图表的带账本 E2 存在性门](../claims/type-I-overflow-cofactor-ledger-e2-gate.md) (`type-I-overflow-cofactor-ledger-e2-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [overflow 余因子整体模 p 折叠的严格局部 R 下降](../claims/type-I-overflow-cofactor-mod-p-fold-r-descent.md) (`type-I-overflow-cofactor-mod-p-fold-r-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [overflow 的余因子支撑 r-图表候选与同图表正控制](../claims/type-I-overflow-cofactor-r-chart-support.md) (`type-I-overflow-cofactor-r-chart-support`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高载体 d=4 首容量层的双模 fixed-s 组合闭合](../claims/type-I-overflow-d-four-first-capacity-slab-complete-reduction.md) (`type-I-overflow-d-four-first-capacity-slab-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md) (`type-I-overflow-d-one-p-minus-two-g-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
@@ -608,7 +610,7 @@
 | [overflow 对偶 fixed-s 的有界除子外层秩递降](../claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md) (`type-I-overflow-fixed-s-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
-| [高容量小 d overflow 的精确容量壳/余因子—分母积残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md) (`type-I-overflow-high-capacity-small-d-residual-cone`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [高容量小 d overflow 的精确容量壳与余因子模 p 折叠候选](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md) (`type-I-overflow-high-capacity-small-d-residual-cone`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [高载体 overflow 固定 n 有界除子的 R 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md) (`type-I-overflow-high-carrier-fixed-n-R-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [高载体 overflow 的分母高度阶梯与首带余因子二分](../claims/type-I-overflow-high-carrier-height-staircase.md) (`type-I-overflow-high-carrier-height-staircase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md) (`type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-06 |

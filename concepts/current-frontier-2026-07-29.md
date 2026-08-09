@@ -3523,7 +3523,7 @@ p=7504249（m=231, D_I=16864, length=7）。p=2852809 与秩二 profile 重合�
 因此下一步应研究秩三低于阈值的逆零和结构和跨缺口联合避靶，同时保持 marked
 见证与无标记递降的证据边界。详见[秩至少三序列短 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md)。
 
-## 2026-08-09：高容量小 \(d\) 的精确容量壳残余锥
+## 2026-08-09：高容量小 \(d\) 的精确容量壳与整体余因子算术候选
 
 对 \(M\ge2B_p\)、\(A\ge c\)、\(d^2<p\) 的高容量层，令
 \[
@@ -3543,7 +3543,7 @@ A<\Theta_p(A)\le2A.
 递降；否则余因子 dispatcher 依次处理 \(dg<p\) 的因子转移、\(d<b<p\) 的交换，
 以及任意 \(t\mid bd\) 且 \(\Theta_p(A)\le t\le B_p\) 的 fixed-\(n\) 商折叠。
 这里仅需 \(t\mid Md\)，故不能错误额外要求 \(t\mid M\)。
-未闭合算术状态遂满足
+若只使用上述 bounded-shell 菜单，其暂存边界满足
 
 \[
 P<\Theta_p(A),\qquad b>p,\qquad
@@ -3552,12 +3552,63 @@ P<\Theta_p(A),\qquad b>p,\qquad
 
 其中 \(bd<\Theta_p(A)\) 仍强制 \(A>(p-1)/2\)，而 \(bd>B_p\) 分支还可保留复合的
 精确壳缺口，不能误缩约成素数余因子。特别地，\(\Pi_p(A)=1\) 时
-\(\Theta_p(A)=B_p+1\)，明确识别出没有 bounded-support reset 可支付的顶层容量壳。
+\(\Theta_p(A)=B_p+1\)，准确标记了没有 bounded-support reset 可支付的顶层容量壳。
 两个新控制说明旧 \(2A\) 门并非边界：\((p,A,d,P,b)=(73,83,4,164,1559)\) 在
 \(87=\Theta_p(A)\le164<2A\) 时由 fixed-\(s\) 关闭，而
 \((73,53,1,18,83\cdot97)\) 的 \(t=97\) 也在精确壳中折叠。进一步，
 \((p,A,d,b)=(73,41,2,41^2)\) 的 \(L=82\) 不整除 \(M\)，却整除 \(Md\)，并给出
-商折叠到 \((M_T,d_T,n_T)=(82,2,9)\)。该收紧仍不是全局选择器闭合，但把此前
-\(M\ge2B_p,\ A\ge c,\ d^2<p\) 的边界压成
-prethreshold 高支撑/精确除子缺口两个明确锥；相应主张卡见
-[高容量小 \(d\) overflow 的精确容量壳/余因子—分母积残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)。
+商折叠到 \((M_T,d_T,n_T)=(82,2,9)\)。
+
+这些只是更短的 bounded-shell 出口。对旧菜单的任一暂存边界，直接取完整余因子
+\(g=b=M/A\)，并写 \(bd=ph+\delta\)、\(1\le\delta<p\)。因为高容量条件给
+\(b\ge2\)，而 \(d^2<p\) 给 \(d<p/2\)，所以
+\[
+b(p-d)>p.
+\]
+因此
+\[
+(M,d,n;A)\longmapsto
+\left(A,\delta,n-4Ah;A\right)
+\]
+保持 charged support，且 canonical \(R\) 严格下降。在算术 rechart 菜单层，
+它不再留下 prethreshold 或精确除子缺口余项；但目标还没有被重算为可递归的
+verified-overflow state。严格门不可省略：在一般 \(d\) 中
+\(g(p-d)\le p\) 会产生同一 canonical state 的 stutter，而不是递降。
+
+它目前是 `candidate_transition`，不是全局选择器闭合：算术恒等式没有重算 target 的
+F/G、hit、纤维、state_id、source scope 或 \(\operatorname{Sol}(p)\) 提升，也没有把
+局部 \(\bigl(\lfloor B_p/A\rfloor,R\bigr)\) 势嵌入防重入的全局 E5。下一项应实现一个具名
+target-state adapter 并证明其与非 RESET 相位势的组合。相应主张卡见
+[高容量小 \(d\) overflow 的精确容量壳与余因子模 \(p\) 折叠候选](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)
+及[整体余因子严格局部 \(R\) 折叠](../claims/type-I-overflow-cofactor-mod-p-fold-r-descent.md)。
+
+## 2026-08-09：稳定子商碰撞已转为实际偶终端
+
+固定中心化层 \(J=\mathcal C_R(N)\) 的稳定子不再只用于缩小 Fourier 商。若残余指数盒中
+两个同符号向量在 \(H/P\) 中相撞，其差落入 \(P\subseteq J\)，可由固定层补成完整
+有界核关系，继而产生偶终端。更精确地，
+
+\[
+\prod_i(2\nu_i+1)>2^r|\langle\pi(q_i)\rangle|
+\]
+
+已是直接终端的充分条件，不再只是“某个剩余类近邻”的分析证据。
+
+这也精化了 q-primary 饱和的类型边界。对 \(K_X=X^\perp\)，普通
+\[
+C_{y,X}>|J|2^r
+\]
+只保证一个短 \(K_X\)-商关系；只有更强的
+\[
+C_{y,X}>[K_X:P]|J|2^r
+\]
+才强制固定层吸收与终端。精确目标纤维在 centered 情形的门则从
+\(|J|2^r\) 降为 \(|J/P|2^r\)。
+
+实际正控制为 \(p=433,R=15,K=2^3\cdot7\cdot29\)：\(J=P=\{1,14\}\)、
+\(X=P^\perp\) 为 2-primary，且 \(N_{-1}=5>4\)、\(C_{-1,X}=10>8\)，得到
+\(E=3136,n=224\)。反向控制 \(p=97,R=67,K=5^3\cdot13\) 有
+\(C_{-1,X}=10>6\)，却没有盒内非零完整关系；它严格禁止把普通 saturation 直接写成
+终端。该结果消除了先前 q-primary 分支的一个逻辑缺口，但仍未把 Fourier 角色或
+低密度容量自动接到跨状态递降。详见
+[固定层稳定子商碰撞与 q-primary 饱和的短关系偶终端](../claims/type-I-fixed-layer-stabilizer-collision-terminal.md)。

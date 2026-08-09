@@ -1,21 +1,23 @@
 ---
 kind: claim
 claim_id: type-I-overflow-high-capacity-small-d-residual-cone
-title: 高容量小 d overflow 的精确容量壳/余因子—分母积残余锥
+title: 高容量小 d overflow 的精确容量壳与余因子模 p 折叠候选
 statement: >-
   设 p≡1 (mod 24) 的 verified overflow 满足 pn=4Md+1、2B_p≤M、d^2<p，且携带
-  c=(p−1)/4≤A≤B_p、A|M 以及 source/path、Sol(p)、E1--E5 合同。令
+  c=(p−1)/4≤A≤B_p、A|M 以及既有状态合同。令
   M=kp+r、P=rd、b=M/A，并令 Π_p(A)=floor(B_p/A)、
   Θ_p(A)=floor(B_p/Π_p(A))+1。该 Θ_p(A) 是严格降低外层秩的最小有界载体，
   且 A<Θ_p(A)≤2A。若 P≥Θ_p(A)，则 L=P 给出完整 fixed-s 严格外层秩递降；
   若 P<Θ_p(A)，则余因子 dispatcher 依次给出 dg<p 的因子转移、d<b<p 的交换，或
   bd 的某个壳除子 t（Θ_p(A)≤t≤B_p）的 fixed-n 商模 p 折叠。因 d^2<p，所有
   未分流状态必满足 P<Θ_p(A)、b>p、每个 q|b 有 dq≥p，并且 bd 在闭区间
-  [Θ_p(A),B_p] 没有除子；特别地 bd<Θ_p(A) 或 bd>B_p，前一类还强制
-  A>(p−1)/2。Π_p(A)=1 时 Θ_p(A)=B_p+1，明确记录为无 bounded-support
-  reset 的顶层容量壳。该二分严格收紧旧的 2A 充分门，但不声称余项已经有
-  Type I/II 终端或全局递降。
-claim_status: established
+  [Θ_p(A),B_p] 没有除子；这些是旧 bounded-shell 菜单的精确边界。进一步取完整
+  余因子 g=b 并作 dg mod p 折叠，因 d^2<p、b>=2 自动严格降低 canonical R，
+  故全部高容量 small-d overflow 都有 support-preserving 的算术 candidate_transition。
+  Π_p(A)=1 时 Θ_p(A)=B_p+1 仍准确描述 bounded-support reset 的顶层容量壳，
+  但不再是该算术菜单的未决余项。余因子整体折叠尚未重算目标 typed state、F/G、解提升
+  或可跨后继使用的全局 E5，故不是已验证递归边，也不构成 Erdos--Straus 猜想的全称证明。
+claim_status: conditional
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
@@ -23,6 +25,7 @@ depends_on:
   - type-I-overflow-fixed-s-bounded-divisor-saturation
   - type-I-overflow-cofactor-factor-exchange-carrier-descent
   - type-I-overflow-fixed-n-quotient-fold-descent
+  - type-I-overflow-cofactor-mod-p-fold-r-descent
 topics:
   - type-I
   - overflow
@@ -43,13 +46,15 @@ sources:
     role: factor-transfer-and-exchange-edges
   - claim: type-I-overflow-fixed-n-quotient-fold-descent
     role: high-cofactor-fold-edge
+  - claim: type-I-overflow-cofactor-mod-p-fold-r-descent
+    role: strict-total-cofactor-arithmetic-candidate
   - reproduction: reproductions/type_i_overflow_high_capacity_small_d_residual_cone.py
     role: focused-route-and-residual-receipts
 visibility: public
 last_checked: '2026-08-09'
 ---
 
-# 高容量小 \(d\) overflow 的精确容量壳/余因子—分母积残余锥
+# 高容量小 \(d\) overflow 的精确容量壳与余因子模 \(p\) 折叠候选
 
 ## 设置
 
@@ -269,7 +274,7 @@ M_T=L,\qquad d_T=\delta,\qquad n_T=n-4Lh,\qquad A_T=L
 \(bd\) 的任意壳内复合除子，也可以是一个 \(d\)-因子与余因子的乘积。又不需要另加
 \(4L>n\)，因为长商由折叠恒等式处理。
 
-## 残余锥
+## 旧菜单残余与整体折叠候选
 
 若上述三类路由都没有被选中，因 (15) 可排除 \(b\le d\)。又
 \(b\ne p\)，否则 \(p\mid M\) 与 (1) 矛盾；若 \(b<p\)，则 \(d<b<p\) 会触发
@@ -300,7 +305,7 @@ A>\sqrt{B_p}=\frac{p-1}{2}.
 \tag{23}
 \]
 
-因此真正未由本菜单处理的高容量小 \(d\) 状态只落在：
+因此旧的 bounded-shell 菜单未处理的高容量小 \(d\) 状态只落在：
 
 1. \(P<\Theta_p(A)\)、\(p<b\)、\(bd<\Theta_p(A)\)、\(A>(p-1)/2\) 的
    prethreshold 高支撑余项；或
@@ -309,10 +314,42 @@ A>\sqrt{B_p}=\frac{p-1}{2}.
 
 当 \(\Pi_p(A)=1\) 时，(8) 表明第一类允许 \(b\le B_p\)，但这不是一个遗漏的
 bounded-divisor：outer rank 已经等于一，任何 \(L\le B_p\) 都没有 E5 支付。
-两类都只表示当前 Type I 载体选择器的精确边界，不表示没有其它 Type I/II 表示，
-也不表示 Erdos--Straus 反例。尤其不能把第二类错误简化为“\(b\) 必为素数”：
-下面给出一个复合余因子的精确壳缺口控制。下一步应对这两个锥分别接入
-generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (21) 当作负定理。
+同样，第二类不能错误缩约成“\(b\) 必为素数”；复合精确壳缺口确实存在。
+
+然而这两类在算术 rechart 菜单中都有同一个整体折叠候选。由 \(M\ge2B_p\)、\(A\le B_p\) 得
+\(b\ge2\)，而 \(d^2<p\) 与 \(p\ge73\) 给出 \(d<p/2\)。选择完整余因子
+\(g=b\)，写
+
+\[
+bd=ph+\delta,\qquad 1\le\delta<p,
+\tag{24}
+\]
+
+则
+
+\[
+(M,d,n;A)\longmapsto
+\left(A,\delta,n-4Ah;A\right)
+\tag{25}
+\]
+
+是余因子模 \(p\) 折叠。并且
+
+\[
+b(p-d)>p,
+\tag{26}
+\]
+
+故其 canonical \(R\) 严格降低，而 charged support 不变。以
+\(\bigl(\lfloor B_p/A\rfloor,R\bigr)\) 为局部势，(25) 是严格的局部算术
+`candidate_transition`；它尚不是完整 E1--E5 边。详细的合法性、stutter 门和
+state-contract 边界见
+[overflow 余因子整体模 \(p\) 折叠的严格局部 \(R\) 下降](type-I-overflow-cofactor-mod-p-fold-r-descent.md)。
+
+所以 (21)--(23) 现在只记录精确 floor-shell 的结构与一个严格的算术替代出口；
+它们不能再被描述为没有 arithmetic rechart 的余项，但仍是 target-state adapter、
+source/path、\(\operatorname{Sol}(p)\) 回放和全局 F/G/E5 组合层面的余项。
+这不替代全局 F/G 选择器、source 可达性或 Erdős--Straus 的全称证明。
 
 ## 聚焦回执
 
@@ -330,9 +367,9 @@ generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (2
 (73,317,5785,1,65)&\Theta_p(A)=69\le b=89<2A\text{ 的壳除子折叠}\\
 (73,23381,426703,1,53)&t=97\mid b=83\cdot97,\ \Theta_p(A)=55\text{ 的壳除子折叠}\\
 (73,7553,68921,2,41)&L=82=2\cdot41\mid bd,\ \Theta_p(A)=42\text{ 的乘积壳折叠}\\
-(73,645,11771,1,149)&p<b=79<\Theta_p(A)=163\text{ 的 prethreshold 残余}\\
-(73,1585,28926,1,18)&\text{素数超容量残余}\\
-(73,37617,686510,1,110)&b=79^2\text{ 的复合精确壳缺口残余}
+(73,645,11771,1,149)&g=b=79\text{ 的整体折叠候选到 }(149,6,49;149)\\
+(73,1585,28926,1,18)&g=b=1607\text{ 的整体折叠候选到 }(18,1,1;18)\\
+(73,37617,686510,1,110)&g=b=79^2\text{ 的整体折叠候选到 }(110,36,217;110)
 \end{array}
 \]
 
@@ -342,8 +379,9 @@ generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (2
 \(L\mid Md\) 调用的乘积壳折叠。第 12 条的
 \(\operatorname{Div}(bd)=\{1,79,6241\}\) 与
 \([\Theta_p(A),B_{73}]=[118,1296]\) 不相交，严格否定“精确壳余项余因子必为素数”的
-错误缩约。第 10 条保留真实的 \(bd<\Theta_p(A)\) 边界。所有控制都不提供新的
-source/path 可达性，也不替代全局 F/G 选择器。
+错误缩约。第 10--12 条随后分别给出 prethreshold、素数超容量和复合精确缺口的
+\(g=b\) 整体折叠候选。所有控制只验证算术分类、规范图表和局部势支付；它们不提供
+target-state/source-path 回放，也不替代全局 F/G 选择器。
 
 复现命令：
 
