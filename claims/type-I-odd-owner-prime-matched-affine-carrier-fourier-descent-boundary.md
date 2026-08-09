@@ -90,8 +90,10 @@ last_checked: '2026-08-10'
 
 若角色在 \(\Delta\) 上平凡而只分离 target anchor，则已有分派要求
 \(d_q=0\)；这种 `ANCHOR_ONLY_FOURIER` 不进入本卡。F/G 是目标纤维分类，不能代替
-式 (2) 的关系限制检验。若只有抽象子群角色而没有 ambient pullback，本卡的 content
-构造不适用，必须先输出 `SOURCE_ROLE_AMBIENT_PULLBACK_UNPROVED`。
+式 (2) 的关系限制检验。若只有抽象子群角色而没有 ambient pullback，本卡的
+whole-ambient `AFFINE_CONTENT_EDGE_LIFT_V2` 构造不适用，在本卡范围内输出
+`SOURCE_ROLE_AMBIENT_PULLBACK_UNPROVED`。这只是 V2 的适用范围，不是 named source
+edge 的不可能性；后续的 source-lattice \(q\)-height 对偶定理会在正层重新判定它。
 
 设 \(G\) 为有限阿贝尔群，\(u\in G\)。存在某个可自由选择的循环
 \(\ell\)-primary 角色，使 \(u\) 的像恰有阶 \(\ell\)，当且仅当
@@ -335,7 +337,8 @@ c=t_0-\mathbf a\cdot z_0
 \tag{25}
 \]
 
-即可构造 (23)。对 source-role 兼容性还需使用第 1 节的 ambient pullback。写
+即可构造 (23)。对本卡 V2 的 whole-ambient source-role 兼容性还需使用第 1 节的
+ambient pullback。写
 
 \[
 \widetilde\gamma(z)=\mathbf h\cdot z\pmod q
@@ -376,7 +379,8 @@ c=t_0-\mathbf a\cdot z_0
 这比任意 Bezout 向量更强：它同时实现 content 插值，并保证最终横向线性函数在整个
 ambient 指数格上与 \(\widetilde\gamma\) 只差一个非零标量。若没有 ambient
 pullback，则“\(\gamma(\delta)\ne0\Rightarrow q\nmid g\)”一般为假；例如在子格
-\(3\mathbb Z\) 上可定义 \(\gamma(3n)=n\bmod3\)。
+\(3\mathbb Z\) 上可定义 \(\gamma(3n)=n\bmod3\)。这个例子严格阻断第零层
+whole-ambient V2，但不阻断在第 1 层对 source line 做 valuation shift。
 
 这给出旧固定三模板的严格边界。其 endpoint 差只有
 
@@ -812,7 +816,10 @@ typed compatible role
        ANCHOR_ONLY_FOURIER (no source charge)
   -> SOURCE_RANK_DEMAND(ell,1):
        -> no ambient exponent-lattice pullback:
-            SOURCE_ROLE_AMBIENT_PULLBACK_UNPROVED
+            SOURCE_ROLE_AMBIENT_PULLBACK_UNPROVED (V2 scope)
+            -> downstream SOURCE_LATTICE_QHEIGHT_DUAL
+                 fixed layer below minimal depth: strict dual obstruction
+                 unlayered rank-one role: valuation-shift carrier / range obstruction
        choose physical prime q=ell
        -> fixed residue-optimal carrier menu
        -> fixed-row affine content gate
@@ -838,11 +845,13 @@ typed compatible role
 
 因此已经排除三个伪缺口：任意奇素 source prime 并不缺匹配算术 carrier；固定三模板的
 content 阻碍不是绝对障碍；单块的局部 \(D\) drop 不能冒充稳定子 E5。尚未闭合的决定性
-命题缩为：对每个实际未决 F/G 状态，要么构造 ambient pullback，并证明某个
-content-adaptive 模板在当前 \(p\)-范围内通过且完成 occurrence/target-state 出口，
-要么让 (49) 的显式角色通过
-既定标签门并扩成
-足以覆盖完整同余核的来源盒或送入另一个已有良基 phase。只有该二分具有全称性，才会
+命题缩为：对每个实际未决 F/G 状态，先按 layer status 完成算术分派。已绑定层的请求
+只能在原层通过 source-lattice \(q\)-height 与物理门；尚未绑定层的 rank-one 请求可选
+\(J\ge\max(1,d_q)\)，但必须证明 valuation-shifted carrier 在当前 \(p\)-范围内通过并
+完成 occurrence/target-state 出口。任何移层都生成新请求，不能在没有
+layer-relay/retyping 时支付旧 occurrence key。若这一算术分派未 ready，则必须让
+(49) 的显式角色通过既定标签门并扩成足以覆盖完整同余核的来源盒，或送入另一个已有
+良基 phase。只有该二分具有全称性，才会
 推进到目标中的“每个核心素数必有短证书或严格可提升递降”。
 
 ## 聚焦验证

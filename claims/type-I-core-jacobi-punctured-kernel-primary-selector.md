@@ -20,8 +20,10 @@ statement: >-
   endpoint 且目标继承该层，则已有 {1,q} arithmetic-ready block；只有来源边合格且
   source/target 两个全局 occurrence key 均未占用时才成为 verified physical
   source-class lift。固定 q=3 的三张模板覆盖全部充分大核心素数；任意奇 source
-  prime 还有 residue-optimal matched menu，而具有 ambient 指数格 pullback 的
-  rank-one 请求有 content-adaptive 仿射 provenance。但其范围/target-state 门、
+  prime 还有 residue-optimal matched menu；任意 rank-one named edge 还有精确的
+  最小 q-height 对偶。已绑定层的旗标只能在原层准入或输出严格 obstruction；只有
+  尚未绑定层的请求才能在 owner 窗口可容纳时选择 valuation-shifted carrier 构造
+  新层的 source-line 仿射 provenance，否则给出严格窗口阻碍。但其范围/target-state 门、
   完整 kernel source box 与全局 E5 仍未证明。
   纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
   进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
@@ -37,6 +39,7 @@ depends_on:
   - type-II-source-fiber-finite-abelian-composition-relay
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
+  - type-I-source-lattice-qheight-dual-valuation-shift-carrier
 topics:
   - type-I
   - core-prime
@@ -61,6 +64,8 @@ sources:
     role: nonadjacent-exclusive-next-q-layer-physical-source-class-lift
   - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
     role: prime-matched-affine-admission-and-kernel-fourier-boundary
+  - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
+    role: minimal-qheight-dual-and-nonambient-rank-one-carrier
   - reproduction: reproductions/type_i_core_jacobi_punctured_kernel_primary_selector.py
     role: focused-capacity-Fourier-Sylow-and-boundary-controls
 visibility: public
@@ -770,8 +775,13 @@ source-class arithmetic-ready block；在可自由选择 cyclic q-primary 角色
 不杀掉实际 q 类的角色恰当且仅当 \(q\mid\operatorname{ord}_{4D_*}(q)\)，而既定
 \(J\)/anchor/labels 仍需联合 SNF/\(\eta\)。固定 \(q=3\) 的三张模板覆盖全部
 \(p>2600\) 核心素数；进一步对任意奇 source prime 已有 residue-optimal matched
-menu，并且对具有 ambient 指数格 pullback 的 rank-one 带名记录对已有
-content-adaptive affine carrier。它在精确范围门通过时关闭代数 provenance，但单个
+menu；rank-one 带名记录对的 source-lattice 角色还有一个由 Smith 正规形计算的
+最小实现深度。对已经登记 \(J\) 的 MASKED_PRIME_LAYER_FLAG，只能在同一 \(J\)
+判定：\(J<d_q\) 时输出严格对偶阻碍，\(J\ge d_q\) 时也必须在原层通过全部物理门。
+只有尚未绑定层的 rank-one 请求才能另选
+\(J\ge\max(1,d_q)\) 使用 valuation-shifted carrier；若该层超过 owner 窗口则有
+全窗口严格 no-go。该 carrier 在精确范围门通过时只关闭一个新层 named source line
+的代数 provenance；没有 layer-relay/retyping 时不能回填旧旗标。单个
 \(\{1,q\}\) 块的稳定子平凡，严格降模只能先输出显式
 kernel Fourier；该输出在预设标签下仍可能阻塞，且尚未给出完整核来源盒、跨状态
 target closure 或全局 E5。该关联格另有尺度二分：
@@ -795,7 +805,8 @@ recursive_edge_eligible = true
 若这两个适配条件缺失，它仍降回 candidate transition。详见
 [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](type-I-pure-dyadic-half-power-crt-rechart-descent.md)
 、[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)
-与[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)。
+、[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)
+与[源格角色的最小 q 层对偶与 content 估值移位载体](type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)。
 
 ## 聚焦验证
 

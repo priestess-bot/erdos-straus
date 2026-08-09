@@ -103,6 +103,7 @@ depends_on:
   - type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
+  - type-I-source-lattice-qheight-dual-valuation-shift-carrier
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -220,6 +221,8 @@ sources:
     role: nonadjacent-common-base-square-menu-and-exclusive-next-layer-physical-lift
   - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
     role: prime-matched-affine-carrier-kernel-fourier-and-global-E5-boundary
+  - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
+    role: minimal-source-lattice-qheight-dual-and-valuation-shift-admission
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -1174,14 +1177,19 @@ endpoint cofactor residue 必碰撞，但唯一 deep endpoint 被目标继承时
 、[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)
 、[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)
 、[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)
-与[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)。后者进一步证明：对任意奇素
+与[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)。前一张主张证明：对任意奇素
 source prime \(q\) 和层 \(j\)，存在残数数目最优的有限 matched-carrier 菜单；对任意
 具有 ambient 指数格 pullback 的非零带名 \(C_q\) 记录对，还能把差向量 content 吸收到
-共同基平方部分，并选择与原角色相容的 Bezout 向量，从而在精确范围门通过时构造整数
-仿射 provenance。固定三模板的 content 阻碍因此不是绝对 no-go。但单个 \(\{1,q\}\)
-prefix 的稳定子平凡，不能吸收严格降模核；失败后在未固定额外标签时已有显式、可确定化
-的 kernel Fourier twist，预设标签则可能严格阻塞它；全局 E5 仍要求完整 target state
-和不可重置 owner phase。
+共同基平方部分，从而在精确范围门通过时构造整数仿射 provenance。
+进一步的[源格角色最小 q 层对偶与 content 估值移位载体](type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)
+将这个 ambient 二元门精确化：任意源格角色都有可由 Smith 正规形计算的最小深度
+\(d_q(L,\gamma)\)，每个过浅的固定层都有交格中的严格阻碍。已绑定 \(J_{\rm req}\)
+的请求只能在该层判定；只有尚未绑定层的 rank-one named edge 才能另选
+\(J\ge\max(1,d_q)\) 构造 valuation-shifted source-line carrier，或由 owner 窗口容量
+给出严格 no-go。固定三模板的 content 阻碍因此
+不是绝对 no-go。但单个 \(\{1,q\}\) prefix 的稳定子平凡，不能吸收严格降模核；
+失败后在未固定额外标签时已有显式、可确定化的 kernel Fourier twist，预设标签则可能严格
+阻塞它；全局 E5 仍要求完整 target state 和不可重置 owner phase。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子
@@ -1202,18 +1210,22 @@ F/G sink。详见
 该合同解决的是证据编排和类型安全，不解决以下命题：
 
 - 每个核心素数的 terminal-first 失败状态必有 alternate、终端或合法后继；
-- 每个未决 F/G 奇阶源请求必有 ambient pullback，且其 content-adaptive matched carrier
-  必通过当前 \(p\) 的范围、occurrence 和既定标签门，或通过标签门的显式 kernel
-  Fourier 必进入完整核来源盒/另一良基出口；
+- 每个未决 F/G 奇阶源请求都通过其已绑定层的 source-lattice \(q\)-height
+  对偶门与物理门；低于最小深度时输出严格 obstruction，不得移层。只有 unlayered
+  rank-one 请求可选 \(J\ge\max(1,d_q)\)，且 valuation-shifted carrier 必通过当前
+  \(p\) 的窗口、范围、occurrence 和既定标签门；dual/window no-go 保留严格见证，
+  特定 carrier 的 range failure 只记为 unclosed。所有非 ready 回执与通过标签门的
+  显式 kernel Fourier 最终都必须进入终端、完整核来源盒或另一良基出口；
 - 除已登记的不可逆半幂 CRT 真因子边外，任意丢弃旧 charged support 的 phase reset
   具有全局良基秩；
 - 某个候选后继对全部标记解都给出 E4 提升并满足 E5。
 
 因此下一步不再需要为 \(p=97\) 的反演 pair 补 additive source-rank Rado：该门已由
 规范来源边关闭，而其相邻固定基物理路线已由 E2 严格阻塞。对一般奇阶请求，匹配 source
-prime 的算术 carrier 已有统一构造；对具有 ambient pullback 的 rank-one 请求，仿射
-provenance 也已有统一构造。决定性缺口已收紧为
-证明自适应模板在当前 \(p\) 下满足范围/occurrence/target-state 门，或把单块降模失败后
+prime 的算术 carrier 已有统一构造；rank-one 请求的最小 \(q\)-height 已有统一判据，
+且 unlayered 请求的 source-line 仿射 provenance 不再要求第零层 ambient pullback。
+决定性缺口已收紧为证明 fixed-layer 请求在原层、unlayered 请求在新选层分别满足
+范围/occurrence/target-state 门，或把对偶、窗口与单块降模失败后
 的显式 kernel Fourier 扩成完整核来源盒。局部 \(D_*<D_0\) 还必须配上不可重置的
 owner phase；自然较小余因子在 \(p=2113,n=241\) 上已有严格空 marked-fiber 反例，
 不能再作为默认 E4。菜单空、来源阻塞或 rank 过载若不能进入因子选择，必须转成带标记的

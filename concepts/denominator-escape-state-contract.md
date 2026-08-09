@@ -41,6 +41,7 @@ used_by:
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
+- type-I-source-lattice-qheight-dual-valuation-shift-carrier
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion

@@ -457,6 +457,16 @@ q-primary 同态 lift；非相邻边的独占下一层子类在 provenance 与�
 分配门通过时现已关闭 physical E1，但异质源基、
 其它非相邻高度型、换状态与全局 E5 仍未闭合。
 
+后续的[源格角色最小 q 层对偶与 content 估值移位载体](type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)
+进一步给出本卡“qualified arithmetic edge”的同层准入门：对任意 named edge 差格
+\(L_\delta\)，角色的最小实现层精确等于
+\(v_q(\operatorname{content}(\delta))\)。由于本卡签名已经绑定层 \(j\)，只能在同一
+\(j\) 上运行对偶与物理门；若 \(j\) 低于最小深度则输出严格 obstruction，若
+\(j\) 足够深且范围门通过才可在该层构造带名 source-line edge。只有尚未绑定层的
+rank-one 请求才能另选 \(J\ge\max(1,d_q)\)；移到更深层会生成新的层请求，除非另有
+layer-relay/retyping 证明，否则不能支付本卡旧 occurrence key。这个区分不改变本卡的
+秩一容量，也不补出 E4/E5。
+
 ## 聚焦验证
 
 ~~~bash

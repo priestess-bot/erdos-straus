@@ -54,6 +54,8 @@ sources:
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
   role: prime-matched-affine-carrier-kernel-fourier-and-global-descent-boundary
+- claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
+  role: minimal-source-lattice-qheight-dual-valuation-shift-and-window-obstruction
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -4349,3 +4351,69 @@ marked fiber 已严格证明为空。
 pullback 与范围合格的 content-adaptive receipt，并完成 target-state 出口；或证明通过既定标签门的
 显式 kernel Fourier 必强制足够多独立 source columns 覆盖整个同余核。详见
 [奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](../claims/type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)。
+
+## 2026-08-10：ambient 二元门被最小 \(q\)-height 对偶取代
+
+上一节把第零层 ambient pullback 当成 rank-one provenance 的决定性前提，这个边界现已
+被严格改进。对任意源关系子格 \(L\le\mathbb Z^d\)、奇素数 \(q\) 与非零角色
+\(\gamma:L\to\mathbb F_q\)，定义
+
+\[
+F_J(L)=L\cap q^{J+1}\mathbb Z^d.
+\]
+
+层 \(J\) 存在整数对偶向量实现 \(\gamma\)，当且仅当
+
+\[
+\gamma(F_J(L))=0.
+\]
+
+因此最小实现深度不是一个待猜参数，而是 Smith 正规形中活跃方向的最大
+\(q\)-进赋值：
+
+\[
+d_q(L,\gamma)=\max_{\gamma(d_i e_i)\ne0}v_q(d_i).
+\]
+
+对任意过浅层，\(F_J(L)\) 中的一个非零角色向量就是严格阻碍见证。这把原来的
+`AMBIENT_PULLBACK_UNPROVED` 改造成了每层都可决定的正/负证书。
+
+对 rank-one named edge，若差向量的 content 为 \(q^t g_0\)，则精确有
+
+\[
+d_q=t.
+\]
+
+允许非零源列规范化时，两个 endpoints 在层 \(J\) 实现该角色的充要条件是
+content 整除 endpoint 差且该差的 \(q\)-进赋值精确为 \(J\)。若请求已绑定
+\(J_{\rm req}\)，只能在原层应用这个判据；\(J_{\rm req}<t\) 时输出严格 obstruction，
+不能通过加深重标。只有尚未绑定物理层的 rank-one 请求，才可另选
+\(J\ge\max(1,t)\) 并生成一个新的 \(J\)-layer request；精确范围门通过时，广义横向
+数字 \(\alpha q^J\) 同时构造整数 source-line provenance、独占下一层
+\(\{1,q\}\) 物理块与显式 \(C_q\) 商，而不需第零层 ambient pullback。
+
+新的正控制是
+
+\[
+p=97561,\qquad q=3,\qquad \delta=3,\qquad J=1.
+\]
+
+其 canonical target 为 \(x=182\)，source endpoints 为 \(3458,24206\)，层高分别为
+\((2,1)\)，横向差为 \(1\pmod3\)。仿射律
+
+\[
+\mathcal L(z)=3458+6916z
+\]
+
+在 \(3\mathbb Z\) 上精确实现角色，但不能延伸为 whole-ambient same-prefix map；这是一个新的
+non-ambient 物理 carrier，不是语义放宽。严格负控制为 \(p=97,q=3,\delta=27\)：
+最小层为 3，但 owner 窗口只容纳到第 2 层，故所有 two-point owner edge 都不可能实现该角色。
+
+这一结果只支付 provenance 成本：移到更深层不能回填原固定层的非零数字，一个
+carrier 的初等源秩仍精确为 1，且它没有自动产生 target state、E4 或 E5。所以当前最窄的
+决定性缺口是：对每个真实 F/G fixed-layer demand，在原 \(J_{\rm req}\) 上证明它通过
+对偶、范围、occurrence 与标签门并构成完整 target state，或把严格原层 obstruction
+送入完整 kernel source box 或已封闭的良基出口。对 unlayered rank-one 请求，另选层
+只能生成新的 occurrence key；多个独立角色还必须另证 layered Rado/Hall 的 occurrence 匹配，
+不能复制一维 carrier 重复收费。详见
+[源格角色的最小 q 层对偶与 content 估值移位载体](../claims/type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)。
