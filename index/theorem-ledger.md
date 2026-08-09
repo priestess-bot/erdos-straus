@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 585 |
+| 数学状态 | `established` | 586 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 421 |
+| 证明来源 | `repository_derivation` | 422 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 557 |
+| 审阅状态 | `internal_review` | 558 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -764,6 +764,7 @@
 | [Type II CRT 局部标签到全局 Fourier 的幂等元桥](../claims/type-II-crt-local-label-idempotent-phase-bridge.md) (`type-II-crt-local-label-idempotent-phase-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 二进目标纤维最大深度的商约化—顶层对合终端](../claims/type-II-dyadic-target-fiber-max-depth-relay.md) (`type-II-dyadic-target-fiber-max-depth-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 二进目标纤维的最大目标保持商与顶位源类去重](../claims/type-II-dyadic-target-fiber-maximal-quotient-dedup.md) (`type-II-dyadic-target-fiber-maximal-quotient-dedup`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [Type II 二进顶位装箱簇生成关系子群与容量候选](../claims/type-II-dyadic-target-fiber-packing-cluster-subgroup-capacity.md) (`type-II-dyadic-target-fiber-packing-cluster-subgroup-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 二进顶位源类的二^r 装箱—短关系引理](../claims/type-II-dyadic-target-fiber-top-class-packing-short-relation.md) (`type-II-dyadic-target-fiber-top-class-packing-short-relation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 因子生成器在 10^8 内的有限参数盒审计](../claims/type-II-factor-box-audit.md) (`type-II-factor-box-audit`) | `computationally_reported` | `unspecified` | `unspecified` | `bello2026` | 2026-07-23 |
 | [Type II 互素因子对的二次比值载体与严格递降](../claims/type-II-factor-pair-carrier-strict-descent.md) (`type-II-factor-pair-carrier-strict-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
