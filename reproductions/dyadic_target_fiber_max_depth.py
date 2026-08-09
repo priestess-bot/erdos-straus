@@ -118,6 +118,13 @@ def profile(
     if top_digit not in quotient_fiber:
         raise AssertionError("maximum-depth fiber did not produce quotient top digit")
     quotient_strict = maximum_depth < top_depth
+    disjoint_levels = tuple(
+        level
+        for level in range(kernel_exponent + 1)
+        if not any(value % (1 << level) == 0 for value in fiber_values)
+    )
+    if not disjoint_levels or disjoint_levels[0] != maximum_depth + 1:
+        raise AssertionError("the maximum-depth subgroup was not the first disjoint dyadic tail")
 
     fiber_exponents = tuple(
         exponent
@@ -186,6 +193,29 @@ def profile(
     if target_in_kernel and maximum_depth != top_depth:
         raise AssertionError("an involution inside cyclic K must expose the top digit")
 
+    top_depth_values = {
+        value for value, depth in depths.items() if depth == maximum_depth
+    }
+    top_source_classes = {
+        tuple(
+            list(add(image(exponent, generators, moduli), negate(target, moduli), moduli)[:-1])
+            + [
+                add(image(exponent, generators, moduli), negate(target, moduli), moduli)[-1]
+                % layer
+            ]
+        )
+        for exponent in fiber_exponents
+        if (
+            add(image(exponent, generators, moduli), negate(target, moduli), moduli)[-1]
+            % kernel_modulus
+        )
+        in top_depth_values
+    }
+    if top_source_classes != {
+        tuple([0] * (len(moduli) - 1) + [top_digit])
+    }:
+        raise AssertionError("maximum-depth source representations did not deduplicate in the quotient")
+
     return {
         "kernel_modulus": kernel_modulus,
         "target_in_kernel": target_in_kernel,
@@ -197,6 +227,10 @@ def profile(
         "quotient_strict": quotient_strict,
         "quotient_fiber": sorted(quotient_fiber),
         "top_digit": top_digit,
+        "disjoint_levels": list(disjoint_levels),
+        "top_depth_values": sorted(top_depth_values),
+        "top_source_class_count": len(top_source_classes),
+        "top_source_classes": [list(value) for value in sorted(top_source_classes)],
         "fiber_exponent_count": len(fiber_exponents),
         "antipodal_pair_count": len(pairs),
         "fixed_exponents": [list(exponent) for exponent in fixed],
@@ -216,8 +250,8 @@ def verify() -> None:
         "target": (1, 0),
     }
     strict = profile(
-        generators=((1, 2),),
-        bounds=(1,),
+        generators=((1, 2), (0, 4)),
+        bounds=(1, 1),
         **common,
     )
     assert strict["fiber_values"] == [2, 6]
@@ -225,9 +259,12 @@ def verify() -> None:
     assert strict["quotient_layer"] == 4
     assert strict["quotient_strict"] is True
     assert strict["quotient_fiber"] == [2]
+    assert strict["disjoint_levels"] == [2, 3]
+    assert strict["top_depth_values"] == [2, 6]
+    assert strict["top_source_class_count"] == 1
     assert strict["certificate_type"] == "DYADIC_TARGET_FIBER_QUOTIENT_DESCENT"
-    assert strict["pairs"][0]["short_relation"] is False
-    assert strict["pairs"][0]["relation"] == [0, 4]
+    assert all(not pair["short_relation"] for pair in strict["pairs"])
+    assert all(pair["relation"] == [0, 4] for pair in strict["pairs"])
 
     short = profile(
         generators=((1, 2),),
@@ -247,6 +284,8 @@ def verify() -> None:
     assert top["maximum_depth"] == 2
     assert top["quotient_layer"] == 8
     assert top["quotient_strict"] is False
+    assert top["disjoint_levels"] == [3]
+    assert top["top_source_class_count"] == 1
     assert top["certificate_type"] == "TOP_DYADIC_TARGET_FIBER"
     assert top["pairs"][0]["relation_is_zero"] is True
 
