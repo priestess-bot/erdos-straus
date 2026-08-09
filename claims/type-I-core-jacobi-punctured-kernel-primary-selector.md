@@ -14,8 +14,10 @@ statement: >-
   将 L=T times O 分成 2-Sylow 与奇 Hall 部分后，要么 O-单位纤维给出非零
   2^a 缩放核关系，并由精确非对称二进盒判定终端或盒外残差；要么 O 投影仍缺失
   目标，产生非恒奇阶全局 Fourier 角色及带条件掩码的奇素数阶源秩旗标。一般旗标
-  尚无整数 owner/source-map；p=97 的 11 阶旗标虽已有反演对 owner 圆柱横向秩映射，
-  但仍无同纤维 E1--E5。前一盒外关系也尚非递降，故两支都不自动成为递归边。
+  尚无保持原记录来源的完整整数 owner/source-map；p=97 的 11 阶旗标已有反演对
+  owner 圆柱横向秩映射和 C_11 关联格 SNF，同纤维横向 lift 已被排除，但仍无
+  跨纤维因子积块或 E1--E5。纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
+  进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -24,6 +26,7 @@ depends_on:
   - type-I-fixed-layer-qprimary-representation-dual-capacity-selector
   - type-I-target-fiber-primary-filtered-support-source-dichotomy
   - type-I-generalized-dyadic-exact-relation-capacity
+  - type-I-pure-dyadic-half-power-crt-rechart-descent
   - type-II-source-fiber-finite-abelian-composition-relay
 topics:
   - type-I
@@ -43,6 +46,8 @@ sources:
     role: source-difference-rank-semantics
   - claim: type-I-generalized-dyadic-exact-relation-capacity
     role: exact-dyadic-box-admission
+  - claim: type-I-pure-dyadic-half-power-crt-rechart-descent
+    role: outside-box-half-power-terminal-or-strict-rechart
   - reproduction: reproductions/type_i_core_jacobi_punctured_kernel_primary_selector.py
     role: focused-capacity-Fourier-Sylow-and-boundary-controls
 visibility: public
@@ -434,7 +439,19 @@ s_z=(t,1_O),\qquad t\in T\setminus\{1\}.
 SCALED_RELATION_OUTSIDE_DYADIC_BOX
 ```
 
-并保存逐坐标 overflow；它不是终端、owner 或递降。
+并保存逐坐标 overflow。该标签只说明**原图表**的关系盒准入失败，不能在这里直接
+称为终端。后续半幂定理取
+
+\[
+\omega=\Phi(2^{a-1}z)
+\]
+
+并以 \(\gcd(R,\omega\mp1)\) 把 \(R\) 分成互素真因子。唯一
+\(3\pmod4\) 因子 \(R_*<R\) 给出新中心 \(K_*=(pR_*+1)/4\)：半幂进入新目标盒
+或关系盒时返回相应终端回执，\(R_*\mid p+4\) 时直接 Type II；否则在
+\(W=\operatorname{Sol}(4,p)\) 与不可逆 CRT_DESCENT phase 中返回完整 E1--E5 的
+严格 \(R\to R_*\) 重图表边。若调用方使用图表依赖 marking 或允许 phase 回退，
+该后继仍只能是 candidate transition。
 
 ### 5.2 奇 Hall 目标缺失：全局非恒角色
 
@@ -608,11 +625,15 @@ m(2)=m(4)=1,\qquad m(3)=2,\qquad m(0)=0.
 
 所以该反演对真实保存一个 \(\mathbb F_{11}\) 差分方向。另一方面，这两个 owner 分属
 \(U(24)\) 与 \(U(68)\)，二者都没有 11-primary 单位群方向，也都没有当前路线内的
-Type II 命中或严格 source-switch。故准确回执是跨纤维
-OWNER_CYLINDER_TRANSVERSE_RANK_ONE，而不是完整 source-map。详见
-[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)。
+Type II 命中或严格 source-switch。固定 \((D,A)\) 纤维又必然固定 owner 标签
+\(s=AD\)，所以同纤维横向秩一般恒为零；正确载体是 \(D=6,17\) 两个参数顶点的
+增广关联格，商为 \(C_{11}\)。故准确回执是跨纤维
+OWNER_CYLINDER_TRANSVERSE_RANK_ONE 加 FIBER_INCIDENCE_SNF，而不是单纤维
+source-map。详见
+[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
+与[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)。
 
-### 7.2 \(p=73,R=63\)：真实纯二进盒外残差
+### 7.2 \(p=73,R=63\)：盒外残差经半幂 CRT 命中 Type II
 
 取
 
@@ -638,8 +659,26 @@ z=(0,1,-1),\qquad s_z=8\pmod {63},\qquad\operatorname{ord}(s_z)=2
 \]
 
 它只在 \(23\) 坐标超出原预算一层，所以回执是
-`SCALED_RELATION_OUTSIDE_DYADIC_BOX`，而不是广义二进终端。这是实际核心图表中的
-严格 admission 边界。
+`SCALED_RELATION_OUTSIDE_DYADIC_BOX`，而不是原图表的广义二进终端。但半幂相位
+就是 \(55\)，并给出
+
+\[
+(R_+,R_-)=(9,7),\qquad
+(R_*,K_*)=(7,128).
+\]
+
+旧关系的 \(5,23\) 支撑不能进入 \(K_*\)，可是 \(R_*=7\mid73+4\)。因此
+\(D=1\) Type II 门直接给出
+
+\[
+\boxed{
+\frac4{73}
+=\frac1{20}+\frac1{219}+\frac1{4380}.}
+\tag{55a}
+\]
+
+所以这个原本的真实 admission 边界现已被 terminal-first 闭合；它不再是纯二进支的
+未决控制。
 
 ### 7.3 \(p=433\)：删点门的无条件终端侧
 
@@ -673,7 +712,10 @@ EXACT_TYPE_I_HIT
   or SAME_SIGN_KERNEL_TERMINAL
   or PUNCTURED_JACOBI_CAPACITY
        -> PURE_2_PRIMARY_SCALED_RELATION
-            -> DYADIC_TERMINAL / SCALED_RELATION_OUTSIDE_DYADIC_BOX
+            -> DYADIC_TERMINAL
+            -> SCALED_RELATION_OUTSIDE_DYADIC_BOX
+                 -> HALF_POWER_CRT_TERMINAL
+                 -> STRICT_CRT_RECHART
        -> ODD_HALL_FOURIER_SOURCE_RANK
             -> MASKED_PRIME_LAYER_FLAG
 ```
@@ -681,17 +723,28 @@ EXACT_TYPE_I_HIT
 这里真正新增的是：核心 Jacobi 饱和陪集内部的目标删点、规范角色对、全角色高密度门，
 以及反演对称自动排除奇素数纯锚点。有限阿贝尔合成列本身不是新的群论机制。
 
-一般情形仍未证明的是把奇素数 \(\ell\) 旗标映射到实际整数 owner 与完整 source
-contract；owner 圆柱横向数字已经给出正确的嵌套相位中心，并在 \(p=97\) 上实现一个
-rank-one 基，但尚未给出同纤维目标积块。纯二进缩放关系若在 (39) 外也没有当前图表内
-终端。两支都没有给出较小合法图表、全域标记解提升或 E1--E5。因此状态必须保持
+一般情形仍未证明的是把奇素数 \(\ell\) 旗标映射到保持原记录来源的完整算术 source
+contract；owner 圆柱横向数字已经给出正确的嵌套相位中心，参数纤维关联格也给出
+规范 \(C_q\) source-SNF，并严格排除了同纤维横向 lift，但尚未给出实际因子积块或
+跨纤维 E1--E5。该关联格另有尺度二分：\(p>4q^{j+1}\) 时 owner 数字全覆盖；
+\(p<4q^{j+1}\) 时每个深 owner 的余因子缩为 \(k\in\{1,3,5,7\}\)，可先运行完整
+Type II 小余因子菜单。纯二进缩放关系在 (39) 外时则已有规范
+半幂 CRT 真因子、精确共享支撑界和严格重图表 adapter。故 odd-Hall 分支仍保持
 
 ```text
 selector_status = analysis_evidence
 recursive_edge_eligible = false
 ```
 
-除非式 (39) 实际命中，或后续独立 owner/source-map 与提升门通过。
+而纯二进盒外分支在图表无关 marking 和不可逆 CRT_DESCENT phase 均登记后可使用
+
+```text
+selector_status = verified_edge
+recursive_edge_eligible = true
+```
+
+若这两个适配条件缺失，它仍降回 candidate transition。详见
+[纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](type-I-pure-dyadic-half-power-crt-rechart-descent.md)。
 
 ## 聚焦验证
 

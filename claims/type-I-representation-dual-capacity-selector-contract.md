@@ -95,7 +95,10 @@ depends_on:
   - type-II-source-label-snf-failure-anchor-relation-dichotomy
   - type-II-full-match-stabilizer-relay-certificate
   - type-I-core-jacobi-punctured-kernel-primary-selector
+  - type-I-pure-dyadic-half-power-crt-rechart-descent
   - type-I-odd-fourier-owner-cylinder-transverse-rank-map
+  - type-I-odd-owner-fiber-incidence-lattice-source-map
+  - type-I-odd-owner-scale-dichotomy-small-cofactor-terminal
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -199,8 +202,14 @@ sources:
     role: cross-state-qheight-capacity-surplus
   - claim: type-II-kneser-saturated-one-coset-hole-certificate
     role: saturated-one-hole-quotient-fourier
+  - claim: type-I-pure-dyadic-half-power-crt-rechart-descent
+    role: pure-dyadic-outside-box-terminal-or-strict-rechart
+  - claim: type-I-odd-owner-fiber-incidence-lattice-source-map
+    role: odd-owner-cross-fiber-incidence-source-SNF
+  - claim: type-I-odd-owner-scale-dichotomy-small-cofactor-terminal
+    role: odd-owner-large-window-or-small-cofactor-terminal-menu
 visibility: public
-last_checked: '2026-08-05'
+last_checked: '2026-08-09'
 ---
 
 # 表示—对偶—容量统一选择器的状态级 typed 分派合同
@@ -218,7 +227,10 @@ last_checked: '2026-08-05'
 direct_type_i_or_type_ii
 target_fiber_neighbor_terminal
 generalized_dyadic_terminal
+pure_dyadic_half_power_crt_terminal_or_rechart
 fixed_layer_quotient_fourier
+odd_owner_fiber_incidence_lattice
+odd_owner_deep_small_cofactor_terminal
 symmetric_box_kneser_involution_bottleneck
 type_ii_canonical_fan_escape_trichotomy
 type_ii_qadic_height_kneser_block_bridge
@@ -286,6 +298,38 @@ verified_edge
 support-debt phase bridge、底层路径字回执和容量审计统一标为
 `selector_status=analysis_evidence`、`recursive_edge_eligible=false`；固定-\(n\) 正例可在
 E1--E5 完整时标为 `verified_edge`。
+
+纯二进盒外回执有一个更窄的升级例外。半幂对合把 \(R\) 规范分裂并选出唯一
+\(R_*\equiv3\pmod4\) 的真因子；目标盒命中或 \(R_*\mid p+4\) 分别给出直接
+Type I/II 终端。关系盒命中只先产生广义二进算术回执，必须另有 marked lift 才是
+原 \(p\) 的终端。其余情形仅当回执同时登记
+`marked_solution_set=Sol(4,p)`、恒等 E4、不可逆 `CRT_DESCENT` phase 和严格
+\(R_*<R\) 时，才标为 `verified_edge`；缺少任一字段时仍是
+`candidate_transition`。这项例外不授权任意 support reset 使用同一 phase。
+
+odd-Hall 横向回执必须使用跨参数纤维格式，不能把它伪装成某个 \(U(4D)\) 的
+q-primary 块：
+
+| 字段 | 必须保存的内容 |
+|---|---|
+| `owner_window` | \(q,j,\beta_j,B,M_j\) 与全部 \(s_m=\beta_j+m q^j\) |
+| `fiber_vertices` | 每个 \(s_m\) 的规范 \((D_m,A_m,C_m)\)、height 与 \(\tau_j(s_m)\) |
+| `incidence_snf` | \(L_0=\ker[\mathbb Z^{V_j}\to\mathbb Z]\)、\(\Theta_j\) 及秩 0 或 \(C_q\) 商 |
+| `cofactor_realization` | \(N_m=(p+4s_m)/q^j=N_0+4m\) 与 \(\Theta_j=4^{-1}\Delta N\bmod q\) |
+| `phase_lift` | `full`、`basis_only` 或 `obstructed`，以及仿射参数 \(a,c\) |
+| `source_provenance` | 原记录来源是否真实保持；仅按 phase 选顶点时必须标为 `unproved` |
+| `small_scale_terminal` | \(p<4q^{j+1}\) 时的 deep owner、\(k\in\{1,3,5,7\}\) 与完整 \(h\)-菜单 |
+| `edge_status` | 在实际因子积块、E4/E5 之前固定为 `analysis_evidence` |
+
+固定 \((D,A)\) 时 \(s=AD\) 恒定，所以横向秩必为零；单纤维 q-height 与此关联格
+横向秩必须分账。非零 \(\Theta_j\) 只允许登记一个 shared-\(q\) rank，不能按顶点
+重复收费。
+
+尺度门在关联格之后、一般 Hall--Rado 之前执行。若 \(p>4q^{j+1}\)，首 \(q\) 个
+owner 已覆盖全部横向数字；若 \(p<4q^{j+1}\)，每个 depth-\((j+1)\) owner 都满足
+\(p+4s=kq^{j+1}\)、\(k\in\{1,3,5,7\}\)。后者必须先完整检查
+\(h\mid kq^{j+1}\)、\(h\equiv-1\pmod {4D}\)：命中即为 Type II
+`terminal_leaf`，菜单空才进入后续 additive/Fourier 或下降分支。
 
 中心化指数盒回执另行保存最终稳定子商中每个幂块的
 \(\lambda_i=\min(2e_i,\operatorname{ord}(\bar g_i)-1)\)。非对合方向至少收费两个单位，
@@ -1043,9 +1087,29 @@ terminal。这是一个路由收缩，不是全部 primary 路径的封闭。详
 \(\sigma=6\) 构造实际 owner \(6,17\)，其第一层横向数字 \(0,1\) 保存一个
 \(\mathbb F_{11}\) 差分方向。该 pair 只按一个 shared-\(11\) rank 载体收费；两个
 owner 分属不同 Type II 纤维，且均无直接命中或严格 source-switch，所以仍保持
-analysis_evidence。详见
+analysis_evidence。后续关联格定理已证明：任何固定 \((D,A)\) 纤维都固定
+\(s=AD\)，所以同纤维横向秩恒为零；在 owner 参数顶点的增广格上则有规范同态
+\(\Theta_j\)，非零时其 SNF 商精确为 \(C_q\)。当
+\(p>4q^{j+1}\) 时标准窗口覆盖全部横向数字，任意 \(\mathbb F_q\) phase support
+都有完整关联格 phase lift。该 lift 仍须另证原记录来源相容，并通过实际因子积块、
+Hall--Rado 与 E1--E5 门。详见
 [核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)
-与[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)。
+、[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
+与[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)。
+
+其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
+半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子
+\(R_+R_-=R\)；唯一 \(3\pmod4\) 因子 \(R_*\) 满足
+\[
+K=\frac R{R_*}K_*-\frac{R/R_*-1}{4},\qquad
+\gcd(K,K_*)=\gcd\!\left(K_*,\frac{R/R_*-1}{4}\right).
+\]
+因此盒外记录要么通过新目标盒、带提升关系盒或 \(D=1\) 门终止，要么在上述
+封闭 CRT phase 中严格重图表 \(R\to R_*\)。\(p=73,R=63\) 现由
+\(R_*=7\) 直接给出 Type II 分解；\(p=73,R=95\) 与 \(p=97,R=55\) 则分别
+严格进入 \(R_*=19,11\) 的 G 图表。该结果只关闭纯二进盒外分派，不处理下降后的
+F/G sink。详见
+[纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](type-I-pure-dyadic-half-power-crt-rechart-descent.md)。
 
 ## 5. 未闭合的全称缺口
 
@@ -1053,8 +1117,11 @@ analysis_evidence。详见
 
 - 每个核心素数的 terminal-first 失败状态必有 alternate、终端或合法后继；
 - Fourier 角色阶或缺陷单位必能映射为有界、可重复控制的 \(q\)-进载体；
-- 丢弃旧 charged support 的 phase reset 具有全局良基秩；
+- 除已登记的不可逆半幂 CRT 真因子边外，任意丢弃旧 charged support 的 phase reset
+  具有全局良基秩；
 - 某个候选后继对全部标记解都给出 E4 提升并满足 E5。
 
-因此下一步仍应集中证明可达 \(A>1\) overflow 的 support-preserving alternate/终端
-完备性，或建立封闭且良基的外层 phase-reset 秩；本卡不把有限回执误写成这些全称结论。
+因此下一步应优先把 odd-owner 关联格的余因子差分与原记录来源、实际 Type II
+因子积块及 Hall--Rado 门组合；若该接口失败，构造带标记的严格跨纤维下降。另一条
+决定性路线仍是证明可达 \(A>1\) overflow 的 support-preserving alternate/终端
+完备性，或建立封闭且良基的外层 phase-reset 秩；本卡不把有限回执误写成全称结论。

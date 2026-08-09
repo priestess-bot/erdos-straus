@@ -3900,9 +3900,9 @@ source-rank 旗标。
 
 因此核心 Jacobi 低密度区已经从“弱饱和”推进为两个具名对象：
 ODD_HALL_FOURIER_SOURCE_RANK 或
-SCALED_RELATION_OUTSIDE_DYADIC_BOX。仍未闭合的决定性缺口是前者的整数
-owner/source-map 与 E1--E5，或后者的盒外关系回收；二者都不能仅凭有限群阶改标为
-递降。详见
+SCALED_RELATION_OUTSIDE_DYADIC_BOX。这里第二个对象后来已由半幂 CRT 真因子分裂
+关闭为直接终端或条件性严格降 \(R\) 重图表；当前核心分派的决定性缺口只剩前者的
+整数 owner/source-map、跨纤维实际因子容量与 E1--E5。详见
 [核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](../claims/type-I-core-jacobi-punctured-kernel-primary-selector.md)。
 
 ## 2026-08-09：奇阶 owner 的正确坐标是圆柱横向数字
@@ -3955,5 +3955,140 @@ v_{11}(97+4s)=2,\ 1,\qquad
 精确映到这两个数字。这是此前缺失的真实整数 rank-one 容量映射。但两个 owner 分属
 \(D=6,17\) 的不同 Type II 纤维；各自都没有目标因子命中或严格降模，且其单位群没有
 11-primary 方向。因此当前新边界是：横向秩已经实现，完整跨纤维 source-SNF、同纤维
-积块或 E1--E5 仍未闭合。详见
+积块或 E1--E5 仍未闭合。后续关联格定理已解决第一项并严格排除第二项，见下节。详见
 [奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](../claims/type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)。
+
+## 2026-08-09：纯二进盒外关系由半幂 CRT 转成终端或严格降模
+
+设核心图表 \(4K=pR+1\) 的纯二进记录给出阶 \(2^a\) 的相位。完整关系
+\(2^az\) 即使超出原非对称二进盒，半幂
+
+\[
+\omega=\Phi(2^{a-1}z)
+\]
+
+仍是既非 \(1\) 也非 \(-1\) 的对合。于是
+
+\[
+R_+=\gcd(R,\omega-1),\qquad
+R_-=\gcd(R,\omega+1),\qquad R_+R_-=R
+\]
+
+是规范的互素真因子分裂。取其中唯一满足 \(R_*\equiv3\pmod4\) 的因子，并令
+\(K_*=(pR_*+1)/4\)、\(c=R/R_*\)，则
+
+\[
+\boxed{
+K=cK_*-\frac{c-1}{4},\qquad
+\gcd(K,K_*)=\gcd\!\left(K_*,\frac{c-1}{4}\right).}
+\]
+
+第二式精确控制半幂能否沿旧素数支撑进入新目标盒或关系盒。目标盒命中直接给出
+Type I；\(R_*\mid p+4\) 给出 \(D=1\) Type II；关系盒命中只先给算术偶前驱，
+必须通过 marked lift 才是原 \(p\) 的终端。其余情形在
+\(W=\operatorname{Sol}(4,p)\) 与不可逆 `CRT_DESCENT` phase 中使用恒等解提升，
+由 \((\epsilon_{\rm CRT},R)\) 字典序严格下降获得 E1--E5 边。若调用方未登记这两个
+适配字段，该边仍只能是 candidate transition。
+
+三个核心控制固定了边界：
+
+- \(p=73,R=63\) 分裂到 \(R_*=7\)，并直接得到
+  \(4/73=1/20+1/219+1/4380\)；
+- \(p=73,R=95\) 的 target-sign 半幂既无盒准入也无 \(D=1\) 门，严格重图表
+  \(95\to19\)，目标为 G；
+- \(p=97,R=55\) 的 kernel-sign 半幂同样受共享支撑阻碍，严格重图表
+  \(55\to11\)，目标为 G。
+
+这关闭了 `SCALED_RELATION_OUTSIDE_DYADIC_BOX` 的结构分派，但没有证明下降后的
+F/G sink 终止，也没有处理 odd-Hall 旗标。当前核心 Jacobi 的首要缺口因此进一步
+缩小为 odd-Hall 横向 owner 关联格如何保持原记录来源并进入实际 Type II 因子选择，
+或如何产生独立的良基下降。详见
+[纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](../claims/type-I-pure-dyadic-half-power-crt-rechart-descent.md)。
+
+## 2026-08-09：odd-Hall 横向秩的正确载体是参数纤维关联格
+
+固定 Type II 参数纤维 \((D,A)\) 时，owner 标签就是 \(s=AD\)，所以
+\(\tau_j(s)\) 在整个纤维上恒定。由此得到严格 no-go：
+
+\[
+\boxed{r_j^{\rm tr}(\text{fixed }D,A)=0.}
+\]
+
+因此寻找“同一参数纤维中的横向 owner source-map”是错误目标；单纤维
+\(U(4D)\) 的 \(q\)-primary 方向至多解释纵向高度，不能冒充参数标签差分。
+
+正确载体是全部 owner 参数顶点 \(V_j(p)\) 的增广格
+
+\[
+L_0=\ker[\mathbb Z^{V_j(p)}\to\mathbb Z].
+\]
+
+在其上定义
+
+\[
+\Theta_j\!\left(\sum_vn_ve_v\right)
+=\sum_vn_v\tau_j(v)\pmod q.
+\]
+
+由于 \(L_0\) 由边 \(e_v-e_w\) 生成，\(\operatorname{im}\Theta_j\) 精确等于横向
+差分空间；非零时
+
+\[
+\boxed{L_0/\ker\Theta_j\simeq C_q.}
+\]
+
+这给出规范跨纤维 source-SNF，并自动把 shared-\(q\) 只收费一次。若记录相位满足
+\(\tau_j(f(x))=a\gamma(x)+c\)，常数在记录增广格上消失，故
+\(\Theta_j\circ f_\#=a\Gamma\)，相位差分秩被精确保留。
+
+标准窗口的 owner 又有完全显式的容量：
+
+\[
+s_m=\beta_j+m q^j,\qquad
+0\le m\le
+M_j=\left\lfloor\frac{\lfloor(p-1)/4\rfloor-\beta_j}{q^j}\right\rfloor,
+\qquad
+\tau_j(s_m)=m\pmod q.
+\]
+
+因此 \(M_j\ge q-1\) 当且仅当窗口覆盖全部 \(\mathbb F_q\) 数字；
+\(p>4q^{j+1}\) 是一个统一充分条件。此时任意 \(\mathbb F_q\) phase support 都有
+完整关联格 phase lift，首 \(q\) 个 owner 中恰有一个进入下一深层，其余
+\(q-1\) 个具有精确高度 \(j\)。
+
+聚焦控制中，\(p=97,q=11\) 的两个顶点 \(D=6,17\) 给出
+\(C_{11}\) 关联格商，但窗口只有数字 \(0,1\)，仍只是相位 \(2,9\) 的二点 lift；
+\(p=97,q=3\) 覆盖全部数字并给出完整正控制；\(p=73,q=17\) 只有 owner \(s=3\)，
+虽高度恰为 1，横向秩仍为零。
+
+余因子等差式还给出无缝尺度二分。若 \(p>4q^{j+1}\)，上述完整数字窗口自动成立。
+若 \(p<4q^{j+1}\) 且某 owner 深入到 \(q^{j+1}\)，则
+
+\[
+p+4s=kq^{j+1},\qquad k\in\{1,3,5,7\}.
+\]
+
+因此该固定参数纤维的全部 Type II 终端恰由
+
+\[
+h\mid kq^{j+1},\qquad h\equiv-1\pmod {4D}
+\]
+
+这个小余因子菜单给出。\(p=409,q=11,s=49\) 有 \(k=5\) 且
+\(h=55\equiv-1\pmod {28}\)，直接得到
+
+\[
+\frac4{409}
+=\frac1{105}+\frac1{5726}+\frac1{12270}.
+\]
+
+\(p=97,q=11,s=6\) 则有 \(k=1\)，完整除数 \(\{1,11,121\}\) 在模 24 下不含
+\(-1\)，形成严格菜单空回执。大尺度控制 \(p=97,q=3,s=5\) 的深余因子为 13，
+说明四值结论不能脱离尺度条件。
+
+这解决了 odd-Hall 路线中“source-SNF 应放在哪里”的缺口，但不自动证明相位选取
+保留原记录的全部算术来源，也不产生单一 Type II 因子积块或 E1--E5。下一接口是
+把关联格边与来源标签、shared-\(q\) 因子选择及 Hall--Rado 门组合；失败时必须产生
+带标记的严格跨纤维下降。详见
+[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](../claims/type-I-odd-owner-fiber-incidence-lattice-source-map.md)
+与[odd-owner 窗口的尺度二分与深层小余因子 Type II 终端菜单](../claims/type-I-odd-owner-scale-dichotomy-small-cofactor-terminal.md)。

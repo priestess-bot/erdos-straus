@@ -13,7 +13,8 @@ statement: >-
   1，并通过唯一仿射数字映射保存一个 F_q 源差分方向。p=97 的 5 与 1/5 由此映到
   q=11 owner 6、17；该映射真实保留一维横向秩，但两个单独 Type II 纤维都无
   11-primary 单位群方向，也没有直接证书或严格 source-switch，故它是跨纤维容量映射，
-  不是 E1--E5 递降。
+  不是 E1--E5 递降。后续关联格定理证明任何固定参数纤维的横向秩恒为零，并把该
+  二点映射实现为跨纤维增广格的 C_11 source-SNF。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -390,8 +391,9 @@ owner 对上的 rank-one 横向映射，而不是把抽象角色阶直接称为�
 \]
 
 三者都没有 11-primary 子群或商。因此式 (27) 是外部 owner-cylinder 数字坐标，
-不是任一单纤维单位群中的 11 阶同态。它修复了横向容量接口，但没有绕过 source-SNF
-或目标群映射门。
+不是任一单纤维单位群中的 11 阶同态。后续关联格定理进一步证明这不是选错模数：
+固定 \((D,A)\) 本来就固定 \(s=AD\)，故单纤维横向秩恒为零；正确 source-SNF 是
+两个参数顶点之间的增广关联格商 \(C_{11}\)。它仍未提供单一目标群积块或 E1--E5。
 
 第三，两个 owner 都没有当前路线内的 E4/E5 出口。\(s=6\) 时
 
@@ -416,7 +418,8 @@ p+4s=121,\qquad
 
 ```text
 OWNER_CYLINDER_TRANSVERSE_RANK_ONE
-FULL_SOURCE_MAP = cross_fiber_unclosed
+FIBER_INCIDENCE_SNF = C11
+PHYSICAL_SOURCE_PROVENANCE = partial_pair_only
 DIRECT_TERMINAL = false
 STRICT_SOURCE_SWITCH = false
 recursive_edge_eligible = false
@@ -432,14 +435,17 @@ SOURCE_RANK_DEMAND(q)
   -> OWNER_CYLINDER_TRANSVERSE_DIGITS
        -> rank 0: EXACT_HEIGHT_OWNER_MISSING / anchor only
        -> rank 1: INVERSION_PAIR_OR_AFFINE_DIGIT_MAP
-            -> source-SNF / shared-q / Hall-Rado / E1--E5
+            -> fiber-incidence C_q source-SNF
+            -> source provenance / shared-q / Hall-Rado / E1--E5
 ```
 
-这条分派首次给出一个不会被唯一 owner 剩余类压平的嵌套相位中心。它仍没有证明每个
-奇阶 Fourier 旗标都含满足式 (17) 的反演对，也没有证明跨纤维横向秩必可提升为同纤维
-Type II 积块。下一步的决定性命题是：证明实际 F/G source contract 总能提供足够的
-横向数字基，或在 \(r_j^{\rm tr}=0\) 和 full-map 失败时构造 Type I/II 终端或严格
-良基后继。
+这条分派首次给出一个不会被唯一 owner 剩余类压平的嵌套相位中心。后续结果已经严格
+排除同纤维横向 lift，并在参数纤维增广格上构造规范 \(C_q\) 商；标准 owner 窗口
+覆盖全部 \(q\) 个数字时，任意 \(\mathbb F_q\) phase support 都有完整关联格 lift。
+仍未证明的是该相位指派总保持原记录的算术来源，也未把关联格边变成实际 Type II
+因子积块或 E1--E5。大尺度完整窗口与小尺度深 owner 的四值余因子终端菜单见
+[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
+及[odd-owner 窗口的尺度二分与深层小余因子 Type II 终端菜单](type-I-odd-owner-scale-dichotomy-small-cofactor-terminal.md)。
 
 ## 聚焦验证
 
