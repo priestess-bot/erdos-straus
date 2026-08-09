@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 589 |
+| 数学状态 | `established` | 590 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 425 |
+| 证明来源 | `repository_derivation` | 426 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 561 |
+| 审阅状态 | `internal_review` | 562 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -336,6 +336,7 @@
 | [固定层循环商的精确 Fourier 频谱与 Parseval 证书](../claims/type-I-fixed-layer-cyclic-fourier-profile.md) (`type-I-fixed-layer-cyclic-fourier-profile`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定层 Fourier 角色阶的 q-primary 精确投影](../claims/type-I-fixed-layer-fourier-q-primary-projection.md) (`type-I-fixed-layer-fourier-q-primary-projection`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [固定层 Fourier 相位到 q 进容量的条件桥](../claims/type-I-fixed-layer-fourier-qadic-phase-bridge.md) (`type-I-fixed-layer-fourier-qadic-phase-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [固定层稳定子商的 q-primary 表示—对偶—容量选择器](../claims/type-I-fixed-layer-qprimary-representation-dual-capacity-selector.md) (`type-I-fixed-layer-qprimary-representation-dual-capacity-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [固定层稳定子缺陷约化](../claims/type-I-fixed-layer-stabilizer-defect-reduction.md) (`type-I-fixed-layer-stabilizer-defect-reduction`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009`, `bradford2024` | 2026-08-07 |
 | [固定 p 减一射线将六亿普通尾压力集压缩至二十五点](../claims/type-I-fixed-pminusone-ray-pressure-profile-600m.md) (`type-I-fixed-pminusone-ray-pressure-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [固定 p 减一射线残余的三层自适应解析](../claims/type-I-fixed-ray-residual-resolution-600m.md) (`type-I-fixed-ray-residual-resolution-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
