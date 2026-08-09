@@ -614,6 +614,14 @@ OWNER_WINDOW_AFFINE_DUAL_PROFILE_READY(P_J,X)
 必须从该严格缺口构造完整 kernel source box、直接 Type I/II 证书或不可重置的 marked
 良基下降，而不能再用匿名容量 (23)、(26) 或 (30) 代替。
 
+当 target state-id 与整数目标均已由请求固定时，先在 source/target 共享 occurrence
+ledger 上预收费 target；同一 edge 的 \(d=t(r)\) 映为私有零增量 atom，其它 deep
+使用残余容量。source 侧仍保留 incremental-deep--shallow--independent-column 耦合。
+只有请求角色方向本身独立且该耦合严格矩形化时，才进一步收缩为两组 capacitated
+Hall 加一组 Rado；相关角色带不同物理义务、target 或 source 组合随候选变化时保留
+一般耦合超图。详见
+[指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](type-I-prescribed-target-occurrence-rado-contraction.md)。
+
 ## 聚焦验证
 
 ~~~bash

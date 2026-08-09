@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱在额外条件 M<p 下关闭小载体 A=1 子族，并把一般有界除子条件下的 A=1/A>1 递降规范化为“取最大合格 L”；来源 bundle 若满足 M/A≥2 且 M≤B_p，还可在同一 chart 上把 support 升到 M 并严格下降外层势。一般 A=1 的对偶 RESET 已关闭其算术入口；当前决定性余项收缩为 M>B_p 的递归可达 A>1 overflow，以及其中的 alternate、终端或独立外层秩问题。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱在额外条件 M<p 下关闭小载体 A=1 子族，并把一般有界除子条件下的 A=1/A>1 递降规范化为“取最大合格 L”；来源 bundle 若满足 M/A≥2 且 M≤B_p，还可在同一 chart 上把 support 升到 M 并严格下降外层势。一般 A=1 的对偶 RESET 已关闭其算术入口。当前有两条并列决定性前沿：一是 M>B_p 的递归可达 A>1 overflow 及其中的 alternate、终端或独立外层秩；二是实际 F/G 带名候选的非空/非矩形容量缺口及其到 kernel source box、Type I/II 终端或不可重置 marked 下降的闭合。
 topics:
 - research-map
 - proof-program
@@ -62,6 +62,8 @@ sources:
   role: finite-source-owner-window-affine-profile-and-local-depth-capacity
 - claim: type-I-owner-profile-canonical-base-target-slot-capacity
   role: canonical-common-source-base-prescribed-target-and-phase-slot-capacity
+- claim: type-I-prescribed-target-occurrence-rado-contraction
+  role: fixed-target-incremental-occurrence-cut-and-rectangular-hall-rado-contraction
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -4586,3 +4588,76 @@ deep--shallow 图为完全二部图，容量为
 有限超图失配，必须把严格缺口送入完整 kernel source box、直接 Type I/II 终端或
 不可重置的 marked 良基下降。详见
 [owner 剖面的规范共同源基、指定目标准入与相位槽容量](../claims/type-I-owner-profile-canonical-base-target-slot-capacity.md)。
+
+## 2026-08-10：prescribed target 先验割与矩形 Hall--Rado 收缩
+
+带名候选通过 profile、共同规范基、provenance、角色 SNF 和 next-layer 门后，会同时
+使用 source 与 target occurrence。历史 ledger 先把同 assignment-id 的完整 replay
+记为已满足，把 partial overlap 或不同 owner 保留为冲突；以下只讨论 fresh 请求。
+若请求绑定 target state-id 与整数目标，则
+
+\[
+t(r)=(\operatorname{target\_state\_id}(r),x_r,q,J+1)
+\]
+
+不随候选 profile、\(D\) 或 edge 改变。deep 与 target 共享 occurrence ledger，
+固定 target 的必要条件是
+
+\[
+m_T(o)=\#\{r:t(r)=o\}\le b_O(o)\qquad(\text{每个 }o).
+\]
+
+现有 ledger 对同一 edge 的相同 source/target key 只登记一次，所以固定 target
+收缩必须使用增量 deep atom
+
+\[
+\widehat d_r(w)=
+\begin{cases}
+\star_r,&d(w)=t(r),\\
+d(w),&d(w)\ne t(r),
+\end{cases}
+\qquad
+b_D(o)=b_O(o)-m_T(o),
+\]
+
+并定义 \(b_D(\star_r)=1\)。其中 \(\star_r\) 是只对请求 \(r\) 可见的零增量 atom；
+target 预约只存在于组合证明，
+完整 edge 选定后才原子写 ledger。source 侧仍同时保存 incremental-deep、shallow
+canonical slot 与共同 \(V_\ell\)-column。现有 column-Rado 定理只处理物理请求方向
+本身独立的分支；相关角色若仍有不同物理义务，不能随基约化删除，而须保留物理请求集、
+代数基集及二者的一般耦合。
+
+若每个请求的 source 候选严格因子化为三个允许集的笛卡尔积，则完整选择精确等价于
+
+\[
+\sum_{d\in\bigcup_{r\in U}\mathcal D(r)}b_D(d)\ge|U|,
+\qquad
+\sum_{h\in\bigcup_{r\in U}\mathcal S(r)}b_S(h)\ge|U|,
+\]
+
+以及
+
+\[
+\operatorname{rank}\{v_a:a\in\bigcup_{r\in U}\mathcal A(r)\}\ge |U|
+\qquad(\text{每个 }U).
+\]
+
+profile、labels 或 source-switch 删除笛卡尔组合时，三组投影只剩必要条件。固定
+target 下已有最小三候选 source 反例：deep Hall、shallow Hall、column Rado 全过而
+联合选择失败；即使 fixed-\(D\) 的 deep--shallow 投影本身为矩形，四边 column twist
+仍证明二维矩形加独立 Rado 不充分。target 随候选变化时，另一个两请求三候选反例分别通过 source 与 target
+投影 Hall，却没有联合选择。column deficit 的对偶精确条件是
+\(D_U\not\subseteq V_U\)；之后仍需 source-dominating closure、整数后继、E4 与 E5。
+
+\(p=4441,q=5,J=1,D=66\) 的匿名容量为 1，但 prescribed profile 与
+target \(x=396\) 的唯一 joint pair 两端均 shallow，故带名 next-layer 算术控制菜单
+为空；这是候选非空性失败，不是非空非矩形例。\(p=10273,q=3,J=1,D=70\) 则在明确
+source/target state ids 互异时，严格分离 target collision 与 deep occurrence
+collision。这两个算术控制都不是完整 F/G states，role-SNF、完整 source table、E4
+与 E5 仍须另证。
+
+在表示—对偶—容量支线，尚余两类决定性缺口：证明每个实际 F/G 请求都有非空带名
+候选并证明 source 矩形性或处理非矩形最小割；把 profile--phase 空边、target
+collision、source-column escape 或通过 closure 的 annihilator candidate 接到完整
+kernel source box、Type I/II 终端或不可重置的 marked 下降。详见
+[指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](../claims/type-I-prescribed-target-occurrence-rado-contraction.md)。
