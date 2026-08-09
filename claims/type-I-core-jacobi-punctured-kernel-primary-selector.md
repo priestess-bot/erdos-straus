@@ -19,8 +19,10 @@ statement: >-
   容量为 1，同纤维横向 lift 已被排除。一般非相邻边若有唯一 q^(j+1) deep
   endpoint 且目标继承该层，则已有 {1,q} arithmetic-ready block；只有来源边合格且
   source/target 两个全局 occurrence key 均未占用时才成为 verified physical
-  source-class lift。固定 q=3 的三张模板覆盖全部充分大核心素数，但 F/G
-  provenance/admission 与全局 E5 仍未证明。
+  source-class lift。固定 q=3 的三张模板覆盖全部充分大核心素数；任意奇 source
+  prime 还有 residue-optimal matched menu，而具有 ambient 指数格 pullback 的
+  rank-one 请求有 content-adaptive 仿射 provenance。但其范围/target-state 门、
+  完整 kernel source box 与全局 E5 仍未证明。
   纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
   进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
 claim_status: established
@@ -34,6 +36,7 @@ depends_on:
   - type-I-pure-dyadic-half-power-crt-rechart-descent
   - type-II-source-fiber-finite-abelian-composition-relay
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
+  - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
 topics:
   - type-I
   - core-prime
@@ -56,6 +59,8 @@ sources:
     role: outside-box-half-power-terminal-or-strict-rechart
   - claim: type-I-odd-owner-nonadjacent-common-base-next-layer-lift
     role: nonadjacent-exclusive-next-q-layer-physical-source-class-lift
+  - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
+    role: prime-matched-affine-admission-and-kernel-fourier-boundary
   - reproduction: reproductions/type_i_core_jacobi_punctured_kernel_primary_selector.py
     role: focused-capacity-Fourier-Sylow-and-boundary-controls
 visibility: public
@@ -756,17 +761,20 @@ EXACT_TYPE_I_HIT
 这里真正新增的是：核心 Jacobi 饱和陪集内部的目标删点、规范角色对、全角色高密度门，
 以及反演对称自动排除奇素数纯锚点。有限阿贝尔合成列本身不是新的群论机制。
 
-一般情形仍未证明的是把奇素数 \(\ell\) 旗标统一映射到保持原记录来源的完整算术 source
-contract；owner 圆柱横向数字已经给出正确的嵌套相位中心，参数纤维关联格也给出
+owner 圆柱横向数字已经给出正确的嵌套相位中心，参数纤维关联格也给出
 规范 \(C_q\) source-SNF，并严格排除了同纤维横向 lift。对 \(p=97\) 的反演 pair，
 来源保持边、规范源列和一个请求的 incidence flow--Rado 门已经闭合；一般 phase
-lift 仍需带名整数来源边。对已经来源合格的非相邻边，若恰有唯一 endpoint 进入
+lift 的带名整数来源边现有更一般的仿射 content 判据。对已经来源合格的非相邻边，若恰有唯一 endpoint 进入
 \(q^{j+1}\) 且目标继承该层，则独占下一层已构成真实 \(\{1,q\}\) physical
 source-class arithmetic-ready block；在可自由选择 cyclic q-primary 角色时，存在
 不杀掉实际 q 类的角色恰当且仅当 \(q\mid\operatorname{ord}_{4D_*}(q)\)，而既定
 \(J\)/anchor/labels 仍需联合 SNF/\(\eta\)。固定 \(q=3\) 的三张模板覆盖全部
-\(p>2600\) 核心素数，但尚未证明 Jacobi/Fourier 记录必能准入这些固定 source rows，
-也未给出跨状态 marked lift 或 E5。该关联格另有尺度二分：
+\(p>2600\) 核心素数；进一步对任意奇 source prime 已有 residue-optimal matched
+menu，并且对具有 ambient 指数格 pullback 的 rank-one 带名记录对已有
+content-adaptive affine carrier。它在精确范围门通过时关闭代数 provenance，但单个
+\(\{1,q\}\) 块的稳定子平凡，严格降模只能先输出显式
+kernel Fourier；该输出在预设标签下仍可能阻塞，且尚未给出完整核来源盒、跨状态
+target closure 或全局 E5。该关联格另有尺度二分：
 \(p>4q^{j+1}\) 时 owner 数字全覆盖；
 \(p<4q^{j+1}\) 时每个深 owner 的余因子缩为 \(k\in\{1,3,5,7\}\)，可先运行完整
 Type II 小余因子菜单。纯二进缩放关系在 (39) 外时则已有规范
@@ -786,7 +794,8 @@ recursive_edge_eligible = true
 
 若这两个适配条件缺失，它仍降回 candidate transition。详见
 [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](type-I-pure-dyadic-half-power-crt-rechart-descent.md)
-与[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)。
+、[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)
+与[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)。
 
 ## 聚焦验证
 

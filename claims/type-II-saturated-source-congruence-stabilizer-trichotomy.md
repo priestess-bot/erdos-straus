@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-II-saturated-source-congruence-stabilizer-trichotomy
 title: Type II 饱和源积集的同余稳定子—核 Fourier—算术三分
-statement: 固定 G=U(4D_*) 中的来源积集 P、目标 -1 notin P 和稳定子 T=Stab(P)。对每个 D'|D_* 令 C_{D'} 为降模核。若 C_{D'} subset T，则 P 对该核饱和，目标缺失精确传递到 U(4D')；若同时保留来源标签的参数纤维门非空、投影字段精确回译且 D'<D_*，得到完整 E1--E5 降模边。若某个源子列表已满足 h_S=-1 (mod 4D')，则先输出直接 Type II 终端，不登记为递降。若 C_{D'} not subset T，则存在 c in C_{D'} 和角色 chi 使 chi(c) !=1 且 1_P 的 Fourier 系数非零；若低模数目标像命中，则进一步得到非空真核截面及 Parseval 能量。若稳定子包含通过但参数纤维门为空，则输出有限 ARITHMETIC_LIFT_OBSTRUCTED。三类对每个候选 D' 穷尽，且不把抽象低模数命中误记为递降。
+statement: 固定 G=U(4D_*) 中的来源积集 P、目标 -1 notin P 和稳定子 T=Stab(P)。对每个 D'|D_* 令 C_{D'} 为降模核。若 C_{D'} subset T，则 P 对该核饱和，目标缺失精确传递到 U(4D')；若同时保留来源标签的参数纤维门非空、投影字段精确回译且 D'<D_*，则 E1--E4 成立，并且只有在权威 D-cursor、禁止同外层秩重置到更大 D 的封闭降模 phase 中才得到完整 E5；否则只是 local candidate。若某个源子列表已满足 h_S=-1 (mod 4D')，则先输出直接 Type II 终端，不登记为递降。若 C_{D'} not subset T，则存在 c in C_{D'} 和角色 chi 使 chi(c) !=1 且 1_P 的 Fourier 系数非零；若低模数目标像命中，则进一步得到非空真核截面及 Parseval 能量。若稳定子包含通过但参数纤维门为空，则输出有限 ARITHMETIC_LIFT_OBSTRUCTED。三类对每个候选 D' 穷尽，且不把抽象低模数命中误记为递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -31,7 +31,7 @@ sources:
   - claim: type-II-same-modulus-source-switch-crt-criterion
     role: source-normal-form-gate
 visibility: public
-last_checked: '2026-08-05'
+last_checked: '2026-08-10'
 ---
 
 # Type II 饱和源积集的同余稳定子—核 Fourier—算术三分
@@ -127,7 +127,7 @@ t\notin P
 \(P'_{D',A}=\rho_{D'}(P)\) 的来源标签和目标字段均已通过回译，则得到一个较小模数
 Type II 参数纤维状态；若其中某个源子列表命中 \(-1\)，先输出直接 Type II 终端。
 否则目标仍缺失，E1--E3 由投影源参数和正规形重算；取
-\(W=\operatorname{Sol}(p)\) 的图表无关标记集，E4 是恒等映射。固定降模势
+\(W=\operatorname{Sol}(p)\) 的图表无关标记集，E4 是恒等映射。局部降模势
 
 \[
 \Phi_{\mathrm{II}}(D',A)
@@ -136,12 +136,26 @@ Type II 参数纤维状态；若其中某个源子列表命中 \(-1\)，先输�
 \tag{9}
 \]
 
-按字典序比较时，\(D'<D_*\) 使第一坐标严格下降，故得到
+按字典序比较时，\(D'<D_*\) 使第一坐标严格下降。但这只有在 \(D\) 是完整状态的
+权威 cursor、同一外层秩内的降模 phase 禁止退出后重选更大 \(D\)，或任何 reset 已由
+更早的外层秩严格下降支付时，才是统一状态合同中的全局 E5。此时得到
 
 \[
 \mathrm{STABILIZER\_CONGRUENCE\_LOWER\_EDGE}.
 \tag{10}
 \]
+
+若上述 phase/reset 条件尚未建立，则 E1--E4 仍可由参数投影和
+\(W=\operatorname{Sol}(p)\) 的恒等映射局部验证，但输出必须降级为
+
+\[
+\mathrm{STABILIZER\_CONGRUENCE\_LOCAL\_LOWER\_CANDIDATE},
+\tag{10a}
+\]
+
+并设置 `recursive_edge_eligible=false`。同一 \(p\) 可从另一个 source pair 重新选择
+更大的共同基，说明裸 \(D\) 下降本身不能排除 reset cycle。这里的封闭 phase 或更早
+外层秩支付是升级 E5 的**附加假设**；本卡只给出判定接口，并未证明统一选择器已经满足它。
 
 ### B. 稳定子不包含：核 Fourier 证书
 
@@ -245,7 +259,8 @@ source-switch，而不能直接算作 Type II。
 对任意 \(x\in P\)、\(c\in C_{D'}\) 有 \(xc\in P\)，所以 \(P\) 是每个
 \(\rho_{D'}\)-纤维的并，得到 (7)；(8) 随即成立。若来源参数纤维门 (4) 非空，
 先检查 \(P'_{D',A}=\rho_{D'}(P)\) 的来源标签是否精确回译；若某个子列表命中
-\(-1\)，得到直接 Type II 终端，否则得到 A 中目标仍缺失的参数纤维和 E1--E5 候选。
+\(-1\)，得到直接 Type II 终端，否则得到 A 中目标仍缺失的参数纤维和 E1--E4；
+封闭 phase/reset 门通过时才升级为 E5，否则保持 local lower candidate。
 
 若 (11) 成立，取 \(c\) 使 \(Pc\ne P\)，(12)--(14) 是 Fourier 可逆性和
 平移公式的直接推论，得到 B。若 (6) 成立而来源参数纤维门为空，则正是
@@ -299,5 +314,6 @@ Pc=\{5,7\}\ne P,
 \tag{22}
 \]
 
-它仍未证明对每个核心素数至少有一个 \(D'\) 落入 A，也未证明 B/C 必然转入另一条
-Type I/II 短证书或已闭合的良基递降；这些仍是全局选择器的最后存在性缺口。
+它仍未证明对每个核心素数至少有一个 \(D'\) 落入 A，也未证明 A 的局部 \(D\) 下降
+总处于不可重置 phase，更未证明 B/C 必然转入另一条 Type I/II 短证书或已闭合的
+良基递降；这些仍是全局选择器的最后存在性缺口。

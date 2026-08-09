@@ -591,6 +591,14 @@ terminal-first precheck
 提高横向载体的总秩：同一 \((p,q,j)\) 仍只有一个独立方向，不能把多个 exclusive
 edge 重复收费。
 
+后续[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)
+已把本节的固定 \(q=3\) skeleton 推广到任意奇 source prime，并给出 fixed-row affine
+content 的充要门与 content-adaptive 修复。它同时证明单个 \(\{1,q\}\) 块的稳定子
+平凡，故这里的 \(D_*<D_0\) 不能直接走 kernel-saturated 降模；未固定额外标签时，
+失败后可构造显式 kernel Fourier 角色，预设标签则仍需联合 SNF。全局剩余已经收紧为
+自适应范围/target-state 出口或完整核来源盒，
+而不是继续增加固定数值模板。
+
 ## 聚焦验证
 
 ~~~bash

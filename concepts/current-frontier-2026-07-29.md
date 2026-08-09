@@ -52,6 +52,8 @@ sources:
   role: determinant-dual-support-obstruction
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
+- claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
+  role: prime-matched-affine-carrier-kernel-fourier-and-global-descent-boundary
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -59,7 +61,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-10'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -2538,7 +2540,7 @@ source-supported 等价，D-only 的合同状态更新为：
 |---|---|
 | \(D\mid u^2\) | 中心 Type I 的重复探针；中心 miss 时拒绝 |
 | \(D\nmid u^2\) | 引用同余类 no-go，输出 `rejected_branch` |
-| 仅有 \(u<p\) | 不得登记递降；空标记集没有 E4 |
+| 仅有 \(u<p\) | 不得登记递降；空标记集只有空域上的形式 E4，不构成非空可递归 source |
 
 这关闭的是“保持同一双尾的 D-only 递降”，不是整个 overflow。下一步必须改变尾或实际
 支撑，优先顺序为：
@@ -4283,3 +4285,67 @@ skeleton。于是“充分大核心素数是否存在有界算术 q-carrier”�
 
 详见
 [非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](../claims/type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)。
+
+## 2026-08-10：source-prime 匹配、content 自适应与 kernel Fourier
+
+固定 \(q=3\) 的三模板不是所有 odd-Hall source role 的统一载体：物理类 \([3]\) 在
+\(U(56)\)、\(U(260)\) 中的阶分别为 6、12，所以这些旧模板对奇素数
+\(\ell\ne3\) 请求的物理 source-slot rank 必为零；原 F/G source rank 本身并不因此
+消失。现在这一跨特征障碍已有统一修复。对任意奇素数 \(q\) 与层 \(j\)，取
+\(r\mid\Phi_q(q)\) 且
+
+\[
+\operatorname{ord}_r(q)=q,
+\qquad
+v_q(r-1)=1,
+\]
+
+再用算术级数素数构造两个 canonical source rows 与一个 next-layer target。所得菜单对
+固定 \((q,j)\) 有限，并在 fixed-target 菜单中达到严格最小残数数目：\(q=3\) 时为
+\(3^j\)，\(q\ge5\) 时为 \(q^j(q-1)\)。模 \(r\) 的幂角色还显式给出
+\(U(4D_*)\twoheadrightarrow C_q\)，把真实 factor \(q\) 送到生成元。
+
+来源 provenance 也从“未知”推进到一个精确充要门。这里必须先把真实 \(C_q\) 角色
+拉回完整 ambient 指数格；裸子格角色不够。若带名记录差为
+\(\delta\in\mathbb Z^d\)，则固定 endpoints 之间存在整数仿射 lift 当且仅当
+
+\[
+\operatorname{content}(\delta)\mid s_1-s_0.
+\]
+
+这证明旧三模板并非全称：一维差 \(11\) 在 \(C_3\) 中非零，却不整除 endpoint 差
+210 或 390。更强的自适应构造令
+
+\[
+H=\operatorname{lcm}(\operatorname{content}(\delta),r,u),
+\qquad
+A_0=H/\operatorname{rad}(H),
+\]
+
+把 content 放入共同基的平方部分；再选择与 ambient 角色模 \(q\) 成非零标量倍的
+Bezout 向量。在明确的 \(4s_1<p\) 范围门通过时，它为任意 rank-one \(C_q\) pair
+同时给出带名仿射规则、独占 \(q^{j+1}\) 层和直接 \(C_q\) 角色。于是 provenance 的
+决定性余项不再是抽象存在性，而是 ambient pullback，以及该自适应模板对当前 \(p\)
+的范围、occurrence 与既定标签门。
+
+局部严格参数下降的边界也已定理化。任意 proper cyclic prefix 的稳定子平凡，所以
+单个 \(\{1,q\}\) block 不能吸收任何非平凡严格降模核；一个 \(K\)-stable source
+积集至少含 \(|K|\) 个元素，\(R\) 个 binary occurrence 必须满足
+
+\[
+R\ge\lceil\log_2|K|\rceil.
+\]
+
+失败分支不是无结构障碍：未固定额外标签时，沿物理 \(C_q\) 坐标 twist 可确定化选出
+\(\chi(c)\ne1\) 且 \(\widehat{1_{\{1,q\}}}(\chi)\ne0\) 的显式 kernel Fourier
+证书。它并不自动保持 anchor/target/source labels；已有 \(C_6\oplus C_2\) 严格反例表明，
+唯一允许的 twist 可以恰使 Fourier 系数为零，因此预设标签仍需联合 SNF。该证书还需扩成
+完整 kernel source box 或进入另一良基出口。裸 \(D_*<D_0\) 只有在
+完整 target state、\(\operatorname{Sol}(p)\) 恒等 mark 和不可重置 owner phase 中才是
+全局 E5；自然 cofactor 分母也不能补救，\(p=2113,x=14,n=241\) 的 two-denominator
+marked fiber 已严格证明为空。
+
+因此下一决定性动作是二选一的全称化：为每个实际未决 F/G source demand 构造 ambient
+pullback 与范围合格的 content-adaptive receipt，并完成 target-state 出口；或证明通过既定标签门的
+显式 kernel Fourier 必强制足够多独立 source columns 覆盖整个同余核。详见
+[奇素数 source 匹配的仿射载体、显式核 Fourier 与良基递降边界](../claims/type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary.md)。
