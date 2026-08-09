@@ -267,5 +267,6 @@ p&n&M&r&s&A&\text{分支}\\ \hline
 
     python3 reproductions/type_i_overflow_d_four_first_capacity_slab_complete_reduction.py --verify
 
-本卡的明确边界是 \(d=4\) 且 \(M\ge2B_p\) 的更高容量层，以及所有 \(d\ge5\)；这些
-部分仍需 generalized \(2^j\)、q-adic capacity 或其它 Type I/II 证书。
+本卡的明确边界是 \(d=4,\ M\ge2B_p,\ A\ge c\) 的更高容量层；其中 \(A<c\)
+已由通用 dual 饱和引理覆盖。\(d^2\ge p\) 或其它 source/path 未闭合部分仍需
+generalized \(2^j\)、q-adic capacity 或其它 Type I/II 证书。

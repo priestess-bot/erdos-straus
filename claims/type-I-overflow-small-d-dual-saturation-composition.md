@@ -3,11 +3,12 @@ kind: claim
 claim_id: type-I-overflow-small-d-dual-saturation-composition
 title: \(d^2<p\) 高载体容量层的 dual 饱和组合闭合
 statement: >-
-  设 p≡1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p<M<2B_p、1≤d 且 d^2<p，
+  设 p≡1 (mod 24) 的 verified overflow 满足 pn=4Md+1、B_p<M、1≤d 且 d^2<p，
   并携带 A|M、1≤A≤B_p 及 source/path、Sol(p)、E1--E5 合同。令 r=M mod p、
   s=(4rd+1)/p、P=rd、c=(p−1)/4。则 1≤s≤4d−1 且 c≤P≤B_p。若 A<c，
-  取 L=P 给出完整 fixed-s 严格外层秩递降；若 A≥c，则 d^2<p，直接接入既有
-  small-d 容量层完整递降。因此整个 B_p<M<2B_p、d^2<p 容量层没有未分流 overflow。
+  取 L=P 给出完整 fixed-s 严格外层秩递降；若 A≥c 且 M<2B_p，则 d^2<p，直接接入既有
+  small-d 容量层完整递降。因此在 M<2B_p 时整个 d^2<p 容量层没有未分流
+  overflow；在 M≥2B_p 时至少消除了全部 A<c 的 dual 余项。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -45,7 +46,7 @@ verified overflow 满足
 
 \[
 pn=4Md+1,
-\qquad B_p<M<2B_p,
+\qquad B_p<M,
 \qquad 1\le d,\quad d^2<p,
 \tag{1}
 \]
@@ -82,15 +83,15 @@ c\le P\le B_p.
 \begin{array}{c|c|c}
 \text{条件}&\text{后继}&\text{严格付款}\\ \hline
 A<c&L=P\mid rd&\text{fixed-}s\text{，第一坐标严格下降}\\
-A\ge c&\text{small-}d\text{ 的因子转移/交换/商折叠}&
+A\ge c,\ M<2B_p&\text{small-}d\text{ 的因子转移/交换/商折叠}&
 \left(\left\lfloor B_p/A\right\rfloor,M\right)\text{ 字典序严格下降}.
 \end{array}
 \tag{5}
 \]
 
-两行互斥且穷尽；在既有图表无关的
-\(W=\operatorname{Sol}(p)\) 恒等提升和 E1--E5 合同下，(1) 的整个
-\(d^2<p\) 容量层没有未分流 overflow。
+在 \(M<2B_p\) 时两行互斥且穷尽；在 \(M\ge2B_p\) 时，
+\(A<c\) 行仍然成立，但 \(A\ge c\) 行暂不由本卡闭合。所有已登记边都使用既有
+图表无关的 \(W=\operatorname{Sol}(p)\) 恒等提升和 E1--E5 合同。
 
 ## 余数和容量界
 
@@ -201,7 +202,7 @@ R_P\equiv3\pmod4,\qquad
 
 ## \(A\ge c\) 的组合闭合
 
-若 \(A\ge c\)，输入已经给出 \(B_p<M<2B_p\)、\(A\mid M\)、
+若 \(A\ge c\) 且 \(M<2B_p\)，输入已经给出 \(B_p<M<2B_p\)、\(A\mid M\)、
 \(1\le A\le B_p\) 以及 \(d^2<p\)，所以既有
 “高载体小 \(d\) 容量层的完整余因子递降”定理逐项适用。它按
 \(b=M/A\) 穷尽三类后继：
@@ -218,13 +219,14 @@ R_P\equiv3\pmod4,\qquad
 \tag{19}
 \]
 
-因此 \(A\ge c\) 分支不再需要按 d 逐层重做余因子证明。
+因此 \(A\ge c\) 且 \(M<2B_p\) 的分支不再需要按 d 逐层重做余因子证明。
 
 ## 穷尽性与边界
 
-因为 \(A<c\) 或 \(A\ge c\) 必有其一，(12)--(17) 和 (18)--(19) 合起来给出整个
-\(d^2<p\)、\(B_p<M<2B_p\) 层的严格可提升选择器入口。该结论仍不覆盖
-\(M\ge2B_p\)、\(d^2\ge p\) 或 source/path 可达性本身未给回执的状态；这些边界仍需
+因为 \(A<c\) 或 \(A\ge c\) 必有其一，(12)--(17) 对任意 \(M>B_p\) 消除全部
+\(A<c\) dual 余项；再结合 (19) 才给出整个
+\(d^2<p\)、\(B_p<M<2B_p\) 层的完整入口。尚未闭合的是
+\(M\ge2B_p,\ A\ge c\)、\(d^2\ge p\) 或 source/path 可达性本身未给回执的状态；这些边界仍需
 generalized \(2^j\)、q-adic capacity 或其它 Type I/II 短证书。
 
 ## 控制实例与复现
@@ -250,6 +252,12 @@ d&n&M&A&r&s\\ \hline
 额外控制为
 \[
 (p,n,M,d,A,r,s)=(97,877,2363,9,1,35,13).
+\]
+
+高容量 dual 控制为
+\[
+(p,n,M,d,A,r,s)=(73,145,2646,1,1,18,1),
+\qquad 2646>2B_{73}.
 \]
 
 精确复现命令：

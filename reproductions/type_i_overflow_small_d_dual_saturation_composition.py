@@ -31,14 +31,20 @@ def smallest_prime_factor(value: int) -> int:
 
 
 def verify_dual(
-    prime: int, denominator: int, carrier: int, depth: int, support: int
+    prime: int,
+    denominator: int,
+    carrier: int,
+    depth: int,
+    support: int,
+    require_below_two: bool = True,
 ) -> dict[str, int]:
     p, n, M, d, A = prime, denominator, carrier, depth, support
     B = (p - 1) ** 2 // 4
     c = (p - 1) // 4
     assert is_prime(p) and p % 24 == 1 and p >= 73
     assert 1 <= d and d * d < p and p * n == 4 * M * d + 1
-    assert B < M < 2 * B and 1 <= A < c and M % A == 0
+    assert B < M and (not require_below_two or M < 2 * B)
+    assert 1 <= A < c and M % A == 0
     assert 4 * M - n > p
 
     r = M % p
@@ -54,7 +60,7 @@ def verify_dual(
     K = P * (p - 1)
     assert 0 < R < 4 * P and R % 4 == 3 and K > 0
     assert p * R + 1 == 4 * K and K % P == 0
-    return {"d": d, "r": r, "s": s, "P": P, "R": R, "K": K}
+    return {"M": M, "d": d, "r": r, "s": s, "P": P, "R": R, "K": K}
 
 
 def verify_small_d_route(
@@ -117,6 +123,8 @@ def verify() -> None:
     )
     dual_receipts = [verify_dual(*fixture) for fixture in dual_fixtures]
     assert [receipt["d"] for receipt in dual_receipts] == list(range(1, 10))
+    high_receipt = verify_dual(73, 145, 2646, 1, 1, False)
+    assert high_receipt["P"] == 18 and high_receipt["s"] == 1
 
     delegated = {
         "d5_exchange": (73, 1376, 5, 377, 32, "exchange", (160, 43, 377)),
@@ -139,6 +147,7 @@ def verify() -> None:
         print("dual", receipt["d"], receipt["r"], receipt["s"], receipt["P"])
     for name, route in routes.items():
         print(name, route)
+    print("high_capacity_dual", high_receipt["M"], high_receipt["P"])
 
 
 def main() -> int:
