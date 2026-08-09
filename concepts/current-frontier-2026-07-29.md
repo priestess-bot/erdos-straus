@@ -3528,13 +3528,15 @@ p=7504249（m=231, D_I=16864, length=7）。p=2852809 与秩二 profile 重合�
 对 \(M\ge2B_p\)、\(A\ge c\)、\(d^2<p\) 的高容量层，令
 \(P=rd\)、\(b=M/A\)。若 \(P\ge2A\)，直接取 \(L=P\) 得固定-\(s\) 的完整
 外层递降；否则余因子 dispatcher 依次处理 \(dg<p\) 的因子转移、
-\(d<b<p\) 的交换，以及 \(p<b\le B_p\)、\(b\ge2A\) 的固定-\(n\) 商折叠。
-因此未闭合算术状态必满足
+\(d<b<p\) 的交换，以及任意 \(t\mid b\) 且 \(2A\le t\le B_p\) 的固定-\(n\)
+商折叠。因此未闭合算术状态必满足
 
 \[
-P<2A,\qquad b>p,\qquad b<2A\ \text{或}\ b>B_p.
+P<2A,\qquad b>p,\qquad
+\{t:t\mid b,\ 2A\le t\le B_p\}=\varnothing.
 \]
 
-其中 \(b<2A\) 强制 \(A>(p-1)/2\)。这不是全局选择器闭合，但把此前
-\(M\ge2B_p,\ A\ge c,\ d^2<p\) 的边界压成高支撑/超容量两个明确锥；
+其中 \(b<2A\) 强制 \(A>(p-1)/2\)，而 \(b>B_p\) 分支还可保留复合的
+除子缺口，不能误缩约成素数余因子。这不是全局选择器闭合，但把此前
+\(M\ge2B_p,\ A\ge c,\ d^2<p\) 的边界压成高支撑/真实除子缺口两个明确锥；
 相应主张卡见[高容量小 \(d\) overflow 的固定-\(s\)/余因子残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)。

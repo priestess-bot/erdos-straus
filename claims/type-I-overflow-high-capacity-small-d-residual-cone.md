@@ -7,10 +7,11 @@ statement: >-
   c=(p−1)/4≤A≤B_p、A|M 以及 source/path、Sol(p)、E1--E5 合同。令
   M=kp+r、P=rd、b=M/A。若 P≥2A，则 L=P 给出完整 fixed-s 严格外层秩递降；
   若 P<2A，则余因子 dispatcher 依次给出 dg<p 的因子转移、d<b<p 的交换，或
-  b>p、b≤B_p、b≥2A 时的 fixed-n 商模 p 折叠。因 d^2<p，剩余状态必满足
-  P<2A、b>p，且 b<2A 或 b>B_p；前一类还强制 A>(p−1)/2。该二分把
-  M≥2B_p、A≥c 的小 d 边界压缩为高支撑或超容量余项，但不声称余项已经有
-  Type I/II 终端或全局递降。
+  b 的某个中间除子 t（2A≤t≤B_p）的 fixed-n 商模 p 折叠。因 d^2<p，所有
+  未分流状态必满足 P<2A、b>p、每个 q|b 有 dq≥p，并且 b 在闭区间
+  [2A,B_p] 没有除子；特别地 b<2A 或 b>B_p，前一类还强制 A>(p−1)/2。
+  该二分把 M≥2B_p、A≥c 的小 d 边界压缩为高支撑或真实的余因子除子缺口，
+  但不声称余项已经有 Type I/II 终端或全局递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -181,66 +182,88 @@ d\,\operatorname{spf}(b)\le d^2<p.
 
 同样给出完整 E1--E5 和相同势的严格下降。
 
-最后设 \(b>p\)。注意 \(b\ne p\)：否则 \(p\mid M\)，与
-\(4Md+1\equiv-1\pmod p\) 矛盾。若再满足
+定义余因子中间除子集
 
 \[
-b\le B_p,
-\qquad b\ge2A,
+\mathcal D_b(A):=\{t:t\mid b,\ 2A\le t\le B_p\}.
 \tag{14}
 \]
 
-取 \(L=b\mid Md\)。有 \(A<L\le B_p\)，且
+若 \(\mathcal D_b(A)\ne\varnothing\)，令 \(t_*\) 为其中最大的除子，并取
+\(L=t_*\)。由于 \(t_*\mid b\mid M\mid Md\)，有
 
 \[
-\left\lfloor\frac{B_p}{b}\right\rfloor
+A<L\le B_p,
+\qquad
+\left\lfloor\frac{B_p}{L}\right\rfloor
+\le\left\lfloor\frac{B_p}{2A}\right\rfloor
 <\left\lfloor\frac{B_p}{A}\right\rfloor.
 \tag{15}
 \]
 
-固定-\(n\) 商模 \(p\) 折叠合同把 \(Md/b=Ad\) 写成 \(ph+\delta\)，其中
-\(1\le\delta<p\)，并给出
+固定-\(n\) 商模 \(p\) 折叠合同把 \(Md/L\) 写成
 
 \[
-M_T=b,\qquad d_T=\delta,\qquad n_T=n-4bh,\qquad A_T=b.
+\frac{Md}{L}=ph+\delta,
+\qquad h\ge0,
+\qquad1\le\delta<p,
 \tag{16}
 \]
+
+并给出
+
+\[
+M_T=L,\qquad d_T=\delta,\qquad n_T=n-4Lh,\qquad A_T=L
+\tag{17}
 \]
 
-的完整 E1--E5 后继。这里不需要另加 \(4b>n\)；长商由折叠恒等式处理。
+的完整 E1--E5 后继。这里 \(L\) 不要求等于 \(b\)，也不要求是素数；它可以是
+\(b\) 的任意中间复合除子。又不需要另加 \(4L>n\)，因为长商由折叠恒等式处理。
 
 ## 残余锥
 
-若上述三类余因子路由都没有被选中，因 (12) 可排除 \(b\le d\)，因而必有
+若上述三类余因子路由都没有被选中，因 (12) 可排除 \(b\le d\)。又
+\(b\ne p\)，否则 \(p\mid M\) 与 (1) 矛盾；若 \(b<p\)，则 \(d<b<p\) 会触发
+(13) 的交换。因此必有
 
 \[
 P<2A,
 \qquad b>p,
-\qquad b>B_p\ \text{或}\ b<2A.
-\tag{17}
+\qquad \mathcal D_b(A)=\varnothing,
+\qquad d q\ge p\quad(q\mid b\text{ 为素数}).
+\tag{18}
 \]
 
-这是一个穷尽的算术二分。第二个分支还给出高支撑必要条件：若 \(b<2A\)，则
+因为 \(b\) 本身是其除子，\(\mathcal D_b(A)=\varnothing\) 必然推出
+
+\[
+b<2A\qquad\text{或}\qquad b>B_p.
+\tag{19}
+\]
+
+这是一个穷尽的算术二分。第一种分支还给出高支撑必要条件：若 \(b<2A\)，则
 
 \[
 2B_p\le M=Ab<2A^2,
 \qquad
 A>\sqrt{B_p}=\frac{p-1}{2}.
-\tag{18}
+\tag{20}
 \]
 
 因此真正未由本菜单处理的高容量小 \(d\) 状态只落在：
 
 1. \(P<2A\)、\(p<b<2A\)、\(A>(p-1)/2\) 的高支撑余项；或
-2. \(P<2A\)、\(b\ge2A>B_p\) 的超容量余项。
+2. \(P<2A\)、\(b\ge2A\)、\(b>B_p\)，且 \(b\) 的全部除子都避开
+   \([2A,B_p]\) 的超容量除子缺口。
 
 两类都只表示当前 Type I 载体选择器的精确边界，不表示没有其它 Type I/II 表示，
-也不表示 Erdos--Straus 反例。下一步应对这两个锥分别接入 generalized \(2^j\)、
-q-adic capacity 或直接 Type II 终端，而不是把 (17) 当作负定理。
+也不表示 Erdos--Straus 反例。尤其不能把第二类错误简化为“\(b\) 必为素数”：
+下面给出一个复合余因子的精确除子缺口控制。下一步应对这两个锥分别接入
+generalized \(2^j\)、q-adic capacity 或直接 Type II 终端，而不是把 (18) 当作负定理。
 
 ## 聚焦回执
 
-算术回执脚本覆盖以下六种状态：
+算术回执脚本覆盖以下八种状态：
 
 \[
 \begin{array}{c|c}
@@ -248,14 +271,19 @@ q-adic capacity 或直接 Type II 终端，而不是把 (17) 当作负定理。
 (73,1129,5151,4,51)&P\ge2A\text{ 的 fixed-}s\\
 (73,145,2646,1,49)&\text{因子转移}\\
 (73,337,3075,2,75)&\text{余因子交换}\\
-(73,161,2938,1,26)&b\text{ 的 fixed-}n\text{ 折叠}\\
+(73,161,2938,1,26)&b\text{ 本身的 fixed-}n\text{ 折叠}\\
+(73,27505,501966,1,18)&t=353\mid b=79\cdot353\text{ 的中间除子折叠}\\
 (73,317,5785,1,65)&\text{高支撑残余}\\
-(73,1585,28926,1,18)&\text{超容量残余}
+(73,1585,28926,1,18)&\text{素数超容量残余}\\
+(73,23381,426703,1,53)&b=83\cdot97\text{ 的复合除子缺口残余}
 \end{array}
 \]
 
-其中四元组顺序为 ((p,n,M,d,A))。这些控制只验证算术分类、规范图表和势支付；
-它们不提供新的 source/path 可达性，也不替代全局 F/G 选择器。
+其中五元组顺序为 \((p,n,M,d,A)\)。这些控制只验证算术分类、规范图表和势支付。
+第 5 条此前会被 \(L=b\) 菜单遗漏，但 \(t=353\) 直接给出商折叠。最后一条的
+\(\operatorname{Div}(b)=\{1,83,97,8051\}\) 与
+\([2A,B_{73}]=[106,1296]\) 不相交，严格否定“余项余因子必为素数”的错误缩约。
+这些控制不提供新的 source/path 可达性，也不替代全局 F/G 选择器。
 
 复现命令：
 
