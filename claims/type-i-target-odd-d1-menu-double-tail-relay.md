@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-i-target-odd-d1-menu-double-tail-relay
 title: D=1 target-odd 菜单的 Type II 双尾严格 source relay
-statement: 在 D=1 共享 q 块终端的条件 h|p+4、h=-1 (mod 4) 外，若 h+1|p-1，则令 x=(p+h)/4、Y=(x+1)/h、Z=x(x+1)/h、n=(p+h)/(h+1)。有 2<=n<p、4/n=1/x+1/Y+1/Z，且把 (x,Y,Z) 映到 (x,pY,pZ) 得到 4/p 的 Type II 证书。以这一个标记源解为 W_T、以提升后的目标解为 W_S 时，E1--E4 由显式整数恒等式通过，势 rho=n 严格下降到 p；p=73、241 的 h=7 给出正控制，而 p=241 的 h=35 虽给出直接 Type II，却因 36 不整除 240 而不能走该双尾 relay。
+statement: 在 D=1 共享 q 块终端的条件 h|p+4、h=-1 (mod 4) 外，若 h+1|p-1，则令 x=(p+h)/4、Y=(x+1)/h、Z=x(x+1)/h、n=(p+h)/(h+1)。有 2<=n<p、4/n=1/x+1/Y+1/Z，且把 (x,Y,Z) 映到 (x,pY,pZ) 得到 4/p 的 Type II 证书。以这一个标记源解为 W_T、以提升后的目标解为 W_S 时，局部 E1--E4 和 rho=n<p 的 E5 见证均由显式整数恒等式给出；若补齐完整 source/path 状态上下文即可升级为 verified_edge，否则保留 candidate_transition。p=73、241 的 h=7 给出正控制，而 p=241 的 h=35 虽给出直接 Type II，却因 36 不整除 240 而不能走该双尾 relay。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -35,7 +35,7 @@ last_checked: '2026-08-09'
 
 ## 输入与构造
 
-设 (p\equiv1\pmod {24}) 为核心素数，(h>1) 满足
+设 \(p\equiv1\pmod {24}\) 为核心素数，\(h>1\) 满足
 
 \[
 h\mid p+4,\qquad h\equiv-1\pmod4,\qquad h+1\mid p-1.
@@ -57,7 +57,8 @@ n=\frac{p+h}{h+1}.
 \tag{3}
 \]
 
-前两项条件给出 (h\mid x+1)，所以 (Y,Z\in\mathbb N)。第三项给出 n 为整数，且
+前两项条件给出 \(h\mid x+1\)，所以 \(Y,Z\in\mathbb N\)。第三项给出 n 为整数。
+由于 \(3\le h\le p-2\)，有
 
 \[
 2\le n<p.
@@ -91,7 +92,7 @@ n=\frac{p+h}{h+1}.
 \tag{6}
 \]
 
-其中最后一步使用 (4x=p+h) 与 (3)。故 ((x,Y,Z)) 是严格更小源 n 的一个标记
+其中最后一步使用 \(4x=p+h\) 与 (3)。故 \((x,Y,Z)\) 是严格更小源 n 的一个标记
 解，且映射
 
 \[
@@ -101,44 +102,44 @@ n=\frac{p+h}{h+1}.
 
 把它提升为目标 p 的解。
 
-## E1--E5 回执
+## 局部 E1--E5 载荷
 
 对这个 route-specific marked state，取
 
 \[
-W_T=\{(x,Y,Z)\},
-\qquad
-W_S=\{(x,pY,pZ)\},
-\qquad
-\rho(T)=n,
-\quad \rho(S)=p.
+W_T=\{(x,Y,Z)\},\qquad
+W_S=\{(x,pY,pZ)\},\qquad
+\rho(T)=n,\quad \rho(S)=p.
 \]
 
 则：
 
-* **E1**：(p,h,x,Y,Z,n) 的正性、整除和范围由 (1)--(4) 重算；
-* **E2**：后继状态的 equation target 为 (4/n)，字段由 (2)--(3) 确定；
-* **E3**：直接验证 (5)--(6) 和 (Phi) 的分母正整数；
-* **E4**：(W_T) 是单元素标记集，(7) 对其全部元素定义且恒等式成立；
-* **E5**：(n<p)，故 (ho(T)<\rho(S))。
+* **E1**：\(p,h,x,Y,Z,n\) 的正性、整除和范围由 (1)--(4) 重算；
+* **E2**：后继状态的 equation target 为 \(4/n\)，字段由 (2)--(3) 确定；
+* **E3**：直接验证 (5)--(6) 和 \(\Phi\) 的分母正整数；
+* **E4**：\(W_T\) 是单元素标记集，(7) 对其全部元素定义且恒等式成立；
+* **E5**：\(n<p\)，故 \(\rho(T)<\rho(S)\)。
 
-因此这是一个合法的 `verified_edge` 模板，而不仅是“存在一个碰巧可提升的源解”。
-若将 (W_T) 扩大到未标记的全部 (operatorname{Sol}(4,n))，必须重新证明全域映射；
-本卡有意使用精确的单元素 marked-solution set。
+因此这条 route 携带完整的局部 E1--E4 与数值 E5 载荷，而不仅是“存在一个碰巧可
+提升的源解”。只有在把来源菜单、equation target、normal form、potential record 等
+完整状态字段接入统一 verifier 后，才能把它标记为 `verified_edge`；否则按合同
+保留为 `candidate_transition`。这一区分保留了严格后继的数学内容，也不把局部
+恒等式冒充全局递归闭合。
 
 ## 证明
 
-由 (4x=p+h) 和 (h\mid p+4)，有 (h\mid4(x+1))；h 奇故 (h\mid x+1)，
-得到 (2) 的整性。(h+1\mid p-1) 等价于 (h+1\mid p+h)，给出 (3) 的整性。
-因为 (3\le h\le p-2)，(4) 成立。式 (5) 是上一张 D=1 Type II 终端的构造，式
-(6) 是直接相加，(7) 只把源后两项乘回 p。E1--E5 按定义逐项通过。证毕。
+由 \(4x=p+h\) 和 \(h\mid p+4\)，有 \(h\mid4(x+1)\)；h 奇故 \(h\mid x+1\)，得到
+(2) 的整性。\(h+1\mid p-1\) 等价于 \(h+1\mid p+h\)，给出 (3) 的整性。因为
+\(3\le h\le p-2\)，(4) 成立。式 (5) 是 D=1 Type II 终端的构造，式 (6) 是直接
+相加，(7) 只把源后两项乘回 p。局部 E1--E5 载荷按定义逐项重算；完整 verified-edge
+标记仍取决于状态合同中的 source/path 字段。证毕。
 
 ## 真实控制
 
 ### p=73、h=7
 
 \[
-x=20,quad Y=3,quad Z=60,quad n=10,quad h+1=8\mid72.
+x=20,\quad Y=3,\quad Z=60,\quad n=10,\quad h+1=8\mid72.
 \]
 
 \[
@@ -150,12 +151,12 @@ x=20,quad Y=3,quad Z=60,quad n=10,quad h+1=8\mid72.
 ### p=241、h=7
 
 \[
-x=62,quad Y=9,quad Z=558,quad n=31,quad h+1=8\mid240.
+x=62,\quad Y=9,\quad Z=558,\quad n=31,\quad h+1=8\mid240.
 \]
 
 ### p=241、h=35 的 relay 失败控制
 
-h=35 仍满足 (h\mid245) 且 (h\equiv3\pmod4)，所以给出直接 Type II 证书；但
+h=35 仍满足 \(h\mid245\) 且 \(h\equiv3\pmod4\)，所以给出直接 Type II 证书；但
 
 \[
 h+1=36\nmid240=p-1.
@@ -166,10 +167,10 @@ h+1=36\nmid240=p-1.
 
 ## 边界
 
-本卡只覆盖 D=1、d=1 的带 (h+1\mid p-1) 子族，并且 E4 使用显式单元素标记集；
-它不证明所有 D=1 terminal 都能双尾去 p，也不覆盖 D'>1、raw source 或未标记的全体源解。
-剩余 direct terminal 仍可作为终端叶，未通过 (1) 的 route 必须转入其它 Type II/Type I
-分支或新的严格下降构造。
+本卡只覆盖 D=1、d=1 的带 \(h+1\mid p-1\) 子族，并且 E4 使用显式单元素标记集；
+它不证明所有 D=1 terminal 都能双尾去 p，也不覆盖 \(D'>1\)、raw source 或未标记的
+全体源解。剩余 direct terminal 仍可作为终端叶，未通过 (1) 的 route 必须转入其它
+Type II/Type I 分支或新的严格下降构造。
 
 ## 聚焦复现
 
