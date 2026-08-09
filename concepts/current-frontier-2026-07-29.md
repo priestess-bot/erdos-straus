@@ -4092,3 +4092,72 @@ h\mid kq^{j+1},\qquad h\equiv-1\pmod {4D}
 带标记的严格跨纤维下降。详见
 [奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](../claims/type-I-odd-owner-fiber-incidence-lattice-source-map.md)
 与[odd-owner 窗口的尺度二分与深层小余因子 Type II 终端菜单](../claims/type-I-odd-owner-scale-dichotomy-small-cofactor-terminal.md)。
+
+## 2026-08-09：带名关联边关闭一个 q-rank 的来源保持与 Rado 门
+
+关联格的仿射 phase lift 还缺一个类型门：相位相容只说明抽象顶点赋值存在，不能说明
+这些顶点由原始源记录算术地产生。现把一条可收费边定义为完整回执
+
+\[
+\Pi=(x,y;\sigma_x,\sigma_y;\mathcal L;s_x,s_y;v_{s_x},v_{s_y}),
+\]
+
+其中 \(\mathcal L\) 必须从带名记录数据重算两个真实 \(q^j\)-prefix owner，且有同一
+\(a\ne0,c\) 满足
+\[
+\tau_j(s_z)=a\gamma(z)+c.
+\]
+对这样的边，
+\[
+\lambda_\Pi=a(\gamma(x)-\gamma(y))
+=\Theta_j(e_{v_{s_x}}-e_{v_{s_y}})\ne0,
+\]
+所以其规范源列及整数 realization 同时满足
+\[
+\boxed{
+\lambda_\Pi^{-1}\Theta_j(e_{v_{s_x}}-e_{v_{s_y}})
+=\frac{N_{s_x}-N_{s_y}}
+       {4a(\gamma(x)-\gamma(y))}
+=1\pmod q.}
+\]
+
+取字典序最小的来源合格边作为唯一 token 后，关联槽纤维只有一个完整来源签名，故
+source-preserving 一致性自动成立；一个请求的 incidence-token 流、关联槽流和
+Rado rank 都为 1。
+另一方面，固定 \((p,q,j)\) 的全部横向边仍落在
+\(\operatorname{im}\Theta_j\le\mathbb F_q\) 中，因此该载体的精确独立容量就是 1。
+两个或更多独立请求必有严格回执
+\[
+\mathrm{OWNER\_TRANSVERSE\_SOURCE\_RANK\_DEFICIT}(U,1,|U|).
+\]
+
+\(p=97,q=11\) 的反演记录 \(z_\pm=(\pm1,0)\) 给出
+\((5/1,1/5)\)、\(\sigma=6\) 和整数边 \((s_+,s_-)=(6,17)\)。相位为 \(2,9\)，
+仿射式为 \(\tau_1=8\gamma+6\)，余因子为 \(11,15\)，故规范列确实为 1。这把此前的
+partial-pair provenance 升级为
+
+~~~text
+EDGE_SOURCE_PROVENANCE = verified_inversion_pair
+SOURCE_RELATION_SCOPE = one_edge
+TRANSVERSE_SOURCE_CAPACITY = 1
+INCIDENCE_FLOW_RADO = pass_for_one_request
+DIRECT_ENDPOINT_UNIT_GROUP_LIFT = obstructed_no_11_primary
+PHYSICAL_OWNER_FLOW = unproved_external_contract_required
+~~~
+
+两个 endpoint 的单位群阶及合并模数单位群阶为 \(8,32,128\)，都没有 11-primary
+部分；所以 \(C_{11}\) 到当前 endpoint 单位群的直接 lift 严格为零，但带显式
+source-class 合同的外部 physical token 尚未排除。再加上两个 Type II 因子菜单均
+为空，它不是终端或递归边。反控制
+\(p=97,q=3\) 虽有完整 phase-digit lift，但没有带名整数边时仍严格返回
+'INCIDENCE_EDGE_SOURCE_PROVENANCE_OBSTRUCTED'。
+
+这项结果把 odd-Hall 缺口再次收紧：\(p=97\) pair 已不缺单边来源保持或 additive
+rank-one Rado，但经当前 endpoint 单位群的直接 source lift 已被严格排除；若沿此
+角色继续，需要显式外部 source-class token、换模数、换状态或 external source-switch。
+一般情形仍缺
+physical-owner flow、实际乘法因子掩码与 E1--E5。
+一般 full-window lift 则仍需
+构造记录特定的整数边。若因子菜单空、provenance 阻塞或 rank 过载不能产生终端，
+下一动作必须是带标记的严格跨纤维下降，而不是继续累计 owner 数量。详见
+[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](../claims/type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。

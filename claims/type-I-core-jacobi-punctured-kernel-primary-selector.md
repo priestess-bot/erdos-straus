@@ -15,8 +15,9 @@ statement: >-
   2^a 缩放核关系，并由精确非对称二进盒判定终端或盒外残差；要么 O 投影仍缺失
   目标，产生非恒奇阶全局 Fourier 角色及带条件掩码的奇素数阶源秩旗标。一般旗标
   尚无保持原记录来源的完整整数 owner/source-map；p=97 的 11 阶旗标已有反演对
-  owner 圆柱横向秩映射和 C_11 关联格 SNF，同纤维横向 lift 已被排除，但仍无
-  跨纤维因子积块或 E1--E5。纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
+  owner 圆柱横向秩映射、C_11 关联格 SNF 及来源保持的规范边 token，其精确源秩
+  容量为 1，同纤维横向 lift 已被排除，但仍无跨纤维因子积块或 E1--E5。
+  纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
   进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
 claim_status: established
 proof_provenance: repository_derivation
@@ -629,9 +630,32 @@ Type II 命中或严格 source-switch。固定 \((D,A)\) 纤维又必然固定 o
 \(s=AD\)，所以同纤维横向秩一般恒为零；正确载体是 \(D=6,17\) 两个参数顶点的
 增广关联格，商为 \(C_{11}\)。故准确回执是跨纤维
 OWNER_CYLINDER_TRANSVERSE_RANK_ONE 加 FIBER_INCIDENCE_SNF，而不是单纤维
-source-map。详见
+source-map。
+
+该二点映射的来源门现在也可关闭。把带名记录
+\((z_+,z_-)\)、有理反演对 \((5/1,1/5)\) 及整数规则
+\[
+\mathcal L_{\rm inv}(z_+,z_-)=(6,17)
+\]
+登记为一个有向边 token；其余因子为 \(N_6=11,N_{17}=15\)。以共同仿射斜率
+\(a=8\) 归一化后，
+\[
+\frac{\Theta_1(e_6-e_{17})}{8(2-9)}
+=\frac{11-15}{4\cdot8(2-9)}
+=1\pmod {11}.
+\]
+因此该 token 的来源签名和整数余因子 realization 同时固定，一个 q-rank 请求的
+incidence-token 流、关联槽流及 Rado rank 都等于 1；若复制为两个独立请求，则严格
+得到 rank \(1<2\)。这只把此前的 partial-pair provenance 升级为
+source-preserving additive rank-one 资源，不提供
+\(h\equiv-1\pmod {4D}\) 的因子积；结合 \(|U(24)|=8\)、\(|U(68)|=32\) 和
+\(|U(408)|=128\)，从 \(C_{11}\) 到当前 endpoint 乘法 source 环境的直接 lift
+严格为零。该 no-go 不排除另带显式 source-class 合同的外部物理 token，所以
+physical-owner 流仍标为 unproved_external_contract_required。
+详见
 [奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
-与[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)。
+、[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
+与[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
 
 ### 7.2 \(p=73,R=63\)：盒外残差经半幂 CRT 命中 Type II
 
@@ -725,8 +749,11 @@ EXACT_TYPE_I_HIT
 
 一般情形仍未证明的是把奇素数 \(\ell\) 旗标映射到保持原记录来源的完整算术 source
 contract；owner 圆柱横向数字已经给出正确的嵌套相位中心，参数纤维关联格也给出
-规范 \(C_q\) source-SNF，并严格排除了同纤维横向 lift，但尚未给出实际因子积块或
-跨纤维 E1--E5。该关联格另有尺度二分：\(p>4q^{j+1}\) 时 owner 数字全覆盖；
+规范 \(C_q\) source-SNF，并严格排除了同纤维横向 lift。对 \(p=97\) 的反演 pair，
+来源保持边、规范源列和一个请求的 incidence flow--Rado 门已经闭合；一般 phase
+lift 仍需带名整数来源边，且所有情形尚未给出 physical-owner flow、实际因子积块或
+跨纤维 E1--E5。该关联格另有尺度二分：
+\(p>4q^{j+1}\) 时 owner 数字全覆盖；
 \(p<4q^{j+1}\) 时每个深 owner 的余因子缩为 \(k\in\{1,3,5,7\}\)，可先运行完整
 Type II 小余因子菜单。纯二进缩放关系在 (39) 外时则已有规范
 半幂 CRT 真因子、精确共享支撑界和严格重图表 adapter。故 odd-Hall 分支仍保持

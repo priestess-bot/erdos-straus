@@ -393,12 +393,18 @@ ODD_HALL_SOURCE_RANK(q)
 ```
 
 这解决了“横向数字应放在哪个 source-SNF 中”的问题，并严格排除了同纤维目标。
-它尚未证明任意 phase 指派都保留原记录的算术来源，也未把关联格的 \(C_q\) 商变成
-某个单一 Type II 因子积块，更没有为跨纤维边给出 E4/E5。因此
-`INCIDENCE_PHASE_LIFT_VERIFIED` 仍是规范格证书而非递归边。下一决定性缺口已从
-“寻找同纤维 q-primary 单位群”收缩为：将关联格边上的 shared-\(q\) 来源与实际
-记录来源、因子选择/Hall--Rado 门组合，或者在组合失败时构造保持标记的严格
-跨纤维下降。
+它本身尚未证明任意 phase 指派都保留原记录的算术来源，也未把关联格的 \(C_q\) 商
+变成某个单一 Type II 因子积块，更没有为跨纤维边给出 E4/E5。因此
+`INCIDENCE_PHASE_LIFT_VERIFIED` 仍是规范格证书而非递归边。
+
+后续[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)
+已经关闭一个精确子问题：若输入另有带名源记录和可复核整数端点规则，则非零边可
+归一化为余因子差实现的源列 1；一个请求通过 source-preserving incidence
+flow--Rado，而两个独立请求严格出现 rank \(1<2\)。仅按 phase 选点仍返回
+provenance obstruction；physical-owner flow 仍需实际因子 token。
+所以决定性缺口不再是 \(p=97\) 反演 pair 的 source-rank 规范化，而是把该源列接到
+实际因子选择/E1--E5；一般完整 phase lift 则仍需先构造带名整数来源边。失败时必须
+构造保持标记的严格跨纤维下降。
 
 ## 聚焦验证
 

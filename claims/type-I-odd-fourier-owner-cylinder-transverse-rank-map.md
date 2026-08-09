@@ -414,12 +414,20 @@ p+4s=121,\qquad
 \tag{30}
 \]
 
-但该终端不保留 11 阶 owner-cylinder 路线。故式 (27) 的准确状态是
+但该终端不保留 11 阶 owner-cylinder 路线。后续来源边规范化定理已把带名反演记录、
+整数规则 \((\sigma,\sigma+11)\) 与余因子差绑定为一个规范 edge token；其归一化
+源列为 1，一个请求通过 flow--Rado，两个独立请求严格出现 rank \(1<2\)。故式 (27)
+的准确状态更新为
 
 ```text
 OWNER_CYLINDER_TRANSVERSE_RANK_ONE
 FIBER_INCIDENCE_SNF = C11
-PHYSICAL_SOURCE_PROVENANCE = partial_pair_only
+EDGE_SOURCE_PROVENANCE = verified_inversion_pair
+SOURCE_RELATION_SCOPE = one_edge
+TRANSVERSE_SOURCE_CAPACITY = 1
+INCIDENCE_FLOW_RADO = pass_for_one_request
+DIRECT_ENDPOINT_UNIT_GROUP_LIFT = obstructed_no_11_primary
+PHYSICAL_OWNER_FLOW = unproved_external_contract_required
 DIRECT_TERMINAL = false
 STRICT_SOURCE_SWITCH = false
 recursive_edge_eligible = false
@@ -436,16 +444,20 @@ SOURCE_RANK_DEMAND(q)
        -> rank 0: EXACT_HEIGHT_OWNER_MISSING / anchor only
        -> rank 1: INVERSION_PAIR_OR_AFFINE_DIGIT_MAP
             -> fiber-incidence C_q source-SNF
-            -> source provenance / shared-q / Hall-Rado / E1--E5
+            -> qualified arithmetic edge
+                 -> additive source resource / exact rank capacity 1
+                 -> physical owner projection / actual factor mask / E1--E5
 ```
 
 这条分派首次给出一个不会被唯一 owner 剩余类压平的嵌套相位中心。后续结果已经严格
 排除同纤维横向 lift，并在参数纤维增广格上构造规范 \(C_q\) 商；标准 owner 窗口
 覆盖全部 \(q\) 个数字时，任意 \(\mathbb F_q\) phase support 都有完整关联格 lift。
-仍未证明的是该相位指派总保持原记录的算术来源，也未把关联格边变成实际 Type II
-因子积块或 E1--E5。大尺度完整窗口与小尺度深 owner 的四值余因子终端菜单见
+一般 affine-digit 指派仍未证明总保持原记录的算术来源；只有带名整数边才能进入新
+source-resource 门。即使该门通过，也未把关联格边变成实际 Type II 因子积块或
+E1--E5。大尺度完整窗口、小尺度深 owner 的四值余因子终端菜单及来源边容量见
 [奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
-及[odd-owner 窗口的尺度二分与深层小余因子 Type II 终端菜单](type-I-odd-owner-scale-dichotomy-small-cofactor-terminal.md)。
+、[odd-owner 窗口的尺度二分与深层小余因子 Type II 终端菜单](type-I-odd-owner-scale-dichotomy-small-cofactor-terminal.md)
+及[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
 
 ## 聚焦验证
 

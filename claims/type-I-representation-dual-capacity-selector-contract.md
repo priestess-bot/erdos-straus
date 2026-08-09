@@ -99,6 +99,7 @@ depends_on:
   - type-I-odd-fourier-owner-cylinder-transverse-rank-map
   - type-I-odd-owner-fiber-incidence-lattice-source-map
   - type-I-odd-owner-scale-dichotomy-small-cofactor-terminal
+  - type-I-odd-owner-incidence-edge-source-preserving-capacity
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -208,6 +209,8 @@ sources:
     role: odd-owner-cross-fiber-incidence-source-SNF
   - claim: type-I-odd-owner-scale-dichotomy-small-cofactor-terminal
     role: odd-owner-large-window-or-small-cofactor-terminal-menu
+  - claim: type-I-odd-owner-incidence-edge-source-preserving-capacity
+    role: odd-owner-provenance-edge-normalization-and-exact-rank-capacity
 visibility: public
 last_checked: '2026-08-09'
 ---
@@ -231,6 +234,7 @@ pure_dyadic_half_power_crt_terminal_or_rechart
 fixed_layer_quotient_fourier
 odd_owner_fiber_incidence_lattice
 odd_owner_deep_small_cofactor_terminal
+odd_owner_incidence_edge_source_capacity
 symmetric_box_kneser_involution_bottleneck
 type_ii_canonical_fan_escape_trichotomy
 type_ii_qadic_height_kneser_block_bridge
@@ -319,11 +323,23 @@ q-primary 块：
 | `phase_lift` | `full`、`basis_only` 或 `obstructed`，以及仿射参数 \(a,c\) |
 | `source_provenance` | 原记录来源是否真实保持；仅按 phase 选顶点时必须标为 `unproved` |
 | `small_scale_terminal` | \(p<4q^{j+1}\) 时的 deep owner、\(k\in\{1,3,5,7\}\) 与完整 \(h\)-菜单 |
+| `qualified_incidence_edge` | 带名源记录对、整数构造规则、两个 owner 端点、相位标量与余因子差 |
+| `transverse_resource` | additive-incidence 类、规范边 token、归一化源列 1、关联流及精确 rank 容量 \(0/1\) |
+| `physical_owner_projection` | 在实际 \(h\)-因子出现前固定为 `unproved`，不得由 incidence slot 代替 |
 | `edge_status` | 在实际因子积块、E4/E5 之前固定为 `analysis_evidence` |
 
 固定 \((D,A)\) 时 \(s=AD\) 恒定，所以横向秩必为零；单纤维 q-height 与此关联格
 横向秩必须分账。非零 \(\Theta_j\) 只允许登记一个 shared-\(q\) rank，不能按顶点
 重复收费。
+
+若存在由带名源记录和明确整数规则产生的非零关联边，则相位标量归一化把该边的
+源列与真实余因子差同时化为 \(1\in\mathbb F_q\)。取字典序最小边作为唯一 token，
+一个请求的 incidence-token 流、关联槽流与 Rado rank 均为 1；两个独立请求则严格返回
+'OWNER_TRANSVERSE_SOURCE_RANK_DEFICIT(rank=1)'。若只有 phase-to-owner
+仿射赋值而无这样的整数来源边，必须返回
+'INCIDENCE_EDGE_SOURCE_PROVENANCE_OBSTRUCTED'。这个资源只进入 additive
+source-rank 账本，不能作为 \(h\mid p+4s\) 的因子副本，也不能跳过
+physical-owner projection。
 
 尺度门在关联格之后、一般 Hall--Rado 之前执行。若 \(p>4q^{j+1}\)，首 \(q\) 个
 owner 已覆盖全部横向数字；若 \(p<4q^{j+1}\)，每个 depth-\((j+1)\) owner 都满足
@@ -1085,17 +1101,25 @@ terminal。这是一个路由收缩，不是全部 primary 路径的封闭。详
 \(p=97,R=67,K=5^3\cdot13\) 从低密度回执推进为全局 11 阶核角色。后续横向数字门
 进一步证明：所有绝对 11-owner 类都会压掉非恒相位，但反演记录 \(5,1/5\) 可由
 \(\sigma=6\) 构造实际 owner \(6,17\)，其第一层横向数字 \(0,1\) 保存一个
-\(\mathbb F_{11}\) 差分方向。该 pair 只按一个 shared-\(11\) rank 载体收费；两个
+\(\mathbb F_{11}\) 差分方向。来源边规范化定理把该反演记录对、整数规则
+\((\sigma,\sigma+11)\)、两个余因子 \(11,15\) 与规范源列 \(1\) 绑定为一张
+source-preserving 回执；一个请求的 incidence flow--Rado 门通过，两个独立请求严格出现
+rank \(1<2\)。该 pair 只按一个 shared-\(11\) rank 载体收费；两个
 owner 分属不同 Type II 纤维，且均无直接命中或严格 source-switch，所以仍保持
 analysis_evidence。后续关联格定理已证明：任何固定 \((D,A)\) 纤维都固定
 \(s=AD\)，所以同纤维横向秩恒为零；在 owner 参数顶点的增广格上则有规范同态
 \(\Theta_j\)，非零时其 SNF 商精确为 \(C_q\)。当
 \(p>4q^{j+1}\) 时标准窗口覆盖全部横向数字，任意 \(\mathbb F_q\) phase support
-都有完整关联格 phase lift。该 lift 仍须另证原记录来源相容，并通过实际因子积块、
-Hall--Rado 与 E1--E5 门。详见
+都有完整关联格 phase lift；若没有带名整数来源边，该 lift 仍停在严格的 provenance
+obstruction。即使来源边存在，它也只关闭 additive source-rank 的 Rado 门，仍须
+通过 physical-owner flow、实际因子积块与 E1--E5。对 \(p=97\) 这两个 endpoint，
+\(|U(24)|,|U(68)|,|U(408)|=8,32,128\) 均无 11-primary 部分，所以直接
+endpoint-unit-group lift 已严格阻塞；带显式 source-class 合同的外部 physical
+token 仍未排除。否则只能换模数、换状态或使用该素数已有的独立终端。详见
 [核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)
 、[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
-与[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)。
+、[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
+与[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子
@@ -1121,7 +1145,10 @@ F/G sink。详见
   具有全局良基秩；
 - 某个候选后继对全部标记解都给出 E4 提升并满足 E5。
 
-因此下一步应优先把 odd-owner 关联格的余因子差分与原记录来源、实际 Type II
-因子积块及 Hall--Rado 门组合；若该接口失败，构造带标记的严格跨纤维下降。另一条
+因此下一步不再需要为 \(p=97\) 的反演 pair 补 additive source-rank Rado：该门已由
+规范来源边关闭。决定性缺口是把此源列送入 physical-owner flow 并与实际 Type II
+因子积块组合；对一般 phase lift，则先构造带名整数来源边。菜单空、来源阻塞或
+rank 过载若不能进入因子选择，
+必须转成带标记的严格跨纤维下降。另一条
 决定性路线仍是证明可达 \(A>1\) overflow 的 support-preserving alternate/终端
 完备性，或建立封闭且良基的外层 phase-reset 秩；本卡不把有限回执误写成全称结论。
