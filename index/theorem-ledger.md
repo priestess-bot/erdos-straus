@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 28 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 593 |
+| 数学状态 | `established` | 594 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 430 |
+| 证明来源 | `repository_derivation` | 431 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 566 |
+| 审阅状态 | `internal_review` | 567 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -625,6 +625,7 @@
 | [overflow 同 d 纤维 lcm 的跨纤维强制与同图表禁闭](../claims/type-I-overflow-same-d-lcm-cross-fiber-no-go.md) (`type-I-overflow-same-d-lcm-cross-fiber-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [高载体小 d 容量层的完整余因子递降](../claims/type-I-overflow-small-d-capacity-complete-reduction.md) (`type-I-overflow-small-d-capacity-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体小 d 容量层的素大余因子残余二分](../claims/type-I-overflow-small-d-capacity-prime-residual-dichotomy.md) (`type-I-overflow-small-d-capacity-prime-residual-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
+| [\(d\le8\) 高载体容量层的 dual 饱和组合闭合](../claims/type-I-overflow-small-d-dual-saturation-composition.md) (`type-I-overflow-small-d-dual-saturation-composition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [2,3-光滑 overflow 高 k 双载体 joined-support RESET 无 go](../claims/type-I-overflow-smooth23-high-k-dual-carrier-no-go.md) (`type-I-overflow-smooth23-high-k-dual-carrier-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [2,3-光滑 overflow 高 k 的外层势硬边界](../claims/type-I-overflow-smooth23-high-k-potential-boundary.md) (`type-I-overflow-smooth23-high-k-potential-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [2,3-光滑二维 fixed-s overflow 的 k=1 fixed-n 饱和递降](../claims/type-I-overflow-smooth23-k-one-fixed-n-saturation.md) (`type-I-overflow-smooth23-k-one-fixed-n-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
