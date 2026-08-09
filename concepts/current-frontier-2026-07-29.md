@@ -4222,3 +4222,64 @@ factor-toggle 仍需独立整数构造。独立于该边的 terminal-first 分�
 该结果没有构造 physical source-class token。它关闭的是相邻边的共同固定行基菜单；
 非相邻边、异质源基、换状态与带完整回译的非同态 factor-toggle 仍是未闭合接口。详见
 [奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](../claims/type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)。
+
+## 2026-08-10：非相邻共同基的平方菜单与独占下一层物理 lift
+
+设 \(Q=q^j\)，来源合格的非相邻 owner 边为
+\(s_m=\beta_j+mQ,s_n=\beta_j+nQ\)，且 \(q\nmid n-m\)。新的共同基定理首先给出
+
+\[
+\gcd(s_m,s_n)=\gcd(s_m,n-m).
+\]
+
+因此任意共同算术行基 \(D_0\) 都整除横向步长。固定 \(D_0\) 后，全部合法
+\((D_*,A,C)\) 目标与 \(D_0^2\) 的除数一一对应；exact-\(Q\) 菜单恰为
+
+\[
+\mathscr X_Q(D_0;p)
+=\{x:x\mid D_0^2,\ 4x<p,\ x\equiv\beta_j(p)\pmod Q\}.
+\]
+
+这不是抽样菜单。对每个 \(D_*\mid D_0\)，约化余因子
+\(N_r=(p+4s_r)/Q\) 满足
+
+\[
+N_n-N_m=4(n-m)\equiv0\pmod {4D_*},
+\]
+
+且二者都是单位，所以 endpoint cofactor ratio 在所有共同基目标群中严格等于 1。
+公共前 \(j\) 个 q 层同样在边上恒定，不能冒充横向源列。
+
+真正的新正构造来自下一层。两个 endpoint 至多一个满足
+\(q^{j+1}\mid p+4s\)。若恰有唯一 deep endpoint \(s_+\)，且目标
+\(x\equiv s_+\pmod {q^{j+1}}\)，则约去公共 \(q^j\) 前缀后，source 与 target
+同时具有真实二点因子块
+
+\[
+\{1,q\}.
+\]
+
+对已经 provenance-qualified 且 source/target 全局 occurrence 均未收费的单边，这才
+关闭 physical source-class E1。存在一个可自由选择且不杀掉实际整数类
+\([q]\in U(4D_*)\) 的循环 q-primary 角色的精确门是
+
+\[
+q\mid\operatorname{ord}_{4D_*}(q),
+\]
+
+而 \(q\mid\varphi(4D_*)\) 只表示环境群某处有 q-torsion，并不充分；预先固定的
+\(J\)、anchor 和其它标签仍需联合 SNF/\(\eta\) 门。
+正控制 \(p=2113,D_0=70,D_*=14,x=14\) 同时通过独占第二层和实际 3-rank；
+\(p=1489,x=14\) 严格失败于目标未继承第二层；\(p=2113,D_*=122\) 则在
+ambient 3-torsion 存在时仍因 \(\operatorname{ord}_{488}(3)=10\) 返回物理 3-rank 零。
+
+更强的是，对所有核心素数 \(p>2600\)，按 \(p\bmod9\in\{7,4,1\}\) 可从三张固定
+\(q=3\) 模板中选出常数大小、canonical 且满足 \(D_*<D_0\) 的 next-layer carrier
+skeleton。于是“充分大核心素数是否存在有界算术 q-carrier”已经得到肯定回答。尚未
+解决的是：任意 terminal-first 未决 F/G source relation 是否必能通过带名整数规则
+准入这些固定 rows，以及局部 \(D_*<D_0\) 是否能配上全域 marked-solution lift 和
+不可重置的全局势。下一动作应直接攻这个 admission/E5 接口，而不是继续搜索更多
+数值 carrier。
+
+详见
+[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](../claims/type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)。

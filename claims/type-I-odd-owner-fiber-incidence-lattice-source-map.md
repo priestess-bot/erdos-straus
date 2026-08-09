@@ -43,7 +43,7 @@ sources:
   - reproduction: reproductions/type_i_odd_owner_fiber_incidence_lattice_source_map.py
     role: focused-window-incidence-SNF-and-boundary-controls
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-10'
 ---
 
 # 奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go
@@ -409,8 +409,16 @@ provenance obstruction。进一步的
 source-rank lift。独立的 \(D=1\) 单因子 raw 菜单命中时由 terminal-first 结束；
 只有该菜单为空后才检查当前层。\(p=97,q=11\) 因 \(\beta_1=6\) 在唯一目标
 \(x=1\) 的 E2 必要同余行严格失败。决定性
-缺口已缩为非同态 factor-toggle、非相邻/异质源基接口；一般完整 phase lift 仍需先
-构造带名整数来源边。失败时必须构造保持标记的严格跨纤维下降。
+缺口已缩为异质源基、一般来源准入与全局 E5；一般完整 phase lift 仍需先
+构造带名整数来源边。后续
+[非相邻共同基下一层 lift](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)
+进一步证明：共同基目标由 \(D_0^2\) 的除数穷尽，endpoint cofactor residue 全部碰撞；
+但若已合格边有唯一 deep endpoint 且目标继承 \(q^{j+1}\) 层，则独占层给出真实
+\(\{1,q\}\) arithmetic-ready block；provenance 与全局 occurrence 分配门通过后才是
+physical source-class token。\(q\mid\operatorname{ord}_{4D_*}(q)\) 只判定某个可自由
+选择的 q-primary 角色能否保留实际 q 类，既定角色仍需联合 SNF/\(\eta\)。固定
+\(q=3\) 模板已覆盖全部充分大核心素数的
+算术 carrier skeleton；失败时仍必须构造来源保持、带标记的严格跨纤维下降。
 
 ## 聚焦验证
 

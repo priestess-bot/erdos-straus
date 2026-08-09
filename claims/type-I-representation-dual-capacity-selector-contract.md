@@ -101,6 +101,7 @@ depends_on:
   - type-I-odd-owner-scale-dichotomy-small-cofactor-terminal
   - type-I-odd-owner-incidence-edge-source-preserving-capacity
   - type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy
+  - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -214,8 +215,10 @@ sources:
     role: odd-owner-provenance-edge-normalization-and-exact-rank-capacity
   - claim: type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy
     role: adjacent-owner-fixed-base-terminal-or-q-primary-obstruction
+  - claim: type-I-odd-owner-nonadjacent-common-base-next-layer-lift
+    role: nonadjacent-common-base-square-menu-and-exclusive-next-layer-physical-lift
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-10'
 ---
 
 # 表示—对偶—容量统一选择器的状态级 typed 分派合同
@@ -329,9 +332,12 @@ q-primary 块：
 | `small_scale_terminal` | \(p<4q^{j+1}\) 时的 deep owner、\(k\in\{1,3,5,7\}\) 与完整 \(h\)-菜单 |
 | `qualified_incidence_edge` | 带名源记录对、整数构造规则、两个 owner 端点、相位标量与余因子差 |
 | `transverse_resource` | additive-incidence 类、规范边 token、归一化源列 1、关联流及精确 rank 容量 \(0/1\) |
-| `physical_owner_projection` | 在实际 \(h\)-因子出现前固定为 `unproved`，不得由 incidence slot 代替 |
+| `physical_owner_projection` | 默认 `unproved`；只有来源边合格、独占 \(q^{j+1}\) 层及目标继承均经整数验证且物理槽未收费时，才可对该单边登记 `verified` |
+| `physical_occurrence_assignment` | 不含 edge id 的 source/target `(state_id,value,q,layer)` 键、内容寻址 assignment、`claimed_by` 与冲突回执；仅精确重放幂等，任意部分重叠不得再收费 |
 | `adjacent_fixed_base_lift` | endpoint gcd、共同算术行基 \(D_0\)、唯一 \((D_*,A,x)\)、\(\beta_j\) 与 exact-\(q^j\) E2 回执 |
-| `target_q_primary_lift` | 目标 \(U(4D_*)\) 的 q-primary 秩；为零时不得把 physical occurrence 变成 source token |
+| `nonadjacent_common_base_lift` | \(D_0\mid\gcd(s_m,s_n)\)、平方除子菜单 \(x\mid D_0^2\)、余因子碰撞、唯一 deep endpoint 与目标下一层继承 |
+| `target_q_primary_lift` | 实际类 \([q]\in U(4D_*)\) 的阶及既定 SNF/\(\eta\)；环境群含 q-torsion 本身不支付源秩 |
+| `strict_source_switch_candidate` | \(D_*<D_0\) 只记局部参数下降；权威状态、marked lift 与 non-resetting 势未齐时不得升级 E5 |
 | `d1_raw_menu` | \(h\mid p+4,\ h\equiv3\pmod4\) 的完整 \(D=1\) 单因子菜单、终端或严格空菜单 |
 | `edge_status` | 在实际因子积块、E4/E5 之前固定为 `analysis_evidence` |
 
@@ -347,6 +353,31 @@ q-primary 块：
 'INCIDENCE_EDGE_SOURCE_PROVENANCE_OBSTRUCTED'。这个资源只进入 additive
 source-rank 账本，不能作为 \(h\mid p+4s\) 的因子副本，也不能跳过
 physical-owner projection。
+
+对来源合格的非相邻边，物理投影现有一个精确正子类。令
+\(Q=q^j\)、\(k=n-m\)、\(q\nmid k\)。任意共同基 \(D_0\) 都整除
+\(\gcd(s_m,s_n)=\gcd(s_m,k)\)，其全部 exact-\(Q\) 目标由
+
+\[
+x\mid D_0^2,\qquad 4x<p,\qquad x\equiv\beta_j(p)\pmod Q
+\]
+
+穷尽。对每个目标 \(D_*\mid D_0\)，两个约化余因子在
+\(U(4D_*)\) 中严格相同，所以 cofactor ratio 和公共前 \(j\) 个 q 层都不能收费。
+若两端恰有一个进入 \(q^{j+1}\)，目标也与该 deep endpoint 同余模
+\(q^{j+1}\)，且 source/target 的全局 occurrence 均未收费，则相对公共前缀出现真实
+\(\{1,q\}\) 因子块；该单边的 physical source-class E1 才可登记为 `verified`。
+存在某个可自由选择且不杀掉实际 q 类的循环 q-primary 角色当且仅当
+
+\[
+q\mid\operatorname{ord}_{4D_*}(q),
+\]
+
+而非仅仅 \(q\mid\varphi(4D_*)\)；若 \(J\)、anchor 或其它标签预先固定，仍须运行
+联合 SNF/\(\eta\) 门。固定 \(q=3\) 的三张常数模板已覆盖所有
+\(p\equiv1\pmod {24}\)、\(p>2600\) 的算术 carrier skeleton；但原 F/G 请求到模板
+source rows 的 provenance/admission 以及 marked-solution E5 尚未证明，故
+\(D_*<D_0\) 仍只登记 `strict_source_switch_candidate`。
 
 尺度门在关联格之后、一般 Hall--Rado 之前执行。若 \(p>4q^{j+1}\)，首 \(q\) 个
 owner 已覆盖全部横向数字；若 \(p<4q^{j+1}\)，每个 depth-\((j+1)\) owner 都满足
@@ -1127,12 +1158,19 @@ obstruction。若来源边相邻，新的固定基定理先证明 endpoint 互�
 \(\beta_1=6\)，唯一目标 \(x=1\) 在 E2 失败；此外
 \(|U(24)|,|U(68)|,|U(408)|=8,32,128\) 均无 11-primary 部分，所以直接
 endpoint-unit-group lift 也严格阻塞。异质源基或换状态的 external physical token
-仍未排除；否则只能换模数、换状态或使用该素数已有的独立终端。详见
+仍未排除；否则只能换模数、换状态或使用该素数已有的独立终端。另一方面，来源合格的
+非相邻边已有一个真实物理子类：共同基目标菜单与 \(D_0^2\) 的除数一一对应，所有
+endpoint cofactor residue 必碰撞，但唯一 deep endpoint 被目标继承时，独占的
+\(q^{j+1}\) 层给出 arithmetic-ready 的 \(\{1,q\}\) source-class toggle；
+\(q\mid\operatorname{ord}_{4D_*}(q)\) 恰好判定某个可自由选择的 q-primary 角色是否
+能保留实际 q 类，既定角色仍过联合 \(\eta\) 门。该结论不替 \(p=97\) 的相邻边消除 E2 障碍，
+也不把局部 \(D_*<D_0\) 变成全局递降。详见
 [核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)
 、[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
 、[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
 、[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)
-与[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)。
+、[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)
+与[非相邻 owner 的共同基平方菜单、余因子碰撞与下一层物理 q-toggle](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子
@@ -1153,15 +1191,16 @@ F/G sink。详见
 该合同解决的是证据编排和类型安全，不解决以下命题：
 
 - 每个核心素数的 terminal-first 失败状态必有 alternate、终端或合法后继；
-- Fourier 角色阶或缺陷单位必能映射为有界、可重复控制的 \(q\)-进载体；
+- 每个未决 F/G 奇阶源请求必能来源保持地准入某个有界 \(q\)-进载体；
 - 除已登记的不可逆半幂 CRT 真因子边外，任意丢弃旧 charged support 的 phase reset
   具有全局良基秩；
 - 某个候选后继对全部标记解都给出 E4 提升并满足 E5。
 
 因此下一步不再需要为 \(p=97\) 的反演 pair 补 additive source-rank Rado：该门已由
-规范来源边关闭。决定性缺口是把此源列送入 physical-owner flow 并与实际 Type II
-因子积块组合；对一般 phase lift，则先构造带名整数来源边。菜单空、来源阻塞或
-rank 过载若不能进入因子选择，
-必须转成带标记的严格跨纤维下降。另一条
+规范来源边关闭，而其相邻固定基物理路线已由 E2 严格阻塞。对一般奇阶请求，算术
+carrier 的存在也不再是首要缺口：全部充分大核心素数已有固定 \(q=3\) 的常数模板。
+决定性缺口是证明真实 F/G source relation 必能带 provenance 地准入这些非相邻模板，
+并把局部 \(D_*<D_0\) 配上全域 marked-solution lift 与不可重置的全局势。菜单空、
+来源阻塞或 rank 过载若不能进入因子选择，必须转成这种带标记的严格跨纤维下降。另一条
 决定性路线仍是证明可达 \(A>1\) overflow 的 support-preserving alternate/终端
 完备性，或建立封闭且良基的外层 phase-reset 秩；本卡不把有限回执误写成全称结论。

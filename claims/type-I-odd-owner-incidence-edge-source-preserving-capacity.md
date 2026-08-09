@@ -49,7 +49,7 @@ sources:
   - reproduction: reproductions/type_i_odd_owner_incidence_edge_source_preserving_capacity.py
     role: focused-positive-rank-deficit-provenance-and-endpoint-primary-no-go-controls
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-10'
 ---
 
 # 奇阶 owner 关联边的来源保持规范化与精确一维秩容量
@@ -408,7 +408,15 @@ ODD_HALL_SOURCE_RANK(q,j)
                           DIRECT_TARGET_U4_Q_PRIMARY_LIFT_OBSTRUCTED
                           NO_D1_SINGLE_FACTOR_RAW_OR_STRICT_D_EDGE
                  -> nonadjacent / heterogeneous source base:
-                      physical owner projection / factor mask / E1--E5 required
+                      common-base square target menu
+                      endpoint cofactor residues always collide
+                      -> exclusive q^(j+1) layer inherited by target:
+                           arithmetic-ready physical {1,q} block
+                           provenance + global occurrence assignment required
+                           freely selectable q-role exists iff q | ord_{4D_*}(q)
+                           prescribed role still requires joint SNF/eta
+                      -> otherwise: direct next-layer lift obstructed
+                      -> E4 / marked lift / global E5 still required
 ~~~
 
 该定理关闭的是 \(p=97\) 一条反演边的来源保持、规范化和加法单 rank 容量门。后续
@@ -418,7 +426,14 @@ source CRT 可解当且仅当
 \(\beta_j(p)=1\)。因此 \(p=97\) 当前边得到 E2 障碍；正分支只得到目标处真实
 \(q^j\) occurrence，而 \(U(4)\) 无奇 \(q\)-primary，不能承载当前源列。独立的
 \(D=1\) 单因子 raw 菜单已由 terminal-first 预检；菜单空时仍缺非同态 factor-toggle、
-非相邻/异质源基接口，或严格、可提升的跨纤维下降。
+异质源基接口，或严格、可提升的跨纤维下降。后续
+[非相邻共同基下一层 lift](type-I-odd-owner-nonadjacent-common-base-next-layer-lift.md)
+已关闭一个非相邻正子类：全部共同基目标由 \(x\mid D_0^2\) 穷尽，cofactor residue
+路线严格碰撞，但唯一 deep endpoint 被目标继承时，独占的 \(q^{j+1}\) 层给出真实
+\(\{1,q\}\) arithmetic-ready block。只有输入边已经 provenance-qualified，且
+source/target 两个不含 edge id 的全局 occurrence key 均未占用时，才能登记 verified
+source-class token；局部 \(D_*<D_0\) 仍不自动升级为 E5，所以不适用于这里的
+\(p=97\) 相邻 E2 反控。
 
 ## 7. 对抗边界
 
@@ -437,8 +452,10 @@ source CRT 可解当且仅当
 条件 1 排除 phase-only 命名，条件 2 限定来源范围，条件 4 明确阻断物理因子结论。
 在 \(p=97\) 控制中，式 (22)--(23) 把经当前 endpoint 单位群的直接乘法 source
 lift 收紧为严格不可能；共同固定基定理又在当前 \(p=97\) 边上排除了全部
-\(D_*\mid D_0\) 的目标 occurrence。一般正分支仍只排除直接 \(U(4)\)
-q-primary 同态 lift；非同态 factor-toggle、异质源基、非相邻边或换状态仍未闭合。
+\(D_*\mid D_0\) 的目标 occurrence。一般相邻正分支仍只排除直接 \(U(4)\)
+q-primary 同态 lift；非相邻边的独占下一层子类在 provenance 与全局 occurrence
+分配门通过时现已关闭 physical E1，但异质源基、
+其它非相邻高度型、换状态与全局 E5 仍未闭合。
 
 ## 聚焦验证
 
