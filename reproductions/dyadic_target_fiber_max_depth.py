@@ -216,6 +216,53 @@ def profile(
     }:
         raise AssertionError("maximum-depth source representations did not deduplicate in the quotient")
 
+    top_rep_by_source: dict[Element, Exponent] = {}
+    for exponent in fiber_exponents:
+        source = image(exponent, generators, moduli)
+        offset = add(source, negate(target, moduli), moduli)[-1] % kernel_modulus
+        if depths[offset] == maximum_depth:
+            top_rep_by_source.setdefault(source, exponent)
+    top_representatives = tuple(top_rep_by_source.values())
+    packing_bound = 1 << len(bounds)
+    cells: dict[tuple[int, ...], list[Exponent]] = {}
+    for exponent in top_representatives:
+        cell = tuple(int(coordinate > 0) for coordinate in exponent)
+        cells.setdefault(cell, []).append(exponent)
+
+    packing_pair: dict[str, object] | None = None
+    if len(top_representatives) > packing_bound:
+        selected: tuple[Exponent, Exponent] | None = None
+        for cell in sorted(cells):
+            members = sorted(cells[cell])
+            if len(members) >= 2:
+                selected = (members[0], members[1])
+                break
+        if selected is None:
+            raise AssertionError("exceeded the sign-cell packing bound without a collision")
+        left, right = selected
+        delta = tuple(a - b for a, b in zip(left, right))
+        if any(abs(coordinate) > bound for coordinate, bound in zip(delta, bounds)):
+            raise AssertionError("same-cell collision exceeded the exponent budget")
+        relation = image(delta, generators, moduli)
+        if relation == identity:
+            raise AssertionError("distinct top source images produced a zero packing relation")
+        relation_depth = cyclic_depth(relation[-1], kernel_modulus)
+        if relation_depth < maximum_depth + 1:
+            raise AssertionError("packing relation did not enter the maximum-depth subgroup")
+        packing_pair = {
+            "left": list(left),
+            "right": list(right),
+            "delta": list(delta),
+            "relation": list(relation),
+            "relation_depth": relation_depth,
+            "cell": list(tuple(int(coordinate > 0) for coordinate in left)),
+        }
+    packing_status = (
+        "SHORT_DYADIC_LAYER_RELATION"
+        if packing_pair is not None
+        else "TOP_CLASS_PACKING_BOUNDARY"
+    )
+
     return {
         "kernel_modulus": kernel_modulus,
         "target_in_kernel": target_in_kernel,
@@ -231,6 +278,18 @@ def profile(
         "top_depth_values": sorted(top_depth_values),
         "top_source_class_count": len(top_source_classes),
         "top_source_classes": [list(value) for value in sorted(top_source_classes)],
+        "top_representative_count": len(top_representatives),
+        "top_representatives": [
+            {
+                "source": list(source),
+                "exponent": list(exponent),
+            }
+            for source, exponent in sorted(top_rep_by_source.items())
+        ],
+        "packing_bound": packing_bound,
+        "top_cell_count": len(cells),
+        "packing_status": packing_status,
+        "packing_pair": packing_pair,
         "fiber_exponent_count": len(fiber_exponents),
         "antipodal_pair_count": len(pairs),
         "fixed_exponents": [list(exponent) for exponent in fixed],
@@ -262,6 +321,7 @@ def verify() -> None:
     assert strict["disjoint_levels"] == [2, 3]
     assert strict["top_depth_values"] == [2, 6]
     assert strict["top_source_class_count"] == 1
+    assert strict["packing_status"] == "TOP_CLASS_PACKING_BOUNDARY"
     assert strict["certificate_type"] == "DYADIC_TARGET_FIBER_QUOTIENT_DESCENT"
     assert all(not pair["short_relation"] for pair in strict["pairs"])
     assert all(pair["relation"] == [0, 4] for pair in strict["pairs"])
@@ -301,6 +361,27 @@ def verify() -> None:
     assert in_kernel["fixed_exponents"] == [[0]]
     assert in_kernel["certificate_type"] == "TOP_DYADIC_TARGET_FIBER"
 
+    packed = profile(
+        moduli=(2, 16),
+        kernel_modulus=16,
+        generators=((1, 1), (0, 2)),
+        bounds=(2, 2),
+        target=(1, 0),
+    )
+    assert packed["maximum_depth"] == 0
+    assert packed["top_representative_count"] > packed["packing_bound"]
+    assert packed["top_representative_count"] == 6
+    assert len(packed["top_representatives"]) == 6
+    assert packed["packing_status"] == "SHORT_DYADIC_LAYER_RELATION"
+    assert packed["packing_pair"] is not None
+    assert packed["packing_pair"]["relation_depth"] >= 1
+    assert all(
+        abs(coordinate) <= bound
+        for coordinate, bound in zip(
+            packed["packing_pair"]["delta"], (2, 2)
+        )
+    )
+
     print("verified maximum-depth dyadic target-fiber dichotomy")
     print(
         {
@@ -308,6 +389,7 @@ def verify() -> None:
             "short_relation": "2z_maps_to_C2_subgroup",
             "top_terminal": "order_two_offset",
             "in_kernel_fixed_point": "z=0_is_allowed_only_in_top_case",
+            "packing_relation": "more_than_2^r_top_source_images_force_a_budgeted_relation",
         }
     )
 
