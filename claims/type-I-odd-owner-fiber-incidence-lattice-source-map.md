@@ -401,10 +401,16 @@ ODD_HALL_SOURCE_RANK(q)
 已经关闭一个精确子问题：若输入另有带名源记录和可复核整数端点规则，则非零边可
 归一化为余因子差实现的源列 1；一个请求通过 source-preserving incidence
 flow--Rado，而两个独立请求严格出现 rank \(1<2\)。仅按 phase 选点仍返回
-provenance obstruction；physical-owner flow 仍需实际因子 token。
-所以决定性缺口不再是 \(p=97\) 反演 pair 的 source-rank 规范化，而是把该源列接到
-实际因子选择/E1--E5；一般完整 phase lift 则仍需先构造带名整数来源边。失败时必须
-构造保持标记的严格跨纤维下降。
+provenance obstruction。进一步的
+[相邻边固定基终端—障碍三分](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)
+证明相邻 endpoint 互素，故共同算术行基只能为 1；其 exact-\(q^j\) source CRT
+可解当且仅当 \(\beta_j(p)=1\)。正分支只证明目标处有真实
+\(q^j\) occurrence；唯一目标群 \(U(4)\) 无奇 \(q\)-primary，所以没有直接
+source-rank lift。独立的 \(D=1\) 单因子 raw 菜单命中时由 terminal-first 结束；
+只有该菜单为空后才检查当前层。\(p=97,q=11\) 因 \(\beta_1=6\) 在唯一目标
+\(x=1\) 的 E2 必要同余行严格失败。决定性
+缺口已缩为非同态 factor-toggle、非相邻/异质源基接口；一般完整 phase lift 仍需先
+构造带名整数来源边。失败时必须构造保持标记的严格跨纤维下降。
 
 ## 聚焦验证
 

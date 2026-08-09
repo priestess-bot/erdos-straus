@@ -317,7 +317,8 @@ EDGE_SOURCE_PROVENANCE = verified_inversion_pair
 SOURCE_RELATION_SCOPE = one_edge
 TRANSVERSE_SOURCE_CAPACITY = 1
 INCIDENCE_FLOW_RADO = pass_for_one_request
-PHYSICAL_OWNER_FLOW = unproved_external_contract_required
+ADJACENT_FIXED_BASE_QJ_SOURCE_CRT = obstructed_required_6_target_1
+HETEROGENEOUS_EXTERNAL_PHYSICAL_FLOW = unproved
 ~~~
 
 但两个端点的完整 Type II 因子菜单仍分别为空：
@@ -340,16 +341,20 @@ C_{11}\longrightarrow U(408)
 
 都平凡。换言之，两个实际 11 因子 occurrence 虽然存在，但它们在当前 endpoint
 单位群商中的 11-primary 源列为零，不能通过这些单位群直接承载式 (20) 的非零
-关联列。于是 \(p=97\) 有如下严格 no-go：
+关联列。后续共同固定基定理还给出另一条独立 no-go：相邻标签 \(6,17\) 互素，故
+同时容纳两端的固定源基只能是 \(D_0=1\)，其除子格目标只有
+\(D_*=A=x=1\)；但 exact-11 source CRT 要求 \(x\equiv6\pmod {11}\)，所以在 E2
+即严格失败。于是 \(p=97\) 有如下分层状态：
 
 ~~~text
 DIRECT_ENDPOINT_UNIT_GROUP_LIFT = obstructed_no_11_primary
-PHYSICAL_OWNER_FLOW_FOR_TRANSVERSE_DEMAND = unproved_external_contract_required
+ADJACENT_FIXED_BASE_QJ_SOURCE_CRT = obstructed_required_6_target_1
+HETEROGENEOUS_EXTERNAL_PHYSICAL_FLOW = unproved
 ~~~
 
-这不排除带显式 source-class 分槽合同的外部 token，也不排除换用新模数、新状态或
-external source-switch；因此不能把直接单位群 no-go 外推为所有 physical-owner
-flow 的不可能性。
+共同固定基障碍覆盖所有 \(s_i=D_0a_i\)、\(D_*\mid D_0\) 的相邻边合同，但不排除
+异质源基的外部 token，也不排除换用新模数、新状态或 external source-switch；因此
+不能把这两个 no-go 外推为所有 physical-owner flow 的不可能性。
 
 因此当前 \(q=11\) 关联边的准确状态仍是
 
@@ -393,12 +398,27 @@ ODD_HALL_SOURCE_RANK(q,j)
                  -> one independent request: INCIDENCE_FLOW_RADO_PASS
                  -> at least two independent requests:
                       OWNER_TRANSVERSE_SOURCE_RANK_DEFICIT
-                 -> physical owner projection / factor mask / E1--E5 required
+                 -> global D1 raw menu (already terminal-first):
+                      hit: unreachable_here / TYPE_II_TERMINAL already returned
+                      empty -> adjacent common-fixed-base menu:
+                        beta_j(p) != 1:
+                          ADJACENT_EDGE_FIXED_BASE_QJ_SOURCE_CRT_OBSTRUCTED
+                        beta_j(p) = 1:
+                          ADJACENT_EDGE_FIXED_BASE_QJ_PHYSICAL_OCCURRENCE
+                          DIRECT_TARGET_U4_Q_PRIMARY_LIFT_OBSTRUCTED
+                          NO_D1_SINGLE_FACTOR_RAW_OR_STRICT_D_EDGE
+                 -> nonadjacent / heterogeneous source base:
+                      physical owner projection / factor mask / E1--E5 required
 ~~~
 
-该定理关闭的是 \(p=97\) 一条反演边的来源保持、规范化和加法单 rank 容量门。它没有把
-关联边变成 \(h\mid p+4s\) 的乘法因子；下一决定性缺口是把这个已验证源列与某个实际
-Type II 算术菜单边组合，或把菜单空和过载回执送入严格、可提升的跨纤维下降。
+该定理关闭的是 \(p=97\) 一条反演边的来源保持、规范化和加法单 rank 容量门。后续
+[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)
+已精确完成相邻边的共同固定基子问题：共同算术行基必塌缩到 1，且 exact-\(q^j\)
+source CRT 可解当且仅当
+\(\beta_j(p)=1\)。因此 \(p=97\) 当前边得到 E2 障碍；正分支只得到目标处真实
+\(q^j\) occurrence，而 \(U(4)\) 无奇 \(q\)-primary，不能承载当前源列。独立的
+\(D=1\) 单因子 raw 菜单已由 terminal-first 预检；菜单空时仍缺非同态 factor-toggle、
+非相邻/异质源基接口，或严格、可提升的跨纤维下降。
 
 ## 7. 对抗边界
 
@@ -415,8 +435,10 @@ Type II 算术菜单边组合，或把菜单空和过载回执送入严格、可
 
 因此最强反驳“给任意 phase map 命名一个 lift rule 就得到物理 Type II 容量”不成立：
 条件 1 排除 phase-only 命名，条件 2 限定来源范围，条件 4 明确阻断物理因子结论。
-在 \(p=97\) 控制中，式 (22)--(23) 只把经当前 endpoint 单位群的直接乘法 source
-lift 从 unproved 收紧为严格不可能；外部 source-class physical flow 仍是决定性缺口。
+在 \(p=97\) 控制中，式 (22)--(23) 把经当前 endpoint 单位群的直接乘法 source
+lift 收紧为严格不可能；共同固定基定理又在当前 \(p=97\) 边上排除了全部
+\(D_*\mid D_0\) 的目标 occurrence。一般正分支仍只排除直接 \(U(4)\)
+q-primary 同态 lift；非同态 factor-toggle、异质源基、非相邻边或换状态仍未闭合。
 
 ## 聚焦验证
 

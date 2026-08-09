@@ -100,6 +100,7 @@ depends_on:
   - type-I-odd-owner-fiber-incidence-lattice-source-map
   - type-I-odd-owner-scale-dichotomy-small-cofactor-terminal
   - type-I-odd-owner-incidence-edge-source-preserving-capacity
+  - type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -211,6 +212,8 @@ sources:
     role: odd-owner-large-window-or-small-cofactor-terminal-menu
   - claim: type-I-odd-owner-incidence-edge-source-preserving-capacity
     role: odd-owner-provenance-edge-normalization-and-exact-rank-capacity
+  - claim: type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy
+    role: adjacent-owner-fixed-base-terminal-or-q-primary-obstruction
 visibility: public
 last_checked: '2026-08-09'
 ---
@@ -235,6 +238,7 @@ fixed_layer_quotient_fourier
 odd_owner_fiber_incidence_lattice
 odd_owner_deep_small_cofactor_terminal
 odd_owner_incidence_edge_source_capacity
+odd_owner_adjacent_edge_fixed_base_terminal_obstruction
 symmetric_box_kneser_involution_bottleneck
 type_ii_canonical_fan_escape_trichotomy
 type_ii_qadic_height_kneser_block_bridge
@@ -326,6 +330,9 @@ q-primary 块：
 | `qualified_incidence_edge` | 带名源记录对、整数构造规则、两个 owner 端点、相位标量与余因子差 |
 | `transverse_resource` | additive-incidence 类、规范边 token、归一化源列 1、关联流及精确 rank 容量 \(0/1\) |
 | `physical_owner_projection` | 在实际 \(h\)-因子出现前固定为 `unproved`，不得由 incidence slot 代替 |
+| `adjacent_fixed_base_lift` | endpoint gcd、共同算术行基 \(D_0\)、唯一 \((D_*,A,x)\)、\(\beta_j\) 与 exact-\(q^j\) E2 回执 |
+| `target_q_primary_lift` | 目标 \(U(4D_*)\) 的 q-primary 秩；为零时不得把 physical occurrence 变成 source token |
+| `d1_raw_menu` | \(h\mid p+4,\ h\equiv3\pmod4\) 的完整 \(D=1\) 单因子菜单、终端或严格空菜单 |
 | `edge_status` | 在实际因子积块、E4/E5 之前固定为 `analysis_evidence` |
 
 固定 \((D,A)\) 时 \(s=AD\) 恒定，所以横向秩必为零；单纤维 q-height 与此关联格
@@ -1111,15 +1118,21 @@ analysis_evidence。后续关联格定理已证明：任何固定 \((D,A)\) 纤�
 \(\Theta_j\)，非零时其 SNF 商精确为 \(C_q\)。当
 \(p>4q^{j+1}\) 时标准窗口覆盖全部横向数字，任意 \(\mathbb F_q\) phase support
 都有完整关联格 phase lift；若没有带名整数来源边，该 lift 仍停在严格的 provenance
-obstruction。即使来源边存在，它也只关闭 additive source-rank 的 Rado 门，仍须
-通过 physical-owner flow、实际因子积块与 E1--E5。对 \(p=97\) 这两个 endpoint，
+obstruction。若来源边相邻，新的固定基定理先证明 endpoint 互素，故共同算术行基
+只能为 1；exact-\(q^j\) CRT 可解当且仅当 \(\beta_j(p)=1\)，但这只证明目标处
+有嵌套 physical occurrence。唯一目标群 \(U(4)\) 无奇 \(q\)-primary，不能据此
+构造 source token。全局 `direct_type_i_or_type_ii` 分支已先检查独立的 \(D=1\)
+单因子 raw 菜单；只有菜单为空才进入上述边分类。对
+\(p=97\) 这两个 endpoint，
+\(\beta_1=6\)，唯一目标 \(x=1\) 在 E2 失败；此外
 \(|U(24)|,|U(68)|,|U(408)|=8,32,128\) 均无 11-primary 部分，所以直接
-endpoint-unit-group lift 已严格阻塞；带显式 source-class 合同的外部 physical
-token 仍未排除。否则只能换模数、换状态或使用该素数已有的独立终端。详见
+endpoint-unit-group lift 也严格阻塞。异质源基或换状态的 external physical token
+仍未排除；否则只能换模数、换状态或使用该素数已有的独立终端。详见
 [核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)
 、[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
 、[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
-与[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
+、[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)
+与[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子

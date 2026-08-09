@@ -650,12 +650,14 @@ incidence-token 流、关联槽流及 Rado rank 都等于 1；若复制为两个
 source-preserving additive rank-one 资源，不提供
 \(h\equiv-1\pmod {4D}\) 的因子积；结合 \(|U(24)|=8\)、\(|U(68)|=32\) 和
 \(|U(408)|=128\)，从 \(C_{11}\) 到当前 endpoint 乘法 source 环境的直接 lift
-严格为零。该 no-go 不排除另带显式 source-class 合同的外部物理 token，所以
-physical-owner 流仍标为 unproved_external_contract_required。
+严格为零。相邻边固定基定理又证明 \(6,17\) 互素，故共同算术行基只能为 1；唯一
+除子格目标 \(x=1\) 与所需残数 \(6\pmod {11}\) 不符，当前 fixed-base physical
+lift 在 E2 严格阻塞。该 no-go 仍不排除异质源基、非相邻边或换状态的外部物理 token。
 详见
 [奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)
 、[奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
-与[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
+、[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)
+与[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)。
 
 ### 7.2 \(p=73,R=63\)：盒外残差经半幂 CRT 命中 Type II
 

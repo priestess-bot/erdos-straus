@@ -427,7 +427,8 @@ SOURCE_RELATION_SCOPE = one_edge
 TRANSVERSE_SOURCE_CAPACITY = 1
 INCIDENCE_FLOW_RADO = pass_for_one_request
 DIRECT_ENDPOINT_UNIT_GROUP_LIFT = obstructed_no_11_primary
-PHYSICAL_OWNER_FLOW = unproved_external_contract_required
+ADJACENT_FIXED_BASE_QJ_SOURCE_CRT = obstructed_required_6_target_1
+HETEROGENEOUS_EXTERNAL_PHYSICAL_FLOW = unproved
 DIRECT_TERMINAL = false
 STRICT_SOURCE_SWITCH = false
 recursive_edge_eligible = false
@@ -446,18 +447,28 @@ SOURCE_RANK_DEMAND(q)
             -> fiber-incidence C_q source-SNF
             -> qualified arithmetic edge
                  -> additive source resource / exact rank capacity 1
-                 -> physical owner projection / actual factor mask / E1--E5
+                 -> global D1 raw menu (already terminal-first):
+                      hit: unreachable here / Type II terminal already returned
+                      empty -> adjacent common fixed base:
+                        beta_j(p)=1: physical occurrence / direct U4 q-rank no-go
+                        beta_j(p)!=1: exact-q^j SOURCE_CRT obstruction
+                 -> heterogeneous source base / actual factor mask / E1--E5
 ```
 
 这条分派首次给出一个不会被唯一 owner 剩余类压平的嵌套相位中心。后续结果已经严格
 排除同纤维横向 lift，并在参数纤维增广格上构造规范 \(C_q\) 商；标准 owner 窗口
 覆盖全部 \(q\) 个数字时，任意 \(\mathbb F_q\) phase support 都有完整关联格 lift。
 一般 affine-digit 指派仍未证明总保持原记录的算术来源；只有带名整数边才能进入新
-source-resource 门。即使该门通过，也未把关联格边变成实际 Type II 因子积块或
-E1--E5。大尺度完整窗口、小尺度深 owner 的四值余因子终端菜单及来源边容量见
+source-resource 门。对相邻边，共同固定基菜单已精确闭合为
+\(\beta_j(p)=1\) 的物理 occurrence 加 \(U(4)\) q-primary no-go，或 E2 障碍；
+独立的 \(D=1\) raw 菜单必须先检查，命中即结束；菜单空后 physical occurrence
+仍不能冒充 source token。
+非相邻/异质源基仍未完成。大尺度完整窗口、
+小尺度深 owner 的四值余因子终端菜单及来源边容量见
 [奇阶 owner 横向数字的跨纤维关联格源映射与同纤维 no-go](type-I-odd-owner-fiber-incidence-lattice-source-map.md)
 、[odd-owner 窗口的尺度二分与深层小余因子 Type II 终端菜单](type-I-odd-owner-scale-dichotomy-small-cofactor-terminal.md)
-及[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
+、[奇阶 owner 关联边的来源保持规范化与精确一维秩容量](type-I-odd-owner-incidence-edge-source-preserving-capacity.md)
+及[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)。
 
 ## 聚焦验证
 

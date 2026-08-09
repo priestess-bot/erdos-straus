@@ -4142,22 +4142,83 @@ SOURCE_RELATION_SCOPE = one_edge
 TRANSVERSE_SOURCE_CAPACITY = 1
 INCIDENCE_FLOW_RADO = pass_for_one_request
 DIRECT_ENDPOINT_UNIT_GROUP_LIFT = obstructed_no_11_primary
-PHYSICAL_OWNER_FLOW = unproved_external_contract_required
+ADJACENT_FIXED_BASE_QJ_SOURCE_CRT = obstructed_required_6_target_1
+HETEROGENEOUS_EXTERNAL_PHYSICAL_FLOW = unproved
 ~~~
 
 两个 endpoint 的单位群阶及合并模数单位群阶为 \(8,32,128\)，都没有 11-primary
-部分；所以 \(C_{11}\) 到当前 endpoint 单位群的直接 lift 严格为零，但带显式
-source-class 合同的外部 physical token 尚未排除。再加上两个 Type II 因子菜单均
-为空，它不是终端或递归边。反控制
+部分；所以 \(C_{11}\) 到当前 endpoint 单位群的直接 lift 严格为零。相邻边固定基
+定理进一步把共同算术行基强制为 1，并因唯一目标 \(x=1\) 不满足
+\(x\equiv6\pmod {11}\) 而在 E2 排除该目标 occurrence。异质源基或换状态的外部
+physical token 尚未排除。再加上两个 Type II 因子菜单均为空，它不是终端或递归边。反控制
 \(p=97,q=3\) 虽有完整 phase-digit lift，但没有带名整数边时仍严格返回
 'INCIDENCE_EDGE_SOURCE_PROVENANCE_OBSTRUCTED'。
 
 这项结果把 odd-Hall 缺口再次收紧：\(p=97\) pair 已不缺单边来源保持或 additive
 rank-one Rado，但经当前 endpoint 单位群的直接 source lift 已被严格排除；若沿此
-角色继续，需要显式外部 source-class token、换模数、换状态或 external source-switch。
-一般情形仍缺
-physical-owner flow、实际乘法因子掩码与 E1--E5。
+角色继续，需要异质源基、换模数、换状态或 external source-switch。一般非相邻情形
+仍缺 physical-owner flow、实际乘法因子掩码与 E1--E5。
 一般 full-window lift 则仍需
 构造记录特定的整数边。若因子菜单空、provenance 阻塞或 rank 过载不能产生终端，
 下一动作必须是带标记的严格跨纤维下降，而不是继续累计 owner 数量。详见
 [奇阶 owner 关联边的来源保持规范化与精确一维秩容量](../claims/type-I-odd-owner-incidence-edge-source-preserving-capacity.md)。
+
+## 2026-08-09：相邻奇阶 owner 边的固定基终端—障碍三分
+
+设 \(Q=q^j\)，来源合格的相邻 owner 边为 \((s,s+Q)\)。由
+\(Q\mid p+4s\) 且 \(q\nmid p\)，有 \(q\nmid s\)，从而
+
+\[
+\gcd(s,s+Q)=\gcd(s,Q)=1.
+\]
+
+因此在允许任意算术 source row \(a_i\) 的共同固定行基合同中，
+\(s_i=D_0a_i\) 强制 \(D_0=1\)，除子格目标只有
+\((D_*,A,x)=(1,1,1)\)。这里 \(D_0\) 不是两个 endpoint 的规范 Type II 状态。
+exact-\(Q\) source CRT 随即化为
+
+\[
+1\equiv s\equiv\beta_j(p)\pmod Q.
+\]
+
+所以固定基 CRT 可解当且仅当
+
+\[
+\boxed{\beta_j(p)=1\iff q^j\mid p+4.}
+\]
+
+正分支只证明 \(p+4\) 中有一个深度至少为 \(j\) 的嵌套 \(q^j\) occurrence；它
+不自动产生 source token。唯一目标乘法群为 \(U(4)\simeq C_2\)，故对奇 \(q\)
+
+\[
+\operatorname{Hom}(C_q,U(4))
+=\operatorname{Hom}(U(4),C_q)=0.
+\]
+
+所以非零 additive \(\mathbb F_q\) 源列不能经直接目标单位群合同承载；非同态
+factor-toggle 仍需独立整数构造。独立于该边的 terminal-first 分支必须先检查
+\(D=1\) 的完整单因子 raw 菜单
+
+\[
+\mathcal H_1(p)=\{h>1:h\mid p+4,\ h\equiv3\pmod4\}.
+\]
+
+菜单命中时，\(K=(h+1)/4\)、\(B=(Kp+1)/h\) 给出
+
+\[
+\frac4p=\frac1B+\frac1{pK}+\frac1{pBK}.
+\]
+
+菜单为空当且仅当 \(p+4\) 的全部素因子均为 \(1\pmod4\)；此时真实 occurrence
+仍存在，但该 \(D=1\) 单因子菜单为空，且 \(D_0=1\) 没有真除子下降。控制上，
+\(p=73,q=11\) 的 occurrence 由 \(h=11\) 的 terminal-first 分支预占，得到
+\((20,219,4380)\)；\(p=1033,q=17\) 有真实 occurrence，但
+\(1037=17\cdot61\) 使菜单严格为空，同时目标 q-primary 秩为零；
+\(p=97,q=11\) 的强 provenance 边则因 \(\beta_1=6\) 在唯一目标的 E2 失败。
+顺序反控制 \(p=241,q=5,j=2\) 虽有 \(\beta_2=21\ne1\)，但
+\(7\in\mathcal H_1(241)\)，所以必须先返回 \(h=7\) 终端；该例也表明高层 E2
+障碍不排除较低 \(q\)-层 occurrence。
+
+该结果没有构造 physical source-class token。它关闭的是相邻边的共同固定行基菜单；
+非相邻边、异质源基、换状态与带完整回译的非同态 factor-toggle 仍是未闭合接口。详见
+[奇阶相邻 owner 边的共同固定基塌缩、终端与源秩障碍](../claims/type-I-odd-owner-adjacent-edge-fixed-base-physical-lift-dichotomy.md)。
