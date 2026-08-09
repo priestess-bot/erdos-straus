@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 28 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 594 |
+| 数学状态 | `established` | 595 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 431 |
+| 证明来源 | `repository_derivation` | 432 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 567 |
+| 审阅状态 | `internal_review` | 568 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -608,6 +608,7 @@
 | [overflow 对偶 fixed-s 的有界除子外层秩递降](../claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md) (`type-I-overflow-fixed-s-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
+| [高容量小 d overflow 的固定-s/余因子残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md) (`type-I-overflow-high-capacity-small-d-residual-cone`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [高载体 overflow 固定 n 有界除子的 R 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md) (`type-I-overflow-high-carrier-fixed-n-R-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [高载体 overflow 的分母高度阶梯与首带余因子二分](../claims/type-I-overflow-high-carrier-height-staircase.md) (`type-I-overflow-high-carrier-height-staircase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [高载体 n=p 中 C=1 mod 3 的 fixed-s 除子图谱](../claims/type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas.md) (`type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-06 |

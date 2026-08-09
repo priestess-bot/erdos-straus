@@ -50,6 +50,8 @@ sources:
   role: large-slab-factor-pair-and-cross-layer-capacity-boundary
 - claim: type-I-overflow-support-preserving-dual-criterion
   role: determinant-dual-support-obstruction
+- claim: type-I-overflow-high-capacity-small-d-residual-cone
+  role: high-capacity-small-d-route-and-residual-cone
 - paper: bradford2024
   locator: Proposition 1
   role: Type-I-divisor-criterion
@@ -57,7 +59,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-04'
+last_checked: '2026-08-09'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -3520,3 +3522,19 @@ p=7504249（m=231, D_I=16864, length=7）。p=2852809 与秩二 profile 重合�
 因子多重序列未找到动态零积，不能排除其它排序、其它缺口、群论证书或直接终端。
 因此下一步应研究秩三低于阈值的逆零和结构和跨缺口联合避靶，同时保持 marked
 见证与无标记递降的证据边界。详见[秩至少三序列短 profile](../claims/type-II-shared-higher-rank-sequence-short-profile.md)。
+
+## 2026-08-09：高容量小 \(d\) 残余锥
+
+对 \(M\ge2B_p\)、\(A\ge c\)、\(d^2<p\) 的高容量层，令
+\(P=rd\)、\(b=M/A\)。若 \(P\ge2A\)，直接取 \(L=P\) 得固定-\(s\) 的完整
+外层递降；否则余因子 dispatcher 依次处理 \(dg<p\) 的因子转移、
+\(d<b<p\) 的交换，以及 \(p<b\le B_p\)、\(b\ge2A\) 的固定-\(n\) 商折叠。
+因此未闭合算术状态必满足
+
+\[
+P<2A,\qquad b>p,\qquad b<2A\ \text{或}\ b>B_p.
+\]
+
+其中 \(b<2A\) 强制 \(A>(p-1)/2\)。这不是全局选择器闭合，但把此前
+\(M\ge2B_p,\ A\ge c,\ d^2<p\) 的边界压成高支撑/超容量两个明确锥；
+相应主张卡见[高容量小 \(d\) overflow 的固定-\(s\)/余因子残余锥](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)。
