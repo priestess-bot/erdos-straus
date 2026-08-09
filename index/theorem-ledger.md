@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 587 |
+| 数学状态 | `established` | 588 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 423 |
+| 证明来源 | `repository_derivation` | 424 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 559 |
+| 审阅状态 | `internal_review` | 560 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -762,6 +762,7 @@
 | [Type II 跨状态相容角色的锚点—初等秩—Hall 容量分派](../claims/type-II-cross-state-source-relation-role-capacity-dispatch.md) (`type-II-cross-state-source-relation-role-capacity-dispatch`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 跨参数纤维稳定子塔的加权 surplus 选择器](../claims/type-II-cross-state-tower-weighted-surplus-selector.md) (`type-II-cross-state-tower-weighted-surplus-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II CRT 局部标签到全局 Fourier 的幂等元桥](../claims/type-II-crt-local-label-idempotent-phase-bridge.md) (`type-II-crt-local-label-idempotent-phase-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+| [Type II 二进关系商的单位群指数—目标对合可提升判据](../claims/type-II-dyadic-relation-quotient-unit-group-exponent-gate.md) (`type-II-dyadic-relation-quotient-unit-group-exponent-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 二进关系子群的目标保持严格商与算术 Q-lift 门](../claims/type-II-dyadic-relation-subgroup-target-preserving-quotient.md) (`type-II-dyadic-relation-subgroup-target-preserving-quotient`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 二进目标纤维最大深度的商约化—顶层对合终端](../claims/type-II-dyadic-target-fiber-max-depth-relay.md) (`type-II-dyadic-target-fiber-max-depth-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [Type II 二进目标纤维的最大目标保持商与顶位源类去重](../claims/type-II-dyadic-target-fiber-maximal-quotient-dedup.md) (`type-II-dyadic-target-fiber-maximal-quotient-dedup`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
