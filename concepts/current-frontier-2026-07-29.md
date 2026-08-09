@@ -3700,3 +3700,132 @@ Davenport 聚合只保证一个非零 \(P\)-关系，其坐标预算至多放大
 另一个 \(p=2089\) 控制验证了 weighted surplus 看不见的零权重碰撞仍会由直接去重捕获。
 详见
 [有序权重容量与 Davenport 膨胀边界](../claims/type-I-fixed-layer-ordered-weight-capacity-terminal.md)。
+
+## 2026-08-09：核心 Jacobi 角色关闭了多生成元有序容量等号边界
+
+此前一生成元等号模板虽已被核心同余排除，但多生成元与非均匀预算仍未处理。现在对每个
+核心图表统一取规范分解
+
+\[
+N=1,\qquad J=P=\{1\},\qquad
+H=\langle q:q\mid K\rangle.
+\]
+
+若 \(-1\in H\)，则因 \(R\equiv3\pmod4\)，Jacobi 角色
+\(\chi_R=(\cdot/R)\) 在 \(H\) 上非平凡。令
+\(X=\{1,\chi_R\}\)、\(I=\{i:\chi_R(q_i)=-1\}\)。关系
+\(4K\equiv1\pmod R\) 强制 \(I\) 中奇预算坐标个数为偶数，由此每个 inactive
+符号选择都产生一个正的 special-box 字符和。若没有同符号碰撞，逐盒精确得到
+
+\[
+\boxed{
+C_{-1,X}
+\le
+\Theta_{\rm ord}(-1,X)-2^{r-|I|}
+\le [K_X:P]T_J-1.}
+\]
+
+所以新的核心终端门不是旧的 \(C>\Theta_{\rm ord}\)，而是更强的
+
+\[
+C>\Theta_{\rm ord}-2^{r-|I|}.
+\]
+
+特别地，\(C\ge\Theta_{\rm ord}\) 或
+\(C\ge[K_X:P]T_J\) 已强制原盒短核关系偶终端。这覆盖任意生成元数与非均匀指数
+预算，完整关闭了此前指定的核心等号边界，而不只是排除循环模型。一般 fixed layer
+不能直接继承该余量：抽象 \(H=C_6,J=\{0,1\}\) 有
+\(C=\Theta_{\rm ord}=9\) 且无同符号 \(P\)-碰撞，准确说明规范 \(N=1\) 假设不可删。
+
+规范 \(N=1\) 容量门下的新未决区已经下移到
+
+\[
+C\le\Theta_{\rm ord}-2^{r-|I|}.
+\]
+
+这里需要新的低密度 Fourier-to-carrier 映射、短关系结构或可提升递降，不能再把精力
+放在等号是否可能。详见
+[核心 Jacobi 符号盒的严格有序容量余量与等号终端](../claims/type-I-core-jacobi-ordered-capacity-strict-slack-terminal.md)。
+
+## 2026-08-09：广义二进的非自然 E4 存在，但第二层非空必坍缩为 Type I/II
+
+对第一层关系点 \(\lambda\in\mathcal D_K\) 产生的 \((E,n)\)，现在把全部保留双尾的
+一坐标提升压缩为另一个有限因子集
+
+\[
+\mathfrak D(p,n)=
+\left\{\Delta:\Delta\mid n^2p^2,\ 0<\Delta<n^2,
+\ \Delta\equiv np,
+\ \frac{n^2p^2}{\Delta}\equiv np
+\pmod {4(p-n)}\right\}.
+\]
+
+每个 \(\Delta\) 唯一恢复 \(a_\Delta,a'_\Delta\)，并在
+\(W_\Delta=\{(a_\Delta,b,c)\in\operatorname{Sol}(4,n)\}\) 上给出全域映射
+
+\[
+(a_\Delta,b,c)\longmapsto(a'_\Delta,b,c).
+\]
+
+反向也已完备：给定目标 \((p\ell,b,c)\)，它能保留两尾回到 \(n\) 当且仅当
+\(n+4(p-n)\ell\mid np\ell\)，此时 \(a\) 与 \(\Delta\) 唯一。因此任意中心 Type I
+图表并不会自动适配一个预先给定的偶前驱。
+
+自然 marking 唯一对应 \(\Delta=n^2/E\)；任何保持当前图表尾比 \(R/K\) 的 marking
+都被强制回到这个值。但非自然 E4 并非普遍不存在。真实核心控制
+
+\[
+(p,R,K,E,n,\Delta)=(433,15,1624,16,432,2916)
+\]
+
+给出
+
+\[
+(46035,110,6820)\longmapsto(2953060,110,6820).
+\]
+
+关键分类是：若 \(W_\Delta\ne\varnothing\)，则
+
+\[
+\Delta\mid n^2\Longrightarrow\text{另一张中心 Type I 终端},
+\qquad
+\Delta\nmid n^2\Longrightarrow\text{直接 Type II 终端}.
+\]
+
+后一项是非空条件下的分类；当前没有用域外控制冒充核心域该支的存在性。
+
+上述非自然正例属于第一支，图表为 \((R',K')=(63,6820)\)。同一原状态的二进外层
+关系 \(E=n=406\) 则严格满足
+\(\mathfrak D(433,406)=\{406\}\)，证明第一层关系容量甚至不保证存在非自然第二层
+坐标；而 \(\Delta\) 存在也不保证指定 marked fiber 非空。
+
+因此第二层 D-only 枚举可加入直接证书菜单，但不能计作新的递归容量：显式证明其非空
+时已经终端，未证明非空时则仍需真正的 marked-state 递归闭包。继续扩展 \(j>1\)、重复
+自然 marking 或把任意 \(\Delta\) 当作非空边都没有增量。详见
+[广义二进关系点的第二层 D-only 完整终端分类](../claims/type-I-generalized-dyadic-second-layer-d-only-terminal-classification.md)。
+
+## 2026-08-09：整体余因子 target 的 typed 数学分类已闭合，准入仍依赖新回执
+
+对真实 queued charged-chart source，canonical target \((R_A,K_A;A)\) 可独立执行完备
+三分：盒内 \(-1\) 命中为直接 Type I；\(-1\in H_A\) 但盒 miss 为 F，并由有限
+Cayley 图构造规范无界见证与 signed defect；\(-1\notin H_A\) 为 G，并由有限商对偶
+构造规范分离角色。取
+
+\[
+W_S=W_T=\operatorname{Sol}(4,p)
+\]
+
+后，恒等映射就是全域 E4。绑定真实 source determinant、原样传播 scope、独立重算
+source/target adapter-specific normal form 与 hash 后得到条件性 E1--E4；\(t>0\) 再由既有
+\((\lfloor B_p/A\rfloor,K/A)\) 秩支付 E5。
+
+类型绝不能继承。\(p=73\) 已有严格算术控制 F-to-G、G-to-F 和 F-to-hit，但它们被
+已有终端抢先，只证明类型变化而不证明 queued reachability；target hit 必须
+terminal-first，不得入队。另一方面，\(p=1201\) 的 internal transient 仍投影回
+persistent parent，说明该定理只能从真实 `persistence_source_state_id` 调用。
+
+这消除了“target 是否总能 typed 化、G 是否阻断 \(\operatorname{Sol}(4,p)\) 恒等提升”的
+数学问题。当前未完成的是工程与 provenance：统一 selector 尚无 total-fold 分支，也无
+通用 charged-chart normal-form verifier；一般 CRT/SNF G 分离角色、规范 F 最短见证、
+完整 state/receipt hash 还未序列化；因此旧 candidate 不能批量改标为 `verified_edge`。详见
+[整体余因子 canonical 投影的全域 typed 分派](../claims/type-I-overflow-total-cofactor-typed-projection-dispatch.md)。

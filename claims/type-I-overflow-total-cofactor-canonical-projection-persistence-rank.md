@@ -364,6 +364,13 @@ RESET、raw/noncanonical carrier 或 capability-changing 同算术自环。当�
 显式保存 `persistence_source_state_id`、`arithmetic_receipt_id` 与真实端点的
 \(\Lambda_p^\sharp\) 前后值。
 
+后续 typed 分派定理已经关闭其中的数学存在性部分：任意 target 都可有限、完备地重算为
+hit/F/G，且在图表无关 \(W=\operatorname{Sol}(4,p)\) 上恒等映射给出 E4；真实 queued
+source 与 determinant/scope receipt 绑定后可条件性补齐 E1--E4。尚未完成的是统一
+selector 中的一般 CRT/SNF 角色、通用 charged-chart normal-form verifier、完整
+state/receipt hash 和 dispatcher 序列化，故本卡已有 JSON 仍不能批量改标。见
+[整体余因子 canonical 投影的全域 typed 分派](type-I-overflow-total-cofactor-typed-projection-dispatch.md)。
+
 聚焦复现：
 
 ```bash
