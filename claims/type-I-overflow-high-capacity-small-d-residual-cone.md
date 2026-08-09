@@ -15,8 +15,10 @@ statement: >-
   余因子 g=b 并作 dg mod p 折叠，因 d^2<p、b>=2 自动严格降低 canonical R，
   故全部高容量 small-d overflow 都有 support-preserving 的算术 candidate_transition。
   Π_p(A)=1 时 Θ_p(A)=B_p+1 仍准确描述 bounded-support reset 的顶层容量壳，
-  但不再是该算术菜单的未决余项。余因子整体折叠尚未重算目标 typed state、F/G、解提升
-  或可跨后继使用的全局 E5，故不是已验证递归边，也不构成 Erdos--Straus 猜想的全称证明。
+  但不再是该算术菜单的未决余项。后续 canonical 投影定理已在真实 queued source 上
+  用精确 (floor(B_p/A),K/A) 秩支付 E5，并证明内部 receipt 必须经过 persistence gate；
+  当前折叠仍未重算目标 typed state、F/G、解提升或持久端点，故不是已验证递归边，也不构成
+  Erdos--Straus 猜想的全称证明。
 claim_status: conditional
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -26,6 +28,7 @@ depends_on:
   - type-I-overflow-cofactor-factor-exchange-carrier-descent
   - type-I-overflow-fixed-n-quotient-fold-descent
   - type-I-overflow-cofactor-mod-p-fold-r-descent
+  - type-I-overflow-total-cofactor-canonical-projection-persistence-rank
 topics:
   - type-I
   - overflow
@@ -48,6 +51,8 @@ sources:
     role: high-cofactor-fold-edge
   - claim: type-I-overflow-cofactor-mod-p-fold-r-descent
     role: strict-total-cofactor-arithmetic-candidate
+  - claim: type-I-overflow-total-cofactor-canonical-projection-persistence-rank
+    role: queued-source-E5-and-internal-receipt-persistence-boundary
   - reproduction: reproductions/type_i_overflow_high_capacity_small_d_residual_cone.py
     role: focused-route-and-residual-receipts
 visibility: public
@@ -340,15 +345,19 @@ b(p-d)>p,
 \tag{26}
 \]
 
-故其 canonical \(R\) 严格降低，而 charged support 不变。以
-\(\bigl(\lfloor B_p/A\rfloor,R\bigr)\) 为局部势，(25) 是严格的局部算术
-`candidate_transition`；它尚不是完整 E1--E5 边。详细的合法性、stutter 门和
-state-contract 边界见
-[overflow 余因子整体模 \(p\) 折叠的严格局部 \(R\) 下降](type-I-overflow-cofactor-mod-p-fold-r-descent.md)。
+故其 canonical \(R\) 严格降低，而 charged support 不变。更精确地，令
+\(C_A=\langle(4A)^{-1}\rangle_p\)，则目标固定为
+\(K_T=AC_A\)、\(R_T=(4AC_A-1)/p\)，且源的 \(K/A\) 唯一写成
+\(C_A+pt\)、\(t>0\)。若该 source 是真实持久队列顶点，
+\(\bigl(\lfloor B_p/A\rfloor,K/A\bigr)\) 严格下降；若它只是 parent 内部 receipt，
+则必须改比较 parent--target。因这里尚未建立这项 persistence 绑定及 E1--E4，(25) 仍是
+`candidate_transition`。详细边界见
+[canonical 投影与持久化秩](type-I-overflow-total-cofactor-canonical-projection-persistence-rank.md)。
 
 所以 (21)--(23) 现在只记录精确 floor-shell 的结构与一个严格的算术替代出口；
-它们不能再被描述为没有 arithmetic rechart 的余项，但仍是 target-state adapter、
-source/path、\(\operatorname{Sol}(p)\) 回放和全局 F/G/E5 组合层面的余项。
+它们不能再被描述为没有 arithmetic rechart 或没有 queued-source E5 的余项，但仍是
+target-state adapter、source/path、\(\operatorname{Sol}(p)\) 回放、F/G 重算和
+persistence gate 层面的余项。
 这不替代全局 F/G 选择器、source 可达性或 Erdős--Straus 的全称证明。
 
 ## 聚焦回执

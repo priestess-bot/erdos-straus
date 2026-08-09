@@ -3575,12 +3575,14 @@ b(p-d)>p.
 verified-overflow state。严格门不可省略：在一般 \(d\) 中
 \(g(p-d)\le p\) 会产生同一 canonical state 的 stutter，而不是递降。
 
-它目前是 `candidate_transition`，不是全局选择器闭合：算术恒等式没有重算 target 的
-F/G、hit、纤维、state_id、source scope 或 \(\operatorname{Sol}(p)\) 提升，也没有把
-局部 \(\bigl(\lfloor B_p/A\rfloor,R\bigr)\) 势嵌入防重入的全局 E5。下一项应实现一个具名
-target-state adapter 并证明其与非 RESET 相位势的组合。相应主张卡见
+它目前仍是 `candidate_transition`，不是全局选择器闭合：算术恒等式没有重算 target 的
+F/G、hit、纤维、state_id、source scope 或 \(\operatorname{Sol}(p)\) 提升。后续结果
+已经用精确 \(K/A\) 秩支付真实 queued source 上的 E5，但也证明内部 receipt 的下降
+不能替代真实 parent--target 比较。下一项应实现具名 target-state adapter，并在回执中
+加入 persistence gate。相应主张卡见
 [高容量小 \(d\) overflow 的精确容量壳与余因子模 \(p\) 折叠候选](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md)
-及[整体余因子严格局部 \(R\) 折叠](../claims/type-I-overflow-cofactor-mod-p-fold-r-descent.md)。
+、[整体余因子严格局部 \(R\) 折叠](../claims/type-I-overflow-cofactor-mod-p-fold-r-descent.md)
+及[canonical 投影与持久化秩](../claims/type-I-overflow-total-cofactor-canonical-projection-persistence-rank.md)。
 
 ## 2026-08-09：稳定子商碰撞已转为实际偶终端
 
@@ -3612,3 +3614,89 @@ C_{y,X}>[K_X:P]|J|2^r
 终端。该结果消除了先前 q-primary 分支的一个逻辑缺口，但仍未把 Fourier 角色或
 低密度容量自动接到跨状态递降。详见
 [固定层稳定子商碰撞与 q-primary 饱和的短关系偶终端](../claims/type-I-fixed-layer-stabilizer-collision-terminal.md)。
+
+## 2026-08-09：整体余因子折叠是 canonical 投影，但必须按持久端点收费
+
+固定 \((p,A)\)，令 \(C_A\) 为 \((4A)^{-1}\bmod p\) 的最小正代表。整体余因子折叠
+并不是任意选出的新图表，而是唯一投影到
+
+\[
+K_A=AC_A,
+\qquad
+R_A=\frac{4AC_A-1}{p}.
+\]
+
+若源容量 \(C_S=K_S/A\)，则唯一有
+
+\[
+C_S=C_A+pt,\qquad
+K_S-K_A=Ap t,\qquad
+R_S-R_A=4A t.
+\]
+
+所以总折叠就是把 \(K/A\) 归一到其模 \(p\) 的最小正代表。对真实 queued state，
+\(t>0\) 时新秩
+
+\[
+\Lambda_p^\sharp=
+\left(\left\lfloor B_p/A\right\rfloor,K/A\right)
+\]
+
+可与 paid outer-rank 和既有 direct-cofactor 边严格拼接；旧的
+\(\Omega(K/A)\) 不可替代它，因为 \(p=73\) 有 \(118\to45\) 而
+\(\Omega:2\to3\)。
+
+关键新边界是 persistence gate。仓库 \(p=1201\) 的内部 receipt 虽有
+\(K/A:874888\to560\)，总折叠却精确返回 parent chart
+\((R,K;A)=(1839,552160;986)\)。因此真实宏端点是算术自返，不能用 transient 的
+下降付款。这把下一步从含混的“寻找全局 E5”收缩为：重算 E1--E4，并显式绑定
+`persistence_source_state_id` 与真实 parent--target 秩。
+
+## 2026-08-09：广义 \(2^j\) 的全部算术容量已压缩为一个非对称关系盒
+
+对 \(L=2K\)，全部合法广义 \(2^j\) 自由除子对产生的不同 \((E,n)\)，与
+
+\[
+E\mid L^2,\qquad 2\mid E,\qquad E\equiv1\pmod R,\qquad0<E<4K
+\]
+
+的偶除子，以及关系格中满足
+
+\[
+-\nu_2-1\le\lambda_2\le\nu_2,\qquad
+|\lambda_q|\le\nu_q\ (q\ne2),\qquad \rho(\lambda)<1
+\]
+
+的点精确双射。若 \(\mathcal B_K\) 是对称短关系盒、\(\mathcal O_K^-\) 是唯一二进
+负侧外层，则不同终端数为
+
+\[
+\frac{|\Lambda_R\cap\mathcal B_K|-1}{2}+|\mathcal O_K^-|.
+\]
+
+因此 \(j>1\) 不增加任何结果或容量；相对普通短关系真正新增的只有
+\(v_2(E)=1\) 的单层。下一缺口不再是继续扩展 \(j\)，而是为这个有限规范关系点集
+构造非自然且可提升的标记源，或把全部提升失败映射到容量缺陷或严格递降。详见
+[广义二进偶终端的精确关系格容量定理](../claims/type-I-generalized-dyadic-exact-relation-capacity.md)。
+
+## 2026-08-09：q-primary 中间容量已有有序权重门，Davenport 仍有盒预算障碍
+
+在稳定子商上给每个残余像赋权
+
+\[
+w_y(a)=|\bar J\cap\bar yLa^{-1}|.
+\]
+
+按每个符号盒大小取降序权重的前缀和，得到 \(\Theta_{\rm ord}\)。若符号盒大于
+\(|\bar G|\)，或 \(C_{y,X}>\Theta_{\rm ord}\)，便强制同符号 \(P\)-碰撞并构造偶终端；
+而且 \(\Theta_{\rm ord}\le[K_X:P]T_J\)。在 \(p=97\) 控制中，它把未决上界从
+198 降到 14，实际计数为 10，仍不触发。
+
+Davenport 聚合只保证一个非零 \(P\)-关系，其坐标预算至多放大
+\(D(K_X/P)\) 倍；除非重新验证它落回原盒，否则不能升级为终端。一般 centered
+商群有等号处无短核关系的无限抽象族和一个非核心算术实例，但进一步推导证明：其
+一生成元算术模板强制 \(R\equiv1\pmod4\)，与核心域的 \(R\equiv3\pmod4\) 矛盾。
+因此核心域下一步应转向多生成元或非均匀预算的等号边界，而不是继续复用这个已排除模板。
+另一个 \(p=2089\) 控制验证了 weighted surplus 看不见的零权重碰撞仍会由直接去重捕获。
+详见
+[有序权重容量与 Davenport 膨胀边界](../claims/type-I-fixed-layer-ordered-weight-capacity-terminal.md)。

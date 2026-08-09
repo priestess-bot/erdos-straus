@@ -12,8 +12,9 @@ statement: >-
   (R,K;A) 完全相同，只是不可作为递归边的重分解。特别地，当 M>=2B_p、A<=B_p、
   d^2<p 时，取 g=b 自动满足严格条件，故每个这类高容量 small-d overflow 都有
   一条 support-preserving 的严格局部算术 candidate_transition。该卡只建立该
-  重图表及局部下降；升级为 verified_edge 仍须重算目标 typed state、F/G/纤维、
-  source scope、解提升与可跨后继使用的全局 E5。
+  重图表及局部下降；后续 canonical 投影定理已对真实 queued source 给出精确
+  (floor(B_p/A),K/A) 秩，但升级为 verified_edge 仍须重算目标 typed state、F/G/纤维、
+  source scope 与解提升，并通过区分真实 source 和内部 receipt 的 persistence gate。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -177,8 +178,9 @@ K_T=M_T(p-\delta)=M(p-d)=K_S,
 
 严格下降。这个势覆盖同一 dispatcher 中的因子转移和余因子交换（它们同样保持
 \(A\) 且严格降低 \(R\)），而 fixed-\(s\) 与 bounded shell fold 先严格降低
-第一坐标。它只是局部菜单的势函数：尚未证明它在任意后继、RESET 或相位切换后不重入，
-所以不能单独充当全局 E5。
+第一坐标。它本身仍只是局部菜单势；后续的
+[canonical 投影与持久化秩](type-I-overflow-total-cofactor-canonical-projection-persistence-rank.md)
+用精确 \(K/A\) 替代 \(R\)，并在真实持久端点组成的固定 \(p\) 子图上给出 E5。
 
 ## 高容量 small-\(d\) 的算术候选闭合
 
@@ -220,8 +222,8 @@ A
 \]
 
 若一个具名 target-state adapter 证明 \(R_T<p\) 的目标是 marked absorb，或证明
-\(R_T>p\) 的目标是带完整状态字段的 overflow，则 (18) 的 \(R\) 严格下降可作为
-该 adapter 的 E5 输入。这里不再需要因子转移、交换或
+\(R_T>p\) 的目标是带完整状态字段的 overflow，并确认当前 source 本身是持久队列顶点，
+则后续定理的精确 \(K/A\) 秩可支付 E5。这里不再需要因子转移、交换或
 \(\operatorname{Div}(bd)\) 是否穿过一个有界容量壳；但这只排除了该算术
 rechart 菜单中的余项，尚未生成可递归的完整状态回执。
 
@@ -233,15 +235,18 @@ E2 的算术部分。它不自动继承一个 target state 的 source/path/node 
 \(W_T=W_S=\operatorname{Sol}(p)\) 的恒等提升（E4）也只能由一个实际适用的具名
 adapter 在 source/target 两端重放后取得；不能由 (5) 单独推出。
 
-此外，(14) 只是局部菜单势，未给出防止后续 RESET 或相位切换重入的全局 E5。
-因此当前结果登记为 `candidate_transition`、`recursive_edge_eligible=false`，而非
-`verified_edge` 或归纳边。升级所需的最小工作是：
+后续 canonical 投影定理已经证明：若 source 是真实 queued/content-addressed 顶点，
+则 \(\bigl(\lfloor B_p/A\rfloor,K/A\bigr)\) 可与 paid outer-rank 和既有
+direct-cofactor 边拼成严格 E5；若当前 determinant chart 只是 parent 内部 receipt，
+则必须比较真实 parent--target 端点，不能用 receipt 的下降付款。由于本卡尚未建立这项
+persistence 绑定及 E1--E4，当前结果仍登记为 `candidate_transition`、
+`recursive_edge_eligible=false`，而非 `verified_edge` 或归纳边。升级所需的最小工作是：
 
 1. 实现并命名一个 target-state adapter，重算 source/target 的 typed fields、F/G、
    hit、纤维与 source scope；
 2. 在该 adapter 中回放恒等解提升；
-3. 把 \(\bigl(\lfloor B_p/A\rfloor,R\bigr)\) 嵌入一个已证明不重入的全局相位势，或给出
-   等价的跨后继 E5 组合定理。
+3. 在回执中保存 `persistence_source_state_id` 与真实 parent--target 端点，并重算
+   \(\bigl(\lfloor B_p/A\rfloor,K/A\bigr)\) 的前后值；内部 receipt 不得作为秩 source。
 
 严格门不能删除。例如
 
