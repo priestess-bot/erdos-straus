@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 28 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 592 |
+| 数学状态 | `established` | 593 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 429 |
+| 证明来源 | `repository_derivation` | 430 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 565 |
+| 审阅状态 | `internal_review` | 566 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -586,6 +586,7 @@
 | [overflow 余因子因子转移与交换的载体秩递降](../claims/type-I-overflow-cofactor-factor-exchange-carrier-descent.md) (`type-I-overflow-cofactor-factor-exchange-carrier-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-08 |
 | [overflow cofactor r-图表的带账本 E2 存在性门](../claims/type-I-overflow-cofactor-ledger-e2-gate.md) (`type-I-overflow-cofactor-ledger-e2-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [overflow 的余因子支撑 r-图表候选与同图表正控制](../claims/type-I-overflow-cofactor-r-chart-support.md) (`type-I-overflow-cofactor-r-chart-support`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [高载体 d=4 首容量层的双模 fixed-s 组合闭合](../claims/type-I-overflow-d-four-first-capacity-slab-complete-reduction.md) (`type-I-overflow-d-four-first-capacity-slab-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md) (`type-I-overflow-d-one-p-minus-two-g-rechart`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
 | [overflow 补秩的累积支撑互素性与 D-only 平方超额边界](../claims/type-I-overflow-d-only-square-excess-no-go.md) (`type-I-overflow-d-only-square-excess-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [高载体 d=3 容量窗的完整余因子递降分流](../claims/type-I-overflow-d-three-capacity-window-complete-reduction.md) (`type-I-overflow-d-three-capacity-window-complete-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
