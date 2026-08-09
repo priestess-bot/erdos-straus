@@ -36,21 +36,22 @@ visibility: public
 last_checked: '2026-08-09'
 ---
 
-# target-odd 奇 q 的非零仿射偏移修复与 gcd—区间门
+# target-odd 奇 \(q\) 的非零仿射偏移修复与 gcd—区间门
 
 ## 输入
 
-固定核心素数 (p\equiv1\pmod {24})、奇素数 (q\nmid p)、高度 (e\ge1)，并令
+固定核心素数 \(p\equiv1\pmod {24}\)、奇素数 \(q\nmid p\)、高度 \(e\ge1\)，并令
 
 \[
 n=q^e,
 \qquad
-\beta=-p4^{-1}\pmod n.
+\beta=-p\,4^{-1}\pmod n.
 \tag{1}
 \]
 
-F 态目标对合的 target-odd q-primary 相位满足 (gamma=0\pmod n)。现在不再假设
-identity owner，而允许一个已声明的 affine source-map
+F 态目标对合的 target-odd \(q\)-primary 相位满足
+\(\gamma=0\pmod n\)。现在不再假设 identity owner，而允许一个已声明的 affine
+source-map
 
 \[
 s=c+u\gamma+h t,
@@ -59,8 +60,8 @@ s=c+u\gamma+h t,
 \tag{2}
 \]
 
-其中 (u\in(\mathbb Z/n\mathbb Z)^\times)，(c,h,L,U) 均由 source-map 独立给出。
-真实 q-prefix 的算术条件是
+其中 \(u\in(\mathbb Z/n\mathbb Z)^\times\)，而 \(c,h,L,U\) 均由 source-map 独立给出。
+真实 \(q\)-prefix 的算术条件是
 
 \[
 q^e\mid p+4s
@@ -87,17 +88,18 @@ g=\gcd(h,n),
 \tag{5}
 \]
 
-并且线性同余的解类在区间 ([L,U]) 内有代表。若 (5) 成立，置
+并且线性同余的解类在区间 \([L,U]\) 内有代表。若 (5) 成立，置
 
 \[
 h_1=h/g,
-\qquad n_1=n/g,
+\qquad
+n_1=n/g,
 \qquad
 t_0=(\Delta/g)h_1^{-1}\pmod {n_1},
 \tag{6}
 \]
 
-其中 (n_1=1) 时取 (t_0=0)。所有合法参数恰为
+其中 \(n_1=1\) 时取 \(t_0=0\)。所有合法参数恰为
 
 \[
 t=t_0+n_1 k,
@@ -115,7 +117,7 @@ t=t_0+n_1 k,
 
 因此可以精确输出三种回执：
 
-* `TARGET_ODD_AFFINE_REPAIR_GCD_OBSTRUCTED`：(g\nmid\Delta)；
+* `TARGET_ODD_AFFINE_REPAIR_GCD_OBSTRUCTED`：\(g\nmid\Delta\)；
 * `TARGET_ODD_AFFINE_REPAIR_INTERVAL_EMPTY`：同余可解但 (8) 为空；
 * `TARGET_ODD_AFFINE_REPAIRED`：由 (7)--(8) 得到规范最小标签及其槽数。
 
@@ -124,29 +126,29 @@ q-prefix 的逐层容量账本。
 
 ### 无步长的唯一偏移
 
-若 owner map 不含 (t)（等价于 (h=0) 的单标签 affine map）并写成
+若 owner map 不含 \(t\)（等价于 \(h=0\) 的单标签 affine map）并写成
 
 \[
 s=u\gamma+c,
 \tag{9}
 \]
 
-则 target-odd 的 (gamma=0) 使
+则 target-odd 的 \(\gamma=0\) 使
 
 \[
 \boxed{c\equiv\beta\pmod n.}
 \tag{10}
 \]
 
-所以 identity map (c=0) 必然失败，而任何无步长 affine 修复的偏移类都是唯一的
-(eta)-类；单位系数 (u) 不能改变这一结论。带步长时，偏移本身可以不等于 (eta)，
-但必须满足 (5)，并由 (8) 检查真实区间。
+所以 identity map \(c=0\) 必然失败，而任何无步长 affine 修复的偏移类都是唯一的
+\(\beta\)-类；单位系数 \(u\) 不能改变这一结论。带步长时，偏移本身可以不等于
+\(\beta\)，但必须满足 (5)，并由 (8) 检查真实区间。
 
 ### 二进边界
 
-若 (q=2)，则 (p+4s\equiv1\pmod2)，没有任何 (eta) 使 (3) 成立。因此
-不存在可由 affine offset 修复的二进 q-prefix；二进请求必须改走广义 (2^j)、其它
-source relation 或 Type II/严格递降门。
+若 \(q=2\)，则 \(p+4s\equiv1\pmod2\)，没有任何 \(\beta\) 使 (3) 成立。因此
+不存在可由 affine offset 修复的二进 \(q\)-prefix；二进请求必须改走广义 \(2^j\)、
+其它 source relation 或 Type II/严格递降门。
 
 ## 证明
 
@@ -156,9 +158,9 @@ source relation 或 Type II/严格递降门。
 h t\equiv\beta-c-u\gamma\pmod n.
 \]
 
-标准 gcd 判据给出 (5)，约去 (g) 并求 (h_1) 的逆得到 (6)--(7)，再与
-([L,U]) 相交得到 (8)。target-odd 相位 (gamma=0) 来自目标对合的
-(2\gamma=0\) 且 (q) 奇；于是 (h=0) 时直接得到 (10)。q=2 的结论是奇偶性。
+标准 gcd 判据给出 (5)，约去 \(g\) 并求 \(h_1\) 的逆得到 (6)--(7)，再与
+\([L,U]\) 相交得到 (8)。target-odd 相位 \(\gamma=0\) 来自目标对合的
+\(2\gamma=0\) 且 \(q\) 奇；于是 \(h=0\) 时直接得到 (10)。\(q=2\) 的结论是奇偶性。
 证毕。
 
 ## 选择器含义
@@ -166,36 +168,36 @@ h t\equiv\beta-c-u\gamma\pmod n.
 该门把“需要非零 affine source-map”变成一个可证伪的最小接口：
 
 \[
-\text{target-odd }
+\text{target-odd}
 \longrightarrow
 \text{偏移 }c\text{ 与步长 }h
 \longrightarrow
-\gcd/区间
+\gcd/\text{区间}
 \longrightarrow
-\text{真实 q-prefix 槽}
+\text{真实 \(q\)-prefix 槽}
 \longrightarrow
 \text{SNF/CRT/容量}.
 \]
 
-它不把 (c=\beta) 的形式选择误认为 source-map 已存在；source-map 若未声明完备，
+它不把 \(c=\beta\) 的形式选择误认为 source-map 已存在；source-map 若未声明完备，
 `GCD_OBSTRUCTED` 或 `INTERVAL_EMPTY` 只能说明当前进程不能承接角色。特别地，
 Fourier 相位幅度不能补足一个缺失的偏移，q-prefix 容量也不能反向构造 source-map。
 
-## 真实控制：(p=73,R=27,q=3,e=2)
+## 真实控制：\(p=73,R=27,q=3,e=2\)
 
-此时 (K=493)、target-odd 相位 (gamma=0)，而
+此时 \(K=493\)、target-odd 相位 \(\gamma=0\)，而
 
 \[
 \beta=-73\cdot4^{-1}\equiv2\pmod9.
 \]
 
-* identity owner (s=\gamma=0) 给出 `DIRECT_OWNER_CONFLICT`；
-* 取 affine 过程 (s=5+3t)、区间 ([6,20])，有 (g=3)、
-  (Delta=2-5\equiv6\pmod9)，故 (t\equiv2\pmod3)，标签为 (11,20)，
-  两者都满足 (9\mid73+4s)，输出 `TARGET_ODD_AFFINE_REPAIRED`；
-* 保持 (s=5+3t) 但把区间缩为 ([6,10])，同余类在区间内为空，输出
+* identity owner \(s=\gamma=0\) 给出 `DIRECT_OWNER_CONFLICT`；
+* 取 affine 过程 \(s=5+3t\)、区间 \([6,20]\)，有 \(g=3\)、
+  \(\Delta=2-5\equiv6\pmod9\)，故 \(t\equiv2\pmod3\)，标签为 \(11,20\)，
+  两者都满足 \(9\mid73+4s\)，输出 `TARGET_ODD_AFFINE_REPAIRED`；
+* 保持 \(s=5+3t\) 但把区间缩为 \([6,10]\)，同余类在区间内为空，输出
   `TARGET_ODD_AFFINE_REPAIR_INTERVAL_EMPTY`；
-* 取 (s=4+3t)，则 (g=3\nmid(2-4)\)，输出
+* 取 \(s=4+3t\)，则 \(g=3\nmid(2-4)\)，输出
   `TARGET_ODD_AFFINE_REPAIR_GCD_OBSTRUCTED`。
 
 这个控制说明非零偏移不是口头修补：同一 target-odd 相位可以在不同的已声明 affine
@@ -203,13 +205,13 @@ Fourier 相位幅度不能补足一个缺失的偏移，q-prefix 容量也不能
 
 ## 边界
 
-本引理完成的是奇 q target-odd 请求的最小 affine 修复判据。它没有证明任意 F 态都存在
+本引理完成的是奇 \(q\) target-odd 请求的最小 affine 修复判据。它没有证明任意 F 态都存在
 满足 (2) 的真实 source-map，也没有把修复标签自动提升为 Type I/II 证书或 E1--E5
 递降；下一步必须从实际线性块、固定 B 清分、SNF/CRT 或 Type-II source record 中
-构造并证明这样的 (c,h,[L,U])。
+构造并证明这样的 \((c,h,[L,U])\)。
 
 ## 聚焦复现
 
-~~~bash
+```bash
 python3 reproductions/type_i_target_odd_affine_offset_repair_gate.py --verify
-~~~
+```
