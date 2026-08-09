@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 576 |
+| 数学状态 | `established` | 577 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 412 |
+| 证明来源 | `repository_derivation` | 413 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 548 |
+| 审阅状态 | `internal_review` | 549 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1013,6 +1013,7 @@
 | [target-odd 奇 q 与一跳 D-格非零偏移菜单的 source-complete 等价](../claims/type-i-target-odd-d-lattice-affine-menu-completion.md) (`type-i-target-odd-d-lattice-affine-menu-completion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [D=1 target-odd 菜单的 Type II 双尾严格 source relay](../claims/type-i-target-odd-d1-menu-double-tail-relay.md) (`type-i-target-odd-d1-menu-double-tail-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [target-odd D=1 菜单的共享 q 块到 Type II 直接终端](../claims/type-i-target-odd-d1-menu-typeii-terminal.md) (`type-i-target-odd-d1-menu-typeii-terminal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [target-odd D'>1 canonical 标签到 Type II 直接终端](../claims/type-i-target-odd-dprime-typeii-terminal.md) (`type-i-target-odd-dprime-typeii-terminal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F 态 target-odd primary 的直接 owner—自然二进两门无局部提升](../claims/type-i-target-odd-primary-direct-owner-dyadic-two-gate.md) (`type-i-target-odd-primary-direct-owner-dyadic-two-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [target-odd Fourier 的奇 q-prefix 直接 owner 不可对齐引理](../claims/type-i-target-odd-qprefix-direct-owner-no-go.md) (`type-i-target-odd-qprefix-direct-owner-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [组合变量因子射线给出任意对数幂的共同残余界](../claims/variable-factor-rays-superlog-residual.md) (`variable-factor-rays-superlog-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-23 |
