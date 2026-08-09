@@ -94,6 +94,8 @@ depends_on:
   - type-II-raw-e1-anchor-relation-obstruction-bridge
   - type-II-source-label-snf-failure-anchor-relation-dichotomy
   - type-II-full-match-stabilizer-relay-certificate
+  - type-I-core-jacobi-punctured-kernel-primary-selector
+  - type-I-odd-fourier-owner-cylinder-transverse-rank-map
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -1036,9 +1038,14 @@ terminal。这是一个路由收缩，不是全部 primary 路径的封闭。详
 检测 Type I 命中或同符号短关系，余下状态再产生显式成对 Fourier 对比。按
 \(L=T\times O\) 分解后，\(O\)-单位纤维产生可直接检查广义二进盒准入的
 \(2^a\) 缩放关系；否则奇 Hall 投影产生非恒奇素数 source-rank 旗标。该结果已把
-\(p=97,R=67,K=5^3\cdot13\) 从低密度回执推进为全局 11 阶核角色，但没有把群论
-11 阶识别为物理 owner，故仍保持 analysis_evidence。详见
-[核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)。
+\(p=97,R=67,K=5^3\cdot13\) 从低密度回执推进为全局 11 阶核角色。后续横向数字门
+进一步证明：所有绝对 11-owner 类都会压掉非恒相位，但反演记录 \(5,1/5\) 可由
+\(\sigma=6\) 构造实际 owner \(6,17\)，其第一层横向数字 \(0,1\) 保存一个
+\(\mathbb F_{11}\) 差分方向。该 pair 只按一个 shared-\(11\) rank 载体收费；两个
+owner 分属不同 Type II 纤维，且均无直接命中或严格 source-switch，所以仍保持
+analysis_evidence。详见
+[核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)
+与[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)。
 
 ## 5. 未闭合的全称缺口
 

@@ -3904,3 +3904,56 @@ SCALED_RELATION_OUTSIDE_DYADIC_BOX。仍未闭合的决定性缺口是前者的�
 owner/source-map 与 E1--E5，或后者的盒外关系回收；二者都不能仅凭有限群阶改标为
 递降。详见
 [核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](../claims/type-I-core-jacobi-punctured-kernel-primary-selector.md)。
+
+## 2026-08-09：奇阶 owner 的正确坐标是圆柱横向数字
+
+固定 \(p,q,j\) 时，全部真实第 \(j\) 层 owner 都落在唯一类
+
+\[
+s\equiv\beta_j(p)=-p4^{-1}\pmod {q^j}.
+\]
+
+因此，将非恒 Fourier 相位通过固定单位斜率直接解释成 owner 的绝对剩余类必然失败：
+owner 条件会把相位压成常数；phase support 中偶然出现 \(\beta_j\) 也只给单相位锚点，
+不能支付 SOURCE_RANK_DEMAND(q)。
+
+新的可收费坐标是 owner 圆柱内的下一位
+
+\[
+\tau_j(s)=\frac{s-\beta_j}{q^j}\pmod q.
+\]
+
+它满足
+
+\[
+\tau_j(s)\ne\tau_j(t)
+\Longleftrightarrow v_q(s-t)=j,
+\]
+
+而所有高度至少 \(j+1\) 的 owner 都处于唯一深层数字。因此深 owner 不能单独支付
+横向秩；rank-one 实现必须含有一个精确高度 \(j\) 的 escape owner。
+
+反演记录提供了一个实际整数构造。若 \(\rho=U/V\)、\(\rho^{-1}=V/U\)，置
+\(\sigma=U+V\)。只要 \(q\mid p+4\sigma\) 且 \(4(\sigma+q)<p\)，标签
+\(\sigma,\sigma+q\) 就是两个真实 q-prefix owner，横向数字相差 1，因而可由唯一
+仿射数字映射保存反演相位的一维差分。
+
+在 \(p=97,q=11\) 上，记录 \(5,1/5\) 给出 \(\sigma=6\)，实际 owner 为
+
+\[
+s=6,\ 17,\qquad
+v_{11}(97+4s)=2,\ 1,\qquad
+\tau_1(s)=0,\ 1.
+\]
+
+全局 11 阶相位 \(2,9\) 由
+
+\[
+\tau_1=8\gamma+6\pmod {11}
+\]
+
+精确映到这两个数字。这是此前缺失的真实整数 rank-one 容量映射。但两个 owner 分属
+\(D=6,17\) 的不同 Type II 纤维；各自都没有目标因子命中或严格降模，且其单位群没有
+11-primary 方向。因此当前新边界是：横向秩已经实现，完整跨纤维 source-SNF、同纤维
+积块或 E1--E5 仍未闭合。详见
+[奇阶 Fourier 源差分到 owner 圆柱横向数字的秩容量映射](../claims/type-I-odd-fourier-owner-cylinder-transverse-rank-map.md)。
