@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 578 |
+| 数学状态 | `established` | 579 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 414 |
+| 证明来源 | `repository_derivation` | 415 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 550 |
+| 审阅状态 | `internal_review` | 551 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -906,6 +906,7 @@
 | [Type II raw 空集的平方除子残数 Fourier 证书](../claims/type-II-raw-divisor-residue-fourier-certificate.md) (`type-II-raw-divisor-residue-fourier-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II raw e=1 空洞的锚点—商递降—源关系—提升障碍四分](../claims/type-II-raw-e1-anchor-relation-obstruction-bridge.md) (`type-II-raw-e1-anchor-relation-obstruction-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II raw 参数频率的有限阿贝尔源商 SNF 提升](../claims/type-II-raw-finite-abelian-source-lift-snf.md) (`type-II-raw-finite-abelian-source-lift-snf`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+| [Type II 正规形的 sqrt(p) 有界 raw 盒](../claims/type-II-raw-normal-form-sqrt-cutoff.md) (`type-II-raw-normal-form-sqrt-cutoff`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [非互素 Type II 因子射线仍直接给出证书](../claims/type-II-raw-ray-certificate.md) (`type-II-raw-ray-certificate`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-24 |
 | [首个复合递降逃逸点的 Type II 二尾反向桥接障碍](../claims/type-II-reverse-two-tail-bridge-boundary.md) (`type-II-reverse-two-tail-bridge-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [Type II 同模数与除子格 source-switch 的带来源 CRT 判据](../claims/type-II-same-modulus-source-switch-crt-criterion.md) (`type-II-same-modulus-source-switch-crt-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
