@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 371 |
 | 数学状态 | `conditional` | 27 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 573 |
+| 数学状态 | `established` | 574 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 409 |
+| 证明来源 | `repository_derivation` | 410 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 545 |
+| 审阅状态 | `internal_review` | 546 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1010,6 +1010,7 @@
 | [目标纤维 source-supply spectrum 的严格降层 adapter 判据](../claims/type-i-linear-escape-target-supply-spectrum-strict-adapter.md) (`type-i-linear-escape-target-supply-spectrum-strict-adapter`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [核心素数 p=241 的 R=3/7 Type-I 图表扇区不足反例](../claims/type-I-r3-r7-chart-fan-coverage-counterexample.md) (`type-i-r3-r7-chart-fan-coverage-counterexample`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [target-odd 奇 q 的非零仿射偏移修复与 gcd—区间门](../claims/type-i-target-odd-affine-offset-repair-gate.md) (`type-i-target-odd-affine-offset-repair-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [target-odd 奇 q 与一跳 D-格非零偏移菜单的 source-complete 等价](../claims/type-i-target-odd-d-lattice-affine-menu-completion.md) (`type-i-target-odd-d-lattice-affine-menu-completion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F 态 target-odd primary 的直接 owner—自然二进两门无局部提升](../claims/type-i-target-odd-primary-direct-owner-dyadic-two-gate.md) (`type-i-target-odd-primary-direct-owner-dyadic-two-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [target-odd Fourier 的奇 q-prefix 直接 owner 不可对齐引理](../claims/type-i-target-odd-qprefix-direct-owner-no-go.md) (`type-i-target-odd-qprefix-direct-owner-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [组合变量因子射线给出任意对数幂的共同残余界](../claims/variable-factor-rays-superlog-residual.md) (`variable-factor-rays-superlog-residual`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-23 |
