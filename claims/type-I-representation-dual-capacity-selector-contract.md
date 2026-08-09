@@ -1031,6 +1031,15 @@ D-only 双尾 E4：\(h\equiv1\pmod4\) 落入既有空标记纤维，\(h\equiv3\p
 terminal。这是一个路由收缩，不是全部 primary 路径的封闭。详见
 [primary 因子商的 non-source D-only no-go](type-I-linear-escape-primary-factor-donly-no-conductor.md)。
 
+核心 \(N=1\) 的 Jacobi 弱饱和分支现也不再停在抽象商关系。目标缺失将 negative
+陪集规范平移为 \(L=\ker\chi_R\) 上满足 \(m(1)=0\) 的反演对称多重集；删点容量先
+检测 Type I 命中或同符号短关系，余下状态再产生显式成对 Fourier 对比。按
+\(L=T\times O\) 分解后，\(O\)-单位纤维产生可直接检查广义二进盒准入的
+\(2^a\) 缩放关系；否则奇 Hall 投影产生非恒奇素数 source-rank 旗标。该结果已把
+\(p=97,R=67,K=5^3\cdot13\) 从低密度回执推进为全局 11 阶核角色，但没有把群论
+11 阶识别为物理 owner，故仍保持 analysis_evidence。详见
+[核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)。
+
 ## 5. 未闭合的全称缺口
 
 该合同解决的是证据编排和类型安全，不解决以下命题：

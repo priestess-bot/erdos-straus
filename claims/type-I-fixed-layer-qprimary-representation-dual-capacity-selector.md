@@ -184,6 +184,15 @@ C_{y,X}>[K_X:P]\,T_J
 完整证明和两侧回执见
 [固定层稳定子商碰撞与 q-primary 饱和的短关系偶终端](type-I-fixed-layer-stabilizer-collision-terminal.md)。
 
+对核心规范分解 \(N=1\)、\(X=\{1,\chi_R\}\)，上述弱饱和中间区现在还有一个严格的
+内部选择器。把 Jacobi-negative 陪集平移到 \(L=\ker\chi_R\) 后，精确目标被删成
+\(m(1)=0\)；这给出 punctured 容量、Jacobi 成对 Fourier，以及
+odd-Hall source-rank / pure-2 scaled-relation 二分。该特化能在普通
+Q_PRIMARY_QUOTIENT_SATURATED 停止的位置继续产生带来源的有限群证书，但只有
+scaled relation 实际落入广义二进盒时才直接终端；奇素数旗标仍需整数 owner 与提升。
+详见
+[核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](type-I-core-jacobi-punctured-kernel-primary-selector.md)。
+
 ## 6. typed 边界与验证
 
 | 分支 | certificate_type | recursive_edge_eligible |

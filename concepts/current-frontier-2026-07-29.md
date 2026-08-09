@@ -3829,3 +3829,78 @@ persistent parent，说明该定理只能从真实 `persistence_source_state_id`
 通用 charged-chart normal-form verifier；一般 CRT/SNF G 分离角色、规范 F 最短见证、
 完整 state/receipt hash 还未序列化；因此旧 candidate 不能批量改标为 `verified_edge`。详见
 [整体余因子 canonical 投影的全域 typed 分派](../claims/type-I-overflow-total-cofactor-typed-projection-dispatch.md)。
+
+## 2026-08-09：Jacobi 弱饱和陪集已内化为删点核选择器
+
+核心规范分解 \(N=1\) 中，令
+
+\[
+L=\ker\chi_R,\qquad d=|L|,\qquad
+m(x)=\#\{z:\chi_R(\Phi(z))=-1,\ -\Phi(z)=x\}.
+\]
+
+F 状态不再只表示“Jacobi 商陪集饱和但目标未命中”，而是精确满足
+
+\[
+m(1)=0,\qquad m(x)=m(x^{-1}),\qquad
+C=\sum_xm(x)>0.
+\]
+
+目标点从大小为 \(d\) 的 negative 陪集中被删去。若没有同符号 \(H\)-像碰撞，每个
+符号盒至多使用 \(d-1\) 个像。令 \(\mathcal A\) 为大小至少 \(d\) 的盒，
+\(\mathcal S\) 为 Jacobi special boxes，则旧余量、删点余量和反演偶性合并为
+
+\[
+\boxed{
+C\le2\left\lfloor
+\frac{\Theta_{\rm ord}-|\mathcal A\cup\mathcal S|}{2}
+\right\rfloor,\qquad
+C\le(d-1)2^r.}
+\]
+
+违反任一门都直接产生 Type I 目标除子或同符号短关系偶前驱。
+
+余下 F 状态仍不是无结构低密度。规范收缩 \(H\to L\) 把每个
+\(\eta\in\widehat L\) 配成 \(H\) 上的 \(\psi_\eta,\chi_R\psi_\eta\)，并有
+
+\[
+\widehat m(\eta)
+=\frac12\bigl(F(\psi_\eta)-F(\chi_R\psi_\eta)\bigr).
+\]
+
+若 \(|H|=2\)，正质量直接迫使目标命中；以下只需讨论 \(|H|>2\)。角色正交性强制
+某个非平凡角色满足
+
+\[
+\widehat m(\eta)\le-\frac C{d-1},
+\qquad
+F(\chi_R\psi_\eta)-F(\psi_\eta)
+\ge\frac{4C}{|H|-2}.
+\]
+
+若 \(C>2^r(d-2)\)，则不只存在一个角色，而是每个非平凡核角色都有负成对对比；
+这给出完整 q-primary 谱门。一般低密度下，单个负角色不能直接投影到某个
+q-primary 分量并保持负号；\(C_6\times C_2\) 的精确盒模型给出负系数只出现在
+复合阶 6 的反例。
+
+最后把 \(L=T\times O\) 分成 2-Sylow 与奇 Hall 部分。若某条记录的奇部为单位，
+其二进部阶 \(2^a\) 给出非零核关系 \(\lambda=2^az\)；只有该关系实际落入已有非对称
+二进盒时才是终端，否则保存逐坐标 overflow。若奇部单位纤维为空，则 \(O\) 上仍有
+目标缺失；反演对称排除了奇阶 anchor-only，相应 SNF 素层必给出一个非恒奇素数
+source-rank 旗标。
+
+三个真实控制固定了边界：
+
+- \(p=97,R=67,K=5^3\cdot13\) 已有全局 11 阶核 Fourier 证书，并在
+  \(C_{33}\supset3C_{33}\supset0\) 上产生局部 11 阶源秩旗标；
+- \(p=73,R=63,K=2\cdot5^2\cdot23\) 的纯二进记录给出
+  \(\lambda=(0,2,-2)\)，但在 23 坐标超出二进关系盒一层；
+- \(p=433,R=15,K=1624\) 满足 \(C=28>\Theta_{\rm punct}=24\)，并确有
+  Type I 除子 \(56\) 和短关系偶前驱 \((E,n)=(3136,224)\)。
+
+因此核心 Jacobi 低密度区已经从“弱饱和”推进为两个具名对象：
+ODD_HALL_FOURIER_SOURCE_RANK 或
+SCALED_RELATION_OUTSIDE_DYADIC_BOX。仍未闭合的决定性缺口是前者的整数
+owner/source-map 与 E1--E5，或后者的盒外关系回收；二者都不能仅凭有限群阶改标为
+递降。详见
+[核心 Jacobi 饱和陪集的删点容量、成对 Fourier 与主分派选择器](../claims/type-I-core-jacobi-punctured-kernel-primary-selector.md)。
