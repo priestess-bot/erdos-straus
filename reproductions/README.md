@@ -627,6 +627,15 @@ quotient \(n<p\) 申报为 E4 递降。
 低模数来源候选以确认 G2 source-CRT 纤维为空；它不验证 exact physical-source
 predicate 或 owner maps。
 
+`type_i_fg_qprefix_kernel_depth_neutral_cargo_capacity.py` 在 labelled exponent
+box 上重算 ambient kernel-depth 最小完成、owner-layer ideal、neutral cargo、downset
+压缩和 residue collision 边界。对 \(p=557281\) 它验证
+\(\kappa=(3,2)\)、当前 \(c=(2,0)\)、\(\delta=(1,2)\)，列出九条新增 records 和
+十二点最小 principal box，并由实际赋值确认现有 \(3\)-lineage 只能到 depth 2。
+这些是 full ambient-kernel completion 的要求，不是未知 physical source 的无条件
+必要容量。脚本不把 \(h=83\) 当成 owner token，不验证 product synthesis 或
+physical source，也不运行历史范围测试。
+
 `type_i_first_overflow_common_denominator_marked_lift.py` 只处理
 \((p,M,y,m,n)=(73,27,29,43,7)\)。它验证自然 \(y\) 的 source/target 双因子门均空、
 quotient-multiple \(k=3\) 的 alternate Type I 命中，并完整枚举七个

@@ -5329,6 +5329,69 @@ admissible product 菜单没有命中。因此该控制现在得到的是“ambi
 分离 + G2 source-CRT 障碍”，不是 physical-source relay 或 E4。详见
 [q-prefix 的 ambient divisor-kernel 截面与角色边界](../claims/type-I-fg-qprefix-full-section-annihilator-boundary.md)。
 
+## 2026-08-10：kernel-depth 与 neutral cargo 的精确 ambient 完成图
+
+ambient divisor fiber 现在进一步被压成 labelled exponent box 的最小完成问题。
+对有限阿贝尔角色映射
+
+\[
+\phi(a)=\sum_i a_iw_i,\qquad
+E=\prod_i\{0,\ldots,e_i\},\qquad
+K=E\cap\ker\phi,
+\]
+
+定义
+
+\[
+\kappa_i=\max_{a\in K}a_i.
+\]
+
+则全部 labelled kernel records 被 principal prefix
+\(B_c=\prod_i\{0,\ldots,c_i\}\) 覆盖，当且仅当 \(c_i\ge\kappa_i\) 对所有 \(i\) 成立。
+所以唯一最小修复是 \(c\vee\kappa\)，缺层向量为
+\(\delta_i=(\kappa_i-c_i)_+\)。全部 kernel records 所要求的 labelled
+prime-power layers 的并集恰为 \(I(\kappa)\)。这是覆盖完整 ambient labelled
+kernel 的精确 requirement；只有 exact physical-source predicate 另证真实来源必须
+覆盖这些 records 后，它才是物理必要容量，再证跨坐标 product synthesis 后才是充分
+物理容量。
+
+零权坐标满足精确分解
+
+\[
+K=K_{\rm active}\times\prod_{w_i=0}[0,e_i],
+\qquad
+\kappa_i=e_i\quad(w_i=0).
+\]
+
+因此稳定子约化可以在角色判定中删除该方向，却必须在来源实现中把它作为 neutral
+cargo 吃满；它不增加 elementary role rank、request id 或独立收费槽。若来源另证
+labelled divisor-downward closure，则 maximal kernel antichain 只压缩 set
+membership；要同步生成 provenance 和 owner maps，还必须另证
+`PROVENANCE_PRESERVING_DIVISOR_CLOSURE`。没有下闭合同就必须保留
+`DIVISOR_CLOSURE_UNPROVED`。residue map 不单射时还要计算 fiber defect，
+record 数不能替代 section coverage。
+
+对 \(p=557281\)、\(N_x=3^4 83^2\)，以 \((a,b)\) 表示
+\(3^a83^b\)，角色条件为 \(a\equiv0\pmod3\)，而 \(83\) 方向权重为零。精确得到
+
+\[
+\boxed{\kappa=(3,2),\qquad c=(2,0),\qquad\delta=(1,2).}
+\]
+
+唯一 maximal kernel record 是 \((3,2)\)，且本例
+\(\downarrow K=B_{(3,2)}\)；最小 principal completion 有 12 条不同 residue
+records，并恰好删除 ambient box 的非 kernel \(a=4\) 行。该 ambient completion
+的条件性缺层是 \(3\)-lineage 的第三层，以及 \(83\) 的两个 neutral layers。固定
+\(x=182,s_0=19838,J=1\) 的现有 binding 赋值剖面为 \((3,3,4)\)，所以
+\(d_{\max}=2\)，这条 lineage 不能延到第三层，但不排除替代 source-switch；
+真实 source factor \(h=83\) 尚未绑定 owner token，\(83^2\) 也没有第二层回执。
+
+因此这一步推进的是**精确边界**：原先笼统的“补完整 kernel source box”已变成
+三条 conditional ambient layer requirements、一个 top-record membership 条件压缩
+和一组明确未证回执；它仍没有产生 physical necessary capacity、physical successor
+或 E4/E5。完整定理与聚焦验证见
+[q-prefix 的 kernel-depth、neutral cargo 与物理合成边界](../claims/type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)。
+
 ## 2026-08-10：Type II 线性平方选择器与核心缺口严格小于 \(p/3\)
 
 Type II 的自然除子菜单现有新的精确线性化。对合法 gap

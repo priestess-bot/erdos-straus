@@ -108,6 +108,7 @@ depends_on:
   - type-I-fg-qprefix-request-depth-admission
   - type-I-fg-qprefix-block-bound-first-overflow-terminal
   - type-I-fg-qprefix-full-section-annihilator-boundary
+  - type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
   - type-II-linear-square-gcd-allocation-core-gap-cutoff
@@ -246,6 +247,8 @@ sources:
     role: candidate-fiber-gate-order-actual-F-full-C3-and-first-overflow-dispatch
   - claim: type-I-fg-qprefix-full-section-annihilator-boundary
     role: prefix-to-ambient-divisor-section-and-physical-source-completeness-gate
+  - claim: type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity
+    role: labelled-kernel-depth-neutral-cargo-and-physical-synthesis-gate
   - claim: type-I-first-overflow-common-denominator-marked-lift
     role: overflow-quotient-alternate-terminal-and-proper-marked-lift
   - claim: type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
@@ -1277,7 +1280,21 @@ prefix target miss 之后必须先用完整 ambient divisor fiber 重算 kernel 
 独立证明 exact physical-source predicate 与 record maps；同一 \(p=557281\) 控制的
 ambient 截面有六点，\(\chi_{-8}\) 给出 target-visible \(C_2\) divisor-superset
 character，但不是 full physical-source annihilator，不能从 prefix singleton 直接
-申报 exact successor。首个 overflow 菜单为空后则先运行 quotient-multiple Type I 与
+申报 exact successor。若选择“覆盖完整 ambient labelled kernel”作为候选完成分支，
+则先计算 `AMBIENT_KERNEL_PREFIX_DEPTH_CERT`：若
+\(K=E\cap\ker\phi\)、\(\kappa_i=\max_{a\in K}a_i\)，则 labelled kernel 被
+principal prefix \(B_c\) 覆盖当且仅当 \(c\ge\kappa\)。本分支的零权坐标必须作为
+neutral cargo 吃满 ambient 深度；但在 exact physical-source predicate 证明真实来源
+也必须覆盖该 ambient kernel 前，这不是物理来源的无条件必要容量。逐坐标 layers
+只有在 product synthesis 或 labelled divisor closure 另证后才能升级为物理 records。
+对 \(p=557281\)，ambient completion 的 \(\kappa=(3,2)\)、当前 \(c=(2,0)\)、
+缺口 \(\delta=(1,2)\)；固定 \(x=182,s_0=19838,J=1\) 的现有 \(3\)-lineage
+严格止于 depth 2，但不排除替代 source-switch。\(h=83\) 尚不是 owner token，
+\(83^2\) 没有第二层回执。因此选择器保持
+`EXACT_PHYSICAL_SOURCE_PREDICATE_UNPROVED` /
+`DIVISOR_CLOSURE_UNPROVED` / `PRODUCT_SYNTHESIS_UNPROVED`，不得把三个
+conditional missing layers 记成三个独立角色槽。首个 overflow 菜单为空后则先运行
+quotient-multiple Type I 与
 公共分母 marked-lift 菜单；前者已精确等价于
 \(r_k\mid p^2+4n\) 的同余因子配对，且 \(n\) 为平方时结构性全空；后者在
 \(p\nmid c\) 且 \(4c>p\) 时精确等价于某个 \(d\mid c^2\) 满足
@@ -1291,6 +1308,7 @@ quotient-multiple 与两条规范尾完整门；它另有直接 Type II 终端�
 Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺口自动严格小于
 \(p/3\)。完整门分别见
 [ambient divisor-kernel 截面边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)、
+[kernel-depth 与 neutral-cargo 容量边界](type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)、
 [first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
 [first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
 [Type II 线性平方分配和核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。

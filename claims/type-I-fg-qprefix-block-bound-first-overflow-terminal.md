@@ -544,6 +544,9 @@ ambient 目标截面有六点而非一点；显式 \(\chi_{-8}\) 分离整个 di
 Type II 来源纤维则在 G2 source-CRT 门为空。完整集合截面充要门、physical-source
 边界和严格 no-go 见
 [q-prefix 的 ambient divisor-kernel 截面与角色边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)。
+其 labelled exponent box 的最小 kernel-complete 深度、neutral cargo 和物理合成
+边界进一步见
+[q-prefix 的 kernel-depth 与 neutral-cargo 容量定理](type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)。
 
 ## 聚焦验证
 

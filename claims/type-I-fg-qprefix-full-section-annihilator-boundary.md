@@ -330,6 +330,15 @@ actual-F 控制上的完整 ambient-divisor character certificate。它同时证
 能量再大，也不能在未证明 physical source predicate 和被省略 records 时承担 exact
 successor。
 
+labelled exponent box 层面的最小补全已由后续
+[kernel-depth 与 neutral-cargo 容量定理](type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)
+精确计算：本控制的 \(\kappa=(3,2)\)、当前深度 \(c=(2,0)\)、缺层向量
+\(\delta=(1,2)\)。这是覆盖全部 ambient labelled kernel 的 principal-prefix
+requirement：一个 \(3\)-第三层和两个 \(83\)-neutral layers。exact physical-source
+predicate 证明真实来源也必须覆盖这些 ambient records 之前，它不是物理来源的无条件
+必要容量；product synthesis、provenance-preserving divisor closure 和 record maps
+仍是显式未证门。
+
 ## 聚焦验证
 
 ~~~bash
