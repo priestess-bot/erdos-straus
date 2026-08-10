@@ -333,17 +333,24 @@ K_Q=2^3\cdot3\cdot11^2\cdot23\cdot29\cdot43,
 ## 6. 推进与剩余边界
 
 本结果把 (12) 从“高支撑 persistence sharp 反例”推进成一个实际严格出口，并证明
-bottom selector 不能固定选择 sink 最小节点。对一般高支撑 F/G state，新的决定性
-命题是改善集合 (9) 的非空性；若某状态的集合为空，有限 no-go 回执应立即转交
-total/direct cofactor、dual、terminal 或其它良基分支，而不是继续重复最小节点扫描。
+bottom selector 不能固定选择 sink 最小节点。后续的精确 carry 定理已经进一步证明：
+仅凭高支撑 F/G state 的 sink/complete-excess 结构不能保证改善集合非空；规范
+target 的符号由 \(\Delta_L(C)=ph_L-C(L-1)\) 精确控制，且存在一个具完整
+E1--E5 宏来源、但被 terminal-first 抢占的 \(p=73,C=2\) 状态，其 10 个合法候选
+全部上升。因此有限 no-go 回执必须立即转交
+total/direct cofactor、dual、terminal 或其它良基分支，而不是继续重复 SCC 扫描。
 
 素数 \(p=73\) 本身已有 terminal-first 优先的直接 Type II 证书
 \((20,219,4380)\)，所以 (21) 推进的是高支撑递归机制与良基边界，不是新增一个此前
 未覆盖的素数。它的作用是严格否定“minimum-node failure 等于整个 sink failure”，
-并给下一步全称非空性命题提供首个真实路径正控制。
+并给后续 carry 容量分派提供首个真实路径正控制。对 (20) 继续使用绑定的 universal
+source path，还可在节点 \((8,4563807)\) 取 \(Q=1521269\)，得到新的完整严格边
+\((0,44)\to(0,2)\)。精确公式、空改善反例、该正控制及 terminal-first 分派见
+[高支撑 bundle 的精确 carry 容量门](type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。
 
-本定理尚未证明每个高支撑 F/G sink 都有 \(c_Q<K/A\)，因此不是 Erdős--Straus 猜想的
-全称证明。
+本定理只保证“改善非空则规范选择、改善为空则完整 no-go”；不附加 terminal-free
+或其它跨模条件、仅凭 sink/complete-excess 结构断言总有 \(c_Q<K/A\) 的加强已经被
+上述下游反例否定。因此它不是 Erdős--Straus 猜想的全称证明。
 
 聚焦验证：
 

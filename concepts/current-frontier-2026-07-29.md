@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器穷尽定向完整超额候选并以真实余因子下降标价，首个 p=73 高支撑 F 状态已有 45->44 出口。当前两条决定性前沿是：证明一般高支撑改善集合非空或将其容量 no-go 完备分派到 alternate/终端/良基出口；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。仅由 sink/complete-excess 结构推出改善非空已被 p=73、C=2 的合同准入 F 状态反驳，但该状态由直接 Type II 终端抢占，故 terminal-free 子类仍需研究；既有 C=44 状态另有新的 44->2 严格边。当前两条决定性前沿是：从 signed carry no-go 完备推出 alternate/终端/dual/total-cofactor/良基 reset；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -34,6 +34,8 @@ sources:
   role: unbounded-same-chart-rank-and-persistent-parent-gate
 - claim: type-I-high-support-rank-aware-sink-bundle-selector
   role: high-support-finite-capacity-map-and-p73-strict-edge
+- claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
+  role: exact-carry-gate-empty-improvement-counterexample-and-terminal-dispatch
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -5680,3 +5682,58 @@ terminal 或其它良基出口。
 
 完整定理与聚焦验证见
 [高支撑 rank-aware sink-bundle 有限选择器](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md)。
+
+## 2026-08-11：精确 carry 门否定 sink-only 非空性并给出终端分派
+
+对 canonical 高支撑状态 \(K=AC\)、\(1\le C<p\)，把合法 bundle target 写成
+\(M=AL\)。若 \(0\le h_L<L\) 是 \(C+ph_L\equiv0\pmod L\) 的唯一解，则目标
+余因子和与真实秩差同号的精确缩放量为
+
+\[
+c=\frac{C+ph_L}{L},
+\qquad
+\Delta_L(C)=L(c-C)=ph_L-C(L-1).
+\]
+
+所以改善不再需要逐图表猜测：\(\Delta<0,=0,>0\) 分别就是下降、stutter、上升。
+对固定 \(L\not\equiv1\pmod p\)，全部非零 \(C\) 中恰有一半下降、一半上升；sink
+强连通没有提供所缺的模 \(p\) 符号。
+
+不附加 terminal-free 或其它跨模条件的 sink-only 非空性现在已有严格反例。低支撑 G 状态
+\((p,R,K;A)=(73,1351,24656;1)\) 经显式 universal raw path 和
+\(Q=1305\) 的 complete-excess 宏，在不应用终端优先时可按完整 E1--E5 进入
+
+\[
+(R,K;A)=(143,2610;1305),
+\qquad
+\Lambda_{73}^{\sharp}=(0,2).
+\]
+
+该目标独立重分类为 F；其唯一 24 节点 bottom sink 共有 10 个合法候选，目标余因子
+为 \(6,8,13,16,24,28,35,47,56,72\)，全部严格大于 2。因此改善集确实为空，
+不是搜索深度不足。该素数同时有直接 Type II 证书
+\((20,219,4380)\)，故完整分派为 `CARRY_NO_GO -> TERMINAL_PREEMPTION`。
+
+正方向也得到更强的新边。既有 \(C=44\) F 状态沿七条显式 raw 边到
+\((8,4563807)\)，取 \(Q=1521269\) 后有
+
+\[
+L=1521269,
+\quad h_L=41678,
+\quad c=2,
+\quad \Delta_L(44)=-63893298,
+\]
+
+从而给出完整严格边
+
+\[
+(0,44)\longrightarrow(0,2).
+\]
+
+新 target \((R,K;A)=(315581377367,5759360136948;2879680068474)\) 重新分类为 F：
+bounded box 不含 \(-1\)，而素模上的 Euler 非剩余见证给出紧凑无界证书。
+
+决定性缺口因此不再是证明 bundle 改善集总非空，而是证明 signed carry no-go 必强制
+terminal、support-preserving alternate、dual、total-cofactor 或 paid well-founded
+reset 至少一项。完整证明与聚焦验证见
+[高支撑 bundle 的精确 carry 容量门、空改善反例与终端分派](../claims/type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。

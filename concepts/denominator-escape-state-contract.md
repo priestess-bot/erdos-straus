@@ -40,6 +40,7 @@ used_by:
 - type-I-overflow-outer-rank-reset
 - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
 - type-I-high-support-rank-aware-sink-bundle-selector
+- type-I-high-support-bundle-carry-capacity-terminal-dispatch
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -476,6 +477,24 @@ path-anchored 宏是完整 E1--E5；若没有这样的行，完整候选表才�
 容量 no-go。\(p=73\) 的 minimum-node 行为 \(45\to47\)，但一条额外 raw 边后的
 \(Q=1247\) 行给出 \(45\to44\)。详见
 [高支撑 rank-aware sink-bundle 有限选择器](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md)。
+
+若当前状态已经是 canonical 高支撑形 \(K=AC\)、\(1\le C<p\)，将候选写成
+\(M=AL\) 后不得再把 target cofactor 当成黑箱。唯一 \(0\le h_L<L\) 满足
+\(C+ph_L\equiv0\pmod L\)，且
+
+\[
+c=\frac{C+ph_L}{L},
+\qquad
+L(c-C)=ph_L-C(L-1).
+\]
+
+因此回执必须保存 `L,h,c,Delta`；只有 `Delta<0` 才通过 E5，`Delta=0` 是 stutter，
+`Delta>0` 是上升。完整候选均非负时输出 `CARRY_NO_GO`，并转交
+terminal、alternate、dual、total-cofactor 或 paid reset，不得把 SCC 强连通升级为
+不存在的下降定理。\(p=73,C=2,A=1305\) 已给出 10 行全正的严格反例，并由直接
+Type II 终端抢占；相反，既有 \(C=44\) 状态有一条 \(L=1521269\) 的
+\(44\to2\) 严格边。见
+[高支撑 bundle 的精确 carry 容量门、空改善反例与终端分派](../claims/type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。
 
 ### overflow 的 cofactor-supported r-chart 支撑升级
 

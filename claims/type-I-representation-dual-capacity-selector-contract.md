@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；对已进入有限 sink SCC 的状态，rank-aware bundle 选择器穷尽全部定向完整超额候选，非空时选择严格下降边，空时输出该宏族容量 no-go。p=73 的实际高支撑 F 状态已由 45->44 边关闭。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。仅由 sink/complete-excess 结构推出一般非空性已被 p=73、C=2 的合同准入 F 状态严格反驳；该例由直接 Type II 终端抢占，因此不否定 terminal-free 子类，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -22,6 +22,7 @@ depends_on:
   - type-I-overflow-same-chart-support-promotion
   - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
   - type-I-high-support-rank-aware-sink-bundle-selector
+  - type-I-high-support-bundle-carry-capacity-terminal-dispatch
   - type-I-overflow-cofactor-r-chart-support
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -164,6 +165,8 @@ sources:
     role: unbounded-same-chart-rank-and-persistent-parent-gate
   - claim: type-I-high-support-rank-aware-sink-bundle-selector
     role: finite-high-support-bundle-capacity-map-and-p73-edge
+  - claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
+    role: exact-carry-gate-empty-improvement-counterexample-and-terminal-dispatch
   - claim: type-I-g-anchor-jacobi-odd-complete-excess-source-menu
     role: exact-n-prime-Jacobi-odd-path-anchored-source-menu
   - claim: type-I-linear-escape-canonical-d-lattice-source-menu
@@ -1089,6 +1092,26 @@ path 所在有限 sink SCC 的全部定向完整超额分解，以规范 target 
 \(Q=1247,\beta=3\)，即得真实 \((0,45)\to(0,44)\)。见
 [高支撑 rank-aware sink-bundle 选择器](type-I-high-support-rank-aware-sink-bundle-selector.md)。
 
+对 canonical 高支撑状态 \(K=AC\)、\(1\le C<p\)，该有限标价还有精确 carry
+正规形。写 \(M_Q=AL\)，并令 \(0\le h_L<L\) 满足
+\(C+ph_L\equiv0\pmod L\)，则
+
+\[
+c_Q=\frac{C+ph_L}{L},
+\qquad
+L(c_Q-C)=ph_L-C(L-1).
+\]
+
+因此高支撑 bundle receipt 必须保存 `L,h,c,Delta`，且只接受 `Delta<0` 为 E5。
+sink/complete-excess 结构单独强制改善非空已经被严格否定：具完整 E1--E5 宏来源的
+\((p,R,K;A)=(73,143,2610;1305)\) 是 F、\(C=2\)，其唯一 24 节点 sink 的 10 个
+合法候选全部满足 \(c_Q\ge6\)。该状态由 \(p=73\) 的直接 Type II 证书抢占，故 typed
+分派为 `CARRY_NO_GO -> TERMINAL_PREEMPTION`；该例不否定 terminal-free 子类可能有
+更强耦合。另一方面，既有 \(C=44\) F 状态从
+universal anchor 沿显式 raw path 取 \(Q=1521269\)，给出新的完整
+\((0,44)\to(0,2)\) 边。见
+[高支撑 bundle 的精确 carry 容量门](type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。
+
 另外有一条可完整重算的固定-n 支撑增长边：
 
 | 分支 | 源/后继 | 结果 |
@@ -1691,8 +1714,10 @@ state realization 与 E4/E5。
 局部 \(D_*<D_0\) 还必须配上不可重置的
 owner phase；自然较小余因子在 \(p=2113,n=241\) 上已有严格空 marked-fiber 反例，
 不能再作为默认 E4。菜单空、来源阻塞或 rank 过载若不能进入因子选择，必须转成带标记的
-严格跨纤维下降。另一条决定性路线已进一步收紧：对可达 \(A>B_p\) overflow，证明
-rank-aware sink-bundle 改善集合总非空，或在其完整容量 no-go 后证明
-support-preserving alternate/终端分派完备，或建立封闭且良基的外层 phase-reset
-秩。\(p=73\) 的首个高支撑实际 F 状态已经由 \(45\to44\) 出口关闭，但单个正控制
-不能外推为全称；本卡不把有限回执误写成全称结论。
+严格跨纤维下降。另一条决定性路线已进一步收紧：对可达 \(A>B_p\) overflow，先用
+精确 signed carry vector 判定 rank-aware sink-bundle；其改善集合可以严格为空，故
+必须从完整 `CARRY_NO_GO` 推出 support-preserving alternate、终端、dual、
+total-cofactor 中至少一项，或建立封闭且良基的外层 phase-reset 秩。\(p=73\) 的首个
+高支撑实际 F 状态已有 \(45\to44\to2\) 出口；另一个 \(C=2\) 状态则给出空改善反例
+并由 Type II 终端抢占。这些正负控制都不能替代一般分派完备性；本卡不把有限回执
+误写成全称结论。
