@@ -46,6 +46,7 @@ used_by:
 - type-I-high-support-c2-rank-one-retention-exhaustion
 - type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
 - type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
+- type-II-p-minus-one-endpoint-envelope-large-prime-allocation
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -67,6 +68,8 @@ sources:
   role: equal-tail-source-admission-and-terminal-collapse
 - claim: type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
   role: fixed-source-rank-Type-II-finite-menu-and-capacity-bound
+- claim: type-II-p-minus-one-endpoint-envelope-large-prime-allocation
+  role: endpoint-capacity-large-prime-allocation-and-complete-F-G-empty-dispatch
 visibility: public
 last_checked: '2026-08-11'
 ---
@@ -1072,16 +1075,39 @@ d<q(r+1),
 
 并另过素数门。命中项应先登记为直接 Type II terminal；同一公式同时提供源解与全域
 双尾提升。菜单为空则可输出该固定 \(r\) 的 `FIXED_SOURCE_RANK_NO_GO`，但不能排除其它
-\(r\)。每张记录满足
+\(r\)。令
 
 \[
-p-1\le4rK_r(K_r+1),
+k_0=\left\lceil\frac{r+2}{4}\right\rceil,
+\qquad
+a_0=4k_0-r-1.
 \]
 
-所以任何把 \(r\) 限制在固定上界的选择器都不可能全称覆盖。这一容量界要求后续
-Type II 设计在 \((p-1)/4=qr\) 的因子分解上自适应选择无界增长的 \(r\)，而不能反复
-尝试少数小偶源。证明见
-[\(p-1\) 因子 Type II 的固定源秩有限菜单与三次容量界](../claims/type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)。
+候选上包络必须保存线性分母，得到
+
+\[
+q\le Q_r^{\rm end}:=
+\left\lfloor\frac{k_0(k_0+1)}{a_0}\right\rfloor
+\le\frac{(r+2)(r+6)}{16},
+\qquad
+p-1\le\frac{r(r+2)(r+6)}4.
+\]
+
+所以任何把 \(r\) 限制在固定上界的选择器都不可能全称覆盖。对
+\(U=(p-1)/4=s\ell\)、\((s,\ell)=1\) 且
+\(16\ell>(s+2)(s+6)\) 的状态，先应用 `LARGE_PRIME_ASSIGNED_TO_R`：所有可行分解
+都满足 \(\ell\mid r\)、\(q\mid s\)。随后只对 \(q\mid s\) 建立完整 signed divisor
+box；目标在生成子群外时输出 G 角色证书，在生成子群内但有界盒 miss 时输出 F
+对数/Fourier 证书。
+
+所有压缩后纤维为空时只能输出 `P_MINUS_ONE_TYPE_II_EMPTY`，它不是终端，也不是递降，
+必须转交其它 terminal 或 verified edge。\(p=67369\) 给出精确控制：
+\(U=42\cdot401\) 把候选压到 \(q\mid42\)，形成五张 G 与三张 F 空证书，随后由
+gap-\(31\) Type I terminal 接管。这个反例证明“自适应 \(r\) 总命中”不能成为合同
+默认项。基础有限菜单见
+[固定源秩有限菜单与三次容量界](../claims/type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)，
+端点分配与完整控制见
+[端点容量包络、大素因子分配与 \(p=67369\) 分派](../claims/type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)。
 
 ## 7. 明确不构成递降的对象
 

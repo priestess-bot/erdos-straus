@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支进一步压成 d|k^2 的有限菜单并满足 p=O(r^3)，故小源秩不能成为全称出口。p=73 由直接 Type II 终端抢占，既有 C=44 状态另有 44->2 严格边。当前两条决定性前沿是：在 (p-1)/4 的因子分解上自适应选择增长源秩并证明菜单必命中或转交；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩菜单现有闭式端点包络 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4；当 U=s*ell 的 ell 足够大时它被强制分配给 r。p=67369 由此成为纯 p-1 Type II 分支的全因子严格反例：五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：把一般大素因子分配后留下的 F 有界盒空证书转成其它终端或严格下降；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -46,6 +46,8 @@ sources:
   role: all-gap-equal-tail-source-menu-and-terminal-collapse
 - claim: type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
   role: fixed-source-rank-Type-II-finite-menu-and-cubic-capacity-no-go
+- claim: type-II-p-minus-one-endpoint-envelope-large-prime-allocation
+  role: endpoint-capacity-large-prime-allocation-and-p67369-complete-dispatch
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -5898,3 +5900,78 @@ p=4qr+1,\qquad m=4q-1,\qquad x=q(r+1),
 命中直接 Type II，要么菜单空回执可被 Fourier、格或 Hall--Rado 容量证书转换为另一
 严格出口。这里真正缺少的仍是“对每个 \(U\) 至少有一个因子分解成功或可转交”的全称
 析取，而不是更多固定参数控制例。
+
+## 2026-08-11：端点容量、大素因子分配与首张全因子 F/G 空分派
+
+固定源秩菜单中的
+
+\[
+q=\frac{d+k}{4k-r-1},
+\qquad d\mid k^2,
+\]
+
+此前只使用了 \(4k-r-1\ge1\)，因而损失了大部分容量信息。令
+
+\[
+k_0=\left\lceil\frac{r+2}{4}\right\rceil,
+\qquad
+a_0=4k_0-r-1.
+\]
+
+新的端点定理证明有理上包络 \(k(k+1)/(4k-r-1)\) 在整个合法窗口的最大值恰位于 \(k_0\)，
+所以每张证书都满足
+
+\[
+q\le Q_r^{\rm end}:=
+\left\lfloor\frac{k_0(k_0+1)}{a_0}\right\rfloor
+\le\frac{(r+2)(r+6)}{16},
+\qquad
+p-1\le\frac{r(r+2)(r+6)}4.
+\]
+
+这把旧统一三次常数从约 \(16/9\) 收紧到 \(1/4\)，并产生一个真正的因子格分配律。
+若
+
+\[
+U=\frac{p-1}{4}=s\ell,
+\qquad (s,\ell)=1,
+\qquad 16\ell>(s+2)(s+6),
+\]
+
+其中 \(\ell\) 为素数，则任何 \(U=qr\) 命中都必须把 \(\ell\) 放进 \(r\)，故
+\(q\mid s\)。这不是概率倾向，而是由端点容量强制的坐标归属。
+
+对
+
+\[
+p=67369,
+\qquad U=16842=42\cdot401,
+\]
+
+阈值为 \((44\cdot48)/16=132<401\)，所以全部自适应因子选择立即压成 \(q\mid42\)。
+八个剩余目标纤维随后得到完整 typed 分类：
+
+\[
+q=1,2,3,6,14\quad\text{为 Jacobi G 空纤维},
+\]
+
+\[
+q=7,21,42\quad\text{为循环单位群中的有界离散对数 F 空盒}.
+\]
+
+因此 \(p=67369\) 是纯 \(p-1\) 因子 Type II 自适应分支的严格全因子反例，而不是
+搜索深度不足。terminal-first 仍闭合该点：gap \(31\) 的 Type I 证书为
+
+\[
+\frac4{67369}
+=\frac1{16850}
++\frac1{36618420}
++\frac1{12334731684900}.
+\]
+
+这首次把“大素因子容量分配 \(\to\) 完整 G/F 空纤维 \(\to\) alternate terminal”
+写成一条可复用分派。它同时否定了“只要让 \(r\) 自适应增长就总会有 Type II”的强
+猜想。下一决定性缺口已经变成：对一般 \(s\) 的压缩菜单，证明 F 有界盒 miss 必触发
+Type I、外部源、其它正规形或具有 E4/E5 的跨状态容量边；G 角色本身和 F 空盒本身仍
+不是递降。完整证明见
+[\(p-1\) 因子 Type II 的端点容量包络与大素因子分配](../claims/type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)。

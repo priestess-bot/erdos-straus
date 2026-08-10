@@ -402,6 +402,19 @@ p=97:\quad &(q,m,x,k,d)=(4,15,28,2,2),\\
 \(p-1\) 选择器必须在 \(U=(p-1)/4\) 的因子分解 \(U=qr\) 上自适应选择增长的
 \(r\)，再把 (5) 的局部除子菜单与 Fourier、格或加法组合容量证书耦合。
 
+后续的
+[端点容量包络与大素因子分配定理](type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)
+保留了本卡在 (18) 中丢弃的分母 \(4k-r-1\)，将统一界进一步收紧为
+
+\[
+q\le\left\lfloor\frac{k_-(r)(k_-(r)+1)}{4k_-(r)-r-1}\right\rfloor,
+\qquad
+p-1\le\frac{r(r+2)(r+6)}4.
+\]
+
+本卡的有限菜单与双射仍是该加强结果的基础；这里只把 (19)--(22) 视为较粗但有效的
+先验界。
+
 聚焦验证：
 
 ~~~bash

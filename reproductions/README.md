@@ -676,3 +676,8 @@ terminal-first 映射，并用 \(p=97\) 核对更早的 gap-\(3\) 单标记正�
 \(d\mid k^2\) 有限菜单与原 Type II 除子条件，核对三次容量界，并固定核心域
 \(r\le5\) 全空、\(r=6\) 仅有 \(p=73,97\) 的边界。该范围只用于防止公式回归；
 全称固定秩有限性来自主张中的双射和代数界。
+
+`type_ii_p_minus_one_endpoint_envelope_large_prime_allocation.py` 核对保留
+\(4k-r-1\) 后的端点差式、四个 \(r\bmod4\) 闭式和单大素因子分配。它只对
+\(p=67369\) 重建 \(q\mid42\) 的五张 Jacobi G 证书、三张有界离散对数 F 证书及
+gap-\(31\) Type I 接管；不运行素数范围或历史测试。
