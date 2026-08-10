@@ -29,7 +29,7 @@ sources:
   - reproduction: reproductions/type_ii_raw_normal_form_sqrt_cutoff.py
     role: bounded-box-controls
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-10'
 ---
 
 # Type II 正规形的 \(\sqrt p\) 有界 raw 盒
@@ -169,6 +169,10 @@ m\le\frac p3+\frac{4A}{3}
 所以全部 Type II 正规形都有 \(m\le p/3+O(\sqrt p)\)。这比自然范围
 \(m\le p-2\) 有实质的主项收缩，但不能替代需要常数级或 \(o(\sqrt p)\) 缺口的
 更强短证书猜想。
+
+后续的线性平方参数化已经在核心素数范围把这里的上界严格加强为
+\(m<p/3\)；式 (13) 仍保留为一般 \(p\equiv1\pmod4\) 的 raw 正规形界。见
+[Type II 的线性平方因子分配与核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。
 
 ## 证明
 

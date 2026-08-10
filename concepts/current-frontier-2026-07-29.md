@@ -5274,3 +5274,172 @@ E4，不能冒充递降。对后一控制还有
 typed lineage 全称存在，或把 common-base/target-direction/overflow-menu 失败和
 full-cycle kernel section 转成 independently realized exact successor、全解提升 E4
 与不可重置 E5；规范 G/Jacobi 二阶角色不再作为奇 q 正向入口。
+
+## 2026-08-10：prefix singleton 的 ambient divisor-fiber 角色边界
+
+full-\(C_3\) 控制中的 \(\{727\}\) 现已严格重新分类为 **prefix-local** kernel
+section。一般地，若 \(\eta:H\to Q\)、\(K=\ker\eta\)、\(w\in K\) 且 \(w^2=1\)，则
+任意源集 \(X\) 的目标截面满足
+
+\[
+S_w(X)=\{k\in K:wk\in X\}=w(X\cap K).
+\]
+
+因此，对任一**已经声明完整**的集合 \(B\subseteq\mathcal P\)，两者截面相等当且仅当
+
+\[
+(\mathcal P\setminus B)\cap K=\varnothing.
+\]
+
+只有另证 \(\mathcal P\) 恰为 physical source image，这才是
+`KERNEL_SECTION_SOURCE_COMPLETE` 门。仅凭 prefix singleton 不可能确定 ambient
+kernel slice：在相同 prefix data 后附加任意 \(v\in K\setminus B\)，局部截面不变而
+ambient 截面立即改变。filtered record 等式与 physical-source predicate 必须另证。
+把 singleton 目标杀到单位元的商也会同时杀掉 source identity，因而不能保持
+target miss。
+
+对 \(p=557281,D_*=182,N_x=3^4\cdot83^2\)，完整 ambient divisor fiber 满足
+
+\[
+\mathcal P_N\cap\ker\eta
+=\{1,27,57,83,337,363\},
+\]
+
+所以 ambient 目标截面是
+
+\[
+\{365,391,645,671,701,727\},
+\]
+
+其 Parseval 能量为 \(6(96-6)=540\)，不是 prefix singleton 的 \(95\)。更重要的是
+显式二次角色
+
+\[
+\chi_{-8}(u)=\left(\frac{-2}{u}\right)
+\]
+
+在 \(3,83\) 及其全部 divisor images 上取 \(1\)，而在 \(-1\) 上取 \(-1\)；ambient
+截面的 Fourier 系数精确为 \(-6\)。这给出 target-visible 的 \(C_2\)
+divisor-superset character certificate；它不证明 exact physical-source predicate、
+record-to-state 或 owner 映射，因而不是 full-source annihilator relay。
+
+整数层仍有严格边界。保留来源 \((a,h)=(1,83)\) 时，全部严格
+\(D'\mid182\) 的 Type II 候选都必须满足 \(AD'\equiv16\pmod{83}\)；完整 19 项
+admissible product 菜单没有命中。因此该控制现在得到的是“ambient divisor 有限群
+分离 + G2 source-CRT 障碍”，不是 physical-source relay 或 E4。详见
+[q-prefix 的 ambient divisor-kernel 截面与角色边界](../claims/type-I-fg-qprefix-full-section-annihilator-boundary.md)。
+
+## 2026-08-10：Type II 线性平方选择器与核心缺口严格小于 \(p/3\)
+
+Type II 的自然除子菜单现有新的精确线性化。对合法 gap
+\(3\le m=4y-p\le p-2\)，定义
+
+\[
+\frac ym<L\le\frac{2y}{m},
+\qquad d_L=Lm-y,
+\qquad g_L=(d_L,L).
+\]
+
+则 Type II 证书与满足 \(d_L\mid L^2\) 的 \(L\) 一一对应，而且
+
+\[
+d_L\mid L^2
+\quad\Longleftrightarrow\quad
+\frac{d_L}{g_L}\mid g_L.
+\]
+
+命中时直接恢复
+
+\[
+(A,B,C,K)
+=\left(\frac{d_L}{g_L},\frac y{g_L},
+       \frac{g_L^2}{d_L},\frac L{g_L}\right),
+\]
+
+并有 \(y=ABC,d=A^2C,(A,B)=1,A+B=Km\)。最小
+\(L_0=\lfloor y/m\rfloor+1\) 的余量 \(r=L_0m-y\) 命中，当且仅当平方根核
+
+\[
+\rho(r)=\prod_{\ell^e\parallel r}\ell^{\lceil e/2\rceil}
+\]
+
+整除 \(L_0\)。这把一个常用正向门从分解 \(y^2\) 压到分解小余量 \(r<m\)。
+
+还有一个严格的新全称结论。若 \(m>p/3\)，则 \(m/2<y<m\)，线性窗口中只有
+\(L=1\)。Type II 存在当且仅当 \(m-y=1\)，也就是
+
+\[
+p=3m-4.
+\]
+
+核心素数满足 \(p\equiv1\pmod3\)，所以该等式不可能。故
+
+\[
+\boxed{p\equiv1\pmod{24}\Longrightarrow
+\text{每个 Type II gap 都满足 }m<p/3.}
+\]
+
+这把既有 \(p/3+O(\sqrt p)\) 界加强为精确隔离线，但不约束 Type I。对
+first-overflow 还有 \((M,y)=1\)，故任意 Type II divisor 都与 \(M\) 互素；非平凡
+q-prefix 因子不能直接重复收费为 Bradford divisor。
+
+两个 \(M=27\) 控制精确展示额外条件：\((p,m,y)=(73,43,29)\) 由大缺口定理整体
+排除 Type II；\((557281,79,139340)\) 则有
+\(L_0=1764,r=16,\rho(r)=4\mid1764\)，立即恢复 \(d=16\) 终端。详见
+[Type II 线性平方分配与核心缺口隔离线](../claims/type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。
+
+## 2026-08-10：first-overflow 商首次给出 proper marked lift
+
+首个 overflow 的数值商 \(n<p\) 过去没有 E4。现在保留一分母的精确双因子门把该
+问题改写为：同一个 \(c\) 必须同时出现在规范非降序解
+\(\operatorname{Sol}_{\le}(n)\) 中，并使目标侧
+
+\[
+(4c-p)u-pc,qquad (4c-p)v-pc
+\]
+
+成为 \((pc)^2\) 的互补因子。由此定义的
+\(W^{[1]}_{p\leftarrow n}\) 上有确定的全域 lift，分母秩 \(n<p\) 给出严格下降。
+这是 E4/E5 的数学分量；统一 selector 的 state E2/E3 仍须另建。
+
+自然 overflow 分母 \(y\) 没有隐藏出口：其目标双因子门恰等价于 gap \(m=4y-p\)
+的完整 Bradford Type I/II 菜单。因此菜单空时必须换 \(c\ne y\)。商 \(n\) 同时生成
+一个有界 alternate：对
+
+\[
+p<4kn\le2p,
+\qquad r_k=4kn-p,
+\]
+
+取 Type I divisor \(d=n\)，命中当且仅当
+
+\[
+r_k\mid kp+1.
+\]
+
+first-overflow 时所有候选满足 \(k<M/4\)，所以这是由 q-prefix 模数控制的有限菜单。
+
+在 \((p,M,y,m,n)=(73,27,29,43,7)\) 上，自然 \(y=29\) 的 source 与 target 门均空，
+此前二分母保留提升也由正性全空；但 \(k=3\) 给出
+\((r_k,x,d)=(11,21,7)\) 的 Type I alternate。更强地，完整枚举
+\(\operatorname{Sol}_{\le}(7)\) 得到
+
+\[
+\boxed{
+W^{[1]}_{73\leftarrow7}
+=\{(2,15,210),(2,21,42)\}.}
+\]
+
+两条映射分别保留 \(210\) 与 \(21\)，目标像为
+\((20,210,30660)\) 和 \((21,140,30660)\)。这是一个真实、proper、
+terminal-preempted 的 \(7\to73\) 数学 lift control。它不能扩成全
+\(\operatorname{Sol}_{\le}(7)\)：源解 \((3,6,14)\) 的全部坐标都不大于 \(73/4\)，
+任何一分母保留目标余量都非正。由于尚未构造内容寻址状态并运行
+`verify_state(S/T)` 与 edge normal-form verifier，统一 selector 状态保持
+`candidate_transition`，不是 `verified_edge`。
+
+这项结果没有覆盖所有 menu-empty quotient，但首次补齐上一节一个严格空菜单控制的
+全域数学 lift 与严格秩下降，并把下一命题压成：quotient-multiple 菜单、两条规范
+source-tail divisor residue，或带 exact physical-source predicate 的 kernel successor
+至少一项命中。详见
+[first-overflow 公共分母 marked lift](../claims/type-I-first-overflow-common-denominator-marked-lift.md)。

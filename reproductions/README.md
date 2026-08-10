@@ -619,3 +619,21 @@ type_ii_tail_deflation_p_minus_one_pure_new_release.py 进一步核验四点在�
 map、\(p=557281\) 的 gap-79 Type II 分解、\(p=73\) 的 gap-43 菜单空回执以及
 二分母保留一项替换提升的正性界 \(W_{73}(7)=-17\)。它不运行历史扫描，也不把数值
 quotient \(n<p\) 申报为 E4 递降。
+
+`type_i_fg_qprefix_full_section_annihilator_boundary.py` 把上述 full-\(C_3\) prefix 的
+局部 singleton 与 \(N_x=3^4\cdot83^2\) 的完整 ambient divisor fiber 严格分开。它重算
+\(|U(728)|=288\)、\(|\ker\eta|=96\)、六点完整截面及能量 \(540\)，验证
+\(\chi_{-8}\) 在全部因子像上平凡而在目标上非平凡，并完整枚举保持 \(h=83\) 的 19 个
+低模数来源候选以确认 G2 source-CRT 纤维为空；它不验证 exact physical-source
+predicate 或 owner maps。
+
+`type_i_first_overflow_common_denominator_marked_lift.py` 只处理
+\((p,M,y,m,n)=(73,27,29,43,7)\)。它验证自然 \(y\) 的 source/target 双因子门均空、
+quotient-multiple \(k=3\) 的 alternate Type I 命中，并完整枚举七个
+\(\operatorname{Sol}_{\le}(7)\) 规范三元组，得到恰含两项的 proper marked state 及
+两条全域数学像；它不生成统一 selector 的 state E2/E3 回执。
+
+`type_ii_linear_square_gcd_allocation_core_gap_cutoff.py` 在三个聚焦控制上核对
+Type II 除子与线性 \(L\)-square 条件的双射、gcd 正规形和最小余量平方根核门。它只
+运行 \(p=17\) 的等号边界以及两个 \(M=27\) 控制：\(p=73\) 的大缺口全空和
+\(p=557281\) 的 \(d=16\) 构造，不以有限测试代替全称证明，也不扫描历史范围。

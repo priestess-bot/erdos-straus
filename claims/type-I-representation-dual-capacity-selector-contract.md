@@ -107,6 +107,9 @@ depends_on:
   - type-I-source-lattice-qheight-exclusive-tail-kernel-relay
   - type-I-fg-qprefix-request-depth-admission
   - type-I-fg-qprefix-block-bound-first-overflow-terminal
+  - type-I-fg-qprefix-full-section-annihilator-boundary
+  - type-I-first-overflow-common-denominator-marked-lift
+  - type-II-linear-square-gcd-allocation-core-gap-cutoff
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -240,6 +243,12 @@ sources:
     role: F-G-request-depth-joint-role-and-negative-Jacobi-ingress-boundary
   - claim: type-I-fg-qprefix-block-bound-first-overflow-terminal
     role: candidate-fiber-gate-order-actual-F-full-C3-and-first-overflow-dispatch
+  - claim: type-I-fg-qprefix-full-section-annihilator-boundary
+    role: prefix-to-ambient-divisor-section-and-physical-source-completeness-gate
+  - claim: type-I-first-overflow-common-denominator-marked-lift
+    role: overflow-quotient-alternate-terminal-and-proper-marked-lift
+  - claim: type-II-linear-square-gcd-allocation-core-gap-cutoff
+    role: Type-II-linear-square-selector-and-core-p-over-3-cutoff
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1261,6 +1270,19 @@ universe、菜单外 raw exits 或其它 odd-order roles；跨陪集时必须重
 三层门序、同一 \(p=557281\) 的 actual-F full-\(C_3\) positive control、\(p=73\)
 common-base no-go 与首个越界短缺口分派见
 [F 请求的 candidate-fiber q-prefix 绑定与首个越界短缺口分派](type-I-fg-qprefix-block-bound-first-overflow-terminal.md)。
+prefix target miss 之后必须先用完整 ambient divisor fiber 重算 kernel section，并
+独立证明 exact physical-source predicate 与 record maps；同一 \(p=557281\) 控制的
+ambient 截面有六点，\(\chi_{-8}\) 给出 target-visible \(C_2\) divisor-superset
+character，但不是 full physical-source annihilator，不能从 prefix singleton 直接
+申报 exact successor。首个 overflow 菜单为空后则先运行 quotient-multiple Type I 与
+公共分母 marked-lift 菜单；\(p=73,n=7\) 已给出 terminal-preempted 的完整数学 lift
+control，但统一 selector 的 state E2/E3 和 edge normal-form 回执尚未构造，状态仍是
+`candidate_transition`。
+Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺口自动严格小于
+\(p/3\)。完整门分别见
+[ambient divisor-kernel 截面边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)、
+[first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md) 与
+[Type II 线性平方分配和核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列
@@ -1475,8 +1497,12 @@ F/G sink。详见
   'COMMON_ROLE_LINE_CERT'、再使归一化指定值向量通过该角色线的 evaluation-image
   门（多角色分支改过完整 evaluation-Rado），并且全部
   边通过联合来源、`CANDIDATE_FIBER_QBLOCK_BOUND` 与 fresh occurrence 门时，才可登记连续
-  层满匹配并压成一个 q-prefix lineage。即使其 \(C_q\) 商已满，剩余 kernel slice
-  也仍须完成上述出口。多角色需求
+  层满匹配并压成一个 q-prefix lineage。即使其 \(C_q\) 商已满，prefix-local kernel
+  section 必须先扩到 ambient divisor fiber，并在 exact physical-source predicate 与
+  record maps 通过后才能调用 `KERNEL_SECTION_SOURCE_COMPLETE`、重算 exact source
+  section 并进入 successor；若首个 overflow 菜单为空，依次运行 quotient-multiple
+  Type I 和公共分母 proper-marked 菜单，后者还须补齐 state E2/E3 才能升级为 edge。
+  多角色需求
   已绑定层者先运行原层过滤秩，尚未绑定层者才按角色合同运行过滤子空间或带名上尾
   判据；该代数判据通过后仍不得省略物理
   Hall/Rado；

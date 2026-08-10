@@ -459,7 +459,17 @@ n^2+n-p,&n\equiv3\pmod4.
 组成同一请求的两侧局部障碍。这里 \(n_M=7\) 且
 \(W_{73}(7)=7^2+7-73=-17\)，所以连全部二分母保留的一项替换提升也由 (27b)
 关闭；例如源解 \((2,28,28)\) 的三个标记坐标都失败。但这仍不排除 \(p=73\) 的其它
-终端或更一般提升。
+终端或更一般提升。后续公共分母双因子门已经证明这一保留范围必须严格区分：自然
+\(y=29\) 的一分母分支同样失败，但规范非降序解空间中的 proper marked state
+
+\[
+W^{[1]}_{73\leftarrow7}=\{(2,15,210),(2,21,42)\}
+\]
+
+非空，并给出真实 \(7\to73\) 数学提升；统一 selector 的 state E2/E3 尚未构造，
+所以该控制保持 `candidate_transition`。同时 quotient-multiple \(k=3\) 直接产生
+\((m',x,d)=(11,21,7)\) 的 Type I alternate。详见
+[首个 overflow 商的公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)。
 
 对 \(p=557281,M=27\)，有
 
@@ -493,13 +503,19 @@ one actual typed F request + one named edge
          -> typed source-map/role/lineage/occurrence admission
               pass: one typed Q-PREFIX lineage
                     -> full product target hit: FIBER_REALIZED / TYPE_II_TERMINAL
-                    -> target miss: FULL_CQ_PREFIX_TARGET_OR_KERNEL_SECTION
+                    -> target miss: PREFIX_LOCAL_KERNEL_SECTION
+                         -> enumerate complete ambient divisor fiber
+                         -> prove exact physical-source predicate and record maps
+                         -> source-complete: exact physical section / character gate
+                         -> incomplete: retain ambient evidence; no successor claim
               fail: exact common-base/role/occurrence obstruction
        either local obstruction:
          -> first excluded q^(J+d)-owner label
               core prime + m < p + Bradford hit: TYPE_I_OR_II_TERMINAL
               menu empty: FIRST_OVERFLOW_SHORT_GAP_MENU_EMPTY
-              numerical quotient n_M < p: no descent charge without E4
+              -> quotient-multiple Type I alternate menu
+              -> common-denominator proper marked lift menu
+              numerical quotient n_M < p alone: no descent charge without E4
 ~~~
 
 这张分派第一次在同一个 actual F 状态上闭合了“一个请求 \(\to\) full-\(C_3\)
@@ -507,6 +523,14 @@ candidate block”，并把一个 owner-window 失败送入确定的 \(<4M\) 短
 证明的是：每个未终止 actual F 请求都依次通过 candidate binding 与 typed
 admission，或每个 overflow 菜单空回执都能形成 exact successor、全解提升 E4 和
 不可重置 E5。
+
+这里第 3 节的 singleton 是相对于 prefix \(\{1,3,9\}\) 的局部截面。完整 ambient
+\(N_x=3^4 83^2\) divisor fiber 在 \(\ker\eta\) 中还有 \(27,57,83,337,363\)，故
+ambient 目标截面有六点而非一点；显式 \(\chi_{-8}\) 分离整个 divisor 候选超集，
+但 exact physical-source predicate 与 record maps 仍未建立。保持 \(h=83\) 的低模数
+Type II 来源纤维则在 G2 source-CRT 门为空。完整集合截面充要门、physical-source
+边界和严格 no-go 见
+[q-prefix 的 ambient divisor-kernel 截面与角色边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)。
 
 ## 聚焦验证
 
