@@ -218,8 +218,12 @@ subspace 可以随 \(\sigma\) 改变，但承载它的 \(Q_U^*=Z_U\) 是固定�
 \]
 
 等价地，任取 \(Q_U\) 的基，补集选择矩阵的全部 \(m_U\) 阶 minors 都为零，而
-\(Q_U\) 自身有非零 top exterior class。式 (14) 是 completion-independent 的
-determinantal 容量对象；它不是一个已经实现的 Type I/II Fourier terminal。
+\(Q_U\) 自身有非零 top exterior space。但这没有增加 rank 以外的信息：
+\(\bigwedge^{m_U}S=0\) 当且仅当 \(\dim S<m_U\)，且 top wedge 不能区分亏格一与
+更高亏格。determinant 在 \(m_U\ge2\) 时也不是完成元组加法群上的同态。因此
+式 (14) 只能记为 `EXTERIOR_RANK_RESTATEMENT_NO_ARITHMETIC_GAIN`；完整 no-go
+及唯一保留的目标依赖 Plücker 分离见
+[top-exterior 的秩重述与 Plücker 边界](type-I-fg-exterior-fourier-plucker-boundary.md)。
 
 ## 3. 精确全局亏格公式
 
@@ -450,22 +454,32 @@ SNF_CANONICAL_ROLE_EVALUATION_CERT
         complement_budget: r_U
         exact_defect: delta(U)
         dual_role_space: Q_U^* = Z_U
-        exterior_class: wedge^{m_U} Q_U
+        top_exterior: rank restatement only
       do not emit a global scalar annihilator
       do not call current-state SOURCE_DOMINATING relay
+      build the physically feasible completion set Omega
+      propose fixed successor overhead X <= Q_U
+      dim(X) < delta(U):
+        GRASSMANN_SLICE_CAPACITY_CERT
+        residual_capacity: delta(U) - dim(X)
+      dim(X) >= delta(U):
+        SELECTED_SOURCE_OVERHEAD_EXHAUSTED
 ~~~
 
 从这里得到整数终端或递降还需要一个新的实质输入，合法路线只有：
 
-1. 构造能直接消费 \(\bigwedge^{m_U}Q_U\) 的 Type I/II
-   determinantal/exterior terminal；
-2. 构造 `SELECTED_SOURCE_STATE_REALIZATION`：对相关具体完成，证明其所选列生成
-   一个保持目标缺失的真实后继 source state。此时 (13) 的非零角色才可能在该后继
-   的全部 source generators 上平凡，再调用已有子群—商二分；
+1. 若实际算术目标提供固定秩目标平面，检查其 Plücker line 是否严格落在 reachable
+   span 外，并另证高阶相位的 arithmetic realization；裸 top exterior 已被严格排除；
+2. 构造固定后继开销 \(X\) 且证明
+   \(\dim X<\delta(U)\)。此时
+   [Grassmann 切片容量定理](type-I-fg-exterior-grassmann-slice-successor-descent.md)
+   给出 \(\delta(U)-\dim X\) 维共同角色和正比例可行完成，再由
+   `SELECTED_SOURCE_OVERHEAD_RANK_CERT` 与独立实现的 exact successor 接入
+   子群--商二分；
 3. 若 (19) 其实失败，回到 source-universe/menu escape，补齐 provenance 后重算，
    而不是把未饱和造成的共同 annihilator 记作递降。
 
-第 2 项仍须逐项通过 ambient character lift、source labels、target phase、
+第 1--2 项仍须逐项通过 ambient character lift、source labels、target phase、
 SNF/CRT、\(B'>A\) 与 E1--E5。缺少这些输入时，唯一正确回执是
 
 ~~~text
@@ -480,10 +494,12 @@ FIXED_QUOTIENT_TO_INTEGER_DESCENT_UNPROVED
 统一标量 annihilator，且正亏损割不可能 source-dominating，从而关闭了一条看似自然
 但逻辑上不可行的直接递降路线。
 
-下一项真正需要的新数学不是继续寻找共同标量角色，而是在两条结构路线中选择：
-把 exterior/determinantal 容量对象变成算术终端，或构造保持目标与整数标签的
-selected-source successor realization。非矩形物理 hypergraph 和跨素数共用选择仍
-不由本卡处理。
+后续结果已经关闭裸 top-exterior 终端路线，并对任意非矩形可行完成集证明
+Grassmann branch cover。真正剩余的新数学现在是构造一个由实际 arithmetic
+provenance 产生、满足 \(\dim X<\delta(U)\) 的 selected-source successor，并证明
+全源列闭包、目标保持和整数 E1--E5；或从不可避免的
+\(\dim X\ge\delta(U)\) 开销下界导出 Type I/II 终端或另一良基下降。跨素数共用
+选择仍不由本卡处理。
 
 ## 聚焦验证
 

@@ -720,11 +720,16 @@ edge 的 ambient 群坐标”分支关闭：规范初等商直接构造 (1)--(2)
 \(\operatorname{Hom}(\Delta,\mu_\ell)\)、source contract 未闭合或 edge 超出 certified
 span 时，才保留 ROLE_TO_COLUMN_EVALUATION_UNPROVED。第二项是实际候选未满足 (15) 时的联合
 hypergraph--matroid 选择。第三项现已进一步分开：广义 Rado 的 (13) 有规范固定割商
-与精确亏格，但 source saturation 同时排除了当前状态上的共同标量 annihilator；
-因此必须构造 exterior/determinantal 算术终端或 selected-source successor
-realization。式 (31) 的 tensor Fourier 零表示仍须独立接到完整 kernel source box、
-Type I/II 终端、整数后继及不可重置 marked E5；本卡不把有限线性商自动写成
-Erdős--Straus 递降。
+与精确亏格，但 source saturation 同时排除了当前状态上的共同标量 annihilator。
+裸 top exterior 已证明只重述 rank deficit；若拟议后继的固定 source 开销
+\(X\) 满足 \(\dim X<\delta(U)\)，则
+[Grassmann 切片容量定理](type-I-fg-exterior-grassmann-slice-successor-descent.md)
+对任意非矩形可行完成集给出
+\(\delta(U)-\dim X\) 维共同角色分支。否则输出严格开销边界，而不是继续寻找同类
+annihilator。式 (31) 的 tensor Fourier 零表示仍须独立接到完整 kernel source box、
+Type I/II 终端、整数后继及不可重置 marked E5；top-exterior 与可救的目标依赖
+Plücker 边界见
+[exterior--Fourier no-go](type-I-fg-exterior-fourier-plucker-boundary.md)。
 
 ## 聚焦验证
 

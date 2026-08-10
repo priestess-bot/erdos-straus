@@ -562,9 +562,14 @@ evaluation ranks 都是规范可计算的，不再需要额外存在性假设。
 它没有证明每个 F/G 状态都进入一个 exact source contract；也没有处理 edge 超出
 闭合 source span、非矩形物理 hypergraph、跨不同素数角色的同一选择，或把 (30)
 自动升级为整数 kernel source box、Type I/II 终端和不可重置 E5。规范固定割商已经
-证明 source-dominating closure 不能在饱和正亏损割上直接发生；下一决定性缺口因而
-进一步缩为：对实际 F/G edge 证明 source-universe/provenance 覆盖，并构造
-exterior/determinantal 算术终端或保持目标与整数标签的 selected-source successor。
+证明 source-dominating closure 不能在饱和正亏损割上直接发生；裸 top exterior
+又只重述 rank deficit。现在的正向接口是：对实际 F/G edge 证明
+source-universe/provenance 覆盖，构造固定后继开销
+\(X\) 且使 \(\dim X<\delta(U)\)，再由
+[Grassmann 切片容量](type-I-fg-exterior-grassmann-slice-successor-descent.md)
+选择共同 kernel role branch。目标依赖的低阶 exterior 分离只有在保存真实
+target-plane provenance 时才可能成为另一出口，边界见
+[Plücker 分离定理](type-I-fg-exterior-fourier-plucker-boundary.md)。
 
 ## 聚焦验证
 

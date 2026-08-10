@@ -4955,8 +4955,8 @@ k-\nu
 “固定标量角色”是两种不同强度的证书。
 
 这修正了此前尝试把 \(Z_U\) 直接接到 `SOURCE_DOMINATING_CUT` 的方向：在线性
-source-visible 饱和分支中，该接口不是尚未证明，而是严格不相容。现在剩下两条真正
-可能产生新数学的接口：
+source-visible 饱和分支中，该接口不是尚未证明，而是严格不相容。该时点留下两条
+需要判定的候选接口：
 
 1. 把 \(\bigwedge^{m_U}Q_U\) 的非零 top class 与所有 completion 的零
    determinantal minors 变成 Type I/II 算术终端；
@@ -4964,6 +4964,111 @@ source-visible 饱和分支中，该接口不是尚未证明，而是严格不�
    保持目标缺失、来源标签和整数合同的真后继 source state，再在该后继上使用随选择
    产生的标量角色与已有子群—商 relay。
 
-在这两项之一完成前，正确回执是 `GENERALIZED_RADO_FIXED_QUOTIENT_DEFECT` 和
+下一节完成了这项判定：裸 top exterior 只重述 rank deficit；selected-source
+路线则精确受 \(\delta-\dim X\) 控制。在该判定之前，正确回执是
+`GENERALIZED_RADO_FIXED_QUOTIENT_DEFECT` 和
 `FIXED_QUOTIENT_TO_INTEGER_DESCENT_UNPROVED`，不能登记为猜想的严格递降。详见
 [广义 Rado 亏损的规范固定割商、精确亏格与标量递降边界](../claims/type-I-fg-generalized-rado-fixed-quotient-defect.md)。
+
+## 2026-08-10：Grassmann 切片容量、role quotient 与 exterior 边界
+
+固定亏损商的移动 annihilator 现在有了一个不要求矩形菜单的新选择定理。设
+\(Q=Q_U\)、\(m=\dim Q\)、补集请求数为 \(r\)，并令拟议后继除所选补集列外
+必须保留的固定 source-evaluation 开销为 \(X\le Q\)。写
+
+\[
+\delta=m-r,\qquad
+h=\dim X,\qquad
+\varepsilon=\delta-h.
+\]
+
+若 \(\varepsilon>0\)，令 \(\Omega\) 是通过全部物理耦合门后的任意非空可行
+完成集。对 \(1\le s\le\varepsilon\)，按
+\(s\) 维角色空间 \(L\le(Q/X)^*\) 切分 \(\Omega\)，则有精确双计数
+
+\[
+\sum_L|\Omega_L|
+=
+\sum_{\omega\in\Omega}
+{\dim(Q/X)-\dim S_\omega\brack s}_q
+\ge
+{\varepsilon\brack s}_q|\Omega|.
+\]
+
+所以存在一个 \(L\) 支持至少
+
+\[
+\frac{{\varepsilon\brack s}_q}
+     {{m-h\brack s}_q}
+\]
+
+比例的可行完成。取 \(s=\varepsilon\) 得到新的 residual capacity
+
+\[
+\boxed{\varepsilon(U,X)=\delta(U)-\dim X.}
+\]
+
+该结论对非矩形、跨请求耦合的 \(\Omega\) 原样成立；矩形菜单只是把
+\(|\Omega_L|\) 分解为各菜单 kernel-hit 数的乘积。另有精确
+matrix-Fourier 恒等式：在
+\(E=\operatorname{End}(Q/X)\) 上，\(r<\dim(Q/X)\) 使 \(r\) 个 rank-one
+endomorphisms 不可能卷积到单位矩阵，从而非零频率的加权 kernel-hit 总和严格等于
+零频率的负值。这是新的辅助 Fourier obstruction，但频率群不是原整数 source
+group，不能直接冒充 Type I/II 角色。
+
+拉回 \(L\le Q^*\le R\) 后，原 perfect pairing 严格下降为
+
+\[
+(R/L)\times L^\perp,
+\]
+
+两侧维数同时减少 \(s\)。若某个所选完成的真实后继 source generators 全部落在
+\(X\) 与所选补集列的张成中，角色过滤先只给出
+`KERNEL_FILTERED_SUBSTATE`。还必须独立证明该 substate 是允许状态族中的 exact
+successor，并保存 branch/certificate lift；之后这些角色才给出指数 \(q^s\) 的
+联合核：目标在核内走严格子群；目标在核外时选取
+一个看见目标的 \(\rho_0\in L\)，通过
+\(H/\ker\rho_0\simeq C_q\) 走严格标量商，只有 \(H\simeq C_q\) 时才进入已有
+top-primary 边界。递降后 \(L\) 在联合核上全为零，不能重复收费。
+
+“记录落在联合核”本身仍不够。取
+\(H=\mathbb F_2^3\)、\(K=\langle e_2,e_3\rangle\)，源记录
+\(e_1,e_1+e_2\)，并令 source set 为记录的线性 span。kernel filter 删除两条
+记录，只留下 \(\{0\}\)，但完整 source set 与 \(K\) 的交仍为
+\(\langle e_2\rangle\)。目标 \(e_1+e_3\) 不在原 source set；过滤后看似在
+\(H/K\) 中被分离，原 source set 却已经投满同一非零商方向。因此 kernel filter
+只能输出 `KERNEL_FILTERED_SUBSTATE`，必须另证 exact successor 与
+branch/certificate lift 才能登记递降。
+
+阈值严格最优。在 \(Q=\mathbb F_2^2\)、\(r=1\)、
+\(X=\langle e_1\rangle\) 与菜单
+\(\{e_2,e_1+e_2\}\) 中，有 \(h=\delta=1\)，任一选择连同 \(X\) 都生成
+整个 \(Q\)，不存在非零共同角色。更一般地，若当前饱和 source state 仍由
+\(X\) 加 \(r\) 条列生成，则必有 \(h\ge\delta\)。所以正容量只能来自真正收缩
+source directions 的后继，而不是当前状态的伪递降。
+
+同时，裸 top exterior 路线已经关闭：
+\(\bigwedge^mS=0\) 与 \(\dim S<m\) 完全等价，且 determinant 在 \(m\ge2\)
+时不是完成元组加法群上的同态。唯一保留的 exterior 方向是固定低秩、目标依赖的
+Plücker 分离：若 prescribed target \(s\)-plane 的 Plücker line 不在全部 reachable
+Plücker lines 的 span 中，则存在 exterior functional 分离目标；但它仍须另证
+target-plane provenance 与高阶相位的算术实现。
+
+有限群下降仍不等于整数下降。\(p=97,D=6\) 的来源
+\((a,h)=(1,11)\) 在 \(U(24)\) 上有一个角色满足
+\(\chi(11)=1,\chi(-1)=-1\)，产生抽象 \(C_2\) quotient；然而全部严格
+\(D'\mid6\) 的 \(AD'\) 候选只有
+\(\{1,2,3,4,9\}\)，没有一个满足来源合同
+\(AD'\equiv6\pmod{11}\)。所以下一步的决定性对象已经收紧为：
+
+1. 从实际 F/G arithmetic provenance 构造
+   \(\dim X<\delta(U)\) 的 selected-source successor；
+2. 证明其全源列闭包、独立 exact state realization、branch/certificate lift、
+   目标缺失、FIBER_REALIZED、SNF/CRT、范围、marked E4 与不可重置 E5；
+3. 若所有实际候选都迫使 \(\dim X\ge\delta(U)\)，把这一开销下界转成
+   Type I/II 终端或另一良基下降。
+
+完整定理见
+[Grassmann 切片容量与 kernel 后继递降接口](../claims/type-I-fg-exterior-grassmann-slice-successor-descent.md)
+和
+[top-exterior 的秩重述与 Plücker 边界](../claims/type-I-fg-exterior-fourier-plucker-boundary.md)。

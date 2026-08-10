@@ -1326,8 +1326,18 @@ Q_U=R^*/W_U,
 至少留下 \(\delta(U)\) 维角色 kernel。若全部菜单已生成 \(R^*\)，这些移动 kernels
 的公共交为零；若割还支配全部 closed source generators，则 \(Q_U=0\)，与正亏损
 矛盾。因此该回执是固定 capacity quotient，不是当前饱和状态的共同标量
-annihilator。下游必须构造 exterior/determinantal 终端或保持目标的
-selected-source successor，不能直接调用全源列闭合 relay。
+annihilator。裸 top exterior 现已证明只重述 rank deficit，不能直接调用全源列
+闭合 relay。对任意已经保留物理耦合的可行完成集，若 selected-source 后继的固定
+evaluation 开销 \(X\) 满足
+\[
+\dim X<\delta(U),
+\]
+则 Grassmann 双计数构造至少
+\(\delta(U)-\dim X\) 维共同角色空间，并给出 exact supported-completion density；
+阈值在 \(\dim X=\delta(U)\) 处严格失败。该角色空间只有在
+`SELECTED_SOURCE_OVERHEAD_RANK_CERT`、独立 exact successor realization、
+branch/certificate lift 与整数提升门全部通过后才登记为递降；单纯把记录过滤到
+角色核中只输出 `KERNEL_FILTERED_SUBSTATE`。
 
 只有每个请求的 source 候选严格因子化为三类允许集的笛卡尔积时，完整选择才精确
 收缩为 capacitated deep Hall、shallow Hall 与上述 evaluation-Rado。非矩形三候选
@@ -1345,7 +1355,10 @@ table、E4 与 E5 仍必须另证。完整定理与控制见
 以及
 [source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)
 与
-[广义 Rado 亏损的规范固定割商](type-I-fg-generalized-rado-fixed-quotient-defect.md)。
+[广义 Rado 亏损的规范固定割商](type-I-fg-generalized-rado-fixed-quotient-defect.md)、
+[Grassmann 切片容量与 kernel 后继接口](type-I-fg-exterior-grassmann-slice-successor-descent.md)
+以及
+[top-exterior 与 Plücker 分离边界](type-I-fg-exterior-fourier-plucker-boundary.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子
