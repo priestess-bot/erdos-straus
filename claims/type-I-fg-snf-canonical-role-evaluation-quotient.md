@@ -432,8 +432,21 @@ SNF_ROLE_EVALUATION_GENERALIZED_RADO_DEFICIT
   source_labels: the corresponding combinations of SNF rows
 ~~~
 
-该角色可依赖补集的具体选择；只有另证一个共同 source-dominating annihilator，才能
-把它升级为单一商下降。
+该角色可依赖补集的具体选择，但失败割仍规范定义
+
+\[
+Q_U=K_R/\operatorname{span}E_R[:,A(U)],
+\qquad
+Q_U^*\simeq Z_U.
+\tag{30a}
+\]
+
+若 \(m_U=\dim Q_U\)、\(r_U=n-|U|\)，任一完成至少留下
+\(m_U-r_U\) 维角色 kernel，且最大正值精确等于最佳完整选择的缺秩。另一方面，
+(27) 的 source saturation 蕴含不存在对所有完成统一有效的非零标量角色；正亏损割
+若支配全部真实 source generators 又会强制 \(Q_U=0\)。因此 (30a) 是固定容量
+quotient，不能直接调用当前 source state 的单角色 annihilator descent。详见
+[广义 Rado 亏损的规范固定割商](type-I-fg-generalized-rado-fixed-quotient-defect.md)。
 
 ## 6. 四个严格控制
 
@@ -533,7 +546,8 @@ F_FOURIER_SOURCE_TARGET_LIFTED(q)
           rank(E_R)=dim R automatically
           run generalized Rado capacities c_R(U)
           deficit:
-            SNF_ROLE_EVALUATION_GENERALIZED_RADO_DEFICIT
+            GENERALIZED_RADO_FIXED_QUOTIENT_DEFECT
+            save Q_U, Z_U and delta(U)
           pass:
             continue with physical deep/shallow/target gates
 ~~~
@@ -547,9 +561,10 @@ evaluation ranks 都是规范可计算的，不再需要额外存在性假设。
 
 它没有证明每个 F/G 状态都进入一个 exact source contract；也没有处理 edge 超出
 闭合 source span、非矩形物理 hypergraph、跨不同素数角色的同一选择，或把 (30)
-自动升级为整数 kernel source box、Type I/II 终端和不可重置 E5。下一决定性缺口因而
-进一步缩为：对实际 F/G edge 证明 source-universe/provenance 覆盖，并把规范
-invisible role subspace 与 source-dominating closure 或带标记整数递降连接。
+自动升级为整数 kernel source box、Type I/II 终端和不可重置 E5。规范固定割商已经
+证明 source-dominating closure 不能在饱和正亏损割上直接发生；下一决定性缺口因而
+进一步缩为：对实际 F/G edge 证明 source-universe/provenance 覆盖，并构造
+exterior/determinantal 算术终端或保持目标与整数标签的 selected-source successor。
 
 ## 聚焦验证
 

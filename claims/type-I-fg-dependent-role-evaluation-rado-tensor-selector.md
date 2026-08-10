@@ -279,8 +279,33 @@ Z_U
 ROLE_EVALUATION_GENERALIZED_RADO_DEFICIT
 ~~~
 
-而不只是“候选数不足”。该非零角色一般依赖补集如何选择；除非另证一个共同
-source-dominating annihilator，否则不能把 (13) 直接升级为单一 quotient descent。
+而不只是“候选数不足”。该非零角色一般依赖补集如何选择，但亏损仍有一个不依赖
+该选择的规范对象：
+
+\[
+Q_U
+=R^*/\operatorname{span}\kappa(A(U)),
+\qquad
+Q_U^*\simeq Z_U.
+\tag{13a}
+\]
+
+令 \(m_U=\dim Q_U\)、\(r_U=n-|U|\)，则任一完成在 \(Q_U\) 中只能生成至多
+\(r_U\) 维，且至少留下 \(m_U-r_U\) 维角色 kernel。更强地，最佳完整选择的精确
+缺秩为
+
+\[
+k-\nu
+=\max_{U\subseteq P}
+\bigl(m_U-r_U\bigr).
+\tag{13b}
+\]
+
+若全部菜单已经生成 \(R^*\)，则不存在对所有完成统一有效的非零标量角色；正亏损割
+也不可能同时支配 closed source universe 的全部真实生成元。因此 (13a) 是固定线性
+容量商，不是当前饱和 source state 的单角色 quotient descent。完整证明、最小严格
+反例与后继门见
+[广义 Rado 亏损的规范固定割商](type-I-fg-generalized-rado-fixed-quotient-defect.md)。
 
 ## 3. fixed-target 矩形系统的完整收缩
 
@@ -668,7 +693,8 @@ FIXED_TARGET_NAMED_WITNESSES_READY
       natural target is all of R*:
         run generalized Rado condition (10)
         deficit:
-          emit U, Z_U and ROLE_EVALUATION_GENERALIZED_RADO_DEFICIT
+          emit U, Z_U, Q_U, delta(U)
+          GENERALIZED_RADO_FIXED_QUOTIENT_DEFECT
         pass:
           ROLE_EVALUATION_PHYSICAL_ASSIGNMENT
       prescribed proper implementation subspace D:
@@ -693,9 +719,12 @@ source-preserving、完整三维矩形且已有角色求值配对的子分支。
 edge 的 ambient 群坐标”分支关闭：规范初等商直接构造 (1)--(2)。角色仍只登记在
 \(\operatorname{Hom}(\Delta,\mu_\ell)\)、source contract 未闭合或 edge 超出 certified
 span 时，才保留 ROLE_TO_COLUMN_EVALUATION_UNPROVED。第二项是实际候选未满足 (15) 时的联合
-hypergraph--matroid 选择。第三项是把 (13) 的不可见角色空间或 (31) 的 tensor
-Fourier 零表示接到完整 kernel source box、Type I/II 终端、整数后继及不可重置
-marked E5；本卡不把有限线性商自动写成 Erdős--Straus 递降。
+hypergraph--matroid 选择。第三项现已进一步分开：广义 Rado 的 (13) 有规范固定割商
+与精确亏格，但 source saturation 同时排除了当前状态上的共同标量 annihilator；
+因此必须构造 exterior/determinantal 算术终端或 selected-source successor
+realization。式 (31) 的 tensor Fourier 零表示仍须独立接到完整 kernel source box、
+Type I/II 终端、整数后继及不可重置 marked E5；本卡不把有限线性商自动写成
+Erdős--Straus 递降。
 
 ## 聚焦验证
 

@@ -110,6 +110,7 @@ depends_on:
   - type-I-prescribed-target-occurrence-rado-contraction
   - type-I-fg-dependent-role-evaluation-rado-tensor-selector
   - type-I-fg-snf-canonical-role-evaluation-quotient
+  - type-I-fg-generalized-rado-fixed-quotient-defect
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -241,6 +242,8 @@ sources:
     role: dependent-role-evaluation-generalized-rado-and-tensor-sumset-selector
   - claim: type-I-fg-snf-canonical-role-evaluation-quotient
     role: exact-source-snf-to-canonical-evaluation-matrix-and-visible-rank
+  - claim: type-I-fg-generalized-rado-fixed-quotient-defect
+    role: exact-generalized-rado-defect-and-scalar-descent-boundary
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -1309,6 +1312,23 @@ column 条件改为
 occurrence。若角色与 source columns 的共同求值尚未构造，输出
 ROLE_TO_COLUMN_EVALUATION_UNPROVED；不能比较两个裸秩。
 
+失败割现在还有一个规范且精确的 completion-independent 回执。令
+
+\[
+W_U=\operatorname{span}\kappa(A(U)),
+\qquad
+Q_U=R^*/W_U,
+\qquad
+\delta(U)=\dim Q_U-(n-|U|).
+\]
+
+则最佳完整选择的缺秩恰为 \(\max_U\delta(U)\)，而每个正亏损割使任一具体完成
+至少留下 \(\delta(U)\) 维角色 kernel。若全部菜单已生成 \(R^*\)，这些移动 kernels
+的公共交为零；若割还支配全部 closed source generators，则 \(Q_U=0\)，与正亏损
+矛盾。因此该回执是固定 capacity quotient，不是当前饱和状态的共同标量
+annihilator。下游必须构造 exterior/determinantal 终端或保持目标的
+selected-source successor，不能直接调用全源列闭合 relay。
+
 只有每个请求的 source 候选严格因子化为三类允许集的笛卡尔积时，完整选择才精确
 收缩为 capacitated deep Hall、shallow Hall 与上述 evaluation-Rado。非矩形三候选
 source 控制严格通过三个投影却无联合选择；甚至 fixed-\(D\) 的
@@ -1323,7 +1343,9 @@ table、E4 与 E5 仍必须另证。完整定理与控制见
 与
 [相关角色求值、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)，
 以及
-[source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。
+[source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)
+与
+[广义 Rado 亏损的规范固定割商](type-I-fg-generalized-rado-fixed-quotient-defect.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子

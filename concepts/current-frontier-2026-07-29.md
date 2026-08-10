@@ -4880,6 +4880,90 @@ source separator。
 这关闭了“exact finite source universe + fixed-order SNF + edge ambient coordinates”
 分支的 `ROLE_TO_COLUMN_EVALUATION_UNPROVED`。当前决定性缺口进一步缩为：证明实际
 F/G edges 全部进入这种 exact source universe；处理非矩形物理 hypergraph；并把
-\(Z_U\) 的 source-dominating 子空间接到整数 kernel source box、Type I/II 终端或
-不可重置 marked E5。详见
+\(Z_U\) 的移动 completion kernels 接到整数 kernel source box、Type I/II 终端或
+不可重置 marked E5。正亏损割能否直接 source-dominate 已在下一项得到否定。详见
 [F/G source-SNF 的规范初等角色求值商](../claims/type-I-fg-snf-canonical-role-evaluation-quotient.md)。
+
+## 2026-08-10：广义 Rado 亏损的固定割商与标量递降 no-go
+
+规范 evaluation matrix 使失败割不再只输出一个随补集选择变化的角色。令
+
+\[
+W_U=\operatorname{span}E_R[:,A(U)],
+\qquad
+Q_U=K_R/W_U,
+\qquad
+m_U=\dim Q_U,
+\qquad
+r_U=|P|-|U|.
+\]
+
+\(Q_U\) 只依赖割和完整菜单，并且是杀掉 \(U\) 菜单的最大线性 quotient；任何其它
+这类 quotient 都唯一经过它。perfect pairing 还给出
+
+\[
+Q_U^*\simeq W_U^\perp=Z_U.
+\]
+
+任一完整选择在 \(Q_U\) 中只有补集的 \(r_U\) 条列可以非零，所以当
+
+\[
+\delta(U)=m_U-r_U>0
+\]
+
+时，它至少缺 \(\delta(U)\) 个 quotient 方向。对偶地，每个具体完成至少留下
+\(\delta(U)\) 维实际 SNF-role combinations 湮灭全部所选列。与 generalized Rado
+的 min--max 公式合并得到精确恒等式
+
+\[
+\boxed{
+k-\nu
+=\max_{U\subseteq P}
+\left[
+\dim Q_U-(|P|-|U|)
+\right],}
+\]
+
+其中 \(\nu\) 是每请求恰选一列可达到的最大秩。因此最大割亏格恰好是最佳 assignment
+仍缺失的角色维数，不是松的必要条件。
+
+更重要的是，source saturation 给出一个严格的负面结论。若全部菜单已经生成
+\(K_R\)，某个固定非零角色若对所有完整选择均为零，就会在每个候选列上为零，从而
+湮灭 \(K_R\)，矛盾。因此逐完成 kernels 虽都非零，其公共交必为零。若亏损割 \(U\)
+还支配 exact source universe 的全部真实生成元，则 \(W_U=K_R\)，继而
+\(Q_U=0\) 和 \(\delta(U)\le0\)，同样矛盾。由此得到：
+
+\[
+\boxed{
+\text{饱和的正广义 Rado 亏损}
+\not\Longrightarrow
+\text{当前 source state 的共同标量 annihilator}.}
+\]
+
+最小的全非零列严格控制位于 \(\mathbb F_2^3\)：
+
+\[
+\mathcal A(p_1)=\mathcal A(p_2)=\{e_1\},
+\qquad
+\mathcal A(p_3)=\{e_2,e_3\}.
+\]
+
+对 \(U=\{p_1,p_2\}\)，固定 quotient 是
+\(\mathbb F_2^3/\langle e_1\rangle\)，维数二，而补集只有一个请求。选择
+\(e_2\) 与 \(e_3\) 时得到的标量 annihilator 分别是
+\(e_3^*\) 与 \(e_2^*\)，公共交为零。这个例子同时证明“固定高维 quotient”和
+“固定标量角色”是两种不同强度的证书。
+
+这修正了此前尝试把 \(Z_U\) 直接接到 `SOURCE_DOMINATING_CUT` 的方向：在线性
+source-visible 饱和分支中，该接口不是尚未证明，而是严格不相容。现在剩下两条真正
+可能产生新数学的接口：
+
+1. 把 \(\bigwedge^{m_U}Q_U\) 的非零 top class 与所有 completion 的零
+   determinantal minors 变成 Type I/II 算术终端；
+2. 构造 `SELECTED_SOURCE_STATE_REALIZATION`，证明某个具体选择的列确实生成一个
+   保持目标缺失、来源标签和整数合同的真后继 source state，再在该后继上使用随选择
+   产生的标量角色与已有子群—商 relay。
+
+在这两项之一完成前，正确回执是 `GENERALIZED_RADO_FIXED_QUOTIENT_DEFECT` 和
+`FIXED_QUOTIENT_TO_INTEGER_DESCENT_UNPROVED`，不能登记为猜想的严格递降。详见
+[广义 Rado 亏损的规范固定割商、精确亏格与标量递降边界](../claims/type-I-fg-generalized-rado-fixed-quotient-defect.md)。
