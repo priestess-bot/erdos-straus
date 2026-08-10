@@ -56,6 +56,8 @@ sources:
   role: prime-matched-affine-carrier-kernel-fourier-and-global-descent-boundary
 - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
   role: minimal-source-lattice-qheight-dual-valuation-shift-and-window-obstruction
+- claim: type-I-source-lattice-qheight-exclusive-tail-kernel-relay
+  role: layered-owner-staircase-full-cycle-and-kernel-section-boundary
 - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
   role: multi-role-obstruction-filtration-and-exact-tail-capacity
 - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -3922,7 +3924,7 @@ SCALED_RELATION_OUTSIDE_DYADIC_BOX。这里第二个对象后来已由半幂 CRT
 固定 \(p,q,j\) 时，全部真实第 \(j\) 层 owner 都落在唯一类
 
 \[
-s\equiv\beta_j(p)=-p4^{-1}\pmod {q^j}.
+s\equiv\beta_j(p)=-p\cdot4^{-1}\pmod {q^j}.
 \]
 
 因此，将非恒 Fourier 相位通过固定单位斜率直接解释成 owner 的绝对剩余类必然失败：
@@ -4425,6 +4427,35 @@ carrier 的初等源秩仍精确为 1，且它没有自动产生 target state、
 只能生成新的 occurrence key；多个独立角色还必须另证物理 layered Rado/Hall 的
 occurrence 匹配，不能复制一维 carrier 重复收费。详见
 [源格角色的最小 q 层对偶与 content 估值移位载体](../claims/type-I-source-lattice-qheight-dual-valuation-shift-carrier.md)。
+
+## 2026-08-10：不同停止层的 owner staircase 达到最优循环饱和
+
+单层 owner 数量不等于可收费容量。固定 base \(J\) 的首 \(q\) 个 owner 只有一个
+deep endpoint；其 \(q-1\) 条 deep--shallow 星边全部使用
+\((\mathsf S,s_+,q,J+1)\)，所以单位 occurrence 容量下最大流严格等于 1。另一方面，
+单条 depth-\(d\) 估值移位边只有一个 lineage；即使全部中间层可回译，它也只形成
+\(d+1\) 个嵌套选择的前缀块，不能申报为 \(d\) 个独立 source ranks。
+
+新的正向构造使用不同停止层。对 \(h=q-1\) 条带名边，令第 \(a\) 条 shallow row
+精确停在 \(J+a-1\)，而共同 deep row 与 target 延伸到 \(J+h\)。通过显式素数
+剩余类、共同规范源基和整数 source-line 载体，可以同时实现这些层高；第 \(a\) 条边
+收费的 source/target key 位于绝对层 \(J+a\)，故不同 \(a\) 不碰撞。在联合 SNF、
+真实纤维、prescribed labels 和 fresh-key 门通过时，\(q-1\) 个请求满匹配到连续
+物理层，再由 shared-q 账本压成唯一前缀；它们不是 \(q-1\) 个独立 q 块，循环
+q-primary 列秩仍为 1。该前缀为
+\[
+B_{f,q}(q-1)=\{1,q,\ldots,q^{q-1}\},
+\]
+恰好达到覆盖 \(C_q\) 所需的最小深度 \(q-1\)。
+
+在 \(q=3\) 的精确控制中，\(p=673184521\)、共同规范源基
+\(D_0=8857667\)、target \(x=81263\)，target/deep/shallow 层高为
+\((4,3,1,2)\)。两条边分别收费层 2、3，并产生 \(\{1,3,9\}\to C_3\)。这个结果
+真正关闭的是一个循环商坐标：若完整积集仍 miss，目标被压入非空真 kernel slice，
+具有严格正 Fourier 能量；它不推出整个同余核稳定，也不提供 E4/E5。当前需要证明
+实际 F/G 请求族中存在通过联合来源和真实纤维门的 staircase，或把其 range/SNF/
+kernel-slice 失败送入直接终端、完整 kernel source box 或不可重置下降。详见
+[源格估值移位载体的多层独占尾、单前缀账本与核截面 relay](../claims/type-I-source-lattice-qheight-exclusive-tail-kernel-relay.md)。
 
 ## 2026-08-10：多角色最小深度已压缩为基不变的上尾容量
 

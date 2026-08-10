@@ -599,6 +599,13 @@ content 的充要门与 content-adaptive 修复。它同时证明单个 \(\{1,q\
 自适应范围/target-state 出口或完整核来源盒，
 而不是继续增加固定数值模板。
 
+进一步的
+[多层独占尾与核截面 relay](type-I-source-lattice-qheight-exclusive-tail-kernel-relay.md)
+证明固定同层的 \(q-1\) 条 deep--shallow 星边确实受同一 source occurrence 容量 1
+阻塞；可行的多请求替代必须把 qualified edges 放在不同停止层。通过联合来源与
+fresh-key 门后，\(q-1\) 个请求满匹配到互异连续层，并压成最小 \(C_q\)
+full-cycle 前缀；循环角色秩仍为 1，且 kernel/E4/E5 边界保持不变。
+
 ## 聚焦验证
 
 ~~~bash

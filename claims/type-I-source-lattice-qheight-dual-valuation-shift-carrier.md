@@ -601,6 +601,14 @@ content 深度 \(t\) 也不是新增容量。式 (40) 仍只产生一个 exclusi
 \(\{1,q\}\) block，初等源秩精确为 1；公共的前 \(J\) 层不能重复收费，单块稳定子
 仍然平凡，不能吸收非平凡降模核。
 
+后续的
+[多层独占尾与核截面 relay](type-I-source-lattice-qheight-exclusive-tail-kernel-relay.md)
+已把这里的“深度不是秩”边界扩展到任意尾长：单条 depth-\(d\) 边最多形成一个
+shared-ledger Q-PREFIX lineage。若要为多个请求取得互异物理层，必须提供分别停在
+不同 base 层的多条 qualified edges；这样绝对层 occurrence keys 才互异。该
+staircase 在全部联合来源门通过时形成深度 \(q-1\) 的唯一前缀并饱和一个 \(C_q\)
+商，但 miss 后只产生 kernel slice，不自动产生 E4/E5。
+
 固定 \(p,q\) 后，若额外定义一个封闭状态类型，使 \(J\) 是权威 cursor、每条非终端边
 都严格增加 \(J\) 或先降低一个永不回升的外层秩，并禁止退出后重置 \(J\)，则
 

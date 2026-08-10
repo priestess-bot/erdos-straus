@@ -104,6 +104,7 @@ depends_on:
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
   - type-I-source-lattice-qheight-dual-valuation-shift-carrier
+  - type-I-source-lattice-qheight-exclusive-tail-kernel-relay
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -231,6 +232,8 @@ sources:
     role: prime-matched-affine-carrier-kernel-fourier-and-global-E5-boundary
   - claim: type-I-source-lattice-qheight-dual-valuation-shift-carrier
     role: minimal-source-lattice-qheight-dual-and-valuation-shift-admission
+  - claim: type-I-source-lattice-qheight-exclusive-tail-kernel-relay
+    role: exclusive-q-tail-layered-staircase-and-target-kernel-relay
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1217,6 +1220,20 @@ source prime \(q\) 和层 \(j\)，存在残数数目最优的有限 matched-carr
 失败后在未固定额外标签时已有显式、可确定化的 kernel Fourier twist，预设标签则可能严格
 阻塞它；全局 E5 仍要求完整 target state 和不可重置 owner phase。
 
+单层载体之后的容量边界也已精确化。固定同一 base 的首 \(q\) 个 owner 虽形成
+\(q-1\) 条 deep--shallow 星边，但它们共享 deep source 的同一绝对层 occurrence，
+单位容量最大流只有 1。单条 depth-\(d\) 边只能在 shared-q ledger 中形成一个
+typed 前缀块 \(\{1,q,\ldots,q^d\}\)，不能拆成 \(d\) 个 rank 请求。正向替代是
+不同停止层的 staircase：若 \(q-1\) 条带名边分别精确停在
+\(J,\ldots,J+q-2\)，共同 deep source 与 target 延伸到 \(J+q-1\)，且联合
+SNF、真实纤维、prescribed labels 与 fresh-key 门全部通过，则 \(q-1\) 个请求
+满匹配到互异连续层，再由 shared-q 账本压成唯一的最小 full-cycle 前缀
+\(\{1,q,\ldots,q^{q-1}\}\)，而不是 \(q-1\) 个独立 q 块。显式 cyclotomic
+\(C_q\) 商因此饱和；目标仍 miss
+时只得到非空真 kernel slice 与正 Fourier 能量，不得到核稳定、E4 或 E5。完整算术
+构造和固定层容量反例见
+[源格估值移位载体的多层独占尾、单前缀账本与核截面 relay](type-I-source-lattice-qheight-exclusive-tail-kernel-relay.md)。
+
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列
 \[
@@ -1424,7 +1441,11 @@ F/G sink。详见
   rank-one 请求可选 \(J\ge\max(1,d_q)\)，且 valuation-shifted carrier 必通过当前
   \(p\) 的窗口、范围、occurrence 和既定标签门；dual/window no-go 保留严格见证，
   特定 carrier 的 range failure 只记为 unclosed。所有非 ready 回执与通过标签门的
-  显式 kernel Fourier 最终都必须进入终端、完整核来源盒或另一良基出口。多角色需求
+  显式 kernel Fourier 最终都必须进入终端、完整核来源盒或另一良基出口。单条
+  depth-\(d\) receipt 只计一个 prefix lineage；只有不同停止层 staircase 的每条
+  qualified edge 都通过联合来源、真实纤维与 fresh occurrence 门时，才可登记连续
+  层满匹配并压成一个 q-prefix lineage。即使其 \(C_q\) 商已满，剩余 kernel slice
+  也仍须完成上述出口。多角色需求
   已绑定层者先运行原层过滤秩，尚未绑定层者才按角色合同运行过滤子空间或带名上尾
   判据；该代数判据通过后仍不得省略物理
   Hall/Rado；
