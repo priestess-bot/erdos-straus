@@ -106,6 +106,7 @@ depends_on:
   - type-I-source-lattice-qheight-dual-valuation-shift-carrier
   - type-I-source-lattice-qheight-exclusive-tail-kernel-relay
   - type-I-fg-qprefix-request-depth-admission
+  - type-I-fg-qprefix-block-bound-first-overflow-terminal
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -237,6 +238,8 @@ sources:
     role: exclusive-q-tail-layered-staircase-and-target-kernel-relay
   - claim: type-I-fg-qprefix-request-depth-admission
     role: F-G-request-depth-joint-role-and-negative-Jacobi-ingress-boundary
+  - claim: type-I-fg-qprefix-block-bound-first-overflow-terminal
+    role: candidate-fiber-gate-order-actual-F-full-C3-and-first-overflow-dispatch
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1229,7 +1232,8 @@ source prime \(q\) 和层 \(j\)，存在残数数目最优的有限 matched-carr
 typed 前缀块 \(\{1,q,\ldots,q^d\}\)，不能拆成 \(d\) 个 rank 请求。正向替代是
 不同停止层的 staircase：若 \(q-1\) 条带名边分别精确停在
 \(J,\ldots,J+q-2\)，共同 deep source 与 target 延伸到 \(J+q-1\)，且联合
-SNF、真实纤维、prescribed labels 与 fresh-key 门全部通过，则 \(q-1\) 个请求
+SNF、`CANDIDATE_FIBER_QBLOCK_BOUND`、prescribed labels 与 fresh-key 门全部通过，
+则 \(q-1\) 个请求
 满匹配到互异连续层，再由 shared-q 账本压成唯一的最小 full-cycle 前缀
 \(\{1,q,\ldots,q^{q-1}\}\)，而不是 \(q-1\) 个独立 q 块。显式 cyclotomic
 \(C_q\) 商因此饱和；目标仍 miss
@@ -1239,19 +1243,24 @@ SNF、真实纤维、prescribed labels 与 fresh-key 门全部通过，则 \(q-1
 
 这一 staircase 入口现已接回实际 F/G 请求合同。请求数、角色秩、Q-PREFIX 深度与
 occurrence 容量是四个不同量：一个规范 source-visible F 角色只生成一个最小请求，
-但该请求在真实纤维门通过后可以承载一个 depth-\((q-1)\) lineage；菜单列数、角色阶
+但该请求在 candidate-fiber q-block binding 通过后可以承载一个
+depth-\((q-1)\) lineage；菜单列数、角色阶
 和深度都不能克隆 request id。若确有 \(q-1\) 个预存物理请求，并声明它们压成同一
 rank-one 循环方向，则必须先以 'COMMON_ROLE_LINE_CERT' 证明全部原请求角色共线并
 保存允许的单位归一化；归一化边值再落入该角色线 evaluation map 的像中，并另过
-连续层 Hall、联合 SNF、共同纤维与 occurrence 账本；不同角色义务仍走完整
+连续层 Hall、联合 SNF、共同 candidate target fiber 与 occurrence 账本；不同角色
+义务仍走完整
 evaluation-Rado/耦合超图。q-单位 scalar copies 在共同整数仿射映射下具有相同估值，
 构成严格过滤 no-go。
 
 规范 G-anchor/Jacobi 角色则在声明的 Jacobi-negative endpoint 菜单内部求值为零，
 且其阶为二，所以提供的奇 q 请求数严格为零。这个结论不覆盖 anchor-inclusive source
 universe、菜单外 raw exits 或其它 odd-order roles；跨陪集时必须重建 source contract。
-完整定理与 \(p=73,p=5281\) 控制见
+完整请求—深度定理与 \(p=73,p=5281\) 控制见
 [F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负陪集零入口](type-I-fg-qprefix-request-depth-admission.md)。
+三层门序、同一 \(p=557281\) 的 actual-F full-\(C_3\) positive control、\(p=73\)
+common-base no-go 与首个越界短缺口分派见
+[F 请求的 candidate-fiber q-prefix 绑定与首个越界短缺口分派](type-I-fg-qprefix-block-bound-first-overflow-terminal.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列
@@ -1465,7 +1474,7 @@ F/G sink。详见
   qualified edge 已绑定不同 request id，rank-one shared-direction 分支先通过
   'COMMON_ROLE_LINE_CERT'、再使归一化指定值向量通过该角色线的 evaluation-image
   门（多角色分支改过完整 evaluation-Rado），并且全部
-  边通过联合来源、真实纤维与 fresh occurrence 门时，才可登记连续
+  边通过联合来源、`CANDIDATE_FIBER_QBLOCK_BOUND` 与 fresh occurrence 门时，才可登记连续
   层满匹配并压成一个 q-prefix lineage。即使其 \(C_q\) 商已满，剩余 kernel slice
   也仍须完成上述出口。多角色需求
   已绑定层者先运行原层过滤秩，尚未绑定层者才按角色合同运行过滤子空间或带名上尾

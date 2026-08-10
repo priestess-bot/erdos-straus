@@ -608,3 +608,14 @@ type_ii_tail_deflation_p_minus_one_pure_new_release.py 进一步核验四点在�
 \(h\) 选取的证书含多个新因子，但其中三个在同一位移已有另一张纯新证书，只有两个
 必须等待后续位移。这排除“首个最小因子必纯新”的强版本，却不构成统一释放深度的定理；
 详见 `type-II-tail-deflation-p-minus-one-pure-new-100m-closure`。
+
+`type_i_fg_qprefix_block_bound_first_overflow.py` 聚焦核验三层 q-prefix 门序和两个
+精确控制。它在同一 \(p=557281,R=199\) 上重建 actual-F target-odd Fourier request，
+并验证 source rows \(19838,138866\)、target \(182\) 形成 typed
+\(\{1,3,9\}\) full-\(C_3\) candidate-fiber prefix，同时完整枚举
+\(N_x=558009\) 的因子以确认终局 `FIBER_REALIZED` 仍失败。脚本还穷尽
+\(p=73\) 的 depth-2 局部 carrier candidates，验证共同 canonical base 与 target
+3-primary direction 的双重 no-go；最后核对首个越界标签的 \(M=27\) CRT defect
+map、\(p=557281\) 的 gap-79 Type II 分解、\(p=73\) 的 gap-43 菜单空回执以及
+二分母保留一项替换提升的正性界 \(W_{73}(7)=-17\)。它不运行历史扫描，也不把数值
+quotient \(n<p\) 申报为 E4 递降。

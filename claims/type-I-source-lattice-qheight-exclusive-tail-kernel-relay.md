@@ -8,11 +8,12 @@ statement: >-
   模数从 q^(J+1) 提升到 q^(J+d)，构造共享同一规范源基 D_0 的 deep/shallow
   source rows 和规范目标 (D_*,A_*)，使 deep source 与 target 至少有 J+d 层、
   shallow source 精确只有 J 层，整数仿射边在第 J 层精确实现 c。该整数数据只先给
-  candidate/shared-q block extension；只有同一 realized fiber 的逐前缀 source-switch、
+  candidate/shared-q block extension；只有同一 candidate target fiber 的逐前缀 source-switch、
   block lineage 与 occurrence 不重计门通过后，才得到唯一连续幂块
   {1,q,...,q^d}，而不是 d 个独立 rank 请求。另一方面，q-1 条分别精确停在
   J,...,J+q-2 层的 provenance-qualified 阶梯边，在共同 deep source 与 target
-  上使用两两不同的绝对层 occurrence key；联合 SNF、真实纤维与 fresh-key 门通过时，
+  上使用两两不同的绝对层 occurrence key；联合 SNF、candidate-fiber q-block binding 与
+  fresh-key 门通过时，
   q-1 个带名请求获得连续层满匹配，并由 shared-q 账本压成唯一的最小 full-cycle
   前缀，而不是 q-1 个独立 q 块。
   显式 cyclotomic 商 eta:U(4D_*)->C_q 把该前缀满射到 C_q；若完整同纤维积集仍遗漏目标，目标的
@@ -262,9 +263,10 @@ v_q(s_1-s_0)=J,
 source-switch 恒等式，\(q^{J+d}\mid x-s_0\) 把 deep 来源高度送到同一 candidate
 fiber。可是高度整除本身不能把尾部写成 \(d\) 个互相独立的 rank 请求。
 
-升级为 typed block 必须另有同一 realized fiber 的合同：
+升级为 typed block 必须另有同一 candidate target fiber 的绑定合同：
 
-1. source-switch、SNF、范围、prescribed role/anchor 与 `FIBER_REALIZED` 已通过；
+1. source-switch、SNF、范围、prescribed role/anchor 与
+   `CANDIDATE_FIBER_QBLOCK_BOUND` 已通过；
 2. shared-q ledger 证明所有中间指数都可在同一纤维回译，并把选择限制为前缀；
 3. 唯一 `block_lineage_id` 下的层键是 fresh，或属于同一 assignment 的完整 replay；
 4. 更深 receipt 只能扩长并替换旧块，不能与旧深度、source rank 或 Kneser 价格相加。
@@ -424,7 +426,8 @@ source line 都有 (18) 型整数仿射实现。对一般带名 star，仍须运
 \]
 
 这些键因最后一个 layer 坐标而两两不同。只有当全部边的 named provenance、联合
-SNF、prescribed labels、`FIBER_REALIZED`、source-switch 与 fresh-key 门都通过时，
+SNF、prescribed labels、`CANDIDATE_FIBER_QBLOCK_BOUND`、source-switch 与 fresh-key
+门都通过时，
 才可把 \(h=q-1\) 个请求满匹配到连续的相对层 \(1,\ldots,q-1\)。随后必须按
 shared-q ledger 把同一 q 方向压缩为唯一块
 
@@ -470,9 +473,11 @@ d\ge q-1
 当 \(d<q-1\) 时，(19) 的 \(d+1<q\) 个像互异，故不能满射；所以
 \(d=q-1\) 是最小 full-cycle 深度。
 
-令 \(A\subseteq G_*=U(4D_*)\) 是同一 realized fiber 中其它实际源块的非空积，
+令 \(A\subseteq G_*=U(4D_*)\) 是已经绑定到同一 candidate target ledger 的其它实际
+源块的非空积，
 并置 \(P=AB_d\)。式 (23) 给出 \(\eta(P)=C_q\)。对目标 \(w\in G_*\)，若
-\(w\in P\)，整数回译直接给出该纤维的 Type II 命中。若 \(w\notin P\)，令
+\(w\in P\)，还须运行完整积、\(B'>A\) 与来源回译门；这些门通过才得到
+`FIBER_REALIZED` 和 Type II 命中。若 \(w\notin P\)，令
 
 \[
 K_\eta=\ker\eta,
@@ -589,10 +594,15 @@ v_3(p+4s_1)=1.
 \]
 
 它把 \(0,3\) 送到 \(s_0,s_1\)，且
-\((s_1-s_0)/3\equiv1\pmod3\)。typed Q-PREFIX 门通过时，相对块
+\((s_1-s_0)/3\equiv1\pmod3\)。新的 actual-F 同素数控制进一步取
+\(R=199\)、实际 factor-\(2\) edge 与
+\(\mathcal L(z)=19838+119028z_{(2)}\)，并已通过
+`CANDIDATE_FIBER_QBLOCK_BOUND` 和 typed Q-PREFIX 门。因此相对块
 \(\{1,3,9\}\) 在 (22) 下覆盖 \(C_3\)。模 \(4D_*=728\) 它不含 \(-1\)；
 tail-only target kernel slice 是 \(\{-1\}\)，其核大小为 \(96\)，故 (25) 的能量为
-\(95\)。
+\(95\)。这里完整 order-\(9\) 对齐只声明 target 与 chosen edge；全 ambient 只声明
+elementary \(C_3\)。完整实际 F 请求和门序反例见
+[F 请求的 candidate-fiber q-prefix 绑定与首个越界短缺口分派](type-I-fg-qprefix-block-bound-first-overflow-terminal.md)。
 
 ### 7.2 同一算术模板的严格范围失败
 
@@ -668,7 +678,8 @@ L=3\mathbb Ze_1\oplus9\mathbb Ze_2,
 \tag{40b}
 \]
 把 \(0,3e_1,9e_2\) 分别送到 \(s_0,s_1,s_2\)，并在各自停止层实现角色 1。
-在联合来源与真实纤维门通过后，这两个请求满匹配到相对层 1、2，shared-q 账本给出
+在联合来源与 candidate-fiber q-block binding 通过后，这两个请求满匹配到相对层
+1、2，shared-q 账本给出
 
 \[
 \{1,3\}\{1,3\}=\{1,3,9\}\longrightarrow C_3.
@@ -685,7 +696,7 @@ qualified rank-one named edge (delta, gamma, q)
          DEPTH_D_CARRIER_RANGE_OBSTRUCTED
        arithmetic pass:
          DEPTH_D_VALUATION_SHIFTED_CARRIER_ARITHMETIC_READY
-         -> no realized-fiber/prefix/lineage contract:
+         -> no candidate-fiber/prefix/lineage contract:
               EXCLUSIVE_Q_TAIL_QPREFIX_ADMISSION_UNPROVED
          -> typed Q-PREFIX admission passes:
               one block lineage B_d={1,q,...,q^d}
@@ -704,7 +715,7 @@ qualified staircase star (delta_a, gamma_a, q), a=1..q-1
   -> require normalized desired values in that line's joint evaluation image
   -> assign stopping bases J, J+1, ..., J+q-2
   -> construct one common canonical source base and common target
-       range/joint-SNF/provenance/fiber gate fails:
+       range/joint-SNF/provenance/candidate-fiber gate fails:
          STAIRCASE_PHYSICAL_ADMISSION_UNPROVED or strict range receipt
        all gates pass and layer keys are fresh:
          q-1 requests matched to distinct consecutive absolute layers
@@ -719,7 +730,8 @@ qualified staircase star (delta_a, gamma_a, q), a=1..q-1
 occurrence slots、连续层满匹配和最优 full-cycle 前缀的算术接线。幂块的 Kneser 价格、
 full-cycle 饱和和 kernel Fourier
 分派沿用既有定理。它没有证明每个实际 F/G 请求都通过范围、prefix、label 与
-`FIBER_REALIZED`，也不从一条角色请求生成 staircase 所需的 \(q-1\) 个 request ids，
+`CANDIDATE_FIBER_QBLOCK_BOUND`，也不从一条角色请求生成 staircase 所需的
+\(q-1\) 个 request ids，
 更没有把 \(D_*<D_0\) 冒充不可重置的 owner-base E5。下一步必须
 证明真实请求族中该入口全称非空，或把 (29)、范围失败及 kernel slice 送入直接终端、
 完整 kernel source box 或已封闭的良基下降。

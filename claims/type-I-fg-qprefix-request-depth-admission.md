@@ -5,7 +5,8 @@ title: F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负�
 statement: >-
   对一个 source-visible 的规范 F 型 q-primary 角色，Fourier--source-rank 桥只生成
   一个最小物理请求记录；source-SNF 菜单的列数、角色阶 q^e、q-height 深度 d 和
-  occurrence 层数都不能把该请求克隆。若一条实际带名边经整数载体与真实纤维门提升，
+  occurrence 层数都不能把该请求克隆。若一条实际带名边经整数载体与
+  candidate-fiber q-block binding 提升，
   它可以作为一个请求承载唯一 depth-d Q-PREFIX lineage，d>=q-1 时可饱和一个显式
   C_q 商，但在该单例请求子系统中角色秩和请求数仍均为一。若改走声明压成同一循环方向的 q-1 请求
   staircase，则这些请求必须预先具有不同 request id，且其角色 restriction 经允许的
@@ -56,6 +57,8 @@ sources:
     role: exact-G-Jacobi-negative-endpoint-menu
   - reproduction: reproductions/type_i_fg_qprefix_request_depth_admission.py
     role: focused-request-depth-joint-role-and-Jacobi-zero-controls
+  - reproduction: reproductions/type_i_fg_qprefix_block_bound_first_overflow.py
+    role: same-p-actual-F-full-C3-binding-and-p73-strict-no-go
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -143,7 +146,9 @@ J\ge\max(1,t),\qquad d\ge1
 既有估值移位构造给出一个确定的 depth-\(d\) 整数算术候选：deep source 与 target
 至少到 \(J+d\) 层，shallow source 精确停在 \(J\)，且归一化差值实现 \(c\)。这一步
 仍必须通过当前 \(p\) 的范围、共同规范 source base、prescribed target、联合 SNF、
-source-switch、'FIBER_REALIZED'、prefix lineage 与 occurrence 门。
+source-switch、`CANDIDATE_FIBER_QBLOCK_BOUND`、prefix lineage 与 occurrence 门。
+终局 target residue、完整积、\(B'>A\) 和 `FIBER_REALIZED` 在 typed prefix 之后检查，
+不能作为本步前提。
 
 所有门通过时，准确回执为
 
@@ -299,7 +304,7 @@ common_role_space_and_evaluation_matrix
 desired_evaluation_vector_and_joint_solution
 joint_integer_source_map_or_joint_SNF
 consecutive_layer_full_matching
-common_realized_fiber_and_block_lineage
+common_candidate_fiber_qblock_binding_and_block_lineage
 source_and_target_occurrence_ledger
 prescribed_target_and_source_switch_receipts
 ~~~
@@ -356,7 +361,7 @@ v_q(L_{\mathrm{lin}}(\delta_a))
 
 所以 identity map \(s=\gamma\) 不可能进入 q-prefix。第 2 节的估值移位载体用
 \(\beta_{J+d}(p)\) 作为 deep/target 的非零仿射中心，再用边差实现 \(c\)；它绕开的
-是 identity 同余冲突，不是 source provenance、范围或真实纤维门。特别地，不能把
+是 identity 同余冲突，不是 source provenance、范围或 candidate-fiber 门。特别地，不能把
 \(p=73\) 的真实 F 请求与另一个 \(p\) 上的算术正控制拼成一张已实现证书。
 
 ## 6. G/Jacobi 负 endpoint 菜单的零入口
@@ -486,16 +491,34 @@ character index \(1\) 按仓库固定的 CRT 投影坐标给出
 Fourier--role bridge 对角色阶 \(18=2\cdot3^2\) 的逐素数分解。它证明同一规范角色的
 q=3 restriction 非平凡，不声称旧的最小-\(q_*\) 回执已经登记 q=3。
 
-独立的算术正控制
+这个实际请求虽能在 \(p=73\) 自身形成 depth-2 candidate binding，却不能升级为
+typed prefix。允许合法的 \(x=s_0\) 后，全部范围/高度/角色候选仍只有
 
 \[
-p=557281,\quad q=3,\quad J=1,\quad d=2
+(J,x,s_0,s_1)=(1,2,2,5),(1,2,2,14),(2,2,2,11),
+\tag{26c}
+\]
+
+三项的 source canonical bases 都不同；target \(U(8)\) 也没有 3-primary 方向。因此
+这里得到严格的 `CANONICAL_COMMON_SOURCE_BASE_PROFILE_EMPTY`，不是把请求与别的素数
+拼接。
+
+另一方面，同一 actual F 状态上的正控制取
+
+\[
+p=557281,\quad R=199,\quad q=3,\quad J=1,\quad d=2.
 \tag{27}
 \]
 
-给出 source rows \(19838,138866\)、target \(182\) 和相对前缀
-\(\{1,3,9\}\)。它验证单请求可承载 depth 2，而不是验证 (26)--(26b) 的 \(p=73\)
-source fiber 已经实现；回执必须保持 'typed_realization=conditional'。
+这里 \(K=2\cdot5\cdot11^3\cdot2083\)，模 \(199\) 的指数盒遗漏目标但生成整个单位群。
+显式 `EXPLICIT_TARGET_ODD_INDEX_43` digest 选择 \(j=43\)，其 exact Dirichlet
+乘积大于 \(8>c(1)=3\)，3-primary 阶为 \(9\)，实际 factor-\(2\) edge 的初等值为
+\(1\)。同一 \(p\) 上的 source rows
+\(19838,138866\)、target \(182\) 和整数 source line 通过全部 candidate-fiber 与
+occurrence 门，故现在严格得到一个 typed \(\{1,3,9\}\) full-\(C_3\) lineage，不再是
+跨素数的 conditional pairing。它仍不是终局 `FIBER_REALIZED`：target numerator
+\(558009=3^4\cdot83^2\) 的全部因子模 \(728\) 均不为 \(-1\)。完整证明见
+[F 请求的 candidate-fiber q-prefix 绑定与首个越界短缺口分派](type-I-fg-qprefix-block-bound-first-overflow-terminal.md)。
 
 ### 7.2 两请求 staircase 的正、反控制
 
@@ -541,12 +564,13 @@ canonical F q-primary restriction
             FG_QPREFIX_ROLE_TO_EDGE_UNPROVED
        -> one unlayered named edge:
             depth-(q-1) arithmetic candidate
-            -> typed gates pass: one FULL_CQ_PREFIX lineage
-            -> otherwise: focused range/admission receipt
+            -> candidate-fiber + typed gates pass: one FULL_CQ_PREFIX lineage
+                 -> terminal FIBER_REALIZED or target-kernel section
+            -> otherwise: focused range/admission/first-overflow receipt
        -> q-1 pre-existing physical requests request a staircase:
             distinct ids + COMMON_ROLE_LINE_CERT
             + joint role image + filtered layers
-            + joint SNF + fiber + occurrence ledgers
+            + joint SNF + candidate-fiber + occurrence ledgers
             -> FG_QPREFIX_STAIRCASE_ADMISSION_CERT
             -> otherwise: exact request/role/filter/ingress obstruction
 
@@ -558,10 +582,13 @@ canonical G/Jacobi separation role
 ~~~
 
 这张分派完成的是 F/G 角色到 q-prefix 的类型安全入口和一个严格 G 子菜单 no-go。它
-没有证明单 F 请求的范围与真实纤维对所有核心素数均通过，也没有把 full-cycle 后的
-kernel slice 升级为 exact successor、E4 或 E5。新的决定性缺口是：在实际 F 状态中
-证明至少一个 source-visible 请求拥有 depth-\((q-1)\) 的同纤维 typed realization，
-或把其范围/纤维失败转成终端或良基递降；规范 G/Jacobi 二阶角色不再作为奇 q 入口。
+现在已有同一 \(p=557281\) 上的 actual-F depth-2 full-\(C_3\) typed realization，且该
+实例由首个越界 gap \(79\) 独立 Type II 终止；也有 \(p=73\) 的共同基和 target
+q-direction 双重 no-go。尚未证明 candidate-fiber 对所有未终止核心素数均通过，也
+没有把一般 full-cycle kernel slice 或 overflow 菜单空回执升级为 exact successor、
+E4 或 E5。新的决定性缺口是：对未被短终端预占的 actual F 请求证明该入口存在，或把
+其精确失败和 kernel section 转成可提升且不可重置的良基递降；规范 G/Jacobi 二阶角色
+不再作为奇 q 入口。
 
 ## 聚焦验证
 

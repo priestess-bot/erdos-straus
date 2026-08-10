@@ -5202,17 +5202,30 @@ n_{\rm req},\qquad k_{\rm role},\qquad d_{\rm pref},\qquad c_{\rm occ}.
 一个规范 source-visible F 型 q-primary restriction 只生成一个最小请求。source-SNF
 menu 的列数、pair-energy 边数、角色阶 \(q^e\)、q-height 深度和内部 layer keys 都
 不能克隆 request id。反过来，一个请求若有实际带名边通过范围、共同规范基、
-source-switch、真实纤维、lineage 与 occurrence 门，可以承载唯一的
+source-switch、candidate-fiber q-block binding、lineage 与 occurrence 门，可以承载唯一的
 depth-\(d\) Q-PREFIX；当 \(d\ge q-1\) 时它可以饱和一个显式 \(C_q\) 商，但仍只有
 一个请求、一个角色秩和一个 lineage。
 
 真实 \(p=73,R=27,K=17\cdot29\) 控制使这个边界不再只是抽象例子。指数盒像在
 \(C_{18}\) 中有九个元素，规范 q=3 初等角色在 36 条无序 pair 中看见 27 条非零边，
 但这些边的角色跨度与最小请求数都恰为一。target phase 为 \(0\bmod9\)，owner center
-为 \(2\bmod9\)，所以 direct identity owner 仍严格为空；独立的
-\(p=557281\) depth-2 控制只证明非零仿射算术候选，明确不与 \(p=73\) 拼成真实纤维。
+为 \(2\bmod9\)，所以 direct identity owner 仍严格为空。更强地，全部 depth-2
+candidate rows 只有
+\((1,2,2,5),(1,2,2,14),(2,2,2,11)\)，共同 canonical source base 全部失败，
+且 target \(U(8)\) 无 3-primary 方向；这是完整局部 no-go。
 这里 q=3 来自 all-q bridge 对阶 \(18\) 角色的逐 primary 分解；旧 empty-fiber
 回执只选择最小 \(q_*=2\)，并未被追溯改写。
+
+同一 \(p=557281,R=199\) 上则已闭合真正的正控制。指数盒遗漏目标但生成整个
+\(C_{198}\)；显式 `EXPLICIT_TARGET_ODD_INDEX_43` digest 选择 \(j=43\)，其
+Dirichlet 乘积满足 \(A(\chi_{43})>8>c(1)=3\)，3-primary factor-\(2\) edge
+给出一个实际请求。source rows \(19838,138866\)、target \(182\)
+与整数 source line 通过 candidate-fiber 和 occurrence 门，严格得到 typed
+\(\{1,3,9\}\) full-\(C_3\) lineage。它同时证明门序不能倒置：
+\(N_x=558009=3^4\cdot83^2\) 的全部因子模 \(728\) 都不等于 \(-1\)，所以终局
+`FIBER_REALIZED` 仍失败，留下大小 \(1\) 的 kernel section 和 Fourier 能量 \(95\)。
+这里只声明 chosen edge 的 full-\(C_9\) 对齐；全 ambient 结论仍限于 elementary
+\(C_3\)。
 
 若调用声明压成同一 rank-one 循环方向的 \(q-1\) 请求 staircase，这些 request ids
 必须预先存在，而且原请求角色 restriction 必须经允许的单位归一化后位于同一固定
@@ -5240,6 +5253,24 @@ anchor-inclusive source universe、菜单外 raw exits 或其它 odd-order roles
 
 完整定理与聚焦验证见
 [F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负陪集零入口](../claims/type-I-fg-qprefix-request-depth-admission.md)。
-下一决定性正向对象因此收紧为：在真实 F 状态中实现一个 depth-\((q-1)\) 的同纤维
-typed lineage，或把其范围/纤维失败转成终端或良基递降；规范 G/Jacobi 二阶角色不再
-作为奇 q 正向入口。
+新的门序、actual-F positive control 与 overflow 分派见
+[F 请求的 candidate-fiber q-prefix 绑定与首个越界短缺口分派](../claims/type-I-fg-qprefix-block-bound-first-overflow-terminal.md)。
+
+owner-window 失败现在还有一个确定的 CRT defect map。对奇
+\(M=q^{J+d}\)，首个越界标签 \(y\) 唯一对应
+
+\[
+m=4y-p,\qquad m\equiv3\pmod4,\qquad m\equiv-2p\pmod M,\qquad0<m<4M.
+\]
+
+若 \(m<p\)，它进入完整 Bradford Type I/II 菜单。\(p=557281,M=27\) 得
+\((m,y,n)=(79,139340,41283)\)，并由 \(d=16\) 给出 Type II 终端；
+\(p=73,M=27\) 得 \((43,29,7)\)，完整菜单为空。数值 quotient \(n<p\) 本身不含
+E4，不能冒充递降。对后一控制还有
+\(W_{73}(7)=7^2+7-73=-17\)，故所有“保留源解两个分母、只替换一个坐标”的提升
+都因正性失败；它不排除保留一个分母后重组两尾或一般 E4。
+
+下一决定性对象因此收紧为：对未被短终端预占的 actual F 状态证明 candidate-fiber
+typed lineage 全称存在，或把 common-base/target-direction/overflow-menu 失败和
+full-cycle kernel section 转成 independently realized exact successor、全解提升 E4
+与不可重置 E5；规范 G/Jacobi 二阶角色不再作为奇 q 正向入口。
