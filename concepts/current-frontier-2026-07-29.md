@@ -5395,7 +5395,7 @@ q-prefix 因子不能直接重复收费为 Bradford divisor。
 \(\operatorname{Sol}_{\le}(n)\) 中，并使目标侧
 
 \[
-(4c-p)u-pc,qquad (4c-p)v-pc
+(4c-p)u-pc,\qquad (4c-p)v-pc
 \]
 
 成为 \((pc)^2\) 的互补因子。由此定义的
@@ -5443,3 +5443,62 @@ terminal-preempted 的 \(7\to73\) 数学 lift control。它不能扩成全
 source-tail divisor residue，或带 exact physical-source predicate 的 kernel successor
 至少一项命中。详见
 [first-overflow 公共分母 marked lift](../claims/type-I-first-overflow-common-denominator-marked-lift.md)。
+
+## 2026-08-10：商倍数因子配对与规范尾四菜单边界
+
+first-overflow 的 quotient-multiple 菜单现在已有完整因子化。对
+
+\[
+\Delta=p^2+4n,\qquad r_k=4kn-p,\qquad p<4kn\le2p,
+\]
+
+有
+
+\[
+r_k\mid kp+1
+\Longleftrightarrow r_k\mid4k^2n+1
+\Longleftrightarrow r_k\mid\Delta.
+\]
+
+命中与所有
+
+\[
+d\mid\Delta,\qquad d\le p,\qquad d\equiv-p\pmod {4n}
+\]
+
+一一对应；互补因子也等于 \(-p\pmod {4n}\)，从而产生规范配对
+
+\[
+p^2+4n=(4kn-p)(4n\ell-p),\qquad kp+1=\ell(4kn-p).
+\]
+
+这给出一个结构性零容量边界：若 \(n=s^2\)，则
+\(\Delta=p^2+(2s)^2\) 是本原平方和，全部因子均为 \(1\pmod4\)，而候选
+\(r_k\equiv3\pmod4\)，故整个 quotient-multiple 菜单为空。CRT 与 Dirichlet
+进一步给出无穷多合法核心 first-overflow 控制；\(p=2161,M=173,n=25\) 是小控制。
+
+共同分母目标门也从 \(p^2c^2\) 的除子枚举精确降到 \(c^2\)。当
+\(p\nmid c\)、\(R=4c-p>0\) 时，
+
+\[
+\mathcal E_p(c)\ne\varnothing
+\Longleftrightarrow
+\exists d\mid c^2:\quad R\mid4d+1\ \text{或}\ R\mid c+d.
+\]
+
+因此两条规范 source tail 现在有完整判据，而不再只有固定见证充分条件。
+合法控制
+
+\[
+(p,M,y,m,n)=(193,27,53,19,15)
+\]
+
+同时避开自然 Bradford 菜单、quotient-multiple 菜单以及
+\(c_1=90,c_2=3660\) 两条规范尾完整门。这严格否定四个局部菜单的无条件全称覆盖，
+但不等于完整 proper-marked 域为空。并且 \(p=193\) 另有 gap \(7\)、\(d=20\)
+的直接 Type II 终端，所以它在 terminal-first 中被预占，不是全局选择器反例。
+
+选择器的下一出口因此必须保留其它精确 source coordinate、扩展 tail 或带
+exact physical-source predicate 的 kernel successor；重复加深 quotient-multiple
+扫描不能跨过平方商障碍。完整证明与聚焦验证见
+[first-overflow 商倍数的因子配对、规范尾精确门与四菜单联合障碍](../claims/type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md)。

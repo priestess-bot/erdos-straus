@@ -109,6 +109,7 @@ depends_on:
   - type-I-fg-qprefix-block-bound-first-overflow-terminal
   - type-I-fg-qprefix-full-section-annihilator-boundary
   - type-I-first-overflow-common-denominator-marked-lift
+  - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
   - type-II-linear-square-gcd-allocation-core-gap-cutoff
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
@@ -247,6 +248,8 @@ sources:
     role: prefix-to-ambient-divisor-section-and-physical-source-completeness-gate
   - claim: type-I-first-overflow-common-denominator-marked-lift
     role: overflow-quotient-alternate-terminal-and-proper-marked-lift
+  - claim: type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
+    role: exact-quotient-factor-pair-tail-gate-and-four-local-menu-boundary
   - claim: type-II-linear-square-gcd-allocation-core-gap-cutoff
     role: Type-II-linear-square-selector-and-core-p-over-3-cutoff
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
@@ -1275,13 +1278,21 @@ prefix target miss 之后必须先用完整 ambient divisor fiber 重算 kernel 
 ambient 截面有六点，\(\chi_{-8}\) 给出 target-visible \(C_2\) divisor-superset
 character，但不是 full physical-source annihilator，不能从 prefix singleton 直接
 申报 exact successor。首个 overflow 菜单为空后则先运行 quotient-multiple Type I 与
-公共分母 marked-lift 菜单；\(p=73,n=7\) 已给出 terminal-preempted 的完整数学 lift
-control，但统一 selector 的 state E2/E3 和 edge normal-form 回执尚未构造，状态仍是
-`candidate_transition`。
+公共分母 marked-lift 菜单；前者已精确等价于
+\(r_k\mid p^2+4n\) 的同余因子配对，且 \(n\) 为平方时结构性全空；后者在
+\(p\nmid c\) 且 \(4c>p\) 时精确等价于某个 \(d\mid c^2\) 满足
+\(4c-p\mid4d+1\) 或 \(4c-p\mid c+d\)。
+\(p=73,n=7\) 已给出 terminal-preempted 的完整数学 lift control，但统一 selector
+的 state E2/E3 和 edge normal-form 回执尚未构造，状态仍是
+`candidate_transition`。另一方面，\(p=193,M=27,n=15\) 严格同时避开自然菜单、
+quotient-multiple 与两条规范尾完整门；它另有直接 Type II 终端，所以只否定四个
+局部菜单的无条件覆盖。两条规范尾全空不得冒充完整 proper-marked 域为空，必须继续
+到其它精确 source coordinate、扩展 tail 或 physical-source/kernel successor。
 Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺口自动严格小于
 \(p/3\)。完整门分别见
 [ambient divisor-kernel 截面边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)、
-[first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md) 与
+[first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
+[first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
 [Type II 线性平方分配和核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令

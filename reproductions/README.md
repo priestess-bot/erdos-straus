@@ -637,3 +637,12 @@ quotient-multiple \(k=3\) 的 alternate Type I 命中，并完整枚举七个
 Type II 除子与线性 \(L\)-square 条件的双射、gcd 正规形和最小余量平方根核门。它只
 运行 \(p=17\) 的等号边界以及两个 \(M=27\) 控制：\(p=73\) 的大缺口全空和
 \(p=557281\) 的 \(d=16\) 构造，不以有限测试代替全称证明，也不扫描历史范围。
+
+`type_i_first_overflow_factor_pair_tail_joint_obstruction.py` 聚焦核对
+quotient-multiple 命中与 \(p^2+4n\) 同余因子的双射、互补因子配对和局部降次。
+脚本用 \(p=73,M=27\) 保留正控制，用 \(p=73,M=21,n=9\) 与
+\(p=2161,M=173,n=25\) 核对平方商结构性空菜单；最后直接比较
+\(\mathcal E_p(c)\) 与两个 \(c^2\)-除子族，并验证 \(p=193,M=27,n=15\)
+的自然菜单、quotient-multiple 和两条规范尾完整门同时为空。它同时核对
+\(p=193\) 的直接 Type II 终端，防止把局部四菜单障碍误报为 terminal-first
+全局反例；不运行历史扫描。

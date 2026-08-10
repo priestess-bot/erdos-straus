@@ -514,9 +514,22 @@ one actual typed F request + one named edge
               core prime + m < p + Bradford hit: TYPE_I_OR_II_TERMINAL
               menu empty: FIRST_OVERFLOW_SHORT_GAP_MENU_EMPTY
               -> quotient-multiple Type I alternate menu
-              -> common-denominator proper marked lift menu
+              -> canonical c1/c2 exact common-denominator submenus
+              -> four local menus empty:
+                   full proper-marked menu on other exact source coordinates
+                   or another expanded tail
+                   or exact physical-source/kernel successor
               numerical quotient n_M < p alone: no descent charge without E4
 ~~~
+
+后续因子定理把 quotient-multiple 菜单压成
+\(r_k\mid p^2+4n_M\) 的有界同余因子门；当 \(n_M\) 为平方时该菜单结构性为空。
+共同分母目标门在 \(p\nmid c\) 且 \(4c>p\) 时也已有精确的两个 \(c^2\)-除子族。特别地，
+\((p,M,y,m,n_M)=(193,27,53,19,15)\) 的自然菜单、quotient-multiple 菜单与
+两条规范尾 \(c_1=90,c_2=3660\) 同时失败。这只输出
+FOUR_LOCAL_MENUS_EMPTY：它不等于完整 proper-marked 域为空，更不等于猜想反例。
+\(p=193\) 本身另有直接 Type II 终端，因而在 terminal-first 中会被预占。严格证明见
+[first-overflow 商倍数的因子配对、规范尾精确门与四菜单联合障碍](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md)。
 
 这张分派第一次在同一个 actual F 状态上闭合了“一个请求 \(\to\) full-\(C_3\)
 candidate block”，并把一个 owner-window 失败送入确定的 \(<4M\) 短缺口菜单。尚未

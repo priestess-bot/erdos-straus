@@ -448,9 +448,25 @@ c_2=T(T+1).
 便给出 \(e\in\mathcal E_p(c_2)\)。对 \(p=73,n=7\)，(30)--(31) 取
 \(c_1=21,e=7\)，(32)--(33) 取 \(c_2=210,e=10\)，正好恢复 (27)--(28)。
 
-这两族把下一全称缺口压成明确的 divisor-residue 命题：对 menu-empty overflow
-quotient，证明 quotient-multiple 菜单或至少一个规范 source tail 命中；若全部失败，
-才转向 Fourier/kernel exact successor。它们不是对所有核心素数已经覆盖的断言。
+这两族最初把候选缺口压成一个明确的 divisor-residue 析取：对 menu-empty overflow
+quotient，尝试 quotient-multiple 菜单或至少一个规范 source tail。后续精确化已经
+证明这个析取本身并不全称成立。quotient-multiple 命中恰等价于
+\(r_k\mid p^2+4n\)，而 \(n\) 为平方时整个菜单结构性为空；共同分母目标门在
+\(p\nmid c\) 且 \(4c>p\) 时又精确约化为
+
+\[
+\exists d\mid c^2:\quad
+4c-p\mid4d+1\ \text{或}\ 4c-p\mid c+d.
+\tag{34}
+\]
+
+合法控制 \((p,M,y,m,n)=(193,27,53,19,15)\) 的自然菜单、quotient-multiple
+菜单以及 \(c_1=90,c_2=3660\) 两条规范尾完整门同时为空。因此两条规范尾失败后
+必须允许其它精确 source coordinate、扩展 tail 或 physical-source/kernel
+successor，不能把该局部析取登记为覆盖定理。该 \(p=193\) 控制另有直接 Type II
+终端，故只是否定四个局部菜单的无条件全称覆盖，不是否定 terminal-first 全局选择器。
+完整因子配对、精确门与作用域见
+[first-overflow 商倍数的因子配对、规范尾精确门与四菜单联合障碍](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md)。
 
 ## 聚焦验证
 
@@ -460,3 +476,4 @@ python3 reproductions/type_i_first_overflow_common_denominator_marked_lift.py --
 
 验证器只重算 (20)--(33) 的两个自然 \(y\) 门、三个 quotient-multiple 候选、
 \(\operatorname{Sol}_{\le}(7)\) 规范完整表、精确 marked set 与两条映射；不运行历史扫描。
+式 (34)、quotient 因子配对和四菜单联合障碍由后续专用 verifier 定向核对。
