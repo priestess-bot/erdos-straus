@@ -12,11 +12,12 @@ statement: >-
   对只含该 request 的空 ledger，可显式选择新的 assignment/lineage/charge，建立三层
   单射 owner map、六个 fresh source/target keys 和一个 shallow occurrence，故得到
   standalone fresh-ledger typed lineage。若旧 s0=19838 的 depth-2 assignment 已活跃，
-  新旧 target keys 部分重叠而 source keys 不同，既非全 fresh 也非完整 replay；原子
-  replacement ledger 仍未证明。因而从头选择新 witness 时 ambient depth 可取
-  c_new=(3,0)、delta_new=(0,2)，但不能与旧 receipt 叠加，也不能宣称 in-place
-  supersession 或 Kneser price 已登记；83 typed owner、physical-source exactness、
-  FIBER_REALIZED、E4 和 E5 均仍未证明。
+  新旧 target keys 部分重叠而 source keys 不同，所以普通插入既非全 fresh 也非完整
+  replay；本卡只输出普通插入的 partial-overlap boundary，不在本卡内断言原子替换。
+  因而 standalone 选择的 active labelled prefix-depth 可取 (3,0)，对应的 conditional
+  ambient-kernel defect 为 (0,2)，但不能与旧 receipt 叠加，也未登记 Kneser price。
+  atomic replacement、neutral product adapter、physical-source exactness、
+  FIBER_REALIZED、E4 和 E5 均须由后续独立 claim 处理。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -436,7 +437,7 @@ occurrence 与 shallow-capacity 条件全部闭合，从而得到
 \(\texttt{FIBER\_REALIZED}\) 之前不得登记 Kneser 价格。因为 (6)--(7) 给出普遍上界
 \(d\le3\)，(37) 达到固定 target \(x=182\) 的最大 q-prefix 深度。
 
-## 6. 旧 assignment 已活跃时的严格迁移边界
+## 6. 普通插入边界与后续孤立替换更新
 
 旧 receipt 使用 \((s_0,s_1,D_0)=(19838,138866,19838)\)，其 source height 只有三，
 所以“该固定 lineage 不能到 depth 3”仍然正确。令旧、新 target key 集分别为
@@ -452,16 +453,28 @@ K_{\rm new}^T=K_{\rm old}^T\cup\{(\mathsf T,182,3,4)\}.
 \]
 
 两者部分重叠，而 source value、canonical base、assignment id 与 lineage id 都改变。
-因此在**旧 assignment 已写入的 ledger** 上，新 witness 既非 all-fresh，也非同一
-assignment 的 full replay。现有 fresh/replay 二分只能输出
+因此在**旧 assignment 仍 active 的 ledger** 上直接叠加新 witness 时，它既非
+all-fresh，也非同一 assignment 的 full replay。普通插入门精确输出
 
 \[
-\boxed{\texttt{Q\_PREFIX\_ATOMIC\_REPLACEMENT\_LEDGER\_UNPROVED}.}
+\boxed{\texttt{Q\_PREFIX\_PARTIAL\_OVERLAP\_NOT\_FRESH\_OR\_FULL\_REPLAY}.}
 \tag{40}
 \]
 
-所以 (37) 是从空 ledger 选择新 witness 的存在证书，不是对已活跃旧账本的 in-place
-mutation。两种合法分派必须分开写：
+这只拒绝共存式插入，不是否定先扣除旧使用量再加入新使用量的原子 transaction。
+以下是后续 claim 的集成更新，不属于本卡 statement 的 proof provenance。后续
+[残余容量原子替换定理](type-I-fg-qprefix-atomic-replacement-capacity-normalization.md)
+证明：对 `P557_ISOLATED_SINGLE_REQUEST_LEDGER_V1`，shared target keys 的载荷为
+\(1-1+1=1\)，old-only keys 释放为零，new-only keys 取得一个单位；旧 owner prefix
+又按相同相对层嵌入新 prefix，两侧 stabilizer 都是 \(\{1\}\) 且均为 `UNPRICED`。
+因此可登记
+
+\[
+\boxed{\texttt{P557\_ISOLATED\_SINGLE\_REQUEST\_Q3\_DEPTH2\_TO\_DEPTH3\_ATOMIC\_REPLACEMENT}.}
+\tag{40a}
+\]
+
+正确分派是：
 
 ~~~text
 standalone construction:
@@ -470,10 +483,12 @@ standalone construction:
   request count / elementary role rank / lineage count: 1 / 1 / 1
   capacity price: unregistered; future price may use B3 only
 
-legacy ledger already active:
-  old depth-2 assignment: active
-  new depth-3 candidate: migration obstructed by partial overlap
-  status: Q_PREFIX_ATOMIC_REPLACEMENT_LEDGER_UNPROVED
+isolated single-request snapshot already active:
+  plain insertion while old remains active: rejected by partial overlap
+  atomic transaction: retire old active load and dependent views
+  new depth-3 assignment: active
+  old receipt: immutable tombstone, zero active load
+  status: P557_ISOLATED_SINGLE_REQUEST_Q3_DEPTH2_TO_DEPTH3_ATOMIC_REPLACEMENT
 ~~~
 
 绝不能把 \(B_2\) 与 \(B_3\)、两组 source keys、角色秩或未来 Kneser 价格相加。
@@ -486,14 +501,16 @@ legacy ledger already active:
 \tag{41}
 \]
 
-在 ambient exponent coordinates \((v_3,v_{83})\) 中，从空 ledger 选择 (37) 时可取
+在 ambient exponent coordinates \((v_3,v_{83})\) 中，从空 ledger 选择 (37)，或
+从上述精确孤立单请求快照完成 (40a) 后，active 视图都可取
 
 \[
 \boxed{c_{\rm fresh}=(3,0),\qquad\delta_{\rm fresh}=(0,2).}
 \tag{42}
 \]
 
-旧 ledger 未迁移时仍是 \(c_{\rm legacy}=(2,0)\)、\(\delta_{\rm legacy}=(1,2)\)。
+transaction 提交前的快照仍是
+\(c_{\rm legacy}=(2,0)\)、\(\delta_{\rm legacy}=(1,2)\)。
 两张向量都是完整 ambient-kernel completion 分支的 labelled requirements，不是可
 同时收费的状态，也不把 \((0,2)\) 解释为两个独立角色槽。
 
@@ -505,15 +522,17 @@ typed lineage。它不覆盖：
 
 * 其它 named edges、反向 \(c=2\)、alternate digest 或未记录的 unit normalization；
 * 五条 pairs 的同时使用，或任何重复 request/rank/capacity 收费；
-* 已活跃旧 assignment 到新 assignment 的 atomic replacement transaction；
-* \(83\) 与 \(83^2\) 的 F/G neutral owner tokens；
+* 更大共享 ledger 中未逐 key 检查残余容量或已有不可逆下游 effect 的 replacement；
+* \(83\) 与 \(83^2\) 的 F/G neutral-product adapter；现行 q-prefix typed-owner 路线已由
+  [\(q=83\) 双重 no-go](type-I-fg-qprefix-h83-typed-owner-no-go.md)排除；
 * \(27\cdot83^b\) 的 F/G provenance-preserving product synthesis；
 * 任意已登记 Kneser price；
 * exact physical-source predicate、完整 `FIBER_REALIZED`、E4 或 E5。
 
 \(p=557281\) 另由首个 overflow gap \(79\) 的 Type II 短证书预先终止；本卡的作用是关闭
-actual F calibration 中“从空 ledger 可选择 \(q=3\) 第三层”的构造缺口，并精确暴露
-旧 ledger 原地迁移门，而不是提供一个未终止核心素数的新终端。
+actual F calibration 中“从空 ledger 可选择 \(q=3\) 第三层”的构造缺口，并给出旧账本
+普通插入的精确 partial-overlap boundary，而不是提供一个未终止核心素数的新终端。
+式 (40a) 的孤立替换及局部深度势 \(1\to0\) 属于后续原子替换 claim，也不是全局 E5。
 
 ## 聚焦验证
 
@@ -523,5 +542,5 @@ python3 reproductions/type_i_fg_qprefix_depth3_replacement_lineage.py --verify
 
 验证器只对本固定 \(p,x,q\) 做解析 deep 分类、direct-label 与 inverse-slot 双枚举、
 五条 elementary candidates、两条 \(C_9\) candidates、显式 witness、standalone
-owner/occurrence assignment、旧新 key 的 partial-overlap obstruction 和 kernel section
-检查；不运行历史测试。
+owner/occurrence assignment、旧新 key 的 plain-insertion partial overlap 和 kernel
+section 检查；原子 transaction 由后续独立 verifier 检查，不运行历史测试。

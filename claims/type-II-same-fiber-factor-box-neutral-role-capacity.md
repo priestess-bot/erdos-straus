@@ -348,17 +348,22 @@ B_{83}=\{1,83,83^2\}
 \tag{31}
 \]
 
-故 \(83,83^2\) 已经是 exact arithmetic neutral cargo。精确状态应分成
+故 \(83,83^2\) 已经是 exact arithmetic neutral cargo。后续
+[\(q=83\) typed-owner no-go](type-I-fg-qprefix-h83-typed-owner-no-go.md)
+又把 owner 状态精化为
 
 \[
 \texttt{TYPEII\_SAME\_FIBER\_H83\_SQUARE\_FACTOR\_RECORD\_EXACT}
 \]
 
-与仍未关闭的
+与现行 q-prefix grammar 下的严格排除
 
 \[
-\texttt{FG\_H83\_SQUARE\_OWNER\_LAYER\_RECEIPT\_UNPROVED}.
+\texttt{P557\_H83\_TYPED\_OWNER\_GRAMMAR\_NO\_GO}.
 \]
+
+未关闭的对象改为 `FG_NEUTRAL_PRODUCT_ADAPTER_UNPROVED`；它不要求或产生
+\(C_{83}\) role。
 
 另一方面，
 
@@ -460,11 +465,14 @@ fixed Type II candidate fiber (D_*, A)
 ~~~
 
 对 (23)，算术 factor-depth 已是 \((4,2)\)，所以 ambient \(83^2\) 方向不存在算术
-缺层；真正剩余的是把 neutral factor records 绑定到 F/G 的 physical source、owner 与
-state realization。另一方面 (33) 严格终止了“寻找 \(C_{83}\) 角色来支付这两层”的
-路线。下一步若仍走该控制，只能构造 typed neutral-cargo owner map，或利用 exact
-factor target miss 生成另一个可提升的状态；不能继续把 \(83\)-factor height 当作
-\(83\)-primary rank。
+缺层；真正剩余的是把两张 eta-relative neutral sheets 绑定到 F/G 的 physical source、
+nonduplicating cargo map、共同最终 stabilizer 定价与 state realization。当前所需账本
+状态是 `UNPRICED`；若完整积块在同一 physical ledger 中实现且最终稳定子仍为 \(\{1\}\)，
+条件性 full-group price 为 2，否则必须在最终商上重算。
+另一方面 (33) 及后续完整规范
+source-pair 空菜单严格终止了“寻找 \(C_{83}\) 角色来支付这两层”的路线。下一步若仍走
+该控制，只能构造 neutral-product adapter，或利用 exact factor target miss 生成另一个
+可提升状态；不能继续把 \(83\)-factor height 当作 \(83\)-primary rank。
 
 ## 聚焦验证
 

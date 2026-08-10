@@ -110,6 +110,8 @@ depends_on:
   - type-I-fg-qprefix-full-section-annihilator-boundary
   - type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity
   - type-I-fg-qprefix-depth3-replacement-lineage
+  - type-I-fg-qprefix-atomic-replacement-capacity-normalization
+  - type-I-fg-qprefix-h83-typed-owner-no-go
   - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
@@ -252,7 +254,11 @@ sources:
   - claim: type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity
     role: labelled-kernel-depth-neutral-cargo-and-physical-synthesis-gate
   - claim: type-I-fg-qprefix-depth3-replacement-lineage
-    role: p557-depth-three-standalone-ledger-and-legacy-migration-boundary
+    role: p557-depth-three-standalone-and-isolated-replacement-boundary
+  - claim: type-I-fg-qprefix-atomic-replacement-capacity-normalization
+    role: prefix-monotone-base-capacity-dag-replacement-and-local-normalization
+  - claim: type-I-fg-qprefix-h83-typed-owner-no-go
+    role: p557-c83-source-role-no-go-and-conditional-neutral-sheet-map
   - claim: type-II-same-fiber-factor-box-neutral-role-capacity
     role: exact-same-fiber-factor-box-neutral-capacity-and-role-rank-boundary
   - claim: type-I-first-overflow-common-denominator-marked-lift
@@ -1293,7 +1299,7 @@ same-fiber Type II factor contract；\(\chi_{-8}\) 在全部因子上平凡而�
 `AMBIENT_KERNEL_PREFIX_DEPTH_CERT`：若
 \(K=E\cap\ker\phi\)、\(\kappa_i=\max_{a\in K}a_i\)，则 labelled kernel 被
 principal prefix \(B_c\) 覆盖当且仅当 \(c\ge\kappa\)。本控制有
-\(\kappa=(3,2)\)，但必须区分两张不可叠加的 occurrence ledger：
+\(\kappa=(3,2)\)。构造过程曾产生两张不可叠加的 occurrence snapshots：
 \[
 (c_{\rm legacy},\delta_{\rm legacy})=((2,0),(1,2)),
 \qquad
@@ -1301,20 +1307,29 @@ principal prefix \(B_c\) 覆盖当且仅当 \(c\ge\kappa\)。本控制有
 \]
 前者保留旧 \(s_0=19838\) assignment；后者由完整 10/5/2 canonical-base 分类中的
 \((14924,104468,7462)\) witness 在空的单请求 ledger 上以显式 fresh owner map
-实现。旧 assignment 已活跃时，新旧 target keys 部分重叠而 source keys 改变，
-故原地迁移返回
-`Q_PREFIX_ATOMIC_REPLACEMENT_LEDGER_UNPROVED`；选择器可以从头选 depth 3，
-但不得把两条 lineage、request、rank 或未来价格相加。
+实现。普通共存式插入因 target layers \(2,3\) 部分重叠而失败；残余容量原子替换定理
+则逐 key 证明精确孤立单请求快照可撤销旧 active load、转移 occurrence backpointer、
+重算七节点依赖闭包并一次提交新 assignment。因而 committed active 视图取
+\((c,\delta)=((3,0),(0,2))\)，旧 receipt 只作为 tombstone 保存；两条 lineage、
+request、rank 或未来价格仍不得相加。局部 depth defect \(1\to0\) 是 preprocessing
+正规化势，不是全局 E5。
 
 算术 factor-depth 已精确为 \((4,2)\)；\(83\) 方向在 \(C_3\) 商中的容量为零而
-neutral fiber multiplier 为 \(3\)。又因 \(83\nmid|U(728)|=288\)，
-\(\operatorname{Hom}(U(728),C_{83})=0\)，所以 \(83,83^2\) 是 exact arithmetic
-neutral cargo，却绝不是两个 \(83\)-primary roles。剩余 \((0,2)\) 只是在 fresh
-选择下的 conditional F/G physical-owner requirement。source-contract exactness
-本身也不蕴含 divisor-downclosure 或 owner closure；必须独立保存
+neutral fiber multiplier 为 \(3\)。新的 \(q=83\) no-go 更强：target height 只允许
+\((J,d)=(1,1)\)，但完整固定基 shallow height-one 菜单为空；同时
+\(83\nmid|U(199)|,|U(728)|\)，所以源、目标两侧的 \(C_{83}\) typed role 都为零。
+因此 \(83,83^2\) 是 exact arithmetic neutral cargo，却不能成为现行 q-prefix grammar
+中的 owner request。剩余 \((0,2)\) 精确分成 \(83B_3\)、\(83^2B_3\) 两张相对于固定
+\(\eta:C_3\) 中性的 sheets；\(\chi_2(83)=-1\) 严格否定“对所有角色中性”。当前
+所需 physical-ledger 状态是 `UNPRICED`；若完整十二点积块在共同 ledger 实现且共同
+最终稳定子经独立验证仍为 \(\{1\}\)，\(83\)-block 的条件性 full-group price 为 \(2\)；
+否则必须在最终商上重算。下一门是 nonduplicating
+eta-neutral product adapter 与共同最终稳定子重定价，而不是继续寻找
+\(83\)-primary role。source-contract exactness 本身也不蕴含 divisor-downclosure
+或 owner closure；必须独立保存
 `EXACT_PHYSICAL_SOURCE_PREDICATE_UNPROVED` /
 `PROVENANCE_PRESERVING_DIVISOR_CLOSURE_UNPROVED` /
-`FG_H83_SQUARE_OWNER_LAYER_RECEIPT_UNPROVED`，不得把算术 factor records
+`FG_NEUTRAL_PRODUCT_ADAPTER_UNPROVED`，不得把算术 factor records
 重复收费为 typed slots。首个 overflow 菜单为空后则先运行
 quotient-multiple Type I 与
 公共分母 marked-lift 菜单；前者已精确等价于
@@ -1332,6 +1347,8 @@ Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺�
 [ambient divisor-kernel 截面边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)、
 [kernel-depth 与 neutral-cargo 容量边界](type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)、
 [depth-\(3\) standalone fresh-ledger 构造与迁移边界](type-I-fg-qprefix-depth3-replacement-lineage.md)、
+[q-prefix 残余容量原子替换与局部正规化](type-I-fg-qprefix-atomic-replacement-capacity-normalization.md)、
+[\(q=83\) 规范 source-pair 与 typed-owner no-go](type-I-fg-qprefix-h83-typed-owner-no-go.md)、
 [同纤维精确因子盒与 primary-role 边界](type-II-same-fiber-factor-box-neutral-role-capacity.md)、
 [first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
 [first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
@@ -1550,12 +1567,19 @@ F/G sink。详见
   'COMMON_ROLE_LINE_CERT'、再使归一化指定值向量通过该角色线的 evaluation-image
   门（多角色分支改过完整 evaluation-Rado），并且全部
   边通过联合来源、`CANDIDATE_FIBER_QBLOCK_BOUND` 与 fresh occurrence 门时，才可登记连续
-  层满匹配并压成一个 q-prefix lineage。替代 assignment 必须从空 ledger 选择，或另证
-  atomic replacement；部分 key overlap 不得冒充 replay。即使其 \(C_q\) 商已满，
+  层满匹配并压成一个 q-prefix lineage。替代 assignment 必须从空 ledger 选择，或通过
+  残余容量、owner 交换图、依赖 rollback/carry 与幂等提交的 atomic replacement；部分
+  key overlap 不得冒充 replay。\(p=557281\) 的精确孤立单请求快照替换已闭合，更大共享 ledger 仍须
+  逐 key 检查。即使其 \(C_q\) 商已满，
   prefix-local kernel section 也必须先扩到 exact same-fiber Type II factor box。
   该盒可精确判定固定纤维的 Type II target hit/miss；若要继续生成 F/G successor，
   仍须通过 exact physical-source predicate 与 record maps，才能调用
   `KERNEL_SECTION_SOURCE_COMPLETE`、重算 exact source section 并进入 successor；
+  neutral prime 坐标若 canonical source-pair 与 primary role 同时为零，则停止当前
+  typed-owner 搜索；若保持同一 quotient、charge、target fiber 与 state/grammar，改走
+  nonduplicating eta-neutral product adapter，并在 physical realization 前保持
+  `UNPRICED`、之后按共同最终 stabilizer 重定价；切换其它 role/raw grammar 或 target
+  fiber 时必须重新建立各自 source contract；
   若首个 overflow 菜单为空，依次运行 quotient-multiple
   Type I 和公共分母 proper-marked 菜单，后者还须补齐 state E2/E3 才能升级为 edge。
   多角色需求
@@ -1576,7 +1600,10 @@ prime 的算术 carrier 已有统一构造；rank-one 请求的最小 \(q\)-heig
 决定性缺口已收紧为证明 fixed-layer 请求在原层、unlayered 请求在新选层分别满足
 范围/occurrence/target-state 门，并把多角色上尾匹配实现为真实物理槽，或把对偶、
 窗口、上尾容量与单块降模失败后
-的显式 kernel Fourier 扩成完整核来源盒。局部 \(D_*<D_0\) 还必须配上不可重置的
+的显式 kernel Fourier 扩成完整核来源盒。对当前 p557 控制，具体缺口已从“q=3
+能否迁移、q=83 owner 能否找到”收紧为 neutral sheets 能否获得 exact physical
+membership、nonduplicating eta-neutral cargo map、共同稳定子定价与 state realization。
+局部 \(D_*<D_0\) 还必须配上不可重置的
 owner phase；自然较小余因子在 \(p=2113,n=241\) 上已有严格空 marked-fiber 反例，
 不能再作为默认 E4。菜单空、来源阻塞或 rank 过载若不能进入因子选择，必须转成带标记的
 严格跨纤维下降。另一条

@@ -353,13 +353,21 @@ def verify_witness() -> dict[str, object]:
         "standalone_new_keys_fresh": True,
         "shallow_occurrence_capacity": 1,
         "legacy_target_overlap": tuple(sorted(old_target_keys)),
-        "legacy_in_place_status": "Q_PREFIX_ATOMIC_REPLACEMENT_LEDGER_UNPROVED",
+        "legacy_plain_insert_status": (
+            "Q_PREFIX_PARTIAL_OVERLAP_NOT_FRESH_OR_FULL_REPLAY"
+        ),
+        "atomic_replacement_verified_separately": True,
+        "atomic_replacement_scope": "P557_ISOLATED_SINGLE_REQUEST_LEDGER_V1",
+        "atomic_replacement_status": (
+            "P557_ISOLATED_SINGLE_REQUEST_Q3_DEPTH2_TO_DEPTH3_"
+            "ATOMIC_REPLACEMENT"
+        ),
         "old_receipt_disposition": "ALTERNATIVE_NOT_COCHARGED",
         "capacity_price_registered": False,
-        "ambient_depth_legacy": (2, 0),
-        "ambient_defect_legacy": (1, 2),
-        "ambient_depth_fresh_choice": (3, 0),
-        "ambient_defect_fresh_choice": (0, 2),
+        "active_labelled_prefix_depth_legacy": (2, 0),
+        "conditional_ambient_kernel_defect_legacy": (1, 2),
+        "active_labelled_prefix_depth_fresh_choice": (3, 0),
+        "conditional_ambient_kernel_defect_fresh_choice": (0, 2),
         "neutral_cargo_realized": False,
         "physical_source_exactness_proved": False,
         "e4_e5_proved": False,

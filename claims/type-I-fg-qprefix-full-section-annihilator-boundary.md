@@ -348,13 +348,18 @@ labelled exponent box 层面的最小补全已由后续
 精确计算为 \(\kappa=(3,2)\)。后续
 [depth-\(3\) replacement lineage](type-I-fg-qprefix-depth3-replacement-lineage.md)
 已在空的单请求 ledger 上构造 standalone fresh typed depth \(3\)，故从头选择该
-witness 时可用 \(c_{\rm fresh}=(3,0)\)、\(\delta_{\rm fresh}=(0,2)\)。旧 depth-\(2\)
-assignment 已活跃时的原子迁移仍未证明，必须保留
-\(c_{\rm legacy}=(2,0)\)、\(\delta_{\rm legacy}=(1,2)\)；两张账本不可叠加。
+witness 时可用 \(c_{\rm fresh}=(3,0)\)、\(\delta_{\rm fresh}=(0,2)\)。后续
+[残余容量原子替换定理](type-I-fg-qprefix-atomic-replacement-capacity-normalization.md)
+又证明精确孤立单请求快照可从 depth \(2\) 原子正规化到 depth \(3\)：旧 receipt
+只保留 tombstone，active labelled prefix-depth 与 conditional ambient-kernel defect
+分别取 \((3,0)\)、\((0,2)\)，两张账本仍不可叠加。
 [同纤维因子盒与 neutral-role 容量定理](type-II-same-fiber-factor-box-neutral-role-capacity.md)
 又证明算术 factor-depth 本来就是 \((4,2)\)，并且 \(83^2\) 是 exact neutral factor
-cargo；剩余两层缺口只在
-F/G physical-source/owner 语义中存在。exact physical-source predicate 证明真实来源
+cargo。进一步的
+[\(q=83\) typed-owner no-go](type-I-fg-qprefix-h83-typed-owner-no-go.md)
+严格排除现行 q-prefix grammar 下的 \(83\)-primary request；若保持当前 \(\eta:C_3\)、
+既有 q=3 charge 与同一 state/grammar，则剩余两层的下一接口是附着于该 charge 的
+neutral-product cargo。exact physical-source predicate 证明真实来源
 也必须覆盖这些 records 之前，它们不是物理来源的无条件必要容量；
 provenance-preserving divisor closure、owner maps 与 state realization 仍是显式未证门。
 
