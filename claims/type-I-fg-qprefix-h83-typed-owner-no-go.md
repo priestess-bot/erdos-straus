@@ -15,10 +15,14 @@ statement: >-
   这只证明当前 grammar 的 q=83 request 增量、C83 role rank 与 eta:C3 quotient capacity
   均为零；二次角色 (2/u) 在 83 上取 -1。完整十二点积块在 U(728) 的稳定子为 {1}，
   因而若以后在共同 physical ledger 中实现且最终稳定子仍为 {1}，83-block 的条件性
-  full-group price 为 2；其它最终稳定子必须重算。当前所需账本状态是 UNPRICED。
+  full-group price 为 2；其它最终稳定子必须重算。继续该校准分支时的账本状态是
+  UNPRICED。
   升级为 F/G physical receipt 仍需独立的 membership、
-  record-to-state、provenance-preserving product synthesis、nonduplicating eta-neutral
-  cargo adapter、共同最终稳定子重定价与 state realization。
+  record-to-state、provenance-preserving product synthesis、nonduplicating finite
+  prefix-provenance adapter 或可选的 full-C4-labelled cargo state、共同最终稳定子
+  重定价与 state realization；
+  若忽略后续已发现的直接
+  Type II 终端而继续把该分支作为 physical-adapter 校准，账本才保持 UNPRICED。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -50,7 +54,7 @@ sources:
   - reproduction: reproductions/type_i_fg_qprefix_h83_typed_owner_no_go.py
     role: canonical-menu-role-no-go-and-neutral-sheet-certificate
 visibility: public
-last_checked: '2026-08-10'
+last_checked: '2026-08-11'
 ---
 
 # \(p=557281\) 的 \(q=83\) 规范 source-pair 与 typed-owner 双重 no-go
@@ -334,6 +338,15 @@ B_3\sqcup T_1\sqcup T_2
 \tag{33}
 \]
 
+但 \(\chi_2(3)=-1\) 同样成立，所以 \(\chi_2\) 不在
+\(\langle3\rangle\) 上平凡，不能下降为
+\(\langle3,83\rangle/\langle3\rangle\) 的角色。它这里只严格否定“对所有角色中性”；
+不能据此构造 sheet owner 或把两层 cargo 收费为一个 \(C_2\) request。后续
+[隐藏 \(C_4\) 商与源指数障碍定理](type-I-fg-qprefix-h83-hidden-c4-source-extension.md)
+证明正确的相对角色是
+\(\psi_4(u)=(u\bmod13)^3\)：它杀掉 \(3\)、把 \(83\) 送到阶四元素，并说明
+\(\chi_2\) 只在固定 base record 后看见其 \(C_2\) 影子。
+
 更重要的是，令完整积块
 
 \[
@@ -367,15 +380,40 @@ sheets 单独推出的价格定理。
 
 ## 7. 选择器后果与剩余接口
 
-式 (23) 终止了现行 grammar 中“继续寻找 \(83\)-primary q-prefix owner”的路线。若保持
-当前 \(\eta:C_3\)、既有 q=3 charge、同一 target fiber，且不切换 grammar 或 state，
-则 ambient defect \((0,2)\) 的下一接口是两层 eta-relative factor cargo，而不是 typed
-q-prefix deficit；此受限分支要构造 nonduplicating eta-neutral product adapter：
+式 (23) 终止了现行 grammar 中“继续寻找 \(83\)-primary q-prefix owner”的路线。
+后续相对 transport 计算进一步给出
 
-1. 证明 (30) 中所用 records 的 exact F/G physical membership；
-2. 给出 record-to-state 或 actual raw digest；
+\[
+\langle3,83\rangle/\langle3\rangle\simeq C_4.
+\tag{37}
+\]
+
+因此若保持当前 \(\eta:C_3\)、既有 q=3 charge 与同一 target fiber，ambient defect
+\((0,2)\) 必须经过以下四层顺序门：
+
+1. 只保存 \(\eta\) 时，无法从 key 恢复三张算术 sheets 的 identity；这还不是
+   physical collision；
+2. 要求 distinction 在整个 \(U(199)\) 关系上下降为同态角色时，源群二进指数只有
+   \(2\)，不能实现 (37) 的本原四阶相位；
+3. 允许只在 \(b=0,1,2\) 上定义并显式保留 provenance 的 finite partial-prefix
+   adapter；它不受第二支排除，但仍未构造；
+4. 若要求完整乘法闭合，可选地新增外部 \(C_4\)-labelled state；已有模型只在代数层
+   实现。
+
+前两层是可同时登记的诊断；第三层是未证的 physical 路线，第四层只是它的可选完整
+乘法 completion，不是互斥的第四分支。
+
+对当前 \(p\)，严格因子 source-switch 的 \(C_4\) 指数菜单恰为
+\(D'\in\{13,26,91\}\)，最小 \(D'=13\) 已由
+\((A,C,K,h,B)=(1,13,2,103,10821)\) 给出直接 Type II 终端。因此 terminal-first
+selector 在进入 partial/full-state 路线前已经结束这个控制。若仍把它保留为
+F/G physical-adapter 校准，则第三层及其可选第四层还必须：
+
+1. 证明 (30) 中 records 的 exact F/G physical membership；
+2. 给出 finite prefix provenance，并在选择第四支时给出外部 \(C_4\)
+   record-to-state，或提供 actual raw digest；
 3. 证明 provenance-preserving typed product synthesis；
-4. 构造不新增 q=83 request、C83 role 或重复 charge 的 cargo map；
+4. 构造不新增 q=83 request、C83 role 或重复 q=3 charge 的 cargo map；
 5. 独立求共同最终 stabilizer，在其商上登记实际 price，并通过 occurrence 与 state
    realization；
 6. 最后通过 E4 与 E5。
@@ -394,4 +432,5 @@ python3 reproductions/type_i_fg_qprefix_h83_typed_owner_no_go.py --verify
 \(U(199)\) 与 \(U(728)\) 以验证两侧 \(C_{83}\) role zero，并重算两张 eta-relative
 sheets、\(\chi_2(83)\)、完整积块稳定子及 \(T_{\rm final}=\{1\}\) 时的条件 price。
 `UNPRICED` 明记为 physical adapter/state-realization 未通过时所需的账本状态；不运行
-历史测试。
+历史测试。式 (37)、四次角色、源指数障碍与 \(D'=13\) 终端由后续 claim 的独立聚焦
+验证器检查。

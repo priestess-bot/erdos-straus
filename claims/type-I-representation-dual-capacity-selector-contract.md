@@ -112,6 +112,7 @@ depends_on:
   - type-I-fg-qprefix-depth3-replacement-lineage
   - type-I-fg-qprefix-atomic-replacement-capacity-normalization
   - type-I-fg-qprefix-h83-typed-owner-no-go
+  - type-I-fg-qprefix-h83-hidden-c4-source-extension
   - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
@@ -259,6 +260,8 @@ sources:
     role: prefix-monotone-base-capacity-dag-replacement-and-local-normalization
   - claim: type-I-fg-qprefix-h83-typed-owner-no-go
     role: p557-c83-source-role-no-go-and-conditional-neutral-sheet-map
+  - claim: type-I-fg-qprefix-h83-hidden-c4-source-extension
+    role: p557-relative-C4-role-source-exponent-no-go-and-role-guided-terminal
   - claim: type-II-same-fiber-factor-box-neutral-role-capacity
     role: exact-same-fiber-factor-box-neutral-capacity-and-role-rank-boundary
   - claim: type-I-first-overflow-common-denominator-marked-lift
@@ -282,7 +285,7 @@ sources:
   - claim: type-I-fg-generalized-rado-fixed-quotient-defect
     role: exact-generalized-rado-defect-and-scalar-descent-boundary
 visibility: public
-last_checked: '2026-08-10'
+last_checked: '2026-08-11'
 ---
 
 # 表示—对偶—容量统一选择器的状态级 typed 分派合同
@@ -1315,18 +1318,48 @@ request、rank 或未来价格仍不得相加。局部 depth defect \(1\to0\) �
 正规化势，不是全局 E5。
 
 算术 factor-depth 已精确为 \((4,2)\)；\(83\) 方向在 \(C_3\) 商中的容量为零而
-neutral fiber multiplier 为 \(3\)。新的 \(q=83\) no-go 更强：target height 只允许
+neutral fiber multiplier 为 \(3\)。\(q=83\) no-go 先给出：target height 只允许
 \((J,d)=(1,1)\)，但完整固定基 shallow height-one 菜单为空；同时
 \(83\nmid|U(199)|,|U(728)|\)，所以源、目标两侧的 \(C_{83}\) typed role 都为零。
 因此 \(83,83^2\) 是 exact arithmetic neutral cargo，却不能成为现行 q-prefix grammar
 中的 owner request。剩余 \((0,2)\) 精确分成 \(83B_3\)、\(83^2B_3\) 两张相对于固定
-\(\eta:C_3\) 中性的 sheets；\(\chi_2(83)=-1\) 严格否定“对所有角色中性”。当前
-所需 physical-ledger 状态是 `UNPRICED`；若完整十二点积块在共同 ledger 实现且共同
-最终稳定子经独立验证仍为 \(\{1\}\)，\(83\)-block 的条件性 full-group price 为 \(2\)；
-否则必须在最终商上重算。下一门是 nonduplicating
-eta-neutral product adapter 与共同最终稳定子重定价，而不是继续寻找
-\(83\)-primary role。source-contract exactness 本身也不蕴含 divisor-downclosure
-或 owner closure；必须独立保存
+\(\eta:C_3\) 中性的 sheets。
+
+相对 transport 精化表明，真正被 \(\eta\) 隐藏的是
+\[
+\langle3,83\rangle/\langle3\rangle\simeq C_4,
+\]
+其忠实角色为 \(\psi_4(u)=(u\bmod13)^3\)，满足
+\(\psi_4(3)=1\)、\(\operatorname{ord}\psi_4(83)=4\)。此前的
+\(\chi_2\) 在 \(3\) 与 \(83\) 上都取 \(-1\)，不下降到这个相对商；固定同一
+\(3^a\) 后它只看见 \(C_4\) 的 \(C_2\) 影子。于是下一门不是一个未分类的
+eta-neutral adapter，而是四层顺序门：
+
+1. `ETA_KEY_IDENTITY_LOSS`：仅凭 \(\eta\)-key 无法恢复三张算术 sheets 的
+   identity；在 physical receipts 尚未证明时不能称为物理碰撞；
+2. `WHOLE_SOURCE_HOMOMORPHIC_EXPONENT_OBSTRUCTED`：要求 sheet direction 在
+   整个 \(U(199)\) 关系上下降为同态 \(C_4\) 角色时，源指数不足，且冻结
+   factor-\(2\) edge 的唯一 \(C_2\) 相位也不匹配；
+3. `PARTIAL_PREFIX_PROVENANCE_ADAPTER_UNPROVED`：允许只在
+   \(b=0,1,2\) 上定义并显式保留 provenance，不要求延拓到完整 \(C_4\)；指数 no-go
+   不排除它，但 physical membership、product synthesis 与 owner/occurrence 未证；
+4. `FULL_C4_STATE_EXTENSION_OPTIONAL`：若要求完整乘法闭合，可新增四阶
+   state；抽象模型只证明 algebraic image，不是 physical receipt。
+
+前两层可同时登记；第三层是未证的 physical 路线，第四层只是第三层在要求完整乘法
+闭合时的可选 completion，不能把它们当作四个互斥分支收费。
+
+对本控制，四阶角色兼容的严格因子菜单恰为 \(D'\in\{13,26,91\}\)；最小
+\(D'=13\) 已由 \((A,C,K,h,B)=(1,13,2,103,10821)\) 给出
+\[
+\frac4{557281}
+=\frac1{140673}+\frac1{14489306}+\frac1{156788780226}.
+\]
+因此 terminal-first 分派在 partial/full-state 路线前直接结束 \(p=557281\)。若仍把
+第三层及其可选第四层作为 physical-adapter 校准，当前 ledger 状态保持 `UNPRICED`；只有完整十二点积块在
+共同 ledger 实现且最终稳定子独立验证仍为 \(\{1\}\)，条件性 full-group price 才为
+\(2\)，否则必须在最终商上重算。source-contract exactness 本身也不蕴含
+divisor-downclosure 或 owner closure；必须独立保存
 `EXACT_PHYSICAL_SOURCE_PREDICATE_UNPROVED` /
 `PROVENANCE_PRESERVING_DIVISOR_CLOSURE_UNPROVED` /
 `FG_NEUTRAL_PRODUCT_ADAPTER_UNPROVED`，不得把算术 factor records
@@ -1349,6 +1382,7 @@ Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺�
 [depth-\(3\) standalone fresh-ledger 构造与迁移边界](type-I-fg-qprefix-depth3-replacement-lineage.md)、
 [q-prefix 残余容量原子替换与局部正规化](type-I-fg-qprefix-atomic-replacement-capacity-normalization.md)、
 [\(q=83\) 规范 source-pair 与 typed-owner no-go](type-I-fg-qprefix-h83-typed-owner-no-go.md)、
+[\(83\) sheets 的隐藏 \(C_4\) 商与源指数障碍](type-I-fg-qprefix-h83-hidden-c4-source-extension.md)、
 [同纤维精确因子盒与 primary-role 边界](type-II-same-fiber-factor-box-neutral-role-capacity.md)、
 [first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
 [first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
