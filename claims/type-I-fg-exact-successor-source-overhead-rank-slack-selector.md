@@ -653,8 +653,14 @@ slice。它严格证明：选择秩亏可以支付 source overhead，而物理 m
 source-column rank，不能决定任何 residual role capacity。
 
 本卡没有从任意 F/G 状态自动制造 \(\Sigma'_\omega\)，也没有证明整数 E1--E5。
-下一决定性算术问题因而更窄：在实际 nearest-fiber、primary-filter 或 owner
-候选中，构造一个带来源的 exact successor 并验证
+primary-filter 的活动源差分现已精确证明为全源张成：规范 Type I 盒有
+\(D_B=H\)。在 realization 之前，保留全部活动源的 filter-only 候选只能证明
+\(T_\omega^{\mathrm{cand}}=Q_U\) 并输出候选饱和；若它 independently realized
+为 exact successor，则其合法 \(T_\omega=Q_U\) 与 \(e_\omega=0\)。所以
+primary-filter 只有先附加一个独立证明的算术 source contraction 才能重新进入本门。
+下一决定性算术问题因而更窄：在实际
+nearest-fiber、owner，或 primary-filter 加真实 source contraction 的候选中，
+构造一个带来源的 exact successor 并验证
 
 \[
 Y_\omega=S_\omega+T_\omega\ne Q_U
@@ -667,6 +673,9 @@ h_\omega^*<\delta+a_\omega.
 \(T_\omega\ne Q_U\)。若全部实际候选都达到等号，则必须把
 \(Y_\omega=Q_U\)（等价 \(h_\omega^*=\delta+a_\omega\)）的饱和证书转成 Type I/II
 终端或另一良基下降。
+
+primary-filter 零容量定理及实际 \(p=73,R=27\) 的 sharp deficit 饱和控制见
+[primary filter 的活动源差分饱和与 source-preserving successor 零容量](type-I-primary-filter-active-source-saturation-zero-successor-capacity.md)。
 
 ## 聚焦验证
 

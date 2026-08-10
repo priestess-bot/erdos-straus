@@ -111,6 +111,7 @@ depends_on:
   - type-I-fg-dependent-role-evaluation-rado-tensor-selector
   - type-I-fg-snf-canonical-role-evaluation-quotient
   - type-I-fg-generalized-rado-fixed-quotient-defect
+  - type-I-primary-filter-active-source-saturation-zero-successor-capacity
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -1358,6 +1359,24 @@ rank slack 可以严格支付 source overhead。若目标列在
 \(T_\omega\subseteq X_{U,J}+S_\omega\)，相同流值或物理割容量不能替代该秩。
 完整定理见
 [exact successor 的最小 source 开销、选择秩松弛与变开销 Grassmann 选择器](type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)。
+
+primary-filter 分支现在还有一个必须先于 exact-successor 容量门执行的活动源检查。
+对盒 \(\prod_i[-\nu_i,\nu_i]\)，差分格和差分群分别精确为
+\[
+\bigoplus_{\nu_i>0}\mathbb Ze_i,\qquad
+\langle g_i:\nu_i>0\rangle.
+\]
+因此规范 Type I 全素因子盒必有 \(D_B=H\)：support-annihilator 分支为空，
+非平凡局部 elementary role 若通过 ambient extension，其活动源列就张成全部
+\(K_R\)，继而张成每个固定割商 \(Q_U\)。realization 前只能把该空间记为
+\(T_\omega^{\mathrm{cand}}=Q_U\)，输出
+PRIMARY_FILTER_CANDIDATE_SOURCE_SATURATED 与
+SELECTED_SOURCE_STATE_REALIZATION_UNPROVED；不能定义 \(e_\omega\)。若 exact
+state realization 通过且保留这些列，才有合法 \(T_\omega=Q_U\)，并输出
+PRIMARY_FILTER_SOURCE_PRESERVING_SUCCESSOR_CAPACITY_EXHAUSTED。只有附带独立
+算术 source contraction、exact state realization 和 E4/E5 lift 的候选，才重新
+调用上述 \(e_\omega\) 门。详见
+[primary filter 活动源饱和零容量定理](type-I-primary-filter-active-source-saturation-zero-successor-capacity.md)。
 
 只有每个请求的 source 候选严格因子化为三类允许集的笛卡尔积时，完整选择才精确
 收缩为 capacitated deep Hall、shallow Hall 与上述 evaluation-Rado。非矩形三候选

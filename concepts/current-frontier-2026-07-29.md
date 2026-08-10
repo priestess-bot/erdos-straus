@@ -5114,6 +5114,48 @@ slot source columns 的秩不同而分别得到 residual capacity \(1\) 或 \(0\
 
 完整定理及聚焦验证见
 [exact successor 的最小 source 开销、选择秩松弛与变开销 Grassmann 选择器](../claims/type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)。
-下一决定性对象是从实际 nearest-fiber、primary-filter 或 owner provenance 中构造
-至少一个这样的 independently realized exact successor；若所有算术候选都满足
+下一决定性对象是从实际 nearest-fiber、owner，或 primary-filter 加独立算术
+source contraction 的 provenance 中构造至少一个这样的 independently realized
+exact successor；若所有算术候选都满足
 \(e_\omega=0\)，则把该 source-saturation 等号转成 Type I/II 终端或良基下降。
+
+## 2026-08-10：primary filter 的活动源必然饱和可见商
+
+对任意对称指数盒
+\[
+\mathcal B_\nu=\prod_i[-\nu_i,\nu_i]\cap\mathbb Z^r
+\]
+及 \(\phi(z)=\prod_i g_i^{z_i}\)，盒差分格与盒像差分群现已被精确计算为
+\[
+\boxed{
+L_B=\bigoplus_{\nu_i>0}\mathbb Ze_i,\qquad
+D_B=\langle g_i:\nu_i>0\rangle.
+}
+\]
+规范 Type I 素因子盒中每个 \(\nu_i\ge1\)，且 \(H=\langle g_i\rangle\)，所以
+\(D_B=H\)。因此此前 primary-filter Fourier 二分中的
+SUPPORT_ANNIHILATOR_SEPARATION 在规范 Type I 输入上为空；它只可能来自冻结坐标
+或 fixed-layer 外部方向。
+
+若非平凡 q-primary 源角色的局部初等化不能通过
+\(\ell(D_B\cap qH)=0\)，得到严格 ambient-extension 障碍。若通过，则所有活动
+生成元的 evaluation columns 张成整个规范可见商 \(K_R\)，并在任意广义 Rado
+固定割中张成 \(Q_U=K_R/W_U\)。所以任何只做 filtering 且保留全活动源的候选先有
+\[
+T_\omega^{\mathrm{cand}}=Q_U.
+\]
+这只是候选饱和，不能在 state realization 前定义 \(e_\omega\)。若该候选进一步
+independently realized 为 exact successor 并保留这些列，才有
+\[
+T_\omega=Q_U,\qquad
+h_\omega^*=\delta+a_\omega,\qquad
+e_\omega=0.
+\]
+实际 \(p=73,R=27,K=17\cdot29\) 给出 sharp 控制：q=2 filtered Fourier deficit
+恰达到下界 \(1\)，但两个活动源列均为 \(1\in\mathbb F_2\)，剩余角色容量仍为零。
+
+这排除了 raw primary-filter 作为正容量 exact successor。它只有先构造并证明真实
+算术 source contraction、状态 realization、全解 E4 与不可重置 E5，才能重新进入
+Grassmann 容量门。当前更集中的正向候选是 nearest-fiber 与 owner arithmetic；
+primary-filter 保留为选择 source contraction 角色的对偶输入。完整证明见
+[primary filter 的活动源差分饱和与 source-preserving successor 零容量](../claims/type-I-primary-filter-active-source-saturation-zero-successor-capacity.md)。

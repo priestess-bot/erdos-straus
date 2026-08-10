@@ -182,6 +182,18 @@ q^e 当作整数 q-height，会混淆固定层锚点相位、支撑分离和真�
 若 source-map 未封闭，合法回执是 SOURCE_DIFFERENCE_SOURCE_UNCLOSED，而不是
 “无解”或自动递降。
 
+后续的活动坐标精化证明
+\[
+L_B=\bigoplus_{\nu_i>0}\mathbb Ze_i,\qquad
+D_B=\langle g_i:\nu_i>0\rangle.
+\]
+所以规范 Type I 素因子盒的所有 \(\nu_i\ge1\) 时 \(D_B=H\)，本卡 A 支为空；
+B 支若通过 elementary ambient extension，则活动源列已经 source-dominate
+整个规范求值商。保留这些源的 filter-only 候选在 realization 前只得到候选饱和；
+若它 independently realized 为 exact successor，剩余容量才精确为零。完整
+no-go 见
+[primary filter 的活动源差分饱和与 source-preserving successor 零容量](type-I-primary-filter-active-source-saturation-zero-successor-capacity.md)。
+
 ## 聚焦复现
 
 ~~~bash
