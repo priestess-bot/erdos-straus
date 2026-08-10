@@ -47,6 +47,7 @@ used_by:
 - type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
 - type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
 - type-II-p-minus-one-endpoint-envelope-large-prime-allocation
+- type-II-p-minus-one-divisor-downset-prime-power-allocation
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -70,6 +71,8 @@ sources:
   role: fixed-source-rank-Type-II-finite-menu-and-capacity-bound
 - claim: type-II-p-minus-one-endpoint-envelope-large-prime-allocation
   role: endpoint-capacity-large-prime-allocation-and-complete-F-G-empty-dispatch
+- claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
+  role: divisor-downset-forbidden-antichain-and-prime-power-allocation
 visibility: public
 last_checked: '2026-08-11'
 ---
@@ -1093,12 +1096,21 @@ q\le Q_r^{\rm end}:=
 p-1\le\frac{r(r+2)(r+6)}4.
 \]
 
-所以任何把 \(r\) 限制在固定上界的选择器都不可能全称覆盖。对
-\(U=(p-1)/4=s\ell\)、\((s,\ell)=1\) 且
-\(16\ell>(s+2)(s+6)\) 的状态，先应用 `LARGE_PRIME_ASSIGNED_TO_R`：所有可行分解
-都满足 \(\ell\mid r\)、\(q\mid s\)。随后只对 \(q\mid s\) 建立完整 signed divisor
-box；目标在生成子群外时输出 G 角色证书，在生成子群内但有界盒 miss 时输出 F
-对数/Fourier 证书。
+所以任何把 \(r\) 限制在固定上界的选择器都不可能全称覆盖。规范预处理不再只识别
+单大素数，而是构造
+
+\[
+\mathcal C_U=\{q\mid U:q\le Q_{U/q}^{\rm end}\}.
+\]
+
+端点函数沿整除关系单调，故 \(\mathcal C_U\) 是因子下闭容量域；其补集由最小禁止反链
+\(\mathcal B_U\) 唯一生成。选择器先输出 `P_MINUS_ONE_ENDPOINT_DOWNSET` 与
+`MINIMAL_FORBIDDEN_CHUNKS`。若 \(L\in\mathcal B_U\)，任何实际命中都不能满足
+\(L\mid q\)；\(L=\ell^h\) 给出 \(\ell\)-进层分配，复合 \(L\) 则保留联合容量语义，
+不得拆成未经证明的单坐标排除。
+
+随后只对 \(q\in\mathcal C_U\) 建立完整 signed divisor box；目标在生成子群外时
+输出 G 角色证书，在生成子群内但有界盒 miss 时输出 F 对数/Fourier 证书。
 
 所有压缩后纤维为空时只能输出 `P_MINUS_ONE_TYPE_II_EMPTY`，它不是终端，也不是递降，
 必须转交其它 terminal 或 verified edge。\(p=67369\) 给出精确控制：
@@ -1107,7 +1119,9 @@ gap-\(31\) Type I terminal 接管。这个反例证明“自适应 \(r\) 总命�
 默认项。基础有限菜单见
 [固定源秩有限菜单与三次容量界](../claims/type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)，
 端点分配与完整控制见
-[端点容量包络、大素因子分配与 \(p=67369\) 分派](../claims/type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)。
+[端点容量包络、大素因子分配与 \(p=67369\) 分派](../claims/type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)，
+因子格预处理见
+[\(p-1\) 因子 Type II 的下闭容量域与素数幂分配](../claims/type-II-p-minus-one-divisor-downset-prime-power-allocation.md)。
 
 ## 7. 明确不构成递降的对象
 

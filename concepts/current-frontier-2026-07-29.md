@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩菜单现有闭式端点包络 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4；当 U=s*ell 的 ell 足够大时它被强制分配给 r。p=67369 由此成为纯 p-1 Type II 分支的全因子严格反例：五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：把一般大素因子分配后留下的 F 有界盒空证书转成其它终端或严格下降；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：把一般禁止反链压缩后留下的 F 有界盒空证书转成其它终端或严格下降；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -48,6 +48,8 @@ sources:
   role: fixed-source-rank-Type-II-finite-menu-and-cubic-capacity-no-go
 - claim: type-II-p-minus-one-endpoint-envelope-large-prime-allocation
   role: endpoint-capacity-large-prime-allocation-and-p67369-complete-dispatch
+- claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
+  role: endpoint-divisibility-downset-forbidden-antichain-and-power-allocation
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -5975,3 +5977,59 @@ q=7,21,42\quad\text{为循环单位群中的有界离散对数 F 空盒}.
 Type I、外部源、其它正规形或具有 E4/E5 的跨状态容量边；G 角色本身和 F 空盒本身仍
 不是递降。完整证明见
 [\(p-1\) 因子 Type II 的端点容量包络与大素因子分配](../claims/type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)。
+
+## 2026-08-11：端点因子下闭容量域与最小禁止反链
+
+端点包络
+
+\[
+Q(r)=
+\left\lfloor
+\frac{k_0(r)(k_0(r)+1)}{4k_0(r)-r-1}
+\right\rfloor
+\]
+
+虽不按通常整数大小单调，却满足新的整除单调律
+
+\[
+r\mid R\Longrightarrow Q(r)\le Q(R).
+\]
+
+因此对 \(U=(p-1)/4\)，规范端点允许域
+
+\[
+\mathcal C_U=\{q\mid U:q\le Q(U/q)\}
+\]
+
+是因子下闭集。其补集是上闭集，由唯一最小禁止反链
+\(\mathcal B_U\) 无损生成：
+
+\[
+q\in\mathcal C_U
+\iff
+\nexists b\in\mathcal B_U:\ b\mid q.
+\]
+
+这比“把一个足够大的素数放进 \(r\)”更强。若
+\(\ell^e\Vert U\) 且 \(\ell^h>Q(U/\ell^h)\)，则
+
+\[
+v_\ell(q)<h,\qquad v_\ell(r)\ge e-h+1;
+\]
+
+若最小禁止块含多个不同素数，它表达这些坐标不能同时留在 \(q\) 侧，不能拆成虚假的
+逐坐标排除。
+
+三个控制点固定了严格增量：
+
+- \(p=601\)、\(U=150\) 的反链为 \(\{10,15,25\}\)，其中 \(25\) 强制至少一层
+  \(5\) 进入 \(r\)；
+- \(p=1321\)、\(U=330\) 的反链含 \(55\)，但单独的 \(5,11\) 都允许，证明存在
+  真正的跨素数联合容量；
+- \(p=67369\) 的反链退化为 \(\{401\}\)，恰恢复 \(q\mid42\)。
+
+统一选择器现在应先构造 \(\mathcal B_U\)，再只对 \(\mathcal C_U\) 建立
+\(d\mid k^2\) 与 signed F/G 纤维。禁止反链已经是完备的端点 no-go，但不是终端或
+递降；决定性缺口仍是把允许域内的全体 F miss 转成交替终端或具备 E1--E5 的真实
+后继。完整证明见
+[\(p-1\) 因子 Type II 的因子下闭容量域与素数幂分配](../claims/type-II-p-minus-one-divisor-downset-prime-power-allocation.md)。

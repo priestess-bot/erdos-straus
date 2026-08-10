@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。该前驱的全部双尾保持 D-only 候选现又精确分成跨图表 centered Type I 终端菜单与全空 non-source 菜单，不再产生递归边；全部 p-1 等尾显式单标记也只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支压成 d|k^2 的精确有限菜单；保留线性分母后又有 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4，并可把 U=s*ell 的足够大素因子 ell 强制分配给 r。p=67369 的全部因子由此压成 5 张 G 与 3 张 F 空证书，证明纯 p-1 Type II 分支全空，再由 gap-31 Type I 终端接管；所以自适应 r 也必须带完备转交，不能单独承担全称覆盖。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。该前驱的全部双尾保持 D-only 候选现又精确分成有限跨图表 centered Type I 终端菜单与全空 non-source 菜单，不再产生递归边；全部 p-1 等尾显式单标记也只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支压成 d|k^2 的精确有限菜单；保留线性分母后又有 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4。端点函数沿源秩整除关系单调，所以所有端点可行 q 构成 U=(p-1)/4 因子格中的规范下闭容量域；其最小禁止反链同时编码素数幂分配和不可拆分的跨素数联合容量。p=67369 的反链只有 401，允许域恰为 q|42；其 5 张 G 与 3 张 F 证书全部为空，再由 gap-31 Type I 终端接管。因此自适应 r 必须先做禁止块压缩并带完备转交，不能单独承担全称覆盖。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -128,6 +128,7 @@ depends_on:
   - type-II-linear-square-gcd-allocation-core-gap-cutoff
   - type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
   - type-II-p-minus-one-endpoint-envelope-large-prime-allocation
+  - type-II-p-minus-one-divisor-downset-prime-power-allocation
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -303,6 +304,8 @@ sources:
     role: p-minus-one-Type-II-fixed-source-rank-finite-menu-and-cubic-no-go
   - claim: type-II-p-minus-one-endpoint-envelope-large-prime-allocation
     role: endpoint-capacity-large-prime-allocation-and-p67369-F-G-dispatch
+  - claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
+    role: endpoint-divisibility-downset-forbidden-antichain-and-power-allocation
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1553,7 +1556,25 @@ p-1\le\frac{r(r+2)(r+6)}4.
 
 若 \(U=(p-1)/4=s\ell\)、\((s,\ell)=1\) 且
 \(16\ell>(s+2)(s+6)\)，则任何命中都必须满足 \(\ell\mid r\)、\(q\mid s\)。
-这是真正的因子格容量分配，而不只是固定秩 no-go。对 \(p=67369\)，
+更一般地，端点函数 \(Q_r^{\rm end}\) 满足
+
+\[
+r\mid R\Longrightarrow Q_r^{\rm end}\le Q_R^{\rm end}.
+\]
+
+因此
+
+\[
+\mathcal C_U=\{q\mid U:q\le Q_{U/q}^{\rm end}\}
+\]
+
+是因子下闭容量域。其补集由唯一的最小禁止反链 \(\mathcal B_U\) 生成；若
+\(L\mid U\) 且 \(L>Q_{U/L}^{\rm end}\)，则任何命中都不能满足 \(L\mid q\)。
+取 \(L=\ell^h\) 给出素数幂层分配，取含多个素因子的 \(L\) 则给出不可拆分的联合
+容量禁止块。选择器必须先构造 \(\mathcal B_U\)，再只对 \(\mathcal C_U\) 建立实际
+除子/F/G 纤维。
+
+对 \(p=67369\)，
 \(U=42\cdot401\) 因而强制 \(q\mid42\)；五个剩余纤维由 Jacobi 角色判为 G，另三个
 由有界离散对数盒判为 F，全部为空。选择器必须输出
 `P_MINUS_ONE_TYPE_II_EMPTY` 并转交 gap-\(31\) Type I terminal，不能继续假设自适应
@@ -1572,7 +1593,9 @@ p-1\le\frac{r(r+2)(r+6)}4.
 固定源秩结论见
 [\(p-1\) 因子 Type II 的有限菜单与三次容量界](type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)，
 端点与分配结论见
-[\(p-1\) 因子 Type II 的端点容量与大素因子分配](type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)。
+[\(p-1\) 因子 Type II 的端点容量与大素因子分配](type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)，
+完整因子格容量见
+[\(p-1\) 因子 Type II 的下闭容量域与素数幂分配](type-II-p-minus-one-divisor-downset-prime-power-allocation.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列
