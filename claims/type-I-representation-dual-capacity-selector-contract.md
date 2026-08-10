@@ -1339,6 +1339,26 @@ evaluation 开销 \(X\) 满足
 branch/certificate lift 与整数提升门全部通过后才登记为递降；单纯把记录过滤到
 角色核中只输出 `KERNEL_FILTERED_SUBSTATE`。
 
+对已经独立实现的具体 exact successor，统一 selector 现在进一步计算真实源列空间
+\(T_\omega\)、选择列空间 \(S_\omega\) 以及
+\[
+h_\omega^*=\dim((T_\omega+S_\omega)/S_\omega),\qquad
+a_\omega=(n-|U|)-\dim S_\omega.
+\]
+此时剩余角色维数不再只取固定-\(X\) 下界，而精确为
+\[
+e_\omega=\delta(U)+a_\omega-h_\omega^*.
+\]
+故 `EXACT_SUCCESSOR_SOURCE_OVERHEAD_CAPACITY_CERT` 以
+\(h_\omega^*<\delta(U)+a_\omega\) 为必要充分的正容量门；选择列相关产生的
+rank slack 可以严格支付 source overhead。若目标列在
+\(T_\omega+S_\omega\) 外，再由 target-visible Grassmann 双计数直接选择一个
+看见目标的共同角色 slice。owner 物理割必须同时保存规范 slot source-column rank
+及同一 Rado 割商中的
+\(T_\omega\subseteq X_{U,J}+S_\omega\)，相同流值或物理割容量不能替代该秩。
+完整定理见
+[exact successor 的最小 source 开销、选择秩松弛与变开销 Grassmann 选择器](type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)。
+
 只有每个请求的 source 候选严格因子化为三类允许集的笛卡尔积时，完整选择才精确
 收缩为 capacitated deep Hall、shallow Hall 与上述 evaluation-Rado。非矩形三候选
 source 控制严格通过三个投影却无联合选择；甚至 fixed-\(D\) 的
@@ -1356,7 +1376,8 @@ table、E4 与 E5 仍必须另证。完整定理与控制见
 [source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)
 与
 [广义 Rado 亏损的规范固定割商](type-I-fg-generalized-rado-fixed-quotient-defect.md)、
-[Grassmann 切片容量与 kernel 后继接口](type-I-fg-exterior-grassmann-slice-successor-descent.md)
+[Grassmann 切片容量与 kernel 后继接口](type-I-fg-exterior-grassmann-slice-successor-descent.md)、
+[exact successor 的最小 source 开销与秩松弛选择器](type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)
 以及
 [top-exterior 与 Plücker 分离边界](type-I-fg-exterior-fourier-plucker-boundary.md)。
 

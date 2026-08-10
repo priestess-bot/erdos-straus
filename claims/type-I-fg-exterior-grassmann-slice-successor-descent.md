@@ -16,8 +16,10 @@ statement: >-
   branch/certificate lift 成立时产生
   有限群子群--标量商二分；除 H=C_q 的 top-primary 边界外，该二分严格下降群阶。
   但整数 Type I/II 后继仍须另过 FIBER_REALIZED、来源、
-  SNF/CRT、范围、E4 与不可重置 E5。阈值 h<delta 最优，p=97,D=6 的单来源
-  C_2 角色给出“有限群 quotient 存在而全部严格整数低层菜单为空”的严格边界。
+  SNF/CRT、范围、E4 与不可重置 E5。在只知道至多 r 条 completion 列并统一使用
+  completion-independent X 时，阈值 h<delta 最优；具体 exact successor 还可由
+  selection-rank slack 精确改进。p=97,D=6 的单来源 C_2 角色给出“有限群
+  quotient 存在而全部严格整数低层菜单为空”的严格边界。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -378,6 +380,23 @@ X+\operatorname{span}
 没有 (28) 时，Grassmann 定理只给出完成列 annihilator，不能调用 source-closed
 relay。
 
+式 (28) 的 completion-independent \(X\) 给出统一下界，但不是具体后继的最小
+开销。为区别于式 (5) 在 \(Q/X\) 中的像，令
+\(S_\omega^Q=\operatorname{span}\{b_p(\omega):p\in C\}\le Q\) 是商映射前的
+选择列空间。若后继已经独立实现，令 \(T_\omega\) 为其真实源列在 \(Q\) 中的张成
+空间，则最小开销和精确角色容量分别为
+\[
+h_\omega^*
+=\dim((T_\omega+S_\omega^Q)/S_\omega^Q),
+\qquad
+e_\omega
+=\delta+(r-\dim S_\omega^Q)-h_\omega^*.
+\tag{28a}
+\]
+所以 \(r-\dim S_\omega^Q\) 的选择秩松弛可支付额外 source directions；完整的
+变开销与目标可见双计数见
+[exact successor 的 source 开销与秩松弛选择器](type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)。
+
 ## 6. kernel-filtered substate、exact successor 与有限群递降
 
 设实际有限群状态由以下 exact contract 给出：
@@ -556,7 +575,7 @@ T_\omega\le K_R\simeq R^*,
 \(\kappa_t\in T_\omega\) 时，移动 annihilator 全部落在目标核中，只能依赖
 subgroup 分支及原 exact contract 的 \(t\notin\Gamma\)，不能声称目标分离商。
 
-## 8. \(h<\delta\) 的严格最优性
+## 8. \(h<\delta\) 的 completion-independent 严格最优性
 
 取
 
@@ -583,7 +602,8 @@ X+\langle b\rangle=Q.
 \]
 
 所以不存在非零角色同时湮灭 \(X\) 与所选列；在 \(Q/X\) 中，两个带标签候选
-都投到唯一非零向量。这证明 (4) 不能放松为 \(h\le\delta\)。
+都投到唯一非零向量。这证明在不读取具体选择秩与 exact-successor source span
+时，统一条件 (4) 不能放松为 \(h\le\delta\)。
 
 它也解释了为什么本定理不能伪装成当前饱和状态的下降。若当前 exact source
 在 \(Q\) 中仍生成整个 \(Q\)，且每个源方向都必须由固定 \(X\) 加 \(r\) 条所选列
@@ -598,6 +618,12 @@ h\ge m-r=\delta.
 
 因此 \(h<\delta\) 必须来自一个**真正收缩了 source directions 的后继合同**。
 这正是新容量产生严格 role quotient 的数学内容。
+
+具体后继存在一个严格精化：若选择列相关，令
+\(a_\omega=r-\dim S_\omega>0\)，则即使最小开销
+\(h_\omega^*=\delta\)，仍可能留下
+\(e_\omega=a_\omega>0\)。因此本节证明的是 fixed-\(X\) 的 uniform sharpness，
+不是逐后继必要条件。
 
 ## 9. 抽象角色不保证整数后继：\(p=97\)
 
@@ -705,12 +731,14 @@ GENERALIZED_RADO_FIXED_QUOTIENT_DEFECT(U,Q_U,delta)
 \((R/L,L^\perp)\) 配对，并说明何种 exact subcontract 足以调用现有子群--商
 relay。
 
-它没有证明每个实际 F/G 亏损状态都存在 \(h<\delta\) 的 source contraction，
+它没有证明每个实际 F/G 亏损状态都存在 \(h<\delta\) 的统一 source contraction，
 也没有证明 (28)、(32)、(33b) 或整数 E1--E5 对所有核心素数成立。特别地，
 kernel filtering 本身只产生 substate，不能充当 descent。下一决定性缺口不再是
-寻找另一个移动 annihilator，而是从实际 arithmetic provenance 构造
-\(\dim X<\delta\) 的 selected-source successor；若所有候选都强制
-\(\dim X\ge\delta\)，则需把该开销下界转成 Type I/II 终端或另一良基下降。
+寻找另一个移动 annihilator，而是从实际 arithmetic provenance 构造一个
+independently realized exact successor，并验证其精确容量
+\(e_\omega>0\)；completion-independent 的 \(\dim X<\delta\) 仍是一个强充分条件。
+若所有候选都强制 \(e_\omega=0\)，则需把 source saturation 转成 Type I/II
+终端或另一良基下降。
 
 ## 聚焦验证
 

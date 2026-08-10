@@ -5072,3 +5072,48 @@ target-plane provenance 与高阶相位的算术实现。
 [Grassmann 切片容量与 kernel 后继递降接口](../claims/type-I-fg-exterior-grassmann-slice-successor-descent.md)
 和
 [top-exterior 的秩重述与 Plücker 边界](../claims/type-I-fg-exterior-fourier-plucker-boundary.md)。
+
+## 2026-08-10：exact successor 的最小 source 开销由选择秩松弛精确支付
+
+固定开销条件 \(\dim X<\delta(U)\) 现已被收紧为逐后继必要充分判据。对已经独立
+通过 `SELECTED_SOURCE_STATE_REALIZATION` 的具体 completion \(\omega\)，令
+\(S_\omega\) 为选择列空间，\(T_\omega\) 为后继全部真实 source-evaluation 列空间，
+并定义
+\[
+h_\omega^*=\dim((T_\omega+S_\omega)/S_\omega),\qquad
+a_\omega=r-\dim S_\omega.
+\]
+则同时湮灭 completion 与后继源列的角色维数精确为
+\[
+\boxed{e_\omega=\delta(U)+a_\omega-h_\omega^*.}
+\]
+所以正容量当且仅当
+\(h_\omega^*<\delta(U)+a_\omega\)。特别地，
+\(Q=\mathbb F_2^4,r=2,\dim S=1,\dim T=3\) 给出
+\(h^*=\delta=2\) 而 \(e=1\)：旧 \(h<\delta\) 是
+completion-independent 的 sharp uniform 条件，但不是具体后继的必要条件。
+若 \(T_\omega=Q_U\)，则恰有
+\(h_\omega^*=\delta+a_\omega\) 与 \(e_\omega=0\)，source domination 正好耗尽
+全部松弛。
+
+对带不同 \(T_\omega\) 的 exact-successor 家族，新的 Grassmann 双计数为
+\[
+\sum_{L\in\operatorname{Gr}_s(Q_U^*)}|\Omega_L|
+=\sum_\omega{e_\omega\brack s}_q.
+\]
+若目标商像 \(\bar\kappa_t\notin T_\omega+S_\omega\)，target-visible incidence
+精确贡献
+\({e_\omega\brack s}_q-{e_\omega-1\brack s}_q\)，因而可以直接选择一个包含
+目标核外角色的共同 slice。
+
+owner 路线也得到严格边界：相同请求图、相同最大流和相同物理割容量，可因规范
+slot source columns 的秩不同而分别得到 residual capacity \(1\) 或 \(0\)。
+所以物理 mincut 必须升级为带 \(X_{U,J}\) 的 ranked mincut，并另证
+同一 \(Q_U\) 中的
+\(T_\omega\subseteq X_{U,J}+S_\omega\)；否则不能进入 Grassmann 后继。
+
+完整定理及聚焦验证见
+[exact successor 的最小 source 开销、选择秩松弛与变开销 Grassmann 选择器](../claims/type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)。
+下一决定性对象是从实际 nearest-fiber、primary-filter 或 owner provenance 中构造
+至少一个这样的 independently realized exact successor；若所有算术候选都满足
+\(e_\omega=0\)，则把该 source-saturation 等号转成 Type I/II 终端或良基下降。

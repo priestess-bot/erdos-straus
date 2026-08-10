@@ -324,3 +324,19 @@ collision 反例。它没有声称物理流缺口本身就是整数递降；后�
 源列按有限 source-column expansion 接回，或证明 q-prefix 紧链/广义 \(2^j\) 终端。
 但从此以后，任何使用 owner multiplicity 的容量证明都必须明确给出 \(\pi\)、\(b\)
 和流/割证书。
+
+下游 Grassmann 分派还必须再加一层 ranked-mincut 回执。另固定一个与 owner
+请求割 \(J\) 配对的广义 Rado 割 \(A\)，并在同一个
+\(Q_A=K_R/W_A\) 中定义 completion 列空间 \(S_{\omega,A}\)、真实后继源列空间
+\(T_{\omega,A}\)、\(r_A=|P\setminus A|\) 及
+\(a_{\omega,A}=r_A-\dim S_{\omega,A}\)。source-preserving canonicalization
+后，把 \(J\) 涉及的规范物理槽列与其它固定列也投到 \(Q_A\)，其张成空间记为
+\(X_{A,J}\)。若
+\(T_{\omega,A}\subseteq X_{A,J}+S_{\omega,A}\)，则其角色容量至少为
+\[
+\delta(A)+a_{\omega,A}-\dim X_{A,J}.
+\]
+相同物理图、流值和割容量可因 slot source columns 的秩不同而分别留下正容量或
+完全饱和，所以只有流/割而没有 source-column rank 时必须输出
+`OWNER_GRASSMANN_OVERHEAD_RANK_UNPROVED`。精确最小开销、严格反例和回执见
+[exact successor 的 source 开销与秩松弛选择器](type-I-fg-exact-successor-source-overhead-rank-slack-selector.md)。
