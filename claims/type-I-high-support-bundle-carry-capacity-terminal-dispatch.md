@@ -474,6 +474,22 @@ E1--E5。
 非空；失败时输出完整 signed carry vector，而不是再次扫描同一个 SCC。下一项真正的
 数学任务，是从该 no-go vector 中抽取能强制 (34) 其余分支之一的跨模耦合量。
 
+该任务在最小 \(C=2\) 高支撑边界上已有全称推进。对每个核心素数，越过 \(B_p\) 的
+首个 \(C=2\) 图表都是
+
+\[
+(R,K;A)=\left(2p-3,\frac{(p-1)(2p-1)}4;
+\frac{(p-1)(2p-1)}8\right).
+\]
+
+其任意合法 complete-excess 候选都满足 \(c>2\)，所以该分支全域严格上升；唯一满足
+\(A\mid M\mid K\) 的同图表 divisor upgrade \(A\to K\) 需要 \(L=2\)，却被
+full-block 语法排除。与此同时，内部短关系
+\(2/(2p-1)\equiv1\pmod{2p-3}\) 统一产生 \(E=2(p-1)\)、偶前驱 \(n=p-1\) 和
+自然标记 \(\alpha=A\)。因此这个 no-go 已被转成精确 dyadic 容量，但 F/G miss 上的
+自然标记源仍为空；真正余项是构造非自然 E4 或由其它分支抢占。见
+[最小高支撑 \(C=2\) 边界的 carry--dyadic 容量转导](type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
+
 聚焦验证：
 
 ```bash

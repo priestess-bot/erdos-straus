@@ -41,6 +41,7 @@ used_by:
 - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
 - type-I-high-support-rank-aware-sink-bundle-selector
 - type-I-high-support-bundle-carry-capacity-terminal-dispatch
+- type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -495,6 +496,27 @@ terminal、alternate、dual、total-cofactor 或 paid reset，不得把 SCC 强�
 Type II 终端抢占；相反，既有 \(C=44\) 状态有一条 \(L=1521269\) 的
 \(44\to2\) 严格边。见
 [高支撑 bundle 的精确 carry 容量门、空改善反例与终端分派](../claims/type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。
+
+最小 \(C=2\) 高支撑边界还有一个更强的专用合同。对每个核心素数，其首个边界图表为
+
+\[
+(R,K;A)=\left(2p-3,\frac{(p-1)(2p-1)}4;
+\frac{(p-1)(2p-1)}8\right).
+\]
+
+任意合法 complete-excess 行都必须记录 `c>2` 和 `Delta>0`；不存在下降或 stutter，
+也不得继续扩张 sink 搜索。唯一满足 \(A\mid M\mid K\) 的同图表 divisor upgrade
+\(A\to K\) 需要 \(L=2\)，但 full-block complete-excess 不能生成该乘子。选择器
+随后可以登记关系
+
+\[
+\rho=\frac2{2p-1}\equiv1\pmod{2p-3},
+\qquad E=2(p-1),\qquad n=p-1,\qquad\alpha=A,
+\]
+
+但这仍是 `unlifted_generalized_dyadic_candidate`：其自然标记源非空恰等价于当前图表
+已经 Type I 命中，故 F/G miss 上不能支付 E4。完整证明见
+[最小 \(C=2\) 边界的严格 carry no-go 与内部二进容量转导](../claims/type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
 
 ### overflow 的 cofactor-supported r-chart 支撑升级
 

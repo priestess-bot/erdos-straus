@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。仅由 sink/complete-excess 结构推出改善非空已被 p=73、C=2 的合同准入 F 状态反驳，但该状态由直接 Type II 终端抢占，故 terminal-free 子类仍需研究；既有 C=44 状态另有新的 44->2 严格边。当前两条决定性前沿是：从 signed carry no-go 完备推出 alternate/终端/dual/total-cofactor/良基 reset；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升，且唯一内部乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选；F/G miss 上该自然标记源仍为空。p=73 由直接 Type II 终端抢占，既有 C=44 状态另有 44->2 严格边。当前两条决定性前沿是：为此类 carry no-go 构造非自然可提升标记源或 alternate/终端/dual/total-cofactor/良基 reset；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -36,6 +36,8 @@ sources:
   role: high-support-finite-capacity-map-and-p73-strict-edge
 - claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
   role: exact-carry-gate-empty-improvement-counterexample-and-terminal-dispatch
+- claim: type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
+  role: universal-least-C2-carry-no-go-and-internal-dyadic-capacity-map
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -5737,3 +5739,45 @@ bounded box 不含 \(-1\)，而素模上的 Euler 非剩余见证给出紧凑无
 terminal、support-preserving alternate、dual、total-cofactor 或 paid well-founded
 reset 至少一项。完整证明与聚焦验证见
 [高支撑 bundle 的精确 carry 容量门、空改善反例与终端分派](../claims/type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。
+
+## 2026-08-11：最小 \(C=2\) 边界的全称 no-go 与内部容量转导
+
+上一节的 \(p=73\) 单点现已提升为无样本上界的结构定理。对每个核心素数，满足
+\(A>B_p\) 和 \(8A\equiv1\pmod p\) 的最小支撑及其图表为
+
+\[
+A_2=\frac{(p-1)(2p-1)}8,
+\qquad
+(R_2,K_2;A_2)=\left(2p-3,\frac{(p-1)(2p-1)}4;A_2\right).
+\]
+
+对任一合法 complete-excess bottom 候选，若目标 cofactor 为 1，则乘子只能是
+\(2\) 或 \(p+2\)；full-block 估值排除前者，residual divisibility 排除后者。若目标
+cofactor 为 2，则乘子只能是 \(p+1\)，而 residual \(p-4\mid K_2\) 会迫使
+\(p-4\mid21\)，同样矛盾。因此所有存在的候选都满足 \(c>2\)：这条边界上继续扫描
+更大的 sink 或更长 path 不可能得到 carry 出口。
+
+该图表内部满足 \(A_2\mid M\mid K_2\) 的同图表 divisor upgrade 只有
+\(A_2\to K_2\)，但它需要 \(L=2\)，恰被 complete-excess 语法屏蔽。新的
+表示--对偶容量映射是
+
+\[
+\rho=\frac2{2p-1}\equiv1\pmod{2p-3}.
+\]
+
+它位于 \(K_2\) 的短关系盒内，并以 \((a,b,j)=(4,2p-1,1)\) 统一给出
+
+\[
+E=2(p-1),\qquad n=p-1,\qquad \alpha=\frac{nK_2}{E}=A_2.
+\]
+
+所以 bundle 无法读取的内部一比特并未消失，而是被精确转成 \(p-1\) 的 marked
+dyadic 容量。边界也同样精确：该自然标记源非空当且仅当原图表已经中心 Type I
+命中；对 F/G miss 它严格为空，不能登记 terminal leaf 或 verified edge。
+\(p=193\) 给出语义控制：\(p+4\) 的 \(d=1\) 子菜单 miss，但 gap-7 Type I 仍直接
+终止，故有限菜单 miss 不能称为 terminal-free。
+
+这把下一项研究对象压缩为两种真正的新数学：构造 \((p-1,A_2)\) 的非自然非空标记集
+和全域 E4，或证明进入该边界前必有跨正规形 terminal/alternate/dual/paid reset。
+完整证明见
+[最小高支撑 \(C=2\) 边界的严格 carry no-go 与内部二进容量转导](../claims/type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。

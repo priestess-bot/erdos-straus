@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。仅由 sink/complete-excess 结构推出一般非空性已被 p=73、C=2 的合同准入 F 状态严格反驳；该例由直接 Type II 终端抢占，因此不否定 terminal-free 子类，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，但 F/G miss 上自然标记源为空。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -23,6 +23,7 @@ depends_on:
   - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
   - type-I-high-support-rank-aware-sink-bundle-selector
   - type-I-high-support-bundle-carry-capacity-terminal-dispatch
+  - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
   - type-I-overflow-cofactor-r-chart-support
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -167,6 +168,8 @@ sources:
     role: finite-high-support-bundle-capacity-map-and-p73-edge
   - claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
     role: exact-carry-gate-empty-improvement-counterexample-and-terminal-dispatch
+  - claim: type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
+    role: universal-least-C2-carry-no-go-and-internal-dyadic-capacity-map
   - claim: type-I-g-anchor-jacobi-odd-complete-excess-source-menu
     role: exact-n-prime-Jacobi-odd-path-anchored-source-menu
   - claim: type-I-linear-escape-canonical-d-lattice-source-menu
@@ -1111,6 +1114,28 @@ sink/complete-excess 结构单独强制改善非空已经被严格否定：具�
 universal anchor 沿显式 raw path 取 \(Q=1521269\)，给出新的完整
 \((0,44)\to(0,2)\) 边。见
 [高支撑 bundle 的精确 carry 容量门](type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)。
+
+上述 \(p=73\) 行现已提升为一个全称最小边界定理。对任意核心素数，最小高支撑
+\(C=2\) 图表满足
+
+\[
+R=2p-3,\qquad
+A=\frac{(p-1)(2p-1)}8,\qquad
+K=2A.
+\]
+
+complete-excess full-block 语法在该图表上不能实现 \(c=1\) 或 \(c=2\)，所以每个
+合法候选都严格上升。唯一满足 \(A\mid M\mid K\) 的同图表 divisor upgrade
+\(A\to K\) 所需的 \(L=2\) 也被同一估值门排除。不过 \(K\) 内部总含短关系
+
+\[
+\frac2{2p-1}\equiv1\pmod{2p-3},
+\]
+
+它以 \(j=1\) 对 \((a,b)=(4,2p-1)\) 产生 \(E=2(p-1)\)、\(n=p-1\) 和
+自然标记 \(\alpha=A\)。这是从 carry no-go 到关系格容量的真实代数转导，但在 F/G
+miss 上标记源严格为空，故只能保持 `analysis_evidence`。见
+[最小 \(C=2\) 边界的 carry--dyadic 容量转导](type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
 
 另外有一条可完整重算的固定-n 支撑增长边：
 
