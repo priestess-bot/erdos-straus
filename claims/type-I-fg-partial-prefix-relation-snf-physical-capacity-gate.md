@@ -17,7 +17,10 @@ statement: >-
   原 actual-F 指数盒中仍恰有 51 条 labelled 三点 83-prefix raw chains，分成
   27、12、12 三类 lift；每类内部两两不交，跨类同起点仅共享首尾，全部 51 条共享成
   27 个 image-level triples、覆盖 105 条 raw records。现有 integer source line 把每条链
-  压成同一 row，且每条 83-edge 的阶 66 仍违反 C4 关系。
+  压成同一 row，且每条 83-edge 的阶 66 仍违反 C4 关系。后续已有一个保持 active pair、
+  在完整指数盒上单射并保存 full-C9 phase 的 affine 扩展；它给出跨规范基
+  2->929->182 的 83-height ladder，但 target-compatible 同基三-sheet容量严格为零，
+  physical cargo adapter 仍未建立。
   任意不保持该关系的 physical set map 即使以后构造成功，也不能把 psi_4 拉回为
   homomorphic source character 或规范 role column，不能支付忠实 C_4 Fourier 容量；
   它必须保持 UNPRICED，或显式进入扩充 source state。
@@ -649,13 +652,19 @@ records 分别压成同一个 integer row；当前 owner/occurrence contract 也
 \tag{26r}
 \]
 
-这不排除更换 source line 后的新构造。
+后续
+[同规范基容量零与跨基 ladder](type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder.md)
+已经给出保持 active pair、在完整 189 点指数盒上单射且保存 full-\(C_9\) phase 的扩展线。
+该线把一条合法 \((r,s)\) chain 映到 \(2,929,182\)，精确实现
+\(v_{83}(p+4s_b)=0,1,2\)。因此“新的 integer line”与一个 selected-chain 的算术
+owner-window state injection 已经构造；原式 (26r) 只描述未扩展的 active line。
 
 于是当前状态中的 faithful \(C_4\) role capacity 为零：任何同时承载 (23) 的
 relation-preserving matching 都被 (25) 排除。式 (26n) 已构造 raw exponent-box 层的
-set map skeleton，但尚未把它提升为 exact physical occurrence adapter；仍缺新的
-integer source line、sheet-to-state map、owner/occurrence、target-fiber product
-synthesis 及完整 \(C_9\) 相位处理。因此严格状态是
+set map skeleton；后续扩展又完成 integer 分离、full-\(C_9\) phase 和跨基算术状态
+注入。但是 target-compatible 共同规范基的三-sheet容量已被严格证明为零，跨基候选仍缺
+获授权的 exact physical-source predicate、fixed-factor-sheet product synthesis、
+nonduplicating owner/charge、共同稳定子、E4 与 E5。因此严格状态仍是
 
 \[
 \boxed{

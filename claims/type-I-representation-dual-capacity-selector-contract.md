@@ -114,6 +114,7 @@ depends_on:
   - type-I-fg-qprefix-h83-typed-owner-no-go
   - type-I-fg-qprefix-h83-hidden-c4-source-extension
   - type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
+  - type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder
   - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
@@ -265,6 +266,8 @@ sources:
     role: p557-relative-C4-role-source-exponent-no-go-and-role-guided-terminal
   - claim: type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
     role: finite-partial-relation-snf-physical-matching-and-faithful-role-boundary
+  - claim: type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder
+    role: p557-common-base-capacity-no-go-and-cross-base-valuation-ladder
   - claim: type-II-same-fiber-factor-box-neutral-role-capacity
     role: exact-same-fiber-factor-box-neutral-capacity-and-role-rank-boundary
   - claim: type-I-first-overflow-common-denominator-marked-lift
@@ -1348,10 +1351,13 @@ eta-neutral adapter，而是四层顺序门：
    \(b=0,1,2\) 上显式保留 provenance、但不保持原 source relations 的 physical set
    map 尚未完成；actual-F exponent box 内恰有 \(51\) 条 labelled 三点 raw
    \(83\)-chains，分成 \(27,12,12\) 三类、压成 \(27\) 个 image triples 并覆盖
-   \(105\) 条 records，但当前 source line 把每条链压成同一 integer row，故仍缺新的
-   source line、state/owner/occurrence 与 product synthesis；它即使通过全局 physical
-   gate，也不能把 \(\psi_4\) 拉回为同态 source character 或支付 faithful \(C_4\)
-   role capacity；
+   \(105\) 条 records。后续保持 active pair 的 affine 扩展已在完整指数盒上单射、
+   保存 full-\(C_9\) phase，并把一条合法 chain 映到跨基 \(2,929,182\) 的精确
+   \(83\)-height ladder；同时 target-compatible 同基三-sheet容量严格为零。因此不再
+   缺 source line 或 selected-chain 的算术 state injection，剩余的是 cross-base exact
+   physical predicate、fixed-factor product synthesis、owner/charge、共同稳定子与
+   E4/E5；它即使通过全局 physical gate，也不能把 \(\psi_4\) 拉回为同态 source
+   character 或支付 faithful \(C_4\) role capacity；
 4. `FULL_C4_STATE_EXTENSION_OPTIONAL`：若要求完整乘法闭合，可新增四阶
    state；抽象模型只证明 algebraic image，不是 physical receipt。
 
@@ -1395,6 +1401,7 @@ Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺�
 [q-prefix 残余容量原子替换与局部正规化](type-I-fg-qprefix-atomic-replacement-capacity-normalization.md)、
 [\(q=83\) 规范 source-pair 与 typed-owner no-go](type-I-fg-qprefix-h83-typed-owner-no-go.md)、
 [\(83\) sheets 的隐藏 \(C_4\) 商与源指数障碍](type-I-fg-qprefix-h83-hidden-c4-source-extension.md)、
+[同规范基三-sheet容量零与跨基 \(83\)-height ladder](type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder.md)、
 [同纤维精确因子盒与 primary-role 边界](type-II-same-fiber-factor-box-neutral-role-capacity.md)、
 [first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
 [first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
@@ -1646,9 +1653,12 @@ prime 的算术 carrier 已有统一构造；rank-one 请求的最小 \(q\)-heig
 决定性缺口已收紧为证明 fixed-layer 请求在原层、unlayered 请求在新选层分别满足
 范围/occurrence/target-state 门，并把多角色上尾匹配实现为真实物理槽，或把对偶、
 窗口、上尾容量与单块降模失败后
-的显式 kernel Fourier 扩成完整核来源盒。对当前 p557 控制，具体缺口已从“q=3
-能否迁移、q=83 owner 能否找到”收紧为 neutral sheets 能否获得 exact physical
-membership、nonduplicating eta-neutral cargo map、共同稳定子定价与 state realization。
+的显式 kernel Fourier 扩成完整核来源盒。对当前 p557 控制，target-compatible
+同基三-sheet容量已严格为零；保持 active pair 的 full-box 单射 affine 扩展和
+跨基 \(2,929,182\) owner-window \(83\)-height ladder 已构造。具体缺口因而不再是
+source line 或算术 state injection，而是 cross-base exact physical membership、
+fixed-factor-sheet product synthesis、nonduplicating owner/charge、共同稳定子定价、
+state realization 与 E4/E5。
 局部 \(D_*<D_0\) 还必须配上不可重置的
 owner phase；自然较小余因子在 \(p=2113,n=241\) 上已有严格空 marked-fiber 反例，
 不能再作为默认 E4。菜单空、来源阻塞或 rank 过载若不能进入因子选择，必须转成带标记的

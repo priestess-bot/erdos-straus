@@ -16,11 +16,12 @@ statement: >-
   均为零；二次角色 (2/u) 在 83 上取 -1。完整十二点积块在 U(728) 的稳定子为 {1}，
   因而若以后在共同 physical ledger 中实现且最终稳定子仍为 {1}，83-block 的条件性
   full-group price 为 2；其它最终稳定子必须重算。继续该校准分支时的账本状态是
-  UNPRICED。
-  升级为 F/G physical receipt 仍需独立的 membership、
-  record-to-state、provenance-preserving product synthesis、nonduplicating finite
-  set-theoretic prefix adapter 或显式扩充的 full-C4-labelled cargo state、共同最终稳定子
-  重定价与 state realization；
+  UNPRICED。后续已经证明 target-compatible 同基三-sheet容量为零，并构造一个保持
+  active pair、在完整指数盒上单射的 affine 扩展及跨基 2->929->182 valuation ladder。
+  这完成一个 selected-chain 的 owner-window state injection，但升级为 F/G physical
+  receipt 仍需独立的 exact membership、provenance-preserving fixed-factor product
+  synthesis、nonduplicating owner/charge、共同最终稳定子重定价与 state realization，
+  或显式扩充 full-C4-labelled cargo state；
   若忽略后续已发现的直接
   Type II 终端而继续把该分支作为 physical-adapter 校准，账本才保持 UNPRICED。
 claim_status: established
@@ -33,6 +34,7 @@ depends_on:
   - type-I-fg-qprefix-atomic-replacement-capacity-normalization
   - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
+  - type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder
 topics:
   - type-I
   - F-state
@@ -54,6 +56,8 @@ sources:
     role: active-depth-three-q3-block
   - claim: type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
     role: finite-partial-relation-no-go-and-raw-83-prefix-classification
+  - claim: type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder
+    role: common-base-capacity-no-go-and-cross-base-owner-window-ladder
   - reproduction: reproductions/type_i_fg_qprefix_h83_typed_owner_no_go.py
     role: canonical-menu-role-no-go-and-neutral-sheet-certificate
 visibility: public
@@ -401,8 +405,11 @@ sheets 单独推出的价格定理。
    \(198x=0\) 而 \(198\cdot1=2\pmod4\)，故 relation-preserving partial adapter 也失败；
 3. 允许只在 \(b=0,1,2\) 上定义、显式保留 provenance、但不拉回忠实 \(C_4\) 角色的
    set-theoretic physical adapter；actual-F 盒内已有 \(51\) 条 labelled 三点 raw
-   chains，分成 \(27,12,12\) 三类并覆盖 \(105\) 条 records，但当前 source line 将
-   每条链压成同一 row，所以 physical adapter 仍未构造且即使构造也保持 `UNPRICED`；
+   chains，分成 \(27,12,12\) 三类并覆盖 \(105\) 条 records。未扩展的 active line
+   将每条链压成同一 row；后续单射 affine 扩展已保存全部 raw-edge 的完整 \(C_9\)
+   phase，并把一条合法 chain 映到跨基 \(2,929,182\)。但 target-compatible 同基
+   三-sheet容量严格为零，跨基 exact physical adapter 仍未构造且即使构造也保持
+   `UNPRICED`；
 4. 若要求完整乘法闭合，可选地新增外部 \(C_4\)-labelled state；已有模型只在代数层
    实现。
 
@@ -417,10 +424,11 @@ token 的精确分层见
 selector 在进入 partial/full-state 路线前已经结束这个控制。若仍把它保留为
 F/G physical-adapter 校准，则第三层及其可选第四层还必须：
 
-1. 把已分类的 raw prefixes 提升为 exact sheet-to-state physical membership；
-2. 给出区分三点的新 integer source line、完整 \(C_9\) phase 保存/补偿及
-   record-to-state；若要支付 \(C_4\) 角色容量，则还必须给出通过关系格 SNF 的扩充
-   source state；
+1. 把已有的跨基 owner-window state injection 提升为 exact sheet-to-state physical
+   membership；共同规范基路线已由三-sheet容量零定理关闭；
+2. 保留已构造的单射 integer line 与完整 \(C_9\) phase，并证明它与获授权的
+   record-to-state contract 相容；若要支付 \(C_4\) 角色容量，则还必须给出通过关系格
+   SNF 的扩充 source state；
 3. 证明 provenance-preserving typed product synthesis；
 4. 构造不新增 q=83 request、C83 role 或重复 q=3 charge 的 cargo map；
 5. 独立求共同最终 stabilizer，在其商上登记实际 price，并通过 occurrence 与 state

@@ -22,7 +22,10 @@ statement: >-
   能承载 C4 的 D'|182 恰为 13,26,91；最小 D'=13 已由 A=1、h=103 给出一张直接
   Type II 终端。该结果把剩余接口整理成四层顺序门：eta-key identity loss、
   原状态 whole/partial relation-preserving transport obstruction、set-theoretic physical
-  cargo adapter 未证且不计角色容量，以及后者可选的 full-C4 state completion。
+  cargo adapter 未证且不计角色容量，以及后者可选的 full-C4 state completion。后续
+  同基三-sheet容量已被严格证明为零；一个保持 active pair 的全盒单射 affine 扩展则
+  构造出跨基 2->929->182 的 owner-window 83-height ladder，把剩余缺口精确移到
+  cross-base physical cargo contract。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -33,6 +36,7 @@ depends_on:
   - type-II-dyadic-relation-quotient-unit-group-exponent-gate
   - type-I-II-fg-universal-finite-source-map-completion
   - type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
+  - type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder
 topics:
   - type-I
   - F-state
@@ -59,6 +63,8 @@ sources:
     role: physical-source-contract-boundary
   - claim: type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
     role: finite-selected-record-relation-no-go-and-raw-prefix-classification
+  - claim: type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder
+    role: common-base-capacity-no-go-and-cross-base-owner-window-ladder
   - reproduction: reproductions/type_i_fg_qprefix_h83_hidden_c4_source_extension.py
     role: focused-relative-C4-source-obstruction-state-extension-and-terminal-verification
 visibility: public
@@ -355,9 +361,13 @@ image-level triples，并覆盖 \(105\) 条 distinct raw records。每类内部�
 跨类同起点的 lifts 共享首尾，而 \(27\) 条常步长链给每个 image triple 一个不交代表。
 全部可行 lifts 的 factor-\(2\) 坐标均为零，所以现有 active
 source line \(\mathcal L(z)=14924+89544z_{(2)}\) 把每条链压成同一个 integer row。
-因此 raw set skeleton 已实现，当前 active assignment 的 physical adapter 仍严格失败；
-(23d) 现在只指更换 source line、补齐 state/owner 与 product synthesis 后的 physical
-提升。
+后续
+[同基容量零与跨基 ladder](type-I-fg-qprefix-h83-common-base-capacity-cross-base-ladder.md)
+构造了保持该 active pair 的 full-box 单射 affine 扩展；它保存全部 raw \(83\)-edges
+的完整 \(C_9\) phase，并把一条合法 chain 映到 \(2,929,182\)。所以 raw set skeleton、
+integer 分离和 selected-chain 的跨基 owner-window state injection 已实现；但共同
+target-compatible base 的三-sheet容量严格为零，(23d) 现在只指 cross-base exact
+physical membership、product synthesis、owner/charge 与 E4/E5 的提升。
 
 即使未来构造 (23d)，它也不能在原 \(S\) 上把 \(\psi_4\) 拉回为同态 character、形成
 规范 evaluation column 或登记 faithful \(C_4\) price；它只能作为独立
@@ -429,10 +439,11 @@ predicate、integer source line、record-to-state map、owner、occurrence 或 E
    仍严格失败；
 3. **SET_THEORETIC_PARTIAL_PREFIX_PHYSICAL_ADAPTER_UNPROVED**：允许有限 record map
    只显式保留 \(b=0,1,2\) 而不保持原 source relations；\(51\) 条 labelled raw
-   chains 已完整分类为 \(27,12,12\) 三类，但当前 source line 全部折叠，新的
-   integer line、product synthesis、
-   owner/occurrence 与 E4/E5 均未证明；即使构造也不得支付 faithful \(C_4\) role
-   capacity；
+   chains 已完整分类为 \(27,12,12\) 三类；全盒单射 integer line、full-\(C_9\)
+   phase 与跨基 \(83\)-height ladder 已构造，而共同基三-sheet容量严格为零。
+   cross-base exact physical predicate、fixed-factor product synthesis、
+   owner/occurrence、共同稳定子与 E4/E5 仍未证明；即使构造也不得支付 faithful
+   \(C_4\) role capacity；
 4. **FULL_C4_STATE_EXTENSION_OPTIONAL**：若要求完整乘法闭合，可选用 (30) 的外部
    \(C_4\) state；它仍只证明代数可行，physical 合同与最终稳定子未证。
 
@@ -507,7 +518,8 @@ eta-neutral sheets
   -> eta-only key: sheet identity is not recoverable
   -> whole-source homomorphic C4: exponent / character-lift no-go
   -> try role-compatible strict-divisor source-switch (p557: D'=13 terminal)
-  -> otherwise try a finite partial-prefix provenance adapter
+  -> otherwise common-base three-sheet capacity: zero
+  -> cross-base affine ladder exists, require exact physical cargo contract
   -> optionally embed it in a full external C4 state
   -> only after a physical receipt: reprice, check FIBER_REALIZED, E4 and E5
 ```
