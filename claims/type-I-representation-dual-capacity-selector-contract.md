@@ -109,6 +109,7 @@ depends_on:
   - type-I-owner-profile-canonical-base-target-slot-capacity
   - type-I-prescribed-target-occurrence-rado-contraction
   - type-I-fg-dependent-role-evaluation-rado-tensor-selector
+  - type-I-fg-snf-canonical-role-evaluation-quotient
   - denominator-escape-state-contract
 topics:
 - type-I
@@ -238,6 +239,8 @@ sources:
     role: fixed-target-incremental-occurrence-cut-and-rectangular-hall-rado-contraction
   - claim: type-I-fg-dependent-role-evaluation-rado-tensor-selector
     role: dependent-role-evaluation-generalized-rado-and-tensor-sumset-selector
+  - claim: type-I-fg-snf-canonical-role-evaluation-quotient
+    role: exact-source-snf-to-canonical-evaluation-matrix-and-visible-rank
 visibility: public
 last_checked: '2026-08-10'
 ---
@@ -344,6 +347,7 @@ q-primary 块：
 
 | 字段 | 必须保存的内容 |
 |---|---|
+| `snf_role_evaluation_quotient` | finite-abelian ambient group、closed source span、初等可见商、fixed-order SNF 标签行模 q、source-visible role space、右根基、规范 perfect quotient 与 evaluation matrix；局部标签另须通过 ambient-extension cut |
 | `owner_window` | \(q,j,\beta_j,B,M_j\) 与全部 \(s_m=\beta_j+m q^j\) |
 | `fiber_vertices` | 每个 \(s_m\) 的规范 \((D_m,A_m,C_m)\)、height 与 \(\tau_j(s_m)\) |
 | `incidence_snf` | \(L_0=\ker[\mathbb Z^{V_j}\to\mathbb Z]\)、\(\Theta_j\) 及秩 0 或 \(C_q\) 商 |
@@ -1286,6 +1290,12 @@ D_{s_z}=\prod_\ell\ell^{\lceil v_\ell(s_z)/2\rceil}
 \(b_O-m_T\)。该预约只用于证明，完整 edge 选定后才原子写入 ledger。
 
 source 侧仍须保留增量 deep atom、shallow canonical slot 与共同 \(V_\ell\)-column。
+当 finite-abelian source table 已由 exact contract 封闭、fixed-order roles 已提升且
+每条 edge 保存 ambient 群坐标时，求值配对有规范构造：在初等可见 source space 上
+商去全部角色的共同根基，所得 quotient 与角色对偶空间自然同构；SNF 标签矩阵模
+\(\ell\) 的 edge 列就是角色实现列。局部标签未经过 fixed-order gate 时，还必须先验
+它在 source span 与 \(\ell H\) 的交上为零。
+
 裸 column-Rado 只证明 source-rank matching；要解释为角色支付，必须从同一个 closed
 source-SNF table 构造角色空间 \(R\)、源关系空间及
 \(\kappa(e)(\rho)=\langle\rho,u_e\rangle\in R^*\)。相关角色若带不同物理义务，
@@ -1311,7 +1321,9 @@ occurrence 缺口；两者都是算术接口控制，不是完整 F/G states，r
 table、E4 与 E5 仍必须另证。完整定理与控制见
 [指定 target occurrence 的先验割、矩形 Hall--Rado 收缩与耦合反例](type-I-prescribed-target-occurrence-rado-contraction.md)
 与
-[相关角色求值、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。
+[相关角色求值、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)，
+以及
+[source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。
 
 其中纯二进支的原图表盒外残差已有独立闭合接口。若 \(s_z\) 的阶为 \(2^a\)，
 半幂对合 \(\Phi(2^{a-1}z)\) 既非 \(\pm1\)，故给出互素真因子

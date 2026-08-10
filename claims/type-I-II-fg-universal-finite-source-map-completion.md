@@ -42,7 +42,7 @@ sources:
   - reproduction: reproductions/type_i_ii_fg_universal_finite_source_map_completion.py
     role: finite-universe-and-dedup-controls
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-10'
 ---
 
 # Type I/II F-G 源映射的有限整数宇宙完备化
@@ -173,6 +173,18 @@ r_* =\min(\mathcal U\setminus\mathcal M)
 因此 `F_SOURCE_MAP_UNCLOSED` 只在 (1) 未闭合时使用；对已证明 exactness 的 Type I/II
 整数合同，它被 (11) 的具体漏项取代。
 
+若 exact-order 门随后构造了实际 \(q\)-primary roles，则 (12) 同时封闭了所有
+eligible edge 的 ambient 群坐标。令
+\(S=\langle u(r):r\in\mathcal U\rangle\)，把 role 标签模 \(q\) 后在
+
+\[
+V_q=(S+qH)/qH
+\]
+
+上取限制，即规范得到 role space、右根基商和每条 record 的 evaluation column。
+因此“有限 universe 完备 + fixed-order SNF”足以产出
+`SNF_CANONICAL_ROLE_EVALUATION_CERT`；不再需要另猜角色到 source columns 的同构。
+
 ## 5. 物理 q 容量不因完备枚举增加
 
 设 \(\pi_{\mathrm{phys}}:\mathcal U\to\mathcal S\) 把整数 source record 投影到
@@ -233,3 +245,5 @@ r_* =\min(\mathcal U\setminus\mathcal M)
 状态都属于 (2) 或 (6) 的 exact contract，也没有证明 exactness 未知时的
 `SOURCE_CONTRACT_EXACTNESS_UNPROVED` 必然能递降；因此全局剩余问题被精确收缩为
 证明 F/G 状态的整数合同覆盖，及其漏项/合同障碍到 Type I/F/G 或 E1--E5 递降的承接。
+已闭合分支的规范求值构造见
+[F/G source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。

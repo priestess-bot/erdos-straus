@@ -138,7 +138,19 @@ R\longrightarrow\mathbb F_\ell^P,\qquad
 \]
 
 因此正确的 column 对象是 \(\kappa(e)\)，不是未经角色配对的裸 source vector。
-若 (1)--(2) 尚未由实际 source table 构造，唯一合法回执是
+在 finite-abelian source table 已由 exact contract 封闭、每条 edge 保存 ambient
+群坐标、且 fixed-order SNF 已提升实际角色的分支，(1)--(2) 不是额外假设：取
+
+\[
+V_\ell=(S+\ell H)/\ell H,
+\qquad
+K_R=V_\ell/R^\perp\simeq R^*,
+\]
+
+并把 SNF 强制标签模 \(\ell\)，其标签矩阵的 edge 列正是 \(\kappa(e)\)。完整构造与
+ambient-extension 边界见
+[source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。
+只有 source contract、ambient extension 或 edge provenance 尚未证明时，合法回执才是
 
 ~~~text
 ROLE_TO_COLUMN_EVALUATION_UNPROVED
@@ -677,11 +689,10 @@ FIXED_TARGET_NAMED_WITNESSES_READY
 source-preserving、完整三维矩形且已有角色求值配对的子分支。它既不删除相关角色的
 不同物理义务，也不再强迫 \(n\) 个物理请求支付 \(n\) 个独立角色方向。
 
-尚未关闭的第一项已变得更具体：从每个实际 F/G closed source-SNF table 构造共同
-配对 (1) 与 edge relation vectors \(u_e\)。角色只是
-\(\operatorname{Hom}(\Delta,\mu_\ell)\) 而 source columns 只登记在另一个商中时，
-必须先证明 restriction/transport map；否则保留
-ROLE_TO_COLUMN_EVALUATION_UNPROVED。第二项是实际候选未满足 (15) 时的联合
+第一项 typed 缺口现已在“exact finite source universe + fixed-order SNF lift + 每条
+edge 的 ambient 群坐标”分支关闭：规范初等商直接构造 (1)--(2)。角色仍只登记在
+\(\operatorname{Hom}(\Delta,\mu_\ell)\)、source contract 未闭合或 edge 超出 certified
+span 时，才保留 ROLE_TO_COLUMN_EVALUATION_UNPROVED。第二项是实际候选未满足 (15) 时的联合
 hypergraph--matroid 选择。第三项是把 (13) 的不可见角色空间或 (31) 的 tensor
 Fourier 零表示接到完整 kernel source box、Type I/II 终端、整数后继及不可重置
 marked E5；本卡不把有限线性商自动写成 Erdős--Straus 递降。

@@ -34,7 +34,7 @@ sources:
   - claim: type-II-single-q-source-fiber-closure-trichotomy
     role: q-request-closed-dispatch
 visibility: public
-last_checked: '2026-08-05'
+last_checked: '2026-08-10'
 ---
 
 # F/G Fourier 角色到 Type II 初等 q 请求的跨层分派
@@ -289,6 +289,9 @@ F 型 Fourier 幅度给出相位预算，但角色阶本身不等于 q-height。
 
 多角色进入物理选择器前还须把
 \(\langle\chi_q|_{\Delta_Q}\rangle\) 与每条带 provenance 的 source relation
-放进同一求值配对；相关角色不能只取基后删除其余物理义务。该 typed 接口和精确
-generalized Rado 条件见
+放进同一求值配对；相关角色不能只取基后删除其余物理义务。若 finite source universe
+已 exact、fixed-order SNF 已给出 ambient lifts，求值配对由标签矩阵模 \(q\) 和
+\((S+qH)/qH\) 的规范商直接构造；见
+[source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。
+其后的精确 generalized Rado 条件见
 [F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。

@@ -23,7 +23,7 @@ sources:
   - claim: type-II-raw-finite-abelian-source-lift-snf
     role: finite-abelian-labelled-character-SNF
 visibility: public
-last_checked: '2026-08-06'
+last_checked: '2026-08-10'
 ---
 
 # F/G 有限带标记 source 菜单的饱和与相位实现判据
@@ -258,6 +258,19 @@ m_\nu y_\nu\equiv0\pmod e,
 延拓误登记为当前 F/G 的固定阶角色。若规范 \(\chi_q\) 已预先给定，则无需重建它：
 逐行核对 \(\chi_q\) 在完整 table 和目标表上的标签即可。
 
+式 (17) 的成功解还给出后续 elementary selector 所需的全部数据。把
+\(y_\nu\) 模 \(q\)，并只保留 \(q\mid m_\nu\) 的 invariant-factor 坐标，
+即得到 \(H/qH\) 上的初等角色。对 source span \(S\)，其真实可见空间是
+
+\[
+V_q=(S+qH)/qH\simeq S/(S\cap qH),
+\]
+
+而不是 \(S/qS\)。若只给定局部 \(S\to\mathbb F_q\) 标签而未运行 (17)，
+它能延拓到 ambient \(H\) 当且仅当湮灭 \(S\cap qH\)。通过后，closed table
+的标签矩阵模 \(q\) 就是规范 role-evaluation matrix；见
+[F/G source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。
+
 ## 6. 选择器分派
 
 对已经有 source-completeness 定理的 universe，先执行
@@ -306,4 +319,6 @@ m_\nu y_\nu\equiv0\pmod e,
 这说明第 5 节的 fixed-order SNF 门不能省略。
 
 本卡只把已证明有限的 source universe 变成可判定的饱和/相位接口；它不证明全局
-source-map 完备，也不把角色提升自动变成实际因子、容量、Type I/II 短证书或整数递降。
+source-map 完备，也不把角色提升自动变成实际因子、Type I/II 短证书或整数递降。
+但在 fixed-order 门通过后，初等角色到 closed source edges 的求值配对和秩容量已经
+由上述规范商确定，不再保留为独立的 transport 黑箱。

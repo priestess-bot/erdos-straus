@@ -4773,3 +4773,113 @@ pairing/edge relation vectors，或在其失败时生成完整 source-map termin
 不可见角色空间或 tensor Fourier 零表示接到整数 kernel source box、Type I/II
 终端和不可重置 E5。详见
 [F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](../claims/type-I-fg-dependent-role-evaluation-rado-tensor-selector.md)。
+
+## 2026-08-10：source-SNF 自动构造规范角色求值商
+
+上一节保留的 pairing 黑箱现在可在一个实质分支中删除。固定 finite-abelian ambient
+source group \(H\)、素数 \(q\)，以及 exact source contract 封闭的群像 span
+
+\[
+S=\langle u_e:e\in\mathcal A\rangle\le H.
+\]
+
+局部 q-标签先通过 source relations，下降为
+
+\[
+\ell:S\to\mathbb F_q.
+\]
+
+它能延拓为 ambient elementary role \(H\to\mathbb F_q\) 的充要条件不是局部关系
+一致，而是
+
+\[
+\boxed{\ell(S\cap qH)=0.}
+\]
+
+等价地，真实初等 source space 是
+
+\[
+V_q=(S+qH)/qH\simeq S/(S\cap qH),
+\]
+
+而不是 \(S/qS\)。必要性来自任何 elementary role 都湮灭 \(qH\)；充分性来自
+\(\ell\) 下降到 \(H/qH\) 的子空间后可线性延拓。
+
+这给出一个严格最小边界：在 \(H=C_4=\langle g\rangle\)、\(q=2\) 中，
+\(S=\langle2g\rangle\) 上的标签 \(\ell(2g)=1\) 是合法局部同态，甚至可由复角色
+\(\chi(g)=i\) 实现；但 \(S\cap2H=S\)，故不存在
+\(C_4\to\mathbb F_2\) 的 ambient
+角色。它精确解释了为什么 marked-table 的复角色延拓不能替代 fixed-order SNF。
+
+若 fixed-order SNF 已构造
+
+\[
+\chi_p:H\to\mu_{q^{a_p}},
+\]
+
+则取 \(\chi_p^{q^{a_p-1}}\) 自动通过上述门，并且在 edge \(e\) 上的值就是 SNF
+强制标签模 \(q\)。令这些 source-visible restrictions 张成
+
+\[
+R\le V_q^*,
+\qquad
+N_R=R^\perp,
+\qquad
+K_R=V_q/N_R.
+\]
+
+求值给出规范 perfect pairing 和同构
+
+\[
+\boxed{K_R\simeq R^*.}
+\]
+
+因此每条 edge 的角色实现列不再需要外加 transport：
+
+\[
+\kappa(e)(\rho)=\rho(u_e).
+\]
+
+在 invariant-factor 坐标中，只保留 \(q\mid m_\nu\) 的坐标，把 source matrix 模
+\(q\) 得到 \(U_q\)；把 fixed-order role variables 模 \(q\) 得到 \(B\)。规范
+evaluation matrix 是
+
+\[
+\boxed{E_R=BU_q,}
+\]
+
+也就是 closed source table 的强制标签矩阵模 \(q\)。SNF lift 在 \(S\) 外可以不唯一，
+但所有 lifts 在 closed edges 上给出同一列；\(C_2^2\) 中两个 extensions 在
+\(\langle e_1\rangle\) 上相同、在未闭合的新 edge \(e_2\) 上不同，严格证明 source
+universe/provenance 门不可省略。
+
+对任意请求子集 \(U\)，现在有实际可算的角色容量
+
+\[
+c_R(U)=\operatorname{rank}E_R[:,A(U)].
+\]
+
+它是 normalized monotone submodular rank。相关角色的精确选择条件变为
+
+\[
+c_R(U)+|P|-|U|\ge\dim R
+\qquad(\forall U\subseteq P).
+\]
+
+若全部菜单群像生成 closed source span \(S\)，则总 evaluation rank 自动等于
+\(\dim R\)。总秩不足不再是未知现象，只能表示菜单未饱和、anchor-only 角色误收费，
+或 edge provenance 与 SNF table 不一致。真正剩下的是颜色/物理分配割；失败割的
+
+\[
+Z_U=\ker E_R[:,A(U)]^T
+\]
+
+由原 SNF roles 的实际线性组合组成，因而是规范 Fourier role subspace，而不是抽象
+source separator。
+
+这关闭了“exact finite source universe + fixed-order SNF + edge ambient coordinates”
+分支的 `ROLE_TO_COLUMN_EVALUATION_UNPROVED`。当前决定性缺口进一步缩为：证明实际
+F/G edges 全部进入这种 exact source universe；处理非矩形物理 hypergraph；并把
+\(Z_U\) 的 source-dominating 子空间接到整数 kernel source box、Type I/II 终端或
+不可重置 marked E5。详见
+[F/G source-SNF 的规范初等角色求值商](../claims/type-I-fg-snf-canonical-role-evaluation-quotient.md)。

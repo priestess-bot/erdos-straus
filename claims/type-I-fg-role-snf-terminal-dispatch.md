@@ -36,7 +36,7 @@ sources:
   - claim: type-II-single-q-source-fiber-closure-trichotomy
     role: lifted-q-dispatch
 visibility: public
-last_checked: '2026-08-06'
+last_checked: '2026-08-10'
 ---
 
 # F/G 角色请求的 source-label SNF 四分终端
@@ -164,6 +164,17 @@ r_q(Q)=\dim_{\mathbb F_q}(\Delta_Q/q\Delta_Q)\ge1.
 [单 q 来源纤维闭包](type-II-single-q-source-fiber-closure-trichotomy.md)。本行仍不
 把 \(a\) 自动改写成 q-height；q-height 必须由标签区间、CRT 和前缀匹配实际支付。
 
+若同一 finite source universe 已经证明 exact 并保存每条 edge 的 \(H\)-坐标，则本行
+还规范产出角色--edge 求值：把 fixed-order SNF 角色提升到
+\(\mu_{q^a}\) 的标签行模 \(q\)，在
+\[
+V_q=(L+qH)/qH
+\]
+上取 source-visible role space \(R\)，再商去 \(R^\perp\)。所得
+\(K_R=V_q/R^\perp\simeq R^*\) 与 evaluation matrix 的列均与 SNF 自由变量无关，
+可直接送入相关角色 generalized Rado；详见
+[source-SNF 的规范初等角色求值商](type-I-fg-snf-canonical-role-evaluation-quotient.md)。
+
 ### 3.3 锚点外置
 
 在第三行中，取任意 \(\chi_0\in\mathcal X_{\rm src}\)。所有源一致角色之比组成
@@ -241,5 +252,7 @@ Type I/II 整数 source contract 的状态，先使用
 把 `F_SOURCE_MAP_UNCLOSED` 精化为最小漏项或带标记 SNF 回执；本卡仍未证明实际
 Erdős--Straus 源映射对所有核心素数、所有候选纤维都是完备的；也未证明
 \(\mathrm{F\_FOURIER\_SOURCE\_TARGET\_LIFTED}\) 后必然通过 q-prefix/Kneser
-闭包。因此全局决定性缺口变为：证明实际 source-map 完备，或对
+闭包。对已经 exact、fixed-order lifted 且 edge provenance 完整的分支，角色到
+column 的 typed transport 现由规范求值商自动给出；不再是额外假设。因此全局决定性
+缺口变为：证明实际 source-map 完备，或对
 \(\mathrm{F\_SOURCE\_MAP\_UNCLOSED}\) / 关系错配建立独立 Type I/F/G/下降承接。
