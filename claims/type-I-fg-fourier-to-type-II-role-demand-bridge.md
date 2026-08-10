@@ -203,6 +203,15 @@ r_q(Q):=
 这四项把 Fourier 角色的“存在”与整数载体的“可回译”分开；只有第一项允许进入
 q-prefix/Kneser 价格账本。
 
+进入该账本后还必须区分请求数与前缀深度。一个规范 q-primary restriction 在本桥中
+只产生一个最小请求；它的 source-SNF menu、角色阶 \(q^{e_q}\) 或某条整数载体的
+depth-\(d\) 都不会生成新的 request id。若一个 unlayered named edge 通过估值移位、
+范围和真实纤维门，它可以让这一个请求承载唯一的 depth-\(d\) Q-PREFIX lineage；
+若调用压成同一循环方向的不同停止层 staircase，则所需 \(q-1\) 个 request ids 必须
+由上游物理义务预先给出，先证明其角色 restriction 共线并保存允许的单位归一化，再
+通过共同角色求值像与联合 SNF。精确判据见
+[F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负陪集零入口](type-I-fg-qprefix-request-depth-admission.md)。
+
 G 型分支更简单：若 \(\psi|_{\bar H}=1\)、\(\psi(t)\ne1\)，则所有源差分都被
 \(\psi\) 湮灭，输出
 \[
@@ -210,6 +219,12 @@ G 型分支更简单：若 \(\psi|_{\bar H}=1\)、\(\psi(t)\ne1\)，则所有源
 \]
 不生成 \(\mathrm{SOURCE\_RANK\_DEMAND}\)。这避免把 G 型本来已经完成的支撑外分离
 错误地转成 Type II 容量请求。
+
+规范 G-anchor 的 Jacobi 角色还有一个更窄的严格边界：在
+\(\mathcal D_p^-\) 负 endpoint 菜单内部，全部带标记行位于同一个 Jacobi 负陪集，
+故内部差分求值为零；角色本身阶为二，也不提供任何奇 q-primary 请求。该结论不覆盖
+anchor-inclusive source universe、菜单外 raw exits 或其它奇阶角色；出现这些对象时
+必须扩张 source contract，而不是向旧负 endpoint 子菜单收费。
 
 ## 5. 与 Fourier 预算和多 q 角色的关系
 
@@ -286,6 +301,9 @@ F 型 Fourier 幅度给出相位预算，但角色阶本身不等于 q-height。
 都已枚举、或 q 请求闭包后必然命中/递降。剩余的决定性全称命题因此被缩小为：
 证明 F 型非恒相位角色的 source-map 完备性，或证明
 \(\mathrm{FOURIER\_ROLE\_NO\_ARITHMETIC\_LIFT}\) 能转成 Type I/F/G 或全局良基秩。
+对单 F 请求，正向对象现在可进一步收紧为一个 depth-\((q-1)\) 的同纤维 typed
+Q-PREFIX，而不是 \(q-1\) 个克隆请求；对规范 G/Jacobi 二阶角色，奇 q 入口已经严格
+关闭，不能再作为该正向对象的候选。
 
 多角色进入物理选择器前还须把
 \(\langle\chi_q|_{\Delta_Q}\rangle\) 与每条带 provenance 的 source relation

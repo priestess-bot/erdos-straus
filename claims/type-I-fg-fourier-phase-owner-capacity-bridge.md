@@ -102,6 +102,13 @@ q-primary 分量有高度 \(h_i\ge1\)，并在其关系格坐标中给出相位�
 
 这些都是对偶到算术的接口障碍，而不是 q 容量超载，也不是递降边。
 
+对 target-odd 的奇 q-primary restriction，目标相位恒为零，而 owner 中心是非零
+单位类，所以本卡的 identity 对齐入口结构性为空。合法替代不是复制角色请求，而是先从
+同一 source-SNF 表选择一条非零带名边，再用非零仿射中心构造一个单请求
+depth-\(d\) Q-PREFIX 候选；它仍须逐项通过范围与真实纤维门。单请求深度、多请求
+staircase 的联合角色像门及规范 G/Jacobi 零入口见
+[F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负陪集零入口](type-I-fg-qprefix-request-depth-admission.md)。
+
 ### F 型对齐且 source-complete
 
 若所有参与请求都有 (2)，owner 标签两两可区分，每个真实源列恰有一个 owner，且

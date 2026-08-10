@@ -322,7 +322,32 @@ h=q-1,
 \tag{S2}
 \]
 
-规范角色值为 \(c_a\in\mathbb F_q^\times\)。先固定满足 (7) 的 \(r_0\)。对
+规范角色值为 \(c_a\in\mathbb F_q^\times\)。这里讨论的是最终压成一个循环
+q-primary 方向、角色秩一的 staircase；若请求携带不同角色义务，必须改用完整
+evaluation-Rado/耦合超图。本节的 \(h\) 条边只是算术 skeleton，
+不自动生成 \(h\) 个请求。调用本节前必须已经有 \(h\) 个两两不同的 physical
+request ids，并给出 'COMMON_ROLE_LINE_CERT'：全部请求角色经其合同允许的非零单位
+归一化后属于同一个已固定一维线 \(L\)。把 \(c_a\) 同步换算到该共同坐标；若边在
+规范可见商中的像为 \(u_a\)，还必须满足
+
+\[
+(c_1,\ldots,c_h)\in
+\operatorname{im}\!\left[
+L\longrightarrow\mathbb F_q^h,\quad
+\rho\longmapsto(\rho(u_a))_{a=1}^h
+\right].
+\tag{S2a}
+\]
+
+式 (S2a) 只是共同线性方程的可解条件；等价地，desired vector 必须湮灭该求值映射
+转置的核，所以它不依赖后文的算术构造。逐边分别可解不能替代 (S2a)，在较大角色
+空间中找到另一个共同角色也不能删除原请求的独立角色义务。若
+\(\delta_a=n_a\delta\) 且 \(q\nmid n_a\)，同一个
+整数仿射映射又使所有像差具有相同 q-估值，严格不能形成不同停止层。完整请求—深度
+分解、联合角色像判据和最小反例见
+[F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负陪集零入口](type-I-fg-qprefix-request-depth-admission.md)。
+
+先固定满足 (7) 的 \(r_0\)。对
 \(1\le a\le h\)，递归选取
 两两不同并避开 \(r_0g_1\cdots g_h\) 及此前所选素数的素数
 
@@ -674,6 +699,9 @@ qualified rank-one named edge (delta, gamma, q)
                                 + positive kernel Fourier energy
 
 qualified staircase star (delta_a, gamma_a, q), a=1..q-1
+  -> require q-1 pre-existing distinct request ids
+  -> require COMMON_ROLE_LINE_CERT
+  -> require normalized desired values in that line's joint evaluation image
   -> assign stopping bases J, J+1, ..., J+q-2
   -> construct one common canonical source base and common target
        range/joint-SNF/provenance/fiber gate fails:
@@ -691,7 +719,8 @@ qualified staircase star (delta_a, gamma_a, q), a=1..q-1
 occurrence slots、连续层满匹配和最优 full-cycle 前缀的算术接线。幂块的 Kneser 价格、
 full-cycle 饱和和 kernel Fourier
 分派沿用既有定理。它没有证明每个实际 F/G 请求都通过范围、prefix、label 与
-`FIBER_REALIZED`，也没有把 \(D_*<D_0\) 冒充不可重置的 owner-base E5。下一步必须
+`FIBER_REALIZED`，也不从一条角色请求生成 staircase 所需的 \(q-1\) 个 request ids，
+更没有把 \(D_*<D_0\) 冒充不可重置的 owner-base E5。下一步必须
 证明真实请求族中该入口全称非空，或把 (29)、范围失败及 kernel slice 送入直接终端、
 完整 kernel source box 或已封闭的良基下降。
 

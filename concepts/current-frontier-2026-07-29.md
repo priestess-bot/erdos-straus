@@ -5190,3 +5190,56 @@ e_\omega=0.
 Grassmann 容量门。当前更集中的正向候选是 nearest-fiber 与 owner arithmetic；
 primary-filter 保留为选择 source contraction 角色的对偶输入。完整证明见
 [primary filter 的活动源差分饱和与 source-preserving successor 零容量](../claims/type-I-primary-filter-active-source-saturation-zero-successor-capacity.md)。
+
+## 2026-08-10：F/G q-prefix 的请求数与前缀深度已经严格分离
+
+F/G Fourier 入口现有四个不能互换的量：
+
+\[
+n_{\rm req},\qquad k_{\rm role},\qquad d_{\rm pref},\qquad c_{\rm occ}.
+\]
+
+一个规范 source-visible F 型 q-primary restriction 只生成一个最小请求。source-SNF
+menu 的列数、pair-energy 边数、角色阶 \(q^e\)、q-height 深度和内部 layer keys 都
+不能克隆 request id。反过来，一个请求若有实际带名边通过范围、共同规范基、
+source-switch、真实纤维、lineage 与 occurrence 门，可以承载唯一的
+depth-\(d\) Q-PREFIX；当 \(d\ge q-1\) 时它可以饱和一个显式 \(C_q\) 商，但仍只有
+一个请求、一个角色秩和一个 lineage。
+
+真实 \(p=73,R=27,K=17\cdot29\) 控制使这个边界不再只是抽象例子。指数盒像在
+\(C_{18}\) 中有九个元素，规范 q=3 初等角色在 36 条无序 pair 中看见 27 条非零边，
+但这些边的角色跨度与最小请求数都恰为一。target phase 为 \(0\bmod9\)，owner center
+为 \(2\bmod9\)，所以 direct identity owner 仍严格为空；独立的
+\(p=557281\) depth-2 控制只证明非零仿射算术候选，明确不与 \(p=73\) 拼成真实纤维。
+这里 q=3 来自 all-q bridge 对阶 \(18\) 角色的逐 primary 分解；旧 empty-fiber
+回执只选择最小 \(q_*=2\)，并未被追溯改写。
+
+若调用声明压成同一 rank-one 循环方向的 \(q-1\) 请求 staircase，这些 request ids
+必须预先存在，而且原请求角色 restriction 必须经允许的单位归一化后位于同一固定
+角色线 \(L\)。给边向量 \(u_a\) 和共享坐标中的指定值 \(c_a\)，共同角色存在的充要
+条件是
+
+\[
+(c_a)_a\in
+\operatorname{im}\bigl[L\to\mathbb F_q^{q-1},
+\ \rho\mapsto(\rho(u_a))_a\bigr].
+\]
+
+在 \(q=3,u_1=u_2=1,c=(1,2)\) 中，每条边分别可解而共同系统无解；这是新的严格
+joint-role obstruction。若所有关系只是同一 \(\delta\) 的 q-单位倍数，共同整数
+仿射映射使它们的 q-估值完全相同，也严格不能形成连续停止层。
+携带不同角色义务的请求不受共同单角色判据替代，仍须运行完整 evaluation-Rado 或
+耦合超图；即使较大的角色空间中另有一个共同解，也不能删除原来的 rank-two 义务。
+
+G 路线同时得到一个精确但限域的 no-go。规范 Jacobi 角色在声明的
+Jacobi-negative endpoint 菜单内部求值为零，且角色阶为二，故提供的奇 q 请求数为
+零。\(p=5281\) 的四个 endpoint 与四条菜单内 raw edges 给出固定控制。该结论不覆盖
+anchor-inclusive source universe、菜单外 raw exits 或其它 odd-order roles；实际
+控制同时验证前两类扩张可见且存在替代奇阶角色，防止把子菜单零入口误报成完整物理
+容量为零。
+
+完整定理与聚焦验证见
+[F/G q-prefix 的请求—深度分解、联合角色准入与 Jacobi 负陪集零入口](../claims/type-I-fg-qprefix-request-depth-admission.md)。
+下一决定性正向对象因此收紧为：在真实 F 状态中实现一个 depth-\((q-1)\) 的同纤维
+typed lineage，或把其范围/纤维失败转成终端或良基递降；规范 G/Jacobi 二阶角色不再
+作为奇 q 正向入口。
