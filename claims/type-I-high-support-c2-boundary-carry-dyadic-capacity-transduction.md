@@ -12,8 +12,9 @@ statement: >-
   complete-excess 语法严格排除。另一方面，K_2 内部存在统一短关系
   rho=2/(2p-1)=1 (mod R_2)，等价于 j=1 除子对 (a,b)=(4,2p-1)，并产生
   E=2(p-1)、偶前驱 n=p-1 及自然标记 alpha=A_2。该关系把缺失的内部容量
-  精确转移到 dyadic/关系格侧；但其自然标记源非空当且仅当原图表已有中心
-  Type I 命中，所以 F/G miss 上仍只能登记为未提升偶前驱，而不是终端叶或
+  精确转移到 dyadic/关系格侧；此卡证明其自然标记源非空当且仅当原图表已有
+  中心 Type I 命中，因而关系本身不支付 E4。后续反足 Vieta 定理又证明该中心
+  命中对所有核心素数都不可能，故自然标记最终应登记为空分支，而不是终端叶或
   verified edge。
 claim_status: established
 proof_provenance: repository_derivation
@@ -494,8 +495,10 @@ D\equiv-K_2\pmod {R_2}.
 \tag{47}
 \]
 
-因此若 \(H_2(p)\) 已分类为 F 或 G miss，则 (43) 的标记源严格为空。偶数
-\(p-1\) 的平凡解
+因此若 \(H_2(p)\) 已分类为 F 或 G miss，则 (43) 的标记源严格为空。后续的
+[反足 Vieta 全称 no-go](type-I-high-support-c2-centered-vieta-antipodal-no-go.md)
+进一步证明 \(R_2/K_2\) 对每个核心素数都没有二单位分数分解，所以自然标记源其实
+无条件为空。偶数 \(p-1\) 的平凡解
 
 \[
 \left(\frac{p-1}{2},p-1,p-1\right)
@@ -510,8 +513,8 @@ existing_candidate_deltas = ALL_EXISTING_DELTAS_POSITIVE
 dyadic_status = SHORT_RELATION_EVEN_PREDECESSOR
 predecessor_n = p - 1
 natural_marker = A_2
-marked_source_status = EMPTY_IF_CURRENT_CHART_IS_F_OR_G_MISS
-edge_status = UNLIFTED_GENERALIZED_DYADIC_CANDIDATE
+marked_source_status = EMPTY_BY_ANTIPODAL_VIETA_NO_GO
+edge_status = REJECTED_EMPTY_MARKED_SOURCE
 ~~~
 
 若 (47) 命中，则原图表本来已经有直接 Type I 终端；若 (47) 未命中，则这个自然
@@ -559,13 +562,20 @@ d=10,
 1. 最小 \(C=2\) 高支撑边界上的 complete-excess 分支不仅不下降，而且每个合法候选
    都严格上升；继续扩张或重复扫描 sink 不会产生出口。
 2. 状态内部唯一可降的支撑位是 \(A_2\to K_2\)，但 full-block 语法无法读取它。
-3. 同一位容量自动变成短关系 (35)，统一产生 \(p-1\) 偶前驱。
-4. 对 F/G miss，剩余决定性缺口已缩成：为标记 \((p-1,A_2)\) 构造**非自然**的
-   非空可提升源，或在进入该边界前由直接 Type I/II、alternate/dual/total-cofactor
-   或 paid reset 抢占。
+3. 同一位容量自动变成短关系 (35)，统一产生 \(p-1\) 偶前驱；后续 Vieta
+   递降又证明其自然标记源对每个核心素数都为空。
+4. 后续的 rank-one 穷尽定理已经关闭双尾保持 \(D\)-only 子路：全部
+   source-supported 候选只是其它 \(p-1\) 图表的自然标记，非空时立即给出
+   centered Type I；全部 non-source-supported 候选的标记纤维恒空。
+5. 固定 gap-\(7\) 的单分母源切片虽然总非空，但其目标提升恰等价于原
+   gap-\(7\) Type I/II 菜单命中，同样不能独立支付 E4；标准 terminal-first
+   次序仍须先检查更小的 gap-\(3\) 等直接菜单。
 
 因此下一步不应再试图证明这个边界的 bundle 改善集非空，也不应只重复寻找别的
-dyadic \(E\)。真正的新对象必须改变标记源或给出跨正规形的 E4。
+dyadic \(E\) 或 \(D\)-only 标记。真正的新对象必须改变保留尾/坐标语法、使用随
+source 变化的单坐标映射、完全重组三个坐标，或给出边界前的跨正规形抢占。双尾菜单
+的精确重索引、容量公式和空纤维定理见
+[C=2 偶前驱的 rank-one 保留坐标穷尽](type-I-high-support-c2-rank-one-retention-exhaustion.md)。
 
 聚焦验证：
 

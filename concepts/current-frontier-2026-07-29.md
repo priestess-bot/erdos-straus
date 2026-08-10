@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升，且唯一内部乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选；F/G miss 上该自然标记源仍为空。p=73 由直接 Type II 终端抢占，既有 C=44 状态另有 44->2 严格边。当前两条决定性前沿是：为此类 carry no-go 构造非自然可提升标记源或 alternate/终端/dual/total-cofactor/良基 reset；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单，固定 gap-7 单标记也只复述直接终端门且不取代更早的 gap-3 检查。p=73 由直接 Type II 终端抢占，既有 C=44 状态另有 44->2 严格边。当前两条决定性前沿是：构造真正改变保留尾或正规形的 alternate/terminal/dual/total-cofactor/良基 reset；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -38,6 +38,10 @@ sources:
   role: exact-carry-gate-empty-improvement-counterexample-and-terminal-dispatch
 - claim: type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
   role: universal-least-C2-carry-no-go-and-internal-dyadic-capacity-map
+- claim: type-I-high-support-c2-centered-vieta-antipodal-no-go
+  role: universal-C2-centered-miss-and-natural-marker-empty-proof
+- claim: type-I-high-support-c2-rank-one-retention-exhaustion
+  role: cross-chart-Type-I-menu-and-rank-one-retention-exhaustion
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -5772,12 +5776,56 @@ E=2(p-1),\qquad n=p-1,\qquad \alpha=\frac{nK_2}{E}=A_2.
 \]
 
 所以 bundle 无法读取的内部一比特并未消失，而是被精确转成 \(p-1\) 的 marked
-dyadic 容量。边界也同样精确：该自然标记源非空当且仅当原图表已经中心 Type I
-命中；对 F/G miss 它严格为空，不能登记 terminal leaf 或 verified edge。
+dyadic 容量。这里“自然标记源非空当且仅当原图表已经中心 Type I 命中”只是转导
+等价；下节的反足 Vieta 定理进一步证明，该中心命中对每个核心素数都不可能，因而
+自然标记无条件为空，不能登记 terminal leaf、candidate transition 或 verified edge。
 \(p=193\) 给出语义控制：\(p+4\) 的 \(d=1\) 子菜单 miss，但 gap-7 Type I 仍直接
 终止，故有限菜单 miss 不能称为 terminal-free。
 
-这把下一项研究对象压缩为两种真正的新数学：构造 \((p-1,A_2)\) 的非自然非空标记集
-和全域 E4，或证明进入该边界前必有跨正规形 terminal/alternate/dual/paid reset。
+这一步当时把研究对象压缩为 \((p-1,A_2)\) 的非自然标记或跨正规形出口；下节已经
+进一步穷尽其中整个双尾保持 `D-only` 子类。
 完整证明见
 [最小高支撑 \(C=2\) 边界的严格 carry no-go 与内部二进容量转导](../claims/type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
+
+## 2026-08-11：反足 Vieta 全称 no-go 与 rank-one 保留穷尽
+
+令 \(p=4U+1\)。最小 \(C=2\) 图表的中心余项可写成
+
+\[
+\frac{R_2}{K_2}=\frac{8U-1}{U(8U+1)}.
+\]
+
+现在已有纯代数全称定理：它对每个 \(U\ge1\) 都不能写成两个正单位分数。若假设
+存在分解，约去一个 \(K_2^2\) 除子后可取正整数 \(a,b,h,c\) 满足
+
+\[
+(a+b+h)(a+b+2h)=8abch^2.
+\]
+
+把它视为关于 \(b\) 的首一二次方程。除唯一判别式为负的边界外，Vieta 伴根总是
+位于 \((0,a)\)，与使 \(\max(a,b)\) 最小的正整数解矛盾。因此原自然标记
+\(A_2=(p-1)(2p-1)/8\) 对每个核心素数都严格为空；这不是有限盒或 F/G 分类结论。
+完整证明见
+[最小 \(C=2\) 图表的反足 Vieta 全称 no-go](../claims/type-I-high-support-c2-centered-vieta-antipodal-no-go.md)。
+
+同一前驱 \(n=p-1\) 的全部双尾保持 `D-only` 尝试也可精确穷尽。source-supported
+候选经 \(E=n^2/D\) 一一重索引为
+
+\[
+\mathscr E_p=\{E:4\mid E,\ E\mid n^2/4\},
+\qquad
+(R_E,K_E)=\left(E-1,\frac{p(E-1)+1}{4}\right).
+\]
+
+每个非空标记恰是另一张图表的 centered Type I 命中，并可闭式恢复直接证书；所有
+non-source-supported 项由既有 rank-one no-go 全部排空。若 \(n=2^e u\)、\(u\) 为
+奇数，菜单容量精确为 \((2e-3)\tau(u^2)\)。固定 \(c_7=(p+7)/4\) 虽总有
+\(p-1\) 源解，但其提升恰等价于原 gap-\(7\) Type I/II 菜单命中，所以也只是
+terminal-first adapter；它不取代更早的 gap-\(3\) 等标准短证书检查。见
+[最小 \(C=2\) 偶前驱的跨图表重索引与双尾保持穷尽](../claims/type-I-high-support-c2-rank-one-retention-exhaustion.md)。
+
+这给出当前精确分界：自然中心、全部双尾保持 `D-only` 和固定 gap-\(7\) 单标记均已
+关闭为 no-go 或直接终端，不应再投入搜索预算。真正未决的构造必须至少改变一个保留尾、
+使用随 source 解变化的单坐标映射、完全重组三个坐标，或在进入 \(C=2\) 边界前由
+alternate、dual、total-cofactor、paid reset 抢占；任何候选仍须同时支付全域 E4
+解提升与严格 E5 良基势。

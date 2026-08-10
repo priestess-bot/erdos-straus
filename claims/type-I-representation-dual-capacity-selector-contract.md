@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，但 F/G miss 上自然标记源为空。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。该前驱的全部双尾保持 D-only 候选现又精确分成跨图表 centered Type I 终端菜单与全空 non-source 菜单，不再产生递归边；固定 gap-7 单标记也只复述直接终端门。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -24,6 +24,8 @@ depends_on:
   - type-I-high-support-rank-aware-sink-bundle-selector
   - type-I-high-support-bundle-carry-capacity-terminal-dispatch
   - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
+  - type-I-high-support-c2-centered-vieta-antipodal-no-go
+  - type-I-high-support-c2-rank-one-retention-exhaustion
   - type-I-overflow-cofactor-r-chart-support
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -170,6 +172,10 @@ sources:
     role: exact-carry-gate-empty-improvement-counterexample-and-terminal-dispatch
   - claim: type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
     role: universal-least-C2-carry-no-go-and-internal-dyadic-capacity-map
+  - claim: type-I-high-support-c2-centered-vieta-antipodal-no-go
+    role: universal-centered-miss-and-natural-marker-empty-proof
+  - claim: type-I-high-support-c2-rank-one-retention-exhaustion
+    role: rank-one-cross-chart-menu-and-coordinate-retention-exhaustion
   - claim: type-I-g-anchor-jacobi-odd-complete-excess-source-menu
     role: exact-n-prime-Jacobi-odd-path-anchored-source-menu
   - claim: type-I-linear-escape-canonical-d-lattice-source-menu
@@ -1133,8 +1139,34 @@ complete-excess full-block 语法在该图表上不能实现 \(c=1\) 或 \(c=2\)
 \]
 
 它以 \(j=1\) 对 \((a,b)=(4,2p-1)\) 产生 \(E=2(p-1)\)、\(n=p-1\) 和
-自然标记 \(\alpha=A\)。这是从 carry no-go 到关系格容量的真实代数转导，但在 F/G
-miss 上标记源严格为空，故只能保持 `analysis_evidence`。见
+自然标记 \(\alpha=A\)。这是从 carry no-go 到关系格容量的真实代数转导；不过令
+\(p=4U+1\) 后，反足 Vieta 递降证明
+
+\[
+\frac{2p-3}{(p-1)(2p-1)/4}
+=\frac{8U-1}{U(8U+1)}
+\]
+
+不可能分成两个正单位分数。因此自然标记源对每个核心素数都为空，不再登记为待判
+`analysis_evidence`。见
+[最小 \(C=2\) 图表的反足 Vieta 全称 no-go](type-I-high-support-c2-centered-vieta-antipodal-no-go.md)。
+
+在同一前驱 \(n=p-1\) 上，全部双尾保持 `D-only` 候选也已穷尽。source-supported
+部分与有限菜单
+
+\[
+\mathscr E_p=\{E:4\mid E,\ E\mid(p-1)^2/4\},
+\qquad
+(R_E,K_E)=\left(E-1,\frac{p(E-1)+1}{4}\right)
+\]
+
+一一对应；每个非空项已经是 centered Type I 终端，全部 non-source-supported 项
+严格为空。若 \(p-1=2^e u\)、\(u\) 为奇数，则菜单容量恰为
+\((2e-3)\tau(u^2)\)。固定 gap-\(7\) 单标记同样只复述直接 Type I/II 终端门，
+并且不能取代更早的 gap-\(3\) 等标准短证书检查。所以此处不再创建新的 marked
+递归状态；菜单全 miss 后必须改变保留尾或转交
+alternate、dual、total-cofactor、paid reset。见
+[最小 \(C=2\) 偶前驱的跨图表重索引与双尾保持穷尽](type-I-high-support-c2-rank-one-retention-exhaustion.md)及
 [最小 \(C=2\) 边界的 carry--dyadic 容量转导](type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
 
 另外有一条可完整重算的固定-n 支撑增长边：

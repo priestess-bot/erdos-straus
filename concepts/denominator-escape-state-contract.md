@@ -42,6 +42,8 @@ used_by:
 - type-I-high-support-rank-aware-sink-bundle-selector
 - type-I-high-support-bundle-carry-capacity-terminal-dispatch
 - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
+- type-I-high-support-c2-centered-vieta-antipodal-no-go
+- type-I-high-support-c2-rank-one-retention-exhaustion
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -514,8 +516,36 @@ Type II 终端抢占；相反，既有 \(C=44\) 状态有一条 \(L=1521269\) �
 \qquad E=2(p-1),\qquad n=p-1,\qquad\alpha=A,
 \]
 
-但这仍是 `unlifted_generalized_dyadic_candidate`：其自然标记源非空恰等价于当前图表
-已经 Type I 命中，故 F/G miss 上不能支付 E4。完整证明见
+这条自然标记现在不再保留为待判候选。写 \(p=4U+1\)，则相应中心余项为
+
+\[
+\frac{8U-1}{U(8U+1)}.
+\]
+
+反足 Vieta 递降证明它对每个 \(U\ge1\) 都不能分成两个正单位分数；因此自然标记源
+对每个核心素数无条件为空，而不只是 F/G 控制上为空。见
+[最小 \(C=2\) 图表的反足 Vieta 全称 no-go](../claims/type-I-high-support-c2-centered-vieta-antipodal-no-go.md)。
+
+同一偶前驱 \(n=p-1\) 的全部双尾保持 `D-only` 尝试也已有完整分派。令
+
+\[
+\mathscr E_p=\{E:4\mid E,\ E\mid (p-1)^2/4\},
+\qquad
+(R_E,K_E)=\left(E-1,\frac{p(E-1)+1}{4}\right).
+\]
+
+source-supported 候选与 \(\mathscr E_p\) 一一对应；其中任一非空标记恰是
+\((R_E,K_E)\) 的 centered Type I 命中，并立即恢复直接短证书。non-source-supported
+候选全部为空。若 \(p-1=2^e u\)、\(u\) 为奇数，则不重复的图表容量精确为
+\((2e-3)\tau(u^2)\)。固定 gap-\(7\) 单标记虽有普适前驱源，但其可提升性恰等价于
+原 gap-\(7\) Type I/II 终端菜单命中，因此只能作为 terminal-first adapter，不能支付
+独立 E4；它也不取代更早的 gap-\(3\) 等标准短证书检查。见
+[最小 \(C=2\) 偶前驱的跨图表重索引与双尾保持穷尽](../claims/type-I-high-support-c2-rank-one-retention-exhaustion.md)。
+
+所以该边界的合同分派为：先跑含 gap-\(3\) 在内的标准 terminal-first 扇，再跑跨图表
+有限 Type I 菜单与 gap-\(7\) 适配器；全部 miss 后删除自然标记和整个双尾保持
+`D-only` 分支，再转交改变保留尾的 alternate、dual、
+total-cofactor 或 paid reset。完整 carry 入口证明见
 [最小 \(C=2\) 边界的严格 carry no-go 与内部二进容量转导](../claims/type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
 
 ### overflow 的 cofactor-supported r-chart 支撑升级

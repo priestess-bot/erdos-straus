@@ -655,3 +655,14 @@ quotient-multiple 命中与 \(p^2+4n\) 同余因子的双射、互补因子配�
 的自然菜单、quotient-multiple 和两条规范尾完整门同时为空。它同时核对
 \(p=193\) 的直接 Type II 终端，防止把局部四菜单障碍误报为 terminal-first
 全局反例；不运行历史扫描。
+
+`type_i_high_support_c2_centered_vieta_no_go.py` 核对最小高支撑 \(C=2\) 图表中
+\(R=8U-1,K=U(8U+1)\) 的反足 Vieta 多项式、伴根传导和全部符号边界，并用
+\(p=73,97,193\) 做嵌入控制。全称 centered miss 来自主张中的无限递降证明；脚本
+只防止恒等式回归，不以有限枚举代替证明。
+
+`type_i_high_support_c2_rank_one_retention_exhaustion.py` 对 \(p=73,193\) 完整重算
+\(n=p-1\) 的 `D-only` 候选分拆、source-supported 与跨图表 \(E\) 菜单的双射、
+容量公式、centered Type I 闭式恢复、non-source 空纤维调用条件和 gap-\(7\)
+terminal-first 映射，并用 \(p=97\) 核对更早的 gap-\(3\) 单标记正控制。它是聚焦的
+公式与控制例验证器，不运行历史范围测试。
