@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-bottom-sink-scc-complete-excess-bundle-selector
 title: 底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩
-statement: 对合法核心图表 4K=pR+1 的任一来源可达完整 raw formal Reach，汇点直接给 Type I；否则任取 bottom sink-SCC，在其中选小坐标最小节点 {x,y}，必有 x|K。把 y 中所有超过 K 指数容量的完整素数幂块打包为 Q，并写 y=Q beta，则 Q>1、x beta|K、(Q,x beta)=1、Q不整除K。对 absorbed support A|K，规范容量并不是一般的 AQ，而是 M=lcm(A,Q)；它满足 M/A>=2。若规范 R_M<p，则以 M 为新 absorbed support、Sol(p) 为共同标记集和恒等提升得到完整 E1--E5 边；若 R_M>p，则得到 pn=4Md+1 的 bundle overflow。因此 competing-excess 不再是独立 sink-SCC 余项，每个 F 状态都严格分流为 bundle marked absorb 或 bundle overflow。若初始 A=1 且图表有线性源 p=a+s+asR，则 overflow 强制 as<4/alpha；as=1 的整族由 Jacobi 角色严格属于 G，故线性 F overflow 只能有 alpha=1 且 as属于{2,3}。在更窄的 source-anchored clean single-external alpha=1 子类中，q-peeling 到 anchor 后关闭全部 as=3，并把 as=2 收缩到必要类 p congruent to 169 modulo 240。
+statement: 对合法核心图表 4K=pR+1 的任一来源可达完整 raw formal Reach，汇点直接给 Type I；否则任取 bottom sink-SCC，在其中选小坐标最小节点 {x,y}，必有 x|K。把 y 中所有超过 K 指数容量的完整素数幂块打包为 Q，并写 y=Q beta，则 Q>1、x beta|K、(Q,x beta)=1、Q不整除K。对 absorbed support A|K，规范容量为 M=lcm(A,Q)，且 M/A>=2；规范 R_M<p 或 R_M>p 分别给 marked 或 overflow target。后续精确秩证明：只要 parent A<=B_p，两类 target 都以 M 为支撑构成完整 E1--E5 边；A>B_p 时真实门精确为 K_M/M<K_H/A。因此 competing-excess 不再是独立 sink-SCC 余项，每个低支撑 F 状态都直接产生严格 bundle edge。若初始 A=1 且图表有线性源 p=a+s+asR，则 overflow 强制 as<4/alpha；as=1 的整族由 Jacobi 角色严格属于 G，故线性 F overflow 只能有 alpha=1 且 as属于{2,3}。在更窄的 source-anchored clean single-external alpha=1 子类中，q-peeling 到 anchor 后关闭全部 as=3，并把 as=2 收缩到必要类 p congruent to 169 modulo 240。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -43,7 +43,7 @@ sources:
   - claim: denominator-escape-state-contract
     role: marked-edge-and-path-anchored-receipt-contract
 visibility: public
-last_checked: '2026-08-01'
+last_checked: '2026-08-11'
 ---
 
 # 底层汇 SCC 的完整超额 bundle 选择器与线性源 overflow 收缩
@@ -919,3 +919,30 @@ reproductions/type-i-bottom-sink-scc-complete-excess-bundle-results.json
 该脚本只复核四个 bundle receipt、一个实际 F-source 路径、lcm 重叠、一个 overflow、
 二进自环、Jacobi G 边界，以及一条线性 F overflow 的 clean-anchor/alternate-carrier
 路径；它不重跑历史状态普查。全称结论由第 2--8 节的整数证明承担。
+
+## 12. 下游：低支撑 parent 的 overflow 也成为严格边
+
+本卡第 5.2 节的 `不是 E4 后继` 是在旧 overflow state/rank 合同下的边界。后续
+charged overflow normal form 与精确容量秩已经允许把 canonical overflow 作为真实
+target。若本卡的 parent support 满足 \(A\le B_p\)，则
+
+\[
+M/A\ge2
+\quad\Longrightarrow\quad
+\left\lfloor\frac{B_p}{M}\right\rfloor
+<\left\lfloor\frac{B_p}{A}\right\rfloor,
+\]
+
+与 \(R_M<p\) 或 \(R_M>p\) 无关。因此完整 bundle receipt、target 独立 F/G/hit
+重算和 \(\operatorname{Sol}(4,p)\) 恒等提升共同把两类 target 都升级为 E1--E5；
+`marked/overflow` 只再表示 target state class。任意 marked source 都自动满足
+\(A\mid K\le B_p\)，故 terminal-free marked F state 已无 bundle-overflow 非边余项。
+
+当 parent 已有 \(A>B_p\) 时不能外推这个结论；真实 E5 的精确门变为
+\(K_M/M<K_H/A\)。实际 \(p=73\) F 路径在 sink 最小节点给出反向的
+\(45<47\)，严格阻止该 candidate。详见
+[无界同图表升级与高支撑父端点边界](type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md)。
+因此高支撑分支不能继续固定选择最小节点。后续 rank-aware 版本遍历同一 SCC 的全部
+定向完整超额 bundle，并在有改善候选时按最短路径选择；该 \(p=73\) SCC 的 33 个合法
+候选中有 22 个下降，最短者给出 \(45\to44\)。见
+[高支撑 rank-aware sink-bundle 有限选择器](type-I-high-support-rank-aware-sink-bundle-selector.md)。

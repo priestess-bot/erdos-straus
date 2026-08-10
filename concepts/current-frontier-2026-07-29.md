@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把所有核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 对 F/G/hit 全部一步到达 anchor，故裸 G source 缺口消失；overflow determinant 的 fixed-n 因子图谱在额外条件 M<p 下关闭小载体 A=1 子族，并把一般有界除子条件下的 A=1/A>1 递降规范化为“取最大合格 L”；来源 bundle 若满足 M/A≥2 且 M≤B_p，还可在同一 chart 上把 support 升到 M 并严格下降外层势。一般 A=1 的对偶 RESET 已关闭其算术入口。当前有两条并列决定性前沿：一是 M>B_p 的递归可达 A>1 overflow 及其中的 alternate、终端或独立外层秩；二是实际 F/G 带名候选的非空/非矩形容量缺口及其到 kernel source box、Type I/II 终端或不可重置 marked 下降的闭合。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器穷尽定向完整超额候选并以真实余因子下降标价，首个 p=73 高支撑 F 状态已有 45->44 出口。当前两条决定性前沿是：证明一般高支撑改善集合非空或将其容量 no-go 完备分派到 alternate/终端/良基出口；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -30,6 +30,10 @@ sources:
   role: bounded-fixed-n-divisor-outer-rank-and-low-complement-corollary
 - claim: type-I-overflow-same-chart-support-promotion
   role: same-chart-promotion-and-M-above-Bp-residual
+- claim: type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+  role: unbounded-same-chart-rank-and-persistent-parent-gate
+- claim: type-I-high-support-rank-aware-sink-bundle-selector
+  role: high-support-finite-capacity-map-and-p73-strict-edge
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -73,7 +77,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-10'
+last_checked: '2026-08-11'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -5565,3 +5569,114 @@ p^2+4n=(4kn-p)(4n\ell-p),\qquad kp+1=\ell(4kn-p).
 exact physical-source predicate 的 kernel successor；重复加深 quotient-multiple
 扫描不能跨过平方商障碍。完整证明与聚焦验证见
 [first-overflow 商倍数的因子配对、规范尾精确门与四菜单联合障碍](../claims/type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md)。
+
+## 2026-08-11：同图表支撑升级已删除载体上界，余项转为高支撑父端点门
+
+旧 `overflow_same_chart_support_promotion_v1` 只用
+\(\Pi_p(A)=\lfloor B_p/A\rfloor\)，因而把 \(M>B_p\) 留作余项。精确容量秩
+
+\[
+\Lambda_p^\sharp(S)
+=\left(\left\lfloor\frac{B_p}{A_S}\right\rfloor,\frac{K_S}{A_S}\right)
+\]
+
+现给出无界版本：若真实 persistent overflow receipt 满足
+\(K=MC\)、\(A\mid M\)、\(M/A\ge2\)，则保持同一图表并升级
+\(A\to M\)。第一坐标若没有严格下降，第二坐标仍从 \((M/A)C\) 严降到 \(C\)。
+所以 \(M\le B_p\) 完全不是数学门。
+
+这还把 complete-excess 的 marked/overflow 二分改成 target 类型二分。只要 parent
+满足 \(A\le B_p\)，\(M/A\ge2\) 就强制第一坐标严格下降，故两类 canonical target
+都有 E1--E5。任意 marked source 自动满足 \(A\mid K\le B_p\)，于是
+terminal-free marked F state 已不再留下 bundle-overflow 非边。
+
+新的边界是 persistence，而非 carrier size。无界边把已知 \(p=73\) receipt 推进到
+
+\[
+(R,K;A)=(3743,68310;1518),
+\qquad
+\Lambda_{73}^\sharp=(0,45).
+\]
+
+该状态是实际 F：见证 \((2,-1,-3,0,-2)\) 给出
+\((U,V,m)=(4,198375,53)\)，三步 raw 路径到 \((1,3742,1)\)，完整 bundle 为
+\(Q=1871\)。新 canonical target 的 residual capacity 为 \(47\)，所以真实宏为
+
+\[
+(0,45)\longrightarrow(0,47),
+\]
+
+并不下降；若错误比较内部 receipt，则会看到伪造的
+\((0,87937)\to(0,47)\)。因此 high-support parent 的精确准入门是
+\(K_T/A_T<K_S/A_S\)。下一决定性对象已收紧为：对这个门失败的 high-support F/G
+overflow，证明 total/direct cofactor、dual、终端或另一容量出口的完备析取。
+
+完整证明与聚焦验证见
+[overflow 同图表支撑升级的无界精确秩与高支撑父端点边界](../claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md)。
+
+## 2026-08-11：rank-aware sink-bundle 修复首个高支撑 F 边界
+
+上一节的 \(45\to47\) 只来自固定选择 sink 最小节点
+\((1,3742)\)。对高支撑 parent，正确的 candidate universe 是 source path 所在有限
+sink SCC 的全部定向节点。若
+
+\[
+y=Q\beta,\qquad x\beta\mid K,\qquad
+M_Q=\operatorname{lcm}(A,Q),
+\]
+
+则 canonical target 的第二秩坐标恰为
+
+\[
+c_Q=\frac{K_Q}{M_Q}
+=\left\langle(4M_Q)^{-1}\right\rangle_p.
+\]
+
+因此 \(c_Q<K/A\) 是该 path-anchored 宏的 E5 必要充分门。改善候选非空时，先最小化
+从 bottom anchor 到候选节点的 raw 路径长度，再最小化 \(c_Q\)，就得到规范的有限
+选择器；若改善集合为空，完整 \(c_Q\) 表才构成 complete-excess 宏族的容量 no-go。
+
+对
+
+\[
+(p,R,K;A)=(73,3743,68310;1518)
+\]
+
+的唯一 324 节点 sink SCC，全部两个定向共有 33 个合法 bundle，其中 22 个满足
+\(c_Q<45\)。最短改善路径只有一条：
+
+\[
+(1,3742,1)\xrightarrow{1871}(2,3741,1).
+\]
+
+在新节点取
+
+\[
+3741=1247\cdot3,\qquad Q=1247,\qquad 2\cdot3\mid K,
+\]
+
+得到
+
+\[
+(R_T,K_T;A_T)=(4563815,83289624;1892946),
+\qquad
+(0,45)\longrightarrow(0,44).
+\]
+
+目标重新分类仍为 F：其 centered box 有 2739 个剩余类且不含 \(-1\)，而素数次序
+\((2,3,11,23,29,43)\) 下的无界见证
+\((-1,6,4,-7,-1,-8)\) 命中 \(-1\)。所以这是一条真实可继续的严格边，不是继承标签
+或借 transient 端点得到的伪下降。
+
+更激进地最小化 \(c_Q\) 可在距离 13 的节点 \((297,3446)\) 取得 \(c_Q=6\)；当前
+选择最短证书 \(45\to44\)，把下降幅度保留为次级成本。首个高支撑实际 F 状态因而
+已经关闭。一般余项不再是“高支撑无法处理”，而是证明每个高支撑 sink 的改善集合
+非空，或把其有限 bundle no-go 完备地交给 total/direct cofactor、dual、Type I/II
+terminal 或其它良基出口。
+
+\(p=73\) 已有 terminal-first 优先的直接 Type II 证书
+\((20,219,4380)\)，所以这不是新增素数覆盖边界；新内容是关闭高支撑递归合同中的
+真实端点缺口，并证明 minimum-node failure 不能外推成 sink-family no-go。
+
+完整定理与聚焦验证见
+[高支撑 rank-aware sink-bundle 有限选择器](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md)。

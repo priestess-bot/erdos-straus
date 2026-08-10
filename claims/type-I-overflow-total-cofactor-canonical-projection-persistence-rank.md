@@ -9,8 +9,9 @@ statement: >-
   则目标为 K_A=AC_A、R_A=(4AC_A−1)/p，源容量 C_S=K_S/A 唯一写成
   C_S=C_A+pt，且 K_S−K_A=Ap t、R_S−R_A=4A t。因而 queued source 上
   t>0 等价于严格 K/A 下降，t=0 等价于 canonical stutter；由此在固定 p、只含
-  paid outer-rank、既有 direct-cofactor 与 support-preserving queued canonical
-  descent 的子图上，(floor(B_p/A),K/A) 是严格良基秩。但该下降只能比较真实持久
+  paid outer-rank、既有 direct-cofactor、同图表真支撑升级与 support-preserving queued
+  canonical descent 的子图上，(floor(B_p/A),K/A) 是严格良基秩。同图表升级
+  A->M 只要 A|M|K 且 M>A 即严格，不再需要 M<=B_p。但所有下降只能比较真实持久
   source 与 target：若 determinant chart 只是 parent 内部 receipt，必须比较
   parent->target。若对仓库 p=1201 的内部 receipt 尝试备选整体折叠，容量
   874888->560 却精确投影回 parent chart (R,K;A)=(1839,552160;986)，故
@@ -45,10 +46,12 @@ sources:
     role: persistent-anchor-transient-intermediate-recorded-target-semantics
   - reproduction: reproductions/type_i_overflow_total_cofactor_canonical_projection_rank.py
     role: focused-projection-rank-and-persistence-boundary
+  - reproduction: reproductions/type_i_overflow_unbounded_same_chart_promotion_persistence_boundary.py
+    role: unbounded-same-chart-edge-and-high-support-parent-boundary
   - reproduction: reproductions/type-i-high-anchor-cofactor-macro-replay-results.json
     role: existing-p1201-anchor-and-transient-provenance-for-derived-alternative-fold
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-11'
 ---
 
 # 整体余因子折叠的 canonical 投影、精确容量秩与持久化门
@@ -200,6 +203,7 @@ t>0\iff C_S>p
        \iff K_A/A<K_S/A.
 }
 \tag{15}
+\]
 
 这也重新解释了旧门 \(b(p-d)>p\)：它恰是 charged capacity 尚未处于最小正代表的
 条件，而不是一个偶然的 \(R\) 不等式。
@@ -227,8 +231,10 @@ source 都满足 \(R_S=R_A+4At>4A\)，所以加入这个错误要求会把全部
 每条非终端边仍须独立通过 E1--E4，且只允许是：
 
 1. `O`：已证明 \(\Pi_p(A_T)<\Pi_p(A_S)\) 的 paid outer-rank 边；
-2. `D`：既有 high-anchor direct-cofactor 边，并抑制完整 \(c=1,h=0\) 自环；
-3. `C`：保持 \(A_T=A_S\) 且严格满足 \(K_T<K_S\) 的 queued charged descent，
+2. `P`：保持 \((p,R,K)\) 图表、满足 \(A_S\mid A_T\mid K\) 且
+   \(A_T>A_S\) 的 provenance-bound 真支撑升级；
+3. `D`：既有 high-anchor direct-cofactor 边，并抑制完整 \(c=1,h=0\) 自环；
+4. `C`：保持 \(A_T=A_S\) 且严格满足 \(K_T<K_S\) 的 queued charged descent，
    包括通过 (15) 的整体余因子投影，以及既有严格因子转移或交换。
 
 则
@@ -245,6 +251,14 @@ source 都满足 \(R_S=R_A+4At>4A\)，所以加入这个错误要求会把全部
 是每条边上的严格良基秩。
 
 证明只需逐类核对。`O` 由第一坐标支付。`C` 保持第一坐标并严格降低第二坐标。
+对 `P`，第一坐标不增加；若它不严格下降，则
+
+\[
+\frac{K_T}{A_T}=\frac K{A_T}<\frac K{A_S}=\frac{K_S}{A_S},
+\]
+
+由第二坐标支付。这个证明对 \(A_T>B_p\) 仍成立；`P` 的限制来自 provenance 与
+E1--E4，而不是载体上界。
 对 `D`，正相位与 \(A\le B_p\) 的严格零相位均按已有定理严格降低
 \(\Pi_p\)；若 \(A>B_p\)，严格零相位满足
 

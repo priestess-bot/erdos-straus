@@ -38,6 +38,8 @@ used_by:
 - type-I-overflow-fixed-n-bounded-divisor-saturation
 - type-I-overflow-cofactor-r-chart-support
 - type-I-overflow-outer-rank-reset
+- type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+- type-I-high-support-rank-aware-sink-bundle-selector
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -56,7 +58,7 @@ sources:
 - claim: type-I-general-dyadic-terminal-transfer
   role: generalized-dyadic-terminal-verifier
 visibility: public
-last_checked: '2026-08-03'
+last_checked: '2026-08-11'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -450,14 +452,30 @@ outer_rank_reset 字段共同核验。
 该字段只在候选边已经通过 E1--E5 时有效，不能证明候选存在或替代全局 phase 的良基
 性。详见[高载体 overflow 固定 \(n\) 有界除子的 \(R\) 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md)。
 
-对来源可达的 complete-excess bundle overflow，还必须优先检查同图表支撑升级：
-若 \(A\mid M\)、\(M/A\ge2\) 且 \(M\le B_p\)，则直接把 absorbed support 从 \(A\)
-升到 \(M\)。因为 \(M\mid K_M\)、\(\operatorname{Sol}(p)\) 对 chart 独立且
-\(\lfloor B_p/M\rfloor<\lfloor B_p/A\rfloor\)，这条
-same-chart support promotion 边完整满足 E1--E5，但目标仍为
-overflow。若 \(M>B_p\)，该同图表升级不在当前势域内，必须进入 alternate、终端或
-新的外层秩分支。完整主张与 12 行聚焦回放见
-[overflow 同图表支撑升级](../claims/type-I-overflow-same-chart-support-promotion.md)。
+对来源可达的 complete-excess bundle overflow，还必须优先检查同图表支撑升级。
+对真实 persistent overflow receipt，只要 \(A\mid M\)、\(M/A\ge2\)，就直接把
+absorbed support 从 \(A\) 升到 \(M\)，不再要求 \(M\le B_p\)。因为
+\(M\mid K_M\)、\(\operatorname{Sol}(p)\) 对 chart 独立，精确秩
+
+\[
+\left(\left\lfloor\frac{B_p}{A}\right\rfloor,\frac{K_M}{A}\right)
+\]
+
+的第一坐标若不降，第二坐标仍从
+\((M/A)(K_M/M)\) 严降到 \(K_M/M\)，故完整满足 E1--E5。
+若 overflow chart 只是 parent 内部 receipt，则必须比较真实 parent 与 target；
+当 parent \(A\le B_p\) 时第一坐标自动严格下降，当 \(A>B_p\) 时精确门为
+\(K_M/M<K_H/A\)。完整主张与 sharp 反例见
+[overflow 同图表支撑升级的无界精确秩与高支撑父端点边界](../claims/type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md)。
+
+高支撑 source 不得把该门只应用于 sink 最小节点。对 source path 已进入的有限 sink
+SCC，选择器必须枚举每个定向节点的唯一完整超额分解 \(y=Q\beta\)，以
+\(M_Q=\operatorname{lcm}(A,Q)\) 和规范余因子
+\(c_Q=K_Q/M_Q=(4M_Q)^{-1}\bmod p\) 标价。若某行满足 \(c_Q<K_H/A\)，则其
+path-anchored 宏是完整 E1--E5；若没有这样的行，完整候选表才是该 bundle 宏族的
+容量 no-go。\(p=73\) 的 minimum-node 行为 \(45\to47\)，但一条额外 raw 边后的
+\(Q=1247\) 行给出 \(45\to44\)。详见
+[高支撑 rank-aware sink-bundle 有限选择器](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md)。
 
 ### overflow 的 cofactor-supported r-chart 支撑升级
 
@@ -871,11 +889,13 @@ A_T=\operatorname{lcm}(A_S,Q).
 \]
 
 每个 \(q\mid Q\) 的新完整块指数都严格超过 \(v_q(K_S)\ge v_q(A_S)\)，故仍有
-\(A_T/A_S\ge2\)，同一个势证明原样成立。该势允许 \(R_T>R_S\)。v1 中已吸收素数
+\(A_T/A_S\ge2\)。当 source \(A_S\le B_{p_0}\) 时，同一个第一坐标证明对
+\(R_T>p_0\) 的 overflow target 也原样成立，不要求 \(A_T\le B_{p_0}\)。该势允许
+\(R_T>R_S\)。v1 中已吸收素数
 不能重新以 \(q\nmid K\) 身份收费；bundle v2 允许同一素数以后以严格更高的完整块
 重现，但只有 lcm 账本确实增长时才能收费。若另一边丢弃或重置 \(A_S\)，必须把一个
-严格下降的外层秩放在 (6) 之前。规范图表超过 \(p_0\) 时只输出 overflow receipt，
-不伪造后继。
+严格下降的外层秩放在 (6) 之前。若 source 已有 \(A_S>B_{p_0}\)，则不能仅凭内部
+overflow receipt 入队；必须用真实 parent--target 的第二坐标 \(K/A\) 比较支付 E5。
 
 对已验证 overflow receipt，固定 \(n\) 图谱中的 \(L\in\mathcal W_{A_S}\) 也满足
 \(A_S\mid L\)、\(L>A_S\)，故同一个势证明适用。特别地，\(A_S=1\) 时规范

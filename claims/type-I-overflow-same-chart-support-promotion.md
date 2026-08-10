@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-overflow-same-chart-support-promotion
 title: overflow 同图表支撑升级
-statement: 设已验证来源回执给出的 overflow canonical chart 满足 pn=4Md+1、R_M>p，并携带 A|M、M/A≥2 和 M≤B_p=(p-1)^2/4。则在不改变 (p,R_M,K_M) 图表的情况下，可把 absorbed support 从 A 升到 M；由于 M|K_M、Sol(p) 对图表独立且 floor(B_p/M)<floor(B_p/A)，这给出完整 E1--E5、恒等解提升和严格外层秩下降的同图表 overflow 后继。complete-excess bundle 是提供 M/A≥2 的一个来源，但该代数引理也适用于满足这些字段的其它已验证 overflow 回执。若 M>B_p，则由 S=Md=(pn-1)/4>B_p、n≡1 (mod 4) 排除 n≤p-4，精确边界为 n=p 或 n≥p+4；该高载体大补余项仍需另一出口。
+statement: 设已验证来源回执给出的 overflow canonical chart 满足 pn=4Md+1、R_M>p，并携带 A|M、M/A≥2 和 M≤B_p=(p-1)^2/4。则在不改变 (p,R_M,K_M) 图表的情况下，可把 absorbed support 从 A 升到 M；由于 M|K_M、Sol(p) 对图表独立且 floor(B_p/M)<floor(B_p/A)，这给出完整 E1--E5、恒等解提升和严格外层秩下降的同图表 overflow 后继。后续精确秩 (floor(B_p/A),K/A) 已把该定理扩展到任意 M：第一坐标不降时第二坐标严格下降；真正边界改为 source 必须 persistent，transient receipt 必须比较真实 parent target。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -28,7 +28,7 @@ sources:
   - result: reproductions/type-i-representation-dual-capacity-selector-results.json
     role: focused source-row replay
 visibility: public
-last_checked: '2026-08-03'
+last_checked: '2026-08-11'
 ---
 
 # overflow 同图表支撑升级
@@ -145,3 +145,26 @@ p=73,\qquad M=1518>B_{73}=1296.
 ## 复现
 
     python3 reproductions/type_i_representation_dual_capacity_selector.py --verify
+
+## 下游无界升级
+
+本卡使用的单坐标势只覆盖 \(M\le B_p\)。后续精确容量秩
+
+\[
+\Lambda_p^\sharp(S)
+=\left(\left\lfloor\frac{B_p}{A_S}\right\rfloor,\frac{K_S}{A_S}\right)
+\]
+
+已经删除该上界：对真实 persistent source，只要 \(A\mid M\mid K_M\) 且
+\(M>A\)，第一坐标若不降，第二坐标仍从 \((M/A)(K_M/M)\) 严降到
+\(K_M/M\)。因此上文的 `lcm_cycle_step_0` 不再是同图表拒绝项；它产生
+\((R,K;A)=(3743,68310;1518)\) 的合法高支撑 target。
+
+必须保留的边界改为 persistence：若 overflow chart 只是 parent 内部 receipt，不能
+把 transient-to-target 的下降记在 parent 上。该高支撑 target 在 sink 最小节点的
+实际 F bundle 给出 parent 容量 \(45\to47\) 上升，而内部 receipt 会伪示
+\(87937\to47\) 下降。完整边界见
+[overflow 同图表支撑升级的无界精确秩与高支撑父端点边界](type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md)。
+这只排除该 candidate；后续遍历完整 sink SCC 的 rank-aware 选择器以一条额外 raw
+边构造了 \(45\to44\) 的真实出口，见
+[高支撑 rank-aware sink-bundle 有限选择器](type-I-high-support-rank-aware-sink-bundle-selector.md)。

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；余因子支撑 r-图表当前只有两个 same_chart 的 source-local candidate_transition，局部势尚未被全局 non-resetting phase rank 支付，故不可递归。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；对已进入有限 sink SCC 的状态，rank-aware bundle 选择器穷尽全部定向完整超额候选，非空时选择严格下降边，空时输出该宏族容量 no-go。p=73 的实际高支撑 F 状态已由 45->44 边关闭。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -20,6 +20,8 @@ depends_on:
   - type-I-overflow-high-carrier-n-prime-c-one-fixed-s-atlas
   - type-II-a-one-gap-three-factor-terminal
   - type-I-overflow-same-chart-support-promotion
+  - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+  - type-I-high-support-rank-aware-sink-bundle-selector
   - type-I-overflow-cofactor-r-chart-support
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -158,6 +160,10 @@ sources:
     role: universal-F-G-source-and-anchor-orbit
   - claim: type-I-overflow-cofactor-r-chart-support
     role: cofactor-supported-r-chart-normal-form-and-parent-ledger-boundary
+  - claim: type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+    role: unbounded-same-chart-rank-and-persistent-parent-gate
+  - claim: type-I-high-support-rank-aware-sink-bundle-selector
+    role: finite-high-support-bundle-capacity-map-and-p73-edge
   - claim: type-I-g-anchor-jacobi-odd-complete-excess-source-menu
     role: exact-n-prime-Jacobi-odd-path-anchored-source-menu
   - claim: type-I-linear-escape-canonical-d-lattice-source-menu
@@ -1060,6 +1066,29 @@ profile 同时保存角色阶的 q-primary 投影规则：只有 q 整除角色�
 \(q=7\)、\(x=20\)，分母为 \((20,219,4380)\)。因此直接证书在选择顺序上优先于
 fixed-\(n\)、fixed-\(s\) 和 RESET；后续递降回执仍作为同一状态的可检索替代证据保存。
 
+同图表支撑升级的旧高载体拒绝已经由精确容量秩关闭。对 persistent overflow 的
+\(A\mid M\mid K\)、\(M>A\)，统一秩
+\[
+\left(\left\lfloor B_p/A\right\rfloor,K/A\right)
+\]
+在 \(A\to M\) 上总严格下降；特别地，`lcm_cycle_step_0` 从
+\((3743,68310;66)\) 合法进入 \((3743,68310;1518)\)。对
+\(A\le B_p\) 的 complete-excess parent，同一个第一坐标还把原
+`bundle_overflow` 直接升级为严格 target edge。高支撑 parent 的真实门则是
+\(K_T/A_T<K_S/A_S\)：上述新 target 的实际 F 路径以 \(Q=1871\) 产生
+\((0,45)\to(0,47)\) 的严格反例，所以不得用内部 receipt 的
+\((0,87937)\to(0,47)\) 伪下降。见
+[无界同图表支撑升级与持久化边界](type-I-overflow-unbounded-same-chart-promotion-persistence-boundary.md)。
+
+该 \(45\to47\) 行只否定 sink-minimum policy。高支撑 bundle 分支现在遍历 source
+path 所在有限 sink SCC 的全部定向完整超额分解，以规范 target 余因子
+\(c_Q=K_Q/M_Q\) 对真实 parent 容量 \(K_H/A\) 标价。改善集合非空时先取最短 raw
+路径、再取最小 \(c_Q\)，得到完整 E1--E5；集合为空时保存穷尽表，作为该宏族的严格
+容量 no-go。上述 \(p=73\) SCC 有 33 个合法候选、22 个满足 \(c_Q<45\)；从
+\((1,3742,1)\) 经一条 \(q=1871\) 边到 \((2,3741,1)\)，取
+\(Q=1247,\beta=3\)，即得真实 \((0,45)\to(0,44)\)。见
+[高支撑 rank-aware sink-bundle 选择器](type-I-high-support-rank-aware-sink-bundle-selector.md)。
+
 另外有一条可完整重算的固定-n 支撑增长边：
 
 | 分支 | 源/后继 | 结果 |
@@ -1662,6 +1691,8 @@ state realization 与 E4/E5。
 局部 \(D_*<D_0\) 还必须配上不可重置的
 owner phase；自然较小余因子在 \(p=2113,n=241\) 上已有严格空 marked-fiber 反例，
 不能再作为默认 E4。菜单空、来源阻塞或 rank 过载若不能进入因子选择，必须转成带标记的
-严格跨纤维下降。另一条
-决定性路线仍是证明可达 \(A>1\) overflow 的 support-preserving alternate/终端
-完备性，或建立封闭且良基的外层 phase-reset 秩；本卡不把有限回执误写成全称结论。
+严格跨纤维下降。另一条决定性路线已进一步收紧：对可达 \(A>B_p\) overflow，证明
+rank-aware sink-bundle 改善集合总非空，或在其完整容量 no-go 后证明
+support-preserving alternate/终端分派完备，或建立封闭且良基的外层 phase-reset
+秩。\(p=73\) 的首个高支撑实际 F 状态已经由 \(45\to44\) 出口关闭，但单个正控制
+不能外推为全称；本卡不把有限回执误写成全称结论。
