@@ -199,14 +199,14 @@ def verify_p557_capacity_map() -> None:
     assert maximal_records(kernel) == {(3, 2)}
     assert downclosure(kernel) == prefix_box((3, 2))
 
-    current_depth = (2, 0)
+    legacy_depth = (2, 0)
     kappa = kernel_depth(kernel)
     defect = tuple(
         max(0, required - current)
-        for required, current in zip(kappa, current_depth)
+        for required, current in zip(kappa, legacy_depth)
     )
     assert defect == (1, 2)
-    assert layer_ideal(kappa) - layer_ideal(current_depth) == {
+    assert layer_ideal(kappa) - layer_ideal(legacy_depth) == {
         (0, 3),
         (1, 1),
         (1, 2),
@@ -244,7 +244,7 @@ def verify_p557_capacity_map() -> None:
 
     missing_map = {
         record: residue(record)
-        for record in completed_prefix - prefix_box(current_depth)
+        for record in completed_prefix - prefix_box(legacy_depth)
     }
     assert missing_map == {
         (0, 1): 83,
@@ -272,7 +272,7 @@ def verify_p557_capacity_map() -> None:
 
     print("PASS: FG_QPREFIX_KERNEL_DEPTH_NEUTRAL_CARGO_CAPACITY")
     print(f"kernel={sorted(kernel)}")
-    print(f"kappa={kappa} current={current_depth} defect={defect}")
+    print(f"kappa={kappa} legacy_depth={legacy_depth} legacy_defect={defect}")
     print(f"completed_prefix_images={sorted(completed_images)}")
     print(f"missing_records={sorted(missing_map.items())}")
     print("q3_fixed_lineage_depth_max=2 ambient_neutral_83_depth_requirement=2")

@@ -152,7 +152,7 @@ def verify() -> None:
     print(f"prefix_section={sorted(prefix_section)} energy=95")
     print(f"full_section={sorted(full_section)} energy=540")
     print(f"kernel_divisor_group={sorted(kernel_divisor_group)}")
-    print("ambient_divisor_character=CHI_MINUS_8 coefficient=-6")
+    print("same_fiber_factor_character=CHI_MINUS_8 coefficient=-6")
     print("h83_low_modulus_source_crt_candidates=19 hits=0")
 
 

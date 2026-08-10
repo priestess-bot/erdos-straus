@@ -109,6 +109,8 @@ depends_on:
   - type-I-fg-qprefix-block-bound-first-overflow-terminal
   - type-I-fg-qprefix-full-section-annihilator-boundary
   - type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity
+  - type-I-fg-qprefix-depth3-replacement-lineage
+  - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
   - type-II-linear-square-gcd-allocation-core-gap-cutoff
@@ -249,6 +251,10 @@ sources:
     role: prefix-to-ambient-divisor-section-and-physical-source-completeness-gate
   - claim: type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity
     role: labelled-kernel-depth-neutral-cargo-and-physical-synthesis-gate
+  - claim: type-I-fg-qprefix-depth3-replacement-lineage
+    role: p557-depth-three-standalone-ledger-and-legacy-migration-boundary
+  - claim: type-II-same-fiber-factor-box-neutral-role-capacity
+    role: exact-same-fiber-factor-box-neutral-capacity-and-role-rank-boundary
   - claim: type-I-first-overflow-common-denominator-marked-lift
     role: overflow-quotient-alternate-terminal-and-proper-marked-lift
   - claim: type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
@@ -1276,24 +1282,40 @@ universe、菜单外 raw exits 或其它 odd-order roles；跨陪集时必须重
 三层门序、同一 \(p=557281\) 的 actual-F full-\(C_3\) positive control、\(p=73\)
 common-base no-go 与首个越界短缺口分派见
 [F 请求的 candidate-fiber q-prefix 绑定与首个越界短缺口分派](type-I-fg-qprefix-block-bound-first-overflow-terminal.md)。
-prefix target miss 之后必须先用完整 ambient divisor fiber 重算 kernel section，并
-独立证明 exact physical-source predicate 与 record maps；同一 \(p=557281\) 控制的
-ambient 截面有六点，\(\chi_{-8}\) 给出 target-visible \(C_2\) divisor-superset
-character，但不是 full physical-source annihilator，不能从 prefix singleton 直接
-申报 exact successor。若选择“覆盖完整 ambient labelled kernel”作为候选完成分支，
-则先计算 `AMBIENT_KERNEL_PREFIX_DEPTH_CERT`：若
+prefix target miss 之后先枚举固定参数纤维的完整算术因子盒。对同一
+\(p=557281,(D_*,A)=(182,1)\)，唯一分解使十五个 \(3^a83^b\) records 成为 exact
+same-fiber Type II factor contract；\(\chi_{-8}\) 在全部因子上平凡而看见目标，
+所以固定纤维的 Type II target miss 已精确关闭。把这张因子盒用于 F/G source
+语义时，它仍只是 ambient superset：physical predicate、record-to-state/owner maps
+和 E4/E5 必须另证，不能从 factor exactness 或 prefix singleton 直接申报 successor。
+
+若选择“覆盖完整 ambient labelled kernel”作为候选完成分支，先计算
+`AMBIENT_KERNEL_PREFIX_DEPTH_CERT`：若
 \(K=E\cap\ker\phi\)、\(\kappa_i=\max_{a\in K}a_i\)，则 labelled kernel 被
-principal prefix \(B_c\) 覆盖当且仅当 \(c\ge\kappa\)。本分支的零权坐标必须作为
-neutral cargo 吃满 ambient 深度；但在 exact physical-source predicate 证明真实来源
-也必须覆盖该 ambient kernel 前，这不是物理来源的无条件必要容量。逐坐标 layers
-只有在 product synthesis 或 labelled divisor closure 另证后才能升级为物理 records。
-对 \(p=557281\)，ambient completion 的 \(\kappa=(3,2)\)、当前 \(c=(2,0)\)、
-缺口 \(\delta=(1,2)\)；固定 \(x=182,s_0=19838,J=1\) 的现有 \(3\)-lineage
-严格止于 depth 2，但不排除替代 source-switch。\(h=83\) 尚不是 owner token，
-\(83^2\) 没有第二层回执。因此选择器保持
+principal prefix \(B_c\) 覆盖当且仅当 \(c\ge\kappa\)。本控制有
+\(\kappa=(3,2)\)，但必须区分两张不可叠加的 occurrence ledger：
+\[
+(c_{\rm legacy},\delta_{\rm legacy})=((2,0),(1,2)),
+\qquad
+(c_{\rm fresh},\delta_{\rm fresh})=((3,0),(0,2)).
+\]
+前者保留旧 \(s_0=19838\) assignment；后者由完整 10/5/2 canonical-base 分类中的
+\((14924,104468,7462)\) witness 在空的单请求 ledger 上以显式 fresh owner map
+实现。旧 assignment 已活跃时，新旧 target keys 部分重叠而 source keys 改变，
+故原地迁移返回
+`Q_PREFIX_ATOMIC_REPLACEMENT_LEDGER_UNPROVED`；选择器可以从头选 depth 3，
+但不得把两条 lineage、request、rank 或未来价格相加。
+
+算术 factor-depth 已精确为 \((4,2)\)；\(83\) 方向在 \(C_3\) 商中的容量为零而
+neutral fiber multiplier 为 \(3\)。又因 \(83\nmid|U(728)|=288\)，
+\(\operatorname{Hom}(U(728),C_{83})=0\)，所以 \(83,83^2\) 是 exact arithmetic
+neutral cargo，却绝不是两个 \(83\)-primary roles。剩余 \((0,2)\) 只是在 fresh
+选择下的 conditional F/G physical-owner requirement。source-contract exactness
+本身也不蕴含 divisor-downclosure 或 owner closure；必须独立保存
 `EXACT_PHYSICAL_SOURCE_PREDICATE_UNPROVED` /
-`DIVISOR_CLOSURE_UNPROVED` / `PRODUCT_SYNTHESIS_UNPROVED`，不得把三个
-conditional missing layers 记成三个独立角色槽。首个 overflow 菜单为空后则先运行
+`PROVENANCE_PRESERVING_DIVISOR_CLOSURE_UNPROVED` /
+`FG_H83_SQUARE_OWNER_LAYER_RECEIPT_UNPROVED`，不得把算术 factor records
+重复收费为 typed slots。首个 overflow 菜单为空后则先运行
 quotient-multiple Type I 与
 公共分母 marked-lift 菜单；前者已精确等价于
 \(r_k\mid p^2+4n\) 的同余因子配对，且 \(n\) 为平方时结构性全空；后者在
@@ -1309,6 +1331,8 @@ Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺�
 \(p/3\)。完整门分别见
 [ambient divisor-kernel 截面边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)、
 [kernel-depth 与 neutral-cargo 容量边界](type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)、
+[depth-\(3\) standalone fresh-ledger 构造与迁移边界](type-I-fg-qprefix-depth3-replacement-lineage.md)、
+[同纤维精确因子盒与 primary-role 边界](type-II-same-fiber-factor-box-neutral-role-capacity.md)、
 [first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
 [first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
 [Type II 线性平方分配和核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。
@@ -1526,10 +1550,13 @@ F/G sink。详见
   'COMMON_ROLE_LINE_CERT'、再使归一化指定值向量通过该角色线的 evaluation-image
   门（多角色分支改过完整 evaluation-Rado），并且全部
   边通过联合来源、`CANDIDATE_FIBER_QBLOCK_BOUND` 与 fresh occurrence 门时，才可登记连续
-  层满匹配并压成一个 q-prefix lineage。即使其 \(C_q\) 商已满，prefix-local kernel
-  section 必须先扩到 ambient divisor fiber，并在 exact physical-source predicate 与
-  record maps 通过后才能调用 `KERNEL_SECTION_SOURCE_COMPLETE`、重算 exact source
-  section 并进入 successor；若首个 overflow 菜单为空，依次运行 quotient-multiple
+  层满匹配并压成一个 q-prefix lineage。替代 assignment 必须从空 ledger 选择，或另证
+  atomic replacement；部分 key overlap 不得冒充 replay。即使其 \(C_q\) 商已满，
+  prefix-local kernel section 也必须先扩到 exact same-fiber Type II factor box。
+  该盒可精确判定固定纤维的 Type II target hit/miss；若要继续生成 F/G successor，
+  仍须通过 exact physical-source predicate 与 record maps，才能调用
+  `KERNEL_SECTION_SOURCE_COMPLETE`、重算 exact source section 并进入 successor；
+  若首个 overflow 菜单为空，依次运行 quotient-multiple
   Type I 和公共分母 proper-marked 菜单，后者还须补齐 state E2/E3 才能升级为 edge。
   多角色需求
   已绑定层者先运行原层过滤秩，尚未绑定层者才按角色合同运行过滤子空间或带名上尾

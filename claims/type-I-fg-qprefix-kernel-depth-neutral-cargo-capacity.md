@@ -12,13 +12,16 @@ statement: >-
   neutral cargo 吃满深度。该 layer map 只有在另证 product/source synthesis 后才是
   充分物理容量；只有另证 labelled divisor downclosure 后，才可用 maximal kernel
   antichain 压缩记录检查；residue collision 还必须用 fiber section 单独处理。对
-  p=557281 的 N=3^4*83^2 控制，ambient labelled kernel 的 kappa=(3,2)，当前
-  c=(2,0)，故 delta=(1,2)，唯一 maximal kernel record 为 (3,2)。现有 q=3
-  receipt 由赋值门精确止于 depth 2，而真实 source factor h=83 尚未绑定 owner token，
-  83^2 也没有第二层回执。因此本卡给出覆盖全部 ambient labelled kernel 的精确
-  principal-prefix 完成图和三个条件性缺层；在 exact physical-source predicate
-  证明真实来源必须覆盖这些 ambient records 之前，它们不是物理来源的无条件必要容量，
-  也不给出 KERNEL_SECTION_SOURCE_COMPLETE、物理后继或 E4/E5。
+  p=557281 的 N=3^4*83^2 控制，ambient labelled kernel 的 kappa=(3,2)，唯一
+  maximal kernel record 为 (3,2)。原 s0=19838 lineage 的 c0=(2,0)、delta0=(1,2)
+  仍是严格局部边界；后续规范基替代已在空的单请求 ledger 上构造 standalone
+  depth-3 q=3 lineage，可选择 c_fresh=(3,0)、delta_fresh=(0,2)，但旧 assignment
+  已活跃时的 atomic migration 尚未证明。同纤维因子盒又证明 arithmetic factor-depth
+  已是 (4,2)，所以 83 与 83^2 是精确算术 neutral cargo；未证的是它们的 F/G physical
+  membership、owner token 与 state map。因而当前只剩两个条件性 typed-owner layers，
+  不是算术缺层或两个 83-primary roles；在 exact physical-source predicate 证明真实
+  来源必须覆盖这些 ambient records 之前，它们也不是物理来源的无条件必要容量，并且
+  不给出 KERNEL_SECTION_SOURCE_COMPLETE、物理后继或 E4/E5。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -26,6 +29,7 @@ depends_on:
   - type-I-fg-qprefix-full-section-annihilator-boundary
   - type-I-fg-qprefix-block-bound-first-overflow-terminal
   - type-I-raw-certified-q-layer-charge-key-nonreuse
+  - type-II-same-fiber-factor-box-neutral-role-capacity
 topics:
   - type-I
   - F-state
@@ -44,6 +48,10 @@ sources:
     role: actual-F-depth-two-binding-and-valuation-data
   - claim: type-I-raw-certified-q-layer-charge-key-nonreuse
     role: typed-layer-owner-and-single-lineage-accounting-contract
+  - claim: type-II-same-fiber-factor-box-neutral-role-capacity
+    role: exact-arithmetic-factor-depth-neutral-fiber-and-primary-role-boundary
+  - claim: type-I-fg-qprefix-depth3-replacement-lineage
+    role: subsequent-depth-three-typed-lineage-update
   - reproduction: reproductions/type_i_fg_qprefix_kernel_depth_neutral_cargo_capacity.py
     role: focused-kernel-depth-downset-collision-and-p557-capacity-verification
 visibility: public
@@ -446,7 +454,8 @@ typed maps，必须另证 `PROVENANCE_PRESERVING_DIVISOR_CLOSURE`。当前仓库
 set-level 下闭合同也没有，更没有 (40) 的 record-to-state/owner map，所以 (39)
 目前只是精确的条件性 set compression，不是 source realization。
 
-相对当前 prefix，覆盖全部 ambient labelled kernel 的 layer requirement 只新增
+相对 legacy depth-\(2\) prefix，覆盖全部 ambient labelled kernel 的 layer
+requirement 只新增
 
 \[
 \boxed{
@@ -458,7 +467,7 @@ set-level 下闭合同也没有，更没有 (40) 的 record-to-state/owner map�
 这些是 ambient-completion 分支的三个 labelled missing layers，不是三个独立
 elementary roles 或三个可收费 physical slots。
 
-固定当前 \(p=557281,x=182,s_0=19838,J=1\) lineage，已有 candidate binding
+固定 legacy \(p=557281,x=182,s_0=19838,J=1\) lineage，已有 candidate binding
 的数据满足
 
 \[
@@ -474,10 +483,11 @@ d_{\max}=\min(3,3,4)-1=2.
 \]
 
 所以只否定这条固定 lineage 的 depth 3，不排除替代 source-switch、另一 canonical
-base 或新的 lineage。现有 rows 不能生成 (41) 的 \(3\)-第三层。另一方面，已有
-\((a,h)=(1,83)\) 是
-Type II 低模数 lift 的真实 source-factor record；它尚未绑定 q-prefix owner token，
-更未给出 \(83^2\) 的独立第二层回执。于是 ambient-completion 分支的精确状态是
+base 或新的 lineage。该 legacy row 不能生成 (41) 的 \(3\)-第三层。另一方面，
+\((a,h)=(1,83)\) 是合法 Type II arithmetic factor block，但它的 F/G physical
+membership 与 q-prefix owner token 未证；\(83^2\) 的算术 factor record 已由后续
+因子盒定理证明，而 F/G square-owner receipt 仍未证。于是 legacy
+ambient-completion 分支的精确 typed 状态是
 
 \[
 \boxed{
@@ -493,19 +503,83 @@ Type II 低模数 lift 的真实 source-factor record；它尚未绑定 q-prefix
 \quad
 \texttt{H83\_OWNER\_TOKEN\_UNPROVED},
 \quad
-\texttt{H83\_SQUARE\_LAYER\_RECEIPT\_UNPROVED}.
+\texttt{FG\_H83\_SQUARE\_OWNER\_LAYER\_RECEIPT\_UNPROVED}.
 \tag{45}
 \]
 
-## 8. 统一选择器分派
+## 8. 后续构造后的双账本更新
+
+式 (35)--(45) 记录的是原 depth-\(2\) typed assignment 仍活跃时的 legacy ledger。
+后续
+[depth-\(3\) 规范基分类](type-I-fg-qprefix-depth3-replacement-lineage.md)
+构造了 witness
+
+\[
+(s_0,s_1,D_0)=(14924,104468,7462)
+\]
+
+以及空的单请求 ledger 上的显式 fresh owner assignment。因此存在另一张合法选择：
+
+\[
+\boxed{
+c_{\rm fresh}=(3,0),\qquad
+\delta_{\rm fresh}=(0,2).}
+\]
+
+它不能直接写回旧 ledger：新旧 target keys 在绝对层 \(2,3\) 部分重叠，source keys
+却改变，故不是 all-fresh 或同 assignment full replay。旧账本若已经活跃，当前回执是
+
+\[
+\texttt{Q\_PREFIX\_ATOMIC\_REPLACEMENT\_LEDGER\_UNPROVED}.
+\]
+
+两张账本是 alternatives，不可叠加。存在性选择器可以从空 ledger 直接选 depth \(3\)；
+增量迁移器则必须保留 legacy depth \(2\)，直到另证原子 replacement transaction。
+
+独立的
+[同纤维因子盒定理](type-II-same-fiber-factor-box-neutral-role-capacity.md)
+又给出
+
+\[
+\boxed{
+\text{arithmetic factor-depth}=(4,2),\qquad
+\kappa^\eta=(2,0),\qquad \nu_{83}^\eta=3.}
+\]
+
+所以 \(83^2\) 已在固定 Type II 算术合同中精确存在，且交叉 factor products 由唯一
+分解自动合成；尚未证明的是 F/G physical membership、owner map 和 state realization。
+又因 \(83\nmid|U(728)|=288\)，
+
+\[
+\operatorname{Hom}(U(728),C_{83})=0,
+\]
+
+故剩余两个 conditional owner layers 不能通过寻找 \(83\)-primary roles 来支付。
+当前应并列保存
+
+\[
+\begin{gathered}
+\texttt{TYPEII\_SAME\_FIBER\_H83\_SQUARE\_FACTOR\_RECORD\_EXACT},\\
+\texttt{FG\_H83\_PHYSICAL\_MEMBERSHIP\_UNPROVED},\qquad
+\texttt{FG\_H83\_SQUARE\_OWNER\_LAYER\_RECEIPT\_UNPROVED},\\
+\texttt{H83\_C83\_PRIMARY\_ROLE\_RANK\_ZERO}.
+\end{gathered}
+\]
+
+## 9. 统一选择器分派
 
 ~~~text
 PREFIX_LOCAL_KERNEL_SECTION
   -> build labelled ambient exponent box and beta fibers
   -> AMBIENT_KERNEL_PREFIX_DEPTH_CERT(kappa, delta)
        (requirement for the full ambient-kernel completion branch only)
+  -> alternative q-prefix assignment available?
+       standalone fresh ledger: choose maximal available depth
+       legacy ledger active + partial overlap: ATOMIC_REPLACEMENT_LEDGER_UNPROVED
+       never add alternative lineages for one charge
   -> neutral coordinate present?
-       yes: AMBIENT_KERNEL_NEUTRAL_CARGO_REQUIREMENT
+       yes: separate arithmetic factor depth from typed owner depth
+            q not dividing ambient group order: Q_PRIMARY_ROLE_RANK_ZERO
   -> beta injective on the relevant kernel records?
        no: compute fiber defect u(c) and a supported section
   -> exact physical-source predicate + record-to-owner maps proved?
@@ -515,15 +589,17 @@ PREFIX_LOCAL_KERNEL_SECTION
   -> labelled divisor closure or independent product synthesis proved?
        set downclosure: maximal records compress membership only
        provenance-preserving downclosure: may also propagate typed maps
-       product synthesis: realize all layers in I(kappa) compatibly
+       exact factor-box synthesis: arithmetic divisors only
+       typed product synthesis: realize all F/G layers in I(kappa) compatibly
        neither: DIVISOR_CLOSURE_UNPROVED / PRODUCT_SYNTHESIS_UNPROVED
   -> only after exact source image equality:
        KERNEL_SECTION_SOURCE_COMPLETE -> state realization -> E4 -> E5
 ~~~
 
 本卡关闭的是 kernel-depth 的组合数学和 \(p=557281\) 的精确 ambient-completion
-账本。只有 exact physical-source predicate 证明真实来源必须覆盖相应 ambient
-kernel 后，\(\delta\) 才能升级为物理必要容量。它严格排除了两个跳步：
+双账本。只有 exact physical-source predicate 证明真实来源必须覆盖相应 ambient
+kernel 后，\(\delta\) 才能升级为物理必要容量；source predicate 的 exactness 本身
+也不蕴含 divisor/owner closure。它严格排除了两个跳步：
 
 \[
 \text{逐 prime-power layer 出现}
@@ -545,6 +621,8 @@ kernel 后，\(\delta\) 才能升级为物理必要容量。它严格排除了�
 python3 reproductions/type_i_fg_qprefix_kernel_depth_neutral_cargo_capacity.py --verify
 ~~~
 
-验证器只枚举本卡的有限 exponent boxes、两个严格边界反例和
-\(p=557281\) 的十五条 ambient records；不运行历史范围测试，也不验证尚未建立的
-physical-source predicate、product synthesis、state realization 或 E4/E5。
+验证器只枚举本卡基础定理的有限 exponent boxes、两个严格边界反例和
+\(p=557281\) 的十五条 ambient records；legacy/fresh 双账本与 exact arithmetic
+factor box 分别由上链接的两个聚焦 verifier 检查。不运行历史范围测试，也不验证
+尚未建立的 physical-source predicate、typed product synthesis、state realization
+或 E4/E5。
