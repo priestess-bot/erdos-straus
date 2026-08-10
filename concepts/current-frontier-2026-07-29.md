@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单，固定 gap-7 单标记也只复述直接终端门且不取代更早的 gap-3 检查。p=73 由直接 Type II 终端抢占，既有 C=44 状态另有 44->2 严格边。当前两条决定性前沿是：构造真正改变保留尾或正规形的 alternate/terminal/dual/total-cofactor/良基 reset；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支进一步压成 d|k^2 的有限菜单并满足 p=O(r^3)，故小源秩不能成为全称出口。p=73 由直接 Type II 终端抢占，既有 C=44 状态另有 44->2 严格边。当前两条决定性前沿是：在 (p-1)/4 的因子分解上自适应选择增长源秩并证明菜单必命中或转交；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
 topics:
 - research-map
 - proof-program
@@ -42,6 +42,10 @@ sources:
   role: universal-C2-centered-miss-and-natural-marker-empty-proof
 - claim: type-I-high-support-c2-rank-one-retention-exhaustion
   role: cross-chart-Type-I-menu-and-rank-one-retention-exhaustion
+- claim: type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
+  role: all-gap-equal-tail-source-menu-and-terminal-collapse
+- claim: type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
+  role: fixed-source-rank-Type-II-finite-menu-and-cubic-capacity-no-go
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -5829,3 +5833,68 @@ terminal-first adapter；它不取代更早的 gap-\(3\) 等标准短证书检�
 使用随 source 解变化的单坐标映射、完全重组三个坐标，或在进入 \(C=2\) 边界前由
 alternate、dual、total-cofactor、paid reset 抢占；任何候选仍须同时支付全域 E4
 解提升与严格 E5 良基势。
+
+## 2026-08-11：等尾单标记全坍缩与固定源秩 Type II 三次容量界
+
+固定 gap-\(7\) 的 terminal-first 边界现已推广到全部 \(p-1\) 等尾显式标记。令
+
+\[
+B=\frac{p-1}{4},\qquad m=4h-1,\qquad c=B+h,
+\qquad 1\le h\le B.
+\]
+
+要求 \((c,T,T)\in\operatorname{Sol}(p-1)\) 唯一强制
+
+\[
+T=\frac{2B(B+h)}h,
+\qquad
+T\in\mathbb N\iff h\mid2B^2.
+\]
+
+因此源侧不再是模糊的“可能有标记”，而是精确有限菜单
+\(\mathscr H_p^{\rm eq}=\{h:h\mid2B^2,\ h\le B\}\)。但对每个准入项，保留
+\(c\) 的目标解存在当且仅当某个 \(q\mid c^2\) 满足
+
+\[
+m\mid4q+1
+\quad\text{或}\quad
+m\mid c+q.
+\]
+
+两支分别就是原 \(p\) 的完整 Type I、Type II 终端菜单。故这一整个显式单标记族在
+terminal-first 后的新增递归容量严格为零：源不存在、目标直接终端、目标纤维为空三态
+已经完备，不存在独立 E4。见
+[\(p-1\) 等尾显式标记的精确容量与单坐标终端坍缩](../claims/type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse.md)。
+
+另一条正向收紧来自 \(p-1\) 因子 Type II。写
+
+\[
+p=4qr+1,\qquad m=4q-1,\qquad x=q(r+1),
+\]
+
+则递降源为 \(n=r+1\)。固定 \(r\) 后，全部证书与有限记录一一对应：
+
+\[
+\left\lceil\frac{r+2}{4}\right\rceil
+\le k\le K_r:=\left\lfloor\frac{2r+1}{3}\right\rfloor,
+\quad d\mid k^2,
+\quad q=\frac{d+k}{4k-r-1},
+\quad d<q(r+1).
+\]
+
+这不是有限搜索外推；反向公式逐项恢复原 Type II 证书和较小源解。由
+\(q\le K_r(K_r+1)\) 得
+
+\[
+9(p-1)\le8r(2r+1)(r+2).
+\]
+
+所以固定或有界源秩只能覆盖有界多个素数。核心域中 \(r\le5\) 精确为空，\(r=6\)
+只留下 \(p=73,97\)，二者又都是直接 Type II terminal。见
+[\(p-1\) 因子 Type II 的固定源秩有限菜单与三次容量界](../claims/type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)。
+
+这两条结果共同删除了两个低收益方向：继续扩充固定等尾标记，或继续押注有限个小源
+秩。下一步应在 \(U=(p-1)/4=qr\) 的因子格上构造自适应 \(r\) 选择器：要么有限菜单
+命中直接 Type II，要么菜单空回执可被 Fourier、格或 Hall--Rado 容量证书转换为另一
+严格出口。这里真正缺少的仍是“对每个 \(U\) 至少有一个因子分解成功或可转交”的全称
+析取，而不是更多固定参数控制例。

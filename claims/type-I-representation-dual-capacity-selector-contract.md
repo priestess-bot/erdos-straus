@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。该前驱的全部双尾保持 D-only 候选现又精确分成跨图表 centered Type I 终端菜单与全空 non-source 菜单，不再产生递归边；固定 gap-7 单标记也只复述直接终端门。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。该前驱的全部双尾保持 D-only 候选现又精确分成跨图表 centered Type I 终端菜单与全空 non-source 菜单，不再产生递归边；全部 p-1 等尾显式单标记也只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支则压成 d|k^2 的精确有限菜单，并满足 p=O(r^3)，所以任何有界源秩策略都不可能全称覆盖。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -26,6 +26,7 @@ depends_on:
   - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
   - type-I-high-support-c2-centered-vieta-antipodal-no-go
   - type-I-high-support-c2-rank-one-retention-exhaustion
+  - type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
   - type-I-overflow-cofactor-r-chart-support
   - type-I-overflow-a-one-generic-determinant-boundary
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -125,6 +126,7 @@ depends_on:
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
   - type-II-linear-square-gcd-allocation-core-gap-cutoff
+  - type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -176,6 +178,8 @@ sources:
     role: universal-centered-miss-and-natural-marker-empty-proof
   - claim: type-I-high-support-c2-rank-one-retention-exhaustion
     role: rank-one-cross-chart-menu-and-coordinate-retention-exhaustion
+  - claim: type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
+    role: all-gap-equal-tail-source-capacity-and-terminal-collapse
   - claim: type-I-g-anchor-jacobi-odd-complete-excess-source-menu
     role: exact-n-prime-Jacobi-odd-path-anchored-source-menu
   - claim: type-I-linear-escape-canonical-d-lattice-source-menu
@@ -294,6 +298,8 @@ sources:
     role: exact-quotient-factor-pair-tail-gate-and-four-local-menu-boundary
   - claim: type-II-linear-square-gcd-allocation-core-gap-cutoff
     role: Type-II-linear-square-selector-and-core-p-over-3-cutoff
+  - claim: type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
+    role: p-minus-one-Type-II-fixed-source-rank-finite-menu-and-cubic-no-go
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1162,11 +1168,21 @@ complete-excess full-block 语法在该图表上不能实现 \(c=1\) 或 \(c=2\)
 
 一一对应；每个非空项已经是 centered Type I 终端，全部 non-source-supported 项
 严格为空。若 \(p-1=2^e u\)、\(u\) 为奇数，则菜单容量恰为
-\((2e-3)\tau(u^2)\)。固定 gap-\(7\) 单标记同样只复述直接 Type I/II 终端门，
-并且不能取代更早的 gap-\(3\) 等标准短证书检查。所以此处不再创建新的 marked
-递归状态；菜单全 miss 后必须改变保留尾或转交
+\((2e-3)\tau(u^2)\)。固定 gap-\(7\) 的结论现已推广到所有等尾显式单标记。令
+\(B=(p-1)/4\)、\(m=4h-1\)、\(c=B+h\)，则唯一等尾源为
+
+\[
+(c,T_h,T_h),\qquad T_h=\frac{2B(B+h)}h,
+\]
+
+且源准入当且仅当 \(h\mid2B^2\)。对每个准入项，保留 \(c\) 的目标存在当且仅当
+某个 \(q\mid c^2\) 满足 \(m\mid4q+1\) 或 \(m\mid c+q\)；这两支正是原
+Type I/II 终端菜单。因此全部等尾单标记在 terminal-first 后的新增递归容量为零，
+而不只 gap-\(7\) 为零。所以此处不再创建新的 marked 递归状态；菜单全 miss 后必须
+改变保留尾或转交
 alternate、dual、total-cofactor、paid reset。见
 [最小 \(C=2\) 偶前驱的跨图表重索引与双尾保持穷尽](type-I-high-support-c2-rank-one-retention-exhaustion.md)及
+[\(p-1\) 等尾显式标记的精确容量与单坐标终端坍缩](type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse.md)及
 [最小 \(C=2\) 边界的 carry--dyadic 容量转导](type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
 
 另外有一条可完整重算的固定-n 支撑增长边：
@@ -1503,7 +1519,22 @@ quotient-multiple 与两条规范尾完整门；它另有直接 Type II 终端�
 局部菜单的无条件覆盖。两条规范尾全空不得冒充完整 proper-marked 域为空，必须继续
 到其它精确 source coordinate、扩展 tail 或 physical-source/kernel successor。
 Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺口自动严格小于
-\(p/3\)。完整门分别见
+\(p/3\)。对其中与 \(4q\mid p-1\) 兼容、写成
+\(p=4qr+1\)、\(m=4q-1\)、\(x=q(r+1)\) 的分支，固定源秩 \(n=r+1\) 后还有精确
+有限菜单
+
+\[
+\left\lceil\frac{r+2}{4}\right\rceil
+\le k\le
+\left\lfloor\frac{2r+1}{3}\right\rfloor,
+\quad d\mid k^2,
+\quad q=\frac{d+k}{4k-r-1}.
+\]
+
+每张记录都同时恢复直接 Type II 终端与严格双尾递降；菜单为空则是该固定秩的完备
+no-go。若 \(K_r=\lfloor(2r+1)/3\rfloor\)，则
+\(p-1\le4rK_r(K_r+1)\)，故有界源秩不能承担全称出口；核心域中 \(r\le5\) 全空，
+\(r=6\) 只命中 \(p=73,97\)。完整门分别见
 [ambient divisor-kernel 截面边界](type-I-fg-qprefix-full-section-annihilator-boundary.md)、
 [kernel-depth 与 neutral-cargo 容量边界](type-I-fg-qprefix-kernel-depth-neutral-cargo-capacity.md)、
 [depth-\(3\) standalone fresh-ledger 构造与迁移边界](type-I-fg-qprefix-depth3-replacement-lineage.md)、
@@ -1514,7 +1545,9 @@ Type II 菜单使用线性 \(L\)-square/gcd allocation；对核心素数其缺�
 [同纤维精确因子盒与 primary-role 边界](type-II-same-fiber-factor-box-neutral-role-capacity.md)、
 [first-overflow 公共分母 marked lift](type-I-first-overflow-common-denominator-marked-lift.md)、
 [first-overflow 因子配对与四菜单边界](type-I-first-overflow-factor-pair-tail-gate-joint-obstruction.md) 与
-[Type II 线性平方分配和核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)。
+[Type II 线性平方分配和核心缺口隔离线](type-II-linear-square-gcd-allocation-core-gap-cutoff.md)，
+固定源秩结论见
+[\(p-1\) 因子 Type II 的有限菜单与三次容量界](type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列

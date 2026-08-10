@@ -44,6 +44,8 @@ used_by:
 - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
 - type-I-high-support-c2-centered-vieta-antipodal-no-go
 - type-I-high-support-c2-rank-one-retention-exhaustion
+- type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
+- type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
 - type-I-overflow-d-one-p-minus-two-g-rechart
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -61,6 +63,10 @@ sources:
   role: type-II-normal-form-verifier
 - claim: type-I-general-dyadic-terminal-transfer
   role: generalized-dyadic-terminal-verifier
+- claim: type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
+  role: equal-tail-source-admission-and-terminal-collapse
+- claim: type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
+  role: fixed-source-rank-Type-II-finite-menu-and-capacity-bound
 visibility: public
 last_checked: '2026-08-11'
 ---
@@ -537,13 +543,18 @@ Type II 终端抢占；相反，既有 \(C=44\) 状态有一条 \(L=1521269\) �
 source-supported 候选与 \(\mathscr E_p\) 一一对应；其中任一非空标记恰是
 \((R_E,K_E)\) 的 centered Type I 命中，并立即恢复直接短证书。non-source-supported
 候选全部为空。若 \(p-1=2^e u\)、\(u\) 为奇数，则不重复的图表容量精确为
-\((2e-3)\tau(u^2)\)。固定 gap-\(7\) 单标记虽有普适前驱源，但其可提升性恰等价于
-原 gap-\(7\) Type I/II 终端菜单命中，因此只能作为 terminal-first adapter，不能支付
-独立 E4；它也不取代更早的 gap-\(3\) 等标准短证书检查。见
+\((2e-3)\tau(u^2)\)。固定 gap-\(7\) 单标记的边界已推广到所有等尾显式单标记：令
+\(B=(p-1)/4\)、\(m=4h-1\)、\(c=B+h\)，则唯一等尾源
+\((c,T_h,T_h)\in\operatorname{Sol}(p-1)\) 存在当且仅当 \(h\mid2B^2\)。对每个
+准入项，保留 \(c\) 的目标纤维非空当且仅当某个 \(q\mid c^2\) 满足
+\(m\mid4q+1\) 或 \(m\mid c+q\)，即原 Type I/II 终端门。因此整个等尾语法的
+terminal-first 新增容量为零；它也不取代更早的标准短证书检查。见
 [最小 \(C=2\) 偶前驱的跨图表重索引与双尾保持穷尽](../claims/type-I-high-support-c2-rank-one-retention-exhaustion.md)。
+全参数定理见
+[\(p-1\) 等尾显式标记的精确容量与单坐标终端坍缩](../claims/type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse.md)。
 
 所以该边界的合同分派为：先跑含 gap-\(3\) 在内的标准 terminal-first 扇，再跑跨图表
-有限 Type I 菜单与 gap-\(7\) 适配器；全部 miss 后删除自然标记和整个双尾保持
+有限 Type I 菜单与完整等尾适配器；全部 miss 后删除自然标记和整个双尾保持
 `D-only` 分支，再转交改变保留尾的 alternate、dual、
 total-cofactor 或 paid reset。完整 carry 入口证明见
 [最小 \(C=2\) 边界的严格 carry no-go 与内部二进容量转导](../claims/type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
@@ -1034,6 +1045,43 @@ n\equiv1\pmod4,
 严格补秩 \(u\equiv1\pmod4\)。这只是删除一类无效边，不代表 overflow 已有其它出口。
 证明见
 [同 1 mod 4 秩的 non-source D-only 标记纤维全域空定理](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
+
+### 6.4 \(p-1\) 因子 Type II 的固定源秩门
+
+对
+
+\[
+p=4qr+1,
+\qquad m=4q-1,
+\qquad x=q(r+1),
+\]
+
+兼容的 Type II 双尾合同把目标降至源秩 \(n=r+1\)。固定 \(r\) 时不得继续把 \(q\)
+视为无界搜索参数；全部证书精确对应于
+
+\[
+\left\lceil\frac{r+2}{4}\right\rceil
+\le k\le K_r:=\left\lfloor\frac{2r+1}{3}\right\rfloor,
+\quad
+d\mid k^2,
+\quad
+q=\frac{d+k}{4k-r-1},
+\quad
+d<q(r+1),
+\]
+
+并另过素数门。命中项应先登记为直接 Type II terminal；同一公式同时提供源解与全域
+双尾提升。菜单为空则可输出该固定 \(r\) 的 `FIXED_SOURCE_RANK_NO_GO`，但不能排除其它
+\(r\)。每张记录满足
+
+\[
+p-1\le4rK_r(K_r+1),
+\]
+
+所以任何把 \(r\) 限制在固定上界的选择器都不可能全称覆盖。这一容量界要求后续
+Type II 设计在 \((p-1)/4=qr\) 的因子分解上自适应选择无界增长的 \(r\)，而不能反复
+尝试少数小偶源。证明见
+[\(p-1\) 因子 Type II 的固定源秩有限菜单与三次容量界](../claims/type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity.md)。
 
 ## 7. 明确不构成递降的对象
 

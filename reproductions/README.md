@@ -666,3 +666,13 @@ quotient-multiple 命中与 \(p^2+4n\) 同余因子的双射、互补因子配�
 容量公式、centered Type I 闭式恢复、non-source 空纤维调用条件和 gap-\(7\)
 terminal-first 映射，并用 \(p=97\) 核对更早的 gap-\(3\) 单标记正控制。它是聚焦的
 公式与控制例验证器，不运行历史范围测试。
+
+`type_i_p_minus_one_equal_tail_marker_capacity.py` 核对全部 \(p-1\) 等尾显式标记的
+准入条件 \(h\mid2B^2\)、gcd/赋值等价式、完整三支 \(p\)-进因子分流及其 Type I/II
+恢复。它只使用 \(p=73,97\) 检查源缺失、目标空纤维和两个 terminal 控制，不运行
+历史范围测试。
+
+`type_ii_p_minus_one_fixed_source_rank_finite_menu.py` 对 \(1\le r\le10\) 双向比较
+\(d\mid k^2\) 有限菜单与原 Type II 除子条件，核对三次容量界，并固定核心域
+\(r\le5\) 全空、\(r=6\) 仅有 \(p=73,97\) 的边界。该范围只用于防止公式回归；
+全称固定秩有限性来自主张中的双射和代数界。
