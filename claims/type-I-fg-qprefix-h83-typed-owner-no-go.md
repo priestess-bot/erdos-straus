@@ -19,7 +19,7 @@ statement: >-
   UNPRICED。
   升级为 F/G physical receipt 仍需独立的 membership、
   record-to-state、provenance-preserving product synthesis、nonduplicating finite
-  prefix-provenance adapter 或可选的 full-C4-labelled cargo state、共同最终稳定子
+  set-theoretic prefix adapter 或显式扩充的 full-C4-labelled cargo state、共同最终稳定子
   重定价与 state realization；
   若忽略后续已发现的直接
   Type II 终端而继续把该分支作为 physical-adapter 校准，账本才保持 UNPRICED。
@@ -32,6 +32,7 @@ depends_on:
   - type-I-owner-profile-canonical-base-target-slot-capacity
   - type-I-fg-qprefix-atomic-replacement-capacity-normalization
   - type-II-same-fiber-factor-box-neutral-role-capacity
+  - type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
 topics:
   - type-I
   - F-state
@@ -51,6 +52,8 @@ sources:
     role: exact-factor-box-and-c83-role-rank-zero
   - claim: type-I-fg-qprefix-atomic-replacement-capacity-normalization
     role: active-depth-three-q3-block
+  - claim: type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
+    role: finite-partial-relation-no-go-and-raw-83-prefix-classification
   - reproduction: reproductions/type_i_fg_qprefix_h83_typed_owner_no_go.py
     role: canonical-menu-role-no-go-and-neutral-sheet-certificate
 visibility: public
@@ -393,15 +396,20 @@ sheets 单独推出的价格定理。
 
 1. 只保存 \(\eta\) 时，无法从 key 恢复三张算术 sheets 的 identity；这还不是
    physical collision；
-2. 要求 distinction 在整个 \(U(199)\) 关系上下降为同态角色时，源群二进指数只有
-   \(2\)，不能实现 (37) 的本原四阶相位；
-3. 允许只在 \(b=0,1,2\) 上定义并显式保留 provenance 的 finite partial-prefix
-   adapter；它不受第二支排除，但仍未构造；
+2. 要求 distinction 在原 \(U(199)\) 状态中保持关系时，源群二进指数只有 \(2\)：
+   whole-source 同态失败；更强地，任意服务 \(b=1\) 的 finite selected record 都有
+   \(198x=0\) 而 \(198\cdot1=2\pmod4\)，故 relation-preserving partial adapter 也失败；
+3. 允许只在 \(b=0,1,2\) 上定义、显式保留 provenance、但不拉回忠实 \(C_4\) 角色的
+   set-theoretic physical adapter；actual-F 盒内已有 \(51\) 条 labelled 三点 raw
+   chains，分成 \(27,12,12\) 三类并覆盖 \(105\) 条 records，但当前 source line 将
+   每条链压成同一 row，所以 physical adapter 仍未构造且即使构造也保持 `UNPRICED`；
 4. 若要求完整乘法闭合，可选地新增外部 \(C_4\)-labelled state；已有模型只在代数层
    实现。
 
-前两层是可同时登记的诊断；第三层是未证的 physical 路线，第四层只是它的可选完整
-乘法 completion，不是互斥的第四分支。
+前两层是可同时登记的诊断；第三层是未证的非角色 cargo 路线，第四层是恢复忠实
+乘法角色所需的显式 state extension，不是互斥的第四分支。有限关系格与 physical
+token 的精确分层见
+[partial-prefix relation-SNF 容量门](type-I-fg-partial-prefix-relation-snf-physical-capacity-gate.md)。
 
 对当前 \(p\)，严格因子 source-switch 的 \(C_4\) 指数菜单恰为
 \(D'\in\{13,26,91\}\)，最小 \(D'=13\) 已由
@@ -409,9 +417,10 @@ sheets 单独推出的价格定理。
 selector 在进入 partial/full-state 路线前已经结束这个控制。若仍把它保留为
 F/G physical-adapter 校准，则第三层及其可选第四层还必须：
 
-1. 证明 (30) 中 records 的 exact F/G physical membership；
-2. 给出 finite prefix provenance，并在选择第四支时给出外部 \(C_4\)
-   record-to-state，或提供 actual raw digest；
+1. 把已分类的 raw prefixes 提升为 exact sheet-to-state physical membership；
+2. 给出区分三点的新 integer source line、完整 \(C_9\) phase 保存/补偿及
+   record-to-state；若要支付 \(C_4\) 角色容量，则还必须给出通过关系格 SNF 的扩充
+   source state；
 3. 证明 provenance-preserving typed product synthesis；
 4. 构造不新增 q=83 request、C83 role 或重复 q=3 charge 的 cargo map；
 5. 独立求共同最终 stabilizer，在其商上登记实际 price，并通过 occurrence 与 state

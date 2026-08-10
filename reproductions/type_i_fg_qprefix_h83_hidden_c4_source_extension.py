@@ -185,6 +185,7 @@ def verify_source_obstruction() -> dict[str, object]:
     # An image equal to 83 would violate the exponent relation directly.
     assert pow(Q, 198, TARGET_MODULUS) == 337
     assert pow(Q, 198, TARGET_MODULUS) != 1
+    assert 198 * 1 % 4 == 2
 
     return {
         "status": (
@@ -196,8 +197,12 @@ def verify_source_obstruction() -> dict[str, object]:
         "factor2_named_edge_c2_phase": source_logs[0] % 2,
         "target_83_relative_c2_phase": target_relative_c2_phase,
         "named_edge_status": "P557_CURRENT_FACTOR2_EDGE_C2_SHEET_ADAPTER_NO_GO",
-        "partial_prefix_provenance_adapter_proved": False,
-        "partial_prefix_adapter_excluded_by_exponent_no_go": False,
+        "partial_relation_preserving_status": (
+            "P557_ORIGINAL_STATE_RELATION_PRESERVING_C4_"
+            "ADAPTER_INCLUDING_B1_NO_GO"
+        ),
+        "primitive_sheet_relation_target_value": 198 * 1 % 4,
+        "set_theoretic_partial_physical_adapter_proved": False,
     }
 
 

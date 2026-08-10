@@ -11,15 +11,18 @@ statement: >-
   psi_4(u)=(u mod 13)^3 杀掉 3 并把 83 送到阶四元素，因而精确区分三张
   b=0,1,2 sheets；chi_2 在 3 与 83 上都取 -1，不下降到该商，只看见其相对
   C2 影子。actual-F 源群 U(199)≅C198 没有阶四角色，且其唯一 C2 角色不能提升为
-  C4，所以当前 factor-2 named edge 连相对 C2 相位也不匹配，任何保持整个源群关系的
-  同态型 exact-C4 adapter 均严格不可能。若要求忠实乘法状态，至少须增加一个四阶
+  C4，所以当前 factor-2 named edge 连相对 C2 相位也不匹配。关系格精化进一步证明：
+  原状态中任何包含 b=1 sheet、并保持所选 records 全部源关系的 finite partial adapter
+  也严格不可能；不保持关系的 set map 即使存在也不能把 psi_4 拉回为同态 source
+  character 或规范 role column，不能支付 C4 角色容量。
+  若要求忠实乘法状态，至少须增加一个四阶
   方向；相对 C4 扩充的最小 index 为 2，而在旧源上平凡的外部 C4 坐标或完整
   C6×C4 满射的最小 index 为 4，U(199)×C4 达到后一界，但不是 physical-source
   receipt。严格因子重图表中
   能承载 C4 的 D'|182 恰为 13,26,91；最小 D'=13 已由 A=1、h=103 给出一张直接
   Type II 终端。该结果把剩余接口整理成四层顺序门：eta-key identity loss、
-  whole-source homomorphic exponent obstruction、partial-prefix provenance adapter
-  未证，以及后者可选的 full-C4 state completion。
+  原状态 whole/partial relation-preserving transport obstruction、set-theoretic physical
+  cargo adapter 未证且不计角色容量，以及后者可选的 full-C4 state completion。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -29,6 +32,7 @@ depends_on:
   - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-II-dyadic-relation-quotient-unit-group-exponent-gate
   - type-I-II-fg-universal-finite-source-map-completion
+  - type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
 topics:
   - type-I
   - F-state
@@ -53,6 +57,8 @@ sources:
     role: C4-unit-group-exponent-source-switch-gate
   - claim: type-I-II-fg-universal-finite-source-map-completion
     role: physical-source-contract-boundary
+  - claim: type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
+    role: finite-selected-record-relation-no-go-and-raw-prefix-classification
   - reproduction: reproductions/type_i_fg_qprefix_h83_hidden_c4_source_extension.py
     role: focused-relative-C4-source-obstruction-state-extension-and-terminal-verification
 visibility: public
@@ -309,18 +315,55 @@ adapter。特别地，若
 改用 factor-\(11\) 或 factor-\(2083\) 会改变 named edge、source line、owner 与
 occurrence 合同；而且最多只产生 \(C_2\)，仍不能闭合 (13)。
 
-式 (23) 的量词止于整个源群上的同态。一个仅对有限 physical candidate records
+式 (23) 本身的量词止于整个源群上的同态。若一个仅对有限 physical candidate records
 定义的映射
 \[
 T:\mathcal U_{\rm finite}\times\{0,1,2\}\longrightarrow\mathcal V
 \tag{23a}
 \]
-可以显式保留 \(b\) 或其它 provenance，而不延拓到 \(b=3\) 或整个 \(S\)。当前没有
-这样的 exact F/G construction，也没有反例排除它，所以必须另记
+还要把 \(\psi_4\) 拉回源状态，则它至少必须在所选 records 生成的子群上保持全部
+关系。有限关系格判据见
+[partial-prefix relation-SNF 与物理容量门](type-I-fg-partial-prefix-relation-snf-physical-capacity-gate.md)。
+任取服务 \(b=1\) sheet 的原状态 record \(x\in S=C_{198}\)，都有
+
 \[
-\boxed{\texttt{P557\_PARTIAL\_PREFIX\_PROVENANCE\_ADAPTER\_UNPROVED}.}
+198x=0,
+\qquad
+198\cdot1\equiv2\not\equiv0\pmod4.
 \tag{23b}
 \]
+
+所以不仅 whole-source homomorphism 不存在，任何原状态 finite selected-record
+subgroup 上的 relation-preserving \(C_4\) adapter 也严格失败：
+
+\[
+\boxed{
+\texttt{P557\_ORIGINAL\_STATE\_RELATION\_PRESERVING\_C4\_ADAPTER\_INCLUDING\_B1\_NO\_GO}.}
+\tag{23c}
+\]
+
+仍未排除的是不保持 (23b)、只显式保留 \(b\) 或其它 provenance 的 set-theoretic
+physical map。当前没有这样的 exact F/G construction，所以必须另记
+\[
+\boxed{\texttt{P557\_SET\_THEORETIC\_PARTIAL\_PREFIX\_PHYSICAL\_ADAPTER\_UNPROVED}.}
+\tag{23d}
+\]
+
+下游关系格定理进一步在 actual-F exponent box 中完整分类出 \(51\) 条 labelled
+三点 raw \(83\)-chains：三种 step pairs 的数量为 \(27,12,12\)，共同压成 \(27\) 个
+image-level triples，并覆盖 \(105\) 条 distinct raw records。每类内部均两两不交；
+跨类同起点的 lifts 共享首尾，而 \(27\) 条常步长链给每个 image triple 一个不交代表。
+全部可行 lifts 的 factor-\(2\) 坐标均为零，所以现有 active
+source line \(\mathcal L(z)=14924+89544z_{(2)}\) 把每条链压成同一个 integer row。
+因此 raw set skeleton 已实现，当前 active assignment 的 physical adapter 仍严格失败；
+(23d) 现在只指更换 source line、补齐 state/owner 与 product synthesis 后的 physical
+提升。
+
+即使未来构造 (23d)，它也不能在原 \(S\) 上把 \(\psi_4\) 拉回为同态 character、形成
+规范 evaluation column 或登记 faithful \(C_4\) price；它只能作为独立
+cargo/terminal mechanism 保持
+`UNPRICED`。若新增 provenance 本身带四阶群坐标，则 source state 已经扩充，应进入
+第 5 节，而不是把新坐标称为原状态 partial adapter。
 
 ## 5. 相对与完整联合群的分层代数扩充
 
@@ -381,16 +424,21 @@ predicate、integer source line、record-to-state map、owner、occurrence 或 E
 对当前三张 sheets，按顺序记录：
 
 1. **ETA_KEY_IDENTITY_LOSS**：只保留 (16) 时，由 (17) 无法恢复 sheet identity；
-2. **WHOLE_SOURCE_HOMOMORPHIC_EXPONENT_OBSTRUCTED**：要求 distinction 从整个
-   \(U(199)\) 的乘法角色产生时，由 (23)--(25) 严格失败；
-3. **PARTIAL_PREFIX_PROVENANCE_ADAPTER_UNPROVED**：允许有限 record map 显式保留
-   \(b=0,1,2\)，不要求延拓为 \(C_4\) 同态；它不受 (23) 排除，但 exact physical
-   membership、product synthesis、owner/occurrence 与 E4/E5 均未证明；
+2. **ORIGINAL_STATE_RELATION_TRANSPORT_OBSTRUCTED**：whole-source 同态由
+   (23)--(25) 失败；即使只选有限 records，只要要拉回忠实 \(C_4\) 角色，(23b)--(23c)
+   仍严格失败；
+3. **SET_THEORETIC_PARTIAL_PREFIX_PHYSICAL_ADAPTER_UNPROVED**：允许有限 record map
+   只显式保留 \(b=0,1,2\) 而不保持原 source relations；\(51\) 条 labelled raw
+   chains 已完整分类为 \(27,12,12\) 三类，但当前 source line 全部折叠，新的
+   integer line、product synthesis、
+   owner/occurrence 与 E4/E5 均未证明；即使构造也不得支付 faithful \(C_4\) role
+   capacity；
 4. **FULL_C4_STATE_EXTENSION_OPTIONAL**：若要求完整乘法闭合，可选用 (30) 的外部
    \(C_4\) state；它仍只证明代数可行，physical 合同与最终稳定子未证。
 
-前两项是可以同时成立的诊断门；第三项是尚待构造的 physical 路线，第四项只是第三项
-在要求完整乘法闭合时的可选 completion，并非四个互斥分支。这四层不改变固定
+前两项是可以同时成立的诊断门；第三项是尚待构造的非角色 physical cargo 路线，
+第四项是在要求忠实乘法角色时的显式 state-extension 路线，并非四个互斥分支。
+这四层不改变固定
 \((D_*,A)=(182,1)\) 的完整十五因子 target miss；即使第三或第四支物理实现，当前纤维仍无
 \(h\equiv-1\pmod{728}\)，所以 `FIBER_REALIZED` 仍为假。
 

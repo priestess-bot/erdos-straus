@@ -113,6 +113,7 @@ depends_on:
   - type-I-fg-qprefix-atomic-replacement-capacity-normalization
   - type-I-fg-qprefix-h83-typed-owner-no-go
   - type-I-fg-qprefix-h83-hidden-c4-source-extension
+  - type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
   - type-II-same-fiber-factor-box-neutral-role-capacity
   - type-I-first-overflow-common-denominator-marked-lift
   - type-I-first-overflow-factor-pair-tail-gate-joint-obstruction
@@ -262,6 +263,8 @@ sources:
     role: p557-c83-source-role-no-go-and-conditional-neutral-sheet-map
   - claim: type-I-fg-qprefix-h83-hidden-c4-source-extension
     role: p557-relative-C4-role-source-exponent-no-go-and-role-guided-terminal
+  - claim: type-I-fg-partial-prefix-relation-snf-physical-capacity-gate
+    role: finite-partial-relation-snf-physical-matching-and-faithful-role-boundary
   - claim: type-II-same-fiber-factor-box-neutral-role-capacity
     role: exact-same-fiber-factor-box-neutral-capacity-and-role-rank-boundary
   - claim: type-I-first-overflow-common-denominator-marked-lift
@@ -1337,17 +1340,26 @@ eta-neutral adapter，而是四层顺序门：
 
 1. `ETA_KEY_IDENTITY_LOSS`：仅凭 \(\eta\)-key 无法恢复三张算术 sheets 的
    identity；在 physical receipts 尚未证明时不能称为物理碰撞；
-2. `WHOLE_SOURCE_HOMOMORPHIC_EXPONENT_OBSTRUCTED`：要求 sheet direction 在
-   整个 \(U(199)\) 关系上下降为同态 \(C_4\) 角色时，源指数不足，且冻结
-   factor-\(2\) edge 的唯一 \(C_2\) 相位也不匹配；
-3. `PARTIAL_PREFIX_PROVENANCE_ADAPTER_UNPROVED`：允许只在
-   \(b=0,1,2\) 上定义并显式保留 provenance，不要求延拓到完整 \(C_4\)；指数 no-go
-   不排除它，但 physical membership、product synthesis 与 owner/occurrence 未证；
+2. `ORIGINAL_STATE_RELATION_TRANSPORT_OBSTRUCTED`：whole-source \(C_4\) 同态由源指数
+   排除；更强地，任何服务 \(b=1\) 的 finite selected record 都有源关系
+   \(198x=0\)，其指定 phase 却把该关系送到 \(2\pmod4\)，所以原状态 relation-preserving
+   partial adapter 也严格失败；冻结 factor-\(2\) edge 的唯一 \(C_2\) 相位另不匹配；
+3. `SET_THEORETIC_PARTIAL_PREFIX_PHYSICAL_ADAPTER_UNPROVED`：只在
+   \(b=0,1,2\) 上显式保留 provenance、但不保持原 source relations 的 physical set
+   map 尚未完成；actual-F exponent box 内恰有 \(51\) 条 labelled 三点 raw
+   \(83\)-chains，分成 \(27,12,12\) 三类、压成 \(27\) 个 image triples 并覆盖
+   \(105\) 条 records，但当前 source line 把每条链压成同一 integer row，故仍缺新的
+   source line、state/owner/occurrence 与 product synthesis；它即使通过全局 physical
+   gate，也不能把 \(\psi_4\) 拉回为同态 source character 或支付 faithful \(C_4\)
+   role capacity；
 4. `FULL_C4_STATE_EXTENSION_OPTIONAL`：若要求完整乘法闭合，可新增四阶
    state；抽象模型只证明 algebraic image，不是 physical receipt。
 
-前两层可同时登记；第三层是未证的 physical 路线，第四层只是第三层在要求完整乘法
-闭合时的可选 completion，不能把它们当作四个互斥分支收费。
+前两层可同时登记；第三层是未证的非角色 cargo 路线，第四层是在要求忠实乘法角色时
+的显式 state extension，不能把它们当作四个互斥分支收费。一般 finite adapter 先证明
+全局可行匹配族；只有约束可分离的 unit-token 特例使用 Hall，owner-only quota 特例
+使用 partition-Rado，再对每个全局可行 matching 的 selected-record relation lattice
+运行 SNF。Hall/Rado 单独通过不产生角色容量。
 
 对本控制，四阶角色兼容的严格因子菜单恰为 \(D'\in\{13,26,91\}\)；最小
 \(D'=13\) 已由 \((A,C,K,h,B)=(1,13,2,103,10821)\) 给出
