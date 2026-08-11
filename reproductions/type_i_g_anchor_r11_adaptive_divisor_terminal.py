@@ -144,6 +144,32 @@ def verify_raw_self_loop_intersection() -> dict[str, int]:
     }
 
 
+def verify_two_nonresidue_box_miss() -> dict[str, object]:
+    """Exhibit the sharp failure of a one-nonresidue R=11 selector."""
+    ell, other = 13, 17
+    N = ell * other
+    p = (12 * N - 1) // 11
+    residues = {
+        pow(ell, exponent_ell, 11) * pow(other, exponent_other, 11) % 11
+        for exponent_ell in range(3)
+        for exponent_other in range(3)
+    }
+    if not (
+        is_prime(ell)
+        and is_prime(other)
+        and ell % 11 == 2
+        and other % 11 == 6
+        and N % 22 == 1
+        and is_prime(p)
+        and p % 24 == 1
+        and (p - 1) // 24 == (N - 1) // 22
+        and residues == {1, 2, 3, 4, 6}
+        and not residues.intersection({7, 8, 10})
+    ):
+        raise AssertionError("two-nonresidue R=11 box-miss control changed")
+    return {"ell": ell, "m": other, "N": N, "p": p, "residues": sorted(residues)}
+
+
 CONTROLS = (
     (313, 41),
     (601, 19),
@@ -163,6 +189,7 @@ def build_result() -> dict[str, object]:
     full_box = [verify_full_r11_box_terminal(p=p, divisor=d) for p, d in FULL_BOX_CONTROLS]
     rays = [verify_dirichlet_ray(divisor=r) for r in (19, 41, 63)]
     self_loop_intersection = verify_raw_self_loop_intersection()
+    two_nonresidue_miss = verify_two_nonresidue_box_miss()
     if terminals[0]["third_denominator"] != 269493:
         raise AssertionError("p=313 control changed")
     if terminals[1]["third_denominator"] != 993453:
@@ -179,6 +206,7 @@ def build_result() -> dict[str, object]:
         "full_box_controls": full_box,
         "primitive_dirichlet_rays": rays,
         "raw_self_loop_terminal_intersection": self_loop_intersection,
+        "two_nonresidue_box_miss": two_nonresidue_miss,
     }
 
 

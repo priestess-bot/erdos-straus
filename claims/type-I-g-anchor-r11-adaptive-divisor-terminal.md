@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-I-g-anchor-r11-adaptive-divisor-terminal
-title: R=11 固定尾的自适应 8 mod 11 因子 Type I 终端
+title: R=11 固定尾的完整三残类因子盒与自适应 Type I 终端
 statement: 设 p=24h+1 为核心素数、N=22h+1、K=3N=(11p+1)/4。固定第三分母 pK 的全部 Type I terminal 恰等价于存在 d divides N^2，且 d lies in {7,8,10} modulo 11：若 d is congruent to 8,10,7，分别取 e=d,3d,9d，再取 u=(K+e)/11、v=(K+K^2/e)/11。特别地，若 r divides N 且 r=8 (mod 11)，写 s=N/r，则 u=r(3s+1)/11、v=3rs(3s+1)/11 为正整数，且 u<v<pK，并给出直接 Type I 短证书。对每个奇数 r=8 (mod 11)，令 h0=-22^(-1) (mod r)，则 gcd(24h0+1,24r)=1；Dirichlet 定理给出无穷多个素数 p=24(h0+rt)+1，且每个都由该构造终止。该结果是 terminal-first 的自适应除子扇，不依赖 c=3/c=9 complement seed 的 source receipt，也不覆盖三残类因子盒未命中的核心素数。
 claim_status: established
 proof_provenance: repository_derivation
@@ -27,7 +27,7 @@ visibility: public
 last_checked: '2026-08-12'
 ---
 
-# \(R=11\) 的自适应 \(8\pmod {11}\) 因子终端
+# \(R=11\) 的完整三残类因子盒与自适应终端
 
 ## 1. 完整三残类因子盒
 
@@ -305,7 +305,59 @@ Dirichlet 定理给出无穷多个素数参数点；每一个同时属于 (24) �
 因此未标记 physical-row 自环确实阻止把 raw action 当作严格势，却不能被当作该
 无穷子族的 terminal-free 证据。
 
-## 7. 边界
+## 7. 两个非剩余因子仍可完整未命中
+
+不能把“\(N\) 含一个模 \(11\) 二次非剩余因子”当作 (2) 的充分条件。更精确地，
+设 \(\ell,m\) 是满足
+
+\[
+\ell\equiv2\pmod {11},
+\qquad
+m\equiv6\pmod {11}
+\tag{28}
+\]
+
+的不同素数，并令 \(N=\ell m\)。则 \(N\equiv1\pmod {11}\)，且
+
+\[
+\{d\bmod {11}:d\mid N^2\}
+=\{2^a6^b\bmod {11}:0\le a,b\le2\}
+=\{1,2,3,4,6\}.
+\tag{29}
+\]
+
+其中 \(2\) 与 \(6\) 都是模 \(11\) 的二次非剩余，但 (29) 与
+\(\{7,8,10\}\) 不相交。因此完整 \(R=11\) 固定尾 box 未命中。
+
+若进一步
+
+\[
+p=\frac{12\ell m-1}{11}
+\tag{30}
+\]
+
+为素数，则 \(\ell m\equiv1\pmod {22}\) 给出
+
+\[
+h=\frac{\ell m-1}{22},
+\qquad
+p=24h+1,
+\tag{31}
+\]
+
+所以这是核心素数中的真实固定尾残余族，而不是仅在有限群内的形式反例。
+
+最小控制是
+
+\[
+(\ell,m,N,h,p)=(13,17,221,10,241).
+\tag{32}
+\]
+
+该 \(p\) 有其它直接 Type II terminal，故这不是 Erdős--Straus 反例；它严格排除的
+只是“任意非剩余因子足以关闭 \(R=11\) 固定尾”的错误规则。
+
+## 8. 边界
 
 这是一张原始 \(p\) 的 terminal leaf：它不需要也不生成递归状态、全域 E4 lift 或
 G-anchor raw source。它不会覆盖完整三残类因子盒 (9) 未命中的核心素数，因而不是
