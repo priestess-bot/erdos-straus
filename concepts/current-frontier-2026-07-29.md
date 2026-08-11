@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。自然物理权最小溢出不必位于 Jacobi 负源：q=21,42 的最小权均由中性载体 3 承担，局部共享缺口与 q->q/3 都不闭合。当前决定性前沿是为 neutral-carrier overflow 构造真实 source-switch/alternate 或 E1--E5 适配器，再把奇核及一般有限阿贝尔空盒转成交替 Type I/II 参数纤维或良基下降；只有跨状态收费仍需要 owner/source-column Hall 与严格容量缺口分派。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。盒外自然尾容量把非终端压到 kappa=1 关系图；若 source-reachable 底层含 q 的真因子坐标 a，则新端点 q'=a 已具备 Type II 终端或 Sol(p) 恒等提升与 q 严降的完整 E1--E5 边。当前决定性缺口是证明每个 terminal-free 真实 Reach 必出现该真因子坐标，或构造严格反例后的替代适配器。
 topics:
 - research-map
 - proof-program
@@ -62,6 +62,8 @@ sources:
   role: physical-weight-minimum-neutral-carrier-and-local-transfer-no-go
 - claim: type-II-odd-kernel-overflow-natural-tail-relation-graph
   role: px-natural-tail-capacity-kappa-layer-reduction-and-cycle-terminal-search
+- claim: type-II-relation-reach-proper-endpoint-descent
+  role: source-reachable-proper-endpoint-terminal-or-E1-E5-descent
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6360,3 +6362,51 @@ SCC 内部标签完备性，不是新的未解决核心点。
 fresh-quotient 预占后仍实际可达的 `KAPPA_ONE_RELATION_SCC`，证明其含可验证的
 alternate-gap 终端，或构造 SCC 到合法状态的 E1--E5 适配器。完整证明见
 [Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](../claims/type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
+
+## 2026-08-12：source-reachable 底层真因子已给出完整端点递降
+
+关系图周期本身仍不是 E5，但在进入周期前可以重建另一个合法 \(p-1\) Type II
+端点。固定 \(p=4U+1\) 与端点允许 \(q\mid U\)。若 terminal-first 后的真实关系
+Reach 含底层节点
+
+\[
+\{a,4q-1-a\},
+\qquad a\mid q,
+\qquad a<q,
+\]
+
+则取
+
+\[
+q'=a,
+\qquad
+m'=4a-1,
+\qquad
+x'=U+a.
+\]
+
+端点允许域的因子下闭性保证 \(q'\) 合法。新 signed box 命中时，反足物理容量直接
+给出 \(d<x'\) 的 Type II terminal；否则重新分类为 G/F 空状态。两状态都表示同一个
+方程 \(4/p\)，所以 \(\operatorname{Sol}(p)\) 上的恒等映射是全域 E4 lift；在不可
+重入的 endpoint phase 中，自然数势从 \(q\) 严降到 \(a\)，支付 E5。E1--E3 则由
+source path、底层节点与端点公式逐项重算。因此这是第一条从 Type II 奇核盒外关系到
+另一合法端点的完整 E1--E5 边，而不是关系图内部的伪下降。
+
+四个控制固定了选择器语义：
+
+- \(p=1201,q=3\) 从 \(\{1,10\}\) 严降到 \(q'=1\) 的 G 状态；
+- \(p=31249,q=42\) 从可达 \(\{1,166\}\) 严降到 \(q'=1\) 的 G 状态；
+- \(p=3433,q=22\) 的 \(a=2\) 直接给 gap \(7\) Type II；
+- \(p=9601,q=40\) 在进入唯一 sink 前由 \(\{5,154\}\) 给 gap \(19\) Type II，
+  所以不能只检查 SCC 最小点。
+
+两条反边界同样必要。\(p=6529,q=48\) 的整个抽象底层图含不可达 sink
+\(\{5,186\}\)，真实源 Reach 却只进入 \(\{1,190\}\)，故 source provenance 不能
+删除；\(p=20857,q=66\) 的最小关系在第一层已由 edge label (3) Type I 抢占，故
+端点菜单不能提前于边标签。
+
+当前决定性缺口现已严格缩成一个存在性量词：每个经过三类终端预占后仍存活的真实
+整数原像，其完整 source-reachable 底层 Reach 是否必含某个 \(a\mid q,a<q\)？若真，
+上面的端点递降直接完成 E2/E4/E5；若假，反例必须同时是原盒空、目标在完整源子群、
+关系 Reach 终端自由且全部可达底层小坐标都不是 \(q\) 的真因子。完整定理与聚焦验证见
+[Type II 关系图可达底层的真因子端点递降](../claims/type-II-relation-reach-proper-endpoint-descent.md)。

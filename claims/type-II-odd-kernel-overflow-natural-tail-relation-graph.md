@@ -561,6 +561,13 @@ E1--E5 的严格可提升后继。当前定理关闭了 \(p=67369\) 的两个最
 而 \(p=1153\) 证明一般 SCC 不必自含可证书边标签；全称空盒转交目标因此仍须一个
 跨 SCC 的真实适配器。
 
+后续的真因子端点定理已经构造出一个这样的条件性适配器：若 terminal-first 后的
+source-reachable 底层节点含较小坐标 \(a\mid q\)、\(a<q\)，则以
+\(q'=a\) 重建合法 \(p-1\) Type II 端点；命中时直接终止，否则以
+\(\operatorname{Sol}(p)\) 恒等提升和势 \(q'<q\) 得到完整 E1--E5 边。因此本节所留的
+全称缺口进一步缩为这个真因子坐标的存在性，而不是 E2/E4/E5 的构造。见
+[Type II 关系图可达底层的真因子端点递降](type-II-relation-reach-proper-endpoint-descent.md)。
+
 聚焦验证：
 
 ~~~bash

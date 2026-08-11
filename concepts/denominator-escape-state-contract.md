@@ -53,6 +53,7 @@ used_by:
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
 - type-I-source-lattice-qheight-dual-valuation-shift-carrier
 - type-II-odd-kernel-overflow-natural-tail-relation-graph
+- type-II-relation-reach-proper-endpoint-descent
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -76,8 +77,10 @@ sources:
   role: divisor-downset-forbidden-antichain-and-prime-power-allocation
 - claim: type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
   role: Type-II-signed-box-physical-occurrence-and-range-terminal
+- claim: type-II-relation-reach-proper-endpoint-descent
+  role: source-reachable-proper-endpoint-E1-E5-contract
 visibility: public
-last_checked: '2026-08-11'
+last_checked: '2026-08-12'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -1200,6 +1203,44 @@ recursive_edge_eligible = false
 未出现自然尾终端或通过 verifier 的 alternate-gap 终端，必须输出
 `KAPPA_ONE_RELATION_SCC`；不得把底层周期压成伪递降。精确定理见
 [Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](../claims/type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
+
+### 6.6 Type II 真因子端点递降
+
+对 \(p=4U+1\) 的端点允许状态 \(q\mid U\)，关系图完成自然尾、fresh quotient 和
+边标签终端检查后，允许从任一 source-reachable 底层节点 \(\{a,4q-1-a\}\) 创建
+下列候选，但必须满足
+
+\[
+a\mid q,\qquad a<q.
+\]
+
+规范载荷为：
+
+```text
+certificate_type = type_ii_relation_reach_proper_endpoint_descent
+source_cofactor = q
+source_bottom_node = [a, 4*q-1-a]
+target_cofactor = a
+target_gap = 4*a-1
+target_first_denominator = U+a
+solution_set = Sol(p)
+solution_lift = identity
+rank_before = q
+rank_after = a
+phase = p_minus_one_endpoint_descent
+```
+
+目标端点必须从原始整数重算 factorization、signed box、源子群和 G/F/hit 分类。hit
+先登记 Type II terminal；G/F 空态才登记后继。E1 由完整 source path 与底层节点支付，
+E2--E3 由端点公式和因子下闭域支付，E4 是 \(\operatorname{Sol}(p)\) 恒等映射，E5
+是预先定义的自然数势 \(a<q\)。该 phase 不允许无付款地重置到更大的 \(q\)。
+
+不得把整个抽象 bottom graph 的不可达节点用于该边；\(p=6529,q=48\) 的完整底层图
+含不可达的非因子 sink \(\{5,186\}\)，而真实源 Reach 只进入 \(\{1,190\}\) sink。
+也不得只检查 sink minimum；\(p=9601,q=40\) 的 transient 底层节点
+\(\{5,154\}\) 已产生 gap \(19\) Type II。若完整可达底层没有任何 \(a\mid q,a<q\)，
+输出 `KAPPA_ONE_RELATION_REACH_NO_PROPER_ENDPOINT`，不得伪造递降。精确定理见
+[Type II 关系图可达底层的真因子端点递降](../claims/type-II-relation-reach-proper-endpoint-descent.md)。
 
 ## 7. 明确不构成递降的对象
 
