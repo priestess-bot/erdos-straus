@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。盒外自然尾容量把非终端压到 kappa=1 关系图。整坐标真因子只是强分支；任一底层节点 {a,b} 都由 {gcd(a,q),gcd(b,q)} 去掉 q 后自动产生 q 的真因子 shadow。shadow 端点命中时直接终止，否则以 Sol(p) 恒等提升和 q 严降形成完整 E1--E5 边；q=1 的 F-empty 基例不可能。因此普通 Type II F/odd-kernel endpoint phase 的空盒转交、底层循环与一般有限阿贝尔推广已闭合。剩余边界是非平凡 marked terminal 的成员资格，以及退出到 G 后的 Type I 全局选择器，而不是 Type II relation Reach 的存在性。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其确定性 H1 high-R bundle 的 direct-cofactor gate 也全称失败。其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。盒外自然尾容量把非终端压到 kappa=1 关系图。整坐标真因子只是强分支；任一底层节点 {a,b} 都由 {gcd(a,q),gcd(b,q)} 去掉 q 后自动产生 q 的真因子 shadow。shadow 端点命中时直接终止，否则以 Sol(p) 恒等提升和 q 严降形成完整 E1--E5 边；q=1 的 F-empty 基例不可能。因此普通 Type II F/odd-kernel endpoint phase 的空盒转交、底层循环与一般有限阿贝尔推广已闭合。剩余边界是非平凡 marked terminal 的成员资格，以及退出到 G 后的 Type I 全局选择器，而不是 Type II relation Reach 的存在性。
 topics:
 - research-map
 - proof-program
@@ -42,6 +42,8 @@ sources:
   role: universal-C2-centered-miss-and-natural-marker-empty-proof
 - claim: type-I-high-support-c2-rank-one-retention-exhaustion
   role: cross-chart-Type-I-menu-and-rank-one-retention-exhaustion
+- claim: type-I-high-support-c2-h1-direct-cofactor-obstruction
+  role: universal-H1-direct-cofactor-gate-obstruction-at-the-C2-boundary
 - claim: type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
   role: all-gap-equal-tail-source-menu-and-terminal-collapse
 - claim: type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
@@ -5853,6 +5855,30 @@ terminal-first adapter；它不取代更早的 gap-\(3\) 等标准短证书检�
 使用随 source 解变化的单坐标映射、完全重组三个坐标，或在进入 \(C=2\) 边界前由
 alternate、dual、total-cofactor、paid reset 抢占；任何候选仍须同时支付全域 E4
 解提升与严格 E5 良基势。
+
+## 2026-08-12：C=2 的 H1 direct-cofactor fallback 全称失效
+
+最小 \(C=2\) high-support 图表还有一条与 carry 和 \(p-1\) 提升不同的候选：
+对其确定性 high-\(R\) complete-excess H1 bundle 运行 direct-cofactor macro。
+这条候选现在也有闭式 no-go。H1 强制
+
+\[
+Q=p-2,
+\qquad M=A_2(p-2),
+\qquad r=M\bmod p=\frac{p-1}{4},
+\qquad C_M=p-1.
+\]
+
+cofactor gate 的必需因子却为
+
+\[
+\frac{A_2}{(A_2,C_M)}=2p-1>r,
+\]
+
+因而不能整除 \(r\)。等价地，\(rC_M=B_p<K_2\)，使 direct phase 的分子为负；
+形式 target 还会有 \(R_T=p-2<p\)。所以这不是漏掉一张低图表边，而是 H1 macro
+在 E2 前必然拒绝。完整证明见
+[最小高支撑 \(C=2\) 边界的 H1 direct-cofactor 全称阻碍](../claims/type-I-high-support-c2-h1-direct-cofactor-obstruction.md)。
 
 ## 2026-08-11：等尾单标记全坍缩与固定源秩 Type II 三次容量界
 
