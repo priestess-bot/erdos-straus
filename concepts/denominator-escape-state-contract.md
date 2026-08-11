@@ -863,6 +863,14 @@ verifier 必须从原始整数重算派生字段，不能相信缓存的 F/G 标
 只展示一个碰巧可提升的源解，不能证明映射在 \(W_T\) 上全域；此时应把 \(W_T\) 缩成
 准确的可提升标记集，并继续证明该标记集非空。
 
+若 \(W_T=\operatorname{Sol}(n)\ne\varnothing\)，则“存在某个集合映射
+\(W_T\to\operatorname{Sol}(p)\)”本身与 \(\operatorname{Sol}(p)\ne\varnothing\)
+等价：已知目标解总能定义常值映射。因而 E4 回执必须保存不读取目标解的显式公式及其
+整数性证明；若公式由一个已知目标解定义，应把该解直接登记为 terminal，而不是递降边。
+质量保持的逐坐标倒数仿射式也有严格障碍：对偶数或三整除源的标准解，它的全部整值输出
+退化为规范分母 \(h_i=a_i/(n,a_i)\) 是否乘 \(p\) 的二值选择，并且无一满足目标等式。
+见[未标记全域提升的循环性与逐坐标倒数仿射整值障碍](../claims/full-solution-lift-circularity-reciprocal-affine-no-go.md)。
+
 ### E5. strict_decrease
 
 回执必须保存 \(\Pi(S)\)、\(\Pi(T)\) 及可复核的比较证明
@@ -1334,6 +1342,7 @@ phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许
 | d=1 overflow 的 \(p-2\) G 重图表 | \(M\bmod p=(p-1)/4\) 只给出普适 G 分离和空支撑纤维；它丢弃旧支撑，不能作为 RESET 或恒等 marked lift |
 | overflow 余数 \(r=1\) 的对称边界 | \(s=1\)、\(d=(p-1)/4\)，两侧固定为 \((p-2,(p-1)^2/4)\) 与 \((3,(3p+1)/4)\)；不自动支付旧 support，不能作为新的递归出口 |
 | \(q=1\) Type II G 改挂到 \(R=3\) Type I | 两个模三源群可以同时为 G；\(p=2521\) 还逃过 gaps \(3,7,11,15,19\)，所以伴随换图表不是终端或真分母递降 |
+| 由一个已知目标解定义的 \(\operatorname{Sol}(n)\to\operatorname{Sol}(p)\) 常值映射 | 映射存在性与目标可解性等价；应直接登记目标 terminal，不能重复收费为 E4 递降 |
 | 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
 
 ## 8. 验收表

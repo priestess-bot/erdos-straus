@@ -6490,3 +6490,33 @@ N=1891=31\cdot61,
 
 完整证明与聚焦验证见
 [模三双 G 出口的精确等价与小缺口严格反例](../claims/type-I-type-II-mod-three-double-g-exit-obstruction.md)。
+
+## 2026-08-12：未标记全域提升的循环性与 reciprocal-affine no-go
+
+对任意已知非空的 \(\operatorname{Sol}(n)\)，单纯断言存在映射
+\(\operatorname{Sol}(n)\to\operatorname{Sol}(p)\) 与断言
+\(\operatorname{Sol}(p)\ne\varnothing\) 完全等价：正向取任一源解，反向用任一目标解
+定义常值映射。因此真分母递降必须给出不读取目标解的统一公式；目标解诱导的常值映射
+只能登记 terminal。
+
+一个自然的非平凡候选也已被全称排除。若
+
+\[
+\frac1{A_i}=\frac{n}{pa_i}+\frac{k_i}{p},
+\qquad k_1+k_2+k_3=0,
+\]
+
+则有理恒等式自动成立。令 \(g_i=(n,a_i)\)、\(h_i=a_i/g_i\)。目标分母为整数时，
+互素性与 \(p\) 为素数强制
+
+\[
+A_i\in\{h_i,ph_i\}.
+\]
+
+偶源标准解的 \(h\) 为 \((1,1,1)\)，三整除源标准解的 \(h\) 为
+\((1,2,2)\)；两者的全部二值选择都不可能给出 \(4/p\)。所以该公式即使允许
+\(k_i\) 依赖每个源解，也不能从最常用的已知可解源类构造全域提升。下一候选必须真正
+跨坐标且非线性，或回到可递归证明非空的 marked solution set。
+
+完整证明与聚焦验证见
+[未标记全域提升的循环性与逐坐标倒数仿射整值障碍](../claims/full-solution-lift-circularity-reciprocal-affine-no-go.md)。
