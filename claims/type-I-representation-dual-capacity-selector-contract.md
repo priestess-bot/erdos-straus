@@ -132,6 +132,7 @@ depends_on:
   - type-II-p-minus-one-divisor-downset-prime-power-allocation
   - type-II-p-minus-one-jacobi-source-localization-collision-capacity
   - type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
+  - type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -315,6 +316,8 @@ sources:
     role: Jacobi-role-to-integer-source-factor-slot-and-cross-q-collision-capacity
   - claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
     role: Jacobi-source-SNF-rank-one-compression-and-anchor-dichotomy
+  - claim: type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
+    role: Jacobi-C2-stripping-and-odd-kernel-affine-box-no-go
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1662,6 +1665,29 @@ Hall--Rado、E4 与 E5。碰撞超额可输出
 第三态若有界盒命中则进入 Type II terminal，若 miss 则不得再次生成 Jacobi \(C_2\) request，
 而应检查 Jacobi 核的剩余方向。完整的源 SNF 证明见
 [\(p-1\) 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md)。
+
+在 \(H_q\) 循环且阶为 \(2s\)、\(s\) 奇数的状态上，rank-one Jacobi 行还可以被
+精确剥离。若 \(\ell_i=g^{a_i}\)、\(\beta_i=a_i\bmod2\)、
+\(b_i=(a_i-\beta_i)/2\)，则 signed-box 命中等价于奇数负源 parity 模式上的
+模 \(s\) 有界线性盒：
+
+\[
+\sum_{\beta_i=1}a_i u_i+
+\sum_{\beta_i=0}b_i z_i
+\equiv
+\frac{s-1}{2}
+-\sum_{\beta_i=1}b_i\delta_i
+-\frac{\sum\delta_i-1}{2}
+\pmod s.
+\]
+
+负源非空时 \(C_2\) 投影自动是 \(\{0,1\}\)，所以该方向不再产生新的二进制容量；
+全部奇 parity 盒为空时输出
+\(\operatorname{JACOBI\_ODD\_KERNEL\_BOX\_EMPTY}\)。这不是 SNF 失败，而是
+Jacobi 核内的奇模/完整关系 no-go。\(p=67369\) 的 \(q=7,21,42\) 分别得到
+模 \(9,41,83\) 的空盒；已有 gap-\(31\) Type I terminal 继续负责最终分派。
+完整证明见
+[\(p-1\) 因子 Type II 的 Jacobi \(C_2\) 剥离与奇核有界仿射盒](type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列

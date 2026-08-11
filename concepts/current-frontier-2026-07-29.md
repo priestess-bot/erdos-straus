@@ -54,6 +54,8 @@ sources:
   role: Jacobi-negative-role-integer-source-factor-localization-and-cross-q-capacity
 - claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
   role: Jacobi-source-SNF-rank-one-compression-anchor-dichotomy-and-C2-no-go
+- claim: type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
+  role: cyclic-Jacobi-C2-stripping-and-odd-kernel-affine-box-no-go
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6141,3 +6143,39 @@ rank-one source-target-realized。第三态若盒 miss，不得再按负因子�
 请求，必须进入 odd-primary/完整 source-SNF、物理槽流、其它 Type I/II 终端或递降。
 完整证明见
 [\(p-1\) 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](../claims/type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md)。
+
+## 2026-08-11：循环 Jacobi 状态的 \(C_2\) 已剥离为奇模仿射盒
+
+对 \(H_q\) 循环且 \(|H_q|=2s\)、\(s\) 奇数的 \(p-1\) 状态，选生成元 \(g\)，写
+\(\ell_i=g^{a_i}\)、\(\beta_i=a_i\bmod2\)、\(b_i=(a_i-\beta_i)/2\)。完整
+signed-box 目标同余
+
+\[
+\prod_i\ell_i^{z_i}\equiv-1\pmod{4q-1}
+\]
+
+等价于负源指数总和为奇数，并满足模 \(s\) 的有界仿射方程
+
+\[
+\sum_{\beta_i=1}a_i u_i+
+\sum_{\beta_i=0}b_i z_i
+\equiv
+\frac{s-1}{2}
+-\sum_{\beta_i=1}b_i\delta_i
+-\frac{\sum\delta_i-1}{2}
+\pmod s,
+\]
+
+其中 \(z_i=\delta_i+2u_i\)，\(\sum\delta_i\) 为奇数。这是一个精确有限分解，不是
+把离散对数当作未验证的 Fourier 标签。
+
+负源非空时 \(C_2\) 投影必饱和为 \(\{0,1\}\)，故任何剩余 F miss 都位于
+Jacobi 核的剩余方向。若所有奇 parity affine boxes 为空，则给出
+\(\operatorname{JACOBI\_ODD\_KERNEL\_BOX\_EMPTY}\)。对 \(p=67369\)，
+\(q=7,21,42\) 的三张 F 证书已分别化为模 \(9,41,83\) 的空盒；这把该压力点的
+F/G 算术分析推进到 odd-primary no-go，仍由 gap-\(31\) Type I terminal 完成
+terminal-first 分派。
+
+该结论只覆盖循环 Jacobi 状态；非循环 \(H_q\) 仍需多 primary SNF/源列评价，且
+odd-kernel 空盒尚未自动构造 physical source-column 或 E4/E5 递降。完整证明见
+[\(p-1\) 因子 Type II 的 Jacobi \(C_2\) 剥离与奇核有界仿射盒](../claims/type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay.md)。
