@@ -4052,10 +4052,17 @@ Type I；\(R_*\mid p+4\) 给出 \(D=1\) Type II；关系盒命中只先给算术
   \(55\to11\)，目标为 G。
 
 这关闭了 `SCALED_RELATION_OUTSIDE_DYADIC_BOX` 的结构分派，但没有证明下降后的
-F/G sink 终止，也没有处理 odd-Hall 旗标。当前核心 Jacobi 的首要缺口因此进一步
-缩小为 odd-Hall 横向 owner 关联格如何保持原记录来源并进入实际 Type II 因子选择，
-或如何产生独立的良基下降。详见
+F/G sink 终止。奇主阶记录现也可先检查完整 CRT 分量：从负记录规范抽出的精确
+\(\ell\)-阶元若在任何完整素数幂分量上为 \(1\)，则该分量和其余分量给出互素真因子，
+唯一 \(3\pmod4\) 因子以同一 `CRT_DESCENT` 势严格降低 \(R\)。所以 odd-Hall 的
+首要缺口收缩为 **full-component support** 记录，即该 \(\ell\)-阶元在每个完整
+素数幂分量都非平凡；这只是此 CRT 构造的精确障碍，仍需 owner/source-map 或另一条
+良基下降。详见
 [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](../claims/type-I-pure-dyadic-half-power-crt-rechart-descent.md)。
+
+奇主阶的对应构造与 \(p=73,R=95\) 的实际 F 控制、\(\ell\mid R\) 的完整分量控制
+和 \(p=97,R=67\) 的全支撑障碍见
+[奇主阶记录的完整分量核、CRT 重图表递降与全支撑障碍](../claims/type-I-odd-primary-component-kernel-crt-rechart-descent.md)。
 
 ## 2026-08-09：odd-Hall 横向秩的正确载体是参数纤维关联格
 

@@ -24,7 +24,9 @@ statement: >-
   最小 q-height 对偶。已绑定层的旗标只能在原层准入或输出严格 obstruction；只有
   尚未绑定层的请求才能在 owner 窗口可容纳时选择 valuation-shifted carrier 构造
   新层的 source-line 仿射 provenance，否则给出严格窗口阻碍。但其范围/target-state 门、
-  完整 kernel source box 与全局 E5 仍未证明。多个独立角色的纯代数层容量已有
+  完整 kernel source box 与全局 E5 仍未证明。奇主阶记录若在某个完整 CRT
+  素数幂分量上为 1，则现可直接进入图表无关标记与不可逆 CRT_DESCENT 的严格
+  降 R 重图表；只有全分量非平凡的记录仍转交 odd-owner/source-map。多个独立角色的纯代数层容量已有
   障碍商短正合列和精确上尾 Hall 判据；真实物理边仍需范围、标签与 occurrence 门。
   纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
   进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
@@ -37,6 +39,7 @@ depends_on:
   - type-I-target-fiber-primary-filtered-support-source-dichotomy
   - type-I-generalized-dyadic-exact-relation-capacity
   - type-I-pure-dyadic-half-power-crt-rechart-descent
+  - type-I-odd-primary-component-kernel-crt-rechart-descent
   - type-II-source-fiber-finite-abelian-composition-relay
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -764,7 +767,9 @@ EXACT_TYPE_I_HIT
                  -> HALF_POWER_CRT_TERMINAL
                  -> STRICT_CRT_RECHART
        -> ODD_HALL_FOURIER_SOURCE_RANK
-            -> MASKED_PRIME_LAYER_FLAG
+            -> ODD_PRIMARY_COMPONENT_KERNEL_CRT_RECHART
+            -> ODD_PRIMARY_FULL_COMPONENT_SUPPORT
+                -> MASKED_PRIME_LAYER_FLAG
 ```
 
 这里真正新增的是：核心 Jacobi 饱和陪集内部的目标删点、规范角色对、全角色高密度门，
@@ -808,7 +813,9 @@ selector_status = analysis_evidence
 recursive_edge_eligible = false
 ```
 
-而纯二进盒外分支在图表无关 marking 和不可逆 CRT_DESCENT phase 均登记后可使用
+奇主阶记录现在也先按完整素数幂分量检查：存在非平凡 component kernel 时，
+由 \(R\to R_*<R\) 的严格 CRT 边退出；仅 `ODD_PRIMARY_FULL_COMPONENT_SUPPORT`
+保留给 owner/source-map。纯二进盒外分支在图表无关 marking 和不可逆 CRT_DESCENT phase 均登记后可使用
 
 ```text
 selector_status = verified_edge
