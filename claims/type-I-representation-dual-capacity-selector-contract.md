@@ -131,6 +131,7 @@ depends_on:
   - type-II-p-minus-one-endpoint-envelope-large-prime-allocation
   - type-II-p-minus-one-divisor-downset-prime-power-allocation
   - type-II-p-minus-one-jacobi-source-localization-collision-capacity
+  - type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -312,6 +313,8 @@ sources:
     role: endpoint-divisibility-downset-forbidden-antichain-and-power-allocation
   - claim: type-II-p-minus-one-jacobi-source-localization-collision-capacity
     role: Jacobi-role-to-integer-source-factor-slot-and-cross-q-collision-capacity
+  - claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
+    role: Jacobi-source-SNF-rank-one-compression-and-anchor-dichotomy
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1641,6 +1644,24 @@ Hall--Rado、E4 与 E5。碰撞超额可输出
 \(\operatorname{SOURCE\_PRIME\_COLLISION\_CAPACITY\_DEFICIT}\)，但未超额本身
 不是 verified edge。证明见
 [\(p-1\) 因子 Type II 的 Jacobi 源因子定位、奇偶门与跨 \(q\) 碰撞容量](type-II-p-minus-one-jacobi-source-localization-collision-capacity.md)。
+
+该源因子评价矩阵现在可以进一步规范化。对 \(x\) 的每个不同素因子 \(\ell\) 取
+\(\beta_\ell=1\) 当且仅当 \((\ell/(4q-1))=-1\)，则
+\(\boldsymbol\beta=(\beta_\ell)\) annihilate 全部乘法关系格，并下降为
+\(H_q\to C_2\) 的唯一 Jacobi 源角色。其源像秩恰为
+\(0\) 或 \(1\)，与负因子数量无关；负源非空时 signed box 的 \(C_2\) 投影已经
+\(\{0,1\}\) 饱和。因此 \(p=67369,q=7\) 的两个负因子只能产生一个二进制角色，
+不能计为两个独立 source-rank 请求；三张 F 的剩余 miss 必须转交 Jacobi 核的奇阶
+商、完整关系几何或其它终端。
+
+选择器新增三态回执：
+\(\operatorname{JACOBI\_G\_SOURCE\_TRIVIAL}\)、
+\(\operatorname{JACOBI\_RANK\_ONE\_ANCHOR\_OUTSIDE}\)、
+\(\operatorname{JACOBI\_RANK\_ONE\_SOURCE\_TARGET\_REALIZED}\)。第三态若有界盒
+命中则进入 Type II terminal，若 miss 则不得再次生成 Jacobi \(C_2\) request。
+第三态若有界盒命中则进入 Type II terminal，若 miss 则不得再次生成 Jacobi \(C_2\) request，
+而应检查 Jacobi 核的剩余方向。完整的源 SNF 证明见
+[\(p-1\) 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列

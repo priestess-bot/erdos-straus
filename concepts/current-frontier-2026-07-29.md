@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子：空负源统一给 G，非空负源给整数源因子候选槽、命中奇偶门和跨 q 碰撞容量。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：在 Jacobi 可见状态上实现 physical source columns 并证明源关系评价矩阵的 SNF/Hall 满配或严格容量缺口；以及把剩余 F 有界盒 miss 转成具备 E4/E5 的终端或良基下降。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和，剩余 F miss 位于 Jacobi 核的剩余方向/完整关系几何。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：在 Jacobi 核剩余方向实现 physical source columns 并通过 owner/物理槽 Hall 或严格容量缺口分派；以及把剩余 F 有界盒 miss 转成具备 E4/E5 的终端或良基下降。
 topics:
 - research-map
 - proof-program
@@ -52,6 +52,8 @@ sources:
   role: endpoint-divisibility-downset-forbidden-antichain-and-power-allocation
 - claim: type-II-p-minus-one-jacobi-source-localization-collision-capacity
   role: Jacobi-negative-role-integer-source-factor-localization-and-cross-q-capacity
+- claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
+  role: Jacobi-source-SNF-rank-one-compression-anchor-dichotomy-and-C2-no-go
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6105,3 +6107,37 @@ box 命中或 miss 才区分 Type II 与 F。
 严格容量缺口或可提升下降。
 单个负源槽与未超载的碰撞账本都还不是 E4/E5 边。完整证明见
 [\(p-1\) 因子 Type II 的 Jacobi 源因子定位、奇偶门与跨 \(q\) 碰撞容量](../claims/type-II-p-minus-one-jacobi-source-localization-collision-capacity.md)。
+
+## 2026-08-11：Jacobi 源关系压缩为唯一 \(C_2\) 行并关闭二进制重复收费
+
+对任意 \(p-1\) 因子状态，取 \(x=U+q\) 的不同素因子作为指数源列，令
+\(\phi_q:\mathbb Z^t\to H_q\) 为模 \(4q-1\) 的乘法映射，\(L_q=\ker\phi_q\)。
+Jacobi 符号给出规范评价行
+
+\[
+\boldsymbol\beta_q
+=\bigl(1_{\left(\ell/(4q-1)\right)=-1}\bigr)_{\ell\mid x}
+\in\mathbb F_2^t.
+\]
+
+它对 \(L_q\) 的每个关系都取零，因此下降为
+\(H_q\to C_2\) 的真实源角色。其源像的 \(\mathbb F_2\) 秩严格为
+
+\[
+0\quad\text{或}\quad1,
+\]
+
+分别对应负源集为空或非空，绝不等于负素因子数量。负源为空时 \(-1\notin H_q\)，
+Jacobi 角色给出 G 分离；负源非空且 \(-1\in H_q\) 时，源—目标 SNF 显式相容。
+
+更强的是，signed box 在 Jacobi \(C_2\) 商上的投影满足：负源为空时只有 \(0\)，
+负源非空时恰为 \(\{0,1\}\)，因为任意负素因子在 \(x\) 中至少有一个指数预算。
+所以 Jacobi 可见状态不存在二进制投影容量缺口；有界盒 miss 必须位于
+\(\ker\chi_m\) 的奇阶坐标、完整关系格或范围几何中。\(p=67369\) 的 \(q=7\)
+虽有两个负因子 \(29,83\)，仍只有一个 \(C_2\) 方向；五个 G 行秩 0，三张 F 行秩 1。
+
+统一选择器因此新增严格三分：G source-trivial、rank-one anchor-outside、
+rank-one source-target-realized。第三态若盒 miss，不得再按负因子数生成新的 Jacobi
+请求，必须进入 odd-primary/完整 source-SNF、物理槽流、其它 Type I/II 终端或递降。
+完整证明见
+[\(p-1\) 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](../claims/type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md)。
