@@ -431,6 +431,22 @@ miss，并由 gap-\(31\) Type I 终端接管。
 终端、Type II 命中或严格递降；\(\mathcal C_U\) 中全部纤维为空时，仍须转交
 其它 terminal 或具备 E1--E5 的 verified edge。
 
+允许域内还有一个不依赖枚举的源侧过滤。对 \(q\in\mathcal C_U\) 写
+\(r=U/q\)，并计算
+
+\[
+\mathcal N_q(p)=
+\{\ell\mid r+1:\ell\text{ 为素数且 }(p/\ell)_K=-1\}.
+\]
+
+若该集合为空，Jacobi G 角色在全部源因子上平凡，不收取 source-rank 容量；若非空，
+则每个元素都是 \(r+1\) 的真实负源槽，并满足跨状态入射式
+\(\ell\mid U+q\)。因此相同 \(\ell\) 的状态都位于唯一剩余类
+\(q\equiv-U\pmod\ell\)，得到显式碰撞容量。完整证明见
+[\(p-1\) 因子 Type II 的 Jacobi 源因子定位与碰撞容量](type-II-p-minus-one-jacobi-source-localization-collision-capacity.md)。
+这一步解决 physical-source provenance，但仍须经过源关系 SNF、Hall--Rado 与 E4/E5
+门，不能把负源槽本身当成 verified edge。
+
 聚焦验证：
 
 ~~~bash

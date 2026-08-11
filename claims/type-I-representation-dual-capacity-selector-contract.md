@@ -130,6 +130,7 @@ depends_on:
   - type-II-p-minus-one-fixed-source-rank-finite-menu-cubic-capacity
   - type-II-p-minus-one-endpoint-envelope-large-prime-allocation
   - type-II-p-minus-one-divisor-downset-prime-power-allocation
+  - type-II-p-minus-one-jacobi-source-localization-collision-capacity
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -309,6 +310,8 @@ sources:
     role: endpoint-capacity-large-prime-allocation-and-p67369-F-G-dispatch
   - claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
     role: endpoint-divisibility-downset-forbidden-antichain-and-power-allocation
+  - claim: type-II-p-minus-one-jacobi-source-localization-collision-capacity
+    role: Jacobi-role-to-integer-source-factor-slot-and-cross-q-collision-capacity
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1613,6 +1616,31 @@ r\mid R\Longrightarrow Q_r^{\rm end}\le Q_R^{\rm end}.
 [\(p-1\) 因子 Type II 的端点容量与大素因子分配](type-II-p-minus-one-endpoint-envelope-large-prime-allocation.md)，
 完整因子格容量见
 [\(p-1\) 因子 Type II 的下闭容量域与素数幂分配](type-II-p-minus-one-divisor-downset-prime-power-allocation.md)。
+
+对每个端点允许的 \(q\)，Jacobi 角色现在还有一个精确的整数源提升。写
+\(r=U/q\)，则 \(q\) 的全部素因子在模 \(4q-1\) 的 Jacobi 角色下恒为正，而
+\(r+1\) 的素因子 \(\ell\) 的角色恰为 Kronecker 符号 \((p/\ell)_K\)。因此
+
+\[
+\mathcal N_q(p)=
+\{\ell\mid r+1:(p/\ell)_K=-1\}
+\]
+
+为空时，选择器输出
+\(\operatorname{JACOBI\_G\_SOURCE\_TRIVIAL}\)，且不收取 source-rank 容量；
+非空时则登记真实
+\(\operatorname{SOURCE\_QUADRATIC\_FACTOR\_SLOT}(\ell)\)。Type II 命中必须在这些槽上的
+总 signed exponent 为奇数。固定 \(U\) 跨状态时，同一 \(\ell\) 只可能出现在
+\(q\equiv-U\pmod\ell\) 的状态，故 \([A,B]\) 内的出现容量至多为
+\(\lfloor(B-A)/\ell\rfloor+1\)。对 \(p=67369\)，这统一恢复五张空负源 G，
+并把三张 F 精确定位到 \(\{29,83\},\{73\},\{67\}\)。
+
+这项提升只关闭 integer source-factor provenance；physical source-column 的实现仍须
+另证。这些二次因子槽随后还必须进入实际源关系评价矩阵，经 SNF 去重并通过
+Hall--Rado、E4 与 E5。碰撞超额可输出
+\(\operatorname{SOURCE\_PRIME\_COLLISION\_CAPACITY\_DEFICIT}\)，但未超额本身
+不是 verified edge。证明见
+[\(p-1\) 因子 Type II 的 Jacobi 源因子定位、奇偶门与跨 \(q\) 碰撞容量](type-II-p-minus-one-jacobi-source-localization-collision-capacity.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列

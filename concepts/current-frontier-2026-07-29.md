@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：把一般禁止反链压缩后留下的 F 有界盒空证书转成其它终端或严格下降；以及把实际 F/G 的 Fourier、格与 Hall-Rado 容量证书实现为具备 exact physical source、E4 和 E5 的真实后继。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子：空负源统一给 G，非空负源给整数源因子候选槽、命中奇偶门和跨 q 碰撞容量。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：在 Jacobi 可见状态上实现 physical source columns 并证明源关系评价矩阵的 SNF/Hall 满配或严格容量缺口；以及把剩余 F 有界盒 miss 转成具备 E4/E5 的终端或良基下降。
 topics:
 - research-map
 - proof-program
@@ -50,6 +50,8 @@ sources:
   role: endpoint-capacity-large-prime-allocation-and-p67369-complete-dispatch
 - claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
   role: endpoint-divisibility-downset-forbidden-antichain-and-power-allocation
+- claim: type-II-p-minus-one-jacobi-source-localization-collision-capacity
+  role: Jacobi-negative-role-integer-source-factor-localization-and-cross-q-capacity
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6033,3 +6035,73 @@ v_\ell(q)<h,\qquad v_\ell(r)\ge e-h+1;
 递降；决定性缺口仍是把允许域内的全体 F miss 转成交替终端或具备 E1--E5 的真实
 后继。完整证明见
 [\(p-1\) 因子 Type II 的因子下闭容量域与素数幂分配](../claims/type-II-p-minus-one-divisor-downset-prime-power-allocation.md)。
+
+## 2026-08-11：Jacobi 负角色已定位到真实递降源及跨状态容量
+
+对端点允许域中的任意分解
+
+\[
+p=4U+1=4qr+1,\qquad
+m=4q-1,\qquad
+x=U+q=q(r+1),
+\]
+
+二次互反给出两个全称恒等式：
+
+\[
+\ell\mid q
+\Longrightarrow
+\left(\frac{\ell}{m}\right)=1,
+\qquad
+\ell\mid r+1
+\Longrightarrow
+\left(\frac{\ell}{m}\right)
+=\left(\frac p\ell\right)_K.
+\]
+
+因此规范负源集
+
+\[
+\mathcal N_q(p)=
+\{\ell\mid r+1:(p/\ell)_K=-1\}
+\]
+
+完全由严格较小源 \(n=r+1\) 的真实素因子组成，且与 \(q\) 的素因子不相交。若
+\(d\mid x^2\) 是 Type II 命中，则
+
+\[
+\sum_{\ell\in\mathcal N_q(p)}
+\bigl(v_\ell(d)-v_\ell(x)\bigr)
+\equiv1\pmod2.
+\]
+
+于是 \(\mathcal N_q(p)=\varnothing\) 立即给出规范 Jacobi G 分离证书，而且该角色
+在源上平凡，不应收取 source-rank 容量。若单位群循环且阶为二乘奇数，则
+\(\mathcal N_q(p)\ne\varnothing\) 又等价于 \(-1\) 已进入源支撑群；随后 bounded
+box 命中或 miss 才区分 Type II 与 F。
+
+固定 \(U\) 跨状态时还有精确入射式
+
+\[
+\ell\in\mathcal N_q(p)
+\iff
+\ell\mid U+q,\quad (p/\ell)_K=-1.
+\]
+
+故同一个真实负源素数出现于 \(q_i,q_j\) 时必有
+\(\ell\mid(q_i-q_j)\)。在任何 \(q\)-区间 \([A,B]\) 内，它的出现容量至多为
+
+\[
+\left\lfloor\frac{B-A}{\ell}\right\rfloor+1.
+\]
+
+这首次把本分支的 Jacobi 角色提升成可点名的 integer source-factor slot candidate
+和跨状态 owner 容量；它还不是已经实现的 physical source column。对
+\(p=67369\)，五个 G 状态恰为空负源，三个 F 状态的负源集合分别为
+\(\{29,83\},\{73\},\{67\}\)。
+
+当前缺口因而不再是角色的整数因子来源，而是 physical column 实现与下一层独立性：
+必须计算这些源槽在实际源关系格中的评价矩阵，经 SNF 去重后证明 Hall--Rado 满配、
+严格容量缺口或可提升下降。
+单个负源槽与未超载的碰撞账本都还不是 E4/E5 边。完整证明见
+[\(p-1\) 因子 Type II 的 Jacobi 源因子定位、奇偶门与跨 \(q\) 碰撞容量](../claims/type-II-p-minus-one-jacobi-source-localization-collision-capacity.md)。
