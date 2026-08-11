@@ -6583,3 +6583,33 @@ terminal。仍未覆盖偶 \(h\) 或奇 \(h\) 的模-23 二次剩余支。
 \(p=4729,m=23\) 有同类内部 Type I terminal，但 \(q=155\) 时
 \(q+1\nmid p-1\)，所以不能沿此桥递降。完整定理见
 [\(3p+4\) 内部 Type I 证书的外部源递降桥](../claims/type-I-three-p-plus-four-external-descent-bridge.md)。
+
+## 2026-08-12：完整零平移 external source 也不能承担双 G 出口
+
+\(p=5209\) 是新的 terminal-first 调度控制：
+
+\[
+\frac{p+3}{4}=1303,
+\qquad
+\frac{3p+1}{4}=3907
+\]
+
+均为 \(1\pmod3\) 素数，故它同时处于 Type II \(q=1\) G 与 \(R=3\)
+Type I G。更强地，对 \((p-1)/4=1302\) 的全部 16 个除子 \(k\)，完整的
+零平移 quadratic external-source 二尾菜单都没有因子
+\(e\mid(kn_k)^2\)、\(e\le kn_k\)、\(e\equiv-kn_k\pmod {4k-1}\)。
+所以不能把完整 external-source family 当作双 G 的普适出口。
+
+但这不是 terminal-first 后的未决状态。\(q=(p+11)/12=435\) 含
+\(r=29\equiv7\pmod {11}\)，给出 gap-11 Type II 因子对
+\((A,B,C,K)=(1,87,15,8)\)，以及
+
+\[
+\frac4{435}=\frac1{1305}+\frac1{120}+\frac1{10440}
+\longmapsto
+\frac4{5209}=\frac1{1305}+\frac1{625080}+\frac1{54381960}.
+\]
+
+正确选择器必须先输出这一 terminal leaf；外部源菜单为空不能被送入 G/Type I
+source-contract 分支。完整控制见
+[模三双 G 的完整零平移外部源失败与 gap-11 终端优先截断](../claims/type-I-type-II-double-g-external-source-preemption.md)。
