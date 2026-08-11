@@ -6567,6 +6567,37 @@ N=1891=31\cdot61,
 这条反例把下一条正向定理的量词进一步收紧：不能再以任何预先截到 55 的自然缺口菜单
 承担双 G 出口；必须按因子/状态自适应地选择 gap，或从 G/Type I 状态构造新的合法下降。
 
+## 2026-08-12：gap-59 的无限 CRT 因子对递降射线
+
+前述 (p=118801) 的 gap-59 命中并非孤立扫描现象。若
+
+\[
+p=24h+1,
+\qquad
+h\equiv0\pmod5,
+\qquad h\equiv1\pmod7,
+\qquad h\equiv-6\pmod{59},
+\]
+
+即 (h\equiv820\pmod{2065})，则
+
+\[
+x=\frac{p+59}{4}=6h+15,
+\qquad d=21,
+\qquad n=\frac{p+59}{60}.
+\]
+
+这三个同余分别强制 (60\mid p-1)、(21\mid x)、(59\mid x+21)。所以
+
+\[
+(A,B,C,K)=\left(1,\frac{x}{21},21,\frac{x/21+1}{59}\right)
+\]
+
+是 gap-59 的互素因子对，给出 Type II terminal 及严格 (n<p) 的两尾标记递降。
+等价地，(p\equiv19681\pmod{49560})，且该剩余类与模数互素，故 Dirichlet 定理给出
+无限多个这类素数。它是明确的无限退出子族，却不使 gap-59 成为全称出口。完整证明及
+精确控制见 [gap-59 的 CRT 强制因子对终端与严格两尾递降射线](../claims/type-II-gap-59-crt-factor-pair-terminal-descent.md)。
+
 ## 2026-08-12：未标记全域提升的循环性与 reciprocal-affine no-go
 
 对任意已知非空的 \(\operatorname{Sol}(n)\)，单纯断言存在映射
