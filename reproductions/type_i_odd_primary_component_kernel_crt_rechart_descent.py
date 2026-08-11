@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify odd-primary component-kernel CRT rechart controls."""
+"""Verify odd-primary component rechart and terminal controls."""
 
 from __future__ import annotations
 
@@ -136,6 +136,25 @@ def verify() -> None:
         "support_debt": 2,
     }
 
+    p73_square_peel = odd_primary_data(73, 27, 493, (1, 0), 3)
+    assert p73_square_peel == {
+        "phase": 17,
+        "normalized": 10,
+        "source_order": 3,
+        "ell": 3,
+        "a": 1,
+        "k": 1,
+        "delta": 2,
+        "omega": 19,
+        "kernel": 1,
+        "complement": 27,
+    }
+    square_modulus = 27 // 3**2
+    square_K = (73 * square_modulus + 1) // 4
+    assert square_modulus % 4 == 3 and 1 < square_modulus < 27
+    assert 493 == 3**2 * square_K - (3**2 - 1) // 4
+    assert gcd(493, square_K) == gcd(square_K, (3**2 - 1) // 4)
+
     p97_full_support = odd_primary_data(97, 67, 1625, (-3, 0), 11)
     assert p97_full_support == {
         "phase": 52,
@@ -170,7 +189,7 @@ def verify() -> None:
     assert Fraction(4, 97) == Fraction(1, C) + Fraction(1, C * h) + Fraction(1, 97 * C * h)
     assert (q - 1) * h < 97
 
-    print("verified odd-primary component-kernel CRT rechart controls")
+    print("verified odd-primary component rechart and terminal controls")
 
 
 def main() -> None:

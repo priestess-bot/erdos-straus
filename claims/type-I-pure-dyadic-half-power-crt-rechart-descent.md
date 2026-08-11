@@ -367,7 +367,7 @@ W_S=W_T=\operatorname{Sol}(4,p),
 \(R_*<R\) 降低第二坐标。提交后只允许：
 
 1. 直接终端；
-2. 另一条严格降低 \(R\) 的 CRT 因子边；
+2. 另一条在 `CRT_DESCENT` phase 中获准、严格降低 \(R\) 的 primary-rechart 边；
 3. 由放在 (29) 之前的其它已证明全局秩支付的边。
 
 禁止无成本返回 \(\epsilon_{\rm CRT}=1\)，也禁止在同一 phase 中调用增大 \(R\)

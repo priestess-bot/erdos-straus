@@ -13,8 +13,10 @@ statement: >-
   若 R_0>1，则 R_0,R_1 是互素真因子；其中唯一的 3 (mod 4) 因子 R_*<R
   给出 K_*=(pR_*+1)/4、恒等解提升 Sol(4,p)->Sol(4,p)，以及在既有
   CRT_DESCENT 调度下由 (epsilon_CRT,R) 严格降低的完整 E1--E5 重图表边。
-  若 R_0=1 且 ell 不整除 R，则 R=1 (mod ell) 且 ell|K 当且仅当 ell|p+1；
-  所以 ell=3 (mod 4)、ell|K 时已有 p+1 B=1 Type I 终端。其余情形输出
+  若 R_0=1 且 ell|R，则精确 ell 阶强制 ell^2|R；R/ell^2 仍为严格更小的
+  3 (mod 4) 图表，并由同一全域势给出带名 torsion-square-peel 重图表边。若 ell
+  不整除 R，则 R=1 (mod ell) 且 ell|K 当且仅当 ell|p+1；所以 ell=3 (mod 4)、
+  ell|K 时已有 p+1 B=1 Type I 终端。其余情形输出
   ODD_PRIMARY_FULL_COMPONENT_RESIDUAL：它只说明此记录没有非平凡完整 CRT kernel
   分量且未触发该 p+1 门，不能推出不存在别的 source、终端或递降。
 claim_status: established
@@ -206,14 +208,14 @@ core_odd_primary_component_kernel_crt_rechart_v1
 \text{odd-primary Jacobi record}+R_0>1
 &\Longrightarrow&\text{terminal 或严格可提升 }R\to R_*\text{ rechart},\\
 \text{odd-primary Jacobi record}+R_0=1
-&\Longrightarrow&\text{(17) 的 }p+1\text{ terminal，或 }
+&\Longrightarrow&\text{(17) 的 torsion-square rechart、(20) 的 }p+1\text{ terminal，或 }
 \texttt{ODD\_PRIMARY\_FULL\_COMPONENT\_RESIDUAL}.
 \end{array}}
 \tag{13}
 \]
 
-第二行只阻断本卡的 component-kernel CRT 构造；它仍应转交已有的 odd-Hall
-Fourier/source 选择器，而不是升级成无解声明。
+只有最后的 residual 分支转交已有的 odd-Hall Fourier/source 选择器；它不应升级成
+无解声明。
 
 ## 4. 全分量支撑的 cyclotomic 同余门
 
@@ -238,6 +240,8 @@ q\equiv1\pmod\ell\quad(q\mid R),
 \tag{15}
 \]
 
+### 4.1 \(\ell\mid R\) 的带名 torsion-square peel
+
 若 \(\ell\mid R\)，完整 \(\ell\)-幂分量也承载精确 \(\ell\) 阶。由于
 \(U(\ell)\) 的阶为 \(\ell-1\)，必有 \(\ell^2\mid R\)；另一方面
 \(4K=pR+1\equiv1\pmod\ell\)，所以
@@ -247,12 +251,44 @@ q\equiv1\pmod\ell\quad(q\mid R),
 \tag{16}
 \]
 
+因此可以定义
+
+\[
+\boxed{
+R_\square=\frac R{\ell^2},\qquad
+K_\square=\frac{pR_\square+1}{4}.}
+\tag{17}
+\]
+
+因为 \(\ell^2\equiv1\pmod4\)，有 \(R_\square\equiv3\pmod4\)。而
+\(R_\square=1\) 将给出 \(R=\ell^2\equiv1\pmod4\)，矛盾；所以
+\(1<R_\square<R\)。写 \(c=\ell^2\)，则
+
+\[
+K=cK_\square-\frac{c-1}{4},\qquad
+\gcd(K,K_\square)=\gcd\!\left(K_\square,\frac{c-1}{4}\right).
+\tag{18}
+\]
+
+原始负记录及 (4)--(5) 是这条边的 E1 receipt；式 (16)--(18) 是 E2，目标图表
+独立重算为 E3，\(\operatorname{Sol}(4,p)\) 恒等映射为 E4。E5 使用同一个不可逆
+`CRT_DESCENT` 重图表 phase：此处的 `torsion_square_peel` 是获准的严格 \(R\)-降低边，
+并非没有带名 \(\ell\)-阶记录的任意平方因子剥离。故
+
+```text
+ODD_PRIMARY_TORSION_SQUARE_PEEL_RECHART
+```
+
+是 full-component 分支的直接递降出口。
+
+### 4.2 \(\ell\nmid R\) 时的 \(p+1\) 终端门
+
 式 (15) 与已有 \(p+1\) 上半区桥直接接合：若
 
 \[
 \boxed{R_0=1,\quad\ell\nmid R,\quad
 \ell\equiv3\pmod4,\quad\ell\mid K,}
-\tag{17}
+\tag{20}
 \]
 
 则 \(\ell\mid(p+1)/2\)。令 \(h=(p+1)/\ell\)，已有构造给出
@@ -262,7 +298,7 @@ q\equiv1\pmod\ell\quad(q\mid R),
 =\frac1{(p+\ell)/4}
 +\frac1{((p+\ell)/4)h}
 +\frac1{p((p+\ell)/4)h},
-\tag{18}
+\tag{21}
 \]
 
 以及严格较小的上半区偶源 \(n=(\ell-1)h<p\)。因此不必把这类 full-component
@@ -274,8 +310,8 @@ q\equiv1\pmod\ell\quad(q\mid R),
 ODD_PRIMARY_FULL_COMPONENT_RESIDUAL
 ```
 
-其条件是 \(R_0=1\)，并且不满足 (17)。它精确排除了本卡的 component-kernel CRT
-下降和 \(p+1\) 三模四短路，但仍不构成全局 no-go。
+其条件是 \(R_0=1\)、\(\ell\nmid R\)，并且不满足 (20)。它精确排除了本卡的
+component-kernel CRT 下降、torsion-square peel 和 \(p+1\) 三模四短路，但仍不构成全局 no-go。
 
 ## 5. 聚焦控制
 
@@ -295,7 +331,7 @@ K=1734=2\cdot3\cdot17^2,\qquad z=(0,-1,1),
 \omega=69^2=11\pmod {95},\qquad
 R_0=5,\quad R_1=19,\quad R_*=19,
 \quad K_*=347.
-\tag{19}
+\tag{22}
 \]
 
 这里 \(c=5\)，且 \(1734=5\cdot347-1\)、\(\gcd(1734,347)=1\)。
@@ -313,13 +349,31 @@ K=1150=2\cdot5^2\cdot23,\qquad z=(-1,1,1),
 
 \[
 R_0=9,\qquad R_1=7,\qquad R_*=7,\qquad K_*=128.
-\tag{20}
+\tag{23}
 \]
 
 这说明只使用 \(\gcd(R,\omega-1)\) 的部分赋值会丢失关键语义；完整素数幂定义
 (6) 正确给出 \(63\to7\)。本素数另有既知 Type II 短证书，所以全局调度会更早终止。
 
-### 5.3 \(p=97,R=43\)：全分量支撑触发 \(p+1\) 终端
+### 5.3 \(p=73,R=27\)：全分量 \(3\)-阶扭量平方剥离
+
+\[
+K=493=17\cdot29,\qquad z=(1,0),
+\qquad\Phi(z)=17,\quad s=10,\quad\operatorname{ord}(s)=3.
+\]
+
+这里 \(\ell=3,a=1,k=1,\delta=2\)，且 \(\omega=17^2=19\pmod {27}\)。
+唯一完整分量上 \(\omega\ne1\)，故 \(R_0=1\)；又 \(3^2\mid27\)。式 (17) 给出
+
+\[
+R_\square=3,\qquad K_\square=55,\qquad
+493=9\cdot55-2.
+\tag{24}
+\]
+
+所以该实际 F 记录给出严格 \(27\to3\) rechart。
+
+### 5.4 \(p=97,R=43\)：全分量支撑触发 \(p+1\) 终端
 
 \[
 K=1043=7\cdot149,\qquad z=(0,1),
@@ -328,16 +382,16 @@ K=1043=7\cdot149,\qquad z=(0,1),
 
 取 \(\ell=7\)，则 \(a=1,k=3,\delta=2\)，并有 \(\omega=20^6=4\pmod {43}\)。
 这里 \(R_0=1\)，但 \(7\nmid43\)、\(7\mid1043\)、\(7\equiv3\pmod4\)。
-式 (17) 命中，且 (18) 具体为
+式 (20) 命中，且 (21) 具体为
 
 \[
 \frac4{97}=\frac1{26}+\frac1{364}+\frac1{35308}.
-\tag{21}
+\tag{25}
 \]
 
 该控制验证 full-component 不必一律进入 owner/source-map。
 
-### 5.4 \(p=97,R=67\)：精确的全分量残余
+### 5.5 \(p=97,R=67\)：精确的全分量残余
 
 \[
 K=1625=5^3\cdot13,\qquad z=(-3,0),
@@ -349,10 +403,10 @@ K=1625=5^3\cdot13,\qquad z=(-3,0),
 
 \[
 R_0=1.
-\tag{22}
+\tag{26}
 \]
 
-这里 \(11\nmid K\)，所以 (17) 也不命中。输出
+这里 \(11\nmid K\)，所以 (20) 也不命中。输出
 `ODD_PRIMARY_FULL_COMPONENT_RESIDUAL`。这严格说明本卡不能从该 11 阶记录制造真
 CRT kernel 分量或 \(p+1\) 三模四终端；它不否定该状态的其它 odd-owner/source 路径。
 
@@ -362,5 +416,5 @@ CRT kernel 分量或 \(p+1\) 三模四终端；它不否定该状态的其它 od
 python3 reproductions/type_i_odd_primary_component_kernel_crt_rechart_descent.py --verify
 ```
 
-验证器只重算四个控制的 Jacobi-negative 记录、奇主阶提取、完整分量核、
-中心恒等式、\(p+1\) 终端和全支撑残余；不运行历史扫描。
+验证器只重算五个控制的 Jacobi-negative 记录、奇主阶提取、完整分量核、
+中心恒等式、torsion-square peel、\(p+1\) 终端和全支撑残余；不运行历史扫描。
