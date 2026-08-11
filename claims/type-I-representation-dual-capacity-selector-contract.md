@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。更强的负 Pell 全分类现已证明：对任意核心素数和任意 n<p，全部双尾保持 D-only 候选只会落入已有 centered Type I 或空纤维，non-source 菜单不产生 Type II 或递归 E4；非核心唯一正例族也只是 gap-1 Type II 终端。全部 p-1 等尾显式单标记同样只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支压成 d|k^2 的精确有限菜单；保留线性分母后又有 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4。端点函数沿源秩整除关系单调，所以所有端点可行 q 构成 U=(p-1)/4 因子格中的规范下闭容量域；其最小禁止反链同时编码素数幂分配和不可拆分的跨素数联合容量。奇核空盒的自然物理权最小溢出不必位于 Jacobi 负源；自然尾关系图把非终端压到 kappa=1。若 source-reachable 底层出现 q 的真因子坐标 a，则新端点 q'=a 已严格给出 Type II 终端或以 Sol(p) 恒等提升、q 严降支付的 E1--E5 边。当前未证量词是每个 terminal-free 真实 Reach 中该坐标的全称存在性；该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。更强的负 Pell 全分类现已证明：对任意核心素数和任意 n<p，全部双尾保持 D-only 候选只会落入已有 centered Type I 或空纤维，non-source 菜单不产生 Type II 或递归 E4；非核心唯一正例族也只是 gap-1 Type II 终端。全部 p-1 等尾显式单标记同样只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支压成 d|k^2 的精确有限菜单；保留线性分母后又有 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4。端点函数沿源秩整除关系单调，所以所有端点可行 q 构成 U=(p-1)/4 因子格中的规范下闭容量域；其最小禁止反链同时编码素数幂分配和不可拆分的跨素数联合容量。奇核空盒的自然物理权最小溢出不必位于 Jacobi 负源；自然尾关系图把非终端压到 kappa=1。整坐标真因子是一个强分支；一般底层节点则由 q'=gcd(a,q) 或 gcd(b,q) 的 q-owned shadow 自动产生 q 的真因子端点。新端点命中时直接终止，否则以 Sol(p) 恒等提升和 q 严降支付 E1--E5；q=1 的 F-empty 基例不可能。因此普通 Type II F/odd-kernel endpoint phase 的全称转交与循环已闭合；非平凡 marked terminal 和 G 后续 Type I 闭合仍属于各自合同。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -137,6 +137,7 @@ depends_on:
   - type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go
   - type-II-odd-kernel-overflow-natural-tail-relation-graph
   - type-II-relation-reach-proper-endpoint-descent
+  - type-II-relation-reach-gcd-shadow-endpoint-descent
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -330,6 +331,8 @@ sources:
     role: px-natural-tail-capacity-kappa-layer-reduction-and-cycle-terminal-search
   - claim: type-II-relation-reach-proper-endpoint-descent
     role: source-reachable-proper-endpoint-terminal-or-E1-E5-descent
+  - claim: type-II-relation-reach-gcd-shadow-endpoint-descent
+    role: universal-q-owned-shadow-endpoint-descent-and-q-one-base
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -345,7 +348,7 @@ sources:
   - claim: type-I-fg-generalized-rado-fixed-quotient-defect
     role: exact-generalized-rado-defect-and-scalar-descent-boundary
 visibility: public
-last_checked: '2026-08-11'
+last_checked: '2026-08-12'
 ---
 
 # 表示—对偶—容量统一选择器的状态级 typed 分派合同
@@ -1726,7 +1729,7 @@ source-switch/alternate/E1--E5 适配器；见
 `KAPPA_ONE_RELATION_SCC`。这些迁移仍是 `analysis_evidence`，不是 E1--E5 边；
 但选择器可以对每个新鲜边标签运行 alternate-gap terminal-first。该菜单已把
 \(p=67369\) 的两个最小权压力点分别送到 gap \(31\) Type I 和 gap \(151\) Type II。
-因此当前全称缺口已从未分类的 neutral overflow 收缩为：证明每个经过自然尾与
+在 gcd-shadow 接入前，全称缺口曾从未分类的 neutral overflow 收缩为：证明每个经过自然尾与
 fresh-quotient 预占后仍实际可达的底层 SCC 含有短证书标签，或构造 SCC 到合法状态的
 E1--E5 适配器。见
 [Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
@@ -1743,9 +1746,24 @@ q'=a,\qquad m'=4a-1,\qquad x'=U+a.
 G/F 空状态。后者取 \(W=\operatorname{Sol}(p)\) 的恒等提升，并在不可重入的 endpoint
 phase 中以 \(q'<q\) 支付 E5，故可标记 `verified_edge`。该菜单必须扫描全部可达底层
 节点而不只 sink minimum：\(p=9601,q=40\) 的节点 \(\{5,154\}\) 在进入唯一 sink 前
-已经给出 gap \(19\) Type II。当前未证量词只是真实终端自由 Reach 中上述 \(a\) 的
-全称存在性。见
+已经给出 gap \(19\) Type II。该整坐标分支当时留下的量词只是真实终端自由 Reach 中
+上述 \(a\) 的全称存在性。见
 [Type II 关系图可达底层的真因子端点递降](type-II-relation-reach-proper-endpoint-descent.md)。
+
+整坐标条件现已降为一个优先终端分支，而不是全称门。若任一底层节点写成
+\(\{a,b\}\)，则
+
+\[
+\mathcal D_q(a,b)=\{(a,q),(b,q)\}\setminus\{q\}
+\]
+
+对 \(q>1\) 必非空。选择器把全部 shadow 端点送入同一个 terminal-first verifier；
+有命中则输出普通 Type I/II leaf，否则选最小 \(q'\) 并以
+\(\operatorname{Sol}(p)\) 恒等映射登记 \(q'<q\) 的 verified edge。沿 F 状态只能形成
+严格因子链，而 \(q=1\) 的模 \(3\) 源像若含 \(-1\)，单位指数已在 signed box 内，
+所以 F-empty 基例不存在。这关闭了普通 Type II endpoint phase 的底层周期，但不把
+普通证书误报成非平凡 marked terminal。见
+[Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
 
 关系图的内部优先级进一步固定为：自然尾 \(AB\mid px\)、fresh quotient
 \(h\mid\kappa\)、超容量边标签、关系迁移、底层 SCC。\(p=1153,q=16\) 的空盒给出

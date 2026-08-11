@@ -52,7 +52,7 @@ sources:
   - reproduction: reproductions/type_ii_p_minus_one_jacobi_odd_kernel_affine_box.py
     role: reduced-odd-box-equivalence-and-p67369-empty-verifier
 visibility: public
-last_checked: '2026-08-11'
+last_checked: '2026-08-12'
 ---
 
 # \(p-1\) 因子 Type II 的 Jacobi \(C_2\) 剥离与奇核有界仿射盒
@@ -441,9 +441,12 @@ E4/E5；本引理与反足物理容量定理关闭的是同一除子纤维的完
 \(A+B=m\kappa\) 后，自然尾的完整容量为 \(px\)，而 \(\kappa\) 与 \(AB\) 互素、
 没有同坐标支付能力；完整超容量迁移在 \(\kappa>1\) 时严格降层，最终只留下有限
 \(\kappa=1\) SCC。对本节 \(q=21,42\) 的物理权最小关系，该闭包分别找到 gap \(31\)
-Type I 与 gap \(151\) Type II，故两个压力点已经终止。一般 SCC 到短证书或 E1--E5
-后继的全称桥仍未证明，见
+Type I 与 gap \(151\) Type II，故两个压力点已经终止。关系 Reach 到普通端点状态的
+全称桥现已由 \(q\)-owned gcd shadow 闭合：任一底层节点都规范产生 \(q\) 的真因子
+端点，且 \(q=1\) 的 F-empty 基例不可能。见
 [Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
+完整端点递降见
+[Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
 
 聚焦验证：
 

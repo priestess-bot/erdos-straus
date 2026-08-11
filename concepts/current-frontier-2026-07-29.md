@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。盒外自然尾容量把非终端压到 kappa=1 关系图；若 source-reachable 底层含 q 的真因子坐标 a，则新端点 q'=a 已具备 Type II 终端或 Sol(p) 恒等提升与 q 严降的完整 E1--E5 边。当前决定性缺口是证明每个 terminal-free 真实 Reach 必出现该真因子坐标，或构造严格反例后的替代适配器。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。盒外自然尾容量把非终端压到 kappa=1 关系图。整坐标真因子只是强分支；任一底层节点 {a,b} 都由 {gcd(a,q),gcd(b,q)} 去掉 q 后自动产生 q 的真因子 shadow。shadow 端点命中时直接终止，否则以 Sol(p) 恒等提升和 q 严降形成完整 E1--E5 边；q=1 的 F-empty 基例不可能。因此普通 Type II F/odd-kernel endpoint phase 的空盒转交、底层循环与一般有限阿贝尔推广已闭合。剩余边界是非平凡 marked terminal 的成员资格，以及退出到 G 后的 Type I 全局选择器，而不是 Type II relation Reach 的存在性。
 topics:
 - research-map
 - proof-program
@@ -64,6 +64,8 @@ sources:
   role: px-natural-tail-capacity-kappa-layer-reduction-and-cycle-terminal-search
 - claim: type-II-relation-reach-proper-endpoint-descent
   role: source-reachable-proper-endpoint-terminal-or-E1-E5-descent
+- claim: type-II-relation-reach-gcd-shadow-endpoint-descent
+  role: universal-q-owned-shadow-endpoint-descent-cycle-closure-and-q-one-base
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -107,7 +109,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-11'
+last_checked: '2026-08-12'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -6358,7 +6360,7 @@ SCC 内部标签完备性，不是新的未解决核心点。
 
 因此这两个样本现已从“局部桥失败”升级为“完整关系闭包成功”。但关系迁移本身没有
 合法后继状态或全域解提升，\(\kappa\) 也在底层周期中停止下降，故它仍是
-`analysis_evidence` 而不是 E1--E5 边。当前决定性缺口已经精确缩为：对经过自然尾与
+`analysis_evidence` 而不是 E1--E5 边。在 gcd-shadow 接入前，决定性缺口曾缩为：对经过自然尾与
 fresh-quotient 预占后仍实际可达的 `KAPPA_ONE_RELATION_SCC`，证明其含可验证的
 alternate-gap 终端，或构造 SCC 到合法状态的 E1--E5 适配器。完整证明见
 [Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](../claims/type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
@@ -6405,8 +6407,52 @@ source path、底层节点与端点公式逐项重算。因此这是第一条从
 删除；\(p=20857,q=66\) 的最小关系在第一层已由 edge label (3) Type I 抢占，故
 端点菜单不能提前于边标签。
 
-当前决定性缺口现已严格缩成一个存在性量词：每个经过三类终端预占后仍存活的真实
+该整坐标加强分支当时留下一个存在性量词：每个经过三类终端预占后仍存活的真实
 整数原像，其完整 source-reachable 底层 Reach 是否必含某个 \(a\mid q,a<q\)？若真，
 上面的端点递降直接完成 E2/E4/E5；若假，反例必须同时是原盒空、目标在完整源子群、
 关系 Reach 终端自由且全部可达底层小坐标都不是 \(q\) 的真因子。完整定理与聚焦验证见
 [Type II 关系图可达底层的真因子端点递降](../claims/type-II-relation-reach-proper-endpoint-descent.md)。
+
+## 2026-08-12：gcd shadow 删除整坐标存在性缺口并闭合 Type II 循环
+
+整坐标条件 \(a\mid q\) 比全称转交实际需要的条件更强。对任一 terminal-first
+后存活的 source-reachable 底层节点
+
+\[
+\{a,b\},
+\qquad
+a+b=4q-1,
+\]
+
+定义其 \(q\)-owned shadow 集
+
+\[
+\mathcal D_q(a,b)=\{(a,q),(b,q)\}\setminus\{q\}.
+\]
+
+若 \(q>1\)，该集合必非空；否则 \(q\mid a,b\) 会推出 \(q\mid4q-1\)。每个
+\(q'\in\mathcal D_q(a,b)\) 都是 \(q\) 的真因子，因而仍在端点允许下闭域。重建
+
+\[
+m'=4q'-1,
+\qquad
+x'=U+q'
+\]
+
+后，新盒命中直接给普通 Type I/II terminal；新盒为空则以
+\(W_S=W_T=\operatorname{Sol}(p)\) 的恒等映射支付 E4，并以 \(q'<q\) 支付 E5。
+这把旧定理的“整坐标真因子存在性”从决定性量词降为一个可优先寻找终端的加强分支。
+
+基例同样是全称的。当 \(q=1\) 时 \(m=3\)。若 \(-1\) 位于源像，则至少一个
+\(x\) 的素因子模 \(3\) 为 \(-1\)，单位指数已在 signed box 内，所以 F-empty 不可能。
+因此普通 F 状态只能沿严格 \(q\)-因子链前进并最终命中；若中途变为 G，则退出
+Type II endpoint phase。禁止该 phase 重入更大的 \(q\) 后，relation SCC 不再产生
+递归循环。
+
+这个证明只用真实整数关系、gcd、端点下闭性、同方程恒等 lift 和模 \(3\) 的二元像，
+不使用循环离散对数；结合已有反足物理容量定理，它原样推广到一般有限阿贝尔源群。
+\(p=7057,q=36\) 同时给出严格边界：真实 terminal-free Reach 的最小坐标为 \(2\)，
+所以“每个 Reach 都到达坐标 \(1\)”为假，但 gcd-shadow 仍在 gap \(3\) 终止。
+
+完整证明与聚焦验证见
+[Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](../claims/type-II-relation-reach-gcd-shadow-endpoint-descent.md)。

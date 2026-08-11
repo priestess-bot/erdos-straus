@@ -13,7 +13,9 @@ statement: >-
   kappa=1 周期图。该图是内部 certificate search，不是 E1--E5 递归边。
   p=67369 的 q=21、42 两条物理权最小关系分别沿显式路径暴露 gap 31 的
   Type I 与 gap 151 的 Type II 终端，关闭了这两个中性载体压力点；一般
-  kappa=1 SCC 的全称终端或可提升转交仍未证明。p=1153,q=16 进一步给出
+  kappa=1 SCC 的内部标签不必终止。后续 q-owned gcd-shadow 定理已从任一
+  source-reachable 底层节点构造合法真因子端点，完成普通状态的全称可提升转交。
+  p=1153,q=16 进一步给出
   标签终端为空的二周期，否定“每个底层 SCC 自含短证书标签”；但它的两个
   物理最小关系在入周期前分别由 kappa 的 gap 23 Type II 与 divisor 3 Type I
   终端抢占，证明 fresh-quotient terminal 必须先于 SCC adapter。
@@ -51,7 +53,7 @@ sources:
   - reproduction: reproductions/type_ii_odd_kernel_overflow_natural_tail_relation_graph.py
     role: exact-capacity-transition-path-SCC-and-terminal-verifier
 visibility: public
-last_checked: '2026-08-11'
+last_checked: '2026-08-12'
 ---
 
 # Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约
@@ -558,15 +560,27 @@ KAPPA_ONE_RELATION_SCC，并把该 SCC 交给新的 source-switch 或 E1--E5
 这已经把一般空盒的待证对象收缩为：证明至少一个规范整数原像的可达关系图出现自然尾、
 fresh-quotient 或 edge-label terminal，或者把每个剩余 KAPPA_ONE_RELATION_SCC 转成满足
 E1--E5 的严格可提升后继。当前定理关闭了 \(p=67369\) 的两个最小中性载体压力点，
-而 \(p=1153\) 证明一般 SCC 不必自含可证书边标签；全称空盒转交目标因此仍须一个
-跨 SCC 的真实适配器。
+而 \(p=1153\) 证明一般 SCC 不必自含可证书边标签；在后续 gcd-shadow 定理建立前，
+全称空盒转交因此还缺一个跨 SCC 的真实适配器。
 
 后续的真因子端点定理已经构造出一个这样的条件性适配器：若 terminal-first 后的
 source-reachable 底层节点含较小坐标 \(a\mid q\)、\(a<q\)，则以
 \(q'=a\) 重建合法 \(p-1\) Type II 端点；命中时直接终止，否则以
 \(\operatorname{Sol}(p)\) 恒等提升和势 \(q'<q\) 得到完整 E1--E5 边。因此本节所留的
-全称缺口进一步缩为这个真因子坐标的存在性，而不是 E2/E4/E5 的构造。见
+整坐标加强命题的缺口进一步缩为这个真因子坐标的存在性，而不是 E2/E4/E5 的构造。见
 [Type II 关系图可达底层的真因子端点递降](type-II-relation-reach-proper-endpoint-descent.md)。
+
+全称转交本身现已由更弱、但自动存在的 \(q\)-owned shadow 闭合。对任意底层节点
+\(\{a,b\}\)，至少一个
+
+\[
+q'\in\{(a,q),(b,q)\}\setminus\{q\}
+\]
+
+存在，并满足 \(q'\mid q\)、\(q'<q\)。以该 \(q'\) 重建端点，命中时直接终止，
+否则沿 \(\operatorname{Sol}(p)\) 恒等映射严格下降；\(q=1\) 时 F-empty 又不可能，
+所以底层 SCC 不再是普通 Type II F 状态的循环障碍。见
+[Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
 
 聚焦验证：
 

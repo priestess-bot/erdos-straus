@@ -54,6 +54,7 @@ used_by:
 - type-I-source-lattice-qheight-dual-valuation-shift-carrier
 - type-II-odd-kernel-overflow-natural-tail-relation-graph
 - type-II-relation-reach-proper-endpoint-descent
+- type-II-relation-reach-gcd-shadow-endpoint-descent
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -79,6 +80,8 @@ sources:
   role: Type-II-signed-box-physical-occurrence-and-range-terminal
 - claim: type-II-relation-reach-proper-endpoint-descent
   role: source-reachable-proper-endpoint-E1-E5-contract
+- claim: type-II-relation-reach-gcd-shadow-endpoint-descent
+  role: universal-q-owned-shadow-endpoint-E1-E5-and-q-one-base
 visibility: public
 last_checked: '2026-08-12'
 ---
@@ -1239,8 +1242,66 @@ E2--E3 由端点公式和因子下闭域支付，E4 是 \(\operatorname{Sol}(p)\
 含不可达的非因子 sink \(\{5,186\}\)，而真实源 Reach 只进入 \(\{1,190\}\) sink。
 也不得只检查 sink minimum；\(p=9601,q=40\) 的 transient 底层节点
 \(\{5,154\}\) 已产生 gap \(19\) Type II。若完整可达底层没有任何 \(a\mid q,a<q\)，
-输出 `KAPPA_ONE_RELATION_REACH_NO_PROPER_ENDPOINT`，不得伪造递降。精确定理见
+该精确坐标分支输出 `KAPPA_ONE_RELATION_REACH_NO_PROPER_ENDPOINT`，随后必须进入
+第 6.7 节的 gcd-shadow fallback，而不是把整坐标失败误报为全称失败。精确定理见
 [Type II 关系图可达底层的真因子端点递降](../claims/type-II-relation-reach-proper-endpoint-descent.md)。
+
+### 6.7 Type II \(q\)-owned gcd-shadow 全称递降
+
+对任一 source-reachable 底层节点
+
+\[
+\{a,b\},
+\qquad
+a+b=4q-1,
+\qquad
+q>1,
+\]
+
+定义
+
+\[
+\mathcal D_q(a,b)=\{(a,q),(b,q)\}\setminus\{q\}.
+\]
+
+该集合必非空，否则 \(q\mid a,b\) 会推出 \(q\mid4q-1\)。选择器可以先枚举所有
+可达节点的 shadow 并优先检查终端；若无终端，则规范取最小
+\(q'\in\mathcal D_q\)。
+回执为：
+
+```text
+certificate_type = type_ii_relation_reach_gcd_shadow_endpoint_descent
+source_cofactor = q
+source_bottom_node = [a, b]
+shadow_formula = gcd(a, q) or gcd(b, q)
+target_cofactor = q_prime
+target_gap = 4*q_prime-1
+target_first_denominator = U+q_prime
+solution_set = Sol(p)
+solution_lift = identity
+rank_before = q
+rank_after = q_prime
+phase = p_minus_one_endpoint_descent
+```
+
+E1 必须保存实际 bottom path、被选坐标和 gcd 等式；E2--E3 从原始整数重建目标
+端点和 G/F/hit 分类；E4 对普通状态取 \(\operatorname{Sol}(p)\) 恒等映射；E5 由
+\(q'\mid q\)、\(q'<q\) 支付。若重算命中，普通状态直接输出 terminal；若重算为 G/F
+空态，输出 `verified_edge`。
+
+当 \(q=1\) 时 \(m=3\)。若目标 \(-1\) 在源像内，则至少一个源生成元模 \(3\) 为
+\(-1\)，其单位指数已在 signed box 内，所以 F-empty 基例不存在。F 状态的 shadow
+因子链因此必终止；G 状态退出本 phase 并转交 Type I selector，不允许重新进入更大
+\(q\)。完整证明见
+[Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](../claims/type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
+
+对非平凡 `marked_solution_set`，非终端边只有在目标状态逐字保留同一个 mark 谓词时
+才可使用恒等 lift；普通短证书还必须另验 mark membership，不能自动登记 marked
+terminal。
+
+该边降低的是 endpoint phase 的 \(q\)，不是 equation target 的分母 \(p\)。只有
+phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许把它标为 E5；任何
+无付款的较大 \(q\) reset 都会使该资格失效。
 
 ## 7. 明确不构成递降的对象
 

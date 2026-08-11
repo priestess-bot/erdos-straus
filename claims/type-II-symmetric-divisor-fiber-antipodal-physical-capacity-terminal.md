@@ -39,7 +39,7 @@ sources:
   - reproduction: reproductions/type_ii_symmetric_divisor_fiber_antipodal_physical_capacity.py
     role: exact-antipodal-pairing-mode-count-and-noncyclic-control-verifier
 visibility: public
-last_checked: '2026-08-11'
+last_checked: '2026-08-12'
 ---
 
 # Type II 对称除子纤维的反足物理容量与逐奇核模式终端
@@ -395,8 +395,14 @@ d=1,196.
 \]
 
 式 (32) 完成的是同一除子纤维内的 physical occurrence、指数预算和范围门；它没有
-证明每个核心素数至少有一个非空纤维。空盒仍须转交其它 Type I/II 参数纤维，或构造
-满足 E1--E5 的严格可提升递降。这是当前“带权奇核空盒转交”目标剩余的决定性一侧。
+证明每个核心素数至少有一个非空纤维。空盒到普通端点状态的后续转交现已由自然尾关系
+Reach 与 \(q\)-owned gcd shadow 完成：关系图无终端时，任一底层节点都产生 \(q\) 的
+真因子端点，并以 \(\operatorname{Sol}(p)\) 恒等映射和严格 \(q\) 下降支付 E4--E5；
+\(q=1\) 的 F-empty 基例不可能。见
+[Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
+
+这关闭的是普通 F/odd-kernel endpoint phase；它不自动证明任意非平凡标记集的短证书
+成员资格，也不替代 G 状态后续的 Type I selector。
 自然物理权最小溢出并不自动提供这条边：已有端点状态会把全部最小权放在 Jacobi
 中性载体而非负源上，且局部共享缺口和直接载体删除同时失败。见
 [\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
