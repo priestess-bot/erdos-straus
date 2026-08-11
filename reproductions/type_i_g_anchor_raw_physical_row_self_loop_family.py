@@ -64,6 +64,20 @@ def raw_row(p: int, label: int) -> dict[str, int]:
     }
 
 
+def ac_decompositions(shift: int) -> tuple[tuple[int, int], ...]:
+    """Return all positive pairs (a, c) with shift = a**2 * c."""
+    return tuple(
+        (a, shift // (a * a))
+        for a in range(1, isqrt(shift) + 1)
+        if shift % (a * a) == 0
+    )
+
+
+def is_ac_target_factor(factor: int, a: int, c: int) -> bool:
+    modulus = 4 * a * c
+    return factor % modulus == modulus - 1
+
+
 def verify_prime(p: int) -> dict[str, object]:
     assert is_prime(p)
     assert p % PROGRESSION_MODULUS == PROGRESSION_RESIDUE
@@ -96,6 +110,23 @@ def verify_prime(p: int) -> dict[str, object]:
     assert source["label"] != target["label"]
     assert p * source["n"] == 4 * source["M"] * source["d"] + 1
 
+    shift = source["tail"] - 7
+    decompositions = ac_decompositions(shift)
+    assert shift == (p - 49) // 3
+    assert p + 4 * shift == 7 * source["tail"]
+    assert shift > 64
+    assert all(
+        not is_ac_target_factor(source["tail"], a, c)
+        for a, c in decompositions
+    )
+
+    full_tail_block_excluded = shift > 2500
+    if full_tail_block_excluded:
+        assert all(
+            not is_ac_target_factor(7 * source["tail"], a, c)
+            for a, c in decompositions
+        )
+
     return {
         "prime": p,
         "raw_edge": {"from": e, "prime_factor": 13, "to": Q},
@@ -103,12 +134,18 @@ def verify_prime(p: int) -> dict[str, object]:
             key: source[key] for key in ("M", "c", "d", "n")
         },
         "distinct_tails": {"from": source["tail"], "to": target["tail"]},
+        "tail_ac_boundary": {
+            "shift": shift,
+            "p_plus_4_shift": p + 4 * shift,
+            "bare_tail_excluded": True,
+            "full_tail_block_excluded": full_tail_block_excluded,
+        },
     }
 
 
 def verify() -> dict[str, object]:
     assert gcd(PROGRESSION_RESIDUE, PROGRESSION_MODULUS) == 1
-    examples = tuple(verify_prime(p) for p in (601, 5281))
+    examples = tuple(verify_prime(p) for p in (601, 5281, 8089))
     return {
         "family": "p == 601 (mod 936), p prime",
         "dirichlet_progression_is_primitive": True,
