@@ -144,3 +144,8 @@ p\pmod{48}&3p+4&\text{可取的因子 }m\\
 \(n<p\) 的已知解提升而来的递降边。它也刻意说明了为何只搜索 Type I 的两个边界面
 不够：这里 \(A>1\)、\(B>1\)，既不属于外部源的 \(B=1\) 面，也不属于
 `geometric-lcm-boundary-type-I-equivalence` 的 \(A=1\) 面。
+
+其中一部分证书确实有更强的结构：由 \(C=(p+m)/48\) 导出的
+\(q=(36C+1)/m\) 若满足 \(q+1\mid84C\)，则该直接 certificate 可精确重写成
+一条外部源 marked descent；此条件不自动成立。完整的充要门、提升与反例见
+[\(3p+4\) 内部 Type I 证书的外部源递降桥](type-I-three-p-plus-four-external-descent-bridge.md)。

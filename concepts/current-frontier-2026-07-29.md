@@ -6562,3 +6562,24 @@ terminal。仍未覆盖偶 \(h\) 或奇 \(h\) 的模-23 二次剩余支。
 
 完整证明与聚焦验证见
 [奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两尾递降](../claims/type-II-gap-23-odd-h-qnr-terminal-descent.md)。
+
+## 2026-08-12：\(3p+4\) 内部 Type I 的可提升子族
+
+内部 \((A,B)=(4,3)\) Type I 证书 \(m\mid3p+4\)、\(m\equiv-p\pmod {48}\)
+并非只能作为 terminal。令 \(C=(p+m)/48\)、\(q=(36C+1)/m\)，则
+\(q+1\mid p-1\) 当且仅当 \(q+1\mid84C\)。此时该证书精确变成
+\(k=(q+1)/4\) 的 quadratic external-source marked descent，且不会改变其
+\((m,D)=(m,16C)\) 身份。
+
+双 G 控制 \(p=2521,m=23\) 满足这条门：\(q=83,k=21\)，从而
+
+\[
+\frac4{2491}=\frac1{52311}+\frac1{636}+\frac1{69748}
+\longmapsto
+\frac4{2521}=\frac1{131876031}+\frac1{636}+\frac1{69748}.
+\]
+
+这是一条独立于其 gap-23 Type II 终端的严格 marked descent。该桥不是自动的：
+\(p=4729,m=23\) 有同类内部 Type I terminal，但 \(q=155\) 时
+\(q+1\nmid p-1\)，所以不能沿此桥递降。完整定理见
+[\(3p+4\) 内部 Type I 证书的外部源递降桥](../claims/type-I-three-p-plus-four-external-descent-bridge.md)。
