@@ -1311,6 +1311,15 @@ E1 必须保存实际 bottom path、被选坐标和 gcd 等式；E2--E3 从原�
 只能是重新分类，不能登记 terminal、真分母递降或新的 E4。精确反例见
 [模三双 G 出口的精确等价与小缺口严格反例](../claims/type-I-type-II-mod-three-double-g-exit-obstruction.md)。
 
+在把这个未闭合交接交给 Type I/Fourier 机制之前，仍须执行根素数的直接
+`terminal-first` 筛。特别地，若 \(p=24h+1\) 的 \(h\) 为奇数且
+\(p\) 是模 \(23\) 二次非剩余，则 gap \(23\) 的显式 Type II 表给出一张
+`terminal_leaf`；它在 \(p=2521\) 上取 \(d=8\)。该分支的回执仅保存
+\((m,d)\) 和重建的三分母，结论为 `terminal_leaf`，所以不要求 E1--E5，也不把
+其附带的 \(n=h+1\) 标记两尾 lift 计作 G/Type I 的递归边。未命中时才保留原有的
+G/Type I handoff。见[奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两尾递降]
+(../claims/type-II-gap-23-odd-h-qnr-terminal-descent.md)。
+
 对非平凡 `marked_solution_set`，非终端边只有在目标状态逐字保留同一个 mark 谓词时
 才可使用恒等 lift；普通短证书还必须另验 mark membership，不能自动登记 marked
 terminal。
