@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和，剩余 F miss 位于 Jacobi 核的剩余方向/完整关系几何。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前两条决定性前沿是：在 Jacobi 核剩余方向实现 physical source columns 并通过 owner/物理槽 Hall 或严格容量缺口分派；以及把剩余 F 有界盒 miss 转成具备 E4/E5 的终端或良基下降。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前决定性前沿是把奇核/一般有限阿贝尔空盒转成交替 Type I/II 参数纤维或具备 E1--E5 的良基下降；只有跨状态收费仍需要 owner/source-column Hall 与严格容量缺口分派。
 topics:
 - research-map
 - proof-program
@@ -54,8 +54,10 @@ sources:
   role: Jacobi-negative-role-integer-source-factor-localization-and-cross-q-capacity
 - claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
   role: Jacobi-source-SNF-rank-one-compression-anchor-dichotomy-and-C2-no-go
+- claim: type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
+  role: Type-II-symmetric-fiber-antipodal-physical-capacity-and-range-terminal
 - claim: type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
-  role: cyclic-Jacobi-C2-stripping-and-odd-kernel-affine-box-no-go
+  role: cyclic-Jacobi-C2-stripping-odd-kernel-terminal-and-affine-box-no-go
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6176,6 +6178,52 @@ Jacobi 核的剩余方向。若所有奇 parity affine boxes 为空，则给出
 F/G 算术分析推进到 odd-primary no-go，仍由 gap-\(31\) Type I terminal 完成
 terminal-first 分派。
 
-该结论只覆盖循环 Jacobi 状态；非循环 \(H_q\) 仍需多 primary SNF/源列评价，且
-odd-kernel 空盒尚未自动构造 physical source-column 或 E4/E5 递降。完整证明见
+该仿射约化只覆盖循环 Jacobi 状态；非循环 \(H_q\) 的 miss 仍需多 primary
+SNF/源列评价，且 odd-kernel 空盒尚未自动构造跨状态 physical source-column 或
+E4/E5 递降。非空盒的同纤维物理回译与范围门由下一条反足定理关闭。完整证明见
 [\(p-1\) 因子 Type II 的 Jacobi \(C_2\) 剥离与奇核有界仿射盒](../claims/type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay.md)。
+
+## 2026-08-11：奇核每个 parity 盒的反足物理容量关闭范围门
+
+令
+
+\[
+x=\prod_i\ell_i^{e_i},
+\qquad
+d(z)=\prod_i\ell_i^{e_i+z_i},
+\qquad
+-e_i\le z_i\le e_i.
+\]
+
+对 Type II 目标 \(d(z)x^{-1}\equiv-1\pmod m\)，取反
+\(z\mapsto-z\) 保持目标纤维，并在真实素因子 occurrence 坐标
+\(y_i=e_i+z_i\) 上恰为补集 \(y_i\mapsto2e_i-y_i\)。因此
+
+\[
+d(z)d(-z)=x^2.
+\]
+
+目标纤维不含 \(z=0\)，所以该对合无固定点；每一对中恰有一个除子小于 \(x\)，
+另一个大于 \(x\)。由此得到精确计数
+
+\[
+|\{z:d(z)<x\}|=\frac12|\mathcal F^-_{m,x}|.
+\]
+
+在循环 Jacobi 奇核坐标中，该对合保持每个奇 parity 模式 \(\delta\)，具体为
+
+\[
+u_i\mapsto-u_i-\delta_i\quad(i\in\mathcal N),
+\qquad
+z_j\mapsto-z_j\quad(j\notin\mathcal N).
+\]
+
+所以任意一个非空约化仿射盒自身已经给出 \(d<x\) 的真实 Type II terminal；之前
+“盒命中后仍需独立范围分派”的边界已被删除。这个命中结论只使用目标 \(-1\) 的二阶性
+与盒对称性，不依赖源群循环，因此一般有限阿贝尔源群的正分支也同时闭合。
+
+这项进展没有解决空盒转交。新的准确前沿是：同纤维命中无需 owner/Hall；只有把
+\(\operatorname{JACOBI\_ODD\_KERNEL\_BOX\_EMPTY}\) 或一般有限阿贝尔空纤维
+映到另一 Type I/II 参数纤维、或具备 E1--E5 的严格递降时，才需要跨状态物理容量。
+完整证明见
+[Type II 对称除子纤维的反足物理容量与逐奇核模式终端](../claims/type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal.md)。

@@ -73,6 +73,8 @@ sources:
   role: endpoint-capacity-large-prime-allocation-and-complete-F-G-empty-dispatch
 - claim: type-II-p-minus-one-divisor-downset-prime-power-allocation
   role: divisor-downset-forbidden-antichain-and-prime-power-allocation
+- claim: type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
+  role: Type-II-signed-box-physical-occurrence-and-range-terminal
 visibility: public
 last_checked: '2026-08-11'
 ---
@@ -1111,6 +1113,18 @@ p-1\le\frac{r(r+2)(r+6)}4.
 
 随后只对 \(q\in\mathcal C_U\) 建立完整 signed divisor box；目标在生成子群外时
 输出 G 角色证书，在生成子群内但有界盒 miss 时输出 F 对数/Fourier 证书。
+
+若 signed box 命中，则不再保留独立的 \(d<x\) 范围候选门。指数取反
+\(z\mapsto-z\) 保持目标 \(-1\)，相应真实除子满足
+
+\[
+d(z)d(-z)=x^2.
+\]
+
+目标纤维没有固定点，故每个反足对恰有一个 \(d<x\) 成员；任一命中直接登记为
+Type II terminal。该结论对每个循环 Jacobi parity 子盒分别成立，也不依赖源群循环。
+完整证明见
+[Type II 对称除子纤维的反足物理容量与逐奇核模式终端](../claims/type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal.md)。
 
 所有压缩后纤维为空时只能输出 `P_MINUS_ONE_TYPE_II_EMPTY`，它不是终端，也不是递降，
 必须转交其它 terminal 或 verified edge。\(p=67369\) 给出精确控制：

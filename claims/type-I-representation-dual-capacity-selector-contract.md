@@ -132,6 +132,7 @@ depends_on:
   - type-II-p-minus-one-divisor-downset-prime-power-allocation
   - type-II-p-minus-one-jacobi-source-localization-collision-capacity
   - type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
+  - type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
   - type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
@@ -316,8 +317,10 @@ sources:
     role: Jacobi-role-to-integer-source-factor-slot-and-cross-q-collision-capacity
   - claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
     role: Jacobi-source-SNF-rank-one-compression-and-anchor-dichotomy
+  - claim: type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
+    role: Type-II-symmetric-fiber-antipodal-physical-capacity-and-range-terminal
   - claim: type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
-    role: Jacobi-C2-stripping-and-odd-kernel-affine-box-no-go
+    role: Jacobi-C2-stripping-odd-kernel-terminal-and-affine-box-no-go
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1641,8 +1644,8 @@ r\mid R\Longrightarrow Q_r^{\rm end}\le Q_R^{\rm end}.
 \(\lfloor(B-A)/\ell\rfloor+1\)。对 \(p=67369\)，这统一恢复五张空负源 G，
 并把三张 F 精确定位到 \(\{29,83\},\{73\},\{67\}\)。
 
-这项提升只关闭 integer source-factor provenance；physical source-column 的实现仍须
-另证。这些二次因子槽随后还必须进入实际源关系评价矩阵，经 SNF 去重并通过
+这项提升只关闭跨状态 integer source-factor provenance；相应跨状态 physical
+source-column 的实现仍须另证。这些二次因子槽随后还必须进入实际源关系评价矩阵，经 SNF 去重并通过
 Hall--Rado、E4 与 E5。碰撞超额可输出
 \(\operatorname{SOURCE\_PRIME\_COLLISION\_CAPACITY\_DEFICIT}\)，但未超额本身
 不是 verified edge。证明见
@@ -1662,8 +1665,7 @@ Hall--Rado、E4 与 E5。碰撞超额可输出
 \(\operatorname{JACOBI\_RANK\_ONE\_ANCHOR\_OUTSIDE}\)、
 \(\operatorname{JACOBI\_RANK\_ONE\_SOURCE\_TARGET\_REALIZED}\)。第三态若有界盒
 命中则进入 Type II terminal，若 miss 则不得再次生成 Jacobi \(C_2\) request。
-第三态若有界盒命中则进入 Type II terminal，若 miss 则不得再次生成 Jacobi \(C_2\) request，
-而应检查 Jacobi 核的剩余方向。完整的源 SNF 证明见
+miss 应检查 Jacobi 核的剩余方向。完整的源 SNF 证明见
 [\(p-1\) 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md)。
 
 在 \(H_q\) 循环且阶为 \(2s\)、\(s\) 奇数的状态上，rank-one Jacobi 行还可以被
@@ -1682,11 +1684,20 @@ Hall--Rado、E4 与 E5。碰撞超额可输出
 \]
 
 负源非空时 \(C_2\) 投影自动是 \(\{0,1\}\)，所以该方向不再产生新的二进制容量；
+每个奇 parity 模式还在
+\(u_i\mapsto-u_i-\delta_i\)、\(z_j\mapsto-z_j\) 的反足对合下自身封闭。
+对应真实除子满足 \(d(z)d(-z)=x^2\)，且目标纤维不含 \(d=x\)；所以任一非空
+模式恰有一半的记录满足 \(d<x\)，直接成为 Type II terminal。该同纤维物理
+occurrence 与范围门不需要跨状态 Hall/Rado，并且命中结论不依赖源群循环；一般有限
+阿贝尔源群中的二阶目标同样成立。
+
 全部奇 parity 盒为空时输出
 \(\operatorname{JACOBI\_ODD\_KERNEL\_BOX\_EMPTY}\)。这不是 SNF 失败，而是
 Jacobi 核内的奇模/完整关系 no-go。\(p=67369\) 的 \(q=7,21,42\) 分别得到
 模 \(9,41,83\) 的空盒；已有 gap-\(31\) Type I terminal 继续负责最终分派。
-完整证明见
+反足物理容量见
+[Type II 对称除子纤维的反足物理容量与逐奇核模式终端](type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal.md)，
+奇核约化见
 [\(p-1\) 因子 Type II 的 Jacobi \(C_2\) 剥离与奇核有界仿射盒](type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay.md)。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令

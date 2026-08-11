@@ -11,13 +11,16 @@ statement: >-
   sum_(negative) a_i u_i + sum_(positive) b_i z_i =
   (s-1)/2 - sum_(negative) b_i delta_i - (sum delta_i-1)/2 mod s。
   Jacobi C2 投影在负源非空时自动饱和为 {0,1}，所以剩余 F miss 是奇核/完整关系
-  的精确 affine-box 障碍；若所有模式盒为空，得到构造性
-  JACOBI_ODD_KERNEL_BOX_EMPTY，而不是 SNF 失败或重复的 C2 容量需求。
+  的精确 affine-box 障碍。每个奇 parity 模式在反足对合下自身封闭；任一非空模式
+  恰有一半真实除子满足 d<x，因而直接给出 Type II terminal，不需要额外范围门。
+  若所有模式盒为空，得到构造性 JACOBI_ODD_KERNEL_BOX_EMPTY，而不是 SNF 失败或
+  重复的 C2 容量需求。
   p=67369 的 q=7,21,42 三张 F 盒分别在模 9,41,83 上为空。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
+  - type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
   - type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
   - type-II-p-minus-one-jacobi-source-localization-collision-capacity
   - type-II-odd-primary-annihilator-compression-two-primary-terminal
@@ -36,6 +39,8 @@ topics:
   - capacity
   - selector
 sources:
+  - claim: type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
+    role: per-mode-antipodal-physical-capacity-and-range-terminal
   - claim: type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy
     role: rank-one-Jacobi-source-and-anchor-compatibility
   - claim: type-II-p-minus-one-jacobi-source-localization-collision-capacity
@@ -291,16 +296,27 @@ m,s,\mathcal N,
 Type II 短证书。它不是 source-SNF 失败：源标签角色已经显式相容；也不是
 Jacobi \(C_2\) 容量缺口：式 (22) 已饱和。它是 Jacobi 核内的奇模有限盒 no-go。
 
-若某个模式有解，(16)--(17) 恢复 \(z\)，再由 (7) 构造 \(d(z)\)。若
+若某个模式有解，(16)--(17) 恢复 \(z\)，再由 (7) 构造 \(d(z)\)。该模式内部的
+反足对合为
 
 \[
-d(z)<x,
+u_i\longmapsto-u_i-\delta_i\quad(i\in\mathcal N),
+\qquad
+z_i\longmapsto-z_i\quad(i\notin\mathcal N).
 \tag{25}
 \]
 
-则 (8) 给出 Type II 短证书；若 \(d(z)\ge x\)，该命中只通过完整 signed-box
-门，仍须重新选择 \(d\) 或转交范围分派。故 (19) 的命中是构造性候选，不自动
-跳过 Type II 大小门。
+它对应完整指数向量 \(z\mapsto-z\)，保持同一个 \(\delta\) 模式，并满足
+
+\[
+d(z)d(-z)=x^2.
+\tag{26}
+\]
+
+目标纤维不含 \(z=0\)，因为 \(m\ge3\) 时 \(1\not\equiv-1\pmod m\)。所以每个
+反足对恰有一个成员满足 \(d<x\)，另一个满足 \(d>x\)。因此任意非空模式自身已经
+给出真实 Type II 短证书；完整证明见
+[Type II 对称除子纤维的反足物理容量与逐奇核模式终端](type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal.md)。
 
 ## 5. 三组控制
 
@@ -323,7 +339,7 @@ m=7,\quad H=U(7)=\langle3\rangle,\quad s=3,
 2u_5+z_2\equiv2\pmod3,
 \qquad
 u_5\in\{-1,0\},\quad z_2\in[-2,2].
-\tag{26}
+\tag{27}
 \]
 
 \(z_2=-2,z_5=-1\)（即 \(d=1\)）给出解并恢复已有 Type II 命中。
@@ -345,7 +361,7 @@ u_5+z_2+8z_3\equiv5\pmod{11},
 \qquad
 u_5\in\{-1,0\},
 \quad z_2\in[-1,1],\quad z_3\in[-2,2].
-\tag{27}
+\tag{28}
 \]
 
 \(z_2=0,z_3=-2,z_5=-1\) 给出 \(d=2\) 的 Type II 命中。
@@ -364,7 +380,7 @@ u_{29}+u_{83}+8z_7\equiv4\pmod9,\\
 42&(167,83)&
 82u_{67}+20z_2+47z_3+59z_7\equiv42\pmod{83}.
 \end{array}
-\tag{28}
+\tag{29}
 \]
 
 边界分别为
@@ -380,7 +396,7 @@ u_{73}\in\{-1,0\},\quad z_3,z_7,z_{11}\in[-1,1],\\
 u_{67}\in\{-1,0\},\quad
 z_2,z_3\in[-2,2],\quad z_7\in[-1,1].
 \end{array}
-\tag{29}
+\tag{30}
 \]
 
 三个有限解集均为空。因此这三张 F 不是 Jacobi C2/SNF 失败，而是明确的
@@ -400,17 +416,19 @@ F 空盒的奇核坐标和可复核空证书。
 &\longrightarrow \operatorname{JACOBI\_RANK\_ONE\_ANCHOR\_OUTSIDE},\\
 \mathcal N\ne\varnothing,\ -1\in H,
 \exists\boldsymbol\delta:\operatorname{Sol}_s(\boldsymbol\delta)\ne\varnothing
-&\longrightarrow \text{范围门后 Type II candidate/terminal},\\
+&\longrightarrow \text{直接 Type II terminal},\\
 \mathcal N\ne\varnothing,\ -1\in H,
 \forall\boldsymbol\delta:\operatorname{Sol}_s(\boldsymbol\delta)=\varnothing
 &\longrightarrow \operatorname{JACOBI\_ODD\_KERNEL\_BOX\_EMPTY}.
 \end{array}
-\tag{30}
+\tag{31}
 \]
 
-最后一支只能作为 F/odd-kernel 算术负证书，不能自动声称 Type I 或递降。若
-odd-kernel 空盒在跨状态 owner 流中产生候选需求，仍需执行真实 source-column
-实现、SNF 去重和 E4/E5；本引理只关闭 Jacobi \(C_2\) 与循环奇核的算术描述。
+第三支的物理 occurrence 就是 \(x^2\) 唯一分解中的素因子指数，反足补集同时关闭
+指数预算与 \(d<x\)；它不再需要额外的 source-column/Hall 或范围门。最后一支仍只能
+作为 F/odd-kernel 算术负证书，不能自动声称 Type I 或递降。若 odd-kernel 空盒在
+跨状态 owner 流中产生候选需求，仍需执行该跨状态合同自己的 source-column、SNF 和
+E4/E5；本引理与反足物理容量定理关闭的是同一除子纤维的完整正分支。
 
 聚焦验证：
 
@@ -420,3 +438,9 @@ python3 reproductions/type_ii_p_minus_one_jacobi_odd_kernel_affine_box.py --veri
 
 验证器检查公式 (14)--(21) 的逐向量等价、\(p=73,337\) 的命中和
 \(p=67369\) 三个 reduced-box 空集，不运行历史范围测试。
+
+逐模式反足配对、\(d<x\) 等分和非循环有限阿贝尔控制由以下聚焦验证器检查：
+
+~~~bash
+python3 reproductions/type_ii_symmetric_divisor_fiber_antipodal_physical_capacity.py --verify
+~~~
