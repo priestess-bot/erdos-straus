@@ -333,3 +333,28 @@ python3 reproductions/type_ii_p_minus_one_jacobi_weighted_minimum_overflow_neutr
 
 验证器只枚举上述两个状态的有界权层、单位层、共享缺口和两条载体删除状态，并逐项
 重建短证书；不运行历史范围测试。
+
+## 6. 后续精化：局部 no-go 不等于完整关系闭包无终端
+
+本卡否定的是三种**一步局部规则**：最小溢出注入负源、只检查当前 \(A+B\) 的共享
+缺口，以及直接删除溢出载体。它不排除保留完整关系
+
+\[
+A+B=m\kappa
+\]
+
+并对所有超出自然尾 \(px\) 容量的素数作规范迁移。后续的完整关系图定理已经证明：
+\(\kappa\) 与 \(AB\) 互素，不能支付原坐标；非终端迁移在 \(\kappa>1\) 时严格降层，
+最终只留下有限 \(\kappa=1\) SCC。更重要的是，本卡的两个压力点都在该完整闭包中暴露
+新的 alternate terminal：
+
+\[
+q=21\longrightarrow\text{gap }31\text{ Type I},
+\qquad
+q=42\longrightarrow\text{gap }151\text{ Type II}.
+\]
+
+因此这两个样本不再是 `NEUTRAL_CARRIER_OVERFLOW` 的未闭合实例；它们现在是
+“局部规则失败、完整关系闭包成功”的正控制。仍未证明的是一般
+`KAPPA_ONE_RELATION_SCC` 必含短证书边标签或满足 E1--E5 的适配器。完整定理和路径见
+[Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。

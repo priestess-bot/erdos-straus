@@ -52,6 +52,7 @@ used_by:
 - type-I-unified-terminal-first-selector-contract
 - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
 - type-I-source-lattice-qheight-dual-valuation-shift-carrier
+- type-II-odd-kernel-overflow-natural-tail-relation-graph
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -1137,6 +1138,69 @@ gap-\(31\) Type I terminal 接管。这个反例证明“自适应 \(r\) 总命�
 因子格预处理见
 [\(p-1\) 因子 Type II 的下闭容量域与素数幂分配](../claims/type-II-p-minus-one-divisor-downset-prime-power-allocation.md)。
 
+### 6.5 Type II 盒外自然尾关系图
+
+对任意合法 Type II 缺口 \(m\)、\(x=(p+m)/4\)，盒外整数目标表示可写成
+
+\[
+A+B=m\kappa,
+\qquad (A,B)=1.
+\]
+
+该关系自动满足 \((AB,m\kappa)=1\)。自然两尾
+
+\[
+\frac{px\kappa}{A},
+\qquad
+\frac{px\kappa}{B}
+\]
+
+同时为整数当且仅当 \(AB\mid px\)；这是直接 Type I/II terminal。否则可对每个满足
+\(v_\ell(AB)>v_\ell(px)\) 的素数构造规范关系迁移，并在 \(\kappa>1\) 时严格降低
+\(\kappa\)。该对象的规范载荷为：
+
+```text
+certificate_type = type_ii_natural_tail_relation_graph
+prime = p
+gap = m
+first_denominator = x
+relation_pair = [A, B]
+relation_quotient = kappa
+natural_tail_capacity = p*x
+split_deficit = [A/gcd(A,p*x), B/gcd(B,p*x)]
+total_deficit = A*B/gcd(A*B,p*x)
+transition = [ell, t, normalization_g, A_next, B_next, kappa_next]
+selector_status = analysis_evidence
+recursive_edge_eligible = false
+```
+
+该关系图内部的 terminal-first 顺序必须固定为：
+
+\[
+\text{natural-tail }AB\mid px
+\longrightarrow
+\text{fresh quotient divisors }h\mid\kappa
+\longrightarrow
+\text{over-capacity edge labels }\ell
+\longrightarrow
+\text{relation transition}
+\longrightarrow
+\kappa=1\text{ SCC}.
+\]
+
+每个 \(h\) 或 \(\ell\) 只有在合法自然范围内通过统一短证书 verifier 后才能终止。
+\(p=1153,q=16,m=63,x=304\) 给出底层标签完备性的严格反例：
+\(\{1,62\}\leftrightarrow\{2,61\}\) 的内部标签为 \(31,61\)，唯一合法标签 \(31\)
+没有证书；但两个物理最小源关系在进入周期前分别由 quotient gap \(23\) Type II
+和 quotient divisor \(3\) Type I 抢占。因此不得省略 fresh-quotient 层，也不得声称
+每个 SCC 自含终端。
+
+这里的 \(\kappa\) 降层只是有限 `certificate_context` 搜索秩，不是 E5：迁移会引入
+新素因子，后继没有完整合法状态字段，也没有 \(W_T\to W_S\) 的全域解提升。若完整图
+未出现自然尾终端或通过 verifier 的 alternate-gap 终端，必须输出
+`KAPPA_ONE_RELATION_SCC`；不得把底层周期压成伪递降。精确定理见
+[Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](../claims/type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
+
 ## 7. 明确不构成递降的对象
 
 下列结果可以是重要的分析证据，但单独出现时不得标记为 verified_edge：
@@ -1153,6 +1217,7 @@ gap-\(31\) Type I terminal 接管。这个反例证明“自适应 \(r\) 总命�
 | \((e-h_{\mathrm{current}})_+\) 变小 | 重复使用了当前 \(K\) 已吸收的 q 进层 |
 | 有限扫描中每个样本都有出口 | 不给出全称构造，也不证明递归闭合 |
 | 把同一 Type I 证书改写成 marked source | 没有产生独立的第三出口或新的下降机制 |
+| Type II 盒外关系的 \(\kappa\) 严格降层 | 只是 `certificate_context` 内部搜索；底层有周期，且未构造合法后继状态或 E4 lift |
 | 同 \(1\pmod4\) 的较小 D-only rank | source-supported 只重复中心 Type I，non-source 标记纤维全空 |
 | overflow 的某个对偶图表 | 只有 \(A'=\operatorname{lcm}(A,t)>A\)、\(A'\mid K_t\) 且 (7) 成立时才是 joined-support verified edge；否则仍是 candidate/analysis evidence |
 | overflow 固定-n 的有界除子 \(L\mid Md\) | 只有 \(A<L\le B_p\)、\(4L>n\) 且严格外层势下降时才是 overflow_fixed_n_bounded_divisor_outer_rank_v1；\(A\nmid L\) 时必须显式支付 support reset，候选集为空不能伪造后继 |

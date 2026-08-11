@@ -437,6 +437,14 @@ E4/E5；本引理与反足物理容量定理关闭的是同一除子纤维的完
 \(\mathcal N_q(p)\)。严格反例见
 [\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
 
+这个 adapter 现已推进一层。把任一盒外整数原像写成互素关系
+\(A+B=m\kappa\) 后，自然尾的完整容量为 \(px\)，而 \(\kappa\) 与 \(AB\) 互素、
+没有同坐标支付能力；完整超容量迁移在 \(\kappa>1\) 时严格降层，最终只留下有限
+\(\kappa=1\) SCC。对本节 \(q=21,42\) 的物理权最小关系，该闭包分别找到 gap \(31\)
+Type I 与 gap \(151\) Type II，故两个压力点已经终止。一般 SCC 到短证书或 E1--E5
+后继的全称桥仍未证明，见
+[Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
+
 聚焦验证：
 
 ~~~bash

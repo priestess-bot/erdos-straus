@@ -135,6 +135,7 @@ depends_on:
   - type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal
   - type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
   - type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go
+  - type-II-odd-kernel-overflow-natural-tail-relation-graph
   - type-I-source-lattice-filtered-dual-tail-hall-capacity
   - type-I-source-lattice-owner-window-affine-profile-admission
   - type-I-owner-profile-canonical-base-target-slot-capacity
@@ -324,6 +325,8 @@ sources:
     role: Jacobi-C2-stripping-odd-kernel-terminal-and-affine-box-no-go
   - claim: type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go
     role: physical-weight-minimum-neutral-carrier-and-local-transfer-no-go
+  - claim: type-II-odd-kernel-overflow-natural-tail-relation-graph
+    role: px-natural-tail-capacity-kappa-layer-reduction-and-cycle-terminal-search
   - claim: type-I-source-lattice-filtered-dual-tail-hall-capacity
     role: multi-role-filtered-dual-and-exact-tail-capacity-cut
   - claim: type-I-source-lattice-owner-window-affine-profile-admission
@@ -1713,6 +1716,25 @@ Jacobi 负源。\(p=67369\) 的 \(q=21,42\) 两态最小权都精确为 \(3\)，
 选择器因此必须把 `NEUTRAL_CARRIER_OVERFLOW` 与负源需求分开，并为前者证明独立的
 source-switch/alternate/E1--E5 适配器；见
 [\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
+
+中性载体分支现已有一个严格的内部闭包。任一盒外关系 \(A+B=m\kappa\) 的自然尾
+支付池精确为 \(px\)，且 \((AB,m\kappa)=1\)；所以 \(\kappa\) 不提供同坐标容量。
+完整超容量关系迁移在 \(\kappa>1\) 时严格降层，非终端只会进入有限
+`KAPPA_ONE_RELATION_SCC`。这些迁移仍是 `analysis_evidence`，不是 E1--E5 边；
+但选择器可以对每个新鲜边标签运行 alternate-gap terminal-first。该菜单已把
+\(p=67369\) 的两个最小权压力点分别送到 gap \(31\) Type I 和 gap \(151\) Type II。
+因此当前全称缺口已从未分类的 neutral overflow 收缩为：证明每个经过自然尾与
+fresh-quotient 预占后仍实际可达的底层 SCC 含有短证书标签，或构造 SCC 到合法状态的
+E1--E5 适配器。见
+[Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
+
+关系图的内部优先级进一步固定为：自然尾 \(AB\mid px\)、fresh quotient
+\(h\mid\kappa\)、超容量边标签、关系迁移、底层 SCC。\(p=1153,q=16\) 的空盒给出
+二周期 \(\{1,62\}\leftrightarrow\{2,61\}\)，内部标签 \(31,61\) 均不能终止，
+所以“每个 SCC 自含短证书标签”不是合法选择器假设；同一样本的两个物理最小关系却
+分别由 quotient gap \(23\) Type II 和 divisor \(3\) Type I 抢占，证明 quotient
+菜单不能延后到 SCC 之后。该素数本身还由全局 gap \(3\) 更早预占，因此这里只把它
+用作 SCC 标签引理的结构反例。
 
 对两个以上独立角色，代数层调度也不再停在“调用 Hall”这一抽象接口。令
 \(O_J=(F_J+qL)/qL\)，则有短正合列

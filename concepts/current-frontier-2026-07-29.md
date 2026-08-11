@@ -60,6 +60,8 @@ sources:
   role: cyclic-Jacobi-C2-stripping-odd-kernel-terminal-and-affine-box-no-go
 - claim: type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go
   role: physical-weight-minimum-neutral-carrier-and-local-transfer-no-go
+- claim: type-II-odd-kernel-overflow-natural-tail-relation-graph
+  role: px-natural-tail-capacity-kappa-layer-reduction-and-cycle-terminal-search
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6262,3 +6264,99 @@ W(z)=\prod_{\ell\mid x}\ell^{(|z_\ell|-v_\ell(x))_+}.
 位置和权值的适配器。它需要联合其它轨道或其它端点状态，并实际输出 alternate
 Type I/II，或满足 E1--E5 的 source-switch/良基下降。完整反例与聚焦验证见
 [\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](../claims/type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
+
+## 2026-08-11：\(px\) 自然尾容量把盒外关系压到 \(\kappa=1\) SCC
+
+把任一盒外目标表示约成
+
+\[
+\frac AB\equiv-1\pmod m,
+\qquad
+A+B=m\kappa,
+\qquad
+(A,B)=1.
+\]
+
+新的新鲜性恒等式是
+
+\[
+\gcd(AB,m\kappa)=1.
+\]
+
+因此关系商 \(\kappa\) 在 \(A,B\) 的全部活跃坐标上赋值为零，不能承担此前设想的
+同坐标清分。另一方面，
+
+\[
+\frac4p
+=\frac1x+\frac{A}{px\kappa}+\frac{B}{px\kappa}
+\]
+
+给出精确自然尾容量：两个形式尾同时为整数当且仅当
+
+\[
+AB\mid px.
+\]
+
+其中 \(x\) 支付 Type II occurrence，唯一的一层 \(p\) 支付 Type I occurrence。
+对原奇核指数向量，容量缺口恰为此前的物理权
+
+\[
+\frac{AB}{(AB,px)}
+=\frac{AB}{(AB,x)}
+=W(z).
+\]
+
+若素数 \(\ell\) 超过 \(px\) 的指数容量，唯一移位
+\(t\equiv-\kappa\pmod\ell\) 给出规范迁移。约分后的关系仍互素；当
+\(\kappa>1\) 时，新商严格小于 \(\kappa\)。所以完整可达关系图只有两种结局：
+自然尾直接产生 Type I/II，或进入有限 \(\kappa=1\) 周期图。底层节点是
+\(U(m)/\{\pm1\}\) 中的类，边为允许载体的 \([C]\mapsto[\ell^{-1}C]\)。
+
+这一归约还实际推进了上一节的两个中性载体压力点：
+
+- \(q=21\) 的 \((\{7,657\},8)\) 经五条显式载体边到达
+  \((\{21,62\},1)\)，边标签 \(31\) 给出 Type I terminal；
+- \(q=42\) 的 \((\{28,1809\},11)\) 经九条显式载体边到达
+  \((\{16,151\},1)\)，边标签 \(151\) 给出 Type II terminal
+  \((x,d)=(16880,32)\)。
+
+关系商的新鲜性还提供一个必须先运行的菜单：对每个合法 \(h\mid\kappa\) 检查
+gap \(h\)。\(q=42\) 的另一个单位计数最小轨道满足 \(\kappa=59\)，直接得到
+gap \(59\) Type I；物理最小轨道的 \(\kappa=11\) 则没有证书，说明该菜单真实但
+不全称。
+
+更重要的反边界来自
+
+\[
+p=1153,\qquad q=16,\qquad m=63,\qquad x=304.
+\]
+
+其 signed box 为空，物理最小权为 \(19^2=361\)。底层关系图含
+
+\[
+\{1,62\}\xrightarrow{31}\{2,61\}
+\xrightarrow{61}\{1,62\},
+\]
+
+但 \(61\equiv1\pmod4\)，gap \(31\) 又没有短证书。这严格否定“每个底层 SCC
+自含短证书标签”。不过两个物理最小反足轨道都在进入该周期前被 quotient terminal
+抢占：一支到 \(\kappa=23\) 后由 gap \(23\) Type II 终止，另一支到
+\(\kappa=6\) 后由 divisor \(3\) Type I 终止。因而正确顺序必须是
+
+\[
+AB\mid px
+\to h\mid\kappa
+\to\text{edge label}
+\to\text{relation transition}
+\to\kappa=1\text{ SCC}.
+\]
+
+\(p=1153\) 本身还被全局 gap \(3\) Type I terminal 更早预占；这个控制只否定
+SCC 内部标签完备性，不是新的未解决核心点。
+
+因此这两个样本现已从“局部桥失败”升级为“完整关系闭包成功”。但关系迁移本身没有
+合法后继状态或全域解提升，\(\kappa\) 也在底层周期中停止下降，故它仍是
+`analysis_evidence` 而不是 E1--E5 边。当前决定性缺口已经精确缩为：对经过自然尾与
+fresh-quotient 预占后仍实际可达的 `KAPPA_ONE_RELATION_SCC`，证明其含可验证的
+alternate-gap 终端，或构造 SCC 到合法状态的 E1--E5 适配器。完整证明见
+[Type II 奇核盒外关系的 \(px\) 自然尾容量与 \(\kappa=1\) 周期归约](../claims/type-II-odd-kernel-overflow-natural-tail-relation-graph.md)。
