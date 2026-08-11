@@ -89,6 +89,32 @@ def verify_dirichlet_ray(*, divisor: int) -> dict[str, int]:
     return {"r": divisor, "h0": h0, "p0": p0, "step": step}
 
 
+def verify_raw_self_loop_intersection() -> dict[str, int]:
+    """Check the terminal-first subray inside the raw physical self-loop family."""
+    p0, step = 601, 17784
+    h0, hstep = (p0 - 1) // 24, step // 24
+    numerator0, numerator_step = 22 * h0 + 1, 22 * hstep
+    if not (
+        p0 % 936 == 601
+        and step % 936 == 0
+        and (h0, hstep) == (25, 741)
+        and (numerator0, numerator_step) == (551, 16302)
+        and numerator0 % 19 == 0
+        and numerator_step % 19 == 0
+        and gcd(p0, step) == 1
+    ):
+        raise AssertionError("raw self-loop terminal intersection changed")
+    return {
+        "p0": p0,
+        "step": step,
+        "h0": h0,
+        "hstep": hstep,
+        "r": 19,
+        "cofactor0": numerator0 // 19,
+        "cofactor_step": numerator_step // 19,
+    }
+
+
 CONTROLS = (
     (313, 41),
     (601, 19),
@@ -100,6 +126,7 @@ def build_result() -> dict[str, object]:
     """Return terminal and progression receipts without a coverage scan."""
     terminals = [verify_adaptive_divisor_terminal(p=p, divisor=r) for p, r in CONTROLS]
     rays = [verify_dirichlet_ray(divisor=r) for r in (19, 41, 63)]
+    self_loop_intersection = verify_raw_self_loop_intersection()
     if terminals[0]["third_denominator"] != 269493:
         raise AssertionError("p=313 control changed")
     if terminals[1]["third_denominator"] != 993453:
@@ -114,6 +141,7 @@ def build_result() -> dict[str, object]:
         ),
         "terminal_controls": terminals,
         "primitive_dirichlet_rays": rays,
+        "raw_self_loop_terminal_intersection": self_loop_intersection,
     }
 
 
