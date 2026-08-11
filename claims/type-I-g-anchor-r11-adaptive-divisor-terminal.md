@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-g-anchor-r11-adaptive-divisor-terminal
 title: R=11 固定尾的完整三残类因子盒与自适应 Type I 终端
-statement: 设 p=24h+1 为核心素数、N=22h+1、K=3N=(11p+1)/4。固定第三分母 pK 的全部 Type I terminal 恰等价于存在 d divides N^2，且 d lies in {7,8,10} modulo 11：若 d is congruent to 8,10,7，分别取 e=d,3d,9d，再取 u=(K+e)/11、v=(K+K^2/e)/11。每个这样的终端同时给出严格 marked one-tail descent 4/N=1/u+1/v+1/K 到 N<p，并将完整标记切片 (a,b,K) 双射提升为 (a,b,pK)。特别地，若 r divides N 且 r=8 (mod 11)，写 s=N/r，则 u=r(3s+1)/11、v=3rs(3s+1)/11 为正整数，且 u<v<pK，并给出直接 Type I 短证书。对每个奇数 r=8 (mod 11)，令 h0=-22^(-1) (mod r)，则 gcd(24h0+1,24r)=1；Dirichlet 定理给出无穷多个素数 p=24(h0+rt)+1，且每个都由该构造终止。该结果是 terminal-first 的自适应除子扇，不依赖 c=3/c=9 complement seed 的 source receipt，也不覆盖三残类因子盒未命中的核心素数。
+statement: 设 p=24h+1 为核心素数、N=22h+1、K=3N=(11p+1)/4。固定第三分母 pK 的全部 Type I terminal 恰等价于存在 d divides N^2，且 d lies in {7,8,10} modulo 11：若 d is congruent to 8,10,7，分别取 e=d,3d,9d，再取 u=(K+e)/11、v=(K+K^2/e)/11。特别地，若 r divides N 且 r=8 (mod 11)，写 s=N/r，则 u=r(3s+1)/11、v=3rs(3s+1)/11 为正整数，且 u<v<pK，并给出直接 Type I 短证书。对每个奇数 r=8 (mod 11)，令 h0=-22^(-1) (mod r)，则 gcd(24h0+1,24r)=1；Dirichlet 定理给出无穷多个素数 p=24(h0+rt)+1，且每个都由该构造终止。该结果是 terminal-first 的自适应除子扇，不依赖 c=3/c=9 complement seed 的 source receipt，也不覆盖三残类因子盒未命中的核心素数。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -212,77 +212,7 @@ v=3su>u.
 
 故 \(v<pK\)。三个分母因而严格递增。
 
-## 4. 完整标记单尾递降
-
-对任意正整数 \(N,K,p\) 满足
-
-\[
-K=3N,
-\qquad
-4K=11p+1,
-\tag{D1}
-\]
-
-定义两个带固定第三分母的有序标记解集
-
-\[
-\begin{aligned}
-\mathcal W_N(K)
- &=\left\{(a,b,K)\in\mathbb N^3:
- \frac4N=\frac1a+\frac1b+\frac1K\right\},\\
-\mathcal W_p(pK)
- &=\left\{(a,b,pK)\in\mathbb N^3:
- \frac4p=\frac1a+\frac1b+\frac1{pK}\right\}.
-\end{aligned}
-\tag{D2}
-\]
-
-**引理（\(R=11\) 的单尾 marked lift）。** 映射
-
-\[
-\boxed{
-\mathcal L_{N\to p}:(a,b,K)\longmapsto(a,b,pK)}
-\tag{D3}
-\]
-
-是 \(\mathcal W_N(K)\) 到 \(\mathcal W_p(pK)\) 的双射，逆映射只把第三分母
-\(pK\) 还原为 \(K\)。并且对核心素数 \(p=24h+1\)，有
-
-\[
-N=\frac{11p+1}{12}=22h+1<p.
-\tag{D4}
-\]
-
-**证明。** 对 \((a,b,K)\in\mathcal W_N(K)\)，由 \(N=K/3\) 得
-
-\[
-\frac1a+\frac1b=\frac4N-\frac1K=\frac{11}{K}.
-\tag{D5}
-\]
-
-再用 \(11p+1=4K\)，便有
-
-\[
-\frac1a+\frac1b+\frac1{pK}
-=\frac{11}{K}+\frac1{pK}
-=\frac4p.
-\tag{D6}
-\]
-
-所以 (D3) 有定义。反向从 \(\mathcal W_p(pK)\) 的定义同样得到 (D5)，故逆映射
-有定义且两者互逆。最后 (D4) 由 \(h>0\) 立即成立。证毕。
-
-因此，任意 (2) 的 box hit 不仅给出 (4) 的 terminal，也以 (3) 给出
-\(\mathcal W_N(K)\ne\varnothing\)，并提供：
-
-* 显式、全域于标记解集的 solution lift (D3)；
-* 严格分母秩 \(N<p\)；
-* 不依赖 raw source、F/G 标签或 fresh-root scope 的递降证书。
-
-它不把 (D3) 外推为从全部 \(\operatorname{Sol}(4,N)\) 到全部
-\(\operatorname{Sol}(4,p)\) 的映射；固定第三分母是这个 marked state 的必要字段。
-
-## 5. 无穷 Dirichlet 射线
+## 4. 无穷 Dirichlet 射线
 
 反过来，固定任意奇数
 
@@ -326,7 +256,7 @@ p=24h+1=(24h_0+1)+24rt.
 Dirichlet 定理于是保证 (21) 含无穷多个素数；每个这样的素数都满足 (10)，故有
 (4) 的直接终端。这里并未声称任一给定核心素数必含这类因子。
 
-## 6. 控制
+## 5. 控制
 
 * \(p=313\)、\(h=13\)：\(N=41\cdot7\)。完整 box 可取 \(d=7\)（对应
   \(e=63\)）或 \(d=41\)（对应 \(e=41\)）；后者即 \(r=41\) 子扇，给出
@@ -339,7 +269,7 @@ Dirichlet 定理于是保证 (21) 含无穷多个素数；每个这样的素数�
   \(e=3d=129\)，得到 \((u,v,pK)=(516,22188,11188299)\)，展示完整 box 的
   第二个残类并非 \(r\equiv8\) 子扇。
 
-## 7. 与 G-anchor 原始自环族的交集
+## 6. 与 G-anchor 原始自环族的交集
 
 此前的原始 physical-row 自环障碍覆盖
 
@@ -375,7 +305,7 @@ Dirichlet 定理给出无穷多个素数参数点；每一个同时属于 (24) �
 因此未标记 physical-row 自环确实阻止把 raw action 当作严格势，却不能被当作该
 无穷子族的 terminal-free 证据。
 
-## 8. 两个非剩余因子仍可完整未命中
+## 7. 两个非剩余因子仍可完整未命中
 
 不能把“\(N\) 含一个模 \(11\) 二次非剩余因子”当作 (2) 的充分条件。更精确地，
 设 \(\ell,m\) 是满足
@@ -427,7 +357,7 @@ p=24h+1,
 该 \(p\) 有其它直接 Type II terminal，故这不是 Erdős--Straus 反例；它严格排除的
 只是“任意非剩余因子足以关闭 \(R=11\) 固定尾”的错误规则。
 
-## 9. 边界
+## 8. 边界
 
 这是一张原始 \(p\) 的 terminal leaf：它不需要也不生成递归状态、全域 E4 lift 或
 G-anchor raw source。它不会覆盖完整三残类因子盒 (9) 未命中的核心素数，因而不是

@@ -98,24 +98,12 @@ def verify_full_r11_box_terminal(*, p: int, divisor: int) -> dict[str, int]:
         (K + e) % 11 == 0
         and (K + K * K // e) % 11 == 0
         and (11 * u - K) * (11 * v - K) == K * K
-        and N < p
         and u > 0
         and v > 0
     ):
         raise AssertionError("full R=11 box factorization changed")
     assert_egyptian_identity(p, (u, v, p * K))
-    assert_egyptian_identity(N, (u, v, K))
-    return {
-        "p": p,
-        "h": h,
-        "N": N,
-        "d": divisor,
-        "e": e,
-        "u": u,
-        "v": v,
-        "marked_one_tail_descent": [u, v, K],
-        "lifted_terminal": [u, v, p * K],
-    }
+    return {"p": p, "h": h, "N": N, "d": divisor, "e": e, "u": u, "v": v}
 
 
 def verify_dirichlet_ray(*, divisor: int) -> dict[str, int]:
