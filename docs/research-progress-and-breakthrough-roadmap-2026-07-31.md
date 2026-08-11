@@ -371,7 +371,7 @@ D(C_2\oplus C_{2a}\oplus C_{2ab})=2a+2ab.
 | 冻结 \(\Psi_0=1\) 状态 | 483/483 状态内候选闭合 | 很强有限证据 |
 | 广义二进终端 | 内部选择器成熟，自然提升被关闭 | 路线澄清 |
 | external slab | clean \(AQ\) 与一般 bundle \(\operatorname{lcm}(A,Q)\) 均有良基边 | 余项只剩 bundle overflow |
-| 标记递降 | \(n=p-1\) 层及同 \(1\bmod4\) 的 non-source D-only 均已证明全空；Type II 秩至多二 Davenport 分支新增 29 个有限命中 | overflow 必须换尾或换载体，全称 Type II 仍开放 |
+| 标记递降 | non-source D-only 已由负 Pell 充要分类证明在全部核心素数上全空；source-supported 只复述中心 Type I；Type II 秩至多二 Davenport 分支新增 29 个有限命中 | 核心 D-only 递归已删除，overflow 必须换尾或换载体，全称 Type II 仍开放 |
 | 全称选择器 | 尚未闭合 | 决定性缺口仍在 |
 | 独立复核 | 仍明显不足 | 可信度瓶颈 |
 
@@ -1266,6 +1266,12 @@ z\equiv-\sigma\pmod\mu,
 > 再证明三目标命中或构造合法 E4。详见
 > [核心 D-only 的支撑二分与三目标谱](../claims/two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md)。
 
+> **2026-08-11 最终关闭。** 三目标接口现已由负 Pell 充要分类完全消元：
+> 对核心素数，non-source 分支恒空，source-supported 分支只复述中心 Type I。
+> 因此本节不再是研究优先级，不能继续尝试构造低复杂度 D-only 非空充分条件；后续
+> selector 必须改变保留尾、载体或既约尾比。见
+> [non-source D-only 的负 Pell 全分类](../claims/two-denominator-lift-nonsource-pell-terminal-classification.md)。
+
 > **2026-08-01 路径字接口更新。** 来源路径字现可按祖先坐标写成
 > \[
 > \Theta X=U+Ru,
@@ -1661,6 +1667,33 @@ z\equiv-\sigma\pmod\mu,
 > source/path/node 锚定的其它载体构造直接终端或 MARKED_ABSORB，或证明
 > competing-excess SCC 必到达其中之一。详见
 > [同 1 mod 4 秩的 D-only 全域 no-go](../claims/two-denominator-lift-same-one-mod-four-no-go.md)。
+
+> **2026-08-11 non-source D-only 负 Pell 全分类。** 上述两个局部 no-go 现已统一并
+> 严格加强。对任意奇素数和任意 \(2\le n<p\)，non-source 三目标中的
+> \(e=1,e=2\) 先由大小无条件排除；若 \(e=0\) 命中，将
+> \(Hs=(2\lambda)^2\) 写成
+> \[
+> H=\gamma A^2,\qquad s=\gamma B^2,\qquad2\lambda=\gamma AB
+> \]
+> 并与互补因子相乘消元，得到
+> \[
+> 2AB=\frac{A^2}{L}+\frac{B^2}{h}+\frac1\gamma,
+> \qquad L=(p-n)+m.
+> \]
+> 一个不需要奇偶前提的 Vieta 极小下降证明该方程必有 \(L,h\le2\)。因此所有命中
+> 强制 \(p-n=m=1\)，再由二进估值唯一化为
+> \[
+> b^2-2a^2=-1,\qquad
+> p=4a(a+b)-1,\qquad
+> n=p-1,\qquad
+> D=2pb^2.
+> \]
+> 反向构造也成立，所以这是充要分类，不只是正例族。每个命中都有
+> \(p\equiv7\pmod8\)，并已经是 gap-1 Type II 终端。故全部核心素数上的
+> non-source 标记纤维恒空；source-supported 又只复述 centered Type I。统一选择器
+> 应整体删除核心 `D_ONLY_RECURSIVE_EDGE`，包括此前仍保留的偶前驱和
+> \(n\equiv3\pmod4\) 区域。详见
+> [non-source D-only 的负 Pell 全分类](../claims/two-denominator-lift-nonsource-pell-terminal-classification.md)。
 
 > **2026-08-01 complete-excess bundle 更新。** 上一段最后保留的 competing-excess
 > SCC 量词现已闭合，但结论不是“必出现单素数 clean slab”。对任一来源可达完整

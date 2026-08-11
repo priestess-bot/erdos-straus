@@ -13,7 +13,8 @@ statement: >-
   自然标记唯一对应 Delta=n^2/E；保持当前图表双尾的 marking 不可能非自然。
   更一般地，只要 W_Delta 非空，该提升就已坍缩为原 p 的直接终端：
   Delta|n^2 时等价于另一张中心 Type I 图表，Delta不整除n^2时目标解恰有两个
-  p-整除分母，因而条件性给出直接 Type II 除子证书；这里不声称核心域后一支必非空。
+  p-整除分母，因而条件性给出直接 Type II 除子证书。后续负 Pell 全分类进一步证明
+  核心域后一支恒空，所以核心第二层实际只有中心 Type I 或空纤维，不产生递归状态。
   p=433、R=15、K=1624 的
   E=16 有非自然 Delta=2916 正例，但属于前一种 Type I；同图表外层 E=n=406
   则只有自然候选 Delta=406。故精确关系容量不保证非自然 D-only 候选或标记非空，
@@ -28,6 +29,7 @@ depends_on:
   - two-denominator-lift-source-supported-tail-ratio-rigidity
   - two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum
   - type-II-coprime-factor-normal-form
+  - two-denominator-lift-nonsource-pell-terminal-classification
 topics:
   - type-I
   - type-II
@@ -42,7 +44,7 @@ sources:
   - reproduction: reproductions/type_i_generalized_dyadic_second_layer_d_only_terminal_classification.py
     role: focused-nonnatural-lift-natural-only-and-type-II-boundary-controls
 visibility: public
-last_checked: '2026-08-09'
+last_checked: '2026-08-11'
 ---
 
 # 广义二进关系点的第二层 (D)-only 提升与 Type I/II 完整终端分类
@@ -402,7 +404,20 @@ W_\Delta\ne\varnothing
 \tag{30}
 \]
 
-式 (30) 分类的是“第二层一旦非空”的输出；它不证明任一 \(W_\Delta\) 必非空。
+式 (30) 分类的是“第二层一旦非空”的输出。后续全域定理现已证明，对本卡的核心素数，
+
+\[
+\boxed{
+\Delta\nmid n^2
+\Longrightarrow
+W_\Delta=\varnothing.}
+\tag{30a}
+\]
+
+原因是任意 non-source 非空项都被 Vieta 极小下降强制到
+\(p\equiv7\pmod8\)、\(n=p-1\) 的负 Pell 族，与核心同余矛盾。见
+[non-source D-only 的负 Pell 全分类](two-denominator-lift-nonsource-pell-terminal-classification.md)。
+所以 (30) 的 Type II 行在核心域只是严格的条件分类，其前件由 (30a) 恒假。
 
 ## 5. 一个真正非自然的 E4 正例
 
@@ -456,7 +471,7 @@ h=64,\qquad k=63,\qquad\ell=6820,\qquad4\ell=433k+1,
 
 所以它严格属于 (30) 的中心 Type I 分支，而不是新的递降类型。
 
-纯 Type I 声明不能扩展到所有 D-only 参数。域外控制
+纯 Type I 的代数分类不能无条件扩展到所有奇素数 D-only 参数。域外控制
 
 \[
 (p,n,\Delta)=(7,6,14)
@@ -472,8 +487,8 @@ h=64,\qquad k=63,\qquad\ell=6820,\qquad4\ell=433k+1,
 
 其中 \(\Delta\nmid n^2\)、\(4(a'/p)-1=11\) 不被 \(p\) 整除；目标恰有两个
 \(p\)-整除分母。这是否定“所有 D-only 参数都无条件归入纯 Type I”的严格域外
-代数控制。它不证明核心专门域中 \(\Delta\nmid n^2\) 的非空 marked fiber 实际存在；
-(30) 对后一支给出的是条件分类，而不是存在性断言。
+代数控制。负 Pell 全分类现在说明它不是偶然反例，而是全部 non-source 正例的第一项；
+同时它证明核心专门域中 \(\Delta\nmid n^2\) 的 marked fiber 全部为空。
 
 ## 6. 关系点不保证非自然第二层候选
 
@@ -523,6 +538,7 @@ N=175798=2\cdot7\cdot29\cdot433,\qquad C=108.
 2. 候选存在仍可能有 \(W_\Delta=\varnothing\)；
 3. 一旦通过 (11) 显式证明非空，输出已经是 Type I 或 Type II 终端。
 
-所以第二层搜索可作为直接证书菜单，但不能被计作新的递归容量。真正仍可能推进归纳的
-方向必须在不知道 (11) 见证时递归闭合指定 marked fiber，或者改变两个保留尾、替换
-坐标和既约尾比；继续扩展 \(j\) 或重复自然 marking 都没有增量。
+结合 (30a)，核心第二层搜索只需保留 source-supported 的中心 Type I 去重检查；
+non-source 候选应直接标为 `rejected_branch`，不再执行三目标或递归非空性搜索。
+真正仍可能推进归纳的方向必须改变两个保留尾、替换坐标或既约尾比；继续扩展 \(j\)、
+重复自然 marking 或增加 D-only 因子预算都没有增量。

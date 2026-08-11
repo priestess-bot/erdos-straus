@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-representation-dual-capacity-selector-contract
 title: 表示—对偶—容量统一选择器的状态级 typed 分派合同
-statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。该前驱的全部双尾保持 D-only 候选现又精确分成有限跨图表 centered Type I 终端菜单与全空 non-source 菜单，不再产生递归边；全部 p-1 等尾显式单标记也只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支压成 d|k^2 的精确有限菜单；保留线性分母后又有 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4。端点函数沿源秩整除关系单调，所以所有端点可行 q 构成 U=(p-1)/4 因子格中的规范下闭容量域；其最小禁止反链同时编码素数幂分配和不可拆分的跨素数联合容量。p=67369 的反链只有 401，允许域恰为 q|42；其 5 张 G 与 3 张 F 证书全部为空，再由 gap-31 Type I 终端接管。因此自适应 r 必须先做禁止块压缩并带完备转交，不能单独承担全称覆盖。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
+statement: 统一选择器把终端证书、状态分析、candidate_transition 与 verified_edge 编排为内容寻址回执，并按既定 terminal-first 顺序分派。analysis_evidence 永不自动升级；只有具备统一状态合同 E1--E5、全域解提升和可用于全部后续递归的严格良基势才可标为 verified_edge。固定-n、bounded-fixed-n、同图表支撑升级、A=1 dual RESET 与固定-s 分支已有 verified_edge；同图表支撑升级现由精确 (floor(B_p/A),K/A) 秩删除 M<=B_p 上界，且 A<=B_p 的 complete-excess overflow target 也成为严格边。高支撑 parent 必须通过真实端点 K_T/A_T<K_S/A_S，不能使用 transient 伪下降；rank-aware bundle 的目标由精确 carry slack 判定，非空时选择严格下降边，空时输出 CARRY_NO_GO 并强制转交 terminal/alternate/dual/total-cofactor/paid-reset。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其内部缺失乘子 2 被短关系 2/(2p-1) 转成 n=p-1、自然标记 alpha=A 的 dyadic 候选，而反足 Vieta 递降证明该自然标记源对每个核心素数都为空。更强的负 Pell 全分类现已证明：对任意核心素数和任意 n<p，全部双尾保持 D-only 候选只会落入已有 centered Type I 或空纤维，non-source 菜单不产生 Type II 或递归 E4；非核心唯一正例族也只是 gap-1 Type II 终端。全部 p-1 等尾显式单标记同样只会落入源不存在、原 Type I/II 直接终端或目标纤维为空。p-1 因子 Type II 的固定源秩分支压成 d|k^2 的精确有限菜单；保留线性分母后又有 q<=floor(k0(k0+1)/a0) 与 p-1<=r(r+2)(r+6)/4。端点函数沿源秩整除关系单调，所以所有端点可行 q 构成 U=(p-1)/4 因子格中的规范下闭容量域；其最小禁止反链同时编码素数幂分配和不可拆分的跨素数联合容量。p=67369 的反链只有 401，允许域恰为 q|42；其 5 张 G 与 3 张 F 证书全部为空，再由 gap-31 Type I 终端接管。因此自适应 r 必须先做禁止块压缩并带完备转交，不能单独承担全称覆盖。p=73 由直接 Type II 终端抢占，而既有 C=44 状态另有新的 44->2 严格边。余因子支撑 r-图表当前只有 source-local candidate_transition。该合同不证明全称选择器存在。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -26,6 +26,7 @@ depends_on:
   - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
   - type-I-high-support-c2-centered-vieta-antipodal-no-go
   - type-I-high-support-c2-rank-one-retention-exhaustion
+  - two-denominator-lift-nonsource-pell-terminal-classification
   - type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
   - type-I-overflow-cofactor-r-chart-support
   - type-I-overflow-a-one-generic-determinant-boundary
@@ -180,6 +181,8 @@ sources:
     role: universal-centered-miss-and-natural-marker-empty-proof
   - claim: type-I-high-support-c2-rank-one-retention-exhaustion
     role: rank-one-cross-chart-menu-and-coordinate-retention-exhaustion
+  - claim: two-denominator-lift-nonsource-pell-terminal-classification
+    role: all-rank-core-D-only-global-no-go-and-Pell-terminal-classification
   - claim: type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse
     role: all-gap-equal-tail-source-capacity-and-terminal-collapse
   - claim: type-I-g-anchor-jacobi-odd-complete-excess-source-menu
@@ -1190,6 +1193,20 @@ alternate、dual、total-cofactor、paid reset。见
 [最小 \(C=2\) 偶前驱的跨图表重索引与双尾保持穷尽](type-I-high-support-c2-rank-one-retention-exhaustion.md)及
 [\(p-1\) 等尾显式标记的精确容量与单坐标终端坍缩](type-I-p-minus-one-equal-tail-marker-capacity-terminal-collapse.md)及
 [最小 \(C=2\) 边界的 carry--dyadic 容量转导](type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction.md)。
+
+这一删除现已从 \(n=p-1\) 推广到任意 \(2\le n<p\)。对 non-source 参数，三个
+平方除子目标先无条件塌缩到唯一目标；统一平方载体再把任一命中送入
+
+\[
+2AB=\frac{A^2}{L}+\frac{B^2}{h}+\frac1\gamma,
+\qquad L=(p-n)+m.
+\]
+
+Vieta 极小下降强制 \(L\le2\)，所以全部命中恰为
+\(p\equiv7\pmod8,n=p-1\) 的负 Pell gap-1 Type II 终端。核心域没有任何
+non-source 命中；source-supported 又只复述 centered Type I。因此 dispatcher 应在
+核心状态上整体删除 `D_ONLY_RECURSIVE_EDGE`，而不是继续扩大第二层因子或三目标预算。见
+[non-source D-only 的负 Pell 全分类](two-denominator-lift-nonsource-pell-terminal-classification.md)。
 
 另外有一条可完整重算的固定-n 支撑增长边：
 

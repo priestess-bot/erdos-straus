@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-unified-terminal-first-selector-contract
 title: Type I 终端优先的近邻—广义二进—对偶统一选择器合同
-statement: 对合法 Type I 状态，终端优先选择器按直接 Type I/II、目标纤维近邻、广义 2^j 偶前驱和固定层商 Fourier 的顺序输出 typed 回执；近邻与广义二进回执精确验证偶数前驱的整除、同余、范围和标准偶解，但在没有非空标记解及 E1--E5 前统一保持 analysis_evidence、recursive_edge_eligible=false。该合同统一了三类状态内证据，但不声称每个核心素数必命中或递降。
+statement: 对合法 Type I 状态，终端优先选择器按直接 Type I/II、目标纤维近邻、广义 2^j 偶前驱和固定层商 Fourier 的顺序输出 typed 回执；近邻与广义二进回执精确验证偶数前驱的整除、同余、范围和标准偶解，但在没有非空标记解及 E1--E5 前统一保持 analysis_evidence、recursive_edge_eligible=false。后续负 Pell 全分类证明核心域的全部双尾保持 D-only 精化只有中心 Type I 或空纤维，不能把偶前驱升级为递归边。该合同统一了三类状态内证据，但不声称每个核心素数必命中或递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -12,6 +12,7 @@ depends_on:
   - type-I-general-dyadic-terminal-transfer
   - type-I-generalized-dyadic-j-one-terminal-normalization
   - type-I-generalized-dyadic-natural-lift-equivalence
+  - two-denominator-lift-nonsource-pell-terminal-classification
   - type-I-fixed-layer-stabilizer-defect-reduction
   - type-I-f-target-involution-fourier-phase-collapse
   - denominator-escape-state-contract
@@ -32,10 +33,12 @@ sources:
   role: near-to-dyadic-terminal-deduplication
 - claim: type-I-general-dyadic-terminal-transfer
   role: dyadic-even-predecessor
+- claim: two-denominator-lift-nonsource-pell-terminal-classification
+  role: global-core-D-only-refinement-no-go
 - claim: type-I-fixed-layer-stabilizer-defect-reduction
   role: quotient-dual-evidence
 visibility: public
-last_checked: '2026-08-07'
+last_checked: '2026-08-11'
 ---
 
 # Type I 终端优先的近邻—广义二进—对偶统一选择器合同
@@ -155,6 +158,12 @@ n=(2L-E_j)/R.
 对 finite-exponent F 状态，若采用自然分母 \(\alpha=nK/E_j\)，已有等价定理说明其
 非空标记源恰等价于当前中心 Type I 命中。因此这类回执不能绕过 F 缺口；必须改用
 新的标记集、改变尾项，或转入 external/capacity 分支。
+
+而且，对核心素数再枚举保持同一双尾的全部非自然 D-only 参数也不能补救：统一平方载体
+与 Vieta 极小下降证明每个 non-source 标记纤维都为空，source-supported 分支仍只复述
+中心 Type I。故广义二进回执后的合法分派不再包含 D-only E4；候选必须改变保留尾、
+载体或既约尾比。见
+[non-source D-only 的负 Pell 全分类](two-denominator-lift-nonsource-pell-terminal-classification.md)。
 
 ## 4. 对偶回执
 

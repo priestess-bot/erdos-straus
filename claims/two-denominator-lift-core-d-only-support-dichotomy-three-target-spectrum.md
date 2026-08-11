@@ -24,7 +24,7 @@ sources:
   - claim: two-denominator-lift-source-supported-tail-ratio-rigidity
     role: source-supported-branch-classification
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-11'
 ---
 
 # 核心 \(D\)-only 的支撑二分、非自然完全正规形与三目标谱
@@ -505,8 +505,8 @@ t=\lambda-2u^2=uv,
 (8365,60,48756)\longmapsto(20315,60,48756).
 \]
 
-本卡没有证明三个目标之一对每个核心状态必命中。它把真正的非自然支撑余项压缩为两个
-同时可核验的选择条件：
+本卡原始版本没有证明三个目标之一对每个核心状态必命中，而只把非自然支撑余项压缩为
+两个同时可核验的选择条件：
 
 \[
 \boxed{
@@ -514,22 +514,34 @@ H=p+(4\lambda-1)r\mid4\lambda^2}
 \tag{35}
 \]
 
-以及 (21) 的三目标真因子命中。下一步应从 large-slab、来源路径字或高层仿射量规范地产生
-\(r,\lambda,H\)，再证明 (21) 命中或把其 miss 证书映成新的合法 E4；继续搜索
-\(\mu=1,2\) 或 \(z=1\) 已没有意义。
+以及 (21) 的三目标真因子命中。
 
-其中最靠近原素数的 \(r=1\)、即 \(n=p-1\) 层现已完全关闭：
-对每个 \(p\equiv1\pmod4\)，所有 non-source-supported 参数的三个目标都恒空；
-source-supported 参数则仍只复述已有中心 Type I。完整的互素参数化和 Vieta 下降见
-[p 减一秩的非自然 D-only 标记纤维全域空定理](two-denominator-lift-core-rank-one-no-go.md)。
-所以后续构造必须满足 \(r\ge2\)，不能再把最小 rank drop 当作默认候选。
+后续结果现已把这两个条件在全域中完全关闭。首先，规范真因子侧的 \(e=1\) 目标由
+\(u+\lambda<\mu\) 恒空；由 \(ps\equiv\lambda\pmod\mu\) 与 \(s<\lambda\)，
+\(e=2\) 也恒空。若唯一剩余的 \(e=0\) 命中，把
 
-对任意 \(p\equiv n\equiv1\pmod4\)，三目标还能被完整关闭：规范 \(e=1,e=2\)
-由大小排除，\(e=0\) 会导出一个无奇偶正整数解的 Vieta 方程。因此所有 non-source
-参数的 \(W(p,n,D)\) 恒空。absorbed-support overflow 的严格补秩正好满足
-\(u\equiv1\pmod4\)，所以 overflow-to-D-only 不再有平方超额余项，应从选择器菜单
-整体删除。见
-[同 1 mod 4 秩的 non-source D-only 全域 no-go](two-denominator-lift-same-one-mod-four-no-go.md)。
+\[
+Hs=(2\lambda)^2
+\]
+
+写成互素平方载体，再与互补因子相乘消元，会得到一侧分母
+\(L=(p-n)+m\) 的 Vieta 方程。极小根下降强制 \(L\le2\)，故所有命中必有
+\(p-n=m=1\)，并进一步恰由负 Pell 方程
+
+\[
+b^2-2a^2=-1
+\]
+
+参数化。特别地，命中总满足 \(p\equiv7\pmod8\)。因此对本卡的核心域，所有
+non-source-supported 标记纤维都为空，不再存在需要从 large-slab 或路径字构造的
+D-only E4。完整充要分类见
+[non-source D-only 的负 Pell 全分类](two-denominator-lift-nonsource-pell-terminal-classification.md)。
+
+先前的
+[p 减一秩 no-go](two-denominator-lift-core-rank-one-no-go.md)与
+[同 1 mod 4 秩 no-go](two-denominator-lift-same-one-mod-four-no-go.md)
+现在都是该全分类在局部同余域上的严格推论；它们保留各自的专用载体和历史证明，但不再
+定义开放选择器区域。
 
 聚焦复现入口为
 

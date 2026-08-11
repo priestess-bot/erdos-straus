@@ -2,7 +2,7 @@
 kind: claim
 claim_id: two-denominator-lift-d-only-marked-normal-form
 title: 双尾提升的 D-only 标记正规形与 p 载体刚性
-statement: 设 2<=n<p、r=p-n、N=np、C=4r。所有可能承载双尾保留提升的正替换坐标对，恰由满足 D|N^2、0<D<n^2、D=N (mod C)、N^2/D=N (mod C) 的因子 D 参数化；a=(N-D)/C、a'=(N^2/D-N)/C，且对所有 b,c 有 (a,b,c)∈Sol(n) 当且仅当 (a',b,c)∈Sol(p)。若 kappa∈{1,2,3,4} 且 n+kappa=0 (mod 4)，则每个合法 D 都满足 D<=n(n+kappa)-kappa p；特别当 kappa p>=n(n+kappa) 时整个 D 集为空。实际标记提升存在还等价于正因子同余 z|sigma^2、z=-sigma (mod mu)。当 p 为素数时必有 p|a'，所以替换坐标不是目标解的最小分母。D-only 数据只给出局部已验证的条件边；后继标记状态递归闭合后才承载证明，同时给出 z 则已显式闭合为终端。
+statement: 设 2<=n<p、r=p-n、N=np、C=4r。所有可能承载双尾保留提升的正替换坐标对，恰由满足 D|N^2、0<D<n^2、D=N (mod C)、N^2/D=N (mod C) 的因子 D 参数化；a=(N-D)/C、a'=(N^2/D-N)/C，且对所有 b,c 有 (a,b,c)∈Sol(n) 当且仅当 (a',b,c)∈Sol(p)。若 kappa∈{1,2,3,4} 且 n+kappa=0 (mod 4)，则每个合法 D 都满足 D<=n(n+kappa)-kappa p；特别当 kappa p>=n(n+kappa) 时整个 D 集为空。实际标记提升存在还等价于正因子同余 z|sigma^2、z=-sigma (mod mu)。当 p 为素数时必有 p|a'，所以替换坐标不是目标解的最小分母。后续全分类证明：source-supported 非空项只复述中心 Type I；non-source 非空项恰为 p=7 (mod 8) 的负 Pell gap-1 Type II 终端。因此对核心素数，D-only 只有直接 Type I 或空分支，不产生递归 E4。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -24,7 +24,7 @@ sources:
   - claim: marked-solution-descent-closure
     role: marked-state-induction-contract
 visibility: public
-last_checked: '2026-07-31'
+last_checked: '2026-08-11'
 ---
 
 # 双尾提升的 \(D\)-only 标记正规形与 \(p\) 载体刚性
@@ -295,10 +295,10 @@ a_D=pu,
 1. 只给出 \(D\)，得到一条读取较小标记状态、仍待递归闭合的条件 E4 边；
 2. 同时给出 (14) 的 \(z\)，则 (15) 和 (19) 已经显式写出目标解，应登记为终端叶。
 
-因此新的开放问题被压缩为：对每个仍无短证书的核心素数，规范选择
-\(n<p\) 与 \(D\in\mathcal D(p,n)\)，并在不知道 \(z\) 的前提下，把
-\(W(p,n,D)\) 递归归约到更小的非空标记状态。普通归纳假设
-\(\operatorname{Sol}(n)\ne\varnothing\) 不足以推出这个指定坐标切片非空。
+普通归纳假设 \(\operatorname{Sol}(n)\ne\varnothing\) 确实不足以推出指定坐标切片
+非空；但后续全分类已经关闭了核心域中“递归闭合这个切片”的可能性。若
+\(D\mid n^2\)，非空性只复述中心 Type I；若 \(D\nmid n^2\)，核心标记纤维恒空。
+所以核心选择器不应再创建任何 D-only `candidate_transition` 或 `verified_edge`。
 
 ## 6. 正例与空标记警示
 
@@ -388,12 +388,12 @@ a_D'=p\lambda,
 不会改变尾投影或其非空性：miss 时整类标记集都为空，hit 时已经得到原 \(p\) 的直接
 终端。
 
-因此第 5 节的开放递归问题现在必须进一步限定。source-supported 的固定尾比子类已经
-关闭为“直接 Type I 或空”；真正未解的 \(D\)-only 候选要么满足 \(D\nmid n^2\)，
-要么下一条 E4 边必须改变保留尾、被替换坐标或既约尾比，而不能只在同一双尾恒等类中
-继续降低 \(n\)。
+因此 source-supported 的固定尾比子类已经关闭为“直接 Type I 或空”。后续负 Pell
+全分类又证明 \(D\nmid n^2\) 的非空项只能位于 \(p\equiv7\pmod8\)、\(n=p-1\)，
+并已是 gap-\(1\) Type II 终端。核心域内不存在剩余 D-only 候选；任何下一条 E4 必须
+改变保留尾、被替换坐标或既约尾比。
 
-## 8. 非自然支撑分支的后续完全消元
+## 8. 非自然支撑分支的后续全分类
 
 \(D\nmid n^2\) 的余项现已进一步化为
 
@@ -405,7 +405,21 @@ a_D'=p\lambda,
 p+(4\lambda-1)(p-n)\mid4\lambda^2,
 \]
 
-其标记非空性等价于 \(\lambda^2\) 的一个真因子命中三个显式模 \(\mu\) 目标之一。
-这个分型同时排除了核心状态中的 \(\mu=1\)、\(\mu=2\) 与 \(z=1\) 捷径。完整证明、
-反向参数化和边界例见
+其标记非空性最初等价于 \(\lambda^2\) 的一个真因子命中三个显式模 \(\mu\) 目标之一。
+后续 Vieta 消元证明全部 non-source 命中恰为负 Pell 族
+
+\[
+b^2-2a^2=-1,
+\qquad
+p=4a(a+b)-1,
+\qquad
+n=p-1,
+\qquad
+D=2pb^2.
+\]
+
+所以命中总有 \(p\equiv7\pmod8\)，并已经是 gap-\(1\) Type II 终端；核心
+\(p\equiv1\pmod4\) 上该分支全空。三目标正规形见
 [核心 D-only 的支撑二分、非自然完全正规形与三目标谱](two-denominator-lift-core-d-only-support-dichotomy-three-target-spectrum.md)。
+充要分类及统一平方载体见
+[non-source D-only 的负 Pell 全分类](two-denominator-lift-nonsource-pell-terminal-classification.md)。
