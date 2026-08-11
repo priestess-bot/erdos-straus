@@ -6598,6 +6598,29 @@ x=\frac{p+59}{4}=6h+15,
 无限多个这类素数。它是明确的无限退出子族，却不使 gap-59 成为全称出口。完整证明及
 精确控制见 [gap-59 的 CRT 强制因子对终端与严格两尾递降射线](../claims/type-II-gap-59-crt-factor-pair-terminal-descent.md)。
 
+## 2026-08-12：$A=1$ 固定除子的统一 CRT 两尾生成器
+
+对任意 $m=4a-1$ 与 $(d,m)=1$，三条条件
+
+\[
+a\mid6h,
+\qquad d\mid6h+a,
+\qquad m\mid6h+a+d
+\]
+
+恰好使 $x=(p+m)/4$ 写成 $x=dB$、$B+1=mK$，即得到因子对
+
+\[
+(A,B,C,K)=(1,B,d,K).
+\]
+
+所以同一输入同时给出原 $p$ 的 Type II terminal、$n=(p+m)/(m+1)<p$ 的两尾源解，
+以及只将后两尾乘以 $p$ 的显式 lift。这三条条件可约为一次同余并由广义 CRT 判定为一条
+$h\equiv h_0\pmod M$ 射线；若 $24h_0+1$ 与 $24M$ 互素，Dirichlet 定理保证无限多
+素数参数。它统一了 $m=11,d=15,h\equiv52\pmod{55}$（包含双 G 控制 $p=5209$）和
+$m=59,d=21,h\equiv820\pmod{2065}$（包含 $p=118801$）。完整定理及定向复现见
+[$A=1$ 固定除子的 Type II CRT 终端与两尾递降生成器](../claims/type-II-a1-fixed-divisor-crt-terminal-descent-generator.md)。
+
 ## 2026-08-12：未标记全域提升的循环性与 reciprocal-affine no-go
 
 对任意已知非空的 \(\operatorname{Sol}(n)\)，单纯断言存在映射
