@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
-"""Verify the exact common-witness criterion for comparable external sources.
+"""Verify the exact common-witness criterion for external source scale pairs.
 
-For k | l = k*s | (p-1)/4, the complete square-factor menus satisfy
+For distinct k < l dividing (p-1)/4, the complete square-factor menus satisfy
 
     E_k intersection E_l
-      = {e | (k*g)^2 : e <= M_k and lcm(q_k, q_l) | 4e+1},
+      = {e | G^2 : e <= M_k and lcm(q_k, q_l) | 4e+1},
 
-where g=gcd(n_k,s-1), q_j=4j-1, n_j=p-(p-1)/(4j), and M_j=j*n_j.
-This is an exact arithmetic identity, not a claim that all menu pairs are
-disjoint. The controls include one pair where the simple range gate is
-decisive and one where it fails but the exact candidate set remains empty.
+where G=gcd(M_k,l-k)=gcd(M_k,M_l), q_j=4j-1,
+n_j=p-(p-1)/(4j), and M_j=j*n_j. If l=k*s, then
+G=k*gcd(n_k,s-1). This is an exact arithmetic identity, not a claim that
+all menu pairs are disjoint. The controls include comparable and
+noncomparable pairs, plus a pair where the simple range gate fails but the
+exact candidate set remains empty.
 """
 
 from __future__ import annotations
@@ -44,22 +46,25 @@ def collision_state(p: int, k: int, l: int, spf: list[int]) -> dict[str, object]
     """Compute both sides of the exact collision formula."""
     base = (p - 1) // 4
     if p % 24 != 1 or not (0 < k < l and base % k == base % l == 0):
-        raise ValueError("require comparable proper divisors k | l | (p-1)/4")
-    if l % k:
-        raise ValueError("require k | l")
+        raise ValueError("require distinct divisors k < l of (p-1)/4")
 
-    s = l // k
     q_k, q_l = 4 * k - 1, 4 * l - 1
     n_k, n_l = p - base // k, p - base // l
     M_k, M_l = k * n_k, l * n_l
-    g = math.gcd(n_k, s - 1)
-    shared = k * g
+    shared = math.gcd(M_k, l - k)
     modulus = math.lcm(q_k, q_l)
 
     if math.gcd(M_k, M_l) != shared:
-        raise AssertionError("chain gcd formula failed")
+        raise AssertionError("scale-pair gcd formula failed")
     if M_l <= M_k:
         raise AssertionError("larger scale must have larger preserved denominator")
+    scale_relation = "noncomparable"
+    s: int | None = None
+    if l % k == 0:
+        s = l // k
+        if shared != k * math.gcd(n_k, s - 1):
+            raise AssertionError("comparable-scale specialization failed")
+        scale_relation = "chain"
 
     left = source_menu(p, k, spf) & source_menu(p, l, spf)
     right = {
@@ -81,12 +86,13 @@ def collision_state(p: int, k: int, l: int, spf: list[int]) -> dict[str, object]
         "prime": p,
         "k": k,
         "l": l,
+        "relation": scale_relation,
         "s": s,
         "n_k": n_k,
         "n_l": n_l,
         "M_k": M_k,
         "M_l": M_l,
-        "g": g,
+        "g": shared if s is None else math.gcd(n_k, s - 1),
         "shared_gcd": shared,
         "lcm_modulus": modulus,
         "range_bound": range_bound,
@@ -101,6 +107,7 @@ def verify() -> dict[str, object]:
     controls = (
         (193, 1, 2, True),
         (409, 2, 6, True),
+        (97, 4, 6, True),
         (97, 2, 12, False),
         (193, 1, 6, False),
     )
