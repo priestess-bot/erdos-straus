@@ -4060,13 +4060,18 @@ F/G sink 终止。奇主阶记录现也可先检查完整 CRT 分量：从负记
 \(R\to R/\ell^2\) 的 square-peel 严格下降退出；若 \(\ell\nmid R\)，则
 \(\ell\mid K\Longleftrightarrow\ell\mid p+1\)，所以 \(\ell\equiv3\pmod4\)、
 \(\ell\mid K\) 时直接转入已有 \(p+1\) 短终端。odd-Hall 的首要缺口因而收缩为
-\(\ell\nmid R\) 且不满足该门的 **full-component residual**，它才需要 owner/source-map
-或另一条良基下降。详见
+\(\ell\nmid R\) 且不满足该门的 full-component 相位还必须通过 component-torsion
+秩门：若同一 \(\ell\) 的带来源相位 span 至少二维，某个非零组合必在一个完整分量上
+消失，重新进入严格 CRT 递降。因此真正 residual 是 **rank-one full-component**，
+它才需要 owner/source-map 或另一条良基下降。详见
 [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](../claims/type-I-pure-dyadic-half-power-crt-rechart-descent.md)。
 
 奇主阶的对应构造与 \(p=73,R=95\) 的实际 F 控制、\(\ell\mid R\) 的完整分量控制
 和 \(p=97,R=67\) 的全支撑障碍见
 [奇主阶记录的完整分量核、CRT 重图表递降与全支撑障碍](../claims/type-I-odd-primary-component-kernel-crt-rechart-descent.md)。
+
+组合相位的秩坍缩与 \(p=73,R=63\) 的真实秩二控制见
+[奇主阶相位的完整分量秩坍缩与严格重图表](../claims/type-I-odd-primary-component-torsion-rank-collapse.md)。
 
 ## 2026-08-09：odd-Hall 横向秩的正确载体是参数纤维关联格
 

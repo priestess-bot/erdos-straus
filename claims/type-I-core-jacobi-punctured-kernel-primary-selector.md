@@ -27,8 +27,9 @@ statement: >-
   完整 kernel source box 与全局 E5 仍未证明。奇主阶记录若在某个完整 CRT
   素数幂分量上为 1，则现可直接进入图表无关标记与不可逆 CRT_DESCENT 的严格
   降 R 重图表；全分量非平凡时，ell|R 由带名 torsion-square peel 严格降低 R，
-  而 ell 不整除 R 且 ell=3 (mod 4)、ell|K 时进入 p+1 终端；只有其余 residual
-  记录仍转交 odd-owner/source-map。多个独立角色的纯代数层容量已有
+  而 ell 不整除 R 且 ell=3 (mod 4)、ell|K 时进入 p+1 终端；若同一 ell 的
+  记录相位空间秩至少为二，则组合相位再次给出完整 component kernel 和严格降 R；
+  只有 rank-one full-component residual 仍转交 odd-owner/source-map。多个独立角色的纯代数层容量已有
   障碍商短正合列和精确上尾 Hall 判据；真实物理边仍需范围、标签与 occurrence 门。
   纯二进盒外关系则可由半幂对合规范分裂 R，并在终端门失败时
   进入图表无关标记与不可逆 phase 支付的严格降 R 重图表；故只剩奇阶支仍未闭合。
@@ -42,6 +43,7 @@ depends_on:
   - type-I-generalized-dyadic-exact-relation-capacity
   - type-I-pure-dyadic-half-power-crt-rechart-descent
   - type-I-odd-primary-component-kernel-crt-rechart-descent
+  - type-I-odd-primary-component-torsion-rank-collapse
   - type-II-source-fiber-finite-abelian-composition-relay
   - type-I-odd-owner-nonadjacent-common-base-next-layer-lift
   - type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -772,7 +774,8 @@ EXACT_TYPE_I_HIT
             -> ODD_PRIMARY_COMPONENT_KERNEL_CRT_RECHART
             -> ODD_PRIMARY_TORSION_SQUARE_PEEL_RECHART
             -> FULL_COMPONENT_P_PLUS_ONE_TERMINAL
-            -> ODD_PRIMARY_FULL_COMPONENT_RESIDUAL
+            -> ODD_PRIMARY_COMPONENT_TORSION_RANK_RECHART
+            -> ODD_PRIMARY_COMPONENT_TORSION_RANK_ONE_RESIDUAL
                 -> MASKED_PRIME_LAYER_FLAG
 ```
 
@@ -821,7 +824,8 @@ recursive_edge_eligible = false
 由 \(R\to R_*<R\) 的严格 CRT 边退出；full-component 情形若 \(\ell\mid R\)，
 则精确 \(\ell\)-扭量给出 \(R\to R/\ell^2\) 的严格 square-peel 边；若
 \(\ell\nmid R\)、\(\ell\equiv3\pmod4\) 且 \(\ell\mid K\)，则转入 \(p+1\)
-短终端；仅 `ODD_PRIMARY_FULL_COMPONENT_RESIDUAL` 保留给 owner/source-map。
+短终端；若该 \(\ell\) 的带来源 component-torsion span 秩至少为二，组合相位仍给出
+严格 \(R\) 递降；仅 `ODD_PRIMARY_COMPONENT_TORSION_RANK_ONE_RESIDUAL` 保留给 owner/source-map。
 纯二进盒外分支在图表无关 marking 和不可逆 CRT_DESCENT phase 均登记后可使用
 
 ```text
