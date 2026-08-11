@@ -4073,6 +4073,20 @@ F/G sink 终止。奇主阶记录现也可先检查完整 CRT 分量：从负记
 组合相位的秩坍缩与 \(p=73,R=63\) 的真实秩二控制见
 [奇主阶相位的完整分量秩坍缩与严格重图表](../claims/type-I-odd-primary-component-torsion-rank-collapse.md)。
 
+rank-one full-component residual 的 E1/source-role 缺口现可按原始 record phase
+\(s_z=-\Phi(z)\) 的有限群角色高度精确分流，而不能只看规范 top torsion
+\(\omega_z\)：令 \(H\) 为 \(K\) 的素因子生成群，
+\(h=\max\{j:s_z\in H^{\ell^j}\}\)。则 \(h+1\) 恰为检测 \(s_z\) 的最小
+\(\ell\)-primary cyclic character height，并且 character 与 \(\Phi\) 的复合把
+实际反向负记录对的差 \(2z\) 送到非零元。\(h=0\) 时这给出 whole-ambient
+\(C_\ell\) pullback、真实 \(\operatorname{SOURCE\_RANK\_DEMAND}(\ell,1)\) 和
+零 source-line q-height；\(h>0\) 时所有 elementary \(C_\ell\) character 都杀掉
+该 record phase，精确转交高 primary carrier。特别地，\(p=2521\) 的 \(s_z\) 已在
+\(C_3\) 可见，但其 \(\omega_z\) 直到 \(C_{81}\) 才可见，故以 \(\omega_z\) 的
+可见性拒绝该 record source 是错误的。此结果只关闭 source admission，不替代
+occurrence、target state 或 E4/E5。详见
+[奇主阶记录的最小角色高度与反向对来源准入](../claims/type-I-odd-primary-character-height-antipodal-source-admission.md)。
+
 ## 2026-08-09：odd-Hall 横向秩的正确载体是参数纤维关联格
 
 固定 Type II 参数纤维 \((D,A)\) 时，owner 标签就是 \(s=AD\)，所以
