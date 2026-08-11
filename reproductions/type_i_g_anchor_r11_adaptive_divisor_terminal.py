@@ -170,6 +170,82 @@ def verify_two_nonresidue_box_miss() -> dict[str, object]:
     return {"ell": ell, "m": other, "N": N, "p": p, "residues": sorted(residues)}
 
 
+def r11_divisor_box_residues(factors: tuple[tuple[int, int], ...]) -> set[int]:
+    """Return residues of all divisors of the square of a factored integer."""
+    residues = {1}
+    for prime, exponent in factors:
+        if not is_prime(prime) or exponent <= 0 or prime % 11 == 0:
+            raise AssertionError("factorization is not a valid mod-11 unit factorization")
+        residues = {
+            residue * pow(prime, power, 11) % 11
+            for residue in residues
+            for power in range(2 * exponent + 1)
+        }
+    return residues
+
+
+def classify_r11_fixed_tail_miss(factors: tuple[tuple[int, int], ...]) -> dict[str, object]:
+    """Check the exact mod-11 factor-pattern classification of a box miss."""
+    numerator = 1
+    total_two = 0
+    total_six = 0
+    all_quadratic_residues = True
+    paired_two_six_with_one_tail = True
+    for prime, exponent in factors:
+        numerator *= prime**exponent
+        residue = prime % 11
+        if residue == 2:
+            total_two += exponent
+        elif residue == 6:
+            total_six += exponent
+        if residue not in {1, 3, 4, 5, 9}:
+            all_quadratic_residues = False
+        if residue not in {1, 2, 6}:
+            paired_two_six_with_one_tail = False
+
+    if numerator % 11 != 1:
+        raise AssertionError("R=11 numerator must be 1 modulo 11")
+    residues = r11_divisor_box_residues(factors)
+    box_miss = not residues.intersection({7, 8, 10})
+    predicted_miss = all_quadratic_residues or (
+        total_two == 1 and total_six == 1 and paired_two_six_with_one_tail
+    )
+    if box_miss != predicted_miss:
+        raise AssertionError("R=11 fixed-tail residual classification changed")
+    return {
+        "N": numerator,
+        "factorization": list(factors),
+        "box_residues": sorted(residues),
+        "box_miss": box_miss,
+        "all_quadratic_residues": all_quadratic_residues,
+        "two_class_multiplicity": total_two,
+        "six_class_multiplicity": total_six,
+        "paired_two_six_with_one_tail": paired_two_six_with_one_tail,
+    }
+
+
+def verify_fixed_tail_residual_classification() -> list[dict[str, object]]:
+    """Exercise both residual types and two constructive escape mechanisms."""
+    controls = (
+        ((67, 1),),
+        ((3, 1), (37, 1)),
+        ((13, 1), (17, 1)),
+        ((3, 1), (13, 1), (17, 1), (37, 1)),
+        ((3, 1), (13, 2)),
+    )
+    results = [classify_r11_fixed_tail_miss(factors) for factors in controls]
+    if not (
+        results[0]["box_miss"]
+        and results[1]["box_miss"]
+        and results[2]["box_miss"]
+        and not results[3]["box_miss"]
+        and not results[4]["box_miss"]
+        and results[2]["box_residues"] == [1, 2, 3, 4, 6]
+    ):
+        raise AssertionError("R=11 residual controls ceased to separate the cases")
+    return results
+
+
 CONTROLS = (
     (313, 41),
     (601, 19),
@@ -190,6 +266,7 @@ def build_result() -> dict[str, object]:
     rays = [verify_dirichlet_ray(divisor=r) for r in (19, 41, 63)]
     self_loop_intersection = verify_raw_self_loop_intersection()
     two_nonresidue_miss = verify_two_nonresidue_box_miss()
+    residual_classification = verify_fixed_tail_residual_classification()
     if terminals[0]["third_denominator"] != 269493:
         raise AssertionError("p=313 control changed")
     if terminals[1]["third_denominator"] != 993453:
@@ -207,6 +284,7 @@ def build_result() -> dict[str, object]:
         "primitive_dirichlet_rays": rays,
         "raw_self_loop_terminal_intersection": self_loop_intersection,
         "two_nonresidue_box_miss": two_nonresidue_miss,
+        "fixed_tail_residual_classification": residual_classification,
     }
 
 
