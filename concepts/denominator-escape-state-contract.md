@@ -1295,6 +1295,14 @@ E1 必须保存实际 bottom path、被选坐标和 gcd 等式；E2--E3 从原�
 \(q\)。完整证明见
 [Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](../claims/type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
 
+这里的 G 出口不得自动改写成 \(R=3\) Type I 成功。令
+\(X=(p+3)/4\)、\(N=(3p+1)/4\)。前者的全部素因子为 \(1\pmod3\) 恰等价于
+\(q=1\) Type II 为 G 及 gap 3 失败；后者的全部素因子为 \(1\pmod3\) 恰等价于
+\(R=3\) Type I 为 G 及既有 \((3p+1)/4\) 标记源为空。\(p=241\) 已使两者同时
+发生；\(p=2521\) 更同时逃过 gaps \(3,7,11,15,19\)。所以 `q_one_G_to_R_three`
+只能是重新分类，不能登记 terminal、真分母递降或新的 E4。精确反例见
+[模三双 G 出口的精确等价与小缺口严格反例](../claims/type-I-type-II-mod-three-double-g-exit-obstruction.md)。
+
 对非平凡 `marked_solution_set`，非终端边只有在目标状态逐字保留同一个 mark 谓词时
 才可使用恒等 lift；普通短证书还必须另验 mark membership，不能自动登记 marked
 terminal。
@@ -1325,6 +1333,7 @@ phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许
 | overflow 固定-n 的有界除子 \(L\mid Md\) | 只有 \(A<L\le B_p\)、\(4L>n\) 且严格外层势下降时才是 overflow_fixed_n_bounded_divisor_outer_rank_v1；\(A\nmid L\) 时必须显式支付 support reset，候选集为空不能伪造后继 |
 | d=1 overflow 的 \(p-2\) G 重图表 | \(M\bmod p=(p-1)/4\) 只给出普适 G 分离和空支撑纤维；它丢弃旧支撑，不能作为 RESET 或恒等 marked lift |
 | overflow 余数 \(r=1\) 的对称边界 | \(s=1\)、\(d=(p-1)/4\)，两侧固定为 \((p-2,(p-1)^2/4)\) 与 \((3,(3p+1)/4)\)；不自动支付旧 support，不能作为新的递归出口 |
+| \(q=1\) Type II G 改挂到 \(R=3\) Type I | 两个模三源群可以同时为 G；\(p=2521\) 还逃过 gaps \(3,7,11,15,19\)，所以伴随换图表不是终端或真分母递降 |
 | 反复令 \(M\leftarrow\operatorname{lcm}(A,d)\) | determinant/lcm 更新存在精确二环，未给出全局良基量 |
 
 ## 8. 验收表

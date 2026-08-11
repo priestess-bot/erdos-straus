@@ -6456,3 +6456,37 @@ Type II endpoint phase。禁止该 phase 重入更大的 \(q\) 后，relation SC
 
 完整证明与聚焦验证见
 [Type II 关系 Reach 的 \(q\)-owned gcd shadow 全称端点递降](../claims/type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
+
+## 2026-08-12：模三双 G 严格反例排除最小伴随出口
+
+Type II gcd-shadow 链到达 \(q=1\) 后，唯一非终端情形是 G。令
+
+\[
+X=\frac{p+3}{4},
+\qquad
+N=\frac{3p+1}{4}.
+\]
+
+\(q=1\) Type II 为 G，当且仅当 \(X\) 的全部素因子均为
+\(1\pmod3\)；这也正是 gap 3 完整失败。伴随的 \(R=3\) Type I 中心图表为
+G，当且仅当 \(N\) 的全部素因子均为 \(1\pmod3\)；这又正是既有
+\((3p+1)/4\) 标记递降源集为空。因此两个最小模三出口具有相同的局部角色形状，
+但作用在不同线性型上，不能互相补足。
+
+最小双 G 控制是 \(p=241\)，其中 \(X=61,N=181\)；它由 gap 7 终止。
+更强的 \(p=2521\) 满足
+
+\[
+X=631,
+\qquad
+N=1891=31\cdot61,
+\]
+
+仍为双 G，而且 gaps \(3,7,11,15,19\) 的完整平方除子谱都避开 Type I/II
+目标。其首个短证书到 gap 23 才出现：\(x=636,d=8\) 是 Type II 证书。
+所以 G 出口不能只依赖 \(R=3\) 伴随图表、\((3p+1)/4\) 递降或截到 19 的固定
+小缺口扇。下一条正向构造必须读取跨模数除子谱、实际 Type I source，或真正改变
+三个尾结构的较小分母提升。
+
+完整证明与聚焦验证见
+[模三双 G 出口的精确等价与小缺口严格反例](../claims/type-I-type-II-mod-three-double-g-exit-obstruction.md)。
