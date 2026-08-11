@@ -397,6 +397,9 @@ d=1,196.
 式 (32) 完成的是同一除子纤维内的 physical occurrence、指数预算和范围门；它没有
 证明每个核心素数至少有一个非空纤维。空盒仍须转交其它 Type I/II 参数纤维，或构造
 满足 E1--E5 的严格可提升递降。这是当前“带权奇核空盒转交”目标剩余的决定性一侧。
+自然物理权最小溢出并不自动提供这条边：已有端点状态会把全部最小权放在 Jacobi
+中性载体而非负源上，且局部共享缺口和直接载体删除同时失败。见
+[\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
 
 聚焦验证：
 

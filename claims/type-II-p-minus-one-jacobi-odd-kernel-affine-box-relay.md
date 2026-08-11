@@ -430,6 +430,13 @@ F 空盒的奇核坐标和可复核空证书。
 跨状态 owner 流中产生候选需求，仍需执行该跨状态合同自己的 source-column、SNF 和
 E4/E5；本引理与反足物理容量定理关闭的是同一除子纤维的完整正分支。
 
+进一步按自然物理权最小化盒外整数表示也不能自动完成最后一支：
+\(p=67369\) 的 \(q=21,42\) 最小权轨道都只在 Jacobi 中性载体 \(3\mid q\)
+上越界，负源没有溢出；局部共享缺口与 \(q\mapsto q/3\) 重图表也都不闭合。
+因此后续转交必须显式增加 neutral-carrier adapter，不能把全部盒外需求注入
+\(\mathcal N_q(p)\)。严格反例见
+[\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
+
 聚焦验证：
 
 ~~~bash

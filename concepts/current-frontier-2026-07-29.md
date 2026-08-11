@@ -2,7 +2,7 @@
 kind: concept
 concept_id: current-frontier-2026-07-29
 title: 当前证明前沿与下一阶段发展目标
-summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。当前决定性前沿是把奇核/一般有限阿贝尔空盒转成交替 Type I/II 参数纤维或具备 E1--E5 的良基下降；只有跨状态收费仍需要 owner/source-column Hall 与严格容量缺口分派。
+summary: 完整目标纤维、raw Reach 和 complete-excess bundle 已把核心图表压成直接 Type I、marked absorb 或 overflow。显式 universal p-source 关闭裸 G source 缺口；fixed-n 因子图谱把有界除子递降规范化为取最大合格 L；精确秩 (floor(B_p/A),K/A) 已删除同图表支撑升级的 M≤B_p 上界，并把所有 A≤B_p complete-excess target 升级为严格边。对 A>B_p，rank-aware sink-bundle 选择器以真实余因子标价；规范目标现有精确 carry 公式。最小 C=2 高支撑边界现已全称证明所有 complete-excess 候选严格上升；其 n=p-1 自然标记又由反足 Vieta 递降证明对每个核心素数都为空。该前驱的全部双尾保持 D-only 尝试精确坍缩为有限跨图表 centered Type I 终端菜单与全空 non-source 菜单；全部 p-1 等尾显式单标记也只会源缺失、直接终端或目标纤维为空。p-1 因子 Type II 的端点函数现已证明沿源秩整除单调；所有端点可行 q 因而形成 U=(p-1)/4 因子格中的下闭容量域，并由唯一最小禁止反链编码素数幂和跨素数联合容量。Jacobi 角色现已由二次互反精确定位到严格源 r+1 的负素因子，并压缩为规范的 rank-one C2 源关系行：空负源统一给 G，非空负源只产生一个二进制方向，其 box 投影已饱和。每个非空奇核 parity 盒又由反足补除子对合精确分成同量的 d<x 与 d>x 两半，因此同纤维 physical occurrence、指数预算和范围门已经闭合为直接 Type II terminal；该命中结论同时适用于一般有限阿贝尔源群。p=67369 的反链只有 401，允许域恰为 q|42；五张 G 与三张 F 证书全部为空，再由 gap-31 Type I 终端接管。自然物理权最小溢出不必位于 Jacobi 负源：q=21,42 的最小权均由中性载体 3 承担，局部共享缺口与 q->q/3 都不闭合。当前决定性前沿是为 neutral-carrier overflow 构造真实 source-switch/alternate 或 E1--E5 适配器，再把奇核及一般有限阿贝尔空盒转成交替 Type I/II 参数纤维或良基下降；只有跨状态收费仍需要 owner/source-column Hall 与严格容量缺口分派。
 topics:
 - research-map
 - proof-program
@@ -58,6 +58,8 @@ sources:
   role: Type-II-symmetric-fiber-antipodal-physical-capacity-and-range-terminal
 - claim: type-II-p-minus-one-jacobi-odd-kernel-affine-box-relay
   role: cyclic-Jacobi-C2-stripping-odd-kernel-terminal-and-affine-box-no-go
+- claim: type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go
+  role: physical-weight-minimum-neutral-carrier-and-local-transfer-no-go
 - claim: type-I-overflow-a-one-generic-determinant-boundary
   role: corrected-A-one-small-carrier-scope-and-negative-boundary
 - claim: type-I-overflow-a-one-dual-outer-rank-reset
@@ -6227,3 +6229,36 @@ z_j\mapsto-z_j\quad(j\notin\mathcal N).
 映到另一 Type I/II 参数纤维、或具备 E1--E5 的严格递降时，才需要跨状态物理容量。
 完整证明见
 [Type II 对称除子纤维的反足物理容量与逐奇核模式终端](../claims/type-II-symmetric-divisor-fiber-antipodal-physical-capacity-terminal.md)。
+
+## 2026-08-11：自然物理权最小溢出落在中性载体，三条局部桥被否定
+
+对奇核空盒外的完整整数目标表示定义
+
+\[
+W(z)=\prod_{\ell\mid x}\ell^{(|z_\ell|-v_\ell(x))_+}.
+\]
+
+这是超出 \(x^2\) 可用 occurrence 或清除形式分母所需层数的精确乘法权。
+\(z\mapsto-z\) 保持目标和 \(W\)，而 \(W\le B\) 自动把每个坐标限制在
+\(v_\ell(x)+\lfloor\log_\ell B\rfloor\) 内，因此最小权层是可完整复核的有限对象。
+
+对 \(p=67369\) 的两个 F 空盒得到：
+
+- \(q=21\) 的全局最小权为 \(3\)，唯一轨道由
+  \((-2,1,0,-1)\) 及其反足组成；
+- \(q=42\) 的全局最小权也为 \(3\)，唯一轨道由
+  \((-2,3,-1,1)\) 及其反足组成。
+
+两者都只在 Jacobi 中性载体素数 \(3\mid q\) 上越界，负源 \(73\) 或 \(67\)
+保持在原预算内。因此“最小溢出必注入负源碰撞槽”的候选桥是假的。
+
+局部终端也不随最小权自动出现。两条最小关系的 \(A+B\) 分别为
+\(664=2^3\cdot83\) 与 \(1837=11\cdot167\)，其全部合法共享缺口 \(83\) 及
+\(11,167\) 都没有 Type I/II。删除溢出载体得到的 \(q=7,14\) 仍分别在缺口
+\(27,55\) 为空。\(q=42\) 的另一个未加权单位轨道在缺口 \(59\) 确有 Type I，
+但它的物理权为 \(7\)，说明单位层并列与物理最小不能互换。
+
+由此当前最小正问题改为：为 `NEUTRAL_CARRIER_OVERFLOW` 构造一个不只依赖溢出
+位置和权值的适配器。它需要联合其它轨道或其它端点状态，并实际输出 alternate
+Type I/II，或满足 E1--E5 的 source-switch/良基下降。完整反例与聚焦验证见
+[\(p-1\) Type II 奇核空盒的物理权最小溢出与中性载体 no-go](../claims/type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md)。
