@@ -77,6 +77,35 @@ def verify_adaptive_divisor_terminal(*, p: int, divisor: int) -> dict[str, int]:
     }
 
 
+def verify_full_r11_box_terminal(*, p: int, divisor: int) -> dict[str, int]:
+    """Check one of the three exact residue classes in the full R=11 box."""
+    if not is_prime(p) or p % 24 != 1:
+        raise AssertionError("input is not a core prime")
+    h = (p - 1) // 24
+    N = 22 * h + 1
+    if divisor <= 0 or N * N % divisor:
+        raise AssertionError("full R=11 box divisor failed")
+    powers = {8: 0, 10: 1, 7: 2}
+    if divisor % 11 not in powers:
+        raise AssertionError("full R=11 box residue failed")
+    K = 3 * N
+    e = 3**powers[divisor % 11] * divisor
+    if K * K % e or e % 11 != (-K) % 11:
+        raise AssertionError("full R=11 box did not recover the fixed-tail divisor")
+    u = (K + e) // 11
+    v = (K + K * K // e) // 11
+    if not (
+        (K + e) % 11 == 0
+        and (K + K * K // e) % 11 == 0
+        and (11 * u - K) * (11 * v - K) == K * K
+        and u > 0
+        and v > 0
+    ):
+        raise AssertionError("full R=11 box factorization changed")
+    assert_egyptian_identity(p, (u, v, p * K))
+    return {"p": p, "h": h, "N": N, "d": divisor, "e": e, "u": u, "v": v}
+
+
 def verify_dirichlet_ray(*, divisor: int) -> dict[str, int]:
     """Check the primitive progression attached to one allowed divisor."""
     if divisor <= 1 or divisor % 2 == 0 or divisor % 11 != 8 or gcd(divisor, 22) != 1:
@@ -121,10 +150,17 @@ CONTROLS = (
     (1993, 63),
 )
 
+FULL_BOX_CONTROLS = (
+    (313, 7),
+    (313, 41),
+    (2017, 43),
+)
+
 
 def build_result() -> dict[str, object]:
     """Return terminal and progression receipts without a coverage scan."""
     terminals = [verify_adaptive_divisor_terminal(p=p, divisor=r) for p, r in CONTROLS]
+    full_box = [verify_full_r11_box_terminal(p=p, divisor=d) for p, d in FULL_BOX_CONTROLS]
     rays = [verify_dirichlet_ray(divisor=r) for r in (19, 41, 63)]
     self_loop_intersection = verify_raw_self_loop_intersection()
     if terminals[0]["third_denominator"] != 269493:
@@ -140,6 +176,7 @@ def build_result() -> dict[str, object]:
             "the terminal is direct and does not assert global coverage."
         ),
         "terminal_controls": terminals,
+        "full_box_controls": full_box,
         "primitive_dirichlet_rays": rays,
         "raw_self_loop_terminal_intersection": self_loop_intersection,
     }
