@@ -9,6 +9,7 @@ review_status: internal_review
 depends_on:
   - type-I-high-support-c2-boundary-carry-dyadic-capacity-transduction
   - type-I-high-anchor-cofactor-macro-e1-e4-admission
+  - type-I-overflow-d-one-p-minus-two-g-rechart
   - type-I-overflow-cofactor-r-chart-support
 topics:
   - type-I
@@ -199,6 +200,18 @@ R_T=4r-s=p-2<p.
 \]
 
 它也不可能是该 high-anchor macro 所要求的高 target。
+
+而且这个形式图表不是一张遗漏的中心 terminal。由
+
+\[
+K_T=rC_M=\frac{(p-1)^2}{4}=B_p
+\tag{14a}
+\]
+
+可见它精确等于既有 \(d=1\) overflow 的 \(p-2\) 重图表。该图表对每个核心
+素数都是 G：其 \(K_T\)-支撑在模 \(p-2\) 的 Jacobi 角色上全为正，而 \(-1\)
+为负。因此即使非法忽略旧 support gate，(14) 也不会产生中心 Type I 终端；它只是
+已知的 G 入口，仍需要独立的全局出口。
 
 因此有全称结论
 
