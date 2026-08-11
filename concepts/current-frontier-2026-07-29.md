@@ -4054,10 +4054,11 @@ Type I；\(R_*\mid p+4\) 给出 \(D=1\) Type II；关系盒命中只先给算术
 这关闭了 `SCALED_RELATION_OUTSIDE_DYADIC_BOX` 的结构分派，但没有证明下降后的
 F/G sink 终止。奇主阶记录现也可先检查完整 CRT 分量：从负记录规范抽出的精确
 \(\ell\)-阶元若在任何完整素数幂分量上为 \(1\)，则该分量和其余分量给出互素真因子，
-唯一 \(3\pmod4\) 因子以同一 `CRT_DESCENT` 势严格降低 \(R\)。所以 odd-Hall 的
-首要缺口收缩为 **full-component support** 记录，即该 \(\ell\)-阶元在每个完整
-素数幂分量都非平凡；这只是此 CRT 构造的精确障碍，仍需 owner/source-map 或另一条
-良基下降。详见
+唯一 \(3\pmod4\) 因子以同一 `CRT_DESCENT` 势严格降低 \(R\)。full-component
+记录还满足一个 cyclotomic 门：若 \(\ell\nmid R\)，则 \(R\equiv1\pmod\ell\) 且
+\(\ell\mid K\Longleftrightarrow\ell\mid p+1\)；所以 \(\ell\equiv3\pmod4\)、
+\(\ell\mid K\) 时直接转入已有 \(p+1\) 短终端。odd-Hall 的首要缺口因而收缩为
+不满足该门的 **full-component residual**，它才需要 owner/source-map 或另一条良基下降。详见
 [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](../claims/type-I-pure-dyadic-half-power-crt-rechart-descent.md)。
 
 奇主阶的对应构造与 \(p=73,R=95\) 的实际 F 控制、\(\ell\mid R\) 的完整分量控制

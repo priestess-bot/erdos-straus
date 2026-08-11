@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 from math import gcd
 
 from type_i_core_jacobi_punctured_kernel_primary_selector import (
@@ -148,6 +149,26 @@ def verify() -> None:
         "kernel": 1,
         "complement": 67,
     }
+
+    p97_p_plus_one = odd_primary_data(97, 43, 1043, (0, 1), 7)
+    assert p97_p_plus_one == {
+        "phase": 20,
+        "normalized": 23,
+        "source_order": 21,
+        "ell": 7,
+        "a": 1,
+        "k": 3,
+        "delta": 2,
+        "omega": 4,
+        "kernel": 1,
+        "complement": 43,
+    }
+    q = p97_p_plus_one["ell"]
+    assert q % 4 == 3 and 1043 % q == 0 and 43 % q != 0
+    h = (97 + 1) // q
+    C = (97 + q) // 4
+    assert Fraction(4, 97) == Fraction(1, C) + Fraction(1, C * h) + Fraction(1, 97 * C * h)
+    assert (q - 1) * h < 97
 
     print("verified odd-primary component-kernel CRT rechart controls")
 

@@ -13,14 +13,17 @@ statement: >-
   若 R_0>1，则 R_0,R_1 是互素真因子；其中唯一的 3 (mod 4) 因子 R_*<R
   给出 K_*=(pR_*+1)/4、恒等解提升 Sol(4,p)->Sol(4,p)，以及在既有
   CRT_DESCENT 调度下由 (epsilon_CRT,R) 严格降低的完整 E1--E5 重图表边。
-  若 R_0=1，则输出 ODD_PRIMARY_FULL_COMPONENT_SUPPORT：该精确障碍只说明
-  此奇主阶记录没有非平凡完整 CRT kernel 分量，不能推出不存在别的 source、终端或递降。
+  若 R_0=1 且 ell 不整除 R，则 R=1 (mod ell) 且 ell|K 当且仅当 ell|p+1；
+  所以 ell=3 (mod 4)、ell|K 时已有 p+1 B=1 Type I 终端。其余情形输出
+  ODD_PRIMARY_FULL_COMPONENT_RESIDUAL：它只说明此记录没有非平凡完整 CRT kernel
+  分量且未触发该 p+1 门，不能推出不存在别的 source、终端或递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-core-jacobi-punctured-kernel-primary-selector
   - type-I-pure-dyadic-half-power-crt-rechart-descent
+  - type-I-p-plus-one-b1-upper-bridge
   - type-I-canonical-complete-support-rechart-g-obstruction
   - denominator-escape-state-contract
 topics:
@@ -38,6 +41,8 @@ sources:
     role: Jacobi-negative-record-and-odd-Hall-input
   - claim: type-I-pure-dyadic-half-power-crt-rechart-descent
     role: shared-chart-independent-lift-and-CRT-phase-policy
+  - claim: type-I-p-plus-one-b1-upper-bridge
+    role: full-component-p-plus-one-terminal
   - reproduction: reproductions/type_i_odd_primary_component_kernel_crt_rechart_descent.py
     role: focused-primary-extraction-component-split-and-obstruction-controls
 visibility: public
@@ -88,8 +93,8 @@ k=\frac{\operatorname{ord}(s)}{\ell^a},\qquad
 \(\Phi(kz)=-v\)，而 \(\delta=2\) 消去该负号。因此
 
 \[
-\omega=v^{\delta\ell^{a-1}},qquad
-\operatorname{ord}_R(\omega)=\ell,qquad
+\omega=v^{\delta\ell^{a-1}},\qquad
+\operatorname{ord}_R(\omega)=\ell,\qquad
 \Phi(\lambda)=1.
 \tag{5}
 \]
@@ -201,7 +206,8 @@ core_odd_primary_component_kernel_crt_rechart_v1
 \text{odd-primary Jacobi record}+R_0>1
 &\Longrightarrow&\text{terminal 或严格可提升 }R\to R_*\text{ rechart},\\
 \text{odd-primary Jacobi record}+R_0=1
-&\Longrightarrow&\texttt{ODD\_PRIMARY\_FULL\_COMPONENT\_SUPPORT}.
+&\Longrightarrow&\text{(17) 的 }p+1\text{ terminal，或 }
+\texttt{ODD\_PRIMARY\_FULL\_COMPONENT\_RESIDUAL}.
 \end{array}}
 \tag{13}
 \]
@@ -209,35 +215,97 @@ core_odd_primary_component_kernel_crt_rechart_v1
 第二行只阻断本卡的 component-kernel CRT 构造；它仍应转交已有的 odd-Hall
 Fourier/source 选择器，而不是升级成无解声明。
 
-## 4. 聚焦控制
+## 4. 全分量支撑的 cyclotomic 同余门
+
+现在设 \(R_0=1\)。这意味着 \(\omega\) 在每个完整 \(q^e\Vert R\) 分量上
+均有精确 \(\ell\) 阶。
+
+若 \(\ell\nmid R\)，则对每个 \(q^e\Vert R\)，都有 \(q\ne\ell\)。
+从 \(U(q^e)\) 降到 \(U(q)\) 的核是 \(q\)-群，不能杀掉非平凡的 \(\ell\)-阶元。
+故 \(\omega\) 模 \(q\) 仍有精确 \(\ell\) 阶，因而
+
+\[
+q\equiv1\pmod\ell\quad(q\mid R),
+\qquad R\equiv1\pmod\ell.
+\tag{14}
+\]
+
+代入 \(4K=pR+1\) 得到精确等价
+
+\[
+\boxed{\ell\nmid R\quad\Longrightarrow\quad
+\ell\mid K\ \Longleftrightarrow\ \ell\mid p+1.}
+\tag{15}
+\]
+
+若 \(\ell\mid R\)，完整 \(\ell\)-幂分量也承载精确 \(\ell\) 阶。由于
+\(U(\ell)\) 的阶为 \(\ell-1\)，必有 \(\ell^2\mid R\)；另一方面
+\(4K=pR+1\equiv1\pmod\ell\)，所以
+
+\[
+\boxed{\ell\mid R\quad\Longrightarrow\quad\ell^2\mid R,\quad\ell\nmid K.}
+\tag{16}
+\]
+
+式 (15) 与已有 \(p+1\) 上半区桥直接接合：若
+
+\[
+\boxed{R_0=1,\quad\ell\nmid R,\quad
+\ell\equiv3\pmod4,\quad\ell\mid K,}
+\tag{17}
+\]
+
+则 \(\ell\mid(p+1)/2\)。令 \(h=(p+1)/\ell\)，已有构造给出
+
+\[
+\frac4p
+=\frac1{(p+\ell)/4}
++\frac1{((p+\ell)/4)h}
++\frac1{p((p+\ell)/4)h},
+\tag{18}
+\]
+
+以及严格较小的上半区偶源 \(n=(\ell-1)h<p\)。因此不必把这类 full-component
+记录送往 owner/source-map。
+
+综合第 3 节，真正保留给 odd-owner/source-map 的回执是
+
+```text
+ODD_PRIMARY_FULL_COMPONENT_RESIDUAL
+```
+
+其条件是 \(R_0=1\)，并且不满足 (17)。它精确排除了本卡的 component-kernel CRT
+下降和 \(p+1\) 三模四短路，但仍不构成全局 no-go。
+
+## 5. 聚焦控制
 
 所有控制均从完整整数与原指数向量重算；它们验证的是本引理的输入和边界，
 不声称这些已知素数会绕过 terminal-first 调度。
 
-### 4.1 \(p=73,R=95\)：真实 F 记录给出严格 \(95\to19\)
+### 5.1 \(p=73,R=95\)：真实 F 记录给出严格 \(95\to19\)
 
 \[
-K=1734=2\cdot3\cdot17^2,qquad z=(0,-1,1),
-\qquad\Phi(z)=69,quad s=26,quad\operatorname{ord}(s)=3.
+K=1734=2\cdot3\cdot17^2,\qquad z=(0,-1,1),
+\qquad\Phi(z)=69,\quad s=26,\quad\operatorname{ord}(s)=3.
 \]
 
 所以 \(\ell=3,a=1,k=1,\delta=2\)，并有
 
 \[
-\omega=69^2=11\pmod {95},qquad
-R_0=5,\quad R_1=19,quad R_*=19,
+\omega=69^2=11\pmod {95},\qquad
+R_0=5,\quad R_1=19,\quad R_*=19,
 \quad K_*=347.
-\tag{14}
+\tag{19}
 \]
 
 这里 \(c=5\)，且 \(1734=5\cdot347-1\)、\(\gcd(1734,347)=1\)。
 故该实际 F 记录的奇主阶分量核给出严格重图表 \(95\to19\)。
 
-### 4.2 \(p=73,R=63\)：\(\ell\mid R\) 仍须按完整分量判断
+### 5.2 \(p=73,R=63\)：\(\ell\mid R\) 仍须按完整分量判断
 
 \[
-K=1150=2\cdot5^2\cdot23,qquad z=(-1,1,1),
-\qquad\Phi(z)=26,quad s=37,quad\operatorname{ord}(s)=3.
+K=1150=2\cdot5^2\cdot23,\qquad z=(-1,1,1),
+\qquad\Phi(z)=26,\quad s=37,\quad\operatorname{ord}(s)=3.
 \]
 
 抽取后 \(\omega=26^2=46\pmod {63}\)。它在 \(9\) 上恰为 \(1\)，
@@ -245,17 +313,35 @@ K=1150=2\cdot5^2\cdot23,qquad z=(-1,1,1),
 
 \[
 R_0=9,\qquad R_1=7,\qquad R_*=7,\qquad K_*=128.
-\tag{15}
+\tag{20}
 \]
 
 这说明只使用 \(\gcd(R,\omega-1)\) 的部分赋值会丢失关键语义；完整素数幂定义
 (6) 正确给出 \(63\to7\)。本素数另有既知 Type II 短证书，所以全局调度会更早终止。
 
-### 4.3 \(p=97,R=67\)：精确的全分量支撑障碍
+### 5.3 \(p=97,R=43\)：全分量支撑触发 \(p+1\) 终端
 
 \[
-K=1625=5^3\cdot13,qquad z=(-3,0),
-\qquad\Phi(z)=52,quad s=15,quad\operatorname{ord}(s)=11.
+K=1043=7\cdot149,\qquad z=(0,1),
+\qquad\Phi(z)=20,\quad s=23,\quad\operatorname{ord}(s)=21.
+\]
+
+取 \(\ell=7\)，则 \(a=1,k=3,\delta=2\)，并有 \(\omega=20^6=4\pmod {43}\)。
+这里 \(R_0=1\)，但 \(7\nmid43\)、\(7\mid1043\)、\(7\equiv3\pmod4\)。
+式 (17) 命中，且 (18) 具体为
+
+\[
+\frac4{97}=\frac1{26}+\frac1{364}+\frac1{35308}.
+\tag{21}
+\]
+
+该控制验证 full-component 不必一律进入 owner/source-map。
+
+### 5.4 \(p=97,R=67\)：精确的全分量残余
+
+\[
+K=1625=5^3\cdot13,\qquad z=(-3,0),
+\qquad\Phi(z)=52,\quad s=15,\quad\operatorname{ord}(s)=11.
 \]
 
 此时 \(\omega=52^2=24\pmod {67}\)，而 \(R=67\) 的唯一完整分量上
@@ -263,11 +349,12 @@ K=1625=5^3\cdot13,qquad z=(-3,0),
 
 \[
 R_0=1.
-\tag{16}
+\tag{22}
 \]
 
-输出 `ODD_PRIMARY_FULL_COMPONENT_SUPPORT`。这严格说明本卡不能从该 11 阶记录
-制造真 CRT kernel 分量；它不否定该状态的其它 odd-owner/source 路径。
+这里 \(11\nmid K\)，所以 (17) 也不命中。输出
+`ODD_PRIMARY_FULL_COMPONENT_RESIDUAL`。这严格说明本卡不能从该 11 阶记录制造真
+CRT kernel 分量或 \(p+1\) 三模四终端；它不否定该状态的其它 odd-owner/source 路径。
 
 ## 聚焦验证
 
@@ -275,5 +362,5 @@ R_0=1.
 python3 reproductions/type_i_odd_primary_component_kernel_crt_rechart_descent.py --verify
 ```
 
-验证器只重算三个控制的 Jacobi-negative 记录、奇主阶提取、完整分量核、
-中心恒等式和全支撑障碍；不运行历史扫描。
+验证器只重算四个控制的 Jacobi-negative 记录、奇主阶提取、完整分量核、
+中心恒等式、\(p+1\) 终端和全支撑残余；不运行历史扫描。

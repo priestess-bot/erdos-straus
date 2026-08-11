@@ -768,7 +768,8 @@ EXACT_TYPE_I_HIT
                  -> STRICT_CRT_RECHART
        -> ODD_HALL_FOURIER_SOURCE_RANK
             -> ODD_PRIMARY_COMPONENT_KERNEL_CRT_RECHART
-            -> ODD_PRIMARY_FULL_COMPONENT_SUPPORT
+            -> FULL_COMPONENT_P_PLUS_ONE_TERMINAL
+            -> ODD_PRIMARY_FULL_COMPONENT_RESIDUAL
                 -> MASKED_PRIME_LAYER_FLAG
 ```
 
@@ -814,8 +815,10 @@ recursive_edge_eligible = false
 ```
 
 奇主阶记录现在也先按完整素数幂分量检查：存在非平凡 component kernel 时，
-由 \(R\to R_*<R\) 的严格 CRT 边退出；仅 `ODD_PRIMARY_FULL_COMPONENT_SUPPORT`
-保留给 owner/source-map。纯二进盒外分支在图表无关 marking 和不可逆 CRT_DESCENT phase 均登记后可使用
+由 \(R\to R_*<R\) 的严格 CRT 边退出；full-component 情形若
+\(\ell\equiv3\pmod4\)、\(\ell\nmid R\) 且 \(\ell\mid K\)，则转入 \(p+1\)
+短终端；仅 `ODD_PRIMARY_FULL_COMPONENT_RESIDUAL` 保留给 owner/source-map。
+纯二进盒外分支在图表无关 marking 和不可逆 CRT_DESCENT phase 均登记后可使用
 
 ```text
 selector_status = verified_edge
