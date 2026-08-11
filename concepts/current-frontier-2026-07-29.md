@@ -6619,6 +6619,28 @@ terminal。仍未覆盖偶 \(h\) 或奇 \(h\) 的模-23 二次剩余支。
 完整证明与聚焦验证见
 [奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两尾递降](../claims/type-II-gap-23-odd-h-qnr-terminal-descent.md)。
 
+## 2026-08-12：\(h\equiv6\pmod8\) 的 gap-47 二次非剩余扩展
+
+gap 47 提供了另一个带 marked descent 的自适应出口。若
+\(p=24h+1\)、\(h\equiv6\pmod8\)，则
+
+\[
+x=\frac{p+47}{4}=6(h+2),\qquad48\mid x,\qquad
+n=\frac{p+47}{48}=\frac{h+2}{2}<p.
+\]
+
+于是 \(48^2\mid x^2\) 的小除子在模 47 中覆盖 17 个二次非剩余类
+
+\[
+\{5,10,11,13,15,22,23,26,30,31,35,39,41,43,44,45,46\}.
+\]
+
+对每类都有指定 \(d\mid x^2\)、\(d\le x\)、\(47\mid x+d\)，故 Type II terminal
+同时给出 \(n\) 上的非空两尾标记状态和不读取目标解的 lift。模 47 的六个剩余
+二次非剩余类 \(\{19,20,29,33,38,40\}\) 及其它 \(h\) 类保持未覆盖。控制
+\(p=2833\)、\(d=32\) 严格下降到 \(n=60\)。详见
+[\(h\equiv6\pmod8\) 时 gap-47 的 17 个二次非剩余终端与两尾递降](../claims/type-II-gap-47-h6-qnr-terminal-descent.md)。
+
 ## 2026-08-12：\(3p+4\) 内部 Type I 的可提升子族
 
 内部 \((A,B)=(4,3)\) Type I 证书 \(m\mid3p+4\)、\(m\equiv-p\pmod {48}\)
