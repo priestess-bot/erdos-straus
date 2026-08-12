@@ -611,6 +611,12 @@ D=(R-p-1,K)\mid p^2+p+1,
 
 这两个余项尚未闭合，故本卡不是 G/Type I global exit 的最终证明。
 
+后续的
+[\(a=1\) 任意长 \(p\)-primary 链与单轨道势 no-go](type-I-overflow-full-product-d-one-a-one-p-primary-chain-no-go.md)
+已经严格证明：主侧可以出现任意长有限 transient，甚至存在真实四周期；所以不能再用
+“连续剥离 \(p\) 的次数”完成这里的统一倒计时。不过 peeled node 的互补侧在固定周期
+中确实产生严格 \(p\)-free 出口，当前正确余项已进一步缩为双侧分支退出定理。
+
 ## 7. 聚焦回执
 
 ```bash

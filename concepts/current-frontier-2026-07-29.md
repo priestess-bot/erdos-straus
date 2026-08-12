@@ -6910,3 +6910,29 @@ p\nmid Q\Longleftrightarrow a>1.
 无条件严格降到 \(c\le p-2\)，不再有 arithmetic stutter。当前唯一算术边界只剩
 \(a=1\) 的继续真实 Reach；完整证明和固定回执见
 [p-free failure 真实剥离小锚点定理](../claims/type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md)。
+
+## 2026-08-12：\(a=1\) 单侧 \(p\)-主链的严格 no-go 与二叉余项
+
+最后的 \(a=1\) 类可写成单参数正规形
+
+\[
+b=2pr-1,\qquad n=(p+1)(2pr-1)-1,
+\]
+
+并令 \(H_j=1+p+\cdots+p^j\)。现在已证明：对每个有限 \(N\)，可用 CRT 选择
+\(r\)，使 \(H_0\to H_1\to\cdots\to H_N\) 成为真实容量剥离链，每条 departure
+bundle 都含恰一个 \(p\)-block。固定 \(p=73,r=4\,796\,963\) 还给出真实局部周期
+
+\[
+1\to74\to5403\to394420\to1.
+\]
+
+因此“连续主侧 \(p\)-peeling 次数”不能作为统一有界倒计时，也不能只沿一个容量后继
+证明良基性。这是对原研究策略的严格否定结果，不是猜想反例。
+
+同一个 peeled node 实际有两个容量分支。上述周期在互补侧到达
+\(5330\to3\leftrightarrow20\)，而锚点 3、20 的对侧 complete-excess bundle 已
+\(p\)-free，canonical target capacities 分别为 \(10,4<72\)。所以真正剩余的算术
+命题是双侧分支退出：证明任一非终端 \(a=1\) 状态总有一侧产生严格 \(p\)-free
+bundle，或给出覆盖整棵二叉 Reach 的良基势。完整量词、四周期和固定回执见
+[\(a=1\) 任意长 \(p\)-primary 链与单轨道势 no-go](../claims/type-I-overflow-full-product-d-one-a-one-p-primary-chain-no-go.md)。

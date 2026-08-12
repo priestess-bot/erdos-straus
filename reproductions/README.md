@@ -713,3 +713,9 @@ gap-\(31\) Type I 接管；不运行素数范围或历史测试。
 capacity；包含一个 \(e=2\) 且另一侧容量为 5 的 sharp 控制、一个非平凡 valuation
 correction \(J=3\)，以及一个 \(a=1\) 后 bundle 仍含 \(p\) 的边界。脚本不扫描
 素数、分母、历史 selector 或完整 Reach。
+
+`type_i_overflow_d_one_a_one_p_primary_chain_no_go.py` 固定重放 \(p=73\) 的真实
+四周期 \(1\to74\to5403\to394420\to1\)、四个含 \(p\) 的 complete-excess
+bundle、peeled node 的互补容量分支及锚点 3、20 的严格 \(p\)-free target
+capacities；另核对一个八条边的 \(H_j\) transient。任意有限长度由声明中的 CRT
+证明承担；脚本不扫描素数、分母、历史 selector 或一般参数 \(r\)。
