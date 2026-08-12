@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-24c-minus-one-adaptive-divisor-terminal-family
 title: 24c-1 缺口族的自适应 d=2r Type I 终端
-statement: 对核心素数 p=24h+1 和任意 1<=c<=h，置 m=24c-1、s=h+c、x=6s。对每个 r|s，令 d=2r，则 d|x 且 d<=x/3；该 gap-m Type I 模板成立当且仅当 r(s/r)^2=-72^(-1) (mod m)，等价于目标 -72^(-1) 属于 U_m(s)={s^2/r (mod m):r|s}。m=23 给出已有目标 15 的选择子；m=47 也有目标 15，并把该选择子接在 R=11/gap-7/gap-11/gap-23 四路之后，得到精确的第五条 direct terminal 分支。特别地，p=313+1128a 的每个素数参数均以 m=47、r=s=15+47a 直接终止；p=3697 是此前四路共同残余而由此分支关闭的控制点。非对角 t=3 时的精确条件是 3|(h+c) 且 24c-1|9p+1；m=47 的这条射线含有 p=364417，它同时是 R=3 G 与此前四路共同残余。另一方面，所有对角 r=s 命中恰等价于 m|(3p+1)/4，故不能承担 R=3 G 核心的全称出口。
+statement: 对核心素数 p=24h+1 和任意 1<=c<=h，置 m=24c-1、s=h+c、x=6s。对每个 r|s，令 d=2r，则 d|x 且 d<=x/3；该 gap-m Type I 模板成立当且仅当 r(s/r)^2=-72^(-1) (mod m)，等价于目标 -72^(-1) 属于 U_m(s)={s^2/r (mod m):r|s}。m=23 给出已有目标 15 的选择子；m=47 也有目标 15，并把该选择子接在 R=11/gap-7/gap-11/gap-23 四路之后，得到精确的第五条 direct terminal 分支。特别地，p=313+1128a 的每个素数参数均以 m=47、r=s=15+47a 直接终止；p=3697 是此前四路共同残余而由此分支关闭的控制点。非对角 t=3 时，分解 9p+1 后的全部合法因子 m≡-p (mod 72) 形成精确 terminal 选择器；p=364417 与 p=709921 分别以 m=47 与 m=71 命中，并且都位于 R=3 G 核心，后者还逃过既有五路 dispatch。另一方面，所有对角 r=s 命中恰等价于 m|(3p+1)/4，故不能承担 R=3 G 核心的全称出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -226,6 +226,51 @@ px+d
 而 \(m\) 与 \(2s/3\) 互素，故 (18) 成立。不同于 (12)，这里的右侧不要求
 \(m\mid N_3\)，所以它不被 \(R=3\) G 条件排除。
 
+也可完全消去 \(h,c,r\)。对核心素数 \(p\)，一个正整数 \(m\) 触发该 \(t=3\)
+terminal 当且仅当
+
+\[
+\boxed{
+23\le m\le p-2,
+\qquad
+m\mid9p+1,
+\qquad
+m\equiv-p\pmod {72}.}
+\tag{20a}
+\]
+
+在此条件下，\(m\equiv23\pmod {24}\)，并且证书直接由
+
+\[
+\boxed{
+x=\frac{p+m}{4},
+\qquad
+d=\frac{p+m}{36}.}
+\tag{20b}
+\]
+
+恢复。事实上第三个条件给出 \(72\mid p+m\)。令
+\(c=(m+1)/24\)、\(s=(p+m)/24\)、\(r=(p+m)/72=s/3\)，则
+\(1\le c\le h\)、\(3\mid s\)，且 (18) 与 (20a) 等价。反过来，(17) 给出
+\(72\mid p+m\)，故 \(m\equiv-p\pmod {72}\)。所以 (20a) 是从单个线性数
+\(9p+1\) 的因子分解直接构造本分支的充要判据，而不是对 \(c\) 的枚举规则。
+
+定义完全由 \(p\) 决定的有限选择盒
+
+\[
+\mathscr D_3(p)
+=\left\{
+m\mid9p+1:
+23\le m\le p-2,\quad
+m\equiv-p\pmod {72}
+\right\}.
+\tag{20c}
+\]
+
+故 \(\mathscr D_3(p)\ne\varnothing\) 当且仅当这条 \(t=3\) terminal 分支命中；任取
+其中一个 \(m\)，(20b) 即给出 certificate。这是一个完整因子盒上的精确 selector，
+并不要求预先固定 \(m=23\) 或 \(47\)。
+
 在 \(c=2,m=47\) 时，(17)--(18) 的 CRT 参数化为
 
 \[
@@ -267,6 +312,30 @@ p=364417,
 此时 \(N_3=273313\) 是 \(1\pmod3\) 的素数，故 \(R=3\) 图表确为 G；同时此前四路
 dispatch 仍返回 residual。因此 (22) 是本族非对角分支进入该 G 核心的直接控制，
 而不是对角 \(N_3\)-divisor 机制的重述。
+
+这个 selector 还严格强于固定 gap-23/gap-47 子扇。取
+
+\[
+p=709921,
+\qquad
+N_3=532441=7\cdot13\cdot5851.
+\tag{20d}
+\]
+
+三个素因子皆为 \(1\pmod3\)，所以这仍是 \(R=3\) G。既有五路 dispatch 在此点保留
+residual；但 \(71\in\mathscr D_3(p)\)，并给出
+
+\[
+\boxed{
+\frac4{709921}
+=\frac1{177498}
++\frac1{1774782780}
++\frac1{11339600093643420}.}
+\tag{20e}
+\]
+
+这里 \(m=71\)，\(d=(p+m)/36=19722\)。因此 (20e) 是完整 \(t=3\) 因子 selector
+相对于固定 \(m=23,47\) 分支的实际新增 terminal 控制。
 
 ## 4. gap 47 的对角 terminal 射线
 
@@ -351,5 +420,18 @@ p=3697,
 
 这是五条既定有限因子判据的精确合取。它没有证明 (30) 为空，也没有构造递归边；
 其作用是把新的 \(m=47\) 直接 terminal 以无歧义方式并入全局出口程序。
+
+## 6. 完整 \(t=3\) 因子分支
+
+在五路均未命中时，检查 \(\mathscr D_3(p)\)。若它非空，则 (20b) 直接终止；若它为空，
+才保留第六路 residual。故六路共同残余精确等于 (30) 再加
+
+\[
+\boxed{\mathscr D_3(p)=\varnothing.}
+\tag{31}
+\]
+
+这个分支在 \(p=709921\) 命中 \(m=71\)，所以严格扩展了前面的固定 gap dispatch。
+它仍没有证明 (31) 不可能发生，也不提供对 \(\mathscr D_3(p)=\varnothing\) 的递降。
 
 复现命令：`python3 reproductions/type_i_24c_minus_one_adaptive_divisor_terminal_family.py --verify`
