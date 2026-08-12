@@ -10,16 +10,19 @@ statement: >-
   T=(R-1)/2、g=gcd((p+1)/2,(n+1)/2)。则精确有
   lcm(A,Q)/A=Q/gcd(A,Q)=T/g>1。并且 high-R universal p-source 的
   primitive 门与 bundle 的 p-free 门分别等价于 n≢-1 (mod p) 和
-  n≢-2 (mod p)；在 1<n<p 的低分母支两门自动成立。因此在两门通过且该支已有真实
-  persistent parent 时，便有唯一的 path-anchored complete-excess 严格 support
-  容量升级可供后续 selector 审查。该结论只给 raw-path/E1 候选与整数容量；它不
-  单独给 typed state、E2--E5、terminal 或 verified recursive edge。
+  n≢-2 (mod p)；在 1<n<p 的低分母支两门自动成立。该 carrier 还全称满足
+  M=lcm(A,Q)>p^2>B_p，所以任何 p-free canonical rechart 必为 overflow，绝不
+  是 marked absorb；在 1<n<p 时又有 A<B_p，故该 bundle 的外层支撑秩第一坐标
+  严格下降。因此在两门通过且该支已有真实 persistent parent 时，便有唯一的
+  path-anchored complete-excess 严格 support 容量升级可供后续 selector 审查。该
+  结论仍不单独给 typed state、完整 E1--E5、terminal 或已注册的 recursive edge。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-overflow-unbounded-full-product-quotient-fold
   - type-I-universal-p-source-capacity-anchor-orbit
+  - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
   - type-I-high-anchor-cofactor-macro-e1-e4-admission
   - denominator-escape-state-contract
 topics:
@@ -39,6 +42,8 @@ sources:
     role: d-one-support-saturated-overflow-normal-form
   - claim: type-I-universal-p-source-capacity-anchor-orbit
     role: raw-p-source-and-path-anchored-bundle-contract
+  - claim: type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+    role: low-support-complete-excess-outer-rank-admission
   - claim: type-I-high-anchor-cofactor-macro-e1-e4-admission
     role: high-anchor-admission-boundary
   - reproduction: reproductions/type_i_overflow_d_one_complete_excess_capacity_map.py
@@ -59,6 +64,8 @@ p\equiv1\pmod {24},
 n>1,
 \qquad
 n\equiv1\pmod4,
+\qquad
+B_p:=\frac{(p-1)^2}{4},
 \tag{1}
 \]
 
@@ -245,7 +252,95 @@ canonical rechart 有定义。
 则因 \(n\equiv1\pmod4\) 和 \(p\equiv1\pmod4\)，有 \(5\le n\le p-4\)。因此
 \(n\) 不可能同余于 \(-1\) 或 \(-2\pmod p\)，(16)--(17) 两门自动通过。
 
-## 4. 该容量图实际提供什么
+## 4. carrier 强制越过容量盒
+
+式 (6) 还给出一个比 \(M>A\) 强得多的全称下界。因为 \(n>1\) 且
+\(n\equiv1\pmod4\)，有 \(n\ge5\)。又 \(g\le(n+1)/2\)，所以
+
+\[
+\frac{T}{g}
+\ge\frac{(p-1)n-2}{n+1}
+=\frac{5p-7}{6}+\frac{(p+1)(n-5)}{6(n+1)}
+\ge\frac{5p-7}{6}.
+\tag{19}
+\]
+
+同时 \(A\ge(5p-1)/4\)。因此
+
+\[
+M=A\frac{T}{g}
+\ge\frac{(5p-1)(5p-7)}{24}
+=p^2+\frac{p^2-40p+7}{24}
+>p^2>B_p.
+\tag{20}
+\]
+
+最后的不等式只使用核心域的 \(p\ge73\)。所以它不依赖低分母假设，也不依赖两条
+\(p\)-门。
+
+现在附加 \(p\)-free 门 \(p\nmid Q\)。由于 \(p\nmid A\)，有 \(p\nmid M\)，
+故 canonical rechart \((R_M,K_M)\) 存在。其 \(R_M\equiv3\pmod4\)，与
+\(p\equiv1\pmod4\) 不同。若 \(R_M<p\)，便有 \(R_M\le p-2\)，从而
+
+\[
+K_M=\frac{pR_M+1}{4}\le B_p.
+\tag{21}
+\]
+
+但 \(M\mid K_M\) 与 (20) 矛盾。因此
+
+\[
+\boxed{
+p\nmid Q
+\quad\Longrightarrow\quad
+R_M>p.
+}
+\tag{22}
+\]
+
+也就是说，\(d=1\) 饱和高锚的 complete-excess rechart 一旦存在，就被强制送回
+overflow；它不可能通过这条 bundle 直接变成 `marked_absorb`。
+
+## 5. 低分母支的条件性严格出口
+
+若 \(1<n<p\)，则第 3 节已给出两条 \(p\)-门自动通过，而且
+
+\[
+A\le\frac{p(p-4)-1}{4}<B_p.
+\tag{23}
+\]
+
+由 (20)，该 bundle target 满足
+
+\[
+\Pi_p(A):=\left\lfloor\frac{B_p}{A}\right\rfloor\ge1,
+\qquad
+\Pi_p(M)=0.
+\tag{24}
+\]
+
+因此，对一个已经真实 persistent、带 charged ledger 的 (2) 状态，完整的
+`high_R_path_anchored_bundle_v1` 回执具有严格的第一外层秩下降。与既有的低支撑
+complete-excess target 合同拼接后，唯一可能的非终端 target 是 (22) 所示 overflow，
+而不是一个需要再猜测的低图表。换言之：
+
+\[
+\boxed{
+1<n<p
+\quad\Longrightarrow\quad
+\text{d=1 residual 的唯一完整超额 action 有已支付的算术 E5。}
+}
+\tag{25}
+\]
+
+这个框是**条件性组合结论**。要把它写成实际 selector edge，仍须把 source state 的
+真实 parent/scope、bundle 的内容摘要、target 的独立 F/G/hit 重分类和 terminal-first
+结果序列化到同一 receipt。特别地，完整乘积商折叠本身的通用 typed adapter 尚未注册，
+所以不能把 (25) 倒灌成“所有形式 \(d=1\) 行已经是 verified edge”。但对低分母支，
+剩下的是该组合 adapter 的 E1--E4/持久化工作，不再是 carrier、rechart 类别或 E5 的
+算术缺口。
+
+## 6. 该容量图实际提供什么
 
 在 (16)--(17) 都通过时，现有 `high_R_path_anchored_bundle_v1` 的完整算术输入均已
 具备：
@@ -260,27 +355,29 @@ Q>1,
 Q\nmid K,
 \qquad
 p\nmid Q,
-\tag{19}
+\tag{26}
 \]
 
 并且 (6) 给出严格的支撑容量升级 \(A\mapsto M\)。因此这个完整超额 bundle 不是对
 \(d=1\) 残余的猜测性启发式，而是唯一的、可逐素数复算的 path-anchored 候选。
 
-但它**尚不是递归出口**。要将其登记为边，仍缺少或仍须逐个重放的内容是：
+在一般 \(n\) 上，它**尚不是递归出口**。要将其登记为边，仍缺少或仍须逐个重放的
+内容是：
 
 1. \(H=(p,R,K;A)\) 的真实 persistent parent、charged ledger 与原样 scope；
 2. bundle rechart 的独立 typed F/G/hit 重分类和 terminal-first 分派；
-3. 若走 direct cofactor 宏，E2 的 residue gate、完整三段状态回执及 E5；
-4. 若 rechart 是 marked absorb 或另一种 overflow，适用 selector 的相应全域严格势。
+3. 对低分母支以外的高支撑 target，适用的 carry/direct-cofactor/其它 E5 支付；
+4. 对低分母支，(25) 所述组合 adapter 的完整 E1--E4 内容寻址与 typed dispatch。
 
 尤其不能把 (15) 的普遍 raw parent 反向构造当作 E1 root policy，也不能从 \(M>A\)
 本身推出持久边。这些边界正是 state contract 所要求的内容。
 
-## 5. 聚焦回执
+## 7. 聚焦回执
 
 ```bash
 python3 reproductions/type_i_overflow_d_one_complete_excess_capacity_map.py --verify
 ```
 
 回执不搜索素数或分母。它固定核验两个低分母的双门通过例、一个 \(A\)--\(Q\) 估值重叠
-例，以及分别使 (16)、(17) 失败的两个独立边界例。
+例、所有 p-free 控制的强制 overflow 与低分母外层秩支付，以及分别使 (16)、(17) 失败
+的两个独立边界例。

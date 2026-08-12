@@ -6770,3 +6770,14 @@ primitive raw source 与 \(p\)-free bundle 分别只要求
 support 增长的 path-anchored 候选。它仍不等于 verified edge：真实 parent/scope、typed
 terminal-first 分派、direct-cofactor E2 门及全域 E5 尚须逐项完成。完整证明和聚焦
 回执见 [完整乘积 d=1 饱和高锚的完整超额容量公式与 p-源门](../claims/type-I-overflow-full-product-d-one-complete-excess-capacity-map.md)。
+
+该容量并不会直接吸收到低图表。事实上对全部 \(n>1\)，新 carrier 都满足
+
+\[
+M>p^2>B_p.
+\]
+
+所以只要 \(p\)-free bundle 门通过，其 canonical rechart 必为 overflow。特别地，
+\(1<n<p\) 时源 support 满足 \(A<B_p\)，而 target 有 \(\Pi_p(M)=0<\Pi_p(A)\)。
+这使低分母 d=1 支已有严格的外层秩付款；该子域的剩余工作是将真实 parent、scope 和
+typed target 串成 adapter，而不是再寻找另一个 carrier 或 direct-cofactor gate。

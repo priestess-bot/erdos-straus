@@ -2,8 +2,8 @@
 """Verify fixed full-product d=1 complete-excess capacity receipts.
 
 This is a focused algebraic verifier, not a prime or denominator search.  It
-checks the exact support multiplier and keeps the primitive raw-p source gate
-separate from the p-free complete-excess gate.
+checks the exact support multiplier, the forced high-overflow rechart, and
+keeps the primitive raw-p source gate separate from the p-free bundle gate.
 """
 
 from __future__ import annotations
@@ -96,6 +96,7 @@ def audit(fixture: Fixture) -> dict[str, int | str | bool]:
     Q, beta = complete_excess(R - 1, K)
     M = lcm(A, Q)
     multiplier = M // A
+    capacity_bound = (p - 1) ** 2 // 4
     raw_source_ok = R % p != 0
     p_free_bundle_ok = Q % p != 0
 
@@ -118,6 +119,7 @@ def audit(fixture: Fixture) -> dict[str, int | str | bool]:
         and K % Q != 0
         and Q // gcd(A, Q) == T // gcd_formula == multiplier
         and multiplier > 1
+        and M > p * p > capacity_bound
         and raw_source_ok == (n % p != p - 1)
         and p_free_bundle_ok == (n % p != p - 2)
         and fixture.expected_Q == Q
@@ -142,14 +144,27 @@ def audit(fixture: Fixture) -> dict[str, int | str | bool]:
     rechart_available = p_free_bundle_ok
     if rechart_available:
         R_M, K_M = canonical_chart(p, M)
-        if not (M % A == 0 and M % Q == 0 and K_M % M == 0):
+        if not (
+            M % A == 0
+            and M % Q == 0
+            and K_M % M == 0
+            and R_M > p
+            and K_M // M in range(1, p)
+        ):
             raise AssertionError(f"{fixture.name}: p-free bundle rechart changed")
     elif gcd(p, 4 * M) == 1:
         raise AssertionError(f"{fixture.name}: p-free failure did not block rechart")
 
     low_denominator = 1 < n < p
-    if low_denominator and not (5 <= n <= p - 4 and raw_source_ok and p_free_bundle_ok):
-        raise AssertionError(f"{fixture.name}: low-denominator automatic gate changed")
+    if low_denominator:
+        if not (
+            5 <= n <= p - 4
+            and A < capacity_bound
+            and raw_source_ok
+            and p_free_bundle_ok
+            and capacity_bound // A > capacity_bound // M == 0
+        ):
+            raise AssertionError(f"{fixture.name}: low-denominator exit gate changed")
 
     return {
         "name": fixture.name,
@@ -161,9 +176,11 @@ def audit(fixture: Fixture) -> dict[str, int | str | bool]:
         "Q": Q,
         "beta": beta,
         "multiplier": multiplier,
+        "carrier_above_p_square": M > p * p,
         "raw_source_ok": raw_source_ok,
         "p_free_bundle_ok": p_free_bundle_ok,
         "low_denominator": low_denominator,
+        "low_outer_rank_strict": low_denominator and capacity_bound // A > capacity_bound // M,
         "canonical_rechart_available": rechart_available,
     }
 
@@ -182,12 +199,25 @@ def verify() -> None:
     overlap = sum(receipt["gcd_formula"] > 1 for receipt in receipts)
     raw_failures = sum(not receipt["raw_source_ok"] for receipt in receipts)
     p_free_failures = sum(not receipt["p_free_bundle_ok"] for receipt in receipts)
-    if (ready, low_ready, overlap, raw_failures, p_free_failures) != (3, 2, 1, 1, 1):
+    forced_high = sum(
+        receipt["canonical_rechart_available"] and receipt["carrier_above_p_square"]
+        for receipt in receipts
+    )
+    low_outer_rank = sum(receipt["low_outer_rank_strict"] for receipt in receipts)
+    if (ready, low_ready, overlap, raw_failures, p_free_failures, forced_high, low_outer_rank) != (
+        3,
+        2,
+        1,
+        1,
+        1,
+        4,
+        2,
+    ):
         raise AssertionError("focused complete-excess capacity classification changed")
     print(
         "verified 3 p-source/p-free complete-excess capacity receipts, "
-        "2 automatic low-denominator gates, 1 valuation-overlap control, "
-        "and 2 independent p-gate boundaries"
+        "4 forced-high rechart receipts, 2 automatic low-denominator outer-rank exits, "
+        "1 valuation-overlap control, and 2 independent p-gate boundaries"
     )
 
 
