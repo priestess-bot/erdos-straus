@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-a2-b27-square-only-terminal-ray
 title: (A,B)=(2,27) 的平方专用 Type I 终端射线
-statement: 对核心素数 p=24h+1、合法 gap m=24c-1，置 s=h+c、x=6s。若 9|s 并令 C=s/9、d=4C，则 d|x^2 而 d 不整除 x，且 gap-m 的 Type I 证书条件等价于 m|27p+2；命中时正规形唯一为 (A,B,C)=(2,27,s/9)。固定 m=1583 时，条件等价于 p=2521+341928a；该原始等差射线的每个素数项都给出直接 Type I terminal。另一条原始射线 p=2521+9288a 保持 R=35，并对每个素数项显式严格递降至 n=2451+9030a，保留前两个分母且只将第三个分母乘 p 即提升回 p。其 a=210 控制 p=1953001 是 R=3 G 且既有七路 terminal dispatch 的 residual。
+statement: 对核心素数 p=24h+1、合法 gap m=24c-1，置 s=h+c、x=6s。若 9|s 并令 C=s/9、d=4C，则 d|x^2 而 d 不整除 x，且 gap-m 的 Type I 证书条件等价于 m|27p+2；命中时正规形唯一为 (A,B,C)=(2,27,s/9)。该因子盒可作为既有七路 p-dispatch 后的完整第八路 terminal selector：p=2521 与 R=3 G 控制 p=1953001 都由它关闭。固定 m=1583 时，条件等价于 p=2521+341928a；该原始等差射线的每个素数项都给出直接 Type I terminal。另一条原始射线 p=2521+9288a 保持 R=35，并对每个素数项显式严格递降至 n=2451+9030a，保留前两个分母且只将第三个分母乘 p 即提升回 p。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -185,7 +185,8 @@ p=2521,\quad C=19,\quad (m,x,d)=(1583,1026,76),
 \tag{15}
 \]
 
-这个点先前已被证明为完整 \(d\mid x\) Type I 层的空盒，也逃过七路 terminal dispatch。
+这个点先前已被证明为完整 \(d\mid x\) Type I 层的空盒，也逃过七路 terminal dispatch，
+但由本卡的第八路 selector 关闭。
 它在 gap \(23\) 的 \((m,d)=(23,848)\) 证书则来自既有 \(3p+4\) 分支和外部递降桥；
 (14) 是另一个 gap、另一个 \((A,B)\) 正规形的独立终端，并非该桥的重复表述。
 
@@ -288,7 +289,8 @@ p=1953001,
 \]
 
 这里 \((3p+1)/4=1464751\) 是 \(1\pmod3\) 的素数，故此 \(p\) 是 \(R=3\) G；
-既有七路 terminal dispatch 在此仍返回 residual，而 (22)--(23) 给出独立的严格出口。
+既有七路 terminal dispatch 在此仍返回 residual，但本卡第八路命中，并由 (22)--(23) 给出
+独立的严格出口。
 
 ## 4. 固定 \(m=1583\) 射线的递降刚性
 
@@ -335,7 +337,7 @@ R_b+1=36(1+81b),
 
 ## 5. 对全局出口目标的限度
 
-本卡增加一个可由 \(27p+2\) 的因子和 \(p+m\equiv0\pmod{216}\) 检索的完整 terminal
+本卡增加一个可由 \(27p+2\) 的因子和 \(p+m\equiv0\pmod{216}\) 检索的完整第八路 terminal
 分支，并明确关闭了双 G 代表点 \(2521\) 的一个原有 Type I 盲区。它仍只覆盖固定
 \((A,B)=(2,27)\) 的射线，不构成全称 selector，也没有替代全局严格递降所需的势函数。
 下一决定性问题是：把所有 \(d\nmid x\) 的正规形按 \((A,B)\) 的小因子结构分类后，能否证明

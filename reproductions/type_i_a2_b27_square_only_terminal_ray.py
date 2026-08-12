@@ -86,6 +86,22 @@ def factor_selector(*, p: int) -> tuple[dict[str, int], ...]:
     return tuple(sorted(records, key=lambda item: item["m"]))
 
 
+def eight_route_dispatch(*, p: int) -> dict[str, object]:
+    """Append the complete square-only (A,B)=(2,27) selector to seven routes."""
+    record = seven_route_dispatch(p=p)
+    if record["branch"] != "seven_route_residual":
+        return {**record, "a2_b27_terminal": None, "a2_b27_descent": None}
+    terminals = factor_selector(p=p)
+    terminal = terminals[0] if terminals else None
+    descent = normal_tail_descent(p=p, c=terminal["c"]) if terminal else None
+    return {
+        **record,
+        "a2_b27_terminal": terminal,
+        "a2_b27_descent": descent,
+        "branch": "a2_b27_square_only_terminal" if terminal else "eight_route_residual",
+    }
+
+
 def normal_tail_descent(*, p: int, c: int) -> dict[str, int] | None:
     """Apply the exact keep-two-denominators descent gate to this certificate."""
     record = certificate(p=p, c=c)
@@ -234,6 +250,24 @@ def verify() -> None:
     }
     assert is_prime((3 * descent_control["p"] + 1) // 4)
     assert seven_route_dispatch(p=descent_control["p"])["branch"] == "seven_route_residual"
+    p2521_dispatch = eight_route_dispatch(p=2521)
+    p1953001_dispatch = eight_route_dispatch(p=1953001)
+    p2054089_dispatch = eight_route_dispatch(p=2054089)
+    assert (
+        p2521_dispatch["branch"] == "a2_b27_square_only_terminal"
+        and p2521_dispatch["a2_b27_terminal"] == first
+        and p2521_dispatch["a2_b27_descent"] == descent
+    )
+    assert (
+        p1953001_dispatch["branch"] == "a2_b27_square_only_terminal"
+        and p1953001_dispatch["a2_b27_descent"] == descent_control
+    )
+    assert (
+        p2054089_dispatch["branch"] == "gap11_strict_descent"
+        and p2054089_dispatch["a2_b27_terminal"] is None
+        and p2054089_dispatch["a2_b27_descent"] is None
+    )
+    assert eight_route_dispatch(p=313)["branch"] == "r11_terminal"
     assert direct_hits(p=2521) == ()
     assert seven_route_dispatch(p=2521)["branch"] == "seven_route_residual"
     assert full_square_hits(p=2521) == (
