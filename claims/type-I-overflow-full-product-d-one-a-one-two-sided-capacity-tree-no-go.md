@@ -477,6 +477,14 @@ L\equiv1\pmod p
 
 两类。后一类还需要新的 carry 下降、直接短证书或另一种 terminal-first 分派。
 
+后续的
+[双侧载荷正规形、stutter 继电与无限族严格旁路](type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay.md)
+已经把这一步继续压缩：它给出唯一的双色来源恒等式，但确认现有单侧 E1/E3 尚不能推出
+原子 split 收费；同时把条件性 stutter 继电到下一条 \(d=1\) 剩余类，并证明
+\(p=73,r=50+kW\) 的整条无限 stutter 族都有同一路径的 \(h=3\) 单侧严格候选 carry。
+对已 persistent 且完成 typed-target 重分类的实例，它给出严格出口；因此本卡的固定
+stutter 是真实算术边界，却不是已知的持久算术余项。
+
 ## 7. 聚焦回执
 
 ```bash

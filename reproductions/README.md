@@ -725,3 +725,11 @@ capacities；另核对一个八条边的 \(H_j\) transient。任意有限长度�
 double-excess split-carrier 边界：\(r=1\) 时联合 canonical 算术严格但现有 E1/E3
 来源不合法，\(r=50\) 时联合 multiplier 同余 1 并发生容量 stutter。任意有限深度
 由声明中的 CRT 证明承担；脚本不扫描素数、分母、历史 selector 或一般深度。
+
+`type_i_overflow_d_one_a_one_split_carrier_stutter_relay.py` 固定核对一个带颜色的
+split 来源恒等式及非交换逐侧分支、最小 receipt cell 的二次 stutter 条件、
+\(p=73,r=50\) 的 \(d=1\) 继电，以及无限算术级数中的三个公式检查点。每个检查点都
+重建 \((x,K)=2,(y,K)=3,(R-3,K)=4\)、联合 stutter 和 \(h=3\) 的 capacity-2
+严格单侧出口；无限性由 claim 中的消元恒等式证明。脚本不扫描素数、分母、历史
+selector、一般图表或完整 Type I/II 菜单；一般二次互反、\(s=0,1,-1\) 分派及
+persistent/typed-state 字段不在脚本覆盖范围内。

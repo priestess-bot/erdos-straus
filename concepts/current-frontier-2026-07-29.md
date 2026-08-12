@@ -90,6 +90,8 @@ sources:
   role: determinant-dual-support-obstruction
 - claim: type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go
   role: finite-two-sided-capacity-tree-no-go-and-split-carrier-contract-boundary
+- claim: type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay
+  role: colored-split-source-stutter-relay-and-infinite-family-endpoint-exit
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -6982,3 +6984,70 @@ Q_\Sigma=Q_xQ_y,
 \(L\not\equiv1\pmod p\) 的严格 carry 和 \(L\equiv1\pmod p\) 的 stutter 分派开；
 后一类必须另给 carry 下降、短证书或 terminal-first 出口。完整证明与聚焦回执见
 [\(a=1\) 双侧容量树 no-go 与 split-carrier 合同边界](../claims/type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go.md)。
+
+## 2026-08-12：split stutter 已结构化，并首次关闭一个无限真实族
+
+对 primitive peeled node \(x+y=R\) 的两侧完整超额分解
+
+\[
+x=Q_x\beta_x,
+\qquad
+y=Q_y\beta_y,
+\]
+
+现在得到精确的双色来源恒等式
+
+\[
+4\frac{K}{\beta_x\beta_y}\beta_x\beta_y
+=pQ_x\beta_x+pQ_y\beta_y+1,
+\]
+
+以及唯一联合倍率
+
+\[
+L=\frac{\operatorname{lcm}(A,Q_x,Q_y)}A
+=\frac{Q_x}{(A,Q_x)}\frac{Q_y}{(A,Q_y)}.
+\]
+
+这把 `path_anchored_split_complete_excess_bundle_v1` 压成了确定的 maximal colored
+candidate；但它仍缺一条新的原子 E1/E3 来源规则，现有单侧合同不能推出它。两条逐侧
+raw branch 也不能在两个顺序中都保留原始完整块，所以不能用这个交换菱形绕开合同缺口；
+中途重新分块的其它动态路径仍须独立核验。
+
+固定 receipt cell 中，joint stutter \(L\equiv1\pmod p\) 已化为一个二次剩余条件。
+根锚 \(p+1\) 的最小 cell \((\beta_x,\beta_y)=(2,3)\) 精确满足
+
+\[
+2r^2+5r+6\equiv0\pmod p,
+\]
+
+判别式为 \(-23\)。若未来 split edge 获准且 \(L=1+ps\)，target 仍是
+\(a=1,d=1\)，下一普通 complete-excess 倍率满足 \(E'\equiv s\pmod p\)。因此
+\(s\not\equiv0\) 已分别交给严格 carry、既有 \(p\) 进倒计时或最小互素素数源；真正返回
+原 hard branch 的只剩 \(s\equiv0\)。
+
+更重要的是，已构造无限真实 stutter 族
+
+\[
+p=73,
+\qquad
+r_k=50+k\cdot2464177192963200.
+\]
+
+对每个 \(k\ge0\)，两侧容量精确为 2 与 3、联合倍率都同余 1；但容量 endpoint
+\(h=3\) 总给出
+
+\[
+3+4Q_3=R,
+\qquad
+12\mid K,
+\qquad
+c_3=2<72.
+\]
+
+所以“真实节点上的 split canonical 算术可无限 stutter”已被严格证明；同一路径的现有
+单侧 receipt 又为整族统一给出 capacity-2 严格候选出口。对已 persistent 且完成
+typed-target 重分类的实例，这一宏可严格关闭；否则仍须保留状态合同边界。selector 的
+下一步应改成 endpoint-first：先测试真实双侧容量 endpoint，全部失败后才生成双色 split
+candidate；之后只研究 \(s\equiv0\) 且 endpoint/terminal 均未命中的状态。完整证明与聚焦回执见
+[\(a=1\) 双侧载荷正规形、stutter 继电与无限族严格旁路](../claims/type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay.md)。
