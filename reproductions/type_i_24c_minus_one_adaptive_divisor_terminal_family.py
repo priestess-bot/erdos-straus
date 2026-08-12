@@ -143,38 +143,50 @@ def t3_affine_bridge(*, h: int, c: int) -> dict[str, int | bool]:
     }
 
 
-def select_t3_from_linear_factor(*, p: int, modulus: int) -> dict[str, int]:
-    """Reconstruct the t=3 terminal directly from m | 9p+1 and m == -p mod 72."""
+def select_from_linear_factor(*, p: int, t: int, modulus: int) -> dict[str, int]:
+    """Reconstruct a d=2r terminal from one legal factor of 3pt+1."""
     if not (
-        p % 24 == 1
+        t >= 1
+        and p % 24 == 1
         and 23 <= modulus <= p - 2
-        and (9 * p + 1) % modulus == 0
-        and (modulus + p) % 72 == 0
+        and (3 * p * t + 1) % modulus == 0
+        and (modulus + p) % (24 * t) == 0
     ):
-        raise AssertionError("linear-factor t=3 selector gate failed")
+        raise AssertionError("linear-factor selector gate failed")
     h = (p - 1) // 24
     c = (modulus + 1) // 24
     s = (p + modulus) // 24
-    r = (p + modulus) // 72
+    r = (p + modulus) // (24 * t)
     record = verify_family_terminal(h=h, c=c, r=r)
     if not (
         modulus == 24 * c - 1
         and s == h + c
-        and s == 3 * r
+        and s == t * r
         and record["x"] == (p + modulus) // 4
-        and record["d"] == (p + modulus) // 36
+        and record["d"] == (p + modulus) // (12 * t)
+        and p * record["x"] + record["d"] == record["d"] * (3 * p * t + 1)
     ):
-        raise AssertionError("linear-factor t=3 reconstruction failed")
+        raise AssertionError("linear-factor reconstruction failed")
     return record
+
+
+def select_t3_from_linear_factor(*, p: int, modulus: int) -> dict[str, int]:
+    """Reconstruct the t=3 terminal directly from m | 9p+1 and m == -p mod 72."""
+    return select_from_linear_factor(p=p, t=3, modulus=modulus)
+
+
+def select_from_all_linear_factors(*, p: int, t: int) -> dict[str, int] | None:
+    """Select from the complete legal divisor box of 3pt+1 at one fixed t."""
+    for modulus in positive_divisors(3 * p * t + 1):
+        if not (23 <= modulus <= p - 2 and (modulus + p) % (24 * t) == 0):
+            continue
+        return select_from_linear_factor(p=p, t=t, modulus=modulus)
+    return None
 
 
 def select_t3_from_all_linear_factors(*, p: int) -> dict[str, int] | None:
     """Select from the complete legal divisor box of 9p+1."""
-    for modulus in positive_divisors(9 * p + 1):
-        if not (23 <= modulus <= p - 2 and (modulus + p) % 72 == 0):
-            continue
-        return select_t3_from_linear_factor(p=p, modulus=modulus)
-    return None
+    return select_from_all_linear_factors(p=p, t=3)
 
 
 def five_route_dispatch(*, p: int) -> dict[str, object]:
@@ -203,6 +215,19 @@ def six_route_dispatch(*, p: int) -> dict[str, object]:
     }
 
 
+def seven_route_dispatch(*, p: int) -> dict[str, object]:
+    """Append the complete t=5 linear-factor selector to the six-route order."""
+    record = six_route_dispatch(p=p)
+    if record["branch"] != "six_route_residual":
+        return {**record, "t5_linear_factor": None}
+    terminal = select_from_all_linear_factors(p=p, t=5)
+    return {
+        **record,
+        "t5_linear_factor": terminal,
+        "branch": "gap24c_minus_one_t5_linear_terminal" if terminal is not None else "seven_route_residual",
+    }
+
+
 def verify_gap47_ray() -> tuple[dict[str, int], dict[str, int]]:
     """Check the base and four-route-residual controls on p=313+1128a."""
     records = []
@@ -224,7 +249,7 @@ def verify_gap47_ray() -> tuple[dict[str, int], dict[str, int]]:
 
 
 def build_result() -> dict[str, object]:
-    """Verify generic gates and focused six-route controls."""
+    """Verify generic gates and focused seven-route controls."""
     m23 = verify_family_terminal(h=50, c=1, r=17)
     m47 = verify_family_terminal(h=154, c=2, r=156)
     ray0, ray3 = verify_gap47_ray()
@@ -236,6 +261,7 @@ def build_result() -> dict[str, object]:
     linear_p1201 = select_t3_from_linear_factor(p=1201, modulus=23)
     linear_p364417 = select_t3_from_linear_factor(p=364417, modulus=47)
     linear_p709921 = select_t3_from_all_linear_factors(p=709921)
+    linear_p530209 = select_from_all_linear_factors(p=530209, t=5)
     r3_g_control_divisors = positive_divisors(181)
     if not (
         selector_target(23) == 15
@@ -295,6 +321,23 @@ def build_result() -> dict[str, object]:
             "y": 1774782780,
             "z": 11339600093643420,
         }
+        and linear_p530209
+        == {
+            "p": 530209,
+            "h": 22092,
+            "c": 3,
+            "m": 71,
+            "s": 22095,
+            "r": 4419,
+            "t": 5,
+            "x": 132570,
+            "d": 8838,
+            "y": 989997408,
+            "z": 7873583035474080,
+        }
+        and is_prime(530209)
+        and all(is_prime(value) and value % 3 == 1 for value in (13, 181))
+        and six_route_dispatch(p=530209)["branch"] == "six_route_residual"
         and is_prime(709921)
         and all(is_prime(value) and value % 3 == 1 for value in (7, 13, 5851))
         and five_route_dispatch(p=709921)["branch"] == "five_route_residual"
@@ -305,7 +348,7 @@ def build_result() -> dict[str, object]:
         and not any(divisor % 24 == 23 for divisor in r3_g_control_divisors)
     ):
         raise AssertionError("adaptive 24c-1 terminal controls changed")
-    routes = {p: six_route_dispatch(p=p) for p in (313, 241, 337, 1201, 3697, 364417, 709921)}
+    routes = {p: seven_route_dispatch(p=p) for p in (313, 241, 337, 1201, 3697, 364417, 709921, 530209)}
     if not (
         routes[313]["branch"] == "r11_terminal"
         and routes[241]["branch"] == "gap7_strict_descent"
@@ -318,6 +361,8 @@ def build_result() -> dict[str, object]:
         and routes[364417]["adaptive_gap47"]["t"] == 3
         and routes[709921]["branch"] == "gap24c_minus_one_t3_linear_terminal"
         and routes[709921]["t3_linear_factor"] == linear_p709921
+        and routes[530209]["branch"] == "gap24c_minus_one_t5_linear_terminal"
+        and routes[530209]["t5_linear_factor"] == linear_p530209
     ):
         raise AssertionError("five-route dispatch controls changed")
     return {
@@ -330,6 +375,7 @@ def build_result() -> dict[str, object]:
         "t3_affine_bridge_controls": (t3_p1201, t3_p364417),
         "t3_linear_factor_selector_controls": (linear_p1201, linear_p364417),
         "t3_linear_factor_five_route_residual_control": linear_p709921,
+        "t5_linear_factor_six_route_residual_control": linear_p530209,
         "t3_r3_g_control": {"p": 364417, "N3": 273313, "N3_factors": ((273313, 1),)},
         "r3_g_diagonal_boundary_control": {"p": 241, "N": 181, "divisors": r3_g_control_divisors},
         "five_route_controls": routes,
@@ -342,7 +388,7 @@ def main() -> None:
     args = parser.parse_args()
     build_result()
     if args.verify:
-        print("verified adaptive 24c-1 Type-I selector and six-route controls")
+        print("verified adaptive 24c-1 Type-I selector and seven-route controls")
 
 
 if __name__ == "__main__":

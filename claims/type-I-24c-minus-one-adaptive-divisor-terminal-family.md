@@ -434,4 +434,107 @@ p=3697,
 这个分支在 \(p=709921\) 命中 \(m=71\)，所以严格扩展了前面的固定 gap dispatch。
 它仍没有证明 (31) 不可能发生，也不提供对 \(\mathscr D_3(p)=\varnothing\) 的递降。
 
+## 7. 全余因子线性因子正规形
+
+第 3 节的 \(t=3\) 并非偶然。对任意
+
+\[
+1\le t\le\frac{p-1}{12},
+\tag{32}
+\]
+
+定义
+
+\[
+\mathscr D_t(p)
+=\left\{
+m\mid3pt+1:
+23\le m\le p-2,\quad
+m\equiv-p\pmod {24t}
+\right\}.
+\tag{33}
+\]
+
+**定理。** \(\mathscr D_t(p)\) 的每个 \(m\) 都给出 gap \(m\) 的直接 Type I terminal：
+
+\[
+\boxed{
+x=\frac{p+m}{4},
+\qquad
+d=\frac{p+m}{12t},
+\qquad
+\frac4p=\frac1x+\frac1{(px+d)/m}
++\frac1{p(x+px^2/d)/m}.}
+\tag{34}
+\]
+
+反过来，第 1 节所有 \(d=2r\) 的证书都唯一地写成 (34)：取
+\(t=s/r\)，则其缺口 \(m\) 属于 \(\mathscr D_t(p)\)。因此
+
+\[
+\boxed{
+\mathscr D(p)
+=\bigcup_{1\le t\le(p-1)/12}\{t\}\times\mathscr D_t(p)}
+\tag{35}
+\]
+
+是整个 \(d=2r\) 自适应终端族的精确 \(p\)-线性因子正规形，而不是一个更弱的子菜单。
+
+为证明正向，\(m\equiv-p\pmod {24t}\) 使 \(m=24c-1\) 且
+\(r=(p+m)/(24t)\) 为正整数。于是 \(d=2r\)、\(x/d=3t\)，并且
+
+\[
+px+d=d(3pt+1).
+\tag{36}
+\]
+
+由 \(m<p\)、\(p\) 为素数及 \(p=24s-m\)，有 \((s,m)=1\)，进而 \((d,m)=1\)，
+所以 \(m\mid3pt+1\) 正是 Type I 整除条件。反向方向由同一恒等式及 \(t=s/r\)
+立即恢复。上界 (32) 来自
+\(t\le s=(p+m)/24\le(p-1)/12\)。
+
+对当前 dispatch，将完整 \(t=5\) 因子盒接在第六路之后。它的实际新增控制是
+
+\[
+\begin{aligned}
+p&=530209=1969+8520\cdot62,\\
+N_3&=397657=13^3\cdot181,\\
+m&=71\in\mathscr D_5(p),\\
+x&=132570,\qquad d=8838.
+\end{aligned}
+\tag{37}
+\]
+
+\(13,181\equiv1\pmod3\)，故该点为 \(R=3\) G；第六路仍返回 residual，但 (34) 给出
+
+\[
+\boxed{
+\frac4{530209}
+=\frac1{132570}
++\frac1{989997408}
++\frac1{7873583035474080}.}
+\tag{38}
+\]
+
+更一般地，\(m=71,t=5\) 的 primitive 射线为
+
+\[
+p=1969+8520a,
+\qquad
+h=82+355a,
+\qquad
+r=17+71a,
+\tag{39}
+\]
+
+且 \(\gcd(1969,8520)=1\)，所以含无穷多个素数参数。第七路共同残余精确为 (31) 再加
+
+\[
+\boxed{\mathscr D_5(p)=\varnothing.}
+\tag{40}
+\]
+
+全族 (35) 仍可能为空；证明其全称非空，或从其为空构造严格递降，正是这一 terminal
+路线通向全局出口仍未解决的部分。
+
 复现命令：`python3 reproductions/type_i_24c_minus_one_adaptive_divisor_terminal_family.py --verify`
