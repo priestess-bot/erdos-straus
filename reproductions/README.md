@@ -706,3 +706,10 @@ gap-\(31\) Type I 接管；不运行素数范围或历史测试。
 因子下闭合同、最小禁止反链及实际 Type II 命中集合。它只使用
 \(p=601,1321,67369\) 三个控制，分别验证素数幂层分配、不可拆分的跨素数禁止块和
 单大素数退化情形；不运行历史素数范围测试。
+
+`type_i_overflow_d_one_p_free_peeled_small_anchor.py` 固定核验四个 \(p=73\) 和一个
+\(p=97\) 的 \(d=1\) p-free-failure 状态。它逐步重放真实 \(p^e\)-raw peeling、
+两侧精确 gcd、到 \(2g\) 的容量剥离、新 clean complete-excess bundle 与 canonical
+capacity；包含一个 \(e=2\) 且另一侧容量为 5 的 sharp 控制、一个非平凡 valuation
+correction \(J=3\)，以及一个 \(a=1\) 后 bundle 仍含 \(p\) 的边界。脚本不扫描
+素数、分母、历史 selector 或完整 Reach。

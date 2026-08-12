@@ -6859,3 +6859,54 @@ x_0=R-y_0=1+(p^e-1)y_0,
 合法主线是从该真实 competing-excess node 继续完整 raw Reach，直到终端或新的
 \(p\)-free sink bundle。详见
 [p-block 来源丢失障碍](../claims/type-I-overflow-full-product-d-one-p-block-peeling-obstruction.md)。
+
+## 2026-08-12：\(p\)-free failure 的真实 Reach 压入 \(O(p^2)\) 小锚盒
+
+直接删除 \(p^e\) 虽然丢失来源，但保留真实 raw 路径后可以继续全称推进。写
+
+\[
+\frac{p+1}{2}=ga,
+\qquad
+\frac{n+1}{2}=gb,
+\qquad
+E=(p-1)b-a=p^eu.
+\]
+
+从 \(\{1,R-1\}\) 真实剥离全部 \(p^e\) 后得到
+
+\[
+y=2gu,
+\qquad
+x=1+(p^e-1)y,
+\]
+
+且精确有
+
+\[
+(y,K)=2g,
+\qquad
+(x,K)=\bigl(x,|p^e-p-1|\bigr).
+\]
+
+因此沿 \(y\) 侧继续实际容量剥离，必到达
+
+\[
+\{2g,z=R-2g\},
+\qquad
+D=(z,K)=(z,2gp+1).
+\]
+
+特别地 \(2g\le p+1\)、\(D\le p^2+p+1\)：原来随 \(n\) 无界的
+competing-excess node 已被压入只依赖 \(p\) 的容量盒。若 \(z\mid K\) 则直接
+Type I terminal；否则 \(z\) 侧给出新的 clean complete-excess bundle，并且
+
+\[
+p\nmid Q\Longleftrightarrow a>1.
+\]
+
+在 \(a>1\) 分支，新的 support 倍率 \(L=Q/(A,Q)\) 给出目标容量
+\(c=\langle-L^{-1}\rangle_p\)。进一步把 \(L=(z/D)J\)、\(J\mid D\) 代入
+\(D\mid2gp+1\)，可以用整数整除反证全称排除 \(L\equiv1\pmod p\)。因此该分支
+无条件严格降到 \(c\le p-2\)，不再有 arithmetic stutter。当前唯一算术边界只剩
+\(a=1\) 的继续真实 Reach；完整证明和固定回执见
+[p-free failure 真实剥离小锚点定理](../claims/type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md)。

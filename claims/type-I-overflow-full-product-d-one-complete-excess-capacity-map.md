@@ -382,6 +382,8 @@ p\nmid Q,
 [任意 Type I 图表的最小互素素数一步锚源与 d=1 raw 门消除](type-I-chart-least-coprime-prime-anchor-source.md)
 和
 [完整乘积 d=1 的 p-free 失败块剥离与来源丢失障碍](type-I-overflow-full-product-d-one-p-block-peeling-obstruction.md)。
+其中合法 peeled Reach 的下一步正向结构见
+[完整乘积 d=1 的 p-free 失败真实剥离与小锚点重生](type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md)。
 
 ## 7. 聚焦回执
 

@@ -386,6 +386,9 @@ python3 reproductions/type_i_overflow_d_one_p_adic_regeneration_countdown.py --v
 ```
 
 本定理把旧的“\(d=1\) canonical stutter”严格消除。结合后续两卡，当前算术余项已经
-进一步压缩为唯一的 \(p\)-free failure 类及其 peeled competing-excess Reach；所有实际
-宏仍须补齐 typed persistence 接口。这里尚未给出该余类的 terminal 或更小分母 lift，
-因而不是 G/Type I global exit 的最终证明。
+进一步压缩为唯一的 \(p\)-free failure 类及其 peeled competing-excess Reach。后续的
+[真实剥离小锚点定理](type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md)
+又证明该 Reach 必到达 \(\{2g,R-2g\}\)，且 \(a>1\) 时必产生严格降容量的
+\(p\)-free bundle；该分支的 \(L\equiv1\pmod p\) 已被全称排除。算术余项只剩
+\(a=1\) 的重复 \(p\)-block；所有实际宏仍须补齐 typed persistence 接口。这里尚未
+给出该边界的 terminal 或更小分母 lift，因而不是 G/Type I global exit 的最终证明。

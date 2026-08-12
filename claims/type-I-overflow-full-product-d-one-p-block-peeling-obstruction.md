@@ -223,8 +223,13 @@ Reach。有限 Reach 定理保证最终进入以下分派之一：
 3. 新 bundle 若 \(p\)-free，再按真实 parent capacity 审查 canonical target 与 E5；
 4. 新 bundle 若仍含 \(p\)，继续保留实际 raw 路径，而不是静默删除块。
 
-这给出了下一研究对象，但尚未证明上述分派对所有 (3) 都产生 terminal 或 strict target。
-所以本卡是一个全称 no-go 和精确接口收缩，不是 \(p\)-free failure 类的出口定理。
+后续的
+[真实剥离小锚点定理](type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md)
+已经把这条合法后续进一步算清：沿 (11) 的 \(y_0\) 侧继续做真实容量剥离，必到达
+\(\{2g,R-2g\}\)，下一容量坐标整除 \(2gp+1\)，且除 \(a=1\) 外重新得到
+\(p\)-free clean bundle；该分支的 \(L\equiv1\pmod p\) 等容量情形也已被整除反证
+全称排除。算术上只剩 \(a=1\) 的继续 Reach。因此本卡是一个全称 no-go 和精确接口
+收缩，不是 \(p\)-free failure 类的最终出口定理。
 
 ## 5. 聚焦回执
 
