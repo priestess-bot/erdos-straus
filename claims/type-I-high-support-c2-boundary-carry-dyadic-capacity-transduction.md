@@ -567,6 +567,10 @@ d=10,
 4. 后续的 rank-one 穷尽定理已经关闭双尾保持 \(D\)-only 子路：全部
    source-supported 候选只是其它 \(p-1\) 图表的自然标记，非空时立即给出
    centered Type I；全部 non-source-supported 候选的标记纤维恒空。
+   此外，即使从当前 \(C=2\) 图表的比二普通除子对得到一个**奇数**前驱，
+   无奇偶假设的自然标记门仍把其 E4 非空性等价到同一个 centered Type I 命中，
+   因而也由反足 Vieta 定理排除；见
+   [比二奇偶前驱的自然标记空纤维](type-I-high-support-c2-ratio-two-natural-lift-no-go.md)。
 5. 固定 gap-\(7\) 的单分母源切片虽然总非空，但其目标提升恰等价于原
    gap-\(7\) Type I/II 菜单命中，同样不能独立支付 E4；标准 terminal-first
    次序仍须先检查更小的 gap-\(3\) 等直接菜单。
