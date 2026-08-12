@@ -96,6 +96,30 @@ def canonical_core_ray(*, A: int, B: int, R: int, C0: int, t: int) -> dict[str, 
     return {**record, "lambda": lam}
 
 
+def select_from_prime(*, p: int, A: int, B: int, R: int) -> dict[str, int] | None:
+    """Recover the exact fixed-chart descent witness from its p-level divisor gate."""
+    if not (p > 1 and p % 24 == 1 and A > 0 and B > 0 and R % 4 == 3):
+        raise ValueError("p or fixed-chart parameters are not admissible")
+    if gcd(A, B) != 1:
+        raise ValueError("normal-chart parameters are not coprime")
+    H = A * R - B
+    L = (R + 1) // gcd(R + 1, 4 * B * (A + B))
+    divisor = 4 * B * H * L
+    if H <= B or (p * R + 1) % divisor:
+        return None
+    C = (p * R + 1) // (4 * B * H)
+    record = fixed_chart_ray(A=A, B=B, R=R, C=C)
+    if not (
+        record["p"] == p
+        and record["L"] == L
+        and C % L == 0
+        and (p * R + 1) % divisor == 0
+        and record["n"] == (p * R + 1) // (R + 1)
+    ):
+        raise AssertionError("p-level fixed-chart selector did not reconstruct its witness")
+    return record
+
+
 def verify() -> None:
     b3_first = canonical_core_ray(A=1, B=3, R=23, C0=7, t=0)
     b3_later = canonical_core_ray(A=1, B=3, R=23, C0=7, t=4)
@@ -103,6 +127,10 @@ def verify() -> None:
     b1_l3_later = canonical_core_ray(A=1, B=1, R=23, C0=63, t=2)
     b27_first = canonical_core_ray(A=2, B=27, R=35, C0=19, t=0)
     b27_later = canonical_core_ray(A=2, B=27, R=35, C0=19, t=210)
+    assert select_from_prime(p=73, A=1, B=3, R=23) == {k: v for k, v in b3_first.items() if k != "lambda"}
+    assert select_from_prime(p=241, A=1, B=1, R=23) == {k: v for k, v in b1_l3_first.items() if k != "lambda"}
+    assert select_from_prime(p=1953001, A=2, B=27, R=35) == {k: v for k, v in b27_later.items() if k != "lambda"}
+    assert select_from_prime(p=241, A=1, B=3, R=23) is None
     assert b3_first == {
         "A": 1,
         "B": 3,
