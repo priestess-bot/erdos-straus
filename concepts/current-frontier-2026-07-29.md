@@ -88,6 +88,8 @@ sources:
   role: large-slab-factor-pair-and-cross-layer-capacity-boundary
 - claim: type-I-overflow-support-preserving-dual-criterion
   role: determinant-dual-support-obstruction
+- claim: type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go
+  role: finite-two-sided-capacity-tree-no-go-and-split-carrier-contract-boundary
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -6911,7 +6913,7 @@ p\nmid Q\Longleftrightarrow a>1.
 \(a=1\) 的继续真实 Reach；完整证明和固定回执见
 [p-free failure 真实剥离小锚点定理](../claims/type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md)。
 
-## 2026-08-12：\(a=1\) 单侧 \(p\)-主链的严格 no-go 与二叉余项
+## 2026-08-12：\(a=1\) 单侧 \(p\)-主链的严格 no-go
 
 最后的 \(a=1\) 类可写成单参数正规形
 
@@ -6932,7 +6934,51 @@ bundle 都含恰一个 \(p\)-block。固定 \(p=73,r=4\,796\,963\) 还给出真�
 
 同一个 peeled node 实际有两个容量分支。上述周期在互补侧到达
 \(5330\to3\leftrightarrow20\)，而锚点 3、20 的对侧 complete-excess bundle 已
-\(p\)-free，canonical target capacities 分别为 \(10,4<72\)。所以真正剩余的算术
-命题是双侧分支退出：证明任一非终端 \(a=1\) 状态总有一侧产生严格 \(p\)-free
-bundle，或给出覆盖整棵二叉 Reach 的良基势。完整量词、四周期和固定回执见
+\(p\)-free，canonical target capacities 分别为 \(10,4<72\)。这说明固定周期本身
+有互补出口，但还不能推出统一双侧退出。完整量词、四周期和固定回执见
 [\(a=1\) 任意长 \(p\)-primary 链与单轨道势 no-go](../claims/type-I-overflow-full-product-d-one-a-one-p-primary-chain-no-go.md)。
+
+## 2026-08-12：任意固定深度的双侧容量退出也不成立
+
+对任意容量锚 \(u\equiv1\pmod p\)、\(u\mid K\)、\(p\parallel R-u\)，一次真实
+\(p\)-peel 后两侧容量不是松上界，而有精确公式
+
+\[
+(y,K)=(pu+1,K),
+\qquad
+(x,K)=(pu-p+1,K).
+\]
+
+记 \(P(u)=pu+1\)、\(M(u)=pu-p+1\)。现在已证明：对每个有限深度 \(N\)，可用
+同一个 CRT 参数 \(r\) 使从 \(u_0=p+1\) 出发的完整 \(P/M\) 二叉树全部整除
+\(K\)，并让每个 departure 都恰含一个超容量 \(p\)。因此，任何只检查统一固定深度
+双侧容量投影并期待强制退出的策略都不成立。量词是 \(\forall N\,\exists r\)，不是
+一个固定参数支撑无限树；该结论也不排除容量宏之外的 Type I/II terminal-first 证书。
+
+当 peeled node 两侧都超容量时，现有单侧 complete-excess receipt 还有一个精确
+合同障碍。写
+
+\[
+x=Q_x\beta_x,
+\qquad
+y=Q_y\beta_y,
+\]
+
+则选择 \(x\) 侧的现有 receipt 合法当且仅当 \(Q_y=1\)，对称方向合法当且仅当
+\(Q_x=1\)。所以 \(Q_x,Q_y>1\) 时，两种现有 E1/E3 定向都不准入。两侧乘积虽给出
+
+\[
+Q_\Sigma=Q_xQ_y,
+\qquad
+\beta_\Sigma=\beta_x\beta_y\mid K,
+\]
+
+但这是跨越加法节点两侧的 `split_carrier_arithmetic_closure`，还不是现有来源合同。
+而且固定 \(p=73,r=50\) 已给出联合 multiplier \(L\equiv1\pmod p\) 的真实 stutter，
+说明新增联合合同后也不能假定自动严格。
+
+当前最窄的正向问题因此改为：构造带两侧来源颜色的
+`path_anchored_split_complete_excess_bundle_v1`，证明其 E1/E3 与恒等提升，并把
+\(L\not\equiv1\pmod p\) 的严格 carry 和 \(L\equiv1\pmod p\) 的 stutter 分派开；
+后一类必须另给 carry 下降、短证书或 terminal-first 出口。完整证明与聚焦回执见
+[\(a=1\) 双侧容量树 no-go 与 split-carrier 合同边界](../claims/type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go.md)。

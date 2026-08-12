@@ -719,3 +719,9 @@ correction \(J=3\)，以及一个 \(a=1\) 后 bundle 仍含 \(p\) 的边界。�
 bundle、peeled node 的互补容量分支及锚点 3、20 的严格 \(p\)-free target
 capacities；另核对一个八条边的 \(H_j\) transient。任意有限长度由声明中的 CRT
 证明承担；脚本不扫描素数、分母、历史 selector 或一般参数 \(r\)。
+
+`type_i_overflow_d_one_a_one_two_sided_capacity_tree_no_go.py` 固定核对
+\(p=73,N=3\) 的 15 个 \(P/M\) 树节点、14 条双侧容量宏公式，以及两个
+double-excess split-carrier 边界：\(r=1\) 时联合 canonical 算术严格但现有 E1/E3
+来源不合法，\(r=50\) 时联合 multiplier 同余 1 并发生容量 stutter。任意有限深度
+由声明中的 CRT 证明承担；脚本不扫描素数、分母、历史 selector 或一般深度。

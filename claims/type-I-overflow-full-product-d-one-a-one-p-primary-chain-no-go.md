@@ -191,6 +191,7 @@ H_j=1+p+\cdots+p^j=\frac{p^{j+1}-1}{p-1},
 \qquad
 H_{j+1}=pH_j+1.
 \tag{14}
+\]
 
 ### 引理 1（整除即精确下一锚）
 
@@ -208,6 +209,7 @@ H_{j+1}\mid K,
 (R-H_j,K)=H_{j+1}.
 }
 \tag{16}
+\]
 
 **证明。** 写 \(K=H_{j+1}k\)。因为 \(H_{j+1}\equiv1\pmod p\) 且
 \(4K=pR+1\equiv1\pmod p\)，有
@@ -215,12 +217,14 @@ H_{j+1}\mid K,
 \[
 s=\frac{4k-1}{p}\in\mathbb Z.
 \tag{17}
+\]
 
 直接重排得到
 
 \[
 R-H_j=H_{j+1}s.
 \tag{18}
+\]
 
 若整数同时整除 \(s,k\)，也整除 \(ps=4k-1\) 和 \(k\)，故只能为 1。因此
 \((s,k)=1\)，式 (16) 得证。\(\square\)
@@ -244,6 +248,7 @@ d_m=\frac{H_m}{(H_m,C)},
 \qquad
 D_N=\operatorname{lcm}_{1\le m\le N}d_m.
 \tag{20}
+\]
 
 因为 \(K=CT\)，条件 \(H_m\mid K\) 等价于 \(d_m\mid T\)。又
 \(H_m\equiv1\pmod p\)，所以 \((D_N,p)=1\)。因此同余
@@ -251,6 +256,7 @@ D_N=\operatorname{lcm}_{1\le m\le N}d_m.
 \[
 p^2r\equiv\frac{p+1}{2}\pmod {D_N}
 \tag{21}
+\]
 
 有解，并可与任意允许的模 \(p\) 类用 CRT 联立。选择模 \(p\) 的类同时避开
 
@@ -259,6 +265,7 @@ r\equiv-\frac12\pmod p,
 \qquad
 r\equiv-1\pmod p.
 \tag{22}
+\]
 
 再取足够大的正代表。式 (21) 使 \(H_1,\ldots,H_N\) 全部整除 \(K\)，故引理 1
 逐步给出 (19)。
@@ -275,6 +282,7 @@ R-H_0\equiv-p(2r+1)\pmod {p^2},
 \[
 R-H_j\equiv-2p(r+1)\pmod {p^2}.
 \tag{24}
+\]
 
 式 (22) 因而保证每个 departure side 的 \(p\)-进估值恰为 1。又取 \(r\) 足够大
 使 \(R-H_j>H_{j+1}\)，便排除 terminal。先做真实 \(p\)-edge，再剥离其它超容量
@@ -317,6 +325,7 @@ R=3\,731\,499\,948\,743,
 \quad
 K=68\,099\,874\,064\,560.
 \tag{28}
+\]
 
 容量轨道精确为
 
@@ -325,6 +334,7 @@ K=68\,099\,874\,064\,560.
 1\longmapsto74\longmapsto5403\longmapsto394420\longmapsto1.
 }
 \tag{29}
+\]
 
 四条 departure side 的 complete-excess bundle 依次为
 
@@ -359,6 +369,7 @@ gcd 图的伪周期。
 \[
 5330\longmapsto3\longmapsto20\longmapsto3.
 \tag{32}
+\]
 
 在 \(h=3,20\) 上，对侧不被 73 整除，因而 complete-excess bundle 为
 \(p\)-free；固定回执还给出相应 canonical target capacities \(10,4<72\)。所以：
@@ -368,8 +379,10 @@ gcd 图的伪周期。
 3. 它们不否定 Type I/II terminal-first。事实上 \(p=73\) 本身已有直接证书
    \(4/73=1/20+1/219+1/4380\)；
 4. 它们不是 Erdős--Straus 反例，也不是完整 G/Type I selector 的 no-go；
-5. 下一条正确命题必须同时跟踪 (12)--(13) 两侧，证明其中一侧产生 \(p\)-free
-   strict bundle，或一个二叉良基势严格下降。
+5. 后续的
+   [双侧容量树 no-go](type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go.md)
+   进一步否定了任何固定深度的二叉容量退出；正确接口必须检查中间 raw 节点的
+   terminal 或 split-excess 结构，而不能只增加二叉搜索深度。
 
 ## 6. 聚焦回执
 

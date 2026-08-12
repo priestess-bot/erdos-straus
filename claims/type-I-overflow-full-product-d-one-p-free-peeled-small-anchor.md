@@ -296,6 +296,7 @@ D=(z,2gp+1),
 D\mid2gp+1.
 }
 \tag{26}
+\]
 
 又 \(g\le(p+1)/2\)，故
 
@@ -306,6 +307,7 @@ D\mid2gp+1.
 D\le p^2+p+1.
 }
 \tag{27}
+\]
 
 因此原来随 \(n\) 无界的 peeled competing-excess node，沿一条明确真实路径被压进
 只依赖 \(p\) 的小锚容量盒。式 (23) 还给出 \((2g,D)=1\)，所以
@@ -313,6 +315,7 @@ D\le p^2+p+1.
 \[
 2gD\mid K.
 \tag{28}
+\]
 
 ## 4. 小锚上必有新的 clean bundle
 
@@ -383,6 +386,7 @@ p\mid z
 a=1.
 }
 \tag{35}
+\]
 
 又 \(p\nmid K\)，所以 \(p\mid z\) 当且仅当 \(p\) 的完整幂进入 (32) 的 \(Q\)。
 因此
@@ -394,6 +398,7 @@ p\nmid Q
 a>1.
 }
 \tag{36}
+\]
 
 ## 5. \(a>1\) 的无条件严格容量出口
 
@@ -437,6 +442,7 @@ c=\frac{K_M}{M}\in\{1,\ldots,p-1\}.
 c=\langle-L^{-1}\rangle_p.
 }
 \tag{41}
+\]
 
 于是
 
@@ -447,6 +453,7 @@ c=p-1
 L\equiv1\pmod p;
 }
 \tag{42}
+\]
 
 下面证明式 (42) 的右侧在 \(a>1\) 时不可能发生。为简化记号，令
 
@@ -509,6 +516,7 @@ d\mid Hp+1,
 p\nmid d.
 }
 \tag{48}
+\]
 
 反设 \(L\equiv1\pmod p\)。由 (34)、(43)、(48)，
 
@@ -568,6 +576,7 @@ t=q_0(k+1)-H\ge q_0-H\ge t+1,
 \[
 \boxed{L\not\equiv1\pmod p}.
 \tag{56}
+\]
 
 结合 (41)--(42)，有 \(1\le c\le p-2\)。又由 (29)，
 
@@ -590,6 +599,7 @@ g=\alpha=\frac{p+1}{2},
 \qquad
 2g=p+1.
 \tag{58}
+\]
 
 由 (35)--(36)，小锚 \(\{p+1,R-p-1\}\) 的新 complete-excess bundle 仍含
 \(p\)，所以它没有 canonical Type I chart。合法后续必须继续该 bundle 的真实
@@ -615,7 +625,11 @@ D=(R-p-1,K)\mid p^2+p+1,
 [\(a=1\) 任意长 \(p\)-primary 链与单轨道势 no-go](type-I-overflow-full-product-d-one-a-one-p-primary-chain-no-go.md)
 已经严格证明：主侧可以出现任意长有限 transient，甚至存在真实四周期；所以不能再用
 “连续剥离 \(p\) 的次数”完成这里的统一倒计时。不过 peeled node 的互补侧在固定周期
-中确实产生严格 \(p\)-free 出口，当前正确余项已进一步缩为双侧分支退出定理。
+中确实产生严格 \(p\)-free 出口。进一步的
+[双侧容量树 no-go](type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go.md)
+又证明任意固定深度的两侧 \(P/M\) 投影都可同时被 CRT 压成非终端容量树。因此当前
+正确余项不是继续加深二叉搜索，而是构造合法 split-carrier 来源合同，并处理其
+\(L\equiv1\pmod p\) carry stutter，或在容量宏之外恢复 terminal-first 出口。
 
 ## 7. 聚焦回执
 
