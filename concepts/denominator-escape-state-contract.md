@@ -37,6 +37,7 @@ used_by:
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
 - type-I-overflow-fixed-n-bounded-divisor-saturation
 - type-I-overflow-unbounded-full-product-quotient-fold
+- type-I-overflow-full-product-d-one-g-anchor-retention-rigidity
 - type-I-overflow-cofactor-r-chart-support
 - type-I-overflow-outer-rank-reset
 - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
@@ -1444,9 +1445,13 @@ bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项�
 候选输入，不能单独写成统一选择器定理。
 
 对 overflow 的 \(d=1\) 子分支，已有更强的算术分类：其对偶规范图表固定为
-\((p-2,(p-1)^2/4)\)，并且普适地属于 G 态。该分类只删除“d=1 固定-\(n\) 支撑边”
-这一误读；若 \(p+4\) 没有 \(3\bmod4\) 因子，仍需回到上述非支撑终端或容量问题。
-详见[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)。
+\((p-2,(p-1)^2/4)\)，并且普适地属于 G 态。完整乘积折叠的 d=1 饱和 target 更满足
+刚性 \(A=(pn-1)/4\mid B_p\Longleftrightarrow n=1\)；真正 overflow 的 \(n>1\)
+因而没有任何 \(A\mid D\mid B_p\) 的 target support。故该 G 重图表不仅不是现成
+support-preserving 边，也不能借由把旧 support 再扩大来修复；它若进入递归，必须是
+另有全域 E5 支付的 RESET。若 \(p+4\) 没有 \(3\bmod4\) 因子，仍需回到上述非支撑
+终端、RESET 或容量问题。详见[d=1 overflow 的 p-2 G 重图表正规形](../claims/type-I-overflow-d-one-p-minus-two-g-rechart.md)
+及[完整乘积 d=1 饱和支到 p-2 G 锚点的支撑保留刚性](../claims/type-I-overflow-full-product-d-one-g-anchor-retention-rigidity.md)。
 
 对称的 \(r=1\) 分支也已分类：它强制 \(s=1,d=(p-1)/4\)，d 侧仍是上述 G 图表，
 r 侧是 \(R=3\) 的单位载体。它可以在 \(M=kp+1\) 中真实出现，但不能绕过

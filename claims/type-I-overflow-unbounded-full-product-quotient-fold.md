@@ -291,7 +291,12 @@ M=A,\ d=1.
 因此，原先有界 fixed-\(n\) 菜单的所有支撑饱和 \(M=A,d>1\) 粗糙分支，都已由
 (9) 在无界 support 合同下消去；它们不再是这个扩大分支的算术残余。真正未被此
 selector 处理的是 \(M=A,d=1\) 的 d=1 G 重图表分支，以及源端已经
-\(A>B_p\) 时第一坐标为零的独立高支撑问题。
+\(A>B_p\) 时第一坐标为零的独立高支撑问题。前一项现在有一个精确的刚性边界：若
+\(n>1\)，则当前 support \(A=(pn-1)/4\) 不整除标准 \(p-2\) G 图表的
+\(B_p\)，所以该图表不可能作为 support-preserving 或 support-monotone 后继；见
+[完整乘积 d=1 饱和支到 p-2 G 锚点的支撑保留刚性](type-I-overflow-full-product-d-one-g-anchor-retention-rigidity.md)。
+这排除了一个伪出口，但不排除经独立良基势支付的 RESET、其它 Type I/II 终端或高支撑
+capacity 出口。
 
 例如
 
