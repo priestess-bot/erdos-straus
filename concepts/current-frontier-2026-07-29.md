@@ -6745,3 +6745,28 @@ Type I G。更强地，对 \((p-1)/4=1302\) 的全部 16 个除子 \(k\)，完�
 正确选择器必须先输出这一 terminal leaf；外部源菜单为空不能被送入 G/Type I
 source-contract 分支。完整控制见
 [模三双 G 的完整零平移外部源失败与 gap-11 终端优先截断](../claims/type-I-type-II-double-g-external-source-preemption.md)。
+
+## 2026-08-12：完整乘积 \(d=1\) 残余的精确完整超额容量
+
+完整乘积商折叠的唯一算术 stutter 可写为
+
+\[
+A=\frac{pn-1}{4},\qquad R=(p-1)n-1,\qquad K=A(p-1),
+\qquad n>1, n\equiv1\pmod4.
+\]
+
+它是一个 high anchor，但不能保留 charged support 地回到标准 \(p-2\) G 图表。现在，
+从其 raw \(p\)-source 到 \((1,R-1,1)\) 的唯一 complete-excess bundle 还获得了精确
+容量式：若 \(Q\) 是 \(R-1\) 的完整超额块，则
+
+\[
+\frac{\operatorname{lcm}(A,Q)}{A}
+=\frac{((p-1)n-2)/2}{\gcd((p+1)/2,(n+1)/2)}>1.
+\]
+
+primitive raw source 与 \(p\)-free bundle 分别只要求
+\(n\not\equiv-1\) 和 \(n\not\equiv-2\pmod p\)；所以 \(1<n<p\) 时两门自动通过。
+这把低分母 d=1 残余从“可能无任何 source/bundle”的模糊状态压缩为一个唯一、严格
+support 增长的 path-anchored 候选。它仍不等于 verified edge：真实 parent/scope、typed
+terminal-first 分派、direct-cofactor E2 门及全域 E5 尚须逐项完成。完整证明和聚焦
+回执见 [完整乘积 d=1 饱和高锚的完整超额容量公式与 p-源门](../claims/type-I-overflow-full-product-d-one-complete-excess-capacity-map.md)。

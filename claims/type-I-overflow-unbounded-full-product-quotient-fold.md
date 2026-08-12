@@ -296,7 +296,14 @@ selector 处理的是 \(M=A,d=1\) 的 d=1 G 重图表分支，以及源端已经
 \(B_p\)，所以该图表不可能作为 support-preserving 或 support-monotone 后继；见
 [完整乘积 d=1 饱和支到 p-2 G 锚点的支撑保留刚性](type-I-overflow-full-product-d-one-g-anchor-retention-rigidity.md)。
 这排除了一个伪出口，但不排除经独立良基势支付的 RESET、其它 Type I/II 终端或高支撑
-capacity 出口。
+capacity 出口。对同一个 \(d=1\) 算术高锚，完整超额 raw 路的新增容量现在也有精确
+闭式：只要其两条 \(p\)-门通过，唯一 bundle 的 support 倍率为
+\(
+((p-1)n-2)/[2\gcd((p+1)/2,(n+1)/2)]
+\)，且在 \(1<n<p\) 时两门自动通过；见
+[完整乘积 d=1 饱和高锚的完整超额容量公式与 p-源门](type-I-overflow-full-product-d-one-complete-excess-capacity-map.md)。
+这提供可审计的 E1/path 容量候选，但不会绕过 parent、typed dispatch 或 E5 的剩余
+准入条件。
 
 例如
 

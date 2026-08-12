@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 695 |
+| 数学状态 | `established` | 696 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 535 |
+| 证明来源 | `repository_derivation` | 536 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 671 |
+| 审阅状态 | `internal_review` | 672 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -671,6 +671,7 @@
 | [fixed-s 的 2,3-光滑载体残余正规形](../claims/type-I-overflow-fixed-s-23-smooth-residual.md) (`type-I-overflow-fixed-s-23-smooth-residual`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶 fixed-s 的有界除子外层秩递降](../claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md) (`type-I-overflow-fixed-s-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [完整乘积 d=1 饱和高锚的完整超额容量公式与 p-源门](../claims/type-I-overflow-full-product-d-one-complete-excess-capacity-map.md) (`type-I-overflow-full-product-d-one-complete-excess-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [完整乘积 d=1 饱和支到 p-2 G 锚点的支撑保留刚性](../claims/type-I-overflow-full-product-d-one-g-anchor-retention-rigidity.md) (`type-I-overflow-full-product-d-one-g-anchor-retention-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [高容量小 d overflow 的精确容量壳与余因子模 p 折叠候选](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md) (`type-I-overflow-high-capacity-small-d-residual-cone`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
