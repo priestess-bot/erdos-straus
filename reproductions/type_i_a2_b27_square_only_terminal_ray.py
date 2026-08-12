@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the square-only (A,B)=(2,27) Type-I terminal family."""
+"""Verify the square-only (A,B)=(2,27) Type-I terminal and descent rays."""
 
 from __future__ import annotations
 
@@ -86,6 +86,65 @@ def factor_selector(*, p: int) -> tuple[dict[str, int], ...]:
     return tuple(sorted(records, key=lambda item: item["m"]))
 
 
+def normal_tail_descent(*, p: int, c: int) -> dict[str, int] | None:
+    """Apply the exact keep-two-denominators descent gate to this certificate."""
+    record = certificate(p=p, c=c)
+    if record is None:
+        return None
+    C, m = record["C"], record["m"]
+    R = (4 * 27 * 27 * C + 1) // m
+    H = 2 * R - 27
+    K = 27 * C * H
+    if 4 * K % (R + 1):
+        return None
+    n = 4 * K // (R + 1)
+    x, y = record["x"], record["y"]
+    if not (
+        4 * K == p * R + 1
+        and n < p
+        and 4 * x * y * K == n * (x * y + x * K + y * K)
+        and 4 * x * y * (p * K) == p * (x * y + x * (p * K) + y * (p * K))
+    ):
+        raise AssertionError("normal-tail source or lift reconstruction failed")
+    return {**record, "R": R, "H": H, "K": K, "n": n}
+
+
+def fixed_gap_deflation_is_rigid(*, a: int) -> bool:
+    """Test the reduced exact gate on p=2521+341928a."""
+    if a < 0:
+        raise ValueError("a must be nonnegative")
+    return (21 * a - 47) % (1 + 81 * a) == 0
+
+
+def descent_ray(*, a: int) -> dict[str, int]:
+    """Construct the fixed-R=35 square-only strict-descent ray."""
+    if a < 0:
+        raise ValueError("a must be nonnegative")
+    C = 19 + 70 * a
+    p = 2521 + 9288 * a
+    m = 1583 + 5832 * a
+    c = (m + 1) // 24
+    record = certificate(p=p, c=c)
+    if record is None:
+        raise AssertionError("fixed-R ray did not pass its Type-I selector")
+    descent = normal_tail_descent(p=p, c=c)
+    if descent is None:
+        raise AssertionError("fixed-R ray did not pass the normal-tail descent gate")
+    R, H, K, n = descent["R"], descent["H"], descent["K"], descent["n"]
+    if not (
+        record["C"] == C
+        and record["m"] == m
+        and R == 35
+        and H == 43
+        and K == 1161 * C
+        and n == 129 * C
+        and p - n == 70 + 258 * a
+        and 4 * K == R * p + 1
+    ):
+        raise AssertionError("fixed-R ray parameterization failed")
+    return descent
+
+
 def full_square_hits(*, p: int) -> tuple[dict[str, int], ...]:
     """Exhaust all gap certificates d|x^2 for the small named control only."""
     h = (p - 1) // 24
@@ -143,6 +202,38 @@ def verify() -> None:
     assert certificate(p=2521, c=1) is None
     assert factor_selector(p=2521) == (first,)
     assert factor_selector(p=ray_prime(6)) == (later,)
+    descent = normal_tail_descent(p=2521, c=66)
+    assert descent == {
+        **first,
+        "R": 35,
+        "H": 43,
+        "K": 22059,
+        "n": 2451,
+    }
+    assert normal_tail_descent(p=ray_prime(6), c=66) is None
+    assert fixed_gap_deflation_is_rigid(a=0)
+    assert not fixed_gap_deflation_is_rigid(a=1)
+    assert tuple(d for d in range(1, 3829) if 3828 % d == 0 and d % 81 == 1) == (1,)
+    descent_control = descent_ray(a=210)
+    assert descent_control == {
+        "p": 1953001,
+        "c": 51096,
+        "m": 1226303,
+        "s": 132471,
+        "C": 14719,
+        "x": 794826,
+        "d": 58876,
+        "A": 2,
+        "B": 27,
+        "y": 1265834,
+        "z": 33374363415759,
+        "R": 35,
+        "H": 43,
+        "K": 17088759,
+        "n": 1898751,
+    }
+    assert is_prime((3 * descent_control["p"] + 1) // 4)
+    assert seven_route_dispatch(p=descent_control["p"])["branch"] == "seven_route_residual"
     assert direct_hits(p=2521) == ()
     assert seven_route_dispatch(p=2521)["branch"] == "seven_route_residual"
     assert full_square_hits(p=2521) == (

@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-a2-b27-square-only-terminal-ray
 title: (A,B)=(2,27) 的平方专用 Type I 终端射线
-statement: 对核心素数 p=24h+1、合法 gap m=24c-1，置 s=h+c、x=6s。若 9|s 并令 C=s/9、d=4C，则 d|x^2，且 gap-m 的 Type I 证书条件等价于 m|27p+2；命中时正规形唯一为 (A,B,C)=(2,27,s/9)。该族通常不满足 d|x，因而严格位于完整 d|x 层之外。固定 m=1583 时，条件等价于 p=2521+341928a；该原始等差射线的每个素数项都给出直接 Type I terminal。其首项 p=2521 是双 G、七路 terminal dispatch 与完整 d|x 层的共同残差，却以 (m,d)=(1583,76) 终止。
+statement: 对核心素数 p=24h+1、合法 gap m=24c-1，置 s=h+c、x=6s。若 9|s 并令 C=s/9、d=4C，则 d|x^2 而 d 不整除 x，且 gap-m 的 Type I 证书条件等价于 m|27p+2；命中时正规形唯一为 (A,B,C)=(2,27,s/9)。固定 m=1583 时，条件等价于 p=2521+341928a；该原始等差射线的每个素数项都给出直接 Type I terminal。另一条原始射线 p=2521+9288a 保持 R=35，并对每个素数项显式严格递降至 n=2451+9030a，保留前两个分母且只将第三个分母乘 p 即提升回 p。其 a=210 控制 p=1953001 是 R=3 G 且既有七路 terminal dispatch 的 residual。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -11,6 +11,7 @@ depends_on:
   - type-I-coprime-factor-normal-form
   - type-I-complete-divisor-layer-normal-form
   - type-I-adaptive-d2r-global-family-boundary
+  - type-I-normal-tail-deflation-selector
 topics:
   - type-I
   - square-divisor
@@ -18,6 +19,9 @@ topics:
   - terminal-first
   - internal-normal-form
   - dirichlet-ray
+  - strict-descent
+  - full-solution-lift
+  - R3-G
   - double-G
   - proof-boundary
 sources:
@@ -27,6 +31,8 @@ sources:
     role: exact-(A,B,C)-normal-form
   - claim: type-I-complete-divisor-layer-normal-form
     role: strict-d-divides-x-boundary
+  - claim: type-I-normal-tail-deflation-selector
+    role: exact-keep-two-denominators-descent-gate
   - reproduction: reproductions/type_i_a2_b27_square_only_terminal_ray.py
     role: equivalence-and-control-verification
 visibility: public
@@ -193,7 +199,141 @@ p=2521,\quad C=19,\quad (m,x,d)=(1583,1026,76),
 因此第一张已知桥和第二张本卡的 square-only certificate 一起耗尽了该控制点的完整 Type I
 平方除子盒；该断言是具体控制点的有限容量事实，并不外推为任意 \(p\) 的分类。
 
-## 3. 对全局出口目标的限度
+## 3. 固定 \(R=35\) 的严格递降射线
+
+不固定 gap，而固定本正规形的余因子 \(R=35\)。令
+
+\[
+C=19+70a,
+\quad m=1583+5832a,
+\quad p=2521+9288a,
+\quad a\ge0.
+\tag{17}
+\]
+
+则
+
+\[
+m=\frac{4\cdot27^2C+1}{35},
+\qquad 27p+2=43m,
+\qquad p=216C-m.
+\tag{18}
+\]
+
+又 \(p=24(105+387a)+1\)、\(m=24(66+243a)-1\)，所以这个 gap 合法且
+\(s=(p+m)/24=9C\)。由第 1 节，所有素数参数 \(p\) 都有 square-only Type I
+certificate
+
+\[
+x=54C,
+\qquad d=4C,
+\qquad (A,B,C)=(2,27,C).
+\tag{19}
+\]
+
+令
+
+\[
+H=2R-27=43,
+\qquad K=27CH=1161C,
+\qquad n=\frac{4K}{R+1}=129C.
+\tag{20}
+\]
+
+那么
+
+\[
+4K=35p+1,
+\qquad p-n=70+258a>0,
+\tag{21}
+\]
+
+并且直接有两条恒等式
+
+\[
+\boxed{
+\frac4{129C}
+=\frac1{54C}+\frac1{86C}+\frac1{1161C},}
+\tag{22}
+\]
+
+\[
+\boxed{
+\frac4p
+=\frac1{54C}+\frac1{86C}+\frac1{1161pC}.}
+\tag{23}
+\]
+
+故 (22)--(23) 是对每个素数参数的显式严格递降及全域解提升：保留前两个分母，
+只把第三个分母乘以 \(p\)。
+
+此外 \(\gcd(2521,9288)=1\)，所以该进程原始，Dirichlet 定理给出无穷多个素数参数。
+首项 \(a=0\) 恢复
+
+\[
+\frac4{2451}=\frac1{1026}+\frac1{1634}+\frac1{22059}
+\longmapsto
+\frac4{2521}=\frac1{1026}+\frac1{1634}+\frac1{55610739}.
+\tag{24}
+\]
+
+正控制 \(a=210\) 给出
+
+\[
+p=1953001,
+\quad C=14719,
+\quad m=1226303,
+\quad n=1898751.
+\tag{25}
+\]
+
+这里 \((3p+1)/4=1464751\) 是 \(1\pmod3\) 的素数，故此 \(p\) 是 \(R=3\) G；
+既有七路 terminal dispatch 在此仍返回 residual，而 (22)--(23) 给出独立的严格出口。
+
+## 4. 固定 \(m=1583\) 射线的递降刚性
+
+上节的固定 \(R\) 射线不能和第 2 节固定 \(m\) 射线混同。回到 (12)，把参数记为 \(b\)，并置
+
+\[
+R_b=\frac{4\cdot27^2C_b+1}{1583}=35+2916b.
+\tag{26}
+\]
+
+该射线上正规尾去缩放的精确门是
+
+\[
+R_b+1\mid4\cdot27C_b(2+27).
+\tag{27}
+\]
+
+因为
+
+\[
+R_b+1=36(1+81b),
+\qquad
+4\cdot27C_b(2+27)=36\cdot87(19+1583b),
+\tag{28}
+\]
+
+所以 (27) 等价于
+
+\[
+1+81b\mid21b-47.
+\tag{29}
+\]
+
+再作一次消元，(29) 蕴含 \(1+81b\mid-3828\)。而 \(3828\) 的正因子中，唯一
+\(1\pmod {81}\) 的因子是 \(1\)。故
+
+\[
+\boxed{\text{在固定 }m=1583\text{ 射线上，(27) 当且仅当 }b=0.}
+\tag{30}
+\]
+
+这唯一交点正是 (24)。因此固定 gap 的其余素数项不能沿保持前两个分母的机制下降；
+这一刚性不限制另一个、允许 gap 随 \(a\) 变化的严格递降射线 (17)。
+
+## 5. 对全局出口目标的限度
 
 本卡增加一个可由 \(27p+2\) 的因子和 \(p+m\equiv0\pmod{216}\) 检索的完整 terminal
 分支，并明确关闭了双 G 代表点 \(2521\) 的一个原有 Type I 盲区。它仍只覆盖固定
