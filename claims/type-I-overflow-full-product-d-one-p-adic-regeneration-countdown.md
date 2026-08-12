@@ -309,8 +309,11 @@ p+(p-1)(pb-a)\equiv a\not\equiv0\pmod p,
 2. \(b\equiv0\pmod p\)，raw \(p\)-source 门失败；
 3. \(b\equiv-a\pmod p\)，\(p\)-free bundle 门失败。
 
-所以不存在无限的 \(d=1\) complete-excess canonical stutter。这里并未断言后两种端点
-是 terminal；它们是必须交给其它 source、terminal 或 paid-reset action 的精确余项。
+所以不存在无限的 \(d=1\) complete-excess canonical stutter。后续的最小互素素数源
+定理又消除了第 2 类的算术 source 缺口：它只是在固定 \(q=p\) 时失败，换用规范
+\(q_\star\nmid RK\) 后仍到达同一 anchor，并且容量严格下降。第 3 类仍不是 terminal，
+必须沿真实 \(p\)-peeling 后的 competing-excess Reach 继续处理；静默删除 \(p\)-block
+会丢失来源回执。
 
 ## 5. 严格扩展秩及其作用域
 
@@ -364,20 +367,25 @@ fresh root policy。当前通用 typed serializer/verifier 尚未接入统一 se
 
 ## 7. sharp 边界与聚焦回执
 
-两个门失败余项都非空。固定 \(p=73\)：
+两个原门失败类在算术上都非空。固定 \(p=73\)：
 
 - \(n=5325\) 经一次再生到 \(n'=1020794549\)，下一倍率满足
   \(E'\equiv0\pmod {73}\)，精确停在 \(p\)-free 门失败；
 - \(n=16129\) 经一次再生到 \(n'=9365182993\)，下一归一化参数满足
   \(b'\equiv0\pmod {73}\)，精确停在 raw-source 门失败。
 
-这两个控制只证明余项算术上真实存在，不证明它们已有 persistent 可达性。直接降容量、
-一次再生、两次再生和两个 sharp 端点由下列无扫描回执固定核验：
+这两个控制只证明原分类的 sharp 边界真实存在，不证明它们已有 persistent 可达性。
+其中 raw-source 类已由
+[最小互素素数一步锚源](type-I-chart-least-coprime-prime-anchor-source.md) 条件性接回严格出口；
+\(p\)-free 类的直接删块捷径则由
+[p-block 来源丢失障碍](type-I-overflow-full-product-d-one-p-block-peeling-obstruction.md) 全称排除。
+直接降容量、一次再生、两次再生和两个 sharp 端点由下列无扫描回执固定核验：
 
 ```bash
 python3 reproductions/type_i_overflow_d_one_p_adic_regeneration_countdown.py --verify
 ```
 
-本定理把旧的“\(d=1\) canonical stutter”严格消除，并把该 action family 的剩余障碍
-压缩到两个显式同余类及 typed persistence 接口；它尚未给出这两个余类的 terminal 或
-更小分母 lift，因而不是 G/Type I global exit 的最终证明。
+本定理把旧的“\(d=1\) canonical stutter”严格消除。结合后续两卡，当前算术余项已经
+进一步压缩为唯一的 \(p\)-free failure 类及其 peeled competing-excess Reach；所有实际
+宏仍须补齐 typed persistence 接口。这里尚未给出该余类的 terminal 或更小分母 lift，
+因而不是 G/Type I global exit 的最终证明。

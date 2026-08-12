@@ -94,6 +94,17 @@ python3 reproductions/type_i_high_anchor_direct_c1_finite_menu_exhaustion.py --v
 python3 reproductions/type_i_overflow_d_one_p_adic_regeneration_countdown.py --verify
 ```
 
+`type_i_chart_least_coprime_prime_anchor_source.py` 固定核验两个 \(d=1\) raw-
+\(p\) 失败图表，重算最小 \(q\nmid RK\) 素数的一步 primitive source 和严格容量出口。
+`type_i_overflow_d_one_p_block_peeling_obstruction.py` 则固定核验两个 \(p\)-free 失败图表，
+逐步重放 \(p\)-block peeling，并验证删块后的算术 rechart 严格缺少
+complete-excess residual-divisibility 来源。二者都不扫描历史 selector。
+
+```bash
+python3 reproductions/type_i_chart_least_coprime_prime_anchor_source.py --verify
+python3 reproductions/type_i_overflow_d_one_p_block_peeling_obstruction.py --verify
+```
+
 `type_i_high_anchor_cofactor_macro_replay.py` 用正确的
 `parent -> H -> transient S -> T` 形状回放 high-cofactor 宏，而不把 transient
 overflow 错当作 parent 的直接 successor。它对 \(p=1201\) 的 F-F-F \(h=0\) 和

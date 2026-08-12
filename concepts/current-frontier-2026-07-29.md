@@ -6822,3 +6822,40 @@ E'-1=s\bigl[p+(p-1)(pb-a)\bigr],
 \(b\equiv0\pmod p\)，或 \(p\)-free 门失败 \(b\equiv-a\pmod p\)。后两类都由
 \(p=73\) 固定例证明非空，尚不是 terminal。完整定理和聚焦回执见
 [完整乘积 d=1 饱和高锚的 p 进再生倒计时与严格扩展秩](../claims/type-I-overflow-full-product-d-one-p-adic-regeneration-countdown.md)。
+
+## 2026-08-12：\(d=1\) 的 raw 门已消除，\(p\)-free 删块被严格排除
+
+倒计时末端的 raw \(p\)-source 失败并不是数学 source 缺口。对任意图表 \((R,K)\)，
+令 \(q_\star\) 为不整除 \(RK(R-1)\) 的最小素数，则
+
+\[
+(q_\star,\ R(q_\star-1)-q_\star,\ q_\star-1)
+\]
+
+是 primitive source，并以唯一 shift \(1\) 一步到达 \((1,R-1,1)\)。若前 \(L+1\)
+个素数都整除 \(RK(R-1)\)，其乘积会大于该数，故只需
+\(L=\lfloor\log_2(RK(R-1))\rfloor\) 级别的有限候选菜单。在 \(d=1\) 的 raw-failure 类
+\(b\equiv0\pmod p\) 上，同一个 complete-excess carrier 的目标容量精确为
+
+\[
+c=\langle2g\rangle_p<p-1.
+\]
+
+因此 raw 门已获得条件性严格出口；剩下的是把该规范 source receipt 接入真实 parent、
+typed target 和 terminal-first，而不是寻找新的算术 carrier。详见
+[最小互素素数一步锚源](../claims/type-I-chart-least-coprime-prime-anchor-source.md)。
+
+另一类 \(p\)-free failure 不能用删除 \(Q\) 中的 \(p^e\) 修补。若
+\(Q=p^eQ_0\)，沿真实 raw 图剥去这 \(e\) 层后得到
+
+\[
+y_0=\frac{R-1}{p^e},
+\qquad
+x_0=R-y_0=1+(p^e-1)y_0,
+\]
+
+而全称有 \(x_0\nmid K\)。所以 \(Q_0\) 在 peeled node 上不满足
+\(x_0\beta\mid K\)，删块 carrier 的 canonical chart 只是无来源算术候选。当前唯一
+合法主线是从该真实 competing-excess node 继续完整 raw Reach，直到终端或新的
+\(p\)-free sink bundle。详见
+[p-block 来源丢失障碍](../claims/type-I-overflow-full-product-d-one-p-block-peeling-obstruction.md)。

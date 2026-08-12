@@ -370,11 +370,18 @@ p\nmid Q,
 
 1. \(H=(p,R,K;A)\) 的真实 persistent parent、charged ledger 与原样 scope；
 2. bundle rechart 的独立 typed F/G/hit 重分类和 terminal-first 分派；
-3. 两条 \(p\)-门失败端点的 alternate/terminal/paid-reset 出口；
+3. \(p\)-free 门失败端点沿真实 peeled competing-excess Reach 的
+   alternate/terminal/paid-reset 出口；raw \(p\)-source 失败已可由规范最小互素素数源
+   绕开；
 4. 所有分母上的组合 adapter E1--E4 内容寻址、typed dispatch 与 selector 注册。
 
 尤其不能把 (15) 的普遍 raw parent 反向构造当作 E1 root policy，也不能从 \(M>A\)
 本身推出持久边。这些边界正是 state contract 所要求的内容。
+
+这里的最新收缩分别见
+[任意 Type I 图表的最小互素素数一步锚源与 d=1 raw 门消除](type-I-chart-least-coprime-prime-anchor-source.md)
+和
+[完整乘积 d=1 的 p-free 失败块剥离与来源丢失障碍](type-I-overflow-full-product-d-one-p-block-peeling-obstruction.md)。
 
 ## 7. 聚焦回执
 
