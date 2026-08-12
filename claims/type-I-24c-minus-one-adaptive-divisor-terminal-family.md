@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-24c-minus-one-adaptive-divisor-terminal-family
 title: 24c-1 缺口族的自适应 d=2r Type I 终端
-statement: 对核心素数 p=24h+1 和任意 1<=c<=h，置 m=24c-1、s=h+c、x=6s。对每个 r|s，令 d=2r，则 d|x 且 d<=x/3；该 gap-m Type I 模板成立当且仅当 r(s/r)^2=-72^(-1) (mod m)，等价于目标 -72^(-1) 属于 U_m(s)={s^2/r (mod m):r|s}。m=23 给出已有目标 15 的选择子；m=47 也有目标 15，并把该选择子接在 R=11/gap-7/gap-11/gap-23 四路之后，得到精确的第五条 direct terminal 分支。特别地，p=313+1128a 的每个素数参数均以 m=47、r=s=15+47a 直接终止；p=3697 是此前四路共同残余而由此分支关闭的控制点。另一方面，所有对角 r=s 命中恰等价于 m|(3p+1)/4，故完全位于 R=3 非 G 因子分支，不能承担 R=3 G 核心的全称出口。
+statement: 对核心素数 p=24h+1 和任意 1<=c<=h，置 m=24c-1、s=h+c、x=6s。对每个 r|s，令 d=2r，则 d|x 且 d<=x/3；该 gap-m Type I 模板成立当且仅当 r(s/r)^2=-72^(-1) (mod m)，等价于目标 -72^(-1) 属于 U_m(s)={s^2/r (mod m):r|s}。m=23 给出已有目标 15 的选择子；m=47 也有目标 15，并把该选择子接在 R=11/gap-7/gap-11/gap-23 四路之后，得到精确的第五条 direct terminal 分支。特别地，p=313+1128a 的每个素数参数均以 m=47、r=s=15+47a 直接终止；p=3697 是此前四路共同残余而由此分支关闭的控制点。非对角 t=3 时的精确条件是 3|(h+c) 且 24c-1|9p+1；m=47 的这条射线含有 p=364417，它同时是 R=3 G 与此前四路共同残余。另一方面，所有对角 r=s 命中恰等价于 m|(3p+1)/4，故不能承担 R=3 G 核心的全称出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -191,7 +191,84 @@ m\mid N_3,
 所以本节对角射线虽然提供真实 direct terminal，却不能被误作 \(R=3\) G 的新出口。
 要推进该 G 核心，必须使用 \(t=s/r>1\) 的非对角选择，或构造独立的严格递降。
 
-## 3. gap 47 的新 terminal 射线
+## 3. 非对角 \(t=3\) 仿射桥
+
+对第 1 节中的任意合法 \(c\)，额外假设
+
+\[
+3\mid s=h+c,
+\qquad
+r=s/3,
+\qquad
+d=2s/3.
+\tag{17}
+\]
+
+则该 Type I terminal 条件精确化为
+
+\[
+\boxed{
+m\mid px+d
+\Longleftrightarrow
+m\mid9p+1.}
+\tag{18}
+\]
+
+确有
+
+\[
+px+d
+=6ps+\frac{2s}{3}
+=\frac{2s}{3}(9p+1).
+\tag{19}
+\]
+
+而 \(m\) 与 \(2s/3\) 互素，故 (18) 成立。不同于 (12)，这里的右侧不要求
+\(m\mid N_3\)，所以它不被 \(R=3\) G 条件排除。
+
+在 \(c=2,m=47\) 时，(17)--(18) 的 CRT 参数化为
+
+\[
+\boxed{
+p=2329+3384a,
+\qquad
+h=97+141a,
+\qquad
+s=99+141a,
+\qquad
+r=33+47a.}
+\tag{20}
+\]
+
+\(\gcd(2329,3384)=1\)，故这个 Type I 射线也含无穷多个素数参数。取
+\(a=107\)，得到
+
+\[
+p=364417,
+\quad h=15184,
+\quad s=15186,
+\quad r=5062,
+\quad x=91116,
+\quad d=10124,
+\tag{21}
+\]
+
+并有
+
+\[
+\boxed{
+\frac4{364417}
+=\frac1{91116}
++\frac1{706472968}
++\frac1{2317056836216904}.}
+\tag{22}
+\]
+
+此时 \(N_3=273313\) 是 \(1\pmod3\) 的素数，故 \(R=3\) 图表确为 G；同时此前四路
+dispatch 仍返回 residual。因此 (22) 是本族非对角分支进入该 G 核心的直接控制，
+而不是对角 \(N_3\)-divisor 机制的重述。
+
+## 4. gap 47 的对角 terminal 射线
 
 在 \(c=2\) 时固定 \(t=1\)，取
 
@@ -199,14 +276,14 @@ m\mid N_3,
 r=s=15+47a,
 \qquad
 h=13+47a.
-\tag{17}
+\tag{23}
 \]
 
 由 (10)，\(rt^2=s\equiv15\pmod {47}\)，故每个素数参数
 
 \[
 \boxed{p=313+1128a}
-\tag{18}
+\tag{24}
 \]
 
 都有 \(m=47\) 的直接 Type I terminal，且
@@ -214,14 +291,14 @@ h=13+47a.
 \[
 x=90+282a,
 \qquad d=30+94a.
-\tag{19}
+\tag{25}
 \]
 
 因为
 
 \[
 \gcd(313,1128)=1,
-\tag{20}
+\tag{26}
 \]
 
 Dirichlet 定理保证该进程含无穷多个素数参数。
@@ -234,7 +311,7 @@ p=3697,
 \qquad s=r=156,
 \qquad x=936,
 \qquad d=312,
-\tag{21}
+\tag{27}
 \]
 
 并恢复为
@@ -243,20 +320,20 @@ p=3697,
 \boxed{
 \frac4{3697}
 =\frac1{936}+\frac1{73632}+\frac1{816652512}.}
-\tag{22}
+\tag{28}
 \]
 
 这个 \(p=3697\) 在 R=11 固定尾、gap 7、gap 11 和自适应 gap 23 四路均未命中；
-因此 (22) 是对此前四路共同残余的实际新增 terminal，而不只是一个独立射线。
+因此 (28) 是对此前四路共同残余的实际新增 terminal，而不只是一个独立射线。
 
-## 4. 精确的五路残余
+## 5. 精确的五路残余
 
 把 \(c=2\) 的选择子作为 gap-23 之后的第五路。令
 
 \[
 \mathcal U_{47}(h+2)
 =\left\{\frac{(h+2)^2}{r}\pmod {47}:r\mid h+2\right\}.
-\tag{23}
+\tag{29}
 \]
 
 五路均未命中的充要条件是：
@@ -269,10 +346,10 @@ p=3697,
 \text{(iv)}&15\notin\mathcal U_{23}(h+1);\\
 \text{(v)}&15\notin\mathcal U_{47}(h+2).
 \end{array}
-\tag{24}
+\tag{30}
 \]
 
-这是五条既定有限因子判据的精确合取。它没有证明 (24) 为空，也没有构造递归边；
+这是五条既定有限因子判据的精确合取。它没有证明 (30) 为空，也没有构造递归边；
 其作用是把新的 \(m=47\) 直接 terminal 以无歧义方式并入全局出口程序。
 
 复现命令：`python3 reproductions/type_i_24c_minus_one_adaptive_divisor_terminal_family.py --verify`
