@@ -85,6 +85,15 @@ bundle 不是自动可耗尽的 action。
 python3 reproductions/type_i_high_anchor_direct_c1_finite_menu_exhaustion.py --verify
 ```
 
+`type_i_overflow_d_one_p_adic_regeneration_countdown.py` 只核验六个固定的完整乘积
+\(d=1\) 正规形。它重算 canonical target capacity、一次与两次再生、
+\(\nu_p(E-1)\) 每步恰减一，以及倒计时末端分别落入 raw-source 和 \(p\)-free 门失败的
+两个 sharp 控制；不搜索素数、分母或 selector history，也不把算术链升级为已注册边。
+
+```bash
+python3 reproductions/type_i_overflow_d_one_p_adic_regeneration_countdown.py --verify
+```
+
 `type_i_high_anchor_cofactor_macro_replay.py` 用正确的
 `parent -> H -> transient S -> T` 形状回放 high-cofactor 宏，而不把 transient
 overflow 错当作 parent 的直接 successor。它对 \(p=1201\) 的 F-F-F \(h=0\) 和

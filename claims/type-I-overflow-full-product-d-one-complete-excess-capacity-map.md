@@ -361,13 +361,17 @@ p\nmid Q,
 并且 (6) 给出严格的支撑容量升级 \(A\mapsto M\)。因此这个完整超额 bundle 不是对
 \(d=1\) 残余的猜测性启发式，而是唯一的、可逐素数复算的 path-anchored 候选。
 
-在一般 \(n\) 上，它**尚不是递归出口**。要将其登记为边，仍缺少或仍须逐个重放的
-内容是：
+在一般 \(n\) 上，它还不能无条件登记为递归出口。后续的精确再生定理已经补齐本卡当时
+保留的高支撑算术 E5：若 canonical target 容量不变为 \(p-1\)，该 target 仍是
+\(d=1\) 饱和行，而 \(\nu_p(E-1)\) 每次严格减一；否则 residual capacity 直接严格
+下降。详见
+[完整乘积 d=1 饱和高锚的 p 进再生倒计时与严格扩展秩](type-I-overflow-full-product-d-one-p-adic-regeneration-countdown.md)。
+因此当前仍缺少或仍须逐个重放的内容是：
 
 1. \(H=(p,R,K;A)\) 的真实 persistent parent、charged ledger 与原样 scope；
 2. bundle rechart 的独立 typed F/G/hit 重分类和 terminal-first 分派；
-3. 对低分母支以外的高支撑 target，适用的 carry/direct-cofactor/其它 E5 支付；
-4. 对低分母支，(25) 所述组合 adapter 的完整 E1--E4 内容寻址与 typed dispatch。
+3. 两条 \(p\)-门失败端点的 alternate/terminal/paid-reset 出口；
+4. 所有分母上的组合 adapter E1--E4 内容寻址、typed dispatch 与 selector 注册。
 
 尤其不能把 (15) 的普遍 raw parent 反向构造当作 E1 root policy，也不能从 \(M>A\)
 本身推出持久边。这些边界正是 state contract 所要求的内容。

@@ -6781,3 +6781,44 @@ M>p^2>B_p.
 \(1<n<p\) 时源 support 满足 \(A<B_p\)，而 target 有 \(\Pi_p(M)=0<\Pi_p(A)\)。
 这使低分母 d=1 支已有严格的外层秩付款；该子域的剩余工作是将真实 parent、scope 和
 typed target 串成 adapter，而不是再寻找另一个 carrier 或 direct-cofactor gate。
+
+## 2026-08-12：\(d=1\) canonical stutter 的 \(p\) 进倒计时
+
+高支撑部分的等容量例外也已获得精确递推。写
+
+\[
+\alpha=\frac{p+1}{2}=ga,
+\qquad
+\frac{n+1}{2}=gb,
+\qquad
+(a,b)=1,
+\]
+
+则 complete-excess support 倍率为
+
+\[
+E=(p-1)b-a.
+\]
+
+canonical target 容量为 \(c=\langle-E^{-1}\rangle_p\)。除
+\(E\equiv1\pmod p\) 外均有 \(c\le p-2\)，故高支撑第二秩坐标严格下降。唯一等容量情形
+仍是下一条 \(d=1\) 行；若 \(s=(E-1)/p\)，则
+
+\[
+n'=En-s,
+\qquad
+E'-1=s\bigl[p+(p-1)(pb-a)\bigr],
+\]
+
+方括号是 \(p\)-单位。因此
+
+\[
+\nu_p(E'-1)=\nu_p(E-1)-1.
+\]
+
+所以连续再生次数恰为初始 \(\nu_p(E-1)\)，不存在无限 canonical stutter。把该估值附加到
+\(\Lambda_p^\sharp\) 后，便得到对原 strict 子图加再生边严格下降的三坐标良基秩。
+倒计时结束后只剩三个结果：容量严格下降、raw \(p\)-source 门失败
+\(b\equiv0\pmod p\)，或 \(p\)-free 门失败 \(b\equiv-a\pmod p\)。后两类都由
+\(p=73\) 固定例证明非空，尚不是 terminal。完整定理和聚焦回执见
+[完整乘积 d=1 饱和高锚的 p 进再生倒计时与严格扩展秩](../claims/type-I-overflow-full-product-d-one-p-adic-regeneration-countdown.md)。
