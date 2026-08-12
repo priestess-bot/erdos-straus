@@ -314,9 +314,13 @@ p\frac{R_f+R}{2}+1=8A_2.
 右端是 \(4K_2\) 且 \(R_2=(R_f+R)/2\equiv3\pmod4\)；又
 \(0<R_2<4A_2\)，故它就是 canonical chart，并证明 (24)--(25)。\(\square\)
 
-这已给出一个可以读取的 reset 方向，但还不能登记为全局递归 macro：第一次 target 的
-独立 high-\(R\) raw source 与真实 persistent target state 尚未由统一 adapter 绑定到
-同一 source scope。因此 (25) 是**算术两步压缩**，不是已经支付 E1--E5 的全局边。
+这已给出一个可以读取的 reset 方向。单独由 (25) 仍不能推出全局递归边：若没有真实
+persistent parent，就不能把内部图表的 \(4\to2\) 回填为未知 source 的 E5，也不能跳过
+terminal-first guard。后续的
+[C=4 双高锚内部 checkpoint 宏](type-I-high-support-c4-two-anchor-persistent-macro.md)
+证明了精确的条件性补强：只要第一个高锚已收费，第一次 target 可保持为同 scope 的
+**内部** checkpoint，第二个 universal-source bundle 就给出一条 \(4\to2\) 的 E1--E5
+宏；它不创建 fresh root，也不声称每个本图表都已具有这样的 parent。
 
 对 \(p=2137\)，该压缩具体为
 
@@ -344,7 +348,8 @@ Q_1=18277763,
 2. 当前势 \(\Lambda_p^\sharp\) 对可由 canonical raw source 显式构造的 macro 不严格，
    因而无法作为目标所要求的全局严格良基势。
 
-后续必须在这类 stutter 上构造 terminal/alternate/paid reset，或为状态加入一个能在
+后续仍必须覆盖没有已收费 parent 的高图表，并补齐全局 terminal-first 与其它 reset 的
+良基拼接。对不满足已收费 parent 前提的 stutter，仍需要 terminal/alternate/paid reset，或为状态加入一个能在
 
 \[
 (A,K/A)\longmapsto(AQ,K_M/M)=(AQ,4)
@@ -352,9 +357,8 @@ Q_1=18277763,
 \]
 
 严格下降、同时与其它所有合法宏兼容的新良基坐标。把支撑单调增加直接当作势函数并不可行，
-因为它本身不是良基的下降方向。式 (25) 表明最有希望的局部修复是把两次 anchor
-重分类为一个经过 persistent adapter 的复合宏；但在该合同尚未建立前，不能把算术
-\(4\to2\) 当作全局严格递降。
+因为它本身不是良基的下降方向。式 (25) 的局部修复现已在“已收费 parent”前提下完成；
+不能据此把所有算术 \(4\to2\) 都当作全局严格递降。
 
 ## 6. 聚焦复核
 
