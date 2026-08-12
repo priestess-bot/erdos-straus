@@ -96,6 +96,10 @@ sources:
   role: atomic-split-conditional-admission-schema-and-exact-e5-gate
 - claim: type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary
   role: small-endpoint-exit-s-zero-normal-form-and-fixed-depth-projection-no-go
+- claim: type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay
+  role: endpoint-stutter-factor-normal-form-and-conditional-two-step-strict-relay
+- claim: type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go
+  role: fixed-cell-unbounded-conditional-rechart-arithmetic-height-no-go
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -7115,7 +7119,7 @@ Endpoint 侧也得到一个全称正结果。任意真实 capacity endpoint \(h\
 
 若
 \[
-2\le h<p,\qquad h^2+h-1<p,
+2\le h<p,\qquad h^2<p,
 \]
 则要么 \(R-h\mid K\) 直接 Type I，要么单侧 complete-excess carry 严格降到
 \(c\le p-2\)。特别地，所有核心素数上的 \(h=2,3\) 已无条件闭合。相反，
@@ -7144,9 +7148,26 @@ r'=r+tT,\qquad T'=LT.
 的完整 \(P/M\) capacity tree。因此继续机械增加、且只观察统一 \(P/M\) endpoint
 projection 深度的策略已经被严格排除；中间 raw terminal、其它 branch 和跨图表动作
 不在此 no-go 的量词内。
-当前决定性方向应是二选一：证明大的非 \(1\bmod p\) endpoint 必有严格 carry/terminal，
-或为整棵 \(1\bmod p\) 的 \(p\)-block 树构造在 alternate/reset 下也不可重置的全局良基
-资源。完整证明见
+单侧 endpoint 的后续分析又给出精确的 stutter 因子正规形。若
+\(E_0=1+ps\)，canonical checkpoint 的下一 ordinary multiplier 满足
+\(E_1\equiv s\pmod p\)。因此除 \(s\equiv0\)，以及 \(s\equiv1\) 后 regeneration
+最终返回 p-free failure 外，其余 stutter 都有最终 capacity 严降的算术 suffix；
+只有 persistent/typed/terminal-first 与 E1--E5 回执全部通过后才能包成 guarded macro。
+\(p=97,r=6618\) 的真实五步路径给出一步 stutter，下一 ordinary suffix 给出
+\((0,96)\to(0,80)\) 的算术候选；这同时否定“所有大非 \(1\bmod p\) endpoint 一步
+strict”。
+
+固定 \(K\) 的完整 \(P/M\) 子锚虽严格消耗局部势 \(K/h\)，已获 E1--E4 准入的
+stutter checkpoint \(K\mapsto LK\) 会把它重置。更强地，\(p=73\) 的一个固定
+完整超额胞经 Hensel 提升可让条件 rechart 算术 target 的根 departure
+\(p\)-进高度取任意 \(f\ge2\)。它排除仅由该 normal form 推出统一高度上界，
+但不排除 admission gate 对合法边的额外限制。所以固定深度投影和单步 endpoint rank
+不能成为全局证明；单靠 normal-form 算术也无法给出统一高度界。当前决定性方向是二选一：
+直接关闭上述两个 p-free return 类，或构造在 alternate/split/rechart 下仍不可重置的
+树级资源。完整证明见
 [atomic split 准入与秩边界](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)
 及
-[\(s=0\) 二阶回返、小容量端点出口与固定深度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary.md)。
+[\(s=0\) 二阶回返、小容量端点出口与固定深度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary.md)、
+[单侧 endpoint stutter guarded relay](../claims/type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay.md)
+与
+[\(s=0\) Hensel 任意根高度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)。

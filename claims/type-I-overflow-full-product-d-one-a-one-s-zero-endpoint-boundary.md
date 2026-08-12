@@ -4,7 +4,7 @@ claim_id: type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary
 title: a=1 的 s=0 二阶回返、小容量端点出口与固定深度 no-go
 statement: >-
   在完整乘积 d=1 的 a=1 图表中，任一实际 primitive capacity endpoint h|K 满足精确
-  容量映射 gcd(R-h,K)=gcd(ph+1,K)。若 2<=h<p 且 h^2+h-1<p，则要么
+  容量映射 gcd(R-h,K)=gcd(ph+1,K)。若 2<=h<p 且 h^2<p，则要么
   R-h|K 直接给 Type I terminal，要么 R-h 的完整超额单侧 receipt p-free 且 canonical
   carry 严格降到 c<=p-2；特别地，所有核心素数上的 h=2,3 都闭合。另一方面，
   h=1 (mod p) 时 R-h 的完整超额块必含 p，故 p-free gate 强制失败并继续 p-peel。
@@ -15,8 +15,8 @@ statement: >-
   5330=p^2+1 与 5403=p^2+p+1，两个 immediate endpoint receipt 的完整块都含 73。
   更强地，对每个固定深度 N，CRT 可同时保持该根 s=0 cell 与深度 N 的完整 P/M
   容量树。因此任何仅以 P/M endpoint projection 是否在固定深度内退出为判据的策略都
-  不能关闭 s=0；当前决定性余项是
-  大的非 1 (mod p) endpoint 的严格动作，或跨整棵 p-block 树的全局良基势/终端。
+  不能关闭 s=0；本卡留下的决定性余项是大非 1 (mod p) endpoint 的严格动作，
+  或跨整棵 p-block 树的全局良基势/终端。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -81,10 +81,11 @@ R=(p-1)n-1,\qquad 4K=pR+1.
 
 本卡有两类互补结论：
 
-1. 第 2--3 节建立任意 endpoint 的精确容量映射，并全称关闭所有平方根尺度的小
-   endpoint；
-2. 第 4--7 节证明 \(s=0\) 可以提升根 \(p\)-进层数，也可以与任意固定深度的完整容量树
-   共存，所以不能把小 endpoint 引理外推成全覆盖。
+1. 第 2--3 节建立任意 endpoint 的精确容量映射，并以强化后的 \(h^2<p\) 阈值全称
+   关闭平方根尺度的小 endpoint；
+2. 第 4--7 节证明任意 \(p^f\)-peel 的双侧容量映射，及 \(s=0\) 可以提升根
+   \(p\)-进层数、与任意固定深度的完整容量树共存，所以不能把小 endpoint 引理外推成
+   全覆盖。
 
 这里的 split target 只有在
 `path_anchored_atomic_split_complete_excess_v1` 已通过 E1--E4 时才是合法
@@ -167,7 +168,7 @@ M=\operatorname{lcm}(A,Q)=AE.
 若
 
 \[
-2\le h<p,\qquad h^2+h-1<p,
+2\le h<p,\qquad h^2<p,
 \tag{13}
 \]
 
@@ -199,31 +200,31 @@ D=mp+1-h.
 式 (10) 给 \(D\le ph+1\)，故 \(m\le h\)。再次用 (10)：
 
 \[
-D\mid m(ph+1)-hD=m+h(h-1)\le h^2.
+D\mid m(ph+1)-hD=m+h(h-1).
 \tag{16}
 \]
 
-但 (13)、(15) 给
+右端为正，故 \(D\le m+h(h-1)\)。与 (15) 比较得到
 
 \[
-D\ge p+1-h>h^2,
+m(p-1)\le h^2-1<p-1,
 \tag{17}
 \]
 
-与 (16) 矛盾。因此 \(E\not\equiv1\pmod p\)，canonical cofactor 不是 \(p-1\)，只能
+与 \(m\ge1\) 矛盾。因此 \(E\not\equiv1\pmod p\)，canonical cofactor 不是 \(p-1\)，只能
 落在 \(1,\ldots,p-2\)。\(\square\)
 
 令
 
 \[
-H_p=\max\{h\in\mathbb N:h^2+h-1<p\}.
+H_p=\max\{h\in\mathbb N:h^2<p\}.
 \tag{18}
 \]
 
 所有 \(2\le h\le H_p\) 都被定理 1 关闭。对核心素数 \(p\ge73\)，特别有
 \(h=2,3\) 无条件闭合；\(p=73\) 时覆盖 \(2\le h\le8\)。
 
-这个半径不能由同一整除论证推广到全部 \(h\)。例如
+这个强化后的半径仍不能由同一整除论证推广到全部 \(h\)。例如
 
 \[
 p=73,\qquad h=19,\qquad D=347=5p+1-h
@@ -252,6 +253,69 @@ h\equiv1\pmod p\text{ 的继续 }p\text{-tree}
 h\not\equiv1\pmod p\text{ 的大 endpoint}.}
 \tag{19}
 \]
+
+### 4.1 任意 \(p^f\)-peel 的双侧容量映射
+
+前述 gcd 映射不只适用于一层。设 \(f\ge1\) 且
+\(p^f\mid R-h\)，定义
+
+\[
+y=\frac{R-h}{p^f},
+\qquad
+x=R-y.
+\tag{19a}
+\]
+
+则直接由 \(4K=pR+1\) 得
+
+\[
+\boxed{
+p^{f+1}y=4K-(ph+1),\qquad
+p^{f+1}x=4(p^f-1)K+(ph-p^f+1).}
+\tag{19b}
+\]
+
+由于 \(p\nmid K\)，两式模 \(K\) 精确给出
+
+\[
+\boxed{
+(y,K)=(ph+1,K),\qquad
+(x,K)=(ph-p^f+1,K).}
+\tag{19c}
+\]
+
+这些代数恒等式只需 \(p^f\mid R-h\)，不需要 \(h\mid K\)；条件
+\(p^f\parallel R-h\) 只在把 \(f\) 解释为剥尽的 \(p\)-block 高度时需要。条件
+\(h\mid K\)、正性、primitive/path receipt 和 terminal-first gate 则属于实际容量宏的
+准入语义，不能由 (19b)--(19c) 代替。
+
+当 \(f=1\) 时两个容量标签（也是完整子锚候选）为
+
+\[
+P(h)=ph+1,\qquad M(h)=p(h-1)+1.
+\tag{19d}
+\]
+
+它们的实际容量分别是 \((P(h),K)\) 与 \((M(h),K)\)；只有候选本身整除
+\(K\) 时，才是完整子锚。
+
+固定同一个 \(K\)，若 \(h>1\)、\(h\mid K\)，且
+\(h'\in\{P(h),M(h)\}\) 本身整除 \(K\)，则 \(h'>h\)，故
+
+\[
+\rho_K(h')=\frac K{h'}<\frac K h=\rho_K(h).
+\tag{19e}
+\]
+
+这是一个真实的固定图表局部良基量，但不是全局势。首先，若“child”只指
+\((P(h),K)\) 或 \((M(h),K)\)，它可能小于 \(h\)，(19e) 不成立；其次，合法
+canonical target 一般是 \(K_M=ALc_M\)，并不总是 \(LK\)。只对已通过 E1--E4 的
+\(a=1,d=1\) split stutter checkpoint，有 \(c_M=p-1\)，从而
+\(K_M=AL(p-1)=LK\)，同一锚上的预算才重置为
+\(\rho_{K_M}(h)=L\rho_K(h)\)。特别是 \(s\equiv0\pmod p\) 时
+\(L=1+p^2t\)，同时 \(R\) 也改变，旧 departure/path 未必可以重放。故后面的
+fixed-depth no-go 与 (19e) 并不矛盾：前者的量词是“每个 \(N\) 存在一个随 \(N\)
+增长的 \(K_N\)”，后者只是“每个固定 \(K\) 的完整子锚路径有限”。
 
 ## 5. \(s=0\) 的二阶正规形
 
@@ -595,7 +659,7 @@ r_N\equiv396\pmod {73^2}.
 在满足 endpoint 整除的这个 CRT 子格上，两个 quotient 可显式写成
 
 \[
-Q_x=\frac{383616r-2663}{2665},qquad
+Q_x=\frac{383616r-2663}{2665},\qquad
 Q_y=\frac{3552r-25}{1801}.
 \tag{55}
 \]
@@ -652,17 +716,54 @@ endpoint 投影；同层其它 raw branch、独立 Type I/II terminal-first 或�
 
 ## 8. 新的决定性余项
 
-本卡证明“只观察 fixed-depth (P/M) endpoint projection”不是全局方法。下一步不应
-继续机械加深这一投影，而应在以下两个对象中选择一个建立全称定理：
+本卡证明“只观察 fixed-depth \(P/M\) endpoint projection”不是全局方法。后续
+[单侧 endpoint stutter guarded relay](type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay.md)
+又把大 endpoint 的旧余项进一步压缩。对已通过 source、residual 和 p-free gate
+的单侧 endpoint receipt，若 multiplier \(E_0\not\equiv1\pmod p\)，其算术 carry
+当步严格；若 \(E_0=1+ps\)，则
 
-1. **大 endpoint carry：** 对 \(h\not\equiv1\pmod p\) 且
-   \(h^2+h-1\ge p\)，利用 \(h\) 来自 \(P/M\) 多项式或消元常数的额外结构，排除
-   \(D\equiv1-h\pmod p,\ D\mid ph+1\) 的 stutter，或构造 Type I/II terminal；
-2. **树级良基量：** 不逐层计数，而给每个 \(h\equiv1\pmod p\) 的 \(p\)-block
-   continuation 一个不可重置的全局资源；该资源必须在所有 alternate/reset 后仍良基，
-   并最终迫使进入第 1 项或小 endpoint。
+\[
+E_1\equiv s\pmod p.
+\tag{60}
+\]
 
-任何只承诺“再看固定若干层 (P/M) endpoint projection”的选择器都被定理 2 排除；
+因此 \(s\not\equiv0,1,-1\) 时下一 ordinary suffix 有严格算术 cofactor，
+\(s\equiv-1\) 时 alternate source 的算术 capacity 为 1，\(s\equiv1\) 时进入有限
+regeneration。这些 suffix 只有在 persistent/typed/terminal-first 与 E1--E5 回执全部通过后
+才能升格为合法宏。在这个 p-free stutter 子域内，真正未闭合的算术类只剩
+
+\[
+\boxed{
+E_0\equiv1\pmod {p^2},
+\quad\text{或}\quad
+E_0\equiv1+p\pmod {p^2}\text{ 且 regeneration 最终落入 p-free failure}.}
+\tag{61}
+\]
+
+另外，\(h\equiv1\pmod p\) 时 \(p\mid E_0\)，p-free gate 失败，必须保留为独立的
+p-block continuation，不属于 (61)。而且 \(p=97,r=6618,h=58\) 是真实可达的
+一步 stutter；(60) 给出下一 ordinary suffix 的算术候选 capacity \(80<96\)，
+只有所有 E1--E5 guards 通过后才能登记为宏。所以不能再把旧目标写成
+“所有大非 \(1\bmod p\) endpoint 一步 strict”。
+
+势函数方向也有两个新的硬边界。固定 \(K\) 时，完整 \(P/M\) 子锚确实由 (19e)
+严格消耗 \(K/h\)；但已获 E1--E4 准入的 stutter checkpoint 会把这个量乘以
+\(L\)，故它不是仅由该算术 checkpoint 控制的全局势。更强地，
+[Hensel 高度 no-go](type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)
+在一个固定完整超额胞中构造出任意大的条件 rechart 算术 target 根
+\(p\)-进高度；它排除仅从这个 normal form 推出统一高度界，但不排除 admission gate
+对合法边施加额外限制。因此下一步不应继续机械加深投影、只从算术 normal form
+给 \(p\)-block 深度设统一上界，或使用单步 endpoint rank；应在
+以下两个对象中建立全称定理：
+
+1. **任意高度的 p-free return 出口：** 对 (61) 的两类，利用 (19b)--(19c) 的精确
+   双侧容量、同层其它 raw branch 或 Type I/II 菜单，构造 terminal 或最终
+   capacity \(<p-1\) 的 guarded macro；
+2. **可跨 rechart 的树级资源：** 给 \(p\)-block continuation 一个不会被
+   \(K\mapsto LK\)、alternate source 或 split checkpoint 重置的良基量，并证明每次
+   无 terminal 的完整宏都严格消耗它。
+
+任何只承诺“再看固定若干层 \(P/M\) endpoint projection”的选择器都被定理 2 排除；
 中间 raw node 的 Type I/II、其它 branch 或跨图表动作不在该 no-go 的量词内。当前结果
 仍未证明所有 \(s=0\) 状态退出，也没有证明 Erdos--Straus 猜想。
 
