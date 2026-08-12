@@ -163,7 +163,7 @@ h=\min_{u_i\ne0}b_i.
 因为 \(-1\) 的阶为 2 而 \(C_{\ell^{h+1}}\) 是奇阶群，
 
 \[
-\chi(-1)=1,qquad \chi(\Phi(z))=\chi(s_z)\ne1.
+\chi(-1)=1,\qquad \chi(\Phi(z))=\chi(s_z)\ne1.
 \tag{10}
 \]
 
@@ -248,7 +248,7 @@ descent。
 以 \(2\) 为 \(H\) 的生成元，离散对数模 11 给出
 
 \[
-\log_2\Phi(z)=10,qquad \log_2s_z=10,qquad
+\log_2\Phi(z)=10,\qquad \log_2s_z=10,\qquad
 \log_2\omega_z=9.
 \tag{16}
 \]
@@ -264,7 +264,7 @@ residual 的一个真实 E1 source-role 正例；它是否通过后续 carrier r
 \(z=(0,1)\) 给出
 
 \[
-\Phi(z)=12,\qquad s_z=151,qquad \operatorname{ord}(s_z)=81,
+\Phi(z)=12,\qquad s_z=151,\qquad \operatorname{ord}(s_z)=81,
 \qquad
 \omega_z=104.
 \tag{17}
@@ -273,7 +273,7 @@ residual 的一个真实 E1 source-role 正例；它是否通过后续 carrier r
 以 \(2\) 为生成元，
 
 \[
-\log_2s_z=22\pmod{162},qquad
+\log_2s_z=22\pmod{162},\qquad
 \log_2\omega_z=54\pmod{162}.
 \tag{18}
 \]

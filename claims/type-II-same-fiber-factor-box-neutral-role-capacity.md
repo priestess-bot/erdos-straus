@@ -421,7 +421,7 @@ membership in \(P_1\)。两者都有限、都只含 (24) 的实际因子、都�
 \(3\)-prefix、都不命中目标。\(P_0\) 是 downset，而 \(P_1\) 不是：
 
 \[
-(3,1)\le(3,2),\qquad (3,2)\in P_1,qquad(3,1)\notin P_1.
+(3,1)\le(3,2),\qquad (3,2)\in P_1,\qquad(3,1)\notin P_1.
 \tag{37}
 \]
 

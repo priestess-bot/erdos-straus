@@ -140,7 +140,7 @@ m\mid d(B+1).
 由 $(d,m)=1$ 的互素性，$m$ 整除 $B+1$，所以 $K$ 为正整数，且
 
 \[
-x=ABC,qquad (A,B)=1,qquad A+B=1+B=mK.
+x=ABC,\qquad (A,B)=1,\qquad A+B=1+B=mK.
 \tag{10}
 \]
 
@@ -211,7 +211,7 @@ p\equiv24h_0+1\pmod{24M}.
 取
 
 \[
-m=11,qquad a=3,qquad d=15.
+m=11,\qquad a=3,\qquad d=15.
 \tag{17}
 \]
 
@@ -233,7 +233,7 @@ h\equiv52\pmod{55},
 剩余类与 $1320$ 互素。控制 $h=217$ 给出 $p=5209$、
 
 \[
-x=1305,qquad B=87,qquad K=8,qquad n=435,
+x=1305,\qquad B=87,\qquad K=8,\qquad n=435,
 \]
 
 以及
@@ -252,7 +252,7 @@ x=1305,qquad B=87,qquad K=8,qquad n=435,
 取
 
 \[
-m=59,qquad a=15,qquad d=21.
+m=59,\qquad a=15,\qquad d=21.
 \tag{20}
 \]
 

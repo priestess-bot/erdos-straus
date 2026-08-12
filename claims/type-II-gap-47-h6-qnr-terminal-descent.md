@@ -7,7 +7,7 @@ statement: >-
   p (mod 47) 属于 R_47={5,10,11,13,15,22,23,26,30,31,35,39,41,43,44,45,46}，
   则表中指定 d 满足 d|x^2、d<=x 和 47|(x+d)，从而给出 gap 47 的显式 Type II
   短证书。又因 48|p-1，该同一 factor pair 规范地给出 n=(p+47)/48=(h+2)/2<p
- 的非空两尾标记状态及不读取目标解的 lift (ABC,ACK,BCK)->(ABC,pACK,pBCK)。
+  的非空两尾标记状态及不读取目标解的 lift (ABC,ACK,BCK)->(ABC,pACK,pBCK)。
   R_47 是模 47 二次非剩余集合中除去 {19,20,29,33,38,40} 的 17 项；本卡不对这
   六项、其它 h 同余类或全部 G 状态作覆盖声明。
 claim_status: established
@@ -214,7 +214,7 @@ h\equiv h_0\pmod{376}.
 给出
 
 \[
-x=ABC,qquad d=A^2C,qquad(A,B)=1.
+x=ABC,\qquad d=A^2C,\qquad(A,B)=1.
 \tag{16}
 \]
 
@@ -250,7 +250,7 @@ x+d=AC(A+B)
 取 \(h=118\)，则
 
 \[
-p=2833,qquad p\equiv13\pmod{47},qquad x=720,qquad d=32,qquad n=60.
+p=2833,\qquad p\equiv13\pmod{47},\qquad x=720,\qquad d=32,\qquad n=60.
 \tag{20}
 \]
 

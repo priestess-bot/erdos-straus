@@ -48,7 +48,7 @@ R=8U-1=2p-3,
 \]
 
 \[
-K=U(8U+1)=\frac{(p-1)(2p-1)}4,qquad L=2K.
+K=U(8U+1)=\frac{(p-1)(2p-1)}4,\qquad L=2K.
 \tag{1}
 \]
 
@@ -63,14 +63,14 @@ K=U(8U+1)=\frac{(p-1)(2p-1)}4,qquad L=2K.
 另一方面，比二普通除子对可以产生严格较小的算术前驱。若
 
 \[
-a,b\mid L,qquad(a,b)=1,qquad a\equiv2b\pmod R,qquad a<2b,
+a,b\mid L,\qquad(a,b)=1,\qquad a\equiv2b\pmod R,\qquad a<2b,
 \tag{3}
 \]
 
 则
 
 \[
-E=L\frac ab,qquad n=\frac{2L-E}{R}
+E=L\frac ab,\qquad n=\frac{2L-E}{R}
 \tag{4}
 
 \]
@@ -85,8 +85,8 @@ E=L\frac ab,qquad n=\frac{2L-E}{R}
 先取任意满足
 
 \[
-4K=pR+1,qquad R>1,qquad
-E\mid4K^2,qquad E\equiv1\pmod R,qquad0<E<4K,
+4K=pR+1,\qquad R>1,\qquad
+E\mid4K^2,\qquad E\equiv1\pmod R,\qquad0<E<4K,
 \tag{5}
 \]
 
@@ -109,7 +109,7 @@ nRK=4K^2-EK\equiv0pmod E.
 故
 
 \[
-E\mid nK,qquad \alpha:=\frac{nK}{E}\in\mathbb N.
+E\mid nK,\qquad \alpha:=\frac{nK}{E}\in\mathbb N.
 \tag{8}
 
 \]
@@ -187,7 +187,7 @@ E=L\frac ab\equiv2L\equiv1pmod R.
 取
 
 \[
-p=12409,quad U=3102,quad R=24815,quad K=76982334,quad L=153964668.
+p=12409,\quad U=3102,\quad R=24815,\quad K=76982334,\quad L=153964668.
 \tag{15}
 
 \]
@@ -195,7 +195,7 @@ p=12409,quad U=3102,quad R=24815,quad K=76982334,quad L=153964668.
 有一组非退化比二因子
 
 \[
-a=1081=23\cdot47,qquad
+a=1081=23\cdot47,\qquad
 b=12948=2^2\cdot3\cdot13\cdot83,
 \tag{16}
 

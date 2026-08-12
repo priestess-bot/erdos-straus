@@ -36,6 +36,7 @@ used_by:
 - type-I-universal-p-source-capacity-anchor-orbit
 - type-I-overflow-determinant-fixed-n-dual-support-conflict
 - type-I-overflow-fixed-n-bounded-divisor-saturation
+- type-I-overflow-unbounded-full-product-quotient-fold
 - type-I-overflow-cofactor-r-chart-support
 - type-I-overflow-outer-rank-reset
 - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
@@ -471,6 +472,32 @@ outer_rank_reset 字段共同核验。
 \(S\le B_p\iff n\le p-2\)。这只是条件性充分条件，不能替代对一般递归可达
 \(A_S>1\) overflow 的有界除子存在性证明。完整引理、低互补量推论和 12 个聚焦回执见
 [overflow 固定 \(n\) 的有界除子外层秩递降](../claims/type-I-overflow-fixed-n-bounded-divisor-saturation.md)。
+
+对真实 persistent source 的完整乘积 \(S=Md\) 还有一个独立的无界 support 分支。若
+\(1\le A_S\le B_p\) 且 \(S/A_S\ge2\)，令 target support 为 \(A_T=S\)，并取
+
+\[
+(M_T,d_T,n_T;A_T)=(S,1,n;S),
+\qquad
+R_T=(p-1)n-1,
+\qquad
+K_T=S(p-1).
+\]
+
+这里不要求 \(S\le B_p\)：charged state 只要求 \(A_T\mid K_T\)。严格性由
+
+\[
+\left\lfloor\frac{B_p}{S}\right\rfloor
+<
+\left\lfloor\frac{B_p}{A_S}\right\rfloor
+\]
+
+在 \(\Lambda_p^\sharp\) 的第一坐标支付。target 的 F/G/hit、normal form、scope 和
+内容地址仍必须独立重算；因此当前它是已有 typed-adapter 准入合同下的条件性 E1--E5
+分支，不能把未序列化的旧 receipt 直接升格。该规则消去全部
+\(A_S\le B_p\)、\(Md>A_S\) 的算术 overflow，包括 \(M=A_S,d>1\) 的有界因子空菜单；
+它的唯一严格停顿是 \(M=A_S,d=1\)。完整证明与聚焦回执见
+[overflow 固定 \(n\) 完整乘积商折叠的无界 support 严格递降](../claims/type-I-overflow-unbounded-full-product-quotient-fold.md)。
 
 若来源载体落在 \(M>B_p\)，同一有界后继还自动满足 \(L\le B_p<M\)，从而
 \(R_L=4L-n<R_M=4M-n\)。选择器把它记录为 high_carrier_R_descent 次级秩；
@@ -1394,14 +1421,21 @@ bundle overflow，并消除了 `COMPETING_EXCESS` 作为独立 sink-SCC 余项�
 得到一条 verified edge。因此“裸 G source”和
 “初始 overflow 无出口”不再是主缺口。
 
-当前唯一集中的全称问题是：对每个递归历史可达的 \(A>1\) overflow，是否必有
+在统一 typed charged-chart adapter 尚未实现前，当前集中的全称问题是：对每个递归历史
+可达的 \(A>1\) overflow，是否必有
 
 \[
 \mathcal W_A\ne\varnothing
 \quad\text{或存在满足有界除子条件的 }L\mid Md,
+\quad\text{或在 }A\le B_p,\ Md>A\text{ 时通过完整乘积无界折叠},
 \quad\text{或某个 source/path/node alternate 保持并增加 }A,
 \quad\text{或直接 Type I/II 终端？}
 \]
+
+第三项的算术、E4 与 E5 已经完成；其缺口仅是 target typed normal-form 的统一
+序列化准入。因而在该 adapter 被接入后，低 support 段会精确缩到
+\(M=A,d=1\)，而不是所有有界除子空菜单。源端 \(A>B_p\) 时第一秩坐标已为零，完整乘积
+不再自动付款，仍须使用高支撑 capacity gate 或新的严格第二坐标机制。
 
 若这些出口都没有，就必须构造改变 marked state 的新边，并以一个严格下降的外层 phase
 支付 support reset。任何 overflow 至少有一个 \(R<p\) 的算术对偶图表，但反例证明该

@@ -2,7 +2,15 @@
 kind: claim
 claim_id: type-I-gap23-adaptive-divisor-terminal-selector
 title: gap 23 的自适应 d=2r Type I 终端选择子
-statement: 对核心素数 p=24h+1，置 s=h+1、x=6s。对每个 r|s，令 d=2r，则 d|x 且 d<=x/3；该 gap-23 Type I 模板成立当且仅当 r(s/r)^2=15 (mod 23)。等价地，15 属于上除子盒 U_23(s)={s^2/r (mod 23): r|s}。因此这给出一个由 s 的完整因子分解可判定、可显式恢复的直接 terminal。把它接在 R=11/gap-7/gap-11 三路 dispatch 之后，四路共同残余精确等于原三项残余条件再加 15 不属于 U_23(s)。特别地，p=1201+1656a 的每个素数参数均以 r=17+23a、d=34+46a 直接终止；该 primitive Dirichlet 射线包含 p=1201，并在 p=2857 给出一个不属于已有 gap-23 自动 Type II 九类且不满足固定 d=34 条件的 Type I control。
+statement: >-
+  对核心素数 p=24h+1，置 s=h+1、x=6s。对每个 r|s，令 d=2r，则 d|x 且
+  d<=x/3；该 gap-23 Type I 模板成立当且仅当 r(s/r)^2=15 (mod 23)。等价地，15
+  属于上除子盒 U_23(s)={s^2/r (mod 23): r|s}。因此这给出一个由 s 的完整因子分解
+  可判定、可显式恢复的直接 terminal。把它接在 R=11/gap-7/gap-11 三路 dispatch
+  之后，四路共同残余精确等于原三项残余条件再加 15 不属于 U_23(s)。特别地，
+  p=1201+1656a 的每个素数参数均以 r=17+23a、d=34+46a 直接终止；该 primitive
+  Dirichlet 射线包含 p=1201，并在 p=2857 给出一个不属于已有 gap-23 自动 Type II
+  九类且不满足固定 d=34 条件的 Type I control。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
