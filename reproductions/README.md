@@ -733,3 +733,21 @@ split 来源恒等式及非交换逐侧分支、最小 receipt cell 的二次 st
 严格单侧出口；无限性由 claim 中的消元恒等式证明。脚本不扫描素数、分母、历史
 selector、一般图表或完整 Type I/II 菜单；一般二次互反、\(s=0,1,-1\) 分派及
 persistent/typed-state 字段不在脚本覆盖范围内。
+
+`type_i_atomic_split_s_zero_endpoint_boundary.py` 接续核对新的
+`path_anchored_atomic_split_complete_excess_v1` 与 \(s=0\) 边界。它用
+
+\[
+Q=\gcd\left(v,\left(v/\gcd(v,K)\right)^{\operatorname{bitlength}(v)}\right)
+\]
+
+的 gcd/模幂公式重算完整超额块，并固定验证：\(p=73,r=1\) 的
+\((0,72)\to(0,67)\) 严格 atomic split；\(r=50\) 的 non-maximal \(c=12\) 伪目标、
+规范 \(c=72\) stutter 与旧 \(p\)-进秩不降；\(r=57\) 的两个小 endpoint；
+\(r=95979\) 的 root departure \(1\to2\) 层反例；\(r=21944065678\) 的两个 immediate
+endpoint \(p\)-free 失败；以及一个同时保持根 \(s=0\) 的深度 3 完整容量树。脚本不
+扫描素数、分母、selector history、历史测试或一般深度；它只支撑 arithmetic controls，
+条件 E1--E4 schema、小 endpoint 定理与任意固定深度 CRT no-go 由两张 claim 的文本
+证明承担。
+
+运行 `python3 reproductions/type_i_atomic_split_s_zero_endpoint_boundary.py --verify`。

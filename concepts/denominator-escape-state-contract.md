@@ -57,6 +57,7 @@ used_by:
 - type-II-odd-kernel-overflow-natural-tail-relation-graph
 - type-II-relation-reach-proper-endpoint-descent
 - type-II-relation-reach-gcd-shadow-endpoint-descent
+- type-I-path-anchored-atomic-split-complete-excess-admission
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -85,7 +86,7 @@ sources:
 - claim: type-II-relation-reach-gcd-shadow-endpoint-descent
   role: universal-q-owned-shadow-endpoint-E1-E5-and-q-one-base
 visibility: public
-last_checked: '2026-08-12'
+last_checked: '2026-08-13'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -367,6 +368,25 @@ bundle receipt 允许两种 E1 provenance：
 第二种不能冒充第一种，但一旦这些整数条件成立，后续 lcm 更新、恒等解提升和势下降
 完全相同。特别地，source-anchored clean \(Q=q^e,\ q\nmid K_S\) 可以沿 \(q\)-peeling
 到达 \(\{1,R-1\}\)，再从该 anchor 构造新的 complete-excess bundle。
+
+另有一个不可还原成两条单侧 action 的双色 primitive：
+`path_anchored_atomic_split_complete_excess_v1`。若同一条已绑定 source 的 raw path
+到达 \(x+y=R\)，且两侧唯一完整超额块 \(Q_x,Q_y>1\) 都 \(p\)-free，则 receipt
+必须把该 path/node occurrence 作为单一 owner，原子携带两个有颜色 payload，并更新
+
+\[
+A_T=\operatorname{lcm}(A_S,Q_x,Q_y).
+\]
+
+它不得在同一 action 内导出两个可独立调度的旧单侧 token；跨 action 的全局 one-use
+只有在强制 owner ledger 进入 target identity 时才能声称。E1--E3 schema 必须重算双色
+maximality、canonical occurrence、逐素数 charge conservation、scope 和 canonical
+typed target，并以通用 source/target validator 成功为前提；E4 仍取
+\(\operatorname{Sol}(p)\) 恒等映射。若 \(A_S>B_p\)，E5 的精确额外门为
+\(K_T/A_T<K_S/A_S\)；未通过者不能登记 standalone edge，只能被 guard 抢占、保留为
+evidence，或作为从真实 persistent parent 一次重放的严格宏内 checkpoint。完整条件
+表示定理、非最大分块反例和 stutter 宏边界见
+[双侧完整超额原子来源的条件准入 schema](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)。
 
 当前 raw 合同还有一个对所有 F/G/hit 图表统一的具名来源：
 

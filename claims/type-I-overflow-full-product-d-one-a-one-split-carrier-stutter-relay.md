@@ -8,7 +8,8 @@ statement: >-
   4c_0 beta_x beta_y=pQ_x beta_x+pQ_y beta_y+1，其中
   c_0=K/(beta_x beta_y)；联合 support 的唯一 multiplier 为
   L=(Q_x/gcd(A,Q_x))(Q_y/gcd(A,Q_y))。这给出确定的 split-carrier
-  算术正规形与 identity-lift candidate，但现有单侧 E1/E3 不蕴含“双侧块可原子联合收费”，
+  算术正规形与 identity-lift candidate；现有单侧 E1/E3 不蕴含“双侧块可原子联合收费”，
+  后续独立的 atomic split primitive 已给出这一新接口的条件准入 schema，但不改写旧单侧 action，
   两条逐侧 raw 分支也不能在两个顺序中都保留原始完整块而形成交换菱形，因此本卡不把它
   登记为 verified edge。在固定 receipt
   cell 中，L=1 (mod p) 是一个至多二次的剩余条件；根锚 p+1 的最小 cell
@@ -19,7 +20,7 @@ statement: >-
   stutter；但同一路径的
   容量锚 h=3 总产生合法单侧完整超额 receipt，并严格降到 canonical capacity 2。因此对任一
   已 persistent 入队且完成 typed-target 重分类的该族实例，现有单侧宏给出严格候选出口；全局
-  剩余是先证明 split 原子来源合同，再关闭 s=0 与其它 endpoint-terminal 未命中状态。
+  剩余已收缩为关闭 s=0 与其它 endpoint-terminal 未命中状态。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -66,7 +67,7 @@ sources:
   - reproduction: reproductions/type_i_overflow_d_one_a_one_split_carrier_stutter_relay.py
     role: focused-colored-source-stutter-relay-and-infinite-family-receipts
 visibility: public
-last_checked: '2026-08-12'
+last_checked: '2026-08-13'
 ---
 
 # 完整乘积 \(d=1\) 的 \(a=1\) 双侧载荷正规形、stutter 继电与无限族严格旁路
@@ -81,7 +82,10 @@ last_checked: '2026-08-12'
 3. 第 6 节的 \(h=3\) 单侧 receipt 使用现有 path-anchored 合同，不依赖 split 合同。
 
 因此，本卡建立了 split-carrier 的**唯一候选正规形**，但没有宣称
-`atomic_two_sided_disjoint_complete_excess_charge` 已经由现有 E1/E3 推出。
+`atomic_two_sided_disjoint_complete_excess_charge` 已经由现有 E1/E3 推出。后续
+[双侧完整超额原子来源的条件准入 schema](type-I-path-anchored-atomic-split-complete-excess-admission.md)
+把它定义为新的不可拆分 primitive，并证明完整 verifier receipt 条件性满足 E1--E4；
+该结果不是 registry 已实现的声明，也不是对旧单侧合同的反向改写。
 
 ## 2. 带颜色的双侧来源恒等式
 
@@ -363,7 +367,7 @@ split stutter 的统一分类。
 
 ## 5. 条件性 split stutter 的 \(d=1\) 继电
 
-本节额外假设 (7) 已获一个未来的原子 split 来源合同准入。若 (11) 满足
+本节额外假设 (7) 已通过后续原子 split schema 要求的完整 E1--E4 verifier。若 (11) 满足
 
 \[
 L\equiv1\pmod p,
@@ -661,17 +665,22 @@ Erdos--Straus 反例。因此这里的 no-go 只约束固定深度、固定 gap 
 
 ## 8. 新的最小研究余项
 
-当前 selector 的正确顺序应调整为：
+采用后续原子条件准入 schema 后，selector 的正确顺序应调整为：
 
 1. 双侧超额出现后，先计算两侧真实容量 endpoint，并尝试现有单侧 receipt；
-2. endpoint-first 全部失败后，才生成 (7)--(13) 的双色 split candidate；
-3. 若 split 合同获准，按 \(L\not\equiv1\) 与 \(L\equiv1\) 分流；后一类再用 (37)；
+2. endpoint-first 全部失败后，才生成 (7)--(13) 的双色 atomic split candidate；
+3. 通过新 primitive 的 E1--E4 后，按 \(L\not\equiv1\) 与 \(L\equiv1\) 分流；前者
+   还须通过精确 E5，后者只能作为 guarded checkpoint 再用 (37)；
 4. 真正新的算术硬核只保留 (38) 及所有 endpoint/terminal 菜单均失败的状态。
 
-这比“继续加深双侧容量树”更窄，也比“直接宣布双侧块可联合收费”更安全。下一条需要证明
-的核心引理是：在不允许任意 rechart 的前提下，式 (7) 的双色 maximal receipt 是否足以
-推出一个合法、可序列化且保持全局良基秩的 E1/E3 原子来源合同；若答案是否定的，则应把
-第 1 步的 endpoint 菜单扩大到能覆盖剩余的 \(s\equiv0\) cell。
+这比“继续加深双侧容量树”更窄，也比“直接宣布双侧块可联合收费”更安全。后续工作已经
+给出合同 schema：maximal colored receipt、canonical occurrence、唯一 lcm charge 与
+独立通过通用 validator 的 typed target 足以条件性支付 E1--E4；其 E5 门也已精确化。
+真正未解的是
+\(s\equiv0\pmod p\)，即 \(L\equiv1\pmod {p^2}\) 的大 endpoint/\(p\)-block 树。
+[s=0 二阶回返与固定深度 no-go](type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary.md)
+进一步证明所有小 endpoint 严格退出，但任何只观察统一固定深度 \(P/M\) endpoint
+projection 的策略仍不足。
 
 ## 9. 聚焦回执
 

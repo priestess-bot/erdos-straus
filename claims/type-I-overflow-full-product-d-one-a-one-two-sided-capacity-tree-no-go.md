@@ -12,8 +12,9 @@ statement: >-
   projection 上搜索固定深度的局部退出策略均不成立。该 no-go 不排除中间 raw
   路径之外的 Type I/II terminal-first 证书或跨图表宏。进一步地，peeled node 两侧都超容量时，现有单侧
   complete-excess receipt 两种定向都全称不准入；把两侧完整块合并虽给出
-  split-carrier 的规范目标算术，但缺少 E1/E3 来源合同，而且固定 p=73,r=50
-  的联合 multiplier 为 1 (mod p)，故即使新增合同也仍需单列 carry stutter。
+  split-carrier 的规范目标算术；本卡所用旧单侧 E1/E3 不能准入它，后续工作已把它
+  收敛为新的不可拆分 atomic primitive 条件准入 schema。固定 p=73,r=50 的联合 multiplier 为
+  1 (mod p)，故新 primitive 仍须单列 carry stutter。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -47,7 +48,7 @@ sources:
   - reproduction: reproductions/type_i_overflow_d_one_a_one_two_sided_capacity_tree_no_go.py
     role: focused-binary-tree-and-split-boundary-receipts
 visibility: public
-last_checked: '2026-08-12'
+last_checked: '2026-08-13'
 ---
 
 # 完整乘积 \(d=1\) 的 \(a=1\) 双侧容量树 no-go 与 split-carrier 合同边界
@@ -367,7 +368,7 @@ y'=y+(q-1)x/q,
 
 ## 5. split-carrier 的算术闭包及两道严格边界
 
-虽然 (29) 排除现有接口，(25)--(26) 仍给出一个新的纯算术对象：
+虽然 (29) 排除本卡所用的旧接口，(25)--(26) 仍给出一个新的纯算术对象：
 
 \[
 Q_\Sigma=Q_xQ_y,
@@ -394,7 +395,10 @@ M=\operatorname{lcm}(A,Q_x,Q_y)
 
 及其唯一 canonical chart。但 \(Q_\Sigma\) 跨越加法节点的两侧，不满足现有
 \(u+Q\beta=R\) 的同侧来源语法；所以 (31)--(33) 只能称为
-`split_carrier_arithmetic_closure`，尚不是一条 E1--E5 边。
+`split_carrier_arithmetic_closure`。在本卡的依赖面上它尚不是一条 E1--E5 边；后续
+[原子 split 条件准入 schema](type-I-path-anchored-atomic-split-complete-excess-admission.md)
+证明 maximal colored receipt 在通用 source/target validator 成功时满足 E1--E4，并另给
+精确 E5 门；它不声称 registry 已实现。
 
 ### 边界 A：即使目标严格，现有来源仍不合法
 
@@ -423,7 +427,8 @@ M=21\,333\,318\,666\,660
 
 的 canonical cofactor 为 \(67<72=K/A\)。因此，对应 E2 的 canonical arithmetic、
 对应 E4 的 identity-lift candidate 和 E5 rank inequality 都成立；但单侧 E1 premise
-已经失败，且尚无 split E3 normal-form verifier，所以不能登记为 edge。
+已经失败；在本卡所用旧 action 集中尚无 split E3 normal-form verifier，所以这里不能
+登记为 edge。后续新 primitive 的 strict 控制正是这张 \(67<72\) receipt。
 
 ### 边界 B：新增联合合同也不会自动严格
 
@@ -479,11 +484,13 @@ L\equiv1\pmod p
 
 后续的
 [双侧载荷正规形、stutter 继电与无限族严格旁路](type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay.md)
-已经把这一步继续压缩：它给出唯一的双色来源恒等式，但确认现有单侧 E1/E3 尚不能推出
+已经把这一步继续压缩：它给出唯一的双色来源恒等式，并确认现有单侧 E1/E3 不能推出
 原子 split 收费；同时把条件性 stutter 继电到下一条 \(d=1\) 剩余类，并证明
 \(p=73,r=50+kW\) 的整条无限 stutter 族都有同一路径的 \(h=3\) 单侧严格候选 carry。
 对已 persistent 且完成 typed-target 重分类的实例，它给出严格出口；因此本卡的固定
-stutter 是真实算术边界，却不是已知的持久算术余项。
+stutter 是真实算术边界，却不是已知的持久算术余项。再后续的
+[原子 split 准入与秩边界](type-I-path-anchored-atomic-split-complete-excess-admission.md)
+已经补上新 primitive 的条件 E1--E4 表示定理；E5 stutter 与 \(s=0\) 余项仍由独立卡处理。
 
 ## 7. 聚焦回执
 

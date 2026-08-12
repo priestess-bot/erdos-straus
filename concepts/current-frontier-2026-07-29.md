@@ -92,6 +92,10 @@ sources:
   role: finite-two-sided-capacity-tree-no-go-and-split-carrier-contract-boundary
 - claim: type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay
   role: colored-split-source-stutter-relay-and-infinite-family-endpoint-exit
+- claim: type-I-path-anchored-atomic-split-complete-excess-admission
+  role: atomic-split-conditional-admission-schema-and-exact-e5-gate
+- claim: type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary
+  role: small-endpoint-exit-s-zero-normal-form-and-fixed-depth-projection-no-go
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -115,7 +119,7 @@ sources:
   locator: Theorem C
   role: product-set-growth-context
 visibility: public
-last_checked: '2026-08-12'
+last_checked: '2026-08-13'
 ---
 
 # 当前证明前沿与下一阶段发展目标
@@ -7010,7 +7014,9 @@ L=\frac{\operatorname{lcm}(A,Q_x,Q_y)}A
 \]
 
 这把 `path_anchored_split_complete_excess_bundle_v1` 压成了确定的 maximal colored
-candidate；但它仍缺一条新的原子 E1/E3 来源规则，现有单侧合同不能推出它。两条逐侧
+candidate；按当时的依赖面，它仍缺一条新的原子 E1/E3 来源规则，现有单侧合同不能推出
+它。后续 2026-08-13 条目给出了带通用 validator 前提的条件 schema，但未实现 registry。
+两条逐侧
 raw branch 也不能在两个顺序中都保留原始完整块，所以不能用这个交换菱形绕开合同缺口；
 中途重新分块的其它动态路径仍须独立核验。
 
@@ -7051,3 +7057,96 @@ typed-target 重分类的实例，这一宏可严格关闭；否则仍须保留�
 下一步应改成 endpoint-first：先测试真实双侧容量 endpoint，全部失败后才生成双色 split
 candidate；之后只研究 \(s\equiv0\) 且 endpoint/terminal 均未命中的状态。完整证明与聚焦回执见
 [\(a=1\) 双侧载荷正规形、stutter 继电与无限族严格旁路](../claims/type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay.md)。
+
+## 2026-08-13：atomic split 条件 schema，\(s=0\) 被压到大 endpoint/树级余项
+
+双色来源的算术与合同接口现已收敛，但 persistent registry 尚未实现。新的
+`path_anchored_atomic_split_complete_excess_v1` 把同一 raw path/node occurrence
+作为单一 canonical occurrence，两个完整超额块只是同一 action 内不可拆分的有颜色
+payload；这不自动声称跨 action 的全局 one-use。maximal block 还得到
+一个无因数分解重算式：对任意坐标 \(v\)，令
+
+\[
+d=(v,K),\qquad t=v/d,\qquad N\ge\operatorname{bitlength}(v),
+\]
+
+则
+
+\[
+Q_K(v)=(v,t^N)
+=\prod_{\nu_q(v)>\nu_q(K)}q^{\nu_q(v)}.
+\]
+
+所以 verifier 可用 gcd 与模幂重算 maximality，不需要逐点试除。若通用 validator 已
+独立接受 persistent source 和 canonical target，则 source/path、canonical occurrence、
+逐素数 charge conservation、唯一 \(M=\operatorname{lcm}(A,Q_x,Q_y)\) 与 scope
+给出条件 E1--E3 表示；两端取图表无关的 \(\operatorname{Sol}(p)\) 时恒等映射支付
+E4。这不是旧单侧 E1/E3 已经蕴含 split，也不是 serializer/registry 已经落地。
+
+写 \(C=K/A\)、\(L=M/A\)，target cofactor 精确为
+
+\[
+c_M=\langle CL^{-1}\rangle_p.
+\]
+
+因此既有
+\(\Lambda_p^\sharp=(\lfloor B_p/A\rfloor,K/A)\) 下，split candidate 通过 E5
+当且仅当
+
+\[
+A\le B_p
+\quad\text{或}\quad
+A>B_p,\ c_M<C.
+\]
+
+在高支撑 \(a=1,d=1\) 中，这恰好把
+\(L\not\equiv1\pmod p\) 分成 E5-strict candidate，把 \(L\equiv1\pmod p\) 分成 standalone
+stutter。\(p=73,r=1\) 给出 \((0,72)\to(0,67)\) 的严格正控制；\(r=50\) 则证明
+maximality 不可省略：把容量内的 2、3 错收进 \(Q\) 会把规范 \(c=72\) 伪造成
+\(c=12\)。同一例的旧 \(p\)-进坐标前后都是 0，所以 stutter 不能单独入队；若未被
+priority guard 抢占，只能保留为 evidence，或在从真实 persistent parent 一次重放的
+完整严格宏内作局部 checkpoint。
+
+Endpoint 侧也得到一个全称正结果。任意真实 capacity endpoint \(h\mid K\) 满足
+
+\[
+\gcd(R-h,K)=\gcd(ph+1,K).
+\]
+
+若
+\[
+2\le h<p,\qquad h^2+h-1<p,
+\]
+则要么 \(R-h\mid K\) 直接 Type I，要么单侧 complete-excess carry 严格降到
+\(c\le p-2\)。特别地，所有核心素数上的 \(h=2,3\) 已无条件闭合。相反，
+\(h\equiv1\pmod p\) 时对侧完整块强制含 \(p\)，只能继续真实 \(p\)-peel。
+
+split relay 的 hard 类也已精确到二阶：
+
+\[
+s\equiv0\pmod p
+\Longleftrightarrow
+L\equiv1\pmod {p^2}.
+\]
+
+写 \(L=1+p^2t\)，则 target 参数满足
+
+\[
+r'=r+tT,\qquad T'=LT.
+\]
+
+\(p=73,r=95979\) 证明 root departure 层数可以从 1 升到 2，否定“原样重启”；
+该定点随后出现 \(h=3\) 并严格到 \(c=2\)。但这不是全覆盖：
+\(p=73,r=21944065678\) 的根同时满足 \(s=0\)，两侧实际 endpoint 为
+\(p^2+1=5330\) 与 \(p^2+p+1=5403\)，两个 immediate receipt 的完整块都含 73。
+
+更强地，对每个固定深度 \(N\)，可用 CRT 同时保持这个根 \(s=0\) cell 与深度 \(N\)
+的完整 \(P/M\) capacity tree。因此继续机械增加、且只观察统一 \(P/M\) endpoint
+projection 深度的策略已经被严格排除；中间 raw terminal、其它 branch 和跨图表动作
+不在此 no-go 的量词内。
+当前决定性方向应是二选一：证明大的非 \(1\bmod p\) endpoint 必有严格 carry/terminal，
+或为整棵 \(1\bmod p\) 的 \(p\)-block 树构造在 alternate/reset 下也不可重置的全局良基
+资源。完整证明见
+[atomic split 准入与秩边界](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)
+及
+[\(s=0\) 二阶回返、小容量端点出口与固定深度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary.md)。
