@@ -92,6 +92,26 @@ def select_family_terminal(*, h: int, c: int) -> dict[str, int] | None:
     return None
 
 
+def diagonal_n_bridge(*, h: int, c: int) -> dict[str, int | bool]:
+    """Verify that the r=s selector is equivalent to m dividing (3p+1)/4."""
+    p = 24 * h + 1
+    modulus = 24 * c - 1
+    s = h + c
+    x = 6 * s
+    N = (3 * p + 1) // 4
+    if not (1 <= c <= h and gcd(8 * s, modulus) == 1):
+        raise AssertionError("diagonal bridge parameters were not legal")
+    terminal_gate = (p * x + 2 * s) % modulus == 0
+    divisor_gate = N % modulus == 0
+    if not (
+        p * x + 2 * s == 8 * s * N
+        and terminal_gate == divisor_gate
+        and (72 * s + 1 - 3 * modulus) == 4 * N
+    ):
+        raise AssertionError("diagonal N-divisor bridge failed")
+    return {"p": p, "h": h, "c": c, "m": modulus, "s": s, "N": N, "hit": terminal_gate}
+
+
 def five_route_dispatch(*, p: int) -> dict[str, object]:
     """Append the c=2, gap-47 terminal to the established four-route order."""
     record = four_route_dispatch(p=p)
@@ -130,6 +150,10 @@ def build_result() -> dict[str, object]:
     m23 = verify_family_terminal(h=50, c=1, r=17)
     m47 = verify_family_terminal(h=154, c=2, r=156)
     ray0, ray3 = verify_gap47_ray()
+    diagonal_p337 = diagonal_n_bridge(h=14, c=1)
+    diagonal_p3697 = diagonal_n_bridge(h=154, c=2)
+    off_diagonal_p1201 = diagonal_n_bridge(h=50, c=1)
+    r3_g_control_divisors = positive_divisors(181)
     if not (
         selector_target(23) == 15
         and selector_target(47) == 15
@@ -153,6 +177,11 @@ def build_result() -> dict[str, object]:
         }
         and ray0["p"] == 313
         and ray3 == m47
+        and diagonal_p337 == {"p": 337, "h": 14, "c": 1, "m": 23, "s": 15, "N": 253, "hit": True}
+        and diagonal_p3697 == {"p": 3697, "h": 154, "c": 2, "m": 47, "s": 156, "N": 2773, "hit": True}
+        and off_diagonal_p1201 == {"p": 1201, "h": 50, "c": 1, "m": 23, "s": 51, "N": 901, "hit": False}
+        and all(divisor % 3 == 1 for divisor in r3_g_control_divisors)
+        and not any(divisor % 24 == 23 for divisor in r3_g_control_divisors)
     ):
         raise AssertionError("adaptive 24c-1 terminal controls changed")
     routes = {p: five_route_dispatch(p=p) for p in (313, 241, 337, 1201, 3697)}
@@ -171,6 +200,8 @@ def build_result() -> dict[str, object]:
         "gap23_control": m23,
         "gap47_four_route_residual_control": m47,
         "gap47_ray_controls": (ray0, ray3),
+        "diagonal_n_divisor_bridge_controls": (diagonal_p337, diagonal_p3697, off_diagonal_p1201),
+        "r3_g_diagonal_boundary_control": {"p": 241, "N": 181, "divisors": r3_g_control_divisors},
         "five_route_controls": routes,
     }
 
