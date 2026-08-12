@@ -8,6 +8,7 @@ from math import gcd, isqrt
 
 from type_i_24c_minus_one_adaptive_divisor_terminal_family import seven_route_dispatch
 from type_i_complete_divisor_layer_normal_form import direct_hits
+from type_i_fixed_normal_chart_tail_descent_rays import select_from_prime
 
 
 def is_prime(value: int) -> bool:
@@ -100,6 +101,45 @@ def eight_route_dispatch(*, p: int) -> dict[str, object]:
         "a2_b27_descent": descent,
         "branch": "a2_b27_square_only_terminal" if terminal else "eight_route_residual",
     }
+
+
+def a3_b2_r23_selector(*, p: int) -> dict[str, int] | None:
+    """Recover the fixed (A,B,R)=(3,2,23) terminal/descent chart."""
+    return select_from_prime(p=p, A=3, B=2, R=23)
+
+
+def nine_route_dispatch(*, p: int) -> dict[str, object]:
+    """Append the fixed (3,2,23) terminal/descent chart after eight routes."""
+    record = eight_route_dispatch(p=p)
+    if record["branch"] != "eight_route_residual":
+        return {**record, "a3_b2_r23_terminal": None, "a3_b2_r23_descent": None}
+    terminal = a3_b2_r23_selector(p=p)
+    return {
+        **record,
+        "a3_b2_r23_terminal": terminal,
+        "a3_b2_r23_descent": terminal,
+        "branch": "a3_b2_r23_terminal_descent" if terminal else "nine_route_residual",
+    }
+
+
+def a3_b2_r23_ray(*, t: int) -> dict[str, int]:
+    """Construct the canonical core ray for the (3,2,23) fixed chart."""
+    if t < 0:
+        raise ValueError("ray parameter must be nonnegative")
+    p = 769 + 1608 * t
+    record = a3_b2_r23_selector(p=p)
+    if record is None:
+        raise AssertionError("fixed (3,2,23) ray did not pass its p-level gate")
+    C = 33 + 69 * t
+    if not (
+        record["C"] == C
+        and record["m"] == 23 + 48 * t
+        and record["p"] == p
+        and record["n"] == 737 + 1541 * t
+        and p - record["n"] == 32 + 67 * t
+    ):
+        raise AssertionError("fixed (3,2,23) ray parameterization failed")
+    return record
 
 
 def normal_tail_descent(*, p: int, c: int) -> dict[str, int] | None:
@@ -273,6 +313,57 @@ def verify() -> None:
     assert full_square_hits(p=2521) == (
         {"c": 1, "m": 23, "x": 636, "d": 848},
         {"c": 66, "m": 1583, "x": 1026, "d": 76},
+    )
+    r23_first = a3_b2_r23_ray(t=0)
+    r23_residual = a3_b2_r23_ray(t=1)
+    assert r23_first == {
+        "A": 3,
+        "B": 2,
+        "R": 23,
+        "H": 67,
+        "C": 33,
+        "m": 23,
+        "p": 769,
+        "x": 198,
+        "d": 297,
+        "y": 6633,
+        "K": 4422,
+        "n": 737,
+        "L": 3,
+    }
+    assert r23_residual == {
+        "A": 3,
+        "B": 2,
+        "R": 23,
+        "H": 67,
+        "C": 102,
+        "m": 71,
+        "p": 2377,
+        "x": 612,
+        "d": 918,
+        "y": 20502,
+        "K": 13668,
+        "n": 2278,
+        "L": 3,
+    }
+    assert is_prime(769) and is_prime(2377) and gcd(769, 1608) == 1
+    assert eight_route_dispatch(p=2377)["branch"] == "eight_route_residual"
+    p769_dispatch = nine_route_dispatch(p=769)
+    p2377_dispatch = nine_route_dispatch(p=2377)
+    assert (
+        p769_dispatch["branch"] == "gap7_strict_descent"
+        and p769_dispatch["a3_b2_r23_terminal"] is None
+        and p769_dispatch["a3_b2_r23_descent"] is None
+    )
+    assert (
+        p2377_dispatch["branch"] == "a3_b2_r23_terminal_descent"
+        and p2377_dispatch["a3_b2_r23_terminal"] == r23_residual
+        and p2377_dispatch["a3_b2_r23_descent"] == r23_residual
+    )
+    assert (
+        nine_route_dispatch(p=2521)["branch"] == "a2_b27_square_only_terminal"
+        and nine_route_dispatch(p=2521)["a3_b2_r23_terminal"] is None
+        and nine_route_dispatch(p=2521)["a3_b2_r23_descent"] is None
     )
 
 
