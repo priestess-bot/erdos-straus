@@ -828,3 +828,12 @@ python3 reproductions/type_i_root_capacity_proper_endpoint_stutter_exclusion.py 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_finite_curve.py --verify
 ```
+
+`type_i_root_capacity_stutter_reduced_divisor_product.py` 固定验证
+`D*=D/gcd(D,h^2-1)` 的新约化除子约束：`D*|T`、`D*|S`、`D*|J` 以及
+`D*|(h^2-h+m)(h^2-2h-m^2-m+1)`。控制元组只验证必要算术，不冒充核心素数的
+actual stutter receipt，也不执行范围搜索。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_reduced_divisor_product.py --verify
+```

@@ -7405,5 +7405,46 @@ F(e,m)=e^2m^2-e^2m+e^2+em-2e+1
 \(\gcd(e,h)=1\) 与 \(\gcd(h,m)\mid(e-1)^2\)。它仍是必要筛选，不是充分条件：
 核心同余但合数的 \(p=361,h=1029,m=3,e=6754,D=55\) 满足整条曲线，说明
 曲线不能替代素数性和 source provenance；非核心素数 \(p=67,h=93,m=13,e=8,D=779\)
-也给出算术候选。下一步应把这条曲线与 (D_C,D_T) 因子分裂及容量素因子外部源菜单
+也给出算术候选。下一步应把这条曲线与 \(D_C,D_T\) 因子分裂及容量素因子外部源菜单
 联立，而不是单独声称 stutter 门为空。详见[根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md)。
+
+## 2026-08-13：stutter 约化除子进一步落入双因子结果式
+
+在上述三参数曲线之外，还可以从 actual receipt 的 (C/T) 容量分裂和根回执
+\(z=R-h\) 做一次严格的指数约分。令
+
+\[
+D_* = D/(D,h^2-1),\qquad S=h^2-h-2r,
+\]
+
+并令 \(m=(D+h-1)/p\)。由 \(D_C=(D,C)\mid h^2-1\) 的逐素数估值，不能机械地把
+\(D_T\) 换名为 \(D_*\)，但可以严格证明 \(D_*\mid T\)。再由 \(D_*\mid ph+1\) 得
+
+\[
+D_*\mid S.
+\]
+
+把 \(z\) 对线性式 \(D=mp+1-h\) 作整数余式归约，得到
+
+\[
+ D_*\mid J,
+\quad J=2h^2r-hm-4hr-m^3-2m^2r-m^2+m+2r.
+\]
+
+最后有精确恒等式
+
+\[
+J+((h-1)^2-m^2)S
+=(h^2-h+m)(h^2-2h-m^2-m+1),
+\]
+
+因而
+
+\[
+\boxed{D_*\mid(h^2-h+m)(h^2-2h-m^2-m+1).}
+\]
+
+这是真正新增的必要除子筛选；它没有排除第二因子，也没有产生解提升或严格全局势，
+所以 hard-root “短证书或递降”缺口仍未闭合。下一步应研究第二因子的素因子是否能
+通过容量素因子来源菜单或 root provenance 被强制转成 terminal/alternate，而不是把
+该乘积约束误报成 stutter 门为空。详见[根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md)。
