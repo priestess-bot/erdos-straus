@@ -7372,3 +7372,38 @@ D_C\mid h^2-1,
 该 claim 已标记为 `retracted`，低端 `h<p` 的 stutter 门重新成为开放缺口；
 当前仍有效的约束只有 actual receipt 的 cyclotomic-free 分裂和
 `D|ph+1`。详见[stutter 门审计](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md)。
+
+## 2026-08-13：stutter 门压缩为三参数整数曲线
+
+在撤回低端排除后，仍可从 stutter 门本身提取一个无误的必要条件。令
+
+\[
+m=(D+h-1)/p,\qquad e=(ph+1)/D,\qquad a=em-h.
+\]
+
+则
+
+\[
+D=mp+1-h,\quad pa=e(h-1)+1,\quad Da=m+h(h-1),
+\]
+
+并且
+
+\[
+p+e\mid me^2-e+1.
+\]
+
+利用 \(h\mid p^2+p+1\)，可进一步得到
+
+\[
+h\mid F(e,m),\qquad
+F(e,m)=e^2m^2-e^2m+e^2+em-2e+1
+=(em-e+1)^2+em(e-1).
+\]
+
+这把实际 stutter 压到“真实 receipt 因子分裂 + 一条整数曲线”的交集，并推出
+\(\gcd(e,h)=1\) 与 \(\gcd(h,m)\mid(e-1)^2\)。它仍是必要筛选，不是充分条件：
+核心同余但合数的 \(p=361,h=1029,m=3,e=6754,D=55\) 满足整条曲线，说明
+曲线不能替代素数性和 source provenance；非核心素数 \(p=67,h=93,m=13,e=8,D=779\)
+也给出算术候选。下一步应把这条曲线与 (D_C,D_T) 因子分裂及容量素因子外部源菜单
+联立，而不是单独声称 stutter 门为空。详见[根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md)。

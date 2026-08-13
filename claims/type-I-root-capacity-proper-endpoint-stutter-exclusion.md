@@ -81,7 +81,7 @@ D\equiv1-h\pmod p.
 proper-root 的实际回执满足
 
 \[
-D\mid ph+1,qquad c=\left\langle D(h-1)^{-1}\right\rangle_p,qquad
+D\mid ph+1,\qquad c=\left\langle D(h-1)^{-1}\right\rangle_p,\qquad
 \text{stutter}\Longleftrightarrow D\equiv1-h\pmod p.
 \]
 

@@ -818,3 +818,13 @@ python3 reproductions/type_i_root_capacity_stutter_receipt_factor_split.py --ver
 ```bash
 python3 reproductions/type_i_root_capacity_proper_endpoint_stutter_exclusion.py --verify
 ```
+
+`type_i_root_capacity_stutter_finite_curve.py` 固定验证 stutter 门的三参数整数曲线：
+重算 (D=mp+1-h)、(pa=e(h-1)+1)、(Da=m+h(h-1))、
+(p+e\mid me^2-e+1) 与 (h\mid F(e,m))，并保留一个核心同余合数控制和一个
+非核心素数控制，另检查一单位扰动不能伪造 stutter。它不扫描范围，也不把抽象元组
+当作 actual receipt。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_finite_curve.py --verify
+```

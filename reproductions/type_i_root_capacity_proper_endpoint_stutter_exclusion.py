@@ -92,11 +92,27 @@ def verify_withdrawn_argument(p: int, h: int, m: int) -> None:
         raise AssertionError("stutter divisibility control changed")
 
 
+def verify_core_stutter_control() -> None:
+    """Keep a core-congruence stutter candidate separate from actual receipts."""
+    p, h, m, e = 361, 1029, 3, 6754
+    d = m * p + 1 - h
+    n = p * p + p + 1
+    if not (
+        p % 24 == 1
+        and n % h == 0
+        and d == 55
+        and e * d == p * h + 1
+        and d % p == (1 - h) % p
+    ):
+        raise AssertionError("core abstract stutter control changed")
+
+
 def verify() -> None:
     verify_receipt(receipt(73, 3))
     verify_receipt(receipt(457, 3))
     verify_withdrawn_argument(5, 3, 2)
-    print("verified actual root gates and the withdrawn low-end proof boundary")
+    verify_core_stutter_control()
+    print("verified actual root gates, the withdrawn proof boundary, and a core abstract gate")
 
 
 def main() -> None:

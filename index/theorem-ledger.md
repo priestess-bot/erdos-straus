@@ -14,14 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 716 |
+| 数学状态 | `established` | 717 |
 | 数学状态 | `open` | 12 |
+| 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 556 |
+| 证明来源 | `repository_derivation` | 558 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 692 |
+| 审阅状态 | `internal_review` | 694 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -762,8 +763,9 @@
 | [表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md) (`type-I-representation-dual-capacity-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [一般根容量端点的精确 complete-excess 除数门](../claims/type-I-root-capacity-general-endpoint-divisor-gate.md) (`type-I-root-capacity-general-endpoint-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量素因子的 q 关联最小正源 Type I 终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md) (`type-I-root-capacity-prime-external-terminal-coupling`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
-| [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 proper endpoint 的 stutter 门审计（原低端排除已撤回）](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md) (`type-I-root-capacity-proper-endpoint-stutter-exclusion`) | `retracted` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [s=0 重图表的半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md) (`type-I-s-zero-rechart-standalone-potential-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
