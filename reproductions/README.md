@@ -854,3 +854,12 @@ python3 reproductions/type_i_root_capacity_stutter_norm_bound.py --verify
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_eisenstein_support.py --verify
 ```
+
+`type_i_root_capacity_stutter_provenance_dispatch.py` 修正并验证范数因子的来源分派：
+所有 `q|h, q!=3`（包括退化 `q|a,b`）都进入现有容量 q-menu；`q=3` 和只在范数商中
+出现的 `q` 不带强制容量 provenance。它固定验证一个菜单命中、一个菜单为空、以及
+抽象 stutter 控制，不冒充 actual receipt，也不执行范围搜索。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_provenance_dispatch.py --verify
+```

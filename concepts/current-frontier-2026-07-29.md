@@ -7499,6 +7499,8 @@ lift，因此没有关闭全局 hard-root 出口。详见[proper-root stutter �
 
 该引理还给出一个更细的分流：若 (q\mid h)、(q\ne3)、(q\nmid a)，则
 (pa\equiv-b\pmod q)，因此 (q\mid p+i_q)（(i_q=q-(p\bmod q))），可直接
-接入已有的容量素因子 external-source 菜单；若 (q\mid a,b)，或 (q\mid N/h)，
-则没有同样的非退化源坐标。下一步的实际目标因此是处理退化 (h)-因子与商素因子，
-而不是把整个 Eisenstein 支撑误当作一个统一证书生成器。
+接入已有的容量素因子 external-source 菜单。这里的非退化条件只是从范数线性式
+独立恢复源余数的桥；即使 (q\mid a,b)，只要 (q\mid h)、(q\ne3)，仍有 (q\mid u)
+并可使用同一容量菜单，退化只额外推出 (q\mid m)。真正没有根容量强制 provenance
+的是 q=3 或只在范数商中出现的素因子；它们仍可另行尝试一般 external-source，
+但范数不保证菜单非空。详见[根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md)。

@@ -89,7 +89,7 @@ q ≡ 2 (mod 3) 矛盾。因此 p 在有限域 F_q 的乘法群中的阶恰为 3
 
 由于 (h\mid N)，同样的支撑限制传给范数商 (N/h)。
 
-## 范数素因子的两类分流
+## 范数素因子的来源分流
 
 上面的同余限制还可以和 (1) 一起区分 (h)-部分与商部分。设
 (q\mid h) 且 (q\mid N)，并且 (q\nmid a)。由 (N\equiv0\pmod q) 得
@@ -105,15 +105,21 @@ q ≡ 2 (mod 3) 矛盾。因此 p 在有限域 F_q 的乘法群中的阶恰为 3
 \]
 
 则 (q\mid p+i_q)，这正是（对 (q\ne3)）容量素因子 external-source 菜单的
-入口；但它只适用于 (q\mid h)、(q\ne3) 且 (q\nmid a) 的非退化 (h)-因子。若 (q\mid a,b)，
-线性式反而只给出 (q\mid h)，不能产生 (i_q) 的非零源坐标；而对
-(q\mid N/h)，一般没有 (q\mid h)，也不能套用该菜单。因而范数支撑只能给出
-如下精确分流：
+入口。更重要的是，非退化条件并不是该菜单的前提：因为 (h=3u) 且
+((u,3)=1)，每个 (q\mid h)、(q\ne3) 的素因子都满足 (q\mid u)，所以
+退化的 (q\mid a,b) 也可以使用同一个容量菜单。退化时范数线性式只额外给出
+  (q\mid m)：由 (N\equiv b^2\pmod q) 得 (q\mid b)，再由
+  (a=em-h)、(e=b+1\equiv1\pmod q) 得 (q\mid m)。
 
-* 非退化的 (h)-素因子可送入已有的有限 external-source 菜单；
-* 退化 (h)-素因子和所有商素因子仍需新的 Type I/II 选择器或合法递降。
+因此精确的 provenance 分派是：
 
-这解释了为什么范数的 (1\bmod3) 素因子并不自动构成短证书。
+* (q\mid h, q\ne3)：无论是否退化，都有根容量 q-source 菜单；非退化时还
+  可由 (pa\equiv-b\pmod q) 独立恢复源余数；
+* (q=3)：(3\nmid u)，是 h-支撑中的唯一容量例外；
+* (q\nmid h)：这是 quotient-only 因子，没有被当前根容量强制的 source provenance。
+
+容量菜单仍可能为空，所以范数的 (1\bmod3) 素因子不自动构成短证书；完整的
+三分派见[根容量 stutter 范数因子的 provenance 三分派](type-I-root-capacity-stutter-provenance-dispatch.md)。
 
 ## 对证书路线的直接含义
 
@@ -126,11 +132,10 @@ proper-root stutter 的 Eisenstein 范数及其商不可能提供这样的素因
 
 ## 边界
 
-该引理只限制范数的素因子同余类。它没有说明 (N/h) 是否为 1，也没有把
-(q\equiv1\pmod3) 的素因子转成 external-source 菜单命中；后者的菜单可能为空。
-更重要的是，证明仍只处理 stutter 分支，不能替代 actual receipt 的 provenance、
-source/target fiber 和全局严格势。因此它是一个排除型结构结果，而非“短证书或
-递降”全局出口。
+该引理只限制范数的素因子同余类，并修正了 h-支撑因子的来源类型。它没有说明
+容量菜单必非空，也没有把 (q=3) 或 quotient-only 因子转成证书。更重要的是，
+证明仍只处理 stutter 分支，不能替代 actual receipt 的 source/target fiber 和全局
+严格势。因此它是一个带 provenance 修正的结构结果，而非“短证书或递降”全局出口。
 
 ## 聚焦复现
 
