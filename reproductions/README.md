@@ -780,3 +780,26 @@ complete-excess block 不等于 \(Q_3\) 的边界。第四个 \(p=457,u=7\) 控�
 python3 reproductions/type_i_all_core_dual_saturation_s_zero_tree_no_go.py --verify
 python3 reproductions/type_i_root_coprime_capacity_fan_half_descent.py --verify
 ```
+
+`type_i_root_capacity_general_endpoint_divisor_gate.py` 把 \(h=3u\) 推进到一般
+proper-root hard 层：固定重算 \(p=313,r=271,h=543\) 的真实 maximal receipt、
+\(D\mid ph+1\) 与严格 \(c=298\)，并以 \(p=73,u=M\) 固定唯一非 \(p\)-free
+饱和层。两个放宽假设控制只验证抽象除数门可以命中，不把它们误写成 actual receipt。
+
+`type_i_root_capacity_prime_external_terminal_coupling.py` 核对容量素因子 \(q\) 与
+\(q\) 关联最小正外部源的精确有限除子菜单。它固定验证 gap-7 Dirichlet 类、
+\(p=2137,t=9\) 的非平凡命中，以及 \(p=457,q=7\) 的 source-5 菜单和 gap-7
+Type I/II 双空边界。
+
+`type_i_s_zero_rechart_standalone_potential_no_go.py` 核对形式 \(s=0\) 半群压缩、
+\(p=73\) 根高度 \(1\to2\to1\)、等支撑形式边，以及既有 \(p=97\) 实际源端 raw
+receipt 关联的两个 conditional target 容量重置控制。它不把形式 target 升级为
+admitted successor。
+
+三个脚本均不运行历史测试或范围扫描：
+
+```bash
+python3 reproductions/type_i_root_capacity_general_endpoint_divisor_gate.py --verify
+python3 reproductions/type_i_root_capacity_prime_external_terminal_coupling.py --verify
+python3 reproductions/type_i_s_zero_rechart_standalone_potential_no_go.py --verify
+```

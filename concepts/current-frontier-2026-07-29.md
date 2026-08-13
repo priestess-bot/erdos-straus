@@ -7273,3 +7273,66 @@ chart-local 根自动升级为 admitted parent。下一步应把精力放在三�
 [根接口互素容量扇与 \(h=3\) 显式半降](../claims/type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent.md)
 及
 [全核心双容量饱和与 \(s=0\) 任意深树 no-go](../claims/type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go.md)。
+
+## 2026-08-13：一般 hard root 已压成单一除数门
+
+上述第 1、2 项现在各推进了一步。对任意根容量端点
+
+\[
+h=3u,
+\qquad
+u=\gcd\left(2r+1,\frac{p^2+p+1}{3}\right),
+\]
+
+不再需要 \(h^2<p\) 才能写出规范目标。若 \(u<M=(p^2+p+1)/3\)，把实际 maximal
+complete-excess receipt 规范化为 \(R-h=ED\)、\(D\mid K\)，则有
+
+\[
+D\mid ph+1,
+\qquad
+c=\left\langle D(h-1)^{-1}\right\rangle_p.
+\]
+
+所以 proper-root hard box 唯一剩余的非严格同余门是
+
+\[
+\boxed{D\mid ph+1,\qquad D\equiv1-h\pmod p.}
+\]
+
+这里先由 terminal-first 分流 \(R-h\mid K\) 的 bottom Type I；上述门只描述剩余
+非终端 carry。“唯一”指只剩一个同余条件，不表示满足条件的 \(D\) 唯一。
+这不是猜想的闭合：尚未证明核心素数的实际 receipt 永远避开该门。但原来的多层
+逐素数问题已经收缩为一个明确的一维除数障碍。\(p=313,r=271,u=181,h=543\)
+给出真实 hard-root 正控制，实际 \(D=8\)、\(c=298<312\)；而 \(u=M\) 恰是唯一
+multiplier 含 \(p\)、必须继续真实 \(p\)-peel 的饱和根层。详见
+[一般根容量端点的精确除数门](../claims/type-I-root-capacity-general-endpoint-divisor-gate.md)。
+
+terminal-first 也已与容量素因子发生精确耦合。若素数 \(q\mid u\)，令
+\(\rho=p\bmod q\)、\(i=q-\rho\)，则固定 \(q\) 关联源 \(i\)、gap 含 \(q\) 的
+全部 external-source Type I 终端，恰由有限菜单
+
+\[
+\mathcal T_{p,q}
+=\left\{t\mid\frac{p+i}{q}:
+t\equiv-pq^{-1}\pmod {4i}\right\}
+\]
+
+参数化，gap 为 \(m=qt\)。菜单命中自动满足自然 gap 范围并恢复显式三分母；但菜单
+可以为空，\(p=457,q=7\) 是严格负控制。因此下一子目标不是证明“容量因子自动终止”，
+而是把上述空菜单与除数门联立，证明至少一个菜单命中，或由双空状态推出可提升递降。
+详见
+[根容量素因子的外部源终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md)。
+
+最后，\(s=0\) 形式更新满足精确半群压缩
+
+\[
+\Phi_u\circ\Phi_t=\Phi_{t+u+p^2tu}.
+\]
+
+一个 \(p=73\) 控制使根高度 \(1\to2\to1\) 而容量始终为 \((2,3)\)；既有
+\(p=97\) 实际源端 raw receipt 族的一个无限子族，则把关联的 conditional arithmetic
+target 从容量 \((2,3)\) 重置到 \((9410,9507)\)。因此高度、容量、比例、有限支撑或
+未保护来源深度都不能单独充当形式 \(s=0\) 边的严格势。该结果没有构造 admitted
+cycle；下一种全局势必须同时读取 terminal priority、typed admission 和不可压缩的
+persistent lineage。详见
+[\(s=0\) 半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md)。

@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 712 |
+| 数学状态 | `established` | 715 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 552 |
+| 证明来源 | `repository_derivation` | 555 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 688 |
+| 审阅状态 | `internal_review` | 691 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -760,7 +760,10 @@
 | [Primitive raw 节点的无穷 p-反向祖先与有限来源条件无效性](../claims/type-I-raw-infinite-p-parent-ancestry-no-go.md) (`type-I-raw-infinite-p-parent-ancestry-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [任意 primitive raw node 的 p-parent 反向提升与 root-policy 边界](../claims/type-I-raw-universal-p-parent-root-policy-boundary.md) (`type-I-raw-universal-p-parent-root-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [表示—对偶—容量统一选择器的状态级 typed 分派合同](../claims/type-I-representation-dual-capacity-selector-contract.md) (`type-I-representation-dual-capacity-selector-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [一般根容量端点的精确 complete-excess 除数门](../claims/type-I-root-capacity-general-endpoint-divisor-gate.md) (`type-I-root-capacity-general-endpoint-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [根容量素因子的 q 关联最小正源 Type I 终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md) (`type-I-root-capacity-prime-external-terminal-coupling`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
+| [s=0 重图表的半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md) (`type-I-s-zero-rechart-standalone-potential-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [来自七 p 加一五模七因子的 R 等于七 B 等于一上半区桥](../claims/type-I-seven-p-plus-one-r7-b1-upper-bridge.md) (`type-I-seven-p-plus-one-r7-b1-upper-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
 | [Type I移位偶源的B一除子剩余类选择器](../claims/type-I-shifted-source-b1-divisor-residue-selector.md) (`type-I-shifted-source-b1-divisor-residue-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
