@@ -30,6 +30,15 @@ def check_case(p: int, h: int, m: int, e: int) -> None:
     if bad_quotient:
         raise AssertionError(f"forbidden quotient-prime classes: {bad_quotient}")
 
+    # For a non-degenerate h-prime q, the capacity-source residue is forced by pa=-b mod q.
+    for q in sympy.factorint(h):
+        if a % q:
+            if (p * a + b) % q:
+                raise AssertionError("h-prime source residue relation changed")
+            i = q - (p % q)
+            if not (0 < i < q and (p + i) % q == 0):
+                raise AssertionError("capacity-source residue was not reconstructed")
+
 
 def verify() -> None:
     # These are arithmetic controls for the stutter curve, not provenance claims.

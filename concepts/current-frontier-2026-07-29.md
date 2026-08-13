@@ -7496,3 +7496,9 @@ stutter 线性恒等式 pa=h(b+1)-b 随后迫使 q|h。但 h|p^2+p+1，所以（
 的 Type I/II 正规形。该引理仍不把 1 mod 3 素因子转成外部源命中，也不提供 identity
 lift，因此没有关闭全局 hard-root 出口。详见[proper-root stutter 范数的 Eisenstein
 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md)。
+
+该引理还给出一个更细的分流：若 (q\mid h)、(q\ne3)、(q\nmid a)，则
+(pa\equiv-b\pmod q)，因此 (q\mid p+i_q)（(i_q=q-(p\bmod q))），可直接
+接入已有的容量素因子 external-source 菜单；若 (q\mid a,b)，或 (q\mid N/h)，
+则没有同样的非退化源坐标。下一步的实际目标因此是处理退化 (h)-因子与商素因子，
+而不是把整个 Eisenstein 支撑误当作一个统一证书生成器。

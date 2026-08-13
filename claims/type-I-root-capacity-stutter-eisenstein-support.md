@@ -89,6 +89,32 @@ q ≡ 2 (mod 3) 矛盾。因此 p 在有限域 F_q 的乘法群中的阶恰为 3
 
 由于 (h\mid N)，同样的支撑限制传给范数商 (N/h)。
 
+## 范数素因子的两类分流
+
+上面的同余限制还可以和 (1) 一起区分 (h)-部分与商部分。设
+(q\mid h) 且 (q\mid N)，并且 (q\nmid a)。由 (N\equiv0\pmod q) 得
+
+\[
+\left(\frac{b}{a}\right)^2-\frac{b}{a}+1\equiv0\pmod q,
+\]
+
+所以 (p\equiv-b/a\pmod q)（这里使用 (pa\equiv-b\pmod q)）。令
+
+\[
+\rho_q=\langle p\rangle_q,\qquad i_q=q-\rho_q.
+\]
+
+则 (q\mid p+i_q)，这正是（对 (q\ne3)）容量素因子 external-source 菜单的
+入口；但它只适用于 (q\mid h)、(q\ne3) 且 (q\nmid a) 的非退化 (h)-因子。若 (q\mid a,b)，
+线性式反而只给出 (q\mid h)，不能产生 (i_q) 的非零源坐标；而对
+(q\mid N/h)，一般没有 (q\mid h)，也不能套用该菜单。因而范数支撑只能给出
+如下精确分流：
+
+* 非退化的 (h)-素因子可送入已有的有限 external-source 菜单；
+* 退化 (h)-素因子和所有商素因子仍需新的 Type I/II 选择器或合法递降。
+
+这解释了为什么范数的 (1\bmod3) 素因子并不自动构成短证书。
+
 ## 对证书路线的直接含义
 
 gap (3) 的精确判据要求
