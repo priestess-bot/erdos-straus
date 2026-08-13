@@ -746,19 +746,29 @@ p-block continuation，不属于 (61)。而且 \(p=97,r=6618,h=58\) 是真实可
 只有所有 E1--E5 guards 通过后才能登记为宏。所以不能再把旧目标写成
 “所有大非 \(1\bmod p\) endpoint 一步 strict”。
 
+后续精确正规形已经把 (61) 的两类末态归并到同一个 \(a=1\) 根接口。第一类的下一
+ordinary multiplier 必为 \(pF_1\)；第二类的 regeneration 终类由初始 multiplier 的
+首个非零 \(p\)-进数字 \(\omega\) 精确判定，\(\omega=-1\) 时进入同一接口。从 anchor
+剥尽完整 \(p\)-block 后实际到达 \(h=p+1\)，根容量整除 \(p^2+p+1\)，但可饱和整个
+上界。
+
 势函数方向也有两个新的硬边界。固定 \(K\) 时，完整 \(P/M\) 子锚确实由 (19e)
 严格消耗 \(K/h\)；但已获 E1--E4 准入的 stutter checkpoint 会把这个量乘以
 \(L\)，故它不是仅由该算术 checkpoint 控制的全局势。更强地，
-[Hensel 高度 no-go](type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)
-在一个固定完整超额胞中构造出任意大的条件 rechart 算术 target 根
-\(p\)-进高度；它排除仅从这个 normal form 推出统一高度界，但不排除 admission gate
-对合法边施加额外限制。因此下一步不应继续机械加深投影、只从算术 normal form
-给 \(p\)-block 深度设统一上界，或使用单步 endpoint rank；应在
+[Hensel 高度与 priority 抢占](type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)
+在一个固定完整超额胞中构造出任意大的条件 rechart 算术 target 根高度；但该
+\(p=73\) 族被直接 Type II terminal 统一截断，即使屏蔽该终端也被 \(h=3\)
+endpoint-first 抢占。所以它只否定裸 normal-form 高度势，不是 admitted-cycle 障碍。
+更强的 \(p=97\) 锚点局部可重放 endpoint 族又证明，每个 target 形式根高度都可与根容量
+饱和同时发生；该素数同样有直接 Type II terminal，仍不能反推递归边。因此下一步
+不应继续机械加深投影、只从算术 normal form 给 \(p\)-block 深度设统一上界，或使用
+单步 endpoint rank；应在
 以下两个对象中建立全称定理：
 
-1. **任意高度的 p-free return 出口：** 对 (61) 的两类，利用 (19b)--(19c) 的精确
-   双侧容量、同层其它 raw branch 或 Type I/II 菜单，构造 terminal 或最终
-   capacity \(<p-1\) 的 guarded macro；
+1. **共同根接口的 priority/Reach 定理：** 对 (61) 的两类，利用精确根容量 gcd、
+   双侧容量、同层其它 raw branch 或 Type I/II 菜单，证明 admitted lineage 必有
+   terminal 或最终 capacity \(<p-1\) 的 guarded macro；对 \(s\equiv1\) 分支尤其要证明
+   path provenance 排除静态饱和 receipt，或构造真正 admitted 的饱和实例；
 2. **可跨 rechart 的树级资源：** 给 \(p\)-block continuation 一个不会被
    \(K\mapsto LK\)、alternate source 或 split checkpoint 重置的良基量，并证明每次
    无 terminal 的完整宏都严格消耗它。

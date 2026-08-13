@@ -99,7 +99,11 @@ sources:
 - claim: type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay
   role: endpoint-stutter-factor-normal-form-and-conditional-two-step-strict-relay
 - claim: type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go
-  role: fixed-cell-unbounded-conditional-rechart-arithmetic-height-no-go
+  role: fixed-cell-unbounded-arithmetic-height-and-uniform-priority-preemption
+- claim: type-I-overflow-full-product-d-one-a-one-endpoint-s-zero-p-free-return
+  role: exact-s-zero-p-free-return-unbounded-height-and-saturated-root-capacity
+- claim: type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
+  role: regeneration-terminal-digit-and-root-capacity-saturation-boundary
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -7158,16 +7162,36 @@ projection 深度的策略已经被严格排除；中间 raw terminal、其它 b
 strict”。
 
 固定 \(K\) 的完整 \(P/M\) 子锚虽严格消耗局部势 \(K/h\)，已获 E1--E4 准入的
-stutter checkpoint \(K\mapsto LK\) 会把它重置。更强地，\(p=73\) 的一个固定
-完整超额胞经 Hensel 提升可让条件 rechart 算术 target 的根 departure
-\(p\)-进高度取任意 \(f\ge2\)。它排除仅由该 normal form 推出统一高度上界，
-但不排除 admission gate 对合法边的额外限制。所以固定深度投影和单步 endpoint rank
-不能成为全局证明；单靠 normal-form 算术也无法给出统一高度界。当前决定性方向是二选一：
-直接关闭上述两个 p-free return 类，或构造在 alternate/split/rechart 下仍不可重置的
-树级资源。完整证明见
+stutter checkpoint \(K\mapsto LK\) 会把它重置。新的精确回返正规形把上述两个
+p-free return 类归并到同一个 \(a=1\) 根接口。若 endpoint multiplier
+\(E_0=1+p^2t\)，checkpoint 的下一 ordinary multiplier 必为
+\(p[2(p-1)r_1-1]\)；若 \(s\equiv1\) 后 regeneration 终止，则末态由初始
+\(F_0-1\) 的首个非零 \(p\)-进数字 \(\omega\) 精确决定，\(\omega=-1\) 恰落入同一
+p-free failure。剥尽完整 \(p\)-block 后都到根锚 \(h=p+1\)，下一容量整除
+\(p^2+p+1\)，并有精确 gcd 公式；这个容量可以饱和整个上界，故不能当作真因子势。
+
+高度边界也已被更准确地分层。\(p=73\) 的固定 split cell 经 Hensel 提升可让条件
+rechart 算术 target 的根 departure 高度取任意 \(f\ge2\)，但该族实际先被直接 Type II
+terminal 抢占；即使屏蔽该终端，全族也有 \(h=3\) strict 算术候选：按 \(j\bmod11\)
+分别给出 \(72\to2\) 或 \(72\to22\)，且每个高度的两类子族都无穷；这些单侧动作
+仍须自身 E1--E5 才能实际 priority
+抢占。因此该 split 族不是 admitted cycle，依据是前面的直接终端。另一方面，\(p=97\)
+有一族从 canonical anchor 可逐边重放到 \(h=58\) 的 chart-local raw endpoint
+\(s=0\) receipts；每个 conditional target 根高度
+都出现无穷多次，并可用 CRT 同时令根容量饱和到 \(9507=p^2+p+1\)。这严格排除
+normal-form 高度或根容量真因子势，但 \(p=97\) 本身也有直接 Type II terminal，不能把
+conditional target 误写成 selector 后继。
+
+所以当前决定性方向不再是加深固定树或压低根高度，而是证明共同根接口上的
+terminal/endpoint priority 覆盖，并处理 provenance：对 \(s\equiv1\) 的静态饱和 receipt，
+要么证明所有 admitted lineages 排除它，要么构造真正获准的饱和路径；若这条路失败，
+再寻找在 alternate/split/rechart 下不可重置的树级资源。完整证明见
 [atomic split 准入与秩边界](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)
 及
 [\(s=0\) 二阶回返、小容量端点出口与固定深度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary.md)、
 [单侧 endpoint stutter guarded relay](../claims/type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay.md)
 与
-[\(s=0\) Hensel 任意根高度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)。
+[\(s=0\) Hensel 任意根高度与 priority 抢占](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)、
+[endpoint \(s=0\) 精确 p-free 回返](../claims/type-I-overflow-full-product-d-one-a-one-endpoint-s-zero-p-free-return.md)
+与
+[regeneration 终类首位判别](../claims/type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form.md)。

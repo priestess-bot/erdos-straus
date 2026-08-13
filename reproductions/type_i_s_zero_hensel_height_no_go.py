@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify p=73 Hensel candidates with unbounded conditional target height.
+"""Verify p=73 Hensel candidates and their uniform priority preemption.
 
 This focused verifier derives four small integer polynomials and checks six
 Hensel controls. It performs no prime, denominator, or selector-history scan.
@@ -8,6 +8,7 @@ Hensel controls. It performs no prime, denominator, or selector-history scan.
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 from math import gcd, lcm
 
 
@@ -77,6 +78,10 @@ def derive_polynomials() -> dict[str, tuple[int, ...]]:
     adjustable = add(scale(r, P * P), (-G,))
     target_r = add(r, multiply(relay, adjustable))
     height = add(scale(target_r, 2 * (P * P - 1)), (-75,))
+    endpoint_q3 = tuple(
+        (coefficient - (3 if index == 0 else 0)) // 4
+        for index, coefficient in enumerate(residual)
+    )
     return {
         "r": r,
         "x": x,
@@ -91,6 +96,7 @@ def derive_polynomials() -> dict[str, tuple[int, ...]]:
         "adjustable": adjustable,
         "target_r": target_r,
         "height": height,
+        "endpoint_q3": endpoint_q3,
     }
 
 
@@ -222,13 +228,65 @@ def verify_hensel_family(polys: dict[str, tuple[int, ...]]) -> None:
             )
 
 
+def verify_priority_preemption(polys: dict[str, tuple[int, ...]]) -> None:
+    q3 = polys["endpoint_q3"]
+    support = polys["support"]
+    determinant = 194_472 * (-1_369) - 197_173 * (-1_351)
+    if not (
+        Fraction(1, 20) + Fraction(1, 219) + Fraction(1, 4_380)
+        == Fraction(4, P)
+        and q3 == (11_083_553, 13_250_978_445_494_537_280)
+        and determinant == 148_555 == 5 * 11 * 37 * 73
+        and tuple(coefficient % 11 for coefficient in support) == (2, 4)
+        and tuple(coefficient % 11 for coefficient in q3) == (8, 5)
+        and tuple(coefficient % 72 for coefficient in q3) == (17, 0)
+        and tuple(coefficient % P for coefficient in q3) == (36, 0)
+    ):
+        raise AssertionError("terminal or h=3 priority certificate changed")
+
+    for _, index, _, _ in HENSEL_CONTROLS:
+        residual = evaluate(polys["residual"], index)
+        capacity = evaluate(polys["capacity"], index)
+        support_value = evaluate(support, index)
+        q3_value = evaluate(q3, index)
+        if not (
+            index % 11 != 5
+            and residual - 3 == 4 * q3_value
+            and capacity % 12 == 0
+            and gcd(support_value, q3_value) == 1
+            and gcd(q3_value, capacity) == 1
+            and q3_value % P == 36
+            and (-pow(q3_value, -1, P)) % P == 2
+        ):
+            raise AssertionError("h=3 strict priority control changed")
+
+    index = 5
+    residual = evaluate(polys["residual"], index)
+    capacity = evaluate(polys["capacity"], index)
+    support_value = evaluate(support, index)
+    q3_value = evaluate(q3, index)
+    support_gcd = gcd(support_value, q3_value)
+    multiplier = q3_value // support_gcd
+    if not (
+        residual - 3 == 4 * q3_value
+        and support_gcd == 11
+        and gcd(q3_value, capacity) == 11
+        and gcd(multiplier, capacity) == 1
+        and capacity % 44 == 0
+        and multiplier % P == 63
+        and (-pow(multiplier, -1, P)) % P == 22
+    ):
+        raise AssertionError("j=5 h=3 strict priority branch changed")
+
+
 def verify() -> None:
     polys = derive_polynomials()
     verify_fixed_cell(polys)
     verify_hensel_family(polys)
+    verify_priority_preemption(polys)
     print(
         "verified fixed-cell arithmetic candidates with target root heights "
-        "2 through 7, conditional on E1-E4 admission"
+        "2 through 7, the uniform direct terminal, and h=3 capacities 2/22"
     )
 
 

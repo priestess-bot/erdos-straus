@@ -388,8 +388,9 @@ c=\langle-s^{-1}\rangle_p.
 
 若首个非 regeneration 行为 ordinary strict 或 raw-source failure，则分别由 (30) 或
 \(q_\star\) 得到最终 \(c\le p-2\)。若首个非 regeneration 行是 p-free failure，则
-不能产生这张宏；它返回同一个 \(a=1\) hard branch。故真正未闭合的不是所有 endpoint
-stutter，而精确是：
+不能产生这张宏；它返回同一个 \(a=1\) hard branch。后续正规形已经证明，这两种
+p-free return 都进入同一个根锚 \(h=p+1\)，下一容量整除 \(p^2+p+1\)；但该容量
+可以饱和，不能据此宣称 strict。故真正未闭合的不是所有 endpoint stutter，而精确是：
 
 \[
 \boxed{
@@ -550,7 +551,12 @@ c=-40^{-1}\equiv80<96\pmod {97}.
 
 下一项决定性数学工作因此应专门研究 endpoint multiplier 的
 \(E_0\equiv1\pmod {p^2}\) 类，以及 regeneration 落入 p-free failure 后的真实
-\(p\)-block Reach；不再把 \(m,k\) 当作无标记较小分母，也不再尝试证明已经被 (34)--(41)
+\(p\)-block Reach。两类现已由
+[endpoint s=0 精确回返](type-I-overflow-full-product-d-one-a-one-endpoint-s-zero-p-free-return.md)
+与
+[regeneration 终类首位判别](type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form.md)
+归并到同一个根容量接口；下一步应证明该接口的 terminal/strict priority 覆盖或 admitted
+lineage 限制，不再把 \(m,k\) 当作无标记较小分母，也不再尝试证明已经被 (34)--(41)
 否定的 one-shot 命题。
 
 ## 9. 聚焦回执
