@@ -104,6 +104,12 @@ sources:
   role: exact-s-zero-p-free-return-unbounded-height-and-saturated-root-capacity
 - claim: type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
   role: regeneration-terminal-digit-and-root-capacity-saturation-boundary
+- claim: type-I-overflow-full-product-d-one-a-one-s-one-saturated-provenance-exclusion
+  role: exact-bottom-reverse-closure-current-named-source-exclusion-and-terminal-intercept
+- claim: type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent
+  role: coprime-root-capacity-fan-and-explicit-h3-half-descent
+- claim: type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go
+  role: all-core-dual-root-saturation-exact-s-zero-and-arbitrary-fixed-depth-no-go
 - claim: type-I-overflow-high-capacity-small-d-residual-cone
   role: high-capacity-small-d-route-and-residual-cone
 - claim: type-I-odd-owner-prime-matched-affine-carrier-fourier-descent-boundary
@@ -7183,8 +7189,14 @@ normal-form 高度或根容量真因子势，但 \(p=97\) 本身也有直接 Typ
 conditional target 误写成 selector 后继。
 
 所以当前决定性方向不再是加深固定树或压低根高度，而是证明共同根接口上的
-terminal/endpoint priority 覆盖，并处理 provenance：对 \(s\equiv1\) 的静态饱和 receipt，
-要么证明所有 admitted lineages 排除它，要么构造真正获准的饱和路径；若这条路失败，
+terminal/endpoint priority 覆盖，并处理 provenance。这里已有一项实质收缩：上述
+\(p=73\) 的 \(s\equiv1\) 静态饱和 receipt，其完整 \(m=1\) 反向闭包恰为 23 点、
+23 条带标签边；universal \(p\)-source 与最小互素素数源的全部首后继均不在闭包内，
+而且 \(p=73\) 已被直接 Type II 证书抢占。它因此不再是 admitted 饱和障碍。
+
+下一步不应继续围绕这个固定点寻找 formal parent，而应二选一：证明任意未来获准具名源的
+首后继都不能进入一般饱和 endpoint 的反向 basin，或构造一个来自第三类
+target-independent source、未被 terminal-first 抢占的真正饱和 receipt。若这条路失败，
 再寻找在 alternate/split/rechart 下不可重置的树级资源。完整证明见
 [atomic split 准入与秩边界](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)
 及
@@ -7194,4 +7206,70 @@ terminal/endpoint priority 覆盖，并处理 provenance：对 \(s\equiv1\) 的�
 [\(s=0\) Hensel 任意根高度与 priority 抢占](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md)、
 [endpoint \(s=0\) 精确 p-free 回返](../claims/type-I-overflow-full-product-d-one-a-one-endpoint-s-zero-p-free-return.md)
 与
-[regeneration 终类首位判别](../claims/type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form.md)。
+[regeneration 终类首位判别](../claims/type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form.md)、
+[\(s=1\) 饱和端点反向闭包与现有具名源排除](../claims/type-I-overflow-full-product-d-one-a-one-s-one-saturated-provenance-exclusion.md)。
+
+## 2026-08-13：根容量扇出现显式半降，但局部三元势被全核心反例排除
+
+共同根接口现在同时有一条全称正向切换和一条严格 no-go。令
+
+\[
+M=\frac{p^2+p+1}{3},
+\qquad
+u=(2r+1,M).
+\]
+
+根锚 \(h=p+1\) 的真实对侧容量精确为 \(3u\)。所以
+\(9u^2<p\) 时，容量剥离实际到达小 endpoint \(h=3u\)，再由既有定理给 bottom
+Type I 或严格 carry。特别地，\(u=1\) 在每个核心素数上占
+\(\varphi(M)\) 个模 \(M\) 类。对这个无限互素容量扇，再写
+
+\[
+Q_3=\frac{R-3}{4},
+\qquad H=\frac{3p+1}{4},
+\qquad w=(r-3,H),
+\]
+
+则真实 maximal complete-excess 分块归一化后有精确公式
+
+\[
+E=\frac{Q_3}{w},
+\qquad D=4w,
+\qquad
+c=\langle2w\rangle_p\le\frac{p+1}{2}<p-1.
+\]
+
+因此，对已 persistent 且 terminal-first 未先命中的根，\(u=1\) 子域不再属于 hard
+box；它只需两个 gcd 就有显式约半降 action。这里不能把 maximal block 本身误写为
+\(Q_3\)：\(p=73,r=3\) 给出 \(Q\ne Q_3\)，但归一化后的 \(E,D\) 公式仍成立。
+
+相反，剩余 hard box 不能继续依赖“双根容量、\(s=0\) 位数、固定树深”三项局部势。
+根 peeled 两侧容量现有全称公式
+
+\[
+(x,K)=2\gcd\left(r+\frac{p+1}{2},\frac{p^2+1}{2}\right),
+\qquad
+(y,K)=3\gcd\left(2r+1,\frac{p^2+p+1}{3}\right).
+\]
+
+对每个核心素数 \(p\) 和任意预先固定深度 \(d\)，可用一个 \(T\)-整除 CRT 与
+判别式 \(-12\) 的两个简单 Hensel 类，构造无穷多个参数同时满足：两侧容量分别饱和到
+\(p^2+1,p^2+p+1\)，两侧完整超额块与 \(K\) 互素，atomic-split multiplier 精确有
+\(\nu_p(L-1)=2\)，并且深度 \(d\) 的完整 \(P/M\) 容量树全部真实存在、宏内没有
+bottom Type I sink。这把旧 \(p=73\) 控制提升为量词
+
+\[
+\forall p\ \forall d\ \exists^\infty r.
+\]
+
+该 no-go 仍不排除独立 Type I/II terminal-first、树外 raw 分支或跨图表动作，也不把
+chart-local 根自动升级为 admitted parent。下一步应把精力放在三类新资源：
+
+1. 对 \(u>1\) 且 \(9u^2\ge p\) 的根容量层寻找新的显式 endpoint 公式；
+2. 把 terminal-first 的直接 Type I/II 条件与 \(u,w\) 容量层做代数耦合；
+3. 寻找跨 split/rechart 不能被上述 CRT 同时重置的全局标记或来源资源。
+
+完整证明见
+[根接口互素容量扇与 \(h=3\) 显式半降](../claims/type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent.md)
+及
+[全核心双容量饱和与 \(s=0\) 任意深树 no-go](../claims/type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go.md)。

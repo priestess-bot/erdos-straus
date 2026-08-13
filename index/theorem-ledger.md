@@ -14,14 +14,14 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 696 |
+| 数学状态 | `established` | 712 |
 | 数学状态 | `open` | 12 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 536 |
+| 证明来源 | `repository_derivation` | 552 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 672 |
+| 审阅状态 | `internal_review` | 688 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -250,6 +250,7 @@
 | [底层路径字的格正规形、有限 Pareto 前沿与周期容量选择器](../claims/type-I-bottom-word-lattice-pareto-cycle-capacity-selector.md) (`type-I-bottom-word-lattice-pareto-cycle-capacity-selector`) | `established` | `mixed` | `internal_review` | - | 2026-08-01 |
 | [固定素数的有界单调支撑相位秩](../claims/type-I-bounded-monotone-support-phase-rank.md) (`type-I-bounded-monotone-support-phase-rank`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [规范完全换支撑重图表及其普适 G 态终点](../claims/type-I-canonical-complete-support-rechart-g-obstruction.md) (`type-I-canonical-complete-support-rechart-g-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
+| [任意 Type I 图表的最小互素素数一步锚源与 d=1 raw 门消除](../claims/type-I-chart-least-coprime-prime-anchor-source.md) (`type-I-chart-least-coprime-prime-anchor-source`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [完整 d 整除 x 的 Type I 层的规范因子正规形](../claims/type-I-complete-divisor-layer-normal-form.md) (`type-I-complete-divisor-layer-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [Type I 除子证书的互素因子正规形](../claims/type-I-coprime-factor-normal-form.md) (`type-I-coprime-factor-normal-form`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013`, `bello2026` | 2026-07-23 |
 | [核心一层形式周期的奇偶约化、有限 radical 命中与反例边界](../claims/type-I-core-formal-cycle-radical-cube-boundary.md) (`type-I-core-formal-cycle-radical-cube-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
@@ -671,8 +672,22 @@
 | [fixed-s 的 2,3-光滑载体残余正规形](../claims/type-I-overflow-fixed-s-23-smooth-residual.md) (`type-I-overflow-fixed-s-23-smooth-residual`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶 fixed-s 的有界除子外层秩递降](../claims/type-I-overflow-fixed-s-bounded-divisor-saturation.md) (`type-I-overflow-fixed-s-bounded-divisor-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [overflow 对偶固定 s 图谱与 r 侧外层秩递降](../claims/type-I-overflow-fixed-s-dual-outer-rank-descent.md) (`type-I-overflow-fixed-s-dual-outer-rank-descent`) | `computationally_reproduced` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
+| [a=1 共同根的全核心双容量饱和与 s=0 任意深树 no-go](../claims/type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go.md) (`type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [a=1 endpoint s=0 的精确 p-free 回返与任意根高度边界](../claims/type-I-overflow-full-product-d-one-a-one-endpoint-s-zero-p-free-return.md) (`type-I-overflow-full-product-d-one-a-one-endpoint-s-zero-p-free-return`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [完整乘积 d=1 的 a=1 任意长 p-primary 链与单轨道势 no-go](../claims/type-I-overflow-full-product-d-one-a-one-p-primary-chain-no-go.md) (`type-I-overflow-full-product-d-one-a-one-p-primary-chain-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [a=1 regeneration 终类首位判别与根容量饱和边界](../claims/type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form.md) (`type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [a=1 根接口的互素容量扇与 h=3 显式半降](../claims/type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent.md) (`type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [a=1 的 s=1 饱和端点反向闭包与现有具名源排除](../claims/type-I-overflow-full-product-d-one-a-one-s-one-saturated-provenance-exclusion.md) (`type-I-overflow-full-product-d-one-a-one-s-one-saturated-provenance-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [a=1 的 s=0 二阶回返、小容量端点出口与固定深度 no-go](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary.md) (`type-I-overflow-full-product-d-one-a-one-s-zero-endpoint-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [a=1 的 s=0 Hensel 任意根高度与统一 priority 抢占](../claims/type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go.md) (`type-I-overflow-full-product-d-one-a-one-s-zero-hensel-height-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [a=1 单侧端点 stutter 的因子对正规形与条件 guarded relay](../claims/type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay.md) (`type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [完整乘积 d=1 的 a=1 双侧载荷正规形、stutter 继电与无限族严格旁路](../claims/type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay.md) (`type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [完整乘积 d=1 的 a=1 双侧容量树 no-go 与 split-carrier 合同边界](../claims/type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go.md) (`type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [完整乘积 d=1 饱和高锚的完整超额容量公式与 p-源门](../claims/type-I-overflow-full-product-d-one-complete-excess-capacity-map.md) (`type-I-overflow-full-product-d-one-complete-excess-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [完整乘积 d=1 饱和支到 p-2 G 锚点的支撑保留刚性](../claims/type-I-overflow-full-product-d-one-g-anchor-retention-rigidity.md) (`type-I-overflow-full-product-d-one-g-anchor-retention-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [完整乘积 d=1 饱和高锚的 p 进再生倒计时与严格扩展秩](../claims/type-I-overflow-full-product-d-one-p-adic-regeneration-countdown.md) (`type-I-overflow-full-product-d-one-p-adic-regeneration-countdown`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [完整乘积 d=1 的 p-free 失败块剥离与来源丢失障碍](../claims/type-I-overflow-full-product-d-one-p-block-peeling-obstruction.md) (`type-I-overflow-full-product-d-one-p-block-peeling-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [完整乘积 d=1 的 p-free 失败真实剥离与小锚点重生](../claims/type-I-overflow-full-product-d-one-p-free-peeled-small-anchor.md) (`type-I-overflow-full-product-d-one-p-free-peeled-small-anchor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [一亿小溢出压力点的外部 source 缺口代价](../claims/type-I-overflow-gap-tradeoff-100m.md) (`type-I-overflow-gap-tradeoff-100m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-25 |
 | [高容量小 d overflow 的精确容量壳与余因子模 p 折叠候选](../claims/type-I-overflow-high-capacity-small-d-residual-cone.md) (`type-I-overflow-high-capacity-small-d-residual-cone`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [高载体 overflow 固定 n 有界除子的 R 严格递降](../claims/type-I-overflow-high-carrier-fixed-n-R-descent.md) (`type-I-overflow-high-carrier-fixed-n-R-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-03 |
@@ -708,6 +723,7 @@
 | [p等于25模48类的固定偶源外部尺度边界](../claims/type-I-p25-fixed-even-scale-boundary.md) (`type-I-p25-fixed-even-scale-boundary`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [p=409, A=5 的 charged-history cofactor 父回放边界](../claims/type-I-p409-a5-charged-history-parent-replay-boundary.md) (`type-I-p409-a5-charged-history-parent-replay-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md) (`type-I-pareto-overflow-capacity-separation-theorem`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
+| [双侧完整超额原子来源的条件准入 schema 与精确秩边界](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md) (`type-I-path-anchored-atomic-split-complete-excess-admission`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md) (`type-I-phase-clearing-cell-capacity-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [重图表与形式吸收的不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md) (`type-I-phase-labeled-candidate-selector-well-founded-schedule`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [Fourier—q-prefix 槽缺口的 source-dominating annihilator relay](../claims/type-I-phase-prefix-source-dominating-annihilator-relay.md) (`type-I-phase-prefix-source-dominating-annihilator-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |

@@ -11,9 +11,9 @@ statement: >-
   a=1 root interface，根 h=p+1 的对侧容量精确为
   D=3gcd(2r+1,(p^2+p+1)/3)。该 D 可以等于 p^2+p+1，因此 O(p^2) 上界不能强化为
   immediate D 的真因子下降或统一小量界。endpoint s=1 的静态 receipt 方程也允许
-  饱和，但现有控制只有 formal raw parent，尚未通过 target-independent root policy；
-  真实 admitted lineage
-  是否排除饱和仍是开放的 provenance 问题。
+  饱和；但 p=73 控制的完整 m=1 反向闭包只有 23 点，现有 universal p-source 与最小
+  互素素数源的全部首后继均在闭包外，且该素数被直接 Type II 终端抢占。因此该控制不再
+  是 admitted 饱和障碍；未来不同具名源是否能产生一般饱和 lineage 仍是开放问题。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -22,6 +22,7 @@ depends_on:
   - type-I-overflow-full-product-d-one-p-free-peeled-small-anchor
   - type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay
   - type-I-raw-universal-p-parent-root-policy-boundary
+  - type-I-overflow-full-product-d-one-a-one-s-one-saturated-provenance-exclusion
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -44,6 +45,8 @@ sources:
     role: endpoint-relay-normal-form-and-provenance-contract
   - claim: type-I-raw-universal-p-parent-root-policy-boundary
     role: formal-parent-versus-admitted-root-policy-boundary
+  - claim: type-I-overflow-full-product-d-one-a-one-s-one-saturated-provenance-exclusion
+    role: complete-current-named-source-exclusion-and-terminal-intercept
   - reproduction: reproductions/type_i_regeneration_return_digit_normal_form.py
     role: digit-classification-saturated-root-and-static-endpoint-controls
 visibility: public
@@ -312,21 +315,33 @@ R-h=3\cdot5\,337\,477\,005\,573,
 这里 \(E_0=5\,337\,477\,005\,573\equiv1+73\pmod {73^2}\)，checkpoint 的
 首位为 \(\omega=-1\)，最终根容量精确为 \(5403=N\)。
 
-但 (29)--(30) 不能写成已 admitted 的 path endpoint。通用 raw-parent 构造可以给它
-一个可重放 formal parent；既有合同同时明确说明，formal reverse parent 不能替代
-target-independent named root policy、scope 和 persistent lineage。规范 anchor 容量轨道
-也不经过这个 \(h\)。所以当前正确状态是
+但 (29)--(30) 不能写成已 admitted 的 path endpoint。更精确地，完整的 \(m=1\)
+反向前驱公式给出该 endpoint 的有限反向可达闭包：闭包恰有 23 个节点和 23 条带素数
+标签的边。现有 universal \(p\)-source 与最小互素素数 \(q_\star=5\) source 的**全部**
+合法首 raw 后继都位于 \(m=1\) 层，且与这个闭包不交。因此结论不只是“规范 anchor
+轨道不经过 \(h\)”，而是
 
 \[
 \boxed{
-\text{raw-parent replayable，root-policy/admission 未证。}}
+\text{当前两个 target-independent named source families 均不能到达 }h.}
 \tag{31}
 \]
 
-这把下一缺口定位成 Reach/provenance 定理：要么证明所有 admitted endpoint lineages
-排除根容量饱和，要么构造一个真正 admitted 的饱和 receipt。继续只从局部剩余类、
-静态 endpoint 方程或 \(O(p^2)\) 上界推断 immediate 严格下降已经不够；若要排除任意
-固定菜单，还需独立构造保持完整菜单前缀的参数族。
+此外同一素数已有
+
+\[
+\frac4{73}=\frac1{20}+\frac1{219}+\frac1{4380},
+\tag{32}
+\]
+
+所以 terminal-first 在生成这张深层静态候选前已经停止。该控制因而同时遭到 E1 来源
+排除与 E3 终端抢占，不再能作为 admitted 饱和障碍。
+
+完整反向闭包并不排除未来提出的第三类 target-independent source family；它只把新候选
+变成一个明确的有限成员资格检查：新源的首后继必须命中这 23 点之一。下一缺口仍是一般
+Reach/provenance 定理：要么证明所有获准 endpoint lineages 排除根容量饱和，要么构造
+一个来自不同具名源且未被 terminal-first 抢占的饱和 receipt。继续只从局部剩余类、
+静态 endpoint 方程或 \(O(p^2)\) 上界推断 immediate 严格下降已经不够。
 
 ## 6. 聚焦回执
 
@@ -335,5 +350,6 @@ python3 reproductions/type_i_regeneration_return_digit_normal_form.py --verify
 ```
 
 脚本只核对 (6)--(8) 的固定首位控制、\(p=73,m=24\) 的饱和 ordinary return，以及
-(29)--(31) 的静态 endpoint-compatible 控制；它明确不把最后一项升级为 path-admitted
-receipt，也不扫描 selector history 或历史结果。
+(29)--(30) 的静态 endpoint-compatible 控制；反向闭包、具名源排除与 (32) 由
+`type_i_s_one_saturated_endpoint_provenance_exclusion.py` 独立重算。两个脚本都不扫描
+selector history 或历史结果。

@@ -15,7 +15,8 @@ statement: >-
   5330=p^2+1 与 5403=p^2+p+1，两个 immediate endpoint receipt 的完整块都含 73。
   更强地，对每个固定深度 N，CRT 可同时保持该根 s=0 cell 与深度 N 的完整 P/M
   容量树。因此任何仅以 P/M endpoint projection 是否在固定深度内退出为判据的策略都
-  不能关闭 s=0；本卡留下的决定性余项是大非 1 (mod p) endpoint 的严格动作，
+  不能关闭 s=0。后续全核心推广已把这一量词加强到每个核心素数、双容量同时饱和且
+  nu_p(L-1)=2；本卡留下的决定性余项是大非 1 (mod p) endpoint 的严格动作，
   或跨整棵 p-block 树的全局良基势/终端。
 claim_status: established
 proof_provenance: repository_derivation
@@ -24,6 +25,7 @@ depends_on:
   - type-I-path-anchored-atomic-split-complete-excess-admission
   - type-I-overflow-full-product-d-one-a-one-split-carrier-stutter-relay
   - type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go
+  - type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go
   - type-I-universal-p-source-capacity-anchor-orbit
   - type-I-bottom-sink-scc-complete-excess-bundle-selector
 topics:
@@ -47,6 +49,8 @@ sources:
     role: s-relay-and-minimal-receipt-cell
   - claim: type-I-overflow-full-product-d-one-a-one-two-sided-capacity-tree-no-go
     role: p-m-capacity-tree-and-crt-semantics
+  - claim: type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go
+    role: all-core-strengthening-of-the-fixed-p73-no-go
   - claim: type-I-universal-p-source-capacity-anchor-orbit
     role: actual-capacity-endpoint-peeling
   - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
@@ -713,6 +717,18 @@ r_3=
 一般 \(N\) 由 (45)--(58) 的 CRT 证明承担。该 no-go 只针对固定深度的 \(P/M\)
 endpoint 投影；同层其它 raw branch、独立 Type I/II terminal-first 或跨图表宏仍可能
 提前退出。
+
+后续
+[全核心双容量饱和定理](type-I-overflow-full-product-d-one-a-one-all-core-dual-saturation-s-zero-tree-no-go.md)
+不再固定 \(p=73\)：它对每个核心素数给出两条共同根容量的 \(r\)-gcd 公式，并用判别式
+\(-12\) 的两个简单 Hensel 类证明
+
+\[
+\forall p\ \forall N\ \exists^\infty r
+\]
+
+同时具有双容量饱和、精确 \(\nu_p(L-1)=2\) 与深度 \(N\) 完整树。因此本节应读作
+最先发现该边界的固定控制；当前最强量词以后续卡为准。
 
 ## 8. 新的决定性余项
 

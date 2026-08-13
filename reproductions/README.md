@@ -751,3 +751,32 @@ endpoint \(p\)-free 失败；以及一个同时保持根 \(s=0\) 的深度 3 完
 证明承担。
 
 运行 `python3 reproductions/type_i_atomic_split_s_zero_endpoint_boundary.py --verify`。
+
+`type_i_s_one_saturated_endpoint_provenance_exclusion.py` 针对既有 \(p=73\) 的
+\(s=1\) 静态饱和 endpoint，使用完整 \(m=1\) 反向前驱公式重建其 23 节点、23 条
+带标签边的反向闭包。脚本完整分解 universal \(p\)-source 与最小互素素数
+\(q_\star=5\) source 的两个坐标，回放它们全部八条合法首 raw 边并核验七个不同后继
+均在闭包外；最后重算饱和 return 和直接 Type II 抢占。它不扫描素数范围、分母范围、
+selector history 或历史结果。
+
+运行
+`python3 reproductions/type_i_s_one_saturated_endpoint_provenance_exclusion.py --verify`。
+
+`type_i_all_core_dual_saturation_s_zero_tree_no_go.py` 从全核心共同根公式现场构造一个
+\(p=73,d=2\) 的新 CRT 控制：先令 \(T\) 同时装入双容量平方和七个树节点，再从
+\(4r^2+10r+7\) 的两个简单根中 Hensel 提升一个 \(s=0\) 类，并避开唯一的
+\(p^3\) lift。脚本重算六个真实容量宏、两侧容量 \(5330,5403\)、两块相对 \(K\)
+互素的 complete-excess 以及 \(\nu_{73}(L-1)=2\)。它不读取历史 artifact 或扫描
+素数、分母与 selector history。
+
+`type_i_root_coprime_capacity_fan_half_descent.py` 固定核对根容量层
+\(u=(2r+1,(p^2+p+1)/3)\)。三个 \(p=73,u=1\) 控制分别覆盖
+\(w=(r-3,(3p+1)/4)\) 的 1、真因子和满因子情形，并重算
+\(E=Q_3/w,D=4w,c=\langle2w\rangle_p\)；其中 \(r=3\) 还固定验证 maximal
+complete-excess block 不等于 \(Q_3\) 的边界。第四个 \(p=457,u=7\) 控制核验一般
+\(9u^2<p\) 小 endpoint 分支。两个脚本都只检查本轮新定理。
+
+```bash
+python3 reproductions/type_i_all_core_dual_saturation_s_zero_tree_no_go.py --verify
+python3 reproductions/type_i_root_coprime_capacity_fan_half_descent.py --verify
+```
