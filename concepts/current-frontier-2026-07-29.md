@@ -7363,3 +7363,15 @@ D_C\mid h^2-1,
 递降。因而当前主缺口保持不变：将这组 receipt 因子约束与容量素因子 external-source
 菜单或完整 source/path provenance 联立。详见
 [根容量端点实际 D 的因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md)。
+
+## 2026-08-13：proper-root 的低端 stutter 门被全称排除
+
+对同一 actual root receipt，若 `u<M0` 且 `h=3u<p`，假设非严格门
+`D≡1−h (mod p)`，可写 `D=mp+1−h`。当 `m=1` 时，`D|(p²+p+1)` 与实际
+`gcd(D,M0)=1`、`3∤D` 强制 `D=1`，但 `D=p+1−h≥2`；当 `m≥2` 时，
+`D|(m−1)(p+1)`、`gcd(D,p+1)|(h−1)` 给出
+`D≤(m−1)(h−1)`，而恒等式
+`D−(m−1)(h−1)=m(p−h+1)>0` 矛盾。因此所有 proper-root 的 `h<p`
+实际回执都有 `c≤p−2` 的严格 arithmetic carry。新的低端余项只剩 `h>p`；
+饱和 `u=M0` 和高端 proper-root 仍未闭合，也没有产生跨分母提升。
+详见[proper endpoint stutter 排除引理](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md)。
