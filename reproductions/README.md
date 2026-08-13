@@ -845,3 +845,11 @@ python3 reproductions/type_i_root_capacity_stutter_reduced_divisor_product.py --
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_norm_bound.py --verify
 ```
+
+`type_i_root_capacity_stutter_eisenstein_support.py` 固定验证
+`N=a^2-a(e-1)+(e-1)^2` 的 `h|N` 以及其素因子只能为 `3` 或 `1 mod 3`；
+它也检查范数商的同样支撑限制，不冒充 actual receipt，也不执行范围搜索。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_eisenstein_support.py --verify
+```

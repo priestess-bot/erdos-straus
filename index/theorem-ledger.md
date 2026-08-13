@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 719 |
+| 数学状态 | `established` | 720 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 560 |
+| 证明来源 | `repository_derivation` | 561 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 696 |
+| 审阅状态 | `internal_review` | 697 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -764,6 +764,7 @@
 | [一般根容量端点的精确 complete-excess 除数门](../claims/type-I-root-capacity-general-endpoint-divisor-gate.md) (`type-I-root-capacity-general-endpoint-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量素因子的 q 关联最小正源 Type I 终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md) (`type-I-root-capacity-prime-external-terminal-coupling`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 proper endpoint 的 stutter 门审计（原低端排除已撤回）](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md) (`type-I-root-capacity-proper-endpoint-stutter-exclusion`) | `retracted` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |

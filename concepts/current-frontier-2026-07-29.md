@@ -7482,3 +7482,17 @@ G(a,e)=a^2-ae+e^2+a-2e+1,
 或全域解提升。下一步应在这个 \(O(\sqrt h)\) 菜单上联立 \(D_*\mid J\)、\(D_T\mid S\)
 和容量素因子 external-source 菜单；若菜单项仍未命中，必须给出带 identity lift 的合法
 递降，而不能把有限枚举本身当作全局证明。详见[proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md)。
+
+## 2026-08-14：Eisenstein 范数排除 2 mod 3 素因子桥
+
+对同一 proper-root stutter，令 b=e-1，并记 N=a^2-ab+b^2=G(a,e)，h|N。
+若素数 q=2 mod 3 整除 N，初等模 q 的 Eisenstein 范数论证先迫使 q|a,b；
+stutter 线性恒等式 pa=h(b+1)-b 随后迫使 q|h。但 h|p^2+p+1，所以（除 q=3
+外）p 在 F_q^* 中必须有精确阶 3，从而 q=1 mod 3，矛盾；q=2 则由范数模 2
+的零点只有 (a,b)=(0,0) 且 h 为奇数直接排除。故 q|N 只能有 q=3 或 q=1 mod 3。
+
+这严格否定了“从 stutter 范数或 N/h 中抽取 2 mod 3 素因子，以此直接关闭 gap 3”
+的证书桥；gap-three criterion 要求的 2 mod 3 因子只能来自 (p+3)/4 或其它独立
+的 Type I/II 正规形。该引理仍不把 1 mod 3 素因子转成外部源命中，也不提供 identity
+lift，因此没有关闭全局 hard-root 出口。详见[proper-root stutter 范数的 Eisenstein
+素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md)。
