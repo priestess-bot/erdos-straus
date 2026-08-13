@@ -9,8 +9,9 @@ statement: >-
   m=(D+h-1)/p、S=h^2-h-2r。则 D*|T、D*|S，并且
   D* 整除 J=2h^2r-hm-4hr-m^3-2m^2r-m^2+m+2r。
   由于 J+((h-1)^2-m^2)S=(h^2-h+m)(h^2-2h-m^2-m+1)，
-  必有 D*|(h^2-h+m)(h^2-2h-m^2-m+1)。这是 stutter 的必要
-  除子筛选，不排除第二因子，也不构造 Type I/II 证书、解提升或全局递降。
+  必有 D*|(h^2-h+m)(h^2-2h-m^2-m+1)。这是由 stutter 余式得到的必要
+  恒等式；由于第一因子恰为 D a（a=em-h），该乘积本身不是独立的排除筛选。
+  独立的算术增量是 D*|J 及其容量约分来源；它仍不构造 Type I/II 证书、解提升或全局递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -188,7 +189,15 @@ D_*\mid(h^2-h+m)(h^2-2h-m^2-m+1).}
 \]
 
 这比单独的 \(D_C\mid h^2-1\)、\(D_T\mid S\) 多出一个由根回执 \(z\) 和 stutter
-线性式共同产生的结果式约束；但它仍只是必要条件。
+线性式共同产生的恒等式；但它仍只是必要条件。由此前的 stutter 恒等式
+
+\[
+a=em-h>0,\qquad Da=m+h(h-1)=h^2-h+m,
+\]
+
+第一因子已经满足 (h^2-h+m=Da)，所以 (D_*\mid h^2-h+m) 早已自动成立；
+式 (11) 的乘积形式不能被解释为额外排除第二因子的筛选。真正新增的是第 3 节的
+约化余式 (D_*\mid J)，以及由容量指数约分得到 (D_*\mid T,S) 的精确来源。
 
 ## 5. 证明边界
 

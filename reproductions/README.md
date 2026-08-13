@@ -837,3 +837,11 @@ actual stutter receipt，也不执行范围搜索。
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_reduced_divisor_product.py --verify
 ```
+
+`type_i_root_capacity_stutter_norm_bound.py` 固定验证 stutter 参数的正定二次范数
+`G(a,e)`、`h|G` 及 `m<1+sqrt(h)` 平方根菜单界；控制元组只验证整数恒等式，
+不冒充 actual receipt，也不执行范围搜索。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_norm_bound.py --verify
+```

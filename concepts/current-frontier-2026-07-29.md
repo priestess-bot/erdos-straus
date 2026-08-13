@@ -7444,7 +7444,41 @@ J+((h-1)^2-m^2)S
 \boxed{D_*\mid(h^2-h+m)(h^2-2h-m^2-m+1).}
 \]
 
-这是真正新增的必要除子筛选；它没有排除第二因子，也没有产生解提升或严格全局势，
-所以 hard-root “短证书或递降”缺口仍未闭合。下一步应研究第二因子的素因子是否能
-通过容量素因子来源菜单或 root provenance 被强制转成 terminal/alternate，而不是把
-该乘积约束误报成 stutter 门为空。详见[根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md)。
+这一步的独立内容是 (D_*\mid J) 及其容量指数约分；乘积式本身需要谨慎解释。由
+先前的 stutter 恒等式 (Da=m+h(h-1)=h^2-h+m)，第一因子已经是 (Da)，所以
+式中的乘积不是一个独立排除第二因子的筛选。它仍没有产生解提升或严格全局势，hard-root
+“短证书或递降”缺口未闭合。详见[根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md)。
+
+## 2026-08-14：proper-root stutter 压缩为正定范数与平方根菜单
+
+对 proper-root 的实际 stutter（\(2\le h<p\)），沿用
+
+\[
+m=(D+h-1)/p,\qquad e=(ph+1)/D,\qquad a=em-h.
+\]
+
+三参数曲线已有 \(h\mid F(e,m)\)。代入 \(a=em-h\) 后，得到同余等价的正定二次型
+
+\[
+G(a,e)=a^2-ae+e^2+a-2e+1,
+\; h\mid G(a,e),
+\]
+
+以及精确范数恒等式
+
+\[
+4G=(2a-e+1)^2+3(e-1)^2.
+\]
+
+另一方面 \(pa=e(h-1)+1\) 且 \(h<p\) 强制 \(1\le a<e\)。因此
+
+\[
+0<G<e^2,\; e>\sqrt h,\; e(m-1)<h,\;
+\boxed{m<1+\sqrt h}.
+\]
+
+这把原先 \(m\le h\) 的 stutter 候选压缩到平方根级有限菜单，是当前 hard-root
+算术侧最具体的新收缩；但它仍是必要界，不排除门，也不携带 source/path、terminal-first
+或全域解提升。下一步应在这个 \(O(\sqrt h)\) 菜单上联立 \(D_*\mid J\)、\(D_T\mid S\)
+和容量素因子 external-source 菜单；若菜单项仍未命中，必须给出带 identity lift 的合法
+递降，而不能把有限枚举本身当作全局证明。详见[proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md)。
