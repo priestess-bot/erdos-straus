@@ -803,3 +803,11 @@ python3 reproductions/type_i_root_capacity_general_endpoint_divisor_gate.py --ve
 python3 reproductions/type_i_root_capacity_prime_external_terminal_coupling.py --verify
 python3 reproductions/type_i_s_zero_rechart_standalone_potential_no_go.py --verify
 ```
+
+`type_i_root_capacity_stutter_receipt_factor_split.py` 只重放四个固定根端点回执，验证
+实际 `D` 与 cyclotomic `M0=(p^2+p+1)/3` 互素、`M0` 素因子全部落在 `E`，以及
+`D_C | h^2-1`、`D_T | h^2-h-2r` 的 p±1/T 因子分裂；它不执行范围搜索。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_receipt_factor_split.py --verify
+```

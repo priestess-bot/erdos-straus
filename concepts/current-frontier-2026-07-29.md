@@ -7336,3 +7336,30 @@ target 从容量 \((2,3)\) 重置到 \((9410,9507)\)。因此高度、容量、�
 cycle；下一种全局势必须同时读取 terminal priority、typed admission 和不可压缩的
 persistent lineage。详见
 [\(s=0\) 半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md)。
+
+## 2026-08-13：actual root receipt 的 cyclotomic 支撑被排除
+
+对一般根容量端点的除数门又得到一个只依赖 actual receipt 的新约束。令
+\(M_0=(p^2+p+1)/3\)、\(u=(2r+1,M_0)\)、\(h=3u\)，并写
+\(R-h=ED\)。由 \(D\mid K\)、\(D\mid ph+1\) 和 \((h,R-h)=1\)，可以逐素数证明
+
+\[
+\boxed{(D,M_0)=1.}
+\]
+
+更强地，若 \(q\mid M_0\) 且 \(q\mid R-h\)，则 \(q\nmid K\)，所以该 q-幂在
+maximal complete-excess 归一化中全部进入 \(E\)，不会进入 \(D\)。把
+\(C=(p^2-1)/2\)、\(K=CT\) 和 \(D_C=(D,C)\)、\(D_T=D/D_C\) 代入，还得到
+
+\[
+D_C\mid h^2-1,
+\qquad D_T\mid h^2-h-2r,
+\qquad D\mid(h^2-1)(h^2-h-2r).
+\]
+
+这把 proper-root stutter 的实际载体分成 cyclotomic-free 的 \(p\pm1\) 块和低阶
+\(T\)-块，排除了“把根容量因子藏进 \(D\)”的可能；但它仍没有证明
+\(D\equiv1-h\pmod p\)、\(D\mid ph+1\) 的实际门为空，也没有单独产生证书或全局
+递降。因而当前主缺口保持不变：将这组 receipt 因子约束与容量素因子 external-source
+菜单或完整 source/path provenance 联立。详见
+[根容量端点实际 D 的因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md)。
