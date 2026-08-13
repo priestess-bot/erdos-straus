@@ -7504,3 +7504,25 @@ lift，因此没有关闭全局 hard-root 出口。详见[proper-root stutter �
 并可使用同一容量菜单，退化只额外推出 (q\mid m)。真正没有根容量强制 provenance
 的是 q=3 或只在范数商中出现的素因子；它们仍可另行尝试一般 external-source，
 但范数不保证菜单非空。详见[根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md)。
+
+## 2026-08-14：actual-maximality 不能降格为抽象除子交集
+
+本轮把一个可能误用的桥明确封死。对于 root receipt 的
+
+\[
+Q=\prod_{v_q(R-h)>v_q(K)}q^{v_q(R-h)},\qquad
+D=\frac{R-h}{Q}(A,Q),
+\]
+
+即使抽象 \(D_0\) 同时通过 root layer、\(D_0\mid(R-h,K)\)、\(D_0\mid ph+1\)、
+stutter 同余和三参数曲线，它也不必等于实际 \(D\)。一个核心同余但合数的
+proper-root 控制 \((p,r,h,D_0)=(54481,2543533812,12063,696191)\) 中，容量内
+\(2^4\) residual 强制给出 \(D=16D_0\)；另一个素数但非核心、非 proper-root 控制
+\((67,25311,93,779)\) 中，excess 后的 \((A,Q)=2\) 强制给出 \(D=2D_0\)。两例的
+实际 \(D\) 都失去 stutter 同余。
+
+因此不能以“满足所有已见的抽象整除式”替代 actual maximal complete-excess receipt。
+这不是核心素数 actual 门为空的证明，反而精确定位了下一步必须保留的数据：从原始
+\((R-h,K,A)\) 逐素数重建 canonical \(Q,\beta,g_A,D\)，然后才可尝试把真实
+stutter 与 capacity-prime external-source 菜单或严格递降相连。详见
+[根容量 stutter 的 actual-maximality 边界](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md)。

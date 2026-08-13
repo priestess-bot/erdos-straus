@@ -863,3 +863,13 @@ python3 reproductions/type_i_root_capacity_stutter_eisenstein_support.py --verif
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_provenance_dispatch.py --verify
 ```
+
+`type_i_root_capacity_stutter_actual_maximality_boundary.py` 固定验证两个接近真实图表的
+反例：一个 shadow `D0` 即使同时满足 root layer、`D0|z`、`D0|K`、stutter 曲线和
+同余门，也可能在 canonical complete-excess receipt 中被容量内 residual 或 `(A,Q)`
+归一化强制扩大为另一个实际 `D`，从而失去 stutter 同余。两个控制分别缺少核心素数性
+或目标范围，所以它们只否定这种放松，不宣称核心 proper-root 门为空，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_actual_maximality_boundary.py --verify
+```
