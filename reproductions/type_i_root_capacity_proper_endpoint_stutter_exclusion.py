@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the proper-root h<p stutter exclusion on fixed receipts."""
+"""Audit the proper-root stutter gate and the withdrawn low-end argument."""
 
 from __future__ import annotations
 
@@ -63,7 +63,6 @@ def verify_receipt(data: dict[str, int]) -> None:
     z, k = data["z"], data["K"]
     if not (
         data["u"] < m0
-        and h < p
         and k % h == 0
         and k % d == 0
         and z % d == 0
@@ -72,17 +71,13 @@ def verify_receipt(data: dict[str, int]) -> None:
     ):
         raise AssertionError("fixed root receipt no longer satisfies actual hypotheses")
 
-    # The stutter congruence would force D=mp+1-h for m>=1.
-    if (d - (1 - h)) % p == 0:
-        raise AssertionError("the fixed proper-root receipt entered the stutter gate")
-
     c = (d * pow(h - 1, -1, p)) % p
-    if not 1 <= c <= p - 2:
-        raise AssertionError("strict canonical cofactor bound changed")
+    if not 1 <= c <= p - 1:
+        raise AssertionError("canonical cofactor range changed")
 
 
-def verify_algebra(p: int, h: int, m: int) -> None:
-    """Check the symbolic identities used after assuming the stutter gate."""
+def verify_withdrawn_argument(p: int, h: int, m: int) -> None:
+    """Exhibit why the former subtraction step is not a valid implication."""
     if not (0 < h < p and m >= 1):
         raise AssertionError("invalid symbolic test parameters")
     d = m * p + 1 - h
@@ -90,46 +85,18 @@ def verify_algebra(p: int, h: int, m: int) -> None:
         raise AssertionError("the hypothetical divisor must be positive")
     if (p * h + 1) + p * d != m * p * p + p + 1:
         raise AssertionError("first divisibility identity changed")
-    if m * (p * p + p + 1) - (m * p * p + p + 1) != (m - 1) * (p + 1):
-        raise AssertionError("remainder identity changed")
-    g_plus = gcd(d, p + 1)
-    if gcd(d // g_plus, (p + 1) // g_plus) != 1:
-        raise AssertionError("gcd cancellation precondition changed")
-    if d - (m - 1) * (h - 1) != m * (p - h + 1):
-        raise AssertionError("strict size identity changed")
-    if not d > (m - 1) * (h - 1):
-        raise AssertionError("proper-root size contradiction changed")
-
-    # The two divisibility consequences are checked conditionally, exactly as
-    # in the proof; the fixed parameter choices need not enter the stutter gate.
-    if (p * h + 1) % d == 0:
-        if ((m - 1) * (p + 1)) % d != 0:
-            raise AssertionError("stutter divisibility remainder changed")
-        if (h - 1) % g_plus != 0:
-            raise AssertionError("p+1 gcd gate changed")
-
-
-def verify_m_one_boundary(p: int, h: int) -> None:
-    """Check the m=1 branch uses the actual cyclotomic-free receipt facts."""
-    m0 = (p * p + p + 1) // 3
-    d = p + 1 - h
-    if d <= 1:
-        raise AssertionError("fixed symbolic boundary divisor is too small")
-    if gcd(d, m0) != 1 or d % 3 == 0:
-        raise AssertionError("fixed receipt lost its cyclotomic-free factors")
-    cyclotomic = p * p + p + 1
-    if cyclotomic % d == 0 and d != 1:
-        raise AssertionError("m=1 cyclotomic contradiction changed")
+    cyclotomic_multiple = m * (p * p + p + 1)
+    if cyclotomic_multiple % d == 0:
+        raise AssertionError("control accidentally validates the withdrawn implication")
+    if (m * p * p + p + 1) % d != 0:
+        raise AssertionError("stutter divisibility control changed")
 
 
 def verify() -> None:
-    # Both receipts are proper-root examples with h<p.
     verify_receipt(receipt(73, 3))
     verify_receipt(receipt(457, 3))
-    verify_m_one_boundary(73, 3)
-    for p, h, m in ((73, 3, 1), (73, 3, 4), (457, 21, 2)):
-        verify_algebra(p, h, m)
-    print("verified proper-root h<p receipts avoid the actual stutter gate")
+    verify_withdrawn_argument(5, 3, 2)
+    print("verified actual root gates and the withdrawn low-end proof boundary")
 
 
 def main() -> None:

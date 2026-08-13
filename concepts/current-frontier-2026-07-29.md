@@ -7364,14 +7364,11 @@ D_C\mid h^2-1,
 菜单或完整 source/path provenance 联立。详见
 [根容量端点实际 D 的因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md)。
 
-## 2026-08-13：proper-root 的低端 stutter 门被全称排除
+## 2026-08-13：proper-root 低端 stutter 排除证明撤回
 
-对同一 actual root receipt，若 `u<M0` 且 `h=3u<p`，假设非严格门
-`D≡1−h (mod p)`，可写 `D=mp+1−h`。当 `m=1` 时，`D|(p²+p+1)` 与实际
-`gcd(D,M0)=1`、`3∤D` 强制 `D=1`，但 `D=p+1−h≥2`；当 `m≥2` 时，
-`D|(m−1)(p+1)`、`gcd(D,p+1)|(h−1)` 给出
-`D≤(m−1)(h−1)`，而恒等式
-`D−(m−1)(h−1)=m(p−h+1)>0` 矛盾。因此所有 proper-root 的 `h<p`
-实际回执都有 `c≤p−2` 的严格 arithmetic carry。新的低端余项只剩 `h>p`；
-饱和 `u=M0` 和高端 proper-root 仍未闭合，也没有产生跨分母提升。
-详见[proper endpoint stutter 排除引理](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md)。
+复核发现此前声称的低端引理有一个不可接受的整除跳步：由
+`D|(mp²+p+1)` 不能推出 `D|m(p²+p+1)`，因此也不能推出
+`D|(m−1)(p+1)`。抽象控制 `p=5,h=3,m=2,D=8` 明确满足前者而不满足后者。
+该 claim 已标记为 `retracted`，低端 `h<p` 的 stutter 门重新成为开放缺口；
+当前仍有效的约束只有 actual receipt 的 cyclotomic-free 分裂和
+`D|ph+1`。详见[stutter 门审计](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md)。

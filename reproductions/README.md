@@ -812,9 +812,8 @@ python3 reproductions/type_i_s_zero_rechart_standalone_potential_no_go.py --veri
 python3 reproductions/type_i_root_capacity_stutter_receipt_factor_split.py --verify
 ```
 
-`type_i_root_capacity_proper_endpoint_stutter_exclusion.py` 检查两个真实 `h<p`
-proper-root 回执，并核对 stutter 假设下的整除链、`m=1` cyclotomic 边界和严格大小恒等式；
-它不执行历史范围扫描。
+`type_i_root_capacity_proper_endpoint_stutter_exclusion.py` 审计两个真实 proper-root
+回执的有效整除门，并固定重现已撤回低端证明中的抽象整除反例；它不执行历史范围扫描。
 
 ```bash
 python3 reproductions/type_i_root_capacity_proper_endpoint_stutter_exclusion.py --verify
