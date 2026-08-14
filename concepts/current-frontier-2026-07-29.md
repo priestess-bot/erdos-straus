@@ -7936,6 +7936,21 @@ n=\frac{p+s}{s+1}<p
 会满足该低缺口根余数条件，也未补齐 G/Type I 状态合同的全称选择器。详见
 [横向 stutter 根余数的低缺口 Type II 终端与严格两尾递降](../claims/type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent.md)。
 
+其中 \(A=1\) 的 slice 现在可完全消去待选参数 \(K\)：对每个
+\(s\in\{3,7,11,23\}\)，只要 actual residual 有奇素因子
+
+\[
+q\mid\gcd(D_*,sh-1),
+\qquad
+q\equiv-1\pmod {2s},
+\]
+
+就自动进入同一 Type II terminal 和严格递降。反向上，这正是 \(A=1\) low-gap
+root-residue 条件的充要重写，而不是另一条证书家族；它还强制
+\(q\mid ms^2-s+1\)，可作为接入 \(m\)-side 容量的独立过滤。这个
+source-factor gate 将后续全称选择问题压成四个实际 gcd 的素因子剩余类，而没有证明
+它们中任何一个必命中。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有

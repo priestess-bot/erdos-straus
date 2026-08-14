@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify q-local root-residue low-gap Type II terminals and strict two-tail lifts."""
+"""Verify q-local root-residue factor gates, terminals, and strict two-tail lifts."""
 
 from __future__ import annotations
 
@@ -73,11 +73,53 @@ def verify_q_local_root_residue_low_gap(
         raise AssertionError("two-tail lift did not preserve the first denominator")
 
 
+def verify_a_one_factor_gate(p: int, q: int, h: int, m: int, s: int) -> None:
+    """Check the selection-free A=1 low-gap factor gate on q-local data."""
+    if not (is_prime(p) and p % 24 == 1 and is_prime(q) and q % 2 == 1):
+        raise AssertionError("control did not use a core prime and odd q")
+    if s not in LOW_GAPS or q % (2 * s) != 2 * s - 1:
+        raise AssertionError("q did not meet the low-gap factor residue")
+    if (s * h - 1) % q:
+        raise AssertionError("q did not divide the root factor sh-minus-one")
+
+    local_d = m * p + 1 - h
+    if local_d % q or (p * h + 1) % q:
+        raise AssertionError("q-local stutter congruences changed")
+    if (h * h - 1) % q == 0:
+        raise AssertionError("control did not use a transverse q residue")
+    if (m * s * s - s + 1) % q:
+        raise AssertionError("root factor did not imply the m-polynomial filter")
+
+    k, remainder = divmod(q + 1, s)
+    if remainder or not (1 < k < q and k % 2 == 0 and h % q == k):
+        raise AssertionError("factor gate did not recover the least even root residue")
+    if (p + s) % q:
+        raise AssertionError("root factor did not force q to divide p-plus-s")
+
+    c, remainder = divmod(p + s, 4 * q)
+    if remainder or c <= 0:
+        raise AssertionError("factor gate did not recover integral terminal coordinates")
+    n, remainder = divmod(p + s, s + 1)
+    if remainder or not (0 < n < p):
+        raise AssertionError("factor gate did not recover a strict source denominator")
+
+    target = (q * c, p * c * k, p * q * c * k)
+    source = (q * c, c * k, q * c * k)
+    if sum(Fraction(1, value) for value in target) != Fraction(4, p):
+        raise AssertionError("factor-gate target certificate changed")
+    if sum(Fraction(1, value) for value in source) != Fraction(4, n):
+        raise AssertionError("factor-gate source witness changed")
+    if target != (source[0], p * source[1], p * source[2]):
+        raise AssertionError("factor-gate two-tail lift changed")
+
+
 def verify() -> None:
     # These are q-local controls, not assertions of actual root receipts.
+    verify_a_one_factor_gate(337, 17, 6, 4, 3)
+    verify_a_one_factor_gate(97, 13, 15, 11, 7)
     verify_q_local_root_residue_low_gap(97, 1, 13, 15, 11)
     verify_q_local_root_residue_low_gap(1297, 5, 13, 9, 6)
-    print("verified q-local root-residue low-gap Type II strict descents")
+    print("verified q-local root-residue factor gates and Type II strict descents")
 
 
 def main() -> None:

@@ -12,7 +12,9 @@ statement: >-
   4/p=1/(AqC)+1/(pACK)+1/(pqCK)。更强地，n=(p+s)/(s+1)<p，
   4/n=1/(AqC)+1/(ACK)+1/(qCK)，后两尾乘 p 恰恢复目标证书。这是一张
   actual transverse residual 到有界 gap 的直接 terminal 与显式 marked two-tail
-  lift 的条件性适配器；它不证明每个 residual 必满足该根余数条件。
+  lift 的条件性适配器。特别地 A=1 的低 gap 条件精确等价于
+  q|gcd(D*,sh-1) 且 q=-1 mod 2s，无需再选择 K；它不证明每个 residual
+  必满足该 source-factor gate。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -28,6 +30,7 @@ topics:
   - stutter
   - transverse-residual
   - root-residue
+  - source-factor-gate
   - bounded-gap
   - strict-descent
   - marked-lift
@@ -43,7 +46,7 @@ sources:
   - claim: short-certificate-equivalence
     role: direct-Type-II-certificate-verifier
   - reproduction: reproductions/type_i_root_capacity_stutter_transverse_root_residue_low_gap_descent.py
-    role: q-local-root-residue-and-two-tail-lift-controls
+    role: q-local-root-residue-factor-gate-and-two-tail-lift-controls
 visibility: public
 last_checked: '2026-08-14'
 ---
@@ -294,13 +297,102 @@ singleton marked two-tail lift：它只声称所写出的 \(4/n\) 解可提升�
 \(s=3\) 时 \(A\) 仍可以随 \(p+3\) 的奇因子变化；这里“有界”仅指 gap
 \(s\le23\)，而不是声称所有分母或所有参数有绝对界。
 
-## 6. 两个 q-local 算术控制
+## 6. \(A=1\) 的无选择 source-factor gate
 
-第一个控制采用
+对 \(A=1\)，第 3 节的 \(K\) 不必再作为一个待搜索参数。对任意
+\(s\in\mathcal G\)，以下两组条件等价：
 
 \[
-(p,A,q,h,m,K,s,C,n)=(97,1,13,15,11,2,7,2,13).
-\tag{23}
+\begin{aligned}
+&K=\langle h\rangle_q,\quad K>1,\quad K\equiv0\pmod2,\quad
+K\mid q+1,\quad \frac{q+1}{K}=s; \tag{23}\\
+\Longleftrightarrow\quad
+&q\mid sh-1,\qquad q\equiv-1\pmod {2s}. \tag{24}
+\end{aligned}
+\]
+
+**证明。** 若 (23) 成立，\(q+1=sK\) 且 \(K\equiv h\pmod q\)，故
+\(sh\equiv1\pmod q\)；又 \(K\) 为偶数，所以 \(2s\mid q+1\)。
+
+反过来，若 (24) 成立，令
+
+\[
+K=\frac{q+1}{s}.
+\tag{25}
+\]
+
+由于 \(q\equiv-1\pmod {2s}\)，\(K\) 是偶数。又 \(s\ge3\)，所以
+
+\[
+1<K<q.
+\tag{26}
+\]
+
+式 \(sh\equiv1\equiv sK\pmod q\) 给出 \(K=\langle h\rangle_q\)，并且
+\(q+1=sK\)，恢复 (23)。证毕。
+
+因此定义完全由 actual receipt 数据给出的有限因子菜单
+
+\[
+\mathcal Q_s^{(1)}(D_*,h)
+=\left\{
+q:\ q\text{ 为奇素数},\
+q\mid(D_*,sh-1),\
+q\equiv-1\pmod {2s}
+\right\}.
+\tag{27}
+\]
+
+每个 \(q\in\mathcal Q_s^{(1)}(D_*,h)\) 都给出第 4 节的严格两尾递降，参数为
+
+\[
+K=\frac{q+1}{s},\qquad
+C=\frac{p+s}{4q},\qquad
+n=\frac{p+s}{s+1}.
+\tag{28}
+\]
+
+这里不需要选择 \(A\)、\(K\) 或二次移位；只需分解四个固定整数
+\(\gcd(D_*,sh-1)\)。此外，actual stutter 曲线给出可用的必要容量过滤：
+
+\[
+q\in\mathcal Q_s^{(1)}(D_*,h)
+\Longrightarrow
+q\mid ms^2-s+1.
+\tag{29}
+\]
+
+确实，\(h\equiv s^{-1}\pmod q\) 与 \(m+h(h-1)\equiv0\pmod q\) 相乘以
+\(s^2\) 即得 (29)。因此 (27) 是从 \(D_*,h\) 到 terminal/descent 的 exact
+source-factor gate，而 (29) 为它与 stutter 参数 \(m\) 的独立交叉检查。
+
+这不是另一张 Type II 家族：它只是将本卡的 \(A=1\) low-gap slice 完全压缩为
+actual residual 的因子和剩余类条件。它也没有说明 \(\mathcal Q_s^{(1)}\) 对任意
+actual receipt 必非空。
+
+## 7. 三个 q-local 算术控制
+
+第一个控制为 \(s=3\) 的无选择因子门：
+
+\[
+(p,q,h,m,K,s,C,n)=(337,17,6,4,6,3,5,85).
+\tag{30}
+\]
+
+它给出
+
+\[
+\frac4{85}=\frac1{85}+\frac1{30}+\frac1{510},
+\qquad
+\frac4{337}=\frac1{85}+\frac1{10110}+\frac1{171870}.
+\tag{31}
+\]
+
+第二个控制为 \(s=7\) 的同一因子门：
+
+\[
+(p,q,h,m,K,s,C,n)=(97,13,15,11,2,7,2,13).
+\tag{32}
 \]
 
 它给出
@@ -309,14 +401,14 @@ singleton marked two-tail lift：它只声称所写出的 \(4/n\) 解可提升�
 \frac4{13}=\frac1{26}+\frac14+\frac1{52},
 \qquad
 \frac4{97}=\frac1{26}+\frac1{388}+\frac1{5044}.
-\tag{24}
+\tag{33}
 \]
 
-第二个控制使用 \(A>1\) 的根余数行：
+第三个控制使用 \(A>1\) 的一般根余数行：
 
 \[
 (p,A,q,h,m,K,s,C,n)=(1297,5,13,9,6,6,3,5,325),
-\tag{25}
+\tag{34}
 \]
 
 于是
@@ -325,13 +417,13 @@ singleton marked two-tail lift：它只声称所写出的 \(4/n\) 解可提升�
 \frac4{325}=\frac1{325}+\frac1{150}+\frac1{390},
 \qquad
 \frac4{1297}=\frac1{325}+\frac1{194550}+\frac1{505830}.
-\tag{26}
+\tag{35}
 \]
 
-两个控制都只核对 \(q\)-local stutter 同余、根余数、低缺口和两尾恒等式；它们**不**
+三个控制都只核对 \(q\)-local stutter 同余、根余数、低缺口和两尾恒等式；它们**不**
 把局部算术元组冒充 actual root receipt。
 
-## 7. 边界
+## 8. 边界
 
 本适配器实质上补上了“实际横向 residual 命中后，如何得到一个明确的严格小分母解及其
 反向两尾提升”这一段；它没有补上全称选择器。尤其没有证明：
@@ -352,5 +444,5 @@ global exit 或全称短证书/递降引理的证明。
 python3 reproductions/type_i_root_capacity_stutter_transverse_root_residue_low_gap_descent.py --verify
 ```
 
-脚本只重放 (23) 与 (25) 的 q-local 算术和精确 two-tail lift，不扫描素数、根层、
+脚本只重放 (30)、(32)、(34) 的 q-local 算术和精确 two-tail lift，不扫描素数、根层、
 分母或 selector 历史。
