@@ -825,9 +825,11 @@ scope、terminal-first 或 typed reclassification。
 `type_ii_q_one_canonical_root_entry_capacity_gap.py` 把这个 E1 边界再收紧一层：当前
 `universal_raw_default_entry_v1` 的低 \(R_0<p\)、\(A_0=1\) 根在首个
 complete-excess bundle 后只能得到 \(M_1=Q<p\)，而预声明 canonical root 的
-\(A_{\rm root}>B_p>p\)。它固定重算 \(p=73,433,1321\) 的 root、Type II carrier
-互素性以及两个合法低入口；所以排除的是 direct one-entry bridge，不排除尚未构造的
-multi-step fresh-source lineage，也不执行范围扫描。
+\(A_{\rm root}>4p^2\)。从首个 canonical target 出发，现有 complete-excess、
+fixed-\(n\)/full-product determinant、r-chart 和 A=1 RESET 的第二 primitive support
+update 全部仍小于 \(4p^2\)。它固定重算 \(p=73,433,1321\) 的 root、Type II carrier
+互素性以及两个合法低入口；所以排除的是 current grammar 中至多两次 update 的 bridge，
+不排除更长的 fresh-source lineage 或有独立证明的新 grammar，也不执行范围扫描。
 
 ```bash
 python3 reproductions/type_i_root_capacity_strict_carry_universal_raw_word.py --verify

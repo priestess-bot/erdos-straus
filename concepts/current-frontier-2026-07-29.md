@@ -8804,15 +8804,18 @@ M_1=\operatorname{lcm}(1,Q)=Q<R_0<p.
 而规范 \(r=(p-1)/24\) root 的 support 已满足
 
 \[
-A_{\rm root}>B_p=\frac{(p-1)^2}{4}>p,
+A_{\rm root}>4p^2>B_p>p,
 \qquad
 R_{\rm root}>p.
 \]
 
-所以它既不是 low default state，也不可能是默认入口的第一个 bundle target。结合
-\(\gcd((p+3)/4,K_{\rm root})=1\)，当前 q=1 G handoff 不存在“复制 Type II support
-或开一个 default root 后立即进入 canonical root”的捷径。下一研究对象由此精确缩成：
-必须构造一个 target-independent、`fresh_source_tree_only` 内的中间 charged-support
-lineage，并把它的 terminal-first、typed E3、identity lift 与不可重置全局势全部接入。
-这仍不是 global exit，且不排除多步 bridge；详见
+所以它既不是 low default state，也不可能是默认入口的第一个 bundle target。更强地，
+在这个 first canonical target 后，现有 complete-excess、fixed-\(n\)/full-product
+determinant、r-chart 和 A=1 RESET primitive 的第二 support update 都小于 \(4p^2\)。
+结合 \(\gcd((p+3)/4,K_{\rm root})=1\)，当前 q=1 G handoff 不存在“复制 Type II
+support 或在两次既有 support update 内进入 canonical root”的捷径。下一研究对象由此
+精确缩成：必须构造一个 target-independent、`fresh_source_tree_only` 内至少三次
+support-changing primitive 的真实 lineage，或给出有独立准入证明的新 grammar，并把其
+terminal-first、typed E3、identity lift 与不可重置全局势全部接入。这仍不是 global exit，
+且不排除更长 bridge；详见
 [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md)。

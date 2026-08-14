@@ -7,14 +7,16 @@ statement: >-
   universal_raw_default_entry_v1 都从 A_0=1 且 3<=R_0<=p-2 的低图表开始。
   它的第一个 path-anchored complete-excess bundle 若非终端，写作
   R_0-1=Q beta，则 Q<R_0<p，故 canonical target 的 charged support 精确为
-  M=lcm(1,Q)=Q<p。反之，对每个核心素数 p=24t+1，q=1 Type II G exit 的
-  预声明 r=t canonical Type-I root 有 A=g(p^2t-g)>B_p=(p-1)^2/4>p，且
-  R_root>p。因此当前默认入口本身及其首个 bundle 都不可能就是该 root 的
-  persistent source；再结合 gcd((p+3)/4,K_root)=1，不能将 q=1 Type II
-  carrier 重命名为该 source。这个结论只排除 current default-entry grammar 中的
-  direct one-entry bridge：在不扩张该 grammar 的前提下，任何 handoff 都须在 fresh
-  scope 中先构造一个真实的中间 charged-support lineage，并另行支付 terminal-first、
-  typed reclassification 与全局 E5；它不排除多步桥或一个有独立准入证明的新 grammar。
+  M=lcm(1,Q)=Q<p。首个 canonical target 后，current post-bundle primitive menu 中
+  的 complete-excess、fixed-n/full-product determinant、r-chart 和 A=1 RESET
+  后继的 support 全部小于 4p^2；反之，对每个核心素数 p=24t+1，q=1 Type II G
+  exit 的预声明 r=t canonical Type-I root 有 A=g(p^2t-g)>4p^2，且 R_root>p。
+  因此当前默认入口及其后两次此类 primitive support update 都不可能就是该 root 的
+  persistent source；再结合 gcd((p+3)/4,K_root)=1，不能将 q=1 Type II carrier
+  重命名为该 source。这个结论只排除 current default-entry grammar 中的 direct
+  two-update bridge：在不扩张该 grammar 的前提下，任何 handoff 都须构造更长的真实
+  fresh charged-support lineage，并另行支付 terminal-first、typed reclassification
+  与全局 E5；它不排除更长的多步桥或一个有独立准入证明的新 grammar。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -201,7 +203,68 @@ new root-entry grammar is not prohibited, but it would need its own independent 
 Either route must still run terminal-first, recompute F/G/hit types, preserve the identity lift,
 and place its actions in a global non-resetting well-founded phase.
 
-## 5. What remains open
+## 5. Two-update capacity map for the current post-bundle menu
+
+The first target in (6) is canonical. Write its chart and cofactor as
+
+\[
+4A_1c_1=pR_1+1,
+\qquad
+1\le R_1<4A_1,
+\qquad
+1\le c_1<p,
+\qquad
+d_1=p-c_1.
+\tag{13}
+\]
+
+Since \(A_1<p\), its full determinant product satisfies
+
+\[
+S_1=A_1d_1<p^2.
+\tag{14}
+\]
+
+This gives a uniform bound for each currently named primitive that can follow this first
+canonical target:
+
+| Second primitive | Support formula or bound | Consequence |
+|---|---|---|
+| Complete-excess rechart | \(A_2=\operatorname{lcm}(A_1,Q_1)\le A_1Q_1\), \(Q_1<R_1<4p\) | \(A_2<4p^2\). |
+| Fixed-\(n\) or bounded-divisor determinant | \(L\mid S_1\) | \(L<p^2\). |
+| Full-product determinant fold | \(A_2=S_1\) | \(A_2<p^2\). |
+| Cofactor r-chart | \(A_2=\operatorname{lcm}(A_1,C)\), \(C<p\) | \(A_2<p^2\). |
+| A=1 dual RESET or carrier reset | New carrier \(t<p\) | It is already below \(p\). |
+
+For the first row, a complete-excess block belongs to one side of a bottom node
+\(x+(R_1-x)=R_1\), hence \(Q_1<R_1\). The determinant rows use exactly the fixed-\(n\),
+bounded-divisor, full-product, and r-chart formulas already registered in the state contract;
+the table makes no claim about a new macro grammar. Same-chart promotion is unavailable at this
+point because the first canonical target has carrier equal to its charged support
+\(M=A_1\), so its strict gate \(M/A>1\) fails; a carrier reset only lowers the displayed carrier.
+
+The canonical root is beyond this entire two-update envelope. Indeed, for \(t\ge3\),
+
+\[
+g>\frac p2,
+\qquad
+T\ge3p^2-\frac{p+1}{2}>8p,
+\]
+
+so
+
+\[
+\boxed{A_{\rm root}=gT>4p^2.}
+\tag{15}
+\]
+
+Consequently a fresh default entry followed by at most two of the table's primitive
+support-changing operations cannot create the canonical \(r=t\) root. This strengthens (12):
+within the current grammar, a proposed handoff needs a third genuine support-changing primitive
+at minimum, or a separately proved new entry grammar. It does not prove that a three-step ladder
+exists or fails.
+
+## 6. What remains open
 
 This boundary does **not** prove that every multi-step fresh-source ladder fails. Nor does it
 provide the required intermediate lineage. Its value is narrower: it removes the direct
@@ -225,5 +288,6 @@ python3 reproductions/type_ii_q_one_canonical_root_entry_capacity_gap.py --verif
 ```
 
 The script checks only three fixed core controls and two legal low-entry endpoints per control.
-It recomputes (3)--(11), including the actual first complete-excess block for those endpoints.
-It performs no prime-range, denominator-range, or selector-history scan.
+It recomputes (3)--(15), including the actual first complete-excess block and the symbolic
+second-step envelope for those endpoints. It performs no prime-range, denominator-range, or
+selector-history scan.
