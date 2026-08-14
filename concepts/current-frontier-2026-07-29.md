@@ -8014,6 +8014,56 @@ q\mid((K-1)p-1),
 不同 carrier、因子对结构以及 actual provenance 仍是开放路线。详见
 [横向 stutter 负根对有限固定缺口同载体菜单的边界](../claims/type-I-root-capacity-stutter-transverse-negative-branch-fixed-gap-same-carrier-barrier.md)。
 
+## 2026-08-14：反射负根直接进入 Type II，并被完全定位到 T 侧
+
+有限 fixed-gap 的失败不意味着负根没有结构。令
+
+\[
+L=\frac{q+1}{s}-1,
+\qquad
+t=\frac{Lp-1}{q},
+\qquad
+B=\frac{(s-1)p+s}{q}.
+\]
+
+每个 low-gap negative-root carrier 都满足一张精确 Bezout 正规形
+
+\[
+p=st+B,
+\qquad LB-(s-1)t=1.
+\]
+
+若它进一步满足反射剩余类
+
+\[
+q\equiv-1\pmod {4s(s-1)},
+\]
+
+则 \(C=(L+1)/(4(s-1))\) 为整数、\(B\ge s\)，并有
+
+\[
+q=4sC(s-1)-1,
+\qquad
+qB=(s-1)p+s.
+\]
+
+所以 raw Type II 射线以 \((A,C,K)=(s,C,s-1)\) 直接终止：
+
+\[
+\frac4p=
+\frac1{sBC}+
+\frac1{psC(s-1)}+
+\frac1{pBC(s-1)}.
+\]
+
+同一反射条件还强制该 carrier 避开 \(p\pm1\)、\(2p+1\)、\(m\)、\(m+2\) 及
+\(m-1\)，故其整个 \(q\)-进 receipt 高度都落在
+\(\gcd(T/u,m+2r)\) 的纯 \(T\)-side，而非既有 overlap 通道。固定 q-local 控制
+\((p,q,h,m,s)=(769,23,39,13,3)\) 给出
+\(4/769=1/201+1/4614+1/103046\)。这只关闭反射子类；并未证明任何 actual negative
+root 必命中该剩余类，故未完成全称选择器。详见
+[横向 stutter 负根的 Bezout 正规形、纯 T 分派与反射 Type II 终端](../claims/type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
