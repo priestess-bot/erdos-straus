@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 745 |
+| 数学状态 | `established` | 746 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 585 |
+| 证明来源 | `repository_derivation` | 586 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 722 |
+| 审阅状态 | `internal_review` | 723 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -792,6 +792,7 @@
 | [p 减一 complete-excess 横向素因子的 root-quotient 定向饱和](../claims/type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation.md) (`type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 p 减一 complete-excess relay 不强制 p 减一 source tail](../claims/type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary.md) (`type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [p 减一 complete-excess 横向素因子的 w 加九赋值阶梯](../claims/type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase.md) (`type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [横向 stutter 二次移位的偶 K Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md) (`type-I-root-capacity-stutter-transverse-residual-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 残余的 m 与 m 加二局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md) (`type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |

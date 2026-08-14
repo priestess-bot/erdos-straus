@@ -887,6 +887,18 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_residual.py --veri
 python3 reproductions/type_i_root_capacity_stutter_transverse_residual_local_terminal_dispatch.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_quadratic_shift_type_ii_fan.py` 固定验证横向
+`m+K(K-1)` 二次移位的偶 `K` Type II 终端扇：局部 (q)-条件分解为
+`((K-1)p-1)(Kp+1)`，而正支 `q|Kp+1` 与
+`q=3K-1 (mod 4K)` 给出
+`1/(qC)+1/(KpC)+1/(KpqC)`。`K=2` 重放已知 `2p+1` 行；`K=4,6` 分别以
+`(p,q)=(1009,11),(337,17)` 检查新扇行。控制只验证 (q)-局部同余和证书恢复，
+不把它们当作 actual stutter receipt，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_quadratic_shift_type_ii_fan.py --verify
+```
+
 `type_i_root_capacity_stutter_transverse_overlap_valuation_alignment.py` 固定验证横向
 residual 在 `p+1,h-1,m` 与 `p-1,h+1,m+2` overlap 中的三重赋值对齐，以及
 `D*` 和 `D_T` 中相同的 T-side excess。两个控制都只是抽象 stutter 算术，明确不

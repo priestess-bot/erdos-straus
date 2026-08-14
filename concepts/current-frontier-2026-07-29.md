@@ -7823,6 +7823,48 @@ C=\frac{p+s}{4q},
 不能计作第三条 terminal 覆盖。因而任何真正扩展 \(q\equiv7\pmod8\) 的横向
 adapter 都必须读取额外的 actual-receipt 或 source-provenance 数据。
 
+## 2026-08-14：二次移位把横向残余展开为偶 K Type II 终端扇
+
+上面的 \(m\) 与 \(m+2\) 不是孤立巧合。对任意偶数 \(K\ge2\)，若横向
+\(q\mid D_*\) 还满足
+
+\[
+q\mid m+K(K-1),
+\]
+
+则 stutter 线性式给出统一分解
+
+\[
+q\mid\bigl((K-1)p-1\bigr)(Kp+1).
+\]
+
+在正支 \(q\mid Kp+1\) 上，若
+
+\[
+q\equiv3K-1\pmod {4K},
+\qquad
+s=\frac{q+1}{K},
+\qquad
+C=\frac{p+s}{4q},
+\]
+
+便直接得到
+
+\[
+\frac4p=
+\frac1{qC}+
+\frac1{KpC}+
+\frac1{KpqC}.
+\]
+
+这是一张 \((A,B,C)=(1,q,C)\)、\((A+B)/s=K\) 的 Type II 证书。\(K=2\)
+精确恢复已知 \(m+2\)、\(2p+1\)、\(q\equiv5\pmod8\) 行；\(K=4\) 可与既有
+\(4p+1\) 家族重叠，而 \(K=6\) 已显示出条件 \(q\mid6p+1\)、
+\(q\equiv17\pmod{24}\) 的新 terminal chart。这个结果扩展了 terminal-first 的
+可检查菜单，但不提供统一 \(K\) 界，也不迫使 \(D_*\) 命中任何二次移位或正支；
+负支 \(((K-1)p-1)\) 仍未转化为证书或 lift。详见
+[横向 stutter 二次移位的偶 \(K\) Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan.md)。
+
 ## 2026-08-14：未终止 overlap 残余必须以同步赋值进入 T 侧
 
 继续检查上一条分流中没有直接终端的 \(p\pm1\) overlap。若奇素数 \(q\mid D_*\)
