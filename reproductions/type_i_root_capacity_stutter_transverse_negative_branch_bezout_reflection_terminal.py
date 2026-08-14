@@ -22,7 +22,20 @@ def is_prime(value: int) -> bool:
     return True
 
 
-def verify_negative_root_normal_form(p: int, q: int, h: int, m: int, s: int) -> tuple[int, int, int]:
+def valuation(value: int, prime: int) -> int:
+    """Return v_prime(value) for a nonzero fixed integer control."""
+    if value == 0:
+        raise AssertionError("valuation control unexpectedly vanished")
+    exponent = 0
+    while value % prime == 0:
+        value //= prime
+        exponent += 1
+    return exponent
+
+
+def verify_negative_root_bezout(
+    p: int, q: int, h: int, m: int, s: int
+) -> tuple[int, int, int, int, int]:
     """Check q-local negative-root identities, never an actual receipt."""
     if not (is_prime(p) and p % 24 == 1 and is_prime(q) and s in LOW_GAPS):
         raise AssertionError("control did not retain a core prime and a prime low-gap carrier")
@@ -55,20 +68,44 @@ def verify_negative_root_normal_form(p: int, q: int, h: int, m: int, s: int) -> 
     if p != s * t + b or l * b - (s - 1) * t != 1:
         raise AssertionError("negative-root Bezout normal form changed")
 
-    if (p * p - 1) % q == 0 or (2 * p + 1) % q == 0:
-        raise AssertionError("L greater than one exclusion changed")
-    if m % q == 0 or (m + 2) % q == 0 or (m - 1) % q == 0:
-        raise AssertionError("m-side negative-root exclusions changed")
-    if (h * h - 1) % q == 0:
-        raise AssertionError("control unexpectedly left the transverse q-primary branch")
     if (p * h + 1) % local_d == 0:
         raise AssertionError("q-local control accidentally claims to be a full receipt")
+    return l, t, b, local_d, d_star
+
+
+def verify_l_one_overlap() -> None:
+    p, q, h, m, s = 241, 5, 39, 18, 3
+    l, t, b, local_d, d_star = verify_negative_root_bezout(p, q, h, m, s)
+    if (l, t, b, local_d, d_star) != (1, 48, 97, 4300, 215):
+        raise AssertionError("L=1 overlap control changed")
+    if (s, q) != (3, 5) or any(value % q for value in (p - 1, h + 1, m + 2)):
+        raise AssertionError("L=1 control left the p-minus-one overlap")
+    baseline = valuation(p - 1, q)
+    if (baseline, valuation(h + 1, q), valuation(m + 2, q)) != (1, 1, 1):
+        raise AssertionError("L=1 overlap valuation alignment changed")
+    if valuation(local_d, q) != 2 or valuation(d_star, q) != 1:
+        raise AssertionError("L=1 q-primary excess did not survive in D-star")
+
+
+def verify_pure_t_branch(p: int, q: int, h: int, m: int, s: int) -> tuple[int, int, int]:
+    """Check the L>1 exclusions that put a q-local carrier on the T side."""
+    l, t, b, local_d, d_star = verify_negative_root_bezout(p, q, h, m, s)
+    if l <= 1:
+        raise AssertionError("pure-T control did not retain L greater than one")
+    if (p * p - 1) % q == 0 or (2 * p + 1) % q == 0:
+        raise AssertionError("L greater than one p-side exclusion changed")
+    if m % q == 0 or (m + 2) % q == 0 or (m - 1) % q == 0:
+        raise AssertionError("L greater than one m-side exclusion changed")
+    if (h * h - 1) % q == 0:
+        raise AssertionError("pure-T control unexpectedly entered the H overlap")
+    if valuation(local_d, q) != valuation(d_star, q):
+        raise AssertionError("pure-T q-primary height did not survive in D-star")
     return l, t, b
 
 
 def verify_reflection_terminal() -> None:
     p, q, h, m, s = 769, 23, 39, 13, 3
-    l, t, b = verify_negative_root_normal_form(p, q, h, m, s)
+    l, t, b = verify_pure_t_branch(p, q, h, m, s)
     if (l + 1) % (4 * (s - 1)):
         raise AssertionError("reflection divisibility changed")
     c = (l + 1) // (4 * (s - 1))
@@ -93,13 +130,14 @@ def verify_reflection_terminal() -> None:
 
 
 def verify() -> None:
-    # These two controls verify the normal form only; neither is a reflection hit.
-    if verify_negative_root_normal_form(313, 17, 12, 4, 3) != (5, 92, 37):
+    verify_l_one_overlap()
+    # These two controls are pure T-side normal forms; neither is a reflection hit.
+    if verify_pure_t_branch(313, 17, 12, 4, 3) != (5, 92, 37):
         raise AssertionError("first Bezout control changed")
-    if verify_negative_root_normal_form(3313, 41, 36, 11, 7) != (5, 404, 485):
+    if verify_pure_t_branch(3313, 41, 36, 11, 7) != (5, 404, 485):
         raise AssertionError("second Bezout control changed")
     verify_reflection_terminal()
-    print("verified q-local negative-root Bezout normal form and reflection Type II terminal")
+    print("verified q-local negative-root overlap/T-side split and reflection Type II terminal")
 
 
 def main() -> None:
