@@ -1,18 +1,21 @@
 ---
 kind: claim
 claim_id: type-I-root-capacity-stutter-transverse-native-raw-type-II-menu
-title: 横向 stutter 约化除子的原生 Type II raw-ray 终端菜单
+title: 根容量 stutter 回执除子的原生 Type II raw-ray 终端菜单
 statement: >-
   对核心素数 p≡1 mod24 的 terminal-first 后 actual proper-root stutter receipt，令
-  D*=D/gcd(D,h^2-1)，其中 D|ph+1。定义 M_raw(p,h,D*)={Q|D*:Q≡-1 mod4h}。
+  D|ph+1、D*=D/gcd(D,h^2-1)。定义 M_raw(p,h,D)={Q|D:Q≡-1 mod4h}。
   每个 Q∈M_raw（Q 不必为素数）令 C=(Q+1)/(4h)、B=(ph+1)/Q，则
-  m=(B+1)/h、x=BC、d=C 是一张 Type II 证书，并恢复为
+  mu=(B+1)/h、x=BC、d=C 是一张 Type II 证书，并恢复为
   4/p=1/(BC)+1/(phC)+1/(phBC)。这与所有 raw Type II 射线中 A=1、K=h、
-  且生成模数整除 D* 的切片一一对应；菜单可为空，故不构成全局出口或递降。
+  且生成模数整除 D 的切片一一对应；D* 给出其中的横向子菜单。菜单可为空，故不构成
+  全局出口或递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
+  - type-I-root-capacity-general-endpoint-divisor-gate
+  - type-I-root-capacity-stutter-receipt-factor-split
   - type-I-root-capacity-stutter-transverse-residual-capacity-map
   - type-II-raw-ray-certificate
   - short-certificate-equivalence
@@ -27,8 +30,12 @@ topics:
   - terminal-dispatch
   - proof-boundary
 sources:
+  - claim: type-I-root-capacity-general-endpoint-divisor-gate
+    role: actual-receipt-D-divides-ph-plus-one
+  - claim: type-I-root-capacity-stutter-receipt-factor-split
+    role: C-side-D-C-divides-h-square-minus-one
   - claim: type-I-root-capacity-stutter-transverse-residual-capacity-map
-    role: actual-D-star-input-and-divides-ph-plus-one
+    role: transverse-D-star-submenu-input
   - claim: type-II-raw-ray-certificate
     role: Type-II-raw-ray-certificate-reconstruction
   - claim: short-certificate-equivalence
@@ -39,7 +46,7 @@ visibility: public
 last_checked: '2026-08-14'
 ---
 
-# 横向 stutter 约化除子的原生 Type II raw-ray 终端菜单
+# 根容量 stutter 回执除子的原生 Type II raw-ray 终端菜单
 
 ## 1. 原生除子菜单
 
@@ -58,22 +65,29 @@ D_*=\frac{D}{(D,h^2-1)}.
 \tag{1}
 \]
 
-特别地，\(D_*\mid ph+1\)。定义有限的、允许合数因子的菜单
+定义有限的、允许合数因子的完整 receipt 菜单
 
 \[
 \boxed{
-\mathcal M_{\mathrm{raw}}(p,h,D_*)
-=\{Q:Q\mid D_*,\ Q\equiv-1\pmod {4h}\}.
+\mathcal M_{\mathrm{raw}}(p,h,D)
+=\{Q:Q\mid D,\ Q\equiv-1\pmod {4h}\}.
 }
 \tag{2}
 \]
 
-这不是对 \(D_*\) 的任意因子都适用的陈述；剩余类 \(-1\pmod{4h}\) 是下述
-Type II raw-ray 坐标的精确生成模数条件。
+这不是对 \(D\) 的任意因子都适用的陈述；剩余类 \(-1\pmod{4h}\) 是下述
+Type II raw-ray 坐标的精确生成模数条件。横向 residual 仍有子菜单
+
+\[
+\mathcal M_{\mathrm{raw}}(p,h,D_*)
+\subseteq\mathcal M_{\mathrm{raw}}(p,h,D),
+\]
+
+但 terminal-first 不应因此丢弃 \(D\) 中仍可直接终止的 overlap 因子。
 
 ## 2. 每个命中的直接 Type II 终端
 
-取 \(Q\in\mathcal M_{\mathrm{raw}}(p,h,D_*)\)，并定义
+取 \(Q\in\mathcal M_{\mathrm{raw}}(p,h,D)\)，并定义
 
 \[
 C=\frac{Q+1}{4h},
@@ -93,7 +107,7 @@ B\equiv-1\pmod h.
 因此
 
 \[
-m=\frac{B+1}{h},
+\mu=\frac{B+1}{h},
 \qquad
 x=BC,
 \qquad d=C
@@ -132,12 +146,12 @@ B=\frac{Kp+A}{H_{\mathrm{ray}}}\ge A.
 也可直接检查：\(d=C\mid x^2\)、\(d\le x\)，且
 
 \[
-x+d=C(B+1)=Chm,
+x+d=C(B+1)=Ch\mu,
 \tag{9}
 \]
 
-故 \(m\mid x+d\)。raw-ray 引理同时保证 \(3\le m\le p-2\) 及
-\(m\equiv3\pmod4\)。
+故 \(\mu\mid x+d\)。raw-ray 引理同时保证 \(3\le\mu\le p-2\) 及
+\(\mu\equiv3\pmod4\)。
 
 ## 3. 该 raw-ray 切片的完备性
 
@@ -147,18 +161,18 @@ x+d=C(B+1)=Chm,
 A=1,
 \qquad K=h,
 \qquad H_{\mathrm{ray}}=4Ch-1,
-\qquad H_{\mathrm{ray}}\mid D_*
+\qquad H_{\mathrm{ray}}\mid D
 \tag{10}
 \]
 
 的 Type II raw-ray。令 \(Q=H_{\mathrm{ray}}\)。则自动有
 
 \[
-Q\mid D_*,
+Q\mid D,
 \qquad Q\equiv-1\pmod {4h},
 \]
 
-即 \(Q\in\mathcal M_{\mathrm{raw}}(p,h,D_*)\)；而 (3) 唯一恢复 \(C\) 与 \(B\)。
+即 \(Q\in\mathcal M_{\mathrm{raw}}(p,h,D)\)；而 (3) 唯一恢复 \(C\) 与 \(B\)。
 因此 (2) 精确参数化的不是所有 Type II 证书，而是这个与 root height \(h\) 原生对齐的
 \(A=1,K=h\) raw-ray 切片。
 
@@ -173,33 +187,71 @@ Q\mid D_*,
 满足 \(h\mid p^2+p+1\)、\(Q\mid ph+1\) 和 \(Q=4\cdot21\cdot4-1\)。由此
 
 \[
-(B,C,m,x,d)=(650,4,31,2600,4)
+(B,C,\mu,x,d)=(650,4,31,2600,4)
 \tag{12}
 \]
 
 给出一张直接 Type II 证书。这里仅验证 root-shape 与 raw-ray 算术，**不**声称
 \(335\) 是某个 actual receipt 的 \(D_*\) 因子。
 
-## 4. 与二次移位扇的区别
+## 4. 纯 C-side 不会命中菜单
+
+令
+
+\[
+C_0=\frac{p^2-1}{2},
+\qquad D_C=(D,C_0).
+\]
+
+actual receipt 的因子分裂给出 \(D_C\mid h^2-1\)。若某个 menu hit \(Q\) 还满足
+\(Q\mid D_C\)，令
+
+\[
+t=\frac{h^2-1}{Q}.
+\]
+
+因为 \(Q\equiv-1\pmod {4h}\)，有 \(Q\ge4h-1\)。当 \(h=3\) 时已
+\(Q>h^2-1\)；当 \(h\ge5\) 时 \(0<t<h\)。模 \(h\) 使用
+\(Q\equiv-1\) 得 \(t\equiv1\pmod h\)，故只能有 \(t=1\)、\(Q=h^2-1\)。
+但这会要求
+
+\[
+4h\mid Q+1=h^2,
+\]
+
+与 root height \(h=3u\) 为奇数矛盾。因此
+
+\[
+\boxed{Q\in\mathcal M_{\mathrm{raw}}(p,h,D)
+\Longrightarrow Q\nmid D_C.}
+\tag{13}
+\]
+
+这并不说 \(Q\) 是纯 \(T\)-因子，因为 \(D_C,D_T\) 可共享素因子；准确结论是：
+raw-ray hit 不能完全停留在 \(p\pm1\) 的 C-side 容量内，必须读取超过该部分的实际
+receipt 信息。
+
+## 5. 与二次移位扇的区别
 
 二次移位扇把某个 \(q\mid D_*\) 用作 Type II 正规形中的 \(B\)-侧因子，并寻找
-\(m+K(K-1)\) 的正支；本菜单则把 \(Q\mid D_*\) 用作 raw-ray 的生成模数
-\(4ACK-1\)，且固定 \((A,K)=(1,h)\)。二者在一个 \(ph+1\) 的因子对恰好匹配时
-可以给出同一张证书，但没有一般的包含关系。
+\(m+K(K-1)\) 的正支；本菜单则把 \(Q\mid D\) 用作 raw-ray 的生成模数
+\(4ACK-1\)，且固定 \((A,K)=(1,h)\)。限制到 \(Q\mid D_*\) 时，它给出真正的
+横向子菜单；完整菜单还保留可以直接终止的 overlap 因子。二者在一个 \(ph+1\) 的因子对
+恰好匹配时可以给出同一张证书，但没有一般的包含关系。
 
-所以 terminal-first 可先检查 (2)：它直接读取 actual \(D_*\)，不需要把该因子误投递到
-旧的 \(q\mid u\) external-source 菜单。
+所以 terminal-first 可先检查 (2)：它直接读取 actual \(D\)，其中 \(D_*\) 的命中仍是
+横向终端；不需要把这些因子误投递到旧的 \(q\mid u\) external-source 菜单。
 
-## 5. 边界
+## 6. 边界
 
 菜单 (2) 仍可能为空；它没有证明：
 
-* \(D_*\) 或其因子必落在 \(-1\pmod{4h}\)；
+* \(D\) 或其因子必落在 \(-1\pmod{4h}\)；
 * 菜单未命中时存在另一张 Type I/II 证书；
 * 任何由此证书恢复的小分母都形成可提升的递降边；
 * G/Type I global exit 的全域良基势。
 
-故该结论是一个 exact terminal menu，而不是 global proof。未命中的 \(D_*\) 因子仍须进入
+故该结论是一个 exact terminal menu，而不是 global proof。未命中的 \(D\) 因子仍须进入
 二次移位、其他 Type I/II 图表，或具有 identity lift 的递降适配器。
 
 ## 聚焦复现

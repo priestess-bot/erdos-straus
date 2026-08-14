@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify fixed root-shape controls for the D-star native Type II raw-ray menu."""
+"""Verify fixed root-shape controls for the receipt-divisor Type II raw-ray menu."""
 
 from __future__ import annotations
 
@@ -33,19 +33,19 @@ def verify_menu_control(p: int, h: int, q: int, expect_prime: bool) -> None:
 
     c, c_remainder = divmod(q + 1, 4 * h)
     b, b_remainder = divmod(p * h + 1, q)
-    m, m_remainder = divmod(b + 1, h)
-    if any((c_remainder, b_remainder, m_remainder)):
+    gap, gap_remainder = divmod(b + 1, h)
+    if any((c_remainder, b_remainder, gap_remainder)):
         raise AssertionError("raw-ray coordinates are not integral")
-    if not (c > 0 and b >= 1 and 3 <= m <= p - 2 and m % 4 == 3):
+    if not (c > 0 and b >= 1 and 3 <= gap <= p - 2 and gap % 4 == 3):
         raise AssertionError("raw-ray left the Type II natural range")
     if q != 4 * c * h - 1:
         raise AssertionError("raw-ray generator identity changed")
 
     x, d = b * c, c
-    if x * x % d or d > x or (x + d) % m:
+    if x * x % d or d > x or (x + d) % gap:
         raise AssertionError("Type II divisor conditions failed")
-    y = p * (x + d) // m
-    z = p * (x + x * x // d) // m
+    y = p * (x + d) // gap
+    z = p * (x + x * x // d) // gap
     if Fraction(1, x) + Fraction(1, y) + Fraction(1, z) != Fraction(4, p):
         raise AssertionError("Type II denominators changed")
     if (x, y, z) != (b * c, p * h * c, p * h * b * c):
@@ -56,7 +56,7 @@ def verify() -> None:
     # The second control makes the menu's composite-divisor support explicit.
     verify_menu_control(4657, 39, 311, expect_prime=True)
     verify_menu_control(10369, 21, 335, expect_prime=False)
-    print("verified D-star native Type II raw-ray terminal menu controls")
+    print("verified receipt-divisor Type II raw-ray terminal menu controls")
 
 
 def main() -> None:

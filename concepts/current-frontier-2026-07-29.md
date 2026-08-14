@@ -7865,14 +7865,14 @@ C=\frac{p+s}{4q},
 负支 \(((K-1)p-1)\) 仍未转化为证书或 lift。详见
 [横向 stutter 二次移位的偶 \(K\) Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan.md)。
 
-## 2026-08-14：D 星因子可直接进入一张原生 Type II raw-ray 菜单
+## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
-\(D_*\mid ph+1\)，故可检查有限菜单
+\(D\mid ph+1\)，故 terminal-first 可先检查完整菜单
 
 \[
-\mathcal M_{\rm raw}(p,h,D_*)
-=\{Q\mid D_*:Q\equiv-1\pmod {4h}\}.
+\mathcal M_{\rm raw}(p,h,D)
+=\{Q\mid D:Q\equiv-1\pmod {4h}\}.
 \]
 
 每个命中 \(Q\)（允许合数）令
@@ -7891,11 +7891,14 @@ C=\frac{Q+1}{4h},
 \frac1{phBC}.
 \]
 
-这精确覆盖 \(A=1,K=h\) 且生成模数整除 \(D_*\) 的 raw-ray 切片；它不是对所有
-Type II 证书的分类。root-shape 控制 \((p,h,Q)=(10369,21,335=5\cdot67)\) 显示
-精确菜单必须保留合数生成模数。菜单仍可能为空，也没有 identity lift，因此它只是把 actual
-\(D_*\) 接到一张新的 terminal-first 检查表，而非 global exit。详见
-[横向 stutter 约化除子的原生 Type II raw-ray 终端菜单](../claims/type-I-root-capacity-stutter-transverse-native-raw-type-II-menu.md)。
+这精确覆盖 \(A=1,K=h\) 且生成模数整除 \(D\) 的 raw-ray 切片；\(D_*\) 给出其中的
+横向子菜单，它不是对所有 Type II 证书的分类。每个 menu hit 还不可能完全整除
+\(D_C=(D,(p^2-1)/2)\mid h^2-1\)，所以它不能只消费 \(p\pm1\) C-side 容量，
+而必须读取超过该部分的 actual receipt 信息。root-shape 控制
+\((p,h,Q)=(10369,21,335=5\cdot67)\) 显示精确菜单必须保留合数生成模数。菜单仍可能
+为空，也没有 identity lift，因此它只是把 actual receipt 接到一张新的 terminal-first
+检查表，而非 global exit。详见
+[根容量 stutter 回执除子的原生 Type II raw-ray 终端菜单](../claims/type-I-root-capacity-stutter-transverse-native-raw-type-II-menu.md)。
 
 ## 2026-08-14：未终止 overlap 残余必须以同步赋值进入 T 侧
 

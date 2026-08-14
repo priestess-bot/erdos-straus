@@ -900,10 +900,11 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_quadratic_shift_ty
 ```
 
 `type_i_root_capacity_stutter_transverse_native_raw_type_ii_menu.py` 固定验证由 actual
-`D*|ph+1` 诱导的原生 Type II raw-ray 菜单：任意 menu 因子
-`Q|D*` 且 `Q=-1 (mod 4h)` 都以 `(A,C,K)=(1,(Q+1)/(4h),h)` 直接恢复 Type II
-证书。`p=4657,h=39,Q=311` 与 `p=10369,h=21,Q=335=5*67` 分别检查素数和合数
-生成模数；它们仅是 root-shape/raw-ray 控制，不冒充 actual receipt，也不扫描范围。
+`D|ph+1` 诱导的原生 Type II raw-ray 菜单：任意 menu 因子
+`Q|D` 且 `Q=-1 (mod 4h)` 都以 `(A,C,K)=(1,(Q+1)/(4h),h)` 直接恢复 Type II
+证书；`Q|D*` 是其中的横向子菜单。`p=4657,h=39,Q=311` 与
+`p=10369,h=21,Q=335=5*67` 分别检查素数和合数生成模数；它们仅是
+root-shape/raw-ray 控制，不冒充 actual receipt，也不扫描范围。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_native_raw_type_ii_menu.py --verify
