@@ -813,6 +813,16 @@ terminal-first priority 和 typed serializer。
 \(p=2137,t=9\) 的非平凡命中，以及 \(p=457,q=7\) 的 source-5 菜单和 gap-7
 Type I/II 双空边界。
 
+`type_i_root_capacity_composite_divisor_external_terminal.py` 把同一菜单从单素因子
+扩展到任意 \(1<Q\mid u\)。固定 proper-root 控制 \(p=177433,u=91\) 中，原有
+\(Q=7,13\) 两个 prime menu 都为空，而 composite \(Q=91\) 以 \(t=5\) 给出
+gap \(455\) 的直接 Type I 证书。它核对严格覆盖增量，不扫描范围，也不把菜单命中
+推广为全称出口。
+
+~~~bash
+python3 reproductions/type_i_root_capacity_composite_divisor_external_terminal.py --verify
+~~~
+
 `type_i_s_zero_rechart_standalone_potential_no_go.py` 核对形式 \(s=0\) 半群压缩、
 \(p=73\) 根高度 \(1\to2\to1\)、等支撑形式边，以及既有 \(p=97\) 实际源端 raw
 receipt 关联的两个 conditional target 容量重置控制。它不把形式 target 升级为

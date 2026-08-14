@@ -7323,6 +7323,24 @@ t\equiv-pq^{-1}\pmod {4i}\right\}
 详见
 [根容量素因子的外部源终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md)。
 
+这个终端菜单还可沿根容量的子除子格聚合。任取 \(1<Q\mid u\)，令
+\(\rho=p\bmod Q\)、\(i=Q-\rho\)，则固定该 source、gap 含 \(Q\) 的全部
+external-source Type I terminal 恰由
+
+\[
+\mathcal T_{p,Q}
+=\left\{t\mid\frac{p+i}{Q}:
+t\equiv-pQ^{-1}\pmod {4i}\right\}
+\]
+
+参数化，gap 为 \(m=Qt\)。这是真正的严格覆盖增量：在
+\(p=177433,u=91\) 的 proper-root 控制中，\(Q=7,13\) 的两个 prime-only
+菜单都为空，但 composite \(Q=91\) 以 \(t=5\) 给出 gap \(455\) 的显式
+Type I terminal。它仍不能替代 actual receipt 到菜单的可达性证明，并且同一 \(u\)
+的所有 \(Q\) 菜单仍可能同时为空；下一步应把扩展菜单的全空条件同一般 complete-excess
+除数门联立，而不是假定某个容量因子自动终止。详见
+[根容量任意子除子 Q 的外部源 Type I 终端菜单](../claims/type-I-root-capacity-composite-divisor-external-terminal.md)。
+
 最后，\(s=0\) 形式更新满足精确半群压缩
 
 \[

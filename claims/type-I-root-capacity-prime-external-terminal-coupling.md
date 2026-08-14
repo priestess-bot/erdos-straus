@@ -96,14 +96,14 @@ N=\frac{p+i}{q},
 
 \[
 \boxed{
-t\mid N,quad t\equiv\tau\pmod {4i}}
+t\mid N,\qquad t\equiv\tau\pmod {4i}}
 \tag{6}
 
 当且仅当令 \(m=qt\) 后有
 
 \[
 \boxed{
-m\mid p+i,quad 4i\mid p+m.}
+m\mid p+i,\qquad 4i\mid p+m.}
 \tag{7}
 
 确实，第一条整除等价于 \(qt\mid qN=p+i\)，第二条同余可消去模 \(4i\)
