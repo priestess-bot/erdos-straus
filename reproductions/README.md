@@ -1037,6 +1037,17 @@ root-divisor 排除，以及 \(\delta=h^2-3p=6\) 的 defect 分解；不扫描�
 python3 reproductions/type_i_root_capacity_stutter_actual_small_root_exclusion.py --verify
 ~~~
 
+type_i_root_capacity_stutter_ten_thousand_coefficient_barrier.py 将同一 actual
+root-stutter 的必要参数门精确推进到 \(a(m-1)<10000\)：它先枚举 8549 个由
+parity/mod-3 强制的 \((m,a)\) 对，再只枚举每个 \(\mathcal B(m,a)\) 的正除子
+\(u\)。60 个整性 gate survivor 中，17 个满足核心同余的 \(p\) 均非素数，故得到
+\(a(m-1)\ge10000\) 与 \(h^2>10000p\)。这是有限系数门证明，不扫描素数范围、
+分母或历史图表，也不把它宣称为完整 global exit。
+
+~~~bash
+python3 reproductions/type_i_root_capacity_stutter_ten_thousand_coefficient_barrier.py --verify
+~~~
+
 type_i_root_capacity_stutter_pair_root_divisor_gate.py 固定验证一般 \((m,a)\) 的
 root-divisor 恒等式、\(u\mid\mathcal B(m,a)\) 与 \(e\) 整性，并用
 \(p=54481\) 检查该有限 gate 在 canonical receipt 前仍可通过 shadow divisor、

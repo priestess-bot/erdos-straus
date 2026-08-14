@@ -7566,6 +7566,25 @@ h^2-h+m=aD\ge30p+2a.
 typed target、identity lift 和全局势；带外 hard-root 与这些状态合同缺口仍是下一步的
 唯一对象。详见[实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。
 
+## 2026-08-14：actual root-stutter 的低系数带推进到 \(10000p\)
+
+此前的 \(30p\) 排除带只手工关闭了五个很低的 \((m,a)\) 对。现在保留同一套
+actual 必要条件和 parameter-pair root-divisor gate，但对
+\(a(m-1)<10000\) 作一次有限、确定性的系数穷尽：由 parity 与模三分类得到
+8549 个 \((m,a)\) 对；逐一枚举
+\(\mathcal B(m,a)=L^2+L(m-a)+(m-a)^2\) 的正除子 \(u\) 后，仅 60 个
+\((m,a,u)\) 通过全部整数 gate。其中 17 个满足 \(p\equiv1\pmod {24}\)，却无一为
+素数。因此任何 actual proper-root stutter 必有
+
+\[
+\boxed{a(m-1)\ge10000,\qquad h^2>10000p.}
+\]
+
+这不是对 \(p\) 或分母的范围扫描，也不是全局出口：它只把所有可能 stutter 推到更高的
+root 区域。其意义是直接砍掉此前仍可能包含高系数小根的整块区域；后续仍须在
+\(h^2>10000p\) 的实际 \(D,E\) receipt 上构造 terminal 或可提升递降。详见
+[根容量实际 stutter 的 10000 系数排除带](../claims/type-I-root-capacity-stutter-ten-thousand-coefficient-barrier.md)。
+
 ## 2026-08-14：高根残余获得参数对的有限 root-divisor gate
 
 对剩余 stutter 写 \(L=am\)、\(s=m-a\)。从
