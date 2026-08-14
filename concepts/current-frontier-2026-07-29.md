@@ -7907,6 +7907,35 @@ C=\frac{p+s}{4A_0q},
 实际 residual 命中移位、正支或剩余类，因而只是加宽 terminal-first，而非 global exit。
 详见[横向 stutter 的一般 A 型二次移位 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan.md)。
 
+## 2026-08-14：根余数把实际横向残余的低缺口命中升级为严格递降
+
+一般 \(A\) 型扇原先以 \(q\mid mA^2+K(K-A)\) 和正支
+\(q\mid Kp+A\) 作为独立的局部筛选。对 actual transverse residual
+\(q\mid D_*\)，若改取根高度确定的
+
+\[
+K=\langle Ah\rangle_q,
+\]
+
+那么 actual stutter 曲线恒等式和 \(D\mid ph+1\) 使这两个条件同时自动成立。若再有
+
+\[
+K>A,\qquad K\equiv0\pmod2,\qquad (A,K)=1,\qquad
+s=\frac{q+A}{K}\in\{3,7,11,23\},\qquad s\equiv3\pmod {4A},
+\]
+
+则 \(C=(p+s)/(4Aq)\) 直接恢复 Type II terminal；更重要的是
+
+\[
+n=\frac{p+s}{s+1}<p
+\]
+
+为整数，且保留首分母、将后两尾乘 \(p\) 给出一张显式 two-tail marked lift。它首次把
+这一横向根余数命中从“局部 terminal 菜单项”接成一个具体的严格小分母 witness，gap
+统一限制在 \(23\) 以内。它仍是 conditional dispatch：并未证明每个 \(D_*\) 的素因子
+会满足该低缺口根余数条件，也未补齐 G/Type I 状态合同的全称选择器。详见
+[横向 stutter 根余数的低缺口 Type II 终端与严格两尾递降](../claims/type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有

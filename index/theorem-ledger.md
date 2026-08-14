@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 748 |
+| 数学状态 | `established` | 749 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 588 |
+| 证明来源 | `repository_derivation` | 589 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 725 |
+| 审阅状态 | `internal_review` | 726 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -797,6 +797,7 @@
 | [横向 stutter 二次移位的偶 K Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md) (`type-I-root-capacity-stutter-transverse-residual-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 残余的 m 与 m 加二局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md) (`type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [横向 stutter 根余数的低缺口 Type II 终端与严格两尾递降](../claims/type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent.md) (`type-I-root-capacity-stutter-transverse-root-residue-low-gap-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [s=0 重图表的半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md) (`type-I-s-zero-rechart-standalone-potential-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
