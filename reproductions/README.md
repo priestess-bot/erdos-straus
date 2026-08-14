@@ -981,7 +981,14 @@ receipt quotient 接到同一条跨模赋值阶梯上。
 
 对 actual p-free receipt，这个 q-entry gate 还强制下一位 p-adic multiplier 数据：
 `q|x` 必有 `t+m=0 (mod p)`，即 `E=1-p^2*m (mod p^3)`。脚本从 p=97 的实际
-p-free receipt 家族固定重放一个 `v_p(F1)=1` 的点，核对这条 cross-mod 必要条件。
+p-free receipt 家族固定重放一个 `v_p(F1)=1` 的点，核对这条 cross-mod 必要条件；
+同一家族的第二个点有 `v_p(t+m)=2` 但 `v_p(F1)=1`，因此这条门只是一阶条件，
+不能误当作两者的高阶赋值等式。
+
+若 q 真正越过 `K1` 的 q-capacity，脚本还核对 p-free identity
+`gcd(x,K1)=gcd(x,p^(lambda+1)-p-1)` 所给出的精确必要条件：
+`v_q(p^(lambda+1)-p-1)` 必须恰等于当前 q-capacity。现有 q=11 gate-hit 控制在
+这个高阶 Hensel 门上只到高度 1，而 `v_11(K1)=2`，所以保持为已吸收而非新 payload。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify

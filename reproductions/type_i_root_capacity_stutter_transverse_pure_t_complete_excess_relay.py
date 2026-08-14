@@ -96,39 +96,43 @@ def verify_actual_stutter_cross_mod_control() -> None:
 
 
 def verify_actual_p_free_pblock_digit_control() -> None:
-    """Check the actual p-adic digit required before a p-block q-entry can occur."""
+    """Check the actual first digit and its strict higher p-adic boundary."""
     p, height, m_value, d_value, receipt_quotient = 97, 58, 4, 331, 17
     r_zero = 66_988_440
     r_step = 4_243_815_461_730_835_674_059_638_914_706_837_844_637
     e_zero = 369_377_901_007
     e_step = 23_400_629_237_489_299_674_263_740_436_419_983_401_253_504
-    family_index = 79
-    r_value = r_zero + family_index * r_step
-    e_multiplier = e_zero + family_index * e_step
-    t_value = (e_multiplier - 1) // (p * p)
-    sigma = p * t_value
-    t_capacity = p * p * r_value - (p + 1) // 2
-    k_value = (p * p - 1) // 2 * t_capacity
-    r_polynomial = 2 * p**3 * r_value - p * p - 2 * p * r_value - p + 1
-    r_one = r_value + t_value * t_capacity
-    f_one = 2 * (p - 1) * r_one - 1
-    if not (
-        is_prime(p)
-        and p % 24 == 1
-        and 2 <= height < p
-        and e_multiplier == 1 + p * sigma
-        and d_value == m_value * p + 1 - height
-        and receipt_quotient * d_value == p * height + 1
-        and r_polynomial - height == e_multiplier * d_value
-        and k_value % (height * d_value) == 0
-        and gcd(height, r_polynomial - height) == 1
-        and sigma * d_value == 2 * t_capacity - (m_value + 2 * r_value)
-        and (m_value + 2 * r_value + 1) % p == 0
-        and f_one % p == (t_value + m_value) % p
-        and valuation(f_one, p) == 1
-        and (e_multiplier - (1 - p * p * m_value)) % (p**3) == 0
-    ):
-        raise AssertionError("actual p-free p-block digit gate changed")
+    controls = ((79, 1, 1), (2213, 2, 1))
+    for family_index, expected_t_m_height, expected_f_height in controls:
+        r_value = r_zero + family_index * r_step
+        e_multiplier = e_zero + family_index * e_step
+        t_value = (e_multiplier - 1) // (p * p)
+        sigma = p * t_value
+        t_capacity = p * p * r_value - (p + 1) // 2
+        k_value = (p * p - 1) // 2 * t_capacity
+        r_polynomial = 2 * p**3 * r_value - p * p - 2 * p * r_value - p + 1
+        r_one = r_value + t_value * t_capacity
+        f_one = 2 * (p - 1) * r_one - 1
+        if not (
+            is_prime(p)
+            and p % 24 == 1
+            and 2 <= height < p
+            and e_multiplier == 1 + p * sigma
+            and d_value == m_value * p + 1 - height
+            and receipt_quotient * d_value == p * height + 1
+            and r_polynomial - height == e_multiplier * d_value
+            and k_value % (height * d_value) == 0
+            and gcd(height, r_polynomial - height) == 1
+            and sigma * d_value == 2 * t_capacity - (m_value + 2 * r_value)
+            and (m_value + 2 * r_value + 1) % p == 0
+            and f_one % p == (t_value + m_value) % p
+            and valuation(t_value + m_value, p) == expected_t_m_height
+            and valuation(f_one, p) == expected_f_height
+            and (e_multiplier - (1 - p * p * m_value)) % (p**3) == 0
+        ):
+            raise AssertionError(
+                f"actual p-free p-block digit control {family_index} changed"
+            )
 
 
 def verify_low_gap_root_box_exclusion() -> None:
@@ -202,6 +206,7 @@ def verify_p_free_pblock_reentry_control(
     t_value: int,
     expected_p_height: int,
     expected_x_q_height: int,
+    expected_pblock_capacity_q_height: int,
 ) -> None:
     """Check the discrete-log q-entry gate in one p-free p-block control."""
     l_value = verify_negative_root_shape(p, q, gap, height, m_value)
@@ -228,6 +233,7 @@ def verify_p_free_pblock_reentry_control(
     gate_hit = pow(l_value, p_height, q) == gap % q
     q_capacity_height = valuation(k_one, q)
     q_x_height = valuation(x_value, q)
+    pblock_capacity_value = p ** (p_height + 1) - p - 1
     if not (
         is_prime(p)
         and p % 24 == 1
@@ -241,11 +247,13 @@ def verify_p_free_pblock_reentry_control(
         and k_one == e_multiplier * k_value
         and r_polynomial_one == x_value + y_value
         and 4 * k_one == p * r_polynomial_one + 1
+        and gcd(x_value, k_one) == gcd(x_value, pblock_capacity_value)
         and p_height == expected_p_height
         and f_one % q == (-l_value * l_value) % q
         and y_value % q != 0
         and (x_value % q == 0) == gate_hit
         and q_x_height == expected_x_q_height
+        and valuation(pblock_capacity_value, q) == expected_pblock_capacity_q_height
         and q_x_height <= q_capacity_height
     ):
         raise AssertionError(f"{label} p-free p-block reentry gate changed")
@@ -366,6 +374,7 @@ def verify() -> None:
         t_value=9,
         expected_p_height=0,
         expected_x_q_height=0,
+        expected_pblock_capacity_q_height=0,
     )
     verify_p_free_pblock_reentry_control(
         label="p-block q-entry gate hit below capacity",
@@ -378,6 +387,7 @@ def verify() -> None:
         t_value=13,
         expected_p_height=1,
         expected_x_q_height=1,
+        expected_pblock_capacity_q_height=1,
     )
     verify_control(
         label="high-excess E",

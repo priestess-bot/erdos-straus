@@ -12,10 +12,14 @@ statement: >-
   若离散对数无解则 q 在该 p-block pair 两侧均不存在，若有解则 lambda 落在一个
   mod ord_q(L) 的类。又 v_q(K_1)=delta+epsilon，因此 q 只会在 x-side 形成新的
   complete-excess，当且仅当 v_q(x)>delta+epsilon；第一层离散对数命中本身不够。
+  若真的越过该高度，则 p-free capacity identity 进一步强制
+  v_q(p^(lambda+1)-p-1)=delta+epsilon，即 q^(delta+epsilon) 恰整除这个
+  p-block capacity polynomial。
   更强地，actual cross-mod identity 强制任何 q|x 都有 t+m=0 mod p，等价于
   E=1-p^2m mod p^3。于是 q-entry 同时需要一个 q 的离散对数类和 actual multiplier 的
-  特定 p-adic digit。这是 p-free return 内 q 的精确 reentry capacity map，不构造
-  terminal、lift 或全局势。
+  特定 p-adic digit；但这个一阶门不能升格为 v_p(F_1)=v_p(t+m)：actual p=97
+  p-free family 有 v_p(t+m)=2、v_p(F_1)=1 的严格控制。这是 p-free return 内 q 的
+  精确 reentry capacity map，不构造 terminal、lift 或全局势。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -235,22 +239,66 @@ E=1+p^2t\equiv1-p^2m\pmod {p^3}.}
 return 的 \(F_1\)。因此它是 pure-\(T\) q-entry 首次获得的 genuinely cross-mod
 provenance 条件。
 
-## 4. 一层命中并不等于新的 complete-excess
+## 4. q-overcapacity 的精确 Hensel 饱和门
+
+既有 p-free p-block capacity formula 精确给出
+
+\[
+\boxed{
+(x,K_1)=\bigl(x,\ p^{\lambda+1}-p-1\bigr).}
+\tag{17}
+\]
+
+记 \(k_q=\delta+\epsilon=v_q(K_1)\)。若 \(q\) 真正越过现有容量，即
+
+\[
+v_q(x)>k_q,
+\tag{18}
+\]
+
+则 (17) 左端的 q-adic 阶为 \(k_q\)。右端的 q-adic 阶则为
+
+\[
+\min\!\left(v_q(x),\ v_q\!\left(p^{\lambda+1}-p-1\right)\right).
+\]
+
+由于第一项严格大于 \(k_q\)，两端相等强制
+
+\[
+\boxed{
+v_q(x)>\delta+\epsilon
+\Longrightarrow
+v_q\!\left(p^{\lambda+1}-p-1\right)=\delta+\epsilon.}
+\tag{19}
+\]
+
+换言之，新的 q-primary complete-excess 不仅要通过 first-layer 离散对数门 (11)，
+还要使 p-block capacity polynomial 恰好达到已有的 q-capacity：
+
+\[
+q^{\delta+\epsilon}\parallel p^{\lambda+1}-p-1.
+\tag{20}
+\]
+
+这是必要条件而非充分条件；即使 (20) 成立，仍须直接检查 \(v_q(x)\) 是否真的超过
+\(\delta+\epsilon\)。
+
+## 5. 一层命中并不等于新的 complete-excess
 
 在 (5) 的实际 raw pair 上，完整超额定义直接给出：\(q\) 能作为新的 \(x\)-side
 complete-excess block 的素因子，当且仅当
 
 \[
 \boxed{v_q(x)>v_q(K_1)=\delta+\epsilon.}
-\tag{17}
+\tag{21}
 \]
 
 式 (9) 表明 \(q\) 不可能从 \(y\)-side 产生该 block；式 (11) 只决定
-\(v_q(x)\ge1\)，并不控制 (17) 所需的高层高度。因此，任何把
+\(v_q(x)\ge1\)，并不控制 (21) 所需的高层高度。因此，任何把
 \(L^\lambda\equiv s\pmod q\) 直接称作新的 q-primary payload、terminal 或势消耗的
 论证都是不充分的。
 
-## 5. 两个聚焦控制
+## 6. 两个聚焦控制
 
 脚本使用两个 q-primary/p-free 兼容控制。
 
@@ -258,7 +306,8 @@ complete-excess block 的素因子，当且仅当
   \(L^\lambda=1\ne s\)，并且 \(q\nmid x\)。
 * \((433,11,3,3,30,10,6,13)\) 有 \(\lambda=1\) 且 \(L^\lambda=s\)，所以
   \(11\mid x\)；但精确值为
-  \(v_{11}(x)=1<v_{11}(K_1)=2\)，仍没有新的 complete-excess block。
+  \(v_{11}(x)=1<v_{11}(K_1)=2\)，且
+  \(v_{11}(p^{\lambda+1}-p-1)=1<2\)，仍没有新的 complete-excess block。
 
 两个控制都验证 low-gap negative-root、pure-\(T\) 同步、p-free 公式和 (7)--(12)，
 但都明确不是完整 actual root receipt。第二个控制是第一层 gate 命中却不能升级为
@@ -270,9 +319,21 @@ family index \(79\)。它直接重放 \(R-h=ED\)、\(D\mid K\)、
 \(F_1\equiv t+m\equiv0\pmod p\)，从而核对 (15)--(16) 的 actual p-adic
 部分；该控制不声称带有 low-gap \(q\)-carrier。
 
-## 6. 边界
+同一家族的 family index \(2213\) 保留全部 actual receipt 与 p-free identity，但有
 
-这条离散对数门没有给出 \(\lambda\) 的统一上界，也没有证明 (17) 必命中或必失败；
+\[
+\boxed{v_{97}(t+m)=2,\qquad v_{97}(F_1)=1.}
+\tag{22}
+\]
+
+所以 (15) 只能作为 first p-adic digit 门使用，不能错误加强为
+\(v_p(F_1)=v_p(t+m)\)，更不能仅由 \(E\) 的高阶 p-adic digit 决定离散对数 gate
+所需的完整 \(\lambda\)。这是一条来自 actual p-free family 的严格 counterexample，
+而不是对 (16) 的反例。
+
+## 7. 边界
+
+这条离散对数门没有给出 \(\lambda\) 的统一上界，也没有证明 (21) 必命中或必失败；
 现有 p-free return 还允许很长的 raw/capacity 轨道。因此它不是 Type I/II 证书、
 identity lift 或 global potential。
 
@@ -281,7 +342,7 @@ identity lift 或 global potential。
 或一个严格可提升的递降；而对于未通过 (11) 的状态，如何利用 q 在该 p-block pair
 完全缺席这一事实限制后续 source/path provenance。
 
-## 7. 聚焦复现
+## 8. 聚焦复现
 
 ~~~bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify

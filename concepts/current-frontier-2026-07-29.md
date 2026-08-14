@@ -8652,3 +8652,34 @@ E\equiv1-p^2m\pmod {p^3}.
 的特定 \(p^3\)-digit 的交集。固定 \(p=97,h=58,D=331\) 的 actual p-free 家族有一条
 \(v_p(F_1)=1\) 回执精确命中该 p-adic gate；它证明必要条件可达，但不带 low-gap
 q-carrier，更不是 global exit。
+
+同一家族还在 family index \(2213\) 给出严格的高阶边界：
+
+\[
+v_{97}(t+m)=2,
+\qquad v_{97}(F_1)=1.
+\]
+
+因此 \(F_1\equiv t+m\pmod p\) 不能提升为两者赋值相等。后续不能只追踪
+endpoint multiplier 的更高 \(p\)-进数字来决定 \(\lambda\)，仍须保留 p-block
+本身的完整 actual arithmetic。
+
+最后，真正的 q-overcapacity 比 first-layer gate 还多一个精确 Hensel 门。p-free
+capacity identity 为
+
+\[
+(x,K_1)=\bigl(x,p^{\lambda+1}-p-1\bigr).
+\]
+
+令 \(k=\delta+\epsilon=v_q(K_1)\)。如果 \(v_q(x)>k\)，上式强制
+
+\[
+v_q\!\left(p^{\lambda+1}-p-1\right)=k,
+\qquad
+q^k\parallel p^{\lambda+1}-p-1.
+\]
+
+所以越过容量不是“q 出现一次”即可：它还必须让 p-block polynomial 精确 Hensel
+饱和到旧容量高度。\(p=433,q=11\) 的 gate-hit 控制中该 polynomial 只有一层
+11，而旧容量为两层，明确落在已吸收分支。后续应优先研究这条精确等式的 actual
+provenance 或 terminal 接口，而不是继续只做 mod-\(q\) 的离散对数筛选。
