@@ -7981,6 +7981,39 @@ q\mid((K-1)p-1),\qquad q\nmid Kp+1.
 将这个负支变成证书、带完整状态合同的递降，或由 actual provenance 排除。详见
 [横向 stutter 低缺口 m 多项式的正负根分派](../claims/type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split.md)。
 
+## 2026-08-14：负根不能由有限个同载体固定缺口补齐
+
+这条负支有一个新的、严格但刻意狭窄的容量边界。写
+
+\[
+L=K-1,
+\qquad q=sL+s-1,
+\qquad Lp\equiv1\pmod q.
+\]
+
+则任一同载体固定缺口门 \(q\mid p+r\) 精确等价于 \(q\mid Lr+1\)。若写
+\(Lr+1=tq\)，便有
+
+\[
+L(r-ts)=t(s-1)-1,
+\qquad1\le t<\frac{r+1}{s}.
+\]
+
+所以对每个固定 \(r\) 只允许有限多个 \(L\)，因而对任意有限缺口集也只允许有限
+多个 \(L\)。反过来，Dirichlet--CRT 构造给出无穷多个核心素数和 q-local transverse
+negative-root 数据，避开该有限集，同时仍满足
+
+\[
+q\mid((K-1)p-1),
+\qquad q\nmid Kp+1,
+\qquad q\nmid p+r\quad(r\in\mathcal R).
+\]
+
+这否定了“保留同一负支 carrier，再添加有限个预设 \(p+r\) gate”作为统一收口。
+构造不保证完整 \(D\mid ph+1\)，所以它不是 actual stutter 或猜想反例；可变 gap、
+不同 carrier、因子对结构以及 actual provenance 仍是开放路线。详见
+[横向 stutter 负根对有限固定缺口同载体菜单的边界](../claims/type-I-root-capacity-stutter-transverse-negative-branch-fixed-gap-same-carrier-barrier.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
