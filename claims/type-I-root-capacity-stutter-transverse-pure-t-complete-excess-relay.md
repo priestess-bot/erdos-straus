@@ -278,16 +278,19 @@ B_0\equiv B_1\equiv L\pmod q.}
 \]
 
 所以 pure \(T\)-side 的 complete-excess 并非在归一化后消失：它以
-\(q^{v_q(E)}\mid pE_1+1\) 的明确 receipt/checkpoint 边携带到下一节点。
+\(q^{v_q(E)}\mid pE_1+1\) 的明确 receipt/checkpoint 边携带到下一节点。该因子
+随后可精确分解为 \(pE_1+1=2(p-1)ET\)，故其中的 q-primary 部分是 \(E\) 与
+\(T\) 的继承，而不是自动生成的新 checkpoint 容量；详见
+[纯 \(T\) 侧 checkpoint 的因子继承与新容量阻断](type-I-root-capacity-stutter-transverse-pure-t-checkpoint-factorization-boundary.md)。
 
 ## 5. 边界与聚焦控制
 
-式 (9)--(17) 是 actual receipt 的必要容量映射，并不表示 \(E_1\) 已通过
+式 (9)--(18) 是 actual receipt 的必要容量映射，并不表示 \(E_1\) 已通过
 terminal-first、persistent lineage、全域 identity lift 或 E1--E5 的注册合同。
 尤其 \(q^\epsilon\mid pE_1+1\) 不是现有 ordinary multiplier terminal menu 的自动
-命中，也没有给出严格势下降。它确定的下一项工作是：构造一个能消费
-\(pE_1+1\) 这条带来源的 q-primary 因子的实际 checkpoint adapter，或证明该输入必定
-触发已有 Type I/II terminal；在此之前不能把本 relay 记录为 global exit。
+命中，也没有给出严格势下降。尤其不能只把 \(q^\epsilon\mid pE_1+1\) 当作新输入：
+它完整分解回 \(E\) 与 \(T\)。后续 adapter 必须使用该因子之外的具体除子、额外同余、
+terminal-first 分类或 identity-lift 合同；在此之前不能把本 relay 记录为 global exit。
 
 ~~~bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify

@@ -124,6 +124,15 @@ def verify_control(
     b_zero = 2 * p * r_value - 1
     b_one = b_zero * e_multiplier - sigma
     e_one = (p - 1) * b_one - 1
+    if not (
+        p * b_zero - 1 == 2 * t_value
+        and p * b_one - 1 == e_multiplier * (p * b_zero - 1)
+        and p * e_one + 1 == 2 * (p - 1) * e_multiplier * t_value
+    ):
+        raise AssertionError("checkpoint factorization changed")
+    checkpoint_valuation = valuation(p * e_one + 1, q)
+    if checkpoint_valuation != epsilon + tau:
+        raise AssertionError("checkpoint q-primary factor inheritance changed")
     if epsilon:
         if not (
             tau == delta
@@ -133,6 +142,7 @@ def verify_control(
             and b_one % q == l_value
             and e_one % q == (-l_value) % q
             and (p * e_one + 1) % (q**epsilon) == 0
+            and checkpoint_valuation == zeta
         ):
             raise AssertionError("complete-excess checkpoint relay changed")
     else:

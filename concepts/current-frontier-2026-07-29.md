@@ -8135,6 +8135,25 @@ q^{v_q(E)}\mid pE_1+1,
 已有 Type I/II terminal。详见
 [横向 stutter 纯 \(T\) 侧负根的 complete-excess 分型与 checkpoint relay](../claims/type-I-root-capacity-stutter-transverse-pure-t-complete-excess-relay.md)。
 
+这条 prospective adapter 的最直接版本现在已被精确阻断。checkpoint 定义本身恒有
+
+\[
+pE_1+1=2(p-1)ET.
+\]
+
+故 \(q^{v_q(E)}\mid pE_1+1\) 中的因子只是 multiplier \(E\) 的原样继承；pure
+\(T\)-side 上还精确有
+
+\[
+v_q(pE_1+1)=v_q(E)+v_q(T),
+\]
+
+而在 \(q\mid E\) 的 actual complete-excess 情形，其右端等于
+\(v_q(R-h)\)。因此不能把 \(pE_1+1\) 当成独立的新 q-primary owner 或再次支付的
+容量。它只关闭“因子复用型” checkpoint adapter，不排除使用其余 cofactor、额外同余、
+terminal-first 分类或 identity lift 的构造。详见
+[横向 stutter 纯 \(T\) 侧 checkpoint 的因子继承与新容量阻断](../claims/type-I-root-capacity-stutter-transverse-pure-t-checkpoint-factorization-boundary.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
