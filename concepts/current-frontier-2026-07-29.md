@@ -7675,3 +7675,36 @@ strict receipt 还自动满足单侧 complete-excess payload 的 \(Q>1\)、\(p\n
 只有把 actual root raw path、terminal-first priority、typed F/G/hit 重分类和内容寻址
 normal form 组成单侧 `root_capacity_complete_excess_support_rebase` 的 E1/E3。详见
 [根容量严格 carry 的支撑重基与旧投影阻断](../claims/type-I-root-capacity-strict-carry-support-rebase.md)。
+
+## 2026-08-14：strict root cofactor 的小偶源只在高半区有两条直接出口
+
+strict root cofactor \(c\) 还可以无选择地给出一个偶数 \(n<p\)：\(c\) 为偶数时取
+\(n=c\)，为奇数时取 \(n=p-c\)。于是
+
+\[
+\frac4n=\frac1{n/2}+\frac1n+\frac1n.
+\]
+
+这第一次把 root carry 和真正按分母 \(n<p\) 良基的 marked source 直接接触起来，但并不
+自动闭合。若 \(n\le p/4\)，标准源坐标无法保留到 target；若 \(p/4<n<p/2\)，保留
+\(n\) 只是 gap \(4n-p\) 的直接 Type I/II 证书。只有 \(n>p/2\) 留下独立机制：
+令 \(R=4n-p\)、\(S=pn\)，则恰当且只需一个因子
+
+\[
+e\mid S^2,\qquad e\le S,\qquad e\equiv-S\pmod R
+\]
+
+便给出
+
+\[
+\left(\frac n2,n,n\right)\in\operatorname{Sol}(n)
+\longmapsto
+\left(n,\frac{S+e}{R},\frac{S+S^2/e}{R}\right)\in\operatorname{Sol}(p).
+\]
+
+同一个高半区条件也是 canonical complement 的完整奇距离偶源扇拥有 compatible ray 的
+必要条件。actual controls 显示两个门均非自动：\(p=73,r=3\) 落在中间带；
+\(p=313,r=271\) 已在高半区，却同时错过 residue 和 ray。故下一步应把 actual
+\(Q,E,D,h\) 的赋值约束接到这个高半区 selector，或从低半区推出短证书；不能把
+cofactor parity 误当成全局递降。详见
+[严格 root carry 的互补偶源三分与高半区单同余提升门](../claims/type-I-root-capacity-strict-carry-complement-even-source-gate.md)。

@@ -214,6 +214,12 @@ python3 reproductions/type_i_high_anchor_nonmonotone_reset_gate.py --verify
 正规形检查；见 `type-I-rp-plus-one-external-factor-ray`。这给出缺口至多
 \((p-1)/4\) 的变量因子 Type I 射线，不把有限 source 窗口误作统一界。
 
+`type_i_root_capacity_strict_carry_complement_even_source_gate.py` 把 strict root
+cofactor 规范地变成一个偶数小源 `n<p`，并只重算三条固定控制：高半区的显式
+standard-even marked lift，以及 `p=73,r=3`、`p=313,r=271` 两条 actual strict-root
+receipt。它验证低/中/高三分、高半区的单一 divisor-residue gate，以及 strict
+cofactor 本身并不强制该 gate 或 odd-distance ray；不扫描 root 参数、素数或历史 selector。
+
 `adaptive_external_escape.py` 专门审计自适应外部源递降的未命中实例：它为每个
 逃逸素数列出全部允许 \(k\)、源分母的素因子残数、有限 source 窗口中的直接外部源
 正规形，以及有界 Type II \(AC\) 射线证书。这个报告区分“没有该递降边”和
