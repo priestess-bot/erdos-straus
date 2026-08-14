@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 761 |
+| 数学状态 | `established` | 762 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 601 |
+| 证明来源 | `repository_derivation` | 602 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 738 |
+| 审阅状态 | `internal_review` | 739 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1077,6 +1077,7 @@
 | [H19 新因子状态的纯新因子选择边界](../claims/type-II-pure-new-factor-boundary.md) (`type-II-pure-new-factor-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `chamberland2026` | 2026-07-25 |
 | [增长平方移位上的纯新单素因子 Type II 射线具有超对数稀薄尾部](../claims/type-II-pure-new-square-ray-superlog-tail.md) (`type-II-pure-new-square-ray-superlog-tail`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `shute2022`, `bradford2024`, `chamberland2026` | 2026-07-27 |
 | [Type II q 层前缀匹配到纤维 Kneser 价格的规范压缩](../claims/type-II-q-layer-prefix-kneser-price-certificate.md) (`type-II-q-layer-prefix-kneser-price-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
+| [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [Type II q 层请求的来源 CRT 纤维集中与唯一候选](../claims/type-II-q-prefix-source-crt-fiber-concentration.md) (`type-II-q-prefix-source-crt-fiber-concentration`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II q 前缀来源标签与候选纤维的有限穷尽闭包](../claims/type-II-q-prefix-source-label-finite-closure.md) (`type-II-q-prefix-source-label-finite-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 单状态 q 进高度到 Kneser 幂块的精确桥](../claims/type-II-qadic-height-kneser-block-bridge.md) (`type-II-qadic-height-kneser-block-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |

@@ -815,6 +815,13 @@ control 的 root endpoint path 写成完整、按素数标签重放的 universal
 `analysis_evidence`：该 word 由目标 chart 反向确定，不能替代 persistent root policy、
 scope、terminal-first 或 typed reclassification。
 
+`type_ii_q_one_canonical_root_slice.py` 固定 q=1 endpoint 的自然参数
+`r=(p-1)/24`。它以五个 (u=1) 控制验证 (c=37) 或
+({2,10,22,110})，以完整的固定 (k\le27) 因子表和三个 actual receipt 关闭
+(u=37,h=111) 的低值分支，并重算一个高值控制。它还验证
+(X=(p+3)/4) 与规范根的 (K) 严格互素，因此 q=1 Type II 的物理 source support
+不能直接充当 root E1 provenance；不扫描素数范围、分母范围或 selector history。
+
 ```bash
 python3 reproductions/type_i_root_capacity_strict_carry_universal_raw_word.py --verify
 ```

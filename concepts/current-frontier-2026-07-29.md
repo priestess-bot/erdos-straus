@@ -8748,3 +8748,36 @@ universal \(p\)-parent 边界，有限 actual raw ancestry 不能替代 target-i
 persistent root policy。因此当前 root support-rebase 的真实剩余量词是 charged origin、
 scope、terminal-first miss 与 typed E3 reclassification；不再是补造更多 raw word。
 详见[严格 root carry 的规范 universal raw word 与 E1 root-policy 边界](../claims/type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary.md)。
+
+## 2026-08-15：q=1 G 给出一条规范小根切片，但其 source support 不能跨图表继承
+
+令 (p=24t+1)，q=1 Type II endpoint 的首分母为
+
+\[
+X=\frac{p+3}{4}=6t+1.
+\]
+
+若在 (a=1,d=1) 根接口预先固定 (r=t)，则
+
+\[
+u=\left(2t+1,\frac{p^2+p+1}{3}\right)=(2t+1,37)\in\{1,37\}.
+\]
+
+所以 actual root endpoint 只有 (h=3) 或 (111)。(h=3) 时 strict cofactor
+除 (p=73) 的 (37) 外只可能为 (2,10,22,110)；(h=111) 的大素数由小 endpoint
+定理严格，低于 (111^2) 的三个核心控制 (433,1321,7537) 也逐项严格。于是该
+predeclared root slice 对每个核心素数都有 strict support-rebase 的 E2/E5 arithmetic
+payload，不再有任意 root 参数或大根容量盒。
+
+但这个正向收缩同时给出精确的 E1 边界：规范根的
+
+\[
+K=A(p-1)
+\]
+
+与 q=1 的 (X) 满足 ((X,K)=1)。q=1 Type II endpoint 当前 source 的全部物理素因子来自
+(X)，所以不能把其 source support 直接继承为这个 root chart 的 charged support。
+因此下一步不是再找 root raw word，而是定义能引入新 physical carrier 的
+`fresh_source_tree_only` root-entry，并证明 terminal-first、typed reclassification 与
+Type II exit phase 的全局势。详见
+[q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
