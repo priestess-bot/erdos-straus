@@ -7865,6 +7865,48 @@ C=\frac{p+s}{4q},
 负支 \(((K-1)p-1)\) 仍未转化为证书或 lift。详见
 [横向 stutter 二次移位的偶 \(K\) Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan.md)。
 
+## 2026-08-14：二次移位扩展到一般 \(A\) 型横向 Type II 图表
+
+偶 \(K\) 扇并非只能使用 Type II 的 \(A=1\) 面。令 \(A_0\mid p+3\) 为奇数，
+\(K>A_0\) 为偶数且 \((A_0,K)=1\)。对 actual stutter 的任意奇素数 \(q\mid D\)，
+新的移位
+
+\[
+q\mid mA_0^2+K(K-A_0)
+\]
+
+强制线性分解
+
+\[
+q\mid\bigl((K-A_0)p-A_0\bigr)(Kp+A_0).
+\]
+
+若落在正支 \(q\mid Kp+A_0\)，并有
+
+\[
+q\equiv3K-A_0\pmod {4A_0K},
+\qquad
+s=\frac{q+A_0}{K},
+\qquad
+C=\frac{p+s}{4A_0q},
+\]
+
+则 \(3\le s\le p-2\)，且
+
+\[
+\frac4p=
+\frac1{A_0qC}+
+\frac1{pA_0CK}+
+\frac1{pqCK}.
+\]
+
+正支还给出 \(A_0h\equiv K\pmod q\)。残数条件使 \(q>K+A_0\)，从而
+\(q\nmid h^2-1\)，所以这个看似从完整 \(D\) 读取的 terminal 实际自动落在
+\(D_*\) 的横向部分。\(A_0=1\) 正好回收既有扇；固定局部控制
+\((p,A_0,K,q)=(1297,5,6,13)\) 给出新 \(A_0>1\) 行及缺口 \(s=3\)。它仍不强制
+实际 residual 命中移位、正支或剩余类，因而只是加宽 terminal-first，而非 global exit。
+详见[横向 stutter 的一般 A 型二次移位 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有

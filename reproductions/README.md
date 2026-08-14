@@ -899,6 +899,18 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_residual_local_ter
 python3 reproductions/type_i_root_capacity_stutter_transverse_quadratic_shift_type_ii_fan.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_general_quadratic_type_ii_fan.py` 固定验证一般
+`A` 型横向二次移位扇。对 `A|p+3` 为奇数、偶 `K>A`、`gcd(A,K)=1`，局部条件
+`q|m*A^2+K*(K-A)` 分解为 `((K-A)*p-A)*(K*p+A)`；正支
+`q|K*p+A` 与 `q=3K-A (mod 4*A*K)` 给出 `(A,B,C)=(A,q,(p+s)/(4*A*q))`
+的 Type II 证书，并自动使 `q` 横向于 `h^2-1`。脚本以 `(A,K)=(1,6)` 重放旧扇
+的一行，并以 `p=1297,A=5,K=6,q=13` 检查新的 `A>1` 行；控制只验证 q-局部
+同余和证书恢复，不冒充 actual stutter receipt，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_general_quadratic_type_ii_fan.py --verify
+```
+
 `type_i_root_capacity_stutter_transverse_native_raw_type_ii_menu.py` 固定验证由 actual
 `D|ph+1` 诱导的原生 Type II raw-ray 菜单：任意 menu 因子
 `Q|D` 且 `Q=-1 (mod 4h)` 都以 `(A,C,K)=(1,(Q+1)/(4h),h)` 直接恢复 Type II
