@@ -897,8 +897,9 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_complete_e
 `type_i_root_capacity_stutter_transverse_overlap_receipt_relay.py` 固定验证
 \(p\pm1\) complete-excess overlap 到 receipt quotient 与下一 checkpoint 的
 q-primary relay。尤其 \(p-1\) excess 控制同时检查
-`e`、`s+1`、`r-1` 和 `E1+1` 的同一基准赋值。两个控制都只是局部 receipt
-整数算术，不冒充 actual root receipt，也不扫描范围。
+`e`、`s+1`、`r-1` 和 `E1+1` 的同一基准赋值，并核对该 \(q\) 在
+Eisenstein 范数 `N` 中严格为单位。两个控制都只是局部 receipt 整数算术，
+不冒充 actual root receipt，也不扫描范围。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_receipt_relay.py --verify

@@ -35,6 +35,7 @@ def relay_values(p: int, r: int, e_multiplier: int, d: int) -> dict[str, int]:
     b_zero = 2 * p * r - 1
     b_one = b_zero * e_multiplier - s
     e_one = (p - 1) * b_one - 1
+    eisenstein_norm = a * a - a * (quotient - 1) + (quotient - 1) ** 2
     return {
         "A": (p + 1) // 2 * t_value,
         "T": t_value,
@@ -48,6 +49,7 @@ def relay_values(p: int, r: int, e_multiplier: int, d: int) -> dict[str, int]:
         "s": s,
         "B1": b_one,
         "E1": e_one,
+        "N": eisenstein_norm,
     }
 
 
@@ -99,6 +101,8 @@ def verify_minus_excess_relay() -> None:
         and valuation(values["B1"], q) == 0
         and valuation(values["E1"] + 1, q) == b
         and valuation(p * values["h"] + 1, q) == 2 * b + t
+        and values["N"] % q == 3 % q
+        and valuation(values["N"], q) == 0
     ):
         raise AssertionError("p-1 excess receipt relay failed")
 

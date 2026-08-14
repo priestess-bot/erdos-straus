@@ -7848,6 +7848,12 @@ checkpoint 的下一 ordinary multiplier。故 high raw \(q\)-excess 在 \(E\) �
 抽象 \(D_*\mid T\) 收紧为可在 receipt 与 checkpoint 双端重算的 q-primary 图。详见
 [横向 stutter overlap 的 receipt 商与 checkpoint 赋值 relay](../claims/type-I-root-capacity-stutter-transverse-overlap-receipt-relay.md)。
 
+同一支路的 \(q\) 也不能借用现有 Eisenstein norm provenance：由于
+\(q\mid e\) 且 \(a\equiv1\pmod q\)，有
+\(a^2-a(e-1)+(e-1)^2\equiv3\pmod q\)，而 \(q\ne3\)。故该 \(q\) 不整除
+范数或范数商，任何后续 adapter 必须是非范数构造。详见
+[p 减一 complete-excess 横向素因子的 Eisenstein 范数排除](../claims/type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
