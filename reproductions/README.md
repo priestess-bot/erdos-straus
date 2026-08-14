@@ -835,6 +835,16 @@ python3 reproductions/type_i_s_zero_rechart_standalone_potential_no_go.py --veri
 python3 reproductions/type_i_root_capacity_stutter_receipt_factor_split.py --verify
 ```
 
+`type_i_root_capacity_stutter_c_side_m_localization.py` 固定核对 stutter 的
+`D_C=gcd(D,(p^2-1)/2)` 可以精确写成 `lcm(gcd(D,p+1),gcd(D,p-1))`，且两部分分别
+整除 `m` 与 `m+2`。它复放一个奇 C-side 控制和三个核心素数 proper-shape 控制，覆盖
+奇、dyadic 与混合 C-side 赋值，并核对 `D_C|lcm(m,m+2)` 以及数值上强制 `D_T>1` 的
+两种 \(m\) 情形。后三个控制明确不是 actual root receipt；脚本不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_c_side_m_localization.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

@@ -7635,6 +7635,39 @@ E1--E5、identity lift 或全局势；下一步必须将这个高根墙接到 ac
 逐素数 residual 与可注册 selector adapter，而不是把 strict carry 直接写成递归边。详见
 [actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md)。
 
+## 2026-08-14：actual proper-root stutter 不能完全停留在 cyclotomic C-side
+
+对 stutter 除子写
+
+\[
+C=\frac{p^2-1}{2},\qquad D_C=(D,C),\qquad D_T=D/D_C,
+\qquad D=mp+1-h.
+\]
+
+此前仅知 \(D_C\mid h^2-1\)。现在由 \(D\mid ph+1\) 在 \(p\pm1\) 的两个局部化，
+令 \(d_-=(D,p+1)\)、\(d_+=(D,p-1)\)，则
+
+\[
+d_-\mid m,\qquad d_+\mid m+2,
+\qquad
+\boxed{D_C=\operatorname{lcm}(d_-,d_+)
+\mid\operatorname{lcm}(m,m+2).}
+\]
+
+因此 C-side 的全部指数由 \(m(m+2)/(m,2)\) 而非 \(h^2\) 控制。actual proper-root
+的 \(m\ge3\)、\(m<1+\sqrt h\)、\(h<p\) 又使
+
+\[
+D_C<D,\qquad
+\boxed{1<D_T\mid\gcd(T,h^2-h-2r).}
+\]
+
+这排除了 actual proper-root stutter 的 \(D\) 整体落在 \(C\) 中，给 high-root 残余
+留下必须由 \(T\)-侧同时承担的非平凡容量余量。它不是 prime-disjoint 断言：\(D_T\) 仍可与
+\(C\) 共享素因子，也不保证 external-source 有限菜单命中。下一步应把这段 residual 与
+actual valuation、\(D_*\) 及 source provenance 联立，而不能据此宣称已得到证书或递降。详见
+[proper-root stutter 的 C-side \(m\) 局部化](../claims/type-I-root-capacity-stutter-c-side-m-localization.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
