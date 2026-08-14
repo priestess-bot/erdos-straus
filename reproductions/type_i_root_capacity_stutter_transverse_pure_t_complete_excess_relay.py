@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from math import gcd
 
 
 LOW_GAPS = (3, 7, 11, 23)
@@ -63,6 +64,31 @@ def verify_negative_root_shape(
     return l_value
 
 
+def verify_actual_stutter_cross_mod_control() -> None:
+    """Check the full actual stutter identities behind the cross-mod map."""
+    p, r_value, height, m_value = 97, 6618, 58, 4
+    d_value, receipt_quotient, sigma = 331, 17, 376206
+    if not (is_prime(p) and p % 24 == 1 and 2 <= height < p):
+        raise AssertionError("control did not retain a proper core-prime stutter shape")
+    t_value = p * p * r_value - (p + 1) // 2
+    k_value = (p * p - 1) // 2 * t_value
+    r_polynomial = 2 * p**3 * r_value - p * p - 2 * p * r_value - p + 1
+    e_multiplier = 1 + p * sigma
+    m_plus_two_r = m_value + 2 * r_value
+    if not (
+        d_value == m_value * p + 1 - height
+        and receipt_quotient * d_value == p * height + 1
+        and r_polynomial - height == e_multiplier * d_value
+        and k_value % (height * d_value) == 0
+        and gcd(height, r_polynomial - height) == 1
+        and sigma * d_value == 2 * t_value - m_plus_two_r
+        and (p + receipt_quotient + sigma) * d_value
+        == (p * p - 1) * m_plus_two_r
+        and (sigma * (1 - height) + m_plus_two_r + 1) % p == 0
+    ):
+        raise AssertionError("actual stutter cross-mod identities changed")
+
+
 def verify_control(
     *,
     label: str,
@@ -75,6 +101,7 @@ def verify_control(
     sigma: int,
     d_value: int,
     expected_valuations: tuple[int, int, int, int, int, int],
+    expected_checkpoint_suffix: int | None = None,
 ) -> None:
     """Check one synthetic q-primary maximal-normalization control."""
     l_value = verify_negative_root_shape(p, q, gap, height, m_value)
@@ -124,6 +151,11 @@ def verify_control(
     b_zero = 2 * p * r_value - 1
     b_one = b_zero * e_multiplier - sigma
     e_one = (p - 1) * b_one - 1
+    if expected_checkpoint_suffix is not None and not (
+        sigma % p == expected_checkpoint_suffix % p
+        and e_one % p == expected_checkpoint_suffix % p
+    ):
+        raise AssertionError("q-primary control lost its prescribed checkpoint suffix")
     if not (
         p * b_zero - 1 == 2 * t_value
         and p * b_one - 1 == e_multiplier * (p * b_zero - 1)
@@ -157,8 +189,9 @@ def verify_control(
 
 def verify() -> None:
     # Both are q-primary normalization controls, not complete actual root receipts.
+    verify_actual_stutter_cross_mod_control()
     verify_control(
-        label="E-excess",
+        label="high-excess E",
         p=313,
         q=17,
         gap=3,
@@ -168,6 +201,59 @@ def verify() -> None:
         sigma=12,
         d_value=17,
         expected_valuations=(1, 1, 2, 3, 0, 0),
+    )
+    # CRT keeps the same exact q-primary excess compatible with every p-suffix.
+    verify_control(
+        label="p-free E-excess",
+        p=313,
+        q=17,
+        gap=3,
+        height=12,
+        m_value=4,
+        r_value=15,
+        sigma=2817,
+        d_value=17,
+        expected_valuations=(1, 1, 1, 2, 0, 0),
+        expected_checkpoint_suffix=0,
+    )
+    verify_control(
+        label="regeneration E-excess",
+        p=313,
+        q=17,
+        gap=3,
+        height=12,
+        m_value=4,
+        r_value=15,
+        sigma=1253,
+        d_value=17,
+        expected_valuations=(1, 1, 1, 2, 0, 0),
+        expected_checkpoint_suffix=1,
+    )
+    verify_control(
+        label="raw-source E-excess",
+        p=313,
+        q=17,
+        gap=3,
+        height=12,
+        m_value=4,
+        r_value=15,
+        sigma=4381,
+        d_value=17,
+        expected_valuations=(1, 1, 1, 2, 0, 0),
+        expected_checkpoint_suffix=-1,
+    )
+    verify_control(
+        label="strict-carry E-excess",
+        p=313,
+        q=17,
+        gap=3,
+        height=12,
+        m_value=4,
+        r_value=15,
+        sigma=29,
+        d_value=17,
+        expected_valuations=(1, 1, 1, 2, 0, 0),
+        expected_checkpoint_suffix=29,
     )
     verify_control(
         label="T-slack",
@@ -181,7 +267,10 @@ def verify() -> None:
         d_value=17,
         expected_valuations=(2, 1, 0, 1, 0, 1),
     )
-    print("verified pure-T complete-excess classification and checkpoint relay")
+    print(
+        "verified pure-T cross-mod map, complete-excess relay, "
+        "factor inheritance, and CRT suffix boundary"
+    )
 
 
 def main() -> None:

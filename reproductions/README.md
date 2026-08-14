@@ -959,6 +959,16 @@ pure-T negative-root 的 actual maximal complete-excess q-primary 分型、recei
 `E` 与 `T` 的继承；两个控制都只是 q-primary 整数算术，不冒充 actual root receipt，
 也不扫描范围。
 
+同一脚本还用四个具有相同 (q)-height 的 CRT 代表验证：在同一 pure-T q-primary
+excess 下，checkpoint 的 `E1 mod p` 可以分别落入 `0`、`1`、`-1` 与一般 strict-carry
+行。因此 q-local excess 本身不能决定 p-suffix，任何后续 adapter 必须加入跨模
+actual-provenance 输入。
+
+该脚本另重放一个真实 stutter receipt 的整数层，验证
+`sigma*D=2*T-(m+2*r)` 与
+`(p+e+sigma)*D=(p^2-1)*(m+2*r)`；这把 checkpoint 的 p-suffix 与 actual
+receipt quotient 接到同一条跨模赋值阶梯上。
+
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
 ```

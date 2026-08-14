@@ -8154,6 +8154,44 @@ v_q(pE_1+1)=v_q(E)+v_q(T),
 terminal-first 分类或 identity lift 的构造。详见
 [横向 stutter 纯 \(T\) 侧 checkpoint 的因子继承与新容量阻断](../claims/type-I-root-capacity-stutter-transverse-pure-t-checkpoint-factorization-boundary.md)。
 
+同样不能期待 q-excess 自己选择 checkpoint 的 \(p\)-suffix。若
+\(\epsilon=v_q(E)>0\)，则 \(E=1+p\sigma\) 至少给
+
+\[
+\sigma\equiv-p^{-1}\pmod {q^\epsilon}.
+\]
+
+即使保留 \(v_q(E)=\epsilon\) 的下一层排除，仍因 \((p,q^{\epsilon+1})=1\) 与任意
+\(\sigma\bmod p\) 由 CRT 完全兼容；而
+\(E_1\equiv\sigma\pmod p\)。于是 p-free failure、regeneration、raw p-source
+failure 与 strict carry 全都不能仅凭 pure \(T\) 的 q-primary 数据排除。这个是局部
+no-go，不是 actual receipt 的反例；它明确要求下一条路线提供将 \(\sigma\bmod p\) 与
+root/receipt/path provenance 绑定的跨模定理。详见
+[横向 stutter 纯 \(T\) 侧 excess 对 checkpoint \(p\)-分派的 CRT 独立性](../claims/type-I-root-capacity-stutter-transverse-pure-t-checkpoint-suffix-crt-boundary.md)。
+
+所需的 actual cross-mod 输入现在可以直接写出。由 \(R-h=ED\)、
+\(D=mp+1-h\)、\(E=1+p\sigma\) 与 \(eD=ph+1\) 消元，恒有
+
+\[
+\sigma D=2T-(m+2r),
+\qquad
+(p+e+\sigma)D=(p^2-1)(m+2r).
+\]
+
+前式模 \(p\) 给出
+\(\sigma(1-h)\equiv-(m+2r+1)\)，从而三条 non-strict suffix 分别等价于
+\(p\mid m+2r+1\)、\(p\mid m+2r+2-h\)、\(p\mid m+2r+h\)。对 pure \(T\)
+carrier，又有
+
+\[
+v_q(m+2r)=v_q(D)+v_q(p+e+\sigma).
+\]
+
+因此被 \(D\) 强制层以外的下一 q 层终于被定位到一个 actual receipt quantity
+\(p+e+\sigma\)，而不是两条同步 \(T\)-side 整除式。该图仍未产生 terminal 或 lift，
+但把下一项具体任务压缩为把这三个 p-条件或这条 q-adic 阶梯接入现有 terminal/递降合同。详见
+[横向 stutter 纯 \(T\) 侧的跨模 multiplier-quotient 赋值阶梯](../claims/type-I-root-capacity-stutter-transverse-pure-t-cross-mod-valuation-staircase.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
