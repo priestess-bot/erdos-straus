@@ -7854,6 +7854,13 @@ checkpoint 的下一 ordinary multiplier。故 high raw \(q\)-excess 在 \(E\) �
 范数或范数商，任何后续 adapter 必须是非范数构造。详见
 [p 减一 complete-excess 横向素因子的 Eisenstein 范数排除](../claims/type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion.md)。
 
+更进一步，relay 也不能在不使用 actual-root 条件时直接投递到 \(p-1\) source
+fan：固定核心素数 \(p=241\) 的局部 \(q=5\) complete-excess 控制满足 receipt、
+checkpoint 与 norm-exclusion 的全部 q-primary 关系，但 \(240\) 的两条可用 fan 行
+均没有平方尾因子。该控制故意有 \(h>p\)，所以结论只是准确定位必须补入的
+proper-root provenance，不是 actual-state 反例。详见
+[横向 p 减一 complete-excess relay 不强制 p 减一 source tail](../claims/type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt

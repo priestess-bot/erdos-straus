@@ -905,6 +905,15 @@ Eisenstein 范数 `N` 中严格为单位。两个控制都只是局部 receipt �
 python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_receipt_relay.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py` 固定验证
+核心素数 `p=241` 上的局部 \(p-1\) complete-excess relay，并完整枚举
+`p-1=240` 的两个可用 source-fan 行。该控制精确显示 relay 条件本身不强制
+平方尾 witness；它明确不属于 actual proper-root receipt，且不扫描素数。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half
