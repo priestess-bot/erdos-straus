@@ -432,8 +432,10 @@ E5 由 (30) 支付。这里没有用 transient receipt 的内部数值作为势�
 饱和边；\(n_T=1\) 时 \(U\) 是 marked absorb，\(n_T\ge5\) 时 \(U\) 仍是 overflow。
 若 \(n_T\ge p\)，\(S_T\) 可以越过 \(B_p\)，但 (29) 仍由无界 complete-product
 contract 保持严格。故本卡的第二条边不留下一个 \(n_T\ge p\) 的 high-overflow
-算术残余；其真正后续边界是 low marked-absorb target 的处理，以及 \(U\) 的 \(d=1\)
-后继选择器。
+算术残余。对立即的 \(U\) receiver，后续的
+[p-free 门全称排除与严格 complete-excess 继电](type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay.md)
+进一步关闭了 p-free bundle failure，并给出一条严格 relay；其仍待处理的边界是
+relay 后的非 q=1 \(d=1\) regeneration target，以及一般 Type I selector。
 
 ## 6. 范围与后果
 
