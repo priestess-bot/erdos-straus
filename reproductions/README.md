@@ -894,6 +894,16 @@ T-high 残余锁定控制。全部控制都只是局部整数算术，不冒充 
 python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_complete_excess_valuation.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_overlap_receipt_relay.py` 固定验证
+\(p\pm1\) complete-excess overlap 到 receipt quotient 与下一 checkpoint 的
+q-primary relay。尤其 \(p-1\) excess 控制同时检查
+`e`、`s+1`、`r-1` 和 `E1+1` 的同一基准赋值。两个控制都只是局部 receipt
+整数算术，不冒充 actual root receipt，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_receipt_relay.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

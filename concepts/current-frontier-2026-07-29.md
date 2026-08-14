@@ -7822,6 +7822,32 @@ overlap 不再具有相同的 \(E\)-侧行为。设 \(t=v_q(D)-b\)、\(\tau=v_q(
 把 \(p-1\) residual 当成普通 \(D_*\mid T\) 因子直接注册的做法。详见
 [横向 stutter overlap 的 actual complete-excess 赋值分型](../claims/type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification.md)。
 
+## 2026-08-14：p-minus-one overlap 已接到 receipt quotient 与下一 checkpoint
+
+对 actual stutter，有此前未显式使用的严格桥
+
+\[
+D(pE+e)=4K=2(p^2-1)T,
+\qquad
+e=\frac{ph+1}{D}.
+\]
+
+因此所有 \(p\pm1\) overlap 素数都满足
+\(v_q(pE+e)=v_q(T)-t\)。特别地，若 \(q\mid E\) 落在
+\(q\mid m+2,p-1\) 支路，则完整 excess 门强制
+
+\[
+v_q(e)=v_q(s+1)=v_q(r-1)=v_q(E_1+1)=b,
+\]
+
+且 \(a,B_1\) 都是 \(q\)-单位。这里 \(E=1+ps\)，\(E_1\) 是 canonical
+checkpoint 的下一 ordinary multiplier。故 high raw \(q\)-excess 在 \(E\) 中并未
+失去 provenance：它在当前 \(e\) 与下一图表的 \(E_1+1\) 中留下相同的基准印记。
+
+该 relay 尚未提供 terminal 或 registered edge，但它把下一步 adapter 的唯一输入从
+抽象 \(D_*\mid T\) 收紧为可在 receipt 与 checkpoint 双端重算的 q-primary 图。详见
+[横向 stutter overlap 的 receipt 商与 checkpoint 赋值 relay](../claims/type-I-root-capacity-stutter-transverse-overlap-receipt-relay.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
