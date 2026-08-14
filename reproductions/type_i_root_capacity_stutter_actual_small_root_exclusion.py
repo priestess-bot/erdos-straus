@@ -56,7 +56,7 @@ def verify_actual_small_root_control() -> None:
         and (state["m0"] % 6) == 1
         and (state["u"], h, d_value) == (1, 3, 220)
         and 2 <= h < p
-        and h * h < 3 * p + 78
+        and h * h <= 15 * p
         and gcd(d_value, p_cyclotomic) == 1
         and state["z"] % state["K"] != 0
         and (d_value - (1 - h)) % p != 0
@@ -78,6 +78,24 @@ def verify_m_one_needs_the_actual_root_gate() -> None:
         and p_cyclotomic % h != 0
     ):
         raise AssertionError("m=1 non-root boundary changed")
+
+
+def verify_low_coefficient_root_gates() -> None:
+    # For (m,a)=(3,3), the derived equation is 3p=u(3u+2).
+    # Its right side is never divisible by 3 when gcd(u,3)=1.
+    for residue in (1, 2):
+        if (residue * (3 * residue + 2)) % 3 == 0:
+            raise AssertionError("(m,a)=(3,3) lost its mod-3 contradiction")
+
+    # For (m,a)=(4,2), root divisibility gives u|84. The only u coprime
+    # to 6 are 1 and 7, and neither supplies a core prime through 8p.
+    possible_u = tuple(u for u in range(1, 85) if 84 % u == 0 and gcd(u, 6) == 1)
+    if possible_u != (1, 7):
+        raise AssertionError("low-coefficient root divisor menu changed")
+    for u in possible_u:
+        numerator = 9 * u * u + 3 * u + 2
+        if numerator % 8 == 0 and (numerator // 8) % 24 == 1:
+            raise AssertionError("(m,a)=(4,2) unexpectedly supplied a core prime")
 
 
 def verify_delta_six_boundary() -> None:
@@ -102,8 +120,9 @@ def verify_delta_six_boundary() -> None:
 def verify() -> None:
     verify_actual_small_root_control()
     verify_m_one_needs_the_actual_root_gate()
+    verify_low_coefficient_root_gates()
     verify_delta_six_boundary()
-    print("verified actual-root small band and fixed defect-boundary controls")
+    print("verified actual-root 15p band and fixed low-coefficient controls")
 
 
 def main() -> None:

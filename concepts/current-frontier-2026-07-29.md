@@ -7527,31 +7527,41 @@ proper-root 控制 \((p,r,h,D_0)=(54481,2543533812,12063,696191)\) 中，容量�
 stutter 与 capacity-prime external-source 菜单或严格递降相连。详见
 [根容量 stutter 的 actual-maximality 边界](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md)。
 
-## 2026-08-14：actual proper-root stutter 被推出 \(\sqrt{3p}\) 之外
+## 2026-08-14：actual proper-root stutter 被推出 \(\sqrt{15p}\) 之外
 
-现有 root receipt 的 cyclotomic 排除可与 stutter 三参数恒等式真正联立。对真实
-proper-root stutter，\((D,M_0)=1\) 加上 \((h,D)=1\)、\(h=3u\) 给出
-\((D,p^2+p+1)=1\)。若 \(m=(D+h-1)/p\) 等于 1，则
-
-\[
-D(p+e)=p^2+p+1
-\]
-
-迫使 \(D=1\) 和 \(h=p\)，与 small-root 域矛盾；又因 \(D\mid ph+1\) 不被 3
-整除，得到 \(m\not\equiv2\pmod3\)，故 \(m\ge3\)。从
-\(Da=m+h(h-1)\) 随即有 \(h^2-3p\ge-2\)。
-
-令 \(c=3u^2-p\)，则 \(h^2-3p=3c\)。核心同余和 \((u,6)=1\) 强制
-\(c\equiv2\pmod {24}\)，所以该缺陷为 \(6\pmod {72}\)。最小候选 \(c=2\)
-又由根条件 \(h\mid p^2+p+1\) 推出 \(u\mid(c^2-c+1)/3=1\)，即 \(p=1\)，
-不可能为素数。因此真实 stutter 必满足
+真实 root receipt 的 cyclotomic 排除先给出 \((D,p^2+p+1)=1\)，从而排除
+\(m=(D+h-1)/p=1\)。再由 \(D\mid ph+1\) 得 \(m\not\equiv2\pmod3\)，故
+\(m\ge3\)。更关键的是精确式 \(Da=m+h(h-1)\) 在模 3 给出
 
 \[
-\boxed{h^2\ge3p+78.}
+(m+1)a\equiv m\pmod3.
 \]
 
-这严格扩展了之前 \(h^2<p\) 的 arithmetic strict-carry 带：当
-\(h^2<3p+78\) 时，terminal-first 失败后 canonical carry 一定严格。但这仍不是
-global exit，因严格 cofactor 尚须获得 E1--E5、typed target、identity lift 和全局势。
-带外 hard-root 与这些状态合同缺口仍是下一步的唯一对象。详见
-[实际 stutter 的 \(m\) 下界与根号三排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。
+它把 \(m\equiv0\pmod3\) 压到 \(a\equiv0\pmod3\)，把
+\(m\equiv1\pmod3\) 压到 \(a\equiv2\pmod3\)。两个仅有的低系数例外也可由根整除性
+精确排除：\((m,a)=(3,3)\) 会强制 \(3p=u(3u+2)\)，与 \(3\nmid u\) 矛盾；
+\((m,a)=(4,2)\) 会强制 \(u\mid84\)，只剩 \(u=1,7\)，两者均不给出核心素数。
+因此
+
+\[
+\boxed{a(m-1)\ge15.}
+\]
+
+由于 \(h<p\)，有 \(D\ge(m-1)p+2\)，故
+
+\[
+h^2-h+m=aD\ge15p+2a.
+\]
+
+另一方面既有正定范数界给出 \(m<1+\sqrt h<h\)，于是
+
+\[
+\boxed{h^2>15p.}
+\]
+
+这把 terminal-first 后的 arithmetic strict-carry 带显著扩大为
+\(h^2\le15p\)。此前的精确 defect 关系仍保留为可用容量图：
+\(h^2-3p\equiv6\pmod {72}\)，并排除其最小候选，故也有
+\(h^2\ge3p+78\)。这仍不是 global exit，因严格 cofactor 尚须获得 E1--E5、
+typed target、identity lift 和全局势；带外 hard-root 与这些状态合同缺口仍是下一步的
+唯一对象。详见[实际 stutter 的低系数障碍与 15p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。
