@@ -11,13 +11,14 @@ statement: >-
   (p^lambda+h-1)/q^delta = e p^(-1) D_hat mod q^epsilon；并有
   q^delta|(p^(lambda-1)+m) 及
   (p^(lambda-1)+m)/q^delta = (p+e)p^(-2)D_hat mod q^epsilon。
-  再结合 actual cross-mod identity，可得 q^delta 恰整除 2r-p^(lambda-1)，且其
+  再由 2T-P_lambda=p^2(2r-p^(lambda-1))，可得 q^delta 恰整除 2r-p^(lambda-1)，且其
   q^delta 单位商等于 (pE+e)D_hat/(p^2(p^2-1)) mod q^epsilon。若 h=3u 是
   canonical root endpoint、2r+1=uw，则这给出 u 与 w 的两条精确 q-adic
   Hensel 约束。
   因而 overcapacity 不只是 p-block capacity polynomial 的 Hensel 条件：它强制
   p^lambda 在 actual root height h 的 q^delta 层精确命中、在下一 q 层必失败，
-  同时给出 m/e/D 的高层残数。这是一个必要 capacity/provenance map，不构造
+  同时给出 m/e/D 的高层残数；其中 r 坐标是 T 与 p-block 容量的依赖投影，不能
+  单独计作新的 local exclusion。这是一个必要 capacity/provenance map，不构造
   Type I/II terminal、identity lift 或全局势。
 claim_status: established
 proof_provenance: repository_derivation
@@ -131,8 +132,37 @@ v_q(x)>\delta+\epsilon.
 \tag{7}
 \]
 
-这是此前 p-block reentry gate 的 exact Hensel capacity condition。下面的重点是：
-(7) 与 actual root receipt 并不独立。
+记 \(k=\delta+\epsilon\)。因 \(q\nmid p\)，(7) 等价于完整的
+\(q\)-进离散对数 lift
+
+\[
+\boxed{
+p^\lambda\equiv1+p^{-1}\pmod {q^k},
+\qquad
+p^\lambda\not\equiv1+p^{-1}\pmod {q^{k+1}}.}
+\tag{7a}
+\]
+
+这里的逆元在相应的 \(q\)-进模数中理解；它直接来自
+
+\[
+P_\lambda=p\bigl(p^\lambda-(1+p^{-1})\bigr).
+\]
+
+模 \(q\) 时，\(p\equiv L^{-1}\) 及 \(s(L+1)\equiv1\) 给出
+
+\[
+p^\lambda\equiv1+p^{-1}
+\quad\Longleftrightarrow\quad
+L^\lambda\equiv s\pmod q.
+\]
+
+所以既有 gate 正是 (7a) 的 first layer；真正 overcapacity 还要求它 lift 到
+\(q^k\) 而不 lift 到下一层。特别地，若
+\(1+p^{-1}\notin\langle p\rangle\subset(\mathbb Z/q^k\mathbb Z)^\times\)，
+该分支为空；否则 \(\lambda\) 落在模
+\(\operatorname{ord}_{q^k}(p)\) 的唯一剩余类中，并仍须满足 (7a) 的 exact
+non-lift 条件。下面的重点是：(7) 与 actual root receipt 并不独立。
 
 ## 3. 根高度的精确 Hensel 层
 
@@ -212,22 +242,22 @@ q^\delta\mid p^{\lambda-1}+m.
 式 (11)、(14) 是同一 overcapacity 事件在 root-height 与 gap/receipt 坐标中的
 两张高层投影。它们不是可任意指定的 q-local CRT 标签。
 
-还可把 \(r\) 本身锁定到同一 q-adic 层。既有 actual cross-mod identity 为
+还可把 \(r\) 本身写到同一 q-adic 层，但这不是另一个独立的 q-local gate。由
+\(T=p^2r-(p+1)/2\) 及 \(P_\lambda=p^{\lambda+1}-p-1\)，有精确恒等式
 
 \[
-(p+e+\sigma)\widehat D
-=(p^2-1)\frac{m+2r}{q^\delta}.
+\boxed{2T-P_\lambda=p^2\bigl(2r-p^{\lambda-1}\bigr).}
 \tag{15}
 \]
 
-从 (14) 中减去 (15)，并在模 \(q^\epsilon\) 下化简，得到
+pure-\(T\) complete-excess relay 给出 \(v_q(T)=\delta\)，而 (7) 给出
+\(v_q(P_\lambda)=\delta+\epsilon\)。将 (15) 除以 \(p^2q^\delta\)，并用
+\(D(pE+e)=2(p^2-1)T\)，得到
 
 \[
 \begin{aligned}
 \frac{2r-p^{\lambda-1}}{q^\delta}
-&\equiv\widehat D\left(
-\frac{p+e+\sigma}{p^2-1}-\frac{p+e}{p^2}
-\right)\\
+&\equiv2p^{-2}\frac{T}{q^\delta}\\
 &\equiv
 \frac{(pE+e)\widehat D}{p^2(p^2-1)}
 \pmod {q^\epsilon}.
@@ -235,14 +265,17 @@ q^\delta\mid p^{\lambda-1}+m.
 \tag{16}
 \]
 
-complete-excess relay 给出 \(v_q(pE+e)=0\)，而 pure-\(T\) 分派给出
-\(q\nmid p^2(p^2-1)\widehat D\)。故 (16) 的右侧是 q-单位，得到第三条 exact
-signature：
+故 (16) 的右侧是 q-单位，得到第三条 exact signature：
 
 \[
 \boxed{v_q\bigl(2r-p^{\lambda-1}\bigr)=\delta.}
 \tag{17}
 \]
+
+用 actual cross-mod identity 与 (14) 相减也会得到同一 (16)，但 (15) 表明其
+来源已完全被 \(T\) 的既有 \(q^\delta\) 容量和 \(P_\lambda\) 的 \(q^k\) Hensel
+条件决定。因此 (17) 是把这两个输入投影到 actual \(r\) 坐标的精确记录，不应被
+重复计作独立排除条件。
 
 ## 5. Canonical root realization filter
 
@@ -270,9 +303,11 @@ uw&\equiv1+p^{\lambda-1}\pmod {q^\delta},
 
 这里 \(u\) 是 \((p^2+p+1)/3\) 的实际除子，而不是可自由选择的 local root
 residue；\(w\) 还须满足 \(u=\gcd(2r+1,(p^2+p+1)/3)\)。因此 (19) 是将
-p-block overcapacity 投递到 canonical root realization 的第一张 exact capacity map。
-它尚未排除所有这样的 \((u,w)\)，但任何后续 universal no-go 或 strict descent 都必须
-处理这两条非 lift 条件，而不能只检查 q 的 first-layer discrete log。
+p-block overcapacity 写成 canonical root coordinates 的 exact capacity map。
+它不是额外独立的 q-local no-go：第一行的 mod-\(q\) 部分已与 low-gap negative root
+一致，第二行则是 (15) 的坐标重写。其价值在于后续若使用 actual divisor/quotient
+structure 或构造 strict descent，必须处理这两条 non-lift 条件，而不能只检查
+q 的 first-layer discrete log。
 
 ## 6. 局部兼容边界
 
@@ -341,11 +376,12 @@ terminal/lift adapter。
 
 ## 7. 对全局出口目标的意义
 
-该引理将 p-block high-capacity branch 的最后自由度进一步压缩为一个实际 root-height
-Hensel signature。后续可尝试把 (10) 或 (14) 与 \(h=3\gcd(2r+1,M)\)、
-\(D\mid K\) 的实际实现性联立，证明它们触发已有 Type I/II terminal，或构造满足
-E1--E5 的严格递降。当前它只是一张必要容量/来源图：没有 terminal、没有全域解提升，
-也没有全局势下降。
+该引理将 p-block high-capacity branch 的真正强化固定为 (7a) 的
+\(q^{\delta+\epsilon}\)-进离散对数 non-lift，并把它投影到 actual root-height、gap
+和 canonical divisor coordinates。后续可尝试把 (7a)、(10) 或 (14) 与
+\(h=3\gcd(2r+1,M)\)、\(D\mid K\) 的实际实现性联立，证明它们触发已有 Type I/II
+terminal，或构造满足 E1--E5 的严格递降。当前它只是一张必要容量/来源图：没有
+terminal、没有全域解提升，也没有全局势下降。
 
 ## 8. 聚焦复现
 
@@ -353,5 +389,5 @@ E1--E5 的严格递降。当前它只是一张必要容量/来源图：没有 te
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
 ~~~
 
-该 verifier 重放 (20)--(24) 的局部高过容量控制，逐项检查 (7)、(9)、(11)、(14)、(17)，
+该 verifier 重放 (20)--(24) 的局部高过容量控制，逐项检查 (7)、(7a)、(9)、(11)、(14)、(17)，
 并显式检查其不满足 canonical root endpoint 条件。

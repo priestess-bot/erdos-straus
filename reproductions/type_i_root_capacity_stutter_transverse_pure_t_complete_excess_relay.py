@@ -286,6 +286,8 @@ def verify_p_free_pblock_overcapacity_root_height_control() -> None:
     delta = valuation(d_value, q)
     epsilon = valuation(e_multiplier, q)
     q_capacity = delta + epsilon
+    q_capacity_modulus = q**q_capacity
+    q_capacity_next_modulus = q ** (q_capacity + 1)
     endpoint_modulus = (p * p + p + 1) // 3
     endpoint_u = gcd(2 * r_value + 1, endpoint_modulus)
 
@@ -306,6 +308,9 @@ def verify_p_free_pblock_overcapacity_root_height_control() -> None:
         (p * e_multiplier + receipt_quotient)
         * (d_value // (q**delta))
         * pow(p * p * (p * p - 1), -1, q**epsilon)
+    ) % (q**epsilon)
+    expected_r_unit_from_t = (
+        2 * (t_capacity // (q**delta)) * pow(p * p, -1, q**epsilon)
     ) % (q**epsilon)
 
     if not (
@@ -331,12 +336,19 @@ def verify_p_free_pblock_overcapacity_root_height_control() -> None:
         and valuation(x_value, q) == 3 > q_capacity
         and gcd(x_value, k_one) == gcd(x_value, pblock_capacity)
         and valuation(pblock_capacity, q) == q_capacity
+        and (p**p_height - (1 + pow(p, -1, q_capacity_modulus)))
+        % q_capacity_modulus
+        == 0
+        and (p**p_height - (1 + pow(p, -1, q_capacity_next_modulus)))
+        % q_capacity_next_modulus
+        != 0
         and valuation(root_height, q) == delta
         and root_unit == expected_root_unit == 5
         and m_height % (q**delta) == 0
         and m_unit == expected_m_unit == 1
+        and 2 * t_capacity - pblock_capacity == p * p * r_height
         and valuation(r_height, q) == delta
-        and r_unit == expected_r_unit == 1
+        and r_unit == expected_r_unit == expected_r_unit_from_t == 1
         # This is deliberately a local receipt-algebra control, not an endpoint.
         and endpoint_u == 1
         and height != 3 * endpoint_u

@@ -997,7 +997,9 @@ p-block identity 在局部上相容；它同时验证一条新的 actual-root-he
 `h=3*gcd(2r+1,(p^2+p+1)/3)`，因此它只阻断局部无解论证，不冒充实际递归状态。
 同一计算还验证 `q^delta` 恰整除 `2r-p^(lambda-1)`；对真实 canonical endpoint，
 这会把 overcapacity 强制成 endpoint divisor `u` 与其 root quotient `w` 的两条
-非 lift q-adic 条件。
+非 lift q-adic 条件。该 `r`-式由 `2T-P_lambda=p^2(2r-p^(lambda-1))` 直接
+从既有 `T` 容量与 p-block polynomial 得到，故不是独立 local exclusion；真正的
+强化是 `p^lambda = 1+p^(-1) mod q^(delta+epsilon)` 且不能 lift 到下一 q 层。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify

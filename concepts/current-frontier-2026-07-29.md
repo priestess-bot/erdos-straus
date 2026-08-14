@@ -8683,3 +8683,36 @@ q^k\parallel p^{\lambda+1}-p-1.
 饱和到旧容量高度。\(p=433,q=11\) 的 gate-hit 控制中该 polynomial 只有一层
 11，而旧容量为两层，明确落在已吸收分支。后续应优先研究这条精确等式的 actual
 provenance 或 terminal 接口，而不是继续只做 mod-\(q\) 的离散对数筛选。
+
+## 2026-08-14：真正 overcapacity 是高阶离散对数，根坐标式不是额外收费
+
+令 \(k=\delta+\epsilon\)。精确容量式可等价地改写为
+
+\[
+q^k\parallel p^{\lambda+1}-p-1
+\quad\Longleftrightarrow\quad
+p^\lambda\equiv1+p^{-1}\pmod {q^k},
+\qquad
+p^\lambda\not\equiv1+p^{-1}\pmod {q^{k+1}}.
+\]
+
+其 mod-\(q\) 化简正是已有 \(L^\lambda\equiv s\pmod q\) gate；所以真正的
+high overcapacity 不是另一条 first-layer 条件，而是这条离散对数 lift 到旧容量高度、
+并在下一层精确停止。若 \(1+p^{-1}\) 不在
+\(\langle p\rangle\subset(\mathbb Z/q^k\mathbb Z)^\times\)，该 high branch
+立即为空；否则 \(\lambda\) 被限制在一个模
+\(\operatorname{ord}_{q^k}(p)\) 的类中。
+
+此前得到的实际 root-height、\(m\) 与 \(r\) 坐标式仍有用，但它们必须正确计量。
+特别地
+
+\[
+2T-(p^{\lambda+1}-p-1)=p^2(2r-p^{\lambda-1})
+\]
+
+表明 \(q^\delta\parallel2r-p^{\lambda-1}\) 已由
+\(v_q(T)=\delta\) 和 \(v_q(P_\lambda)=\delta+\epsilon\) 决定。故它不是独立的
+local exclusion；把 \(h=3u,2r+1=uw\) 代入后得到的 canonical divisor 条件也是
+同一容量关系的坐标化。当前实质进展是把 q 的重入从 mod-\(q\) gate 收紧为可证伪的
+\(q^k\)-adic log/non-lift gate；它尚未提供 Type I/II terminal 或可提升递降。详见
+[横向 pure-\(T\) p-free p-block \(q\)-过容量的实际根高度 Hensel 桥](../claims/type-I-root-capacity-stutter-transverse-pure-t-p-free-overcapacity-root-height-lift.md)。
