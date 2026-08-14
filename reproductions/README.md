@@ -894,8 +894,8 @@ python3 reproductions/type_i_root_capacity_stutter_pair_root_divisor_gate.py --v
 
 type_i_root_capacity_stutter_cubic_hard_root_wall.py 固定核对 actual stutter
 参数对的二次包络
-\(7L^2-4\mathcal B=(L+2a-2m)(3L-2a+2m)\)、由其导出的
-\(p<28L^3\) 尺度，以及 \(189h^6>2p^4\) 的整数形式。它只复放既有
+\(13L^2-9\mathcal B=(L+3a-3m)(4L-3a+3m)\)、由其导出的
+\(p<19L^3\) 尺度，以及 \(513h^6>8p^4\) 的整数形式。它只复放既有
 p=54481 shadow gate 的代数尺度，不把该合数控制当作 actual receipt，也不扫描
 素数、分母、参数对或 selector history。
 
