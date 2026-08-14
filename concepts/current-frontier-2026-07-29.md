@@ -7594,3 +7594,41 @@ u\mid\mathcal B(m,a):=L^2+L(m-a)+(m-a)^2.}
 也不能单独闭合 global exit。下一步应把这张 menu 与 canonical valuation 和 E1--E5
 target contract 联立，而不是继续放松成抽象 divisor 交集。详见
 [参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md)。
+
+## 2026-08-14：actual stutter 被压到 \(p^{2/3}\) 高度墙之外
+
+参数对 gate 还可与 actual 的 \(m\ge3\) 及模三系数分类直接联立，而无需固定
+\((m,a)\)。令 \(L=am\)、\(s=m-a\)、\(\mathcal B=L^2+Ls+s^2\)。分类先给出
+\(a\ge2\)、\(L\ge6\)，并且有精确包络分解
+
+\[
+7L^2-4\mathcal B
+=(L+2a-2m)(3L-2a+2m)>0.
+\]
+
+所以 \(u\mid\mathcal B\) 与
+\(Lp=9u^2+3(a-1)u+s\) 给出
+
+\[
+p<28L^3.
+\]
+
+另一方面 actual stutter 的
+\(h^2-h+m=aD\)、\(D\ge(m-1)p+2\) 及 \(m<h\) 给出
+
+\[
+h^2>\frac23Lp.
+\]
+
+故每个 actual proper-root stutter 都满足
+
+\[
+\boxed{189h^6>2p^4.}
+\]
+
+其逆否新增一个无扫描的 arithmetic strict-carry 带：
+\(189h^6\le2p^4\) 时，非严格 cofactor 不可能发生。它把 hard-root 残余压到
+\(h=\Omega(p^{2/3})\)，与 \(h^2\le15p\) 的固定带互补。但这仍未获得 typed target、
+E1--E5、identity lift 或全局势；下一步必须将这个高根墙接到 actual valuation 的
+逐素数 residual 与可注册 selector adapter，而不是把 strict carry 直接写成递归边。详见
+[actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md)。
