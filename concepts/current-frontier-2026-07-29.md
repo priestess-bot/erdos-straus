@@ -7771,6 +7771,32 @@ s=\frac{q+1}{2},\qquad C=\frac{p+s}{4q},
 新的真正困难支路。详见
 [横向 stutter 残余的 \(m\) 与 \(m+2\) 局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md)。
 
+## 2026-08-14：未终止 overlap 残余必须以同步赋值进入 T 侧
+
+继续检查上一条分流中没有直接终端的 \(p\pm1\) overlap。若奇素数 \(q\mid D_*\)
+还满足 \(q\mid m\)，则不只得到 \(q\mid p+1,h-1\)，而是精确有
+
+\[
+v_q(m)=v_q(p+1)=v_q(h-1)<v_q(D).
+\]
+
+若 \(q\mid m+2\) 且落入 \(q\mid p-1,h+1\) 支，则同样强制
+
+\[
+v_q(m+2)=v_q(p-1)=v_q(h+1)<v_q(D).
+\]
+
+因此令 \(t=v_q(D)-b\)，两个 overlap 的 \(q\)-primary residual 都精确满足
+
+\[
+v_q(D_*)=v_q(D_T)=t,\qquad q^t\mid T.
+\]
+
+这把未终止的 \(p-1,h+1\) 困难支路从一般因子重叠收缩为“同步基准赋值 + \(T\)-side
+excess”。它仍不界定 \(t\)，也不强制外部源或递降；下一步应读取这个 excess 在 actual
+complete-excess receipt 的 \(T\) 赋值和 source provenance 中是否可持续。详见
+[横向 stutter overlap 残余的三重赋值对齐与 \(T\) 余量](../claims/type-I-root-capacity-stutter-transverse-overlap-valuation-alignment.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt

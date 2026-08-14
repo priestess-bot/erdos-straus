@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 735 |
+| 数学状态 | `established` | 736 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 576 |
+| 证明来源 | `repository_derivation` | 577 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 712 |
+| 审阅状态 | `internal_review` | 713 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -782,6 +782,7 @@
 | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [横向 stutter overlap 残余的三重赋值对齐与 T 余量](../claims/type-I-root-capacity-stutter-transverse-overlap-valuation-alignment.md) (`type-I-root-capacity-stutter-transverse-overlap-valuation-alignment`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md) (`type-I-root-capacity-stutter-transverse-residual-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 残余的 m 与 m 加二局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md) (`type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |

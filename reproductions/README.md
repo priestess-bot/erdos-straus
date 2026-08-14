@@ -875,6 +875,15 @@ receipt。
 python3 reproductions/type_i_root_capacity_stutter_transverse_residual_local_terminal_dispatch.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_overlap_valuation_alignment.py` 固定验证横向
+residual 在 `p+1,h-1,m` 与 `p-1,h+1,m+2` overlap 中的三重赋值对齐，以及
+`D*` 和 `D_T` 中相同的 T-side excess。两个控制都只是抽象 stutter 算术，明确不
+冒充 actual root receipt，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_valuation_alignment.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half
