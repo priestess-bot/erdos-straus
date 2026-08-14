@@ -12,9 +12,12 @@ statement: >-
   (M_T,d_T,n_T;A_T)=(L,delta,n-4Lh;L)，其中 Md/L=ph+delta、1<=delta<p。
   从低 child 到该 target 的组合宏有实际 universal-p anchor provenance、Sol(p)
   恒等 lift 和严格 E5；target 是 marked absorb 或新的 overflow。两支的 delta 都
-  不等于 1；若 n_T<p，则该 target 必为 high overflow，且 L'=L delta 立即给出第二条
-  fixed-n 饱和严格边。该结论关闭该 q=1 子族的第二-anchor high-overflow 接口并分流
-  其低-n 后继，但不证明后续 Type I selector 全称、terminal membership 或最终 n<p exit。
+  不等于 1；每个仍为 overflow 的 macro target 都有 M_T=A_T=L、d_T=delta>=2，故
+  L'=L delta 给出第二条完整乘积 strict edge。n_T<p 时它正是有界 fixed-n 饱和边；
+  n_T>=p 时同一构造以无界 support 继续。若 macro target 已低于 p，则它是 marked
+  absorb 并离开 high-overflow interface。该结论关闭该 q=1 子族的第二-anchor
+  high-overflow 接口，但不证明后续 Type I selector 全称、terminal membership 或最终
+  n<p exit。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -24,6 +27,7 @@ depends_on:
   - type-I-universal-p-source-capacity-anchor-orbit
   - type-I-overflow-fixed-n-quotient-fold-descent
   - type-I-overflow-fixed-n-bounded-divisor-saturation
+  - type-I-overflow-unbounded-full-product-quotient-fold
   - denominator-escape-state-contract
 topics:
   - type-II
@@ -312,7 +316,7 @@ q_one_full_carrier_second_anchor_fixed_n_escape_v1
 
 其第一局部坐标已经严格下降。
 
-## 5. unit-defect 排除与低 \(n_T\) 的第二条强制边
+## 5. unit-defect 排除与第二条强制边
 
 对 (6) 的任意 quotient-fold carrier，有一个直接的 unit-defect 判据。由 (4) 和
 \(Md=L(ph+\delta)\)，
@@ -361,51 +365,75 @@ p\mid4L+1.}
 \tag{26}
 \]
 
-现在附加 \(n_T<p\)。因为 \(n_T\equiv p\equiv1\pmod4\)，有 \(n_T\le p-4\)。
-而 macro target 本身必为 high chart：奇数支
+macro target 的 determinant 正规形已经有
+
+\[
+M_T=A_T=L,
+\qquad d_T=\delta.
+\tag{27}
+\]
+
+若 \(R_T<p\)，它按定义已是 marked absorb，因而 high-overflow interface 到此结束。
+以下只考虑 \(R_T>p\) 的 persistent overflow target。令
+
+\[
+S_T=L\delta=\frac{pn_T-1}{4}.
+\tag{28}
+\]
+
+由 (26) 有 \(S_T>L\)。因此完整乘积 quotient-fold 可取 \(L'=S_T\)，其商为一，
+并给出第二个 target
+
+\[
+\boxed{
+M_U=A_U=S_T,
+\qquad d_U=1,
+\qquad n_U=n_T,
+\qquad
+R_U=(p-1)n_T-1,
+\qquad K_U=S_T(p-1).}
+\tag{29}
+\]
+
+直接有
+
+\[
+pR_U+1=4K_U,
+\qquad S_T\mid K_U,
+\qquad
+\left\lfloor\frac{B_p}{S_T}\right\rfloor
+<
+\left\lfloor\frac{B_p}{L}\right\rfloor,
+\tag{30}
+\]
+
+其中最后的不等式只用 \(S_T/L=\delta\ge2\) 与 \(L\le B_p\)。所以 (29) 是从
+已持久 macro target 出发的第二条 strict full-product edge；它原样继承 scope 与
+\(\operatorname{Sol}(p)\) 恒等 lift。其 E1 是本卡第一宏的完整 receipt 加 target
+determinant，E2--E3 是 (29)--(30) 的 canonical charged state 重算，E4 是恒等 lift，
+E5 由 (30) 支付。这里没有用 transient receipt 的内部数值作为势源。
+
+\(n_T<p\) 只是 (29) 的一个有界特例。因为 \(n_T\equiv p\equiv1\pmod4\)，此时
+\(n_T\le p-4\)，而 macro target 本身必为 high chart：奇数支
 
 \[
 4L_o-p=56t+7>p,
-\tag{27}
+\tag{31}
 \]
 
 偶数支则由 \(q_*\ge3\) 得
 
 \[
 4L_e-p=36sq_*-48s-1\ge60s-1>p.
-\tag{28}
+\tag{32}
 \]
 
-所以 \(R_T=4L-n_T>p\)。令
-
-\[
-S_T=L\delta=\frac{pn_T-1}{4}.
-\tag{29}
-\]
-
-由 (26) 有 \(S_T>L\)，由 \(n_T\le p-4\) 有 \(S_T\le B_p\)。因此既有 fixed-\(n\)
-饱和引理可以取 \(L'=S_T\)，给出第二条严格边
-
-\[
-R_{S_T}=(p-1)n_T-1,
-\qquad
-K_{S_T}=S_T(p-1),
-\qquad
-\left\lfloor\frac{B_p}{S_T}\right\rfloor
-<
-\left\lfloor\frac{B_p}{L}\right\rfloor.
-\tag{30}
-\]
-
-当 \(n_T=1\) 时这一 successor 是 marked absorb；当 \(n_T\ge5\) 时它仍是
-overflow。故 macro 后没有立即饱和递降的精确边界至少收缩为
-
-\[
-\boxed{n_T\ge p.}
-\tag{31}
-\]
-
-式 (31) 不是对该残余无出口的断言；它只排除了本卡明确构造的第二条饱和边。
+所以 \(R_T=4L-n_T>p\)，且 \(S_T\le B_p\)。这时 (29) 正是已有 bounded fixed-\(n\)
+饱和边；\(n_T=1\) 时 \(U\) 是 marked absorb，\(n_T\ge5\) 时 \(U\) 仍是 overflow。
+若 \(n_T\ge p\)，\(S_T\) 可以越过 \(B_p\)，但 (29) 仍由无界 complete-product
+contract 保持严格。故本卡的第二条边不留下一个 \(n_T\ge p\) 的 high-overflow
+算术残余；其真正后续边界是 low marked-absorb target 的处理，以及 \(U\) 的 \(d=1\)
+后继选择器。
 
 ## 6. 范围与后果
 

@@ -401,24 +401,25 @@ def even_macro(t: int) -> dict[str, object]:
     return result
 
 
-def postmacro_saturation(row: dict[str, object]) -> dict[str, object]:
-    """Use the forced nonunit defect when the macro target has n_T < p."""
+def postmacro_full_product(row: dict[str, object]) -> dict[str, object]:
+    """Close every high macro target with its forced full-product fold."""
     prime = int(row["prime"])
     fold = row["fold"]
     support = int(row["target"]["support"])
     defect = int(fold["delta"])
     n = int(fold["n"])
     B_p = (prime - 1) ** 2 // 4
+    target_R = int(row["target"]["R"])
     if not (
         defect >= 2
         and prime * n == 4 * support * defect + 1
         and n % 4 == 1
     ):
         raise AssertionError("postmacro input lost its nonunit determinant")
-    if n >= prime:
+    if target_R < prime:
         return {
-            "status": "high_n_residual",
-            "reason": "fixed-n saturation requires n_T < p",
+            "status": "marked_absorb_exit",
+            "reason": "the first macro already left the high-overflow interface",
             "n_T": n,
             "prime": prime,
             "defect": defect,
@@ -429,28 +430,37 @@ def postmacro_saturation(row: dict[str, object]) -> dict[str, object]:
     successor_K = S * (prime - 1)
     expected_chart = second_anchor.canonical_chart(prime, S)
     source_potential, successor_potential = B_p // support, B_p // S
-    target_R = int(row["target"]["R"])
+    successor_state = macro_state(
+        prime,
+        successor_R,
+        successor_K,
+        S,
+        "marked_absorb" if successor_R < prime else "overflow",
+        "overflow_fixed_n_full_product_quotient_fold_v1",
+    )
+    bounded_saturation = n < prime
     if not (
-        n <= prime - 4
-        and target_R > prime
+        target_R > prime
         and S == (prime * n - 1) // 4
-        and support < S <= B_p
+        and support < S
         and prime * successor_R + 1 == 4 * successor_K
         and (successor_R, successor_K)
         == (int(expected_chart["R"]), int(expected_chart["K"]))
         and successor_potential < source_potential
+        and successor_state["state_id"]
+        != row["target"]["state_id"]
     ):
-        raise AssertionError("postmacro fixed-n saturation did not replay")
+        raise AssertionError("postmacro full-product fold did not replay")
+    if bounded_saturation and not (
+        n <= prime - 4 and S <= B_p and target_R > prime
+    ):
+        raise AssertionError("bounded saturation specialization did not replay")
     return {
-        "status": "immediate_fixed_n_saturation",
+        "status": "strict_full_product_fold",
+        "bounded_saturation_specialization": bounded_saturation,
         "source": {"support": support, "n": n, "d": defect, "R": target_R},
         "selected_divisor": S,
-        "successor": {
-            "R": successor_R,
-            "K": successor_K,
-            "support": S,
-            "state_class": "marked_absorb" if successor_R < prime else "overflow",
-        },
+        "successor": successor_state,
         "potential": {"source": source_potential, "successor": successor_potential},
         "e1_e5": {f"E{index}": True for index in range(1, 6)},
     }
@@ -466,7 +476,7 @@ def verify() -> dict[str, object]:
         241: {"L": 1305, "delta": 97, "n": 2101, "R": 3119, "K": 187920},
     }
     for row in [*odd_rows, *even_rows]:
-        row["postmacro_saturation"] = postmacro_saturation(row)
+        row["postmacro_full_product"] = postmacro_full_product(row)
         prime = int(row["prime"])
         if not all(row["e1_e5"].values()):
             raise AssertionError(f"macro E1--E5 failed for p={prime}")
@@ -484,19 +494,29 @@ def verify() -> dict[str, object]:
         and even_rows[0]["selected_carrier"]["support_retained"]
     ):
         raise AssertionError("reset and support-preserving control split changed")
-    saturation_primes = {
+    full_product_primes = {
         int(row["prime"])
         for row in [*odd_rows, *even_rows]
-        if row["postmacro_saturation"]["status"] == "immediate_fixed_n_saturation"
+        if row["postmacro_full_product"]["status"] == "strict_full_product_fold"
     }
-    if saturation_primes != {73, 2521}:
-        raise AssertionError("postmacro low-n saturation controls changed")
+    bounded_saturation_primes = {
+        int(row["prime"])
+        for row in [*odd_rows, *even_rows]
+        if row["postmacro_full_product"].get("bounded_saturation_specialization")
+    }
+    if full_product_primes != {73, 193, 241, 769, 2521, 118801}:
+        raise AssertionError("postmacro full-product controls changed")
+    if bounded_saturation_primes != {73, 2521}:
+        raise AssertionError("postmacro bounded-saturation controls changed")
+    if odd_rows[1]["postmacro_full_product"]["status"] != "marked_absorb_exit":
+        raise AssertionError("postmacro low-chart exit control changed")
     return {
         "status": "verified",
         "adapter": ADAPTER,
         "odd_controls": odd_rows,
         "even_controls": even_rows,
-        "postmacro_saturation_controls": sorted(saturation_primes),
+        "postmacro_full_product_controls": sorted(full_product_primes),
+        "bounded_saturation_controls": sorted(bounded_saturation_primes),
         "scope": (
             "A strict macro through the second-anchor transient overflow only; no "
             "terminal membership, total Type I selector, or final n<p exit is asserted."
