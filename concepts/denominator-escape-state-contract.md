@@ -57,6 +57,7 @@ used_by:
 - type-II-odd-kernel-overflow-natural-tail-relation-graph
 - type-II-relation-reach-proper-endpoint-descent
 - type-II-relation-reach-gcd-shadow-endpoint-descent
+- type-II-q-one-full-carrier-phase-root-entry
 - type-I-path-anchored-atomic-split-complete-excess-admission
 sources:
 - claim: marked-solution-descent-closure
@@ -85,8 +86,10 @@ sources:
   role: source-reachable-proper-endpoint-E1-E5-contract
 - claim: type-II-relation-reach-gcd-shadow-endpoint-descent
   role: universal-q-owned-shadow-endpoint-E1-E5-and-q-one-base
+- claim: type-II-q-one-full-carrier-phase-root-entry
+  role: ordinary-q-one-G-to-fresh-full-carrier-Type-I-phase-reindexing
 visibility: public
-last_checked: '2026-08-13'
+last_checked: '2026-08-15'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -1375,6 +1378,71 @@ terminal。
 该边降低的是 endpoint phase 的 \(q\)，不是 equation target 的分母 \(p\)。只有
 phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许把它标为 E5；任何
 无付款的较大 \(q\) reset 都会使该资格失效。
+
+### 6.8 \(q=1\) G 到 full-carrier Type I tree 的 phase-root 重索引
+
+ordinary \(q=1\) G endpoint 不必回退到失败的 \(R=3\) companion chart。定义
+
+\[
+X=\frac{p+3}{4},
+\qquad
+R_X=\frac{8X+1}{3},
+\qquad
+K_X=X(R_X-2).
+\tag{40}
+\]
+
+该选择由根素数 \(p\) 的闭式规则预先确定；它不是从当前 raw node、charged support 或
+事后命中的 Type I chart 倒推。它是唯一低图表 \(3\le R\le p-2\) 中满足 \(X\mid K\)
+的 chart，且有独立的 universal raw source
+
+\[
+\bigl(p,R_X(p-1)-p,p-1\bigr)\longmapsto(1,R_X-1,1).
+\tag{41}
+\]
+
+因此只对下列 ordinary source state 允许具名 root-entry：
+
+```text
+q_one_full_carrier_phase_root_entry_v1
+source phase         = type_ii_q_one_g_endpoint
+source q             = 1
+source marked set    = Sol(p)
+target scope         = fresh_source_tree_only
+target normal form   = type_i_full_carrier_low_root_v1
+target chart          = (p, R_X, K_X)
+target support        = 1
+```
+
+它是同方程、同解集的有向 phase reindexing，而不是把 Type II raw word 延续为 Type I
+raw word。回执必须保存 q=1 G separator、(40)--(41)、actual p-edge 和 source/target
+state digest。E4 为
+
+\[
+\Phi:\operatorname{Sol}(p)\longrightarrow\operatorname{Sol}(p),
+\qquad\Phi(u)=u.
+\tag{42}
+\]
+
+该映射不读取任何未知解，也不适用于非平凡 marked state。
+
+它的 E5 只在如下不可回返 global phase prefix 中成立：
+
+\[
+\operatorname{rank}(\text{Type II q=1 G})=2,
+\quad
+\operatorname{rank}(\text{full-carrier Type I tree})=1,
+\quad
+\operatorname{rank}(n<p)=0,
+\tag{43}
+\]
+
+非终端动作仅可为 \(2\to1\)、\(1\to1\) 或 \(1\to0\)；full-carrier tree 之后的
+Type II 证书只能是 terminal leaf，禁止 \(1\to2\) 重入。于是 root-entry 的势首坐标
+严格下降。该规则不替代 phase-1 的 total selector；任何未通过其自身 E1--E5 的 Type I
+候选仍不得递归。root 后的第一个 complete-excess step 已由 carrier rail 的 parity
+dispatch 提供严格 local support payment。完整 receipt 与边界见
+[q=1 G full-carrier phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md)。
 
 ## 7. 明确不构成递降的对象
 

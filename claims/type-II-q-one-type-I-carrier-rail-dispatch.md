@@ -257,6 +257,44 @@ R_X+4X=16t+3+24t+4=40t+7>p-2.
 所以 (R=3) 不是错误的 chart，而是 carrier rail 的最小、完全不保留 (X) 的端点。
 与之相对，(16) 是同一 rail 的唯一低区间 full-carrier 端点。
 
+### 3.1 该唯一 root 的显式实际 source
+
+唯一性不是从目标反向补造一个任意 raw parent。对每个核心 (p) 先由闭式 (16) 定义
+root ((R_X,K_X))，再取已预先定义的 universal source：
+
+\[
+\boxed{
+(U_X,V_X,m_X)
+=\bigl(p,\ R_X(p-1)-p,\ p-1\bigr).
+}
+\tag{21a}
+\]
+
+它满足
+
+\[
+U_X+V_X=R_Xm_X,
+\qquad
+(U_X,V_X)=1,
+\qquad
+p\nmid K_X.
+\tag{21b}
+\]
+
+所以唯一的 (p)-raw edge（shift 为 (1)，且无 gcd reduction）精确给出
+
+\[
+\left(
+\frac{U_X}{p},\frac{V_X+R_X}{p},\frac{m_X+1}{p}
+\right)
+=(1,R_X-1,1).
+\tag{21c}
+\]
+
+这使 full-carrier root 的**目标侧** E1 source/path provenance 完全显式。它本身仍不把
+任意 Type II raw word 变为该 source；跨相位的 root-entry 语义须由一个独立、
+target-independent policy 准入。
+
 ## 4. full-carrier root 的强制首个 bundle
 
 设一个将 (16) 预先声明为 `fresh_source_tree_only` root 的独立 policy 已经通过 E1

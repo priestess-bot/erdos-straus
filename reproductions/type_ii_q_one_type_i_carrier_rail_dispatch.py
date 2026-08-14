@@ -75,12 +75,22 @@ def full_carrier_dispatch(prime: int) -> dict[str, object]:
     root = carrier_chart(prime, X)
     R, K = root["R"], root["K"]
     M = R - 1
+    raw_source = (prime, R * (prime - 1) - prime, prime - 1)
+    raw_anchor = (1, R - 1, 1)
     if not (
         root["R"] == 16 * t + 3
         and K == X * (16 * t + 1)
         and 3 <= R <= prime - 2
         and gcd(M, K) == 1
         and M == 16 * t + 2 < prime
+        and raw_source[0] + raw_source[1] == R * raw_source[2]
+        and gcd(raw_source[0], raw_source[1]) == 1
+        and K % prime != 0
+        and raw_source[0] // prime == raw_anchor[0]
+        and (raw_source[1] + R) % prime == 0
+        and (raw_source[1] + R) // prime == raw_anchor[1]
+        and (raw_source[2] + 1) % prime == 0
+        and (raw_source[2] + 1) // prime == raw_anchor[2]
     ):
         raise AssertionError("full-carrier low root changed")
 
@@ -97,6 +107,12 @@ def full_carrier_dispatch(prime: int) -> dict[str, object]:
             raise AssertionError("odd-t marked absorb formula changed")
         return {
             "root": root,
+            "universal_raw_source": {
+                "U": raw_source[0],
+                "V": raw_source[1],
+                "m": raw_source[2],
+                "p_edge_anchor": list(raw_anchor),
+            },
             "full_external_bundle": M,
             "dispatch": {"kind": "marked_absorb", "R": R_M, "K": K_M, "support": M},
         }
@@ -123,6 +139,12 @@ def full_carrier_dispatch(prime: int) -> dict[str, object]:
         raise AssertionError("even-t overflow fixed-n dispatch changed")
     return {
         "root": root,
+        "universal_raw_source": {
+            "U": raw_source[0],
+            "V": raw_source[1],
+            "m": raw_source[2],
+            "p_edge_anchor": list(raw_anchor),
+        },
         "full_external_bundle": M,
         "overflow": {"R": R_M, "K": K_M, "n": n, "d": d},
         "dispatch": {"kind": "fixed_n_edge", "R": R_d, "K": K_d, "support": d},
