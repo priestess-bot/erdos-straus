@@ -1,0 +1,336 @@
+---
+kind: claim
+claim_id: type-II-q-one-canonical-root-full-product-predecessor-rigidity
+title: q=1 规范根的一步完整乘积前驱刚性
+statement: >-
+  令 p=24t+1 为核心素数，取 q=1 的规范 Type-I 根 r=t，记
+  g=(p+1)/2、T=p^2t-g、A=gT 与 n=(4A+1)/p。任何以完整乘积
+  quotient-fold 一步精确到达该根的 determinant source，都且只由一个
+  d|A、1<=d<p 给出：M=A/d、K=M(p-d)、R=4M-n。每个此类 source 都是
+  high-R overflow，且其 carrier M>B_p；d=1 只是同 determinant chart 的
+  uncharged support rebase，d>1 才是不同 chart 的前驱。特别地 d=g 给出
+  一个固定的 p-only 规范 pre-root：(M,d,R,K)=(T,g,p[2t(p-1)-1],T(p-1)/2)。
+  节点 {C,R-C}、C=(p-1)/2 是 primitive 且 gcd(C,K)=C，故只要有独立的
+  actual raw receipt 到达该节点，就能无歧义解码此 determinant source，并由
+  full-product fold 严格支付 A_s=1 到 A 的外层秩。该算法身份、E2、E4 和 E5
+  并不产生 E1 或 typed E3：目前没有全称的、target-independent raw-entry
+  证明，故本卡不是全局 Type-I exit 或 verified edge。
+claim_status: established
+proof_provenance: repository_derivation
+review_status: internal_review
+depends_on:
+  - type-II-q-one-canonical-root-slice-support-disjointness
+  - type-I-overflow-unbounded-full-product-quotient-fold
+  - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+  - type-I-raw-universal-p-parent-root-policy-boundary
+  - denominator-escape-state-contract
+topics:
+  - type-II
+  - q-one
+  - type-I
+  - canonical-root
+  - overflow
+  - full-product
+  - inverse-classification
+  - determinant
+  - root-entry
+  - source-provenance
+  - E1-E5
+  - proof-boundary
+sources:
+  - claim: type-II-q-one-canonical-root-slice-support-disjointness
+    role: canonical-q-one-root-data-and-strict-follow-up-carry
+  - claim: type-I-overflow-unbounded-full-product-quotient-fold
+    role: forward-full-product-fold-and-ranked-admission-contract
+  - claim: type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
+    role: d-equals-one-same-chart-boundary
+  - claim: type-I-raw-universal-p-parent-root-policy-boundary
+    role: raw-parent-does-not-create-E1-policy
+  - reproduction: reproductions/type_ii_q_one_canonical_root_full_product_predecessor.py
+    role: focused-inverse-classification-and-pre-root-controls
+visibility: public
+last_checked: '2026-08-15'
+---
+
+# q=1 规范根的一步完整乘积前驱刚性
+
+## 1. 问题与规范根
+
+固定核心素数
+
+\[
+p=24t+1,
+\qquad t\ge3.
+\tag{1}
+\]
+
+q=1 Type II exit 的规范根取 \(r=t\)。沿用已有根切片的记号，令
+
+\[
+g=\frac{p+1}{2},
+\qquad
+T=p^2t-g,
+\qquad
+A=gT,
+\tag{2}
+\]
+
+\[
+n=\frac{4A+1}{p}=2pt(p+1)-p-2.
+\tag{3}
+\]
+
+于是 root determinant 是
+
+\[
+pn=4A\cdot1+1,
+\qquad
+K_{\rm root}=A(p-1),
+\qquad
+R_{\rm root}=4A-n.
+\tag{4}
+\]
+
+已有结果已给出该根后的 strict carry。这里不再寻找 root endpoint 的 raw word，而是
+反向问一个严格限定的问题：哪一些 overflow determinant state 可以经一次完整乘积
+fold 精确到达 (4)？
+
+## 2. 逆分类是精确的
+
+设一个合法的 full-product source 有 determinant 数据
+
+\[
+pn_s=4Md+1,
+\qquad 1\le d<p,
+\tag{5}
+\]
+
+并在完整乘积 \(S=Md\) 上应用既有 fold。其 target 为
+
+\[
+(M_T,d_T,n_T;A_T)=(S,1,n_s;S).
+\tag{6}
+\]
+
+因此 target 恰为 (4) 当且仅当
+
+\[
+\boxed{n_s=n,\qquad Md=A.}
+\tag{7}
+\]
+
+等价地，这些 source 与整数集合
+
+\[
+\boxed{d\mid A,\qquad 1\le d<p}
+\tag{8}
+\]
+
+一一对应；给定一个 source 时，其 \(d\) 唯一，且该 source 为
+
+\[
+\boxed{
+M_d=\frac{A}{d},
+\qquad C_d=p-d,
+\qquad K_d=M_dC_d,
+\qquad R_d=4M_d-n.
+}
+\tag{9}
+\]
+
+反过来，任意 (8) 的 \(d\) 都满足
+
+\[
+pn=4M_dd+1,
+\qquad
+pR_d+1=4K_d,
+\tag{10}
+\]
+
+并由 (6) 在算术上精确送到 root。故 (8)--(9) 不是一个候选菜单，而是所有一步
+full-product bridge 的完整分类。
+
+这个分类还立即分出一个容易混淆的退化情形。\(d=1\) 时
+
+\[
+(M_1,1,R_1,K_1)=(A,1,R_{\rm root},K_{\rm root}),
+\tag{11}
+\]
+
+determinant chart 本身没有改变；若 source 的 charged support 是 \(1\)，它只是
+同图表的 support rebase。只有 \(d>1\) 才给出不同的 pre-root chart，因为此时
+\(M_d<A\) 从而 \(R_d<R_{\rm root}\)。
+
+## 3. 所有一步前驱都是 high-carrier overflow
+
+这些前驱不可能隐藏在低载体入口中。先注意
+
+\[
+T>p^2.
+\tag{12}
+\]
+
+确实，\(t\ge3\) 且 \(g=(p+1)/2<2p^2\)。于是对所有 (8)，
+
+\[
+M_d=\frac{A}{d}>\frac{A}{p}
+ =\frac{gT}{p}
+ >\frac{p(p+1)}2
+ >\frac{(p-1)^2}{4}=B_p.
+\tag{13}
+\]
+
+同样，\(R_d\) 随 \(d\) 递减，所以只需检查 \(d=p-1\)：
+
+\[
+p(p-1)(R_{p-1}-p)
+=4A-(p-1)(p^2+1)>0.
+\tag{14}
+\]
+
+最后一个严格不等式由
+
+\[
+4A=4gT>2(p+1)p^2>(p-1)(p^2+1)
+\tag{15}
+\]
+
+给出。因此每个 (9) 都有
+
+\[
+\boxed{R_d>p,\qquad M_d>B_p.}
+\tag{16}
+\]
+
+这把一步 bridge 的形状压到一个明确边界：它若存在，必须是带低 charged support 的
+**高 carrier overflow**，不能是当前 \(R<p\) 的默认 entry state，也不能把
+\(M_d\) 本身当作 \(A\le B_p\) 的原有 bounded support。
+
+## 4. 固定的 p-only 规范 pre-root
+
+在分类 (8) 中，\(g\mid A\) 总成立。取
+
+\[
+d=g=\frac{p+1}{2},
+\qquad
+C=p-d=\frac{p-1}{2},
+\qquad
+b=2t(p-1)-1.
+\tag{17}
+\]
+
+代入 (9) 得到一个完全由 \(p\) 预先决定的 source：
+
+\[
+\boxed{
+M_g=T,
+\qquad
+R_g=pb,
+\qquad
+K_g=TC.
+}
+\tag{18}
+\]
+
+其关键恒等式为
+
+\[
+4T-pb=n,
+\qquad
+p(pb)+1=4TC,
+\qquad
+pn=4Tg+1.
+\tag{19}
+\]
+
+因此这个 pre-root 的完整乘积正好是
+
+\[
+M_gd=Tg=A,
+\tag{20}
+\]
+
+而 fold 后的 chart 为
+
+\[
+R_T=(p-1)n-1=4A-n=R_{\rm root},
+\qquad
+K_T=A(p-1)=K_{\rm root}.
+\tag{21}
+\]
+
+它没有参数选择，也没有从某个 raw endpoint 反求 \(r\)：\(r=t\)、\(d=g\) 都是
+q=1 exit 的固定 \(p\)-函数。
+
+## 5. 一个可验证但尚未入队的 determinant seed
+
+令
+
+\[
+P_g=\{C,R_g-C\}.
+\tag{22}
+\]
+
+因为 \(p=2C+1\)、\(b=4tC-1\)，有
+
+\[
+R_g=pb\equiv-1\pmod C.
+\tag{23}
+\]
+
+所以
+
+\[
+\boxed{(C,R_g-C)=1,\qquad (C,K_g)=C,\qquad K_g/C=T.}
+\tag{24}
+\]
+
+换言之，任何已经验证的 raw receipt 若到达 (22)，其末端无需猜测即可解码出
+
+\[
+(M,d,n)=(T,g,n).
+\tag{25}
+\]
+
+这是一个良好的 physical determinant seed；它不是“某个因子恰好相符”的静态观察。
+不过，(24) 只证明 node 的 primitive/determinant 算术。它**不**证明一个已授权的
+source tree 真能到达该 node。
+
+## 6. 条件性的严格付款与精确剩余
+
+若将来有一个独立、terminal-first 的 fresh entry 创建 (18)，且其 charged support 是
+\(A_s=1\)，则完整乘积 fold 有
+
+\[
+\Lambda_p^\sharp:
+\left(B_p,K_g\right)
+\longmapsto
+\left(0,p-1\right),
+\tag{26}
+\]
+
+第一坐标严格下降。式 (19)--(21) 支付 E2；解集采用图表无关的
+\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(26) 支付 E5。fold 后根的既有
+strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
+
+但这里尚缺的不是一个算术因子，而是完整的 E1/E3 准入：
+
+1. 一个在选择目标前就声明的 `fresh_source_tree_only` high-carrier entry；
+2. 从该 entry 到 (22) 的 actual ordered raw transcript，或另一条同样独立的
+   physical provenance；
+3. entry 与 root target 的 terminal-first、F/G/hit、normal form 和内容地址重算；
+4. 将 (26) 与 Type II exit phase 合并到不可 reset 的全局势。
+
+任意 primitive node 都可反向补造 formal \(p\)-parent 的事实不能代替第 1--2 项。
+因此本卡的可复用成果是：所有一步 determinant bridge 已被分类，并且一个固定的
+q=1 pre-root 已被缩为 (18)、(22) 这一条明确的 high-carrier entry 问题；它没有声称
+该 entry 已经存在，更没有证明 Erdős--Straus 猜想。
+
+## Focused reproduction
+
+```bash
+python3 reproductions/type_ii_q_one_canonical_root_full_product_predecessor.py --verify
+```
+
+验证器只重放四个固定核心素数、每个根 support 的全部 \(d<p\) 因子，以及规范
+\(d=g\) seed 恒等式；不做素数范围、分母范围或 raw-reach 搜索。

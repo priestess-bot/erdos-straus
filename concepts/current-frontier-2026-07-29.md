@@ -8840,3 +8840,35 @@ canonical bottom side 经过该 receipt 门后，第二 bundle 也仅剩五个�
 候选。这不是 global no-go：它只排除 existing single-side bundle grammar 的最短梯；后续
 必须考察更长 ladder、atomic split、determinant bridge 或新 source grammar。详见
 [p=73 规范根三 bundle path-anchored 容量 no-go](../claims/type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go.md)。
+
+## 2026-08-15：一步 determinant bridge 已反向分类为高载体 pre-root 问题
+
+对同一 q=1 规范根，若一个 `full-product quotient-fold` 一步精确到达 root，则它没有
+任意的 carrier 选择：必且只可取
+
+\[
+d\mid A_{\rm root},\qquad 1\le d<p,
+\qquad M=A_{\rm root}/d,
+\qquad K=M(p-d),
+\qquad R=4M-n_{\rm root}.
+\]
+
+所有这样的 source 都满足 \(R>p\) 和 \(M>B_p\)。因此它们不是 low default entry，
+而是必须以低 charged support 承载的 high-carrier overflow；\(d=1\) 只重标同一 root
+chart，\(d>1\) 才是不同的前驱 chart。
+
+其中一个固定且完全由 q=1 的 \(p\) 决定的规范选择为
+
+\[
+d=\frac{p+1}{2},\qquad
+M=T=p^2t-\frac{p+1}{2},\qquad
+R=p\bigl(2t(p-1)-1\bigr),\qquad
+K=T\frac{p-1}{2}.
+\]
+
+该 chart 的 primitive node \(\{(p-1)/2,R-(p-1)/2\}\) 一旦有 actual raw receipt，
+便精确解码这个 determinant；full-product fold 随即以 \(A_s=1\to A_{\rm root}\) 严格
+降低外层秩，随后接入已知 strict root carry。故 determinant 路径不再是开放的巨大菜单，
+而是一个明确的 fresh high-carrier entry 问题。当前尚无全称、target-independent 的
+raw-entry/E1/E3 证明；不能由反向 p-parent 或静态 node 算术补造。详见
+[q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md)。
