@@ -7737,6 +7737,40 @@ external-source 菜单的 \(q\mid u\) 前提。它不是“菜单为空”或反
 这个横向公因子改写成独立 Type I/II 证书或带 identity lift 的递降。详见
 [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md)。
 
+## 2026-08-14：横向残余碰到 m 或 m 加二时有两条直接终端
+
+设 \(q\) 是 \(D_*\) 的奇素因子。若 \(q\mid m\)，则 stutter 的两个线性式强制
+
+\[
+q\mid p+1,\qquad q\mid h-1.
+\]
+
+故 \(q\equiv3\pmod4\) 时立即命中已有 \((p+1)/2\) 的 Type I 证书。若
+\(q\mid m+2\)，则
+
+\[
+q\mid(p-1)(2p+1),
+\]
+
+且因 \(q\ne3\)，恰分为 \(q\mid p-1,h+1\) 的 overlap 分支或
+\(q\mid2p+1,h-2\) 的横向分支。后者若 \(q\equiv5\pmod8\)，令
+
+\[
+s=\frac{q+1}{2},\qquad C=\frac{p+s}{4q},
+\]
+
+便有直接 Type II 证书
+
+\[
+\frac4p=\frac1{qC}+\frac1{2pC}+\frac1{2pqC}.
+\]
+
+所以未闭合 residual 的 \((D_*,m)\) 奇素因子必须避开 \(3\pmod4\)，
+\((D_*,m+2,2p+1)\) 的奇素因子必须避开 \(5\pmod8\)。这只是局部终端分流：
+它不保证 \(D_*\) 会碰到 \(m(m+2)\)，而 \(p-1,h+1\) overlap 的高赋值余量仍是
+新的真正困难支路。详见
+[横向 stutter 残余的 \(m\) 与 \(m+2\) 局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt

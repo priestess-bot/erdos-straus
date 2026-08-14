@@ -865,6 +865,16 @@ receipt，也不扫描范围。
 python3 reproductions/type_i_root_capacity_stutter_transverse_residual.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_residual_local_terminal_dispatch.py` 固定验证横向
+残余的两条局部 terminal 分支：`q|m`、`q=3 mod4` 时的 `p+1` Type I 证书，以及
+`q|m+2`、`q|2p+1`、`q=5 mod8` 时的 Type II 证书。它逐项恢复 `p=433` 的
+Type I 和 `p=97,409` 的 Type II 分母，不扫描素数，也不把控制当作 actual stutter
+receipt。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_residual_local_terminal_dispatch.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half
