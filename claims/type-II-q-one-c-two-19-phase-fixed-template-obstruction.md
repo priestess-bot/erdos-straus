@@ -10,8 +10,11 @@ statement: >-
   (A,B,m)（C_u 随 u 变化）或固定 Type II AC-ray template (A,C,K)（B_u 随 u
   变化），其整除条件对每个 u 恒成立。前者由 m 只能为 3 或 19 后与
   AB|gcd(228,(769+m)/4)=1 矛盾；后者由 h=4ACK-1 必整除 912，故 h 只能为 3 或 19，
-  而 base point p_0=769 排除两者。该结果只排除参数无关的整条同余类恒等式，不排除
-  随 p 选择的 Type I/II 证书、有限菜单按更细 residue 分派，或严格可提升递降。
+  而 base point p_0=769 排除两者。此外，若固定 Type II gap m 与因子对 (A,B) 并只令
+  C_u 变化，要求标准两尾 lift 对每个 u 都有 n<p 会强制 m+1|48；六个可能 gap 的
+  common support g_m 都满足 g_m+1<m，故 m 不能整除 A+B。该结果只排除参数无关的
+  整条同余类恒等式与固定 gap 的统一严格 lift，不排除随 p 选择的 Type I/II 证书、有限菜单
+  按更细 residue 分派，或严格可提升递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -19,6 +22,7 @@ depends_on:
   - type-II-q-one-full-carrier-d-one-capacity-two-rigidity
   - type-I-coprime-factor-normal-form
   - type-II-coprime-factor-normal-form
+  - type-II-factor-pair-carrier-strict-descent
   - type-II-raw-ray-certificate
 topics:
   - type-I
@@ -39,6 +43,8 @@ sources:
     role: fixed-type-i-template-normal-form
   - claim: type-II-coprime-factor-normal-form
     role: fixed-type-ii-ac-ray-normal-form
+  - claim: type-II-factor-pair-carrier-strict-descent
+    role: aligned-fixed-gap-type-ii-lift-contract
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_fixed_template_obstruction.py
     role: exact-finite-divisor-receipt
 visibility: public
@@ -205,7 +211,62 @@ AB\mid\frac{769+19}{4}=197,
 again forcing \(AB=1\), while \(19\nmid770\).  This proves that no fixed
 Type I normal-form template is an identity on the whole progression.
 
-## 5. Exact scope
+## 5. No uniform aligned fixed-gap Type II descent template
+
+There is another apparently simple terminal route not covered by a fixed AC
+ray: keep a Type II gap \(m\) and factor pair \((A,B)\) fixed, and allow only
+the remaining factor \(C_u\) of
+
+\[
+x_u=\frac{p_u+m}{4}=ABC_u
+\tag{18}
+\]
+
+to vary.  If this template is to give the standard strict two-tail lift for
+every \(u\), then \(m+1\mid p_u-1\) identically.  Hence
+
+\[
+m+1\mid\gcd(768,912)=48.
+\tag{19}
+\]
+
+The legal positive gaps are exactly
+
+\[
+m\in\{3,7,11,15,23,47\}.
+\tag{20}
+\]
+
+For a fixed factor pair, \(AB\) divides every \(x_u\), so it divides
+
+\[
+g_m:=\gcd\!\left(228,\frac{769+m}{4}\right).
+\tag{21}
+\]
+
+The six exact values are
+
+\[
+\begin{array}{c|rrrrrr}
+m&3&7&11&15&23&47\\ \hline
+g_m&1&2&3&4&6&12.
+\end{array}
+\tag{22}
+\]
+
+For positive \(A,B\), \(A+B\le AB+1\).  Thus (21)--(22) give
+
+\[
+0<A+B\le g_m+1<m.
+\tag{23}
+\]
+
+But a Type II normal form requires \(m\mid A+B\), a contradiction.  Hence
+there is no fixed \((m,A,B)\) factor-pair template that supplies an aligned
+strict \(n<p\) Type II descent throughout (1).  As before, this does not
+exclude a parameter-dependent gap or factor pair.
+
+## 6. Exact scope
 
 The argument intentionally uses adjacent *integer* parameters in the ambient
 affine progression.  It therefore rules out a parameter-independent congruence

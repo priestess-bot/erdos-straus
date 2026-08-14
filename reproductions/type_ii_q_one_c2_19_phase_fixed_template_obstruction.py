@@ -87,12 +87,33 @@ def verify_uniform_type_i_obstruction() -> None:
         raise AssertionError("a uniform Type I normal-form template unexpectedly appeared")
 
 
+def verify_uniform_aligned_type_ii_factor_pair_obstruction() -> None:
+    lift_modulus = gcd(P0 - 1, STEP)
+    candidate_gaps = tuple(
+        divisor - 1
+        for divisor in divisors(lift_modulus)
+        if divisor - 1 >= 3 and (divisor - 1) % 4 == 3
+    )
+    if lift_modulus != 48 or candidate_gaps != (3, 7, 11, 15, 23, 47):
+        raise AssertionError("the universally aligned Type II gap list changed")
+
+    rows = tuple(
+        (m, gcd(STEP // 4, (P0 + m) // 4)) for m in candidate_gaps
+    )
+    expected = ((3, 1), (7, 2), (11, 3), (15, 4), (23, 6), (47, 12))
+    if rows != expected:
+        raise AssertionError("the fixed-factor Type II common-divisor table changed")
+    if any(common + 1 >= m for m, common in rows):
+        raise AssertionError("a fixed aligned Type II factor pair may be possible")
+
+
 def verify() -> None:
     if P0 % 19 != 9 or STEP % 19 != 0:
         raise AssertionError("the q=1 C=2 progression changed")
     verify_phase_prime_obstruction()
     verify_uniform_type_ii_obstruction()
     verify_uniform_type_i_obstruction()
+    verify_uniform_aligned_type_ii_factor_pair_obstruction()
     print(
         "verified q=1 high C=2 fixed-template obstruction: "
         "q=19 unavailable, and no uniform Type I or Type II template"
