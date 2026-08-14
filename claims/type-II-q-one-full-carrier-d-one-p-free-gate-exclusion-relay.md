@@ -303,6 +303,12 @@ strict relay，而不是把 (p\)-free carrier 当作无来源的算术候选。
 不是 q=1 image，必须由一般 Type I 分派继续处理。本卡只保证第一条可核验、严格支付的 relay；
 两步的完整封口由后继卡给出。
 
+非再生容量面 \(c=2\) 有一个更精确的反向定位：其 q=1 immediate preimage 必在偶支
+\(q_\star=19\) 的固定高相位上；见
+[容量二刚性入口与 19 相位分离](type-II-q-one-full-carrier-d-one-capacity-two-rigidity.md)。
+该定位不把 high \(C=2\) target 归约为最小 \(C=2\) 图表，也不替代其后的一般 Type I
+终端或 selector。
+
 聚焦回执：
 
 ```bash
