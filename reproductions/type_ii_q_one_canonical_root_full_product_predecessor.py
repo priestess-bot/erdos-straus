@@ -216,8 +216,8 @@ def verify() -> dict[str, object]:
     p673["partial_overlap"] = {
         "d": 75,
         "shared_prime_power": 13,
-        "source_carrier": 13**2,
-        "target_capacity": valuation(predecessor673["K"], 13),
+        "q_one_source_power": 13**2,
+        "target_q_height": valuation(predecessor673["K"], 13),
     }
     return {
         "status": "verified",

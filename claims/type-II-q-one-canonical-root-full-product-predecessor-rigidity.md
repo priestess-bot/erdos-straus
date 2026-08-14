@@ -399,7 +399,24 @@ e\in\{2,10,22,110\}.
 \]
 
 这正好扩展了 root 本身的互素障碍，但它是一个**带幂 carrier**结论，不能被夸大为
-所有单素数层都互素。例如 q=1 G 的局部控制
+所有单素数层都互素。更具体地，q=1 Type II endpoint 的真实 source box 以
+
+\[
+X=\prod_{\ell\mid X}\ell^{e_\ell}
+\]
+
+作为逐素数的指数预算。任何试图把这个**完整** source factorization 原样保留到
+\(K_d\) 的 E1 adapter 都必须满足
+
+\[
+e_\ell\le v_\ell(K_d)\quad(\ell\mid X),
+\]
+
+这等价于 \(X\mid K_d\)，已被 (34) 排除。因此一步 bridge 不存在完整 q=1 source
+box 的 identity-on-factorization transfer；任何 partial overlap 都必须明确丢弃或
+source-switch 至少一个 \(q\)-进层，并重新支付 provenance，而不能沿用旧 E1。
+
+例如 q=1 G 的局部控制
 
 \[
 p=673,
