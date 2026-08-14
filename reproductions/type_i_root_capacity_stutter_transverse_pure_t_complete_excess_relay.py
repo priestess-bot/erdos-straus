@@ -95,6 +95,42 @@ def verify_actual_stutter_cross_mod_control() -> None:
         raise AssertionError("actual stutter cross-mod identities changed")
 
 
+def verify_actual_p_free_pblock_digit_control() -> None:
+    """Check the actual p-adic digit required before a p-block q-entry can occur."""
+    p, height, m_value, d_value, receipt_quotient = 97, 58, 4, 331, 17
+    r_zero = 66_988_440
+    r_step = 4_243_815_461_730_835_674_059_638_914_706_837_844_637
+    e_zero = 369_377_901_007
+    e_step = 23_400_629_237_489_299_674_263_740_436_419_983_401_253_504
+    family_index = 79
+    r_value = r_zero + family_index * r_step
+    e_multiplier = e_zero + family_index * e_step
+    t_value = (e_multiplier - 1) // (p * p)
+    sigma = p * t_value
+    t_capacity = p * p * r_value - (p + 1) // 2
+    k_value = (p * p - 1) // 2 * t_capacity
+    r_polynomial = 2 * p**3 * r_value - p * p - 2 * p * r_value - p + 1
+    r_one = r_value + t_value * t_capacity
+    f_one = 2 * (p - 1) * r_one - 1
+    if not (
+        is_prime(p)
+        and p % 24 == 1
+        and 2 <= height < p
+        and e_multiplier == 1 + p * sigma
+        and d_value == m_value * p + 1 - height
+        and receipt_quotient * d_value == p * height + 1
+        and r_polynomial - height == e_multiplier * d_value
+        and k_value % (height * d_value) == 0
+        and gcd(height, r_polynomial - height) == 1
+        and sigma * d_value == 2 * t_capacity - (m_value + 2 * r_value)
+        and (m_value + 2 * r_value + 1) % p == 0
+        and f_one % p == (t_value + m_value) % p
+        and valuation(f_one, p) == 1
+        and (e_multiplier - (1 - p * p * m_value)) % (p**3) == 0
+    ):
+        raise AssertionError("actual p-free p-block digit gate changed")
+
+
 def verify_low_gap_root_box_exclusion() -> None:
     """Check the finite obstruction to a negative-root carrier dividing p^2+p+1."""
     for gap, factors in LOW_GAP_ROOT_BOX_FACTORS.items():
@@ -152,6 +188,67 @@ def verify_p_free_root_expulsion_control() -> None:
         and root_capacity % q != 0
     ):
         raise AssertionError("p-free return no longer expels q from the root capacity")
+
+
+def verify_p_free_pblock_reentry_control(
+    *,
+    label: str,
+    p: int,
+    q: int,
+    gap: int,
+    height: int,
+    m_value: int,
+    r_value: int,
+    t_value: int,
+    expected_p_height: int,
+    expected_x_q_height: int,
+) -> None:
+    """Check the discrete-log q-entry gate in one p-free p-block control."""
+    l_value = verify_negative_root_shape(p, q, gap, height, m_value)
+    if (m_value + 2 * r_value) % q:
+        raise AssertionError("p-block control lost the pure-T synchronized q-layer")
+    sigma = p * t_value
+    e_multiplier = 1 + p * sigma
+    t_capacity = p * p * r_value - (p + 1) // 2
+    c_value = (p * p - 1) // 2
+    k_value = c_value * t_capacity
+    b_zero = 2 * p * r_value - 1
+    n_zero = (p + 1) * b_zero - 1
+    b_one = e_multiplier * b_zero - sigma
+    n_one = e_multiplier * n_zero - sigma
+    r_one = r_value + t_value * t_capacity
+    t_one = p * p * r_one - (p + 1) // 2
+    k_one = e_multiplier * k_value
+    f_one = 2 * (p - 1) * r_one - 1
+    p_height = valuation(f_one, p)
+    u_value = f_one // (p**p_height)
+    y_value = (p + 1) * u_value
+    x_value = 1 + (p ** (p_height + 1) - 1) * y_value
+    r_polynomial_one = (p - 1) * n_one - 1
+    gate_hit = pow(l_value, p_height, q) == gap % q
+    q_capacity_height = valuation(k_one, q)
+    q_x_height = valuation(x_value, q)
+    if not (
+        is_prime(p)
+        and p % 24 == 1
+        and valuation(t_capacity, q) == 1
+        and valuation(e_multiplier, q) == 1
+        and valuation(k_value, q) == 1
+        and q_capacity_height == 2
+        and b_one == 2 * p * r_one - 1
+        and n_one == (p + 1) * b_one - 1
+        and t_one == e_multiplier * t_capacity
+        and k_one == e_multiplier * k_value
+        and r_polynomial_one == x_value + y_value
+        and 4 * k_one == p * r_polynomial_one + 1
+        and p_height == expected_p_height
+        and f_one % q == (-l_value * l_value) % q
+        and y_value % q != 0
+        and (x_value % q == 0) == gate_hit
+        and q_x_height == expected_x_q_height
+        and q_x_height <= q_capacity_height
+    ):
+        raise AssertionError(f"{label} p-free p-block reentry gate changed")
 
 
 def verify_control(
@@ -255,8 +352,33 @@ def verify_control(
 def verify() -> None:
     # Both are q-primary normalization controls, not complete actual root receipts.
     verify_actual_stutter_cross_mod_control()
+    verify_actual_p_free_pblock_digit_control()
     verify_low_gap_root_box_exclusion()
     verify_p_free_root_expulsion_control()
+    verify_p_free_pblock_reentry_control(
+        label="p-block q-entry gate miss",
+        p=313,
+        q=17,
+        gap=3,
+        height=12,
+        m_value=4,
+        r_value=15,
+        t_value=9,
+        expected_p_height=0,
+        expected_x_q_height=0,
+    )
+    verify_p_free_pblock_reentry_control(
+        label="p-block q-entry gate hit below capacity",
+        p=433,
+        q=11,
+        gap=3,
+        height=30,
+        m_value=10,
+        r_value=6,
+        t_value=13,
+        expected_p_height=1,
+        expected_x_q_height=1,
+    )
     verify_control(
         label="high-excess E",
         p=313,
@@ -336,7 +458,8 @@ def verify() -> None:
     )
     print(
         "verified pure-T cross-mod map, complete-excess relay, "
-        "factor inheritance, CRT suffix boundary, and p-free root expulsion"
+        "factor inheritance, CRT suffix boundary, p-free root expulsion, "
+        "the actual p-adic digit gate, and the p-block q-entry gate"
     )
 
 

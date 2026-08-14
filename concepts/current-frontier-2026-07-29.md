@@ -8588,3 +8588,67 @@ q\nmid(R_1-p-1,K_1),
 p-free 根盒当作原 carrier 自动持续的推理；仍须证明以后如何重新播种该
 \(q\)、触发 terminal，或建立可提升的严格递降。详见
 [横向 pure-\(T\) excess 的 p-free 根锚 \(q\)-排出](../claims/type-I-root-capacity-stutter-transverse-pure-t-p-free-root-expulsion.md)。
+
+## 2026-08-14：p-free p-block 中的 pure-\(T\) carrier 重入只经离散对数门
+
+继续固定 \(q=s(L+1)-1\)、\(Lp\equiv1\pmod q\)，并在 hard p-free suffix
+\(E=1+p^2t\) 后写
+
+\[
+F_1=2(p-1)r_1-1=p^\lambda u.
+\]
+
+剥尽 ordinary \(p\)-block 后的 actual pair 为
+
+\[
+y=(p+1)u,
+\qquad x=1+(p^{\lambda+1}-1)y.
+\]
+
+pure-\(T\) 同余给出
+
+\[
+q\nmid F_1y,
+\qquad
+x\equiv L\bigl((L+1)L^\lambda-1\bigr)\pmod q,
+\]
+
+故 q 的唯一 first-layer 入口是
+
+\[
+q\mid x
+\Longleftrightarrow
+L^\lambda\equiv s\pmod q.
+\]
+
+即使这个离散对数门命中，q 也只有在
+
+\[
+v_q(x)>v_q(K_1)=\delta+\epsilon
+\]
+
+时才构成新的 complete-excess；\(p=433,q=11,L=s=3\) 的固定控制有
+\(\lambda=1\) 和 \(11\mid x\)，但 \(v_{11}(x)=1<v_{11}(K_1)=2\)。因此下一步
+不能把 first-layer hit 直接收费，而应分别处理离散对数门未命中、命中但已被容量吸收、
+以及真正越过 \(K_1\) 的三类 provenance。详见
+[横向 pure-\(T\) excess 的 p-free \(p\)-block \(q\)-重入离散对数门](../claims/type-I-root-capacity-stutter-transverse-pure-t-p-free-pblock-reentry-gate.md)。
+
+该 gate 还不是纯 q-local 条件。actual p-free suffix 写成 \(E=1+p^2t\) 时，
+此前的 cross-mod p-suffix 给出 \(p\mid m+2r+1\)，而 p-block multiplier 满足
+
+\[
+F_1\equiv t+m\pmod p.
+\]
+
+由于 \(q\mid x\) 不可能发生在 \(\lambda=0\)，任一 q-entry 都进一步强制
+
+\[
+t\equiv-m\pmod p,
+\qquad
+E\equiv1-p^2m\pmod {p^3}.
+\]
+
+这把下一条实际 adapter 的输入从“某个 q 因子”缩小为 q 的离散对数高度与 multiplier
+的特定 \(p^3\)-digit 的交集。固定 \(p=97,h=58,D=331\) 的 actual p-free 家族有一条
+\(v_p(F_1)=1\) 回执精确命中该 p-adic gate；它证明必要条件可达，但不带 low-gap
+q-carrier，更不是 global exit。

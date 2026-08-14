@@ -974,6 +974,15 @@ receipt quotient 接到同一条跨模赋值阶梯上。
 但不在 p-free 回返后根锚 `p+1` 的对侧容量中。这是 residual-persistence 的排出
 结论，不是证书或递降。
 
+在同一 p-free return 内，q 的下一次 p-block 访问也有精确的离散对数门：若
+`lambda=v_p(F1)`，则 q 只会出现在互补侧 `x` 当且仅当 `L^lambda=s (mod q)`；
+另一侧 `y` 始终 q-free。脚本同时保留一个 gate 命中但 `v_q(x)` 仍不超过 `v_q(K1)` 的
+固定控制，因此第一层命中不能误称为新的 complete-excess 或 terminal。
+
+对 actual p-free receipt，这个 q-entry gate 还强制下一位 p-adic multiplier 数据：
+`q|x` 必有 `t+m=0 (mod p)`，即 `E=1-p^2*m (mod p^3)`。脚本从 p=97 的实际
+p-free receipt 家族固定重放一个 `v_p(F1)=1` 的点，核对这条 cross-mod 必要条件。
+
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
 ```
