@@ -8781,3 +8781,38 @@ K=A(p-1)
 `fresh_source_tree_only` root-entry，并证明 terminal-first、typed reclassification 与
 Type II exit phase 的全局势。详见
 [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
+
+## 2026-08-15：当前 fresh default entry 不能一步进入规范根
+
+前一项已经把 \(q=1\) 的 source support 与规范根的 \(K=A(p-1)\) 分开；现行 state
+contract 还给出一个独立的容量缺口。任何 `universal_raw_default_entry_v1` 必须从
+
+\[
+A_0=1,
+\qquad
+3\le R_0\le p-2
+\]
+
+开始。其首个 path-anchored complete-excess bundle 写作
+
+\[
+R_0-1=Q\beta,
+\qquad
+M_1=\operatorname{lcm}(1,Q)=Q<R_0<p.
+\]
+
+而规范 \(r=(p-1)/24\) root 的 support 已满足
+
+\[
+A_{\rm root}>B_p=\frac{(p-1)^2}{4}>p,
+\qquad
+R_{\rm root}>p.
+\]
+
+所以它既不是 low default state，也不可能是默认入口的第一个 bundle target。结合
+\(\gcd((p+3)/4,K_{\rm root})=1\)，当前 q=1 G handoff 不存在“复制 Type II support
+或开一个 default root 后立即进入 canonical root”的捷径。下一研究对象由此精确缩成：
+必须构造一个 target-independent、`fresh_source_tree_only` 内的中间 charged-support
+lineage，并把它的 terminal-first、typed E3、identity lift 与不可重置全局势全部接入。
+这仍不是 global exit，且不排除多步 bridge；详见
+[q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md)。

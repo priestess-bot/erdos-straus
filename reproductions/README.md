@@ -822,8 +822,17 @@ scope、terminal-first 或 typed reclassification。
 (X=(p+3)/4) 与规范根的 (K) 严格互素，因此 q=1 Type II 的物理 source support
 不能直接充当 root E1 provenance；不扫描素数范围、分母范围或 selector history。
 
+`type_ii_q_one_canonical_root_entry_capacity_gap.py` 把这个 E1 边界再收紧一层：当前
+`universal_raw_default_entry_v1` 的低 \(R_0<p\)、\(A_0=1\) 根在首个
+complete-excess bundle 后只能得到 \(M_1=Q<p\)，而预声明 canonical root 的
+\(A_{\rm root}>B_p>p\)。它固定重算 \(p=73,433,1321\) 的 root、Type II carrier
+互素性以及两个合法低入口；所以排除的是 direct one-entry bridge，不排除尚未构造的
+multi-step fresh-source lineage，也不执行范围扫描。
+
 ```bash
 python3 reproductions/type_i_root_capacity_strict_carry_universal_raw_word.py --verify
+python3 reproductions/type_ii_q_one_canonical_root_slice.py --verify
+python3 reproductions/type_ii_q_one_canonical_root_entry_capacity_gap.py --verify
 ```
 
 `type_i_root_capacity_prime_external_terminal_coupling.py` 核对容量素因子 \(q\) 与
