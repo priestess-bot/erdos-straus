@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 740 |
+| 数学状态 | `established` | 741 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 581 |
+| 证明来源 | `repository_derivation` | 582 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 717 |
+| 审阅状态 | `internal_review` | 718 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -786,6 +786,7 @@
 | [横向 stutter overlap 的 receipt 商与 checkpoint 赋值 relay](../claims/type-I-root-capacity-stutter-transverse-overlap-receipt-relay.md) (`type-I-root-capacity-stutter-transverse-overlap-receipt-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter overlap 残余的三重赋值对齐与 T 余量](../claims/type-I-root-capacity-stutter-transverse-overlap-valuation-alignment.md) (`type-I-root-capacity-stutter-transverse-overlap-valuation-alignment`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [p 减一 complete-excess 横向素因子的 Eisenstein 范数排除](../claims/type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion.md) (`type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [p 减一 complete-excess 横向素因子的 root-quotient 偏移饱和](../claims/type-I-root-capacity-stutter-transverse-pminusone-root-quotient-offset-saturation.md) (`type-I-root-capacity-stutter-transverse-pminusone-root-quotient-offset-saturation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 p 减一 complete-excess relay 不强制 p 减一 source tail](../claims/type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary.md) (`type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md) (`type-I-root-capacity-stutter-transverse-residual-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 残余的 m 与 m 加二局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md) (`type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

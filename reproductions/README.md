@@ -914,6 +914,15 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_receipt_re
 python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_pminusone_root_quotient_offsets.py` 固定验证
+一个 proper-root q-primary 控制中的 \(v+3,w+9\) 偏移饱和：两者都有 overlap
+基准幂，但不能同时带更高 \(q\)-幂。该控制只验证 root-layer 恒等式，不冒充完整
+actual stutter receipt，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_root_quotient_offsets.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

@@ -7861,6 +7861,13 @@ checkpoint 与 norm-exclusion 的全部 q-primary 关系，但 \(240\) 的两条
 proper-root provenance，不是 actual-state 反例。详见
 [横向 p 减一 complete-excess relay 不强制 p 减一 source tail](../claims/type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary.md)。
 
+actual proper-root 信息已重新产生一个不能由上述局部控制伪造的二分：设
+\(v=(p^2+p+1)/h\)、\(w=(2r+1)/(h/3)\)，则 p-minus-one complete-excess
+\(q\) 满足 \(q^b\mid(v+3,w+9)\)，但
+\(\min\{v_q(v+3),v_q(w+9)\}=b\)。因此原始 excess 不会在两个 root-quotient
+偏移中同时继续累积；未来 adapter 可按哪一侧基准饱和分流。详见
+[p 减一 complete-excess 横向素因子的 root-quotient 偏移饱和](../claims/type-I-root-capacity-stutter-transverse-pminusone-root-quotient-offset-saturation.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
