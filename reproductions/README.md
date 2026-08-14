@@ -846,6 +846,18 @@ root 参数、分母或历史 selector。
 python3 reproductions/type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py --verify
 ```
 
+`type_i_root_capacity_strict_carry_eisenstein_precofactor_quotient.py` 将 strict
+receipt 的 \(D,h,c\) 在进入 fixed-cofactor tail fiber 之前写成 Eisenstein ideal
+quotient。它只重放四个 actual receipts，构造
+`(h, omega-p)` 的范数-\(h\) generator，并检查
+`D+tau*delta-s*omega=gamma*beta`、`N(beta)=t`。控制包括 `p=313` 的单位商、
+`p=193` 的 \((h,t)=7\) 非互素边界，以及 `p=577` 中 inert prime \(5\) 必须同时
+落在 `D, delta, s` 的精确来源定位；不执行范围扫描。
+
+```bash
+python3 reproductions/type_i_root_capacity_strict_carry_eisenstein_precofactor_quotient.py --verify
+```
+
 `type_i_root_capacity_proper_endpoint_stutter_exclusion.py` 审计两个真实 proper-root
 回执的有效整除门，并固定重现已撤回低端证明中的抽象整除反例；它不执行历史范围扫描。
 

@@ -7753,3 +7753,44 @@ a\equiv-n^{-1}\pmod {4n-p}.
 receipt 只能落入 tail-hit cofactor，要么把 strict support-rebase 完整接入 typed 递降；不再在
 既定 tail 盒内重复拆 \(D\)。详见
 [严格 root carry 尾门的 receipt-fiber 不变性与直接 D 支撑障碍](../claims/type-I-root-capacity-strict-carry-tail-receipt-fiber-barrier.md)。
+
+## 2026-08-14：strict receipt 在 tail 之前有 Eisenstein ideal quotient 坐标
+
+固定 strict carry 的 canonical even complement，令 \(\delta=p-n\)，并按 cofactor
+奇偶性取 \(\tau=1\) 或 \(-1\)。由 actual cofactor congruence 可定义
+
+\[
+s=\frac{D-\tau\delta(h-1)}p,
+\qquad
+v=\frac{p^2+p+1}{h}.
+\]
+
+在 \(\mathbb Z[\omega]\) 中，
+
+\[
+\alpha=D+\tau\delta-s\omega
+\]
+
+恰落在范数为 \(h\) 的理想 \((h,\omega-p)\)。因此存在整商
+\(\alpha=\gamma\beta\)、\(N(\gamma)=h\)，并有
+
+\[
+t=N(\beta)=vs^2+\tau(2p+1)s\delta+h\delta^2,
+\qquad
+4vt=(2vs+\tau(2p+1)\delta)^2+3\delta^2.
+\]
+
+这给 actual \((D,h,c)\) 添加了一个发生在 fixed-cofactor tail fiber **之前**的
+Eisenstein quotient coordinate。每个 \(q\equiv2\pmod3\) 在 \(t\) 中的赋值为偶数，且
+
+\[
+q\mid t\quad\Longleftrightarrow\quad q\mid\gcd(D,\delta,s).
+\]
+
+所以 inert residual 不能在 tail fiber 内凭空出现；它必须已同时存在于 actual receipt、
+complement distance 和 pre-cofactor coordinate。actual \(p=313,r=271\) 的商是单位
+\(t=1\)，而 \(p=193,r=3\) 有 \((h,t)=7\)，故该结果既不能仅凭 \(t\) 的非平凡素因子
+覆盖所有 strict carries，也不能错误附加 \((h,t)=1\)。下一步应把 \(\beta\) 的完整坐标与
+\(D_C/D_T\) 分裂和 root-prime external-source menu 联立，而不是把这张范数图单独当作
+terminal selector。详见
+[严格 root carry 的 Eisenstein 前 cofactor 商范数门](../claims/type-I-root-capacity-strict-carry-eisenstein-precofactor-quotient.md)。
