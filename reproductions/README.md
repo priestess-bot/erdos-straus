@@ -882,3 +882,12 @@ type_i_root_capacity_stutter_actual_small_root_exclusion.py 固定验证真实 \
 ~~~bash
 python3 reproductions/type_i_root_capacity_stutter_actual_small_root_exclusion.py --verify
 ~~~
+
+type_i_root_capacity_stutter_pair_root_divisor_gate.py 固定验证一般 \((m,a)\) 的
+root-divisor 恒等式、\(u\mid\mathcal B(m,a)\) 与 \(e\) 整性，并用
+\(p=54481\) 检查该有限 gate 在 canonical receipt 前仍可通过 shadow divisor、
+却被实际 \(D=16D_0\) 排除。它不扫描素数、分母或一般参数对。
+
+~~~bash
+python3 reproductions/type_i_root_capacity_stutter_pair_root_divisor_gate.py --verify
+~~~

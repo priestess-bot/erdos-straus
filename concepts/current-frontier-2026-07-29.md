@@ -7565,3 +7565,32 @@ h^2-h+m=aD\ge15p+2a.
 \(h^2\ge3p+78\)。这仍不是 global exit，因严格 cofactor 尚须获得 E1--E5、
 typed target、identity lift 和全局势；带外 hard-root 与这些状态合同缺口仍是下一步的
 唯一对象。详见[实际 stutter 的低系数障碍与 15p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。
+
+## 2026-08-14：高根残余获得参数对的有限 root-divisor gate
+
+对剩余 stutter 写 \(L=am\)、\(s=m-a\)。从
+\(D=mp+1-h\)、\(Da=m+h(h-1)\)、\(h=3u\) 可直接消去 \(D\)，得到
+
+\[
+Lp=9u^2+3(a-1)u+s,\qquad m\mid a+3u.
+\]
+
+再把 \(u\mid p^2+p+1\) 代入，得到固定参数对的有限除子门
+
+\[
+\boxed{
+u\mid\mathcal B(m,a):=L^2+L(m-a)+(m-a)^2.}
+\]
+
+因此固定 \((m,a)\) 后，\(u\) 只能从 \(\mathcal B(m,a)\) 的有限除子中取值，
+随后 \(e=(a+3u)/m\) 和 \(p\) 都由显式整数式恢复。若素数
+\(\ell\mid u\)，则 \(\ell\mid m\) 当且仅当 \(\ell\mid a\)；共同因子时
+\(\ell\mid e-1\)。这为把高根 stutter 接到容量素因子 provenance 提供了精确输入，
+但不保证外部源菜单命中。
+
+该 gate 已用核心同余合数 \(p=54481\) 做 sharpness 边界：其
+\((u,m,a,e)=(4021,13,209,944)\) 满足 gate，却在 canonical maximal receipt 中
+由 \(D=16D_0\) 失去 stutter。故有限 menu 不能替代实际逐赋值 \(Q,\beta,(A,Q),D\)，
+也不能单独闭合 global exit。下一步应把这张 menu 与 canonical valuation 和 E1--E5
+target contract 联立，而不是继续放松成抽象 divisor 交集。详见
+[参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md)。
