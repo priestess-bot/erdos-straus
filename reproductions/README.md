@@ -786,6 +786,13 @@ proper-root hard 层：固定重算 \(p=313,r=271,h=543\) 的真实 maximal rece
 \(D\mid ph+1\) 与严格 \(c=298\)，并以 \(p=73,u=M\) 固定唯一非 \(p\)-free
 饱和层。两个放宽假设控制只验证抽象除数门可以命中，不把它们误写成 actual receipt。
 
+`type_i_root_capacity_strict_carry_support_rebase.py` 把 actual strict root carry 的
+cofactor 精确对齐到 complete-excess 支撑 \(M_{\rm ex}=\operatorname{lcm}(A,Q)=AE\)。
+它固定重放 \(p=73,r=3\) 与 \(p=313,r=271\)：旧支撑的 total-cofactor 投影恒为
+\(p-1\) 且回到原图表，严格 \(c\) 则只在新支撑上成为 canonical overflow target；
+同时核验 \(M_{\rm ex}\nmid K\) 和高支撑秩 \((0,p-1)\to(0,c)\)。它不搜索素数、
+参数、selector history 或历史测试。
+
 `type_i_root_capacity_prime_external_terminal_coupling.py` 核对容量素因子 \(q\) 与
 \(q\) 关联最小正外部源的精确有限除子菜单。它固定验证 gap-7 Dirichlet 类、
 \(p=2137,t=9\) 的非平凡命中，以及 \(p=457,q=7\) 的 source-5 菜单和 gap-7
@@ -800,6 +807,7 @@ admitted successor。
 
 ```bash
 python3 reproductions/type_i_root_capacity_general_endpoint_divisor_gate.py --verify
+python3 reproductions/type_i_root_capacity_strict_carry_support_rebase.py --verify
 python3 reproductions/type_i_root_capacity_prime_external_terminal_coupling.py --verify
 python3 reproductions/type_i_s_zero_rechart_standalone_potential_no_go.py --verify
 ```

@@ -7634,3 +7634,41 @@ h^2>\frac23Lp.
 E1--E5、identity lift 或全局势；下一步必须将这个高根墙接到 actual valuation 的
 逐素数 residual 与可注册 selector adapter，而不是把 strict carry 直接写成递归边。详见
 [actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md)。
+
+## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
+
+对 actual proper-root endpoint 的 receipt
+
+\[
+R-h=ED,
+\qquad
+E=Q/(A,Q),
+\qquad
+K=A(p-1),
+\]
+
+此前的严格 cofactor \(c=\langle-E^{-1}\rangle_p\) 现在已精确定位。旧支撑 \(A\)
+满足 \(4A\equiv-1\pmod p\)，所以其 canonical total cofactor 恒为 \(p-1\)，而且
+target 正是原 \((R,K)\) 图表。真正的 root carry 则是完整 excess 支撑
+
+\[
+M_{\rm ex}=\operatorname{lcm}(A,Q)=AE
+\]
+
+的 canonical cofactor：\(\langle(4M_{\rm ex})^{-1}\rangle_p=c\)。因此 strict
+\(c\le p-2\) 时，\(M_{\rm ex}>A\)、\(M_{\rm ex}\nmid K\)，不能伪装成旧 chart
+的 same-chart support promotion；其 canonical target 必为 overflow，且高支撑秩精确从
+
+\[
+(0,p-1)\longrightarrow(0,c)
+\]
+
+严格下降。另一方面，若把旧 root chart 套入 support-preserving total-cofactor dispatch，
+其 determinant 恰为 \((M,d,n)=(A,1,(4A+1)/p)\)，剩余参数 \(t=0\)，所以该 adapter
+必须抑制 stutter。这封死了把 strict root carry 直接套入旧 total-cofactor 边的错误桥。
+
+结果是一个更精确的 adapter 缺口，而不是新的全局闭合：strict carry 已支付 E2、图表无关
+\(\operatorname{Sol}(4,p)\) 语义下的 E4，以及对 persistent source 条件性的 E5；剩下
+只有把 actual root raw path、terminal-first priority、typed F/G/hit 重分类和内容寻址
+normal form 组成单侧 `root_capacity_complete_excess_support_rebase` 的 E1/E3。详见
+[根容量严格 carry 的支撑重基与旧投影阻断](../claims/type-I-root-capacity-strict-carry-support-rebase.md)。
