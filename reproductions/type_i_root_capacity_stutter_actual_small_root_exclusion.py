@@ -56,7 +56,7 @@ def verify_actual_small_root_control() -> None:
         and (state["m0"] % 6) == 1
         and (state["u"], h, d_value) == (1, 3, 220)
         and 2 <= h < p
-        and h * h <= 15 * p
+        and h * h <= 30 * p
         and gcd(d_value, p_cyclotomic) == 1
         and state["z"] % state["K"] != 0
         and (d_value - (1 - h)) % p != 0
@@ -80,22 +80,96 @@ def verify_m_one_needs_the_actual_root_gate() -> None:
         raise AssertionError("m=1 non-root boundary changed")
 
 
-def verify_low_coefficient_root_gates() -> None:
+def divisors(n: int) -> tuple[int, ...]:
+    values: list[int] = []
+    divisor = 1
+    while divisor * divisor <= n:
+        if n % divisor == 0:
+            values.append(divisor)
+            if divisor * divisor != n:
+                values.append(n // divisor)
+        divisor += 1
+    return tuple(sorted(values))
+
+
+def root_gate(m_value: int, a_value: int, u_value: int) -> tuple[int, int, int]:
+    layer = a_value * m_value
+    shift = m_value - a_value
+    bound = layer * layer + layer * shift + shift * shift
+    numerator = 9 * u_value * u_value + 3 * (a_value - 1) * u_value + shift
+    return layer, bound, numerator
+
+
+def verify_actual_parity() -> None:
+    # Odd m gives odd D and Da; even m gives a + 3u even for u odd.
+    for a_mod_two in (0, 1):
+        if ((a_mod_two * 1) % 2 == 1) != (a_mod_two == 1):
+            raise AssertionError("odd-m parity implication changed")
+        if ((a_mod_two + 3) % 2 == 0) != (a_mod_two == 1):
+            raise AssertionError("even-m parity implication changed")
+
+
+def verify_parity_and_low_coefficient_root_gates() -> None:
+    # This exact finite classification is over the five parameter pairs below 30,
+    # not a scan over primes, denominators, or root layers.
+    candidates: list[tuple[int, int]] = []
+    for m_value in range(3, 31):
+        if m_value % 3 == 2:
+            continue
+        for a_value in range(1, 31):
+            if (
+                a_value * (m_value - 1) < 30
+                and a_value % 2 == 1
+                and (
+                    (m_value % 3 == 0 and a_value % 3 == 0)
+                    or (m_value % 3 == 1 and a_value % 3 == 2)
+                )
+            ):
+                candidates.append((m_value, a_value))
+    if tuple(candidates) != ((3, 3), (3, 9), (4, 5), (6, 3), (9, 3)):
+        raise AssertionError("low-coefficient parity classification changed")
+
     # For (m,a)=(3,3), the derived equation is 3p=u(3u+2).
     # Its right side is never divisible by 3 when gcd(u,3)=1.
     for residue in (1, 2):
         if (residue * (3 * residue + 2)) % 3 == 0:
             raise AssertionError("(m,a)=(3,3) lost its mod-3 contradiction")
 
-    # For (m,a)=(4,2), root divisibility gives u|84. The only u coprime
-    # to 6 are 1 and 7, and neither supplies a core prime through 8p.
-    possible_u = tuple(u for u in range(1, 85) if 84 % u == 0 and gcd(u, 6) == 1)
-    if possible_u != (1, 7):
-        raise AssertionError("low-coefficient root divisor menu changed")
-    for u in possible_u:
-        numerator = 9 * u * u + 3 * u + 2
-        if numerator % 8 == 0 and (numerator // 8) % 24 == 1:
-            raise AssertionError("(m,a)=(4,2) unexpectedly supplied a core prime")
+    expected = {
+        (3, 9): (603, (1, 67)),
+        (4, 5): (381, (1, 127)),
+        (6, 3): (387, (1, 43)),
+        (9, 3): (927, (1, 103)),
+    }
+    for (m_value, a_value), (bound, possible_u) in expected.items():
+        _, computed_bound, _ = root_gate(m_value, a_value, 1)
+        actual_u = tuple(u for u in divisors(computed_bound) if gcd(u, 6) == 1)
+        if (computed_bound, actual_u) != (bound, possible_u):
+            raise AssertionError("low-coefficient root divisor menu changed")
+
+    layer, _, numerator = root_gate(3, 9, 1)
+    if numerator != layer:
+        raise AssertionError("(m,a)=(3,9), u=1 control changed")
+    _, _, numerator = root_gate(3, 9, 67)
+    if numerator % layer == 0:
+        raise AssertionError("(m,a)=(3,9), u=67 unexpectedly reconstructs p")
+
+    layer, _, numerator = root_gate(4, 5, 1)
+    if numerator != layer:
+        raise AssertionError("(m,a)=(4,5), u=1 control changed")
+    if (5 + 3 * 127) % 4 == 0:
+        raise AssertionError("(m,a)=(4,5), u=127 passed the m gate")
+
+    layer, _, numerator = root_gate(6, 3, 1)
+    if numerator != layer:
+        raise AssertionError("(m,a)=(6,3), u=1 control changed")
+    layer, _, numerator = root_gate(6, 3, 43)
+    if numerator // layer != 939 or numerator % layer != 0 or 939 % 24 == 1:
+        raise AssertionError("(m,a)=(6,3), u=43 control changed")
+
+    for u_value in (1, 103):
+        if (3 + 3 * u_value) % 9 == 0:
+            raise AssertionError("(m,a)=(9,3) unexpectedly passed the m gate")
 
 
 def verify_delta_six_boundary() -> None:
@@ -120,9 +194,10 @@ def verify_delta_six_boundary() -> None:
 def verify() -> None:
     verify_actual_small_root_control()
     verify_m_one_needs_the_actual_root_gate()
-    verify_low_coefficient_root_gates()
+    verify_actual_parity()
+    verify_parity_and_low_coefficient_root_gates()
     verify_delta_six_boundary()
-    print("verified actual-root 15p band and fixed low-coefficient controls")
+    print("verified actual-root 30p band and fixed low-coefficient controls")
 
 
 def main() -> None:

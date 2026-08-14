@@ -1,12 +1,12 @@
 ---
 kind: claim
 claim_id: type-I-root-capacity-stutter-actual-small-root-exclusion
-title: 根容量实际 stutter 的低系数障碍与 15p 高度排除带
+title: 根容量实际 stutter 的低系数障碍与 30p 高度排除带
 statement: >-
   对核心素数 p≡1 mod24 的真实 maximal complete-excess proper-root receipt，设
   h=3u、2≤h<p、h|(p^2+p+1)，且已经通过 terminal-first 分流。若剩余 canonical
   carry 发生 stutter，即 D≡1-h (mod p)，并定义 m=(D+h-1)/p、a=em-h，则
-  m≥3、a(m-1)≥15，且 h^2>15p。因此在 h^2≤15p 的实际根端点，terminal-first
+  m≥3、a(m-1)≥30，且 h^2>30p。因此在 h^2≤30p 的实际根端点，terminal-first
   之后 canonical carry 必为算术严格；本结论只关闭这条 arithmetic stutter 门，不单独给出
   E1--E5、Type I/II 证书、解提升或全局良基势。
 claim_status: established
@@ -16,6 +16,7 @@ depends_on:
   - type-I-root-capacity-general-endpoint-divisor-gate
   - type-I-root-capacity-stutter-receipt-factor-split
   - type-I-root-capacity-stutter-finite-curve-constraint
+  - type-I-root-capacity-stutter-pair-root-divisor-gate
   - type-I-root-capacity-stutter-positive-definite-norm-bound
 topics:
   - type-I
@@ -34,6 +35,8 @@ sources:
     role: actual-cyclotomic-exclusion-for-D
   - claim: type-I-root-capacity-stutter-finite-curve-constraint
     role: stutter-parameter-identities
+  - claim: type-I-root-capacity-stutter-pair-root-divisor-gate
+    role: root-divisor-finite-low-coefficient-gate
   - claim: type-I-root-capacity-stutter-positive-definite-norm-bound
     role: proper-root-square-root-menu-bound
   - reproduction: reproductions/type_i_root_capacity_stutter_actual_small_root_exclusion.py
@@ -42,7 +45,7 @@ visibility: public
 last_checked: '2026-08-14'
 ---
 
-# 根容量实际 stutter 的低系数障碍与 \(15p\) 高度排除带
+# 根容量实际 stutter 的低系数障碍与 \(30p\) 高度排除带
 
 ## 1. 设置与结论
 
@@ -82,11 +85,11 @@ a=em-h.
 则
 
 \[
-\boxed{m\ge3,\qquad a(m-1)\ge15,\qquad h^2>15p.}
+\boxed{m\ge3,\qquad a(m-1)\ge30,\qquad h^2>30p.}
 \tag{5}
 \]
 
-所以只要 \(h^2\le15p\)，(3) 不可能在实际 receipt 中发生；终端分流失败后，
+所以只要 \(h^2\le30p\)，(3) 不可能在实际 receipt 中发生；终端分流失败后，
 canonical cofactor 必落在严格范围 \(c\le p-2\)。
 
 ## 2. 真实 receipt 排除 \(m=1\)
@@ -138,7 +141,7 @@ D\equiv m+1\pmod3.
 这一步必须保留 actual receipt：仅有抽象 stutter 等式时，\(m=1\) 可与
 \(D\mid P\) 同时出现；其被排除正是因为真实 root 的 (7)。
 
-## 3. 两个低系数对的根整除排除
+## 3. Actual parity 与五个低系数对的 root-divisor 排除
 
 从 \(D=mp+1-h\)、\(Da=m+h(h-1)\) 模 3 化简，得到
 
@@ -155,46 +158,53 @@ m\equiv1\pmod3\Longrightarrow a\equiv2\pmod3.
 \tag{13}
 \]
 
-又 \(p,h\) 都是奇数，所以 \(D\equiv m\pmod2\)、\(Da\equiv m\pmod2\)；若 \(m\)
-为奇数，则 \(a\) 也为奇数。
-
-只剩两个可能降低 \(a(m-1)\) 到 15 以下的对。先取 \((m,a)=(3,3)\)。由
-\(Da=m+h(h-1)\) 得
+根层 \(u\) 是奇数。若 \(m\) 为奇数，则 \(D\equiv m\pmod2\) 和
+\(Da\equiv m\pmod2\) 强制 \(a\) 为奇数；若 \(m\) 为偶数，则参数对 gate 的
+\(m\mid a+3u\) 强制 \(a+3u\) 为偶数，仍给出 \(a\) 为奇数。因此
 
 \[
-9p=h^2+2h=3u(3u+2),
-\qquad 3p=u(3u+2).
+\boxed{a\equiv1\pmod2.}
 \tag{14}
 \]
 
-但 \(3\nmid u\)，而右端模 3 为 \(2u\ne0\)，矛盾。再取 \((m,a)=(4,2)\)，有
+同一 gate 给出
 
 \[
-8p=h^2+h+2=9u^2+3u+2.
+L=am,\qquad s=m-a,\qquad
+\mathcal B=L^2+Ls+s^2,\qquad
+Lp=9u^2+3(a-1)u+s,\qquad
+u\mid\mathcal B,\qquad m\mid a+3u.
 \tag{15}
 \]
 
-令 \(P=p^2+p+1\)。因为 \(u\mid P\)，且 (15) 给出 \(8p\equiv2\pmod u\)，所以
+由 \(m\ge3\)、(13)--(14) 分类，所有可能满足 \(a(m-1)<30\) 的对恰为
 
 \[
-64P=(8p)^2+8(8p)+64\equiv84\pmod u.
+\boxed{
+(m,a)\in\{(3,3),(3,9),(4,5),(6,3),(9,3)\}.}
 \tag{16}
 \]
 
-故 \(u\mid84\)。由 \((u,6)=1\)，只能有 \(u=1\) 或 \(u=7\)；(15) 分别给出
-\(8p=14\) 或 \(p=58\)，均不是核心素数。因此 \((4,2)\) 也不可能。
+这里无需扫描：\(m\equiv0\pmod3\) 时只有 \(m=3,6,9\) 仍可能低于该阈值，
+而 \(m\equiv1\pmod3\) 时 \(a\ge5\) 且只有 \(m=4\) 仍可能。五个对均可用
+(15) 的有限除子门精确排除：
 
-现在分类 (13)：\(m=3\) 时奇偶性和 (14) 迫使 \(a\ge9\)；若
-\(m\equiv0\pmod3\) 且 \(m\ge6\)，则 \(a\ge3\)；若 \(m\equiv1\pmod3\) 且 \(m\)
-为奇数，则 \(m\ge7,a\ge5\)；若该 \(m\) 为偶数，则 \(m=4\) 时由 (16) 有
-\(a\ge5\)，其余情形 \(m\ge10,a\ge2\)。每一类均给出
+| \((m,a)\) | \(\mathcal B\) 与 \((u,6)=1\) 候选 | 排除 |
+|---|---|---|
+| \((3,3)\) | \(\mathcal B=81\) | \(3p=u(3u+2)\) 与 \(3\nmid u\) 矛盾。 |
+| \((3,9)\) | \(603=3^2\cdot67\), \(u=1,67\) | \(u=1\) 给 \(p=1\)；\(u=67\) 时 \(27\nmid42003\)。 |
+| \((4,5)\) | \(381=3\cdot127\), \(u=1,127\) | \(u=1\) 给 \(p=1\)；\(u=127\) 时 \(4\nmid386=a+3u\)。 |
+| \((6,3)\) | \(387=3^2\cdot43\), \(u=1,43\) | \(u=1\) 给 \(p=1\)；\(u=43\) 给 \(p=939\)，不是核心素数。 |
+| \((9,3)\) | \(927=3^2\cdot103\), \(u=1,103\) | 两个候选均有 \(9\nmid3+3u\)。 |
+
+故所有低于 30 的参数对均不可能发生：
 
 \[
-\boxed{a(m-1)\ge15.}
+\boxed{a(m-1)\ge30.}
 \tag{17}
 \]
 
-## 4. \(15p\) 高度排除带
+## 4. \(30p\) 高度排除带
 
 由 \(h<p\) 及 \(D=mp+1-h\)，有
 
@@ -208,7 +218,7 @@ D\ge(m-1)p+2.
 \[
 h^2-h+m=aD
 \ge a(m-1)p+2a
-\ge15p+2a.
+\ge30p+2a.
 \tag{19}
 \]
 
@@ -216,11 +226,11 @@ proper-root 的正定范数界给出 \(m<1+\sqrt h\)。这里 \(h=3u\ge3\)，故
 \(1+\sqrt h<h\)，从而 \(m<h\)。于是 (19) 左端严格小于 \(h^2\)，并得到
 
 \[
-\boxed{h^2>15p.}
+\boxed{h^2>30p.}
 \tag{20}
 \]
 
-这已经在 terminal-first 后关闭全部 \(h^2\le15p\) 的 actual arithmetic stutter。
+这已经在 terminal-first 后关闭全部 \(h^2\le30p\) 的 actual arithmetic stutter。
 
 ## 5. 补充：缺陷同余与 \(\delta=6\) 的排除
 
@@ -286,7 +296,7 @@ P
 该结论把此前仅由 \(h^2<p\) 保证的 arithmetic strict-carry 带扩大为
 
 \[
-\boxed{h^2\le15p.}
+\boxed{h^2\le30p.}
 \]
 
 它不是全局出口定理：严格 cofactor 仍须由真实 state contract 证明其 E1--E5 准入、
@@ -299,5 +309,5 @@ P
 python3 reproductions/type_i_root_capacity_stutter_actual_small_root_exclusion.py --verify
 ~~~
 
-脚本只重算一个真实小根 receipt、一个 \(m=1\) 的非 root 边界和四个固定的
-\(\delta=6\) 代数控制；它不扫描素数、分母或历史图表。
+脚本只重算一个真实小根 receipt、一个 \(m=1\) 的非 root 边界、低于 30 的五个固定
+参数对及四个 \(\delta=6\) 代数控制；它不扫描素数、分母或历史图表。

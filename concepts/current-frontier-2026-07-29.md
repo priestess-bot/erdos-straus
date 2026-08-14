@@ -7527,7 +7527,7 @@ proper-root 控制 \((p,r,h,D_0)=(54481,2543533812,12063,696191)\) 中，容量�
 stutter 与 capacity-prime external-source 菜单或严格递降相连。详见
 [根容量 stutter 的 actual-maximality 边界](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md)。
 
-## 2026-08-14：actual proper-root stutter 被推出 \(\sqrt{15p}\) 之外
+## 2026-08-14：actual proper-root stutter 被推出 \(\sqrt{30p}\) 之外
 
 真实 root receipt 的 cyclotomic 排除先给出 \((D,p^2+p+1)=1\)，从而排除
 \(m=(D+h-1)/p=1\)。再由 \(D\mid ph+1\) 得 \(m\not\equiv2\pmod3\)，故
@@ -7538,33 +7538,33 @@ stutter 与 capacity-prime external-source 菜单或严格递降相连。详见
 \]
 
 它把 \(m\equiv0\pmod3\) 压到 \(a\equiv0\pmod3\)，把
-\(m\equiv1\pmod3\) 压到 \(a\equiv2\pmod3\)。两个仅有的低系数例外也可由根整除性
-精确排除：\((m,a)=(3,3)\) 会强制 \(3p=u(3u+2)\)，与 \(3\nmid u\) 矛盾；
-\((m,a)=(4,2)\) 会强制 \(u\mid84\)，只剩 \(u=1,7\)，两者均不给出核心素数。
-因此
+\(m\equiv1\pmod3\) 压到 \(a\equiv2\pmod3\)。再由 \(u\) 为奇数及
+\(m\mid a+3u\)，\(a\) 实际总为奇数。故 \(a(m-1)<30\) 时只剩
+\((3,3),(3,9),(4,5),(6,3),(9,3)\) 五对；前者有既有模三矛盾，其余四对都被
+\(u\mid\mathcal B(m,a)\) 的有限除子门逐一排除。因此
 
 \[
-\boxed{a(m-1)\ge15.}
+\boxed{a(m-1)\ge30.}
 \]
 
 由于 \(h<p\)，有 \(D\ge(m-1)p+2\)，故
 
 \[
-h^2-h+m=aD\ge15p+2a.
+h^2-h+m=aD\ge30p+2a.
 \]
 
 另一方面既有正定范数界给出 \(m<1+\sqrt h<h\)，于是
 
 \[
-\boxed{h^2>15p.}
+\boxed{h^2>30p.}
 \]
 
 这把 terminal-first 后的 arithmetic strict-carry 带显著扩大为
-\(h^2\le15p\)。此前的精确 defect 关系仍保留为可用容量图：
+\(h^2\le30p\)。此前的精确 defect 关系仍保留为可用容量图：
 \(h^2-3p\equiv6\pmod {72}\)，并排除其最小候选，故也有
 \(h^2\ge3p+78\)。这仍不是 global exit，因严格 cofactor 尚须获得 E1--E5、
 typed target、identity lift 和全局势；带外 hard-root 与这些状态合同缺口仍是下一步的
-唯一对象。详见[实际 stutter 的低系数障碍与 15p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。
+唯一对象。详见[实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。
 
 ## 2026-08-14：高根残余获得参数对的有限 root-divisor gate
 
@@ -7630,7 +7630,7 @@ h^2>\frac23Lp.
 
 其逆否新增一个无扫描的 arithmetic strict-carry 带：
 \(513h^6\le8p^4\) 时，非严格 cofactor 不可能发生。它把 hard-root 残余压到
-\(h=\Omega(p^{2/3})\)，与 \(h^2\le15p\) 的固定带互补。但这仍未获得 typed target、
+\(h=\Omega(p^{2/3})\)，与 \(h^2\le30p\) 的固定带互补。但这仍未获得 typed target、
 E1--E5、identity lift 或全局势；下一步必须将这个高根墙接到 actual valuation 的
 逐素数 residual 与可注册 selector adapter，而不是把 strict carry 直接写成递归边。详见
 [actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md)。

@@ -875,9 +875,10 @@ python3 reproductions/type_i_root_capacity_stutter_actual_maximality_boundary.py
 ```
 
 type_i_root_capacity_stutter_actual_small_root_exclusion.py 固定验证真实 \(p=73,r=3\)
-小根 receipt 在 \(h^2\le15p\) 带内的严格 carry，并验证 \(m=1\) 只能在丢失真实根
-条件的边界出现。它还固定核对低系数 \((m,a)=(3,3),(4,2)\) 的 root-divisor
-矛盾，以及 \(\delta=h^2-3p=6\) 的 defect 分解；不扫描素数、分母或历史图表。
+小根 receipt 在 \(h^2\le30p\) 带内的严格 carry，并验证 \(m=1\) 只能在丢失真实根
+条件的边界出现。它还精确核对 parity 后低于 30 的五个 \((m,a)\) 对及其
+root-divisor 排除，以及 \(\delta=h^2-3p=6\) 的 defect 分解；不扫描素数、分母或
+历史图表。
 
 ~~~bash
 python3 reproductions/type_i_root_capacity_stutter_actual_small_root_exclusion.py --verify

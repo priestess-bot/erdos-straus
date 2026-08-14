@@ -107,7 +107,7 @@ D\not\equiv1-h\pmod p.}
 \]
 
 也就是说，(6) 的区域中 terminal-first 后 canonical cofactor 已是 arithmetic
-strict carry。它与已有 \(h^2\le15p\) 排除带互补：本卡给出随 \(p\) 增长的
+strict carry。它与已有 \(h^2\le30p\) 排除带互补：本卡给出随 \(p\) 增长的
 \(h=\Omega(p^{2/3})\) hard-root 墙，而不是另一次固定范围枚举。
 
 ## 2. Actual parity 与参数对的统一二次包络
