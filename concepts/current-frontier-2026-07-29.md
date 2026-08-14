@@ -8870,5 +8870,16 @@ K=T\frac{p-1}{2}.
 便精确解码这个 determinant；full-product fold 随即以 \(A_s=1\to A_{\rm root}\) 严格
 降低外层秩，随后接入已知 strict root carry。故 determinant 路径不再是开放的巨大菜单，
 而是一个明确的 fresh high-carrier entry 问题。当前尚无全称、target-independent 的
-raw-entry/E1/E3 证明；不能由反向 p-parent 或静态 node 算术补造。详见
+raw-entry/E1/E3 证明；不能由反向 p-parent 或静态 node 算术补造。更强地，对任何
+一步 inverse predecessor \(d\)，都有
+
+\[
+\gcd(X,K_d)=\gcd(X,d+3)<X,
+\qquad X=(p+3)/4.
+\]
+
+所以 q=1 Type II source 的完整带幂 carrier 不能原样进入一次 determinant bridge。
+这仍不是所有素数层的互素结论：例如 q=1 G 的 \(p=673,X=13^2,d=75\) 留下一个
+\(13\)-层，但缺失第二层。这把后续问题收紧为逐素数、逐幂 capacity/provenance，而非
+一个完整 carrier 的直接重命名。详见
 [q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md)。

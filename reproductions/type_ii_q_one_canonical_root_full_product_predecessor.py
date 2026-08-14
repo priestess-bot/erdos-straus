@@ -14,7 +14,7 @@ import json
 from math import gcd, isqrt
 
 
-CONTROLS = (73, 97, 193, 433)
+CONTROLS = (73, 97, 193, 433, 673)
 
 
 def is_prime(value: int) -> bool:
@@ -47,6 +47,14 @@ def divisors(value: int) -> list[int]:
             power *= prime
             result.extend(item * power for item in base)
     return sorted(result)
+
+
+def valuation(value: int, prime: int) -> int:
+    exponent = 0
+    while value % prime == 0:
+        value //= prime
+        exponent += 1
+    return exponent
 
 
 def canonical_root(prime: int) -> dict[str, int]:
@@ -126,6 +134,50 @@ def verify_pre_root(root: dict[str, int]) -> dict[str, int]:
     return {"d": g, "C": C, "M": T, "R": R, "K": K, "b": b}
 
 
+def verify_whole_carrier_obstruction(
+    root: dict[str, int], legal_divisors: list[int]
+) -> dict[str, int]:
+    """Check the exact X-intersection formula and its three symbolic cases."""
+    p = root["p"]
+    t = root["t"]
+    A = root["A"]
+    X = (p + 3) // 4
+    if not (
+        X == 6 * t + 1
+        and gcd(X, A) == 1
+        and p == 4 * X - 3
+        and A % t == t - 1
+    ):
+        raise AssertionError("q=1 carrier setup changed")
+
+    for d in legal_divisors:
+        predecessor = inverse_predecessor(root, d)
+        if not (
+            gcd(X, predecessor["K"]) == gcd(X, d + 3)
+            and gcd(X, predecessor["K"]) < X
+        ):
+            raise AssertionError("whole q=1 carrier reached an inverse predecessor")
+
+    d_one = X - 3
+    e = 3 * t - 1
+    d_two = 2 * X - 3
+    d_three = 3 * X - 3
+    g = root["g"]
+    T = root["T"]
+    if not (
+        d_one == 2 * e == 6 * t - 2
+        and A % d_one == (5 * e + 110) % d_one
+        and d_two == 12 * t - 1
+        and gcd(d_two, g) == 1
+        and (4 * T + 5) % d_two == 0
+        and d_three == 18 * t
+        and A % t == t - 1
+        and all(A % candidate != 0 for candidate in (d_one, d_two, d_three))
+    ):
+        raise AssertionError("three-case whole-carrier obstruction changed")
+    return {"X": X, "d_one": d_one, "d_two": d_two, "d_three": d_three}
+
+
 def verify() -> dict[str, object]:
     rows: list[dict[str, object]] = []
     for prime in CONTROLS:
@@ -145,13 +197,33 @@ def verify() -> dict[str, object]:
                 "p": prime,
                 "legal_divisor_count": len(legal_divisors),
                 "pre_root": verify_pre_root(root),
+                "whole_carrier_obstruction": verify_whole_carrier_obstruction(
+                    root, legal_divisors
+                ),
             }
         )
+    p673 = next(row for row in rows if row["p"] == 673)
+    root673 = canonical_root(673)
+    predecessor673 = inverse_predecessor(root673, 75)
+    if not (
+        factorization((673 + 3) // 4) == {13: 2}
+        and all(prime % 3 == 1 for prime in factorization((673 + 3) // 4))
+        and root673["A"] % 75 == 0
+        and gcd((673 + 3) // 4, predecessor673["K"]) == 13
+        and valuation(predecessor673["K"], 13) == 1
+    ):
+        raise AssertionError("p=673 partial-overlap control changed")
+    p673["partial_overlap"] = {
+        "d": 75,
+        "shared_prime_power": 13,
+        "source_carrier": 13**2,
+        "target_capacity": valuation(predecessor673["K"], 13),
+    }
     return {
         "status": "verified",
         "controls": rows,
         "scope": (
-            "Four fixed core primes; all d < p divisors of each canonical root support; "
+            "Five fixed core primes; all d < p divisors of each canonical root support; "
             "no prime-range, denominator-range, selector-history, or raw-reach search."
         ),
     }

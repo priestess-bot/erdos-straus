@@ -14,7 +14,10 @@ statement: >-
   actual raw receipt 到达该节点，就能无歧义解码此 determinant source，并由
   full-product fold 严格支付 A_s=1 到 A 的外层秩。该算法身份、E2、E4 和 E5
   并不产生 E1 或 typed E3：目前没有全称的、target-independent raw-entry
-  证明，故本卡不是全局 Type-I exit 或 verified edge。
+  证明。更精确地，每个 inverse predecessor 都满足
+  gcd(X,K_d)=gcd(X,d+3)<X，X=(p+3)/4；故 q=1 source 的完整带幂 carrier
+  不能在一步 bridge 中原样保留，但个别素数层仍可能相交。故本卡不是全局 Type-I
+  exit 或 verified edge。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -47,7 +50,7 @@ sources:
   - claim: type-I-raw-universal-p-parent-root-policy-boundary
     role: raw-parent-does-not-create-E1-policy
   - reproduction: reproductions/type_ii_q_one_canonical_root_full_product_predecessor.py
-    role: focused-inverse-classification-and-pre-root-controls
+    role: focused-inverse-classification-full-carrier-obstruction-and-pre-root-controls
 visibility: public
 last_checked: '2026-08-15'
 ---
@@ -296,7 +299,128 @@ R_g=pb\equiv-1\pmod C.
 不过，(24) 只证明 node 的 primitive/determinant 算术。它**不**证明一个已授权的
 source tree 真能到达该 node。
 
-## 6. 条件性的严格付款与精确剩余
+## 6. q=1 完整 source carrier 不能穿过一步 bridge
+
+上节的 \(d=g\) 选择与 \(X\) 互素，但其它 \(d\) 不能据此一概排除。所有
+inverse predecessor 的精确交集其实是
+
+\[
+\begin{aligned}
+(X,K_d)
+&=\left(X,\frac{A}{d}(p-d)\right)\\
+&=(X,p-d)\\
+&=\boxed{(X,d+3)},
+\end{aligned}
+\tag{26}
+\]
+
+其中第二步使用已有 \((X,A)=1\)，第三步使用 \(p\equiv-3\pmod X\)。
+
+我们现在证明完整带幂 carrier 不会原样穿过。若 \(X\mid K_d\)，则由 (26)
+有 \(X\mid d+3\)。因为
+
+\[
+1\le d<p=4X-3,
+\tag{27}
+\]
+
+只能写作
+
+\[
+d+3=mX,
+\qquad m\in\{1,2,3\}.
+\tag{28}
+\]
+
+三个情形都与 \(d\mid A\) 矛盾。
+
+### \(m=3\)
+
+此时 \(d=3X-3=18t\)。但
+
+\[
+p\equiv g\equiv1\pmod t,
+\qquad T\equiv-1\pmod t,
+\qquad A=gT\equiv-1\pmod t.
+\tag{29}
+\]
+
+所以 \((t,A)=1\)，不可能有 \(18t\mid A\)。
+
+### \(m=2\)
+
+此时 \(d=2X-3=12t-1\)。它是奇数且
+
+\[
+(d,g)=(12t-1,12t+1)=1.
+\tag{30}
+\]
+
+因此 \(d\mid A\) 会强制 \(d\mid T\)。但模 \(d\) 有 \(p\equiv3\)、
+\(g\equiv2\)，从而
+
+\[
+4T\equiv4(9t-2)=36t-8\equiv-5\pmod d.
+\tag{31}
+\]
+
+这会给出 \(d\mid5\)，而 \(d=12t-1\ge35\)，矛盾。
+
+### \(m=1\)
+
+令 \(d=X-3=6t-2=2e\)，其中 \(e=3t-1\)。此时
+
+\[
+p\equiv9,\qquad g\equiv5,\qquad T\equiv e+22\pmod {2e},
+\]
+
+故
+
+\[
+A=gT\equiv5e+110\pmod {2e}.
+\tag{32}
+\]
+
+若 \(2e\mid A\)，则 \(e\mid110\)，且 \(110/e\) 必为奇数。因此
+
+\[
+e\in\{2,10,22,110\}.
+\tag{33}
+\]
+
+再与 \(e=3t-1\) 合并，只剩 \((t,e)=(1,2)\) 或 \((37,110)\)，对应
+\(p=25\) 或 \(889=7\cdot127\)，都不是核心素数。
+
+所以对每个核心素数和每个 (8) 的 inverse predecessor，
+
+\[
+\boxed{(X,K_d)<X.}
+\tag{34}
+\]
+
+这正好扩展了 root 本身的互素障碍，但它是一个**带幂 carrier**结论，不能被夸大为
+所有单素数层都互素。例如 q=1 G 的局部控制
+
+\[
+p=673,
+\qquad X=169=13^2,
+\qquad d=75\mid A
+\tag{35}
+\]
+
+给出
+
+\[
+(X,K_{75})=(169,78)=13,
+\qquad v_{13}(K_{75})=1<v_{13}(X)=2.
+\tag{36}
+\]
+
+故一个 \(13\)-层仍相交，而完整 \(13^2\) source carrier 不可保留。这个例子不是
+E1 bridge，也未通过 terminal-first；它只是说明后续工作必须以逐素数、逐幂容量处理
+partial overlap，不能把 (34) 错读为全面 source-disjointness。
+
+## 7. 条件性的严格付款与精确剩余
 
 若将来有一个独立、terminal-first 的 fresh entry 创建 (18)，且其 charged support 是
 \(A_s=1\)，则完整乘积 fold 有
@@ -306,11 +430,11 @@ source tree 真能到达该 node。
 \left(B_p,K_g\right)
 \longmapsto
 \left(0,p-1\right),
-\tag{26}
+\tag{37}
 \]
 
 第一坐标严格下降。式 (19)--(21) 支付 E2；解集采用图表无关的
-\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(26) 支付 E5。fold 后根的既有
+\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(37) 支付 E5。fold 后根的既有
 strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
 
 但这里尚缺的不是一个算术因子，而是完整的 E1/E3 准入：
@@ -319,11 +443,12 @@ strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
 2. 从该 entry 到 (22) 的 actual ordered raw transcript，或另一条同样独立的
    physical provenance；
 3. entry 与 root target 的 terminal-first、F/G/hit、normal form 和内容地址重算；
-4. 将 (26) 与 Type II exit phase 合并到不可 reset 的全局势。
+4. 将 (37) 与 Type II exit phase 合并到不可 reset 的全局势。
 
 任意 primitive node 都可反向补造 formal \(p\)-parent 的事实不能代替第 1--2 项。
 因此本卡的可复用成果是：所有一步 determinant bridge 已被分类，并且一个固定的
-q=1 pre-root 已被缩为 (18)、(22) 这一条明确的 high-carrier entry 问题；它没有声称
+q=1 pre-root 已被缩为 (18)、(22) 这一条明确的 high-carrier entry 问题；(34) 又排除
+了完整 q=1 carrier 的一步原样转移，但保留了逐层 overlap 的较窄问题；它没有声称
 该 entry 已经存在，更没有证明 Erdős--Straus 猜想。
 
 ## Focused reproduction
@@ -332,5 +457,6 @@ q=1 pre-root 已被缩为 (18)、(22) 这一条明确的 high-carrier entry 问�
 python3 reproductions/type_ii_q_one_canonical_root_full_product_predecessor.py --verify
 ```
 
-验证器只重放四个固定核心素数、每个根 support 的全部 \(d<p\) 因子，以及规范
-\(d=g\) seed 恒等式；不做素数范围、分母范围或 raw-reach 搜索。
+验证器只重放五个固定核心素数、每个根 support 的全部 \(d<p\) 因子、规范
+\(d=g\) seed 恒等式，以及 \(p=673\) 的 partial-overlap 控制；不做素数范围、
+分母范围或 raw-reach 搜索。
