@@ -7668,6 +7668,40 @@ D_C<D,\qquad
 actual valuation、\(D_*\) 及 source provenance 联立，而不能据此宣称已得到证书或递降。详见
 [proper-root stutter 的 C-side \(m\) 局部化](../claims/type-I-root-capacity-stutter-c-side-m-localization.md)。
 
+## 2026-08-14：约化除子 \(D_*\) 在 actual proper-root stutter 中必非平凡
+
+令
+
+\[
+H=h^2-1,\qquad D_H=(D,H),\qquad D_*=D/D_H.
+\]
+
+此前的 \(D_*\mid T,S,J\) 允许形式上的 \(D_*=1\)。现在直接在 \(h-1,h+1\) 上做
+stutter 局部化：\((D,h-1)\mid m\)、\((D,h+1)\mid m+2\)。奇素数的 \(H\)-overlap
+完全由 \(\operatorname{lcm}(m,m+2)\) 承担；因为 \(h\) 为奇数，二进重叠至多多出一阶，故
+
+\[
+\boxed{(D,h^2-1)\mid2\operatorname{lcm}(m,m+2).}
+\]
+
+actual 的 \(m\ge3\)、\(m\not\equiv2\pmod3\)、\(m<1+\sqrt h\)、\(h<p\) 将
+\(m\) 分为 \(3,4,\ge6\) 三类，并在每类给出
+
+\[
+D>2\operatorname{lcm}(m,m+2).
+\]
+
+所以
+
+\[
+\boxed{1<D_*\mid\gcd(T,h^2-h-2r,J).}
+\]
+
+这比 \(D_T>1\) 更强：actual stutter 的 \(D\) 甚至不能被完整 \(h^2-1\) 重叠吸收，
+因而 \(T,S,J\) 必有一个真实的非平凡公共除子。它仍没有把该除子接入容量 source 或
+可提升边；下一步应研究其素因子在 actual valuation 与 source provenance 中的归属。详见
+[proper-root stutter 的 \(h^2-1\) 重叠 \(m\) 界](../claims/type-I-root-capacity-stutter-h-overlap-m-bound.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt

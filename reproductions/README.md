@@ -845,6 +845,16 @@ python3 reproductions/type_i_root_capacity_stutter_receipt_factor_split.py --ver
 python3 reproductions/type_i_root_capacity_stutter_c_side_m_localization.py --verify
 ```
 
+`type_i_root_capacity_stutter_h_overlap_residual.py` 固定验证更强的
+`D_H=gcd(D,h^2-1) | 2*lcm(m,m+2)`。它分别复放 odd、dyadic、mixed overlap 控制，
+并覆盖 actual 推论所需的 `m=3`、`m=4`、`m>=6` 三类数值包络，从而验证约化
+`D*=D/D_H` 在这些固定 shape 控制中确为非平凡。它明确区分核心素数 proper-shape、
+核心同余合数 shadow 与 actual receipt，不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_h_overlap_residual.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

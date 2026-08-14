@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 732 |
+| 数学状态 | `established` | 733 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 573 |
+| 证明来源 | `repository_derivation` | 574 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 709 |
+| 审阅状态 | `internal_review` | 710 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -776,6 +776,7 @@
 | [根容量 actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md) (`type-I-root-capacity-stutter-cubic-hard-root-wall`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [proper-root stutter 的 h^2-1 重叠 m 界与非平凡约化除子](../claims/type-I-root-capacity-stutter-h-overlap-m-bound.md) (`type-I-root-capacity-stutter-h-overlap-m-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
