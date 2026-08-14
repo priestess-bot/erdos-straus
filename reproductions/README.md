@@ -884,6 +884,16 @@ residual 在 `p+1,h-1,m` 与 `p-1,h+1,m+2` overlap 中的三重赋值对齐，�
 python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_valuation_alignment.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_overlap_complete_excess_valuation.py` 固定验证
+两个 \(p\pm1\) overlap 在 actual maximal complete-excess 归一化中的逐素数分型：
+特别是 \(p-1\) 分支进入 `E` 时必须越过完整 \(K\)-容量门。它还核对两个
+T-high 残余锁定控制。全部控制都只是局部整数算术，不冒充 actual root receipt，
+也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_complete_excess_valuation.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

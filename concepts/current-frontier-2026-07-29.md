@@ -7797,6 +7797,31 @@ excess”。它仍不界定 \(t\)，也不强制外部源或递降；下一步�
 complete-excess receipt 的 \(T\) 赋值和 source provenance 中是否可持续。详见
 [横向 stutter overlap 残余的三重赋值对齐与 \(T\) 余量](../claims/type-I-root-capacity-stutter-transverse-overlap-valuation-alignment.md)。
 
+## 2026-08-14：overlap residual 的 complete-excess provenance 已逐素数分型
+
+把同步赋值与 actual maximal complete-excess 归一化联立后，两个 \(p\pm1\)
+overlap 不再具有相同的 \(E\)-侧行为。设 \(t=v_q(D)-b\)、\(\tau=v_q(T)\)、
+\(\zeta=v_q(R-h)\)。在 \(q\mid m,p+1\) 支路，\(q\mid E\) 当且仅当
+
+\[
+\tau=t,\qquad\zeta>b+t.
+\]
+
+但在 \(q\mid m+2,p-1\) 支路，\(q\mid E\) 当且仅当
+
+\[
+\tau=b+t,\qquad\zeta>2b+t,
+\]
+
+并自动留下 \(v_q(E)>b\)。因此 \(p-1\) overlap 不能以“小的 raw excess”
+合法进入 complete-excess provenance；它必须同时补足 \(A\) 中原本缺失的
+\(p-1\) 基准容量。所有 \(\tau>b\) 的 \(T\)-high 情形还强制前一支
+\(v_q(r)=b\)、后一支 \(v_q(r-1)=b\)。
+
+这不是证书或递降，不过它把下一步 adapter 的输入压成两种明确的来源形态，并排除了
+把 \(p-1\) residual 当成普通 \(D_*\mid T\) 因子直接注册的做法。详见
+[横向 stutter overlap 的 actual complete-excess 赋值分型](../claims/type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
