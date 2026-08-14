@@ -14,8 +14,9 @@ statement: >-
   门通过便取 universal p-source，否则取最小互素素数 source；两者都到同一 anchor。
   完整 excess carrier 给出 p-free canonical overflow target：非再生时 capacity
   从 p-1 严格降到至多 p-2，再生时已有 p-adic eta 严格减一，故该 q=1 d=1
-  receiver 总有一条完整 E1--E5 strict relay。该结论只处理立即 postmacro receiver；
-  它不排除后续 d=1 regeneration target 再次落入 p-free failure，也不证明全局 selector。
+  receiver 总有一条完整 E1--E5 strict relay。后继卡进一步证明立即 receiver 的
+  regeneration 只能发生一次，下一条 relay 必严格降容量；本卡本身不证明容量下降后的一般
+  Type I selector。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -292,11 +293,15 @@ strict relay，而不是把 (p\)-free carrier 当作无来源的算术候选。
 
 ## 5. 结论的边界
 
-本卡关闭了 q=1 宏的**立即** (d=1) receiver 上唯一的 p-free failure branch。它没有
-声称后续 regeneration target 仍在 q=1 image：有限 (p)-adic countdown 之后，该 target
-仍可能进入一般 (d=1) 的 p-free peeled-Reach 边界。因此本结论不构成 G/Type I
-global exit，也不替代下一层的 selector；它只保证每个 postmacro (d=1) receiver 都有
-一条可核验、严格支付的下一 relay。
+本卡关闭了 q=1 宏的**立即** (d=1) receiver 上唯一的 p-free failure branch。随后的
+[再生刚性与两步收口](type-II-q-one-full-carrier-d-one-regeneration-completion.md) 进一步表明：
+若这里的第一条 relay 是 regeneration，它只发生一次，且下一条 relay 的两条 \(p\) 门都
+通过并严格降容量。因此 q=1 immediate receiver 的 regeneration 尾部不再进入一般
+\(p\)-free peeled-Reach 边界。
+
+这仍不构成 G/Type I global exit，也不替代下一层 selector：容量下降后的 target 通常已经
+不是 q=1 image，必须由一般 Type I 分派继续处理。本卡只保证第一条可核验、严格支付的 relay；
+两步的完整封口由后继卡给出。
 
 聚焦回执：
 

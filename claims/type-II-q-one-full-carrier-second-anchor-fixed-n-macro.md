@@ -434,8 +434,10 @@ E5 由 (30) 支付。这里没有用 transient receipt 的内部数值作为势�
 contract 保持严格。故本卡的第二条边不留下一个 \(n_T\ge p\) 的 high-overflow
 算术残余。对立即的 \(U\) receiver，后续的
 [p-free 门全称排除与严格 complete-excess 继电](type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay.md)
-进一步关闭了 p-free bundle failure，并给出一条严格 relay；其仍待处理的边界是
-relay 后的非 q=1 \(d=1\) regeneration target，以及一般 Type I selector。
+进一步关闭了 p-free bundle failure。其
+[再生刚性与两步收口](type-II-q-one-full-carrier-d-one-regeneration-completion.md) 又证明了
+immediate q=1 \(d=1\) regeneration 至多一次，随后必严格降容量；余下边界是该容量下降后
+非 q=1 的一般 Type I target 及其 selector。
 
 ## 6. 范围与后果
 

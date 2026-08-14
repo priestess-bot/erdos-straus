@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 771 |
+| 数学状态 | `established` | 772 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 611 |
+| 证明来源 | `repository_derivation` | 612 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 749 |
+| 审阅状态 | `internal_review` | 750 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1083,6 +1083,7 @@
 | [q=1 载体保留的 Type II 因子对终端与严格递降射线](../claims/type-II-q-one-carrier-preserving-factor-pair-ray.md) (`type-II-q-one-carrier-preserving-factor-pair-ray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G source 到标准 Type II 两尾递降的平方根压缩](../claims/type-II-q-one-factor-pair-source-compression.md) (`type-II-q-one-factor-pair-source-compression`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 full-carrier 的 d=1 接收态 p-free 门全称排除与严格 complete-excess 继电](../claims/type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay.md) (`type-II-q-one-full-carrier-d-one-p-free-gate-exclusion-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 full-carrier 的 d=1 再生刚性与两步 complete-excess 收口](../claims/type-II-q-one-full-carrier-d-one-regeneration-completion.md) (`type-II-q-one-full-carrier-d-one-regeneration-completion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 全载体 Type I 根的目标无关 phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md) (`type-II-q-one-full-carrier-phase-root-entry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 full-carrier 第二 anchor overflow 的固定-n 严格宏出口](../claims/type-II-q-one-full-carrier-second-anchor-fixed-n-macro.md) (`type-II-q-one-full-carrier-second-anchor-fixed-n-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 full-carrier 首 child 的第二 anchor 低重图表严格 no-go](../claims/type-II-q-one-full-carrier-second-anchor-overflow.md) (`type-II-q-one-full-carrier-second-anchor-overflow`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
