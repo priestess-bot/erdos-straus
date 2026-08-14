@@ -15,9 +15,12 @@ statement: >-
   full-product fold 严格支付 A_s=1 到 A 的外层秩。该算法身份、E2、E4 和 E5
   并不产生 E1 或 typed E3：目前没有全称的、target-independent raw-entry
   证明。更精确地，每个 inverse predecessor 都满足
-  gcd(X,K_d)=gcd(X,d+3)<X，X=(p+3)/4；故 q=1 source 的完整带幂 carrier
-  不能在一步 bridge 中原样保留，但个别素数层仍可能相交。故本卡不是全局 Type-I
-  exit 或 verified edge。
+  gcd(X,K_d)=gcd(X,d+3)<X，X=(p+3)/4；若 q=1 endpoint 为 G，则每个
+  inverse predecessor 对完整 X source box 的 carrier loss X/gcd(X,K_d) 至少为 7，且该常数
+  在 p=1033,d=330 达到；规范 root 自身与 X 互素，故第二腿把全部 X-carrier
+  清零。因而 q=1 source 的完整带幂 carrier 不能在一步 bridge 中原样保留，甚至
+  从完整 X box 出发的 partial transfer 也至少丢失一个大小不小于 7 的因子；个别素数层仍可能相交。故本卡
+  不是全局 Type-I exit 或 verified edge。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -398,6 +401,79 @@ e\in\{2,10,22,110\}.
 \tag{34}
 \]
 
+### 6.1 G source 的定量最小损失
+
+现在额外假设 q=1 endpoint 是 G。于是 \(X\) 的每个素因子都满足
+
+\[
+\ell\equiv1\pmod3,
+\qquad \ell\mid X,
+\tag{35}
+\]
+
+故它们全都至少为 \(7\)。对任一 inverse predecessor 定义其保留 carrier 与缺失倍率
+
+\[
+H_d=(X,K_d)=(X,d+3),
+\qquad
+\mathcal L_X(d)=\frac{X}{H_d}.
+\tag{36}
+\]
+
+式 (34) 说明 \(H_d\) 是 \(X\) 的真因子。因此 \(\mathcal L_X(d)>1\)，而且
+\(\mathcal L_X(d)\) 的每个素因子仍来自 \(X\)。于是有统一且 sharp 的容量界
+
+\[
+\boxed{\mathcal L_X(d)\ge7.}
+\tag{37}
+\]
+
+逐素数幂地，若 \(\ell^e\Vert X\)，则 \(\ell\nmid A\)，从而
+
+\[
+v_\ell(K_d)=v_\ell(p-d),
+\qquad
+\min\{e,v_\ell(K_d)\}=\min\{e,v_\ell(d+3)\},
+\tag{38}
+\]
+
+其中使用 \(p\equiv-3\pmod{\ell^e}\)。所以 (37) 等价于 source 的指数缺口
+
+\[
+\sum_{\ell\mid X}
+\bigl(e-\min\{e,v_\ell(K_d)\}\bigr)\log\ell
+=\log\mathcal L_X(d)\ge\log7.
+\tag{39}
+\]
+
+这不是仅说“至少少一层”：任何以完整 \(X\) source box 为输入、并在 \(K_d\) 的物理
+carrier 账本上登记其保留部分的一步 adapter，都至少要消去一个乘法大小不小于 \(7\)
+的 block。界是 sharp 的。取
+
+\[
+p=1033,\qquad X=259=7\cdot37,\qquad d=330\mid A,
+\tag{40}
+\]
+
+则 \(d+3=333=9\cdot37\)，故
+
+\[
+H_{330}=37,
+\qquad
+\mathcal L_X(330)=7.
+\tag{41}
+\]
+
+另一方面，fold 的 root target 满足既有 \((X,K_{\rm root})=1\)。因此这条完整
+two-leg bridge 的第二腿将所有尚存的 \(X\)-carrier 清零：partial overlap 只能是
+pre-root 的瞬时容量，不能作为到 root 的 support-preserving payload。
+
+这个结论不排除某个新 adapter 预先只声明 \(H_d\) 的子盒为其来源 universe；但那已经
+不是完整 \(X\) box 的保留，而是需要独立 E1 receipt 的 genuine source-switch，不能沿用
+原 Type II endpoint 的完整 provenance。
+
+### 6.2 provenance 的边界
+
 这正好扩展了 root 本身的互素障碍，但它是一个**带幂 carrier**结论，不能被夸大为
 所有单素数层都互素。更具体地，q=1 Type II endpoint 的真实 source box 以
 
@@ -422,7 +498,7 @@ source-switch 至少一个 \(q\)-进层，并重新支付 provenance，而不能
 p=673,
 \qquad X=169=13^2,
 \qquad d=75\mid A
-\tag{35}
+\tag{42}
 \]
 
 给出
@@ -430,7 +506,7 @@ p=673,
 \[
 (X,K_{75})=(169,78)=13,
 \qquad v_{13}(K_{75})=1<v_{13}(X)=2.
-\tag{36}
+\tag{43}
 \]
 
 故一个 \(13\)-层仍相交，而完整 \(13^2\) source carrier 不可保留。这个例子不是
@@ -447,11 +523,11 @@ partial overlap，不能把 (34) 错读为全面 source-disjointness。
 \left(B_p,K_g\right)
 \longmapsto
 \left(0,p-1\right),
-\tag{37}
+\tag{44}
 \]
 
 第一坐标严格下降。式 (19)--(21) 支付 E2；解集采用图表无关的
-\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(37) 支付 E5。fold 后根的既有
+\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(44) 支付 E5。fold 后根的既有
 strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
 
 但这里尚缺的不是一个算术因子，而是完整的 E1/E3 准入：
@@ -460,7 +536,7 @@ strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
 2. 从该 entry 到 (22) 的 actual ordered raw transcript，或另一条同样独立的
    physical provenance；
 3. entry 与 root target 的 terminal-first、F/G/hit、normal form 和内容地址重算；
-4. 将 (37) 与 Type II exit phase 合并到不可 reset 的全局势。
+4. 将 (44) 与 Type II exit phase 合并到不可 reset 的全局势。
 
 任意 primitive node 都可反向补造 formal \(p\)-parent 的事实不能代替第 1--2 项。
 因此本卡的可复用成果是：所有一步 determinant bridge 已被分类，并且一个固定的
@@ -474,6 +550,7 @@ q=1 pre-root 已被缩为 (18)、(22) 这一条明确的 high-carrier entry 问�
 python3 reproductions/type_ii_q_one_canonical_root_full_product_predecessor.py --verify
 ```
 
-验证器只重放五个固定核心素数、每个根 support 的全部 \(d<p\) 因子、规范
-\(d=g\) seed 恒等式，以及 \(p=673\) 的 partial-overlap 控制；不做素数范围、
+验证器只重放六个固定核心素数、每个根 support 的全部 \(d<p\) 因子、规范
+\(d=g\) seed 恒等式，以及 \(p=673\) 的 partial-overlap 与 \(p=1033\) 的 sharp
+source-loss 控制；不做素数范围、
 分母范围或 raw-reach 搜索。

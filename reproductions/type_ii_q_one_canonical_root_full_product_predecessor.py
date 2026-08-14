@@ -14,7 +14,7 @@ import json
 from math import gcd, isqrt
 
 
-CONTROLS = (73, 97, 193, 433, 673)
+CONTROLS = (73, 97, 193, 433, 673, 1033)
 
 
 def is_prime(value: int) -> bool:
@@ -178,6 +178,32 @@ def verify_whole_carrier_obstruction(
     return {"X": X, "d_one": d_one, "d_two": d_two, "d_three": d_three}
 
 
+def verify_q_one_g_source_loss(
+    root: dict[str, int], legal_divisors: list[int]
+) -> dict[str, int]:
+    """Check the sharp >= 7 loss of a q=1 G source carrier at a pre-root."""
+    p = root["p"]
+    X = (p + 3) // 4
+    if not all(prime % 3 == 1 for prime in factorization(X)):
+        raise AssertionError("control is not a q=1 G endpoint")
+
+    losses: list[int] = []
+    for d in legal_divisors:
+        predecessor = inverse_predecessor(root, d)
+        retained = gcd(X, predecessor["K"])
+        loss = X // retained
+        if not (
+            retained == gcd(X, d + 3)
+            and X % retained == 0
+            and loss > 1
+            and loss >= 7
+            and all(prime % 3 == 1 for prime in factorization(loss))
+        ):
+            raise AssertionError("q=1 G source-loss profile changed")
+        losses.append(loss)
+    return {"X": X, "minimum_source_loss": min(losses)}
+
+
 def verify() -> dict[str, object]:
     rows: list[dict[str, object]] = []
     for prime in CONTROLS:
@@ -192,16 +218,19 @@ def verify() -> dict[str, object]:
             and all(row["M"] > root["B"] and row["R"] > prime for row in predecessors)
         ):
             raise AssertionError("inverse divisor classification changed")
-        rows.append(
-            {
-                "p": prime,
-                "legal_divisor_count": len(legal_divisors),
-                "pre_root": verify_pre_root(root),
-                "whole_carrier_obstruction": verify_whole_carrier_obstruction(
-                    root, legal_divisors
-                ),
-            }
-        )
+        row: dict[str, object] = {
+            "p": prime,
+            "legal_divisor_count": len(legal_divisors),
+            "pre_root": verify_pre_root(root),
+            "whole_carrier_obstruction": verify_whole_carrier_obstruction(
+                root, legal_divisors
+            ),
+        }
+        if all(value % 3 == 1 for value in factorization((prime + 3) // 4)):
+            row["q_one_g_source_loss"] = verify_q_one_g_source_loss(
+                root, legal_divisors
+            )
+        rows.append(row)
     p673 = next(row for row in rows if row["p"] == 673)
     root673 = canonical_root(673)
     predecessor673 = inverse_predecessor(root673, 75)
@@ -219,11 +248,23 @@ def verify() -> dict[str, object]:
         "q_one_source_power": 13**2,
         "target_q_height": valuation(predecessor673["K"], 13),
     }
+    p1033 = next(row for row in rows if row["p"] == 1033)
+    root1033 = canonical_root(1033)
+    predecessor1033 = inverse_predecessor(root1033, 330)
+    if not (
+        factorization((1033 + 3) // 4) == {7: 1, 37: 1}
+        and root1033["A"] % 330 == 0
+        and gcd((1033 + 3) // 4, predecessor1033["K"]) == 37
+        and (1033 + 3) // 4 // 37 == 7
+        and p1033["q_one_g_source_loss"] == {"X": 259, "minimum_source_loss": 7}
+    ):
+        raise AssertionError("sharp q=1 G source-loss control changed")
+    p1033["sharp_source_loss_control"] = {"d": 330, "retained": 37, "loss": 7}
     return {
         "status": "verified",
         "controls": rows,
         "scope": (
-            "Five fixed core primes; all d < p divisors of each canonical root support; "
+            "Six fixed core primes; all d < p divisors of each canonical root support; "
             "no prime-range, denominator-range, selector-history, or raw-reach search."
         ),
     }
