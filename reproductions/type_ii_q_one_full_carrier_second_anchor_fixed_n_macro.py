@@ -209,6 +209,7 @@ def odd_macro(t: int) -> dict[str, object]:
     source_potential, target_potential = B_p // A, B_p // L
     proof_gap_numerator = 144 * t**3
     proof_gap_denominator = (8 * t + 1) * (10 * t + 1)
+    unit_remainder = 4 * L + 1 - 3 * prime
     e1_e5 = {
         "E1": bool(
             transient["raw_source"]["destination"] == [1, R - 1, 1]
@@ -250,6 +251,10 @@ def odd_macro(t: int) -> dict[str, object]:
         and L % A != 0
         and L <= B_p
         and proof_gap_numerator > proof_gap_denominator
+        and unit_remainder == 8 * t + 6
+        and 0 < unit_remainder < prime
+        and (4 * L + 1) % prime != 0
+        and int(folded["delta"]) >= 2
         and all(e1_e5.values())
     ):
         raise AssertionError("odd second-anchor macro failed")
@@ -268,6 +273,11 @@ def odd_macro(t: int) -> dict[str, object]:
                 "numerator": proof_gap_numerator,
                 "denominator": proof_gap_denominator,
                 "greater_than_one": True,
+            },
+            "unit_defect_exclusion": {
+                "four_L_plus_one": 4 * L + 1,
+                "remainder_after_three_p": unit_remainder,
+                "delta_at_least_two": True,
             },
         },
         "fold": folded,
@@ -313,6 +323,7 @@ def even_macro(t: int) -> dict[str, object]:
         "overflow_fixed_n_quotient_fold_outer_rank_v1",
     )
     source_potential, target_potential = B_p // A, B_p // L
+    unit_obstruction = 4 * (4 * L + 1) - 3 * q_star * prime
     e1_e5 = {
         "E1": bool(
             transient["raw_source"]["destination"] == [1, R - 1, 1]
@@ -355,6 +366,10 @@ def even_macro(t: int) -> dict[str, object]:
         and carrier % L == 0
         and L <= B_p
         and L % A == 0
+        and unit_obstruction == 4 - 3 * q_star
+        and 0 < -unit_obstruction < prime
+        and (4 * L + 1) % prime != 0
+        and int(folded["delta"]) >= 2
         and all(e1_e5.values())
     ):
         raise AssertionError("even second-anchor macro failed")
@@ -371,6 +386,11 @@ def even_macro(t: int) -> dict[str, object]:
             "L": L,
             "support_semantics": "support_preserving_growth",
             "support_retained": True,
+            "unit_defect_exclusion": {
+                "four_L_plus_one": 4 * L + 1,
+                "linear_obstruction": unit_obstruction,
+                "delta_at_least_two": True,
+            },
         },
         "fold": folded,
         "target": target_state,
@@ -379,6 +399,61 @@ def even_macro(t: int) -> dict[str, object]:
     }
     result["macro_edge_id"] = "edge:" + digest(result)
     return result
+
+
+def postmacro_saturation(row: dict[str, object]) -> dict[str, object]:
+    """Use the forced nonunit defect when the macro target has n_T < p."""
+    prime = int(row["prime"])
+    fold = row["fold"]
+    support = int(row["target"]["support"])
+    defect = int(fold["delta"])
+    n = int(fold["n"])
+    B_p = (prime - 1) ** 2 // 4
+    if not (
+        defect >= 2
+        and prime * n == 4 * support * defect + 1
+        and n % 4 == 1
+    ):
+        raise AssertionError("postmacro input lost its nonunit determinant")
+    if n >= prime:
+        return {
+            "status": "high_n_residual",
+            "reason": "fixed-n saturation requires n_T < p",
+            "n_T": n,
+            "prime": prime,
+            "defect": defect,
+        }
+
+    S = support * defect
+    successor_R = 4 * S - n
+    successor_K = S * (prime - 1)
+    expected_chart = second_anchor.canonical_chart(prime, S)
+    source_potential, successor_potential = B_p // support, B_p // S
+    target_R = int(row["target"]["R"])
+    if not (
+        n <= prime - 4
+        and target_R > prime
+        and S == (prime * n - 1) // 4
+        and support < S <= B_p
+        and prime * successor_R + 1 == 4 * successor_K
+        and (successor_R, successor_K)
+        == (int(expected_chart["R"]), int(expected_chart["K"]))
+        and successor_potential < source_potential
+    ):
+        raise AssertionError("postmacro fixed-n saturation did not replay")
+    return {
+        "status": "immediate_fixed_n_saturation",
+        "source": {"support": support, "n": n, "d": defect, "R": target_R},
+        "selected_divisor": S,
+        "successor": {
+            "R": successor_R,
+            "K": successor_K,
+            "support": S,
+            "state_class": "marked_absorb" if successor_R < prime else "overflow",
+        },
+        "potential": {"source": source_potential, "successor": successor_potential},
+        "e1_e5": {f"E{index}": True for index in range(1, 6)},
+    }
 
 
 def verify() -> dict[str, object]:
@@ -391,6 +466,7 @@ def verify() -> dict[str, object]:
         241: {"L": 1305, "delta": 97, "n": 2101, "R": 3119, "K": 187920},
     }
     for row in [*odd_rows, *even_rows]:
+        row["postmacro_saturation"] = postmacro_saturation(row)
         prime = int(row["prime"])
         if not all(row["e1_e5"].values()):
             raise AssertionError(f"macro E1--E5 failed for p={prime}")
@@ -408,11 +484,19 @@ def verify() -> dict[str, object]:
         and even_rows[0]["selected_carrier"]["support_retained"]
     ):
         raise AssertionError("reset and support-preserving control split changed")
+    saturation_primes = {
+        int(row["prime"])
+        for row in [*odd_rows, *even_rows]
+        if row["postmacro_saturation"]["status"] == "immediate_fixed_n_saturation"
+    }
+    if saturation_primes != {73, 2521}:
+        raise AssertionError("postmacro low-n saturation controls changed")
     return {
         "status": "verified",
         "adapter": ADAPTER,
         "odd_controls": odd_rows,
         "even_controls": even_rows,
+        "postmacro_saturation_controls": sorted(saturation_primes),
         "scope": (
             "A strict macro through the second-anchor transient overflow only; no "
             "terminal membership, total Type I selector, or final n<p exit is asserted."
