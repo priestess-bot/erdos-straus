@@ -6,9 +6,10 @@ statement: >-
   p=241 的局部 complete-excess relay 控制和 p=8641 的 proper-root/receipt-q-primary
   定向控制均没有 p-1 source tail。后者已满足 h|p^2+p+1、h<p、root gcd、
   v_q(ph+1)=2b+t、v_q(T)=b+t 以及定向 root-quotient 赋值，而 p-1=8640 的完整
-  平移平方因子 source fan 四行全空。因此 relay 及其现有 actual-root q-primary
-  强化都不能单独强制 p-1 source descent；两个控制均不被冒充为完整 actual stutter
-  receipt，故该边界不否定 actual 分支或全局出口。
+  平移平方因子 source fan 四行全空；这里 t=b=1 且 w+9 恰有 q^(2b) 容量。
+  因此 relay、定向 root-quotient 及其精确 w+9 阶梯都不能单独强制 p-1 source
+  descent；两个控制均不被冒充为完整 actual stutter receipt，故该边界不否定 actual
+  分支或全局出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -16,6 +17,7 @@ depends_on:
   - type-I-root-capacity-stutter-transverse-overlap-receipt-relay
   - type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion
   - type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation
+  - type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase
   - p-minus-one-source-descent
 topics:
   - type-I
@@ -35,6 +37,8 @@ sources:
     role: local-norm-provenance-exclusion
   - claim: type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation
     role: proper-root-and-receipt-q-primary-orientation-input
+  - claim: type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase
+    role: exact-w-plus-nine-capacity-boundary-input
   - claim: p-minus-one-source-descent
     role: complete-p-minus-one-source-tail-parameterization
   - reproduction: reproductions/type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py
@@ -180,8 +184,16 @@ v_5\left(\frac{2r+1}{u}+9\right)=2.
 \]
 
 这正是 root-quotient 定向引理使用的 proper-root 与 receipt-q-primary 输入，
-其中 \(t=1\)。它仍不构成完整 actual stutter receipt：本控制没有声称存在相应的
-canonical \(D,E\)、最大化 provenance 或状态合同。
+其中 \(t=b=1\)。新的 \(w+9\) 赋值阶梯在这个非共振点给出精确的
+
+\[
+v_5(w+9)=2b=2,
+\qquad w=\frac{2r+1}{u}=41.
+\tag{13}
+\]
+
+它仍不构成完整 actual stutter receipt：本控制没有声称存在相应的 canonical
+\(D,E\)、最大化 provenance 或状态合同。
 
 但是 \(p-1=8640\) 的完整 \(p-1\) source fan 依旧为空。其全部
 \(d\equiv1\pmod4\) 行为：
@@ -193,7 +205,7 @@ canonical \(D,E\)、最大化 provenance 或状态合同。
 | 9 | 960 | 959 | 2158 | 2071680 | 1215 | 无 |
 | 45 | 192 | 191 | 2149 | 412608 | 351 | 无 |
 
-因此，甚至加入 (12) 的定向 root-quotient 数据，也还不能从当前已知关系构造
+因此，甚至加入 (12)--(13) 的定向及精确 \(w+9\) 容量，也还不能从当前已知关系构造
 \(p-1\) source-tail witness。
 
 ## 5. 结论与边界
@@ -204,10 +216,10 @@ canonical \(D,E\)、最大化 provenance 或状态合同。
 \text{p-minus-one complete-excess relay}
 \Longrightarrow
 \text{p-minus-one source-tail witness}.
-\tag{13}
+\tag{14}
 \]
 
-所以后续 adapter 必须实质性使用尚未进入 (12) 的完整 actual receipt 数据，
+所以后续 adapter 必须实质性使用尚未进入 (12)--(13) 的完整 actual receipt 数据，
 特别是 canonical \(D,E\) 的逐素数最大化 provenance，或构造一条与 \(p-1\) fan
 不同的证书/递降。这不证明 actual proper-root relay 永远不能命中 \(p-1\) fan，
 也不排除两个控制素数的其它 Type I/II 证书。

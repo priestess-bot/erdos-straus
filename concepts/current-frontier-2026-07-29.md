@@ -7916,8 +7916,9 @@ proper-root provenance，不是 actual-state 反例。详见
 这个边界在加入目前已知的 root/receipt-q-primary 信息后仍然成立：核心素数
 \(p=8641\) 的固定 proper-root 控制已经满足 \(h\mid p^2+p+1\)、\(h<p\)、
 \(v_q(ph+1)=2b+t\)、\(v_q(T)=b+t\) 和后述的定向 quotient 赋值，但
-\(p-1=8640\) 的四条完整 source-fan 行依然全空。因此下一适配器必须使用完整
-canonical \(D,E\) provenance 或改走非 \(p-1\) tail 的构造。
+\(t=b=1\) 时还恰有 \(v_q(w+9)=2b=2\)，而 \(p-1=8640\) 的四条完整
+source-fan 行依然全空。因此下一适配器必须使用完整 canonical \(D,E\) provenance
+或改走非 \(p-1\) tail 的构造。
 
 actual proper-root 信息已重新产生一个不能由上述局部控制伪造的二分：设
 \(v=(p^2+p+1)/h\)、\(w=(2r+1)/(h/3)\)，则 p-minus-one complete-excess

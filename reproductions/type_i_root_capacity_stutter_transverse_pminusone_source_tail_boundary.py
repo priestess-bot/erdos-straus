@@ -144,7 +144,9 @@ def verify_oriented_root_input_tail_miss() -> None:
         and valuation(p * h + 1, q) == 2 * b + t
         and valuation(t_value, q) == b + t
         and valuation(v + 3, q) == b
-        and valuation(w + 9, q) >= b + 1
+        and p * p * u * (w + 9)
+        == 2 * t_value + (p - 1) ** 2 + 3 * p * (p * h + 1)
+        and valuation(w + 9, q) == 2 * b
         and rows == expected
     ):
         raise AssertionError("oriented root input did not retain the source-tail boundary")
