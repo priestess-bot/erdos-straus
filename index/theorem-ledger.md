@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 757 |
+| 数学状态 | `established` | 758 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 597 |
+| 证明来源 | `repository_derivation` | 598 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 734 |
+| 审阅状态 | `internal_review` | 735 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -801,6 +801,7 @@
 | [横向 stutter 纯 T 侧 excess 对 checkpoint p-分派的 CRT 独立性](../claims/type-I-root-capacity-stutter-transverse-pure-t-checkpoint-suffix-crt-boundary.md) (`type-I-root-capacity-stutter-transverse-pure-t-checkpoint-suffix-crt-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 纯 T 侧负根的 complete-excess 分型与 checkpoint relay](../claims/type-I-root-capacity-stutter-transverse-pure-t-complete-excess-relay.md) (`type-I-root-capacity-stutter-transverse-pure-t-complete-excess-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 纯 T 侧的跨模 multiplier-quotient 赋值阶梯](../claims/type-I-root-capacity-stutter-transverse-pure-t-cross-mod-valuation-staircase.md) (`type-I-root-capacity-stutter-transverse-pure-t-cross-mod-valuation-staircase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [横向 pure-T excess 的 p-free 根锚 q-排出](../claims/type-I-root-capacity-stutter-transverse-pure-t-p-free-root-expulsion.md) (`type-I-root-capacity-stutter-transverse-pure-t-p-free-root-expulsion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 纯 T 侧负根的同步 q-adic 条件塌缩](../claims/type-I-root-capacity-stutter-transverse-pure-t-synchronization-boundary.md) (`type-I-root-capacity-stutter-transverse-pure-t-synchronization-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 二次移位的偶 K Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-quadratic-shift-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md) (`type-I-root-capacity-stutter-transverse-residual-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

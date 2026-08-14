@@ -8549,3 +8549,42 @@ L(h,t)=\left\lfloor\sqrt{\frac{4ht}{3}}\right\rfloor.
 high-half tail selector，故小范数是精确 capacity map 而不是证书。\(p=193,r=3\) 的
 \(t=763\) 使上界退化到 1408，说明不能把任意 norm quotient 误当作距离递降。详见
 [严格 root carry 的 Eisenstein 小范数互补距离门](../claims/type-I-root-capacity-strict-carry-eisenstein-small-norm-distance-gate.md)。
+
+## 2026-08-14：pure-\(T\) excess 在 p-free 回返中离开根容量
+
+对任一低缺口负根 carrier，若
+
+\[
+q=s(L+1)-1,
+\qquad Lp\equiv1\pmod q,
+\qquad s\in\{3,7,11,23\},
+\]
+
+则 \(q\mid p^2+p+1\) 会强制 \(q\mid s^2-s+1\)。四个有限常数
+分别为 \(7,43,111,507\)，其素因子均不落在所需的
+\(-1\pmod {2s}\) 类，故实际有
+
+\[
+q\nmid p^2+p+1.
+\]
+
+因此在 hard suffix \(E=1+p^2t\) 的 p-free 回返中，
+
+\[
+K_1=EK,
+\qquad
+(R_1-p-1,K_1)\mid p^2+p+1,
+\]
+
+就有 \(v_q(K_1)=\delta+\epsilon>0\) 但
+
+\[
+q\nmid(R_1-p-1,K_1),
+\qquad q\nmid R_1-(p+1).
+\]
+
+也就是说，pure-\(T\) complete-excess 的 \(q\)-高度留在全局状态的
+\(K_1\) 中，但不会作为重入根锚 \(p+1\) 的 residual 继续。这排除了把
+p-free 根盒当作原 carrier 自动持续的推理；仍须证明以后如何重新播种该
+\(q\)、触发 terminal，或建立可提升的严格递降。详见
+[横向 pure-\(T\) excess 的 p-free 根锚 \(q\)-排出](../claims/type-I-root-capacity-stutter-transverse-pure-t-p-free-root-expulsion.md)。

@@ -8,6 +8,12 @@ from math import gcd
 
 
 LOW_GAPS = (3, 7, 11, 23)
+LOW_GAP_ROOT_BOX_FACTORS = {
+    3: (7,),
+    7: (43,),
+    11: (3, 37),
+    23: (3, 13, 13),
+}
 
 
 def is_prime(value: int) -> bool:
@@ -87,6 +93,65 @@ def verify_actual_stutter_cross_mod_control() -> None:
         and (sigma * (1 - height) + m_plus_two_r + 1) % p == 0
     ):
         raise AssertionError("actual stutter cross-mod identities changed")
+
+
+def verify_low_gap_root_box_exclusion() -> None:
+    """Check the finite obstruction to a negative-root carrier dividing p^2+p+1."""
+    for gap, factors in LOW_GAP_ROOT_BOX_FACTORS.items():
+        root_box_constant = gap * gap - gap + 1
+        factor_product = 1
+        for factor in factors:
+            if not is_prime(factor):
+                raise AssertionError("low-gap root-box table lost a prime factor")
+            factor_product *= factor
+            if factor % (2 * gap) == 2 * gap - 1:
+                raise AssertionError("root-box factor entered the negative-root residue")
+        if factor_product != root_box_constant:
+            raise AssertionError("low-gap root-box factorization changed")
+
+
+def verify_p_free_root_expulsion_control() -> None:
+    """Check q remains in K_1 but not in the p-free return's root capacity."""
+    p, q, r_value, t_value = 313, 17, 15, 9
+    if verify_negative_root_shape(p, q, 3, 12, 4) != 5:
+        raise AssertionError("p-free control lost its low-gap negative-root carrier")
+    if (4 + 2 * r_value) % q:
+        raise AssertionError("p-free control lost the pure-T synchronized q-layer")
+    sigma = p * t_value
+    e_multiplier = 1 + p * sigma
+    t_capacity = p * p * r_value - (p + 1) // 2
+    c_value = (p * p - 1) // 2
+    k_value = c_value * t_capacity
+    b_zero = 2 * p * r_value - 1
+    n_zero = (p + 1) * b_zero - 1
+    b_one = e_multiplier * b_zero - sigma
+    n_one = e_multiplier * n_zero - sigma
+    r_one = r_value + t_value * t_capacity
+    t_one = p * p * r_one - (p + 1) // 2
+    k_one = e_multiplier * k_value
+    r_polynomial_one = (p - 1) * n_one - 1
+    root_box = p * p + p + 1
+    root_capacity = gcd(r_polynomial_one - (p + 1), k_one)
+    if not (is_prime(p) and p % 24 == 1 and is_prime(q)):
+        raise AssertionError("p-free q-primary control lost its core-prime shape")
+    if not (
+        e_multiplier % (p * p) == 1
+        and valuation(e_multiplier, q) == 1
+        and valuation(t_capacity, q) == 1
+        and valuation(k_value, q) == 1
+        and valuation(k_one, q) == 2
+        and b_one == 2 * p * r_one - 1
+        and n_one == (p + 1) * b_one - 1
+        and t_one == e_multiplier * t_capacity
+        and k_one == e_multiplier * k_value
+        and root_box % q != 0
+        and (p + 1) % q != 0
+        and (p * (r_polynomial_one - (p + 1)) + root_box) % q == 0
+        and (r_polynomial_one - (p + 1)) % q != 0
+        and root_box % root_capacity == 0
+        and root_capacity % q != 0
+    ):
+        raise AssertionError("p-free return no longer expels q from the root capacity")
 
 
 def verify_control(
@@ -190,6 +255,8 @@ def verify_control(
 def verify() -> None:
     # Both are q-primary normalization controls, not complete actual root receipts.
     verify_actual_stutter_cross_mod_control()
+    verify_low_gap_root_box_exclusion()
+    verify_p_free_root_expulsion_control()
     verify_control(
         label="high-excess E",
         p=313,
@@ -269,7 +336,7 @@ def verify() -> None:
     )
     print(
         "verified pure-T cross-mod map, complete-excess relay, "
-        "factor inheritance, and CRT suffix boundary"
+        "factor inheritance, CRT suffix boundary, and p-free root expulsion"
     )
 
 

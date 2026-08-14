@@ -969,6 +969,11 @@ actual-provenance 输入。
 `(p+e+sigma)*D=(p^2-1)*(m+2*r)`；这把 checkpoint 的 p-suffix 与 actual
 receipt quotient 接到同一条跨模赋值阶梯上。
 
+最后，脚本核对 low-gap negative-root carrier 不可能整除 `p^2+p+1` 的四项有限
+例外表，并在一个 q-primary/p-free 兼容控制上验证：`q` 的高度仍在 `K1=E*K` 中，
+但不在 p-free 回返后根锚 `p+1` 的对侧容量中。这是 residual-persistence 的排出
+结论，不是证书或递降。
+
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
 ```
