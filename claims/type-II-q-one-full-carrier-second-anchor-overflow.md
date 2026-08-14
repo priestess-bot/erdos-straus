@@ -229,9 +229,11 @@ K_{p-2}=\frac{p(p-2)+1}{4}=B_p,
 complete-excess rechart 都必进入 \(R_M>p\) 的 high-overflow interface。
 
 这排除了一个看似自然但错误的全局化设想：通过连续 low marked-absorb 支撑累积让
-full-carrier tree 自动终止。下一条真正需要构造的边必须读取该 high overflow 的
-determinant、cofactor 或独立 Type II certificate；不能再把同一 anchor 机制当作
-第二个 low rechart。
+full-carrier tree 自动终止。这个 no-go 本身只确定接口；它不应被误读成 overflow
+没有后继。该接口现已由
+[第二 anchor overflow 的固定-\(n\) 严格宏出口](type-II-q-one-full-carrier-second-anchor-fixed-n-macro.md)
+用 parity-specific 的闭式 carrier 接上。这里保留的结论仍是：不能再把同一 anchor
+机制当作第二个 low rechart。
 
 聚焦验证：
 

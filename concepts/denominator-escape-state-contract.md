@@ -58,6 +58,7 @@ used_by:
 - type-II-relation-reach-proper-endpoint-descent
 - type-II-relation-reach-gcd-shadow-endpoint-descent
 - type-II-q-one-full-carrier-phase-root-entry
+- type-II-q-one-full-carrier-second-anchor-fixed-n-macro
 - type-I-path-anchored-atomic-split-complete-excess-admission
 sources:
 - claim: marked-solution-descent-closure

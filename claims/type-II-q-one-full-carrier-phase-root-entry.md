@@ -292,5 +292,6 @@ python3 reproductions/type_ii_q_one_full_carrier_phase_root_entry.py --verify
 首个 local segment 之后也不能直接重复 low marked-absorb。其第二 anchor 的完整超额
 rechart 在两个 parity branch 都被严格迫入 high overflow；证明见
 [q=1 full-carrier 首 child 的第二 anchor 低重图表严格 no-go](type-II-q-one-full-carrier-second-anchor-overflow.md)。
-这进一步压缩了下一接口：它必须处理 high-overflow determinant，而不是寻找第二张
-同类低图表。
+该 high-overflow interface 随后由
+[第二 anchor overflow 的固定-\(n\) 严格宏出口](type-II-q-one-full-carrier-second-anchor-fixed-n-macro.md)
+给出一条闭式、严格支付的后继；这仍只延长该 q=1 子树，而不等于全域 Type I selector。
