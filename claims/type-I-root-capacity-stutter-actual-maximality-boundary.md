@@ -63,8 +63,8 @@ g_A=(A,Q),
 不充分的放松是取某个 \(D_0\) 并只检查
 
 \[
-D_0\mid z,qquad D_0\mid K,qquad
-D_0\mid ph+1,qquad D_0\equiv1-h\pmod p,
+D_0\mid z,\qquad D_0\mid K,\qquad
+D_0\mid ph+1,\qquad D_0\equiv1-h\pmod p,
 \tag{2}
 \]
 
@@ -103,7 +103,7 @@ D_0=696191=743\cdot937,\qquad m=13,\qquad e=944,\qquad a=209.
 则 (3) 成立，且
 
 \[
-D_0\mid z,qquad D_0\mid K,qquad
+D_0\mid z,\qquad D_0\mid K,\qquad
 D_0\equiv1-h=42419\pmod {54481}.
 \tag{4}
 \]

@@ -7390,7 +7390,7 @@ D=mp+1-h,\quad pa=e(h-1)+1,\quad Da=m+h(h-1),
 并且
 
 \[
-p+e\mid me^2-e+1.
+me^2-e+1=a(p+e).
 \]
 
 利用 \(h\mid p^2+p+1\)，可进一步得到
@@ -7526,3 +7526,32 @@ proper-root 控制 \((p,r,h,D_0)=(54481,2543533812,12063,696191)\) 中，容量�
 \((R-h,K,A)\) 逐素数重建 canonical \(Q,\beta,g_A,D\)，然后才可尝试把真实
 stutter 与 capacity-prime external-source 菜单或严格递降相连。详见
 [根容量 stutter 的 actual-maximality 边界](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md)。
+
+## 2026-08-14：actual proper-root stutter 被推出 \(\sqrt{3p}\) 之外
+
+现有 root receipt 的 cyclotomic 排除可与 stutter 三参数恒等式真正联立。对真实
+proper-root stutter，\((D,M_0)=1\) 加上 \((h,D)=1\)、\(h=3u\) 给出
+\((D,p^2+p+1)=1\)。若 \(m=(D+h-1)/p\) 等于 1，则
+
+\[
+D(p+e)=p^2+p+1
+\]
+
+迫使 \(D=1\) 和 \(h=p\)，与 small-root 域矛盾；又因 \(D\mid ph+1\) 不被 3
+整除，得到 \(m\not\equiv2\pmod3\)，故 \(m\ge3\)。从
+\(Da=m+h(h-1)\) 随即有 \(h^2-3p\ge-2\)。
+
+令 \(c=3u^2-p\)，则 \(h^2-3p=3c\)。核心同余和 \((u,6)=1\) 强制
+\(c\equiv2\pmod {24}\)，所以该缺陷为 \(6\pmod {72}\)。最小候选 \(c=2\)
+又由根条件 \(h\mid p^2+p+1\) 推出 \(u\mid(c^2-c+1)/3=1\)，即 \(p=1\)，
+不可能为素数。因此真实 stutter 必满足
+
+\[
+\boxed{h^2\ge3p+78.}
+\]
+
+这严格扩展了之前 \(h^2<p\) 的 arithmetic strict-carry 带：当
+\(h^2<3p+78\) 时，terminal-first 失败后 canonical carry 一定严格。但这仍不是
+global exit，因严格 cofactor 尚须获得 E1--E5、typed target、identity lift 和全局势。
+带外 hard-root 与这些状态合同缺口仍是下一步的唯一对象。详见
+[实际 stutter 的 \(m\) 下界与根号三排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md)。

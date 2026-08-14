@@ -25,8 +25,8 @@ def verify_tuple(p: int, h: int, m: int, e: int, *, core_congruence: bool) -> No
         raise AssertionError("p(em-h)=e(h-1)+1 identity changed")
     if d * a != m + h * (h - 1):
         raise AssertionError("D(em-h)=m+h(h-1) identity changed")
-    if (m * e * e - e + 1) % (p + e) != 0:
-        raise AssertionError("p+e divisor condition changed")
+    if m * e * e - e + 1 != a * (p + e):
+        raise AssertionError("exact p+e quotient identity changed")
     if (p * p + p + 1) % h != 0 or f % h != 0:
         raise AssertionError("cyclotomic curve condition changed")
     if gcd(e, h) != 1:

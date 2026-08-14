@@ -821,7 +821,7 @@ python3 reproductions/type_i_root_capacity_proper_endpoint_stutter_exclusion.py 
 
 `type_i_root_capacity_stutter_finite_curve.py` 固定验证 stutter 门的三参数整数曲线：
 重算 (D=mp+1-h)、(pa=e(h-1)+1)、(Da=m+h(h-1))、
-(p+e\mid me^2-e+1) 与 (h\mid F(e,m))，并保留一个核心同余合数控制和一个
+(me^2-e+1=a(p+e)) 与 (h\mid F(e,m))，并保留一个核心同余合数控制和一个
 非核心素数控制，另检查一单位扰动不能伪造 stutter。它不扫描范围，也不把抽象元组
 当作 actual receipt。
 
@@ -873,3 +873,12 @@ python3 reproductions/type_i_root_capacity_stutter_provenance_dispatch.py --veri
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_actual_maximality_boundary.py --verify
 ```
+
+type_i_root_capacity_stutter_actual_small_root_exclusion.py 固定验证真实 \(p=73,r=3\)
+小根 receipt 的 cyclotomic-free D 与严格 carry，并验证 \(m=1\) 只能在丢失真实根
+条件的边界出现；它还核对 \(\delta=h^2-3p=6\) 的精确 defect 分解为何只会给出
+\(p=1\) 的根候选。它不扫描素数、分母或历史图表。
+
+~~~bash
+python3 reproductions/type_i_root_capacity_stutter_actual_small_root_exclusion.py --verify
+~~~

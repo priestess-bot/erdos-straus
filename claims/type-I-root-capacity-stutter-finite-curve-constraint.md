@@ -7,8 +7,8 @@ statement: >-
   h=3u、h|(p^2+p+1)、R-h=ED、D|K、gcd(h,D)=1，并且非终端 canonical carry
   发生 stutter，即 D≡1-h (mod p)。定义
   m=(D+h-1)/p、e=(ph+1)/D、a=em-h。则 m,e,a 都是正整数，并满足
-  D=mp+1-h、p a=e(h-1)+1、D a=m+h(h-1)，以及
-  p+e | m e^2-e+1。进一步令
+  D=mp+1-h、p a=e(h-1)+1、D a=m+h(h-1)，以及精确恒等式
+  m e^2-e+1=a(p+e)。进一步令
   F(e,m)=e^2m^2-e^2m+e^2+em-2e+1
   =(em-e+1)^2+em(e-1)，则 h|F(e,m)。因此 actual stutter
   receipt 必须落在一条显式整数曲线及其整除交集中；这些条件是必要筛选，
@@ -39,7 +39,7 @@ sources:
   - reproduction: reproductions/type_i_root_capacity_stutter_finite_curve.py
     role: fixed-arithmetic-controls-and-negative-perturbation
 visibility: public
-last_checked: '2026-08-13'
+last_checked: '2026-08-14'
 ---
 
 # 根容量 stutter 的三参数整数曲线约束
@@ -103,14 +103,16 @@ D(p+e)=mp^2+p+1,
 \tag{7}
 \]
 
-故把 \(p\) 取模 \(p+e\) 可得
+而由 \(a=em-h\) 与 (5)，有
 
 \[
-\boxed{p+e\mid me^2-e+1.}
+me^2-e+1=e(em-h)+e(h-1)+1=a(p+e).
 \tag{8}
 \]
 
-式 (5)--(8) 是 stutter 的精确整数必要条件，不涉及近似或范围搜索。
+特别地 \(p+e\mid me^2-e+1\)，但这里的整除只是上述精确商的推论，不能在引入
+\(a\) 后再当作独立筛选条件。式 (5)--(8) 是 stutter 的精确整数必要条件，不涉及
+近似或范围搜索。
 
 ## 3. Cyclotomic 曲线约束
 

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 721 |
+| 数学状态 | `established` | 723 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 562 |
+| 证明来源 | `repository_derivation` | 564 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 698 |
+| 审阅状态 | `internal_review` | 700 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -764,13 +764,14 @@
 | [一般根容量端点的精确 complete-excess 除数门](../claims/type-I-root-capacity-general-endpoint-divisor-gate.md) (`type-I-root-capacity-general-endpoint-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量素因子的 q 关联最小正源 Type I 终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md) (`type-I-root-capacity-prime-external-terminal-coupling`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 proper endpoint 的 stutter 门审计（原低端排除已撤回）](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md) (`type-I-root-capacity-proper-endpoint-stutter-exclusion`) | `retracted` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [根容量 stutter 的 actual-maximality 不可由除子交集替代](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md) (`type-I-root-capacity-stutter-actual-maximality-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [根容量实际 stutter 的 m 下界与根号三排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md) (`type-I-root-capacity-stutter-actual-small-root-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
-| [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
-| [根容量 stutter 的 actual-maximality 不可由除子交集替代](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md) (`type-I-root-capacity-stutter-actual-maximality-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [s=0 重图表的半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md) (`type-I-s-zero-rechart-standalone-potential-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |
