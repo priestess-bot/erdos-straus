@@ -50,7 +50,7 @@ sources:
   - reproduction: reproductions/type_i_root_capacity_strict_carry_support_rebase.py
     role: fixed-actual-receipt-and-support-rebase-controls
 visibility: public
-last_checked: '2026-08-14'
+last_checked: '2026-08-15'
 ---
 
 # 根容量严格 carry 的 complete-excess 支撑重基与旧投影阻断
@@ -370,6 +370,17 @@ checkpoint；它的唯一未实现部分是这些已有字段的 serializer/regi
 
 这个推论不是说每个 root chart 已经有 persistent parent，也不把缺失的 E1/E3 provenance
 伪装成已注册的递归边。
+
+### 2026-08-15 补充：raw word 已显式化，但不是 E1 root
+
+root endpoint 的 raw reachability 现在可以从 `universal_p_source_v1` 的 \(p\)-edge
+开始，先把 \(R-1\) 剥离到 \(p+1\)，再把 \(R-p-1\) 剥离到 \(h=3u\)。这使原来
+“actual root raw path”的整数部分成为一个可重放的有限 word，而不再只是存在性引用。
+但该 source 和两个 word 都由当前 \((p,r)\) target chart 算出；它们因此落在
+universal \(p\)-parent 的 root-policy 边界内，不能创建 persistent charged source 或
+替代 terminal-first prefix。故上表 E1 的状态不变：已支付的是 raw occurrence，仍未支付
+的是 target-independent origin、scope 与 priority；E3 的 typed reclassification 也仍是
+独立要求。完整区分见[严格 root carry 的规范 universal raw word 与 E1 root-policy 边界](type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary.md)。
 
 ## 5. 聚焦复现
 

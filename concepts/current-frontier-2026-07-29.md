@@ -8716,3 +8716,35 @@ local exclusion；把 \(h=3u,2r+1=uw\) 代入后得到的 canonical divisor 条�
 同一容量关系的坐标化。当前实质进展是把 q 的重入从 mod-\(q\) gate 收紧为可证伪的
 \(q^k\)-adic log/non-lift gate；它尚未提供 Type I/II terminal 或可提升递降。详见
 [横向 pure-\(T\) p-free p-block \(q\)-过容量的实际根高度 Hensel 桥](../claims/type-I-root-capacity-stutter-transverse-pure-t-p-free-overcapacity-root-height-lift.md)。
+
+## 2026-08-15：strict root 的 raw word 已闭合，但 E1 root-policy 不能由它补造
+
+对任意 \(a=1,d=1\) 根图表，已经可以把 endpoint \(h=3u\) 的 raw reachability
+完全写成有限 transcript：`universal_p_source_v1` 的 \(p\)-edge 先到
+\((1,R-1)\)，随后按
+
+\[
+\frac{R-1}{p+1}
+\]
+
+的规范 prime word 剥离到 \((p+1,R-p-1)\)，再按
+
+\[
+\frac{R-p-1}{3u}
+\]
+
+的 prime word 到达 \((3u,R-3u)\)。关键的全称恒等式是
+
+\[
+(R-1,K)=p+1,
+\]
+
+而第二段正是既有 \((R-p-1,K)=3u\) 的 actual capacity peeling。\(p=73,r=3\) 与
+\(p=313,r=271\) 都已逐步重放，并仍给出原有 strict cofactor 下降。
+
+这消除了“root endpoint 是否真有 raw path”的模糊处，但没有把 root carry 升级为
+verified edge：source、word 和 endpoint 都由当前 \((p,r)\) chart 反向构造。按已有
+universal \(p\)-parent 边界，有限 actual raw ancestry 不能替代 target-independent
+persistent root policy。因此当前 root support-rebase 的真实剩余量词是 charged origin、
+scope、terminal-first miss 与 typed E3 reclassification；不再是补造更多 raw word。
+详见[严格 root carry 的规范 universal raw word 与 E1 root-policy 边界](../claims/type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary.md)。

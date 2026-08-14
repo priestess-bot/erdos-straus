@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 760 |
+| 数学状态 | `established` | 761 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 600 |
+| 证明来源 | `repository_derivation` | 601 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 737 |
+| 审阅状态 | `internal_review` | 738 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -769,8 +769,9 @@
 | [严格 root carry 互补偶源尾的 Bezout 归一化与二次字符障碍](../claims/type-I-root-capacity-strict-carry-complement-tail-bezout-character-gate.md) (`type-I-root-capacity-strict-carry-complement-tail-bezout-character-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [严格 root carry 的 Eisenstein 前 cofactor 商范数门](../claims/type-I-root-capacity-strict-carry-eisenstein-precofactor-quotient.md) (`type-I-root-capacity-strict-carry-eisenstein-precofactor-quotient`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [严格 root carry 的 Eisenstein 小范数互补距离门](../claims/type-I-root-capacity-strict-carry-eisenstein-small-norm-distance-gate.md) (`type-I-root-capacity-strict-carry-eisenstein-small-norm-distance-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
-| [根容量严格 carry 的 complete-excess 支撑重基与旧投影阻断](../claims/type-I-root-capacity-strict-carry-support-rebase.md) (`type-I-root-capacity-strict-carry-support-rebase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [根容量严格 carry 的 complete-excess 支撑重基与旧投影阻断](../claims/type-I-root-capacity-strict-carry-support-rebase.md) (`type-I-root-capacity-strict-carry-support-rebase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [严格 root carry 尾门的 receipt-fiber 不变性与直接 D 支撑障碍](../claims/type-I-root-capacity-strict-carry-tail-receipt-fiber-barrier.md) (`type-I-root-capacity-strict-carry-tail-receipt-fiber-barrier`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [严格 root carry 的规范 universal raw word 与 E1 root-policy 边界](../claims/type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary.md) (`type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [根容量 stutter 的 actual-maximality 不可由除子交集替代](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md) (`type-I-root-capacity-stutter-actual-maximality-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md) (`type-I-root-capacity-stutter-actual-small-root-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的 C-side m 局部化与非平凡 T 余量](../claims/type-I-root-capacity-stutter-c-side-m-localization.md) (`type-I-root-capacity-stutter-c-side-m-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

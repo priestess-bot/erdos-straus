@@ -808,6 +808,17 @@ cofactor 精确对齐到 complete-excess 支撑 \(M_{\rm ex}=\operatorname{lcm}(
 \((Q,\beta)=1\) 与 \(h\beta\mid K\)，把缺口准确收缩为 persistent source、
 terminal-first priority 和 typed serializer。
 
+`type_i_root_capacity_strict_carry_universal_raw_word.py` 进一步把两个 actual strict
+control 的 root endpoint path 写成完整、按素数标签重放的 universal raw word：
+`universal_p_source_v1` 先到 `{1,R-1}`，再依次剥离到 `{p+1,R-p-1}` 与
+`{3u,R-3u}`。它同时核对 strict receipt 和高支撑秩，但明确将结果保留为
+`analysis_evidence`：该 word 由目标 chart 反向确定，不能替代 persistent root policy、
+scope、terminal-first 或 typed reclassification。
+
+```bash
+python3 reproductions/type_i_root_capacity_strict_carry_universal_raw_word.py --verify
+```
+
 `type_i_root_capacity_prime_external_terminal_coupling.py` 核对容量素因子 \(q\) 与
 \(q\) 关联最小正外部源的精确有限除子菜单。它固定验证 gap-7 Dirichlet 类、
 \(p=2137,t=9\) 的非平凡命中，以及 \(p=457,q=7\) 的 source-5 菜单和 gap-7
