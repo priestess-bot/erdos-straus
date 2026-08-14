@@ -282,6 +282,7 @@ def verify_p_free_pblock_overcapacity_root_height_control() -> None:
     pblock_capacity = p ** (p_height + 1) - p - 1
     root_height = p**p_height + height - 1
     m_height = p ** (p_height - 1) + m_value
+    r_height = 2 * r_value - p ** (p_height - 1)
     delta = valuation(d_value, q)
     epsilon = valuation(e_multiplier, q)
     q_capacity = delta + epsilon
@@ -299,6 +300,12 @@ def verify_p_free_pblock_overcapacity_root_height_control() -> None:
         (p + receipt_quotient)
         * (d_value // (q**delta))
         * pow(p * p, -1, q**epsilon)
+    ) % (q**epsilon)
+    r_unit = (r_height // (q**delta)) % (q**epsilon)
+    expected_r_unit = (
+        (p * e_multiplier + receipt_quotient)
+        * (d_value // (q**delta))
+        * pow(p * p * (p * p - 1), -1, q**epsilon)
     ) % (q**epsilon)
 
     if not (
@@ -328,6 +335,8 @@ def verify_p_free_pblock_overcapacity_root_height_control() -> None:
         and root_unit == expected_root_unit == 5
         and m_height % (q**delta) == 0
         and m_unit == expected_m_unit == 1
+        and valuation(r_height, q) == delta
+        and r_unit == expected_r_unit == 1
         # This is deliberately a local receipt-algebra control, not an endpoint.
         and endpoint_u == 1
         and height != 3 * endpoint_u

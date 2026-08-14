@@ -11,6 +11,10 @@ statement: >-
   (p^lambda+h-1)/q^delta = e p^(-1) D_hat mod q^epsilon；并有
   q^delta|(p^(lambda-1)+m) 及
   (p^(lambda-1)+m)/q^delta = (p+e)p^(-2)D_hat mod q^epsilon。
+  再结合 actual cross-mod identity，可得 q^delta 恰整除 2r-p^(lambda-1)，且其
+  q^delta 单位商等于 (pE+e)D_hat/(p^2(p^2-1)) mod q^epsilon。若 h=3u 是
+  canonical root endpoint、2r+1=uw，则这给出 u 与 w 的两条精确 q-adic
+  Hensel 约束。
   因而 overcapacity 不只是 p-block capacity polynomial 的 Hensel 条件：它强制
   p^lambda 在 actual root height h 的 q^delta 层精确命中、在下一 q 层必失败，
   同时给出 m/e/D 的高层残数。这是一个必要 capacity/provenance map，不构造
@@ -177,7 +181,7 @@ p^\lambda\not\equiv1-h\pmod {q^{\delta+1}}.}
 mod \(q\) 上携带负根角色；其 \(q^\delta\) lift 的首个非零单位商被 actual
 receipt quotient \(e\) 固定。
 
-## 4. \(m\) 坐标的同一高层桥
+## 4. \(m\) 与 \(r\) 坐标的同一高层桥
 
 由 \(h=mp+1-D\)，(8) 还可改写为
 
@@ -208,7 +212,69 @@ q^\delta\mid p^{\lambda-1}+m.
 式 (11)、(14) 是同一 overcapacity 事件在 root-height 与 gap/receipt 坐标中的
 两张高层投影。它们不是可任意指定的 q-local CRT 标签。
 
-## 5. 局部兼容边界
+还可把 \(r\) 本身锁定到同一 q-adic 层。既有 actual cross-mod identity 为
+
+\[
+(p+e+\sigma)\widehat D
+=(p^2-1)\frac{m+2r}{q^\delta}.
+\tag{15}
+\]
+
+从 (14) 中减去 (15)，并在模 \(q^\epsilon\) 下化简，得到
+
+\[
+\begin{aligned}
+\frac{2r-p^{\lambda-1}}{q^\delta}
+&\equiv\widehat D\left(
+\frac{p+e+\sigma}{p^2-1}-\frac{p+e}{p^2}
+\right)\\
+&\equiv
+\frac{(pE+e)\widehat D}{p^2(p^2-1)}
+\pmod {q^\epsilon}.
+\end{aligned}
+\tag{16}
+\]
+
+complete-excess relay 给出 \(v_q(pE+e)=0\)，而 pure-\(T\) 分派给出
+\(q\nmid p^2(p^2-1)\widehat D\)。故 (16) 的右侧是 q-单位，得到第三条 exact
+signature：
+
+\[
+\boxed{v_q\bigl(2r-p^{\lambda-1}\bigr)=\delta.}
+\tag{17}
+\]
+
+## 5. Canonical root realization filter
+
+若该 receipt 还来自 canonical root-capacity endpoint，则
+
+\[
+u=\gcd\!\left(2r+1,\frac{p^2+p+1}{3}\right),
+\qquad h=3u,
+\qquad 2r+1=uw.
+\tag{18}
+\]
+
+式 (10) 与 (17) 遂给出两条同时必须成立的 divisor-coordinate Hensel 条件：
+
+\[
+\boxed{
+\begin{aligned}
+3u&\equiv1-p^\lambda\pmod {q^\delta},
+&3u&\not\equiv1-p^\lambda\pmod {q^{\delta+1}},\\
+uw&\equiv1+p^{\lambda-1}\pmod {q^\delta},
+&uw&\not\equiv1+p^{\lambda-1}\pmod {q^{\delta+1}}.
+\end{aligned}}
+\tag{19}
+\]
+
+这里 \(u\) 是 \((p^2+p+1)/3\) 的实际除子，而不是可自由选择的 local root
+residue；\(w\) 还须满足 \(u=\gcd(2r+1,(p^2+p+1)/3)\)。因此 (19) 是将
+p-block overcapacity 投递到 canonical root realization 的第一张 exact capacity map。
+它尚未排除所有这样的 \((u,w)\)，但任何后续 universal no-go 或 strict descent 都必须
+处理这两条非 lift 条件，而不能只检查 q 的 first-layer discrete log。
+
+## 6. 局部兼容边界
 
 不能把 (7) 单独解释为与核心素数或局部 stutter 方程矛盾。取如下合成控制：
 
@@ -219,7 +285,7 @@ m=373,\qquad h=745,\qquad D=554653,\qquad e=2,\\
 r=1594864619896145076,\qquad
 t=8563019934725181,\qquad E=1+p^2t.
 \end{gathered}
-\tag{15}
+\tag{20}
 \]
 
 它满足低缺口负根的全部 q-local 关系、\(D=mp+1-h\)、\(eD=ph+1\)、
@@ -236,7 +302,7 @@ v_{11}(K_1)=2,
 v_{11}(x)=3,
 \qquad
 v_{11}(P_\lambda)=2,
-\tag{16}
+\tag{21}
 \]
 
 而 (9)、(11)、(14) 分别给出
@@ -247,7 +313,16 @@ v_{11}(p^\lambda+h-1)=1,
 \frac{p^\lambda+h-1}{11}\equiv5\pmod {11},
 \qquad
 \frac{p^{\lambda-1}+m}{11}\equiv1\pmod {11}.
-\tag{17}
+\tag{22}
+\]
+
+并且 (17) 给出
+
+\[
+v_{11}(2r-p^{\lambda-1})=1,
+\qquad
+\frac{2r-p^{\lambda-1}}{11}\equiv1\pmod {11}.
+\tag{23}
 \]
 
 不过它**不是** canonical root-capacity endpoint：
@@ -256,7 +331,7 @@ v_{11}(p^\lambda+h-1)=1,
 \gcd\!\left(2r+1,\frac{p^2+p+1}{3}\right)=1,
 \qquad h\ne3,
 \qquad h\nmid p^2+p+1.
-\tag{18}
+\tag{24}
 \]
 
 所以该控制不是 actual endpoint receipt，更不是 Erdős--Straus 反例。它严格说明：
@@ -264,7 +339,7 @@ v_{11}(p^\lambda+h-1)=1,
 代数；必须额外使用 canonical root realization、raw path provenance 或一个新的
 terminal/lift adapter。
 
-## 6. 对全局出口目标的意义
+## 7. 对全局出口目标的意义
 
 该引理将 p-block high-capacity branch 的最后自由度进一步压缩为一个实际 root-height
 Hensel signature。后续可尝试把 (10) 或 (14) 与 \(h=3\gcd(2r+1,M)\)、
@@ -272,11 +347,11 @@ Hensel signature。后续可尝试把 (10) 或 (14) 与 \(h=3\gcd(2r+1,M)\)、
 E1--E5 的严格递降。当前它只是一张必要容量/来源图：没有 terminal、没有全域解提升，
 也没有全局势下降。
 
-## 7. 聚焦复现
+## 8. 聚焦复现
 
 ~~~bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
 ~~~
 
-该 verifier 重放 (15)--(18) 的局部高过容量控制，逐项检查 (7)、(9)、(11)、(14)，
+该 verifier 重放 (20)--(24) 的局部高过容量控制，逐项检查 (7)、(9)、(11)、(14)、(17)，
 并显式检查其不满足 canonical root endpoint 条件。

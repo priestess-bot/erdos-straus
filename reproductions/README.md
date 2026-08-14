@@ -995,6 +995,9 @@ p-block identity 在局部上相容；它同时验证一条新的 actual-root-he
 若 `v_q(x)>v_q(K1)`，则 `q^delta` 恰整除 `p^lambda+h-1`，并且该单位商由
 `eD=ph+1` 的 receipt quotient 精确决定。控制显式不满足 canonical root endpoint
 `h=3*gcd(2r+1,(p^2+p+1)/3)`，因此它只阻断局部无解论证，不冒充实际递归状态。
+同一计算还验证 `q^delta` 恰整除 `2r-p^(lambda-1)`；对真实 canonical endpoint，
+这会把 overcapacity 强制成 endpoint divisor `u` 与其 root quotient `w` 的两条
+非 lift q-adic 条件。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
