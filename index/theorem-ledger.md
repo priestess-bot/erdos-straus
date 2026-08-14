@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 776 |
+| 数学状态 | `established` | 777 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 616 |
+| 证明来源 | `repository_derivation` | 617 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 754 |
+| 审阅状态 | `internal_review` | 755 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1080,6 +1080,7 @@
 | [q=1 高 C=2 的 19 相位固定 Type I/II 模板阻碍](../claims/type-II-q-one-c-two-19-phase-fixed-template-obstruction.md) (`type-II-q-one-c-two-19-phase-fixed-template-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位 p-anchor 完整超额容量扩张](../claims/type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位连续双 p-anchor 容量扩张](../claims/type-II-q-one-c-two-19-phase-second-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-second-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 高 C=2 的 19 相位第三 p-anchor 有限容量分裂](../claims/type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split.md) (`type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md) (`type-II-q-one-canonical-root-default-entry-capacity-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md) (`type-II-q-one-canonical-root-full-product-predecessor-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
