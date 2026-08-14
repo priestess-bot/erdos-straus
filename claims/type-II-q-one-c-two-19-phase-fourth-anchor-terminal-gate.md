@@ -12,7 +12,9 @@ statement: >-
   canonical capacity c4 满足 1<=c4<=p-2，可在 terminal-first miss 后作为既有 P=>H3
   persistent macro 的严格 E1--E5 延长；其余唯一分支是 g>1 且全部素因子为 1 (mod 4)
   的有界 q=1 掩码。31 个 u 类中 11 个没有任何可能的 1 (mod 4) 掩码素因子，余 20 个
-  才可能进入这个 hard branch。该分派尚未关闭 q=1 掩码分支，故不构成全局出口定理。
+  才可能进入这个 hard branch。该简化分派把 q=1 mask 交给后续最大超额 fourth-anchor
+  adapter；`type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion` 已关闭 H3 的
+  该后继缺口。两张卡都不构成全局出口定理。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -208,11 +210,14 @@ The bounded gcd produces the following selector.
 |---|---|
 | Some \(\ell\mid g\) has \(\ell\equiv3\pmod4\) | Type II terminal with \((A,C,k)=(1,(\ell+1)/4,1)\) and \(B=(p+1)/\ell\) |
 | \(g=1\) | Strict fourth \(p\)-anchor macro with endpoint capacity \(c_4\le p-2\) |
-| \(g>1\), all prime factors \(1\pmod4\) | Bounded \(q=1\) obstruction mask |
+| \(g>1\), all prime factors \(1\pmod4\) | Bounded \(q=1\) mask handoff to maximal-excess H4 |
 
 The first row is a direct raw Type II certificate because
-\(4ACk-1=\ell\mid p+1\). The last row is the only unresolved branch, and
-its primes come from the explicit list (6).
+\(4ACk-1=\ell\mid p+1\). The last row is unresolved only by the present
+clean-\(Q_3\) p-anchor formula, and its primes come from the explicit list (6).
+The [maximal complete-excess fourth-anchor completion](type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion.md)
+uses the actual block relative to \(K_3\), rather than pretending that the
+whole \((R_3-1)/2\) is excess, and gives its strict H4 handoff.
 
 Controls show all three outcomes: \(p=18097\) is clean and has \(c_4=13680\);
 \(p=14449\) reaches the mask \(g=5\); and \(p=402049\) has \(g=11\) and the
@@ -224,8 +229,10 @@ direct terminal
 \tag{15}
 \]
 
-This is a genuine terminal/macro dispatch, but it does not yet eliminate the
-bounded \(q=1\) mask, so it is not a global exit theorem.
+This is a genuine terminal/clean-macro/mask-handoff dispatch. Its successor
+eliminates the H3 mask as a missing fourth-anchor construction, but H4 still
+needs a terminal-first selector; therefore it remains far short of a global
+exit theorem.
 
 Focused verification:
 
