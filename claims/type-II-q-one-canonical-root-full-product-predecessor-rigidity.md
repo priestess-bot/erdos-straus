@@ -17,7 +17,9 @@ statement: >-
   证明。更精确地，每个 inverse predecessor 都满足
   gcd(X,K_d)=gcd(X,d+3)<X，X=(p+3)/4；若 q=1 endpoint 为 G，则每个
   inverse predecessor 对完整 X source box 的 carrier loss X/gcd(X,K_d) 至少为 7，且该常数
-  在 p=1033,d=330 达到；规范 root 自身与 X 互素，故第二腿把全部 X-carrier
+  在 p=1033,d=330 达到；满足标准 two-tail lift 整除条件的 Type II factor-pair
+  递降写为 m=4a-1、a|X-1，因而 (a,gcd(X,K_d))=1，不能将保留的 q=1
+  carrier 用作其 gap 参数。规范 root 自身与 X 互素，故第二腿把全部 X-carrier
   清零。因而 q=1 source 的完整带幂 carrier 不能在一步 bridge 中原样保留，甚至
   从完整 X box 出发的 partial transfer 也至少丢失一个大小不小于 7 的因子；个别素数层仍可能相交。故本卡
   不是全局 Type-I exit 或 verified edge。
@@ -29,6 +31,7 @@ depends_on:
   - type-I-overflow-unbounded-full-product-quotient-fold
   - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
   - type-I-raw-universal-p-parent-root-policy-boundary
+  - type-II-factor-pair-carrier-strict-descent
   - denominator-escape-state-contract
 topics:
   - type-II
@@ -41,6 +44,8 @@ topics:
   - determinant
   - root-entry
   - source-provenance
+  - factor-pair
+  - strict-descent
   - E1-E5
   - proof-boundary
 sources:
@@ -52,6 +57,8 @@ sources:
     role: d-equals-one-same-chart-boundary
   - claim: type-I-raw-universal-p-parent-root-policy-boundary
     role: raw-parent-does-not-create-E1-policy
+  - claim: type-II-factor-pair-carrier-strict-descent
+    role: standard-two-tail-lift-divisibility-contract
   - reproduction: reproductions/type_ii_q_one_canonical_root_full_product_predecessor.py
     role: focused-inverse-classification-full-carrier-obstruction-and-pre-root-controls
 visibility: public
@@ -472,7 +479,52 @@ pre-root 的瞬时容量，不能作为到 root 的 support-preserving payload�
 不是完整 \(X\) box 的保留，而是需要独立 E1 receipt 的 genuine source-switch，不能沿用
 原 Type II endpoint 的完整 provenance。
 
-### 6.2 provenance 的边界
+### 6.2 标准 factor-pair 递降的参数互素隔离
+
+这一小节不再需要 G 假设。令
+
+\[
+U=\frac{p-1}{4}=6t=X-1.
+\tag{42}
+\]
+
+故
+
+\[
+\boxed{(X,U)=1.}
+\tag{43}
+\]
+
+标准 Type II factor-pair two-tail lift 的整除前提是 \(m+1\mid p-1\)。由于合法
+gap \(m\equiv3\pmod4\) 可唯一写为 \(m=4a-1\)（\(a\ge1\)），这个前提在本处精确等价于
+
+\[
+4a\mid4U
+\quad\Longleftrightarrow\quad
+a\mid U.
+\tag{44}
+\]
+
+因此，对每个 inverse predecessor 的保留 carrier \(H_d=(X,K_d)\)，都有
+
+\[
+\boxed{(a,X)=(a,H_d)=1.}
+\tag{45}
+\]
+
+确实，\(H_d\mid X\)，而 (43)--(44) 已给 \((a,X)=1\)，故第二个等式随即成立。
+
+这是一条参数层的严格隔离：即使 \(H_d>1\)，其任一素因子也不能成为这种标准严格
+two-tail lift 的 gap 参数 \(a\) 的一部分。换言之，partial overlap 可以暂存于
+pre-root 的 \(K_d\)，却不能作为 \(n=(p+m)/(m+1)\) 这条 factor-pair 递降中选择
+\(m=4a-1\) 的继承载体。
+
+这里没有排除 factor-pair certificate 或严格递降本身：可选的 \(a\) 仍可来自与 \(X\)
+互素的新算术数据，\(ABC\) 的其它因子也未被此式限制。它只排除一种具体的 provenance
+叙述，即把保留的 \(q=1\) carrier 当作该递降 gap 参数的物理来源。故一个声称连接两者的
+E1/E3 adapter 必须独立说明这个互素 \(a\) 从何而来，不能把 \(H_d\) 重标为 \(a\)。
+
+### 6.3 provenance 的边界
 
 这正好扩展了 root 本身的互素障碍，但它是一个**带幂 carrier**结论，不能被夸大为
 所有单素数层都互素。更具体地，q=1 Type II endpoint 的真实 source box 以
@@ -498,7 +550,7 @@ source-switch 至少一个 \(q\)-进层，并重新支付 provenance，而不能
 p=673,
 \qquad X=169=13^2,
 \qquad d=75\mid A
-\tag{42}
+\tag{46}
 \]
 
 给出
@@ -506,7 +558,7 @@ p=673,
 \[
 (X,K_{75})=(169,78)=13,
 \qquad v_{13}(K_{75})=1<v_{13}(X)=2.
-\tag{43}
+\tag{47}
 \]
 
 故一个 \(13\)-层仍相交，而完整 \(13^2\) source carrier 不可保留。这个例子不是
@@ -523,11 +575,11 @@ partial overlap，不能把 (34) 错读为全面 source-disjointness。
 \left(B_p,K_g\right)
 \longmapsto
 \left(0,p-1\right),
-\tag{44}
+\tag{48}
 \]
 
 第一坐标严格下降。式 (19)--(21) 支付 E2；解集采用图表无关的
-\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(44) 支付 E5。fold 后根的既有
+\(\operatorname{Sol}(4,p)\) 恒等 map 时支付 E4；(48) 支付 E5。fold 后根的既有
 strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
 
 但这里尚缺的不是一个算术因子，而是完整的 E1/E3 准入：
@@ -536,7 +588,7 @@ strict carry 还可继续把 \((0,p-1)\) 降到 \((0,c)\)。
 2. 从该 entry 到 (22) 的 actual ordered raw transcript，或另一条同样独立的
    physical provenance；
 3. entry 与 root target 的 terminal-first、F/G/hit、normal form 和内容地址重算；
-4. 将 (44) 与 Type II exit phase 合并到不可 reset 的全局势。
+4. 将 (48) 与 Type II exit phase 合并到不可 reset 的全局势。
 
 任意 primitive node 都可反向补造 formal \(p\)-parent 的事实不能代替第 1--2 项。
 因此本卡的可复用成果是：所有一步 determinant bridge 已被分类，并且一个固定的

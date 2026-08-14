@@ -2,9 +2,10 @@
 """Verify the inverse full-product normal form for the q=1 canonical root.
 
 This is a focused algebraic verifier.  It classifies the legal d < p factor
-pairs that would fold to the canonical root and checks the p-only d = g
-pre-root seed.  It deliberately does not search raw reachability or create an
-E1/E3-qualified state.
+pairs that would fold to the canonical root, the p-only d = g pre-root seed,
+and the q=1 carrier separation from standard factor-pair descent parameters.
+It deliberately does not search raw reachability or create an E1/E3-qualified
+state.
 """
 
 from __future__ import annotations
@@ -178,6 +179,38 @@ def verify_whole_carrier_obstruction(
     return {"X": X, "d_one": d_one, "d_two": d_two, "d_three": d_three}
 
 
+def verify_factor_pair_parameter_separation(
+    root: dict[str, int], legal_divisors: list[int]
+) -> dict[str, object]:
+    """Check every standard factor-pair a | (p - 1)/4 is q=1-carrier-coprime."""
+    p = root["p"]
+    X = (p + 3) // 4
+    U = (p - 1) // 4
+    parameters = divisors(U)
+    retained_carriers = [
+        gcd(X, inverse_predecessor(root, d)["K"]) for d in legal_divisors
+    ]
+    if not (
+        U == X - 1
+        and p - 1 == 4 * U
+        and all(X % retained == 0 for retained in retained_carriers)
+        and all(gcd(parameter, X) == 1 for parameter in parameters)
+        and all(
+            gcd(parameter, retained) == 1
+            for parameter in parameters
+            for retained in retained_carriers
+        )
+    ):
+        raise AssertionError("factor-pair q=1 parameter separation changed")
+    return {
+        "X": X,
+        "U": U,
+        "factor_pair_parameter_count": len(parameters),
+        "all_parameters_coprime_to_X": True,
+        "all_parameters_coprime_to_retained_carriers": True,
+    }
+
+
 def verify_q_one_g_source_loss(
     root: dict[str, int], legal_divisors: list[int]
 ) -> dict[str, int]:
@@ -225,6 +258,9 @@ def verify() -> dict[str, object]:
             "whole_carrier_obstruction": verify_whole_carrier_obstruction(
                 root, legal_divisors
             ),
+            "factor_pair_parameter_separation": verify_factor_pair_parameter_separation(
+                root, legal_divisors
+            ),
         }
         if all(value % 3 == 1 for value in factorization((prime + 3) // 4)):
             row["q_one_g_source_loss"] = verify_q_one_g_source_loss(
@@ -240,6 +276,7 @@ def verify() -> dict[str, object]:
         and root673["A"] % 75 == 0
         and gcd((673 + 3) // 4, predecessor673["K"]) == 13
         and valuation(predecessor673["K"], 13) == 1
+        and p673["factor_pair_parameter_separation"]["U"] == 168
     ):
         raise AssertionError("p=673 partial-overlap control changed")
     p673["partial_overlap"] = {
@@ -257,6 +294,7 @@ def verify() -> dict[str, object]:
         and gcd((1033 + 3) // 4, predecessor1033["K"]) == 37
         and (1033 + 3) // 4 // 37 == 7
         and p1033["q_one_g_source_loss"] == {"X": 259, "minimum_source_loss": 7}
+        and p1033["factor_pair_parameter_separation"]["U"] == 258
     ):
         raise AssertionError("sharp q=1 G source-loss control changed")
     p1033["sharp_source_loss_control"] = {"d": 330, "retained": 37, "loss": 7}
