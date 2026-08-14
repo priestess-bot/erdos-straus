@@ -7794,3 +7794,32 @@ complement distance 和 pre-cofactor coordinate。actual \(p=313,r=271\) 的商�
 \(D_C/D_T\) 分裂和 root-prime external-source menu 联立，而不是把这张范数图单独当作
 terminal selector。详见
 [严格 root carry 的 Eisenstein 前 cofactor 商范数门](../claims/type-I-root-capacity-strict-carry-eisenstein-precofactor-quotient.md)。
+
+## 2026-08-14：Eisenstein 小范数把 strict complement 压进显式距离盒
+
+对同一 strict receipt，令 \(t=N(\beta)\)，并定义
+
+\[
+L(h,t)=\left\lfloor\sqrt{\frac{4ht}{3}}\right\rfloor.
+\]
+
+商恒等式 \(N(D+\tau\delta-s\omega)=ht\) 同时给出
+
+\[
+|s|\le L(h,t),
+\qquad
+|D+\tau\delta|\le L(h,t).
+\]
+
+因此 odd cofactor 时 \(\delta\le L-1\)，even cofactor 时
+
+\[
+\delta\le\left\lfloor\frac{pL-1}{h-1}\right\rfloor.
+\]
+
+当相应上界不超过 \((p-1)/2\) 时，canonical even complement 自动进入 \(n>p/2\)
+的 tail 域。这个结果尤其控制先前最棘手的单位商：\(p=313,r=271\) 有
+\((h,t,L,\delta)=(543,1,26,15)\)，并且 even 分支上界恰为 15。它仍错过已知
+high-half tail selector，故小范数是精确 capacity map 而不是证书。\(p=193,r=3\) 的
+\(t=763\) 使上界退化到 1408，说明不能把任意 norm quotient 误当作距离递降。详见
+[严格 root carry 的 Eisenstein 小范数互补距离门](../claims/type-I-root-capacity-strict-carry-eisenstein-small-norm-distance-gate.md)。

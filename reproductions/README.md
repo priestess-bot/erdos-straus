@@ -858,6 +858,15 @@ quotient。它只重放四个 actual receipts，构造
 python3 reproductions/type_i_root_capacity_strict_carry_eisenstein_precofactor_quotient.py --verify
 ```
 
+`type_i_root_capacity_strict_carry_eisenstein_small_norm_distance_gate.py` 从 strict
+receipt 的 Eisenstein quotient norm `t` 重算互补距离的显式小范数盒。它只检查
+`p=313` 的 sharp unit fiber、`p=73` 的 odd-cofactor 分支与 `p=193` 的非小-norm
+边界；不执行范围扫描或 tail divisor 搜索。
+
+```bash
+python3 reproductions/type_i_root_capacity_strict_carry_eisenstein_small_norm_distance_gate.py --verify
+```
+
 `type_i_root_capacity_proper_endpoint_stutter_exclusion.py` 审计两个真实 proper-root
 回执的有效整除门，并固定重现已撤回低端证明中的抽象整除反例；它不执行历史范围扫描。
 
