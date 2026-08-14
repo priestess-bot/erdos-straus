@@ -877,9 +877,11 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_residual.py --veri
 
 `type_i_root_capacity_stutter_transverse_residual_local_terminal_dispatch.py` 固定验证横向
 残余的两条局部 terminal 分支：`q|m`、`q=3 mod4` 时的 `p+1` Type I 证书，以及
-`q|m+2`、`q|2p+1`、`q=5 mod8` 时的 Type II 证书。它逐项恢复 `p=433` 的
-Type I 和 `p=97,409` 的 Type II 分母，不扫描素数，也不把控制当作 actual stutter
-receipt。
+`q|m+2`、`q|2p+1`、`q=5 mod8` 时的 Type II 证书。它还固定检查
+`p=4441,q=47` 的一个 `q=7 mod8` 候选：`(q+1)/2|C` 虽给出另一张 Type II
+证书，却强制 `3|C`，故落在已有 `L=3q` 的 K=2 桥中而不是第三条终端。脚本逐项恢复
+`p=433` 的 Type I、`p=97,409` 的直接 Type II 及这个回缩控制的分母，不扫描素数，
+也不把控制当作 actual stutter receipt。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_residual_local_terminal_dispatch.py --verify

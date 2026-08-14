@@ -9,8 +9,9 @@ statement: >-
   恰有 q|p-1、q|h+1 或 q|2p+1、q|h-2 两种情形；在第二种且 q≡5 mod8 时，
   s=(q+1)/2、C=(p+s)/(4q) 给出显式 Type II 证书
   4/p=1/(qC)+1/(2pC)+1/(2pqC)。因此未被这些直接终端关闭的残余在 m 分支
-  必避开 3 mod4 素因子，在 m+2 的 2p+1 分支必避开 5 mod8 素因子；剩余的
-  p-1 分支是 h+1 overlap，不是全局出口。
+  必避开 3 mod4 素因子，在 m+2 的 2p+1 分支必避开 5 mod8 素因子。一个表面上
+  新的 q≡7 mod8 尾整除候选强制落回已有 K=2 相邻 Type I/II 桥，因而不增加
+  terminal 覆盖；剩余的 p-1 分支是 h+1 overlap，不是全局出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -251,12 +252,85 @@ q\mid(D_*,m+2,2p+1),\ q\equiv5\pmod8
 因此若 terminal-first 已执行 (20) 而仍未关闭，
 \((D_*,m+2,2p+1)\) 的每个奇素因子都必须避开 \(5\pmod8\)。
 
-## 5. 边界
+## 5. \(q\equiv7\pmod8\) 候选完全回缩到已有 \(K=2\) 桥
+
+在 (13) 的横向 \(q\mid2p+1\) 支中，另一个看似自然的候选是
+
+\[
+q\equiv7\pmod8,\qquad
+\lambda=\frac{q+1}{2},\qquad
+s=\frac{3q+1}{2},\qquad
+C=\frac{p+s}{4q},
+\qquad \lambda\mid C.
+\tag{22}
+\]
+
+其中 \(C\) 确为整数：\(q\mid2p+1\) 蕴涵
+
+\[
+2(p+s)=2p+1+3q\equiv0\pmod q,
+\]
+
+而 \(p\equiv1\pmod4\)、\(s\equiv3\pmod4\)。又 \(q\equiv7\pmod8\) 不可能等于
+\(2p+1\)，其商也不可能是 3（否则 \(q\equiv1\pmod8\)），故
+\(q\le(2p+1)/5\)，从而 \(3\le s\le p-2\)。
+
+若只看 Type II 除子条件，令
+
+\[
+x=qC,\qquad d=\lambda C.
+\tag{23}
+\]
+
+由 \(\lambda\mid C\)，有 \(d\mid x^2\)、\(d\le x\)，且
+
+\[
+x+d=C(q+\lambda)=sC.
+\tag{24}
+\]
+
+所以这确实给出另一张直接 Type II 证书：
+
+\[
+\frac4p=
+\frac1{qC}+
+\frac1{pC}+
+\frac1{pqC/\lambda}.
+\tag{25}
+\]
+
+但是 (25) 没有带来新的 terminal 覆盖。写 \(C=\lambda k\)。从
+\(p=4qC-s\)、\(p\equiv1\pmod3\) 与 \(s\equiv2\pmod3\)，得到
+
+\[
+3\mid q(q+1)k.
+\tag{26}
+\]
+
+这里 \(q\ne3\)，所以要么 \(3\mid(q+1)\)，要么 \(3\mid k\)；无论哪种都有
+\(3\mid C\)。于是对缺口 \(s\)，已有 \(K=2\) 桥的模数为
+
+\[
+L=2s-1=3q,
+\qquad
+L\mid x=qC.
+\tag{27}
+\]
+
+这正是
+[Type II 的 \(K=2\) 切片与相邻 Type I 图表桥](type-II-k2-adjacent-type-I-cross-chart-bridge.md)
+的闭合条件。因此 (25) 可以是不同的分母三元组，却只是在已有 \(K=2\) 终端已关闭的
+输入上重参数化，不能登记为第三条独立 local terminal 分支。任何试图扩展
+\(q\equiv7\pmod8\) 的真正横向 adapter，必须使用比 (22) 更强的 actual-receipt 或
+source-provenance 信息。
+
+## 6. 边界
 
 (9) 和 (21) 只处理 \(D_*\) 恰好碰到 \(m\) 或 \(m+2\) 的局部支撑；它们不证明
 这种碰撞存在，也不关闭 (13) 的 \(p-1,h+1\) overlap 分支。特别地，不能从
-\(D_*\mid m+2r\) 推出 \(D_*\mid m(m+2)\)。因此本卡提供的是两条可注册的
-direct terminal 分支和一条剩余素因子筛，而不是全局证书或递降证明。
+\(D_*\mid m+2r\) 推出 \(D_*\mid m(m+2)\)。第 5 节的七模八候选只是已有
+\(K=2\) 桥的子集，并非第三条分支。因此本卡提供的是两条可注册的 direct terminal
+分支和一条剩余素因子筛，而不是全局证书或递降证明。
 
 ## 聚焦复现
 
@@ -265,5 +339,6 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_residual_local_ter
 ```
 
 脚本固定重建一张 \(p+1\) Type I 控制及两张 \(2p+1\)、\(5\pmod8\) Type II
-控制，逐项核对因子条件、自然缺口范围与三分母恒等式；它不扫描素数，也不把固定控制
-冒充 actual stutter receipt。
+控制；另固定验证一个 \(q\equiv7\pmod8\) 候选确实回缩到 \(L=3q\) 的已有
+\(K=2\) 桥。它逐项核对因子条件、自然缺口范围与三分母恒等式；不扫描素数，也不把
+固定控制冒充 actual stutter receipt。

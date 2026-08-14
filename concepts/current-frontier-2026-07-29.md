@@ -7808,6 +7808,21 @@ s=\frac{q+1}{2},\qquad C=\frac{p+s}{4q},
 新的真正困难支路。详见
 [横向 stutter 残余的 \(m\) 与 \(m+2\) 局部终端分流](../claims/type-I-root-capacity-stutter-transverse-residual-local-terminal-dispatch.md)。
 
+同一横向 \(2p+1\) 支上的一个容易误计的新候选也已排除。若 \(q\equiv7\pmod8\)，取
+
+\[
+\lambda=\frac{q+1}{2},\qquad
+s=\frac{3q+1}{2},\qquad
+C=\frac{p+s}{4q},
+\qquad \lambda\mid C,
+\]
+
+则 \(x=qC,d=\lambda C\) 的确给出另一张 Type II 证书。但写
+\(C=\lambda k\) 后，核心同余强制 \(3\mid q(q+1)k\)，故 \(3\mid C\)；
+于是已有 \(K=2\) 桥的 \(L=2s-1=3q\) 已整除 \(x\)。该候选只是已有桥的子集，
+不能计作第三条 terminal 覆盖。因而任何真正扩展 \(q\equiv7\pmod8\) 的横向
+adapter 都必须读取额外的 actual-receipt 或 source-provenance 数据。
+
 ## 2026-08-14：未终止 overlap 残余必须以同步赋值进入 T 侧
 
 继续检查上一条分流中没有直接终端的 \(p\pm1\) overlap。若奇素数 \(q\mid D_*\)
