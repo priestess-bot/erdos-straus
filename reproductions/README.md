@@ -906,9 +906,10 @@ python3 reproductions/type_i_root_capacity_stutter_transverse_overlap_receipt_re
 ```
 
 `type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py` 固定验证
-核心素数 `p=241` 上的局部 \(p-1\) complete-excess relay，并完整枚举
-`p-1=240` 的两个可用 source-fan 行。该控制精确显示 relay 条件本身不强制
-平方尾 witness；它明确不属于 actual proper-root receipt，且不扫描素数。
+两个 source-tail 边界：`p=241` 的局部 complete-excess relay，以及 `p=8641` 的
+proper-root/receipt-q-primary 定向输入。后者仍使 `p-1=8640` 的四条完整 fan 行
+全空，说明这些输入仍不强制平方尾 witness；两个控制都不冒充完整 actual stutter
+receipt，且不扫描素数。
 
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py --verify

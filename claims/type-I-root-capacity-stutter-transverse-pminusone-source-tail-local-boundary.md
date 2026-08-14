@@ -3,20 +3,19 @@ kind: claim
 claim_id: type-I-root-capacity-stutter-transverse-pminusone-source-tail-local-boundary
 title: 横向 p 减一 complete-excess relay 不强制 p 减一 source tail
 statement: >-
-  p=241、q=5、r=16、E=3375、D=25 给出一个核心素数上的局部 p-1,h+1
-  complete-excess relay 控制：q-primary receipt、D*、canonical complete-excess、
-  receipt quotient、checkpoint 和 Eisenstein norm exclusion 条件全部成立。但 p-1=240
-  的完整平移平方因子 source fan 仅有 d=1,5 两行，二者均不存在满足
-  e1|M1^2、e1<=M1、e1=-M1 mod (s-1) 的 e1。因此仅靠该局部 relay 条件不能
-  强制 p-1 source descent。该控制 h>p，故不是 actual proper-root receipt；它严格
-  划定的是 relay-to-source-tail 推理的缺失 actual-root 输入，不是否定 actual 分支
-  或全局出口。
+  p=241 的局部 complete-excess relay 控制和 p=8641 的 proper-root/receipt-q-primary
+  定向控制均没有 p-1 source tail。后者已满足 h|p^2+p+1、h<p、root gcd、
+  v_q(ph+1)=2b+t、v_q(T)=b+t 以及定向 root-quotient 赋值，而 p-1=8640 的完整
+  平移平方因子 source fan 四行全空。因此 relay 及其现有 actual-root q-primary
+  强化都不能单独强制 p-1 source descent；两个控制均不被冒充为完整 actual stutter
+  receipt，故该边界不否定 actual 分支或全局出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-root-capacity-stutter-transverse-overlap-receipt-relay
   - type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion
+  - type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation
   - p-minus-one-source-descent
 topics:
   - type-I
@@ -34,6 +33,8 @@ sources:
     role: local-q-primary-receipt-and-checkpoint-relay
   - claim: type-I-root-capacity-stutter-transverse-pminusone-excess-norm-exclusion
     role: local-norm-provenance-exclusion
+  - claim: type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation
+    role: proper-root-and-receipt-q-primary-orientation-input
   - claim: p-minus-one-source-descent
     role: complete-p-minus-one-source-tail-parameterization
   - reproduction: reproductions/type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py
@@ -147,21 +148,69 @@ d\in\{1,5\}.
 完整 \(p-1\) source-tail 参数化因此给出：这个 \(p\) 没有任何该 fan 的
 strict source lift，尽管 (7) 的 q-primary relay 全部成立。
 
-## 4. 结论与边界
+## 4. proper-root 与 receipt-q-primary 强化控制
 
-该控制严格否定以下仅依赖局部 relay 的蕴涵：
+上一个控制故意违反 \(h<p\)。为检验这一缺口是否足以自动恢复 \(p-1\) source fan，
+取另一固定控制
+
+\[
+(p,h,q,r)=(8641,39,5,266).
+\tag{10}
+\]
+
+这里 \(p\equiv1\pmod {24}\) 为素数，令
+
+\[
+u=13,\qquad
+\frac{p^2+p+1}{3}=24891841,\qquad
+(2r+1,\,(p^2+p+1)/3)=u.
+\tag{11}
+\]
+
+所以 \(h=3u\mid p^2+p+1\) 且 \(2\le h<p\)。记 \(b=v_5(p-1)=1\)，直接计算
+
+\[
+\begin{gathered}
+v_5(h+1)=v_5(r-1)=1,\qquad
+v_5(ph+1)=3,\qquad v_5(T)=2,\\
+v_5\left(\frac{p^2+p+1}{h}+3\right)=1,\qquad
+v_5\left(\frac{2r+1}{u}+9\right)=2.
+\end{gathered}
+\tag{12}
+\]
+
+这正是 root-quotient 定向引理使用的 proper-root 与 receipt-q-primary 输入，
+其中 \(t=1\)。它仍不构成完整 actual stutter receipt：本控制没有声称存在相应的
+canonical \(D,E\)、最大化 provenance 或状态合同。
+
+但是 \(p-1=8640\) 的完整 \(p-1\) source fan 依旧为空。其全部
+\(d\equiv1\pmod4\) 行为：
+
+| \(d\) | \(s_0\) | \(r_0\) | \(k_0\) | \(M_1\) | \(M_1^2\) 的因子数 | 满足 (4) 的 \(e_1\) |
+| ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | 8640 | 8639 | 2160 | 18662400 | 1365 | 无 |
+| 5 | 1728 | 1727 | 2159 | 3730752 | 819 | 无 |
+| 9 | 960 | 959 | 2158 | 2071680 | 1215 | 无 |
+| 45 | 192 | 191 | 2149 | 412608 | 351 | 无 |
+
+因此，甚至加入 (12) 的定向 root-quotient 数据，也还不能从当前已知关系构造
+\(p-1\) source-tail witness。
+
+## 5. 结论与边界
+
+这两个控制共同严格否定以下仅依赖 relay 或其已知 root/receipt-q-primary 强化的蕴涵：
 
 \[
 \text{p-minus-one complete-excess relay}
 \Longrightarrow
 \text{p-minus-one source-tail witness}.
-\tag{10}
+\tag{13}
 \]
 
-所以后续 adapter 必须实质性使用 actual proper-root 的额外约束，例如
-\(h\mid p^2+p+1\)、\(h<p\)、完整最大化 provenance，或构造一条与
-\(p-1\) fan 不同的证书/递降。这不证明 actual proper-root relay 永远不能命中
-\(p-1\) fan，也不排除 \(p=241\) 的其它 Type I/II 证书。
+所以后续 adapter 必须实质性使用尚未进入 (12) 的完整 actual receipt 数据，
+特别是 canonical \(D,E\) 的逐素数最大化 provenance，或构造一条与 \(p-1\) fan
+不同的证书/递降。这不证明 actual proper-root relay 永远不能命中 \(p-1\) fan，
+也不排除两个控制素数的其它 Type I/II 证书。
 
 ## 聚焦复现
 
@@ -169,5 +218,5 @@ strict source lift，尽管 (7) 的 q-primary relay 全部成立。
 python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_source_tail_boundary.py --verify
 ```
 
-复现器只重算 (5)--(9)：一个固定局部 relay 和对 \(240\) 的两个完整 fan 行的
-有限因子检查；它不扫描素数，也不运行历史测试。
+复现器只重算两个固定控制和 \(240,8640\) 的完整有限 fan 行；大载体的平方因子
+由分解生成而非逐整数扫描。它不扫描素数，也不运行历史测试。
