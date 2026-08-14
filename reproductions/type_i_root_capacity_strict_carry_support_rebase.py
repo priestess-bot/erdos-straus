@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import argparse
-from math import lcm
+from math import gcd, lcm
 
 from type_i_root_capacity_general_endpoint_divisor_gate import chart
 
@@ -49,6 +49,12 @@ def verify_strict_root_control(p: int, r: int, expected_cofactor: int) -> None:
         receipt["u"] < receipt["M"]
         and multiplier % p != 0
         and root_cofactor == endpoint_cofactor == expected_cofactor < p - 1
+        and receipt["Q"] > 1
+        and receipt["Q"] % p != 0
+        and gcd(receipt["Q"], receipt["beta"]) == 1
+        and capacity % receipt["beta"] == 0
+        and capacity % (receipt["h"] * receipt["beta"]) == 0
+        and capacity % receipt["Q"] != 0
         and old_target["cofactor"] == p - 1
         and old_target["capacity"] == capacity
         and old_target["remainder"] == remainder
@@ -74,8 +80,8 @@ def verify() -> None:
     verify_strict_root_control(73, 3, 37)
     verify_strict_root_control(313, 271, 298)
     print(
-        "verified strict root-carry support rebasing, old-support stutter, "
-        "and high-support rank descent"
+        "verified strict root-carry single-side gates, support rebasing, "
+        "old-support stutter, and high-support rank descent"
     )
 
 

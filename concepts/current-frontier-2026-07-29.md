@@ -7667,6 +7667,9 @@ M_{\rm ex}=\operatorname{lcm}(A,Q)=AE
 其 determinant 恰为 \((M,d,n)=(A,1,(4A+1)/p)\)，剩余参数 \(t=0\)，所以该 adapter
 必须抑制 stutter。这封死了把 strict root carry 直接套入旧 total-cofactor 边的错误桥。
 
+strict receipt 还自动满足单侧 complete-excess payload 的 \(Q>1\)、\(p\nmid Q\)、
+\((Q,\beta)=1\) 与 \(h\beta\mid K\)；因此不需要发明新的算术 action。
+
 结果是一个更精确的 adapter 缺口，而不是新的全局闭合：strict carry 已支付 E2、图表无关
 \(\operatorname{Sol}(4,p)\) 语义下的 E4，以及对 persistent source 条件性的 E5；剩下
 只有把 actual root raw path、terminal-first priority、typed F/G/hit 重分类和内容寻址

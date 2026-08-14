@@ -793,6 +793,10 @@ cofactor 精确对齐到 complete-excess 支撑 \(M_{\rm ex}=\operatorname{lcm}(
 同时核验 \(M_{\rm ex}\nmid K\) 和高支撑秩 \((0,p-1)\to(0,c)\)。它不搜索素数、
 参数、selector history 或历史测试。
 
+该脚本也重算 strict receipt 的单侧 payload 门 \(Q>1\)、\(p\nmid Q\)、
+\((Q,\beta)=1\) 与 \(h\beta\mid K\)，把缺口准确收缩为 persistent source、
+terminal-first priority 和 typed serializer。
+
 `type_i_root_capacity_prime_external_terminal_coupling.py` 核对容量素因子 \(q\) 与
 \(q\) 关联最小正外部源的精确有限除子菜单。它固定验证 gap-7 Dirichlet 类、
 \(p=2137,t=9\) 的非平凡命中，以及 \(p=457,q=7\) 的 source-5 菜单和 gap-7

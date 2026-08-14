@@ -13,9 +13,11 @@ statement: >-
   把原 root chart 送入 support-preserving total-cofactor dispatch 时，其
   determinant 参数为 (M,d,n)=(A,1,(4A+1)/p)，且 t=0，故该 dispatch 必须
   抑制为 stutter。因而严格 root carry 不能由旧 total-cofactor 投影或同图表 support
-  promotion 登记；它必须经过一个保留实际 root path 的 complete-excess support-rebase
-  adapter。该结论支付 E2、图表无关 Sol(4,p) 语义下的 E4、以及条件性的 E5；它不凭空
-  支付 persistent provenance、typed normal form 或 terminal-first priority 的 E1/E3。
+  promotion 登记；它必须经过现有单侧 complete-excess 语义的一个保留 actual root path
+  的 support-rebase serializer。strict receipt 已自动满足 Q>1、p 不整除 Q、
+  (Q,beta)=1 和 h beta|K 等单侧算术准入门。该结论支付 E2、图表无关 Sol(4,p)
+  语义下的 E4、以及条件性的 E5；它不凭空支付 persistent provenance、typed normal
+  form 或 terminal-first priority 的 E1/E3。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -43,6 +45,8 @@ sources:
     role: support-preserving-total-cofactor-stutter-rule
   - claim: type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
     role: exact-high-support-rank-and-same-chart-admission-condition
+  - claim: type-I-overflow-full-product-d-one-a-one-single-endpoint-stutter-guarded-relay
+    role: single-side-path-receipt-and-conditional-macro-contract
   - reproduction: reproductions/type_i_root_capacity_strict_carry_support_rebase.py
     role: fixed-actual-receipt-and-support-rebase-controls
 visibility: public
@@ -111,6 +115,30 @@ c=\langle-E^{-1}\rangle_p
 这不是一个任意除子 (D) 的构造；(3) 的 maximality 是结论的必要输入。
 
 ## 2. 两个 canonical cofactor 分属不同支撑
+
+### 单侧 receipt 的自动算术门
+
+strict 性先给出 \(E\ne1\)，所以 \(Q>1\)。由下文 (7) 的
+\(4A\equiv-1\pmod p\) 可知 \(p\nmid A\)，故 \(p\nmid g_A\)。proper-root 的
+\(p\nmid E\) 因而加强为
+
+\[
+p\nmid Q.
+\tag{5a}
+\]
+
+按 maximal definition，\(\beta\mid K\)、\((Q,\beta)=1\)，且 \(Q>1\) 时
+\(Q\nmid K\)。根 endpoint primitive 性还给出 \(h\mid K\)、\((h,z)=1\)；因
+\(\beta\mid z\)，有 \((h,\beta)=1\)，从而
+
+\[
+\boxed{h\beta\mid K.}
+\tag{5b}
+\]
+
+因此每个 strict proper-root receipt 已满足单侧 path-anchored complete-excess 的全部
+**算术** payload 条件。尚未包含在 (5a)--(5b) 中的是该 raw path 是否来自已入队 source，
+以及它的 priority、scope、hash 和 typed state 记录。
 
 定义 root receipt 真正携带的新支撑
 
@@ -314,23 +342,34 @@ support-preserving adapter，会跳过 (6) 的 actual (Q) receipt，既不满足
 定义，也会错误地把 (23) 当成严格下降。
 
 同图表 support-promotion adapter 也不适用，因为它要求新 support 整除不变的
-(K)，而 (11) 给出严格相反的结论。因此唯一正确的方向是一个新的单侧
-`root_capacity_complete_excess_support_rebase` adapter：其 witness 必须携带原始
-root raw path、(3) 的 maximal receipt、(6) 的 lcm charge 与 (12) 的 canonical
-target。
+(K)，而 (11) 给出严格相反的结论。因此唯一正确的方向是现有单侧
+complete-excess receipt 的 root-specialized serializer，可命名为
+`root_capacity_complete_excess_support_rebase`：其 witness 必须携带原始 root raw path、
+(3) 的 maximal receipt、(6) 的 lcm charge 与 (12) 的 canonical target。这里不需要
+再发明一个新的算术 action；(5a)--(5b) 已将它对齐到既有单侧接口。
 
 在这个 adapter 中，合同项的当前状态精确如下：
 
 | 合同 | 已支付内容 | 仍需具名 adapter 提供的内容 |
 |---|---|---|
-| E1 | 无 | 将 root endpoint 的 raw path 绑定到真实 queued source、保留 scope，并先执行所有 terminal-first priority。 |
+| E1 | (5a)--(5b) 的 complete-excess payload | 将 root endpoint 的 raw path 绑定到真实 queued source、保留 scope，并先执行所有 terminal-first priority。 |
 | E2 | (6)、(10)、(12)--(16) | 将这些字段序列化为完整 target state。 |
 | E3 | 无 | 独立重算 source/target F/G/hit、normal form、receipt 与 state hash。 |
 | E4 | 两端使用图表无关 \(\operatorname{Sol}(4,p)\) 时，恒等映射 | target schema 必须确实采用该标记集。 |
 | E5 | strict carry 的 (19) | source 必须是 E1 所说的 persistent state，不能把 transient root receipt 当作端点。 |
 
-所以本卡既给出 strict root carry 的精确容量出口，也封死两条错误快捷方式；它没有把
-缺失的 E1/E3 provenance 伪装成已注册的递归边。
+### 条件性直达准入推论
+
+若原 \(a=1,d=1\) root chart 已是 persistent typed source，且其实际 raw path、
+terminal-first prefix 与 source scope 已经被具名回执绑定，那么 (5a)--(5b) 使 strict
+proper-root carry 直接进入单侧 complete-excess 宏的输入域。以 (6)、(12) 生成 target，
+并独立完成 typed reclassification、normal-form 和 content-addressed replay 后，E1--E5
+的支付分别为：输入 persistent path、(10)--(16)、两端 verifier、
+\(\operatorname{Sol}(4,p)\) 恒等 lift 与 (19)。因此 strict root 不需要 stutter relay
+checkpoint；它的唯一未实现部分是这些已有字段的 serializer/registry 接入。
+
+这个推论不是说每个 root chart 已经有 persistent parent，也不把缺失的 E1/E3 provenance
+伪装成已注册的递归边。
 
 ## 5. 聚焦复现
 
