@@ -7933,6 +7933,29 @@ receipt quotient 的额外高赋值进一步确定了这条二分的方向：实
 base-layer，将额外 q 容量统一留在 \(w+9\) 侧。详见
 [p 减一 complete-excess 横向素因子的 root-quotient 定向饱和](../claims/type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation.md)。
 
+这个 \(w+9\) 容量还可由 actual receipt 精确分层。仍令
+\(b=v_q(p-1)\)、\(t=v_q(D)-b\)，有恒等式
+
+\[
+p^2\frac h3(w+9)=2T+(p-1)^2+3p(ph+1).
+\]
+
+故在非共振 \(t\ne b\) 时，
+
+\[
+v_q(w+9)=
+\begin{cases}
+b+t,&0<t<b,\\
+2b,&t>b,
+\end{cases}
+\]
+
+而 \(t=b\) 时至少为 \(2b\)，是否继续升高恰由
+\(2T/q^{2b}+((p-1)/q^b)^2\equiv0\pmod q\) 决定。这把“至少一层”的信息升级成
+一张可计算的 valuation staircase；它依然不把 \(q\nmid u\) 的横向因子送入旧
+external-source 菜单，也还没有给出 terminal 或 lift。详见
+[p 减一 complete-excess 横向素因子的 w 加九赋值阶梯](../claims/type-I-root-capacity-stutter-transverse-pminusone-w-offset-valuation-staircase.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt

@@ -945,6 +945,16 @@ q 幂，而 `w+9` 至少多一层 q 幂。控制不冒充完整 actual stutter r
 python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_root_quotient_orientation.py --verify
 ```
 
+type_i_root_capacity_stutter_transverse_pminusone_w_offset_valuation_staircase.py 固定验证
+\(p-1\) complete-excess 输入下 \(w+9\) 的精确赋值阶梯：非共振时由 \(t\) 相对
+\(b=v_q(p-1)\) 的大小给出等式，共振时由一条显式 q-primary 剩余类决定是否再升一层。
+两个 proper-root 控制和两个局部整数控制分别覆盖这些分支；后者不冒充 actual root
+receipt，且脚本不扫描范围。
+
+~~~bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_w_offset_valuation_staircase.py --verify
+~~~
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half
