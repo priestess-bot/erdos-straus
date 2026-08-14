@@ -113,13 +113,59 @@ def verify_a_one_factor_gate(p: int, q: int, h: int, m: int, s: int) -> None:
         raise AssertionError("factor-gate two-tail lift changed")
 
 
+def verify_m_polynomial_root_split(
+    p: int, q: int, h: int, m: int, s: int, expect_positive: bool
+) -> None:
+    """Check the exact positive/negative root split of the m-side low-gap filter."""
+    if not (is_prime(p) and p % 24 == 1 and is_prime(q) and q % 2 == 1):
+        raise AssertionError("control did not use a core prime and odd q")
+    if s not in LOW_GAPS or q % (2 * s) != 2 * s - 1:
+        raise AssertionError("control did not meet the low-gap q residue")
+
+    local_d = m * p + 1 - h
+    if local_d % q or (p * h + 1) % q:
+        raise AssertionError("q-local stutter congruences changed")
+    if (h * h - 1) % q == 0:
+        raise AssertionError("control did not use a transverse q residue")
+
+    delta = m * s * s - s + 1
+    positive_root = s * h - 1
+    negative_root = s * (h - 1) + 1
+    if delta + positive_root * negative_root != s * s * (m + h * (h - 1)):
+        raise AssertionError("m-polynomial root identity changed")
+    if delta % q:
+        raise AssertionError("control did not enter the m-polynomial split")
+
+    positive_hit = positive_root % q == 0
+    negative_hit = negative_root % q == 0
+    if positive_hit == negative_hit or positive_hit != expect_positive:
+        raise AssertionError("m-polynomial root split did not select the expected branch")
+
+    k, remainder = divmod(q + 1, s)
+    if remainder or not (1 < k < q and k % 2 == 0):
+        raise AssertionError("low-gap residue did not recover the even K")
+    if (m + k * (k - 1)) % q:
+        raise AssertionError("both roots must retain the quadratic shift")
+
+    positive_factor = k * p + 1
+    negative_factor = (k - 1) * p - 1
+    if expect_positive:
+        if h % q != k or positive_factor % q or negative_factor % q == 0:
+            raise AssertionError("positive root did not select the known terminal branch")
+    else:
+        if (1 - h) % q != k or negative_factor % q or positive_factor % q == 0:
+            raise AssertionError("negative root did not select the unresolved branch")
+
+
 def verify() -> None:
     # These are q-local controls, not assertions of actual root receipts.
     verify_a_one_factor_gate(337, 17, 6, 4, 3)
     verify_a_one_factor_gate(97, 13, 15, 11, 7)
     verify_q_local_root_residue_low_gap(97, 1, 13, 15, 11)
     verify_q_local_root_residue_low_gap(1297, 5, 13, 9, 6)
-    print("verified q-local root-residue factor gates and Type II strict descents")
+    verify_m_polynomial_root_split(337, 17, 6, 4, 3, expect_positive=True)
+    verify_m_polynomial_root_split(433, 11, 30, 10, 3, expect_positive=False)
+    print("verified q-local root-residue gates, strict descents, and m-root split")
 
 
 def main() -> None:

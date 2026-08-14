@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 749 |
+| 数学状态 | `established` | 750 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 589 |
+| 证明来源 | `repository_derivation` | 590 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 726 |
+| 审阅状态 | `internal_review` | 727 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -785,6 +785,7 @@
 | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量实际 stutter 的 10000 系数排除带](../claims/type-I-root-capacity-stutter-ten-thousand-coefficient-barrier.md) (`type-I-root-capacity-stutter-ten-thousand-coefficient-barrier`) | `established` | `mixed` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 的一般 A 型二次移位 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [横向 stutter 低缺口 m 多项式的正负根分派](../claims/type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split.md) (`type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 回执除子的原生 Type II raw-ray 终端菜单](../claims/type-I-root-capacity-stutter-transverse-native-raw-type-II-menu.md) (`type-I-root-capacity-stutter-transverse-native-raw-type-II-menu`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter overlap 的 actual complete-excess 赋值分型](../claims/type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification.md) (`type-I-root-capacity-stutter-transverse-overlap-complete-excess-valuation-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter overlap 的 receipt 商与 checkpoint 赋值 relay](../claims/type-I-root-capacity-stutter-transverse-overlap-receipt-relay.md) (`type-I-root-capacity-stutter-transverse-overlap-receipt-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

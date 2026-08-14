@@ -7951,6 +7951,36 @@ root-residue 条件的充要重写，而不是另一条证书家族；它还强�
 source-factor gate 将后续全称选择问题压成四个实际 gcd 的素因子剩余类，而没有证明
 它们中任何一个必命中。
 
+## 2026-08-14：m-side 低缺口碰撞精确分成正根和二次扇负支
+
+令
+
+\[
+\Delta_s=ms^2-s+1,\qquad
+F_s^+=sh-1,\qquad
+F_s^-=s(h-1)+1.
+\]
+
+actual stutter 曲线给出精确整数恒等式
+
+\[
+\Delta_s+F_s^+F_s^-=s^2Da.
+\]
+
+因此若 \(q\mid D_*\)、\(q\equiv-1\pmod {2s}\) 且 \(q\mid\Delta_s\)，则
+\(q\) 在两个根因子中恰落一个。正根 \(F_s^+\) 正是上面的 strict terminal；
+负根 \(F_s^-\) 则令 \(K=(q+1)/s\) 并精确强制
+
+\[
+q\mid((K-1)p-1),\qquad q\nmid Kp+1.
+\]
+
+也就是说，\(\gcd(D_*,\Delta_s)\) 的该类碰撞并非自动证书，而是“已闭合的正根 /
+一般二次扇的未闭合负支”的完整容量分派。一个核心素数 \(p=433\) 的 q-local 控制
+显示负支不能仅由现有局部同余排除；它不冒充 actual receipt。下一条真正需要的新桥是
+将这个负支变成证书、带完整状态合同的递降，或由 actual provenance 排除。详见
+[横向 stutter 低缺口 m 多项式的正负根分派](../claims/type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
