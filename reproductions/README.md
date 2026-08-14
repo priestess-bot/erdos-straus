@@ -220,6 +220,11 @@ standard-even marked lift，以及 `p=73,r=3`、`p=313,r=271` 两条 actual stri
 receipt。它验证低/中/高三分、高半区的单一 divisor-residue gate，以及 strict
 cofactor 本身并不强制该 gate 或 odd-distance ray；不扫描 root 参数、素数或历史 selector。
 
+`type_i_root_capacity_strict_carry_complement_tail_bezout_character_gate.py` 把同一
+receipt multiplier `E` 归一化成 high-tail modulus 上的 Bezout 单位，并固定核对
+`p=73,r=3` 的 Legendre no-go 与 `p=313,r=271` 的模 293 指数盒失败。它证明二次
+character 可消去一部分 tail selector，却不能单独强制剩余 high-half gate；不做范围扫描。
+
 `adaptive_external_escape.py` 专门审计自适应外部源递降的未命中实例：它为每个
 逃逸素数列出全部允许 \(k\)、源分母的素因子残数、有限 source 窗口中的直接外部源
 正规形，以及有界 Type II \(AC\) 射线证书。这个报告区分“没有该递降边”和

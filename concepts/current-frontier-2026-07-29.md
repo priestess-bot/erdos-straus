@@ -7708,3 +7708,30 @@ e\mid S^2,\qquad e\le S,\qquad e\equiv-S\pmod R
 \(Q,E,D,h\) 的赋值约束接到这个高半区 selector，或从低半区推出短证书；不能把
 cofactor parity 误当成全局递降。详见
 [严格 root carry 的互补偶源三分与高半区单同余提升门](../claims/type-I-root-capacity-strict-carry-complement-even-source-gate.md)。
+
+## 2026-08-14：receipt multiplier 在二次层不能强制高半区 tail
+
+对 high-half canonical complement，令 \(R=4n-p\)、\(S=pn\)，并写
+\(w=(Ec+1)/p\)。由 \(c\) 的 parity 定义 \(a=E-4w\) 或 \(a=3E-4w\) 后，
+actual receipt 满足一个精确 Bezout 归一化：
+
+\[
+na\equiv-1\pmod R,
+\qquad pa\equiv-4\pmod R,
+\qquad Sa^2\equiv4\pmod R.
+\]
+
+故 retained-standard-tail 的因子条件 \(e\equiv-S\pmod R\) 等价于
+\(ea^2\equiv-4\pmod R\)。这是把 root 的 \(E\) 真正投影到小分母 selector 的
+第一条 exact identity；但其二次信息完全抵消：对每个奇 \(q\mid R\)，
+
+\[
+\left(\frac{-S}{q}\right)=\left(\frac{-1}{q}\right).
+\]
+
+因此若某个 \(q\equiv3\pmod4\) 上 \(n\) 的全部素因子均为二次剩余，tail 立即为空。
+这解释了 actual \(p=73,r=3\) 控制的 miss。反过来，actual high-half
+\(p=313,r=271\) 通过这个二次必要门，却在模 \(293\) 的 27 元指数盒中仍无目标残类。
+所以接下来的真正余项是 higher-order/exponent-box 或 \(D,h,Q\) 的赋值来源，而不是继续
+从 \(E\) 的 Legendre 类寻找自动 selector。详见
+[严格 root carry 互补偶源尾的 Bezout 归一化与二次字符障碍](../claims/type-I-root-capacity-strict-carry-complement-tail-bezout-character-gate.md)。

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 727 |
+| 数学状态 | `established` | 728 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 568 |
+| 证明来源 | `repository_derivation` | 569 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 704 |
+| 审阅状态 | `internal_review` | 705 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -765,6 +765,7 @@
 | [根容量素因子的 q 关联最小正源 Type I 终端菜单](../claims/type-I-root-capacity-prime-external-terminal-coupling.md) (`type-I-root-capacity-prime-external-terminal-coupling`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 proper endpoint 的 stutter 门审计（原低端排除已撤回）](../claims/type-I-root-capacity-proper-endpoint-stutter-exclusion.md) (`type-I-root-capacity-proper-endpoint-stutter-exclusion`) | `retracted` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [严格 root carry 的互补偶源三分与高半区单同余提升门](../claims/type-I-root-capacity-strict-carry-complement-even-source-gate.md) (`type-I-root-capacity-strict-carry-complement-even-source-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [严格 root carry 互补偶源尾的 Bezout 归一化与二次字符障碍](../claims/type-I-root-capacity-strict-carry-complement-tail-bezout-character-gate.md) (`type-I-root-capacity-strict-carry-complement-tail-bezout-character-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量严格 carry 的 complete-excess 支撑重基与旧投影阻断](../claims/type-I-root-capacity-strict-carry-support-rebase.md) (`type-I-root-capacity-strict-carry-support-rebase`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的 actual-maximality 不可由除子交集替代](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md) (`type-I-root-capacity-stutter-actual-maximality-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md) (`type-I-root-capacity-stutter-actual-small-root-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
