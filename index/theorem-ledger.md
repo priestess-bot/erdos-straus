@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 779 |
+| 数学状态 | `established` | 780 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 619 |
+| 证明来源 | `repository_derivation` | 620 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 757 |
+| 审阅状态 | `internal_review` | 758 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1079,7 +1079,8 @@
 | [Type II q 层前缀匹配到纤维 Kneser 价格的规范压缩](../claims/type-II-q-layer-prefix-kneser-price-certificate.md) (`type-II-q-layer-prefix-kneser-price-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [q=1 高 C=2 的 19 相位固定 Type I/II 模板阻碍](../claims/type-II-q-one-c-two-19-phase-fixed-template-obstruction.md) (`type-II-q-one-c-two-19-phase-fixed-template-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位 p-anchor 完整超额容量扩张](../claims/type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
-| [q=1 高 C=2 的 19 相位 63 类仿射终端分派](../claims/type-II-q-one-c-two-19-phase-residue-terminal-dispatch.md) (`type-II-q-one-c-two-19-phase-residue-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 高 C=2 的 19 相位细分仿射终端边界](../claims/type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary.md) (`type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 高 C=2 的 19 相位 65 类仿射终端分派](../claims/type-II-q-one-c-two-19-phase-residue-terminal-dispatch.md) (`type-II-q-one-c-two-19-phase-residue-terminal-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位连续双 p-anchor 容量扩张](../claims/type-II-q-one-c-two-19-phase-second-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-second-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位第三 p-anchor 有限容量分裂](../claims/type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split.md) (`type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位三 p-anchor persistent 宏出口](../claims/type-II-q-one-c-two-19-phase-three-anchor-persistent-macro.md) (`type-II-q-one-c-two-19-phase-three-anchor-persistent-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

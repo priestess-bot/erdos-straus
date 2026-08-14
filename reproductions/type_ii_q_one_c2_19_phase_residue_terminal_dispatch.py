@@ -13,6 +13,7 @@ from collections import defaultdict
 
 from short_certificate import (
     type_i_normal_form_certificate,
+    type_ii_normal_form_certificate,
     type_ii_raw_ray_certificate,
     verify_certificate,
 )
@@ -40,15 +41,18 @@ EXTRA_TYPE_I = {
     50: (1, 34, 7),
     89: (1, 17, 3),
 }
+AFFINE_TYPE_II = {
+    # Fixed (A,B), with C affine in p=912u+769+STEP*t.
+    13: (23, 6, 17, 31, 266),
+    20: (31, 14, 17, 20, 114),
+}
 RESIDUAL = {
     1,
     5,
     6,
     8,
-    13,
     15,
     19,
-    20,
     22,
     26,
     27,
@@ -147,6 +151,17 @@ def verify_type_i_extensions() -> None:
                 raise AssertionError("an affine Type I normal form lost its terminal certificate")
 
 
+def verify_affine_type_ii_extensions() -> None:
+    for u, (gap, a, b, c_base, c_step) in AFFINE_TYPE_II.items():
+        base = prime_residue(u)
+        for parameter, prime in enumerate((base, base + STEP)):
+            certificate = type_ii_normal_form_certificate(prime, gap, a, b)
+            if certificate is None or not verify_certificate(certificate):
+                raise AssertionError("an affine Type II normal form lost its terminal certificate")
+            if (prime + gap) // (4 * a * b) != c_base + c_step * parameter:
+                raise AssertionError("the affine Type II C coordinate changed")
+
+
 def verify() -> None:
     valid = valid_residues()
     expected_u7 = {u for u in valid if u % 7 in {0, 2, 3}}
@@ -175,12 +190,14 @@ def verify() -> None:
         raise AssertionError("the exact fixed-Type-II residue coverage changed")
 
     verify_type_i_extensions()
-    terminal = expected_type_ii | set(EXTRA_TYPE_I)
+    verify_affine_type_ii_extensions()
+    terminal = expected_type_ii | set(EXTRA_TYPE_I) | set(AFFINE_TYPE_II)
     if not (
-        len(terminal) == 63
+        len(terminal) == 65
         and valid - terminal == RESIDUAL
-        and len(RESIDUAL) == 33
+        and len(RESIDUAL) == 31
         and not (set(EXTRA_TYPE_I) & expected_type_ii)
+        and not (set(AFFINE_TYPE_II) & (expected_type_ii | set(EXTRA_TYPE_I)))
     ):
         raise AssertionError("the affine terminal dispatch partition changed")
 
@@ -189,12 +206,12 @@ def verify() -> None:
         selector = (-1536 * pow(prime_residue(u), -1, MODULUS)) % MODULUS
         if selector <= 1547:
             descending += 1
-    if descending != 22 or len(RESIDUAL) - descending != 11:
+    if descending != 20 or len(RESIDUAL) - descending != 11:
         raise AssertionError("the residual third-anchor capacity split changed")
 
     print(
         "verified q=1 C=2 affine terminal dispatch: "
-        "60 Type II + 3 Type I terminal classes; 33 residual classes"
+        "62 Type II + 3 Type I terminal classes; 31 residual classes"
     )
 
 

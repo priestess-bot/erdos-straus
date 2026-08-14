@@ -1,16 +1,18 @@
 ---
 kind: claim
 claim_id: type-II-q-one-c-two-19-phase-residue-terminal-dispatch
-title: q=1 高 C=2 的 19 相位 63 类仿射终端分派
+title: q=1 高 C=2 的 19 相位 65 类仿射终端分派
 statement: >-
   对 q=1 high C=2 19 相位 p=912u+769，按 u (mod 119) 排除 p 被 7 或 17 整除的
   23 类后，剩余 96 个可能核心素数类中有 60 类由固定 Type II raw ray 给出直接终端：
   48 类使用 h=7 的三个模板，12 类使用 h=119 的有限模板表。另有 3 个未被该 Type II
-  菜单覆盖的类由固定 Type I normal form 终端。因此一个显式 terminal-first 菜单直接
-  覆盖 63 类，余下精确为 33 个 u (mod 119) 类。对这 33 类，所有在单一 residue
-  progression 上参数恒定的 Type II raw ray 已穷尽失败，但这不排除随参数变化的
-  Type II、其它 Type I、或后继 strict relay；已有三 p-anchor persistent 宏仍可作为
-  terminal-first miss 后的严格可提升出口。
+  菜单覆盖的类由固定 Type I normal form 终端，2 个类由细分 progression 上 C 随参数
+  线性变化的 Type II normal form 终端。因此一个显式 terminal-first 菜单直接覆盖 65
+  类，余下精确为 31 个 u (mod 119) 类。对这 31 类，所有在单一 residue progression
+  上参数恒定的 Type II raw ray 已穷尽失败，且完整的 integer-progression-uniform
+  constant/affine square-divisor screen 不再给出新 Type I/II terminal；这不排除非线性或
+  单素数选择的证书、其它 Type I、或后继 strict relay；已有三 p-anchor persistent 宏仍可
+  作为 terminal-first miss 后的严格可提升出口。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -19,6 +21,7 @@ depends_on:
   - type-II-coprime-factor-normal-form
   - type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split
   - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
+  - type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -41,13 +44,15 @@ sources:
     role: exact-u-mod-119-phase-domain
   - claim: type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
     role: strict-relay-after-terminal-first-miss
+  - claim: type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary
+    role: complete-uniform-affine-terminal-refinement
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_residue_terminal_dispatch.py
     role: finite-affine-ray-and-normal-form-receipt
 visibility: public
 last_checked: '2026-08-15'
 ---
 
-# q=1 high \(C=2\) 19-phase 的 63 类仿射终端分派
+# q=1 high \(C=2\) 19-phase 的 65 类仿射终端分派
 
 ## 1. The finite residue domain
 
@@ -180,7 +185,7 @@ Thus the complement has no parameter-constant Type II raw ray on its own
 \(u\pmod {119}\) progression.  This is a ray boundary only: it does not
 exclude a per-prime varying Type II certificate.
 
-## 3. Three additional fixed Type I terminals
+## 3. Three fixed Type I terminals and two refined Type II terminals
 
 For a constant Type I normal form \((A,B,m)\), the two congruences persist
 along (1) whenever
@@ -211,22 +216,38 @@ Indeed, each row has
 on its entire progression, so \(C=(p+m)/(4AB)\) completes the Type I
 certificate.
 
+Two further classes are not fixed raw rays: their Type II normal coordinates
+\((A,B)\) are fixed while \(C\) moves linearly along the refined
+\(u\pmod {119}\) progression.
+
+| \(u\pmod {119}\) | \(m\) | \((A,B)\) | \(C(t)\), \(p=912u+769+108528t\) |
+|---:|---:|---:|---:|
+| 13 | 23 | \((6,17)\) | \(31+266t\) |
+| 20 | 31 | \((14,17)\) | \(20+114t\) |
+
+For the first row \(m=A+B=23\) and
+\((p+23)/4=6\cdot17(31+266t)\); for the second \(m=A+B=31\) and
+\((p+31)/4=14\cdot17(20+114t)\). Thus both are direct Type II normal
+forms on every parameter value. The complete affine-divisor boundary for
+the former 33 residual classes is recorded separately in
+[the refined affine terminal boundary](type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary.md).
+
 ## 4. Dispatch and exact remaining menu boundary
 
 Let
 
 \[
 \mathcal U_{\rm term}=
-\mathcal U_7\sqcup\mathcal U_{119}\sqcup\{33,50,89\}.
+\mathcal U_7\sqcup\mathcal U_{119}\sqcup\{33,50,89,13,20\}.
 \tag{13}
 \]
 
-Then \(|\mathcal U_{\rm term}|=63\).  Its complement in the 96 admissible
+Then \(|\mathcal U_{\rm term}|=65\).  Its complement in the 96 admissible
 classes is exactly
 
 \[
 \begin{aligned}
-\mathcal U_{\rm rem}=\{&1,5,6,8,13,15,19,20,22,26,27,34,36,40,41,43,54,57,\\
+\mathcal U_{\rm rem}=\{&1,5,6,8,15,19,22,26,27,34,36,40,41,43,54,57,\\
 &62,68,69,75,78,83,85,90,92,96,99,103,104,111,117\}\pmod {119}.
 \end{aligned}
 \tag{14}
@@ -236,9 +257,9 @@ direct Type I/II certificate.  For \(u\in\mathcal U_{\rm rem}\), the
 fixed-ray Type II subroutine is exhausted and terminal-first can continue
 with other menus; if they all miss, the q=1 three-p-anchor persistent macro
 is a strict, identity-lifted successor.  Thus (14) is a precise next input,
-not a claim that the 33 classes lack solutions.
+not a claim that the 31 classes lack solutions.
 
-The third-anchor selector further splits (14) into 22 classes with
+The third-anchor selector further splits (14) into 20 classes with
 \(c_3<c_2\) and 11 with \(c_3>c_2\), providing a small finite target for a
 non-template terminal or cross-chart descent construction.
 
