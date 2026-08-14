@@ -837,6 +837,18 @@ python3 reproductions/type_ii_q_one_canonical_root_slice.py --verify
 python3 reproductions/type_ii_q_one_canonical_root_entry_capacity_gap.py --verify
 ```
 
+`type_ii_q_one_p73_three_bundle_path_anchored_no_go.py` 检查最短三 bundle ladder 的
+第一个严格控制。它在 \(p=73\) 对所有 low default anchor 与 canonical bottom side
+作有限精确枚举，但每一步都要求单侧 `path_anchored` complete-excess receipt 的
+\((R-y)\beta\mid K\) 与互素 payload。五个首 bundle 后只剩五个第二 bundle，且没有
+任何第三 bundle 能使 support 到达 \(A_{\rm root}=590150\)。因此排除的是 existing
+single-side bundle grammar 的最短梯，不排除 atomic split、determinant bridge、更长
+ladder 或新的 target-independent source grammar。
+
+```bash
+python3 reproductions/type_ii_q_one_p73_three_bundle_path_anchored_no_go.py --verify
+```
+
 `type_i_root_capacity_prime_external_terminal_coupling.py` 核对容量素因子 \(q\) 与
 \(q\) 关联最小正外部源的精确有限除子菜单。它固定验证 gap-7 Dirichlet 类、
 \(p=2137,t=9\) 的非平凡命中，以及 \(p=457,q=7\) 的 source-5 菜单和 gap-7

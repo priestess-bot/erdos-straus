@@ -8819,3 +8819,24 @@ support-changing primitive 的真实 lineage，或给出有独立准入证明的
 terminal-first、typed E3、identity lift 与不可重置全局势全部接入。这仍不是 global exit，
 且不排除更长 bridge；详见
 [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md)。
+
+## 2026-08-15：p=73 的最短三 single-side bundle 梯在 receipt 门上清空
+
+三次 support update 是当前容量下第一次可达到 canonical root 的数量级。对最小核心
+控制 \(p=73\)，若只允许现有单侧 `path_anchored complete-excess` grammar，则每个
+候选不仅要有 lcm 容量，还必须满足
+
+\[
+(R-y)\beta\mid K,
+\qquad
+(Q,(R-y)\beta)=1.
+\]
+
+在所有 low default anchor 中，保留 root support 因子后的首 bundle 仅有五个；全部
+canonical bottom side 经过该 receipt 门后，第二 bundle 也仅剩五个，且没有第三 bundle
+可令 \(\operatorname{lcm}(A_2,Q_2)=A_{\rm root}=590150\)。例如 bare capacity 上诱人的
+\(R=143,y=111,Q=37\) 有 \(\beta=3\)，却因 \(32\cdot3\nmid2610\) 不可收费。故这个
+最短 ladder 在 E1 payload 之前已经失败；实际 raw source 不能恢复一个不满足整除门的
+候选。这不是 global no-go：它只排除 existing single-side bundle grammar 的最短梯；后续
+必须考察更长 ladder、atomic split、determinant bridge 或新 source grammar。详见
+[p=73 规范根三 bundle path-anchored 容量 no-go](../claims/type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go.md)。

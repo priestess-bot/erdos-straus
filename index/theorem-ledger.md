@@ -11,18 +11,18 @@
 | --- | --- | ---: |
 | 数学状态 | `claimed_with_gap` | 2 |
 | 数学状态 | `computationally_reported` | 5 |
-| 数学状态 | `computationally_reproduced` | 372 |
+| 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
 | 数学状态 | `established` | 763 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
-| 证明来源 | `computational_reproduction` | 127 |
+| 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 29 |
 | 证明来源 | `repository_derivation` | 603 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 740 |
+| 审阅状态 | `internal_review` | 741 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1079,6 +1079,7 @@
 | [Type II q 层前缀匹配到纤维 Kneser 价格的规范压缩](../claims/type-II-q-layer-prefix-kneser-price-certificate.md) (`type-II-q-layer-prefix-kneser-price-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md) (`type-II-q-one-canonical-root-default-entry-capacity-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [p=73 规范根三 bundle path-anchored 容量 no-go](../claims/type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go.md) (`type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | - | 2026-08-15 |
 | [Type II q 层请求的来源 CRT 纤维集中与唯一候选](../claims/type-II-q-prefix-source-crt-fiber-concentration.md) (`type-II-q-prefix-source-crt-fiber-concentration`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II q 前缀来源标签与候选纤维的有限穷尽闭包](../claims/type-II-q-prefix-source-label-finite-closure.md) (`type-II-q-prefix-source-label-finite-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 单状态 q 进高度到 Kneser 幂块的精确桥](../claims/type-II-qadic-height-kneser-block-bridge.md) (`type-II-qadic-height-kneser-block-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
