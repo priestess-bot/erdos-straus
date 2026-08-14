@@ -8079,6 +8079,62 @@ qB=(s-1)p+s.
 root 必命中该剩余类，故未完成全称选择器。详见
 [横向 stutter 负根的 Bezout 正规形、纯 T 分派与反射 Type II 终端](../claims/type-I-root-capacity-stutter-transverse-negative-branch-bezout-reflection-terminal.md)。
 
+## 2026-08-14：pure \(T\)-side 的 actual complete-excess 已接到下一 checkpoint
+
+对于未命中反射终端的 \(L>1\) 负根，单纯的
+\(q^\delta\mid T/u\) 与 \(q^\delta\mid m+2r\) 已被证明是同一强制层。现在把
+actual maximal complete-excess receipt 也纳入，令
+
+\[
+z=ED,
+\qquad E=1+p\sigma,
+\qquad eD=ph+1,
+\qquad
+\tau=v_q(T),\quad\zeta=v_q(z),\quad\delta=v_q(D).
+\]
+
+pure \(T\)-side 恰有 \(v_q(A)=v_q(K)=\tau\)，所以完整归一化不再留下 overlap
+基准项，而是给出精确二分：
+
+\[
+q\nmid E\Longleftrightarrow\zeta=\delta,\ \tau\ge\delta;
+\qquad
+q\mid E\Longleftrightarrow\tau=\delta,\ \zeta>\delta,
+\]
+
+并在后者有 \(v_q(E)=\zeta-\delta\)。另一方面 actual receipt 恒满足
+
+\[
+D(pE+e)=2(p^2-1)T,
+\qquad v_q(pE+e)=\tau-\delta.
+\]
+
+因此 \(q\mid E\) 时 \(e\) 必为 \(q\)-单位；若 \(\tau>\delta\)，则 \(E,e\)
+都是 \(q\)-单位，余下的 q-height 恰表现为 \(pE+e\) 的赋值。它把纯 \(T\) 侧的
+excess 精确区分为“已耗尽 \(T\) 容量并进入 \(E\)”和“仍有 \(T\)-side slack”两种
+actual provenance，而非又一个冗余同余。
+
+在第一种情形，canonical checkpoint
+
+\[
+B_0=2pr-1,\qquad B_1=B_0E-\sigma,\qquad E_1=(p-1)B_1-1
+\]
+
+还满足
+
+\[
+q^{v_q(E)}\mid pE_1+1,
+\qquad
+\sigma\equiv E_1\equiv h\equiv-L,
+\qquad B_0\equiv B_1\equiv L\pmod q.
+\]
+
+这是一张可以在 receipt 与 checkpoint 两端复算的 q-primary capacity map。它没有让
+\(pE_1+1\) 自动命中当前 terminal menu，也没有提供 identity lift 或严格势下降；
+下一条真正需要的结论是能消费该带 provenance 因子的 checkpoint adapter，或证明它必入
+已有 Type I/II terminal。详见
+[横向 stutter 纯 \(T\) 侧负根的 complete-excess 分型与 checkpoint relay](../claims/type-I-root-capacity-stutter-transverse-pure-t-complete-excess-relay.md)。
+
 ## 2026-08-14：回执除子可直接进入一张原生 Type II raw-ray 菜单
 
 横向 residual 还拥有一条不经 \(m\) 移位的 terminal 接口。actual receipt 已有
