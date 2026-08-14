@@ -7732,6 +7732,24 @@ na\equiv-1\pmod R,
 因此若某个 \(q\equiv3\pmod4\) 上 \(n\) 的全部素因子均为二次剩余，tail 立即为空。
 这解释了 actual \(p=73,r=3\) 控制的 miss。反过来，actual high-half
 \(p=313,r=271\) 通过这个二次必要门，却在模 \(293\) 的 27 元指数盒中仍无目标残类。
-所以接下来的真正余项是 higher-order/exponent-box 或 \(D,h,Q\) 的赋值来源，而不是继续
-从 \(E\) 的 Legendre 类寻找自动 selector。详见
+所以接下来的真正余项是 higher-order/exponent-box，以及 \(D,h,Q\) 在进入
+该 exponent box **之前**对 canonical cofactor 的赋值来源约束，而不是继续从 \(E\) 的
+Legendre 类寻找自动 selector。详见
 [严格 root carry 互补偶源尾的 Bezout 归一化与二次字符障碍](../claims/type-I-root-capacity-strict-carry-complement-tail-bezout-character-gate.md)。
+
+## 2026-08-14：actual receipt 在 fixed cofactor tail fiber 中不再留信息
+
+这一点已经可以提升为全部 residue 层的精确结论。对固定 \((p,c)\)，任意
+\(Ec\equiv-1\pmod p\) 的 multiplier lift 定义的 Bezout 单位都满足
+
+\[
+a\equiv-n^{-1}\pmod {4n-p}.
+\]
+
+因而 retained-standard-tail 的全部素数幂、高阶角色与有限指数盒都只是 \((p,c)\) 的函数；
+\(D,h,Q\) 已不能在固定 cofactor 之后给 tail 增添一个因子。actual
+\(p=313,r=271\) 还显示 \(\gcd(ph+1,(pn)^2)=4\) 但 target 残类是 \(779\bmod879\)，所以
+\(D\mid ph+1\) 的直接因子路线在真实 high-half 控制上已经空。后续必须要么证明 actual
+receipt 只能落入 tail-hit cofactor，要么把 strict support-rebase 完整接入 typed 递降；不再在
+既定 tail 盒内重复拆 \(D\)。详见
+[严格 root carry 尾门的 receipt-fiber 不变性与直接 D 支撑障碍](../claims/type-I-root-capacity-strict-carry-tail-receipt-fiber-barrier.md)。

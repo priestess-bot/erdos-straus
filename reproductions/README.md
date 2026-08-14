@@ -835,6 +835,17 @@ python3 reproductions/type_i_s_zero_rechart_standalone_potential_no_go.py --veri
 python3 reproductions/type_i_root_capacity_stutter_receipt_factor_split.py --verify
 ```
 
+`type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
+`p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
+canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half
+`p=313` 控制，它还核对 `gcd(ph+1,(pn)^2)=4` 与 target 残类 `779 mod 879`，
+因而当前 `D|ph+1` 的直接因子不能成为 tail selector。它不扫描素数、
+root 参数、分母或历史 selector。
+
+```bash
+python3 reproductions/type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py --verify
+```
+
 `type_i_root_capacity_proper_endpoint_stutter_exclusion.py` 审计两个真实 proper-root
 回执的有效整除门，并固定重现已撤回低端证明中的抽象整除反例；它不执行历史范围扫描。
 
