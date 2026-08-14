@@ -923,6 +923,15 @@ actual stutter receipt，也不扫描范围。
 python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_root_quotient_offsets.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_pminusone_root_quotient_orientation.py` 固定验证
+actual receipt-q-primary 与 proper-root 条件共同强制的定向结论：`v+3` 恰有基准
+q 幂，而 `w+9` 至少多一层 q 幂。控制不冒充完整 actual stutter receipt，且不扫描
+范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_pminusone_root_quotient_orientation.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

@@ -7868,6 +7868,13 @@ actual proper-root 信息已重新产生一个不能由上述局部控制伪造�
 偏移中同时继续累积；未来 adapter 可按哪一侧基准饱和分流。详见
 [p 减一 complete-excess 横向素因子的 root-quotient 偏移饱和](../claims/type-I-root-capacity-stutter-transverse-pminusone-root-quotient-offset-saturation.md)。
 
+receipt quotient 的额外高赋值进一步确定了这条二分的方向：实际
+\(p-1\) complete-excess \(q\) 总有
+\(v_q(v+3)=v_q(p-1)\)，而 \(v_q(w+9)\ge v_q(p-1)+1\)。因此 future adapter
+不必再猜测哪一 root quotient 饱和；可把 \(v+3\) 作为精确 cyclotomic
+base-layer，将额外 q 容量统一留在 \(w+9\) 侧。详见
+[p 减一 complete-excess 横向素因子的 root-quotient 定向饱和](../claims/type-I-root-capacity-stutter-transverse-pminusone-root-quotient-orientation.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
