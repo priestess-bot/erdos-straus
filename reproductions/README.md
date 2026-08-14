@@ -855,6 +855,16 @@ python3 reproductions/type_i_root_capacity_stutter_c_side_m_localization.py --ve
 python3 reproductions/type_i_root_capacity_stutter_h_overlap_residual.py --verify
 ```
 
+`type_i_root_capacity_stutter_transverse_residual.py` 固定验证约化残余的横向商容量图：
+`2T=u(p^2*w-3*v)`、`D*|T/u`、`D*|m+2r`，以及
+`gcd(D*, p*M0*(2r+1)*(m-1))=1`。四个控制覆盖 core-congruent composite shadow、
+odd、mixed 与 dyadic `D*`；它们只检验必要整数恒等式，不冒充 actual core-prime
+receipt，也不扫描范围。
+
+```bash
+python3 reproductions/type_i_root_capacity_stutter_transverse_residual.py --verify
+```
+
 `type_i_root_capacity_strict_carry_tail_receipt_fiber_barrier.py` 只重放
 `p=73,r=3` 与 `p=313,r=271` 的 strict-root multiplier lifts，验证对固定
 canonical cofactor，Bezout 单位在 tail 模数下不变。对 actual high-half

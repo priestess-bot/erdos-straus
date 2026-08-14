@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 372 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 733 |
+| 数学状态 | `established` | 734 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 127 |
 | 证明来源 | `mixed` | 28 |
-| 证明来源 | `repository_derivation` | 574 |
+| 证明来源 | `repository_derivation` | 575 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 710 |
+| 审阅状态 | `internal_review` | 711 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -782,6 +782,7 @@
 | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md) (`type-I-root-capacity-stutter-transverse-residual-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [rp 加一因子射线给出四分之一范围 Type I 证书](../claims/type-I-rp-plus-one-external-factor-ray.md) (`type-I-rp-plus-one-external-factor-ray`) | `established` | `unspecified` | `unspecified` | `ventas2026`, `bradford2024` | 2026-07-24 |
 | [s=0 重图表的半群压缩与单坐标势 no-go](../claims/type-I-s-zero-rechart-standalone-potential-no-go.md) (`type-I-s-zero-rechart-standalone-potential-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [任意同余纤维近邻终端引理](../claims/type-I-same-residue-neighbor-terminal.md) (`type-I-same-residue-neighbor-terminal`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-29 |

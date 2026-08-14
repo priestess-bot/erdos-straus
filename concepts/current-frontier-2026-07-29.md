@@ -7702,6 +7702,41 @@ D>2\operatorname{lcm}(m,m+2).
 可提升边；下一步应研究其素因子在 actual valuation 与 source provenance 中的归属。详见
 [proper-root stutter 的 \(h^2-1\) 重叠 \(m\) 界](../claims/type-I-root-capacity-stutter-h-overlap-m-bound.md)。
 
+## 2026-08-14：约化残余被定位到 root-capacity 之外的横向商
+
+继续研究这个非平凡 \(D_*\)，令
+
+\[
+v=\frac{M_0}{u},\qquad w=\frac{2r+1}{u}.
+\]
+
+由 \(u=(2r+1,M_0)\) 得 \((v,w)=1\)，且精确恒等式
+
+\[
+2T=u(p^2w-3v)
+\]
+
+使 \(T/u\) 成为整数。另一方面，stutter 的 \(D=mp+1-h\)、\(eD=ph+1\)
+给出新接口
+
+\[
+2T=p^2(m+2r)-(p+e)D.
+\]
+
+所以现有 \(D_*\mid T\) 与 actual \(D_*>1\) 实际加强为
+
+\[
+\boxed{1<D_*\mid\gcd\!\left(\frac Tu,m+2r\right),\qquad
+\bigl(D_*,pM_0(2r+1)(m-1)\bigr)=1.}
+\]
+
+这准确地把 hard-root residual 与全部 root-capacity 因子 \(q\mid u\) 以及原始
+\(2r+1\) source 因子分开：任何 \(q\mid D_*\) 都不能直接满足既有容量
+external-source 菜单的 \(q\mid u\) 前提。它不是“菜单为空”或反例，反而说明当前
+缺少一个新的 transverse-residual provenance adapter；若无法构造该 adapter，必须把
+这个横向公因子改写成独立 Type I/II 证书或带 identity lift 的递降。详见
+[proper-root stutter 约化残余的横向商容量定位](../claims/type-I-root-capacity-stutter-transverse-residual-capacity-map.md)。
+
 ## 2026-08-14：严格 root carry 已对齐到正确的支撑重基
 
 对 actual proper-root endpoint 的 receipt
