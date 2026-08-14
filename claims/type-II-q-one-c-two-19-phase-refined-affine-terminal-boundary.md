@@ -221,7 +221,10 @@ cross-chart descent is
 This is not a no-certificate result for \(\mathcal U_{31}\). It only rules
 out the complete integer-progression-uniform constant/affine square-divisor
 families described above; nonlinear divisors, per-prime selectors, and the
-existing strict H3 relay all remain available.
+existing strict H3 relay all remain available. The immediate downstream H3
+gate is now resolved to a bounded terminal/fourth-anchor/\(q=1\)-mask
+dispatch in
+[the fourth-anchor terminal gate](type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate.md).
 
 Focused verification:
 

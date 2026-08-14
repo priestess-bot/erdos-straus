@@ -22,6 +22,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split
   - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
   - type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary
+  - type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -46,6 +47,8 @@ sources:
     role: strict-relay-after-terminal-first-miss
   - claim: type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary
     role: complete-uniform-affine-terminal-refinement
+  - claim: type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate
+    role: H3-terminal-or-fourth-anchor-downstream-dispatch
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_residue_terminal_dispatch.py
     role: finite-affine-ray-and-normal-form-receipt
 visibility: public
@@ -256,8 +259,11 @@ For \(u\in\mathcal U_{\rm term}\), terminal-first emits the displayed
 direct Type I/II certificate.  For \(u\in\mathcal U_{\rm rem}\), the
 fixed-ray Type II subroutine is exhausted and terminal-first can continue
 with other menus; if they all miss, the q=1 three-p-anchor persistent macro
-is a strict, identity-lifted successor.  Thus (14) is a precise next input,
-not a claim that the 31 classes lack solutions.
+is a strict, identity-lifted successor. Its H3 endpoint now has a further
+[bounded terminal-or-fourth-anchor dispatch](type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate.md):
+it either emits a bounded raw Type II certificate, appends a strict fourth
+anchor, or reaches the explicitly bounded \(1\pmod4\) mask. Thus (14) is a
+precise next input, not a claim that the 31 classes lack solutions.
 
 The third-anchor selector further splits (14) into 20 classes with
 \(c_3<c_2\) and 11 with \(c_3>c_2\), providing a small finite target for a
