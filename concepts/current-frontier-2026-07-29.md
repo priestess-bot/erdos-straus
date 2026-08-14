@@ -8040,6 +8040,14 @@ p=st+B,
 \(D_*\)、\(D_T\) 和 \(\gcd(T/u,m+2r)\) 的 pure \(T\)-side。前者应交给已有
 overlap checkpoint，后者才是尚待构造 provenance/递降适配器的真正余项。
 
+这个余项还有一个重要的负结论：在 \(q^\delta\mid D\) 的强制层，
+\(q^\delta\mid T/u\) 与 \(q^\delta\mid m+2r\) 由
+\(2T=p^2(m+2r)-(p+e)D\) 精确等价，并不是两次独立的容量压力。真正的新信息必须
+来自归一化后的 \(D/q^\delta\)、receipt 商 \(e\)，或下一 \(q\)-层的抵消；
+一个保留 root-height 和 \(q^2\) 同步的非反射控制表明，局部同步本身不强制反射
+terminal。详见
+[横向 stutter 纯 T 侧负根的同步 q-adic 条件塌缩](../claims/type-I-root-capacity-stutter-transverse-pure-t-synchronization-boundary.md)。
+
 若它进一步满足反射剩余类
 
 \[
