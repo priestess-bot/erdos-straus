@@ -259,6 +259,83 @@ def verify_p_free_pblock_reentry_control(
         raise AssertionError(f"{label} p-free p-block reentry gate changed")
 
 
+def verify_p_free_pblock_overcapacity_root_height_control() -> None:
+    """Check the high q-overcapacity root-height bridge on a local control."""
+    p, q, gap = 1489, 11, 3
+    height, m_value, d_value, receipt_quotient = 745, 373, 554653, 2
+    r_value, t_value = 1_594_864_619_896_145_076, 8_563_019_934_725_181
+    if verify_negative_root_shape(p, q, gap, height, m_value) != 3:
+        raise AssertionError("high-overcapacity control lost its negative-root shape")
+
+    sigma = p * t_value
+    e_multiplier = 1 + p * sigma
+    t_capacity = p * p * r_value - (p + 1) // 2
+    k_value = (p * p - 1) // 2 * t_capacity
+    r_polynomial = 2 * p**3 * r_value - p * p - 2 * p * r_value - p + 1
+    r_one = r_value + t_value * t_capacity
+    f_one = 2 * (p - 1) * r_one - 1
+    p_height = valuation(f_one, p)
+    u_value = f_one // (p**p_height)
+    y_value = (p + 1) * u_value
+    x_value = 1 + (p ** (p_height + 1) - 1) * y_value
+    k_one = e_multiplier * k_value
+    pblock_capacity = p ** (p_height + 1) - p - 1
+    root_height = p**p_height + height - 1
+    m_height = p ** (p_height - 1) + m_value
+    delta = valuation(d_value, q)
+    epsilon = valuation(e_multiplier, q)
+    q_capacity = delta + epsilon
+    endpoint_modulus = (p * p + p + 1) // 3
+    endpoint_u = gcd(2 * r_value + 1, endpoint_modulus)
+
+    root_unit = (root_height // (q**delta)) % (q**epsilon)
+    expected_root_unit = (
+        receipt_quotient
+        * (d_value // (q**delta))
+        * pow(p, -1, q**epsilon)
+    ) % (q**epsilon)
+    m_unit = (m_height // (q**delta)) % (q**epsilon)
+    expected_m_unit = (
+        (p + receipt_quotient)
+        * (d_value // (q**delta))
+        * pow(p * p, -1, q**epsilon)
+    ) % (q**epsilon)
+
+    if not (
+        is_prime(p)
+        and p % 24 == 1
+        and d_value == m_value * p + 1 - height
+        and receipt_quotient * d_value == p * height + 1
+        and e_multiplier == 1 + p * p * t_value
+        and r_polynomial - height == e_multiplier * d_value
+        and gcd(height, r_polynomial - height) == 1
+        and k_value % (height * d_value) == 0
+        and sigma * d_value == 2 * t_capacity - (m_value + 2 * r_value)
+        and (p + receipt_quotient + sigma) * d_value
+        == (p * p - 1) * (m_value + 2 * r_value)
+        and (m_value + 2 * r_value) % q == 0
+        and valuation(t_capacity, q) == delta == 1
+        and epsilon == 1
+        and valuation(receipt_quotient, q) == 0
+        and p_height == 1
+        and pow(3, p_height, q) == gap
+        and y_value % q != 0
+        and valuation(k_one, q) == q_capacity == 2
+        and valuation(x_value, q) == 3 > q_capacity
+        and gcd(x_value, k_one) == gcd(x_value, pblock_capacity)
+        and valuation(pblock_capacity, q) == q_capacity
+        and valuation(root_height, q) == delta
+        and root_unit == expected_root_unit == 5
+        and m_height % (q**delta) == 0
+        and m_unit == expected_m_unit == 1
+        # This is deliberately a local receipt-algebra control, not an endpoint.
+        and endpoint_u == 1
+        and height != 3 * endpoint_u
+        and (p * p + p + 1) % height != 0
+    ):
+        raise AssertionError("high-overcapacity root-height bridge changed")
+
+
 def verify_control(
     *,
     label: str,
@@ -389,6 +466,7 @@ def verify() -> None:
         expected_x_q_height=1,
         expected_pblock_capacity_q_height=1,
     )
+    verify_p_free_pblock_overcapacity_root_height_control()
     verify_control(
         label="high-excess E",
         p=313,
@@ -469,7 +547,8 @@ def verify() -> None:
     print(
         "verified pure-T cross-mod map, complete-excess relay, "
         "factor inheritance, CRT suffix boundary, p-free root expulsion, "
-        "the actual p-adic digit gate, and the p-block q-entry gate"
+        "the actual p-adic digit gate, the p-block q-entry gate, and "
+        "the high-overcapacity root-height bridge"
     )
 
 

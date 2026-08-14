@@ -990,6 +990,12 @@ p-free receipt 家族固定重放一个 `v_p(F1)=1` 的点，核对这条 cross-
 `v_q(p^(lambda+1)-p-1)` 必须恰等于当前 q-capacity。现有 q=11 gate-hit 控制在
 这个高阶 Hensel 门上只到高度 1，而 `v_11(K1)=2`，所以保持为已吸收而非新 payload。
 
+新增的 q=11 高过容量控制说明该 Hensel 门与核心素数、p-free receipt 方程和
+p-block identity 在局部上相容；它同时验证一条新的 actual-root-height 必要条件：
+若 `v_q(x)>v_q(K1)`，则 `q^delta` 恰整除 `p^lambda+h-1`，并且该单位商由
+`eD=ph+1` 的 receipt quotient 精确决定。控制显式不满足 canonical root endpoint
+`h=3*gcd(2r+1,(p^2+p+1)/3)`，因此它只阻断局部无解论证，不冒充实际递归状态。
+
 ```bash
 python3 reproductions/type_i_root_capacity_stutter_transverse_pure_t_complete_excess_relay.py --verify
 ```
