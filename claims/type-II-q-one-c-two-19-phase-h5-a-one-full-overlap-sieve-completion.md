@@ -145,6 +145,12 @@ c_5=p-1,\ a_5=1\text{ 的实际 H5 state。}
 phase 因子误读为证明。相反，(5) 的确保留了唯一算术素因子命中，并由 (6) 给出它为何
 不具备真实 provenance。
 
+值得区分的是，这个 exact factor screen 的 H3--H4 部分实际只使用
+\(w\mid K_4\)，而不使用 H5 state 的存在。因此它还给出更强的独立推论：任何 actual
+H4 full-overlap \((R_4-1,K_4)=p+1\) 都没有 predecessor；该推论已单独记录为
+[H4 full-overlap 实际前驱排除](type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)。
+本卡后续只使用其中的 H5 \(a_5=1\) 子类。
+
 ## 4. 顶容量分派完成
 
 既有 H5 \(d=1\) handoff 已经处理所有 \(a_5>1\) 的 p-free branch、raw p-source

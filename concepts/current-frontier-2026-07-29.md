@@ -8903,7 +8903,7 @@ source/path、terminal-first、typed 与 serializer guards 全部通过时，该
 actual p-primary competing-excess Reach，而非已经解决的 global exit；详见
 [H4 p-block 来源障碍](../claims/type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction.md)。
 
-## 2026-08-16：H4 p-primary residual 压到 overlap 小锚，p-free failure 仅剩 full overlap
+## 2026-08-16：H4 p-primary residual 压到 overlap 小锚，p-free failure 暂只剩 full overlap
 
 此前 \(R_4\equiv1\pmod p\) 只能排除“把 \(p^e\) 静默删除后直接 rechart”的假边。
 现在保留真实 raw lineage：从 universal \(p\)-source 到 \((1,R_4-1)\)，剥尽 \(p^e\)
@@ -8923,3 +8923,27 @@ h=(R_4-1,K_4)=2\left(\frac{p+1}{2},c_3-s_4\right),
 normal form。仍未消除的是 full-overlap \(h=p+1\) root boundary，以及后者之外的
 top-capacity continuation，不能把这一步报作 global exit。详见
 [H4 p-primary overlap 小锚 renewal](../claims/type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal.md)。
+
+## 2026-08-16：H4 full-overlap 在实际 19-phase 前驱域中已排除
+
+上节的 \(h=p+1\) 不是一般 H4 算术恒等式可以排除的：例如 \(p=73,K=4070,R=223\)
+确有 \((R-1,K)=p+1\)。决定性附加信息来自 actual H3 \(\Rightarrow\) H4 receipt。
+若 full-overlap，则 \(w=(p+1)/2\mid K_4=M_4c_4\)。令
+\(d=(w,M_4)\)、\(\lambda\mid\lvert1536-a(p)\rvert\)，则
+
+\[
+c_4=\frac{j(p+1)}{2d},\qquad 1\le j<2d,
+\]
+
+并把 H4 affine lift 化为固定整数整除式
+
+\[
+p\mid(11943424-2261a(p))j+2d\cdot4718592\lambda.
+\]
+
+31 个 residual phase 的精确菜单有 571,777 行和 377,516 个不同常数；完整分解后，
+只有一条抽象 affine 伪候选，且它与 \(p=14449\) 的真实 H3 \(\Rightarrow\) H4 receipt
+不匹配。因此没有 actual H4 full-overlap predecessor。于是 \(R_4\equiv1\pmod p\) 的
+small-anchor renewal 在此域一律 p-free；真正尚未关闭的是其 \(c_{\rm alt}=p-1\)
+top-capacity continuation，而非 p-block root boundary。详见
+[H4 full-overlap 实际前驱排除](../claims/type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)。

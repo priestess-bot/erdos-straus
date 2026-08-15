@@ -12,9 +12,10 @@ statement: >-
   proper-overlap h<p+1 的情形重新得到 p-free receipt。令 M_alt=lcm(M4,Q)、
   c_alt 为 canonical capacity：若 c_alt<=p-2，则在既有 P=>H4 parent、terminal-first、
   typed 与 serializer guards 通过时可组成从 (0,p-1) 到 (0,c_alt) 的 strict macro；若
-  c_alt=p-1，则目标精确进入完整乘积 d=1 top-capacity normal form。唯一仍使 renewal
-  本身含 p-block 的情况是 h=p+1 的 full-overlap root boundary；本卡不声称 top-capacity
-  normal form 或该 root boundary 已有全称 exit。
+  c_alt=p-1，则目标精确进入完整乘积 d=1 top-capacity normal form。在纯局部 H4 contract
+  中，唯一仍使 renewal 本身含 p-block 的情况是 h=p+1；后续的 phase-specific 前驱排除
+  已证明该分支在此 actual 19-phase receipt 域为空。本卡不声称 top-capacity normal form
+  已有全称 exit。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -290,9 +291,11 @@ R_{\rm alt}=(p-1)n_{\rm alt}-1.
 
 本卡没有排除 (21) 的 \(a=1\) p-primary continuation；局部控制甚至表明，proper
 overlap \(h<p+1\) 与 \(c_{\rm alt}=p-1,a=1\) 在一般 H4 算术图表中可以同时发生。
-它也没有处理 (16) 的 \(h=p+1\) full-overlap root boundary。因而这里的推进是：将
-H4 的 \(R_4\equiv1\pmod p\) 残余从一般 raw Reach 压成一条 p-free clean renewal，
-外加两个明确、不可混淆的后续接口；它不是 G/Type I 全局出口定理。
+在 actual 19-phase H3 predecessor 域中，后续的
+[H4 full-overlap 实际前驱排除](type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)
+已消除 \(h=p+1\) root boundary。因此该域内 \(R_4\equiv1\pmod p\) 的残余已统一为
+p-free clean renewal，唯一尚未关闭的接口是其 top-capacity continuation；它仍不是
+G/Type I 全局出口定理。
 
 Focused verification:
 

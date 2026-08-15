@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 793 |
+| 数学状态 | `established` | 794 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 30 |
+| 证明来源 | `mixed` | 31 |
 | 证明来源 | `repository_derivation` | 632 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 771 |
+| 审阅状态 | `internal_review` | 772 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1082,6 +1082,7 @@
 | [q=1 高 C=2 的 19 相位固定 Type I/II 模板阻碍](../claims/type-II-q-one-c-two-19-phase-fixed-template-obstruction.md) (`type-II-q-one-c-two-19-phase-fixed-template-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 H3 有界终端—第四锚—q=1 掩码分派](../claims/type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate.md) (`type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 高 C=2 19 相位 H4 full-overlap 的实际前驱排除](../claims/type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 p-free 门失败的 p-block 来源障碍](../claims/type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction.md) (`type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位 H4 p-primary 残余的 overlap 小锚 renewal](../claims/type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal.md) (`type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 的零残数 raw-source 修复](../claims/type-II-q-one-c-two-19-phase-h4-raw-source-repair.md) (`type-II-q-one-c-two-19-phase-h4-raw-source-repair`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

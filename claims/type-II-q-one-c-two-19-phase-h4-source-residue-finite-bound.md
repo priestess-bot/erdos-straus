@@ -179,9 +179,11 @@ p\mid F_e(a,\lambda,t).
 
 本卡不声称有限残余 \(p\le B_4\) 已经枚举或处理，也不证明 \(c_5\ne p-1\)。其中
 \(R_4\equiv0\pmod p\) 已可由同锚最小互素素数 source 在 persistent macro 内修复；
-\(R_4\equiv1\pmod p\) 则不能静默删除 p-block，但现已沿 actual raw path 收缩到
-proper-overlap p-free renewal 与 \(h=p+1\) full-overlap boundary，见
-[H4 p-primary overlap 小锚 renewal](type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal.md)。
+\(R_4\equiv1\pmod p\) 则不能静默删除 p-block，但现已沿 actual raw path 收缩为
+p-free renewal；其唯一局部 p-block 分支 \(h=p+1\) 已由实际 H3--H4 predecessor
+有限筛排除，见
+[H4 full-overlap 实际前驱排除](type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)。
+余下仅是 p-free top-capacity continuation。
 它仍只是 p-source/p-free 子门的严格有限化，而不是 G/Type I 全局出口定理。
 
 Focused verification:
