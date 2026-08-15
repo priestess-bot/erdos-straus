@@ -37,6 +37,7 @@ depends_on:
   - type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
   - type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate
+  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -80,6 +81,8 @@ sources:
     role: admitted-p-free-root-small-fan-terminal-or-strict-exit
   - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate
     role: actual-H4-provenance-aware-D-divisor-gate
+  - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion
+    role: nonminimal-lift-exclusion-and-minimal-D-phase-ray-map
   - concept: denominator-escape-state-contract
     role: terminal-typed-lift-and-potential-contract
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_q0_reentry_pfree_capacity_map.py
@@ -499,6 +502,10 @@ p\le\delta_d
 \bigl(p>\delta_d,\ D=\delta_d,\ d\not\equiv1\pmod3\bigr).
 \tag{29c}
 \]
+
+后一个 large-\(p\) minimal branch 在 31-selector 的必要条件 supermenu 中仅有 17 条
+CRT phase rays；它们仍须与 unitary allocation、terminal digit 和 root capacity 联立，
+不代表已实现的 H4 receipt。
 
 ## 7. 精确分派与边界
 

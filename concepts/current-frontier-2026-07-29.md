@@ -9355,3 +9355,8 @@ progression。因此该分支为空。另一方面最小 \(D=\delta_d\) 分支�
 provenance 只能留在 \(p\le\delta_d\)，或 \(p>\delta_d,D=\delta_d,
 d\not\equiv1\pmod3\)；这仍不是全局出口。详见
 [H4 \(q_0\) re-entry 的非最小 \(D\)-lift 筛](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion.md)。
+
+在后一条 large-\(p\) minimal 分支中，\(D=\delta_d\) 的整除式把 \(p\) 固定到
+模 \(4d^2(4d^2-2d+1)\) 的唯一类；与 31 phase progression 作 CRT 后只剩 17 条
+necessary supermenu rays。它们是下一步应叠加 q-lock unitary allocation 与
+\(\omega_{\rm re}=-1,9u^2\ge p\) 的精确对象，而不是已经发生的 H4 receipts。
