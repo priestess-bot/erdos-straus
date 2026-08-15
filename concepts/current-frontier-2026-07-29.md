@@ -9239,3 +9239,46 @@ q_0\bigl[\gamma(2dC+2d-1)-2d\ell\bigr]=C,
 在 raw graph 内重生 \(p\)-primary 的支路，但尚未自动支付 terminal、strict capacity 或
 atomic/typed guard。详见
 [H4 clean q-bridge 的 q0 raw re-entry p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion.md)。
+
+## 2026-08-16：q0 p-free re-entry 的完整超额容量图只留下 unitary q-lock
+
+在同一 \(q_0>1\)、\(q_0\mid s\) raw re-entry 中，p-primary 排除之后不能把
+\(\{\xi,\zeta\}\) 直接当作旧 q-word 的 bundle。现在逐素数重算给
+
+\[
+Q_\xi=Q_x/q_0,
+\qquad E_\xi=F=\gamma+pt,
+\qquad
+L_{\rm re}=F E_\zeta.
+\]
+
+故两块皆空是 Type I terminal；其余 p-free re-entry 的 canonical capacity 为
+
+\[
+c_{\rm re}\equiv-L_0(FE_\zeta)^{-1}\pmod p.
+\]
+
+非顶容量项已经是严格算术容量。顶容量项写作
+\(FE_\zeta=L_0+p\sigma\) 时再次落在 full-product \(d=1\) 行，且
+
+\[
+n_{\rm re}=n+4M_4\sigma,
+\qquad
+a_{\rm re}=\frac q{(q,\sigma)}.
+\]
+
+因此唯一仍在 \(a=1\) 的项满足 \(q\mid\sigma\)。它等价于 \(q\mid\xi\zeta\)，
+而非一个可忽略的单侧同余。若 \(D=(M_4,Q_x)\beta_x\)、
+\(\rho=(q,\xi)\)，则每个 q-lock 唯一地给出 unitary 因子分配
+
+\[
+\rho\parallel q,
+\qquad t\equiv\gamma\pmod\rho,
+\qquad
+t\equiv\gamma-2dD^{-1}\pmod{q/\rho}.
+\]
+
+这把 residual 从未分类 capacity 回路缩成至多 \(2^{\omega(q)}\) 个带来源的
+endpoint allocation，但没有排除它们，也没有越过 terminal-first、typed 或 atomic
+adapter guards。详见
+[H4 clean q-bridge 的 q0 p-free re-entry 完整超额容量图](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-pfree-capacity-map.md)。
