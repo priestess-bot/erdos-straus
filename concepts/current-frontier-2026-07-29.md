@@ -9192,3 +9192,50 @@ q\le4de-1,
 直接严格容量，或进入已有 \(a>1\) strict handoff；不再留下 \(a=1\) q-lock 算术回返。
 terminal-first、typed、scope 和 persistent guards 仍是独立的全局合同。详见
 [H4 \(s=0\) secondary p-free gate 的 \(a=1\) q-lock 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion.md)。
+
+## 2026-08-16：H4 \(q_0\) re-entry 不会重新制造 p-primary residual
+
+对 \(q\)-bridge 的 \(a_q=1\) cells，若
+
+\[
+q_0=\frac{q}{(q,b+1)}>1,
+\qquad q_0\mid s,
+\]
+
+则 \(q_0\) 已可从 \(x_q\) 侧实际剥离到
+
+\[
+\left\{\xi=\frac{x_q}{q_0},\zeta=R_4-\xi\right\}.
+\]
+
+这个 re-entry 原本仍可能在 \(\zeta\) 侧恢复 \(p\)-block。现在 actual H4 carry
+给出更强的
+
+\[
+h=2d,
+\qquad d=\left(\frac{p+1}{2},M_4\right),
+\]
+
+而不仅是旧的 \(e\mid d\)。设 \(x_q=Q_x\beta_x\)、
+\(D=(M_4,Q_x)\beta_x\)，则
+
+\[
+D\mid K_4,
+\qquad \xi=(\gamma+pt)D,
+\qquad D\mid ph-q+1.
+\]
+
+若 \(p\mid\zeta\)，\(\gamma D=1+pk\)。异常 \(k=0\) 强制
+\(\gamma=D=1,q_0=q\)，并落到 1,535 个固定 diagonal 常数的因子菜单；其中没有
+一个 19-phase factor 同时满足 \(p=2dq-1\)。对 \(k\ge1\)，归一化后得到
+
+\[
+q_0\bigl[\gamma(2dC+2d-1)-2d\ell\bigr]=C,
+\qquad C=2d-1-\ell u,
+\]
+
+其零、负、正三种符号均分别导致奇偶、符号或强制上下界矛盾。因此所有
+\(q_0>1\) re-entry endpoint 都 p-free；这关闭了两条正 \(a=1\) residual
+在 raw graph 内重生 \(p\)-primary 的支路，但尚未自动支付 terminal、strict capacity 或
+atomic/typed guard。详见
+[H4 clean q-bridge 的 q0 raw re-entry p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion.md)。
