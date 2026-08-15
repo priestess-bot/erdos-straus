@@ -218,8 +218,10 @@ p\mid Q\quad\Longleftrightarrow\quad h=p+1.
 
 即 renewal 一律是 path-anchored p-free bundle。若其 canonical capacity
 \(c_{\rm alt}\le p-2\)，已有 persistent parent macro 给出严格 E5 出口；若
-\(c_{\rm alt}=p-1\)，它仍进入 p-free top-capacity continuation。本卡没有排除后者，
-也没有把有限 H4 p-adic gate、terminal-first 或 typed guards 误报为全局完成。
+\(c_{\rm alt}=p-1\)，其 \(a_{\rm alt}>1\) d=1 suffix 也已严格离开顶容量，见
+[proper-overlap 顶容量 d=1 handoff](type-II-q-one-c-two-19-phase-h4-proper-overlap-top-capacity-handoff.md)。
+本卡仍不排除 \(a_{\rm alt}=1\) return，也没有把有限 H4 p-adic gate、terminal-first
+或 typed guards 误报为全局完成。
 
 ## 5. 定向回执
 

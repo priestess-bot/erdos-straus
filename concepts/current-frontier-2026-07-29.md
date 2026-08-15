@@ -8947,3 +8947,17 @@ p\mid(11943424-2261a(p))j+2d\cdot4718592\lambda.
 small-anchor renewal 在此域一律 p-free；真正尚未关闭的是其 \(c_{\rm alt}=p-1\)
 top-capacity continuation，而非 p-block root boundary。详见
 [H4 full-overlap 实际前驱排除](../claims/type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)。
+
+## 2026-08-16：H4 proper-overlap 顶容量的 \(a_{\rm alt}>1\) 已接回严格宏
+
+若 p-free renewal 的 \(c_{\rm alt}=p-1\)，它精确进入 full-product \(d=1\) 正规形。
+写 \((p+1)/2=g a_{\rm alt}\)、\((n_{\rm alt}+1)/2=g b_{\rm alt}\)。当
+\(a_{\rm alt}>1\) 时，p-adic regeneration 有有限倒计时；末态要么由最小互素素数
+source 修复，要么直接得到严格容量，要么由真实 p-free small-anchor route 得到
+\(c_T\le p-2\)。因此在 H4 renewal 与每个 suffix checkpoint 的实际/typed guards
+通过时，均可与原 persistent parent 合成 \((0,p-1)>(0,c_T)\) 的 E1--E5 宏。
+
+这不能处理 \(a_{\rm alt}=1\)，即 \((p+1)/2\mid M_{\rm alt}\)。一般 H4 局部正控制
+表明它可与 proper-overlap 同时发生，不能偷换为已排除的原 H4 full-overlap。H4 p-primary
+路线现在的唯一算术接口正是这个带实际 provenance 的 \(a_{\rm alt}=1\) d=1 return；详见
+[proper-overlap 顶容量 d=1 handoff](../claims/type-II-q-one-c-two-19-phase-h4-proper-overlap-top-capacity-handoff.md)。

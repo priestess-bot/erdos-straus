@@ -183,7 +183,8 @@ p\mid F_e(a,\lambda,t).
 p-free renewal；其唯一局部 p-block 分支 \(h=p+1\) 已由实际 H3--H4 predecessor
 有限筛排除，见
 [H4 full-overlap 实际前驱排除](type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)。
-余下仅是 p-free top-capacity continuation。
+余下仅是 p-free top-capacity 中的 \(a_{\rm alt}=1\) return；\(a_{\rm alt}>1\) 已有
+d=1 strict handoff。
 它仍只是 p-source/p-free 子门的严格有限化，而不是 G/Type I 全局出口定理。
 
 Focused verification:
