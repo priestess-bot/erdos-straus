@@ -9284,3 +9284,16 @@ t\equiv\gamma-2dD^{-1}\pmod{q/\rho}.
 endpoint allocation，但没有排除它们，也没有越过 terminal-first、typed 或 atomic
 adapter guards。详见
 [H4 clean q-bridge 的 q0 p-free re-entry 完整超额容量图](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-pfree-capacity-map.md)。
+
+q-lock 本身还可接入 ordinary \(a=1,d=1\) countdown。写
+\(\sigma=qv\)、\(M_4=dU\)，则 re-entry target 满足
+
+\[
+b_{\rm re}=b+2Uv.
+\]
+
+其首个非零 \(p\)-进数字 \(\omega_{\rm re}\ne-1\) 时已有 countdown/source-repair
+严格离开；\(\omega_{\rm re}=-1\) 时才进入根扇，且 \(9u^2<p\) 仍给 terminal 或
+strict carry。因此 q-lock 的已知路由残余还必须同时满足
+\(\omega_{\rm re}=-1\) 与 \(9u^2\ge p\)。这不是 q-lock 的一般排除，但排除了把
+每个 q-lock 一概视为静止 stutter 的错误解释。

@@ -17,8 +17,11 @@ statement: >-
   的情形是 q|sigma；它等价于 q|xi zeta。令 D=gcd(M4,Q_x) beta_x、
   rho=gcd(q,xi)，则 q-lock 恰给出一个唯一 unitary divisor rho||q，并满足
   t=gamma (mod rho)、t=gamma-2dD^(-1) (mod q/rho)。反之每个这样的 unitary
-  split 恰恢复 q-lock。该结论只给 terminal/strict-capacity 的算术地图，不自动通过
-  typed、single-side 或 atomic adapter 的持久化 guards，也不排除一般 q-lock。
+  split 恰恢复 q-lock。写 M4=dU、sigma=qv，则 q-lock full-product target 的参数为
+  b_re=b+2Uv；在 target 通过既有准入后，d=1 p-adic countdown 只在首个非零数字
+  omega_re=-1 且其根容量 u 满足 9u^2>=p 时不由已知路由给出 terminal/strict macro。
+  该结论不自动通过 typed、single-side 或 atomic adapter 的持久化 guards，也不排除
+  这个最终 q-lock/root residual。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -30,6 +33,9 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-proper-overlap-top-capacity-handoff
   - type-I-bottom-sink-scc-complete-excess-bundle-selector
   - type-I-path-anchored-atomic-split-complete-excess-admission
+  - type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
+  - type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
+  - type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -65,6 +71,12 @@ sources:
     role: terminal-priority-and-single-side-bundle-contract
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
     role: atomic-payload-and-conditional-E1-to-E5-contract
+  - claim: type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
+    role: d-one-regeneration-and-well-founded-countdown
+  - claim: type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
+    role: a-one-terminal-digit-classification-and-raw-source-repair
+  - claim: type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent
+    role: admitted-p-free-root-small-fan-terminal-or-strict-exit
   - concept: denominator-escape-state-contract
     role: terminal-typed-lift-and-potential-contract
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_q0_reentry_pfree_capacity_map.py
@@ -366,7 +378,97 @@ t\equiv\gamma-2dD^{-1}\pmod{q/\rho}.
 \(t\equiv\gamma-2dD^{-1}\pmod q\)。一般 \(q\) 只有
 \(2^{\omega(q)}\) 种 unitary 分配，而不是一个未标记的容量回路。
 
-## 6. 精确分派与边界
+## 6. q-lock 到 \(a=1\) 根扇的 relay
+
+q-lock 并不意味着新的 full-product \(a=1\) 行必然静止。现在设 (16) 成立，写
+
+\[
+\sigma=qv,
+\qquad M_4=dU.
+\tag{23}
+\]
+
+由 (6)、(14) 与 \(p+1=2qd\)，re-entry target 的 \(a=1\) 参数是
+
+\[
+\begin{aligned}
+b_{\rm re}
+&=\frac{n_{\rm re}+1}{p+1}\\
+&=\frac{(p+1)b+4dUqv}{2qd}
+=\boxed{b+2Uv}.
+\end{aligned}
+\tag{24}
+\]
+
+当该 re-entry support 被重新分类为合法的正 full-product target 时，\(b_{\rm re}\)
+仍为正奇数。令这个 full-product \(d=1\) 行的 ordinary complete-excess multiplier 为
+
+\[
+F_{\rm re}=(p-1)b_{\rm re}-1,
+\qquad
+\eta_{\rm re}=\nu_p(F_{\rm re}-1),
+\qquad
+\omega_{\rm re}\equiv
+\frac{F_{\rm re}-1}{p^{\eta_{\rm re}}}\pmod p.
+\tag{25}
+\]
+
+### 命题 4（q-lock root-fan relay）
+
+若 (13) 的 canonical target 与随后每个 d=1 checkpoint 都通过既有的
+terminal-first、typed、source/path、serializer 与 persistent guards，则：
+
+\[
+\boxed{
+\omega_{\rm re}\not\equiv-1\pmod p
+\Longrightarrow
+\text{已有 d=1 countdown/source-repair 给出 strict macro};
+}
+\tag{26}
+\]
+
+若 \(\omega_{\rm re}\equiv-1\pmod p\)，经过恰 \(\eta_{\rm re}\) 次 canonical
+regeneration 后到达 p-free root return，唯一写成
+
+\[
+b_\ast=2pr-1,
+\qquad
+u=\left(2r+1,\frac{p^2+p+1}{3}\right).
+\tag{27}
+\]
+
+并且
+
+\[
+\boxed{
+9u^2<p
+\Longrightarrow
+\text{bottom Type I terminal}\ \lor\ \text{p-free strict carry}.
+}
+\tag{28}
+\]
+
+**证明。** (24) 证明 q-lock target 确为 ordinary \(a=1,d=1\) full-product
+input。d=1 regeneration countdown 保持 (25) 的首个非零 \(p\)-进数字：
+\(\omega_{\rm re}=-2\) 由 raw-source repair 严格离开，其它非 \(-1\) 类给
+\(c\le p-2\)，即得 (26)。\(\omega_{\rm re}=-1\) 时 countdown 的终类正是
+\(b_\ast\equiv-1\pmod p\) 的 p-free root return；正奇性给 (27)。根容量扇的
+\(9u^2<p\) 分支给出 (28)。\(\square\)
+
+因此 q-lock 的**已知路由未关闭**部分被进一步压成
+
+\[
+\boxed{
+\rho\parallel q,\quad\text{(22)},\quad
+\omega_{\rm re}\equiv-1\pmod p,\quad 9u^2\ge p.
+}
+\tag{29}
+\]
+
+式 (29) 仍不是不可能条件：它保留了 unitary endpoint allocation、p-adic terminal
+digit 和根容量三种独立数据，任何忽略其中之一的“q-lock 自动下降”都不成立。
+
+## 7. 精确分派与边界
 
 | re-entry 情形 | 本卡给出的结果 | 仍需的独立条件 |
 |---|---|---|
@@ -374,17 +476,20 @@ t\equiv\gamma-2dD^{-1}\pmod{q/\rho}.
 | 恰有一块非空 | single-side residual gate 由 (9a) 自动通过 | typed/source/path/serializer guards |
 | \(FE_\zeta\not\equiv L_0\pmod p\) | \(c_{\rm re}\le p-2\) | typed/payload guards 后才是 strict edge |
 | \(FE_\zeta\equiv L_0\pmod p,\ q\nmid\sigma\) | \(a_{\rm re}>1\) | existing \(a>1\) handoff guards |
-| \(FE_\zeta\equiv L_0\pmod p,\ q\mid\sigma\) | unitary \(q\)-lock signature (21) | 必须另行排除、给证书或构造合法递降 |
+| q-lock 且 \(\omega_{\rm re}\ne-1\) | existing d=1 strict dispatch | q-lock target/checkpoint guards |
+| q-lock、\(\omega_{\rm re}=-1\)、\(9u^2<p\) | root-fan terminal 或 strict carry | root-return guards |
+| q-lock、\(\omega_{\rm re}=-1\)、\(9u^2\ge p\) | residual (29) | 必须另行排除、给证书或构造合法递降 |
 
 这张卡关闭了“p-free re-entry 没有可计算 capacity”的缺口，并把所有仍留在
-\(a=1\) 的顶容量情形转换为 endpoint 的有限因子分配。它没有声称 (21) 不可能；任何
-省略该 residual、或把 (15) 直接登记为全局递降的论证都是不正确的。
+\(a=1\) 的顶容量情形转换为 endpoint 的有限因子分配和 root-fan 数值条件。它没有
+声称 (29) 不可能；任何省略该 residual、或把 (15) 直接登记为全局递降的论证都是不正确的。
 
-## 7. 定向算术回执
+## 8. 定向算术回执
 
 ```bash
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_q0_reentry_pfree_capacity_map.py --verify
 ```
 
-回执只验证 (10)--(21) 的固定整数控制，包括 strict、\(a>1\) top-capacity 与
-unitary q-lock 三种代表；不构造 H4 predecessor，也不扫描 prime ranges 或历史 Reach。
+回执只验证 (10)--(29) 的固定整数控制，包括 strict、\(a>1\) top-capacity、
+single-side gate、unitary q-lock 与 q-lock 后的 ordinary d=1 strict relay；不构造 H4
+predecessor，也不扫描 prime ranges 或历史 Reach。

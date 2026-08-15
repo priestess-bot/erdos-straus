@@ -22,6 +22,7 @@ L0 = 333
 C4 = 32
 N = 73
 W = 37
+B = 1
 
 
 def capacity(multiplier: int) -> int:
@@ -102,13 +103,39 @@ def verify_single_side_residual_gate() -> None:
         raise AssertionError("zeta-side single residual gate changed")
 
 
+def p_adic_order(value: int, prime: int) -> int:
+    order = 0
+    while value % prime == 0:
+        value //= prime
+        order += 1
+    return order
+
+
+def verify_q_lock_root_relay() -> None:
+    """A retained q-lock need not survive the ordinary a=1 countdown."""
+    sigma = Q
+    v = sigma // Q
+    u_factor = M4  # Here d=1, hence M4=d*U=U.
+    n_re = N + 4 * M4 * sigma
+    b_re = B + 2 * u_factor * v
+    multiplier = (P - 1) * b_re - 1
+    eta = p_adic_order(multiplier - 1, P)
+    omega = ((multiplier - 1) // (P**eta)) % P
+    strict_capacity = (-pow(multiplier, -1, P)) % P
+    if (n_re, b_re, multiplier, eta, omega, strict_capacity) != (665, 9, 647, 0, 62, 22):
+        raise AssertionError("q-lock root relay control changed")
+    if omega in {P - 1, P - 2} or strict_capacity >= P - 1:
+        raise AssertionError("q-lock did not leave through ordinary strict capacity")
+
+
 def verify() -> None:
     verify_capacity_map()
     verify_unitary_lock_signature()
     verify_single_side_residual_gate()
+    verify_q_lock_root_relay()
     print(
         "verified q0 p-free re-entry capacity map: "
-        "single-side gate, strict, a>1 top-capacity, and retained unitary q-lock controls"
+        "single-side gate, strict, a>1 top-capacity, unitary q-lock, and root-relay controls"
     )
 
 
