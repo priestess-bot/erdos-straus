@@ -224,7 +224,10 @@ E_{\eta}\equiv1+\omega\pmod p.
 
 若 \(\eta=0\)，(12) 只是 immediate p-free failure；若 \(\eta>0\)，它表示有限
 regeneration suffix 的 p-free return。两者都进入已有 \(a=1\) real-reach hard branch；
-这里没有把它伪称为 terminal 或 strict descent。
+这里没有把它伪称为 terminal 或 strict descent。对本 q=1 H5 receipt，这个残余现在还有
+[H4 全重叠有限素因子筛](type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-finite-sieve.md)：
+它强迫 H4 full overlap，并把所有 \(a=1\) 输入压缩到显式有限的候选素因子菜单；该筛并未
+替代候选的 terminal/Reach 审理。
 
 ## 5. Guarded macro 的作用域
 
