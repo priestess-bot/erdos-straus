@@ -210,12 +210,28 @@ def h4_next_maximal_carry_control(prime: int) -> dict[str, int | str]:
     s5 = carry_numerator // prime
     b_p = (prime - 1) ** 2 // 4
     direction = "descent" if c5 < c4 else "rise" if c5 > c4 else "stutter"
+    source_u = prime
+    source_v = r4 * (prime - 1) - prime
+    source_m = prime - 1
+    source_destination = (
+        source_u // prime,
+        (source_v + r4) // prime,
+        (source_m + 1) // prime,
+    )
+    r4_mod_prime = r4 % prime
+    parent_macro_endpoint_decreases = c5 <= prime - 2
 
     if not (
         prime % 24 == 1
         and m4 > b_p
         and 1 <= c4 < prime
         and prime * r4 + 1 == 4 * k4
+        and r4_mod_prime not in {0, 1}
+        and source_v > 0
+        and source_u + source_v == r4 * source_m
+        and gcd(source_u, source_v) == 1
+        and k4 % prime != 0
+        and source_destination == (1, r4 - 1, 1)
         and block5 > 1
         and block5 * beta5 == r4 - 1
         and gcd(block5, beta5) == 1
@@ -224,6 +240,7 @@ def h4_next_maximal_carry_control(prime: int) -> dict[str, int | str]:
         and m5 == m4 * l5 == lcm(m4, block5)
         and l5 > 1
         and 1 <= c5 < prime
+        and parent_macro_endpoint_decreases
         and 0 <= s5 < l5
         and all(factor % 4 == 1 for factor in sympy.factorint((prime + 1) // 2))
         and l5 * (c5 - c4) == prime * s5 - c4 * (l5 - 1)
@@ -232,9 +249,11 @@ def h4_next_maximal_carry_control(prime: int) -> dict[str, int | str]:
 
     return {
         "p": prime,
+        "r4_mod_p": r4_mod_prime,
         "c4": c4,
         "c5": c5,
         "direction": direction,
+        "parent_macro_endpoint_decreases": parent_macro_endpoint_decreases,
     }
 
 
@@ -361,16 +380,20 @@ def verify() -> None:
         and h4_next_descent
         == {
             "p": 14_449,
+            "r4_mod_p": 4_039,
             "c4": 13_391,
             "c5": 12_552,
             "direction": "descent",
+            "parent_macro_endpoint_decreases": True,
         }
         and h4_next_rise
         == {
             "p": 665_617,
+            "r4_mod_p": 333_704,
             "c4": 20_388,
             "c5": 94_177,
             "direction": "rise",
+            "parent_macro_endpoint_decreases": True,
         }
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")

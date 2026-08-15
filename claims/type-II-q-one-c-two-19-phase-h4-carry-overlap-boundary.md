@@ -436,8 +436,9 @@ L_5(c_5-c_4)=ps_5-c_4(L_5-1).
 \tag{32}
 \]
 
-在来源、path、F/G 重分类与 E1--E4 另行成立时，\(c_5<c_4\) 才是这类高支撑边的
-E5 门。它不是自动成立的：两个 H4 local-anchor 控制分别为
+若 H4 已作为独立 high-support 状态入队，在来源、path、F/G 重分类与 E1--E4 另行成立时，
+\(c_5<c_4\) 才是这类**独立边**的 E5 门。它不是自动成立的：两个 H4 local-anchor
+控制分别为
 
 | \(p\) | H3 dispatch | \(c_4\) | \(c_5\) | carry 方向 |
 |---:|---|---:|---:|---|
@@ -445,10 +446,15 @@ E5 门。它不是自动成立的：两个 H4 local-anchor 控制分别为
 | \(665617\) | clean fourth anchor | \(20388\) | \(94177\) | 上升 |
 
 两例都避开 \(p+1\) 的 \(3\pmod4\) 因子终端，且均由同一个精确 maximal-block 算法重算。
-因此不能把“取 H4 的首个最大块”登记为全域 E5；它只是下一条 rank-aware sink-bundle
-选择器需要处理的一个 canonical 候选。若该有限候选表在某状态上空，才应转交
-\(A>B_p\) 的新型 paid reset 或不经 \(p+1\) 因子的 Type II 短证书。这是对**当前
-adapter 域**的边界，不排除已有高支撑 carry selector 的其它候选或尚未构造的新 reset。
+因此不能把“取 H4 的首个最大块”登记为独立状态上的全域 E5；它只是下一条 rank-aware
+sink-bundle 选择器需要处理的一个 canonical 候选。不过，H4 也可以保留为既有
+\(P\Rightarrow H_4\) strict macro 的内部 checkpoint：只要第五锚的 p-source/p-free gate
+通过且 \(c_5\le p-2\)，端点秩直接比较 \((0,p-1)>(0,c_5)\)，不要求 \(c_5<c_4\)。
+这个更弱而可证明的 parent-macro 准入门见
+[H4 \(\Rightarrow\) H5 的 parent-macro 准入门](type-II-q-one-c-two-19-phase-fifth-anchor-parent-macro-gate.md)。
+若独立候选表与该固定宏门都严格空，才应转交 \(A>B_p\) 的新型 paid reset 或不经 \(p+1\)
+因子的 Type II 短证书。这是对**当前 adapter 域**的边界，不排除已有高支撑 carry selector
+的其它候选或尚未构造的新 reset。
 
 ## 6. H3 有限标签不足的严格反例
 
@@ -482,10 +488,11 @@ odd overlap \((w,c_3-s_4)\)。这不是从两个点外推整体行为，而是�
 不能再试图从 \((w,c_3-s_4)\) 的 \(3\pmod4\) 因子获得新出口；(24)、(27) 进一步规定：
 任何标准 Type I 重分类不仅必须大幅改变 \(R,K\)，还必须显式丢弃 \(M_4\)，而当前
 joined-support reset 不具备这一权限。另一方面，(30)--(32) 保留了真正尚未解决的高支撑
-接口：以 H4 的实际 source/path 枚举 rank-aware complete-excess 候选，并证明 terminal
-或 \(c_5<c_4\) 的完备析取。首个最大块已有正、反两个方向的控制，故不能只重复 H3 的
-\((u,\lambda)\) 有限 mask。候选表若严格空，才需要一个对 \(A>B_p\) 有独立良基支付的
-reset，或一个不经 \(p+1\) 因子的 Type II 短证书。
+接口：先检查固定第五锚的 p-source/p-free/top-capacity gate，以已有 persistent parent
+把 H4 作为内部 checkpoint；其失败后才以 H4 的实际 source/path 枚举 rank-aware
+complete-excess 候选，并证明 terminal 或 \(c_5<c_4\) 的完备析取。首个最大块已有正、反
+两个方向的控制，故不能只重复 H3 的 \((u,\lambda)\) 有限 mask。两个接口都严格空，才需要
+一个对 \(A>B_p\) 有独立良基支付的 reset，或一个不经 \(p+1\) 因子的 Type II 短证书。
 
 Focused verification:
 
