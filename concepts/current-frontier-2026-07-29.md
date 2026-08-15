@@ -8948,7 +8948,7 @@ small-anchor renewal 在此域一律 p-free；真正尚未关闭的是其 \(c_{\
 top-capacity continuation，而非 p-block root boundary。详见
 [H4 full-overlap 实际前驱排除](../claims/type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md)。
 
-## 2026-08-16：H4 proper-overlap 顶容量的 \(a_{\rm alt}>1\) 已接回严格宏
+## 2026-08-16：H4 proper-overlap 顶容量的 \(a_{\rm alt}=1\) 已压到 large root-capacity layer
 
 若 p-free renewal 的 \(c_{\rm alt}=p-1\)，它精确进入 full-product \(d=1\) 正规形。
 写 \((p+1)/2=g a_{\rm alt}\)、\((n_{\rm alt}+1)/2=g b_{\rm alt}\)。当
@@ -8957,7 +8957,36 @@ source 修复，要么直接得到严格容量，要么由真实 p-free small-an
 \(c_T\le p-2\)。因此在 H4 renewal 与每个 suffix checkpoint 的实际/typed guards
 通过时，均可与原 persistent parent 合成 \((0,p-1)>(0,c_T)\) 的 E1--E5 宏。
 
-这不能处理 \(a_{\rm alt}=1\)，即 \((p+1)/2\mid M_{\rm alt}\)。一般 H4 局部正控制
-表明它可与 proper-overlap 同时发生，不能偷换为已排除的原 H4 full-overlap。H4 p-primary
-路线现在的唯一算术接口正是这个带实际 provenance 的 \(a_{\rm alt}=1\) d=1 return；详见
+此前 \(a_{\rm alt}=1\)，即 \((p+1)/2\mid M_{\rm alt}\)，被保留为整个 \(d=1\) return。
+一般 H4 局部正控制表明它可与 proper-overlap 同时发生，不能偷换为已排除的原 H4
+full-overlap；但它并非整个后缀都无出口。令
+
+\[
+E_0=(p-1)b_{\rm alt}-1,\quad
+\eta=\nu_p(E_0-1),\quad
+\omega\equiv(E_0-1)/p^\eta\pmod p.
+\]
+
+恰作 \(\eta\) 次 \(d=1\) regeneration 后，\(\omega=-2\) 由 raw-source repair 严格离开，
+其余 \(\omega\ne-1\) 的类直接严格离开；只有 \(\omega=-1\) 给 p-free root return
+\(b_\ast=2pr-1\)。对后者令
+
+\[
+u=\left(2r+1,\frac{p^2+p+1}{3}\right).
+\]
+
+若 \(9u^2<p\)，实际 root-fan capacity path 已给 terminal certificate 或
+\(c\le p-2\) 的严格 carry；\(u=1\) 更有 \(h=3\) 的显式约半降。故在已准入的 H4
+suffix 中，当前已知路由未强制关闭的必要算术条件缩为
+
+\[
+c_{\rm alt}=p-1,\qquad a_{\rm alt}=1,\qquad
+\omega\equiv-1\pmod p,\qquad9u^2\ge p.
+\]
+
+这不说明该集合可达或没有 terminal。另在原 H4 renewal 入点，若
+\(d_4=((p+1)/2,M_4)\)、\(q=(p+1)/(2d_4)\)，则该 \(a_{\rm alt}=1\) 分支强制
+\(q>1\)、\(q\mid M_{\rm alt}/M_4\mid Q\mid(R_4-h)\) 与
+\(4K_4\equiv1-h\pmod q\)。这是进入 \(Q\) 的 fresh \(w\)-carrier；尚未证明它在
+regeneration 中与 root 的 \(u\) 合流。详见
 [proper-overlap 顶容量 d=1 handoff](../claims/type-II-q-one-c-two-19-phase-h4-proper-overlap-top-capacity-handoff.md)。
