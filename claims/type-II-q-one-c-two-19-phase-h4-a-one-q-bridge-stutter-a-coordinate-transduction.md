@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction
-title: H4 q-bridge stutter 的 a 坐标转导、三类正残余与 q0 raw re-entry
+title: H4 q-bridge stutter 的 a 坐标转导、两类正残余、raw-p-source 修复与 q0 raw re-entry
 statement: >-
   在 actual H4 proper-overlap top-capacity a_alt=1 的 clean q bridge 中，设 q-word endpoint
   的唯一 arithmetic stutter 满足 E_x=q (mod p)，写 E_x=q+ps。令原 d=1
@@ -9,12 +9,13 @@ statement: >-
   q0=q/gamma。则 q bridge 的 canonical target 是同一类 d=1 top-capacity 行，参数
   n_q=n+4(M_alt/q)s，且其精确 a 坐标为
   a_q=q0/gcd(q0,s)。故 s>0 且 q0 不整除 s 时，target 进入已有 a>1 strict handoff。
-  若 s=q0 t>0，则 target 仍为 a=1，b_q=b+((pb-1)/gamma)t，并且只有
-  t=gamma b、gamma(b+1)、gamma(b+2) (mod p) 三类分别落在 raw-p-source、p-free
-  failure、canonical-regeneration 接口；其它 t 均同时通过两条 p 门并给出严格
-  canonical capacity。此 a=1 分支还强制 q0|E_x|Q_x|x_q；当 q0>1 时，q0 的每个
-  素因子可从 x_q 侧实际重放为一条 primitive raw word。该结果保留 s=0 的同 support
-  stutter、三类正 residual 与所有 typed/atomic adapter guards，未声称 global exit。
+  若 s=q0 t>0，则 target 仍为 a=1，b_q=b+((pb-1)/gamma)t。t=gamma b (mod p) 的
+  raw-p-source 由最小互素素数 source 严格修复到 cofactor 1；其它一般 t 也立即给出
+  严格 canonical capacity。只剩 t=gamma(b+1) (mod p) 的 p-free failure，或
+  t=gamma(b+2) (mod p) 的 regeneration 且其首个非零 p-adic digit 为 -1，这两类正
+  residual 通道。此 a=1 分支还强制 q0|E_x|Q_x|x_q；当 q0>1 时，q0 的每个素因子可从
+  x_q 侧实际重放为一条 primitive raw word。该结果保留 s=0 的同 support stutter、两类
+  正 residual 与所有 typed/atomic adapter guards，未声称 global exit。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -24,7 +25,9 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion
   - type-II-q-one-c-two-19-phase-h4-proper-overlap-top-capacity-handoff
   - type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
+  - type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
   - type-I-overflow-full-product-d-one-p-free-peeled-small-anchor
+  - type-I-chart-least-coprime-prime-anchor-source
   - type-I-path-anchored-atomic-split-complete-excess-admission
   - denominator-escape-state-contract
 topics:
@@ -55,8 +58,12 @@ sources:
     role: original-d-one-a-one-top-capacity-normal-form-and-a-greater-than-one-handoff
   - claim: type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
     role: ordinary-d-one-residue-dispatch
+  - claim: type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
+    role: terminal-digit-classification-of-the-regeneration-cell
   - claim: type-I-overflow-full-product-d-one-p-free-peeled-small-anchor
     role: a-greater-than-one-strict-suffix
+  - claim: type-I-chart-least-coprime-prime-anchor-source
+    role: raw-p-source-strict-repair
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
     role: conditional-target-admission-and-guard-boundary
   - concept: denominator-escape-state-contract
@@ -207,13 +214,13 @@ a_q=\frac{q_0}{(q_0,s)}.
 |---|---|---|
 | \(s=0\) | \(M_q=M_{\rm alt}\)、\(n_q=n\)、\(a_q=1\) | q-bridge 本身只回到同一 charged support/capacity；不视为 strict edge。 |
 | \(s>0,\ q_0\nmid s\) | \(a_q>1\) | target 通过重分类后可接入既有 \(a>1\) d=1 strict handoff。 |
-| \(s=q_0t>0\) | \(a_q=1\) | 进入第 4 节的三类模 \(p\) residual 分派。 |
+| \(s=q_0t>0\) | \(a_q=1\) | 进入第 4 节的正残余分派。 |
 
 第二行的“可接入”有明确边界：只有 q-bridge payload 已获 E1--E4、target 的 typed
 reclassification 完成、而后续 d=1 suffix 的 guards 都通过时，既有 \(a>1\) handoff
 才给 \((0,p-1)>(0,c_T)\) 的 strict macro。式 (12) 本身没有越过这些语义门。
 
-## 4. \(a_q=1\) 时只剩三个正 \(p\)-残余接口
+## 4. \(a_q=1\) 时的两类正残余接口
 
 现在设 \(s=q_0t\)。因为 \(\gamma\mid b+1\) 且
 \(\gamma\mid q\mid(p+1)/2\)，有
@@ -266,16 +273,38 @@ c_{\rm ord}=\left\langle-F_q^{-1}\right\rangle_p
 
 | \(t\pmod p\) | \(b_q\pmod p\) | target 的 ordinary d=1 分派 |
 |---:|---:|---|
-| \(\gamma b\) | \(0\) | raw \(p\)-source interface |
+| \(\gamma b\) | \(0\) | 最小互素素数 source repair；\(a_q=1\) 时容量严格为 \(1\) |
 | \(\gamma(b+1)\) | \(-1\) | p-free failure interface |
-| \(\gamma(b+2)\) | \(-2\) | canonical regeneration interface |
+| \(\gamma(b+2)\) | \(-2\) | canonical regeneration；见下方 terminal-digit 分派 |
 | 其它 | 其它 | 两条 \(p\) 门通过，且 (18) 严格 |
 
-因此，除去 \(s=0\) 的同-support checkpoint，q-bridge arithmetic stutter 没有留下
-任意的 \(a=1\) 长尾：它的正 \(a=1\) 残余被压成三个显式的 \(t\bmod p\) cells。
-前三格并不被本卡宣称为空。它们分别接入已有 raw-source repair、p-free small-anchor/
-root route 与有限 p-adic regeneration；是否在具体 receipt 上 strict，仍必须重放其
-相应 guards。
+第一行不是算术余项。最小互素素数 source 可从同一 accepted d=1 target 到达 canonical
+anchor；其严格容量为 \(\langle2g\rangle_p=1\)，因为此处 \(a_q=1\) 给
+\(g=(p+1)/2\)。该 repair 仍须继承 target 的 persistent scope 并通过 terminal/typed
+guards，但不留下新的数论 gate。
+
+对第三行，令
+
+\[
+\eta_q=\nu_p(F_q-1),
+\qquad
+\omega_q\equiv\frac{F_q-1}{p^{\eta_q}}\pmod p.
+\tag{19}
+\]
+
+此时 \(\eta_q\ge1\)。既有 regeneration countdown 保持 \(\omega_q\)，并在有限步后
+给出：\(\omega_q=-2\) 时再次进入上面的 raw-source repair，\(\omega_q\ne-1,-2\)
+时严格降容量，只有
+
+\[
+\boxed{\omega_q\equiv-1\pmod p}
+\tag{20}
+\]
+
+回到 p-free failure/root interface。故除去 \(s=0\) 的同-support checkpoint，
+q-bridge arithmetic stutter 的正 \(a=1\) 余项已从三个显式 \(t\bmod p\) cells 收紧为
+两条通道：p-free failure，及 (20) 的 regeneration terminal cell。它们仍须沿已有
+p-free small-anchor/root route 继续处理，且所有具体 strict macro 仍须重放相应 guards。
 
 ## 5. \(q_0\) 在另一侧的实际 raw re-entry
 
@@ -284,15 +313,15 @@ root route 与有限 p-adic regeneration；是否在具体 receipt 上 strict，
 
 \[
 \boxed{E_x=q_0(\gamma+pt).}
-\tag{19}
+\tag{21}
 \]
 
 clean-q bridge 已给 \((q,M_4)=1\)，故 \((q_0,M_4)=1\)。从
-\(E_x=Q_x/(M_4,Q_x)\) 与 (19) 得
+\(E_x=Q_x/(M_4,Q_x)\) 与 (21) 得
 
 \[
 q_0\mid Q_x\mid x_q.
-\tag{20}
+\tag{22}
 \]
 
 另一方面 \((x_q,y_q)=1\)，而 \(q_0\mid q\mid z=R_4-h\)，结合
@@ -301,7 +330,7 @@ q_0\mid Q_x\mid x_q.
 \[
 \qquad
 \boxed{y_q\equiv h\pmod{q_0}.}
-\tag{21}
+\tag{23}
 \]
 
 若 \(q_0>1\)，其每个素因子及重数都在 \(x_q\) 中超过 \(K_4\) 的容量：它们根本
@@ -314,10 +343,10 @@ gcd reduction。于是已有 H4 prefix 可实际重放一个新的 primitive raw
 \rightsquigarrow
 \left\{\frac{x_q}{q_0},R_4-\frac{x_q}{q_0}\right\}.
 }
-\tag{22}
+\tag{24}
 \]
 
-式 (22) 是一个 source-anchored re-entry，不是新的 strict target：其终点的 complete-
+式 (24) 是一个 source-anchored re-entry，不是新的 strict target：其终点的 complete-
 excess blocks、terminal priority 和 typed dispatch 必须从头计算。它的价值是把正
 \(a=1\) residual 中原本只以同余出现的 \(q_0\)，变成 H4 raw graph 中另一侧可重放的
 clean carrier。
@@ -333,16 +362,20 @@ s=0
 \quad\text{or}\quad
 s=q_0t>0,
 \quad
-t\equiv\gamma b,\ \gamma(b+1),\ \gamma(b+2)\pmod p.
+\left[
+  t\equiv\gamma(b+1)\pmod p
+  \ \text{or}\
+  \bigl(t\equiv\gamma(b+2)\pmod p\ \text{and}\ \omega_q\equiv-1\pmod p\bigr)
+\right].
 }
-\tag{23}
+\tag{25}
 \]
 
-第一项只是 q-bridge 的 charged-support checkpoint；第二项只含三个具名接口，并且都带
-\(q_0\) raw re-entry (22)。这比原来的
+第一项只是 q-bridge 的 charged-support checkpoint；第二项只含两条具名接口，并且都带
+\(q_0\) raw re-entry (24)。这比原来的
 \(Q_x>1,\ E_x\equiv q\pmod p\) 更窄，但不是 global exit theorem：每条 strict
 candidate 仍须通过 atomic source admission、terminal-first/typed intercept 与 suffix
-guards；\(s=0\) 的全局势和 (23) 三格的统一 closure 也仍然开放。
+guards；\(s=0\) 的全局势和 (25) 两条通道的统一 closure 也仍然开放。
 
 ## 7. 定向静态控制
 
@@ -353,7 +386,8 @@ predecessor 或 actual q-bridge stutter endpoint。
 |---:|---:|---:|---:|---:|---|
 | 73 | 37 | 1 | 0 | 1 | 同 support checkpoint |
 | 73 | 37 | 1 | 1 | 37 | \(a>1\) handoff cell |
-| 73 | 37 | 1 | 37, 74, 111 | 1 | 三个 \(t=1,2,3\) residual cells |
+| 73 | 37 | 1 | 37, 74, 111 | 1 | \(t=1\) 由 raw-source repair 严格离开；\(t=2\) 是 p-free cell；\(t=3\) 的 \(\omega_q=-5\)，故再生后严格离开 |
+| 73 | 37 | 1 | 10915 | 1 | \(t=295\)；regeneration 的 \(\omega_q=-1\) p-free return control |
 | 73 | 37 | 1 | 148 | 1 | \(t=4\)；ordinary capacity \(36<72\) |
 | 241 | 121 | 1 | 484 | 1 | 复合 \(q_0=121\) 的 \(t=4\)；ordinary capacity \(120<240\) |
 
@@ -362,4 +396,4 @@ python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_stutter_a_coor
 ```
 
 回执不扫描 prime ranges、分母、历史 Reach 或 H4 predecessor；它只防止这里的整数
-normal form、三类 residue map 和 capacity representatives 被后续编辑破坏。
+normal form、residue/repair map 和 capacity representatives 被后续编辑破坏。

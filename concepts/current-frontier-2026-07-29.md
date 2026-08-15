@@ -9068,7 +9068,7 @@ stutter 精确是 \(Q_x>1\) 且 \(E_x\equiv q\pmod p\)。\(Q_y=1\) 时它是单�
 payload 的门，\(Q_y>1\) 时它是 conditional atomic-split payload 的门。详见
 [H4 q-bridge 完整超额 stutter reduction](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)。
 
-## 2026-08-16：H4 q-bridge stutter 已转导为 \(a\)-坐标与三类正残余
+## 2026-08-16：H4 q-bridge stutter 已转导为 \(a\)-坐标与两类正残余
 
 对剩余的 \(E_x\equiv q\pmod p\)，写 \(E_x=q+ps\)，并令原 H4 top-capacity
 \(a=1\) d=1 行为
@@ -9099,19 +9099,62 @@ b_q=b+\frac{pb-1}{\gamma}t
 \equiv b-\gamma^{-1}t\pmod p.
 \]
 
-普通 d=1 action 只有
+普通 d=1 action 初始会遇到
 
 \[
 t\equiv\gamma b,\quad\gamma(b+1),\quad\gamma(b+2)\pmod p
 \]
 
 三格分别落在 raw \(p\)-source、p-free failure、canonical regeneration；其它
-\(t\) 同时通过两条 \(p\) 门并严格降到 \(c\le p-2\)。\(s=0\) 则只是 q-bridge
-本身返回相同 charged support/capacity 的 checkpoint，不能冒充 strict edge。
+\(t\) 同时通过两条 \(p\) 门并严格降到 \(c\le p-2\)。其中 raw \(p\)-source 已由
+最小互素素数 source 严格修复到 cofactor \(1\)；regeneration 在有限倒计时后也只有
+首个非零 \(p\)-进数字为 \(-1\) 时回到 p-free root interface。因此正 \(a=1\) 的
+真正算术余项只剩 p-free cell，以及该终端 digit 的 regeneration cell。\(s=0\) 则只是
+q-bridge 本身返回相同 charged support/capacity 的 checkpoint，不能冒充 strict edge。
 
 此外，所有 \(a_q=1\) cells 都有 \(q_0\mid E_x\mid Q_x\mid x_q\)，而
 \(y_q\equiv h\pmod{q_0}\)。故当 \(q_0>1\) 时，\(q_0\) 的完整素因子 word 可从
 \(x_q\) 侧在实际 H4 raw graph 上再次重放；这是一条可审查的 re-entry，不自动是
-严格目标。于是新算术余项精确成为 \(s=0\)，或正 \(s=q_0t\) 的三个模 \(p\)
-cells，加上尚未关闭的 atomic/typed/terminal guards。详见
+严格目标。于是新算术余项精确成为 \(s=0\)，或正 \(s=q_0t\) 的 p-free cell、或
+terminal digit 为 \(-1\) 的 regeneration cell，加上尚未关闭的 atomic/typed/terminal
+guards。详见
 [H4 q-bridge stutter 的 a 坐标转导](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md)。
+
+## 2026-08-16：H4 q-bridge 的 \(s=0\) checkpoint 已化为 p-free 单侧门
+
+这里必须区分两件事：在静态 d=1 target 图表中，\(s=0\) 的确只回到同一
+support/capacity，因而本身不是 strict edge；但在其已经实际到达的 q-word endpoint
+上，它还允许再剥去一次完整的 \(q\)-block。设 \(E_x=q\)。则 x-side 的 maximal
+complete-excess block 强制为
+
+\[
+Q_x=q,
+\qquad
+\left(q,\frac Qq\right)=1.
+\]
+
+写 \(\xi=x_q/q\)、\(\zeta=R_4-\xi\)，这个第二 q-word 是绑定同一 H4 prefix 的
+actual primitive raw path，并满足
+
+\[
+\xi\mid K_4,
+\qquad
+\xi\mid ph-q+1.
+\]
+
+若 \(h=2e\)、\(d=((p+1)/2,M_4)\)，则 clean carrier 与 overlap 强制
+\(e\mid d\)，且真实 H4 provenance 给 \(d\mid\Delta=|1536-a(p)|\)。于是 \(\xi\)
+落在 \(\xi<2p\Delta\) 的显式小锚盒中。更重要的是，secondary endpoint 若含新的
+\(p\)-block，就必须有
+
+\[
+p\mid 1-2d+4d^2(1-2e).
+\]
+
+对 \(1\le d\le1535,e\mid d\) 的 11,495 个固定常数作精确因子筛，48 个 phase 因子中
+只有七个进入 31 个 residual 类，且全部违反 \(d\mid\Delta\)。因此实际 H4 域的
+secondary \(p\)-primary gate 为空。故 \(Q_\zeta=1\) 时获得 Type I terminal；否则
+得到不依赖 atomic adapter 的 p-free 单侧 receipt，且仅当
+\(E_\zeta\equiv L_0\pmod p\) 时仍为容量 stutter。这个剩余 p-free 单侧门及其
+typed/terminal guards 尚未关闭。详见
+[H4 q-bridge \(s=0\) 的 q-block swap 与 secondary p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion.md)。

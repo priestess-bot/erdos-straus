@@ -25,6 +25,7 @@ class Fixture:
     expected_target_class: str
     expected_b_target: int | None
     expected_ordinary_capacity: int | None
+    expected_regeneration_terminal: str | None = None
 
 
 FIXTURES = (
@@ -82,6 +83,19 @@ FIXTURES = (
         "regeneration",
         217,
         None,
+        "strict",
+    ),
+    Fixture(
+        "p73_a_one_regeneration_p_free_return_cell",
+        73,
+        1,
+        37,
+        10_915,
+        1,
+        "regeneration",
+        21_241,
+        None,
+        "p_free_return",
     ),
     Fixture(
         "p73_a_one_direct_strict_cell",
@@ -199,9 +213,29 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
     multiplier = (p - 1) * b_target - 1
     target_class = ordinary_target_class(p, b_target)
     ordinary_capacity: int | None = None
+    regeneration_terminal: str | None = None
 
     if target_class == "strict":
         ordinary_capacity = (-pow(multiplier, -1, p)) % p
+    elif target_class == "raw_p_source":
+        target_g = gcd(w, (target_n + 1) // 2)
+        repair_capacity = (2 * target_g) % p
+        if target_g != w or repair_capacity != 1:
+            raise AssertionError(f"{fixture.name}: a=1 raw-p-source repair changed")
+    elif target_class == "regeneration":
+        residual = multiplier - 1
+        valuation = 0
+        while residual % p == 0:
+            residual //= p
+            valuation += 1
+        terminal_digit = residual % p
+        regeneration_terminal = (
+            "p_free_return"
+            if terminal_digit == p - 1
+            else "raw_p_source"
+            if terminal_digit == p - 2
+            else "strict"
+        )
 
     exceptional_t = {
         "raw_p_source": (gamma * b) % p,
@@ -218,6 +252,8 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         and target_class == fixture.expected_target_class
         and b_target == fixture.expected_b_target
         and ordinary_capacity == fixture.expected_ordinary_capacity
+        and regeneration_terminal == fixture.expected_regeneration_terminal
+        and (target_class != "regeneration" or valuation >= 1)
         and (target_class not in exceptional_t or t % p == exceptional_t[target_class])
         and (
             target_class != "strict"
@@ -247,12 +283,13 @@ def verify() -> None:
         {"name": "p73_a_one_raw_p_source_cell", "q0": 37, "a": 1, "target_class": "raw_p_source"},
         {"name": "p73_a_one_p_free_cell", "q0": 37, "a": 1, "target_class": "p_free_failure"},
         {"name": "p73_a_one_regeneration_cell", "q0": 37, "a": 1, "target_class": "regeneration"},
+        {"name": "p73_a_one_regeneration_p_free_return_cell", "q0": 37, "a": 1, "target_class": "regeneration"},
         {"name": "p73_a_one_direct_strict_cell", "q0": 37, "a": 1, "target_class": "strict"},
         {"name": "p241_composite_q0_direct_strict_cell", "q0": 121, "a": 1, "target_class": "strict"},
     ]
     if receipts != expected:
         raise AssertionError("q-bridge a-coordinate controls changed")
-    print("verified 7 static q-bridge stutter a-coordinate controls")
+    print("verified 8 static q-bridge stutter a-coordinate controls")
 
 
 def main() -> None:
