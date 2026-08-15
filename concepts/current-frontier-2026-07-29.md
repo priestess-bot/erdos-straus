@@ -9398,7 +9398,18 @@ terminal-first 后的 10 条 minimal-\(D\) residual 中，三条的 source carri
 \(p\le28,925,021,170\) 的有限低高度区域。详见
 [H4 \(q_0\) re-entry 的 large-\(p\) minimal-\(D\) complete-excess 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-large-p-minimal-d-closure.md)。
 
-## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛提供 large-\(p\) 残余
+## 2026-08-16：有限 low-\(p\) source gate 完成 q0 re-entry route 关闭
+
+低高度区域也不需要扫描到该数值上界。写 \(p=2dq-1\)、
+\(\delta_d=2d(4d^2-2d+1)\)，不等式 \(p\le\delta_d\) 只给
+\(2\le q\le4d^2-2d+1\)；再与 31 条 phase progression 联立，全部 109 个 odd
+\((u,d)\) 对只有 2,204 个 \(q\) 值。对它们的 actual \(D\)-residue/
+\(D\mid ph-q+1\) 必要门共有 4,475,827 个纯整数候选，全部为空，且尚未要求
+primality、payload 或 typed guards。因此 actual H4 \(q_0>1\) p-free re-entry route
+现已整个关闭。详见
+[H4 \(q_0\) re-entry 的有限低-\(p\) source-gate 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure.md)。
+
+## 2026-08-16：完整 source-row 的 \(t\) CRT 只是边界，不再对应 live q0 residual
 
 此前 \((q-1)R_4=\gamma q_0^2(\gamma+pt)D-2d\) 只被用来抽取 \(D\)-gate。
 保留 \(D\mid K_4\) 的商后，它精确固定一个
@@ -9411,7 +9422,7 @@ t\pmod {4(q-1)}.
 \(t\pmod p\) 类的模数两两互素，故唯一合并为模 \(4pq(q-1)\) 的正类。最小
 \(D=2d(4d^2-2d+1)\) 时，q-lock 的第二根只是
 \(t\equiv\gamma-(4d^2-2d+1)^{-1}\pmod {q/\rho}\)。所以完整 source equation 不能
-继续删去已经关闭的 large-\(p\) rays；它反而精确说明下一步必须使用有限低高度区域的
-top \(E_\zeta\)、maximal complete-excess 或 typed/atomic/persistent payload 信息。静态
-composite-q 控制和三条 ray-prime 控制均存在，但不构成 actual H4 receipt。详见
+继续删去已经关闭的 q0 route；它仍精确说明静态 composite-q 控制和三条 ray-prime 控制
+不构成 actual H4 receipt。下一步必须转向其它 Type I/G action 的 terminal、严格递降或
+solution-lift 合同。详见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。

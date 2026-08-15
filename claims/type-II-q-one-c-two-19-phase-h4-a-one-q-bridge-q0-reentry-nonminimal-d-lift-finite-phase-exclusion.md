@@ -278,6 +278,10 @@ terminal-first、typed、serializer、atomic 或 persistent E1--E5 合同。
 source-provenance 必有 \(p\le\delta_d\)。本卡保留原始二分式，是因为它仍是该后继
 闭合所依赖的精确 \(D\)-分类。
 
+再后继的
+[有限低-\(p\) source-gate 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure.md)
+已排除第一项，故这个 actual \(q_0>1\) route 当前没有 source-provenance residual。
+
 ## 6. 定向复现
 
 ```bash

@@ -17,7 +17,8 @@ statement: >-
   minimal D=2d(4d^2-2d+1) 分支，q-lock 的第二根简化为
   t=gamma-(4d^2-2d+1)^(-1) (mod q/rho)；因此这张 CRT 边界不会继续删去
   pre-H3 的 17 条 necessary phase rays；独立的 H3 terminal-first 剪枝随后删去其中
-  7 条，17-adic exact-carrier 剪枝再删去 3 条，complete-excess valuation 剪枝关闭余下 7 条。一个 p=12409,d=5,q=1241 的静态 source-row
+  7 条，17-adic exact-carrier 剪枝再删去 3 条，complete-excess valuation 剪枝关闭余下 7 条，
+  有限低-p source gate 随后关闭整个 q0>1 route。一个 p=12409,d=5,q=1241 的静态 source-row
   控制在 gamma in {1,17,73}、全部四个 unitary rho 与两条 raw residual
   class 下均给出正、primitive、p-free endpoint；17 条 ray 中三个首项素数亦有
   相同 gamma=1,rho=q 的静态控制。这些控制不构造 actual H4 predecessor、
@@ -292,8 +293,10 @@ D=910,\quad\ell=135.
 回执。事实上，exact-prefix 审计已表明这三个素数首项都不成为 actual re-entry：两条在
 H3 terminal-first 截断，另一条有 \(\bigl((p+1)/2,M_4\bigr)\ne d\)。随后 exact carrier
 equality 还全射线地关闭三条 \(d=17\) residual；complete-excess valuation 随后关闭全部
-large-\(p\) rays。因此当前只剩有限 \(p\le\delta_d\) 区域的 payload 条件或 q-lock target
-完整 root/solution-lift 合同，而不能来自新的 \(t\) 同余筛。
+large-\(p\) rays；
+[有限低-\(p\) source-gate](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure.md)
+再关闭 \(p\le\delta_d\) 的必要菜单。因此这条 q0>1 route 已空；新的进展不能来自
+重复的 \(t\) 同余筛，而须转向其它 action 的 terminal 或 solution-lift 合同。
 
 ## 5. 定向复现
 

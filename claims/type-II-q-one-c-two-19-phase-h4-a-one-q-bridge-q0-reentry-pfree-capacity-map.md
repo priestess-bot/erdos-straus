@@ -508,13 +508,14 @@ CRT phase rays；H3 terminal-first 独立删去其中 7 条，后继的
 [17-adic exact-carrier 剪枝](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md)
 再删去三条 \(d=17\) rays，最终由
 [large-\(p\) complete-excess 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-large-p-minimal-d-closure.md)
-删去余下七条。因此 \(p>\delta_d\) 的 minimal branch 为空，仅 \(p\le\delta_d\)
-的有限低高度区域仍须与 unitary allocation、terminal digit 和 root capacity 联立。
+删去余下七条。后继的
+[有限低-\(p\) source-gate 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure.md)
+又排除 \(p\le\delta_d\)，所以本卡范围内的 \(q_0>1\) re-entry branch 已空。
 
 完整 source row 的 \(D\mid K_4\) 商会额外固定 \(t\pmod {4(q-1)}\)，但这与
 unitary q-lock 的 \(t\pmod q\) 及任何 terminal \(t\pmod p\) 类两两 CRT 兼容。因此这
-不是继续筛去已关闭的 large-\(p\) rays 的工具；下一步必须改用有限低高度区域的
-\(E_\zeta\)、maximality 或 guards 信息。
+不是继续筛去已关闭 q0 re-entry route 的工具；其余研究必须转向本卡范围外的
+typed action、其它 Type I overflow 或 G 出口选择器。
 该后继边界及定向控制见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。
 

@@ -175,12 +175,11 @@ p\le\delta_d.
 
 ## 4. 边界
 
-式 (6)--(7) 是 large-\(p\) source-provenance 分支的完整关闭。它没有枚举或排除
-\(p\le\delta_d\) 的有限低高度区域；在那里 \(D\) 不再必为实际整数 \(\delta_d\)，
-因而本卡的 CRT ray 参数化不能直接重用。它也没有把这一局部 H4 re-entry 排除误称为
-整个 Erdős--Straus 猜想的证明。下一条有效问题是为该有限低-\(p\) 区域给出结构性
-short certificate/递降，或进一步从 source identity 导出比当前 \(D\)-residue 更强的
-统一界，而不是重做已经关闭的 large-\(p\) 扫描。
+式 (6)--(7) 是 large-\(p\) source-provenance 分支的完整关闭。后继的
+[有限低-\(p\) source-gate 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure.md)
+已在不扫描 prime interval 的前提下排除 \(p\le\delta_d\)，从而关闭整个这条
+\(q_0>1\) re-entry route。本卡仍不把这一局部 H4 re-entry 排除误称为整个
+Erdős--Straus 猜想的证明。
 
 ## 5. 定向复现
 
