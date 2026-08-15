@@ -272,6 +272,12 @@ p\le\delta_d
 也未处理最小 \(D\) 的其余两个模 \(3\) 类，更没有自动支付 Type I action 的
 terminal-first、typed、serializer、atomic 或 persistent E1--E5 合同。
 
+后继的
+[large-\(p\) minimal-\(D\) complete-excess 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-large-p-minimal-d-closure.md)
+已排除 (16) 的第二个 large-\(p\) alternative；当前该 re-entry route 的
+source-provenance 必有 \(p\le\delta_d\)。本卡保留原始二分式，是因为它仍是该后继
+闭合所依赖的精确 \(D\)-分类。
+
 ## 6. 定向复现
 
 ```bash

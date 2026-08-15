@@ -9385,7 +9385,20 @@ terminal-first 后的 10 条 minimal-\(D\) residual 中，三条的 source carri
 详见
 [H4 \(q_0\) re-entry 最小 \(D\) 射线的 17-adic exact-carrier 剪枝](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md)。
 
-## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛去余下 7 条 rays
+## 2026-08-16：complete-excess 赋值关闭余下七条 large-\(p\) rays
+
+对余下七条分别选取一个 \(\ell\mid d\)，并在 \(\ell^2\) 下重放 H3 递推。每条均有
+\(\nu_\ell((p+1)/2)=\nu_\ell(c_3)=\nu_\ell(q_3)=1\) 且 \(\ell\nmid M_3\)。这使
+\(\ell\) 在 \(R_3-1\) 与 \(K_3\) 中的赋值相等，故不属于 maximal complete-excess
+\(Q^*\)，却以一次幂进入 \(\lambda\)；所以 \(\ell\nmid M_4\)，与 source ray 的
+\(\ell\mid d=((p+1)/2,M_4)\) 矛盾。七条都被全射线删除。
+
+至此 \(p>\delta_d=2d(4d^2-2d+1)\) 的 \(q_0>1\) re-entry 分支为空；因
+\(d\le1535\)，仍可能的该局部 route 已被压到
+\(p\le28,925,021,170\) 的有限低高度区域。详见
+[H4 \(q_0\) re-entry 的 large-\(p\) minimal-\(D\) complete-excess 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-large-p-minimal-d-closure.md)。
+
+## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛提供 large-\(p\) 残余
 
 此前 \((q-1)R_4=\gamma q_0^2(\gamma+pt)D-2d\) 只被用来抽取 \(D\)-gate。
 保留 \(D\mid K_4\) 的商后，它精确固定一个
@@ -9398,8 +9411,7 @@ t\pmod {4(q-1)}.
 \(t\pmod p\) 类的模数两两互素，故唯一合并为模 \(4pq(q-1)\) 的正类。最小
 \(D=2d(4d^2-2d+1)\) 时，q-lock 的第二根只是
 \(t\equiv\gamma-(4d^2-2d+1)^{-1}\pmod {q/\rho}\)。所以完整 source equation 不能
-继续删去经 H3 terminal-first 与 exact carrier 剪枝后余下的 7 条 rays；它反而精确说明
-下一步必须使用 top \(E_\zeta\)、maximal complete-excess 或
-typed/atomic/persistent payload 信息。静态 composite-q 控制和三条 ray-prime 控制均存在，
-但不构成 actual H4 receipt。详见
+继续删去已经关闭的 large-\(p\) rays；它反而精确说明下一步必须使用有限低高度区域的
+top \(E_\zeta\)、maximal complete-excess 或 typed/atomic/persistent payload 信息。静态
+composite-q 控制和三条 ray-prime 控制均存在，但不构成 actual H4 receipt。详见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。

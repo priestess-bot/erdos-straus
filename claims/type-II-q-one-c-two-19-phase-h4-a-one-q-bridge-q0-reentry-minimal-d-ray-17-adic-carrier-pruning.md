@@ -10,7 +10,8 @@ statement: >-
   p q3+(p+1)/2=2M3c3 和 q3=(R3-1)/2，得到 q3=2、4、13 (mod 17)，均非零。
   最大 H3-to-H4 completion 满足 M4=M3(q3/lambda)，故 17 不整除 M4；但这三条
   射线均要求 d=gcd((p+1)/2,M4)=17，矛盾。因此三条 whole rays 都不可能承载 actual
-  q0 re-entry，先前的 10 条 residual rays 缩为 7 条。此结论不排除 d=221 的含 17
+  q0 re-entry，先前的 10 条 residual rays 缩为 7 条。后继的 complete-excess
+  valuation 引理已关闭这 7 条并得到 large-p 分支空性；本卡自身不排除 d=221 的含 17
   射线，也不替代 remaining payload、typed、atomic 或 persistent guards。
 claim_status: established
 proof_provenance: repository_derivation
@@ -169,8 +170,10 @@ supermenu 现为七条：
 
 本论证专门利用了 \(d=17\) 和 \(17\mid2261\)。它不能推广为“每个含 \(17\)
 的射线都空”：例如 \((u,d)=(15,221)\) 仍须单独满足 full carrier equality 以及
-actual q0 payload 条件。式 (12) 仍然只是 source-provenance 的必要菜单，不是 H4
-receipt，也不构成全局 Type I/II 出口。
+actual q0 payload 条件。式 (12) 在本卡的范围内只是 source-provenance 的必要菜单，
+不是 H4 receipt，也不构成全局 Type I/II 出口。后继的
+[large-\(p\) minimal-\(D\) complete-excess 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-large-p-minimal-d-closure.md)
+已用逐 \(\ell\)-赋值论证删除其中七条；但这不改变本卡对 \(d=17\) 的独立结论。
 
 ## 5. 定向复现
 

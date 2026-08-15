@@ -153,8 +153,10 @@ ray-prime 静态控制仍然有效地反驳“纯 \(t\)-同余矛盾”，但它
 
 本卡自身给出的新残余是 10 条经过 H3 terminal-first 的 minimal-\(D\) phase rays。后继的
 [17-adic exact-carrier 剪枝](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md)
-已使用下式删除其中三条 \(d=17\) rays，当前 residual 为七条。其余候选仍应使用 exact
-H3 \(\Rightarrow\) H4 carrier equality
+已使用下式删除其中三条 \(d=17\) rays，当时留下七条。其余候选仍应使用 exact
+H3 \(\Rightarrow\) H4 carrier equality；再后继的
+[large-\(p\) complete-excess 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-large-p-minimal-d-closure.md)
+已删除其余七条。该历史 10-ray menu 在这两步之间的剩余候选使用
 
 \[
 d=\left(\frac{p+1}{2},M_4\right),
