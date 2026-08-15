@@ -19,6 +19,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
   - type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion
   - type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary
+  - type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound
   - type-I-high-support-bundle-carry-capacity-terminal-dispatch
   - type-I-raw-universal-p-parent-root-policy-boundary
   - denominator-escape-state-contract
@@ -42,6 +43,8 @@ sources:
     role: H4-maximal-bundle-and-canonical-carrier
   - claim: type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary
     role: H4-overlap-height-and-carry-boundaries
+  - claim: type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound
+    role: finite-p-source-and-p-free-gate-reduction
   - claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
     role: canonical-high-support-carry-gate
   - claim: type-I-raw-universal-p-parent-root-policy-boundary
@@ -162,10 +165,11 @@ shift \(1\) 到达 \((1,R_4-1,1)\)。\(R_4\not\equiv1\pmod p\) 则保证
 
 ## 5. 范围
 
-本卡没有证明 (5) 对所有 19-phase 素数成立，也没有替代 H4/H5 的 terminal-first 或 typed
-reclassification。若 \(R_4\equiv0\) 或 \(1\pmod p\)，或 \(c_5=p-1\)，这个固定五锚宏
-不能登记；此时才需要 rank-aware sink-bundle candidate map、Type II short certificate 或带
-独立全局势的 paid reset。
+本卡没有证明 \(c_5\le p-2\) 对所有 19-phase 素数成立，也没有替代 H4/H5 的 terminal-first
+或 typed reclassification。H4 的 \(R_4\equiv0,1\pmod p\) 两个 source/p-free 障碍已被
+[有限 p-adic 例外界](type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound.md)压缩到一个
+显式有限残余；若该残余或 \(c_5=p-1\) 未被其它出口抢占，这个固定五锚宏不能登记，才需要
+rank-aware sink-bundle candidate map、Type II short certificate 或带独立全局势的 paid reset。
 
 Focused verification:
 
