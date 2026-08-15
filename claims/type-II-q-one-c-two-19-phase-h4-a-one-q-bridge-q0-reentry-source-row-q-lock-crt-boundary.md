@@ -16,7 +16,8 @@ statement: >-
   p-residual classes 不能与完整 source row 或 q-lock 发生纯同余矛盾。在 large-p
   minimal D=2d(4d^2-2d+1) 分支，q-lock 的第二根简化为
   t=gamma-(4d^2-2d+1)^(-1) (mod q/rho)；因此这张 CRT 边界不会继续删去
-  17 条 necessary phase rays。一个 p=12409,d=5,q=1241 的静态 source-row
+  pre-H3 的 17 条 necessary phase rays；独立的 H3 terminal-first 剪枝随后删去其中
+  7 条，留下 10 条。一个 p=12409,d=5,q=1241 的静态 source-row
   控制在 gamma in {1,17,73}、全部四个 unitary rho 与两条 raw residual
   class 下均给出正、primitive、p-free endpoint；17 条 ray 中三个首项素数亦有
   相同 gamma=1,rho=q 的静态控制。这些控制不构造 actual H4 predecessor、
@@ -251,10 +252,12 @@ D\mid(2d-1)((2d+1)q-1),
 \tag{17}
 \]
 
-这不是新的 phase pruning：它恰保证 (7)、(15) 中需要的逆元存在。因而对 17-ray 上
-任何通过此前 \(D\)-gate 的实际素数点，(11) 在 \(t\) 的同余层面仍与每个 unitary
-allocation 和每条 \(p\)-residual class 兼容。继续只在 \(t\) 的同余层添加筛子
-不能关闭该 residual。
+这不是新的 phase pruning：它恰保证 (7)、(15) 中需要的逆元存在。因而对 pre-H3
+17-ray supermenu 上任何通过此前 \(D\)-gate 的实际素数点，(11) 在 \(t\) 的同余层面
+仍与每个 unitary allocation 和每条 \(p\)-residual class 兼容。后继的
+[H3 terminal-first 剪枝](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-h3-terminal-pruning.md)
+独立地删去其中 7 条，留下 10 条；继续只在 \(t\) 的同余层添加筛子仍不能关闭这 10 条
+residual。
 
 ## 4. 静态控制与准确边界
 
@@ -277,14 +280,16 @@ D=910,\quad\ell=135.
 \]
 
 并且端点 \(\xi,\zeta=R_4-\xi\) 为正、互素、p-free，且 q 的完整素数幂恰按
-\(\rho,q/\rho\) 分配。另有 17 条 phase ray 中三个首项素数的 \(\gamma=1,\rho=q\)
-控制，共六条（两条 \(\theta\)）满足相同的静态整数条件。
+\(\rho,q/\rho\) 分配。另有 pre-H3 17 条 phase ray 中三个首项素数的
+\(\gamma=1,\rho=q\) 控制，共六条（两条 \(\theta\)）满足相同的静态整数条件。
 
 这些是对“source row + q-lock + raw terminal class 自身矛盾”这一设想的严格反例，
 不是 actual H4 receipt：没有为它们构造 \(M_4,Q_x,\beta_x\) 的 maximal complete-excess
 证书、top \(E_\zeta\)，也没有 H3-to-H4 prefix、terminal-first、typed、atomic 或 E1--E5
-回执。因此下一条真正可能关闭 17 rays 的信息必须来自这些尚未使用的 actual payload
-条件，或从 q-lock target 的完整 root/solution-lift 合同，而不能来自新的 \(t\) 同余筛。
+回执。事实上，exact-prefix 审计已表明这三个素数首项都不成为 actual re-entry：两条在
+H3 terminal-first 截断，另一条有 \(\bigl((p+1)/2,M_4\bigr)\ne d\)。因此下一条真正可能
+关闭余下 10 rays 的信息必须来自 actual H3-to-H4 carrier equality、payload 条件，或
+q-lock target 的完整 root/solution-lift 合同，而不能来自新的 \(t\) 同余筛。
 
 ## 5. 定向复现
 
@@ -293,5 +298,5 @@ python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_q0_reentry_sou
 ```
 
 回执只重建 (5)--(12) 的 CRT source row、(18) 的 24 个 composite-q 静态控制，以及
-17 rays 中三个实际 prime first-point 的六个控制；不搜索 prime ranges、分母、Reach graph
-或 H4 predecessor history。
+pre-H3 17 rays 中三个 prime first-point 的六个静态控制；不搜索 prime ranges、分母、
+Reach graph 或 H4 predecessor history。

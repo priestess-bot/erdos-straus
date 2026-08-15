@@ -9361,7 +9361,18 @@ d\not\equiv1\pmod3\)；这仍不是全局出口。详见
 necessary supermenu rays。它们是下一步应叠加 q-lock unitary allocation 与
 \(\omega_{\rm re}=-1,9u^2\ge p\) 的精确对象，而不是已经发生的 H4 receipts。
 
-## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛去 17 rays
+## 2026-08-16：H3 terminal-first 将 17 条 minimal-D rays 压到 10 条
+
+此前 minimal-\(D\) source gate 与 31-selector 的交集给出 17 条 pre-H3 necessary
+CRT rays。对每条 ray，\(p\equiv-1\pmod{2d}\)、\(d\mid\lvert1536-a\rvert\)，而
+\(c_3=(1536+ap)/2261\)。当 \((d,2261)=1\) 且 \(d\) 含 \(3\pmod4\) 素因子时，该
+因子必进入 \(g=((p+1)/2,c_3)\)，所以 H3 terminal-first 已给 Type II certificate。
+这全射线地删去 7 条，留下 10 条；三个已知 prime first-point 也全被 exact prefix
+拒绝，其中两条是 H3 terminal，另一条的 exact \(((p+1)/2,M_4)\) 为 1 而非 ray 的 65。
+详见
+[H4 \(q_0\) re-entry 最小 \(D\) 射线的 H3 terminal-first 剪枝](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-h3-terminal-pruning.md)。
+
+## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛去余下 10 条 rays
 
 此前 \((q-1)R_4=\gamma q_0^2(\gamma+pt)D-2d\) 只被用来抽取 \(D\)-gate。
 保留 \(D\mid K_4\) 的商后，它精确固定一个
@@ -9374,7 +9385,8 @@ t\pmod {4(q-1)}.
 \(t\pmod p\) 类的模数两两互素，故唯一合并为模 \(4pq(q-1)\) 的正类。最小
 \(D=2d(4d^2-2d+1)\) 时，q-lock 的第二根只是
 \(t\equiv\gamma-(4d^2-2d+1)^{-1}\pmod {q/\rho}\)。所以完整 source equation 不能
-继续删去 17 条必要 rays；它反而精确说明下一步必须使用尚未消费的 top
-\(E_\zeta\)、maximal complete-excess 或 typed/atomic/persistent payload 信息。静态
-composite-q 控制和三条 ray-prime 控制均存在，但不构成 actual H4 receipt。详见
+继续删去 H3 terminal-first 之后的 10 条 rays；它反而精确说明下一步必须使用 actual
+H3-to-H4 carrier equality、top \(E_\zeta\)、maximal complete-excess 或
+typed/atomic/persistent payload 信息。静态 composite-q 控制和三条 ray-prime 控制均存在，
+但不构成 actual H4 receipt。详见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。

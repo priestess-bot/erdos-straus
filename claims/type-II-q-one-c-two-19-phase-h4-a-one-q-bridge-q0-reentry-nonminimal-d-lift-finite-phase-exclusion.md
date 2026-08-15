@@ -249,8 +249,10 @@ p\equiv912u+769\pmod {108528},
 | 104 | 260 | 29 | 191,806 | 297,290,411,905 | 301,836,662,736 |
 | 117 | 2046 | 17 | 38,182 | 853,354,609 | 2,071,908,048 |
 
-这 17 条是 necessary supermenu rays，而不是已存在的 H4 receipts；尤其不能由表中
-\(P_0\) 的 primality 或 compositeness 推断整条 progression 的可达性或不可达性。
+这 17 条是 pre-H3 necessary supermenu rays，而不是已存在的 H4 receipts；尤其不能由表中
+\(P_0\) 的 primality 或 compositeness 推断整条 progression 的可达性或不可达性。后继的
+[H3 terminal-first 射线剪枝](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-h3-terminal-pruning.md)
+已用 exact prefix 独立删去其中 7 条；本卡本身仍只记录 minimal-\(D\) 的来源同余菜单。
 
 ## 5. 更新后的未关闭边界
 
