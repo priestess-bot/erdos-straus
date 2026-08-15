@@ -9020,3 +9020,32 @@ root-fan 的路线。后续若要利用 \(q\)，必须在进入 root 前从
 \(q\mid Q\mid(R_4-h)\) 的 actual receipt 中获得
 terminal、split-carrier 或 strict macro。详见
 [H4 fresh carrier 与 root cyclotomic 容量的互素屏障](../claims/type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality.md)。
+
+## 2026-08-16：fresh \(q\)-carrier 已在 H4 前 root 节点变成实际 clean raw word
+
+上一节留下的 \(q\mid Q\mid(R_4-h)\) 现在不再只是一个可供猜测的因子。设
+\(q=((p+1)/2)/( (p+1)/2,M_4)\)。对每个 \(\ell\mid q\)，若 \(\ell\mid K_4\)，则
+\(pR_4+1=4K_4\) 与 \(p\equiv-1\pmod\ell\) 会强制 \(R_4\equiv1\pmod\ell\)，从而
+\(\ell\mid(R_4-1,K_4)=h\)；但 \(\ell\mid z=R_4-h\) 又会给 \(z\equiv1\pmod\ell\)，
+矛盾。因此
+
+\[
+(q,K_4)=1.
+\]
+
+故按 \(q\) 的每个素因子及重数从 \(z\) 侧剥离，全部是 actual complete-excess raw
+edge，且无 gcd reduction，端点唯一为
+
+\[
+\left\{R_4-\frac{R_4-h}{q},\frac{R_4-h}{q}\right\}.
+\]
+
+在这个 pre-root endpoint 重新取两个 maximal complete-excess block：两块为空则进入既有
+Type I terminal；恰一块 p-free 非空时单侧 residual gate 自动通过；两块 p-free 非空时
+出现带实际 H4 provenance 的 atomic-split payload；含 \(p\) 时精确留下 p-primary residual。
+对 p-free 非终端分支，若新容量 \(c_q\le p-2\)，则它可在所有 typed guards 通过后附回
+原 parent，给 \((0,p-1)>(0,c_q)\) 的 strict macro；唯一容量残余是
+\(L_q\equiv-c_4\pmod p\)。这没有宣称 atomic payload 已登记为 verified edge，也没有
+宣称该残余为空。两个 local H4 控制（\(p=73,q=37\) 与 \(p=241,q=11^2\)）均在 q-word
+后得到 p-free 双侧 split 且 canonical capacity 严格为 24、80。详见
+[H4 fresh q-carrier 的清洁 raw bridge](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md)。
