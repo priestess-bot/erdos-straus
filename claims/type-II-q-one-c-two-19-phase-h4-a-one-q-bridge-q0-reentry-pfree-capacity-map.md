@@ -36,6 +36,7 @@ depends_on:
   - type-I-overflow-full-product-d-one-p-adic-regeneration-countdown
   - type-I-overflow-full-product-d-one-a-one-regeneration-return-digit-normal-form
   - type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent
+  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -77,6 +78,8 @@ sources:
     role: a-one-terminal-digit-classification-and-raw-source-repair
   - claim: type-I-overflow-full-product-d-one-a-one-root-coprime-capacity-fan-half-descent
     role: admitted-p-free-root-small-fan-terminal-or-strict-exit
+  - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate
+    role: actual-H4-provenance-aware-D-divisor-gate
   - concept: denominator-escape-state-contract
     role: terminal-typed-lift-and-potential-contract
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_q0_reentry_pfree_capacity_map.py
@@ -465,8 +468,19 @@ input。d=1 regeneration countdown 保持 (25) 的首个非零 \(p\)-进数字�
 \tag{29}
 \]
 
-式 (29) 仍不是不可能条件：它保留了 unitary endpoint allocation、p-adic terminal
-digit 和根容量三种独立数据，任何忽略其中之一的“q-lock 自动下降”都不成立。
+此外，actual H4 source receipt 还强制
+
+\[
+D\equiv2d(4d^2-2d+1)\pmod p,
+\qquad
+D\mid(2d-1)\bigl((2d+1)q-1\bigr).
+\tag{29a}
+\]
+
+因此 original H4 carrier \(d=1\) 已被排除；对其余 \(d>1\)，(29a) 至多保留
+\(2d\) 个 provenance-aware \(D\) 候选。式 (29) 仍不是不可能条件：它保留了
+unitary endpoint allocation、p-adic terminal digit、根容量和这个有限 \(D\) gate；任何
+忽略其中之一的“q-lock 自动下降”都不成立。
 
 ## 7. 精确分派与边界
 
@@ -478,7 +492,7 @@ digit 和根容量三种独立数据，任何忽略其中之一的“q-lock 自�
 | \(FE_\zeta\equiv L_0\pmod p,\ q\nmid\sigma\) | \(a_{\rm re}>1\) | existing \(a>1\) handoff guards |
 | q-lock 且 \(\omega_{\rm re}\ne-1\) | existing d=1 strict dispatch | q-lock target/checkpoint guards |
 | q-lock、\(\omega_{\rm re}=-1\)、\(9u^2<p\) | root-fan terminal 或 strict carry | root-return guards |
-| q-lock、\(\omega_{\rm re}=-1\)、\(9u^2\ge p\) | residual (29) | 必须另行排除、给证书或构造合法递降 |
+| q-lock、\(\omega_{\rm re}=-1\)、\(9u^2\ge p\) | residual (29) 加上 (29a) 的有限 \(D\) gate | 必须另行排除、给证书或构造合法递降 |
 
 这张卡关闭了“p-free re-entry 没有可计算 capacity”的缺口，并把所有仍留在
 \(a=1\) 的顶容量情形转换为 endpoint 的有限因子分配和 root-fan 数值条件。它没有
@@ -490,6 +504,7 @@ digit 和根容量三种独立数据，任何忽略其中之一的“q-lock 自�
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_q0_reentry_pfree_capacity_map.py --verify
 ```
 
-回执只验证 (10)--(29) 的固定整数控制，包括 strict、\(a>1\) top-capacity、
-single-side gate、unitary q-lock 与 q-lock 后的 ordinary d=1 strict relay；不构造 H4
-predecessor，也不扫描 prime ranges 或历史 Reach。
+回执只验证 (10)--(29) 的固定 capacity-map 整数控制，包括 strict、\(a>1\)
+top-capacity、single-side gate、unitary q-lock 与 q-lock 后的 ordinary d=1 strict relay；
+不构造 H4 predecessor，也不验证 actual-H4-only 的 (29a)。后者由独立的 \(D\) 残数门
+回执验证；两类控制都不扫描 prime ranges 或历史 Reach。

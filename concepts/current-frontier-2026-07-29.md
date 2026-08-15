@@ -9297,3 +9297,31 @@ b_{\rm re}=b+2Uv.
 strict carry。因此 q-lock 的已知路由残余还必须同时满足
 \(\omega_{\rm re}=-1\) 与 \(9u^2\ge p\)。这不是 q-lock 的一般排除，但排除了把
 每个 q-lock 一概视为静止 stutter 的错误解释。
+
+## 2026-08-16：actual \(q_0\) re-entry 的 \(D\) 残数门排除 original carrier \(d=1\)
+
+对同一 actual re-entry，不能只保留 endpoint 的 q-lock 同余。source-normalized
+identity
+
+\[
+(q-1)R_4=\gamma q_0^2\xi-2d,
+\qquad
+\xi=(\gamma+pt)D,
+\qquad
+R_4\equiv1\pmod p
+\]
+
+强制
+
+\[
+D\equiv2d(4d^2-2d+1)\pmod p,
+\qquad
+D\mid(2d-1)\bigl((2d+1)q-1\bigr).
+\]
+
+由于 \(D<2dp\)，每个固定 \((p,d)\) 至多有 \(2d\) 个候选；actual phase 的
+\(d\mid\lvert1536-a(p)\rvert\le1535\) 使这成为有限 provenance gate。特别地，
+original H4 carrier \(d=1\) 时仅有 \(D=6,p+6\) 两个可能，二者均不整除
+\((3p+1)/2\)，所以该 re-entry 子类为空。这里的 carrier \(d\) 不等同于 re-entry
+target 后续 ordinary full-product \(d=1\) 标签；后者仍由 countdown/root-fan 路由处理。
+详见 [H4 \(q_0\) re-entry 的 \(D\) 残数门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate.md)。
