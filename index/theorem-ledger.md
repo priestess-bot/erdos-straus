@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 806 |
+| 数学状态 | `established` | 807 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 35 |
-| 证明来源 | `repository_derivation` | 640 |
+| 证明来源 | `repository_derivation` | 641 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 784 |
+| 审阅状态 | `internal_review` | 785 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1088,6 +1088,7 @@
 | [H4 q0 re-entry 的非最小 D-lift 有限 phase 排除与最小残数边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0 raw re-entry p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0 p-free re-entry 完整超额容量图与 unitary q-lock 签名](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-pfree-capacity-map.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-pfree-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [H4 q0 re-entry 的完整 source-row、unitary q-lock 与 p-residual CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge s=0 的 q-block swap、小锚界与 secondary p-primary 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge s=0 secondary p-free gate 的 a=1 q-lock 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge stutter 的 a 坐标转导、两类正残余、raw-p-source 修复与 q0 raw re-entry](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |

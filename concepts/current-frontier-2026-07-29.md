@@ -9360,3 +9360,21 @@ d\not\equiv1\pmod3\)；这仍不是全局出口。详见
 模 \(4d^2(4d^2-2d+1)\) 的唯一类；与 31 phase progression 作 CRT 后只剩 17 条
 necessary supermenu rays。它们是下一步应叠加 q-lock unitary allocation 与
 \(\omega_{\rm re}=-1,9u^2\ge p\) 的精确对象，而不是已经发生的 H4 receipts。
+
+## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛去 17 rays
+
+此前 \((q-1)R_4=\gamma q_0^2(\gamma+pt)D-2d\) 只被用来抽取 \(D\)-gate。
+保留 \(D\mid K_4\) 的商后，它精确固定一个
+
+\[
+t\pmod {4(q-1)}.
+\]
+
+这个 source-row 类、任意 unitary q-lock 的 \(t\pmod q\)，以及任意 raw terminal
+\(t\pmod p\) 类的模数两两互素，故唯一合并为模 \(4pq(q-1)\) 的正类。最小
+\(D=2d(4d^2-2d+1)\) 时，q-lock 的第二根只是
+\(t\equiv\gamma-(4d^2-2d+1)^{-1}\pmod {q/\rho}\)。所以完整 source equation 不能
+继续删去 17 条必要 rays；它反而精确说明下一步必须使用尚未消费的 top
+\(E_\zeta\)、maximal complete-excess 或 typed/atomic/persistent payload 信息。静态
+composite-q 控制和三条 ray-prime 控制均存在，但不构成 actual H4 receipt。详见
+[H4 \(q_0\) re-entry 的完整 source-row CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。

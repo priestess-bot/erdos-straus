@@ -507,6 +507,12 @@ p\le\delta_d
 CRT phase rays；它们仍须与 unitary allocation、terminal digit 和 root capacity 联立，
 不代表已实现的 H4 receipt。
 
+完整 source row 的 \(D\mid K_4\) 商会额外固定 \(t\pmod {4(q-1)}\)，但这与
+unitary q-lock 的 \(t\pmod q\) 及任何 terminal \(t\pmod p\) 类两两 CRT 兼容。因此这
+不是继续筛去 17 rays 的工具；必须改用 actual \(E_\zeta\)、maximality 或 guards 的信息。
+该后继边界及定向控制见
+[H4 \(q_0\) re-entry 的完整 source-row CRT 边界](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。
+
 ## 7. 精确分派与边界
 
 | re-entry 情形 | 本卡给出的结果 | 仍需的独立条件 |
