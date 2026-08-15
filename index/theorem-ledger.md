@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 783 |
+| 数学状态 | `established` | 784 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 29 |
-| 证明来源 | `repository_derivation` | 623 |
+| 证明来源 | `repository_derivation` | 624 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 761 |
+| 审阅状态 | `internal_review` | 762 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1079,6 +1079,7 @@
 | [Type II q 层前缀匹配到纤维 Kneser 价格的规范压缩](../claims/type-II-q-layer-prefix-kneser-price-certificate.md) (`type-II-q-layer-prefix-kneser-price-certificate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [q=1 高 C=2 的 19 相位固定 Type I/II 模板阻碍](../claims/type-II-q-one-c-two-19-phase-fixed-template-obstruction.md) (`type-II-q-one-c-two-19-phase-fixed-template-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 H3 有界终端—第四锚—q=1 掩码分派](../claims/type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate.md) (`type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 高 C=2 19 相位 H4 carry-overlap 公式与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位的最大超额第四 anchor 完成](../claims/type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion.md) (`type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位 p-anchor 完整超额容量扩张](../claims/type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位细分仿射终端边界](../claims/type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary.md) (`type-II-q-one-c-two-19-phase-refined-affine-terminal-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
