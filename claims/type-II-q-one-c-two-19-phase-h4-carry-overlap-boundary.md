@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary
-title: q=1 高 C=2 19 相位 H4 carry-overlap、条件 p减一高度边界与有限标签边界
+title: q=1 高 C=2 19 相位 H4 carry-overlap、同图表 Type I no-go 与有限标签边界
 statement: >-
   在 q=1 high C=2 19 相位每个未被 H3 terminal 抢占、经最大 complete-excess
   构造到 H4 的状态中，令 L=M4/M3、c4 为 H4 canonical capacity，并定义唯一第四 carry
@@ -9,9 +9,10 @@ statement: >-
   gcd(R4-1,K4)=2*gcd((p+1)/2,c3-s4)。所以该 gcd 的任一 3 (mod 4) 素因子给出
   可直接核验的 Type II raw-ray 证书，但同一素因子已经给出根级 p+1 Type I 证书；故在
   p+1 terminal-first 后，该 H4 gate 不增加全局 terminal 覆盖。同时 L(c4-c3)=p*s4-c3(L-1)
-  精确判定本地 capacity 势方向。若未来 typed reclassification 将同一 H4 图表实现为 Type I
-  正规形并保留最大尾，则其 p-1 标准最大尾桥必因图表高度超过桥的平方容量而不可能成立。
-  这是一条条件性图表边界，不声称 H4 本身已有 Type I 正规形。然而 H4 overlap 与该势方向都不由此前的有限 H3 标签
+  精确判定本地 capacity 势方向。H4 的 R4 具有超过 p^3/2 的下界，而任一标准 Type I
+  正规形的合法图表总满足 mR-1<=(p+m)^2/4<=(p-1)^2。因此任何保留同一
+  (p,R4,K4) 的 typed Type I reclassification 都不可能存在；这是一条同图表 no-go，
+  不声称 H4 本身已有 Type I 正规形，也不排除换图表路径。然而 H4 overlap 与该势方向都不由此前的有限 H3 标签
   (u mod 119,a,g,lambda) 决定：p=184993 与 p=727633 均有
   (u,a,g,lambda)=(83,1723,1,1) 且 H3 clean，但 H4 的奇 overlap 分别为 1 与 17。
   另有 p=448561 与 p=665617 共享 (u,a,g,lambda)=(15,431,1,1)，但前者 c4>c3、
@@ -27,7 +28,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
   - type-II-raw-ray-certificate
   - p-plus-one-sqrt-certificate
-  - type-I-normal-pminusone-upper-half-bridge
+  - type-I-normal-chart-height-bound
   - type-I-universal-p-source-capacity-anchor-orbit
   - denominator-escape-state-contract
 topics:
@@ -44,7 +45,7 @@ topics:
   - selector-boundary
   - terminal-preemption
   - p-minus-one
-  - conditional-height-boundary
+  - same-chart-no-go
   - proof-boundary
 sources:
   - claim: type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion
@@ -57,8 +58,8 @@ sources:
     role: overlap-factor-to-Type-II-certificate
   - claim: p-plus-one-sqrt-certificate
     role: root-level-terminal-preemption
-  - claim: type-I-normal-pminusone-upper-half-bridge
-    role: same-chart-pminusone-bridge-criterion
+  - claim: type-I-normal-chart-height-bound
+    role: standard-normal-form-height-necessary-condition
   - concept: denominator-escape-state-contract
     role: named-normal-form requirement for a legal recursive state
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_carry_overlap_boundary.py
@@ -67,7 +68,7 @@ visibility: public
 last_checked: '2026-08-15'
 ---
 
-# q=1 high \(C=2\) 19-phase 的 H4 carry-overlap 公式与有限标签边界
+# q=1 high \(C=2\) 19-phase 的 H4 carry-overlap、同图表 Type I no-go 与有限标签边界
 
 ## 1. H4 的缺失状态变量
 
@@ -234,34 +235,15 @@ x=\frac{p+\ell}{4},
 \tag{14}
 \]
 
-## 4. 同图表 Type I 正规形的条件 \(p-1\) 最大尾桥高度边界
+## 4. 同图表 Type I 正规形的绝对高度 no-go
 
 H4 目前是 complete-excess 的 canonical capacity target，而不是已经附有三分母
-Type I `normal_form` verifier 的状态。因而不能从图表恒等式直接断言 H4 有一个可被
-\(p-1\) 桥检验的“前两项”。不过 H4 的图表高度仍给出一个严格的条件边界：
+Type I `normal_form` verifier 的状态。因而不能从图表恒等式直接宣布 H4 已有 Type I
+前两项或 Type I 递降边。不过，若未来 typed reclassification 保留**同一**
+\((p,R_4,K_4)\) 并声称得到一张标准 Type I 正规形，那么该断言已经被正规图表的必要
+高度条件排除。
 
-> 若后续 typed reclassification 将**同一** \((p,R_4,K_4)\) 实现为 Type I 正规形，
-> 并且该正规形的最大尾满足
-> \(R_4=4r_4-1\)，则保持该正规形前两项、取源 \(n=p-1\) 的标准最大尾桥不可能存在。
-
-写
-
-\[
-R_4=4r_4-1,
-\qquad
-t=\frac{p-1}{4}.
-\tag{15}
-\]
-
-[Type I 正规形的 \(p-1\) 桥判据](type-I-normal-pminusone-upper-half-bridge.md)应用于上述
-**条件性的 Type I 正规形**时说明，该同图表最大尾桥存在当且仅当
-
-\[
-r_4\mid t^2.
-\tag{16}
-\]
-
-H4 的高度使这一整除式不可能。三 anchor 宏的首个高容量为
+三 anchor 宏的首个高容量为
 
 \[
 M_0=\frac{(p-1)(2p+1)(2p^2-3p-1)}8.
@@ -276,30 +258,45 @@ M_3>M_0>\frac{p^4}{8}.
 \]
 
 另一方面，H4 有 \(M_4=M_3L\)、\(L>1\)、\(c_4\ge1\)，所以
-\(K_4=M_4c_4>M_0\)。由 \(pR_4+1=4K_4\) 和 (15)，
+\(K_4=M_4c_4>M_0\)。由 \(pR_4+1=4K_4\)，
 
 \[
-K_4=pr_4-t,
-\qquad
-r_4=\frac{K_4+t}{p}
->\frac{p^3}{8}
->\frac{p^2}{16}
->t^2.
+R_4=\frac{4K_4-1}{p}
+>\frac{p^3}{2}-\frac1p.
 \tag{19}
 \]
 
-这与 (16) 矛盾。因此
+若该图表真能重分类为标准 Type I 正规形，其合法缺口 \(m\) 必满足
+\(3\le m\le p-2\)。于是对 \(p\ge73\)，
 
 \[
-\boxed{\begin{gathered}
-\text{任何保留 H4 图表的未来 Type I 正规形，均不存在以 }n=p-1\\
-\text{为源、保持其前两项的标准最大尾偶桥。}
-\end{gathered}}
+mR_4-1
+\ge3R_4-1
+>\frac{3p^3}{2}-\frac3p-1
+>(p-1)^2
+\ge\frac{(p+m)^2}{4}.
 \tag{20}
 \]
 
-这是图表尺度的条件 no-go，不是 H4 的 typed transition。它不建立 H4 的 Type I 正规形、
-不排除根素数在另一张低 \(R\) 图表中有 \(p-1\) 终端，也不排除其它 \(n<p\) 的提升。
+但 [Type I 正规图表的二次高度上界](type-I-normal-chart-height-bound.md)要求每张
+标准正规形满足反向不等式
+
+\[
+mR_4-1\le\frac{(p+m)^2}{4}.
+\tag{21}
+\]
+
+矛盾。因此
+
+\[
+\boxed{
+\text{不存在保留 H4 同一 }(p,R_4,K_4)\text{ 的标准 Type I 正规形。}}
+\tag{22}
+\]
+
+这严格强于原先的条件 \(p-1\) 最大尾桥边界：这里并非只排除该桥，而是排除使该桥问题
+有定义的同图表正规形本身。它仍然不是 H4 的 typed transition，也不排除根素数在另一张
+低 \(R\) 图表中有 \(p-1\) terminal、其它 \(n<p\) 的提升，或 Type II 路径。
 
 ## 5. H3 有限标签不足的严格反例
 
@@ -330,10 +327,11 @@ odd overlap \((w,c_3-s_4)\)。这不是从两个点外推整体行为，而是�
 
 式 (8) 把 H4 的状态局部 terminal 输入压缩为一个明确的 carry residual，并给出它命中时的
 构造性证书；但 (12) 证明该终端在根级已被 \(p+1\) 分支预先截断。故在真正的全局残余上，
-不能再试图从 \((w,c_3-s_4)\) 的 \(3\pmod4\) 因子获得新出口；(20) 进一步规定了：
-任何保留该图表的 Type I 重分类不能把 \(p-1\) 标准最大尾桥当作下一出口。H4 的下一条有效
-研究接口必须先给出 typed reclassification，再利用 \(s_4\) 构造不同的可提升 \(n<p\) 递降，
-或给出一个不经 \(p+1\) 因子的短证书；它也不能只重复 H3 的 \((u,\lambda)\) 有限 mask。
+不能再试图从 \((w,c_3-s_4)\) 的 \(3\pmod4\) 因子获得新出口；(22) 进一步规定了：
+任何保留该图表的 Type I 重分类都不可能成为下一出口。H4 的下一条有效研究接口必须显式
+改变 \(R,K\) 后再给出 typed reclassification，或利用 \(s_4\) 构造不同的可提升 \(n<p\)
+递降，或给出一个不经 \(p+1\) 因子的短证书；它也不能只重复 H3 的
+\((u,\lambda)\) 有限 mask。
 
 Focused verification:
 

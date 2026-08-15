@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify H4 gates, global preemption, conditional p-1 chart bounds, and labels."""
+"""Verify H4 gates, global preemption, same-chart Type I no-go, and labels."""
 
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ from type_ii_q_one_c2_19_phase_fourth_anchor_terminal_gate import (
     phase_u,
 )
 from type_ii_q_one_c2_19_phase_maximal_fourth_anchor_completion import complete_excess
+from type_i_normal_chart_height_boundary import normal_chart_global_excess_upper_bound
 
 
 def h4_carry_data(prime: int) -> dict[str, int | str]:
@@ -122,8 +123,8 @@ def h4_overlap_p_plus_one_preemption(prime: int) -> tuple[int, GapCertificate] |
     return factor, certificate
 
 
-def h4_pminusone_bridge_scale_boundary(prime: int) -> dict[str, int | bool]:
-    """Verify H4's chart-height bound, without asserting a Type I normal form."""
+def h4_same_chart_type_i_height_no_go(prime: int) -> dict[str, int | bool]:
+    """Show H4 exceeds every legal standard Type I chart-height bound."""
     data = h3_data(prime)
     m3 = int(data["M_3"])
     k3 = int(data["K_3"])
@@ -136,9 +137,9 @@ def h4_pminusone_bridge_scale_boundary(prime: int) -> dict[str, int | bool]:
     c4 = c3 * pow(multiplier, -1, prime) % prime
     k4 = m4 * c4
     r4 = (4 * k4 - 1) // prime
-    t = (prime - 1) // 4
-    r = (r4 + 1) // 4
     m0 = (prime - 1) * (2 * prime + 1) * (2 * prime * prime - 3 * prime - 1) // 8
+    global_excess_bound = normal_chart_global_excess_upper_bound(prime)
+    least_type_i_excess = 3 * r4 - 1
 
     if not (
         prime % 24 == 1
@@ -149,17 +150,15 @@ def h4_pminusone_bridge_scale_boundary(prime: int) -> dict[str, int | bool]:
         and 1 <= c4 <= prime - 2
         and k4 == m4 * c4 > m0
         and prime * r4 + 1 == 4 * k4
-        and r4 % 4 == 3
-        and r4 == 4 * r - 1
-        and prime * r == k4 + t
-        and r > t * t
+        and global_excess_bound == (prime - 1) ** 2
+        and least_type_i_excess == 3 * r4 - 1 > global_excess_bound
     ):
-        raise AssertionError("the H4 conditional p-1 chart bound changed")
+        raise AssertionError("the H4 same-chart Type I height no-go changed")
 
     return {
         "p": prime,
-        "r_exceeds_t_square": r > t * t,
-        "requires_type_i_normal_form": True,
+        "minimum_type_i_excess_exceeds_global_bound": least_type_i_excess > global_excess_bound,
+        "same_chart_type_i_normal_form_impossible": True,
     }
 
 
@@ -171,8 +170,8 @@ def verify() -> None:
     descent = h4_carry_data(665_617)
     terminal = h4_overlap_terminal(114_769)
     preemption = h4_overlap_p_plus_one_preemption(114_769)
-    clean_height_boundary = h4_pminusone_bridge_scale_boundary(184_993)
-    hard_height_boundary = h4_pminusone_bridge_scale_boundary(14_449)
+    clean_same_chart_no_go = h4_same_chart_type_i_height_no_go(184_993)
+    hard_same_chart_no_go = h4_same_chart_type_i_height_no_go(14_449)
 
     label_keys = ("u", "a", "h3_g", "lambda", "h3_branch")
     if not (
@@ -261,21 +260,21 @@ def verify() -> None:
             ),
         )
         and h4_overlap_p_plus_one_preemption(14_449) is None
-        and clean_height_boundary
+        and clean_same_chart_no_go
         == {
             "p": 184_993,
-            "r_exceeds_t_square": True,
-            "requires_type_i_normal_form": True,
+            "minimum_type_i_excess_exceeds_global_bound": True,
+            "same_chart_type_i_normal_form_impossible": True,
         }
-        and hard_height_boundary
+        and hard_same_chart_no_go
         == {
             "p": 14_449,
-            "r_exceeds_t_square": True,
-            "requires_type_i_normal_form": True,
+            "minimum_type_i_excess_exceeds_global_bound": True,
+            "same_chart_type_i_normal_form_impossible": True,
         }
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")
-    print("verified H4 gates, p+1 preemption, conditional p-1 chart bounds, and label boundaries")
+    print("verified H4 gates, p+1 preemption, same-chart Type I no-go, and label boundaries")
 
 
 def main() -> None:
