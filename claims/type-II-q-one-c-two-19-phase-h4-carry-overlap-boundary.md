@@ -10,9 +10,11 @@ statement: >-
   可直接核验的 Type II raw-ray 证书，但同一素因子已经给出根级 p+1 Type I 证书；故在
   p+1 terminal-first 后，该 H4 gate 不增加全局 terminal 覆盖。同时 L(c4-c3)=p*s4-c3(L-1)
   精确判定本地 capacity 势方向。H4 的 R4 具有超过 p^3/2 的下界，而任一标准 Type I
-  正规形的合法图表总满足 mR-1<=(p+m)^2/4<=(p-1)^2。因此任何保留同一
-  (p,R4,K4) 的 typed Type I reclassification 都不可能存在；这是一条同图表 no-go，
-  不声称 H4 本身已有 Type I 正规形，也不排除换图表路径。然而 H4 overlap 与该势方向都不由此前的有限 H3 标签
+  正规形的合法图表总满足 mR-1<=(p+m)^2/4<=(p-1)^2。更强地，任何同一 p 的
+  标准 Type I 图表都必须满足 R_I<R4/p、K_I<K4/p；因此保留同一
+  (p,R4,K4) 的 typed Type I reclassification 都不可能存在。这给出换图表所需的
+  超过 p 倍高度塌缩，不声称 H4 本身已有 Type I 正规形，也不排除实际换图表路径。
+  然而 H4 overlap 与该势方向都不由此前的有限 H3 标签
   (u mod 119,a,g,lambda) 决定：p=184993 与 p=727633 均有
   (u,a,g,lambda)=(83,1723,1,1) 且 H3 clean，但 H4 的奇 overlap 分别为 1 与 17。
   另有 p=448561 与 p=665617 共享 (u,a,g,lambda)=(15,431,1,1)，但前者 c4>c3、
@@ -46,6 +48,7 @@ topics:
   - terminal-preemption
   - p-minus-one
   - same-chart-no-go
+  - cross-chart-height-collapse
   - proof-boundary
 sources:
   - claim: type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion
@@ -266,37 +269,63 @@ R_4=\frac{4K_4-1}{p}
 \tag{19}
 \]
 
-若该图表真能重分类为标准 Type I 正规形，其合法缺口 \(m\) 必满足
-\(3\le m\le p-2\)。于是对 \(p\ge73\)，
+令 \(U_R(p)\)、\(U_K(p)\) 是
+[Type I 正规图表的二次高度上界](type-I-normal-chart-height-bound.md)中的全局界。则同一
+\(p\) 的任意标准 Type I 正规形 \((R_{\mathrm I},K_{\mathrm I})\) 必有
 
 \[
-mR_4-1
-\ge3R_4-1
->\frac{3p^3}{2}-\frac3p-1
->(p-1)^2
-\ge\frac{(p+m)^2}{4}.
+R_{\mathrm I}\le U_R(p),
+\qquad
+K_{\mathrm I}\le U_K(p).
 \tag{20}
 \]
 
-但 [Type I 正规图表的二次高度上界](type-I-normal-chart-height-bound.md)要求每张
-标准正规形满足反向不等式
+对 \(p\ge73\)，(19) 与定义 \(U_R(p)\) 的实数上界之间的差为
 
 \[
-mR_4-1\le\frac{(p+m)^2}{4}.
+\left(\frac{p^3}{2}-\frac1p\right)
+-\frac{p((p+3)^2+4)}{12}
+=\frac{5p^4-6p^3-13p^2-12}{12p}>0.
 \tag{21}
 \]
 
-矛盾。因此
+因此
 
 \[
-\boxed{
-\text{不存在保留 H4 同一 }(p,R_4,K_4)\text{ 的标准 Type I 正规形。}}
+R_4>pU_R(p)\ge pR_{\mathrm I}.
 \tag{22}
 \]
 
-这严格强于原先的条件 \(p-1\) 最大尾桥边界：这里并非只排除该桥，而是排除使该桥问题
-有定义的同图表正规形本身。它仍然不是 H4 的 typed transition，也不排除根素数在另一张
-低 \(R\) 图表中有 \(p-1\) terminal、其它 \(n<p\) 的提升，或 Type II 路径。
+所有量均为整数，故 \(R_4-pR_{\mathrm I}\ge1\)。再由两个图表的
+\(4K=pR+1\) 恒等式，
+
+\[
+\begin{aligned}
+4(K_4-pK_{\mathrm I})
+&=p(R_4-pR_{\mathrm I})-(p-1)\\
+&\ge1.
+\end{aligned}
+\tag{23}
+\]
+
+所以
+
+\[
+\boxed{
+R_{\mathrm I}<\frac{R_4}{p},
+\qquad
+K_{\mathrm I}<\frac{K_4}{p}.}
+\tag{24}
+\]
+
+这给出 H4 到任意标准 Type I 图表的必要**超过 \(p\) 倍高度塌缩**。特别地，若保留
+\((p,R_4,K_4)\)，取 \(R_{\mathrm I}=R_4\)、\(K_{\mathrm I}=K_4\) 会与 (24) 矛盾，
+因此不存在保留 H4 同一图表的标准 Type I 正规形。
+
+这严格强于原先的条件 \(p-1\) 最大尾桥边界：这里并非只排除该桥，而是量化地排除任何
+同图表重分类，并规定换图表至少需要的尺度跃迁。它仍然不是 H4 的 typed transition，
+也不排除根素数在另一张低 \(R\) 图表中有 \(p-1\) terminal、其它 \(n<p\) 的提升，或
+Type II 路径。
 
 ## 5. H3 有限标签不足的严格反例
 

@@ -32,6 +32,11 @@ def normal_chart_global_r_upper_bound(prime: int) -> int:
     return ((prime + 3) ** 2 + 4) // 12
 
 
+def normal_chart_global_k_upper_bound(prime: int) -> int:
+    """Return the K bound induced by the uniform standard-normal R bound."""
+    return (prime * normal_chart_global_r_upper_bound(prime) + 1) // 4
+
+
 def normal_form_chart_height_receipt(
     prime: int, gap: int, a: int, b: int, c: int
 ) -> dict[str, int]:
@@ -51,6 +56,7 @@ def normal_form_chart_height_receipt(
     gap_bound = normal_chart_excess_upper_bound(prime, gap)
     global_excess_bound = normal_chart_global_excess_upper_bound(prime)
     global_r_bound = normal_chart_global_r_upper_bound(prime)
+    global_k_bound = normal_chart_global_k_upper_bound(prime)
     certificate = type_i_normal_form_certificate(prime, gap, a, b)
 
     if not (
@@ -60,6 +66,7 @@ def normal_form_chart_height_receipt(
         and chart_excess <= gap_bound <= global_excess_bound
         and r <= global_r_bound
         and 4 * k == prime * r + 1
+        and k <= global_k_bound
         and certificate is not None
         and verify_certificate(certificate)
         and type_i_normal_form(prime, gap, certificate.divisor) == (a, b, c)
@@ -76,6 +83,7 @@ def normal_form_chart_height_receipt(
         "chart_excess": chart_excess,
         "gap_bound": gap_bound,
         "global_R_bound": global_r_bound,
+        "global_K_bound": global_k_bound,
     }
 
 
@@ -95,6 +103,7 @@ def verify() -> None:
             "chart_excess": 104,
             "gap_bound": 10_816,
             "global_R_bound": 3_201,
+            "global_K_bound": 154_448,
         }
         and general_b
         == {
@@ -107,6 +116,7 @@ def verify() -> None:
             "chart_excess": 1_632,
             "gap_bound": 1_498_176,
             "global_R_bound": 472_033,
+            "global_K_bound": 280_505_610,
         }
     ):
         raise AssertionError("normal-chart height controls changed")

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify H4 gates, global preemption, same-chart Type I no-go, and labels."""
+"""Verify H4 gates, global preemption, Type I height-collapse, and labels."""
 
 from __future__ import annotations
 
@@ -15,7 +15,11 @@ from type_ii_q_one_c2_19_phase_fourth_anchor_terminal_gate import (
     phase_u,
 )
 from type_ii_q_one_c2_19_phase_maximal_fourth_anchor_completion import complete_excess
-from type_i_normal_chart_height_boundary import normal_chart_global_excess_upper_bound
+from type_i_normal_chart_height_boundary import (
+    normal_chart_global_excess_upper_bound,
+    normal_chart_global_k_upper_bound,
+    normal_chart_global_r_upper_bound,
+)
 
 
 def h4_carry_data(prime: int) -> dict[str, int | str]:
@@ -139,6 +143,8 @@ def h4_same_chart_type_i_height_no_go(prime: int) -> dict[str, int | bool]:
     r4 = (4 * k4 - 1) // prime
     m0 = (prime - 1) * (2 * prime + 1) * (2 * prime * prime - 3 * prime - 1) // 8
     global_excess_bound = normal_chart_global_excess_upper_bound(prime)
+    global_r_bound = normal_chart_global_r_upper_bound(prime)
+    global_k_bound = normal_chart_global_k_upper_bound(prime)
     least_type_i_excess = 3 * r4 - 1
 
     if not (
@@ -152,12 +158,16 @@ def h4_same_chart_type_i_height_no_go(prime: int) -> dict[str, int | bool]:
         and prime * r4 + 1 == 4 * k4
         and global_excess_bound == (prime - 1) ** 2
         and least_type_i_excess == 3 * r4 - 1 > global_excess_bound
+        and r4 > prime * global_r_bound
+        and k4 > prime * global_k_bound
     ):
         raise AssertionError("the H4 same-chart Type I height no-go changed")
 
     return {
         "p": prime,
         "minimum_type_i_excess_exceeds_global_bound": least_type_i_excess > global_excess_bound,
+        "requires_R_collapse_factor_gt_p": r4 > prime * global_r_bound,
+        "requires_K_collapse_factor_gt_p": k4 > prime * global_k_bound,
         "same_chart_type_i_normal_form_impossible": True,
     }
 
@@ -264,17 +274,21 @@ def verify() -> None:
         == {
             "p": 184_993,
             "minimum_type_i_excess_exceeds_global_bound": True,
+            "requires_R_collapse_factor_gt_p": True,
+            "requires_K_collapse_factor_gt_p": True,
             "same_chart_type_i_normal_form_impossible": True,
         }
         and hard_same_chart_no_go
         == {
             "p": 14_449,
             "minimum_type_i_excess_exceeds_global_bound": True,
+            "requires_R_collapse_factor_gt_p": True,
+            "requires_K_collapse_factor_gt_p": True,
             "same_chart_type_i_normal_form_impossible": True,
         }
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")
-    print("verified H4 gates, p+1 preemption, same-chart Type I no-go, and label boundaries")
+    print("verified H4 gates, p+1 preemption, Type I height-collapse no-go, and label boundaries")
 
 
 def main() -> None:
