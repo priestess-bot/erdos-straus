@@ -8,8 +8,9 @@ statement: >-
   实际剥离 q0 到 primitive p-free re-entry (xi,zeta)=(x_q/q0,R4-x_q/q0)。若
   Q_xi,Q_zeta 是相对 K4 的 maximal complete-excess blocks，令
   E_zeta=Q_zeta/gcd(M4,Q_zeta)（Q_zeta=1 时取 E_zeta=1），则
-  Q_xi=Q_x/q0、E_xi=F；两块皆空恰为 Type I terminal。否则 canonical support
-  multiplier 是 L_re=F E_zeta，且 c_re=-L0(F E_zeta)^(-1) (mod p)。因此
+  Q_xi=Q_x/q0、E_xi=F；两块皆空恰为 Type I terminal，恰有一块非空时所选侧的
+  single-side residual-divisibility gate 自动成立。否则 canonical support multiplier
+  是 L_re=F E_zeta，且 c_re=-L0(F E_zeta)^(-1) (mod p)。因此
   c_re=p-1 恰当且仅当 E_zeta=L0 gamma^(-1) (mod p)。在此顶容量情形写
   F E_zeta=L0+p sigma，则 target 再次为 full-product d=1 行，
   n_re=n+4M4 sigma，且 a_re=q/gcd(q,sigma)。唯一不能算术进入既有 a>1 handoff
@@ -195,7 +196,31 @@ L_{\rm re}
 \]
 
 这里包含单侧与双色两种算术 support；后者是否构成 persistent atomic action 仍由独立
-adapter 决定。p-free 保证 (9) 的 multiplier 在模 \(p\) 下可逆。原 top-capacity
+adapter 决定。
+
+### 引理 2（单侧 residual gate 自动通过）
+
+若恰有一块非空，则相应的 single-side complete-excess residual-divisibility gate
+自动成立：
+
+\[
+\boxed{
+Q_\xi=1<Q_\zeta\Longrightarrow \xi\beta_\zeta\mid K_4,
+\qquad
+Q_\zeta=1<Q_\xi\Longrightarrow \zeta\beta_\xi\mid K_4.
+}
+\tag{9a}
+\]
+
+**证明。** 第一种情形中 \(Q_\xi=1\) 给 \(\xi\mid K_4\)，而
+\(\beta_\zeta\mid K_4\)。由 (8)，\((\xi,\beta_\zeta)=1\)，故乘积仍整除
+\(K_4\)。第二种情形交换两侧即可。\(\square\)
+
+因此 single-side branch 不再有独立的算术 residual gate；仍须独立重放
+terminal-first、typed、source/path、serializer 和 persistent guards。只有
+\(Q_\xi,Q_\zeta>1\) 才需要双色 atomic adapter。
+
+p-free 保证 (9) 的 multiplier 在模 \(p\) 下可逆。原 top-capacity
 同余 \(c_4L_0^{-1}\equiv-1\pmod p\) 因而给出
 
 \[
@@ -312,7 +337,7 @@ q\mid(\gamma-t)D\,[2d-(\gamma-t)D].
 这在 composite \(q\) 时不是“二选一”：不同素数幂可以分配到两个 endpoint。正确的
 有限签名如下。
 
-### 引理 2（unitary \(q\)-lock 签名）
+### 引理 3（unitary \(q\)-lock 签名）
 
 在 (16) 下，令 \(\rho=(q,\xi)\)。则
 
@@ -346,6 +371,7 @@ t\equiv\gamma-2dD^{-1}\pmod{q/\rho}.
 | re-entry 情形 | 本卡给出的结果 | 仍需的独立条件 |
 |---|---|---|
 | \(Q_\xi=Q_\zeta=1\) | Type I terminal | terminal validator |
+| 恰有一块非空 | single-side residual gate 由 (9a) 自动通过 | typed/source/path/serializer guards |
 | \(FE_\zeta\not\equiv L_0\pmod p\) | \(c_{\rm re}\le p-2\) | typed/payload guards 后才是 strict edge |
 | \(FE_\zeta\equiv L_0\pmod p,\ q\nmid\sigma\) | \(a_{\rm re}>1\) | existing \(a>1\) handoff guards |
 | \(FE_\zeta\equiv L_0\pmod p,\ q\mid\sigma\) | unitary \(q\)-lock signature (21) | 必须另行排除、给证书或构造合法递降 |

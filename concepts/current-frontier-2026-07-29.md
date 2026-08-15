@@ -9252,7 +9252,9 @@ Q_\xi=Q_x/q_0,
 L_{\rm re}=F E_\zeta.
 \]
 
-故两块皆空是 Type I terminal；其余 p-free re-entry 的 canonical capacity 为
+故两块皆空是 Type I terminal；恰有一块非空时，另一端与所选 \(\beta\) 的乘积自动
+整除 \(K_4\)，所以 single-side residual-divisibility gate 不再是算术残差。只有双侧
+complete-excess 同时非空才需要 atomic adapter。其余 p-free re-entry 的 canonical capacity 为
 
 \[
 c_{\rm re}\equiv-L_0(FE_\zeta)^{-1}\pmod p.

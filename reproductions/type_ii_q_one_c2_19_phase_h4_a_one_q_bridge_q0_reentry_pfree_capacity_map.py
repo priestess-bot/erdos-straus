@@ -89,12 +89,26 @@ def verify_unitary_lock_signature() -> None:
         raise AssertionError("fixture no longer represents the rho=q branch")
 
 
+def verify_single_side_residual_gate() -> None:
+    """Check the symmetric coprime-product residual gate used by the claim."""
+    k4 = 2 * 3 * 5 * 7
+    xi, beta_zeta, q_zeta = 6, 35, 11
+    zeta = q_zeta * beta_zeta
+    if gcd(xi, zeta) != 1 or k4 % (xi * beta_zeta) != 0:
+        raise AssertionError("xi-side single residual gate changed")
+    zeta, beta_xi, q_xi = 6, 35, 11
+    xi = q_xi * beta_xi
+    if gcd(xi, zeta) != 1 or k4 % (zeta * beta_xi) != 0:
+        raise AssertionError("zeta-side single residual gate changed")
+
+
 def verify() -> None:
     verify_capacity_map()
     verify_unitary_lock_signature()
+    verify_single_side_residual_gate()
     print(
         "verified q0 p-free re-entry capacity map: "
-        "strict, a>1 top-capacity, and retained unitary q-lock controls"
+        "single-side gate, strict, a>1 top-capacity, and retained unitary q-lock controls"
     )
 
 
