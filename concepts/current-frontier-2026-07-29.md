@@ -8883,3 +8883,22 @@ raw-entry/E1/E3 证明；不能由反向 p-parent 或静态 node 算术补造。
 \(13\)-层，但缺失第二层。这把后续问题收紧为逐素数、逐幂 capacity/provenance，而非
 一个完整 carrier 的直接重命名。详见
 [q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md)。
+
+## 2026-08-15：H4 零残数已同锚修复；一点 p-block 仍要求真实 Reach
+
+在既有 q=1 high \(C=2\) 19-phase persistent H4 receipt 中，\(R_4\equiv0\pmod p\)
+原本只使 universal \(p\)-source 失去 primitive 性，并不使 fifth-anchor 的 complete-excess
+失去 p-free 性：\(R_4-1\equiv-1\pmod p\)。取不整除
+\(R_4K_4(R_4-1)\) 的最小素数 \(q_\star\)，其实际 raw edge 唯一到达原来的
+\((1,R_4-1,1)\) anchor，且不改变 \(Q_5,M_5,c_5\)。因此，在已有
+source/path、terminal-first、typed 与 serializer guards 全部通过时，该零残数类现在接回
+原 persistent parent 的严格端点；顶容量则继续由既有 H5 d=1 handoff 和实际 \(a_5=1\)
+有限筛收口。详见[H4 零残数 raw-source 修复](../claims/type-II-q-one-c-two-19-phase-h4-raw-source-repair.md)。
+
+\(R_4\equiv1\pmod p\) 与此不同。若 \(p^e\parallel R_4-1\)，真实 \(p\)-source
+剥离得到 \(y=(R_4-1)/p^e=Q_0\beta\) 与 \(x=R_4-y\)。H4 overlap 仍将
+\(\beta\) 压到 \(\beta\le p+1\)，但精确整除反证给出 \(x\nmid K_4\)，故
+\(x\beta\nmid K_4\)。形式上的 p-free carrier \(\operatorname{lcm}(M_4,Q_0)\)
+因此没有 E1 receipt，不能登记为递归边或声称严格下降。当前剩余的是一个带小余因子标签的
+actual p-primary competing-excess Reach，而非已经解决的 global exit；详见
+[H4 p-block 来源障碍](../claims/type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction.md)。

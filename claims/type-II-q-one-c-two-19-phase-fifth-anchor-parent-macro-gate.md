@@ -10,7 +10,8 @@ statement: >-
   bundle 都可作为原 P macro 的一个额外内部 checkpoint；在 terminal-first 与 H4,H5 的
   typed reclassification 均通过时，P=>H5 的端点秩严格从 (0,p-1) 降到 (0,c5)，从而满足
   E1--E5。这个 parent-macro 条件只要求 c5<p-1，不要求 c5<c4；所以 H4 的局部 capacity
-  上升不必然阻断第五 anchor。它不证明上述两个算术门对所有相位素数成立，也不把自由
+  上升不必然阻断第五 anchor。R4=0 (mod p) 现已可由最小互素素数同锚 source 修复；它不再
+  是该 macro 的算术例外。该卡的原始 p-source 表述仍只覆盖 R4 非 0 的直接路径，不把自由
   universal p-parent 误当成新 root-entry。
 claim_status: established
 proof_provenance: repository_derivation
@@ -166,9 +167,10 @@ shift \(1\) 到达 \((1,R_4-1,1)\)。\(R_4\not\equiv1\pmod p\) 则保证
 ## 5. 范围
 
 本卡没有证明 \(c_5\le p-2\) 对所有 19-phase 素数成立，也没有替代 H4/H5 的 terminal-first
-或 typed reclassification。H4 的 \(R_4\equiv0,1\pmod p\) 两个 source/p-free 障碍已被
-[有限 p-adic 例外界](type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound.md)压缩到一个
-显式有限残余。\(c_5=p-1\) 也不再是未分类的 top-capacity 条件：它被
+或 typed reclassification。H4 的 \(R_4\equiv0\pmod p\) source 障碍现已由
+[零残数 raw-source 修复](type-II-q-one-c-two-19-phase-h4-raw-source-repair.md)在同一 persistent
+macro 内消除；有限 p-adic 例外界中实际尚未支付的 gate 因而只剩 \(R_4\equiv1\pmod p\)。
+\(c_5=p-1\) 也不再是未分类的 top-capacity 条件：它被
 [H5 顶容量 d=1 handoff](type-II-q-one-c-two-19-phase-h5-top-capacity-d-one-handoff.md)
 精确归入 d=1 suffix，而原来的 \(a=1,\omega=-1\) p-free return 已由
 [H5 a=1 全重叠有限筛完成](type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-sieve-completion.md)
