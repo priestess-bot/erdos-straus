@@ -9372,7 +9372,20 @@ CRT rays。对每条 ray，\(p\equiv-1\pmod{2d}\)、\(d\mid\lvert1536-a\rvert\)�
 详见
 [H4 \(q_0\) re-entry 最小 \(D\) 射线的 H3 terminal-first 剪枝](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-h3-terminal-pruning.md)。
 
-## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛去余下 10 条 rays
+## 2026-08-16：exact H3-to-H4 carrier 再删去三条 \(d=17\) rays
+
+terminal-first 后的 10 条 minimal-\(D\) residual 中，三条的 source carrier 为
+\(d=17\)。这里不能沿用 \((d,2261)=1\) 时的粗 \(d\mid c_3\) 推论，因为
+\(17\mid2261\)。直接在 \(p=-1\pmod {17}\) 下重放 selector-free H3 前三 anchor
+给出 \(M_3=6\pmod {17}\)；三条 progression 的 \(c_3\) 分别恒为 \(14,11,6\)，
+所以 \(q_3=(R_3-1)/2\) 分别恒为 \(2,4,13\pmod {17}\)。最大 H3-to-H4 completion
+满足 \(M_4=M_3(q_3/\lambda)\)，从而 \(17\nmid M_4\)，不可能有
+\(d=((p+1)/2,M_4)=17\)。这全射线地再删去 \((u,d)=(15,17),(83,17),(117,17)\)，
+将 residual source supermenu 压为七条；\((15,221)\) 仍未被这一 17-adic 论证排除。
+详见
+[H4 \(q_0\) re-entry 最小 \(D\) 射线的 17-adic exact-carrier 剪枝](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md)。
+
+## 2026-08-16：完整 source-row 不会再以 \(t\) 的同余筛去余下 7 条 rays
 
 此前 \((q-1)R_4=\gamma q_0^2(\gamma+pt)D-2d\) 只被用来抽取 \(D\)-gate。
 保留 \(D\mid K_4\) 的商后，它精确固定一个
@@ -9385,8 +9398,8 @@ t\pmod {4(q-1)}.
 \(t\pmod p\) 类的模数两两互素，故唯一合并为模 \(4pq(q-1)\) 的正类。最小
 \(D=2d(4d^2-2d+1)\) 时，q-lock 的第二根只是
 \(t\equiv\gamma-(4d^2-2d+1)^{-1}\pmod {q/\rho}\)。所以完整 source equation 不能
-继续删去 H3 terminal-first 之后的 10 条 rays；它反而精确说明下一步必须使用 actual
-H3-to-H4 carrier equality、top \(E_\zeta\)、maximal complete-excess 或
+继续删去经 H3 terminal-first 与 exact carrier 剪枝后余下的 7 条 rays；它反而精确说明
+下一步必须使用 top \(E_\zeta\)、maximal complete-excess 或
 typed/atomic/persistent payload 信息。静态 composite-q 控制和三条 ray-prime 控制均存在，
 但不构成 actual H4 receipt。详见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。

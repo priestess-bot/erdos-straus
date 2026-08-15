@@ -504,13 +504,14 @@ p\le\delta_d
 \]
 
 后一个 large-\(p\) minimal branch 在 31-selector 的必要条件 supermenu 中先有 17 条
-CRT phase rays；H3 terminal-first 随后独立删去其中 7 条，留下 10 条。它们仍须与
-unitary allocation、terminal digit 和 root capacity 联立，不代表已实现的 H4 receipt。
+CRT phase rays；H3 terminal-first 独立删去其中 7 条，后继的
+[17-adic exact-carrier 剪枝](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md)
+再删去三条 \(d=17\) rays，当前留下 7 条。它们仍须与 unitary allocation、terminal digit
+和 root capacity 联立，不代表已实现的 H4 receipt。
 
 完整 source row 的 \(D\mid K_4\) 商会额外固定 \(t\pmod {4(q-1)}\)，但这与
 unitary q-lock 的 \(t\pmod q\) 及任何 terminal \(t\pmod p\) 类两两 CRT 兼容。因此这
-不是继续筛去剩余 10 rays 的工具；必须改用 actual H3-to-H4 carrier equality、\(E_\zeta\)、
-maximality 或 guards 的信息。
+不是继续筛去剩余 7 rays 的工具；下一步必须改用 \(E_\zeta\)、maximality 或 guards 的信息。
 该后继边界及定向控制见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。
 

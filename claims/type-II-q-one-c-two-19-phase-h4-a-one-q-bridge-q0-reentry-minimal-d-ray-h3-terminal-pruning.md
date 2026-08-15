@@ -151,8 +151,10 @@ ray-prime 静态控制仍然有效地反驳“纯 \(t\)-同余矛盾”，但它
 
 ## 4. 下一接口与范围
 
-本卡给出的新残余是 10 条经过 H3 terminal-first 的 minimal-\(D\) phase rays。下一步
-应使用 exact H3 \(\Rightarrow\) H4 carrier equality
+本卡自身给出的新残余是 10 条经过 H3 terminal-first 的 minimal-\(D\) phase rays。后继的
+[17-adic exact-carrier 剪枝](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md)
+已使用下式删除其中三条 \(d=17\) rays，当前 residual 为七条。其余候选仍应使用 exact
+H3 \(\Rightarrow\) H4 carrier equality
 
 \[
 d=\left(\frac{p+1}{2},M_4\right),
@@ -160,7 +162,7 @@ d=\left(\frac{p+1}{2},M_4\right),
 \]
 
 而不只是 \(d\mid\lvert1536-a\rvert\)，并再叠加 \(q_0\) source row 的 retained
-complete-excess / \(E_\zeta\) 条件。本文没有声称 (6) 已在 10 条无穷 progression 上
+complete-excess / \(E_\zeta\) 条件。本文自身没有声称 (6) 已在其原有 10 条无穷 progression 上
 完成筛除，也没有宣称 q-lock、root-capacity、typed 或 persistent guards 已闭合。
 
 ## 5. 定向复现

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 808 |
+| 数学状态 | `established` | 809 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 36 |
-| 证明来源 | `repository_derivation` | 641 |
+| 证明来源 | `repository_derivation` | 642 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 786 |
+| 审阅状态 | `internal_review` | 787 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1085,6 +1085,7 @@
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 的完整超额分解与单一 stutter 门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 端点的 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0 re-entry 的归一化小除子残数门与 carrier d=1 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [H4 q0 re-entry 最小 D 射线的 17-adic exact-carrier 剪枝](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-17-adic-carrier-pruning`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0 re-entry 最小 D 射线的 H3 terminal-first 剪枝](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-h3-terminal-pruning.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-minimal-d-ray-h3-terminal-pruning`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 q0 re-entry 的非最小 D-lift 有限 phase 排除与最小残数边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0 raw re-entry p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
