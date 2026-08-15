@@ -8902,3 +8902,24 @@ source/path、terminal-first、typed 与 serializer guards 全部通过时，该
 因此没有 E1 receipt，不能登记为递归边或声称严格下降。当前剩余的是一个带小余因子标签的
 actual p-primary competing-excess Reach，而非已经解决的 global exit；详见
 [H4 p-block 来源障碍](../claims/type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction.md)。
+
+## 2026-08-16：H4 p-primary residual 压到 overlap 小锚，p-free failure 仅剩 full overlap
+
+此前 \(R_4\equiv1\pmod p\) 只能排除“把 \(p^e\) 静默删除后直接 rechart”的假边。
+现在保留真实 raw lineage：从 universal \(p\)-source 到 \((1,R_4-1)\)，剥尽 \(p^e\)
+后继续在同一侧做完整容量剥离，必到达
+
+\[
+h=(R_4-1,K_4)=2\left(\frac{p+1}{2},c_3-s_4\right),
+\qquad 2\le h\mid p+1.
+\]
+
+对 \(z=R_4-h\)，新的 complete-excess receipt \(z=Q\delta\) 满足
+\(D=(z,K_4)\mid ph+1\)、\(z>D\)、\(h\delta\mid K_4\) 与
+\((Q,h\delta)=1\)。因而它是实际的 clean renewal，而不是之前无来源的 \(Q_0\)
+图表。更精确地，\(p\mid Q\) 当且仅当 \(h=p+1\)。所以所有 proper-overlap
+\(h<p+1\) 重新得到 p-free bundle；其 canonical capacity 若低于 \(p-1\)，便接回
+已有 persistent parent 的严格宏，若等于 \(p-1\)，则精确进入已命名的 d=1 top-capacity
+normal form。仍未消除的是 full-overlap \(h=p+1\) root boundary，以及后者之外的
+top-capacity continuation，不能把这一步报作 global exit。详见
+[H4 p-primary overlap 小锚 renewal](../claims/type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal.md)。

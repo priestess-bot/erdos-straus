@@ -192,7 +192,8 @@ state transition，即使 \(c_0\) 看起来严格改善。
 
 ## 4. 对 H4 residual 的影响
 
-结合零残数的同锚 source 修复，fifth-anchor 的剩余 H4 gate 现在有唯一合法解释：
+结合零残数的同锚 source 修复，fifth-anchor 的剩余 H4 gate 首先必须保留实际
+p-primary lineage：
 
 \[
 R_4\equiv1\pmod p
@@ -201,7 +202,7 @@ R_4\equiv1\pmod p
 \tag{15}
 \]
 
-可接受的后续只有：
+直接删去 \(p^e\) 的 p-free chart 仍不可用。可接受的后续只有：
 
 1. 当前或后继 node 的直接 Type I/II terminal；
 2. complete raw Reach 的 sink/bottom node 上重新计算一个带 E1 receipt 的 bundle；
@@ -209,13 +210,17 @@ R_4\equiv1\pmod p
 
 不能从 (9) 的 p-free chart 直接声称容量下降或 \(n<p\) 递降。这把 H4 的最后
 source/p-free 残余压成一个明确、带小 cofactor \(\beta\) 的 actual raw-state problem，
-而不是留下一个未定义的“有限例外”。
+而不是留下一个未定义的“有限例外”。更进一步，沿 (7) 的所选侧继续做实际容量剥离会到达
+\(h=(R_4-1,K_4)\mid p+1\)；在 proper overlap \(h<p+1\) 时，这已重新产生一张
+p-free clean bundle，只有 \(h=p+1\) 保留下一 p-block。该更强 renewal 见
+[H4 p-primary overlap 小锚 renewal](type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal.md)。
 
 ## 5. 范围
 
-本卡不证明 (15) 必在有界步数终止，也不处理其 general raw Reach 的可能 SCC。它不替代
-G/Type I global selector、typed reclassification、terminal-first 或全域解提升；它只排除
-一条会错误地删除 source debt 的假 rechart，并给出之后必须保留的 p-primary state contract。
+本卡不证明 (15) 必在有界步数终止，也不处理 renewal 后的 \(h=p+1\) full-overlap root
+boundary 或 p-free top-capacity continuation。它不替代 G/Type I global selector、typed
+reclassification、terminal-first 或全域解提升；它只排除一条会错误地删除 source debt 的假
+rechart，并给出之后必须保留的 p-primary state contract。
 
 Focused verification:
 
