@@ -46,6 +46,8 @@ def h4_carry_data(prime: int) -> dict[str, int | str]:
     w = (prime + 1) // 2
     h4_overlap = gcd(w, k4)
     carry_overlap = gcd(w, c3 - s4)
+    capacity_delta = prime * s4 - c3 * (multiplier - 1)
+    capacity_direction = "descent" if c4 < c3 else "rise" if c4 > c3 else "flat"
 
     if not (
         prime % 16 == 1
@@ -58,6 +60,7 @@ def h4_carry_data(prime: int) -> dict[str, int | str]:
         and 1 <= c3 <= prime - 2
         and 1 <= c4 <= prime - 2
         and 0 <= s4 < multiplier
+        and capacity_delta == multiplier * (c4 - c3)
         and prime * r4 + 1 == 4 * k4
         and gcd(prime, k4) == 1
         and h4_overlap == carry_overlap
@@ -72,7 +75,9 @@ def h4_carry_data(prime: int) -> dict[str, int | str]:
         "h3_g": gcd(w, c3),
         "lambda": lambda_value,
         "h3_branch": str(dispatch["branch"]),
+        "c3": c3,
         "c4": c4,
+        "capacity_direction": capacity_direction,
         "s4_mod_w": s4 % w,
         "carry_residue_mod_w": (c3 - s4) % w,
         "h4_overlap": h4_overlap,
@@ -97,6 +102,8 @@ def verify() -> None:
     first = h4_carry_data(184_993)
     second = h4_carry_data(727_633)
     hard = h4_carry_data(14_449)
+    rise = h4_carry_data(448_561)
+    descent = h4_carry_data(665_617)
     terminal = h4_overlap_terminal(114_769)
 
     label_keys = ("u", "a", "h3_g", "lambda", "h3_branch")
@@ -110,7 +117,9 @@ def verify() -> None:
             "h3_g": 1,
             "lambda": 1,
             "h3_branch": "clean_fourth_p_anchor",
+            "c3": 140_975,
             "c4": 178_654,
+            "capacity_direction": "rise",
             "s4_mod_w": 48_219,
             "carry_residue_mod_w": 259,
             "h4_overlap": 1,
@@ -124,7 +133,9 @@ def verify() -> None:
             "h3_g": 1,
             "lambda": 1,
             "h3_branch": "clean_fourth_p_anchor",
+            "c3": 554_495,
             "c4": 594_031,
+            "capacity_direction": "rise",
             "s4_mod_w": 167_167,
             "carry_residue_mod_w": 23_511,
             "h4_overlap": 17,
@@ -138,12 +149,23 @@ def verify() -> None:
             "h3_g": 5,
             "lambda": 5,
             "h3_branch": "bounded_q_one_mask",
+            "c3": 2755,
             "c4": 13_391,
+            "capacity_direction": "rise",
             "s4_mod_w": 3168,
             "carry_residue_mod_w": 6812,
             "h4_overlap": 1,
             "r4_overlap": 2,
         }
+        and all(rise[key] == descent[key] for key in label_keys)
+        and rise["p"] == 448_561
+        and rise["c3"] == 85_507
+        and rise["c4"] == 423_624
+        and rise["capacity_direction"] == "rise"
+        and descent["p"] == 665_617
+        and descent["c3"] == 126_883
+        and descent["c4"] == 20_388
+        and descent["capacity_direction"] == "descent"
         and terminal
         == (
             23,
@@ -159,7 +181,7 @@ def verify() -> None:
         )
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")
-    print("verified H4 carry-overlap identity, terminal gate, and finite-label boundary")
+    print("verified H4 carry gates, terminal construction, and finite-label boundaries")
 
 
 def main() -> None:
