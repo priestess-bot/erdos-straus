@@ -9067,3 +9067,51 @@ L_q=\frac{L_0}{q}E_x,
 stutter 精确是 \(Q_x>1\) 且 \(E_x\equiv q\pmod p\)。\(Q_y=1\) 时它是单侧
 payload 的门，\(Q_y>1\) 时它是 conditional atomic-split payload 的门。详见
 [H4 q-bridge 完整超额 stutter reduction](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)。
+
+## 2026-08-16：H4 q-bridge stutter 已转导为 \(a\)-坐标与三类正残余
+
+对剩余的 \(E_x\equiv q\pmod p\)，写 \(E_x=q+ps\)，并令原 H4 top-capacity
+\(a=1\) d=1 行为
+
+\[
+M_{\rm alt}=\frac{pn-1}{4},\qquad n=(p+1)b-1,
+\qquad \gamma=(q,b+1),\qquad q_0=q/\gamma.
+\]
+
+q-bridge target 不是抽象等容量点，而是精确的 d=1 行
+
+\[
+M_q=\frac{M_{\rm alt}}q(q+ps)=\frac{pn_q-1}{4},
+\qquad n_q=n+4\frac{M_{\rm alt}}q s,
+\]
+
+且其坐标满足
+
+\[
+a_q=\frac{q_0}{(q_0,s)}.
+\]
+
+所以 \(s>0\) 且 \(q_0\nmid s\) 的 target 自动进入已有 \(a>1\) strict
+handoff。若 \(s=q_0t>0\)，则仍为 \(a=1\)，但
+
+\[
+b_q=b+\frac{pb-1}{\gamma}t
+\equiv b-\gamma^{-1}t\pmod p.
+\]
+
+普通 d=1 action 只有
+
+\[
+t\equiv\gamma b,\quad\gamma(b+1),\quad\gamma(b+2)\pmod p
+\]
+
+三格分别落在 raw \(p\)-source、p-free failure、canonical regeneration；其它
+\(t\) 同时通过两条 \(p\) 门并严格降到 \(c\le p-2\)。\(s=0\) 则只是 q-bridge
+本身返回相同 charged support/capacity 的 checkpoint，不能冒充 strict edge。
+
+此外，所有 \(a_q=1\) cells 都有 \(q_0\mid E_x\mid Q_x\mid x_q\)，而
+\(y_q\equiv1\pmod{q_0}\)。故当 \(q_0>1\) 时，\(q_0\) 的完整素因子 word 可从
+\(x_q\) 侧在实际 H4 raw graph 上再次重放；这是一条可审查的 re-entry，不自动是
+严格目标。于是新算术余项精确成为 \(s=0\)，或正 \(s=q_0t\) 的三个模 \(p\)
+cells，加上尚未关闭的 atomic/typed/terminal guards。详见
+[H4 q-bridge stutter 的 a 坐标转导](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md)。
