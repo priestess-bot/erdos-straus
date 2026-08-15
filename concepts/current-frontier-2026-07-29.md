@@ -8990,3 +8990,33 @@ c_{\rm alt}=p-1,\qquad a_{\rm alt}=1,\qquad
 \(4K_4\equiv1-h\pmod q\)。这是进入 \(Q\) 的 fresh \(w\)-carrier；尚未证明它在
 regeneration 中与 root 的 \(u\) 合流。详见
 [proper-overlap 顶容量 d=1 handoff](../claims/type-II-q-one-c-two-19-phase-h4-proper-overlap-top-capacity-handoff.md)。
+
+## 2026-08-16：H4 fresh \(q\)-carrier 与 root cyclotomic 容量正交
+
+这条可能的合流现在已有一个严格边界。对 H4 的
+\(q=(p+1)/(2d_4)>1\)，有 \(p\equiv-1\pmod q\)。而 root 模数
+
+\[
+M=\frac{p^2+p+1}{3}
+\]
+
+满足 \(3M\equiv1\pmod q\)，故 \((q,3M)=1\)。若末态为
+\(b_\ast=2pr-1\)、\(u=(2r+1,M)\)，则 \((q,3u)=1\)，且 root endpoint 还有
+\(R-(p+1)\equiv1\pmod q\)。所以 \(q\) 不会成为 root capacity \(3u\) 的 charged
+factor。
+
+再生本身在模 \(q\) 下可写成闭式：\(\xi_i=b_i+1\) 满足
+
+\[
+\xi_{i+1}\equiv\xi_i(1-2\xi_i)\pmod q,
+\qquad
+2r+1\equiv-b_\ast\pmod q.
+\]
+
+但该残数传输仍不能压低 \(u\)：对任意终端 \(q\)-残数，CRT 都能构造静态 \(a=1\)
+\(p\)-free root return，令 \(u=M\) 而 \(9u^2>p\)。该控制不构造 actual H4
+predecessor，却严格排除了只靠 \(q\mid w\) 与 root-side 同余传输去证明 small
+root-fan 的路线。后续若要利用 \(q\)，必须在进入 root 前从
+\(q\mid Q\mid(R_4-h)\) 的 actual receipt 中获得
+terminal、split-carrier 或 strict macro。详见
+[H4 fresh carrier 与 root cyclotomic 容量的互素屏障](../claims/type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality.md)。
