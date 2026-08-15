@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the H4 carry-overlap identity and its finite-label boundary."""
+"""Verify H4 carry gates, global p+1 preemption, and label boundaries."""
 
 from __future__ import annotations
 
@@ -98,6 +98,30 @@ def h4_overlap_terminal(prime: int) -> tuple[int, GapCertificate] | None:
     return factor, certificate
 
 
+def h4_overlap_p_plus_one_preemption(prime: int) -> tuple[int, GapCertificate] | None:
+    """Rebuild the root-level p+1 Type I terminal from an H4 overlap factor."""
+    record = h4_carry_data(prime)
+    factors = sympy.factorint(int(record["h4_overlap"]))
+    factor = next((value for value in sorted(factors) if value % 4 == 3), None)
+    if factor is None:
+        return None
+    if ((prime + 1) // 2) % factor:
+        raise AssertionError("an H4 overlap factor did not divide the p+1 carrier")
+    x = (prime + factor) // 4
+    certificate = GapCertificate(
+        prime=prime,
+        certificate_type="I",
+        gap=factor,
+        x=x,
+        divisor=x,
+        y=x * (prime + 1) // factor,
+        z=prime * x * (prime + 1) // factor,
+    )
+    if not verify_certificate(certificate):
+        raise AssertionError("the H4 factor did not yield its p+1 preemption terminal")
+    return factor, certificate
+
+
 def verify() -> None:
     first = h4_carry_data(184_993)
     second = h4_carry_data(727_633)
@@ -105,6 +129,7 @@ def verify() -> None:
     rise = h4_carry_data(448_561)
     descent = h4_carry_data(665_617)
     terminal = h4_overlap_terminal(114_769)
+    preemption = h4_overlap_p_plus_one_preemption(114_769)
 
     label_keys = ("u", "a", "h3_g", "lambda", "h3_branch")
     if not (
@@ -179,9 +204,23 @@ def verify() -> None:
                 z=3_436_183_860,
             ),
         )
+        and preemption
+        == (
+            23,
+            GapCertificate(
+                prime=114_769,
+                certificate_type="I",
+                gap=23,
+                x=28_698,
+                divisor=28_698,
+                y=143_203_020,
+                z=16_435_267_402_380,
+            ),
+        )
+        and h4_overlap_p_plus_one_preemption(14_449) is None
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")
-    print("verified H4 carry gates, terminal construction, and finite-label boundaries")
+    print("verified H4 carry gates, p+1 preemption, and finite-label boundaries")
 
 
 def main() -> None:
