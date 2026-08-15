@@ -170,10 +170,12 @@ shift \(1\) 到达 \((1,R_4-1,1)\)。\(R_4\not\equiv1\pmod p\) 则保证
 [有限 p-adic 例外界](type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound.md)压缩到一个
 显式有限残余。\(c_5=p-1\) 也不再是未分类的 top-capacity 条件：它被
 [H5 顶容量 d=1 handoff](type-II-q-one-c-two-19-phase-h5-top-capacity-d-one-handoff.md)
-精确归入 d=1 suffix，除 \(a=1\)、terminal digit \(\omega=-1\) 的 p-free return 外均有
-guarded strict capacity endpoint。该 handoff 仍不能替代全局 selector 或未验证的 typed guards；
-剩余类才需要 rank-aware sink-bundle candidate map、Type II short certificate 或带独立全局势的
-paid reset。
+精确归入 d=1 suffix，而原来的 \(a=1,\omega=-1\) p-free return 已由
+[H5 a=1 全重叠有限筛完成](type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-sieve-completion.md)
+排除实际 H3--H4 predecessor。因此在所有实际 checkpoint guards 通过时，top-capacity
+也有 guarded strict capacity endpoint。该完成仍不能替代全局 selector 或未验证的 typed guards；
+H4 前置门或其它 G/Type I 残余才需要 rank-aware sink-bundle candidate map、Type II short
+certificate 或带独立全局势的 paid reset。
 
 Focused verification:
 

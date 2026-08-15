@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 789 |
+| 数学状态 | `established` | 790 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 29 |
+| 证明来源 | `mixed` | 30 |
 | 证明来源 | `repository_derivation` | 629 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 767 |
+| 审阅状态 | `internal_review` | 768 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1084,6 +1084,7 @@
 | [q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位 H4 p-source/p-free 门的有限 p-adic 例外界](../claims/type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound.md) (`type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位 H5 的 a=1 顶容量残余：H4 全重叠与有限素因子筛](../claims/type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-finite-sieve.md) (`type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-finite-sieve`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 高 C=2 19 相位 H5 的 a=1 顶容量残余有限筛完成](../claims/type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-sieve-completion.md) (`type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-sieve-completion`) | `established` | `mixed` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位 H5 顶容量的 d=1 handoff 与唯一 a=1 p-free 残余](../claims/type-II-q-one-c-two-19-phase-h5-top-capacity-d-one-handoff.md) (`type-II-q-one-c-two-19-phase-h5-top-capacity-d-one-handoff`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位的最大超额第四 anchor 完成](../claims/type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion.md) (`type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位 p-anchor 完整超额容量扩张](../claims/type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

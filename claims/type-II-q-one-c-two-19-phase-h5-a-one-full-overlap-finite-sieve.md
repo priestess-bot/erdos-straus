@@ -267,9 +267,10 @@ u\in\mathcal U_{31},\quad
 2. \(d=(w,M_4)\)、\(j\)、\(t\) 的实际 receipt，而不是任意 (16) 的超集行；
 3. 若它未被短证书抢占，剩余 p-free return 的独立 exit 或 \(n<p\) lift。
 
-本卡没有分解 \(\mathcal C\)，更没有把 377516 个整数的素因子超集误报为实际 phase
-prime、已可达状态或全局 G/Type I exit。它的作用是把先前唯一的无界 H5 \(a_5=1\)
-算术残余变成一个有限、可逐因子审理的候选菜单。
+本卡本身没有把 \(\mathcal C\) 的素因子超集误报为实际 phase prime、已可达状态或全局
+G/Type I exit。它只把先前唯一的无界 H5 \(a_5=1\) 算术残余变成有限、可逐因子审理的
+候选菜单；后续的[有限筛完成](type-II-q-one-c-two-19-phase-h5-a-one-full-overlap-sieve-completion.md)
+才精确分解该菜单并排除其唯一 affine 伪候选。
 
 ## 6. 定向回执
 
