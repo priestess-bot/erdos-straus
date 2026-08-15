@@ -26,6 +26,7 @@ class Fixture:
     expected_q_y: int
     expected_multiplier: int
     expected_capacity: int
+    expected_p_primary_gate: int
 
 
 FIXTURES = (
@@ -41,6 +42,7 @@ FIXTURES = (
         expected_q_y=6_641,
         expected_multiplier=793_858_499,
         expected_capacity=24,
+        expected_p_primary_gate=37,
     ),
     Fixture(
         "composite_q121_atomic_split_strict",
@@ -54,6 +56,7 @@ FIXTURES = (
         expected_q_y=59_525,
         expected_multiplier=212_593_597_025,
         expected_capacity=80,
+        expected_p_primary_gate=121,
     ),
 )
 
@@ -162,6 +165,7 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
     q_y = complete_excess(y, k4)
     beta_x = x // q_x
     beta_y = y // q_y
+    p_primary_gate = p + 1 - q
     target_support = lcm(m4, q_x, q_y)
     multiplier = target_support // m4
     target_capacity = pow((4 * target_support) % p, -1, p)
@@ -175,6 +179,11 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         and y == fixture.expected_y
         and q_x == fixture.expected_q_x > 1
         and q_y == fixture.expected_q_y > 1
+        and p_primary_gate == fixture.expected_p_primary_gate
+        and h != p_primary_gate
+        and (x % p == 0) == (h == p_primary_gate)
+        and y % p != 0
+        and x % p != 0
         and x == q_x * beta_x
         and y == q_y * beta_y
         and gcd(q_x, beta_x) == 1
@@ -195,6 +204,7 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         "q": q,
         "raw_steps": len(raw_selected),
         "capacity": target_capacity,
+        "p_primary": False,
     }
 
 
@@ -206,12 +216,14 @@ def verify() -> None:
             "q": 37,
             "raw_steps": 1,
             "capacity": 24,
+            "p_primary": False,
         },
         {
             "name": "composite_q121_atomic_split_strict",
             "q": 121,
             "raw_steps": 2,
             "capacity": 80,
+            "p_primary": False,
         },
     ]:
         raise AssertionError("H4 q-carrier raw bridge controls changed")

@@ -196,7 +196,7 @@ terminal-first、typed reclassification、scope 和 serializer guard。
 | \(Q_x=Q_y=1\) | \(x_qy_q\mid K_4\) | full-excess sink，交由既有 Type I terminal verifier。 |
 | 恰一块非平凡，且 \(p\nmid Q_xQ_y\) | 设非平凡块为 \(Q_x\)。另一侧 \(y_q\mid K_4\)，故 \(y_q\beta_x\mid K_4\) | 既有单侧 complete-excess 的 residual-divisibility gate 通过。 |
 | \(Q_x,Q_y>1\)，且 \(p\nmid Q_xQ_y\) | 带颜色的 \((Q_x,Q_y)\) 与同一 raw occurrence | 满足 atomic split schema 的输入；该 schema 只条件性支付 E1--E4。 |
-| \(p\mid Q_xQ_y\) | endpoint 有新的完整 \(p\)-block | p-free rechart 不准入；这是明确的 p-primary residual，不可静默删去。 |
+| \(p\mid Q_xQ_y\) | 一般 raw endpoint 的完整 \(p\)-block | 在 abstract taxonomy 中是 p-primary residual；actual H4 域已由后续 endpoint exclusion 排除。 |
 
 第二行的 residual gate 不是额外假设：若 \(Q_y=1\)，则 \(y_q\mid K_4\)；再用
 \((y_q,\beta_x)=1\) 与 \(\beta_x\mid K_4\)，便得 \(y_q\beta_x\mid K_4\)。
@@ -274,12 +274,12 @@ carrier 的两条连续 raw prime edge。
 ## 7. 范围与新的余项
 
 本卡完成的是一个 pre-root 结构推进：fresh \(q\)-carrier 不能因“可能已经被 \(K_4\)
-吸收”而失效，也无需等待它与 root capacity 合流。尚未关闭的分支精确是：
+吸收”而失效，也无需等待它与 root capacity 合流。actual H4 endpoint 的 p-primary 分支
+现已由[endpoint p-primary 排除](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md)
+关闭；尚未关闭的分支精确是：
 
 \[
 \boxed{
-\text{endpoint p-primary}
-\quad\text{or}\quad
 \text{p-free endpoint with }L_q\equiv-c_4\pmod p
 \quad\text{or}\quad
 \text{a typed/priority guard intercepts}.
@@ -288,7 +288,7 @@ carrier 的两条连续 raw prime edge。
 \]
 
 式 (18) 不是 global exit theorem。特别地，本卡没有证明 raw endpoint 一定双侧、
-一定 p-free、一定 strict，也没有把 local controls 提升为 actual 19-phase predecessor。
+一定 strict，也没有把 local controls 提升为 actual 19-phase predecessor。
 它排除的只是此前最基础的障碍：在 actual H4 receipt 中，\(q\) 的完整 raw 使用曾是
 未证明的。
 

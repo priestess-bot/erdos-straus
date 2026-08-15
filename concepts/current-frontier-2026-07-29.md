@@ -9042,10 +9042,14 @@ edge，且无 gcd reduction，端点唯一为
 
 在这个 pre-root endpoint 重新取两个 maximal complete-excess block：两块为空则进入既有
 Type I terminal；恰一块 p-free 非空时单侧 residual gate 自动通过；两块 p-free 非空时
-出现带实际 H4 provenance 的 atomic-split payload；含 \(p\) 时精确留下 p-primary residual。
+出现带实际 H4 provenance 的 atomic-split payload。并且 endpoint 不会含 \(p\)：\(z/q\)
+已 p-free，若另一侧含 \(p\) 则必有 \(h=p+1-q\)；这与 \(h\mid p+1\)、\(q\mid(p+1)/2\)
+及 actual H4 overlap 的 \(h\) 偶性矛盾。
 对 p-free 非终端分支，若新容量 \(c_q\le p-2\)，则它可在所有 typed guards 通过后附回
 原 parent，给 \((0,p-1)>(0,c_q)\) 的 strict macro；唯一容量残余是
 \(L_q\equiv-c_4\pmod p\)。这没有宣称 atomic payload 已登记为 verified edge，也没有
 宣称该残余为空。两个 local H4 控制（\(p=73,q=37\) 与 \(p=241,q=11^2\)）均在 q-word
 后得到 p-free 双侧 split 且 canonical capacity 严格为 24、80。详见
 [H4 fresh q-carrier 的清洁 raw bridge](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md)。
+endpoint 的 p-primary 排除见
+[H4 q-bridge p-primary endpoint 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md)。
