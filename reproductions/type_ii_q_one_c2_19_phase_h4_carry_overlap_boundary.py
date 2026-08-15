@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify H4 gates, global preemption, Type I height-collapse, and labels."""
+"""Verify H4 gates, Type I carrier/reset limits, and carry controls."""
 
 from __future__ import annotations
 
@@ -127,8 +127,8 @@ def h4_overlap_p_plus_one_preemption(prime: int) -> tuple[int, GapCertificate] |
     return factor, certificate
 
 
-def h4_same_chart_type_i_height_no_go(prime: int) -> dict[str, int | bool]:
-    """Show H4 exceeds every legal standard Type I chart-height bound."""
+def h4_type_i_height_and_carrier_reset_boundary(prime: int) -> dict[str, int | bool]:
+    """Show H4 needs a carrier-discarding Type I rechart outside the current reset."""
     data = h3_data(prime)
     m3 = int(data["M_3"])
     k3 = int(data["K_3"])
@@ -146,6 +146,9 @@ def h4_same_chart_type_i_height_no_go(prime: int) -> dict[str, int | bool]:
     global_r_bound = normal_chart_global_r_upper_bound(prime)
     global_k_bound = normal_chart_global_k_upper_bound(prime)
     least_type_i_excess = 3 * r4 - 1
+    b_p = (prime - 1) ** 2 // 4
+    d4 = prime - c4
+    n4 = 4 * m4 - r4
 
     if not (
         prime % 24 == 1
@@ -160,15 +163,78 @@ def h4_same_chart_type_i_height_no_go(prime: int) -> dict[str, int | bool]:
         and least_type_i_excess == 3 * r4 - 1 > global_excess_bound
         and r4 > prime * global_r_bound
         and k4 > prime * global_k_bound
+        and m4 > b_p
+        and m4 > global_k_bound
+        and r4 > prime
+        and 2 <= d4 <= prime - 1
+        and n4 > 0
+        and prime * n4 == 4 * m4 * d4 + 1
     ):
-        raise AssertionError("the H4 same-chart Type I height no-go changed")
+        raise AssertionError("the H4 Type I height/carrier-reset boundary changed")
 
     return {
         "p": prime,
         "minimum_type_i_excess_exceeds_global_bound": least_type_i_excess > global_excess_bound,
         "requires_R_collapse_factor_gt_p": r4 > prime * global_r_bound,
         "requires_K_collapse_factor_gt_p": k4 > prime * global_k_bound,
+        "retained_H4_carrier_exceeds_type_i_K_bound": m4 > global_k_bound,
+        "joined_support_reset_ineligible_above_Bp": m4 > b_p,
         "same_chart_type_i_normal_form_impossible": True,
+    }
+
+
+def h4_next_maximal_carry_control(prime: int) -> dict[str, int | str]:
+    """Rebuild the first H4 anchor candidate and expose its carry direction.
+
+    This is an arithmetic capacity control, not a claim that the resulting
+    candidate has already passed source/path and typed-state admission.
+    """
+    data = h3_data(prime)
+    m3 = int(data["M_3"])
+    k3 = int(data["K_3"])
+    r3 = int(data["R_3"])
+    c3 = int(data["c_3"])
+    block4, _ = complete_excess(r3 - 1, k3)
+    m4 = lcm(m3, block4)
+    l4 = m4 // m3
+    c4 = c3 * pow(l4, -1, prime) % prime
+    k4 = m4 * c4
+    r4 = (4 * k4 - 1) // prime
+    block5, beta5 = complete_excess(r4 - 1, k4)
+    m5 = lcm(m4, block5)
+    l5 = m5 // m4
+    c5 = c4 * pow(l5, -1, prime) % prime
+    carry_numerator = l5 * c5 - c4
+    if carry_numerator % prime:
+        raise AssertionError("the H4-next canonical carry was not integral")
+    s5 = carry_numerator // prime
+    b_p = (prime - 1) ** 2 // 4
+    direction = "descent" if c5 < c4 else "rise" if c5 > c4 else "stutter"
+
+    if not (
+        prime % 24 == 1
+        and m4 > b_p
+        and 1 <= c4 < prime
+        and prime * r4 + 1 == 4 * k4
+        and block5 > 1
+        and block5 * beta5 == r4 - 1
+        and gcd(block5, beta5) == 1
+        and k4 % beta5 == 0
+        and block5 % prime
+        and m5 == m4 * l5 == lcm(m4, block5)
+        and l5 > 1
+        and 1 <= c5 < prime
+        and 0 <= s5 < l5
+        and all(factor % 4 == 1 for factor in sympy.factorint((prime + 1) // 2))
+        and l5 * (c5 - c4) == prime * s5 - c4 * (l5 - 1)
+    ):
+        raise AssertionError("the H4-next maximal carry control changed")
+
+    return {
+        "p": prime,
+        "c4": c4,
+        "c5": c5,
+        "direction": direction,
     }
 
 
@@ -180,8 +246,10 @@ def verify() -> None:
     descent = h4_carry_data(665_617)
     terminal = h4_overlap_terminal(114_769)
     preemption = h4_overlap_p_plus_one_preemption(114_769)
-    clean_same_chart_no_go = h4_same_chart_type_i_height_no_go(184_993)
-    hard_same_chart_no_go = h4_same_chart_type_i_height_no_go(14_449)
+    clean_type_i_boundary = h4_type_i_height_and_carrier_reset_boundary(184_993)
+    hard_type_i_boundary = h4_type_i_height_and_carrier_reset_boundary(14_449)
+    h4_next_descent = h4_next_maximal_carry_control(14_449)
+    h4_next_rise = h4_next_maximal_carry_control(665_617)
 
     label_keys = ("u", "a", "h3_g", "lambda", "h3_branch")
     if not (
@@ -270,25 +338,43 @@ def verify() -> None:
             ),
         )
         and h4_overlap_p_plus_one_preemption(14_449) is None
-        and clean_same_chart_no_go
+        and clean_type_i_boundary
         == {
             "p": 184_993,
             "minimum_type_i_excess_exceeds_global_bound": True,
             "requires_R_collapse_factor_gt_p": True,
             "requires_K_collapse_factor_gt_p": True,
+            "retained_H4_carrier_exceeds_type_i_K_bound": True,
+            "joined_support_reset_ineligible_above_Bp": True,
             "same_chart_type_i_normal_form_impossible": True,
         }
-        and hard_same_chart_no_go
+        and hard_type_i_boundary
         == {
             "p": 14_449,
             "minimum_type_i_excess_exceeds_global_bound": True,
             "requires_R_collapse_factor_gt_p": True,
             "requires_K_collapse_factor_gt_p": True,
+            "retained_H4_carrier_exceeds_type_i_K_bound": True,
+            "joined_support_reset_ineligible_above_Bp": True,
             "same_chart_type_i_normal_form_impossible": True,
+        }
+        and h4_next_descent
+        == {
+            "p": 14_449,
+            "c4": 13_391,
+            "c5": 12_552,
+            "direction": "descent",
+        }
+        and h4_next_rise
+        == {
+            "p": 665_617,
+            "c4": 20_388,
+            "c5": 94_177,
+            "direction": "rise",
         }
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")
-    print("verified H4 gates, p+1 preemption, Type I height-collapse no-go, and label boundaries")
+    print("verified H4 gates, Type I carrier/reset limits, carry controls, and label boundaries")
 
 
 def main() -> None:

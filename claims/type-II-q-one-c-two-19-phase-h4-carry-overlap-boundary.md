@@ -1,7 +1,7 @@
 ---
 kind: claim
 claim_id: type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary
-title: q=1 高 C=2 19 相位 H4 carry-overlap、同图表 Type I no-go 与有限标签边界
+title: q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界
 statement: >-
   在 q=1 high C=2 19 相位每个未被 H3 terminal 抢占、经最大 complete-excess
   构造到 H4 的状态中，令 L=M4/M3、c4 为 H4 canonical capacity，并定义唯一第四 carry
@@ -13,8 +13,13 @@ statement: >-
   正规形的合法图表总满足 mR-1<=(p+m)^2/4<=(p-1)^2。更强地，任何同一 p 的
   标准 Type I 图表都必须满足 R_I<R4/p、K_I<K4/p；因此保留同一
   (p,R4,K4) 的 typed Type I reclassification 都不可能存在。这给出换图表所需的
-  超过 p 倍高度塌缩，不声称 H4 本身已有 Type I 正规形，也不排除实际换图表路径。
-  然而 H4 overlap 与该势方向都不由此前的有限 H3 标签
+  超过 p 倍高度塌缩。进一步，H4 的 charged carrier M4 已超过任何标准 Type I 的
+  K 上界，所以任何保留 M4|K_I 的 Type I 目标（特别是 lcm 支撑扩张）也不可能。
+  H4 仍可精确写为 A=M4>B_p 的 overflow，但现有 joined-support outer-rank RESET
+  只允许 A<=B_p，故不能作为该状态的已登记 reset。这不声称 H4 本身已有 Type I
+  正规形，也不排除高支撑 carry continuation、新型已付款 reset 或实际换图表路径。H4 的首个
+  最大 complete-excess anchor 候选在 p=14449 时 c5<c4、在 p=665617 时 c5>c4，故其
+  carry 势方向不统一，不能自动作为全域出口。然而 H4 overlap 与该势方向都不由此前的有限 H3 标签
   (u mod 119,a,g,lambda) 决定：p=184993 与 p=727633 均有
   (u,a,g,lambda)=(83,1723,1,1) 且 H3 clean，但 H4 的奇 overlap 分别为 1 与 17。
   另有 p=448561 与 p=665617 共享 (u,a,g,lambda)=(15,431,1,1)，但前者 c4>c3、
@@ -31,6 +36,8 @@ depends_on:
   - type-II-raw-ray-certificate
   - p-plus-one-sqrt-certificate
   - type-I-normal-chart-height-bound
+  - type-I-overflow-outer-rank-reset
+  - type-I-high-support-bundle-carry-capacity-terminal-dispatch
   - type-I-universal-p-source-capacity-anchor-orbit
   - denominator-escape-state-contract
 topics:
@@ -49,6 +56,9 @@ topics:
   - p-minus-one
   - same-chart-no-go
   - cross-chart-height-collapse
+  - carrier-retention
+  - overflow-reset
+  - high-support-carry
   - proof-boundary
 sources:
   - claim: type-II-q-one-c-two-19-phase-maximal-fourth-anchor-completion
@@ -63,6 +73,10 @@ sources:
     role: root-level-terminal-preemption
   - claim: type-I-normal-chart-height-bound
     role: standard-normal-form-height-necessary-condition
+  - claim: type-I-overflow-outer-rank-reset
+    role: current-joined-support-reset-domain
+  - claim: type-I-high-support-bundle-carry-capacity-terminal-dispatch
+    role: H4-canonical-high-support-carry-interface
   - concept: denominator-escape-state-contract
     role: named-normal-form requirement for a legal recursive state
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_carry_overlap_boundary.py
@@ -71,7 +85,7 @@ visibility: public
 last_checked: '2026-08-15'
 ---
 
-# q=1 high \(C=2\) 19-phase 的 H4 carry-overlap、同图表 Type I no-go 与有限标签边界
+# q=1 high \(C=2\) 19-phase 的 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界
 
 ## 1. H4 的缺失状态变量
 
@@ -261,7 +275,7 @@ M_3>M_0>\frac{p^4}{8}.
 \]
 
 另一方面，H4 有 \(M_4=M_3L\)、\(L>1\)、\(c_4\ge1\)，所以
-\(K_4=M_4c_4>M_0\)。由 \(pR_4+1=4K_4\)，
+\(M_4>M_3>M_0\) 且 \(K_4=M_4c_4>M_0\)。由 \(pR_4+1=4K_4\)，
 
 \[
 R_4=\frac{4K_4-1}{p}
@@ -327,7 +341,116 @@ K_{\mathrm I}<\frac{K_4}{p}.}
 也不排除根素数在另一张低 \(R\) 图表中有 \(p-1\) terminal、其它 \(n<p\) 的提升，或
 Type II 路径。
 
-## 5. H3 有限标签不足的严格反例
+## 5. H4 carrier 保留与现有 RESET 的双重边界
+
+上节的塌缩是对任意标准 Type I 图表的数值必要条件。H4 的实际 carrier 还给出一个更强的
+状态级限制。由 (18) 与 (20)，标准 Type I 的 \(K\) 上界满足
+
+\[
+\begin{aligned}
+U_K(p)
+&\le\frac{p((p+3)^2+4)+12}{48}\\
+&<\frac{p^4}{8}
+<M_4.
+\end{aligned}
+\tag{25}
+\]
+
+中间严格不等式等价于
+
+\[
+6p^4-p^3-6p^2-13p-12>0,
+\]
+
+对 \(p\ge73\) 显然成立。因此，若某个同一 \(p\) 的标准 Type I 目标
+\((R_{\mathrm I},K_{\mathrm I})\) 保留 H4 的全部 charged carrier，即
+
+\[
+M_4\mid K_{\mathrm I},
+\tag{26}
+\]
+
+则 \(K_{\mathrm I}\ge M_4>U_K(p)\)，与 (20) 矛盾。故
+
+\[
+\boxed{
+\text{任何标准 Type I 目标都必须丢弃 H4 的完整 carrier }M_4.}
+\tag{27}
+\]
+
+这也排除所有从 H4 出发的普通 complete-excess lcm 延续：这类边将 support 更新为
+\(A_T=\operatorname{lcm}(M_4,Q)\)，并要求 \(A_T\mid K_T\)，因而必有
+\(M_4\mid K_T\)，正落入 (26) 的矛盾。
+
+H4 自身确实处在 overflow 语义中。令
+
+\[
+d_4=p-c_4,
+\qquad
+n_4=4M_4-R_4.
+\tag{28}
+\]
+
+由 \(1\le c_4\le p-2\) 和 \(pR_4+1=4M_4c_4\)，有
+
+\[
+2\le d_4\le p-1,
+\qquad
+n_4=\frac{4M_4(p-c_4)+1}{p}>0,
+\qquad
+pn_4=4M_4d_4+1.
+\tag{29}
+\]
+
+又 (19) 给出 \(R_4>p\)。H3 \(\Rightarrow\) H4 的 maximal complete-excess receipt
+把 target ledger 更新为 \(A=\operatorname{lcm}(M_3,Q^*)=M_4\)，故 H4 是一个带旧
+charged support \(A=M_4>B_p\) 的真正 overflow。现有
+[overflow RESET 的 joined-support 外层秩递降](type-I-overflow-outer-rank-reset.md)要求
+\(1\le A\le B_p\) 才能登记 overflow_outer_rank_reset_v1；因此它在 H4 上**不在定义域内**，
+而不是某个尚待选择的 \(d/r\) 通道。
+
+这里必须区分标准 Type I 重分类与高支撑 canonical continuation。(27) 只说明保留/扩张
+\(M_4\) 的边不能**同时**成为标准 Type I 正规形；它不排除高支撑状态自己的
+complete-excess carry 边。事实上 H4 已满足
+
+\[
+M_4>B_p,\qquad K_4=M_4c_4,\qquad 1\le c_4<p,
+\tag{30}
+\]
+
+所以它正落在[高支撑 bundle 的精确 carry 容量门](type-I-high-support-bundle-carry-capacity-terminal-dispatch.md)
+的定义域。若 H4 anchor 的唯一最大 complete-excess 块给出
+
+\[
+M_5=\operatorname{lcm}(M_4,Q_5)=M_4L_5,
+\qquad
+c_5\equiv c_4L_5^{-1}\pmod p,
+\qquad 1\le c_5<p,
+\tag{31}
+\]
+
+则唯一 carry \(s_5=(L_5c_5-c_4)/p\) 满足
+
+\[
+L_5(c_5-c_4)=ps_5-c_4(L_5-1).
+\tag{32}
+\]
+
+在来源、path、F/G 重分类与 E1--E4 另行成立时，\(c_5<c_4\) 才是这类高支撑边的
+E5 门。它不是自动成立的：两个 H4 local-anchor 控制分别为
+
+| \(p\) | H3 dispatch | \(c_4\) | \(c_5\) | carry 方向 |
+|---:|---|---:|---:|---|
+| \(14449\) | bounded \(q=1\) mask | \(13391\) | \(12552\) | 下降 |
+| \(665617\) | clean fourth anchor | \(20388\) | \(94177\) | 上升 |
+
+两例都避开 \(p+1\) 的 \(3\pmod4\) 因子终端，且均由同一个精确 maximal-block 算法重算。
+因此不能把“取 H4 的首个最大块”登记为全域 E5；它只是下一条 rank-aware sink-bundle
+选择器需要处理的一个 canonical 候选。若该有限候选表在某状态上空，才应转交
+\(A>B_p\) 的新型 paid reset 或不经 \(p+1\) 因子的 Type II 短证书。这是对**当前
+adapter 域**的边界，不排除已有高支撑 carry selector 的其它候选或尚未构造的新 reset。
+
+## 6. H3 有限标签不足的严格反例
 
 下面两点都通过 H3 clean 分支，且有相同的 H3 有限标签：
 
@@ -352,15 +475,17 @@ odd overlap \((w,c_3-s_4)\)。这不是从两个点外推整体行为，而是�
 故不可能仅从该 H3 标签宣布 H3 \(\Rightarrow\) H4 是严格容量递降；需要实际 \(s_4\)
 或等价的 carry gate。
 
-## 6. 边界与下一接口
+## 7. 边界与下一接口
 
 式 (8) 把 H4 的状态局部 terminal 输入压缩为一个明确的 carry residual，并给出它命中时的
 构造性证书；但 (12) 证明该终端在根级已被 \(p+1\) 分支预先截断。故在真正的全局残余上，
-不能再试图从 \((w,c_3-s_4)\) 的 \(3\pmod4\) 因子获得新出口；(22) 进一步规定了：
-任何保留该图表的 Type I 重分类都不可能成为下一出口。H4 的下一条有效研究接口必须显式
-改变 \(R,K\) 后再给出 typed reclassification，或利用 \(s_4\) 构造不同的可提升 \(n<p\)
-递降，或给出一个不经 \(p+1\) 因子的短证书；它也不能只重复 H3 的
-\((u,\lambda)\) 有限 mask。
+不能再试图从 \((w,c_3-s_4)\) 的 \(3\pmod4\) 因子获得新出口；(24)、(27) 进一步规定：
+任何标准 Type I 重分类不仅必须大幅改变 \(R,K\)，还必须显式丢弃 \(M_4\)，而当前
+joined-support reset 不具备这一权限。另一方面，(30)--(32) 保留了真正尚未解决的高支撑
+接口：以 H4 的实际 source/path 枚举 rank-aware complete-excess 候选，并证明 terminal
+或 \(c_5<c_4\) 的完备析取。首个最大块已有正、反两个方向的控制，故不能只重复 H3 的
+\((u,\lambda)\) 有限 mask。候选表若严格空，才需要一个对 \(A>B_p\) 有独立良基支付的
+reset，或一个不经 \(p+1\) 因子的 Type II 短证书。
 
 Focused verification:
 
