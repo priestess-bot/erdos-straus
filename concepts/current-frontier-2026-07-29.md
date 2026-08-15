@@ -9110,7 +9110,7 @@ t\equiv\gamma b,\quad\gamma(b+1),\quad\gamma(b+2)\pmod p
 本身返回相同 charged support/capacity 的 checkpoint，不能冒充 strict edge。
 
 此外，所有 \(a_q=1\) cells 都有 \(q_0\mid E_x\mid Q_x\mid x_q\)，而
-\(y_q\equiv1\pmod{q_0}\)。故当 \(q_0>1\) 时，\(q_0\) 的完整素因子 word 可从
+\(y_q\equiv h\pmod{q_0}\)。故当 \(q_0>1\) 时，\(q_0\) 的完整素因子 word 可从
 \(x_q\) 侧在实际 H4 raw graph 上再次重放；这是一条可审查的 re-entry，不自动是
 严格目标。于是新算术余项精确成为 \(s=0\)，或正 \(s=q_0t\) 的三个模 \(p\)
 cells，加上尚未关闭的 atomic/typed/terminal guards。详见

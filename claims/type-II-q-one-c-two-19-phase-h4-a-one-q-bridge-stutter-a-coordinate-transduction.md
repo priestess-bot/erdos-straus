@@ -295,13 +295,12 @@ q_0\mid Q_x\mid x_q.
 \tag{20}
 \]
 
-另一方面 \((x_q,y_q)=1\)，而 \(q_0\mid q\) 与
-\(pR_4+1=4K_4\)、\((q_0,K_4)=1\)、\(p\equiv-1\pmod{q_0}\) 给
+另一方面 \((x_q,y_q)=1\)，而 \(q_0\mid q\mid z=R_4-h\)，结合
+\(q_0\mid x_q\)，给
 
 \[
-R_4\equiv1\pmod{q_0},
 \qquad
-\boxed{y_q\equiv1\pmod{q_0}.}
+\boxed{y_q\equiv h\pmod{q_0}.}
 \tag{21}
 \]
 
