@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 801 |
+| 数学状态 | `established` | 802 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 32 |
+| 证明来源 | `mixed` | 33 |
 | 证明来源 | `repository_derivation` | 638 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 779 |
+| 审阅状态 | `internal_review` | 780 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1085,6 +1085,7 @@
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 的完整超额分解与单一 stutter 门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 端点的 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge s=0 的 q-block swap、小锚界与 secondary p-primary 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
+| [H4 q-bridge s=0 secondary p-free gate 的 a=1 q-lock 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge stutter 的 a 坐标转导、两类正残余、raw-p-source 修复与 q0 raw re-entry](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 fresh q-carrier 的清洁 raw bridge 与 pre-root 分派](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

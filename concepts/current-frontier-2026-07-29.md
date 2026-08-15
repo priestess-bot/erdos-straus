@@ -9158,3 +9158,37 @@ secondary \(p\)-primary gate 为空。故 \(Q_\zeta=1\) 时获得 Type I termina
 \(E_\zeta\equiv L_0\pmod p\) 时仍为容量 stutter。这个剩余 p-free 单侧门及其
 typed/terminal guards 尚未关闭。详见
 [H4 q-bridge \(s=0\) 的 q-block swap 与 secondary p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion.md)。
+
+## 2026-08-16：H4 \(s=0\) secondary p-free gate 的 \(a=1\) q-lock 已排除
+
+上一条剩余单侧门可写为 \(E_\zeta=L_0+p\sigma\)，其中 \(\sigma\) 允许为负。
+它的 full-product top-capacity target 有精确坐标
+
+\[
+a_\zeta=\frac q{(q,\sigma)}.
+\]
+
+若它还停在 \(a_\zeta=1\)，则 \(q\mid\sigma\)。由 actual q-swap 的恒等式可唯一写
+
+\[
+\xi=h+(q-1)r,
+\qquad y_q=h+qr,
+\qquad
+\zeta=qh+(q^2-q+1)r.
+\]
+
+H4 高度界强制 \(r>0\)，而 q-lock 等价于 \(q\mid r\)，故
+\(r=qt\) 且 \(t\ge1\)。再用 \(\xi\mid ph-q+1\)、\(h=2e\)、
+\(p=2dq-1\)，得到必要的有限界
+
+\[
+q\le4de-1,
+\qquad e\mid d\mid|1536-a(p)|\le1535.
+\]
+
+对这个被引理强制的有限菜单，31 residual phase 的 149,977 个参数中只有 524 个还
+满足实际 H4 provenance；没有一个满足最后的 \(\xi\)-整除门。因此 \(q\nmid\sigma\)，
+从而 \(a_\zeta>1\)。所以 \(s=0\) 的 secondary p-free 分支现在是：Type I terminal、
+直接严格容量，或进入已有 \(a>1\) strict handoff；不再留下 \(a=1\) q-lock 算术回返。
+terminal-first、typed、scope 和 persistent guards 仍是独立的全局合同。详见
+[H4 \(s=0\) secondary p-free gate 的 \(a=1\) q-lock 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion.md)。
