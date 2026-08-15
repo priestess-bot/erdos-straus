@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify H4 carry gates, global p+1 preemption, and label boundaries."""
+"""Verify H4 gates, global preemption, conditional p-1 chart bounds, and labels."""
 
 from __future__ import annotations
 
@@ -122,6 +122,47 @@ def h4_overlap_p_plus_one_preemption(prime: int) -> tuple[int, GapCertificate] |
     return factor, certificate
 
 
+def h4_pminusone_bridge_scale_boundary(prime: int) -> dict[str, int | bool]:
+    """Verify H4's chart-height bound, without asserting a Type I normal form."""
+    data = h3_data(prime)
+    m3 = int(data["M_3"])
+    k3 = int(data["K_3"])
+    r3 = int(data["R_3"])
+    c3 = int(data["c_3"])
+    block, _ = complete_excess(r3 - 1, k3)
+    overlap = gcd(m3, block)
+    multiplier = block // overlap
+    m4 = lcm(m3, block)
+    c4 = c3 * pow(multiplier, -1, prime) % prime
+    k4 = m4 * c4
+    r4 = (4 * k4 - 1) // prime
+    t = (prime - 1) // 4
+    r = (r4 + 1) // 4
+    m0 = (prime - 1) * (2 * prime + 1) * (2 * prime * prime - 3 * prime - 1) // 8
+
+    if not (
+        prime % 24 == 1
+        and m3 > m0
+        and 8 * m0 > prime**4
+        and multiplier > 1
+        and m4 == m3 * multiplier == lcm(m3, block)
+        and 1 <= c4 <= prime - 2
+        and k4 == m4 * c4 > m0
+        and prime * r4 + 1 == 4 * k4
+        and r4 % 4 == 3
+        and r4 == 4 * r - 1
+        and prime * r == k4 + t
+        and r > t * t
+    ):
+        raise AssertionError("the H4 conditional p-1 chart bound changed")
+
+    return {
+        "p": prime,
+        "r_exceeds_t_square": r > t * t,
+        "requires_type_i_normal_form": True,
+    }
+
+
 def verify() -> None:
     first = h4_carry_data(184_993)
     second = h4_carry_data(727_633)
@@ -130,6 +171,8 @@ def verify() -> None:
     descent = h4_carry_data(665_617)
     terminal = h4_overlap_terminal(114_769)
     preemption = h4_overlap_p_plus_one_preemption(114_769)
+    clean_height_boundary = h4_pminusone_bridge_scale_boundary(184_993)
+    hard_height_boundary = h4_pminusone_bridge_scale_boundary(14_449)
 
     label_keys = ("u", "a", "h3_g", "lambda", "h3_branch")
     if not (
@@ -218,9 +261,21 @@ def verify() -> None:
             ),
         )
         and h4_overlap_p_plus_one_preemption(14_449) is None
+        and clean_height_boundary
+        == {
+            "p": 184_993,
+            "r_exceeds_t_square": True,
+            "requires_type_i_normal_form": True,
+        }
+        and hard_height_boundary
+        == {
+            "p": 14_449,
+            "r_exceeds_t_square": True,
+            "requires_type_i_normal_form": True,
+        }
     ):
         raise AssertionError("the H4 carry-overlap boundary controls changed")
-    print("verified H4 carry gates, p+1 preemption, and finite-label boundaries")
+    print("verified H4 gates, p+1 preemption, conditional p-1 chart bounds, and label boundaries")
 
 
 def main() -> None:
