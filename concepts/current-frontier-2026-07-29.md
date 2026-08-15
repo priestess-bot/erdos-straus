@@ -9053,3 +9053,17 @@ Type I terminal；恰一块 p-free 非空时单侧 residual gate 自动通过；
 [H4 fresh q-carrier 的清洁 raw bridge](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md)。
 endpoint 的 p-primary 排除见
 [H4 q-bridge p-primary endpoint 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md)。
+
+更精确地，q-word 后的 y-side maximal block 恒为 \(Q/q\)。令
+\(L_0=\operatorname{lcm}(M_4,Q)/M_4\)、\(E_x=Q_x/(M_4,Q_x)\)，则所有非 terminal
+endpoint 的 multiplier 满足
+
+\[
+L_q=\frac{L_0}{q}E_x,
+\qquad c_q\equiv-qE_x^{-1}\pmod p.
+\]
+
+所以 \(Q_x=1\) 的单侧出口自动严格，给 \(c_q=p-q\le p-2\)；所有仍未关闭的容量
+stutter 精确是 \(Q_x>1\) 且 \(E_x\equiv q\pmod p\)。\(Q_y=1\) 时它是单侧
+payload 的门，\(Q_y>1\) 时它是 conditional atomic-split payload 的门。详见
+[H4 q-bridge 完整超额 stutter reduction](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)。

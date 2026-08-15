@@ -287,6 +287,10 @@ carrier 的两条连续 raw prime edge。
 \tag{18}
 \]
 
+后续的[完整超额 stutter reduction](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)
+进一步把其中的容量门压成 \(Q_x>1\) 与单一同余 \(E_x\equiv q\pmod p\)；该结果不反向
+改变本卡的 raw-word 或 abstract taxonomy 结论。
+
 式 (18) 不是 global exit theorem。特别地，本卡没有证明 raw endpoint 一定双侧、
 一定 strict，也没有把 local controls 提升为 actual 19-phase predecessor。
 它排除的只是此前最基础的障碍：在 actual H4 receipt 中，\(q\) 的完整 raw 使用曾是

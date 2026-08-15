@@ -24,6 +24,8 @@ class Fixture:
     expected_y: int
     expected_q_x: int
     expected_q_y: int
+    expected_original_multiplier: int
+    expected_x_multiplier: int
     expected_multiplier: int
     expected_capacity: int
     expected_p_primary_gate: int
@@ -40,6 +42,8 @@ FIXTURES = (
         expected_y=6_641,
         expected_q_x=119_539,
         expected_q_y=6_641,
+        expected_original_multiplier=245_717,
+        expected_x_multiplier=119_539,
         expected_multiplier=793_858_499,
         expected_capacity=24,
         expected_p_primary_gate=37,
@@ -54,6 +58,8 @@ FIXTURES = (
         expected_y=59_525,
         expected_q_x=3_571_501,
         expected_q_y=59_525,
+        expected_original_multiplier=7_202_525,
+        expected_x_multiplier=3_571_501,
         expected_multiplier=212_593_597_025,
         expected_capacity=80,
         expected_p_primary_gate=121,
@@ -165,6 +171,8 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
     q_y = complete_excess(y, k4)
     beta_x = x // q_x
     beta_y = y // q_y
+    original_multiplier = m_alt // m4
+    x_multiplier = q_x // gcd(m4, q_x)
     p_primary_gate = p + 1 - q
     target_support = lcm(m4, q_x, q_y)
     multiplier = target_support // m4
@@ -179,6 +187,9 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         and y == fixture.expected_y
         and q_x == fixture.expected_q_x > 1
         and q_y == fixture.expected_q_y > 1
+        and q_y == q_block // q
+        and original_multiplier == fixture.expected_original_multiplier
+        and x_multiplier == fixture.expected_x_multiplier
         and p_primary_gate == fixture.expected_p_primary_gate
         and h != p_primary_gate
         and (x % p == 0) == (h == p_primary_gate)
@@ -193,9 +204,12 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         and k4 % (y * beta_x) != 0
         and k4 % (x * beta_y) != 0
         and multiplier == fixture.expected_multiplier
+        and multiplier == original_multiplier // q * x_multiplier
         and target_capacity == fixture.expected_capacity
         and target_capacity <= p - 2
         and target_capacity == c4 * pow(multiplier, -1, p) % p
+        and target_capacity == (-q * pow(x_multiplier, -1, p)) % p
+        and x_multiplier % p != q % p
     ):
         raise AssertionError(f"{fixture.name}: q raw bridge split dispatch changed")
 
@@ -205,6 +219,7 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         "raw_steps": len(raw_selected),
         "capacity": target_capacity,
         "p_primary": False,
+        "stutter": False,
     }
 
 
@@ -217,6 +232,7 @@ def verify() -> None:
             "raw_steps": 1,
             "capacity": 24,
             "p_primary": False,
+            "stutter": False,
         },
         {
             "name": "composite_q121_atomic_split_strict",
@@ -224,6 +240,7 @@ def verify() -> None:
             "raw_steps": 2,
             "capacity": 80,
             "p_primary": False,
+            "stutter": False,
         },
     ]:
         raise AssertionError("H4 q-carrier raw bridge controls changed")
