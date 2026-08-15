@@ -168,8 +168,12 @@ shift \(1\) 到达 \((1,R_4-1,1)\)。\(R_4\not\equiv1\pmod p\) 则保证
 本卡没有证明 \(c_5\le p-2\) 对所有 19-phase 素数成立，也没有替代 H4/H5 的 terminal-first
 或 typed reclassification。H4 的 \(R_4\equiv0,1\pmod p\) 两个 source/p-free 障碍已被
 [有限 p-adic 例外界](type-II-q-one-c-two-19-phase-h4-source-residue-finite-bound.md)压缩到一个
-显式有限残余；若该残余或 \(c_5=p-1\) 未被其它出口抢占，这个固定五锚宏不能登记，才需要
-rank-aware sink-bundle candidate map、Type II short certificate 或带独立全局势的 paid reset。
+显式有限残余。\(c_5=p-1\) 也不再是未分类的 top-capacity 条件：它被
+[H5 顶容量 d=1 handoff](type-II-q-one-c-two-19-phase-h5-top-capacity-d-one-handoff.md)
+精确归入 d=1 suffix，除 \(a=1\)、terminal digit \(\omega=-1\) 的 p-free return 外均有
+guarded strict capacity endpoint。该 handoff 仍不能替代全局 selector 或未验证的 typed guards；
+剩余类才需要 rank-aware sink-bundle candidate map、Type II short certificate 或带独立全局势的
+paid reset。
 
 Focused verification:
 
