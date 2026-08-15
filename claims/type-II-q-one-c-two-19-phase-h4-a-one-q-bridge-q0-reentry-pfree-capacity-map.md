@@ -482,6 +482,24 @@ D\mid(2d-1)\bigl((2d+1)q-1\bigr).
 unitary endpoint allocation、p-adic terminal digit、根容量和这个有限 \(D\) gate；任何
 忽略其中之一的“q-lock 自动下降”都不成立。
 
+进一步地，actual 19-phase selector screen 已排除
+
+\[
+p>\delta_d:=2d(4d^2-2d+1),
+\qquad D>\delta_d.
+\tag{29b}
+\]
+
+在 \(p>\delta_d\) 的最小分支 \(D=\delta_d\) 中，\(d\equiv1\pmod3\) 也不可能。
+所以 (29) 的 H4 provenance residual 还必须满足
+
+\[
+p\le\delta_d
+\quad\text{或}\quad
+\bigl(p>\delta_d,\ D=\delta_d,\ d\not\equiv1\pmod3\bigr).
+\tag{29c}
+\]
+
 ## 7. 精确分派与边界
 
 | re-entry 情形 | 本卡给出的结果 | 仍需的独立条件 |
@@ -492,7 +510,7 @@ unitary endpoint allocation、p-adic terminal digit、根容量和这个有限 \
 | \(FE_\zeta\equiv L_0\pmod p,\ q\nmid\sigma\) | \(a_{\rm re}>1\) | existing \(a>1\) handoff guards |
 | q-lock 且 \(\omega_{\rm re}\ne-1\) | existing d=1 strict dispatch | q-lock target/checkpoint guards |
 | q-lock、\(\omega_{\rm re}=-1\)、\(9u^2<p\) | root-fan terminal 或 strict carry | root-return guards |
-| q-lock、\(\omega_{\rm re}=-1\)、\(9u^2\ge p\) | residual (29) 加上 (29a) 的有限 \(D\) gate | 必须另行排除、给证书或构造合法递降 |
+| q-lock、\(\omega_{\rm re}=-1\)、\(9u^2\ge p\) | residual (29) 加上 (29a)--(29c) 的 \(D\) provenance sieve | 必须另行排除、给证书或构造合法递降 |
 
 这张卡关闭了“p-free re-entry 没有可计算 capacity”的缺口，并把所有仍留在
 \(a=1\) 的顶容量情形转换为 endpoint 的有限因子分配和 root-fan 数值条件。它没有

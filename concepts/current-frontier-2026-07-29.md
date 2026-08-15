@@ -9325,3 +9325,33 @@ original H4 carrier \(d=1\) 时仅有 \(D=6,p+6\) 两个可能，二者均不整
 \((3p+1)/2\)，所以该 re-entry 子类为空。这里的 carrier \(d\) 不等同于 re-entry
 target 后续 ordinary full-product \(d=1\) 标签；后者仍由 countdown/root-fan 路由处理。
 详见 [H4 \(q_0\) re-entry 的 \(D\) 残数门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate.md)。
+
+## 2026-08-16：非最小 \(D\)-lift 在实际 19-phase 中已空
+
+设
+
+\[
+\delta_d=2d(4d^2-2d+1).
+\]
+
+当 \(p>\delta_d\)、\(D>\delta_d\) 时，\(D\)-残数门唯一写成
+
+\[
+D=\delta_d+kp,
+\qquad ph-q+1=\ell D,
+\qquad k\ell\le2d-1,
+\]
+
+并强制
+
+\[
+p=\frac{2d\ell\delta_d-(2d-1)}{4d^2-1-2dk\ell}.
+\]
+
+这把非最小分支转成 31 selector 的有界 \((d,k,\ell)\) 菜单。精确筛核对 109 个
+odd \((u,d)\) 对和 233,378 个三元组：仅 7 个给出素数，且没有一个属于 actual phase
+progression。因此该分支为空。另一方面最小 \(D=\delta_d\) 分支在
+\(d\equiv1\pmod3\) 时也因模 \(3\) 矛盾为空。于是 q-lock/root residual 的 H4
+provenance 只能留在 \(p\le\delta_d\)，或 \(p>\delta_d,D=\delta_d,
+d\not\equiv1\pmod3\)；这仍不是全局出口。详见
+[H4 \(q_0\) re-entry 的非最小 \(D\)-lift 筛](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion.md)。

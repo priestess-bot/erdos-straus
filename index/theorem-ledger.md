@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 805 |
+| 数学状态 | `established` | 806 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 34 |
+| 证明来源 | `mixed` | 35 |
 | 证明来源 | `repository_derivation` | 640 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 783 |
+| 审阅状态 | `internal_review` | 784 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1085,6 +1085,7 @@
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 的完整超额分解与单一 stutter 门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 端点的 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0 re-entry 的归一化小除子残数门与 carrier d=1 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [H4 q0 re-entry 的非最小 D-lift 有限 phase 排除与最小残数边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-nonminimal-d-lift-finite-phase-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0 raw re-entry p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0 p-free re-entry 完整超额容量图与 unitary q-lock 签名](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-pfree-capacity-map.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-pfree-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge s=0 的 q-block swap、小锚界与 secondary p-primary 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
