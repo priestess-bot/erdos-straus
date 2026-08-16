@@ -198,7 +198,7 @@ terminal-first、typed reclassification、scope 和 serializer guard。
 
 | 端点条件 | 由 (10)--(12) 得到的对象 | 当前可用结论 |
 |---|---|---|
-| \(Q_x=Q_y=1\) | \(x_qy_q\mid K_4\) | full-excess sink，交由既有 Type I terminal verifier。 |
+| \(Q_x=Q_y=1\) | \(x_qy_q\mid K_4\) | full-excess sink，直接输出 \((K_4/y_q,K_4/x_q,pK_4)\) 的 Type I certificate。 |
 | 恰一块非平凡，且 \(p\nmid Q_xQ_y\) | 设非平凡块为 \(Q_x\)。另一侧 \(y_q\mid K_4\)，故 \(y_q\beta_x\mid K_4\) | 既有单侧 complete-excess 的 residual-divisibility gate 通过。 |
 | \(Q_x,Q_y>1\)，且 \(p\nmid Q_xQ_y\) | 带颜色的 \((Q_x,Q_y)\) 与同一 raw occurrence | 满足 atomic split schema 的输入；该 schema 只条件性支付 E1--E4。 |
 | \(p\mid Q_xQ_y\) | 一般 raw endpoint 的完整 \(p\)-block | 在 abstract taxonomy 中是 p-primary residual；actual H4 域已由后续 endpoint exclusion 排除。 |
@@ -206,6 +206,9 @@ terminal-first、typed reclassification、scope 和 serializer guard。
 第二行的 residual gate 不是额外假设：若 \(Q_y=1\)，则 \(y_q\mid K_4\)；再用
 \((y_q,\beta_x)=1\) 与 \(\beta_x\mid K_4\)，便得 \(y_q\beta_x\mid K_4\)。
 第三行不能被拆成两个旧单侧 action；它正是既有 atomic split card 所保留的来源边界。
+第一行的 endpoint serializer 由
+[full-excess sink 的直接 Type I terminal 证书](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-endpoint-terminal-serializer.md)
+固定，不依赖 target typed state。
 
 ## 5. p-free 分支的 parent-macro 容量门
 

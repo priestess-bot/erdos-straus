@@ -9468,9 +9468,13 @@ Type I terminal 只能位于 q endpoint 的 \(Q_x=Q_y=1\) 分派，不能隐藏�
 内部 checkpoint。
 
 结合 endpoint p-primary 排除和首层 stutter 全域关闭，actual nonterminal q endpoint
-现在都已具备 \(c_q\le p-2\) 的严格算术势。剩余的是清晰的 E3/priority 接口：source
-和 target 的 typed reclassification、state/edge serializer、scope，双侧时的 atomic owner
-和 ledger，以及版本化的 state-level terminal/alternate prefix。此结果不把这些语义字段
+现在都已具备 \(c_q\le p-2\) 的严格算术势。若 endpoint 是 full-excess sink，三分母
+\((K_4/y_q,K_4/x_q,pK_4)\) 直接给出 Type I terminal，已不保留 serializer 缺口。
+非终端侧剩余的是清晰的 E3/priority 接口：source 和 target 的 typed reclassification、
+state/edge serializer、scope，双侧时的 atomic owner 和 ledger，以及版本化的 state-level
+terminal/alternate prefix。此结果不把这些语义字段
 假定为已实现，但排除了“需要沿 q 的每个真前缀逐一寻找 full-excess terminal”
 这一额外障碍。详见
 [H4 clean \(q\)-bridge 的内部 full-excess Type I terminal 局部化](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization.md)。
+endpoint terminal 的直接回执见
+[H4 q-bridge endpoint full-excess sink 的 Type I certificate](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-endpoint-terminal-serializer.md)。

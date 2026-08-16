@@ -185,7 +185,7 @@ actual H4 source 与 endpoint 的算术信息。
 | q-word 位置 | full-excess Type I terminal | 算术容量 | 尚未由本卡支付的内容 |
 |---|---|---|---|
 | \(e<q\) 的真前缀 | 由 (6) 自动否定 | 不作为 macro endpoint | raw-prefix 以外的新 priority verifier，若未来注册，仍须显式处理 |
-| \(e=q, Q_x=Q_y=1\) | 直接 terminal | N/A | terminal serializer/证书格式 |
+| \(e=q, Q_x=Q_y=1\) | 直接 Type I terminal | N/A | 无；由 \((K_4/y_q,K_4/x_q,pK_4)\) 确定性输出 |
 | \(e=q\)，恰一块非平凡 | 不为 full-excess sink | (9) 严格 | source/target typed state、priority prefix、serializer/scope |
 | \(e=q, Q_x,Q_y>1\) | 不为 full-excess sink | (9) 严格 | 上述内容，加 atomic owner tuple、ledger 与 adapter validator |
 
@@ -200,6 +200,8 @@ actual H4 source 与 endpoint 的算术信息。
 3. canonical serializer、state/edge digest；双侧时还包括 atomic owner 与 ledger；
 4. target 的 `pending_dispatch` 入口及后续 priority policy。
 
+endpoint terminal 的直接 serializer 见
+[endpoint full-excess sink 的 Type I terminal 证书](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-endpoint-terminal-serializer.md)。
 单侧分支的 residual divisibility 已由 q endpoint 的算术自动给出；双侧分支不能拆成
 两个旧单侧 action，必须调用既有 atomic-split contract。所有状态的 equation target
 仍为 \(4/p\)，故当上述 guards 成功时 E4 是 \(\operatorname{Sol}(p)\) 的恒等提升，
