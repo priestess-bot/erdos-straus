@@ -285,8 +285,8 @@ d_4=1,\ \widehat q>1
 \tag{24}
 \]
 
-结合 unitary transduction，在 \(d_4=1\) 的 actual \(a_2=1\) second-stutter 中，
-唯一仍可能的 raw carrier 几何是
+在本卡的**条件性** second-stutter antecedent 内，结合 unitary transduction，
+\(\widehat q>1\) x-side 被排除后唯一仍可能的 raw carrier 几何是
 
 \[
 \boxed{\widehat q=1,\qquad\rho=q,}
@@ -295,6 +295,10 @@ d_4=1,\ \widehat q>1
 
 即既有的第三 y-side \(q\)-carrier。该分支的 p-primary 已被独立排除，但其 p-free
 payload/capacity 仍须单独处理。
+
+后继的 [original q-bridge source \(D\)-gate](type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md)
+更早地排除了这个 actual \(d_4=1\) second-stutter 的 parent。因此 (24) 仍是有用的
+局部 source closure，但不再留下 actual third-carrier residual。
 
 ## 4. 定向回执
 

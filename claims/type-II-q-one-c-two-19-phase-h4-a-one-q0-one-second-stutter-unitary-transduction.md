@@ -346,6 +346,11 @@ p-free；更没有自动支付 single-side/atomic payload 的 E1--E4。它给出
 second stutter 的单位因子容量图，以及 non-unitary \(\rho\) 时 \(a=1\) stutter 的
 直接不可能性。
 
+后继的 [\(d_4=1\) original q-bridge source \(D\)-gate](type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md)
+已在 first stutter 层排除 actual \(d_4=1\) parent。因此本卡的 \(d_4=1\) second/
+third-carrier 图只保留为该被排除 antecedent 的精确蕴含；\(d_4>1\) 的 unitary
+transduction 不受影响。
+
 ```bash
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_second_stutter_unitary_transduction.py --verify
 ```

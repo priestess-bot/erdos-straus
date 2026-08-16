@@ -314,6 +314,11 @@ endpoint，带唯一的 \(q^2\)-stutter congruence。它仍未证明
 \(E_{x,2}\not\equiv q^2\pmod p\)，也不自动把单侧或 atomic payload 登记为 recursive
 edge；这些是现在明确、独立的全局出口义务。
 
+这里的结论对一般 \(d_4\) 仍是有效的条件性 bridge。后继的
+[\(d_4=1\) original q-bridge source \(D\)-gate](type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md)
+已排除生成本卡 \(q_0=1\) 入口的第一层 capacity stutter；故 actual \(d_4=1\)
+子域在到达 (10) 前已经关闭，不能把本卡的 \(d_4=1\) normal form 当作剩余 branch。
+
 ```bash
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_double_q_bridge.py --verify
 ```

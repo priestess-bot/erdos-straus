@@ -174,6 +174,10 @@ q=2(q-1),
 \(D\mid q^3-4q+1\)，但不把这条必要 sieve 误写成全称排除。它不处理 \(d>1\) 的
 同一几何。
 
+更上游的 [original q-bridge source \(D\)-gate](type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md)
+现已排除 actual \(d_4=1\) 的 first stutter，故本卡 \(d=1\) third-carrier 的
+antecedent 在实际 H4 域为空；本卡的因式结论仍作为条件性 local lemma 保留。
+
 \`\`\`bash
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_second_stutter_unitary_transduction.py --verify
 \`\`\`

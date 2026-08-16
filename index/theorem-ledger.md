@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 820 |
+| 数学状态 | `established` | 821 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 37 |
-| 证明来源 | `repository_derivation` | 652 |
+| 证明来源 | `repository_derivation` | 653 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 798 |
+| 审阅状态 | `internal_review` | 799 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1081,6 +1081,7 @@
 | [q=1 高 C=2 19 相位 H4 到 H5 的 parent-macro 准入门](../claims/type-II-q-one-c-two-19-phase-fifth-anchor-parent-macro-gate.md) (`type-II-q-one-c-two-19-phase-fifth-anchor-parent-macro-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位固定 Type I/II 模板阻碍](../claims/type-II-q-one-c-two-19-phase-fixed-template-obstruction.md) (`type-II-q-one-c-two-19-phase-fixed-template-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 H3 有界终端—第四锚—q=1 掩码分派](../claims/type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate.md) (`type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [H4 d4=1 clean q-bridge 容量 stutter 的 source D-gate 全称排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 fresh carrier 与 root cyclotomic 容量的互素屏障](../claims/type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality.md) (`type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 的完整超额分解与单一 stutter 门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 端点的 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |

@@ -288,6 +288,12 @@ q\mid Us
 persistent guards；如果它被登记为 \(a=1\) target，后续 ordinary \(d=1\) countdown
 或 root-fan 也必须按各自 contract 单独支付。
 
+**范围更新。** 后继的
+[original q-bridge source \(D\)-gate 全称排除](type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md)
+已在 first stutter 层排除 actual \(d_4=1\) parent。因此本卡的 \(D\equiv72\pmod p\)
+map 不再是 actual \(d_4=1\) residual，而是被排除 antecedent 的完整 capacity normal
+form；它仍避免未来重新引入错误的 third-carrier 论证。
+
 ## 6. 定向回执与边界
 
     python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_third_q_d_one_pfree_capacity_map.py --verify
