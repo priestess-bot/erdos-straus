@@ -170,8 +170,11 @@ def verify_control(control: dict[str, int | str]) -> dict[str, object]:
         ),
         "phase_range": 0 <= phase_h < 3,
         "phase_residue": phase_h % 3 == (-B) % 3,
+        "phase_parameter_residue": B % 3 == (k - 1) % 3 and phase_h == (1 - k) % 3,
         "phase_matches_control": phase_h == expected_h,
-        "minimal_positive_phase_gate": (phase_h == 2) == (B % 3 == 1),
+        "minimal_positive_phase_gate": (
+            (phase_h == 2) == (B % 3 == 1) == (k % 3 == 2)
+        ),
     }
     if not all(checks.values()):
         raise AssertionError(f"{label}: q=3 b-k-u control failed: {checks}")
@@ -180,7 +183,7 @@ def verify_control(control: dict[str, int | str]) -> dict[str, object]:
         "input": {"b": b, "k": k, "u": u},
         "recovered": recovered,
         "high_anchor": {"B": B, "Q0": Q0, "beta0": beta0, "Q1": Q1, "beta1": beta1},
-        "automatic_q": {"M": M, "C": C, "phase_h": phase_h},
+        "automatic_q": {"M": M, "C": C, "phase_h": phase_h, "k_mod_3": k % 3},
         "checks": checks,
     }
 

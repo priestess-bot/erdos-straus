@@ -99,6 +99,28 @@ $$
 
 这不是经验筛选：每个满足模型条件的来源行都给出一组有限的因子数据 (b,k,u)。
 
+相位门也可完全降到因子参数。将第一条等式代回
+\(2(p-b)B=p(p+\delta)+1\)，得到
+
+\[
+2B=p+b+\delta+2k.
+\]
+
+由于 \(p\equiv1\pmod4\)、\(b\equiv3\pmod8\)、\(\delta\equiv2\pmod8\)，有
+
+\[
+B\equiv k+1\pmod2.
+\]
+
+所以本卡的最小正相位条件等价于
+
+\[
+\boxed{\ h=1\quad\Longleftrightarrow\quad B\ {\rm odd}
+\quad\Longleftrightarrow\quad k\equiv0\pmod2.\ }
+\]
+
+这使 \(q=2\) 的 phase 过滤可在分解 \(N_b(k)\) 前执行。
+
 ## 3. 反向恢复
 
 给定 b=3 mod 8、1<=k<=(b-1)/2 和一个正因子 u of N_b(k)，定义
@@ -121,7 +143,8 @@ gcd(A,R-1)=1；A 与 (R-1)/2 分别相对 (p+1)/2 满足 strict odd-prime excess
 2. 两个 strict-excess 门分别给出 Q_0=A,beta_0=2 和 Q_1=R-1,beta_1=1；
 3. gcd(A,R-1)=1 给 M=A(R-1)，而第二条等式模 p 化为
    8A^2(R-1)=1 mod p；故 canonical second rechart 的 C=2A；
-4. B 为奇数时，automatic phase h=(2(M mod p)-B)/p 恰为 1。
+4. \(B\) 为奇数、等价地 \(k\) 为偶数时，automatic phase
+   \(h=(2(M\bmod p)-B)/p\) 恰为 \(1\)。
 
 所以这是一个可验证的 fresh-root source-construction interface。它不跳过 terminal-first
 priority，也不把 source construction 本身升级为 verified macro edge。
@@ -138,7 +161,7 @@ C=2A、cofactor gate 和 h=1：
 | 67801 | 14819 | 4364 | 152540695 | 26491 | 84187 |
 | 68713 | 6427 | 2104 | 12787511 | 31143 | 103067 |
 
-条件 b=3 mod 8 不能删除。形式行
+四条正控制的 \(k\) 都为偶数，正是上述 phase prefilter。条件 b=3 mod 8 不能删除。形式行
 
 $$
 (p,A,R;b,k,u)=(673,317,699;39,2,199)
@@ -150,7 +173,7 @@ A。它严格排除把只满足方程的 formal chart 误报为 beta_0=2 source�
 
 ## 5. 边界
 
-该参数化缩小了下一轮来源研究的搜索空间：先选 b 与 k，再分解 N_b(k) 并逐行检查
+该参数化缩小了下一轮来源研究的搜索空间：先选 b 与偶数 k，再分解 N_b(k) 并逐行检查
 source、priority、typed lift 和势。它没有证明存在一个避开全部 terminal-first 菜单的行；
 p=34897 与 p=68713 已由 gap-3/gap-7 priority boundary 正确截断。全局问题仍是证明
 每个 terminal-first unresolved 状态有此类或另一类真实出口。

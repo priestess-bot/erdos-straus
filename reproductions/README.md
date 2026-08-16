@@ -154,7 +154,8 @@ PYTHONPATH=reproductions python3 \
 high-source 子族反向成 b-k-u 因子参数式：候选从 N_b(k) 的一个因子 u 恢复，而不是
 遍历所有 p,A。它重放四个实际正控制，并以 p=673 固定 root-parity 反控制，防止把
 formal high chart 误报为可达 source。该脚本不搜索素数，也不检查 terminal-first 之外的
-全局递归结论。
+全局递归结论。在该最小正相位子族中，\(h=1\) 等价于 \(k\equiv0\pmod2\)，故可先
+排除全部奇数 \(k\)。
 
 ```bash
 PYTHONPATH=reproductions python3 \
@@ -164,8 +165,9 @@ PYTHONPATH=reproductions python3 \
 `type_i_high_anchor_q3_bku_parameterization.py` 给出对应的 \(q=3\) 因子参数式
 \(N_b^{(3)}(k)\)。它从三个固定因子行恢复完整的 fresh-root two-anchor 来源；其中
 \(p=41617,93481\) 虽通过 \(C=3A\) 但 phase 为 \(h=0\)，\(p=60913\) 才满足
-\(B\equiv1\pmod3\) 且 phase 为 \(h=2\)。因此脚本把 automatic source 与可接入
-最小正相位 fixed-(n) bridge 的来源明确分开；它不搜索素数或注册递归宏边。
+\(B\equiv1\pmod3\)、等价地 \(k\equiv2\pmod3\)，且 phase 为 \(h=2\)。因此脚本把
+automatic source 与可接入最小正相位 fixed-\(n\) bridge 的来源明确分开；它不搜索
+素数或注册递归宏边。
 
 ```bash
 PYTHONPATH=reproductions python3 \

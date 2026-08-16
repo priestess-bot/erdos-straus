@@ -11,8 +11,9 @@ statement: >-
   N_b^(3)(k)=12b^3+8b^2+12b+9+16b^2k 的正因子，p=N_b^(3)(k)/u。
   反之，满足明确的素数、窗口、赋值、互素与 canonical 门的 (b,k,u) 因子行
   恢复实际 fresh-root q=3 automatic 高锚来源。其 phase 满足 h=2 当且仅当
-  B=(pR+1)/(4A)=1 mod 3；否则该来源不接入最小正相位 fixed-n bridge。该结果只
-  构造来源，不保证 terminal-first unresolved、typed macro 或全局递降。
+  B=(pR+1)/(4A) 在模 3 下为 1，也当且仅当 k=2 mod 3；否则该来源不接入最小正相位
+  fixed-n bridge。该结果只构造来源，不保证 terminal-first unresolved、typed macro
+  或全局递降。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -186,22 +187,30 @@ window 和 parity 成立；\(A\equiv3\pmod4\)；\(4A\mid pR+1\) 且
 所以 complete-excess carrier \(M=A(R-1)\) 的 rechart cofactor 确为 \(C=3A\)。
 于是 (9)--(10) 是实际 fresh-root automatic 来源的可验证构造接口。
 
-还须把 phase 单独保留。令 \(r=M\bmod p\)，则
+还须把 phase 单独保留。将 (4) 回代入 canonical 等式的展开式，可得
+
+\[
+4B=3p+3b+3\delta+4k-1.
+\tag{11}
+\]
+
+所以 \(B\equiv k-1\pmod3\)。令 \(r=M\bmod p\)，则
 
 \[
 h={3r-B\over p},\qquad 0\le h<3,
 \qquad h\equiv-B\pmod3.
-\tag{11}
+\tag{12}
 \]
 
 因为 \(p\equiv1\pmod3\)，故
 
 \[
-\boxed{\ h=2\quad\Longleftrightarrow\quad B\equiv1\pmod3.\ }
-\tag{12}
+\boxed{\ h=2\quad\Longleftrightarrow\quad B\equiv1\pmod3
+\quad\Longleftrightarrow\quad k\equiv2\pmod3.\ }
+\tag{13}
 \]
 
-只有 (12) 成立的行才是最小正相位 \(h=q-1\) 的 fixed-\(n\) bridge 输入。把
+只有 (13) 成立的行才是最小正相位 \(h=q-1\) 的 fixed-\(n\) bridge 输入。把
 automatic \(C=3A\) 误当成自动 \(h=2\) 会错误扩张该桥的定义域。
 
 ## 4. 固定控制与相位边界
@@ -216,8 +225,9 @@ automatic \(C=3A\) 误当成自动 \(h=2\) 会错误扩张该桥的定义域。
 | 93481 | 14824 | 2365 | 507142593 | 26219 | 95387 | 85023 | 0 |
 
 两条 \(h=0\) 行仍是实际 fresh-root、two-anchor、互素的 \(q=3\) automatic
-来源，但 \(B\equiv0\pmod3\)。它们是 (12) 必要性的控制，而不是 fixed-\(n\) 的
-\(h=2\) 输入。\(p=60913\) 的 \(B\equiv1\pmod3\) 给 \(h=2\)，但已有 terminal-first
+来源，但 \(B\equiv0\pmod3\) 且 \(k\equiv1\pmod3\)。它们是 (13) 必要性的控制，
+而不是 fixed-\(n\) 的 \(h=2\) 输入。\(p=60913\) 的 \(B\equiv1\pmod3\) 与
+\(k\equiv2\pmod3\) 给 \(h=2\)，但已有 terminal-first
 叶优先抢占；这张卡不把它登记为非终端宏边。
 
 ## 5. 边界

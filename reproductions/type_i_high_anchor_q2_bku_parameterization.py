@@ -122,6 +122,7 @@ def verify_positive_control(control: dict[str, int]) -> dict[str, object]:
     C = int(high_rechart["C"])
     residue = M % p
     phase_numerator = 2 * residue - B
+    phase_h = phase_numerator // p if phase_numerator % p == 0 else -1
     checks = {
         "core_prime": shared.is_prime(p) and p % 24 == 1,
         "b_parity": b % 8 == 3 and A % 4 == 3,
@@ -151,8 +152,10 @@ def verify_positive_control(control: dict[str, int]) -> dict[str, object]:
             and 2 * A < p
             and (8 * A * A * (R - 1)) % p == 1
         ),
+        "phase_range": 0 <= phase_h < 2,
+        "phase_parameter_parity": B % 2 == (k + 1) % 2 and phase_h == (k + 1) % 2,
         "minimal_positive_phase": (
-            phase_numerator % p == 0 and phase_numerator // p == 1
+            phase_h == 1 and B % 2 == 1 and k % 2 == 0
         ),
     }
     if not all(checks.values()):
@@ -161,7 +164,7 @@ def verify_positive_control(control: dict[str, int]) -> dict[str, object]:
         "input": {"b": b, "k": k, "u": u},
         "recovered": recovered,
         "high_anchor": {"B": B, "Q0": Q0, "beta0": beta0, "Q1": Q1, "beta1": beta1},
-        "automatic_q": {"M": M, "C": C, "phase_h": 1},
+        "automatic_q": {"M": M, "C": C, "phase_h": phase_h, "k_mod_2": k % 2},
         "checks": checks,
     }
 
