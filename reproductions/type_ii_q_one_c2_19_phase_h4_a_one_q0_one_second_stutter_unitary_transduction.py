@@ -220,13 +220,34 @@ def verify_d_one_proper_unitary_closure() -> None:
             raise AssertionError("d=1 proper-unitary D-gate closure changed")
 
 
+def verify_third_carrier_d_one_p_primary_gate() -> None:
+    """Check the q**3+1 factorization used by the d=1 third-carrier closure."""
+    controls = (
+        (73, 37, 65),
+        (5, 3, 3),
+    )
+    for p, q, expected_remainder in controls:
+        numerator = q**3 + 1
+        factorized = (q + 1) * (q * q - q + 1)
+        if not (
+            p == 2 * q - 1
+            and q >= 3
+            and p > q + 1
+            and numerator == factorized
+            and numerator % p == expected_remainder
+            and p % q == q - 1
+        ):
+            raise AssertionError("third-carrier d=1 p-primary factorization control changed")
+
+
 def verify() -> None:
     verify_fixture()
     verify_unitary_dichotomy()
     verify_rho_one_p_primary_gate()
     verify_proper_unitary_d_gate()
     verify_d_one_proper_unitary_closure()
-    print("verified second-stutter unitary carrier and p-primary D-gate closures")
+    verify_third_carrier_d_one_p_primary_gate()
+    print("verified second-stutter unitary carrier and d=1 p-primary closures")
 
 
 def main() -> None:
