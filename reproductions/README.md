@@ -161,6 +161,17 @@ PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_q2_bku_parameterization.py --verify
 ```
 
+`type_i_high_anchor_q3_bku_parameterization.py` 给出对应的 \(q=3\) 因子参数式
+\(N_b^{(3)}(k)\)。它从三个固定因子行恢复完整的 fresh-root two-anchor 来源；其中
+\(p=41617,93481\) 虽通过 \(C=3A\) 但 phase 为 \(h=0\)，\(p=60913\) 才满足
+\(B\equiv1\pmod3\) 且 phase 为 \(h=2\)。因此脚本把 automatic source 与可接入
+最小正相位 fixed-(n) bridge 的来源明确分开；它不搜索素数或注册递归宏边。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_q3_bku_parameterization.py --verify
+```
+
 `type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
 它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
 在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供
