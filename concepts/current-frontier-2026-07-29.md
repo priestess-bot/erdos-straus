@@ -9577,3 +9577,23 @@ n=\frac{qp+1}{q+1},\qquad M=kn,
 作用精确分为一个实际的 q=3 marked descent 和所有 \(k\ge2\) 的空接口；非 \(Q\)-carried
 witness 与平方因子机制仍是开放正向分支。详见
 [G-anchor Q-carried external-source witness 的完整分类](../claims/type-I-g-anchor-q-carried-external-source-witness-classification.md)。
+
+## 2026-08-16：严格 \(Q\)-carried 的平方因子接口也只有 q=3 例外
+
+平方因子 external-source 的较宽条件 \(e\mid M^2\) 不能直接由线性 witness 分类处理。
+但若严格要求 \(e\mid Q=(p-3)/2\)，则有新的精确平方交集
+
+\[
+\boxed{(Q,M^2)=(Q,(3q+1)^2)}.
+\]
+
+对 \(k\ge2\)，令 \(s=(3q+1)/2\)。任何候选 \(e\mid Q\) 会给出
+\(L=s^2/e\equiv-1\pmod q\)，并被下界 \(4e+1\ge3q\) 压入
+\(\{q-1,2q-1,3q-1\}\)。奇偶性只留下 \(L=2q-1\)，再由
+\(2q-1\mid25\) 矛盾。因此平方因子机制在严格 \(Q\)-内也完全为空。
+
+唯一例外仍是 \(k=1,q=3,p\equiv73\pmod{120},e=5\)，它正是已有的
+\(g=5\) marked descent。这个结论不能推广到非严格 support：例如
+\((p,k,e)=(409,6,63)\) 是真实平方因子 lift，但 \(63\nmid Q=203\)。
+详见
+[G-anchor 严格 Q-carried 平方因子 external-source 的完整分类](../claims/type-I-g-anchor-strict-q-carried-quadratic-external-source-classification.md)。

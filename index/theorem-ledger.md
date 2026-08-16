@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 828 |
+| 数学状态 | `established` | 829 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 659 |
+| 证明来源 | `repository_derivation` | 660 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 806 |
+| 审阅状态 | `internal_review` | 807 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -436,6 +436,7 @@
 | [R=11 固定尾未命中的精确素因子分类](../claims/type-I-g-anchor-r11-fixed-tail-residual-classification.md) (`type-I-g-anchor-r11-fixed-tail-residual-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [G-anchor Jacobi-odd raw 终点到固定图表因子表的投影、相位擦除与带标记嵌入](../claims/type-I-g-anchor-raw-fixed-chart-factor-projection.md) (`type-I-g-anchor-raw-fixed-chart-factor-projection`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [G-anchor 原始边在未标记物理 determinant 行上的无穷自环族](../claims/type-I-g-anchor-raw-physical-row-self-loop-family.md) (`type-I-g-anchor-raw-physical-row-self-loop-family`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
+| [G-anchor 严格 Q-carried 平方因子 external-source 的完整分类](../claims/type-I-g-anchor-strict-q-carried-quadratic-external-source-classification.md) (`type-I-g-anchor-strict-q-carried-quadratic-external-source-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [full-Q torsor target 的 canonical raw adapter 局部 no-go](../claims/type-I-g-anchor-torsor-source-adapter-boundary.md) (`type-I-g-anchor-torsor-source-adapter-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [冻结 G 状态的规范有限群分离证书重建](../claims/type-I-g-separator-certificate-reconstruction.md) (`type-I-g-separator-certificate-reconstruction`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [G 图表排除同图表 p 减一的 B 等于一桥](../claims/type-I-g-state-same-chart-pminusone-b1-no-go.md) (`type-I-g-state-same-chart-pminusone-b1-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
