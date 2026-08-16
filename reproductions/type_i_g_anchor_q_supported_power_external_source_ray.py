@@ -17,6 +17,7 @@ Q_MODULUS = 23
 POWER_PRIME = 5
 POWER_EXPONENT = 7
 POWER_FACTOR = POWER_PRIME**POWER_EXPONENT
+SOURCE_POWER_LEVEL = POWER_PRIME**4
 RAY_BASE = 3_913
 RAY_STEP = 15_000
 FIXTURE_T = (1, 4)
@@ -51,6 +52,9 @@ def ray_record(t: int) -> tuple[int, ...]:
     if not (
         is_prime(prime)
         and gcd(RAY_BASE, RAY_STEP) == 1
+        and (6 * K - 1) % POWER_PRIME == 0
+        and pow(POWER_PRIME, POWER_EXPONENT, Q_MODULUS) == (-K) % Q_MODULUS
+        and (Q_MODULUS * 163 + 1) % SOURCE_POWER_LEVEL == 0
         and prime == 4 * K * a + 1
         and prime % 24 == 1
         and ((prime - 1) // 4) % K == 0

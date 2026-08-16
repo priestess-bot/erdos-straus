@@ -9614,3 +9614,8 @@ p=3913+15000t,\qquad t\ge1,
 选择器必须记录 \(\ell\)-adic exponent capacity，不能只记录 \(Q\) 的素因子支撑或
 \((Q,M)\)。详见
 [G-anchor \(Q\)-supported 幂借用平方外部源射线](../claims/type-I-g-anchor-q-supported-power-external-source-ray.md)。
+更一般地，固定 \(k\) 的任一单素数幂 witness \(e=\ell^j\) 若满足
+\(\operatorname{rad}(e)\mid Q\)，则必有 \(\ell\mid6k-1\)、
+\(\ell^j\equiv-k\pmod{4k-1}\)，且 \((p-1)/(4k)\) 落在同一 CRT 类；反向的
+充分大 prime 参数又恢复该 witness。故这一单素数幂切片已经是精确的 valuation-aware
+容量图，尚未外推到多素数 composite witness。

@@ -4,10 +4,11 @@ claim_id: type-I-g-anchor-q-supported-power-external-source-ray
 title: G-anchor Q-supported 幂借用平方外部源射线
 statement: >-
   定义平方因子 external-source witness e 的 Q-supported 条件为 rad(e)|Q，
-  其中 Q=(p-3)/2；这不同于严格条件 e|Q。若 6|k、q=4k-1、奇素数 ell|6k-1，
-  且 ell^j=-k (mod q)，则令 s=ceil(j/2) 并令 a0 满足 qa0=-1 (mod ell^s)，
-  素数等差列 p=4k(a0+ell^s t)+1 含无穷多个核心素数；除有限初值外，
+  其中 Q=(p-3)/2；这不同于严格条件 e|Q。令 c=6/gcd(k,6)、q=4k-1。若奇素数
+  ell|6k-1 且 ell^j=-k (mod q)，则令 s=ceil(j/2) 并取 c|a0、qa0=-1 (mod ell^s)，
+  素数等差列 p=4k(a0+c*ell^s*t)+1 含无穷多个核心素数；除有限初值外，
   e=ell^j 是这些 p 在尺度 k 的 Q-supported 完整平方因子 external-source witness。
+  反过来，每个固定 k 的单素数幂 Q-supported witness 都必落在这一 CRT 射线形式。
   特别地，对每个素数 p=3913+15000t、t>=1，取 k=6、q=23、e=5^7，
   有 v5(Q)=1、e 不整除 Q，却有 e|M^2、e<=M、e=-M (mod 23)，并给出
   明确的 Type I 证书和 n<p 的 marked strict lift。故严格 e|Q 的 no-go
@@ -76,10 +77,11 @@ e\mid Q.
 
 ## 2. 一般幂借用模板
 
-设
+设正整数 \(k\)，并令
 
 \[
-6\mid k,\qquad q=4k-1,
+ c=\frac6{(k,6)},
+ \qquad q=4k-1.
 \tag{4}
 \]
 
@@ -92,17 +94,20 @@ e\mid Q.
 \tag{5}
 \]
 
-令 \(s=\lceil j/2\rceil\)，并取 \(a_0\) 为
+令 \(s=\lceil j/2\rceil\)。因为 \(\ell\nmid6k\)，有 \((c,\ell)=1\)，故可取唯一的
+\(1\le a_0\le c\ell^s\) 同时满足
 
 \[
-qa_0\equiv-1\pmod{\ell^s}
+ a_0\equiv0\pmod c,
+\qquad
+qa_0\equiv-1\pmod{\ell^s}.
 \tag{6}
 \]
 
-的任一正代表元。对 \(t\ge0\) 定义
+对 \(t\ge0\) 定义
 
 \[
-a_t=a_0+\ell^s t,
+a_t=a_0+c\ell^s t,
 \qquad
 p_t=4ka_t+1.
 \tag{7}
@@ -154,17 +159,50 @@ q+2k=6k-1\equiv0\pmod\ell
 \(e\equiv-M_t\pmod q\)。随着 \(t\) 增大，\(M_t\) 线性增大，故 \(e\le M_t\)
 除有限多个 \(t\) 外成立。并且 \(p_t-n_t=a_t>0\)，所以 source 确实严格较小。
 
-由 \(6\mid k\)，有 \(p_t\equiv1\pmod{24}\)，而
-\((p_t-1)/4=ka_t\)。最后，取 \(p_0=4ka_0+1\)。它与 \(4k\) 互素；又由 (11)
+由 \(c\mid a_t\)，有 \(6\mid ka_t\)，所以 \(p_t\equiv1\pmod{24}\)，而
+\((p_t-1)/4=ka_t\)。最后，取 \(p_0=4ka_0+1\)。它与 \(4kc\) 互素；又由 (11)
 有 \(p_0\equiv3\pmod\ell\)，故
 
 \[
-\gcd(p_0,4k\ell^s)=1.
+\gcd(p_0,4kc\ell^s)=1.
 \tag{12}
 \]
 
 Dirichlet 定理于是给出 (7) 中无穷多个素数。对这些素数，(9) 是
 `quadratic-factor-external-source-descent` 的完整输入，结论随之成立。\(\square\)
+
+### 单素数幂的逆向完备性
+
+反过来，固定一个核心素数 \(p\)，令 \(k\mid(p-1)/4\)、
+\(q=4k-1\)、\(n=(qp+1)/(q+1)\)、\(M=kn\)、\(Q=(p-3)/2\)。若
+
+\[
+e=\ell^j
+\]
+
+是一个 \(Q\)-supported 的完整平方因子 witness，则令
+\(a=(p-1)/(4k)\)、\(s=\lceil j/2\rceil\)。必有
+
+\[
+\ell\mid6k-1,
+\qquad
+\ell^j\equiv-k\pmod q,
+\qquad
+c\mid a,
+\qquad
+qa\equiv-1\pmod{\ell^s}.
+\]
+
+确实，\(\operatorname{rad}(e)\mid Q\) 与 \(e\mid M^2\) 给出
+\(\ell\mid(Q,M)\)。又 \((Q,k)=1\)，故 \(\ell\mid n\)；既有精确公式
+\((Q,M)=(Q,3q+1)\) 遂给 \(\ell\mid3q+1=2(6k-1)\)。\(Q\) 为奇数，
+所以 \(\ell\mid6k-1\)。witness 的余类条件及 \(M\equiv k\pmod q\) 给出第二式；
+\(\ell\nmid k\) 且 \(e\mid M^2\) 给出 \(\ell^s\mid n=qa+1\)。最后
+\(6\mid(p-1)/4=ka\) 等价于 \(c\mid a\)。因此 \(a\) 正是 (6) 的 CRT 类，
+而 \(p\) 落在 (7) 的同一射线上。
+
+所以本节的模板对 **单素数幂** \(Q\)-supported witness 是双向精确的；尚未把这个结论
+外推至多个 \(Q\)-素数共同构成的 composite witness。
 
 ## 3. 一个严格非 \(Q\)-carried 的无穷射线
 
