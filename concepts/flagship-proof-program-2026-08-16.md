@@ -28,6 +28,8 @@ used_by:
 sources:
 - claim: type-I-target-divisor-even-terminal-selector
   role: exact-Type-I-target-divisor-even-terminal-normal-form
+- claim: type-I-factorization-free-centered-hit-terminal-serializer
+  role: raw-H4-terminal-first-pair-serializer
 - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
   role: actual-H4-arithmetic-stutter-closure-boundary
 - claim: type-I-path-anchored-atomic-split-complete-excess-admission
@@ -52,7 +54,7 @@ last_checked: '2026-08-17'
 
 ## 核验结论与范围
 
-本文是截至 **2026-08-16** 的仓库内前沿核验和后续研究议程，不是 Erdős--Straus
+本文是截至 **2026-08-17** 的仓库内前沿核验和后续研究议程，不是 Erdős--Straus
 猜想已获证明的声明。文中标为“已建立”的内容，指相应 claim 卡已经给出仓库内推导和
 记录的审阅状态；“待证”均是尚未闭合的全称命题。所有递归边仍须遵守
 [分母逃逸状态合同](denominator-escape-state-contract.md)中的 E1--E5，而不能以有限
@@ -143,6 +145,13 @@ one-use ledger。见
 **尚缺的闭包。** 必须从 source/path provenance 重新计算 target 的 F/G/hit 类型，处理
 terminal-first priority、payload scope 与 serializer guards；不能只用 \(c_q\le p-2\)
 和 branch-local owner 宣称 E1--E5。
+
+**新增的终端分派。** 当 atomic target 的完整 factorization 尚未可用时，中心 hit 不再
+必须先被编码为完整指数向量：任何互素 pair \((u,v)\) 满足 \(uv\mid K_T\)、
+\(u+v\equiv0\pmod {R_T}\)，都可仅以 gcd、整除与同余验证，并立即序列化为 direct Type I
+terminal。它因此消除了 raw target 的一个 terminal-first serializer 前置条件；它不构成
+F/G/hit 的替代分类，也不说明每个 actual H4 target 都有或能有效找到该 pair。见
+[无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md)。
 
 **受限 typed 控制。** 两个 local H4 atomic chart 已能以“有限 centered box 不命中 +
 单一 support prime 的长模 involution witness”独立重分类为 F；这避免了全 generated-subgroup

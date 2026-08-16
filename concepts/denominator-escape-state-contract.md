@@ -69,6 +69,8 @@ sources:
   role: q-adic-necessary-lift-interface
 - claim: type-I-coprime-factor-normal-form
   role: type-I-normal-form-verifier
+- claim: type-I-factorization-free-centered-hit-terminal-serializer
+  role: raw-chart-terminal-first-pair-receipt
 - claim: type-II-coprime-factor-normal-form
   role: type-II-normal-form-verifier
 - claim: type-I-general-dyadic-terminal-transfer
@@ -182,6 +184,42 @@ G 态的 `not_applicable` 是类型信息，不是数值零。验证器必须重
 `marked_solution_set` 非空，也不会给出解提升。若边使用与图表无关的
 \(W_S=\operatorname{Sol}(p_0)\)，必须单独验证提升映射和良基势；若使用中心标记集，
 G 态的该集合为空，不能作为递降来源。
+
+### 2.1a 无因数分解的 terminal-first pair receipt
+
+完整 support 尚未可用时，`raw_chart_terminal_candidate` 可以在建立递归 state **之前**
+尝试一个更窄的 Type I 终端回执。给定根图表整数
+
+\[
+pR+1=4K,\qquad R\ge3,
+\tag{1a}
+\]
+
+以及互素正整数 \((u,v)\)，只要 verifier 重算
+
+\[
+(u,v)=1,\qquad uv\mid K,\qquad u+v\equiv0\pmod R,
+\tag{1b}
+\]
+
+便可由 [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md)
+直接构造并核验 Type I 三分式。规范载荷为：
+
+```text
+certificate_type = type_i_centered_pair_terminal
+selector_status = terminal_leaf
+recursive_edge_eligible = false
+factorization_free_verifier = true
+chart = (p, R, K)
+centered_pair = (u, v)
+normal_form = (gap, x, certificate_divisor)
+egyptian_denominators = (X, Y, Z)
+```
+
+这里的 `factorization_free` 只描述该**直接终端**的验证方式。它不允许把不完整的
+`K_context` 注册成 F/G/hit state，也不允许略过 canonical witness、分离角色、signed defect、
+source scope 或 E1--E5 后把 raw candidate 入队。pair 不存在或尚未找到时，选择器必须继续
+走完整 typed classification；pair receipt 不是对 target fiber 的空/非空判定替代品。
 
 ### 2.2 合法模数与分析商对象的分离
 

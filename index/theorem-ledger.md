@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 844 |
+| 数学状态 | `established` | 845 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 675 |
+| 证明来源 | `repository_derivation` | 676 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 822 |
+| 审阅状态 | `internal_review` | 823 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -331,6 +331,7 @@
 | [F 型目标对合的 target-odd Fourier 能量与 q-primary 相位塌缩](../claims/type-I-f-target-involution-fourier-phase-collapse.md) (`type-I-f-target-involution-fourier-phase-collapse`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [F 型关系格对偶的双方向相位需求映射](../claims/type-I-f-two-direction-phase-demand-map.md) (`type-I-f-two-direction-phase-demand-map`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
 | [F 型小对偶双方向需求的跨状态容量边界](../claims/type-I-f-two-direction-small-dual-candidate-census.md) (`type-I-f-two-direction-small-dual-candidate-census`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-30 |
+| [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md) (`type-I-factorization-free-centered-hit-terminal-serializer`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [固定 D 一跳 F/G source-map 的 canonical—SNF—owner 闭合三分](../claims/type-I-fg-canonical-d-lattice-owner-closure.md) (`type-I-fg-canonical-d-lattice-owner-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [F/G 相关角色物理义务的求值配对、广义 Rado 与张量和选择器](../claims/type-I-fg-dependent-role-evaluation-rado-tensor-selector.md) (`type-I-fg-dependent-role-evaluation-rado-tensor-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
 | [F/G exact successor 的最小 source 开销、选择秩松弛与变开销 Grassmann 选择器](../claims/type-I-fg-exact-successor-source-overhead-rank-slack-selector.md) (`type-I-fg-exact-successor-source-overhead-rank-slack-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
