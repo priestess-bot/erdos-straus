@@ -185,6 +185,17 @@ PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_automatic_q_phase_descent_trichotomy.py --verify
 ```
 
+`type_i_high_anchor_automatic_q_gap3_gap7_survivor_sieve.py` 将仅剩的最小相位
+automatic 来源接入有序 gap-3/gap-7 prefix：它把 prefix miss 精确写成
+\((p+3)/4\) 的模 \(3\) 因子条件与 \((p+7)/4\) 的 Type I/II divisor residue
+条件，并先用 \(p\equiv1,25,121\pmod{168}\) 过滤固定 gap-7 叶。四条实际 source
+控制和两个 core 边界防止把有限 prefix miss 误读为全 terminal miss。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_automatic_q_gap3_gap7_survivor_sieve.py --verify
+```
+
 `type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
 它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
 在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供
