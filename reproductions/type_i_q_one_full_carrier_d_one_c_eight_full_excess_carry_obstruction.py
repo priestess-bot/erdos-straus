@@ -91,18 +91,23 @@ def gcd_boundary(target: C8Target) -> None:
 
 
 def terminal_first_phase_sieve() -> tuple[int, ...]:
-    """Map the gap-seven terminal miss to the three c=8 u phases."""
+    """Combine the gap-seven miss with actual q_star=103 roughness."""
     if (8, 11, 1) not in zero_k.zero_k_shapes():
         raise AssertionError("c=8 zero-k shape changed")
     allowed: list[int] = []
     for u in range(7):
         s = 86 + 103 * u
         p = 48 * s + 1
-        if p % 7 in {1, 2, 4}:
+        n = 6 * s - 1
+        if p % 7 in {1, 2, 4} and n % 7 != 0:
             allowed.append(u)
     result = tuple(allowed)
-    if result != (1, 5, 6):
-        raise AssertionError("gap-seven terminal-miss phase sieve changed")
+    if not (
+        (6 * 86 - 1) % 7 == 4
+        and (6 * 103) % 7 == 2
+        and result == (1, 6)
+    ):
+        raise AssertionError("c=8 terminal-first plus roughness phase sieve changed")
     return result
 
 
@@ -167,11 +172,12 @@ def verify() -> None:
     phases = terminal_first_phase_sieve()
     control = actual_c_eight_control()
     parity_controls()
-    if not (phases == (1, 5, 6) and control == {"prime": 157393, "next_capacity": 4198}):
+    if not (phases == (1, 6) and control == {"prime": 157393, "next_capacity": 4198}):
         raise AssertionError("c=8 full-excess carry receipt changed")
     print(
         "verified q=1 zero-k c=8 second full-excess carry obstruction: "
-        "terminal-first residual u mod 7 is {1,5,6}, and c_next=4198"
+        "terminal-first plus q_star=103 roughness residual u mod 7 is {1,6}, "
+        "and c_next=4198"
     )
 
 
