@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import argparse
 from dataclasses import dataclass
-from math import gcd
+from math import gcd, isqrt
 
 
 @dataclass(frozen=True)
@@ -159,11 +159,56 @@ def verify_rho_one_p_primary_gate() -> None:
             raise AssertionError("rho=1 p-primary factorization control changed")
 
 
+def positive_divisors(value: int) -> tuple[int, ...]:
+    divisors: list[int] = []
+    for divisor in range(1, isqrt(value) + 1):
+        if value % divisor:
+            continue
+        divisors.append(divisor)
+        paired = value // divisor
+        if paired != divisor:
+            divisors.append(paired)
+    return tuple(sorted(divisors))
+
+
+def verify_proper_unitary_d_gate() -> None:
+    """Check the d=1 qhat=5 normalization and endpoint-only boundary row."""
+    p = 409
+    q = 205
+    d = 1
+    rho = 41
+    qhat = 5
+    h = 2 * d
+    endpoint_numerator = q * q * (qhat - 1) - h + 1
+    divisor_gate = p * h - q * q + 1
+    required_residue = pow((q * rho) % p, -1, p)
+    matching_divisors = tuple(
+        value for value in positive_divisors(abs(divisor_gate)) if value % p == required_residue
+    )
+
+    if not (
+        p % 24 == 1
+        and p == 2 * q * d - 1 == 10 * rho - 1
+        and q == 5 * rho
+        and gcd(rho, qhat) == 1
+        and endpoint_numerator == 411 * p
+        and (4 * endpoint_numerator) % p == (qhat - 5) % p == 0
+        and required_residue == 20
+        and divisor_gate == -41_206
+        and positive_divisors(abs(divisor_gate)) == (1, 2, 11, 22, 1_873, 3_746, 20_603, 41_206)
+        and matching_divisors == ()
+        and 20 + p > 0
+        and (25 * rho * rho - 20 * rho + 1) == abs(divisor_gate)
+    ):
+        raise AssertionError("proper-unitary D-gate boundary control changed")
+
+
 def verify() -> None:
     verify_fixture()
     verify_unitary_dichotomy()
     verify_rho_one_p_primary_gate()
-    print("verified signed second-stutter unitary carrier and rho=1 p-primary controls")
+    verify_proper_unitary_d_gate()
+    print("verified second-stutter unitary carrier and p-primary D-gate controls")
 
 
 def main() -> None:

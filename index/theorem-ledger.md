@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 815 |
+| 数学状态 | `established` | 816 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 37 |
-| 证明来源 | `repository_derivation` | 647 |
+| 证明来源 | `repository_derivation` | 648 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 793 |
+| 审阅状态 | `internal_review` | 794 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1098,6 +1098,7 @@
 | [H4 q-bridge stutter 的 a 坐标转导、两类正残余、raw-p-source 修复与 q0 raw re-entry](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 fresh q-carrier 的清洁 raw bridge 与 pre-root 分派](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0=1 双 q raw bridge、第二端点 p-primary 排除与 q^2 容量门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-double-q-bridge.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-double-q-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [H4 q0=1 proper-unitary 第二 re-entry 的 p-primary D-gate](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-proper-unitary-reentry-p-primary-d-gate.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-proper-unitary-reentry-p-primary-d-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0=1 第二 re-entry 的 rho=1 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-second-reentry-rho-one-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-second-reentry-rho-one-p-primary-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0=1 双 q bridge 第二 stutter 的 unitary carrier 转导](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-second-stutter-unitary-transduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-second-stutter-unitary-transduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
