@@ -139,10 +139,31 @@ def verify_unitary_dichotomy() -> None:
         raise AssertionError("third q-carrier control changed")
 
 
+def verify_rho_one_p_primary_gate() -> None:
+    """Check the factorization used to exclude the rho=1 re-entry p-block."""
+    controls = (
+        (73, 37, 1, 8),
+        (5, 3, 1, 2),
+    )
+    for p, q, d, expected_remainder in controls:
+        numerator = q**3 - q**2 + 1 - 2 * d
+        factorized = (q - 1) * (q + 1) * (q * q - q + 1)
+        if not (
+            p == 2 * q * d - 1
+            and q >= 3
+            and p > q + 1
+            and q * numerator == factorized - p
+            and numerator % p == expected_remainder
+            and p % q == q - 1
+        ):
+            raise AssertionError("rho=1 p-primary factorization control changed")
+
+
 def verify() -> None:
     verify_fixture()
     verify_unitary_dichotomy()
-    print("verified signed second-stutter unitary carrier transduction")
+    verify_rho_one_p_primary_gate()
+    print("verified signed second-stutter unitary carrier and rho=1 p-primary controls")
 
 
 def main() -> None:
