@@ -3,16 +3,17 @@ kind: claim
 claim_id: type-II-q-one-full-carrier-d-one-zero-k-capacity-ray-classification
 title: q=1 full-carrier d=1 偶支零 k 容量射线的三相刚性
 statement: >-
-  设 ordinary q=1 G full-carrier 的 persistent immediate d=1 receiver 处于
+  设 ordinary q=1 G full-carrier 的 fixed-n 宏后 d=1 算术正规形处于
   偶 t=2s 分支，令 q_* 是 fixed-n 宏的强制 excess prime，j、g 采用既有正规形，
   c 是其 p-free complete-excess target 的 residual capacity，并由
   cj+8g=12c+kp 定义整数 k。则 q_* 整除显式 annihilator
   Gamma(c,k,g)=112c+81k-72g。特别地，若 k=0，则全部可能性恰为
   (c,j,g,q_*,s)=(2,8,1,19,16 mod 19)、(8,11,1,103,86 mod 103) 或
   (56,11,7,103,86 mod 721)。第一条是既有 19 相位；后两条都有显式 ordinary
-  q=1 macro 实现：p=157393 给出 c=8，p=4129 给出 c=56。它们不因此绕过
-  terminal-first，也不自动给出 strict edge。该结果把偶支中唯一 j 不随 s 增长的
-  容量层从一般 c 压缩到三个明确相位，并证明 103 射线不是形式空集。
+  q=1 macro 实现：p=157393 给出 c=8，p=4129 给出 c=56。后续的 gap-7
+  terminal-first 排除说明 c=56 不会成为 persistent queue；c=8 仍不自动给出
+  strict edge。该结果把偶支中唯一 j 不随 s 增长的容量层从一般 c 压缩到三个明确相位，
+  并证明 103 射线不是形式空集。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -48,8 +49,9 @@ last_checked: '2026-08-17'
 
 ## 1. 偶支的统一容量等式
 
-固定 ordinary \(q=1\) G full-carrier 的 persistent immediate \(d=1\) receiver，
-并令 \(t=2s\)。沿用既有 fixed-\(n\) 宏和 p-free relay 的记号：
+固定 ordinary \(q=1\) G full-carrier 的 fixed-\(n\) macro，并暂时只记录其宏后
+\(d=1\) receiver 的算术正规形；本卡尚未在 root 层施加 terminal-first sieve。令
+\(t=2s\)。沿用既有 fixed-\(n\) 宏和 p-free relay 的记号：
 
 \[
 p=48s+1,\qquad
@@ -231,15 +233,19 @@ root 的算术输入。以第一行为例，
 \tag{19}
 \]
 
-因此 \(c=8,56\) 的 103 射线不能再由“ordinary \(q=1\) 条件会使它们全空”的路线
-关闭。它们的 complete-excess target 仍必须独立执行 terminal-first、typed
-classification 与一般 Type I selector。
+因此 \(c=8,56\) 的 103 射线不能由“ordinary \(q=1\) 条件会使它们全空”的路线
+关闭。随后新增的 [容量五十六 gap-7 terminal-first 排除]
+(type-II-q-one-full-carrier-d-one-capacity-fifty-six-gap-seven-terminal-preemption.md)
+说明 \(c=56\) 的根会在 macro 前终止；故它保留为算术宏实现，而不再是 persistent
+selector 的候选。\(c=8\) 仍须独立执行 terminal-first、typed classification 与一般
+Type I selector。
 
 ## 6. 作用域
 
 容量 \(c=2\) 的第一行与既有 \(q_\star=19\) 高相位入口相容。容量 \(8\) 和 \(56\)
-的两行已有 (17) 的算术 macro receipt；但这不声称它们是 terminal-first 未命中的
-持久队列状态，也尚未给出它们的 Type I/II terminal、可提升递降或一般 selector。
+的两行已有 (17) 的算术 macro receipt；\(c=56\) 已由后续 gap-7 卡排除为
+terminal-first 后的持久队列状态，\(c=8\) 则尚未给出全称 Type I/II terminal、可提升
+递降或一般 selector。
 
 此外，本卡不分类 \(k\ne0\) 的容量面；对这些层，\(j\) 的 \(s\)-依赖仍需与
 \(\Gamma(c,k,g)\)、\(j<3q_\star\) 及真实 complete-excess provenance 一起处理。
