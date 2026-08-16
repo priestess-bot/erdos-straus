@@ -150,6 +150,17 @@ PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_automatic_q_priority_guard.py --verify
 ```
 
+`type_i_high_anchor_q2_bku_parameterization.py` 将互素 beta_0=2、q=2 automatic
+high-source 子族反向成 b-k-u 因子参数式：候选从 N_b(k) 的一个因子 u 恢复，而不是
+遍历所有 p,A。它重放四个实际正控制，并以 p=673 固定 root-parity 反控制，防止把
+formal high chart 误报为可达 source。该脚本不搜索素数，也不检查 terminal-first 之外的
+全局递归结论。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_q2_bku_parameterization.py --verify
+```
+
 `type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
 它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
 在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供
