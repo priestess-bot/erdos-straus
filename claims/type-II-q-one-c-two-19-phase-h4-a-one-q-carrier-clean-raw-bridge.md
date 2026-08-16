@@ -171,6 +171,11 @@ v_\ell(z/d)\ge1>v_\ell(K_4)=0.
 canonical representation。因而 (10) 不是“存在一个可能的 q-path”，而是已有 H4
 receipt 可以实际重放的有限 word。
 
+更强地，clean \(q\) 意味着任意真前缀仍保留一个不在 \(K_4\) 中的 \(q\)-素因子，
+所以不会成为 full-excess Type I sink；这把 raw-path 上的该类 terminal 检查局部化到
+q endpoint。精确证明及仍保留的 state-level priority 边界见
+[内部 full-excess Type I terminal 局部化](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization.md)。
+
 ## 4. 端点的完整分派
 
 在 (10) 处定义唯一 maximal complete-excess 分解

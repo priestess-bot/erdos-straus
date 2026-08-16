@@ -124,6 +124,34 @@ def raw_q_word(residual: int, carrier: int, selected: int, q: int) -> tuple[int,
     return selected, tuple(raw_selected)
 
 
+def audit_nonterminal_prefixes(residual: int, carrier: int, selected: int, q: int) -> int:
+    """Check that every proper q-word prefix retains a factor outside K."""
+    divisor = 1
+    prefix_count = 0
+    for prime, exponent in factorization(q).items():
+        for _ in range(exponent):
+            if divisor >= q or q % divisor:
+                raise AssertionError("raw q prefix is not a proper divisor")
+            current = selected // divisor
+            remaining = q // divisor
+            other = residual - current
+            if not (
+                selected % divisor == 0
+                and remaining > 1
+                and current % remaining == 0
+                and gcd(remaining, carrier) == 1
+                and carrier % current != 0
+                and carrier % (current * other) != 0
+                and gcd(current, other) == 1
+            ):
+                raise AssertionError("clean q prefix became a full-excess terminal")
+            prefix_count += 1
+            divisor *= prime
+    if divisor != q:
+        raise AssertionError("raw q prefix audit did not consume q")
+    return prefix_count
+
+
 def audit(fixture: Fixture) -> dict[str, int | str]:
     p = fixture.prime
     r4 = 1 + p * fixture.peeled_part
@@ -165,6 +193,7 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
     ):
         raise AssertionError(f"{fixture.name}: H4 q-carrier entry changed")
 
+    interior_prefixes = audit_nonterminal_prefixes(r4, k4, z, q)
     y, raw_selected = raw_q_word(r4, k4, z, q)
     x = r4 - y
     q_x = complete_excess(x, k4)
@@ -183,6 +212,7 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         and x + y == r4
         and gcd(x, y) == 1
         and raw_selected == fixture.expected_raw_selected
+        and interior_prefixes == len(raw_selected)
         and x == fixture.expected_x
         and y == fixture.expected_y
         and q_x == fixture.expected_q_x > 1
@@ -217,6 +247,7 @@ def audit(fixture: Fixture) -> dict[str, int | str]:
         "name": fixture.name,
         "q": q,
         "raw_steps": len(raw_selected),
+        "interior_full_excess_sinks": 0,
         "capacity": target_capacity,
         "p_primary": False,
         "stutter": False,
@@ -230,6 +261,7 @@ def verify() -> None:
             "name": "prime_q37_atomic_split_strict",
             "q": 37,
             "raw_steps": 1,
+            "interior_full_excess_sinks": 0,
             "capacity": 24,
             "p_primary": False,
             "stutter": False,
@@ -238,6 +270,7 @@ def verify() -> None:
             "name": "composite_q121_atomic_split_strict",
             "q": 121,
             "raw_steps": 2,
+            "interior_full_excess_sinks": 0,
             "capacity": 80,
             "p_primary": False,
             "stutter": False,

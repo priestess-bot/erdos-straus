@@ -9457,3 +9457,20 @@ source/path、single-side/atomic payload 与 serializer guards 才能成为可�
 下一决定性缺口因此回到这些语义门以及更一般的 Type I/F/G 跨状态选择器，而不再是
 q-bridge 的 first-stutter 算术。详见
 [H4 clean \(q\)-bridge 首层容量 stutter 的全域 source \(D\)-gate 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md)。
+
+## 2026-08-16：H4 clean \(q\)-word 的内部 full-excess terminal 已局部化
+
+q-word 的 terminal-first 也不再需要被模糊地保留为沿整个 raw word 的未知检查。对任意
+真前缀 \(e\mid q,e<q\)，所选坐标 \(z/e\) 保留 \(q/e\) 的某个素因子；而
+\((q,K_4)=1\)，故 \(z/e\nmid K_4\)。完整超额形式图的汇点条件
+\(x_ey_e\mid K_4\) 因而不可能成立。也就是说，任何由 full-excess sink 产生的
+Type I terminal 只能位于 q endpoint 的 \(Q_x=Q_y=1\) 分派，不能隐藏在 q-word 的
+内部 checkpoint。
+
+结合 endpoint p-primary 排除和首层 stutter 全域关闭，actual nonterminal q endpoint
+现在都已具备 \(c_q\le p-2\) 的严格算术势。剩余的是清晰的 E3/priority 接口：source
+和 target 的 typed reclassification、state/edge serializer、scope，双侧时的 atomic owner
+和 ledger，以及版本化的 state-level terminal/alternate prefix。此结果不把这些语义字段
+假定为已实现，但排除了“需要沿 q 的每个真前缀逐一寻找 full-excess terminal”
+这一额外障碍。详见
+[H4 clean \(q\)-bridge 的内部 full-excess Type I terminal 局部化](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization.md)。

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 822 |
+| 数学状态 | `established` | 823 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 653 |
+| 证明来源 | `repository_derivation` | 654 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 800 |
+| 审阅状态 | `internal_review` | 801 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1084,6 +1084,7 @@
 | [H4 d4=1 clean q-bridge 容量 stutter 的 source D-gate 全称排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 fresh carrier 与 root cyclotomic 容量的互素屏障](../claims/type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality.md) (`type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 的完整超额分解与单一 stutter 门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [H4 clean q-bridge 的内部 full-excess Type I terminal 局部化](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 端点的 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0 re-entry 的归一化小除子残数门与 carrier d=1 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-d-residue-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0 re-entry 的有限低 p source-gate 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-finite-low-p-source-gate-closure`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
