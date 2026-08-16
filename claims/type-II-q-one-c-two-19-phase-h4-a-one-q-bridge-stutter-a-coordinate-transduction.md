@@ -377,10 +377,10 @@ s=q_0t>0,
 candidate 仍须通过 atomic source admission、terminal-first/typed intercept 与 suffix
 guards；\(s=0\) 的全局势和 (25) 两条通道的统一 closure 也仍然开放。
 
-后继的 [\(d_4=1\) source \(D\)-gate 全称排除](type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md)
-表明：在 actual \(d_4=1\) 子域，作为本卡入口的 (2) 根本不发生。因此本卡的
-\(q_0=1\) 和 \(q_0>1\) stutter maps 在该子域仅保留为条件性整数正规形；它们的
-非真空用途在 \(d_4>1\) 分支，或用于核对 source closure 之前的局部蕴含。
+后继的[首层容量 stutter 全域 source \(D\)-gate 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md)
+表明：作为本卡入口的 (2) 在整个 actual 19-phase H4 scope 中根本不发生，而不只是
+\(d_4=1\) 子域。因此本卡的 \(q_0=1\) 和 \(q_0>1\) stutter maps 当前都仅保留为
+条件性整数正规形；它们可用于核对局部蕴含，但不再是 actual \(d_4>1\) residual。
 
 ## 7. 定向静态控制
 

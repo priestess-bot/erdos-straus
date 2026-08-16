@@ -9426,3 +9426,34 @@ t\pmod {4(q-1)}.
 不构成 actual H4 receipt。下一步必须转向其它 Type I/G action 的 terminal、严格递降或
 solution-lift 合同。详见
 [H4 \(q_0\) re-entry 的完整 source-row CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md)。
+
+## 2026-08-16：H4 clean \(q\)-bridge 的全部首层 capacity stutter 已关闭
+
+此前 finite \(D\)-gate 闭包只按 \(q_0>1\) re-entry 的叙述组织，容易把
+\(q_0=1,d_4>1\) 误留为 live residual。复核第一条 actual \(q\)-word 后可见：令
+
+\[
+w=qd=\frac{p+1}{2},\qquad h=2d,
+\qquad x_q=E_xD,
+\]
+
+其唯一算术 stutter \(E_x\equiv q\pmod p\) 直接强制
+
+\[
+D\equiv2d(4d^2-2d+1)\pmod p,
+\qquad D\mid ph-q+1,
+\qquad0<D<2dp.
+\]
+
+该推导不含 \(q_0,\gamma,t\) 或 payload 参数。因而既有 low-\(p\) 空表、nonminimal
+\(D\)-lift finite screen，以及 minimal-\(D\) 的 7+3+7 条 phase-ray closure，都适用于
+每个 first stutter，而不只适用于 re-entry。于是 actual H4 clean \(q\)-bridge 的
+\(E_x\equiv q\pmod p\) 全域为空；\(q_0=1\) double/second/third carrier 与
+\(q_0>1\) re-entry 都没有实际 parent。
+
+这是一项 source-provenance 闭合，而不是整个 H4 或猜想的闭合。它把任何 actual
+nonterminal clean endpoint 的算术容量压为 \(c_q\le p-2\)，但仍需 terminal-first、typed、
+source/path、single-side/atomic payload 与 serializer guards 才能成为可提升 strict macro。
+下一决定性缺口因此回到这些语义门以及更一般的 Type I/F/G 跨状态选择器，而不再是
+q-bridge 的 first-stutter 算术。详见
+[H4 clean \(q\)-bridge 首层容量 stutter 的全域 source \(D\)-gate 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md)。

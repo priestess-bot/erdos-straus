@@ -224,8 +224,10 @@ atomic controls；它们不构造或排除 (12) 的 stutter residue。
 \tag{14}
 \]
 
-它不证明 (14) 无解，也不处理 terminal-first 抢占、typed reclassification 或 atomic
-adapter 的持久化实现。这些才是下一步必须关闭的对象。
+后继的[首层容量 stutter 全域 source \(D\)-gate 关闭](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md)
+现已在整个 actual 19-phase H4 scope 中排除 (14)。因此每个 actual nonterminal
+endpoint 的算术容量都严格满足 \(c_q\le p-2\)。本卡仍不处理 terminal-first 抢占、
+typed reclassification 或 atomic adapter 的持久化实现；这些语义门不能由容量严格性替代。
 
 ## 7. 定向回执
 
