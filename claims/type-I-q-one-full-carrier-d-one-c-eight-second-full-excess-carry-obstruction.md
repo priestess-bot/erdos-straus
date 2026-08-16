@@ -253,6 +253,13 @@ persistent 反例。
 raw source、适配的 Type I terminal，或一条带独立势和 E1--E5 的跨图表边；本卡没有
 排除这些路线，也没有证明 G/Type I global exit。
 
+根层还有一组看似更短的 ordinary Type II \(p-1\) tail：若
+\(m+1=(p-1)/r\)，它会直接回落到分母 \(r+1\)。对这里的 \(s\ge86\)，
+\(r=2,3,4,6\)（以及偶 \(s\) 的 \(r=8\)）已由
+[低分母 \(p-1\) Type II 尾扇无路](type-II-q-one-full-carrier-d-one-c-eight-low-denominator-tail-fan-no-go.md)
+逐一排除。这个新增 no-go 不改变本卡的增容结论，也不排除其它 Type I/II gap；它只防止
+把这些小分母 tail 误作尚未支付的 c=8 terminal-first 出口。
+
 后续的[结构 \(m=1\) 节点增容障碍](type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md)
 还表明两个由本 target macro 因子直接指定的不同 formal \(m=1\) 节点，其强制
 完整-excess carry 同样增容；它们没有被误记作本卡的重复 action 或已验证 source/path。
