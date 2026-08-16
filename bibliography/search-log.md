@@ -82,3 +82,20 @@
   而非本次指定二阶靶，当前结论不依赖它，故未新增论文卡。
 - 本轮只否定任意除子残数序列的“目标安全真子群加次线性异常”普适覆盖；没有找到也
   没有声称得到针对所有移位素数 \(p+4A^2C\) 的对应反例。
+
+## 2026-08-17：当前公开源复核
+
+- 重开 *Integers* Volume 26 的目录与 A42 存档，确认 Chamberland 的
+  *The Erdős--Straus Conjecture and the Structure of Primes* 已作为该卷 A42 列出；
+  不把其 Type II 结构刻画误记为“每个素数都有 Type II 解”的全称定理。
+- 重查直接相关的 2026 arXiv 入口：Bello--Hernández--Benito--Fernández
+  [2606.10922](https://arxiv.org/abs/2606.10922) 是 divisor parametrization；
+  Ventas [2605.04551](https://arxiv.org/abs/2605.04551) 明示的是 heuristic
+  finiteness 与有限样本；Xu [2605.23601](https://arxiv.org/abs/2605.23601) 明示
+  tame/wild 的有限计算分类。三者都没有在摘要中给出全核心素数的确定性 closure。
+- 重查 Mihnea--Dumitru [2509.00128](https://arxiv.org/abs/2509.00128)，其公开稿报告
+  计算验证到 \(10^{18}\)，仍按 computation report 而非独立全量复现定理登记。Bradford
+  [2602.11774](https://arxiv.org/abs/2602.11774) 仍是预印本的 solution claim；既有的
+  覆盖系统主链审查结论不因题名或摘要而升级。
+- 该轮是题名/标识符驱动的当前核查，不是 MathSciNet、zbMATH 或全部预印本服务器的穷尽
+  前向检索。在这组公开入口中未发现需要新增、且已完成主链核验的全称进展。
