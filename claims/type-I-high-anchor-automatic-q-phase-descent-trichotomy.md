@@ -4,17 +4,19 @@ claim_id: type-I-high-anchor-automatic-q-phase-descent-trichotomy
 title: automatic q 高锚来源的参数相位—递降三分法
 statement: >-
   对互素 beta_0=2、Q_1=R-1 的 automatic C=qA 高锚来源，q 只能为 2 或 3。
-  写 p=2A+b 或 p=3A+b，并令 k 为相应 b-k-u 参数。则 q=2 时
-  h=1 当且仅当 k 为偶数；奇数 k 强制 h=0。q=3 时 k=2,0,1 mod 3 分别强制
-  h=2,1,0。令 e=q-h-1；direct cofactor target 的 canonical residual 精确满足
-  n_T=n+4Ae。故只有 q=2 的偶数 k 与 q=3 的 k=2 mod 3 有 e=0 并保留 n_T=n，
-  可作为既有 fixed-n 严格势递降桥的条件输入；其余三类有 e>=1，强制 n_T>p，不能通过
-  该 direct automatic-cofactor 路径提供题设所需的 n<p 递降。该结论不建立
+  写 p=2A+b 或 p=3A+b，并令 k 为相应 b-k-u 参数。严格 q=2 来源的 root/bundle
+  奇偶性强制 B 为奇、h=1 和 k 为偶；k 为奇、h=0 仅是不可实现的形式同余行。
+  q=3 时 k=2,0,1 mod 3 分别强制 h=2,1,0。令 e=q-h-1；direct cofactor target
+  的 canonical residual 精确满足 n_T=n+4Ae。因此所有实际 q=2 行与 q=3 的
+  k=2 mod 3 行有 e=0 并保留 n_T=n，可作为既有 fixed-n 严格势递降桥的条件输入；
+  q=3 的其余两类有 e>=1，强制 n_T>p，不能通过该 direct automatic-cofactor 路径
+  提供题设所需的 n<p 递降。该结论不建立
   terminal-first、parent、typed lift 或全局 selector edge。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
+  - type-I-high-anchor-q2-minimal-phase-forcing
   - type-I-high-anchor-q2-bku-source-parameterization
   - type-I-high-anchor-q3-bku-source-parameterization
   - type-I-high-anchor-positive-phase-terminal-boundary
@@ -86,10 +88,20 @@ h\equiv k+1\pmod2.
 \tag{5}
 \]
 
-由于 \(0\le h<2\)，这已确定 \(h\)：偶数 \(k\) 给 \(h=1\)，奇数 \(k\) 给
-\(h=0\)。这里 (4) 来自 canonical 恒等式，发生在 \(B\) 的奇偶 gate 之前；
-因此它也适用于任何满足 (1) 的 \(q=2\) automatic 行，而不依赖现有 inverse-card
-只把 \(h=1\) 行作为反向恢复目标的额外范围限制。
+作为形式同余，偶数 \(k\) 给 \(h=1\)，奇数 \(k\) 给 \(h=0\)。但 (1) 的严格
+two-anchor 输入还给出 \(A\equiv3\pmod4\)、\(R\equiv3\pmod8\)。因此
+
+\[
+K=\frac{pR+1}{4}\equiv1\pmod2,
+\qquad A\equiv1\pmod2,
+\qquad B=K/A\equiv1\pmod2.
+\tag{5a}
+\]
+
+由 (3) 的相位式可知 \(h\equiv-B\equiv1\pmod2\)，故每一条**实际** \(q=2\)
+来源都满足 \(h=1\)，并由 (4) 强制 \(k\) 为偶数。\(k\) 为奇的 \(h=0\) 行只保留为
+脱离该来源域时的形式相位计算，不能作为本卡的 nonminimal source branch。精确证明见
+[beta_0=2 两锚 automatic q=2 来源的最小相位强制](type-I-high-anchor-q2-minimal-phase-forcing.md)。
 
 对 \(q=3\)，参数式给
 
@@ -162,15 +174,14 @@ n_T\ge n+4A>p.
 
 | \(q\) | \(k\) 的类 | \(h\) | \(e=q-h-1\) | direct target |
 |---:|---:|---:|---:|---|
-| 2 | \(0\pmod2\) | 1 | 0 | 保留 \(n_T=n\)，条件性 fixed-\(n\) bridge |
-| 2 | \(1\pmod2\) | 0 | 1 | \(n_T>p\) |
+| 2 | \(0\pmod2\)（实际行强制） | 1 | 0 | 保留 \(n_T=n\)，条件性 fixed-\(n\) bridge |
 | 3 | \(2\pmod3\) | 2 | 0 | 保留 \(n_T=n\)，条件性 fixed-\(n\) bridge |
 | 3 | \(0\pmod3\) | 1 | 1 | \(n_T>p\) |
 | 3 | \(1\pmod3\) | 0 | 2 | \(n_T>p\) |
 
-因此 factor-source 研究不应把所有 automatic \(q\) 行视为候选递降边。只有表中
-两条 \(e=0\) 类值得继续支付 parent、priority、typed lift 与 E5 的成本；其余三类
-若要有出口，必须使用不同的 terminal 或不同的递降构造。
+因此 factor-source 研究不应把所有 automatic \(q\) 行视为候选递降边。实际 \(q=2\)
+行和表中的 \(q=3,e=0\) 类值得继续支付 parent、priority、typed lift 与 E5 的成本；
+\(q=3\) 的其余两类若要有出口，必须使用不同的 terminal 或不同的递降构造。
 
 ## 4. 固定控制
 

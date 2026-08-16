@@ -2,8 +2,10 @@
 """Verify the automatic-q parameter phase/descent trichotomy.
 
 This replays four actual fresh-root controls and checks the residual identity
-n_T = n + 4*A*e.  It classifies only the direct automatic-cofactor target:
-no parent, terminal-first, or global solution-lift claim is made here.
+n_T = n + 4*A*e.  In the strict two-anchor source domain, it also verifies
+that q=2 has only the minimal h=1 phase. It classifies only the direct
+automatic-cofactor target: no parent, terminal-first, or global
+solution-lift claim is made here.
 """
 
 from __future__ import annotations
@@ -21,11 +23,46 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "reproductions" / "type-i-high-anchor-automatic-q-phase-descent-trichotomy-results.json"
 
 PARAMETER_CLASSES = (
-    {"q": 2, "k_mod_q": 0, "h": 1, "e": 0, "small_target": True},
-    {"q": 2, "k_mod_q": 1, "h": 0, "e": 1, "small_target": False},
-    {"q": 3, "k_mod_q": 0, "h": 1, "e": 1, "small_target": False},
-    {"q": 3, "k_mod_q": 1, "h": 0, "e": 2, "small_target": False},
-    {"q": 3, "k_mod_q": 2, "h": 2, "e": 0, "small_target": True},
+    {
+        "q": 2,
+        "k_mod_q": 0,
+        "h": 1,
+        "e": 0,
+        "small_target": True,
+        "actual_source_compatible": True,
+    },
+    {
+        "q": 2,
+        "k_mod_q": 1,
+        "h": 0,
+        "e": 1,
+        "small_target": False,
+        "actual_source_compatible": False,
+    },
+    {
+        "q": 3,
+        "k_mod_q": 0,
+        "h": 1,
+        "e": 1,
+        "small_target": False,
+        "actual_source_compatible": True,
+    },
+    {
+        "q": 3,
+        "k_mod_q": 1,
+        "h": 0,
+        "e": 2,
+        "small_target": False,
+        "actual_source_compatible": True,
+    },
+    {
+        "q": 3,
+        "k_mod_q": 2,
+        "h": 2,
+        "e": 0,
+        "small_target": True,
+        "actual_source_compatible": True,
+    },
 )
 
 SOURCE_CONTROLS = (
@@ -56,10 +93,44 @@ def verify_parameter_classes() -> list[dict[str, object]]:
             "phase": h == int(item["h"]),
             "excess": e == int(item["e"]),
             "small_target_exactly_at_e_zero": bool(item["small_target"]) == (e == 0),
+            "q2_odd_class_is_formal_only": (
+                q != 2
+                or k_mod_q != 1
+                or not bool(item["actual_source_compatible"])
+            ),
         }
         if not all(checks.values()):
             raise AssertionError(f"parameter class changed: {item}, {checks}")
-        rows.append({"q": q, "k_mod_q": k_mod_q, "h": h, "e": e, "checks": checks})
+        rows.append(
+            {
+                "q": q,
+                "k_mod_q": k_mod_q,
+                "h": h,
+                "e": e,
+                "actual_source_compatible": bool(item["actual_source_compatible"]),
+                "checks": checks,
+            }
+        )
+    return rows
+
+
+def verify_q2_minimal_phase_parity() -> list[dict[str, int]]:
+    """Check the complete mod-16 parity core of the strict q=2 source domain."""
+    rows: list[dict[str, int]] = []
+    for p_mod_16 in (1, 9):
+        for R_mod_16 in (3, 11):
+            K_mod_2 = ((p_mod_16 * R_mod_16 + 1) // 4) % 2
+            if K_mod_2 != 1:
+                raise AssertionError("strict q2 source stopped forcing K odd")
+            rows.append(
+                {
+                    "p_mod_16": p_mod_16,
+                    "R_mod_16": R_mod_16,
+                    "K_mod_2": K_mod_2,
+                }
+            )
+    if parameter_phase(2, 0) != (1, 0) or parameter_phase(2, 1) != (0, 1):
+        raise AssertionError("q2 formal phase map changed")
     return rows
 
 
@@ -123,6 +194,16 @@ def replay_residual(control: dict[str, int | str], q: int, label: str) -> dict[s
         "minimal_phase_fixed_n": (e == 0) == (n_target == n),
         "nonminimal_leaves_small_domain": (e >= 1) == (n_target > p),
     }
+    if q == 2:
+        checks["q2_minimal_phase_forced"] = (
+            A % 4 == 3
+            and R % 8 == 3
+            and K % 2 == 1
+            and B % 2 == 1
+            and h == 1
+            and k % 2 == 0
+            and e == 0
+        )
     if e == 0:
         checks["fixed_n_bridge_arithmetic_domain"] = 5 <= n <= p - 4 and d_target >= 2
     if not all(checks.values()):
@@ -139,6 +220,7 @@ def replay_residual(control: dict[str, int | str], q: int, label: str) -> dict[s
 
 def build_result() -> dict[str, object]:
     parameter_rows = verify_parameter_classes()
+    q2_parity_rows = verify_q2_minimal_phase_parity()
     controls = [
         replay_residual(source_control(int(item["q"]), int(item["p"])), int(item["q"]), str(item["label"]))
         for item in SOURCE_CONTROLS
@@ -148,14 +230,15 @@ def build_result() -> dict[str, object]:
     if minimal != ["p3793", "p60913"] or nonminimal != ["p41617", "p93481"]:
         raise AssertionError("frozen phase/descent control partition changed")
     return {
-        "schema_version": 1,
-        "certificate_type": "automatic_q_parameter_phase_descent_trichotomy_v1",
+        "schema_version": 2,
+        "certificate_type": "automatic_q_parameter_phase_descent_trichotomy_v2",
         "scope": (
             "Exact phase and residual classification for direct automatic C=qA cofactor "
             "targets in the coprime beta_0=2 two-anchor source subfamily. This does not "
             "supply terminal-first admission, a parent receipt, a typed lift, or a global edge."
         ),
         "parameter_classes": parameter_rows,
+        "q2_minimal_phase_parity": q2_parity_rows,
         "source_controls": controls,
         "partition": {"minimal_phase": minimal, "nonminimal": nonminimal},
     }
