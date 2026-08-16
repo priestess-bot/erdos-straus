@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 825 |
+| 数学状态 | `established` | 826 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 656 |
+| 证明来源 | `repository_derivation` | 657 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 803 |
+| 审阅状态 | `internal_review` | 804 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1111,6 +1111,7 @@
 | [H4 q0=1 第三 q carrier 的 d=1 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-p-primary-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0=1 第三 q carrier 的 d=1 p-free 容量图与 source D-gate](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-pfree-capacity-map.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-pfree-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [H4 fresh q-carrier 与固定 AC/Chamberland 扇的有界公共因子障碍](../claims/type-II-q-one-c-two-19-phase-h4-fresh-q-ac-fan-bounded-intersection.md) (`type-II-q-one-c-two-19-phase-h4-fresh-q-ac-fan-bounded-intersection`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 full-overlap 的实际前驱排除](../claims/type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 p-free 门失败的 p-block 来源障碍](../claims/type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction.md) (`type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 19 相位 H4 p-primary 残余的 overlap 小锚 renewal](../claims/type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal.md) (`type-II-q-one-c-two-19-phase-h4-p-primary-small-anchor-renewal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |

@@ -9021,6 +9021,38 @@ root-fan 的路线。后续若要利用 \(q\)，必须在进入 root 前从
 terminal、split-carrier 或 strict macro。详见
 [H4 fresh carrier 与 root cyclotomic 容量的互素屏障](../claims/type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality.md)。
 
+## 2026-08-16：H4 fresh \(q\)-carrier 与固定 AC 扇只能有有界公共因子
+
+另一条看似自然的合流是把 H4 注入的
+
+\[
+q=\frac{p+1}{2d_4},\qquad d_4\le1535
+\]
+
+直接作为一条有界 AC/Chamberland 射线的因子来源。它现在有精确的接口障碍：对任何有限
+参数扇 \(\mathcal S\)，令
+
+\[
+P_{\mathcal S}(p)=\prod_{(A,C)\in\mathcal S}(p+4A^2C),
+\qquad C_{\mathcal S}=\prod_{(A,C)\in\mathcal S}(4A^2C-1),
+\]
+
+则由 \(p\equiv-1\pmod q\) 有
+
+\[
+\gcd(q,P_{\mathcal S}(p))=\gcd(q,C_{\mathcal S}).
+\]
+
+所以 fixed fan 对 fresh \(q\) 的全部共同因子都是 \(p\)-无关的常数。更细地，若同一
+AC 因子 \(h=4ACK-1\) 同时整除 \(q\) 与 \(p+4A^2C\)，则
+\(h\mid4A^2C-1\)，故 \(K\le A\)。在 \(A,C\le B\) 的盒内，这只留下
+\(K\le B,h\le4B^3-1\) 的有限菜单；它不能承载一般 AC 射线允许增长的 \(K\)。
+
+这不否定 AC 方向：因子可以完全不来自 \(q\)，Chamberland 有序化也可重选因子。
+它只关闭“把整个 growing fresh \(q\)-carrier 直接接进固定 AC 扇”的桥；任何继续使用
+该桥的论证都必须给出额外的非 \(q\)-carried 因子或新的 lift。详见
+[H4 fresh q-carrier 与固定 AC 扇的有界公共因子障碍](../claims/type-II-q-one-c-two-19-phase-h4-fresh-q-ac-fan-bounded-intersection.md)。
+
 ## 2026-08-16：fresh \(q\)-carrier 已在 H4 前 root 节点变成实际 clean raw word
 
 上一节留下的 \(q\mid Q\mid(R_4-h)\) 现在不再只是一个可供猜测的因子。设
