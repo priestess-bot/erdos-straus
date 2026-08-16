@@ -231,6 +231,10 @@ persistent 反例。
 raw source、适配的 Type I terminal，或一条带独立势和 E1--E5 的跨图表边；本卡没有
 排除这些路线，也没有证明 G/Type I global exit。
 
+后续的[结构 \(m=1\) 节点增容障碍](type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md)
+还表明两个由本 target macro 因子直接指定的不同 formal \(m=1\) 节点，其强制
+完整-excess carry 同样增容；它们没有被误记作本卡的重复 action 或已验证 source/path。
+
 聚焦复核：
 
 ~~~bash

@@ -248,7 +248,10 @@ terminal-first 后的持久队列状态，\(c=8\) 则尚未给出全称 Type I/I
 递降或一般 selector。对 \(c=8\) 而言，后续的
 [第二完整 excess 增容障碍](type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction.md)
 进一步证明它的确定性 full-excess continuation 反而使 capacity 从 \(8\) 增大，故下一步
-不能重复这条 bundle 路线。
+不能重复这条 bundle 路线。两个由该 target macro 因子直接指定的不同 \(m=1\) 节点也已由
+[结构节点增容障碍](type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md)
+排除其 complete-excess continuation 作为 E5 边；这仍不替代对其它实际 raw occurrence
+的 source/path 研究。
 
 此外，本卡不分类 \(k\ne0\) 的容量面；对这些层，\(j\) 的 \(s\)-依赖仍需与
 \(\Gamma(c,k,g)\)、\(j<3q_\star\) 及真实 complete-excess provenance 一起处理。
