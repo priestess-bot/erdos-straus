@@ -208,6 +208,19 @@ PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_automatic_q_gap3_gap7_survivor_sieve.py --verify
 ```
 
+type_i_high_anchor_automatic_q_natural_gap_q_carrier_exclusion.py 检查 strict
+automatic 来源的 natural gap \(m=R-p+1\)。因 \(x=(R+1)/4\) 与第二
+full-excess carrier \(Q=R-1\) 互素，任何 \(Q\)-supported 平方除子都退化为
+\(d=1\)；除非 \(m\mid p+4\) 给出 Type II 叶节点，这个 natural gap 必须
+引入 \(Q\) 之外的新素因子。脚本重放 \(q=2\) 的 \(p=3793\) 与
+\(q=3\) 的 \(p=60913\) actual source，另用 \((p,R)=(73,83)\) 检查剩余
+\(d=1\) Type II 条件的锐性。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_automatic_q_natural_gap_q_carrier_exclusion.py --verify
+```
+
 `type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
 它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
 在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供

@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 839 |
+| 数学状态 | `established` | 840 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 670 |
+| 证明来源 | `repository_derivation` | 671 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 817 |
+| 审阅状态 | `internal_review` | 818 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -482,6 +482,7 @@
 | [automatic q 高锚的全相位仿射 target 与外层秩出口](../claims/type-I-high-anchor-automatic-q-affine-all-phase-exit.md) (`type-I-high-anchor-automatic-q-affine-all-phase-exit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [automatic-q 高锚来源的 gap-3/gap-7 terminal-priority 边界](../claims/type-I-high-anchor-automatic-q-gap3-gap7-priority-boundary.md) (`type-I-high-anchor-automatic-q-gap3-gap7-priority-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [最小 automatic q 来源的 gap-3/gap-7 prefix 生存筛](../claims/type-I-high-anchor-automatic-q-gap3-gap7-survivor-sieve.md) (`type-I-high-anchor-automatic-q-gap3-gap7-survivor-sieve`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [automatic-q 高锚自然 gap 的 full-excess Q-carrier 排除](../claims/type-I-high-anchor-automatic-q-natural-gap-q-carrier-exclusion.md) (`type-I-high-anchor-automatic-q-natural-gap-q-carrier-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [automatic q 高锚来源的参数相位—递降三分法](../claims/type-I-high-anchor-automatic-q-phase-descent-trichotomy.md) (`type-I-high-anchor-automatic-q-phase-descent-trichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [高锚 automatic-q 余因子 gate 的来源构造模板](../claims/type-I-high-anchor-automatic-q-source-template.md) (`type-I-high-anchor-automatic-q-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高锚点 direct cofactor 宏步的 E1--E4 准入合同](../claims/type-I-high-anchor-cofactor-macro-e1-e4-admission.md) (`type-I-high-anchor-cofactor-macro-e1-e4-admission`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
