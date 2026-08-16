@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "certificate_type": "automatic_q_affine_all_phase_outer_rank_exit_v1",
+  "scope": "Exact H=>T arithmetic and outer-rank payment for actual automatic C=qA sources. A strict rank payment is conditional on the separate macro E1--E4 and terminal-first admission contracts; it is not a literal n<p descent when e>0.",
+  "controls": [
+    {
+      "label": "p3793_q2_h1",
+      "source": {
+        "p": 3793,
+        "A": 1811,
+        "R": 7011,
+        "K": 6648181,
+        "B": 3671,
+        "q": 2
+      },
+      "target": {
+        "A_T": 3622,
+        "R_T": 14255,
+        "K_T": 13517304,
+        "B_T": 3732
+      },
+      "phase": {
+        "h": 1,
+        "e": 0,
+        "r": 3732
+      },
+      "residuals": {
+        "n": 233,
+        "n_T": 233
+      },
+      "outer_rank": {
+        "source": 1984,
+        "target": 992
+      },
+      "checks": {
+        "actual_strict_automatic_source": true,
+        "phase_range": true,
+        "automatic_phase_equation": true,
+        "affine_target_K": true,
+        "affine_target_R": true,
+        "target_support": true,
+        "target_quotient": true,
+        "target_canonical_high_chart": true,
+        "residual_shift": true,
+        "outer_rank_strict": true,
+        "q_times_support_below_p": true,
+        "minimal_phase_fixed_n": true
+      }
+    },
+    {
+      "label": "p41617_q3_h0",
+      "source": {
+        "p": 41617,
+        "A": 11051,
+        "R": 43811,
+        "K": 455820597,
+        "B": 41247,
+        "q": 3
+      },
+      "target": {
+        "A_T": 33153,
+        "R_T": 43811,
+        "K_T": 455820597,
+        "B_T": 13749
+      },
+      "phase": {
+        "h": 0,
+        "e": 2,
+        "r": 13749
+      },
+      "residuals": {
+        "n": 393,
+        "n_T": 88801
+      },
+      "outer_rank": {
+        "source": 39179,
+        "target": 13059
+      },
+      "checks": {
+        "actual_strict_automatic_source": true,
+        "phase_range": true,
+        "automatic_phase_equation": true,
+        "affine_target_K": true,
+        "affine_target_R": true,
+        "target_support": true,
+        "target_quotient": true,
+        "target_canonical_high_chart": true,
+        "residual_shift": true,
+        "outer_rank_strict": true,
+        "q_times_support_below_p": true,
+        "zero_phase_same_chart_support_promotion": true
+      }
+    },
+    {
+      "label": "p60913_q3_h2",
+      "source": {
+        "p": 60913,
+        "A": 18647,
+        "R": 72259,
+        "K": 1100378117,
+        "B": 59011,
+        "q": 3
+      },
+      "target": {
+        "A_T": 55941,
+        "R_T": 221435,
+        "K_T": 3372067539,
+        "B_T": 60279
+      },
+      "phase": {
+        "h": 2,
+        "e": 0,
+        "r": 60279
+      },
+      "residuals": {
+        "n": 2329,
+        "n_T": 2329
+      },
+      "outer_rank": {
+        "source": 49743,
+        "target": 16581
+      },
+      "checks": {
+        "actual_strict_automatic_source": true,
+        "phase_range": true,
+        "automatic_phase_equation": true,
+        "affine_target_K": true,
+        "affine_target_R": true,
+        "target_support": true,
+        "target_quotient": true,
+        "target_canonical_high_chart": true,
+        "residual_shift": true,
+        "outer_rank_strict": true,
+        "q_times_support_below_p": true,
+        "minimal_phase_fixed_n": true
+      }
+    },
+    {
+      "label": "p93481_q3_h0",
+      "source": {
+        "p": 93481,
+        "A": 26219,
+        "R": 95387,
+        "K": 2229218037,
+        "B": 85023,
+        "q": 3
+      },
+      "target": {
+        "A_T": 78657,
+        "R_T": 95387,
+        "K_T": 2229218037,
+        "B_T": 28341
+      },
+      "phase": {
+        "h": 0,
+        "e": 2,
+        "r": 28341
+      },
+      "residuals": {
+        "n": 9489,
+        "n_T": 219241
+      },
+      "outer_rank": {
+        "source": 83322,
+        "target": 27774
+      },
+      "checks": {
+        "actual_strict_automatic_source": true,
+        "phase_range": true,
+        "automatic_phase_equation": true,
+        "affine_target_K": true,
+        "affine_target_R": true,
+        "target_support": true,
+        "target_quotient": true,
+        "target_canonical_high_chart": true,
+        "residual_shift": true,
+        "outer_rank_strict": true,
+        "q_times_support_below_p": true,
+        "zero_phase_same_chart_support_promotion": true
+      }
+    }
+  ],
+  "phase_coverage": {
+    "q2_h1": [
+      "p3793_q2_h1"
+    ],
+    "q3_h0": [
+      "p41617_q3_h0",
+      "p93481_q3_h0"
+    ],
+    "q3_h2": [
+      "p60913_q3_h2"
+    ]
+  },
+  "uninstantiated_parameter_class": {
+    "q": 3,
+    "k_mod_3": 0,
+    "h": 1,
+    "e": 1,
+    "note": "The affine proof covers this source-compatible parameter class, but this fixture does not claim an actual fresh-root control for it."
+  }
+}

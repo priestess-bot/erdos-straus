@@ -10,7 +10,8 @@ statement: >-
   的 canonical residual 精确满足 n_T=n+4Ae。因此所有实际 q=2 行与 q=3 的
   k=2 mod 3 行有 e=0 并保留 n_T=n，可作为既有 fixed-n 严格势递降桥的条件输入；
   q=3 的其余两类有 e>=1，强制 n_T>p，不能通过该 direct automatic-cofactor 路径
-  提供题设所需的 n<p 递降。该结论不建立
+  提供题设所需的 n<p 递降；但其 automatic support qA 仍可在独立宏准入后提供严格的
+  outer-rank state exit。该结论不建立
   terminal-first、parent、typed lift 或全局 selector edge。
 claim_status: established
 proof_provenance: repository_derivation
@@ -179,9 +180,12 @@ n_T\ge n+4A>p.
 | 3 | \(0\pmod3\) | 1 | 1 | \(n_T>p\) |
 | 3 | \(1\pmod3\) | 0 | 2 | \(n_T>p\) |
 
-因此 factor-source 研究不应把所有 automatic \(q\) 行视为候选递降边。实际 \(q=2\)
-行和表中的 \(q=3,e=0\) 类值得继续支付 parent、priority、typed lift 与 E5 的成本；
-\(q=3\) 的其余两类若要有出口，必须使用不同的 terminal 或不同的递降构造。
+因此 factor-source 研究不应把所有 automatic \(q\) 行视为候选**小分母**递降边。实际
+\(q=2\) 行和表中的 \(q=3,e=0\) 类值得继续支付 parent、priority、typed lift 与
+fixed-\(n\) bridge 的成本；\(q=3\) 的其余两类若要有题设所需的 \(n<p\) 出口，必须
+使用不同的 terminal 或不同的小分母递降构造。它们并不缺少 direct macro 的 E5 支付：
+automatic \(C=qA\) 的全相位 target 都有严格 outer-rank state exit，见
+[automatic q 高锚的全相位仿射 target 与外层秩出口](type-I-high-anchor-automatic-q-affine-all-phase-exit.md)。
 
 ## 4. 固定控制
 

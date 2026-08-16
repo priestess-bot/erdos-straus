@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 832 |
+| 数学状态 | `established` | 839 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 663 |
+| 证明来源 | `repository_derivation` | 670 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 810 |
+| 审阅状态 | `internal_review` | 817 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -479,6 +479,10 @@
 | [H19-k23 十四条残存进程的统一常数 Type I 边界](../claims/type-I-h19-uniform-constant-boundary.md) (`type-I-h19-uniform-constant-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [H19双固定尺度边界的全变量偶尺度外源审计](../claims/type-I-h19-variable-even-scale-after-k6-1b.md) (`type-I-h19-variable-even-scale-after-k6-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [H19变量偶尺度剩余的纯除子剩余障碍](../claims/type-I-h19-variable-even-scale-residue-boundary-1b.md) (`type-I-h19-variable-even-scale-residue-boundary-1b`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [automatic q 高锚的全相位仿射 target 与外层秩出口](../claims/type-I-high-anchor-automatic-q-affine-all-phase-exit.md) (`type-I-high-anchor-automatic-q-affine-all-phase-exit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [automatic-q 高锚来源的 gap-3/gap-7 terminal-priority 边界](../claims/type-I-high-anchor-automatic-q-gap3-gap7-priority-boundary.md) (`type-I-high-anchor-automatic-q-gap3-gap7-priority-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [最小 automatic q 来源的 gap-3/gap-7 prefix 生存筛](../claims/type-I-high-anchor-automatic-q-gap3-gap7-survivor-sieve.md) (`type-I-high-anchor-automatic-q-gap3-gap7-survivor-sieve`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [automatic q 高锚来源的参数相位—递降三分法](../claims/type-I-high-anchor-automatic-q-phase-descent-trichotomy.md) (`type-I-high-anchor-automatic-q-phase-descent-trichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [高锚 automatic-q 余因子 gate 的来源构造模板](../claims/type-I-high-anchor-automatic-q-source-template.md) (`type-I-high-anchor-automatic-q-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高锚点 direct cofactor 宏步的 E1--E4 准入合同](../claims/type-I-high-anchor-cofactor-macro-e1-e4-admission.md) (`type-I-high-anchor-cofactor-macro-e1-e4-admission`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高锚点 direct cofactor 与外层支撑秩重置的词典序拼接](../claims/type-I-high-anchor-cofactor-outer-rank-composition.md) (`type-I-high-anchor-cofactor-outer-rank-composition`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
@@ -493,6 +497,9 @@
 | [高锚非整除同图表支撑重置的余因子 gate 边界](../claims/type-I-high-anchor-nonmonotone-reset-gate-boundary.md) (`type-I-high-anchor-nonmonotone-reset-gate-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-06 |
 | [高锚点 cofactor r-图表链的正相位一次性令牌](../claims/type-I-high-anchor-positive-phase-one-shot-token.md) (`type-I-high-anchor-positive-phase-one-shot-token`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高锚点正相位的余量终端接口边界](../claims/type-I-high-anchor-positive-phase-terminal-boundary.md) (`type-I-high-anchor-positive-phase-terminal-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-06 |
+| [互素 beta_0=2、q=2 最小正相位 automatic 高锚来源的 b-k-u 因子参数化](../claims/type-I-high-anchor-q2-bku-source-parameterization.md) (`type-I-high-anchor-q2-bku-source-parameterization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [beta_0=2 两锚 automatic q=2 来源的最小相位强制](../claims/type-I-high-anchor-q2-minimal-phase-forcing.md) (`type-I-high-anchor-q2-minimal-phase-forcing`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [互素 beta_0=2、q=3 automatic 高锚来源的 b-k-u 因子参数化与相位门](../claims/type-I-high-anchor-q3-bku-source-parameterization.md) (`type-I-high-anchor-q3-bku-source-parameterization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [高锚同图表单调支撑提升的余因子 gate 工程边界](../claims/type-I-high-anchor-same-chart-gate-engineering-boundary.md) (`type-I-high-anchor-same-chart-gate-engineering-boundary`) | `established` | `mixed` | `internal_review` | - | 2026-08-06 |
 | [高锚点 charged r-图表的三相非回返窗口](../claims/type-I-high-anchor-three-phase-nonreturn-window.md) (`type-I-high-anchor-three-phase-nonreturn-window`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [高锚点正相位 token 的 canonical checkpoint 传播合同](../claims/type-I-high-anchor-token-canonical-checkpoint-propagation.md) (`type-I-high-anchor-token-canonical-checkpoint-propagation`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-06 |

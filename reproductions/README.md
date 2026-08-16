@@ -178,11 +178,23 @@ PYTHONPATH=reproductions python3 \
 direct cofactor target 的 residual 上：\(q=2\) 的偶数 \(k\) 与 \(q=3\) 的
 \(k\equiv2\pmod3\) 是仅有的 \(e=0\) 类，保留 \(n_T=n\) 并可条件性进入
 fixed-\(n\) bridge；其余三类强制 \(n_T>p\)。四个实际 fresh-root 控制重放了这两个
-结果分支。它不登记 global selector edge。
+结果分支。它不登记 global selector edge，也不把失去 \(n<p\) 误读为失去 E5：
+automatic \(C=qA\) 的全部相位仍有严格 support-rank payment，见随后脚本。
 
 ```bash
 PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_automatic_q_phase_descent_trichotomy.py --verify
+```
+
+`type_i_high_anchor_automatic_q_affine_rank_exit.py` 给出同一 strict automatic source
+的完整 target 公式：\(T=(p,R+4hA,K+hpA;qA)\)。因此即使 \(q=3\) 的非最小
+\(h=0,1\) 行有 \(n_T>p\)，只要未来补齐 E1--E4 与 terminal-first guard，支撑
+\(A\to qA\) 仍严格降低外层 \(\Pi_p\)。它重放 q=2 的 \(h=1\)、q=3 的 \(h=0,h=2\)
+实际来源；没有把未实例化的 q=3 \(h=1\) 参数类伪报成控制或递归边。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_automatic_q_affine_rank_exit.py --verify
 ```
 
 `type_i_high_anchor_automatic_q_gap3_gap7_survivor_sieve.py` 将仅剩的最小相位
