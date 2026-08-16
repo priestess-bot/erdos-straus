@@ -138,6 +138,18 @@ terminal prefix。它不扫描素数或注册 selector 边。
 python3 reproductions/type_i_high_anchor_automatic_q_source_template.py --verify
 ```
 
+`type_i_high_anchor_automatic_q_priority_guard.py` 补充两个带真实 charged parent 的
+\(q=2\) automatic 来源 \(p=34897,68713\)。它逐项回放 root、high anchor、第二
+full-excess bundle 与 automatic gate。p=34897 证明只检查 gap 7 会错误留下
+`no_output`；p=68713 则检验 gap 3 应优先于同样存在的 gap 7 leaf。有序的 gap-3、
+gap-7 prefix 在 persistent anchor 和 transient bundle output 都先返回 gap-3 Type I
+terminal。它不把这个有限 prefix 声称为全部 terminal 菜单，也不登记宏边。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_automatic_q_priority_guard.py --verify
+```
+
 `type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
 它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
 在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供
