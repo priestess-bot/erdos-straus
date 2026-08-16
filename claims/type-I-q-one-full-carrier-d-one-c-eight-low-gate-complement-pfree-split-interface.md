@@ -5,16 +5,15 @@ title: q=1 容量八低容量 gate 的互补 p-free 排除与双侧 split 接口
 statement: >-
   在真实 q_star=103 的 c=8 high-R source 上，设一条实际 V-side strict raw prime
   q>2(p-1) 到达 (a,b,1)=(V/q,R-V/q,1)，令 h=gcd(a,M)，并令 a-side canonical
-  capacity c_a<8。则 p 不整除 b；所以 a,b 的完整 excess block 都 p-free，且 c_a<8
-  强制 Q_a>1。若 Q_b=1，则 b+Q_a beta_a=R、b beta_a|K 构成 actual
-  path-anchored 单侧 complete-excess payload，canonical target 的 capacity 正是
-  c_a<8。若 Q_b>1，则同一 actual raw receipt 满足双侧 atomic split 的所有
-  source/p-free 算术前提；写 T_i=lcm(M,Q_i)/M，L=T_aT_b，split target capacity
+  capacity c_a<8。事实上，对每个这样的 high q endpoint 都有 b 不整除 K，故 Q_b>1；
+  而 low gate 还强制 p 不整除 b、Q_a>1。因此同一 actual raw receipt 必满足双侧
+  atomic split 的所有 source/p-free 算术前提；写 T_i=lcm(M,Q_i)/M，L=T_aT_b，
+  split target capacity
   c_Sigma 满足 79 T_b c_Sigma+32 hq=0 (mod p)。更精确地，
   T_b=b/(2^epsilon*gcd(M,p^2+p-1-q))，其中 epsilon 只可能为 0,1,2,3；
   所以 split capacity 还满足一个无需分解 b 的二次 q-同余。低 gate 的 p-primary
-  complement 不是未支付障碍：余下分支精确缩为单侧 target typed/priority 准入，或双侧
-  split 的 independent capacity 与 typed/priority 准入。本结论不将任一候选自动升级为
+  complement 不是未支付障碍：余下分支精确缩为双侧 split 的 independent capacity 与
+  typed/priority 准入。本结论不将任一候选自动升级为
   terminal 或 E1--E5 edge。
 claim_status: established
 proof_provenance: repository_derivation
@@ -23,7 +22,6 @@ depends_on:
   - type-I-q-one-full-carrier-d-one-c-eight-v-side-direct-m-one-capacity-map
   - type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation
   - type-I-path-anchored-atomic-split-complete-excess-admission
-  - type-I-bottom-sink-scc-complete-excess-bundle-selector
   - type-I-high-support-bundle-carry-capacity-terminal-dispatch
   - denominator-escape-state-contract
 topics:
@@ -44,8 +42,6 @@ sources:
     role: primitive-V-side-source-and-shared-support
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
     role: two-sided-payload-admission-schema
-  - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
-    role: one-sided-complete-excess-normal-form
   - reproduction: reproductions/type_i_q_one_full_carrier_d_one_c_eight_low_gate_complement_pfree_split_interface.py
     role: finite-p-primary-exclusion-and-two-sided-raw-control
 visibility: public
@@ -100,7 +96,67 @@ v=Q_v\beta_v,\qquad Q_v=Q_K(v).
 \tag{5}
 \]
 
-## 2. 低 gate 排除互补坐标的 \(p\)-primary
+## 2. 高 \(q\) endpoint 的互补坐标永不饱和
+
+**引理。** 在 (1)--(2) 的任意实际 \(q>2(p-1)\) endpoint 上，
+
+\[
+\boxed{b\nmid K,\qquad Q_b>1.}
+\tag{5a}
+\]
+
+**证明。** 若 \(b\mid K\)，写 \(w=K/b\)。由 \(pR+1=4K\) 与 \(R=a+b\)，
+
+\[
+pa+1=b(4w-p).
+\tag{5b}
+\]
+
+令 \(d=4w-p\)。它为正整数。又 \(a<R/2<b\)，所以
+
+\[
+d=\frac{pa+1}{b}<p+\frac1a<p+1.
+\tag{5c}
+\]
+
+由于 \(d\equiv-p\equiv3\pmod4\) 而 \(p\equiv1\pmod4\)，必有
+\(1\le d\le p-1\)。将 \(b=(pa+1)/d\)、\(R=a+b\) 代入
+\(qa=R(p-1)-p\)，得到整数恒等式
+
+\[
+\bigl((p+d)(p-1)-dq\bigr)a=p(d-1)+1.
+\tag{5d}
+\]
+
+右边正，故左侧括号是正整数，从而
+
+\[
+a\le p(d-1)+1\le(p-1)^2.
+\tag{5e}
+\]
+
+另一方面，容量八闭式直接给出
+
+\[
+R-2(p^3+1)
+=3124224s^3+36864s^2-1680s-5>0
+\qquad(s\ge1).
+\tag{5f}
+\]
+
+于是 (5b)、(5e) 和 \(b>R/2\) 导致
+
+\[
+1\le d=\frac{pa+1}{b}
+<\frac{2\bigl(p(p-1)^2+1\bigr)}R
+<1,
+\tag{5g}
+\]
+
+矛盾。因此 \(b\nmid K\)。按 complete-excess 的定义，\(Q_b=1\) 当且仅当
+\(b\mid K\)，故第二个结论也成立。 \(\square\)
+
+## 3. 低 gate 排除互补坐标的 \(p\)-primary
 
 **引理。** 在 (1)--(4) 与 \(1\le c_a\le7\) 下，
 
@@ -160,7 +216,7 @@ source-side 分离本已有 \(p\nmid a\)，所以
 这关闭的是 low gate 上 canonical rechart 的互补 \(p\)-primary，不把 raw edge 本身
 误记为递降。
 
-## 3. 完整 excess 的 source 分支
+## 4. 低 gate 的强制双侧完整 excess payload
 
 由 complete-excess lcm 正规化，
 
@@ -176,41 +232,8 @@ source-side 分离本已有 \(p\nmid a\)，所以
 \tag{14}
 \]
 
-低 gate 没有“a-side 没有可收费完整块”的遗漏，剩余只有两种互斥情形。
-
-### 3.1 单侧分支：\(Q_b=1\)
-
-此时 \(b\mid K\)。又 \(\beta_a\mid K\)，且 \((b,\beta_a)=1\)，所以
-
-\[
-\boxed{b+Q_a\beta_a=R,\quad b\beta_a\mid K,\quad
-(Q_a,b\beta_a)=1,\quad p\nmid Q_a.}
-\tag{15}
-\]
-
-这正是 actual direct raw path 上的单侧 complete-excess payload。其 canonical support
-为
-
-\[
-M_a=\operatorname{lcm}(M,Q_a)=MT_a,
-\tag{16}
-\]
-
-而 target capacity 正是 \(c_a\)。故 high-support rank 的算术部分严格为
-
-\[
-\Lambda_p^\sharp:(0,8)\longmapsto(0,c_a),\qquad c_a<8.
-\tag{17}
-\]
-
-也就是说，source/path、maximal block、p-free charge 与 E5 的算术条件已经支付。
-若 source 的 persistent receipt、一个不借用 sink 假设的 one-sided adapter/normal-form
-verifier、target 的独立 typed classifier，以及 terminal/alternate priority prefix 都通过，
-才可将 (15)--(17) 升为完整 E1--E5 edge；本卡不跳过这些回执。
-
-### 3.2 双侧分支：\(Q_b>1\)
-
-由 (2)、(5)、(12)，
+低 gate 没有“a-side 没有可收费完整块”的遗漏，而第 2 节已经排除
+\(Q_b=1\)。所以它被强制送入双侧 payload。由 (2)、(5)、(12) 及 (5a)，
 
 \[
 (Q_a,Q_b)=1,\qquad \beta_a\beta_b\mid K,\qquad p\nmid Q_aQ_b.
@@ -314,7 +337,7 @@ L=\frac{ab}{h\,2^\epsilon g_b}.
 \(p\)-free 与 source 算术条件。余下的决定性问题是 (21) 的 strict capacity、目标 typed
 reclassification 与 priority receipt。
 
-## 4. 精确控制
+## 5. 精确控制
 
 已有 terminal-preempted c=8 控制 \(s=3279,p=157393\)，取 \(q=5963047\) 时，actual
 raw endpoint 同时有两个完整 block：
@@ -345,18 +368,19 @@ c_a=11230,\qquad c_\Sigma=38261,
 并直接满足 (4)、(22)、(29)。它只复核双侧公式和 raw payload，不作为 persistent
 counterexample 或 selector edge。
 
-## 5. 收紧后的边界
+## 6. 收紧后的边界
 
 本卡没有证明每个容量八 source 都命中低 gate，也没有保证 (21) 严格下降。它新增的是：
 
 - 对任何实际 low-gate endpoint，互补 \(p\)-primary 已被全称排除；
-- 单侧时 E5 的算术支付已经完成，剩下的是 one-sided adapter、typed/priority 准入；
-- 双侧时 source/p-free payload 已完整，(26)--(29) 使其容量只需 gcd、二进估值和模
+- 对每个高 \(q\) direct endpoint，\(Q_b>1\) 已全称成立，low gate 因而没有单侧
+  adapter 分支；
+- 双侧 source/p-free payload 已完整，(26)--(29) 使其容量只需 gcd、二进估值和模
   运算；唯一新增算术门仍是 (21) 的 capacity，而不是无来源的 formal rechart。
 
 下一条有价值的对象是：对双侧分支，将 (29) 与 \(g_b\) 的可控结构连接到
-\(c_\Sigma<8\)、terminal，或另一条全域可提升的严格势；不能再把 \(p\mid b\) 当作
-开放 source-lineage 障碍。
+\(c_\Sigma<8\)、terminal，或另一条全域可提升的严格势；不能再把 \(Q_b=1\) 或
+\(p\mid b\) 当作开放 source-lineage 障碍。
 
 聚焦复核：
 

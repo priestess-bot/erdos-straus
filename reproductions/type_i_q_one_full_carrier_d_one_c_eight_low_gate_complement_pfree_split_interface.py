@@ -77,6 +77,16 @@ def v2(value: int) -> int:
     return result
 
 
+def c_eight_size_gap(s: int) -> int:
+    """Return the closed-form positive gap R-2(p**3+1)."""
+    p = 48 * s + 1
+    R = 3_345_408 * s**3 + 50_688 * s**2 - 1_392 * s - 1
+    gap = R - 2 * (p**3 + 1)
+    if gap != 3_124_224 * s**3 + 36_864 * s**2 - 1_680 * s - 5:
+        raise AssertionError("c=8 cubic size identity changed")
+    return gap
+
+
 def low_gate_p_candidates() -> list[tuple[int, int, int, int, int]]:
     """Factor only the 56 fixed integers 32*h-79*c, never the parameter ray."""
     candidates = []
@@ -114,6 +124,7 @@ def two_side_control() -> dict[str, int]:
     if not (
         p == 157_393
         and q > 2 * (p - 1)
+        and R > 2 * (p**3 + 1)
         and edge["gcd_reduction"] == 1
         and layer == 1
         and a + b == R
@@ -123,6 +134,7 @@ def two_side_control() -> dict[str, int]:
         and b % p != 0
         and q_a > 1
         and q_b > 1
+        and K % b != 0
         and gcd(q_a, q_b) == 1
         and K % (beta_a * beta_b) == 0
         and q_a % p != 0
@@ -155,6 +167,8 @@ def two_side_control() -> dict[str, int]:
 
 
 def verify() -> None:
+    if c_eight_size_gap(1) <= 0:
+        raise AssertionError("c=8 size gap must be positive from s=1 onward")
     if divisors(source.SHARED_SUPPORT) != [1, 11, 41, 149, 451, 1639, 6109, 67199]:
         raise AssertionError("shared-support divisor menu changed")
     if low_gate_p_candidates() != [(1639, 1, 52_369, 1091, 61)]:
@@ -175,7 +189,7 @@ def verify() -> None:
     }:
         raise AssertionError("stored two-sided c=8 control changed")
     print(
-        "verified c=8 low-gate complementary p-free exclusion: "
+        "verified c=8 high-q forced split and low-gate p-free exclusion: "
         "only p=52369 candidate has s=1091 not 86 mod 103"
     )
 
