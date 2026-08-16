@@ -193,6 +193,10 @@ q\bmod p\in\mathcal C_p(D_s).
 fiber。故任何后续试图排除或命中 low gate 的论证只需处理该 source 的七个 residue
 classes，不能再把 \(h\) 当作与 \(q\) 独立的 selector choice。
 
+进一步地，[low gate 的四次 carry 商参数化](type-I-q-one-full-carrier-d-one-c-eight-low-gate-quartic-carry-parameterization.md)
+把这七类中的 \(q\mid V\) 条件精确改写为固定四次式的素因子条件和 \(p\) 的线性
+重建。该参数化仍有无界 carry 商，因而不是本节 seven-gate 菜单的排空证明。
+
 ## 4. 对 atomic split 的精确影响
 
 在 low gate 上，已有双侧 payload 给出
