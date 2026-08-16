@@ -10,7 +10,9 @@ statement: >-
   E 是这些 p 在尺度 k 的 Q-supported 完整平方因子 external-source witness。
   反过来，每个 Q-supported witness 都唯一落在这种指数向量及 CRT 射线形式。因而
   -k 是否属于由 6k-1 素因子生成的单位群子群，是固定尺度存在 Q-supported prime ray
-  的充要条件。
+  的充要条件；这个门又等价于同一子群是否含 -1。特别地，k=3 对每个核心素数都可取，
+  且该群门恒开，但其最小 witness e=17^7 仍要求 p 落在模 17^4 的一个 CRT 类，故群门
+  本身不是全称 exit。
   特别地，对每个素数 p=3913+15000t、t>=1，取 k=6、q=23、e=5^7，
   有 v5(Q)=1、e 不整除 Q，却有 e|M^2、e<=M、e=-M (mod 23)，并给出
   明确的 Type I 证书和 n<p 的 marked strict lift。故严格 e|Q 的 no-go
@@ -219,7 +221,88 @@ e=\prod_{\ell\in S}\ell^{j_\ell}
 并应用正向模板。故这个群成员资格是
 \(Q\)-supported 分支的完整、固定尺度选择门；它不保证给定 \(p\) 已落在相应 CRT 类。
 
-## 3. 一个严格非 \(Q\)-carried 的单素数幂射线
+## 3. 群门的 \(-1\) 化简及普适 \(k=3\) 潜在尺度
+
+令 \(r=6k-1\)。因 \(r\) 的每个素因子都是 \(\Gamma_k\) 的生成元，故
+\(r\in\Gamma_k\)。另一方面，模 \(q=4k-1\) 有
+
+\[
+r\equiv2k,
+\qquad
+r^2\equiv4k^2\equiv k.
+\]
+
+所以固定尺度门可以进一步化简为
+
+\[
+\boxed{-k\in\Gamma_k\quad\Longleftrightarrow\quad-1\in\Gamma_k.}
+\]
+
+这不是新的充分条件，而是把前节的有限群判据化为一个更标准的符号问题。
+
+对每个核心素数，\((p-1)/4\) 都被 \(6\) 整除，因而 \(k=3\) 始终可选。在此尺度
+
+\[
+q=11,
+\qquad r=17\equiv6\pmod{11},
+\qquad \Gamma_3=\langle6\rangle=(\mathbb Z/11\mathbb Z)^\times.
+\]
+
+确实 \(6^5\equiv-1\pmod{11}\) 且 \(6^2\not\equiv1\pmod{11}\)，所以 \(6\) 的阶为
+\(10\)，故这个群门对 \(k=3\) 恒开；并且
+
+\[
+-3\equiv8\equiv6^7\pmod{11}.
+\]
+
+不过实际 CRT 命中仍有严格条件。写
+
+\[
+a=\frac{p-1}{12},
+\qquad n=11a+1.
+\]
+
+那么 \(k=3\) 上的每个 \(Q\)-supported witness 必为 \(e=17^j\)，且它恰在
+
+\[
+j\equiv7\pmod{10},
+\qquad 17^{\lceil j/2\rceil}\mid n,
+\qquad 17^j\le3n
+\]
+
+时成立。前两项分别来自 \(17^j\equiv-3\pmod{11}\) 和全菜单的逆向完备性；最后一项
+只是 witness 的自然范围。最小指数 \(j=7\) 因而已要求
+
+\[
+17^4\mid11a+1
+\quad\Longleftrightarrow\quad
+p\equiv-11^{-1}\pmod{17^4}.
+\]
+
+因此“所有核心素数都可用 \(k=3\)”只给出普适的潜在尺度，并不把任意给定 \(p\) 放入这条
+CRT 射线。取 \(a_0=37964\)，有 \(11a_0+1=5\cdot17^4\)，所以最小指数对应
+
+\[
+p=455569+2004504t,
+\qquad
+n=83521(5+22t),
+\qquad
+M=250563(5+22t).
+\]
+
+这里 \(Q=17(13399+58956t)\)，故 \(v_{17}(Q)=1\)，而 \(e=17^7\le M\) 从
+\(t\ge75\) 起成立。固定的 \(t=76\) 给出素数控制
+
+\[
+(p,n,M,Q,e,u,v,m,D)
+=(152797873,140064717,420194151,76398935,410338673,
+75502984,77316408,149214063,13892672),
+\]
+
+并满足两条 external-source 恒等式和 Type I 证书恢复。它把群门与实际 CRT 容量严格
+分离：前者在 \(k=3\) 没有障碍，后者才是任何全称选择器必须处理的余类问题。
+
+## 4. 一个严格非 \(Q\)-carried 的单素数幂射线
 
 取
 
@@ -298,7 +381,7 @@ e\equiv17\equiv-M\pmod{23}.
 来自 G-anchor 的 \(Q\)，但其七次幂来自 \(M^2\) 的 source 赋值，而不可能满足
 严格 \(e\mid Q\)。
 
-## 4. 双素数赋值借用控制
+## 5. 双素数赋值借用控制
 
 同一尺度 \(k=6\) 已有真正的 composite control。取
 
@@ -342,7 +425,7 @@ v_5(Q)=v_7(Q)=1.
 \(E\nmid Q\)，但 \(\operatorname{rad}(E)=35\mid Q\)。因此这个控制排除了另一种
 错误简化：不能把完整 \(Q\)-supported 菜单拆成互不相干的单素数幂菜单。
 
-## 5. 对全局选择器的准确影响
+## 6. 对全局选择器的准确影响
 
 严格 \(Q\)-carried no-go 仍然正确：它排除了 `e|Q`。但 future selector 不能把
 它提升成“成功平方 witness 必有一个不在 \(Q\) 中的素因子”。上面的无穷射线反而证明：
@@ -361,12 +444,12 @@ terminal-first 后都实际进入同一个 G state。它提供的是一条无限
 分支和一个严格的容量边界：任何全称 exit 证明都必须能容纳这种赋值借用，而不能把它误删为
 “非 \(Q\)-carried”残余。
 
-## 6. 聚焦回执
+## 7. 聚焦回执
 
 ~~~bash
 python3 reproductions/type_i_g_anchor_q_supported_power_external_source_ray.py --verify
 ~~~
 
-回执只检查单素数射线中的两个固定素数 \(t=1,4\)，以及本节的双素数 \(p=3444913\)
-控制，重算严格赋值边界、两条单位分数恒等式及 Type I 恢复；它不扫描素数、分母或
-Reach history。
+回执只检查两个 \(k=6\) 单素数控制、一个 \(k=6\) 双素数控制，以及一个 \(k=3\)
+普适尺度的固定控制，重算群元关系、严格赋值边界、两条单位分数恒等式及 Type I 恢复；
+它不扫描素数、分母或 Reach history。

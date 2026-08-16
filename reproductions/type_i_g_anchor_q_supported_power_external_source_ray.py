@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Verify fixed controls for the Q-supported power external-source ray.
 
-This receipt checks two prime points of p = 3913 + 15000*t. It does not
-search for primes, denominators, or raw-path histories.
+This receipt checks fixed k=6 and k=3 points of the Q-supported rays. It does
+not search for primes, denominators, or raw-path histories.
 """
 
 from __future__ import annotations
@@ -158,6 +158,74 @@ def composite_record() -> tuple[int, ...]:
     )
 
 
+def universal_k3_record() -> tuple[int, ...]:
+    """Replay the fixed control on the universally available k=3 scale."""
+    k = 3
+    modulus = 11
+    support = 17
+    exponent = 7
+    lattice = support**4
+    factor = support**exponent
+    t = 76
+    a0 = 37_964
+    a = a0 + 2 * lattice * t
+    prime = 4 * k * a + 1
+    source = modulus * a + 1
+    retained = k * source
+    carrier = (prime - 3) // 2
+    u = (retained + factor) // modulus
+    v = retained * u // factor
+    gap = (4 * factor + 1) // modulus
+    divisor = u * u // factor
+
+    if not (
+        is_prime(prime)
+        and gcd(455_569, 2_004_504) == 1
+        and (6 * k - 1) == support
+        and len({pow(support, power, modulus) for power in range(10)}) == 10
+        and pow(support, 5, modulus) == (-1) % modulus
+        and pow(support, exponent, modulus) == (-k) % modulus
+        and a0 % 2 == 0
+        and (modulus * a0 + 1) % lattice == 0
+        and prime == 455_569 + 2_004_504 * t
+        and prime % 24 == 1
+        and ((prime - 1) // 4) % k == 0
+        and source == lattice * (5 + 22 * t)
+        and (modulus + 1) * source == modulus * prime + 1
+        and carrier == support * (13_399 + 58_956 * t)
+        and carrier % support == 0
+        and (carrier // support) % support != 0
+        and carrier % factor != 0
+        and factor <= retained
+        and retained * retained % factor == 0
+        and (retained + factor) % modulus == 0
+        and gap == 149_214_063
+        and 4 * u - prime == gap
+        and 3 <= gap <= prime - 2
+        and u * u % factor == 0
+        and (prime * u + divisor) % gap == 0
+        and (prime * u + divisor) // gap == v
+        and prime * (u + prime * (u * u // divisor)) % gap == 0
+        and prime * (u + prime * (u * u // divisor)) // gap == prime * retained
+        and reciprocal_sum(retained, u, v) == Fraction(4, source)
+        and reciprocal_sum(prime * retained, u, v) == Fraction(4, prime)
+    ):
+        raise AssertionError("universal k=3 witness or certificate changed")
+
+    return (
+        t,
+        prime,
+        source,
+        retained,
+        carrier,
+        factor,
+        u,
+        v,
+        gap,
+        divisor,
+    )
+
+
 def verify() -> None:
     receipts = tuple(ray_record(t) for t in FIXTURE_T)
     if receipts != (
@@ -178,7 +246,20 @@ def verify() -> None:
         153_125,
     ):
         raise AssertionError("fixed composite Q-supported control changed")
-    print("verified Q-supported prime-power and composite external-source controls")
+    if universal_k3_record() != (
+        76,
+        152_797_873,
+        140_064_717,
+        420_194_151,
+        76_398_935,
+        410_338_673,
+        75_502_984,
+        77_316_408,
+        149_214_063,
+        13_892_672,
+    ):
+        raise AssertionError("fixed universal k=3 control changed")
+    print("verified Q-supported k=6 controls and universal-k=3 control")
 
 
 def main() -> None:
