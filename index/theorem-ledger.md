@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 852 |
+| 数学状态 | `established` | 853 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 683 |
+| 证明来源 | `repository_derivation` | 684 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 830 |
+| 审阅状态 | `internal_review` | 831 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1164,6 +1164,7 @@
 | [q=1 full-carrier 的 d=1 再生刚性与两步 complete-excess 收口](../claims/type-II-q-one-full-carrier-d-one-regeneration-completion.md) (`type-II-q-one-full-carrier-d-one-regeneration-completion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 full-carrier d=1 偶支零 k 容量射线的三相刚性](../claims/type-II-q-one-full-carrier-d-one-zero-k-capacity-ray-classification.md) (`type-II-q-one-full-carrier-d-one-zero-k-capacity-ray-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 G 全载体 Type I 根的目标无关 phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md) (`type-II-q-one-full-carrier-phase-root-entry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 full-carrier 偶宏的 q-star=103 rough 选择判据](../claims/type-II-q-one-full-carrier-qstar-103-rough-selection-criterion.md) (`type-II-q-one-full-carrier-qstar-103-rough-selection-criterion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 full-carrier 第二 anchor overflow 的固定-n 严格宏出口](../claims/type-II-q-one-full-carrier-second-anchor-fixed-n-macro.md) (`type-II-q-one-full-carrier-second-anchor-fixed-n-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 full-carrier 首 child 的第二 anchor 低重图表严格 no-go](../claims/type-II-q-one-full-carrier-second-anchor-overflow.md) (`type-II-q-one-full-carrier-second-anchor-overflow`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 H3 掩码的 p+1 商上半区桥容量与单项式边界](../claims/type-II-q-one-mask-p-plus-one-upper-bridge-boundary.md) (`type-II-q-one-mask-p-plus-one-upper-bridge-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

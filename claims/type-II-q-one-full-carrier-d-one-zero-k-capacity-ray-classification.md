@@ -200,6 +200,9 @@ q_\star=103.
 \]
 
 第三行的模 \(721=7\cdot103\) 同时满足 (14)；它不是把两个独立的相位条件混同。
+表 (15) 的 \(s\) 同余均为 \(q_\star\) phase 的必要条件，而不是对实际宏选择的充分
+刻画；尤其 \(s\equiv86\pmod{103}\) 还必须通过
+[\(q_\star=103\) rough 选择判据](type-II-q-one-full-carrier-qstar-103-rough-selection-criterion.md)。
 
 ## 5. \(q_\star=103\) 射线的显式实现
 
