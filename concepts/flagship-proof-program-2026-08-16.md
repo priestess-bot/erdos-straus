@@ -66,8 +66,9 @@ last_checked: '2026-08-17'
    核心素数作出证书选择的全称存在性。
 2. actual H4 clean \(q\)-bridge 的首层算术 stutter 与 y-side single-side endpoint
    均已被关闭；每个非终端 endpoint 都是严格容量的 p-free atomic split。其 typed
-   classification、terminal-first priority、atomic ownership、serializer 与 scope 仍未
-   闭合。因此它是最接近完成的桥，而不是已验证的递归宏。
+   classification 与 terminal-first priority 现已有有限、规范的 target-local 构造；但
+   actual source/path validator、scope/receipt serializer 与 state admission 仍未闭合。
+   因此它是最接近完成的桥，而不是已验证的递归宏。
 3. Type II 的 \(q=1\) G endpoint 不能直接把原 source support 改名为 Type I support：
    规范根支撑与 \(X=(p+3)/4\) 互素。这个 handoff 是结构性断桥，不是再增加一个有限
    参数菜单即可解决的问题。
@@ -142,9 +143,15 @@ actual nonterminal endpoint 有 \(c_q\le p-2\)。high-H4 height 与 \(x_q\mid K_
 one-use ledger。见
 [H4 atomic owner epoch locality](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality.md)。
 
-**尚缺的闭包。** 必须从 source/path provenance 重新计算 target 的 F/G/hit 类型，处理
-terminal-first priority、payload scope 与 serializer guards；不能只用 \(c_q\le p-2\)
-和 branch-local owner 宣称 E1--E5。
+**已完成的 target-local 子件。** 对 canonical atomic payload，完整 Bradford
+gap--square-divisor screen 先给出 direct Type I/II terminal；screen miss 后，完整
+factorization、centered box 与有限单位群给出规范 hit/F/G，并分别输出 centered terminal、
+F witness/defect 或 G separating character。该构造不读取未知解，见
+[原子目标的 total typed rechart](../claims/type-I-path-anchored-atomic-split-total-typed-rechart.md)。
+
+**尚缺的闭包。** 必须把这个 target-local classifier 绑定到 actual source/path
+provenance，并独立接受 payload scope、source/target normal form 与 receipt serializer；
+不能只用 \(c_q\le p-2\)、branch-local owner 或一个算术分类结果宣称 E1--E5。
 
 **新增的终端分派。** 当 atomic target 的完整 factorization 尚未可用时，中心 hit 不再
 必须先被编码为完整指数向量：任何互素 pair \((u,v)\) 满足 \(uv\mid K_T\)、
@@ -154,14 +161,14 @@ F/G/hit 的替代分类，也不说明每个 actual H4 target 都有或能有效
 [无因数分解中心 hit 的 Type I 终端序列化](../claims/type-I-factorization-free-centered-hit-terminal-serializer.md)。
 
 **受限 typed 控制。** 两个 local H4 atomic chart 已能以“有限 centered box 不命中 +
-单一 support prime 的长模 involution witness”独立重分类为 F；这避免了全 generated-subgroup
-BFS，但 witness 不是 canonical Fourier input，且控制未被断言为 actual persistent H3
-predecessor。故它只验证了一个实用的 target-local F receipt 形状，不缩小上述全称
-serializer / priority 缺口。见
+单一 support prime 的长模 involution witness”独立重分类为 F；它们仍是完整通用
+classifier 的实用控制，而不是 actual persistent H3 predecessor。它们不能替代
+source/receipt acceptance。见
 [H4 atomic target involution F controls](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-target-involution-fiber-controls.md)。
 
-**反证标准。** 找到真实 H4 source，其 endpoint 虽有严格算术余量和双侧 complete-excess
-payload，却无法通过 atomic typed/priority/serializer 准入，也没有合法 terminal。
+**反证标准。** 找到真实 H4 source，其 endpoint 经上述确定性分派后仍为 F/G，虽有
+严格算术余量和双侧 complete-excess payload，却无法通过 source/provenance、normal-form
+或 receipt serializer 准入，也没有合法 terminal。
 
 ### T2: Atomic-Admission
 
@@ -185,22 +192,24 @@ A\le B_p\quad\lor\quad(A>B_p\ \text{且}\ c_M<C),
 \qquad M=\operatorname{lcm}(A,Q_x,Q_y).
 \]
 
-它明确未证明 persistent registry、跨 action one-use、target typed classification 或
-统一 selector admission。见
+新的 total rechart 已支付 target typed classification 与 terminal priority 的算术部分；
+它仍未证明 persistent registry、跨 action one-use、通用 normal-form validator 或统一
+selector admission。见
 [path-anchored atomic split admission](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)。
 
 **H4 的受限实例。** 对 actual clean \(q\)-bridge，canonical source word 是单候选，
 而 \(M=\operatorname{lcm}(A,Q_x,Q_y)\) 使同一 colored block 在 target 中不再 fresh；
 所以 H4 branch 的归纳不需要跨 action ledger。该结论不推广到会聚合多个 source/action
-物理容量的 Fourier、Hall 或 flow 论证，也不代替 target typed classification。见
+物理容量的 Fourier、Hall 或 flow 论证，也不代替 actual adapter 的 state/receipt
+acceptance。见
 [H4 atomic owner epoch locality](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality.md)。
 
 **表述校正。** 仅有 \(Q_x,Q_y>1\)、\(p\nmid Q_xQ_y\)、\(c_M<C\) 和一条 raw path
 并不自动推出 E1--E5；T2 的工作正是把这些尚未形式化的语义门关闭或证明可删去。
 
 **反证标准。** 同一 physical raw occurrence 在两个合法 action 中需要不相容的
-canonical owner，或某 actual split 无法在不读取未知目标解的前提下完成 target
-classification / priority 处理。
+canonical owner，或某 actual split 在不读取未知目标解的前提下完成分类后，仍无法通过
+source/target normal form 或 receipt serialization。
 
 ### T3: Marked-Terminal
 
@@ -341,7 +350,7 @@ prime support 的 external source，也不能否定该 \(p\) 的 Type I/II 证�
 | 把 \(Q=(p-3)/2\) support 当作普适 G exit | 严格 \(Q\)-carried 和 \(p=14281\) 的全尺度 \(Q\)-supported 分支均有明确失败边界。 | 记录 \(\ell\)-adic capacity 与新 support，或转向其他 Type I/II 机制。 |
 | 继续增加 Fourier 数值统计 | `carrier_mapping_status=unproved`；状态内相位证书不自动成为跨状态算术矛盾。 | 优先 FC1、LOC 或 HR1 的 carrier / migration 定理。 |
 | 用有限 transition graph 无环证明 E5 | 已有实际二环和自环说明未分 phase 的候选边可循环。 | 只接受 T5 那样的全局良基势。 |
-| 再攻 H4 first-stutter / q0 re-entry 的同一算术分支 | actual H4 的首层 arithmetic stutter 已由 source-D gate 关闭。 | 资源转向 T1 的 typed、priority、ownership 与 serializer 闭包。 |
+| 再攻 H4 first-stutter / q0 re-entry 的同一算术分支 | actual H4 的首层 arithmetic stutter 已由 source-D gate 关闭，target-local typed/priority 亦已有 total 构造。 | 资源转向 T1 的 source/receipt normal-form 与 serializer 闭包。 |
 | 把“存在偶终端”直接写成 descent | terminal existence、marked membership 与 solution lift 是不同合同。 | 必须经 T3 和 E1--E5 验证。 |
 
 ## 新结果的验收纪律

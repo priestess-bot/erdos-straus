@@ -13,8 +13,9 @@ statement: >-
   block 不可能在同一无 reset epoch 再次被 verifier 认作 fresh。任何后来可收费的 ell
   block 必有更高指数，故 lcm support 严格增长。由于此局部 selector 不聚合多个 outgoing
   action 的容量，良基归纳只使用一个已选 edge；跨 action global one-use ledger 不是该
-  H4 atomic edge 的 E1--E5 前提。该结论仅关闭 ownership/ledger 子义务；source/target
-  typed validation、terminal priority、serializer 和全局 potential 仍未建立。
+  H4 atomic edge 的 E1--E5 前提。该结论仅关闭 ownership/ledger 子义务；target-local
+  typed/priority 构造虽已定义，actual source/target validator、scope/receipt serializer
+  和全局 potential 仍未建立。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -23,6 +24,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion
   - type-I-path-anchored-atomic-split-complete-excess-admission
+  - type-I-path-anchored-atomic-split-total-typed-rechart
   - denominator-escape-state-contract
 topics:
   - type-I
@@ -47,6 +49,8 @@ sources:
     role: actual-H4-endpoint-is-always-two-sided
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
     role: atomic-owner-tuple-lcm-charge-and-conditional-contract
+  - claim: type-I-path-anchored-atomic-split-total-typed-rechart
+    role: target-local-total-terminal-and-hit-F-G-dispatch
   - concept: denominator-escape-state-contract
     role: charged-support-monotonicity-and-edge-local-induction-contract
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_bridge_atomic_owner_epoch_locality.py
@@ -194,13 +198,15 @@ source 的物理 carrier 聚合，才必须另行引入那种 ledger。
 这条结果不把 atomic receipt 直接升级为 `verified_edge`。仍需逐 source 完成：
 
 1. persistent H4 source 与完整 raw prefix 的 typed/source validator；
-2. target 的 F/G/hit 重分类、scope 连续性和 serializer；
-3. terminal/alternate priority 的全部先行检查；
+2. 运行 total target dispatch，并将其 F/G/hit 字段绑定到 target normal form、scope 连续性和 serializer；
+3. direct terminal/alternate priority 的全部实际 prefix receipt；
 4. 全局 selector 和涵盖 reset 的良基势。
 
 但它删除了一个独立分支：对于 deterministic H4 atomic dispatch，不必再等待
 “跨 action one-use registry”才能验证 owner。T2 对任意 raw path 的一般版本仍是开放问题；
-这里只证明 actual H4 q-bridge 所需的受限实例。
+这里只证明 actual H4 q-bridge 所需的受限实例。第 2 项的 target-local 算术部分见
+[原子目标的全定义 typed 重图](type-I-path-anchored-atomic-split-total-typed-rechart.md)；
+该卡并不替代这里的 actual state/receipt acceptance。
 
 ## 6. 聚焦复现
 

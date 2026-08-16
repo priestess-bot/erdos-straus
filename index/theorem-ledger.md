@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 856 |
+| 数学状态 | `established` | 857 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 687 |
+| 证明来源 | `repository_derivation` | 688 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 834 |
+| 审阅状态 | `internal_review` | 835 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -742,6 +742,7 @@
 | [p=409, A=5 的 charged-history cofactor 父回放边界](../claims/type-I-p409-a5-charged-history-parent-replay-boundary.md) (`type-I-p409-a5-charged-history-parent-replay-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [Pareto 溢出需求的全局价格分离定理](../claims/type-I-pareto-overflow-capacity-separation-theorem.md) (`type-I-pareto-overflow-capacity-separation-theorem`) | `established` | `repository_derivation` | `independent_review` | - | 2026-07-30 |
 | [双侧完整超额原子来源的条件准入 schema 与精确秩边界](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md) (`type-I-path-anchored-atomic-split-complete-excess-admission`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [双侧完整超额原子目标的全定义 hit/F/G 重图与 terminal-first 分派](../claims/type-I-path-anchored-atomic-split-total-typed-rechart.md) (`type-I-path-anchored-atomic-split-total-typed-rechart`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-08-17 |
 | [q 进清分相位胞与跨状态容量合同](../claims/type-I-phase-clearing-cell-capacity-contract.md) (`type-I-phase-clearing-cell-capacity-contract`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [重图表与形式吸收的不可逆两阶段良基调度](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md) (`type-I-phase-labeled-candidate-selector-well-founded-schedule`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-31 |
 | [Fourier—q-prefix 槽缺口的 source-dominating annihilator relay](../claims/type-I-phase-prefix-source-dominating-annihilator-relay.md) (`type-I-phase-prefix-source-dominating-annihilator-relay`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |

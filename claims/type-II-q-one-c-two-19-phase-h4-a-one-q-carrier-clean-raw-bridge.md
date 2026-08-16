@@ -24,6 +24,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality
   - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
   - type-I-path-anchored-atomic-split-complete-excess-admission
+  - type-I-path-anchored-atomic-split-total-typed-rechart
   - type-I-bottom-sink-scc-complete-excess-bundle-selector
   - type-I-formal-full-excess-cycle-or-hit-reduction
   - denominator-escape-state-contract
@@ -54,6 +55,8 @@ sources:
     role: persistent-parent-endpoint-rank
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
     role: conditional-two-sided-E1-to-E4-and-E5-boundary
+  - claim: type-I-path-anchored-atomic-split-total-typed-rechart
+    role: target-local-total-terminal-and-hit-F-G-dispatch
   - claim: type-I-bottom-sink-scc-complete-excess-bundle-selector
     role: one-sided-residual-gate
   - claim: type-I-formal-full-excess-cycle-or-hit-reduction
@@ -290,10 +293,15 @@ carrier 的两条连续 raw prime edge。
 \boxed{
 \text{p-free endpoint with }L_q\equiv-c_4\pmod p
 \quad\text{or}\quad
-\text{a typed/priority guard intercepts}.
+\text{a source/state/receipt guard intercepts after total target dispatch}.
 }
 \tag{18}
 \]
+
+其中 target-local 的直接 Bradford screen 与 hit/F/G total rechart 现已由
+[原子目标的全定义 typed 重图](type-I-path-anchored-atomic-split-total-typed-rechart.md)
+指定；它不会自动接受 source/path、scope、normal form 或 edge receipt。故式 (18) 的
+第二项现在准确指这些仍未支付的 state-level guards，而不是缺少 target 分类定义。
 
 后续的[完整超额 stutter reduction](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)
 进一步把其中的容量门压成 \(Q_x>1\) 与单一同余 \(E_x\equiv q\pmod p\)；该结果不反向
