@@ -9631,3 +9631,12 @@ p=3913+15000t,\qquad t\ge1,
 \(Q=(p-3)/2\)。因此后续若继续使用该机制，必须证明随 \(p\) 的额外尺度覆盖，或转向
 不同的 Type I/II 证书。详见
 [G-anchor 的同余强制尺度束不能全域覆盖 \(Q\)-supported 外部源](../claims/type-I-g-anchor-q-supported-congruence-forced-scale-exclusion.md)。
+
+更强的单点全尺度排除已经出现：在核心素数 \(p=14281\) 上，
+\((p-1)/4=3570\)、\(Q=11^2\cdot59\)。对全部 32 个 \(k\mid3570\)，只有
+\(k=2,10,35,255,1190\) 能同时承载 \(Q\) 的任何素因子；这五个尺度上的完整
+\(11\)-\(59\) 赋值余类菜单都避开 \(-k\pmod{4k-1}\)。因此整个
+\(Q\)-supported 平方因子 external-source 分支在该 \(p\) 上为空，即使允许变量
+\(k\)。这不是猜想反例，却排除了把此机制当作全称 G/Type I 出口；后续必须转向不同
+source、不同 Type I/II 证书，或真实可提升递降。详见
+[\(p=14281\) 的全尺度 \(Q\)-supported 外部源精确排除](../claims/type-I-g-anchor-q-supported-p14281-full-scale-exclusion.md)。
