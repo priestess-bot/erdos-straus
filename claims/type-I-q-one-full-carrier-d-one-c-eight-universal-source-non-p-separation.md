@@ -303,9 +303,11 @@ non-\(p\) raw 出边，并且真实 103 macro carrier 与该 source-side 载体�
 - 对任意 \(q\) 的有界、无需因子信息的选择规则；
 - 全域解提升、terminal 证书，或 E5 严格势下降。
 
-因而下一条决定性工作是为 (16) 构造 source-lineage endpoint interface，或证明所有这类
-endpoint 的合法 complete-excess continuation 必定增容；不能再次把 static formal
-\(m=1\) node 当作 source/path 回执。
+对满足 \(q>2(p-1)\) 的一步 \(m=1\) 子类，后续的
+[有限缺陷容量映射](type-I-q-one-full-carrier-d-one-c-eight-v-side-direct-m-one-capacity-map.md)
+已经把 complete-excess 的潜在 E5 条件压缩成至多 56 个 \(q\)-residue gate。仍需为命中
+gate 的 endpoint 构造 source-lineage typed interface，或证明这些 gate 在真实 rough 域中
+全空；不能再次把 static formal \(m=1\) node 当作 source/path 回执。
 
 聚焦复核：
 

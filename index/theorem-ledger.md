@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 854 |
+| 数学状态 | `established` | 855 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 685 |
+| 证明来源 | `repository_derivation` | 686 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 832 |
+| 审阅状态 | `internal_review` | 833 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -768,6 +768,7 @@
 | [q=1 零 k 容量八 target 的第二完整 excess 增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的两条结构 m=1 节点增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八 target 的 source-side 支撑分离与非 p raw 出边](../claims/type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation.md) (`type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八 V-side 一步 m=1 endpoint 的有限缺陷容量映射](../claims/type-I-q-one-full-carrier-d-one-c-eight-v-side-direct-m-one-capacity-map.md) (`type-I-q-one-full-carrier-d-one-c-eight-v-side-direct-m-one-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q-primary Fourier 相位到仿射整数标签的 gcd—区间提升判据](../claims/type-I-qprimary-phase-affine-label-gcd-lift.md) (`type-I-qprimary-phase-affine-label-gcd-lift`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [q-primary Fourier 相位与真实 q-prefix 的交集容量](../claims/type-I-qprimary-phase-prefix-intersection-capacity.md) (`type-I-qprimary-phase-prefix-intersection-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
 | [R=11 固定尾与 gap 7/11 的终端-递降联合 dispatch](../claims/type-I-r11-gap7-gap11-terminal-descent-dispatch.md) (`type-I-r11-gap7-gap11-terminal-descent-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
