@@ -199,6 +199,11 @@ roughness、terminal-first 与 typed guards。每个固定 \(\lambda\) 的候选
 
 这是一条额外筛核，不是对 (11) 的矛盾。
 
+若再使用 \(q\) 为奇 prime 和实际 \(q_\star=103\) source 的 CRT 尺寸下界，
+[odd carry 射线参数化](type-I-q-one-full-carrier-d-one-c-eight-qstar-103-low-gate-odd-carry-rays.md)
+把每个 fixed source/c 的 \(\lambda\) 压缩为一条模 \(64D_s\) 的显式射线，同时把
+\(q\) 写成同一参数的奇 affine ray。这仍不为该参数给出全局上界。
+
 ## 4. 实际非 low-gate 控制
 
 取 high-\(q\) source 的非平凡 defect control
