@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 855 |
+| 数学状态 | `established` | 856 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 686 |
+| 证明来源 | `repository_derivation` | 687 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 833 |
+| 审阅状态 | `internal_review` | 834 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -765,6 +765,7 @@
 | [完整 F 谱中四百八十三个缺陷一状态的终端与提升边界](../claims/type-I-psi-one-full-spectrum-terminal-descent-boundary.md) (`type-I-psi-one-full-spectrum-terminal-descent-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [Psi 一层缺陷到 single-external slab 的规范路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md) (`type-I-psi-one-source-word-large-slab-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](../claims/type-I-pure-dyadic-half-power-crt-rechart-descent.md) (`type-I-pure-dyadic-half-power-crt-rechart-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [q=1 容量八低容量 gate 的互补 p-free 排除与双侧 split 接口](../claims/type-I-q-one-full-carrier-d-one-c-eight-low-gate-complement-pfree-split-interface.md) (`type-I-q-one-full-carrier-d-one-c-eight-low-gate-complement-pfree-split-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的第二完整 excess 增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的两条结构 m=1 节点增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八 target 的 source-side 支撑分离与非 p raw 出边](../claims/type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation.md) (`type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
