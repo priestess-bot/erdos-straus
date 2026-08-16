@@ -10,7 +10,9 @@ statement: >-
   path-anchored 单侧 complete-excess payload，canonical target 的 capacity 正是
   c_a<8。若 Q_b>1，则同一 actual raw receipt 满足双侧 atomic split 的所有
   source/p-free 算术前提；写 T_i=lcm(M,Q_i)/M，L=T_aT_b，split target capacity
-  c_Sigma 满足 79 T_b c_Sigma+32 hq=0 (mod p)。因此低 gate 的 p-primary
+  c_Sigma 满足 79 T_b c_Sigma+32 hq=0 (mod p)。更精确地，
+  T_b=b/(2^epsilon*gcd(M,p^2+p-1-q))，其中 epsilon 只可能为 0,1,2,3；
+  所以 split capacity 还满足一个无需分解 b 的二次 q-同余。低 gate 的 p-primary
   complement 不是未支付障碍：余下分支精确缩为单侧 target typed/priority 准入，或双侧
   split 的 independent capacity 与 typed/priority 准入。本结论不将任一候选自动升级为
   terminal 或 E1--E5 edge。
@@ -244,8 +246,71 @@ c_\Sigma=\langle8L^{-1}\rangle_p.
 \tag{22}
 \]
 
+这里的互补乘子也有一个不需要分解 \(b\) 的精确正规形。令
+
+\[
+g_b=(b,M),\qquad
+e_b=v_2(b),\qquad e_M=v_2(M),
+\tag{23}
+\]
+
+并定义
+
+\[
+\epsilon=
+\begin{cases}
+e_b-e_M,&1\le e_b-e_M\le3,\\
+0,&\text{其它情形}.
+\end{cases}
+\tag{24}
+\]
+
+因为 \(q>2(p-1)\)，而 \((V,M)\mid67199\)，有 \((q,M)=1\)；又
+\((p,M)=1\)。从 \(qb=p+R(q-p+1)\) 乘以 \(p\)，并使用
+\(pR\equiv-1\pmod M\)，得到
+
+\[
+pq\,b\equiv p^2+p-1-q\pmod M.
+\tag{25}
+\]
+
+两边的乘子都是 \(M\)-unit，故
+
+\[
+\boxed{g_b=(M,p^2+p-1-q).}
+\tag{26}
+\]
+
+对 odd prime，complete-excess 只在 \(v_\ell(b)>v_\ell(M)\) 时带出
+\(v_\ell(b)-v_\ell(M)\) 个指数；对 \(2\)，旧 capacity 额外有 \(2^3\)。逐素数比较
+遂给出
+
+\[
+\boxed{T_b=\frac{b}{2^\epsilon g_b}.}
+\tag{27}
+\]
+
+因此 (20) 也可写成
+
+\[
+L=\frac{ab}{h\,2^\epsilon g_b}.
+\tag{28}
+\]
+
+模 \(p\) 下有 \(a\equiv-Rq^{-1}\)、\(b\equiv R(q+1)q^{-1}\)，且
+\(4R\equiv79\)。将它们代入 \(Lc_\Sigma\equiv8\) 得到无需分解 \(b\) 的二次容量式：
+
+\[
+\boxed{
+79^2(q+1)c_\Sigma+
+128h\,2^\epsilon g_bq^2\equiv0\pmod p.
+}
+\tag{29}
+\]
+
 因此 a-side 命中低 gate 并不自动使 atomic split 的 \(c_\Sigma<8\)；互补完整块
-\(T_b\) 必须单独进入容量比较。这不是 source 缺口： (18) 已支付双侧 payload 的
+\(T_b\) 必须单独进入容量比较。不过 (26)--(29) 已把这项比较压为 gcd、二进估值和
+模运算，而不是 \(b\) 的一般因式分解。这不是 source 缺口： (18) 已支付双侧 payload 的
 \(p\)-free 与 source 算术条件。余下的决定性问题是 (21) 的 strict capacity、目标 typed
 reclassification 与 priority receipt。
 
@@ -257,7 +322,7 @@ raw endpoint 同时有两个完整 block：
 \[
 Q_a=3113076331159817,\qquad
 Q_b=19138464436332689.
-\tag{23}
+\tag{30}
 \]
 
 它们都与旧 support 互素，因此
@@ -265,17 +330,19 @@ Q_b=19138464436332689.
 \[
 T_a=Q_a,\qquad T_b=Q_b,\qquad
 L=T_aT_b=59579500651491202538305440357913.
-\tag{24}
+\tag{31}
 \]
+
+在这里 \(g_b=3,\epsilon=1\)，故 (27) 直接重建 \(T_b\)。
 
 该控制不命中 low gate；它给出
 
 \[
 c_a=11230,\qquad c_\Sigma=38261,
-\tag{25}
+\tag{32}
 \]
 
-并直接满足 (4)、(22)。它只复核双侧公式和 raw payload，不作为 persistent
+并直接满足 (4)、(22)、(29)。它只复核双侧公式和 raw payload，不作为 persistent
 counterexample 或 selector edge。
 
 ## 5. 收紧后的边界
@@ -284,10 +351,10 @@ counterexample 或 selector edge。
 
 - 对任何实际 low-gate endpoint，互补 \(p\)-primary 已被全称排除；
 - 单侧时 E5 的算术支付已经完成，剩下的是 one-sided adapter、typed/priority 准入；
-- 双侧时 source/p-free payload 已完整，唯一新增算术门是 (21) 的 capacity，而不是
-  无来源的 formal rechart。
+- 双侧时 source/p-free payload 已完整，(26)--(29) 使其容量只需 gcd、二进估值和模
+  运算；唯一新增算术门仍是 (21) 的 capacity，而不是无来源的 formal rechart。
 
-下一条有价值的对象是：对双侧分支，将 (22) 与 \(T_b\) 的可控结构连接到
+下一条有价值的对象是：对双侧分支，将 (29) 与 \(g_b\) 的可控结构连接到
 \(c_\Sigma<8\)、terminal，或另一条全域可提升的严格势；不能再把 \(p\mid b\) 当作
 开放 source-lineage 障碍。
 

@@ -69,6 +69,14 @@ def prime_divisors(value: int) -> list[int]:
     return result
 
 
+def v2(value: int) -> int:
+    result = 0
+    while value % 2 == 0:
+        value //= 2
+        result += 1
+    return result
+
+
 def low_gate_p_candidates() -> list[tuple[int, int, int, int, int]]:
     """Factor only the 56 fixed integers 32*h-79*c, never the parameter ray."""
     candidates = []
@@ -100,6 +108,9 @@ def two_side_control() -> dict[str, int]:
     capacity_a = (8 * pow(t_a, -1, p)) % p
     capacity_split = (8 * pow(total_multiplier, -1, p)) % p
     h = gcd(a, support)
+    complement_shared = gcd(b, support)
+    dyadic_gap = v2(b) - v2(support)
+    dyadic_correction = dyadic_gap if 0 < dyadic_gap <= 3 else 0
     if not (
         p == 157_393
         and q > 2 * (p - 1)
@@ -117,9 +128,17 @@ def two_side_control() -> dict[str, int]:
         and q_a % p != 0
         and q_b % p != 0
         and t_a == a // h
+        and complement_shared == gcd(support, p * p + p - 1 - q)
+        and t_b == b // (complement_shared * (1 << dyadic_correction))
         and total_multiplier == t_a * t_b
         and (79 * capacity_a + 32 * h * q) % p == 0
         and (79 * t_b * capacity_split + 32 * h * q) % p == 0
+        and (
+            79**2 * (q + 1) * capacity_split
+            + 128 * h * complement_shared * (1 << dyadic_correction) * q * q
+        )
+        % p
+        == 0
     ):
         raise AssertionError("c=8 complementary split control changed")
     return {
@@ -127,6 +146,8 @@ def two_side_control() -> dict[str, int]:
         "q_b": q_b,
         "t_a": t_a,
         "t_b": t_b,
+        "complement_shared": complement_shared,
+        "dyadic_correction": dyadic_correction,
         "total_multiplier": total_multiplier,
         "capacity_a": capacity_a,
         "capacity_split": capacity_split,
@@ -146,6 +167,8 @@ def verify() -> None:
         "q_b": 19_138_464_436_332_689,
         "t_a": 3_113_076_331_159_817,
         "t_b": 19_138_464_436_332_689,
+        "complement_shared": 3,
+        "dyadic_correction": 1,
         "total_multiplier": 59_579_500_651_491_202_538_305_440_357_913,
         "capacity_a": 11_230,
         "capacity_split": 38_261,
