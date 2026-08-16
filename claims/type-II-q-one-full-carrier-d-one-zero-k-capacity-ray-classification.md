@@ -245,7 +245,10 @@ Type I selector。
 容量 \(c=2\) 的第一行与既有 \(q_\star=19\) 高相位入口相容。容量 \(8\) 和 \(56\)
 的两行已有 (17) 的算术 macro receipt；\(c=56\) 已由后续 gap-7 卡排除为
 terminal-first 后的持久队列状态，\(c=8\) 则尚未给出全称 Type I/II terminal、可提升
-递降或一般 selector。
+递降或一般 selector。对 \(c=8\) 而言，后续的
+[第二完整 excess 增容障碍](type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction.md)
+进一步证明它的确定性 full-excess continuation 反而使 capacity 从 \(8\) 增大，故下一步
+不能重复这条 bundle 路线。
 
 此外，本卡不分类 \(k\ne0\) 的容量面；对这些层，\(j\) 的 \(s\)-依赖仍需与
 \(\Gamma(c,k,g)\)、\(j<3q_\star\) 及真实 complete-excess provenance 一起处理。

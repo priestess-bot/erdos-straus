@@ -9,8 +9,9 @@ statement: >-
   显式 gap-7 Type II 终端：取 x=12s+2、A=1、B=6s+1、C=2，得到
   4/p=1/x+1/y+1/z，其中 y=p(x+2)/7、z=p(x+x^2/2)/7。由于 q=1 phase root
   只接收 terminal-first 未命中的 endpoint，c=56 不可能是合法 persistent receiver。
-  该固定模板不关闭 c=8：其 (j,g)=(11,1) 与 s=2 (mod 7) 不相容。实际 c=8 控制
-  p=157393 虽另有 h=107 | p+4 的 Type II 终端，但这不是 c=8 射线的全称结论。
+  这里的特定 (A,B,C)=(1,6s+1,2) 模板不关闭 c=8：其 (j,g)=(11,1) 与 s=2 (mod 7)
+  不相容。实际 c=8 控制 p=157393 另有 gap-7 Type I 与 h=107 | p+4 的 Type II
+  终端，但这不是 c=8 射线的全称结论。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -168,9 +169,11 @@ Type II certificate。
 \]
 
 从而 \(7\mid g\)，与 (11) 矛盾。因此上面的固定 gap-7 构造与 \(c=8\) 形状
-完全不相交。
+完全不相交。这里的“不相交”只针对 (5) 的特定 gap-7 Type II 正规形，并不排除
+其他 gap-7 终端。
 
-现有 \(c=8\) 控制 \(p=157393,s=3279\) 恰好仍有一个不同的 terminal：
+现有 \(c=8\) 控制 \(p=157393,s=3279\) 已由既有 \(p\equiv5\pmod7\) 的 gap-7
+Type I 规则抢占；它还恰好有一个不同的 terminal：
 
 \[
 p+4=157397=107\cdot1471,
@@ -193,7 +196,8 @@ p+4=157397=107\cdot1471,
 本卡新增了一个全称 terminal-first 排除：零 \(k\) 的 \(c=56\) 容量形状只能作为
 postmacro 算术影子存在，不能进入合法 persistent queue。剩余的零 \(k\) 103 通道只有
 \(c=8,j=11,g=1\)，且仍需要一个与其 \(g=1\) 条件相容的 terminal 或 E1--E5
-strict edge。这里没有声称这个剩余通道已经覆盖，更没有声称 G/Type I global exit。
+strict edge。其确定性的第二 complete-excess continuation 已知会增大 capacity，故不能
+重复这条 bundle 路线。这里没有声称这个剩余通道已经覆盖，更没有声称 G/Type I global exit。
 
 聚焦复核：
 
