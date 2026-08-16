@@ -269,7 +269,10 @@ Q=203,\qquad 63\nmid203.
 
 它含有与 \(Q\) 共同的素因子 \(7\)，却不是严格 \(Q\)-carried 因子。因而后续若要
 研究全局剩余，只能说 (5) 已清空 \(e\mid Q\) 的接口，不能把 (5) 外推到
-non-strict support 或非 \(Q\)-carried \(e\)。
+non-strict support 或非 \(Q\)-carried \(e\)。更强地，
+[\(Q\)-supported 幂借用射线](type-I-g-anchor-q-supported-power-external-source-ray.md)
+给出无穷多个 \(\operatorname{rad}(e)\mid Q\) 但 \(e\nmid Q\) 的有效 witness；因此
+这里的“严格”必须保留为整除关系，不能替换成素因子支撑关系。
 
 ## 6. 定向回执
 

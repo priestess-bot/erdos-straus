@@ -9597,3 +9597,20 @@ witness 与平方因子机制仍是开放正向分支。详见
 \((p,k,e)=(409,6,63)\) 是真实平方因子 lift，但 \(63\nmid Q=203\)。
 详见
 [G-anchor 严格 Q-carried 平方因子 external-source 的完整分类](../claims/type-I-g-anchor-strict-q-carried-quadratic-external-source-classification.md)。
+
+## 2026-08-16：严格 \(Q\)-整除不能升级为 \(Q\)-素因子支撑 no-go
+
+严格 \(Q\)-carried no-go 仍然正确，但它不能外推为“成功平方 witness 必有一个
+\(Q\) 外素因子”。取 \(k=6,q=23,e=5^7\)，则每个素数
+
+\[
+p=3913+15000t,\qquad t\ge1,
+\]
+
+都满足 \(v_5(Q)=1\)、\(\operatorname{rad}(e)=5\mid Q\)，却有
+\(e\mid M^2\)、\(e\le M\)、\(e\equiv-M\pmod{23}\)。它给出显式的
+\(n<p\) marked lift 和 gap \(13587\) Type I 证书；该进程由 Dirichlet 定理含无穷多个
+素数。这说明平方菜单可以从 source 的平方中借用 \(Q\) 已有素因子的高幂，未来的 G/Type I
+选择器必须记录 \(\ell\)-adic exponent capacity，不能只记录 \(Q\) 的素因子支撑或
+\((Q,M)\)。详见
+[G-anchor \(Q\)-supported 幂借用平方外部源射线](../claims/type-I-g-anchor-q-supported-power-external-source-ray.md)。
