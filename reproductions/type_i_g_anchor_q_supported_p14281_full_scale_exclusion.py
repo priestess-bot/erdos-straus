@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 from itertools import product
 from math import gcd, isqrt
 
@@ -96,6 +97,14 @@ def verify() -> None:
         ),
     )
     targets = tuple((-record[0]) % record[1] for record in relevant)
+    gap = 7
+    first = (PRIME + gap) // 4
+    divisor = 19
+    source_denominator = (PRIME + gap) // (gap + 1)
+    source_tail_one = (first + divisor) // gap
+    source_tail_two = (first + first * first // divisor) // gap
+    target_tail_one = PRIME * source_tail_one
+    target_tail_two = PRIME * source_tail_two
 
     if not (
         is_prime(PRIME)
@@ -108,6 +117,22 @@ def verify() -> None:
         and targets == (5, 29, 104, 764, 3_569)
         and all(target not in record[-1] for target, record in zip(targets, relevant))
         and all(1 != (-k) % (4 * k - 1) for k in scale_divisors)
+        and 3 <= gap <= PRIME - 2
+        and first == 3_572
+        and divisor <= first
+        and first * first % divisor == 0
+        and (first + divisor) % gap == 0
+        and (gap + 1) * source_denominator == PRIME + gap
+        and source_denominator == 1_786
+        and source_denominator < PRIME
+        and source_tail_one == 513
+        and source_tail_two == 96_444
+        and target_tail_one == 7_326_153
+        and target_tail_two == 1_377_316_764
+        and Fraction(4, source_denominator)
+        == Fraction(1, first) + Fraction(1, source_tail_one) + Fraction(1, source_tail_two)
+        and Fraction(4, PRIME)
+        == Fraction(1, first) + Fraction(1, target_tail_one) + Fraction(1, target_tail_two)
     ):
         raise AssertionError("p=14281 full-scale Q-supported exclusion changed")
     print("verified the complete p=14281 Q-supported scale exclusion")

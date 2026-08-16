@@ -9640,3 +9640,5 @@ p=3913+15000t,\qquad t\ge1,
 \(k\)。这不是猜想反例，却排除了把此机制当作全称 G/Type I 出口；后续必须转向不同
 source、不同 Type I/II 证书，或真实可提升递降。详见
 [\(p=14281\) 的全尺度 \(Q\)-supported 外部源精确排除](../claims/type-I-g-anchor-q-supported-p14281-full-scale-exclusion.md)。
+该点的实际 handoff 已可见：gap \(7\)、除子 \(19\) 给出 Type II 两尾严格递降
+\(14281\to1786\)，故这个空菜单是机制边界，不是 terminal-free 控制。

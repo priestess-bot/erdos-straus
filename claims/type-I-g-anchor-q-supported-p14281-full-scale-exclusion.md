@@ -12,6 +12,7 @@ proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
   - type-I-g-anchor-q-supported-power-external-source-ray
+  - type-II-factor-pair-carrier-strict-descent
 topics:
   - type-I
   - G-state
@@ -25,6 +26,8 @@ topics:
 sources:
   - claim: type-I-g-anchor-q-supported-power-external-source-ray
     role: full-Q-supported-CRT-converse
+  - claim: type-II-factor-pair-carrier-strict-descent
+    role: alternate-two-tail-strict-descent-contract
   - reproduction: reproductions/type_i_g_anchor_q_supported_p14281_full_scale_exclusion.py
     role: complete-divisor-scale-residue-control
 visibility: public
@@ -116,10 +119,43 @@ e\equiv-M\pmod q.
 不必使用 \(e\le M\)：表中包含了所有 \(e\mid M^2\) 的 \(Q\)-supported 余类。于是
 (3) 对每个 \(k\mid H\) 都不可能成立。\(\square\)
 
+## 非 \(Q\)-supported 的严格出口
+
+上述空菜单不表示 \(p=14281\) 没有 terminal 或递降。事实上取
+
+\[
+m=7,\qquad
+x=\frac{p+m}{4}=3572,\qquad
+d=19.
+\]
+
+有 \(d\mid x^2\)、\(d\le x\)，且 \(7\mid x+d\)。因此这是一个 Type II 证书。又
+\(m+1=8\mid p-1\)，所以其两条 \(p\)-尾都可严格去除，降到
+
+\[
+n=\frac{p+7}{8}=1786<p.
+\]
+
+具体地，
+
+\[
+\frac4{1786}
+=\frac1{3572}+\frac1{513}+\frac1{96444}
+\quad\Longrightarrow\quad
+\frac4{14281}
+=\frac1{3572}+\frac1{7326153}+\frac1{1377316764}.
+\tag{7}
+\]
+
+右侧两条尾分母分别为 \(14281\cdot513\) 和 \(14281\cdot96444\)，故 (7) 是带显式
+solution lift 的严格两尾递降。这正是
+[Type II 互素因子对的二次比值载体与严格递降](type-II-factor-pair-carrier-strict-descent.md)
+的局部实例。
+
 ## 后果
 
 这给出的是该外源机制的一个 **全尺度** 严格反例，而不是 Erdős–Straus 猜想的反例：
-\(p=14281\) 当然仍可能由其他 Type I/II 证书或不同的严格递降解决。
+上节已经给出 \(p=14281\) 的实际 Type II 严格递降。
 
 它关闭了一个具体的全称策略：不能希望“对每个核心素数，某个 \(k\mid(p-1)/4\) 的
 \(Q\)-supported 平方因子外源必成功”。因此这条机制最多是选择器中的局部分支；全域
@@ -133,4 +169,4 @@ python3 reproductions/type_i_g_anchor_q_supported_p14281_full_scale_exclusion.py
 ~~~
 
 回执只枚举 \(H=3570\) 的 32 个因子尺度，并在 \(Q\) 的两种支撑素数上重算有限的
-赋值—残类菜单；它不搜索素数、分母或历史状态。
+赋值—残类菜单；同时重算上节的 gap-7 两尾严格 lift。它不搜索素数、分母或历史状态。
