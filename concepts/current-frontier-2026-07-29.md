@@ -9513,3 +9513,35 @@ atomic owner 和 ledger，以及版本化的 state-level terminal/alternate pref
 [H4 clean \(q\)-bridge 的内部 full-excess Type I terminal 局部化](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization.md)。
 endpoint 分派的进一步收缩见
 [H4 clean \(q\)-bridge 的 \(y\) 侧完整超额块必非空](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md)。
+
+## 2026-08-16：G-anchor 的 \(Q\)-raw carrier 不能复用为同一 external source witness
+
+G-anchor 的实际 complete-excess carrier
+
+\[
+Q=\frac{p-3}{2}
+\]
+
+与 ordinary external-source 分支也有一个精确而非统计性的接口。若
+
+\[
+k\mid\frac{p-1}{4},\qquad q=4k-1,\qquad q\mid Q,
+\qquad n=\frac{qp+1}{q+1},\qquad M=kn,
+\]
+
+则 \(q\ge7\)，且由二次互反 \(q\) 是 G-anchor 的 actual Jacobi-odd raw label。
+写 \(a=(p-1)/(q+1)\)，有 \(Q=2ka-1,n=qa+1\)，故
+
+\[
+\boxed{(Q,M)=(Q,3q+1).}
+\]
+
+因此任何同时整除 \(Q,M\) 的候选若还满足 external-source 所需
+\(g\equiv-1\pmod q\)，就会同时整除 \(3q+1\)。它只能形如
+\(q-1,2q-1,3q-1\)，三者均不整除 \(3q+1\)。所以 mixed/adaptive external-source
+不能将同一 actual \(Q\)-word 的因子既当 raw carrier 又当 \(n<p\) marked-lift witness。
+
+这个结论没有否定外部源本身：合格 witness 可以来自 \(Q\) 以外，平方因子机制的
+一般 \(e\) 也未被这里排除。它只是关闭 G/Type I 选择器中一个会重复消费同一 raw
+carrier 的接口，迫使后续正向构造提供独立因子、source-switch 或其它 terminal。详见
+[G-anchor Q-carried 因子不能充当 external-source witness](../claims/type-I-g-anchor-q-carried-external-source-witness-no-go.md)。
