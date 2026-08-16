@@ -11,10 +11,13 @@ statement: >-
   p divides zeta iff q*rho*D=1 (mod p)，并且 D divides ph-q^2+1；因此也必有
   p divides q^2(qhat-1)-h+1。特别地，若 d=gcd((p+1)/2,M4)=1，则 h=2、
   p=2q-1 强制 qhat=5。此时 q=5rho、p=10rho-1，且所有 p-primary candidate 必满足
-  D=20+p*v divides 25rho^2-20rho+1，其中 v>=1 为奇数且 5 does not divide v。
+  D=20+p*v divides 25rho^2-20rho+1，其中 v>=1 为奇数且 5 does not divide v；
+  此 divisor menu 实际为空：以 B=D*ell、80ell+3=k*p 化简，k 只能为
+  7 或 17、v=1，而分别强制 13p=257 或 3p=457。故 d=1 的 proper-unitary
+  p-primary branch 全称为空。
   静态 core row (p,q,rho,qhat)=(409,205,41,5) 满足 endpoint 必要同余，
   但没有 divisor D 通过此 D-gate，严格说明 endpoint congruence 本身不足以建立或
-  排除 actual p-primary 分支。该结论不关闭 d>1 或 d=1 的全部 D-divisor menu，
+  排除 actual p-primary 分支。该结论不关闭 d>1 的全部 D-divisor menu，
   也不自动支付 terminal/typed/payload guards。
 claim_status: established
 proof_provenance: repository_derivation
@@ -196,11 +199,11 @@ actual H4 carry 给 \(h=2\)，且 \(p=2q-1\)。把 (9) 乘以 \(4\)，利用
 \tag{13}
 \]
 
-写 \(\rho D=2+pk\)。模 \(\rho\) 使用 \(p\equiv-1\pmod\rho\)，得到
-\(k\equiv2\pmod\rho\)。由于 \(\rho>1\)，正性使
+写 \(\rho D=2+pr\)。模 \(\rho\) 使用 \(p\equiv-1\pmod\rho\)，得到
+\(r\equiv2\pmod\rho\)。由于 \(\rho>1\)，正性使
 
 \[
-k=2+\rho v,
+r=2+\rho v,
 \qquad v\ge0,
 \qquad
 \boxed{D=20+pv.}
@@ -222,7 +225,87 @@ k=2+\rho v,
 \]
 
 式 (12)、(15)--(16) 把 \(d=1\) 的 proper-unitary \(p\)-primary 余项从无界
-endpoint event 压成一条 \(\widehat q=5\) 的显式除子门。
+endpoint event 压成一条 \(\widehat q=5\) 的显式除子门。下面证明这条门本身为空。
+
+令
+
+\[
+B=25\rho^2-20\rho+1=D\ell.
+\tag{17}
+\]
+
+由 \(v\ge1\)，有 \(D\ge p+20\)。而 \(p=10\rho-1\) 给
+
+\[
+p(p+20)-B=75\rho^2+200\rho-20>0,
+\tag{18}
+\]
+
+所以
+
+\[
+1\le\ell<p.
+\tag{19}
+\]
+
+同时
+
+\[
+4B=p^2-6p-3.
+\tag{20}
+\]
+
+将 (17) 模 \(p\) 约化，并使用 \(D\equiv20\pmod p\)，得到
+
+\[
+80\ell+3=kp
+\tag{21}
+\]
+
+的正整数 \(k\)。由 (19)，\(1\le k\le80\)；又 \(p=10\rho-1\equiv-1\pmod {10}\)，
+故
+
+\[
+k\in\{7,17,27,37,47,57,67,77\}.
+\tag{22}
+\]
+
+将 (20)--(21) 及 \(D=20+pv\) 代入，消去 \(\ell\)，得到精确式
+
+\[
+\boxed{v(kp-3)=20(p-k-6).}
+\tag{23}
+\]
+
+右端必须为正，且由 (23)
+
+\[
+kv=\frac{20k(p-k-6)}{kp-3}<20.
+\tag{24}
+\]
+
+结合 (16) 的 \(v\) 为正奇数，(22) 只剩两种可能：
+
+\[
+(k,v)=(7,1)\quad\text{或}\quad(17,1).
+\tag{25}
+\]
+
+式 (23) 分别化为
+
+\[
+13p=257,
+\qquad
+3p=457,
+\tag{26}
+\]
+
+两者都没有整数解。因此
+
+\[
+\boxed{\text{不存在 }d=1\text{ 的 proper-unitary second re-entry }p\text{-block。}}
+\tag{27}
+\]
 
 ## 4. endpoint-only 同余的严格边界
 
@@ -253,9 +336,10 @@ ph-q^2+1=-41206=-2\cdot11\cdot1873,
 
 ## 5. 边界和定向回执
 
-本卡关闭了 \(\rho=1\) 外的一个常见错误推理，并将 proper-unitary 分支准确压缩为
-\(D\)-gate。它尚未排除 (15) 的全部整数菜单，也没有处理 \(d>1\)、\(\widehat q=1\)
-第三 carrier，或任何 terminal-first、typed、payload、serializer 和 persistent guards。
+本卡关闭了 \(\rho=1\) 和 \(d=1\) proper-unitary 两条 second re-entry 的
+\(p\)-primary 分支；\(d>1\) 的 \(D\)-gate 仍是精确的决定性余项。它没有处理
+\(\widehat q=1\) 第三 carrier，或任何 terminal-first、typed、payload、serializer 和
+persistent guards。
 
 ```bash
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_second_stutter_unitary_transduction.py --verify

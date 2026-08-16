@@ -203,12 +203,30 @@ def verify_proper_unitary_d_gate() -> None:
         raise AssertionError("proper-unitary D-gate boundary control changed")
 
 
+def verify_d_one_proper_unitary_closure() -> None:
+    """Check the two forced terminal arithmetic cases of the d=1 D-gate."""
+    forced_cases = (
+        (7, 1, 13, 257),
+        (17, 1, 3, 457),
+    )
+    for k_value, v_value, coefficient, constant in forced_cases:
+        if not (
+            k_value % 10 == 7
+            and k_value * v_value < 20
+            and v_value % 2 == 1
+            and v_value % 5 != 0
+            and constant % coefficient != 0
+        ):
+            raise AssertionError("d=1 proper-unitary D-gate closure changed")
+
+
 def verify() -> None:
     verify_fixture()
     verify_unitary_dichotomy()
     verify_rho_one_p_primary_gate()
     verify_proper_unitary_d_gate()
-    print("verified second-stutter unitary carrier and p-primary D-gate controls")
+    verify_d_one_proper_unitary_closure()
+    print("verified second-stutter unitary carrier and p-primary D-gate closures")
 
 
 def main() -> None:
