@@ -168,7 +168,11 @@ q=2(q-1),
 
 所以 \(d=1\)、\(\widehat q=1\) 的 third-carrier branch 不会重新制造
 \(p\)-primary residual；后续只须按 Type I terminal、p-free payload、容量和语义 guards
-分派。它不证明第三 endpoint 的 capacity stutter 为空，也不处理 \(d>1\) 的同一几何。
+分派。后继的
+[p-free 容量图与 source \(D\)-gate](type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-pfree-capacity-map.md)
+已把这里的 capacity stutter 收缩为 \(D\equiv72\pmod p\) 与
+\(D\mid q^3-4q+1\)，但不把这条必要 sieve 误写成全称排除。它不处理 \(d>1\) 的
+同一几何。
 
 \`\`\`bash
 python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_second_stutter_unitary_transduction.py --verify
