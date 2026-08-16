@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 827 |
+| 数学状态 | `established` | 828 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 658 |
+| 证明来源 | `repository_derivation` | 659 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 805 |
+| 审阅状态 | `internal_review` | 806 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -430,6 +430,7 @@
 | [p=5281 的 Jacobi-odd 有限物理 source/transition 账本](../claims/type-I-g-anchor-jacobi-odd-p5281-physical-row-ledger.md) (`type-I-g-anchor-jacobi-odd-p5281-physical-row-ledger`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [G-anchor Jacobi-odd raw 终端唯一性与 source-switch 退化](../claims/type-I-g-anchor-jacobi-raw-terminal-source-switch-bridge.md) (`type-I-g-anchor-jacobi-raw-terminal-source-switch-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [G-anchor 带精确尾标记的 raw-peeling calculus 与物理行边界](../claims/type-I-g-anchor-marked-raw-peeling-calculus.md) (`type-I-g-anchor-marked-raw-peeling-calculus`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [G-anchor Q-carried external-source witness 的完整分类](../claims/type-I-g-anchor-q-carried-external-source-witness-classification.md) (`type-I-g-anchor-q-carried-external-source-witness-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [G-anchor Q-carried 因子不能充当 external-source witness](../claims/type-I-g-anchor-q-carried-external-source-witness-no-go.md) (`type-I-g-anchor-q-carried-external-source-witness-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [R=11 固定尾的完整三残类因子盒与自适应 Type I 终端](../claims/type-I-g-anchor-r11-adaptive-divisor-terminal.md) (`type-I-g-anchor-r11-adaptive-divisor-terminal`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [R=11 固定尾未命中的精确素因子分类](../claims/type-I-g-anchor-r11-fixed-tail-residual-classification.md) (`type-I-g-anchor-r11-fixed-tail-residual-classification`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |

@@ -9545,3 +9545,35 @@ k\mid\frac{p-1}{4},\qquad q=4k-1,\qquad q\mid Q,
 一般 \(e\) 也未被这里排除。它只是关闭 G/Type I 选择器中一个会重复消费同一 raw
 carrier 的接口，迫使后续正向构造提供独立因子、source-switch 或其它 terminal。详见
 [G-anchor Q-carried 因子不能充当 external-source witness](../claims/type-I-g-anchor-q-carried-external-source-witness-no-go.md)。
+
+## 2026-08-16：G-anchor 的 \(Q\)-carried external witness 完整分类
+
+前一条 raw-label no-go 的 gcd 恒等式实际上不需要 \(q\mid Q\)。对任何
+
+\[
+k\mid\frac{p-1}{4},\qquad q=4k-1,\qquad
+n=\frac{qp+1}{q+1},\qquad M=kn,
+\]
+
+都有
+
+\[
+\boxed{(Q,M)=(Q,3q+1)},\qquad Q=\frac{p-3}{2}.
+\]
+
+故当 \(k\ge2\)（即 \(q\ge7\)）时，\(Q\)-carried 因子不可能满足
+\(g\equiv-1\pmod q\) 的 mixed/adaptive external-source witness 条件。唯一例外是
+\(k=1,q=3\)：它当且仅当 \(p\equiv73\pmod{120}\) 时以 \(g=5\) 命中，并给出
+
+\[
+\frac4n=\frac1n+\frac1{(n+5)/3}+
+\frac1{n(n+5)/15}
+\quad\Longrightarrow\quad
+\frac4p=\frac1{np}+\frac1{(n+5)/3}+
+\frac1{n(n+5)/15}.
+\]
+
+这把 G-anchor \(Q\) 的 complete-excess carrier 在 ordinary external-source 选择器中的
+作用精确分为一个实际的 q=3 marked descent 和所有 \(k\ge2\) 的空接口；非 \(Q\)-carried
+witness 与平方因子机制仍是开放正向分支。详见
+[G-anchor Q-carried external-source witness 的完整分类](../claims/type-I-g-anchor-q-carried-external-source-witness-classification.md)。
