@@ -174,6 +174,17 @@ PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_q3_bku_parameterization.py --verify
 ```
 
+`type_i_high_anchor_automatic_q_phase_descent_trichotomy.py` 将这两条参数化接到
+direct cofactor target 的 residual 上：\(q=2\) 的偶数 \(k\) 与 \(q=3\) 的
+\(k\equiv2\pmod3\) 是仅有的 \(e=0\) 类，保留 \(n_T=n\) 并可条件性进入
+fixed-\(n\) bridge；其余三类强制 \(n_T>p\)。四个实际 fresh-root 控制重放了这两个
+结果分支。它不登记 global selector edge。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_anchor_automatic_q_phase_descent_trichotomy.py --verify
+```
+
 `type_i_high_anchor_positive_phase_terminal_boundary.py` 是正相位的两个算术夹具：
 它验证 \(e=0\) 的 fixed-\(n\) shadow、\(e\ge1\) 的盒外余量，以及 \(p=1201\)
 在 gap \(3,7,11,15,19\) 的完整 miss 与 gap \(23\) 的首个 Type I 命中。它不提供
