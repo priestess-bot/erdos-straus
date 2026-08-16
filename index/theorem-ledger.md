@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 841 |
+| 数学状态 | `established` | 842 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 672 |
+| 证明来源 | `repository_derivation` | 673 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 819 |
+| 审阅状态 | `internal_review` | 820 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1113,6 +1113,7 @@
 | [H4 q0 re-entry 的完整 source-row、unitary q-lock 与 p-residual CRT 边界](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-q0-reentry-source-row-q-lock-crt-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge s=0 的 q-block swap、小锚界与 secondary p-primary 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-q-swap-p-primary-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 q-bridge s=0 secondary p-free gate 的 a=1 q-lock 有限排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-s-zero-secondary-q-lock-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
+| [高 H4 clean q-bridge 的单侧完整超额排除与强制 atomic split](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [H4 q-bridge stutter 的 a 坐标转导、两类正残余、raw-p-source 修复与 q0 raw re-entry](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 首层容量 stutter 的全域 source D-gate 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 y 侧完整超额块必非空](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |

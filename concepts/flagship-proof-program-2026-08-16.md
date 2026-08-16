@@ -62,7 +62,8 @@ last_checked: '2026-08-17'
 
 1. Type I 目标除子--偶终端的代数 normal form 已经精确建立；真正未解决的是对每个
    核心素数作出证书选择的全称存在性。
-2. actual H4 clean \(q\)-bridge 的首层算术 stutter 已被关闭，但 endpoint 的 typed
+2. actual H4 clean \(q\)-bridge 的首层算术 stutter 与 y-side single-side endpoint
+   均已被关闭；每个非终端 endpoint 都是严格容量的 p-free atomic split。其 typed
    classification、terminal-first priority、atomic ownership、serializer 与 scope 仍未
    闭合。因此它是最接近完成的桥，而不是已验证的递归宏。
 3. Type II 的 \(q=1\) G endpoint 不能直接把原 source support 改名为 Type I support：
@@ -125,23 +126,22 @@ E\mid4K^2,\qquad E\equiv1\pmod R,\qquad 2\mid E,
 state，clean \(q\)-word 的 endpoint 经 terminal-first 处理后必属于以下三者之一：
 
 1. 一个按相应状态合同识别的 Type I/II terminal；
-2. 一个合法的 single-side E1--E5 edge；
-3. 一个合法的 atomic-split E1--E5 edge。
+2. 一个合法的 atomic-split E1--E5 edge。
 
 **已建立的前提。** actual H4 首层 arithmetic stutter 已被 source-D gate 排除；任何
-actual nonterminal endpoint 有 \(c_q\le p-2\)。endpoint 只剩 \(Q_x=1<Q_y\) 的
-单侧形状，或 \(Q_x,Q_y>1\) 的 atomic-split 形状；\(p\)-primary residual 和空的
-\(y\)-block 不在实际 H4 作用域内。见
+actual nonterminal endpoint 有 \(c_q\le p-2\)。high-H4 height 与 \(x_q\mid K_4\)
+的整除上界排除 \(Q_x=1<Q_y\)，而 \(y\)-block 非空性给 \(Q_y>1\)；因此 endpoint
+统一满足 \(Q_x,Q_y>1\)。\(p\)-primary residual 也不在实际 H4 作用域内。见
 [H4 universal-stutter source-D gate closure](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md)
 和
-[H4 clean raw bridge](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md)。
+[H4 single-side exclusion](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion.md)。
 
 **尚缺的闭包。** 必须从 source/path provenance 重新计算 target 的 F/G/hit 类型，处理
-terminal-first priority、parent rank、payload scope 与 serializer guards；不能只用
-\(c_q\le p-2\) 宣称 E5。
+terminal-first priority、parent rank、atomic owner/ledger、payload scope 与 serializer
+guards；不能只用 \(c_q\le p-2\) 宣称 E1--E5。
 
-**反证标准。** 找到真实 H4 source，其 endpoint 虽有严格算术余量，却在 single-side 与
-atomic-split 两种路径中均无法通过 typed/priority/serializer 准入，也没有合法 terminal。
+**反证标准。** 找到真实 H4 source，其 endpoint 虽有严格算术余量和双侧 complete-excess
+payload，却无法通过 atomic typed/priority/owner/serializer 准入，也没有合法 terminal。
 
 ### T2: Atomic-Admission
 
