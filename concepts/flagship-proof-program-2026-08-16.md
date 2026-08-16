@@ -241,6 +241,14 @@ source/target normal form 或 receipt serialization。
 \(\operatorname{Sol}(p)\) 中的 terminal 自动属于严格子集 \(W_{p,\theta}\)。见
 [Type II relation-Reach gcd-shadow endpoint descent](../claims/type-II-relation-reach-gcd-shadow-endpoint-descent.md)。
 
+**已消除的伪阻塞。** 若 endpoint 回执已经直接核验根方程 \(4/p\)，它不必被伪装成
+\(W_{p,\theta}\) 的成员才能结束全局根证明。根证书析取不变量把每个状态的归纳结论改为
+\(\mathcal C(p)\sqcup W_{p,\theta}\)：direct Type I/II certificate 进入前一分支，
+nonterminal edge 只在后一分支使用原有 lift。故 T3 的成员资格义务现在只针对“必须返回
+当前 mark 的 terminal”或“只解改变后的方程”的结果；它仍不允许把 \(4/n\) 的偶前驱、
+generalized dyadic candidate 或任意新方程解直接当作根证书。见
+[根证书与标记纤维的析取终端不变量](../claims/root-context-terminal-disjunctive-invariant.md)。
+
 **反证标准。** 构造一个合法 marked state，relation-Reach 到普通 Type II terminal，
 但该解不满足 mark。这样的例子会迫使状态增强或改变递降，而不是把普通 terminal
 直接当作闭合。

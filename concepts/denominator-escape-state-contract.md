@@ -125,6 +125,11 @@ S\longrightarrow T
 直接 Type I/II 命中是**终端叶**，没有后继状态，因而不伪造“严格下降”。任何实际写出
 后继 \(T\) 的输出都是边，必须通过第 5 节的全部五项检查。
 
+终端叶还有两个不能混写的结果语义。若恢复的解要作为当前状态的归纳值，则它是
+marked terminal，必须属于 \(W_S\)。若回执已经直接核验不可变根方程 \(4/p_0\)，则它也
+可以是 root terminal：它关闭的是整个根目标，而不是声称该解属于当前的严格标记纤维。
+后一种终端不创建后继、不放宽任何边的 E1--E5；第 4.2a 节给出精确定义。
+
 ## 2. 合法状态模式
 
 一个可进入递归选择器的状态 \(S\) 必须携带下表中的字段。字段可以由 Markdown、JSON
@@ -133,7 +138,7 @@ S\longrightarrow T
 | 字段 | 必须记录的内容 | 验证要求 |
 |---|---|---|
 | state_id | 内容寻址或可重复生成的状态标识 | 由全部规范字段重算；不得依赖枚举顺序 |
-| equation_target | 根状态取 \(4/p\)；广义标记状态取既约 \(c_S/n_S\)，并记录根素数 \(p_0\) | \(c_S,n_S>0\)、\((c_S,n_S)=1\)；根状态必须有 \(c_S=4,n_S=p_0\) |
+| equation_target | 根状态取 \(4/p\)；广义标记状态取既约 \(c_S/n_S\)，并记录不可变根素数 \(p_0\) | \(c_S,n_S>0\)、\((c_S,n_S)=1\)；根状态必须有 \(c_S=4,n_S=p_0\)；每条边必须保持同一 \(p_0\) |
 | marked_solution_set | 明确定义的 \(W_S\subseteq\operatorname{Sol}(c_S,n_S)\) 及标签 \(\theta_S\) | 不预设 \(W_S\ne\varnothing\)；成员判定条件必须有限且可核验 |
 | induction_rank | \(\rho(S)\in\mathbb N\)；普通状态默认 \(\rho(S)=n_S\) | 若不取 \(n_S\)，必须证明该秩与解提升合同相容 |
 | modulus_context | 合法模数 \(R_S\)、同余类型和定义 \(R_S\) 的整数恒等式 | 检查正性、奇偶、所需模 \(4\) 类、互素性及全部整除条件 |
@@ -795,9 +800,10 @@ x=\frac{p_0+m}{4},\quad d\mid x^2,\quad m\mid p_0x+d,
 x=ABC,\qquad d=A^2C,\qquad (A,B)=1,\qquad m\mid Bp_0+A,
 \]
 
-并由这些数据恢复一组 \(4/p_0\) 的正整数分母。若目标是标记状态，还须验证恢复解属于
-\(W_S\)，而不只是属于未标记的 \(\operatorname{Sol}(4,p_0)\)。这是终端叶；只有在它
-另行引用较小状态时，才转而按边合同验收。
+并由这些数据恢复一组 \(4/p_0\) 的正整数分母。若要把它登记为 marked terminal，
+还须验证恢复解属于 \(W_S\)，而不只是属于未标记的 \(\operatorname{Sol}(4,p_0)\)。若同一
+回执满足第 4.2a 节的根终端条件，则可登记为 root terminal，它不声称 \(W_S\) 成员资格。
+这是终端叶；只有在它另行引用较小状态时，才转而按边合同验收。
 
 ### 4.2 type_II_hit
 
@@ -814,8 +820,37 @@ x=\frac{p_0+m}{4},\quad d\mid x^2,\quad d\le x,\quad m\mid x+d.
 x=ABC,\qquad d=A^2C,\qquad (A,B)=1,\qquad A\le B,\qquad m\mid A+B,
 \]
 
-并恢复目标解及标记成员关系。与 Type I 相同，直接命中是终端叶，不借用一个虚假的
-“更小状态”来满足形式。
+并恢复目标解及标记成员关系。与 Type I 相同，直接命中可分别按 marked 或 root
+终端语义验收，不借用一个虚假的“更小状态”来满足形式。
+
+### 4.2a root terminal leaf
+
+这不是第六种递归输出，而是已经通过 Type I/II（或其它已注册 direct-root）verifier 的
+终端叶的结果标签。固定一个 proof run 的不可变根素数 \(p_0\)，一张回执可登记为
+root terminal 当且仅当：
+
+1. 当前状态和其整个已记录来源链的根素数都是同一个 \(p_0\)；
+2. 回执保留其原有 normal-form、短界和正性检查，并重算
+   \[
+   4xyz=p_0(xy+xz+yz);
+   \]
+3. 回执明确记录根方程 \(4/p_0\)、三分母和产生它的 direct receipt；
+4. 它不把一个只解 \(c_S/n_S\) 或 \(4/n\)（\(n<p_0\)）的三元组冒充为根证书；
+5. 结论为 terminal leaf，且没有后继、E4 或 E5 声称。
+
+因此 root terminal 的结论是“根方程已有可核验解”，而不是
+\((x,y,z)\in W_S\)。形式上，令 \(\mathcal C(p_0)\) 为所有这样已核验的根证书；带根上下文
+状态的归纳结果类型取为
+
+\[
+\operatorname{RootOutcome}_{p_0}(S)=\mathcal C(p_0)\sqcup W_S.
+\tag{4a}
+\]
+
+现有 verified edge \(S\to T\) 仍须保留同一根素数和原有
+\(\Phi_{T\to S}:W_T\to W_S\)。它在 (4a) 上只扩张为“根证书恒等、标记解按
+\(\Phi\) 提升”的映射。完整的良基归纳证明和边界见
+[根证书与标记纤维的析取终端不变量](../claims/root-context-terminal-disjunctive-invariant.md)。
 
 ### 4.3 support_switch
 
@@ -907,8 +942,8 @@ n=\frac{4K-E}{R},\qquad \alpha=\frac{nK}{E},
 ### E1. premises
 
 列出并验证所有算术前提，包括正性、整除、互素、奇偶、模类、自然范围、支撑分解、
-目标纤维成员关系和方向。前提不能写成“搜索发现可行”；必须保存使其可独立重算的整数
-见证。
+目标纤维成员关系和方向，以及源、目标状态的根素数相同。前提不能写成“搜索发现可行”；
+必须保存使其可独立重算的整数见证。
 
 ### E2. construction
 
@@ -1411,8 +1446,9 @@ G/Type I handoff。见[奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两
 (../claims/type-II-gap-23-odd-h-qnr-terminal-descent.md)。
 
 对非平凡 `marked_solution_set`，非终端边只有在目标状态逐字保留同一个 mark 谓词时
-才可使用恒等 lift；普通短证书还必须另验 mark membership，不能自动登记 marked
-terminal。
+才可使用恒等 lift。若普通短证书需要作为当前归纳值返回，它仍须另验 mark membership，
+不能自动登记 marked terminal；但已经直接核验 \(4/p\) 的同根 Type I/II 回执可以按第
+4.2a 节登记为 root terminal，并关闭根目标而非伪造 marked membership。
 
 该边降低的是 endpoint phase 的 \(q\)，不是 equation target 的分母 \(p\)。只有
 phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许把它标为 E5；任何
@@ -1584,6 +1620,11 @@ rejected
 ~~~
 
 只有 verified_edge 与 terminal_leaf 可以进入带标记解的严格递降闭包。
+
+root terminal 仍是 terminal leaf 的一个子标签，不是把
+\(\operatorname{Sol}(c_S,n_S)\) 的任意终端注入 \(W_S\)。它只向根结论提供
+\(\mathcal C(p_0)\) 分支；所有需要继续递归的对象仍须使用原来的 marked witness 和
+E1--E5 边合同。
 
 ## 9. 与统一选择器目标的衔接
 
