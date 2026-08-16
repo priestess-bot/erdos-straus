@@ -19,8 +19,9 @@ statement: >-
   a_re>1 strict handoff；q-lock 写 sigma=qv 后有 b_re=b+2M4v，并由 ordinary
   d=1 countdown/root-fan 路由。故尚未被已有 strict macro 关闭的必要条件精确缩为
   lambda||q、q/lambda|E_zeta、omega_re=-1、9u^2>=p，外加 target 的
-  terminal/typed/source/path/serializer/persistent guards。该结论不证明这最终
-  residual 不可达，也不把静态容量图自动升级为 global edge。
+  terminal/typed/source/path/serializer/persistent guards。后续的 actual source
+  D-gate 已证明本卡 d4=1 x-side raw branch 本身为空；故这里的 residual 只描述
+  source-provenance 被遗忘后的静态正常形边界，不是仍存的 actual H4 分支。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -449,7 +450,10 @@ root-coprime capacity fan 进一步给出
 \(q\mid tE_\zeta\)、\(\omega_{\rm re}=-1\) 或 \(9u^2\ge p\) 中任一条件推出矛盾。
 反过来，也有 q-lock 立即进入 \(u=1\) root-fan 出口的控制。两者都不构造 actual H4
 predecessor、不声称 \(E_\zeta\) 是某个实际 endpoint 的 maximal block，只防止把
-算术必要条件误写成充分的 global closure。
+算术必要条件误写成充分的 global closure。后续的
+[source \(D\)-gate 全称排除](type-II-q-one-c-two-19-phase-h4-a-one-q0-one-d-one-xside-reentry-source-d-gate-closure.md)
+使用 actual raw identity 和 \(D\mid K_4\) 消除了本卡范围内的全部 actual x-side
+branch；因此这里的 static residual 不能反推 actual H4 反例。
 
     python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q0_one_d_one_pfree_reentry_capacity_map.py --verify
 
