@@ -144,6 +144,13 @@ one-use ledger。见
 terminal-first priority、payload scope 与 serializer guards；不能只用 \(c_q\le p-2\)
 和 branch-local owner 宣称 E1--E5。
 
+**受限 typed 控制。** 两个 local H4 atomic chart 已能以“有限 centered box 不命中 +
+单一 support prime 的长模 involution witness”独立重分类为 F；这避免了全 generated-subgroup
+BFS，但 witness 不是 canonical Fourier input，且控制未被断言为 actual persistent H3
+predecessor。故它只验证了一个实用的 target-local F receipt 形状，不缩小上述全称
+serializer / priority 缺口。见
+[H4 atomic target involution F controls](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-target-involution-fiber-controls.md)。
+
 **反证标准。** 找到真实 H4 source，其 endpoint 虽有严格算术余量和双侧 complete-excess
 payload，却无法通过 atomic typed/priority/serializer 准入，也没有合法 terminal。
 
