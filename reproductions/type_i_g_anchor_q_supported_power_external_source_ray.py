@@ -96,6 +96,68 @@ def ray_record(t: int) -> tuple[int, ...]:
     )
 
 
+def composite_record() -> tuple[int, ...]:
+    """Replay the two-prime Q-supported control at k=6, q=23."""
+    t = 16
+    lattice = POWER_PRIME**2 * 7**3
+    factor = POWER_PRIME**3 * 7**6
+    a0 = 6_338
+    a = a0 + lattice * t
+    prime = 4 * K * a + 1
+    source = Q_MODULUS * a + 1
+    retained = K * source
+    carrier = (prime - 3) // 2
+    u = (retained + factor) // Q_MODULUS
+    v = retained * u // factor
+    gap = (4 * factor + 1) // Q_MODULUS
+    divisor = u * u // factor
+
+    if not (
+        is_prime(prime)
+        and gcd(152_113, 205_800) == 1
+        and (6 * K - 1) % POWER_PRIME == 0
+        and (6 * K - 1) % 7 == 0
+        and factor % Q_MODULUS == (-K) % Q_MODULUS
+        and (Q_MODULUS * a0 + 1) % lattice == 0
+        and prime == 152_113 + 205_800 * t
+        and prime % 24 == 1
+        and source == lattice * (23 * t + 17)
+        and (Q_MODULUS + 1) * source == Q_MODULUS * prime + 1
+        and carrier == 35 * (2_173 + 2_940 * t)
+        and carrier % 35 == 0
+        and (carrier // 35) % POWER_PRIME != 0
+        and (carrier // 35) % 7 != 0
+        and carrier % factor != 0
+        and factor <= retained
+        and retained * retained % factor == 0
+        and (retained + factor) % Q_MODULUS == 0
+        and gap == 2_557_587
+        and 4 * u - prime == gap
+        and 3 <= gap <= prime - 2
+        and u * u % factor == 0
+        and (prime * u + divisor) % gap == 0
+        and (prime * u + divisor) // gap == v
+        and prime * (u + prime * (u * u // divisor)) % gap == 0
+        and prime * (u + prime * (u * u // divisor)) // gap == prime * retained
+        and reciprocal_sum(retained, u, v) == Fraction(4, source)
+        and reciprocal_sum(prime * retained, u, v) == Fraction(4, prime)
+    ):
+        raise AssertionError("composite Q-supported witness or certificate changed")
+
+    return (
+        t,
+        prime,
+        source,
+        retained,
+        carrier,
+        factor,
+        u,
+        v,
+        gap,
+        divisor,
+    )
+
+
 def verify() -> None:
     receipts = tuple(ray_record(t) for t in FIXTURE_T)
     if receipts != (
@@ -103,7 +165,20 @@ def verify() -> None:
         (4, 63_913, 61_250, 367_500, 31_955, 78_125, 19_375, 91_140, 13_587, 4_805),
     ):
         raise AssertionError("fixed Q-supported power-ray controls changed")
-    print("verified Q-supported power external-source ray controls")
+    if composite_record() != (
+        16,
+        3_444_913,
+        3_301_375,
+        19_808_250,
+        1_722_455,
+        14_706_125,
+        1_500_625,
+        2_021_250,
+        2_557_587,
+        153_125,
+    ):
+        raise AssertionError("fixed composite Q-supported control changed")
+    print("verified Q-supported prime-power and composite external-source controls")
 
 
 def main() -> None:

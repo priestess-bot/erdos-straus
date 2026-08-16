@@ -9614,8 +9614,10 @@ p=3913+15000t,\qquad t\ge1,
 选择器必须记录 \(\ell\)-adic exponent capacity，不能只记录 \(Q\) 的素因子支撑或
 \((Q,M)\)。详见
 [G-anchor \(Q\)-supported 幂借用平方外部源射线](../claims/type-I-g-anchor-q-supported-power-external-source-ray.md)。
-更一般地，固定 \(k\) 的任一单素数幂 witness \(e=\ell^j\) 若满足
-\(\operatorname{rad}(e)\mid Q\)，则必有 \(\ell\mid6k-1\)、
-\(\ell^j\equiv-k\pmod{4k-1}\)，且 \((p-1)/(4k)\) 落在同一 CRT 类；反向的
-充分大 prime 参数又恢复该 witness。故这一单素数幂切片已经是精确的 valuation-aware
-容量图，尚未外推到多素数 composite witness。
+更一般地，这不是单素数现象。固定 \(k\) 时，所有 \(Q\)-supported witness 的素因子
+都必须来自 \(6k-1\)，其完整指数向量 \(E\) 只需满足
+\(E\equiv-k\pmod{4k-1}\)；半指数积决定 \((p-1)/(4k)\) 的唯一 CRT 类，反向也完全成立。
+等价地，\(-k\) 属于 \(6k-1\) 素因子在 \((\mathbb Z/(4k-1)\mathbb Z)^\times\) 中生成的
+子群，当且仅当该尺度存在无限 \(Q\)-supported prime ray。双素数控制
+\(p=3444913,k=6,e=5^3 7^6\) 实现了这张完整菜单的非单幂部分。这个容量图仍不保证给定
+\(p\) 落在某个 CRT 类，也不构成全称 exit。
