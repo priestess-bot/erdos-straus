@@ -17,6 +17,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion
+  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
   - type-I-formal-full-excess-cycle-or-hit-reduction
   - denominator-escape-state-contract
 topics:
@@ -38,6 +39,8 @@ sources:
     role: endpoint-is-the-only-full-excess-terminal-location
   - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion
     role: p-free-endpoint-and-H4-K-context
+  - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
+    role: actual-high-H4-antecedent-exclusion
   - claim: type-I-formal-full-excess-cycle-or-hit-reduction
     role: full-excess-sink-criterion
   - concept: denominator-escape-state-contract
@@ -121,9 +124,11 @@ actual H4 clean bridge 还满足 \(p\nmid K_4x_qy_q\)。所以 (4) 的前两个�
 - single-side payload 或 atomic owner/ledger。
 
 它仍服从较早的 state-level terminal/alternate priority：若 H4 source 已有更高优先级
-输出，selector 返回该输出即可；若到达 q endpoint 且 (2) 成立，(4) 是无需额外
-serializer 的确定性直接终端。非终端端点仍须走既有单侧或 atomic-split guarded macro
-contract。
+输出，selector 返回该输出即可；若到达任意符合 (2) 的 endpoint，(4) 是无需额外
+serializer 的确定性直接终端。对本卡的 actual high-H4 scope，后继
+[\(y\)-block 非空引理](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md)
+进一步证明 (2) 的 antecedent 为空。因此本卡保留正确的条件性 Type I serializer，
+而 actual H4 nonterminal endpoint 仍须走 y-side single-side 或 atomic-split guarded macro。
 
 ## 4. 聚焦回执
 

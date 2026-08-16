@@ -9064,9 +9064,11 @@ L_q=\frac{L_0}{q}E_x,
 \]
 
 所以 \(Q_x=1\) 的单侧出口自动严格，给 \(c_q=p-q\le p-2\)；所有仍未关闭的容量
-stutter 精确是 \(Q_x>1\) 且 \(E_x\equiv q\pmod p\)。\(Q_y=1\) 时它是单侧
-payload 的门，\(Q_y>1\) 时它是 conditional atomic-split payload 的门。详见
-[H4 q-bridge 完整超额 stutter reduction](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)。
+stutter 精确是 \(Q_x>1\) 且 \(E_x\equiv q\pmod p\)。原始容量图把 \(Q_y=1\) 记为
+x-side 单侧、\(Q_y>1\) 记为 atomic；后继的 H4 高度引理已在 actual scope 中删除
+\(Q_y=1\)，故 live single-side 行是 \(Q_x=1<Q_y\) 的 y-side payload。详见
+[H4 q-bridge 完整超额 stutter reduction](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md)
+及 [H4 clean \(q\)-bridge 的 \(y\) 侧完整超额块必非空](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md)。
 
 ## 2026-08-16：H4 q-bridge stutter 已转导为 \(a\)-坐标与两类正残余
 
@@ -9464,17 +9466,18 @@ q-word 的 terminal-first 也不再需要被模糊地保留为沿整个 raw word
 真前缀 \(e\mid q,e<q\)，所选坐标 \(z/e\) 保留 \(q/e\) 的某个素因子；而
 \((q,K_4)=1\)，故 \(z/e\nmid K_4\)。完整超额形式图的汇点条件
 \(x_ey_e\mid K_4\) 因而不可能成立。也就是说，任何由 full-excess sink 产生的
-Type I terminal 只能位于 q endpoint 的 \(Q_x=Q_y=1\) 分派，不能隐藏在 q-word 的
-内部 checkpoint。
+Type I terminal 不会隐藏在 q-word 的内部 checkpoint。
 
-结合 endpoint p-primary 排除和首层 stutter 全域关闭，actual nonterminal q endpoint
-现在都已具备 \(c_q\le p-2\) 的严格算术势。若 endpoint 是 full-excess sink，三分母
-\((K_4/y_q,K_4/x_q,pK_4)\) 直接给出 Type I terminal，已不保留 serializer 缺口。
-非终端侧剩余的是清晰的 E3/priority 接口：source 和 target 的 typed reclassification、
-state/edge serializer、scope，双侧时的 atomic owner 和 ledger，以及版本化的 state-level
-terminal/alternate prefix。此结果不把这些语义字段
-假定为已实现，但排除了“需要沿 q 的每个真前缀逐一寻找 full-excess terminal”
-这一额外障碍。详见
+H4 高度现在还给 \(y_q>ph+1\)，而 \(y_q\mid K_4\) 会强制 \(y_q\mid ph+1\)；
+故 actual endpoint 的 \(Q_y\) 必非空。结合 endpoint p-primary 排除和首层 stutter
+全域关闭，actual q endpoint 只剩 \(Q_x=1<Q_y\) 的 y-side single-side 或
+\(Q_x,Q_y>1\) 的 atomic-split 分派，均具备 \(c_q\le p-2\) 的严格算术势。
+full-excess 的三分母 \((K_4/y_q,K_4/x_q,pK_4)\) 仍是正确的条件 serializer，
+但在这个 actual high-H4 scope 中没有触发实例。剩余的是清晰的 E3/priority 接口：
+source 和 target 的 typed reclassification、state/edge serializer、scope，双侧时的
+atomic owner 和 ledger，以及版本化的 state-level terminal/alternate prefix。此结果不把
+这些语义字段假定为已实现，但排除了“需要沿 q-word 寻找 full-excess terminal”这一额外
+障碍。详见
 [H4 clean \(q\)-bridge 的内部 full-excess Type I terminal 局部化](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-interior-terminal-localization.md)。
-endpoint terminal 的直接回执见
-[H4 q-bridge endpoint full-excess sink 的 Type I certificate](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-endpoint-terminal-serializer.md)。
+endpoint 分派的进一步收缩见
+[H4 clean \(q\)-bridge 的 \(y\) 侧完整超额块必非空](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md)。

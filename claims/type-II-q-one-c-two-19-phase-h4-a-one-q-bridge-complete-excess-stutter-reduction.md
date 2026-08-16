@@ -229,6 +229,11 @@ atomic controls；它们不构造或排除 (12) 的 stutter residue。
 endpoint 的算术容量都严格满足 \(c_q\le p-2\)。本卡仍不处理 terminal-first 抢占、
 typed reclassification 或 atomic adapter 的持久化实现；这些语义门不能由容量严格性替代。
 
+上面的 \(Q_y=1\) 行是由 endpoint complete-excess 代数得到的通用方向表；后继的 H4
+高度引理进一步证明 actual high scope 中恒有 \(Q_y>1\)，所以该 x-side 单侧行不触发。
+actual single-side 分派只能是 \(Q_x=1<Q_y\) 的 y-side payload。见
+[H4 clean \(q\)-bridge 的 \(y\) 侧完整超额块必非空](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md)。
+
 ## 7. 定向回执
 
 ```bash

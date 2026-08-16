@@ -7,9 +7,10 @@ statement: >-
   q bridge 中，令 canonical q-word 的任一真前缀除数为 e|q、e<q，并写
   (x_e,y_e)=(R4-z/e,z/e)。则 y_e 不整除 K4，故 x_e y_e 不整除 K4；该 primitive
   raw checkpoint 不会是 full-excess Type I sink。因而由完整超额 sink 所给的 Type I
-  terminal 不会在 q-word 内部出现，只可能在 q endpoint 的 Q_x=Q_y=1 分派出现。
-  再结合 endpoint p-primary 排除与首层 capacity-stutter 的全域关闭，actual nonterminal
-  endpoint 只剩 p-free single-side 或 p-free atomic-split 的严格容量 pre-receipt，均有
+  terminal 不会在 q-word 内部出现；H4 高度进一步排除 endpoint 的 Q_y=1，故 canonical
+  q-word 中没有 full-excess Type I sink。再结合 endpoint p-primary 排除与首层
+  capacity-stutter 的全域关闭，actual endpoint 只剩 p-free y-side single-side 或 p-free
+  atomic-split 的严格容量 pre-receipt，均有
   c_q<=p-2。该结论不把 state-level terminal/alternate priority、typed target、serializer
   或 atomic owner/ledger guard 自动升级为通过。
 claim_status: established
@@ -19,6 +20,7 @@ depends_on:
   - type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-p-primary-endpoint-exclusion
   - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
+  - type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
   - type-I-formal-full-excess-cycle-or-hit-reduction
   - type-I-path-anchored-atomic-split-complete-excess-admission
   - type-II-q-one-c-two-19-phase-three-anchor-persistent-macro
@@ -45,6 +47,8 @@ sources:
     role: actual-endpoint-p-free-domain
   - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
     role: all-actual-first-capacity-stutters-absent
+  - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty
+    role: actual-endpoint-y-block-nonemptiness-and-terminal-branch-exclusion
   - claim: type-I-formal-full-excess-cycle-or-hit-reduction
     role: full-excess-sink-to-Type-I-terminal-equivalence
   - claim: type-I-path-anchored-atomic-split-complete-excess-admission
@@ -157,10 +161,10 @@ p\nmid Q_xQ_y.
 \tag{8}
 \]
 
-若 \(Q_x=Q_y=1\)，则 \(x_qy_q\mid K_4\)，此时 (5) 给出 endpoint 的
-full-excess Type I terminal。否则端点是 p-free nonterminal。已有 complete-excess
-分派把它唯一送入单侧 payload 或双色 atomic-split payload；首层 source \(D\)-gate
-闭包又给
+H4 高度已给 \(Q_y>1\)，所以 endpoint 不可能满足 \(Q_x=Q_y=1\)，也不可能是
+\(Q_y=1<Q_x\) 的 x-side 单侧 payload。它只会是 \(Q_x=1<Q_y\) 的 y-side 单侧
+payload，或 \(Q_x,Q_y>1\) 的双色 atomic-split payload。两种情形均 p-free；首层
+source \(D\)-gate 闭包又给
 
 \[
 \boxed{c_q\le p-2.}
@@ -185,13 +189,13 @@ actual H4 source 与 endpoint 的算术信息。
 | q-word 位置 | full-excess Type I terminal | 算术容量 | 尚未由本卡支付的内容 |
 |---|---|---|---|
 | \(e<q\) 的真前缀 | 由 (6) 自动否定 | 不作为 macro endpoint | raw-prefix 以外的新 priority verifier，若未来注册，仍须显式处理 |
-| \(e=q, Q_x=Q_y=1\) | 直接 Type I terminal | N/A | 无；由 \((K_4/y_q,K_4/x_q,pK_4)\) 确定性输出 |
-| \(e=q\)，恰一块非平凡 | 不为 full-excess sink | (9) 严格 | source/target typed state、priority prefix、serializer/scope |
+| \(e=q, Q_y=1\) | full-excess/x-side 单侧均不出现 | N/A | actual H4 height 已给 \(Q_y>1\) |
+| \(e=q, Q_x=1<Q_y\) | 不为 full-excess sink | (9) 严格 | source/target typed state、priority prefix、serializer/scope |
 | \(e=q, Q_x,Q_y>1\) | 不为 full-excess sink | (9) 严格 | 上述内容，加 atomic owner tuple、ledger 与 adapter validator |
 
-所以 `full-excess` terminal-first 的 raw-path 检查不必沿 q 的每个内部 raw edge
-逐一支付：其真前缀输出已由 (6) 数学地固定为 `no_output`。这缩小的是 guard 的
-**范围**，不是把 guarded candidate 误登记为 `verified_edge`。
+所以 `full-excess` terminal-first 的 raw-path 检查不必沿 q 的每个 raw edge 逐一支付：
+真前缀由 (6) 排除，endpoint 则由 \(Q_y>1\) 排除。这缩小的是 guard 的**范围**，
+不是把 guarded candidate 误登记为 `verified_edge`。
 
 仍必须独立获得的回执是：
 
@@ -200,8 +204,8 @@ actual H4 source 与 endpoint 的算术信息。
 3. canonical serializer、state/edge digest；双侧时还包括 atomic owner 与 ledger；
 4. target 的 `pending_dispatch` 入口及后续 priority policy。
 
-endpoint terminal 的直接 serializer 见
-[endpoint full-excess sink 的 Type I terminal 证书](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-endpoint-terminal-serializer.md)。
+H4 endpoint 的 \(y\)-block 非空性见
+[H4 clean \(q\)-bridge 的 \(y\) 侧完整超额块必非空](type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md)。
 单侧分支的 residual divisibility 已由 q endpoint 的算术自动给出；双侧分支不能拆成
 两个旧单侧 action，必须调用既有 atomic-split contract。所有状态的 equation target
 仍为 \(4/p\)，故当上述 guards 成功时 E4 是 \(\operatorname{Sol}(p)\) 的恒等提升，
