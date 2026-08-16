@@ -88,6 +88,12 @@ direct \(m=1\) capacity map 已经证明
 \tag{4}
 \]
 
+虽然这里暂记 \(h=(a,M)\)，high-\(q\) source 的
+[共享缺陷刚性](type-I-q-one-full-carrier-d-one-c-eight-high-q-shared-defect-rigidity.md)
+已经证明 \(h=D_s=(V,M)\)，它只依赖根参数 \(s\)，并且与下面的
+\(g_b=(b,M)\) 互素。因此对一个实际 source，low gate 只有七个 \(q\bmod p\)
+残余类；先前的 56 格只是跨八个 source-defect fiber 的总菜单。
+
 本卡只处理真正命中低容量 gate 的情形 \(1\le c_a\le7\)。对
 \(v\in\{a,b\}\)，记相对于当前 \(K\) 的完整 excess 分解为
 
