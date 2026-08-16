@@ -9,9 +9,10 @@ statement: >-
   cj+8g=12c+kp 定义整数 k。则 q_* 整除显式 annihilator
   Gamma(c,k,g)=112c+81k-72g。特别地，若 k=0，则全部可能性恰为
   (c,j,g,q_*,s)=(2,8,1,19,16 mod 19)、(8,11,1,103,86 mod 103) 或
-  (56,11,7,103,86 mod 721)。第一条是既有 19 相位；后两条只是必要的
-  q_*=103 算术射线，不断言它们对应实际 q=1 state、terminal 或 strict edge。
-  该结果把偶支中唯一 j 不随 s 增长的容量层从一般 c 压缩到三个明确相位。
+  (56,11,7,103,86 mod 721)。第一条是既有 19 相位；后两条都有显式 ordinary
+  q=1 macro 实现：p=157393 给出 c=8，p=4129 给出 c=56。它们不因此绕过
+  terminal-first，也不自动给出 strict edge。该结果把偶支中唯一 j 不随 s 增长的
+  容量层从一般 c 压缩到三个明确相位，并证明 103 射线不是形式空集。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -38,7 +39,7 @@ sources:
   - claim: type-II-q-one-full-carrier-d-one-capacity-two-rigidity
     role: existing-q-star-19-realization-on-the-c-two-ray
   - reproduction: reproductions/type_ii_q_one_full_carrier_d_one_zero_k_capacity_ray.py
-    role: exact-three-shape-and-modular-phase-receipt
+    role: exact-three-shape-modular-phase-and-q-star-103-realization-receipt
 visibility: public
 last_checked: '2026-08-17'
 ---
@@ -198,11 +199,47 @@ q_\star=103.
 
 第三行的模 \(721=7\cdot103\) 同时满足 (14)；它不是把两个独立的相位条件混同。
 
-## 5. 作用域
+## 5. \(q_\star=103\) 射线的显式实现
+
+两个 \(q_\star=103\) 射线都不是仅由同余保留下来的形式候选。下表的每一行直接满足
+(1)--(5)，并由 fixed-\(n\) macro、full-product fold 与 complete-excess canonical
+chart 重放：
+
+\[
+\begin{array}{c|c|c|c|c|c|c|c}
+p&s&X=12s+1&q_\star&\delta&n&(j,g)&c\\ \hline
+4129&86&1033&103&147&11353&(11,7)&56\\
+157393&3279&19^2\cdot109&103&5603&432829&(11,1)&8.
+\end{array}
+\tag{17}
+\]
+
+两行的 \(X\) 的全部素因子均为 \(1\pmod3\)，故它们确为 ordinary \(q=1\) G
+root 的算术输入。以第一行为例，
+
+\[
+3\cdot103\cdot147-4=11\cdot4129,\qquad
+4\cdot11353=11\cdot4129+4-11,
+\tag{18}
+\]
+
+第二行同样满足
+
+\[
+3\cdot103\cdot5603-4=11\cdot157393,\qquad
+4\cdot432829=11\cdot157393+4-11.
+\tag{19}
+\]
+
+因此 \(c=8,56\) 的 103 射线不能再由“ordinary \(q=1\) 条件会使它们全空”的路线
+关闭。它们的 complete-excess target 仍必须独立执行 terminal-first、typed
+classification 与一般 Type I selector。
+
+## 6. 作用域
 
 容量 \(c=2\) 的第一行与既有 \(q_\star=19\) 高相位入口相容。容量 \(8\) 和 \(56\)
-的两行只给出必要的 \(q_\star=103\) 代数射线：它们尚未被证明存在，也尚未给出
-Type I/II terminal、source/path receipt、可提升递降或一般 selector。
+的两行已有 (17) 的算术 macro receipt；但这不声称它们是 terminal-first 未命中的
+持久队列状态，也尚未给出它们的 Type I/II terminal、可提升递降或一般 selector。
 
 此外，本卡不分类 \(k\ne0\) 的容量面；对这些层，\(j\) 的 \(s\)-依赖仍需与
 \(\Gamma(c,k,g)\)、\(j<3q_\star\) 及真实 complete-excess provenance 一起处理。
@@ -214,5 +251,5 @@ Type I/II terminal、source/path receipt、可提升递降或一般 selector。
 python3 reproductions/type_ii_q_one_full_carrier_d_one_zero_k_capacity_ray.py --verify
 ~~~
 
-复现器只重放 (11)、(13)、(16) 和一个已有的真实 \(c=2\) receipt；不做素数范围扫描、
-terminal 搜索或 \(c=8,56\) 的存在性声称。
+复现器只重放 (11)、(13)、(16) 和三个已指定的实际 macro receipt；不做素数范围扫描、
+terminal 搜索或对 103 射线的全称 selector 声称。

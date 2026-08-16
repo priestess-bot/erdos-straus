@@ -1,17 +1,35 @@
 #!/usr/bin/env python3
 """Verify the three zero-k q=1 even-branch residual-capacity rays.
 
-The receipt is symbolic: it enumerates the four possible j values under k=0,
-checks the q-star annihilators, and replays the existing c=2 realization. It
-does not search for actual c=8 or c=56 q=1 states.
+The receipt is symbolic at the classification step, then replays fixed actual
+c=2, c=8, and c=56 macro rows. It does not run a prime-range or terminal
+search.
 """
 
 from __future__ import annotations
 
 import argparse
+from dataclasses import dataclass
 
 import type_ii_q_one_full_carrier_d_one_capacity_two_rigidity as capacity_two
 import type_ii_q_one_type_i_carrier_rail_dispatch as rail
+
+
+@dataclass(frozen=True)
+class ActualRayControl:
+    prime: int
+    s: int
+    X_factors: dict[int, int]
+    delta: int
+    n: int
+    g: int
+    capacity: int
+
+
+ACTUAL_Q_103_CONTROLS = (
+    ActualRayControl(4129, 86, {1033: 1}, 147, 11353, 7, 56),
+    ActualRayControl(157393, 3279, {19: 2, 109: 1}, 5603, 432829, 1, 8),
+)
 
 
 def zero_k_shapes() -> tuple[tuple[int, int, int], ...]:
@@ -97,18 +115,59 @@ def existing_c_two_control() -> dict[str, int]:
     return {"prime": prime, "s": s, "q_star": q_star}
 
 
+def actual_q_103_controls() -> dict[str, int]:
+    """Replay one actual c=56 and one actual c=8 q-star=103 macro row."""
+    capacities = set()
+    for control in ACTUAL_Q_103_CONTROLS:
+        row = capacity_two.receiver_data("even", 2 * control.s)
+        prime, s, q_star, delta, n, j, g, capacity = (
+            int(row[key])
+            for key in ("prime", "s", "q_star", "delta", "n", "j", "g", "c")
+        )
+        target_R, target_K, M = (
+            int(row[key]) for key in ("target_R", "target_K", "M")
+        )
+        if not (
+            prime == control.prime
+            and s == control.s
+            and rail.is_prime(prime)
+            and rail.factorization(12 * s + 1) == control.X_factors
+            and rail.q_one_g(12 * s + 1)
+            and q_star == 103
+            and delta == control.delta
+            and n == control.n
+            and j == 11
+            and g == control.g
+            and capacity == control.capacity
+            and capacity * j + 8 * g == 12 * capacity
+            and annihilator(capacity, 0, g) % q_star == 0
+            and 3 * q_star * delta - 4 == j * prime
+            and 4 * n == j * prime + 4 - j
+            and target_K == capacity * M
+            and prime * target_R + 1 == 4 * target_K
+        ):
+            raise AssertionError("actual q-star=103 zero-k receipt changed")
+        capacities.add(capacity)
+    if capacities != {8, 56}:
+        raise AssertionError("q-star=103 ray capacities changed")
+    return {"control_count": len(ACTUAL_Q_103_CONTROLS), "capacity_sum": sum(capacities)}
+
+
 def verify() -> None:
     phase = q_star_phase_receipt()
     control = existing_c_two_control()
+    actual = actual_q_103_controls()
     if not (
         phase["c_two_s"] == 16
         and phase["q_103_s"] == 86
         and control["q_star"] == 19
+        and actual["control_count"] == 2
+        and actual["capacity_sum"] == 64
     ):
         raise AssertionError("zero-k ray receipt changed")
     print(
         "verified q=1 even zero-k rays: c=2 at q*=19, "
-        "and only necessary c=8/c=56 q*=103 rays remain"
+        "plus actual c=8/c=56 q*=103 macro receipts"
     )
 
 
