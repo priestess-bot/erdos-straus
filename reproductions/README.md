@@ -208,13 +208,23 @@ PYTHONPATH=reproductions python3 \
   reproductions/type_i_high_anchor_automatic_q_gap3_gap7_survivor_sieve.py --verify
 ```
 
-type_i_high_anchor_automatic_q_natural_gap_q_carrier_exclusion.py 检查 strict
-automatic 来源的 natural gap \(m=R-p+1\)。因 \(x=(R+1)/4\) 与第二
-full-excess carrier \(Q=R-1\) 互素，任何 \(Q\)-supported 平方除子都退化为
-\(d=1\)；除非 \(m\mid p+4\) 给出 Type II 叶节点，这个 natural gap 必须
-引入 \(Q\) 之外的新素因子。脚本重放 \(q=2\) 的 \(p=3793\) 与
-\(q=3\) 的 \(p=60913\) actual source，另用 \((p,R)=(73,83)\) 检查剩余
-\(d=1\) Type II 条件的锐性。
+`type_i_high_window_natural_gap_carrier_exclusion.py` 将 natural-gap carrier
+排除提升到全部 high-window 行：只要 \(p<R<2p\)、\(R\equiv3\pmod8\) 且 actual
+full-excess carrier 为 \(Q=R-1\)，\(x=(R+1)/4\) 与 \(Q\) 互素，所有
+\(Q\)-supported 平方除子都退化为 \(d=1\)。除非 \(m=R-p+1\mid p+4\) 给出
+Type II 叶节点，这个 natural gap 必须引入 \(Q\) 之外的新素因子。它以非 automatic
+的 actual full-excess 行 \((p,A,R)=(1033,351,1211)\) 验证新增范围，并重放
+\(q=2\) 的 \(p=3793\)、\(q=3\) 的 \(p=60913\) 推论和 \((p,R)=(73,83)\) 的
+锐性控制。
+
+```bash
+PYTHONPATH=reproductions python3 \
+  reproductions/type_i_high_window_natural_gap_carrier_exclusion.py --verify
+```
+
+`type_i_high_anchor_automatic_q_natural_gap_q_carrier_exclusion.py` 保留为上述结论的
+automatic-\(q\) source-specific fixture，绑定 two-anchor (Q=R-1) provenance 和原来的
+两个 actual source controls。
 
 ```bash
 PYTHONPATH=reproductions python3 \

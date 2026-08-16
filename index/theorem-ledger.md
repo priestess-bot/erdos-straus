@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 840 |
+| 数学状态 | `established` | 841 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 671 |
+| 证明来源 | `repository_derivation` | 672 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 818 |
+| 审阅状态 | `internal_review` | 819 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -515,6 +515,7 @@
 | [C=4 第一 bundle 双对偶的 R=7 边界与 p=1801 压力点](../claims/type-I-high-support-c4-first-bundle-dual-r7-boundary.md) (`type-I-high-support-c4-first-bundle-dual-r7-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [C=4 双高锚 complete-excess 的内部 checkpoint 严格宏](../claims/type-I-high-support-c4-two-anchor-persistent-macro.md) (`type-I-high-support-c4-two-anchor-persistent-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-12 |
 | [高支撑 F/G 状态的 rank-aware sink-bundle 有限选择器与 p=73 严格出口](../claims/type-I-high-support-rank-aware-sink-bundle-selector.md) (`type-I-high-support-rank-aware-sink-bundle-selector`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
+| [高窗口 R 减一 full-excess 载体的自然 gap 排除](../claims/type-I-high-window-natural-gap-full-excess-carrier-exclusion.md) (`type-I-high-window-natural-gap-full-excess-carrier-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [Type I/II F-G 源映射的有限整数宇宙完备化](../claims/type-I-II-fg-universal-finite-source-map-completion.md) (`type-I-ii-fg-universal-finite-source-map-completion`) | `conditional` | `repository_derivation` | `internal_review` | - | 2026-08-10 |
 | [k=2模七二次剩余因子边界](../claims/type-I-k2-mod7-even-source-factor.md) (`type-I-k2-mod7-even-source-factor`) | `established` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-27 |
 | [large-slab 的受限因子对正规形与跨指数层支撑容量](../claims/type-I-large-slab-factor-pair-layer-capacity.md) (`type-I-large-slab-factor-pair-layer-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |

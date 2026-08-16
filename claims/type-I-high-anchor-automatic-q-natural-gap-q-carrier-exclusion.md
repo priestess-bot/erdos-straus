@@ -3,7 +3,8 @@ kind: claim
 claim_id: type-I-high-anchor-automatic-q-natural-gap-q-carrier-exclusion
 title: automatic-q 高锚自然 gap 的 full-excess Q-carrier 排除
 statement: >-
-  对严格 automatic-q 高锚来源，若第二 complete-excess bundle 为 Q=R-1，令
+  这是高窗口 R-1 full-excess 载体自然 gap 排除在 strict automatic-q 高锚来源上的
+  推论。若第二 complete-excess bundle 为 Q=R-1，令
   delta=R-p、m=delta+1、x=(p+m)/4=(R+1)/4。则 m 是合法 Bradford gap，且
   gcd(x,Q)=1。因此任何同时满足 d|x^2 与 rad(d)|Q 的 Q-supported 除子只能为
   d=1。该 d 不可能给出 Type I；它给出 Type II 当且仅当 m|p+4。故若
@@ -14,6 +15,7 @@ claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
 depends_on:
+  - type-I-high-window-natural-gap-full-excess-carrier-exclusion
   - type-I-high-anchor-automatic-q-source-template
   - gap-residue-reachability
   - short-certificate-equivalence
@@ -71,6 +73,11 @@ x=\frac{p+m}{4}=\frac{R+1}{4}.
 这是由 high chart 的增量 \(\delta\) 自然诱导的一个
 Bradford gap。本卡只问：第二 full-excess carrier \(Q\) 自身能否
 为这个 gap 支付一张证书。
+
+这里的载体排除本身不依赖 automatic cofactor、support 或 phase。严格 source 的
+\(R<2p\) 只来自 \(R<4A\) 与 \(qA<p,q>1\)，故本卡的定理现可直接视为
+[高窗口 \(R-1\) full-excess 载体的自然 gap 排除](type-I-high-window-natural-gap-full-excess-carrier-exclusion.md)
+在 automatic-\(q\) 域的推论；下面保留原来的 source-specific controls 与解释。
 
 ## 2. 精确排除定理
 
