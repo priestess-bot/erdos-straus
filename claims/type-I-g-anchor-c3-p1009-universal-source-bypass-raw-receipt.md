@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt
 title: p=1009 的 c=3 universal-source 非 p 绕行 raw receipt
-statement: 对 p=1009 的 c=3 chart，canonical p-edge 后的 m=1 raw 图严格困于 N_R(1) 与 N_R(2)，但从同一个 declared universal p-source 出发可绕开 p-edge，按 349,41,1013,13,2,2 六条实际 raw 边到达 complement seed N_R(p-3)。对 ordered universal source 首坐标的后代，source-origin mark sigma=-p^(-1) 通过 raw-lineage transport 在 t=4,2,1 自动给出 -M,-2M,-13；它不是 endpoint 倒推的自由 multiplier。现有 p-first adapter 仍硬编码首条 p-edge 与 anchor-relative phase，不能接纳该 receipt，因此它仍不是 root、verified_edge 或递归边。障碍现已精确缩为 source-bypass root policy、state identity 和 E4/E5 接入，而非 raw path 或独立相位来源。
+statement: 对 p=1009 的 c=3 chart，canonical p-edge 后的 m=1 raw 图严格困于 N_R(1) 与 N_R(2)，但从同一个 declared universal p-source 出发可绕开 p-edge，按 349,41,1013,13,2,2 六条实际 raw 边到达 complement seed N_R(p-3)。对 ordered universal source 首坐标的后代，source-origin mark sigma=-p^(-1) 通过 raw-lineage transport 在 t=4,2,1 自动给出 -M,-2M,-13；它不是 endpoint 倒推的自由 multiplier。新的 source-lineage grammar 已接纳这类 non-p-first receipt 并将 raw digest、lineage digest 与 orientation 纳入根 identity；但 p=1009 本身不是 q=1 G endpoint，故本例仍只是 E1--E3 raw 控制，不生成 q=1 phase edge、verified descent 或递归边。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -34,7 +34,7 @@ sources:
   - concept: denominator-escape-state-contract
     role: E1-E5-and-root-boundary
 visibility: public
-last_checked: '2026-08-06'
+last_checked: '2026-08-16'
 ---
 
 # \(p=1009\) 的 \(c=3\) universal-source 非 \(p\) 绕行 raw receipt
@@ -230,19 +230,22 @@ anchor-relative phase；它没有 source-lineage 或 \(g_i\)-transport 字段，
 
 ## 5. 后续接口
 
-(4) 现已建立一张 E1 raw-source receipt 与 source-lineage transport evidence；后者只能作为
-未来 E3 normal-form verifier 的输入，尚不是一个独立 E3 gate。要把这一类路径纳入
-selector，仍须新建 target-independent 的 source-bypass root policy，至少明确：
+(4) 已建立 E1 raw-source receipt 与 source-lineage transport evidence。现在
+[q=1 G c=3 source-lineage phase relay](type-II-q-one-c3-source-lineage-phase-root-entry.md)
+已实现通用 grammar：它检查 ordered universal source、source-first-coordinate lineage 与
+全部 \(q_i,g_i\)，验证三个尾点的 orientation gate，并把 raw digest、lineage digest、
+orientation、fresh scope 与 terminal-first 绑定到 c=3 根及后续 \(d=3\) RESET。
 
-1. ordered universal source、source-first-coordinate lineage 与全部 \(q_i,g_i\) 的准入规则；
-2. 三个尾点的 \(+4x,+2x,+x\) orientation gate；
-3. raw digest、lineage digest 与 policy version 如何进入 state identity，或如何一次性绑定
-   到 \(d=3\) RESET；
-4. fresh_source_tree_only 与 terminal-first 的作用域；
-5. 通过 seed 后才可复用的 E4 identity lift 和 E5 RESET 支付。
+这不改变本控制的状态。这里的 \(p=1009\) 有
 
-现有统一 selector 尚未实现这些字段；在它们被证明并接入前，本卡不创建 root、
-selector edge 或递归状态。
+\[
+\frac{p+3}{4}=253=11\cdot23,
+\qquad 11\equiv2\pmod3,
+\tag{17}
+\]
+
+所以它不是 ordinary `q=1 G` endpoint，不能进入该 phase relay。它继续只验证 non-p-first
+source provenance 与 (16) 的正 orientation，不创建 selector edge 或递归状态。
 
 复现：
 

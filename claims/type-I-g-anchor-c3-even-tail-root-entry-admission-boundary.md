@@ -2,7 +2,7 @@
 kind: claim
 claim_id: type-I-g-anchor-c3-even-tail-root-entry-admission-boundary
 title: c=3 偶侧 seed 的 fresh root-entry 准入边界
-statement: 对 c=3 full-Q complement seed 的条件性 target-source raw receipt，现有 universal_raw_default_entry、r-chart cofactor verifier 和 high-anchor macro 均不能直接把其偶侧 t=1 node 登记为 overflow 状态：前者的 complete-excess carrier Q 必整除 R-1 而不可能等于 M=26h+1，后两者分别具有不相容的 target type 和 charged-parent 形状。可行的最小对象只能是一个 root-only、fresh_source_tree_only 的 raw-to-determinant entry receipt：它保留有序 raw word、even-tail、相位和 determinant seed 的完整内容摘要，并在 entry 后才调用既有 A=1 d=3 dual-RESET。独立 verifier 已对四个 prime-label 控制及一个复合因子块控制实现此类 E1--E3 分析回执；它们不注册全局 edge。若 entry 的两端以图表无关 Sol(p) 标记且逐图表重新分类，则 RESET 的 E4 是恒等 lift，E5 由 A:1->3 的外层支撑秩严格支付；raw word 本身不能逐边承担 E5。全局 root/scope 接入和 terminal-first dispatcher 尚未实现，故这不是 verified_edge。
+statement: 对 c=3 full-Q complement seed 的条件性 target-source raw receipt，现有 universal_raw_default_entry、r-chart cofactor verifier 和 high-anchor macro 均不能直接把其偶侧 t=1 node 登记为 overflow 状态：前者的 complete-excess carrier Q 必整除 R-1 而不可能等于 M=26h+1，后两者分别具有不相容的 target type 和 charged-parent 形状。可行的最小对象只能是一个 root-only、fresh_source_tree_only 的 raw-to-determinant entry receipt：它保留有序 raw word、even-tail、相位和 determinant seed 的完整内容摘要，并在 entry 后才调用既有 A=1 d=3 dual-RESET。独立 verifier 已对四个 prime-label 控制及一个复合因子块控制实现此类 E1--E3 分析回执；它们不注册全局 edge。现有 q=1 G source-lineage phase relay 已在“预声明 source + 有效 raw lineage + terminal-first”条件下把此类 receipt 接为两条 E1--E5 边，但不使任意 c=3 receipt 自动成为 recursive edge，也不证明 receipt 的全称存在。raw word 本身不能逐边承担 E5。
 claim_status: established
 proof_provenance: repository_derivation
 review_status: internal_review
@@ -41,7 +41,7 @@ sources:
   - concept: denominator-escape-state-contract
     role: state-and-edge-admission-contract
 visibility: public
-last_checked: '2026-08-06'
+last_checked: '2026-08-16'
 ---
 
 # \(c=3\) 偶侧 seed 的 fresh root-entry 准入边界
@@ -251,8 +251,12 @@ direct Type I/II 检查必须在 root entry 前运行；命中时直接输出 te
 ## 5. 精确状态
 
 本卡已经确定了旧接口的算术/类型障碍，以及新 entry 必须携带的最小回执字段。独立
-prime-label 与 factor-block verifier 已实现 root-only E1--E3 分析回执；尚未完成的
-工作是：规定回执只能在全局顶层创建且不能由 charged_history_only 重新进入、重算
-RESET 目标 typed classification，并把 (11) 的 identity lift、外层秩和 terminal-first
-dispatch 接入统一 selector。完成这些步骤以前，(11) 只能是以 raw entry 为前提的条件
-RESET，不得登记为 verified_edge 或用于全称递归闭包。
+prime-label 与 factor-block verifier 已实现 root-only E1--E3 分析回执。
+
+对同时满足 ordinary `q=1 G`、预声明 universal source、有效 source-lineage transcript 和
+terminal-first 的子域，新的
+[q=1 G c=3 source-lineage phase relay](type-II-q-one-c3-source-lineage-phase-root-entry.md)
+已经把 root scope、\(R=11\) typed classification、(11) 的 identity lift 与全局 phase/outer-rank
+势接入为两条 E1--E5 边。它并不改变本卡的通用边界：任意 c=3 raw receipt 仍不能仅凭
+存在 raw word、formal \(p\)-parent 或 charged history 成为 recursive edge；也尚未证明这些
+receipt 对所有相关 \(p\) 存在，或在 RESET 后有全称递归闭包。

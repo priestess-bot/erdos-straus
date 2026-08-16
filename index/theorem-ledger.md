@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 811 |
+| 数学状态 | `established` | 812 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 37 |
-| 证明来源 | `repository_derivation` | 643 |
+| 证明来源 | `repository_derivation` | 644 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 789 |
+| 审阅状态 | `internal_review` | 790 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -412,11 +412,11 @@
 | [c=3 补余 seed 的 affine-prime target-source raw 模板](../claims/type-I-g-anchor-c3-affine-prime-target-source-template.md) (`type-I-g-anchor-c3-affine-prime-target-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 core-19 的直接载体余数 Type II q=19 提升障碍](../claims/type-I-g-anchor-c3-core19-direct-carrier-residue-lift-no-go.md) (`type-I-g-anchor-c3-core19-direct-carrier-residue-lift-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [p=6121 的同源 c=3 双叶 raw tree、A=19 carry 与 terminal/q19 截断](../claims/type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121.md) (`type-I-g-anchor-c3-core19-dual-leaf-raw-tree-p6121`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
-| [c=3 偶侧 seed 的 fresh root-entry 准入边界](../claims/type-I-g-anchor-c3-even-tail-root-entry-admission-boundary.md) (`type-I-g-anchor-c3-even-tail-root-entry-admission-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [c=3 偶侧 seed 的 fresh root-entry 准入边界](../claims/type-I-g-anchor-c3-even-tail-root-entry-admission-boundary.md) (`type-I-g-anchor-c3-even-tail-root-entry-admission-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [c=3 双中间 skeleton 的复合因子块 raw word](../claims/type-I-g-anchor-c3-factor-block-raw-source-receipts.md) (`type-I-g-anchor-c3-factor-block-raw-source-receipts`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 factor-block actual raw rays 的 terminal-first 整条截断](../claims/type-I-g-anchor-c3-factor-block-terminal-preemption.md) (`type-I-g-anchor-c3-factor-block-terminal-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
 | [c=3 双中间固定 skeleton 有限菜单不完备性](../claims/type-I-g-anchor-c3-fixed-skeleton-finite-menu-no-go.md) (`type-I-g-anchor-c3-fixed-skeleton-finite-menu-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
-| [p=1009 的 c=3 universal-source 非 p 绕行 raw receipt](../claims/type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt.md) (`type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [p=1009 的 c=3 universal-source 非 p 绕行 raw receipt](../claims/type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt.md) (`type-I-g-anchor-c3-p1009-universal-source-bypass-raw-receipt`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [c=3 一次性 root-to-R=11 RESET 与固定尾 terminal bridge](../claims/type-I-g-anchor-c3-root-to-r11-reset-terminal-bridge.md) (`type-I-g-anchor-c3-root-to-r11-reset-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=3 补余 seed 的双中间节点 target-source raw 模板](../claims/type-I-g-anchor-c3-two-intermediate-target-source-template.md) (`type-I-g-anchor-c3-two-intermediate-target-source-template`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
 | [c=9 补余 seed 的二进高层 raw 前驱与 provenance 边界](../claims/type-I-g-anchor-c9-dyadic-high-layer-predecessor.md) (`type-I-g-anchor-c9-dyadic-high-layer-predecessor`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
@@ -1114,6 +1114,7 @@
 | [q=1 高 C=2 的 19 相位连续双 p-anchor 容量扩张](../claims/type-II-q-one-c-two-19-phase-second-p-anchor-capacity-expansion.md) (`type-II-q-one-c-two-19-phase-second-p-anchor-capacity-expansion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位第三 p-anchor 有限容量分裂](../claims/type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split.md) (`type-II-q-one-c-two-19-phase-third-p-anchor-finite-capacity-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 高 C=2 的 19 相位三 p-anchor persistent 宏出口](../claims/type-II-q-one-c-two-19-phase-three-anchor-persistent-macro.md) (`type-II-q-one-c-two-19-phase-three-anchor-persistent-macro`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 G 到 c=3 source-lineage 根及 R=11 RESET 的单向 phase relay](../claims/type-II-q-one-c3-source-lineage-phase-root-entry.md) (`type-II-q-one-c3-source-lineage-phase-root-entry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 规范根的默认入口容量缺口](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md) (`type-II-q-one-canonical-root-default-entry-capacity-gap`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 规范根的一步完整乘积前驱刚性](../claims/type-II-q-one-canonical-root-full-product-predecessor-rigidity.md) (`type-II-q-one-canonical-root-full-product-predecessor-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

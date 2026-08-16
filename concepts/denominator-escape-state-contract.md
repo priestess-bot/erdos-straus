@@ -1445,6 +1445,51 @@ Type II 证书只能是 terminal leaf，禁止 \(1\to2\) 重入。于是 root-en
 dispatch 提供严格 local support payment。完整 receipt 与边界见
 [q=1 G full-carrier phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md)。
 
+### 6.8b \(q=1\) G 到 c=3 source-lineage tree 的条件性 relay
+
+另一条不与 full-carrier tree 混同的 phase root 只在 c=3 chart 已由根素数闭式预先确定，且
+存在一份从其 declared universal \(p\)-source 出发的实际 source-lineage raw receipt 时允许：
+
+\[
+R=104h-9,
+\qquad M=26h+1,
+\qquad x=p-3,
+\qquad K=Mx.
+\tag{44}
+\]
+
+receipt 必须逐边保存 \(q_i\)、gcd reduction \(g_i\) 与 source 首坐标的后代 \(z_i\)，并在
+尾部的 \(t=4,2,1\) physical rows 验证
+
+\[
+\sigma=-p^{-1},
+\qquad
+\Theta_i=\sigma\prod_{j\le i}q_jg_j,
+\qquad
+\Theta_t=-\epsilon(4M/t)\pmod R,
+\tag{45}
+\]
+
+其中 \(z_t=\epsilon tx\)、\(\epsilon\in\{+1,-1\}\)。唯一允许的 metadata 坐标交换是
+canonical \(p\)-edge 后 anchor 的一次换向；非 \(p\)-first source-bypass 仍必须从同一个
+declared source 起步。任何 formal p-parent 或 charged-history path 都不能替代这个 E1。
+
+若 source state 是 ordinary `q=1 G` endpoint，且两端都标记为 \(\operatorname{Sol}(p)\)，则
+可登记
+
+```text
+q=1 G endpoint (phase 2)
+  -> fresh c=3 source-lineage tree (phase 1, A=1)
+  -> R=11 d=3 RESET (phase 1, A=3)
+```
+
+第一条边的 E4 是 \(\operatorname{Sol}(p)\) 恒等映射，E5 是 phase \(2\to1\)；第二条的 E4
+仍是恒等映射，E5 由 \(A:1\to3\) 支付。非终端策略允许 \(2\to1,1\to1,1\to0\)，禁止
+c=3 tree 返回 Type II；tree 后的 Type II 结果只能是 terminal leaf。c=3 和 \(R=11\) 的
+typed fiber 必须分别重算。这个 conditional relay 不证明 source-lineage receipt 对所有
+endpoint 存在，也不替代 phase-1 的独立全称 selector。详见
+[q=1 G c=3 source-lineage phase relay](../claims/type-II-q-one-c3-source-lineage-phase-root-entry.md)。
+
 ## 7. 明确不构成递降的对象
 
 下列结果可以是重要的分析证据，但单独出现时不得标记为 verified_edge：
