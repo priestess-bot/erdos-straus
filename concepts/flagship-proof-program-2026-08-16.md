@@ -135,13 +135,17 @@ actual nonterminal endpoint 有 \(c_q\le p-2\)。high-H4 height 与 \(x_q\mid K_
 [H4 universal-stutter source-D gate closure](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md)
 和
 [H4 single-side exclusion](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-single-side-exclusion.md)。
+此外 canonical q-word 在固定 source 上只有一个 atomic occurrence；target lcm support
+吸收同幂 block，因此 H4 的单 successor branch 不聚合跨 action 容量，不需要 global
+one-use ledger。见
+[H4 atomic owner epoch locality](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality.md)。
 
 **尚缺的闭包。** 必须从 source/path provenance 重新计算 target 的 F/G/hit 类型，处理
-terminal-first priority、parent rank、atomic owner/ledger、payload scope 与 serializer
-guards；不能只用 \(c_q\le p-2\) 宣称 E1--E5。
+terminal-first priority、payload scope 与 serializer guards；不能只用 \(c_q\le p-2\)
+和 branch-local owner 宣称 E1--E5。
 
 **反证标准。** 找到真实 H4 source，其 endpoint 虽有严格算术余量和双侧 complete-excess
-payload，却无法通过 atomic typed/priority/owner/serializer 准入，也没有合法 terminal。
+payload，却无法通过 atomic typed/priority/serializer 准入，也没有合法 terminal。
 
 ### T2: Atomic-Admission
 
@@ -168,6 +172,12 @@ A\le B_p\quad\lor\quad(A>B_p\ \text{且}\ c_M<C),
 它明确未证明 persistent registry、跨 action one-use、target typed classification 或
 统一 selector admission。见
 [path-anchored atomic split admission](../claims/type-I-path-anchored-atomic-split-complete-excess-admission.md)。
+
+**H4 的受限实例。** 对 actual clean \(q\)-bridge，canonical source word 是单候选，
+而 \(M=\operatorname{lcm}(A,Q_x,Q_y)\) 使同一 colored block 在 target 中不再 fresh；
+所以 H4 branch 的归纳不需要跨 action ledger。该结论不推广到会聚合多个 source/action
+物理容量的 Fourier、Hall 或 flow 论证，也不代替 target typed classification。见
+[H4 atomic owner epoch locality](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality.md)。
 
 **表述校正。** 仅有 \(Q_x,Q_y>1\)、\(p\nmid Q_xQ_y\)、\(c_M<C\) 和一条 raw path
 并不自动推出 E1--E5；T2 的工作正是把这些尚未形式化的语义门关闭或证明可删去。
