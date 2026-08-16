@@ -254,7 +254,10 @@ terminal-first 后的持久队列状态，\(c=8\) 则尚未给出全称 Type I/I
 不能重复这条 bundle 路线。两个由该 target macro 因子直接指定的不同 \(m=1\) 节点也已由
 [结构节点增容障碍](type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md)
 排除其 complete-excess continuation 作为 E5 边；这仍不替代对其它实际 raw occurrence
-的 source/path 研究。
+的 source/path 研究。现已知 high-\(R\) source 的 \(V\)-side 具有实际 non-\(p\)
+出边，且真实 \(q_\star=103\) 与该 source label 分离；精确支撑界和一个 \(m=1\)
+控制见 [source-side 支撑分离](type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation.md)。
+这只缩小 source-aware bypass 的接口，不是 terminal 或全局 selector。
 
 此外，本卡不分类 \(k\ne0\) 的容量面；对这些层，\(j\) 的 \(s\)-依赖仍需与
 \(\Gamma(c,k,g)\)、\(j<3q_\star\) 及真实 complete-excess provenance 一起处理。

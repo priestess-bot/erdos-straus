@@ -235,6 +235,12 @@ raw source、适配的 Type I terminal，或一条带独立势和 E1--E5 的跨�
 还表明两个由本 target macro 因子直接指定的不同 formal \(m=1\) 节点，其强制
 完整-excess carry 同样增容；它们没有被误记作本卡的重复 action 或已验证 source/path。
 
+新的 [source-side 支撑分离与 non-\(p\) raw 出边]
+(type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation.md)
+进一步表明该 high-\(R\) chart 的 canonical source 并不只有 \(p\)-edge：它总有
+一条实际 \(V\)-side non-\(p\) 出边。不过该结果尚未把 endpoint 接入 typed state，
+所以不能借此绕过本卡的 complete-excess 增容结论。
+
 聚焦复核：
 
 ~~~bash
