@@ -15,7 +15,7 @@ from math import gcd
 
 # One control with 47 | s and one with 47 | (176s+5).  They are deliberately
 # formal controls for the algebraic equivalence, not claimed raw receipts.
-FORMAL_CONTROLS = ((141, 175), (67, 79))
+FORMAL_CONTROLS = ((141, 367), (67, 1423))
 
 
 def source_data(s: int) -> tuple[int, int, int, int]:
@@ -73,6 +73,10 @@ def verify_marker_parity_table() -> None:
     if tuple(mod_three_rows) != ((0, 1, 2), (1, 2, 1), (2, 0, 0)):
         raise AssertionError("marker mod-three table changed")
 
+    dyadic_rows = tuple((n_mod_16, (1 + n_mod_16) % 16) for n_mod_16 in range(16))
+    if tuple(n for n, q in dyadic_rows if q == 1) != (0,):
+        raise AssertionError("zero-epsilon dyadic q residue map changed")
+
 
 def verify_formal_controls() -> None:
     """Replay exact lift, parity, and source-factor identities on two controls."""
@@ -80,20 +84,22 @@ def verify_formal_controls() -> None:
         {
             "s": 141,
             "p": 6769,
-            "rho": 175,
-            "n": 37018,
-            "q": 44086283,
-            "lambda": 208415,
+            "rho": 367,
+            "n": 77632,
+            "q": 42177425,
+            "lambda": 199391,
             "rho_mod_192": 175,
+            "rho_mod_1536": 367,
         },
         {
             "s": 67,
             "p": 3217,
-            "rho": 79,
-            "n": 7942,
-            "q": 9979031,
-            "lambda": 99263,
+            "rho": 1423,
+            "n": 143056,
+            "q": 3628673,
+            "lambda": 36095,
             "rho_mod_192": 79,
+            "rho_mod_1536": 1423,
         },
     )
     rows = []
@@ -136,13 +142,15 @@ def verify_formal_controls() -> None:
             and gcd(quadratic, affine) == 1
             and gcd(quadratic, h_polynomial) == gcd(quadratic, rho - 11 * p)
             and s % 2 == 1
-            and n % 2 == 0
+            and n % 16 == 0
             and q % 2 == 1
+            and q % 16 == 1
             and p % 96 == 49
             and n % 3 == 1
             and q % 3 == 2
             and carry % 3 == 2
             and (p * rho) % 64 == 63
+            and (p * rho) % 512 == 511
         ):
             raise AssertionError("c=8 marker affine allocation identities changed")
 
@@ -158,6 +166,7 @@ def verify_formal_controls() -> None:
                 "q": q,
                 "lambda": carry,
                 "rho_mod_192": rho % 192,
+                "rho_mod_1536": rho % 1536,
             }
         )
     if tuple(rows) != expected:
@@ -168,8 +177,8 @@ def verify() -> None:
     verify_marker_parity_table()
     verify_formal_controls()
     print(
-        "verified c=8 marker affine lift: parity excludes even s, and source "
-        "allocation reduces to rho+1, 4rho-11, and rho^2-18rho-11"
+        "verified c=8 marker affine lift: parity excludes even s, epsilon=0 "
+        "forces q=1 mod 16, and source allocation reduces to three rho polynomials"
     )
 
 
