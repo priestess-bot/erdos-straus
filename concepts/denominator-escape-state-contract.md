@@ -385,6 +385,38 @@ A_S\mid K_S.
 目标纤维、F/G/hit、规范见证或分离角色、带符号缺陷及势均从这些字段确定性重算。
 重图表时不得继承旧 F/G 标签，也不得只记录新的模数。
 
+### 2.3a `pending_dispatch` 的合法惰性正规化
+
+`linear_absorbed_support_v1` 的数学状态身份由版本、\(p_0,R_S,A_S\) 与
+`source_tree_scope` 决定，而 \(K_S\)、F/G/hit、目标纤维、缺陷和证书字段是这些整数的
+确定性派生数据。因此对一种**图表无关 marked set** 的 support-switch macro，允许把已经
+通过整数 chart/source/scope/rank 核验的 target 暂时序列化为
+
+```text
+dispatch_status = pending_dispatch
+selector_consumable = false
+inherited_type_label = false
+mandatory_next_step = normalize_target_state
+```
+
+但只限于同时满足：
+
+1. source 与 target 都使用 \(W=\operatorname{Sol}(p_0)\)，当前 E4 不读取 F/G/hit；
+2. 当前 edge 的 E1、E2、E5 只读取 canonical integer chart、charged support、真实
+   source/path receipt 和预定义 rank；
+3. `state_id` 仍按本节既有 canonical 字段生成，不把 `pending_dispatch` 或缓存标签纳入
+   数学身份；
+4. 当前 edge receipt 明确记录 `inherited_type_label=false`；
+5. 任何下一条读取 F/G/hit、target fiber、signed defect 或 certificate context 的 action，
+   在消费该 target 前必须从 canonical integers 运行完整 `normalize_target_state`，并把
+   正规化结果纳入该下一 action 的 E3 receipt。
+
+这只是**惰性重算**，不是继承旧标签，也不是新增一种数学图表。`pending_dispatch` target
+可以作为 phase-local macro 的数学终点，但在正规化完成前不得被任何 type-specific selector
+消费；惰性字段不得用于当前 E5 或 owner/capacity 收费。该宏只有在 global selector 与
+全局良基势接纳后才可登记为 `verified_edge`。局部 arithmetic control 即使重算了该 target，
+也不能冒充已验证 source/path receipt 或登记为递归边。
+
 若 v1 clean external receipt 给出 \(Q=q^e\)、\(q\nmid K_S\)，则合法累积边只能把
 \(A_S\) 更新为 \(A_SQ\)。任意其它更新都不是该 v1 正规形。完整构造、具名 verifier、
 恒等解提升和势证明见
@@ -970,6 +1002,14 @@ T=C_e(S,w_e),\quad
 verifier 必须从原始整数重算派生字段，不能相信缓存的 F/G 标签、因子分解、缺陷向量
 或势函数值。程序通过是算术核验的一种实现；它不能替代说明 verifier 究竟检查了哪些
 恒等式。
+
+#### E3 的 `pending_dispatch` 实现约定
+
+若 target 满足第 2.3a 节的全部条件，则 `verify_state(T)` 可以接受其 canonical
+`linear_absorbed_support_v1` core 与 `pending_dispatch` queue status；这时 verifier 必须
+同时验证 `selector_consumable=false`、`inherited_type_label=false` 与强制下一步
+`normalize_target_state`。后续 type-specific action 不能把这一惰性状态当作已有 F/G/hit
+分类。此约定不削弱 E3 的确定性：同一 canonical target 的正规化结果仍必须唯一并可重算。
 
 ### E4. solution_lift
 

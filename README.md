@@ -4,12 +4,12 @@
 可核查数学主张和计算复现。`研究进展综述.md` 是阅读入口；`papers/`、
 `claims/`、`concepts/` 中的 Markdown/YAML 文件是知识库的事实源。
 
-当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-16。论文卡、
+当前文献快照审计至 2026-07-31；当前证明前沿和本轮旗舰命题核验至 2026-08-17。论文卡、
 主张卡、概念卡及各状态的实时数量以 `python scripts/kb.py status` 和自动生成的
 `index/theorem-ledger.md` 为准，不在入口文档手工复制。其中被撤回论文和存在关键证明
 缺口的预印本仍会收录，但用独立状态标出。
 
-## 当前旗舰待证命题（核验至 2026-08-16）
+## 当前旗舰命题（核验至 2026-08-17）
 
 对核心素数 \(p\equiv1\pmod{24}\)，最终目标是下列双出口命题：
 
@@ -30,21 +30,22 @@ E\mid4K^2,\quad E\equiv1\pmod R,\quad 2\mid E,\quad E\le4K-2R.
 \]
 
 这里 \(4^{-1}\) 在模 \(m\) 下取逆元。该 normal form 的代数等价性已经建立；对每个
-核心素数选择 Type II 或该 Type I 证书仍是开放问题。后续主线只维护下列六条可判真假的
-待证命题：
+核心素数选择 Type II 或该 Type I 证书仍是开放问题。后续主线维护下列六条可判真假的
+旗舰命题：
 
-| ID | 待证命题 | 核心断言 |
+| ID | 状态 | 核心断言 |
 |---|---|---|
-| T1 | H4-Closure | 每个 actual H4 clean \(q\)-bridge endpoint 都是 terminal，或给出完整 E1--E5 的 single-side / atomic-split strict edge。 |
-| T2 | Atomic-Admission | canonical maximal atomic split 的 ownership、typed target、priority 与 serializer 准入可由 actual provenance 完整推出，或证明全局 one-use 不必作为额外公理。 |
-| T3 | Marked-Terminal | Type II gcd-shadow 产生的普通 terminal 满足相应 marked solution-set membership，或转为下一条严格合法状态边。 |
-| T4 | Fresh-G-Handoff | 每个 \(q=1\) G endpoint 都有不复用 Type II source support、且不读取未知目标解的有限 fresh-source lineage，通向 Type I 或 terminal。 |
-| T5 | Global-Well-Foundedness | 所有进入最终 proof graph 的递归边共享一个全局良基势 \(\Pi\)，并严格下降。 |
-| T6 | Global-Selector | 确定性 selector 在每个核心 prime / legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |
+| T1 H4-Closure | 相对闭包已建立 | 对 actual proper-overlap、top-capacity、\(a_{\rm alt}=1\) receipt，已验证的 upstream provenance 与 priority miss 之后，clean \(q\)-macro 给出 E1--E5 的 phase-local `candidate_transition`；其它 H4 selector branch 与全局 admission 仍须覆盖。 |
+| T2 Atomic-Admission | 开放 | canonical maximal atomic split 的 ownership、typed target、priority 与 serializer 准入可由 actual provenance 完整推出，或证明全局 one-use 不必作为额外公理。 |
+| T3 Marked-Terminal | 开放 | Type II gcd-shadow 产生的普通 terminal 满足相应 marked solution-set membership，或转为下一条严格合法状态边。 |
+| T4 Fresh-G-Handoff | 开放 | 每个 \(q=1\) G endpoint 都有不复用 Type II source support、且不读取未知目标解的有限 fresh-source lineage，通向 Type I 或 terminal。 |
+| T5 Global-Well-Foundedness | 开放 | 所有进入最终 proof graph 的递归边共享一个全局良基势 \(\Pi\)，并严格下降。 |
+| T6 Global-Selector | 开放 | 确定性 selector 在每个核心 prime / legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |
 
 六条命题的精确量词、现有证据、尚缺合同、反证标准、依赖顺序和其余次级研究方向见
 [`concepts/flagship-proof-program-2026-08-16.md`](concepts/flagship-proof-program-2026-08-16.md)。
-其中 T1--T6 均为开放研究命题，不应被本页的 normal-form 公式误读为猜想已经证明。
+T1 的上述结论是相对宏闭包，不重建 H4 provenance，也不推出 q=1 G handoff、全局 selector
+或猜想本身；T2--T6 仍为开放研究命题。
 
 ## 快速使用
 

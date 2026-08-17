@@ -1,11 +1,12 @@
 ---
 kind: concept
 concept_id: flagship-proof-program-2026-08-16
-title: 从 normal form 到全局 selector 的六个旗舰待证命题
+title: 从 normal form 到全局 selector 的六个旗舰命题
 summary: >-
-  核验截至 2026-08-16 的仓库前沿后，将最终双出口 F0 与六个可判真假的开放命题
-  T1--T6 固定为主线；同时记录 H4、atomic split、q=1 G handoff、全局势函数、
-  Fourier/容量、外部源和 lift 路线的已知边界，避免将条件性合同或有限计算升级为全称定理。
+  核验截至 2026-08-17 的仓库前沿后，将最终双出口 F0 与六个可判真假的旗舰命题
+  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包已经建立，但不替代
+  其它 H4 branch、q=1 G handoff 或全局 selector。其余内容记录 H4、atomic split、
+  全局势函数、Fourier/容量、外部源和 lift 路线的已知边界。
 topics:
 - research-map
 - proof-program
@@ -30,6 +31,10 @@ sources:
   role: exact-Type-I-target-divisor-even-terminal-normal-form
 - claim: type-I-factorization-free-centered-hit-terminal-serializer
   role: raw-H4-terminal-first-pair-serializer
+- claim: type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure
+  role: relative-H4-clean-q-E1-E5-closure-and-independent-verifier
+- claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction
+  role: stronger-parent-anchored-typed-H4-macro
 - claim: type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure
   role: actual-H4-arithmetic-stutter-closure-boundary
 - claim: type-I-path-anchored-atomic-split-complete-excess-admission
@@ -50,7 +55,7 @@ visibility: public
 last_checked: '2026-08-17'
 ---
 
-# 从 normal form 到全局 selector 的六个旗舰待证命题
+# 从 normal form 到全局 selector 的六个旗舰命题
 
 ## 核验结论与范围
 
@@ -121,7 +126,7 @@ E\mid4K^2,\qquad E\equiv1\pmod R,\qquad 2\mid E,
 [Type I 目标除子与偶终端选择器](../claims/type-I-target-divisor-even-terminal-selector.md)
 建立。该卡片**没有**证明每个 \(p\) 都可选到 \(m,e,E\)；因此 F0 仍是旗舰开放命题。
 
-## 六个主线待证命题
+## 六个主线命题
 
 下面的六条以“证明或给出真实反例”为完成标准。它们刻意不再把“增加若干参数族”当作
 主线交付物。
@@ -133,6 +138,16 @@ state，clean \(q\)-word 的 endpoint 经 terminal-first 处理后必属于以�
 
 1. 一个按相应状态合同识别的 Type I/II terminal；
 2. 一个合法的 atomic-split E1--E5 edge。
+
+**2026-08-17 相对闭包。** 新的
+[H4 clean \(q\)-bridge 修正版 E1--E5 相对宏闭包](../claims/type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure.md)
+固定了 \(M_q=\operatorname{lcm}(M_4,Q_x,Q_y)\)，并证明：对已经通过 actual-H4
+provenance 验证、且带 `verified_priority_prefix_miss` 的 proper-overlap、top-capacity
+\(a_{\rm alt}=1\) receipt，clean \(q\) 后缀给出 E1--E5 的 phase-local 相对宏
+`candidate_transition`。其独立 verifier
+把 target 序列化为 `pending_dispatch`，禁止继承 F/G/hit；p=73、241 controls 只验证
+局部 arithmetic/serialization，明确为 `control_only`，不具递归资格。该相对闭包与下面的
+parent-anchored fully typed macro 相容，但不覆盖其它 H4 selector branch。
 
 **已建立的前提。** actual H4 首层 arithmetic stutter 已被 source-D gate 排除；任何
 actual nonterminal endpoint 有 \(c_q\le p-2\)。high-H4 height 与 \(x_q\mid K_4\)

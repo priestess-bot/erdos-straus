@@ -66,7 +66,7 @@ sources:
   - reproduction: reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_carrier_clean_raw_bridge.py
     role: prime-and-composite-q-focused-raw-bridge-controls
 visibility: public
-last_checked: '2026-08-16'
+last_checked: '2026-08-17'
 ---
 
 # H4 \(a=1\) fresh \(q\)-carrier 的清洁 raw bridge
@@ -215,14 +215,10 @@ H4 高度还排除 \(Q_y=1\)，所以 full-excess terminal 的显式 serializer 
 
 ## 5. p-free 分支的 parent-macro 容量门
 
-在表的第二、三行，分别定义
+对所有 actual p-free endpoint 统一定义
 
 \[
-M_q=
-\begin{cases}
-\operatorname{lcm}(M_4,Q_x),&\text{恰一块非平凡时},\\
-\operatorname{lcm}(M_4,Q_x,Q_y),&\text{两块皆非平凡时},
-\end{cases}
+\boxed{M_q=\operatorname{lcm}(M_4,Q_x,Q_y)}.
 \tag{13}
 \]
 
@@ -231,7 +227,12 @@ L_q=\frac{M_q}{M_4}.
 \tag{14}
 \]
 
-由于 \(M_4\mid K_4\)，每个完整超额块都使 \(L_q>1\)。该行 p-free 时
+这里不能再按“恰一块非平凡”只写 \(\operatorname{lcm}(M_4,Q_x)\)：actual single-side
+已由后续 endpoint 分类收缩为 \(Q_x=1<Q_y\)，旧写法会退化为 \(M_q=M_4\) 并漏掉唯一
+非平凡的 y-block。统一公式与后续 complete-excess stutter reduction 的
+\(L_q=E_xE_y=(L_0/q)E_x\) 完全一致。又因 actual 域已有 \(Q_y>1\)，且 \(Q_y\) 的完整
+超额指数超过 \(K_4\)（从而也超过 \(M_4\mid K_4\) 的对应指数），故修正后的
+\(M_q>M_4\)、\(L_q>1\)。该行 p-free 时
 \(p\nmid M_q\)，其 canonical capacity 唯一为
 
 \[
@@ -319,3 +320,17 @@ python3 reproductions/type_ii_q_one_c2_19_phase_h4_a_one_q_carrier_clean_raw_bri
 ```
 
 回执只重放两个固定整数图表；不扫描素数、分母、历史 selector 或完整 Reach。
+
+## 9. 2026-08-17 公式修正与相对宏闭包
+
+本卡第 5 节旧版本对“恰一块非平凡”使用
+\(\operatorname{lcm}(M_4,Q_x)\)。在后续已经证明的 actual single-side
+\(Q_x=1<Q_y\) 中，该式会错误退化为 \(M_4\)，遗漏唯一非平凡 y-block。现已统一修正为
+
+\[
+\boxed{M_q=\operatorname{lcm}(M_4,Q_x,Q_y)}.
+\]
+
+后续 `complete-excess-stutter-reduction` 原本就使用这一统一公式，所以其 stutter
+推导不受该旧接口错误影响。完整 E1--E5 相对闭包见
+[H4 clean q-bridge 的修正版 E1--E5 相对宏闭包](type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure.md)。

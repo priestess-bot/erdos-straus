@@ -40,7 +40,8 @@ jobs:
             tests.test_type_i_tail_reverse_b1_even_source_audit \
             tests.test_type_i_tail_reverse_small_b_profile \
             tests.test_type_i_dyadic_b_source_selector \
-            tests.test_type_i_tail_reverse_even_source_min_source_distance
+            tests.test_type_i_tail_reverse_even_source_min_source_distance \
+            tests.test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier
 
       - name: Lint the maintained verification surface
         run: |
@@ -59,6 +60,7 @@ jobs:
             reproductions/type_i_tail_reverse_small_b_profile.py \
             reproductions/type_i_dyadic_b_source_selector.py \
             reproductions/type_i_tail_reverse_even_source_min_source_distance.py \
+            reproductions/type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py \
             tests/test_kb.py \
             tests/test_type_ii_pure_new_canonical_fan_sieve.py \
             tests/test_type_ii_pure_new_exception_dynamic_selector.py \
@@ -72,7 +74,8 @@ jobs:
             tests/test_type_i_tail_reverse_b1_even_source_audit.py \
             tests/test_type_i_tail_reverse_small_b_profile.py \
             tests/test_type_i_dyadic_b_source_selector.py \
-            tests/test_type_i_tail_reverse_even_source_min_source_distance.py
+            tests/test_type_i_tail_reverse_even_source_min_source_distance.py \
+            tests/test_type_ii_q_one_c2_19_phase_h4_clean_q_macro_verifier.py
 
       - name: Rebuild generated indexes
         run: |

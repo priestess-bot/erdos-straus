@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 865 |
+| 数学状态 | `established` | 866 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
-| 证明来源 | `mixed` | 38 |
+| 证明来源 | `mixed` | 39 |
 | 证明来源 | `repository_derivation` | 696 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 843 |
+| 审阅状态 | `internal_review` | 844 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1133,7 +1133,7 @@
 | [H4 q-bridge stutter 的 a 坐标转导、两类正残余、raw-p-source 修复与 q0 raw re-entry](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-stutter-a-coordinate-transduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 首层容量 stutter 的全域 source D-gate 关闭](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-universal-stutter-source-d-gate-closure`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 y 侧完整超额块必非空](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-y-block-nonempty`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
-| [q=1 高 C=2 19 相位 H4 a=1 fresh q-carrier 的清洁 raw bridge 与 pre-root 分派](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [q=1 高 C=2 19 相位 H4 a=1 fresh q-carrier 的清洁 raw bridge 与 pre-root 分派](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-carrier-clean-raw-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [H4 q0=1 d=1 p-free 第二 re-entry 的完整超额容量图与 unitary q-lock](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-d-one-pfree-second-reentry-capacity-map.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-d-one-pfree-second-reentry-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0=1 d=1 x-side 第二 re-entry 的 source D-gate 全称排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-d-one-xside-reentry-source-d-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-d-one-xside-reentry-source-d-gate-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 clean q-bridge 的 q0=1 双 q raw bridge、第二端点 p-primary 排除与 q^2 容量门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-double-q-bridge.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-double-q-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
@@ -1143,6 +1143,7 @@
 | [H4 q0=1 第三 q carrier 的 d=1 p-primary 排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-p-primary-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-p-primary-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [H4 q0=1 第三 q carrier 的 d=1 p-free 容量图与 source D-gate](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-pfree-capacity-map.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q0-one-third-q-d-one-pfree-capacity-map`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 carry-overlap、Type I carrier/reset 边界与有限标签边界](../claims/type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary.md) (`type-II-q-one-c-two-19-phase-h4-carry-overlap-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [H4 clean q-bridge 的修正版 E1–E5 相对宏闭包](../claims/type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure.md) (`type-II-q-one-c-two-19-phase-h4-clean-q-e1-e5-relative-macro-closure`) | `established` | `mixed` | `internal_review` | - | 2026-08-17 |
 | [H4 fresh q-carrier 与固定 AC/Chamberland 扇的有界公共因子障碍](../claims/type-II-q-one-c-two-19-phase-h4-fresh-q-ac-fan-bounded-intersection.md) (`type-II-q-one-c-two-19-phase-h4-fresh-q-ac-fan-bounded-intersection`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 full-overlap 的实际前驱排除](../claims/type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion.md) (`type-II-q-one-c-two-19-phase-h4-full-overlap-predecessor-exclusion`) | `established` | `mixed` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 p-free 门失败的 p-block 来源障碍](../claims/type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction.md) (`type-II-q-one-c-two-19-phase-h4-p-free-p-block-provenance-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |

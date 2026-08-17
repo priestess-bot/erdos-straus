@@ -9642,3 +9642,27 @@ source、不同 Type I/II 证书，或真实可提升递降。详见
 [\(p=14281\) 的全尺度 \(Q\)-supported 外部源精确排除](../claims/type-I-g-anchor-q-supported-p14281-full-scale-exclusion.md)。
 该点的实际 handoff 已可见：gap \(7\)、除子 \(19\) 给出 Type II 两尾严格递降
 \(14281\to1786\)，故这个空菜单是机制边界，不是 terminal-free 控制。
+
+## 2026-08-17：H4 clean q-bridge 已形成修正版 E1–E5 相对宏闭包
+
+对已经通过 actual 19-phase H4 source/provenance validator 且较早 versioned priority prefix
+已给出验证 miss 的 H4 proper-overlap top-capacity `a_alt=1` receipt，clean q-word 的目标支撑统一修正为
+\[
+M_q=\operatorname{lcm}(M_4,Q_x,Q_y).
+\]
+旧卡中 single-side 分支只写 `lcm(M4,Q_x)` 的公式在 actual `Q_x=1<Q_y` 情形会漏掉唯一非平凡 y-block，现已作为局部接口错误修正；后续 stutter-reduction 原本即使用统一公式，故其证明不受影响。
+
+结合已有 `Q_y>1`、p-primary endpoint exclusion 与 universal first-stutter source-D gate closure，
+release 的相对推导覆盖 `Q_x=1<Q_y` single-side 或 `Q_x,Q_y>1` atomic-split，且统一有
+`c_q<=p-2`。当前更强的 high-H4 single-side exclusion 已进一步证明实际 endpoint 恒为
+`Q_x,Q_y>1`；前一二分仍可保留为相对 verifier 的保守输入语言。新 relative macro 以原
+persistent parent `(0,p-1)` 为 source、canonical target `(0,c_q)` 为 endpoint，E4 使用
+`Sol(p)` 上恒等 lift，故 E5 严格。E3 采用 canonical state/edge/owner receipt 和
+`pending_dispatch`：禁止继承 F/G/hit 标签，任何下一条 type-specific selector 必须从 target
+integers 重新分类；局部 p=73、241 controls 只能标为 `control_only`，不能递归入队。
+
+因此，上述**相对输入域**内的 H4 clean q-bridge 不再保留 active arithmetic/semantic gap，
+但其输出仍是 phase-local `candidate_transition`；
+仍作为 upstream premises 保留的是 actual H4 source/provenance validator 与 versioned
+priority-prefix receipt。它与更强的 parent-anchored typed macro 互补，不关闭其它 H4
+selector branch、q=1 G fresh-source handoff、global selector 或 ESC。
