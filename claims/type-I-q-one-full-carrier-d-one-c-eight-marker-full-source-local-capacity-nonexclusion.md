@@ -9,11 +9,11 @@ statement: >-
   A(rho)=1+p rho。则满足 (A(rho),T)=(q(rho),T)=1 的 rho (mod T)
   数目严格为一个显式正乘积：对每个 ell^e || T、ell not equal to 47，局部因子为
   ell^(e-1)(ell-1-1_{ell does not divide p^2+p-1})；若 47^e || T，局部因子为
-  46*47^(e-1)。每一个这样的 rho 唯一决定 t (mod T)，使
-  q(rho)(8+pt)=V (mod T)，且 n=(1+p rho)/32 在 T 上为单位。因此全部
+  46*47^(e-1)。每一个这样的 rho 唯一决定 t (mod M)，使
+  q(rho)(8+pt)=V (mod M)，且 n=(1+p rho)/32 在 T 上为单位。因此全部
   g_b=47 的 source gcd 分配、q/a 的 full-source 模投影，及 marker 的
   rho=-p^(-1) (mod 512)、rho=1 (mod 3)、t=7 (mod 16) 局部射线彼此兼容。
-  所以任何只使用 M/47 上的逐素数 unit/gcd 分配、qa=V (mod M/47) 和有限
+  所以任何只使用 M/47 上的逐素数 unit/gcd 分配、qa=V (mod M) 和有限
   2-adic carry 信息的排除，不能关闭 marker；必须加入整数等式 qa=V、素数/高度、
   跨 source 的不等式、terminal 或 typed/descent 信息。本结论不构造 actual marker
   endpoint，也不否定这些更强条件可能给出全局出口。
@@ -116,6 +116,18 @@ Q(\rho)&:=32^{-1}\bigl(32p^2+32p-79-47p\rho\bigr)\pmod T.
 第一项正是 \((n,T)=1\) 的单位版本；第二项是 actual \(q\mid V\)、
 \((V,M)=1\) 所必需的 \(q\)-unit 条件。
 
+虽然 \(Q\) 只写在模 \(T\) 下，\(\rho\pmod T\) 仍唯一决定 \(q\) 的模 \(M\)
+投影：令
+
+\[
+\widetilde Q(\rho):=
+32^{-1}\bigl(32p^2+32p-79-47p\rho\bigr)\pmod M.
+\tag{6a}
+\]
+
+把 \(\rho\) 替换为 \(\rho+T\) 时，分子只改变 \(-47pT=-pM\)，故 (6a) 的定义
+确实不依赖代表元。它在模 \(T\) 下化为 \(Q\)。
+
 ## 2. 精确局部容量
 
 设 \(\ell^e\Vert T\)。若 \(\ell\ne47\)，则 \(A\) 与 \(Q\) 都是
@@ -187,26 +199,49 @@ N_{47}=46\cdot47^{e-1}.
 
 ## 3. q/a 投影与 marker 的二进射线可同时实现
 
-取任意 \(\rho\in\mathcal R_T\)。因为 \((V,T)=1\) 且 \(Q(\rho)\) 是单位，
-定义
+取任意 \(\rho\in\mathcal R_T\)。由 (11)，\(\widetilde Q(\rho)\) 在模 \(47\)
+下为单位；它又在模 \(T\) 下为单位。因此 \(\widetilde Q(\rho)\) 是模 \(M\) 的
+单位。因为 \((V,M)=1\)，定义
 
 \[
-a_\rho\equiv VQ(\rho)^{-1}\pmod T,
+a_\rho\equiv V\widetilde Q(\rho)^{-1}\pmod M,
 \qquad
-t_\rho\equiv p^{-1}(a_\rho-8)\pmod T.
+t_\rho\equiv p^{-1}(a_\rho-8)\pmod M.
 \tag{14}
 \]
 
 它们唯一，并满足
 
 \[
-Q(\rho)(8+pt_\rho)\equiv V\pmod T,
+\widetilde Q(\rho)(8+pt_\rho)\equiv V\pmod M,
 \qquad
-(8+pt_\rho,T)=1.
+(8+pt_\rho,M)=1.
 \tag{15}
 \]
 
-因此每个 \(\rho\) 同时实现 \(q\)、\(a\)、\(n\) 的全部 source-unit 条件。
+它在模 \(T\) 下正是原来的 \(Q(\rho)(8+pt_\rho)\equiv V\pmod T\)。
+在 distinguished \(47\) 上，它还强制
+
+\[
+a_\rho\equiv R\pmod {47},
+\qquad b=R-a_\rho\equiv0\pmod {47}.
+\tag{15a}
+\]
+
+确切地说，\(pR+1\equiv0\pmod {47}\) 及
+\(\widetilde Q\equiv p^2+p-1\pmod {47}\) 给出
+
+\[
+\widetilde Q R-V
+\equiv R(p^2+p-1)-\bigl(R(p-1)-p\bigr)
+=p(pR+1)\equiv0\pmod {47}.
+\tag{15b}
+\]
+
+而 \(\widetilde Q\) 为单位，故 (15a) 随之成立。这正是不能从 \(M/47\) 投影中
+省去、但也不减少 \(\rho\) 容量的一条线性条件。
+因此每个 \(\rho\) 同时实现 \(q\)、\(a\)、\(n\) 的全部 source-unit 条件和完整
+source 同余。
 特别地，若把 \(\rho\) 提升为
 
 \[
@@ -280,7 +315,7 @@ q(8+pt)=V
 作为整数等式，也不声称 \(q\) 是正的 high raw prime，或 \(a,b=R-a\) 为合法
 endpoint。因此它绝不构造 actual marker。
 
-它排除的是更窄但此前仍未切断的设想：把 \(q\mid V\) 降为 \(M/47\) 上的同余后，
+它排除的是更窄但此前仍未切断的设想：把 \(q\mid V\) 降为整个 \(M\) 上的同余后，
 再与 \(g_b=47\)、三类 source gcd 分配和有限二进 carry 条件联用，不可能导出矛盾。
 该局部系统对每个允许 source 都有显式正容量。
 

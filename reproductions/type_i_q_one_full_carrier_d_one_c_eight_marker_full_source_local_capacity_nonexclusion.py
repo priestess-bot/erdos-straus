@@ -3,7 +3,7 @@
 
 This is a finite arithmetic verifier.  It checks the local count formula and
 two formal controls, one for each possible location of the distinguished 47.
-The controls establish only the full M/47 congruence projection, not q | V,
+The controls establish only the full M congruence projection, not q | V,
 primality, positive endpoints, or an actual marker.
 """
 
@@ -133,23 +133,27 @@ def verify_formal_controls() -> None:
             and rho % 3 == 1
             and q % 16 == 1
             and gcd(n, reduced_support) == 1
-            and gcd(q, reduced_support) == 1
+            and gcd(q, support) == 1
             and gcd(support, p * p + p - 1 - q) == 47
         ):
             raise AssertionError("formal marker source-unit lift changed")
 
-        a_mod_support = value * pow(q, -1, reduced_support) % reduced_support
-        t_mod_support = (a_mod_support - 8) * pow(p, -1, reduced_support) % reduced_support
-        t = crt(t_mod_support, reduced_support, 7, 16)
+        a_mod_support = value * pow(q, -1, support) % support
+        t_mod_support = (a_mod_support - 8) * pow(p, -1, support) % support
+        t = crt(t_mod_support, support, 7, 16)
         a = 8 + p * t
+        r_value, remainder = divmod(32 * support - 1, p)
+        if remainder:
+            raise AssertionError("c=8 source R reconstruction changed")
         if not (
-            (q * a - value) % reduced_support == 0
-            and gcd(a, reduced_support) == 1
+            (q * a - value) % support == 0
+            and gcd(a, support) == 1
+            and (r_value - a) % 47 == 0
             and t % 3 == 2
             and t % 16 == 7
             and a % 16 == 15
         ):
-            raise AssertionError("q/a full-source local projection changed")
+            raise AssertionError("q/a full-M local projection changed")
 
         in_s = s % 47 == 0
         in_linear = linear % 47 == 0
