@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 857 |
+| 数学状态 | `established` | 864 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 38 |
-| 证明来源 | `repository_derivation` | 688 |
+| 证明来源 | `repository_derivation` | 695 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 19 |
-| 审阅状态 | `internal_review` | 835 |
+| 审阅状态 | `internal_review` | 842 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -186,6 +186,7 @@
 | [固定 n/r 的完整残余分裂与短证书提升](../claims/residual-split-source-descent.md) (`residual-split-source-descent`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [完整证书格在两万内全部出现最大项反向提升](../claims/reverse-lift-full-certificate-lattice-audit.md) (`reverse-lift-full-certificate-lattice-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [最短证书的二分母保留反向提升在万级核心素数中稀少](../claims/reverse-lift-shortest-certificate-audit.md) (`reverse-lift-shortest-certificate-audit`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [根证书与标记纤维的析取终端不变量](../claims/root-context-terminal-disjunctive-invariant.md) (`root-context-terminal-disjunctive-invariant`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [Salez 报告验证到 10^17](../claims/salez-verified-1e17-reported.md) (`salez-verified-1e17-reported`) | `computationally_reported` | `unspecified` | `unspecified` | `salez2014` | 2026-07-23 |
 | [缩放一坐标提升的四分母刚性与非倍数 Type I 递降](../claims/scaled-source-descent-rigidity.md) (`scaled-source-descent-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-24 |
 | [非倍数缩放源的移位因子约化](../claims/scaled-source-shift-divisor-reduction.md) (`scaled-source-shift-divisor-reduction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
@@ -766,7 +767,11 @@
 | [完整 F 谱中四百八十三个缺陷一状态的终端与提升边界](../claims/type-I-psi-one-full-spectrum-terminal-descent-boundary.md) (`type-I-psi-one-full-spectrum-terminal-descent-boundary`) | `computationally_reproduced` | `mixed` | `internal_review` | - | 2026-07-31 |
 | [Psi 一层缺陷到 single-external slab 的规范路径字约束](../claims/type-I-psi-one-source-word-large-slab-constraint.md) (`type-I-psi-one-source-word-large-slab-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-01 |
 | [纯二进盒外关系的半幂 CRT 分裂、终端准入与严格重图表递降](../claims/type-I-pure-dyadic-half-power-crt-rechart-descent.md) (`type-I-pure-dyadic-half-power-crt-rechart-descent`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-09 |
+| [q=1 容量八双低容量 split 的线性互补重叠桥](../claims/type-I-q-one-full-carrier-d-one-c-eight-double-low-split-overlap-bridge.md) (`type-I-q-one-full-carrier-d-one-c-eight-double-low-split-overlap-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八 high-q endpoint 的共享缺陷刚性](../claims/type-I-q-one-full-carrier-d-one-c-eight-high-q-shared-defect-rigidity.md) (`type-I-q-one-full-carrier-d-one-c-eight-high-q-shared-defect-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八低容量 gate 的互补 p-free 排除与双侧 split 接口](../claims/type-I-q-one-full-carrier-d-one-c-eight-low-gate-complement-pfree-split-interface.md) (`type-I-q-one-full-carrier-d-one-c-eight-low-gate-complement-pfree-split-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八 low gate 的四次 carry 商参数化](../claims/type-I-q-one-full-carrier-d-one-c-eight-low-gate-quartic-carry-parameterization.md) (`type-I-q-one-full-carrier-d-one-c-eight-low-gate-quartic-carry-parameterization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八 q-star=103 low gate 的奇 carry 射线参数化](../claims/type-I-q-one-full-carrier-d-one-c-eight-qstar-103-low-gate-odd-carry-rays.md) (`type-I-q-one-full-carrier-d-one-c-eight-qstar-103-low-gate-odd-carry-rays`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的第二完整 excess 增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的两条结构 m=1 节点增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八 target 的 source-side 支撑分离与非 p raw 出边](../claims/type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation.md) (`type-I-q-one-full-carrier-d-one-c-eight-universal-source-non-p-separation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
@@ -1105,6 +1110,7 @@
 | [q=1 高 C=2 的 H3 有界终端—第四锚—q=1 掩码分派](../claims/type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate.md) (`type-II-q-one-c-two-19-phase-fourth-anchor-terminal-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [H4 d4=1 clean q-bridge 容量 stutter 的 source D-gate 全称排除](../claims/type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure.md) (`type-II-q-one-c-two-19-phase-h4-a-one-d-one-q-bridge-stutter-source-d-gate-closure`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
 | [q=1 高 C=2 19 相位 H4 a=1 fresh carrier 与 root cyclotomic 容量的互素屏障](../claims/type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality.md) (`type-II-q-one-c-two-19-phase-h4-a-one-fresh-carrier-root-cyclotomic-orthogonality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
+| [H4 a=1 clean q 原子目标的 parent-anchored checkpoint 收缩宏](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [H4 atomic q-bridge 的局部 owner 唯一性与无重收费](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [H4 atomic target 控制的单支撑 involution F 证书](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-target-involution-fiber-controls.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-target-involution-fiber-controls`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 高 C=2 19 相位 H4 a=1 q-bridge 的完整超额分解与单一 stutter 门](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction.md) (`type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-complete-excess-stutter-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-16 |
@@ -1159,6 +1165,7 @@
 | [q=1 G 退出的规范根切片：严格 carry 与源支撑互素屏障](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md) (`type-II-q-one-canonical-root-slice-support-disjointness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 载体保留的 Type II 因子对终端与严格递降射线](../claims/type-II-q-one-carrier-preserving-factor-pair-ray.md) (`type-II-q-one-carrier-preserving-factor-pair-ray`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [q=1 G source 到标准 Type II 两尾递降的平方根压缩](../claims/type-II-q-one-factor-pair-source-compression.md) (`type-II-q-one-factor-pair-source-compression`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
+| [q=1 容量八低分母 p-1 Type II 尾扇无路](../claims/type-II-q-one-full-carrier-d-one-c-eight-low-denominator-tail-fan-no-go.md) (`type-II-q-one-full-carrier-d-one-c-eight-low-denominator-tail-fan-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 full-carrier 零 k 容量五十六的 gap-7 Type II 前缀排除](../claims/type-II-q-one-full-carrier-d-one-capacity-fifty-six-gap-seven-terminal-preemption.md) (`type-II-q-one-full-carrier-d-one-capacity-fifty-six-gap-seven-terminal-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 full-carrier 的 d=1 立即接收态容量四全称排除](../claims/type-II-q-one-full-carrier-d-one-capacity-four-exclusion.md) (`type-II-q-one-full-carrier-d-one-capacity-four-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 full-carrier 的 d=1 立即接收态容量一全称排除](../claims/type-II-q-one-full-carrier-d-one-capacity-one-exclusion.md) (`type-II-q-one-full-carrier-d-one-capacity-one-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
