@@ -12,7 +12,9 @@ statement: >-
   给出实际 high-q low gate 当且仅当 q_t 为素数且 q_t divides G_c(lambda_t)。
   因而每个 fixed source/c pair 的 seven-gate residual 不是一般 carry 参数空间，
   而是一条从显式起点开始的奇素数--四次因子射线；q_t divides V 还给出其有限的
-  source-local t interval。该结论不为 t 给出全局上界，不证明任何射线为空，也不支付
+  source-local t interval。进一步，任意预先固定的 t 上界都会给出显式的有限 p 上界，
+  所以在没有额外 source 有界性定理时，bounded carry-depth 筛选不能单独给出
+  all-source 覆盖。该结论不为 t 给出全局上界，不证明任何射线为空，也不支付
   terminal、typed admission 或 E5。
 claim_status: established
 proof_provenance: repository_derivation
@@ -228,36 +230,113 @@ low gate 当且仅当它整除 \(G_c(\lambda)\)。由 (11)--(13)，这在本范�
 这把 low gate 的后续研究压缩为七条明确的“线性 prime ray 命中四次因子”问题，
 而不是继续把 \(q\bmod p\) 当作独立的七项菜单。
 
-## 4. 非 low 控制
+## 4. 任意有界 carry 深度只能覆盖有限 source
+
+这个射线参数化还排除了一个看似自然但不足以闭合全域的策略：固定一个常数
+\(T\)，只检查 \(0\le t\le T\) 的前若干 carry shell。
+
+令
+
+\[
+f(X)=X^4-4X^3-27334X^2+2471436X-59657719.
+\tag{17}
+\]
+
+由 (14) 有 \(G_c(\lambda)=c^4f(\lambda/c)\)。多项式 \(f\) 没有有理根：它是首一的，
+故有理根若存在必为整数；但
+
+\[
+f(X)\equiv X^4-4X^3+7X^2-8X+1\pmod {19}
+\tag{18}
+\]
+
+在 \(0,\ldots,18\) 上没有根。因此
+
+\[
+\boxed{G_c(\lambda)\ne0\quad(c,\lambda\in\mathbb Z_{>0}).}
+\tag{19}
+\]
+
+若 actual low gate 有 \(\lambda\le L\)，由 \(q\mid G_c(\lambda)\)、
+\(q\ge2p-1\) 和 (19) 得
+
+\[
+2p-1\le|G_c(\lambda)|.
+\tag{20}
+\]
+
+对 \(1\le c\le7\)、\(1\le\lambda\le L\)，逐项三角不等式给出显式 envelope
+
+\[
+\begin{aligned}
+|G_c(\lambda)|
+\le H(L):={}&L^4+28L^3+1\,339\,366L^2\\
+&+847\,702\,548L+143\,238\,183\,319.
+\end{aligned}
+\tag{21}
+\]
+
+所以
+
+\[
+\boxed{p\le\frac{H(L)+1}{2}.}
+\tag{22}
+\]
+
+另一方面，(11) 和 \(D\le67199\) 给出
+
+\[
+\lambda_t\le64\cdot67199(t+2)-1
+=4\,300\,736(t+2)-1.
+\tag{23}
+\]
+
+因此，对任意预先给定的 \(T\ge0\)，所有 \(t\le T\) 的 actual low gate 都满足
+
+\[
+\boxed{
+p\le
+\frac{H\bigl(4\,300\,736(T+2)-1\bigr)+1}{2}.
+}
+\tag{24}
+\]
+
+这不是关于剩余 source 是否无界的断言；它是一个条件独立的有限性结论。若某个论证只在
+固定 \(T\) 层 shell 中寻找 low gate，则 (24) 明确给出它必须另行处理的 source
+范围。故有限深度因子扫描可以是局部证书工具；除非另有定理将整个 source 集限制到
+(24) 的范围，它不能单独替代全域 exit 的无界机制。
+
+## 5. 非 low 控制
 
 已有 actual high-\(q\) raw control
 
 \[
 s=116,\quad p=5569,\quad D=11,\quad
 q=578581,\quad c=4202,\quad\lambda=36630
-\tag{17}
+\tag{25}
 \]
 
 不在本卡的 \(c\le7\)、\(q_\star=103\) 范围内，但仍检验奇 carry 的代数重建：
 
 \[
 \sigma=22,\qquad \eta=-595,\qquad t=51,
-\tag{18}
+\tag{26}
 \]
 
 \[
 36630=64\cdot11\cdot(51+1)+22,
 \qquad
 578581=2\cdot5569\cdot(51+1)-595.
-\tag{19}
+\tag{27}
 \]
 
 并且 \(q\mid G_{4202}(36630)\)。该控制只验证 (8) 的 parity-refined affine
 重建；因 \(\eta<0\)，它不能替代 low-gate 范围内 \(\eta_{s,c}>0\) 的证明。
 
-## 5. 边界
+## 6. 边界
 
-(15) 没有给出 \(t\) 的全局上界，(16) 的长度仍随 \(V/p\) 增长。它也没有证明
+(15) 没有给出 \(t\) 的全局上界，(16) 的长度仍随 \(V/p\) 增长；(24) 也只说明
+任何固定深度的覆盖必然有限。它没有证明
 任何 \(q_t\) 必为合数，或某个 \(q_t\) 一定命中 \(G_c(\lambda_t)\)。因此该卡不关闭
 seven-gate residual，不构造 terminal，不证明 split capacity 小于 \(8\)，也不提供
 typed E1--E5 或 G/Type I global exit。

@@ -58,6 +58,43 @@ def source_ray_data(prime: int, defect: int, capacity: int) -> tuple[int, int]:
     return sigma, eta
 
 
+def normalized_quartic(value: int) -> int:
+    """Return f(X), the c-homogeneous normalization of G_c."""
+    return (
+        value**4
+        - 4 * value**3
+        - 27_334 * value**2
+        + 2_471_436 * value
+        - 59_657_719
+    )
+
+
+def carry_envelope(bound: int) -> int:
+    """Return the explicit H(L) used for c<=7 and lambda<=L."""
+    return (
+        bound**4
+        + 28 * bound**3
+        + 1_339_366 * bound**2
+        + 847_702_548 * bound
+        + 143_238_183_319
+    )
+
+
+def verify_bounded_carry_finiteness_constants() -> None:
+    """Check the root obstruction mod 19 and the exact envelope coefficients."""
+    if any(normalized_quartic(value) % 19 == 0 for value in range(19)):
+        raise AssertionError("the normalized quartic unexpectedly has a root mod 19")
+    if not (
+        27_334 * 7**2 == 1_339_366
+        and 2_471_436 * 7**3 == 847_702_548
+        and 59_657_719 * 7**4 == 143_238_183_319
+        and carry_envelope(1)
+        == 1 + 28 + 1_339_366 + 847_702_548 + 143_238_183_319
+        and 64 * source.SHARED_SUPPORT == 4_300_736
+    ):
+        raise AssertionError("bounded-carry envelope constants changed")
+
+
 def verify_crt_threshold_table() -> None:
     """Replay only the eight source lower bounds needed for p>32D."""
     for defect, least_s in CRT_THRESHOLD_ROWS:
@@ -124,11 +161,13 @@ def verify_non_low_high_q_control() -> None:
 
 
 def verify() -> None:
+    verify_bounded_carry_finiteness_constants()
     verify_crt_threshold_table()
     verify_non_low_high_q_control()
     print(
         "verified c=8 q_star=103 low-gate odd carry rays: "
-        "eight CRT thresholds, 56 formal starts, and one high-q control"
+        "mod-19 root obstruction, eight CRT thresholds, 56 formal starts, "
+        "and one high-q control"
     )
 
 
