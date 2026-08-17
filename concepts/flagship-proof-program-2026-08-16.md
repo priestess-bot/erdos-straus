@@ -4,10 +4,10 @@ concept_id: flagship-proof-program-2026-08-16
 title: 从 normal form 到全局 selector 的六个旗舰命题
 summary: >-
   核验截至 2026-08-17 的仓库前沿后，将最终双出口 F0 与六个可判真假的旗舰命题
-  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包和 T4 的 ordinary q=1 G
-  full-carrier fresh-source 相对闭包均已建立，但不替代其它 H4 branch、非平凡 mark、
-  全局良基势或 selector。其余内容记录 H4、atomic split、全局势函数、Fourier/容量、
-  外部源和 lift 路线的已知边界。
+  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包、T4 的 ordinary q=1 G
+  full-carrier fresh-source 相对闭包、T2 的有限 v1 atomic admission grammar，以及 T5 的
+  合同层 E5 良基势均已建立。它们不替代其它 H4 branch、非平凡 mark、全域 atomic 覆盖或
+  selector totality。其余内容记录 H4、atomic split、Fourier/容量、外部源和 lift 路线的已知边界。
 topics:
 - research-map
 - proof-program
@@ -48,6 +48,10 @@ sources:
   role: q-one-G-handoff-inverse-classification
 - claim: type-I-phase-labeled-candidate-selector-well-founded-schedule
   role: local-rank-and-cycle-boundary
+- claim: type-I-atomic-admission-v1-finite-grammar-integration
+  role: finite-v1-atomic-admission-interface
+- claim: type-I-t5-full-contract-level-global-well-foundedness
+  role: canonical-contract-level-E5-potential
 - claim: type-I-linear-multi-active-fourier-carrier-vector
   role: multi-active-carrier-extraction-boundary
 - claim: type-I-ordered-r-migration-min-cost-duality
@@ -78,8 +82,8 @@ last_checked: '2026-08-17'
    proper-overlap \(a_{\rm alt}=1\) 的受限子域，新的 parent-anchored macro 已把
    actual \(P\Rightarrow H_4\) source/path、scope、owner 与 target receipt 绑定为同一
    可重放对象，并给出 phase-local 严格 endpoint 比较；其余 H4 selector branch、F/G
-   target 的后续出口与全局 state admission 仍未闭合。因此它是最接近完成的桥，而不是
-   已验证的全局递归宏。
+   target 的后续出口与其它 H4 selector branch 仍未闭合。该受限子域现已进入 T2 的
+   有限 v1 admission grammar，但它不是覆盖全部 raw path 的全局递归宏。
 3. Type II 的 \(q=1\) G endpoint 不能直接把原 source support 改名为 Type I support：
    规范根支撑与 \(X=(p+3)/4\) 互素。ordinary 输入域现已通过独立 fresh full-carrier
    root 绕开这条继承障碍并完成相对 E1--E5；它没有给出非平凡 mark 的 serializer、全局势
@@ -180,10 +184,9 @@ typed fields 共同序列化到 target；它以
 [H4 a=1 parent-anchored checkpoint 收缩宏](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-macro-checkpoint-contraction.md)。
 
 **尚缺的闭包。** 上述 source-bound 结果不覆盖其它 H4 selector branch，也不说明 F/G
-target 必有后续 terminal 或 strict exit；更不把 phase-local 比较升级为可跨 Type I /
-Type II phase 与 reset 使用的全局势。对任意 raw path 的 T2 仍须独立接受统一
-normal-form / state-admission 合同，不能只用 \(c_q\le p-2\)、branch-local owner 或一个
-算术分类结果宣称 E1--E5。
+target 必有后续 terminal 或 strict exit。它在 T2 v1 内已获得统一 normal-form / state-admission
+合同并由 T5 E5 接口消费，但对任意 raw path 的全域 T2 仍未建立；不能只用 \(c_q\le p-2\)、
+branch-local owner 或一个算术分类结果宣称 E1--E5。
 
 **新增的终端分派。** 当 atomic target 的完整 factorization 尚未可用时，中心 hit 不再
 必须先被编码为完整指数向量：任何互素 pair \((u,v)\) 满足 \(uv\mid K_T\)、
@@ -216,6 +219,14 @@ Q_x,Q_y>1,\qquad p\nmid Q_xQ_y,
 payload，重算 target 后通过 E1--E5；或者证明整个 proof graph 只需 edge-local charge
 conservation，因此不需要跨 action 的 global one-use 公理。
 
+**2026-08-17 v1 局部闭合。** 现已冻结
+\(\mathcal A_{\mathrm{v1}}=\mathcal A_{H4}\sqcup\mathcal A_{C8}\)。其中 H4 `a=1` 是 actual
+parent-anchored arm；c=8 arm 以 actual double-low 为前提。两者都必须记录版本、source/path/
+priority digests、owner tuple、完整 payload、target rechart 与局部 E5 分类，输出只能是 terminal、
+phase-local strict pending target、boundary 或 rejection。这个结论严格小于本节开头对任意 raw
+legal path 的全称命题，且不把 pooled-capacity 情形的 global ledger 义务删去。见
+[T2 v1 有限 grammar](../claims/type-I-atomic-admission-v1-finite-grammar-integration.md)。
+
 **已建立的前提。** 现有 `path_anchored_atomic_split_complete_excess_v1` 已给出同一
 atomic action 内的 canonical owner、条件性 E1--E4，以及精确 E5 判据
 
@@ -237,7 +248,7 @@ acceptance。见
 [H4 atomic owner epoch locality](../claims/type-II-q-one-c-two-19-phase-h4-a-one-q-bridge-atomic-owner-epoch-locality.md)。
 
 **表述校正。** 仅有 \(Q_x,Q_y>1\)、\(p\nmid Q_xQ_y\)、\(c_M<C\) 和一条 raw path
-并不自动推出 E1--E5；T2 的工作正是把这些尚未形式化的语义门关闭或证明可删去。
+并不自动推出 E1--E5；v1 只关闭两个具名 arm 的 receipt 门，完整 T2 仍须处理其余输入域。
 
 **反证标准。** 同一 physical raw occurrence 在两个合法 action 中需要不相容的
 canonical owner，或某 actual split 在不读取未知目标解的前提下完成分类后，仍无法通过
@@ -315,7 +326,7 @@ target-independent fresh source
 
 **仍未建立的边界。** 此结论只覆盖 ordinary \(W=\operatorname{Sol}(p)\) 与该 root 后的
 首个 local strict segment；它不把 Type II source support 伪继承给 Type I chart。非平凡
-marked state 仍需要可逐字重序列化的 mark schema；T5 仍需涵盖所有 reset 的全局良基势；
+marked state 仍需要可逐字重序列化的 mark schema；T5 的合同势已排除未付款 reset，
 T6 仍需对每个递归可达 Type I state 给出 total selector，包含后续 \(c=8,q_*=103\)
 image 的 totality。旧 canonical root 的互素障碍仍是为什么必须使用 fresh scope 的结构性
 理由，见 [canonical-root support disjointness](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
@@ -332,10 +343,15 @@ graph 中每条非 terminal verified edge 都满足
 定义域至少包括 Type II \(q>1\) descent、\(q=1\) G handoff、Type I support rebase、
 overflow、PRE \(\to\) ABSORB 与 marked smaller-source descent；不得存在未付费的 reset。
 
-**已建立的边界。** 某些局部 phase-labelled schedule 已有严格字典序，但它们不是总
-selector，也不覆盖 E1--E4。未分 phase 的候选边已出现真实 \(p=73\) 二环和 \(p=1009\)
-自环，故“有限 transition graph 无环”不能作为理论终止性证明。见
-[phase-labelled candidate selector schedule](../claims/type-I-phase-labeled-candidate-selector-well-founded-schedule.md)。
+**2026-08-17 合同层闭合。** 当前 state contract 的 selector 输出已固定为五类，并把
+\[
+\Pi_{T5}=(\rho,\Phi,\Psi,r_1,r_2,r_3,r_4)\in\mathbb N^7
+\]
+写成 E5 admission rule。只有 `OUTER_RANK_DROP`、`PHASE_DROP` 或 `LOCAL_DROP` 之一实际成立的
+E1--E4 candidate 才能成为 `verified_edge`；因此所有**合同认可**的递归边严格下降，PRE/ABSORB
+二环、formal self-loop 和 legacy reset re-entry 都不能进入该图。这个闭合不声称任意 E1--E4
+算术 candidate 自动带有 ticket，也不替代 T6 的 total selector。见
+[T5 合同层全局良基性](../claims/type-I-t5-full-contract-level-global-well-foundedness.md)。
 
 **反证标准。** 给出一条完全合法、满足所有当前 edge contract 的 cycle；它会直接否定所提
 候选势，而不是只否定某个有限样本的排序。
@@ -393,7 +409,7 @@ selector case split。
 | VC fixed-\(C\) Vieta theory | \(C=2\) centered marker 的 Vieta no-go 已提供起点，但并未分类所有固定 \(C\)。 | 对 \(C=3,4,6\) 导出正确 normal form，分类 Vieta descent 是否严格，并证明无解或参数化全部原始轨道。 | A-/B+ |
 | LIFT classification | 已知若干两分母/特定形式 lift 有障碍；“\(n<p\)”本身绝不保证 lift。 | 分阶段分类 two-denominator-preserving、one-denominator-preserving，再考虑次数 \(\le2\) 的有理 lift；每类给出完整 normal forms 或新 family。 | A |
 | SC short certificates | 短证书实验和固定菜单 no-go 都不能给出全称上界。 | 证明 \(m_{\min}(p)=o(p)\)，首步可尝试 \(m_{\min}(p)\ll p^{1/2+\varepsilon}\)；或者对限定证书族给出可靠下界序列。 | B+ |
-| FSM unified state machine | 局部 phase schedule 已存在，但不是跨 Type II、G handoff、Type I、marked 的有限 grammar。 | 明确 phase set、全部允许边、solution lift 和 rank contract，证明无未付 reset；它是 T5--T6 的工程化表达。 | S |
+| FSM unified state machine | Type II、G handoff、Type I、marked 的相位与 E5 rank contract 已冻结；未建立的是 total selector 对每个实际状态的输出。 | 为每个 T6 candidate 产出完整 E1--E4 receipt，并用固定 T5 ticket 验收；任何 dead-end 都记录为 totality gap。 | S |
 
 ### 外部源路线的特别校正
 
@@ -413,7 +429,7 @@ prime support 的 external source，也不能否定该 \(p\) 的 Type I/II 证�
 | 把 \(Q=(p-3)/2\) support 当作普适 G exit | 严格 \(Q\)-carried 和 \(p=14281\) 的全尺度 \(Q\)-supported 分支均有明确失败边界。 | 记录 \(\ell\)-adic capacity 与新 support，或转向其他 Type I/II 机制。 |
 | 继续增加 Fourier 数值统计 | `carrier_mapping_status=unproved`；状态内相位证书不自动成为跨状态算术矛盾。 | 优先 FC1、LOC 或 HR1 的 carrier / migration 定理。 |
 | 用有限 transition graph 无环证明 E5 | 已有实际二环和自环说明未分 phase 的候选边可循环。 | 只接受 T5 那样的全局良基势。 |
-| 再攻 H4 first-stutter / q0 re-entry 的同一算术分支 | actual H4 的首层 arithmetic stutter 已由 source-D gate 关闭；\(a_{\rm alt}=1\) 的 source-bound receipt 也已具备。 | 资源转向其余 H4 selector branch、F/G target 的后续出口与 T5 全局势。 |
+| 再攻 H4 first-stutter / q0 re-entry 的同一算术分支 | actual H4 的首层 arithmetic stutter 已由 source-D gate 关闭；\(a_{\rm alt}=1\) 的 source-bound receipt 已进入 T2 v1/T5 合同。 | 资源转向其余 H4 selector branch、F/G target 的后续出口与 T6 totality。 |
 | 把“存在偶终端”直接写成 descent | terminal existence、marked membership 与 solution lift 是不同合同。 | 必须经 T3 和 E1--E5 验证。 |
 
 ## 新结果的验收纪律

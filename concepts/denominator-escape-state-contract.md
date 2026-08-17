@@ -60,6 +60,10 @@ used_by:
 - type-II-q-one-full-carrier-phase-root-entry
 - type-II-q-one-full-carrier-second-anchor-fixed-n-macro
 - type-I-path-anchored-atomic-split-complete-excess-admission
+- type-I-atomic-admission-v1-finite-grammar-integration
+- type-I-edge-local-atomic-ownership-sufficiency
+- type-I-t5-full-contract-level-global-well-foundedness
+- type-I-t5-full-transition-surface-exhaustion
 sources:
 - claim: marked-solution-descent-closure
   role: marked-state-and-solution-lift-criterion
@@ -92,7 +96,7 @@ sources:
 - claim: type-II-q-one-full-carrier-phase-root-entry
   role: ordinary-q-one-G-to-fresh-full-carrier-Type-I-phase-reindexing
 visibility: public
-last_checked: '2026-08-15'
+last_checked: '2026-08-17'
 ---
 
 # 分母缺陷逃逸的合法状态与转移合同
@@ -1603,6 +1607,28 @@ c=3 tree 返回 Type II；tree 后的 Type II 结果只能是 terminal leaf。c=
 typed fiber 必须分别重算。这个 conditional relay 不证明 source-lineage receipt 对所有
 endpoint 存在，也不替代 phase-1 的独立全称 selector。详见
 [q=1 G c=3 source-lineage phase relay](../claims/type-II-q-one-c3-source-lineage-phase-root-entry.md)。
+
+### 6.9 T5 完整全局良基合同（2026-08-17）
+
+完整定义与证明见 [T5 完整全局良基合同](t5-global-well-foundedness-contract-v2.md)。本节把其 admission
+规则设为本合同 E5 的规范实现：任何拟写入 persistent queue 的 candidate 在 E1--E4 后必须匹配
+`OUTER_RANK_DROP`、`PHASE_DROP` 或 `LOCAL_DROP` 三种 ticket 之一；否则不得标为 `verified_edge`。
+
+全局势为
+
+\[
+\Pi_{T5}(S)=(\rho,\Phi,\Psi,r_1,r_2,r_3,r_4)\in\mathbb N^7,
+\]
+
+major phase 固定为 `TYPEII_REL > TYPEII_G_HANDOFF > TYPEI > GENERIC_MARKED`；Type-I protocol 固定为
+`CHARGED > PRE > ABSORB > RESET`。CHARGED 使用
+`(floor(B_p/A),K/A,eta_p)`，PRE 使用 `a`，ABSORB 使用 `(R,m,r_epsilon)`，RESET 使用 carrier `M`。
+同一 equation rank 下禁止 phase/protocol 向上重入。joined-support paid reset 保持 CHARGED 并由 support
+rank 下降支付；会丢旧 support 的 legacy carrier reset 只能进入不可回返 RESET。
+
+terminal、analysis evidence、pending normalization 与 macro internal checkpoint 均不产生递归边。
+因此本合同认可的全部 persistent edges 共享同一预定义良基顺序；这不证明每个 E1--E4 candidate
+都有 ticket，selector totality 仍是独立问题。
 
 ## 7. 明确不构成递降的对象
 

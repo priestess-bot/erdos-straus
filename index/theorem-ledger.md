@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 866 |
+| 数学状态 | `established` | 873 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 696 |
+| 证明来源 | `repository_derivation` | 703 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 843 |
+| 审阅状态 | `internal_review` | 850 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -231,6 +231,7 @@
 | [统一仿射 Type I 平方除子的有限缺口刚性](../claims/type-I-affine-uniform-divisor-rigidity.md) (`type-I-affine-uniform-divisor-rigidity`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [有序谱系到锚定相位的富集 row-to-anchor 准入门](../claims/type-I-ancestry-enriched-row-to-anchor-preflight.md) (`type-I-ancestry-enriched-row-to-anchor-preflight`) | `established` | `repository_derivation` | `independent_review` | - | 2026-08-07 |
 | [锚定仿射相位图的无竖直元与条件相位树容量](../claims/type-I-anchored-affine-phase-tree-capacity.md) (`type-I-anchored-affine-phase-tree-capacity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-07 |
+| [T2 atomic-admission v1 的有限 arm grammar 与局部闭包](../claims/type-I-atomic-admission-v1-finite-grammar-integration.md) (`type-I-atomic-admission-v1-finite-grammar-integration`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [六亿 B 等于一自平方残余的补偿平方剖面](../claims/type-I-b1-compensated-square-profile-600m.md) (`type-I-b1-compensated-square-profile-600m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B 等于一正规形的补偿平方终端桥](../claims/type-I-b1-compensated-square-terminal-bridge.md) (`type-I-b1-compensated-square-terminal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [B等于一正规形回缩到完整平方因子外部源的判据](../claims/type-I-b1-external-source-retraction-criterion.md) (`type-I-b1-external-source-retraction-criterion`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
@@ -266,6 +267,7 @@
 | [Type I二幂桥p减一源的因子对判据](../claims/type-I-dyadic-p-minus-one-factor-pair-selector.md) (`type-I-dyadic-p-minus-one-factor-pair-selector`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [十万前缀的完整二幂p减一桥因子对剖面](../claims/type-I-dyadic-pminusone-profile-100k.md) (`type-I-dyadic-pminusone-profile-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
 | [十万前缀二幂p减一残余的低B补集剖面](../claims/type-I-dyadic-residual-low-b-complement-100k.md) (`type-I-dyadic-residual-low-b-complement-100k`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-27 |
+| [单后继 atomic edge 的局部 owner 充分性与 pooled-capacity 边界](../claims/type-I-edge-local-atomic-ownership-sufficiency.md) (`type-I-edge-local-atomic-ownership-sufficiency`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [深层 AC 条件逃逸进程的统一固定缺口 Type I 边界](../claims/type-I-escape-affine-boundary.md) (`type-I-escape-affine-boundary`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `ventas2026` | 2026-07-25 |
 | [偶二次外源严格提升精确落入 Type I 正规形终端桥](../claims/type-I-even-external-source-normal-bridge.md) (`type-I-even-external-source-normal-bridge`) | `established` | `repository_derivation` | `internal_review` | `bradford2024`, `ventas2026` | 2026-07-28 |
 | [五亿偶桥支撑三或平移外源的终止混合闭合](../claims/type-I-even-source-support-external-hybrid-500m.md) (`type-I-even-source-support-external-hybrid-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
@@ -772,6 +774,9 @@
 | [q=1 容量八 high-q endpoint 的共享缺陷刚性](../claims/type-I-q-one-full-carrier-d-one-c-eight-high-q-shared-defect-rigidity.md) (`type-I-q-one-full-carrier-d-one-c-eight-high-q-shared-defect-rigidity`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八低容量 gate 的互补 p-free 排除与双侧 split 接口](../claims/type-I-q-one-full-carrier-d-one-c-eight-low-gate-complement-pfree-split-interface.md) (`type-I-q-one-full-carrier-d-one-c-eight-low-gate-complement-pfree-split-interface`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八 low gate 的四次 carry 商参数化](../claims/type-I-q-one-full-carrier-d-one-c-eight-low-gate-quartic-carry-parameterization.md) (`type-I-q-one-full-carrier-d-one-c-eight-low-gate-quartic-carry-parameterization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八 marker 的奇参数排除与仿射 source 因子分配](../claims/type-I-q-one-full-carrier-d-one-c-eight-marker-affine-lift-source-allocation.md) (`type-I-q-one-full-carrier-d-one-c-eight-marker-affine-lift-source-allocation`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八 marker 的全 source 局部容量非排除定理](../claims/type-I-q-one-full-carrier-d-one-c-eight-marker-full-source-local-capacity-nonexclusion.md) (`type-I-q-one-full-carrier-d-one-c-eight-marker-full-source-local-capacity-nonexclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [q=1 容量八唯一 marker 的四次--模 47 局部非排除定理](../claims/type-I-q-one-full-carrier-d-one-c-eight-marker-local-character-nonexclusion.md) (`type-I-q-one-full-carrier-d-one-c-eight-marker-local-character-nonexclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 容量八 q-star=103 low gate 的奇 carry 射线参数化](../claims/type-I-q-one-full-carrier-d-one-c-eight-qstar-103-low-gate-odd-carry-rays.md) (`type-I-q-one-full-carrier-d-one-c-eight-qstar-103-low-gate-odd-carry-rays`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的第二完整 excess 增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-second-full-excess-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [q=1 零 k 容量八 target 的两条结构 m=1 节点增容障碍](../claims/type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction.md) (`type-I-q-one-full-carrier-d-one-c-eight-structured-node-carry-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
@@ -868,6 +873,8 @@
 | [Type I 失败的子群--字符分流](../claims/type-I-subgroup-character-obstruction.md) (`type-I-subgroup-character-obstruction`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
 | [Type I 子群型失败的半维跨缺口筛界](../claims/type-I-subgroup-character-sieve.md) (`type-I-subgroup-character-sieve`) | `established` | `unspecified` | `unspecified` | `elsholtz_tao2013`, `bradford2024` | 2026-07-25 |
 | [中心化指数盒的 Kneser 对合瓶颈](../claims/type-I-symmetric-box-kneser-involution-bottleneck.md) (`type-I-symmetric-box-kneser-involution-bottleneck`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
+| [T5 完整状态合同层全局良基性](../claims/type-I-t5-full-contract-level-global-well-foundedness.md) (`type-I-t5-full-contract-level-global-well-foundedness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [T5 对当前状态合同 persistent transition surface 的穷尽分类](../claims/type-I-t5-full-transition-surface-exhaustion.md) (`type-I-t5-full-transition-surface-exhaustion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
