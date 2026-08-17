@@ -4,9 +4,10 @@ concept_id: flagship-proof-program-2026-08-16
 title: 从 normal form 到全局 selector 的六个旗舰命题
 summary: >-
   核验截至 2026-08-17 的仓库前沿后，将最终双出口 F0 与六个可判真假的旗舰命题
-  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包已经建立，但不替代
-  其它 H4 branch、q=1 G handoff 或全局 selector。其余内容记录 H4、atomic split、
-  全局势函数、Fourier/容量、外部源和 lift 路线的已知边界。
+  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包和 T4 的 ordinary q=1 G
+  full-carrier fresh-source 相对闭包均已建立，但不替代其它 H4 branch、非平凡 mark、
+  全局良基势或 selector。其余内容记录 H4、atomic split、全局势函数、Fourier/容量、
+  外部源和 lift 路线的已知边界。
 topics:
 - research-map
 - proof-program
@@ -41,6 +42,8 @@ sources:
   role: conditional-atomic-split-contract
 - claim: type-II-relation-reach-gcd-shadow-endpoint-descent
   role: Type-II-endpoint-and-marked-terminal-boundary
+- claim: type-II-q-one-full-carrier-phase-root-entry
+  role: ordinary-q-one-G-fresh-full-carrier-relative-closure
 - claim: type-II-q-one-canonical-root-full-product-predecessor-rigidity
   role: q-one-G-handoff-inverse-classification
 - claim: type-I-phase-labeled-candidate-selector-well-founded-schedule
@@ -78,8 +81,9 @@ last_checked: '2026-08-17'
    target 的后续出口与全局 state admission 仍未闭合。因此它是最接近完成的桥，而不是
    已验证的全局递归宏。
 3. Type II 的 \(q=1\) G endpoint 不能直接把原 source support 改名为 Type I support：
-   规范根支撑与 \(X=(p+3)/4\) 互素。这个 handoff 是结构性断桥，不是再增加一个有限
-   参数菜单即可解决的问题。
+   规范根支撑与 \(X=(p+3)/4\) 互素。ordinary 输入域现已通过独立 fresh full-carrier
+   root 绕开这条继承障碍并完成相对 E1--E5；它没有给出非平凡 mark 的 serializer、全局势
+   或 Type I selector。
 
 ## 最终目标 F0
 
@@ -270,7 +274,7 @@ generalized dyadic candidate 或任意新方程解直接当作根证书。见
 
 ### T4: Fresh-G-Handoff
 
-**命题。** 每个 \(q=1\) G core-prime endpoint 都有只依赖 \(p\)、不读取未知目标
+**命题。** 每个 ordinary \(q=1\) G core-prime endpoint 都有只依赖 \(p\)、不读取未知目标
 certificate、且不复用 Type II source support 的确定性有限 lineage
 
 \[
@@ -280,18 +284,41 @@ S_G\longrightarrow S_1\longrightarrow\cdots\longrightarrow S_r,
 其终点是合法 Type I state 或 direct terminal；每条边均满足 E1--E5，并带显式 solution
 lift。有限性应来自统一构造，不能来自对 \(p\) 的有限扫描。
 
-**已建立的边界。** 规范 Type I root 有严格 carry，但其支撑 \(K\) 与
-\(X=(p+3)/4\) 互素，故不能直接重命名 Type II source support。当前默认 entry 与前两次
-support change 的容量不足以到达规范根；在 \(p=73\) 时，至多三次 strict
-single-side bundle 的路径也不能到达根。见
-[canonical-root support disjointness](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)、
-[default-entry capacity gap](../claims/type-II-q-one-canonical-root-default-entry-capacity-gap.md)
-和
-[\(p=73\) three-bundle no-go](../claims/type-II-q-one-p73-three-bundle-path-anchored-capacity-no-go.md)。
+**2026-08-17 ordinary 相对闭包。** 对
 
-**研究含义。** 新证明至少需要更长而有统一定义的 lineage、atomic split、determinant
-bridge，或真正的新 source grammar。对每个固定长度 \(L\) 给出现有 grammar 的 no-go，
-也是有价值的负结果，但本身不能否定未限定 grammar 的 T4。
+\[
+S=(p,q=1,\mathrm G;W_S=\operatorname{Sol}(p)),
+\qquad p=24t+1,
+\]
+
+定义
+
+\[
+X=\frac{p+3}{4},\qquad R_X=16t+3,\qquad K_X=X(16t+1).
+\]
+
+该 chart 是低区间中唯一满足 \(X\mid K\) 的 full-carrier Type I root，且其
+target-independent fresh source
+
+\[
+\bigl(p,R_X(p-1)-p,p-1\bigr)\longmapsto(1,R_X-1,1)
+\]
+
+以 shift \(1\) 且无 gcd reduction 到达 anchor。在禁止非终端 \(1\to2\) re-entry 的
+具名 phase policy 下，该 reindexing 完成 E1--E5；E4 为 \(\operatorname{Sol}(p)\) 上的
+恒等 lift，E5 为 phase \(2\to1\)。随后 \(M=R_X-1\) 与 \(K_X\) 互素，故 \(t\) 奇时
+直接给出 marked-absorb strict edge，\(t\) 偶时经显式 overflow 与 fixed-\(n\) fold
+给出 identity-lift strict edge。完整 card 见
+[q=1 G full-carrier phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md)，
+独立冻结包复核见
+[q=1 fresh handoff 证明包审计](../docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)。
+
+**仍未建立的边界。** 此结论只覆盖 ordinary \(W=\operatorname{Sol}(p)\) 与该 root 后的
+首个 local strict segment；它不把 Type II source support 伪继承给 Type I chart。非平凡
+marked state 仍需要可逐字重序列化的 mark schema；T5 仍需涵盖所有 reset 的全局良基势；
+T6 仍需对每个递归可达 Type I state 给出 total selector，包含后续 \(c=8,q_*=103\)
+image 的 totality。旧 canonical root 的互素障碍仍是为什么必须使用 fresh scope 的结构性
+理由，见 [canonical-root support disjointness](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
 
 ### T5: Global-Well-Foundedness
 
@@ -339,7 +366,7 @@ selector，也不覆盖 E1--E4。未分 phase 的候选边已出现真实 \(p=73
 \text{H4 arithmetic strictness} \Rightarrow \mathrm{T1}\\
 \text{conditional atomic schema} \Rightarrow \mathrm{T2}\\
 \text{Type II gcd-shadow endpoints} \Rightarrow \mathrm{T3}\\
-\text{q=1 G boundary} \Rightarrow \mathrm{T4}\\
+\text{ordinary q=1 G full-carrier root-entry} \Rightarrow \mathrm{T4\ (relative)}\\
 \mathrm{T1,T2,T3,T4}\ +\ \text{all existing verified edges}
 \Rightarrow \mathrm{T5}\Rightarrow \mathrm{T6}\Rightarrow \mathrm{F0}.
 \end{array}

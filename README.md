@@ -38,14 +38,15 @@ E\mid4K^2,\quad E\equiv1\pmod R,\quad 2\mid E,\quad E\le4K-2R.
 | T1 H4-Closure | 相对闭包已建立 | 对 actual proper-overlap、top-capacity、\(a_{\rm alt}=1\) receipt，已验证的 upstream provenance 与 priority miss 之后，clean \(q\)-macro 给出 E1--E5 的 phase-local `candidate_transition`；其它 H4 selector branch 与全局 admission 仍须覆盖。 |
 | T2 Atomic-Admission | 开放 | canonical maximal atomic split 的 ownership、typed target、priority 与 serializer 准入可由 actual provenance 完整推出，或证明全局 one-use 不必作为额外公理。 |
 | T3 Marked-Terminal | 开放 | Type II gcd-shadow 产生的普通 terminal 满足相应 marked solution-set membership，或转为下一条严格合法状态边。 |
-| T4 Fresh-G-Handoff | 开放 | 每个 \(q=1\) G endpoint 都有不复用 Type II source support、且不读取未知目标解的有限 fresh-source lineage，通向 Type I 或 terminal。 |
+| T4 Fresh-G-Handoff | ordinary 相对闭包已建立 | 对 ordinary \(q=1\) G endpoint，target-independent full-carrier fresh root-entry 已完成 E1--E5，并无条件接首个严格 Type I segment；非平凡 mark、全局势与 total selector 仍开放。 |
 | T5 Global-Well-Foundedness | 开放 | 所有进入最终 proof graph 的递归边共享一个全局良基势 \(\Pi\)，并严格下降。 |
 | T6 Global-Selector | 开放 | 确定性 selector 在每个核心 prime / legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |
 
 六条命题的精确量词、现有证据、尚缺合同、反证标准、依赖顺序和其余次级研究方向见
 [`concepts/flagship-proof-program-2026-08-16.md`](concepts/flagship-proof-program-2026-08-16.md)。
-T1 的上述结论是相对宏闭包，不重建 H4 provenance，也不推出 q=1 G handoff、全局 selector
-或猜想本身；T2--T6 仍为开放研究命题。
+T1 与 T4 的上述结论都只是限定输入域的相对闭包，不推出全局 selector 或猜想本身；
+T2、T3、T5、T6 仍为开放研究命题。T4 的独立冻结证明包复核见
+[`docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md`](docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)。
 
 ## 快速使用
 

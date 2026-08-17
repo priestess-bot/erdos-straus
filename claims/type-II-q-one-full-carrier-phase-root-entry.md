@@ -17,7 +17,7 @@ statement: >-
   非平凡 marked terminal membership、全局 G/Type I exit 或 Erdős--Straus 猜想。
 claim_status: established
 proof_provenance: repository_derivation
-review_status: internal_review
+review_status: independent_review
 depends_on:
   - type-II-relation-reach-gcd-shadow-endpoint-descent
   - type-II-q-one-type-I-carrier-rail-dispatch
@@ -50,7 +50,7 @@ sources:
   - reproduction: reproductions/type_ii_q_one_full_carrier_phase_root_entry.py
     role: phase-root-admission-and-first-step-controls
 visibility: public
-last_checked: '2026-08-15'
+last_checked: '2026-08-17'
 ---
 
 # q=1 G 全载体 Type I 根的目标无关 phase-root 准入
@@ -295,3 +295,15 @@ rechart 在两个 parity branch 都被严格迫入 high overflow；证明见
 该 high-overflow interface 随后由
 [第二 anchor overflow 的固定-\(n\) 严格宏出口](type-II-q-one-full-carrier-second-anchor-fixed-n-macro.md)
 给出一条闭式、严格支付的后继；这仍只延长该 q=1 子树，而不等于全域 Type I selector。
+
+## 7. 独立冻结证明包复核
+
+冻结于 `47fedc2` 的独立证明包重新给出本卡的代数推导，并以不导入仓库 module 的 Python
+verifier 重放 root、source、E1--E5 shape 与首段公式。其内嵌的本卡、state contract 和
+flagship 快照与当前版本逐字一致；审计、完整性 caveat、重放命令和边界见
+[q=1 fresh handoff 证明包审计](../docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)，
+完整独立推导见
+[q=1 fresh handoff 完整证明](../docs/q1-fresh-handoff-proof-2026-08-17.md)。
+
+这构成 `independent_review`，但不改变本卡的证明范围：有限 scan 和局部 verifier 不替代
+ordinary scope、phase policy 或后续 selector 的全称证明。
