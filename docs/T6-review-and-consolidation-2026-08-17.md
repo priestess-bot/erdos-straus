@@ -14,6 +14,11 @@
 当前接纳的 T5 结论仍严格是：已进入 persistent queue 的 contract-recognized edge 在
 \(\Pi_{T5}\in\mathbb N^7\) 下严格下降。它不提供任何 state 的 successor 存在性。
 
+> 后续同日进展：本页下表记录的是提交 `203716b` 时的审查快照。其后 ordinary
+> positive-\(q\) G relative adapter、\(c=h\) named-fan no-go、proper-root \(k=1\)
+> universal exclusion 与当前 named-graph T2/T3 coverage audit 已分别入库；最新状态以
+> [T6 当前进度](T6-current-progress-2026-08-17.md) 为准。T6 totality 仍为 open。
+
 ## 主要发现
 
 | 严重度 | 原位置 | 发现 | 处理 |

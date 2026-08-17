@@ -84,7 +84,8 @@ CHARGED (4) -> PRE (3) -> ABSORB (2)
 \]
 
 F->F proper endpoint/gcd-shadow 用 \(q'<q\) 支付。若 target 重算为 G，则直接 major phase 4->3。
-因此 positive-q G 本身不再是 T5 边界；它可以成为合法 G state，只是当前可能没有 T6 handoff。
+因此 positive-q G 本身不再是 T5 边界；actual ordinary source 的 relative handoff 已建立，
+后续 Type-I totality 仍属于 T6。
 
 ### TYPEII_G_HANDOFF
 
@@ -92,9 +93,9 @@ F->F proper endpoint/gcd-shadow 用 \(q'<q\) 支付。若 target 重算为 G，�
 (3,0;0,0,0,0).
 \]
 
-任何 future G->Type-I handoff，只要 E1--E4 真正成立，就自动由 3->2 支付 E5。现有 q=1
-full-carrier root 和 c=3 conditional source-lineage relay 是实例；T5 不再写死 `q=1` 才允许 phase
-下降。
+任何 G->Type-I handoff，只要 E1--E4 真正成立，就自动由 3->2 支付 E5。现有 q=1
+full-carrier root、actual ordinary positive-q relative adapter 和 c=3 conditional source-lineage
+relay 是实例；T5 不再写死 `q=1` 才允许 phase 下降。
 
 ### TYPEI / CHARGED
 
@@ -261,7 +262,7 @@ source/owner/typed admission：
 
 以下问题仍然存在，但全部是 T6/算术 existence，不是 T5：
 
-- 某个 positive-q G state 是否存在 handoff；
+- positive-q 新 root 的首条 local edge 之后是否总有后续 Type-I edge；
 - post-atomic F/G state 是否总有 registered candidate；
 - c=8 double-low 是否实际存在；
 - high-support sink 改善集合是否总非空；

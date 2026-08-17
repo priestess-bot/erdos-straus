@@ -58,6 +58,7 @@ used_by:
 - type-II-relation-reach-proper-endpoint-descent
 - type-II-relation-reach-gcd-shadow-endpoint-descent
 - type-II-q-one-full-carrier-phase-root-entry
+- type-II-positive-q-G-full-carrier-phase-root-entry
 - type-II-q-one-full-carrier-second-anchor-fixed-n-macro
 - type-I-path-anchored-atomic-split-complete-excess-admission
 - type-I-atomic-admission-v1-finite-grammar-integration
@@ -95,6 +96,8 @@ sources:
   role: universal-q-owned-shadow-endpoint-E1-E5-and-q-one-base
 - claim: type-II-q-one-full-carrier-phase-root-entry
   role: ordinary-q-one-G-to-fresh-full-carrier-Type-I-phase-reindexing
+- claim: type-II-positive-q-G-full-carrier-phase-root-entry
+  role: ordinary-positive-q-G-to-fresh-full-carrier-Type-I-phase-reindexing
 visibility: public
 last_checked: '2026-08-17'
 ---
@@ -1498,7 +1501,7 @@ G/Type I handoff。见[奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两
 phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许把它标为 E5；任何
 无付款的较大 \(q\) reset 都会使该资格失效。
 
-### 6.8 \(q=1\) G 到 full-carrier Type I tree 的 phase-root 重索引
+### 6.8a \(q=1\) G 到 full-carrier Type I tree 的 phase-root 重索引
 
 ordinary \(q=1\) G endpoint 不必回退到失败的 \(R=3\) companion chart。定义
 
@@ -1520,7 +1523,7 @@ K_X=X(R_X-2).
 \tag{41}
 \]
 
-因此只对下列 ordinary source state 允许具名 root-entry：
+因此 \(q=1\) 变体只对下列 ordinary source state 允许具名 root-entry：
 
 ```text
 q_one_full_carrier_phase_root_entry_v1
@@ -1563,7 +1566,41 @@ Type II 证书只能是 terminal leaf，禁止 \(1\to2\) 重入。于是 root-en
 dispatch 提供严格 local support payment。完整 receipt 与边界见
 [q=1 G full-carrier phase-root 准入](../claims/type-II-q-one-full-carrier-phase-root-entry.md)。
 
-### 6.8b \(q=1\) G 到 c=3 source-lineage tree 的条件性 relay
+### 6.8b ordinary positive-\(q\) G 到同一 full-carrier root 的相对准入
+
+对 \(q>1\)，若 source 已是 actual、terminal-first 后仍存活的 ordinary G endpoint，
+则允许另一条具名 root-entry：
+
+```text
+positive_q_g_full_carrier_phase_root_entry_v1
+source major phase   = TYPEII_G_HANDOFF
+source subtype       = type_ii_positive_q_g_endpoint
+source q             > 1, with endpoint-downset receipt
+source marked set    = Sol(p)
+source G receipt     = canonical separator from the full source subgroup
+target major phase   = TYPEI
+target scope         = fresh_source_tree_only
+target normal form   = type_i_full_carrier_low_root_v1
+target chart          = (p, R_X, K_X)
+target support        = 1
+```
+
+该 adapter 必须保存并重放 source state/provenance digest、terminal-first digest、endpoint
+downset、完整源子群上的 canonical G separator，以及 (40)--(41) 的 target universal
+raw source。target serialization 不含 source \(q\)，所以同一个 \(p\) 的全部合法 ordinary
+positive-\(q\) inputs 汇合到同一个 fresh root。E4 仍是 (42) 的恒等 lift；按 canonical
+T5 registry，E5 使用 `TYPEII_G_HANDOFF` \(3\to2\) 的 `PHASE_DROP`。
+
+该规则是以 actual source receipt 为输入的相对 theorem。focused controls 只重放 endpoint、
+separator 与 target arithmetic，不制造 actual provenance 或 terminal-first digest；因此 controls
+本身不能登记为 recursive edge。actual handoff root 随后由
+`full_carrier_first_local_dispatch_origin_normalized_v1` 消费；该规则同时接受 q=1 与
+positive-\(q\) 两个注册 origin，投影到相同的 root semantic guard，再以 parity dispatch、
+\(\operatorname{Sol}(p)\) 恒等 lift 和 `LOCAL_DROP` 给出首条 Type-I edge。它仍不提供
+该首条边之后的 Type-I totality。完整 receipt 与边界见
+[positive-q G full-carrier phase-root 准入](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)。
+
+### 6.8c \(q=1\) G 到 c=3 source-lineage tree 的条件性 relay
 
 另一条不与 full-carrier tree 混同的 phase root 只在 c=3 chart 已由根素数闭式预先确定，且
 存在一份从其 declared universal \(p\)-source 出发的实际 source-lineage raw receipt 时允许：

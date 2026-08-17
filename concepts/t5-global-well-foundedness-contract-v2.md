@@ -126,9 +126,10 @@ phase，必须满足 \(q'<q\)；G target 直接转入 major phase 3，因此无�
 ### 4.2 TYPEII_G_HANDOFF
 
 local rank 全零。任何合法 G->Type-I handoff 只需要 E1--E4；major phase 3->2 自动支付 E5。
-现有 full-carrier q=1 root 和条件 c=3 source-lineage relay 是这个通用规则的实例。positive-q G
-若未来发现合法 handoff，也不需要修改 T5，只需通过 E1--E4；没有 handoff 时是 T6 totality gap，
-不是 T5 gap。
+现有 full-carrier q=1 root、actual ordinary positive-q relative adapter 和条件 c=3
+source-lineage relay 是这个通用规则的实例。positive-q focused controls 不提供 actual source
+receipt，故它们本身不是 edge；一旦 theorem hypothesis 中的 source receipt 已提供，adapter
+通过 E1--E4，并由本条 phase ticket 支付 E5。后续 Type-I totality 仍是 T6 gap，不是 T5 gap。
 
 ### 4.3 TYPEI / CHARGED
 
@@ -260,6 +261,6 @@ candidate。这是
 
 的 T6 totality 问题，而不是 T5 well-foundedness 缺口。
 
-特别地，positive-q G 没有 handoff、c=8 double-low 不存在、某 overflow 没有 rank-improving bundle、
-marked terminal membership 未证明，都只会使 selector 停在“没有 outgoing edge”，不会制造 T5 cycle
-或迫使修改全局势。
+特别地，positive-q 新 root 的首条 local edge 之后没有后续 Type-I edge、c=8 double-low
+不存在、某 overflow 没有 rank-improving bundle、marked terminal membership 未证明，都只会
+使 selector 停在“没有 outgoing edge”，不会制造 T5 cycle 或迫使修改全局势。

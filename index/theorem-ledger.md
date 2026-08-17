@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 873 |
+| 数学状态 | `established` | 878 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 703 |
+| 证明来源 | `repository_derivation` | 708 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 850 |
+| 审阅状态 | `internal_review` | 855 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -808,16 +808,19 @@
 | [严格 root carry 的规范 universal raw word 与 E1 root-policy 边界](../claims/type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary.md) (`type-I-root-capacity-strict-carry-universal-raw-word-policy-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-15 |
 | [根容量 stutter 的 actual-maximality 不可由除子交集替代](../claims/type-I-root-capacity-stutter-actual-maximality-boundary.md) (`type-I-root-capacity-stutter-actual-maximality-boundary`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量实际 stutter 的低系数障碍与 30p 高度排除带](../claims/type-I-root-capacity-stutter-actual-small-root-exclusion.md) (`type-I-root-capacity-stutter-actual-small-root-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [proper-root stutter 的 c=h 奇距离偶源扇全称 no-go](../claims/type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go.md) (`type-I-root-capacity-stutter-c-equals-h-odd-distance-fan-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [proper-root stutter 的 C-side m 局部化与非平凡 T 余量](../claims/type-I-root-capacity-stutter-c-side-m-localization.md) (`type-I-root-capacity-stutter-c-side-m-localization`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 actual stutter 的立方高度墙](../claims/type-I-root-capacity-stutter-cubic-hard-root-wall.md) (`type-I-root-capacity-stutter-cubic-hard-root-wall`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 范数的 Eisenstein 素因子支撑限制](../claims/type-I-root-capacity-stutter-eisenstein-support.md) (`type-I-root-capacity-stutter-eisenstein-support`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 的三参数整数曲线约束](../claims/type-I-root-capacity-stutter-finite-curve-constraint.md) (`type-I-root-capacity-stutter-finite-curve-constraint`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的 h^2-1 重叠 m 界与非平凡约化除子](../claims/type-I-root-capacity-stutter-h-overlap-m-bound.md) (`type-I-root-capacity-stutter-h-overlap-m-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
+| [actual proper-root stutter 的 k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md) (`type-I-root-capacity-stutter-k-one-universal-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量端点实际 D 的 cyclotomic 排除与 p±1/T 因子分裂](../claims/type-I-root-capacity-stutter-receipt-factor-split.md) (`type-I-root-capacity-stutter-receipt-factor-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
 | [根容量 stutter 的约化除子与双因子结果式约束](../claims/type-I-root-capacity-stutter-reduced-divisor-product.md) (`type-I-root-capacity-stutter-reduced-divisor-product`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-13 |
+| [T6 proper-root 数值线索的 root-provenance 失败与 gap-3 终端抢占](../claims/type-I-root-capacity-stutter-t6-numeric-clue-preemption.md) (`type-I-root-capacity-stutter-t6-numeric-clue-preemption`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [根容量实际 stutter 的 10000 系数排除带](../claims/type-I-root-capacity-stutter-ten-thousand-coefficient-barrier.md) (`type-I-root-capacity-stutter-ten-thousand-coefficient-barrier`) | `established` | `mixed` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 的一般 A 型二次移位 Type II 终端扇](../claims/type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan.md) (`type-I-root-capacity-stutter-transverse-general-quadratic-type-II-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [横向 stutter 低缺口 m 多项式的正负根分派](../claims/type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split.md) (`type-I-root-capacity-stutter-transverse-low-gap-m-polynomial-root-split`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
@@ -875,6 +878,7 @@
 | [中心化指数盒的 Kneser 对合瓶颈](../claims/type-I-symmetric-box-kneser-involution-bottleneck.md) (`type-I-symmetric-box-kneser-involution-bottleneck`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |
 | [T5 完整状态合同层全局良基性](../claims/type-I-t5-full-contract-level-global-well-foundedness.md) (`type-I-t5-full-contract-level-global-well-foundedness`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [T5 对当前状态合同 persistent transition surface 的穷尽分类](../claims/type-I-t5-full-transition-surface-exhaustion.md) (`type-I-t5-full-transition-surface-exhaustion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
+| [T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计](../claims/type-I-t6-current-named-reachability-t2-t3-coverage-audit.md) (`type-I-t6-current-named-reachability-t2-t3-coverage-audit`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [五亿普通双尾遗漏的 B=1 偶源桥边界](../claims/type-I-tail-reverse-b1-even-source-boundary-500m.md) (`type-I-tail-reverse-b1-even-source-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通双尾遗漏的偶源 B=8 精确低溢出边界](../claims/type-I-tail-reverse-even-small-b-boundary-500m.md) (`type-I-tail-reverse-even-small-b-boundary-500m`) | `computationally_reproduced` | `computational_reproduction` | `internal_review` | `bradford2024` | 2026-07-28 |
 | [五亿普通尾遗漏的偶源反向二尾闭合](../claims/type-I-tail-reverse-even-source-closure-500m.md) (`type-I-tail-reverse-even-source-closure-500m`) | `computationally_reproduced` | `unspecified` | `unspecified` | `bradford2024`, `elsholtz_tao2013` | 2026-07-27 |
@@ -1102,6 +1106,7 @@
 | [p-1 因子 Type II 的 Jacobi 源关系 SNF 秩一压缩与锚点二分](../claims/type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy.md) (`type-II-p-minus-one-jacobi-source-snf-rank-one-anchor-dichotomy`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [p-1 Type II 奇核空盒的物理权最小溢出与中性载体 no-go](../claims/type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go.md) (`type-II-p-minus-one-jacobi-weighted-minimum-overflow-neutral-carrier-no-go`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-11 |
 | [p+12 / p+36 因子给出的 Type II 终端扇](../claims/type-II-p-plus-12-36-divisor-terminal-fan.md) (`type-II-p-plus-12-36-divisor-terminal-fan`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-06 |
+| [ordinary positive-q G 到全载体 Type I 根的全称 phase-root 准入](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md) (`type-II-positive-q-G-full-carrier-phase-root-entry`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [规范移位一私有素因子模型的强制因子阶梯边界](../claims/type-II-prime-cofactor-forcing-ladder.md) (`type-II-prime-cofactor-forcing-ladder`) | `computationally_reproduced` | `unspecified` | `unspecified` | `chamberland2026` | 2026-07-25 |
 | [Type II 私有因子的 Kneser 增长—稳定子吸收二分](../claims/type-II-private-factor-kneser-growth-stabilizer-bridge.md) (`type-II-private-factor-kneser-growth-stabilizer-bridge`) | `established` | `repository_derivation` | `internal_review` | `grynkiewicz_marchan_ordaz2009` | 2026-08-04 |
 | [Type II 碰撞诱导私有积集状态与一孔同余陷阱](../claims/type-II-private-product-state.md) (`type-II-private-product-state`) | `established` | `unspecified` | `unspecified` | `grynkiewicz_marchan_ordaz2009`, `chamberland2026` | 2026-07-25 |

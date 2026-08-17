@@ -4,7 +4,7 @@ concept_id: flagship-proof-program-2026-08-16
 title: 从 normal form 到全局 selector 的六个旗舰命题
 summary: >-
   核验截至 2026-08-17 的仓库前沿后，将最终双出口 F0 与六个可判真假的旗舰命题
-  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包、T4 的 ordinary q=1 G
+  T1--T6 固定为主线；T1 的 actual a_alt=1 clean-q 相对宏闭包、T4 的 ordinary q>=1 G
   full-carrier fresh-source 相对闭包、T2 的有限 v1 atomic admission grammar，以及 T5 的
   合同层 E5 良基势均已建立。它们不替代其它 H4 branch、非平凡 mark、全域 atomic 覆盖或
   selector totality。其余内容记录 H4、atomic split、Fourier/容量、外部源和 lift 路线的已知边界。
@@ -44,6 +44,8 @@ sources:
   role: Type-II-endpoint-and-marked-terminal-boundary
 - claim: type-II-q-one-full-carrier-phase-root-entry
   role: ordinary-q-one-G-fresh-full-carrier-relative-closure
+- claim: type-II-positive-q-G-full-carrier-phase-root-entry
+  role: ordinary-positive-q-G-fresh-full-carrier-relative-closure
 - claim: type-II-q-one-canonical-root-full-product-predecessor-rigidity
   role: q-one-G-handoff-inverse-classification
 - claim: type-I-phase-labeled-candidate-selector-well-founded-schedule
@@ -285,8 +287,9 @@ generalized dyadic candidate 或任意新方程解直接当作根证书。见
 
 ### T4: Fresh-G-Handoff
 
-**命题。** 每个 ordinary \(q=1\) G core-prime endpoint 都有只依赖 \(p\)、不读取未知目标
-certificate、且不复用 Type II source support 的确定性有限 lineage
+**命题。** 每个 actual、terminal-first 后仍存活的 ordinary \(q\ge1\) G core-prime
+endpoint 都有只依赖 \(p\)、不读取未知目标 certificate、且不复用 Type II source support
+的确定性有限 lineage
 
 \[
 S_G\longrightarrow S_1\longrightarrow\cdots\longrightarrow S_r,
@@ -295,7 +298,7 @@ S_G\longrightarrow S_1\longrightarrow\cdots\longrightarrow S_r,
 其终点是合法 Type I state 或 direct terminal；每条边均满足 E1--E5，并带显式 solution
 lift。有限性应来自统一构造，不能来自对 \(p\) 的有限扫描。
 
-**2026-08-17 ordinary 相对闭包。** 对
+**2026-08-17 ordinary 相对闭包。** q=1 情形对
 
 \[
 S=(p,q=1,\mathrm G;W_S=\operatorname{Sol}(p)),
@@ -324,9 +327,20 @@ target-independent fresh source
 独立冻结包复核见
 [q=1 fresh handoff 证明包审计](../docs/q1-fresh-handoff-proof-package-audit-2026-08-17.md)。
 
-**仍未建立的边界。** 此结论只覆盖 ordinary \(W=\operatorname{Sol}(p)\) 与该 root 后的
-首个 local strict segment；它不把 Type II source support 伪继承给 Type I chart。非平凡
-marked state 仍需要可逐字重序列化的 mark schema；T5 的合同势已排除未付款 reset，
+对任意 \(q>1\)，若 actual persistent source 已保存 terminal-first receipt、endpoint
+downset 与 ordinary G separator，则同一个 \((X,R_X,K_X)\) root 完全不读取 source \(q\)。
+positive-q adapter 重放这些 source 摘要与 target universal source，以
+\(W_S=W_T=\operatorname{Sol}(p)\) 的恒等 lift 支付 E4，并按 canonical T5 registry 从
+`TYPEII_G_HANDOFF` 3 降到 `TYPEI` 2 支付 E5。其 focused controls 只验证条件性 adapter
+arithmetic，不制造 actual source receipt。完整 card 见
+[positive-q G full-carrier phase-root 准入](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)。
+
+**仍未建立的边界。** 此结论只覆盖 actual terminal-first ordinary
+\(W=\operatorname{Sol}(p)\) source 到 fresh root 的相对接口；它不把 Type II source support
+伪继承给 Type I chart。q=1 与 positive-q 两种 root origin 现由同一
+origin-normalized rule 投影到完整 semantic root guard，并重放首条 strict local edge；
+该迁移不再是接口缺口。非平凡 marked state 仍需要可逐字
+重序列化的 mark schema；T5 的合同势已排除未付款 reset，
 T6 仍需对每个递归可达 Type I state 给出 total selector，包含后续 \(c=8,q_*=103\)
 image 的 totality。旧 canonical root 的互素障碍仍是为什么必须使用 fresh scope 的结构性
 理由，见 [canonical-root support disjointness](../claims/type-II-q-one-canonical-root-slice-support-disjointness.md)。
@@ -340,7 +354,7 @@ graph 中每条非 terminal verified edge 都满足
 \Pi(T)<\Pi(S).
 \]
 
-定义域至少包括 Type II \(q>1\) descent、\(q=1\) G handoff、Type I support rebase、
+定义域至少包括 Type II \(q>1\) descent、ordinary \(q\ge1\) G handoff、Type I support rebase、
 overflow、PRE \(\to\) ABSORB 与 marked smaller-source descent；不得存在未付费的 reset。
 
 **2026-08-17 合同层闭合。** 当前 state contract 的 selector 输出已固定为五类，并把
@@ -382,7 +396,7 @@ E1--E4 candidate 才能成为 `verified_edge`；因此所有**合同认可**的�
 \text{H4 arithmetic strictness} \Rightarrow \mathrm{T1}\\
 \text{conditional atomic schema} \Rightarrow \mathrm{T2}\\
 \text{Type II gcd-shadow endpoints} \Rightarrow \mathrm{T3}\\
-\text{ordinary q=1 G full-carrier root-entry} \Rightarrow \mathrm{T4\ (relative)}\\
+\text{ordinary q>=1 G full-carrier root-entry} \Rightarrow \mathrm{T4\ (relative)}\\
 \mathrm{T1,T2,T3,T4}\ +\ \text{all existing verified edges}
 \Rightarrow \mathrm{T5}\Rightarrow \mathrm{T6}\Rightarrow \mathrm{F0}.
 \end{array}
