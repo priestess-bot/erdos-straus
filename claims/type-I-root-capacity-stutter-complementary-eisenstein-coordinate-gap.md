@@ -20,8 +20,10 @@ statement: >-
   g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
   唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。若 g>1，则 4g<=p-2。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
-  C=(p+s)/(4g)，且 gcd(s,C)=1；每个满足 r|g 且 s|g+r 的 r 都给出一张直接
-  Type II 证书。
+  C=(p+s)/(4g)、x=gC，则 C>=2、m<=4C、p<1024C^5，且 gcd(s,x)=1。
+  每个满足 t|x 且 t=-1 mod s 的 t 都确定给出一张直接 Type II 证书，取 d=x/t；
+  这精确参数化了该 canonical gap 上所有满足 d|x 的 Type II 证书，并包含先前
+  r|g、s|g+r 的 whole-carrier 子扇。
   该结论仍不证明 g>1 或该有限 divisor fan 必命中，不构造 E1--E5 edge，也不闭合
   QC1、TR1 或 T6 totality。
 claim_status: established
@@ -1317,6 +1319,70 @@ C=\frac{p+s}{4g}\in\mathbb Z_{>0},
 \tag{74}
 \]
 
+The quotient cofactor \(C\) cannot stay bounded on this resonant branch.
+First, (71) gives \(p\ge4g+2\).  If \(C=1\), then (74) would instead give
+
+\[
+p=4g-s\le4g-3,
+\]
+
+which is impossible.  Hence \(C\ge2\).  Moreover \(g\mid d\mid
+\eta+1\le e-1\), so \(e\ge g+1\).  If \(m\ge4C+1\), then (67) yields
+
+\[
+D\ge4Cp+2,
+\]
+
+and consequently
+
+\[
+\begin{aligned}
+p^2-p+1
+&\ge eD\\
+&\ge(g+1)(4Cp+2)\\
+&=\frac{p+s+4C}{4C}(4Cp+2)>p^2,
+\end{aligned}
+\]
+
+a contradiction.  Thus
+
+\[
+\boxed{C\ge2,\qquad m\le4C.}
+\tag{74a}
+\]
+
+There is also a scale consequence intrinsic to the actual resonance.  Write
+
+\[
+\chi(m)=\bigl(m(m-3)\bigr)^2+3m(m-3)+3.
+\tag{74b}
+\]
+
+For \(m\ge3\) this is increasing in \(m\).  By (64) and (74a),
+
+\[
+g\le\chi(m)\le\chi(4C)<(4C)^4,
+\tag{74c}
+\]
+
+where the last inequality follows from
+
+\[
+z^4-\chi(z)=3(z-1)(2z^2-2z+1)>0
+\qquad(z=4C>1).
+\]
+
+Combining (74) and (74c) proves the useful growth barrier
+
+\[
+\boxed{p<1024C^5,
+\qquad C>\left(\frac p{1024}\right)^{1/5}.}
+\tag{74d}
+\]
+
+This does not force a residue hit, but it rules out treating \(C\) as a
+bounded auxiliary factor in a putative all-\(p\) proof.
+
 For every divisor \(r\mid g\), define \(d_r=rC\).  Then
 
 \[
@@ -1357,8 +1423,8 @@ s\mid g+r.}
 
 The endpoint divisor \(r=g\) can never satisfy (78), since
 \((s,2g)=1\) and \(s\ge3\).  The divisor \(r=1\) satisfies it precisely
-when \(s\mid g+1\).  Therefore terminal-first failure of the whole fan
-forces
+when \(s\mid g+1\).  Therefore a miss of this explicitly evaluated
+whole-\(g\) fan forces
 
 \[
 \boxed{s\nmid g+1,}
@@ -1369,11 +1435,65 @@ and the only remaining question is whether some proper divisor
 \(r\mid g\) lies in the single residue class \(r\equiv-g\pmod s\).
 For prime \(g\), (79) is the complete description of failure of this fan.
 
-For a terminal-first survivor, the remaining resonant branch is now exact:
-either \(g=1\), or the finite divisor set in (76) is empty.  No assertion
-here says that the latter cannot happen.  Its nonemptiness, or an
+The \(g\)-carrier subfan is not, however, the full linear-divisor layer at
+this canonical gap.  Since (77) and \((s,g)=1\) give
+
+\[
+\boxed{(s,x)=1,}
+\tag{80}
+\]
+
+let \(t\mid x\) and put \(d=x/t\).  Then \(d\mid x^2\), \(d\le x\), and
+
+\[
+x+d=d(t+1).
+\]
+
+Therefore
+
+\[
+\boxed{
+t\mid x,
+\qquad t\equiv-1\pmod s
+\quad\Longrightarrow\quad
+d=\frac{x}{t}\ \text{is a direct Type II certificate at gap }s.
+}
+\tag{81}
+\]
+
+Conversely, if \(d\mid x\) is a Type II certificate at this same gap, then
+\(t=x/d\) is integral and \(s\mid d(t+1)\).  Equation (80) makes \(d\) a
+unit modulo \(s\), so \(t\equiv-1\pmod s\).  Hence (81) is an exact
+parameterization:
+
+\[
+\boxed{
+\left\{d\mid x:s\mid x+d\right\}
+=\left\{\frac{x}{t}:t\mid x,\ t\equiv-1\pmod s\right\}.
+}
+\tag{82}
+\]
+
+The earlier whole-\(g\) fan is the subfan \(t=g/r\) with \(r\mid g\): its
+condition \(s\mid g+r\) is precisely \(t\equiv-1\pmod s\), because
+\((s,r)=1\).  Formula (82) also permits divisors carried by \(C\), and mixed
+divisors of \(gC\).  A deterministic terminal rule may take the least
+\(t\mid x\) in this residue class.  It is finite and reads only the actual
+state data, but its nonemptiness is not yet proved.
+
+Thus, after explicitly applying the full linear fan (82), the remaining
+resonant branch is: either \(g=1\), or
+
+\[
+\boxed{\{t\mid x:t\equiv-1\pmod s\}=\varnothing.}
+\tag{83}
+\]
+
+No assertion here says that (83) cannot happen.  Its exclusion, or an
 identity-lifted descent for its failure, is the still-open part of the
-proper-root physicalization problem.
+proper-root physicalization problem.  Until this direct rule is integrated
+into the state contract, a pre-existing scoped terminal-first digest must
+not be read as a recorded miss of (82).
 
 ## 13. Boundary
 
