@@ -37,7 +37,7 @@ E\mid4K^2,\quad E\equiv1\pmod R,\quad 2\mid E,\quad E\le4K-2R.
 |---|---|---|
 | T1 H4-Closure | 相对闭包已建立 | 对 actual proper-overlap、top-capacity、\(a_{\rm alt}=1\) receipt，已验证的 upstream provenance 与 priority miss 之后，clean \(q\)-macro 给出 E1--E5 的 phase-local `candidate_transition`；其它 H4 selector branch 与全局 admission 仍须覆盖。 |
 | T2 Atomic-Admission | 当前具名 atomic surface 闭合；全域仍开放 | H4 `a=1` actual arm 与 c=8 double-low conditional arm 已冻结为 `v1` grammar，并穷尽当前 taxonomy 的 atomic families；future raw arm、pooled-capacity one-use 与输入覆盖仍未闭合。 |
-| T3 Marked-Terminal | 抽象命题开放；当前具名图中不可达 | 当前 14 个 concrete edge generators 都保持 \(W=\operatorname{Sol}(p)\)，故 closed-world named reachability 没有 nontrivial-mark seed；future marked edge 仍须重开 T3。 |
+| T3 Marked-Terminal | 抽象命题开放；当前具名图中不可达 | 当前 15 个 concrete edge generators 都保持 \(W=\operatorname{Sol}(p)\)，故 closed-world named reachability 没有 nontrivial-mark seed；future marked edge 仍须重开 T3。 |
 | T4 Fresh-G-Handoff | ordinary \(q\ge1\) 相对闭包已建立 | 对每个 actual terminal-first ordinary G endpoint，q=1 与 positive-q adapter 都进入同一个 target-independent full-carrier fresh root，并通过 origin-normalized 首条 local edge；非平凡 mark、后续 Type I totality 与全局 selector 仍开放。 |
 | T5 Global-Well-Foundedness | 合同层闭合 | 当前五类 selector 输出中，只有携带 `OUTER_RANK_DROP`、`PHASE_DROP` 或 `LOCAL_DROP` 的 E1--E4 candidate 才能成为 verified edge；T6 仍须证明每个实际状态有这样的输出。 |
 | T6 Global-Selector | 开放 | 确定性 selector 在每个核心 prime / legal state 输出 terminal 或一条可提升、严格下降的 verified edge。 |

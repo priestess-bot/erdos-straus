@@ -97,10 +97,11 @@
       "coverage_status": "OPEN",
       "guard": "fresh full-carrier Type I root or a state after its registered first local edge",
       "terminal_exit": "registered terminal-first Type I certificate",
-      "successor_exit": "first local edge is established; later Type I dispatch is not total",
+      "successor_exit": "the first local edge and the q=1 second-anchor fixed-n macro are established on their declared descendants; later Type I dispatch is not total",
       "evidence": [
         "type-II-q-one-full-carrier-phase-root-entry",
         "type-II-positive-q-G-full-carrier-phase-root-entry",
+        "type-II-q-one-full-carrier-second-anchor-fixed-n-macro",
         "docs/T6-current-progress-2026-08-17.md"
       ],
       "minimal_gap_ids": [
@@ -340,6 +341,21 @@
         "E5_ticket": "PHASE_DROP then LOCAL_DROP"
       },
       "verifier": "reproductions/type_ii_q_one_c3_source_lineage_phase_root_entry.py"
+    },
+    {
+      "id": "q_one_full_carrier_second_anchor_fixed_n_macro",
+      "claim_reference": "type-II-q-one-full-carrier-second-anchor-fixed-n-macro",
+      "source_family_ids": ["type_i_full_carrier_post_g"],
+      "target_family_ids": ["type_i_full_carrier_post_g"],
+      "guard_class": "actual",
+      "receipt": {
+        "E1": "established_under_written_claim_guard",
+        "E2": "established_under_written_claim_guard",
+        "E3": "established_under_written_claim_guard",
+        "E4": "established_under_written_claim_guard",
+        "E5_ticket": "LOCAL_DROP"
+      },
+      "verifier": "reproductions/type_ii_q_one_full_carrier_second_anchor_fixed_n_macro.py"
     },
     {
       "id": "same_chart_support_promotion",

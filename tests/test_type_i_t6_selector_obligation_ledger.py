@@ -19,7 +19,7 @@ class TypeIT6SelectorObligationLedgerTests(unittest.TestCase):
     def test_current_surface_is_a_verified_open_inventory(self):
         result = ledger.run_ledger()
         self.assertEqual(result["t6_global_selector_totality"], "OPEN")
-        self.assertEqual(result["concrete_edge_family_count"], 14)
+        self.assertEqual(result["concrete_edge_family_count"], 15)
         self.assertEqual(result["state_family_count"], 16)
         self.assertEqual(result["acceptance_gate_count"], 14)
         self.assertEqual(len(result["minimal_selector_gap_ids"]), 9)

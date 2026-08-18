@@ -36,6 +36,10 @@ ORDINARY_EDGE_E4_ANCHORS: dict[str, tuple[str, ...]] = {
     "type-II-q-one-full-carrier-phase-root-entry": ("Sol(p)", "恒等"),
     "type-II-positive-q-G-full-carrier-phase-root-entry": ("Sol(p)", "恒等映射"),
     "type-II-q-one-c3-source-lineage-phase-root-entry": ("Sol(p)", "恒等"),
+    "type-II-q-one-full-carrier-second-anchor-fixed-n-macro": (
+        "Sol}(p)",
+        "恒等映射",
+    ),
     "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary": (
         "Sol}(4,p)",
         "恒等",
@@ -76,6 +80,7 @@ EDGE_GENERATOR_CLASS: dict[str, str] = {
     "type-II-q-one-full-carrier-phase-root-entry": "total_on_declared_ordinary_q_one_G_source",
     "type-II-positive-q-G-full-carrier-phase-root-entry": "total_on_declared_actual_ordinary_positive_q_G_source",
     "type-II-q-one-c3-source-lineage-phase-root-entry": "guarded_constructor",
+    "type-II-q-one-full-carrier-second-anchor-fixed-n-macro": "total_on_declared_q_one_full_carrier_first_child",
     "type-I-overflow-unbounded-same-chart-promotion-persistence-boundary": "total_on_declared_persistent_overflow_source",
     "type-I-overflow-outer-rank-reset": "guarded_constructor",
     "type-I-overflow-a-one-dual-outer-rank-reset": "total_on_declared_A_one_overflow_source",
@@ -359,7 +364,7 @@ def audit_c8_branches() -> list[dict[str, str]]:
 
 def run_audit() -> dict[str, object]:
     edge_rows = audit_current_edge_marks()
-    if sum(row["mark_policy"] == "ordinary_Sol(p)_identity" for row in edge_rows) != 14:
+    if sum(row["mark_policy"] == "ordinary_Sol(p)_identity" for row in edge_rows) != 15:
         raise AssertionError("ordinary edge-family count changed")
     return {
         "audit_id": "t6_actual_reachable_coverage_v1",

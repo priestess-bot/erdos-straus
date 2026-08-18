@@ -27,7 +27,7 @@ T5 已证明右支中**一旦**边被合同接纳就严格下降；它没有证�
 | 子问题 | 结果 | 精确边界 |
 |---|---|---|
 | ordinary positive-\(q\) G handoff | 对任意 actual terminal-first ordinary source，相对 adapter 确定进入同一个 \(p\)-only full-carrier root；两种注册 origin 再由同一规则重放首条 local edge | focused controls 不制造 actual source receipt；nontrivial mark 与首条边之后的 Type-I totality 不在结论内 |
-| 当前 T2/T3 live surface | 当前 14 个 concrete named generators 都保持 \(W=\operatorname{Sol}(p)\)；两个 atomic families 恰等于 T2-v1 arms | 只对 frozen named graph；future marked/atomic generator 会重开审计 |
+| 当前 T2/T3 live surface | 当前 15 个 concrete named generators 都保持 \(W=\operatorname{Sol}(p)\)；两个 atomic families 恰等于 T2-v1 arms | 只对 frozen named graph；future marked/atomic generator 会重开审计 |
 | proper-root \(c=h\) fan | existing odd-distance translated-square family 全称为空 | 只排除该 named family，不产生 terminal 或 edge |
 | proper-root \(k=1\) | actual 子域全称为空 | cyclotomic gcd 排除加 Vieta 无限下降；不使用范围扫描，不处理 \(k>1\) |
 | T6-V1 数值线索 | \(p=20\,065\,847\,377\) 的唯一反解不满足 root divisibility，且被 gap-3 terminal 抢占 | 只删除该线索，不是 general no-go |

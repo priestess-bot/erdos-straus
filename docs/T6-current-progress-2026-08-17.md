@@ -43,7 +43,7 @@
 |---|---|---|---|
 | T1 / H4 clean \(q\) | 相对闭包已建立 | 归档的 actual arm 与其具名 receipt | 其它 H4 selector branch、后续 F/G 出口 |
 | T2 | 当前具名 atomic surface 闭合；full open | H4 \(a=1\) 与 c=8 double-low 两个 `v1` arm 恰好穷尽当前 taxonomy | future raw arm、pooled-capacity、输入覆盖与全域 admission |
-| T3 | 抽象命题开放；当前具名图中不可达 | 当前 14 个 concrete generators 都保持 \(W=\operatorname{Sol}(p)\)，无 nontrivial-mark seed | 任意 future marked edge 的 serializer、membership 与 lift |
+| T3 | 抽象命题开放；当前具名图中不可达 | 当前 15 个 concrete generators 都保持 \(W=\operatorname{Sol}(p)\)，无 nontrivial-mark seed | 任意 future marked edge 的 serializer、membership 与 lift |
 | T4 | ordinary \(q\ge1\) 相对闭包已建立 | actual terminal-first ordinary G 统一进入同一个 p-only fresh full-carrier root，并通过 origin-normalized 首条 local edge | nontrivial mark、首条边之后的 Type-I totality |
 | T5 | 合同层闭合 | 所有 contract-recognized persistent edge 的七元势严格下降 | 任何 E1--E4 candidate 自动有 ticket，或 selector totality |
 | 初始 \(q=1\) 根 | 已闭合 | 每个核心 \(p\) 均按 \(X=(p+3)/4\) 分派为 gap-3 root terminal，或 ordinary G 到 full-carrier 的 actual E1--E5 handoff | handoff 后 Type-I totality 与全局 reachable-state exhaustion |

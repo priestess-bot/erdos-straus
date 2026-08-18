@@ -42,6 +42,7 @@ target 与 E1--E5。它不表示 guard 对每个状态成立。`guarded` 行不�
 | q=1 G full-carrier root entry | ordinary q=1 G source 上 total | source guard 明确要求 \(W=\operatorname{Sol}(p)\)，恒等 lift |
 | positive-q G full-carrier root entry | actual ordinary positive-q G source 上 total | source guard 明确要求 \(W=\operatorname{Sol}(p)\)，恒等 lift |
 | q=1 G c=3 conditional relay | guarded；需 source-lineage receipt | source guard明确要求 ordinary mark，恒等 lift |
+| q=1 full-carrier second-anchor fixed-\(n\) macro | declared q=1 full-carrier first child 上 total | parent-to-final-target macro 两端取 \(\operatorname{Sol}(p)\)，恒等 lift；transient high determinant 不入队 |
 | same-chart support promotion | declared persistent overflow source 上 total | 两端取图表无关 \(\operatorname{Sol}(4,p)\)，恒等 lift |
 | joined-support outer reset | guarded；需合法 \(A'\) | 两端取图表无关 \(\operatorname{Sol}(p)\)，恒等 lift |
 | A=1 dual reset | declared A=1 overflow source 上 total | 两端取 \(\operatorname{Sol}(p)\)，恒等 lift |
@@ -55,6 +56,10 @@ target 与 E1--E5。它不表示 guard 对每个状态成立。`guarded` 行不�
 
 表中的 \(\operatorname{Sol}(4,p)\) 与其它卡片缩写的 \(\operatorname{Sol}(p)\) 都表示根方程
 \(4/p\) 的同一个全解集；前者只是显式写出分子，不引入新的 mark 谓词。
+
+这里 second-anchor 的 high overflow 只作为 macro 内部 determinant receipt；真正进入
+\(\mathcal R_p^{\rm named}\) 的是从 first child 到 final target 的组合 strict macro。因而它不是
+`raw macro checkpoint`，也不能被 high-carrier fixed-\(n\) 的一般 guarded constructor 代替。
 
 证明只是对路径长度归纳：根的 mark 是 \(\operatorname{Sol}(p)\)；表中每个能实际生成
 persistent target 的具名边都保持该 mark；最后一行不能凭状态合同自行生成一条边。终端没有
@@ -228,14 +233,14 @@ python3 reproductions/type_i_t6_actual_reachable_coverage_audit.py --verify
 
 脚本检查：
 
-1. 当前 14 个 concrete edge generators 的 ordinary-mark E4 anchor，以及 generic marked 行没有
+1. 当前 15 个 concrete edge generators 的 ordinary-mark E4 anchor，以及 generic marked 行没有
    concrete generator；
 2. 当前 atomic taxonomy 与 T2-v1 两个 arm 精确相等；
 3. \(u\le48\) 的最小 residual candidate 和 \(p=241441\) 的直接 Type I identity；
 4. \(p=157393\) 的 terminal-preempted identity。
 
 脚本只是防止 taxonomy、claim identity、status 和 E4 anchors 静默漂移；它不以字符串出现代替
-上表逐条引用的数学证明。ordinary-mark closure 的证明是前述对 14 张 edge claim 的 E4 检查加
+上表逐条引用的数学证明。ordinary-mark closure 的证明是前述对 15 张 edge claim 的 E4 检查加
 路径长度归纳。
 
 若 taxonomy 新增实际 marked edge 或 atomic arm，脚本会拒绝并要求更新本 coverage audit。

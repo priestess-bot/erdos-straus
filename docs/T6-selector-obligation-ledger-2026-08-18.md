@@ -17,7 +17,7 @@ records the distinction that the T6 program must preserve:
 - a finite control remains `analysis_only` unless a universal proof closes its
   quantified family.
 
-The ledger contains all 14 concrete edge claims currently listed by the T5
+The ledger contains all 15 concrete edge claims currently listed by the T5
 transition taxonomy, while excluding the generic legal-marked-state contract:
 the latter is an admission schema, not a constructor.  Every source and target
 is assigned to a named state family.  Each `OPEN` family is required to name a

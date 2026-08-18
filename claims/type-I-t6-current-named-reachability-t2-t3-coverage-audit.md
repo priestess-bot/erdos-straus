@@ -7,7 +7,7 @@ statement: >-
   W=Sol(p) 出发、只沿 t5-full-transition-taxonomy-v2 中有具体 edge claim 的
   current_verified_edge_families 取传递闭包；contract-only 的 generic marked
   admission、pending normalization、analysis evidence 与 macro checkpoint 均不生成边。
-  taxonomy 的 14 个具体边构造器逐一以 W_S=W_T=Sol(p) 的恒等 lift 支付 E4；其中若干
+  taxonomy 的 15 个具体边构造器逐一以 W_S=W_T=Sol(p) 的恒等 lift 支付 E4；其中若干
   只是 guarded constructor，不被误计为 selector totality。故路径归纳给出当前具名闭包
   中每个状态仍为 ordinary mark，nontrivial marked state 没有 seed。另一方面，taxonomy
   中仅有的两个 atomic edge family 恰与 T2 v1 的 H4 a=1 和 c=8 double-low 两个 arm
@@ -26,6 +26,7 @@ depends_on:
   - type-II-q-one-full-carrier-phase-root-entry
   - type-II-positive-q-G-full-carrier-phase-root-entry
   - type-II-q-one-c3-source-lineage-phase-root-entry
+  - type-II-q-one-full-carrier-second-anchor-fixed-n-macro
   - type-I-overflow-unbounded-same-chart-promotion-persistence-boundary
   - type-I-overflow-outer-rank-reset
   - type-I-overflow-a-one-dual-outer-rank-reset
@@ -49,7 +50,7 @@ sources:
   - reproduction: reproductions/type_i_t6_actual_reachable_coverage_audit.py
     role: taxonomy-claim-E4-and-minimal-c8-control-regression-audit
 visibility: public
-last_checked: '2026-08-17'
+last_checked: '2026-08-18'
 ---
 
 # T6 当前具名边闭包的 ordinary-mark 不变量与 atomic surface 审计
@@ -64,7 +65,7 @@ last_checked: '2026-08-17'
 生成 E1--E4 的构造器；generalized-dyadic evidence、pending normalization 和 macro internal
 checkpoint 也不产生 persistent successor。
 
-14 张具体 edge claim 的 source guard 强弱不同：有的在声明域上 total，有的只有 guard 成立时
+15 张具体 edge claim 的 source guard 强弱不同：有的在声明域上 total，有的只有 guard 成立时
 才构造边。但每张 claim 一旦构造 target，其 E4 都是图表无关
 \(W_S=W_T=\operatorname{Sol}(p)\) 的恒等 lift。由根状态开始按路径长度归纳，当前闭包中不可能
 首次出现 nontrivial mark。
