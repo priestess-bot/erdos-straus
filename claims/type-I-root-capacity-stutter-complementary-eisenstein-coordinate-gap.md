@@ -12,8 +12,8 @@ statement: >-
   F=delta^2+delta+1=nh、L=w(m-1)+t，则 1≤t≤2w+1、
   1≤n<(8/3)(w+1)^2，且 L 整除
   C=w^2-wt+t^2+n(w-t)。若 C=0，则 t=w+r，其中 r>0、r|w^2，且
-  n=w^2/r+w+r。故每个固定 w 的非例外子纤维被显式有限整除门控制，
-  例外子纤维也缩为有限个 r|w^2 的代数形状。该结论不 physicalize k 或 D_* 因子，
+  n=w^2/r+w+r。原始 stutter 等式进一步排空全部 C=0 例外子纤维，
+  故每个固定 w 的子纤维完全由显式有限整除门控制。该结论不 physicalize k 或 D_* 因子，
   不构造 E1--E5 edge，也不闭合 QC1、TR1 或 T6 totality。
 claim_status: established
 proof_provenance: repository_derivation
@@ -457,59 +457,99 @@ Since \(a>0\), every exceptional shape must satisfy
 \tag{30}
 \]
 
-For the universal subcase \(r=1\), \(\gcd(w^2+w+1,w+1)=1\), so there is
-a positive integer \(s\) with
+The apparent exceptional shapes are all empty once the original stutter
+equality is retained.  Put
+
+\[
+Q:=w(r-1)+r^2,\qquad x:=(w+1)m.
+\]
+
+Using (29), \(h=e(m-1)+\eta+1\), and
+\(w+r-r^2+Q=r(w+1)\), direct collection in \(x\) gives
 
 \[
 \boxed{
-\begin{aligned}
-A&=w^2+w+1,\qquad m=As-1,\\
-e&=(w+1)^2s,\qquad
-a=w(w+1)s-1,\qquad
-\eta=(w+1)s,\\
-\delta&=(w+1)(As-1),\\
-p&=(w+1)^2As^2+(w+1)w(w-1)s-w.
-\end{aligned}
+Ah=r\bigl(x^2+(2r-1)x+R\bigr).
 }
 \tag{31}
 \]
 
-The actual core conditions sharply restrict this universal exceptional
-subcase.  Reducing the first three lines of (31) together with
-\(h=e(m-1)+\eta+1\) modulo \(3\) shows
-
-\[
-w\equiv0\pmod3,\qquad s\equiv2\pmod3.
-\tag{32}
-\]
-
-Indeed, \(w\equiv1\pmod3\) makes \(m\equiv2\pmod3\); if
-\(w\equiv2\pmod3\), the only candidate allowed by \(m,a\) has
-\(h\equiv1\pmod3\).  When \(w\equiv0\pmod3\), the actual
-\(m,a,h\) conditions leave exactly \(s\equiv2\pmod3\).
-
-For odd \(w\), the last line in (31) is \(3\) or \(7\pmod8\) when
-\(w\equiv1\pmod4\), while for \(w\equiv3\pmod4\) it is
-\(-w\pmod8\).  Thus the core condition forces
-\(w\equiv7\pmod8\) in this odd branch.  For even \(w\), oddness of
-\(k\) makes \(s\) odd; direct substitution modulo \(8\) then forces
-\(w\equiv0\pmod8\).  Combining these facts with (32), every actual core
-point on the \(r=1\) exceptional shape lies in one of the two necessary
-classes
+The original equality in (1) is \(eh-(pa+b)=0\).  Since
+\(p=h+\delta\) and \(e-a=\eta+1\), its left side is
+\(h(\eta+1)-\delta a-b\).  Substitution of (29) into this expression
+gives the exact factorization
 
 \[
 \boxed{
-\bigl(w\equiv15\pmod {24},\ s\equiv2\pmod3\bigr)
-\quad\text{or}\quad
-\bigl(w\equiv0\pmod {24},\ s\equiv5\pmod6\bigr).
+\begin{aligned}
+A^2\bigl(eh-(pa+b)\bigr)
+={}&\bigl(x^2+(2r-1)x+R\bigr)\\
+&\cdot
+\bigl(rQx+A(r^2-w)+r(w+r)R\bigr).
+\end{aligned}
+}
+\tag{32}
+\]
+
+The first factor is positive.  Thus an actual receipt on an exceptional
+shape would satisfy
+
+\[
+rQx=A(w-r^2)-r(w+r)R.
+\]
+
+Combining this with the third line of (29) yields
+
+\[
+\boxed{
+\eta=\frac{w-r^2}{r},\qquad
+w=rs,\qquad s:=r+\eta\in\mathbb Z_{>r}.
 }
 \tag{33}
 \]
 
-Thus each fixed complementary coordinate has finitely many ordinary divisor
-fibers and finitely many explicitly named exceptional shapes; (29)--(33)
-are available for the latter rather than treating them as an unspecified
-infinite remainder.
+Suppose first that \(r>1\).  Write
+\(H:=s^2+s+1\) and \(S:=(r-1)s+r\).  Then \(A=r^2H\), \(Q=rS\),
+and the displayed consequence of (32) together with the second line of
+(29) gives the exact identity
+
+\[
+\begin{aligned}
+rHSa
+&=(s-r+1)\bigl(rH(s-r)-(s+1)R\bigr)-RS\\
+&=H\bigl(rs^2-2r^2s+rs+r^3-2r^2+r-1\bigr).
+\end{aligned}
+\]
+
+After cancellation of the positive factor \(H\), one obtains
+
+\[
+a=
+\frac{rs^2-2r^2s+rs+r^3-2r^2+r-1}
+{r\bigl((r-1)s+r\bigr)}.
+\]
+
+The numerator is \(-1\pmod r\), whereas the denominator is a positive
+multiple of \(r\).  This contradicts \(a\in\mathbb Z\).
+
+It remains to consider \(r=1\).  Then \(w=s\), \(Q=R=1\), and the
+displayed consequence of (32) gives
+
+\[
+(s+1)m=(s^2+s+1)(s-1)-(s+1)=s^3-s-2
+=(s+1)(s^2-s)-2.
+\]
+
+But \(s>1\), so \(s+1\nmid2\), contradicting \(m\in\mathbb Z\).
+Consequently
+
+\[
+\boxed{C_{w,t,n}=0\text{ is impossible for every actual proper-root
+stutter receipt}.}
+\]
+
+Thus each fixed complementary coordinate has only finitely many ordinary
+divisor fibers; there is no exceptional infinite remainder.
 
 ## 5. The \(W=4\) fiber
 
@@ -692,7 +732,7 @@ Thus \(\eta=4\) is impossible.  Combining the four cases,
 ## 7. Boundary
 
 This is a structural reduction inside the actual proper-root stutter domain.
-It does not bound \(W\) globally, prove that the exceptional shapes are
-empty, physicalize a quotient or transverse factor, produce a terminal, or
-construct an E1--E5 edge.  QC1, TR1, and T6_GLOBAL_SELECTOR_TOTALITY
-therefore remain open.
+It proves that the fixed-\(W\) exceptional shapes are empty, but it does not
+bound \(W\) globally, physicalize a quotient or transverse factor, produce a
+terminal, or construct an E1--E5 edge.  QC1, TR1, and
+T6_GLOBAL_SELECTOR_TOTALITY therefore remain open.
