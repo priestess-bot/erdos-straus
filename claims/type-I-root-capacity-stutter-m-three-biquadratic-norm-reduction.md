@@ -867,7 +867,7 @@ f_{1,12}(a)=a^2-11ad-a+3d^2-d+1=0,
 这仍只压缩 Type II fan 的 cofactor/gap；它没有证明某个
 \(t\mid dC_d\) 满足 \(t\equiv-1\pmod{s_d}\)，所以不能作为 terminal 或 selector edge。
 
-### 8.2 actual cofactor 的同余锁与 \(C_d\ge22\)
+### 8.2 actual cofactor 的同余锁与 \(C_d\ge25\)
 
 继续固定 \(d>1\)，令 \(C=C_d\)，并保留 (37a) 的 \(\ell\)。由
 \(p+s_d=4Cd\) 与 \(s_d=\ell d-a\)，有
@@ -1062,7 +1062,63 @@ p-24s_d=
 这仍是 actual gap/capacity 收缩。它没有令 natural fan 必命中，不能构造 terminal 或
 E1--E5 edge。
 
-### 8.3 即使加入 cofactor congruence lock，\(\Phi_6\) envelope 也不会强制 fan hit
+### 8.3 whole-\(d\) residual 的 primitive norm kernel
+
+上面的低 cofactor 排除还没有用尽 actual quotient content。令
+
+\[
+n:=\frac{\delta^2+\delta+1}{h},
+\qquad
+q:=\frac nd,
+\qquad
+\tau:=\frac\gamma d,
+\qquad
+k_0:=\frac kd.
+\tag{37u}
+\]
+
+既有 whole-\(d\) alignment 保证这些都是正整数，并给出
+
+\[
+\tau=\sigma\delta-aq,
+\qquad
+qk_0=\sigma^2+\sigma\tau+\tau^2,
+\qquad
+(\sigma,\tau)=1.
+\tag{37v}
+\]
+
+第二式模 \(\sigma\) 为 \(qk_0\equiv\tau^2\pmod\sigma\)，而第一式模
+\(\sigma\) 为 \(\tau\equiv-aq\pmod\sigma\)。因此
+
+\[
+\boxed{(\sigma,aqk_0)=1.}
+\tag{37w}
+\]
+
+特别地 \((\sigma,A)=1\)，因为 \(a=3A\) 且 \(\sigma\equiv1\pmod6\)。若写
+
+\[
+\mu:=4C_d-\ell-3\sigma,
+\]
+
+则 \(\delta=\mu d-a\)、\(h=2a+3d\sigma\)，且用 (37q) 消去 \(a^2\) 后，
+\(h\mid\delta^2+\delta+1\) 的全部内容精确成为
+
+\[
+\boxed{
+\bigl[(\mu^2-3\sigma^2)d-(\mu+2\sigma)a+\mu+\sigma\bigr]
+=q(2a+3d\sigma).
+}
+\tag{37x}
+\]
+
+这正是 (37r) 和 (37s-1) 中出现的整数商；它不是一个可自由选择的 divisibility
+witness。式 (37q)、(37v)、(37w)、(37x) 将 \(m=3,d>1\) 的剩余问题压成一组
+互锁的 primitive Diophantine constraints。它仍没有把 Eisenstein factor quotient 变成
+ordinary state，也没有给出 E1 provenance、E4 lift 或 T5 ticket。
+
+### 8.4 即使加入 cofactor congruence lock，\(\Phi_6\) envelope 也不会强制 fan hit
 
 上一节的结论不能被错误加强为“所有满足已使用的 \(\Phi_6\) carrier package 和
 cofactor congruence lock 的整数都命中 natural fan”。事实上，下面给出一个完全手算的
@@ -1071,7 +1127,7 @@ formal countermodel：
 \[
 p=4729,\qquad d=13,\qquad s=3,\qquad C=91,
 \qquad \ell=12,\qquad a=153.
-\tag{37u}
+\tag{37y}
 \]
 
 这里 \(4729\equiv1\pmod {24}\)，且因 \(\sqrt {4729}<69\)，逐一排除不超过
@@ -1084,14 +1140,14 @@ s\equiv3\pmod4,
 \qquad
 s=\ell d-a,\qquad
 p-a=(4C-\ell)d,
-\tag{37v}
+\tag{37z}
 \]
 
 \[
 13\mid4729^2-4729+1,
 \qquad
 13\mid3^2+3+1.
-\tag{37w}
+\tag{37aa}
 \]
 
 它还满足
@@ -1100,7 +1156,7 @@ p-a=(4C-\ell)d,
 C\ge25,\qquad s\le\frac{p-25}{24},\qquad
 C\equiv1\pmod3,\qquad
 4C-\ell\equiv16\pmod {24},
-\tag{37x}
+\tag{37ab}
 \]
 
 并有 \(a\equiv9\pmod {24}\)、\(\ell\equiv0\pmod6\)。但 natural fan 的完整因子
@@ -1114,11 +1170,12 @@ C\equiv1\pmod3,\qquad
 
 \[
 \nexists\,t\mid1183\quad t\equiv-1\pmod {3}.
-\tag{37y}
+\tag{37ac}
 \]
 
 这个六元组没有被声称为 actual stutter receipt：它没有重建 \(A,u,\rho,\kappa\)、
-(37q) 的 double-norm gate、maximality 或 E1 provenance。因此它不反驳 O2、T6 或任何
+(37q) 的 double-norm gate、(37v)--(37x) 的 primitive kernel、maximality 或 E1
+provenance。因此它不反驳 O2、T6 或任何
 actual terminal theorem。它严格说明的是，任何想从
 
 \[
