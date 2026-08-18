@@ -57,6 +57,10 @@ Only three closure modes are permitted for an open family:
 
 Neither a no-go for one candidate action nor a finite scan is a fourth mode.
 
+The current `k=3` Vieta-companion obstruction is such a no-go: it removes the
+same-`M` rechart attempt before a target exists, but does not alter the O2
+quantifier or its `OPEN` status.
+
 ## Reproduction
 
 ```bash

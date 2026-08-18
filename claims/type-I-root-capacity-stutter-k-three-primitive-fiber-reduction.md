@@ -13,7 +13,10 @@ statement: >-
   A-divisor fiber，再由 B、M、p 的闭式唯一重建。对 gap rho=B-A 还有对偶的
   固定-rho fiber：A divides 3rho^2+rho-1，且 3(A+rho)+1 divides
   9rho^2-6rho-2；若 s 是第二式的商，则 m=A+(s+2)/3 且
-  d=3(m-rho)+1。特别地 A=1（等价地这里的 d=1）只给出
+  d=3(m-rho)+1。再令 j=m-rho，则 actual core candidate 满足
+  1≤j≤A-1、A divides 9j^2+7j+1，且
+  rho(3j+1)+j=3A(A-j+1)；故固定 j 也是精确有限 divisor fiber。特别地 A=1
+  （等价地这里的 d=1）只给出
   (A,B,p)=(1,7,939)，不满足核心同余；这精确重现既有 actual-small-root
   theorem 的 (m,a)=(6,3) 排除行，而不是一项额外 T6 closure。该约化不
   physicalize 任意 q|k，不构造 E1--E5 edge，也不关闭 k>1 或 T6 totality。
@@ -44,7 +47,7 @@ sources:
   - claim: type-I-root-capacity-stutter-actual-small-root-exclusion
     role: actual-mod-three-classification
   - reproduction: reproductions/type_i_root_capacity_stutter_k_three_primitive_fiber_reduction.py
-    role: exact-fixed-d-fixed-gap-reduction-and-shared-boundary-controls
+    role: exact-fixed-d-fixed-gap-fixed-j-reduction-and-shared-boundary-controls
 visibility: public
 last_checked: '2026-08-18'
 ---
@@ -375,7 +378,86 @@ only \(\rho=6\), giving \((A,B,M,m,p,d)=(1,7,2,6,939,1)\). Thus the
 gap coordinate independently recovers exactly the same non-core boundary as
 the fixed-\(d\) coordinate.
 
-## 6. The \(d=1\) fiber rederives an already excluded core row
+## 6. Fixed-\(j\) defect fibers
+
+The two existing fiber coordinates also produce a third one which is useful
+because its divisor constant removes the inessential factor \(3\) in (17).
+Put
+
+\[
+j:=m-\rho=\frac{d-1}{3},
+\qquad d=3j+1.
+\tag{J1}
+\]
+
+For every proper primitive curve point, (G8) and positivity of \(d\) give
+\(j\ge0\). Substituting
+
+\[
+s=3(\rho+j-A)-2
+\]
+
+from (G7) into \(F_\rho=Es\), then cancelling, gives the exact linear
+relation in \(\rho\)
+
+\[
+\boxed{\rho(3j+1)+j=3A(A-j+1).}
+\tag{J2}
+\]
+
+Modulo \(A\), (J2) says \(\rho d\equiv-j\). Multiply the second gate in
+(G5) by \(d^2\); it follows that
+
+\[
+d^2G_\rho
+\equiv3j^2-jd-d^2
+=-(9j^2+7j+1)
+\pmod A.
+\]
+
+Therefore every such point satisfies the sharper divisor gate
+
+\[
+\boxed{A\mid L_j:=9j^2+7j+1.}
+\tag{J3}
+\]
+
+This is genuinely sharper than merely substituting \(d=3j+1\) into (17),
+which only gives \(A\mid3L_j\). The factor is removable because
+
+\[
+3L_j\equiv-1\pmod d,
+\qquad\text{so}\qquad (d,L_j)=1.
+\tag{J4}
+\]
+
+Conversely, for one fixed \(j\ge0\), enumerate the positive divisors \(A\)
+of \(L_j\), set
+
+\[
+\rho=\frac{3A(A-j+1)-j}{3j+1},
+\tag{J5}
+\]
+
+and retain only positive integral \(\rho\) with \((A,\rho)=1\) and the
+same primitive curve positivity checks as before. Equation (J2) makes
+\(F_\rho=Es\) exact, while (J3)--(J4) make \(A\mid G_\rho\) exact. Thus
+this reconstructs precisely the same integer-curve points as (G5), now in a
+finite divisor fiber indexed by \(j\). It does not make \(j\) globally
+bounded.
+
+After the \(d=1\) exclusion below, every actual core candidate has
+
+\[
+\boxed{1\le j\le A-1.}
+\tag{J6}
+\]
+
+The upper inequality is just (20) written in the \(j\) coordinate. It is a
+local structural restriction, not an E1--E5 construction or a selector
+certificate.
+
+## 7. The \(d=1\) fiber rederives an already excluded core row
 
 Suppose \(d=1\). Equation (13) gives
 
@@ -423,7 +505,7 @@ Together with (14), every remaining actual \(k=3\) candidate satisfies
 
 \]
 
-## 7. Cyclotomic gate and proof boundary
+## 8. Cyclotomic gate and proof boundary
 
 The primitive equations also show why the bare cyclotomic divisibility is not
 an additional \(k=3\) elimination. Since \((A,H)=1\) and
@@ -439,9 +521,10 @@ Thus \(H\mid p^2+p+1\); when \(p\equiv1\pmod3\) and \(3\nmid H\), this
 recovers \(3H\mid p^2+p+1\). The cyclotomic root condition therefore does
 not by itself clear the remaining fibers.
 
-This card supplies finite-fiber parameterizations for fixed \(d\) and fixed
-\(\rho=B-A\), and rederives the already excluded \(k=3,d=1\) row in both
-coordinates. It does not prove that every \(k=3\) fiber is empty, does not
+This card supplies finite-fiber parameterizations for fixed \(d\), fixed
+\(\rho=B-A\), and fixed \(j=m-\rho\), and rederives the already excluded
+\(k=3,d=1\) row in all three coordinates. It does not prove that every
+\(k=3\) fiber is empty, does not
 physicalize a divisor of \(k\), and does not provide a terminal or a verified successor. QC1, TR1, and
 `T6_GLOBAL_SELECTOR_TOTALITY` remain `OPEN`.
 
@@ -453,5 +536,6 @@ python3 -m unittest tests/test_type_i_root_capacity_stutter_k_three_primitive_fi
 ```
 
 The verifier replays the exact reduction on a deliberately non-core \(d=1\)
-curve point and a core-congruent but non-proper composite shadow. It performs
-no parameter scan, no primality search, and no selector or certificate search.
+curve point in all three coordinates and on a core-congruent but non-proper
+composite shadow. It performs no parameter scan, no primality search, and no
+selector or certificate search.

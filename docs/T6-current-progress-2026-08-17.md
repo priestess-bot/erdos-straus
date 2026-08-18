@@ -109,14 +109,21 @@ hit/F/G、Smith F witness、HNF-dual G separator、scope 和 Type-I local-drop�
 而 \(q\mid k,\ q\nmid h\) 的 quotient-only 因子不能被误投到旧 root-capacity source menu。
 这只是 provenance 收缩，不保证菜单命中或 physical edge。真正剩余的是 \(k>1\) quotient
 carrier 的 physicalization（QC1），或 transverse \(D_*\) carrier 的全称 E1--E5 出口（TR1）。
-其中 \(k=3\) 现在还有两个等价的严格 primitive fiber 坐标：写
+其中 \(k=3\) 现在还有三个等价的严格 primitive fiber 坐标：写
 \(A=a/3,B=(e-1)/3\) 后，fixed-\(d\) 候选满足
 \(A\mid3d^2+d-1\)；若 \(\rho=B-A\)，则同一整数曲线还满足
 \(A\mid3\rho^2+\rho-1\) 与 \(3(A+\rho)+1\mid9\rho^2-6\rho-2\)。每个
-固定 \(d\) 或固定 \(\rho\) 都只剩有限 divisor fiber，且两种坐标都唯一恢复
-\((A,B,p)=(1,7,939)\) 的非核心 \(A=1,d=1\) 边界。\(d\) 与 \(\rho\) 都没有
-全局上界，不能把这一局部收缩误写成 QC1。见
+固定 \(d\) 或固定 \(\rho\) 都只剩有限 divisor fiber。再令
+\(j=m-\rho\)，则 \(A\mid9j^2+7j+1\) 且
+\(\rho(3j+1)+j=3A(A-j+1)\)，所以固定 \(j\) 亦为精确有限 fiber；在已排除
+\(d=1\) 后 actual core candidate 还满足 \(1\le j\le A-1\)。三种坐标均唯一恢复
+\((A,B,p)=(1,7,939)\) 的非核心 \(A=1,d=1\) 边界。\(d\)、\(\rho\) 与 \(j\)
+都没有全局上界，不能把这一局部收缩误写成 QC1。见
 [\(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)。
+此外，保持 \(A,M\) 并把 \(B\) 换为该方程另一 Vieta 根 \(j\) 的直接递降已经被
+第二整数门排除：它不能连同一个整数 \(p_j\)，所以不是可补 E1--E5 的 target。该结论
+只消除这一条重图表尝试，不排空 \(k=3\) 或 QC1；见
+[Vieta companion obstruction](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md)。
 
 ### 4.3 c=8 residual 只在实际可达且未被抢占时处理
 
@@ -133,7 +140,7 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 | \(c=h\) 奇距离 translated-square fan | named family 在 actual proper-root scope 内全称 no-go | `established`, `internal_review` |
 | proper-root \(k=1\) quotient | actual 子域全称为空；无有限扫描 | `established`, `internal_review` |
 | proper-root \(\gcd(a,e-1)\) 对齐 | 公共因子只可落在 \(\gcd(h,k)\)；拆开 h-supported 与 quotient-only residual | `established`, `internal_review`；不构成 edge |
-| proper-root \(k=3\) fixed-\(d\)/fixed-\(\rho\) fibers | 两种 primitive divisor 约化；共享 \(A=1,d=1\) 边界重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；无全域 parameter bound，QC1 仍开放 |
+| proper-root \(k=3\) fixed-\(d\)/fixed-\(\rho\)/fixed-\(j\) fibers | 三种等价 primitive divisor 约化；fixed-\(j\) 消去旧 gate 的冗余因子 \(3\)，同-\(M\) Vieta companion 的第二整数门被排除，且共享 \(A=1,d=1\) 边界重现已排除的 \((m,a)=(6,3)\) 行 | `established`, `internal_review`；无全域 parameter bound，QC1 仍开放 |
 | relative total-cofactor typed adapter | 已实现 source/target retyping、F/G/hit 与 local-drop receipt | `established`, `internal_review`；仅消费外部 registration，不证明 actual reachability |
 | Eisenstein quotient \(k\) 的 EQ1--EQ7 | 由已知 stutter 恒等式可推的代数包 | `analysis_evidence`；不构成 edge |
 | canonical low chart from \(k>1\) | 图表存在 | 缺 E1--E4/provenance，不构成 edge |
@@ -166,5 +173,6 @@ gap-3 Type II terminal，被 terminal-first 抢占，故已从 proper-root evide
 - [proper-root 最小缺口审计](T6-proper-root-minimal-gap-audit-2026-08-17.md)
 - [proper-root k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md)
 - [proper-root \(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)
+- [proper-root \(k=3\) Vieta companion obstruction](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md)
 - [proper-root 公共因子对齐](../claims/type-I-root-capacity-stutter-common-divisor-alignment.md)
 - [proper-root stutter 的 Eisenstein 支撑](../claims/type-I-root-capacity-stutter-eisenstein-support.md)

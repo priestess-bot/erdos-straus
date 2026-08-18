@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 880 |
+| 数学状态 | `established` | 881 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 710 |
+| 证明来源 | `repository_derivation` | 711 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 857 |
+| 审阅状态 | `internal_review` | 858 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -817,6 +817,7 @@
 | [proper-root stutter 的 h^2-1 重叠 m 界与非平凡约化除子](../claims/type-I-root-capacity-stutter-h-overlap-m-bound.md) (`type-I-root-capacity-stutter-h-overlap-m-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [actual proper-root stutter 的 k=1 全称排除](../claims/type-I-root-capacity-stutter-k-one-universal-exclusion.md) (`type-I-root-capacity-stutter-k-one-universal-exclusion`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-17 |
 | [actual proper-root stutter 的 k=3 primitive Pell fiber 约化](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md) (`type-I-root-capacity-stutter-k-three-primitive-fiber-reduction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
+| [actual proper-root k=3 的同-M Vieta companion 第二整数门障碍](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md) (`type-I-root-capacity-stutter-k-three-vieta-companion-obstruction`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [根容量 stutter 的参数对 root-divisor gate 与 actual 边界](../claims/type-I-root-capacity-stutter-pair-root-divisor-gate.md) (`type-I-root-capacity-stutter-pair-root-divisor-gate`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [proper-root stutter 的正定范数与平方根菜单界](../claims/type-I-root-capacity-stutter-positive-definite-norm-bound.md) (`type-I-root-capacity-stutter-positive-definite-norm-bound`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |
 | [根容量 stutter 范数因子的 provenance 三分派](../claims/type-I-root-capacity-stutter-provenance-dispatch.md) (`type-I-root-capacity-stutter-provenance-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-14 |

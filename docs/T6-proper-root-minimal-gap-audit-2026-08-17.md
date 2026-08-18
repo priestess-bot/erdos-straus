@@ -297,11 +297,26 @@ A\mid3\rho^2+\rho-1,
 3(A+\rho)+1\mid9\rho^2-6\rho-2,
 \]
 
-所以固定 \(\rho\) 也是有限 divisor fiber。共享的 \(A=1\) fiber 唯一恢复
-\(\rho=6\)、\(p=939\)，非核心；这与已有的 \((m,a)=(6,3)\) small-root 排除行
-相同，用于交叉验证而不另计一个 closure。\(d\) 与 \(\rho\) 都没有全局上界，这不是
-\(k=3\) 的全称排空，更不是 QC1 的 physicalization。完整约化见
+所以固定 \(\rho\) 也是有限 divisor fiber。再写 \(j=m-\rho\)，则
+
+\[
+A\mid9j^2+7j+1,
+\qquad
+\rho(3j+1)+j=3A(A-j+1),
+\]
+
+故固定 \(j\) 同样只留下有限个 \(A\)-divisor，再由该等式唯一恢复 \(\rho\)。这一步
+从旧的 \(A\mid3(9j^2+7j+1)\) 中消去了多余的因子 \(3\)；它仍不提供 \(j\) 的全局界。
+共享的 \(A=1\) fiber 唯一恢复 \(\rho=6\)、\(p=939\)，非核心；这与已有的
+\((m,a)=(6,3)\) small-root 排除行相同，用于交叉验证而不另计一个 closure。\(d\)、
+\(\rho\) 与 \(j\) 都没有全局上界，这不是 \(k=3\) 的全称排空，更不是 QC1 的
+physicalization。完整约化见
 [\(k=3\) primitive fiber reduction](../claims/type-I-root-capacity-stutter-k-three-primitive-fiber-reduction.md)。
+一个看似自然的同-\(M\) Vieta 递降也已被精确排除：第一 primitive equation 的另一
+\(B\)-根恰为 \(j\)，但它若要通过第二整数门，就会强制 \(j=A-1\)，最终只剩失败的
+\((A,j)=(3,2)\) 残余。故该 companion 不能成为 integer target；它是路线障碍而不是
+QC1 closure，详见
+[Vieta companion obstruction](../claims/type-I-root-capacity-stutter-k-three-vieta-companion-obstruction.md)。
 
 ## 4. 最小开放量词
 
@@ -376,7 +391,8 @@ divisibility，又被 gap-3 Type II terminal 抢占；详见
 
 ## 6. 结论边界
 
-本页严格完成了 \(k=1\) 的参数化与 actual 全称排除；\(k=3\) 新增的是
-fixed-\(d\) fiber 坐标，其 \(d=1\) 行重现既有排除。(PR-T6) 的 quotient 剩余仍精确位于 \(k>1\) 的 (QC1)。它仍没有 physicalize \(q\mid k\) 或为
-\(q\mid D_*\) 构造全称 successor。因此 (QC0) 已闭合，但 proper-root 子域和 T6
-仍保持开放。
+本页严格完成了 \(k=1\) 的参数化与 actual 全称排除；\(k=3\) 现有
+fixed-\(d\)、fixed-\(\rho\)、fixed-\(j\) 三个有限 fiber 坐标，并排除了保持
+\(A,M\) 的直接 Vieta companion。它们收紧整数曲线和后续候选路线，但不 physicalize
+\(q\mid k\)，也不为 \(q\mid D_*\) 构造全称 successor。(PR-T6) 的 quotient 剩余仍
+精确位于 \(k>1\) 的 (QC1)。因此 (QC0) 已闭合，但 proper-root 子域和 T6 仍保持开放。
