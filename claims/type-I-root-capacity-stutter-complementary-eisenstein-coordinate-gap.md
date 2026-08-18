@@ -474,8 +474,40 @@ p&=(w+1)^2As^2+(w+1)w(w-1)s-w.
 \tag{31}
 \]
 
+The actual core conditions sharply restrict this universal exceptional
+subcase.  Reducing the first three lines of (31) together with
+\(h=e(m-1)+\eta+1\) modulo \(3\) shows
+
+\[
+w\equiv0\pmod3,\qquad s\equiv2\pmod3.
+\tag{32}
+\]
+
+Indeed, \(w\equiv1\pmod3\) makes \(m\equiv2\pmod3\); if
+\(w\equiv2\pmod3\), the only candidate allowed by \(m,a\) has
+\(h\equiv1\pmod3\).  When \(w\equiv0\pmod3\), the actual
+\(m,a,h\) conditions leave exactly \(s\equiv2\pmod3\).
+
+For odd \(w\), the last line in (31) is \(3\) or \(7\pmod8\) when
+\(w\equiv1\pmod4\), while for \(w\equiv3\pmod4\) it is
+\(-w\pmod8\).  Thus the core condition forces
+\(w\equiv7\pmod8\) in this odd branch.  For even \(w\), oddness of
+\(k\) makes \(s\) odd; direct substitution modulo \(8\) then forces
+\(w\equiv0\pmod8\).  Combining these facts with (32), every actual core
+point on the \(r=1\) exceptional shape lies in one of the two necessary
+classes
+
+\[
+\boxed{
+\bigl(w\equiv15\pmod {24},\ s\equiv2\pmod3\bigr)
+\quad\text{or}\quad
+\bigl(w\equiv0\pmod {24},\ s\equiv5\pmod6\bigr).
+}
+\tag{33}
+\]
+
 Thus each fixed complementary coordinate has finitely many ordinary divisor
-fibers and finitely many explicitly named exceptional shapes; (29)--(31)
+fibers and finitely many explicitly named exceptional shapes; (29)--(33)
 are available for the latter rather than treating them as an unspecified
 infinite remainder.
 
@@ -487,7 +519,7 @@ and (9) would make \(k=e\eta-4a\) even.  Hence
 
 \[
 e,\eta\text{ are odd},\qquad m\text{ is even}.
-\tag{32}
+\tag{34}
 \]
 
 The parity of \(p=h+\delta\), together with (13), makes \(t\) odd.
@@ -499,7 +531,7 @@ m\pmod3&t\\ \hline
 0&3\ \text{or}\ 9\\
 1&1\ \text{or}\ 7 .
 \end{array}
-\tag{33}
+\tag{35}
 \]
 
 For the four rows, the root divisor (14) has the following explicit form:
@@ -513,7 +545,7 @@ F=\delta^2+\delta+1&\text{bound on }n=F/h\\ \hline
 7&7h=5m^2+2m+(4m+3)\eta&25m^2+25m+7&n<35\\
 9&9h=5m^2+4m+(4m+5)\eta&25m^2+45m+21&n<45.
 \end{array}
-\tag{34}
+\tag{36}
 \]
 
 For \(t=3,9\), the \(m\equiv0\pmod3\) branch has
@@ -530,7 +562,7 @@ t&L& C_{4,t,n}\\ \hline
 7&4m+3&37-3n\\
 9&4m+5&61-5n .
 \end{array}
-\tag{35}
+\tag{37}
 \]
 
 For \(t=1\), the only possible even \(m\equiv1\pmod3\) with
@@ -563,14 +595,14 @@ m&\text{forced }n&F\bmod n\\ \hline
 30&\text{none}&-\\
 36&42&21 .
 \end{array}
-\tag{36}
+\tag{38}
 \]
 
-No listed \(n\) divides \(F\).  All four branches in (33) are empty, so
+No listed \(n\) divides \(F\).  All four branches in (35) are empty, so
 
 \[
 \boxed{W\ge5.}
-\tag{37}
+\tag{39}
 \]
 
 ## 6. The companion gap \(\eta\ge5\)
@@ -579,7 +611,7 @@ The \(k=1\) domain is already empty, and \(k\) is odd.  Hence
 
 \[
 k\ge3.
-\tag{38}
+\tag{40}
 \]
 
 Together with (9), \(W\ge5\), and \(a=e-1-\eta\), this reduces the four
@@ -602,7 +634,7 @@ But \(h=4m-1\) being divisible by \(3\) gives \(m\equiv1\pmod3\), whereas
 the actual \(m\equiv1\pmod3\) branch requires \(a\equiv2\pmod3\).
 
 For \(\eta=3\), parity forces \(e\) odd and \(W\) even.  Positivity and
-(38) leave \(e=5\) or \(7\).  The \(e=5,a=1\) cases violate the actual
+(40) leave \(e=5\) or \(7\).  The \(e=5,a=1\) cases violate the actual
 modulo-\(3\) classification.  The remaining case is
 
 \[
@@ -629,7 +661,7 @@ modulo-\(3\) conditions force \(m\equiv0\pmod3\) and
 
 \[
 (e,W)\in\{(20,5),(14,5),(8,5),(8,7),(8,9)\}.
-\tag{39}
+\tag{41}
 \]
 
 In each case, (13) and \(3\mid m\) force the following parametrization:
@@ -643,7 +675,7 @@ In each case, (13) and \(3\mid m\) force the following parametrization:
 (8,7)&21r&360r-7\\
 (8,9)&9+21r&167+408r .
 \end{array}
-\tag{40}
+\tag{42}
 \]
 
 The second row is divisible by \(7\).  The first row is
@@ -654,7 +686,7 @@ Thus \(\eta=4\) is impossible.  Combining the four cases,
 
 \[
 \boxed{\eta\ge5.}
-\tag{41}
+\tag{43}
 \]
 
 ## 7. Boundary
