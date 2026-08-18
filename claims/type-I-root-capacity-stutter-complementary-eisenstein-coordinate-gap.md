@@ -20,7 +20,8 @@ statement: >-
   g^sharp 的每个素因子在 D、D_*、D_T=D/gcd(D,(p^2-1)/2) 中保持相同赋值，并避开 p^2-1。
   唯一可能被 h^2-1 吸收的 resonant 素因子是至多一次的 7。若 g>1，则 4g<=p-2。
   因而由 sh=1 mod g、s=3 mod4 确定的最小正 variable gap 总在自然范围内；令
-  C=(p+s)/(4g)，每个满足 r|g 且 s|C(g+r) 的 r 都给出一张直接 Type II 证书。
+  C=(p+s)/(4g)，且 gcd(s,C)=1；每个满足 r|g 且 s|g+r 的 r 都给出一张直接
+  Type II 证书。
   该结论仍不证明 g>1 或该有限 divisor fan 必命中，不构造 E1--E5 edge，也不闭合
   QC1、TR1 或 T6 totality。
 claim_status: established
@@ -1335,49 +1336,38 @@ Consequently each actual divisor hit
 
 is a direct Type II certificate with gap \(s\) and divisor \(d_r\).  This
 is a whole-carrier variable-gap terminal fan: it uses the actual composite
-\(g\), not a synthetic prime factor or a fixed low-gap menu.  In particular,
-\(r=g\) gives a certificate whenever \(s\mid C\), because
-\((s,2g)=1\).
-
-The hit condition itself has a minimal divisor-residue form.  Put
+\(g\), not a synthetic prime factor or a fixed low-gap menu.  Its hit
+condition has a sharper form because \(p\) is prime.  If
+\(c=(s,C)\), then \(c\mid4gC-s=p\).  But \(c\le s\le p-2\), so
 
 \[
-c=(s,C),
-\qquad
-s_0=\frac{s}{c}.
+\boxed{(s,C)=1.}
 \tag{77}
 \]
 
-Because \((s_0,C/c)=1\), condition (76) is exactly
+Also \(sh\equiv1\pmod g\) gives \((s,g)=1\).  Hence (76) is exactly the
+single divisor-residue condition
 
 \[
 \boxed{s\mid C(g+r)
 \quad\Longleftrightarrow\quad
-s_0\mid g+r.}
+s\mid g+r.}
 \tag{78}
 \]
 
-Moreover \(s_0\) is odd and \((s_0,g)=1\).  Thus the two endpoint divisors
-already give sharp failure constraints:
+The endpoint divisor \(r=g\) can never satisfy (78), since
+\((s,2g)=1\) and \(s\ge3\).  The divisor \(r=1\) satisfies it precisely
+when \(s\mid g+1\).  Therefore terminal-first failure of the whole fan
+forces
 
 \[
-r=g\Longleftrightarrow s_0=1,
-\qquad
-r=1\Longleftrightarrow s_0\mid g+1.
+\boxed{s\nmid g+1,}
 \tag{79}
 \]
 
-Here each equivalence means that the indicated divisor satisfies (78).  In
-particular, terminal-first failure of the whole fan forces
-
-\[
-\boxed{s_0>1,\qquad s_0\nmid g+1,}
-\tag{80}
-\]
-
 and the only remaining question is whether some proper divisor
-\(r\mid g\) lies in the single residue class \(r\equiv-g\pmod{s_0}\).
-For prime \(g\), (80) is the complete description of failure of this fan.
+\(r\mid g\) lies in the single residue class \(r\equiv-g\pmod s\).
+For prime \(g\), (79) is the complete description of failure of this fan.
 
 For a terminal-first survivor, the remaining resonant branch is now exact:
 either \(g=1\), or the finite divisor set in (76) is empty.  No assertion
