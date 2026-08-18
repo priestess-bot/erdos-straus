@@ -24,6 +24,11 @@ TOTAL_COFACTOR_ADAPTER_PATH = (
 TOTAL_COFACTOR_ADAPTER_CLAIM = (
     "type-I-overflow-total-cofactor-typed-projection-dispatch"
 )
+INITIAL_ROOT_CLAIM = "type-II-initial-q-one-root-terminal-or-full-carrier-dispatch"
+INITIAL_ROOT_VERIFIER = (
+    ROOT / "reproductions" / "type_ii_initial_q_one_root_dispatch.py"
+)
+INITIAL_ROOT_CLOSED_STATUS = "CLOSED_BY_UNIVERSAL_SUCCESSOR"
 
 CLAIM_STATUSES = {"established", "computationally_reproduced"}
 RECEIPT_COMPONENT = "established_under_written_claim_guard"
@@ -42,7 +47,6 @@ ALLOWED_GAP_CLOSURES = {
     "universal_verified_successor",
 }
 REQUIRED_GAP_IDS = {
-    "GAP-O1-INITIAL-ROOT",
     "GAP-O1-GLOBAL-EXHAUSTION",
     "GAP-O1-H4-OTHER-BRANCHES",
     "GAP-O1-POST-G-TYPE-I",
@@ -53,6 +57,7 @@ REQUIRED_GAP_IDS = {
     "GAP-O3-C8-OUTGOING",
     "GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY",
 }
+CLOSED_OBLIGATION_IDS = {"O1-INITIAL-ROOT"}
 REQUIRED_OBLIGATION_IDS = {
     "O1-INITIAL-ROOT",
     "O1-GLOBAL-EXHAUSTION",
@@ -115,8 +120,18 @@ def run_ledger() -> dict[str, object]:
         raise AssertionError("initialization row must be an object")
     if initialization["family_id"] != "initial_core_root":
         raise AssertionError("initial root family cannot be omitted")
-    if initialization["coverage_status"] != "OPEN":
-        raise AssertionError("initial serializer was promoted without its total proof")
+    if initialization["coverage_status"] != INITIAL_ROOT_CLOSED_STATUS:
+        raise AssertionError("initial serializer lacks its terminal-or-edge closure")
+    if initialization.get("serializer_id") != "initial_q_one_root_dispatch_v1":
+        raise AssertionError("initial serializer identifier drifted")
+    if initialization.get("resolution_claim") != INITIAL_ROOT_CLAIM:
+        raise AssertionError("initial serializer omits its resolution claim")
+    if INITIAL_ROOT_CLAIM not in initialization.get("evidence", []):
+        raise AssertionError("initial serializer omits its claim evidence")
+    if not INITIAL_ROOT_VERIFIER.is_file():
+        raise AssertionError("missing initial q=1 root dispatch verifier")
+    if claim_status(INITIAL_ROOT_CLAIM) not in CLAIM_STATUSES:
+        raise AssertionError("initial serializer lost its accepted claim status")
 
     families = ledger["state_families"]
     if not isinstance(families, list):
@@ -131,6 +146,14 @@ def run_ledger() -> dict[str, object]:
             raise AssertionError(f"family lacks a selector boundary: {row['id']}")
         if not isinstance(row["minimal_gap_ids"], list):
             raise AssertionError(f"family gap list malformed: {row['id']}")
+
+    initial_root = next(row for row in families if row["id"] == "initial_core_root")
+    if initial_root["coverage_status"] != INITIAL_ROOT_CLOSED_STATUS:
+        raise AssertionError("initial root family lacks universal terminal-or-edge closure")
+    if initial_root["minimal_gap_ids"]:
+        raise AssertionError("closed initial root family still names an open gap")
+    if INITIAL_ROOT_CLAIM not in initial_root["evidence"]:
+        raise AssertionError("initial root family omits its closure claim")
 
     overflow_residual = next(
         row for row in families if row["id"] == "type_i_a_gt_one_overflow_residual"
@@ -191,10 +214,15 @@ def run_ledger() -> dict[str, object]:
         extra = sorted(obligation_ids - REQUIRED_OBLIGATION_IDS)
         raise AssertionError(f"obligation surface changed: missing={missing}, extra={extra}")
     for row in obligations:
-        if row["status"] != "OPEN":
-            raise AssertionError(f"open obligation incorrectly promoted: {row['id']}")
         if not set(row["family_ids"]) <= family_ids:
             raise AssertionError(f"obligation names unknown family: {row['id']}")
+        if row["id"] in CLOSED_OBLIGATION_IDS:
+            if row["status"] != "CLOSED":
+                raise AssertionError(f"closed obligation lost its resolution: {row['id']}")
+            if row.get("resolution_claim") != INITIAL_ROOT_CLAIM:
+                raise AssertionError("initial-root obligation omits its resolution claim")
+        elif row["status"] != "OPEN":
+            raise AssertionError(f"open obligation incorrectly promoted: {row['id']}")
 
     gaps = ledger["minimal_selector_gaps"]
     if not isinstance(gaps, list):
@@ -225,6 +253,9 @@ def run_ledger() -> dict[str, object]:
     if not isinstance(gates, list):
         raise AssertionError("acceptance gates must be a list")
     require_unique(gates, "id", "acceptance-gate id")
+    gates_by_id = {str(row["id"]): row for row in gates}
+    if gates_by_id["initial_state_serializer"]["status"] != "ESTABLISHED":
+        raise AssertionError("initial-state serializer gate was not closed")
     if not any(row["status"] != "ESTABLISHED" for row in gates):
         raise AssertionError("all gates established but T6 remains OPEN")
 
@@ -242,6 +273,9 @@ def run_ledger() -> dict[str, object]:
         "t6_global_selector_totality": current_status["t6_global_selector_totality"],
         "concrete_edge_family_count": len(edge_rows),
         "state_family_count": len(families),
+        "closed_obligation_ids": sorted(
+            str(row["id"]) for row in obligations if row["status"] == "CLOSED"
+        ),
         "open_state_family_ids": sorted(open_family_ids),
         "minimal_selector_gap_ids": sorted(gap_ids),
         "acceptance_gate_count": len(gates),

@@ -22,7 +22,9 @@ class TypeIT6SelectorObligationLedgerTests(unittest.TestCase):
         self.assertEqual(result["concrete_edge_family_count"], 14)
         self.assertEqual(result["state_family_count"], 16)
         self.assertEqual(result["acceptance_gate_count"], 14)
-        self.assertEqual(len(result["minimal_selector_gap_ids"]), 10)
+        self.assertEqual(len(result["minimal_selector_gap_ids"]), 9)
+        self.assertIn("O1-INITIAL-ROOT", result["closed_obligation_ids"])
+        self.assertNotIn("initial_core_root", result["open_state_family_ids"])
         self.assertIn("proper_root_stutter_k_gt_one", result["open_state_family_ids"])
         self.assertIn("c8_terminal_first_surviving_parent", result["open_state_family_ids"])
 

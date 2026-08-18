@@ -14,15 +14,15 @@
 | 数学状态 | `computationally_reproduced` | 373 |
 | 数学状态 | `conditional` | 30 |
 | 数学状态 | `contradicted` | 2 |
-| 数学状态 | `established` | 882 |
+| 数学状态 | `established` | 883 |
 | 数学状态 | `open` | 12 |
 | 数学状态 | `retracted` | 1 |
 | 证明来源 | `computational_reproduction` | 128 |
 | 证明来源 | `mixed` | 39 |
-| 证明来源 | `repository_derivation` | 712 |
+| 证明来源 | `repository_derivation` | 713 |
 | 证明来源 | `unspecified` | 428 |
 | 审阅状态 | `independent_review` | 20 |
-| 审阅状态 | `internal_review` | 859 |
+| 审阅状态 | `internal_review` | 860 |
 | 审阅状态 | `unspecified` | 428 |
 
 ## 全部主张
@@ -1063,6 +1063,7 @@
 | [Type II HOLE Fourier 多 primary 到 F/G 分素数相位容量和](../claims/type-II-hole-fourier-multiprimary-phase-capacity-sum.md) (`type-II-hole-fourier-multiprimary-phase-capacity-sum`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II HOLE Fourier 非恒相位到 F/G q 进相位胞容量桥](../claims/type-II-hole-fourier-phase-cell-capacity-bridge.md) (`type-II-hole-fourier-phase-cell-capacity-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [标准源、偶源与 Type II 射线的联合有限碰撞引理](../claims/type-II-hybrid-even-source-collision-lemma.md) (`type-II-hybrid-even-source-collision-lemma`) | `established` | `unspecified` | `unspecified` | `bradford2024` | 2026-07-25 |
+| [核心素数的规范 q=1 初始根 gap-3 终端--full-carrier 分派](../claims/type-II-initial-q-one-root-terminal-or-full-carrier-dispatch.md) (`type-II-initial-q-one-root-terminal-or-full-carrier-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-18 |
 | [Type II 的 K 等于二切片与相邻 Type I 图表桥](../claims/type-II-k2-adjacent-type-I-cross-chart-bridge.md) (`type-II-k2-adjacent-type-I-cross-chart-bridge`) | `established` | `repository_derivation` | `internal_review` | - | 2026-07-30 |
 | [Type II 核分裂 Fourier 能量的相容角色—容量分派](../claims/type-II-kernel-fourier-energy-role-capacity-dispatch.md) (`type-II-kernel-fourier-energy-role-capacity-dispatch`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-05 |
 | [Type II 核 Fourier 对偶能量到源关系边的 q 进需求](../claims/type-II-kernel-fourier-pair-energy-qheight-demand.md) (`type-II-kernel-fourier-pair-energy-qheight-demand`) | `established` | `repository_derivation` | `internal_review` | - | 2026-08-04 |

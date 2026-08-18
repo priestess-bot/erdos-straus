@@ -46,6 +46,7 @@
 | T3 | 抽象命题开放；当前具名图中不可达 | 当前 14 个 concrete generators 都保持 \(W=\operatorname{Sol}(p)\)，无 nontrivial-mark seed | 任意 future marked edge 的 serializer、membership 与 lift |
 | T4 | ordinary \(q\ge1\) 相对闭包已建立 | actual terminal-first ordinary G 统一进入同一个 p-only fresh full-carrier root，并通过 origin-normalized 首条 local edge | nontrivial mark、首条边之后的 Type-I totality |
 | T5 | 合同层闭合 | 所有 contract-recognized persistent edge 的七元势严格下降 | 任何 E1--E4 candidate 自动有 ticket，或 selector totality |
+| 初始 \(q=1\) 根 | 已闭合 | 每个核心 \(p\) 均按 \(X=(p+3)/4\) 分派为 gap-3 root terminal，或 ordinary G 到 full-carrier 的 actual E1--E5 handoff | handoff 后 Type-I totality 与全局 reachable-state exhaustion |
 | T6 | 开放 | terminal-first 与五类输出的验收规则 | 每个实际可达 nonterminal state 的 terminal 或 verified successor |
 
 closed-world 审计说明 full T2 与 nontrivial T3 不是**当前具名图**的 live blocker；但 future
@@ -68,6 +69,19 @@ outgoing existence、一般 overflow 与 high-support 分支仍没有全局归�
 [T5 合同](../concepts/t5-global-well-foundedness-contract-v2.md) 固定。
 
 ## 4. 当前研究焦点
+
+### 4.0 初始 \(q=1\) 根序列化已闭合，但只闭合 base construction
+
+对每个核心素数取 \(q=1\)、\(m=3\)、\(X=(p+3)/4\)。若 \(X\) 含有
+\(2\pmod3\) 的素因子，最小这样的素因子直接给出 Type II root terminal；若没有，
+\(X\) 的全部素因子均为 \(1\pmod3\)，从而得到 ordinary q=1 G receipt，并由既有
+full-carrier rule 给出一条 actual E1--E5 `PHASE_DROP`。这个 base receipt 由 \(p\)
+单独重放；它的 terminal-first digest 只覆盖 q=1 gap-3 predicate，不伪造 incoming
+recursive edge，也不把 gap-3 之外的 terminal 扫描说成已完成。
+
+因此 O1 的 initial-root 子义务和 `initial_state_serializer` gate 已关闭。G target 的后续
+Type I selector 仍落在 `GAP-O1-POST-G-TYPE-I`，而所有实际可达状态的穷尽仍是
+`GAP-O1-GLOBAL-EXHAUSTION`；`T6_GLOBAL_SELECTOR_TOTALITY` 保持 `OPEN`。
 
 ### 4.1 Ordinary G 的 positive-\(q\) adapter 已相对闭合
 
@@ -154,6 +168,7 @@ actual provenance、terminal-first 和 target receipt 都保留后，才应继�
 
 | 技术项 | 结论 | 证据等级 |
 |---|---|---|
+| 初始 \(q=1\) 根 terminal-or-edge 分派 | 对每个核心 \(p\) 完成 frozen p-only root serialization；命中 \(2\pmod3\) 素因子时终端，否则接入 q=1 G full-carrier edge | `established`, `internal_review`；不构成全局 T6 |
 | \(q=1\) G full-carrier handoff | 已建立，范围不扩张 | `established`, `independent_review` |
 | ordinary positive-\(q\) G universal handoff | 对 actual terminal-first ordinary source 相对闭合 | `established`, `internal_review` |
 | \(c=h\) 奇距离 translated-square fan | named family 在 actual proper-root scope 内全称 no-go | `established`, `internal_review` |
@@ -186,6 +201,7 @@ gap-3 Type II terminal，被 terminal-first 抢占，故已从 proper-root evide
 - [T2/T5 合并复核](T2-T5-full-integration-review-2026-08-17.md)
 - [旗舰证明纲领](../concepts/flagship-proof-program-2026-08-16.md)
 - [状态合同](../concepts/denominator-escape-state-contract.md)
+- [初始 \(q=1\) 根 terminal-or-edge 分派](../claims/type-II-initial-q-one-root-terminal-or-full-carrier-dispatch.md)
 - [T5 全局良基合同](../concepts/t5-global-well-foundedness-contract-v2.md)
 - [q=1 G full-carrier phase-root claim](../claims/type-II-q-one-full-carrier-phase-root-entry.md)
 - [positive-q G full-carrier phase-root claim](../claims/type-II-positive-q-G-full-carrier-phase-root-entry.md)

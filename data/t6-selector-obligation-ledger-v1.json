@@ -41,29 +41,31 @@
       "root_prime = p",
       "marked_solution_set = Sol(p)"
     ],
-    "coverage_status": "OPEN",
-    "reason_open": "The state contract fixes root-field guards, but the repository has no independent total root-to-selector-family serializer together with a non-circular reachable-state exhaustion proof.",
+    "coverage_status": "CLOSED_BY_UNIVERSAL_SUCCESSOR",
+    "serializer_id": "initial_q_one_root_dispatch_v1",
+    "resolution_claim": "type-II-initial-q-one-root-terminal-or-full-carrier-dispatch",
+    "resolution": "Set q=1, m=3, and X=(p+3)/4. A least prime factor of X congruent to 2 modulo 3 gives a direct Type II root terminal; otherwise the canonical mod-3 G receipt supplies the ordinary q=1 full-carrier E1--E5 handoff. Its terminal digest is complete only for the declared q=1, gap-3 direct predicate, not every root certificate family.",
     "evidence": [
+      "type-II-initial-q-one-root-terminal-or-full-carrier-dispatch",
+      "reproductions/type_ii_initial_q_one_root_dispatch.py",
       "concepts/denominator-escape-state-contract.md",
       "docs/T6-current-progress-2026-08-17.md"
-    ],
-    "minimal_gap_id": "GAP-O1-INITIAL-ROOT"
+    ]
   },
   "state_families": [
     {
       "id": "initial_core_root",
-      "coverage_status": "OPEN",
-      "guard": "p is a core prime and the state is the canonical root for 4/p.",
-      "terminal_exit": "terminal-first certificate when one is registered",
-      "successor_exit": "not globally dispatched",
+      "coverage_status": "CLOSED_BY_UNIVERSAL_SUCCESSOR",
+      "guard": "p is a core prime and the state is the frozen p-only q=1 root with m=3 and X=(p+3)/4.",
+      "terminal_exit": "if X has a prime factor ell congruent to 2 modulo 3, its least such ell is a direct Type II root terminal",
+      "successor_exit": "otherwise every prime factor of X is 1 modulo 3, yielding an ordinary q=1 G receipt and the registered full-carrier Type I phase handoff under its declared endpoint-local gap-3 terminal digest",
       "evidence": [
+        "type-II-initial-q-one-root-terminal-or-full-carrier-dispatch",
+        "reproductions/type_ii_initial_q_one_root_dispatch.py",
         "concepts/denominator-escape-state-contract.md",
         "docs/T6-current-progress-2026-08-17.md"
       ],
-      "minimal_gap_ids": [
-        "GAP-O1-INITIAL-ROOT",
-        "GAP-O1-GLOBAL-EXHAUSTION"
-      ]
+      "minimal_gap_ids": []
     },
     {
       "id": "type_ii_relation_f_endpoint",
@@ -478,15 +480,16 @@
   "obligations": [
     {
       "id": "O1-INITIAL-ROOT",
-      "status": "OPEN",
+      "status": "CLOSED",
       "family_ids": ["initial_core_root"],
       "requirement": "Prove canonical legal root construction and the first non-circular selector-family classification for every core p.",
-      "minimal_gap_id": "GAP-O1-INITIAL-ROOT"
+      "resolution_claim": "type-II-initial-q-one-root-terminal-or-full-carrier-dispatch",
+      "resolution": "The q=1, gap-3 factorization dichotomy gives either a root terminal or an actual q=1 G-to-full-carrier E1--E5 edge for every core p. The terminal digest is endpoint-local and does not assert exhaustive root-level certificate absence."
     },
     {
       "id": "O1-GLOBAL-EXHAUSTION",
       "status": "OPEN",
-      "family_ids": ["initial_core_root", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "t2_v1_atomic_pending_target"],
+      "family_ids": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "t2_v1_atomic_pending_target"],
       "requirement": "Give an independent constructor-and-successor case split for every actual reachable nonterminal state; current named taxonomy is not that proof.",
       "minimal_gap_id": "GAP-O1-GLOBAL-EXHAUSTION"
     },
@@ -549,16 +552,8 @@
   ],
   "minimal_selector_gaps": [
     {
-      "id": "GAP-O1-INITIAL-ROOT",
-      "family_ids": ["initial_core_root"],
-      "quantifier": "For every core p, a canonical legal root is serialized and independently classified into a selector family.",
-      "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
-      "status": "OPEN",
-      "why_current_evidence_is_insufficient": "Root field guards alone do not produce the first total selector dispatch."
-    },
-    {
       "id": "GAP-O1-GLOBAL-EXHAUSTION",
-      "family_ids": ["initial_core_root", "type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "t2_v1_atomic_pending_target"],
+      "family_ids": ["type_i_a_gt_one_overflow_residual", "type_i_high_support_sink", "t2_v1_atomic_pending_target"],
       "quantifier": "Every actual recursively reachable nonterminal legal state belongs to a listed family with a total exit.",
       "allowed_closure_modes": ["family_empty_proof", "universal_terminal", "universal_verified_successor"],
       "status": "OPEN",
@@ -630,7 +625,7 @@
     }
   ],
   "acceptance_gates": [
-    {"id": "initial_state_serializer", "status": "OPEN"},
+    {"id": "initial_state_serializer", "status": "ESTABLISHED"},
     {"id": "reachable_state_exhaustion", "status": "OPEN"},
     {"id": "all_nonterminal_leaves_closed", "status": "OPEN"},
     {"id": "proper_root_qc1_or_tr1", "status": "OPEN"},

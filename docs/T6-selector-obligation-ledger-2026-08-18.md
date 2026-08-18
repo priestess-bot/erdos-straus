@@ -28,7 +28,6 @@ one.
 
 | Minimal gap | Exact missing statement | Why existing work does not close it |
 |---|---|---|
-| `GAP-O1-INITIAL-ROOT` | Every core root has a canonical legal serializer and first non-circular selector classification. | The contract specifies root fields, not a total dispatch. |
 | `GAP-O1-GLOBAL-EXHAUSTION` | Every actual nonterminal reachable state belongs to a family with a total exit. | The registered-edge taxonomy is not an independent construction of the reachable set. |
 | `GAP-O1-POST-G-TYPE-I` | Every nonterminal state after a q=1 or positive-q G handoff has a total Type I continuation. | The full-carrier handoff proves a root and first strict segment only. |
 | `GAP-O1-A-GT-ONE-OVERFLOW` | Every actual residual `A>1` overflow is terminal or has E1--E5. | The relative total-cofactor adapter retypes a supplied registered source, but no universal theorem supplies that registration for every residual. |
@@ -36,6 +35,14 @@ one.
 | `GAP-O2-PROPER-ROOT-K-GT-ONE` | QC1 or TR1 physicalizes every actual proper-root `k>1` residual. | A formal quotient chart has neither E1 provenance nor an E4 lift. |
 | `GAP-O3-C8-OUTGOING` | Every terminal-first-surviving c=8 parent has terminal, double-low receipt, or another verified edge. | The c=8 macro is conditional on the qualifying receipt. |
 | `GAP-O4-NEW-ATOMIC-OR-MARKED-FAMILY` | Any future atomic or marked generator closes its T2/T3 obligations before admission. | Current named-graph unreachability says nothing about future constructors. |
+
+`GAP-O1-INITIAL-ROOT` is now discharged.  The p-only initializer fixes
+`q=1`, `m=3`, and \(X=(p+3)/4\): a least factor of \(X\) congruent to
+\(2\pmod 3\) gives a direct Type II root terminal, while its absence is the
+ordinary q=1 G certificate consumed by the established full-carrier
+handoff under its declared endpoint-local terminal prefix. This closes only
+the frozen root construction; it does not imply
+that the Type I target, or every later reachable state, has a total exit.
 
 The full JSON additionally names H4 non-v1 branches and nonterminal current
 atomic targets, which are intentionally kept separate from c=8 existence.
@@ -70,6 +77,8 @@ but creates no E1 provenance or E4 lift.
 ## Reproduction
 
 ```bash
+python3 reproductions/type_ii_initial_q_one_root_dispatch.py --verify
+python3 -m unittest tests/test_type_ii_initial_q_one_root_dispatch.py
 python3 reproductions/type_i_t6_selector_obligation_ledger.py --verify
 python3 -m unittest tests/test_type_i_t6_selector_obligation_ledger.py
 ```

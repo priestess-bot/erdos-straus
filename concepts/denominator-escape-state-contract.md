@@ -1501,6 +1501,52 @@ G/Type I handoff。见[奇 \(h\) 的 gap-23 二次非剩余 Type II 终端与两
 phase 不可重入及 \(q=1\) F-empty 基例同时写入全局势时，才允许把它标为 E5；任何
 无付款的较大 \(q\) reset 都会使该资格失效。
 
+### 6.7a 初始 \(q=1\) 根的冻结 terminal-or-edge 分派
+
+对 proof run 的根素数 \(p=24t+1\)，初始构造不是一条 incoming recursive edge，故不得
+伪造 E1 predecessor。规范 root initializer 固定
+
+\[
+U=\frac{p-1}{4}=6t,
+\qquad q=1,
+\qquad m=3,
+\qquad X=U+1=\frac{p+3}{4}.
+\tag{40}
+\]
+
+它保留 `frozen_p_only_root` provenance、\(1\mid U\) 与 \(1\le Q(U)\) 的 endpoint
+downset receipt，以及 \(X\) 的完整素因子分解。若 \(X\) 有素因子
+\(\ell\equiv2\pmod3\)，规范取最小 \(\ell\)，并以
+
+\[
+d=\ell,
+\qquad
+Y=\frac{p(X+d)}3,
+\qquad
+Z=\frac{p(X+X^2/d)}3
+\tag{41}
+\]
+
+输出 direct Type II `root_terminal_leaf`。这是根方程的析取终端，不要求它错误地成为
+任意后继标记纤维的成员。
+
+若不存在这样的 \(\ell\)，则 \(X\) 的全部素因子均为 \(1\pmod3\)。initializer 输出
+ordinary `type_ii_q_one_g_endpoint`，其 `terminal_prefix` 精确限于 q=1、gap-3 的 direct
+Type I/II predicate，并保存 \(U(3)\) 的 canonical G separator。该状态可直接消费
+`q_one_full_carrier_phase_root_entry_v1`：初始 receipt 是冻结 base provenance，已有
+handoff 仍独立保存 target-side universal raw source，E4 为 \(\operatorname{Sol}(p)\) 恒等
+lift，E5 为既定的 \(2\to1\) phase drop。
+
+这里的 `terminal-first` 是该 endpoint 的已声明 priority predicate，而非“所有根层
+direct-certificate families 均不存在”的全称断言。receipt 必须写明其完成的 scope；根层
+scheduler 可以在调用此 initializer 前附加其它 direct terminal rules 并优先返回命中，
+但一张未被本地 predicate 查询的同根证书不会取消已经独立通过 E1--E5 的 phase edge。
+禁止的只有把 local miss 写成 `all_root_terminal_miss`。
+
+所以这条分派闭合每个核心根的 base serializer，但不声称所有 gap 都已 terminal-first
+扫描，也不闭合 full-carrier target 后的 Type I selector 或全局 reachable-state exhaustion。
+完整命题与回放见[初始 \(q=1\) 根 terminal-or-edge 分派](../claims/type-II-initial-q-one-root-terminal-or-full-carrier-dispatch.md)。
+
 ### 6.8a \(q=1\) G 到 full-carrier Type I tree 的 phase-root 重索引
 
 ordinary \(q=1\) G endpoint 不必回退到失败的 \(R=3\) companion chart。定义
